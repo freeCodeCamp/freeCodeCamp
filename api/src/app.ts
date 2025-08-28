@@ -48,10 +48,10 @@ import {
 import { isObjectID } from './utils/validation';
 import { getLogger } from './utils/logger';
 import {
-  examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -80,8 +80,11 @@ ajv.addFormat('objectid', {
   validate: (str: string) => isObjectID(str)
 });
 
-export const buildOptions = {
-  loggerInstance: process.env.NODE_ENV === 'test' ? undefined : getLogger(),
+export const buildOptions: FastifyHttpOptions<
+  RawServerDefault,
+  FastifyBaseLogger
+> = {
+  loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
   disableRequestLogging: true
 };
@@ -213,7 +216,6 @@ export const build = async (
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
       void fastify.register(examEnvironmentValidatedTokenRoutes);
-      void fastify.register(examEnvironmentMultipartRoutes);
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
@@ -231,6 +233,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };

@@ -1,0 +1,39 @@
+{
+  "name": "Working with CSS Transforms, Overflow, and Filters",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-transforms-overflow-and-filters",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa7e03c2e365e906e5733",
+      "title": "What Is Overflow in CSS, and How Does It Work?"
+    },
+    {
+      "id": "672bcc8ccc976fd791610f43",
+      "title": "What Is the CSS Transform Property, and How Does It Work?"
+    },
+    {
+      "id": "672bcc9c4a6dd6d7dd3e6357",
+      "title": "What Is the CSS Box Model, and How Does It Work?"
+    },
+    {
+      "id": "672bccae6e556cd81cef6af2",
+      "title": "What Is Margin Collapsing, and How Does It Work?"
+    },
+    {
+      "id": "672bccc8ea33bad87abb3c56",
+      "title": "What Is the Difference Between content-box and border-box?"
+    },
+    {
+      "id": "672bccdb8f1823d8c60f914c",
+      "title": "What Is a CSS Reset, and What Are Some Common Examples?"
+    },
+    {
+      "id": "672bccebe1fc82d911c3f078",
+      "title": "What Is the CSS Filter Property, and What Are Common Examples?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

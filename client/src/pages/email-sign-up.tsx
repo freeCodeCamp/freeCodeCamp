@@ -16,30 +16,22 @@ import {
   userSelector,
   isSignedInSelector
 } from '../redux/selectors';
+import type { User } from '../redux/prop-types';
 interface AcceptPrivacyTermsProps {
   acceptTerms: (accept: boolean | null) => void;
   acceptedPrivacyTerms: boolean;
   isSignedIn: boolean;
   showLoading: boolean;
-  completedChallengeCount?: number;
 }
 
 const mapStateToProps = createSelector(
   userSelector,
   isSignedInSelector,
   signInLoadingSelector,
-  (
-    {
-      acceptedPrivacyTerms,
-      completedChallengeCount
-    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
-    isSignedIn: boolean,
-    showLoading: boolean
-  ) => ({
-    acceptedPrivacyTerms,
+  (user: User | null, isSignedIn: boolean, showLoading: boolean) => ({
+    acceptedPrivacyTerms: !!user?.acceptedPrivacyTerms,
     isSignedIn,
-    showLoading,
-    completedChallengeCount
+    showLoading
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -50,8 +42,7 @@ function AcceptPrivacyTerms({
   acceptTerms,
   acceptedPrivacyTerms,
   isSignedIn,
-  showLoading,
-  completedChallengeCount: _completedChallengeCount = 0
+  showLoading
 }: AcceptPrivacyTermsProps) {
   const { t } = useTranslation();
   const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);

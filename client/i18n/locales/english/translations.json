@@ -9,6 +9,7 @@
     "edit": "Edit",
     "copy": "Copy",
     "view": "View",
+    "submit-continue": "Submit and continue",
     "view-code": "View Code",
     "view-project": "View Project",
     "view-cert-title": "View {{certTitle}}",
@@ -37,6 +38,7 @@
     "news": "News",
     "donate": "Donate",
     "supporters": "Supporters",
+    "exam-app": "Exam App",
     "go-to-supporters": "Go to Supporters Page",
     "update-settings": "Update my account settings",
     "sign-me-out": "Sign me out of freeCodeCamp",
@@ -60,6 +62,8 @@
     "check-code": "Check Your Code",
     "check-code-ctrl": "Check Your Code (Ctrl + Enter)",
     "check-code-cmd": "Check Your Code (Command + Enter)",
+    "command-enter": "⌘ + Enter",
+    "ctrl-enter": "Ctrl + Enter",
     "reset": "Reset",
     "reset-step": "Reset This Step",
     "help": "Help",
@@ -111,7 +115,40 @@
     "closed-caption": "Closed caption",
     "share-on-x": "Share on X",
     "share-on-bluesky": "Share on BlueSky",
-    "share-on-threads": "Share on Threads"
+    "share-on-threads": "Share on Threads",
+    "play-scene": "Press Play",
+    "download-latest-version": "Download the Latest Version",
+    "start": "Start",
+    "go-to-today": "Go to Today's Challenge",
+    "go-to-today-long": "Go to Today's Coding Challenge",
+    "go-to-archive": "Go to Archive",
+    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+  },
+  "daily-coding-challenges": {
+    "title": "Daily Coding Challenges",
+    "map-title": "Try the coding challenge of the day:",
+    "not-found": "Daily Coding Challenge Not Found.",
+    "release-note": "New challenges are released at midnight US Central time."
+  },
+  "weekdays": {
+    "short": {
+      "sunday": "S",
+      "monday": "M",
+      "tuesday": "T",
+      "wednesday": "W",
+      "thursday": "T",
+      "friday": "F",
+      "saturday": "S"
+    },
+    "long": {
+      "sunday": "Sunday",
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday"
+    }
   },
   "landing": {
     "big-heading-1": "Learn to code — for free.",
@@ -342,6 +379,14 @@
       "p7": "As an academic institution that grants achievement-based certifications, we take academic honesty very seriously. If you have any questions about this policy, or suspect that someone has violated it, you can email <0>{{email}}</0> and we will investigate."
     }
   },
+  "exam": {
+    "download-header": "Download the freeCodeCamp Exam Environment App",
+    "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
+    "version": "The latest version of our app is: {{version}}.",
+    "download-details": "Manually download the app",
+    "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+  },
   "profile": {
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
     "username-change-privacy": "{{username}} needs to change their privacy setting in order for you to view their portfolio.",
@@ -421,12 +466,12 @@
     "answered-mcq": "You have unanswered questions and/or incorrect answers.",
     "explanation": "Explanation",
     "transcript": "Transcript",
-    "video": "Video",
     "solution-link": "Solution Link",
     "source-code-link": "Source Code Link",
     "ms-link": "Microsoft Link",
     "submit-and-go": "Submit and go to my next challenge",
     "congratulations": "Congratulations, your code passes. Submit your code to continue.",
+    "congratulations-code-passes": "✔ Congratulations. Your code passes.",
     "i-completed": "I've completed this challenge",
     "example-code": "Example Code",
     "test-output": "Your test output will go here",
@@ -836,6 +881,8 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s Twitter",
+    "next-month": "Go to next month",
+    "previous-month": "Go to previous month",
     "first-page": "Go to first page",
     "previous-page": "Go to previous page",
     "next-page": "Go to next page",
@@ -865,7 +912,8 @@
     "editor-a11y-off-non-macos": "{{editorName}} editor content. Press Alt+F1 for accessibility options.",
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
-    "terminal-output": "Terminal output"
+    "terminal-output": "Terminal output",
+    "not-available": "Not available"
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1135,6 +1183,8 @@
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "a2-professional-chinese": "A2 Professional Chinese",
       "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
+      "a1-professional-chinese": "A1 Professional Chinese",
+      "a1-professional-chinese-cert": "A1 Professional Chinese Certification",
       "legacy-front-end": "Legacy Front End",
       "legacy-front-end-cert": "Legacy Front End Certification",
       "legacy-back-end": "Legacy Back End",
@@ -1219,7 +1269,7 @@
     "heading": "Warning: This is an early access test deployment",
     "p1": "We welcome you to try this platform in a test-only mode and get early access to upcoming features. Sometimes these changes are referred to as next, beta, staging, etc. interchangeably.",
     "p2": "We thank you for reporting bugs that you encounter and help in making freeCodeCamp.org better.",
-    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid. Learn more by <0>following this link</0>.",
+    "p3": "Your progress MAY NOT be saved on your next visit, and any certifications claimed on this deployment are not valid.",
     "certain": "Accept and Dismiss"
   },
   "survey": {

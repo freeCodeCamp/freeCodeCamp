@@ -14,6 +14,11 @@ import {
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { updateAllChallengesInfo } from '../../redux/actions';
 import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
+import { getIsDailyCodingChallenge } from '../../../../shared/config/challenge-types';
+import {
+  isValidDateString,
+  formatDisplayDate
+} from '../daily-coding-challenge/helpers';
 import ProgressInner from './progress-inner';
 
 const mapStateToProps = createSelector(
@@ -24,10 +29,12 @@ const mapStateToProps = createSelector(
   (
     currentBlockIds: string[],
     {
+      challengeType,
       id,
       block,
       superBlock
     }: {
+      challengeType: number;
       id: string;
       block: string;
       superBlock: string;
@@ -36,6 +43,7 @@ const mapStateToProps = createSelector(
     completedPercent: number
   ) => ({
     currentBlockIds,
+    challengeType,
     id,
     block,
     superBlock,
@@ -56,16 +64,27 @@ function Progress({
   block,
   id,
   superBlock,
+  challengeType,
   completedChallengesInBlock,
   completedPercent,
   t,
   updateAllChallengesInfo
 }: ProgressProps): JSX.Element {
-  const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)
   );
+
+  // Display the date of the challenge in the completion modal for daily challenges
+  if (getIsDailyCodingChallenge(challengeType)) {
+    const dateParam =
+      new URLSearchParams(window.location.search).get('date') || '';
+
+    if (isValidDateString(dateParam)) {
+      blockTitle += `: ${formatDisplayDate(dateParam)}`;
+    }
+  }
 
   const { challengeNodes, certificateNodes } = useGetAllBlockIds();
   useEffect(() => {

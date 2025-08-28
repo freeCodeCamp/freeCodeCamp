@@ -11,7 +11,7 @@ import LearnAlert from './learn-alert';
 
 interface IntroProps {
   complete?: boolean;
-  completedChallengeCount?: number;
+  completedChallengeCount: number;
   isSignedIn?: boolean;
   name?: string;
   pending?: boolean;

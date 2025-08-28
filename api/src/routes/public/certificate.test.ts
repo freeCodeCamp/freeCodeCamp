@@ -1,10 +1,20 @@
 import {
+  describe,
+  it,
+  test,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
+import {
   defaultUserEmail,
   defaultUserId,
   resetDefaultUser,
   setupServer,
   superRequest
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import { getFallbackFullStackDate } from '../helpers/certificate-utils';
 
 const DATE_NOW = Date.now();
@@ -16,14 +26,12 @@ describe('certificate routes', () => {
     beforeAll(async () => {
       await resetDefaultUser();
 
-      jest.useFakeTimers({
-        doNotFake: ['nextTick']
-      });
-      jest.setSystemTime(DATE_NOW);
+      vi.useFakeTimers();
+      vi.setSystemTime(DATE_NOW);
     });
 
     afterAll(() => {
-      jest.useRealTimers();
+      vi.useRealTimers();
     });
 
     describe('GET /certificate/showCert/:username/:certSlug', () => {

@@ -36,6 +36,7 @@ type MultifileEditorProps = Pick<
   | 'description'
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
+  | 'showIndependentLowerJaw'
 > & {
   visibleEditors: VisibleEditors;
 };
@@ -72,7 +73,8 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       mainpy
     },
     usesMultifileEditor,
-    showProjectPreview
+    showProjectPreview,
+    showIndependentLowerJaw
   } = props;
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
@@ -146,6 +148,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
+                    showIndependentLowerJaw={showIndependentLowerJaw}
                   />
                 </ReflexElement>
               );

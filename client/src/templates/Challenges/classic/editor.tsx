@@ -111,8 +111,9 @@ export interface EditorProps {
     contents: string;
     editableRegionBoundaries?: number[];
   }) => void;
-  usesMultifileEditor: boolean;
+  usesMultifileEditor?: boolean;
   isChallengeCompleted: boolean;
+  showIndependentLowerJaw?: boolean;
 }
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
@@ -348,7 +349,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { usesMultifileEditor } = props;
+    const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -413,11 +414,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     dataRef.current.editor = editor;
 
     if (hasEditableRegion()) {
-      initializeDescriptionAndOutputWidgets();
+      initializeRegions();
+      if (!props.showIndependentLowerJaw) {
+        addWidgetsToRegions();
+      }
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
-      if (isMathJaxAllowed(props.superBlock)) {
+      if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
         initializeMathJax();
       }
     }
@@ -796,7 +800,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
     descContainer.classList.add('description-container');
-    if (isMathJaxAllowed(props.superBlock)) {
+    if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
@@ -1021,14 +1025,6 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   };
 
-  function initializeDescriptionAndOutputWidgets() {
-    const editor = dataRef.current.editor;
-    if (editor) {
-      initializeRegions(getEditableRegionFromRedux());
-      addWidgetsToRegions(editor);
-    }
-  }
-
   // Currently, only practice project parts have editable region markers
   // This function is used to enable multiple editor tabs, jaws, etc.
   function hasEditableRegion() {
@@ -1050,11 +1046,11 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
-  function initializeRegions(editableRegion: number[]) {
+  function initializeRegions() {
     const { model, editor } = dataRef.current;
     const monaco = monacoRef.current;
     if (!model || !monaco || !editor) return;
-
+    const editableRegion = getEditableRegionFromRedux();
     const editableRange = positionsToRange(monaco, model, [
       editableRegion[0] + 1,
       editableRegion[1] - 1
@@ -1100,7 +1096,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     };
   };
 
-  function addWidgetsToRegions(editor: editor.IStandaloneCodeEditor) {
+  function addWidgetsToRegions() {
+    const editor = dataRef.current.editor;
+    if (!editor) return;
+
     const descriptionNode = createDescription(editor);
 
     const lowerJawNode = createLowerJawContainer(editor);
@@ -1238,14 +1237,17 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     if (hasEditableRegion() && editor) {
       if (props.isResetting) {
-        initializeDescriptionAndOutputWidgets();
+        initializeRegions();
+        if (!props.showIndependentLowerJaw) {
+          addWidgetsToRegions();
+        }
         updateDescriptionZone();
         showEditableRegion(editor);
         resetMarginDecorations();
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles, props.isResetting]);
+  }, [props.challengeFiles, props.isResetting, props.showIndependentLowerJaw]);
 
   useEffect(() => {
     const { showProjectPreview, previewOpen } = props;
@@ -1315,8 +1317,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
+  const showFileName = challengeFile && props.challengeFiles!.length > 1;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
+      {showFileName && (
+        <div className='editor-file-name'>{`${challengeFile.name}.${challengeFile.ext}`}</div>
+      )}
       <span className='notranslate'>
         <MonacoEditor
           editorDidMount={editorDidMount}
