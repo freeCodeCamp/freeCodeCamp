@@ -15,9 +15,9 @@ function CampersImage(): JSX.Element {
         data-test-label='landing-page-figure'
         data-playwright-test-label='landing-page-figure'
       >
-        <LazyImage alt={t('landing.hero-img-alt')} src={wideImg} />
+        <LazyImage alt={t($ => $.landing['hero-img-alt'])} src={wideImg} />
         <figcaption className='caption'>
-          {t('landing.hero-img-description')}
+          {t($ => $.landing['hero-img-description'])}
         </figcaption>
       </figure>
     </Media>

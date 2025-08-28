@@ -14,14 +14,15 @@ const CatalogPage = () => {
   return showUpcomingChanges ? (
     <main>
       <Spacer size='l' />
-      <h1 className='text-center'>{t('curriculum.catalog.title')}</h1>
+      <h1 className='text-center'>{t($ => $.curriculum.catalog.title)}</h1>
       <Spacer size='l' />
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <section className='catalog-wrap'>
           {catalog.map(course => {
             const { superBlock, level, hours } = course;
 
-            const { title, summary } = t(`intro:${superBlock}`, {
+            const { title, summary } = t($ => $[superBlock], {
+              ns: 'intro',
               returnObjects: true
             }) as {
               title: string;
@@ -39,11 +40,11 @@ const CatalogPage = () => {
                 </div>
                 <div className='catalog-item-bottom'>
                   <div>
-                    {t(`curriculum.catalog.levels.${level}`)} &bull; {hours}{' '}
+                    {t($ => $.curriculum.catalog.levels[level])} &bull; {hours}{' '}
                     hours
                   </div>
                   <ButtonLink href={`/learn/${superBlock}`}>
-                    {t('buttons.go-to-course')}
+                    {t($ => $.buttons['go-to-course'])}
                   </ButtonLink>
                 </div>
               </div>

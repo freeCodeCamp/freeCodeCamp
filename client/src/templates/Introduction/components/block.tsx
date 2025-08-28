@@ -120,12 +120,14 @@ class Block extends Component<BlockProps> {
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
-    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-    const blockIntroArr = t(`intro:${superBlock}.blocks.${block}.intro`, {
+    // TODO: convert to selector #61969
+    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title` as never);
+    // TODO: convert to selector #61969
+    const blockIntroArr = t(`intro:${superBlock}.blocks.${block}.intro` as never, {
       returnObjects: true
     }) as string[];
-    const expandText = t('intro:misc-text.expand');
-    const collapseText = t('intro:misc-text.collapse');
+    const expandText = t($ => $["misc-text"].expand, { ns: "intro" });
+    const collapseText = t($ => $["misc-text"].collapse, { ns: "intro" });
 
     const isBlockCompleted = completedCount === challenges.length;
 
@@ -143,12 +145,12 @@ class Block extends Component<BlockProps> {
 
     const courseCompletionStatus = () => {
       if (completedCount === 0) {
-        return t('learn.not-started');
+        return t($ => $.learn["not-started"]);
       }
       if (isBlockCompleted) {
-        return t('learn.completed');
+        return t($ => $.learn.completed);
       }
-      return `${percentageCompleted}% ${t('learn.completed')}`;
+      return `${percentageCompleted}% ${t($ => $.learn.completed)}`;
     };
 
     /**
@@ -166,9 +168,9 @@ class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t('links:help-translate-link-url')}
+                  to={t($ => $["help-translate-link-url"], { ns: 'links' })}
                 >
-                  {t('misc.translation-pending')}
+                  {t($ => $.misc["translation-pending"])}
                 </Link>
               </div>
             )}
@@ -191,7 +193,7 @@ class Block extends Component<BlockProps> {
               <span aria-hidden='true'>{`${completedCount}/${challenges.length}`}</span>
               <span className='sr-only'>
                 ,{' '}
-                {t('learn.challenges-completed', {
+                {t($ => $.learn["challenges-completed"], {
                   completedCount,
                   totalChallenges: challenges.length
                 })}
@@ -223,9 +225,9 @@ class Block extends Component<BlockProps> {
               <div className='block-cta-wrapper'>
                 <Link
                   className='block-title-translation-cta'
-                  to={t('links:help-translate-link-url')}
+                  to={t($ => $["help-translate-link-url"], { ns: "links" })}
                 >
-                  {t('misc.translation-pending')}
+                  {t($ => $.misc["translation-pending"])}
                 </Link>
               </div>
             )}
@@ -265,9 +267,9 @@ class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    to={t('links:help-translate-link-url')}
+                    to={t($ => $["help-translate-link-url"], { ns: "links" })}
                   >
-                    {t('misc.translation-pending')}
+                    {t($ => $.misc["translation-pending"])}
                   </Link>
                 </div>
               )}
@@ -297,16 +299,16 @@ class Block extends Component<BlockProps> {
         <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
-              {t('misc.certification-project')}
+              {t($ => $.misc["certification-project"])}
             </span>
             {!isAudited && (
               <Link
                 className='cert-tag'
-                to={t('links:help-translate-link-url')}
+                to={t($ => $["help-translate-link-url"], { ns: "links" })}
               >
-                {t('misc.translation-pending')}{' '}
+                {t($ => $.misc["translation-pending"])}{' '}
                 <span className='sr-only'>
-                  {blockTitle} {t('misc.certification-project')}
+                  {blockTitle} {t($ => $.misc["certification-project"])}
                 </span>
               </Link>
             )}
@@ -325,8 +327,8 @@ class Block extends Component<BlockProps> {
                 {blockTitle}{' '}
                 <span className='sr-only'>
                   {isBlockCompleted
-                    ? `${t('misc.certification-project')}, ${t('learn.completed')}`
-                    : `${t('misc.certification-project')}, ${t('learn.not-completed')}`}
+                    ? `${t($ => $.misc["certification-project"])}, ${t($ => $.learn.completed)}`
+                    : `${t($ => $.misc["certification-project"])}, ${t($ => $.learn["not-completed"])}`}
                 </span>
               </Link>
             </h3>
@@ -366,9 +368,9 @@ class Block extends Component<BlockProps> {
                 <div className='tags-wrapper'>
                   <Link
                     className='cert-tag'
-                    to={t('links:help-translate-link-url')}
+                    to={t($ => $["help-translate-link-url"], { ns: "links" })}
                   >
-                    {t('misc.translation-pending')}
+                    {t($ => $.misc["translation-pending"])}
                   </Link>
                 </div>
               )}

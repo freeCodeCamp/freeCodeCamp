@@ -13,7 +13,9 @@ function RdbGitpodLogoutAlert({
 
   return (
     <Alert variant='danger'>
-      {t('learn.gitpod.logout-warning', { course })}
+      {t($ => $.learn.gitpod['logout-warning'], {
+        course: course
+      })}
     </Alert>
   );
 }

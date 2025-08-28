@@ -13,7 +13,7 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
   return (
     <>
       {!hushScreenReaderText && (
-        <span className='sr-only'>{t('icons.not-passed')}</span>
+        <span className='sr-only'>{t($ => $.icons['not-passed'])}</span>
       )}
       <svg
         aria-hidden='true'
@@ -24,7 +24,7 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
         {...rest}
       >
         <g>
-          <title>{t('icons.not-passed')}</title>
+          <title>{t($ => $.icons['not-passed'])}</title>
           <circle
             cx='100'
             cy='99'

@@ -20,7 +20,10 @@ test('useShare testing', () => {
   });
 
   const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
-  const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+  // TODO: convert to selector #61969
+  const i18nSupportedBlock = t(
+    `intro:${superBlock}.blocks.${block}.title` as never
+  );
   const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}%23freecodecamp`;
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
   expect(redirectURL.xUrl).toBe(

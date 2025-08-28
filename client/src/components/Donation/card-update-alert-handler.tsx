@@ -20,10 +20,10 @@ function CardUpdateAlertHandler({
   const style = redirecting ? 'info' : success ? 'success' : 'danger';
 
   const message = redirecting
-    ? `${t('donate.redirecting')}`
+    ? `${t($ => $.donate.redirecting)}`
     : success
-      ? `${t('donate.success-card-update')}`
-      : `${t('donate.error-card-update')}`;
+      ? `${t($ => $.donate['success-card-update'])}`
+      : `${t($ => $.donate['error-card-update'])}`;
 
   return (
     <Alert variant={style} className='donation-completion'>
@@ -43,7 +43,7 @@ function CardUpdateAlertHandler({
         {error && (
           <div>
             <button type='button' className='try-again-button' onClick={reset}>
-              {t('buttons.try-again')}
+              {t($ => $.buttons['try-again'])}
             </button>
           </div>
         )}

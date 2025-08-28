@@ -113,7 +113,7 @@ export function* executeChallengeSaga({ payload }) {
 
   try {
     yield put(initLogs());
-    yield put(initConsole(i18next.t('learn.running-tests')));
+    yield put(initConsole(i18next.t($ => $.learn['running-tests'])));
     // reset tests to initial state
     const tests = (yield select(challengeTestsSelector)).map(
       ({ text, testString }) => ({ text, testString, running: true })
@@ -157,8 +157,8 @@ export function* executeChallengeSaga({ payload }) {
     if (challengeComplete && payload?.showCompletionModal) {
       yield put(openModal('completion'));
     }
-    yield put(updateConsole(i18next.t('learn.tests-completed')));
-    yield put(logsToConsole(i18next.t('learn.console-output')));
+    yield put(updateConsole(i18next.t($ => $.learn['tests-completed'])));
+    yield put(logsToConsole(i18next.t($ => $.learn['console-output'])));
   } catch (e) {
     yield put(updateConsole(e));
   } finally {
@@ -222,7 +222,7 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
           type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
-        newTest.message = `<p>${i18next.t(msgKey)}</p>`;
+        newTest.message = `<p>${i18next.t($ => $[msgKey])}</p>`;
       } else {
         const { message, stack } = err;
         newTest.err = message + '\n' + stack;

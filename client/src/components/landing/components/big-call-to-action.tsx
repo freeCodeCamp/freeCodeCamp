@@ -11,7 +11,7 @@ const BigCallToAction = ({ text }: { text?: string }): JSX.Element => {
       data-test-label='landing-big-cta'
       data-playwright-test-label='landing-big-cta'
     >
-      {text ? text : t('buttons.logged-in-cta-btn')}
+      {text ? text : t($ => $.buttons['logged-in-cta-btn'])}
     </Login>
   );
 };

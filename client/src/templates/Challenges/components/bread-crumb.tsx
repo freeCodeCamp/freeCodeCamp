@@ -15,7 +15,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
   return (
     <nav
       className='challenge-title-breadcrumbs'
-      aria-label={t('aria.breadcrumb-nav')}
+      aria-label={t($ => $.aria['breadcrumb-nav'])}
     >
       <ol data-playwright-test-label='breadcrumb-desktop'>
         <li className='breadcrumb-left'>
@@ -23,7 +23,8 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}`}
           >
-            <span>{i18next.t(`intro:${superBlock}.title`)}</span>
+            {/* TODO: convert to selector #61969 */}
+            <span>{i18next.t(`intro:${superBlock}.title` as never)}</span>
           </Link>
         </li>
         <li className='breadcrumb-right'>
@@ -31,7 +32,8 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}/#${block}`}
           >
-            {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
+            {/* TODO: convert to selector #61969 */}
+            {i18next.t(`intro:${superBlock}.blocks.${block}.title` as never)}
           </Link>
         </li>
       </ol>

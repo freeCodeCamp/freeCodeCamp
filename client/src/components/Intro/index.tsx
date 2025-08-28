@@ -46,8 +46,10 @@ const Intro = ({
         <Spacer size='m' />
         <h1 id='content-start' className='text-center'>
           {name
-            ? `${t('learn.welcome-1', { name: name })}`
-            : `${t('learn.welcome-2')}`}
+            ? `${t($ => $.learn['welcome-1'], {
+                name: name
+              })}`
+            : `${t($ => $.learn['welcome-2'])}`}
         </h1>
         <Spacer size='m' />
         <div className='text-center quote-partial'>
@@ -68,7 +70,7 @@ const Intro = ({
           <div className='intro-description'>
             <Spacer size='m' />
             <p>
-              <Trans i18nKey='learn.start-at-beginning'>
+              <Trans i18nKey={$ => $.learn['start-at-beginning']}>
                 <Link to={slug} />
               </Trans>
             </p>
@@ -83,10 +85,10 @@ const Intro = ({
       <>
         <Spacer size='m' />
         <h1 id='content-start' className='text-center'>
-          {t('learn.heading')}
+          {t($ => $.learn.heading)}
         </h1>
         <Spacer size='m' />
-        <Login block={true}>{t('buttons.logged-out-cta-btn')}</Login>
+        <Login block={true}>{t($ => $.buttons['logged-out-cta-btn'])}</Login>
         <Spacer size='m' />
       </>
     );

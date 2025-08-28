@@ -26,8 +26,9 @@ function CertButton({ username, cert }: CertButtonProps): JSX.Element {
         size='large'
         href={`/certification/${username}/${cert.certSlug}`}
       >
-        {t('buttons.view-cert-title', {
-          certTitle: t(`certification.title.${cert.certSlug}-cert`)
+        {t($ => $.buttons['view-cert-title'], {
+          // TODO: convert to selector #61969
+          certTitle: t(`certification.title.${cert.certSlug}-cert` as never)
         })}
       </ButtonLink>
       <Spacer size='xs' />
@@ -45,7 +46,7 @@ function Certificates({ user }: CertificationProps): JSX.Element {
   return (
     <FullWidthRow className='profile-certifications'>
       <section className='card'>
-        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
+        <h2 id='fcc-certifications'>{t($ => $.profile['fcc-certs'])}</h2>
         <br />
         {hasModernCert && currentCerts ? (
           <ul aria-labelledby='fcc-certifications'>
@@ -60,13 +61,13 @@ function Certificates({ user }: CertificationProps): JSX.Element {
               ))}
           </ul>
         ) : (
-          <p className='text-center'>{t('profile.no-certs')}</p>
+          <p className='text-center'>{t($ => $.profile['no-certs'])}</p>
         )}
         {hasLegacyCert && (
           <div>
             <Spacer size='m' />
             <h3 id='legacy-certifications'>
-              {t('settings.headings.legacy-certs')}
+              {t($ => $.settings.headings['legacy-certs'])}
             </h3>
             <Spacer size='m' />
             {legacyCerts && (

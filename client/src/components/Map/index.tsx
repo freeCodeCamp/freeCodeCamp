@@ -48,7 +48,9 @@ function MapLi({
   superBlock: SuperBlocks;
   landing: boolean;
 }) {
-  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+  const i18nTitle = i18next.t($ => $[superBlock].title, {
+    ns: 'intro'
+  });
 
   return (
     <li
@@ -97,7 +99,8 @@ function Map({ forLanding = false }: MapProps) {
                 )
             }
             <h2 className={forLanding ? 'big-heading' : ''}>
-              {t(superBlockHeadings[stage])}
+              {/* TODO: convert to selector */}
+              {t(superBlockHeadings[stage] as never)}
             </h2>
             <ul key={stage}>
               {superblocks.map(superblock => (

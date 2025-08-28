@@ -25,7 +25,7 @@ function ExamToken(): JSX.Element {
       setExamToken(examEnvironmentAuthorizationToken);
       setExamTokenError('');
     } catch (_e) {
-      setExamTokenError(t('exam-token.error'));
+      setExamTokenError(t($ => $['exam-token'].error));
     }
 
     setRecentlyGenerated(true);
@@ -42,11 +42,11 @@ function ExamToken(): JSX.Element {
           setCopyError(null);
         }}
       >
-        <Modal.Header>{t('exam-token.exam-token')}</Modal.Header>
+        <Modal.Header>{t($ => $['exam-token']['exam-token'])}</Modal.Header>
         <Modal.Body>
           {examToken && (
             <p style={{ wordBreak: 'break-word' }}>
-              {t('exam-token.your-exam-token', {
+              {t($ => $['exam-token']['your-exam-token'], {
                 token: examToken
               })}
             </p>
@@ -60,17 +60,17 @@ function ExamToken(): JSX.Element {
             onClick={() => {
               navigator.clipboard.writeText(examToken ?? '').then(
                 () => {
-                  setCopySuccess(t('exam-token.copied'));
+                  setCopySuccess(t($ => $['exam-token'].copied));
                   setCopyError(null);
                 },
                 () => {
-                  setCopyError(t('exam-token.copy-error'));
+                  setCopyError(t($ => $['exam-token']['copy-error']));
                   setCopySuccess(null);
                 }
               );
             }}
           >
-            {t('buttons.copy')}
+            {t($ => $.buttons.copy)}
           </Button>
           <Spacer size='s' />
           <Button
@@ -80,22 +80,22 @@ function ExamToken(): JSX.Element {
               setCopyError(null);
             }}
           >
-            {t('buttons.close')}
+            {t($ => $.buttons.close)}
           </Button>
         </Modal.Footer>
       </Modal>
       <Panel variant='info' id='exam-environment-authorization-token'>
-        <Panel.Heading>{t('exam-token.exam-token')}</Panel.Heading>
+        <Panel.Heading>{t($ => $['exam-token']['exam-token'])}</Panel.Heading>
         <Panel.Body>
-          <p>{t('exam-token.note')}</p>
-          <strong>{t('exam-token.invalidation')}</strong>
+          <p>{t($ => $['exam-token'].note)}</p>
+          <strong>{t($ => $['exam-token'].invalidation)}</strong>
           <Spacer size='s' />
           <Button
             block={true}
             disabled={recentlyGenerated}
             onClick={() => void getToken()}
           >
-            {t('exam-token.generate-exam-token')}
+            {t($ => $['exam-token']['generate-exam-token'])}
           </Button>
         </Panel.Body>
       </Panel>

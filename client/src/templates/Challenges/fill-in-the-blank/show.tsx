@@ -181,8 +181,9 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
+  // TODO: convert to selector #61969
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `intro:${superBlock}.blocks.${block}.title` as never
   )} - ${title}`;
 
   const sceneSubject = new SceneSubject();
@@ -195,7 +196,7 @@ const ShowFillInTheBlank = ({
     >
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container>
           <Row>
@@ -249,11 +250,11 @@ const ShowFillInTheBlank = ({
                 disabled={!allBlanksFilled}
                 onClick={() => handleSubmit()}
               >
-                {t('buttons.check-answer')}
+                {t($ => $.buttons['check-answer'])}
               </Button>
               <Spacer size='xxs' />
               <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
+                {t($ => $.buttons['ask-for-help'])}
               </Button>
               <Spacer size='l' />
             </Col>

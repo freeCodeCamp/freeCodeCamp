@@ -74,24 +74,26 @@ function ToolPanel({
       }`}
     >
       <Button block={true} variant='primary' onClick={handleRunTests}>
-        {isMobile ? t('buttons.run') : t('buttons.run-test')}
+        {isMobile ? t($ => $.buttons.run) : t($ => $.buttons['run-test'])}
       </Button>
       {isSignedIn && canSaveToDB(challengeType) && (
         <>
           <Spacer size='xxs' />
           <Button block={true} variant='primary' onClick={saveChallenge}>
-            {isMobile ? t('buttons.save') : t('buttons.save-code')}
+            {isMobile ? t($ => $.buttons.save) : t($ => $.buttons['save-code'])}
           </Button>
         </>
       )}
       <Spacer size='xxs' />
       <Button block={true} variant='primary' onClick={openResetModal}>
         {isMobile
-          ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
-          : t(
+          ? t($ =>
+              canSaveToDB(challengeType) ? $.buttons.revert : $.buttons.reset
+            )
+          : t($ =>
               canSaveToDB(challengeType)
-                ? 'buttons.revert-to-saved-code'
-                : 'buttons.reset-lesson'
+                ? $.buttons['revert-to-saved-code']
+                : $.buttons['reset-lesson']
             )}
       </Button>
       <Spacer size='xxs' />
@@ -100,7 +102,7 @@ function ToolPanel({
           id={'get-help-dropdown'}
           data-playwright-test-label='get-help-dropdown'
         >
-          {isMobile ? t('buttons.help') : t('buttons.get-help')}
+          {isMobile ? t($ => $.buttons.help) : t($ => $.buttons['get-help'])}
         </Dropdown.Toggle>
         <Dropdown.Menu>
           {guideUrl ? (
@@ -109,9 +111,11 @@ function ToolPanel({
               target='_blank'
               data-playwright-test-label='get-hint'
             >
-              {t('buttons.get-hint')}{' '}
+              {t($ => $.buttons['get-hint'])}{' '}
               <FontAwesomeIcon icon={faExternalLinkAlt} />
-              <span className='sr-only'>, {t('aria.opens-new-window')}</span>
+              <span className='sr-only'>
+                , {t($ => $.aria['opens-new-window'])}
+              </span>
             </MenuItem>
           ) : null}
           {videoUrl ? (
@@ -119,14 +123,14 @@ function ToolPanel({
               onClick={openVideoModal}
               data-playwright-test-label='watch-a-video'
             >
-              {t('buttons.watch-video')}
+              {t($ => $.buttons['watch-video'])}
             </MenuItem>
           ) : null}
           <MenuItem
             onClick={openHelpModal}
             data-playwright-test-label='ask-for-help'
           >
-            {t('buttons.ask-for-help')}
+            {t($ => $.buttons['ask-for-help'])}
           </MenuItem>
         </Dropdown.Menu>
       </Dropdown>

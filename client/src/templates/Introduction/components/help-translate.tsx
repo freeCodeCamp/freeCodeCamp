@@ -23,13 +23,15 @@ function HelpTranslate({ superBlock }: HelpTranslateProps): JSX.Element | null {
   return (
     <div style={{ textAlign: 'center' }}>
       <Spacer size='m' />
-      <p style={{ marginBottom: 0 }}>{t('learn.help-translate')} </p>
+      <p style={{ marginBottom: 0 }}>{t($ => $.learn['help-translate'])} </p>
       <Link
         external={true}
         sameTab={false}
-        to={t('links:help-translate-link-url')}
+        to={t($ => $['help-translate-link-url'], {
+          ns: 'links'
+        })}
       >
-        {t('learn.help-translate-link')}
+        {t($ => $.learn['help-translate-link'])}
       </Link>
     </div>
   );
