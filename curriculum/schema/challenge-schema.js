@@ -278,6 +278,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  audioIds: Joi.array().items(Joi.string()),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()
