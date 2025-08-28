@@ -35,7 +35,7 @@
 .super-block-accordion .chapter-button .chapter-button-left {
   display: flex;
   align-items: center;
-  text-align: left;
+  text-align: start;
   column-gap: 10px;
   font-size: 1.5em;
 }
@@ -71,6 +71,7 @@
 .super-block-accordion .module-button-left,
 .super-block-accordion .module-button-right {
   display: flex;
+  text-align: start;
   align-items: center;
   gap: 10px;
 }
