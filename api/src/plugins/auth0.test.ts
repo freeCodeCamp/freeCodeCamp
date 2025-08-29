@@ -332,7 +332,7 @@ describe('auth0 plugin', () => {
       expect(res.headers.location).toMatch(HOME_LOCATION);
     });
 
-    it('should redirect to returnTo page even if the user has not acceptedPrivacyTerms', async () => {
+    test('should redirect to returnTo page even if the user has not acceptedPrivacyTerms', async () => {
       mockAuthSuccess();
       // Using an italian path to make sure redirection works.
       const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
