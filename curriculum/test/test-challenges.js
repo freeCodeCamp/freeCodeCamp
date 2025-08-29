@@ -236,7 +236,6 @@ async function getChallenges(lang, filters) {
 }
 
 function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
-  const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
   if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
@@ -285,6 +284,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           c => c.superBlock === superBlock
         );
         superBlockChallenges.forEach((challenge, id) => {
+          const challengeTitles = new ChallengeTitles();
           const mongoIds = new MongoIds();
 
           // When testing single challenge, in project based curriculum,
