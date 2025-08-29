@@ -20,9 +20,10 @@ Result: `["diamond", "apple", "emerald", "bread"]`
 **Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 1. Your function `diffArray` should return an array.
-2. Your function should make use of the `filter` method.
-3. Your function should return the symmetric difference of the two arrays.  
-4. Your function should return an empty array if there is no symmetric difference.
+2. Your function should take two arguments, both of which are arrays.
+3. Your function should make use of the `filter` method.
+4. Your function should return the symmetric difference of the two arrays.  
+5. Your function should return an empty array if there is no symmetric difference.
 
 
 # --hints--
@@ -48,13 +49,13 @@ assert.deepEqual(diffArray(
 ), ["pink wool"]);
 ```
 
-Your function should return `["diorite", "pink wool", "dead shrub"]` when called with `["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"]` and `["andesite", "grass", "dirt", "dead shrub"]`.
+Your function should return `["diorite", "pink wool"]` when called with `["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"]` and `["andesite", "grass", "dirt", "dead shrub"]`.
 
 ```js
 assert.deepEqual(diffArray(
   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
   ["andesite", "grass", "dirt", "dead shrub"]
-), ["diorite", "pink wool", "dead shrub"]);
+), ["diorite", "pink wool"]);
 ```
 
 Your function should return an empty array when called with two identical arrays.
