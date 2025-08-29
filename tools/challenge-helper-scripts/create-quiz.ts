@@ -9,9 +9,11 @@ import {
   getContentConfig,
   writeBlockStructure
 } from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { createQuizFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
+import { updateSimpleSuperblockStructure } from './helpers/create-project';
 
 const helpCategories = [
   'HTML-CSS',
@@ -58,6 +60,10 @@ async function createQuiz(
     questionCount
   );
   await createMetaJson(block, title, helpCategory, challengeId);
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[superBlock];
+  void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }
