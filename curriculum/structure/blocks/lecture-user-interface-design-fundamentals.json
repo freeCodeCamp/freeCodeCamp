@@ -1,0 +1,43 @@
+{
+  "name": "User Interface Design Fundamentals",
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-user-interface-design-fundamentals",
+  "superBlock": "full-stack-developer",
+  "challengeOrder": [
+    {
+      "id": "672aa6c9e379285acca5a2aa",
+      "title": "What Are Common Design Terms to Help You Communicate with Designers?"
+    },
+    {
+      "id": "672baa97f2990e6631d522e7",
+      "title": "How Do You Create Good Background and Foreground Contrast in Your Designs?"
+    },
+    {
+      "id": "672baaa62d4b46667a8ac869",
+      "title": "What Is the Importance of Good Visual Hierarchy in Design?"
+    },
+    {
+      "id": "672baab2a0c3df66ad987b94",
+      "title": "How Does Scale Work in Design?"
+    },
+    {
+      "id": "672baabf16290b66e6b79a39",
+      "title": "How Does Alignment Work in Design?"
+    },
+    {
+      "id": "672baacb7f2f446728e77efe",
+      "title": "What Is the Importance of Whitespace in Design?"
+    },
+    {
+      "id": "672baad7bbc4f86762ca173e",
+      "title": "What Are Best Practices for Working with Images in Your Designs?"
+    },
+    {
+      "id": "672baae11d06c867a16f64e1",
+      "title": "What Is Progressive Enhancement?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
