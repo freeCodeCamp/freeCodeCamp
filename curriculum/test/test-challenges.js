@@ -236,7 +236,6 @@ async function getChallenges(lang, filters) {
 }
 
 function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
-  const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
@@ -286,6 +285,8 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           c => c.superBlock === superBlock
         );
         superBlockChallenges.forEach((challenge, id) => {
+          const mongoIds = new MongoIds();
+
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
           // Instead seed from next challenge is tested against tests from
