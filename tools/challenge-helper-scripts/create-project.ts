@@ -62,7 +62,11 @@ async function createProject(
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
-  void updateSimpleSuperblockStructure(block, { order }, superblockFilename);
+  // TODO: handle full-stack-developer (createProjects needs calling with a
+  // chapter and module name as well)
+  if (superBlock !== SuperBlocks.FullStackDeveloper) {
+    void updateSimpleSuperblockStructure(block, { order }, superblockFilename);
+  }
   // TODO: remove once we stop relying on markdown in the client.
   void createIntroMD(superBlock, block, title);
 }
