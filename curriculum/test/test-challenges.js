@@ -236,8 +236,6 @@ async function getChallenges(lang, filters) {
 }
 
 function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
-  const mongoIds = new MongoIds();
-  const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
 
   if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
@@ -285,6 +283,10 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
+
+        const challengeTitles = new ChallengeTitles();
+        const mongoIds = new MongoIds();
+
         superBlockChallenges.forEach((challenge, id) => {
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
