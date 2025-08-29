@@ -32,12 +32,11 @@ const {
 const { getLines } = require('../../shared/utils/get-lines');
 const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang, getSuperOrder } = require('../utils');
+const { testedLang } = require('../utils');
 const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
 const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
@@ -239,44 +238,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
   const mongoIds = new MongoIds();
   const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
-
-  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
-    describe('Assert meta order', function () {
-      const superBlocks = new Set([
-        ...Object.values(meta).map(el => el.superBlock)
-      ]);
-      superBlocks.forEach(superBlock => {
-        const filteredMeta = Object.values(meta)
-          .filter(el => el.superBlock === superBlock)
-          .sort((a, b) => a.order - b.order);
-        if (!filteredMeta.length) {
-          return;
-        }
-        it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
-          assert.isNumber(firstOrder);
-          assert.isTrue(
-            filteredMeta.every(
-              el => getSuperOrder(el.superBlock) === firstOrder
-            ),
-            'The superOrder properties are mismatched.'
-          );
-        });
-        filteredMeta.forEach((meta, index) => {
-          // Upcoming changes are in development so are not required to be in
-          // order. Chapter-based super blocks do not use the meta for order.
-          if (
-            !meta.isUpcomingChange &&
-            !chapterBasedSuperBlocks.includes(meta.superBlock)
-          ) {
-            it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-              assert.equal(meta.order, index);
-            });
-          }
-        });
-      });
-    });
-  }
 
   superBlocks.forEach(superBlock => {
     describe(`Language: ${lang}`, function () {

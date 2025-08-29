@@ -4,9 +4,7 @@
   "dashedName": "daily-coding-challenges-javascript",
   "usesMultifileEditor": true,
   "helpCategory": "JavaScript",
-  "order": 0,
   "disableLoopProtectTests": true,
-  "superBlock": "dev-playground",
   "blockLayout": "legacy-challenge-list",
   "challengeOrder": [
     {
