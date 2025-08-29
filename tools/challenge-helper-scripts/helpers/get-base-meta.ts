@@ -3,6 +3,7 @@ const baseMeta = {
   isUpcomingChange: true,
   dashedName: '',
   helpCategory: '',
+  blockLayout: 'legacy-challenge-list',
   challengeOrder: [
     {
       id: '',
