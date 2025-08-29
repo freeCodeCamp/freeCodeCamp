@@ -15,7 +15,7 @@ import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
   stepNum: number;
-  challengeType: number;
+  challengeType?: number;
   projectPath?: string;
   challengeSeeds?: Record<string, ChallengeSeed>;
   isFirstChallenge?: boolean;
