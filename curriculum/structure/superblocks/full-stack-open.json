@@ -2,22 +2,18 @@
   "chapters": [
     {
       "dashedName": "part-0",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
-          "comingSoon": true,
           "blocks": ["cat-blog-page"]
         }
       ]
     },
     {
       "dashedName": "part-1",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "basic-html",
-          "comingSoon": true,
           "blocks": ["cat-blog-page"]
         }
       ]
