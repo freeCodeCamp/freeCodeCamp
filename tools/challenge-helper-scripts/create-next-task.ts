@@ -2,11 +2,7 @@ import ObjectID from 'bson-objectid';
 import { getTemplate } from './helpers/get-challenge-template';
 import { newTaskPrompts } from './helpers/new-task-prompts';
 import { getProjectPath } from './helpers/get-project-info';
-import {
-  getMetaData,
-  updateMetaData,
-  validateMetaData
-} from './helpers/project-metadata';
+import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import {
   createChallengeFile,
   updateTaskMeta,
@@ -14,8 +10,6 @@ import {
 } from './utils';
 
 const createNextTask = async () => {
-  validateMetaData();
-
   const { challengeType } = await newTaskPrompts();
 
   // Placeholder title, to be replaced by updateTaskMarkdownFiles
@@ -40,10 +34,10 @@ const createNextTask = async () => {
     id: challengeIdString,
     title: options.title
   });
-  updateMetaData(meta);
+  await updateMetaData(meta);
   console.log(`Finished inserting task into 'meta.json' file.`);
 
-  updateTaskMeta();
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();

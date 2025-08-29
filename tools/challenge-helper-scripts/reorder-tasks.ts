@@ -1,10 +1,7 @@
-import { validateMetaData } from './helpers/project-metadata';
 import { updateTaskMeta, updateTaskMarkdownFiles } from './utils';
 
-const reorderTasks = () => {
-  validateMetaData();
-
-  updateTaskMeta();
+const reorderTasks = async () => {
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();
