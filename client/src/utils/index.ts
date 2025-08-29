@@ -6,3 +6,6 @@
 export const maybeEmailRE = /.*@.*\.\w\w/;
 export const maybeUrlRE = /https?:\/\/.*\..*/;
 export const hasProtocolRE = /^http/;
+
+// Utility functions for normalizing whitespace in element content
+export { normalizeWhitespace, getNormalizedText } from './normalize-whitespace';

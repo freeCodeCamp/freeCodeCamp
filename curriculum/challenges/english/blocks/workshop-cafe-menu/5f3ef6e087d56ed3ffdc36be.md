@@ -20,7 +20,8 @@ assert.match(code,/<p class=('|")established\1>/i);
 Your `established` class should be on the element with the text `Est. 2020`.
 
 ```js
-assert.match(document.querySelector('.established')?.innerText, /Est\.\s2020/i);
+const actual = document.querySelector('.established')?.innerText.replace(/\s+/g, ' ').trim();
+assert.match(actual, /Est\.\s2020/i);
 ```
 
 Your `established` class element should have italic text.
