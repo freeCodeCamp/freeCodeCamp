@@ -68,6 +68,7 @@ export const superBlockToFolderMap = {
   [SuperBlocks.BasicHtml]: '28-basic-html',
   [SuperBlocks.SemanticHtml]: '29-semantic-html',
   [SuperBlocks.A1Chinese]: '30-a1-professional-chinese',
+  [SuperBlocks.FullStackOpen]: 'full-stack-open',
   [SuperBlocks.DevPlayground]: '99-dev-playground'
 };
 
