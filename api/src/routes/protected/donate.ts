@@ -1,9 +1,9 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import * as schemas from '../../schemas';
-import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings';
-import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../../utils/env';
+import * as schemas from '../../schemas.js';
+import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings.js';
+import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../../utils/env.js';
 
 /**
  * Plugin for the donation endpoints requiring auth.

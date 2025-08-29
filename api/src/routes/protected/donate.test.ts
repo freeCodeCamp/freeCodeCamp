@@ -5,8 +5,8 @@ import {
   setupServer,
   defaultUserEmail,
   defaultUserId
-} from '../../../vitest.utils';
-import { createUserInput } from '../../utils/create-user';
+} from '../../../vitest.utils.js';
+import { createUserInput } from '../../utils/create-user.js';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';

@@ -7,14 +7,15 @@ import {
   beforeEach,
   vi
 } from 'vitest';
-import { Certification } from '../../../../shared/config/certification-settings';
+
+import { Certification } from '../../../../shared/config/certification-settings.js';
 import {
   defaultUserEmail,
   defaultUserId,
   devLogin,
   setupServer,
   superRequest
-} from '../../../vitest.utils';
+} from '../../../vitest.utils.js';
 
 describe('certificate routes', () => {
   setupServer();

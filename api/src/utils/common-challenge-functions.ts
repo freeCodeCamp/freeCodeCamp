@@ -1,9 +1,9 @@
 import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
-import { omit, pick } from 'lodash';
-import { challengeTypes } from '../../../shared/config/challenge-types';
-import { getChallenges } from './get-challenges';
-import { normalizeDate } from './normalize';
+import { omit, pick } from 'lodash-es';
+import { challengeTypes } from '../../../shared/config/challenge-types.js';
+import { getChallenges } from './get-challenges.js';
+import { normalizeDate } from './normalize.js';
 
 export const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',

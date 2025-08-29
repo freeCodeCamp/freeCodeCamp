@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2022",
-    "module": "CommonJS",
+    "module": "nodenext",
     "allowJs": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

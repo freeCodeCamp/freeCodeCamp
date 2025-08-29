@@ -1,6 +1,6 @@
 import type { FastifyPluginCallback } from 'fastify';
 
-import { devAuth } from '../../plugins/auth-dev';
+import { devAuth } from '../../plugins/auth-dev.js';
 
 /**
  * Route handler for development login.

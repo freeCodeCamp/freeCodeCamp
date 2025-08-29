@@ -3,8 +3,8 @@
 //! This script should be run, before any deployments with Exam schema changes.
 //! WARNING: This script queries every single record in the `Env<>` collections.
 import { PrismaClient } from '@prisma/client';
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
-import { MONGOHQ_URL } from '../../../src/utils/env';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library.js';
+import { MONGOHQ_URL } from '../../../src/utils/env.js';
 
 const prisma = new PrismaClient({
   datasources: {

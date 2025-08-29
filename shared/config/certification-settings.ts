@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '../config/curriculum.js';
 
 /**
  * Certifications are not equivalent to superblocks. Each superblock corresponds

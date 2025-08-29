@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
-import { customNanoid } from './ids';
+import { customNanoid } from './ids.js';
 
-import { JWT_SECRET } from './env';
+import { JWT_SECRET } from './env.js';
 
 /**
  * Encode an id into a JWT (the naming suggests it's a user token, but it's the

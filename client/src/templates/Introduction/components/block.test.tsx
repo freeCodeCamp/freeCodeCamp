@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { createStore } from '../../../redux/create-store';
 import {
   ChallengeFiles,
@@ -12,11 +12,14 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
+import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
 import Block from './block';
 
-jest.mock('../../../../../shared/utils/is-audited', () => ({
+jest.mock('../../../../../shared-dist/utils/is-audited', () => ({
   isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
 }));
 
