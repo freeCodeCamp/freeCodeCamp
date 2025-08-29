@@ -1,6 +1,4 @@
 import fs from 'fs';
-import { SuperBlocks } from '../../shared/config/curriculum';
-import { challengeTypes } from '../../shared/config/challenge-types';
 import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData } from './helpers/project-metadata';
 import {
@@ -44,11 +42,6 @@ async function insertStep(stepNum: number): Promise<void> {
         challengeOrder.length + 2
       }.`
     );
-  const challengeType = [SuperBlocks.SciCompPy].includes(
-    getMetaData().superBlock
-  )
-    ? challengeTypes.python
-    : challengeTypes.html;
 
   const challengeSeeds =
     stepNum > 1
@@ -59,7 +52,6 @@ async function insertStep(stepNum: number): Promise<void> {
 
   const stepId = createStepFile({
     stepNum,
-    challengeType,
     challengeSeeds
   });
 
@@ -76,14 +68,8 @@ async function createEmptySteps(num: number): Promise<void> {
   }
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
-  const challengeType = [SuperBlocks.SciCompPy].includes(
-    getMetaData().superBlock
-  )
-    ? challengeTypes.python
-    : challengeTypes.html;
-
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
-    const stepId = createStepFile({ stepNum, challengeType });
+    const stepId = createStepFile({ stepNum });
     await insertStepIntoMeta({ stepNum, stepId });
   }
   console.log(`Successfully added ${num} steps`);
