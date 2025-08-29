@@ -17,7 +17,7 @@
 }
 
 .independent-lower-jaw .btn-cta {
-  padding: 4px 10px;
+  padding: 6px 12px;
 }
 
 .independent-lower-jaw .buttons-row-container {
@@ -79,7 +79,7 @@
 .independent-lower-jaw .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.5s ease 0.5s;
+  transition: opacity 0.5s ease 1s;
 }
 
 .tooltiptext::after {
