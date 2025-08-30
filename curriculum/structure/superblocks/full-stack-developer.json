@@ -403,6 +403,7 @@
           "blocks": [
             "lecture-working-with-the-dom-click-events-and-web-apis",
             "workshop-storytelling-app",
+            "workshop-emoji-reactor",
             "lab-favorite-icon-toggler",
             "lecture-understanding-the-event-object-and-event-delegation",
             "workshop-music-instrument-filter",
