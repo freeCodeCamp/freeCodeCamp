@@ -50,6 +50,7 @@ const iconMap = {
   [SuperBlocks.PythonForEverybody]: PythonIcon,
   [SuperBlocks.BasicHtml]: Code,
   [SuperBlocks.SemanticHtml]: Code,
+  [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code
 };
 

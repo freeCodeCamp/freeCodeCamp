@@ -191,7 +191,8 @@ const superBlockNames = {
   'basic-html': 'basic-html',
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground'
+  'dev-playground': 'dev-playground',
+  'full-stack-open': 'full-stack-open'
 };
 
 /**
