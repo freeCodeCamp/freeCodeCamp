@@ -214,6 +214,7 @@ export type ChallengeNode = {
     questions: Question[];
     quizzes: Quiz[];
     assignments: string[];
+    audioIds?: string[] | null;
     required: Required[];
     scene: FullScene;
     solutions: {
@@ -228,6 +229,7 @@ export type ChallengeNode = {
     title: string;
     transcript: string;
     translationPending: boolean;
+    showSpeakingButton?: boolean;
     url: string;
     usesMultifileEditor: boolean;
     videoId: string;

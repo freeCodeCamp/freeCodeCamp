@@ -278,6 +278,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  audioIds: Joi.array().items(Joi.string()),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()
@@ -299,6 +300,7 @@ const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
+  showSpeakingButton: Joi.boolean(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),

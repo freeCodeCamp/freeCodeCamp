@@ -70,11 +70,11 @@ interface ShowQuizProps {
 }
 
 const ShowGeneric = ({
-  challengeMounted,
   data: {
     challengeNode: {
       challenge: {
         assignments,
+        audioIds,
         bilibiliIds,
         block,
         blockType,
@@ -91,7 +91,8 @@ const ShowGeneric = ({
         scene,
         superBlock,
         videoId,
-        videoLocaleIds
+        videoLocaleIds,
+        showSpeakingButton
       }
     }
   },
@@ -277,6 +278,11 @@ const ShowGeneric = ({
                     handleOptionChange={handleMcqOptionChange}
                     submittedMcqAnswers={submittedMcqAnswers}
                     showFeedback={showFeedback}
+                    showSpeakingButton={showSpeakingButton}
+                    challengeData={{
+                      challengeId: challengeMeta.id,
+                      audioIds: showSpeakingButton ? audioIds : undefined
+                    }}
                   />
                 </ObserveKeys>
               )}
@@ -351,6 +357,7 @@ export const query = graphql`
           }
           solution
         }
+        audioIds
         scene {
           setup {
             background
@@ -394,6 +401,7 @@ export const query = graphql`
         translationPending
         videoId
         videoId
+        showSpeakingButton
         videoLocaleIds {
           espanol
           italian

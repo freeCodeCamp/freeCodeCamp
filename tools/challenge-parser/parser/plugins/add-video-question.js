@@ -59,10 +59,28 @@ function getAnswers(answersNodes) {
   return answerGroups.map(answerGroup => {
     const answerTree = root(answerGroup);
     const feedback = find(answerTree, { value: '--feedback--' });
+    const audioId = find(answerTree, { value: '--audioid--' });
 
-    if (feedback) {
-      const answerNodes = getAllBefore(answerTree, '--feedback--');
-      const feedbackNodes = getSection(answerTree, '--feedback--');
+    if (feedback || audioId) {
+      let answerNodes;
+
+      // Get answer content before the first marker (feedback or audioid)
+      if (feedback && audioId) {
+        // If both exist, get content before whichever comes first
+        const feedbackIndex = answerTree.children.indexOf(feedback);
+        const audioIdIndex = answerTree.children.indexOf(audioId);
+        const firstMarker =
+          feedbackIndex < audioIdIndex ? '--feedback--' : '--audioid--';
+        answerNodes = getAllBefore(answerTree, firstMarker);
+      } else if (feedback) {
+        answerNodes = getAllBefore(answerTree, '--feedback--');
+      } else {
+        answerNodes = getAllBefore(answerTree, '--audioid--');
+      }
+
+      const feedbackNodes = feedback
+        ? getSection(answerTree, '--feedback--')
+        : [];
 
       if (answerNodes.length < 1) {
         throw Error('Answer missing');
@@ -70,7 +88,7 @@ function getAnswers(answersNodes) {
 
       return {
         answer: mdastToHtml(answerNodes),
-        feedback: mdastToHtml(feedbackNodes)
+        feedback: feedbackNodes.length > 0 ? mdastToHtml(feedbackNodes) : null
       };
     }
 
