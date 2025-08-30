@@ -5,18 +5,18 @@ import { API_LOCATION } from '../../utils/handle-request';
 import './block.css';
 
 const stepBasedSuperblocks = [
-  '07-scientific-computing-with-python',
-  '14-responsive-web-design-22',
-  '15-javascript-algorithms-and-data-structures-22',
-  '25-front-end-development'
+  'scientific-computing-with-python',
+  'responsive-web-design-22',
+  'javascript-algorithms-and-data-structures-22',
+  'front-end-development'
 ];
 
 const taskBasedSuperblocks = [
-  '21-a2-english-for-developers',
-  '24-b1-english-for-developers',
-  '26-a2-professional-spanish',
-  '27-a2-professional-chinese',
-  '30-a1-professional-chinese'
+  'a2-english-for-developers',
+  'b1-english-for-developers',
+  'a2-professional-spanish',
+  'a2-professional-chinese',
+  'a1-professional-chinese'
 ];
 
 const Block = () => {
@@ -95,7 +95,7 @@ const Block = () => {
             Looking to add or remove challenges? Navigate to <br />
             <code>
               freeCodeCamp/curriculum/challenges/english
-              {`/${params.superblock}/${params.block}/`}
+              {`/${params.block}/`}
             </code>
             <br />
             in your terminal and run the following commands:
