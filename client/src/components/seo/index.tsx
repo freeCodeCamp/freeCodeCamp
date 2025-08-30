@@ -87,7 +87,7 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
         '@type': 'Course',
         url: `${siteUrl}/learn/${superBlock}`,
         name: i18nTitle,
-        description: introText.at(0),
+        description: introText?.at(0) || '',
         provider: {
           '@type': 'Organization',
           name: 'freeCodeCamp',
