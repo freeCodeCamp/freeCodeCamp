@@ -12,7 +12,7 @@ function GreenPass(props: GreenPassProps): JSX.Element {
   return (
     <svg
       {...(hushScreenReaderText && { 'aria-hidden': true })}
-      {...(!hushScreenReaderText && { 'aria-label': t('icons.passed') })}
+      {...(!hushScreenReaderText && { 'aria-label': t($ => $.icons.passed) })}
       height='15'
       viewBox='0 0 200 200'
       width='15'
@@ -20,7 +20,7 @@ function GreenPass(props: GreenPassProps): JSX.Element {
       {...rest}
     >
       <g aria-hidden='true'>
-        <title>{t('icons.passed')}</title>
+        <title>{t($ => $.icons.passed)}</title>
         <circle
           cx='100'
           cy='99'

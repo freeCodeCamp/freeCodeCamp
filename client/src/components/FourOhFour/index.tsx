@@ -16,20 +16,22 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
 
   return (
     <div className='notfound-page-wrapper'>
-      <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
+      <Helmet
+        title={t($ => $[404]['page-not-found']) + ' | freeCodeCamp.org'}
+      />
       <img
-        alt={t('404.not-found')}
+        alt={t($ => $[404]['not-found'])}
         src={notFoundLogo}
         data-playwright-test-label='not-found-image'
       />
       <Spacer size='m' />
       <h1 id='content-start' data-playwright-test-label='not-found-heading'>
-        {t('404.page-not-found')}.
+        {t($ => $[404]['page-not-found'])}.
       </h1>
       <Spacer size='m' />
       <div>
         <p data-playwright-test-label='heres-quote-paragraph'>
-          {t('404.heres-a-quote')}
+          {t($ => $[404]['heres-a-quote'])}
         </p>
         <Spacer size='m' />
         <blockquote
@@ -50,7 +52,7 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
         to='/learn'
         data-playwright-test-label='view-curriculum-btn'
       >
-        {t('buttons.view-curriculum')}
+        {t($ => $.buttons['view-curriculum'])}
       </Link>
     </div>
   );

@@ -119,15 +119,16 @@ const Chapter = ({
             className='map-icon'
             chapter={dashedName as FsdChapters}
           />
-          {t(`intro:${superBlock}.chapters.${dashedName}`)}
+          {/* TODO: convert to selector #61969 */}
+          {t(`intro:${superBlock}.chapters.${dashedName}` as never)}
         </div>
         <div className='chapter-button-right'>
           {!comingSoon && (
             <>
               <span className='chapter-steps'>
-                {t('learn.steps-completed', {
-                  totalSteps,
-                  completedSteps
+                {t($ => $.learn['steps-completed'], {
+                  totalSteps: totalSteps,
+                  completedSteps: completedSteps
                 })}
               </span>
               <span className='checkmark-wrap chapter-checkmark-wrap'>
@@ -165,13 +166,14 @@ const Module = ({
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
-          {t(`intro:${superBlock}.modules.${dashedName}`)}
+          {/* TODO: convert to selector #61969 */}
+          {t(`intro:${superBlock}.modules.${dashedName}` as never)}
         </div>
         <div className='module-button-right'>
           <span className='module-steps'>
-            {t('learn.steps-completed', {
-              totalSteps,
-              completedSteps
+            {t($ => $.learn['steps-completed'], {
+              totalSteps: totalSteps,
+              completedSteps: completedSteps
             })}
           </span>
           <span className='checkmark-wrap'>
@@ -275,10 +277,12 @@ export const SuperBlockAccordion = ({
                   return null;
                 }
 
-                const { note, intro } = t(
-                  `intro:${superBlock}.module-intros.${module.name}`,
+                // TODO: convert to selector #61969
+                const translation = t(
+                  `intro:${superBlock}.module-intros.${module.name}` as never,
                   { returnObjects: true }
-                ) as {
+                );
+                const { note, intro } = translation as never as {
                   note: string;
                   intro: string[];
                 };
@@ -294,7 +298,10 @@ export const SuperBlockAccordion = ({
                         <span className='dropdown-wrap'>
                           <DropDown />
                         </span>
-                        {t(`intro:${superBlock}.modules.${module.name}`)}
+                        {/* TODO: convert to selector #61969 */}
+                        {t(
+                          `intro:${superBlock}.modules.${module.name}` as never
+                        )}
                       </div>
                     </Disclosure.Button>
                     <Disclosure.Panel as='ul' className='module-panel'>

@@ -29,10 +29,10 @@ class UserToken extends Component<UserTokenProps> {
     return (
       <FullWidthRow>
         <Panel variant='info' className='text-center'>
-          <Panel.Heading>{t('user-token.title')}</Panel.Heading>
+          <Panel.Heading>{t($ => $['user-token'].title)}</Panel.Heading>
           <Spacer size='m' />
           <Panel.Body>
-            <p>{t('user-token.delete-p1')}</p>
+            <p>{t($ => $['user-token']['delete-p1'])}</p>
             <FullWidthRow>
               <Spacer size='xs' />
               <Button
@@ -42,7 +42,7 @@ class UserToken extends Component<UserTokenProps> {
                 onClick={this.deleteToken}
                 type='button'
               >
-                {t('user-token.delete')}
+                {t($ => $['user-token'].delete)}
               </Button>
               <Spacer size='m' />
             </FullWidthRow>

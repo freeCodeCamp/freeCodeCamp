@@ -18,13 +18,13 @@ function StagingWarningModal(): JSX.Element {
     <Modal onClose={handleModalHide} open={show} size='large'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
         <span style={{ fontWeight: 'bold' }}>
-          {t('staging-warning.heading')}
+          {t($ => $['staging-warning'].heading)}
         </span>
       </Modal.Header>
       <Modal.Body>
-        <p className='text-justify'>{t('staging-warning.p1')}</p>
-        <p className='text-justify'>{t('staging-warning.p2')}</p>
-        <p className='text-justify'>{t('staging-warning.p3')}</p>
+        <p className='text-justify'>{t($ => $['staging-warning'].p1)}</p>
+        <p className='text-justify'>{t($ => $['staging-warning'].p2)}</p>
+        <p className='text-justify'>{t($ => $['staging-warning'].p3)}</p>
         <hr />
         <Button
           block={true}
@@ -32,7 +32,7 @@ function StagingWarningModal(): JSX.Element {
           data-testid='accepts-warning'
           onClick={handleClick}
         >
-          {t('staging-warning.certain')}
+          {t($ => $['staging-warning'].certain)}
         </Button>
         <Spacer size='xs' />
       </Modal.Body>

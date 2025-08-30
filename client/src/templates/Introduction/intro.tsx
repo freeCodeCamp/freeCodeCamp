@@ -29,8 +29,10 @@ function IntroductionPage({
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
+  // TODO: convert to selector #61969
   const blockTitle =
-    t(`intro:${superBlock}.blocks.${block}.title`) + ' | freeCodeCamp.org';
+    t(`intro:${superBlock}.blocks.${block}.title` as never) +
+    ' | freeCodeCamp.org';
   return (
     <LearnLayout>
       <Helmet>
@@ -45,11 +47,11 @@ function IntroductionPage({
         </FullWidthRow>
         <FullWidthRow>
           <ButtonLink block size='large' href={firstLessonPath || '/learn'}>
-            {t('buttons.first-lesson')}
+            {t($ => $.buttons['first-lesson'])}
           </ButtonLink>
           <Spacer size='xs' />
           <ButtonLink block size='large' href='/learn'>
-            {t('buttons.view-curriculum')}
+            {t($ => $.buttons['view-curriculum'])}
           </ButtonLink>
           <Spacer size='xs' />
           <hr />

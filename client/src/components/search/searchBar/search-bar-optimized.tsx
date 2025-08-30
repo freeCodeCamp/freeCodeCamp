@@ -11,11 +11,12 @@ const SearchBarOptimized = ({
 }): JSX.Element => {
   const { t } = useTranslation();
   // TODO: Refactor this fallback when all translation files are synced
-  const searchPlaceholder = t('search-bar:placeholder').startsWith(
-    'search.placeholder.'
-  )
-    ? t('search.placeholder')
-    : t('search-bar:placeholder');
+  const searchPlaceholder = t($ => $.placeholder, {
+    ns: 'search-bar'
+  }).startsWith('search.placeholder.')
+    ? // TODO: convert to selector #61969
+      t('search.placeholder' as never)
+    : t($ => $.placeholder, { ns: 'search-bar' });
   const searchUrl = searchPageUrl;
   const [value, setValue] = useState('');
   const inputElementRef = useRef<HTMLInputElement>(null);
@@ -46,7 +47,7 @@ const SearchBarOptimized = ({
             role='search'
           >
             <label className='sr-only' htmlFor='ais-SearchBox-input'>
-              {t('search.label')}
+              {t($ => $.search.label)}
             </label>
             <input
               autoCapitalize='off'

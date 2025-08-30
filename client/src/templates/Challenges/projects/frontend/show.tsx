@@ -131,15 +131,16 @@ const ShowFrontEndProject = (props: ProjectProps) => {
     updateSolutionFormValues
   } = props;
 
+  // TODO: convert to selector #61969
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `intro:${superBlock}.blocks.${block}.title` as never
   )} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
       <LearnLayout>
         <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          title={`${blockNameTitle} | ${t($ => $.learn.learn)} | freeCodeCamp.org`}
         />
         <Container>
           <Row>

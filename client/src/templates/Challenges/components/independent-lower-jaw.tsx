@@ -59,7 +59,9 @@ export function IndependentLowerJaw({
   }, [hint]);
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
-  const checkButtonText = isMacOS ? t('command-enter') : t('ctrl-enter');
+  const checkButtonText = isMacOS
+    ? t($ => $.buttons['command-enter'])
+    : t($ => $.buttons['ctrl-enter']);
 
   return (
     <div className='independent-lower-jaw' tabIndex={-1}>
@@ -67,14 +69,14 @@ export function IndependentLowerJaw({
         <div className='hint-container'>
           <div dangerouslySetInnerHTML={{ __html: hint }} />
           <button className={'tooltip'} onClick={() => setShowHint(false)}>
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
+            ×<span className='tooltiptext'> {t($ => $.buttons.close)}</span>
           </button>
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
         <div className='hint-container'>
           <div>
-            <p>{t('learn.congratulations-code-passes')}</p>
+            <p>{t($ => $.learn['congratulations-code-passes'])}</p>
             {!isSignedIn && (
               <a
                 href={`${apiLocation}/signin`}
@@ -85,7 +87,7 @@ export function IndependentLowerJaw({
                   });
                 }}
               >
-                {t('learn.sign-in-save')}
+                {t($ => $.learn['sign-in-save'])}
               </a>
             )}
           </div>
@@ -93,11 +95,10 @@ export function IndependentLowerJaw({
             className={'tooltip'}
             onClick={() => setShowSubmissionHint(false)}
           >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
+            ×<span className='tooltiptext'> {t($ => $.buttons.close)}</span>
           </button>
         </div>
       )}
-
       <div className='buttons-row-container'>
         <div className='action-row-left'>
           {isChallengeComplete ? (
@@ -106,7 +107,7 @@ export function IndependentLowerJaw({
               className={`${isSignedIn && 'btn-cta'} tooltip`}
               onClick={() => submitChallenge()}
             >
-              {t('buttons.submit-continue')}
+              {t($ => $.buttons['submit-continue'])}
               <span className='tooltiptext left-tooltip '>
                 {checkButtonText}
               </span>
@@ -117,7 +118,7 @@ export function IndependentLowerJaw({
               className='btn-cta tooltip'
               onClick={() => executeChallenge()}
             >
-              {t('buttons.check-code')}
+              {t($ => $.buttons['check-code'])}
               <span className='tooltiptext left-tooltip '>
                 {checkButtonText}
               </span>
@@ -131,7 +132,7 @@ export function IndependentLowerJaw({
             onClick={openResetModal}
           >
             <Reset />
-            <span className='tooltiptext'> {t('buttons.reset')}</span>
+            <span className='tooltiptext'> {t($ => $.buttons.reset)}</span>
           </button>
           <button
             type='button'
@@ -139,7 +140,7 @@ export function IndependentLowerJaw({
             onClick={openHelpModal}
           >
             <Help />
-            <span className='tooltiptext'> {t('buttons.help')}</span>
+            <span className='tooltiptext'> {t($ => $.buttons.help)}</span>
           </button>
         </div>
       </div>

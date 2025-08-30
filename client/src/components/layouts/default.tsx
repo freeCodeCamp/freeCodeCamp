@@ -197,9 +197,17 @@ function DefaultLayout({
           meta={[
             {
               name: 'description',
-              content: t('metaTags:description')
+              content: t($ => $.description, {
+                ns: 'metaTags'
+              })
             },
-            { name: 'keywords', content: t('metaTags:keywords') }
+            // TODO: fix this type assertion
+            {
+              name: 'keywords',
+              content: t($ => $.keywords as never, {
+                ns: 'metaTags'
+              })
+            }
           ]}
         >
           <link
@@ -278,7 +286,7 @@ function DefaultLayout({
             fetchState={fetchState}
             user={user}
             pathname={pathname}
-            skipButtonText={t('learn.skip-to-content')}
+            skipButtonText={t($ => $.learn['skip-to-content'])}
           />
           <OfflineWarning
             isOnline={isOnline}

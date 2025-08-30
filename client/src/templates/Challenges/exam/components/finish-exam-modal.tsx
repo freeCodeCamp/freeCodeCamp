@@ -44,10 +44,10 @@ function FinishExamModal({
   return (
     <Modal onClose={closeFinishExamModal} open={isFinishExamModalOpen}>
       <Modal.Header closeButtonClassNames='close'>
-        {t('learn.exam.finish-header')}
+        {t($ => $.learn.exam['finish-header'])}
       </Modal.Header>
       <Modal.Body>
-        <div className='text-center'>{t('learn.exam.finish')}</div>
+        <div className='text-center'>{t($ => $.learn.exam.finish)}</div>
       </Modal.Body>
       <Modal.Footer>
         <Button
@@ -56,7 +56,7 @@ function FinishExamModal({
           variant='primary'
           onClick={finishExam}
         >
-          {t('learn.exam.finish-yes')}
+          {t($ => $.learn.exam['finish-yes'])}
         </Button>
         <Spacer size='xxs' />
         <Button
@@ -65,7 +65,7 @@ function FinishExamModal({
           variant='primary'
           onClick={closeFinishExamModal}
         >
-          {t('learn.exam.finish-no')}
+          {t($ => $.learn.exam['finish-no'])}
         </Button>
       </Modal.Footer>
     </Modal>

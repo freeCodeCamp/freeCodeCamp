@@ -93,7 +93,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
     return (
       <FullWidthRow>
         <section className='card'>
-          <h2>{t('profile.activity')}</h2>
+          <h2>{t($ => $.profile.activity)}</h2>
           <Spacer size='m' />
 
           <CalendarHeatMap
@@ -124,10 +124,15 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
                 return { 'data-tip': '' };
               }
               return {
-                'data-tip': t('profile.points', {
-                  count: value.count,
-                  date: dateFormatted
-                })
+                'data-tip': t(
+                  $ =>
+                    value.count === 1
+                      ? $.profile.points_one
+                      : $.profile.points_other,
+                  {
+                    date: dateFormatted
+                  }
+                )
               };
             }}
             values={dataToDisplay}
@@ -143,7 +148,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
               }}
-              aria-label={t('aria.previous-page')}
+              aria-label={t($ => $.aria['previous-page'])}
             >
               &lt;
             </button>
@@ -156,7 +161,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
               style={{
                 visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
               }}
-              aria-label={t('aria.next-page')}
+              aria-label={t($ => $.aria['next-page'])}
             >
               &gt;
             </button>

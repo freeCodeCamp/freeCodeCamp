@@ -20,8 +20,8 @@ export function CodeAllyButton({
 
   const text =
     challengeType === challengeTypes.codeAllyCert
-      ? t('buttons.click-start-project')
-      : t('buttons.click-start-course');
+      ? t($ => $.buttons['click-start-project'])
+      : t($ => $.buttons['click-start-course']);
 
   return (
     <Button
@@ -30,8 +30,8 @@ export function CodeAllyButton({
       variant='primary'
       block={true}
     >
-      <span className='sr-only'>, {t('aria.opens-new-window')}</span>
-      {text}&nbsp;&nbsp;
+      <span className='sr-only'>, {t($ => $.aria['opens-new-window'])}</span>
+      {text}
       <FontAwesomeIcon icon={faExternalLinkAlt} />
     </Button>
   );

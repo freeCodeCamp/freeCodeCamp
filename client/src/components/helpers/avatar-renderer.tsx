@@ -42,7 +42,7 @@ function AvatarRenderer({
 
   return (
     <div className={`avatar-container ${borderColor}`}>
-      <span className='sr-only'>{t('buttons.profile')}</span>
+      <span className='sr-only'>{t($ => $.buttons.profile)}</span>
       {isPlaceHolderImage ? (
         <DefaultAvatar className='avatar' />
       ) : (

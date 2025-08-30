@@ -58,7 +58,7 @@ export function SidePanel({
         {challengeTitle}
         {hasDemo && (
           <p>
-            <Trans i18nKey='learn.example-app'>
+            <Trans i18nKey={$ => $.learn['example-app']}>
               <span
                 className='example-app-link'
                 onClick={() => openModal('projectPreview')}

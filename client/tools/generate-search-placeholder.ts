@@ -61,7 +61,7 @@ export const generateSearchPlaceholder = async (
   options: GenerateSearchPlaceholderOptions = {}
 ) => {
   const { locale, mockRecordsNum } = options;
-  let placeholderText = t('search.placeholder.default');
+  let placeholderText = t($ => $.search.placeholder.default);
 
   try {
     let totalRecords = mockRecordsNum || 0;
@@ -74,7 +74,7 @@ export const generateSearchPlaceholder = async (
     const roundedTotalRecords = roundDownToNearestHundred(totalRecords);
 
     if (roundedTotalRecords >= 100) {
-      placeholderText = i18n.t('search.placeholder.numbered', {
+      placeholderText = i18n.t($ => $.search.placeholder.numbered, {
         roundedTotalRecords: convertToLocalizedString(
           roundedTotalRecords,
           i18nextCode

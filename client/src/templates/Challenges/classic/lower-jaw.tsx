@@ -71,12 +71,12 @@ const mapStateToProps = createSelector(
 );
 
 const sentenceArray = [
-  'learn.sorry-try-again',
-  'learn.sorry-keep-trying',
-  'learn.sorry-getting-there',
-  'learn.sorry-hang-in-there',
-  'learn.sorry-dont-giveup'
-];
+  'sorry-try-again',
+  'sorry-keep-trying',
+  'sorry-getting-there',
+  'sorry-hang-in-there',
+  'sorry-dont-giveup'
+] as const;
 
 const sentencePicker = (shownAttempts: number) => {
   return sentenceArray[shownAttempts % sentenceArray.length];
@@ -299,15 +299,15 @@ const LowerJaw = ({
 
   const checkButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.check-code-cmd')
-      : t('buttons.check-code-ctrl')
-    : t('buttons.check-code');
+      ? t($ => $.buttons['check-code-cmd'])
+      : t($ => $.buttons['check-code-ctrl'])
+    : t($ => $.buttons['check-code']);
 
   const submitButtonText = isDesktop
     ? isMacOS
-      ? t('buttons.submit-and-go-cmd')
-      : t('buttons.submit-and-go-ctrl')
-    : t('buttons.submit-and-go');
+      ? t($ => $.buttons['submit-and-go-cmd'])
+      : t($ => $.buttons['submit-and-go-ctrl'])
+    : t($ => $.buttons['submit-and-go']);
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
 
@@ -324,7 +324,7 @@ const LowerJaw = ({
               });
             }}
           >
-            {t('learn.sign-in-save')}
+            {t($ => $.learn['sign-in-save'])}
           </a>
           <Spacer size='xxs' />
         </>
@@ -364,22 +364,24 @@ const LowerJaw = ({
         ref={testFeedbackRef}
       >
         {runningTests && (
-          <span className='sr-only'>{t('aria.running-tests')}</span>
+          <span className='sr-only'>{t($ => $.aria['running-tests'])}</span>
         )}
         {challengeIsCompleted && (
           <>
             <LowerJawStatus
-              testText={t('learn.test')}
+              testText={t($ => $.learn.test)}
               showFeedback={isFeedbackHidden}
-              text={t('learn.congratulations')}
+              text={t($ => $.learn.congratulations)}
             >
               {!isCheckYourCodeButtonClicked() && (
-                <span className='sr-only'>, {t('aria.submit')}</span>
+                <span className='sr-only'>, {t($ => $.aria.submit)}</span>
               )}
             </LowerJawStatus>
             <LowerJawQuote quote={quote} />
             <span className='sr-only'>
-              {t('learn.percent-complete', { percent: completedPercent })}
+              {t($ => $.learn['percent-complete'], {
+                percent: completedPercent
+              })}
             </span>
           </>
         )}
@@ -387,9 +389,11 @@ const LowerJaw = ({
           <LowerJawTips
             data-testid='lowerJaw-tips'
             showFeedback={isFeedbackHidden}
-            testText={t('learn.test')}
+            testText={t($ => $.learn.test)}
             htmlDescription={shownHint ?? ''}
-            learnEncouragementText={t(sentencePicker(shownAttempts))}
+            learnEncouragementText={t(
+              $ => $.learn[sentencePicker(shownAttempts)]
+            )}
           />
         )}
       </div>
@@ -402,8 +406,8 @@ const LowerJaw = ({
         </>
       )}
       <LowerButtonsPanel
-        resetButtonText={t('buttons.reset')}
-        helpButtonText={t('buttons.help')}
+        resetButtonText={t($ => $.buttons.reset)}
+        helpButtonText={t($ => $.buttons.help)}
         resetButtonEvent={openResetModal}
         hideHelpButton={Boolean(
           isAttemptsLargerThanTest && !challengeIsCompleted
