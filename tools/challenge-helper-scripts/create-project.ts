@@ -4,7 +4,7 @@ import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
-import fullStackData from '../../curriculum/superblock-structure/full-stack.json';
+import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
 import {
   SuperBlocks,
   superBlockToFolderMap
