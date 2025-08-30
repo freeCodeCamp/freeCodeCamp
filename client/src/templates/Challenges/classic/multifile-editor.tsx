@@ -17,6 +17,7 @@ export type VisibleEditors = {
   stylescss?: boolean;
   scriptjs?: boolean;
   indexts?: boolean;
+  indextsx?: boolean;
   mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
@@ -70,6 +71,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       scriptjs,
       indexts,
       indexjsx,
+      indextsx,
       mainpy
     },
     usesMultifileEditor,
@@ -99,6 +101,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
+  if (indextsx) editorKeys.push('indextsx');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {

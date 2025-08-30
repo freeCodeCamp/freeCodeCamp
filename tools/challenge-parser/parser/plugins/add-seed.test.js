@@ -194,7 +194,7 @@ describe('add-seed plugin', () => {
     expect.assertions(1);
     expect(() => plugin(cCodeAST, file)).toThrow(
       "On line 30 'c' is not a supported language.\n" +
-        ' Please use one of js, css, html, jsx or py'
+        ' Please use one of js, css, html, jsx, ts, tsx or py'
     );
   });
 
