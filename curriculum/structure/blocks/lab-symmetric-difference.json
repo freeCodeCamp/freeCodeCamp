@@ -1,0 +1,15 @@
+{
+  "name": "Build a Symmetric Difference Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-symmetric-difference",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "68ad9821ee41baad9cb0fd4e",
+      "title": "Build a Symmetric Difference Function"
+    }
+  ],
+  "blockLayout": "link",
+  "blockType": "lab"
+}
