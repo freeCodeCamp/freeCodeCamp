@@ -31,9 +31,9 @@ function getProjectMetaPath(): string {
   return path.join(
     getProjectPath(),
     '../../..',
-    '_meta',
-    getProjectName(),
-    'meta.json'
+    'structure',
+    'blocks',
+    getProjectName() + '.json'
   );
 }
 
@@ -66,7 +66,7 @@ If there is no file for this id, then either the challengeOrder needs to be upda
     const id = path.basename(file, '.md');
     if (!challengeOrder.find(({ id: stepId }) => stepId === id))
       throw new Error(
-        `File ${file} should be in the meta.json's challengeOrder`
+        `File ${file} should be in the ${getProjectPath()}.json's challengeOrder`
       );
   });
 }

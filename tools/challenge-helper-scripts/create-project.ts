@@ -5,10 +5,7 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
-import {
-  SuperBlocks,
-  superBlockToFolderMap
-} from '../../shared/config/curriculum';
+import { SuperBlocks } from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
@@ -68,7 +65,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
       );
     }
     const challengeId = await createQuizChallenge(
-      projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
       projectArgs.questionCount
@@ -144,12 +140,12 @@ async function updateFullStackJson(
   ].findIndex(module => module.dashedName === moduleName);
   fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
     'blocks'
-  ].splice(position - 1, 0, { dashedName: block });
+  ].splice(position - 1, 0, block);
   // Insert the new block into the already present module
   // Write the new changes to the file
   const newData = JSON.stringify(fullStackData, null, 2);
   await fs.writeFile(
-    '../../curriculum/superblock-structure/full-stack.json',
+    '../../curriculum/structure/superblocks/full-stack-developer.json',
     newData
   );
 }
@@ -185,7 +181,7 @@ async function createMetaJson(
   blockType?: string,
   blockLayout?: string
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
+  const metaDir = path.resolve(__dirname, '../../curriculum/structure/blocks');
   let newMeta;
   if (superBlock !== SuperBlocks.FullStackDeveloper) {
     newMeta = getBaseMeta('Step');
@@ -208,7 +204,7 @@ async function createMetaJson(
 
   void withTrace(
     fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
+    path.resolve(metaDir, `${block}.json`),
     await format(JSON.stringify(newMeta), { parser: 'json' })
   );
 }
@@ -217,10 +213,9 @@ async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
+    `../../curriculum/challenges/english/${block}`
   );
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
@@ -246,15 +241,13 @@ async function createFirstChallenge(
 }
 
 async function createQuizChallenge(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
   const newChallengeDir = path.resolve(
     __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
+    `../../curriculum/challenges/english/${block}`
   );
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
