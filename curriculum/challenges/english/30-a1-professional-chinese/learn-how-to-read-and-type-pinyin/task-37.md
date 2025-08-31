@@ -1,0 +1,27 @@
+---
+id: 68a868d52bf40d01746ce957
+title: Task 37
+challengeType: 24
+dashedName: task-37
+---
+
+<!--SPEAKING-->
+
+<!-- (Audio) A: g, ga, ge, gu -->
+
+# --description--
+
+The initial `g` is pronounced with the back of the tongue against the soft palate. Unlike `k`, `g` is unaspirated. When you release it, there is no puff of air.
+
+To practice, try saying `g` and you should feel almost no air hit your hand if you hold it in front of your mouth. Then, try the same with `k` and you should feel a strong puff of air. 
+
+When `g` combines with the finals `a`, `e`, and `u`, you get the syllables: `ga`, `ge`, and `gu`.
+
+[ ] pronouncing `g`  
+[ ] pronouncing `ga`  
+[ ] pronouncing `ge`  
+[ ] pronouncing `gu`
+
+# --assignment--
+
+Listen to the audio and pronounce the initial and syllables.
