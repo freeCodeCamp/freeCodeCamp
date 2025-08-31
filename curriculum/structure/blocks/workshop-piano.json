@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-piano",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "612e78af05201622d4bab8aa",

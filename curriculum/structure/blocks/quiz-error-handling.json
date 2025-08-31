@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-error-handling",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "67f412eaf6e68343aab8ea81", "title": "Error Handling Quiz" }
   ],

@@ -6,7 +6,6 @@
   "dashedName": "workshop-medical-data-validator",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "683ecb010f4c6bafd428802c",

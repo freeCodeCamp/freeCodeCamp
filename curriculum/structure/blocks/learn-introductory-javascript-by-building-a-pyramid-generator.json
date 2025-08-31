@@ -4,8 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-introductory-javascript-by-building-a-pyramid-generator",
-  "order": 0,
-  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "6672e579cc11472272ab23e6",

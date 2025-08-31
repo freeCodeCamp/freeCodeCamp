@@ -2,7 +2,6 @@
   "name": "Build an Adjacency List to Matrix Converter",
   "isUpcomingChange": true,
   "dashedName": "lab-adjacency-list-to-matrix-converter",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Python",
   "challengeOrder": [
     {

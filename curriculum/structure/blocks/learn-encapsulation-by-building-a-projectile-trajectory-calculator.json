@@ -4,8 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-encapsulation-by-building-a-projectile-trajectory-calculator",
-  "order": 17,
-  "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
       "id": "65f569725359e10d345bc52a",

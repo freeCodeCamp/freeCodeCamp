@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "rosetta-code-challenges",
   "helpCategory": "Rosetta",
-  "order": 0,
-  "superBlock": "rosetta-code",
   "disableLoopProtectTests": true,
   "challengeOrder": [
     {
