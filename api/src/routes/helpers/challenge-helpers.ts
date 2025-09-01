@@ -140,3 +140,16 @@ export async function verifyTrophyWithMicrosoft({
     } as NoTrophyError;
   }
 }
+
+/**
+ * Generic helper to decode an array of base64 encoded file objects.
+ *
+ * @param files Array of file-like objects each having a base64 encoded `contents` string.
+ * @returns The same array shape with `contents` decoded.
+ */
+export function decodeFiles<T extends { contents: string }>(files: T[]): T[] {
+  return files.map(file => ({
+    ...file,
+    contents: atob(file.contents)
+  }));
+}

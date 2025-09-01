@@ -308,7 +308,7 @@ export function postSaveChallenge(body: {
   id: string;
   files: ChallengeFiles;
 }): Promise<ResponseWithData<void>> {
-  return post('/save-challenge', body);
+  return post('/encoded/save-challenge', body);
 }
 
 export function postSubmitSurvey(body: {

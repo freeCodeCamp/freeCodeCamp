@@ -7,7 +7,8 @@ import type {
 import { createFetchMock } from '../../../vitest.utils';
 import {
   canSubmitCodeRoadCertProject,
-  verifyTrophyWithMicrosoft
+  verifyTrophyWithMicrosoft,
+  decodeFiles
 } from './challenge-helpers';
 
 const id = 'abc';
@@ -164,6 +165,54 @@ describe('Challenge Helpers', () => {
         type: 'success',
         msUserAchievementsApiUrl: achievementsUrl
       });
+    });
+  });
+
+  describe('decodeFiles', () => {
+    test('decodes base64 encoded file contents', () => {
+      const encodedFiles = [
+        {
+          contents: btoa('console.log("Hello, world!");')
+        },
+        {
+          contents: btoa('<h1>Hello, world!</h1>')
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, world!");'
+        },
+        {
+          contents: '<h1>Hello, world!</h1>'
+        }
+      ]);
+    });
+
+    test('leaves all other file properties unchanged', () => {
+      const encodedFiles = [
+        {
+          contents: btoa('console.log("Hello, world!");'),
+          ext: '.js',
+          history: [],
+          key: 'file1',
+          name: 'hello.js'
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, world!");',
+          ext: '.js',
+          history: [],
+          key: 'file1',
+          name: 'hello.js'
+        }
+      ]);
     });
   });
 });

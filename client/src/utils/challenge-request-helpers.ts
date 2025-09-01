@@ -36,7 +36,7 @@ export function standardizeRequestBody({
     id,
     files: challengeFiles?.map(({ fileKey, contents, ext, name, history }) => {
       return {
-        contents,
+        contents: btoa(contents),
         ext,
         history, // TODO(Post-MVP): stop sending history, if possible. The client
         // already gets it from the curriculum, so it should not be necessary to
