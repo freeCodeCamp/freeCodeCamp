@@ -27,12 +27,20 @@ interface Body {
   challengeType: number;
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Window/btoa#unicode_strings
+function bytesToBase64(bytes: Uint8Array) {
+  const binString = Array.from(bytes, byte => String.fromCodePoint(byte)).join(
+    ''
+  );
+  return btoa(binString);
+}
+
 export function standardizeRequestBody({
   id,
   challengeFiles = [],
   challengeType
-}: StandardizeRequestBodyArgs): Body {
-  return {
+}: StandardizeRequestBodyArgs): string {
+  const body: Body = {
     id,
     files: challengeFiles?.map(({ fileKey, contents, ext, name, history }) => {
       return {
@@ -47,6 +55,8 @@ export function standardizeRequestBody({
     }),
     challengeType
   };
+
+  return bytesToBase64(new TextEncoder().encode(JSON.stringify(body)));
 }
 
 export function getStringSizeInBytes(str = ''): number {
