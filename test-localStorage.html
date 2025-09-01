@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage Test - freeCodeCamp</title>
+</head>
+<body>
+    <h1>localStorage Browser Test</h1>
+    <p>Open DevTools to see localStorage behavior</p>
+    
+    <div>
+        <h3>Browser Notes:</h3>
+        <p><strong>Firefox:</strong> Look for either "Storage" or "Memory" tab in DevTools</p>
+        <p><strong>Edge:</strong> Uses "Application" tab like Chrome</p>
+        <p><strong>Safari:</strong> Uses "Storage" tab</p>
+    </div>
+    
+    <button onclick="saveWithoutStringify()">Save WITHOUT JSON.stringify (shows [object Object])</button>
+    <button onclick="saveWithStringify()">Save WITH JSON.stringify (correct way)</button>
+    <button onclick="clearStorage()">Clear localStorage</button>
+    
+    <script>
+        const myTaskArr = [
+            { task: "Walk the Dog", date: "22-04-2022" },
+            { task: "Read some books", date: "02-11-2023" },
+            { task: "Watch football", date: "10-08-2021" },
+        ];
+
+        function saveWithoutStringify() {
+            // This will show [object Object] in localStorage
+            localStorage.setItem("data", myTaskArr);
+            console.log("Saved without JSON.stringify - check localStorage!");
+        }
+
+        function saveWithStringify() {
+            // This is the correct way
+            localStorage.setItem("data", JSON.stringify(myTaskArr));
+            console.log("Saved with JSON.stringify - check localStorage!");
+        }
+
+        function clearStorage() {
+            localStorage.clear();
+            console.log("localStorage cleared!");
+        }
+
+        // Auto-run the problematic version for screenshot
+        saveWithoutStringify();
+    </script>
+</body>
+</html>
