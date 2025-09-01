@@ -14,7 +14,7 @@ describe('sort-files', () => {
       expect(sorted.length).toEqual(expected.length);
     });
 
-    it('should sort the objects into jsx, html, css, js, ts,tsx order', () => {
+    it('should sort the objects into jsx, html, css, js, ts, tsx order', () => {
       const sorted = sortChallengeFiles(challengeFiles);
       const sortedKeys = sorted.map(({ fileKey }) => fileKey);
       const expected = [
