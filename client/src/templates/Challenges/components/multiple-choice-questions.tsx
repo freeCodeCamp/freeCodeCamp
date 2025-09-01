@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 
-import { Spacer } from '@freecodecamp/ui';
+import { Button, Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
+import { openModal } from '../redux/actions';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
+import './multiple-choice-questions.css';
 
 type MultipleChoiceQuestionsProps = {
   questions: Question[];
@@ -18,6 +21,7 @@ type MultipleChoiceQuestionsProps = {
     challengeId?: string;
     audioIds?: string[] | null;
   };
+  openSpeakingModal: () => void;
 };
 
 function removeParagraphTags(text: string): string {
@@ -31,11 +35,11 @@ function MultipleChoiceQuestions({
   submittedMcqAnswers,
   showFeedback,
   showSpeakingButton,
-  challengeData
+  challengeData,
+  openSpeakingModal
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
 
-  const [modalOpen, setModalOpen] = useState(false);
   const [modalText, setModalText] = useState('');
   const [modalAnswerIndex, setModalAnswerIndex] = useState<number>(0);
 
@@ -82,22 +86,17 @@ function MultipleChoiceQuestions({
                 // -1 because the solution is 1-indexed
                 questions[questionIndex].solution - 1;
 
+              const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
+
               return (
                 <React.Fragment key={answerIndex}>
-                  <label
-                    className={`video-quiz-option-label 
-                      ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
-                      ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                    htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                    style={{
-                      margin: 0,
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center'
-                    }}
-                  >
-                    <span
-                      style={{ flex: 1, display: 'flex', alignItems: 'center' }}
+                  <div className='mcq-option-wrapper'>
+                    <label
+                      id={labelId}
+                      className={`video-quiz-option-label mcq-option-label
+                        ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                        ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
+                      htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                     >
                       <input
                         name={`mc-question-${questionIndex}`}
@@ -121,32 +120,25 @@ function MultipleChoiceQuestions({
                         useSpan
                         noAria
                       />
-                    </span>
+                    </label>
                     {showSpeakingButton && (
-                      <span
-                        style={{
-                          marginRight: '8px',
-                          marginTop: '2px',
-                          marginBottom: '2px'
+                      <Button
+                        variant='info'
+                        size='medium'
+                        onClick={() => {
+                          setModalText(
+                            stripCodeTags(removeParagraphTags(answer))
+                          );
+                          setModalAnswerIndex(answerIndex);
+                          openSpeakingModal();
                         }}
+                        className='mcq-speaking-button'
+                        aria-labelledby={labelId}
                       >
-                        <button
-                          type='button'
-                          className='btn btn-info'
-                          style={{ minWidth: '120px' }}
-                          onClick={() => {
-                            setModalText(
-                              stripCodeTags(removeParagraphTags(answer))
-                            );
-                            setModalAnswerIndex(answerIndex);
-                            setModalOpen(true);
-                          }}
-                        >
-                          Speaking
-                        </button>
-                      </span>
+                        Speaking
+                      </Button>
                     )}
-                  </label>
+                  </div>
                   {showFeedback && isSubmittedAnswer && (
                     <div
                       className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
@@ -179,8 +171,6 @@ function MultipleChoiceQuestions({
       ))}
       <Spacer size='m' />
       <SpeakingModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
         sentence={modalText}
         audioUrl={getAudioUrl(modalAnswerIndex)}
         answerIndex={modalAnswerIndex}
@@ -189,6 +179,10 @@ function MultipleChoiceQuestions({
   );
 }
 
+const mapDispatchToProps = {
+  openSpeakingModal: () => openModal('speaking')
+};
+
 MultipleChoiceQuestions.displayName = 'MultipleChoiceQuestions';
 
-export default MultipleChoiceQuestions;
+export default connect(null, mapDispatchToProps)(MultipleChoiceQuestions);

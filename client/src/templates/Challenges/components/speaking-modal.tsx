@@ -1,15 +1,20 @@
 import React, { useState, useRef, useEffect } from 'react';
-import './speaking-modal.css';
+import { connect } from 'react-redux';
+import { Button, Modal } from '@freecodecamp/ui';
+
+import { closeModal } from '../redux/actions';
+import { isSpeakingModalOpenSelector } from '../redux/selectors';
 import {
   formatUtterance,
   calculateAverageVolume,
   analyzeSilence,
   compareTexts
 } from './speaking-modal-helpers';
+import './speaking-modal.css';
 
 interface SpeakingModalProps {
-  open: boolean;
-  onClose: () => void;
+  closeSpeakingModal: () => void;
+  isSpeakingModalOpen: boolean;
   sentence: string;
   audioUrl?: string;
   answerIndex?: number;
@@ -35,8 +40,8 @@ declare global {
 }
 
 const SpeakingModal = ({
-  open,
-  onClose,
+  closeSpeakingModal,
+  isSpeakingModalOpen,
   sentence,
   audioUrl
 }: SpeakingModalProps) => {
@@ -127,13 +132,13 @@ const SpeakingModal = ({
 
   // Reset feedback and cleanup media when modal is closed
   useEffect(() => {
-    if (!open) {
+    if (!isSpeakingModalOpen) {
       setFeedback('');
       setComparisonResult(null);
       setIsRecording(false);
       cleanupMediaResources();
     }
-  }, [open]);
+  }, [isSpeakingModalOpen]);
 
   // Cleanup media resources on component unmount
   useEffect(() => {
@@ -141,8 +146,6 @@ const SpeakingModal = ({
       cleanupMediaResources();
     };
   }, []);
-
-  if (!open) return null;
 
   // Monitor audio levels for silence detection
   const monitorAudioLevels = (stream: MediaStream) => {
@@ -363,89 +366,89 @@ const SpeakingModal = ({
   };
 
   return (
-    <div className='speaking-modal-overlay'>
-      <div className='speaking-modal-content'>
-        <button
-          className='speaking-modal-close'
-          onClick={onClose}
-          aria-label='Close'
-        >
-          ×
-        </button>
-        <div className='speaking-modal-body'>
-          <label htmlFor='speaking-input' className='speaking-modal-label'>
-            Practice Speaking:
-          </label>
-          <div className='speaking-modal-input-row'>
-            <input
-              id='speaking-input'
-              type='text'
-              value={sentence}
-              readOnly
-              className='speaking-modal-input'
-            />
-            <button
-              type='button'
-              className='btn btn-secondary speaking-modal-play'
-              onClick={() => void handlePlay()}
-              disabled={isPlaying || isRecording}
-            >
-              {isPlaying ? 'Playing...' : 'Play'}
-            </button>
-          </div>
-          <div className='speaking-modal-record-row'>
-            <button
-              type='button'
-              className='btn btn-danger speaking-modal-record'
-              onClick={() => void handleRecord()}
-              disabled={isPlaying}
-            >
-              {isRecording ? 'Stop' : 'Record'}
-            </button>
-          </div>
-          <div className='speaking-modal-feedback'>
-            {comparisonResult && comparisonResult.isExact ? (
-              <div>
-                <div style={{ color: 'green' }}>{sentence}</div>
-                <div style={{ marginTop: '8px' }}>
-                  {comparisonResult.message}
-                </div>
-              </div>
-            ) : comparisonResult &&
-              !comparisonResult.isExact &&
-              comparisonResult.comparison ? (
-              <div>
-                <div>
-                  {comparisonResult.comparison.map(
-                    (item: ComparisonWord, index: number) => (
-                      <span
-                        key={index}
-                        style={{
-                          color: item.isCorrect ? 'green' : 'red',
-                          marginRight: '4px'
-                        }}
-                      >
-                        {index === 0
-                          ? item.word.charAt(0).toUpperCase() +
-                            item.word.slice(1)
-                          : item.word}
-                      </span>
-                    )
-                  )}
-                  <span>.</span>
-                </div>
-                <div style={{ marginTop: '8px' }}>
-                  {comparisonResult.message}
-                </div>
-              </div>
-            ) : (
-              feedback || 'Feedback will appear here.'
-            )}
-          </div>
+    <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen}>
+      <Modal.Header closeButtonClassNames='close'>
+        Speaking Practice
+      </Modal.Header>
+      <Modal.Body alignment='center'>
+        <label htmlFor='speaking-input' className='speaking-modal-label'>
+          Practice Speaking:
+        </label>
+        <div className='speaking-modal-input-row'>
+          <input
+            id='speaking-input'
+            type='text'
+            value={sentence}
+            readOnly
+            className='speaking-modal-input'
+          />
+          <Button
+            variant='info'
+            size='medium'
+            onClick={() => void handlePlay()}
+            className={`speaking-modal-play-button ${isPlaying || isRecording ? 'disabled' : ''}`}
+          >
+            {isPlaying ? 'Playing...' : 'Play'}
+          </Button>
         </div>
-      </div>
-    </div>
+        <div className='speaking-modal-record-container'>
+          <Button
+            variant='danger'
+            size='medium'
+            onClick={() => void handleRecord()}
+            className={`speaking-modal-record-button ${isPlaying ? 'disabled' : ''}`}
+          >
+            {isRecording ? 'Stop' : 'Record'}
+          </Button>
+        </div>
+        <div className='speaking-modal-feedback'>
+          {comparisonResult && comparisonResult.isExact ? (
+            <div>
+              <div className='speaking-modal-correct-text'>{sentence}</div>
+              <div className='speaking-modal-feedback-message'>
+                {comparisonResult.message}
+              </div>
+            </div>
+          ) : comparisonResult &&
+            !comparisonResult.isExact &&
+            comparisonResult.comparison ? (
+            <div>
+              <div>
+                {comparisonResult.comparison.map(
+                  (item: ComparisonWord, index: number) => (
+                    <span
+                      key={index}
+                      className={`speaking-modal-comparison-word ${item.isCorrect ? 'correct' : 'incorrect'}`}
+                    >
+                      {index === 0
+                        ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
+                        : item.word}
+                    </span>
+                  )
+                )}
+                <span>.</span>
+              </div>
+              <div className='speaking-modal-feedback-message'>
+                {comparisonResult.message}
+              </div>
+            </div>
+          ) : (
+            feedback || 'Feedback will appear here.'
+          )}
+        </div>
+      </Modal.Body>
+    </Modal>
   );
 };
 
-export default SpeakingModal;
+const mapStateToProps = (state: unknown) => ({
+  isSpeakingModalOpen: isSpeakingModalOpenSelector(state) as boolean
+});
+
+const mapDispatchToProps = {
+  closeSpeakingModal: () => closeModal('speaking')
+};
+
+SpeakingModal.displayName = 'SpeakingModal';
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpeakingModal);

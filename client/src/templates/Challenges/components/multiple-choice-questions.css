@@ -1,0 +1,45 @@
+/* ONLY when inside mcq-option-wrapper: remove ALL borders from the label */
+.mcq-option-wrapper .video-quiz-option-label {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/* Wrapper provides all borders since they were removed from the label */
+.mcq-option-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  font-weight: normal;
+  /* Add all borders that were removed from the label */
+  border-left: 4px solid var(--tertiary-background);
+  border-right: 4px solid var(--tertiary-background);
+  border-top: 2px solid var(--tertiary-background);
+  border-bottom: 2px solid var(--tertiary-background);
+}
+
+/* Handle first/last child cases for the wrapper */
+.mcq-option-wrapper:first-child {
+  border-top: 4px solid var(--tertiary-background);
+}
+
+.mcq-option-wrapper:last-child {
+  border-bottom: 4px solid var(--tertiary-background);
+}
+
+/* Multiple choice question label (now properly only contains input and text) */
+.mcq-option-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+/* Speaking button */
+.mcq-speaking-button {
+  min-width: 120px;
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}

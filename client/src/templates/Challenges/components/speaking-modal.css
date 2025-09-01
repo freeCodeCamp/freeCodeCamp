@@ -1,54 +1,3 @@
-.speaking-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(10, 10, 35, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.speaking-modal-content {
-  background: #1b1b32;
-  border-radius: 8px;
-  padding: 2rem;
-  min-width: 350px;
-  max-width: 900px;
-  max-height: 90vh;
-  width: 100%;
-  position: relative;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.2);
-  color: white;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.speaking-modal-close {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: transparent;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #fff;
-}
-
-.speaking-modal-close:hover {
-  color: #1b1b32;
-}
-
-.speaking-modal-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  width: 100%;
-}
-
 .speaking-modal-label {
   font-weight: bold;
   margin-bottom: 0.5rem;
@@ -74,26 +23,6 @@
   box-sizing: border-box;
 }
 
-.speaking-modal-play {
-  margin-left: 1rem;
-  min-width: 80px;
-  height: 40px;
-}
-
-.speaking-modal-record-row {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1.5rem;
-}
-
-.speaking-modal-record {
-  min-width: 120px;
-  height: 48px;
-  font-size: 1.1rem;
-  padding: 0.5rem 1.5rem;
-}
-
 .speaking-modal-feedback {
   width: 100%;
   margin-top: 2rem;
@@ -107,4 +36,55 @@
   overflow-y: auto;
   padding: 0.5rem;
   box-sizing: border-box;
+}
+
+/* Button styles */
+.speaking-modal-play-button {
+  margin-left: 1rem;
+  min-width: 100px;
+}
+
+.speaking-modal-play-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.speaking-modal-record-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.speaking-modal-record-button {
+  min-width: 120px;
+  height: 48px;
+  font-size: 1.1rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.speaking-modal-record-button.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Feedback styles */
+.speaking-modal-correct-text {
+  color: var(--background-success);
+}
+
+.speaking-modal-feedback-message {
+  margin-top: 8px;
+}
+
+.speaking-modal-comparison-word {
+  margin-right: 4px;
+}
+
+.speaking-modal-comparison-word.correct {
+  color: var(--background-success);
+}
+
+.speaking-modal-comparison-word.incorrect {
+  color: var(--background-danger);
 }
