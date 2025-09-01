@@ -1,8 +1,32 @@
+import fs from 'fs';
+import path from 'path';
 import { test, expect } from '@playwright/test';
 import { allowTrailingSlash } from './utils/url';
 
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
+    const fixturePath = path.join(__dirname, 'fixtures', 'quiz-fixture.json');
+    const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8'));
+
+    // Intercept Gatsby page-data and inject a deterministic quiz fixture
+    await page.route('**/page-data/**/page-data.json', async route => {
+      const response = await route.fetch();
+      try {
+        const body = await response.text();
+        const pageData = JSON.parse(body);
+
+        pageData.result.data.challengeNode.challenge.quizzes = fixture;
+
+        await route.fulfill({
+          contentType: 'application/json',
+          body: JSON.stringify(pageData)
+        });
+      } catch (_err) {
+        // If parsing fails, just continue the original response
+        await route.continue();
+      }
+    });
+
     await page.goto(
       '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
     );
@@ -38,13 +62,16 @@ test.describe('Quiz challenge', () => {
 
     const radioGroups = await page.getByRole('radiogroup').all();
 
-    // Answer 18 questions correctly.
-    // This is enough to pass the quiz, and also allowing us to test the quiz passing criteria.
+    // Answer 18 questions correctly by selecting the visible "Correct answer" label
     for (let i = 0; i < radioGroups.length; i++) {
+      const group = radioGroups[i];
+      // Select the radio option whose accessible name includes 'Correct answer'
+      const correct = group.getByRole('radio', { name: /Correct answer/i });
+      const wrong = group.getByRole('radio', { name: /Wrong 1/i });
       if (i <= 17) {
-        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+        await correct.click();
       } else {
-        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+        await wrong.click();
       }
     }
 
@@ -103,12 +130,15 @@ test.describe('Quiz challenge', () => {
 
     const radioGroups = await page.getByRole('radiogroup').all();
 
-    // Answer only 10 questions correctly.
+    // Answer only 10 questions correctly by selecting the visible labels
     for (let i = 0; i < radioGroups.length; i++) {
+      const group = radioGroups[i];
+      const correct = group.getByRole('radio', { name: /Correct answer/i });
+      const wrong = group.getByRole('radio', { name: /Wrong 1/i });
       if (i <= 9) {
-        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+        await correct.click();
       } else {
-        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+        await wrong.click();
       }
     }
 
