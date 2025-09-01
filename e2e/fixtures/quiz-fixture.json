@@ -1,8 +1,8 @@
 [
   {
     "questions": [
-      { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 1", "answer": "Correct answer" },
-      { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 2", "answer": "Correct answer" },
+  { "distractors": ["Wrong 1", "Wrong 2", "<pre><code>const x = 1;</code></pre>"], "text": "Question 1", "answer": "<pre><code>console.log('ok')</code></pre> Correct answer" },
+  { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 2", "answer": "Correct answer" },
       { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 3", "answer": "Correct answer" },
       { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 4", "answer": "Correct answer" },
       { "distractors": ["Wrong 1", "Wrong 2", "Wrong 3"], "text": "Question 5", "answer": "Correct answer" },
