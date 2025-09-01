@@ -7,11 +7,11 @@ dashedName: step-26
 
 # --description--
 
-You haven't written the code to generate the HTML yet, but if a product has already been added to the user's cart then there will be a matching element which you'll need.
+You haven't written the code to generate the HTML yet, but when a product is added to the cart, you'll need to display how many of that product are in the cart. This will be shown in a `<span>` element that you'll create in later steps.
 
-Use `.getElementById()` to get the matching element - you'll be setting the `id` value to `product-count-for-id${product.id}`, so use a template literal to query that value.
+For now, you need to prepare to find that span element when it exists. Use `.getElementById()` to get the element that will have the `id` value `product-count-for-id${product.id}`. Use a template literal to create this query.
 
-Assign your query to a `currentProductCountSpan` variable.
+Assign your query to a `currentProductCountSpan` variable. (Note: this variable references a span element that you'll create later to display the count of each product.)
 
 # --hints--
 
