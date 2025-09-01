@@ -383,7 +383,6 @@ const SpeakingModal = ({
             className='speaking-modal-input'
           />
           <Button
-            variant='info'
             size='medium'
             onClick={() => void handlePlay()}
             className={`speaking-modal-play-button ${isPlaying || isRecording ? 'disabled' : ''}`}
@@ -393,7 +392,6 @@ const SpeakingModal = ({
         </div>
         <div className='speaking-modal-record-container'>
           <Button
-            variant='danger'
             size='medium'
             onClick={() => void handleRecord()}
             className={`speaking-modal-record-button ${isPlaying ? 'disabled' : ''}`}

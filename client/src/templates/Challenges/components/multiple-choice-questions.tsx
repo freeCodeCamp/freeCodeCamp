@@ -123,7 +123,6 @@ function MultipleChoiceQuestions({
                     </label>
                     {showSpeakingButton && (
                       <Button
-                        variant='info'
                         size='medium'
                         onClick={() => {
                           setModalText(
