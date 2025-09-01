@@ -78,8 +78,7 @@ const availableBackgrounds = [
   'interview-room1.png',
   'interview-room2.png',
   'interview-room3.png',
-  'living-room.png',
-  'office-cafe.png'
+  'living-room.png'
 ];
 
 const availableAudios = [
