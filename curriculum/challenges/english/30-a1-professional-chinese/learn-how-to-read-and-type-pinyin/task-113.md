@@ -1,0 +1,31 @@
+---
+id: 68a04c2b07698a86a62dceb1
+title: Task 113
+challengeType: 24
+dashedName: task-113
+---
+
+<!--SPEAKING-->
+
+<!-- (Audio) A: üan, juan, quan, xuan, nüan, lüan -->
+
+# --description--
+
+`üan` starts with the special vowel `ü`, which is pronounced by shaping your lips like you're saying `u` (rounded), but placing your tongue as if you're saying `i`.
+
+To pronounce `üan`, begin with `ü`, then open your mouth slightly for a short `a`-like sound, and finish with the nasal `n` by touching your tongue tip behind your upper teeth.
+
+It's important to keep the rounded lip shape at the start. Don't pronounce it like `uan`.
+
+When combined with initials `j`, `q`, `x` and `y`, the two dots above `ü` are omitted, but the pronunciation remains `üan`.
+
+[ ] pronouncing `üan`  
+[ ] pronouncing `juan`  
+[ ] pronouncing `quan`  
+[ ] pronouncing `xuan`  
+[ ] pronouncing `nüan`  
+[ ] pronouncing `lüan`
+
+# --assignment--
+
+Listen to the audio and pronounce the final and syllables.

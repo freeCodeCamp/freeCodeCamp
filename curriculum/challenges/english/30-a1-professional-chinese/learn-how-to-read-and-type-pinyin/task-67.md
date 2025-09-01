@@ -19,8 +19,6 @@ A compound final consists of two or three vowel sounds that blend smoothly toget
 
 When `ai` is combined with the initials `b`, `t`, `g`, `k`, `c`, `zh`, you get the syllables: `bai`, `tai`, `gai`, `kai`, `cai`, `zhai`.
 
-This principle applies to all compound finals, whether they contain two or three vowels, ensuring a seamless and connected pronunciation within the syllable.
-
 [ ] pronouncing `ai`
 [ ] pronouncing `bai`
 [ ] pronouncing `tai`

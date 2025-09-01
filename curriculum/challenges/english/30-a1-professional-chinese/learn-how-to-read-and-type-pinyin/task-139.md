@@ -1,0 +1,32 @@
+---
+id: 68a04c2b07698a86a62dceb1
+title: Task 139
+challengeType: 24
+dashedName: task-139
+---
+
+<!--SPEAKING-->
+
+<!-- (Audio) A: yu, ye, yue, yuan, yin, yun, ying -->
+
+# --description--
+
+In Pinyin, some syllables are learned as single units rather than being broken into initials and finals. These are called whole syllables.
+
+You've already learned several of them, including `zhi`, `chi`, `shi`, `ri`, `zi`, `ci`, `si`, `yi`, and `wu`.
+
+Now you'll focus on the important set that begins with `y`: `yu`, `ye`, `yue`, `yuan`, `yin`, `yun`, and `ying`.
+
+Remember you should read these as single units rather than trying to separate them into parts.
+
+[ ] pronouncing `yu`  
+[ ] pronouncing `ye`  
+[ ] pronouncing `yue`  
+[ ] pronouncing `yuan`  
+[ ] pronouncing `yin`  
+[ ] pronouncing `yun`  
+[ ] pronouncing `ying`
+
+# --assignment--
+
+Listen to the audio and pronounce the new whole syllables.

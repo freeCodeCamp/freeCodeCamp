@@ -1,0 +1,29 @@
+---
+id: 68a04c2b07698a86a62dceb1
+title: Task 111
+challengeType: 24
+dashedName: task-111
+---
+
+<!--SPEAKING-->
+
+<!-- (Audio) A: uan, duan, tuan, guan, kuan, huan -->
+
+# --description--
+
+`uan` is a smooth blend that starts with the rounded vowel `u` and ends with the nasal `n` sound.
+
+Begin by rounding your lips tightly to pronounce `u`, then quickly open your mouth slightly to produce a short vowel like `a`, and finish with the nasal `n` sound by gently touching the tongue tip behind your upper teeth.
+
+Although the spelling is `u-a-n`, the middle `a` is very short and light. It should feel like one connected syllable, not three separate parts.
+
+[ ] pronouncing `uan`  
+[ ] pronouncing `duan`  
+[ ] pronouncing `tuan`  
+[ ] pronouncing `guan`  
+[ ] pronouncing `kuan`  
+[ ] pronouncing `huan`
+
+# --assignment--
+
+Listen to the audio and pronounce the final and syllables.

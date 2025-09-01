@@ -1,0 +1,29 @@
+---
+id: 68a04c2b07698a86a62dceb1
+title: Task 115
+challengeType: 24
+dashedName: task-115
+---
+
+<!--SPEAKING-->
+
+<!-- (Audio) A: iang, jiang, qiang, xiang, liang, niang -->
+
+# --description--
+
+`iang` combines the high vowel `i` with the back nasal final `ang`.  
+
+It starts with `i`, where the tongue is high and the lips are spread, then quickly opens into `a` before finishing with the back nasal `ng`, made with the back of the tongue against the soft palate.  
+
+For tone marking, the mark goes on `a` in `iang`.
+
+[ ] pronouncing `iang`  
+[ ] pronouncing `jiang`  
+[ ] pronouncing `qiang`  
+[ ] pronouncing `xiang`  
+[ ] pronouncing `liang`  
+[ ] pronouncing `niang`
+
+# --assignment--
+
+Listen to the audio and pronounce the final and syllables.
