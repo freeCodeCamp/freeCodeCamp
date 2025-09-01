@@ -27,6 +27,14 @@ interface Body {
   challengeType: number;
 }
 
+const encodeBase64 = (str: string) => {
+  const bytes = new TextEncoder().encode(str);
+  const binaryString = Array.from(bytes, byte =>
+    String.fromCodePoint(byte)
+  ).join('');
+  return btoa(binaryString);
+};
+
 export function standardizeRequestBody({
   id,
   challengeFiles = [],
@@ -36,7 +44,7 @@ export function standardizeRequestBody({
     id,
     files: challengeFiles?.map(({ fileKey, contents, ext, name, history }) => {
       return {
-        contents: btoa(contents),
+        contents: encodeBase64(contents),
         ext,
         history, // TODO(Post-MVP): stop sending history, if possible. The client
         // already gets it from the curriculum, so it should not be necessary to

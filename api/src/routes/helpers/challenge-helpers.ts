@@ -150,6 +150,26 @@ export async function verifyTrophyWithMicrosoft({
 export function decodeFiles<T extends { contents: string }>(files: T[]): T[] {
   return files.map(file => ({
     ...file,
-    contents: atob(file.contents)
+    contents: decodeBase64(file.contents)
   }));
+}
+
+/**
+ * Decodes a base64 encoded string into a UTF-8 string.
+ *
+ * @param str The base64 encoded string to decode.
+ * @returns The decoded UTF-8 string.
+ */
+export function decodeBase64(str: string): string {
+  return Buffer.from(str, 'base64').toString('utf-8');
+}
+
+/**
+ * Encodes a UTF-8 string into a base64 encoded string.
+ *
+ * @param str The UTF-8 string to encode.
+ * @returns The base64 encoded string.
+ */
+export function encodeBase64(str: string): string {
+  return Buffer.from(str, 'utf8').toString('base64');
 }

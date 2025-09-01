@@ -8,7 +8,9 @@ import { createFetchMock } from '../../../vitest.utils';
 import {
   canSubmitCodeRoadCertProject,
   verifyTrophyWithMicrosoft,
-  decodeFiles
+  decodeFiles,
+  decodeBase64,
+  encodeBase64
 } from './challenge-helpers';
 
 const id = 'abc';
@@ -213,6 +215,37 @@ describe('Challenge Helpers', () => {
           name: 'hello.js'
         }
       ]);
+    });
+
+    test('can handle unicode characters', () => {
+      const encodedFiles = [
+        {
+          contents: encodeBase64('console.log("Hello, ✅🚀!");')
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, ✅🚀!");'
+        }
+      ]);
+    });
+  });
+
+  describe('decodeBase64', () => {
+    test('decodes a base64 encoded string', () => {
+      const encoded = encodeBase64('Hello, world!');
+      const decoded = decodeBase64(encoded);
+      expect(decoded).toBe('Hello, world!');
+    });
+
+    test('can handle unicode characters', () => {
+      const original = 'Hello, ✅🚀!';
+      const encoded = encodeBase64(original);
+      const decoded = decodeBase64(encoded);
+      expect(decoded).toBe(original);
     });
   });
 });
