@@ -14,16 +14,16 @@ describe('sort-files', () => {
       expect(sorted.length).toEqual(expected.length);
     });
 
-    it('should sort the objects into jsx, html, css, js, ts, tsx order', () => {
+    it('should sort the objects into jsx, tsx, html, css, js, ts order', () => {
       const sorted = sortChallengeFiles(challengeFiles);
       const sortedKeys = sorted.map(({ fileKey }) => fileKey);
       const expected = [
         'indexjsx',
+        'indextsx',
         'indexhtml',
         'stylescss',
         'scriptjs',
-        'indexts',
-        'indextsx'
+        'indexts'
       ];
       expect(sortedKeys).toStrictEqual(expected);
     });

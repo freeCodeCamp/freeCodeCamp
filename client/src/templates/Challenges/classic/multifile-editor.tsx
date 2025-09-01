@@ -96,12 +96,12 @@ const MultifileEditor = (props: MultifileEditorProps) => {
 
   // The order of the keys should match the order set by sortChallengeFiles
   if (indexjsx) editorKeys.push('indexjsx');
+  if (indextsx) editorKeys.push('indextsx');
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
   if (indexts) editorKeys.push('indexts');
-  if (indextsx) editorKeys.push('indextsx');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
