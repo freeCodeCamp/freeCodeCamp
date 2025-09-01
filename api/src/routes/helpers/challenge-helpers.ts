@@ -1,3 +1,6 @@
+import { Value } from '@sinclair/typebox/build/cjs/value';
+import { challengeCompletedType } from '../../schemas/challenge/modern-challenge-completed';
+
 /**
  * Confirm that a user can submit a CodeRoad project.
  *
@@ -139,4 +142,17 @@ export async function verifyTrophyWithMicrosoft({
       }
     } as NoTrophyError;
   }
+}
+
+// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
+/**
+ * Base64 decodes and validates the client data for CompletedChallenge.
+ */
+export function parseChallengeBody(strBody: string) {
+  if (typeof strBody !== 'string' || strBody.length === 0) {
+    throw new Error('body must be a non-empty string');
+  }
+
+  const body = JSON.parse(Buffer.from(strBody, 'base64').toString());
+  return Value.Parse(challengeCompletedType, body);
 }

@@ -1,22 +1,24 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { genericError, savedChallenge } from '../types';
 
-export const modernChallengeCompleted = {
-  body: Type.Object({
-    id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
-    challengeType: Type.Number(),
-    files: Type.Optional(
-      Type.Array(
-        Type.Object({
-          contents: Type.String(),
-          key: Type.String(),
-          ext: Type.String(),
-          name: Type.String(),
-          history: Type.Array(Type.String())
-        })
-      )
+export const challengeCompletedType = Type.Object({
+  id: Type.String({ format: 'objectid', maxLength: 24, minLength: 24 }),
+  challengeType: Type.Number(),
+  files: Type.Optional(
+    Type.Array(
+      Type.Object({
+        contents: Type.String(),
+        key: Type.String(),
+        ext: Type.String(),
+        name: Type.String(),
+        history: Type.Array(Type.String())
+      })
     )
-  }),
+  )
+});
+
+export const modernChallengeCompleted = {
+  body: Type.Union([Type.String(), challengeCompletedType]),
   response: {
     200: Type.Object({
       completedDate: Type.Number(),

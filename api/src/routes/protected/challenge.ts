@@ -4,6 +4,7 @@ import { uniqBy, matches } from 'lodash';
 import { CompletedExam, ExamResults } from '@prisma/client';
 import isURL from 'validator/lib/isURL';
 import type { FastifyInstance, FastifyReply } from 'fastify';
+import { ErrorObject } from 'ajv';
 
 import { challengeTypes } from '../../../../shared/config/challenge-types';
 import * as schemas from '../../schemas';
@@ -32,9 +33,10 @@ import {
 import { generateRandomExam, createExamResults } from '../../utils/exam';
 import {
   canSubmitCodeRoadCertProject,
+  parseChallengeBody,
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers';
-import { UpdateReqType } from '../../utils';
+import { syncMapErr, UpdateReqType } from '../../utils';
 import { normalizeChallengeType, normalizeDate } from '../../utils/normalize';
 
 interface JwtPayload {
@@ -236,7 +238,22 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         'User submitted a modern challenge'
       );
 
-      const { id, files, challengeType } = req.body;
+      // const body = JSON.parse(Buffer.from(req.body, "base64").toString());
+      let body = req.body;
+      if (typeof body === 'string') {
+        const decodedBody = syncMapErr(() =>
+          parseChallengeBody(body as string)
+        );
+        if (decodedBody.hasError) {
+          void reply.code(400);
+          return formatProjectCompletedValidation(
+            decodedBody.error as ErrorObject[]
+          );
+        }
+        body = decodedBody.data;
+      }
+
+      const { id, files, challengeType } = body;
 
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
