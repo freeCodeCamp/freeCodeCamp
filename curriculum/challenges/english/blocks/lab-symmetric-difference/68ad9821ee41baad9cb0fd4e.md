@@ -19,6 +19,8 @@ Result: `["diamond", "apple", "emerald", "bread"]`
 
 **Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
 
+**User Stories:**
+
 1. Your function `diffArray` should return an array.
 2. Your function should take two arguments, both of which are arrays.
 3. Your function should make use of the `filter` method.
