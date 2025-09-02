@@ -8,7 +8,6 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "noEmit": true,
-    "noUncheckedIndexedAccess": true,
-    "skipLibCheck": true /* This should only be necessary while migrating to vitest, once we're done with that migration we can move to ESM and *hopefully* get rid of this */
+    "noUncheckedIndexedAccess": true
   }
 }
