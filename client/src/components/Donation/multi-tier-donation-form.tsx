@@ -14,7 +14,9 @@ import { useTranslation } from 'react-i18next';
 import {
   PaymentContext,
   subscriptionAmounts,
+  subscriptionAmountsB,
   defaultTierAmount,
+  defaultTierAmountB,
   type DonationAmount
 } from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
 import callGA from '../../analytics/call-ga';
@@ -42,6 +44,11 @@ function SelectionTabs({
   isAnimationEnabled?: boolean;
 }) {
   const { t } = useTranslation();
+  // GrowthBook feature flag for A/B test 'replace-20-with-25'
+  const replace20With25 = useFeature('replace-20-with-25').on;
+  const activeSubscriptionAmounts = replace20With25
+    ? subscriptionAmountsB
+    : subscriptionAmounts;
   const switchTab = (value: string): void => {
     setDonationAmount(Number(value) as DonationAmount);
   };
@@ -81,7 +88,7 @@ function SelectionTabs({
           onValueChange={switchTab}
         >
           <TabsList className='nav-lists'>
-            {subscriptionAmounts.map(value => (
+            {activeSubscriptionAmounts.map(value => (
               <TabsTrigger
                 key={value}
                 value={value.toString()}
@@ -92,7 +99,7 @@ function SelectionTabs({
             ))}
           </TabsList>
           <Spacer size='xs' />
-          {subscriptionAmounts.map(value => {
+          {activeSubscriptionAmounts.map(value => {
             const usd = formattedAmountLabel(donationAmount);
             const hours = convertToTimeContributed(donationAmount);
             const donationDescription = t('donate.your-donation-2', {
@@ -169,7 +176,10 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   paymentContext,
   isAnimationEnabled
 }) => {
-  const [donationAmount, setDonationAmount] = useState(defaultTierAmount);
+  const replace20With25 = useFeature('replace-20-with-25').on;
+  const [donationAmount, setDonationAmount] = useState(
+    replace20With25 ? defaultTierAmountB : defaultTierAmount
+  );
 
   const [showDonateForm, setShowDonateForm] = useState(false);
 
