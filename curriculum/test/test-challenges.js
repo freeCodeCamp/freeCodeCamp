@@ -249,9 +249,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const mongoIds = new MongoIds();
 
         superBlockChallenges.forEach((challenge, id) => {
-          const challengeTitles = new ChallengeTitles();
-          const mongoIds = new MongoIds();
-
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
           // Instead seed from next challenge is tested against tests from
