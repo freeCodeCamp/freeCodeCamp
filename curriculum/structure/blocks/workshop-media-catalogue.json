@@ -9,45 +9,21 @@
   "blockLayout": "challenge-grid",
   "blockType": "workshop",
   "challengeOrder": [
-    {
-      "id": "68af272f60e009597dd861e1",
-      "title": "Step 1"
-    },
-    {
-      "id": "68af273960e009597dd861e2",
-      "title": "Step 2"
-    },
-    {
-      "id": "68af274560e009597dd861e3",
-      "title": "Step 3"
-    },
-    {
-      "id": "68af274e60e009597dd861e4",
-      "title": "Step 4"
-    },
-    {
-      "id": "68af275860e009597dd861e5",
-      "title": "Step 5"
-    },
-    {
-      "id": "68af276360e009597dd861e6",
-      "title": "Step 6"
-    },
-    {
-      "id": "68af276c60e009597dd861e7",
-      "title": "Step 7"
-    },
-    {
-      "id": "68af277560e009597dd861e8",
-      "title": "Step 8"
-    },
-    {
-      "id": "68af277e60e009597dd861e9",
-      "title": "Step 9"
-    },
-    {
-      "id": "68af278a60e009597dd861ea",
-      "title": "Step 10"
-    }
+    { "id": "68af272f60e009597dd861e1", "title": "Step 1" },
+    { "id": "68af273960e009597dd861e2", "title": "Step 2" },
+    { "id": "68af274560e009597dd861e3", "title": "Step 3" },
+    { "id": "68af274e60e009597dd861e4", "title": "Step 4" },
+    { "id": "68af275860e009597dd861e5", "title": "Step 5" },
+    { "id": "68af276360e009597dd861e6", "title": "Step 6" },
+    { "id": "68af276c60e009597dd861e7", "title": "Step 7" },
+    { "id": "68af277560e009597dd861e8", "title": "Step 8" },
+    { "id": "68af277e60e009597dd861e9", "title": "Step 9" },
+    { "id": "68af278a60e009597dd861ea", "title": "Step 10" },
+    { "id": "68b702892910ab7b495de081", "title": "Step 11" },
+    { "id": "68b704862dd6559e890c2a86", "title": "Step 12" },
+    { "id": "68b6cc518177b0a11c3fe3b1", "title": "Step 13" },
+    { "id": "68b6d1f70fffb10287c8031e", "title": "Step 14" },
+    { "id": "68b6d5244e6ce639e52fd1e7", "title": "Step 15" },
+    { "id": "68b6d9692a6526838265ad7f", "title": "Step 16" }
   ]
 }
