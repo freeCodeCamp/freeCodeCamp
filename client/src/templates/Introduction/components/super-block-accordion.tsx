@@ -174,7 +174,7 @@ export const SuperBlockAccordion = ({
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  const getCorrectStructure = (superBlock: SuperBlocks) => {
+  function getSuperblockStructure(superBlock: SuperBlocks) {
     switch (superBlock) {
       case SuperBlocks.FullStackOpen:
         return fullStackOpen;
@@ -183,11 +183,9 @@ export const SuperBlockAccordion = ({
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }
-  };
+  }
 
-  const { chapters } = getCorrectStructure(superBlock);
-
-  const superBlockStructure = getCorrectStructure(superBlock);
+  const superBlockStructure = getSuperblockStructure(superBlock);
 
   const modules = superBlockStructure.chapters.flatMap<Module>(
     ({ modules }) => modules
@@ -201,7 +199,7 @@ export const SuperBlockAccordion = ({
 
   const getBlockToChapterMap = () => {
     const blockToChapterMap = new Map<string, string>();
-    chapters.forEach(chapter => {
+    superBlockStructure.chapters.forEach(chapter => {
       chapter.modules.forEach(module => {
         module.blocks.forEach(block => {
           blockToChapterMap.set(block, chapter.dashedName);
