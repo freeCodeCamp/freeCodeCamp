@@ -3,13 +3,6 @@ name: CD - Deploy - Clients
 on:
   workflow_dispatch:
     inputs:
-      target_environment:
-        description: 'Target environment'
-        type: choice
-        options:
-          - staging
-          - production
-        default: staging
       target_language:
         description: 'Target language (or "all" for all languages)'
         type: choice
@@ -41,22 +34,21 @@ jobs:
         id: setup
         run: |
           BRANCH="${{ github.ref_name }}"
-          TARGET_ENV="${{ inputs.target_environment || 'staging' }}"
           echo "Current branch: $BRANCH"
-          echo "Target environment: $TARGET_ENV"
-
-          # Override environment based on input, fallback to branch-based logic
-          if [[ "$TARGET_ENV" == "production" ]]; then
-            echo "site_tld=org" >> $GITHUB_OUTPUT
-            echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
-            echo "tgt_env_long=production" >> $GITHUB_OUTPUT
-            echo "tgt_env_branch=prod-current" >> $GITHUB_OUTPUT
-          else
-            echo "site_tld=dev" >> $GITHUB_OUTPUT
-            echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
-            echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
-            echo "tgt_env_branch=prod-staging" >> $GITHUB_OUTPUT
-          fi
+          case "$BRANCH" in
+            "prod-current")
+              echo "site_tld=org" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=production" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-current" >> $GITHUB_OUTPUT
+              ;;
+            *)
+              echo "site_tld=dev" >> $GITHUB_OUTPUT
+              echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
+              echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
+              echo "tgt_env_branch=prod-staging" >> $GITHUB_OUTPUT
+              ;;
+          esac
 
   setup-matrix:
     name: Setup Matrix
