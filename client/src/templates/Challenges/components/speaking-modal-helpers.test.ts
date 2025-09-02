@@ -8,10 +8,9 @@ import {
 
 // Mock react-i18next
 const mockTranslations: Record<string, string> = {
-  'curriculum:speaking-modal.correct-congratulations':
-    "That's correct! Congratulations!",
-  'curriculum:speaking-modal.very-good': 'Very good!',
-  'curriculum:speaking-modal.try-again': 'Try again.'
+  'speaking-modal.correct-congratulations': "That's correct! Congratulations!",
+  'speaking-modal.very-good': 'Very good!',
+  'speaking-modal.try-again': 'Try again.'
 };
 
 const mockT = (key: string): string => mockTranslations[key] || key;
@@ -172,11 +171,9 @@ describe('speaking-modal-helpers', () => {
 
   describe('compareTexts', () => {
     const getMessages = () => ({
-      correctCongratulations: mockT(
-        'curriculum:speaking-modal.correct-congratulations'
-      ),
-      veryGood: mockT('curriculum:speaking-modal.very-good'),
-      tryAgain: mockT('curriculum:speaking-modal.try-again')
+      correctCongratulations: mockT('speaking-modal.correct-congratulations'),
+      veryGood: mockT('speaking-modal.very-good'),
+      tryAgain: mockT('speaking-modal.try-again')
     });
 
     describe('exact matches', () => {

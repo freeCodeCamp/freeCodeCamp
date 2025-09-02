@@ -183,7 +183,7 @@ const SpeakingModal = ({
           lastSpeechTimeRef.current = silenceResult.newLastSpeechTime;
         } else if (silenceResult.hasLongSilence) {
           stopRecording();
-          setFeedback(t('curriculum:speaking-modal.recording-stopped-silence'));
+          setFeedback(t('speaking-modal.recording-stopped-silence'));
           return;
         }
 
@@ -202,7 +202,7 @@ const SpeakingModal = ({
 
   const handlePlay = async () => {
     if (!audioUrl) {
-      setFeedback(t('curriculum:speaking-modal.no-audio-available'));
+      setFeedback(t('speaking-modal.no-audio-available'));
       return;
     }
 
@@ -213,7 +213,7 @@ const SpeakingModal = ({
 
     try {
       setIsPlaying(true);
-      setFeedback(t('curriculum:speaking-modal.loading-audio'));
+      setFeedback(t('speaking-modal.loading-audio'));
 
       if (audioRef.current) {
         audioRef.current.pause();
@@ -223,24 +223,24 @@ const SpeakingModal = ({
       audioRef.current = audio;
 
       audio.addEventListener('loadeddata', () => {
-        setFeedback(t('curriculum:speaking-modal.playing-audio'));
+        setFeedback(t('speaking-modal.playing-audio'));
       });
 
       audio.addEventListener('ended', () => {
         setIsPlaying(false);
-        setFeedback(t('curriculum:speaking-modal.audio-finished'));
+        setFeedback(t('speaking-modal.audio-finished'));
       });
 
       audio.addEventListener('error', e => {
         setIsPlaying(false);
-        setFeedback(t('curriculum:speaking-modal.audio-error'));
+        setFeedback(t('speaking-modal.audio-error'));
         console.error('Audio playback error:', e);
       });
 
       await audio.play();
     } catch (error) {
       setIsPlaying(false);
-      setFeedback(t('curriculum:speaking-modal.audio-error'));
+      setFeedback(t('speaking-modal.audio-error'));
       console.error('Audio playback error:', error);
     }
   };
@@ -287,11 +287,9 @@ const SpeakingModal = ({
 
       const formattedUtterance = formatUtterance(transcript);
       const result = compareTexts(sentence, transcript, {
-        correctCongratulations: t(
-          'curriculum:speaking-modal.correct-congratulations'
-        ),
-        veryGood: t('curriculum:speaking-modal.very-good'),
-        tryAgain: t('curriculum:speaking-modal.try-again')
+        correctCongratulations: t('speaking-modal.correct-congratulations'),
+        veryGood: t('speaking-modal.very-good'),
+        tryAgain: t('speaking-modal.try-again')
       });
 
       setComparisonResult(result);
@@ -306,10 +304,10 @@ const SpeakingModal = ({
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
       hasRecognitionResultRef.current = true;
       if (event.error === 'no-speech') {
-        setFeedback(t('curriculum:speaking-modal.no-speech-detected'));
+        setFeedback(t('speaking-modal.no-speech-detected'));
       } else {
         setFeedback(
-          t('curriculum:speaking-modal.speech-recognition-error', {
+          t('speaking-modal.speech-recognition-error', {
             error: event.error
           })
         );
@@ -319,7 +317,7 @@ const SpeakingModal = ({
     recognition.onend = () => {
       setIsRecording(false);
       if (!hasRecognitionResultRef.current) {
-        setFeedback(t('curriculum:speaking-modal.no-speech-detected'));
+        setFeedback(t('speaking-modal.no-speech-detected'));
       }
     };
 
@@ -331,9 +329,7 @@ const SpeakingModal = ({
     const SupportedSpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SupportedSpeechRecognition) {
-      setFeedback(
-        t('curriculum:speaking-modal.speech-recognition-not-supported')
-      );
+      setFeedback(t('speaking-modal.speech-recognition-not-supported'));
       return;
     }
 
@@ -342,7 +338,7 @@ const SpeakingModal = ({
         name: 'microphone' as PermissionName
       });
       if (state === 'prompt')
-        setFeedback(t('curriculum:speaking-modal.requesting-microphone'));
+        setFeedback(t('speaking-modal.requesting-microphone'));
 
       // Request microphone access
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -364,17 +360,17 @@ const SpeakingModal = ({
         stopRecording();
       }, 30000);
       setIsRecording(true);
-      setFeedback(t('curriculum:speaking-modal.recording-speak-now'));
+      setFeedback(t('speaking-modal.recording-speak-now'));
     } catch (error) {
       console.error('Error accessing microphone:', error);
-      setFeedback(t('curriculum:speaking-modal.microphone-access-error'));
+      setFeedback(t('speaking-modal.microphone-access-error'));
     }
   };
 
   const handleRecord = () => {
     if (isRecording) {
       stopRecording();
-      setFeedback(t('curriculum:speaking-modal.recording-stopped-processing'));
+      setFeedback(t('speaking-modal.recording-stopped-processing'));
     } else {
       void startRecording();
     }
@@ -446,7 +442,7 @@ const SpeakingModal = ({
               </div>
             </div>
           ) : (
-            feedback || t('curriculum:speaking-modal.feedback-placeholder')
+            feedback || t('speaking-modal.feedback-placeholder')
           )}
         </div>
       </Modal.Body>

@@ -1298,6 +1298,25 @@
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
     }
   },
+  "speaking-modal": {
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "loading-audio": "Loading audio...",
+    "playing-audio": "Playing audio...",
+    "audio-finished": "Audio finished playing.",
+    "audio-error": "Error: Unable to play audio.",
+    "recording-stopped-silence": "Recording stopped due to silence.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-error": "Speech recognition error: {{error}}",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "requesting-microphone": "Requesting microphone access...",
+    "recording-speak-now": "Recording... Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "feedback-placeholder": "Feedback will appear here."
+  },
   "curriculum": {
     "catalog": {
       "title": "Explore our Catalog",
@@ -1306,25 +1325,6 @@
         "intermediate": "Intermediate",
         "advanced": "Advanced"
       }
-    },
-    "speaking-modal": {
-      "correct-congratulations": "That's correct! Congratulations!",
-      "very-good": "Very good!",
-      "try-again": "Try again.",
-      "no-audio-available": "No audio file available.",
-      "loading-audio": "Loading audio...",
-      "playing-audio": "Playing audio...",
-      "audio-finished": "Audio finished playing.",
-      "audio-error": "Error: Unable to play audio.",
-      "recording-stopped-silence": "Recording stopped due to silence.",
-      "no-speech-detected": "Recording stopped. No speech detected.",
-      "speech-recognition-error": "Speech recognition error: {{error}}",
-      "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
-      "requesting-microphone": "Requesting microphone access...",
-      "recording-speak-now": "Recording... Speak now.",
-      "recording-stopped-processing": "Recording stopped. Processing...",
-      "microphone-access-error": "Error: Could not access microphone.",
-      "feedback-placeholder": "Feedback will appear here."
     }
   }
 }
