@@ -1,9 +1,6 @@
 import fs from 'fs';
-import { SuperBlocks } from '../../shared/config/curriculum';
-import { challengeTypes } from '../../shared/config/challenge-types';
 import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getChallengeOrderFromFileTree } from './helpers/get-challenge-order';
+import { getMetaData } from './helpers/project-metadata';
 import {
   createStepFile,
   deleteStepFromMeta,
@@ -12,7 +9,7 @@ import {
   updateStepTitles
 } from './utils';
 
-function deleteStep(stepNum: number): void {
+async function deleteStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {
     throw Error('Step not deleted. Step num must be a number greater than 0.');
   }
@@ -27,13 +24,13 @@ function deleteStep(stepNum: number): void {
   const stepId = challengeOrder[stepNum - 1].id;
 
   fs.unlinkSync(`${getProjectPath()}${stepId}.md`);
-  deleteStepFromMeta({ stepNum });
+  await deleteStepFromMeta({ stepNum });
   updateStepTitles();
 
   console.log(`Successfully deleted step #${stepNum}`);
 }
 
-function insertStep(stepNum: number): void {
+async function insertStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {
     throw Error('Step not inserted. New step number must be greater than 0.');
   }
@@ -45,11 +42,6 @@ function insertStep(stepNum: number): void {
         challengeOrder.length + 2
       }.`
     );
-  const challengeType = [SuperBlocks.SciCompPy].includes(
-    getMetaData().superBlock
-  )
-    ? challengeTypes.python
-    : challengeTypes.html;
 
   const challengeSeeds =
     stepNum > 1
@@ -60,16 +52,15 @@ function insertStep(stepNum: number): void {
 
   const stepId = createStepFile({
     stepNum,
-    challengeType,
     challengeSeeds
   });
 
-  insertStepIntoMeta({ stepNum, stepId });
+  await insertStepIntoMeta({ stepNum, stepId });
   updateStepTitles();
   console.log(`Successfully inserted new step #${stepNum}`);
 }
 
-function createEmptySteps(num: number): void {
+async function createEmptySteps(num: number): Promise<void> {
   if (num < 1 || num > 1000) {
     throw Error(
       `No steps created. arg 'num' must be between 1 and 1000 inclusive`
@@ -77,35 +68,11 @@ function createEmptySteps(num: number): void {
   }
 
   const nextStepNum = getMetaData().challengeOrder.length + 1;
-  const challengeType = [SuperBlocks.SciCompPy].includes(
-    getMetaData().superBlock
-  )
-    ? challengeTypes.python
-    : challengeTypes.html;
-
   for (let stepNum = nextStepNum; stepNum < nextStepNum + num; stepNum++) {
-    const stepId = createStepFile({ stepNum, challengeType });
-    insertStepIntoMeta({ stepNum, stepId });
+    const stepId = createStepFile({ stepNum });
+    await insertStepIntoMeta({ stepNum, stepId });
   }
   console.log(`Successfully added ${num} steps`);
 }
 
-const repairMeta = async () => {
-  const sortByStepNum = (a: string, b: string) =>
-    parseInt(a.split(' ')[1]) - parseInt(b.split(' ')[1]);
-
-  const challengeOrder = await getChallengeOrderFromFileTree();
-  if (!challengeOrder.every(({ title }) => /Step \d+/.test(title))) {
-    throw new Error(
-      'You can only run this command on project-based blocks with step files.'
-    );
-  }
-  const sortedChallengeOrder = challengeOrder.sort((a, b) =>
-    sortByStepNum(a.title, b.title)
-  );
-  const meta = getMetaData();
-  meta.challengeOrder = sortedChallengeOrder;
-  updateMetaData(meta);
-};
-
-export { deleteStep, insertStep, createEmptySteps, repairMeta };
+export { deleteStep, insertStep, createEmptySteps };
