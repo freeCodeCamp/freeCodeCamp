@@ -112,7 +112,8 @@ jobs:
           # LOKI_URL
           # Variables set from SetupJob
           DEPLOYMENT_VERSION: ${{ needs.build.outputs.tagname }}
-          DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.site_tld }}
+          DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
+          DEPLOYMENT_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
           FCC_API_LOG_LEVEL: ${{ needs.setup-jobs.outputs.api_log_lvl }}
           # Stack name
           STACK_NAME: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
@@ -148,6 +149,7 @@ jobs:
             echo -e '\nLOG:Adding deployment variables...'
             {
               echo \"DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION\"
+              echo \"DEPLOYMENT_TLD=$DEPLOYMENT_TLD\"
               echo \"DEPLOYMENT_ENV=$DEPLOYMENT_ENV\"
               echo \"FCC_API_LOG_LEVEL=$FCC_API_LOG_LEVEL\"
             } >> .env
@@ -173,6 +175,7 @@ jobs:
               \"STRIPE_SECRET_KEY\"
               \"LOKI_URL\"
               \"DEPLOYMENT_VERSION\"
+              \"DEPLOYMENT_TLD\"
               \"DEPLOYMENT_ENV\"
               \"FCC_API_LOG_LEVEL\"
             )

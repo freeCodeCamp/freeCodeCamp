@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "add-logic-to-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
-  "order": 2,
-  "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {
       "id": "647e21708acb466c97ccbee3",

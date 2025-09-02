@@ -1,15 +1,21 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
+
 import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
 import { SuperBlocks } from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
+import {
+  getContentConfig,
+  writeBlockStructure
+} from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
+import { updateSimpleSuperblockStructure } from './helpers/create-project';
 
 const helpCategories = [
   'HTML-CSS',
@@ -131,23 +137,7 @@ async function updateFullStackJson(
   block: string,
   position: number
 ) {
-  // Get the index of the correct chapter
-  const chapterIndex = fullStackData['chapters'].findIndex(
-    chapter => chapter.dashedName === chapterName
-  );
-  const moduleIndex = fullStackData['chapters'][chapterIndex][
-    'modules'
-  ].findIndex(module => module.dashedName === moduleName);
-  fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
-    'blocks'
-  ].splice(position - 1, 0, block);
-  // Insert the new block into the already present module
-  // Write the new changes to the file
-  const newData = JSON.stringify(fullStackData, null, 2);
-  await fs.writeFile(
-    '../../curriculum/structure/superblocks/full-stack-developer.json',
-    newData
-  );
+
 }
 
 async function updateIntroJson(
@@ -172,10 +162,10 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
+
   challengeId: ObjectID,
   order?: number,
   blockType?: string,
@@ -194,32 +184,23 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
+  await writeBlockStructure(block, newMeta);
 }
 
 async function createFirstChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+    
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
 
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.

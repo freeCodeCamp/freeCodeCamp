@@ -4,8 +4,6 @@
   "dashedName": "daily-coding-challenges-python",
   "usesMultifileEditor": true,
   "helpCategory": "Python",
-  "order": 1,
-  "superBlock": "dev-playground",
   "blockLayout": "legacy-challenge-list",
   "challengeOrder": [
     {
@@ -103,6 +101,26 @@
     {
       "id": "6821eccb237de8297eaee7a6",
       "title": "Python Challenge 24"
+    },
+    {
+      "id": "68adce01c0e1144d0a902957",
+      "title": "Python Challenge 25"
+    },
+    {
+      "id": "68adce01c0e1144d0a902959",
+      "title": "Python Challenge 26"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295b",
+      "title": "Python Challenge 27"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295d",
+      "title": "Python Challenge 28"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295f",
+      "title": "Python Challenge 29"
     }
   ]
 }

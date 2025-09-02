@@ -1,7 +1,10 @@
-import fs from 'fs';
 import path from 'path';
-import glob from 'glob';
-import { getProjectName, getProjectPath } from './get-project-info';
+
+import {
+  getBlockStructure,
+  writeBlockStructure
+} from '../../../curriculum/file-handler';
+import { getProjectPath } from './get-project-info';
 
 export type Meta = {
   name: string;
@@ -10,22 +13,17 @@ export type Meta = {
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
-  order: number;
   time: string;
   template: string;
   required: string[];
-  superBlock: string;
   challengeOrder: { id: string; title: string }[];
 };
 
-function getMetaData(): Meta {
-  const metaData = fs.readFileSync(getProjectMetaPath(), 'utf-8');
-  return JSON.parse(metaData) as Meta;
+function getMetaData() {
+  const block = getBlock(getProjectPath());
+  return getBlockStructure(block) as Meta;
 }
 
-function updateMetaData(newMetaData: Record<string, unknown>): void {
-  fs.writeFileSync(getProjectMetaPath(), JSON.stringify(newMetaData, null, 2));
-}
 
 function getProjectMetaPath(): string {
   return path.join(
@@ -69,6 +67,15 @@ If there is no file for this id, then either the challengeOrder needs to be upda
         `File ${file} should be in the ${getProjectPath()}.json's challengeOrder`
       );
   });
+  
+function getBlock(filePath: string) {
+  return path.basename(filePath);
 }
 
-export { getMetaData, updateMetaData, getProjectMetaPath, validateMetaData };
+async function updateMetaData(newMetaData: Record<string, unknown>) {
+  const block = getBlock(getProjectPath());
+  await writeBlockStructure(block, newMetaData);
+
+}
+
+export { getMetaData, updateMetaData, getBlock };

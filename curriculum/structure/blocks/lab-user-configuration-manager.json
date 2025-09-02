@@ -1,8 +1,7 @@
 {
   "name": "Build a User Configuration Manager",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-user-configuration-manager",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "684aaf9ec670c68d20efd0d0",

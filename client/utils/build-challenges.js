@@ -9,6 +9,7 @@ const {
   getContentDir,
   getBlockCreator
 } = require('../../curriculum/build-curriculum');
+const { getBlockStructure } = require('../../curriculum/file-handler');
 
 const { curriculumLocale } = envData;
 
@@ -23,7 +24,7 @@ exports.replaceChallengeNode = () => {
     const filename = path.basename(filePath);
 
     console.log(`Replacing challenge node for ${filePath}`);
-    const meta = blockCreator.getMetaForBlock(block);
+    const meta = getBlockStructure(block);
 
     return await blockCreator.createChallenge({
       filename,
@@ -45,7 +46,6 @@ exports.buildChallenges = async function buildChallenges() {
     }, []);
 
   const builtChallenges = blocks
-    .filter(block => !block.isPrivate)
     .map(({ challenges }) => challenges)
     .reduce((accu, current) => accu.concat(current), []);
   return builtChallenges;

@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-shopping-cart",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "63ec14d1c216aa063f0be4af",
