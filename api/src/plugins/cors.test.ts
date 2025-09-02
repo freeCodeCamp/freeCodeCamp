@@ -2,12 +2,11 @@ import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import Fastify, { FastifyInstance, LogLevel } from 'fastify';
 import cors from './cors';
 
-const LOG_LEVELS: LogLevel[] = [
+const NON_DEBUG_LOG_LEVELS: LogLevel[] = [
   'fatal',
   'error',
   'warn',
   'info',
-  'debug',
   'trace'
 ];
 
@@ -22,9 +21,10 @@ describe('cors', () => {
     await fastify.close();
   });
 
-  test('should not log for /status/* routes', async () => {
+  test('should only debug log for /status/* routes', async () => {
     const logger = fastify.log.child({ req: { url: '/status/ping' } });
-    const spies = LOG_LEVELS.map(level => vi.spyOn(logger, level));
+    const spies = NON_DEBUG_LOG_LEVELS.map(level => vi.spyOn(logger, level));
+    const debugSpy = vi.spyOn(logger, 'debug');
     await fastify.inject({
       url: '/status/ping'
     });
@@ -32,11 +32,13 @@ describe('cors', () => {
     spies.forEach(spy => {
       expect(spy).not.toHaveBeenCalled();
     });
+    expect(debugSpy).toHaveBeenCalled();
   });
 
-  test('should not log if the origin is undefined', async () => {
+  test('should debug log if the origin is undefined', async () => {
     const logger = fastify.log.child({ req: { url: '/api/some-endpoint' } });
-    const spies = LOG_LEVELS.map(level => vi.spyOn(logger, level));
+    const spies = NON_DEBUG_LOG_LEVELS.map(level => vi.spyOn(logger, level));
+    const debugSpy = vi.spyOn(logger, 'debug');
     await fastify.inject({
       url: '/api/some-endpoint'
     });
@@ -44,5 +46,6 @@ describe('cors', () => {
     spies.forEach(spy => {
       expect(spy).not.toHaveBeenCalled();
     });
+    expect(debugSpy).toHaveBeenCalled();
   });
 });

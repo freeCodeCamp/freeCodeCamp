@@ -4,7 +4,6 @@
   "blockType": "workshop",
   "isUpcomingChange": true,
   "dashedName": "workshop-pin-extractor",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Python",
   "challengeOrder": [
     {

@@ -2,7 +2,6 @@
   "name": "Build a Card Counting Assistant",
   "isUpcomingChange": false,
   "dashedName": "lab-counting-cards",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {
