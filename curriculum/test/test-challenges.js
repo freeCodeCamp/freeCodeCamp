@@ -28,8 +28,8 @@ const {
 const {
   challengeTypes,
   hasNoSolution
-} = require('../../shared/config/challenge-types');
-const { getLines } = require('../../shared/utils/get-lines');
+} = require('../../shared-dist/config/challenge-types');
+const { getLines } = require('../../shared-dist/utils/get-lines');
 const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang } = require('../utils');
