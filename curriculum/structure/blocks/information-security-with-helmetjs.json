@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "information-security-with-helmetjs",
   "helpCategory": "JavaScript",
-  "order": 0,
-  "superBlock": "information-security",
   "challengeOrder": [
     {
       "id": "587d8247367417b2b2512c36",

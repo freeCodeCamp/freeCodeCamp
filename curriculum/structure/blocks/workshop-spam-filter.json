@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-spam-filter",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "641cd18eb67c661d8a9e11f3",

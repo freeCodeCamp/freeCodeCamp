@@ -6,7 +6,6 @@
   "dashedName": "workshop-plant-nursery-catalog",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "673339d96c56d36e963e888e",

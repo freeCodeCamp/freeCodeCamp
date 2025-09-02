@@ -45,7 +45,6 @@ exports.buildChallenges = async function buildChallenges() {
     }, []);
 
   const builtChallenges = blocks
-    .filter(block => !block.isPrivate)
     .map(({ challenges }) => challenges)
     .reduce((accu, current) => accu.concat(current), []);
   return builtChallenges;

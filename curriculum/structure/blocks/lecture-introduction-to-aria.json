@@ -4,7 +4,6 @@
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-introduction-to-aria",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "672a53cf67140d8cd85d4b0f",

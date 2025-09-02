@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-data-structures",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "67f41341453c2247fb2828f7", "title": "Data Structures Quiz" }
   ],

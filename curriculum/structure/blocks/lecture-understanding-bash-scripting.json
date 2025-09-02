@@ -4,7 +4,6 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-understanding-bash-scripting",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {
