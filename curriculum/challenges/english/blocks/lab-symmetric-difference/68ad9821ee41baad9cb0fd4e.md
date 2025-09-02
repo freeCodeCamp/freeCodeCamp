@@ -30,19 +30,19 @@ Result: `["diamond", "apple", "emerald", "bread"]`
 
 # --hints--
 
-Your function should be named `diffArray`.
+You should have a function named `diffArray`.
 
 ```js
 assert.isFunction(diffArray);
 ```
 
-Your function should use the `filter` method to filter out items that are present in both arrays.
+The `diffArray` function should use the `filter` method to filter out items that are present in both arrays.
 
 ```js
 assert(/\.filter\(/.test(diffArray.toString()));
 ```
 
-Your function should return `["pink wool"]` when called with `["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"]` and `["diorite", "andesite", "grass", "dirt", "dead shrub"]`.
+`diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["diorite", "andesite", "grass", "dirt", "dead shrub"])` should return `["pink wool"]`.
 
 ```js
 assert.deepEqual(diffArray(
@@ -51,7 +51,7 @@ assert.deepEqual(diffArray(
 ), ["pink wool"]);
 ```
 
-Your function should return `["diorite", "pink wool"]` when called with `["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"]` and `["andesite", "grass", "dirt", "dead shrub"]`.
+diffArray*["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])` should return `["diorite", "pink wool"]`.
 
 ```js
 assert.deepEqual(diffArray(
@@ -60,7 +60,7 @@ assert.deepEqual(diffArray(
 ), ["diorite", "pink wool"]);
 ```
 
-Your function should return an empty array when called with two identical arrays.
+`diffArray` should return an empty array when called with two identical arrays.
 
 ```js
 assert.deepEqual(diffArray(
