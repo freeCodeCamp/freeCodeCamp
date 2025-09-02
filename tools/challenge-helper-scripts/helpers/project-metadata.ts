@@ -24,50 +24,6 @@ function getMetaData() {
   return getBlockStructure(block) as Meta;
 }
 
-
-function getProjectMetaPath(): string {
-  return path.join(
-    getProjectPath(),
-    '../../..',
-    'structure',
-    'blocks',
-    getProjectName() + '.json'
-  );
-}
-
-// This (and everything else) should be async, but it's fast enough
-// for the moment.
-function validateMetaData(): void {
-  const { challengeOrder } = getMetaData();
-
-  // each step in the challengeOrder should correspond to a file
-  challengeOrder.forEach(({ id }) => {
-    const filePath = `${getProjectPath()}${id}.md`;
-    try {
-      fs.accessSync(filePath);
-    } catch (_e) {
-      throw new Error(
-        `The file
-${filePath}
-does not exist, but is required by the challengeOrder of
-${getProjectMetaPath()}
-
-To fix this, you can rename the file containing id: ${id} to ${id}.md
-If there is no file for this id, then either the challengeOrder needs to be updated, or the file needs to be created.
-`
-      );
-    }
-  });
-
-  // each file should have a corresponding step in the challengeOrder
-  glob.sync(`${getProjectPath()}/*.md`).forEach(file => {
-    const id = path.basename(file, '.md');
-    if (!challengeOrder.find(({ id: stepId }) => stepId === id))
-      throw new Error(
-        `File ${file} should be in the ${getProjectPath()}.json's challengeOrder`
-      );
-  });
-  
 function getBlock(filePath: string) {
   return path.basename(filePath);
 }
@@ -75,7 +31,6 @@ function getBlock(filePath: string) {
 async function updateMetaData(newMetaData: Record<string, unknown>) {
   const block = getBlock(getProjectPath());
   await writeBlockStructure(block, newMetaData);
-
 }
 
 export { getMetaData, updateMetaData, getBlock };
