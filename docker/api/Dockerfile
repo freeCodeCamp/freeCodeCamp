@@ -18,18 +18,16 @@ COPY --chown=node:node client/ client/
 
 RUN pnpm config set dedupe-peer-dependents false
 # While we want to ignore scripts generally, we do need to generate the prisma
-# client. Note: npx is the simplest way to generate the client without us having
-# to have prisma as a prod dependency. The jq tricks are to ensure we're using
-# the right version of prisma.
-RUN pnpm install -F=api -F=curriculum -F tools/scripts/build -F challenge-parser \
---frozen-lockfile --ignore-scripts
-RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
+# client.
+RUN pnpm install --frozen-lockfile --ignore-scripts
+RUN cd api && pnpm prisma generate
 
 # The api needs to source curriculum.json and build:curriculum relies on the
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 
+RUN pnpm create:shared
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
