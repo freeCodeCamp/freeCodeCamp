@@ -4228,6 +4228,18 @@
           "In these lectures, you will learn what TypeScript is and how to use it."
         ]
       },
+      "lecture-working-with-generics-and-type-narrowing": {
+        "title": "Working with Generics and Type Narrowing",
+        "intro": [
+          "In these lectures, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "lecture-working-with-typescript-configuration-files": {
+        "title": "Working with TypeScript Configuration files",
+        "intro": [
+          "In this lecture, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
       "trvf": { "title": "293", "intro": [] },
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
