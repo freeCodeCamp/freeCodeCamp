@@ -1,3 +1,4 @@
+import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
@@ -7,12 +8,12 @@ import ObjectID from 'bson-objectid';
 import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
 import { SuperBlocks } from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
-import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import {
   getContentConfig,
   writeBlockStructure
 } from '../../curriculum/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
+import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import { updateSimpleSuperblockStructure } from './helpers/create-project';
@@ -58,6 +59,20 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.title = projectArgs.block;
   }
 
+  const order = projectArgs.order!;
+
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[projectArgs.superBlock];
+
+  if (projectArgs.superBlock !== SuperBlocks.FullStackDeveloper) {
+    void updateSimpleSuperblockStructure(
+      projectArgs.block,
+      { order },
+      superblockFilename
+    );
+  }
+
   void updateIntroJson(
     projectArgs.superBlock,
     projectArgs.block,
@@ -76,17 +91,13 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.questionCount
     );
     void createMetaJson(
-      projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
       projectArgs.helpCategory,
       challengeId
     );
   } else {
-    const challengeId = await createFirstChallenge(
-      projectArgs.superBlock,
-      projectArgs.block
-    );
+    const challengeId = await createFirstChallenge(projectArgs.block);
     void createMetaJson(
       projectArgs.superBlock,
       projectArgs.block,
@@ -137,7 +148,23 @@ async function updateFullStackJson(
   block: string,
   position: number
 ) {
-
+  // Get the index of the correct chapter
+  const chapterIndex = fullStackData['chapters'].findIndex(
+    chapter => chapter.dashedName === chapterName
+  );
+  const moduleIndex = fullStackData['chapters'][chapterIndex][
+    'modules'
+  ].findIndex(module => module.dashedName === moduleName);
+  fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
+    'blocks'
+  ].splice(position - 1, 0, block);
+  // Insert the new block into the already present module
+  // Write the new changes to the file
+  const newData = JSON.stringify(fullStackData, null, 2);
+  await fs.writeFile(
+    '../../curriculum/structure/superblocks/full-stack-developer.json',
+    newData
+  );
 }
 
 async function updateIntroJson(
@@ -162,16 +189,15 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
+  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
-
   challengeId: ObjectID,
   order?: number,
   blockType?: string,
   blockLayout?: string
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/structure/blocks');
   let newMeta;
   if (superBlock !== SuperBlocks.FullStackDeveloper) {
     newMeta = getBaseMeta('Step');
@@ -190,11 +216,7 @@ async function createMetaJson(
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(
-  superBlock: SuperBlocks,
-  block: string
-): Promise<ObjectID> {
-    
+async function createFirstChallenge(block: string): Promise<ObjectID> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
   };
