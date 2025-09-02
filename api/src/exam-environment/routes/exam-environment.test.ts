@@ -1113,7 +1113,9 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTimeInMS: attempt.startTimeInMS,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         };
         expect(res.body).toEqual([examEnvironmentExamAttempt]);
         expect(res.status).toBe(200);
