@@ -2,7 +2,6 @@
   "name": "Error Handling Review",
   "isUpcomingChange": true,
   "dashedName": "review-error-handling",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "67f39bcb48373420f4f12d62", "title": "Error Handling Review" }
   ],

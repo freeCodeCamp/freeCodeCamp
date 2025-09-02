@@ -6,7 +6,6 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-curriculum-outline",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "6823ac607bfdbc46331b2559",

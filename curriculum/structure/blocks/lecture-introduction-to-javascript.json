@@ -4,7 +4,6 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "672d26385dbe73203c4dac81",
