@@ -16,7 +16,10 @@ import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+import {
+  updateChapterModuleSuperblockStructure,
+  updateSimpleSuperblockStructure
+} from './helpers/create-project';
 
 const helpCategories = [
   'HTML-CSS',
@@ -60,6 +63,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
   }
 
   const order = projectArgs.order!;
+  const chapter = projectArgs.chapter!;
+  const module = projectArgs.module!;
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
@@ -69,6 +74,12 @@ async function createProject(projectArgs: CreateProjectArgs) {
     void updateSimpleSuperblockStructure(
       projectArgs.block,
       { order },
+      superblockFilename
+    );
+  } else {
+    void updateChapterModuleSuperblockStructure(
+      projectArgs.block,
+      { order, chapter, module },
       superblockFilename
     );
   }
@@ -91,6 +102,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.questionCount
     );
     void createMetaJson(
+      projectArgs.superBlock,
       projectArgs.block,
       projectArgs.title,
       projectArgs.helpCategory,
