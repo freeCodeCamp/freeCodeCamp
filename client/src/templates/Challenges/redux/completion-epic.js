@@ -153,7 +153,7 @@ function submitModern(type, state) {
         }
 
         update = {
-          endpoint: '/modern-challenge-completed',
+          endpoint: '/encoded/modern-challenge-completed',
           payload: body
         };
       }
