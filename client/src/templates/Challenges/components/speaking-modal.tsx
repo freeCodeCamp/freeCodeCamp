@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
 
 import { closeModal } from '../redux/actions';
 import { isSpeakingModalOpenSelector } from '../redux/selectors';
@@ -45,6 +46,7 @@ const SpeakingModal = ({
   sentence,
   audioUrl
 }: SpeakingModalProps) => {
+  const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
   const [isRecording, setIsRecording] = useState(false);
   const [feedback, setFeedback] = useState('');
@@ -181,7 +183,7 @@ const SpeakingModal = ({
           lastSpeechTimeRef.current = silenceResult.newLastSpeechTime;
         } else if (silenceResult.hasLongSilence) {
           stopRecording();
-          setFeedback('Recording stopped due to silence.');
+          setFeedback(t('curriculum:speaking-modal.recording-stopped-silence'));
           return;
         }
 
@@ -200,7 +202,7 @@ const SpeakingModal = ({
 
   const handlePlay = async () => {
     if (!audioUrl) {
-      setFeedback('No audio file available.');
+      setFeedback(t('curriculum:speaking-modal.no-audio-available'));
       return;
     }
 
@@ -211,7 +213,7 @@ const SpeakingModal = ({
 
     try {
       setIsPlaying(true);
-      setFeedback('Loading audio...');
+      setFeedback(t('curriculum:speaking-modal.loading-audio'));
 
       if (audioRef.current) {
         audioRef.current.pause();
@@ -221,24 +223,24 @@ const SpeakingModal = ({
       audioRef.current = audio;
 
       audio.addEventListener('loadeddata', () => {
-        setFeedback('Playing audio...');
+        setFeedback(t('curriculum:speaking-modal.playing-audio'));
       });
 
       audio.addEventListener('ended', () => {
         setIsPlaying(false);
-        setFeedback('Audio finished playing.');
+        setFeedback(t('curriculum:speaking-modal.audio-finished'));
       });
 
       audio.addEventListener('error', e => {
         setIsPlaying(false);
-        setFeedback('Error: Unable to play audio.');
+        setFeedback(t('curriculum:speaking-modal.audio-error'));
         console.error('Audio playback error:', e);
       });
 
       await audio.play();
     } catch (error) {
       setIsPlaying(false);
-      setFeedback('Error: Unable to play audio.');
+      setFeedback(t('curriculum:speaking-modal.audio-error'));
       console.error('Audio playback error:', error);
     }
   };
@@ -284,7 +286,13 @@ const SpeakingModal = ({
       const transcript = event.results[0][0].transcript;
 
       const formattedUtterance = formatUtterance(transcript);
-      const result = compareTexts(sentence, transcript);
+      const result = compareTexts(sentence, transcript, {
+        correctCongratulations: t(
+          'curriculum:speaking-modal.correct-congratulations'
+        ),
+        veryGood: t('curriculum:speaking-modal.very-good'),
+        tryAgain: t('curriculum:speaking-modal.try-again')
+      });
 
       setComparisonResult(result);
 
@@ -298,16 +306,20 @@ const SpeakingModal = ({
     recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
       hasRecognitionResultRef.current = true;
       if (event.error === 'no-speech') {
-        setFeedback('Recording stopped. No speech detected.');
+        setFeedback(t('curriculum:speaking-modal.no-speech-detected'));
       } else {
-        setFeedback(`Speech recognition error: ${event.error}`);
+        setFeedback(
+          t('curriculum:speaking-modal.speech-recognition-error', {
+            error: event.error
+          })
+        );
       }
     };
 
     recognition.onend = () => {
       setIsRecording(false);
       if (!hasRecognitionResultRef.current) {
-        setFeedback('Recording stopped. No speech detected.');
+        setFeedback(t('curriculum:speaking-modal.no-speech-detected'));
       }
     };
 
@@ -319,7 +331,9 @@ const SpeakingModal = ({
     const SupportedSpeechRecognition =
       window.SpeechRecognition || window.webkitSpeechRecognition;
     if (!SupportedSpeechRecognition) {
-      setFeedback('Speech recognition not supported in this browser.');
+      setFeedback(
+        t('curriculum:speaking-modal.speech-recognition-not-supported')
+      );
       return;
     }
 
@@ -327,7 +341,8 @@ const SpeakingModal = ({
       const { state } = await navigator.permissions.query({
         name: 'microphone' as PermissionName
       });
-      if (state === 'prompt') setFeedback('Requesting microphone access...');
+      if (state === 'prompt')
+        setFeedback(t('curriculum:speaking-modal.requesting-microphone'));
 
       // Request microphone access
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -349,17 +364,17 @@ const SpeakingModal = ({
         stopRecording();
       }, 30000);
       setIsRecording(true);
-      setFeedback('Recording... Speak now.');
+      setFeedback(t('curriculum:speaking-modal.recording-speak-now'));
     } catch (error) {
       console.error('Error accessing microphone:', error);
-      setFeedback('Error: Could not access microphone.');
+      setFeedback(t('curriculum:speaking-modal.microphone-access-error'));
     }
   };
 
   const handleRecord = () => {
     if (isRecording) {
       stopRecording();
-      setFeedback('Recording stopped. Processing...');
+      setFeedback(t('curriculum:speaking-modal.recording-stopped-processing'));
     } else {
       void startRecording();
     }
@@ -431,7 +446,7 @@ const SpeakingModal = ({
               </div>
             </div>
           ) : (
-            feedback || 'Feedback will appear here.'
+            feedback || t('curriculum:speaking-modal.feedback-placeholder')
           )}
         </div>
       </Modal.Body>

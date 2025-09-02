@@ -51,7 +51,17 @@ export const analyzeSilence = (
   };
 };
 
-export const compareTexts = (original: string, utterance: string) => {
+interface CompareTextMessages {
+  correctCongratulations: string;
+  veryGood: string;
+  tryAgain: string;
+}
+
+export const compareTexts = (
+  original: string,
+  utterance: string,
+  messages: CompareTextMessages
+) => {
   const originalWords = normalizeText(original);
   const utteranceWords = normalizeText(utterance);
 
@@ -60,7 +70,7 @@ export const compareTexts = (original: string, utterance: string) => {
       isExact: true,
       accuracy: 100,
       highlightedText: original,
-      message: "That's correct! Congratulations!"
+      message: messages.correctCongratulations
     };
   }
 
@@ -85,6 +95,6 @@ export const compareTexts = (original: string, utterance: string) => {
     isExact: false,
     accuracy: Math.round(accuracy),
     comparison,
-    message: isGoodEnough ? 'Very good!' : 'Try again.'
+    message: isGoodEnough ? messages.veryGood : messages.tryAgain
   };
 };
