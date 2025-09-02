@@ -237,10 +237,10 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         'User submitted a modern challenge'
       );
 
-      const { id, files: encodedFiles, challengeType } = req.body;
+      const { id, files, challengeType } = req.body;
       return await postModernChallengeCompleted(fastify, {
         id,
-        files: encodedFiles,
+        files,
         challengeType,
         userId: req.user!.id
       });
