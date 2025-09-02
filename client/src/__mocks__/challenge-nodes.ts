@@ -7,7 +7,6 @@ interface MockChallengeNodes {
     id: string;
     block: string;
     title: string;
-    isPrivate: boolean;
     superBlock: string;
     dashedName: string;
   };
@@ -23,7 +22,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'a',
       block: 'block-a',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-one',
       dashedName: 'challenge-one'
     }
@@ -37,7 +35,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'b',
       block: 'block-a',
       title: 'Challenge Two',
-      isPrivate: false,
       superBlock: 'super-block-one',
       dashedName: 'challenge-two'
     }
@@ -51,7 +48,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'c',
       block: 'block-b',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-one',
       dashedName: 'challenge-one'
     }
@@ -66,7 +62,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'd',
       block: 'block-b',
       title: 'Challenge Two',
-      isPrivate: false,
       superBlock: 'super-block-one',
       dashedName: 'challenge-two'
     }
@@ -80,7 +75,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'e',
       block: 'block-c',
       title: 'Challenge One',
-      isPrivate: true,
       superBlock: 'super-block-one',
       dashedName: 'challenge-one'
     }
@@ -94,7 +88,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'f',
       block: 'block-a',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-two',
       dashedName: 'challenge-one'
     }
@@ -108,7 +101,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'g',
       block: 'block-a',
       title: 'Challenge Two',
-      isPrivate: false,
       superBlock: 'super-block-two',
       dashedName: 'challenge-two'
     }
@@ -122,7 +114,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'h',
       block: 'block-b',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-two',
       dashedName: 'challenge-one'
     }
@@ -136,7 +127,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'i',
       block: 'block-b',
       title: 'Challenge Two',
-      isPrivate: false,
       superBlock: 'super-block-two',
       dashedName: 'challenge-two'
     }
@@ -150,7 +140,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'j',
       block: 'block-a',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-three',
       dashedName: 'challenge-one'
     }
@@ -164,7 +153,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'k',
       block: 'block-c',
       title: 'Challenge Two',
-      isPrivate: false,
       superBlock: 'super-block-three',
       dashedName: 'challenge-two'
     }
@@ -178,7 +166,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'l',
       block: 'block-c',
       title: 'Challenge Three',
-      isPrivate: false,
       superBlock: 'super-block-three',
       dashedName: 'challenge-three'
     }
@@ -192,7 +179,6 @@ const mockChallengeNodes: MockChallengeNodes[] = [
       id: 'm',
       block: 'block-a',
       title: 'Challenge One',
-      isPrivate: false,
       superBlock: 'super-block-four',
       dashedName: 'challenge-one'
     }

@@ -4,7 +4,6 @@
   "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "68420be9af9d89620af7944a", "title": "Step 1" }],
   "helpCategory": "Python"
 }
