@@ -4,7 +4,6 @@
   "blockType": "quiz",
   "blockLayout": "link",
   "dashedName": "quiz-js-a11y",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "68376949899fcbad3c9cac23",

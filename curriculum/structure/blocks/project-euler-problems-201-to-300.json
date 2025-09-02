@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "project-euler-problems-201-to-300",
   "helpCategory": "Euler",
-  "order": 2,
-  "superBlock": "project-euler",
   "disableLoopProtectTests": true,
   "challengeOrder": [
     {

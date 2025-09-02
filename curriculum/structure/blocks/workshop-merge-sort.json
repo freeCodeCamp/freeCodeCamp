@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-merge-sort",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "655cd899f8de09431eabb40c",

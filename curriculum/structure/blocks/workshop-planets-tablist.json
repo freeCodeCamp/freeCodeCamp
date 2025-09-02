@@ -4,7 +4,6 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "dashedName": "workshop-planets-tablist",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
