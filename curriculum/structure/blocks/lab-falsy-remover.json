@@ -2,7 +2,6 @@
   "name": "Implement a Falsy Remover",
   "isUpcomingChange": false,
   "dashedName": "lab-falsy-remover",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     { "id": "adf08ec01beb4f99fc7a68f2", "title": "Implement a Falsy Remover" }
