@@ -79,23 +79,23 @@ describe('speaking-modal-helpers', () => {
 
   describe('calculateAverageVolume', () => {
     it('should calculate correct average for array of numbers', () => {
-      const dataArray = new Uint8Array([10, 20, 30, 40]);
+      const dataArray: Uint8Array = new Uint8Array([10, 20, 30, 40]);
       expect(calculateAverageVolume(dataArray)).toBe(25);
     });
 
     it('should handle empty array', () => {
-      const dataArray = new Uint8Array([]);
+      const dataArray: Uint8Array = new Uint8Array([]);
       expect(calculateAverageVolume(dataArray)).toBe(0);
     });
 
     it('should handle single value array', () => {
-      const dataArray = new Uint8Array([15]);
+      const dataArray: Uint8Array = new Uint8Array([15]);
       expect(calculateAverageVolume(dataArray)).toBe(15);
     });
   });
 
   describe('analyzeSilence', () => {
-    const baseTime = 1000000;
+    const baseTime: number = 1000000;
 
     beforeEach(() => {
       jest.spyOn(Date, 'now').mockReturnValue(baseTime);
