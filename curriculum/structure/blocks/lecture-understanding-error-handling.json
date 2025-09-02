@@ -2,7 +2,7 @@
   "name": "Understanding Error Handling",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-error-handling",
   "helpCategory": "Python",
   "challengeOrder": [
