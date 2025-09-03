@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-bash-and-sql",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1affc0ef4fcca423d4688", "title": "Bash and SQL Quiz" }
   ],

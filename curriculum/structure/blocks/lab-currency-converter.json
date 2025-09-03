@@ -2,7 +2,6 @@
   "name": "Build a Currency Converter",
   "usesMultifileEditor": true,
   "dashedName": "lab-currency-converter",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67eaa957114d373deb3a9149",

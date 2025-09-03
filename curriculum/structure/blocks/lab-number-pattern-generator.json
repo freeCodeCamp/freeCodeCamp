@@ -2,9 +2,8 @@
   "name": "Build a Number Pattern Generator",
   "blockLayout": "link",
   "blockType": "lab",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-number-pattern-generator",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "6842a6cd9836f0114a5b7a8a",

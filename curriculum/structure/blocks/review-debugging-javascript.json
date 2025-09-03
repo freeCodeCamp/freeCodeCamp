@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-debugging-javascript",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "6723cd54fc196dbd053f9dfb", "title": "Debugging JavaScript Review" }
   ],

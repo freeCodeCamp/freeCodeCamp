@@ -4,7 +4,6 @@
   "blockType": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-understanding-aria-expanded-aria-live-and-common-aria-states",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {

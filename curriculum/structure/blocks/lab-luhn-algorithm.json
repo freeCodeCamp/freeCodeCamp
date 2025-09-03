@@ -2,7 +2,6 @@
   "name": "Implement the Luhn Algorithm",
   "isUpcomingChange": true,
   "dashedName": "lab-luhn-algorithm",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Python",
   "challengeOrder": [
     {

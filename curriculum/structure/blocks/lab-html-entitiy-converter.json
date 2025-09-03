@@ -2,7 +2,6 @@
   "name": "Implement an HTML Entity Converter",
   "isUpcomingChange": false,
   "dashedName": "lab-html-entitiy-converter",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {

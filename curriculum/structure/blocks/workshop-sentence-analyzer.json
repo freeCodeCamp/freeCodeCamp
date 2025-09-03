@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-sentence-analyzer",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "66e2d680e129e1423116a541",

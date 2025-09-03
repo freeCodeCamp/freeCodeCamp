@@ -2,9 +2,8 @@
   "name": "Introduction to Python",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-python",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67fe81c9c6fd3714343a45ad",

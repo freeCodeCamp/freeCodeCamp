@@ -2,7 +2,6 @@ id: 658180220947283cdc0689ce
 title: JavaScript Algorithms and Data Structures Certification
 certification: javascript-algorithms-and-data-structures-v8
 challengeType: 7
-isPrivate: true
 tests:
   - id: 657bdc55a322aae1eac3838f
     title: Build a Palindrome Checker

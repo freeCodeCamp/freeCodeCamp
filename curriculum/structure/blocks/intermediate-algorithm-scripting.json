@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "intermediate-algorithm-scripting",
   "helpCategory": "JavaScript",
-  "order": 8,
-  "superBlock": "javascript-algorithms-and-data-structures",
   "challengeOrder": [
     {
       "id": "a3566b1109230028080c9345",

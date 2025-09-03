@@ -86,6 +86,7 @@ export const buildOptions: FastifyHttpOptions<
 > = {
   loggerInstance: getLogger(),
   genReqId: () => randomBytes(8).toString('hex'),
+  // disabled so we can customise the request/response logging
   disableRequestLogging: true
 };
 
@@ -104,6 +105,17 @@ export const build = async (
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
+  fastify.addHook('onRequest', (req, _reply, done) => {
+    const logger = fastify.log.child({ req });
+    logger.debug({ req }, 'received request');
+    done();
+  });
+
+  fastify.addHook('onResponse', (req, reply, done) => {
+    const logger = fastify.log.child({ res: reply });
+    logger.debug({ req, res: reply }, 'responding to request');
+    done();
+  });
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);

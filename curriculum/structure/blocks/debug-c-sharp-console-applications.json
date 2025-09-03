@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "debug-c-sharp-console-applications",
   "helpCategory": "C-Sharp",
-  "order": 5,
-  "superBlock": "foundational-c-sharp-with-microsoft",
   "challengeOrder": [
     {
       "id": "647e22c08acb466c97ccbef7",

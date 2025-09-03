@@ -5,7 +5,6 @@
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-truncate-string",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "ac6993d51946422351508a41",

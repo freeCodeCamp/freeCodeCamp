@@ -2,7 +2,6 @@
   "name": "Implement a Sorted Index Finder",
   "isUpcomingChange": false,
   "dashedName": "lab-sorted-index-finder",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {

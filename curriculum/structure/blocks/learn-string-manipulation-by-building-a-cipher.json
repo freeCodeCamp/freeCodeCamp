@@ -4,8 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-string-manipulation-by-building-a-cipher",
-  "order": 0,
-  "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
       "id": "6551ecf597038c36637f3759",

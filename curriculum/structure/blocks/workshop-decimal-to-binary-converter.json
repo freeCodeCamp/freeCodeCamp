@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-decimal-to-binary-converter",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "63db7f4677d06d7500a13321",

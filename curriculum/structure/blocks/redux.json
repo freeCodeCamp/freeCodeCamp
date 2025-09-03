@@ -3,7 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "redux",
   "helpCategory": "JavaScript",
-  "order": 4,
   "required": [
     {
       "src": "https://cdnjs.cloudflare.com/ajax/libs/redux/3.7.2/redux.min.js"
@@ -12,7 +11,6 @@
       "src": "https://cdnjs.cloudflare.com/ajax/libs/redux-thunk/2.2.0/redux-thunk.min.js"
     }
   ],
-  "superBlock": "front-end-development-libraries",
   "challengeOrder": [
     {
       "id": "5a24c314108439a4d403614b",

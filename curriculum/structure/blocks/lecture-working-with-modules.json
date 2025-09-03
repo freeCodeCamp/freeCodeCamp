@@ -1,10 +1,9 @@
 {
   "name": "Working with Modules",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-modules",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "683ec7b778993c6971b56c83",

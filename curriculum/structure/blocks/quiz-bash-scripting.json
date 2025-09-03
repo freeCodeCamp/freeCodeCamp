@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-bash-scripting",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "66f1afbd9998e9c985d8e73b", "title": "Bash Scripting Quiz" }
   ],

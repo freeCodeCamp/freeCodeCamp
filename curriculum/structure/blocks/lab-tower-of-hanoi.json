@@ -2,7 +2,6 @@
   "name": "Implement the Tower of Hanoi Algorithm",
   "isUpcomingChange": true,
   "dashedName": "lab-tower-of-hanoi",
-  "superBlock": "full-stack-developer",
   "blockLayout": "link",
   "blockType": "lab",
   "helpCategory": "Python",

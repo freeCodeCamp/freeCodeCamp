@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "take-home-projects",
   "helpCategory": "JavaScript",
-  "order": 2,
-  "superBlock": "coding-interview-prep",
   "challengeOrder": [
     {
       "id": "bd7158d8c442eddfaeb5bd10",

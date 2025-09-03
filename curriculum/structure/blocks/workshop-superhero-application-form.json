@@ -6,7 +6,6 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-superhero-application-form",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "6808fe91a5cb0c3355f23027",

@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-fruit-search-app",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67ec2f7924ade2450c06bcd8",

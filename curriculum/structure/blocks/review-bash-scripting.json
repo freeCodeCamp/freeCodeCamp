@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-bash-scripting",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "6724e417419c2f211bb41bfc", "title": "Bash Scripting Review" }
   ],

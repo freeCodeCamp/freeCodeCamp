@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "basic-node-and-express",
   "helpCategory": "JavaScript",
-  "order": 1,
-  "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
     {
       "id": "587d7fb0367417b2b2512bed",

@@ -1,12 +1,11 @@
 {
   "name": "Build a Medical Data Validator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-medical-data-validator",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "683ecb010f4c6bafd428802c",

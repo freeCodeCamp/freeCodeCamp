@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "algorithms",
   "helpCategory": "JavaScript",
-  "order": 0,
-  "superBlock": "coding-interview-prep",
   "challengeOrder": [
     {
       "id": "a3f503de51cf954ede28891d",

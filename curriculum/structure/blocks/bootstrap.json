@@ -3,13 +3,11 @@
   "isUpcomingChange": false,
   "dashedName": "bootstrap",
   "helpCategory": "HTML-CSS",
-  "order": 0,
   "required": [
     {
       "link": "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css"
     }
   ],
-  "superBlock": "front-end-development-libraries",
   "challengeOrder": [
     {
       "id": "bad87fee1348bd9acde08712",

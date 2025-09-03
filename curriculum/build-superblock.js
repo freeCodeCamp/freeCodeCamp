@@ -147,7 +147,6 @@ function addMetaToChallenge(challenge, meta) {
   challenge.superOrder = meta.superOrder;
   challenge.challengeOrder = challengeOrderIndex;
   challenge.isLastChallengeInBlock = isLastChallengeInBlock;
-  challenge.isPrivate = challenge.isPrivate || meta.isPrivate;
   challenge.required = (meta.required || []).concat(challenge.required || []);
   challenge.template = meta.template;
   challenge.helpCategory = challenge.helpCategory || meta.helpCategory;

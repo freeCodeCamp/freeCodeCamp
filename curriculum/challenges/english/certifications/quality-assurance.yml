@@ -2,7 +2,6 @@ id: 5e611829481575a52dc59c0e
 title: Quality Assurance Certification
 certification: quality-assurance
 challengeType: 7
-isPrivate: true
 tests:
   - id: 587d8249367417b2b2512c41
     title: Metric-Imperial Converter

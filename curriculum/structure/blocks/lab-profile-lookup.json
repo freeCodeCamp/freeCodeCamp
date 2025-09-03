@@ -4,7 +4,6 @@
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-profile-lookup",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {

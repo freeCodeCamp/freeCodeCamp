@@ -343,6 +343,98 @@ Generic challenge description.
 Do the assignment.
 `;
 
+interface DailyCodingChallengeOptions {
+  challengeId: ObjectID;
+  challengeNumber: number;
+}
+
+export const getDailyJavascriptChallengeTemplate = ({
+  challengeId,
+  challengeNumber
+}: DailyCodingChallengeOptions) => `---
+id: ${challengeId.toString()}
+title: "JavaScript Challenge ${challengeNumber}: Placeholder"
+challengeType: 28
+dashedName: javascript-challenge-${challengeNumber}
+---
+
+# --description--
+
+Placeholder description
+
+# --hints--
+
+Placeholder test
+
+\`\`\`js
+assert.isTrue(true);
+\`\`\`
+
+# --seed--
+
+## --seed-contents--
+
+\`\`\`js
+function placeholder(arg) {
+
+  return arg;
+}
+\`\`\`
+
+# --solutions--
+
+\`\`\`js
+function placeholder(arg) {
+
+  return arg;
+}
+\`\`\`
+`;
+
+export const getDailyPythonChallengeTemplate = ({
+  challengeId,
+  challengeNumber
+}: DailyCodingChallengeOptions) => `---
+id: ${challengeId.toString()}
+title: "Python Challenge ${challengeNumber}: Placeholder"
+challengeType: 29
+dashedName: python-challenge-${challengeNumber}
+---
+
+# --description--
+
+Placeholder description
+
+# --hints--
+
+Placeholder test
+
+\`\`\`js
+({test: () => { runPython(\`
+from unittest import TestCase
+TestCase().assertTrue(True)\`)
+}})
+\`\`\`
+
+# --seed--
+
+## --seed-contents--
+
+\`\`\`py
+def placeholder(arg):
+
+    return arg
+\`\`\`
+
+# --solutions--
+
+\`\`\`py
+def placeholder(arg):
+
+    return arg
+\`\`\`
+`;
+
 type Template = (opts: ChallengeOptions) => string;
 
 export const getTemplate = (challengeType: string): Template => {

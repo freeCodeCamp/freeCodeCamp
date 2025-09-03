@@ -2,7 +2,6 @@
   "name": "Build a CTA Component",
   "isUpcomingChange": false,
   "dashedName": "workshop-tailwind-cta-component",
-  "superBlock": "full-stack-developer",
   "helpCategory": "HTML-CSS",
   "blockType": "workshop",
   "blockLayout": "challenge-grid",

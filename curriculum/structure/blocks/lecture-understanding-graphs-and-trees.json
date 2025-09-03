@@ -4,7 +4,6 @@
   "dashedName": "lecture-understanding-graphs-and-trees",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [{ "id": "68420c5ac17cf26ab2a4ca3c", "title": "Step 1" }],
   "helpCategory": "Python"
 }

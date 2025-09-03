@@ -4,8 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "learn-classes-and-objects-by-building-a-sudoku-solver",
-  "order": 11,
-  "superBlock": "scientific-computing-with-python",
   "challengeOrder": [
     {
       "id": "66068fb0bfddba2b7977eb60",

@@ -210,7 +210,6 @@ export type ChallengeNode = {
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     isLocked: boolean;
-    isPrivate: boolean;
     order: number;
     questions: Question[];
     quizzes: Quiz[];

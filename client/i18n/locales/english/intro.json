@@ -2736,6 +2736,37 @@
           "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
         ]
       },
+      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
+        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "intro": [
+          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+        ]
+      },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
+        ]
+      },
+      "lab-house-painting": {
+        "title": "Build a House Painting",
+        "intro": [
+          "In this lab, you'll build a house painting using CSS.",
+          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
+        ]
+      },
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
+        ]
+      },
+      "quiz-css-positioning": {
+        "title": "CSS Positioning Quiz",
+        "intro": ["Test your knowledge of CSS positioning with this quiz."]
+      },
       "lecture-working-with-attribute-selectors": {
         "title": "Working with Attribute Selectors",
         "intro": [
@@ -2767,37 +2798,6 @@
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
         ]
-      },
-      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
-        "title": "Understanding How to Work with Floats and Positioning in CSS",
-        "intro": [
-          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
-        ]
-      },
-      "workshop-cat-painting": {
-        "title": "Build a Cat Painting",
-        "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
-          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
-        ]
-      },
-      "lab-house-painting": {
-        "title": "Build a House Painting",
-        "intro": [
-          "In this lab, you'll build a house painting using CSS.",
-          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
-        ]
-      },
-      "review-css-positioning": {
-        "title": "CSS Positioning Review",
-        "intro": [
-          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
-          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
-        ]
-      },
-      "quiz-css-positioning": {
-        "title": "CSS Positioning Quiz",
-        "intro": ["Test your knowledge of CSS positioning with this quiz."]
       },
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
@@ -2892,12 +2892,6 @@
         "title": "Build a Product Landing Page",
         "intro": [
           "In this project, you'll build a product landing page to market a product of your choice."
-        ]
-      },
-      "lab-profile-lookup": {
-        "title": "Build a Profile Lookup",
-        "intro": [
-          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "review-css-grid": {
@@ -3333,6 +3327,12 @@
           "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
         ]
       },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
       "lab-repeat-a-string": {
         "title": "Build a String Repeating Function",
         "intro": [
@@ -3543,12 +3543,6 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "lab-palindrome-checker": {
-        "title": "Build a Palindrome Checker",
-        "intro": [
-          "For this lab, you'll build an application that checks whether a given word is a palindrome."
-        ]
-      },
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
@@ -3640,6 +3634,12 @@
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
           "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "lab-markdown-to-html-converter": {
@@ -4154,6 +4154,23 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lectures, you will learn about the different types of testing."
+        ]
+      },
+      "review-testing": {
+        "title": "Testing Review",
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
+      },
+      "quiz-testing": {
+        "title": "Testing Quiz",
+        "intro": ["Test what you've learned on testing with this quiz."]
+      },
       "lecture-working-with-css-libraries-and-frameworks": {
         "title": "Working with CSS Libraries and Frameworks",
         "intro": [
@@ -4204,23 +4221,6 @@
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
-      },
-      "lecture-understanding-the-different-types-of-testing": {
-        "title": "Understanding the Different Types of Testing",
-        "intro": [
-          "In these lectures, you will learn about the different types of testing."
-        ]
-      },
-      "review-testing": {
-        "title": "Testing Review",
-        "intro": [
-          "Before you take the testing quiz, you should review everything you've learned so far.",
-          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
-        ]
-      },
-      "quiz-testing": {
-        "title": "Testing Quiz",
-        "intro": ["Test what you've learned on testing with this quiz."]
       },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",

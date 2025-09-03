@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-bash-and-sql-by-building-a-bike-rental-shop",
   "helpCategory": "Backend Development",
-  "order": 8,
-  "superBlock": "relational-database",
   "challengeOrder": [
     {
       "id": "5f5b969a05380d2179fe6e18",

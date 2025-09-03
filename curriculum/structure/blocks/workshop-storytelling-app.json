@@ -6,7 +6,6 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-storytelling-app",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "671f99a5dc221afb86fa2dc0",

@@ -2,7 +2,6 @@ id: 5e46fc95ac417301a38fb934
 title: Data Analysis with Python Certification
 certification: data-analysis-with-python
 challengeType: 7
-isPrivate: true
 tests:
   - id: 5e46f7e5ac417301a38fb928
     title: Mean-Variance-Standard Deviation Calculator

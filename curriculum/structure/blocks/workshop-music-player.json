@@ -6,7 +6,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-music-player",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "67471d60ce8e6268fe9e12f6",

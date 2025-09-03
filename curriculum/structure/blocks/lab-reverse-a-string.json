@@ -4,7 +4,6 @@
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-reverse-a-string",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     { "id": "a202eed8fc186c8434cb6d61", "title": "Build a String Inverter" }

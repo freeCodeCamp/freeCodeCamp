@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "basic-css",
   "helpCategory": "HTML-CSS",
-  "order": 1,
-  "superBlock": "responsive-web-design",
   "challengeOrder": [
     {
       "id": "bad87fee1348bd9aedf08803",

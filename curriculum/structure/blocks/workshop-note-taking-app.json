@@ -4,7 +4,6 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "dashedName": "workshop-note-taking-app",
-  "superBlock": "full-stack-developer",
   "helpCategory": "JavaScript",
   "challengeOrder": [
     {

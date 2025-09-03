@@ -31,7 +31,7 @@ vi.mock('../../utils/env', async importOriginal => {
   return {
     ...actual,
     FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
-    DEPLOYMENT_ENV: 'org'
+    DEPLOYMENT_ENV: 'production'
   };
 });
 

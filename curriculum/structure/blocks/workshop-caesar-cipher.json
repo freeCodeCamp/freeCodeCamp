@@ -1,10 +1,9 @@
 {
   "name": "Build a Caesar Cipher",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-caesar-cipher",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     {
       "id": "680a3d4c065557260de2ff33",

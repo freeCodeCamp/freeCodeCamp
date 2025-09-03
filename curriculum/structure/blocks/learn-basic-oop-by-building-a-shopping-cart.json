@@ -5,8 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "learn-basic-oop-by-building-a-shopping-cart",
   "helpCategory": "JavaScript",
-  "order": 18,
-  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "63ec14d1c216aa063f0be4af",
