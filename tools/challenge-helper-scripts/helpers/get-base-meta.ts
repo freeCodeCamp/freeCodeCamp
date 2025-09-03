@@ -17,6 +17,7 @@ interface Meta {
 
 const baseMeta: Meta = {
   name: '',
+  superBlock: '',
   isUpcomingChange: true,
   dashedName: '',
   helpCategory: '',
