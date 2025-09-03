@@ -121,7 +121,7 @@ Your `#navbar` element should always be at the top of the viewport.
 
 ```js
   const timeout = milliseconds =>
-  new Promise(resolve => setTimeout(resolve, milliseconds));
+    new Promise(resolve => setTimeout(resolve, milliseconds));
 
   const navbar = document.getElementById('navbar');
   assert.approximately(
