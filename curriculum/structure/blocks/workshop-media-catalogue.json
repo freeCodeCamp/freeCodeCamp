@@ -2,7 +2,6 @@
   "name": "Build a Media Catalogue",
   "isUpcomingChange": true,
   "dashedName": "workshop-media-catalogue",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Python",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
@@ -21,9 +20,17 @@
     { "id": "68af278a60e009597dd861ea", "title": "Step 10" },
     { "id": "68b702892910ab7b495de081", "title": "Step 11" },
     { "id": "68b704862dd6559e890c2a86", "title": "Step 12" },
-    { "id": "68b6cc518177b0a11c3fe3b1", "title": "Step 13" },
-    { "id": "68b6d1f70fffb10287c8031e", "title": "Step 14" },
-    { "id": "68b6d5244e6ce639e52fd1e7", "title": "Step 15" },
-    { "id": "68b6d9692a6526838265ad7f", "title": "Step 16" }
+    { "id": "68b7e1818bd294974b9099bf", "title": "Step 13" },
+    { "id": "68b6cc518177b0a11c3fe3b1", "title": "Step 14" },
+    { "id": "68b6d1f70fffb10287c8031e", "title": "Step 15" },
+    { "id": "68b6d5244e6ce639e52fd1e7", "title": "Step 16" },
+    { "id": "68b6d9692a6526838265ad7f", "title": "Step 17" },
+    { "id": "68b804f3be853a355f055fef", "title": "Step 18" },
+    { "id": "68b80a995417adac579f9545", "title": "Step 19" },
+    { "id": "68b80d521177c1e5469d31bf", "title": "Step 20" },
+    { "id": "68b80ef5aae8b2078b0a9dc1", "title": "Step 21" },
+    { "id": "68b810b125078b2c943ce4e5", "title": "Step 22" },
+    { "id": "68b813ecdbe8896fd1fcf736", "title": "Step 23" },
+    { "id": "68b816815f13eca63a588b45", "title": "Step 24" }
   ]
 }
