@@ -134,7 +134,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.15.1",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
@@ -159,7 +159,8 @@
       "nodemon",
       "prisma",
       "puppeteer",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }
