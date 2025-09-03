@@ -58,7 +58,8 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
-  twitter: ['twitter.com', 'x.com']
+  twitter: ['twitter.com', 'x.com'],
+  bluesky: ['bsky.app']
 };
 
 /**
@@ -343,10 +344,13 @@ ${isLinkSentWithinLimitTTL}`
         twitter: req.body.twitter,
         githubProfile: req.body.githubProfile,
         linkedin: req.body.linkedin,
-        website: req.body.website
+        website: req.body.website,
+        bluesky: req.body.bluesky
       };
 
-      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
+      const valid = (
+        ['twitter', 'githubProfile', 'linkedin', 'bluesky'] as const
+      ).every(
         key => validateSocialUrl(socials[key], key)
       );
 
@@ -366,7 +370,8 @@ ${isLinkSentWithinLimitTTL}`
             website: socials.website,
             twitter: socials.twitter,
             githubProfile: socials.githubProfile,
-            linkedin: socials.linkedin
+            linkedin: socials.linkedin,
+            bluesky: socials.bluesky
           }
         });
 

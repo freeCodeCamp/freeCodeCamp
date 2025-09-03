@@ -398,6 +398,7 @@ export type User = {
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
+  bluesky?: string;
   username: string;
   website: string;
   yearsTopContributor: string[];

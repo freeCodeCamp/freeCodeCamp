@@ -25,6 +25,7 @@ export interface Socials {
   githubProfile: string;
   linkedin: string;
   twitter: string;
+  bluesky: string;
   website: string;
 }
 
@@ -60,6 +61,7 @@ const InternetSettings = ({
     githubProfile = '',
     linkedin = '',
     twitter = '',
+    bluesky = '',
     website = ''
   } = user;
 
@@ -67,6 +69,7 @@ const InternetSettings = ({
     githubProfile,
     linkedin,
     twitter,
+    bluesky,
     website
   });
 
@@ -127,6 +130,9 @@ const InternetSettings = ({
 
   const { state: linkedinValidation, message: linkedinValidationMessage } =
     getValidationStateFor(formValues.linkedin);
+
+  const { state: blueskyValidation, message: blueskyValidationMessage } =
+    getValidationStateFor(formValues.bluesky);
 
   const { state: twitterValidation, message: twitterValidationMessage } =
     getValidationStateFor(formValues.twitter);
@@ -208,6 +214,24 @@ const InternetSettings = ({
                 dataPlaywrightTestLabel='internet-twitter-check'
               />
               <Info message={twitterValidationMessage} />
+            </FormGroup>
+            <FormGroup controlId='internet-bluesky' validationState={blueskyValidation}>
+              <ControlLabel htmlFor='internet-bluesky-input'>
+                Bluesky
+              </ControlLabel>
+              <FormControl
+                onChange={createHandleChange('bluesky')}
+                placeholder='https://bsky.app/profile/your-handle'
+                type='url'
+                value={formValues.bluesky}
+                id='internet-bluesky-input'
+              />
+              <Check
+                url={formValues.bluesky}
+                validation={blueskyValidation}
+                dataPlaywrightTestLabel='internet-bluesky-check'
+              />
+              <Info message={blueskyValidationMessage} />
             </FormGroup>
             <FormGroup
               controlId='internet-website'
