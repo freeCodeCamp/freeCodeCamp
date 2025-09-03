@@ -12,9 +12,7 @@ import {
 import { getMetaData } from './helpers/project-metadata';
 
 const insertChallenge = async () => {
-  validateMetaData();
-
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
   const challengeAfter = await select({
     message: 'Which challenge should come AFTER this new one?',
     choices: challenges.map(({ id, title }) => ({
