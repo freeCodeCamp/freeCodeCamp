@@ -48,7 +48,9 @@ pnpm-lock.yaml
 **/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
 
 # -------------------------------------------------
+# -------------------------------------------------
 # Files that need attention from the mobile team
+# -------------------------------------------------
 # -------------------------------------------------
 
 /curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
