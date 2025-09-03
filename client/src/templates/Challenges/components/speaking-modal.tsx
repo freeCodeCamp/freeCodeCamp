@@ -2,15 +2,13 @@ import React, { useState, useRef, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
+import SpeechRecognition, {
+  useSpeechRecognition
+} from 'react-speech-recognition';
 
 import { closeModal } from '../redux/actions';
 import { isSpeakingModalOpenSelector } from '../redux/selectors';
-import {
-  formatUtterance,
-  calculateAverageVolume,
-  analyzeSilence,
-  compareTexts
-} from './speaking-modal-helpers';
+import { formatUtterance, compareTexts } from './speaking-modal-helpers';
 import './speaking-modal.css';
 
 interface SpeakingModalProps {
@@ -34,12 +32,6 @@ interface ComparisonResult {
   message: string;
 }
 
-declare global {
-  interface Window {
-    webkitAudioContext?: typeof AudioContext;
-  }
-}
-
 const SpeakingModal = ({
   closeSpeakingModal,
   isSpeakingModalOpen,
@@ -48,157 +40,94 @@ const SpeakingModal = ({
 }: SpeakingModalProps) => {
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isRecording, setIsRecording] = useState(false);
   const [feedback, setFeedback] = useState('');
   const [comparisonResult, setComparisonResult] =
     useState<ComparisonResult | null>(null);
+  const [hasStartedRecording, setHasStartedRecording] = useState(false);
+  const [previouslyListening, setPreviouslyListening] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
-  const mediaStreamRef = useRef<MediaStream | null>(null);
-  const recognitionRef = useRef<SpeechRecognition | null>(null);
-  const audioContextRef = useRef<AudioContext | null>(null);
-  const analyserRef = useRef<AnalyserNode | null>(null);
-  const microphoneRef = useRef<MediaStreamAudioSourceNode | null>(null);
-  const silenceTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const maxRecordingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const lastSpeechTimeRef = useRef<number>(0);
-  const hasRecognitionResultRef = useRef<boolean>(false);
 
-  // Cleanup function to stop all media resources
-  const cleanupMediaResources = () => {
-    // Stop MediaRecorder first
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  // Cleanup function for audio resources
+  const cleanupAudioResources = () => {
     try {
-      if (mediaRecorderRef.current) {
-        if (mediaRecorderRef.current.state === 'recording') {
-          mediaRecorderRef.current.stop();
-        }
-        mediaRecorderRef.current = null;
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
       }
     } catch (error) {
-      console.warn('Error stopping media recorder:', error);
-    }
-
-    // Stop speech recognition
-    try {
-      if (recognitionRef.current) {
-        recognitionRef.current.stop();
-      }
-    } catch (error) {
-      console.warn('Error stopping speech recognition:', error);
-    }
-
-    // Disconnect audio processing
-    try {
-      if (microphoneRef.current) {
-        microphoneRef.current.disconnect();
-        microphoneRef.current = null;
-      }
-    } catch (error) {
-      console.warn('Error disconnecting microphone:', error);
-    }
-
-    try {
-      if (audioContextRef.current) {
-        void audioContextRef.current.close();
-        audioContextRef.current = null;
-      }
-    } catch (error) {
-      console.warn('Error closing audio context:', error);
-    }
-
-    // Stop media tracks last
-    try {
-      if (mediaStreamRef.current) {
-        mediaStreamRef.current.getTracks().forEach(track => {
-          try {
-            track.stop();
-          } catch (error) {
-            console.warn('Error stopping media track:', error);
-          }
-        });
-        mediaStreamRef.current = null;
-      }
-    } catch (error) {
-      console.warn('Error stopping media stream:', error);
-    }
-
-    if (silenceTimeoutRef.current) {
-      clearTimeout(silenceTimeoutRef.current);
-      silenceTimeoutRef.current = null;
-    }
-    if (maxRecordingTimeoutRef.current) {
-      clearTimeout(maxRecordingTimeoutRef.current);
-      maxRecordingTimeoutRef.current = null;
+      console.warn('Error stopping audio playback:', error);
     }
   };
 
-  // Reset feedback and cleanup media when modal is closed
+  // Reset feedback and cleanup when modal is closed
   useEffect(() => {
     if (!isSpeakingModalOpen) {
       setFeedback('');
       setComparisonResult(null);
-      setIsRecording(false);
-      cleanupMediaResources();
+      setHasStartedRecording(false);
+      setPreviouslyListening(false);
+      resetTranscript();
+      void SpeechRecognition.stopListening();
+      cleanupAudioResources();
     }
-  }, [isSpeakingModalOpen]);
+  }, [isSpeakingModalOpen, resetTranscript]);
 
-  // Cleanup media resources on component unmount
+  // Cleanup on component unmount
   useEffect(() => {
     return () => {
-      cleanupMediaResources();
+      cleanupAudioResources();
     };
   }, []);
 
-  // Monitor audio levels for silence detection
-  const monitorAudioLevels = (stream: MediaStream) => {
-    try {
-      const audioContext = new (window.AudioContext ||
-        window.webkitAudioContext ||
-        AudioContext)();
-      const analyser = audioContext.createAnalyser();
-      const microphone = audioContext.createMediaStreamSource(stream);
+  // Track listening state changes
+  useEffect(() => {
+    if (previouslyListening && !listening && hasStartedRecording) {
+      // Speech recognition just stopped and we had started a recording session
+      if (transcript && transcript.trim()) {
+        // We have a transcript, process it
+        const formattedTranscript = formatUtterance(transcript);
 
-      analyser.fftSize = 256;
-      microphone.connect(analyser);
+        const result = compareTexts(sentence, transcript, {
+          correctCongratulations: t('speaking-modal.correct-congratulations'),
+          veryGood: t('speaking-modal.very-good'),
+          tryAgain: t('speaking-modal.try-again')
+        });
 
-      audioContextRef.current = audioContext;
-      analyserRef.current = analyser;
-      microphoneRef.current = microphone;
+        setComparisonResult(result);
 
-      const dataArray = new Uint8Array(analyser.frequencyBinCount);
-      lastSpeechTimeRef.current = Date.now();
-
-      const checkSilence = () => {
-        if (!isRecording || !analyserRef.current) return;
-
-        analyser.getByteFrequencyData(dataArray);
-
-        const averageVolume = calculateAverageVolume(dataArray);
-        const silenceResult = analyzeSilence(
-          averageVolume,
-          lastSpeechTimeRef.current
-        );
-
-        if (silenceResult.isSpeechDetected) {
-          lastSpeechTimeRef.current = silenceResult.newLastSpeechTime;
-        } else if (silenceResult.hasLongSilence) {
-          stopRecording();
-          setFeedback(t('speaking-modal.recording-stopped-silence'));
-          return;
+        // For non-exact matches, show both the formatted utterance and the feedback
+        if (result.isExact) {
+          setFeedback(result.message);
+        } else {
+          setFeedback(`${formattedTranscript} ${result.message}`);
         }
+      } else {
+        // No transcript and we were recording, this means no speech detected
+        setFeedback(t('speaking-modal.no-speech-detected'));
+        setComparisonResult(null);
+      }
 
-        // Continue monitoring if still recording
-        if (isRecording) {
-          requestAnimationFrame(checkSilence);
-        }
-      };
-
-      // Start monitoring
-      requestAnimationFrame(checkSilence);
-    } catch (error) {
-      console.error('Error setting up audio monitoring:', error);
+      // Reset the recording flag after processing
+      setHasStartedRecording(false);
     }
-  };
+
+    // Update previous listening state
+    setPreviouslyListening(listening);
+  }, [
+    listening,
+    previouslyListening,
+    hasStartedRecording,
+    transcript,
+    sentence,
+    t
+  ]);
 
   const handlePlay = async () => {
     if (!audioUrl) {
@@ -245,134 +174,46 @@ const SpeakingModal = ({
     }
   };
 
-  const stopRecording = () => {
-    if (mediaRecorderRef.current) {
-      mediaRecorderRef.current.stop();
-    }
-    if (recognitionRef.current) {
-      recognitionRef.current.stop();
-    }
-    if (audioContextRef.current) {
-      void audioContextRef.current.close();
-      audioContextRef.current = null;
-    }
-    if (mediaStreamRef.current) {
-      mediaStreamRef.current.getTracks().forEach(track => track.stop());
-      mediaStreamRef.current = null;
-    }
-    if (silenceTimeoutRef.current) {
-      clearTimeout(silenceTimeoutRef.current);
-      silenceTimeoutRef.current = null;
-    }
-    if (maxRecordingTimeoutRef.current) {
-      clearTimeout(maxRecordingTimeoutRef.current);
-      maxRecordingTimeoutRef.current = null;
-    }
-    setIsRecording(false);
-  };
-
-  const setupSpeechRecognition = (SupportedSpeechRecognition: {
-    new (): SpeechRecognition;
-  }) => {
-    const recognition = new SupportedSpeechRecognition();
-    recognitionRef.current = recognition;
-
-    recognition.continuous = false;
-    recognition.interimResults = false;
-    recognition.lang = 'en-US';
-
-    recognition.onresult = (event: SpeechRecognitionEvent) => {
-      hasRecognitionResultRef.current = true;
-      const transcript = event.results[0][0].transcript;
-
-      const formattedUtterance = formatUtterance(transcript);
-      const result = compareTexts(sentence, transcript, {
-        correctCongratulations: t('speaking-modal.correct-congratulations'),
-        veryGood: t('speaking-modal.very-good'),
-        tryAgain: t('speaking-modal.try-again')
-      });
-
-      setComparisonResult(result);
-
-      if (result.isExact) {
-        setFeedback(result.message);
-      } else {
-        setFeedback(`${formattedUtterance} ${result.message}`);
-      }
-    };
-
-    recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
-      hasRecognitionResultRef.current = true;
-      if (event.error === 'no-speech') {
-        setFeedback(t('speaking-modal.no-speech-detected'));
-      } else {
-        setFeedback(
-          t('speaking-modal.speech-recognition-error', {
-            error: event.error
-          })
-        );
-      }
-    };
-
-    recognition.onend = () => {
-      setIsRecording(false);
-      if (!hasRecognitionResultRef.current) {
-        setFeedback(t('speaking-modal.no-speech-detected'));
-      }
-    };
-
-    return recognition;
-  };
-
-  const startRecording = async () => {
-    // Check speech recognition support first
-    const SupportedSpeechRecognition =
-      window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!SupportedSpeechRecognition) {
+  const handleStartRecording = () => {
+    if (!browserSupportsSpeechRecognition) {
       setFeedback(t('speaking-modal.speech-recognition-not-supported'));
       return;
     }
 
     try {
-      const { state } = await navigator.permissions.query({
-        name: 'microphone' as PermissionName
-      });
-      if (state === 'prompt')
-        setFeedback(t('speaking-modal.requesting-microphone'));
-
-      // Request microphone access
-      const stream = await navigator.mediaDevices.getUserMedia({
-        audio: true
-      });
-
-      mediaStreamRef.current = stream;
-
-      setComparisonResult(null);
-      hasRecognitionResultRef.current = false;
-
-      // Set up and start speech recognition
-      const recognition = setupSpeechRecognition(SupportedSpeechRecognition);
-      recognition.start();
-
-      monitorAudioLevels(stream);
-
-      maxRecordingTimeoutRef.current = setTimeout(() => {
-        stopRecording();
-      }, 30000);
-      setIsRecording(true);
       setFeedback(t('speaking-modal.recording-speak-now'));
+      setHasStartedRecording(true);
+      resetTranscript();
+      setComparisonResult(null);
+
+      // Start listening with a timeout of 10 seconds
+      void SpeechRecognition.startListening({
+        continuous: false,
+        language: 'en-US'
+      });
+
+      // Set a timeout to automatically stop after 30 seconds
+      setTimeout(() => {
+        if (listening) {
+          void SpeechRecognition.stopListening();
+        }
+      }, 30000);
     } catch (error) {
-      console.error('Error accessing microphone:', error);
+      console.error('Error starting recording:', error);
       setFeedback(t('speaking-modal.microphone-access-error'));
     }
   };
 
+  const handleStopRecording = () => {
+    void SpeechRecognition.stopListening();
+    setFeedback(t('speaking-modal.recording-stopped-processing'));
+  };
+
   const handleRecord = () => {
-    if (isRecording) {
-      stopRecording();
-      setFeedback(t('speaking-modal.recording-stopped-processing'));
+    if (listening) {
+      handleStopRecording();
     } else {
-      void startRecording();
+      handleStartRecording();
     }
   };
 
@@ -396,7 +237,7 @@ const SpeakingModal = ({
           <Button
             size='medium'
             onClick={() => void handlePlay()}
-            className={`speaking-modal-play-button ${isPlaying || isRecording ? 'disabled' : ''}`}
+            className={`speaking-modal-play-button ${isPlaying || listening ? 'disabled' : ''}`}
           >
             {isPlaying ? 'Playing...' : 'Play'}
           </Button>
@@ -407,7 +248,7 @@ const SpeakingModal = ({
             onClick={() => void handleRecord()}
             className={`speaking-modal-record-button ${isPlaying ? 'disabled' : ''}`}
           >
-            {isRecording ? 'Stop' : 'Record'}
+            {listening ? 'Stop' : 'Record'}
           </Button>
         </div>
         <div className='speaking-modal-feedback'>

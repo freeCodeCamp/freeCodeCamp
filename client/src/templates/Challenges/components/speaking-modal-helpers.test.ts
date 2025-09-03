@@ -1,8 +1,6 @@
 import {
   normalizeText,
   formatUtterance,
-  calculateAverageVolume,
-  analyzeSilence,
   compareTexts
 } from './speaking-modal-helpers';
 
@@ -89,83 +87,6 @@ describe('speaking-modal-helpers', () => {
 
     it('should handle string with only spaces', () => {
       expect(formatUtterance('   ')).toBe('');
-    });
-  });
-
-  describe('calculateAverageVolume', () => {
-    it('should calculate correct average for array of numbers', () => {
-      const dataArray: Uint8Array = new Uint8Array([10, 20, 30, 40]);
-      expect(calculateAverageVolume(dataArray)).toBe(25);
-    });
-
-    it('should handle empty array', () => {
-      const dataArray: Uint8Array = new Uint8Array([]);
-      expect(calculateAverageVolume(dataArray)).toBe(0);
-    });
-
-    it('should handle single value array', () => {
-      const dataArray: Uint8Array = new Uint8Array([15]);
-      expect(calculateAverageVolume(dataArray)).toBe(15);
-    });
-  });
-
-  describe('analyzeSilence', () => {
-    const baseTime: number = 1000000;
-
-    beforeEach(() => {
-      jest.spyOn(Date, 'now').mockReturnValue(baseTime);
-    });
-
-    afterEach(() => {
-      jest.restoreAllMocks();
-    });
-
-    it('should detect speech when volume is above threshold', () => {
-      const result = analyzeSilence(25, baseTime - 1000, 20, 2000);
-      expect(result).toEqual({
-        isSpeechDetected: true,
-        hasLongSilence: false,
-        newLastSpeechTime: baseTime
-      });
-    });
-
-    it('should not stop recording when silence duration is below timeout', () => {
-      const lastSpeechTime = baseTime - 1000; // 1 second ago
-      const result = analyzeSilence(15, lastSpeechTime, 20, 2000);
-      expect(result).toEqual({
-        isSpeechDetected: false,
-        hasLongSilence: false,
-        newLastSpeechTime: lastSpeechTime,
-        silenceDuration: 1000
-      });
-    });
-
-    it('should stop recording when silence duration exceeds timeout', () => {
-      const lastSpeechTime = baseTime - 3000; // 3 seconds ago
-      const result = analyzeSilence(15, lastSpeechTime, 20, 2000);
-      expect(result).toEqual({
-        isSpeechDetected: false,
-        hasLongSilence: true,
-        newLastSpeechTime: lastSpeechTime,
-        silenceDuration: 3000
-      });
-    });
-
-    it('should use default thresholds when not provided', () => {
-      const lastSpeechTime = baseTime - 2500; // 2.5 seconds ago
-      const result = analyzeSilence(15, lastSpeechTime);
-      expect(result.hasLongSilence).toBe(true);
-    });
-
-    it('should respect custom thresholds', () => {
-      const lastSpeechTime = baseTime - 1500; // 1.5 seconds ago
-      const result = analyzeSilence(15, lastSpeechTime, 10, 1000);
-      expect(result.hasLongSilence).toBe(true);
-    });
-
-    it('should handle volume exactly at threshold', () => {
-      const result = analyzeSilence(20, baseTime - 1000, 20, 2000);
-      expect(result.isSpeechDetected).toBe(false);
     });
   });
 

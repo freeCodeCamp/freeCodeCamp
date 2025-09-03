@@ -14,43 +14,6 @@ export const formatUtterance = (text: string) => {
   return cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase() + '.';
 };
 
-export const calculateAverageVolume = (
-  dataArray: Uint8Array | null | undefined
-) => {
-  if (!dataArray || dataArray.length === 0) return 0;
-  const arr = Array.from(dataArray);
-  return (
-    arr.reduce((sum: number, value: number) => sum + value, 0) / arr.length
-  );
-};
-
-export const analyzeSilence = (
-  averageVolume: number,
-  lastSpeechTime: number,
-  silenceThreshold = 20,
-  silenceTimeoutMs = 2000
-) => {
-  const currentTime = Date.now();
-  const isSpeechDetected = averageVolume > silenceThreshold;
-  const silenceDuration = currentTime - lastSpeechTime;
-  const hasLongSilence = silenceDuration > silenceTimeoutMs;
-
-  if (isSpeechDetected) {
-    return {
-      isSpeechDetected: true,
-      hasLongSilence,
-      newLastSpeechTime: currentTime
-    };
-  }
-
-  return {
-    isSpeechDetected: false,
-    hasLongSilence,
-    newLastSpeechTime: lastSpeechTime,
-    silenceDuration
-  };
-};
-
 interface CompareTextMessages {
   correctCongratulations: string;
   veryGood: string;
