@@ -218,7 +218,7 @@ const SpeakingModal = ({
   };
 
   return (
-    <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen}>
+    <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
       <Modal.Header closeButtonClassNames='close'>
         Speaking Practice
       </Modal.Header>
