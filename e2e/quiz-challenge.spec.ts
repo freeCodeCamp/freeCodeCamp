@@ -31,17 +31,15 @@ test.describe('Quiz challenge', () => {
     // Intercept Gatsby page-data and inject a deterministic quiz fixture
     await page.route('**/page-data/**/page-data.json', async route => {
       const response = await route.fetch();
-      try {
-        const body = await response.text();
+      const body = await response.text();
 
-        const pageData = JSON.parse(body) as PageData;
-        pageData.result.data.challengeNode.challenge.quizzes = fixture;
+      const pageData = JSON.parse(body) as PageData;
+      pageData.result.data.challengeNode.challenge.quizzes = fixture;
 
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
+      await route.fulfill({
+        contentType: 'application/json',
+        body: JSON.stringify(pageData)
+      });
     });
 
     await page.goto(
