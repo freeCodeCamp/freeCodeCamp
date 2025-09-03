@@ -58,8 +58,7 @@ export const paypalConfigTypes = {
       500: { planId: 'P-6B636789V3105190KMTJFH7A' },
       1000: { planId: 'P-53P76823N8780520DMVTWF3I' },
       2000: { planId: 'P-8HY47434FB9663500MVTWFOA' },
-      // Placeholder plan id for $25 variant (A/B test)
-      2500: { planId: 'P-PLACEHOLDER-25-PROD' },
+      2500: { planId: 'P-1E758922LA293854BNC3SK3A' },
       3000: { planId: 'P-1KY930839N8045117L6E4BKY' },
       4000: { planId: 'P-0MH28916302828423MVTWEBI' },
       5000: { planId: 'P-0WR49877YD949401BL6E4CTA' }
@@ -70,8 +69,7 @@ export const paypalConfigTypes = {
       500: { planId: 'P-37N14480BW163382FLZYPVMA' },
       1000: { planId: 'P-28B62039J8092810UL6E3FXA' },
       2000: { planId: 'P-7HR706961M9170433L6HI5VI' },
-      // Placeholder plan id for $25 variant (A/B test)
-      2500: { planId: 'P-PLACEHOLDER-25-STAGING' },
+      2500: { planId: 'P-2BK29709FB733490FNC3RPGQ' },
       3000: { planId: 'P-35V33574BU596924JL6HI6XY' },
       4000: { planId: 'P-45M45060289267734L6HJSXA' },
       5000: { planId: 'P-0MD70861FY4172444L6HJTUQ' }
