@@ -881,6 +881,7 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s Twitter",
+    "bluesky": "Link to {{username}}'s Bluesky",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Go to first page",
