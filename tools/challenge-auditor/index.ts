@@ -11,8 +11,7 @@ import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
 import {
   SuperBlocks,
-  getAuditedSuperBlocks,
-  superBlockToFolderMap
+  getAuditedSuperBlocks
 } from '../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
@@ -91,15 +90,17 @@ void (async () => {
       'challenges',
       language
     );
-    const auditedFiles = englishFilePaths.filter(file =>
-      certs.some(
-        cert =>
-          // we're not ready to audit the new curriculum yet
-          (cert !== SuperBlocks.JsAlgoDataStructNew ||
-            process.env.SHOW_UPCOMING_CHANGES === 'true') &&
-          file.startsWith(superBlockToFolderMap[cert])
-      )
-    );
+    // TODO: decide if we need to audit files at all.
+    const auditedFiles = englishFilePaths;
+    // const auditedFiles = englishFilePaths.filter(file =>
+    //   certs.some(
+    //     cert =>
+    //       // we're not ready to audit the new curriculum yet
+    //       (cert !== SuperBlocks.JsAlgoDataStructNew ||
+    //         process.env.SHOW_UPCOMING_CHANGES === 'true') &&
+    //       file.startsWith(superBlockToFolderMap[cert])
+    //   )
+    // );
     const noMissingFiles = await auditChallengeFiles(auditedFiles, {
       langCurriculumDirectory
     });

@@ -7,12 +7,12 @@ dashedName: task-64
 
 <!--
 AUDIO REFERENCE:
-Tom: Oh, awesome. My computer and drawing tablet are great, too. 
+Tom: Awesome. My computer and drawing tablet are great, too. 
 -->
 
 # --description--
 
-`Awesome` is a word people use when they really like something. It's like saying `very good!` It's an informal way to show approval or admiration.
+`Awesome` is a word people use when they really like something. It's like saying `Very good`. It's an informal way to show approval or admiration.
 
 # --fillInTheBlank--
 
@@ -26,7 +26,7 @@ Tom: Oh, awesome. My computer and drawing tablet are great, too.
 
 ### --feedback--
 
-Listen for a word that means `very good` or `I really like it.`
+This word means `very good` or `I really like it`. The first letter is capitalized.
 
 # --scene--
 
@@ -59,7 +59,7 @@ Listen for a word that means `very good` or `I really like it.`
       "startTime": 1,
       "finishTime": 4.25,
       "dialogue": {
-        "text": "Awesome. My computer and drawing tablet are great too.",
+        "text": "Awesome. My computer and drawing tablet are great, too.",
         "align": "center"
       }
     },
