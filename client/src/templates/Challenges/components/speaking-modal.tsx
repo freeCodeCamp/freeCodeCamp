@@ -217,74 +217,100 @@ const SpeakingModal = ({
     }
   };
 
+  const renderExactMatch = () => (
+    <>
+      <div className='speaking-modal-correct-text'>{sentence}</div>
+      <div className='speaking-modal-feedback-message'>
+        {comparisonResult!.message}
+      </div>
+    </>
+  );
+
+  const renderPartialMatch = () => {
+    if (!comparisonResult?.comparison) return null;
+
+    const incorrectWords = comparisonResult.comparison
+      .filter(item => !item.isCorrect)
+      .map(item => item.word)
+      .join(', ');
+
+    return (
+      <>
+        <div>
+          {comparisonResult.comparison.map(
+            (item: ComparisonWord, index: number) => (
+              <span
+                key={index}
+                className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
+              >
+                {index === 0
+                  ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
+                  : item.word}
+              </span>
+            )
+          )}
+          <span>.</span>
+
+          {incorrectWords && (
+            <span className='sr-only'>Incorrect words: {incorrectWords}.</span>
+          )}
+        </div>
+        <div className='speaking-modal-feedback-message'>
+          {comparisonResult.message}
+        </div>
+      </>
+    );
+  };
+
+  const renderFeedback = () => {
+    if (comparisonResult?.isExact) {
+      return renderExactMatch();
+    }
+
+    if (comparisonResult?.comparison) {
+      return renderPartialMatch();
+    }
+
+    return feedback;
+  };
+
   return (
     <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
       <Modal.Header closeButtonClassNames='close'>
         Speaking Practice
       </Modal.Header>
-      <Modal.Body alignment='center'>
-        <label htmlFor='speaking-input' className='speaking-modal-label'>
-          Practice Speaking:
-        </label>
-        <div className='speaking-modal-input-row'>
-          <input
-            id='speaking-input'
-            type='text'
-            value={sentence}
-            readOnly
-            className='speaking-modal-input'
-          />
+      <Modal.Body alignment='center' className='speaking-modal-body'>
+        <p>Repeat aloud this sentence:</p>
+
+        <div className='speaking-modal-sentence-container'>
+          <p id='speaking-sentence' className='speaking-modal-sentence'>
+            {sentence}
+          </p>
           <Button
             size='medium'
             onClick={() => void handlePlay()}
-            className={`speaking-modal-play-button ${isPlaying || listening ? 'disabled' : ''}`}
+            aria-describedby='speaking-sentence'
+            disabled={isPlaying || listening}
           >
             {isPlaying ? 'Playing...' : 'Play'}
           </Button>
         </div>
+
         <div className='speaking-modal-record-container'>
           <Button
             size='medium'
             onClick={() => void handleRecord()}
-            className={`speaking-modal-record-button ${isPlaying ? 'disabled' : ''}`}
+            disabled={isPlaying || listening}
           >
             {listening ? 'Stop' : 'Record'}
           </Button>
         </div>
-        <div className='speaking-modal-feedback'>
-          {comparisonResult && comparisonResult.isExact ? (
-            <div>
-              <div className='speaking-modal-correct-text'>{sentence}</div>
-              <div className='speaking-modal-feedback-message'>
-                {comparisonResult.message}
-              </div>
-            </div>
-          ) : comparisonResult &&
-            !comparisonResult.isExact &&
-            comparisonResult.comparison ? (
-            <div>
-              <div>
-                {comparisonResult.comparison.map(
-                  (item: ComparisonWord, index: number) => (
-                    <span
-                      key={index}
-                      className={`speaking-modal-comparison-word ${item.isCorrect ? 'correct' : 'incorrect'}`}
-                    >
-                      {index === 0
-                        ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
-                        : item.word}
-                    </span>
-                  )
-                )}
-                <span>.</span>
-              </div>
-              <div className='speaking-modal-feedback-message'>
-                {comparisonResult.message}
-              </div>
-            </div>
-          ) : (
-            feedback || t('speaking-modal.feedback-placeholder')
-          )}
+        <div
+          className='speaking-modal-feedback'
+          aria-live='polite'
+          aria-atomic='true'
+        >
+          {renderFeedback()}
         </div>
       </Modal.Body>
     </Modal>
@@ -292,7 +318,9 @@ const SpeakingModal = ({
 };
 
 const mapStateToProps = (state: unknown) => ({
-  isSpeakingModalOpen: isSpeakingModalOpenSelector(state) as boolean
+  isSpeakingModalOpen: Boolean(
+    (isSpeakingModalOpenSelector as (s: unknown) => boolean)(state)
+  )
 });
 
 const mapDispatchToProps = {

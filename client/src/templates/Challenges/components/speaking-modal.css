@@ -1,52 +1,23 @@
-.speaking-modal-label {
-  font-weight: bold;
-  margin-bottom: 0.5rem;
+.speaking-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
 }
 
-.speaking-modal-input-row {
+.speaking-modal-sentence-container {
   display: flex;
   align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  width: 80%;
+  gap: 2rem;
+  background-color: var(--background-primary);
+  border: 2px solid var(--background-tertiary);
+  padding: 0.5rem 2rem;
 }
 
-.speaking-modal-input {
-  width: 100%;
-  min-width: 350px;
-  max-width: 900px;
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  text-align: center;
-  background: #0a0a23;
-  color: white;
-  border: 1px solid #444;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.speaking-modal-feedback {
-  width: 100%;
-  margin-top: 2rem;
-  min-height: 2.5rem;
-  max-height: 200px;
-  text-align: center;
-  color: #ffd700;
-  font-size: 1.1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  overflow-y: auto;
-  padding: 0.5rem;
-  box-sizing: border-box;
-}
-
-/* Button styles */
-.speaking-modal-play-button {
-  margin-left: 1rem;
-  min-width: 100px;
-}
-
-.speaking-modal-play-button.disabled {
-  opacity: 0.5;
-  pointer-events: none;
+.speaking-modal-sentence {
+  margin: 0;
 }
 
 .speaking-modal-record-container {
@@ -56,19 +27,10 @@
   margin-top: 1.5rem;
 }
 
-.speaking-modal-record-button {
-  min-width: 120px;
-  height: 48px;
-  font-size: 1.1rem;
-  padding: 0.5rem 1.5rem;
+.speaking-modal-feedback {
+  margin-top: 2rem;
 }
 
-.speaking-modal-record-button.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* Feedback styles */
 .speaking-modal-correct-text {
   color: var(--background-success);
 }
@@ -77,14 +39,12 @@
   margin-top: 8px;
 }
 
-.speaking-modal-comparison-word {
-  margin-right: 4px;
-}
-
-.speaking-modal-comparison-word.correct {
+.speaking-modal-comparison-word-correct {
   color: var(--background-success);
+  margin-inline-start: 4px;
 }
 
-.speaking-modal-comparison-word.incorrect {
+.speaking-modal-comparison-word-incorrect {
   color: var(--background-danger);
+  margin-inline-start: 4px;
 }
