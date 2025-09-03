@@ -1,0 +1,50 @@
+---
+id: 68afde7cc89e3d44f12be695
+title: Task 16
+challengeType: 19
+dashedName: task-16
+---
+
+<!-- (Audio) A: ā -->
+
+# --instructions--
+
+Listen to the audio and answer the question below.
+
+# --questions--
+
+## --text--
+
+Which final and tone do you hear?
+
+## --answers--
+
+`ā`
+
+---
+
+`á`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`ǐ`
+
+### --feedback--
+
+This has a different final and tone from the audio.
+
+---
+
+`ō`
+
+### --feedback--
+
+This has a different final from the audio.
+
+## --video-solution--
+
+1

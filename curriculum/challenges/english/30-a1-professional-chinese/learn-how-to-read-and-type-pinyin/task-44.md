@@ -7,13 +7,13 @@ dashedName: task-44
 
 <!--SPEAKING-->
 
-<!-- (Audio) A: j, ja, je, ji, ju -->
+<!-- (Audio) A: j, ji, ju -->
 
 # --description--
 
 The initial `j` is pronounced by placing the tip of your tongue against the roof of your mouth, just behind your upper front teeth. It's similar to the English "j" sound in "jump" or "jam".
 
-When `j` combines with the finals `a`, `e`, `i`, and `u`, you get the syllables: `ja`, `je`, `ji`, and `ju`.
+When `j` combines with the finals `i` and `u`, you get the syllables: `ji` and `ju`. Note that `ü` is written as `u` after `j`.
 
 [ ] pronouncing `j`
 [ ] pronouncing `ja`

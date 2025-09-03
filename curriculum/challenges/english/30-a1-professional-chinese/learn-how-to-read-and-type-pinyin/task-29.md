@@ -1,19 +1,15 @@
 ---
 id: 68a05b058270a78f80f9866c
-title: Task 110
+title: Task 29
 challengeType: 22
-dashedName: task-110
+dashedName: task-29
 ---
 
-<!-- (Audio) A: diàn -->
-
-# --description--
-
-Because `ian` contains `a`, the tone mark goes on the `a`. For example, `miǎn`.
+<!-- (Audio) A: dé -->
 
 # --instructions--
 
-Listen to the audio and complete the sentence below.
+Listen to the audio and complete the syllable with the correct tone mark.
 
 # --fillInTheBlank--
 
@@ -23,8 +19,8 @@ Listen to the audio and complete the sentence below.
 
 ## --blanks--
 
-`diàn`
+`dé`
 
 ### --feedback--
 
-This combines the initial `d` with the final `ian` and uses the fourth tone, which falls sharply from high to low.
+This combines the initial `d` with the final `e`, and uses the second tone, which rises from low to high.

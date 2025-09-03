@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `r` with the final `i` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `r` with the final `i`, and uses the fourth tone, which falls sharply from high to low.

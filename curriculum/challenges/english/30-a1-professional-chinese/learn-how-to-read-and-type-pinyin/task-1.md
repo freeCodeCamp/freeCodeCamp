@@ -28,16 +28,19 @@ Learning Pinyin first makes Chinese much easier because:
 A syllable is a single unit of pronunciation. In Pinyin, each syllable represents a character and has three parts:
 
 **Initial**
+
 This is the consonant sound at the beginning of the syllable. For example, in `ma`, the initial is `m`. Some syllables do not have an initial, like `ai`.
 
 There are many initials in Pinyin, which you will learn in later modules.
 
 **Final**
+
 This is the part that comes after the initial. It can be a single vowel, as in `a` from `ma`; a combination of vowels, as in `ai`; or vowels followed by `n` or `ng`, as in `an` and `ang`.
 
 There are 36 finals in Pinyin.
 
 **Tone**
+
 This is the pitch pattern of the syllable. There are four main tones with different pitch patterns, plus a neutral tone that is short and soft.
 
 | Tone   | Pitch Pattern     | Example |
@@ -50,7 +53,7 @@ This is the pitch pattern of the syllable. There are four main tones with differ
 
 Tones change the meaning of a character, even if the initial and final stay the same. For example: `mā` with the first tone means mother, while `mǎ` with the third tone means horse.
 
-In this first block, you will learn finals, tones, syllable structure, and the basic tone mark rule.
+In this first block, you will learn finals, tones, syllable structure, and the basic tone mark rules.
 
 In later blocks, as you learn Chinese characters, you will learn more advanced Pinyin knowledge like tone sandhi. And you'll keep reviewing and practicing what you've learned here. If you find it challenging now, that's completely normal. As you learn characters, words, and sentences, your familiarity with Pinyin will grow, and your pronunciation will become more natural.
 

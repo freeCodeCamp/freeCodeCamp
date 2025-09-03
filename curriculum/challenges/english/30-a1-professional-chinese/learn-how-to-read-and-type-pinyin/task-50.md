@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-50
 ---
 
-<!-- (Audio) A: jī -->
+<!-- (Audio) A: jū, qí, xì -->
 
 # --instructions--
 
@@ -15,15 +15,15 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`jī`
+`jū`
 
 ---
 
-`qī`
+`qū`
 
 ### --feedback--
 
@@ -31,33 +31,43 @@ This has a different initial from the audio.
 
 ---
 
-`xī`
+`jú`
 
 ### --feedback--
 
-This has a different initial from the audio.
+This has a different tone from the audio.
+
+---
+
+`jǔ`
+
+### --feedback--
+
+This has a different tone from the audio.
 
 ## --video-solution--
 
 1
 
----
-
-<!-- (Audio) A: qǐ -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which syllable matches the second syllable you hear?
 
 ## --answers--
 
-`jǐ`
+`xí`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`qí`
+
+---
+
+`jī`
 
 ### --feedback--
 
@@ -67,52 +77,46 @@ This has a different initial from the audio.
 
 `qǐ`
 
----
-
-`xǐ`
-
 ### --feedback--
 
-This has a different initial from the audio.
+This has a different tone from the audio.
 
 ## --video-solution--
 
 2
 
----
-
-<!-- (Audio) A: xī -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the third syllable you hear?
 
 ## --answers--
 
-`jī`
-
-### --feedback--
-
-This has a different initial from the audio.
-
----
-
-`qī`
-
-### --feedback--
-
-This has a different initial from the audio.
+`xì`
 
 ---
 
 `xī`
 
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`qì`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`xí`
+
+### --feedback--
+
+This has a different tone from the audio.
+
 ## --video-solution--
 
-3
+1

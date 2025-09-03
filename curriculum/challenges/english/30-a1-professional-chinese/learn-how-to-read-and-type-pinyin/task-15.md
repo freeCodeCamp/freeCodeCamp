@@ -7,6 +7,10 @@ dashedName: task-15
 
 <!-- (Audio) A: ǘ -->
 
+# --description--
+
+Since there is no key for `ü`, you can type `v` instead. For example, type `v3` for `ǚ`.
+
 # --instructions--
 
 Listen to the audio and complete the sentence below.

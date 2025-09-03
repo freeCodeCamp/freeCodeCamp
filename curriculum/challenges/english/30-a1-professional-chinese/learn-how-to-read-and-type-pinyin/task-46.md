@@ -13,7 +13,7 @@ dashedName: task-46
 
 The initial `q` is pronounced by placing the tip of your tongue against the roof of your mouth, just behind your upper front teeth. It's similar to the English "ch" sound in "cheese" but with more aspiration.
 
-When `q` combines with the finals `i`, and `ü`, you get the syllables: `qi` and `qu`.
+When `q` combines with the finals `i`, and `ü`, you get the syllables: `qi` and `qu`. Note that `ü` is written as `u` after `q`.
 
 [ ] pronouncing `q`
 [ ] pronouncing `qi`

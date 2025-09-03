@@ -1,11 +1,11 @@
 ---
-id: 68a05b058270a78f80f9866c
-title: Task 31
+id: 689f0a890ed0b955549da52d
+title: Task 26
 challengeType: 22
-dashedName: task-31
+dashedName: task-26
 ---
 
-<!-- (Audio) A: tā -->
+<!-- (Audio) A: fú -->
 
 # --instructions--
 
@@ -19,8 +19,8 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ## --blanks--
 
-`tā`
+`fú`
 
 ### --feedback--
 
-This syllable combines the initial `t` with the final `a` and uses the first tone, which is high and level.
+This combines the initial `f` with the final `u`, and uses the second tone, which is rising.

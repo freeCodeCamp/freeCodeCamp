@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-57
 ---
 
-<!-- (Audio) A: zī -->
+<!-- (Audio) A: zé, cè, sū -->
 
 # --instructions--
 
@@ -15,15 +15,23 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`zī`
+`zé`
 
 ---
 
-`cī`
+`cè`
+
+### --feedback--
+
+This has a different initial and tone from the audio.
+
+---
+
+`zhé`
 
 ### --feedback--
 
@@ -31,33 +39,23 @@ This has a different initial from the audio.
 
 ---
 
-`sī`
+`zě`
 
 ### --feedback--
 
-This has a different initial from the audio.
+This has a different tone from the audio.
 
 ## --video-solution--
 
 1
 
----
-
-<!-- (Audio) A: cǐ -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which syllable matches the second syllable you hear?
 
 ## --answers--
 
-`zǐ`
+`zè`
 
 ### --feedback--
 
@@ -65,37 +63,47 @@ This has a different initial from the audio.
 
 ---
 
-`cǐ`
+`cè`
 
 ---
 
-`sǐ`
+`chè`
 
 ### --feedback--
 
 This has a different initial from the audio.
+
+---
+
+`cí`
+
+### --feedback--
+
+This has a different final and tone from the audio.
 
 ## --video-solution--
 
 2
 
----
-
-<!-- (Audio) A: sì -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the third syllable you hear?
 
 ## --answers--
 
-`zì`
+`sū`
+
+---
+
+`sù`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`shū`
 
 ### --feedback--
 
@@ -103,16 +111,12 @@ This has a different initial from the audio.
 
 ---
 
-`cì`
+`sǔ`
 
 ### --feedback--
 
-This has a different initial from the audio.
-
----
-
-`sì`
+This has a different tone from the audio.
 
 ## --video-solution--
 
-3
+1

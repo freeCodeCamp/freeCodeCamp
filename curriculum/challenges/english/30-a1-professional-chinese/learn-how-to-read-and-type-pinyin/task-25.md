@@ -1,26 +1,27 @@
 ---
 id: 689f07be56515c51fd53d4d2
 title: Task 25
-challengeType: 22
+challengeType: 24
 dashedName: task-25
 ---
 
-<!-- (Audio) A: áo -->
+<!-- (Audio) A: f, fa, fo, fu -->
 
 # --instructions--
 
-Listen to the audio and complete the sentence below.
+`f` is a sound made with your lips and teeth. To pronounce the `f`, gently place your upper teeth against your lower lip and let air flow smoothly between them.
 
-# --fillInTheBlank--
+Unlike `b` and `p` where your lips press together completely, for `f` your lips never fully close as you make this soft, continuous sound by steadily exhaling through the small space between your teeth and lower lip.
 
-## --sentence--
+When `f` combines with the finals `a`, `o`, and `u`, you get the syllables: `fa`, `fo`, and `fu`.
 
-`BLANK`
+Similar to `b` and `p`, when pronouncing these syllables, smoothly link the `f` sound directly into the vowel sound without pausing between them. The only difference will be the mouth shape you make for each specific vowel.
 
-## --blanks--
+[ ] pronouncing `f`  
+[ ] pronouncing `fa`  
+[ ] pronouncing `fo`  
+[ ] pronouncing `fu`
 
-`áo`
+# --assignment--
 
-### --feedback--
-
-This is the second tone for `ao`, rising from low to high.
+Listen to the audio and pronounce the initial and syllables.

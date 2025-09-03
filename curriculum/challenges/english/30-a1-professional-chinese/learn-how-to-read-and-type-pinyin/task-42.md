@@ -7,10 +7,6 @@ dashedName: task-42
 
 <!-- (Audio) A: hǔ -->
 
-# --description--
-
-Because `hu` contains `u`, the tone mark goes on the `u`. For example, `hǔ`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.

@@ -23,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `p` with the final `o` and uses the first tone, which is high and flat.
+This syllable combines the initial `p` with the final `o`, and uses the first tone, which is high and flat.

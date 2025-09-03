@@ -7,10 +7,6 @@ dashedName: task-33
 
 <!-- (Audio) A: nǚ -->
 
-# --description--
-
-Because `nü` contains `ü`, the tone mark goes on the `ü`. For example, `nǚ`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `n` with the final `ü` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `n` with the final `ü`, and uses the third tone, which dips down and then rises.

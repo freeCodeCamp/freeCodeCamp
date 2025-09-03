@@ -7,10 +7,6 @@ dashedName: task-59
 
 <!-- (Audio) A: zhī -->
 
-# --description--
-
-Because `zhi` contains `i`, the tone mark goes on the `i`. For example, `zhī`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `zh` with the final `i` and uses the first tone, which is high and level.
+This syllable combines the initial `zh` with the final `i`, and uses the first tone, which is high and level.

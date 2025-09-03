@@ -7,10 +7,6 @@ dashedName: task-56
 
 <!-- (Audio) A: sì -->
 
-# --description--
-
-Because `si` contains `i`, the tone mark goes on the `i`. For example, `sì`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `s` with the final `i` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `s` with the final `i`, and uses the fourth tone, which falls sharply from high to low.

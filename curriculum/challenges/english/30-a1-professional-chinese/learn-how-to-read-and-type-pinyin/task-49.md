@@ -5,11 +5,7 @@ challengeType: 22
 dashedName: task-49
 ---
 
-<!-- (Audio) A: xī -->
-
-# --description--
-
-Because `xi` contains `i`, the tone mark goes on the `i`. For example, `xī`.
+<!-- (Audio) A: xǔ -->
 
 # --instructions--
 
@@ -23,8 +19,8 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ## --blanks--
 
-`xī`
+`xǔ`
 
 ### --feedback--
 
-This syllable combines the initial `x` with the final `i` and uses the first tone, which is high and level.
+This syllable combines the initial `x` with the final `ü` (written as `u`), and uses the third tone, which dips down and then rises.

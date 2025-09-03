@@ -7,10 +7,6 @@ dashedName: task-63
 
 <!-- (Audio) A: shì -->
 
-# --description--
-
-Because `shi` contains `i`, the tone mark goes on the `i`. For example, `shì`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `sh` with the final `i` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `sh` with the final `i`, and uses the fourth tone, which falls sharply from high to low.

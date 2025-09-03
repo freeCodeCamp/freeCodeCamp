@@ -7,10 +7,6 @@ dashedName: task-47
 
 <!-- (Audio) A: qǐ -->
 
-# --description--
-
-Because `qi` contains `i`, the tone mark goes on the `i`. For example, `qǐ`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `q` with the final `i` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `q` with the final `i`, and uses the third tone, which dips down and then rises.

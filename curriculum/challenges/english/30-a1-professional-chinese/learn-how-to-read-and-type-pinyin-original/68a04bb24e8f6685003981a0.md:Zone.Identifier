@@ -1,2 +1,0 @@
-[ZoneTransfer]
-ZoneId=3

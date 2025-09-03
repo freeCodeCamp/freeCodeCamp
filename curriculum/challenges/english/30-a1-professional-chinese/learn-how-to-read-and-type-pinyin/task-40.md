@@ -7,10 +7,6 @@ dashedName: task-40
 
 <!-- (Audio) A: kè -->
 
-# --description--
-
-Because `ke` contains `e`, the tone mark goes on the `e`. For example, `kè`.
-
 # --instructions--
 
 Listen to the audio and complete the syllable with the correct tone mark.
@@ -27,4 +23,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `k` with the final `e` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `k` with the final `e`, and uses the fourth tone, which falls sharply from high to low.

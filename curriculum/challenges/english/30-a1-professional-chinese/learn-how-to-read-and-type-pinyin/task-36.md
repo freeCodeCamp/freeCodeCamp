@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-36
 ---
 
-<!-- (Audio) A: dā -->
+<!-- (Audio) A: dā, tè, nǚ -->
 
 # --instructions--
 
@@ -15,7 +15,7 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
@@ -37,23 +37,21 @@ This has a different initial from the audio.
 
 This has a different initial from the audio.
 
+---
+
+`dà`
+
+### --feedback--
+
+This has a different tone from the audio.
+
 ## --video-solution--
 
 1
 
----
-
-<!-- (Audio) A: lè -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which syllable matches the second syllable you hear?
 
 ## --answers--
 
@@ -67,31 +65,29 @@ This has a different initial from the audio.
 
 `tè`
 
+---
+
+`lè`
+
 ### --feedback--
 
 This has a different initial from the audio.
 
 ---
 
-`lè`
+`ne`
+
+### --feedback--
+
+This has a different final and tone from the audio.
 
 ## --video-solution--
 
-3
-
----
-
-<!-- (Audio) A: nǚ -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
+2
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the third syllable you hear?
 
 ## --answers--
 
@@ -112,6 +108,14 @@ This has a different initial from the audio.
 ### --feedback--
 
 This has a different initial from the audio.
+
+---
+
+`nù`
+
+### --feedback--
+
+This has a different final from the audio.
 
 ## --video-solution--
 

@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-27
 ---
 
-<!-- (Audio) A: ǒu -->
+<!-- (Audio) A: bō, má, fǎ -->
 
 # --instructions--
 
@@ -15,36 +15,108 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which tone do you hear for `ou`?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-First tone
-
-### --feedback--
-
-The pitch stays high and level from start to finish.
+`bō`
 
 ---
 
-Second tone
+`pō`
 
 ### --feedback--
 
-The pitch starts lower and rises smoothly.
+The initial is different from the audio.
 
 ---
 
-Third tone
-
----
-
-Fourth tone
+`bó`
 
 ### --feedback--
 
-The pitch drops sharply without rising again.
+This has the second tone, but the audio is in the first tone.
+
+---
+
+`bù`
+
+### --feedback--
+
+The tone is different from the audio.
+
+## --video-solution--
+
+1
+
+## --text--
+
+Which option matches the second syllable you hear?
+
+## --answers--
+
+`mǎ`
+
+### --feedback--
+
+This is the third tone, dipping, but the audio has the second tone.
+
+---
+
+`mó`
+
+### --feedback--
+
+The final is different from the audio.
+
+---
+
+`má`
+
+---
+
+`bá`
+
+### --feedback--
+
+The initial is different from the audio.
 
 ## --video-solution--
 
 3
+
+## --text--
+
+Which option matches the third syllable you hear?
+
+## --answers--
+
+`fà`
+
+### --feedback--
+
+This has the fourth tone, falling, but the audio is in the third tone.
+
+---
+
+`fǎ`
+
+---
+
+`fō`
+
+### --feedback--
+
+The final is different from the audio.
+
+---
+
+`bǎ`
+
+### --feedback--
+
+The initial is different from the audio.
+
+## --video-solution--
+
+2
