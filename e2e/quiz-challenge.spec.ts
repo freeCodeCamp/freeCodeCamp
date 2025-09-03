@@ -41,9 +41,6 @@ test.describe('Quiz challenge', () => {
           contentType: 'application/json',
           body: JSON.stringify(pageData)
         });
-      } catch (_err) {
-        // If parsing fails, just continue the original response
-        await route.continue();
       }
     });
 
