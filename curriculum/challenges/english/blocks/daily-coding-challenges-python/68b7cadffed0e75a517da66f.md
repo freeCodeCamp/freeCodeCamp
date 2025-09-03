@@ -1,8 +1,8 @@
 ---
-id: 68b7cadffed0e75a517da670
-title: "Python Challenge 50: Longest Word"
+id: 68b7cadffed0e75a517da66f
+title: "Challenge 50: Longest Word"
 challengeType: 29
-dashedName: python-challenge-50
+dashedName: challenge-50
 ---
 
 # --description--
