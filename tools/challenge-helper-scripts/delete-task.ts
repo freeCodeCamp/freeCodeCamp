@@ -1,21 +1,18 @@
 import { unlink } from 'fs/promises';
 import { select } from '@inquirer/prompts';
 import { getProjectPath } from './helpers/get-project-info';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 import { getFileName } from './helpers/get-file-name';
-import { validateMetaData } from './helpers/project-metadata';
 import {
   deleteChallengeFromMeta,
   updateTaskMarkdownFiles,
   updateTaskMeta
 } from './utils';
 import { isTaskChallenge } from './helpers/task-helpers';
+import { getMetaData } from './helpers/project-metadata';
 
 const deleteTask = async () => {
-  validateMetaData();
-
   const path = getProjectPath();
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
 
   const challengeId = await select({
     message: 'Which challenge should be deleted?',
@@ -35,11 +32,11 @@ const deleteTask = async () => {
   await unlink(`${path}${fileToDelete}`);
   console.log(`Finished deleting file: '${fileToDelete}'.`);
 
-  deleteChallengeFromMeta(indexToDelete);
+  await deleteChallengeFromMeta(indexToDelete);
   console.log(`Finished removing challenge from 'meta.json'.`);
 
   if (isTaskChallenge(challenges[indexToDelete].title)) {
-    updateTaskMeta();
+    await updateTaskMeta();
     console.log("Finished updating tasks in 'meta.json'.");
 
     updateTaskMarkdownFiles();

@@ -3,14 +3,13 @@ import { select } from '@inquirer/prompts';
 import { getTemplate } from './helpers/get-challenge-template';
 import { newTaskPrompts } from './helpers/new-task-prompts';
 import { getProjectPath } from './helpers/get-project-info';
-import { validateMetaData } from './helpers/project-metadata';
 import {
   createChallengeFile,
   insertChallengeIntoMeta,
   updateTaskMeta,
   updateTaskMarkdownFiles
 } from './utils';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
+import { getMetaData } from './helpers/project-metadata';
 
 const insertChallenge = async () => {
   validateMetaData();
@@ -46,14 +45,14 @@ const insertChallenge = async () => {
   createChallengeFile(challengeIdString, challengeText, path);
   console.log('Finished creating new task markdown file.');
 
-  insertChallengeIntoMeta({
+  await insertChallengeIntoMeta({
     index: indexToInsert,
     id: challengeId,
     title: newTaskTitle
   });
   console.log(`Finished inserting task into 'meta.json' file.`);
 
-  updateTaskMeta();
+  await updateTaskMeta();
   console.log("Finished updating tasks in 'meta.json'.");
 
   updateTaskMarkdownFiles();

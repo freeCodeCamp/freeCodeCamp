@@ -30,14 +30,17 @@ const {
   hasNoSolution
 } = require('../../shared/config/challenge-types');
 const { getLines } = require('../../shared/utils/get-lines');
-const { getChallengesForLang, getMetaForBlock } = require('../get-challenges');
+const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang, getSuperOrder } = require('../utils');
+const { testedLang } = require('../utils');
 const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
+
+const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
+const { validateMetaSchema } = require('../schema/meta-schema');
+const { getBlockStructure } = require('../file-handler');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -45,18 +48,6 @@ const createPseudoWorker = require('./utils/pseudo-worker');
 const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
-
-if (
-  [
-    process.env.FCC_BLOCK,
-    process.env.FCC_CHALLENGE_ID,
-    process.env.FCC_SUPERBLOCK
-  ].filter(Boolean).length > 1
-) {
-  throw new Error(
-    `Please use at most single input from: block, challenge id, superblock.`
-  );
-}
 
 const testFilter = {
   block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
@@ -171,24 +162,6 @@ async function setup() {
     ...new Set(superBlocks.filter(el => Boolean(el)))
   ];
 
-  if (testFilter.challengeId) {
-    const challengeIndex = challenges.findIndex(
-      challenge => challenge.id === testFilter.challengeId
-    );
-    if (challengeIndex === -1) {
-      throw new Error(`No challenge found with id "${testFilter.challengeId}"`);
-    }
-    const { solutions = [] } = challenges[challengeIndex];
-    if (isEmpty(solutions)) {
-      // Project based curriculum usually has solution for current challenge in
-      // next challenge's seed.
-      challenges = challenges.slice(challengeIndex, challengeIndex + 2);
-    } else {
-      // Only one challenge is tested, but tests assume challenges is an array.
-      challenges = [challenges[challengeIndex]];
-    }
-  }
-
   const meta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
@@ -196,7 +169,12 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getMetaForBlock(dashedBlockName);
+      meta[dashedBlockName] = getBlockStructure(dashedBlockName);
+      const result = validateMetaSchema(meta[dashedBlockName]);
+
+      if (result.error) {
+        throw new AssertionError(result.error);
+      }
     }
   }
   return {
@@ -230,15 +208,24 @@ function runTests(challengeData) {
 
 async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
-    curriculum =>
-      Object.keys(curriculum)
+    curriculum => {
+      const result = curriculumSchemaValidator(curriculum);
+      // If there are filters, we're testing a single challenge or block, so we
+      // can skip the validation.
+      if (result.error && isEmpty(filters)) {
+        throw new Error(
+          `Curriculum validation failed: ${result.error.message}`
+        );
+      }
+      return Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
         .reduce((challengeArray, superBlock) => {
           const challengesForBlock = Object.keys(superBlock).map(
             key => superBlock[key].challenges
           );
           return [...challengeArray, ...flatten(challengesForBlock)];
-        }, [])
+        }, []);
+    }
   );
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
@@ -246,47 +233,7 @@ async function getChallenges(lang, filters) {
 }
 
 function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
-  const mongoIds = new MongoIds();
-  const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
-
-  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
-    describe('Assert meta order', function () {
-      const superBlocks = new Set([
-        ...Object.values(meta).map(el => el.superBlock)
-      ]);
-      superBlocks.forEach(superBlock => {
-        const filteredMeta = Object.values(meta)
-          .filter(el => el.superBlock === superBlock)
-          .sort((a, b) => a.order - b.order);
-        if (!filteredMeta.length) {
-          return;
-        }
-        it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
-          assert.isNumber(firstOrder);
-          assert.isTrue(
-            filteredMeta.every(
-              el => getSuperOrder(el.superBlock) === firstOrder
-            ),
-            'The superOrder properties are mismatched.'
-          );
-        });
-        filteredMeta.forEach((meta, index) => {
-          // Upcoming changes are in development so are not required to be in
-          // order. Chapter-based super blocks do not use the meta for order.
-          if (
-            !meta.isUpcomingChange &&
-            !chapterBasedSuperBlocks.includes(meta.superBlock)
-          ) {
-            it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-              assert.equal(meta.order, index);
-            });
-          }
-        });
-      });
-    });
-  }
 
   superBlocks.forEach(superBlock => {
     describe(`Language: ${lang}`, function () {
@@ -295,6 +242,10 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
+
+        const challengeTitles = new ChallengeTitles();
+        const mongoIds = new MongoIds();
+
         superBlockChallenges.forEach((challenge, id) => {
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
