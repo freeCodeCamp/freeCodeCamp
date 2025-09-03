@@ -1,8 +1,47 @@
+import fs from 'fs';
+import path from 'path';
 import { test, expect } from '@playwright/test';
 import { allowTrailingSlash } from './utils/url';
 
+interface QuizQuestion {
+  distractors: string[];
+  text: string;
+  answer: string;
+}
+
+interface Quiz {
+  questions: QuizQuestion[];
+}
+
+interface PageData {
+  result: {
+    data: {
+      challengeNode: {
+        challenge: { quizzes: Quiz[] };
+      };
+    };
+  };
+}
+
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
+    const fixturePath = path.join(__dirname, 'fixtures', 'quiz-fixture.json');
+    const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as Quiz[];
+
+    // Intercept Gatsby page-data and inject a deterministic quiz fixture
+    await page.route('**/page-data/**/page-data.json', async route => {
+      const response = await route.fetch();
+      const body = await response.text();
+
+      const pageData = JSON.parse(body) as PageData;
+      pageData.result.data.challengeNode.challenge.quizzes = fixture;
+
+      await route.fulfill({
+        contentType: 'application/json',
+        body: JSON.stringify(pageData)
+      });
+    });
+
     await page.goto(
       '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
     );
@@ -13,6 +52,18 @@ test.describe('Quiz challenge', () => {
   }) => {
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
+    const radioGroups = await page.getByRole('radiogroup').all();
+
+    // The radio label contents are rendered with `PrismFormatted`.
+    // For accessibility we must ensure:
+    // - The formatted content is wrapped in a `span`
+    // - No ARIA role is added to `pre` elements
+    const firstGroup = radioGroups[0];
+    const spanLabel = firstGroup.locator('span.quiz-answer-label');
+    await expect(spanLabel).toHaveCount(4);
+
+    const preWithRole = firstGroup.locator('pre[role]');
+    await expect(preWithRole).toHaveCount(0);
 
     for (let i = 0; i < 15; i++) {
       const radioGroups = await page.getByRole('radiogroup').all();
@@ -41,10 +92,13 @@ test.describe('Quiz challenge', () => {
     // Answer 18 questions correctly.
     // This is enough to pass the quiz, and also allowing us to test the quiz passing criteria.
     for (let i = 0; i < radioGroups.length; i++) {
+      const group = radioGroups[i];
+      const correct = group.getByRole('radio', { name: /Correct answer/i });
+      const wrong = group.getByRole('radio', { name: /Wrong 1/i });
       if (i <= 17) {
-        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+        await correct.click();
       } else {
-        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+        await wrong.click();
       }
     }
 
@@ -105,10 +159,13 @@ test.describe('Quiz challenge', () => {
 
     // Answer only 10 questions correctly.
     for (let i = 0; i < radioGroups.length; i++) {
+      const group = radioGroups[i];
+      const correct = group.getByRole('radio', { name: /Correct answer/i });
+      const wrong = group.getByRole('radio', { name: /Wrong 1/i });
       if (i <= 9) {
-        await radioGroups[i].locator("[role='radio'][data-value='4']").click();
+        await correct.click();
       } else {
-        await radioGroups[i].locator("[role='radio'][data-value='1']").click();
+        await wrong.click();
       }
     }
 
