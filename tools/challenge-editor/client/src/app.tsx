@@ -16,6 +16,7 @@ const App = () => {
           <Route index element={<Landing />} />
           <Route path=':superblock' element={<SuperBlock />} />
           <Route path=':superblock/:block' element={<Block />} />
+          <Route path=':superblock/chapters/:chapter' element={<Block />} />
           <Route path=':superblock/:block/_tools' element={<Tools />} />
           <Route path=':superblock/:block/:challenge' element={<Editor />} />
         </Routes>

@@ -8,11 +8,15 @@ type Block = {
   path: string;
 };
 
-export const getModules = async (chap: string): Promise<string[]> => {
-  const superBlockDataPath = join(
-    SUPERBLOCK_META_DIR,
-    'full-stack-developer' + '.json'
-  );
+type Module = {
+  path: string;
+};
+
+export const getModules = async (
+  superBlock: string,
+  chap: string
+): Promise<Module[]> => {
+  const superBlockDataPath = join(SUPERBLOCK_META_DIR, superBlock + '.json');
 
   const superBlockMetaFile = await readFile(superBlockDataPath, {
     encoding: 'utf8'
@@ -23,30 +27,41 @@ export const getModules = async (chap: string): Promise<string[]> => {
     x => x.dashedName === chap
   )[0];
 
-  return await Promise.all(
-    chapter.modules!.map(async module => module.dashedName)
+  let modules: Module[] = [];
+
+  modules = await Promise.all(
+    chapter.modules!.map(module => {
+      return { name: module.dashedName, path: 'modules/' + module.dashedName };
+    })
   );
+
+  return modules;
 };
 
-export const getBlocks = async (module: string): Promise<Block[]> => {
-  const superBlockDataPath = join(
-    SUPERBLOCK_META_DIR,
-    'full-stack-developer' + '.json'
-  );
+export const getBlocks = async (
+  superBlock: string,
+  chapterName: string,
+  moduleName: string
+): Promise<Block[]> => {
+  const superBlockDataPath = join(SUPERBLOCK_META_DIR, superBlock + '.json');
 
   const superBlockMetaFile = await readFile(superBlockDataPath, {
     encoding: 'utf8'
   });
   const superBlockMeta = JSON.parse(superBlockMetaFile) as SuperBlockMeta;
 
-  const foundModule = superBlockMeta
-    .chapters!.flatMap(x => x.modules)
-    .filter(x => x.dashedName === module)[0];
+  const foundChapter = superBlockMeta.chapters?.filter(
+    chapter => chapter.dashedName === chapterName
+  )[0];
+
+  const foundModule = foundChapter?.modules.filter(
+    module => module.dashedName === moduleName
+  )[0];
 
   let blocks: { name: string; path: string }[] = [];
 
   blocks = await Promise.all(
-    foundModule.blocks!.map(async block => {
+    foundModule!.blocks!.map(async block => {
       const filePath = join(CHALLENGE_DIR, block);
       return {
         name: block,
