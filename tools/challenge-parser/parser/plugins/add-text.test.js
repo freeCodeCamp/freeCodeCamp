@@ -141,11 +141,13 @@ describe('add-text', () => {
     plugin(withNestedInstructionsAST, file);
 
     // Should only include the depth 1 instructions, not the nested ones
-    const expectedText = 'These are the main instructions at depth 1.';
+    const expectedText = `<section id="instructions">
+<p>These are the main instructions at depth 1.</p>
+<pre><code class="language-html">&#x3C;div>Main instructions code&#x3C;/div>
+</code></pre>
+</section>`;
 
-    expect(file.data[instructionsId]).toEqual(
-      expect.stringContaining(expectedText)
-    );
+    expect(file.data[instructionsId]).toEqual(expectedText);
   });
 
   it('should have an output to match the snapshot', () => {
