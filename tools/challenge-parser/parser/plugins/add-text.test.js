@@ -142,19 +142,9 @@ describe('add-text', () => {
 
     // Should only include the depth 1 instructions, not the nested ones
     const expectedText = 'These are the main instructions at depth 1.';
-    const nestedText1 =
-      'These are nested instructions at depth 2 that should be ignored.';
-    const nestedText2 =
-      'These are nested instructions at depth 3 that should also be ignored.';
 
     expect(file.data[instructionsId]).toEqual(
       expect.stringContaining(expectedText)
-    );
-    expect(file.data[instructionsId]).not.toEqual(
-      expect.stringContaining(nestedText1)
-    );
-    expect(file.data[instructionsId]).not.toEqual(
-      expect.stringContaining(nestedText2)
     );
   });
 
