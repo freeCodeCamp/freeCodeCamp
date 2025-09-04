@@ -65,13 +65,14 @@ async function createProject(projectArgs: CreateProjectArgs) {
   const order = projectArgs.order;
   const chapter = projectArgs.chapter;
   const module = projectArgs.module;
+  const position = projectArgs.position;
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
   if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
-    if (!chapter || !module || typeof projectArgs.position == 'undefined') {
+    if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
       );
@@ -142,32 +143,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.superBlock,
     projectArgs.block,
     projectArgs.title
-  );
-  }
-}
-
-async function updateFullStackJson(
-  chapterName: string,
-  moduleName: string,
-  block: string,
-  position: number
-) {
-  // Get the index of the correct chapter
-  const chapterIndex = fullStackData['chapters'].findIndex(
-    chapter => chapter.dashedName === chapterName
-  );
-  const moduleIndex = fullStackData['chapters'][chapterIndex][
-    'modules'
-  ].findIndex(module => module.dashedName === moduleName);
-  fullStackData['chapters'][chapterIndex]['modules'][moduleIndex][
-    'blocks'
-  ].splice(position - 1, 0, block);
-  // Insert the new block into the already present module
-  // Write the new changes to the file
-  const newData = JSON.stringify(fullStackData, null, 2);
-  await fs.writeFile(
-    '../../curriculum/structure/superblocks/full-stack-developer.json',
-    newData
   );
 }
 
