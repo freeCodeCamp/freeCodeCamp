@@ -50,9 +50,9 @@ import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
-import RdbGitpodContinueAlert from './rdb-gitpod-continue-alert';
-import RdbGitpodInstructions from './rdb-gitpod-instructions';
-import RdbGitpodLogoutAlert from './rdb-gitpod-logout-alert';
+import RdbOnaContinueAlert from './rdb-ona-continue-alert';
+import RdbOnaInstructions from './rdb-ona-instructions';
+import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
 import RdbLocalInstructions from './rdb-local-instructions';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
@@ -191,38 +191,26 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const openGitpod = (userToken?: string) => {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { url }
-        }
-      }
-    } = props;
+  function openOna() {
+    const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
+    const onaDomain = `https://app.gitpod.io/`;
+    const onaUrl = `${onaDomain}#${repoUrl}`;
 
-    const repoUrl = `https://github.com/${url}`;
-    const coderoadTutorial = encodeURIComponent(
-      `https://raw.githubusercontent.com/${url}/main/tutorial.json`
-    );
-    const gitpodDomain = `https://gitpod.io/?autostart=true#CODEROAD_TUTORIAL_URL=${coderoadTutorial},CODEROAD_DISABLE_RUN_ON_SAVE=true`;
-    const tokenEnv = userToken ? `,CODEROAD_WEBHOOK_TOKEN=${userToken}` : '';
-    const gitpodUrl = `${gitpodDomain}${tokenEnv}/${repoUrl}`;
-
-    window.open(gitpodUrl, '_blank');
-  };
+    window.open(onaUrl, '_blank');
+  }
 
   const startCourse = async () => {
     const { isSignedIn, userToken, updateUserToken } = props;
 
     if (!isSignedIn) {
-      openGitpod();
+      openOna();
     } else if (!userToken) {
       const createUserTokenResponse = await postUserToken();
       const { data = { userToken: null } } = createUserTokenResponse;
 
       if (data?.userToken) {
         updateUserToken(data.userToken);
-        openGitpod(data.userToken);
+        openOna();
       } else {
         createFlashMessage({
           type: 'danger',
@@ -230,7 +218,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
         });
       }
     } else {
-      openGitpod(userToken);
+      openOna();
     }
   };
 
@@ -269,7 +257,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
-  const gitpodDeprecated = useFeature('gitpod-deprecated').on;
+  const onaDeprecated = useFeature('gitpod-deprecated').on;
 
   return (
     <Hotkeys containerRef={container}>
@@ -291,7 +279,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <PrismFormatted text={description} />
               <Spacer size='m' />
 
-              {gitpodDeprecated ? (
+              {onaDeprecated ? (
                 <>
                   <RdbLocalInstructions course={title} url={url} />
                   <Spacer size='m' />
@@ -325,7 +313,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                 </>
               ) : (
                 <>
-                  <RdbGitpodInstructions />
+                  <RdbOnaInstructions />
                   <Spacer size='m' />
                   {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert ? (
@@ -340,8 +328,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                         isCompleted={isPartiallyCompleted || isCompleted}
                       />
                       <Spacer size='m' />
-                      <RdbGitpodContinueAlert course={title} />
-                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <RdbOnaContinueAlert course={title} />
+                      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
                       <CodeAllyButton
                         challengeType={challengeType}
                         //eslint-disable-next-line @typescript-eslint/no-misused-promises
@@ -363,8 +351,8 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                     </>
                   ) : (
                     <>
-                      <RdbGitpodContinueAlert course={title} />
-                      {isSignedIn && <RdbGitpodLogoutAlert course={title} />}
+                      <RdbOnaContinueAlert course={title} />
+                      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
                       <CodeAllyButton
                         challengeType={challengeType}
                         //eslint-disable-next-line @typescript-eslint/no-misused-promises
