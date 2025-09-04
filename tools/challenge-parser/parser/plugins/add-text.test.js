@@ -2,7 +2,7 @@ const parseFixture = require('../__fixtures__/parse-fixture');
 const addText = require('./add-text');
 
 describe('add-text', () => {
-  let realisticAST, mockAST, withSubSectionAST;
+  let realisticAST, mockAST, withSubSectionAST, withNestedInstructionsAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -12,6 +12,9 @@ describe('add-text', () => {
     realisticAST = await parseFixture('realistic.md');
     mockAST = await parseFixture('simple.md');
     withSubSectionAST = await parseFixture('with-subsection.md');
+    withNestedInstructionsAST = await parseFixture(
+      'with-nested-instructions.md'
+    );
   });
 
   beforeEach(() => {
@@ -130,6 +133,28 @@ describe('add-text', () => {
     );
     expect(file.data[instructionsId]).toEqual(
       expect.stringContaining(expectedText2)
+    );
+  });
+
+  it('should ignore --instructions-- markers that are not at depth 1', () => {
+    const plugin = addText([instructionsId]);
+    plugin(withNestedInstructionsAST, file);
+
+    // Should only include the depth 1 instructions, not the nested ones
+    const expectedText = 'These are the main instructions at depth 1.';
+    const nestedText1 =
+      'These are nested instructions at depth 2 that should be ignored.';
+    const nestedText2 =
+      'These are nested instructions at depth 3 that should also be ignored.';
+
+    expect(file.data[instructionsId]).toEqual(
+      expect.stringContaining(expectedText)
+    );
+    expect(file.data[instructionsId]).not.toEqual(
+      expect.stringContaining(nestedText1)
+    );
+    expect(file.data[instructionsId]).not.toEqual(
+      expect.stringContaining(nestedText2)
     );
   });
 

@@ -10,7 +10,7 @@ function addText(sectionIds) {
   }
   function transformer(tree, file) {
     for (const sectionId of sectionIds) {
-      const textNodes = getSection(tree, `--${sectionId}--`);
+      const textNodes = getSection(tree, `--${sectionId}--`, 1);
       const subSection = find(root(textNodes), isMarker);
       if (subSection) {
         throw Error(
