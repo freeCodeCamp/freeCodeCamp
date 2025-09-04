@@ -189,6 +189,8 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
 
         const returnedUser = {
           ...removeNulls(publicUser),
+          // Ensure tri-state preference is preserved even if null
+          sendQuincyEmail: user.sendQuincyEmail,
           ...normalizeFlags(flags),
           ...sharedUser,
           picture: user.picture ?? '',

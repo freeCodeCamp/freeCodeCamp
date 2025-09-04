@@ -362,7 +362,7 @@ export function putUpdateMyHonesty(
 }
 
 export function putUpdateMyQuincyEmail(
-  update: Record<string, string>
+  update: { sendQuincyEmail: boolean | null }
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
 }
