@@ -23,13 +23,15 @@ interface PageData {
   };
 }
 
+const quizPath = '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html';
+
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
     const fixturePath = path.join(__dirname, 'fixtures', 'quiz-fixture.json');
     const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as Quiz[];
 
     // Intercept Gatsby page-data and inject a deterministic quiz fixture
-    await page.route('**/page-data/**/page-data.json', async route => {
+    await page.route(`**/page-data${quizPath}/page-data.json`, async route => {
       const response = await route.fetch();
       const body = await response.text();
 
@@ -42,9 +44,7 @@ test.describe('Quiz challenge', () => {
       });
     });
 
-    await page.goto(
-      '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
-    );
+    await page.goto(quizPath);
   });
 
   test('should display a list of unanswered questions if user has not answered all questions', async ({
