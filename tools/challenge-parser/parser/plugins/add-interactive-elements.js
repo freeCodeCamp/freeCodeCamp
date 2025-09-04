@@ -42,11 +42,6 @@ function plugin() {
 }
 
 function validate({ descriptionSection, filesSection, instructionsSection }) {
-  if (!isEmpty(descriptionSection) && !isEmpty(filesSection)) {
-    throw Error(
-      'Each interactive element should either contain a --description-- or --files--, not both.'
-    );
-  }
   if (isEmpty(filesSection) && !isEmpty(instructionsSection)) {
     throw Error(
       '--instructions-- must be in the same section as --files--. If you want a standalone description, use --description--'

@@ -121,15 +121,6 @@ describe('add-interactive-editor plugin', () => {
     expect(elements[3]).toHaveProperty('description');
   });
 
-  it('throws if there are "editor" and "description" elements in the same section', async () => {
-    const editorAndDescriptionAST = await parseFixture(
-      'with-editor-and-description-same-section.md'
-    );
-    expect(() => {
-      plugin(editorAndDescriptionAST, { data: {} });
-    }).toThrow();
-  });
-
   it('throws if there are "instructions" without "files"', async () => {
     const instructionsWithoutFilesAST = await parseFixture(
       'with-instructions-without-files.md'
