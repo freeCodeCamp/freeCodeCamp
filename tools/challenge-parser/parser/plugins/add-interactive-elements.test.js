@@ -124,4 +124,15 @@ describe('add-interactive-editor plugin', () => {
       plugin(filesWithNonCodeAST, { data: {} });
     }).toThrow('The --files-- section should only contain code blocks.');
   });
+
+  it('throws if an interactive element is empty', async () => {
+    const emptyInteractiveElementAST = await parseFixture(
+      'with-empty-interactive-element.md'
+    );
+    expect(() => {
+      plugin(emptyInteractiveElementAST, { data: {} });
+    }).toThrow(
+      'Each interactive element must contain at least one subsection, e.g. --description-- or --files--'
+    );
+  });
 });

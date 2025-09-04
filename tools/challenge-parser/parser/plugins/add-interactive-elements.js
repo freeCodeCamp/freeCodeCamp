@@ -18,16 +18,7 @@ function plugin() {
         const filesSection = getSection(tree, '--files--');
         const instructionsSection = getSection(tree, '--instructions--');
 
-        if (!isEmpty(descriptionSection) && !isEmpty(filesSection)) {
-          throw Error(
-            'Each interactive element should either contain a --description-- or --files--, not both.'
-          );
-        }
-        if (isEmpty(filesSection) && !isEmpty(instructionsSection)) {
-          throw Error(
-            '--instructions-- must be in the same section as --files--. If you want a standalone description, use --description--'
-          );
-        }
+        validate({ descriptionSection, filesSection, instructionsSection });
 
         if (!isEmpty(descriptionSection)) {
           return {
@@ -51,6 +42,28 @@ function plugin() {
         file.data.interactiveElements = interactiveElements;
       }
     }
+  }
+}
+
+function validate({ descriptionSection, filesSection, instructionsSection }) {
+  if (!isEmpty(descriptionSection) && !isEmpty(filesSection)) {
+    throw Error(
+      'Each interactive element should either contain a --description-- or --files--, not both.'
+    );
+  }
+  if (isEmpty(filesSection) && !isEmpty(instructionsSection)) {
+    throw Error(
+      '--instructions-- must be in the same section as --files--. If you want a standalone description, use --description--'
+    );
+  }
+  if (
+    isEmpty(descriptionSection) &&
+    isEmpty(filesSection) &&
+    isEmpty(instructionsSection)
+  ) {
+    throw Error(
+      'Each interactive element must contain at least one subsection, e.g. --description-- or --files--'
+    );
   }
 }
 
