@@ -2,7 +2,7 @@
   "name": "Introduction to Python",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-python",
   "challengeOrder": [
     {

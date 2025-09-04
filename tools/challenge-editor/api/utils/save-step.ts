@@ -9,7 +9,7 @@ export const saveStep = async (
   content: string
 ): Promise<boolean> => {
   try {
-    const filePath = join(CHALLENGE_DIR, sup, block, step);
+    const filePath = join(CHALLENGE_DIR, block, step);
 
     await writeFile(filePath, content);
 

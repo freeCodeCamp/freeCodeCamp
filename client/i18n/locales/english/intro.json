@@ -4228,6 +4228,18 @@
           "In these lectures, you will learn what TypeScript is and how to use it."
         ]
       },
+      "lecture-working-with-generics-and-type-narrowing": {
+        "title": "Working with Generics and Type Narrowing",
+        "intro": [
+          "In these lectures, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "lecture-working-with-typescript-configuration-files": {
+        "title": "Working with TypeScript Configuration Files",
+        "intro": [
+          "In this lecture, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
       "trvf": { "title": "293", "intro": [] },
       "kwmg": { "title": "294", "intro": [] },
       "nodx": { "title": "295", "intro": [] },
@@ -4895,6 +4907,45 @@
       "daily-coding-challenges-python": {
         "title": "Daily Coding Challenges Python",
         "intro": ["Place to create Python daily coding challenges."]
+      }
+    }
+  },
+  "full-stack-open": {
+    "title": "Full Stack Open",
+    "intro": ["A good intro is to be added here."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      }
+    },
+    "chapters": {
+      "part-0": "Fundamentals of Web Apps",
+      "part-1": "Introduction to React",
+      "part-2": "Communicating with Servers",
+      "part-3": "Programming a Server with NodeJS and Express",
+      "part-4": "Testing Express Servers, User Administration",
+      "part-5": "Testing React Apps",
+      "part-6": "Advanced State Management",
+      "part-7": "React router, custom hooks, styling app with CSS and webpack",
+      "part-8": "GraphQL",
+      "part-9": "TypeScript",
+      "part-10": "React Native",
+      "part-11": "CI/CD",
+      "part-12": "Containers",
+      "part-13": "Using Relational Databases"
+    },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
+    "module-intros": {
+      "basic-html": {
+        "title": "Basic HTML",
+        "intro": [
+          "Learn how to build simple webpages using HTML tags to add text, images, and links."
+        ]
       }
     }
   },

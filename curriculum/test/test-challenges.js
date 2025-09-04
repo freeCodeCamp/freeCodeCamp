@@ -152,8 +152,18 @@ async function setup() {
   await page.setViewport({ width: 300, height: 150 });
 
   const lang = testedLang();
+  const challenges = await getChallenges(lang, testFilter);
+  const nonCertificationChallenges = challenges.filter(
+    ({ challengeType }) => challengeType !== 7
+  );
 
-  let challenges = await getChallenges(lang, testFilter);
+  if (isEmpty(nonCertificationChallenges)) {
+    throw Error(
+      `No challenges to test when using filter ${JSON.stringify(testFilter)}
+If the challenge file exists, try running 'build:curriculum' for more information.
+      `
+    );
+  }
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
