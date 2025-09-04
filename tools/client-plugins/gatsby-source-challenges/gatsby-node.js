@@ -1,5 +1,7 @@
 /* eslint-disable import/no-unresolved */
+const path = require('path');
 const chokidar = require('chokidar');
+const readdirp = require('readdirp');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -35,21 +37,57 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  // On file change, rebuild all challenges to ensure all meta (superBlock,
-  // order, superOrder) are in sync. This avoids changed nodes being sorted to
-  // the end due to missing meta during hot reload.
+  // On file change, rebuild all challenges in the containing block. This keeps
+  // ordering consistent (challengeOrder is block-scoped) with minimal reload.
   watcher.on('change', filePath => {
     if (!/\.md?$/.test(filePath)) return null;
-    reporter.info(`Challenge file changed: ${filePath}. Reloading all nodes.`);
-    return reloadAllChallenges();
+    const blockPath = path.dirname(filePath);
+    const fullBlockPath = path.join(curriculumPath, blockPath);
+    reporter.info(
+      `Challenge file changed: ${filePath}. Reloading block: ${blockPath}`
+    );
+    return readdirp(fullBlockPath, { fileFilter: '*.md' })
+      .on('data', entry => {
+        const { path: siblingPath } = entry;
+        const relativePath = path.join(blockPath, siblingPath);
+        onSourceChange(relativePath)
+          .then(challenge =>
+            createVisibleChallenge(challenge, { isReloading: true })
+          )
+          .catch(e =>
+            reporter.error(
+              `fcc-replace-challenge\n  attempting to replace ${relativePath}\n\n  ${e.message}\n  ${e.stack}\n`
+            )
+          );
+      })
+      .on('warn', error => console.error('non-fatal error', error))
+      .on('error', error => console.error('fatal error', error));
   });
 
-  // if a file is added, that might change the order of the challenges in the
-  // containing block, so we recreate them all
+  // On file add, the challengeOrder for the block can change. Rebuild the block.
   watcher.on('add', filePath => {
     if (!/\.md?$/.test(filePath)) return;
-    reporter.info(`Challenge file added: ${filePath}. Reloading all nodes.`);
-    void reloadAllChallenges();
+    const blockPath = path.dirname(filePath);
+    const fullBlockPath = path.join(curriculumPath, blockPath);
+    reporter.info(
+      `Challenge file added: ${filePath}. Reloading block: ${blockPath}`
+    );
+    readdirp(fullBlockPath, { fileFilter: '*.md' })
+      .on('data', entry => {
+        const { path: siblingPath } = entry;
+        const relativePath = path.join(blockPath, siblingPath);
+        onSourceChange(relativePath)
+          .then(challenge =>
+            createVisibleChallenge(challenge, { isReloading: true })
+          )
+          .catch(e =>
+            reporter.error(
+              `fcc-replace-challenge\nattempting to replace ${relativePath}\n\n${e.message}\n`
+            )
+          );
+      })
+      .on('warn', error => console.error('non-fatal error', error))
+      .on('error', error => console.error('fatal error', error));
   });
 
   function sourceAndCreateNodes() {
@@ -68,26 +106,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       });
   }
 
-  function reloadAllChallenges() {
-    return source()
-      .then(challenges => Promise.all(challenges))
-      .then(challenges =>
-        challenges.map(challenge =>
-          createVisibleChallenge(challenge, { isReloading: true })
-        )
-      )
-      .catch(e => {
-        console.log(e);
-        reporter.error(`fcc-replace-challenge
-
-  Failed to reload all challenges
-
-  ${e.message}
-  ${e.stack}
-
-  `);
-      });
-  }
+  // Full-reload path intentionally removed in favor of block-scoped reloads.
 
   function createVisibleChallenge(challenge, options) {
     createNode(createChallengeNode(challenge, reporter, options));
