@@ -33,7 +33,8 @@ export enum SuperBlocks {
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
   DevPlayground = 'dev-playground',
-  FullStackOpen = 'full-stack-open'
+  FullStackOpen = 'full-stack-open',
+  RespWebDesign2025 = 'responsive-web-design-2025'
 }
 
 export const languageSuperBlocks = [
@@ -116,6 +117,7 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
+    SuperBlocks.RespWebDesign2025,
     SuperBlocks.FullStackOpen,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
