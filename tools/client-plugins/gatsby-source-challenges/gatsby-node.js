@@ -1,6 +1,5 @@
-const path = require('path');
+/* eslint-disable import/no-unresolved */
 const chokidar = require('chokidar');
-const readdirp = require('readdirp');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -36,64 +35,21 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  watcher.on('change', filePath =>
-    /\.md?$/.test(filePath)
-      ? onSourceChange(filePath)
-          .then(challenge => {
-            reporter.info(
-              `
-File changed at ${filePath}, replacing challengeNode id ${challenge.id}
-              `
-            );
-            createVisibleChallenge(challenge, { isReloading: true });
-          })
-          .catch(e =>
-            reporter.error(`fcc-replace-challenge
-  attempting to replace ${filePath}
-
-  ${e.message}
-  ${e.stack}
-
-  `)
-          )
-      : null
-  );
+  // On file change, rebuild all challenges to ensure all meta (superBlock,
+  // order, superOrder) are in sync. This avoids changed nodes being sorted to
+  // the end due to missing meta during hot reload.
+  watcher.on('change', filePath => {
+    if (!/\.md?$/.test(filePath)) return null;
+    reporter.info(`Challenge file changed: ${filePath}. Reloading all nodes.`);
+    return reloadAllChallenges();
+  });
 
   // if a file is added, that might change the order of the challenges in the
   // containing block, so we recreate them all
   watcher.on('add', filePath => {
-    if (/\.md?$/.test(filePath)) {
-      const blockPath = path.dirname(filePath);
-      const fullBlockPath = path.join(
-        __dirname,
-        '../../../curriculum/challenges/english/',
-        blockPath
-      );
-      readdirp(fullBlockPath, { fileFilter: '*.md' })
-        .on('data', entry => {
-          const { path: siblingPath } = entry;
-          const relativePath = path.join(blockPath, siblingPath);
-          onSourceChange(relativePath)
-            .then(challenge => {
-              reporter.info(
-                `
-File changed at ${relativePath}, replacing challengeNode id ${challenge.id}
-            `
-              );
-              createVisibleChallenge(challenge);
-            })
-            .catch(e =>
-              reporter.error(`fcc-replace-challenge
-attempting to replace ${relativePath}
-
-${e.message}
-
-`)
-            );
-        })
-        .on('warn', error => console.error('non-fatal error', error))
-        .on('error', error => console.error('fatal error', error));
-    }
+    if (!/\.md?$/.test(filePath)) return;
+    reporter.info(`Challenge file added: ${filePath}. Reloading all nodes.`);
+    void reloadAllChallenges();
   });
 
   function sourceAndCreateNodes() {
@@ -107,6 +63,27 @@ ${e.message}
         reporter.panic(`fcc-source-challenges
 
   ${e.message}
+
+  `);
+      });
+  }
+
+  function reloadAllChallenges() {
+    return source()
+      .then(challenges => Promise.all(challenges))
+      .then(challenges =>
+        challenges.map(challenge =>
+          createVisibleChallenge(challenge, { isReloading: true })
+        )
+      )
+      .catch(e => {
+        console.log(e);
+        reporter.error(`fcc-replace-challenge
+
+  Failed to reload all challenges
+
+  ${e.message}
+  ${e.stack}
 
   `);
       });
