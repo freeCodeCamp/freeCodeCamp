@@ -31,9 +31,7 @@
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "prettier": "3.2.5",
-    "typescript": "5.2.2"
-  },
-  "dependencies": {
+    "typescript": "5.2.2",
     "@inquirer/prompts": "^7.8.3"
   }
 }
