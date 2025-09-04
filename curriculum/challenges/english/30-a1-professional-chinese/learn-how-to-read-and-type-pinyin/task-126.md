@@ -9,7 +9,7 @@ dashedName: task-126
 
 # --description--
 
-Because `eng` contains `e`, the tone mark goes on the `e`. For example, `běng`.
+For tone marking, the mark goes on `e` in `eng`. For example, `zhěng`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `b` with the final `eng` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `b` with the final `eng`, and uses the third tone, which dips down and then rises.

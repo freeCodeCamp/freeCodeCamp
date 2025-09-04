@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-129
 ---
 
-<!-- (Audio) A: máng -->
+<!-- (Audio) A: bāng, péng, mìng -->
 
 # --instructions--
 
@@ -15,31 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`máng`
+`bāng`
 
 ---
 
-`méng`
+`bàng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`míng`
+`pāng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`màn`
+`bān`
 
 ### --feedback--
 
@@ -49,43 +49,69 @@ This has a different final from the audio.
 
 1
 
----
-
-<!-- (Audio) A: píng -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`páng`
+`pěng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
 `péng`
 
+---
+
+`bēng`
+
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`píng`
+`hāng`
+
+### --feedback--
+
+This has a different initial and final from the audio.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which option matches the third syllable you hear?
+
+## --answers--
+
+`míng`
+
+### --feedback--
+
+This has a different tone from the audio.
 
 ---
 
-`pìn`
+`nìng`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`mìng`
+
+---
+
+`mǐ`
 
 ### --feedback--
 
@@ -94,49 +120,3 @@ This has a different final from the audio.
 ## --video-solution--
 
 3
-
----
-
-<!-- (Audio) A: děng -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`dāng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`děng`
-
----
-
-`dīng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`dèn`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-2

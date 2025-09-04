@@ -15,7 +15,7 @@ dashedName: task-132
 
 It starts with `i`, where the tongue is high and the lips spread, then quickly moves into a rounded vowel similar to `u`, and ends with the back nasal `ng`, made by lifting the back of the tongue against the soft palate.  
 
-For tone marking, the mark goes on `o` in `iong`.
+When `iong` is combined with initials, you get syllables such as `jiong`, `qiong`, and `xiong`.
 
 [ ] pronouncing `iong`  
 [ ] pronouncing `jiong`  

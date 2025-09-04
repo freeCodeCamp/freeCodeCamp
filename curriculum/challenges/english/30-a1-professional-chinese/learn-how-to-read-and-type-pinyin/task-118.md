@@ -13,7 +13,9 @@ dashedName: task-118
 
 `uen` is a smooth, connected sound. To pronounce it, you begin with a rounded `u`, then pass quickly through a light `e` sound, and finish with the front nasal `n` by lightly touching the tongue tip behind your upper front teeth.
 
-In standard spelling, `uen` is usually written as `un`.
+In spelling, `uen` is usually written as `un`.
+
+When `uen` is combined with initials, you can form syllables like `lun`, `dun`, `tun`, `gun`, `kun`, and `hun`.
 
 [ ] pronouncing `uen`  
 [ ] pronouncing `lun`  

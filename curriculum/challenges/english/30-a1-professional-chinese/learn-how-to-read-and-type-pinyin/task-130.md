@@ -15,16 +15,16 @@ dashedName: task-130
 
 The transition should be smooth and continuous without any break between the parts.
 
-For tone marking, the mark goes on `o` in `ong`.
+When `ong` is combined with initials, you get syllables such as `dong`, `tong`, `gong`, `kong`, `hong`, `cong`, `zhong`, `shong`, and `rong`.
 
 [ ] pronouncing `ong`  
 [ ] pronouncing `dong`  
 [ ] pronouncing `tong`  
 [ ] pronouncing `gong`  
 [ ] pronouncing `kong`  
-[ ] pronouncing `hong`  
-[ ] pronouncing `zhong`  
-[ ] pronouncing `chong`  
+[ ] pronouncing `hong` 
+[ ] pronouncing `cong` 
+[ ] pronouncing `zhong`    
 [ ] pronouncing `shong`  
 [ ] pronouncing `rong`
 

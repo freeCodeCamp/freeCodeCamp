@@ -9,7 +9,7 @@ dashedName: task-131
 
 # --description--
 
-Because `ong` contains `o`, the tone mark goes on the `o`. For example, `zhōng`.
+For tone marking, the mark goes on `o` in `ong`. For example `cōng`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `zh` with the final `ong` and uses the first tone, which is high and level.
+This syllable combines the initial `zh` with the final `ong`, and uses the first tone, which is high and level.

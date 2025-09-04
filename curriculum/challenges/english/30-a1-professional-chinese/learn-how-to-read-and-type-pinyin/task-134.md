@@ -15,13 +15,8 @@ dashedName: task-134
 
 It starts with `u`, made with rounded lips, then passes through a very light middle vowel sound, and ends with the back nasal `ng`, produced with the back of the tongue against the soft palate. The transition between all parts should be smooth and continuous.
 
-For tone marking, the mark goes on `e` in `ueng`.
-
-[ ] pronouncing `ueng`  
-[ ] pronouncing `gueng`  
-[ ] pronouncing `kueng`  
-[ ] pronouncing `hueng`
+[ ] pronouncing `ueng`
 
 # --assignment--
 
-Listen to the audio and pronounce the final and syllables.
+Listen to the audio and pronounce the final.

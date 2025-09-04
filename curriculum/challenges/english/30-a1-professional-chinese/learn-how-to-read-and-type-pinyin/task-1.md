@@ -31,11 +31,11 @@ A syllable is a single unit of pronunciation. In Pinyin, each syllable represent
 
 This is the consonant sound at the beginning of the syllable. For example, in `ma`, the initial is `m`. Some syllables do not have an initial, like `ai`.
 
-There are many initials in Pinyin, which you will learn in later modules.
+There are 21 initials in Pinyin.
 
 **Final**
 
-This is the part that comes after the initial. It can be a single vowel, as in `a` from `ma`; a combination of vowels, as in `ai`; or vowels followed by `n` or `ng`, as in `an` and `ang`.
+This is the part that comes after the initial. It can be a single vowel, as in `a` from `ma`; a combination of vowels, as `ou` in `mou`; or vowels followed by `n` or `ng`, as in `an` and `mang`.
 
 There are 36 finals in Pinyin.
 

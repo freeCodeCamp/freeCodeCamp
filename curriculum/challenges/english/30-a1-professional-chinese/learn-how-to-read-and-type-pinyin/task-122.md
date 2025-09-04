@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-122
 ---
 
-<!-- (Audio) A: hún -->
+<!-- (Audio) A: dùn, jùn -->
 
 # --instructions--
 
@@ -15,31 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`hún`
+`dùn`
 
 ---
 
-`hün`
+`dūn`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`hén`
+`tùn`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`hēn`
+`dǔ`
 
 ### --feedback--
 
@@ -49,93 +49,37 @@ This has a different final from the audio.
 
 1
 
----
-
-<!-- (Audio) A: jūn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
-
-`jún`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
 
 `jūn`
 
+### --feedback--
+
+This has a different tone from the audio.
+
 ---
 
-`jén`
+`zhùn`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`jēn`
+`jùn`
+
+---
+
+`jǔ`
 
 ### --feedback--
 
-This has a different final from the audio.
-
-## --video-solution--
-
-2
-
----
-
-<!-- (Audio) A: kùn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`kún`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`kün`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`kùn`
-
----
-
-`kèn`
-
-### --feedback--
-
-This has a different final from the audio.
+This has a different final and tone from the audio.
 
 ## --video-solution--
 

@@ -9,7 +9,7 @@ dashedName: task-116
 
 # --description--
 
-Because `iang` contains `a`, the tone mark goes on the `a`. For example, `liáng`.
+For tone marking, the mark goes on `a` in `iang`. For example, `qiáng`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `l` with the final `iang` and uses the second tone, which rises from low to high.
+This syllable combines the initial `l` with the final `iang`, and uses the second tone, which rises from low to high.

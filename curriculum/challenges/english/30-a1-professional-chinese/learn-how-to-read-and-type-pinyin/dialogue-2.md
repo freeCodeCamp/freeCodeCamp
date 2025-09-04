@@ -7,7 +7,7 @@ dashedName: initials
 
 # --description--
 
-This video will include the pronunciation of all 23 initials. Watch the video below to understand the context of the upcoming lessons.
+This video will include the pronunciation of all 21 initials. Watch the video below to understand the context of the upcoming lessons.
 
 # --assignment--
 

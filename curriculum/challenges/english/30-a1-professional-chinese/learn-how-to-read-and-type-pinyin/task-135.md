@@ -5,11 +5,13 @@ challengeType: 22
 dashedName: task-135
 ---
 
-<!-- (Audio) A: huēng -->
+<!-- (Audio) A: wēng -->
 
 # --description--
 
-Because `ueng` contains `e`, the tone mark goes on the `e`. For example, `huēng`.
+`​ueng`​ is a special final. ​It can't be combined with any initial. Instead, `​ueng`​ only appears as a standalone syllable, with the leading `u` replaced with `w`, forming the syllable `​weng`.
+
+For tone marking, the mark goes on `e` in `ueng`. For example, `wēng`.
 
 # --instructions--
 
@@ -23,8 +25,8 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ## --blanks--
 
-`huēng`
+`wēng`
 
 ### --feedback--
 
-This syllable combines the initial `h` with the final `ueng` and uses the first tone, which is high and level.
+This syllable uses the final `ueng`, written as `weng`, and takes the first tone, which is high and level.

@@ -9,7 +9,7 @@ dashedName: task-121
 
 # --description--
 
-Because `ün` contains `ü`, the tone mark goes on the `ü`. For example, `xún`.
+For tone marking, the mark goes on `ü` in `ün`. For example, `qún`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `x` with the final `ün` and uses the second tone, which rises from low to high.
+This syllable combines the initial `x` with the final `ün` (written as `un`), and uses the second tone, which rises from low to high.

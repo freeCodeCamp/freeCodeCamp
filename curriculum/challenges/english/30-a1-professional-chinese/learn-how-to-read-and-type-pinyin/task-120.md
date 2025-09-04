@@ -15,14 +15,12 @@ The last front nasal final `ün` is made of `ü` plus the nasal `n`. You start w
 
 Unlike `uen`, there is no middle `e` sound here. It's simply a quick connection from `ü` to `n`.
 
-For tone marking, the mark goes on `ü` in `ün`. For example, `ǘn`.
+When `ün` is combined with `j`, `q` and `x`, the two dots on `ü` are omitted.
 
 [ ] pronouncing `ün`  
 [ ] pronouncing `jun`  
 [ ] pronouncing `qun`  
-[ ] pronouncing `xun`  
-[ ] pronouncing `lün`  
-[ ] pronouncing `nün`
+[ ] pronouncing `xun`
 
 # --assignment--
 

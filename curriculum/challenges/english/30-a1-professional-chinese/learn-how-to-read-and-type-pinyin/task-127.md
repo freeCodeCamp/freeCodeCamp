@@ -17,7 +17,7 @@ It begins with the high front vowel `i`, made with the tongue close to the roof 
 
 This makes `ing` different from `in`, which ends with the front nasal `n`. In `ing`, the nasal sound resonates at the back of the mouth, giving it a deeper quality.  
 
-For tone marking, the mark goes on `i` in `ing`.
+When `ing` is combined with initials, you get syllables such as `bing`, `ping`, `ming`, `ding`, `ning`, and `ling`.
 
 [ ] pronouncing `ing`  
 [ ] pronouncing `bing`  

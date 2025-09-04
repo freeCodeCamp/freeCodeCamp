@@ -9,7 +9,7 @@ dashedName: task-133
 
 # --description--
 
-Because `iong` contains `o`, the tone mark goes on the `o`. For example, `xióng`.
+For tone marking, the mark goes on `o` in `iong`. For example, `xióng`.
 
 # --instructions--
 
@@ -23,8 +23,8 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ## --blanks--
 
-`xióng`
+`jiǒng`
 
 ### --feedback--
 
-This syllable combines the initial `x` with the final `iong` and uses the second tone, which rises from low to high.
+This syllable combines the initial `j` with the final `iong`, and uses the third tone, which dips down and then rises.

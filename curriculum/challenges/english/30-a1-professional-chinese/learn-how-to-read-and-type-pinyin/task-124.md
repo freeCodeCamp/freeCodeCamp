@@ -9,7 +9,7 @@ dashedName: task-124
 
 # --description--
 
-Because `ang` contains `a`, the tone mark goes on the `a`. For example, `láng`.
+For tone marking, the mark goes on `a` in `ang`. For example, `háng`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `l` with the final `ang` and uses the second tone, which rises from low to high.
+This syllable combines the initial `l` with the final `ang`, and uses the second tone, which rises from low to high.

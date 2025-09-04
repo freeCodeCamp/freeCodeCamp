@@ -9,7 +9,7 @@ dashedName: task-119
 
 # --description--
 
-Because `uen` contains `e`, the tone mark goes on the `e`. For example, `lún`.
+`uen` is often written as `un` in standard Pinyin spelling. For tone marking, the mark goes on `u` in `un`. For example, `tún`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `l` with the final `uen` and uses the second tone, which rises from low to high.
+This syllable combines the initial `l` with the final `uen` (written as `un`), and uses the second tone, which rises from low to high.

@@ -17,14 +17,14 @@ While `ang` starts with the open vowel `a`, `eng` begins with a mid vowel sound.
 
 It ends with the back nasal `ng`, made by lifting the back of the tongue against the soft palate.  
 
-For tone marking, the mark goes on `e` in `eng`.
+When `eng` is combined with initials, you get syllables such as `beng`, `peng`, `meng`, `deng`, and `sheng`.
 
 [ ] pronouncing `eng`  
 [ ] pronouncing `beng`  
 [ ] pronouncing `peng`  
 [ ] pronouncing `meng`  
 [ ] pronouncing `deng`  
-[ ] pronouncing `leng`
+[ ] pronouncing `sheng`
 
 # --assignment--
 

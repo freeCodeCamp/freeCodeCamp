@@ -9,7 +9,7 @@ dashedName: task-137
 
 # --description--
 
-Because `uang` contains `a`, the tone mark goes on the `a`. For example, `kuàng`.
+For tone marking, the mark goes on `a` in `uang`. For example, `huàng`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `k` with the final `uang` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `k` with the final `uang`, and uses the fourth tone, which falls sharply from high to low.

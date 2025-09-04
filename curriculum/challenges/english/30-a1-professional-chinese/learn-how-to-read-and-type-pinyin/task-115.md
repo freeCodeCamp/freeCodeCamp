@@ -15,7 +15,7 @@ dashedName: task-115
 
 It starts with `i`, where the tongue is high and the lips are spread, then quickly opens into `a` before finishing with the back nasal `ng`, made with the back of the tongue against the soft palate.  
 
-For tone marking, the mark goes on `a` in `iang`.
+When `iang` is combined with initials, you can form syllables like `jiang`, `qiang`, `xiang`, `liang`, and `niang`.
 
 [ ] pronouncing `iang`  
 [ ] pronouncing `jiang`  

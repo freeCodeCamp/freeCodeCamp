@@ -7,7 +7,7 @@ dashedName: task-136
 
 <!--SPEAKING-->
 
-<!-- (Audio) A: uang, guang, kuang, huang, zhuang, chuang, shuang -->
+<!-- (Audio) A: uang, guang, kuang, huang, zang, cang, rang -->
 
 # --description--
 
@@ -21,9 +21,9 @@ For tone marking, the mark goes on `a` in `uang`.
 [ ] pronouncing `guang`  
 [ ] pronouncing `kuang`  
 [ ] pronouncing `huang`  
-[ ] pronouncing `zhuang`  
-[ ] pronouncing `chuang`  
-[ ] pronouncing `shuang`
+[ ] pronouncing `zang`  
+[ ] pronouncing `cang`  
+[ ] pronouncing `rang`
 
 # --assignment--
 

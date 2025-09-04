@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-138
 ---
 
-<!-- (Audio) A: gōng -->
+<!-- (Audio) A: tóng, xióng, wēng, ràng -->
 
 # --instructions--
 
@@ -15,77 +15,67 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`gōng`
+`tóng`
 
 ---
 
-`jiōng`
+`tōng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`guēng`
+`hóng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`guāng`
+`tǒng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ## --video-solution--
 
 1
 
----
-
-<!-- (Audio) A: xiōng -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`dōng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
 `xiōng`
 
+### --feedback--
+
+This has a different tone from the audio.
+
 ---
 
-`xuēng`
+`xióng`
+
+---
+
+`qióng`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`xuāng`
+`xǐng`
 
 ### --feedback--
 
@@ -95,23 +85,25 @@ This has a different final from the audio.
 
 2
 
----
-
-<!-- (Audio) A: huāng -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the third syllable you hear?
 
 ## --answers--
 
-`hōng`
+`wēng`
+
+---
+
+`wěng`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`wàng`
 
 ### --feedback--
 
@@ -119,24 +111,48 @@ This has a different final from the audio.
 
 ---
 
-`jiōng`
+`rēng`
 
 ### --feedback--
 
-This has a different final from the audio.
-
----
-
-`huēng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`huāng`
+This has a different initial from the audio.
 
 ## --video-solution--
 
-4
+1
+
+## --text--
+
+Which option matches the fourth syllable you hear?
+
+## --answers--
+
+`rǎng`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`làng`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`ràng`
+
+---
+
+`rèng`
+
+### --feedback--
+
+This has a different final from the audio.
+
+## --video-solution--
+
+3

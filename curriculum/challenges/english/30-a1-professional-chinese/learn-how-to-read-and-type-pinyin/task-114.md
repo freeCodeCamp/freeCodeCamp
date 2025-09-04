@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `j` with the final `üan`, and uses the third tone, which dips down and then rises.
+This syllable combines the initial `j` with the final `üan` (written as `uan`), and uses the third tone, which dips down and then rises.

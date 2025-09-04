@@ -13,7 +13,7 @@ dashedName: task-19
 
 You know a Pinyin syllable has three parts: initial, final, and tone. You have already learned the finals and tones. Now you'll focus on initials and practice combining them with finals to form syllables.
 
-There are 23 initials in total. You'll learn them in groups by mouth position to make pronunciation easier. The first group is `b`, `p`, `m`, `f`.
+There are 21 initials in total. You'll learn them in groups by mouth position to make pronunciation easier. The first group is `b`, `p`, `m`, `f`.
 
 The very first initial you learn here is `b`. To pronounce the `b`, gently press your lips together and then release them while making a short, soft sound without a strong puff of air and without vibration in your vocal cords. It should feel quick and smooth, as your lips come together and part gently.
 

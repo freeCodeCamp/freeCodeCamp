@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-117
 ---
 
-<!-- (Audio) A: pín -->
+<!-- (Audio) A: mín, miàn, tuán, niáng -->
 
 # --instructions--
 
@@ -15,15 +15,23 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`pín`
+`mǐn`
+
+### --feedback--
+
+This has a different tone from the audio.
 
 ---
 
-`pián`
+`mín`
+
+---
+
+`mián`
 
 ### --feedback--
 
@@ -31,112 +39,120 @@ This has a different final from the audio.
 
 ---
 
-`pún`
+`bīn`
 
 ### --feedback--
 
-This has a different final from the audio.
-
----
-
-`püán`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-1
-
----
-
-<!-- (Audio) A: biǎn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`bǐn`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`biǎn`
-
----
-
-`buǎn`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`büǎn`
-
-### --feedback--
-
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ## --video-solution--
 
 2
 
----
-
-<!-- (Audio) A: duǎn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`dǐn`
-
-### --feedback--
-
-This has a different final from the audio.
+`miàn`
 
 ---
 
-`diǎn`
+`mián`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`duǎn`
-
----
-
-`düǎn`
+`mín`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different final and tone from the audio.
+
+---
+
+`liàn`
+
+### --feedback--
+
+This has a different initial from the audio.
 
 ## --video-solution--
 
-3
+1
+
+## --text--
+
+Which option matches the third syllable you hear?
+
+## --answers--
+
+`tuán`
+
+---
+
+`huàn`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`tóng`
+
+### --feedback--
+
+This has a different final from the audio.
+
+---
+
+`duān`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+## --video-solution--
+
+1
+
+## --text--
+
+Which option matches the fourth syllable you hear?
+
+## --answers--
+
+`liàn`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`niáng`
+
+---
+
+`xiáng`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`niǎn`
+
+### --feedback--
+
+This has a different final and tone from the audio.
+
+## --video-solution--
+
+2

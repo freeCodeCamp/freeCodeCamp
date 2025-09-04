@@ -17,7 +17,7 @@ Unlike front nasals which end in `n` with the tongue tip behind the upper teeth,
 
 To pronounce `ang`, start with the open vowel `a`, then let the sound continue into the back nasal `ng`. Keep the mouth open and allow the sound to resonate at the back of the throat. The transition should be smooth without any break.
 
-For tone marking, the mark goes on `a` in `ang`.
+When `ang` is combined with initials, you get syllables such as `bang`, `pang`, `mang`, `fang`, `dang`, and `chang`.
 
 [ ] pronouncing `ang`  
 [ ] pronouncing `bang`  
@@ -25,7 +25,7 @@ For tone marking, the mark goes on `a` in `ang`.
 [ ] pronouncing `mang`  
 [ ] pronouncing `fang`  
 [ ] pronouncing `dang`  
-[ ] pronouncing `lang`
+[ ] pronouncing `chang`
 
 # --assignment--
 
