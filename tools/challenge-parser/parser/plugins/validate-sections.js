@@ -13,6 +13,7 @@ const VALID_MARKERS = [
   '# --fillInTheBlank--',
   '# --hints--',
   '# --instructions--',
+  '# --interactive--',
   '# --notes--',
   '# --questions--',
   '# --quizzes--',
@@ -24,6 +25,9 @@ const VALID_MARKERS = [
   // Level 2
   '## --answers--',
   '## --blanks--',
+  '## --description--',
+  '## --files--',
+  '## --instructions--',
   '## --quiz--',
   '## --seed-contents--',
   '## --sentence--',

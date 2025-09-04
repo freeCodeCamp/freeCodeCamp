@@ -181,15 +181,17 @@ const schema = Joi.object()
       then: Joi.string()
     }),
     challengeFiles: Joi.array().items(fileJoi),
-    interactiveElements: Joi.alternatives().try(
+    interactiveElements: Joi.array().items(
       Joi.object().keys({
-        type: Joi.string().valid('description').required(),
-        content: Joi.string().required()
-      }),
-      Joi.object().keys({
-        type: Joi.string().valid('editor').required(),
-        instructions: Joi.string().allow(''),
-        files: Joi.array().items(fileJoi).min(1).required()
+        description: Joi.string(),
+        instructions: Joi.string(),
+        files: Joi.array().items(
+          Joi.object().keys({
+            ext: Joi.string().required(),
+            name: Joi.string().required(),
+            contents: Joi.string().required()
+          })
+        )
       })
     ),
     guideUrl: Joi.string().uri({ scheme: 'https' }),

@@ -2,13 +2,8 @@ const parseFixture = require('./../__fixtures__/parse-fixture');
 const addInteractiveElements = require('./add-interactive-elements');
 
 describe('add-interactive-editor plugin', () => {
-  let mockAST;
   const plugin = addInteractiveElements();
   let file = { data: {} };
-
-  beforeAll(async () => {
-    mockAST = await parseFixture('with-interactive.md');
-  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -18,39 +13,42 @@ describe('add-interactive-editor plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds an `interactiveElements` property to `file.data`', () => {
+  it('adds an `interactiveElements` property to `file.data`', async () => {
+    const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
     expect(file.data).toHaveProperty('interactiveElements');
     expect(Array.isArray(file.data.interactiveElements)).toBe(true);
   });
 
-  it('populates `interactiveElements` with description objects', () => {
+  it('populates `interactiveElements` with description objects', async () => {
+    const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
     const descriptionElements = file.data.interactiveElements.filter(
-      element => element.type === 'description'
+      element => element.description
     );
     expect(descriptionElements).toEqual(
       expect.arrayContaining([
         {
-          type: 'description',
-          content: expect.stringContaining('Normal markdown')
+          description: expect.stringContaining('Normal markdown')
         }
       ])
     );
   });
 
-  it('populates `interactiveElements` with editor objects', () => {
+  it('populates `interactiveElements` with editor objects', async () => {
+    const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
     const editorElements = file.data.interactiveElements.filter(
-      element => element.type === 'editor'
+      element => element.files
     );
 
     expect(editorElements).toEqual(
       expect.arrayContaining([
         {
-          type: 'editor',
           files: [
             {
+              ext: expect.any(String),
+              name: expect.any(String),
               contents: expect.stringContaining(
                 '<div>This is an interactive element</div>'
               )
@@ -63,17 +61,20 @@ describe('add-interactive-editor plugin', () => {
     expect(editorElements).toEqual(
       expect.arrayContaining([
         {
-          type: 'editor',
           instructions: expect.stringContaining(
             'This contains the instructions, but is not interactive'
           ),
           files: [
             {
+              ext: expect.any(String),
+              name: expect.any(String),
               contents: expect.stringContaining(
                 'This is an interactive element'
               )
             },
             {
+              ext: expect.any(String),
+              name: expect.any(String),
               contents: expect.stringContaining(
                 "console.log('Interactive JS');"
               )
@@ -84,18 +85,40 @@ describe('add-interactive-editor plugin', () => {
     );
   });
 
-  it('respects the order of description/editor elements in the original markdown', () => {
+  it('provides unique names for each file with the same extension', async () => {
+    const mockAST = await parseFixture('with-multiple-js-files.md');
+    plugin(mockAST, file);
+    const editorElements = file.data.interactiveElements.filter(
+      element => element.files
+    );
+
+    expect(editorElements).toHaveLength(1);
+
+    const files = editorElements[0].files;
+    expect(files).toHaveLength(2);
+
+    // Both files should be JavaScript but have unique names
+    expect(files[0].ext).toBe('js');
+    expect(files[1].ext).toBe('js');
+    // TODO: only number if there are multiple files.
+    expect(files[0].name).toBe('script-1');
+    expect(files[1].name).toBe('script-2');
+
+    // Contents should match
+    expect(files[0].contents).toBe("console.log('First JavaScript file');");
+    expect(files[1].contents).toBe("console.log('Second JavaScript file');");
+  });
+
+  it('respects the order of elements in the original markdown', async () => {
+    const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
     const elements = file.data.interactiveElements;
     expect(elements).toHaveLength(4);
 
-    const types = elements.map(({ type }) => type);
-    expect(types).toStrictEqual([
-      'description',
-      'editor',
-      'editor',
-      'description'
-    ]);
+    expect(elements[0]).toHaveProperty('description');
+    expect(elements[1]).toHaveProperty('files');
+    expect(elements[2]).toHaveProperty('files');
+    expect(elements[3]).toHaveProperty('description');
   });
 
   it('throws if there are "editor" and "description" elements in the same section', async () => {

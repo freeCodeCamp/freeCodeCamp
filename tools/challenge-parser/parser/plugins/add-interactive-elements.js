@@ -3,6 +3,7 @@ const { isEmpty } = require('lodash');
 
 const { getAllSections, getSection } = require('./utils/get-section');
 const mdastToHtml = require('./utils/mdast-to-html');
+const { getFilenames } = require('./utils/get-file-visitor');
 
 function plugin() {
   return transformer;
@@ -20,22 +21,17 @@ function plugin() {
 
         validate({ descriptionSection, filesSection, instructionsSection });
 
-        if (!isEmpty(descriptionSection)) {
-          return {
-            type: 'description',
-            content: mdastToHtml(descriptionSection)
-          };
-        }
-
-        if (!isEmpty(filesSection)) {
-          return {
-            type: 'editor',
-            files: getFiles(filesSection),
-            ...(!isEmpty(instructionsSection) && {
-              instructions: mdastToHtml(instructionsSection)
-            })
-          };
-        }
+        return {
+          ...(!isEmpty(descriptionSection) && {
+            description: mdastToHtml(descriptionSection)
+          }),
+          ...(!isEmpty(filesSection) && {
+            files: getFiles(filesSection)
+          }),
+          ...(!isEmpty(instructionsSection) && {
+            instructions: mdastToHtml(instructionsSection)
+          })
+        };
       });
 
       if (!isEmpty(interactiveElements)) {
@@ -73,7 +69,21 @@ function getFiles(filesNodes) {
     throw Error('The --files-- section should only contain code blocks.');
   }
 
-  return filesNodes.map(node => ({ contents: node.value }));
+  // TODO: refactor into two steps, 1) count languages, 2) map to files
+  const counts = {};
+
+  return filesNodes.map(node => {
+    counts[node.lang] = counts[node.lang] ? counts[node.lang] + 1 : 1;
+    const out = {
+      contents: node.value,
+      ext: node.lang,
+      name:
+        getFilenames(node.lang) +
+        (counts[node.lang] ? `-${counts[node.lang]}` : '')
+    };
+
+    return out;
+  });
 }
 
 module.exports = plugin;

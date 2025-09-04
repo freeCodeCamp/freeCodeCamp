@@ -97,3 +97,4 @@ function idToData(node, index, parent, seeds) {
 }
 
 module.exports.getFileVisitor = getFileVisitor;
+module.exports.getFilenames = getFilenames;
