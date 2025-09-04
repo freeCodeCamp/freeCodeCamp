@@ -4907,6 +4907,12 @@
         "intro": [
           "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
+      },
+      "fso-fundamentals-web-apps": {
+        "title": "Fundamentals of Web Apps",
+        "intro": [
+          "This part of the course will introduce you to the basics of web applications. You will learn how the web works, how HTTP works with request and response."
+        ]
       }
     },
     "chapters": {
@@ -4926,6 +4932,7 @@
       "part-13": "Using Relational Databases"
     },
     "modules": {
+      "fundamentals-of-web-apps": "Fundamentals of Web Apps",
       "basic-html": "Basic HTML"
     },
     "module-intros": {
@@ -4933,6 +4940,12 @@
         "title": "Basic HTML",
         "intro": [
           "Learn how to build simple webpages using HTML tags to add text, images, and links."
+        ]
+      },
+      "fso-fundamentals-web-apps": {
+        "title": "Fundamentals of Web Apps",
+        "intro": [
+          "This part of the course will introduce you to the basics of web applications. You will learn how the web works, how HTTP works with request and response."
         ]
       }
     }

@@ -1,0 +1,14 @@
+{
+  "name": "Fundamentals of Web Apps",
+  "isUpcomingChange": false,
+  "dashedName": "fso-fundamentals-web-apps",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "68b93cc43746b09f6dcc2e42",
+      "title": "Before we get Started..."
+    }
+  ],
+  "blockLayout": "challenge-list",
+  "blockType": "lecture"
+}
