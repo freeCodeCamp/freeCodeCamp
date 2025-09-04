@@ -17,6 +17,8 @@ Begin by rounding your lips tightly to pronounce `u`, then quickly open your mou
 
 Although the spelling is `u-a-n`, the middle `a` is very short and light. It should feel like one connected syllable, not three separate parts.
 
+When combined with the initials, you can form syllables like `duan`, `tuan`, `guan`, `kuan`, and `huan`.
+
 [ ] pronouncing `uan`  
 [ ] pronouncing `duan`  
 [ ] pronouncing `tuan`  

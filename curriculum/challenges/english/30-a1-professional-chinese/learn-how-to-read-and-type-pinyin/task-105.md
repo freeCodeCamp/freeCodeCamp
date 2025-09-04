@@ -9,7 +9,7 @@ dashedName: task-105
 
 # --description--
 
-Because `en` contains `e`, the tone mark goes on the `e`. For example, `rèn`.
+For tone marking, the mark goes on `e` in `en`. For example, `shén`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `r` with the final `en` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `r` with the final `en`, and uses the fourth tone, which falls sharply from high to low.

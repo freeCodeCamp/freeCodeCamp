@@ -9,7 +9,7 @@ dashedName: task-103
 
 # --description--
 
-Because `an` contains `a`, the tone mark goes on the `a`. For example, `fàn`.
+For tone marking, the mark goes on `a` in `an`. For example, `hàn`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `f` with the final `an` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `f` with the final `an`, and uses the fourth tone, which falls sharply from high to low.

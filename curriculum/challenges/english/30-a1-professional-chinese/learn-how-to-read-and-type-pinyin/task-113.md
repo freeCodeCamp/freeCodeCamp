@@ -11,20 +11,18 @@ dashedName: task-113
 
 # --description--
 
-`üan` starts with the special vowel `ü`, which is pronounced by shaping your lips like you're saying `u` (rounded), but placing your tongue as if you're saying `i`.
+`üan` starts with the final `ü`, which is pronounced by shaping your lips like you're saying `u` (rounded), but placing your tongue as if you're saying `i`.
 
 To pronounce `üan`, begin with `ü`, then open your mouth slightly for a short `a`-like sound, and finish with the nasal `n` by touching your tongue tip behind your upper teeth.
 
 It's important to keep the rounded lip shape at the start. Don't pronounce it like `uan`.
 
-When combined with initials `j`, `q`, `x` and `y`, the two dots above `ü` are omitted, but the pronunciation remains `üan`.
+When combined with initials `j`, `q`, and `x`, the two dots above `ü` are omitted, but the pronunciation remains `üan`.
 
 [ ] pronouncing `üan`  
 [ ] pronouncing `juan`  
 [ ] pronouncing `quan`  
-[ ] pronouncing `xuan`  
-[ ] pronouncing `nüan`  
-[ ] pronouncing `lüan`
+[ ] pronouncing `xuan`
 
 # --assignment--
 

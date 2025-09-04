@@ -17,7 +17,7 @@ To pronounce `en`, you begin with a tighter mouth shape than `an`, then lightly 
 
 This nasal final is short, quick, and forward in the mouth.
 
-For tone marking, the mark goes on `e` in `en`. For example, `én`.
+When combined with the initials, you can form syllables like `ben`, `pen`, `men`, `fen`, `zhen`, `chen`, `shen`, and `ren`.
 
 [ ] pronouncing `en`  
 [ ] pronouncing `ben`  

@@ -11,13 +11,11 @@ dashedName: task-96
 
 # --description--
 
-In Pinyin, there are fourteen compound finals.
+To pronounce `uei`, you begin with the tongue high and close to the hard palate for `u`, then smoothly transition to the position for `e`, and finally to the position for `i`. The movement should be fluid, with no break between the three sounds.
 
-A compound final consists of two or three vowel sounds that blend smoothly together within a single syllable, creating a gliding sound without interruption.
+In syllables, `uei` is often written as `ui`.
 
-`uei` is one of them. To pronounce it, you begin with the tongue high and close to the hard palate for `u`, then smoothly transition to the position for `e`, and finally to the position for `i`. The movement should be fluid, with no break between the three sounds.
-
-When `uei` is combined with the initials `d`, `t`, `g`, `k`, `zh`, `sh`, you get the syllables: `dui`, `tui`, `gui`, `kui`, `zhui`, `shui`.
+When `uei` is combined with the initials, you get the syllables like `dui`, `tui`, `gui`, `kui`, `zhui`, `shui`.
 
 [ ] pronouncing `uei`
 [ ] pronouncing `dui`

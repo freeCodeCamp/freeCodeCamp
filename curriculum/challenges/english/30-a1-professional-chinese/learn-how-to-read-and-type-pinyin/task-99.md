@@ -11,11 +11,11 @@ dashedName: task-99
 
 # --description--
 
-In Pinyin, there are fourteen compound finals.
+`​er`​ is often classified as a ​special final.
 
-A compound final consists of two or three vowel sounds that blend smoothly together within a single syllable, creating a gliding sound without interruption.
+To pronounce `er`, you begin by producing the sound of the simple final `e`. While sustaining this vowel, gently raise the tip of your tongue, curl it slightly backward, and then release the tension quickly.
 
-`er` is one of them. To pronounce it, you begin with the mouth in the position for the `e` sound, then smoothly transition the tongue toward the position for `r`. The movement should be fluid, with no break between the two sounds. The `e` is emphasized slightly longer, while the `r` is shorter and lighter, resulting in a natural glide rather than two separate sounds.
+For now, just remember that `er` is a standalone syllable. Later, you will learn how it attaches to other syllables as a suffix.
 
 [ ] pronouncing `er`
 

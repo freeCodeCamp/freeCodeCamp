@@ -9,7 +9,7 @@ dashedName: task-110
 
 # --description--
 
-Because `ian` contains `a`, the tone mark goes on the `a`. For example, `diàn`.
+For tone marking, the mark goes on `a` in `ian`. For example, `miàn`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `d` with the final `ian` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `d` with the final `ian`, and uses the fourth tone, which falls sharply from high to low.

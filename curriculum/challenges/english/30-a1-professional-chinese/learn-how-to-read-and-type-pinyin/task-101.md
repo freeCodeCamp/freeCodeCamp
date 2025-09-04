@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-101
 ---
 
-<!-- (Audio) A: er -->
+<!-- (Audio) A: ér -->
 
 # --instructions--
 
@@ -15,127 +15,35 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the syllable you hear?
 
 ## --answers--
 
-`er`
-
----
-
-`er`
+`èr`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`er`
+`ěr`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`er`
+`ér`
+
+---
+
+`āi`
 
 ### --feedback--
 
-This has a different final from the audio.
-
-## --video-solution--
-
-1
-
----
-
-<!-- (Audio) A: er -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`er`
-
----
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-2
-
----
-
-<!-- (Audio) A: er -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`er`
-
----
-
-`er`
-
-### --feedback--
-
-This has a different final from the audio.
+This has a completely different final from the audio.
 
 ## --video-solution--
 

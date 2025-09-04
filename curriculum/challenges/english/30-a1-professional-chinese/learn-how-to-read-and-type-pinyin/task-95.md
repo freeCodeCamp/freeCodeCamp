@@ -9,7 +9,7 @@ dashedName: task-95
 
 # --description--
 
-Because `uai` contains `a`, the tone mark goes on the `a`. For example, `kuài`.
+Because `uai` contains `a`, the tone mark goes on the `a`. For example, `shuài`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `k` with the final `uai` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `k` with the final `uai`, and uses the fourth tone, which falls sharply from high to low.

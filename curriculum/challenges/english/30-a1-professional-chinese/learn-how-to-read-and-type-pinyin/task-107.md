@@ -15,7 +15,7 @@ The nasal final `in` is a front nasal ending with the `n` sound, like `an` and `
 
 To pronounce `in`, start with the vowel `i`, where the tongue is high and close to the roof of the mouth. Then move into the nasal `n` sound by touching the tongue tip behind your top teeth.
 
-For tone marking, the mark goes on `i` in `in`. For example, `ín`.
+When combined with the initials, you can form syllables like `bin`, `pin`, `min`, `nin`, and `lin`.
 
 [ ] pronouncing `in`  
 [ ] pronouncing `bin`  

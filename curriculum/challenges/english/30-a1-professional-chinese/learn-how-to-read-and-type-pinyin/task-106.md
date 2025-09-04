@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-106
 ---
 
-<!-- (Audio) A: bān -->
+<!-- (Audio) A: bān, mén -->
 
 # --instructions--
 
@@ -15,11 +15,27 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
+`bàn`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
 `bān`
+
+---
+
+`pān`
+
+### --feedback--
+
+This has a different initial from the audio.
 
 ---
 
@@ -29,55 +45,29 @@ Which syllable do you hear?
 
 This has a different final from the audio.
 
----
-
-`bāng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`bēng`
-
-### --feedback--
-
-This has a different final from the audio.
-
 ## --video-solution--
 
-1
-
----
-
-<!-- (Audio) A: mèn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
+2
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`màn`
-
-### --feedback--
-
-This has a different final from the audio.
+`mén`
 
 ---
 
 `mèn`
 
+### --feedback--
+
+This has a different tone from the audio.
+
 ---
 
-`māng`
+`mǐn`
 
 ### --feedback--
 
@@ -85,53 +75,7 @@ This has a different final from the audio.
 
 ---
 
-`mēng`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-2
-
----
-
-<!-- (Audio) A: fàn -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`fàn`
-
----
-
-`fèn`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`fāng`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`fēng`
+`běn`
 
 ### --feedback--
 

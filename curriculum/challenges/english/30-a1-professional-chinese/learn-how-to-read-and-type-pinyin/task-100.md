@@ -9,7 +9,7 @@ dashedName: task-100
 
 # --description--
 
-Because `er` contains `e`, the tone mark goes on the `e`. For example, `èr`.
+The tone mark goes on the only vowel `e` in `er`. For example, `ér`.
 
 # --instructions--
 

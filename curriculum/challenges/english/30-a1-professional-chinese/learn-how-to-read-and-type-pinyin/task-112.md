@@ -9,7 +9,7 @@ dashedName: task-112
 
 # --description--
 
-Because `uan` contains `a`, the tone mark goes on the `a`. For example, `guǎn`.
+For tone marking, the mark goes on `a` in `uan`. For example, `huān`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `g` with the final `uan` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `g` with the final `uan`, and uses the third tone, which dips down and then rises.

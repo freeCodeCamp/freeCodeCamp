@@ -9,7 +9,7 @@ dashedName: task-97
 
 # --description--
 
-Because `uei` contains `e`, the tone mark goes on the `e`. For example, `shuǐ`.
+`uei` is often written as `ui` in syllables. As `i` and `u` appear together in `ui`, the tone mark goes on the second vowel, which is `i`. For example, `chuī`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `sh` with the final `uei` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `sh` with the final `uei` (written as `ui`), and uses the third tone, which dips down and then rises.

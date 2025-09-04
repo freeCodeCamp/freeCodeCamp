@@ -9,7 +9,7 @@ dashedName: task-114
 
 # --description--
 
-Because `üan` contains `a`, the tone mark goes on the `a`. For example, `juǎn`.
+For tone marking, the mark goes on `a` in `üan`. For example, `juàn`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `j` with the final `üan` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `j` with the final `üan`, and uses the third tone, which dips down and then rises.

@@ -9,7 +9,7 @@ dashedName: task-108
 
 # --description--
 
-Because `in` contains `i`, the tone mark goes on the `i`. For example, `lín`.
+For tone marking, the mark goes on `i` in `in`. For example, `mín`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `l` with the final `in` and uses the second tone, which rises from low to high.
+This syllable combines the initial `l` with the final `in`, and uses the second tone, which rises from low to high.

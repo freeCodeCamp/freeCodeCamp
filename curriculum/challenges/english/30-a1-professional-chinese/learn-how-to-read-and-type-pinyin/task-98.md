@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-98
 ---
 
-<!-- (Audio) A: kuai -->
+<!-- (Audio) A: guāi, tuì -->
 
 # --instructions--
 
@@ -15,23 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`kuai`
+`guāi`
 
 ---
 
-`kuai`
+`guài`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`kuai`
+`kuài`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`guī`
 
 ### --feedback--
 
@@ -41,23 +49,29 @@ This has a different final from the audio.
 
 1
 
----
-
-<!-- (Audio) A: dui -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`dui`
+`guì`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`tuǐ`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`tāi`
 
 ### --feedback--
 
@@ -65,54 +79,8 @@ This has a different final from the audio.
 
 ---
 
-`dui`
-
----
-
-`dui`
-
-### --feedback--
-
-This has a different final from the audio.
+`tuì`
 
 ## --video-solution--
 
-2
-
----
-
-<!-- (Audio) A: guai -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`guai`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`guai`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`guai`
-
-## --video-solution--
-
-3
+4
