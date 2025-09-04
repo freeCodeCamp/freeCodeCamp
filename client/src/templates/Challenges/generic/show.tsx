@@ -2,14 +2,14 @@ import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { createPortal } from 'react-dom';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import { isEqual } from 'lodash';
+import { isEmpty, isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
+import PrismFormatted from '../components/prism-formatted';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -70,11 +70,6 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
-interface InteractiveRootMeta {
-  root: HTMLElement;
-  fileKeys: string[];
-}
-
 const ShowGeneric = ({
   challengeMounted,
   data: {
@@ -85,7 +80,7 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
-        interactiveFiles,
+        interactiveElements,
         explanation,
         challengeType,
         fields: { blockName, tests },
@@ -203,24 +198,6 @@ const ShowGeneric = ({
 
   const sceneSubject = new SceneSubject();
 
-  const [interactiveEditors, setInteractiveEditors] = useState<
-    InteractiveRootMeta[]
-  >([]);
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      const nodes = Array.from(
-        document.querySelectorAll('[id^="interactive-editor-root"]')
-      );
-      const metas: InteractiveRootMeta[] = nodes.map(node => {
-        const el = node as HTMLElement;
-        const data = el.getAttribute('data-interactive-file-keys') || '';
-        const fileKeys = data.split(',').filter(Boolean);
-        return { root: el, fileKeys };
-      });
-      setInteractiveEditors(metas);
-    }
-  }, [description]);
-
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
@@ -252,22 +229,19 @@ const ShowGeneric = ({
                 <Spacer size='m' />
               </Col>
             )}
-            {interactiveFiles &&
-              Array.isArray(interactiveFiles) &&
-              interactiveEditors.map(({ root, fileKeys }, i) => {
-                const files = interactiveFiles.filter(f =>
-                  fileKeys.includes(f.fileKey)
-                );
 
-                if (!files.length) {
-                  return null;
-                }
-
-                return createPortal(
-                  <InteractiveEditor key={i} files={files} />,
-                  root
-                );
-              })}
+            {!isEmpty(interactiveElements) &&
+              interactiveElements!.map((element, index) => (
+                <React.Fragment key={index}>
+                  {element.description && (
+                    <PrismFormatted text={element.description} />
+                  )}
+                  {element.instructions && (
+                    <PrismFormatted text={element.instructions} />
+                  )}
+                  {element.files && <InteractiveEditor files={element.files} />}
+                </React.Fragment>
+              ))}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -369,13 +343,14 @@ export const query = graphql`
         blockType
         challengeType
         description
-        interactiveFiles {
-          ext
-          name
-          contents
-          head
-          tail
-          fileKey
+        interactiveElements {
+          description
+          instructions
+          files {
+            ext
+            name
+            contents
+          }
         }
         explanation
         helpCategory

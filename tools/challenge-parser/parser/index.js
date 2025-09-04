@@ -18,7 +18,6 @@ const restoreDirectives = require('./plugins/restore-directives');
 const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
 const addQuizzes = require('./plugins/add-quizzes');
-const addInteractiveEditor = require('./plugins/add-interactive-editor');
 const addInteractiveElements = require('./plugins/add-interactive-elements');
 
 // by convention, anything that adds to file.data has the name add<name>.
@@ -61,9 +60,6 @@ const processor = unified()
   .use(addHooks)
   .use(addTests)
   .use(addInteractiveElements)
-  // handles the --interactive-- markers, converting them to interactive editor
-  // elements.
-  .use(addInteractiveEditor)
   .use(addText, [
     'description',
     'instructions',

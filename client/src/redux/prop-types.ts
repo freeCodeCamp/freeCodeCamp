@@ -172,6 +172,12 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
+type InteractiveElement = {
+  description?: string;
+  instructions?: string;
+  files?: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -185,6 +191,7 @@ export type ChallengeNode = {
     description: string;
     challengeFiles: ChallengeFiles;
     interactiveFiles?: ChallengeFiles;
+    interactiveElements?: InteractiveElement[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
