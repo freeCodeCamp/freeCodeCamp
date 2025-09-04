@@ -1,8 +1,8 @@
-import { readdir, readFile } from 'fs/promises';
+import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
+import { SUPERBLOCK_META_DIR, CHALLENGE_DIR } from '../configs/paths';
 
-import { PartialMeta } from '../interfaces/partial-meta';
+import { SuperBlockMeta } from '../interfaces/superblock-meta';
 
 type Block = {
   name: string;
@@ -10,23 +10,41 @@ type Block = {
 };
 
 export const getBlocks = async (sup: string): Promise<Block[]> => {
-  const filePath = join(CHALLENGE_DIR, sup);
+  const superBlockDataPath = join(SUPERBLOCK_META_DIR, sup + '.json');
+  const superBlockMetaFile = await readFile(superBlockDataPath, {
+    encoding: 'utf8'
+  });
+  const superBlockMeta = JSON.parse(superBlockMetaFile) as SuperBlockMeta;
+  let blocks: { name: string; path: string }[] = [];
 
-  const files = await readdir(filePath);
-  const blocks = await Promise.all(
-    files.map(async file => {
-      const metaPath = join(META_DIR, file, 'meta.json');
-
-      const metaData = JSON.parse(
-        await readFile(metaPath, 'utf8')
-      ) as PartialMeta;
-
-      return {
-        name: metaData.name,
-        path: file
-      };
-    })
-  );
+  if (sup === 'full-stack-developer') {
+    const moduleBlockData = await Promise.all(
+      superBlockMeta.chapters!.flatMap(async chapter => {
+        return await Promise.all(
+          chapter.modules.flatMap(async module => {
+            return module.blocks!.flatMap(block => {
+              const filePath = join(CHALLENGE_DIR, block);
+              return {
+                name: block,
+                path: filePath
+              };
+            });
+          })
+        );
+      })
+    );
+    blocks = moduleBlockData.flat().flat();
+  } else {
+    blocks = await Promise.all(
+      superBlockMeta.blocks!.map(async block => {
+        const filePath = join(CHALLENGE_DIR, block);
+        return {
+          name: block,
+          path: filePath
+        };
+      })
+    );
+  }
 
   return blocks;
 };
