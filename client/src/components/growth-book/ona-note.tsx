@@ -21,7 +21,7 @@ export function OnaNote({ superBlock }: OnaNoteProps): JSX.Element | null {
         <Link
           external={true}
           sameTab={false}
-          to='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
+          to='https://forum.freecodecamp.org/t/relational-database-curriculum-in-ona/760889'
         >
           {t('intro:misc-text.read-database-cert-article')}
         </Link>
