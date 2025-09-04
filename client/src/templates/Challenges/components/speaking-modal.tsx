@@ -8,7 +8,11 @@ import SpeechRecognition, {
 
 import { closeModal } from '../redux/actions';
 import { isSpeakingModalOpenSelector } from '../redux/selectors';
-import { formatUtterance, compareTexts } from './speaking-modal-helpers';
+import {
+  compareTexts,
+  type ComparisonResult,
+  type ComparisonWord
+} from './speaking-modal-helpers';
 import './speaking-modal.css';
 
 interface SpeakingModalProps {
@@ -19,18 +23,7 @@ interface SpeakingModalProps {
   answerIndex?: number;
 }
 
-interface ComparisonWord {
-  word: string;
-  isCorrect: boolean;
-}
-
-interface ComparisonResult {
-  isExact: boolean;
-  accuracy: number;
-  highlightedText?: string;
-  comparison?: ComparisonWord[];
-  message: string;
-}
+// Use types from helper
 
 const SpeakingModal = ({
   closeSpeakingModal,
@@ -91,22 +84,16 @@ const SpeakingModal = ({
     if (previouslyListening && !listening && hasStartedRecording) {
       // Speech recognition just stopped and we had started a recording session
       if (transcript && transcript.trim()) {
-        // We have a transcript, process it
-        const formattedTranscript = formatUtterance(transcript);
-
-        const result = compareTexts(sentence, transcript, {
-          correctCongratulations: t('speaking-modal.correct-congratulations'),
-          veryGood: t('speaking-modal.very-good'),
-          tryAgain: t('speaking-modal.try-again')
-        });
+        const result = compareTexts(sentence, transcript);
 
         setComparisonResult(result);
 
-        // For non-exact matches, show both the formatted utterance and the feedback
-        if (result.isExact) {
-          setFeedback(result.message);
+        if (result.status === 'correct') {
+          setFeedback(t('speaking-modal.correct-congratulations'));
+        } else if (result.status === 'partially-correct') {
+          setFeedback(`${t('speaking-modal.very-good')}`);
         } else {
-          setFeedback(`${formattedTranscript} ${result.message}`);
+          setFeedback(`${t('speaking-modal.try-again')}`);
         }
       } else {
         // No transcript and we were recording, this means no speech detected
@@ -220,9 +207,7 @@ const SpeakingModal = ({
   const renderExactMatch = () => (
     <>
       <div className='speaking-modal-correct-text'>{sentence}</div>
-      <div className='speaking-modal-feedback-message'>
-        {comparisonResult!.message}
-      </div>
+      <div className='speaking-modal-feedback-message'>{feedback}</div>
     </>
   );
 
@@ -255,15 +240,13 @@ const SpeakingModal = ({
             <span className='sr-only'>Incorrect words: {incorrectWords}.</span>
           )}
         </div>
-        <div className='speaking-modal-feedback-message'>
-          {comparisonResult.message}
-        </div>
+        <div className='speaking-modal-feedback-message'>{feedback}</div>
       </>
     );
   };
 
   const renderFeedback = () => {
-    if (comparisonResult?.isExact) {
+    if (comparisonResult?.status === 'correct') {
       return renderExactMatch();
     }
 
@@ -318,9 +301,7 @@ const SpeakingModal = ({
 };
 
 const mapStateToProps = (state: unknown) => ({
-  isSpeakingModalOpen: Boolean(
-    (isSpeakingModalOpenSelector as (s: unknown) => boolean)(state)
-  )
+  isSpeakingModalOpen: isSpeakingModalOpenSelector(state) as boolean
 });
 
 const mapDispatchToProps = {

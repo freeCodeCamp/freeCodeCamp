@@ -7,37 +7,32 @@ export const normalizeText = (text: string) => {
     .filter((word: string) => word.length > 0);
 };
 
-export const formatUtterance = (text: string) => {
-  const cleaned = text.trim();
-  if (!cleaned) return cleaned;
+export interface ComparisonWord {
+  word: string;
+  isCorrect: boolean;
+}
 
-  return cleaned.charAt(0).toUpperCase() + cleaned.slice(1).toLowerCase() + '.';
-};
-
-interface CompareTextMessages {
-  correctCongratulations: string;
-  veryGood: string;
-  tryAgain: string;
+export interface ComparisonResult {
+  highlightedText?: string;
+  comparison?: ComparisonWord[];
+  status?: 'correct' | 'partially-correct' | 'incorrect';
 }
 
 export const compareTexts = (
   original: string,
-  utterance: string,
-  messages: CompareTextMessages
-) => {
+  utterance: string
+): ComparisonResult => {
   const originalWords = normalizeText(original);
   const utteranceWords = normalizeText(utterance);
 
   if (originalWords.join(' ') === utteranceWords.join(' ')) {
     return {
-      isExact: true,
-      accuracy: 100,
       highlightedText: original,
-      message: messages.correctCongratulations
+      status: 'correct'
     };
   }
 
-  const matchedPositions = new Set();
+  const matchedPositions = new Set<number>();
   for (const originalWord of originalWords) {
     const index = utteranceWords.indexOf(originalWord);
     if (index !== -1) matchedPositions.add(index);
@@ -48,16 +43,22 @@ export const compareTexts = (
       ? (matchedPositions.size / originalWords.length) * 100
       : 0;
 
-  const comparison = utteranceWords.map((word, index) => ({
+  const comparison: ComparisonWord[] = utteranceWords.map((word, index) => ({
     word,
     isCorrect: word == originalWords[index]
   }));
-  const isGoodEnough = accuracy >= 80;
+
+  const rounded = Math.round(accuracy);
+
+  const status: ComparisonResult['status'] =
+    rounded === 100
+      ? 'correct'
+      : rounded >= 80
+        ? 'partially-correct'
+        : 'incorrect';
 
   return {
-    isExact: false,
-    accuracy: Math.round(accuracy),
     comparison,
-    message: isGoodEnough ? messages.veryGood : messages.tryAgain
+    status
   };
 };
