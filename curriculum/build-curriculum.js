@@ -191,7 +191,8 @@ const superBlockNames = {
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
   'dev-playground': 'dev-playground',
-  'full-stack-open': 'full-stack-open'
+  'full-stack-open': 'full-stack-open',
+  'responsive-web-design-2025': 'responsive-web-design-2025'
 };
 
 const superBlockToFilename = Object.entries(superBlockNames).reduce(
