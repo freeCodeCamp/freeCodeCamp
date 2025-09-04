@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-88
 ---
 
-<!-- (Audio) A: hua -->
+<!-- (Audio) A: huā, xuě, nüè -->
 
 # --instructions--
 
@@ -15,15 +15,23 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`hua`
+`huā`
 
 ---
 
-`hua`
+`huà`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`huó`
 
 ### --feedback--
 
@@ -31,7 +39,79 @@ This has a different final from the audio.
 
 ---
 
-`hua`
+`kuā`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+## --video-solution--
+
+1
+
+## --text--
+
+Which option matches the second syllable you hear?
+
+## --answers--
+
+`xié`
+
+### --feedback--
+
+This has a different final from the audio.
+
+---
+
+`xǔe`
+
+### --feedback--
+
+This tone marking is incorrect.
+
+---
+
+`xuě`
+
+---
+
+`jué`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+## --video-solution--
+
+3
+
+## --text--
+
+Which option matches the third syllable you hear?
+
+## --answers--
+
+`nüè`
+
+---
+
+`nuò`
+
+### --feedback--
+
+This has a different final from the audio.
+
+---
+
+`lüè`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`nǜ`
 
 ### --feedback--
 
@@ -40,79 +120,3 @@ This has a different final from the audio.
 ## --video-solution--
 
 1
-
----
-
-<!-- (Audio) A: jue -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`jue`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`jue`
-
----
-
-`jue`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-2
-
----
-
-<!-- (Audio) A: nüe -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`nüe`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`nüe`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`nüe`
-
-## --video-solution--
-
-3

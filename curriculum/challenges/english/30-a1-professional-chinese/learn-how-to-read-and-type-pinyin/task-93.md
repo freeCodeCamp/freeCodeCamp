@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-93
 ---
 
-<!-- (Audio) A: biao -->
+<!-- (Audio) A: qiāo, liú -->
 
 # --instructions--
 
@@ -15,104 +15,72 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`biao`
+`qiào`
+
+### --feedback--
+
+This has a different tone from the audio.
 
 ---
 
-`biao`
+`xiāo`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`qiāo`
+
+---
+
+`qiū`
 
 ### --feedback--
 
 This has a different final from the audio.
-
----
-
-`biao`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-1
-
----
-
-<!-- (Audio) A: liu -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`liu`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`liu`
-
----
-
-`liu`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-2
-
----
-
-<!-- (Audio) A: jiao -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`jiao`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`jiao`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`jiao`
 
 ## --video-solution--
 
 3
+
+## --text--
+
+Which option matches the second syllable you hear?
+
+## --answers--
+
+`liú`
+
+---
+
+`lǐu`
+
+### --feedback--
+
+This tone marking is incorrect.
+
+---
+
+`liào`
+
+### --feedback--
+
+This has a different final from the audio.
+
+---
+
+`niú`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+## --video-solution--
+
+1

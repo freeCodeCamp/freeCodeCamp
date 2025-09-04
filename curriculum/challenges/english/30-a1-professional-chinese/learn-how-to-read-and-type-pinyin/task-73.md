@@ -9,7 +9,7 @@ dashedName: task-73
 
 # --description--
 
-Because `ao` contains `a`, the tone mark goes on the `a`. For example, `gǎo`.
+Because `ao` contains `a`, the tone mark goes on the `a`. For example, `hǎo`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `g` with the final `ao` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `g` with the final `ao`, and uses the third tone, which dips down and then rises.

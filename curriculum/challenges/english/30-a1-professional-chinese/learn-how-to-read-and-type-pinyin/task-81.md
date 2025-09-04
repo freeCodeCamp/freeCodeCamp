@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-81
 ---
 
-<!-- (Audio) A: jia -->
+<!-- (Audio) A: jiā, tiē -->
 
 # --instructions--
 
@@ -15,61 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`jia`
-
----
-
-`jia`
+`qiā`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`jia`
+`jiā`
+
+---
+
+`jiǎ`
 
 ### --feedback--
 
-This has a different final from the audio.
-
-## --video-solution--
-
-1
+This has a different tone from the audio.
 
 ---
 
-<!-- (Audio) A: tie -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`tie`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`tie`
-
----
-
-`tie`
+`jié`
 
 ### --feedback--
 
@@ -79,40 +49,38 @@ This has a different final from the audio.
 
 2
 
----
-
-<!-- (Audio) A: xia -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`xia`
+`tiē`
+
+---
+
+`tiě`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`dié`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`tī`
 
 ### --feedback--
 
 This has a different final from the audio.
-
----
-
-`xia`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`xia`
 
 ## --video-solution--
 
-3
+1

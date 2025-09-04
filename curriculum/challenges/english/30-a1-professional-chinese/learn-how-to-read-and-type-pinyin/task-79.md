@@ -15,7 +15,7 @@ dashedName: task-79
 
 The first part is narrow and high, while the second part opens more.
 
-When `ie` is combined with the initials `b`, `p`, `t`, `n`, `x`, you get the syllables: `bie`, `pie`, `tie`, `nie`, `xie`.
+When `ie` is combined with the initials, you get the syllables like `bie`, `pie`, `tie`, `nie`, `xie`.
 
 [ ] pronouncing `ie`
 [ ] pronouncing `bie`

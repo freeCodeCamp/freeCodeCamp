@@ -5,11 +5,11 @@ challengeType: 22
 dashedName: task-70
 ---
 
-<!-- (Audio) A: fèi -->
+<!-- (Audio) A: měi -->
 
 # --description--
 
-Because `ei` contains `e`, the tone mark goes on the `e`. For example, `fèi`.
+Because `ei` contains `e`, the tone mark goes on the `e`. For example, `běi`.
 
 # --instructions--
 
@@ -23,8 +23,8 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ## --blanks--
 
-`fèi`
+`měi`
 
 ### --feedback--
 
-This syllable combines the initial `f` with the final `ei` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `m` with the final `ei`, and uses the third tone, which dips down and then rises.

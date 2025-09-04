@@ -15,7 +15,7 @@ dashedName: task-77
 
 The first part is narrow and high, while the second part opens more.
 
-When `ia` is combined with the initials `j`, `q`, `x`, `l`, you get the syllables: `jia`, `qia`, `xia`, `lia`.
+When `ia` is combined with the initials, you get the syllables like `jia`, `qia`, `xia`, `lia`.
 
 [ ] pronouncing `ia`
 [ ] pronouncing `jia`

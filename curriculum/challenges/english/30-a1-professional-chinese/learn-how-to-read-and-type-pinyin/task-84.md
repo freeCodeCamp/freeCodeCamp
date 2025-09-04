@@ -15,7 +15,7 @@ dashedName: task-84
 
 The first part is narrow and high, while the second part opens more.
 
-When `ue` is combined with the initials `j`, `q`, `x`, you get the syllables: `jue`, `que`, `xue`.
+When `ue` is combined with the initials, you get the syllables like `jue`, `que`, `xue`.
 
 [ ] pronouncing `ue`
 [ ] pronouncing `jue`

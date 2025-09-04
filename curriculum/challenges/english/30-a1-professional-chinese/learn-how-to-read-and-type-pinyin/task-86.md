@@ -15,7 +15,7 @@ dashedName: task-86
 
 The first part is narrow and high, while the second part opens more.
 
-When `üe` is combined with the initials `n`, `l`, you get the syllables: `nüe`, `lüe`.
+When `üe` is combined with the initials, you get the syllables like `nüe` and `lüe`.
 
 [ ] pronouncing `üe`
 [ ] pronouncing `nüe`

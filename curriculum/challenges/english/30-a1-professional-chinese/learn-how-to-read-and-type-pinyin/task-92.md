@@ -9,7 +9,7 @@ dashedName: task-92
 
 # --description--
 
-Because `iou` contains `o`, the tone mark goes on the `o`. For example, `qiú`.
+`iou` is often written as `iu` in syllables. As `i` and `u` appear together in `iu`, the tone mark goes on the second vowel, which is `u`. For example, `qiū`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `q` with the final `iou` and uses the second tone, which rises from low to high.
+This syllable combines the initial `q` with the final `iu`, and uses the second tone, which rises from low to high.

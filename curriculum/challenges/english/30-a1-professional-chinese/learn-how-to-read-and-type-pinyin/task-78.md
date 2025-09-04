@@ -9,7 +9,7 @@ dashedName: task-78
 
 # --description--
 
-Because `ia` contains `a`, the tone mark goes on the `a`. For example, `xià`.
+Because `ia` contains `a`, the tone mark goes on the `a`. For example, `xiā`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `x` with the final `ia` and uses the fourth tone, which falls sharply from high to low.
+This syllable combines the initial `x` with the final `ia`, and uses the fourth tone, which falls sharply from high to low.

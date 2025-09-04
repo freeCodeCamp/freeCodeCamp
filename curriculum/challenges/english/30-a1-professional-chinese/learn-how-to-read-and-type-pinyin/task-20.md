@@ -13,7 +13,7 @@ dashedName: task-20
 
 Remember there are four main tones in Pinyin: first tone (high and flat), second tone (rising), third tone (dipping), and fourth tone (falling). Each tone changes the meaning of the syllable.
 
-The tone mark should always be placed on the final, not the initial.
+Tone marks are always placed on vowels, not on consonants.
 
 # --instructions--
 

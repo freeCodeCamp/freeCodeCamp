@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-66
 ---
 
-<!-- (Audio) A: zhī -->
+<!-- (Audio) A: zhū, chá, shá, rè -->
 
 # --instructions--
 
@@ -15,15 +15,15 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`zhī`
+`zhū`
 
 ---
 
-`chī`
+`chū`
 
 ### --feedback--
 
@@ -31,15 +31,15 @@ This has a different initial from the audio.
 
 ---
 
-`shī`
+`zhǔ`
 
 ### --feedback--
 
-This has a different initial from the audio.
+This has a different tone from the audio.
 
 ---
 
-`rī`
+`shū`
 
 ### --feedback--
 
@@ -49,23 +49,25 @@ This has a different initial from the audio.
 
 1
 
----
-
-<!-- (Audio) A: chǐ -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`zhǐ`
+`chá`
+
+---
+
+`chà`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`zhá`
 
 ### --feedback--
 
@@ -73,11 +75,35 @@ This has a different initial from the audio.
 
 ---
 
-`chǐ`
+`shā`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+## --video-solution--
+
+1
+
+## --text--
+
+Which option matches the third syllable you hear?
+
+## --answers--
+
+`shà`
+
+### --feedback--
+
+This has a different tone from the audio.
 
 ---
 
-`shǐ`
+`shá`
+
+---
+
+`chá`
 
 ### --feedback--
 
@@ -85,58 +111,49 @@ This has a different initial from the audio.
 
 ---
 
-`rǐ`
+`shā`
 
 ### --feedback--
 
-This has a different initial from the audio.
+This has a different tone from the audio.
 
 ## --video-solution--
 
 2
 
----
-
-<!-- (Audio) A: rì -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the fourth syllable you hear?
 
 ## --answers--
 
-`zhì`
+`zhè`
 
 ### --feedback--
 
 This has a different initial from the audio.
 
 ---
+
+`rě`
+
+### --feedback--
+
+This has a different tone from the audio.
+
+---
+
+`rè`
+
+---
+
 
 `chì`
 
 ### --feedback--
 
-This has a different initial from the audio.
-
----
-
-`shì`
-
-### --feedback--
-
-This has a different initial from the audio.
-
----
-
-`rì`
+This has a different final and initial from the audio.
 
 ## --video-solution--
 
-4
+3

@@ -51,7 +51,7 @@ This has a different tone from the audio.
 
 ## --text--
 
-Which syllable matches the second syllable you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 

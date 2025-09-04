@@ -11,13 +11,9 @@ dashedName: task-72
 
 # --description--
 
-In Pinyin, there are fourteen compound finals.
+To pronounce the compound final `ao`, you begin with the mouth open wide for the `a` sound, then smoothly transition the tongue and lips toward the position for `o`. The movement should be fluid, with no break between the two sounds. The `a` is emphasized slightly longer, while the `o` is shorter and lighter, resulting in a natural glide rather than two separate vowels.
 
-A compound final consists of two or three vowel sounds that blend smoothly together within a single syllable, creating a gliding sound without interruption.
-
-`ao` is one of them. To pronounce it, you begin with the mouth open wide for the `a` sound, then smoothly transition the tongue and lips toward the position for `o`. The movement should be fluid, with no break between the two sounds. The `a` is emphasized slightly longer, while the `o` is shorter and lighter, resulting in a natural glide rather than two separate vowels.
-
-When `ao` is combined with the initials `b`, `d`, `g`, `k`, `z`, `ch`, you get the syllables: `bao`, `dao`, `gao`, `kao`, `zao`, `chao`.
+When `ao` is combined with the initials, you get the syllables like `bao`, `dao`, `gao`, `kao`, `zao`, `chao`.
 
 [ ] pronouncing `ao`
 [ ] pronouncing `bao`

@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-71
 ---
 
-<!-- (Audio) A: bai -->
+<!-- (Audio) A: bài, fēi -->
 
 # --instructions--
 
@@ -15,31 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`bai`
+`bài`
 
 ---
 
-`bei`
+`bǎi`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`bao`
+`pài`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`bou`
+`bēi`
 
 ### --feedback--
 
@@ -49,94 +49,38 @@ This has a different final from the audio.
 
 1
 
----
-
-<!-- (Audio) A: mei -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`mai`
+`féi`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`mei`
-
----
-
-`mou`
+`bēi`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different initial from the audio.
 
 ---
 
-`mao`
+`fēi`
+
+---
+
+`fěi`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ## --video-solution--
 
-2
-
----
-
-<!-- (Audio) A: dai -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`dai`
-
----
-
-`dei`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`dao`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`dou`
-
-### --feedback--
-
-This has a different final from the audio.
-
-## --video-solution--
-
-1
+3

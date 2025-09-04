@@ -15,7 +15,7 @@ dashedName: task-82
 
 The first part is narrow and high, while the second part opens more.
 
-When `ua` is combined with the initials `h`, `k`, `g`, `sh`, you get the syllables: `hua`, `kua`, `gua`, `shua`.
+When `ua` is combined with the initials, you get the syllables like `hua`, `kua`, `gua`, `shua`.
 
 [ ] pronouncing `ua`
 [ ] pronouncing `hua`

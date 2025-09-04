@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: task-76
 ---
 
-<!-- (Audio) A: bao -->
+<!-- (Audio) A: bǎo, hóu -->
 
 # --instructions--
 
@@ -15,23 +15,31 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-Which syllable do you hear?
+Which option matches the first syllable you hear?
 
 ## --answers--
 
-`bao`
+`bǎo`
 
 ---
 
-`bao`
+`bào`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`bao`
+`pǎo`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`bēi`
 
 ### --feedback--
 
@@ -41,35 +49,33 @@ This has a different final from the audio.
 
 1
 
----
-
-<!-- (Audio) A: dou -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
 ## --text--
 
-Which syllable do you hear?
+Which option matches the second syllable you hear?
 
 ## --answers--
 
-`dou`
+`hòu`
 
 ### --feedback--
 
-This has a different final from the audio.
+This has a different tone from the audio.
 
 ---
 
-`dou`
+`hóu`
 
 ---
 
-`dou`
+`gōu`
+
+### --feedback--
+
+This has a different initial from the audio.
+
+---
+
+`hāo`
 
 ### --feedback--
 
@@ -78,41 +84,3 @@ This has a different final from the audio.
 ## --video-solution--
 
 2
-
----
-
-<!-- (Audio) A: kao -->
-
-# --instructions--
-
-Listen to the audio and answer the question below.
-
-# --questions--
-
-## --text--
-
-Which syllable do you hear?
-
-## --answers--
-
-`kao`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`kao`
-
-### --feedback--
-
-This has a different final from the audio.
-
----
-
-`kao`
-
-## --video-solution--
-
-3

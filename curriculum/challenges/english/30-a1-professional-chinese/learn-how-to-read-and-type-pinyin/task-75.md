@@ -9,7 +9,7 @@ dashedName: task-75
 
 # --description--
 
-Because `ou` contains `o`, the tone mark goes on the `o`. For example, `shǒu`.
+Because `ou` contains `o`, the tone mark goes on the `o`. For example, `hǒu`.
 
 # --instructions--
 
@@ -27,4 +27,4 @@ Listen to the audio and complete the syllable with the correct tone mark.
 
 ### --feedback--
 
-This syllable combines the initial `sh` with the final `ou` and uses the third tone, which dips down and then rises.
+This syllable combines the initial `sh` with the final `ou`, and uses the third tone, which dips down and then rises.
