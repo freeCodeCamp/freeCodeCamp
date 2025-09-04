@@ -62,24 +62,32 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.title = projectArgs.block;
   }
 
-  const order = projectArgs.order!;
-  const chapter = projectArgs.chapter!;
-  const module = projectArgs.module!;
+  const order = projectArgs.order;
+  const chapter = projectArgs.chapter;
+  const module = projectArgs.module;
 
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (projectArgs.superBlock !== SuperBlocks.FullStackDeveloper) {
-    void updateSimpleSuperblockStructure(
+  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+    if (!chapter || !module || typeof projectArgs.position == 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+    void updateChapterModuleSuperblockStructure(
       projectArgs.block,
-      { order },
+      { order: position, chapter, module },
       superblockFilename
     );
   } else {
-    void updateChapterModuleSuperblockStructure(
+    if (typeof order == 'undefined') {
+      throw Error('Missing argument: order');
+    }
+    void updateSimpleSuperblockStructure(
       projectArgs.block,
-      { order, chapter, module },
+      { order },
       superblockFilename
     );
   }
@@ -135,22 +143,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.block,
     projectArgs.title
   );
-  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
-    if (
-      projectArgs.chapter == null ||
-      projectArgs.module == null ||
-      projectArgs.position == null
-    ) {
-      throw new Error(
-        'Missing one of the following arguments for updating fullstack.json: chapter,module, position'
-      );
-    }
-    await updateFullStackJson(
-      projectArgs.chapter,
-      projectArgs.module,
-      projectArgs.block,
-      projectArgs.position
-    );
   }
 }
 
@@ -211,13 +203,13 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   let newMeta;
-  if (superBlock !== SuperBlocks.FullStackDeveloper) {
-    newMeta = getBaseMeta('Step');
-    newMeta.order = order;
-  } else {
+  if (superBlock === SuperBlocks.FullStackDeveloper) {
     newMeta = getBaseMeta('FullStack');
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
+  } else {
+    newMeta = getBaseMeta('Step');
+    newMeta.order = order;
   }
   newMeta.name = title;
   newMeta.dashedName = block;
