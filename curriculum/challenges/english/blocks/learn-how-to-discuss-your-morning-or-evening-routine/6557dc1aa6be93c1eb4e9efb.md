@@ -13,7 +13,7 @@ The word `if` means "whether or not". For example:
 
 `She checks her emails to see if there are any urgent updates.` - This means she is looking to find out whether updates exist.
 
-`If` can also be part of a **conditional statement**, which shows a possible situation and its result. For example:
+`If` can also be part of a conditional statement, which shows a possible situation and its result. For example:
 
 `If there are urgent updates, I will reply immediately.` - This means replying depends on the condition of having urgent updates.
 
