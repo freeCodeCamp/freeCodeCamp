@@ -288,7 +288,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null,
-  [SuperBlocks.FullStackOpen]: null
+  [SuperBlocks.FullStackOpen]: null,
+  [SuperBlocks.RespWebDesign2025]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
