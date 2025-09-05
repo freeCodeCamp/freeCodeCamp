@@ -23,8 +23,6 @@ interface SpeakingModalProps {
   answerIndex?: number;
 }
 
-// Use types from helper
-
 const SpeakingModal = ({
   closeSpeakingModal,
   isSpeakingModalOpen,
@@ -39,6 +37,9 @@ const SpeakingModal = ({
   const [hasStartedRecording, setHasStartedRecording] = useState(false);
   const [previouslyListening, setPreviouslyListening] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const stopListeningTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
 
   const {
     transcript,
@@ -47,7 +48,6 @@ const SpeakingModal = ({
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
-  // Named event handler functions for proper cleanup
   const handleAudioEnded = useCallback(() => {
     setIsPlaying(false);
   }, []);
@@ -132,7 +132,6 @@ const SpeakingModal = ({
       return;
     }
 
-    // Use the audio URL directly (now includes .mp3 extension from audioId)
     const modifiedAudioUrl = audioUrl.endsWith('.mp3')
       ? audioUrl
       : `${audioUrl}.mp3`;
@@ -169,17 +168,16 @@ const SpeakingModal = ({
       resetTranscript();
       setComparisonResult(null);
 
-      // Start listening with a timeout of 10 seconds
       void SpeechRecognition.startListening({
         continuous: false,
         language: 'en-US'
       });
 
-      // Set a timeout to automatically stop after 30 seconds
-      setTimeout(() => {
+      stopListeningTimeoutRef.current = setTimeout(() => {
         if (listening) {
           void SpeechRecognition.stopListening();
         }
+        stopListeningTimeoutRef.current = null;
       }, 30000);
     } catch (error) {
       console.error('Error starting recording:', error);
@@ -189,6 +187,13 @@ const SpeakingModal = ({
 
   const handleStopRecording = () => {
     void SpeechRecognition.stopListening();
+
+    // clear any scheduled automatic stop
+    if (stopListeningTimeoutRef.current) {
+      clearTimeout(stopListeningTimeoutRef.current);
+      stopListeningTimeoutRef.current = null;
+    }
+
     setFeedback(t('speaking-modal.recording-stopped-processing'));
   };
 
