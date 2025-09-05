@@ -26,7 +26,8 @@ assert.strictEqual(document.querySelectorAll('section')?.[1]?.children?.[0]?.tag
 Your new `h2` element should have the text `Desserts`.
 
 ```js
-assert.match(document.querySelectorAll('h2')?.[1]?.innerText, /Desserts/i);
+const actual = document.querySelectorAll('h2')?.[1]?.innerText.replace(/\s+/g, ' ').trim();
+assert.match(actual, /Desserts/i);
 ```
 
 # --seed--
