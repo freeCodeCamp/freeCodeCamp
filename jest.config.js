@@ -4,7 +4,8 @@ module.exports = {
     'api/',
     'e2e/',
     'tools/challenge-helper-scripts/',
-    'tools/scripts/build/'
+    'tools/scripts/build/',
+    'curriculum'
   ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
