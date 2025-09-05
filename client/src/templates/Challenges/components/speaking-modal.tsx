@@ -234,7 +234,9 @@ const SpeakingModal = ({
           <p className='sr-only'>{fullUtterance}</p>
 
           {incorrectWords && (
-            <p className='sr-only'>Incorrect words: {incorrectWords}.</p>
+            <p className='sr-only'>
+              {t('speaking-modal.incorrect-words', { words: incorrectWords })}
+            </p>
           )}
 
           {comparisonResult.comparison.map(
@@ -273,10 +275,10 @@ const SpeakingModal = ({
   return (
     <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
       <Modal.Header closeButtonClassNames='close'>
-        Speaking Practice
+        {t('speaking-modal.heading')}
       </Modal.Header>
       <Modal.Body alignment='center' className='speaking-modal-body'>
-        <p>Repeat aloud this sentence:</p>
+        <p>{t('speaking-modal.repeat-sentence')}</p>
 
         <div className='speaking-modal-sentence-container'>
           <p id='speaking-sentence' className='speaking-modal-sentence'>
@@ -288,7 +290,7 @@ const SpeakingModal = ({
             aria-describedby='speaking-sentence'
             disabled={isPlaying || listening}
           >
-            {isPlaying ? 'Playing...' : 'Play'}
+            {isPlaying ? t('speaking-modal.playing') : t('speaking-modal.play')}
           </Button>
         </div>
 
@@ -298,7 +300,7 @@ const SpeakingModal = ({
             onClick={() => void handleRecord()}
             disabled={isPlaying || listening}
           >
-            {listening ? 'Stop' : 'Record'}
+            {listening ? t('speaking-modal.stop') : t('speaking-modal.record')}
           </Button>
         </div>
 
