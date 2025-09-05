@@ -92,6 +92,10 @@ export const superBlockList = [
     path: 'full-stack-developer'
   },
   {
+    name: 'A1 Professional Spanish (Beta)',
+    path: 'a1-professional-spanish'
+  },
+  {
     name: 'A2 Professional Spanish (Beta)',
     path: 'a2-professional-spanish'
   },
