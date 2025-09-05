@@ -103,7 +103,6 @@ assert(
 Typing in the `input` element should update the state of the `Presentational` component.
 
 ```js
-async () => {
   const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
   const testValue = '__MOCK__INPUT__';
   const waitForIt = (fn) =>
@@ -121,13 +120,11 @@ async () => {
     initialInput.props().value === '' &&
       updatedInput.props().value === '__MOCK__INPUT__'
   );
-};
 ```
 
 Dispatching the `submitMessage` on the `Presentational` component should update Redux store and clear the input in local state.
 
 ```js
-async () => {
   const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
@@ -153,13 +150,11 @@ async () => {
       afterProps.messages.pop() === testValue &&
       afterClick.find('input').props().value === ''
   );
-};
 ```
 
 The `Presentational` component should render the `messages` from the Redux store.
 
 ```js
-async () => {
   const mockedComponent = Enzyme.mount(React.createElement(AppWrapper));
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
@@ -186,7 +181,6 @@ async () => {
       afterClick.find('input').props().value === '' &&
       afterClick.find('ul').childAt(0).text() === testValue
   );
-};
 ```
 
 # --seed--

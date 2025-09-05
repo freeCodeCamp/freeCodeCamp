@@ -46,7 +46,6 @@ assert(
 The rendered `h1` heading element should only contain text rendered from the component's state.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -57,7 +56,6 @@ async () => {
   const firstValue = await first();
   const getValue = firstValue.replace(/\s/g, '');
   assert(getValue === '<div><h1>TestName</h1></div>');
-};
 ```
 
 # --seed--
