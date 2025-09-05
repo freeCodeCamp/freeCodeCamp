@@ -1,7 +1,7 @@
 import nodemailer, { Transporter } from 'nodemailer';
 
-import { MailProvider, SendEmailArgs } from '../mailer';
-import { MAILHOG_HOST } from '../../utils/env';
+import { MailProvider, SendEmailArgs } from '../mailer.js';
+import { MAILHOG_HOST } from '../../utils/env.js';
 
 /**
  * NodemailerProvider is a wrapper around nodemailer that provides a clean

@@ -15,7 +15,7 @@ import {
   transformHeadTailAndContents,
   compileHeadTail,
   createSource
-} from '../../../../../shared/utils/polyvinyl';
+} from '../../../../../shared-dist/utils/polyvinyl';
 import { WorkerExecutor } from '../utils/worker-executor';
 import {
   compileTypeScriptCode,

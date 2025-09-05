@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { STANDARD_ERROR } from '../../exam-environment/utils/errors';
+import { STANDARD_ERROR } from '../../exam-environment/utils/errors.js';
 
 export const userExamEnvironmentToken = {
   response: {

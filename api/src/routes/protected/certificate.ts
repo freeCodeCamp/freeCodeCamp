@@ -1,8 +1,8 @@
 import type { CompletedChallenge } from '@prisma/client';
-import isEmail from 'validator/lib/isEmail';
+import validator from 'validator';
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { getChallenges } from '../../utils/get-challenges';
+import { getChallenges } from '../../utils/get-challenges.js';
 import {
   certIds,
   certSlugTypeMap,
@@ -12,13 +12,13 @@ import {
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared/config/certification-settings';
+} from '../../../../shared/config/certification-settings.js';
 
-import * as schemas from '../../schemas';
-import { normalizeChallenges, removeNulls } from '../../utils/normalize';
+import * as schemas from '../../schemas.js';
+import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';
 
-import { SHOW_UPCOMING_CHANGES } from '../../utils/env';
-import { isKnownCertSlug } from '../helpers/certificate-utils';
+import { SHOW_UPCOMING_CHANGES } from '../../utils/env.js';
+import { isKnownCertSlug } from '../helpers/certificate-utils.js';
 
 const {
   legacyFrontEndChallengeId,
@@ -403,7 +403,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         .map(x => certSlugTypeMap[x])
         .every(certType => updatedIsCertMap[certType]);
       const shouldSendCertifiedEmailToCamper =
-        email && isEmail(email) && hasCompletedAllCerts;
+        email && validator.default.isEmail(email) && hasCompletedAllCerts;
 
       if (shouldSendCertifiedEmailToCamper) {
         const notifyUser = {

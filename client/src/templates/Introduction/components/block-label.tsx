@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 
 interface BlockLabelProps {
   blockType: BlockTypes;

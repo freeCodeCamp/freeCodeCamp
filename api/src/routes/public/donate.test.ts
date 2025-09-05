@@ -1,5 +1,5 @@
 import { describe, test, expect, beforeAll, vi } from 'vitest';
-import { setupServer, superRequest } from '../../../vitest.utils';
+import { setupServer, superRequest } from '../../../vitest.utils.js';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
