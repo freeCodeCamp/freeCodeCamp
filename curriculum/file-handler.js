@@ -3,8 +3,6 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const fsP = require('node:fs/promises');
 
-const prettier = require('prettier');
-
 const debug = require('debug')('fcc:file-handler');
 
 const CURRICULUM_DIR = __dirname;
@@ -101,6 +99,9 @@ function getBlockStructure(block) {
 }
 
 async function writeBlockStructure(block, structure) {
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
   const content = await prettier.format(JSON.stringify(structure), {
     parser: 'json'
   });
@@ -108,6 +109,9 @@ async function writeBlockStructure(block, structure) {
 }
 
 async function writeSuperblockStructure(superblock, structure) {
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
   const content = await prettier.format(JSON.stringify(structure), {
     parser: 'json'
   });
