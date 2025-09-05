@@ -29,10 +29,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // It's necessary to seed with a user that has not accepted the privacy
     // terms, otherwise the user will be redirected away from the email sign-up
     // page.
-    execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false acceptedPrivacyTerms'
-    );
-
+    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/learn');
   });
 
@@ -64,7 +61,10 @@ test.describe('Email sign-up page when user is signed in', () => {
     });
     await expect(noThanksButton).toBeVisible();
     await noThanksButton.click();
-    await alertToBeVisible(page, translations.flash['privacy-updated']);
+    await alertToBeVisible(
+      page,
+      translations.flash['subscribe-to-quincy-updated']
+    );
     await expect(
       page.getByText(translations.misc['email-blast'])
     ).not.toBeVisible();
@@ -90,7 +90,10 @@ test.describe('Email sign-up page when user is signed in', () => {
 
     await expect(yesPleaseButton).toBeVisible();
     await yesPleaseButton.click();
-    await alertToBeVisible(page, translations.flash['privacy-updated']);
+    await alertToBeVisible(
+      page,
+      translations.flash['subscribe-to-quincy-updated']
+    );
     await page.goto('/settings');
     await expect(
       page.getByRole('group', { name: translations.settings.email.weekly })
@@ -108,9 +111,7 @@ test.describe('Email sign-up page when the user is new', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync(
-      'node ./tools/scripts/seed/seed-demo-user --set-false acceptedPrivacyTerms'
-    );
+    execSync('node ./tools/scripts/seed/seed-demo-user');
 
     await page.goto('/learn');
   });
@@ -128,11 +129,13 @@ test.describe('Email sign-up page when the user is new', () => {
   });
 });
 
-test.describe('Email sign-up page when the user has acceptedPrivacyTerms', () => {
+test.describe('Email sign-up page when the user has made a selection', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync(
+      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false sendQuincyEmail'
+    );
     await page.goto('/learn');
   });
 

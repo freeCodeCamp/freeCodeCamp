@@ -1,25 +1,24 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Spacer } from '@freecodecamp/ui';
 
 import createRedirect from '../components/create-redirect';
 import { Loader } from '../components/helpers';
 import EmailOptions from '../components/email-options';
-import { acceptTerms } from '../redux/actions';
+import { updateMyQuincyEmail } from '../redux/settings/actions';
 import {
   signInLoadingSelector,
   userSelector,
   isSignedInSelector
 } from '../redux/selectors';
 import type { User } from '../redux/prop-types';
-interface AcceptPrivacyTermsProps {
-  acceptTerms: (accept: boolean | null) => void;
-  acceptedPrivacyTerms: boolean;
+
+interface EmailSignUpProps {
+  updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
+  sendQuincyEmail: boolean | null | undefined;
   isSignedIn: boolean;
   showLoading: boolean;
 }
@@ -29,32 +28,28 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   signInLoadingSelector,
   (user: User | null, isSignedIn: boolean, showLoading: boolean) => ({
-    acceptedPrivacyTerms: !!user?.acceptedPrivacyTerms,
+    sendQuincyEmail: user?.sendQuincyEmail,
     isSignedIn,
     showLoading
   })
 );
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ acceptTerms }, dispatch);
+const mapDispatchToProps = {
+  updateQuincyEmail: (sendQuincyEmail: boolean) =>
+    updateMyQuincyEmail({ sendQuincyEmail })
+};
 const RedirectToLearn = createRedirect('/learn');
 
-function AcceptPrivacyTerms({
-  acceptTerms,
-  acceptedPrivacyTerms,
+function EmailSignUp({
+  updateQuincyEmail,
+  sendQuincyEmail,
   isSignedIn,
   showLoading
-}: AcceptPrivacyTermsProps) {
+}: EmailSignUpProps) {
   const { t } = useTranslation();
-  const acceptedPrivacyRef = useRef(acceptedPrivacyTerms);
-  const acceptTermsRef = useRef(acceptTerms);
 
-  useEffect(() => {
-    acceptedPrivacyRef.current = acceptedPrivacyTerms;
-    acceptTermsRef.current = acceptTerms;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const userHasMadeSelection = isSignedIn && sendQuincyEmail !== null;
 
-  return acceptedPrivacyTerms ? (
+  return userHasMadeSelection ? (
     <RedirectToLearn />
   ) : (
     <>
@@ -68,7 +63,7 @@ function AcceptPrivacyTerms({
         ) : (
           <EmailOptions
             isSignedIn={isSignedIn}
-            acceptTerms={acceptTerms}
+            updateQuincyEmail={updateQuincyEmail}
             isPage={true}
           />
         )}
@@ -78,4 +73,4 @@ function AcceptPrivacyTerms({
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AcceptPrivacyTerms);
+export default connect(mapStateToProps, mapDispatchToProps)(EmailSignUp);

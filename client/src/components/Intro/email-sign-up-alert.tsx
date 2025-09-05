@@ -1,18 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container } from '@freecodecamp/ui';
 import EmailOptions from '../email-options';
-import { acceptTerms } from '../../redux/actions';
+import { updateMyQuincyEmail } from '../../redux/settings/actions';
 import { userSelector, isSignedInSelector } from '../../redux/selectors';
+import { CompletedChallenge } from '../../redux/prop-types';
 
 interface EmailSignUpAlertProps {
-  acceptTerms: (accept: boolean | null) => void;
-  acceptedPrivacyTerms: boolean;
+  updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
+  sendQuincyEmail: boolean | null;
   isSignedIn: boolean;
-  completedChallengeCount?: number;
+  completedChallengesCount: number;
 }
 
 const mapStateToProps = createSelector(
@@ -20,37 +19,45 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   (
     {
-      acceptedPrivacyTerms,
-      completedChallengeCount
-    }: { acceptedPrivacyTerms: boolean; completedChallengeCount: number },
+      sendQuincyEmail,
+      completedChallenges
+    }: {
+      sendQuincyEmail: boolean | null;
+      completedChallenges: CompletedChallenge[];
+    },
     isSignedIn: boolean
   ) => ({
-    acceptedPrivacyTerms,
+    sendQuincyEmail,
     isSignedIn,
-    completedChallengeCount
+    completedChallengesCount: completedChallenges.length
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ acceptTerms }, dispatch);
+const mapDispatchToProps = {
+  updateQuincyEmail: (sendQuincyEmail: boolean) =>
+    updateMyQuincyEmail({ sendQuincyEmail })
+};
 
 function EmailSignUpAlert({
-  acceptTerms,
-  acceptedPrivacyTerms,
+  updateQuincyEmail,
+  sendQuincyEmail,
   isSignedIn,
-  completedChallengeCount = 0
+  completedChallengesCount = 0
 }: EmailSignUpAlertProps) {
-  const newAccount = isSignedIn && completedChallengeCount < 1;
+  const newAccount = isSignedIn && completedChallengesCount < 1;
+  const userHasMadeEmailSelection = sendQuincyEmail !== null;
 
-  // Don't show the alert if privacy terms are already accepted
-  // change this as we only want to show this to new users
-  if (acceptedPrivacyTerms || newAccount) {
+  // Don't show the alert if user is new or if user has already made a selection
+  if (userHasMadeEmailSelection || newAccount) {
     return null;
   }
 
   return (
     <Container fluid={true} className='email-sign-up-alert'>
-      <EmailOptions isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
+      <EmailOptions
+        isSignedIn={isSignedIn}
+        updateQuincyEmail={updateQuincyEmail}
+      />
     </Container>
   );
 }

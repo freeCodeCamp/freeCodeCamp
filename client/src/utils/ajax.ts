@@ -361,9 +361,9 @@ export function putUpdateMyHonesty(
   return put('/update-my-honesty', update);
 }
 
-export function putUpdateMyQuincyEmail(
-  update: { sendQuincyEmail: boolean | null }
-): Promise<ResponseWithData<void>> {
+export function putUpdateMyQuincyEmail(update: {
+  sendQuincyEmail: boolean;
+}): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
 }
 
@@ -371,12 +371,6 @@ export function putUpdateMyPortfolio(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-portfolio', update);
-}
-
-export function putUserAcceptsTerms(
-  quincyEmails: boolean
-): Promise<ResponseWithData<void>> {
-  return put('/update-privacy-terms', { quincyEmails });
 }
 
 export function putUserUpdateEmail(

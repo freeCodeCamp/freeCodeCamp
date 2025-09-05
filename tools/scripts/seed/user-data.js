@@ -217,7 +217,7 @@ module.exports.fullyCertifiedUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: true,
   isFrontEndCert: true,

@@ -5,13 +5,13 @@ import { apiLocation } from '../../config/env.json';
 
 interface EmailListOptInProps {
   isSignedIn?: boolean;
-  acceptTerms: (accepted: boolean) => void;
+  updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   isPage?: boolean;
 }
 
 export function EmailListOptIn({
   isSignedIn,
-  acceptTerms
+  updateQuincyEmail
 }: EmailListOptInProps) {
   const { t } = useTranslation();
 
@@ -22,7 +22,7 @@ export function EmailListOptIn({
           <Button
             block={true}
             variant='primary'
-            onClick={() => acceptTerms(true)}
+            onClick={() => updateQuincyEmail(true)}
           >
             {t('buttons.yes-please')}
           </Button>
@@ -32,7 +32,7 @@ export function EmailListOptIn({
           <Button
             block={true}
             variant='primary'
-            onClick={() => acceptTerms(false)}
+            onClick={() => updateQuincyEmail(false)}
           >
             {t('buttons.no-thanks')}
           </Button>
@@ -57,11 +57,15 @@ export function EmailListOptIn({
 
 interface EmailOptionsProps {
   isSignedIn?: boolean;
-  acceptTerms: (accepted: boolean) => void;
+  updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   isPage?: boolean;
 }
 
-function EmailOptions({ isSignedIn, acceptTerms, isPage }: EmailOptionsProps) {
+function EmailOptions({
+  isSignedIn,
+  updateQuincyEmail,
+  isPage
+}: EmailOptionsProps) {
   const { t } = useTranslation();
 
   return (
@@ -87,7 +91,10 @@ function EmailOptions({ isSignedIn, acceptTerms, isPage }: EmailOptionsProps) {
           <Spacer size='m' />
         </Col>
       </Row>
-      <EmailListOptIn isSignedIn={isSignedIn} acceptTerms={acceptTerms} />
+      <EmailListOptIn
+        isSignedIn={isSignedIn}
+        updateQuincyEmail={updateQuincyEmail}
+      />
     </>
   );
 }
