@@ -1,6 +1,15 @@
+jest.mock('./file-handler');
+
 const path = require('node:path');
 
-const { createCommentMap, addBlockStructure } = require('./build-curriculum');
+const {
+  createCommentMap,
+  addBlockStructure,
+  getSuperblocks
+} = require('./build-curriculum');
+const { getCurriculumStructure } = require('./file-handler');
+
+const mockGetCurriculumStructure = getCurriculumStructure;
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
@@ -100,6 +109,61 @@ describe('addBlockStructure', () => {
           { b: 1, order: 1, superBlock: 'yes' }
         ]
       }
+    ]);
+  });
+});
+
+describe('getSuperblocks', () => {
+  it('returns an empty array if no superblocks contain the given block', () => {
+    mockGetCurriculumStructure.mockReturnValue({
+      superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
+    });
+    const mockAddSuperblockStructure = () => [
+      {
+        blocks: [{ dashedName: 'block-1' }],
+        name: 'superblock-1'
+      }
+    ];
+
+    expect(
+      getSuperblocks('nonexistent-block', mockAddSuperblockStructure)
+    ).toEqual([]);
+  });
+
+  it('returns an array with one superblock if one superblock contains the given block', () => {
+    mockGetCurriculumStructure.mockReturnValue({
+      superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
+    });
+    const mockAddSuperblockStructure = () => [
+      {
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }],
+        name: 'superblock-1'
+      }
+    ];
+
+    expect(getSuperblocks('block-1', mockAddSuperblockStructure)).toEqual([
+      'superblock-1'
+    ]);
+  });
+
+  it('returns an array with multiple superblocks if multiple superblocks contain the given block', () => {
+    mockGetCurriculumStructure.mockReturnValue({
+      superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
+    });
+    const mockAddSuperblockStructure = () => [
+      {
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }],
+        name: 'superblock-1'
+      },
+      {
+        blocks: [{ dashedName: 'block-3' }, { dashedName: 'block-1' }],
+        name: 'superblock-2'
+      }
+    ];
+
+    expect(getSuperblocks('block-1', mockAddSuperblockStructure)).toEqual([
+      'superblock-1',
+      'superblock-2'
     ]);
   });
 });

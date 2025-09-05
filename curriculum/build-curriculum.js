@@ -244,6 +244,24 @@ function addBlockStructure(
   }));
 }
 
+/**
+ * Returns a list of all the superblocks that contain the given block
+ * @param {string} block
+ */
+function getSuperblocks(
+  block,
+  _addSuperblockStructure = addSuperblockStructure
+) {
+  const { superblocks } = getCurriculumStructure();
+  const withStructure = _addSuperblockStructure(superblocks);
+
+  return withStructure
+    .filter(({ blocks }) =>
+      blocks.some(({ dashedName }) => dashedName === block)
+    )
+    .map(({ name }) => name);
+}
+
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
   const builder = new SuperblockCreator({
@@ -289,5 +307,6 @@ module.exports = {
   getBlockStructure,
   getSuperblockStructure,
   createCommentMap,
-  superBlockToFilename
+  superBlockToFilename,
+  getSuperblocks
 };
