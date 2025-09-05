@@ -248,9 +248,12 @@ function addBlockStructure(
  * Returns a list of all the superblocks that contain the given block
  * @param {string} block
  */
-function getSuperblocks(block) {
+function getSuperblocks(
+  block,
+  _addSuperblockStructure = addSuperblockStructure
+) {
   const { superblocks } = getCurriculumStructure();
-  const withStructure = addSuperblockStructure(superblocks);
+  const withStructure = _addSuperblockStructure(superblocks);
 
   return withStructure
     .filter(({ blocks }) =>
