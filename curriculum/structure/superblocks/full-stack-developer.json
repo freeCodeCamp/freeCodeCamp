@@ -685,6 +685,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "workshop-email-simulator",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"

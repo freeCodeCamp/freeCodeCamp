@@ -1,0 +1,20 @@
+{
+  "name": "Build an Email Simulator",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-email-simulator",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "challengeOrder": [
+    {
+      "id": "68baeac684ba6675389d7b68",
+      "title": "Step 1"
+    },
+    {
+      "id": "68baec24611ea4803ef0144f",
+      "title": "Step 2"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
