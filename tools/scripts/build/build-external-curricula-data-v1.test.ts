@@ -2,6 +2,7 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
+import { describe, test, expect } from 'vitest';
 
 import {
   SuperBlocks,

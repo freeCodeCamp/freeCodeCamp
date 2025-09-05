@@ -3,7 +3,8 @@ module.exports = {
     '/node_modules/',
     'api/',
     'e2e/',
-    'tools/challenge-helper-scripts/'
+    'tools/challenge-helper-scripts/',
+    'tools/scripts/build/'
   ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
