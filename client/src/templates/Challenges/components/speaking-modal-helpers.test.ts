@@ -1,20 +1,5 @@
 import { normalizeText, compareTexts } from './speaking-modal-helpers';
 
-// Mock react-i18next
-const mockTranslations: Record<string, string> = {
-  'speaking-modal.correct-congratulations': "That's correct! Congratulations!",
-  'speaking-modal.very-good': 'Very good!',
-  'speaking-modal.try-again': 'Try again.'
-};
-
-const mockT = (key: string): string => mockTranslations[key] || key;
-
-jest.mock('react-i18next', () => ({
-  useTranslation: () => ({
-    t: mockT
-  })
-}));
-
 describe('speaking-modal-helpers', () => {
   describe('normalizeText', () => {
     it('should convert text to lowercase and remove punctuation', () => {
@@ -57,8 +42,6 @@ describe('speaking-modal-helpers', () => {
   });
 
   describe('compareTexts', () => {
-    // messages are now derived by the caller; tests use direct compareTexts result
-
     describe('exact matches', () => {
       it('should return exact match for identical text', () => {
         const result = compareTexts('Hello world', 'Hello world');
@@ -103,12 +86,12 @@ describe('speaking-modal-helpers', () => {
         ]);
       });
 
-      it('should return good enough message for 80% or higher accuracy', () => {
+      it('should return partially-correct for 80% accuracy', () => {
         const result = compareTexts(
           'Hello beautiful wonderful world amazing',
           'Hello beautiful wonderful world fantastic'
         );
-        expect(result.status).toBe('correct');
+        expect(result.status).toBe('partially-correct');
       });
 
       it('should handle shorter utterance', () => {
@@ -154,7 +137,8 @@ describe('speaking-modal-helpers', () => {
       it('should handle both empty strings', () => {
         const result = compareTexts('', '');
         expect(result).toEqual({
-          highlightedText: ''
+          highlightedText: '',
+          status: 'correct'
         });
       });
 
