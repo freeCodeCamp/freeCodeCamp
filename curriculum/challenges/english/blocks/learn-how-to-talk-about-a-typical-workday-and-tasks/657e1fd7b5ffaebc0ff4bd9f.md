@@ -23,7 +23,7 @@ For giving him a time management app.
 
 ### --feedback--
 
-Tom is thanking Sophie for tips, not for giving her an app.
+Tom is thanking Sophie for tips, not for giving him an app.
 
 ---
 
@@ -35,7 +35,7 @@ For inviting him to lunch.
 
 ### --feedback--
 
-The thank you is for the advice, not for a lunch invitation.
+He is thanking her for the advice, not for a lunch invitation.
 
 ---
 
