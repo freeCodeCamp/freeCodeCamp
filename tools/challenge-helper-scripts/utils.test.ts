@@ -2,28 +2,35 @@ import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
 import ObjectID from 'bson-objectid';
+import { vi, describe, it, expect, afterEach } from 'vitest';
 
-jest.mock('fs', () => {
+vi.mock('fs', () => {
   return {
-    writeFileSync: jest.fn(),
-    readdirSync: jest.fn()
+    default: {
+      writeFileSync: vi.fn(),
+      readdirSync: vi.fn()
+    }
   };
 });
 
-jest.mock('gray-matter', () => {
+vi.mock('gray-matter', () => {
   return {
-    read: jest.fn(),
-    stringify: jest.fn()
+    default: {
+      read: vi.fn(),
+      stringify: vi.fn()
+    }
   };
 });
 
-jest.mock('bson-objectid', () => {
-  return jest.fn(() => ({ toString: () => mockChallengeId }));
+vi.mock('bson-objectid', () => {
+  return {
+    default: vi.fn(() => ({ toString: () => mockChallengeId }))
+  };
 });
 
-jest.mock('./helpers/get-step-template', () => {
+vi.mock('./helpers/get-step-template', () => {
   return {
-    getStepTemplate: jest.fn()
+    getStepTemplate: vi.fn()
   };
 });
 
@@ -31,11 +38,12 @@ const mockMeta = {
   challengeOrder: [{ id: 'abc', title: 'mock title' }]
 };
 
-jest.mock('./helpers/project-metadata', () => ({
-  // ...jest.requireActual('./helpers/project-metadata'),
-  getMetaData: jest.fn(() => mockMeta),
-  updateMetaData: jest.fn()
-}));
+vi.mock('./helpers/project-metadata', () => {
+  return {
+    getMetaData: vi.fn(() => mockMeta),
+    updateMetaData: vi.fn()
+  };
+});
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
 import { getStepTemplate } from './helpers/get-step-template';
@@ -50,7 +58,7 @@ import { updateMetaData } from './helpers/project-metadata';
 
 const basePath = join(
   process.cwd(),
-  '__fixtures__' + process.env.JEST_WORKER_ID
+  '__fixtures__' + (process.env.VITEST_WORKER_ID || '')
 );
 const commonPath = join(basePath, 'curriculum');
 
@@ -59,13 +67,15 @@ const projectPath = join(commonPath, 'challenges', 'english', 'blocks', block);
 
 describe('Challenge utils helper scripts', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
       process.env.CALLING_DIR = projectPath;
       const mockTemplate = 'Mock template...';
-      (getStepTemplate as jest.Mock).mockReturnValue(mockTemplate);
+      (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
+        mockTemplate
+      );
       const step = createStepFile({
         stepNum: 3,
         challengeType: 0
@@ -144,12 +154,14 @@ describe('Challenge utils helper scripts', () => {
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
       process.env.CALLING_DIR = projectPath;
-      (getStepTemplate as jest.Mock).mockReturnValue('Mock template...');
-      (fs.readdirSync as jest.Mock).mockReturnValue([
+      (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
+        'Mock template...'
+      );
+      (fs.readdirSync as ReturnType<typeof vi.fn>).mockReturnValue([
         'name.md',
         'another-name.md'
       ]);
-      (matter.read as jest.Mock).mockReturnValue({
+      (matter.read as ReturnType<typeof vi.fn>).mockReturnValue({
         data: { id: 'abc' },
         content: 'goes here'
       });

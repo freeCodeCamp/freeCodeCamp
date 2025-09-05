@@ -72,6 +72,7 @@
     "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:*",
     "test:source": "jest",
     "test:api": "cd api && pnpm test",
+    "test:challenge-helper-scripts": "cd ./tools/challenge-helper-scripts && pnpm test",
     "test:curriculum": "cd ./curriculum && pnpm test",
     "test-curriculum-full-output": "cd ./curriculum && pnpm run test:full-output",
     "test-client": "jest client",

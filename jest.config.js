@@ -1,5 +1,10 @@
 module.exports = {
-  testPathIgnorePatterns: ['/node_modules/', 'api/', 'e2e/'],
+  testPathIgnorePatterns: [
+    '/node_modules/',
+    'api/',
+    'e2e/',
+    'tools/challenge-helper-scripts/'
+  ],
   moduleNameMapper: {
     '\\.(jpg|jpeg|png|svg|woff|woff2)$':
       '<rootDir>/client/src/__mocks__/file-mock.ts',
