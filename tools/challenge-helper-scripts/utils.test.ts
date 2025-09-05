@@ -56,14 +56,14 @@ import {
 } from './utils';
 import { updateMetaData } from './helpers/project-metadata';
 
-const basePath = join(
-  process.cwd(),
-  '__fixtures__' + (process.env.VITEST_WORKER_ID || '')
-);
-const commonPath = join(basePath, 'curriculum');
-
 const block = 'utils-project';
-const projectPath = join(commonPath, 'challenges', 'english', 'blocks', block);
+const projectPath = join(
+  'curriculum',
+  'challenges',
+  'english',
+  'blocks',
+  block
+);
 
 describe('Challenge utils helper scripts', () => {
   afterEach(() => {
