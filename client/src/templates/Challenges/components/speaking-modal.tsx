@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { Button, Modal } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
@@ -47,19 +47,32 @@ const SpeakingModal = ({
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
+  // Named event handler functions for proper cleanup
+  const handleAudioEnded = useCallback(() => {
+    setIsPlaying(false);
+  }, []);
+
+  const handleAudioError = useCallback((e: Event) => {
+    setIsPlaying(false);
+    console.error('Audio playback error:', e);
+  }, []);
+
   // Cleanup function for audio resources
-  const cleanupAudioResources = () => {
+  const cleanupAudioResources = useCallback(() => {
     try {
       if (audioRef.current) {
         audioRef.current.pause();
+        // Remove event listeners to prevent memory leaks
+        audioRef.current.removeEventListener('ended', handleAudioEnded);
+        audioRef.current.removeEventListener('error', handleAudioError);
         audioRef.current = null;
       }
     } catch (error) {
       console.warn('Error stopping audio playback:', error);
     }
-  };
+  }, [handleAudioEnded, handleAudioError]);
 
-  // Reset feedback and cleanup when modal is closed
+  // Reset feedback when modal is closed and cleanup on unmount
   useEffect(() => {
     if (!isSpeakingModalOpen) {
       setFeedback('');
@@ -70,14 +83,11 @@ const SpeakingModal = ({
       void SpeechRecognition.stopListening();
       cleanupAudioResources();
     }
-  }, [isSpeakingModalOpen, resetTranscript]);
 
-  // Cleanup on component unmount
-  useEffect(() => {
     return () => {
       cleanupAudioResources();
     };
-  }, []);
+  }, [isSpeakingModalOpen, resetTranscript, cleanupAudioResources]);
 
   // Track listening state changes
   useEffect(() => {
@@ -129,34 +139,20 @@ const SpeakingModal = ({
 
     try {
       setIsPlaying(true);
-      setFeedback(t('speaking-modal.loading-audio'));
 
-      if (audioRef.current) {
-        audioRef.current.pause();
-      }
+      // Properly cleanup previous audio instance
+      cleanupAudioResources();
 
       const audio = new Audio(modifiedAudioUrl);
       audioRef.current = audio;
 
-      audio.addEventListener('loadeddata', () => {
-        setFeedback(t('speaking-modal.playing-audio'));
-      });
-
-      audio.addEventListener('ended', () => {
-        setIsPlaying(false);
-        setFeedback(t('speaking-modal.audio-finished'));
-      });
-
-      audio.addEventListener('error', e => {
-        setIsPlaying(false);
-        setFeedback(t('speaking-modal.audio-error'));
-        console.error('Audio playback error:', e);
-      });
+      // Use named functions for event listeners to enable proper cleanup
+      audio.addEventListener('ended', handleAudioEnded);
+      audio.addEventListener('error', handleAudioError);
 
       await audio.play();
     } catch (error) {
       setIsPlaying(false);
-      setFeedback(t('speaking-modal.audio-error'));
       console.error('Audio playback error:', error);
     }
   };
@@ -300,6 +296,7 @@ const SpeakingModal = ({
             {listening ? 'Stop' : 'Record'}
           </Button>
         </div>
+
         <div
           className='speaking-modal-feedback'
           aria-live='polite'
