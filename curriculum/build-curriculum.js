@@ -182,6 +182,7 @@ const superBlockNames = {
   'python-for-everybody': 'python-for-everybody',
   'b1-english-for-developers': 'b1-english-for-developers',
   'full-stack-developer': 'full-stack-developer',
+  'a1-professional-spanish': 'a1-professional-spanish',
   'a2-professional-spanish': 'a2-professional-spanish',
   'a2-professional-chinese': 'a2-professional-chinese',
   'basic-html': 'basic-html',

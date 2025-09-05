@@ -24,6 +24,7 @@ export const superBlockNameMap: { [key: string]: string } = {
   'python-for-everybody': 'python-for-everybody',
   'b1-english-for-developers': 'b1-english-for-developers',
   'front-end-development': 'full-stack-developer',
+  'a1-professional-spanish': 'a1-professional-spanish',
   'a2-professional-spanish': 'a2-professional-spanish',
   'a2-professional-chinese': 'a2-professional-chinese',
   'a1-professional-chinese': 'a1-professional-chinese'
