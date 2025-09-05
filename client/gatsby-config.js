@@ -2,7 +2,7 @@ const path = require('path');
 const envData = require('./config/env.json');
 const {
   buildChallenges,
-  replaceChallengeNode,
+  replaceChallengeNodes,
   localeChallengesRootDir
 } = require('./utils/build-challenges');
 
@@ -57,7 +57,7 @@ module.exports = {
       options: {
         name: 'challenges',
         source: buildChallenges,
-        onSourceChange: replaceChallengeNode(curriculumLocale),
+        onSourceChange: replaceChallengeNodes(curriculumLocale),
         curriculumPath: localeChallengesRootDir
       }
     },

@@ -39,11 +39,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   watcher.on('change', filePath =>
     /\.md?$/.test(filePath)
       ? onSourceChange(filePath)
-          .then(challenge => {
+          .then(challenges => {
             reporter.info(
-              `Challenge file changed: ${filePath}, replacing challenge ${challenge.id}`
+              `File changed at ${filePath}, replacing challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
             );
-            createVisibleChallenge(challenge, { isReloading: true });
+            challenges.forEach(challenge =>
+              createVisibleChallenge(challenge, { isReloading: true })
+            );
           })
           .catch(e =>
             reporter.error(
@@ -57,11 +59,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   watcher.on('add', filePath => {
     if (!/\.md?$/.test(filePath)) return;
     onSourceChange(filePath)
-      .then(challenge => {
+      .then(challenges => {
         reporter.info(
-          `Challenge file added: ${filePath}, creating challenge ${challenge.id}`
+          `Challenge file added: ${filePath}, creating challenges with ids ${challenges.map(({ id }) => id).join(', ')}`
         );
-        createVisibleChallenge(challenge, { isReloading: true });
+        challenges.forEach(challenge =>
+          createVisibleChallenge(challenge, { isReloading: true })
+        );
       })
       .catch(e =>
         reporter.error(

@@ -2876,10 +2876,10 @@
           "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
-      "lab-magazine-layout": {
-        "title": "Design a Magazine Layout",
+      "lab-newspaper-layout": {
+        "title": "Design a Newspaper Layout",
         "intro": [
-          "In this lab, you will design a magazine layout using CSS Grid, including concepts like grid rows and grid columns."
+          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "lecture-debugging-css": {
@@ -3404,6 +3404,12 @@
         "title": "The var Keyword and Hoisting",
         "intro": [
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
+        ]
+      },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": [
+          "In this lab, you will create a function that removes all falsy values from an array."
         ]
       },
       "lab-inventory-management-program": {
@@ -4799,6 +4805,17 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      }
+    }
+  },
+  "a1-professional-spanish": {
+    "title": "A1 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "a1-professional-spanish-placeholder-block": {
+        "title": "A1 Professional Spanish Placeholder Block",
+        "intro": ["Placeholder intro text."]
       }
     }
   },
