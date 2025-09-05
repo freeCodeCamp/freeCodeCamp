@@ -3406,6 +3406,12 @@
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": [
+          "In this lab, you will create a function that removes all falsy values from an array."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
