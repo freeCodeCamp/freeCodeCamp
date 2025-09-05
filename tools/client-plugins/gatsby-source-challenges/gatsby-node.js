@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 const chokidar = require('chokidar');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
