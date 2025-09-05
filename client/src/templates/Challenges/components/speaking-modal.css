@@ -13,7 +13,7 @@
   gap: 2rem;
   background-color: var(--background-primary);
   border: 2px solid var(--background-tertiary);
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 1rem;
 }
 
 .speaking-modal-sentence {
@@ -37,6 +37,7 @@
 
 .speaking-modal-feedback-message {
   margin-top: 8px;
+  margin-bottom: 0;
 }
 
 .speaking-modal-comparison-word-correct {

@@ -207,12 +207,18 @@ const SpeakingModal = ({
   const renderExactMatch = () => (
     <>
       <div className='speaking-modal-correct-text'>{sentence}</div>
-      <div className='speaking-modal-feedback-message'>{feedback}</div>
+      <p className='speaking-modal-feedback-message'>{feedback}</p>
     </>
   );
 
   const renderPartialMatch = () => {
     if (!comparisonResult?.comparison) return null;
+
+    // TODO: Change this to match the punctuation of the original sentence
+    const punctuationMark = '.';
+
+    const fullUtterance =
+      comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
 
     const incorrectWords = comparisonResult.comparison
       .filter(item => !item.isCorrect)
@@ -222,10 +228,19 @@ const SpeakingModal = ({
     return (
       <>
         <div>
+          {/* Render the utterance as a full sentence rather than separated words
+              so screen readers don't add a stop after each word */}
+          <p className='sr-only'>{fullUtterance}</p>
+
+          {incorrectWords && (
+            <p className='sr-only'>Incorrect words: {incorrectWords}.</p>
+          )}
+
           {comparisonResult.comparison.map(
             (item: ComparisonWord, index: number) => (
               <span
                 key={index}
+                aria-hidden='true'
                 className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
               >
                 {index === 0
@@ -234,13 +249,10 @@ const SpeakingModal = ({
               </span>
             )
           )}
-          <span>.</span>
-
-          {incorrectWords && (
-            <span className='sr-only'>Incorrect words: {incorrectWords}.</span>
-          )}
+          <span aria-hidden='true'>{punctuationMark}</span>
         </div>
-        <div className='speaking-modal-feedback-message'>{feedback}</div>
+
+        <p className='speaking-modal-feedback-message'>{feedback}</p>
       </>
     );
   };
