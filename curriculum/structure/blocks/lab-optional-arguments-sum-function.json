@@ -1,6 +1,6 @@
 {
   "name": "Build an Optional Arguments Sum Function",
-  "isUpcomingChange": false,
+  "isUpcomingChange": true,
   "blockType": "lab",
   "blockLayout": "link",
   "dashedName": "lab-optional-arguments-sum-function",
