@@ -29,6 +29,7 @@
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
     "predevelop": "pnpm run common-setup && pnpm run build:scripts --env development",
     "develop": "NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby develop --inspect=9230",
+    "develop:mem": "NODE_OPTIONS=\"--max-old-space-size=7168 --inspect=9230\" node ./node_modules/gatsby/dist/bin/gatsby.js develop --inspect=9230",
     "lint": "tsx ./i18n/schema-validation.ts",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c serve.json public",
@@ -170,6 +171,7 @@
     "react-test-renderer": "17.0.2",
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
-    "webpack": "5.90.3"
+    "webpack": "5.90.3",
+    "heapdump": "^0.3.15"
   }
 }

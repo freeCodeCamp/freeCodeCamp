@@ -5,6 +5,58 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
+(() => {
+  try {
+    const fs = require('fs');
+    const path = require('path');
+    const dir = path.join(__dirname, '..', 'diagnostics');
+    console.log('Heapdumping enabled, writing to', dir);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+    let heapdump;
+    try {
+      heapdump = require('heapdump');
+    } catch {
+      /* ignore */
+    }
+    let v8;
+    if (!heapdump) {
+      try {
+        v8 = require('v8');
+        if (typeof v8.writeHeapSnapshot !== 'function') v8 = null;
+      } catch {
+        /* ignore */
+      }
+    }
+    if (!heapdump && !v8) return;
+    const threshold = 5000 * 1024 * 1024;
+    let taken = false;
+    const tick = () => {
+      if (taken) return;
+      if (process.memoryUsage().heapUsed >= threshold) {
+        const file = path.join(dir, `heap-5000mb-${Date.now()}.heapsnapshot`);
+        if (heapdump) {
+          heapdump.writeSnapshot(file, (e, p) => {
+            if (!e) console.log('[heapdump]', p);
+          });
+        } else if (v8) {
+          try {
+            const p = v8.writeHeapSnapshot(file);
+            console.log('[heapdump]', p);
+          } catch {
+            /* ignore */
+          }
+        }
+        taken = true;
+        clearInterval(timer);
+      }
+    };
+    const timer = setInterval(tick, 2000);
+    timer.unref();
+  } catch {
+    /* ignore */
+  }
+})();
+
 const env = require('./config/env.json');
 const {
   createChallengePages,
