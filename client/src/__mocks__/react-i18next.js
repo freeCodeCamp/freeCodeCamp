@@ -1,6 +1,11 @@
 import React from 'react';
+import i18next from 'i18next';
 
 const reactI18next = jest.genMockFromModule('react-i18next');
+
+function mockKeyFromSelector($) {
+  return typeof $ === 'function' ? i18next.keyFromSelector($) : $;
+}
 
 // modified from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
 const hasChildren = node =>
@@ -21,6 +26,9 @@ const renderNodes = reactNodes => {
     if (typeof child === 'string') {
       return child;
     }
+    if (typeof child === 'function') {
+      return mockKeyFromSelector(child);
+    }
     if (hasChildren(child)) {
       const inner = renderNodes(getChildren(child));
       return React.cloneElement(child, { ...child.props, key: i }, inner);
@@ -37,13 +45,16 @@ const renderNodes = reactNodes => {
 };
 
 const withTranslation = () => Component => {
-  Component.defaultProps = { ...Component.defaultProps, t: str => str };
+  Component.defaultProps = {
+    ...Component.defaultProps,
+    t: $ => mockKeyFromSelector($)
+  };
   return Component;
 };
 
 const useTranslation = () => {
   return {
-    t: str => str,
+    t: $ => mockKeyFromSelector($),
     i18n: {
       changeLanguage: () => new Promise(() => {})
     }
