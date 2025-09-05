@@ -28,8 +28,8 @@ describe('<Intro />', () => {
       app: {
         user: {
           sessionUser: {
-            acceptedPrivacyTerms: true,
-            completedChallengeCount: 0
+            completedChallenges: [{}],
+            sendQuincyEmail: null
           }
         }
       }
