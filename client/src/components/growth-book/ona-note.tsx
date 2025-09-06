@@ -5,25 +5,23 @@ import { useFeatureValue } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../shared/config/curriculum';
 import { Link } from '../helpers';
 
-type GitpodNoteProps = {
+type OnaNoteProps = {
   superBlock: SuperBlocks;
 };
 
-export function GitpodNote({
-  superBlock
-}: GitpodNoteProps): JSX.Element | null {
-  const gitpodNoteFeature = useFeatureValue<{
+export function OnaNote({ superBlock }: OnaNoteProps): JSX.Element | null {
+  const onaNoteFeature = useFeatureValue<{
     superblocks: string[];
   }>('gitpod-note', { superblocks: [] });
   const { t } = useTranslation();
 
-  return gitpodNoteFeature.superblocks.includes(superBlock) ? (
+  return onaNoteFeature.superblocks.includes(superBlock) ? (
     <Alert variant='info'>
       <p>
         <Link
           external={true}
           sameTab={false}
-          to='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
+          to='https://forum.freecodecamp.org/t/relational-database-curriculum-in-ona/760889'
         >
           {t('intro:misc-text.read-database-cert-article')}
         </Link>

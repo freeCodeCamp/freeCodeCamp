@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans } from 'react-i18next';
 import { isPrivate } from './form-ip-utils';
 
-// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub. NOT Codespaces, and NOT Gitpod yet
+// Matches editor links for: Replit, Glitch, CodeSandbox, GitHub. NOT Codespaces, and NOT Gitpod/Ona yet
 // Once safari allows negative lookbehinds, this can be used:
 // |(?<!\.app)\.github\.dev
 const editorRegex =

@@ -2,18 +2,18 @@ import React from 'react';
 import { Trans } from 'react-i18next';
 import { Alert, Spacer } from '@freecodecamp/ui';
 
-interface RdbGitpodContinueAlertProps {
+interface RdbOnaContinueAlertProps {
   course: string;
 }
 
-function RdbGitpodContinueAlert({
+function RdbOnaContinueAlert({
   course
-}: RdbGitpodContinueAlertProps): JSX.Element {
+}: RdbOnaContinueAlertProps): JSX.Element {
   return (
     <Alert variant='info'>
-      <Trans values={{ course }} i18nKey='learn.gitpod.continue-project'>
+      <Trans values={{ course }} i18nKey='learn.ona.continue-project'>
         <a
-          href='https://gitpod.io/workspaces'
+          href='https://app.gitpod.io'
           rel='noopener noreferrer'
           target='_blank'
         >
@@ -21,7 +21,7 @@ function RdbGitpodContinueAlert({
         </a>
       </Trans>
       <Spacer size='m' />
-      <Trans i18nKey='learn.gitpod.learn-more'>
+      <Trans i18nKey='learn.ona.learn-more'>
         <a
           href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
           rel='noopener noreferrer'
@@ -34,6 +34,6 @@ function RdbGitpodContinueAlert({
   );
 }
 
-RdbGitpodContinueAlert.displayName = 'RdbGitpodContinueAlert';
+RdbOnaContinueAlert.displayName = 'RdbOnaContinueAlert';
 
-export default RdbGitpodContinueAlert;
+export default RdbOnaContinueAlert;
