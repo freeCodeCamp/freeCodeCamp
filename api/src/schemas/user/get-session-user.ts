@@ -108,7 +108,7 @@ export const getSessionUser = {
             })
           ),
           profileUI: Type.Optional(profileUI),
-          sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (no preference yet), true (subscribed), false (unsubscribed)
+          sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
