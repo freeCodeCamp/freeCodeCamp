@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getSuperblockStructure,
   writeSuperblockStructure
@@ -7,14 +8,10 @@ import {
   updateSimpleSuperblockStructure
 } from './create-project';
 
-jest.mock('../../../curriculum/file-handler');
+vi.mock('../../../curriculum/file-handler');
 
-const mockGetSuperblockStructure =
-  getSuperblockStructure as jest.MockedFunction<typeof getSuperblockStructure>;
-const mockWriteSuperblockStructure =
-  writeSuperblockStructure as jest.MockedFunction<
-    typeof writeSuperblockStructure
-  >;
+const mockGetSuperblockStructure = vi.mocked(getSuperblockStructure);
+const mockWriteSuperblockStructure = vi.mocked(writeSuperblockStructure);
 
 const incompleteSimpleChapterModuleSuperblock = {
   chapters: [
@@ -46,7 +43,7 @@ const simpleChapterModuleSuperblock = {
 
 describe('updateSimpleSuperblockStructure', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should insert the block into the blocks array at the expected position', async () => {
@@ -77,7 +74,7 @@ describe('updateSimpleSuperblockStructure', () => {
 
 describe('updateChapterModuleSuperblockStructure', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('should insert the block correctly when there is only one chapter and one module', async () => {

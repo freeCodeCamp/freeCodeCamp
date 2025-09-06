@@ -1,15 +1,17 @@
-jest.mock('./file-handler');
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { describe, it, expect, vi } from 'vitest';
 
-const path = require('node:path');
-
-const {
+import {
   createCommentMap,
   addBlockStructure,
   getSuperblocks
-} = require('./build-curriculum');
-const { getCurriculumStructure } = require('./file-handler');
+} from './build-curriculum.js';
+import { getCurriculumStructure } from './file-handler.js';
 
-const mockGetCurriculumStructure = getCurriculumStructure;
+vi.mock('./file-handler');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 describe('createCommentMap', () => {
   const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
@@ -115,7 +117,7 @@ describe('addBlockStructure', () => {
 
 describe('getSuperblocks', () => {
   it('returns an empty array if no superblocks contain the given block', () => {
-    mockGetCurriculumStructure.mockReturnValue({
+    getCurriculumStructure.mockReturnValue({
       superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
     });
     const mockAddSuperblockStructure = () => [
@@ -131,7 +133,7 @@ describe('getSuperblocks', () => {
   });
 
   it('returns an array with one superblock if one superblock contains the given block', () => {
-    mockGetCurriculumStructure.mockReturnValue({
+    getCurriculumStructure.mockReturnValue({
       superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
     });
     const mockAddSuperblockStructure = () => [
@@ -147,7 +149,7 @@ describe('getSuperblocks', () => {
   });
 
   it('returns an array with multiple superblocks if multiple superblocks contain the given block', () => {
-    mockGetCurriculumStructure.mockReturnValue({
+    getCurriculumStructure.mockReturnValue({
       superblocks: ['superblock-1'] // doesn't matter what this is, but must be defined
     });
     const mockAddSuperblockStructure = () => [

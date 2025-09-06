@@ -1,5 +1,7 @@
 import path from 'path';
 import { config } from 'dotenv';
+import { describe, it, expect } from 'vitest';
+
 import { SuperBlocks } from '../shared/config/curriculum';
 import {
   createSuperOrder,
