@@ -1,0 +1,329 @@
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { connect } from 'react-redux';
+import { Button, Modal } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
+import SpeechRecognition, {
+  useSpeechRecognition
+} from 'react-speech-recognition';
+
+import { closeModal } from '../redux/actions';
+import { isSpeakingModalOpenSelector } from '../redux/selectors';
+import {
+  compareTexts,
+  type ComparisonResult,
+  type ComparisonWord
+} from './speaking-modal-helpers';
+import './speaking-modal.css';
+
+interface SpeakingModalProps {
+  closeSpeakingModal: () => void;
+  isSpeakingModalOpen: boolean;
+  sentence: string;
+  audioUrl?: string;
+  answerIndex?: number;
+}
+
+const SpeakingModal = ({
+  closeSpeakingModal,
+  isSpeakingModalOpen,
+  sentence,
+  audioUrl
+}: SpeakingModalProps) => {
+  const { t } = useTranslation();
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [feedback, setFeedback] = useState('');
+  const [comparisonResult, setComparisonResult] =
+    useState<ComparisonResult | null>(null);
+  const [hasStartedRecording, setHasStartedRecording] = useState(false);
+  const [previouslyListening, setPreviouslyListening] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const stopListeningTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null
+  );
+
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition
+  } = useSpeechRecognition();
+
+  const handleAudioEnded = useCallback(() => {
+    setIsPlaying(false);
+  }, []);
+
+  const handleAudioError = useCallback((e: Event) => {
+    setIsPlaying(false);
+    console.error('Audio playback error:', e);
+  }, []);
+
+  // Cleanup function for audio resources
+  const cleanupAudioResources = useCallback(() => {
+    try {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        // Remove event listeners to prevent memory leaks
+        audioRef.current.removeEventListener('ended', handleAudioEnded);
+        audioRef.current.removeEventListener('error', handleAudioError);
+        audioRef.current = null;
+      }
+    } catch (error) {
+      console.warn('Error stopping audio playback:', error);
+    }
+  }, [handleAudioEnded, handleAudioError]);
+
+  // Reset feedback when modal is closed and cleanup on unmount
+  useEffect(() => {
+    if (!isSpeakingModalOpen) {
+      setFeedback('');
+      setComparisonResult(null);
+      setHasStartedRecording(false);
+      setPreviouslyListening(false);
+      resetTranscript();
+      void SpeechRecognition.stopListening();
+      cleanupAudioResources();
+    }
+
+    return () => {
+      cleanupAudioResources();
+    };
+  }, [isSpeakingModalOpen, resetTranscript, cleanupAudioResources]);
+
+  // Track listening state changes
+  useEffect(() => {
+    if (previouslyListening && !listening && hasStartedRecording) {
+      // Speech recognition just stopped and we had started a recording session
+      if (transcript && transcript.trim()) {
+        const result = compareTexts(sentence, transcript);
+
+        setComparisonResult(result);
+
+        if (result.status === 'correct') {
+          setFeedback(t('speaking-modal.correct-congratulations'));
+        } else if (result.status === 'partially-correct') {
+          setFeedback(`${t('speaking-modal.very-good')}`);
+        } else {
+          setFeedback(`${t('speaking-modal.try-again')}`);
+        }
+      } else {
+        // No transcript and we were recording, this means no speech detected
+        setFeedback(t('speaking-modal.no-speech-detected'));
+        setComparisonResult(null);
+      }
+
+      // Reset the recording flag after processing
+      setHasStartedRecording(false);
+    }
+
+    // Update previous listening state
+    setPreviouslyListening(listening);
+  }, [
+    listening,
+    previouslyListening,
+    hasStartedRecording,
+    transcript,
+    sentence,
+    t
+  ]);
+
+  const handlePlay = async () => {
+    if (!audioUrl) {
+      setFeedback(t('speaking-modal.no-audio-available'));
+      return;
+    }
+
+    const modifiedAudioUrl = audioUrl.endsWith('.mp3')
+      ? audioUrl
+      : `${audioUrl}.mp3`;
+
+    try {
+      setIsPlaying(true);
+
+      // Properly cleanup previous audio instance
+      cleanupAudioResources();
+
+      const audio = new Audio(modifiedAudioUrl);
+      audioRef.current = audio;
+
+      // Use named functions for event listeners to enable proper cleanup
+      audio.addEventListener('ended', handleAudioEnded);
+      audio.addEventListener('error', handleAudioError);
+
+      await audio.play();
+    } catch (error) {
+      setIsPlaying(false);
+      console.error('Audio playback error:', error);
+    }
+  };
+
+  const handleStartRecording = () => {
+    if (!browserSupportsSpeechRecognition) {
+      setFeedback(t('speaking-modal.speech-recognition-not-supported'));
+      return;
+    }
+
+    try {
+      setFeedback(t('speaking-modal.recording-speak-now'));
+      setHasStartedRecording(true);
+      resetTranscript();
+      setComparisonResult(null);
+
+      void SpeechRecognition.startListening({
+        continuous: false,
+        language: 'en-US'
+      });
+
+      stopListeningTimeoutRef.current = setTimeout(() => {
+        if (listening) {
+          void SpeechRecognition.stopListening();
+        }
+        stopListeningTimeoutRef.current = null;
+      }, 30000);
+    } catch (error) {
+      console.error('Error starting recording:', error);
+      setFeedback(t('speaking-modal.microphone-access-error'));
+    }
+  };
+
+  const handleStopRecording = () => {
+    void SpeechRecognition.stopListening();
+
+    // clear any scheduled automatic stop
+    if (stopListeningTimeoutRef.current) {
+      clearTimeout(stopListeningTimeoutRef.current);
+      stopListeningTimeoutRef.current = null;
+    }
+
+    setFeedback(t('speaking-modal.recording-stopped-processing'));
+  };
+
+  const handleRecord = () => {
+    if (listening) {
+      handleStopRecording();
+    } else {
+      handleStartRecording();
+    }
+  };
+
+  const renderExactMatch = () => (
+    <>
+      <div className='speaking-modal-correct-text'>{sentence}</div>
+      <p className='speaking-modal-feedback-message'>{feedback}</p>
+    </>
+  );
+
+  const renderPartialMatch = () => {
+    if (!comparisonResult?.comparison) return null;
+
+    // TODO: Change this to match the punctuation of the original sentence
+    const punctuationMark = '.';
+
+    const fullUtterance =
+      comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
+
+    const incorrectWords = comparisonResult.comparison
+      .filter(item => !item.isCorrect)
+      .map(item => item.word)
+      .join(', ');
+
+    return (
+      <>
+        <div>
+          {/* Render the utterance as a full sentence rather than separated words
+              so screen readers don't add a stop after each word */}
+          <p className='sr-only'>{fullUtterance}</p>
+
+          {incorrectWords && (
+            <p className='sr-only'>
+              {t('speaking-modal.incorrect-words', { words: incorrectWords })}
+            </p>
+          )}
+
+          {comparisonResult.comparison.map(
+            (item: ComparisonWord, index: number) => (
+              <span
+                key={index}
+                aria-hidden='true'
+                className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
+              >
+                {index === 0
+                  ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
+                  : item.word}
+              </span>
+            )
+          )}
+          <span aria-hidden='true'>{punctuationMark}</span>
+        </div>
+
+        <p className='speaking-modal-feedback-message'>{feedback}</p>
+      </>
+    );
+  };
+
+  const renderFeedback = () => {
+    if (comparisonResult?.status === 'correct') {
+      return renderExactMatch();
+    }
+
+    if (comparisonResult?.comparison) {
+      return renderPartialMatch();
+    }
+
+    return feedback;
+  };
+
+  return (
+    <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('speaking-modal.heading')}
+      </Modal.Header>
+      <Modal.Body alignment='center' className='speaking-modal-body'>
+        <p>{t('speaking-modal.repeat-sentence')}</p>
+
+        <div className='speaking-modal-sentence-container'>
+          <p id='speaking-sentence' className='speaking-modal-sentence'>
+            {sentence}
+          </p>
+          <Button
+            size='medium'
+            onClick={() => void handlePlay()}
+            aria-describedby='speaking-sentence'
+            disabled={isPlaying || listening}
+          >
+            {isPlaying ? t('speaking-modal.playing') : t('speaking-modal.play')}
+          </Button>
+        </div>
+
+        <div className='speaking-modal-record-container'>
+          <Button
+            size='medium'
+            onClick={() => void handleRecord()}
+            disabled={isPlaying || listening}
+          >
+            {listening ? t('speaking-modal.stop') : t('speaking-modal.record')}
+          </Button>
+        </div>
+
+        <div
+          className='speaking-modal-feedback'
+          aria-live='polite'
+          aria-atomic='true'
+        >
+          {renderFeedback()}
+        </div>
+      </Modal.Body>
+    </Modal>
+  );
+};
+
+const mapStateToProps = (state: unknown) => ({
+  isSpeakingModalOpen: isSpeakingModalOpenSelector(state) as boolean
+});
+
+const mapDispatchToProps = {
+  closeSpeakingModal: () => closeModal('speaking')
+};
+
+SpeakingModal.displayName = 'SpeakingModal';
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpeakingModal);
