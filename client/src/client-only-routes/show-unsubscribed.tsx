@@ -20,7 +20,12 @@ function ShowUnsubscribed({
   return (
     <>
       <Helmet>
-        <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
+        <title>
+          {t($ => $['youre-unsubscribed'], {
+            ns: 'metaTags'
+          })}{' '}
+          | freeCodeCamp.org
+        </title>
       </Helmet>
       <Container>
         <main>
@@ -29,10 +34,10 @@ function ShowUnsubscribed({
             <Panel variant='primary' className='text-center'>
               <Spacer size='m' />
               <h2 data-playwright-test-label='main-heading'>
-                {t('misc.unsubscribed')}
+                {t($ => $.misc.unsubscribed)}
               </h2>
               <p data-playwright-test-label='motivation-text'>
-                {t('misc.keep-coding')}
+                {t($ => $.misc['keep-coding'])}
               </p>
             </Panel>
           </FullWidthRow>
@@ -44,7 +49,7 @@ function ShowUnsubscribed({
                 variant='primary'
                 href={`${apiLocation}/resubscribe/${unsubscribeId}`}
               >
-                {t('buttons.resubscribe')}
+                {t($ => $.buttons.resubscribe)}
               </Button>
             </FullWidthRow>
           ) : null}

@@ -70,7 +70,8 @@ function Progress({
   t,
   updateAllChallengesInfo
 }: ProgressProps): JSX.Element {
-  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  // TODO: convert to selector #61969
+  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title` as never);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)
@@ -94,11 +95,11 @@ function Progress({
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
     isCertificationProject && totalChallengesInBlock > 0
-      ? t('learn.project-complete', {
+      ? t($ => $.learn['project-complete'], {
           completedChallengesInBlock,
           totalChallengesInBlock
         })
-      : t('learn.percent-complete', {
+      : t($ => $.learn['percent-complete'], {
           percent: completedPercent
         });
   return (

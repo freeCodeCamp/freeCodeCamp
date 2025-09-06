@@ -137,8 +137,8 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
         data-playwright-test-label='header-toggle-lang-button'
         id='toggle-lang-button'
         className='lang-button-nav'
-        title={t('buttons.change-language')}
-        aria-label={t('buttons.change-language')}
+        title={t($ => $.buttons['change-language'])}
+        aria-label={t($ => $.buttons['change-language'])}
         aria-controls='nav-lang-list'
         aria-expanded={showList}
         ref={listButtonRef}

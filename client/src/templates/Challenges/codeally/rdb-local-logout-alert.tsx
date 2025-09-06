@@ -13,7 +13,9 @@ function RdbLocalLogoutAlert({
 
   return (
     <Alert variant='danger'>
-      {t('learn.local.logout-warning', { course })}
+      {t($ => $.learn.local['logout-warning'], {
+        course: course
+      })}
     </Alert>
   );
 }

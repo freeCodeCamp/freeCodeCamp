@@ -65,7 +65,7 @@ export const ConditionalDonationAlert = ({
   if (!isDonating && betaCertifications.includes(superBlock))
     return (
       <Alert variant='info' className='annual-donation-alert'>
-        <p>{t('donate.beta-certification')}</p>
+        <p>{t($ => $.donate['beta-certification'])}</p>
         <hr />
         <p className='btn-container'>
           <Link
@@ -75,7 +75,7 @@ export const ConditionalDonationAlert = ({
             to='/donate'
             onClick={onCertificationDonationAlertClick}
           >
-            {t('buttons.donate-now')}
+            {t($ => $.buttons['donate-now'])}
           </Link>
         </p>
       </Alert>
@@ -85,7 +85,7 @@ export const ConditionalDonationAlert = ({
     return (
       <Alert variant='info' className='annual-donation-alert'>
         <p>
-          <Trans i18nKey='donate.consider-donating-2'>
+          <Trans i18nKey={$ => $.donate['consider-donating-2']}>
             <Link className='inline' to='/donate'>
               placeholder
             </Link>
@@ -109,7 +109,10 @@ function SuperBlockIntro({
     title: string;
     intro: string[];
     note: string;
-  } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+  } = t($ => $[superBlock], {
+    ns: 'intro',
+    returnObjects: true
+  }) as {
     title: string;
     intro: string[];
     note: string;
@@ -173,7 +176,7 @@ function SuperBlockIntro({
         {i18nSuperBlock}
       </h1>
       <Spacer size='m' />
-      <p>{t('misc.fsd-b-description')}</p>
+      <p>{t($ => $.misc['fsd-b-description'])}</p>
       {superBlockNoteText && (
         <>
           <Spacer size='m' />
@@ -185,7 +188,7 @@ function SuperBlockIntro({
         className={'btn-cta-big btn-block signup-btn btn-cta'}
         href={firstChallengeSlug}
       >
-        {t('misc.fsd-b-cta')}
+        {t($ => $.misc['fsd-b-cta'])}
       </a>
       <Spacer size='l' />
       <Container
@@ -198,22 +201,22 @@ function SuperBlockIntro({
               <div>
                 <CommunityIcon />
                 <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-1-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-1-description')}</p>
+                  <h3>{t($ => $.misc['fsd-b-benefit-1-title'])}</h3>
+                  <p>{t($ => $.misc['fsd-b-benefit-1-description'])}</p>
                 </div>
               </div>
               <div>
                 <CapIcon />
                 <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-2-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-2-description')}</p>
+                  <h3>{t($ => $.misc['fsd-b-benefit-2-title'])}</h3>
+                  <p>{t($ => $.misc['fsd-b-benefit-2-description'])}</p>
                 </div>
               </div>
               <div>
                 <DumbbellIcon />
                 <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-3-description')}</p>
+                  <h3>{t($ => $.misc['fsd-b-benefit-3-title'])}</h3>
+                  <p>{t($ => $.misc['fsd-b-benefit-3-description'])}</p>
                 </div>
               </div>
             </Col>

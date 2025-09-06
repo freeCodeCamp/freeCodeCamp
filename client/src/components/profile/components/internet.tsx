@@ -85,7 +85,7 @@ const InternetSettings = ({
     }
     return {
       state: 'error',
-      message: t('validation.invalid-url')
+      message: t($ => $.validation['invalid-url'])
     };
   };
 
@@ -137,14 +137,14 @@ const InternetSettings = ({
 
   return (
     <>
-      <SectionHeader>{t('settings.headings.internet')}</SectionHeader>
+      <SectionHeader>{t($ => $.settings.headings.internet)}</SectionHeader>
       <FullWidthRow>
         <form
           id='internet-presence'
           onSubmit={handleSubmit}
           data-playwright-test-label='internet-presence'
         >
-          <div role='group' aria-label={t('settings.headings.internet')}>
+          <div role='group' aria-label={t($ => $.settings.headings.internet)}>
             <FormGroup
               controlId='internet-github'
               validationState={githubProfileValidation}
@@ -214,7 +214,7 @@ const InternetSettings = ({
               validationState={websiteValidation}
             >
               <ControlLabel htmlFor='internet-website-input'>
-                {t('settings.labels.personal')}
+                {t($ => $.settings.labels.personal)}
               </ControlLabel>
               <FormControl
                 onChange={createHandleChange('website')}
@@ -238,8 +238,10 @@ const InternetSettings = ({
             bgSize='large'
             {...(isDisabled && { tabIndex: -1 })}
           >
-            {t('buttons.save')}{' '}
-            <span className='sr-only'>{t('settings.headings.internet')}</span>
+            {t($ => $.buttons.save)}{' '}
+            <span className='sr-only'>
+              {t($ => $.settings.headings.internet)}
+            </span>
           </BlockSaveButton>
         </form>
       </FullWidthRow>

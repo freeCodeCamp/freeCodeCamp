@@ -10,7 +10,7 @@ const ExamNav = (): JSX.Element => {
 
   return (
     <nav
-      aria-label={t('aria.primary-nav')}
+      aria-label={t($ => $.aria['primary-nav'])}
       className='exam-nav'
       id='exam-nav'
       data-playwright-test-label='header-exam-nav'

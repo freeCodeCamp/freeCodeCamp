@@ -63,10 +63,12 @@ function ConditionalContent({
       <Col md={12}>
         <Spacer size='l' />
         <h1 id='content-start' className='text-center'>
-          {t('learn.donation-record-not-found')}
+          {t($ => $.learn['donation-record-not-found'])}
         </h1>
         <Spacer size='m' />
-        <p className='text-center'>{t('learn.contact-support-mistake')}</p>
+        <p className='text-center'>
+          {t($ => $.learn['contact-support-mistake'])}
+        </p>
         <Spacer size='l' />
       </Col>
     );
@@ -91,10 +93,10 @@ function ConditionalContent({
       <Col md={12}>
         <Spacer size='l' />
         <h1 id='content-start' className='text-center'>
-          {t('learn.sign-in-see-benefits')}
+          {t($ => $.learn['sign-in-see-benefits'])}
         </h1>
         <Spacer size='l' />
-        <BigCallToAction text={t('buttons.sign-in')} />
+        <BigCallToAction text={t($ => $.buttons['sign-in'])} />
         <Spacer size='l' />
       </Col>
     );
@@ -106,7 +108,9 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
   return (
     <>
       <Helmet>
-        <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
+        <title>
+          {t($ => $.misc['supporters-page-title'])} | freeCodeCamp.org
+        </title>
       </Helmet>
       <Container
         fluid={true}

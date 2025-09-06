@@ -13,7 +13,7 @@ function RedFail(): JSX.Element {
       aria-hidden='true'
     >
       <g>
-        <title>{t('icons.fail')}</title>
+        <title>{t($ => $.icons.fail)}</title>
         <circle
           cx='100'
           cy='99'

@@ -16,7 +16,7 @@ function LightBulb(
       {...props}
     >
       <g aria-hidden='true'>
-        <title>{t('icons.hint')}</title>
+        <title>{t($ => $.icons.hint)}</title>
 
         <path
           d='M25 48.5C38.1168 48.5 48.75 37.8668 48.75 24.75C48.75 11.6332 38.1168 1 25 1C11.8832 1 1.25 11.6332 1.25 24.75C1.25 37.8668 11.8832 48.5 25 48.5Z'

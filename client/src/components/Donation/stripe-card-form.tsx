@@ -10,6 +10,7 @@ import type {
 } from '@stripe/stripe-js';
 import React, { useState } from 'react';
 
+import type { TFunction } from 'i18next';
 import { PaymentProvider } from '../../../../shared/config/donation-settings';
 import { LocalStorageThemes } from '../../redux/types';
 import { DonationApprovalData, PostPayment } from './types';
@@ -17,7 +18,7 @@ import { DonationApprovalData, PostPayment } from './types';
 interface FormPropTypes {
   onDonationStateChange: (donationState: DonationApprovalData) => void;
   postPayment: (arg0: PostPayment) => void;
-  t: (label: string) => string;
+  t: TFunction;
   theme: LocalStorageThemes;
   processing: boolean;
 }
@@ -106,7 +107,7 @@ export default function StripeCardForm({
             redirecting: false,
             processing: false,
             success: false,
-            error: t('donate.went-wrong')
+            error: t($ => $.donate['went-wrong'])
           });
         } else if (paymentMethod)
           postPayment({
@@ -152,14 +153,14 @@ export default function StripeCardForm({
         />
       </div>
       <div className={'form-status'}>
-        {!isSubmissionValid && <p>{t('donate.valid-card')}</p>}
+        {!isSubmissionValid && <p>{t($ => $.donate['valid-card'])}</p>}
       </div>
       <button
         className='confirm-donation-btn'
         disabled={!stripe || !elements || isSubmitting}
         type='submit'
       >
-        {t('buttons.donate')}
+        {t($ => $.buttons.donate)}
       </button>
     </form>
   );

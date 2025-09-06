@@ -17,7 +17,8 @@ function ChallengeHeading({
 
   return (
     <div className='challenge-heading-wrap'>
-      <h2 className='challenge-heading'>{t(heading)}</h2>
+      {/* TODO: convert to selector #61969 */}
+      <h2 className='challenge-heading'>{t(heading as never)}</h2>
       {isCompleted && <GreenPass />}
     </div>
   );

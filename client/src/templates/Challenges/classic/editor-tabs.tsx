@@ -58,7 +58,7 @@ class EditorTabs extends Component<EditorTabsProps> {
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}
               <span className='sr-only'>
-                {i18next.t('learn.editor-tabs.editor')}
+                {i18next.t($ => $.learn['editor-tabs'].editor)}
               </span>
             </button>
           ))}

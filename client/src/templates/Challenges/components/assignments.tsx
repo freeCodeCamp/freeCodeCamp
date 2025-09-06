@@ -22,10 +22,15 @@ function Assignments({
   handleAssignmentChange
 }: AssignmentsProps): JSX.Element {
   const { t } = useTranslation();
+  const hasOnlyOneAssignment = assignments.length === 1;
   return (
     <>
       <ChallengeHeading
-        heading={t('learn.assignments', { count: assignments.length })}
+        heading={t($ =>
+          hasOnlyOneAssignment
+            ? $.learn.assignments_one
+            : $.learn.assignments_other
+        )}
       />
       <div className='video-quiz-options'>
         {assignments.map((assignment, index) => (
@@ -46,7 +51,11 @@ function Assignments({
         <>
           <Spacer size='m' />
           <div className='assignments-not-complete'>
-            {t('learn.assignment-not-complete', { count: assignments.length })}
+            {t($ =>
+              hasOnlyOneAssignment
+                ? $.learn['assignment-not-complete_one']
+                : $.learn['assignment-not-complete_other']
+            )}
           </div>
         </>
       )}

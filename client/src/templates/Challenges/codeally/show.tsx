@@ -144,8 +144,9 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     updateSolutionFormValues
   } = props;
 
+  // TODO: convert to selector #61969
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `intro:${superBlock}.blocks.${block}.title` as never
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
@@ -299,7 +300,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                     challengeType === challengeTypes.codeAllyCert && (
                       <>
                         <div className='ca-description'>
-                          {t('learn.complete-both-steps')}
+                          {t($ => $.learn['complete-both-steps'])}
                         </div>
                         <hr />
                         <Spacer size='m' />
@@ -331,7 +332,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                   challengeType === challengeTypes.codeAllyCert ? (
                     <>
                       <div className='ca-description'>
-                        {t('learn.complete-both-steps')}
+                        {t($ => $.learn['complete-both-steps'])}
                       </div>
                       <hr />
                       <Spacer size='m' />

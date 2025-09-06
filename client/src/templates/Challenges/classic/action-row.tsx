@@ -43,19 +43,21 @@ const ActionRow = ({
   function getPreviewBtnsSrText() {
     // no preview open
     const previewBtnsSrText = {
-      pane: t('aria.show-preview'),
-      portal: t('aria.open-preview-in-new-window')
+      pane: t($ => $.aria['show-preview']),
+      portal: t($ => $.aria['open-preview-in-new-window'])
     };
 
     // preview open in main window
     if (showPreviewPane && !showPreviewPortal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+      previewBtnsSrText.pane = t($ => $.aria['hide-preview']);
+      previewBtnsSrText.portal = t($ => $.aria['move-preview-to-new-window']);
 
       // preview open in external window
     } else if (showPreviewPortal && !showPreviewPane) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      previewBtnsSrText.pane = t($ => $.aria['move-preview-to-main-window']);
+      previewBtnsSrText.portal = t(
+        $ => $.aria['close-external-preview-window']
+      );
     }
 
     return previewBtnsSrText;
@@ -77,7 +79,7 @@ const ActionRow = ({
               aria-expanded={!!showInstructions}
               onClick={() => togglePane('showInstructions')}
             >
-              {t('learn.editor-tabs.instructions')}
+              {t($ => $.learn['editor-tabs'].instructions)}
             </button>
           )}
           <EditorTabs data-playwright-test-label='editor-tabs' />
@@ -109,14 +111,14 @@ const ActionRow = ({
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}
           >
-            {t('learn.editor-tabs.console')}
+            {t($ => $.learn['editor-tabs'].console)}
           </button>
           {hasNotes && (
             <button
               aria-expanded={!!showNotes}
               onClick={() => togglePane('showNotes')}
             >
-              {t('learn.editor-tabs.notes')}
+              {t($ => $.learn['editor-tabs'].notes)}
             </button>
           )}
           {hasPreview && (
@@ -127,7 +129,9 @@ const ActionRow = ({
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+                <span aria-hidden='true'>
+                  {t($ => $.learn['editor-tabs'].preview)}
+                </span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}

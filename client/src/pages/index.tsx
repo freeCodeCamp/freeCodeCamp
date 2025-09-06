@@ -28,7 +28,11 @@ function IndexPage(): JSX.Element {
 
   return (
     <>
-      <SEO title={t('metaTags:title')} />
+      <SEO
+        title={t($ => $.title, {
+          ns: 'metaTags'
+        })}
+      />
       <Landing showLandingPageRedesign={true} />
     </>
   );

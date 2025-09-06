@@ -151,7 +151,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
     <>
-      <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
+      <Helmet title={`${t($ => $.buttons.settings)} | freeCodeCamp.org`} />
       <Container>
         <main>
           <Spacer size='l' />
@@ -161,7 +161,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             style={{ overflowWrap: 'break-word' }}
             data-playwright-test-label='settings-heading'
           >
-            {t('settings.for', { username: username })}
+            {t($ => $.settings.for, {
+              username: username
+            })}
           </h1>
           <MiscSettings
             keyboardShortcuts={keyboardShortcuts}
