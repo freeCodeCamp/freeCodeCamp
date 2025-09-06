@@ -18,10 +18,10 @@ exports[`<Profile/> renders correctly 1`] = `
         class="h-[30px]"
       />
       <div
-        class="mx-[-15px] "
+        class="mx-[-15px]  "
       >
         <div
-          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ml-[16.6%]   "
+          class=" min-h-[1px] px-[15px] w-full md:w-2/3    md:ms-[16.6%]   "
         >
           <div
             class="h-[90px]"
@@ -197,7 +197,7 @@ exports[`<Profile/> renders correctly 1`] = `
               class="profile-meta-container"
             />
             <div
-              class="mx-[-15px] "
+              class="mx-[-15px]  "
             >
               <div
                 class="social-icons-row min-h-[1px] px-[15px]         "
@@ -300,7 +300,7 @@ exports[`<Profile/> renders correctly 1`] = `
       class="h-[30px]"
     />
     <div
-      class="mx-[-15px] text-center"
+      class="mx-[-15px]  text-center"
     >
       <a
         href="/user/string/report-user"
