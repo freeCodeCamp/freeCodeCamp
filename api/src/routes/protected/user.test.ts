@@ -151,7 +151,8 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
-  linkedin: 'linkedin.com/foobar'
+  linkedin: 'linkedin.com/foobar',
+  sendQuincyEmail: false
 };
 
 const minimalUserData: Prisma.userCreateInput = {
@@ -301,6 +302,7 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  sendQuincyEmail: testUserData.sendQuincyEmail,
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,

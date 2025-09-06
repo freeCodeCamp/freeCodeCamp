@@ -847,7 +847,7 @@ Happy coding!
 
       test('PUT returns 400 status code with invalid sendQuincyEmail', async () => {
         const response = await superPut('/update-my-quincy-email').send({
-          sendQuincyEmail: 'invalid'
+          sendQuincyEmail: 'null'
         });
 
         expect(response.body).toEqual(updateErrorResponse);

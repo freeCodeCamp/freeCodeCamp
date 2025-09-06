@@ -393,7 +393,7 @@ export type User = {
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;

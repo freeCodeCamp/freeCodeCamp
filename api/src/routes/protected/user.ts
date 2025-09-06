@@ -697,6 +697,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           user: {
             [username]: {
               ...removeNulls(publicUser),
+              sendQuincyEmail: publicUser.sendQuincyEmail,
               ...normalizeFlags(flags),
               picture: publicUser.picture ?? '',
               email: email ?? '',
