@@ -1,10 +1,6 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import {
-  SUPERBLOCK_META_DIR,
-  CHALLENGE_DIR,
-  BLOCK_META_DIR
-} from '../configs/paths';
+import { SUPERBLOCK_META_DIR, BLOCK_META_DIR } from '../configs/paths';
 
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 import { PartialMeta } from '../interfaces/partial-meta';
@@ -55,10 +51,9 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
           encoding: 'utf8'
         });
         const blockMeta = JSON.parse(blockMetaFile) as PartialMeta;
-        const filePath = join(CHALLENGE_DIR, block);
         return {
           name: blockMeta.name,
-          path: filePath
+          path: block
         };
       })
     );

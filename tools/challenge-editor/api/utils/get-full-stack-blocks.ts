@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { SUPERBLOCK_META_DIR, CHALLENGE_DIR } from '../configs/paths';
+import { SUPERBLOCK_META_DIR } from '../configs/paths';
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 
 type Block = {
@@ -62,10 +62,9 @@ export const getBlocks = async (
 
   blocks = await Promise.all(
     foundModule!.blocks!.map(async block => {
-      const filePath = join(CHALLENGE_DIR, block);
       return {
         name: block,
-        path: filePath
+        path: block
       };
     })
   );
