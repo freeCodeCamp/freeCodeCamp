@@ -111,6 +111,7 @@ export const getSessionUser = {
           sendQuincyEmail: Type.Boolean(),
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),
