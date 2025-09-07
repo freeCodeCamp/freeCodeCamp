@@ -118,36 +118,36 @@
     "share-on-threads": "Поділитись на Threads",
     "play-scene": "Натисніть «Відтворити»",
     "download-latest-version": "Завантажити найновішу версію",
-    "start": "Start",
-    "go-to-today": "Go to Today's Challenge",
-    "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to Archive",
-    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+    "start": "Розпочати",
+    "go-to-today": "Перейти до сьогоднішнього завдання",
+    "go-to-today-long": "Перейти до сьогоднішнього завдання з програмування",
+    "go-to-archive": "Перейти до архіву",
+    "go-to-archive-long": "Перейти до архіву завдань з програмування"
   },
   "daily-coding-challenges": {
-    "title": "Daily Coding Challenges",
-    "map-title": "Try the coding challenge of the day:",
-    "not-found": "Daily Coding Challenge Not Found.",
-    "release-note": "New challenges are released at midnight US Central time."
+    "title": "Щоденні завдання з програмування",
+    "map-title": "Спробуйте щоденне завдання з програмування:",
+    "not-found": "Щоденне завдання з програмування не знайдено.",
+    "release-note": "Нові завдання будуть доступними о 9:00 за київським часом."
   },
   "weekdays": {
     "short": {
-      "sunday": "S",
-      "monday": "M",
-      "tuesday": "T",
-      "wednesday": "W",
-      "thursday": "T",
-      "friday": "F",
-      "saturday": "S"
+      "sunday": "Нд",
+      "monday": "Пн",
+      "tuesday": "Вт",
+      "wednesday": "Ср",
+      "thursday": "Чт",
+      "friday": "Пт",
+      "saturday": "Сб"
     },
     "long": {
-      "sunday": "Sunday",
-      "monday": "Monday",
-      "tuesday": "Tuesday",
-      "wednesday": "Wednesday",
-      "thursday": "Thursday",
-      "friday": "Friday",
-      "saturday": "Saturday"
+      "sunday": "Неділя",
+      "monday": "Понеділок",
+      "tuesday": "Вівторок",
+      "wednesday": "Середа",
+      "thursday": "Четвер",
+      "friday": "П’ятниця",
+      "saturday": "Субота"
     }
   },
   "landing": {
@@ -466,7 +466,6 @@
     "answered-mcq": "Ви не відповіли на всі запитання та/або допустились помилок.",
     "explanation": "Пояснення",
     "transcript": "Текстова версія",
-    "video": "Відео",
     "solution-link": "Посилання на розв’язок",
     "source-code-link": "Посилання на вихідний код",
     "ms-link": "Посилання Microsoft",
@@ -882,8 +881,8 @@
     "github": "Посилання на сторінку GitHub {{username}}",
     "website": "Посилання на вебсайт {{username}}",
     "twitter": "Посилання на сторінку Twitter {{username}}",
-    "next-month": "Go to next month",
-    "previous-month": "Go to previous month",
+    "next-month": "Наступний місяць",
+    "previous-month": "Попередній місяць",
     "first-page": "Перейти на першу сторінку",
     "previous-page": "Перейти на попередню сторінку",
     "next-page": "Перейти на наступну сторінку",
@@ -914,7 +913,7 @@
     "editor-a11y-on-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Command+E, щоб вимкнути його, або Option+F1, щоб переглянути більше функцій.",
     "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
     "terminal-output": "Вивід терміналу",
-    "not-available": "Not available"
+    "not-available": "Недоступно"
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
@@ -1184,6 +1183,8 @@
       "a2-professional-spanish-cert": "Сертифікація «Іспанська мова A2 для роботи»",
       "a2-professional-chinese": "Китайська мова A2 для роботи",
       "a2-professional-chinese-cert": "Сертифікація «Китайська мова A2 для роботи»",
+      "a1-professional-chinese": "Китайська мова A1 для роботи",
+      "a1-professional-chinese-cert": "Сертифікація «Китайська мова A1 для роботи»",
       "legacy-front-end": "Front End (стара версія)",
       "legacy-front-end-cert": "Сертифікація «Front End» (стара версія)",
       "legacy-back-end": "Back End (стара версія)",

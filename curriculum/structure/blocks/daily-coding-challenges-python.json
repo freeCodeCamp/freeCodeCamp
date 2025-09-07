@@ -1,0 +1,226 @@
+{
+  "name": "Daily Coding Challenges Python",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-python",
+  "usesMultifileEditor": true,
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6814d93d516e86b171929de5",
+      "title": "Python Challenge 1"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51c",
+      "title": "Python Challenge 2"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51d",
+      "title": "Python Challenge 3"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51e",
+      "title": "Python Challenge 4"
+    },
+    {
+      "id": "681cb1b1dab50c87ddb2e51f",
+      "title": "Python Challenge 5"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e520",
+      "title": "Python Challenge 6"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e521",
+      "title": "Python Challenge 7"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e522",
+      "title": "Python Challenge 8"
+    },
+    {
+      "id": "681cb1b2dab50c87ddb2e523",
+      "title": "Python Challenge 9"
+    },
+    {
+      "id": "681cb1b3dab50c87ddb2e524",
+      "title": "Python Challenge 10"
+    },
+    {
+      "id": "68216eff0f957572e7c340c6",
+      "title": "Python Challenge 11"
+    },
+    {
+      "id": "68216f040f957572e7c340c7",
+      "title": "Python Challenge 12"
+    },
+    {
+      "id": "6821ec92237de8297eaee79b",
+      "title": "Python Challenge 13"
+    },
+    {
+      "id": "6821ec98237de8297eaee79c",
+      "title": "Python Challenge 14"
+    },
+    {
+      "id": "6821ec9d237de8297eaee79d",
+      "title": "Python Challenge 15"
+    },
+    {
+      "id": "6821eca2237de8297eaee79e",
+      "title": "Python Challenge 16"
+    },
+    {
+      "id": "6821eca7237de8297eaee79f",
+      "title": "Python Challenge 17"
+    },
+    {
+      "id": "6821ecab237de8297eaee7a0",
+      "title": "Python Challenge 18"
+    },
+    {
+      "id": "6821ecb1237de8297eaee7a1",
+      "title": "Python Challenge 19"
+    },
+    {
+      "id": "6821ecb5237de8297eaee7a2",
+      "title": "Python Challenge 20"
+    },
+    {
+      "id": "6821ecb9237de8297eaee7a3",
+      "title": "Python Challenge 21"
+    },
+    {
+      "id": "6821ecbf237de8297eaee7a4",
+      "title": "Python Challenge 22"
+    },
+    {
+      "id": "6821ecc5237de8297eaee7a5",
+      "title": "Python Challenge 23"
+    },
+    {
+      "id": "6821eccb237de8297eaee7a6",
+      "title": "Python Challenge 24"
+    },
+    {
+      "id": "68adce01c0e1144d0a902957",
+      "title": "Python Challenge 25"
+    },
+    {
+      "id": "68adce01c0e1144d0a902959",
+      "title": "Python Challenge 26"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295b",
+      "title": "Python Challenge 27"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295d",
+      "title": "Python Challenge 28"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295f",
+      "title": "Python Challenge 29"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa548",
+      "title": "Python Challenge 30"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54a",
+      "title": "Python Challenge 31"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54c",
+      "title": "Python Challenge 32"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54e",
+      "title": "Python Challenge 33"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa550",
+      "title": "Python Challenge 34"
+    },
+    {
+      "id": "68b06e589bf2273243814770",
+      "title": "Python Challenge 35"
+    },
+    {
+      "id": "68b06e589bf2273243814772",
+      "title": "Python Challenge 36"
+    },
+    {
+      "id": "68b06e589bf2273243814774",
+      "title": "Python Challenge 37"
+    },
+    {
+      "id": "68b06e589bf2273243814776",
+      "title": "Python Challenge 38"
+    },
+    {
+      "id": "68b06e589bf2273243814778",
+      "title": "Python Challenge 39"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a03",
+      "title": "Python Challenge 40"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a05",
+      "title": "Python Challenge 41"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a07",
+      "title": "Python Challenge 42"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a09",
+      "title": "Python Challenge 43"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a0b",
+      "title": "Python Challenge 44"
+    },
+    {
+      "id": "68b7687dded630607aceccac",
+      "title": "Python Challenge 45"
+    },
+    {
+      "id": "68b7687dded630607aceccae",
+      "title": "Python Challenge 46"
+    },
+    {
+      "id": "68b7687dded630607aceccb0",
+      "title": "Python Challenge 47"
+    },
+    {
+      "id": "68b7687dded630607aceccb2",
+      "title": "Python Challenge 48"
+    },
+    {
+      "id": "68b7687dded630607aceccb4",
+      "title": "Python Challenge 49"
+    },
+    {
+      "id": "68b7cadffed0e75a517da670",
+      "title": "Python Challenge 50"
+    },
+    {
+      "id": "68b7cadffed0e75a517da672",
+      "title": "Python Challenge 51"
+    },
+    {
+      "id": "68b7cadffed0e75a517da674",
+      "title": "Python Challenge 52"
+    },
+    {
+      "id": "68b7cadffed0e75a517da676",
+      "title": "Python Challenge 53"
+    },
+    {
+      "id": "68b7cadffed0e75a517da678",
+      "title": "Python Challenge 54"
+    }
+  ]
+}

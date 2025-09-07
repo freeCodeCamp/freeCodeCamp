@@ -363,6 +363,38 @@
     {
       "source": "/learn/full-stack-developer/lecture-introduction-to-aria/what-is-the-aria-controls-attribute",
       "destination": "/learn/full-stack-developer/lecture-understanding-aria-expanded-aria-live-and-common-aria-states/what-is-the-aria-controls-attribute"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-character-methods/what-is-ascii-and-how-does-it-work-with-charcodeat-and-fromcharcode"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-test-if-a-string-contains-a-substring",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-search-and-slice-methods/how-can-you-test-if-a-string-contains-a-substring"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-extract-a-substring-from-a-string",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-search-and-slice-methods/how-can-you-extract-a-substring-from-a-string"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-change-the-casing-for-a-string",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-formatting-methods/how-can-you-change-the-casing-for-a-string"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-trim-whitespace-from-a-string",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-formatting-methods/how-can-you-trim-whitespace-from-a-string"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-replace-parts-of-a-string-with-another",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-replace-parts-of-a-string-with-another"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-repeat-a-string-x-number-of-times",
+      "destination": "/learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-repeat-a-string-x-number-of-times"
+    },
+    {
+      "source": "/learn/full-stack-developer/lab-magazine-layout/design-a-magazine-layout",
+      "destination": "/learn/full-stack-developer/lab-newspaper-layout/design-a-newspaper-layout"
     }
   ]
 }
