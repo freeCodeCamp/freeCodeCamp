@@ -8,7 +8,7 @@ import {
   SuperBlockStage,
   getStageOrder,
   superBlockStages
-} from '../../../../shared/config/curriculum';
+} from '../../../../shared-dist/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink } from '../helpers';

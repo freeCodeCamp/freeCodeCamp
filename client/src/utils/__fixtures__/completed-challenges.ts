@@ -1,5 +1,5 @@
 import { challengeFiles } from '../../../utils/__fixtures__/challenges';
-import { challengeTypes } from '../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../shared-dist/config/challenge-types';
 
 const baseChallenge = {
   id: '1',

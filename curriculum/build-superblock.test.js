@@ -1,4 +1,4 @@
-const { isPoly } = require('../shared/utils/polyvinyl');
+const { isPoly } = require('../shared-dist/utils/polyvinyl');
 const {
   validateChallenges,
   buildBlock,

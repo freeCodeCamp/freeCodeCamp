@@ -2,7 +2,7 @@ import type { FastifyPluginCallback } from 'fastify';
 import * as Sentry from '@sentry/node';
 import fp from 'fastify-plugin';
 
-import { getRedirectParams } from '../utils/redirection';
+import { getRedirectParams } from '../utils/redirection.js';
 
 declare module 'fastify' {
   interface FastifyInstance {

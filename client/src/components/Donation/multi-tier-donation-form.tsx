@@ -16,7 +16,7 @@ import {
   subscriptionAmounts,
   defaultTierAmount,
   type DonationAmount
-} from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
+} from '../../../../shared-dist/config/donation-settings'; // You can further extract these into separate components and import them
 import callGA from '../../analytics/call-ga';
 import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';

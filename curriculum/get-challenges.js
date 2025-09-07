@@ -3,7 +3,7 @@ const path = require('path');
 const util = require('util');
 
 const { curriculum: curriculumLangs } =
-  require('../shared/config/i18n').availableLangs;
+  require('../shared-dist/config/i18n').availableLangs;
 const { buildCurriculum } = require('./build-curriculum');
 
 const access = util.promisify(fs.access);

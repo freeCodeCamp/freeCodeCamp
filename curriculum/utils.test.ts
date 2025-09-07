@@ -1,6 +1,6 @@
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '../shared-dist/config/curriculum';
 import {
   createSuperOrder,
   filterByBlock,

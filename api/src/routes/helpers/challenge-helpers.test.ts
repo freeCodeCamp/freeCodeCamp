@@ -4,14 +4,14 @@ import type {
   CompletedChallenge
 } from '@prisma/client';
 
-import { createFetchMock } from '../../../vitest.utils';
+import { createFetchMock } from '../../../vitest.utils.js';
 import {
   canSubmitCodeRoadCertProject,
   verifyTrophyWithMicrosoft,
   decodeFiles,
   decodeBase64,
   encodeBase64
-} from './challenge-helpers';
+} from './challenge-helpers.js';
 
 const id = 'abc';
 
