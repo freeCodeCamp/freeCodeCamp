@@ -24,6 +24,7 @@ describe('<ShowSettings />', () => {
   });
 
   it('redirects to sign in page when user is not logged in', () => {
+    
     const shallow = new ShallowRenderer();
     shallow.render(<ShowSettings {...loggedOutProps} />);
     expect(navigate).toHaveBeenCalledTimes(1);

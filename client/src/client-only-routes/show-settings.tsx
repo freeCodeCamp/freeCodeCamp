@@ -115,7 +115,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
 
   if (!isSignedInRef.current) {
     navigate(`${apiLocation}/signin`);
-    return <Loader fullScreen={true} />;
+    return null;
   }
 
   const {
