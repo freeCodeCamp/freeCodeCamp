@@ -3425,6 +3425,12 @@
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working with the arguments Object and Rest Parameters",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
@@ -4811,12 +4817,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lecture-working-with-the-arguments-object-and-rest-parameters": {
-        "title": "Working with the arguments Object and Rest Parameters",
-        "intro": [
-          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
-        ]
       }
     }
   },
