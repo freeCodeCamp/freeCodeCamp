@@ -147,7 +147,7 @@ model user {
   /// Valuable for selectively performing random logic.
   rand                           Float?
   savedChallenges                SavedChallenge[] // Undefined | SavedChallenge[]
-  // Nullable tri-state: null (not set), true (subscribed), false (unsubscribed)
+  // Nullable tri-state: null (likely new user), true (subscribed), false (unsubscribed)
   sendQuincyEmail                Boolean?
   theme                          String? // Undefined
   timezone                       String? // Undefined

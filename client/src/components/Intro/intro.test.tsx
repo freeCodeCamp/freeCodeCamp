@@ -51,7 +51,6 @@ const loggedInProps = {
   username: 'DevelopmentUser',
   isDonating: false,
   onLearnDonationAlertClick: () => jest.fn(),
-  acceptedPrivacyTerms: true
 };
 
 const loggedOutProps = {

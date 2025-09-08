@@ -4,9 +4,8 @@ import { Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { apiLocation } from '../../config/env.json';
 
 interface EmailListOptInProps {
-  isSignedIn?: boolean;
+  isSignedIn: boolean;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
-  isPage?: boolean;
 }
 
 export function EmailListOptIn({
@@ -56,7 +55,7 @@ export function EmailListOptIn({
 }
 
 interface EmailOptionsProps {
-  isSignedIn?: boolean;
+  isSignedIn: boolean;
   updateQuincyEmail: (isSendQuincyEmail: boolean) => void;
   isPage?: boolean;
 }

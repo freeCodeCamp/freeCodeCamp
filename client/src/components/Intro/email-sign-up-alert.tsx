@@ -14,24 +14,17 @@ interface EmailSignUpAlertProps {
   completedChallengesCount: number;
 }
 
-const mapStateToProps = createSelector(
-  userSelector,
-  isSignedInSelector,
-  (
-    {
-      sendQuincyEmail,
-      completedChallenges
-    }: {
-      sendQuincyEmail: boolean | null;
-      completedChallenges: CompletedChallenge[];
-    },
-    isSignedIn: boolean
-  ) => ({
-    sendQuincyEmail,
-    isSignedIn,
-    completedChallengesCount: completedChallenges.length
-  })
-);
+const mapStateToProps = (state: unknown) => {
+  const user = userSelector(state) as {
+    sendQuincyEmail: boolean | null;
+    completedChallenges: CompletedChallenge[];
+  };
+  return {
+    sendQuincyEmail: user.sendQuincyEmail,
+    isSignedIn: isSignedInSelector(state),
+    completedChallengesCount: user.completedChallenges.length
+  };
+};
 
 const mapDispatchToProps = {
   updateQuincyEmail: (sendQuincyEmail: boolean) =>
@@ -47,7 +40,6 @@ function EmailSignUpAlert({
   const newAccount = isSignedIn && completedChallengesCount < 1;
   const userHasMadeEmailSelection = sendQuincyEmail !== null;
 
-  // Don't show the alert if user is new or if user has already made a selection
   if (userHasMadeEmailSelection || newAccount) {
     return null;
   }
