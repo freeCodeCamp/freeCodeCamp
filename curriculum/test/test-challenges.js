@@ -1,42 +1,32 @@
-const path = require('path');
-const { assert, AssertionError } = require('chai');
-const jsdom = require('jsdom');
-const liveServer = require('@compodoc/live-server');
-const lodash = require('lodash');
-const Mocha = require('mocha');
-const mockRequire = require('mock-require');
-const spinner = require('ora')();
-const puppeteer = require('puppeteer');
-
-// lodash-es can't easily be used in node environments, so we just mock it out
-// for the original lodash in testing.
-mockRequire('lodash-es', lodash);
-
-const clientPath = path.resolve(__dirname, '../../client');
-require('@babel/register')({
-  root: clientPath,
-  babelrc: false,
-  presets: ['@babel/preset-env', '@babel/typescript'],
-  plugins: ['dynamic-import-node'],
-  ignore: [/node_modules/],
-  only: [clientPath]
-});
-const {
+import path from 'node:path';
+import { createRequire } from 'node:module';
+import { describe, it, afterAll } from 'vitest';
+import { assert, AssertionError } from 'chai';
+import jsdom from 'jsdom';
+import liveServer from '@compodoc/live-server';
+import lodash from 'lodash';
+import ora from 'ora';
+import puppeteer from 'puppeteer';
+import {
   buildChallenge,
   runnerTypes
-} = require('../../client/src/templates/Challenges/utils/build');
-const {
+} from '../../client/src/templates/Challenges/utils/build';
+import {
   challengeTypes,
   hasNoSolution
-} = require('../../shared/config/challenge-types');
-const { getLines } = require('../../shared/utils/get-lines');
+} from '../../shared/config/challenge-types';
+import { getLines } from '../../shared/utils/get-lines';
+import {
+  prefixDoctype,
+  helperVersion
+} from '../../client/src/templates/Challenges/utils/frame';
+
+const require = createRequire(import.meta.url);
+
+const clientPath = path.resolve(__dirname, '../../client');
 const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang } = require('../utils');
-const {
-  prefixDoctype,
-  helperVersion
-} = require('../../client/src/templates/Challenges/utils/frame');
 
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
@@ -59,47 +49,24 @@ const testFilter = {
     : undefined
 };
 
-// rethrow unhandled rejections to make sure the tests exit with non-zero code
+// Surface unhandled rejections and uncaught exceptions, but let Vitest handle exit codes
 process.on('unhandledRejection', err => handleRejection(err));
-// If an uncaught exception gets here, then mocha is in an unexpected state. All
-// we can do is log the exception and exit with a non-zero code.
 process.on('uncaughtException', err => {
   console.error('Uncaught exception:');
   console.error(err);
-  process.exit(1);
 });
 
 // some errors *may* not be reported, since cleanup is triggered by the first
 // error and that starts shutting down the browser and the server.
 const handleRejection = err => {
   console.error('Unhandled rejection:');
-  // setting the error code because node does not (yet) exit with a non-zero
-  // code on unhandled exceptions.
-  process.exitCode = 1;
   cleanup();
   console.error(err);
-  if (process.env.FULL_OUTPUT !== 'true') process.exit();
 };
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
-
-const oldRunnerFail = Mocha.Runner.prototype.fail;
-Mocha.Runner.prototype.fail = function (test, err) {
-  if (err instanceof AssertionError) {
-    const errMessage = String(err.message || '');
-    const assertIndex = errMessage.indexOf(': expected');
-    if (assertIndex !== -1) {
-      err.message = errMessage.slice(0, assertIndex);
-    }
-    // Don't show stacktrace for assertion errors.
-    if (err.stack) {
-      delete err.stack;
-    }
-  }
-  return oldRunnerFail.call(this, test, err);
-};
 
 async function newPageContext(browser) {
   const page = await browser.newPage();
@@ -108,15 +75,17 @@ async function newPageContext(browser) {
   return page;
 }
 
+const spinner = ora();
 spinner.start();
 spinner.text = 'Populate tests.';
 
 let browser;
 let page;
 
-setup()
-  .then(runTests)
-  .catch(err => handleRejection(err));
+const challengeData = await setup().catch(err => {
+  handleRejection(err);
+  throw err;
+});
 
 async function setup() {
   // liveServer starts synchronously
@@ -205,16 +174,13 @@ function cleanup() {
   spinner.stop();
 }
 
-function runTests(challengeData) {
-  describe('Check challenges', function () {
-    after(function () {
-      cleanup();
-    });
-    populateTestsForLang(challengeData);
+spinner.text = 'Testing';
+describe('Check challenges', () => {
+  afterAll(() => {
+    cleanup();
   });
-  spinner.text = 'Testing';
-  run();
-}
+  populateTestsForLang(challengeData);
+});
 
 async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
@@ -248,7 +214,6 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
   superBlocks.forEach(superBlock => {
     describe(`Language: ${lang}`, function () {
       describe(`SuperBlock: ${superBlock}`, function () {
-        this.timeout(5000);
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
@@ -377,56 +342,57 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                 let { tests = [] } = challenge;
                 tests = tests.filter(test => !!test.testString);
                 if (tests.length === 0) {
-                  it('Check tests. No tests.');
+                  it('Check tests. No tests.', () => {});
                   return;
                 }
 
                 if (challengeType === challengeTypes.backend) {
-                  it('Check tests is not implemented.');
+                  it('Check tests is not implemented.', () => {});
                   return;
                 }
 
                 // The python tests are (currently) slow, so we give them more time.
                 const timePerTest =
                   challengeType === challengeTypes.python ? 10000 : 5000;
-                it('Test suite must fail on the initial contents', async function () {
-                  // TODO: some tests take a surprisingly long time to setup the
-                  // test runner, so this timeout is large while we investigate.
-                  this.timeout(timePerTest * tests.length + 20000);
-                  // suppress errors in the console.
-                  const oldConsoleError = console.error;
-                  console.error = () => {};
-                  let fails = false;
-                  let testRunner;
-                  try {
-                    testRunner = await createTestRunner(
-                      challenge,
-                      challenge.challengeFiles,
-                      buildChallenge
-                    );
-                  } catch (e) {
-                    console.error(
-                      `Error creating test runner for initial contents`
-                    );
-                    console.error(e);
-                    fails = true;
-                  }
-                  if (!fails) {
-                    for (const test of tests) {
-                      try {
-                        await testRunner(test);
-                      } catch {
-                        fails = true;
-                        break;
+                it(
+                  'Test suite must fail on the initial contents',
+                  async function () {
+                    // suppress errors in the console.
+                    const oldConsoleError = console.error;
+                    console.error = () => {};
+                    let fails = false;
+                    let testRunner;
+                    try {
+                      testRunner = await createTestRunner(
+                        challenge,
+                        challenge.challengeFiles,
+                        buildChallenge
+                      );
+                    } catch (e) {
+                      console.error(
+                        `Error creating test runner for initial contents`
+                      );
+                      console.error(e);
+                      fails = true;
+                    }
+                    if (!fails) {
+                      for (const test of tests) {
+                        try {
+                          await testRunner(test);
+                        } catch {
+                          fails = true;
+                          break;
+                        }
                       }
                     }
-                  }
-                  console.error = oldConsoleError;
-                  assert(
-                    fails,
-                    'Test suite does not fail on the initial contents'
-                  );
-                });
+                    console.error = oldConsoleError;
+                    assert(
+                      fails,
+                      'Test suite does not fail on the initial contents'
+                    );
+                  },
+                  timePerTest * tests.length + 20000
+                );
 
                 let { solutions = [] } = challenge;
 
@@ -497,26 +463,27 @@ seed goes here
                 });
 
                 if (isEmpty(filteredSolutions)) {
-                  it('Check tests. No solutions');
+                  it('Check tests. No solutions', () => {});
                   return;
                 }
 
                 describe('Check tests against solutions', function () {
                   solutions.forEach((solution, index) => {
-                    it(`Solution ${
-                      index + 1
-                    } must pass the tests`, async function () {
-                      this.timeout(timePerTest * tests.length + 2000);
-                      const testRunner = await createTestRunner(
-                        challenge,
-                        solution,
-                        buildChallenge,
-                        solutionFromNext
-                      );
-                      for (const test of tests) {
-                        await testRunner(test);
-                      }
-                    });
+                    it(
+                      `Solution ${index + 1} must pass the tests`,
+                      async function () {
+                        const testRunner = await createTestRunner(
+                          challenge,
+                          solution,
+                          buildChallenge,
+                          solutionFromNext
+                        );
+                        for (const test of tests) {
+                          await testRunner(test);
+                        }
+                      },
+                      timePerTest * tests.length + 2000
+                    );
                   });
                 });
               });
