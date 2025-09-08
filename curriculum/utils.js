@@ -1,4 +1,7 @@
 const path = require('path');
+
+const comparison = require('string-similarity');
+
 const {
   generateSuperBlockList,
   SuperBlocks
@@ -142,9 +145,37 @@ const applyFilters = createFilterPipeline([
   filterByChallengeId
 ]);
 
+function closestMatch(target, xs) {
+  return comparison.findBestMatch(target.toLowerCase(), xs).bestMatch.target;
+}
+
+function closestFilters(target, superblocks) {
+  if (target.superBlock) {
+    const superblockNames = superblocks.map(({ name }) => name);
+    return {
+      ...target,
+      superBlock: closestMatch(target.superBlock, superblockNames)
+    };
+  }
+
+  if (target.block) {
+    const blocks = superblocks.flatMap(({ blocks }) =>
+      blocks.map(({ dashedName }) => dashedName)
+    );
+    return {
+      ...target,
+      block: closestMatch(target.block, blocks)
+    };
+  }
+
+  return target;
+}
+
+exports.closestFilters = closestFilters;
+exports.closestMatch = closestMatch;
+exports.createSuperOrder = createSuperOrder;
 exports.filterByBlock = filterByBlock;
 exports.filterBySuperblock = filterBySuperblock;
 exports.filterByChallengeId = filterByChallengeId;
-exports.createSuperOrder = createSuperOrder;
 exports.getSuperOrder = getSuperOrder;
 exports.applyFilters = applyFilters;

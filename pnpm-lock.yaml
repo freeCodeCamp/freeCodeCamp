@@ -718,6 +718,9 @@ importers:
       '@types/polka':
         specifier: ^0.5.7
         version: 0.5.7
+      '@types/string-similarity':
+        specifier: ^4.0.2
+        version: 4.0.2
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -4807,6 +4810,9 @@ packages:
 
   '@types/store@2.0.5':
     resolution: {integrity: sha512-5NmTKe3GWdOaykzq7no+Ahf6mafJu0oLc9JNhJ3E26+0oFvd6GnksnZQpMXcH526mfG4xDYjFiKzyDL51PzeWQ==}
+
+  '@types/string-similarity@4.0.2':
+    resolution: {integrity: sha512-LkJQ/jsXtCVMK+sKYAmX/8zEq+/46f1PTQw7YtmQwb74jemS1SlNLmARM2Zml9DgdDTWKAtc5L13WorpHPDjDA==}
 
   '@types/superagent@4.1.19':
     resolution: {integrity: sha512-McM1mlc7PBZpCaw0fw/36uFqo0YeA6m8JqoyE4OfqXsZCIg0hPP2xdE6FM7r6fdprDZHlJwDpydUj1R++93hCA==}
@@ -19835,6 +19841,8 @@ snapshots:
   '@types/statuses@2.0.5': {}
 
   '@types/store@2.0.5': {}
+
+  '@types/string-similarity@4.0.2': {}
 
   '@types/superagent@4.1.19':
     dependencies:
