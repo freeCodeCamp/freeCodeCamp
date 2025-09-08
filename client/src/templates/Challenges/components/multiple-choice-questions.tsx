@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
 import { openModal } from '../redux/actions';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
@@ -22,6 +23,7 @@ type MultipleChoiceQuestionsProps = {
     audioIds?: string[] | null;
   };
   openSpeakingModal: () => void;
+  superBlock: SuperBlocks;
 };
 
 function removeParagraphTags(text: string): string {
@@ -36,7 +38,8 @@ function MultipleChoiceQuestions({
   showFeedback,
   showSpeakingButton,
   challengeData,
-  openSpeakingModal
+  openSpeakingModal,
+  superBlock
 }: MultipleChoiceQuestionsProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -173,6 +176,7 @@ function MultipleChoiceQuestions({
         sentence={modalText}
         audioUrl={getAudioUrl(modalAnswerIndex)}
         answerIndex={modalAnswerIndex}
+        superBlock={superBlock}
       />
     </>
   );

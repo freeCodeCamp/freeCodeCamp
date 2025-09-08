@@ -283,6 +283,7 @@ const ShowGeneric = ({
                       challengeId: challengeMeta.id,
                       audioIds: showSpeakingButton ? audioIds : undefined
                     }}
+                    superBlock={superBlock}
                   />
                 </ObserveKeys>
               )}

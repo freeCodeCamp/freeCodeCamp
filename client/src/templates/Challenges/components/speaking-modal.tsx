@@ -9,6 +9,10 @@ import SpeechRecognition, {
 import { closeModal } from '../redux/actions';
 import { isSpeakingModalOpenSelector } from '../redux/selectors';
 import {
+  SuperBlocks,
+  superBlockToSpeechLang
+} from '../../../../../shared/config/curriculum';
+import {
   compareTexts,
   type ComparisonResult,
   type ComparisonWord
@@ -21,13 +25,15 @@ interface SpeakingModalProps {
   sentence: string;
   audioUrl?: string;
   answerIndex?: number;
+  superBlock: SuperBlocks;
 }
 
 const SpeakingModal = ({
   closeSpeakingModal,
   isSpeakingModalOpen,
   sentence,
-  audioUrl
+  audioUrl,
+  superBlock
 }: SpeakingModalProps) => {
   const { t } = useTranslation();
   const [isPlaying, setIsPlaying] = useState(false);
@@ -176,7 +182,7 @@ const SpeakingModal = ({
 
       void SpeechRecognition.startListening({
         continuous: false,
-        language: 'en-US'
+        language: superBlockToSpeechLang[superBlock]
       });
 
       stopListeningTimeoutRef.current = setTimeout(() => {
