@@ -57,12 +57,10 @@ const SpeakingModal = ({
     console.error('Audio playback error:', e);
   }, []);
 
-  // Cleanup function for audio resources
   const cleanupAudioResources = useCallback(() => {
     try {
       if (audioRef.current) {
         audioRef.current.pause();
-        // Remove event listeners to prevent memory leaks
         audioRef.current.removeEventListener('ended', handleAudioEnded);
         audioRef.current.removeEventListener('error', handleAudioError);
         audioRef.current = null;
@@ -81,10 +79,20 @@ const SpeakingModal = ({
       setPreviouslyListening(false);
       resetTranscript();
       void SpeechRecognition.stopListening();
+
+      if (stopListeningTimeoutRef.current) {
+        clearTimeout(stopListeningTimeoutRef.current);
+        stopListeningTimeoutRef.current = null;
+      }
+
       cleanupAudioResources();
     }
 
     return () => {
+      if (stopListeningTimeoutRef.current) {
+        clearTimeout(stopListeningTimeoutRef.current);
+        stopListeningTimeoutRef.current = null;
+      }
       cleanupAudioResources();
     };
   }, [isSpeakingModalOpen, resetTranscript, cleanupAudioResources]);
@@ -139,13 +147,11 @@ const SpeakingModal = ({
     try {
       setIsPlaying(true);
 
-      // Properly cleanup previous audio instance
       cleanupAudioResources();
 
       const audio = new Audio(modifiedAudioUrl);
       audioRef.current = audio;
 
-      // Use named functions for event listeners to enable proper cleanup
       audio.addEventListener('ended', handleAudioEnded);
       audio.addEventListener('error', handleAudioError);
 
@@ -174,9 +180,7 @@ const SpeakingModal = ({
       });
 
       stopListeningTimeoutRef.current = setTimeout(() => {
-        if (listening) {
-          void SpeechRecognition.stopListening();
-        }
+        void SpeechRecognition.stopListening();
         stopListeningTimeoutRef.current = null;
       }, 30000);
     } catch (error) {
