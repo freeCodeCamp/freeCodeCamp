@@ -253,6 +253,68 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
           c => c.superBlock === superBlock
         );
 
+        // daily challenge tests
+        if (superBlock === 'dev-playground') {
+          describe('Daily Coding Challenges', function () {
+            const jsDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-javascript'
+            );
+
+            const pyDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-python'
+            );
+
+            it('should have matching number of JavaScript and Python challenges', function () {
+              assert.equal(
+                jsDailyChallenges.length,
+                pyDailyChallenges.length,
+                `JavaScript challenges: ${jsDailyChallenges.length}, Python challenges: ${pyDailyChallenges.length}`
+              );
+            });
+
+            for (let i = 0; i < jsDailyChallenges.length; i++) {
+              describe(`Challenge ${i + 1} Parity`, function () {
+                const jsChallenge = jsDailyChallenges[i];
+                const pyChallenge = pyDailyChallenges[i];
+
+                it("should have matching ID's", function () {
+                  assert.equal(
+                    jsChallenge.id,
+                    pyChallenge.id,
+                    `Challenge ${i + 1} ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
+                  );
+                });
+
+                it(`should have matching titles`, function () {
+                  assert.equal(
+                    jsChallenge.title,
+                    pyChallenge.title,
+                    `Challenge ${i + 1} title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title}`
+                  );
+                });
+
+                it('should have matching descriptions', function () {
+                  assert.equal(
+                    jsChallenge.description,
+                    pyChallenge.description,
+                    `Challenge ${i + 1} description mismatch`
+                  );
+                });
+
+                it('should have the same number of tests', function () {
+                  const jsTestCount = jsChallenge.tests.length;
+                  const pyTestCount = pyChallenge.tests.length;
+                  assert.equal(
+                    jsTestCount,
+                    pyTestCount,
+                    `Challenge ${i + 1} test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount}`
+                  );
+                });
+              });
+            }
+          });
+        }
+
         const challengeTitles = new ChallengeTitles();
         const mongoIds = new MongoIds();
 
@@ -464,6 +526,251 @@ seed goes here
       });
     });
   });
+
+  // if (lang === 'english') {
+  //   describe('Daily Coding Challenges Parity', function () {
+
+  //     const jsDailyChallenges = challenges.filter(
+  //       challenge =>
+  //         challenge.superBlock === 'dev-playground' &&
+  //         challenge.block === 'daily-coding-challenges-javascript'
+  //     );
+
+  //     const pyDailyChallenges = challenges.filter(
+  //       challenge =>
+  //         challenge.superBlock === 'dev-playground' &&
+  //         challenge.block === 'daily-coding-challenges-python'
+  //     );
+
+  //     function extractChallengeNumber(title) {
+  //       const match = title.match(/Challenge (\d+):/);
+  //       return match ? parseInt(match[1], 10) : null;
+  //     }
+
+  //     function findMatchingChallenge(challenge, otherLangChallenges) {
+  //       const challengeNumber = extractChallengeNumber(challenge.title);
+  //       if (!challengeNumber) return null;
+
+  //       return otherLangChallenges.find(
+  //         other => extractChallengeNumber(other.title) === challengeNumber
+  //       );
+  //     }
+
+  //     it('should have matching number of JavaScript and Python challenges', function () {
+  //       assert.equal(
+  //         jsChallenges.length,
+  //         pyChallenges.length,
+  //         `JavaScript challenges: ${jsChallenges.length}, Python challenges: ${pyChallenges.length}`
+  //       );
+  //     });
+
+  //     jsChallenges.forEach(jsChallenge => {
+  //       const challengeNumber = extractChallengeNumber(jsChallenge.title);
+
+  //       if (!challengeNumber) {
+  //         it(`JavaScript challenge "${jsChallenge.title}" should have valid title format`, function () {
+  //           assert.fail(
+  //             `Challenge title does not match expected format "Challenge X: Title"`
+  //           );
+  //         });
+  //         return;
+  //       }
+
+  //       describe(`Challenge ${challengeNumber} Parity`, function () {
+  //         let pyChallenge;
+
+  //         before(function () {
+  //           pyChallenge = findMatchingChallenge(jsChallenge, pyChallenges);
+  //         });
+
+  //         it('should have matching Python challenge', function () {
+  //           assert.isNotNull(
+  //             pyChallenge,
+  //             `No matching Python challenge found for JavaScript Challenge ${challengeNumber}`
+  //           );
+  //         });
+
+  //         it('should have matching titles', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           const jsTitle = jsChallenge.title.replace(
+  //             'JavaScript Challenge',
+  //             'Challenge'
+  //           );
+  //           const pyTitle = pyChallenge.title.replace(
+  //             'Python Challenge',
+  //             'Challenge'
+  //           );
+
+  //           assert.equal(
+  //             jsTitle,
+  //             pyTitle,
+  //             `Title mismatch for Challenge ${challengeNumber}`
+  //           );
+  //         });
+
+  //         it('should have matching descriptions', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           assert.equal(
+  //             jsChallenge.description,
+  //             pyChallenge.description,
+  //             `Description mismatch for Challenge ${challengeNumber}`
+  //           );
+  //         });
+
+  //         it('should have matching instructions', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           // Instructions might not exist for daily challenges, so check if both have them
+  //           if (jsChallenge.instructions && pyChallenge.instructions) {
+  //             assert.equal(
+  //               jsChallenge.instructions,
+  //               pyChallenge.instructions,
+  //               `Instructions mismatch for Challenge ${challengeNumber}`
+  //             );
+  //           } else {
+  //             assert.equal(
+  //               !!jsChallenge.instructions,
+  //               !!pyChallenge.instructions,
+  //               `Instructions presence mismatch for Challenge ${challengeNumber}`
+  //             );
+  //           }
+  //         });
+
+  //         it('should have same number of tests', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           const jsTestCount = jsChallenge.tests
+  //             ? jsChallenge.tests.length
+  //             : 0;
+  //           const pyTestCount = pyChallenge.tests
+  //             ? pyChallenge.tests.length
+  //             : 0;
+
+  //           assert.equal(
+  //             jsTestCount,
+  //             pyTestCount,
+  //             `Test count mismatch for Challenge ${challengeNumber}: JS=${jsTestCount}, Python=${pyTestCount}`
+  //           );
+  //         });
+
+  //         it('should have matching challenge types', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           // JavaScript challenges should be type 28, Python should be type 29
+  //           assert.equal(
+  //             jsChallenge.challengeType,
+  //             28,
+  //             'JavaScript challenge should be type 28'
+  //           );
+  //           assert.equal(
+  //             pyChallenge.challengeType,
+  //             29,
+  //             'Python challenge should be type 29'
+  //           );
+  //         });
+
+  //         it('should have matching dashedName pattern', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           const expectedJsDashedName = `javascript-challenge-${challengeNumber}`;
+  //           const expectedPyDashedName = `python-challenge-${challengeNumber}`;
+
+  //           assert.equal(
+  //             jsChallenge.dashedName,
+  //             expectedJsDashedName,
+  //             `JavaScript dashedName mismatch for Challenge ${challengeNumber}`
+  //           );
+
+  //           assert.equal(
+  //             pyChallenge.dashedName,
+  //             expectedPyDashedName,
+  //             `Python dashedName mismatch for Challenge ${challengeNumber}`
+  //           );
+  //         });
+
+  //         it('should have different challenge IDs', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           assert.notEqual(
+  //             jsChallenge.id,
+  //             pyChallenge.id,
+  //             `Challenge IDs should be different for Challenge ${challengeNumber}`
+  //           );
+  //         });
+
+  //         it('should have valid seed code structure', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           // Check that both have seed files
+  //           const jsHasSeed = jsChallenge.files && jsChallenge.files.length > 0;
+  //           const pyHasSeed = pyChallenge.files && pyChallenge.files.length > 0;
+
+  //           assert.isTrue(
+  //             jsHasSeed,
+  //             `JavaScript Challenge ${challengeNumber} should have seed files`
+  //           );
+  //           assert.isTrue(
+  //             pyHasSeed,
+  //             `Python Challenge ${challengeNumber} should have seed files`
+  //           );
+
+  //           if (jsHasSeed && pyHasSeed) {
+  //             // Both should have exactly one seed file
+  //             assert.equal(
+  //               jsChallenge.files.length,
+  //               1,
+  //               `JavaScript Challenge ${challengeNumber} should have exactly one seed file`
+  //             );
+  //             assert.equal(
+  //               pyChallenge.files.length,
+  //               1,
+  //               `Python Challenge ${challengeNumber} should have exactly one seed file`
+  //             );
+  //           }
+  //         });
+
+  //         it('should have valid solution structure', function () {
+  //           if (!pyChallenge) this.skip();
+
+  //           const jsHasSolution =
+  //             jsChallenge.solutions && jsChallenge.solutions.length > 0;
+  //           const pyHasSolution =
+  //             pyChallenge.solutions && pyChallenge.solutions.length > 0;
+
+  //           assert.equal(
+  //             jsHasSolution,
+  //             pyHasSolution,
+  //             `Solution presence mismatch for Challenge ${challengeNumber}`
+  //           );
+
+  //           if (jsHasSolution && pyHasSolution) {
+  //             assert.equal(
+  //               jsChallenge.solutions.length,
+  //               pyChallenge.solutions.length,
+  //               `Solution count mismatch for Challenge ${challengeNumber}`
+  //             );
+  //           }
+  //         });
+  //       });
+  //     });
+
+  //     pyChallenges.forEach(pyChallenge => {
+  //       const challengeNumber = extractChallengeNumber(pyChallenge.title);
+
+  //       if (challengeNumber) {
+  //         it(`Python Challenge ${challengeNumber} should have matching JavaScript challenge`, function () {
+  //           const jsMatch = findMatchingChallenge(pyChallenge, jsChallenges);
+  //           assert.isNotNull(
+  //             jsMatch,
+  //             `No matching JavaScript challenge found for Python Challenge ${challengeNumber}`
+  //           );
+  //         });
+  //       }
+  //     });
+  //   });
+  // }
 }
 
 async function createTestRunner(
