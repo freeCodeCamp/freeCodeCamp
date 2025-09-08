@@ -138,8 +138,7 @@ const stripeProductIds = {
       500: 'prod_Cc9bIxB2NvjpLy',
       1000: 'prod_BuiSxWk7jGSFlJ',
       2000: 'prod_IElpZVK7kOn6Fe',
-      // Placeholder stripe product id for $25 variant (A/B test)
-      2500: 'prod_PLACEHOLDER_25_PROD',
+      2500: 'prod_JCakZSxh12ZaDF',
       4000: 'prod_IElq1foW39g3Cx'
     }
   },
@@ -148,8 +147,7 @@ const stripeProductIds = {
       500: 'prod_GD1GGbJsqQaupl',
       1000: 'prod_GD1IzNEXfSCGgy',
       2000: 'prod_IEkNp8M03xvsuB',
-      // Placeholder stripe product id for $25 variant (A/B test)
-      2500: 'prod_PLACEHOLDER_25_STAGING',
+      2500: 'prod_T12UtcRPvzzVN1',
       4000: 'prod_IEkPebxS63mVbs'
     }
   }
