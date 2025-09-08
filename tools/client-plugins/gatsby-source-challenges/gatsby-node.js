@@ -34,34 +34,12 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  // On file change, replace only the changed challenge. The key is ensuring
-  // onSourceChange returns a challenge with complete metadata.
-  watcher.on('change', filePath =>
-    /\.md?$/.test(filePath)
-      ? onSourceChange(filePath)
-          .then(challenges => {
-            reporter.info(
-              `File changed at ${filePath}, replacing challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
-            );
-            challenges.forEach(challenge =>
-              createVisibleChallenge(challenge, { isReloading: true })
-            );
-          })
-          .catch(e =>
-            reporter.error(
-              `fcc-replace-challenge\n  attempting to replace ${filePath}\n\n  ${e.message}\n  ${e.stack}\n`
-            )
-          )
-      : null
-  );
-
-  // On file add, replace just the new challenge.
-  watcher.on('add', filePath => {
-    if (!/\.md?$/.test(filePath)) return;
-    onSourceChange(filePath)
+  function handleChallengeUpdate(filePath, action = 'changed') {
+    return onSourceChange(filePath)
       .then(challenges => {
+        const actionText = action === 'added' ? 'creating' : 'replacing';
         reporter.info(
-          `Challenge file added: ${filePath}, creating challenges with ids ${challenges.map(({ id }) => id).join(', ')}`
+          `Challenge file ${action}: ${filePath}, ${actionText} challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
         );
         challenges.forEach(challenge =>
           createVisibleChallenge(challenge, { isReloading: true })
@@ -69,9 +47,21 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       })
       .catch(e =>
         reporter.error(
-          `fcc-replace-challenge\nattempting to replace ${filePath}\n\n${e.message}\n`
+          `fcc-replace-challenge\nattempting to replace ${filePath}\n\n${e.message}\n${e.stack ? `  ${e.stack}` : ''}`
         )
       );
+  }
+
+  // On file change, replace only the changed challenge. The key is ensuring
+  // onSourceChange returns a challenge with complete metadata.
+  watcher.on('change', filePath =>
+    /\.md?$/.test(filePath) ? handleChallengeUpdate(filePath, 'changed') : null
+  );
+
+  // On file add, replace just the new challenge.
+  watcher.on('add', filePath => {
+    if (!/\.md?$/.test(filePath)) return;
+    handleChallengeUpdate(filePath, 'added');
   });
 
   function sourceAndCreateNodes() {
