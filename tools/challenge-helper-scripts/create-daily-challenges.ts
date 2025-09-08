@@ -58,23 +58,32 @@ for (let i = 0; i < numberOfChallengesToCreate; i++) {
     );
   }
 
+  const challengeId = new ObjectID();
   const newChallengeNumber = numberOfJsChallenges + 1;
 
-  createDailyJsChallenge({ challengeNumber: newChallengeNumber, meta: jsMeta });
-  createDailyPyChallenge({ challengeNumber: newChallengeNumber, meta: pyMeta });
+  createDailyJsChallenge({
+    challengeId,
+    challengeNumber: newChallengeNumber,
+    meta: jsMeta
+  });
+  createDailyPyChallenge({
+    challengeId,
+    challengeNumber: newChallengeNumber,
+    meta: pyMeta
+  });
 }
 
 interface CreateDailyChallengeOptions {
+  challengeId: ObjectID;
   challengeNumber: number;
   meta: Meta;
 }
 
 function createDailyJsChallenge({
+  challengeId,
   challengeNumber,
   meta
 }: CreateDailyChallengeOptions) {
-  const challengeId = new ObjectID();
-
   const newMeta = {
     ...meta,
     challengeOrder: [
@@ -104,11 +113,10 @@ function createDailyJsChallenge({
 }
 
 function createDailyPyChallenge({
+  challengeId,
   challengeNumber,
   meta
 }: CreateDailyChallengeOptions) {
-  const challengeId = new ObjectID();
-
   const newMeta = {
     ...meta,
     challengeOrder: [
