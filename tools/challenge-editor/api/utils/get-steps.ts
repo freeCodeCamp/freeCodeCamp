@@ -1,10 +1,10 @@
-import { readdir, readFile } from 'fs/promises';
+import { readFile } from 'fs/promises';
 import { join } from 'path';
 
 import matter from 'gray-matter';
 
 import { PartialMeta } from '../interfaces/partial-meta';
-import { CHALLENGE_DIR, META_DIR } from '../configs/paths';
+import { BLOCK_META_DIR, CHALLENGE_DIR } from '../configs/paths';
 
 const getFileOrder = (id: string, meta: PartialMeta) => {
   return meta.challengeOrder.findIndex(({ id: f }) => f === id);
@@ -17,16 +17,25 @@ type Step = {
 };
 
 export const getSteps = async (sup: string, block: string): Promise<Step[]> => {
-  const filePath = join(CHALLENGE_DIR, sup, block);
+  //const superMetaPath = join(SUPERBLOCK_META_DIR, sup + ".json");
 
-  const metaPath = join(META_DIR, block, 'meta.json');
+  //const superMetaData = JSON.parse(
+  //  await readFile(superMetaPath, 'utf8')
+  //) as Partial;
 
-  const metaData = JSON.parse(await readFile(metaPath, 'utf8')) as PartialMeta;
+  const stepDirectory = join(CHALLENGE_DIR, block);
 
-  const stepFilenames = await readdir(filePath);
+  const blockFolderPath = join(BLOCK_META_DIR, block + '.json');
+
+  const blockMetaData = JSON.parse(
+    await readFile(blockFolderPath, { encoding: 'utf8' })
+  ) as PartialMeta;
+
+  const stepFileNames = blockMetaData.challengeOrder.map(x => x.id + '.md');
+
   const stepData = await Promise.all(
-    stepFilenames.map(async filename => {
-      const stepPath = join(filePath, filename);
+    stepFileNames.map(async filename => {
+      const stepPath = join(stepDirectory, filename);
       const step = await readFile(stepPath, 'utf8');
       const frontMatter = matter(step);
 
@@ -39,6 +48,7 @@ export const getSteps = async (sup: string, block: string): Promise<Step[]> => {
   );
 
   return stepData.sort(
-    (a, b) => getFileOrder(a.id, metaData) - getFileOrder(b.id, metaData)
+    (a, b) =>
+      getFileOrder(a.id, blockMetaData) - getFileOrder(b.id, blockMetaData)
   );
 };
