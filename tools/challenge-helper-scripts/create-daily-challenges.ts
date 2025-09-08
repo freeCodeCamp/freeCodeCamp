@@ -91,7 +91,7 @@ function createDailyJsChallenge({
       {
         // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
-        title: `JavaScript Challenge ${challengeNumber}`
+        title: `Challenge ${challengeNumber}: Placeholder`
       }
     ]
   };
@@ -124,7 +124,7 @@ function createDailyPyChallenge({
       {
         // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
-        title: `Python Challenge ${challengeNumber}`
+        title: `Challenge ${challengeNumber}: Placeholder`
       }
     ]
   };
