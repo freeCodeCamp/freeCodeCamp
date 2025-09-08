@@ -11,7 +11,7 @@ const {
 } = require('./build-superblock');
 
 const { buildCertification } = require('./build-certification');
-const { applyFilters } = require('./utils');
+const { applyFilters, closestFilters } = require('./utils');
 const {
   getContentDir,
   getLanguageConfig,
@@ -280,7 +280,9 @@ async function buildCurriculum(lang, filters) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
-  const fullSuperblockList = applyFilters(superblockList, filters);
+
+  const refinedFilters = closestFilters(filters, superblockList);
+  const fullSuperblockList = applyFilters(superblockList, refinedFilters);
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
