@@ -42,7 +42,9 @@ const ChapterLanding = () => {
       <ul>
         {items.map(chapter => (
           <li key={chapter.name}>
-            <Link to={`/${params.superblock}/chapters/${chapter.path}`}>
+            <Link
+              to={`/${params.superblock}/chapters/${params.chapter}/${chapter.path}`}
+            >
               {chapter.name}
             </Link>
           </li>
