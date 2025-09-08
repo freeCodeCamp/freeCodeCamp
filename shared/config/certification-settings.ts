@@ -276,6 +276,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
+  [SuperBlocks.A1Spanish]: null,
   [SuperBlocks.A2Spanish]: Certification.A2Spanish,
   [SuperBlocks.A2Chinese]: Certification.A2Chinese,
   [SuperBlocks.A1Chinese]: Certification.A1Chinese,
@@ -286,7 +287,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.RosettaCode]: null,
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
-  [SuperBlocks.DevPlayground]: null
+  [SuperBlocks.DevPlayground]: null,
+  [SuperBlocks.FullStackOpen]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];

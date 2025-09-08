@@ -194,7 +194,7 @@ model ExamEnvironmentExam {
 /// A copy of `ExamEnvironmentExam` used as a staging collection for updates to the curriculum.
 ///
 /// This collection schema must be kept in sync with `ExamEnvironmentExam`.
-model ExamEnvironmentTempExam {
+model ExamCreatorExam {
   /// Globally unique exam id
   id            String                       @id @default(auto()) @map("_id") @db.ObjectId
   /// All questions for a given exam
@@ -205,6 +205,9 @@ model ExamEnvironmentTempExam {
   prerequisites String[]                     @db.ObjectId
   /// If `deprecated`, the exam should no longer be considered for users
   deprecated    Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                          @default(1)
 }
 
 /// A grouping of one or more questions of a given type
