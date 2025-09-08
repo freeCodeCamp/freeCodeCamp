@@ -1,8 +1,7 @@
 import path from 'node:path';
-import fs from 'node:fs';
-import http from 'node:http';
-import url from 'node:url';
+import net from 'node:net';
 import { createRequire } from 'node:module';
+import liveServer from '@compodoc/live-server';
 import { describe, it, beforeAll, afterAll } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
@@ -65,66 +64,39 @@ async function newPageContext(browser, baseUrl) {
   return page;
 }
 
-// Tiny static server with dynamic port to allow parallel runs
-function startStaticServer(options = {}) {
-  const host = options.host ?? '127.0.0.1';
-  const port = options.port ?? 0; // 0 => random
-  const root = options.root ?? path.resolve(__dirname, 'stubs');
-  const mounts = options.mount ?? [
-    ['/dist', path.join(clientPath, `static/js/test-runner/${helperVersion}`)],
-    ['/js', path.join(clientPath, 'static/js')]
-  ];
-
-  const getMountPath = reqPath => {
-    for (const [prefix, dir] of mounts) {
-      if (reqPath.startsWith(prefix))
-        return path.join(dir, reqPath.slice(prefix.length));
-    }
-    return path.join(root, reqPath);
-  };
-
-  const server = http.createServer((req, res) => {
-    try {
-      const parsed = url.parse(req.url || '/');
-      let reqPath = parsed.pathname || '/';
-      if (reqPath === '/') reqPath = '/index.html';
-      const filePath = getMountPath(reqPath);
-      if (
-        !filePath.startsWith(root) &&
-        !mounts.some(([, d]) => filePath.startsWith(d))
-      ) {
-        res.statusCode = 403;
-        res.end('Forbidden');
-        return;
-      }
-      fs.readFile(filePath, (err, data) => {
-        if (err) {
-          res.statusCode = 404;
-          res.end('Not Found');
-          return;
-        }
-        res.statusCode = 200;
-        res.end(data);
-      });
-    } catch {
-      res.statusCode = 500;
-      res.end('Internal Server Error');
-    }
-  });
-
-  return new Promise(resolve => {
-    server.listen(port, host, () => {
-      const address = server.address();
-      const actualPort =
-        typeof address === 'object' && address ? address.port : port;
-      resolve({
-        server,
-        host,
-        port: actualPort,
-        baseUrl: `http://${host}:${actualPort}`
-      });
+function getFreePort(host = '127.0.0.1') {
+  return new Promise((resolve, reject) => {
+    const srv = net.createServer();
+    srv.listen(0, host, () => {
+      const addr = srv.address();
+      const port = typeof addr === 'object' && addr ? addr.port : 0;
+      srv.close(() => resolve(port));
     });
+    srv.on('error', reject);
   });
+}
+
+async function startLiveServer() {
+  const host = '127.0.0.1';
+  const port = await getFreePort(host);
+  liveServer.start({
+    host,
+    port: String(port),
+    root: path.resolve(__dirname, 'stubs'),
+    mount: [
+      [
+        '/dist',
+        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
+      ],
+      ['/js', path.join(clientPath, 'static/js')]
+    ],
+    open: false,
+    logLevel: 0
+  });
+  return {
+    baseUrl: `http://${host}:${port}`,
+    shutdown: () => liveServer.shutdown()
+  };
 }
 
 export async function defineTestsForSuperBlock({ superBlock }) {
@@ -154,12 +126,12 @@ export async function defineTestsForSuperBlock({ superBlock }) {
 
   function cleanup() {
     if (browser) browser.close();
-    if (serverRef?.server) serverRef.server.close();
+    serverRef?.shutdown?.();
   }
 
   describe('Check challenges', () => {
     beforeAll(async () => {
-      serverRef = await startStaticServer({});
+      serverRef = await startLiveServer();
       browser = await puppeteer.launch({
         args: [
           '--no-sandbox',
@@ -172,15 +144,15 @@ export async function defineTestsForSuperBlock({ superBlock }) {
         const contextPage = await newPageContext(browser, serverRef.baseUrl);
         global.Worker = createPseudoWorker(contextPage);
         page = await newPageContext(browser, serverRef.baseUrl);
-        await page.setViewport({ width: 300, height: 150 });
       } catch (e) {
         if (browser) await browser.close().catch(() => {});
-        if (serverRef?.server) serverRef.server.close();
+        serverRef?.shutdown?.();
         throw e;
       }
     });
     afterAll(() => cleanup());
-    populateTestsForLang(challengeData, page);
+    // Pass a getter so tests resolve the active page at runtime (after beforeAll)
+    populateTestsForLang(challengeData, () => page);
   });
 }
 
@@ -210,7 +182,10 @@ async function getChallenges(lang, filters) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta, superBlocks }, page) {
+function populateTestsForLang(
+  { lang, challenges, meta, superBlocks },
+  getPage
+) {
   const validateChallenge = challengeSchemaValidator();
 
   superBlocks.forEach(superBlock => {
@@ -366,7 +341,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }, page) {
                     let testRunner;
                     try {
                       testRunner = await createTestRunner(
-                        page,
+                        getPage,
                         challenge,
                         challenge.challengeFiles,
                         buildChallenge
@@ -476,7 +451,7 @@ seed goes here
                       `Solution ${index + 1} must pass the tests`,
                       async function () {
                         const testRunner = await createTestRunner(
-                          page,
+                          getPage,
                           challenge,
                           solution,
                           buildChallenge,
@@ -500,7 +475,7 @@ seed goes here
 }
 
 async function createTestRunner(
-  page,
+  getPage,
   challenge,
   solutionFiles,
   buildChallenge,
@@ -518,6 +493,9 @@ async function createTestRunner(
     },
     { usesTestRunner: true }
   );
+
+  const page = getPage();
+  if (!page) throw new Error('Browser page is not ready yet');
 
   const evaluator = await getContextEvaluator(page, {
     // passing in challengeId so it's easier to debug timeouts
@@ -591,7 +569,7 @@ ${testString}
             timeout
           )
         ),
-        await page.evaluate(
+        page.evaluate(
           async (testString, type) => {
             return await window.FCCTestRunner.getRunner(type).runTest(
               testString
@@ -609,6 +587,12 @@ async function initializeTestRunner(
   { build, sources, type, hooks, loadEnzyme }
 ) {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
+
+  // Ensure FCCTestRunner is available before creating it
+  await page.waitForFunction(
+    'window.FCCTestRunner && window.FCCTestRunner.createTestRunner',
+    { timeout: 15000 }
+  );
 
   await page.evaluate(
     async (sources, source, type, hooks, loadEnzyme) => {

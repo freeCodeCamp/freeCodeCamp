@@ -55,7 +55,7 @@ async function main() {
   const pairs = [];
   for (const superblockFilename of superblockFilenames) {
     const superBlockName = filenameToName[superblockFilename];
-    if (superBlockName != 'full-stack-developer') continue;
+    if (!superBlockName) continue;
     if (IGNORE_SUPERBLOCKS.has(superBlockName)) continue;
     const superblockStructure = getSuperblockStructure(superblockFilename);
     const blocks = superblockStructure.blocks || [];
