@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createSelector } from 'reselect';
 import { Container } from '@freecodecamp/ui';
 import EmailOptions from '../email-options';
 import { updateMyQuincyEmail } from '../../redux/settings/actions';
