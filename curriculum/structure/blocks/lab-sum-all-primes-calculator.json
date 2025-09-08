@@ -1,0 +1,16 @@
+{
+  "name": "Design a Sum All Primes Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-sum-all-primes-calculator",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "68bea1f97a89e21f6866fad3",
+      "title": "Design a Sum All Primes Calculator"
+    }
+  ]
+}
