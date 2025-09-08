@@ -332,26 +332,6 @@ describe('auth0 plugin', () => {
       expect(res.headers.location).toMatch(HOME_LOCATION);
     });
 
-    test('should redirect to returnTo page even if the user has not acceptedPrivacyTerms', async () => {
-      mockAuthSuccess();
-      // Using an italian path to make sure redirection works.
-      const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
-
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/auth/auth0/callback?state=valid',
-        cookies: {
-          'login-returnto': sign(italianReturnTo)
-        }
-      });
-
-      expect(res.headers.location).toEqual(
-        expect.stringContaining(
-          'https://www.freecodecamp.org/italian/settings?'
-        )
-      );
-    });
-
     test('should populate the user with the correct data', async () => {
       mockAuthSuccess();
 

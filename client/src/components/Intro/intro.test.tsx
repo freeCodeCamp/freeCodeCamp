@@ -50,7 +50,7 @@ const loggedInProps = {
   slug: '/',
   username: 'DevelopmentUser',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn(),
+  onLearnDonationAlertClick: () => jest.fn()
 };
 
 const loggedOutProps = {
