@@ -18,9 +18,12 @@ function RdbStep1Instructions({
 
   return (
     <>
-      <ChallengeHeading heading={t('learn.step-1')} isCompleted={isCompleted} />
+      <ChallengeHeading
+        heading={t($ => $.learn['step-1'])}
+        isCompleted={isCompleted}
+      />
       <Spacer size='m' />
-      <div className='ca-description'>{t('learn.runs-in-vm')}</div>
+      <div className='ca-description'>{t($ => $.learn['runs-in-vm'])}</div>
       <Spacer size='m' />
       <PrismFormatted text={instructions} />
     </>

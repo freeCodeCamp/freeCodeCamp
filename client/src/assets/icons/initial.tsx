@@ -15,7 +15,7 @@ function Initial(
       {...props}
     >
       <g>
-        <title>{t('icons.initial')}</title>
+        <title>{t($ => $.icons.initial)}</title>
         <circle
           cx='100'
           cy='99'

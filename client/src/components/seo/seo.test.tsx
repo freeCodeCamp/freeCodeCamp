@@ -2,8 +2,19 @@ import React from 'react';
 import * as Gatsby from 'gatsby';
 import { render } from '@testing-library/react';
 import Helmet from 'react-helmet';
+import i18next from 'i18next';
 
 import SEO from './index';
+
+type Selector = string | (($: unknown) => string);
+
+function mockKeyFromSelector($: Selector): string {
+  return typeof $ === 'function'
+    ? (
+        i18next as typeof i18next & { keyFromSelector: ($: unknown) => string }
+      ).keyFromSelector($)
+    : $;
+}
 
 const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`);
 const mockUseStaticQuery = {
@@ -18,8 +29,8 @@ const mockUseStaticQuery = {
 jest.mock('react-i18next', () => ({
   useTranslation: () => {
     return {
-      t: (str: string) => ({
-        title: str,
+      t: ($: Selector) => ({
+        title: mockKeyFromSelector($),
         intro: ['Some description']
       })
     };

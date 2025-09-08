@@ -267,7 +267,9 @@ const createFrame =
     frame.srcdoc = createContent(id, frameContext);
     frame.id = id;
     if (typeof title === 'string') {
-      frame.title = i18next.t('misc.iframe-preview', { title });
+      frame.title = i18next.t($ => $.misc['iframe-preview'], {
+        title: title
+      });
       frame.lang = 'en';
     }
     return {

@@ -156,21 +156,27 @@ function createQuestionEpic(action$, state$, { window }) {
         projectFormValuesSelector(state)
       );
 
-      const browserInfoHeading = i18next.t('forum-help.browser-info');
-      const userAgentHeading = i18next.t('forum-help.user-agent', {
-        userAgent
+      const browserInfoHeading = i18next.t(
+        $ => $['forum-help']['browser-info']
+      );
+      const userAgentHeading = i18next.t($ => $['forum-help']['user-agent'], {
+        userAgent: userAgent
       });
-      const challengeHeading = i18next.t('forum-help.challenge');
-      const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
+      const challengeHeading = i18next.t($ => $['forum-help'].challenge);
+      const blockTitle = i18next.t($ => $[superBlock].blocks[block].title, {
+        ns: 'intro'
+      });
       const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
       const camperCodeHeading = nonCodeChallenges.includes(challengeType)
         ? ''
-        : '### ' + i18next.t('forum-help.camper-code') + '\n\n';
+        : '### ' + i18next.t($ => $['forum-help']['camper-code']) + '\n\n';
 
-      const whatsHappeningHeading = i18next.t('forum-help.whats-happening');
+      const whatsHappeningHeading = i18next.t(
+        $ => $['forum-help']['whats-happening']
+      );
       const projectOrCodeHeading = projectFormValues.length
-        ? `###${i18next.t('forum-help.camper-project')}\n\n`
+        ? `###${i18next.t($ => $['forum-help']['camper-project'])}\n\n`
         : camperCodeHeading;
 
       const fullCode = filesToMarkdown(challengeFiles);
@@ -185,19 +191,19 @@ function createQuestionEpic(action$, state$, { window }) {
       const textMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${fullCodeOrLinks}${endingText}`;
       const textMessageOnlyEditableRegion = `### ${whatsHappeningHeading}\n${describe}\n\n${projectOrCodeHeading}${editableRegionOrLinks}${endingText}`;
 
-      const warning = i18next.t('forum-help.warning');
-      const tooLongOne = i18next.t('forum-help.too-long-one');
-      const tooLongTwo = i18next.t('forum-help.too-long-two');
-      const tooLongThree = i18next.t('forum-help.too-long-three');
-      const addCodeOne = i18next.t('forum-help.add-code-one');
-      const addCodeTwo = i18next.t('forum-help.add-code-two');
-      const addCodeThree = i18next.t('forum-help.add-code-three');
+      const warning = i18next.t($ => $['forum-help'].warning);
+      const tooLongOne = i18next.t($ => $['forum-help']['too-long-one']);
+      const tooLongTwo = i18next.t($ => $['forum-help']['too-long-two']);
+      const tooLongThree = i18next.t($ => $['forum-help']['too-long-three']);
+      const addCodeOne = i18next.t($ => $['forum-help']['add-code-one']);
+      const addCodeTwo = i18next.t($ => $['forum-help']['add-code-two']);
+      const addCodeThree = i18next.t($ => $['forum-help']['add-code-three']);
       const altTextMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
-        `${i18next.t(
-          `intro:${superBlock}.blocks.${block}.title`
-        )} - ${challengeTitle}`
+        `${i18next.t($ => $[superBlock].blocks[block].title, {
+          ns: 'intro'
+        })} - ${challengeTitle}`
       );
 
       const category = window.encodeURIComponent(

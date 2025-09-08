@@ -11,7 +11,7 @@ const parseDate = (joinDate: string, t: TFunction): string => {
     year: 'numeric',
     month: 'long'
   });
-  return t('profile.joined', { date: date });
+  return t($ => $.profile.joined, { date: date });
 };
 
 export { parseDate };

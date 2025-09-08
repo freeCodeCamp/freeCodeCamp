@@ -27,9 +27,9 @@ function OfflineWarning({
     if (showWarning) setShowWarning(false);
   } else {
     message = !isOnline ? (
-      t('misc.offline')
+      t($ => $.misc.offline)
     ) : (
-      <Trans i18nKey='misc.server-offline'>
+      <Trans i18nKey={$ => $.misc['server-offline']}>
         <a href={'mailto:support@freecodecamp.org'}>placeholder</a>
       </Trans>
     );

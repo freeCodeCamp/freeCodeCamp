@@ -22,7 +22,7 @@ function BlockSaveButton({
       type='submit'
       {...restProps}
     >
-      {children || t('buttons.save')}
+      {children || t($ => $.buttons.save)}
     </Button>
   );
 }

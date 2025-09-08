@@ -49,13 +49,13 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
   return (
     <Modal size='large' variant='danger' open={show} onClose={handleModalHide}>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-        {t('signout.heading')}
+        {t($ => $.signout.heading)}
       </Modal.Header>
       <Modal.Body>
         <p>
-          <span style={{ fontWeight: 'bold' }}>{t('signout.p1')}</span>
+          <span style={{ fontWeight: 'bold' }}>{t($ => $.signout.p1)}</span>
         </p>
-        <p>{t('signout.p2')}</p>
+        <p>{t($ => $.signout.p2)}</p>
         <hr />
         <Button
           block={true}
@@ -63,7 +63,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
           data-test-label='cancel-signout'
           onClick={handleModalHide}
         >
-          {t('signout.nevermind')}
+          {t($ => $.signout.nevermind)}
         </Button>
         <Spacer size='xs' />
         <Button
@@ -72,7 +72,7 @@ function SignoutModal(props: SignoutModalProps): JSX.Element {
           data-test-label='signout'
           onClick={handleSignout}
         >
-          {t('signout.certain')}
+          {t($ => $.signout.certain)}
         </Button>
       </Modal.Body>
     </Modal>

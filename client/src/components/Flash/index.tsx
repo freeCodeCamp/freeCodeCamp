@@ -34,10 +34,11 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
           className='flash-message'
           data-playwright-test-label='flash-message'
         >
-          {t(message, variables)}
+          {/* TODO: convert to selector */}
+          {t(message as never, variables)}
           <CloseButton
             onClick={handleClose}
-            label={t('buttons.close')}
+            label={t($ => $.buttons.close)}
             className='close'
           />
         </Alert>

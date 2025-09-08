@@ -17,8 +17,8 @@ function DefaultAvatar(
       aria-hidden='true'
       {...props}
     >
-      <title>{t('icons.avatar')}</title>
-      <desc>{t('icons.avatar-2')}</desc>
+      <title>{t($ => $.icons.avatar)}</title>
+      <desc>{t($ => $.icons['avatar-2'])}</desc>
       <g fill='none' fillRule='evenodd'>
         <g id='g'>
           <rect fill='#D0D0D5' height='500' width='500' />

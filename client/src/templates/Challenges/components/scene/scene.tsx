@@ -396,7 +396,6 @@ export function Scene({
           </>
         )}
       </div>
-
       <div className='scene-controls'>
         <button
           className='scene-btn scene-play-btn'
@@ -404,12 +403,12 @@ export function Scene({
         >
           {isPlaying ? (
             <>
-              <span className='sr-only'>{t('buttons.pause')}</span>
+              <span className='sr-only'>{t($ => $.buttons.pause)}</span>
               <FontAwesomeIcon icon={faCirclePause} size='3x' />
             </>
           ) : (
             <>
-              <span className='sr-only'>{t('buttons.play')}</span>
+              <span className='sr-only'>{t($ => $.buttons.play)}</span>
               <FontAwesomeIcon icon={faCirclePlay} size='3x' />
             </>
           )}
@@ -420,7 +419,7 @@ export function Scene({
         ) : (
           <button
             className='scene-btn scene-a11y-btn'
-            aria-label={t('buttons.closed-caption')}
+            aria-label={t($ => $.buttons['closed-caption'])}
             aria-pressed={accessibilityOn}
             onClick={() => setAccessibilityOn(!accessibilityOn)}
           >
