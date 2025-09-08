@@ -276,6 +276,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
+  [SuperBlocks.A1Spanish]: null,
   [SuperBlocks.A2Spanish]: Certification.A2Spanish,
   [SuperBlocks.A2Chinese]: Certification.A2Chinese,
   [SuperBlocks.A1Chinese]: Certification.A1Chinese,
