@@ -50,6 +50,12 @@ function MultipleChoiceQuestions({
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
 
+  const handleSpeakingButtonClick = (answer: string, answerIndex: number) => {
+    setModalText(stripCodeTags(removeParagraphTags(answer)));
+    setModalAnswerIndex(answerIndex);
+    openSpeakingModal();
+  };
+
   // Construct audio URL from audioId
   const constructAudioUrl = (audioId?: string): string | undefined => {
     if (audioId) {
@@ -124,18 +130,18 @@ function MultipleChoiceQuestions({
                         noAria
                       />
                     </label>
+
+                    {/* This button is positioned after each radio button, which may be confusing for screen reader users.
+                        We hide it from screen readers and provide a separate set of screen reader accessible buttons outside of the fieldset.
+                    */}
                     {showSpeakingButton && (
                       <Button
                         size='medium'
-                        onClick={() => {
-                          setModalText(
-                            stripCodeTags(removeParagraphTags(answer))
-                          );
-                          setModalAnswerIndex(answerIndex);
-                          openSpeakingModal();
-                        }}
+                        onClick={() =>
+                          handleSpeakingButtonClick(answer, answerIndex)
+                        }
                         className='mcq-speaking-button'
-                        aria-labelledby={labelId}
+                        aria-hidden='true'
                       >
                         Speaking
                       </Button>
@@ -171,6 +177,30 @@ function MultipleChoiceQuestions({
           <Spacer size='m' />
         </fieldset>
       ))}
+
+      {/* Screen reader accessible speaking buttons. 
+          Keep the functionality of these in sync with the ones inside the fieldset. */}
+      {showSpeakingButton && (
+        <div className='sr-only'>
+          {questions.map((question, questionIndex) =>
+            question.answers.map(({ answer }, answerIndex) => {
+              const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
+
+              return (
+                <Button
+                  key={`sr-speaking-${questionIndex}-${answerIndex}`}
+                  size='medium'
+                  onClick={() => handleSpeakingButtonClick(answer, answerIndex)}
+                  aria-describedby={labelId}
+                >
+                  Speaking
+                </Button>
+              );
+            })
+          )}
+        </div>
+      )}
+
       <Spacer size='m' />
       <SpeakingModal
         sentence={modalText}
