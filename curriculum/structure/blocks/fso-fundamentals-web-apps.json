@@ -7,6 +7,22 @@
     {
       "id": "68b93cc43746b09f6dcc2e42",
       "title": "Before we get Started..."
+    },
+    {
+      "id": "68be6ca5c8015890cfe443c4",
+      "title": "HTTP GET"
+    },
+    {
+      "id": "68be77dec8015890cfe443c5",
+      "title": "Traditional Web Applications"
+    },
+    {
+      "id": "68be7ea6c8015890cfe443c6",
+      "title": "Running application logic in the browser"
+    },
+    {
+      "id": "68be89a3c8015890cfe443c7",
+      "title": "Event handlers and Callback functions"
     }
   ],
   "blockLayout": "challenge-list",
