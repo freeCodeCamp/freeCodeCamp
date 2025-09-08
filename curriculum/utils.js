@@ -148,7 +148,7 @@ function closestMatch(target, xs) {
 }
 
 function closestFilters(target, superblocks) {
-  if (target.superBlock) {
+  if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
     return {
       ...target,
@@ -156,7 +156,7 @@ function closestFilters(target, superblocks) {
     };
   }
 
-  if (target.block) {
+  if (target?.block) {
     const blocks = superblocks.flatMap(({ blocks }) =>
       blocks.map(({ dashedName }) => dashedName)
     );
