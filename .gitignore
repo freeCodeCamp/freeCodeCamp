@@ -199,6 +199,7 @@ curriculum/curricula.json
 ### Additional Folders ###
 curriculum/dist
 curriculum/build
+curriculum/test/superblocks-generated
 
 ### Playwright ###
 

@@ -35,9 +35,10 @@
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "NODE_OPTIONS='--max-old-space-size=7168' vitest run",
-    "test:watch": "NODE_OPTIONS='--max-old-space-size=7168' vitest",
-    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' FULL_OUTPUT=true vitest run --reporter=default"
+    "test:gen": "node ./test/utils/generate-block-tests.mjs",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' pnpm -s test:gen && vitest run",
+    "test:watch": "NODE_OPTIONS='--max-old-space-size=7168' pnpm -s test:gen && vitest",
+    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' pnpm -s test:gen && FULL_OUTPUT=true vitest run --reporter=default"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",

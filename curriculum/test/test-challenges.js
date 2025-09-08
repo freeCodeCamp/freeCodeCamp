@@ -1,11 +1,12 @@
 import path from 'node:path';
+import fs from 'node:fs';
+import http from 'node:http';
+import url from 'node:url';
 import { createRequire } from 'node:module';
-import { describe, it, afterAll } from 'vitest';
+import { describe, it, beforeAll, afterAll } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
-import liveServer from '@compodoc/live-server';
 import lodash from 'lodash';
-import ora from 'ora';
 import puppeteer from 'puppeteer';
 import {
   buildChallenge,
@@ -39,16 +40,6 @@ const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 
-const testFilter = {
-  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
-  challengeId: process.env.FCC_CHALLENGE_ID
-    ? process.env.FCC_CHALLENGE_ID.trim()
-    : undefined,
-  superBlock: process.env.FCC_SUPERBLOCK
-    ? process.env.FCC_SUPERBLOCK.trim()
-    : undefined
-};
-
 // Surface unhandled rejections and uncaught exceptions, but let Vitest handle exit codes
 process.on('unhandledRejection', err => handleRejection(err));
 process.on('uncaughtException', err => {
@@ -60,7 +51,6 @@ process.on('uncaughtException', err => {
 // error and that starts shutting down the browser and the server.
 const handleRejection = err => {
   console.error('Unhandled rejection:');
-  cleanup();
   console.error(err);
 };
 
@@ -68,119 +58,131 @@ const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
 
-async function newPageContext(browser) {
+async function newPageContext(browser, baseUrl) {
   const page = await browser.newPage();
   // it's needed for workers as context.
-  await page.goto('http://127.0.0.1:8080/index.html');
+  await page.goto(`${baseUrl}/index.html`);
   return page;
 }
 
-const spinner = ora();
-spinner.start();
-spinner.text = 'Populate tests.';
+// Tiny static server with dynamic port to allow parallel runs
+function startStaticServer(options = {}) {
+  const host = options.host ?? '127.0.0.1';
+  const port = options.port ?? 0; // 0 => random
+  const root = options.root ?? path.resolve(__dirname, 'stubs');
+  const mounts = options.mount ?? [
+    ['/dist', path.join(clientPath, `static/js/test-runner/${helperVersion}`)],
+    ['/js', path.join(clientPath, 'static/js')]
+  ];
 
-let browser;
-let page;
+  const getMountPath = reqPath => {
+    for (const [prefix, dir] of mounts) {
+      if (reqPath.startsWith(prefix))
+        return path.join(dir, reqPath.slice(prefix.length));
+    }
+    return path.join(root, reqPath);
+  };
 
-const challengeData = await setup().catch(err => {
-  handleRejection(err);
-  throw err;
-});
-
-async function setup() {
-  // liveServer starts synchronously
-  liveServer.start({
-    host: '127.0.0.1',
-    port: '8080',
-    root: path.resolve(__dirname, 'stubs'),
-    mount: [
-      [
-        '/dist',
-        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
-      ],
-      ['/js', path.join(clientPath, 'static/js')]
-    ],
-    open: false,
-    logLevel: 0
+  const server = http.createServer((req, res) => {
+    try {
+      const parsed = url.parse(req.url || '/');
+      let reqPath = parsed.pathname || '/';
+      if (reqPath === '/') reqPath = '/index.html';
+      const filePath = getMountPath(reqPath);
+      if (
+        !filePath.startsWith(root) &&
+        !mounts.some(([, d]) => filePath.startsWith(d))
+      ) {
+        res.statusCode = 403;
+        res.end('Forbidden');
+        return;
+      }
+      fs.readFile(filePath, (err, data) => {
+        if (err) {
+          res.statusCode = 404;
+          res.end('Not Found');
+          return;
+        }
+        res.statusCode = 200;
+        res.end(data);
+      });
+    } catch {
+      res.statusCode = 500;
+      res.end('Internal Server Error');
+    }
   });
-  browser = await puppeteer.launch({
-    args: [
-      // Required for Docker version of Puppeteer
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      // This will write shared memory files into /tmp instead of /dev/shm,
-      // because Docker’s default for /dev/shm is 64MB
-      '--disable-dev-shm-usage'
-      // dumpio: true
-    ],
-    headless: 'new'
-  });
-  global.Worker = createPseudoWorker(await newPageContext(browser));
 
-  page = await newPageContext(browser);
-  await page.setViewport({ width: 300, height: 150 });
+  return new Promise(resolve => {
+    server.listen(port, host, () => {
+      const address = server.address();
+      const actualPort =
+        typeof address === 'object' && address ? address.port : port;
+      resolve({
+        server,
+        host,
+        port: actualPort,
+        baseUrl: `http://${host}:${actualPort}`
+      });
+    });
+  });
+}
+
+export async function defineTestsForSuperBlock({ superBlock }) {
+  let browser;
+  let page;
+  let serverRef;
 
   const lang = testedLang();
-  const challenges = await getChallenges(lang, testFilter);
+  const challenges = await getChallenges(lang, { superBlock });
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
-
   if (isEmpty(nonCertificationChallenges)) {
-    throw Error(
-      `No challenges to test when using filter ${JSON.stringify(testFilter)}
-If the challenge file exists, try running 'build:curriculum' for more information.
-      `
-    );
+    throw Error(`No challenges to test for superblock ${superBlock}.`);
   }
-
-  // the next few statements create a list of all blocks and superblocks
-  // as they appear in the list of challenges
-  const superBlocks = challenges.map(({ superBlock }) => superBlock);
-  const targetSuperBlockStrings = [
-    ...new Set(superBlocks.filter(el => Boolean(el)))
-  ];
-
   const meta = {};
   for (const challenge of challenges) {
     const dashedBlockName = challenge.block;
-    // certifications do not have dashedBlockName's and don't have metas so
-    // we can skip them.
-    // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
       meta[dashedBlockName] = getBlockStructure(dashedBlockName);
       const result = validateMetaSchema(meta[dashedBlockName]);
-
-      if (result.error) {
-        throw new AssertionError(result.error);
-      }
+      if (result.error) throw new AssertionError(result.error);
     }
   }
-  return {
-    meta,
-    challenges,
-    lang,
-    superBlocks: targetSuperBlockStrings
-  };
-}
 
-// cleanup calls some async functions, but it's the last thing that happens, so
-// no need to await anything.
-function cleanup() {
-  if (browser) {
-    browser.close();
+  const challengeData = { meta, challenges, lang, superBlocks: [superBlock] };
+
+  function cleanup() {
+    if (browser) browser.close();
+    if (serverRef?.server) serverRef.server.close();
   }
-  liveServer.shutdown();
-  spinner.stop();
-}
 
-spinner.text = 'Testing';
-describe('Check challenges', () => {
-  afterAll(() => {
-    cleanup();
+  describe('Check challenges', () => {
+    beforeAll(async () => {
+      serverRef = await startStaticServer({});
+      browser = await puppeteer.launch({
+        args: [
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          '--disable-dev-shm-usage'
+        ],
+        headless: 'new'
+      });
+      try {
+        const contextPage = await newPageContext(browser, serverRef.baseUrl);
+        global.Worker = createPseudoWorker(contextPage);
+        page = await newPageContext(browser, serverRef.baseUrl);
+        await page.setViewport({ width: 300, height: 150 });
+      } catch (e) {
+        if (browser) await browser.close().catch(() => {});
+        if (serverRef?.server) serverRef.server.close();
+        throw e;
+      }
+    });
+    afterAll(() => cleanup());
+    populateTestsForLang(challengeData, page);
   });
-  populateTestsForLang(challengeData);
-});
+}
 
 async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
@@ -208,7 +210,7 @@ async function getChallenges(lang, filters) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
+function populateTestsForLang({ lang, challenges, meta, superBlocks }, page) {
   const validateChallenge = challengeSchemaValidator();
 
   superBlocks.forEach(superBlock => {
@@ -364,6 +366,7 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     let testRunner;
                     try {
                       testRunner = await createTestRunner(
+                        page,
                         challenge,
                         challenge.challengeFiles,
                         buildChallenge
@@ -473,6 +476,7 @@ seed goes here
                       `Solution ${index + 1} must pass the tests`,
                       async function () {
                         const testRunner = await createTestRunner(
+                          page,
                           challenge,
                           solution,
                           buildChallenge,
@@ -496,6 +500,7 @@ seed goes here
 }
 
 async function createTestRunner(
+  page,
   challenge,
   solutionFiles,
   buildChallenge,
@@ -514,7 +519,7 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const evaluator = await getContextEvaluator({
+  const evaluator = await getContextEvaluator(page, {
     // passing in challengeId so it's easier to debug timeouts
     challengeId: challenge.id,
     build,
@@ -567,8 +572,8 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(config) {
-  await initializeTestRunner(config);
+async function getContextEvaluator(page, config) {
+  await initializeTestRunner(page, config);
 
   return {
     evaluate: async (testString, timeout) =>
@@ -599,13 +604,10 @@ ${testString}
   };
 }
 
-async function initializeTestRunner({
-  build,
-  sources,
-  type,
-  hooks,
-  loadEnzyme
-}) {
+async function initializeTestRunner(
+  page,
+  { build, sources, type, hooks, loadEnzyme }
+) {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
 
   await page.evaluate(
