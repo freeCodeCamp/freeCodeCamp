@@ -47,8 +47,8 @@ const ModuleLanding = () => {
       <h1>{params.module}</h1>
       <ul>
         {items.map(module => (
-          <li key={module.name}>
-            <Link to={`/${params.superblock}/${module.name}`}>
+          <li key={module.path}>
+            <Link to={`/${params.superblock}/${module.path}`}>
               {module.name}
             </Link>
           </li>
