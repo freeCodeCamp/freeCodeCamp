@@ -2,9 +2,8 @@ const baseMeta = {
   name: '',
   isUpcomingChange: true,
   dashedName: '',
-  superBlock: '',
-  order: 42,
   helpCategory: '',
+  blockLayout: 'legacy-challenge-list',
   challengeOrder: [
     {
       id: '',

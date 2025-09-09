@@ -10,10 +10,10 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
   });
 
   fastify.addHook('onRequest', async (req, reply) => {
-    const logger = fastify.log.child({ req, res: reply });
+    const logger = fastify.log.child({ req });
     const origin = req.headers.origin;
     if (origin && allowedOrigins.includes(origin)) {
-      // Do we want to log allowed origins?
+      logger.debug(`Allowing access to origin: ${origin}`);
       void reply.header('Access-Control-Allow-Origin', origin);
     } else {
       // TODO: Discuss if this is the correct approach. Standard practice is to
@@ -24,6 +24,8 @@ const cors: FastifyPluginCallback = (fastify, _options, done) => {
 
       if (origin && !req.url?.startsWith('/status/')) {
         logger.info(`Received request from disallowed origin: ${origin}`);
+      } else {
+        logger.debug(`Unknown or missing origin: ${origin}`);
       }
     }
 

@@ -2,6 +2,23 @@ name: CD - Deploy - Clients
 
 on:
   workflow_dispatch:
+    inputs:
+      target_language:
+        description: 'Target language (or "all" for all languages)'
+        type: choice
+        options:
+          - all
+          - english
+          - chinese
+          - espanol
+          - chinese-traditional
+          - italian
+          - portuguese
+          - ukrainian
+          - japanese
+          - german
+          - swahili
+        default: all
 
 jobs:
   setup-jobs:
@@ -33,46 +50,64 @@ jobs:
               ;;
           esac
 
+  setup-matrix:
+    name: Setup Matrix
+    runs-on: ubuntu-22.04
+    needs: setup-jobs
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Setup Matrix
+        id: matrix
+        run: |
+          TARGET_LANG="${{ inputs.target_language || 'all' }}"
+          echo "Target language: $TARGET_LANG"
+
+          if [[ "$TARGET_LANG" == "all" ]]; then
+            # Build all languages
+            MATRIX='{
+              "node-version": [22],
+              "include": [
+                {"lang-name-full": "english", "lang-name-short": "eng"},
+                {"lang-name-full": "chinese", "lang-name-short": "chn"},
+                {"lang-name-full": "espanol", "lang-name-short": "esp"},
+                {"lang-name-full": "chinese-traditional", "lang-name-short": "cnt"},
+                {"lang-name-full": "italian", "lang-name-short": "ita"},
+                {"lang-name-full": "portuguese", "lang-name-short": "por"},
+                {"lang-name-full": "ukrainian", "lang-name-short": "ukr"},
+                {"lang-name-full": "japanese", "lang-name-short": "jpn"},
+                {"lang-name-full": "german", "lang-name-short": "ger"},
+                {"lang-name-full": "swahili", "lang-name-short": "swa"}
+              ]
+            }'
+          else
+            # Build single language
+            case "$TARGET_LANG" in
+              "english") SHORT="eng" ;;
+              "chinese") SHORT="chn" ;;
+              "espanol") SHORT="esp" ;;
+              "chinese-traditional") SHORT="cnt" ;;
+              "italian") SHORT="ita" ;;
+              "portuguese") SHORT="por" ;;
+              "ukrainian") SHORT="ukr" ;;
+              "japanese") SHORT="jpn" ;;
+              "german") SHORT="ger" ;;
+              "swahili") SHORT="swa" ;;
+              *) echo "Error: Unknown language $TARGET_LANG"; exit 1 ;;
+            esac
+            
+            MATRIX="{\"node-version\": [22], \"include\": [{\"lang-name-full\": \"$TARGET_LANG\", \"lang-name-short\": \"$SHORT\"}]}"
+          fi
+
+          echo "matrix=$MATRIX" >> $GITHUB_OUTPUT
+
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
-    needs: [setup-jobs]
+    needs: [setup-jobs, setup-matrix]
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
-      matrix:
-        node-version: [22]
-        lang-name-full:
-          - english
-          - chinese
-          - espanol
-          - chinese-traditional
-          - italian
-          - portuguese
-          - ukrainian
-          - japanese
-          - german
-          - swahili
-        include:
-          - lang-name-full: english
-            lang-name-short: eng
-          - lang-name-full: chinese
-            lang-name-short: chn
-          - lang-name-full: espanol
-            lang-name-short: esp
-          - lang-name-full: chinese-traditional
-            lang-name-short: cnt
-          - lang-name-full: italian
-            lang-name-short: ita
-          - lang-name-full: portuguese
-            lang-name-short: por
-          - lang-name-full: ukrainian
-            lang-name-short: ukr
-          - lang-name-full: japanese
-            lang-name-short: jpn
-          - lang-name-full: german
-            lang-name-short: ger
-          - lang-name-full: swahili
-            lang-name-short: swa
+      matrix: ${{ fromJSON(needs.setup-matrix.outputs.matrix) }}
     permissions:
       deployments: write
       contents: read
@@ -122,6 +157,7 @@ jobs:
           PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
           STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
           SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
+          SHOW_DAILY_CODING_CHALLENGES: ${{ vars.SHOW_DAILY_CODING_CHALLENGES || 'false' }}
           FREECODECAMP_NODE_ENV: production
           # The below is used in ecosystem.config.js file for the API -- to be removed later
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}

@@ -1,110 +1,118 @@
 export const superBlockList = [
   {
     name: 'Legacy Responsive Web Design',
-    path: '01-responsive-web-design'
+    path: 'responsive-web-design'
   },
   {
     name: 'Legacy JavaScript Algorithms and Data Structures',
-    path: '02-javascript-algorithms-and-data-structures'
+    path: 'javascript-algorithms-and-data-structures'
   },
   {
     name: 'Front End Development Libraries',
-    path: '03-front-end-development-libraries'
+    path: 'front-end-development-libraries'
   },
   {
     name: 'Data Visualization',
-    path: '04-data-visualization'
+    path: 'data-visualization'
   },
   {
     name: 'Back End Development and APIs',
-    path: '05-back-end-development-and-apis'
+    path: 'back-end-development-and-apis'
   },
   {
     name: 'Quality Assurance',
-    path: '06-quality-assurance'
+    path: 'quality-assurance'
   },
   {
     name: 'Scientific Computing with Python',
-    path: '07-scientific-computing-with-python'
+    path: 'scientific-computing-with-python'
   },
   {
     name: 'Data Analysis with Python',
-    path: '08-data-analysis-with-python'
+    path: 'data-analysis-with-python'
   },
   {
     name: 'Information Security',
-    path: '09-information-security'
+    path: 'information-security'
   },
   {
     name: 'Coding Interview Prep',
-    path: '10-coding-interview-prep'
+    path: 'coding-interview-prep'
   },
   {
     name: 'Machine Learning with Python',
-    path: '11-machine-learning-with-python'
+    path: 'machine-learning-with-python'
   },
   {
     name: 'Relational Databases',
-    path: '13-relational-databases'
+    path: 'relational-databases'
   },
   {
     name: 'Responsive Web Design',
-    path: '14-responsive-web-design-22'
+    path: 'responsive-web-design-22'
   },
   {
     name: 'JavaScript Algorithms and Data Structures',
-    path: '15-javascript-algorithms-and-data-structures-22'
+    path: 'javascript-algorithms-and-data-structures-22'
   },
   {
     name: 'The Odin Project',
-    path: '16-the-odin-project'
+    path: 'the-odin-project'
   },
   {
     name: 'College Algebra with Python',
-    path: '17-college-algebra-with-python'
+    path: 'college-algebra-with-python'
   },
   {
     name: 'Project Euler',
-    path: '18-project-euler'
+    path: 'project-euler'
   },
   {
     name: '(New) Foundational C# with Microsoft',
-    path: '19-foundational-c-sharp-with-microsoft'
+    path: 'foundational-c-sharp-with-microsoft'
   },
   {
     name: 'A2 English for Developers (Beta)',
-    path: '21-a2-english-for-developers'
+    path: 'a2-english-for-developers'
   },
   {
     name: 'Rosetta Code',
-    path: '22-rosetta-code'
+    path: 'rosetta-code'
   },
   {
     name: 'Python For Everybody',
-    path: '23-python-for-everybody'
+    path: 'python-for-everybody'
   },
   {
     name: 'B1 English for Developers (Beta)',
-    path: '24-b1-english-for-developers'
+    path: 'b1-english-for-developers'
   },
   {
     name: 'Certified Full Stack Developer',
-    path: '25-front-end-development'
+    path: 'full-stack-developer'
+  },
+  {
+    name: 'A1 Professional Spanish (Beta)',
+    path: 'a1-professional-spanish'
   },
   {
     name: 'A2 Professional Spanish (Beta)',
-    path: '26-a2-professional-spanish'
+    path: 'a2-professional-spanish'
   },
   {
     name: 'A2 Professional Chinese (Beta)',
-    path: '27-a2-professional-chinese'
+    path: 'a2-professional-chinese'
   },
   {
     name: 'Basic HTML',
-    path: '28-basic-html'
+    path: 'basic-html'
   },
   {
     name: 'Semantic HTML',
-    path: '29-semantic-html'
+    path: 'semantic-html'
+  },
+  {
+    name: 'A1 Professional Chinese (Beta)',
+    path: 'a1-professional-chinese'
   }
 ];
