@@ -9,8 +9,7 @@ import {
   DailyCodingChallengePageContext
 } from '../redux/prop-types';
 import DailyCodingChallengeNotFound from '../components/daily-coding-challenge/not-found';
-import FourOhFour from '../components/FourOhFour';
-import { apiLocation, showDailyCodingChallenges } from '../../config/env.json';
+import { apiLocation } from '../../config/env.json';
 import { isValidDateString } from '../components/daily-coding-challenge/helpers';
 import {
   validateDailyCodingChallengeSchema,
@@ -207,10 +206,6 @@ function ShowDailyCodingChallenge(): JSX.Element {
 
     void fetchChallenge(date);
   }, [date]);
-
-  if (!showDailyCodingChallenges) {
-    return <FourOhFour />;
-  }
 
   if (isLoading) return <Loader />;
 
