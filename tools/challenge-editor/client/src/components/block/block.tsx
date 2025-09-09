@@ -14,6 +14,7 @@ const stepBasedSuperblocks = [
 const taskBasedSuperblocks = [
   'a2-english-for-developers',
   'b1-english-for-developers',
+  'a1-professional-spanish',
   'a2-professional-spanish',
   'a2-professional-chinese',
   'a1-professional-chinese'

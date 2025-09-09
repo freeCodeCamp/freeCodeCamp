@@ -143,7 +143,8 @@ export const runnerTypes: Record<
   [challengeTypes.jsLab]: 'javascript',
   [challengeTypes.pyLab]: 'python',
   [challengeTypes.dailyChallengeJs]: 'javascript',
-  [challengeTypes.dailyChallengePy]: 'python'
+  [challengeTypes.dailyChallengePy]: 'python',
+  [challengeTypes.review]: 'dom'
 };
 
 export async function getTestRunner(buildData: BuildChallengeData) {
