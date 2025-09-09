@@ -5,6 +5,8 @@ import { SUPERBLOCK_META_DIR, BLOCK_META_DIR } from '../configs/paths';
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 import { PartialMeta } from '../interfaces/partial-meta';
 
+import * as intro from '../../../../client/i18n/locales/english/intro.json';
+
 type Block = {
   name: string;
   path: string;
@@ -22,8 +24,14 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
 
   if (chapterBasedSuperBlocks.includes(sup)) {
     blocks = superBlockMeta.chapters!.map(chapter => {
+      const chapters = Object.entries(
+        intro['full-stack-developer']['chapters']
+      );
+      const chapterTrueName = chapters.filter(
+        x => x[0] === chapter.dashedName
+      )[0][1];
       return {
-        name: chapter.dashedName,
+        name: chapterTrueName,
         path: 'chapters/' + chapter.dashedName
       };
     });

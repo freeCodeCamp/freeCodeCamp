@@ -3,6 +3,7 @@ import { join } from 'path';
 import { SUPERBLOCK_META_DIR, BLOCK_META_DIR } from '../configs/paths';
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 import { PartialMeta } from '../interfaces/partial-meta';
+import * as intro from '../../../../client/i18n/locales/english/intro.json';
 
 type Block = {
   name: string;
@@ -32,7 +33,11 @@ export const getModules = async (
 
   modules = await Promise.all(
     chapter.modules!.map(module => {
-      return { name: module.dashedName, path: 'modules/' + module.dashedName };
+      const modules = Object.entries(intro['full-stack-developer']['modules']);
+      const moduleTrueName = modules.filter(
+        x => x[0] === module.dashedName
+      )[0][1];
+      return { name: moduleTrueName, path: 'modules/' + module.dashedName };
     })
   );
 
