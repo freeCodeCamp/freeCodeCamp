@@ -1,15 +1,18 @@
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
 import fastifyCookie from '@fastify/cookie';
 
 import { COOKIE_SECRET } from '../utils/env';
 import cookies from './cookies';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN: 'www.example.com',
-  FREECODECAMP_NODE_ENV: 'not-development'
-}));
+vi.mock('../utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('../utils/env')>();
+  return {
+    ...actual,
+    COOKIE_DOMAIN: 'www.example.com',
+    FREECODECAMP_NODE_ENV: 'not-development'
+  };
+});
 
 describe('cookies', () => {
   let fastify: FastifyInstance;
@@ -23,7 +26,7 @@ describe('cookies', () => {
     await fastify.close();
   });
 
-  it('should prefix signed cookies with "s:" (url-encoded)', async () => {
+  test('should prefix signed cookies with "s:" (url-encoded)', async () => {
     fastify.get('/test', async (req, reply) => {
       void reply.setCookie('test', 'value', { signed: true });
       return { ok: true };
@@ -37,7 +40,7 @@ describe('cookies', () => {
     expect(res.headers['set-cookie']).toMatch(/test=s%3Avalue\.\w*/);
   });
 
-  it('should be able to unsign cookies', async () => {
+  test('should be able to unsign cookies', async () => {
     const signedCookie = `test=s%3A${fastifyCookie.sign('value', COOKIE_SECRET)}`;
     fastify.get('/test', (req, reply) => {
       void reply.send({ unsigned: req.unsignCookie(req.cookies.test!) });
@@ -56,7 +59,7 @@ describe('cookies', () => {
     });
   });
 
-  it('should reject cookies not prefixed with "s:"', async () => {
+  test('should reject cookies not prefixed with "s:"', async () => {
     const signedCookie = `test=${fastifyCookie.sign('value', COOKIE_SECRET)}`;
     fastify.get('/test', (req, reply) => {
       void reply.send({ unsigned: req.unsignCookie(req.cookies.test!) });
@@ -75,7 +78,7 @@ describe('cookies', () => {
     });
   });
 
-  it('should have reasonable defaults', async () => {
+  test('should have reasonable defaults', async () => {
     fastify.get('/test', async (req, reply) => {
       void reply.setCookie('test', 'value');
       return { ok: true };
@@ -103,7 +106,7 @@ describe('cookies', () => {
 
   // TODO(Post-MVP): Clear all cookies rather than just three specific ones?
   // Then it should be called something like clearAllCookies.
-  it('clearOurCookies should clear cookies that we set', async () => {
+  test('clearOurCookies should clear cookies that we set', async () => {
     fastify.get('/test', async (req, reply) => {
       void reply.clearOurCookies();
       return { ok: true };

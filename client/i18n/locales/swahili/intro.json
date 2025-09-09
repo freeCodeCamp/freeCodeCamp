@@ -2739,6 +2739,37 @@
           "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
         ]
       },
+      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
+        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "intro": [
+          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+        ]
+      },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
+        ]
+      },
+      "lab-house-painting": {
+        "title": "Build a House Painting",
+        "intro": [
+          "In this lab, you'll build a house painting using CSS.",
+          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
+        ]
+      },
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
+        ]
+      },
+      "quiz-css-positioning": {
+        "title": "CSS Positioning Quiz",
+        "intro": ["Test your knowledge of CSS positioning with this quiz."]
+      },
       "lecture-working-with-attribute-selectors": {
         "title": "Working with Attribute Selectors",
         "intro": [
@@ -2770,37 +2801,6 @@
         "intro": [
           "Test your knowledge of CSS attribute selectors with this quiz."
         ]
-      },
-      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
-        "title": "Understanding How to Work with Floats and Positioning in CSS",
-        "intro": [
-          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
-        ]
-      },
-      "workshop-cat-painting": {
-        "title": "Build a Cat Painting",
-        "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
-          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
-        ]
-      },
-      "lab-house-painting": {
-        "title": "Build a House Painting",
-        "intro": [
-          "In this lab, you'll build a house painting using CSS.",
-          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
-        ]
-      },
-      "review-css-positioning": {
-        "title": "CSS Positioning Review",
-        "intro": [
-          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
-          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
-        ]
-      },
-      "quiz-css-positioning": {
-        "title": "CSS Positioning Quiz",
-        "intro": ["Test your knowledge of CSS positioning with this quiz."]
       },
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
@@ -2895,12 +2895,6 @@
         "title": "Build a Product Landing Page",
         "intro": [
           "In this project, you'll build a product landing page to market a product of your choice."
-        ]
-      },
-      "lab-profile-lookup": {
-        "title": "Build a Profile Lookup",
-        "intro": [
-          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "review-css-grid": {
@@ -3028,10 +3022,28 @@
           "You will learn how to work with template literals, and the <code>indexOf</code> method."
         ]
       },
-      "lecture-working-with-common-string-methods": {
-        "title": "Working with Common String Methods",
+      "lecture-working-with-string-character-methods": {
+        "title": "Working with String Character Methods",
         "intro": [
-          "In these lectures, you will learn about the common string methods available in JavaScript. The string methods will let you do things like extracting a part of a string, changing the casing for a string, replacing a part of a string, trimming whitespace from a string, and much more."
+          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+        ]
+      },
+      "lecture-working-with-string-search-and-slice-methods": {
+        "title": "Working with String Search and Slice Methods",
+        "intro": [
+          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "lecture-working-with-string-formatting-methods": {
+        "title": "Working with String Formatting Methods",
+        "intro": [
+          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "lecture-working-with-string-modification-methods": {
+        "title": "Working with String Modification Methods",
+        "intro": [
+          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
       "review-javascript-strings": {
@@ -3164,6 +3176,10 @@
           "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
         ]
       },
+      "lab-counting-cards": {
+        "title": "Build a Card Counting Assistant",
+        "intro": ["In this lab you will use JavaScript to count dealt cards."]
+      },
       "lab-leap-year-calculator": {
         "title": "Build a Leap Year Calculator ",
         "intro": [
@@ -3212,6 +3228,12 @@
           "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
         ]
       },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
+      },
       "lab-reverse-a-string": {
         "title": "Build a String Inverter",
         "intro": [
@@ -3252,6 +3274,12 @@
         "intro": [
           "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
           "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
+        ]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
         ]
       },
       "review-javascript-objects": {
@@ -3300,6 +3328,12 @@
         "title": "Implement the Chunky Monkey Algorithm",
         "intro": [
           "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "lab-repeat-a-string": {
@@ -3400,6 +3434,18 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-html-entitiy-converter": {
+        "title": "Implement an HTML Entity Converter",
+        "intro": [
+          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+        ]
+      },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -3429,6 +3475,12 @@
         "title": "Build a Book Organizer",
         "intro": [
           "In this lab, you'll build a book organizer using higher order functions in JavaScript."
+        ]
+      },
+      "lab-sorted-index-finder": {
+        "title": "Implement a Sorted Index Finder",
+        "intro": [
+          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -3494,12 +3546,6 @@
           "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
         ]
       },
-      "lab-palindrome-checker": {
-        "title": "Build a Palindrome Checker",
-        "intro": [
-          "For this lab, you'll build an application that checks whether a given word is a palindrome."
-        ]
-      },
       "lab-football-team-cards": {
         "title": "Build a Set of Football Team Cards",
         "intro": [
@@ -3517,6 +3563,12 @@
         "title": "DOM Manipulation and Click Events with JavaScript Quiz",
         "intro": [
           "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
+        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "intro": [
+          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
         ]
       },
       "workshop-planets-tablist": {
@@ -3585,6 +3637,12 @@
         "intro": [
           "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
           "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
         ]
       },
       "lab-markdown-to-html-converter": {
@@ -4102,6 +4160,23 @@
           "Test what you've learned about Web Performance with this quiz."
         ]
       },
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Understanding the Different Types of Testing",
+        "intro": [
+          "In these lectures, you will learn about the different types of testing."
+        ]
+      },
+      "review-testing": {
+        "title": "Testing Review",
+        "intro": [
+          "Before you take the testing quiz, you should review everything you've learned so far.",
+          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
+        ]
+      },
+      "quiz-testing": {
+        "title": "Testing Quiz",
+        "intro": ["Test what you've learned on testing with this quiz."]
+      },
       "lecture-working-with-css-libraries-and-frameworks": {
         "title": "Working with CSS Libraries and Frameworks",
         "intro": [
@@ -4118,6 +4193,13 @@
         "title": "Build a CTA Component",
         "intro": [
           "In this workshop, you will build a call to action (CTA) component using Tailwind CSS."
+        ]
+      },
+      "workshop-tailwind-pricing-component": {
+        "title": "Build a Pricing Component",
+        "intro": [
+          "In this workshop, you will build a pricing component using Tailwind CSS.",
+          "You will practice working with Tailwind CSS grid utility classes."
         ]
       },
       "lab-music-shopping-cart-page": {
@@ -4145,23 +4227,6 @@
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
-      },
-      "lecture-understanding-the-different-types-of-testing": {
-        "title": "Understanding the Different Types of Testing",
-        "intro": [
-          "In these lectures, you will learn about the different types of testing."
-        ]
-      },
-      "review-testing": {
-        "title": "Testing Review",
-        "intro": [
-          "Before you take the testing quiz, you should review everything you've learned so far.",
-          "Open up this page to review all of the concepts taught including unit testing, end-to-end testing, functional testing and more."
-        ]
-      },
-      "quiz-testing": {
-        "title": "Testing Quiz",
-        "intro": ["Test what you've learned on testing with this quiz."]
       },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
@@ -4311,7 +4376,9 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
-        "intro": ["Learn about Understanding Error Handling in these lectures."]
+        "intro": [
+          "In these lectures, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
+        ]
       },
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
@@ -4435,7 +4502,7 @@
         "title": "Data Structures Review",
         "intro": [
           "Before you're quizzed on data structures, you should review what you've learned about them.",
-          "[Add more details]"
+          "Open up this page to review concepts like the different data structures, algorithms, time and space complexity, and big O notation."
         ]
       },
       "quiz-data-structures": {
@@ -4447,7 +4514,8 @@
       "lecture-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms",
         "intro": [
-          "Learn about Searching and Sorting Algorithms in these lectures."
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lectures cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
       "workshop-binary-search": {
@@ -4517,9 +4585,11 @@
         "title": "Build a Shortest Path Algorithm",
         "intro": [""]
       },
-      "lab-adjacency-list-matrix-converter": {
-        "title": "Build an Adjacency List/Matrix Converter",
-        "intro": [""]
+      "lab-adjacency-list-to-matrix-converter": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
       },
       "workshop-breadth-first-search": {
         "title": "Build a Breadth First Search",
@@ -4750,12 +4820,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-record-collection": {
-        "title": "Build a Record Collection",
-        "intro": [
-          "In this lab you will build a function to manage a record collection."
-        ]
       }
     }
   },
@@ -4793,6 +4857,19 @@
         "title": "Get to Know Colleagues by Asking Simple Questions",
         "intro": [
           "Learn how to ask and answer questions in simple conversations. Through five short dialogues, practice talking about routines, feelings, preferences, workspaces, and personal information. You'll also learn to ask polite questions, give short answers, and use negation naturally."
+        ]
+      }
+    }
+  },
+  "a1-professional-chinese": {
+    "title": "A1 Professional Chinese Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "learn-essential-courtesies-at-the-office": {
+        "title": "Learn Essential Courtesies at the Office",
+        "intro": [
+          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
         ]
       }
     }

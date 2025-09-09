@@ -63,7 +63,6 @@ const defaultProps = {
       notes: 'mockNotes',
       prerequisites: [] as PrerequisiteChallenge[],
       isLocked: false,
-      isPrivate: false,
       order: 1,
       questions: [] as Question[],
       assignments: ['mockAssignment'],

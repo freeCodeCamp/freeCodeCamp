@@ -1,3 +1,13 @@
+import {
+  describe,
+  it,
+  expect,
+  beforeAll,
+  afterAll,
+  beforeEach,
+  afterEach,
+  vi
+} from 'vitest';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import { Static } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
@@ -7,7 +17,7 @@ import {
   defaultUserId,
   devLogin,
   setupServer
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
@@ -16,11 +26,12 @@ import * as mock from '../../../__mocks__/exam-environment-exam';
 import { constructUserExam } from '../utils/exam-environment';
 import { JWT_SECRET } from '../../utils/env';
 
-jest.mock('../../utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('../../utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('../../utils/env')>();
   return {
-    ...jest.requireActual('../../utils/env'),
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true'
+    ...actual,
+    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
+    DEPLOYMENT_ENV: 'production'
   };
 });
 
@@ -519,7 +530,7 @@ describe('/exam-environment/', () => {
       });
 
       it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
-        const _mockConstructUserExam = jest
+        const _mockConstructUserExam = vi
           .spyOn(await import('../utils/exam-environment'), 'constructUserExam')
           .mockImplementationOnce(() => {
             throw new Error('Test error');
@@ -549,7 +560,7 @@ describe('/exam-environment/', () => {
 
       it('should return the user exam with the exam attempt', async () => {
         // Mock Math.random for `shuffleArray` to be equivalent between `/generated-exam` and `constructUserExam`
-        jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+        vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -862,7 +873,7 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      xit('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
+      it.skip('TODO: (once serialization is serializable) should return 400 if no attempt id is given', async () => {
         const res = await superGet('/exam-environment/exam/attempt/').set(
           'exam-environment-authorization-token',
           examEnvironmentAuthorizationToken
