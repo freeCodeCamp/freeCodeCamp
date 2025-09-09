@@ -37,9 +37,10 @@ const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
+
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
+const { getBlockStructure } = require('../file-handler');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -151,8 +152,18 @@ async function setup() {
   await page.setViewport({ width: 300, height: 150 });
 
   const lang = testedLang();
+  const challenges = await getChallenges(lang, testFilter);
+  const nonCertificationChallenges = challenges.filter(
+    ({ challengeType }) => challengeType !== 7
+  );
 
-  let challenges = await getChallenges(lang, testFilter);
+  if (isEmpty(nonCertificationChallenges)) {
+    throw Error(
+      `No challenges to test when using filter ${JSON.stringify(testFilter)}
+If the challenge file exists, try running 'build:curriculum' for more information.
+      `
+    );
+  }
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
@@ -168,10 +179,7 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
-        dashedBlockName,
-        STRUCTURE_DIR
-      );
+      meta[dashedBlockName] = getBlockStructure(dashedBlockName);
       const result = validateMetaSchema(meta[dashedBlockName]);
 
       if (result.error) {
@@ -244,6 +252,68 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
+
+        // daily challenge tests
+        if (superBlock === 'dev-playground') {
+          describe('Daily Coding Challenges', function () {
+            const jsDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-javascript'
+            );
+
+            const pyDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-python'
+            );
+
+            it('should have matching number of JavaScript and Python challenges', function () {
+              assert.equal(
+                jsDailyChallenges.length,
+                pyDailyChallenges.length,
+                `JavaScript challenges: ${jsDailyChallenges.length}, Python challenges: ${pyDailyChallenges.length}`
+              );
+            });
+
+            for (let i = 0; i < jsDailyChallenges.length; i++) {
+              describe(`Challenge ${i + 1} Parity`, function () {
+                const jsChallenge = jsDailyChallenges[i];
+                const pyChallenge = pyDailyChallenges[i];
+
+                it("should have matching ID's", function () {
+                  assert.equal(
+                    jsChallenge.id,
+                    pyChallenge.id,
+                    `Challenge ${i + 1} ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
+                  );
+                });
+
+                it(`should have matching titles`, function () {
+                  assert.equal(
+                    jsChallenge.title,
+                    pyChallenge.title,
+                    `Challenge ${i + 1} title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title}`
+                  );
+                });
+
+                it('should have matching descriptions', function () {
+                  assert.equal(
+                    jsChallenge.description,
+                    pyChallenge.description,
+                    `Challenge ${i + 1} description mismatch`
+                  );
+                });
+
+                it('should have the same number of tests', function () {
+                  const jsTestCount = jsChallenge.tests.length;
+                  const pyTestCount = pyChallenge.tests.length;
+                  assert.equal(
+                    jsTestCount,
+                    pyTestCount,
+                    `Challenge ${i + 1} test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount}`
+                  );
+                });
+              });
+            }
+          });
+        }
 
         const challengeTitles = new ChallengeTitles();
         const mongoIds = new MongoIds();

@@ -391,6 +391,10 @@
     {
       "source": "/learn/full-stack-developer/lecture-working-with-common-string-methods/how-can-you-repeat-a-string-x-number-of-times",
       "destination": "/learn/full-stack-developer/lecture-working-with-string-modification-methods/how-can-you-repeat-a-string-x-number-of-times"
+    },
+    {
+      "source": "/learn/full-stack-developer/lab-magazine-layout/design-a-magazine-layout",
+      "destination": "/learn/full-stack-developer/lab-newspaper-layout/design-a-newspaper-layout"
     }
   ]
 }
