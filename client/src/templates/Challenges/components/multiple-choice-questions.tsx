@@ -9,7 +9,6 @@ import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import SpeakingModal from './speaking-modal';
 import ChallengeHeading from './challenge-heading';
 import PrismFormatted from './prism-formatted';
-import './multiple-choice-questions.css';
 
 type MultipleChoiceQuestionsProps = {
   questions: Question[];
@@ -105,8 +104,8 @@ function MultipleChoiceQuestions({
               const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
 
               return (
-                <React.Fragment key={answerIndex}>
-                  <div className='mcq-option-wrapper'>
+                <div key={answerIndex} className='mcq-option-wrapper'>
+                  <div className='mcq-option-row'>
                     <label
                       id={labelId}
                       className={`video-quiz-option-label mcq-option-label
@@ -176,12 +175,14 @@ function MultipleChoiceQuestions({
                                 : 'mcq-prism-incorrect'
                             }
                             text={removeParagraphTags(feedback)}
+                            useSpan
+                            noAria
                           />
                         </p>
                       )}
                     </div>
                   )}
-                </React.Fragment>
+                </div>
               );
             })}
           </div>
