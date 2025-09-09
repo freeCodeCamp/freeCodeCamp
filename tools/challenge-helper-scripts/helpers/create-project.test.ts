@@ -70,6 +70,26 @@ describe('updateSimpleSuperblockStructure', () => {
       }
     );
   });
+
+  it('should insert the block into the blocks array at the end when no order is given', async () => {
+    const existingBlocks = ['block1', 'block2'];
+    const superblockFilename = 'test-superblock';
+    const newBlock = 'block3';
+
+    mockGetSuperblockStructure.mockReturnValue({
+      blocks: existingBlocks
+    });
+
+    await updateSimpleSuperblockStructure(newBlock, {}, superblockFilename);
+
+    expect(mockGetSuperblockStructure).toHaveBeenCalledWith(superblockFilename);
+    expect(mockWriteSuperblockStructure).toHaveBeenCalledWith(
+      superblockFilename,
+      {
+        blocks: ['block1', 'block2', 'block3']
+      }
+    );
+  });
 });
 
 describe('updateChapterModuleSuperblockStructure', () => {
