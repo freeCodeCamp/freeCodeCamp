@@ -225,8 +225,7 @@ const SpeakingModal = ({
   const renderPartialMatch = () => {
     if (!comparisonResult?.comparison) return null;
 
-    // TODO: Change this to match the punctuation of the original sentence
-    const punctuationMark = '.';
+    const punctuationMark = sentence[sentence.length - 1];
 
     const fullUtterance =
       comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
