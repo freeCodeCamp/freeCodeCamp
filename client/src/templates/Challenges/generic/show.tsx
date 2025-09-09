@@ -74,7 +74,6 @@ const ShowGeneric = ({
     challengeNode: {
       challenge: {
         assignments,
-        audioIds,
         bilibiliIds,
         block,
         blockType,
@@ -279,10 +278,6 @@ const ShowGeneric = ({
                     submittedMcqAnswers={submittedMcqAnswers}
                     showFeedback={showFeedback}
                     showSpeakingButton={showSpeakingButton}
-                    challengeData={{
-                      challengeId: challengeMeta.id,
-                      audioIds: showSpeakingButton ? audioIds : undefined
-                    }}
                     superBlock={superBlock}
                   />
                 </ObserveKeys>
@@ -355,10 +350,10 @@ export const query = graphql`
           answers {
             answer
             feedback
+            audioId
           }
           solution
         }
-        audioIds
         scene {
           setup {
             background

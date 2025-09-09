@@ -91,7 +91,8 @@ const questionJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         answer: Joi.string().required(),
-        feedback: Joi.string().allow(null)
+        feedback: Joi.string().allow(null),
+        audioId: Joi.string().allow(null)
       })
     )
     .required()
@@ -278,7 +279,6 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
-  audioIds: Joi.array().items(Joi.string()),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()

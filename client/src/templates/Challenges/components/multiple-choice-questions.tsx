@@ -18,10 +18,7 @@ type MultipleChoiceQuestionsProps = {
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
   showSpeakingButton?: boolean;
-  challengeData?: {
-    challengeId?: string;
-    audioIds?: string[] | null;
-  };
+
   openSpeakingModal: () => void;
   superBlock: SuperBlocks;
 };
@@ -37,7 +34,6 @@ function MultipleChoiceQuestions({
   submittedMcqAnswers,
   showFeedback,
   showSpeakingButton,
-  challengeData,
   openSpeakingModal,
   superBlock
 }: MultipleChoiceQuestionsProps): JSX.Element {
@@ -45,14 +41,20 @@ function MultipleChoiceQuestions({
 
   const [modalText, setModalText] = useState('');
   const [modalAnswerIndex, setModalAnswerIndex] = useState<number>(0);
+  const [modalQuestionIndex, setModalQuestionIndex] = useState<number>(0);
 
   function stripCodeTags(text: string): string {
     return text.replace(/<code>(.*?)<\/code>/g, '$1');
   }
 
-  const handleSpeakingButtonClick = (answer: string, answerIndex: number) => {
+  const handleSpeakingButtonClick = (
+    answer: string,
+    answerIndex: number,
+    questionIndex: number
+  ) => {
     setModalText(stripCodeTags(removeParagraphTags(answer)));
     setModalAnswerIndex(answerIndex);
+    setModalQuestionIndex(questionIndex);
     openSpeakingModal();
   };
 
@@ -64,10 +66,15 @@ function MultipleChoiceQuestions({
     return undefined;
   };
 
-  const getAudioUrl = (answerIndex: number): string | undefined => {
-    const audioIds = challengeData?.audioIds;
-    if (audioIds && audioIds[answerIndex]) {
-      return constructAudioUrl(audioIds[answerIndex]);
+  const getAudioUrl = (
+    questionIndex: number,
+    answerIndex: number
+  ): string | undefined => {
+    const question = questions[questionIndex];
+    const answer = question?.answers[answerIndex];
+
+    if (answer?.audioId) {
+      return constructAudioUrl(answer.audioId);
     }
     return undefined;
   };
@@ -138,7 +145,11 @@ function MultipleChoiceQuestions({
                       <Button
                         size='medium'
                         onClick={() =>
-                          handleSpeakingButtonClick(answer, answerIndex)
+                          handleSpeakingButtonClick(
+                            answer,
+                            answerIndex,
+                            questionIndex
+                          )
                         }
                         className='mcq-speaking-button'
                         aria-hidden='true'
@@ -190,7 +201,13 @@ function MultipleChoiceQuestions({
                 <Button
                   key={`sr-speaking-${questionIndex}-${answerIndex}`}
                   size='medium'
-                  onClick={() => handleSpeakingButtonClick(answer, answerIndex)}
+                  onClick={() =>
+                    handleSpeakingButtonClick(
+                      answer,
+                      answerIndex,
+                      questionIndex
+                    )
+                  }
                   aria-describedby={labelId}
                 >
                   Speaking
@@ -204,7 +221,7 @@ function MultipleChoiceQuestions({
       <Spacer size='m' />
       <SpeakingModal
         sentence={modalText}
-        audioUrl={getAudioUrl(modalAnswerIndex)}
+        audioUrl={getAudioUrl(modalQuestionIndex, modalAnswerIndex)}
         answerIndex={modalAnswerIndex}
         superBlock={superBlock}
       />

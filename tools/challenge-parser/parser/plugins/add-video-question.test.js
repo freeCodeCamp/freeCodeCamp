@@ -2,7 +2,11 @@ const parseFixture = require('../__fixtures__/parse-fixture');
 const addVideoQuestion = require('./add-video-question');
 
 describe('add-video-question plugin', () => {
-  let simpleAST, videoAST, multipleQuestionAST, videoOutOfOrderAST;
+  let simpleAST,
+    videoAST,
+    multipleQuestionAST,
+    videoOutOfOrderAST,
+    videoWithAudioAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
 
@@ -15,6 +19,7 @@ describe('add-video-question plugin', () => {
     videoOutOfOrderAST = await parseFixture(
       'with-video-question-out-of-order.md'
     );
+    videoWithAudioAST = await parseFixture('with-video-question-audio.md');
   });
 
   beforeEach(() => {
@@ -42,6 +47,7 @@ describe('add-video-question plugin', () => {
     expect(question.answers[0]).toHaveProperty('answer');
     expect(question.answers[0].answer).toBeTruthy();
     expect(question.answers[0]).toHaveProperty('feedback');
+    expect(question.answers[0]).toHaveProperty('audioId');
   };
 
   it('should generate a questions array from a video challenge AST', () => {
@@ -75,16 +81,19 @@ describe('add-video-question plugin', () => {
     expect(testObject.solution).toBe(3);
     expect(testObject.answers[0]).toStrictEqual({
       answer: '<p>Some inline <code>code</code></p>',
-      feedback: '<p>That is not correct.</p>'
+      feedback: '<p>That is not correct.</p>',
+      audioId: null
     });
     expect(testObject.answers[1]).toStrictEqual({
       answer: `<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>`,
-      feedback: null
+      feedback: null,
+      audioId: null
     });
     expect(testObject.answers[2]).toStrictEqual({
       answer: '<p><code> code in </code> code tags</p>',
-      feedback: null
+      feedback: null,
+      audioId: null
     });
   });
 
@@ -98,6 +107,31 @@ describe('add-video-question plugin', () => {
   it('should NOT throw if there is no question', () => {
     expect.assertions(1);
     expect(() => plugin(simpleAST)).not.toThrow();
+  });
+
+  it('should extract audioId from answers when present', () => {
+    plugin(videoWithAudioAST, file);
+
+    const testObject = file.data.questions[0];
+
+    expect(testObject.answers[0]).toStrictEqual({
+      answer: '<p>Some inline <code>code</code></p>',
+      feedback: '<p>That is not correct.</p>',
+      audioId: 'answer1-audio'
+    });
+
+    expect(testObject.answers[1]).toStrictEqual({
+      answer: `<p>Some <em>italics</em></p>
+<p>A second answer paragraph.</p>`,
+      feedback: null,
+      audioId: 'answer2-audio'
+    });
+
+    expect(testObject.answers[2]).toStrictEqual({
+      answer: '<p><code> code in </code> code tags</p>',
+      feedback: null,
+      audioId: null
+    });
   });
 
   it('should match the video snapshot', () => {

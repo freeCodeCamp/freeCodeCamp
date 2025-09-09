@@ -36,6 +36,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -214,7 +215,6 @@ export type ChallengeNode = {
     questions: Question[];
     quizzes: Quiz[];
     assignments: string[];
-    audioIds?: string[] | null;
     required: Required[];
     scene: FullScene;
     solutions: {
