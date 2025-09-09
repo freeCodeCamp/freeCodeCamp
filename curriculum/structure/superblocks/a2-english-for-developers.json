@@ -1,32 +1,180 @@
 {
-  "blocks": [
-    "learn-greetings-in-your-first-day-at-the-office",
-    "learn-introductions-in-an-online-team-meeting",
-    "learn-conversation-starters-in-the-break-room",
-    "learn-how-to-talk-about-a-typical-workday-and-tasks",
-    "learn-how-to-discuss-your-morning-or-evening-routine",
-    "learn-how-to-describe-your-current-project",
-    "learn-how-to-ask-and-share-about-educational-and-professional-background",
-    "learn-how-to-talk-about-hobbies-and-interests",
-    "learn-how-to-discuss-roles-and-responsibilities",
-    "learn-how-to-have-a-conversation-about-preferences-and-motivations",
-    "learn-how-to-discuss-popular-trends-in-technology",
-    "learn-how-to-clarify-information-in-different-interactions",
-    "learn-how-to-use-basic-programming-vocabulary-in-conversations",
-    "learn-how-to-use-code-related-concepts-and-terms",
-    "learn-how-to-discuss-tech-trends-and-updates",
-    "learn-how-to-help-a-coworker-troubleshoot-on-github",
-    "learn-how-to-share-your-progress-in-weekly-stand-up-meetings",
-    "learn-how-to-ask-for-clarification-on-code-understanding",
-    "learn-how-to-document-code-for-a-project",
-    "learn-how-to-read-and-understand-code-documentation",
-    "learn-how-to-analyze-code-documentation",
-    "learn-how-to-share-progress-and-accomplishments",
-    "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects",
-    "learn-how-to-express-agreement-or-disagreement",
-    "learn-how-to-offer-technical-support-and-guidance",
-    "learn-how-to-request-and-receive-guidance",
-    "learn-how-to-provide-explanations-when-helping-others",
-    "a2-english-for-developers-certification-exam"
+  "chapters": [
+    {
+      "dashedName": "greetings-and-introductions",
+      "modules": [
+        {
+          "dashedName": "first-day-at-the-office",
+          "blocks": ["learn-greetings-in-your-first-day-at-the-office"]
+        },
+        {
+          "dashedName": "Introductions-in-an-online-team-meeting",
+          "blocks": ["learn-introductions-in-an-online-team-meeting"]
+        },
+        {
+          "dashedName": "conversation-starters",
+          "blocks": ["learn-conversation-starters-in-the-break-room"]
+        }
+      ]
+    },
+    {
+      "dashedName": "daily-routines",
+      "modules": [
+        {
+          "dashedName": "typical-workday",
+          "blocks": ["learn-how-to-talk-about-a-typical-workday-and-tasks"]
+        },
+        {
+          "dashedName": "morning-or-evening-routine",
+          "blocks": ["learn-how-to-discuss-your-morning-or-evening-routine"]
+        },
+        {
+          "dashedName": "describe-your-current-project",
+          "blocks": ["learn-how-to-describe-your-current-project"]
+        }
+      ]
+    },
+    {
+      "dashedName": "personal-information",
+      "modules": [
+        {
+          "dashedName": "educational-and-professional-background",
+          "blocks": [
+            "learn-how-to-ask-and-share-about-educational-and-professional-background"
+          ]
+        },
+        {
+          "dashedName": "hobbies-and-interests",
+          "blocks": ["learn-how-to-talk-about-hobbies-and-interests"]
+        },
+        {
+          "dashedName": "roles-and-responsibilities",
+          "blocks": ["learn-how-to-discuss-roles-and-responsibilities"]
+        }
+      ]
+    },
+    {
+      "dashedName": "likes-and-dislikes",
+      "modules": [
+        {
+          "dashedName": "preferences-and-motivations",
+          "blocks": [
+            "learn-how-to-have-a-conversation-about-preferences-and-motivations"
+          ]
+        },
+        {
+          "dashedName": "popular-trends-in-technology",
+          "blocks": ["learn-how-to-discuss-popular-trends-in-technology"]
+        },
+        {
+          "dashedName": "clarify-information",
+          "blocks": [
+            "learn-how-to-clarify-information-in-different-interactions"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "common-programming-vocabulary",
+      "modules": [
+        {
+          "dashedName": "basic-programming-vocabulary",
+          "blocks": [
+            "learn-how-to-use-basic-programming-vocabulary-in-conversations"
+          ]
+        },
+        {
+          "dashedName": "code-related-concepts-and-terms",
+          "blocks": ["learn-how-to-use-code-related-concepts-and-terms"]
+        },
+        {
+          "dashedName": "tech-trends-and-updates",
+          "blocks": ["learn-how-to-discuss-tech-trends-and-updates"]
+        }
+      ]
+    },
+    {
+      "dashedName": "discussing-coding-problems",
+      "modules": [
+        {
+          "dashedName": "troubleshoot-on-github",
+          "blocks": ["learn-how-to-help-a-coworker-troubleshoot-on-github"]
+        },
+        {
+          "dashedName": "share-progress-in-meetings",
+          "blocks": [
+            "learn-how-to-share-your-progress-in-weekly-stand-up-meetings"
+          ]
+        },
+        {
+          "dashedName": "ask-for-clarification-on-code",
+          "blocks": ["learn-how-to-ask-for-clarification-on-code-understanding"]
+        }
+      ]
+    },
+    {
+      "dashedName": "basic-code-documentation",
+      "modules": [
+        {
+          "dashedName": "document-code-for-a-project",
+          "blocks": ["learn-how-to-document-code-for-a-project"]
+        },
+        {
+          "dashedName": "read-and-understand-code-documentation",
+          "blocks": ["learn-how-to-read-and-understand-code-documentation"]
+        },
+        {
+          "dashedName": "analyze-code-documentation",
+          "blocks": ["learn-how-to-analyze-code-documentation"]
+        }
+      ]
+    },
+    {
+      "dashedName": "meetings-and-discussions",
+      "modules": [
+        {
+          "dashedName": "share-progress-and-accomplishments",
+          "blocks": ["learn-how-to-share-progress-and-accomplishments"]
+        },
+        {
+          "dashedName": "talk-about-updates-and-plans",
+          "blocks": [
+            "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects"
+          ]
+        },
+        {
+          "dashedName": "express-agreement-or-disagreement",
+          "blocks": ["learn-how-to-express-agreement-or-disagreement"]
+        }
+      ]
+    },
+    {
+      "dashedName": "aks-technical-support",
+      "modules": [
+        {
+          "dashedName": "offer-technical-support",
+          "blocks": ["learn-how-to-offer-technical-support-and-guidance"]
+        },
+        {
+          "dashedName": "request-and-receive-guidance",
+          "blocks": ["learn-how-to-request-and-receive-guidance"]
+        },
+        {
+          "dashedName": "explanations-when-helping-others",
+          "blocks": ["learn-how-to-provide-explanations-when-helping-others"]
+        }
+      ]
+    },
+    {
+      "dashedName": "a2-english-certification-exam",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "a2-english-for-developers-certification-exam",
+          "comingSoon": true,
+          "blocks": ["a2-english-for-developers-certification-exam"]
+        }
+      ]
+    }
   ]
 }
