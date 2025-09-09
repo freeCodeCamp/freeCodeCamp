@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { API_LOCATION } from '../../utils/handle-request';
-import { Module } from '../../../interfaces/module';
+import { Block, BlocksWithModule } from '../../../interfaces/block';
 
 const ModuleLanding = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([] as Module[]);
+  const [items, setItems] = useState([] as Block[]);
+  const [moduleName, setModuleName] = useState('');
+  const [chapterName, setChapterName] = useState('');
   const params = useParams() as {
     superblock: string;
     chapter: string;
@@ -23,11 +25,13 @@ const ModuleLanding = () => {
     fetch(
       `${API_LOCATION}/${params.superblock}/chapters/${params.chapter}/modules/${params.module}`
     )
-      .then(res => res.json() as Promise<Module[]>)
+      .then(res => res.json() as Promise<BlocksWithModule>)
       .then(
-        blocks => {
+        moduleData => {
           setLoading(false);
-          setItems(blocks);
+          setItems(moduleData.blocks);
+          setModuleName(moduleData.currentModule);
+          setChapterName(moduleData.currentChapter);
         },
         (error: Error) => {
           setLoading(false);
@@ -44,19 +48,17 @@ const ModuleLanding = () => {
   }
   return (
     <div>
-      <h1>{params.module}</h1>
+      <h1>{moduleName}</h1>
       <ul>
-        {items.map(module => (
-          <li key={module.path}>
-            <Link to={`/${params.superblock}/${module.path}`}>
-              {module.name}
-            </Link>
+        {items.map(block => (
+          <li key={block.path}>
+            <Link to={`/${params.superblock}/${block.path}`}>{block.name}</Link>
           </li>
         ))}
       </ul>
       <p>
         <Link to={`/${params.superblock}/chapters/${params.chapter}`}>
-          Return to {params.chapter}
+          Return to {chapterName}
         </Link>
       </p>
       <hr />

@@ -16,9 +16,14 @@ type Block = {
   path: string;
 };
 
+type BlockLocation = {
+  blocks: Block[];
+  currentSuperBlock: string;
+};
+
 const chapterBasedSuperBlocks = ['full-stack-developer'];
 
-export const getBlocks = async (sup: string): Promise<Block[]> => {
+export const getBlocks = async (sup: string): Promise<BlockLocation> => {
   const superBlockDataPath = join(SUPERBLOCK_META_DIR, sup + '.json');
   const superBlockMetaFile = await readFile(superBlockDataPath, {
     encoding: 'utf8'
@@ -35,10 +40,10 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
 
   if (chapterBasedSuperBlocks.includes(sup)) {
     blocks = superBlockMeta.chapters!.map(chapter => {
-      const chapters = Object.values(introData[sup]['chapters']!);
+      const chapters = Object.entries(introData[sup]['chapters']!);
       const chapterTrueName = chapters.filter(
         x => x[0] === chapter.dashedName
-      )[0];
+      )[0][1];
       return {
         name: chapterTrueName,
         path: 'chapters/' + chapter.dashedName
@@ -60,5 +65,5 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
     );
   }
 
-  return blocks;
+  return { blocks: blocks, currentSuperBlock: introData[sup].title };
 };

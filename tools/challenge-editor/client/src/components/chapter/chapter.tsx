@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { API_LOCATION } from '../../utils/handle-request';
-import { Chapter } from '../../../interfaces/chapter';
+import { Module, ChaptersWithLocation } from '../../../interfaces/chapter';
 
 const ChapterLanding = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([] as Chapter[]);
+  const [items, setItems] = useState([] as Module[]);
+  const [chapterName, setChapterName] = useState('');
+  const [superBlockName, setSuperBlockName] = useState('');
   const params = useParams() as { superblock: string; chapter: string };
 
   useEffect(() => {
@@ -17,11 +19,13 @@ const ChapterLanding = () => {
   const fetchData = () => {
     setLoading(true);
     fetch(`${API_LOCATION}/${params.superblock}/chapters/${params.chapter}`)
-      .then(res => res.json() as Promise<Chapter[]>)
+      .then(res => res.json() as Promise<ChaptersWithLocation>)
       .then(
-        blocks => {
+        blockData => {
           setLoading(false);
-          setItems(blocks);
+          setItems(blockData.modules);
+          setChapterName(blockData.currentChapter);
+          setSuperBlockName(blockData.currentSuperBlock);
         },
         (error: Error) => {
           setLoading(false);
@@ -38,7 +42,7 @@ const ChapterLanding = () => {
   }
   return (
     <div>
-      <h1>{params.chapter}</h1>
+      <h1>{chapterName}</h1>
       <ul>
         {items.map(chapter => (
           <li key={chapter.name}>
@@ -51,7 +55,7 @@ const ChapterLanding = () => {
         ))}
       </ul>
       <p>
-        <Link to={`/${params.superblock}`}>Return to {params.superblock}</Link>
+        <Link to={`/${params.superblock}`}>Return to {superBlockName}</Link>
       </p>
       <hr />
       <h2>Create New Project</h2>
