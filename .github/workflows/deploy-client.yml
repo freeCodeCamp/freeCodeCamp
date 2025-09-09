@@ -39,7 +39,6 @@ jobs:
       matrix:
         node-version: [22]
         lang-name-full:
-          - english
           - chinese
           - espanol
           - chinese-traditional
@@ -50,8 +49,6 @@ jobs:
           - german
           - swahili
         include:
-          - lang-name-full: english
-            lang-name-short: eng
           - lang-name-full: chinese
             lang-name-short: chn
           - lang-name-full: espanol
