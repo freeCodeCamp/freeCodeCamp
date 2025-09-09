@@ -1,11 +1,15 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { SUPERBLOCK_META_DIR, BLOCK_META_DIR } from '../configs/paths';
+import {
+  SUPERBLOCK_META_DIR,
+  BLOCK_META_DIR,
+  ENGLISH_LANG_DIR
+} from '../configs/paths';
 
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 import { PartialMeta } from '../interfaces/partial-meta';
 
-import * as intro from '../../../../client/i18n/locales/english/intro.json';
+import { Intro } from '../interfaces/intro';
 
 type Block = {
   name: string;
@@ -20,16 +24,21 @@ export const getBlocks = async (sup: string): Promise<Block[]> => {
     encoding: 'utf8'
   });
   const superBlockMeta = JSON.parse(superBlockMetaFile) as SuperBlockMeta;
+
+  const introDataPath = join(ENGLISH_LANG_DIR, 'intro.json');
+  const introFile = await readFile(introDataPath, {
+    encoding: 'utf8'
+  });
+  const introData = JSON.parse(introFile) as Intro;
+
   let blocks: { name: string; path: string }[] = [];
 
   if (chapterBasedSuperBlocks.includes(sup)) {
     blocks = superBlockMeta.chapters!.map(chapter => {
-      const chapters = Object.entries(
-        intro['full-stack-developer']['chapters']
-      );
+      const chapters = Object.values(introData[sup]['chapters']!);
       const chapterTrueName = chapters.filter(
         x => x[0] === chapter.dashedName
-      )[0][1];
+      )[0];
       return {
         name: chapterTrueName,
         path: 'chapters/' + chapter.dashedName

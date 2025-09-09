@@ -1,9 +1,13 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { SUPERBLOCK_META_DIR, BLOCK_META_DIR } from '../configs/paths';
+import {
+  SUPERBLOCK_META_DIR,
+  BLOCK_META_DIR,
+  ENGLISH_LANG_DIR
+} from '../configs/paths';
 import { SuperBlockMeta } from '../interfaces/superblock-meta';
 import { PartialMeta } from '../interfaces/partial-meta';
-import * as intro from '../../../../client/i18n/locales/english/intro.json';
+import { Intro } from '../interfaces/intro';
 
 type Block = {
   name: string;
@@ -26,6 +30,12 @@ export const getModules = async (
   });
   const superBlockMeta = JSON.parse(superBlockMetaFile) as SuperBlockMeta;
 
+  const introDataPath = join(ENGLISH_LANG_DIR, 'intro.json');
+  const introFile = await readFile(introDataPath, {
+    encoding: 'utf8'
+  });
+  const introData = JSON.parse(introFile) as Intro;
+
   const chapter = superBlockMeta.chapters!.filter(
     x => x.dashedName === chap
   )[0];
@@ -34,10 +44,8 @@ export const getModules = async (
 
   modules = await Promise.all(
     chapter.modules!.map(module => {
-      const modules = Object.entries(intro['full-stack-developer']['modules']);
-      const moduleTrueName = modules.filter(
-        x => x[0] === module.dashedName
-      )[0][1];
+      const modules = Object.values(introData[superBlock]['modules']!);
+      const moduleTrueName = modules.filter(x => x[0] === module.dashedName)[0];
       return { name: moduleTrueName, path: 'modules/' + module.dashedName };
     })
   );
