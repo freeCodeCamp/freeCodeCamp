@@ -11,6 +11,7 @@ type Block = {
 };
 
 type Module = {
+  name: string;
   path: string;
 };
 
