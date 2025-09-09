@@ -11,11 +11,9 @@ export default defineConfig({
     environment: 'node',
     hookTimeout: 60000,
     testTimeout: 30000,
-    isolate: true,
-    bail: 1,
-    pool: 'threads',
-    poolOptions: { threads: { minWorkers: 4, maxWorkers: 4 } },
-    globalSetup: 'test/vitest-global-setup.mjs'
+    isolate: false,
+    globalSetup: 'test/vitest-global-setup.mjs',
+    setupFiles: 'test/vitest-setup.mjs'
   },
   esbuild: {
     target: 'es2022',

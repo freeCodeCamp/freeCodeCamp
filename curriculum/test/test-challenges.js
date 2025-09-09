@@ -4,7 +4,6 @@ import { describe, it, beforeAll } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
-import puppeteer from 'puppeteer';
 
 import {
   buildChallenge,
@@ -53,11 +52,10 @@ global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
 
 async function newPageContext() {
-  const browser = await puppeteer.connect({
-    browserWSEndpoint: process.env.PUPPETEER_WS_ENDPOINT
-  });
-  const context = await browser.createBrowserContext();
-  const page = await context.newPage();
+  const page =
+    await globalThis.puppeteerBrowserContext[
+      process.env.VITEST_POOL_ID
+    ].newPage();
   // it's needed for workers as context.
   await page.goto(`http://127.0.0.1:8080/index.html`);
   return page;
