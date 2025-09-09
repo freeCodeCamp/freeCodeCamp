@@ -303,6 +303,10 @@ export function generateExam(
     };
   });
 
+  if (examCopy.config.questionSets.length === 0) {
+    throw `${examCopy.id}: Invalid exam config - no question sets config.`;
+  }
+
   // Convert question set config by type: [[all question sets of type], [another type], ...]
   const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(
     (acc, curr) => {

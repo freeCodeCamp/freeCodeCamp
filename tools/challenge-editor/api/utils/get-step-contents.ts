@@ -8,7 +8,7 @@ export const getStepContent = async (
   block: string,
   step: string
 ): Promise<{ name: string; dashedName: string; fileData: string }> => {
-  const filePath = join(CHALLENGE_DIR, sup, block, step);
+  const filePath = join(CHALLENGE_DIR, block, step);
 
   const fileData = await readFile(filePath, 'utf8');
   const name = matter(fileData).data.title as string;
