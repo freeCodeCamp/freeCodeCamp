@@ -344,5 +344,6 @@ module.exports = {
   getSuperblockStructure,
   createCommentMap,
   superBlockToFilename,
-  getSuperblocks
+  getSuperblocks,
+  addSuperblockStructure
 };

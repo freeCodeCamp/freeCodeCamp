@@ -5,12 +5,11 @@ import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
+const { getCurriculumStructure } = require('../../file-handler');
 const {
-  getCurriculumStructure,
-  getSuperblockStructure,
-  getBlockStructure
-} = require('../../file-handler');
-const { superBlockToFilename } = require('../../build-curriculum');
+  addBlockStructure,
+  addSuperblockStructure
+} = require('../../build-curriculum');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -34,40 +33,21 @@ async function main() {
 
   // Build a lightweight structure to identify all block/superblock pairs
   const curriculum = getCurriculumStructure();
-  const superblockFilenames = curriculum.superblocks;
-  // Invert exported mapping: name -> filename to filename -> name
-  const filenameToName = Object.fromEntries(
-    Object.entries(superBlockToFilename).map(([name, filename]) => [
-      filename,
-      name
-    ])
+
+  const superblockList = addBlockStructure(
+    addSuperblockStructure(curriculum.superblocks)
   );
 
-  const blockEntries = [];
-  for (const superblockFilename of superblockFilenames) {
-    const superBlockName = filenameToName[superblockFilename];
-    if (!superBlockName) continue;
-    const superblockStructure = getSuperblockStructure(superblockFilename);
-    const blocks = superblockStructure.blocks || [];
-    for (const blockSlug of blocks) {
-      try {
-        getBlockStructure(blockSlug);
-      } catch {
-        console.warn(`Skipping missing block structure: ${blockSlug}`);
-        continue;
-      }
-      blockEntries.push({
-        superBlock: superBlockName,
-        block: blockSlug
-      });
-    }
-  }
+  const blocks = superblockList
+    .flatMap(({ blocks }) => blocks)
+    .map(b => b.dashedName);
+
   let count = 0;
-  for (const { superBlock, block } of blockEntries) {
+  for (const block of blocks) {
     const dir = GENERATED_DIR;
     await fs.promises.mkdir(dir, { recursive: true });
     const filePath = path.join(dir, `${safe(block)}.test.js`);
-    const contents = generateSingleBlockFile({ superBlock, block });
+    const contents = generateSingleBlockFile({ block });
     await fs.promises.writeFile(filePath, contents, 'utf8');
     count++;
   }
@@ -84,12 +64,10 @@ function safe(name) {
     .replace(/^-+|-+$/g, '');
 }
 
-function generateSingleBlockFile({ superBlock, block }) {
+function generateSingleBlockFile({ block }) {
   return `import { defineTestsForBlock } from '../test-challenges.js';
 
-await defineTestsForBlock({ superBlock: ${JSON.stringify(
-    superBlock
-  )}, block: ${JSON.stringify(block)} });
+await defineTestsForBlock({ block: ${JSON.stringify(block)} });
 `;
 }
 
