@@ -3412,6 +3412,12 @@
           "In this lab, you will create a function that removes all falsy values from an array."
         ]
       },
+      "lab-title-case-converter": {
+        "title": "Build a Title Case Converter",
+        "intro": [
+          "In this lab, you will build a function that converts a string to title case."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
@@ -4960,9 +4966,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
