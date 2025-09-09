@@ -99,18 +99,20 @@ async function startLiveServer() {
   };
 }
 
-export async function defineTestsForSuperBlock({ superBlock }) {
+export async function defineTestsForBlock({ superBlock, block }) {
   let browser;
   let page;
   let serverRef;
 
   const lang = testedLang();
-  const challenges = await getChallenges(lang, { superBlock });
+  const challenges = await getChallenges(lang, { superBlock, block });
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
   if (isEmpty(nonCertificationChallenges)) {
-    throw Error(`No challenges to test for superblock ${superBlock}.`);
+    throw Error(
+      `No challenges to test for block ${block} in superblock ${superBlock}.`
+    );
   }
   const meta = {};
   for (const challenge of challenges) {
@@ -151,7 +153,13 @@ export async function defineTestsForSuperBlock({ superBlock }) {
       }
     });
     afterAll(() => cleanup());
-    populateTestsForLang(challengeData, () => page);
+    populateTestsForLang(
+      {
+        ...challengeData,
+        challenges: challenges.filter(c => c.block === block)
+      },
+      () => page
+    );
   });
 }
 

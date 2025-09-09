@@ -7,13 +7,14 @@ export default defineConfig({
     }
   },
   test: {
-    include: ['test/superblocks-generated/**/*.test.js'],
+    include: ['test/blocks-generated/**/*.test.js'],
     environment: 'node',
     hookTimeout: 60000,
     testTimeout: 30000,
     isolate: true,
+    bail: 1,
     pool: 'threads',
-    poolOptions: { threads: { minWorkers: 8, maxWorkers: 8 } }
+    poolOptions: { threads: { minWorkers: 4, maxWorkers: 4 } }
   },
   esbuild: {
     target: 'es2022',
