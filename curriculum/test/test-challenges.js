@@ -151,7 +151,6 @@ export async function defineTestsForSuperBlock({ superBlock }) {
       }
     });
     afterAll(() => cleanup());
-    // Pass a getter so tests resolve the active page at runtime (after beforeAll)
     populateTestsForLang(challengeData, () => page);
   });
 }

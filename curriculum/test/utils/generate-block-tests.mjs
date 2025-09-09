@@ -42,21 +42,10 @@ async function main() {
     ])
   );
 
-  // Superblocks to exclude from tests (language-learning tracks)
-  const IGNORE_SUPERBLOCKS = new Set([
-    'a2-english-for-developers',
-    'b1-english-for-developers',
-    'a1-professional-spanish',
-    'a2-professional-spanish',
-    'a2-professional-chinese',
-    'a1-professional-chinese'
-  ]);
-
   const pairs = [];
   for (const superblockFilename of superblockFilenames) {
     const superBlockName = filenameToName[superblockFilename];
     if (!superBlockName) continue;
-    if (IGNORE_SUPERBLOCKS.has(superBlockName)) continue;
     const superblockStructure = getSuperblockStructure(superblockFilename);
     const blocks = superblockStructure.blocks || [];
     pairs.push({ superBlock: superBlockName, blockCount: blocks.length });

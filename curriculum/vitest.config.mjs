@@ -12,9 +12,8 @@ export default defineConfig({
     hookTimeout: 60000,
     testTimeout: 30000,
     isolate: true,
-    bail: 1,
     pool: 'threads',
-    poolOptions: { threads: { minWorkers: 4, maxWorkers: 4 } }
+    poolOptions: { threads: { minWorkers: 8, maxWorkers: 8 } }
   },
   esbuild: {
     target: 'es2022',
