@@ -307,7 +307,7 @@ const SpeakingModal = ({
           <Button
             size='medium'
             onClick={() => void handleRecord()}
-            disabled={isPlaying || listening}
+            disabled={isPlaying}
           >
             {listening ? t('speaking-modal.stop') : t('speaking-modal.record')}
           </Button>
