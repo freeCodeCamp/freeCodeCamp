@@ -1,12 +1,11 @@
-import path from 'node:path';
-import net from 'node:net';
 import { createRequire } from 'node:module';
-import liveServer from '@compodoc/live-server';
-import { describe, it, beforeAll, afterAll } from 'vitest';
+
+import { describe, it, beforeAll } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 import puppeteer from 'puppeteer';
+
 import {
   buildChallenge,
   runnerTypes
@@ -16,14 +15,10 @@ import {
   hasNoSolution
 } from '../../shared/config/challenge-types';
 import { getLines } from '../../shared/utils/get-lines';
-import {
-  prefixDoctype,
-  helperVersion
-} from '../../client/src/templates/Challenges/utils/frame';
+import { prefixDoctype } from '../../client/src/templates/Challenges/utils/frame';
 
 const require = createRequire(import.meta.url);
 
-const clientPath = path.resolve(__dirname, '../../client');
 const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
 const { testedLang } = require('../utils');
@@ -57,52 +52,19 @@ const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
 
-async function newPageContext(browser, baseUrl) {
-  const page = await browser.newPage();
+async function newPageContext() {
+  const browser = await puppeteer.connect({
+    browserWSEndpoint: process.env.PUPPETEER_WS_ENDPOINT
+  });
+  const context = await browser.createBrowserContext();
+  const page = await context.newPage();
   // it's needed for workers as context.
-  await page.goto(`${baseUrl}/index.html`);
+  await page.goto(`http://127.0.0.1:8080/index.html`);
   return page;
 }
 
-function getFreePort(host = '127.0.0.1') {
-  return new Promise((resolve, reject) => {
-    const srv = net.createServer();
-    srv.listen(0, host, () => {
-      const addr = srv.address();
-      const port = typeof addr === 'object' && addr ? addr.port : 0;
-      srv.close(() => resolve(port));
-    });
-    srv.on('error', reject);
-  });
-}
-
-async function startLiveServer() {
-  const host = '127.0.0.1';
-  const port = await getFreePort(host);
-  liveServer.start({
-    host,
-    port: String(port),
-    root: path.resolve(__dirname, 'stubs'),
-    mount: [
-      [
-        '/dist',
-        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
-      ],
-      ['/js', path.join(clientPath, 'static/js')]
-    ],
-    open: false,
-    logLevel: 0
-  });
-  return {
-    baseUrl: `http://${host}:${port}`,
-    shutdown: () => liveServer.shutdown()
-  };
-}
-
 export async function defineTestsForBlock({ superBlock, block }) {
-  let browser;
   let page;
-  let serverRef;
 
   const lang = testedLang();
   const challenges = await getChallenges(lang, { superBlock, block });
@@ -126,33 +88,12 @@ export async function defineTestsForBlock({ superBlock, block }) {
 
   const challengeData = { meta, challenges, lang, superBlocks: [superBlock] };
 
-  function cleanup() {
-    if (browser) browser.close();
-    serverRef?.shutdown?.();
-  }
-
   describe('Check challenges', () => {
     beforeAll(async () => {
-      serverRef = await startLiveServer();
-      browser = await puppeteer.launch({
-        args: [
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          '--disable-dev-shm-usage'
-        ],
-        headless: 'new'
-      });
-      try {
-        const contextPage = await newPageContext(browser, serverRef.baseUrl);
-        global.Worker = createPseudoWorker(contextPage);
-        page = await newPageContext(browser, serverRef.baseUrl);
-      } catch (e) {
-        if (browser) await browser.close().catch(() => {});
-        serverRef?.shutdown?.();
-        throw e;
-      }
+      page = await newPageContext();
+      global.Worker = createPseudoWorker(page);
     });
-    afterAll(() => cleanup());
+
     populateTestsForLang(
       {
         ...challengeData,

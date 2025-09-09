@@ -14,7 +14,8 @@ export default defineConfig({
     isolate: true,
     bail: 1,
     pool: 'threads',
-    poolOptions: { threads: { minWorkers: 4, maxWorkers: 4 } }
+    poolOptions: { threads: { minWorkers: 4, maxWorkers: 4 } },
+    globalSetup: 'test/vitest-global-setup.mjs'
   },
   esbuild: {
     target: 'es2022',
