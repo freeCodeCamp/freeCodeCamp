@@ -1,6 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { getFileName } from './get-file-name';
 
 const basePath = join(

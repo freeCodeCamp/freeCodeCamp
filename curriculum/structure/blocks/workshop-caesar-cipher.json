@@ -1,6 +1,6 @@
 {
   "name": "Build a Caesar Cipher",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-caesar-cipher",

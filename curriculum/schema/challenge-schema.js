@@ -158,7 +158,7 @@ const schema = Joi.object().keys({
     otherwise: Joi.optional()
   }),
   certification: Joi.string().regex(slugWithSlashRE),
-  challengeType: Joi.number().min(0).max(30).required(),
+  challengeType: Joi.number().min(0).max(31).required(),
   checksum: Joi.number(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
