@@ -3666,7 +3666,7 @@
         "intro": ["In this lab you'll build a regex sandbox."]
       },
       "lab-spinal-case-converter": {
-        "title": "Build a Spinal Case Converter",
+        "title": "Implement a Spinal Case Converter",
         "intro": [
           "In this lab, you will create a function that converts a given string to spinal case which is a style of writing where all letters are lowercase and separated by hyphens."
         ]
