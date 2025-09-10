@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { addDays } from 'date-fns';
 
-import { setupServer, superRequest } from '../../../jest.utils';
+import { setupServer, superRequest } from '../../../vitest.utils';
 import { getNowUsCentral, getUtcMidnight } from '../utils/helpers';
 
 function dateToDateParam(date: Date): string {
