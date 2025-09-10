@@ -64,19 +64,19 @@ assert.deepEqual(diffArray(
 
 ```js
 assert.deepEqual(diffArray(
-  ["andesite", "grass", "dirt", "dead shrub"],
-  ["andesite", "grass", "dirt", "dead shrub"]
-), []);
-
-assert.deepEqual(diffArray(
-  ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
-  ["diorite", "andesite", "grass", "dirt", "dead shrub"]
-), ["pink wool"]);
+  ["rose", "lily", "tulip"],
+  ["lily", "daisy", "orchid"]
+), ["rose", "tulip", "daisy", "orchid"]);
 
 assert.deepEqual(diffArray(
   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
   ["andesite", "grass", "dirt", "dead shrub"]
 ), ["diorite", "pink wool"]);
+
+assert.deepEqual(diffArray(
+  ["andesite", "grass", "dirt", "dead shrub"],
+  ["andesite", "grass", "dirt", "dead shrub"]
+), []);
 
 assert.deepEqual(diffArray(
   ["diamond", "stick", "apple"],
