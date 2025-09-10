@@ -87,6 +87,15 @@ assert.deepEqual(diffArray(
 ), ["car", "train", "plane"]);
 ```
 
+`diffArray(["apple", "orange"], ["apple", "orange", "banana", "grape"])` should return `["banana", "grape"]`.
+
+```js
+assert.deepEqual(diffArray(
+  ["apple", "orange"],
+  ["apple", "orange", "banana", "grape"]
+), ["banana", "grape"]);
+```
+
 `diffArray([], ["apple", "banana"])` should return `["apple", "banana"]`.
 
 ```js
