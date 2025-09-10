@@ -69,39 +69,19 @@ assert.deepEqual(diffArray(
 ), []);
 
 assert.deepEqual(diffArray(
-  ["diamond", "stick", "apple"],
-  ["stick", "emerald", "bread"]
-), ["diamond", "apple", "emerald", "bread"]);
-
-Test case 1: Some overlapping elements.
-
-assert.deepEqual(diffArray(
   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
   ["diorite", "andesite", "grass", "dirt", "dead shrub"]
 ), ["pink wool"]);
-
-Test case 2: Multiple unique elements on both sides.
 
 assert.deepEqual(diffArray(
   ["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"],
   ["andesite", "grass", "dirt", "dead shrub"]
 ), ["diorite", "pink wool"]);
 
-Test case 3: Identical arrays should return an empty array.
-
-assert.deepEqual(diffArray(
-  ["andesite", "grass", "dirt", "dead shrub"],
-  ["andesite", "grass", "dirt", "dead shrub"]
-), []);
-
-Test case 4: Arrays with overlapping and new elements.
-
 assert.deepEqual(diffArray(
   ["diamond", "stick", "apple"],
   ["stick", "emerald", "bread"]
 ), ["diamond", "apple", "emerald", "bread"]);
-
-Test case 5: Arrays with numbers and strings combined.
 
 assert.deepEqual(diffArray(
   [1, 2, 3, "a", "b"],
