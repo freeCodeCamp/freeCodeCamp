@@ -1451,7 +1451,7 @@
           "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
         ]
       },
-      "learn-how-to-discuss-roles-and-responsibilies": {
+      "learn-how-to-discuss-roles-and-responsibilities": {
         "title": "Learn How to Discuss Roles and Responsibilities",
         "intro": [
           "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
@@ -3254,10 +3254,22 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
       },
-      "lecture-working-with-objects": {
-        "title": "Working with Objects",
+      "lecture-introduction-to-javascript-objects-and-their-properties": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript objects. The concepts you will learn include how to access properties from an object, check if an object has a property, how object methods differ from functions, object destructuring, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
         ]
       },
       "workshop-recipe-tracker": {

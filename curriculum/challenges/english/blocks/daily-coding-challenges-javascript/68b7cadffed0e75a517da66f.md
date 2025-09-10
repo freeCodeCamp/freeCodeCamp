@@ -1,8 +1,8 @@
 ---
 id: 68b7cadffed0e75a517da66f
-title: "JavaScript Challenge 50: Longest Word"
+title: "Challenge 50: Longest Word"
 challengeType: 28
-dashedName: javascript-challenge-50
+dashedName: challenge-50
 ---
 
 # --description--
