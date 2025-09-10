@@ -182,12 +182,14 @@ const superBlockNames = {
   'python-for-everybody': 'python-for-everybody',
   'b1-english-for-developers': 'b1-english-for-developers',
   'full-stack-developer': 'full-stack-developer',
+  'a1-professional-spanish': 'a1-professional-spanish',
   'a2-professional-spanish': 'a2-professional-spanish',
   'a2-professional-chinese': 'a2-professional-chinese',
   'basic-html': 'basic-html',
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground'
+  'dev-playground': 'dev-playground',
+  'full-stack-open': 'full-stack-open'
 };
 
 const superBlockToFilename = Object.entries(superBlockNames).reduce(
@@ -243,6 +245,24 @@ function addBlockStructure(
   }));
 }
 
+/**
+ * Returns a list of all the superblocks that contain the given block
+ * @param {string} block
+ */
+function getSuperblocks(
+  block,
+  _addSuperblockStructure = addSuperblockStructure
+) {
+  const { superblocks } = getCurriculumStructure();
+  const withStructure = _addSuperblockStructure(superblocks);
+
+  return withStructure
+    .filter(({ blocks }) =>
+      blocks.some(({ dashedName }) => dashedName === block)
+    )
+    .map(({ name }) => name);
+}
+
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
   const builder = new SuperblockCreator({
@@ -288,5 +308,6 @@ module.exports = {
   getBlockStructure,
   getSuperblockStructure,
   createCommentMap,
-  superBlockToFilename
+  superBlockToFilename,
+  getSuperblocks
 };

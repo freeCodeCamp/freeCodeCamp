@@ -704,6 +704,9 @@ importers:
       '@compodoc/live-server':
         specifier: ^1.2.3
         version: 1.2.3
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
       chai:
         specifier: 4.4.1
         version: 4.4.1
@@ -746,6 +749,9 @@ importers:
       string-similarity:
         specifier: 4.0.4
         version: 4.0.4
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   shared:
     dependencies:
@@ -832,6 +838,9 @@ importers:
       '@types/glob':
         specifier: ^8.0.1
         version: 8.1.0
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
       bson-objectid:
         specifier: 2.0.4
         version: 2.0.4
@@ -841,12 +850,18 @@ importers:
       gray-matter:
         specifier: 4.0.3
         version: 4.0.3
+      inquirer:
+        specifier: 8.2.6
+        version: 8.2.6
       prettier:
         specifier: 3.2.5
         version: 3.2.5
       typescript:
         specifier: 5.2.2
         version: 5.2.2
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   tools/challenge-parser:
     dependencies:
@@ -949,7 +964,7 @@ importers:
     dependencies:
       '@freecodecamp/curriculum-helpers':
         specifier: ^5.4.1
-        version: 5.4.1(debug@4.3.4)(typescript@5.7.3)
+        version: 5.4.1(debug@4.3.4)(typescript@5.8.2)
       xterm:
         specifier: ^5.2.1
         version: 5.3.0
@@ -971,7 +986,7 @@ importers:
         version: 8.0.1(webpack-cli@4.10.0)
       '@typescript/vfs':
         specifier: ^1.6.0
-        version: 1.6.1(typescript@5.7.3)
+        version: 1.6.1(typescript@5.8.2)
       babel-loader:
         specifier: 8.3.0
         version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
@@ -1028,18 +1043,18 @@ importers:
       '@total-typescript/ts-reset':
         specifier: ^0.5.0
         version: 0.5.1
-      '@types/chai':
-        specifier: ^4.3.16
-        version: 4.3.20
-      chai:
-        specifier: 4.4.1
-        version: 4.4.1
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
       joi:
         specifier: 17.12.2
         version: 17.12.2
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   tools/scripts/seed:
     devDependencies:
@@ -4547,9 +4562,6 @@ packages:
 
   '@types/canvas-confetti@1.9.0':
     resolution: {integrity: sha512-aBGj/dULrimR1XDZLtG9JwxX1b4HPRF6CX9Yfwh3NvstZEm1ZL7RBnel4keCPSqs1ANRu1u2Aoz9R+VmtjYuTg==}
-
-  '@types/chai@4.3.20':
-    resolution: {integrity: sha512-/pC9HAB5I/xMlc5FP77qjCnI16ChlJfW0tGa0IUcFn38VJrTV6DeZ60NU5KZBtaOZqjdpwTWohz5HU1RrhiYxQ==}
 
   '@types/chai@5.2.2':
     resolution: {integrity: sha512-8kB30R7Hwqf40JPiKhVzodJs2Qc1ZJ5zuT3uzw5Hq/dhNCl3G3l83jfpdI1e20BP348+fV7VIL/+FxaXkqBmWg==}
@@ -8995,6 +9007,10 @@ packages:
   inquirer@7.3.3:
     resolution: {integrity: sha512-JG3eIAj5V9CwcGvuOmoo6LB9kbAYT8HXffUl6memuszlwDC/qvFAJw49XJ5NROSFNPxp3iQg1GqkFhaY/CR0IA==}
     engines: {node: '>=8.0.0'}
+
+  inquirer@8.2.6:
+    resolution: {integrity: sha512-M1WuAmb7pn9zdFRtQYk26ZBoY043Sse0wVDdk4Bppr+JOXyQYybdtvK+l9wUibhtjdjvtoiNy8tk+EgsYIUqKg==}
+    engines: {node: '>=12.0.0'}
 
   insert-module-globals@7.2.1:
     resolution: {integrity: sha512-ufS5Qq9RZN+Bu899eA9QCAYThY+gGW7oRkmb0vC93Vlyu/CFGcH0OYPEjVkDXA5FEbTt1+VWzdoOD3Ny9N+8tg==}
@@ -14899,7 +14915,7 @@ snapshots:
       '@smithy/util-middleware': 2.1.2
       '@smithy/util-retry': 2.1.2
       '@smithy/util-utf8': 2.1.1
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -14942,7 +14958,7 @@ snapshots:
       '@smithy/util-middleware': 2.1.2
       '@smithy/util-retry': 2.1.2
       '@smithy/util-utf8': 2.1.1
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - aws-crt
 
@@ -15162,7 +15178,7 @@ snapshots:
       '@smithy/property-provider': 2.1.2
       '@smithy/shared-ini-file-loader': 2.3.2
       '@smithy/types': 2.10.0
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - '@aws-sdk/credential-provider-node'
       - aws-crt
@@ -17610,7 +17626,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@5.4.1(debug@4.3.4)(typescript@5.7.3)':
+  '@freecodecamp/curriculum-helpers@5.4.1(debug@4.3.4)(typescript@5.8.2)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/jquery': 3.5.32
@@ -17623,10 +17639,10 @@ snapshots:
       http-server: 14.1.1(debug@4.3.4)
       jquery: 3.7.1
       process: 0.11.10
-      puppeteer: 24.10.0(typescript@5.7.3)
+      puppeteer: 24.10.0(typescript@5.8.2)
       pyodide: 0.23.3
       util: 0.12.5
-      vitest-environment-puppeteer: 11.0.3(debug@4.3.4)(typescript@5.7.3)
+      vitest-environment-puppeteer: 11.0.3(debug@4.3.4)(typescript@5.8.2)
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -19099,7 +19115,7 @@ snapshots:
       '@aws-crypto/crc32': 3.0.0
       '@smithy/types': 2.10.0
       '@smithy/util-hex-encoding': 2.1.1
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@smithy/fetch-http-handler@2.4.2':
     dependencies:
@@ -19146,7 +19162,7 @@ snapshots:
 
   '@smithy/is-array-buffer@2.1.1':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@smithy/is-array-buffer@2.2.0':
     dependencies:
@@ -19487,7 +19503,7 @@ snapshots:
 
   '@smithy/util-hex-encoding@2.1.1':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@smithy/util-hex-encoding@2.2.0':
     dependencies:
@@ -19543,7 +19559,7 @@ snapshots:
 
   '@smithy/util-uri-escape@2.1.1':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@smithy/util-uri-escape@2.2.0':
     dependencies:
@@ -19724,8 +19740,6 @@ snapshots:
       '@types/responselike': 1.0.1
 
   '@types/canvas-confetti@1.9.0': {}
-
-  '@types/chai@4.3.20': {}
 
   '@types/chai@5.2.2':
     dependencies:
@@ -20502,10 +20516,10 @@ snapshots:
       '@typescript-eslint/types': 8.33.0
       eslint-visitor-keys: 4.2.0
 
-  '@typescript/vfs@1.6.1(typescript@5.7.3)':
+  '@typescript/vfs@1.6.1(typescript@5.8.2)':
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
-      typescript: 5.7.3
+      typescript: 5.8.2
     transitivePeerDependencies:
       - supports-color
 
@@ -20591,6 +20605,15 @@ snapshots:
       '@vitest/utils': 3.2.4
       chai: 5.2.1
       tinyrainbow: 2.0.0
+
+  '@vitest/mocker@3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(vite@7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0))':
+    dependencies:
+      '@vitest/spy': 3.2.4
+      estree-walker: 3.0.3
+      magic-string: 0.30.17
+    optionalDependencies:
+      msw: 2.8.7(@types/node@20.12.8)(typescript@5.2.2)
+      vite: 7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   '@vitest/mocker@3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(vite@7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0))':
     dependencies:
@@ -21895,7 +21918,7 @@ snapshots:
   camel-case@4.1.2:
     dependencies:
       pascal-case: 3.1.2
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   camelcase@5.3.1: {}
 
@@ -25783,6 +25806,24 @@ snapshots:
       strip-ansi: 6.0.1
       through: 2.3.8
 
+  inquirer@8.2.6:
+    dependencies:
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      cli-cursor: 3.1.0
+      cli-width: 3.0.0
+      external-editor: 3.1.0
+      figures: 3.2.0
+      lodash: 4.17.21
+      mute-stream: 0.0.8
+      ora: 5.4.1
+      run-async: 2.4.1
+      rxjs: 7.8.2
+      string-width: 4.2.3
+      strip-ansi: 6.0.1
+      through: 2.3.8
+      wrap-ansi: 6.2.0
+
   insert-module-globals@7.2.1:
     dependencies:
       JSONStream: 1.3.5
@@ -28135,6 +28176,32 @@ snapshots:
     optionalDependencies:
       msgpackr-extract: 3.0.2
 
+  msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2):
+    dependencies:
+      '@bundled-es-modules/cookie': 2.0.1
+      '@bundled-es-modules/statuses': 1.0.1
+      '@bundled-es-modules/tough-cookie': 0.1.6
+      '@inquirer/confirm': 5.1.7(@types/node@20.12.8)
+      '@mswjs/interceptors': 0.38.7
+      '@open-draft/deferred-promise': 2.2.0
+      '@open-draft/until': 2.1.0
+      '@types/cookie': 0.6.0
+      '@types/statuses': 2.0.5
+      graphql: 16.10.0
+      headers-polyfill: 4.0.3
+      is-node-process: 1.2.0
+      outvariant: 1.4.3
+      path-to-regexp: 6.3.0
+      picocolors: 1.1.1
+      strict-event-emitter: 0.5.1
+      type-fest: 4.37.0
+      yargs: 17.7.2
+    optionalDependencies:
+      typescript: 5.2.2
+    transitivePeerDependencies:
+      - '@types/node'
+    optional: true
+
   msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2):
     dependencies:
       '@bundled-es-modules/cookie': 2.0.1
@@ -28222,7 +28289,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   no-profanity@1.5.1: {}
 
@@ -28677,7 +28744,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   pascalcase@0.1.1: {}
 
@@ -29303,11 +29370,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  puppeteer@24.10.0(typescript@5.7.3):
+  puppeteer@24.10.0(typescript@5.8.2):
     dependencies:
       '@puppeteer/browsers': 2.10.5
       chromium-bidi: 5.1.0(devtools-protocol@0.0.1452169)
-      cosmiconfig: 9.0.0(typescript@5.7.3)
+      cosmiconfig: 9.0.0(typescript@5.8.2)
       devtools-protocol: 0.0.1452169
       puppeteer-core: 24.10.0
       typed-query-selector: 2.12.0
@@ -32123,15 +32190,101 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  vitest-environment-puppeteer@11.0.3(debug@4.3.4)(typescript@5.7.3):
+  vitest-environment-puppeteer@11.0.3(debug@4.3.4)(typescript@5.8.2):
     dependencies:
       chalk: 4.1.2
-      cosmiconfig: 9.0.0(typescript@5.7.3)
+      cosmiconfig: 9.0.0(typescript@5.8.2)
       deepmerge: 4.3.1
       vitest-dev-server: 11.0.3(debug@4.3.4)
     transitivePeerDependencies:
       - debug
       - typescript
+
+  vitest@3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0):
+    dependencies:
+      '@types/chai': 5.2.2
+      '@vitest/expect': 3.2.4
+      '@vitest/mocker': 3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(vite@7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0))
+      '@vitest/pretty-format': 3.2.4
+      '@vitest/runner': 3.2.4
+      '@vitest/snapshot': 3.2.4
+      '@vitest/spy': 3.2.4
+      '@vitest/utils': 3.2.4
+      chai: 5.2.1
+      debug: 4.4.1
+      expect-type: 1.2.2
+      magic-string: 0.30.17
+      pathe: 2.0.3
+      picomatch: 4.0.2
+      std-env: 3.9.0
+      tinybench: 2.9.0
+      tinyexec: 0.3.2
+      tinyglobby: 0.2.14
+      tinypool: 1.1.1
+      tinyrainbow: 2.0.0
+      vite: 7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+      vite-node: 3.2.4(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 20.12.8
+      '@vitest/ui': 3.2.4(vitest@3.2.4)
+      jsdom: 16.7.0
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
+
+  vitest@3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0):
+    dependencies:
+      '@types/chai': 5.2.2
+      '@vitest/expect': 3.2.4
+      '@vitest/mocker': 3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(vite@7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0))
+      '@vitest/pretty-format': 3.2.4
+      '@vitest/runner': 3.2.4
+      '@vitest/snapshot': 3.2.4
+      '@vitest/spy': 3.2.4
+      '@vitest/utils': 3.2.4
+      chai: 5.2.1
+      debug: 4.4.1
+      expect-type: 1.2.2
+      magic-string: 0.30.17
+      pathe: 2.0.3
+      picomatch: 4.0.2
+      std-env: 3.9.0
+      tinybench: 2.9.0
+      tinyexec: 0.3.2
+      tinyglobby: 0.2.14
+      tinypool: 1.1.1
+      tinyrainbow: 2.0.0
+      vite: 7.1.3(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+      vite-node: 3.2.4(@types/node@20.12.8)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+      why-is-node-running: 2.3.0
+    optionalDependencies:
+      '@types/node': 20.12.8
+      '@vitest/ui': 3.2.4(vitest@3.2.4)
+      jsdom: 26.1.0
+    transitivePeerDependencies:
+      - jiti
+      - less
+      - lightningcss
+      - msw
+      - sass
+      - sass-embedded
+      - stylus
+      - sugarss
+      - supports-color
+      - terser
+      - tsx
+      - yaml
 
   vitest@3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0):
     dependencies:

@@ -238,7 +238,7 @@
           "blocks": [
             "lecture-working-with-css-grid",
             "workshop-magazine",
-            "lab-magazine-layout",
+            "lab-newspaper-layout",
             "lecture-debugging-css",
             "lab-product-landing-page",
             "review-css-grid",
@@ -377,6 +377,7 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
             "lab-password-generator",
@@ -394,6 +395,7 @@
             "workshop-library-manager",
             "lab-book-organizer",
             "lab-sorted-index-finder",
+            "lab-symmetric-difference",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -618,6 +620,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "lecture-working-with-generics-and-type-narrowing",
+            "lecture-working-with-typescript-configuration-files",
             "review-typescript",
             "quiz-typescript"
           ]

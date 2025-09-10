@@ -54,7 +54,7 @@ async function createLanguageBlock(
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
-  void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
+  void updateSimpleSuperblockStructure(block, {}, superblockFilename);
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }

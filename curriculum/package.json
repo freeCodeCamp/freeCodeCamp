@@ -42,6 +42,7 @@
     "@babel/core": "7.23.7",
     "@babel/register": "7.23.7",
     "@compodoc/live-server": "^1.2.3",
+    "@vitest/ui": "^3.2.4",
     "chai": "4.4.1",
     "glob": "8.1.0",
     "invariant": "2.2.4",
@@ -55,6 +56,7 @@
     "ora": "5.4.1",
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
-    "string-similarity": "4.0.4"
+    "string-similarity": "4.0.4",
+    "vitest": "^3.2.4"
   }
 }

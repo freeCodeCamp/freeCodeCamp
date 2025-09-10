@@ -25,6 +25,7 @@ export enum SuperBlocks {
   FullStackDeveloper = 'full-stack-developer',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
+  A1Spanish = 'a1-professional-spanish',
   A2Spanish = 'a2-professional-spanish',
   A2Chinese = 'a2-professional-chinese',
   A1Chinese = 'a1-professional-chinese',
@@ -32,13 +33,16 @@ export enum SuperBlocks {
   PythonForEverybody = 'python-for-everybody',
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
-  DevPlayground = 'dev-playground'
+  DevPlayground = 'dev-playground',
+  FullStackOpen = 'full-stack-open'
 }
 
 export const languageSuperBlocks = [
   SuperBlocks.A2English,
   SuperBlocks.B1English,
+  SuperBlocks.A1Spanish,
   SuperBlocks.A2Spanish,
+  SuperBlocks.A1Chinese,
   SuperBlocks.A2Chinese
 ];
 
@@ -115,6 +119,8 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
+    SuperBlocks.FullStackOpen,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -149,6 +155,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -164,6 +171,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -179,6 +187,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -194,6 +203,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -207,6 +217,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -220,6 +231,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -233,6 +245,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -254,6 +267,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -283,6 +297,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -310,6 +325,7 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -325,7 +341,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
-export const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper];
+export const chapterBasedSuperBlocks = [
+  SuperBlocks.FullStackDeveloper,
+  SuperBlocks.FullStackOpen
+];
 Object.freeze(chapterBasedSuperBlocks);
 
 type Config = {
