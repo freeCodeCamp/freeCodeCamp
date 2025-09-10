@@ -1,0 +1,15 @@
+{
+  "name": "Build a Spinal Case Converter",
+  "isUpcomingChange": false,
+  "dashedName": "lab-spinal-case-converter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "challengeOrder": [
+    {
+      "id": "68c10c4ad3e0ce15b30c6c2f",
+      "title": "Build a Spinal Case Converter"
+    }
+  ],
+  "usesMultifileEditor": true
+}

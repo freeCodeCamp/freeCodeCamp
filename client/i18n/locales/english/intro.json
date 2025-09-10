@@ -3665,6 +3665,12 @@
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
       },
+      "lab-spinal-case-converter": {
+        "title": "Build a Spinal Case Converter",
+        "intro": [
+          "In this lab, you will create a function that converts a given string to spinal case which is a style of writing where all letters are lowercase and separated by hyphens."
+        ]
+      },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
         "intro": [
@@ -4960,9 +4966,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
