@@ -3449,6 +3449,12 @@
           "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
         ]
       },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "JavaScript Fundamentals Review",
         "intro": [
@@ -4960,9 +4966,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
