@@ -2965,7 +2965,7 @@
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
         ]
       },
       "workshop-greeting-bot": {
