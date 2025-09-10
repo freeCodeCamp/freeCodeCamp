@@ -1316,7 +1316,8 @@
     "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
     "recording-speak-now": "Recording. Speak now.",
     "recording-stopped-processing": "Recording stopped. Processing...",
-    "microphone-access-error": "Error: Could not access microphone."
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

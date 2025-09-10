@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMicrophone } from '@fortawesome/free-solid-svg-icons';
 
 import { Button, Spacer } from '@freecodecamp/ui';
 import { Question } from '../../../redux/prop-types';
@@ -151,9 +153,11 @@ function MultipleChoiceQuestions({
                           )
                         }
                         className='mcq-speaking-button'
+                        aria-describedby={labelId}
                         aria-hidden='true'
+                        aria-label={t('speaking-modal.speaking-button')}
                       >
-                        Speaking
+                        <FontAwesomeIcon icon={faMicrophone} />
                       </Button>
                     )}
                   </div>
@@ -201,7 +205,6 @@ function MultipleChoiceQuestions({
               return (
                 <Button
                   key={`sr-speaking-${questionIndex}-${answerIndex}`}
-                  size='medium'
                   onClick={() =>
                     handleSpeakingButtonClick(
                       answer,
@@ -211,7 +214,7 @@ function MultipleChoiceQuestions({
                   }
                   aria-describedby={labelId}
                 >
-                  Speaking
+                  {t('speaking-modal.speaking-button')}
                 </Button>
               );
             })

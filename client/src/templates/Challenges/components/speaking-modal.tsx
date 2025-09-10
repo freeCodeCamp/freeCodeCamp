@@ -5,6 +5,12 @@ import { useTranslation } from 'react-i18next';
 import SpeechRecognition, {
   useSpeechRecognition
 } from 'react-speech-recognition';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faPlay,
+  faStop,
+  faMicrophone
+} from '@fortawesome/free-solid-svg-icons';
 
 import { closeModal } from '../redux/actions';
 import { isSpeakingModalOpenSelector } from '../redux/selectors';
@@ -298,8 +304,14 @@ const SpeakingModal = ({
             onClick={() => void handlePlay()}
             aria-describedby='speaking-sentence'
             disabled={isPlaying || listening}
+            aria-label={
+              isPlaying ? t('speaking-modal.playing') : t('speaking-modal.play')
+            }
           >
-            {isPlaying ? t('speaking-modal.playing') : t('speaking-modal.play')}
+            <FontAwesomeIcon
+              icon={isPlaying ? faStop : faPlay}
+              aria-hidden='true'
+            />
           </Button>
         </div>
 
@@ -310,6 +322,11 @@ const SpeakingModal = ({
               onClick={() => void handleRecord()}
               disabled={isPlaying}
             >
+              <FontAwesomeIcon
+                icon={listening ? faStop : faMicrophone}
+                aria-hidden='true'
+                className='speaking-modal-record-icon'
+              />
               {listening
                 ? t('speaking-modal.stop')
                 : t('speaking-modal.record')}

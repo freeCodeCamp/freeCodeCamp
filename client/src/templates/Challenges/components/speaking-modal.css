@@ -27,6 +27,10 @@
   margin-top: 1.5rem;
 }
 
+.speaking-modal-record-icon {
+  margin-inline-end: 0.5rem;
+}
+
 .speaking-modal-feedback {
   margin-top: 2rem;
 }
@@ -49,3 +53,5 @@
   color: var(--background-danger);
   margin-inline-start: 4px;
 }
+
+
