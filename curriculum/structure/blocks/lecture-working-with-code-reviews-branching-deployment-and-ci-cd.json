@@ -4,7 +4,6 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {

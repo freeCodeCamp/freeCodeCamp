@@ -4,7 +4,6 @@
   "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-introduction-to-git-and-github",
-  "superBlock": "full-stack-developer",
   "helpCategory": "Backend Development",
   "challengeOrder": [
     {
