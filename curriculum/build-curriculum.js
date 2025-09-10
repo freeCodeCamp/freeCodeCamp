@@ -207,7 +207,10 @@ const superBlockToFilename = Object.entries(superBlockNames).reduce(
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function addSuperblockStructure(superblocks) {
+function addSuperblockStructure(
+  superblocks,
+  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+) {
   debug(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
@@ -219,7 +222,7 @@ function addSuperblockStructure(superblocks) {
     return {
       name: superblockName,
       blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
-        showComingSoon: process.env.SHOW_UPCOMING_CHANGES === 'true'
+        showComingSoon
       })
     };
   });
@@ -264,7 +267,11 @@ function getSuperblocks(
     .map(({ name }) => name);
 }
 
-function validateBlocks(blockInSuperblocks, blockStructureDir) {
+function validateBlocks(superblocks, blockStructureDir) {
+  const withSuperblockStructure = addSuperblockStructure(superblocks, true);
+  const blockInSuperblocks = withSuperblockStructure
+    .flatMap(({ blocks }) => blocks)
+    .map(b => b.dashedName);
   for (const block of blockInSuperblocks) {
     const blockPath = getBlockStructurePath(block);
     if (!fs.existsSync(blockPath)) {
@@ -302,17 +309,11 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.superblocks.length} superblocks to build`);
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
-  const withSuperblockStructure = addSuperblockStructure(
-    curriculum.superblocks
+  validateBlocks(curriculum.superblocks, blockStructureDir);
+
+  const superblockList = addBlockStructure(
+    addSuperblockStructure(curriculum.superblocks)
   );
-
-  const blocks = withSuperblockStructure
-    .flatMap(({ blocks }) => blocks)
-    .map(b => b.dashedName);
-
-  validateBlocks(blocks, blockStructureDir);
-
-  const superblockList = addBlockStructure(withSuperblockStructure);
 
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
