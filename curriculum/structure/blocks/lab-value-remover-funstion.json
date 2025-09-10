@@ -1,0 +1,16 @@
+{
+  "name": "Implement a Value Remover Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-value-remover-function",
+  "superBlock": "full-stack-developer",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "68c118462a89d84a2749f8d1",
+      "title": "Implement a Value Remover Function"
+    }
+  ]
+}
