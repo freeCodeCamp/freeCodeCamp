@@ -67,6 +67,11 @@ assert.deepEqual(diffArray(
   ["andesite", "grass", "dirt", "dead shrub"],
   ["andesite", "grass", "dirt", "dead shrub"]
 ), []);
+
+assert.deepEqual(diffArray(
+  ["diamond", "stick", "apple"],
+  ["stick", "emerald", "bread"]
+), ["diamond", "apple", "emerald", "bread"]);
 ```
 
 # --seed--
