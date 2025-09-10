@@ -2,6 +2,9 @@
   "name": "Learn Greetings in your First Day at the Office",
   "isUpcomingChange": false,
   "dashedName": "learn-greetings-in-your-first-day-at-the-office",
+  "blockType": "learn",
+  "blockLayout": "dialogue-grid",
+  "helpCategory": "English",
   "challengeOrder": [
     {
       "id": "651dd3e06ffb500e3f2ce478",
@@ -707,7 +710,5 @@
       "id": "67c73d14d05f651ca7e0dca1",
       "title": "Task 171"
     }
-  ],
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid"
+  ]
 }
