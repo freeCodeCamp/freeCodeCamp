@@ -61,6 +61,8 @@
   color: var(--quaternary-color);
 }
 
+/*The three block labels below (warm-up, learn and practice) refer to the Language Curricula*/
+
 .block-label-warm-up {
   border-color: var(--yellow-color);
   color: var(--yellow-color);
