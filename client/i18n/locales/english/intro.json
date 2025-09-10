@@ -2968,6 +2968,12 @@
           "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
         ]
       },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lectures, you will learn how to work with strings and string concatenation."
+        ]
+      },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
@@ -4960,9 +4966,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",

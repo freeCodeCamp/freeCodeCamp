@@ -275,6 +275,7 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
