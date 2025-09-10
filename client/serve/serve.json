@@ -395,6 +395,26 @@
     {
       "source": "/learn/full-stack-developer/lab-magazine-layout/design-a-magazine-layout",
       "destination": "/learn/full-stack-developer/lab-newspaper-layout/design-a-newspaper-layout"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-a-string",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-strings/what-is-a-string"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-string-concatenation",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-strings/what-is-string-concatenation"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-console-log",
+      "destination": "/learn/full-stack-developer/lecture-introduction-to-strings/what-is-console-log"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-javascript/what-is-the-role-of-semicolons",
+      "destination": "/learn/full-stack-developer/lecture-understanding-code-clarity/what-is-the-role-of-semicolons"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-introduction-to-javascript/what-are-comments-in-javascript",
+      "destination": "/learn/full-stack-developer/lecture-understanding-code-clarity/what-are-comments-in-javascript"
     }
   ]
 }
