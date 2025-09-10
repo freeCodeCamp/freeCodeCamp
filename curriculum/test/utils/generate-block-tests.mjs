@@ -41,26 +41,14 @@ async function main() {
     .flatMap(({ blocks }) => blocks)
     .map(b => b.dashedName);
 
-  let count = 0;
   for (const block of blocks) {
-    const dir = GENERATED_DIR;
-    await fs.promises.mkdir(dir, { recursive: true });
-    const filePath = path.join(dir, `${safe(block)}.test.js`);
+    await fs.promises.mkdir(GENERATED_DIR, { recursive: true });
+    const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
     const contents = generateSingleBlockFile({ block });
     await fs.promises.writeFile(filePath, contents, 'utf8');
-    count++;
   }
 
-  console.log(`Generated ${count} block test file(s).`);
-}
-
-function safe(name) {
-  return String(name)
-    .toLowerCase()
-    .replace(/[/.]/g, '-')
-    .replace(/[^a-z0-9-_]/g, '-')
-    .replace(/--+/g, '-')
-    .replace(/^-+|-+$/g, '');
+  console.log(`Generated ${blocks.length} block test file(s).`);
 }
 
 function generateSingleBlockFile({ block }) {
