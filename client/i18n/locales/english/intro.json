@@ -2974,6 +2974,12 @@
           "In these lectures, you will learn how to work with strings and string concatenation."
         ]
       },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
+        ]
+      },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
