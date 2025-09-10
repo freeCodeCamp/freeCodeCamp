@@ -18,7 +18,8 @@ const {
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
-  getBlockStructurePath
+  getBlockStructurePath,
+  getBlockStructureDir
 } = require('./file-handler');
 
 /**
@@ -41,6 +42,8 @@ const getBlockCreator = (lang, skipValidation, opts) => {
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
+
+  console.log('block', blockContentDir);
 
   return new BlockCreator({
     lang,
@@ -294,9 +297,9 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function parseCurriculumStructure(lang, filters) {
+async function parseCurriculumStructure(filters) {
   const curriculum = getCurriculumStructure();
-  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
+  const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
@@ -322,10 +325,8 @@ async function buildCurriculum(lang, filters) {
     blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
 
-  const { fullSuperblockList, certifications } = await parseCurriculumStructure(
-    lang,
-    filters
-  );
+  const { fullSuperblockList, certifications } =
+    await parseCurriculumStructure(filters);
 
   const fullCurriculum = { certifications: { blocks: {} } };
 
