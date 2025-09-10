@@ -5,14 +5,20 @@ import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 
 const require = createRequire(import.meta.url);
-const { getCurriculumStructure } = require('../../file-handler');
-const {
-  addBlockStructure,
-  addSuperblockStructure
-} = require('../../build-curriculum');
+const { parseCurriculumStructure } = require('../../build-curriculum');
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const testFilter = {
+  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
+  challengeId: process.env.FCC_CHALLENGE_ID
+    ? process.env.FCC_CHALLENGE_ID.trim()
+    : undefined,
+  superBlock: process.env.FCC_SUPERBLOCK
+    ? process.env.FCC_SUPERBLOCK.trim()
+    : undefined
+};
 
 const GENERATED_DIR = path.resolve(__dirname, '../blocks-generated');
 
@@ -29,16 +35,9 @@ async function main() {
     )
   );
 
-  console.log('Generating block tests (one file per block)...');
+  const { fullSuperblockList } = await parseCurriculumStructure(testFilter);
 
-  // Build a lightweight structure to identify all block/superblock pairs
-  const curriculum = getCurriculumStructure();
-
-  const superblockList = addBlockStructure(
-    addSuperblockStructure(curriculum.superblocks)
-  );
-
-  const blocks = superblockList
+  const blocks = fullSuperblockList
     .flatMap(({ blocks }) => blocks)
     .map(b => b.dashedName);
 

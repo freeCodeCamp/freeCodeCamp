@@ -294,14 +294,9 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function buildCurriculum(lang, filters) {
-  const contentDir = getContentDir(lang);
-  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
-  const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang, !isEmpty(filters))
-  });
-
+async function parseCurriculumStructure(lang, filters) {
   const curriculum = getCurriculumStructure();
+  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
@@ -314,8 +309,24 @@ async function buildCurriculum(lang, filters) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
+  return {
+    fullSuperblockList: applyFilters(superblockList, filters),
+    certifications: curriculum.certifications
+  };
+}
 
-  const fullSuperblockList = applyFilters(superblockList, filters);
+async function buildCurriculum(lang, filters) {
+  const contentDir = getContentDir(lang);
+
+  const builder = new SuperblockCreator({
+    blockCreator: getBlockCreator(lang, !isEmpty(filters))
+  });
+
+  const { fullSuperblockList, certifications } = await parseCurriculumStructure(
+    lang,
+    filters
+  );
+
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
@@ -323,7 +334,7 @@ async function buildCurriculum(lang, filters) {
       await builder.processSuperblock(superblock);
   }
 
-  for (const cert of curriculum.certifications) {
+  for (const cert of certifications) {
     const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
     if (!fs.existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
@@ -345,5 +356,6 @@ module.exports = {
   createCommentMap,
   superBlockToFilename,
   getSuperblocks,
-  addSuperblockStructure
+  addSuperblockStructure,
+  parseCurriculumStructure
 };
