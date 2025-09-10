@@ -304,13 +304,21 @@ const SpeakingModal = ({
         </div>
 
         <div className='speaking-modal-record-container'>
-          <Button
-            size='medium'
-            onClick={() => void handleRecord()}
-            disabled={isPlaying}
-          >
-            {listening ? t('speaking-modal.stop') : t('speaking-modal.record')}
-          </Button>
+          {browserSupportsSpeechRecognition ? (
+            <Button
+              size='medium'
+              onClick={() => void handleRecord()}
+              disabled={isPlaying}
+            >
+              {listening
+                ? t('speaking-modal.stop')
+                : t('speaking-modal.record')}
+            </Button>
+          ) : (
+            <p className='speaking-modal-not-supported'>
+              {t('speaking-modal.speech-recognition-not-supported')}
+            </p>
+          )}
         </div>
 
         <div
