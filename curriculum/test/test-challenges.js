@@ -33,20 +33,6 @@ const { sortChallenges } = require('./utils/sort-challenges');
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 
-// Surface unhandled rejections and uncaught exceptions, but let Vitest handle exit codes
-process.on('unhandledRejection', err => handleRejection(err));
-process.on('uncaughtException', err => {
-  console.error('Uncaught exception:');
-  console.error(err);
-});
-
-// some errors *may* not be reported, since cleanup is triggered by the first
-// error and that starts shutting down the browser and the server.
-const handleRejection = err => {
-  console.error('Unhandled rejection:');
-  console.error(err);
-};
-
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
