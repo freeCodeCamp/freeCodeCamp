@@ -32,6 +32,8 @@
 
 .video-quiz-options {
   background-color: var(--primary-background);
+  display: flex;
+  flex-direction: column;
 }
 
 /* remove bootstrap margin and center the radio buttons */
@@ -104,43 +106,49 @@ input:focus-visible + .video-quiz-input-visible {
   background: none;
 }
 
-.mcq-option-wrapper:has(.mcq-correct) {
-  border-left-color: var(--success-background);
-}
-
-.mcq-option-wrapper:has(.mcq-incorrect) {
-  border-left-color: var(--danger-background);
-}
-
-.mcq-option-wrapper {
+.mcq-option-row {
+  /* Use grid so we can align the speaking button to the option content row only */
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto; /* row1 = option content, row2 = feedback */
+  gap: 0 1rem;
   border-left: 4px solid var(--tertiary-background);
   border-right: 4px solid var(--tertiary-background);
   border-top: 2px solid var(--tertiary-background);
   border-bottom: 2px solid var(--tertiary-background);
 }
 
-.mcq-option-wrapper:first-child {
+.mcq-option-row:first-child {
   border-top: 4px solid var(--tertiary-background);
 }
-.mcq-option-wrapper:last-child {
+
+.mcq-option-row:last-child {
   border-bottom: 4px solid var(--tertiary-background);
 }
 
-.mcq-option-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.mcq-option-row:has(.mcq-correct) {
+  border-left-color: var(--success-background);
+}
+
+.mcq-option-row:has(.mcq-incorrect) {
+  border-left-color: var(--danger-background);
+}
+
+.mcq-option-with-feedback {
+  display: contents;
+}
+
+.mcq-option-content {
+  display: block;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .mcq-option-label {
-  flex: 1;
   display: flex;
   align-items: center;
   margin: 0;
-}
-
-.mcq-speaking-button {
-  margin-inline-end: 20px;
+  flex: 1;
 }
 
 .mcq-correct {
@@ -157,7 +165,20 @@ input:focus-visible + .video-quiz-input-visible {
   border-bottom: none;
 }
 
+.mcq-speaking-button-wrapper {
+  grid-column: 2;
+  /* place the button in the same grid row as the option content */
+  grid-row: 1;
+  display: flex;
+  align-items: center; /* vertically center the button within the option content row */
+  justify-content: center;
+  padding-inline-end: 20px;
+}
+
+/* ensure feedback occupies the second grid row */
 .mcq-feedback {
+  grid-column: 1;
+  grid-row: 2;
   border-top: none;
   display: block;
 }

@@ -106,43 +106,71 @@ function MultipleChoiceQuestions({
               const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
 
               return (
-                <div key={answerIndex} className='mcq-option-wrapper'>
-                  <div className='mcq-option-row'>
-                    <label
-                      id={labelId}
-                      className={`video-quiz-option-label mcq-option-label
-                        ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
-                        ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
-                      htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                    >
-                      <input
-                        name={`mc-question-${questionIndex}`}
-                        checked={selectedOptions[questionIndex] === answerIndex}
-                        className='sr-only'
-                        onChange={() =>
-                          handleOptionChange(questionIndex, answerIndex)
-                        }
-                        type='radio'
-                        value={answerIndex}
-                        id={`mc-question-${questionIndex}-answer-${answerIndex}`}
-                      />{' '}
-                      <span className='video-quiz-input-visible'>
-                        {selectedOptions[questionIndex] === answerIndex ? (
-                          <span className='video-quiz-selected-input' />
-                        ) : null}
-                      </span>
-                      <PrismFormatted
-                        className={'video-quiz-option'}
-                        text={removeParagraphTags(answer)}
-                        useSpan
-                        noAria
-                      />
-                    </label>
+                <div key={answerIndex} className='mcq-option-row'>
+                  <div className='mcq-option-with-feedback'>
+                    <div className='mcq-option-content'>
+                      <label
+                        id={labelId}
+                        className={`video-quiz-option-label mcq-option-label
+                            ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                            ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
+                        htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                      >
+                        <input
+                          name={`mc-question-${questionIndex}`}
+                          checked={
+                            selectedOptions[questionIndex] === answerIndex
+                          }
+                          className='sr-only'
+                          onChange={() =>
+                            handleOptionChange(questionIndex, answerIndex)
+                          }
+                          type='radio'
+                          value={answerIndex}
+                          id={`mc-question-${questionIndex}-answer-${answerIndex}`}
+                        />{' '}
+                        <span className='video-quiz-input-visible'>
+                          {selectedOptions[questionIndex] === answerIndex ? (
+                            <span className='video-quiz-selected-input' />
+                          ) : null}
+                        </span>
+                        <PrismFormatted
+                          className={'video-quiz-option'}
+                          text={removeParagraphTags(answer)}
+                          useSpan
+                          noAria
+                        />
+                      </label>
+                    </div>
+                    {showFeedback && isSubmittedAnswer && (
+                      <div
+                        className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
+                      >
+                        <p>
+                          {isCorrect
+                            ? t('learn.quiz.correct-answer')
+                            : t('learn.quiz.incorrect-answer')}
+                        </p>
+                        {feedback && (
+                          <p>
+                            <PrismFormatted
+                              className={
+                                isCorrect
+                                  ? 'mcq-prism-correct'
+                                  : 'mcq-prism-incorrect'
+                              }
+                              text={removeParagraphTags(feedback)}
+                              useSpan
+                              noAria
+                            />
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </div>
 
-                    {/* This button is positioned after each radio button, which may be confusing for screen reader users.
-                        We hide it from screen readers and provide a separate set of screen reader accessible buttons outside of the fieldset.
-                    */}
-                    {showSpeakingButton && (
+                  {showSpeakingButton && (
+                    <div className='mcq-speaking-button-wrapper'>
                       <Button
                         size='medium'
                         onClick={() =>
@@ -154,36 +182,10 @@ function MultipleChoiceQuestions({
                         }
                         className='mcq-speaking-button'
                         aria-describedby={labelId}
-                        aria-hidden='true'
                         aria-label={t('speaking-modal.speaking-button')}
                       >
                         <FontAwesomeIcon icon={faMicrophone} />
                       </Button>
-                    )}
-                  </div>
-                  {showFeedback && isSubmittedAnswer && (
-                    <div
-                      className={`video-quiz-option-label mcq-feedback ${isCorrect ? 'mcq-correct' : 'mcq-incorrect'}`}
-                    >
-                      <p>
-                        {isCorrect
-                          ? t('learn.quiz.correct-answer')
-                          : t('learn.quiz.incorrect-answer')}
-                      </p>
-                      {feedback && (
-                        <p>
-                          <PrismFormatted
-                            className={
-                              isCorrect
-                                ? 'mcq-prism-correct'
-                                : 'mcq-prism-incorrect'
-                            }
-                            text={removeParagraphTags(feedback)}
-                            useSpan
-                            noAria
-                          />
-                        </p>
-                      )}
                     </div>
                   )}
                 </div>
@@ -193,34 +195,6 @@ function MultipleChoiceQuestions({
           <Spacer size='m' />
         </fieldset>
       ))}
-
-      {/* Screen reader accessible speaking buttons. 
-          Keep the functionality of these in sync with the ones inside the fieldset. */}
-      {showSpeakingButton && (
-        <div className='sr-only'>
-          {questions.map((question, questionIndex) =>
-            question.answers.map(({ answer }, answerIndex) => {
-              const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
-
-              return (
-                <Button
-                  key={`sr-speaking-${questionIndex}-${answerIndex}`}
-                  onClick={() =>
-                    handleSpeakingButtonClick(
-                      answer,
-                      answerIndex,
-                      questionIndex
-                    )
-                  }
-                  aria-describedby={labelId}
-                >
-                  {t('speaking-modal.speaking-button')}
-                </Button>
-              );
-            })
-          )}
-        </div>
-      )}
 
       <Spacer size='m' />
       <SpeakingModal
