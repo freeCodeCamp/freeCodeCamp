@@ -80,26 +80,21 @@ export async function defineTestsForBlock({ block }) {
       global.Worker = createPseudoWorker(page);
     });
 
-    populateTestsForLang(
-      {
-        ...challengeData,
-        challenges: challenges.filter(c => c.block === block)
-      },
-      () => page
-    );
+    populateTestsForLang(challengeData, () => page);
   });
 }
 
 export async function getChallenges(lang, filters) {
   const challenges = await getChallengesForLang(lang, filters).then(
     curriculum => {
-      const result = curriculumSchemaValidator(curriculum);
       // If there are filters, we're testing a single challenge or block, so we
       // can skip the validation.
-      if (result.error && isEmpty(filters)) {
-        throw new Error(
-          `Curriculum validation failed: ${result.error.message}`
-        );
+      if (isEmpty(filters)) {
+        const result = curriculumSchemaValidator(curriculum);
+        if (result.error)
+          throw new Error(
+            `Curriculum validation failed: ${result.error.message}`
+          );
       }
       return Object.keys(curriculum)
         .map(key => curriculum[key].blocks)
