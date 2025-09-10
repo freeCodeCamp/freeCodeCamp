@@ -23,7 +23,7 @@ function RdbOnaContinueAlert({
       <Spacer size='m' />
       <Trans i18nKey='learn.ona.learn-more'>
         <a
-          href='https://forum.freecodecamp.org/t/using-gitpod-in-the-curriculum/668669'
+          href='https://forum.freecodecamp.org/t/relational-database-curriculum-in-ona/760889'
           rel='noopener noreferrer'
           target='_blank'
         >

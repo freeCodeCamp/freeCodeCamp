@@ -313,7 +313,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
                 </>
               ) : (
                 <>
-                  <RdbOnaInstructions />
+                  <RdbOnaInstructions course={title} url={url} />
                   <Spacer size='m' />
                   {isSignedIn &&
                   challengeType === challengeTypes.codeAllyCert ? (
