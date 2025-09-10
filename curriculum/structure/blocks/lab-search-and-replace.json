@@ -1,0 +1,15 @@
+{
+  "name": "Build a Smart Word Replacement Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-search-and-replace",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "challengeOrder": [
+    {
+      "id": "68c152350a368f49d6e1b501",
+      "title": "Build a Smart Word Replacement Function"
+    }
+  ],
+  "usesMultifileEditor": true
+}
