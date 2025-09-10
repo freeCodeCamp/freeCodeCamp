@@ -59,25 +59,18 @@ function MultipleChoiceQuestions({
     openSpeakingModal();
   };
 
-  // Construct audio URL from audioId
-  const constructAudioUrl = (audioId?: string): string | undefined => {
-    if (audioId) {
-      return `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`;
-    }
-    return undefined;
-  };
+  const constructAudioUrl = (audioId?: string): string | undefined =>
+    audioId
+      ? `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`
+      : undefined;
 
   const getAudioUrl = (
     questionIndex: number,
     answerIndex: number
   ): string | undefined => {
-    const question = questions[questionIndex];
-    const answer = question?.answers[answerIndex];
-
-    if (answer?.audioId) {
-      return constructAudioUrl(answer.audioId);
-    }
-    return undefined;
+    const answer = questions[questionIndex]?.answers[answerIndex];
+    const audioId = answer?.audioId ?? undefined;
+    return constructAudioUrl(audioId);
   };
 
   return (

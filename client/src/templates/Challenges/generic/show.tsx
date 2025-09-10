@@ -70,6 +70,7 @@ interface ShowQuizProps {
 }
 
 const ShowGeneric = ({
+  challengeMounted,
   data: {
     challengeNode: {
       challenge: {
