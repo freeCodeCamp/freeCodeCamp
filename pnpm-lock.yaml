@@ -704,6 +704,9 @@ importers:
       '@compodoc/live-server':
         specifier: ^1.2.3
         version: 1.2.3
+      '@types/polka':
+        specifier: ^0.5.7
+        version: 0.5.7
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -740,12 +743,18 @@ importers:
       ora:
         specifier: 5.4.1
         version: 5.4.1
+      polka:
+        specifier: ^0.5.2
+        version: 0.5.2
       puppeteer:
         specifier: 22.12.1
         version: 22.12.1(typescript@5.8.2)
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
+      sirv:
+        specifier: ^3.0.2
+        version: 3.0.2
       string-similarity:
         specifier: 4.0.4
         version: 4.0.4
@@ -1153,6 +1162,10 @@ packages:
   '@ardatan/aggregate-error@0.0.6':
     resolution: {integrity: sha512-vyrkEHG1jrukmzTPtyWB4NLPauUw5bQeg4uhn8f+1SSynmrOcyvlb1GKQjjgoBzElLdfXCRYX8UnBlhklOHYRQ==}
     engines: {node: '>=8'}
+
+  '@arr/every@1.0.1':
+    resolution: {integrity: sha512-UQFQ6SgyJ6LX42W8rHCs8KVc0JS0tzVL9ct4XYedJukskYVWTo49tNiMEK9C2HTyarbNiT/RVIRSY82vH+6sTg==}
+    engines: {node: '>=4'}
 
   '@asamuzakjp/css-color@3.2.0':
     resolution: {integrity: sha512-K1A6z8tS3XsmCMM86xoWdn7Fkdn9m6RSVtocUrJYIwZnFVkng/PvkEoWtOWmP+Scc6saYWHWZYbndEEXxl24jw==}
@@ -3626,8 +3639,8 @@ packages:
       webpack-plugin-serve:
         optional: true
 
-  '@polka/url@1.0.0-next.23':
-    resolution: {integrity: sha512-C16M+IYz0rgRhWZdCmK+h58JMv8vijAA61gmz2rspCSwKwzBebpdcsiUmwrtJRdphuY30i6BSLEOP8ppbNLyLg==}
+  '@polka/url@0.5.0':
+    resolution: {integrity: sha512-oZLYFEAzUKyi3SKnXvj32ZCEGH6RDnao7COuCVhDydMS9NrCSVXhM79VaKyP5+Zc33m0QXEd2DN3UkU7OsHcfw==}
 
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
@@ -4668,6 +4681,9 @@ packages:
     resolution: {integrity: sha512-wKoab31pknvILkxAF8ss+v9iNyhw5Iu/0jLtRkUD74cNfOOLJNnqfFKAv0r7wVaTQxRZtWrMpGfShwwBjOcgcg==}
     deprecated: This is a stub types definition. pino provides its own type definitions, so you do not need this installed.
 
+  '@types/polka@0.5.7':
+    resolution: {integrity: sha512-TH8CDXM8zoskPCNmWabtK7ziGv9Q21s4hMZLVYK5HFEfqmGXBqq/Wgi7jNELWXftZK/1J/9CezYa06x1RKeQ+g==}
+
   '@types/prismjs@1.26.5':
     resolution: {integrity: sha512-AUZTa7hQ2KY5L7AmtSiqxlhWxb4ina0yd8hNbl4TWuqnv/pFP0nDMb3YrfSBf4hJVGLh2YEIBfKaBW/9UEl6IQ==}
 
@@ -4786,6 +4802,9 @@ packages:
 
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
+
+  '@types/trouter@3.1.4':
+    resolution: {integrity: sha512-4YIL/2AvvZqKBWenjvEpxpblT2KGO6793ipr5QS7/6DpQ3O3SwZGgNGWezxf3pzeYZc24a2pJIrR/+Jxh/wYNQ==}
 
   '@types/unist@2.0.8':
     resolution: {integrity: sha512-d0XxK3YTObnWVp6rZuev3c49+j4Lo8g4L1ZRm9z5L0xpoZycUPshHgczK5gsUMaZOstjVYYi09p5gYvUtfChYw==}
@@ -10064,6 +10083,10 @@ packages:
     resolution: {integrity: sha512-4lbtT14A3m0LPX1WS/3d1m7Blg+ZwiLq36WvjQqFGsX3Gik99NV+VXp/PW3n+Q62xyPdbvGOCfjPqjW+/SKMig==}
     engines: {node: '>=18'}
 
+  matchit@1.1.0:
+    resolution: {integrity: sha512-+nGYoOlfHmxe5BW5tE0EMJppXEwdSf8uBA1GTZC7Q77kbT35+VKLYJMzVNWCHSsga1ps1tPYFtFyvxvKzWVmMA==}
+    engines: {node: '>=6'}
+
   matchmediaquery@0.3.1:
     resolution: {integrity: sha512-Hlk20WQHRIm9EE9luN1kjRjYXAQToHOIAHPJn9buxBwuhfTHoKUcX+lXBbxc85DVQfXYbEQ4HcwQdd128E3qHQ==}
 
@@ -11302,6 +11325,9 @@ packages:
   pluralize@8.0.0:
     resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
     engines: {node: '>=4'}
+
+  polka@0.5.2:
+    resolution: {integrity: sha512-FVg3vDmCqP80tOrs+OeNlgXYmFppTXdjD5E7I4ET1NjvtNmQrb1/mJibybKkb/d4NA7YWAr1ojxuhpL3FHqdlw==}
 
   portfinder@1.0.37:
     resolution: {integrity: sha512-yuGIEjDAYnnOex9ddMnKZEMFE0CcGo6zbfzDklkmT1m5z734ss6JMzN9rNB3+RR7iS+F10D4/BVIaXOyh8PQKw==}
@@ -12677,8 +12703,8 @@ packages:
     resolution: {integrity: sha512-O9jm9BsID1P+0HOi81VpXPoDxYP374pkOLzACAoyUQ/3OUVndNpsz6wMnY2z+yOxzbllCKZrM+9QrWsv4THnyA==}
     engines: {node: '>= 10'}
 
-  sirv@3.0.1:
-    resolution: {integrity: sha512-FoqMu0NCGBLCcAkS1qA+XJIQTR6/JHfQXl+uGteNCQ76T91DMUjPa9xfmeqMY3z80nLSg9yQmNjK0Px6RWsH/A==}
+  sirv@3.0.2:
+    resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
     engines: {node: '>=18'}
 
   sister@3.0.2:
@@ -13405,6 +13431,10 @@ packages:
 
   trough@1.0.5:
     resolution: {integrity: sha512-rvuRbTarPXmMb79SmzEp8aqXNKcK+y0XaB298IXueQ8I2PsrATcPBCSPyK/dDNa2iWOhKlfNnOjdAOTBU/nkFA==}
+
+  trouter@2.0.1:
+    resolution: {integrity: sha512-kr8SKKw94OI+xTGOkfsvwZQ8mWoikZDd2n8XZHjJVZUARZT+4/VV6cacRS6CLsH9bNm+HFIPU1Zx4CnNnb4qlQ==}
+    engines: {node: '>=6'}
 
   true-case-path@2.2.1:
     resolution: {integrity: sha512-0z3j8R7MCjy10kc/g+qg7Ln3alJTodw9aDuVWZa3uiWqfuBMKeAeP2ocWcxoyM3D73yz3Jt/Pu4qPr4wHSdB/Q==}
@@ -14598,6 +14628,8 @@ snapshots:
   '@ardatan/aggregate-error@0.0.6':
     dependencies:
       tslib: 2.0.3
+
+  '@arr/every@1.0.1': {}
 
   '@asamuzakjp/css-color@3.2.0':
     dependencies:
@@ -18422,7 +18454,7 @@ snapshots:
       source-map: 0.7.4
       webpack: 5.90.3(webpack-cli@4.10.0)
 
-  '@polka/url@1.0.0-next.23': {}
+  '@polka/url@0.5.0': {}
 
   '@polka/url@1.0.0-next.29': {}
 
@@ -19747,6 +19779,13 @@ snapshots:
     dependencies:
       pino: 9.7.0
 
+  '@types/polka@0.5.7':
+    dependencies:
+      '@types/express': 4.17.21
+      '@types/express-serve-static-core': 4.17.37
+      '@types/node': 20.12.8
+      '@types/trouter': 3.1.4
+
   '@types/prismjs@1.26.5': {}
 
   '@types/prop-types@15.7.8': {}
@@ -19884,6 +19923,8 @@ snapshots:
   '@types/tmp@0.0.33': {}
 
   '@types/tough-cookie@4.0.5': {}
+
+  '@types/trouter@3.1.4': {}
 
   '@types/unist@2.0.8': {}
 
@@ -20399,7 +20440,7 @@ snapshots:
       fflate: 0.8.2
       flatted: 3.3.3
       pathe: 2.0.3
-      sirv: 3.0.1
+      sirv: 3.0.2
       tinyglobby: 0.2.14
       tinyrainbow: 2.0.0
       vitest: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
@@ -27005,6 +27046,10 @@ snapshots:
       markdown-it: 14.0.0
       markdownlint-micromark: 0.1.8
 
+  matchit@1.1.0:
+    dependencies:
+      '@arr/every': 1.0.1
+
   matchmediaquery@0.3.1:
     dependencies:
       css-mediaquery: 0.1.2
@@ -28648,6 +28693,11 @@ snapshots:
       fsevents: 2.3.2
 
   pluralize@8.0.0: {}
+
+  polka@0.5.2:
+    dependencies:
+      '@polka/url': 0.5.0
+      trouter: 2.0.1
 
   portfinder@1.0.37:
     dependencies:
@@ -30347,11 +30397,11 @@ snapshots:
 
   sirv@2.0.3:
     dependencies:
-      '@polka/url': 1.0.0-next.23
+      '@polka/url': 1.0.0-next.29
       mrmime: 1.0.1
       totalist: 3.0.1
 
-  sirv@3.0.1:
+  sirv@3.0.2:
     dependencies:
       '@polka/url': 1.0.0-next.29
       mrmime: 2.0.1
@@ -31240,6 +31290,10 @@ snapshots:
   trim@0.0.1: {}
 
   trough@1.0.5: {}
+
+  trouter@2.0.1:
+    dependencies:
+      matchit: 1.1.0
 
   true-case-path@2.2.1: {}
 

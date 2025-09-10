@@ -1,6 +1,7 @@
 import path from 'node:path';
 
-import liveServer from '@compodoc/live-server';
+import sirv from 'sirv';
+import polka from 'polka';
 import puppeteer from 'puppeteer';
 
 import { helperVersion } from '../../client/src/templates/Challenges/utils/frame';
@@ -18,40 +19,34 @@ async function createBrowser() {
   });
 }
 
-async function startLiveServer() {
+async function startServer() {
   const host = '127.0.0.1';
   const port = 8080;
-  liveServer.start({
-    host,
-    port: String(8080),
-    root: path.resolve(__dirname, 'stubs'),
-    mount: [
-      [
-        '/dist',
-        path.join(clientPath, `static/js/test-runner/${helperVersion}`)
-      ],
-      ['/js', path.join(clientPath, 'static/js')]
-    ],
-    open: false,
-    logLevel: 0
-  });
-  return {
-    baseUrl: `http://${host}:${port}`,
-    shutdown: () => liveServer.shutdown()
-  };
+
+  const app = polka();
+
+  // Mount static files used by the tests
+  app.use(
+    '/dist',
+    sirv(path.join(clientPath, `static/js/test-runner/${helperVersion}`))
+  );
+  app.use('/js', sirv(path.join(clientPath, 'static/js')));
+  app.use('/', sirv(path.resolve(__dirname, 'stubs')));
+
+  app.listen(port, host);
 }
 
-let server, browser;
+let browser;
 
 export async function setup() {
-  console.log('Setting up test environment');
-  server = await startLiveServer();
+  await startServer();
   browser = await createBrowser();
+  // Sharing the Websocket endpoint so that setup files can connect. This allows
+  // us to do as much work as possible once in the global setup while allowing
+  // each test pool to maintain its own connection.
   process.env.PUPPETEER_WS_ENDPOINT = browser.wsEndpoint();
 }
 
 export async function teardown() {
-  console.log('Tearing down test environment');
-  await server.shutdown();
   await browser.close();
 }
