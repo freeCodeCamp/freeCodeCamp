@@ -17,7 +17,8 @@ const {
   getLanguageConfig,
   getCurriculumStructure,
   getBlockStructure,
-  getSuperblockStructure
+  getSuperblockStructure,
+  getBlockStructurePath
 } = require('./file-handler');
 
 /**
@@ -263,8 +264,32 @@ function getSuperblocks(
     .map(({ name }) => name);
 }
 
+function validateBlocks(blockInSuperblocks, blockStructureDir) {
+  for (const block of blockInSuperblocks) {
+    const blockPath = getBlockStructurePath(block);
+    if (!fs.existsSync(blockPath)) {
+      throw Error(
+        `Block "${block}" is in a superblock, but has no block structure file at ${blockPath}`
+      );
+    }
+  }
+
+  const blockStructureFiles = fs
+    .readdirSync(blockStructureDir)
+    .map(file => path.basename(file, '.json'));
+
+  for (const block of blockStructureFiles) {
+    if (!blockInSuperblocks.includes(block)) {
+      throw Error(
+        `Block "${block}" has a structure file, ${getBlockStructurePath(block)}, but is not in a superblock`
+      );
+    }
+  }
+}
+
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
+  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
   const builder = new SuperblockCreator({
     blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
@@ -277,9 +302,18 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.superblocks.length} superblocks to build`);
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
-  const superblockList = addBlockStructure(
-    addSuperblockStructure(curriculum.superblocks)
+  const withSuperblockStructure = addSuperblockStructure(
+    curriculum.superblocks
   );
+
+  const blocks = withSuperblockStructure
+    .flatMap(({ blocks }) => blocks)
+    .map(b => b.dashedName);
+
+  validateBlocks(blocks, blockStructureDir);
+
+  const superblockList = addBlockStructure(withSuperblockStructure);
+
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
 
