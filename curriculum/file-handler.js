@@ -198,6 +198,7 @@ function getLanguageConfig(
 exports.getContentConfig = getContentConfig;
 exports.getContentDir = getContentDir;
 exports.getBlockStructure = getBlockStructure;
+exports.getBlockStructurePath = getBlockStructurePath;
 exports.getSuperblockStructure = getSuperblockStructure;
 exports.getCurriculumStructure = getCurriculumStructure;
 exports.writeBlockStructure = writeBlockStructure;
