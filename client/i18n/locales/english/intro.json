@@ -2305,6 +2305,12 @@
           "In these lectures, you will learn about how to create accessible tables and forms."
         ]
       },
+      "workshop-tech-conference-schedule": {
+        "title": "Build a Tech Conference Schedule Table",
+        "intro": [
+          "In this workshop, you will build an accessible tech conference schedule table."
+        ]
+      },
       "lecture-introduction-to-aria": {
         "title": "Introduction to ARIA",
         "intro": [
@@ -4978,9 +4984,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",

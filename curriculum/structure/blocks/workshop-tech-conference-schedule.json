@@ -1,0 +1,11 @@
+{
+  "name": "Build a Tech Conference Schedule Table",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-tech-conference-schedule",
+  "helpCategory": "HTML-CSS",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68c33e502cd97f2fd52cb63b", "title": "Step 1" }],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
