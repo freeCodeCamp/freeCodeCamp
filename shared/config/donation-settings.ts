@@ -1,6 +1,5 @@
 // Configuration for client side
 
-// Added 2500 (i.e. $25) for A/B test 'replace-20-with-25'
 export type DonationAmount = 500 | 1000 | 2000 | 2500 | 4000;
 export type DonationDuration = 'one-time' | 'month';
 export interface DonationConfig {
@@ -9,7 +8,6 @@ export interface DonationConfig {
 }
 
 export const subscriptionAmounts: DonationAmount[] = [500, 1000, 2000, 4000];
-// Variant B array replacing $20 with $25 for GrowthBook flag 'replace-20-with-25'
 export const subscriptionAmountsB: DonationAmount[] = [500, 1000, 2500, 4000];
 
 export const defaultDonation: DonationConfig = {
@@ -18,7 +16,6 @@ export const defaultDonation: DonationConfig = {
 };
 
 export const defaultTierAmount: DonationAmount = 2000;
-// Default tier amount when the 25 dollar variant is active
 export const defaultTierAmountB: DonationAmount = 2500;
 
 export const onetimeSKUConfig = {

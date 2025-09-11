@@ -44,7 +44,6 @@ function SelectionTabs({
   isAnimationEnabled?: boolean;
 }) {
   const { t } = useTranslation();
-  // GrowthBook feature flag for A/B test 'replace-20-with-25'
   const replace20With25 = useFeature('replace-20-with-25').on;
   const activeSubscriptionAmounts = replace20With25
     ? subscriptionAmountsB
