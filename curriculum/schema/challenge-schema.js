@@ -137,7 +137,10 @@ const schema = Joi.object().keys({
       'lecture',
       'review',
       'quiz',
-      'exam'
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ).required(),
     otherwise: Joi.valid(null)
   }),
