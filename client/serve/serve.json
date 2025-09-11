@@ -439,6 +439,14 @@
     {
       "source": "/learn/full-stack-developer/lecture-working-with-objects/how-do-json-parse-and-json-stringify-work",
       "destination": "/learn/full-stack-developer/lecture-working-with-json/how-do-json-parse-and-json-stringify-work"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-html-fundamentals/what-is-the-role-of-the-meta-description",
+      "destination": "/learn/full-stack-developer/lecture-understanding-how-html-affects-seo/what-is-the-role-of-the-meta-description"
+    },
+    {
+      "source": "/learn/full-stack-developer/lecture-html-fundamentals/what-is-the-role-of-open-graph-tags",
+      "destination": "/learn/full-stack-developer/lecture-understanding-how-html-affects-seo/what-is-the-role-of-open-graph-tags"
     }
   ]
 }
