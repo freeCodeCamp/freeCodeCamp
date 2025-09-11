@@ -36,7 +36,6 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const log = fastify.log.child({ req, unsubscribeId });
-        log.debug('Processing unsubscribe request');
 
         const unsubUsers = await fastify.prisma.user.findMany({
           where: { unsubscribeId }
@@ -51,6 +50,7 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
+        log.info(`Found ${unsubUsers.length} user(s) to unsubscribe`);
         const userUpdatePromises = unsubUsers.map(user =>
           fastify.prisma.user.updateMany({
             where: { email: user.email },
@@ -61,7 +61,10 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         );
 
         await Promise.all(userUpdatePromises);
-        log.info('Successfully unsubscribed users from email');
+        log.info(
+          { emails: unsubUsers.map(u => u.email) },
+          'Successfully unsubscribed users from email.'
+        );
 
         return reply.redirectWithMessage(
           `${origin}/unsubscribed/${unsubscribeId}`,
@@ -105,7 +108,6 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
         const { origin } = getRedirectParams(req);
         const { unsubscribeId } = req.params;
         const log = fastify.log.child({ req, unsubscribeId });
-        log.debug('Processing resubscribe request');
 
         const user = await fastify.prisma.user.findFirst({
           where: { unsubscribeId }
@@ -120,13 +122,16 @@ export const emailSubscribtionRoutes: FastifyPluginCallbackTypebox = (
           });
         }
 
+        log.info(`Found user ${user.id} to resubscribe`);
         await fastify.prisma.user.update({
           where: { id: user.id },
           data: {
             sendQuincyEmail: true
           }
         });
-        log.info('Successfully resubscribed user to email');
+        log.info(
+          `Successfully resubscribed user ${user.id} to email: ${user.email}`
+        );
 
         return reply.redirectWithMessage(origin, {
           type: 'success',

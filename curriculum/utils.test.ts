@@ -1,14 +1,14 @@
-import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
+import { describe, it, expect } from 'vitest';
+
 import { SuperBlocks } from '../shared/config/curriculum';
 import {
   createSuperOrder,
-  getSuperOrder,
-  getSuperBlockFromDir,
-  getChapterFromBlock,
-  getModuleFromBlock,
-  getBlockOrder
+  filterByBlock,
+  filterByChallengeId,
+  filterBySuperblock,
+  getSuperOrder
 } from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
@@ -55,51 +55,6 @@ const fullSuperOrder = {
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
   [SuperBlocks.FullStackDeveloper]: 18
-};
-
-const mockSuperBlockStructure = {
-  chapters: [
-    {
-      dashedName: 'html',
-      modules: [
-        {
-          dashedName: 'getting-started-with-freecodecamp',
-          blocks: [
-            {
-              dashedName: 'welcome-to-freecodecamp'
-            }
-          ]
-        }
-      ]
-    },
-    {
-      dashedName: 'css',
-      modules: [
-        {
-          dashedName: 'module-one',
-          blocks: [
-            {
-              dashedName: 'block-one-m1'
-            },
-            {
-              dashedName: 'block-two-m1'
-            }
-          ]
-        },
-        {
-          dashedName: 'module-two',
-          blocks: [
-            {
-              dashedName: 'block-one-m2'
-            },
-            {
-              dashedName: 'block-two-m2'
-            }
-          ]
-        }
-      ]
-    }
-  ]
 };
 
 describe('createSuperOrder', () => {
@@ -169,100 +124,157 @@ describe('getSuperOrder', () => {
   });
 });
 
-describe('getSuperBlockFromPath', () => {
-  const englishFolder = path.join(__dirname, './challenges/english');
-  const directories = fs
-    .readdirSync(englishFolder)
-    .filter(item => fs.lstatSync(path.join(englishFolder, item)).isDirectory());
-
-  it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(24);
-
-    for (const directory of directories) {
-      expect(() => getSuperBlockFromDir(directory)).not.toThrow();
-    }
+describe('filterByChallengeId', () => {
+  it('returns the same superblocks if no challengeId is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1', challengeOrder: [{ id: '1' }] }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ];
+    expect(filterByChallengeId(superblocks)).toEqual(superblocks);
   });
 
-  it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(24);
-
-    const superBlockPaths = directories.filter(x => x !== '00-certifications');
-
-    for (const directory of superBlockPaths) {
-      expect(Object.values(SuperBlocks)).toContain(
-        getSuperBlockFromDir(directory)
-      );
-    }
-    expect(getSuperBlockFromDir('00-certifications')).toBe('certifications');
+  it('ignores blocks without the specified challengeId', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+        ]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
   });
 
-  it("returns all valid superblocks (and 'certifications')", () => {
-    expect.assertions(1);
-
-    const superBlocks = new Set();
-    for (const directory of directories) {
-      superBlocks.add(getSuperBlockFromDir(directory));
-    }
-
-    // + 1 for 'certifications'
-    expect(superBlocks.size).toBe(Object.values(SuperBlocks).length + 1);
+  it('returns only the specified challenge and its solution challenge', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          {
+            dashedName: 'block-1',
+            challengeOrder: [{ id: '1' }, { id: '2' }, { id: '3' }]
+          },
+          { dashedName: 'block-2', challengeOrder: [{ id: '4' }] }
+        ]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }, { id: '2' }] }
+        ]
+      }
+    ]);
   });
 
-  it('throws if a directory is unknown', () => {
-    expect.assertions(1);
-
-    expect(() => getSuperBlockFromDir('unknown')).toThrow();
+  it('returns only superblocks containing the specified challenge', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [
+          { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+          { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+        ]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3', challengeOrder: [{ id: '3' }] }]
+      }
+    ];
+    const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+      }
+    ]);
   });
 });
 
-describe('getChapterFromBlock', () => {
-  it('returns a chapter if it exists', () => {
-    expect(
-      getChapterFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toEqual('html');
+describe('filterByBlock', () => {
+  it('returns the same superblocks if no block is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterByBlock(superblocks)).toEqual(superblocks);
   });
 
-  it('throws if a chapter does not exist', () => {
-    expect(() =>
-      getChapterFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
-    ).toThrow(
-      'There is no chapter corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
-    );
+  it('returns only the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'block-1' });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }]
+      }
+    ]);
+  });
+
+  it('returns an empty array if no blocks match the specified block', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    const filtered = filterByBlock(superblocks, { block: 'nonexistent-block' });
+    expect(filtered).toEqual([]);
   });
 });
 
-describe('getModuleFromBlock', () => {
-  it('returns a module if it exists', () => {
-    expect(
-      getModuleFromBlock('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toEqual('getting-started-with-freecodecamp');
+describe('filterBySuperblock', () => {
+  it('returns the same superblocks if no superBlock is provided', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ];
+    expect(filterBySuperblock(superblocks)).toEqual(superblocks);
   });
 
-  it('throws if a module does not exist', () => {
-    expect(() =>
-      getModuleFromBlock('welcome-to-freecodecamper', mockSuperBlockStructure)
-    ).toThrow(
-      'There is no module corresponding to block "welcome-to-freecodecamper". It\'s possible that the block is missing in the superblock structure.'
-    );
-  });
-});
-
-describe('getBlockOrder', () => {
-  it('returns the correct order when the chapter only contains one module', () => {
-    expect(
-      getBlockOrder('welcome-to-freecodecamp', mockSuperBlockStructure)
-    ).toBe(0);
-  });
-
-  it('returns the correct order when the chapter contains multiple modules', () => {
-    expect(getBlockOrder('block-one-m2', mockSuperBlockStructure)).toBe(3);
-  });
-
-  it('throws if a block does not exist', () => {
-    expect(() =>
-      getBlockOrder('welcome-to-freecodecamper', mockSuperBlockStructure)
-    ).toThrow(
-      'The block "welcome-to-freecodecamper" does not appear in the superblock structure.'
-    );
+  it('returns only the specified superblock', () => {
+    const superblocks = [
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      },
+      {
+        name: 'superblock-2',
+        blocks: [{ dashedName: 'block-3' }]
+      }
+    ];
+    const filtered = filterBySuperblock(superblocks, {
+      superBlock: 'superblock-1'
+    });
+    expect(filtered).toEqual([
+      {
+        name: 'superblock-1',
+        blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+      }
+    ]);
   });
 });

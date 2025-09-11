@@ -21,10 +21,11 @@ import {
   showCertFetchStateSelector,
   userFetchStateSelector,
   isDonatingSelector,
-  userByNameSelector,
-  usernameSelector
+  usernameSelector,
+  createUserByNameSelector,
+  isSignedInSelector
 } from '../redux/selectors';
-import { UserFetchState, User } from '../redux/prop-types';
+import type { UserFetchState, User } from '../redux/prop-types';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certificateMissingErrorMessage,
@@ -67,6 +68,7 @@ interface ShowCertificationProps {
   };
   isDonating: boolean;
   isValidCert: boolean;
+  isSignedIn: boolean;
   location: {
     pathname: string;
   };
@@ -78,41 +80,48 @@ interface ShowCertificationProps {
     certSlug: string;
   }) => void;
   signedInUserName: string;
-  user: User;
+  user: User | null;
   userFetchState: UserFetchState;
   userFullName: string;
   username: string;
 }
 
-const requestedUserSelector = (state: unknown, { username = '' }) =>
-  userByNameSelector(username.toLowerCase())(state) as User;
-
 const mapStateToProps = (state: unknown, props: ShowCertificationProps) => {
   const isValidCert = liveCerts.some(
     ({ certSlug }) => String(certSlug) === props.certSlug
   );
+
+  const { username } = props;
+
+  const userByNameSelector = createUserByNameSelector(username) as (
+    state: unknown
+  ) => User | null;
+
   return createSelector(
     showCertSelector,
     showCertFetchStateSelector,
     usernameSelector,
+    userByNameSelector,
     userFetchStateSelector,
     isDonatingSelector,
-    requestedUserSelector,
+    isSignedInSelector,
     (
       cert: Cert,
       fetchState: ShowCertificationProps['fetchState'],
       signedInUserName: string,
+      user: User | null,
       userFetchState: UserFetchState,
       isDonating: boolean,
-      user: User
+      isSignedIn: boolean
     ) => ({
       cert,
       fetchState,
       isValidCert,
       signedInUserName,
+      user,
       userFetchState,
       isDonating,
-      user
+      isSignedIn
     })
   );
 };
@@ -123,131 +132,30 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
+const DonationCloseBtn = ({ onClick }: { onClick: () => void }) => {
   const { t } = useTranslation();
-  const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
-  const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
-  const [isDonationClosed, setIsDonationClosed] = useState(false);
 
-  useEffect(() => {
-    const { username, certSlug, isValidCert, showCert } = props;
-    if (isValidCert) {
-      showCert({ username, certSlug });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    const {
-      userFetchState: { complete: userComplete },
-      signedInUserName,
-      isDonating,
-      cert: { username = '' },
-      fetchProfileForUser,
-      user
-    } = props;
-
-    if (!signedInUserName || signedInUserName !== username) {
-      if (isEmpty(user) && username) {
-        fetchProfileForUser(username);
-      }
-    }
-
-    if (
-      !isDonationDisplayed &&
-      userComplete &&
-      signedInUserName &&
-      signedInUserName === username &&
-      !isDonating
-    ) {
-      setIsDonationDisplayed(true);
-      callGA({
-        event: 'donation_view',
-        action: 'Displayed Certificate Donation'
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [
-    isDonationDisplayed,
-    props.userFetchState,
-    props.signedInUserName,
-    props.isDonating,
-    props.cert
-  ]);
-
-  const hideDonationSection = () => {
-    setIsDonationDisplayed(false);
-    setIsDonationClosed(true);
-  };
-
-  const handleProcessing = () => {
-    setIsDonationSubmitted(true);
-  };
-
-  const {
-    cert,
-    fetchState,
-    isValidCert,
-    createFlashMessage,
-    signedInUserName,
-    location: { pathname }
-  } = props;
-  const { pending, complete, errored } = fetchState;
-
-  useEffect(() => {
-    if (!isValidCert) {
-      createFlashMessage(certificateMissingErrorMessage);
-    } else if (!pending && errored) {
-      createFlashMessage(standardErrorMessage);
-    } else if (!pending && !complete && !errored) {
-      createFlashMessage(reallyWeirdErrorMessage);
-    }
-  }, [isValidCert, createFlashMessage, pending, errored, complete]);
-
-  if (!isValidCert) {
-    return <RedirectHome />;
-  }
-
-  if (pending) {
-    return <Loader fullScreen={true} />;
-  }
-
-  if (errored || !complete) {
-    return <RedirectHome />;
-  }
-
-  const {
-    date,
-    name: userFullName = null,
-    username,
-    certTitle,
-    certSlug,
-    completionTime
-  } = cert;
-
-  const { user } = props;
-
-  const displayName = userFullName ?? username;
-
-  const certDate = new Date(date);
-  const certYear = certDate.getFullYear();
-  const certMonth = certDate.getMonth();
-  const certURL = `https://freecodecamp.org${pathname}`;
-
-  const donationCloseBtn = (
+  return (
     <div>
-      <Button
-        block={true}
-        size='small'
-        variant='primary'
-        onClick={hideDonationSection}
-      >
+      <Button block={true} size='small' variant='primary' onClick={onClick}>
         {t('buttons.close')}
       </Button>
     </div>
   );
+};
 
-  const donationSection = (
+const DonationSection = ({
+  isDonationSubmitted,
+  handleProcessing,
+  hideDonationSection
+}: {
+  isDonationSubmitted: boolean;
+  handleProcessing: () => void;
+  hideDonationSection: () => void;
+}) => {
+  const { t } = useTranslation();
+
+  return (
     <div
       className='donation-section'
       data-playwright-test-label='donation-section'
@@ -282,17 +190,37 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Spacer size='m' />
       <Row>
         <Col sm={4} smOffset={4} xs={6} xsOffset={3}>
-          {isDonationSubmitted && donationCloseBtn}
+          {isDonationSubmitted && (
+            <DonationCloseBtn onClick={hideDonationSection} />
+          )}
         </Col>
       </Row>
       <Spacer size='l' />
     </div>
   );
+};
 
+const ShareCertBtns = ({
+  username,
+  certDate,
+  certTitle,
+  certSlug,
+  certURL
+}: {
+  username: string;
+  certDate: Date;
+  certTitle: string;
+  certSlug: CertSlug;
+  certURL: string;
+}) => {
+  const { t } = useTranslation();
+
+  const certYear = certDate.getFullYear();
+  const certMonth = certDate.getMonth();
   const urlFriendlyCertTitle = encodeURIComponent(certTitle);
   const linkedInCredentialId = `${username}-${linkedInCredentialIds[certSlug]}`;
 
-  const shareCertBtns = (
+  return (
     <Row className='text-center'>
       <Col xs={12}>
         <Button
@@ -314,7 +242,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           variant='primary'
           href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
-            certURL: certURL
+            certURL
           })}`}
           target='_blank'
           data-playwright-test-label='twitter-share-btn'
@@ -328,7 +256,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           variant='primary'
           href={`https://bsky.app/intent/compose?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
-            certURL: certURL
+            certURL
           })}`}
           target='_blank'
           data-playwright-test-label='bluesky-share-btn'
@@ -342,7 +270,7 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
           variant='primary'
           href={`https://threads.net/intent/post?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
-            certURL: certURL
+            certURL
           })}`}
           target='_blank'
           data-playwright-test-label='thread-share-btn'
@@ -353,12 +281,125 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
       <Spacer size='l' />
     </Row>
   );
+};
+
+const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
+  const { t } = useTranslation();
+  const [isDonationSubmitted, setIsDonationSubmitted] = useState(false);
+  const [isDonationDisplayed, setIsDonationDisplayed] = useState(false);
+  const [isDonationClosed, setIsDonationClosed] = useState(false);
+
+  useEffect(() => {
+    const { username, certSlug, isValidCert, showCert } = props;
+    if (isValidCert) {
+      showCert({ username, certSlug });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    const {
+      userFetchState: { complete: userComplete },
+      signedInUserName,
+      isDonating,
+      isSignedIn,
+      cert: { username = '' },
+      fetchProfileForUser,
+      user
+    } = props;
+
+    const isSessionUser = isSignedIn && signedInUserName === username;
+
+    if (isEmpty(user) && username) {
+      fetchProfileForUser(username);
+    }
+
+    if (!isDonationDisplayed && userComplete && isSessionUser && !isDonating) {
+      setIsDonationDisplayed(true);
+      callGA({
+        event: 'donation_view',
+        action: 'Displayed Certificate Donation'
+      });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [
+    isDonationDisplayed,
+    props.userFetchState,
+    props.signedInUserName,
+    props.isDonating,
+    props.cert
+  ]);
+
+  const hideDonationSection = () => {
+    setIsDonationDisplayed(false);
+    setIsDonationClosed(true);
+  };
+
+  const handleProcessing = () => {
+    setIsDonationSubmitted(true);
+  };
+
+  const {
+    cert,
+    fetchState,
+    isValidCert,
+    createFlashMessage,
+    signedInUserName,
+    location: { pathname },
+    user
+  } = props;
+  const { pending, complete, errored } = fetchState;
+
+  useEffect(() => {
+    if (!isValidCert) {
+      createFlashMessage(certificateMissingErrorMessage);
+    } else if (!pending && errored) {
+      createFlashMessage(standardErrorMessage);
+    } else if (!pending && !complete && !errored) {
+      createFlashMessage(reallyWeirdErrorMessage);
+    }
+  }, [isValidCert, createFlashMessage, pending, errored, complete]);
+
+  if (!isValidCert) {
+    return <RedirectHome />;
+  }
+
+  if (pending || !user) {
+    return <Loader fullScreen={true} />;
+  }
+
+  if (errored || !complete) {
+    return <RedirectHome />;
+  }
+
+  const {
+    date,
+    name: userFullName = null,
+    username,
+    certTitle,
+    certSlug,
+    completionTime
+  } = cert;
+
+  const displayName = userFullName ?? username;
+
+  const certDate = new Date(date);
+
+  const certURL = `https://freecodecamp.org${pathname}`;
 
   const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
   return (
     <Container className='certificate-outer-wrapper'>
-      {isDonationDisplayed && !isDonationClosed ? donationSection : ''}
+      {isDonationDisplayed && !isDonationClosed ? (
+        <DonationSection
+          hideDonationSection={hideDonationSection}
+          handleProcessing={handleProcessing}
+          isDonationSubmitted={isDonationSubmitted}
+        />
+      ) : (
+        ''
+      )}
       <div
         className='certificate-wrapper'
         data-playwright-test-label='cert-wrapper'
@@ -511,7 +552,17 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
         data-playwright-test-label='cert-links'
       >
         <Spacer size='l' />
-        {signedInUserName === username ? shareCertBtns : ''}
+        {signedInUserName === username ? (
+          <ShareCertBtns
+            username={username}
+            certDate={certDate}
+            certSlug={certSlug}
+            certTitle={certTitle}
+            certURL={certURL}
+          />
+        ) : (
+          ''
+        )}
         <Spacer size='l' />
         <ShowProjectLinks certSlug={certSlug} name={displayName} user={user} />
         <Spacer size='l' />

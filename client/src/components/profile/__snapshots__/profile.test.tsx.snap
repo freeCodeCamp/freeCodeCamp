@@ -15,6 +15,9 @@ exports[`<Profile/> renders correctly 1`] = `
       class="bio-container"
     >
       <div
+        class="h-[30px]"
+      />
+      <div
         class="mx-[-15px] "
       >
         <div

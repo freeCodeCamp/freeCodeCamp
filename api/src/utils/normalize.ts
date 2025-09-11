@@ -1,10 +1,11 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import {
+import type {
   ProfileUI,
   CompletedChallenge,
   ExamResults,
-  type Survey
+  Survey,
+  Prisma
 } from '@prisma/client';
 import _ from 'lodash';
 
@@ -37,6 +38,55 @@ export const normalizeTwitter = (
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
+};
+
+/**
+ * Normalizes a date value to a timestamp number.
+ *
+ * @param date An object with a $date string or a number.
+ * @returns The date as a timestamp number.
+ */
+export const normalizeDate = (date?: Prisma.JsonValue): number => {
+  if (typeof date === 'number') {
+    return date;
+  } else if (
+    date &&
+    typeof date === 'object' &&
+    '$date' in date &&
+    typeof date.$date === 'string'
+  ) {
+    return new Date(date.$date).getTime();
+  } else {
+    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  }
+};
+
+/**
+ * Normalizes a challenge type value to a number.
+ *
+ * @param challengeType A JSON value that can be a number, string, or null.
+ * @returns The challenge type as a number or null.
+ */
+export const normalizeChallengeType = (
+  challengeType?: Prisma.JsonValue
+): number | null => {
+  if (typeof challengeType === 'number') {
+    return challengeType;
+  } else if (typeof challengeType === 'string') {
+    const parsed = parseInt(challengeType, 10);
+    if (isNaN(parsed)) {
+      throw Error(
+        'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+      );
+    }
+    return parsed;
+  } else if (challengeType === null) {
+    return null;
+  } else {
+    throw Error(
+      'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+    );
+  }
 };
 
 /**
@@ -103,9 +153,16 @@ export type NormalizedChallenge = {
 export const normalizeChallenges = (
   completedChallenges: CompletedChallenge[]
 ): NormalizedChallenge[] => {
-  const noNullProps = completedChallenges.map(challenge =>
-    removeNulls(challenge)
-  );
+  const fixedDateAndType = completedChallenges.map(challenge => {
+    const { completedDate, challengeType, ...rest } = challenge;
+    return {
+      ...rest,
+      completedDate: normalizeDate(completedDate),
+      challengeType: normalizeChallengeType(challengeType)
+    };
+  });
+
+  const noNullProps = fixedDateAndType.map(challenge => removeNulls(challenge));
   // files.path is optional
   const noNullPath = noNullProps.map(challenge => {
     const { files, ...rest } = challenge;

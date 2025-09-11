@@ -1,6 +1,5 @@
 import crypto from 'node:crypto';
 
-import { type Prisma } from '@prisma/client';
 import { customAlphabet } from 'nanoid';
 
 export const nanoidCharSet =
@@ -46,7 +45,7 @@ export const createResetProperties = () => ({
  * @param email The email address of the new user.
  * @returns Default data for a new user.
  */
-export function createUserInput(email: string): Prisma.userCreateInput {
+export function createUserInput(email: string) {
   const username = 'fcc-' + crypto.randomUUID();
   const externalId = crypto.randomUUID();
   // This explicitly includes all array fields. This is not strictly necessary -

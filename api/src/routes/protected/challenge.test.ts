@@ -1,10 +1,32 @@
-// Yes, putting this above the imports is a hack to get around the fact that
-// jest.mock() must be called at the top level of the file.
-const mockVerifyTrophyWithMicrosoft = jest.fn();
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
+
+vi.mock('../helpers/challenge-helpers', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../helpers/challenge-helpers')
+  >('../helpers/challenge-helpers');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    verifyTrophyWithMicrosoft: vi.fn()
+  };
+});
+
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { omit } from 'lodash';
 import { Static } from '@fastify/type-provider-typebox';
+import { DailyCodingChallengeLanguage } from '@prisma/client';
+import request from 'supertest';
 
 import { challengeTypes } from '../../../../shared/config/challenge-types';
 import {
@@ -16,7 +38,7 @@ import {
   defaultUserEmail,
   createSuperRequest,
   defaultUsername
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import {
   completedExamChallengeOneCorrect,
   completedExamChallengeTwoCorrect,
@@ -34,21 +56,12 @@ import {
 } from '../../../__mocks__/exam';
 import { Answer } from '../../utils/exam-types';
 import type { getSessionUser } from '../../schemas/user/get-session-user';
+import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers';
+
+const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
-
-jest.mock('../helpers/challenge-helpers', () => {
-  const originalModule = jest.requireActual<
-    typeof import('../helpers/challenge-helpers')
-  >('../helpers/challenge-helpers');
-
-  return {
-    __esModule: true,
-    ...originalModule,
-    verifyTrophyWithMicrosoft: mockVerifyTrophyWithMicrosoft
-  };
-});
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',
@@ -92,58 +105,109 @@ const HtmlChallengeBody = {
   challengeType: challengeTypes.html,
   id: HtmlChallengeId
 };
-const JsProjectBody = {
+
+const baseJsProjectBody = {
   challengeType: challengeTypes.jsProject,
-  id: JsProjectId,
-  files: [
-    {
-      contents: 'console.log("Hello There!")',
-      key: 'scriptjs',
-      ext: 'js',
-      name: 'script',
-      history: ['script.js']
-    }
-  ]
+  id: JsProjectId
 };
-const multiFileCertProjectBody = {
+
+const jsFiles = [
+  {
+    contents: 'console.log("Hello There!")',
+    key: 'scriptjs',
+    ext: 'js',
+    name: 'script',
+    history: ['script.js']
+  }
+];
+
+const encodedJsFiles = [
+  {
+    contents: btoa('console.log("Hello There!")'),
+    key: 'scriptjs',
+    ext: 'js',
+    name: 'script',
+    history: ['script.js']
+  }
+];
+
+const baseMultiFileCertProjectBody = {
   challengeType: challengeTypes.multifileCertProject,
-  id: multiFileCertProjectId,
-  files: [
-    {
-      contents: '<h1>Multi File Project v1</h1>',
-      key: 'indexhtml',
-      ext: 'html',
-      name: 'index',
-      history: ['index.html']
-    },
-    {
-      contents: '.hello-there { general: kenobi; }',
-      key: 'stylescss',
-      ext: 'css',
-      name: 'styles',
-      history: ['styles.css']
-    }
-  ]
+  id: multiFileCertProjectId
 };
-const updatedMultiFileCertProjectBody = {
-  challengeType: challengeTypes.multifileCertProject,
-  id: multiFileCertProjectId,
-  files: [
-    {
-      contents: '<h1>Multi File Project v2</h1>',
-      key: 'indexhtml',
-      ext: 'html',
-      name: 'index',
-      history: ['index.html']
-    },
-    {
-      contents: '.wibbly-wobbly { timey: wimey; }',
-      key: 'stylescss',
-      ext: 'css',
-      name: 'styles',
-      history: ['styles.css']
-    }
-  ]
+
+const multiFiles = [
+  {
+    contents: '<h1>Multi File Project v1</h1>',
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: '.hello-there { general: kenobi; }',
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const updatedMultiFiles = [
+  {
+    contents: '<h1>Multi File Project v2</h1>',
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: '.wibbly-wobbly { timey: wimey; }',
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const encodedMultiFiles = [
+  {
+    contents: btoa('<h1>Multi File Project v1</h1>'),
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: btoa('.hello-there { general: kenobi; }'),
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const encodedUpdatedMultiFiles = [
+  {
+    contents: btoa('<h1>Multi File Project v2</h1>'),
+    key: 'indexhtml',
+    ext: 'html',
+    name: 'index',
+    history: ['index.html']
+  },
+  {
+    contents: btoa('.wibbly-wobbly { timey: wimey; }'),
+    key: 'stylescss',
+    ext: 'css',
+    name: 'styles',
+    history: ['styles.css']
+  }
+];
+
+const dailyCodingChallengeId = '5900f36e1000cf542c50fe80';
+const dailyCodingChallengeBody = {
+  id: dailyCodingChallengeId,
+  language: DailyCodingChallengeLanguage.javascript
 };
 
 describe('challengeRoutes', () => {
@@ -239,7 +303,11 @@ describe('challengeRoutes', () => {
 
         const token = (tokenResponse.body as { userToken: string }).userToken;
 
-        const response = await superPost('/coderoad-challenge-completed')
+        // This route is special since it does not have CSRF protection OR authN
+        // protection. As such, we use a normal `request` to send the bare
+        // minimum (no extra headers or cookies).
+        const response = await request(fastifyTestInstance.server)
+          .post('/coderoad-challenge-completed')
           .set('coderoad-user-token', token)
           .send({
             tutorialId:
@@ -279,15 +347,43 @@ describe('challengeRoutes', () => {
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
-
         const projectCompleted = user?.partiallyCompletedChallenges.some(
           project => {
             return project.id === '5f1a4ef5d5d6b5ab580fc6ae';
           }
         );
-
+        expect(response.body).toEqual({
+          msg: 'Successfully submitted challenge',
+          type: 'success'
+        });
         expect(projectCompleted).toBe(true);
         expect(response.status).toBe(200);
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
+      test('Should return an error response if something goes wrong', async () => {
+        vi.spyOn(
+          fastifyTestInstance.prisma.userToken,
+          'findUnique'
+        ).mockImplementationOnce(() => {
+          throw new Error('Database error');
+        });
+        const tokenResponse = await superPost('/user/user-token');
+        const token = (tokenResponse.body as { userToken: string }).userToken;
+
+        const response = await superPost('/coderoad-challenge-completed')
+          .set('coderoad-user-token', token)
+          .send({
+            tutorialId: 'freeCodeCamp/learn-celestial-bodies-database:v1.0.0'
+          });
+
+        expect(response.body).toEqual({
+          msg: 'An error occurred trying to submit the challenge',
+          type: 'error'
+        });
+        expect(response.status).toBe(500);
       });
 
       afterAll(async () => {
@@ -302,7 +398,7 @@ describe('challengeRoutes', () => {
     });
     describe('/project-completed', () => {
       describe('validation', () => {
-        it('POST rejects requests without ids', async () => {
+        test('POST rejects requests without ids', async () => {
           const response = await superPost('/project-completed').send({});
 
           expect(response.body).toStrictEqual(
@@ -311,7 +407,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests without valid ObjectIDs', async () => {
+        test('POST rejects requests without valid ObjectIDs', async () => {
           const response = await superPost(
             '/project-completed'
             // This is a departure from api-server, which does not require a
@@ -325,7 +421,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests with invalid challengeTypes', async () => {
+        test('POST rejects requests with invalid challengeTypes', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 'not-a-valid-challenge-type',
@@ -344,7 +440,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests without solutions', async () => {
+        test('POST rejects requests without solutions', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 3
@@ -358,7 +454,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(400);
         });
 
-        it('POST rejects requests with solutions that are not urls', async () => {
+        test('POST rejects requests with solutions that are not urls', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: 3,
@@ -371,7 +467,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(403);
         });
 
-        it('POST rejects backendProject requests without URL githubLinks', async () => {
+        test('POST rejects backendProject requests without URL githubLinks', async () => {
           const response = await superPost('/project-completed').send({
             id: id1,
             challengeType: challengeTypes.backEndProject,
@@ -397,7 +493,7 @@ describe('challengeRoutes', () => {
           expect(response_2.statusCode).toBe(403);
         });
 
-        it('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
+        test('POST rejects CodeRoad/CodeAlly projects when the user has not completed the required challenges', async () => {
           const response = await superPost('/project-completed').send({
             id: id1, // not a codeally challenge id, but does not matter
             challengeType: 13, // this does matter, however, since there's special logic for that challenge type
@@ -421,7 +517,10 @@ describe('challengeRoutes', () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
             data: {
-              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }]
+              partiallyCompletedChallenges: [{ id: id1, completedDate: 1 }],
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
             }
           });
         });
@@ -438,7 +537,7 @@ describe('challengeRoutes', () => {
           });
         });
 
-        it('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
+        test('POST accepts CodeRoad/CodeAlly projects when the user has completed the required challenges', async () => {
           const now = Date.now();
           const response =
             await superPost('/project-completed').send(codeallyProject);
@@ -472,7 +571,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
 
-        it('POST accepts backend projects', async () => {
+        test('POST accepts backend projects', async () => {
           const now = Date.now();
 
           const response =
@@ -507,7 +606,7 @@ describe('challengeRoutes', () => {
           expect(response.statusCode).toBe(200);
         });
 
-        it('POST correctly handles multiple requests', async () => {
+        test('POST correctly handles multiple requests', async () => {
           const resOriginal =
             await superPost('/project-completed').send(codeallyProject);
 
@@ -701,6 +800,16 @@ describe('challengeRoutes', () => {
       });
 
       describe('handling', () => {
+        beforeEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedChallenges: [],
+              savedChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
         afterEach(async () => {
           await fastifyTestInstance.prisma.user.updateMany({
             where: { email: 'foo@bar.com' },
@@ -750,21 +859,22 @@ describe('challengeRoutes', () => {
         test('POST accepts challenges with files present', async () => {
           const now = Date.now();
 
-          const response = await superPost('/modern-challenge-completed').send(
-            JsProjectBody
-          );
+          const response = await superPost('/modern-challenge-completed').send({
+            ...baseJsProjectBody,
+            files: jsFiles
+          });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const file = omit(JsProjectBody.files[0], 'history');
+          const file = omit(jsFiles[0], 'history');
 
           expect(user).toMatchObject({
             completedChallenges: [
               {
                 id: JsProjectId,
-                challengeType: JsProjectBody.challengeType,
+                challengeType: baseJsProjectBody.challengeType,
                 files: [file],
                 completedDate: expect.any(Number)
               }
@@ -787,15 +897,16 @@ describe('challengeRoutes', () => {
         test('POST accepts challenges with saved solutions', async () => {
           const now = Date.now();
 
-          const response = await superPost('/modern-challenge-completed').send(
-            multiFileCertProjectBody
-          );
+          const response = await superPost('/modern-challenge-completed').send({
+            ...baseMultiFileCertProjectBody,
+            files: multiFiles
+          });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
             where: { email: 'foo@bar.com' }
           });
 
-          const testFiles = multiFileCertProjectBody.files.map(
+          const testFiles = multiFiles.map(
             ({ history: _history, ...rest }) => rest
           );
 
@@ -804,7 +915,7 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 id: multiFileCertProjectId,
-                challengeType: multiFileCertProjectBody.challengeType,
+                challengeType: baseMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
                 isManuallyApproved: false
@@ -814,7 +925,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: multiFileCertProjectBody.files
+                files: multiFiles
               }
             ]
           });
@@ -831,7 +942,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: completedDate,
-                files: multiFileCertProjectBody.files
+                files: multiFiles
               }
             ]
           });
@@ -841,14 +952,14 @@ describe('challengeRoutes', () => {
         test('POST correctly handles multiple requests', async () => {
           const resOriginal = await superPost(
             '/modern-challenge-completed'
-          ).send(multiFileCertProjectBody);
+          ).send({ ...baseMultiFileCertProjectBody, files: multiFiles });
 
           await superPost('/modern-challenge-completed').send(
             HtmlChallengeBody
           );
 
           const resUpdate = await superPost('/modern-challenge-completed').send(
-            updatedMultiFileCertProjectBody
+            { ...baseMultiFileCertProjectBody, files: updatedMultiFiles }
           );
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -859,7 +970,7 @@ describe('challengeRoutes', () => {
             challenge => challenge.completedDate
           );
 
-          const testFiles = updatedMultiFileCertProjectBody.files.map(file =>
+          const testFiles = updatedMultiFiles.map(file =>
             omit(file, 'history')
           );
 
@@ -868,7 +979,7 @@ describe('challengeRoutes', () => {
             completedChallenges: [
               {
                 id: multiFileCertProjectId,
-                challengeType: updatedMultiFileCertProjectBody.challengeType,
+                challengeType: baseMultiFileCertProjectBody.challengeType,
                 files: testFiles,
                 completedDate: expect.any(Number),
                 isManuallyApproved: false
@@ -882,7 +993,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ],
             progressTimestamps: expectedProgressTimestamps
@@ -903,11 +1014,400 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: expect.any(Number),
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
           expect(resUpdate.statusCode).toBe(200);
+        });
+      });
+    });
+
+    describe('/encoded/modern-challenge-completed', () => {
+      beforeEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            savedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: 'foo@bar.com' },
+          data: {
+            completedChallenges: [],
+            savedChallenges: [],
+            progressTimestamps: []
+          }
+        });
+      });
+      // JS Project(5), Multi-file Cert Project(14)
+      test('POST accepts challenges with files present', async () => {
+        const now = Date.now();
+
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({ ...baseJsProjectBody, files: encodedJsFiles });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const file = omit(jsFiles[0], 'history');
+
+        expect(user).toMatchObject({
+          completedChallenges: [
+            {
+              id: JsProjectId,
+              challengeType: baseJsProjectBody.challengeType,
+              files: [file],
+              completedDate: expect.any(Number)
+            }
+          ]
+        });
+
+        const completedDate = user.completedChallenges[0]?.completedDate;
+        expect(completedDate).toBeGreaterThanOrEqual(now);
+        expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+        expect(response.body).toStrictEqual({
+          alreadyCompleted: false,
+          points: 1,
+          completedDate,
+          savedChallenges: []
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      test('POST accepts challenges with saved solutions', async () => {
+        const now = Date.now();
+
+        const response = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const testFiles = updatedMultiFiles.map(
+          ({ history: _history, ...rest }) => rest
+        );
+
+        expect(user).toMatchObject({
+          needsModeration: true,
+          completedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              challengeType: baseMultiFileCertProjectBody.challengeType,
+              files: testFiles,
+              completedDate: expect.any(Number),
+              isManuallyApproved: false
+            }
+          ],
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ]
+        });
+
+        const completedDate = user.completedChallenges[0]?.completedDate;
+        expect(completedDate).toBeGreaterThanOrEqual(now);
+        expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+        expect(response.body).toStrictEqual({
+          alreadyCompleted: false,
+          points: 1,
+          completedDate,
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: completedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.statusCode).toBe(200);
+      });
+
+      test('POST correctly handles multiple requests', async () => {
+        const resOriginal = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedMultiFiles
+        });
+
+        await superPost('/encoded/modern-challenge-completed').send(
+          HtmlChallengeBody
+        );
+
+        const resUpdate = await superPost(
+          '/encoded/modern-challenge-completed'
+        ).send({
+          ...baseMultiFileCertProjectBody,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const expectedProgressTimestamps = user.completedChallenges.map(
+          challenge => challenge.completedDate
+        );
+
+        const testFiles = updatedMultiFiles.map(file => omit(file, 'history'));
+
+        expect(user).toMatchObject({
+          needsModeration: true,
+          completedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              challengeType: baseMultiFileCertProjectBody.challengeType,
+              files: testFiles,
+              completedDate: expect.any(Number),
+              isManuallyApproved: false
+            },
+            {
+              id: HtmlChallengeId,
+              completedDate: expect.any(Number)
+            }
+          ],
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ],
+          progressTimestamps: expectedProgressTimestamps
+        });
+
+        expect(resUpdate.body.savedChallenges[0].lastSavedDate).toBeGreaterThan(
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+          resOriginal.body.savedChallenges[0].lastSavedDate
+        );
+
+        expect(resUpdate.body).toStrictEqual({
+          alreadyCompleted: true,
+          points: 2,
+          completedDate: expect.any(Number),
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: expect.any(Number),
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(resUpdate.statusCode).toBe(200);
+      });
+    });
+
+    describe('/daily-coding-challenge-completed', () => {
+      describe('validation', () => {
+        test('POST rejects requests without an id', async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { id, ...noIdReqBody } = dailyCodingChallengeBody;
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(noIdReqBody);
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without a language', async () => {
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
+          const { language, ...noLanguageReqBody } = dailyCodingChallengeBody;
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(noLanguageReqBody);
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid ObjectIDs', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            id: 'not-a-valid-id'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+
+        test('POST rejects requests without valid coding language', async () => {
+          const response = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            language: 'not-a-valid-language'
+          });
+
+          expect(response.body).toStrictEqual(
+            isValidChallengeCompletionErrorMsg
+          );
+          expect(response.statusCode).toBe(400);
+        });
+      });
+
+      describe('handling', () => {
+        afterEach(async () => {
+          await fastifyTestInstance.prisma.user.updateMany({
+            where: { email: 'foo@bar.com' },
+            data: {
+              completedDailyCodingChallenges: [],
+              progressTimestamps: []
+            }
+          });
+        });
+
+        test('POST correctly handles multiple requests', async () => {
+          const now = Date.now();
+
+          const res1 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(dailyCodingChallengeBody);
+
+          const user1 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          const completedDate =
+            user1.completedDailyCodingChallenges[0]?.completedDate;
+
+          // should have correct completedDate
+          expect(completedDate).toBeGreaterThanOrEqual(now);
+          expect(completedDate).toBeLessThanOrEqual(now + 1000);
+
+          expect(user1).toMatchObject({
+            // should add completedDailyCodingChallenge to database with correct info
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [DailyCodingChallengeLanguage.javascript]
+              }
+            ],
+            // should add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res1.statusCode).toBe(200);
+          expect(res1.body).toStrictEqual({
+            alreadyCompleted: false,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [DailyCodingChallengeLanguage.javascript]
+              }
+            ]
+          });
+
+          const res2 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send(dailyCodingChallengeBody);
+
+          const user2 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          // should not add 'javascript' again, should not update completedDate
+          expect(user2).toMatchObject({
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [DailyCodingChallengeLanguage.javascript]
+              }
+            ],
+            // should not add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res2.statusCode).toBe(200);
+          expect(res2.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [DailyCodingChallengeLanguage.javascript]
+              }
+            ]
+          });
+
+          const res3 = await superPost(
+            '/daily-coding-challenge-completed'
+          ).send({
+            ...dailyCodingChallengeBody,
+            language: 'python'
+          });
+
+          const user3 = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+          // should add 'python' to languages + should not update completedDate
+          expect(user3).toMatchObject({
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [
+                  DailyCodingChallengeLanguage.javascript,
+                  DailyCodingChallengeLanguage.python
+                ]
+              }
+            ],
+            // should not add to progressTimestamps
+            progressTimestamps: [completedDate]
+          });
+
+          // should have correct response
+          expect(res3.statusCode).toBe(200);
+          expect(res3.body).toStrictEqual({
+            alreadyCompleted: true,
+            points: 1,
+            completedDate,
+            completedDailyCodingChallenges: [
+              {
+                id: dailyCodingChallengeId,
+                completedDate,
+                languages: [
+                  DailyCodingChallengeLanguage.javascript,
+                  DailyCodingChallengeLanguage.python
+                ]
+              }
+            ]
+          });
         });
       });
     });
@@ -919,7 +1419,7 @@ describe('challengeRoutes', () => {
             savedChallenges: {
               // valid mongo id, but not a saveable one
               id: 'aaaaaaaaaaaaaaaaaaaaaaa',
-              files: multiFileCertProjectBody.files
+              files: multiFiles
             }
           });
 
@@ -944,7 +1444,7 @@ describe('challengeRoutes', () => {
         test('rejects requests for challenges that cannot be saved', async () => {
           const response = await superPost('/save-challenge').send({
             id: '66ebd4ae2812430bb883c786',
-            files: multiFileCertProjectBody.files
+            files: multiFiles
           });
 
           const { savedChallenges } =
@@ -960,7 +1460,7 @@ describe('challengeRoutes', () => {
         test('update the user savedchallenges and return them', async () => {
           const response = await superPost('/save-challenge').send({
             id: multiFileCertProjectId,
-            files: updatedMultiFileCertProjectBody.files
+            files: updatedMultiFiles
           });
 
           const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
@@ -974,7 +1474,7 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: savedDate,
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
@@ -983,12 +1483,63 @@ describe('challengeRoutes', () => {
               {
                 id: multiFileCertProjectId,
                 lastSavedDate: savedDate,
-                files: updatedMultiFileCertProjectBody.files
+                files: updatedMultiFiles
               }
             ]
           });
           expect(response.statusCode).toBe(200);
         });
+      });
+    });
+
+    describe('POST /encoded/save-challenge', () => {
+      test('rejects requests for challenges that cannot be saved', async () => {
+        const response = await superPost('/encoded/save-challenge').send({
+          id: '66ebd4ae2812430bb883c786',
+          files: encodedUpdatedMultiFiles
+        });
+
+        const { savedChallenges } =
+          await fastifyTestInstance.prisma.user.findFirstOrThrow({
+            where: { email: 'foo@bar.com' }
+          });
+
+        expect(response.statusCode).toBe(400);
+        expect(response.text).toEqual('That challenge type is not saveable.');
+        expect(savedChallenges).toHaveLength(0);
+      });
+
+      test('update the user savedchallenges and return them', async () => {
+        const response = await superPost('/encoded/save-challenge').send({
+          id: multiFileCertProjectId,
+          files: encodedUpdatedMultiFiles
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirstOrThrow({
+          where: { email: 'foo@bar.com' }
+        });
+
+        const savedDate = user.savedChallenges[0]?.lastSavedDate;
+
+        expect(user).toMatchObject({
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: savedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.body).toEqual({
+          savedChallenges: [
+            {
+              id: multiFileCertProjectId,
+              lastSavedDate: savedDate,
+              files: updatedMultiFiles
+            }
+          ]
+        });
+        expect(response.statusCode).toBe(200);
       });
     });
 
@@ -1160,8 +1711,8 @@ describe('challengeRoutes', () => {
             // that, the details do not matter, since whatever
             // verifyTrophyWithMicrosoft returns will be returned by the route.
             const verifyError = {
-              type: 'error',
-              message: 'flash.ms.profile.err',
+              type: 'error' as const,
+              message: 'flash.ms.profile.err' as const,
               variables: {
                 msUsername
               }
@@ -1235,7 +1786,7 @@ describe('challengeRoutes', () => {
             });
           });
 
-          it('POST correctly handles multiple requests', async () => {
+          test('POST correctly handles multiple requests', async () => {
             mockVerifyTrophyWithMicrosoft.mockImplementationOnce(() =>
               Promise.resolve({
                 type: 'success',
@@ -1740,14 +2291,14 @@ describe('challengeRoutes', () => {
 
       describe('handling', () => {
         beforeAll(() => {
-          jest.useFakeTimers({
-            doNotFake: ['nextTick']
+          vi.useFakeTimers({
+            // toFake: ['Date']
           });
-          jest.setSystemTime(DATE_NOW);
+          vi.setSystemTime(DATE_NOW);
         });
 
         afterAll(() => {
-          jest.useRealTimers();
+          vi.useRealTimers();
         });
 
         afterEach(async () => {
@@ -1844,10 +2395,11 @@ describe('challengeRoutes', () => {
     });
 
     const endpoints: { path: string; method: 'POST' | 'GET' }[] = [
-      { path: '/coderoad-challenge-completed', method: 'POST' },
+      // { path: '/coderoad-challenge-completed', method: 'POST' },
       { path: '/project-completed', method: 'POST' },
       { path: '/backend-challenge-completed', method: 'POST' },
       { path: '/modern-challenge-completed', method: 'POST' },
+      { path: '/daily-coding-challenge-completed', method: 'POST' },
       { path: '/save-challenge', method: 'POST' },
       { path: '/exam/647e22d18acb466c97ccbef8', method: 'GET' },
       { path: '/ms-trophy-challenge-completed', method: 'POST' },

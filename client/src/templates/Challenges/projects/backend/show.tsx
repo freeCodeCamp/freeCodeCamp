@@ -49,7 +49,7 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   (
-    output: string[],
+    output: string,
     tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
@@ -82,7 +82,7 @@ interface BackEndProps {
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  output: string[];
+  output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };

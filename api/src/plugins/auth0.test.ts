@@ -1,4 +1,14 @@
-const COOKIE_DOMAIN = 'test.com';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterAll,
+  beforeEach,
+  afterEach,
+  vi,
+  MockInstance
+} from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { createUserInput } from '../utils/create-user';
@@ -11,10 +21,11 @@ import auth from './auth';
 import bouncer from './bouncer';
 import { newUser } from './__fixtures__/user';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN
+const COOKIE_DOMAIN = 'test.com';
+
+vi.mock('../utils/env', async importOriginal => ({
+  ...(await importOriginal<typeof import('../utils/env')>()),
+  COOKIE_DOMAIN: 'test.com'
 }));
 
 describe('auth0 plugin', () => {
@@ -36,7 +47,7 @@ describe('auth0 plugin', () => {
   });
 
   describe('GET /signin', () => {
-    it('should redirect to the auth0 login page', async () => {
+    test('should redirect to the auth0 login page', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/signin'
@@ -48,7 +59,7 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('sets a login-returnto cookie', async () => {
+    test('sets a login-returnto cookie', async () => {
       const returnTo = 'http://localhost:3000/learn';
       const res = await fastify.inject({
         method: 'GET',
@@ -71,8 +82,8 @@ describe('auth0 plugin', () => {
 
   describe('GET /auth/auth0/callback', () => {
     const email = 'new@user.com';
-    let getAccessTokenFromAuthorizationCodeFlowSpy: jest.SpyInstance;
-    let userinfoSpy: jest.SpyInstance;
+    let getAccessTokenFromAuthorizationCodeFlowSpy: MockInstance;
+    let userinfoSpy: MockInstance;
 
     const mockAuthSuccess = () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
@@ -82,21 +93,21 @@ describe('auth0 plugin', () => {
     };
 
     beforeEach(() => {
-      getAccessTokenFromAuthorizationCodeFlowSpy = jest.spyOn(
+      getAccessTokenFromAuthorizationCodeFlowSpy = vi.spyOn(
         fastify.auth0OAuth,
         'getAccessTokenFromAuthorizationCodeFlow'
       );
-      userinfoSpy = jest.spyOn(fastify.auth0OAuth, 'userinfo');
+      userinfoSpy = vi.spyOn(fastify.auth0OAuth, 'userinfo');
       // @ts-expect-error - Only mocks part of the Sentry object.
       fastify.Sentry = { captureException: () => '' };
     });
 
     afterEach(async () => {
-      jest.restoreAllMocks();
+      vi.restoreAllMocks();
       await fastify.prisma.user.deleteMany({ where: { email } });
     });
 
-    it('should redirect to the client if authentication fails', async () => {
+    test('should redirect to the client if authentication fails', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
         'any error'
       );
@@ -107,25 +118,25 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
 
-    it('should redirect to the client if the state is invalid', async () => {
+    test('should redirect to the client if the state is invalid', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
       });
 
       expect(res.headers.location).toMatch(
-        `${HOME_LOCATION}/learn?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+        `${HOME_LOCATION}/?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
       );
       expect(res.statusCode).toBe(302);
     });
 
-    it('should log an error if the state is invalid', async () => {
-      jest.spyOn(fastify.log, 'error');
+    test('should log an error if the state is invalid', async () => {
+      vi.spyOn(fastify.log, 'error');
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
@@ -137,7 +148,34 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('should not create a user if the state is invalid', async () => {
+    test('should log expected Auth0 errors', async () => {
+      vi.spyOn(fastify.log, 'error');
+      const auth0Error = Error('Response Error: 403 Forbidden');
+      // @ts-expect-error - mocking a hapi/boom error
+      auth0Error.data = {
+        payload: {
+          error: 'invalid_grant'
+        }
+      };
+
+      getAccessTokenFromAuthorizationCodeFlowSpy.mockRejectedValueOnce(
+        auth0Error
+      );
+
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=invalid'
+      });
+
+      expect(fastify.log.error).toHaveBeenCalledWith(
+        auth0Error,
+        'Auth failed: invalid_grant'
+      );
+
+      expect(res.statusCode).toBe(302);
+    });
+
+    test('should not create a user if the state is invalid', async () => {
       await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?state=invalid'
@@ -146,7 +184,7 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('should block requests with "access_denied" error', async () => {
+    test('should block requests with "access_denied" error', async () => {
       const res = await fastify.inject({
         method: 'GET',
         url: '/auth/auth0/callback?error=access_denied&error_description=Access denied from your location'
@@ -166,7 +204,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('creates a user if the state is valid', async () => {
+    test('creates a user if the state is valid', async () => {
       mockAuthSuccess();
       await fastify.inject({
         method: 'GET',
@@ -176,39 +214,49 @@ describe('auth0 plugin', () => {
       expect(await fastify.prisma.user.count()).toBe(1);
     });
 
-    it('handles userinfo errors', async () => {
+    test('handles userinfo errors', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.reject(Error('any error')));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.generic-error' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('handles invalid userinfo responses', async () => {
+    test('handles invalid userinfo responses', async () => {
       getAccessTokenFromAuthorizationCodeFlowSpy.mockResolvedValueOnce({
         token: 'any token'
       });
       userinfoSpy.mockResolvedValueOnce(Promise.resolve({}));
+      const returnTo = 'https://www.freecodecamp.org/espanol/learn';
 
       const res = await fastify.inject({
         method: 'GET',
-        url: '/auth/auth0/callback?state=valid'
+        url: '/auth/auth0/callback?state=valid',
+        cookies: { 'login-returnto': sign(returnTo) }
       });
 
-      expect(res.headers.location).toMatch('/signin');
+      expect(res.headers.location).toMatch(
+        returnTo +
+          `?${formatMessage({ type: 'danger', content: 'flash.no-email-in-userinfo' })}`
+      );
       expect(res.statusCode).toBe(302);
       expect(await fastify.prisma.user.count()).toBe(0);
     });
 
-    it('redirects with the signin-success message on success', async () => {
+    test('redirects with the signin-success message on success', async () => {
       mockAuthSuccess();
 
       const res = await fastify.inject({
@@ -222,7 +270,7 @@ describe('auth0 plugin', () => {
       expect(res.statusCode).toBe(302);
     });
 
-    it('should set the jwt_access_token cookie', async () => {
+    test('should set the jwt_access_token cookie', async () => {
       mockAuthSuccess();
 
       const res = await fastify.inject({
@@ -235,7 +283,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should use the login-returnto cookie if present and valid', async () => {
+    test('should use the login-returnto cookie if present and valid', async () => {
       mockAuthSuccess();
       await fastify.prisma.user.create({
         data: { ...createUserInput(email), acceptedPrivacyTerms: true }
@@ -262,7 +310,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should redirect home if the login-returnto cookie is invalid', async () => {
+    test('should redirect home if the login-returnto cookie is invalid', async () => {
       mockAuthSuccess();
       const returnTo = 'https://www.evilcodecamp.org/espanol/learn';
       // /signin sets the cookie
@@ -284,7 +332,7 @@ describe('auth0 plugin', () => {
       expect(res.headers.location).toMatch(HOME_LOCATION);
     });
 
-    it('should redirect to email-sign-up if the user has not acceptedPrivacyTerms', async () => {
+    test('should redirect to email-sign-up if the user has not acceptedPrivacyTerms', async () => {
       mockAuthSuccess();
       // Using an italian path to make sure redirection works.
       const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
@@ -304,7 +352,7 @@ describe('auth0 plugin', () => {
       );
     });
 
-    it('should populate the user with the correct data', async () => {
+    test('should populate the user with the correct data', async () => {
       mockAuthSuccess();
 
       await fastify.inject({

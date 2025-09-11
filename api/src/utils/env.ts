@@ -40,13 +40,14 @@ function createTestConnectionURL(url: string, dbId?: string) {
   assert.ok(
     dbId,
     `dbId is required for test connection URL. Is this running in a test environment?
-If so, ensure that the environment variable JEST_WORKER_ID is set.`
+If so, ensure that the environment variable VITEST_WORKER_ID is set.`
   );
   return url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
 }
 
 assert.ok(process.env.HOME_LOCATION);
 assert.ok(isAllowedEnv(_FREECODECAMP_NODE_ENV));
+assert.ok(process.env.DEPLOYMENT_ENV);
 assert.ok(isAllowedProvider(_EMAIL_PROVIDER));
 assert.ok(process.env.AUTH0_CLIENT_ID);
 assert.ok(process.env.AUTH0_CLIENT_SECRET);
@@ -72,10 +73,16 @@ function isLogLevel(level: string): level is LogLevel {
 }
 
 const _FCC_API_LOG_LEVEL = process.env.FCC_API_LOG_LEVEL || 'info';
+const _FCC_API_LOG_TRANSPORT = process.env.FCC_API_LOG_TRANSPORT || 'default';
 
 assert.ok(
   isLogLevel(_FCC_API_LOG_LEVEL),
   `FCC_API_LOG_LEVEL must be one of ${LOG_LEVELS.join(', ')}. Found ${_FCC_API_LOG_LEVEL}`
+);
+
+assert.ok(
+  _FCC_API_LOG_TRANSPORT === 'pretty' || _FCC_API_LOG_TRANSPORT === 'default',
+  `FCC_API_LOG_TRANSPORT must be one of 'pretty' or 'default'. Found ${_FCC_API_LOG_TRANSPORT}`
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
@@ -90,6 +97,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
   assert.ok(process.env.SENTRY_DSN);
   assert.ok(process.env.SENTRY_ENVIRONMENT);
+  assert.ok(process.env.DEPLOYMENT_VERSION);
   // The following values can exist in development, but production-like
   // environments need to override the defaults.
   assert.notEqual(
@@ -126,20 +134,24 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
     'client_secret_from_auth0_dashboard',
     'The Auth0 client secret should be changed from the default value.'
   );
+  assert.ok(
+    process.env.GROWTHBOOK_FASTIFY_API_HOST,
+    'GROWTHBOOK_FASTIFY_API_HOST should be set.'
+  );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_API_HOST,
     'fastify_api_sdk_api_host_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_API_HOST env should be changed from the default value.'
+  );
+  assert.ok(
+    process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
+    'GROWTHBOOK_FASTIFY_CLIENT_KEY should be set.'
   );
   assert.notEqual(
     process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY,
     'fastify_api_sdk_client_key_from_growthbook_dashboard',
     'The GROWTHBOOK_FASTIFY_CLIENT_KEY env should be changed from the default value.'
   );
-}
-
-if (process.env.FCC_ENABLE_EXAM_ENVIRONMENT === 'true') {
-  assert.ok(process.env.SCREENSHOT_SERVICE_LOCATION);
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
@@ -150,7 +162,7 @@ export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
         process.env.MONGOHQ_URL,
-        process.env.JEST_WORKER_ID
+        process.env.VITEST_WORKER_ID
       )
     : process.env.MONGOHQ_URL;
 
@@ -169,6 +181,7 @@ export const FCC_ENABLE_SWAGGER_UI = undefinedOrBool(
 export const FCC_ENABLE_DEV_LOGIN_MODE =
   process.env.FCC_ENABLE_DEV_LOGIN_MODE === 'true';
 export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
+export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
 export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
   process.env.FCC_ENABLE_SHADOW_CAPTURE
 );
@@ -179,6 +192,7 @@ export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
 );
 export const FREECODECAMP_NODE_ENV = _FREECODECAMP_NODE_ENV;
+export const DEPLOYMENT_ENV = process.env.DEPLOYMENT_ENV;
 export const SENTRY_DSN =
   process.env.SENTRY_DSN === 'dsn_from_sentry_dashboard'
     ? ''
@@ -208,5 +222,4 @@ function undefinedOrBool(val: string | undefined): undefined | boolean {
 
   return val === 'true';
 }
-export const SCREENSHOT_SERVICE_LOCATION =
-  process.env.SCREENSHOT_SERVICE_LOCATION;
+export const DEPLOYMENT_VERSION = process.env.DEPLOYMENT_VERSION || 'unknown';

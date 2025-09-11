@@ -51,15 +51,80 @@ test.describe('Landing Top - Variation B', () => {
     await goToLandingPage(page);
   });
 
-  test('The supporting copy renders correctly', async ({ page }) => {
-    const landingH2Heading = page.getByTestId('landing-h2-heading-b');
+  test('Main heading copy renders correctly', async ({ page }) => {
+    const bigHeading = page.getByTestId('big-heading-1-b');
+    await expect(bigHeading).toHaveText(
+      translations.landing['big-heading-1-b']
+    );
+  });
+
+  test('Supporting copy renders correctly', async ({ page }) => {
+    const bigHeading = page.getByTestId('advance-career');
+    await expect(bigHeading).toHaveText(translations.landing['advance-career']);
+  });
+
+  test('Logo row copy renders correctly', async ({ page }) => {
+    const landingH2Heading = page.getByTestId('graduates-work');
     await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading-b'].replace(/<\/?strong>/g, '')
+      translations.landing['graduates-work'].replace(/<\/?strong>/g, '')
     );
   });
 });
 
-test.describe('Second section - Variation B', () => {
+/*
+ *
+ * not currently in use after https://github.com/freeCodeCamp/freeCodeCamp/pull/61359
+ * bring back after we fix GB
+ */
+
+// test.describe('Landing Top - Variation A', () => {
+//   test.beforeEach(async ({ context, page }) => {
+//     await addGrowthbookCookie({ context, variation: 'newA' });
+//     await goToLandingPage(page);
+//   });
+
+//   test('The headline renders correctly', async ({ page }) => {
+//     const landingHeading1 = page.getByTestId('landing-big-heading-1');
+//     await expect(landingHeading1).toHaveText(
+//       translations.landing['big-heading-1']
+//     );
+
+//     const landingHeading2 = page.getByTestId('landing-big-heading-2');
+//     await expect(landingHeading2).toHaveText(
+//       translations.landing['big-heading-2']
+//     );
+
+//     const landingHeading3 = page.getByTestId('landing-big-heading-3');
+//     await expect(landingHeading3).toHaveText(
+//       translations.landing['big-heading-3']
+//     );
+//   });
+
+//   test('Logo row copy renders correctly', async ({ page }) => {
+//     const landingH2Heading = page.getByTestId('h2-heading');
+//     await expect(landingH2Heading).toHaveText(
+//       translations.landing['h2-heading'].replace(/<\/?strong>/g, '')
+//     );
+//   });
+
+//   test('Hero image should have  a description', async ({ isMobile, page }) => {
+//     const captionText = page.getByText(
+//       translations.landing['hero-img-description']
+//     );
+
+//     if (isMobile) {
+//       await expect(captionText).toBeHidden();
+//     } else {
+//       await expect(captionText).toBeVisible();
+//     }
+//   });
+// });
+
+test.describe('Landing Page', () => {
+  test.beforeEach(async ({ page }) => {
+    await goToLandingPage(page);
+  });
+
   test('The component Why learn with freeCodeCamp renders correctly', async ({
     context,
     page
@@ -72,38 +137,6 @@ test.describe('Second section - Variation B', () => {
 
     await expect(h2Element).toBeVisible();
   });
-});
-
-test.describe('Landing Top - Variation A', () => {
-  test.beforeEach(async ({ context, page }) => {
-    await addGrowthbookCookie({ context, variation: 'A' });
-    await goToLandingPage(page);
-  });
-
-  test('The supporting copy renders correctly', async ({ page }) => {
-    const landingH2Heading = page.getByTestId('landing-h2-heading');
-    await expect(landingH2Heading).toHaveText(
-      translations.landing['h2-heading']
-    );
-  });
-});
-
-test.describe('Second section - Variation A', () => {
-  test('The component As Seen renders correctly', async ({ context, page }) => {
-    await addGrowthbookCookie({ context, variation: 'E' });
-    await goToLandingPage(page);
-    const h2Element = page.locator(
-      `h2:has-text("${translations.landing['as-seen-in']}")`
-    );
-
-    await expect(h2Element).toBeVisible();
-  });
-});
-
-test.describe('Landing Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await goToLandingPage(page);
-  });
 
   test('Call to action buttons should render correctly', async ({ page }) => {
     const ctas = page.getByRole('link', {
@@ -115,40 +148,15 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('The headline renders correctly', async ({ page }) => {
-    const landingHeading1 = page.getByTestId('landing-big-heading-1');
-    await expect(landingHeading1).toHaveText(
-      translations.landing['big-heading-1']
-    );
-
-    const landingHeading2 = page.getByTestId('landing-big-heading-2');
-    await expect(landingHeading2).toHaveText(
-      translations.landing['big-heading-2']
-    );
-
-    const landingHeading3 = page.getByTestId('landing-big-heading-3');
-    await expect(landingHeading3).toHaveText(
-      translations.landing['big-heading-3']
-    );
-  });
-
-  test('Hero image should have an alt and a description', async ({
-    isMobile,
-    page
-  }) => {
+  test('Hero image should have an alt', async ({ isMobile, page }) => {
     const campersImage = page.getByAltText(
       translations.landing['hero-img-alt']
-    );
-    const captionText = page.getByText(
-      translations.landing['hero-img-description']
     );
 
     if (isMobile) {
       await expect(campersImage).toBeHidden();
-      await expect(captionText).toBeHidden();
     } else {
       await expect(campersImage).toBeVisible();
-      await expect(captionText).toBeVisible();
     }
   });
 

@@ -1,18 +1,27 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import _ from 'lodash';
+import {
+  describe,
+  it,
+  test,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
 
 import { createUserInput } from '../../utils/create-user';
 import {
   defaultUserEmail,
   setupServer,
   createSuperRequest
-} from '../../../jest.utils';
-import { getMsTranscriptApiUrl } from '../protected/user';
+} from '../../../vitest.utils';
 import { replacePrivateData } from './user';
 
-const mockedFetch = jest.fn();
-jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+const mockedFetch = vi.fn();
+vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
@@ -207,7 +216,8 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
-  username: testUserData.usernameDisplay, // It defaults to usernameDisplay
+  username: testUserData.username,
+  usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
   yearsTopContributor: testUserData.yearsTopContributor
 };
@@ -440,34 +450,6 @@ describe('userRoutes', () => {
 
         expect(res2.body).toStrictEqual({ exists: true });
       });
-    });
-  });
-});
-
-describe('Microsoft helpers', () => {
-  describe('getMsTranscriptApiUrl', () => {
-    const expectedUrl =
-      'https://learn.microsoft.com/api/profiles/transcript/share/8u6awert43q1plo';
-
-    const urlWithoutSlash =
-      'https://learn.microsoft.com/en-us/users/mot01/transcript/8u6awert43q1plo';
-    const urlWithSlash = `${urlWithoutSlash}/`;
-    const urlWithQueryParams = `${urlWithoutSlash}?foo=bar`;
-    const urlWithQueryParamsAndSlash = `${urlWithSlash}?foo=bar`;
-
-    it('should extract the transcript id from the url', () => {
-      expect(getMsTranscriptApiUrl(urlWithoutSlash)).toBe(expectedUrl);
-    });
-
-    it('should handle trailing slashes', () => {
-      expect(getMsTranscriptApiUrl(urlWithSlash)).toBe(expectedUrl);
-    });
-
-    it('should ignore query params', () => {
-      expect(getMsTranscriptApiUrl(urlWithQueryParams)).toBe(expectedUrl);
-      expect(getMsTranscriptApiUrl(urlWithQueryParamsAndSlash)).toBe(
-        expectedUrl
-      );
     });
   });
 });

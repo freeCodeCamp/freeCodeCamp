@@ -81,7 +81,7 @@ const notMyProfileProps = {
 };
 function reducer() {
   return {
-    app: { appUsername: 'vasili', user: { vasili: userProps.user } }
+    app: { user: { sessionUser: userProps.user } }
   };
 }
 function renderWithRedux(ui: JSX.Element) {

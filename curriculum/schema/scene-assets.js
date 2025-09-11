@@ -1,4 +1,5 @@
 const availableCharacters = [
+  // English
   'Alice',
   'Amy',
   'Anna',
@@ -12,7 +13,7 @@ const availableCharacters = [
   'James',
   'Jessica',
   'Jim',
-  'Jose',
+  'Josh',
   'Linda',
   'Lisa',
   'Maria',
@@ -21,14 +22,31 @@ const availableCharacters = [
   'Sarah',
   'Second Candidate',
   'Sophie',
-  'Tom'
+  'Tom',
+
+  // Spanish
+  'Alex',
+  'Ángela',
+  'Camila',
+  'Carlos',
+  'Elena',
+  'Esteban',
+  'Joaquín',
+  'Julieta',
+  'Luis',
+  'Luna',
+  'Marisol',
+  'Mateo',
+  'Noelia',
+  'René',
+  'Sebastián',
+  'Diego',
+  'Valeria'
 ];
 
 const availableBackgrounds = [
-  'bedroom-empty.png',
   'cafe.png',
   'chaos.png',
-  'classroom.png',
   'company1-boardroom.png',
   'company1-breakroom.png',
   'company1-center.png',
@@ -55,26 +73,12 @@ const availableBackgrounds = [
   'company3-roof.png',
   'cubicle.png',
   'desk.png',
-  'farm.png',
   'hacker-space-cafe.png',
   'hacker-space.png',
-  'hall-audience.png',
-  'hall.png',
   'interview-room1.png',
   'interview-room2.png',
   'interview-room3.png',
-  'kid-home.png',
-  'kitchen.png',
-  'laptop-screen.png',
-  'living-room.png',
-  'office-cafe.png',
-  'office.png',
-  'park1.png',
-  'park2.png',
-  'park3.png',
-  'park4.png',
-  'pong-field.png',
-  'tunnel.png'
+  'living-room.png'
 ];
 
 const availableAudios = [

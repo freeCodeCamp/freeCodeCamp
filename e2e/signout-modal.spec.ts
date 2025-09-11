@@ -31,7 +31,7 @@ test.describe('Signout Modal component', () => {
     ).toBeVisible();
   });
 
-  test('signs out and redirects to /learn after user confirms they want to sign out', async ({
+  test('signs out and redirects to / after user confirms they want to sign out', async ({
     page
   }) => {
     await page.getByRole('button', { name: translations.buttons.menu }).click();
@@ -50,7 +50,7 @@ test.describe('Signout Modal component', () => {
     await expect(
       page.getByRole('dialog', { name: translations.signout.heading })
     ).not.toBeVisible();
-    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
+    await expect(page).toHaveURL(allowTrailingSlash(''));
   });
 
   test('closes modal after user cancels signing out', async ({ page }) => {

@@ -74,6 +74,7 @@ export const blocklistedUsernames = [
   'backend-challenge-completed',
   'blocked',
   'bonfire',
+  'catalog',
   'cats.json',
   'challenge-completed',
   'challenge',

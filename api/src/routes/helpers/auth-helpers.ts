@@ -19,7 +19,9 @@ export const findOrCreateUser = async (
   });
   if (existingUser.length > 1) {
     fastify.Sentry.captureException(
-      new Error(`Multiple user records found for: ${email}`)
+      new Error(
+        `Multiple user records found for: ${existingUser.map(user => user.id).join(', ')}`
+      )
     );
   }
 

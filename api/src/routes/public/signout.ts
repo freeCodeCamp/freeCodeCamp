@@ -16,7 +16,7 @@ export const signoutRoute: FastifyPluginCallback = (
   done
 ) => {
   fastify.get('/signout', async (req, reply) => {
-    const logger = fastify.log.child({ req });
+    const logger = fastify.log.child({ req, res: reply });
 
     void reply.clearOurCookies();
     logger.info('User signed out');

@@ -113,7 +113,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.updateMyProfileUI
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -167,7 +167,7 @@ Happy coding!
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       if (req.validationError) {
         logger.warn(`Invalid email ${req.body.email}`);
         void reply.code(400);
@@ -186,7 +186,7 @@ Happy coding!
         }
       });
       const newEmail = req.body.email.toLowerCase();
-      const currentEmailFormatted = user.email.toLowerCase();
+      const currentEmailFormatted = user.email ? user.email.toLowerCase() : '';
       const isVerifiedEmail = user.emailVerified;
       const isOwnEmail = newEmail === currentEmailFormatted;
       if (isOwnEmail && isVerifiedEmail) {
@@ -308,7 +308,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyTheme
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -337,7 +337,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMySocials
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       const socials = {
         twitter: req.body.twitter,
@@ -391,7 +391,7 @@ ${isLinkSentWithinLimitTTL}`
       attachValidation: true
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
 
       try {
         const user = await fastify.prisma.user.findFirstOrThrow({
@@ -482,7 +482,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyAbout
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       const hasProtocol = isPictureWithProtocol(req.body.picture);
 
       try {
@@ -515,7 +515,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyKeyboardShortcuts
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -543,7 +543,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyQuincyEmail
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -571,7 +571,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyHonesty
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -599,7 +599,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyPrivacyTerms
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
@@ -628,7 +628,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyPortfolio
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         // TODO(Post-MVP): make all properties required in the schema and use
         // req.body.portfolio directly.
@@ -667,7 +667,7 @@ ${isLinkSentWithinLimitTTL}`
       schema: schemas.updateMyClassroomMode
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       try {
         const classroomMode = req.body.isClassroomAccount;
 
@@ -764,7 +764,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       }
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);

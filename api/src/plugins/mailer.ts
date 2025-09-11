@@ -28,17 +28,9 @@ const plugin: FastifyPluginCallback<{ provider: MailProvider }> = (
 ) => {
   const { provider } = options;
 
-  if (!provider)
-    return done(
-      Error(
-        "The mailer plugin must be passed a provider via register's options."
-      )
-    );
-
   fastify.decorate('sendEmail', async (args: SendEmailArgs) => {
     const logger = fastify.log.child({ args });
-    logger.debug('Sending Email');
-
+    logger.info('Sending Email');
     return await provider.send(args);
   });
 

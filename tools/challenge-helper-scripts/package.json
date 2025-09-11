@@ -6,7 +6,7 @@
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": ">=9"
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -19,17 +19,22 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "utils.js",
   "scripts": {
-    "test": "mocha --delay --reporter progress --bail",
-    "create-project": "tsx create-project"
+    "create-daily-challenges": "tsx create-daily-challenges",
+    "create-project": "tsx create-project",
+    "create-language-block": "tsx create-language-block",
+    "create-quiz": "tsx create-quiz",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
+    "@vitest/ui": "^3.2.4",
     "bson-objectid": "2.0.4",
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
     "prettier": "3.2.5",
-    "typescript": "5.2.2"
+    "typescript": "5.2.2",
+    "vitest": "^3.2.4"
   }
 }

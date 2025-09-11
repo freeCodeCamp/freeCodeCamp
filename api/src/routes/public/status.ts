@@ -1,5 +1,7 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
+import { DEPLOYMENT_VERSION } from '../../utils/env';
+
 /**
  * Plugin for the health check endpoint.
  *
@@ -13,9 +15,14 @@ export const statusRoute: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.get('/status/ping', async (req, _reply) => {
-    fastify.log.child({ req }).debug('pong');
+  fastify.get('/status/ping', async (req, res) => {
+    fastify.log.child({ req, res }).debug('Replying to ping');
     return { msg: 'pong' };
+  });
+
+  fastify.get('/status/version', async (req, res) => {
+    fastify.log.child({ req, res }).debug('Sending version');
+    return { version: DEPLOYMENT_VERSION };
   });
 
   done();

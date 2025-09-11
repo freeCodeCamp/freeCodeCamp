@@ -8,6 +8,7 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 import store from 'store';
+import { navigate } from 'gatsby';
 
 import {
   certTypeIdMap,
@@ -69,6 +70,8 @@ function* submitNewUsernameSaga({ payload: username }) {
   try {
     const { data } = yield call(putUpdateMyUsername, username);
     yield put(submitNewUsernameComplete({ ...data, username }));
+    // When the username is updated, the user would otherwise still be on their old profile:
+    navigate(`/${username}`);
     yield put(createFlashMessage(data));
   } catch (e) {
     yield put(submitNewUsernameError(e));
@@ -80,7 +83,7 @@ function* submitProfileUISaga({ payload }) {
     const { data } = yield call(putUpdateMyProfileUI, payload);
     yield put(submitProfileUIComplete({ ...data, payload }));
     yield put(createFlashMessage(data));
-  } catch (e) {
+  } catch {
     yield put(submitProfileUIError);
   }
 }
@@ -90,7 +93,7 @@ function* updateMySocialsSaga({ payload: update }) {
     const { data } = yield call(putUpdateMySocials, update);
     yield put(updateMySocialsComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMySocialsError);
   }
 }
@@ -104,7 +107,7 @@ function* updateMySoundSaga({ payload: update }) {
     };
     yield put(updateMySoundComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMySoundError);
   }
 }
@@ -123,7 +126,7 @@ function* resetMyEditorLayoutSaga() {
 
       yield put(createFlashMessage({ ...data }));
       yield put(resetMyEditorLayoutComplete({ ...data }));
-    } catch (e) {
+    } catch {
       yield put(resetMyEditorLayoutError);
     }
   }
@@ -134,7 +137,7 @@ function* updateMyKeyboardShortcutsSaga({ payload: update }) {
     const { data } = yield call(putUpdateMyKeyboardShortcuts, update);
     yield put(updateMyKeyboardShortcutsComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMyKeyboardShortcutsError);
   }
 }
@@ -144,7 +147,7 @@ function* updateMyHonestySaga({ payload: update }) {
     const { data } = yield call(putUpdateMyHonesty, update);
     yield put(updateMyHonestyComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMyHonestyError);
   }
 }
@@ -154,7 +157,7 @@ function* updateMyQuincyEmailSaga({ payload: update }) {
     const { data } = yield call(putUpdateMyQuincyEmail, update);
     yield put(updateMyQuincyEmailComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMyQuincyEmailError);
   }
 }
@@ -164,7 +167,7 @@ function* updateMyPortfolioSaga({ payload: update }) {
     const { data } = yield call(putUpdateMyPortfolio, update);
     yield put(updateMyPortfolioComplete({ ...data, payload: update }));
     yield put(createFlashMessage({ ...data }));
-  } catch (e) {
+  } catch {
     yield put(updateMyPortfolioError);
   }
 }

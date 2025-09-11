@@ -8,5 +8,4 @@ docker/**/Dockerfile
 **/*docker-compose*
 **/node_modules
 .eslintcache
-api/__mocks__
-api/src/exam-environment/seed
+

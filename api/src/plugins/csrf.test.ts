@@ -1,21 +1,23 @@
+import { describe, test, expect, beforeEach, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
 
 import { COOKIE_DOMAIN } from '../utils/env';
 import cookies from './cookies';
 import csrf, { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  COOKIE_DOMAIN: 'www.example.com',
-  FREECODECAMP_NODE_ENV: 'production'
-}));
+vi.mock('../utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('../utils/env')>();
+  return {
+    ...actual,
+    COOKIE_DOMAIN: 'www.example.com',
+    FREECODECAMP_NODE_ENV: 'production'
+  };
+});
 
 async function setupServer() {
-  const fastify = Fastify();
+  const fastify = Fastify({ logger: true, disableRequestLogging: true });
   await fastify.register(cookies);
   await fastify.register(csrf);
-  // @ts-expect-error - @fastify/csrf-protection needs to update their types
   // eslint-disable-next-line @typescript-eslint/unbound-method
   fastify.addHook('onRequest', fastify.csrfProtection);
 
@@ -30,7 +32,7 @@ describe('CSRF protection', () => {
   beforeEach(async () => {
     fastify = await setupServer();
   });
-  it('should receive a new CSRF token with the expected properties', async () => {
+  test('should receive a new CSRF token with the expected properties', async () => {
     const response = await fastify.inject({
       method: 'GET',
       url: '/'
@@ -54,7 +56,7 @@ describe('CSRF protection', () => {
     });
   });
 
-  it('should return 403 if the _csrf secret is missing', async () => {
+  test('should return 403 if the _csrf secret is missing', async () => {
     const response = await fastify.inject({
       method: 'GET',
       url: '/'
@@ -65,7 +67,7 @@ describe('CSRF protection', () => {
     // check it here.
   });
 
-  it('should return 403 if the csrf_token is invalid', async () => {
+  test('should return 403 if the csrf_token is invalid', async () => {
     const response = await fastify.inject({
       method: 'GET',
       url: '/',
@@ -77,7 +79,7 @@ describe('CSRF protection', () => {
     expect(response.statusCode).toEqual(403);
   });
 
-  it('should allow the request if the csrf_token is valid', async () => {
+  test('should allow the request if the csrf_token is valid', async () => {
     const csrfResponse = await fastify.inject({
       method: 'GET',
       url: '/'

@@ -3,6 +3,7 @@ import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash';
 import { challengeTypes } from '../../../shared/config/challenge-types';
 import { getChallenges } from './get-challenges';
+import { normalizeDate } from './normalize';
 
 export const jsCertProjectIds = [
   'aaa48de84e1ecc7c742e1124',
@@ -149,7 +150,8 @@ export async function updateUserChallengeData(
             'path',
             'ext'
           ]) as CompletedChallengeFile
-      )
+      ),
+      completedDate: normalizeDate(_completedChallenge.completedDate)
     };
   } else {
     completedChallenge = omit(_completedChallenge, ['files']);
@@ -171,7 +173,7 @@ export async function updateUserChallengeData(
   const finalChallenge = alreadyCompleted
     ? {
         ...completedChallenge,
-        completedDate: oldChallenge.completedDate
+        completedDate: normalizeDate(oldChallenge.completedDate)
       }
     : completedChallenge;
 
@@ -180,7 +182,11 @@ export async function updateUserChallengeData(
   // check and update some property of the user record such that the same update
   // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
-    ? completedChallenges.map(x => (x.id === challengeId ? finalChallenge : x))
+    ? completedChallenges.map(x =>
+        x.id === challengeId
+          ? finalChallenge
+          : { ...x, completedDate: normalizeDate(x.completedDate) }
+      )
     : { push: finalChallenge };
 
   // We can't use push, because progressTimestamps is a JSON blob and, until

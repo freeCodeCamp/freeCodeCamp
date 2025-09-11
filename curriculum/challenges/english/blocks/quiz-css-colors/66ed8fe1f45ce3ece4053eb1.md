@@ -1,0 +1,928 @@
+---
+id: 66ed8fe1f45ce3ece4053eb1
+title: CSS Colors Quiz
+challengeType: 8
+dashedName: quiz-css-colors
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of these color systems cannot be used to set a color in CSS?
+
+#### --distractors--
+
+RGB
+
+---
+
+HSL
+
+---
+
+HEX
+
+#### --answer--
+
+CMYK
+
+### --question--
+
+#### --text--
+
+What are the primary colors in color theory?
+
+#### --distractors--
+
+`Green`, `Blue`, `Purple`
+
+---
+
+`Orange`, `Green`, `Purple`
+
+---
+
+`Yellow`, `Green`, `Red`
+
+#### --answer--
+
+`Yellow`, `Blue`, `Red`
+
+### --question--
+
+#### --text--
+
+Which type of color scheme uses colors that are opposite each other on the color wheel?
+
+#### --distractors--
+
+Analogous
+
+---
+
+Triadic
+
+---
+
+Monochromatic
+
+#### --answer--
+
+Complementary
+
+### --question--
+
+#### --text--
+
+Which type of color scheme uses colors that are adjacent to each other on the color wheel?
+
+#### --distractors--
+
+Complementary
+
+---
+
+Triadic
+
+---
+
+Monochromatic
+
+#### --answer--
+
+Analogous
+
+### --question--
+
+#### --text--
+
+What is the term for colors that are created by mixing equal parts of two primary colors?
+
+#### --distractors--
+
+Tertiary
+
+---
+
+Complementary
+
+---
+
+Analogous
+
+#### --answer--
+
+Secondary
+
+### --question--
+
+#### --text--
+
+What is the default value of alpha in `rgba` if it's not specified?
+
+#### --distractors--
+
+`0` (completely transparent)
+
+---
+
+`2` (completely opaque)
+
+---
+
+`0.5` (half transparent)
+
+#### --answer--
+
+`1` (completely opaque)
+
+### --question--
+
+#### --text--
+
+Which of the following is a valid hex color code?
+
+#### --distractors--
+
+`#12345G`
+
+---
+
+`#12ffg0`
+
+---
+
+`#12ffgg`
+
+#### --answer--
+
+`#ff12ff`
+
+### --question--
+
+#### --text--
+
+How many hexadecimal characters are used to define a color in shorthand hex notation?
+
+#### --distractors--
+
+5
+
+---
+
+4
+
+---
+
+2
+
+#### --answer--
+
+3
+
+### --question--
+
+#### --text--
+
+Which of these functions allows specifying the transparency of a color?
+
+#### --distractors--
+
+`rgb()`
+
+---
+
+`hsl()`
+
+---
+
+`alpha()`
+
+#### --answer--
+
+`rgba()`
+
+### --question--
+
+#### --text--
+
+Which of the following hex codes represents a shade of red?
+
+#### --distractors--
+
+`#0000ff`
+
+---
+
+`#ffff00`
+
+---
+
+`#00ff00`
+
+#### --answer--
+
+`#ff0000`
+
+### --question--
+
+#### --text--
+
+How many colors are required to create a valid CSS gradient?
+
+#### --distractors--
+
+At least 4.
+
+---
+
+Exactly 2.
+
+---
+
+Exactly 3.
+
+#### --answer--
+
+At least 2.
+
+### --question--
+
+#### --text--
+
+Which is NOT a valid way to apply a linear-gradient?
+
+#### --distractors--
+
+```css
+background: linear-gradient(to right, red, blue);
+```
+
+---
+
+```css
+background: linear-gradient(90deg, red, green, blue);
+```
+
+---
+
+```css
+background: linear-gradient(#F00, #00F);
+```
+
+#### --answer--
+
+```css
+background: linear-gradient(up, red, blue);
+```
+
+### --question--
+
+#### --text--
+
+What unit is used to express the lightness value in the `hsl` color model?
+
+#### --distractors--
+
+Degrees
+
+---
+
+Hex
+
+---
+
+Pixels
+
+#### --answer--
+
+Percent
+
+### --question--
+
+#### --text--
+
+What does the `rgb()` function stand for?
+
+#### --distractors--
+
+`Red`, `Gray`, `Black`
+
+---
+
+`Radiant`, `Glow`, `Blend`
+
+---
+
+`Rendered`, `Graphic`, `Background`
+
+#### --answer--
+
+`Red`, `Green`, `Blue`
+
+### --question--
+
+#### --text--
+
+What does the `hsl()` function stand for?
+
+#### --distractors--
+
+`Hue`, `Saturation`, `Luminosity`
+
+---
+
+`Hue`, `Shadow`, `Lightness`
+
+---
+
+`Hue`, `Shadow`, `Luminosity`
+
+#### --answer--
+
+`Hue`, `Saturation`, `Lightness`
+
+### --question--
+
+#### --text--
+
+Which of these is a valid CSS named color?
+
+#### --distractors--
+
+`hsl(yellow)`
+
+---
+
+`rgb(red)`
+
+---
+
+`#blue`
+
+#### --answer--
+
+`gold`
+
+### --question--
+
+#### --text--
+
+What is the maximum value allowed for a single color component in the `RGB` color system?
+
+#### --distractors--
+
+`200`
+
+---
+
+`500`
+
+---
+
+`128`
+
+#### --answer--
+
+`255`
+
+### --question--
+
+#### --text--
+
+Which of these correctly uses one of the color models to set the background color?
+
+#### --distractors--
+
+```css
+background: rgb(50%, 255, 155);
+```
+
+---
+
+```css
+background: #blue;
+```
+
+---
+
+```css
+background: #0I0I0I;
+```
+
+#### --answer--
+
+```css
+background: hsl(50, 50%, 50%);
+```
+
+### --question--
+
+#### --text--
+
+Which of these sets the opacity of the color?
+
+#### --distractors--
+
+```css
+hsl(0, 20%, 30%, 50%)
+```
+
+---
+
+```css
+rgb(20, 30, 80, 0.5)
+```
+
+---
+
+```css
+rgba(20, 30, 80)
+```
+
+#### --answer--
+
+```css
+hsla(0, 20%, 30%, 50%)
+```
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to give an element a top-to-bottom red-to-blue gradient background?
+
+#### --distractors--
+
+```css
+background: radial-gradient(red, blue)
+```
+
+---
+
+```css
+background: radial-gradient(blue, red)
+```
+
+---
+
+```css
+background: linear-gradient(blue, red)
+```
+
+#### --answer--
+
+```css
+background: linear-gradient(red, blue)
+```
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What are the 3 secondary colors in color theory?
+
+#### --distractors--
+
+Blue, Orange, Yellow
+
+---
+
+Purple, Green, Yellow
+
+---
+
+Green, Orange, Pink
+
+#### --answer--
+
+Green, Orange, Purple
+
+### --question--
+
+#### --text--
+
+What feelings do warm colors evoke?
+
+#### --distractors--
+
+Subtlety, Isolation, Loneliness
+
+---
+
+Clarity, Freshness, Cleanliness
+
+---
+
+Melancholy, Nonchalance, Frostiness
+
+#### --answer--
+
+Comfort, Warmth, Coziness
+
+### --question--
+
+#### --text--
+
+Which type of color scheme uses colors that are equidistant from each other on the color wheel?
+
+#### --distractors--
+
+Complementary
+
+---
+
+Analogous
+
+---
+
+Monochromatic
+
+#### --answer--
+
+Triadic
+
+### --question--
+
+#### --text--
+
+Which type of color scheme uses colors that are derived from the same base color?
+
+#### --distractors--
+
+Complementary
+
+---
+
+Analogous
+
+---
+
+Triadic
+
+#### --answer--
+
+Monochromatic
+
+### --question--
+
+#### --text--
+
+What is the name of a circular diagram that shows how colors relate to each other?
+
+#### --distractors--
+
+Swatch Wheel
+
+---
+
+Color Picker
+
+---
+
+Shade Spiral
+
+#### --answer--
+
+Color Wheel
+
+### --question--
+
+#### --text--
+
+Which of these is not a tertiary color?
+
+#### --distractors--
+
+Yellow-Green
+
+---
+
+Blue-Green
+
+---
+
+Blue-Violet
+
+#### --answer--
+
+Yellow-Blue
+
+### --question--
+
+#### --text--
+
+What are the three primary colors of light?
+
+#### --distractors--
+
+Red, Yellow, Blue
+
+---
+
+Red, Green, Purple
+
+---
+
+Red, Green, Brown
+
+#### --answer--
+
+Red, Green, Blue
+
+### --question--
+
+#### --text--
+
+What does the alpha value control in `rgba`?
+
+#### --distractors--
+
+Hue
+
+---
+
+Saturation
+
+---
+
+Intensity
+
+#### --answer--
+
+Transparency
+
+### --question--
+
+#### --text--
+
+Which of these functions is a valid `hsl` function?
+
+#### --distractors--
+
+`hsl(0, 100%, 50)`
+
+---
+
+`hsl(0%, 100%, 50%)`
+
+---
+
+`hsl(0, 100%, 150%)`
+
+#### --answer--
+
+`hsl(0, 100%, 50%)`
+
+### --question--
+
+#### --text--
+
+Which of these `hsl` functions represents the color black?
+
+#### --distractors--
+
+`hsl(255,100%,100%)`
+
+---
+
+`hsl(0,0%,100%)`
+
+---
+
+`hsl(283,0%,75%)`
+
+#### --answer--
+
+`hsl(255,100%,0%)`
+
+### --question--
+
+#### --text--
+
+What is "hex code" short for?
+
+#### --distractors--
+
+Hexagonal code
+
+---
+
+Hexabinary code
+
+---
+
+Hexaglyphic code
+
+#### --answer--
+
+Hexadecimal code
+
+### --question--
+
+#### --text--
+
+Which letters can be used in a hex code?
+
+#### --distractors--
+
+A-G
+
+---
+
+A-H
+
+---
+
+A-E
+
+#### --answer--
+
+A-F
+
+### --question--
+
+#### --text--
+
+Which digits can be used in a hex code?
+
+#### --distractors--
+
+0-10
+
+---
+
+10-19
+
+---
+
+1-9
+
+#### --answer--
+
+0-9
+
+### --question--
+
+#### --text--
+
+What’s the maximum hue value in an `hsl` color?
+
+#### --distractors--
+
+100
+
+---
+
+255
+
+---
+
+60
+
+#### --answer--
+
+360
+
+### --question--
+
+#### --text--
+
+What’s the fourth value in the `hsla()` function?
+
+#### --distractors--
+
+Absorbtion
+
+---
+
+Aura
+
+---
+
+Aperture
+
+#### --answer--
+
+Alpha
+
+### --question--
+
+#### --text--
+
+Linear gradients create a gradual blend across what type of line?
+
+#### --distractors--
+
+Curved
+
+---
+
+Circular
+
+---
+
+Perpendicular
+
+#### --answer--
+
+Straight
+
+### --question--
+
+#### --text--
+
+What types of color codes can be used in a gradient?
+
+#### --distractors--
+
+Hex code and HSL
+
+---
+
+HSL and RGB
+
+---
+
+RGB and Hex code
+
+#### --answer--
+
+Any CSS color
+
+### --question--
+
+#### --text--
+
+How many color stops can you have in one gradient?
+
+#### --distractors--
+
+Up to 2
+
+---
+
+Up to 3
+
+---
+
+Up to 5
+
+#### --answer--
+
+Unlimited
+
+### --question--
+
+#### --text--
+
+Which of these is NOT a valid radial gradient?
+
+#### --distractors--
+
+`radial-gradient(circle, red, blue)`
+
+---
+
+`radial-gradient(circle, #33ff11, rgb(255,0,255))`
+
+---
+
+`radial-gradient(circle, #bbb123, blue, rgb(255,0,255))`
+
+#### --answer--
+
+`radial-gradient(45deg, red, blue)`
+
+### --question--
+
+#### --text--
+
+Which of these is NOT a valid gradient?
+
+#### --distractors--
+
+`radial-gradient(circle, red, blue, green)`
+
+---
+
+`linear-gradient(80deg, red, #44bb23, rgba(200,255,0,0.5))`
+
+---
+
+`radial-gradient(circle, red, #1168ff, rgba(200,255,0,0.5), hsl(120,100%,50%))`
+
+#### --answer--
+
+`linear-gradient(30deg, blue, hsl(120%,100%,50%))`

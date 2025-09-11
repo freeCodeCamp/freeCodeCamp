@@ -23,7 +23,6 @@ export const actionTypes = createTypes(
     'cancelTests',
     'logsToConsole',
     'disableBuildOnError',
-    'storedCodeFound',
     'noStoredCodeFound',
     'saveEditorContent',
     'setShowPreviewPane',

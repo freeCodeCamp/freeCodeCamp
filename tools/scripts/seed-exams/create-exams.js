@@ -30,7 +30,7 @@ function handleError(err, client) {
     console.error(err);
     try {
       client.close();
-    } catch (e) {
+    } catch {
       // no-op
     } finally {
       process.exit(1);

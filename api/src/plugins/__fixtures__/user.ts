@@ -1,3 +1,5 @@
+import { expect } from 'vitest';
+
 import { nanoidCharSet } from '../../utils/create-user';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
@@ -11,6 +13,7 @@ export const newUser = (email: string) => ({
   about: '',
   acceptedPrivacyTerms: false,
   completedChallenges: [],
+  completedDailyCodingChallenges: [],
   completedExams: [],
   quizAttempts: [],
   currentChallengeId: '',

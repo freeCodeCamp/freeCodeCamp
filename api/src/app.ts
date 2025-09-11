@@ -1,8 +1,8 @@
+import { randomBytes } from 'crypto';
 import fastifyAccepts from '@fastify/accepts';
 import fastifySwagger from '@fastify/swagger';
 import fastifySwaggerUI from '@fastify/swagger-ui';
 import type { TypeBoxTypeProvider } from '@fastify/type-provider-typebox';
-import { GrowthBook } from '@growthbook/growthbook';
 import Ajv from 'ajv';
 import addFormats from 'ajv-formats';
 import uriResolver from 'fast-uri';
@@ -46,11 +46,12 @@ import {
   GROWTHBOOK_FASTIFY_CLIENT_KEY
 } from './utils/env';
 import { isObjectID } from './utils/validation';
+import { getLogger } from './utils/logger';
 import {
-  examEnvironmentMultipartRoutes,
   examEnvironmentOpenRoutes,
   examEnvironmentValidatedTokenRoutes
 } from './exam-environment/routes/exam-environment';
+import { dailyCodingChallengeRoutes } from './daily-coding-challenge/routes/daily-coding-challenge';
 
 type FastifyInstanceWithTypeProvider = FastifyInstance<
   RawServerDefault,
@@ -59,12 +60,6 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
   FastifyBaseLogger,
   TypeBoxTypeProvider
 >;
-
-declare module 'fastify' {
-  interface FastifyInstance {
-    gb: GrowthBook;
-  }
-}
 
 // Options that fastify uses
 const ajv = new Ajv({
@@ -85,6 +80,16 @@ ajv.addFormat('objectid', {
   validate: (str: string) => isObjectID(str)
 });
 
+export const buildOptions: FastifyHttpOptions<
+  RawServerDefault,
+  FastifyBaseLogger
+> = {
+  loggerInstance: getLogger(),
+  genReqId: () => randomBytes(8).toString('hex'),
+  // disabled so we can customise the request/response logging
+  disableRequestLogging: true
+};
+
 /**
  * Top-level wrapper to instantiate the API server. This is where all middleware and
  * routes should be mounted.
@@ -100,6 +105,17 @@ export const build = async (
   const fastify = Fastify(options).withTypeProvider<TypeBoxTypeProvider>();
 
   fastify.setValidatorCompiler(({ schema }) => ajv.compile(schema));
+  fastify.addHook('onRequest', (req, _reply, done) => {
+    const logger = fastify.log.child({ req });
+    logger.debug({ req }, 'received request');
+    done();
+  });
+
+  fastify.addHook('onResponse', (req, reply, done) => {
+    const logger = fastify.log.child({ res: reply });
+    logger.debug({ req, res: reply }, 'responding to request');
+    done();
+  });
 
   void fastify.register(redirectWithMessage);
   void fastify.register(security);
@@ -165,7 +181,6 @@ export const build = async (
       // TODO: bounce unauthed requests before checking CSRF token. This will
       // mean moving csrfProtection into custom plugin and testing separately,
       // because it's a pain to mess around with other cookies/hook order.
-      // @ts-expect-error - @fastify/csrf-protection needs to update their types
       // eslint-disable-next-line @typescript-eslint/unbound-method
       fastify.addHook('onRequest', fastify.csrfProtection);
       fastify.addHook('onRequest', fastify.send401IfNoUser);
@@ -191,13 +206,16 @@ export const build = async (
       await fastify.register(protectedRoutes.settingRedirectRoutes);
     });
   });
+
+  // TODO: The route should not handle its own AuthZ
+  await fastify.register(protectedRoutes.challengeTokenRoutes);
+
   // Routes for signed out users:
   void fastify.register(async function (fastify) {
     fastify.addHook('onRequest', fastify.authorize);
     // TODO(Post-MVP): add the redirectIfSignedIn hook here, rather than in the
     // mobileAuth0Routes and authRoutes plugins.
     await fastify.register(publicRoutes.mobileAuth0Routes);
-    // TODO: consolidate with LOCAL_MOCK_AUTH
     if (FCC_ENABLE_DEV_LOGIN_MODE) {
       await fastify.register(publicRoutes.devAuthRoutes);
     } else {
@@ -210,7 +228,6 @@ export const build = async (
       fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
 
       void fastify.register(examEnvironmentValidatedTokenRoutes);
-      void fastify.register(examEnvironmentMultipartRoutes);
       done();
     });
     void fastify.register(examEnvironmentOpenRoutes);
@@ -228,6 +245,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
 };

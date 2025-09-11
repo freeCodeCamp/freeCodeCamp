@@ -202,7 +202,7 @@ export function* updateCardSaga() {
 
     if (!sessionId) throw new Error('No sessionId');
     (yield stripe).redirectToCheckout({ sessionId });
-  } catch (error) {
+  } catch {
     yield put(updateCardError(updateCardErrorMessage));
   }
 }

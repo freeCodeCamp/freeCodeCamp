@@ -1,7 +1,9 @@
+import { Prisma } from '@prisma/client';
 import {
   certSlugTypeMap,
   certIds
 } from '../../../../shared/config/certification-settings';
+import { normalizeDate } from '../../utils/normalize';
 
 const {
   legacyInfosecQaId,
@@ -41,12 +43,16 @@ export function isKnownCertSlug(
  * @returns The latest certification date or the completed date if no certification is found.
  */
 export function getFallbackFullStackDate(
-  completedChallenges: { id: string; completedDate: number }[],
-  completedDate: number
-) {
+  completedChallenges: { id: string; completedDate: Prisma.JsonValue }[],
+  completedDate: Prisma.JsonValue
+): number {
   const latestCertDate = completedChallenges
     .filter(chal => fullStackCertificateIds.includes(chal.id))
+    .map(chal => ({
+      ...chal,
+      completedDate: normalizeDate(chal.completedDate)
+    }))
     .sort((a, b) => b.completedDate - a.completedDate)[0]?.completedDate;
 
-  return latestCertDate ?? completedDate;
+  return latestCertDate ?? normalizeDate(completedDate);
 }

@@ -73,7 +73,7 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
     void this.clearCookie(CSRF_SECRET_COOKIE);
     void this.clearCookie(CSRF_COOKIE);
 
-    logger.debug('Clearing cookies for user.');
+    logger.trace('Clearing cookies for user.');
   });
 
   done();

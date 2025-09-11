@@ -26,6 +26,11 @@ const multifilePythonCertProject = 23;
 const generic = 24;
 const lab = 25;
 const jsLab = 26;
+const pyLab = 27;
+const dailyChallengeJs = 28;
+const dailyChallengePy = 29;
+const examDownload = 30;
+const review = 31;
 
 export const challengeTypes = {
   html,
@@ -55,7 +60,12 @@ export const challengeTypes = {
   multifilePythonCertProject,
   generic,
   lab,
-  jsLab
+  jsLab,
+  pyLab,
+  dailyChallengeJs,
+  dailyChallengePy,
+  examDownload,
+  review
 };
 
 export const hasNoSolution = (challengeType: number): boolean => {
@@ -78,7 +88,9 @@ export const hasNoSolution = (challengeType: number): boolean => {
     multipleChoice,
     dialogue,
     fillInTheBlank,
-    generic
+    generic,
+    examDownload,
+    review
   ];
 
   return noSolutions.includes(challengeType);
@@ -111,7 +123,12 @@ export const viewTypes = {
   [multifilePythonCertProject]: 'classic',
   [generic]: 'generic',
   [lab]: 'classic',
-  [jsLab]: 'classic'
+  [jsLab]: 'classic',
+  [pyLab]: 'classic',
+  [dailyChallengeJs]: 'classic',
+  [dailyChallengePy]: 'classic',
+  [examDownload]: 'examDownload',
+  [review]: 'generic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -145,9 +162,31 @@ export const submitTypes = {
   [multifilePythonCertProject]: 'tests',
   [generic]: 'tests',
   [lab]: 'tests',
-  [jsLab]: 'tests'
+  [jsLab]: 'tests',
+  [pyLab]: 'tests',
+  [dailyChallengeJs]: 'tests',
+  [dailyChallengePy]: 'tests',
+  [examDownload]: 'examDownload',
+  [review]: 'tests'
 };
 
 export const canSaveToDB = (challengeType: number): boolean =>
   challengeType === challengeTypes.multifileCertProject ||
   challengeType === challengeTypes.multifilePythonCertProject;
+
+export const dailyCodingChallengeTypes = [
+  challengeTypes.dailyChallengeJs,
+  challengeTypes.dailyChallengePy
+];
+
+export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
+  dailyCodingChallengeTypes.includes(challengeType);
+
+export const dailyCodingChallengeLanguages = {
+  [challengeTypes.dailyChallengeJs]: 'javascript',
+  [challengeTypes.dailyChallengePy]: 'python'
+};
+
+export const getDailyCodingChallengeLanguage = (
+  challengeType: number
+): string | undefined => dailyCodingChallengeLanguages[challengeType];

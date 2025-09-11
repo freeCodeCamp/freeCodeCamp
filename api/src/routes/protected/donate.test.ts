@@ -1,19 +1,18 @@
-import type { Prisma } from '@prisma/client';
+import { describe, test, expect, beforeEach, vi } from 'vitest';
 import {
   createSuperRequest,
   devLogin,
   setupServer,
   defaultUserEmail,
   defaultUserId
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import { createUserInput } from '../../utils/create-user';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
 const testCustomerId = 'cust_test_id';
-const userWithoutProgress: Prisma.userCreateInput =
-  createUserInput(defaultUserEmail);
-const userWithProgress: Prisma.userCreateInput = {
+const userWithoutProgress = createUserInput(defaultUserEmail);
+const userWithProgress = {
   ...createUserInput(defaultUserEmail),
   completedChallenges: [
     {
@@ -76,14 +75,14 @@ const createStripePaymentIntentReqBody = {
   token: { id: 'tok_123' },
   ...sharedDonationReqBody
 };
-const mockSubCreate = jest.fn();
-const mockAttachPaymentMethod = jest.fn(() =>
+const mockSubCreate = vi.fn();
+const mockAttachPaymentMethod = vi.fn(() =>
   Promise.resolve({
     id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
     object: 'payment_method'
   })
 );
-const mockCustomerCreate = jest.fn(() =>
+const mockCustomerCreate = vi.fn(() =>
   Promise.resolve({
     id: testCustomerId,
     name: 'Jest_User',
@@ -107,11 +106,11 @@ const mockSubRetrieveObj = {
   customer: testCustomerId,
   status: 'active'
 };
-const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
-const mockCheckoutSessionCreate = jest.fn(() =>
+const mockSubRetrieve = vi.fn(() => Promise.resolve(mockSubRetrieveObj));
+const mockCheckoutSessionCreate = vi.fn(() =>
   Promise.resolve({ id: 'checkout_session_id' })
 );
-const mockCustomerUpdate = jest.fn();
+const mockCustomerUpdate = vi.fn();
 const generateMockSubCreate = (status: string) => () =>
   Promise.resolve({
     id: testSubscriptionId,
@@ -125,27 +124,29 @@ const generateMockSubCreate = (status: string) => () =>
 const defaultError = () =>
   Promise.reject(new Error('Stripe encountered an error'));
 
-jest.mock('stripe', () => {
-  return jest.fn().mockImplementation(() => {
-    return {
-      customers: {
-        create: mockCustomerCreate,
-        update: mockCustomerUpdate
-      },
-      paymentMethods: {
-        attach: mockAttachPaymentMethod
-      },
-      subscriptions: {
-        create: mockSubCreate,
-        retrieve: mockSubRetrieve
-      },
-      checkout: {
-        sessions: {
-          create: mockCheckoutSessionCreate
+vi.mock('stripe', () => {
+  return {
+    default: vi.fn().mockImplementation(() => {
+      return {
+        customers: {
+          create: mockCustomerCreate,
+          update: mockCustomerUpdate
+        },
+        paymentMethods: {
+          attach: mockAttachPaymentMethod
+        },
+        subscriptions: {
+          create: mockSubCreate,
+          retrieve: mockSubRetrieve
+        },
+        checkout: {
+          sessions: {
+            create: mockCheckoutSessionCreate
+          }
         }
-      }
-    };
-  });
+      };
+    })
+  };
 });
 
 describe('Donate', () => {
@@ -201,7 +202,7 @@ describe('Donate', () => {
     });
 
     describe('POST /donate/charge-stripe-card', () => {
-      it('should return 200 and update the user', async () => {
+      test('should return 200 and update the user', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('we only care about specific error cases')
         );
@@ -213,7 +214,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      it('should return 402 with client_secret if subscription status requires source action', async () => {
+      test('should return 402 with client_secret if subscription status requires source action', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('requires_source_action')
         );
@@ -231,7 +232,7 @@ describe('Donate', () => {
         expect(response.status).toBe(402);
       });
 
-      it('should return 402 if subscription status requires source', async () => {
+      test('should return 402 if subscription status requires source', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('requires_source')
         );
@@ -248,7 +249,7 @@ describe('Donate', () => {
         expect(response.status).toBe(402);
       });
 
-      it('should return 400 if the user is already donating', async () => {
+      test('should return 400 if the user is already donating', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('still does not matter')
         );
@@ -271,7 +272,24 @@ describe('Donate', () => {
         expect(failResponse.status).toBe(400);
       });
 
-      it('should return 500 if Stripe encountes an error', async () => {
+      test('should return 403 if the user has no email', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: userWithProgress.email },
+          data: { email: null }
+        });
+        const response = await superPost('/donate/charge-stripe-card').send(
+          chargeStripeCardReqBody
+        );
+        expect(response.body).toEqual({
+          error: {
+            type: 'EmailRequiredError',
+            message: 'User has not provided an email address'
+          }
+        });
+        expect(response.status).toBe(403);
+      });
+
+      test('should return 500 if Stripe encountes an error', async () => {
         mockSubCreate.mockImplementationOnce(defaultError);
         const response = await superPost('/donate/charge-stripe-card').send(
           chargeStripeCardReqBody
@@ -283,7 +301,7 @@ describe('Donate', () => {
         });
       });
 
-      it('should return 400 if user has not completed challenges', async () => {
+      test('should return 400 if user has not completed challenges', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: userWithProgress.email },
           data: userWithoutProgress
@@ -303,7 +321,7 @@ describe('Donate', () => {
     });
 
     describe('POST /donate/add-donation', () => {
-      it('should return 200 and update the user', async () => {
+      test('should return 200 and update the user', async () => {
         const response = await superPost('/donate/add-donation').send({
           anything: true,
           itIs: 'ignored'
@@ -318,7 +336,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      it('should return 400 if the user is already donating', async () => {
+      test('should return 400 if the user is already donating', async () => {
         const successResponse = await superPost('/donate/add-donation').send(
           {}
         );
@@ -329,7 +347,7 @@ describe('Donate', () => {
     });
 
     describe('PUT /donate/update-stripe-card', () => {
-      it('should return 200 and return session id', async () => {
+      test('should return 200 and return session id', async () => {
         await fastifyTestInstance.prisma.donation.create({
           data: donationMock
         });
@@ -351,7 +369,7 @@ describe('Donate', () => {
         expect(response.body).toEqual({ sessionId: 'checkout_session_id' });
         expect(response.status).toBe(200);
       });
-      it('should return 500 if there is no donation record', async () => {
+      test('should return 500 if there is no donation record', async () => {
         const response = await superPut('/donate/update-stripe-card').send({});
         expect(response.body).toEqual({
           message: 'flash.generic-error',
@@ -362,7 +380,7 @@ describe('Donate', () => {
     });
 
     describe('POST /donate/create-stripe-payment-intent', () => {
-      it('should return 200 and call stripe api properly', async () => {
+      test('should return 200 and call stripe api properly', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('no-errors')
         );
@@ -376,7 +394,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      it('should return 400 when email format is wrong', async () => {
+      test('should return 400 when email format is wrong', async () => {
         const response = await superPost(
           '/donate/create-stripe-payment-intent'
         ).send({
@@ -389,7 +407,7 @@ describe('Donate', () => {
         expect(response.status).toBe(400);
       });
 
-      it('should return 400 if amount is incorrect', async () => {
+      test('should return 400 if amount is incorrect', async () => {
         const response = await superPost(
           '/donate/create-stripe-payment-intent'
         ).send({
@@ -402,7 +420,7 @@ describe('Donate', () => {
         expect(response.status).toBe(400);
       });
 
-      it('should return 500 if Stripe encounters an error', async () => {
+      test('should return 500 if Stripe encounters an error', async () => {
         mockSubCreate.mockImplementationOnce(defaultError);
         const response = await superPost(
           '/donate/create-stripe-payment-intent'
@@ -415,7 +433,7 @@ describe('Donate', () => {
     });
 
     describe('POST /donate/charge-stripe', () => {
-      it('should return 200 and call stripe api properly', async () => {
+      test('should return 200 and call stripe api properly', async () => {
         mockSubCreate.mockImplementationOnce(
           generateMockSubCreate('no-errors')
         );
@@ -427,7 +445,7 @@ describe('Donate', () => {
         expect(response.status).toBe(200);
       });
 
-      it('should return 500 when if product id is wrong', async () => {
+      test('should return 500 when if product id is wrong', async () => {
         mockSubRetrieve.mockImplementationOnce(() =>
           Promise.resolve({
             ...mockSubRetrieveObj,
@@ -454,7 +472,7 @@ describe('Donate', () => {
         expect(response.status).toBe(500);
       });
 
-      it('should return 500 if subsciption is not active', async () => {
+      test('should return 500 if subsciption is not active', async () => {
         mockSubRetrieve.mockImplementationOnce(() =>
           Promise.resolve({
             ...mockSubRetrieveObj,
@@ -471,7 +489,7 @@ describe('Donate', () => {
         expect(response.status).toBe(500);
       });
 
-      it('should return 500 if timestamp is old', async () => {
+      test('should return 500 if timestamp is old', async () => {
         mockSubRetrieve.mockImplementationOnce(() =>
           Promise.resolve({
             ...mockSubRetrieveObj,

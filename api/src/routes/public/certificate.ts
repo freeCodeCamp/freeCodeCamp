@@ -13,6 +13,7 @@ import {
   getFallbackFullStackDate,
   isKnownCertSlug
 } from '../helpers/certificate-utils';
+import { normalizeDate } from '../../utils/normalize';
 
 /**
  * Plugin for the unprotected certificate endpoints.
@@ -32,7 +33,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.certSlug
     },
     async (req, reply) => {
-      const logger = fastify.log.child({ req });
+      const logger = fastify.log.child({ req, res: reply });
       const username = req.params.username.toLowerCase();
       const certSlug = req.params.certSlug;
 
@@ -228,7 +229,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           certSlug,
           certTitle,
           username,
-          date: completedDate,
+          date: normalizeDate(completedDate),
           completionTime
         });
       }
@@ -239,7 +240,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         certTitle,
         username,
         name,
-        date: completedDate,
+        date: normalizeDate(completedDate),
         completionTime
       });
     }
