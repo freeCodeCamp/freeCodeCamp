@@ -253,7 +253,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
-Recent Contributions:
+### Recent Contributions
 
 ![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
 
@@ -265,3 +265,8 @@ The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
 - The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories thereon are copyright © 2025 freeCodeCamp.org
+
+### Quick Start for Beginners
+
+If you only want to contribute to documentation (curriculum, translations, or guides), you do **not** need to run the project locally.  
+You can directly edit Markdown files in your fork on GitHub and submit a Pull Request.
