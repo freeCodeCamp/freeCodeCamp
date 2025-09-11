@@ -37,7 +37,10 @@ function ChallengeTranscript({
           {t('learn.transcript')}
         </summary>
         <Spacer size='m' />
-        <PrismFormatted className={'line-numbers'} text={transcript} />
+        <PrismFormatted
+          className='line-numbers with-newline'
+          text={transcript}
+        />
       </details>
       <Spacer size='m' />
     </>

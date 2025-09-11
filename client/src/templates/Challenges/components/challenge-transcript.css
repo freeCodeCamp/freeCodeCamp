@@ -2,3 +2,7 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+.with-newline {
+  white-space: pre-wrap;
+}

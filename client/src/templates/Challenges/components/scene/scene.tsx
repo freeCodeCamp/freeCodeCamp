@@ -175,10 +175,12 @@ export function Scene({
         transcriptText =
           transcriptText +
           '\n' +
+          '<strong>' +
           command.character +
-          ':' +
+          '</strong>:' +
           ' ' +
-          command.dialogue.text;
+          command.dialogue.text +
+          '\n';
       }
     });
 
