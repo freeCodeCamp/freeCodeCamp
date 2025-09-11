@@ -12,11 +12,7 @@ function RdbOnaContinueAlert({
   return (
     <Alert variant='info'>
       <Trans values={{ course }} i18nKey='learn.ona.continue-project'>
-        <a
-          href='https://app.gitpod.io'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
+        <a href='https://app.ona.com' rel='noopener noreferrer' target='_blank'>
           placeholder
         </a>
       </Trans>

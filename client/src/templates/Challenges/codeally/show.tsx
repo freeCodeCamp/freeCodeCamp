@@ -193,7 +193,7 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
 
   function openOna() {
     const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
-    const onaDomain = `https://app.gitpod.io/`;
+    const onaDomain = `https://app.ona.com/`;
     const onaUrl = `${onaDomain}#${repoUrl}`;
 
     window.open(onaUrl, '_blank');

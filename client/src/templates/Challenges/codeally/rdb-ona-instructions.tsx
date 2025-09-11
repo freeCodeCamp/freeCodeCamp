@@ -104,7 +104,7 @@ function RdbOnaInstructions({
         <li>
           <Trans i18nKey='learn.ona.step-1'>
             <a
-              href='https://app.gitpod.io/login?navigateTo=%2Fsettings%2Fsecrets'
+              href='https://app.ona.com/login?navigateTo=%2Fsettings%2Fsecrets'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -140,7 +140,7 @@ function RdbOnaInstructions({
               <li>
                 <Trans i18nKey='learn.ona.sub-step-3'>
                   <a
-                    href='https://app.gitpod.io/settings/secrets'
+                    href='https://app.ona.com/settings/secrets'
                     rel='noopener noreferrer'
                     target='_blank'
                   >
