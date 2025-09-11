@@ -15,6 +15,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
             "lecture-working-with-images-and-svgs",
@@ -342,7 +343,9 @@
         {
           "dashedName": "javascript-objects",
           "blocks": [
-            "lecture-working-with-objects",
+            "lecture-introduction-to-javascript-objects-and-their-properties",
+            "lecture-working-with-json",
+            "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
             "lab-quiz-game",
             "lab-record-collection",

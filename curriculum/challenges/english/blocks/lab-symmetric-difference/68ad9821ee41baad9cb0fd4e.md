@@ -69,6 +69,60 @@ assert.deepEqual(diffArray(
 ), []);
 ```
 
+`diffArray(["pen", "book"], ["book", "pencil", "notebook"])` should return `["pen", "pencil", "notebook"]`.
+
+```js
+assert.deepEqual(diffArray(
+  ["pen", "book"],
+  ["book", "pencil", "notebook"]
+), ["pen", "pencil", "notebook"]);
+```
+
+`diffArray(["car", "bike", "bus"], ["bike", "train", "plane", "bus"])` should return `["car", "train", "plane"]`.
+
+```js
+assert.deepEqual(diffArray(
+  ["car", "bike", "bus"],
+  ["bike", "train", "plane", "bus"]
+), ["car", "train", "plane"]);
+```
+
+`diffArray(["apple", "orange"], ["apple", "orange", "banana", "grape"])` should return `["banana", "grape"]`.
+
+```js
+assert.deepEqual(diffArray(
+  ["apple", "orange"],
+  ["apple", "orange", "banana", "grape"]
+), ["banana", "grape"]);
+```
+
+`diffArray([], ["apple", "banana"])` should return `["apple", "banana"]`.
+
+```js
+assert.deepEqual(diffArray(
+  [],
+  ["apple", "banana"]
+), ["apple", "banana"]);
+```
+
+`diffArray(["apple", "banana"], [])` should return `["apple", "banana"]`.
+
+```js
+assert.deepEqual(diffArray(
+  ["apple", "banana"],
+  []
+), ["apple", "banana"]);
+```
+
+`diffArray([], [])` should return `[]`.
+
+```js
+assert.deepEqual(diffArray(
+  [], 
+  []
+), []);
+```
+
 # --seed--
 
 ## --seed-contents--
