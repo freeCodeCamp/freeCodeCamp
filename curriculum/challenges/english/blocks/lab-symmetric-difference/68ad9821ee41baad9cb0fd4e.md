@@ -1,7 +1,7 @@
 ---
 id: 68ad9821ee41baad9cb0fd4e
 title: Build a Symmetric Difference Function
-challengeType: 25
+challengeType: 26
 dashedName: lab-symmetric-difference
 ---
 
