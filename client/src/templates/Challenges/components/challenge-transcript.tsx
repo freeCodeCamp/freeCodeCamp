@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import store from 'store';
-import PrismFormatted from './prism-formatted';
 
 import './challenge-transcript.css';
 
@@ -37,10 +36,20 @@ function ChallengeTranscript({
           {t('learn.transcript')}
         </summary>
         <Spacer size='m' />
-        <PrismFormatted
-          className='line-numbers with-newline'
-          text={transcript}
-        />
+        <table className='transcript-table'>
+          <tbody>
+            {transcript
+              .split('\n')
+              .filter(line => line.trim() !== '')
+              .map((line, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td dangerouslySetInnerHTML={{ __html: line }} />
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
       </details>
       <Spacer size='m' />
     </>
