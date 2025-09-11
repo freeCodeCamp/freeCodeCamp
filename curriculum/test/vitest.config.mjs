@@ -1,3 +1,4 @@
+import os from 'node:os';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
@@ -12,6 +13,14 @@ export default defineConfig({
     hookTimeout: 60000,
     testTimeout: 30000,
     isolate: false,
+    pool: 'threads',
+    poolOptions: {
+      threads: {
+        // Cap to avoid CPU thrash on laptops and keep Puppeteer contexts in check.
+        maxThreads: Math.max(2, Math.min(8, (os.cpus()?.length ?? 4) - 1)),
+        minThreads: 2
+      }
+    },
     globalSetup: 'test/vitest-global-setup.mjs',
     setupFiles: 'test/vitest-setup.mjs'
   },

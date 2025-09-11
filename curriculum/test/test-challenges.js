@@ -38,13 +38,16 @@ global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
 
 async function newPageContext() {
-  const page =
-    await globalThis.puppeteerBrowserContext[
-      process.env.VITEST_POOL_ID
-    ].newPage();
-  // it's needed for workers as context.
-  await page.goto(`http://127.0.0.1:8080/index.html`);
-  return page;
+  // Reuse a single page per worker/pool to avoid the overhead of creating a
+  // new page for every block file.
+  const poolId = process.env.VITEST_POOL_ID;
+  globalThis.__fccPuppeteerPages ??= {};
+  if (!globalThis.__fccPuppeteerPages[poolId]) {
+    const page = await globalThis.puppeteerBrowserContext[poolId].newPage();
+    await page.goto(`http://127.0.0.1:8080/index.html`);
+    globalThis.__fccPuppeteerPages[poolId] = page;
+  }
+  return globalThis.__fccPuppeteerPages[poolId];
 }
 
 export async function defineTestsForBlock({ block }) {
@@ -442,7 +445,7 @@ async function initializeTestRunner(
   // Ensure FCCTestRunner is available before creating it
   await page.waitForFunction(
     'window.FCCTestRunner && window.FCCTestRunner.createTestRunner',
-    { timeout: 15000 }
+    { timeout: 5000 }
   );
 
   await page.evaluate(

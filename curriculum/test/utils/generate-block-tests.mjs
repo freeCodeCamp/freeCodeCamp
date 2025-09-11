@@ -45,6 +45,13 @@ async function main() {
     await fs.promises.mkdir(GENERATED_DIR, { recursive: true });
     const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
     const contents = generateSingleBlockFile({ block });
+
+    try {
+      const prev = await fs.promises.readFile(filePath, 'utf8');
+      if (prev === contents) continue;
+    } catch {
+      //ignore
+    }
     await fs.promises.writeFile(filePath, contents, 'utf8');
   }
 
