@@ -18,7 +18,8 @@ const {
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
-  getBlockStructurePath
+  getBlockStructurePath,
+  getBlockStructureDir
 } = require('./file-handler');
 
 /**
@@ -41,6 +42,8 @@ const getBlockCreator = (lang, skipValidation, opts) => {
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
+
+  console.log('block', blockContentDir);
 
   return new BlockCreator({
     lang,
@@ -294,14 +297,9 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function buildCurriculum(lang, filters) {
-  const contentDir = getContentDir(lang);
-  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
-  const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang, !isEmpty(filters))
-  });
-
+async function parseCurriculumStructure(filters) {
   const curriculum = getCurriculumStructure();
+  const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
@@ -314,8 +312,22 @@ async function buildCurriculum(lang, filters) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
+  return {
+    fullSuperblockList: applyFilters(superblockList, filters),
+    certifications: curriculum.certifications
+  };
+}
 
-  const fullSuperblockList = applyFilters(superblockList, filters);
+async function buildCurriculum(lang, filters) {
+  const contentDir = getContentDir(lang);
+
+  const builder = new SuperblockCreator({
+    blockCreator: getBlockCreator(lang, !isEmpty(filters))
+  });
+
+  const { fullSuperblockList, certifications } =
+    await parseCurriculumStructure(filters);
+
   const fullCurriculum = { certifications: { blocks: {} } };
 
   for (const superblock of fullSuperblockList) {
@@ -323,7 +335,7 @@ async function buildCurriculum(lang, filters) {
       await builder.processSuperblock(superblock);
   }
 
-  for (const cert of curriculum.certifications) {
+  for (const cert of certifications) {
     const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
     if (!fs.existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
@@ -344,5 +356,7 @@ module.exports = {
   getSuperblockStructure,
   createCommentMap,
   superBlockToFilename,
-  getSuperblocks
+  getSuperblocks,
+  addSuperblockStructure,
+  parseCurriculumStructure
 };
