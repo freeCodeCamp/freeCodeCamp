@@ -55,8 +55,10 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.FullStackDeveloper
   ];
 

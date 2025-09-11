@@ -32,7 +32,6 @@
     "delete-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
     "lint": "tsx --tsconfig ../tsconfig.json lint-localized",
-    "repair-meta": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/repair-meta",
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
@@ -43,6 +42,7 @@
     "@babel/core": "7.23.7",
     "@babel/register": "7.23.7",
     "@compodoc/live-server": "^1.2.3",
+    "@vitest/ui": "^3.2.4",
     "chai": "4.4.1",
     "glob": "8.1.0",
     "invariant": "2.2.4",
@@ -56,6 +56,7 @@
     "ora": "5.4.1",
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
-    "string-similarity": "4.0.4"
+    "string-similarity": "4.0.4",
+    "vitest": "^3.2.4"
   }
 }

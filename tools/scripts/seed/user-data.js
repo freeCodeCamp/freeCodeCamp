@@ -29,7 +29,7 @@ module.exports.blankUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -91,7 +91,7 @@ module.exports.publicUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -153,7 +153,7 @@ module.exports.demoUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: false,
   isFrontEndCert: false,
@@ -217,7 +217,7 @@ module.exports.fullyCertifiedUser = {
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: true,
   isFrontEndCert: true,
@@ -12279,6 +12279,13 @@ module.exports.fullyCertifiedUser = {
     {
       completedDate: 1729240849345,
       id: '672d456f4ac35950b300e93f'
+    }
+  ],
+  completedDailyCodingChallenges: [
+    {
+      id: '6814d8e1516e86b171929de4',
+      completedDate: 1729240849345,
+      languages: ['javascript']
     }
   ],
   completedExams: [

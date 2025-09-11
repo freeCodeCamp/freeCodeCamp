@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer, Callout } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
@@ -16,6 +16,8 @@ import {
 } from '../redux/selectors';
 
 import callGA from '../analytics/call-ga';
+import { clientLocale } from '../../config/env.json';
+import createLanguageRedirect from '../components/create-language-redirect';
 
 interface FetchState {
   pending: boolean;
@@ -23,18 +25,18 @@ interface FetchState {
   errored: boolean;
 }
 
-interface User {
+type MaybeUser = {
   name: string;
   username: string;
   completedChallengeCount: number;
   isDonating: boolean;
-}
+} | null;
 
 const mapStateToProps = createSelector(
   userFetchStateSelector,
   isSignedInSelector,
   userSelector,
-  (fetchState: FetchState, isSignedIn: boolean, user: User) => ({
+  (fetchState: FetchState, isSignedIn: boolean, user: MaybeUser) => ({
     fetchState,
     isSignedIn,
     user
@@ -49,7 +51,7 @@ interface LearnPageProps {
   isSignedIn: boolean;
   fetchState: FetchState;
   state: Record<string, unknown>;
-  user: User;
+  user: MaybeUser;
   data: {
     challengeNode: {
       challenge: {
@@ -59,10 +61,12 @@ interface LearnPageProps {
   };
 }
 
+const EMPTY_USER = { name: '', completedChallengeCount: 0, isDonating: false };
+
 function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
-  user: { name = '', completedChallengeCount = 0, isDonating = false },
+  user,
   data: {
     challengeNode: {
       challenge: {
@@ -71,6 +75,8 @@ function LearnPage({
     }
   }
 }: LearnPageProps) {
+  const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
+
   const { t } = useTranslation();
 
   const onLearnDonationAlertClick = () => {
@@ -95,6 +101,33 @@ function LearnPage({
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
+            {clientLocale === 'english' ? null : (
+              <>
+                <Spacer size='m' />
+                <Callout variant='info'>
+                  <p className='text-center'>
+                    <strong style={{ color: 'var(--blue-dark)' }}>
+                      Warning: The localized content in this language is not
+                      being updated.
+                    </strong>
+                  </p>
+                  <p>
+                    Your previous progress is being saved, but you should{' '}
+                    <a
+                      href={createLanguageRedirect({
+                        clientLocale,
+                        lang: 'english'
+                      })}
+                    >
+                      visit the English version
+                    </a>{' '}
+                    for up to date content. We recognize this is not ideal and
+                    are working to fix it.
+                  </p>
+                  <p>We appreciate your patience.</p>
+                </Callout>
+              </>
+            )}
             <Map />
             <Spacer size='l' />
           </Col>

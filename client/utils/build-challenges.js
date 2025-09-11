@@ -3,45 +3,42 @@ const path = require('path');
 const _ = require('lodash');
 
 const envData = require('../config/env.json');
+const { getChallengesForLang } = require('../../curriculum/get-challenges');
+
 const {
-  getChallengesForLang,
-  generateChallengeCreator,
-  ENGLISH_CHALLENGES_DIR,
-  META_DIR,
-  I18N_CHALLENGES_DIR,
-  getChallengesDirForLang
-} = require('../../curriculum/get-challenges');
+  getContentDir,
+  getBlockCreator
+} = require('../../curriculum/build-curriculum');
+const { getBlockStructure } = require('../../curriculum/file-handler');
+const { getSuperblocks } = require('../../curriculum/build-curriculum');
 
 const { curriculumLocale } = envData;
 
-exports.localeChallengesRootDir = getChallengesDirForLang(curriculumLocale);
+exports.localeChallengesRootDir = getContentDir(curriculumLocale);
 
-exports.replaceChallengeNode = () => {
-  return async function replaceChallengeNode(filePath) {
-    // get the meta so that challengeOrder is accurate
-    const blockNameRe = /\d\d-[-\w]+\/([^/]+)\//;
-    const posix = path.normalize(filePath).split(path.sep).join(path.posix.sep);
-    const blockName = posix.match(blockNameRe)[1];
-    const metaPath = path.resolve(META_DIR, `${blockName}/meta.json`);
-    delete require.cache[require.resolve(metaPath)];
-    const meta = require(metaPath);
-    const englishPath = path.resolve(
-      ENGLISH_CHALLENGES_DIR,
-      'english',
-      filePath
-    );
-    const i18nPath = path.resolve(
-      I18N_CHALLENGES_DIR,
-      curriculumLocale,
-      filePath
-    );
-    // TODO: reimplement hot-reloading of certifications
-    const createChallenge = generateChallengeCreator(
-      curriculumLocale,
-      englishPath,
-      i18nPath
-    );
-    return await createChallenge(filePath, meta);
+const blockCreator = getBlockCreator(curriculumLocale);
+
+exports.replaceChallengeNodes = () => {
+  return async function replaceChallengeNodes(filePath) {
+    const parentDir = path.dirname(filePath);
+    const block = path.basename(parentDir);
+    const filename = path.basename(filePath);
+
+    console.log(`Replacing challenge node for ${filePath}`);
+    const meta = getBlockStructure(block);
+    const superblocks = getSuperblocks(block);
+
+    const challenge = await blockCreator.createChallenge({
+      filename,
+      block,
+      meta,
+      isAudited: true
+    });
+
+    return superblocks.map(superBlock => ({
+      ...challenge,
+      superBlock
+    }));
   };
 };
 
@@ -56,7 +53,6 @@ exports.buildChallenges = async function buildChallenges() {
     }, []);
 
   const builtChallenges = blocks
-    .filter(block => !block.isPrivate)
     .map(({ challenges }) => challenges)
     .reduce((accu, current) => accu.concat(current), []);
   return builtChallenges;
