@@ -61,7 +61,6 @@
   color: var(--quaternary-color);
 }
 
-/* The tag block-label styles below are related to the Language Curricula Chapter based certifications*/
 .block-label-warm-up {
   border-color: var(--yellow-color);
   color: var(--yellow-color);
