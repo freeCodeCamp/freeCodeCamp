@@ -647,7 +647,10 @@
       "lab": "Lab",
       "review": "Review",
       "quiz": "Quiz",
-      "exam": "Exam"
+      "exam": "Exam",
+      "warm-up": "Warm-up",
+      "learn": "Learn",
+      "practice": "Practice"
     }
   },
   "donate": {

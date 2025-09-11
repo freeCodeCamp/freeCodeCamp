@@ -45,7 +45,10 @@ const blockSchema = Joi.object().keys({
         'lab',
         'review',
         'quiz',
-        'exam'
+        'exam',
+        'warm-up',
+        'learn',
+        'practice'
       ).when('superBlock', {
         is: chapterBasedSuperBlocks,
         then: Joi.required(),
