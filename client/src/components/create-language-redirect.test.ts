@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { afterEach, beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it } from 'vitest';
 import createLanguageRedirect from './create-language-redirect';
 
 describe('createLanguageRedirect for clientLocale === english', () => {
@@ -19,19 +19,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     const dothrakiPageURL =
       'https://www.freecodecamp.org/dothraki/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
 
-    const originalLocation = window.location;
-
     beforeEach(() => {
       Object.defineProperty(window, 'location', {
         writable: true,
         value: new URL(currentPageURL)
-      });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(window, 'location', {
-        writable: true,
-        value: originalLocation
       });
     });
 
@@ -65,19 +56,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       'https://www.freecodecamp.org/chinese-traditional/settings';
     const dothrakiPageURL = 'https://www.freecodecamp.org/dothraki/settings';
 
-    const originalLocation = window.location;
-
     beforeEach(() => {
       Object.defineProperty(window, 'location', {
         writable: true,
         value: new URL(currentPageURL)
-      });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(window, 'location', {
-        writable: true,
-        value: originalLocation
       });
     });
 
@@ -121,19 +103,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     const dothrakiPageURL =
       'https://www.freecodecamp.org/dothraki/learn/responsive-web-design/basic-html-and-html5/inform-with-the-paragraph-element';
 
-    const originalLocation = window.location;
-
     beforeEach(() => {
       Object.defineProperty(window, 'location', {
         writable: true,
         value: new URL(currentPageURL)
-      });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(window, 'location', {
-        writable: true,
-        value: originalLocation
       });
     });
 
@@ -167,19 +140,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       'https://www.freecodecamp.org/chinese-traditional/settings';
     const dothrakiPageURL = 'https://www.freecodecamp.org/dothraki/settings';
 
-    const originalLocation = window.location;
-
     beforeEach(() => {
       Object.defineProperty(window, 'location', {
         writable: true,
         value: new URL(currentPageURL)
-      });
-    });
-
-    afterEach(() => {
-      Object.defineProperty(window, 'location', {
-        writable: true,
-        value: originalLocation
       });
     });
 

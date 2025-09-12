@@ -11,9 +11,7 @@ describe('<OfflineWarning />', () => {
     const { container } = render(
       <OfflineWarning isOnline={true} isServerOnline={true} isSignedIn={true} />
     );
-    act(() => {
-      vi.runAllTimers();
-    });
+    act(() => void vi.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -25,9 +23,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => {
-      vi.runAllTimers();
-    });
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 
@@ -39,9 +35,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => {
-      vi.runAllTimers();
-    });
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('placeholder').tagName).toBe('A');
     expect(screen.getByText('placeholder')).toHaveAttribute(
       'href',
@@ -57,9 +51,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={false}
       />
     );
-    act(() => {
-      vi.runAllTimers();
-    });
+    act(() => void vi.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -71,9 +63,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => {
-      vi.runAllTimers();
-    });
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 });

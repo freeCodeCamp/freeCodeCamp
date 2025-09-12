@@ -3,8 +3,6 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import { describe, test, expect, vi } from 'vitest';
 import Honesty from './honesty';
 
-vi.mock('react-i18next');
-
 describe('<Honesty />', () => {
   const updateIsHonestMock = vi.fn();
 

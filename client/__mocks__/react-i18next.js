@@ -1,6 +1,6 @@
 import React from 'react';
 
-// modified from https://github.com/i18next/react-i18next/blob/master/example/test-vi/src/__mocks__/react-i18next.js
+// modified from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
 const hasChildren = node =>
   node && (node.children || (node.props && node.props.children));
 
