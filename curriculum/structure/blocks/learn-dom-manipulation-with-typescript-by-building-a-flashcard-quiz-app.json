@@ -1,0 +1,11 @@
+{
+  "name": "Learn DOM Manipulation with TypeScript by Building a Flashcard Quiz App",
+  "superBlock": "",
+  "isUpcomingChange": true,
+  "dashedName": "learn-dom-manipulation-with-typescript-by-building-a-flashcard-quiz-app",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68c386c67b3209fcb7029c1d", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true
+}
