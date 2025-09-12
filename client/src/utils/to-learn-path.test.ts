@@ -1,4 +1,5 @@
 import { withPrefix } from 'gatsby';
+import { describe, it, expect } from 'vitest';
 
 import toLearnPath from './to-learn-path';
 

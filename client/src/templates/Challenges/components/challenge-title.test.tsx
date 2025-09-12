@@ -1,5 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+import { describe, it, expect } from 'vitest';
 
 import ChallengeTitle from './challenge-title';
 

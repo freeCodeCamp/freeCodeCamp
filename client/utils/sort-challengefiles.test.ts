@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { challengeFiles } from './__fixtures__/challenges';
 import { sortChallengeFiles } from './sort-challengefiles';
 
