@@ -4422,8 +4422,7 @@
       "review-error-handling": {
         "title": "Error Handling Review",
         "intro": [
-          "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on error handling, you should review what you've learned about it."
         ]
       },
       "quiz-error-handling": {
@@ -4501,8 +4500,7 @@
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4595,8 +4593,7 @@
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4632,8 +4629,7 @@
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4655,8 +4651,7 @@
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
         "intro": [
-          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming": {
