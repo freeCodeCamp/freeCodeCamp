@@ -8,7 +8,8 @@
   "challengeOrder": [
     {
       "id": "68bb001c22f3bcbd1fdf38fa",
-      "title": "Dialogue 1: Placeholder Challenge"
-    }
+      "title": "Task 1"
+    },
+    { "id": "68c488abd71a3e27190965e0", "title": "Task 2" }
   ]
 }
