@@ -3510,6 +3510,12 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -4978,9 +4984,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
