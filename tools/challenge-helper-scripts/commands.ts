@@ -43,15 +43,20 @@ async function insertStep(stepNum: number): Promise<void> {
       }.`
     );
 
-  const challengeSeeds =
-    stepNum > 1
-      ? getChallenge(challengeOrder[stepNum - 2].id).challengeFiles
-      : [];
+  const previousChallenge =
+    stepNum > 1 ? getChallenge(challengeOrder[stepNum - 2].id) : null;
+  const nextChallenge =
+    stepNum <= challengeOrder.length
+      ? getChallenge(challengeOrder[stepNum - 1].id)
+      : null;
 
-  console.log(challengeSeeds);
+  const challengeSeeds = previousChallenge?.challengeFiles ?? [];
+  const challengeType =
+    previousChallenge?.challengeType ?? nextChallenge?.challengeType;
 
   const stepId = createStepFile({
     stepNum,
+    challengeType,
     challengeSeeds
   });
 
