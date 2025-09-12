@@ -183,7 +183,7 @@ function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
     <Alert variant='info'>
       <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
         <a
-          href='https://codespaces.new/freeCodeCamp/rdb-alpha'
+          href='https://github.com/freeCodeCamp/rdb-alpha'
           rel='noopener noreferrer'
           target='_blank'
         >
