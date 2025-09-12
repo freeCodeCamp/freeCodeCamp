@@ -4829,6 +4829,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "learn-typeguards-by-building-a-fortune-telling-app": {
+        "title": "Learn Typeguards by Building a Fortune Telling App",
+        "intro": ["Learn Typeguards by Building a Fortune Telling App", ""]
       }
     }
   },
@@ -4978,9 +4982,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
