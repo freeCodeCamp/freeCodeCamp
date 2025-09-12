@@ -1,8 +1,13 @@
 import { expectSaga } from 'redux-saga-test-plan';
+import { previewChallengeSaga, executeTests } from './execute-challenge-saga';
 
 jest.mock('redux-saga/effects', () => ({
   ...jest.requireActual('redux-saga/effects'),
   delay: jest.fn()
+}));
+
+jest.mock('i18next', () => ({
+  t: key => key
 }));
 
 const initialState = {
@@ -14,13 +19,11 @@ function reducer(state = initialState) {
   return state;
 }
 
-import { previewChallengeSaga } from './execute-challenge-saga';
-
 const challengeMounted = { type: 'challenge.challengeMounted' };
 const previewMounted = { type: 'challenge.previewMounted' };
 const resetChallenge = { type: 'challenge.resetChallenge' };
 
-describe('execute-challenge-saga', () => {
+describe('previewChallengeSaga', () => {
   it('flushes logs on challengeMounted', () => {
     return expectSaga(previewChallengeSaga, challengeMounted)
       .withReducer(reducer)
@@ -40,5 +43,40 @@ describe('execute-challenge-saga', () => {
       .withReducer(reducer)
       .not.put({ type: 'challenge.initLogs' })
       .silentRun();
+  });
+});
+
+describe('executeTests generator', () => {
+  it('sets a special message for IndentationErrors', () => {
+    const mockTestRunner = () => {
+      return [
+        {
+          err: {
+            type: 'IndentationError',
+            message: 'Unexpected token',
+            stack: '...'
+          }
+        }
+      ];
+    };
+
+    const tests = [{ testString: 'assert(true);', text: 'Test 1' }];
+
+    return expectSaga(executeTests, mockTestRunner, tests)
+      .put({
+        type: 'challenge.updateConsole',
+        payload: '<p>1. learn.indentation-error</p>'
+      })
+      .returns([
+        {
+          err: 'Unexpected token\n...',
+          text: 'Test 1',
+          testString: 'assert(true);',
+          running: false,
+          message: '<p>learn.indentation-error</p>',
+          stack: '...'
+        }
+      ])
+      .run();
   });
 });
