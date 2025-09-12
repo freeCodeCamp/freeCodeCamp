@@ -77,3 +77,18 @@ export const examEnvironmentGetExamAttempt = {
     default: STANDARD_ERROR
   }
 };
+
+export const examEnvironmentGetExamAttemptsByExamId = {
+  params: Type.Object({
+    examId: Type.String({ format: 'objectid' })
+  }),
+  headers: Type.Object({
+    // Optional, because the handler is used in both the `/user/` base and `/exam-environment/` base.
+    // If it is missing, auth will catch.
+    'exam-environment-authorization-token': Type.Optional(Type.String())
+  })
+  // response: {
+  //   200: Type.Array(examEnvAttempt),
+  //   default: STANDARD_ERROR
+  // }
+};

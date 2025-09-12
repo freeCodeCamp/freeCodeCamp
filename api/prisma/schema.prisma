@@ -188,8 +188,9 @@ model ExamEnvironmentExam {
   version       Int                          @default(1)
 
   // Relations
-  generatedExams ExamEnvironmentGeneratedExam[]
-  examAttempts   ExamEnvironmentExamAttempt[]
+  generatedExams           ExamEnvironmentGeneratedExam[]
+  examAttempts             ExamEnvironmentExamAttempt[]
+  ExamEnvironmentChallenge ExamEnvironmentChallenge[]
 }
 
 /// A copy of `ExamEnvironmentExam` used as a staging collection for updates to the curriculum.
@@ -376,6 +377,17 @@ type ExamEnvironmentGeneratedMultipleChoiceQuestion {
   id      String   @db.ObjectId
   /// Each item is a foreign key to an answer
   answers String[] @db.ObjectId
+}
+
+/// A map between challenge ids and exam ids
+///
+/// This is expected to be used for relating challenge pages AND/OR certifications to exams
+model ExamEnvironmentChallenge {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  examId      String @db.ObjectId
+  challengeId String @db.ObjectId
+
+  exam ExamEnvironmentExam @relation(fields: [examId], references: [id], onDelete: Cascade)
 }
 
 // -----------------------------------
