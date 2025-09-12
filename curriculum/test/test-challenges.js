@@ -152,8 +152,18 @@ async function setup() {
   await page.setViewport({ width: 300, height: 150 });
 
   const lang = testedLang();
+  const challenges = await getChallenges(lang, testFilter);
+  const nonCertificationChallenges = challenges.filter(
+    ({ challengeType }) => challengeType !== 7
+  );
 
-  let challenges = await getChallenges(lang, testFilter);
+  if (isEmpty(nonCertificationChallenges)) {
+    throw Error(
+      `No challenges to test when using filter ${JSON.stringify(testFilter)}
+If the challenge file exists, try running 'build:curriculum' for more information.
+      `
+    );
+  }
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
@@ -242,6 +252,68 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
+
+        // daily challenge tests
+        if (superBlock === 'dev-playground') {
+          describe('Daily Coding Challenges', function () {
+            const jsDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-javascript'
+            );
+
+            const pyDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-python'
+            );
+
+            it('should have matching number of JavaScript and Python challenges', function () {
+              assert.equal(
+                jsDailyChallenges.length,
+                pyDailyChallenges.length,
+                `JavaScript challenges: ${jsDailyChallenges.length}, Python challenges: ${pyDailyChallenges.length}`
+              );
+            });
+
+            for (let i = 0; i < jsDailyChallenges.length; i++) {
+              describe(`Challenge ${i + 1} Parity`, function () {
+                const jsChallenge = jsDailyChallenges[i];
+                const pyChallenge = pyDailyChallenges[i];
+
+                it("should have matching ID's", function () {
+                  assert.equal(
+                    jsChallenge.id,
+                    pyChallenge.id,
+                    `Challenge ${i + 1} ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
+                  );
+                });
+
+                it(`should have matching titles`, function () {
+                  assert.equal(
+                    jsChallenge.title,
+                    pyChallenge.title,
+                    `Challenge ${i + 1} title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title}`
+                  );
+                });
+
+                it('should have matching descriptions', function () {
+                  assert.equal(
+                    jsChallenge.description,
+                    pyChallenge.description,
+                    `Challenge ${i + 1} description mismatch`
+                  );
+                });
+
+                it('should have the same number of tests', function () {
+                  const jsTestCount = jsChallenge.tests.length;
+                  const pyTestCount = pyChallenge.tests.length;
+                  assert.equal(
+                    jsTestCount,
+                    pyTestCount,
+                    `Challenge ${i + 1} test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount}`
+                  );
+                });
+              });
+            }
+          });
+        }
 
         const challengeTitles = new ChallengeTitles();
         const mongoIds = new MongoIds();
@@ -340,13 +412,10 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     fails = true;
                   }
                   if (!fails) {
-                    for (const test of tests) {
-                      try {
-                        await testRunner(test);
-                      } catch {
-                        fails = true;
-                        break;
-                      }
+                    try {
+                      await testRunner(tests);
+                    } catch {
+                      fails = true;
                     }
                   }
                   console.error = oldConsoleError;
@@ -441,9 +510,8 @@ seed goes here
                         buildChallenge,
                         solutionFromNext
                       );
-                      for (const test of tests) {
-                        await testRunner(test);
-                      }
+
+                      await testRunner(tests);
                     });
                   });
                 });
@@ -485,24 +553,26 @@ async function createTestRunner(
     hooks: challenge.hooks
   });
 
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await evaluator.evaluate(testString, 5000);
-      if (!pass) {
+  return async tests => {
+    const testStrings = tests.map(test => test.testString);
+
+    const results = await evaluator.evaluate(testStrings, 5000);
+    for (let i = 0; i < results.length; i++) {
+      const { err } = results[i];
+      let { text } = tests[i];
+      if (err) {
+        text = 'Test text: ' + text;
+        const newMessage = solutionFromNext
+          ? 'Check next step for solution!\n' + text
+          : text;
+        // if the stack is missing, the message should be included. Otherwise it
+        // is redundant.
+        err.message = err.stack
+          ? newMessage
+          : `${newMessage}
+      ${err.message}`;
         throw err;
       }
-    } catch (err) {
-      text = 'Test text: ' + text;
-      const newMessage = solutionFromNext
-        ? 'Check next step for solution!\n' + text
-        : text;
-      // if the stack is missing, the message should be included. Otherwise it
-      // is redundant.
-      err.message = err.stack
-        ? newMessage
-        : `${newMessage}
-      ${err.message}`;
-      throw err;
     }
   };
 }
@@ -532,31 +602,18 @@ async function getContextEvaluator(config) {
   await initializeTestRunner(config);
 
   return {
-    evaluate: async (testString, timeout) =>
-      Promise.race([
-        new Promise((_, reject) =>
-          setTimeout(
-            () =>
-              reject(
-                Error(`timeout in challenge
-${config.challengeId}
-while evaluating test:
-${testString}
-`)
-              ),
+    evaluate: async (testStrings, timeout) =>
+      await page.evaluate(
+        async (type, testStrings, timeout) => {
+          return await window.FCCTestRunner.getRunner(type).runAllTests(
+            testStrings,
             timeout
-          )
-        ),
-        await page.evaluate(
-          async (testString, type) => {
-            return await window.FCCTestRunner.getRunner(type).runTest(
-              testString
-            );
-          },
-          testString,
-          config.type
-        )
-      ])
+          );
+        },
+        config.type,
+        testStrings,
+        timeout
+      )
   };
 }
 

@@ -17,7 +17,8 @@ const {
   getLanguageConfig,
   getCurriculumStructure,
   getBlockStructure,
-  getSuperblockStructure
+  getSuperblockStructure,
+  getBlockStructurePath
 } = require('./file-handler');
 
 /**
@@ -182,12 +183,14 @@ const superBlockNames = {
   'python-for-everybody': 'python-for-everybody',
   'b1-english-for-developers': 'b1-english-for-developers',
   'full-stack-developer': 'full-stack-developer',
+  'a1-professional-spanish': 'a1-professional-spanish',
   'a2-professional-spanish': 'a2-professional-spanish',
   'a2-professional-chinese': 'a2-professional-chinese',
   'basic-html': 'basic-html',
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground'
+  'dev-playground': 'dev-playground',
+  'full-stack-open': 'full-stack-open'
 };
 
 const superBlockToFilename = Object.entries(superBlockNames).reduce(
@@ -204,7 +207,10 @@ const superBlockToFilename = Object.entries(superBlockNames).reduce(
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function addSuperblockStructure(superblocks) {
+function addSuperblockStructure(
+  superblocks,
+  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+) {
   debug(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
@@ -216,7 +222,7 @@ function addSuperblockStructure(superblocks) {
     return {
       name: superblockName,
       blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
-        showComingSoon: process.env.SHOW_UPCOMING_CHANGES === 'true'
+        showComingSoon
       })
     };
   });
@@ -243,8 +249,54 @@ function addBlockStructure(
   }));
 }
 
+/**
+ * Returns a list of all the superblocks that contain the given block
+ * @param {string} block
+ */
+function getSuperblocks(
+  block,
+  _addSuperblockStructure = addSuperblockStructure
+) {
+  const { superblocks } = getCurriculumStructure();
+  const withStructure = _addSuperblockStructure(superblocks);
+
+  return withStructure
+    .filter(({ blocks }) =>
+      blocks.some(({ dashedName }) => dashedName === block)
+    )
+    .map(({ name }) => name);
+}
+
+function validateBlocks(superblocks, blockStructureDir) {
+  const withSuperblockStructure = addSuperblockStructure(superblocks, true);
+  const blockInSuperblocks = withSuperblockStructure
+    .flatMap(({ blocks }) => blocks)
+    .map(b => b.dashedName);
+  for (const block of blockInSuperblocks) {
+    const blockPath = getBlockStructurePath(block);
+    if (!fs.existsSync(blockPath)) {
+      throw Error(
+        `Block "${block}" is in a superblock, but has no block structure file at ${blockPath}`
+      );
+    }
+  }
+
+  const blockStructureFiles = fs
+    .readdirSync(blockStructureDir)
+    .map(file => path.basename(file, '.json'));
+
+  for (const block of blockStructureFiles) {
+    if (!blockInSuperblocks.includes(block)) {
+      throw Error(
+        `Block "${block}" has a structure file, ${getBlockStructurePath(block)}, but is not in a superblock`
+      );
+    }
+  }
+}
+
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
+  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
   const builder = new SuperblockCreator({
     blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
@@ -257,9 +309,12 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.superblocks.length} superblocks to build`);
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
+  validateBlocks(curriculum.superblocks, blockStructureDir);
+
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
+
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
 
@@ -288,5 +343,6 @@ module.exports = {
   getBlockStructure,
   getSuperblockStructure,
   createCommentMap,
-  superBlockToFilename
+  superBlockToFilename,
+  getSuperblocks
 };

@@ -3,8 +3,6 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const fsP = require('node:fs/promises');
 
-// const prettier = require('prettier');
-
 const debug = require('debug')('fcc:file-handler');
 
 const CURRICULUM_DIR = __dirname;
@@ -101,14 +99,22 @@ function getBlockStructure(block) {
 }
 
 async function writeBlockStructure(block, structure) {
-  // TODO: format with prettier (jest, at least this version, is not compatible
-  // with prettier)
-  const content = JSON.stringify(structure);
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
+  const content = await prettier.format(JSON.stringify(structure), {
+    parser: 'json'
+  });
   await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
 async function writeSuperblockStructure(superblock, structure) {
-  const content = JSON.stringify(structure);
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
+  const content = await prettier.format(JSON.stringify(structure), {
+    parser: 'json'
+  });
   await fsP.writeFile(getSuperblockStructurePath(superblock), content);
 }
 
@@ -192,6 +198,7 @@ function getLanguageConfig(
 exports.getContentConfig = getContentConfig;
 exports.getContentDir = getContentDir;
 exports.getBlockStructure = getBlockStructure;
+exports.getBlockStructurePath = getBlockStructurePath;
 exports.getSuperblockStructure = getSuperblockStructure;
 exports.getCurriculumStructure = getCurriculumStructure;
 exports.writeBlockStructure = writeBlockStructure;

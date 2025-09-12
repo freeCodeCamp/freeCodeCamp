@@ -2,7 +2,7 @@
   "name": "Build a Pin Extractor",
   "blockLayout": "challenge-grid",
   "blockType": "workshop",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-pin-extractor",
   "helpCategory": "Python",
   "challengeOrder": [

@@ -1,6 +1,6 @@
 {
   "name": "Build a User Configuration Manager",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-user-configuration-manager",
   "challengeOrder": [
     {

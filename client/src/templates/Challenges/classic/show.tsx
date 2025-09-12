@@ -591,6 +591,7 @@ export const query = graphql`
           beforeAll
           beforeEach
           afterEach
+          afterAll
         }
         fields {
           blockName

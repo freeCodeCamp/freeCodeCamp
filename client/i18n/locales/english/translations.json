@@ -647,7 +647,10 @@
       "lab": "Lab",
       "review": "Review",
       "quiz": "Quiz",
-      "exam": "Exam"
+      "exam": "Exam",
+      "warm-up": "Warm-up",
+      "learn": "Learn",
+      "practice": "Practice"
     }
   },
   "donate": {
@@ -1179,6 +1182,8 @@
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "a1-professional-spanish": "A1 Professional Spanish",
+      "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "A2 Professional Spanish",
       "a2-professional-spanish-cert": "A2 Professional Spanish Certification",
       "a2-professional-chinese": "A2 Professional Chinese",

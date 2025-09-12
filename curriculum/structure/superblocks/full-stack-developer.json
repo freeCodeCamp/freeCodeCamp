@@ -15,6 +15,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
             "lecture-working-with-images-and-svgs",
@@ -238,7 +239,7 @@
           "blocks": [
             "lecture-working-with-css-grid",
             "workshop-magazine",
-            "lab-magazine-layout",
+            "lab-newspaper-layout",
             "lecture-debugging-css",
             "lab-product-landing-page",
             "review-css-grid",
@@ -342,7 +343,9 @@
         {
           "dashedName": "javascript-objects",
           "blocks": [
-            "lecture-working-with-objects",
+            "lecture-introduction-to-javascript-objects-and-their-properties",
+            "lecture-working-with-json",
+            "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
             "lab-quiz-game",
             "lab-record-collection",
@@ -377,6 +380,7 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
             "lab-password-generator",
@@ -394,6 +398,7 @@
             "workshop-library-manager",
             "lab-book-organizer",
             "lab-sorted-index-finder",
+            "lab-symmetric-difference",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -618,6 +623,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-typescript",
+            "lecture-working-with-generics-and-type-narrowing",
+            "lecture-working-with-typescript-configuration-files",
             "review-typescript",
             "quiz-typescript"
           ]
@@ -632,11 +639,11 @@
     },
     {
       "dashedName": "python",
-      "comingSoon": true,
+      "comingSoon": false,
       "modules": [
         {
           "dashedName": "python-basics",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-introduction-to-python",
             "workshop-caesar-cipher",
@@ -647,7 +654,7 @@
         },
         {
           "dashedName": "python-loops-and-sequences",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-working-with-loops-and-sequences",
             "workshop-pin-extractor",
@@ -658,7 +665,7 @@
         },
         {
           "dashedName": "python-dictionaries-and-sets",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
             "lecture-working-with-modules",
@@ -670,7 +677,7 @@
         },
         {
           "dashedName": "python-error-handling",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-error-handling",
             "lab-isbn-validator",
