@@ -1,0 +1,25 @@
+{
+  "name": "Build a Salary Tracker",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-salary-tracker",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "blockType": "workshop",
+  "challengeOrder": [
+    { "id": "68c15a2a1f0e70ca7154aba5", "title": "Step 1" },
+    { "id": "68c16924498728d259e4781c", "title": "Step 2" },
+    { "id": "68c18b1d0fce081f85312d97", "title": "Step 3" },
+    { "id": "68c27eb292bfec6b9402d58f", "title": "Step 4" },
+    { "id": "68c27fa1697ceb7c578b2c9f", "title": "Step 5" },
+    { "id": "68c281cecda94ba2c6838e17", "title": "Step 6" },
+    { "id": "68c28b7cc3ab8f4daf144b5e", "title": "Step 7" },
+    { "id": "68c28c29026ad559f8ab4329", "title": "Step 8" },
+    { "id": "68c28c6517e7de5e85f8ebe5", "title": "Step 9" },
+    { "id": "68c28cfab52fef6913d18166", "title": "Step 10" },
+    { "id": "68c28d659d345270d4a61084", "title": "Step 11" },
+    { "id": "68c2d2414f5e111c02f4db5e", "title": "Step 12" },
+    { "id": "68c2d31a86d5672ca49d4521", "title": "Step 13" }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
