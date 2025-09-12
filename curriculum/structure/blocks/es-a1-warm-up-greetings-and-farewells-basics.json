@@ -1,7 +1,8 @@
 {
-  "name": "A1 Professional Spanish Placeholder Block",
+  "name": "Greetings and Farewells Basics",
   "isUpcomingChange": true,
-  "dashedName": "a1-professional-spanish-placeholder-block",
+  "blockType": "warm-up",
+  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
   "helpCategory": "English",
   "challengeOrder": [
     {
