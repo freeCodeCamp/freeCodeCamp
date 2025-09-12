@@ -4865,6 +4865,7 @@
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
         "intro": ["Learn the basics of greetings and farewells in Spanish."]
+<<<<<<< HEAD
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Greetings During the Day",
@@ -4881,6 +4882,8 @@
       "es-a1-quiz-greetings-and-farewells": {
         "title": "Greetings and Farewells Quiz",
         "intro": ["", ""]
+=======
+>>>>>>> 4866ebb903 (implemented chapter structure and addressed coming soon error issue)
       }
     }
   },

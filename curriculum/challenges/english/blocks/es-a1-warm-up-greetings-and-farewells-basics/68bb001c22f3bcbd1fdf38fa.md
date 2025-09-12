@@ -1,5 +1,6 @@
 ---
 id: 68bb001c22f3bcbd1fdf38fa
+<<<<<<< HEAD
 title: "Task 1"
 challengeType: 19
 dashedName: task-1
@@ -114,3 +115,13 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
   ]
 }
 ```
+=======
+title: "Dialogue 1: Placeholder Challenge"
+challengeType: 21
+dashedName: dialogue-1-placeholder-challenge
+---
+
+# --description--
+
+Placeholder challenge.
+>>>>>>> 4866ebb903 (implemented chapter structure and addressed coming soon error issue)
