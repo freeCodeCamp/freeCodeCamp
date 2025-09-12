@@ -149,6 +149,7 @@ export function OnaInstructions({
                 <code>placeholder</code>
               </Trans>
             </li>
+            <li>{t('learn.local.step-6')}</li>
             <li>{t('learn.local.step-7')}</li>
             <Spacer size='xxs' />
             <Button block={true} onClick={copyUrl}>

@@ -1,15 +1,11 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Spacer, Button } from '@freecodecamp/ui';
+import { Spacer, Button, Alert } from '@freecodecamp/ui';
 
 import { postUserToken } from '../../../utils/ajax';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
-
-import RdbLocalLogoutAlert from './rdb-local-logout-alert';
-import RdbOnaContinueAlert from './rdb-ona-continue-alert';
-import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
 
 interface CodespacesInstructionsProps {
   title: string;
@@ -57,21 +53,19 @@ export function CodespacesInstructions({
   }
 
   function openCodespaces() {
-    const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
-    const codespacesDomain = `https://app.codespaces.com/`;
-    const codespacesUrl = `${codespacesDomain}#${repoUrl}`;
+    const codespacesUrl = `https://codespaces.new/freeCodeCamp/rdb-alpha`;
 
     window.open(codespacesUrl, '_blank');
   }
 
   return (
     <div className='ca-description'>
-      <p>{t('learn.ona.intro')}</p>
+      <p>{t('learn.codespaces.intro')}</p>
       <ol>
         <li>
-          <Trans i18nKey='learn.ona.step-1'>
+          <Trans i18nKey='learn.codespaces.step-1'>
             <a
-              href='https://app.ona.com/login?navigateTo=%2Fsettings%2Fsecrets'
+              href='https://github.com/signup'
               rel='noopener noreferrer'
               target='_blank'
             >
@@ -105,53 +99,58 @@ export function CodespacesInstructions({
               </Button>
               <Spacer size='xs' />
               <li>
-                <Trans i18nKey='learn.ona.sub-step-3'>
+                <Trans i18nKey='learn.codespaces.sub-step-3'>
                   <a
-                    href='https://app.ona.com/settings/secrets'
+                    href='https://github.com/settings/codespaces/secrets/new'
                     rel='noopener noreferrer'
                     target='_blank'
                   >
-                    Ona secrets page
+                    Codespaces secrets page
                   </a>
                 </Trans>
               </li>
               <li>
-                <Trans i18nKey='learn.ona.sub-step-4'>
+                <Trans i18nKey='learn.codespaces.sub-step-4'>
                   <code>placeholder</code>
                 </Trans>
               </li>
               <li>
-                <Trans i18nKey='learn.ona.sub-step-5'>
+                <Trans i18nKey='learn.codespaces.sub-step-5'>
                   <code>placeholder</code>
                 </Trans>
               </li>
-              <Spacer size='xs' />
-              <RdbLocalLogoutAlert title={title} />
+              <li>
+                <Trans i18nKey='learn.codespaces.sub-step-6'>
+                  <code>placeholder</code>
+                  <code>placeholder</code>
+                </Trans>
+              </li>
             </ol>
             <Spacer size='s' />
           </>
         )}
-        <li>{t('learn.ona.step-2')}</li>
-        <li>{t('learn.ona.step-3')}</li>
+        <li>{t('learn.codespaces.step-2')}</li>
+        <li>{t('learn.codespaces.step-3')}</li>
         <li>
-          {t('learn.ona.step-4')}
+          {t('learn.codespaces.step-4')}
           <ul>
-            <li>{t('learn.ona.step-5')}</li>
+            <li>{t('learn.codespaces.step-5')}</li>
             <li>
-              <Trans i18nKey='learn.ona.step-6'>
+              <Trans i18nKey='learn.codespaces.step-6'>
                 <code>placeholder</code>
               </Trans>
             </li>
             <li>
-              <Trans i18nKey='learn.ona.step-7'>
+              <Trans i18nKey='learn.codespaces.step-7'>
                 <code>placeholder</code>
               </Trans>
             </li>
             <li>
-              <Trans i18nKey='learn.ona.step-8'>
+              <Trans i18nKey='learn.codespaces.step-8'>
                 <code>placeholder</code>
               </Trans>
             </li>
+            <li>{t('learn.local.step-6')}</li>
             <li>{t('learn.local.step-7')}</li>
             <Spacer size='xxs' />
             <Button block={true} onClick={copyUrl}>
@@ -161,16 +160,62 @@ export function CodespacesInstructions({
             <li>{t('learn.local.step-8')}</li>
           </ul>
         </li>
-        <li>{t('learn.ona.step-9')}</li>
+        <li>{t('learn.codespaces.step-9')}</li>
       </ol>
       <Spacer size='m' />
-      <RdbOnaContinueAlert course={title} />
-      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
+      <CodespacesContinueAlert title={title} />
+      {isSignedIn && <CodespacesLogoutAlert course={title} />}
       <CodeAllyButton
         challengeType={challengeType}
         // eslint-disable-next-line @typescript-eslint/no-misused-promises
         onClick={startCourse}
       />
     </div>
+  );
+}
+
+interface CodespacesContinueAlertProps {
+  title: string;
+}
+
+function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
+  return (
+    <Alert variant='info'>
+      <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
+        <a
+          href='https://codespaces.new/freeCodeCamp/rdb-alpha'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          placeholder
+        </a>
+      </Trans>
+      <Spacer size='m' />
+      <Trans i18nKey='learn.codespaces.learn-more'>
+        <a
+          href='https://forum.freecodecamp.org/t/relational-database-curriculum-in-codespaces/761449'
+          rel='noopener noreferrer'
+          target='_blank'
+        >
+          placeholder
+        </a>
+      </Trans>
+    </Alert>
+  );
+}
+
+interface CodespacesLogoutAlertProps {
+  course: string;
+}
+
+function CodespacesLogoutAlert({
+  course
+}: CodespacesLogoutAlertProps): JSX.Element {
+  const { t } = useTranslation();
+
+  return (
+    <Alert variant='danger'>
+      {t('learn.codespaces.logout-warning', { course })}
+    </Alert>
   );
 }
