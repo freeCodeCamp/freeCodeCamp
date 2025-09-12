@@ -21,38 +21,37 @@ Modify the `createManyPeople` function to create many people using `Model.create
 Creating many db items at once should succeed
 
 ```js
-  $.ajax({
-    url: code + '/_api/create-many-people',
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify([
+  const response = await fetch(code + '/_api/create-many-people', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify([
       { name: 'John', age: 24, favoriteFoods: ['pizza', 'salad'] },
       { name: 'Mary', age: 21, favoriteFoods: ['onions', 'chicken'] }
     ])
-  }).then(
-    (data) => {
-      assert.isArray(data, 'the response should be an array');
-      assert.equal(
-        data.length,
-        2,
-        'the response does not contain the expected number of items'
-      );
-      assert.equal(data[0].name, 'John', 'The first item is not correct');
-      assert.equal(
-        data[0].__v,
-        0,
-        'The first item should be not previously edited'
-      );
-      assert.equal(data[1].name, 'Mary', 'The second item is not correct');
-      assert.equal(
-        data[1].__v,
-        0,
-        'The second item should be not previously edited'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isArray(data, 'the response should be an array');
+  assert.equal(
+    data.length,
+    2,
+    'the response does not contain the expected number of items'
+  );
+  assert.equal(data[0].name, 'John', 'The first item is not correct');
+  assert.equal(
+    data[0].__v,
+    0,
+    'The first item should be not previously edited'
+  );
+  assert.equal(data[1].name, 'Mary', 'The second item is not correct');
+  assert.equal(
+    data[1].__v,
+    0,
+    'The second item should be not previously edited'
   );
 ```
 
