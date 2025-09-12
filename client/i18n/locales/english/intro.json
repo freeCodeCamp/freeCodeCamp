@@ -4423,7 +4423,6 @@
         "title": "Error Handling Review",
         "intro": [
           "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
         ]
       },
       "quiz-error-handling": {
@@ -4502,7 +4501,6 @@
         "title": "Object Oriented Programming Review",
         "intro": [
           "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4596,7 +4594,6 @@
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
           "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4633,7 +4630,6 @@
         "title": "Graphs and Trees Review",
         "intro": [
           "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4656,7 +4652,6 @@
         "title": "Dynamic Programming Review",
         "intro": [
           "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
         ]
       },
       "quiz-dynamic-programming": {
