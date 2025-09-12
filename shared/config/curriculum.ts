@@ -34,7 +34,8 @@ export enum SuperBlocks {
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
   DevPlayground = 'dev-playground',
-  FullStackOpen = 'full-stack-open'
+  FullStackOpen = 'full-stack-open',
+  Js2025 = 'javascript-2025'
 }
 
 export const languageSuperBlocks = [
@@ -120,6 +121,7 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.FullStackOpen,
+    SuperBlocks.Js2025,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -162,7 +164,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -178,7 +181,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -194,7 +198,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -210,7 +215,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -224,7 +230,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -237,7 +244,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -251,7 +259,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -274,7 +283,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -304,7 +314,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -335,7 +346,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.RosettaCode,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.Js2025
   ]
 };
 
@@ -343,7 +355,8 @@ Object.freeze(notAuditedSuperBlocks);
 
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
-  SuperBlocks.FullStackOpen
+  SuperBlocks.FullStackOpen,
+  SuperBlocks.Js2025
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

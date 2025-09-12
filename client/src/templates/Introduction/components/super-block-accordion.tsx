@@ -9,8 +9,10 @@ import DropDown from '../../../assets/icons/dropdown';
 // from the curriculum
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
+import javascript2025 from '../../../../../curriculum/structure/superblocks/javascript-2025.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
+import { type Chapter } from '../../../../../shared/config/chapters';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import { type Module } from '../../../../../shared/config/modules';
@@ -174,12 +176,16 @@ export const SuperBlockAccordion = ({
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks) {
+  function getSuperblockStructure(superBlock: SuperBlocks): {
+    chapters: Chapter[];
+  } {
     switch (superBlock) {
       case SuperBlocks.FullStackOpen:
         return fullStackOpen;
       case SuperBlocks.FullStackDeveloper:
         return fullStackCert;
+      case SuperBlocks.Js2025:
+        return javascript2025;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }
