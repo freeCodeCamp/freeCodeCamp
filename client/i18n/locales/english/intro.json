@@ -4847,6 +4847,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "learn-tsx-by-building-a-resume-builder": {
+        "title": "Learn TSX by Building a Resume Builder",
+        "intro": ["Learn TSX by Building a Resume Builder", ""]
       }
     }
   },
