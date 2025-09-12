@@ -11,7 +11,19 @@
     },
     {
       "id": "68c128cbd77e4ba9ed671937",
-      "title": "What Are Getters and Setters?"
+      "title": "What are Getters and Setters"
+    },
+    {
+      "id": "68c3ba8940e4df8afa83a723",
+      "title": "What Is Inheritance and How Does It Promote Code Reuse?"
+    },
+    {
+      "id": "68c3bc4ddb7b469fb7d17c28",
+      "title": "What Is Polymorphism and How Does It Promote Code Reuse?"
+    },
+    {
+      "id": "68c3bc80f67363a31791fe1c",
+      "title": "What Is Abstraction and How Does It Help Keep Complex Systems Organized?"
     }
   ],
   "helpCategory": "Python"
