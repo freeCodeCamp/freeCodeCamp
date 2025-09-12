@@ -626,7 +626,8 @@
             "lecture-working-with-generics-and-type-narrowing",
             "lecture-working-with-typescript-configuration-files",
             "review-typescript",
-            "quiz-typescript"
+            "quiz-typescript",
+            "build-a-digital-pet-game"
           ]
         },
         {
@@ -712,7 +713,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -871,26 +871,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -907,11 +895,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,
