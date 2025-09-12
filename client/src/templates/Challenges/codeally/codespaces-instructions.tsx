@@ -1,101 +1,68 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
 import { Spacer, Button } from '@freecodecamp/ui';
+
 import { postUserToken } from '../../../utils/ajax';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-
-import {
-  isSignedInSelector,
-  userTokenSelector
-} from '../../../redux/selectors';
-import { updateUserToken } from '../../../redux/actions';
+import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 import RdbLocalLogoutAlert from './rdb-local-logout-alert';
+import RdbOnaContinueAlert from './rdb-ona-continue-alert';
+import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
 
-const mapStateToProps = (state: unknown) => ({
-  isSignedIn: isSignedInSelector(state),
-  userToken: userTokenSelector(state) as string | null
-});
-
-const mapDispatchToProps = {
-  createFlashMessage,
-  updateUserToken
-};
-
-interface RdbOnaInstructionsProps {
-  course: string;
+interface CodespacesInstructionsProps {
+  title: string;
   createFlashMessage: typeof createFlashMessage;
   isSignedIn: boolean;
-  updateUserToken: (arg0: string) => void;
-  url: string;
   userToken: string | null;
+  generateUserToken: () => Promise<void>;
+  copyUserToken: () => void;
+  copyUrl: () => void;
+  updateUserToken: (token: string) => void;
+  challengeType: number;
 }
 
-function RdbOnaInstructions({
-  course,
-  createFlashMessage,
+export function CodespacesInstructions({
+  title,
   isSignedIn,
+  generateUserToken,
+  copyUserToken,
+  copyUrl,
+  userToken,
   updateUserToken,
-  url,
-  userToken
-}: RdbOnaInstructionsProps): JSX.Element {
+  challengeType
+}: CodespacesInstructionsProps) {
   const { t } = useTranslation();
 
-  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
+  async function startCourse() {
+    if (!isSignedIn) {
+      openCodespaces();
+    } else if (!userToken) {
+      const createUserTokenResponse = await postUserToken();
+      const { data = { userToken: null } } = createUserTokenResponse;
 
-  const generateUserToken = async () => {
-    const createUserTokenResponse = await postUserToken();
-    const { data = { userToken: null } } = createUserTokenResponse;
-
-    if (data?.userToken) {
-      updateUserToken(data.userToken);
-      createFlashMessage({
-        type: 'success',
-        message: FlashMessages.UserTokenGenerated
-      });
+      if (data?.userToken) {
+        updateUserToken(data.userToken);
+        openCodespaces();
+      } else {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.StartProjectErr
+        });
+      }
     } else {
-      createFlashMessage({
-        type: 'danger',
-        message: FlashMessages.UserTokenGenerateError
-      });
+      openCodespaces();
     }
-  };
+  }
 
-  const copyUserToken = () => {
-    navigator.clipboard.writeText(userToken ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.UserTokenCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.UserTokenCopyError
-        });
-      }
-    );
-  };
+  function openCodespaces() {
+    const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
+    const codespacesDomain = `https://app.codespaces.com/`;
+    const codespacesUrl = `${codespacesDomain}#${repoUrl}`;
 
-  const copyUrl = () => {
-    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.CourseUrlCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.CourseUrlCopyError
-        });
-      }
-    );
-  };
+    window.open(codespacesUrl, '_blank');
+  }
 
   return (
     <div className='ca-description'>
@@ -159,7 +126,7 @@ function RdbOnaInstructions({
                 </Trans>
               </li>
               <Spacer size='xs' />
-              <RdbLocalLogoutAlert course={course} />
+              <RdbLocalLogoutAlert title={title} />
             </ol>
             <Spacer size='s' />
           </>
@@ -196,10 +163,14 @@ function RdbOnaInstructions({
         </li>
         <li>{t('learn.ona.step-9')}</li>
       </ol>
+      <Spacer size='m' />
+      <RdbOnaContinueAlert course={title} />
+      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
+      <CodeAllyButton
+        challengeType={challengeType}
+        // eslint-disable-next-line @typescript-eslint/no-misused-promises
+        onClick={startCourse}
+      />
     </div>
   );
 }
-
-RdbOnaInstructions.displayName = 'RdbOnaInstructions';
-
-export default connect(mapStateToProps, mapDispatchToProps)(RdbOnaInstructions);
