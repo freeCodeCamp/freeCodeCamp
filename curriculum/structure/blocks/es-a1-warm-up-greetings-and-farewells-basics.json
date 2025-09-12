@@ -1,14 +1,14 @@
 {
   "name": "Greetings and Farewells Basics",
+  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
   "isUpcomingChange": true,
   "blockType": "warm-up",
-  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
+  "blockLayout": "dialogue-grid",
   "helpCategory": "English",
   "challengeOrder": [
     {
       "id": "68bb001c22f3bcbd1fdf38fa",
       "title": "Dialogue 1: Placeholder Challenge"
     }
-  ],
-  "blockLayout": "project-list"
+  ]
 }
