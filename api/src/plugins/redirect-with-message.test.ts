@@ -1,3 +1,4 @@
+import { describe, test, expect, beforeEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import qs from 'query-string';
 
@@ -14,7 +15,7 @@ const isString = (value: unknown): value is string => {
 };
 
 describe('redirectWithMessage plugin', () => {
-  it('should decorate reply object with redirectWithMessage method', async () => {
+  test('should decorate reply object with redirectWithMessage method', async () => {
     expect.assertions(3);
 
     const fastify = await setupServer();
@@ -39,7 +40,7 @@ describe('redirectWithMessage plugin', () => {
       fastify = await setupServer();
     });
 
-    it('should redirect to the first argument', async () => {
+    test('should redirect to the first argument', async () => {
       fastify.get('/', (_req, reply) => {
         return reply.redirectWithMessage('/target', {
           type: 'info',
@@ -55,7 +56,7 @@ describe('redirectWithMessage plugin', () => {
       expect(res.statusCode).toEqual(302);
     });
 
-    it('should convert the second argument into a query string', async () => {
+    test('should convert the second argument into a query string', async () => {
       fastify.get('/', (_req, reply) => {
         return reply.redirectWithMessage('/target', {
           type: 'info',
@@ -70,7 +71,7 @@ describe('redirectWithMessage plugin', () => {
       expect(res.headers.location).toMatch(/^\/target\?messages=info/);
     });
 
-    it('should encode the message twice when creating the query string', async () => {
+    test('should encode the message twice when creating the query string', async () => {
       const expectedMessage = { danger: ['foo bar'] };
 
       fastify.get('/', (_req, reply) => {

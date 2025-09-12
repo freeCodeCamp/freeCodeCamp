@@ -1,5 +1,6 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
+import { omit } from 'lodash';
 import { submitTypes } from '../../../shared/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared/config/curriculum';
@@ -110,11 +111,20 @@ export function buildExtCurriculumDataV1(
           Block<Record<string, unknown>>
         >{};
 
-        superBlock[superBlockKey]['blocks'][blockName]['desc'] =
-          intros[superBlockKey]['blocks'][blockName]['intro'];
+        const block = intros[superBlockKey]['blocks'][blockName];
 
-        superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
-          curriculum[superBlockKey]['blocks'][blockName]['meta'];
+        if (!block) {
+          throw Error(
+            `Block ${blockName} not found in intros for ${superBlockKey}`
+          );
+        }
+
+        superBlock[superBlockKey]['blocks'][blockName]['desc'] = block['intro'];
+
+        superBlock[superBlockKey]['blocks'][blockName]['challenges'] = omit(
+          curriculum[superBlockKey]['blocks'][blockName]['meta'],
+          ['chapter', 'module']
+        );
 
         const blockChallenges =
           curriculum[superBlockKey]['blocks'][blockName]['challenges'];

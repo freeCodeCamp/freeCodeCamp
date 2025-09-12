@@ -1,0 +1,31 @@
+services:
+  devcontainer:
+    depends_on:
+      - mongo-db
+      - mongo-setup
+    image: mcr.microsoft.com/devcontainers/typescript-node:22
+    volumes:
+      - ../..:/workspaces:cached
+    network_mode: service:mongo-db
+    command: sleep infinity
+
+  mongo-db:
+    image: mongo
+    command: mongod --replSet rs0
+    restart: unless-stopped
+    volumes:
+      - mongodb-data:/data/db
+  mongo-setup:
+    image: mongo
+    depends_on:
+      - mongo-db
+    restart: on-failure
+    entrypoint: [
+        'bash',
+        '-c',
+        # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+        'mongosh --host mongo-db:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+      ]
+
+volumes:
+  mongodb-data:

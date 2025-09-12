@@ -41,7 +41,7 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           <div className='button-wrapper'>
             <Button
               block={true}
-              href={`/learn/daily-coding-challenge?date=${getTodayUsCentral()}`}
+              href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
             >
               {t(`buttons.go-to-today-long`)}
             </Button>

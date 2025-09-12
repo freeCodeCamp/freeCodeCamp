@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import { getFallbackFullStackDate } from './certificate-utils';
 
 const fullStackChallenges = [
@@ -29,17 +30,17 @@ const fullStackChallenges = [
 
 describe('helper functions', () => {
   describe('getFallbackFullStackDate', () => {
-    it('should return the date of the latest completed challenge', () => {
+    test('should return the date of the latest completed challenge', () => {
       expect(getFallbackFullStackDate(fullStackChallenges, 123)).toBe(
         1685210952511
       );
     });
 
-    it('should fall back to completedDate if no certifications are provided', () => {
+    test('should fall back to completedDate if no certifications are provided', () => {
       expect(getFallbackFullStackDate([], 123)).toBe(123);
     });
 
-    it('should fall back to completedDate if none of the certifications have been completed', () => {
+    test('should fall back to completedDate if none of the certifications have been completed', () => {
       expect(
         getFallbackFullStackDate([{ completedDate: 567, id: 'abc' }], 123)
       ).toBe(123);

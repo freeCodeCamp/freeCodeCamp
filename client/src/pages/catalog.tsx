@@ -33,8 +33,8 @@ const CatalogPage = () => {
                 <div className='catalog-item-top'>
                   <h2>{title}</h2>
                   <hr />
-                  {summary.map(text => (
-                    <p key='text'>{text}</p>
+                  {summary.map((text, i) => (
+                    <p key={i}>{text}</p>
                   ))}
                 </div>
                 <div className='catalog-item-bottom'>

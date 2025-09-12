@@ -1,4 +1,5 @@
-import { setupServer, superRequest } from '../../../jest.utils';
+import { describe, test, expect } from 'vitest';
+import { setupServer, superRequest } from '../../../vitest.utils';
 import { DEPLOYMENT_VERSION } from '../../utils/env';
 
 describe('/status', () => {

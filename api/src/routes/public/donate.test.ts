@@ -1,4 +1,5 @@
-import { setupServer, superRequest } from '../../../jest.utils';
+import { describe, test, expect, beforeAll, vi } from 'vitest';
+import { setupServer, superRequest } from '../../../vitest.utils';
 
 const testEWalletEmail = 'baz@bar.com';
 const testSubscriptionId = 'sub_test_id';
@@ -19,14 +20,14 @@ const createStripePaymentIntentReqBody = {
   token: { id: 'tok_123' },
   ...sharedDonationReqBody
 };
-const mockSubCreate = jest.fn();
-const mockAttachPaymentMethod = jest.fn(() =>
+const mockSubCreate = vi.fn();
+const mockAttachPaymentMethod = vi.fn(() =>
   Promise.resolve({
     id: 'pm_1MqLiJLkdIwHu7ixUEgbFdYF',
     object: 'payment_method'
   })
 );
-const mockCustomerCreate = jest.fn(() =>
+const mockCustomerCreate = vi.fn(() =>
   Promise.resolve({
     id: testCustomerId,
     name: 'Jest_User',
@@ -50,11 +51,11 @@ const mockSubRetrieveObj = {
   customer: testCustomerId,
   status: 'active'
 };
-const mockSubRetrieve = jest.fn(() => Promise.resolve(mockSubRetrieveObj));
-const mockCheckoutSessionCreate = jest.fn(() =>
+const mockSubRetrieve = vi.fn(() => Promise.resolve(mockSubRetrieveObj));
+const mockCheckoutSessionCreate = vi.fn(() =>
   Promise.resolve({ id: 'checkout_session_id' })
 );
-const mockCustomerUpdate = jest.fn();
+const mockCustomerUpdate = vi.fn();
 const generateMockSubCreate = (status: string) => () =>
   Promise.resolve({
     id: testSubscriptionId,
@@ -65,27 +66,29 @@ const generateMockSubCreate = (status: string) => () =>
       }
     }
   });
-jest.mock('stripe', () => {
-  return jest.fn().mockImplementation(() => {
-    return {
-      customers: {
-        create: mockCustomerCreate,
-        update: mockCustomerUpdate
-      },
-      paymentMethods: {
-        attach: mockAttachPaymentMethod
-      },
-      subscriptions: {
-        create: mockSubCreate,
-        retrieve: mockSubRetrieve
-      },
-      checkout: {
-        sessions: {
-          create: mockCheckoutSessionCreate
+vi.mock('stripe', () => {
+  return {
+    default: vi.fn().mockImplementation(() => {
+      return {
+        customers: {
+          create: mockCustomerCreate,
+          update: mockCustomerUpdate
+        },
+        paymentMethods: {
+          attach: mockAttachPaymentMethod
+        },
+        subscriptions: {
+          create: mockSubCreate,
+          retrieve: mockSubRetrieve
+        },
+        checkout: {
+          sessions: {
+            create: mockCheckoutSessionCreate
+          }
         }
-      }
-    };
-  });
+      };
+    })
+  };
 });
 
 describe('Donate', () => {

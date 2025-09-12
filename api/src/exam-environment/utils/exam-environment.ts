@@ -41,7 +41,7 @@ export function checkPrerequisites(
 
 export type UserExam = Omit<
   ExamEnvironmentExam,
-  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated'
+  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated' | 'version'
 > & {
   config: Omit<ExamEnvironmentExam['config'], 'tags' | 'questionSets'>;
   questionSets: (Omit<ExamEnvironmentQuestionSet, 'questions'> & {
@@ -280,7 +280,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
  */
 export function generateExam(
   exam: ExamEnvironmentExam
-): Omit<ExamEnvironmentGeneratedExam, 'id'> {
+): Omit<ExamEnvironmentGeneratedExam, 'id' | 'version'> {
   const examCopy = structuredClone(exam);
 
   const TIMEOUT_IN_MS = 5_000;
@@ -302,6 +302,10 @@ export function generateExam(
       questions: shuffledQuestions
     };
   });
+
+  if (examCopy.config.questionSets.length === 0) {
+    throw `${examCopy.id}: Invalid exam config - no question sets config.`;
+  }
 
   // Convert question set config by type: [[all question sets of type], [another type], ...]
   const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(

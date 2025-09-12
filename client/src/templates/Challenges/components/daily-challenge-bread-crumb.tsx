@@ -5,21 +5,18 @@ import { Link } from '../../../components/helpers/index';
 
 import './challenge-title.css';
 import {
-  isValidDateParam,
+  isValidDateString,
   formatDisplayDate
 } from '../../../components/daily-coding-challenge/helpers';
 
-function DailyChallengeBreadCrumb(): JSX.Element {
-  const dateParam =
-    new URLSearchParams(window.location.search).get('date') || '';
-  let displayDate = '';
-
-  if (isValidDateParam(dateParam)) {
-    displayDate = formatDisplayDate(dateParam);
-  }
-
+function DailyChallengeBreadCrumb({
+  dailyChallengeParam
+}: {
+  dailyChallengeParam?: string;
+}): JSX.Element | null {
   const { t } = useTranslation();
-  return (
+
+  return dailyChallengeParam && isValidDateString(dailyChallengeParam) ? (
     <nav
       className='challenge-title-breadcrumbs'
       aria-label={t('aria.breadcrumb-nav')}
@@ -32,12 +29,12 @@ function DailyChallengeBreadCrumb(): JSX.Element {
         </li>
         <li className='breadcrumb-right'>
           <Link to={`/learn/daily-coding-challenge/archive`}>
-            {displayDate}
+            {formatDisplayDate(dailyChallengeParam)}
           </Link>
         </li>
       </ol>
     </nav>
-  );
+  ) : null;
 }
 
 DailyChallengeBreadCrumb.displayName = 'DailyChallengeBreadCrumb';

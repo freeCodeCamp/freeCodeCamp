@@ -11,7 +11,6 @@ window.___loader = { enqueue: () => {}, hovering: () => {} };
 
 const userProps = {
   user: {
-    acceptedPrivacyTerms: true,
     currentChallengeId: 'string',
     email: 'string',
     emailVerified: true,

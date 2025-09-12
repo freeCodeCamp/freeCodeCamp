@@ -238,7 +238,7 @@ function DailyCodingChallengeCalendar({
 
         <Button
           block={true}
-          href={`/learn/daily-coding-challenge?date=${todayUsCentral}`}
+          href={`/learn/daily-coding-challenge/${todayUsCentral}`}
         >
           {t('buttons.go-to-today')}
         </Button>

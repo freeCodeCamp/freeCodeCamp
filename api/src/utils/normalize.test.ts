@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import {
   normalizeTwitter,
   normalizeProfileUI,
@@ -9,17 +10,17 @@ import {
 
 describe('normalize', () => {
   describe('normalizeTwitter', () => {
-    it('returns the input if it is a url', () => {
+    test('returns the input if it is a url', () => {
       const url = 'https://twitter.com/a_generic_user';
       expect(normalizeTwitter(url)).toEqual(url);
     });
-    it('adds the handle to twitter.com if it is not a url', () => {
+    test('adds the handle to twitter.com if it is not a url', () => {
       const handle = '@a_generic_user';
       expect(normalizeTwitter(handle)).toEqual(
         'https://twitter.com/a_generic_user'
       );
     });
-    it('returns undefined  if that is the input', () => {
+    test('returns undefined  if that is the input', () => {
       expect(normalizeTwitter('')).toBeUndefined();
     });
   });
@@ -51,16 +52,16 @@ describe('normalize', () => {
   };
 
   describe('normalizeProfileUI', () => {
-    it('should return the input if it is not null', () => {
+    test('should return the input if it is not null', () => {
       expect(normalizeProfileUI(profileUIInput)).toEqual(profileUIInput);
     });
 
-    it('should return the default profileUI if the input is null', () => {
+    test('should return the default profileUI if the input is null', () => {
       const input = null;
       expect(normalizeProfileUI(input)).toEqual(defaultProfileUI);
     });
 
-    it('should convert all "null" values to "undefined"', () => {
+    test('should convert all "null" values to "undefined"', () => {
       const input = {
         isLocked: null,
         showAbout: false,
@@ -89,7 +90,7 @@ describe('normalize', () => {
   });
 
   describe('normalizeChallenges', () => {
-    it('should remove null values from the input', () => {
+    test('should remove null values from the input', () => {
       const completedChallenges = [
         {
           id: 'a6b0bb188d873cb2c8729495',
@@ -143,7 +144,7 @@ describe('normalize', () => {
   });
 
   describe('normalizeFlags', () => {
-    it('should replace nulls with false', () => {
+    test('should replace nulls with false', () => {
       const flags = {
         isLocked: null,
         showAbout: false,
@@ -160,14 +161,14 @@ describe('normalize', () => {
   });
 
   describe('normalizeDate', () => {
-    it('should return the date as a number', () => {
+    test('should return the date as a number', () => {
       expect(normalizeDate(1)).toEqual(1);
       expect(normalizeDate({ $date: '2023-10-01T00:00:00Z' })).toEqual(
         1696118400000
       );
     });
 
-    it('should throw an error if the date is not in the expected shape', () => {
+    test('should throw an error if the date is not in the expected shape', () => {
       expect(() => normalizeDate('2023-10-01T00:00:00Z')).toThrow(
         'Unexpected date value: "2023-10-01T00:00:00Z"'
       );
@@ -178,13 +179,13 @@ describe('normalize', () => {
   });
 
   describe('normalizeChallengeType', () => {
-    it('should return the challenge type as a number or null', () => {
+    test('should return the challenge type as a number or null', () => {
       expect(normalizeChallengeType(10)).toEqual(10);
       expect(normalizeChallengeType('10')).toEqual(10);
       expect(normalizeChallengeType(null)).toEqual(null);
     });
 
-    it('should throw an error if the challenge type is not in the expected shape', () => {
+    test('should throw an error if the challenge type is not in the expected shape', () => {
       expect(() => normalizeChallengeType('invalid')).toThrow(
         'Unexpected challengeType value: "invalid"'
       );

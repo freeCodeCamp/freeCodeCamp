@@ -20,7 +20,7 @@ export function getTodayUsCentral(dateObj: Date = new Date()) {
 
 // Validate that dateString is in the format yyyy-MM-dd
 // Leading zero's are accepted for single digit month/day
-export function isValidDateParam(dateString: string) {
+export function isValidDateString(dateString: string) {
   const parsedDate = parse(dateString, 'yyyy-MM-dd', new Date());
   return isValid(parsedDate);
 }

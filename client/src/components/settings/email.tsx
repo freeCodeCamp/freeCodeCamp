@@ -32,7 +32,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 type EmailProps = {
   email: string;
   isEmailVerified: boolean;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   t: TFunction;
   updateMyEmail: (email: string) => void;
   updateQuincyEmail: (sendQuincyEmail: boolean) => void;
@@ -250,7 +250,7 @@ function EmailSettings({
       <FullWidthRow>
         <ToggleButtonSetting
           action={t('settings.email.weekly')}
-          flag={sendQuincyEmail}
+          flag={!!sendQuincyEmail}
           flagName='sendQuincyEmail'
           offLabel={t('buttons.no-thanks')}
           onLabel={t('buttons.yes-please')}

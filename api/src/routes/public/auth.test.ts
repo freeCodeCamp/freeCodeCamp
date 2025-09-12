@@ -1,13 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
+import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
 import {
   setupServer,
   superRequest,
   createSuperRequest
-} from '../../../jest.utils';
+} from '../../../vitest.utils';
 import { AUTH0_DOMAIN } from '../../utils/env';
 
-const mockedFetch = jest.fn();
-jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+const mockedFetch = vi.fn();
+vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 const newUserEmail = 'a.n.random@user.com';
 
@@ -25,10 +26,11 @@ const mockAuth0ValidEmail = () => ({
   json: () => ({ email: newUserEmail })
 });
 
-jest.mock('../../utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('../../utils/env', async () => {
+  const actual =
+    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
   return {
-    ...jest.requireActual('../../utils/env'),
+    ...actual,
     FCC_ENABLE_DEV_LOGIN_MODE: false
   };
 });

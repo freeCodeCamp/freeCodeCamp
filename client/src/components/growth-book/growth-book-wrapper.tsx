@@ -98,7 +98,11 @@ const GrowthBookWrapper = ({
         clientLocal: clientLocale
       };
 
-      if (user) {
+      // Needs more checks as the user object is not empty but user is not signed in
+      const isSignedIn =
+        user && user.completedChallenges && user.email && user.joinDate;
+
+      if (isSignedIn) {
         userAttributes = {
           ...userAttributes,
           staff: user.email.includes('@freecodecamp'),

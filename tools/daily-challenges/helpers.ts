@@ -89,7 +89,7 @@ export function combineChallenges({
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
 
-  if (jsTitle.replace('JavaScript ', '') !== pyTitle.replace('Python ', '')) {
+  if (jsTitle !== pyTitle) {
     throw new Error(
       `JavaScript and Python titles do not match for challenge ${challengeNumber}: "${jsTitle}" vs "${pyTitle}"`
     );
@@ -112,7 +112,7 @@ export function combineChallenges({
     // **DO NOT CHANGE THE ID** it's used as the challenge ID - and what gets added to completedDailyCodingChallenges[]
     _id: new ObjectId(`${jsId}`),
     challengeNumber,
-    title: jsTitle.replace(`JavaScript Challenge ${challengeNumber}: `, ''),
+    title: jsTitle.replace(`Challenge ${challengeNumber}: `, ''),
     date,
     description: removeSection(jsDescription),
     javascript: {

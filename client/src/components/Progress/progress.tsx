@@ -16,7 +16,7 @@ import { updateAllChallengesInfo } from '../../redux/actions';
 import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
 import { getIsDailyCodingChallenge } from '../../../../shared/config/challenge-types';
 import {
-  isValidDateParam,
+  isValidDateString,
   formatDisplayDate
 } from '../daily-coding-challenge/helpers';
 import ProgressInner from './progress-inner';
@@ -81,7 +81,7 @@ function Progress({
     const dateParam =
       new URLSearchParams(window.location.search).get('date') || '';
 
-    if (isValidDateParam(dateParam)) {
+    if (isValidDateString(dateParam)) {
       blockTitle += `: ${formatDisplayDate(dateParam)}`;
     }
   }

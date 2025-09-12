@@ -8,9 +8,7 @@ import {
   ExamEnvironmentQuestionSet
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-// import { defaultUserId } from '../jest.utils';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
-// import { generateExam } from '../src/exam-environment/utils/exam';
 
 export const oid = () => new ObjectId().toString();
 
@@ -248,7 +246,8 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
         }
       ]
     }
-  ]
+  ],
+  version: 1
 };
 
 export const examAttempt: ExamEnvironmentExamAttempt = {
@@ -293,7 +292,8 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
     }
   ],
   startTimeInMS: Date.now(),
-  userId: defaultUserId
+  userId: defaultUserId,
+  version: 1
 };
 
 export const examAttemptSansSubmissionTimeInMS: Static<
@@ -340,7 +340,8 @@ export const exam: ExamEnvironmentExam = {
   config,
   questionSets,
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
-  deprecated: false
+  deprecated: false,
+  version: 1
 };
 
 export async function seedEnvExam() {

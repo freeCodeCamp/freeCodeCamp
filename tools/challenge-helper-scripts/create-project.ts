@@ -5,12 +5,21 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
+import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
+import { SuperBlocks } from '../../shared/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
-  SuperBlocks,
-  superBlockToFolderMap
-} from '../../shared/config/curriculum';
-import { createStepFile, validateBlockName } from './utils';
+  getContentConfig,
+  writeBlockStructure
+} from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
+import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
+import {
+  updateChapterModuleSuperblockStructure,
+  updateSimpleSuperblockStructure
+} from './helpers/create-project';
 
 const helpCategories = [
   'HTML-CSS',
@@ -38,33 +47,103 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  order: number;
+  blockType?: string;
+  blockLayout?: string;
+  questionCount?: number;
+  order?: number;
+  chapter?: string;
+  position?: number;
+  module?: string;
   title?: string;
 }
 
-async function createProject(
-  superBlock: SuperBlocks,
-  block: string,
-  helpCategory: string,
-  order: number,
-  title?: string
-) {
-  if (!title) {
-    title = block;
+async function createProject(projectArgs: CreateProjectArgs) {
+  if (!projectArgs.title) {
+    projectArgs.title = projectArgs.block;
   }
-  void updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createFirstChallenge(superBlock, block);
-  void createMetaJson(
-    superBlock,
-    block,
-    title,
-    helpCategory,
-    order,
-    challengeId
+  const order = projectArgs.order;
+  const chapter = projectArgs.chapter;
+  const module = projectArgs.module;
+  const position = projectArgs.position;
+
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[projectArgs.superBlock];
+
+  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+    if (!chapter || !module || typeof position == 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+    void updateChapterModuleSuperblockStructure(
+      projectArgs.block,
+      { order: position, chapter, module },
+      superblockFilename
+    );
+  } else {
+    if (typeof order == 'undefined') {
+      throw Error('Missing argument: order');
+    }
+    void updateSimpleSuperblockStructure(
+      projectArgs.block,
+      { order },
+      superblockFilename
+    );
+  }
+
+  void updateIntroJson(
+    projectArgs.superBlock,
+    projectArgs.block,
+    projectArgs.title
   );
-  // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+
+  if (projectArgs.blockType === BlockTypes.quiz) {
+    if (projectArgs.questionCount == null) {
+      throw new Error(
+        'Property `questionCount` is null when creating new Quiz Challenge'
+      );
+    }
+    const challengeId = await createQuizChallenge(
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.questionCount
+    );
+    void createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId
+    );
+  } else {
+    const challengeId = await createFirstChallenge(projectArgs.block);
+    void createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId,
+      projectArgs.order,
+      projectArgs.blockType,
+      projectArgs.blockLayout
+    );
+    // TODO: remove once we stop relying on markdown in the client.
+  }
+
+  if (
+    (projectArgs.superBlock === SuperBlocks.FullStackDeveloper &&
+      projectArgs.blockType) == null
+  ) {
+    throw new Error('Missing argument: blockType when updating intro markdown');
+  }
+
+  void createIntroMD(
+    projectArgs.superBlock,
+    projectArgs.block,
+    projectArgs.title
+  );
 }
 
 async function updateIntroJson(
@@ -79,7 +158,7 @@ async function updateIntroJson(
   const newIntro = await parseJson<IntroJson>(introJsonPath);
   newIntro[superBlock].blocks[block] = {
     title,
-    intro: ['', '']
+    intro: [title, '']
   };
   void withTrace(
     fs.writeFile,
@@ -93,64 +172,36 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  order: number,
-  challengeId: ObjectID
+  challengeId: ObjectID,
+  order?: number,
+  blockType?: string,
+  blockLayout?: string
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
-  const newMeta = getBaseMeta('Step');
+  let newMeta;
+  if (superBlock === SuperBlocks.FullStackDeveloper) {
+    newMeta = getBaseMeta('FullStack');
+    newMeta.blockType = blockType;
+    newMeta.blockLayout = blockLayout;
+  } else {
+    newMeta = getBaseMeta('Step');
+    newMeta.order = order;
+  }
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.order = order;
-  newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
+  await writeBlockStructure(block, newMeta);
 }
 
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
+async function createFirstChallenge(block: string): Promise<ObjectID> {
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
 
-## Introduction to the ${title}
-
-This is a test for the new project-based curriculum.
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
-}
-
-async function createFirstChallenge(
-  superBlock: SuperBlocks,
-  block: string
-): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
 
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
@@ -168,6 +219,26 @@ async function createFirstChallenge(
     challengeType: 0,
     challengeSeeds,
     isFirstChallenge: true
+  });
+}
+
+async function createQuizChallenge(
+  block: string,
+  title: string,
+  questionCount: number
+): Promise<ObjectID> {
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createQuizFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -195,7 +266,7 @@ void prompt([
   {
     name: 'superBlock',
     message: 'Which certification does this belong to?',
-    default: SuperBlocks.RespWebDesign,
+    default: SuperBlocks.FullStackDeveloper,
     type: 'list',
     choices: Object.values(SuperBlocks)
   },
@@ -219,6 +290,74 @@ void prompt([
     choices: helpCategories
   },
   {
+    name: 'blockType',
+    message: 'Choose a block type',
+    default: BlockTypes.lab,
+    type: 'list',
+    choices: Object.values(BlockTypes),
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'blockLayout',
+    message: 'Choose a block layout',
+
+    default: (answers: { blockType: BlockTypes }) =>
+      answers.blockType == BlockTypes.quiz
+        ? BlockLayouts.Link
+        : BlockLayouts.ChallengeList,
+    type: 'list',
+    choices: Object.values(BlockLayouts),
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'questionCount',
+    message: 'Choose a question count',
+    default: 20,
+    type: 'list',
+    choices: [10, 20],
+    when: (answers: CreateProjectArgs) => answers.blockType === BlockTypes.quiz
+  },
+  {
+    name: 'chapter',
+    message:
+      'What chapter in full-stack.json should this full stack project go in?',
+    default: 'html',
+    type: 'list',
+    choices: fullStackData.chapters.map(x => x.dashedName),
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'module',
+    message:
+      'What module in full-stack.json should this full stack project go in?',
+    default: 'html',
+    type: 'list',
+    choices: (answers: CreateProjectArgs) =>
+      fullStackData.chapters
+        .find(x => x.dashedName === answers.chapter)
+        ?.modules.map(x => x.dashedName),
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper
+  },
+  {
+    name: 'position',
+    message: 'At which position does this appear in the module?',
+    default: 1,
+    validate: (position: string) => {
+      return parseInt(position, 10) > 0
+        ? true
+        : 'Position must be an number greater than zero.';
+    },
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock === SuperBlocks.FullStackDeveloper,
+    filter: (position: string) => {
+      return parseInt(position, 10);
+    }
+  },
+  {
     name: 'order',
     message: 'Which position does this appear in the certificate?',
     default: 42,
@@ -227,6 +366,8 @@ void prompt([
         ? true
         : 'Order must be an number greater than zero.';
     },
+    when: (answers: CreateProjectArgs) =>
+      answers.superBlock !== SuperBlocks.FullStackDeveloper,
     filter: (order: string) => {
       return parseInt(order, 10);
     }
@@ -238,9 +379,27 @@ void prompt([
       block,
       title,
       helpCategory,
+      blockType,
+      blockLayout,
+      questionCount,
+      chapter,
+      module,
+      position,
       order
     }: CreateProjectArgs) =>
-      await createProject(superBlock, block, helpCategory, order, title)
+      await createProject({
+        superBlock,
+        block,
+        helpCategory,
+        blockType,
+        blockLayout,
+        questionCount,
+        title,
+        chapter,
+        module,
+        position,
+        order
+      })
   )
   .then(() =>
     console.log(

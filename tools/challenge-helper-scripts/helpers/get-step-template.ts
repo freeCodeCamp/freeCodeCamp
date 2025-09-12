@@ -24,7 +24,7 @@ type StepOptions = {
   challengeId: ObjectID;
   challengeSeeds: Record<string, ChallengeSeed>;
   stepNum: number;
-  challengeType: number;
+  challengeType?: number;
   isFirstChallenge?: boolean;
 };
 
@@ -79,7 +79,7 @@ demoType: onClick`
     `---
 id: ${challengeId.toString()}
 title: Step ${stepNum}
-challengeType: ${challengeType}
+challengeType: ${challengeType ?? 'placeholder'}
 dashedName: step-${stepNum}${demoString}
 ---
 

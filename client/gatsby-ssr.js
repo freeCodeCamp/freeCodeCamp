@@ -8,7 +8,11 @@ import i18n from './i18n/config';
 import { stripe } from './src/utils/stripe';
 import { createStore } from './src/redux/create-store';
 import layoutSelector from './utils/gatsby/layout-selector';
-import { getheadTagComponents, getPostBodyComponents } from './utils/tags';
+import {
+  getheadTagComponents,
+  getPostBodyComponents,
+  getPreBodyThemeScript
+} from './utils/tags';
 import GrowthBookProvider from './src/components/growth-book/growth-book-wrapper';
 
 const store = createStore();
@@ -34,9 +38,11 @@ export const wrapPageElement = layoutSelector;
 export const onRenderBody = ({
   pathname,
   setHeadComponents,
+  setPreBodyComponents,
   setPostBodyComponents
 }) => {
   setHeadComponents(getheadTagComponents());
+  setPreBodyComponents(getPreBodyThemeScript());
   setPostBodyComponents(getPostBodyComponents(pathname));
 };
 

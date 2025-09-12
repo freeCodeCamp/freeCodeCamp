@@ -30,7 +30,7 @@ function DailyCodingChallengeWidget({
           block
           size='large'
           className='map-superblock-link'
-          href={`/learn/daily-coding-challenge?date=${getTodayUsCentral()}`}
+          href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
         >
           <div className='daily-coding-challenge-button'>
             <DailyCodingChallengeIcon className='map-icon' />

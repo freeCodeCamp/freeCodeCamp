@@ -39,19 +39,22 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   watcher.on('change', filePath =>
     /\.md?$/.test(filePath)
       ? onSourceChange(filePath)
-          .then(challenge => {
+          .then(challenges => {
             reporter.info(
               `
-File changed at ${filePath}, replacing challengeNode id ${challenge.id}
+File changed at ${filePath}, replacing challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}
               `
             );
-            createVisibleChallenge(challenge, { isReloading: true });
+            challenges.forEach(challenge =>
+              createVisibleChallenge(challenge, { isReloading: true })
+            );
           })
           .catch(e =>
             reporter.error(`fcc-replace-challenge
   attempting to replace ${filePath}
 
   ${e.message}
+  ${e.stack}
 
   `)
           )
@@ -73,13 +76,15 @@ File changed at ${filePath}, replacing challengeNode id ${challenge.id}
           const { path: siblingPath } = entry;
           const relativePath = path.join(blockPath, siblingPath);
           onSourceChange(relativePath)
-            .then(challenge => {
+            .then(challenges => {
               reporter.info(
                 `
-File changed at ${relativePath}, replacing challengeNode id ${challenge.id}
+File changed at ${relativePath}, replacing challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}
             `
               );
-              createVisibleChallenge(challenge);
+              challenges.forEach(challenge =>
+                createVisibleChallenge(challenge)
+              );
             })
             .catch(e =>
               reporter.error(`fcc-replace-challenge
