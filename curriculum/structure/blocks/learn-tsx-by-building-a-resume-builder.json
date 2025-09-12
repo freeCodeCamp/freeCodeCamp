@@ -1,0 +1,11 @@
+{
+  "name": "Learn TSX by Building a Resume Builder",
+  "superBlock": "",
+  "isUpcomingChange": true,
+  "dashedName": "learn-tsx-by-building-a-resume-builder",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68c38d803dabd3da2faa7b14", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true
+}
