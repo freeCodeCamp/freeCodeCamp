@@ -21,6 +21,11 @@ The character and its pair are paired up in an array, and all the arrays are gro
 
 1. You should have a `pairElement` function that takes a string as an argument.
 1. The `pairElement` function should return a 2d array.
+1. When given `A`, the function should pair it with `T`.
+1. When given `T`, the function should pair it with `A`.
+1. When given `C`, the function should pair it with `G`.
+1. When given `G`, the function should pair it with `C`.
+1. Each pair should be returned as an array with the original character first and its complement second.
 
 # --hints--
 
