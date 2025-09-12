@@ -2,58 +2,31 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button } from '@freecodecamp/ui';
 
-import { postUserToken } from '../../../utils/ajax';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 import RdbOnaContinueAlert from './rdb-ona-continue-alert';
 import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
 
 interface OneInstructionsProps {
-  title: string;
-  createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
-  userToken: string | null;
-  generateUserToken: () => Promise<void>;
-  copyUserToken: () => void;
-  copyUrl: () => void;
-  updateUserToken: (token: string) => void;
   challengeType: number;
+  copyUrl: () => void;
+  copyUserToken: () => void;
+  generateUserToken: () => Promise<void>;
+  isSignedIn: boolean;
+  title: string;
+  userToken: string | null;
 }
 
 export function OnaInstructions({
-  title,
-  isSignedIn,
-  generateUserToken,
-  copyUserToken,
+  challengeType,
   copyUrl,
-  userToken,
-  updateUserToken,
-  challengeType
+  copyUserToken,
+  generateUserToken,
+  isSignedIn,
+  title,
+  userToken
 }: OneInstructionsProps) {
   const { t } = useTranslation();
-
-  async function startCourse() {
-    if (!isSignedIn) {
-      openOna();
-    } else if (!userToken) {
-      const createUserTokenResponse = await postUserToken();
-      const { data = { userToken: null } } = createUserTokenResponse;
-
-      if (data?.userToken) {
-        updateUserToken(data.userToken);
-        openOna();
-      } else {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.StartProjectErr
-        });
-      }
-    } else {
-      openOna();
-    }
-  }
 
   function openOna() {
     const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
@@ -164,11 +137,7 @@ export function OnaInstructions({
       <Spacer size='m' />
       <RdbOnaContinueAlert course={title} />
       {isSignedIn && <RdbOnaLogoutAlert course={title} />}
-      <CodeAllyButton
-        challengeType={challengeType}
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-        onClick={startCourse}
-      />
+      <CodeAllyButton challengeType={challengeType} onClick={openOna} />
     </div>
   );
 }

@@ -2,55 +2,28 @@ import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button, Alert } from '@freecodecamp/ui';
 
-import { postUserToken } from '../../../utils/ajax';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
 interface CodespacesInstructionsProps {
-  title: string;
-  createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
-  userToken: string | null;
-  generateUserToken: () => Promise<void>;
-  copyUserToken: () => void;
-  copyUrl: () => void;
-  updateUserToken: (token: string) => void;
   challengeType: number;
+  copyUrl: () => void;
+  copyUserToken: () => void;
+  generateUserToken: () => Promise<void>;
+  isSignedIn: boolean;
+  title: string;
+  userToken: string | null;
 }
 
 export function CodespacesInstructions({
-  title,
-  isSignedIn,
-  generateUserToken,
-  copyUserToken,
+  challengeType,
   copyUrl,
-  userToken,
-  updateUserToken,
-  challengeType
+  copyUserToken,
+  generateUserToken,
+  isSignedIn,
+  title,
+  userToken
 }: CodespacesInstructionsProps) {
   const { t } = useTranslation();
-
-  async function startCourse() {
-    if (!isSignedIn) {
-      openCodespaces();
-    } else if (!userToken) {
-      const createUserTokenResponse = await postUserToken();
-      const { data = { userToken: null } } = createUserTokenResponse;
-
-      if (data?.userToken) {
-        updateUserToken(data.userToken);
-        openCodespaces();
-      } else {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.StartProjectErr
-        });
-      }
-    } else {
-      openCodespaces();
-    }
-  }
 
   function openCodespaces() {
     const codespacesUrl = `https://codespaces.new/freeCodeCamp/rdb-alpha`;
@@ -165,11 +138,7 @@ export function CodespacesInstructions({
       <Spacer size='m' />
       <CodespacesContinueAlert title={title} />
       {isSignedIn && <CodespacesLogoutAlert course={title} />}
-      <CodeAllyButton
-        challengeType={challengeType}
-        // eslint-disable-next-line @typescript-eslint/no-misused-promises
-        onClick={startCourse}
-      />
+      <CodeAllyButton challengeType={challengeType} onClick={openCodespaces} />
     </div>
   );
 }

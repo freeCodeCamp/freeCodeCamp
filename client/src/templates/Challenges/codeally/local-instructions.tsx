@@ -3,28 +3,24 @@ import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button } from '@freecodecamp/ui';
 
 import { Link } from '../../../components/helpers';
-import { createFlashMessage } from '../../../components/Flash/redux';
 import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 
 interface LocalInstructionsProps {
-  title: string;
-  createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
-  updateUserToken: (arg0: string) => void;
-  url: string;
-  userToken: string | null;
-  generateUserToken: () => Promise<void>;
-  copyUserToken: () => void;
   copyUrl: () => void;
+  copyUserToken: () => void;
+  generateUserToken: () => Promise<void>;
+  isSignedIn: boolean;
+  title: string;
+  userToken: string | null;
 }
 
 export function LocalInstructions({
-  title,
-  isSignedIn,
-  generateUserToken,
-  userToken,
+  copyUrl,
   copyUserToken,
-  copyUrl
+  generateUserToken,
+  isSignedIn,
+  title,
+  userToken
 }: LocalInstructionsProps) {
   const { t } = useTranslation();
 

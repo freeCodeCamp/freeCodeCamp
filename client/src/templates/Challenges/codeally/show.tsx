@@ -315,16 +315,13 @@ function ShowCodeAlly({
                     <Spacer size='s' />
                     <SetupComponent
                       {...{
-                        userToken,
-                        title,
-                        url,
-                        isSignedIn,
-                        updateUserToken,
-                        generateUserToken,
+                        challengeType,
                         copyUrl,
                         copyUserToken,
-                        createFlashMessage,
-                        challengeType
+                        generateUserToken,
+                        isSignedIn,
+                        title,
+                        userToken
                       }}
                     />
                   </details>
