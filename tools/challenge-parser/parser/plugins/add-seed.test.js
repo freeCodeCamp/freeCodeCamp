@@ -1,7 +1,8 @@
-const isArray = require('lodash/isArray');
-const parseFixture = require('../__fixtures__/parse-fixture');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import isArray from 'lodash/isArray';
+import parseFixture from '../__fixtures__/parse-fixture';
 
-const addSeed = require('./add-seed');
+import addSeed from './add-seed';
 
 describe('add-seed plugin', () => {
   let adjacentKeysAST,
