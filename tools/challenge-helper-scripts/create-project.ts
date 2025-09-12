@@ -205,13 +205,13 @@ async function createFirstChallenge(block: string): Promise<ObjectID> {
 
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
-  const challengeSeeds = {
-    indexhtml: {
+  const challengeSeeds = [
+    {
       contents: '',
       ext: 'html',
       editableRegionBoundaries: [0, 2]
     }
-  };
+  ];
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
     projectPath: newChallengeDir + '/',

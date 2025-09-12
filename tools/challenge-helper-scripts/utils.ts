@@ -17,7 +17,7 @@ interface Options {
   stepNum: number;
   challengeType?: number;
   projectPath?: string;
-  challengeSeeds?: Record<string, ChallengeSeed>;
+  challengeSeeds?: ChallengeSeed[];
   isFirstChallenge?: boolean;
 }
 
@@ -32,7 +32,7 @@ const createStepFile = ({
   stepNum,
   challengeType,
   projectPath = getProjectPath(),
-  challengeSeeds = {},
+  challengeSeeds = [],
   isFirstChallenge = false
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
@@ -248,11 +248,15 @@ const updateTaskMarkdownFiles = (): void => {
   });
 };
 
-const getChallengeSeeds = (
-  challengeFilePath: string
-): Record<string, ChallengeSeed> => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-  return parseMDSync(challengeFilePath).challengeFiles;
+type Challenge = {
+  challengeType: number;
+  challengeFiles: ChallengeSeed[];
+};
+
+const getChallenge = (challengeId: string): Challenge => {
+  const challengePath = path.join(getProjectPath(), `${challengeId}.md`);
+  const challenge = parseMDSync(challengePath) as Challenge;
+  return challenge;
 };
 
 const validateBlockName = (block: string): boolean | string => {
@@ -272,7 +276,7 @@ export {
   updateStepTitles,
   updateTaskMeta,
   updateTaskMarkdownFiles,
-  getChallengeSeeds,
+  getChallenge,
   insertChallengeIntoMeta,
   insertStepIntoMeta,
   deleteChallengeFromMeta,
