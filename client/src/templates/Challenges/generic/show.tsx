@@ -91,7 +91,8 @@ const ShowGeneric = ({
         scene,
         superBlock,
         videoId,
-        videoLocaleIds
+        videoLocaleIds,
+        showSpeakingButton
       }
     }
   },
@@ -277,6 +278,8 @@ const ShowGeneric = ({
                     handleOptionChange={handleMcqOptionChange}
                     submittedMcqAnswers={submittedMcqAnswers}
                     showFeedback={showFeedback}
+                    showSpeakingButton={showSpeakingButton}
+                    superBlock={superBlock}
                   />
                 </ObserveKeys>
               )}
@@ -348,6 +351,7 @@ export const query = graphql`
           answers {
             answer
             feedback
+            audioId
           }
           solution
         }
@@ -394,6 +398,7 @@ export const query = graphql`
         translationPending
         videoId
         videoId
+        showSpeakingButton
         videoLocaleIds {
           espanol
           italian

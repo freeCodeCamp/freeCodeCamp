@@ -36,6 +36,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -228,6 +229,7 @@ export type ChallengeNode = {
     title: string;
     transcript: string;
     translationPending: boolean;
+    showSpeakingButton?: boolean;
     url: string;
     usesMultifileEditor: boolean;
     videoId: string;
