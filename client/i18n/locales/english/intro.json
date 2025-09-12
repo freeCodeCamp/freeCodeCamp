@@ -4829,6 +4829,13 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "learn-dom-manipulation-with-typescript-by-building-a-flashcard-quiz-app": {
+        "title": "Learn DOM Manipulation with TypeScript by Building a Flashcard Quiz App",
+        "intro": [
+          "Learn DOM Manipulation with TypeScript by Building a Flashcard Quiz App",
+          ""
+        ]
       }
     }
   },
@@ -4978,9 +4985,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
