@@ -519,7 +519,7 @@ async function examEnvironmentTokenHandler(
 
   // In non-production environments, only staff are allowed to generate a token
   if (
-    DEPLOYMENT_ENV !== 'org' &&
+    DEPLOYMENT_ENV !== 'production' &&
     (!req.user?.email?.endsWith('@freecodecamp.org') ||
       !req.user?.emailVerified)
   ) {
@@ -697,6 +697,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           user: {
             [username]: {
               ...removeNulls(publicUser),
+              sendQuincyEmail: publicUser.sendQuincyEmail,
               ...normalizeFlags(flags),
               picture: publicUser.picture ?? '',
               email: email ?? '',

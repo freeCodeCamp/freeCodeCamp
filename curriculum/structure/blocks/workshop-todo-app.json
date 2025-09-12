@@ -4,7 +4,6 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-todo-app",
-  "superBlock": "full-stack-developer",
   "blockLayout": "challenge-grid",
   "blockType": "workshop",
   "challengeOrder": [

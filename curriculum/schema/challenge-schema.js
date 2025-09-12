@@ -126,219 +126,220 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object()
-  .keys({
-    block: Joi.string().regex(slugRE).required(),
-    blockId: Joi.objectId(),
-    blockType: Joi.when('superBlock', {
-      is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
-      then: Joi.valid(
-        'workshop',
-        'lab',
-        'lecture',
-        'review',
-        'quiz',
-        'exam'
-      ).required(),
-      otherwise: Joi.valid(null)
-    }),
-    blockLayout: Joi.valid(
-      'challenge-list',
-      'challenge-grid',
-      'dialogue-grid',
-      'link',
-      'project-list',
-      'legacy-challenge-list',
-      'legacy-link',
-      'legacy-challenge-grid'
+const schema = Joi.object().keys({
+  block: Joi.string().regex(slugRE).required(),
+  blockId: Joi.objectId(),
+  blockType: Joi.when('superBlock', {
+    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    then: Joi.valid(
+      'workshop',
+      'lab',
+      'lecture',
+      'review',
+      'quiz',
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ).required(),
-    challengeOrder: Joi.number(),
-    chapter: Joi.string().when('superBlock', {
-      is: chapterBasedSuperBlocks,
-      then: Joi.required(),
-      otherwise: Joi.optional()
-    }),
-    certification: Joi.string().regex(slugWithSlashRE),
-    challengeType: Joi.number().min(0).max(30).required(),
-    checksum: Joi.number(),
-    // TODO: require this only for normal challenges, not certs
-    dashedName: Joi.string().regex(slugRE),
-    demoType: Joi.string().valid('onClick', 'onLoad'),
-    description: Joi.when('challengeType', {
-      is: [
-        challengeTypes.step,
-        challengeTypes.video,
-        challengeTypes.multipleChoice,
-        challengeTypes.fillInTheBlank
-      ],
-      then: Joi.string().allow(''),
-      otherwise: Joi.string().required()
-    }),
-    disableLoopProtectTests: Joi.boolean().required(),
-    disableLoopProtectPreview: Joi.boolean().required(),
-    explanation: Joi.when('challengeType', {
-      is: [challengeTypes.multipleChoice, challengeTypes.fillInTheBlank],
-      then: Joi.string()
-    }),
-    challengeFiles: Joi.array().items(fileJoi),
-    guideUrl: Joi.string().uri({ scheme: 'https' }),
-    hasEditableBoundaries: Joi.boolean(),
-    helpCategory: Joi.valid(
-      'JavaScript',
-      'HTML-CSS',
-      'Python',
-      'Backend Development',
-      'C-Sharp',
-      'English',
-      'Odin',
-      'Euler',
-      'Rosetta'
-    ),
-    isLastChallengeInBlock: Joi.boolean().required(),
-    videoUrl: Joi.string().allow(''),
-    fillInTheBlank: Joi.object().keys({
-      sentence: Joi.string().required(),
-      blanks: Joi.array()
-        .items(
-          Joi.object().keys({
-            answer: Joi.string().required(),
-            feedback: Joi.string().allow(null)
-          })
-        )
-        .required()
-    }),
-    forumTopicId: Joi.number(),
-    id: Joi.objectId().required(),
-    instructions: Joi.string().when('challengeType', {
-      is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
-      then: Joi.string().min(1).required(),
-      otherwise: Joi.string().allow('')
-    }),
-    isComingSoon: Joi.bool(),
-    isLocked: Joi.bool(),
-    isPrivate: Joi.bool(),
-    module: Joi.string().when('superBlock', {
-      is: chapterBasedSuperBlocks,
-      then: Joi.required(),
-      otherwise: Joi.optional()
-    }),
-    msTrophyId: Joi.when('challengeType', {
-      is: [challengeTypes.msTrophy],
-      then: Joi.string().required()
-    }),
-    notes: Joi.string().allow(''),
-    order: Joi.number(),
-    prerequisites: Joi.when('challengeType', {
-      is: [challengeTypes.exam],
-      then: Joi.array().items(prerequisitesJoi)
-    }),
-    // video challenges only:
-    videoId: Joi.when('challengeType', {
-      is: [challengeTypes.video],
-      then: Joi.string().required()
-    }),
-    videoLocaleIds: Joi.when('challengeType', {
-      is: challengeTypes.video,
-      then: Joi.object().keys({
-        espanol: Joi.string(),
-        italian: Joi.string(),
-        portuguese: Joi.string()
-      })
-    }),
-    bilibiliIds: Joi.when('challengeType', {
-      is: challengeTypes.video,
-      then: Joi.object().keys({
-        aid: Joi.number().required(),
-        bvid: Joi.string().required(),
-        cid: Joi.number().required()
-      })
-    }),
-    questions: Joi.when('challengeType', {
-      is: [
-        challengeTypes.video,
-        challengeTypes.multipleChoice,
-        challengeTypes.theOdinProject
-      ],
-      then: Joi.array().items(questionJoi).min(1).required(),
-      otherwise: Joi.array().length(0)
-    }),
-    quizzes: Joi.when('challengeType', {
-      is: challengeTypes.quiz,
-      then: Joi.array().items(quizJoi).min(1).required(),
-      otherwise: Joi.forbidden()
-    }),
-    required: Joi.array().items(
-      Joi.object().keys({
-        link: Joi.string(),
-        raw: Joi.bool(),
-        src: Joi.string(),
-        crossDomain: Joi.bool()
-      })
-    ),
-    assignments: Joi.when('challengeType', {
-      is: challengeTypes.dialogue,
-      then: Joi.array().items(Joi.string()).required(),
-      otherwise: Joi.array().items(Joi.string())
-    }),
-    scene: Joi.object().keys({
-      setup: setupJoi.required(),
-      commands: Joi.array()
-        .items(commandJoi)
-        .unique(
-          (a, b) =>
-            a.dialogue &&
-            b.dialogue &&
-            !(
-              (a.startTime < b.startTime &&
-                a.finishTime < b.finishTime &&
-                a.finishTime <= b.startTime) ||
-              (b.startTime < a.startTime &&
-                b.finishTime < a.finishTime &&
-                b.finishTime <= a.startTime)
-            )
-        )
-        .messages({
-          'array.unique': 'Dialogues must not have overlapping times.'
-        })
-    }),
-    solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
-    superBlock: Joi.string().regex(slugWithSlashRE),
-    superOrder: Joi.number(),
-    suborder: Joi.number(),
-    hooks: Joi.object().keys({
-      beforeAll: Joi.string().allow(''),
-      beforeEach: Joi.string().allow(''),
-      afterEach: Joi.string().allow('')
-    }),
-    tests: Joi.array()
+    otherwise: Joi.valid(null)
+  }),
+  blockLayout: Joi.valid(
+    'challenge-list',
+    'challenge-grid',
+    'dialogue-grid',
+    'link',
+    'project-list',
+    'legacy-challenge-list',
+    'legacy-link',
+    'legacy-challenge-grid'
+  ).required(),
+  challengeOrder: Joi.number(),
+  chapter: Joi.string().when('superBlock', {
+    is: chapterBasedSuperBlocks,
+    then: Joi.required(),
+    otherwise: Joi.optional()
+  }),
+  certification: Joi.string().regex(slugWithSlashRE),
+  challengeType: Joi.number().min(0).max(31).required(),
+  checksum: Joi.number(),
+  // TODO: require this only for normal challenges, not certs
+  dashedName: Joi.string().regex(slugRE),
+  demoType: Joi.string().valid('onClick', 'onLoad'),
+  description: Joi.when('challengeType', {
+    is: [
+      challengeTypes.step,
+      challengeTypes.video,
+      challengeTypes.multipleChoice,
+      challengeTypes.fillInTheBlank
+    ],
+    then: Joi.string().allow(''),
+    otherwise: Joi.string().required()
+  }),
+  disableLoopProtectTests: Joi.boolean().required(),
+  disableLoopProtectPreview: Joi.boolean().required(),
+  explanation: Joi.when('challengeType', {
+    is: [challengeTypes.multipleChoice, challengeTypes.fillInTheBlank],
+    then: Joi.string()
+  }),
+  challengeFiles: Joi.array().items(fileJoi),
+  guideUrl: Joi.string().uri({ scheme: 'https' }),
+  hasEditableBoundaries: Joi.boolean(),
+  helpCategory: Joi.valid(
+    'JavaScript',
+    'HTML-CSS',
+    'Python',
+    'Backend Development',
+    'C-Sharp',
+    'English',
+    'Odin',
+    'Euler',
+    'Rosetta'
+  ).required(),
+  isLastChallengeInBlock: Joi.boolean().required(),
+  videoUrl: Joi.string().allow(''),
+  fillInTheBlank: Joi.object().keys({
+    sentence: Joi.string().required(),
+    blanks: Joi.array()
       .items(
-        // public challenges
         Joi.object().keys({
-          id: Joi.string().allow(''),
-          text: Joi.string().required(),
-          testString: Joi.string().allow('').required()
-        }),
-        // our tests used in certification verification
-        Joi.object().keys({
-          id: Joi.string().required(),
-          title: Joi.string().required()
+          answer: Joi.string().required(),
+          feedback: Joi.string().allow(null)
         })
       )
-      .required(),
-    template: Joi.string().allow(''),
-    title: Joi.string().required(),
-    transcript: Joi.when('challengeType', {
-      is: [challengeTypes.generic, challengeTypes.video],
-      then: Joi.string()
-    }),
-    translationPending: Joi.bool().required(),
-    url: Joi.when('challengeType', {
-      is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
-      then: Joi.string().required()
-    }),
-    usesMultifileEditor: Joi.boolean()
-  })
-  .xor('helpCategory', 'isPrivate');
+      .required()
+  }),
+  forumTopicId: Joi.number(),
+  id: Joi.objectId().required(),
+  instructions: Joi.string().when('challengeType', {
+    is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
+    then: Joi.string().min(1).required(),
+    otherwise: Joi.string().allow('')
+  }),
+  isComingSoon: Joi.bool(),
+  isLocked: Joi.bool(),
+  module: Joi.string().when('superBlock', {
+    is: chapterBasedSuperBlocks,
+    then: Joi.required(),
+    otherwise: Joi.optional()
+  }),
+  msTrophyId: Joi.when('challengeType', {
+    is: [challengeTypes.msTrophy],
+    then: Joi.string().required()
+  }),
+  notes: Joi.string().allow(''),
+  order: Joi.number(),
+  prerequisites: Joi.when('challengeType', {
+    is: [challengeTypes.exam],
+    then: Joi.array().items(prerequisitesJoi)
+  }),
+  // video challenges only:
+  videoId: Joi.when('challengeType', {
+    is: [challengeTypes.video],
+    then: Joi.string().required()
+  }),
+  videoLocaleIds: Joi.when('challengeType', {
+    is: challengeTypes.video,
+    then: Joi.object().keys({
+      espanol: Joi.string(),
+      italian: Joi.string(),
+      portuguese: Joi.string()
+    })
+  }),
+  bilibiliIds: Joi.when('challengeType', {
+    is: challengeTypes.video,
+    then: Joi.object().keys({
+      aid: Joi.number().required(),
+      bvid: Joi.string().required(),
+      cid: Joi.number().required()
+    })
+  }),
+  questions: Joi.when('challengeType', {
+    is: [
+      challengeTypes.video,
+      challengeTypes.multipleChoice,
+      challengeTypes.theOdinProject
+    ],
+    then: Joi.array().items(questionJoi).min(1).required(),
+    otherwise: Joi.array().length(0)
+  }),
+  quizzes: Joi.when('challengeType', {
+    is: challengeTypes.quiz,
+    then: Joi.array().items(quizJoi).min(1).required(),
+    otherwise: Joi.forbidden()
+  }),
+  required: Joi.array().items(
+    Joi.object().keys({
+      link: Joi.string(),
+      raw: Joi.bool(),
+      src: Joi.string(),
+      crossDomain: Joi.bool()
+    })
+  ),
+  assignments: Joi.when('challengeType', {
+    is: challengeTypes.dialogue,
+    then: Joi.array().items(Joi.string()).required(),
+    otherwise: Joi.array().items(Joi.string())
+  }),
+  scene: Joi.object().keys({
+    setup: setupJoi.required(),
+    commands: Joi.array()
+      .items(commandJoi)
+      .unique(
+        (a, b) =>
+          a.dialogue &&
+          b.dialogue &&
+          !(
+            (a.startTime < b.startTime &&
+              a.finishTime < b.finishTime &&
+              a.finishTime <= b.startTime) ||
+            (b.startTime < a.startTime &&
+              b.finishTime < a.finishTime &&
+              b.finishTime <= a.startTime)
+          )
+      )
+      .messages({
+        'array.unique': 'Dialogues must not have overlapping times.'
+      })
+  }),
+  solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
+  superBlock: Joi.string().regex(slugWithSlashRE),
+  superOrder: Joi.number(),
+  suborder: Joi.number(),
+  hooks: Joi.object().keys({
+    beforeAll: Joi.string().allow(''),
+    beforeEach: Joi.string().allow(''),
+    afterEach: Joi.string().allow(''),
+    afterAll: Joi.string().allow('')
+  }),
+  tests: Joi.array()
+    .items(
+      // public challenges
+      Joi.object().keys({
+        id: Joi.string().allow(''),
+        text: Joi.string().required(),
+        testString: Joi.string().allow('').required()
+      }),
+      // our tests used in certification verification
+      Joi.object().keys({
+        id: Joi.string().required(),
+        title: Joi.string().required()
+      })
+    )
+    .required(),
+  template: Joi.string().allow(''),
+  title: Joi.string().required(),
+  transcript: Joi.when('challengeType', {
+    is: [challengeTypes.generic, challengeTypes.video],
+    then: Joi.string()
+  }),
+  translationPending: Joi.bool().required(),
+  url: Joi.when('challengeType', {
+    is: [challengeTypes.codeAllyPractice, challengeTypes.codeAllyCert],
+    then: Joi.string().required()
+  }),
+  usesMultifileEditor: Joi.boolean()
+});
 
 exports.challengeSchemaValidator = () => {
   return challenge => schema.validate(challenge);

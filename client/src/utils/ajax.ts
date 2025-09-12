@@ -308,7 +308,7 @@ export function postSaveChallenge(body: {
   id: string;
   files: ChallengeFiles;
 }): Promise<ResponseWithData<void>> {
-  return post('/save-challenge', body);
+  return post('/encoded/save-challenge', body);
 }
 
 export function postSubmitSurvey(body: {
@@ -361,9 +361,9 @@ export function putUpdateMyHonesty(
   return put('/update-my-honesty', update);
 }
 
-export function putUpdateMyQuincyEmail(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
+export function putUpdateMyQuincyEmail(update: {
+  sendQuincyEmail: boolean;
+}): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
 }
 
@@ -371,12 +371,6 @@ export function putUpdateMyPortfolio(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-portfolio', update);
-}
-
-export function putUserAcceptsTerms(
-  quincyEmails: boolean
-): Promise<ResponseWithData<void>> {
-  return put('/update-privacy-terms', { quincyEmails });
 }
 
 export function putUserUpdateEmail(

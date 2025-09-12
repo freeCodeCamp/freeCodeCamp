@@ -1443,10 +1443,10 @@
           "У цьому курсі ви навчитесь говорити про хобі та речі, які вас цікавлять. Ви також дізнаєтесь, як запитувати про захоплення інших людей та як запропонувати їм скласти компанію."
         ]
       },
-      "learn-how-to-discuss-roles-and-responsibilies": {
-        "title": "Дізнайтесь, як обговорювати посади та обов’язки",
+      "learn-how-to-discuss-roles-and-responsibilities": {
+        "title": "Learn How to Discuss Roles and Responsibilities",
         "intro": [
-          "У цьому курсі ви обговорюватимете посади та обов’язки людей в компанії й поза нею. Ви дізнаєтеся, як запитувати про посади та обов’язки, а також як ділитися власною інформацією на цю тему."
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
         ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
@@ -2723,38 +2723,6 @@
           "Перевірте, що ви дізнались про доступність вебсторінок із CSS."
         ]
       },
-      "lecture-working-with-attribute-selectors": {
-        "title": "Робота з селекторами атрибутів",
-        "intro": [
-          "In these lectures, you will learn about attribute selectors and how to use them to target elements like links and lists."
-        ]
-      },
-      "workshop-balance-sheet": {
-        "title": "Створіть бухгалтерський баланс",
-        "intro": [
-          "У цьому практичному занятті ви побудуєте бухгалтерський баланс за допомогою псевдоселекторів. Ви дізнаєтеся, як змінити стиль елемента, коли ви наводите на нього курсор, та запускати інші події на вебсторінці."
-        ]
-      },
-      "lab-book-inventory-app": {
-        "title": "Створіть застосунок для інвентаризації книг",
-        "intro": [
-          "У цій лабораторній роботі ви створите застосунок для інвентаризації книг.",
-          "Ви будете практикуватись використовувати селектори атрибутів у CSS, серед яких <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> та багато інших."
-        ]
-      },
-      "review-css-attribute-selectors": {
-        "title": "Повторення селекторів атрибутів у CSS",
-        "intro": [
-          "Перш ніж перейти до тесту «Селектори атрибутів у CSS», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати, як працювати з різними селекторами атрибутів, які націлюють посилання атрибутами <code>href</code> та <code>title</code>."
-        ]
-      },
-      "quiz-css-attribute-selectors": {
-        "title": "Тест «Селектори атрибутів у CSS»",
-        "intro": [
-          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Селектори атрибутів у CSS»."
-        ]
-      },
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
         "title": "Знайомство з вирівнюванням й позиціюванням в CSS",
         "intro": [
@@ -2786,6 +2754,38 @@
         "title": "Тест «Позиціювання в CSS»",
         "intro": [
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Позиціювання в CSS»."
+        ]
+      },
+      "lecture-working-with-attribute-selectors": {
+        "title": "Робота з селекторами атрибутів",
+        "intro": [
+          "In these lectures, you will learn about attribute selectors and how to use them to target elements like links and lists."
+        ]
+      },
+      "workshop-balance-sheet": {
+        "title": "Створіть бухгалтерський баланс",
+        "intro": [
+          "У цьому практичному занятті ви побудуєте бухгалтерський баланс за допомогою псевдоселекторів. Ви дізнаєтеся, як змінити стиль елемента, коли ви наводите на нього курсор, та запускати інші події на вебсторінці."
+        ]
+      },
+      "lab-book-inventory-app": {
+        "title": "Створіть застосунок для інвентаризації книг",
+        "intro": [
+          "У цій лабораторній роботі ви створите застосунок для інвентаризації книг.",
+          "Ви будете практикуватись використовувати селектори атрибутів у CSS, серед яких <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code> та багато інших."
+        ]
+      },
+      "review-css-attribute-selectors": {
+        "title": "Повторення селекторів атрибутів у CSS",
+        "intro": [
+          "Перш ніж перейти до тесту «Селектори атрибутів у CSS», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати, як працювати з різними селекторами атрибутів, які націлюють посилання атрибутами <code>href</code> та <code>title</code>."
+        ]
+      },
+      "quiz-css-attribute-selectors": {
+        "title": "Тест «Селектори атрибутів у CSS»",
+        "intro": [
+          "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Селектори атрибутів у CSS»."
         ]
       },
       "lecture-best-practices-for-responsive-web-design": {
@@ -2865,10 +2865,10 @@
           "У цьому практичному занятті ви створите статтю в журналі. Ви дізнаєтеся, як використовувати сітку, включно з рядками та стовпцями."
         ]
       },
-      "lab-magazine-layout": {
-        "title": "Розробіть макет журналу",
+      "lab-newspaper-layout": {
+        "title": "Design a Newspaper Layout",
         "intro": [
-          "У цій лабораторній роботі ви розробите макет журналу, використовуючи сітку в CSS, включно з рядками та стовпцями."
+          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "lecture-debugging-css": {
@@ -2881,12 +2881,6 @@
         "title": "Створіть посадкову сторінку продукту",
         "intro": [
           "У цьому проєкті ви створите посадкову сторінку продукту, щоб прорекламувати продукт за власним вибором."
-        ]
-      },
-      "lab-profile-lookup": {
-        "title": "Build a Profile Lookup",
-        "intro": [
-          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "review-css-grid": {
@@ -3172,6 +3166,10 @@
           "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
         ]
       },
+      "lab-counting-cards": {
+        "title": "Build a Card Counting Assistant",
+        "intro": ["In this lab you will use JavaScript to count dealt cards."]
+      },
       "lab-leap-year-calculator": {
         "title": "Створіть калькулятор високосних років ",
         "intro": [
@@ -3222,6 +3220,12 @@
           "У цій лабораторній роботі ви пригадаєте, як працювати з масивами й випадковими числами, створивши програму для вибору перекусу."
         ]
       },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
+      },
       "lab-reverse-a-string": {
         "title": "Build a String Inverter",
         "intro": [
@@ -3264,6 +3268,12 @@
         "intro": [
           "У цій лабораторній роботі ви створите ігрову вікторину, використовуючи масиви та об’єкти в JavaScript.",
           "Ви будете практикуватись використовувати функції для випадкового вибору запитання й відповіді з масиву та порівнюватимете їх."
+        ]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
         ]
       },
       "review-javascript-objects": {
@@ -3314,6 +3324,12 @@
         "title": "Імплементуйте алгоритм мавпочки Чанкі",
         "intro": [
           "У цій лабораторній роботі ви навчитесь ділити масив на менші частини, використовуючи метод на власний вибір."
+        ]
+      },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
         ]
       },
       "lab-repeat-a-string": {
@@ -3389,6 +3405,12 @@
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": [
+          "In this lab, you will create a function that removes all falsy values from an array."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Створіть програму керування запасами",
         "intro": [
@@ -3420,6 +3442,12 @@
           "In this lab, you will convert special characters in a string to their corresponding HTML entities."
         ]
       },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
+      },
       "review-javascript-fundamentals": {
         "title": "Повторення основ JavaScript",
         "intro": [
@@ -3449,6 +3477,18 @@
         "title": "Створіть органайзер для книжок",
         "intro": [
           "У цій лабораторній роботі ви створите органайзер для книжок, використовуючи функції вищого порядку в JavaScript."
+        ]
+      },
+      "lab-sorted-index-finder": {
+        "title": "Implement a Sorted Index Finder",
+        "intro": [
+          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
+        ]
+      },
+      "lab-symmetric-difference": {
+        "title": "Build a Symmetric Difference Function",
+        "intro": [
+          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -3512,12 +3552,6 @@
         "title": "Створіть гру «Камінь-ножиці-папір»",
         "intro": [
           "У цьому практичному занятті ви пригадаєте маніпуляцію та події DOM, створивши гру «Камінь-ножиці-папір»."
-        ]
-      },
-      "lab-palindrome-checker": {
-        "title": "Створіть перевірку паліндрома",
-        "intro": [
-          "У цій лабораторній роботі ви створите застосунок, який перевіряє, чи слово є паліндромом."
         ]
       },
       "lab-football-team-cards": {
@@ -3613,6 +3647,12 @@
         "intro": [
           "Регулярні вирази (відомі як «regex» або «regexp») — це шаблони, які допомагають програмістам поєднувати, шукати та замінювати текст. Регулярні вирази надзвичайно потужні, але їх важко зрозуміти, оскільки у них використовуються спеціальні символи.",
           "У цьому практичному занятті ви будете використовувати групи захоплення, позитивні та негативні перевірки, а також інші техніки, щоб текст відповідав бажаному."
+        ]
+      },
+      "lab-palindrome-checker": {
+        "title": "Створіть перевірку паліндрома",
+        "intro": [
+          "У цій лабораторній роботі ви створите застосунок, який перевіряє, чи слово є паліндромом."
         ]
       },
       "lab-markdown-to-html-converter": {
@@ -4122,6 +4162,23 @@
         "title": "Тест «Вебпродуктивність»",
         "intro": ["Перевірте, що ви дізнались про вебпродуктивність."]
       },
+      "lecture-understanding-the-different-types-of-testing": {
+        "title": "Знайомство з різними видами тестування",
+        "intro": [
+          "In these lectures, you will learn about the different types of testing."
+        ]
+      },
+      "review-testing": {
+        "title": "Повторення тестування",
+        "intro": [
+          "Перш ніж перейти до тесту «Тестування», повторіть основні поняття.",
+          "Відкрийте цю сторінку, щоб пригадати модульне тестування, наскрізне тестування, функціональне тестування та багато іншого."
+        ]
+      },
+      "quiz-testing": {
+        "title": "Тест «Тестування»",
+        "intro": ["Перевірте, що ви дізнались про тестування."]
+      },
       "lecture-working-with-css-libraries-and-frameworks": {
         "title": "Робота з бібліотеками та фреймворками CSS",
         "intro": [
@@ -4173,27 +4230,22 @@
           "Перевірте, що ви дізнались про бібліотеки та фреймворки CSS."
         ]
       },
-      "lecture-understanding-the-different-types-of-testing": {
-        "title": "Знайомство з різними видами тестування",
-        "intro": [
-          "In these lectures, you will learn about the different types of testing."
-        ]
-      },
-      "review-testing": {
-        "title": "Повторення тестування",
-        "intro": [
-          "Перш ніж перейти до тесту «Тестування», повторіть основні поняття.",
-          "Відкрийте цю сторінку, щоб пригадати модульне тестування, наскрізне тестування, функціональне тестування та багато іншого."
-        ]
-      },
-      "quiz-testing": {
-        "title": "Тест «Тестування»",
-        "intro": ["Перевірте, що ви дізнались про тестування."]
-      },
       "lecture-introduction-to-typescript": {
         "title": "Вступ до TypeScript",
         "intro": [
           "In these lectures, you will learn what TypeScript is and how to use it."
+        ]
+      },
+      "lecture-working-with-generics-and-type-narrowing": {
+        "title": "Working with Generics and Type Narrowing",
+        "intro": [
+          "In these lectures, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "lecture-working-with-typescript-configuration-files": {
+        "title": "Working with TypeScript Configuration Files",
+        "intro": [
+          "In this lecture, you will learn about TypeScript configuration files and how to use them."
         ]
       },
       "trvf": {
@@ -4336,7 +4388,9 @@
       },
       "lecture-understanding-error-handling": {
         "title": "Знайомство з обробкою помилок",
-        "intro": ["У цих відеолекціях ви дізнаєтесь про обробку помилок."]
+        "intro": [
+          "In these lectures, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
+        ]
       },
       "lab-isbn-validator": {
         "title": "Debug an ISBN Validator",
@@ -4772,18 +4826,17 @@
         "intro": [
           "Складіть цей екзамен, щоб стати сертифікованим Full Stack розробником."
         ]
-      },
-      "lab-golf-score-translator": {
-        "title": "Build a Golf Score Translator",
-        "intro": [
-          "For this lab, you will use array methods to translate golf scores into their nickname."
-        ]
-      },
-      "lab-record-collection": {
-        "title": "Build a Record Collection",
-        "intro": [
-          "In this lab you will build a function to manage a record collection."
-        ]
+      }
+    }
+  },
+  "a1-professional-spanish": {
+    "title": "A1 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "blocks": {
+      "a1-professional-spanish-placeholder-block": {
+        "title": "A1 Professional Spanish Placeholder Block",
+        "intro": ["Placeholder intro text."]
       }
     }
   },
@@ -4892,6 +4945,45 @@
       "daily-coding-challenges-python": {
         "title": "Щоденні завдання з Python",
         "intro": ["Місце для створення щоденних завдань з Python."]
+      }
+    }
+  },
+  "full-stack-open": {
+    "title": "Full Stack Open",
+    "intro": ["A good intro is to be added here."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      }
+    },
+    "chapters": {
+      "part-0": "Fundamentals of Web Apps",
+      "part-1": "Introduction to React",
+      "part-2": "Communicating with Servers",
+      "part-3": "Programming a Server with NodeJS and Express",
+      "part-4": "Testing Express Servers, User Administration",
+      "part-5": "Testing React Apps",
+      "part-6": "Advanced State Management",
+      "part-7": "React router, custom hooks, styling app with CSS and webpack",
+      "part-8": "GraphQL",
+      "part-9": "TypeScript",
+      "part-10": "React Native",
+      "part-11": "CI/CD",
+      "part-12": "Containers",
+      "part-13": "Using Relational Databases"
+    },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
+    "module-intros": {
+      "basic-html": {
+        "title": "Basic HTML",
+        "intro": [
+          "Learn how to build simple webpages using HTML tags to add text, images, and links."
+        ]
       }
     }
   },

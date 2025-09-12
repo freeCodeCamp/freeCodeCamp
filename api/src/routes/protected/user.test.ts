@@ -40,7 +40,7 @@ import { getMsTranscriptApiUrl } from './user';
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
-let mockDeploymentEnv = 'dev';
+let mockDeploymentEnv = 'staging';
 vi.mock('../../utils/env', async () => {
   const actualEnv =
     await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
@@ -151,7 +151,8 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
-  linkedin: 'linkedin.com/foobar'
+  linkedin: 'linkedin.com/foobar',
+  sendQuincyEmail: false
 };
 
 const minimalUserData: Prisma.userCreateInput = {
@@ -301,6 +302,7 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  sendQuincyEmail: testUserData.sendQuincyEmail,
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
@@ -1300,11 +1302,11 @@ Thanks and regards,
 
     describe('/user/exam-environment/token', () => {
       beforeEach(() => {
-        mockDeploymentEnv = 'org';
+        mockDeploymentEnv = 'staging';
       });
 
       afterAll(() => {
-        mockDeploymentEnv = 'dev';
+        mockDeploymentEnv = 'production';
       });
 
       afterEach(async () => {
@@ -1316,6 +1318,7 @@ Thanks and regards,
       });
 
       test('POST generates a new token if one does not exist', async () => {
+        mockDeploymentEnv = 'production';
         const response = await superPost('/user/exam-environment/token');
         const { examEnvironmentAuthorizationToken } = response.body;
 
@@ -1338,6 +1341,7 @@ Thanks and regards,
       });
 
       test('POST only allows for one token per user id', async () => {
+        mockDeploymentEnv = 'production';
         const token =
           await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.create(
             {
@@ -1372,14 +1376,14 @@ Thanks and regards,
 
       test('POST does not generate a new token in non-production environments for non-staff', async () => {
         // Override deployment environment for this test
-        mockDeploymentEnv = 'dev';
+        mockDeploymentEnv = 'staging';
         const response = await superPost('/user/exam-environment/token');
         expect(response.status).toBe(403);
       });
 
       test('POST does generate a new token in non-production environments for staff', async () => {
         // Override deployment environment for this test
-        mockDeploymentEnv = 'dev';
+        mockDeploymentEnv = 'staging';
         await fastifyTestInstance.prisma.user.update({
           where: {
             id: defaultUserId

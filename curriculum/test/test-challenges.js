@@ -32,15 +32,15 @@ const {
 const { getLines } = require('../../shared/utils/get-lines');
 const { getChallengesForLang } = require('../get-challenges');
 const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang, getSuperOrder } = require('../utils');
+const { testedLang } = require('../utils');
 const {
   prefixDoctype,
   helperVersion
 } = require('../../client/src/templates/Challenges/utils/frame');
-const { chapterBasedSuperBlocks } = require('../../shared/config/curriculum');
-const { STRUCTURE_DIR, getBlockCreator } = require('../build-curriculum');
+
 const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
 const { validateMetaSchema } = require('../schema/meta-schema');
+const { getBlockStructure } = require('../file-handler');
 const ChallengeTitles = require('./utils/challenge-titles');
 const MongoIds = require('./utils/mongo-ids');
 const createPseudoWorker = require('./utils/pseudo-worker');
@@ -152,8 +152,18 @@ async function setup() {
   await page.setViewport({ width: 300, height: 150 });
 
   const lang = testedLang();
+  const challenges = await getChallenges(lang, testFilter);
+  const nonCertificationChallenges = challenges.filter(
+    ({ challengeType }) => challengeType !== 7
+  );
 
-  let challenges = await getChallenges(lang, testFilter);
+  if (isEmpty(nonCertificationChallenges)) {
+    throw Error(
+      `No challenges to test when using filter ${JSON.stringify(testFilter)}
+If the challenge file exists, try running 'build:curriculum' for more information.
+      `
+    );
+  }
 
   // the next few statements create a list of all blocks and superblocks
   // as they appear in the list of challenges
@@ -169,10 +179,7 @@ async function setup() {
     // we can skip them.
     // TODO: omit certifications from the list of challenges
     if (dashedBlockName && !meta[dashedBlockName]) {
-      meta[dashedBlockName] = await getBlockCreator(lang).getMetaForBlock(
-        dashedBlockName,
-        STRUCTURE_DIR
-      );
+      meta[dashedBlockName] = getBlockStructure(dashedBlockName);
       const result = validateMetaSchema(meta[dashedBlockName]);
 
       if (result.error) {
@@ -236,47 +243,7 @@ async function getChallenges(lang, filters) {
 }
 
 function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
-  const mongoIds = new MongoIds();
-  const challengeTitles = new ChallengeTitles();
   const validateChallenge = challengeSchemaValidator();
-
-  if (!process.env.FCC_BLOCK && !process.env.FCC_CHALLENGE_ID) {
-    describe('Assert meta order', function () {
-      const superBlocks = new Set([
-        ...Object.values(meta).map(el => el.superBlock)
-      ]);
-      superBlocks.forEach(superBlock => {
-        const filteredMeta = Object.values(meta)
-          .filter(el => el.superBlock === superBlock)
-          .sort((a, b) => a.order - b.order);
-        if (!filteredMeta.length) {
-          return;
-        }
-        it(`${superBlock} should have the same order in every meta`, function () {
-          const firstOrder = getSuperOrder(filteredMeta[0].superBlock);
-          assert.isNumber(firstOrder);
-          assert.isTrue(
-            filteredMeta.every(
-              el => getSuperOrder(el.superBlock) === firstOrder
-            ),
-            'The superOrder properties are mismatched.'
-          );
-        });
-        filteredMeta.forEach((meta, index) => {
-          // Upcoming changes are in development so are not required to be in
-          // order. Chapter-based super blocks do not use the meta for order.
-          if (
-            !meta.isUpcomingChange &&
-            !chapterBasedSuperBlocks.includes(meta.superBlock)
-          ) {
-            it(`${meta.superBlock} ${meta.name} must be in order`, function () {
-              assert.equal(meta.order, index);
-            });
-          }
-        });
-      });
-    });
-  }
 
   superBlocks.forEach(superBlock => {
     describe(`Language: ${lang}`, function () {
@@ -285,6 +252,72 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
         const superBlockChallenges = challenges.filter(
           c => c.superBlock === superBlock
         );
+
+        // daily challenge tests
+        if (superBlock === 'dev-playground') {
+          describe('Daily Coding Challenges', function () {
+            const jsDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-javascript'
+            );
+
+            const pyDailyChallenges = superBlockChallenges.filter(
+              c => c.block === 'daily-coding-challenges-python'
+            );
+
+            it('should have matching number of JavaScript and Python challenges', function () {
+              assert.equal(
+                jsDailyChallenges.length,
+                pyDailyChallenges.length,
+                `JavaScript challenges: ${jsDailyChallenges.length}, Python challenges: ${pyDailyChallenges.length}`
+              );
+            });
+
+            for (let i = 0; i < jsDailyChallenges.length; i++) {
+              describe(`Challenge ${i + 1} Parity`, function () {
+                const jsChallenge = jsDailyChallenges[i];
+                const pyChallenge = pyDailyChallenges[i];
+
+                it("should have matching ID's", function () {
+                  assert.equal(
+                    jsChallenge.id,
+                    pyChallenge.id,
+                    `Challenge ${i + 1} ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
+                  );
+                });
+
+                it(`should have matching titles`, function () {
+                  assert.equal(
+                    jsChallenge.title,
+                    pyChallenge.title,
+                    `Challenge ${i + 1} title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title}`
+                  );
+                });
+
+                it('should have matching descriptions', function () {
+                  assert.equal(
+                    jsChallenge.description,
+                    pyChallenge.description,
+                    `Challenge ${i + 1} description mismatch`
+                  );
+                });
+
+                it('should have the same number of tests', function () {
+                  const jsTestCount = jsChallenge.tests.length;
+                  const pyTestCount = pyChallenge.tests.length;
+                  assert.equal(
+                    jsTestCount,
+                    pyTestCount,
+                    `Challenge ${i + 1} test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount}`
+                  );
+                });
+              });
+            }
+          });
+        }
+
+        const challengeTitles = new ChallengeTitles();
+        const mongoIds = new MongoIds();
+
         superBlockChallenges.forEach((challenge, id) => {
           // When testing single challenge, in project based curriculum,
           // challenge to test (current challenge) might not have solution.
@@ -379,13 +412,10 @@ function populateTestsForLang({ lang, challenges, meta, superBlocks }) {
                     fails = true;
                   }
                   if (!fails) {
-                    for (const test of tests) {
-                      try {
-                        await testRunner(test);
-                      } catch {
-                        fails = true;
-                        break;
-                      }
+                    try {
+                      await testRunner(tests);
+                    } catch {
+                      fails = true;
                     }
                   }
                   console.error = oldConsoleError;
@@ -480,9 +510,8 @@ seed goes here
                         buildChallenge,
                         solutionFromNext
                       );
-                      for (const test of tests) {
-                        await testRunner(test);
-                      }
+
+                      await testRunner(tests);
                     });
                   });
                 });
@@ -524,24 +553,26 @@ async function createTestRunner(
     hooks: challenge.hooks
   });
 
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await evaluator.evaluate(testString, 5000);
-      if (!pass) {
+  return async tests => {
+    const testStrings = tests.map(test => test.testString);
+
+    const results = await evaluator.evaluate(testStrings, 5000);
+    for (let i = 0; i < results.length; i++) {
+      const { err } = results[i];
+      let { text } = tests[i];
+      if (err) {
+        text = 'Test text: ' + text;
+        const newMessage = solutionFromNext
+          ? 'Check next step for solution!\n' + text
+          : text;
+        // if the stack is missing, the message should be included. Otherwise it
+        // is redundant.
+        err.message = err.stack
+          ? newMessage
+          : `${newMessage}
+      ${err.message}`;
         throw err;
       }
-    } catch (err) {
-      text = 'Test text: ' + text;
-      const newMessage = solutionFromNext
-        ? 'Check next step for solution!\n' + text
-        : text;
-      // if the stack is missing, the message should be included. Otherwise it
-      // is redundant.
-      err.message = err.stack
-        ? newMessage
-        : `${newMessage}
-      ${err.message}`;
-      throw err;
     }
   };
 }
@@ -571,31 +602,18 @@ async function getContextEvaluator(config) {
   await initializeTestRunner(config);
 
   return {
-    evaluate: async (testString, timeout) =>
-      Promise.race([
-        new Promise((_, reject) =>
-          setTimeout(
-            () =>
-              reject(
-                Error(`timeout in challenge
-${config.challengeId}
-while evaluating test:
-${testString}
-`)
-              ),
+    evaluate: async (testStrings, timeout) =>
+      await page.evaluate(
+        async (type, testStrings, timeout) => {
+          return await window.FCCTestRunner.getRunner(type).runAllTests(
+            testStrings,
             timeout
-          )
-        ),
-        await page.evaluate(
-          async (testString, type) => {
-            return await window.FCCTestRunner.getRunner(type).runTest(
-              testString
-            );
-          },
-          testString,
-          config.type
-        )
-      ])
+          );
+        },
+        config.type,
+        testStrings,
+        timeout
+      )
   };
 }
 

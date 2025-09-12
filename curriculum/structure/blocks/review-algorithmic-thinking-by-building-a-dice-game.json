@@ -5,8 +5,6 @@
   "hasEditableBoundaries": true,
   "dashedName": "review-algorithmic-thinking-by-building-a-dice-game",
   "helpCategory": "JavaScript",
-  "order": 20,
-  "superBlock": "javascript-algorithms-and-data-structures-v8",
   "challengeOrder": [
     {
       "id": "657a0ea50da0c8d9d6d7950a",

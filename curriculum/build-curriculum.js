@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const assert = require('assert');
 
 const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:build-curriculum');
@@ -13,14 +12,14 @@ const {
 
 const { buildCertification } = require('./build-certification');
 const { applyFilters } = require('./utils');
-
-const CURRICULUM_DIR = __dirname;
-const I18N_CURRICULUM_DIR = path.resolve(
-  CURRICULUM_DIR,
-  'i18n-curriculum',
-  'curriculum'
-);
-const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
+const {
+  getContentDir,
+  getLanguageConfig,
+  getCurriculumStructure,
+  getBlockStructure,
+  getSuperblockStructure,
+  getBlockStructurePath
+} = require('./file-handler');
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
@@ -35,7 +34,6 @@ const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
 const getBlockCreator = (lang, skipValidation, opts) => {
   const {
     blockContentDir,
-    blockStructureDir,
     i18nBlockContentDir,
     dictionariesDir,
     i18nDictionariesDir
@@ -47,7 +45,6 @@ const getBlockCreator = (lang, skipValidation, opts) => {
   return new BlockCreator({
     lang,
     blockContentDir,
-    blockStructureDir,
     i18nBlockContentDir,
     commentTranslations: createCommentMap(
       dictionariesDir,
@@ -186,92 +183,22 @@ const superBlockNames = {
   'python-for-everybody': 'python-for-everybody',
   'b1-english-for-developers': 'b1-english-for-developers',
   'full-stack-developer': 'full-stack-developer',
+  'a1-professional-spanish': 'a1-professional-spanish',
   'a2-professional-spanish': 'a2-professional-spanish',
   'a2-professional-chinese': 'a2-professional-chinese',
   'basic-html': 'basic-html',
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground'
+  'dev-playground': 'dev-playground',
+  'full-stack-open': 'full-stack-open'
 };
 
-/**
- * Gets language-specific configuration paths for curriculum content
- * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @param {Object} [options] - Optional configuration object with directory overrides
- * @param {string} [options.baseDir] - Base directory for curriculum content (defaults to CURRICULUM_DIR)
- * @param {string} [options.i18nBaseDir] - Base directory for i18n content (defaults to I18N_CURRICULUM_DIR)
- * @param {string} [options.structureDir] - Directory for curriculum structure (defaults to STRUCTURE_DIR)
- * @returns {Object} Object containing all relevant directory paths for the language
- * @throws {AssertionError} When required i18n directories don't exist for non-English languages
- */
-function getLanguageConfig(
-  lang,
-  { baseDir, i18nBaseDir, structureDir } = {
-    baseDir: CURRICULUM_DIR,
-    i18nBaseDir: I18N_CURRICULUM_DIR,
-    structureDir: STRUCTURE_DIR
-  }
-) {
-  const contentDir = path.resolve(baseDir, 'challenges', 'english');
-  const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
-  const blockContentDir = path.resolve(contentDir, 'blocks');
-  const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
-  const blockStructureDir = path.resolve(structureDir, 'blocks');
-  const dictionariesDir = path.resolve(baseDir, 'dictionaries');
-  const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
-
-  if (lang !== 'english') {
-    assert(
-      fs.existsSync(i18nContentDir),
-      `i18n content directory does not exist: ${i18nContentDir}`
-    );
-    assert(
-      fs.existsSync(i18nBlockContentDir),
-      `i18n block content directory does not exist: ${i18nBlockContentDir}`
-    );
-    assert(
-      fs.existsSync(i18nDictionariesDir),
-      `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
-    );
-  }
-
-  debug(`Using content directory: ${contentDir}`);
-  debug(`Using i18n content directory: ${i18nContentDir}`);
-  debug(`Using block content directory: ${blockContentDir}`);
-  debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
-  debug(`Using dictionaries directory: ${dictionariesDir}`);
-  debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
-
-  return {
-    contentDir,
-    i18nContentDir,
-    blockContentDir,
-    i18nBlockContentDir,
-    blockStructureDir,
-    dictionariesDir,
-    i18nDictionariesDir
-  };
-}
-
-/**
- * Gets the appropriate content directory path for a given language
- * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @returns {string} Path to the content directory for the specified language
- */
-function getContentDir(lang) {
-  const { contentDir, i18nContentDir } = getLanguageConfig(lang);
-
-  return lang === 'english' ? contentDir : i18nContentDir;
-}
-
-const getCurriculumStructure = () => {
-  const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
-  if (!fs.existsSync(curriculumPath)) {
-    throw new Error(`Curriculum file not found: ${curriculumPath}`);
-  }
-
-  return JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
-};
+const superBlockToFilename = Object.entries(superBlockNames).reduce(
+  (map, entry) => {
+    return { ...map, [entry[1]]: entry[0] };
+  },
+  {}
+);
 
 /**
  * Builds an array of superblock structures from a curriculum object
@@ -280,7 +207,10 @@ const getCurriculumStructure = () => {
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function addSuperblockStructure(superblocks) {
+function addSuperblockStructure(
+  superblocks,
+  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+) {
   debug(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
@@ -292,7 +222,7 @@ function addSuperblockStructure(superblocks) {
     return {
       name: superblockName,
       blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
-        showComingSoon: process.env.SHOW_UPCOMING_CHANGES === 'true'
+        showComingSoon
       })
     };
   });
@@ -302,26 +232,6 @@ function addSuperblockStructure(superblocks) {
   );
 
   return superblockStructures;
-}
-
-function getSuperblockStructure(superblock) {
-  const superblockPath = path.resolve(
-    STRUCTURE_DIR,
-    'superblocks',
-    `${superblock}.json`
-  );
-
-  return JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
-}
-
-function getBlockStructure(block) {
-  const blockPath = path.resolve(STRUCTURE_DIR, 'blocks', `${block}.json`);
-
-  try {
-    return JSON.parse(fs.readFileSync(blockPath, 'utf8'));
-  } catch {
-    console.warn('block missing', block);
-  }
 }
 
 function addBlockStructure(
@@ -339,8 +249,54 @@ function addBlockStructure(
   }));
 }
 
+/**
+ * Returns a list of all the superblocks that contain the given block
+ * @param {string} block
+ */
+function getSuperblocks(
+  block,
+  _addSuperblockStructure = addSuperblockStructure
+) {
+  const { superblocks } = getCurriculumStructure();
+  const withStructure = _addSuperblockStructure(superblocks);
+
+  return withStructure
+    .filter(({ blocks }) =>
+      blocks.some(({ dashedName }) => dashedName === block)
+    )
+    .map(({ name }) => name);
+}
+
+function validateBlocks(superblocks, blockStructureDir) {
+  const withSuperblockStructure = addSuperblockStructure(superblocks, true);
+  const blockInSuperblocks = withSuperblockStructure
+    .flatMap(({ blocks }) => blocks)
+    .map(b => b.dashedName);
+  for (const block of blockInSuperblocks) {
+    const blockPath = getBlockStructurePath(block);
+    if (!fs.existsSync(blockPath)) {
+      throw Error(
+        `Block "${block}" is in a superblock, but has no block structure file at ${blockPath}`
+      );
+    }
+  }
+
+  const blockStructureFiles = fs
+    .readdirSync(blockStructureDir)
+    .map(file => path.basename(file, '.json'));
+
+  for (const block of blockStructureFiles) {
+    if (!blockInSuperblocks.includes(block)) {
+      throw Error(
+        `Block "${block}" has a structure file, ${getBlockStructurePath(block)}, but is not in a superblock`
+      );
+    }
+  }
+}
+
 async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
+  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
   const builder = new SuperblockCreator({
     blockCreator: getBlockCreator(lang, !isEmpty(filters))
   });
@@ -353,9 +309,12 @@ async function buildCurriculum(lang, filters) {
   debug(`Found ${curriculum.superblocks.length} superblocks to build`);
   debug(`Found ${curriculum.certifications.length} certifications to build`);
 
+  validateBlocks(curriculum.superblocks, blockStructureDir);
+
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
+
   const fullSuperblockList = applyFilters(superblockList, filters);
   const fullCurriculum = { certifications: { blocks: {} } };
 
@@ -383,5 +342,7 @@ module.exports = {
   getBlockCreator,
   getBlockStructure,
   getSuperblockStructure,
-  createCommentMap
+  createCommentMap,
+  superBlockToFilename,
+  getSuperblocks
 };

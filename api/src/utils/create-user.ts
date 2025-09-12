@@ -82,7 +82,7 @@ export function createUserInput(email: string) {
       showPortfolio: false,
       showTimeLine: false
     },
-    sendQuincyEmail: false,
+    sendQuincyEmail: null,
     theme: 'default',
     username,
     usernameDisplay: username,

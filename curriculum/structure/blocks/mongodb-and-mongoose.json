@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "mongodb-and-mongoose",
   "helpCategory": "JavaScript",
-  "order": 2,
-  "superBlock": "back-end-development-and-apis",
   "challengeOrder": [
     {
       "id": "587d7fb6367417b2b2512c06",
