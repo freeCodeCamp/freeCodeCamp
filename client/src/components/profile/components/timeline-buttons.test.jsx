@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { describe, it, expect, vi } from 'vitest';
 
 import { createStore } from '../../../redux/create-store';
-import completedChallenges from '../../../__mocks__/completed-challenges.json';
+import completedChallenges from './__fixtures__/completed-challenges.json';
 import Timeline from './time-line';
 
 Date.prototype.toLocaleString = vi.fn(() => 'Dec 29, 2022');
@@ -15,7 +15,7 @@ vi.mock('../../../analytics');
 vi.mock('../../../utils/get-words');
 
 vi.mock('gatsby', async () => {
-  const edges = require('../../../__mocks__/edges.json');
+  const edges = require('./__fixtures__/edges.json');
   const React = require('react');
   const gatsby = await vi.importActual('gatsby');
   return {
