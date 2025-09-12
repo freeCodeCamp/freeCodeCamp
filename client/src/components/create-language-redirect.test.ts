@@ -1,3 +1,5 @@
+// @vitest-environment jsdom
+import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import createLanguageRedirect from './create-language-redirect';
 
 describe('createLanguageRedirect for clientLocale === english', () => {
@@ -27,7 +29,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     });
 
     afterEach(() => {
-      window.location = originalLocation;
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: originalLocation
+      });
     });
 
     [
@@ -70,7 +75,10 @@ describe('createLanguageRedirect for clientLocale === english', () => {
     });
 
     afterEach(() => {
-      window.location = originalLocation;
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: originalLocation
+      });
     });
 
     [
@@ -123,7 +131,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     });
 
     afterEach(() => {
-      window.location = originalLocation;
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: originalLocation
+      });
     });
 
     [
@@ -166,7 +177,10 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
     });
 
     afterEach(() => {
-      window.location = originalLocation;
+      Object.defineProperty(window, 'location', {
+        writable: true,
+        value: originalLocation
+      });
     });
 
     [

@@ -1,9 +1,12 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
+import { describe, test, expect, vi } from 'vitest';
 import Honesty from './honesty';
 
+vi.mock('react-i18next');
+
 describe('<Honesty />', () => {
-  const updateIsHonestMock = jest.fn();
+  const updateIsHonestMock = vi.fn();
 
   test('<Honesty /> snapshot when isHonest is false', () => {
     const { asFragment } = render(
