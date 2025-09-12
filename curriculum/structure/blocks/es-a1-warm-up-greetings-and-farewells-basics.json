@@ -1,28 +1,15 @@
 {
   "name": "Greetings and Farewells Basics",
-<<<<<<< HEAD
   "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
   "isUpcomingChange": true,
   "blockType": "warm-up",
   "blockLayout": "dialogue-grid",
-=======
-  "isUpcomingChange": true,
-  "blockType": "warm-up",
-  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
->>>>>>> 4866ebb903 (implemented chapter structure and addressed coming soon error issue)
   "helpCategory": "English",
   "challengeOrder": [
     {
       "id": "68bb001c22f3bcbd1fdf38fa",
-<<<<<<< HEAD
       "title": "Task 1"
     },
     { "id": "68c488abd71a3e27190965e0", "title": "Task 2" }
   ]
-=======
-      "title": "Dialogue 1: Placeholder Challenge"
-    }
-  ],
-  "blockLayout": "project-list"
->>>>>>> 4866ebb903 (implemented chapter structure and addressed coming soon error issue)
 }
