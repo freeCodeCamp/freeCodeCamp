@@ -1,4 +1,6 @@
-const { findAll } = require('./find-all');
+import { describe, it, expect } from 'vitest';
+
+import { findAll } from './find-all';
 
 const testTree = {
   type: 'root',

@@ -15,6 +15,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
             "lecture-working-with-images-and-svgs",
@@ -275,6 +276,8 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
@@ -398,6 +401,7 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-sum-all-primes-calculator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
