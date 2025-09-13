@@ -123,9 +123,18 @@ export default function StripeCardForm({
     paymentMethod: string
   ) => {
     if (stripe) {
-      return stripe.confirmCardPayment(clientSecret, {
-        payment_method: paymentMethod
-      });
+      // Use the newer confirmPayment method instead of deprecated confirmCardPayment
+      const elements = useElements();
+      if (elements) {
+        return stripe.confirmPayment({
+          elements,
+          clientSecret,
+          confirmParams: {
+            payment_method: paymentMethod
+          },
+          redirect: 'if_required'
+        });
+      }
     }
     return { error: { type: 'StripeNotLoaded' } };
   };

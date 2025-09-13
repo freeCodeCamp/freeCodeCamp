@@ -30,6 +30,8 @@ import csrf from './plugins/csrf';
 import notFound from './plugins/not-found';
 import shadowCapture from './plugins/shadow-capture';
 import growthBook from './plugins/growth-book';
+import websocketPlugin from './plugins/websocket';
+import { registerDonationCleanupService } from './services/donation-cleanup-job';
 
 import * as publicRoutes from './routes/public';
 import * as protectedRoutes from './routes/protected';
@@ -238,6 +240,7 @@ export const build = async (
   }
 
   void fastify.register(publicRoutes.chargeStripeRoute);
+  void fastify.register(publicRoutes.webhookRoutes);
   void fastify.register(publicRoutes.signoutRoute);
   void fastify.register(publicRoutes.emailSubscribtionRoutes);
   void fastify.register(publicRoutes.userPublicGetRoutes);
@@ -246,6 +249,12 @@ export const build = async (
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
   void fastify.register(dailyCodingChallengeRoutes);
+
+  // Register WebSocket plugin for real-time payment updates
+  await fastify.register(websocketPlugin);
+
+  // Register donation cleanup service for maintenance tasks
+  await fastify.register(registerDonationCleanupService);
 
   return fastify;
 };

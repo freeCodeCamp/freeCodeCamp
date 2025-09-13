@@ -17,6 +17,7 @@ import {
 } from '../utils/ajax';
 import { stringifyDonationEvents } from '../utils/analytics-strings';
 import { stripe } from '../utils/stripe';
+import { paymentWebSocketService } from '../utils/websocket';
 import { PaymentProvider } from '../../../shared/config/donation-settings';
 import {
   getSessionChallengeData,
@@ -207,11 +208,54 @@ export function* updateCardSaga() {
   }
 }
 
+// Initialize WebSocket connection for payment status updates
+function* initializePaymentWebSocket() {
+  try {
+    // Subscribe to payment status updates
+    paymentWebSocketService.addListener('payment_status_update', function* (data) {
+      const { provider, status, event } = data.data;
+      
+      // Handle real-time payment status updates
+      if (status === 'cancelled' || status === 'failed') {
+        yield put({
+          type: 'UPDATE_DONATION_STATUS',
+          payload: { isDonating: false }
+        });
+      } else if (status === 'active' || status === 'paid') {
+        yield put({
+          type: 'UPDATE_DONATION_STATUS', 
+          payload: { isDonating: true }
+        });
+      }
+
+      // Log analytics for payment status changes
+      yield call(callGA, {
+        event: 'payment_status_change',
+        action: `${provider}_${status}`,
+        label: event
+      });
+    });
+
+    // Subscribe to payment updates for the current user if logged in
+    const isSignedIn = yield select(isSignedInSelector);
+    if (isSignedIn) {
+      const user = yield select(userSelector);
+      if (user?.id) {
+        paymentWebSocketService.subscribeToPaymentUpdates(user.id);
+      }
+    }
+  } catch (error) {
+    console.warn('Failed to initialize payment WebSocket:', error);
+  }
+}
+
 export function createDonationSaga(types) {
   return [
     takeEvery(types.tryToShowDonationModal, showDonateModalSaga),
     takeLeading(types.postCharge, postChargeSaga),
     takeEvery(types.fetchUserComplete, setDonationCookie),
-    takeLeading(types.updateCard, updateCardSaga)
+    takeLeading(types.updateCard, updateCardSaga),
+    // Initialize WebSocket when the app starts
+    takeEvery(types.appMounted, initializePaymentWebSocket)
   ];
 }

@@ -88,21 +88,26 @@ const WalletsButton = ({
         event.complete('fail');
         displayError(t('donate.try-another-method'));
       } else if (clientSecret) {
-        // confirm payment intent
+        // confirm payment intent using the newer confirmPayment method
         const { paymentIntent, error: confirmError } =
-          await stripe.confirmCardPayment(
+          await stripe.confirmPayment({
             clientSecret,
-            { payment_method: event.paymentMethod.id },
-            { handleActions: false }
-          );
+            confirmParams: {
+              payment_method: event.paymentMethod.id
+            },
+            redirect: 'if_required'
+          });
 
         if (confirmError) {
           event.complete('fail');
           displayError(t('donate.try-another-method'));
         } else {
           event.complete('success');
-          if (paymentIntent.status === 'requires_action') {
-            const { error } = await stripe.confirmCardPayment(clientSecret);
+          if (paymentIntent?.status === 'requires_action') {
+            const { error } = await stripe.confirmPayment({
+              clientSecret,
+              redirect: 'if_required'
+            });
             if (error) {
               return displayError(t('donate.try-another-method'));
             }

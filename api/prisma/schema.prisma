@@ -397,19 +397,31 @@ model AuthToken {
 }
 
 model Donation {
-  id             String            @id @default(auto()) @map("_id") @db.ObjectId
-  amount         Int               @db.Int
-  customerId     String
-  duration       String?
-  email          String
-  endDate        DonationEndDate?
-  provider       String
-  startDate      DonationStartDate
-  subscriptionId String
-  userId         String            @db.ObjectId
+  id                     String             @id @default(auto()) @map("_id") @db.ObjectId
+  amount                 Int                @db.Int
+  customerId             String
+  duration               String?
+  email                  String
+  endDate                DonationEndDate?
+  provider               String
+  startDate              DonationStartDate
+  subscriptionId         String
+  userId                 String             @db.ObjectId
+  
+  // Enhanced tracking fields
+  status                 String             @default("active") // 'active', 'cancelled', 'expired', 'failed'
+  paymentHistory         PaymentEvent[]
+  webhookEvents          WebhookEvent[]
+  lastPaymentDate        DateTime?
+  nextPaymentDate        DateTime?
+  failedPaymentAttempts  Int                @default(0)
+  cancellationReason     String?
+  createdAt              DateTime           @default(now())
+  updatedAt              DateTime           @updatedAt
 
   @@index([email], map: "email_1")
   @@index([userId], map: "userId_1")
+  @@index([status], map: "status_1")
 }
 
 model UserToken {
@@ -502,6 +514,26 @@ type DonationEndDate {
 type DonationStartDate {
   date DateTime @map("_date") @db.Date
   when String   @map("_when")
+}
+
+type PaymentEvent {
+  id                   String    @db.ObjectId @default(auto())
+  amount               Int
+  currency             String    @default("USD")
+  status               String    // 'succeeded', 'failed', 'pending'
+  paymentDate          DateTime
+  paymentMethodId      String?
+  failureReason        String?
+  providerTransactionId String
+}
+
+type WebhookEvent {
+  id          String   @db.ObjectId @default(auto())
+  eventType   String   // e.g., 'customer.subscription.updated'
+  provider    String   // 'stripe' or 'paypal'
+  eventId     String   // Provider's event ID
+  processedAt DateTime @default(now())
+  data        Json     // Raw webhook data
 }
 
 model Survey {
