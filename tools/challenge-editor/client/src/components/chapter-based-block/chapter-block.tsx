@@ -5,7 +5,7 @@ import {
   ChallengeDataWithBlock
 } from '../../../interfaces/challenge-data';
 import { API_LOCATION } from '../../utils/handle-request';
-import './block.css';
+import './chapter-block.css';
 
 const stepBasedSuperblocks = [
   'scientific-computing-with-python',
@@ -17,19 +17,23 @@ const stepBasedSuperblocks = [
 const taskBasedSuperblocks = [
   'a2-english-for-developers',
   'b1-english-for-developers',
-  'a1-professional-spanish',
   'a2-professional-spanish',
   'a2-professional-chinese',
   'a1-professional-chinese'
 ];
 
-const Block = () => {
+const ChapterBasedBlock = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
-  const [items, setItems] = useState([] as ChallengeData[]);
   const [blockName, setBlockName] = useState('');
   const [superBlockName, setSuperBlockName] = useState('');
-  const params = useParams() as { superblock: string; block: string };
+  const [items, setItems] = useState([] as ChallengeData[]);
+  const params = useParams() as {
+    superblock: string;
+    chapter: string;
+    module: string;
+    block: string;
+  };
 
   useEffect(() => {
     fetchData();
@@ -170,4 +174,4 @@ const Block = () => {
   );
 };
 
-export default Block;
+export default ChapterBasedBlock;
