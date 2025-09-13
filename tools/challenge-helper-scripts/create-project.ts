@@ -179,7 +179,14 @@ async function createMetaJson(
 ) {
   let newMeta;
   if (superBlock === SuperBlocks.FullStackDeveloper) {
-    newMeta = getBaseMeta('FullStack');
+    if (blockType === BlockTypes.quiz) {
+      newMeta = getBaseMeta('Quiz');
+    } else if (blockType === BlockTypes.review) {
+      newMeta = getBaseMeta('Review');
+    } else {
+      newMeta = getBaseMeta('FullStack');
+    }
+
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
   } else {
