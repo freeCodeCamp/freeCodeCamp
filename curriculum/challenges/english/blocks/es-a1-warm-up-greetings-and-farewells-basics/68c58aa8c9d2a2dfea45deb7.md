@@ -1,10 +1,10 @@
 ---
-id: 68c582b401546d5359f54658
-title: Task 3
+id: 68c58aa8c9d2a2dfea45deb7
+title: Task 8
 challengeType: 19
-dashedName: task-3
+dashedName: task-8
 ---
-<!-- (Audio) Elena: Buenos días -->
+<!-- (Audio) Elena: Hasta luego -->
 
 # --instructions--
 
@@ -18,42 +18,44 @@ What does the speaker say?
 
 ## --answers--
 
-`Buenas noches`
-
-### --feedback--
-
-This means "Good night", which is used at the end of the day. Try again!
-
----
-
-`Buenas tardes`
-
-### --feedback--
-
-This means "Good afternoon", which is used later in the day.
-
----
-
-`Buenos días`
-
----
-
 `Hasta luego`
 
+---
+
+`Adiós`
+
 ### --feedback--
 
-This means "See you later", and it's used to say goodbye, not hello.
+This is a goodbye, but it's more final. The speaker uses a different phrase.
+
+---
+
+`Chao`
+
+### --feedback--
+
+This is also an informal way to say goodbye, but it's not the one in the audio.
+
+---
+
+`Hasta pronto`
+
+### --feedback--
+
+This means "See you soon", but the speaker says something slightly different.
 
 ## --video-solution--
 
-3
+1
 
 # --explanation--
 
-`Buenos días` is a common greeting used in the morning.  
-It literally means "good days", but it's equivalent to "good morning" in English. For example Example:  
+`Hasta luego` is a common way to say goodbye in Spanish.  
+It translates to "See you later".
 
-`Buenos días, ¿cómo estás?` – A polite and friendly way to say "Good morning, how are you?"
+It’s used when you expect to see the person again, but not necessarily soon. For example:  
+
+`Hasta luego, Marta` – See you later, Marta.
 
 # --scene--
 
@@ -75,8 +77,8 @@ It literally means "good days", but it's equivalent to "good morning" in English
     "audio": {
       "filename": "ES_A1_1.1.mp3",
       "startTime": 1,
-      "startTimestamp": 1.0,
-      "finishTimestamp": 2.18
+      "startTimestamp": 5.68,
+      "finishTimestamp": 6.64
     }
   },
   "commands": [
@@ -88,16 +90,16 @@ It literally means "good days", but it's equivalent to "good morning" in English
     {
       "character": "Elena",
       "startTime": 1,
-      "finishTime": 2.18,
+      "finishTime": 1.96,
       "dialogue": {
-        "text": "Buenos días.",
+        "text": "Hasta luego.",
         "align": "center"
       }
     },
     {
       "character": "Elena",
       "opacity": 0,
-      "startTime": 2.68
+      "startTime": 2.46
     }
   ]
 }
