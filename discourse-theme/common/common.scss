@@ -1,0 +1,299 @@
+// Minimal freeCodeCamp Discourse Theme
+// Based on freeCodeCamp's design system and universal navigation
+
+// CSS Variables matching freeCodeCamp design system
+:root {
+  // Core theme colors from freeCodeCamp
+  --theme-color: #0a0a23;
+  --yellow-gold: #ffbf00;
+  
+  // Gray scale
+  --gray-00: #ffffff;
+  --gray-05: #f5f6f7;
+  --gray-10: #dfdfe2;
+  --gray-15: #d0d0d5;
+  --gray-45: #858591;
+  --gray-75: #3b3b4f;
+  --gray-80: #2a2a40;
+  --gray-85: #1b1b32;
+  --gray-90: #0a0a23;
+  
+  // Accent colors
+  --purple-light: #dbb8ff;
+  --purple-dark: #5a01a7;
+  --yellow-light: #ffc300;
+  --yellow-dark: #4d3800;
+  --blue-light: rgb(153, 201, 255);
+  --blue-dark: rgb(0, 46, 173);
+  --green-light: #acd157;
+  --blue-mid: #198eee;
+  --purple-mid: #9400d3;
+  --green-dark: #00471b;
+  --red-light: #ffadad;
+  --red-dark: #850000;
+  --love-light: #f8577c;
+  --love-dark: #f82153;
+  
+  // Typography
+  --font-family-sans-serif: 'Lato', sans-serif;
+  --font-family-monospace: 'Hack-ZeroSlash', monospace;
+  
+  // Layout
+  --header-height: 38px;
+  --header-element-size: 28px;
+}
+
+// Universal Navigation Bar
+.fcc-universal-nav {
+  align-items: center;
+  background-color: var(--theme-color);
+  color: var(--gray-00);
+  display: flex;
+  font-size: 18px;
+  height: var(--header-height);
+  justify-content: space-between;
+  padding: 0 15px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  
+  a {
+    color: var(--gray-00);
+    text-decoration: none;
+    
+    &:hover,
+    &:focus {
+      color: var(--gray-00);
+      background-color: var(--gray-75);
+    }
+  }
+}
+
+// Universal nav left section
+.fcc-nav-left {
+  flex: 1 0 33%;
+}
+
+// freeCodeCamp Logo
+.fcc-nav-logo {
+  align-items: center;
+  display: flex;
+  font-weight: 600;
+  font-size: 18px;
+  margin-inline: 1em;
+  
+  &:hover,
+  &:focus {
+    background-color: inherit !important;
+  }
+}
+
+// Universal nav right section
+.fcc-nav-right {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  flex: 1 0 33%;
+}
+
+// Navigation links
+.fcc-nav-link {
+  padding: 0 12px;
+  height: var(--header-element-size);
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--gray-00);
+  background-color: var(--theme-color);
+  color: var(--gray-00);
+  font-size: 16px;
+  
+  &:hover,
+  &:focus {
+    background-color: var(--gray-00);
+    color: var(--theme-color);
+  }
+}
+
+// Adjust main Discourse header to accommodate universal nav
+#main-outlet {
+  padding-top: var(--header-height);
+}
+
+.d-header {
+  top: var(--header-height);
+}
+
+// Button styling to match freeCodeCamp design
+.btn,
+button {
+  border-radius: 0; // freeCodeCamp uses square buttons
+  font-family: var(--font-family-sans-serif);
+  font-weight: normal;
+  transition: all 0.15s ease-in-out;
+  border: 2px solid transparent;
+  cursor: pointer;
+  
+  // Focus styles for accessibility
+  &:focus {
+    outline: 3px solid var(--blue-mid);
+    outline-offset: 2px;
+  }
+  
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+  
+  &.btn-primary {
+    background-color: var(--yellow-gold);
+    border-color: var(--yellow-gold);
+    color: var(--theme-color);
+    
+    &:hover {
+      background-color: var(--yellow-dark);
+      border-color: var(--yellow-dark);
+      color: var(--yellow-light);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:focus {
+      background-color: var(--yellow-gold);
+      border-color: var(--blue-mid);
+    }
+    
+    &:active {
+      background-color: var(--yellow-dark);
+      border-color: var(--yellow-dark);
+      color: var(--yellow-light);
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  &.btn-default,
+  &.btn-secondary {
+    background-color: var(--gray-05);
+    border-color: var(--gray-15);
+    color: var(--theme-color);
+    
+    &:hover {
+      background-color: var(--gray-10);
+      border-color: var(--gray-45);
+      color: var(--theme-color);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    &:focus {
+      background-color: var(--gray-05);
+      border-color: var(--blue-mid);
+    }
+    
+    &:active {
+      background-color: var(--gray-10);
+      border-color: var(--gray-45);
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+  }
+  
+  // Danger/Delete buttons
+  &.btn-danger {
+    background-color: var(--red-light);
+    border-color: var(--red-light);
+    color: var(--red-dark);
+    
+    &:hover {
+      background-color: var(--red-dark);
+      border-color: var(--red-dark);
+      color: var(--red-light);
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    &:focus {
+      background-color: var(--red-light);
+      border-color: var(--blue-mid);
+    }
+    
+    &:active {
+      background-color: var(--red-dark);
+      border-color: var(--red-dark);
+      color: var(--red-light);
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    }
+  }
+  
+  // Disabled state
+  &:disabled,
+  &.disabled {
+    background-color: var(--gray-15);
+    border-color: var(--gray-15);
+    color: var(--gray-45);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+    
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--gray-15);
+      border-color: var(--gray-15);
+      color: var(--gray-45);
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+// Topic list styling
+.topic-list {
+  th,
+  td {
+    border-bottom: 1px solid var(--gray-10);
+  }
+  
+  .topic-list-item {
+    &:hover {
+      background-color: var(--gray-05);
+    }
+  }
+}
+
+// Link colors
+a {
+  color: var(--blue-dark);
+  
+  &:hover,
+  &:focus {
+    color: var(--blue-mid);
+  }
+  
+  &:visited {
+    color: var(--purple-dark);
+  }
+}
+
+// Code blocks
+pre,
+code {
+  font-family: var(--font-family-monospace);
+  background-color: var(--gray-05);
+  border: 1px solid var(--gray-15);
+  border-radius: 0;
+}
+
+// Typography
+body {
+  font-family: var(--font-family-sans-serif);
+  color: var(--theme-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-sans-serif);
+  color: var(--theme-color);
+}
+
+// Remove excessive custom styling - keep minimal overrides only

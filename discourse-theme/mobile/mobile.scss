@@ -1,0 +1,80 @@
+// Mobile-specific styles for freeCodeCamp Discourse Theme
+
+// Mobile navigation adjustments
+.fcc-universal-nav {
+  padding: 0 10px;
+  
+  @media (max-width: 600px) {
+    padding: 0 5px;
+  }
+}
+
+// Keep full logo on mobile (no truncation)
+.fcc-nav-logo {
+  font-size: 16px;
+  margin-inline: 0.5em;
+  white-space: nowrap;
+  overflow: visible; // Ensure logo is not cut off
+  
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-inline: 0.25em;
+  }
+}
+
+// Responsive navigation links
+.fcc-nav-right {
+  gap: 5px;
+  
+  .fcc-nav-link {
+    padding: 0 8px;
+    font-size: 14px;
+    
+    @media (max-width: 480px) {
+      padding: 0 6px;
+      font-size: 12px;
+    }
+    
+    // Hide text on very small screens, show icons only
+    @media (max-width: 380px) {
+      .nav-text {
+        display: none;
+      }
+    }
+  }
+}
+
+// Adjust mobile Discourse header spacing
+.d-header {
+  @media (max-width: 767px) {
+    top: var(--header-height);
+  }
+}
+
+// Mobile button adjustments
+.btn,
+button {
+  @media (max-width: 600px) {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+// Mobile topic list adjustments
+.topic-list {
+  @media (max-width: 767px) {
+    .topic-list-body {
+      .topic-list-item {
+        border-bottom: 1px solid var(--gray-10);
+        padding: 12px 0;
+      }
+    }
+  }
+}
+
+// Ensure content doesn't overlap with fixed navigation
+#main-outlet {
+  @media (max-width: 767px) {
+    padding-top: calc(var(--header-height) + 10px);
+  }
+}

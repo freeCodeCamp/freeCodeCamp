@@ -1,0 +1,39 @@
+show_curriculum_link:
+  type: bool
+  default: true
+  description: "Show Curriculum link in universal navigation"
+
+show_news_link:
+  type: bool
+  default: true
+  description: "Show News link in universal navigation"
+
+show_donate_link:
+  type: bool
+  default: true
+  description: "Show Donate link in universal navigation"
+
+custom_logo_text:
+  type: string
+  default: "freeCodeCamp"
+  description: "Custom text for the logo"
+
+main_site_url:
+  type: string
+  default: "https://freecodecamp.org"
+  description: "URL for the main freeCodeCamp site"
+
+curriculum_url:
+  type: string
+  default: "https://freecodecamp.org/learn"
+  description: "URL for the curriculum/learn page"
+
+news_url:
+  type: string
+  default: "https://freecodecamp.org/news"
+  description: "URL for the news page"
+
+donate_url:
+  type: string
+  default: "https://freecodecamp.org/donate"
+  description: "URL for the donate page"

@@ -1,0 +1,28 @@
+<!-- Universal Navigation Header for freeCodeCamp Discourse -->
+<div class="fcc-universal-nav">
+  <div class="fcc-nav-left">
+    <!-- Left section can be used for additional branding or breadcrumbs -->
+  </div>
+  
+  <div class="fcc-nav-logo">
+    <a href="{{theme-setting 'main_site_url'}}">{{theme-setting 'custom_logo_text'}}</a>
+  </div>
+  
+  <div class="fcc-nav-right">
+    {{#if theme.show_curriculum_link}}
+      <a href="{{theme-setting 'curriculum_url'}}" class="fcc-nav-link">
+        <span class="nav-text">Curriculum</span>
+      </a>
+    {{/if}}
+    {{#if theme.show_news_link}}
+      <a href="{{theme-setting 'news_url'}}" class="fcc-nav-link">
+        <span class="nav-text">News</span>
+      </a>
+    {{/if}}
+    {{#if theme.show_donate_link}}
+      <a href="{{theme-setting 'donate_url'}}" class="fcc-nav-link">
+        <span class="nav-text">Donate</span>
+      </a>
+    {{/if}}
+  </div>
+</div>
