@@ -21,7 +21,7 @@ Let's start by practicing your first word in Spanish.
 # --instructions--
 
 Listen to the audio and answer the question below.
-There's just **one** correct answer. If you need help, click on the `explanation` at the bottom of the lesson.
+There's just **one** correct answer. If you need help, click on **explanation** at the bottom of the lesson.
 
 # --questions--
 
@@ -88,7 +88,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
       "filename": "ES_A1_1.1.mp3",
       "startTime": 1,
       "startTimestamp": 0.35,
-      "finishTimestamp": 1.0
+      "finishTimestamp": 0.90
     }
   },
   "commands": [
@@ -100,7 +100,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     {
       "character": "Elena",
       "startTime": 1,
-      "finishTime": 1.65,
+      "finishTime": 1.55,
       "dialogue": {
         "text": "Hola",
         "align": "center"
@@ -109,7 +109,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     {
       "character": "Elena",
       "opacity": 0,
-      "startTime": 2.15
+      "startTime": 2.05
     }
   ]
 }
