@@ -32,6 +32,8 @@ const helpCategories = [
   'Rosetta'
 ] as const;
 
+const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper] as const;
+
 type BlockInfo = {
   title: string;
   intro: string[];
@@ -71,7 +73,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
     if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
@@ -133,7 +135,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   }
 
   if (
-    (projectArgs.superBlock === SuperBlocks.FullStackDeveloper &&
+    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
       projectArgs.blockType) == null
   ) {
     throw new Error('Missing argument: blockType when updating intro markdown');
@@ -178,7 +180,7 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   let newMeta;
-  if (superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
@@ -296,7 +298,7 @@ void prompt([
     type: 'list',
     choices: Object.values(BlockTypes),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'blockLayout',
@@ -309,7 +311,7 @@ void prompt([
     type: 'list',
     choices: Object.values(BlockLayouts),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'questionCount',
@@ -321,18 +323,16 @@ void prompt([
   },
   {
     name: 'chapter',
-    message:
-      'What chapter in full-stack.json should this full stack project go in?',
+    message: 'What chapter should this project go in?',
     default: 'html',
     type: 'list',
     choices: fullStackData.chapters.map(x => x.dashedName),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'module',
-    message:
-      'What module in full-stack.json should this full stack project go in?',
+    message: 'What module should this project go in?',
     default: 'html',
     type: 'list',
     choices: (answers: CreateProjectArgs) =>
@@ -340,7 +340,7 @@ void prompt([
         .find(x => x.dashedName === answers.chapter)
         ?.modules.map(x => x.dashedName),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'position',
@@ -352,7 +352,7 @@ void prompt([
         : 'Position must be an number greater than zero.';
     },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper,
+      chapterBasedSuperBlocks.includes(answers.superBlock),
     filter: (position: string) => {
       return parseInt(position, 10);
     }
@@ -367,7 +367,7 @@ void prompt([
         : 'Order must be an number greater than zero.';
     },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock !== SuperBlocks.FullStackDeveloper,
+      !chapterBasedSuperBlocks.includes(answers.superBlock),
     filter: (order: string) => {
       return parseInt(order, 10);
     }
