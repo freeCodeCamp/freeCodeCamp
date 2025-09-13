@@ -390,6 +390,9 @@
   "profile": {
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
     "username-change-privacy": "{{username}} needs to change their privacy setting in order for you to view their portfolio.",
+    "view-public-profile": "View public profile",
+    "view-your-profile": "View your profile",
+    "public-profile-preview": "This is a preview of how your portfolio will look to others when made public.",
     "supporter": "Supporter",
     "contributor": "Top Contributor",
     "contributor-prolific": "Among most prolific volunteers in {{year}}",

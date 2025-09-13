@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Alert, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { Alert, Button, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
 
@@ -33,13 +33,33 @@ interface MessageProps {
   isSessionUser: boolean;
   t: TFunction;
   username: string;
+  isPreviewMode?: boolean;
+  onTogglePreview?: () => void;
 }
 
-const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
+const UserMessage = ({
+  t,
+  isPreviewMode,
+  onTogglePreview
+}: Pick<MessageProps, 't' | 'isPreviewMode' | 'onTogglePreview'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
-      <Spacer size='xl' />
+      <Alert variant='info'>
+        {isPreviewMode
+          ? t('profile.public-profile-preview')
+          : t('profile.you-change-privacy')}
+      </Alert>
+      <Spacer size='m' />
+      {onTogglePreview && (
+        <div className='text-center'>
+          <Button variant='primary' onClick={onTogglePreview} size='medium'>
+            {isPreviewMode
+              ? t('profile.view-your-profile')
+              : t('profile.view-public-profile')}
+          </Button>
+          <Spacer size='xl' />
+        </div>
+      )}
     </FullWidthRow>
   );
 };
@@ -77,9 +97,21 @@ const VisitorMessage = ({
   );
 };
 
-const Message = ({ isSessionUser, t, username }: MessageProps) => {
+const Message = ({
+  isSessionUser,
+  t,
+  username,
+  isPreviewMode,
+  onTogglePreview
+}: MessageProps) => {
   if (isSessionUser) {
-    return <UserMessage t={t} />;
+    return (
+      <UserMessage
+        t={t}
+        isPreviewMode={isPreviewMode}
+        onTogglePreview={onTogglePreview}
+      />
+    );
   }
   return <VisitorMessage t={t} username={username} />;
 };
@@ -133,12 +165,23 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
 function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
+  const [isPreviewMode, setIsPreviewMode] = useState(false);
+
   const {
     profileUI: { isLocked },
     username
   } = user;
 
-  const showUserProfile = !isLocked || isSessionUser;
+  // For session users with locked profiles, they can see their full profile
+  // unless they're in preview mode
+  const showUserProfile = !isLocked || (isSessionUser && !isPreviewMode);
+
+  // Show privacy message for locked profiles, or when session user is in preview mode
+  const showPrivacyMessage = isLocked && (!isSessionUser || isPreviewMode);
+
+  const handleTogglePreview = () => {
+    setIsPreviewMode(!isPreviewMode);
+  };
 
   return (
     <>
@@ -148,8 +191,14 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
       <Spacer size='m' />
       <Container>
         <Spacer size='m' />
-        {isLocked && (
-          <Message username={username} isSessionUser={isSessionUser} t={t} />
+        {showPrivacyMessage && (
+          <Message
+            username={username}
+            isSessionUser={isSessionUser}
+            t={t}
+            isPreviewMode={isPreviewMode}
+            onTogglePreview={isSessionUser ? handleTogglePreview : undefined}
+          />
         )}
         {showUserProfile && (
           <UserProfile user={user} isSessionUser={isSessionUser} />
