@@ -3442,6 +3442,12 @@
           "In this lab, you will create a function that removes all falsy values from an array."
         ]
       },
+      "lab-title-case-converter": {
+        "title": "Build a Title Case Converter",
+        "intro": [
+          "In this lab, you will build a function that converts a string to title case."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Build an Inventory Management Program",
         "intro": [
