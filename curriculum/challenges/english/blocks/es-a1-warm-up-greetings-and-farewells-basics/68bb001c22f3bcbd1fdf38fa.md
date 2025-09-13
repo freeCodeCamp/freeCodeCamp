@@ -1,6 +1,6 @@
 ---
 id: 68bb001c22f3bcbd1fdf38fa
-title: "Task 1"
+title: Task 1
 challengeType: 19
 dashedName: task-1
 ---
