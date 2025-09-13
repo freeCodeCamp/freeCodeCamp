@@ -9,6 +9,7 @@ import DropDown from '../../../assets/icons/dropdown';
 // from the curriculum
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
+import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
@@ -180,6 +181,8 @@ export const SuperBlockAccordion = ({
         return fullStackOpen;
       case SuperBlocks.FullStackDeveloper:
         return fullStackCert;
+      case SuperBlocks.A1Spanish:
+        return a1Spanish;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }
@@ -242,7 +245,7 @@ export const SuperBlockAccordion = ({
 
     const allChapters = chapters.map(chapter => ({
       name: chapter.dashedName,
-      comingSoon: chapter.comingSoon,
+      comingSoon: (chapter as { comingSoon?: boolean }).comingSoon ?? false,
       modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
         comingSoon: module.comingSoon,
