@@ -5,8 +5,10 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
@@ -17,6 +19,7 @@ import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import {
+  ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project';
@@ -31,8 +34,6 @@ const helpCategories = [
   'Euler',
   'Rosetta'
 ] as const;
-
-const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper] as const;
 
 type BlockInfo = {
   title: string;
@@ -264,6 +265,31 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+async function getChapters(superBlock: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  return blockMetaData.chapters;
+}
+
+async function getModules(superBlock: string, chapterName: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  const modifiedChapter = blockMetaData.chapters.find(
+    x => x.dashedName === chapterName
+  );
+  return modifiedChapter?.modules;
+}
+
 void prompt([
   {
     name: 'superBlock',
@@ -326,7 +352,10 @@ void prompt([
     message: 'What chapter should this project go in?',
     default: 'html',
     type: 'list',
-    choices: fullStackData.chapters.map(x => x.dashedName),
+    choices: async (answers: CreateProjectArgs) => {
+      const chapters = await getChapters(answers.superBlock);
+      return chapters.map(x => x.dashedName);
+    },
     when: (answers: CreateProjectArgs) =>
       chapterBasedSuperBlocks.includes(answers.superBlock)
   },
@@ -335,10 +364,10 @@ void prompt([
     message: 'What module should this project go in?',
     default: 'html',
     type: 'list',
-    choices: (answers: CreateProjectArgs) =>
-      fullStackData.chapters
-        .find(x => x.dashedName === answers.chapter)
-        ?.modules.map(x => x.dashedName),
+    choices: async (answers: CreateProjectArgs) => {
+      const modules = await getModules(answers.superBlock, answers.chapter!);
+      return modules!.map(x => x.dashedName);
+    },
     when: (answers: CreateProjectArgs) =>
       chapterBasedSuperBlocks.includes(answers.superBlock)
   },
