@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build a Smart Word Replacement Function
-block: lab-search-and-replace
+block: lab-smart-word-replacement
 superBlock: full-stack-developer
 ---
 
