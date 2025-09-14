@@ -3437,6 +3437,12 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
+        ]
+      },
       "lab-html-entitiy-converter": {
         "title": "Implement an HTML Entity Converter",
         "intro": [
@@ -3447,12 +3453,6 @@
         "title": "Build an Optional Arguments Sum Function",
         "intro": [
           "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
-        ]
-      },
-      "lab-dna-pair-generator": {
-        "title": "Implement a DNA Pair Generator",
-        "intro": [
-          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
         ]
       },
       "review-javascript-fundamentals": {
