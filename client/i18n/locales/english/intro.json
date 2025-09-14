@@ -3528,6 +3528,12 @@
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
