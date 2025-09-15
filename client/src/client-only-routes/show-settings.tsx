@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -6,7 +6,7 @@ import { createSelector } from 'reselect';
 
 import { Container, Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-
+import { configureAnchors, goToAnchor } from 'react-scrollable-anchor';
 import store from 'store';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -36,6 +36,9 @@ import {
   verifyCert,
   resetMyEditorLayout
 } from '../redux/settings/actions';
+
+import './show-settings.css';
+import { currentCertifications } from '../../../shared/config/certification-settings';
 
 const { apiLocation } = envData;
 
@@ -106,8 +109,21 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
-
+  configureAnchors({ offset: -50, scrollDuration: 200 });
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
+  const [lastHash, setLastHash] = useState(window.location.hash);
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setLastHash(window.location.hash);
+    };
+
+    window.addEventListener('hashchange', onHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', onHashChange);
+    };
+  }, []);
 
   if (showLoading || !user) {
     return <Loader fullScreen={true} />;
@@ -152,75 +168,95 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Container>
-        <main>
-          <Spacer size='l' />
-          <h1
-            id='content-start'
-            className='text-center'
-            style={{ overflowWrap: 'break-word' }}
-            data-playwright-test-label='settings-heading'
-          >
-            {t('settings.for', { username: username })}
-          </h1>
-          <MiscSettings
-            keyboardShortcuts={keyboardShortcuts}
-            sound={sound}
-            editorLayout={editorLayout}
-            resetEditorLayout={resetEditorLayout}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            toggleSoundMode={toggleSoundMode}
-          />
-          <Spacer size='m' />
-          <Privacy />
-          <Spacer size='m' />
-          <Email
-            email={email}
-            isEmailVerified={isEmailVerified}
-            sendQuincyEmail={sendQuincyEmail}
-            updateQuincyEmail={updateQuincyEmail}
-          />
-          <Spacer size='m' />
-          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
-          <Spacer size='m' />
-          {examTokenFlag && <ExamToken />}
-          <Certification
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
-            username={username}
-            verifyCert={verifyCert}
-            isEmailVerified={isEmailVerified}
-          />
-          {userToken && (
-            <>
-              <Spacer size='m' />
-              <UserToken />
-            </>
-          )}
-          <Spacer size='m' />
-          <DangerZone />
-        </main>
-      </Container>
+      <div className='settings-container'>
+        <aside className='index'>
+          <h2>{t('settings.headings.certs')}</h2>
+          {currentCertifications.map(slug => (
+            <div key={slug}>
+              <button
+                type='button'
+                className={
+                  'cert-anchor-btn' +
+                  (lastHash === `#cert-${slug}` ? ' active' : '')
+                }
+                onClick={() => goToAnchor(`cert-${slug}`)}
+              >
+                {t(`certification.title.${slug}`, slug)}
+              </button>
+              <br />
+            </div>
+          ))}
+        </aside>
+        <Container>
+          <main>
+            <Spacer size='l' />
+            <h1
+              id='content-start'
+              className='text-center'
+              style={{ overflowWrap: 'break-word' }}
+              data-playwright-test-label='settings-heading'
+            >
+              {t('settings.for', { username: username })}
+            </h1>
+            <MiscSettings
+              keyboardShortcuts={keyboardShortcuts}
+              sound={sound}
+              editorLayout={editorLayout}
+              resetEditorLayout={resetEditorLayout}
+              toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+              toggleSoundMode={toggleSoundMode}
+            />
+            <Spacer size='m' />
+            <Privacy />
+            <Spacer size='m' />
+            <Email
+              email={email}
+              isEmailVerified={isEmailVerified}
+              sendQuincyEmail={sendQuincyEmail}
+              updateQuincyEmail={updateQuincyEmail}
+            />
+            <Spacer size='m' />
+            <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+            <Spacer size='m' />
+            {examTokenFlag && <ExamToken />}
+            <Certification
+              completedChallenges={completedChallenges}
+              createFlashMessage={createFlashMessage}
+              is2018DataVisCert={is2018DataVisCert}
+              isApisMicroservicesCert={isApisMicroservicesCert}
+              isBackEndCert={isBackEndCert}
+              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+              isDataVisCert={isDataVisCert}
+              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+              isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
+              isFrontEndCert={isFrontEndCert}
+              isFrontEndLibsCert={isFrontEndLibsCert}
+              isFullStackCert={isFullStackCert}
+              isHonest={isHonest}
+              isInfosecCertV7={isInfosecCertV7}
+              isInfosecQaCert={isInfosecQaCert}
+              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isQaCertV7={isQaCertV7}
+              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRespWebDesignCert={isRespWebDesignCert}
+              isSciCompPyCertV7={isSciCompPyCertV7}
+              isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              username={username}
+              verifyCert={verifyCert}
+              isEmailVerified={isEmailVerified}
+            />
+            {userToken && (
+              <>
+                <Spacer size='m' />
+                <UserToken />
+              </>
+            )}
+            <Spacer size='m' />
+            <DangerZone />
+          </main>
+        </Container>
+      </div>
     </>
   );
 }
