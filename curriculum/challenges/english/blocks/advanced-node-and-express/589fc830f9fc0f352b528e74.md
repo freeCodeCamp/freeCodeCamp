@@ -49,7 +49,6 @@ Submit your page when you think you've got it right. If you're running into erro
 `socket.io` should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -58,13 +57,11 @@ async () => {
     'socket.io',
     'Your project should list "socket.io" as a dependency'
   );
-}
 ```
 
 You should correctly require and instantiate `http` as `http`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -73,13 +70,11 @@ async () => {
     /http.*=.*require.*('|")http\1/s,
     'Your project should list "http" as a dependency'
   );
-}
 ```
 
 You should correctly require and instantiate `socket.io` as `io`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -88,13 +83,11 @@ async () => {
     /io.*=.*require.*('|")socket.io\1.*http/s,
     'You should correctly require and instantiate socket.io as io.'
   );
-}
 ```
 
 Socket.IO should be listening for connections.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -103,13 +96,11 @@ async () => {
     /io.on.*('|")connection\1.*socket/s,
     'io should listen for "connection" and socket should be the 2nd arguments variable'
   );
-}
 ```
 
 Your client should connect to your server.
 
 ```js
-async () => {
   const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -118,6 +109,5 @@ async () => {
     /socket.*=.*io/s,
     'Your client should be connection to server with the connection defined as socket'
   );
-}
 ```
 

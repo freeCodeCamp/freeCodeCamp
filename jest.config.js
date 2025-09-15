@@ -4,6 +4,7 @@ module.exports = {
     'api/',
     'e2e/',
     'tools/challenge-helper-scripts/',
+    'tools/challenge-parser/',
     'tools/scripts/build/',
     'curriculum'
   ],

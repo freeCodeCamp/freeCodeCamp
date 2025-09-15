@@ -54,7 +54,6 @@ assert(
 The `GetInput` component should receive the `MyApp` state property `inputValue` as props and contain an `input` element which modifies `MyApp` state.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyApp));
@@ -71,13 +70,11 @@ async () => {
   const updated_1 = await state_1();
   const updated_2 = await state_2();
   assert(updated_1.inputValue === '' && updated_2.inputValue === 'TestInput');
-};
 ```
 
 The `RenderInput` component should receive the `MyApp` state property `inputValue` as props.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyApp));
@@ -87,7 +84,6 @@ async () => {
   };
   const updated_1 = await state_1();
   assert(updated_1.find('p').text().includes('TestName'));
-};
 ```
 
 # --seed--
