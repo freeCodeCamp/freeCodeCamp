@@ -112,6 +112,7 @@ test.describe('Username Settings Validation', () => {
     await expect(
       page.getByRole('alert').filter({ hasText: flashText }).first()
     ).toBeVisible();
+    await expect(page).toHaveURL(`/${settingsObject.usernameAvailable}`);
   });
 
   test('should update username in lowercase and reflect in the UI', async ({

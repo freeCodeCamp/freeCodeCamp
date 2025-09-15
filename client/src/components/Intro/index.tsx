@@ -6,11 +6,12 @@ import Login from '../Header/components/login';
 import { Link, Loader } from '../helpers';
 
 import './intro.css';
+import EmailSignUpAlert from './email-sign-up-alert';
 import LearnAlert from './learn-alert';
 
 interface IntroProps {
   complete?: boolean;
-  completedChallengeCount?: number;
+  completedChallengeCount: number;
   isSignedIn?: boolean;
   name?: string;
   pending?: boolean;
@@ -64,6 +65,7 @@ const Intro = ({
           onLearnDonationAlertClick={onLearnDonationAlertClick}
           isDonating={isDonating}
         />
+        <EmailSignUpAlert />
         {completedChallengeCount && slug && completedChallengeCount < 15 ? (
           <div className='intro-description'>
             <Spacer size='m' />

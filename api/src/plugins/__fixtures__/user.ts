@@ -1,3 +1,5 @@
+import { expect } from 'vitest';
+
 import { nanoidCharSet } from '../../utils/create-user';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
@@ -77,7 +79,7 @@ export const newUser = (email: string) => ({
   progressTimestamps: [expect.any(Number)],
   rand: null, // TODO(Post-MVP): delete from schema (it's not used or required).
   savedChallenges: [],
-  sendQuincyEmail: false,
+  sendQuincyEmail: null,
   theme: 'default',
   timezone: null,
   twitter: null,

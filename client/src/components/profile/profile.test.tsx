@@ -11,7 +11,6 @@ window.___loader = { enqueue: () => {}, hovering: () => {} };
 
 const userProps = {
   user: {
-    acceptedPrivacyTerms: true,
     currentChallengeId: 'string',
     email: 'string',
     emailVerified: true,
@@ -81,7 +80,7 @@ const notMyProfileProps = {
 };
 function reducer() {
   return {
-    app: { appUsername: 'vasili', user: { vasili: userProps.user } }
+    app: { user: { sessionUser: userProps.user } }
   };
 }
 function renderWithRedux(ui: JSX.Element) {

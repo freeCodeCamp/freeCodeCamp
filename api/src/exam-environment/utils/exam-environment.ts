@@ -41,7 +41,7 @@ export function checkPrerequisites(
 
 export type UserExam = Omit<
   ExamEnvironmentExam,
-  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated'
+  'questionSets' | 'config' | 'id' | 'prerequisites' | 'deprecated' | 'version'
 > & {
   config: Omit<ExamEnvironmentExam['config'], 'tags' | 'questionSets'>;
   questionSets: (Omit<ExamEnvironmentQuestionSet, 'questions'> & {
@@ -82,11 +82,14 @@ export function constructUserExam(
         return answer;
       });
 
+      // NOTE: Shuffling here means when saved attempt is re-fetched, answers will be in different order.
+      const shuffledAnswers = shuffleArray(answers);
+
       return {
         id: examQuestion.id,
         audio: examQuestion.audio,
         text: examQuestion.text,
-        answers
+        answers: shuffledAnswers
       };
     });
 
@@ -277,7 +280,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
  */
 export function generateExam(
   exam: ExamEnvironmentExam
-): Omit<ExamEnvironmentGeneratedExam, 'id'> {
+): Omit<ExamEnvironmentGeneratedExam, 'id' | 'version'> {
   const examCopy = structuredClone(exam);
 
   const TIMEOUT_IN_MS = 5_000;
@@ -299,6 +302,10 @@ export function generateExam(
       questions: shuffledQuestions
     };
   });
+
+  if (examCopy.config.questionSets.length === 0) {
+    throw `${examCopy.id}: Invalid exam config - no question sets config.`;
+  }
 
   // Convert question set config by type: [[all question sets of type], [another type], ...]
   const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(
@@ -731,8 +738,9 @@ function getRandomAnswers(
  *
  * https://bost.ocks.org/mike/shuffle/
  */
-function shuffleArray<T>(array: Array<T>) {
-  let m = array.length;
+export function shuffleArray<T>(array: Array<T>) {
+  const arr = structuredClone(array);
+  let m = arr.length;
   let t;
   let i;
 
@@ -742,12 +750,12 @@ function shuffleArray<T>(array: Array<T>) {
     i = Math.floor(Math.random() * m--);
 
     // And swap it with the current element.
-    t = array[m]!;
-    array[m] = array[i]!;
-    array[i] = t;
+    t = arr[m]!;
+    arr[m] = arr[i]!;
+    arr[i] = t;
   }
 
-  return array;
+  return arr;
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
 
@@ -928,5 +936,5 @@ export async function constructEnvExamAttempt(
 }
 
 function omitAttemptReferenceIds(attempt: ExamEnvironmentExamAttempt) {
-  return omit(attempt, ['examId', 'id', 'generatedExamId', 'userId']);
+  return omit(attempt, ['generatedExamId', 'userId']);
 }
