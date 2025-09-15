@@ -4849,10 +4849,38 @@
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+    },
+    "modules": {
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+    },
+    "module-intros": {
+      "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "a1-professional-spanish-placeholder-block": {
-        "title": "A1 Professional Spanish Placeholder Block",
-        "intro": ["Placeholder intro text."]
+      "es-a1-warm-up-greetings-and-farewells-basics": {
+        "title": "Greetings and Farewells Basics",
+        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },
