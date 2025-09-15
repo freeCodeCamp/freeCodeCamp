@@ -4876,7 +4876,8 @@
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
-      "review-javascript": "JavaScript Review"
+      "review-javascript": "JavaScript Review",
+      "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
