@@ -75,7 +75,7 @@ const GrowthBookWrapper = ({
       })
       .catch(error => {
         console.error('Error initializing GrowthBook:', error);
-        growthbook.setFeatures(defaultGrowthBookFeatures);
+        void growthbook.setPayload({ features: defaultGrowthBookFeatures });
       });
   }, [growthbook]);
 
@@ -83,7 +83,7 @@ const GrowthBookWrapper = ({
     function setGrowthBookFeatures() {
       if (!growthbookUri) {
         // Defaults are added to facilitate testing, and avoid passing the related env
-        growthbook.setFeatures(defaultGrowthBookFeatures);
+        void growthbook.setPayload({ features: defaultGrowthBookFeatures });
       }
     }
 
