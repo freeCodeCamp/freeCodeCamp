@@ -13,7 +13,13 @@ import {
   writeBlockStructure
 } from '../../curriculum/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
-import { createQuizFile, createStepFile, validateBlockName } from './utils';
+import {
+  createQuizFile,
+  createStepFile,
+  createReviewFile,
+  validateBlockName,
+  createLabFile
+} from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import {
@@ -117,6 +123,30 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.helpCategory,
       challengeId
     );
+  } else if (projectArgs.blockType === BlockTypes.review) {
+    const challengeId = await createReviewChallenge(
+      projectArgs.block,
+      projectArgs.title
+    );
+    void createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId
+    );
+  } else if (projectArgs.blockType === BlockTypes.lab) {
+    const challengeId = await createLabChallenge(
+      projectArgs.block,
+      projectArgs.title
+    );
+    void createMetaJson(
+      projectArgs.superBlock,
+      projectArgs.block,
+      projectArgs.title,
+      projectArgs.helpCategory,
+      challengeId
+    );
   } else {
     const challengeId = await createFirstChallenge(projectArgs.block);
     void createMetaJson(
@@ -185,10 +215,9 @@ async function createMetaJson(
       newMeta = getBaseMeta('Review');
     } else {
       newMeta = getBaseMeta('FullStack');
+      newMeta.blockType = blockType;
+      newMeta.blockLayout = blockLayout;
     }
-
-    newMeta.blockType = blockType;
-    newMeta.blockLayout = blockLayout;
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
@@ -249,6 +278,42 @@ async function createQuizChallenge(
   });
 }
 
+async function createLabChallenge(
+  block: string,
+  title: string
+): Promise<ObjectID> {
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createLabFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block
+  });
+}
+
+async function createReviewChallenge(
+  block: string,
+  title: string
+): Promise<ObjectID> {
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createReviewFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block
+  });
+}
+
 function parseJson<JsonSchema>(filePath: string) {
   return withTrace(fs.readFile, filePath, 'utf8').then(
     // unfortunately, withTrace does not correctly infer that the third argument
@@ -267,6 +332,17 @@ function withTrace<Args extends unknown[], Result>(
   return fn(...args).catch((reason: Error) => {
     throw Error(reason.message);
   });
+}
+
+function getDefaultBlockLayout(answers: { blockType: BlockTypes }) {
+  switch (answers.blockType) {
+    case BlockTypes.quiz:
+      return BlockLayouts.Link;
+    case BlockTypes.review:
+      return BlockLayouts.Link;
+    default:
+      return BlockLayouts.ChallengeList;
+  }
 }
 
 void prompt([
@@ -310,9 +386,7 @@ void prompt([
     message: 'Choose a block layout',
 
     default: (answers: { blockType: BlockTypes }) =>
-      answers.blockType == BlockTypes.quiz
-        ? BlockLayouts.Link
-        : BlockLayouts.ChallengeList,
+      getDefaultBlockLayout(answers),
     type: 'list',
     choices: Object.values(BlockLayouts),
     when: (answers: CreateProjectArgs) =>

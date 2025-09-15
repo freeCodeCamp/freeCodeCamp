@@ -28,6 +28,12 @@ interface QuizOptions {
   questionCount: number;
 }
 
+interface ReviewOptions {
+  projectPath?: string;
+  title: string;
+  dashedName: string;
+}
+
 const createStepFile = ({
   stepNum,
   challengeType,
@@ -81,6 +87,44 @@ const createQuizFile = ({
   return challengeId;
 };
 
+const createLabFile = ({
+  projectPath = getProjectPath(),
+  title,
+  dashedName
+}: ReviewOptions): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.lab.toString();
+  const template = getTemplate(challengeType);
+  const reviewText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, reviewText);
+  return challengeId;
+};
+
+const createReviewFile = ({
+  projectPath = getProjectPath(),
+  title,
+  dashedName
+}: ReviewOptions): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.review.toString();
+  const template = getTemplate(challengeType);
+  const reviewText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, reviewText);
+  return challengeId;
+};
+
 const createDialogueFile = ({
   projectPath
 }: {
@@ -100,7 +144,6 @@ const createDialogueFile = ({
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, dialogueText);
   return challengeId;
 };
-
 interface InsertOptions {
   stepNum: number;
   stepId: ObjectID;
@@ -278,5 +321,7 @@ export {
   deleteChallengeFromMeta,
   deleteStepFromMeta,
   validateBlockName,
-  createQuizFile
+  createQuizFile,
+  createReviewFile,
+  createLabFile
 };
