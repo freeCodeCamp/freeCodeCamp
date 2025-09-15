@@ -276,6 +276,8 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
@@ -400,6 +402,7 @@
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
             "lab-matching-object-filter",
+            "lab-sum-all-primes-calculator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
