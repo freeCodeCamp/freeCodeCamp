@@ -25,3 +25,12 @@
     left: 5px;
   }
 }
+
+@media print {
+  .site-header {
+    display: none; /* Header will be hide in print */
+  }
+  body {
+    margin-top: 0; /* article content will start from top  */
+  }
+}
