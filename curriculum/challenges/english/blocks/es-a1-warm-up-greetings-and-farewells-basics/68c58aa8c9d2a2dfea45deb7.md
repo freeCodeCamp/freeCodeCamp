@@ -1,8 +1,8 @@
 ---
 id: 68c58aa8c9d2a2dfea45deb7
-title: Task 8
+title: Task 7
 challengeType: 19
-dashedName: task-8
+dashedName: task-7
 ---
 <!-- (Audio) Elena: Hasta luego -->
 

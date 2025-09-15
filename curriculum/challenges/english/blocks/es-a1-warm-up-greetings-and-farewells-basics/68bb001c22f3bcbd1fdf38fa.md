@@ -14,7 +14,7 @@ Welcome to the A1 Professional Spanish course!
 
 This is an **elementary course** focused on teaching you the very basics of the Spanish language. 
 
-The section you're in now is called `warm-up`. This is where you'll be introduced to new words before they appear in longer sentences or conversations.
+The section you're in now is called **Warm-up**. This is where you'll be introduced to new words before they appear in longer sentences or conversations.
 
 Let's start by practicing your first word in Spanish.
 

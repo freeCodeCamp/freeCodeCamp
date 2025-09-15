@@ -6,6 +6,8 @@
   "blockLayout": "dialogue-grid",
   "blockType": "learn",
   "challengeOrder": [
-    { "id": "68c84d44d91406c37b3ad73f", "title": "Dialogue 1: I'm Tom" }
+    { "id": "68c488abd71a3e27190965e0", "title": "Task 1" },
+    { "id": "68c84d44d91406c37b3ad73f", "title": "Task 2" },
+    { "id": "68c88a1c3f01ed15c7ca6c83", "title": "Task 3" }
   ]
 }
