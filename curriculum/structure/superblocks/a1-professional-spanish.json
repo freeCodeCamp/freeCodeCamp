@@ -5,7 +5,13 @@
       "modules": [
         {
           "dashedName": "es-a1-module-greetings-and-farewells",
-          "blocks": ["es-a1-warm-up-greetings-and-farewells-basics"]
+          "blocks": [
+            "es-a1-warm-up-greetings-and-farewells-basics",
+            "es-a1-learn-greetings-during-the-day",
+            "es-a1-practice-greetings-and-farewells",
+            "es-a1-review-greetings-and-farewells",
+            "es-a1-quiz-greetings-and-farewells"
+          ]
         }
       ]
     }

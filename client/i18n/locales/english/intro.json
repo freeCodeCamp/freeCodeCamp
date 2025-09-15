@@ -4870,6 +4870,22 @@
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
         "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },
