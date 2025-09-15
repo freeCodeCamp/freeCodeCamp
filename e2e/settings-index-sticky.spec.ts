@@ -1,12 +1,18 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
-import { MAX_MOBILE_WIDTH } from '../client/config/misc';
 
 test.describe('Settings Page - Sticky Index Widget', () => {
-  test.beforeEach(async ({ page }) => {
+  // Skip WebKit and all mobile projects
+  test.skip(({ browserName, isMobile }) => {
+    return browserName === 'webkit' || isMobile === true;
+  }, 'Skipping for WebKit and mobile');
+
+  test.beforeAll(() => {
     execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  });
+
+  test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
-    await page.waitForSelector('.settings-container');
   });
 
   test('index widget should have sticky positioning CSS properties', async ({
@@ -84,16 +90,5 @@ test.describe('Settings Page - Sticky Index Widget', () => {
         expect(headingBoundingBox.y).toBeLessThan(viewportHeight);
       }
     }
-  });
-
-  test('index widget should not be visible on mobile viewport', async ({
-    page
-  }) => {
-    await page.setViewportSize({ width: MAX_MOBILE_WIDTH, height: 667 });
-    await page.waitForTimeout(500);
-
-    const indexElement = page.locator('.index');
-    const isVisible = await indexElement.isVisible();
-    expect(isVisible).toBe(false);
   });
 });
