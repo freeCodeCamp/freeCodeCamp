@@ -259,7 +259,17 @@ const availableAudios = [
   'B1_23-3.mp3',
   'B1_24-1.mp3',
   'B1_24-2.mp3',
-  'B1_24-3.mp3'
+  'B1_24-3.mp3',
+  'ES_A1_1.1.MP3',
+  'ES_A1_1.2.MP3',
+  'ES_A1_1.3.MP3',
+  'ES_A1_1.4.MP3',
+  'ES_A1_2.1.MP3',
+  'ES_A1_2.2.MP3',
+  'ES_A1_2.3.MP3',
+  'ES_A1_2.4.MP3',
+  'ES_A1_3.1.MP3',
+  'ES_A1_3.2.MP3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];
