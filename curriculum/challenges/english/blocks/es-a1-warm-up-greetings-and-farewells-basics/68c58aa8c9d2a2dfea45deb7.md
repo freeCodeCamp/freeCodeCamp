@@ -53,7 +53,7 @@ This means "See you soon", but the speaker says something slightly different.
 `Hasta luego` is a common way to say goodbye in Spanish.  
 It translates to "See you later".
 
-It’s used when you expect to see the person again, but not necessarily soon. For example:  
+It's used when you expect to see the person again, but not necessarily soon. For example:  
 
 `Hasta luego, Marta` – See you later, Marta.
 
