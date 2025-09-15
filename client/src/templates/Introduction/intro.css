@@ -61,6 +61,21 @@
   color: var(--quaternary-color);
 }
 
+.block-label-warm-up {
+  border-color: var(--yellow-color);
+  color: var(--yellow-color);
+}
+
+.block-label-learn {
+  border-color: var(--highlight-color);
+  color: var(--highlight-color);
+}
+
+.block-label-practice {
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
 .block-header {
   display: flex;
   justify-content: space-between;
