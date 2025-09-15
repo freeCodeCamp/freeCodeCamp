@@ -1,8 +1,6 @@
-const fs = require('fs');
-const yaml = require('js-yaml');
+import { readFileSync } from 'fs';
+import { load } from 'js-yaml';
 
-const buildCertification = filePath => ({
-  challenges: [yaml.load(fs.readFileSync(filePath, 'utf8'))]
+export const buildCertification = filePath => ({
+  challenges: [load(readFileSync(filePath, 'utf8'))]
 });
-
-module.exports = { buildCertification };

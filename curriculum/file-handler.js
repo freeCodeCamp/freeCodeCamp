@@ -1,18 +1,23 @@
-const path = require('node:path');
-const assert = require('node:assert');
-const fs = require('node:fs');
-const fsP = require('node:fs/promises');
+import { resolve, dirname } from 'node:path';
+import assert from 'node:assert';
+import { existsSync, readFileSync } from 'node:fs';
+import { writeFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 
-const debug = require('debug')('fcc:file-handler');
+import debug from 'debug';
 
+const log = debug('fcc:file-handler');
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const CURRICULUM_DIR = __dirname;
-const I18N_CURRICULUM_DIR = path.resolve(
+const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
   'curriculum'
 );
-const STRUCTURE_DIR = path.resolve(CURRICULUM_DIR, 'structure');
-const BLOCK_STRUCTURE_DIR = path.resolve(STRUCTURE_DIR, 'blocks');
+const STRUCTURE_DIR = resolve(CURRICULUM_DIR, 'structure');
+const BLOCK_STRUCTURE_DIR = resolve(STRUCTURE_DIR, 'blocks');
 
 /**
  * Gets language-specific configuration paths for curriculum content
@@ -24,41 +29,41 @@ const BLOCK_STRUCTURE_DIR = path.resolve(STRUCTURE_DIR, 'blocks');
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-function getContentConfig(
+export function getContentConfig(
   lang,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
     i18nBaseDir: I18N_CURRICULUM_DIR
   }
 ) {
-  const contentDir = path.resolve(baseDir, 'challenges', 'english');
-  const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
-  const blockContentDir = path.resolve(contentDir, 'blocks');
-  const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
-  const dictionariesDir = path.resolve(baseDir, 'dictionaries');
-  const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
+  const contentDir = resolve(baseDir, 'challenges', 'english');
+  const i18nContentDir = resolve(i18nBaseDir, 'challenges', lang);
+  const blockContentDir = resolve(contentDir, 'blocks');
+  const i18nBlockContentDir = resolve(i18nContentDir, 'blocks');
+  const dictionariesDir = resolve(baseDir, 'dictionaries');
+  const i18nDictionariesDir = resolve(i18nBaseDir, 'dictionaries');
 
   if (lang !== 'english') {
     assert(
-      fs.existsSync(i18nContentDir),
+      existsSync(i18nContentDir),
       `i18n content directory does not exist: ${i18nContentDir}`
     );
     assert(
-      fs.existsSync(i18nBlockContentDir),
+      existsSync(i18nBlockContentDir),
       `i18n block content directory does not exist: ${i18nBlockContentDir}`
     );
     assert(
-      fs.existsSync(i18nDictionariesDir),
+      existsSync(i18nDictionariesDir),
       `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
     );
   }
 
-  debug(`Using content directory: ${contentDir}`);
-  debug(`Using i18n content directory: ${i18nContentDir}`);
-  debug(`Using block content directory: ${blockContentDir}`);
-  debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
-  debug(`Using dictionaries directory: ${dictionariesDir}`);
-  debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
+  log(`Using content directory: ${contentDir}`);
+  log(`Using i18n content directory: ${i18nContentDir}`);
+  log(`Using block content directory: ${blockContentDir}`);
+  log(`Using i18n block content directory: ${i18nBlockContentDir}`);
+  log(`Using dictionaries directory: ${dictionariesDir}`);
+  log(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
 
   return {
     contentDir,
@@ -75,69 +80,65 @@ function getContentConfig(
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
  * @returns {string} Path to the content directory for the specified language
  */
-function getContentDir(lang) {
+export function getContentDir(lang) {
   const { contentDir, i18nContentDir } = getContentConfig(lang);
 
   return lang === 'english' ? contentDir : i18nContentDir;
 }
 
-function getCurriculumStructure() {
-  const curriculumPath = path.resolve(STRUCTURE_DIR, 'curriculum.json');
-  if (!fs.existsSync(curriculumPath)) {
+export function getCurriculumStructure() {
+  const curriculumPath = resolve(STRUCTURE_DIR, 'curriculum.json');
+  if (!existsSync(curriculumPath)) {
     throw new Error(`Curriculum file not found: ${curriculumPath}`);
   }
 
-  return JSON.parse(fs.readFileSync(curriculumPath, 'utf8'));
+  return JSON.parse(readFileSync(curriculumPath, 'utf8'));
 }
 
-function getBlockStructurePath(block) {
-  return path.resolve(BLOCK_STRUCTURE_DIR, `${block}.json`);
+export function getBlockStructurePath(block) {
+  return resolve(BLOCK_STRUCTURE_DIR, `${block}.json`);
 }
 
-function getBlockStructureDir() {
+export function getBlockStructureDir() {
   return BLOCK_STRUCTURE_DIR;
 }
 
-function getBlockStructure(block) {
-  return JSON.parse(fs.readFileSync(getBlockStructurePath(block), 'utf8'));
+export function getBlockStructure(block) {
+  return JSON.parse(readFileSync(getBlockStructurePath(block), 'utf8'));
 }
 
-async function writeBlockStructure(block, structure) {
+export async function writeBlockStructure(block, structure) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
   const prettier = await import('prettier');
   const content = await prettier.format(JSON.stringify(structure), {
     parser: 'json'
   });
-  await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
+  await writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
-async function writeSuperblockStructure(superblock, structure) {
+export async function writeSuperblockStructure(superblock, structure) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
   const prettier = await import('prettier');
   const content = await prettier.format(JSON.stringify(structure), {
     parser: 'json'
   });
-  await fsP.writeFile(getSuperblockStructurePath(superblock), content);
+  await writeFile(getSuperblockStructurePath(superblock), content);
 }
 
-function getSuperblockStructure(superblockFilename) {
+export function getSuperblockStructure(superblockFilename) {
   const superblockPath = getSuperblockStructurePath(superblockFilename);
 
-  if (!fs.existsSync(superblockPath)) {
+  if (!existsSync(superblockPath)) {
     throw Error(`Superblock file not found: ${superblockPath}`);
   }
 
-  return JSON.parse(fs.readFileSync(superblockPath, 'utf8'));
+  return JSON.parse(readFileSync(superblockPath, 'utf8'));
 }
 
-function getSuperblockStructurePath(superblockFilename) {
-  return path.resolve(
-    STRUCTURE_DIR,
-    'superblocks',
-    `${superblockFilename}.json`
-  );
+export function getSuperblockStructurePath(superblockFilename) {
+  return resolve(STRUCTURE_DIR, 'superblocks', `${superblockFilename}.json`);
 }
 
 /**
@@ -150,40 +151,41 @@ function getSuperblockStructurePath(superblockFilename) {
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-function getLanguageConfig(
+export function getLanguageConfig(
   lang,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
     i18nBaseDir: I18N_CURRICULUM_DIR
   }
 ) {
-  const contentDir = path.resolve(baseDir, 'challenges', 'english');
-  const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
-  const blockContentDir = path.resolve(contentDir, 'blocks');
-  const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
-  const dictionariesDir = path.resolve(baseDir, 'dictionaries');
-  const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
+  const contentDir = resolve(baseDir, 'challenges', 'english');
+  const i18nContentDir = resolve(i18nBaseDir, 'challenges', lang);
+  const blockContentDir = resolve(contentDir, 'blocks');
+  const i18nBlockContentDir = resolve(i18nContentDir, 'blocks');
+  const dictionariesDir = resolve(baseDir, 'dictionaries');
+  const i18nDictionariesDir = resolve(i18nBaseDir, 'dictionaries');
 
   if (lang !== 'english') {
     assert(
-      fs.existsSync(i18nContentDir),
+      existsSync(i18nContentDir),
       `i18n content directory does not exist: ${i18nContentDir}`
     );
     assert(
-      fs.existsSync(i18nBlockContentDir),
+      existsSync(i18nBlockContentDir),
       `i18n block content directory does not exist: ${i18nBlockContentDir}`
     );
     assert(
-      fs.existsSync(i18nDictionariesDir),
+      existsSync(i18nDictionariesDir),
       `i18n dictionaries directory does not exist: ${i18nDictionariesDir}`
     );
   }
 
-  debug(`Using content directory: ${contentDir}`);
-  debug(`Using i18n content directory: ${i18nContentDir}`);
-  debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
-  debug(`Using dictionaries directory: ${dictionariesDir}`);
-  debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
+  log(`Using content directory: ${contentDir}`);
+  log(`Using i18n content directory: ${i18nContentDir}`);
+  log(`Using block content directory: ${blockContentDir}`);
+  log(`Using i18n block content directory: ${i18nBlockContentDir}`);
+  log(`Using dictionaries directory: ${dictionariesDir}`);
+  log(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
 
   return {
     contentDir,
@@ -194,14 +196,3 @@ function getLanguageConfig(
     i18nDictionariesDir
   };
 }
-
-exports.getContentConfig = getContentConfig;
-exports.getContentDir = getContentDir;
-exports.getBlockStructureDir = getBlockStructureDir;
-exports.getBlockStructure = getBlockStructure;
-exports.getBlockStructurePath = getBlockStructurePath;
-exports.getSuperblockStructure = getSuperblockStructure;
-exports.getCurriculumStructure = getCurriculumStructure;
-exports.writeBlockStructure = writeBlockStructure;
-exports.writeSuperblockStructure = writeSuperblockStructure;
-exports.getLanguageConfig = getLanguageConfig;

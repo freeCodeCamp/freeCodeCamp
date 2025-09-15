@@ -1,16 +1,20 @@
-const path = require('path');
+import { resolve } from 'path';
 
-const comparison = require('string-similarity');
+import comparison from 'string-similarity';
+import { config } from 'dotenv';
 
-const { generateSuperBlockList } = require('../shared-dist/config/curriculum');
+import {
+  generateSuperBlockList,
+  SuperBlocks
+} from '../shared-dist/config/curriculum';
 
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+config({ path: resolve(__dirname, '../.env') });
 
-const { availableLangs } = require('../shared-dist/config/i18n');
+import { availableLangs } from '../shared-dist/config/i18n';
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
-exports.testedLang = function testedLang() {
+export function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
     if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
       return process.env.CURRICULUM_LOCALE;
@@ -21,9 +25,9 @@ exports.testedLang = function testedLang() {
   } else {
     throw Error('LOCALE must be set for testing');
   }
-};
+}
 
-function createSuperOrder(superBlocks) {
+export function createSuperOrder(superBlocks) {
   const superOrder = {};
 
   superBlocks.forEach((superBlock, i) => {
@@ -33,7 +37,7 @@ function createSuperOrder(superBlocks) {
   return superOrder;
 }
 
-function getSuperOrder(
+export function getSuperOrder(
   superblock,
   showUpcomingChanges = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
@@ -54,7 +58,7 @@ function getSuperOrder(
  * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
  * @returns {Array<Object>} Array with one superblock containing the specified block, or the original array if block is not provided.
  */
-function filterByBlock(superblocks, { block } = {}) {
+export function filterByBlock(superblocks, { block } = {}) {
   if (!block) return superblocks;
 
   const superblock = superblocks
@@ -76,7 +80,7 @@ function filterByBlock(superblocks, { block } = {}) {
  * @param {string} [options.superBlock] - The name of the superblock to filter for.
  * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock, or the original array if superBlock is not provided.
  */
-function filterBySuperblock(superblocks, { superBlock } = {}) {
+export function filterBySuperblock(superblocks, { superBlock } = {}) {
   if (!superBlock) return superblocks;
   return superblocks.filter(({ name }) => name === superBlock);
 }
@@ -88,7 +92,7 @@ function filterBySuperblock(superblocks, { superBlock } = {}) {
  * @param {string} [options.challengeId] - The specific challenge id to filter for
  * @returns {Array<Object>} Filtered superblocks containing only the matching challenge
  */
-function filterByChallengeId(superblocks, { challengeId } = {}) {
+export function filterByChallengeId(superblocks, { challengeId } = {}) {
   if (!challengeId) {
     return superblocks;
   }
@@ -124,17 +128,17 @@ function filterByChallengeId(superblocks, { challengeId } = {}) {
 const createFilterPipeline = filterFunctions => (data, filters) =>
   filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
 
-const applyFilters = createFilterPipeline([
+export const applyFilters = createFilterPipeline([
   filterBySuperblock,
   filterByBlock,
   filterByChallengeId
 ]);
 
-function closestMatch(target, xs) {
+export function closestMatch(target, xs) {
   return comparison.findBestMatch(target.toLowerCase(), xs).bestMatch.target;
 }
 
-function closestFilters(target, superblocks) {
+export function closestFilters(target, superblocks) {
   if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
     return {
@@ -155,12 +159,3 @@ function closestFilters(target, superblocks) {
 
   return target;
 }
-
-exports.closestFilters = closestFilters;
-exports.closestMatch = closestMatch;
-exports.createSuperOrder = createSuperOrder;
-exports.filterByBlock = filterByBlock;
-exports.filterBySuperblock = filterBySuperblock;
-exports.filterByChallengeId = filterByChallengeId;
-exports.getSuperOrder = getSuperOrder;
-exports.applyFilters = applyFilters;

@@ -1,18 +1,18 @@
-const fs = require('fs');
-const path = require('path');
+import { readdirSync, readFileSync, existsSync } from 'fs';
+import { resolve, basename } from 'path';
 
-const { isEmpty, isUndefined } = require('lodash');
-const debug = require('debug')('fcc:build-curriculum');
+import { isEmpty, isUndefined } from 'lodash';
+import debug from 'debug';
 
-const {
+import {
   SuperblockCreator,
   BlockCreator,
   transformSuperBlock
-} = require('./build-superblock');
+} from './build-superblock';
 
-const { buildCertification } = require('./build-certification');
-const { applyFilters, closestFilters, getSuperOrder } = require('./utils');
-const {
+import { buildCertification } from './build-certification';
+import { applyFilters, closestFilters, getSuperOrder  } from './utils';
+import {
   getContentDir,
   getLanguageConfig,
   getCurriculumStructure,
@@ -20,7 +20,8 @@ const {
   getSuperblockStructure,
   getBlockStructurePath,
   getBlockStructureDir
-} = require('./file-handler');
+} from './file-handler';
+const log = debug('fcc:build-curriculum');
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
@@ -63,7 +64,7 @@ const getBlockCreator = (lang, skipValidation, opts) => {
  * @param {string} params.text - The fallback English text to use if translation not found
  * @returns {Object} Object mapping language codes to translated text or fallback English text
  */
-function getTranslationEntry(dicts, { engId, text }) {
+export function getTranslationEntry(dicts, { engId, text }) {
   return Object.keys(dicts).reduce((acc, lang) => {
     const entry = dicts[lang][engId];
     if (entry) {
@@ -81,19 +82,15 @@ function getTranslationEntry(dicts, { engId, text }) {
  * @param {string} targetDictionariesDir - Path to the target (i18n or english) dictionaries directory
  * @returns {Object} Object mapping English comment text to translations in all languages
  */
-function createCommentMap(dictionariesDir, targetDictionariesDir) {
-  debug(
+export function createCommentMap(dictionariesDir, targetDictionariesDir) {
+  log(
     `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
   );
-  const languages = fs.readdirSync(targetDictionariesDir);
+  const languages = readdirSync(targetDictionariesDir);
 
   const dictionaries = languages.reduce((acc, lang) => {
-    const commentsPath = path.resolve(
-      targetDictionariesDir,
-      lang,
-      'comments.json'
-    );
-    const commentsData = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
+    const commentsPath = resolve(targetDictionariesDir, lang, 'comments.json');
+    const commentsData = JSON.parse(readFileSync(commentsPath, 'utf8'));
     return {
       ...acc,
       [lang]: commentsData
@@ -101,19 +98,12 @@ function createCommentMap(dictionariesDir, targetDictionariesDir) {
   }, {});
 
   const COMMENTS_TO_TRANSLATE = JSON.parse(
-    fs.readFileSync(
-      path.resolve(dictionariesDir, 'english', 'comments.json'),
-      'utf8'
-    )
+    readFileSync(resolve(dictionariesDir, 'english', 'comments.json'), 'utf8')
   );
 
   const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
-    fs.readFileSync(
-      path.resolve(
-        dictionariesDir,
-        'english',
-        'comments-to-not-translate.json'
-      ),
+    readFileSync(
+      resolve(dictionariesDir, 'english', 'comments-to-not-translate.json'),
       'utf8'
     )
   );
@@ -195,7 +185,7 @@ const superBlockNames = {
   'javascript-v9': 'javascript-v9'
 };
 
-const superBlockToFilename = Object.entries(superBlockNames).reduce(
+export const superBlockToFilename = Object.entries(superBlockNames).reduce(
   (map, entry) => {
     return { ...map, [entry[1]]: entry[0] };
   },
@@ -209,11 +199,11 @@ const superBlockToFilename = Object.entries(superBlockNames).reduce(
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function addSuperblockStructure(
+export function addSuperblockStructure(
   superblocks,
   showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
-  debug(`Building structure for ${superblocks.length} superblocks`);
+  log(`Building structure for ${superblocks.length} superblocks`);
 
   const superblockStructures = superblocks.map(superblockFilename => {
     const superblockName = superBlockNames[superblockFilename];
@@ -229,14 +219,14 @@ function addSuperblockStructure(
     };
   });
 
-  debug(
+  log(
     `Successfully built ${superblockStructures.length} superblock structures`
   );
 
   return superblockStructures;
 }
 
-function addBlockStructure(
+export function addBlockStructure(
   superblocks,
   _getBlockStructure = getBlockStructure
 ) {
@@ -255,7 +245,7 @@ function addBlockStructure(
  * Returns a list of all the superblocks that contain the given block
  * @param {string} block
  */
-function getSuperblocks(
+export function getSuperblocks(
   block,
   _addSuperblockStructure = addSuperblockStructure
 ) {
@@ -276,16 +266,16 @@ function validateBlocks(superblocks, blockStructureDir) {
     .map(b => b.dashedName);
   for (const block of blockInSuperblocks) {
     const blockPath = getBlockStructurePath(block);
-    if (!fs.existsSync(blockPath)) {
+    if (!existsSync(blockPath)) {
       throw Error(
         `Block "${block}" is in a superblock, but has no block structure file at ${blockPath}`
       );
     }
   }
 
-  const blockStructureFiles = fs
-    .readdirSync(blockStructureDir)
-    .map(file => path.basename(file, '.json'));
+  const blockStructureFiles = readdirSync(blockStructureDir).map(file =>
+    basename(file, '.json')
+  );
 
   for (const block of blockStructureFiles) {
     if (!blockInSuperblocks.includes(block)) {
@@ -296,15 +286,15 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function parseCurriculumStructure(filters) {
+export async function parseCurriculumStructure(filters) {
   const curriculum = getCurriculumStructure();
   const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
     throw Error('No certifications found in curriculum.json');
-  debug(`Found ${curriculum.superblocks.length} superblocks to build`);
-  debug(`Found ${curriculum.certifications.length} certifications to build`);
+  log(`Found ${curriculum.superblocks.length} superblocks to build`);
+  log(`Found ${curriculum.certifications.length} certifications to build`);
 
   validateBlocks(curriculum.superblocks, blockStructureDir);
 
@@ -319,7 +309,7 @@ async function parseCurriculumStructure(filters) {
   };
 }
 
-async function buildCurriculum(lang, filters) {
+export async function buildCurriculum(lang, filters) {
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator({
@@ -348,27 +338,13 @@ async function buildCurriculum(lang, filters) {
   }
 
   for (const cert of certifications) {
-    const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
-    if (!fs.existsSync(certPath)) {
+    const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
+    if (!existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
     }
-    debug(`=== Processing certification ${cert} ===`);
+    log(`=== Processing certification ${cert} ===`);
     fullCurriculum.certifications.blocks[cert] = buildCertification(certPath);
   }
 
   return fullCurriculum;
 }
-
-module.exports = {
-  addBlockStructure,
-  buildCurriculum,
-  getContentDir,
-  getBlockCreator,
-  getBlockStructure,
-  getSuperblockStructure,
-  createCommentMap,
-  superBlockToFilename,
-  getSuperblocks,
-  addSuperblockStructure,
-  parseCurriculumStructure
-};
