@@ -2056,7 +2056,7 @@
         ]
       },
       "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome Message from Quincy Larson",
+        "title": "來自 Quincy Larson 的歡迎致辭",
         "intro": [
           "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
           "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
@@ -2106,6 +2106,12 @@
         "title": "HTML Fundamentals",
         "intro": [
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
         ]
       },
       "lab-travel-agency-page": {
@@ -2954,7 +2960,19 @@
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
+        ]
+      },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lectures, you will learn how to work with strings and string concatenation."
+        ]
+      },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
         ]
       },
       "workshop-greeting-bot": {
@@ -3243,10 +3261,22 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
       },
-      "lecture-working-with-objects": {
-        "title": "Working with Objects",
+      "lecture-introduction-to-javascript-objects-and-their-properties": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript objects. The concepts you will learn include how to access properties from an object, check if an object has a property, how object methods differ from functions, object destructuring, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
         ]
       },
       "workshop-recipe-tracker": {
@@ -3479,6 +3509,12 @@
         "title": "Build a Symmetric Difference Function",
         "intro": [
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
+      "lab-sum-all-primes-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4399,8 +4435,7 @@
       "review-error-handling": {
         "title": "Error Handling Review",
         "intro": [
-          "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on error handling, you should review what you've learned about it."
         ]
       },
       "quiz-error-handling": {
@@ -4481,8 +4516,7 @@
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4575,8 +4609,7 @@
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4612,8 +4645,7 @@
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4635,8 +4667,7 @@
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
         "intro": [
-          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming": {
