@@ -12,6 +12,7 @@ import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
+import { type Chapter } from '../../../../../shared/config/chapters';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
 import { FsdChapters } from '../../../../../shared/config/chapters';
 import { type Module } from '../../../../../shared/config/modules';
@@ -175,7 +176,9 @@ export const SuperBlockAccordion = ({
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks) {
+  function getSuperblockStructure(superBlock: SuperBlocks): {
+    chapters: Chapter[];
+  } {
     switch (superBlock) {
       case SuperBlocks.FullStackOpen:
         return fullStackOpen;
@@ -245,7 +248,7 @@ export const SuperBlockAccordion = ({
 
     const allChapters = chapters.map(chapter => ({
       name: chapter.dashedName,
-      comingSoon: (chapter as { comingSoon?: boolean }).comingSoon ?? false,
+      comingSoon: chapter.comingSoon,
       modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
         comingSoon: module.comingSoon,
