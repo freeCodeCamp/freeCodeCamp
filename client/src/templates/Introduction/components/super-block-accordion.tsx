@@ -26,7 +26,6 @@ interface ChapterProps {
   dashedName: string;
   children: ReactNode;
   comingSoon?: boolean;
-  isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
   superBlock: SuperBlocks;
@@ -35,7 +34,6 @@ interface ChapterProps {
 interface ModuleProps {
   dashedName: string;
   children: ReactNode;
-  isExpanded: boolean;
   totalSteps: number;
   completedSteps: number;
   superBlock: SuperBlocks;
@@ -56,14 +54,12 @@ interface Challenge {
 interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
-  chosenBlock: string;
   completedChallengeIds: string[];
 }
 
 const Chapter = ({
   dashedName,
   children,
-  isExpanded,
   comingSoon,
   totalSteps,
   completedSteps,
@@ -73,7 +69,7 @@ const Chapter = ({
   const isComplete = completedSteps === totalSteps;
 
   return (
-    <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
+    <Disclosure as='li' className='chapter' defaultOpen>
       <Disclosure.Button
         className='chapter-button'
         data-playwright-test-label='chapter-button'
@@ -114,7 +110,6 @@ const Chapter = ({
 const Module = ({
   dashedName,
   children,
-  isExpanded,
   totalSteps,
   completedSteps,
   superBlock
@@ -123,7 +118,7 @@ const Module = ({
   const isComplete = completedSteps === totalSteps;
 
   return (
-    <Disclosure as='li' defaultOpen={isExpanded}>
+    <Disclosure as='li' defaultOpen>
       <Disclosure.Button className='module-button'>
         <div className='module-button-left'>
           <span className='dropdown-wrap'>
@@ -171,7 +166,6 @@ const LinkBlock = ({
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
-  chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
   function getSuperblockStructure(superBlock: SuperBlocks) {
@@ -196,33 +190,6 @@ export const SuperBlockAccordion = ({
 
     return module?.moduleType === 'review';
   };
-
-  const getBlockToChapterMap = () => {
-    const blockToChapterMap = new Map<string, string>();
-    superBlockStructure.chapters.forEach(chapter => {
-      chapter.modules.forEach(module => {
-        module.blocks.forEach(block => {
-          blockToChapterMap.set(block, chapter.dashedName);
-        });
-      });
-    });
-
-    return blockToChapterMap;
-  };
-
-  const getBlockToModuleMap = () => {
-    const blockToModuleMap = new Map<string, string>();
-    modules.forEach(module => {
-      module.blocks.forEach(block => {
-        blockToModuleMap.set(block, module.dashedName);
-      });
-    });
-
-    return blockToModuleMap;
-  };
-
-  const blockToChapterMap = getBlockToChapterMap();
-  const blockToModuleMap = getBlockToModuleMap();
 
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
@@ -254,10 +221,6 @@ export const SuperBlockAccordion = ({
     return { allChapters };
   }, [challenges, superBlockStructure.chapters]);
 
-  // Expand the outer layers in order to reveal the chosen block.
-  const expandedChapter = blockToChapterMap.get(chosenBlock);
-  const expandedModule = blockToModuleMap.get(chosenBlock);
-
   return (
     <ul className='super-block-accordion'>
       {allChapters.map(chapter => {
@@ -278,7 +241,6 @@ export const SuperBlockAccordion = ({
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
-            isExpanded={expandedChapter === chapter.name}
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
@@ -299,11 +261,7 @@ export const SuperBlockAccordion = ({
                 };
 
                 return (
-                  <Disclosure
-                    key={module.name}
-                    as='li'
-                    defaultOpen={expandedModule === module.name}
-                  >
+                  <Disclosure key={module.name} as='li' defaultOpen>
                     <Disclosure.Button className='module-button'>
                       <div className='module-button-left'>
                         <span className='dropdown-wrap'>
@@ -352,7 +310,6 @@ export const SuperBlockAccordion = ({
                 <Module
                   key={module.name}
                   dashedName={module.name}
-                  isExpanded={expandedModule === module.name}
                   totalSteps={moduleStepIds.length}
                   completedSteps={completedStepsInModule}
                   superBlock={superBlock}

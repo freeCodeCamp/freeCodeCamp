@@ -225,8 +225,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     return toggleBlock(getInitiallyExpandedBlock());
   };
 
-  const initialExpandedBlock = getInitiallyExpandedBlock();
-
   const onCertificationDonationAlertClick = () => {
     callGA({
       event: 'donation_related',
@@ -262,7 +260,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
-                  chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
               ) : (
