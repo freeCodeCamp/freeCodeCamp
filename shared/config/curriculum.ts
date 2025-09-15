@@ -343,7 +343,8 @@ Object.freeze(notAuditedSuperBlocks);
 
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
-  SuperBlocks.FullStackOpen
+  SuperBlocks.FullStackOpen,
+  SuperBlocks.A2English
 ];
 Object.freeze(chapterBasedSuperBlocks);
 
