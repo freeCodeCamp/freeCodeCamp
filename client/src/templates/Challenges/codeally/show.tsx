@@ -309,7 +309,7 @@ function ShowCodeAlly({
                 <Fragment key={name}>
                   <details
                     open={i === 0}
-                    style={{ border: '1px solid #ccc', padding: '5px' }}
+                    style={{ border: '1px solid #ccc', padding: '16px' }}
                   >
                     <summary>{name}</summary>
                     <Spacer size='s' />
