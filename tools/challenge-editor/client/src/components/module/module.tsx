@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Block, BlocksWithSuperBlock } from '../../../interfaces/block';
 import { API_LOCATION } from '../../utils/handle-request';
+import { Block, BlocksWithModule } from '../../../interfaces/block';
 
-const SuperBlock = () => {
+const ModuleLanding = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as Block[]);
-  const [superBlockName, setSuperBlockName] = useState('');
-  const params = useParams() as { superblock: string; block: string };
+  const [moduleName, setModuleName] = useState('');
+  const [chapterName, setChapterName] = useState('');
+  const params = useParams() as {
+    superblock: string;
+    chapter: string;
+    module: string;
+  };
 
   useEffect(() => {
     fetchData();
@@ -17,13 +22,16 @@ const SuperBlock = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(`${API_LOCATION}/${params.superblock}`)
-      .then(res => res.json() as Promise<BlocksWithSuperBlock>)
+    fetch(
+      `${API_LOCATION}/${params.superblock}/chapters/${params.chapter}/modules/${params.module}`
+    )
+      .then(res => res.json() as Promise<BlocksWithModule>)
       .then(
-        blockData => {
+        moduleData => {
           setLoading(false);
-          setItems(blockData.blocks);
-          setSuperBlockName(blockData.currentSuperBlock);
+          setItems(moduleData.blocks);
+          setModuleName(moduleData.currentModule);
+          setChapterName(moduleData.currentChapter);
         },
         (error: Error) => {
           setLoading(false);
@@ -40,16 +48,18 @@ const SuperBlock = () => {
   }
   return (
     <div>
-      <h1>{superBlockName}</h1>
+      <h1>{moduleName}</h1>
       <ul>
         {items.map(block => (
-          <li key={block.name}>
+          <li key={block.path}>
             <Link to={`/${params.superblock}/${block.path}`}>{block.name}</Link>
           </li>
         ))}
       </ul>
       <p>
-        <Link to={'/'}>Return to Superblocks</Link>
+        <Link to={`/${params.superblock}/chapters/${params.chapter}`}>
+          Return to {chapterName}
+        </Link>
       </p>
       <hr />
       <h2>Create New Project</h2>
@@ -61,4 +71,4 @@ const SuperBlock = () => {
   );
 };
 
-export default SuperBlock;
+export default ModuleLanding;
