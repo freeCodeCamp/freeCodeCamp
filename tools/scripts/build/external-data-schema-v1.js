@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const {
   chapterBasedSuperBlocks
-} = require('../../../shared/config/curriculum');
+} = require('../../../shared-dist/config/curriculum');
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
