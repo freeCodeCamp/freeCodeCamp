@@ -69,7 +69,7 @@ interface BlockProps {
   toggleBlock: typeof toggleBlock;
 }
 
-class Block extends Component<BlockProps> {
+export class Block extends Component<BlockProps> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);

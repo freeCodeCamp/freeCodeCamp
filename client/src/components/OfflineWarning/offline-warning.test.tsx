@@ -1,16 +1,17 @@
 import React from 'react';
 import { render, act, screen } from '@testing-library/react';
+import { describe, it, expect, vi } from 'vitest';
 
 import OfflineWarning from './offline-warning';
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe('<OfflineWarning />', () => {
   it('renders null when isOnline, isServerOnline and isSignedIn are true', () => {
     const { container } = render(
       <OfflineWarning isOnline={true} isServerOnline={true} isSignedIn={true} />
     );
-    act(() => jest.runAllTimers());
+    act(() => void vi.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -22,7 +23,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runAllTimers());
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 
@@ -34,7 +35,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runAllTimers());
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('placeholder').tagName).toBe('A');
     expect(screen.getByText('placeholder')).toHaveAttribute(
       'href',
@@ -50,7 +51,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={false}
       />
     );
-    act(() => jest.runAllTimers());
+    act(() => void vi.runAllTimers());
     expect(container).toBeEmptyDOMElement();
   });
 
@@ -62,7 +63,7 @@ describe('<OfflineWarning />', () => {
         isSignedIn={true}
       />
     );
-    act(() => jest.runAllTimers());
+    act(() => void vi.runAllTimers());
     expect(screen.getByText('misc.offline')).toBeInTheDocument();
   });
 });

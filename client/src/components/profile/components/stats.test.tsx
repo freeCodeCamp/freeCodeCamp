@@ -1,3 +1,4 @@
+import { describe, it, test, expect, beforeEach, vi } from 'vitest';
 import { render, screen, within } from '@testing-library/react';
 import React from 'react';
 import Stats, { calculateStreaks } from './stats';
@@ -69,10 +70,10 @@ const multipleEntriesInOneDay = {
   '1736946300': 1 // 2025-01-15 13:05:00 UTC
 };
 
-jest.useFakeTimers();
+vi.useFakeTimers();
 
 describe('calculateStreaks', () => {
-  beforeEach(() => jest.setSystemTime(new Date(2025, 0, 15)));
+  beforeEach(() => vi.setSystemTime(new Date(2025, 0, 15)));
   test('Should return 0 for the current streak if the user has not made progress today', () => {
     const { longestStreak, currentStreak } =
       calculateStreaks(oldStreakCalendar);
@@ -82,7 +83,7 @@ describe('calculateStreaks', () => {
   });
 
   test('Should calculate longest streak, regardless of how long ago they were', () => {
-    jest.setSystemTime(new Date(2030, 0, 15));
+    vi.setSystemTime(new Date(2030, 0, 15));
     const { longestStreak, currentStreak } =
       calculateStreaks(oldStreakCalendar);
 
@@ -91,7 +92,7 @@ describe('calculateStreaks', () => {
   });
 
   test('Should return a longest streak of 3 days when the current streak is 3 days', () => {
-    jest.setSystemTime(new Date(2025, 0, 14));
+    vi.setSystemTime(new Date(2025, 0, 14));
     const { longestStreak, currentStreak } =
       calculateStreaks(recentStreakCalendar);
 

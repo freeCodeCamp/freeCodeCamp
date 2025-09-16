@@ -37,8 +37,8 @@ Test 1
 
     const props = {
       challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
-      challengeSeeds: {
-        indexhtml: {
+      challengeSeeds: [
+        {
           contents: '',
           editableRegionBoundaries: [0, 2],
           ext: 'html',
@@ -48,7 +48,7 @@ Test 1
           name: 'index',
           tail: ''
         }
-      },
+      ],
       stepNum: 5,
       challengeType: 0
     };

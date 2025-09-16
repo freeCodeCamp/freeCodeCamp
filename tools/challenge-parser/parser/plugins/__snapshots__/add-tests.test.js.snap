@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`add-tests plugin should have an output to match the snapshot 1`] = `
+exports[`add-tests plugin > should have an output to match the snapshot 1`] = `
 {
   "tests": [
     {

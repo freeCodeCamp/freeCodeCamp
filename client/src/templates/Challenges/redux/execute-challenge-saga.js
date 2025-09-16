@@ -184,7 +184,7 @@ function* buildChallengeData(challengeData, options) {
   }
 }
 
-function* executeTests(testRunner, tests, testTimeout = 5000) {
+export function* executeTests(testRunner, tests, testTimeout = 5000) {
   const testStrings = tests.map(test => test.testString);
   const rawResults = yield call(testRunner, testStrings, testTimeout);
 
@@ -216,16 +216,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (type === 'IndentationError' || type === 'SyntaxError') {
+      } else {
+        const { message, stack } = err;
+        newTest.err = message + '\n' + stack;
+        newTest.stack = stack;
+      }
+
+      if (type === 'IndentationError' || type === 'SyntaxError') {
         const msgKey =
           type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
-      } else {
-        const { message, stack } = err;
-        newTest.err = message + '\n' + stack;
-        newTest.stack = stack;
       }
 
       const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);

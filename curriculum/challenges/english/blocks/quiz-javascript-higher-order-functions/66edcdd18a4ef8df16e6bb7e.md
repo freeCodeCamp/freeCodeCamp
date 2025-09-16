@@ -154,11 +154,11 @@ A boolean indicating whether any elements meet a condition.
 
 ---
 
-An Array with all elements reduced by specified callback function.
+An array with all elements reduced by specified callback function.
 
 ---
 
-An Array of booleans.
+An array of booleans.
 
 #### --answer--
 

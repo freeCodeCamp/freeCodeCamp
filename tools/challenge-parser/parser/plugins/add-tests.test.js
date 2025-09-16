@@ -1,5 +1,6 @@
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addTests = require('./add-tests');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addTests from './add-tests';
 
 describe('add-tests plugin', () => {
   let brokenHintsAST, simpleAST, missingTestStringAST;

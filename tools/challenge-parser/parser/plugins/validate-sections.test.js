@@ -1,8 +1,10 @@
-const unified = require('unified');
-const remark = require('remark-parse');
-const frontmatter = require('remark-frontmatter');
-const addFrontmatter = require('./add-frontmatter');
-const validateSections = require('./validate-sections');
+import { describe, it, expect } from 'vitest';
+import unified from 'unified';
+import remark from 'remark-parse';
+import frontmatter from 'remark-frontmatter';
+
+import addFrontmatter from './add-frontmatter';
+import validateSections from './validate-sections';
 
 const processor = unified()
   .use(remark)
