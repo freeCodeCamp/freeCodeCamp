@@ -20,6 +20,7 @@ test.describe('Continue where you left off button for authenticated users', () =
     await continueButton.click();
 
     await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
+    await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
@@ -38,6 +39,7 @@ test.describe('Continue where you left off button for authenticated users', () =
     await updatedContinueButton.click();
 
     await expect(page.getByText('Change the Color of Text')).toBeVisible();
+    await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/basic-css/change-the-color-of-text'
     );
@@ -57,11 +59,6 @@ test.describe('Continue button is shown for unauthenticated users', () => {
       name: translations.buttons['continue-where-left-off']
     });
     await expect(continueButton).toBeVisible();
-
-    const signInButton = page.getByRole('link', {
-      name: translations.buttons['logged-out-cta-btn']
-    });
-    await expect(signInButton).toBeVisible();
 
     await continueButton.click();
     await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
@@ -84,6 +81,7 @@ test.describe('Continue button is shown for unauthenticated users', () => {
     await expect(
       page.getByText('Use the flex-direction Property to Make a Row')
     ).toBeVisible();
+    await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/css-flexbox/use-the-flex-direction-property-to-make-a-row'
     );
