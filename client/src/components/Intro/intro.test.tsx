@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import { createStore } from '../../redux/create-store';
 
 import Intro from '.';
 
-jest.mock('../../analytics');
+vi.mock('../../analytics');
+vi.mock('../../utils/get-words');
 
 function renderWithRedux(
   ui: JSX.Element,
@@ -45,12 +47,12 @@ const loggedInProps = {
   completedChallengeCount: 0,
   isSignedIn: true,
   name: 'Development User',
-  navigate: () => jest.fn(),
+  navigate: () => vi.fn(),
   pending: false,
   slug: '/',
   username: 'DevelopmentUser',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn()
+  onLearnDonationAlertClick: () => vi.fn()
 };
 
 const loggedOutProps = {
@@ -58,10 +60,10 @@ const loggedOutProps = {
   completedChallengeCount: 0,
   isSignedIn: false,
   name: '',
-  navigate: () => jest.fn(),
+  navigate: () => vi.fn(),
   pending: false,
   slug: '/',
   username: '',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn()
+  onLearnDonationAlertClick: () => vi.fn()
 };
