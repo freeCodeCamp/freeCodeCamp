@@ -65,7 +65,7 @@ This is a polite word, but it's not what you hear in the audio.
 
 The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi" in English. For example:
 
-`Hola, Buenos Días` – Hi, Good morning!  
+`Hola, buenos días.` – Hi, good morning!  
 
 # --scene--
 

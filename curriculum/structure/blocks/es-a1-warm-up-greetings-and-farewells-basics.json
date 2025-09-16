@@ -3,7 +3,7 @@
   "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
   "isUpcomingChange": true,
   "blockType": "warm-up",
-  "blockLayout": "dialogue-grid",
+  "blockLayout": "challenge-grid",
   "helpCategory": "English",
   "challengeOrder": [
     { "id": "68bb001c22f3bcbd1fdf38fa", "title": "Task 1" },

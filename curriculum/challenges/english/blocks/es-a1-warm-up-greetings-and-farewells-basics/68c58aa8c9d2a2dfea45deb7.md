@@ -18,11 +18,11 @@ What does the speaker say?
 
 ## --answers--
 
-`Hasta luego`
+`Hasta luego.`
 
 ---
 
-`Adiós`
+`Adiós.`
 
 ### --feedback--
 
@@ -30,7 +30,7 @@ This is a goodbye, but it's more final. The speaker uses a different phrase.
 
 ---
 
-`Chao`
+`Chao.`
 
 ### --feedback--
 
@@ -38,7 +38,7 @@ This is also an informal way to say goodbye, but it's not the one in the audio.
 
 ---
 
-`Hasta pronto`
+`Hasta pronto.`
 
 ### --feedback--
 
@@ -55,7 +55,7 @@ It translates to "See you later".
 
 It's used when you expect to see the person again, but not necessarily soon. For example:  
 
-`Hasta luego, Marta` – See you later, Marta.
+`Hasta luego, Marta.` – See you later, Marta.
 
 # --scene--
 
