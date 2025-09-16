@@ -10,6 +10,7 @@ import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import store from 'store';
 
 import {
   chapterBasedSuperBlocks,
@@ -220,26 +221,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     return blocks[0];
   };
 
-  const getLastCompletedChallenge = () => {
-    if (!isSignedIn || isEmpty(completedChallenges)) {
-      return null;
+  const getContinuePath = () => {
+    const lastChallengePaths = store.get('lastChallengePaths') as
+      | Record<string, string>
+      | undefined;
+    if (lastChallengePaths && lastChallengePaths[superBlock]) {
+      return lastChallengePaths[superBlock];
     }
-    const superblockIds = superBlockChallenges.map(c => c.id);
-    const filteredCompletedChallenges = completedChallenges.filter(
-      completedChallenge => superblockIds.includes(completedChallenge.id)
-    );
-
-    const lastCompletedChallengeId = last(filteredCompletedChallenges)?.id;
-
-    const lastChallengeIndex = superBlockChallenges.findIndex(
-      ({ id }) => id === lastCompletedChallengeId
-    );
-
-    const lastChallenge = superBlockChallenges[lastChallengeIndex + 1];
-
-    const blockDashedName = lastChallenge?.fields.blockName;
-
-    return [blockDashedName, lastChallenge?.dashedName].join('/');
+    return null;
   };
 
   const initializeExpandedState = () => {
@@ -258,7 +247,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     });
   };
 
-  const lastPath = getLastCompletedChallenge();
+  const lastPath = getContinuePath();
 
   return (
     <>
@@ -283,12 +272,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
-              {isSignedIn && lastPath && (
+              {lastPath && (
                 <ButtonLink
                   href={`/learn/${superBlock}/${lastPath}`}
                   block={true}
                 >
-                  Continue where you left off
+                  {t('buttons.continue-where-left-off')}
                 </ButtonLink>
               )}
               <Spacer size='m' />
