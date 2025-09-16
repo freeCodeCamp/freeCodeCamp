@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`should check certification page consistency 1`] = `
+exports[`Timeline buttons test > should check certification page consistency 1`] = `
 <div
   className="mx-[-15px]  "
 >

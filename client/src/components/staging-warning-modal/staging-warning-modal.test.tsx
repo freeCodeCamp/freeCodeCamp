@@ -1,7 +1,9 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import store from 'store';
+import { describe, it, expect, beforeAll, afterEach, vi } from 'vitest';
 import StagingWarningModal from '.';
+
 describe('StagingWarningModal', () => {
   beforeAll(() => {
     // The Modal component uses `ResizeObserver` under the hood.
@@ -9,16 +11,16 @@ describe('StagingWarningModal', () => {
     // Ref: https://github.com/jsdom/jsdom/issues/3368
     Object.defineProperty(window, 'ResizeObserver', {
       writable: true,
-      value: jest.fn(() => ({
-        observe: jest.fn(),
-        unobserve: jest.fn(),
-        disconnect: jest.fn()
+      value: vi.fn(() => ({
+        observe: vi.fn(),
+        unobserve: vi.fn(),
+        disconnect: vi.fn()
       }))
     });
   });
 
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('renders the modal successfully', () => {

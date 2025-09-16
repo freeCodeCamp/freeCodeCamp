@@ -1,9 +1,13 @@
 import { expectSaga } from 'redux-saga-test-plan';
+import { describe, it, vi } from 'vitest';
 
-jest.mock('redux-saga/effects', () => ({
-  ...jest.requireActual('redux-saga/effects'),
-  delay: jest.fn()
-}));
+vi.mock('redux-saga/effects', async importOriginal => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    delay: vi.fn()
+  };
+});
 
 const initialState = {
   challenge: { isBuildEnabled: true, isExecuting: false, challengeMeta: {} }

@@ -1,7 +1,5 @@
 import React from 'react';
 
-const reactI18next = jest.genMockFromModule('react-i18next');
-
 // modified from https://github.com/i18next/react-i18next/blob/master/example/test-jest/src/__mocks__/react-i18next.js
 const hasChildren = node =>
   node && (node.children || (node.props && node.props.children));
@@ -58,9 +56,4 @@ const Trans = ({ children }) =>
   <Component t={() => ''} {...props} />
 ); */
 
-// reactI18next.translate = translate;
-reactI18next.withTranslation = withTranslation;
-reactI18next.useTranslation = useTranslation;
-reactI18next.Trans = Trans;
-
-module.exports = reactI18next;
+module.exports = { withTranslation, useTranslation, Trans };
