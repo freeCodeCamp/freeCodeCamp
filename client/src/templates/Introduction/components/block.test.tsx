@@ -19,7 +19,7 @@ import {
 } from '../../../../../shared-dist/config/blocks';
 import { Block } from './block';
 
-vi.mock('../../../../../shared/utils/is-audited', () => ({
+vi.mock('../../../../../shared-dist/utils/is-audited', () => ({
   isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
