@@ -31,8 +31,10 @@ import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
 import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
+import { ButtonLink } from '../../components/helpers';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
+
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
@@ -218,6 +220,28 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     return blocks[0];
   };
 
+  const getLastCompletedChallenge = () => {
+    if (!isSignedIn || isEmpty(completedChallenges)) {
+      return null;
+    }
+    const superblockIds = superBlockChallenges.map(c => c.id);
+    const filteredCompletedChallenges = completedChallenges.filter(
+      completedChallenge => superblockIds.includes(completedChallenge.id)
+    );
+
+    const lastCompletedChallengeId = last(filteredCompletedChallenges)?.id;
+
+    const lastChallengeIndex = superBlockChallenges.findIndex(
+      ({ id }) => id === lastCompletedChallengeId
+    );
+
+    const lastChallenge = superBlockChallenges[lastChallengeIndex + 1];
+
+    const blockDashedName = lastChallenge?.fields.blockName;
+
+    return [blockDashedName, lastChallenge?.dashedName].join('/');
+  };
+
   const initializeExpandedState = () => {
     const { resetExpansion, toggleBlock } = props;
 
@@ -233,6 +257,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       action: `Certification Donation Alert Click`
     });
   };
+
+  const lastPath = getLastCompletedChallenge();
 
   return (
     <>
@@ -257,6 +283,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
+              {isSignedIn && lastPath && (
+                <ButtonLink
+                  href={`/learn/${superBlock}/${lastPath}`}
+                  block={true}
+                >
+                  Continue where you left off
+                </ButtonLink>
+              )}
               <Spacer size='m' />
               {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
