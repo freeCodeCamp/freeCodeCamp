@@ -183,13 +183,7 @@ function DefaultLayout({
   };
 
   useEffect(() => {
-    if (
-      isChallenge &&
-      superBlock &&
-      !isDailyChallenge &&
-      !examInProgress &&
-      isBrowser()
-    ) {
+    if (isChallenge && superBlock && !isDailyChallenge && !examInProgress) {
       const pathParts = pathname.split('/');
       const learnIndex = pathParts.findIndex(part => part === 'learn');
 
