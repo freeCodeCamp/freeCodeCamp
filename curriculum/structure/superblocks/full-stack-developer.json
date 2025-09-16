@@ -276,6 +276,8 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
@@ -399,6 +401,7 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-sum-all-primes-calculator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -817,6 +820,8 @@
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
+            "lecture-introduction-to-git-and-github",
+            "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
             "workshop-sql-reference-object",
             "lab-periodic-table-database",
             "lab-number-guessing-game",

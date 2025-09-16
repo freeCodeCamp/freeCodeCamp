@@ -2,13 +2,15 @@ import { render, waitFor } from '@testing-library/react';
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
+import { describe, vi, test, expect } from 'vitest';
 
 import { i18nextCodes } from '../../../shared/config/i18n';
 import i18nTestConfig from '../../i18n/config-for-tests';
 import { createStore } from '../redux/create-store';
 import AppMountNotifier from './app-mount-notifier';
 
-jest.unmock('react-i18next');
+vi.unmock('react-i18next');
+vi.mock('../utils/get-words');
 
 type Language = keyof typeof i18nextCodes;
 type LanguagePair = [string, string];

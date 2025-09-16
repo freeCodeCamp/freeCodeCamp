@@ -30,3 +30,14 @@ export const CHALLENGE_DIR = join(
   'english',
   'blocks'
 );
+
+export const ENGLISH_LANG_DIR = join(
+  process.cwd(),
+  '..',
+  '..',
+  '..',
+  'client',
+  'i18n',
+  'locales',
+  'english'
+);
