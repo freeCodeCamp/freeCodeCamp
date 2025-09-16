@@ -13,7 +13,10 @@ import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-profes
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockTypes } from '../../../../../shared-dist/config/blocks';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
 import { FsdChapters } from '../../../../../shared-dist/config/chapters';
 import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
