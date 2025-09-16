@@ -6,6 +6,7 @@
   "blockLayout": "link",
   "blockType": "review",
   "challengeOrder": [
-    { "id": "68c850ed23d494c9be5cb22a", "title": "Grammar review" }
+    { "id": "68c850ed23d494c9be5cb22a", "title": "Grammar Highlights" },
+    { "id": "68c994e8517cd6bde390e923", "title": "Glossary" }
   ]
 }
