@@ -70,7 +70,6 @@ assert(
 The `input` tag should be styled with a border of `3px solid red` if the input value in state is longer than 15 characters.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 100));
   const mockedComponent = Enzyme.mount(React.createElement(GateKeeper));
@@ -94,7 +93,6 @@ async () => {
       style_1 === '1px solid black' &&
       style_2 === '3px solid red'
   );
-};
 ```
 
 # --seed--

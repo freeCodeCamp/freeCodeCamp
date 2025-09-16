@@ -2971,7 +2971,19 @@
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
+        ]
+      },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lectures, you will learn how to work with strings and string concatenation."
+        ]
+      },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
         ]
       },
       "workshop-greeting-bot": {
@@ -3508,6 +3520,12 @@
         "title": "Build a Symmetric Difference Function",
         "intro": [
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
+      "lab-sum-all-primes-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4404,8 +4422,7 @@
       "review-error-handling": {
         "title": "Error Handling Review",
         "intro": [
-          "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on error handling, you should review what you've learned about it."
         ]
       },
       "quiz-error-handling": {
@@ -4483,8 +4500,7 @@
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4577,8 +4593,7 @@
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4614,8 +4629,7 @@
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4637,8 +4651,7 @@
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
         "intro": [
-          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming": {
@@ -4792,7 +4805,16 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "rhhl": { "title": "328", "intro": [] },
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lectures."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lectures."
+        ]
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -4843,10 +4865,38 @@
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+    },
+    "modules": {
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+    },
+    "module-intros": {
+      "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "a1-professional-spanish-placeholder-block": {
-        "title": "A1 Professional Spanish Placeholder Block",
-        "intro": ["Placeholder intro text."]
+      "es-a1-warm-up-greetings-and-farewells-basics": {
+        "title": "Greetings and Farewells Basics",
+        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },

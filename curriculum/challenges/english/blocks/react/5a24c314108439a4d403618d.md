@@ -21,7 +21,6 @@ The `renderToString()` method is provided on `ReactDOMServer`, which is availabl
 The `App` component should render to a string using `ReactDOMServer.renderToString`.
 
 ```js
-() =>
   assert(
     code.replace(/ /g, '')
       .includes('ReactDOMServer.renderToString(<App/>)') &&
