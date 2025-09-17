@@ -76,7 +76,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('body')?.fontSize, '16px')
       </fieldset>
       <a href="https://www.freecodecamp.org/news/terms-of-service">Read our terms and conditions</a>
 <label for="terms-and-conditions">
-  <input id="terms-and-conditions" type="checkbox" required />
+  <input name="terms" id="terms-and-conditions" type="checkbox" required />
   I accept the terms and conditions
 </label>
       <input type="submit" value="Submit" />
