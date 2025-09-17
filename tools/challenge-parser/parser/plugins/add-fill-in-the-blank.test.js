@@ -1,5 +1,6 @@
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addFillInTheBlankQuestion = require('./add-fill-in-the-blank');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addFillInTheBlankQuestion from './add-fill-in-the-blank';
 
 describe('fill-in-the-blanks plugin', () => {
   let mockFillInTheBlankAST,

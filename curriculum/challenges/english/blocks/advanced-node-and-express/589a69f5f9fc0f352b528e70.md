@@ -38,7 +38,6 @@ Submit your page when you think you've got it right. If you're running into erro
 Route `/auth/github` should be correct.
 
 ```js
-async () => {
   try {
     const res = await fetch(code + '/_api/routes.js');
     if (res.ok) {
@@ -63,13 +62,11 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-}
 ```
 
 Route `/auth/github/callback` should be correct.
 
 ```js
-async () => {
   try {
     const res = await fetch(code + '/_api/routes.js');
     if (res.ok) {
@@ -94,6 +91,5 @@ async () => {
   } catch (err) {
     throw new Error(err);
   }
-}
 ```
 

@@ -1,4 +1,6 @@
+// @vitest-environment jsdom
 /* eslint-disable @typescript-eslint/unbound-method */
+import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import {
   CURRENT_COUNT_KEY,
   SAVED_COUNT_KEY,
@@ -17,24 +19,24 @@ describe('Session Storage', () => {
       const mockStorage: Storage = {
         length: 0,
 
-        clear: jest.fn(() => {
+        clear: vi.fn(() => {
           store = {};
         }),
 
-        getItem: jest.fn((key: string) => {
+        getItem: vi.fn((key: string) => {
           return store[key] || null;
         }),
 
-        key: jest.fn((index: number) => {
+        key: vi.fn((index: number) => {
           const keys = Object.keys(store);
           return keys[index] || null;
         }),
 
-        removeItem: jest.fn((key: string) => {
+        removeItem: vi.fn((key: string) => {
           delete store[key];
         }),
 
-        setItem: jest.fn((key: string, value: string) => {
+        setItem: vi.fn((key: string, value: string) => {
           store[key] = value;
         })
       };
@@ -54,16 +56,16 @@ describe('Session Storage', () => {
 
   afterEach(() => {
     sessionStorage.clear();
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   describe('getSessionChallengeData', () => {
     describe('countSinceSave', () => {
-      it('is not included if nothing has been saved', () => {
+      test('is not included if nothing has been saved', () => {
         expect(getSessionChallengeData()).not.toHaveProperty('countSinceSave');
       });
 
-      it('is included if the count has been saved', () => {
+      test('is included if the count has been saved', () => {
         sessionStorage.setItem(SAVED_COUNT_KEY, '7');
         sessionStorage.setItem(CURRENT_COUNT_KEY, '10');
         expect(getSessionChallengeData()).toMatchObject({
@@ -73,13 +75,13 @@ describe('Session Storage', () => {
     });
 
     describe('currentCount', () => {
-      it('defaults to 0 if no challenges have been completed', () => {
+      test('defaults to 0 if no challenges have been completed', () => {
         expect(getSessionChallengeData()).toMatchObject({
           currentCount: 0
         });
       });
 
-      it('returns the stored number if it exists', () => {
+      test('returns the stored number if test exists', () => {
         sessionStorage.setItem(CURRENT_COUNT_KEY, '5');
         expect(getSessionChallengeData()).toMatchObject({
           currentCount: 5
@@ -88,13 +90,13 @@ describe('Session Storage', () => {
     });
 
     describe('isSaved', () => {
-      it('is false if we haved saved the count', () => {
+      test('is false if we haved saved the count', () => {
         expect(getSessionChallengeData()).toMatchObject({
           isSaved: false
         });
       });
 
-      it('is true if we have saved something', () => {
+      test('is true if we have saved something', () => {
         sessionStorage.setItem(SAVED_COUNT_KEY, '7');
         expect(getSessionChallengeData()).toMatchObject({
           isSaved: true

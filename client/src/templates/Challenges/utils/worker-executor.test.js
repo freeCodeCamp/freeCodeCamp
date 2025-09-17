@@ -1,11 +1,12 @@
 /**
- * @jest-environment node
+ * @vitest-environment node
  */
 
+import { it, expect, afterEach, vi } from 'vitest';
 import { WorkerExecutor } from './worker-executor';
 
 function mockWorker({ init, postMessage, terminate } = {}) {
-  global.Worker = jest.fn(function () {
+  global.Worker = vi.fn(function () {
     setImmediate(
       (init && init(this)) ||
         (() =>
@@ -29,7 +30,7 @@ afterEach(() => {
 });
 
 it('Worker executor should successfully execute one task', async () => {
-  const terminateHandler = jest.fn();
+  const terminateHandler = vi.fn();
   mockWorker({ terminate: terminateHandler });
   const testWorker = new WorkerExecutor('test');
   expect(testWorker).not.toBeUndefined();
@@ -37,9 +38,9 @@ it('Worker executor should successfully execute one task', async () => {
   const task = testWorker.execute('test');
   expect(task).not.toBeUndefined();
   expect(task.done).not.toBeUndefined();
-  const handler = jest.fn();
+  const handler = vi.fn();
   task.on('done', handler);
-  const errorHandler = jest.fn();
+  const errorHandler = vi.fn();
   task.on('error', errorHandler);
 
   await expect(task.done).resolves.toBe('test processed');
@@ -55,20 +56,20 @@ it('Worker executor should successfully execute one task', async () => {
 });
 
 it('Worker executor should successfully execute two tasks in parallel', async () => {
-  const terminateHandler = jest.fn();
+  const terminateHandler = vi.fn();
   mockWorker({ terminate: terminateHandler });
   const testWorker = new WorkerExecutor('test');
 
   const task1 = testWorker.execute('test1');
-  const handler1 = jest.fn();
+  const handler1 = vi.fn();
   task1.on('done', handler1);
-  const errorHandler1 = jest.fn();
+  const errorHandler1 = vi.fn();
   task1.on('error', errorHandler1);
 
   const task2 = testWorker.execute('test2');
-  const handler2 = jest.fn();
+  const handler2 = vi.fn();
   task2.on('done', handler2);
-  const errorHandler2 = jest.fn();
+  const errorHandler2 = vi.fn();
   task2.on('error', errorHandler2);
 
   await expect(Promise.all([task1.done, task2.done])).resolves.toEqual([
@@ -103,7 +104,7 @@ it('Worker executor should successfully execute 3 tasks in parallel and use two 
 });
 
 it('Worker executor should successfully execute 3 tasks, use 3 workers and terminate each worker', async () => {
-  const terminateHandler = jest.fn();
+  const terminateHandler = vi.fn();
   mockWorker({ terminate: terminateHandler });
   const testWorker = new WorkerExecutor('test', { terminateWorker: true });
 
@@ -156,7 +157,7 @@ it('Worker executor should reject task', async () => {
   const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test');
-  const errorHandler = jest.fn();
+  const errorHandler = vi.fn();
   task.on('error', errorHandler);
   await expect(task.done).rejects.toBe(error.message);
 
@@ -184,11 +185,11 @@ it('Worker executor should emit LOG events', async () => {
   const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test');
-  const handler = jest.fn();
+  const handler = vi.fn();
   task.on('done', handler);
-  const errorHandler = jest.fn();
+  const errorHandler = vi.fn();
   task.on('error', errorHandler);
-  const logHandler = jest.fn();
+  const logHandler = vi.fn();
   task.on('LOG', logHandler);
 
   await expect(task.done).resolves.toBe('test processed');
@@ -204,7 +205,7 @@ it('Worker executor should emit LOG events', async () => {
 });
 
 it('Worker executor should reject task on timeout', async () => {
-  const terminateHandler = jest.fn();
+  const terminateHandler = vi.fn();
   mockWorker({
     postMessage: () => {},
     terminate: terminateHandler
@@ -212,7 +213,7 @@ it('Worker executor should reject task on timeout', async () => {
   const testWorker = new WorkerExecutor('test');
 
   const task = testWorker.execute('test', 0);
-  const errorHandler = jest.fn();
+  const errorHandler = vi.fn();
   task.on('error', errorHandler);
   await expect(task.done).rejects.toBe('timeout');
 
@@ -239,7 +240,7 @@ it('Task should only emit handler once', () => {
   mockWorker();
   const testWorker = new WorkerExecutor('test');
   const task = testWorker.execute('test');
-  const handler = jest.fn();
+  const handler = vi.fn();
   task.once('testOnce', handler);
 
   task.emit('testOnce', handler);

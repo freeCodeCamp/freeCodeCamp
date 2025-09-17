@@ -1,4 +1,5 @@
 import { TestScheduler } from 'rxjs/testing';
+import { describe, it, expect } from 'vitest';
 import completionEpic from './completion-epic';
 import { submitChallenge, submitChallengeComplete } from './actions';
 

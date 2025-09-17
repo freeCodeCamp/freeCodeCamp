@@ -1,0 +1,15 @@
+{
+  "name": "Greetings and Farewells Basics",
+  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
+  "isUpcomingChange": true,
+  "blockType": "warm-up",
+  "blockLayout": "dialogue-grid",
+  "helpCategory": "English",
+  "challengeOrder": [
+    {
+      "id": "68bb001c22f3bcbd1fdf38fa",
+      "title": "Task 1"
+    },
+    { "id": "68c488abd71a3e27190965e0", "title": "Task 2" }
+  ]
+}

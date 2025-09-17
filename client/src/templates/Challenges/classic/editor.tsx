@@ -188,6 +188,7 @@ const modeMap = {
   js: 'javascript',
   jsx: 'javascript',
   ts: 'typescript',
+  tsx: 'typescript',
   py: 'python',
   python: 'python'
 };

@@ -17,6 +17,7 @@ export type VisibleEditors = {
   stylescss?: boolean;
   scriptjs?: boolean;
   indexts?: boolean;
+  indextsx?: boolean;
   mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
@@ -70,6 +71,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
       scriptjs,
       indexts,
       indexjsx,
+      indextsx,
       mainpy
     },
     usesMultifileEditor,
@@ -94,6 +96,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
 
   // The order of the keys should match the order set by sortChallengeFiles
   if (indexjsx) editorKeys.push('indexjsx');
+  if (indextsx) editorKeys.push('indextsx');
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');

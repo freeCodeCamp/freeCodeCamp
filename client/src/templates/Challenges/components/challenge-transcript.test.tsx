@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import store from 'store';
+import { describe, it, expect, beforeEach } from 'vitest';
 import ChallengeTranscript from './challenge-transcript';
 
 const baseProps = {

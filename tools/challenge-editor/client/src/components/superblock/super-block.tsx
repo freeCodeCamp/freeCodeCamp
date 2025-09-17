@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Block } from '../../../interfaces/block';
+import { Block, BlocksWithSuperBlock } from '../../../interfaces/block';
 import { API_LOCATION } from '../../utils/handle-request';
 
 const SuperBlock = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as Block[]);
+  const [superBlockName, setSuperBlockName] = useState('');
   const params = useParams() as { superblock: string; block: string };
 
   useEffect(() => {
@@ -17,11 +18,12 @@ const SuperBlock = () => {
   const fetchData = () => {
     setLoading(true);
     fetch(`${API_LOCATION}/${params.superblock}`)
-      .then(res => res.json() as Promise<Block[]>)
+      .then(res => res.json() as Promise<BlocksWithSuperBlock>)
       .then(
-        blocks => {
+        blockData => {
           setLoading(false);
-          setItems(blocks);
+          setItems(blockData.blocks);
+          setSuperBlockName(blockData.currentSuperBlock);
         },
         (error: Error) => {
           setLoading(false);
@@ -38,11 +40,11 @@ const SuperBlock = () => {
   }
   return (
     <div>
-      <h1>{params.superblock}</h1>
+      <h1>{superBlockName}</h1>
       <ul>
         {items.map(block => (
           <li key={block.name}>
-            <Link to={`/${params.superblock}/${block.name}`}>{block.name}</Link>
+            <Link to={`/${params.superblock}/${block.path}`}>{block.name}</Link>
           </li>
         ))}
       </ul>

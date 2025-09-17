@@ -1,21 +1,24 @@
 import React from 'react';
-import * as Gatsby from 'gatsby';
 import { render } from '@testing-library/react';
 import Helmet from 'react-helmet';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 
 import SEO from './index';
 
-const useStaticQuery = jest.spyOn(Gatsby, `useStaticQuery`);
 const mockUseStaticQuery = {
   site: {
     siteMetadata: {
-      title: 'freeCodeCamp',
-      siteUrl: 'freeCodeCamp.org'
+      title: 'freeCodeCamp'
     }
   }
 };
 
-jest.mock('react-i18next', () => ({
+vi.mock('gatsby', () => ({
+  useStaticQuery: vi.fn(() => mockUseStaticQuery),
+  graphql: vi.fn()
+}));
+
+vi.mock('react-i18next', () => ({
   useTranslation: () => {
     return {
       t: (str: string) => ({
@@ -27,12 +30,8 @@ jest.mock('react-i18next', () => ({
 }));
 
 describe('<SEO />', () => {
-  beforeEach(() => {
-    useStaticQuery.mockImplementation(() => mockUseStaticQuery);
-  });
-
   afterEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   it('renders', () => {

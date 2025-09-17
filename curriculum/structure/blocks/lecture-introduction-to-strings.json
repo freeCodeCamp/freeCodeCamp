@@ -1,0 +1,22 @@
+{
+  "name": "Introduction to Strings",
+  "isUpcomingChange": false,
+  "blockType": "lecture",
+  "blockLayout": "challenge-list",
+  "dashedName": "lecture-introduction-to-strings",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "672d49a5cf43945ee09e5fba",
+      "title": "What Is a String in JavaScript, and What Is String Immutability?"
+    },
+    {
+      "id": "672d49b2fb76df5f1d6117af",
+      "title": "What Is String Concatenation, and How Can You Concatenate Strings with Variables?"
+    },
+    {
+      "id": "672d49c4e899345f5b33c24c",
+      "title": "What Is console.log Used For, and How Does It Work?"
+    }
+  ]
+}

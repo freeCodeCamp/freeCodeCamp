@@ -1,5 +1,6 @@
-const parseFixture = require('./../__fixtures__/parse-fixture');
-const addQuizzes = require('./add-quizzes');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from './../__fixtures__/parse-fixture';
+import addQuizzes from './add-quizzes';
 
 describe('add-quizzes plugin', () => {
   let mockQuizzesAST;
