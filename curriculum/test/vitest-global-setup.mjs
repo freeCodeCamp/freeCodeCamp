@@ -19,6 +19,8 @@ async function createBrowser() {
   });
 }
 
+let browser, server;
+
 async function startServer() {
   const host = '127.0.0.1';
   const port = 8080;
@@ -32,14 +34,12 @@ async function startServer() {
   );
   app.use('/js', sirv(path.join(clientPath, 'static/js')));
   app.use('/', sirv(path.resolve(__dirname, 'stubs')));
-
   app.listen(port, host);
+  return app.server;
 }
 
-let browser;
-
 export async function setup() {
-  await startServer();
+  server = await startServer();
   browser = await createBrowser();
   // Sharing the Websocket endpoint so that setup files can connect. This allows
   // us to do as much work as possible once in the global setup while allowing
@@ -49,4 +49,5 @@ export async function setup() {
 
 export async function teardown() {
   await browser.close();
+  await server.close();
 }
