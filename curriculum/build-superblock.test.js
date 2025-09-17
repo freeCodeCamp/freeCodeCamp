@@ -565,9 +565,7 @@ describe('SuperblockCreator class', () => {
         { dashedName: 'block-3' }
       ];
 
-      const parser = new SuperblockCreator({
-        blockCreator: mockBlockCreator
-      });
+      const parser = new SuperblockCreator(mockBlockCreator);
 
       const result = await parser.processSuperblock({
         blocks,

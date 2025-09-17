@@ -11,6 +11,7 @@ import {
 config({ path: resolve(__dirname, '../.env') });
 
 import { availableLangs } from '../shared-dist/config/i18n';
+import type { ProcessedBlock } from './build-curriculum';
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
@@ -27,8 +28,8 @@ export function testedLang() {
   }
 }
 
-export function createSuperOrder(superBlocks) {
-  const superOrder = {};
+export function createSuperOrder(superBlocks: string[]) {
+  const superOrder: { [sb: string]: number } = {};
 
   superBlocks.forEach((superBlock, i) => {
     superOrder[superBlock] = i;
@@ -38,7 +39,7 @@ export function createSuperOrder(superBlocks) {
 }
 
 export function getSuperOrder(
-  superblock,
+  superblock: string,
   showUpcomingChanges = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
   const flatSuperBlockMap = generateSuperBlockList({
@@ -49,6 +50,11 @@ export function getSuperOrder(
   return superOrder[superblock];
 }
 
+type ProcessedSuperblock = {
+  name: string;
+  blocks: ProcessedBlock[];
+};
+
 /**
  * Filters the superblocks array to include, at most, a single superblock with the specified block.
  * If no block is provided, returns the original superblocks array.
@@ -58,7 +64,10 @@ export function getSuperOrder(
  * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
  * @returns {Array<Object>} Array with one superblock containing the specified block, or the original array if block is not provided.
  */
-export function filterByBlock(superblocks, { block } = {}) {
+export function filterByBlock(
+  superblocks: ProcessedSuperblock[],
+  { block }: { block?: string } = {}
+): ProcessedSuperblock[] {
   if (!block) return superblocks;
 
   const superblock = superblocks
@@ -80,7 +89,10 @@ export function filterByBlock(superblocks, { block } = {}) {
  * @param {string} [options.superBlock] - The name of the superblock to filter for.
  * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock, or the original array if superBlock is not provided.
  */
-export function filterBySuperblock(superblocks, { superBlock } = {}) {
+export function filterBySuperblock(
+  superblocks: ProcessedSuperblock[],
+  { superBlock }: { superBlock?: string } = {}
+): ProcessedSuperblock[] {
   if (!superBlock) return superblocks;
   return superblocks.filter(({ name }) => name === superBlock);
 }
@@ -92,15 +104,21 @@ export function filterBySuperblock(superblocks, { superBlock } = {}) {
  * @param {string} [options.challengeId] - The specific challenge id to filter for
  * @returns {Array<Object>} Filtered superblocks containing only the matching challenge
  */
-export function filterByChallengeId(superblocks, { challengeId } = {}) {
+export function filterByChallengeId(
+  superblocks: ProcessedSuperblock[],
+  { challengeId }: { challengeId?: string } = {}
+): ProcessedSuperblock[] {
   if (!challengeId) {
     return superblocks;
   }
 
-  const findChallengeIndex = (challengeOrder, id) =>
+  const findChallengeIndex = (challengeOrder: { id: string }[], id: string) =>
     challengeOrder.findIndex(challenge => challenge.id === id);
 
-  const filterChallengeOrder = (challengeOrder, id) => {
+  const filterChallengeOrder = (
+    challengeOrder: { id: string; title: string }[],
+    id: string
+  ) => {
     const index = findChallengeIndex(challengeOrder, id);
     if (index === -1) return [];
 
@@ -125,8 +143,20 @@ export function filterByChallengeId(superblocks, { challengeId } = {}) {
     .filter(superblock => superblock.blocks.length > 0);
 }
 
-const createFilterPipeline = filterFunctions => (data, filters) =>
-  filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
+interface FilterOptions {
+  superBlock?: string;
+  block?: string;
+  challengeId?: string;
+}
+
+type FilterFunction<T> = (data: T, filters: FilterOptions) => T;
+
+function createFilterPipeline<T>(
+  filterFunctions: FilterFunction<T>[]
+): (data: T, filters: FilterOptions) => T {
+  return (data: T, filters: FilterOptions) =>
+    filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
+}
 
 export const applyFilters = createFilterPipeline([
   filterBySuperblock,

@@ -1,16 +1,26 @@
-import { resolve, dirname } from 'node:path';
+import { dirname, resolve } from 'node:path';
 import assert from 'node:assert';
 import { existsSync, readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 import debug from 'debug';
+import { Chapter } from './build-superblock';
 
 const log = debug('fcc:file-handler');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const CURRICULUM_DIR = __dirname;
+let __dirnameCompat: string;
+
+if (typeof __dirname !== 'undefined') {
+  // CJS
+  __dirnameCompat = __dirname;
+} else {
+  // ESM – wrap in Function so CJS parsers don't see it
+  const metaUrl = new Function('return import.meta.url')() as string;
+  __dirnameCompat = dirname(fileURLToPath(metaUrl));
+}
+
+const CURRICULUM_DIR = __dirnameCompat;
 const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
@@ -30,7 +40,7 @@ const BLOCK_STRUCTURE_DIR = resolve(STRUCTURE_DIR, 'blocks');
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
 export function getContentConfig(
-  lang,
+  lang: string,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
     i18nBaseDir: I18N_CURRICULUM_DIR
@@ -80,7 +90,7 @@ export function getContentConfig(
  * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
  * @returns {string} Path to the content directory for the specified language
  */
-export function getContentDir(lang) {
+export function getContentDir(lang: string) {
   const { contentDir, i18nContentDir } = getContentConfig(lang);
 
   return lang === 'english' ? contentDir : i18nContentDir;
@@ -92,10 +102,13 @@ export function getCurriculumStructure() {
     throw new Error(`Curriculum file not found: ${curriculumPath}`);
   }
 
-  return JSON.parse(readFileSync(curriculumPath, 'utf8'));
+  return JSON.parse(readFileSync(curriculumPath, 'utf8')) as {
+    superblocks: string[];
+    certifications: string[];
+  };
 }
 
-export function getBlockStructurePath(block) {
+export function getBlockStructurePath(block: string) {
   return resolve(BLOCK_STRUCTURE_DIR, `${block}.json`);
 }
 
@@ -103,11 +116,71 @@ export function getBlockStructureDir() {
   return BLOCK_STRUCTURE_DIR;
 }
 
-export function getBlockStructure(block) {
-  return JSON.parse(readFileSync(getBlockStructurePath(block), 'utf8'));
+export type ChallengeFile = {
+  contents: string;
+  ext: string;
+  name: string;
+};
+
+export type Challenge = {
+  id: string;
+  title: string;
+  // infer other properties:
+  description?: string;
+  instructions?: string;
+  questions?: string[];
+  block?: string;
+  blockType?: string;
+  blockLayout?: string;
+  hasEditableBoundaries?: boolean;
+  order?: number;
+  superBlock?: string;
+  superOrder?: number;
+  challengeOrder?: number;
+  isLastChallengeInBlock?: boolean;
+  required?: string[];
+  template?: string;
+  helpCategory?: string;
+  usesMultifileEditor?: boolean;
+  disableLoopProtectTests?: boolean;
+  disableLoopProtectPreview?: boolean;
+  chapter?: string;
+  module?: string;
+  certification?: string;
+  translationPending?: boolean;
+  missing?: boolean;
+  challengeFiles?: ChallengeFile[];
+  solutions?: ChallengeFile[][];
+};
+
+export interface BlockStructure {
+  name: string;
+  hasEditableBoundaries?: boolean;
+  required?: string[];
+  template?: string;
+  helpCategory?: string;
+  usesMultifileEditor?: boolean;
+  disableLoopProtectTests?: boolean;
+  disableLoopProtectPreview?: boolean;
+  blockLayout: string;
+  blockType: string;
+  challengeOrder: Challenge[];
+  dashedName: string;
+  isUpcomingChange?: boolean;
+  chapter?: string;
+  module?: string;
 }
 
-export async function writeBlockStructure(block, structure) {
+export function getBlockStructure(block: string) {
+  return JSON.parse(
+    readFileSync(getBlockStructurePath(block), 'utf8')
+  ) as BlockStructure;
+}
+
+export async function writeBlockStructure(
+  block: string,
+  structure: Record<string, unknown>
+) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
   const prettier = await import('prettier');
@@ -117,7 +190,10 @@ export async function writeBlockStructure(block, structure) {
   await writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
-export async function writeSuperblockStructure(superblock, structure) {
+export async function writeSuperblockStructure(
+  superblock: string,
+  structure: Record<string, unknown>
+) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
   const prettier = await import('prettier');
@@ -127,17 +203,20 @@ export async function writeSuperblockStructure(superblock, structure) {
   await writeFile(getSuperblockStructurePath(superblock), content);
 }
 
-export function getSuperblockStructure(superblockFilename) {
+export function getSuperblockStructure(superblockFilename: string) {
   const superblockPath = getSuperblockStructurePath(superblockFilename);
 
   if (!existsSync(superblockPath)) {
     throw Error(`Superblock file not found: ${superblockPath}`);
   }
 
-  return JSON.parse(readFileSync(superblockPath, 'utf8'));
+  return JSON.parse(readFileSync(superblockPath, 'utf8')) as {
+    blocks?: string[];
+    chapters?: Chapter[];
+  };
 }
 
-export function getSuperblockStructurePath(superblockFilename) {
+export function getSuperblockStructurePath(superblockFilename: string) {
   return resolve(STRUCTURE_DIR, 'superblocks', `${superblockFilename}.json`);
 }
 
@@ -152,7 +231,7 @@ export function getSuperblockStructurePath(superblockFilename) {
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
 export function getLanguageConfig(
-  lang,
+  lang:string,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
     i18nBaseDir: I18N_CURRICULUM_DIR
