@@ -15,6 +15,25 @@ const { clientLocale, growthbookUri } = envData as {
   growthbookUri: string | null;
 };
 
+// Parses GrowthBook URL to extract apiHost and clientKey
+function parseGrowthBookUrl(
+  url: string | null | undefined
+): { apiHost: string; clientKey: string } | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    // Expect: /api/features/<clientKey> (with optional trailing slash)
+    const match = u.pathname.match(/^\/api\/features\/([^/]+)\/?$/);
+    if (!match) return null;
+    const clientKey = match[1];
+    const apiHost = `${u.protocol}//${u.host}`;
+    if (!clientKey || !apiHost) return null;
+    return { apiHost, clientKey };
+  } catch {
+    return null;
+  }
+}
+
 declare global {
   interface Window {
     dataLayer: [Record<string, number | string>];
@@ -49,10 +68,14 @@ const GrowthBookWrapper = ({
   user,
   userFetchState
 }: GrowthBookWrapper) => {
+  const parsedUrl = parseGrowthBookUrl(growthbookUri);
   const growthbook = useMemo(
     () =>
       new GrowthBook({
-        ...(growthbookUri && { url: growthbookUri }),
+        ...(parsedUrl && {
+          apiHost: parsedUrl.apiHost,
+          clientKey: parsedUrl.clientKey
+        }),
         trackingCallback: (experiment, result) => {
           callGA({
             event: 'experiment_viewed',
@@ -63,7 +86,7 @@ const GrowthBookWrapper = ({
         }
       }),
 
-    []
+    [parsedUrl]
   );
 
   useEffect(() => {
@@ -71,7 +94,14 @@ const GrowthBookWrapper = ({
       .init({ timeout: 1000 })
       .then(res => {
         console.log('GrowthBook initialized', res);
-        // TODO: handle error responses.
+        if (!res || !res.success) {
+          console.warn('GrowthBook initialization failed.', {
+            source: res?.source,
+            error: res?.error
+          });
+          void growthbook.setPayload({ features: defaultGrowthBookFeatures });
+          return;
+        }
       })
       .catch(error => {
         console.error('Error initializing GrowthBook:', error);
