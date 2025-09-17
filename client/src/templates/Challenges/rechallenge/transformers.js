@@ -45,8 +45,8 @@ function testLoopProtectCB(line) {
 // hold Babel and presets so we don't try to import them multiple times
 
 let Babel;
-let presetEnv, presetReact;
-let presetsJS, presetsJSX;
+let presetEnv, presetReact, presetTypescript;
+let presetsJS, presetsJSX, presetsTSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -89,6 +89,26 @@ async function loadPresetReact() {
   };
 }
 
+async function loadPresetTypescriptReact() {
+  if (!presetReact)
+    presetReact = await import(
+      /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
+    );
+  if (!presetEnv)
+    presetEnv = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
+    );
+
+  if (!presetTypescript)
+    presetTypescript = await import(
+      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-typescript'
+    );
+
+  presetsTSX = {
+    presets: [presetEnv, presetReact, presetTypescript]
+  };
+}
+
 const babelTransformCode = options => code =>
   Babel.transform(code, options).code;
 
@@ -96,13 +116,20 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
+const testTSX = matchesProperty('ext', 'tsx');
 const testTypeScript = matchesProperty('ext', 'ts');
 const testHTML = matchesProperty('ext', 'html');
-const testHTML$JS$JSX$TS = overSome(testHTML, testJS, testJSX, testTypeScript);
+const testHTML$JS$JSX$TS$TSX = overSome(
+  testHTML,
+  testJS,
+  testJSX,
+  testTypeScript,
+  testTSX
+);
 
 const replaceNBSP = cond([
   [
-    testHTML$JS$JSX$TS,
+    testHTML$JS$JSX$TS$TSX,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
@@ -150,11 +177,36 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
   )(challengeFile);
 };
 
+const getTSXTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await checkTSServiceIsReady();
+  await loadPresetTypescriptReact();
+  const babelOptions = getBabelOptions(presetsTSX, loopProtectOptions);
+  return flow(
+    partial(transformHeadTailAndContents, compileTypeScriptCode),
+    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+  )(challengeFile);
+};
+
+const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  await loadPresetTypescriptReact();
+  const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  const babelOptions = {
+    ...baseOptions,
+    plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
+    moduleId: 'index' // TODO: this should be dynamic
+  };
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
+};
+
 const createTranspiler = loopProtectOptions => {
   return cond([
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
+    [testTSX, getTSXTranspiler(loopProtectOptions)],
     [testHTML, getHtmlTranspiler({ useModules: false })],
     [stubTrue, identity]
   ]);
@@ -163,6 +215,7 @@ const createTranspiler = loopProtectOptions => {
 const createModuleTransformer = loopProtectOptions => {
   return cond([
     [testJSX, getJSXModuleTranspiler(loopProtectOptions)],
+    [testTSX, getTSXModuleTranspiler(loopProtectOptions)],
     [testHTML, getHtmlTranspiler({ useModules: true })],
     [stubTrue, identity]
   ]);
@@ -206,6 +259,7 @@ async function transformScript(documentElement, { useModules }) {
   await loadBabel();
   await loadPresetEnv();
   await loadPresetReact();
+  await loadPresetTypescriptReact();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     const isBabel = script.type === 'text/babel';
@@ -242,7 +296,7 @@ async function transformScript(documentElement, { useModules }) {
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
+  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs, indexTsx } =
     challengeFilesToObject(challengeFiles);
 
   const embedStylesAndScript = contentDocument => {
@@ -264,6 +318,14 @@ export const embedFilesInHtml = async function (challengeFiles) {
       ) ??
       documentElement.querySelector(
         `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.jsx"]`
+      );
+
+    const tsxScript =
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="index.tsx"]`
+      ) ??
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.tsx"]`
       );
 
     if (link) {
@@ -293,6 +355,13 @@ export const embedFilesInHtml = async function (challengeFiles) {
       jsxScript.setAttribute('data-src', 'index.jsx');
       jsxScript.setAttribute('data-type', 'text/babel');
     }
+    if (tsxScript) {
+      tsxScript.innerHTML = indexTsx?.contents;
+      tsxScript.removeAttribute('src');
+      tsxScript.removeAttribute('type');
+      tsxScript.setAttribute('data-src', 'index.tsx');
+      tsxScript.setAttribute('data-type', 'text/babel');
+    }
     return documentElement.innerHTML;
   };
 
@@ -308,8 +377,10 @@ export const embedFilesInHtml = async function (challengeFiles) {
     return `<script>${scriptJs.contents}</script>`;
   } else if (indexTs) {
     return `<script>${indexTs.contents}</script>`;
+  } else if (indexTsx) {
+    return `<script>${indexTsx.contents}</script>`;
   } else {
-    throw Error('No html, ts or js(x) file found');
+    throw Error('No html, ts(x) or js(x) file found');
   }
 };
 
@@ -319,7 +390,8 @@ function challengeFilesToObject(challengeFiles) {
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
   const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
-  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs };
+  const indexTsx = challengeFiles.find(file => file.fileKey === 'indextsx');
+  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs, indexTsx };
 }
 
 const parseAndTransform = async function (transform, contents) {
