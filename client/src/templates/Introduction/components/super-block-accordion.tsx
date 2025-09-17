@@ -251,7 +251,7 @@ export const SuperBlockAccordion = ({
 
     const allChapters = chapters.map(chapter => ({
       name: chapter.dashedName,
-      comingSoon: (chapter as { comingSoon?: boolean }).comingSoon ?? false,
+      comingSoon: chapter.comingSoon,
       modules: chapter.modules.map((module: Module) => ({
         name: module.dashedName,
         comingSoon: module.comingSoon,
