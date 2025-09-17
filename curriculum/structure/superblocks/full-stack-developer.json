@@ -715,6 +715,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
