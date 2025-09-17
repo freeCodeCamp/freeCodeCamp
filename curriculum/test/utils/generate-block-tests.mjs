@@ -1,5 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
+
+import _ from 'lodash';
+
 import { parseCurriculumStructure } from '../../build-curriculum.js';
 
 const __dirname = import.meta.dirname;
@@ -31,9 +34,9 @@ async function main() {
 
   const { fullSuperblockList } = await parseCurriculumStructure(testFilter);
 
-  const blocks = fullSuperblockList
-    .flatMap(({ blocks }) => blocks)
-    .map(b => b.dashedName);
+  const blocks = _.uniq(
+    fullSuperblockList.flatMap(({ blocks }) => blocks).map(b => b.dashedName)
+  );
 
   for (const block of blocks) {
     const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
