@@ -1,48 +1,25 @@
 ---
-id: 68c9c3aa714bc326e026b826
-title: Step 26
+id: 68caa8fb3bed34833ef24aee
+title: Step 29
 challengeType: 20
-dashedName: step-26
+dashedName: step-29
 ---
 
 # --description--
 
-The new level cannot be set without checking if it's a valid level. At the beginning of your setter, create an `if` statement that raises a `ValueError` when `new_level` is not a key of `Employee._base_salaries`.
-
-For the error message, use `Invalid value '{new_level}' for 'level' attribute.`, where `{new_level}` should be replaced by the argument passed to the setter.
+Once the level has changed, you need to updated the salary as well. Set `self._salary` to the base salary for the new level.
 
 # --hints--
 
-You should have an `if` statement inside your `level` setter.
-
-```js
-({ test: () => assert(runPython(`_Node(_code).find_class("Employee").find_functions("level")[1].find_ifs()[0]`)) })
-```
-
-When `new_level` is not a key of `Employee._base_salaries`, you should raise a `ValueError` with the message `Invalid value '{new_level}' for 'level' attribute.`, where `{new_level}` should be replaced by the argument passed to the setter.
+You should set `self._salary` to the base salary for the new level.
 
 ```js
 ({ test: () => runPython(`
   emp = Employee('Frank', 'trainee')
-  try:
-    emp.level = "dreamer"
-  except ValueError as e:
-    assert str(e) == "Invalid value 'dreamer' for 'level' attribute."
-  else:
-      assert False, "Expected to raise ValueError with invalid new_level"
-`) })
-```
-
-You should not raise any exception when `new_level` is a key of `Employee._base_salaries`
-
-```js
-({ test: () => runPython(`
-  emp = Employee('Frank', 'trainee')
-  for i in Employee._base_salaries:
-    try:
-      emp.level = i
-    except Exception:
-      assert False, "Expected not to raise any exception with valid new_level"    
+  new_levels = ['junior', 'mid-level', 'senior']
+  for new_level in new_levels:
+    emp.level = new_level
+    assert emp.salary == Employee._base_salaries.get(new_level)
 `) })
 ```
 
@@ -92,8 +69,14 @@ class Employee:
 --fcc-editable-region--
     @level.setter
     def level(self, new_level):
-        
+        if new_level not in Employee._base_salaries:
+            raise ValueError(f"Invalid value '{new_level}' for 'level' attribute.")
+        if new_level == self.level:
+            raise ValueError(f"'{self.level}' is already the selected level.")
+        if Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:
+            raise ValueError(f"Cannot change to lower level.")
         self._level = new_level
+
     
 --fcc-editable-region--
     @property
