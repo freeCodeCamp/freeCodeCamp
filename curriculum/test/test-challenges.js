@@ -212,13 +212,10 @@ function populateTestsForLang({ lang, challenges, meta }, getPage) {
                   fails = true;
                 }
                 if (!fails) {
-                  for (const test of tests) {
-                    try {
-                      await testRunner(test);
-                    } catch {
-                      fails = true;
-                      break;
-                    }
+                  try {
+                    await testRunner(tests);
+                  } catch {
+                    fails = true;
                   }
                 }
                 console.error = oldConsoleError;
@@ -313,9 +310,7 @@ seed goes here
                       buildChallenge,
                       solutionFromNext
                     );
-                    for (const test of tests) {
-                      await testRunner(test);
-                    }
+                    await testRunner(tests);
                   },
                   timePerTest * tests.length + 2000
                 );
@@ -361,24 +356,26 @@ async function createTestRunner(
     hooks: challenge.hooks
   });
 
-  return async ({ text, testString }) => {
-    try {
-      const { pass, err } = await evaluator.evaluate(testString, 5000);
-      if (!pass) {
+  return async tests => {
+    const testStrings = tests.map(test => test.testString);
+
+    const results = await evaluator.evaluate(testStrings, 5000);
+    for (let i = 0; i < results.length; i++) {
+      const { err } = results[i];
+      let { text } = tests[i];
+      if (err) {
+        text = 'Test text: ' + text;
+        const newMessage = solutionFromNext
+          ? 'Check next step for solution!\n' + text
+          : text;
+        // if the stack is missing, the message should be included. Otherwise it
+        // is redundant.
+        err.message = err.stack
+          ? newMessage
+          : `${newMessage}
+      ${err.message}`;
         throw err;
       }
-    } catch (err) {
-      text = 'Test text: ' + text;
-      const newMessage = solutionFromNext
-        ? 'Check next step for solution!\n' + text
-        : text;
-      // if the stack is missing, the message should be included. Otherwise it
-      // is redundant.
-      err.message = err.stack
-        ? newMessage
-        : `${newMessage}
-      ${err.message}`;
-      throw err;
     }
   };
 }
@@ -408,31 +405,18 @@ async function getContextEvaluator(page, config) {
   await initializeTestRunner(page, config);
 
   return {
-    evaluate: async (testString, timeout) =>
-      Promise.race([
-        new Promise((_, reject) =>
-          setTimeout(
-            () =>
-              reject(
-                Error(`timeout in challenge
-${config.challengeId}
-while evaluating test:
-${testString}
-`)
-              ),
+    evaluate: async (testStrings, timeout) =>
+      await page.evaluate(
+        async (type, testStrings, timeout) => {
+          return await window.FCCTestRunner.getRunner(type).runAllTests(
+            testStrings,
             timeout
-          )
-        ),
-        page.evaluate(
-          async (testString, type) => {
-            return await window.FCCTestRunner.getRunner(type).runTest(
-              testString
-            );
-          },
-          testString,
-          config.type
-        )
-      ])
+          );
+        },
+        config.type,
+        testStrings,
+        timeout
+      )
   };
 }
 

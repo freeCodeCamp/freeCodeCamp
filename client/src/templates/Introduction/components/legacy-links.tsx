@@ -11,7 +11,7 @@ import { Link } from '../../../components/helpers';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 
 import envData from '../../../../config/env.json';
-import { GitpodNote } from '../../../components/growth-book/gitpod-note';
+import { OnaNote } from '../../../components/growth-book/ona-note';
 
 const { clientLocale } = envData;
 
@@ -51,7 +51,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       </Alert>
     );
   } else {
-    return <GitpodNote superBlock={superBlock} />;
+    return <OnaNote superBlock={superBlock} />;
   }
 }
 

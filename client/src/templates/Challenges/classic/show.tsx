@@ -317,7 +317,9 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for the urriculum outline workshop
   const showIndependentLowerJaw =
-    blockName === 'workshop-curriculum-outline' && isIndependentLowerJawEnabled;
+    blockName === 'workshop-curriculum-outline' &&
+    isIndependentLowerJawEnabled &&
+    !isMobile;
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -591,6 +593,7 @@ export const query = graphql`
           beforeAll
           beforeEach
           afterEach
+          afterAll
         }
         fields {
           blockName

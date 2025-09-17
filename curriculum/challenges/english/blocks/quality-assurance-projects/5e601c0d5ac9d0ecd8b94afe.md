@@ -73,7 +73,6 @@ You should provide your own project, not the example URL.
 You can `POST` to `/api/translate` with a body containing `text` with the text to translate and `locale` with either `american-to-british` or `british-to-american`. The returned object should contain the submitted `text` and `translation` with the translated text.
 
 ```js
-async () => {
   try {
     const text = 'Mangoes are my favorite fruit.';
     const locale = 'american-to-british';
@@ -95,13 +94,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 The `/api/translate` route should handle the way time is written in American and British English. For example, ten thirty is written as "10.30" in British English and "10:30" in American English. The `span` element should wrap the entire time string, i.e. `<span class="highlight">10:30</span>`.
 
 ```js
-async () => {
   try {
     const text = 'Lunch is at 12:15 today.';
     const locale = 'american-to-british';
@@ -122,13 +119,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 The `/api/translate` route should also handle the way titles/honorifics are abbreviated in American and British English. For example, Doctor Wright is abbreviated as "Dr Wright" in British English and "Dr. Wright" in American English. See `/components/american-to-british-titles.js` for the different titles your application should handle.
 
 ```js
-async () => {
   try {
     const text = 'Dr. Grosh will see you now.';
     const locale = 'american-to-british';
@@ -149,13 +144,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 Wrap any translated spelling or terms with `<span class="highlight">...</span>` tags so they appear in green.
 
 ```js
-async () => {
   try {
     const text = 'Mangoes are my favorite fruit.';
     const locale = 'american-to-british';
@@ -177,13 +170,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 If one or more of the required fields is missing, return `{ error: 'Required field(s) missing' }`.
 
 ```js
-async () => {
   try {
     const locale = 'american-to-british';
     let data = await fetch(code + '/api/translate', {
@@ -198,13 +189,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 If `text` is empty, return `{ error: 'No text to translate' }`
 
 ```js
-async () => {
   try {
     const locale = 'american-to-british';
     let data = await fetch(code + '/api/translate', {
@@ -219,13 +208,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 If `locale` does not match one of the two specified locales, return `{ error: 'Invalid value for locale field' }`.
 
 ```js
-async () => {
   try {
     const text = "Ceci n'est pas une pipe";
     const locale = 'french-to-american';
@@ -241,13 +228,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 If `text` requires no translation, return `"Everything looks good to me!"` for the `translation` value.
 
 ```js
-async () => {
   try {
     const locale = 'british-to-american';
     const output = {
@@ -268,13 +253,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 All 24 unit tests are complete and passing.
 
 ```js
-async () => {
   try {
     const getTests = await $.get(code + '/_api/get-tests');
     assert.isArray(getTests);
@@ -293,13 +276,11 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
 
 All 6 functional tests are complete and passing.
 
 ```js
-async () => {
   try {
     const getTests = await $.get(code + '/_api/get-tests');
     assert.isArray(getTests);
@@ -318,5 +299,4 @@ async () => {
   } catch (err) {
     throw new Error(err.responseText || err.message);
   }
-};
 ```
