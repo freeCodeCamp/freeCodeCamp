@@ -37,22 +37,30 @@ const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
 global.DOMParser = dom.window.DOMParser;
 
+// The puppeteer page is global so that we can recreate it during tests, if
+// needed.
+let page;
+
+const poolId = process.env.VITEST_POOL_ID;
+
+async function createAndVisitNewPage() {
+  const page = await globalThis.puppeteerBrowserContext[poolId].newPage();
+  await page.goto(`http://127.0.0.1:8080/index.html`);
+  return page;
+}
+
 async function newPageContext() {
   // Reuse a single page per worker/pool to avoid the overhead of creating a
   // new page for every block file.
-  const poolId = process.env.VITEST_POOL_ID;
   globalThis.__fccPuppeteerPages ??= {};
-  if (!globalThis.__fccPuppeteerPages[poolId]) {
-    const page = await globalThis.puppeteerBrowserContext[poolId].newPage();
-    await page.goto(`http://127.0.0.1:8080/index.html`);
-    globalThis.__fccPuppeteerPages[poolId] = page;
-  }
+  globalThis.__fccPuppeteerPages[poolId] ??= globalThis.__fccPuppeteerPages[
+    poolId
+  ] = createAndVisitNewPage();
+
   return globalThis.__fccPuppeteerPages[poolId];
 }
 
 export async function defineTestsForBlock({ block }) {
-  let page;
-
   const lang = testedLang();
   const challenges = await getChallenges(lang, { block });
   const nonCertificationChallenges = challenges.filter(
@@ -114,7 +122,7 @@ export async function getChallenges(lang, filters) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta }, getPage) {
+function populateTestsForLang({ lang, challenges, meta }) {
   const validateChallenge = challengeSchemaValidator();
 
   describe(`Language: ${lang}`, function () {
@@ -197,9 +205,11 @@ function populateTestsForLang({ lang, challenges, meta }, getPage) {
                 console.error = () => {};
                 let fails = false;
                 let testRunner;
+                // TODO: if this times out, try wrapping this whole test in a
+                // new describe block and create the runner in a beforeAll (i.e.
+                // same as "Check tests against solutions")
                 try {
                   testRunner = await createTestRunner(
-                    getPage,
                     challenge,
                     challenge.challengeFiles,
                     buildChallenge
@@ -300,16 +310,21 @@ seed goes here
 
             describe('Check tests against solutions', function () {
               solutions.forEach((solution, index) => {
+                let testRunner;
+                // Creating the test runner can be slow, so we do it in
+                // beforeAll rather than the test itself.
+                beforeAll(async () => {
+                  testRunner = await createTestRunner(
+                    challenge,
+                    solution,
+                    buildChallenge,
+                    solutionFromNext
+                  );
+                });
+
                 it(
                   `Solution ${index + 1} must pass the tests`,
                   async function () {
-                    const testRunner = await createTestRunner(
-                      getPage,
-                      challenge,
-                      solution,
-                      buildChallenge,
-                      solutionFromNext
-                    );
                     await testRunner(tests);
                   },
                   timePerTest * tests.length + 2000
@@ -324,7 +339,6 @@ seed goes here
 }
 
 async function createTestRunner(
-  getPage,
   challenge,
   solutionFiles,
   buildChallenge,
@@ -343,10 +357,9 @@ async function createTestRunner(
     { usesTestRunner: true }
   );
 
-  const page = getPage();
   if (!page) throw new Error('Browser page is not ready yet');
 
-  const evaluator = await getContextEvaluator(page, {
+  const evaluator = await getContextEvaluator({
     // passing in challengeId so it's easier to debug timeouts
     challengeId: challenge.id,
     build,
@@ -401,8 +414,8 @@ function replaceChallengeFilesContentsWithSolutions(
   });
 }
 
-async function getContextEvaluator(page, config) {
-  await initializeTestRunner(page, config);
+async function getContextEvaluator(config) {
+  await initializeTestRunner(config);
 
   return {
     evaluate: async (testStrings, timeout) =>
@@ -420,18 +433,14 @@ async function getContextEvaluator(page, config) {
   };
 }
 
-async function initializeTestRunner(
-  page,
-  { build, sources, type, hooks, loadEnzyme }
-) {
+async function _initializeTestRunner({
+  build,
+  sources,
+  type,
+  hooks,
+  loadEnzyme
+}) {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
-
-  // Ensure FCCTestRunner is available before creating it
-  await page.waitForFunction(
-    'window.FCCTestRunner && window.FCCTestRunner.createTestRunner',
-    { timeout: 5000 }
-  );
-
   await page.evaluate(
     async (sources, source, type, hooks, loadEnzyme) => {
       await window.FCCTestRunner.createTestRunner({
@@ -448,4 +457,33 @@ async function initializeTestRunner(
     hooks,
     loadEnzyme
   );
+}
+
+async function initializeTestRunner({
+  build,
+  sources,
+  type,
+  hooks,
+  loadEnzyme
+}) {
+  // Ensure FCCTestRunner is available before creating it
+  await page.waitForFunction(
+    'window.FCCTestRunner && window.FCCTestRunner.createTestRunner',
+    { timeout: 5000 }
+  );
+
+  try {
+    await _initializeTestRunner({ build, sources, type, hooks, loadEnzyme });
+  } catch (e) {
+    // It's not clear why, but sometimes the iframe load times out. It seems to
+    // be an issue with Puppeteer, so we give it one more try to reduce test
+    // flakiness.
+    if (e.message.includes('Timed out waiting for the test frame to load')) {
+      console.warn('Test frame load timed out. Retrying...');
+      page = await createAndVisitNewPage();
+      await _initializeTestRunner({ build, sources, type, hooks, loadEnzyme });
+    } else {
+      throw e;
+    }
+  }
 }
