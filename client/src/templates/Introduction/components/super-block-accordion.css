@@ -161,6 +161,8 @@
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .super-block-intro-page .btn-cta-big {
@@ -190,6 +192,23 @@
 
 .super-block-benefits h3 {
   color: var(--gray05);
+}
+
+@media screen and (max-width: 699px) {
+  .super-benefits-container {
+    border-radius: 12px;
+    margin-left: 15px;
+    margin-right: 15px;
+    width: calc(100vw - 30px);
+  }
+
+  .full-width-container {
+    margin-left: 0;
+    margin-right: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 700px) {
