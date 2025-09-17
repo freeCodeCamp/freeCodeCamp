@@ -43,8 +43,6 @@ const getBlockCreator = (lang, skipValidation, opts) => {
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
 
-  console.log('block', blockContentDir);
-
   return new BlockCreator({
     lang,
     blockContentDir,
