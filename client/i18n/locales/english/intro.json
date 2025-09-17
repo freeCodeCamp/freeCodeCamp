@@ -3526,7 +3526,7 @@
         "title": "Implement a Value Remover Function",
         "intro": [
           "In this lab, you will create a function that removes all instances of a specified value from an array."
-          ]
+        ]
       },
       "lab-sum-all-primes-calculator": {
         "title": "Build a Prime Number Sum Calculator",
