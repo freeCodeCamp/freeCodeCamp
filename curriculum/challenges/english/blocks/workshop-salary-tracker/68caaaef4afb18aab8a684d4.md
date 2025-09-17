@@ -1,36 +1,22 @@
 ---
-id: 68c9cab4b1118da59eecfc56
-title: Step 27
+id: 68caaaef4afb18aab8a684d4
+title: Step 31
 challengeType: 20
-dashedName: step-27
+dashedName: step-31
 ---
 
 # --description--
 
-After the existing `if` statement, create another one to raise a `ValueError` when `new_level` is already the selected level.
+It's time to test your new setter. Try to assign invalid values such as a random string or the current level (`trainee`) to `charlie_brown.level` and see the error messages in the console.
 
-For the message, use `'{level}' is already the selected level.`, where `{level}` should be replaced by the current level.
+Once you've done, remove the lines raising errors and set `charlie_brown.level` to the string `junior`.
 
 # --hints--
 
-You should have a second `if` statement inside your `level` setter.
+You should set `charlie_brown.level` to the string `junior`.
 
 ```js
-({ test: () => assert(runPython(`_Node(_code).find_class("Employee").find_functions("level")[1].find_ifs()[1]`)) })
-```
-
-When `new_level` is equal to `self.level`, you should raise a `ValueError` with the message `'{level}' is already the selected level.`, where `{level}` should be replaced by the current level.
-
-```js
-({ test: () => runPython(`
-  emp = Employee('Frank', 'trainee')
-  try:
-    emp.level = "trainee"
-  except ValueError as e:
-    assert str(e) == "'trainee' is already the selected level."
-  else:
-      assert False, "Expected to raise ValueError with invalid new_level"
-`) })
+({ test: () => assert(runPython(`_Node(_code).has_stmt("charlie_brown.level = 'junior'")`)) })
 ```
 
 # --seed--
@@ -76,16 +62,19 @@ class Employee:
     @property
     def level(self):
         return self._level
---fcc-editable-region--
+
     @level.setter
     def level(self, new_level):
         if new_level not in Employee._base_salaries:
             raise ValueError(f"Invalid value '{new_level}' for 'level' attribute.")
-        
-        
+        if new_level == self.level:
+            raise ValueError(f"'{self.level}' is already the selected level.")
+        if Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:
+            raise ValueError(f"Cannot change to lower level.")
         self._level = new_level
-    
---fcc-editable-region--
+        self._salary = Employee._base_salaries[new_level]
+        print(f"'{self.name}' promoted to '{new_level}'.")
+
     @property
     def salary(self):
         return self._salary
@@ -93,4 +82,7 @@ class Employee:
 charlie_brown = Employee('Charlie Brown', 'trainee')
 print(charlie_brown)
 print(f'Base salary: ${charlie_brown.salary}')
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```
