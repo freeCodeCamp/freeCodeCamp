@@ -7,23 +7,31 @@ import { parseMD } from '../tools/challenge-parser/parser';
 import { createPoly } from '../shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '../shared/utils/is-audited';
 import { translateCommentsInChallenge } from '../tools/challenge-parser/translation-parser';
+import { SuperBlocks } from '../shared/config/curriculum';
 import { getSuperOrder } from './utils';
+import type { BlockStructure, Challenge, ChallengeFile } from './file-handler';
 
 const log = debug('fcc:build-superblock');
 
-const duplicates = xs => xs.filter((x, i) => xs.indexOf(x) !== i);
+const duplicates = <T>(xs: T[]) => xs.filter((x, i) => xs.indexOf(x) !== i);
 
-const createValidator = throwOnError => fn => {
+const createValidator = (throwOnError?: boolean) => (fn: () => void) => {
   try {
     fn();
   } catch (error) {
     if (throwOnError) {
       throw error;
     } else {
-      console.error(error.message);
+      console.error((error as Error).message);
     }
   }
 };
+
+interface Meta extends BlockStructure {
+  order: number;
+  superBlock: string;
+  superOrder: number;
+}
 
 /**
  * Validates challenges against meta.json challengeOrder
@@ -31,7 +39,11 @@ const createValidator = throwOnError => fn => {
  * @param {object} meta - Meta object with challengeOrder array
  * @throws {Error} If validation fails (missing challenges, duplicates, etc.)
  */
-export function validateChallenges(foundChallenges, meta, throwOnError) {
+export function validateChallenges(
+  foundChallenges: Challenge[],
+  meta: { challengeOrder: Challenge[]; dashedName: string },
+  throwOnError?: boolean
+) {
   const metaChallengeIds = new Set(meta.challengeOrder.map(c => c.id));
   const foundChallengeIds = new Set(foundChallenges.map(c => c.id));
 
@@ -98,7 +110,7 @@ export function validateChallenges(foundChallenges, meta, throwOnError) {
  * @param {object} meta - Meta object with name, dashedName, and challengeOrder
  * @returns {object} Block object with ordered challenges
  */
-export function buildBlock(foundChallenges, meta) {
+export function buildBlock(foundChallenges: Challenge[], meta: Meta) {
   const challenges = meta.challengeOrder.map(challengeInfo => {
     const challenge = foundChallenges.find(c => c.id === challengeInfo.id);
     if (!challenge) {
@@ -122,7 +134,10 @@ export function buildBlock(foundChallenges, meta) {
  * @param {object} meta - The meta information object
  * @returns {object} The challenge object with added meta information
  */
-export function addMetaToChallenge(challenge, meta) {
+export function addMetaToChallenge(
+  challenge: Partial<Challenge>,
+  meta: Meta
+): Challenge {
   const challengeOrderIndex = meta.challengeOrder.findIndex(
     ({ id }) => id === challenge.id
   );
@@ -170,7 +185,7 @@ export function addMetaToChallenge(challenge, meta) {
   );
   challenge.certification = hasDupe ? hasDupe.certification : meta.superBlock;
 
-  return challenge;
+  return challenge as Challenge;
 }
 
 /**
@@ -178,7 +193,7 @@ export function addMetaToChallenge(challenge, meta) {
  * @param {Array<object>} files - Array of challenge file objects
  * @returns {Array<object>} Array of polyvinyl objects with seed property
  */
-export function challengeFilesToPolys(files) {
+export function challengeFilesToPolys(files: ChallengeFile[]) {
   return files.reduce((challengeFiles, challengeFile) => {
     return [
       ...challengeFiles,
@@ -187,7 +202,7 @@ export function challengeFilesToPolys(files) {
         seed: challengeFile.contents.slice(0)
       }
     ];
-  }, []);
+  }, [] as ChallengeFile[]);
 }
 
 /**
@@ -195,7 +210,7 @@ export function challengeFilesToPolys(files) {
  * @param {object} challenge - The challenge object to fix
  * @returns {object} The challenge object with fixed properties
  */
-export function fixChallengeProperties(challenge) {
+export function fixChallengeProperties(challenge: Challenge) {
   const fixedChallenge = {
     ...challenge
   };
@@ -219,7 +234,7 @@ export function fixChallengeProperties(challenge) {
  * @param {object} meta - The meta information object
  * @returns {object} The finalized challenge object
  */
-export function finalizeChallenge(challenge, meta) {
+export function finalizeChallenge(challenge: Challenge, meta: Meta) {
   return addMetaToChallenge(fixChallengeProperties(challenge), meta);
 }
 export class BlockCreator {
@@ -234,12 +249,25 @@ export class BlockCreator {
    * This class is responsible for reading block directories, parsing challenges, and validating them
    * against the meta information.
    */
+
+  blockContentDir: string;
+  i18nBlockContentDir: string;
+  lang: string;
+  commentTranslations: object;
+  skipValidation: boolean | undefined;
+
   constructor({
     blockContentDir,
     i18nBlockContentDir,
     lang,
     commentTranslations,
     skipValidation
+  }: {
+    blockContentDir: string;
+    i18nBlockContentDir: string;
+    lang: string;
+    commentTranslations: object;
+    skipValidation?: boolean;
   }) {
     this.blockContentDir = blockContentDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
@@ -259,7 +287,12 @@ export class BlockCreator {
    * @returns {Promise<object>} The finalized challenge object
    */
   async createChallenge(
-    { filename, block, meta, isAudited },
+    {
+      filename,
+      block,
+      meta,
+      isAudited
+    }: { filename: string; block: string; meta: Meta; isAudited: boolean },
     parser = parseMD
   ) {
     log(
@@ -291,7 +324,7 @@ export class BlockCreator {
    * @param {boolean} isAudited - Whether the block is audited for i18n
    * @returns {Promise<Array<object>>} Array of challenge objects
    */
-  async readBlockChallenges(block, meta, isAudited) {
+  async readBlockChallenges(block: string, meta: Meta, isAudited: boolean) {
     const blockDir = resolve(this.blockContentDir, block);
     const challengeFiles = readdirSync(blockDir).filter(file =>
       file.endsWith('.md')
@@ -304,7 +337,10 @@ export class BlockCreator {
     );
   }
 
-  async processBlock(block, { superBlock, order }) {
+  async processBlock(
+    block: BlockStructure,
+    { superBlock, order }: { superBlock: string; order: number }
+  ) {
     const blockName = block.dashedName;
     log(`Processing block ${blockName} in superblock ${superBlock}`);
 
@@ -331,7 +367,7 @@ export class BlockCreator {
       ...(block.chapter && { chapter: block.chapter }),
       ...(block.module && { module: block.module })
     };
-    const isAudited = isAuditedSuperBlock(this.lang, superBlock);
+    const isAudited = isAuditedSuperBlock(this.lang, superBlock as SuperBlocks);
 
     // Read challenges from directory
     const foundChallenges = await this.readBlockChallenges(
@@ -367,12 +403,21 @@ export class SuperblockCreator {
    * @param {object} options - Options object
    * @param {BlockCreator} options.blockCreator - Instance of BlockCreator
    */
-  constructor({ blockCreator }) {
+
+  blockCreator: BlockCreator;
+
+  constructor(blockCreator: BlockCreator) {
     this.blockCreator = blockCreator;
   }
 
-  async processSuperblock({ blocks, name }) {
-    const superBlock = { blocks: {} };
+  async processSuperblock({
+    blocks,
+    name
+  }: {
+    blocks: BlockStructure[];
+    name: string;
+  }) {
+    const superBlock: { blocks: Record<string, unknown> } = { blocks: {} };
 
     for (let i = 0; i < blocks.length; i++) {
       const block = blocks[i];
@@ -392,16 +437,43 @@ export class SuperblockCreator {
   }
 }
 
+type SimpleBlock = {
+  dashedName: string;
+};
+
+type ComplexBlock = {
+  dashedName: string;
+  chapter: string;
+  module: string;
+};
+
+export type BlockInfo = SimpleBlock | ComplexBlock;
+
+type Module = {
+  dashedName: string;
+  comingSoon?: boolean;
+  blocks?: string[];
+};
+
+export type Chapter = {
+  dashedName: string;
+  comingSoon?: boolean;
+  modules?: Module[];
+};
+
 /**
  * Transforms superblock data to extract blocks array
  * @param {object} superblockData - The superblock data object
  * @returns {object[]} Array of block objects with dashedName, chapter, and module properties
  */
 export function transformSuperBlock(
-  superblockData,
+  superblockData: {
+    blocks?: string[];
+    chapters?: Chapter[];
+  },
   { showComingSoon } = { showComingSoon: false }
 ) {
-  let blocks = [];
+  let blocks: BlockInfo[] = [];
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
