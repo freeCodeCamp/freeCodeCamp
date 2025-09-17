@@ -20,17 +20,9 @@ const testFilter = {
 const GENERATED_DIR = path.resolve(__dirname, '../blocks-generated');
 
 async function main() {
+  // clean and recreate directory
+  await fs.promises.rm(GENERATED_DIR, { force: true, recursive: true });
   await fs.promises.mkdir(GENERATED_DIR, { recursive: true });
-  // clean directory
-  const existing = await fs.promises.readdir(GENERATED_DIR);
-  await Promise.all(
-    existing.map(f =>
-      fs.promises.rm(path.join(GENERATED_DIR, f), {
-        force: true,
-        recursive: true
-      })
-    )
-  );
 
   const { fullSuperblockList } = await parseCurriculumStructure(testFilter);
 
