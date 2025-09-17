@@ -1,14 +1,8 @@
-#!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { createRequire } from 'node:module';
+import { parseCurriculumStructure } from '../../build-curriculum.js';
 
-const require = createRequire(import.meta.url);
-const { parseCurriculumStructure } = require('../../build-curriculum');
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = import.meta.dirname;
 
 const testFilter = {
   block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
@@ -42,7 +36,6 @@ async function main() {
     .map(b => b.dashedName);
 
   for (const block of blocks) {
-    await fs.promises.mkdir(GENERATED_DIR, { recursive: true });
     const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
     const contents = generateSingleBlockFile({ block });
 
@@ -65,7 +58,4 @@ await defineTestsForBlock({ block: ${JSON.stringify(block)} });
 `;
 }
 
-main().catch(err => {
-  console.error(err);
-  process.exitCode = 1;
-});
+main();
