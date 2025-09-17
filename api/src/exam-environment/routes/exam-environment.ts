@@ -951,12 +951,11 @@ export async function getExamAttemptsByExamIdHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
 
   const user = req.user!;
   const { examId } = req.params;
 
-  logger.info({ examId });
+  logger.info({ examId, userId: user.id });
 
   // If attempt id is given, only return that attempt
   const maybeAttempts = await mapErr(

@@ -211,6 +211,7 @@ If you are seeing this error, the root cause is likely an error thrown in the be
   });
 }
 
+// demoUser _id to allow testing with mock data
 export const defaultUserId = '5bd30e0f1caf6ac3ddddddb5';
 export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
