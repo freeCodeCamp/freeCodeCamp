@@ -1,9 +1,12 @@
-import { assert, describe, it } from 'vitest';
+import { assert, describe, it, vi } from 'vitest';
 import { testedLang } from '../utils';
-import { getChallenges } from './test-challenges';
 
-// Daily coding challenges are upcoming changes, so this test does nothing
-// unless SHOW_UPCOMING_CHANGES is true.
+vi.stubEnv('SHOW_UPCOMING_CHANGES', 'true');
+
+// We need to use dynamic import here to ensure the environment variable is set
+// before the module is loaded.
+const { getChallenges } = await import('./test-challenges.js');
+
 describe('Daily Coding Challenges', async () => {
   const lang = testedLang();
   const challenges = await getChallenges(lang, {
@@ -17,6 +20,19 @@ describe('Daily Coding Challenges', async () => {
   const pyDailyChallenges = challenges.filter(
     c => c.block === 'daily-coding-challenges-python'
   );
+
+  it('should have some daily challenges', function () {
+    assert.isAbove(
+      jsDailyChallenges.length,
+      0,
+      'No JavaScript daily challenges found'
+    );
+    assert.isAbove(
+      pyDailyChallenges.length,
+      0,
+      'No Python daily challenges found'
+    );
+  });
 
   it('should have matching number of JavaScript and Python challenges', function () {
     assert.equal(
