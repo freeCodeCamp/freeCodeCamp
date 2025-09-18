@@ -5,7 +5,7 @@ import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 
 import debug from 'debug';
-import { Chapter } from './build-superblock';
+import { Chapter } from './build-superblock.js';
 
 const log = debug('fcc:file-handler');
 
@@ -231,7 +231,7 @@ export function getSuperblockStructurePath(superblockFilename: string) {
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
 export function getLanguageConfig(
-  lang:string,
+  lang: string,
   { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
     i18nBaseDir: I18N_CURRICULUM_DIR

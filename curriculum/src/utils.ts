@@ -3,12 +3,12 @@ import { resolve } from 'path';
 import comparison from 'string-similarity';
 import { config } from 'dotenv';
 
-import { generateSuperBlockList } from '../../shared-dist/config/curriculum';
+import { generateSuperBlockList } from '../../shared-dist/config/curriculum.js';
 
 config({ path: resolve(__dirname, '../../.env') });
 
-import { availableLangs } from '../../shared-dist/config/i18n';
-import type { ProcessedBlock } from './build-curriculum';
+import { availableLangs } from '../../shared/config/i18n.js';
+import type { ProcessedBlock } from './build-curriculum.js';
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language

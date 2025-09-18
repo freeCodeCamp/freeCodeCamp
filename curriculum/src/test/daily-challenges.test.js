@@ -1,5 +1,6 @@
 import { assert, describe, it, vi } from 'vitest';
-import { testedLang } from '../utils';
+import { testedLang } from '../utils.js';
+import { getChallenges } from './test-challenges.js';
 
 vi.stubEnv('SHOW_UPCOMING_CHANGES', 'true');
 

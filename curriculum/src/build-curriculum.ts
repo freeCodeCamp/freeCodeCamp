@@ -9,10 +9,10 @@ import {
   BlockCreator,
   transformSuperBlock,
   BlockInfo
-} from './build-superblock';
+} from './build-superblock.js';
 
-import { buildCertification } from './build-certification';
-import { applyFilters, closestFilters, getSuperOrder } from './utils';
+import { buildCertification } from './build-certification.js';
+import { applyFilters, closestFilters, getSuperOrder  } from './utils.js';
 import {
   getContentDir,
   getLanguageConfig,
@@ -22,7 +22,7 @@ import {
   getBlockStructurePath,
   getBlockStructureDir,
   type BlockStructure
-} from './file-handler';
+} from './file-handler.js';
 const log = debug('fcc:build-curriculum');
 
 /**

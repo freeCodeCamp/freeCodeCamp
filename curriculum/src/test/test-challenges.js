@@ -14,18 +14,18 @@ import {
 import { getLines } from '../../../shared/utils/get-lines';
 import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
 
-import { getChallengesForLang } from '../get-challenges';
-import { challengeSchemaValidator } from '../../schema/challenge-schema';
-import { testedLang } from '../utils';
+import { getChallengesForLang } from '../get-challenges.js';
+import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
+import { testedLang } from '../utils.js';
 
-import { curriculumSchemaValidator } from '../../schema/curriculum-schema';
-import { validateMetaSchema } from '../../schema/meta-schema';
-import { getBlockStructure } from '../file-handler';
-import ChallengeTitles from './utils/challenge-titles';
-import MongoIds from './utils/mongo-ids';
-import createPseudoWorker from './utils/pseudo-worker';
+import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
+import { validateMetaSchema } from '../../schema/meta-schema.js';
+import { getBlockStructure } from '../file-handler.js';
+import ChallengeTitles from './utils/challenge-titles.js';
+import MongoIds from './utils/mongo-ids.js';
+import createPseudoWorker from './utils/pseudo-worker.js';
 
-import { sortChallenges } from './utils/sort-challenges';
+import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 

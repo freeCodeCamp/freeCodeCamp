@@ -11,7 +11,7 @@ import {
   filterByChallengeId,
   filterBySuperblock,
   getSuperOrder
-} from './utils';
+} from './utils.js';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
