@@ -1443,10 +1443,10 @@
           "У цьому курсі ви навчитесь говорити про хобі та речі, які вас цікавлять. Ви також дізнаєтесь, як запитувати про захоплення інших людей та як запропонувати їм скласти компанію."
         ]
       },
-      "learn-how-to-discuss-roles-and-responsibilies": {
-        "title": "Дізнайтесь, як обговорювати посади та обов’язки",
+      "learn-how-to-discuss-roles-and-responsibilities": {
+        "title": "Learn How to Discuss Roles and Responsibilities",
         "intro": [
-          "У цьому курсі ви обговорюватимете посади та обов’язки людей в компанії й поза нею. Ви дізнаєтеся, як запитувати про посади та обов’язки, а також як ділитися власною інформацією на цю тему."
+          "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
         ]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
@@ -2106,6 +2106,12 @@
         "title": "Основи HTML",
         "intro": [
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
         ]
       },
       "lab-travel-agency-page": {
@@ -2865,10 +2871,10 @@
           "У цьому практичному занятті ви створите статтю в журналі. Ви дізнаєтеся, як використовувати сітку, включно з рядками та стовпцями."
         ]
       },
-      "lab-magazine-layout": {
-        "title": "Розробіть макет журналу",
+      "lab-newspaper-layout": {
+        "title": "Design a Newspaper Layout",
         "intro": [
-          "У цій лабораторній роботі ви розробите макет журналу, використовуючи сітку в CSS, включно з рядками та стовпцями."
+          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
         ]
       },
       "lecture-debugging-css": {
@@ -2956,7 +2962,19 @@
       "lecture-introduction-to-javascript": {
         "title": "Вступ до JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
+        ]
+      },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lectures, you will learn how to work with strings and string concatenation."
+        ]
+      },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
         ]
       },
       "workshop-greeting-bot": {
@@ -3251,10 +3269,22 @@
           "Цей тест перевірить, наскільки добре ви засвоїли матеріал з теми «Масиви в JavaScript»."
         ]
       },
-      "lecture-working-with-objects": {
-        "title": "Робота з об’єктами",
+      "lecture-introduction-to-javascript-objects-and-their-properties": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript objects. The concepts you will learn include how to access properties from an object, check if an object has a property, how object methods differ from functions, object destructuring, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
         ]
       },
       "workshop-recipe-tracker": {
@@ -3405,6 +3435,12 @@
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": [
+          "In this lab, you will create a function that removes all falsy values from an array."
+        ]
+      },
       "lab-inventory-management-program": {
         "title": "Створіть програму керування запасами",
         "intro": [
@@ -3416,6 +3452,12 @@
         "title": "Знайомство з модулями, імпортом та експортом",
         "intro": [
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
+        ]
+      },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working with the arguments Object and Rest Parameters",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
         ]
       },
       "lab-password-generator": {
@@ -3477,6 +3519,18 @@
         "title": "Implement a Sorted Index Finder",
         "intro": [
           "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
+        ]
+      },
+      "lab-symmetric-difference": {
+        "title": "Build a Symmetric Difference Function",
+        "intro": [
+          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
+      "lab-sum-all-primes-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4224,6 +4278,18 @@
           "In these lectures, you will learn what TypeScript is and how to use it."
         ]
       },
+      "lecture-working-with-generics-and-type-narrowing": {
+        "title": "Working with Generics and Type Narrowing",
+        "intro": [
+          "In these lectures, you will learn about generics and type narrowing in TypeScript."
+        ]
+      },
+      "lecture-working-with-typescript-configuration-files": {
+        "title": "Working with TypeScript Configuration Files",
+        "intro": [
+          "In this lecture, you will learn about TypeScript configuration files and how to use them."
+        ]
+      },
       "trvf": {
         "title": "293",
         "intro": []
@@ -4377,8 +4443,7 @@
       "review-error-handling": {
         "title": "Повторення обробки помилок",
         "intro": [
-          "Перш ніж перейти до тесту «Обробка помилок», повторіть основні поняття.",
-          "[Add more details]"
+          "Перш ніж перейти до тесту «Обробка помилок», повторіть основні поняття."
         ]
       },
       "quiz-error-handling": {
@@ -4455,8 +4520,7 @@
       "review-object-oriented-programming": {
         "title": "Повторення об’єктноорієнтованого програмування",
         "intro": [
-          "Перш ніж перейти до тесту «Об’єктноорієнтоване програмування», повторіть основні поняття.",
-          "[Add more details]"
+          "Перш ніж перейти до тесту «Об’єктноорієнтоване програмування», повторіть основні поняття."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4547,8 +4611,7 @@
       "review-searching-and-sorting-algorithms": {
         "title": "Повторення алгоритмів пошуку та сортування",
         "intro": [
-          "Перш ніж перейти до тесту «Алгоритми пошуку та сортування», повторіть основні поняття.",
-          "[Add more details]"
+          "Перш ніж перейти до тесту «Алгоритми пошуку та сортування», повторіть основні поняття."
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4582,8 +4645,7 @@
       "review-graphs-and-trees": {
         "title": "Повторення графів та дерев",
         "intro": [
-          "Перш ніж перейти до тесту «Графи та дерева», повторіть основні поняття.",
-          "[Add more details]"
+          "Перш ніж перейти до тесту «Графи та дерева», повторіть основні поняття."
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4603,8 +4665,7 @@
       "review-dynamic-programming": {
         "title": "Повторення динамічного програмування",
         "intro": [
-          "Перш ніж перейти до тесту «Динамічне програмування», повторіть основні поняття.",
-          "[Add more details]"
+          "Перш ніж перейти до тесту «Динамічне програмування», повторіть основні поняття."
         ]
       },
       "quiz-dynamic-programming": {
@@ -4758,9 +4819,15 @@
           "У цьому практичному занятті з 40 уроків ви дізнаєтесь, як редагувати файли в терміналі за допомогою Nano, створивши замок."
         ]
       },
-      "rhhl": {
-        "title": "328",
-        "intro": []
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lectures."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lectures."
+        ]
       },
       "workshop-sql-reference-object": {
         "title": "Створіть референсний об’єкт SQL",
@@ -4802,6 +4869,45 @@
         "intro": [
           "Складіть цей екзамен, щоб стати сертифікованим Full Stack розробником."
         ]
+      }
+    }
+  },
+  "a1-professional-spanish": {
+    "title": "A1 Professional Spanish Certification (Beta)",
+    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
+    "intro": ["Placeholder intro"],
+    "chapters": {
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+    },
+    "modules": {
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+    },
+    "module-intros": {
+      "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
+    "blocks": {
+      "es-a1-warm-up-greetings-and-farewells-basics": {
+        "title": "Greetings and Farewells Basics",
+        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },
@@ -4910,6 +5016,45 @@
       "daily-coding-challenges-python": {
         "title": "Щоденні завдання з Python",
         "intro": ["Місце для створення щоденних завдань з Python."]
+      }
+    }
+  },
+  "full-stack-open": {
+    "title": "Full Stack Open",
+    "intro": ["A good intro is to be added here."],
+    "blocks": {
+      "cat-blog-page": {
+        "title": "Build a Cat Blog Page",
+        "intro": [
+          "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
+        ]
+      }
+    },
+    "chapters": {
+      "part-0": "Fundamentals of Web Apps",
+      "part-1": "Introduction to React",
+      "part-2": "Communicating with Servers",
+      "part-3": "Programming a Server with NodeJS and Express",
+      "part-4": "Testing Express Servers, User Administration",
+      "part-5": "Testing React Apps",
+      "part-6": "Advanced State Management",
+      "part-7": "React router, custom hooks, styling app with CSS and webpack",
+      "part-8": "GraphQL",
+      "part-9": "TypeScript",
+      "part-10": "React Native",
+      "part-11": "CI/CD",
+      "part-12": "Containers",
+      "part-13": "Using Relational Databases"
+    },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
+    "module-intros": {
+      "basic-html": {
+        "title": "Basic HTML",
+        "intro": [
+          "Learn how to build simple webpages using HTML tags to add text, images, and links."
+        ]
       }
     }
   },

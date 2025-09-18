@@ -138,7 +138,10 @@ const schema = Joi.object().keys({
       'lecture',
       'review',
       'quiz',
-      'exam'
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ).required(),
     otherwise: Joi.valid(null)
   }),
@@ -308,7 +311,8 @@ const schema = Joi.object().keys({
   hooks: Joi.object().keys({
     beforeAll: Joi.string().allow(''),
     beforeEach: Joi.string().allow(''),
-    afterEach: Joi.string().allow('')
+    afterEach: Joi.string().allow(''),
+    afterAll: Joi.string().allow('')
   }),
   tests: Joi.array()
     .items(

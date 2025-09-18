@@ -26,6 +26,7 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
   ...createUserInput(defaultUserEmail),
+  sendQuincyEmail: true,
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],

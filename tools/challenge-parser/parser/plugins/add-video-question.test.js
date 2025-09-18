@@ -1,5 +1,6 @@
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addVideoQuestion = require('./add-video-question');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addVideoQuestion from './add-video-question';
 
 describe('add-video-question plugin', () => {
   let simpleAST,

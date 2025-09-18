@@ -15,6 +15,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
             "lecture-working-with-images-and-svgs",
@@ -275,6 +276,8 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
@@ -342,7 +345,9 @@
         {
           "dashedName": "javascript-objects",
           "blocks": [
-            "lecture-working-with-objects",
+            "lecture-introduction-to-javascript-objects-and-their-properties",
+            "lecture-working-with-json",
+            "lecture-working-with-optional-chaining-and-object-destructuring",
             "workshop-recipe-tracker",
             "lab-quiz-game",
             "lab-record-collection",
@@ -380,6 +385,7 @@
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
             "lab-html-entitiy-converter",
@@ -396,6 +402,7 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-sum-all-primes-calculator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -698,6 +705,7 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
             "review-object-oriented-programming",
@@ -814,6 +822,8 @@
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
+            "lecture-introduction-to-git-and-github",
+            "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
             "workshop-sql-reference-object",
             "lab-periodic-table-database",
             "lab-number-guessing-game",

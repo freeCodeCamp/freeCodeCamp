@@ -4,7 +4,7 @@ import { getMetaData } from './helpers/project-metadata';
 import {
   createStepFile,
   deleteStepFromMeta,
-  getChallengeSeeds,
+  getChallenge,
   insertStepIntoMeta,
   updateStepTitles
 } from './utils';
@@ -43,15 +43,20 @@ async function insertStep(stepNum: number): Promise<void> {
       }.`
     );
 
-  const challengeSeeds =
-    stepNum > 1
-      ? getChallengeSeeds(
-          `${getProjectPath()}${challengeOrder[stepNum - 2].id}.md`
-        )
-      : {};
+  const previousChallenge =
+    stepNum > 1 ? getChallenge(challengeOrder[stepNum - 2].id) : null;
+  const nextChallenge =
+    stepNum <= challengeOrder.length
+      ? getChallenge(challengeOrder[stepNum - 1].id)
+      : null;
+
+  const challengeSeeds = previousChallenge?.challengeFiles ?? [];
+  const challengeType =
+    previousChallenge?.challengeType ?? nextChallenge?.challengeType;
 
   const stepId = createStepFile({
     stepNum,
+    challengeType,
     challengeSeeds
   });
 
