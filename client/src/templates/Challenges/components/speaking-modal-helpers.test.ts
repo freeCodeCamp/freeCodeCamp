@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { normalizeText, compareTexts } from './speaking-modal-helpers';
 
 describe('speaking-modal-helpers', () => {
