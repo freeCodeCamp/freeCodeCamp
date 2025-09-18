@@ -1,5 +1,6 @@
 export * from './auth-dev';
 export * from './auth';
+export * from './build-challenge-map';
 export * from './certificate';
 export * from './deprecated-endpoints';
 export * from './deprecated-unsubscribe';
