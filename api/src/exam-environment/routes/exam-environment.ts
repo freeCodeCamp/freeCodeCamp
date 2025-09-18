@@ -60,6 +60,13 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       getExamAttemptHandler
     );
+    fastify.get(
+      '/exam-environment/exams/:examId/attempts',
+      {
+        schema: schemas.examEnvironmentGetExamAttemptsByExamId
+      },
+      getExamAttemptsByExamIdHandler
+    );
 
     done();
   };
@@ -80,6 +87,13 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.examEnvironmentTokenMeta
     },
     tokenMetaHandler
+  );
+  fastify.get(
+    '/exam-environment/challenges/:challengeId/exam-mappings',
+    {
+      schema: schemas.examEnvironmentGetExamMappingsByChallengeId
+    },
+    getExamMappingsByChallengeId
   );
   done();
 };
@@ -924,4 +938,98 @@ export async function getExamAttemptHandler(
   }
 
   return reply.send(examEnvironmentExamAttempt);
+}
+
+/**
+ * Gets the requested exam attempt by id owned by authz user.
+ *
+ * If the attempt is completed, the result is included.
+ */
+export async function getExamAttemptsByExamIdHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttemptsByExamId>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+
+  const user = req.user!;
+  const { examId } = req.params;
+
+  logger.info({ examId, userId: user.id });
+
+  // If attempt id is given, only return that attempt
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
+      where: {
+        examId: examId,
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  const examEnvironmentExamAttempts = [];
+  for (const attempt of attempts) {
+    const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
+      this,
+      attempt,
+      logger
+    );
+
+    if (error) {
+      void reply.code(error.code);
+      return reply.send(error.data);
+    }
+
+    examEnvironmentExamAttempts.push(examEnvironmentExamAttempt);
+  }
+
+  return reply.send(examEnvironmentExamAttempts);
+}
+
+/**
+ * Gets all the relations for a given challenge and exam(s).
+ */
+export async function getExamMappingsByChallengeId(
+  this: FastifyInstance,
+  req: UpdateReqType<
+    typeof schemas.examEnvironmentGetExamMappingsByChallengeId
+  >,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  const { challengeId } = req.params;
+
+  logger.info({ challengeId });
+
+  const maybeData = await mapErr(
+    this.prisma.examEnvironmentChallenge.findMany({
+      where: {
+        challengeId
+      }
+    })
+  );
+
+  if (maybeData.hasError) {
+    logger.error(maybeData.error);
+    this.Sentry.captureException(maybeData.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeData.error))
+    );
+  }
+
+  const data = maybeData.data;
+
+  return reply.send(data);
 }

@@ -5,14 +5,14 @@ import {
   ExamEnvironmentExamAttempt,
   ExamEnvironmentExam,
   ExamEnvironmentGeneratedExam,
-  ExamEnvironmentQuestionSet
+  ExamEnvironmentQuestionSet,
+  ExamEnvironmentChallenge
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
+import { defaultUserId } from '../vitest.utils.js';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
 export const oid = () => new ObjectId().toString();
-
-const defaultUserId = '64c7810107dd4782d32baee7';
 
 export const examId = oid();
 
@@ -342,6 +342,13 @@ export const exam: ExamEnvironmentExam = {
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
   deprecated: false,
   version: 1
+};
+
+export const examEnvironmentChallenge: ExamEnvironmentChallenge = {
+  id: oid(),
+  examId,
+  // Id of the certified full stack developer exam challenge page
+  challengeId: '645147516c245de4d11eb7ba'
 };
 
 export async function seedEnvExam() {
