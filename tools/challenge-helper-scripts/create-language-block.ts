@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
@@ -9,6 +10,7 @@ import {
   languageSuperBlocks,
   chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure,
@@ -17,7 +19,7 @@ import {
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
-import { createDialogueFile, validateBlockName } from './utils';
+import { createDialogueFile, createQuizFile, validateBlockName } from './utils';
 import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
@@ -44,6 +46,9 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   position?: number;
+  blockType?: string;
+  blockLayout?: string;
+  questionCount?: number;
 }
 
 async function createLanguageBlock(
@@ -55,14 +60,23 @@ async function createLanguageBlock(
   module?: string,
   position?: number,
   blockType?: string,
-  blockLayout?: string
+  blockLayout?: string,
+  questionCount?: number
 ) {
   if (!title) {
     title = block;
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createDialogueChallenge(superBlock, block);
+  let challengeId: ObjectID;
+
+  if (blockType === BlockTypes.quiz) {
+    challengeId = await createQuizChallenge(block, title, questionCount!);
+    blockLayout = BlockLayouts.Link;
+  } else {
+    challengeId = await createDialogueChallenge(superBlock, block);
+  }
+
   await createMetaJson(
     block,
     title,
@@ -122,15 +136,31 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectID,
+  blockType?: string,
+  blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
+
+  if (blockType) {
+    newMeta.blockType = blockType;
+  }
+  if (blockLayout) {
+    newMeta.blockLayout = blockLayout;
+  }
+
+  const challengeTitle =
+    blockType === BlockTypes.quiz ? title : "Dialogue 1: I'm Tom";
+
   newMeta.challengeOrder = [
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
-    { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
+    {
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
+      id: challengeId.toString(),
+      title: challengeTitle
+    }
   ];
 
   await writeBlockStructure(block, newMeta);
@@ -149,6 +179,26 @@ async function createDialogueChallenge(
 
   return createDialogueFile({
     projectPath: newChallengeDir + '/'
+  });
+}
+
+async function createQuizChallenge(
+  block: string,
+  title: string,
+  questionCount: number
+): Promise<ObjectID> {
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createQuizFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -198,6 +248,33 @@ void prompt([
     default: 'English',
     type: 'list',
     choices: helpCategories
+  },
+  {
+    name: 'blockType',
+    message: 'Choose a block type',
+    default: BlockTypes.learn,
+    type: 'list',
+    choices: Object.values(BlockTypes),
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'blockLayout',
+    message: 'Choose a block layout',
+    default: BlockLayouts.DialogueGrid,
+    type: 'list',
+    choices: Object.values(BlockLayouts),
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock) &&
+      answers.blockType !== BlockTypes.quiz
+  },
+  {
+    name: 'questionCount',
+    message: 'Choose a question count',
+    default: 20,
+    type: 'list',
+    choices: [10, 20],
+    when: (answers: CreateBlockArgs) => answers.blockType === BlockTypes.quiz
   },
   {
     name: 'chapter',
@@ -265,7 +342,10 @@ void prompt([
       title,
       chapter,
       module,
-      position
+      position,
+      blockType,
+      blockLayout,
+      questionCount
     }: CreateBlockArgs) =>
       await createLanguageBlock(
         superBlock,
@@ -274,7 +354,10 @@ void prompt([
         title,
         chapter,
         module,
-        position
+        position,
+        blockType,
+        blockLayout,
+        questionCount
       )
   )
   .then(() =>
