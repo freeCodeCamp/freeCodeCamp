@@ -3,14 +3,11 @@ import { resolve } from 'path';
 import comparison from 'string-similarity';
 import { config } from 'dotenv';
 
-import {
-  generateSuperBlockList,
-  SuperBlocks
-} from '../shared-dist/config/curriculum';
+import { generateSuperBlockList } from '../../shared-dist/config/curriculum';
 
-config({ path: resolve(__dirname, '../.env') });
+config({ path: resolve(__dirname, '../../.env') });
 
-import { availableLangs } from '../shared-dist/config/i18n';
+import { availableLangs } from '../../shared-dist/config/i18n';
 import type { ProcessedBlock } from './build-curriculum';
 const curriculumLangs = availableLangs.curriculum;
 

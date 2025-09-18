@@ -8,7 +8,7 @@ import { SuperBlocks } from '../../shared/config/curriculum';
 import {
   getContentConfig,
   writeBlockStructure
-} from '../../curriculum/file-handler';
+} from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { createQuizFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';

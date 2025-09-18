@@ -195,7 +195,7 @@ curriculum/curricula.json
 ### Additional Folders ###
 curriculum/dist
 curriculum/build
-curriculum/test/blocks-generated
+curriculum/src/test/blocks-generated
 shared-dist
 
 ### Playwright ###
@@ -204,3 +204,4 @@ shared-dist
 
 ### Shadow Testing Log Files Folder ###
 api/logs/
+

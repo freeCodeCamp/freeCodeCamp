@@ -5,7 +5,7 @@ import { submitTypes } from '../../../shared-dist/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
-import { getSuperblockStructure } from '../../../curriculum/file-handler';
+import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros

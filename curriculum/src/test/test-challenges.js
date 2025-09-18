@@ -1,5 +1,3 @@
-import { createRequire } from 'node:module';
-
 import { describe, it, beforeAll, expect } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
@@ -8,28 +6,26 @@ import lodash from 'lodash';
 import {
   buildChallenge,
   runnerTypes
-} from '../../client/src/templates/Challenges/utils/build';
+} from '../../../client/src/templates/Challenges/utils/build';
 import {
   challengeTypes,
   hasNoSolution
-} from '../../shared/config/challenge-types';
-import { getLines } from '../../shared/utils/get-lines';
-import { prefixDoctype } from '../../client/src/templates/Challenges/utils/frame';
+} from '../../../shared/config/challenge-types';
+import { getLines } from '../../../shared/utils/get-lines';
+import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
 
-const require = createRequire(import.meta.url);
+import { getChallengesForLang } from '../get-challenges';
+import { challengeSchemaValidator } from '../../schema/challenge-schema';
+import { testedLang } from '../utils';
 
-const { getChallengesForLang } = require('../get-challenges');
-const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang } = require('../utils');
+import { curriculumSchemaValidator } from '../../schema/curriculum-schema';
+import { validateMetaSchema } from '../../schema/meta-schema';
+import { getBlockStructure } from '../file-handler';
+import ChallengeTitles from './utils/challenge-titles';
+import MongoIds from './utils/mongo-ids';
+import createPseudoWorker from './utils/pseudo-worker';
 
-const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
-const { validateMetaSchema } = require('../schema/meta-schema');
-const { getBlockStructure } = require('../file-handler');
-const ChallengeTitles = require('./utils/challenge-titles');
-const MongoIds = require('./utils/mongo-ids');
-const createPseudoWorker = require('./utils/pseudo-worker');
-
-const { sortChallenges } = require('./utils/sort-challenges');
+import { sortChallenges } from './utils/sort-challenges';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 

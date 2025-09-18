@@ -2,20 +2,22 @@ const path = require('path');
 
 const _ = require('lodash');
 
-const { getChallengesForLang } = require('../../curriculum/get-challenges');
+const {
+  getChallengesForLang
+} = require('../../curriculum/dist/get-challenges');
 
 const {
-  getContentDir,
   getBlockCreator,
   getSuperblocks,
   superBlockToFilename
-} = require('../../curriculum/build-curriculum');
+} = require('../../curriculum/dist/build-curriculum');
 const {
+  getContentDir,
   getBlockStructure,
-  getSuperblockStructure
-} = require('../../curriculum/file-handler');
-const { transformSuperBlock } = require('../../curriculum/build-superblock');
-const { getSuperOrder } = require('../../curriculum/utils');
+  getSuperblockStructure,
+} = require('../../curriculum/dist/file-handler');
+const { transformSuperBlock } = require('../../curriculum/dist/build-superblock');
+const { getSuperOrder } = require('../../curriculum/dist/utils');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
