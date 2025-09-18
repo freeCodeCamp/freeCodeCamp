@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Learn TSX by Building a Resume Builder
-block: learn-tsx-by-building-a-resume-builder
+title: Introduction to the Build a Resume Builder
+block: workshop-resume-builder
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Learn TSX by Building a Resume Builder
+## Introduction to the Build a Resume Builder
 
-This page is for the Learn TSX by Building a Resume Builder
+This page is for the Build a Resume Builder
