@@ -4484,9 +4484,11 @@
           "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
