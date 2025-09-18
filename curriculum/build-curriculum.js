@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { isEmpty } = require('lodash');
+const { isEmpty, isUndefined } = require('lodash');
 const debug = require('debug')('fcc:build-curriculum');
 
 const {
@@ -11,7 +11,7 @@ const {
 } = require('./build-superblock');
 
 const { buildCertification } = require('./build-certification');
-const { applyFilters, closestFilters } = require('./utils');
+const { applyFilters, closestFilters, getSuperOrder } = require('./utils');
 const {
   getContentDir,
   getLanguageConfig,
@@ -330,7 +330,18 @@ async function buildCurriculum(lang, filters) {
 
   const fullCurriculum = { certifications: { blocks: {} } };
 
-  for (const superblock of fullSuperblockList) {
+  const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
+    const superOrder = getSuperOrder(name);
+    const upcomingSuperOrder = getSuperOrder(name, true);
+
+    // If a superblock is not in either order list it should not exist.
+    if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
+      throw Error(`Invalid superBlock: ${name}`);
+    }
+    return !isUndefined(superOrder);
+  });
+
+  for (const superblock of liveSuperblocks) {
     fullCurriculum[superblock.name] =
       await builder.processSuperblock(superblock);
   }
