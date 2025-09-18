@@ -24,7 +24,6 @@ You should set `charlie_brown.level` to the string `junior`.
 ## --seed-contents--
 
 ```py
-
 class Employee:
     _base_salaries = {
         'trainee': 1000,
@@ -71,9 +70,9 @@ class Employee:
             raise ValueError(f"'{self.level}' is already the selected level.")
         if Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:
             raise ValueError(f"Cannot change to lower level.")
-        self._level = new_level
-        self._salary = Employee._base_salaries[new_level]
         print(f"'{self.name}' promoted to '{new_level}'.")
+        self._salary = Employee._base_salaries[new_level]
+        self._level = new_level
 
     @property
     def salary(self):

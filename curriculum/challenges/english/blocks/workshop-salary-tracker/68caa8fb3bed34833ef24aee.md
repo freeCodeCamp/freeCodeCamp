@@ -7,7 +7,9 @@ dashedName: step-29
 
 # --description--
 
-Once the level has changed, you need to updated the salary as well. Set `self._salary` to the base salary for the new level.
+When the level is modified, you need to updated the salary as well.
+
+Before setting `self._level`, set `self._salary` to the base salary for the new level.
 
 # --hints--
 
@@ -28,7 +30,6 @@ You should set `self._salary` to the base salary for the new level.
 ## --seed-contents--
 
 ```py
-
 class Employee:
     _base_salaries = {
         'trainee': 1000,
@@ -66,7 +67,7 @@ class Employee:
     @property
     def level(self):
         return self._level
---fcc-editable-region--
+
     @level.setter
     def level(self, new_level):
         if new_level not in Employee._base_salaries:
@@ -75,9 +76,9 @@ class Employee:
             raise ValueError(f"'{self.level}' is already the selected level.")
         if Employee._base_salaries[new_level] < Employee._base_salaries[self.level]:
             raise ValueError(f"Cannot change to lower level.")
+--fcc-editable-region--
+        
         self._level = new_level
-
-    
 --fcc-editable-region--
     @property
     def salary(self):
