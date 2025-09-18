@@ -4852,9 +4852,11 @@
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       },
-      "learn-typeguards-by-building-a-fortune-telling-app": {
-        "title": "Learn Typeguards by Building a Fortune Telling App",
-        "intro": ["Learn Typeguards by Building a Fortune Telling App", ""]
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App ",
+        "intro": [
+          "In this workshop, practice Typescript by building a fortune telling app"
+        ]
       }
     }
   },
