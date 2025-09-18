@@ -6,6 +6,7 @@ module.exports = {
     'tools/challenge-helper-scripts/',
     'tools/challenge-parser/',
     'tools/scripts/build/',
+    'tools/scripts/lint/',
     'curriculum',
     'client'
   ],
