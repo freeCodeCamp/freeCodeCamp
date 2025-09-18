@@ -14,7 +14,7 @@ import {
   getContentConfig,
   writeBlockStructure
 } from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/build-curriculum';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';

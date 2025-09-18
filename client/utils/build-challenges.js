@@ -14,9 +14,11 @@ const {
 const {
   getContentDir,
   getBlockStructure,
-  getSuperblockStructure,
+  getSuperblockStructure
 } = require('../../curriculum/dist/file-handler');
-const { transformSuperBlock } = require('../../curriculum/dist/build-superblock');
+const {
+  transformSuperBlock
+} = require('../../curriculum/dist/build-superblock');
 const { getSuperOrder } = require('../../curriculum/dist/utils');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';

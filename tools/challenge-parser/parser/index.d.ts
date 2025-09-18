@@ -1,24 +1,27 @@
 // TypeScript declaration file for challenge-parser/parser
 // This module exports functions to parse challenge markdown files
 
+type ChallengeFile = {
+  name: string;
+  contents: string;
+  ext: string;
+  editableRegionBoundaries: number[];
+  head?: string;
+  tail?: string;
+};
 export interface ParsedChallenge {
   id: string;
   title: string;
+  challengeType: number;
   description?: string;
   instructions?: string;
   questions?: string[];
-  challengeFiles?: Array<{
+  challengeFiles?: ChallengeFile[];
+  solutions?: {
     contents: string;
     ext: string;
     name: string;
-  }>;
-  solutions?: Array<
-    Array<{
-      contents: string;
-      ext: string;
-      name: string;
-    }>
-  >;
+  }[][];
   [key: string]: unknown; // Allow for additional properties that may be added by plugins
 }
 
