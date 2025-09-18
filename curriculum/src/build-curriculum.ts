@@ -4,6 +4,7 @@ import { resolve, basename } from 'path';
 import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
+import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -75,7 +76,7 @@ export function getTranslationEntry(
   { engId, text }: { engId: string; text: string }
 ) {
   return Object.keys(dicts).reduce((acc, lang) => {
-    const entry = dicts[lang][engId];
+    const entry = dicts[lang]?.[engId];
     if (entry) {
       return { ...acc, [lang]: entry };
     } else {
@@ -94,7 +95,7 @@ export function getTranslationEntry(
 export function createCommentMap(
   dictionariesDir: string,
   targetDictionariesDir: string
-) {
+): CommentDictionary {
   log(
     `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
   );
@@ -128,35 +129,32 @@ export function createCommentMap(
         [text]: getTranslationEntry(dictionaries, { engId: id, text })
       };
     },
-    {} as Record<string, Record<string, unknown>>
+    {} as CommentDictionary
   );
 
   // map from english comment text to itself
   const untranslatableCommentMap = Object.values(
     COMMENTS_TO_NOT_TRANSLATE
-  ).reduce(
-    (acc, text) => {
-      const englishEntry = languages.reduce(
-        (acc, lang) => ({
-          ...acc,
-          [lang]: text
-        }),
-        {}
-      );
-      return {
+  ).reduce((acc, text) => {
+    const englishEntry = languages.reduce(
+      (acc, lang) => ({
         ...acc,
-        [text]: englishEntry
-      };
-    },
-    {} as Record<string, Record<string, unknown>>
-  );
+        [lang]: text
+      }),
+      {}
+    );
+    return {
+      ...acc,
+      [text]: englishEntry
+    };
+  }, {} as CommentDictionary);
 
   const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
 
   // the english entries need to be added here, because english is not in
   // languages
   Object.keys(allComments).forEach(comment => {
-    allComments[comment].english = comment;
+    allComments[comment]!.english = comment;
   });
 
   return allComments;
@@ -242,10 +240,7 @@ export function addSuperblockStructure(
   return superblockStructures;
 }
 
-export type ProcessedBlock = BlockInfo & {
-  order: number;
-  superBlock: string;
-} & BlockStructure;
+type ProcessedBlock = BlockInfo & BlockStructure;
 
 export function addBlockStructure(
   superblocks: { name: string; blocks: BlockInfo[] }[],
