@@ -7,7 +7,6 @@ import {
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
 import { getIsDailyCodingChallenge } from '../../../shared/config/challenge-types';
-import { createAcceptTermsSaga } from './accept-terms-saga';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
@@ -88,7 +87,6 @@ const initialState = {
 export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 
 export const sagas = [
-  ...createAcceptTermsSaga(actionTypes),
   ...createThemeSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createDonationSaga(actionTypes),
@@ -117,26 +115,6 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [actionTypes.acceptTermsComplete]: (state, { payload }) => {
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            // TODO: the user accepts the privacy terms in practice during auth
-            // however, it's currently being used to track if they've accepted
-            // or rejected the newsletter. Ideally this should be migrated,
-            // since they can't sign up without accepting the terms.
-            acceptedPrivacyTerms: true,
-            sendQuincyEmail:
-              payload === null
-                ? state.user.sessionUser.sendQuincyEmail
-                : payload
-          }
-        }
-      };
-    },
     [actionTypes.allowSectionDonationRequests]: (state, { payload }) => {
       return {
         ...state,
@@ -218,11 +196,22 @@ export const reducer = handleActions(
         error: null
       }
     }),
+    [actionTypes.fetchUserTimeout]: state => ({
+      ...state,
+      userFetchState: {
+        // Pending because the fetch may still complete. This allows the UI to
+        // render what it can while waiting for the fetch to complete.
+        pending: true,
+        complete: true,
+        errored: false,
+        error: null
+      }
+    }),
     [actionTypes.fetchUserError]: (state, { payload }) => ({
       ...state,
       userFetchState: {
         pending: false,
-        complete: false,
+        complete: true,
         errored: true,
         error: payload
       }

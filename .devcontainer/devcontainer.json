@@ -1,0 +1,8 @@
+{
+  "name": "freeCodeCampDC",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "devcontainer",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  // "features": {},
+  "forwardPorts": [3000, 8000]
+}

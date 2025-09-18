@@ -1,14 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import { createStore } from '../../redux/create-store';
 
 import Intro from '.';
 
-jest.mock('../../analytics');
+vi.mock('../../analytics');
+vi.mock('../../utils/get-words');
 
-function renderWithRedux(ui: JSX.Element) {
-  return render(<Provider store={createStore()}>{ui}</Provider>);
+function renderWithRedux(
+  ui: JSX.Element,
+  preloadedState: Record<string, unknown> = {}
+) {
+  return render(<Provider store={createStore(preloadedState)}>{ui}</Provider>);
 }
 
 describe('<Intro />', () => {
@@ -19,7 +24,19 @@ describe('<Intro />', () => {
   });
 
   it('has a blockquote when loggedIn', () => {
-    renderWithRedux(<Intro {...loggedInProps} />);
+    // Provide a minimal preloaded state so connected components expecting a
+    // sessionUser (e.g. EmailSignUpAlert) do not receive null.
+    const preloadedState = {
+      app: {
+        user: {
+          sessionUser: {
+            completedChallenges: [{}],
+            sendQuincyEmail: null
+          }
+        }
+      }
+    };
+    renderWithRedux(<Intro {...loggedInProps} />, preloadedState);
     expect(screen.getByTestId('quote-block')).toBeInTheDocument();
     expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
@@ -30,12 +47,12 @@ const loggedInProps = {
   completedChallengeCount: 0,
   isSignedIn: true,
   name: 'Development User',
-  navigate: () => jest.fn(),
+  navigate: () => vi.fn(),
   pending: false,
   slug: '/',
   username: 'DevelopmentUser',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn()
+  onLearnDonationAlertClick: () => vi.fn()
 };
 
 const loggedOutProps = {
@@ -43,10 +60,10 @@ const loggedOutProps = {
   completedChallengeCount: 0,
   isSignedIn: false,
   name: '',
-  navigate: () => jest.fn(),
+  navigate: () => vi.fn(),
   pending: false,
   slug: '/',
   username: '',
   isDonating: false,
-  onLearnDonationAlertClick: () => jest.fn()
+  onLearnDonationAlertClick: () => vi.fn()
 };

@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Provider } from 'react-redux';
+import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
+import type { TFunction } from 'i18next';
 import { SuperBlocks } from '../../../../../shared/config/curriculum';
-import { createStore } from '../../../redux/create-store';
 import {
   ChallengeFiles,
   PrerequisiteChallenge,
@@ -14,18 +14,13 @@ import {
 } from '../../../redux/prop-types';
 import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
 import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
-import Block from './block';
+import { Block } from './block';
 
-jest.mock('../../../../../shared/utils/is-audited', () => ({
-  isAuditedSuperBlock: jest.fn().mockReturnValueOnce(true)
+vi.mock('../../../../../shared/utils/is-audited', () => ({
+  isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
-jest.mock('../redux', () => ({
-  makeExpandedBlockSelector: jest.fn(() => jest.fn(() => true)),
-  completedChallengesSelector: jest.fn(() => [
-    { id: 'mockId', title: 'mockTitle' }
-  ])
-}));
+vi.mock('../../../utils/get-words');
 
 const defaultProps = {
   block: 'test-block',
@@ -63,7 +58,6 @@ const defaultProps = {
       notes: 'mockNotes',
       prerequisites: [] as PrerequisiteChallenge[],
       isLocked: false,
-      isPrivate: false,
       order: 1,
       questions: [] as Question[],
       assignments: ['mockAssignment'],
@@ -92,46 +86,34 @@ const defaultProps = {
   ],
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
-  t: jest.fn((key: string) => [key]),
+  t: vi.fn((key: string) => [key]) as unknown as TFunction,
   superBlock: SuperBlocks.FullStackDeveloper,
-  toggleBlock: jest.fn()
+  toggleBlock: vi.fn()
 };
 
 describe('<Block />', () => {
   afterEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
   });
 
   it('The "Help us translate" badge does not appear on any English blocks', () => {
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    render(<Block {...defaultProps} />);
     expect(
       screen.queryByText(/misc.translation-pending/)
     ).not.toBeInTheDocument();
   });
 
   it(`The "Help us translate" badge does not appear on any i18n blocks when the superblock is audited`, () => {
-    (isAuditedSuperBlock as jest.Mock).mockReturnValue(true);
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    (isAuditedSuperBlock as Mock).mockReturnValue(true);
+    render(<Block {...defaultProps} />);
     expect(
       screen.queryByText(/misc.translation-pending/)
     ).not.toBeInTheDocument();
   });
 
   it(`The "Help us translate" badge does appear on i18n blocks when the superblock is not audited`, () => {
-    (isAuditedSuperBlock as jest.Mock).mockReturnValue(false);
-    render(
-      <Provider store={createStore()}>
-        <Block {...defaultProps} />
-      </Provider>
-    );
+    (isAuditedSuperBlock as Mock).mockReturnValue(false);
+    render(<Block {...defaultProps} />);
     expect(screen.getByText(/misc.translation-pending/)).toBeInTheDocument();
   });
 });

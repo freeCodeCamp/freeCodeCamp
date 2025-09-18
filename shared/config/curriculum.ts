@@ -25,58 +25,24 @@ export enum SuperBlocks {
   FullStackDeveloper = 'full-stack-developer',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
+  A1Spanish = 'a1-professional-spanish',
   A2Spanish = 'a2-professional-spanish',
   A2Chinese = 'a2-professional-chinese',
+  A1Chinese = 'a1-professional-chinese',
   RosettaCode = 'rosetta-code',
   PythonForEverybody = 'python-for-everybody',
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
-  DevPlayground = 'dev-playground'
+  DevPlayground = 'dev-playground',
+  FullStackOpen = 'full-stack-open'
 }
-
-// Note that this object is used to create folderToSuperBlockMap object
-export const superBlockToFolderMap = {
-  [SuperBlocks.RespWebDesign]: '01-responsive-web-design',
-  [SuperBlocks.JsAlgoDataStruct]:
-    '02-javascript-algorithms-and-data-structures',
-  [SuperBlocks.FrontEndDevLibs]: '03-front-end-development-libraries',
-  [SuperBlocks.DataVis]: '04-data-visualization',
-  [SuperBlocks.BackEndDevApis]: '05-back-end-development-and-apis',
-  [SuperBlocks.QualityAssurance]: '06-quality-assurance',
-  [SuperBlocks.SciCompPy]: '07-scientific-computing-with-python',
-  [SuperBlocks.DataAnalysisPy]: '08-data-analysis-with-python',
-  [SuperBlocks.InfoSec]: '09-information-security',
-  [SuperBlocks.CodingInterviewPrep]: '10-coding-interview-prep',
-  [SuperBlocks.MachineLearningPy]: '11-machine-learning-with-python',
-  [SuperBlocks.RelationalDb]: '13-relational-databases',
-  [SuperBlocks.RespWebDesignNew]: '14-responsive-web-design-22',
-  [SuperBlocks.JsAlgoDataStructNew]:
-    '15-javascript-algorithms-and-data-structures-22',
-  [SuperBlocks.TheOdinProject]: '16-the-odin-project',
-  [SuperBlocks.CollegeAlgebraPy]: '17-college-algebra-with-python',
-  [SuperBlocks.ProjectEuler]: '18-project-euler',
-  [SuperBlocks.FoundationalCSharp]: '19-foundational-c-sharp-with-microsoft',
-  [SuperBlocks.A2English]: '21-a2-english-for-developers',
-  [SuperBlocks.RosettaCode]: '22-rosetta-code',
-  [SuperBlocks.PythonForEverybody]: '23-python-for-everybody',
-  [SuperBlocks.B1English]: '24-b1-english-for-developers',
-  [SuperBlocks.FullStackDeveloper]: '25-front-end-development',
-  [SuperBlocks.A2Spanish]: '26-a2-professional-spanish',
-  [SuperBlocks.A2Chinese]: '27-a2-professional-chinese',
-  [SuperBlocks.BasicHtml]: '28-basic-html',
-  [SuperBlocks.SemanticHtml]: '29-semantic-html',
-  [SuperBlocks.DevPlayground]: '99-dev-playground'
-};
-
-// Same as superBlockToFolderMap but with the keys and values reversed
-export const folderToSuperBlockMap = Object.fromEntries(
-  Object.entries(superBlockToFolderMap).map(([key, value]) => [value, key])
-);
 
 export const languageSuperBlocks = [
   SuperBlocks.A2English,
   SuperBlocks.B1English,
+  SuperBlocks.A1Spanish,
   SuperBlocks.A2Spanish,
+  SuperBlocks.A1Chinese,
   SuperBlocks.A2Chinese
 ];
 
@@ -153,8 +119,11 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
+    SuperBlocks.FullStackOpen,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.DevPlayground
   ],
   // Catalog is treated like upcoming for now
@@ -186,8 +155,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -200,8 +171,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -214,8 +187,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -228,8 +203,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -240,8 +217,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -252,8 +231,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground
@@ -264,8 +245,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground
@@ -284,8 +267,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -312,8 +297,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
@@ -338,8 +325,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.PythonForEverybody,
     SuperBlocks.DataVis,
     SuperBlocks.RelationalDb,
@@ -352,7 +341,11 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 
 Object.freeze(notAuditedSuperBlocks);
 
-export const chapterBasedSuperBlocks = [SuperBlocks.FullStackDeveloper];
+export const chapterBasedSuperBlocks = [
+  SuperBlocks.FullStackDeveloper,
+  SuperBlocks.FullStackOpen,
+  SuperBlocks.A1Spanish
+];
 Object.freeze(chapterBasedSuperBlocks);
 
 type Config = {

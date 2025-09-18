@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { escape } from 'lodash-es';
+import { escape, isEmpty } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
   call,
@@ -184,19 +184,18 @@ function* buildChallengeData(challengeData, options) {
   }
 }
 
-function* executeTests(testRunner, tests, testTimeout = 5000) {
+export function* executeTests(testRunner, tests, testTimeout = 5000) {
+  const testStrings = tests.map(test => test.testString);
+  const rawResults = yield call(testRunner, testStrings, testTimeout);
+
   const testResults = [];
-  for (let i = 0; i < tests.length; i++) {
+  for (let i = 0; i < rawResults.length; i++) {
     const { text, testString } = tests[i];
     const newTest = { text, testString, running: false };
     // only the first test outputs console.logs to avoid log duplication.
     const firstTest = i === 0;
     try {
-      const {
-        pass,
-        err,
-        logs = []
-      } = yield call(testRunner, testString, testTimeout);
+      const { pass, err, logs = [] } = rawResults[i] || {};
 
       const logString = logs.map(log => log.msg).join('\n');
       if (firstTest && logString) {
@@ -217,16 +216,18 @@ function* executeTests(testRunner, tests, testTimeout = 5000) {
       if (err === 'timeout') {
         newTest.err = 'Test timed out';
         newTest.message = `${newTest.message} (${newTest.err})`;
-      } else if (type === 'IndentationError' || type === 'SyntaxError') {
+      } else {
+        const { message, stack } = err;
+        newTest.err = message + '\n' + stack;
+        newTest.stack = stack;
+      }
+
+      if (type === 'IndentationError' || type === 'SyntaxError') {
         const msgKey =
           type === 'IndentationError'
             ? 'learn.indentation-error'
             : 'learn.syntax-error';
         newTest.message = `<p>${i18next.t(msgKey)}</p>`;
-      } else {
-        const { message, stack } = err;
-        newTest.err = message + '\n' + stack;
-        newTest.stack = stack;
       }
 
       const withIndex = newTest.message.replace(/<p>/, `<p>${i + 1}. `);
@@ -300,11 +301,13 @@ export function* previewChallengeSaga(action) {
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = yield call(getTestRunner, buildData);
-        // without a testString the testRunner just evaluates the user's code
-        const out = yield call(runUserCode, null, previewTimeout);
 
-        if (out) {
-          const logs = out.logs?.filter(
+        // Without an empty testString the testRunner just evaluates the user's
+        // code allowing us to get the console logs.
+        const results = yield call(runUserCode, [''], previewTimeout);
+
+        if (!isEmpty(results)) {
+          const logs = results[0].logs?.filter(
             log => !LOGS_TO_IGNORE.some(msg => log.msg === msg)
           );
           yield put(updateConsole(logs?.map(log => log.msg).join('\n')));

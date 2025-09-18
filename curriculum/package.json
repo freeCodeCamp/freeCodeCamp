@@ -32,17 +32,18 @@
     "delete-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
     "lint": "tsx --tsconfig ../tsconfig.json lint-localized",
-    "repair-meta": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/repair-meta",
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "NODE_OPTIONS='--max-old-space-size=7168' tsx ./node_modules/mocha/bin/mocha.js --delay --exit --reporter progress --bail",
-    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' FULL_OUTPUT=true tsx ./node_modules/mocha/bin/mocha.js --delay --reporter progress"
+    "test-gen": "node ./test/utils/generate-block-tests.mjs",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' pnpm -s test-gen && vitest -c test/vitest.config.mjs",
+    "test:full-output": "NODE_OPTIONS='--max-old-space-size=7168' pnpm -s test-gen && FULL_OUTPUT=true vitest -c test/vitest.config.mjs --reporter=default"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",
     "@babel/register": "7.23.7",
-    "@compodoc/live-server": "^1.2.3",
+    "@types/polka": "^0.5.7",
+    "@vitest/ui": "^3.2.4",
     "chai": "4.4.1",
     "glob": "8.1.0",
     "invariant": "2.2.4",
@@ -54,8 +55,11 @@
     "mocha": "10.3.0",
     "mock-require": "3.0.3",
     "ora": "5.4.1",
+    "polka": "^0.5.2",
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
-    "string-similarity": "4.0.4"
+    "sirv": "^3.0.2",
+    "string-similarity": "4.0.4",
+    "vitest": "^3.2.4"
   }
 }
