@@ -58,23 +58,25 @@ function getSuperOrder(superblock) {
 }
 
 /**
- * Filters the superblocks array to only include blocks with the specified dashedName (block).
+ * Filters the superblocks array to include, at most, a single superblock with the specified block.
  * If no block is provided, returns the original superblocks array.
  *
  * @param {Array<Object>} superblocks - Array of superblock objects, each containing a blocks array.
  * @param {Object} [options] - Options object
  * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
- * @returns {Array<Object>} Filtered array of superblocks containing only the specified block, or the original array if block is not provided.
+ * @returns {Array<Object>} Array with one superblock containing the specified block, or the original array if block is not provided.
  */
 function filterByBlock(superblocks, { block } = {}) {
   if (!block) return superblocks;
 
-  return superblocks
+  const superblock = superblocks
     .map(superblock => ({
       ...superblock,
       blocks: superblock.blocks.filter(({ dashedName }) => dashedName === block)
     }))
-    .filter(superblock => superblock.blocks.length > 0);
+    .find(superblock => superblock.blocks.length > 0);
+
+  return superblock ? [superblock] : [];
 }
 
 /**

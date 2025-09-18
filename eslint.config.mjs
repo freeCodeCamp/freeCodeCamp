@@ -68,7 +68,8 @@ export default tseslint.config(
         $: true,
         ga: true,
         jQuery: true,
-        router: true
+        router: true,
+        globalThis: true
       },
 
       parser: babelParser,

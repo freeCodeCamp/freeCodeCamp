@@ -195,6 +195,7 @@ curriculum/curricula.json
 ### Additional Folders ###
 curriculum/dist
 curriculum/build
+curriculum/test/blocks-generated
 shared-dist
 
 ### Playwright ###
