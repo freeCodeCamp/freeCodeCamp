@@ -184,19 +184,29 @@ function DefaultLayout({
 
   useEffect(() => {
     if (isChallenge && superBlock && !isDailyChallenge && !examInProgress) {
-      const pathParts = pathname.split('/');
-      const learnIndex = pathParts.findIndex(part => part === 'learn');
+      const pathWithoutTrailingSlash = pathname.endsWith('/')
+        ? pathname.slice(0, -1)
+        : pathname;
 
-      if (learnIndex !== -1 && pathParts.length >= learnIndex + 3) {
-        const challengePath = pathParts.slice(learnIndex + 2).join('/');
+      const lastSlashIndex = pathWithoutTrailingSlash.lastIndexOf('/');
+      if (lastSlashIndex !== -1) {
+        const secondLastSlashIndex = pathWithoutTrailingSlash.lastIndexOf(
+          '/',
+          lastSlashIndex - 1
+        );
+        if (secondLastSlashIndex !== -1) {
+          const blockAndChallenge = pathWithoutTrailingSlash.slice(
+            secondLastSlashIndex + 1
+          );
 
-        try {
-          const lastChallengePaths = (store.get('lastChallengePaths') ||
-            {}) as Record<string, string>;
-          lastChallengePaths[superBlock] = challengePath;
-          store.set('lastChallengePaths', lastChallengePaths);
-        } catch (e) {
-          console.error('Error saving last challenge path to store', e);
+          try {
+            const lastChallengePaths = (store.get('lastChallengePaths') ||
+              {}) as Record<string, string>;
+            lastChallengePaths[superBlock] = blockAndChallenge;
+            store.set('lastChallengePaths', lastChallengePaths);
+          } catch (e) {
+            console.error('Error saving last challenge path to store', e);
+          }
         }
       }
     }
