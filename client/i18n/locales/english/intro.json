@@ -4852,11 +4852,10 @@
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       },
-      "learn-dom-manipulation-with-typescript-by-building-a-flashcard-quiz-app": {
-        "title": "Learn DOM Manipulation with TypeScript by Building a Flashcard Quiz App",
+      "workshop-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
         "intro": [
-          "Learn DOM Manipulation with TypeScript by Building a Flashcard Quiz App",
-          ""
+          "In this workshop, you will practice using Typescript and React by building a flashcard quiz app"
         ]
       }
     }
