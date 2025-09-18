@@ -10,7 +10,11 @@ test.describe('Continue where you left off button for authenticated users', () =
     await page.goto(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
-    await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Say Hello to HTML Elements'
+    );
+
     await page.goto('/learn/responsive-web-design');
 
     const continueButton = page.getByRole('link', {
@@ -19,7 +23,10 @@ test.describe('Continue where you left off button for authenticated users', () =
     await expect(continueButton).toBeVisible();
     await continueButton.click();
 
-    await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Say Hello to HTML Elements'
+    );
     await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
@@ -28,7 +35,13 @@ test.describe('Continue where you left off button for authenticated users', () =
     await page.goto(
       '/learn/responsive-web-design/basic-css/change-the-color-of-text'
     );
-    await expect(page.getByText('Change the Color of Text')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Change the Color of Text'
+    );
+
+    // Wait to ensure the path is properly stored
+    await page.waitForTimeout(500);
 
     await page.goto('/learn/responsive-web-design');
 
@@ -38,7 +51,10 @@ test.describe('Continue where you left off button for authenticated users', () =
     await expect(updatedContinueButton).toBeVisible();
     await updatedContinueButton.click();
 
-    await expect(page.getByText('Change the Color of Text')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Change the Color of Text'
+    );
     await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/basic-css/change-the-color-of-text'
@@ -52,7 +68,10 @@ test.describe('Continue button is shown for unauthenticated users', () => {
     await page.goto(
       '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements'
     );
-    await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Say Hello to HTML Elements'
+    );
     await page.goto('/learn/responsive-web-design');
 
     const continueButton = page.getByRole('link', {
@@ -61,14 +80,22 @@ test.describe('Continue button is shown for unauthenticated users', () => {
     await expect(continueButton).toBeVisible();
 
     await continueButton.click();
-    await expect(page.getByText('Say Hello to HTML Elements')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Say Hello to HTML Elements'
+    );
+    await page.waitForTimeout(500);
 
     await page.goto(
       '/learn/responsive-web-design/css-flexbox/use-the-flex-direction-property-to-make-a-row'
     );
-    await expect(
-      page.getByText('Use the flex-direction Property to Make a Row')
-    ).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Use the flex-direction Property to Make a Row'
+    );
+
+    // Wait to ensure the path is properly stored
+    await page.waitForTimeout(500);
 
     await page.goto('/learn/responsive-web-design');
 
@@ -78,9 +105,10 @@ test.describe('Continue button is shown for unauthenticated users', () => {
     await expect(updatedContinueButton).toBeVisible();
     await updatedContinueButton.click();
 
-    await expect(
-      page.getByText('Use the flex-direction Property to Make a Row')
-    ).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toBeVisible();
+    await expect(page.getByTestId('challenge-title')).toHaveText(
+      'Use the flex-direction Property to Make a Row'
+    );
     await page.waitForTimeout(500);
     expect(page.url()).toContain(
       '/learn/responsive-web-design/css-flexbox/use-the-flex-direction-property-to-make-a-row'
