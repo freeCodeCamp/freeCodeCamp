@@ -67,9 +67,9 @@ describe('createSuperOrder', () => {
   });
 
   it('throws when not given an array of SuperBlocks', () => {
-    expect(() => createSuperOrder()).toThrow();
-    expect(() => createSuperOrder(null)).toThrow();
-    expect(() => createSuperOrder('')).toThrow();
+    expect(() => createSuperOrder(['respansive-wib-desoin'])).toThrow(
+      'Invalid superBlock: respansive-wib-desoin'
+    );
   });
 });
 
@@ -79,8 +79,6 @@ describe('getSuperOrder', () => {
   });
 
   it('returns undefined for unknown curriculum', () => {
-    expect(getSuperOrder()).toBeUndefined();
-    expect(getSuperOrder(null)).toBeUndefined();
     expect(getSuperOrder('')).toBeUndefined();
     expect(getSuperOrder('respansive-wib-desoin')).toBeUndefined();
     expect(getSuperOrder('certifications')).toBeUndefined();

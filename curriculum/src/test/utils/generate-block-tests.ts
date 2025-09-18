@@ -47,7 +47,7 @@ async function main() {
   console.log(`Generated ${blocks.length} block test file(s).`);
 }
 
-function generateSingleBlockFile({ block }) {
+function generateSingleBlockFile({ block }: { block: string }) {
   return `import { defineTestsForBlock } from '../test-challenges.js';
 
 await defineTestsForBlock({ block: ${JSON.stringify(block)} });

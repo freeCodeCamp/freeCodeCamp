@@ -6,7 +6,10 @@ import debug from 'debug';
 import { parseMD } from '../../tools/challenge-parser/parser';
 import { createPoly } from '../../shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '../../shared/utils/is-audited';
-import { translateCommentsInChallenge } from '../../tools/challenge-parser/translation-parser';
+import {
+  CommentDictionary,
+  translateCommentsInChallenge
+} from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '../../shared/config/curriculum';
 import { getSuperOrder } from './utils.js';
 import type {
@@ -257,7 +260,7 @@ export class BlockCreator {
   blockContentDir: string;
   i18nBlockContentDir: string;
   lang: string;
-  commentTranslations: object;
+  commentTranslations: CommentDictionary;
   skipValidation: boolean | undefined;
 
   constructor({
@@ -270,7 +273,7 @@ export class BlockCreator {
     blockContentDir: string;
     i18nBlockContentDir: string;
     lang: string;
-    commentTranslations: object;
+    commentTranslations: CommentDictionary;
     skipValidation?: boolean;
   }) {
     this.blockContentDir = blockContentDir;
@@ -424,7 +427,7 @@ export class SuperblockCreator {
     const superBlock: { blocks: Record<string, unknown> } = { blocks: {} };
 
     for (let i = 0; i < blocks.length; i++) {
-      const block = blocks[i];
+      const block: BlockStructure = blocks[i]!;
       const blockResult = await this.blockCreator.processBlock(block, {
         superBlock: name,
         order: i
@@ -441,17 +444,11 @@ export class SuperblockCreator {
   }
 }
 
-type SimpleBlock = {
+export type BlockInfo = {
   dashedName: string;
+  chapter?: string;
+  module?: string;
 };
-
-type ComplexBlock = {
-  dashedName: string;
-  chapter: string;
-  module: string;
-};
-
-export type BlockInfo = SimpleBlock | ComplexBlock;
 
 type Module = {
   dashedName: string;
