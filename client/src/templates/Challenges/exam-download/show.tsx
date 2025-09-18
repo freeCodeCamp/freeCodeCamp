@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Button, Spacer, Table } from '@freecodecamp/ui';
+import { Button, Dropdown, MenuItem, Spacer } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, withTranslation } from 'react-i18next';
+import { createSelector } from 'reselect';
+import { connect } from 'react-redux';
 
-import { FullWidthRow, Loader } from '../../../components/helpers';
+import { FullWidthRow } from '../../../components/helpers';
 import useDetectOS from '../utils/use-detect-os';
 import { ChallengeNode } from '../../../redux/prop-types';
-import { examAttempts } from '../../../utils/ajax';
+import { isSignedInSelector } from '../../../redux/selectors';
+import { Attempts } from './attempts';
 
 interface GitProps {
   tag_name: string;
@@ -16,8 +19,16 @@ interface GitProps {
   }[];
 }
 
+const mapStateToProps = createSelector(
+  isSignedInSelector,
+  (isSignedIn: boolean) => ({
+    isSignedIn
+  })
+);
+
 interface ShowExamDownloadProps {
   data: { challengeNode: ChallengeNode };
+  isSignedIn: boolean;
 }
 
 function ShowExamDownload({
@@ -25,24 +36,20 @@ function ShowExamDownload({
     challengeNode: {
       challenge: { id }
     }
-  }
+  },
+  isSignedIn
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
-  // const [attempts, setAttempts] = useState<Attempt[]>([]);
 
   const os = useDetectOS();
 
   const { t } = useTranslation();
 
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
-  const [getAttempts, attemptsMutation] =
-    examAttempts.useGetExamAttemptsByExamIdMutation();
-
   function handleDownloadLink(downloadLinks: string[]) {
-    const win = downloadLinks.find(link => link.match(/\.msi/));
+    const win = downloadLinks.find(link => link.match(/\.exe/));
     const macARM = downloadLinks.find(
       link => link.match(/aarch64/) && link.match(/\.dmg/)
     );
@@ -114,76 +121,19 @@ function ShowExamDownload({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
 
-  useEffect(() => {
-    if (!examIdsQuery.data) {
-      return;
-    }
-
-    const examId = examIdsQuery.data.at(0)!.examId;
-    void getAttempts(examId);
-  }, [examIdsQuery.data, getAttempts]);
-
-  function renderAttempts() {
-    if (examIdsQuery.isLoading || attemptsMutation.isLoading) {
-      return <Loader />;
-    }
-    if (examIdsQuery.error || !examIdsQuery.data) {
-      return <p>{JSON.stringify(examIdsQuery.error)}</p>;
-    }
-
-    if (attemptsMutation.error) {
-      return <p>{JSON.stringify(attemptsMutation.error)}</p>;
-    }
-
-    const attempts = attemptsMutation.data;
-
-    if (!attempts) {
-      return <Loader />;
-    }
-
-    if (attempts.length === 0) {
-      return <p>No attempts yet</p>;
-    }
-
-    return (
-      <Table striped>
-        <thead>
-          <tr>
-            <th>Date Taken</th>
-            <th>Score [%]</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {attempts.map(attempt => (
-            <tr key={attempt.startTimeInMS}>
-              <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
-              <td>
-                {attempt.result ? `${attempt.result.percent}%` : 'Pending'}
-              </td>
-              <td>
-                {attempt.result
-                  ? attempt.result.passed
-                    ? 'Passed'
-                    : 'Failed'
-                  : 'Pending'}
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </Table>
-    );
-  }
-
   return (
     <FullWidthRow>
       <Spacer size='l' />
       <h2>{t('exam.download-header')}</h2>
       <p>{t('exam.explanation')}</p>
       <Spacer size='l' />
-      <h2>Attempts</h2>
-      {renderAttempts()}
-      <Spacer size='l' />
+      {isSignedIn && (
+        <>
+          <h2>Attempts</h2>
+          <Attempts id={id} />
+          <Spacer size='l' />
+        </>
+      )}
       <p>
         {t('exam.version', {
           version: latestVersion || '...'
@@ -204,22 +154,25 @@ function ShowExamDownload({
         </>
       )}
       <Spacer size='m' />
-      <details>
-        <summary>{t('exam.download-details')}</summary>
-        <ul>
+      <Dropdown>
+        <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+        <Dropdown.Menu>
           {downloadLinks
             .filter(link => !link.match(/\.sig|\.json/))
             .map((link, index) => {
               return (
-                <li key={index} style={{ listStyle: 'none' }}>
-                  <a href={link} download={link}>
-                    {link}
-                  </a>
-                </li>
+                <MenuItem
+                  href={link}
+                  download={link}
+                  key={index}
+                  variant='primary'
+                >
+                  {link}
+                </MenuItem>
               );
             })}
-        </ul>
-      </details>
+        </Dropdown.Menu>
+      </Dropdown>
       <Spacer size='l' />
       <strong>{t('exam.download-trouble')}</strong>{' '}
       <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
@@ -227,7 +180,7 @@ function ShowExamDownload({
   );
 }
 
-export default ShowExamDownload;
+export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));
 
 // GraphQL
 export const query = graphql`

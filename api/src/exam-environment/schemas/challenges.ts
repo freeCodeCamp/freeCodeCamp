@@ -1,7 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
 // import { STANDARD_ERROR } from '../utils/errors';
 
-export const examEnvironmentGetExamMappingsByChallengeId = {
+export const examEnvironmentGetExamIdsByChallengeId = {
   params: Type.Object({
     challengeId: Type.String({ format: 'objectid' })
   })

@@ -423,6 +423,12 @@ export function deleteMsUsername(): Promise<ResponseWithData<void>> {
 
 /** RTK */
 
+export interface ExamEnvironmentChallenge {
+  id: string;
+  examId: string;
+  challengeId: string;
+}
+
 export const examAttempts = createApi({
   reducerPath: 'exam-attempts',
   baseQuery: fetchBaseQuery({
@@ -436,9 +442,8 @@ export const examAttempts = createApi({
     getExamAttemptsByExamId: build.mutation<Attempt[], string>({
       query: examId => `/user/exam-environment/exams/${examId}/attempts`
     }),
-    getExamIdsByChallengeId: build.query<Attempt[], string>({
-      query: challengeId =>
-        `/user/exam-environment/challenges/${challengeId}/exams`
+    getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
+      query: challengeId => `/exam-environment/challenges/${challengeId}/exams`
     })
   })
 });

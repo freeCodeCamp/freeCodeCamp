@@ -89,11 +89,11 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
     tokenMetaHandler
   );
   fastify.get(
-    '/exam-environment/challenges/:challengeId/exam-mappings',
+    '/exam-environment/challenges/:challengeId/exams',
     {
-      schema: schemas.examEnvironmentGetExamMappingsByChallengeId
+      schema: schemas.examEnvironmentGetExamIdsByChallengeId
     },
-    getExamMappingsByChallengeId
+    getExamIdsByChallengeId
   );
   done();
 };
@@ -1000,11 +1000,9 @@ export async function getExamAttemptsByExamIdHandler(
 /**
  * Gets all the relations for a given challenge and exam(s).
  */
-export async function getExamMappingsByChallengeId(
+export async function getExamIdsByChallengeId(
   this: FastifyInstance,
-  req: UpdateReqType<
-    typeof schemas.examEnvironmentGetExamMappingsByChallengeId
-  >,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamIdsByChallengeId>,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
