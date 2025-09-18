@@ -6,17 +6,22 @@ import ObjectID from 'bson-objectid';
 
 import {
   SuperBlocks,
-  languageSuperBlocks
+  languageSuperBlocks,
+  chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
 import {
   getContentConfig,
-  writeBlockStructure
+  writeBlockStructure,
+  getSuperblockStructure
 } from '../../curriculum/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import { createDialogueFile, validateBlockName } from './utils';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+import {
+  updateSimpleSuperblockStructure,
+  updateChapterModuleSuperblockStructure
+} from './helpers/create-project';
 
 const helpCategories = ['English'] as const;
 
@@ -36,13 +41,21 @@ interface CreateBlockArgs {
   block: string;
   helpCategory: string;
   title?: string;
+  chapter?: string;
+  module?: string;
+  position?: number;
 }
 
 async function createLanguageBlock(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  title?: string
+  title?: string,
+  chapter?: string,
+  module?: string,
+  position?: number,
+  blockType?: string,
+  blockLayout?: string
 ) {
   if (!title) {
     title = block;
@@ -50,11 +63,36 @@ async function createLanguageBlock(
   await updateIntroJson(superBlock, block, title);
 
   const challengeId = await createDialogueChallenge(superBlock, block);
-  await createMetaJson(block, title, helpCategory, challengeId);
+  await createMetaJson(
+    block,
+    title,
+    helpCategory,
+    challengeId,
+    blockType,
+    blockLayout
+  );
+
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
-  void updateSimpleSuperblockStructure(block, {}, superblockFilename);
+
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
+    if (!chapter || !module || typeof position === 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+
+    void updateChapterModuleSuperblockStructure(
+      block,
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
+      superblockFilename
+    );
+  } else {
+    void updateSimpleSuperblockStructure(block, {}, superblockFilename);
+  }
+
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }
@@ -160,11 +198,84 @@ void prompt([
     default: 'English',
     type: 'list',
     choices: helpCategories
+  },
+  {
+    name: 'chapter',
+    message: 'What chapter should this language block go in?',
+    type: 'list',
+    choices: (answers: CreateBlockArgs) => {
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[answers.superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+      return structure.chapters.map(chapter => chapter.dashedName);
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'module',
+    message: 'What module should this language block go in?',
+    type: 'list',
+    choices: (answers: CreateBlockArgs) => {
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[answers.superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+      return (
+        structure.chapters
+          .find(chapter => chapter.dashedName === answers.chapter)
+          ?.modules.map(module => module.dashedName) ?? []
+      );
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'position',
+    message: 'At which position does this appear in the module?',
+    default: 1,
+    validate: (position: string) => {
+      return parseInt(position, 10) > 0
+        ? true
+        : 'Position must be an number greater than zero.';
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock),
+    filter: (position: string) => {
+      return parseInt(position, 10);
+    }
   }
 ])
   .then(
-    async ({ superBlock, block, helpCategory, title }: CreateBlockArgs) =>
-      await createLanguageBlock(superBlock, block, helpCategory, title)
+    async ({
+      superBlock,
+      block,
+      helpCategory,
+      title,
+      chapter,
+      module,
+      position
+    }: CreateBlockArgs) =>
+      await createLanguageBlock(
+        superBlock,
+        block,
+        helpCategory,
+        title,
+        chapter,
+        module,
+        position
+      )
   )
   .then(() =>
     console.log(
