@@ -42,44 +42,41 @@ describe('Daily Coding Challenges', async () => {
     );
   });
 
-  for (let i = 0; i < jsDailyChallenges.length; i++) {
-    describe(`Challenge ${i + 1} Parity`, function () {
-      const jsChallenge = jsDailyChallenges[i];
-      const pyChallenge = pyDailyChallenges[i];
+  it('should have matching properties for all challenges', function () {
+    const challengePairs = jsDailyChallenges.map((jsChallenge, i) => ({
+      jsChallenge,
+      pyChallenge: pyDailyChallenges[i]
+    }));
+    const errors = [];
 
-      it("should have matching ID's", function () {
-        assert.equal(
-          jsChallenge.id,
-          pyChallenge.id,
-          `Challenge ${i + 1} ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
+    for (const { jsChallenge, pyChallenge } of challengePairs) {
+      if (jsChallenge.id !== pyChallenge.id) {
+        errors.push(
+          `Challenge ID mismatch - JS: ${jsChallenge.id}, Python: ${pyChallenge.id}`
         );
-      });
+      }
 
-      it(`should have matching titles`, function () {
-        assert.equal(
-          jsChallenge.title,
-          pyChallenge.title,
-          `Challenge ${i + 1} title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title}`
+      if (jsChallenge.title !== pyChallenge.title) {
+        errors.push(
+          `Challenge title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title} (id: ${jsChallenge.id})`
         );
-      });
+      }
 
-      it('should have matching descriptions', function () {
-        assert.equal(
-          jsChallenge.description,
-          pyChallenge.description,
-          `Challenge ${i + 1} description mismatch`
-        );
-      });
+      if (jsChallenge.description !== pyChallenge.description) {
+        errors.push(`Challenge description mismatch (id: ${jsChallenge.id})`);
+      }
 
-      it('should have the same number of tests', function () {
-        const jsTestCount = jsChallenge.tests.length;
-        const pyTestCount = pyChallenge.tests.length;
-        assert.equal(
-          jsTestCount,
-          pyTestCount,
-          `Challenge ${i + 1} test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount}`
+      const jsTestCount = jsChallenge.tests.length;
+      const pyTestCount = pyChallenge.tests.length;
+      if (jsTestCount !== pyTestCount) {
+        errors.push(
+          `Challenge test count mismatch - JS: ${jsTestCount}, Python: ${pyTestCount} (id: ${jsChallenge.id})`
         );
-      });
-    });
-  }
+      }
+    }
+
+    if (errors.length > 0) {
+      assert.fail(`Found ${errors.length} mismatch(es):\n${errors.join('\n')}`);
+    }
+  });
 });
