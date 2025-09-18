@@ -1,8 +1,7 @@
 {
   "name": "Build a Digital Pet Game",
-  "superBlock": "",
   "isUpcomingChange": true,
-  "dashedName": "build-a-digital-pet-game",
+  "dashedName": "lab-digital-pet-game",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
   "challengeOrder": [{ "id": "68c362b379059c388d3874f2", "title": "Step 1" }],

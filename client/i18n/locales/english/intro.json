@@ -4852,9 +4852,11 @@
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       },
-      "build-a-digital-pet-game": {
+      "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
-        "intro": ["Build a Digital Pet Game", ""]
+        "intro": [
+          "For this lab, you will use Typescript and React to build a digital pet game."
+        ]
       }
     }
   },
