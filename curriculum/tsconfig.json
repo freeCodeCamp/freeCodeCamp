@@ -11,6 +11,7 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "noEmit": false,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true // vitest cannot import cjs. The options are 1) migrate to esm, 2) don't type check tests and 3) skip lib checks
   }
 }
