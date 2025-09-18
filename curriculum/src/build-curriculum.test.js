@@ -1,5 +1,4 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { describe, it, expect, vi } from 'vitest';
 
 import {
@@ -10,13 +9,17 @@ import {
 import { getCurriculumStructure } from './file-handler.js';
 
 vi.mock('./file-handler');
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 describe('createCommentMap', () => {
-  const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
+  const dictionaryDir = path.resolve(
+    import.meta.dirname,
+    '..',
+    '__fixtures__',
+    'dictionaries'
+  );
   const incompleteDictDir = path.resolve(
-    __dirname,
+    import.meta.dirname,
+    '..',
     '__fixtures__',
     'incomplete-dicts'
   );

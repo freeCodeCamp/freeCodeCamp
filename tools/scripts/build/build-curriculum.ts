@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { getChallengesForLang } from '../../../curriculum/get-challenges';
+import { getChallengesForLang } from '../../../curriculum/src/get-challenges';
 import {
   buildExtCurriculumDataV1,
   type Curriculum as CurriculumV1,

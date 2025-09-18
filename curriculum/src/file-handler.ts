@@ -20,7 +20,7 @@ if (typeof __dirname !== 'undefined') {
   __dirnameCompat = dirname(fileURLToPath(metaUrl));
 }
 
-const CURRICULUM_DIR = __dirnameCompat;
+const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
 const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',

@@ -13,7 +13,7 @@ import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure
-} from '../../curriculum/file-handler';
+} from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';

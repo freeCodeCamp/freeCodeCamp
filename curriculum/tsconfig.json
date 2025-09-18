@@ -1,8 +1,8 @@
 {
   "references": [{ "path": "../shared/tsconfig.json" }],
   "compilerOptions": {
-    "rootDir": ".",
-    "outDir": "../curriculum-dist",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "declaration": true,
     "target": "es2022",
     "module": "nodenext",
