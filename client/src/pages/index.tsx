@@ -16,7 +16,11 @@ type LandingProps = {
 };
 
 const Landing = ({ showLandingPageRedesign }: LandingProps) => (
-  <main className={`landing-page`}>
+  <main
+    id='landing-content'
+    data-testid='landing-content'
+    className={`landing-page`}
+  >
     {showLandingPageRedesign ? <LandingTopB /> : <LandingTop />}
     <Benefits />
     <Testimonials />

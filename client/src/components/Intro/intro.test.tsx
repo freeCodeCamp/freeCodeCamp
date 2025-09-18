@@ -6,6 +6,10 @@ import { createStore } from '../../redux/create-store';
 import Intro from '.';
 
 jest.mock('../../analytics');
+jest.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false, value: undefined }),
+  useFeatureIsOn: () => false
+}));
 
 function renderWithRedux(
   ui: JSX.Element,
