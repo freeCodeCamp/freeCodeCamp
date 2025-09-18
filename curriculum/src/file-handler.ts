@@ -177,10 +177,7 @@ export function getBlockStructure(block: string) {
   ) as BlockStructure;
 }
 
-export async function writeBlockStructure(
-  block: string,
-  structure: Record<string, unknown>
-) {
+export async function writeBlockStructure(block: string, structure: unknown) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
   const prettier = await import('prettier');
@@ -192,7 +189,7 @@ export async function writeBlockStructure(
 
 export async function writeSuperblockStructure(
   superblock: string,
-  structure: Record<string, unknown>
+  structure: unknown
 ) {
   // dynamically importing prettier because Gatsby build and develop fail when
   // it's required.
