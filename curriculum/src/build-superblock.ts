@@ -8,8 +8,12 @@ import { createPoly } from '../../shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '../../shared/utils/is-audited';
 import { translateCommentsInChallenge } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '../../shared/config/curriculum';
-import { getSuperOrder } from './utils';
-import type { BlockStructure, Challenge, ChallengeFile } from './file-handler';
+import { getSuperOrder } from './utils.js';
+import type {
+  BlockStructure,
+  Challenge,
+  ChallengeFile
+} from './file-handler.js';
 
 const log = debug('fcc:build-superblock');
 

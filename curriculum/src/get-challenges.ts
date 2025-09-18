@@ -2,8 +2,8 @@ import { access as _access, constants } from 'fs';
 import { resolve, join } from 'path';
 import { promisify } from 'util';
 
-import { availableLangs } from '../../shared-dist/config/i18n';
-import { buildCurriculum } from './build-curriculum';
+import { availableLangs } from '../../shared-dist/config/i18n.js';
+import { buildCurriculum } from './build-curriculum.js';
 
 const { curriculum: curriculumLangs } = availableLangs;
 
