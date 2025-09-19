@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
-    "@types/inquirer": "^8.2.5",
+    "@inquirer/prompts": "^7.8.3",
     "@vitest/ui": "^3.2.4",
     "bson-objectid": "2.0.4",
     "glob": "^8.1.0",

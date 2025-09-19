@@ -1,7 +1,7 @@
 import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
@@ -262,147 +262,111 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.FullStackDeveloper,
-    type: 'list',
-    choices: Object.values(SuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this project?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'HTML-CSS',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'blockType',
-    message: 'Choose a block type',
-    default: BlockTypes.lab,
-    type: 'list',
-    choices: Object.values(BlockTypes),
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
-  },
-  {
-    name: 'blockLayout',
-    message: 'Choose a block layout',
+void (async () => {
+  try {
+    const answers: CreateProjectArgs = {
+      superBlock: await select({
+        message: 'Which certification does this belong to?',
+        choices: Object.values(SuperBlocks),
+        default: SuperBlocks.FullStackDeveloper
+      }),
+      block: await input({
+        message: 'What is the dashed name (in kebab-case) for this project?',
+        validate: validateBlockName,
+        transformer: (b: string) => b.toLowerCase().trim()
+      }),
+      title: undefined, // set after block is known
+      helpCategory: await select({
+        message: 'Choose a help category',
+        choices: helpCategories,
+        default: 'HTML-CSS'
+      }),
+      blockType: undefined,
+      blockLayout: undefined,
+      questionCount: undefined,
+      chapter: undefined,
+      module: undefined,
+      position: undefined,
+      order: undefined
+    };
 
-    default: (answers: { blockType: BlockTypes }) =>
-      answers.blockType == BlockTypes.quiz
-        ? BlockLayouts.Link
-        : BlockLayouts.ChallengeList,
-    type: 'list',
-    choices: Object.values(BlockLayouts),
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
-  },
-  {
-    name: 'questionCount',
-    message: 'Choose a question count',
-    default: 20,
-    type: 'list',
-    choices: [10, 20],
-    when: (answers: CreateProjectArgs) => answers.blockType === BlockTypes.quiz
-  },
-  {
-    name: 'chapter',
-    message:
-      'What chapter in full-stack.json should this full stack project go in?',
-    default: 'html',
-    type: 'list',
-    choices: fullStackData.chapters.map(x => x.dashedName),
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
-  },
-  {
-    name: 'module',
-    message:
-      'What module in full-stack.json should this full stack project go in?',
-    default: 'html',
-    type: 'list',
-    choices: (answers: CreateProjectArgs) =>
-      fullStackData.chapters
-        .find(x => x.dashedName === answers.chapter)
-        ?.modules.map(x => x.dashedName),
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
-  },
-  {
-    name: 'position',
-    message: 'At which position does this appear in the module?',
-    default: 1,
-    validate: (position: string) => {
-      return parseInt(position, 10) > 0
-        ? true
-        : 'Position must be an number greater than zero.';
-    },
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper,
-    filter: (position: string) => {
-      return parseInt(position, 10);
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the block?',
+      default: answers.block
+    });
+
+    if (answers.superBlock === SuperBlocks.FullStackDeveloper) {
+      answers.blockType = await select({
+        message: 'Choose a block type',
+        choices: Object.values(BlockTypes),
+        default: BlockTypes.lab
+      });
+
+      answers.blockLayout = await select({
+        message: 'Choose a block layout',
+        choices: Object.values(BlockLayouts),
+        default:
+          answers.blockType === BlockTypes.quiz
+            ? BlockLayouts.Link
+            : BlockLayouts.ChallengeList
+      });
+
+      if (answers.blockType === BlockTypes.quiz) {
+        answers.questionCount = await select({
+          message: 'Choose a question count',
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ],
+          default: 20
+        });
+      }
+
+      answers.chapter = await select({
+        message:
+          'What chapter in full-stack.json should this full stack project go in?',
+        choices: fullStackData.chapters.map(x => x.dashedName),
+        default: 'html'
+      });
+
+      answers.module = await select({
+        message:
+          'What module in full-stack.json should this full stack project go in?',
+        choices:
+          fullStackData.chapters
+            .find(x => x.dashedName === answers.chapter)
+            ?.modules.map(x => x.dashedName) || [],
+        default: 'html'
+      });
+
+      answers.position = parseInt(
+        await input({
+          message: 'At which position does this appear in the module?',
+          default: '1',
+          validate: (pos: string) =>
+            parseInt(pos, 10) > 0 ? true : 'Position must be greater than zero.'
+        }),
+        10
+      );
+    } else {
+      answers.order = parseInt(
+        await input({
+          message: 'Which position does this appear in the certificate?',
+          default: '42',
+          validate: (ord: string) =>
+            parseInt(ord, 10) > 0 ? true : 'Order must be greater than zero.'
+        }),
+        10
+      );
     }
-  },
-  {
-    name: 'order',
-    message: 'Which position does this appear in the certificate?',
-    default: 42,
-    validate: (order: string) => {
-      return parseInt(order, 10) > 0
-        ? true
-        : 'Order must be an number greater than zero.';
-    },
-    when: (answers: CreateProjectArgs) =>
-      answers.superBlock !== SuperBlocks.FullStackDeveloper,
-    filter: (order: string) => {
-      return parseInt(order, 10);
-    }
-  }
-])
-  .then(
-    async ({
-      superBlock,
-      block,
-      title,
-      helpCategory,
-      blockType,
-      blockLayout,
-      questionCount,
-      chapter,
-      module,
-      position,
-      order
-    }: CreateProjectArgs) =>
-      await createProject({
-        superBlock,
-        block,
-        helpCategory,
-        blockType,
-        blockLayout,
-        questionCount,
-        title,
-        chapter,
-        module,
-        position,
-        order
-      })
-  )
-  .then(() =>
+
+    await createProject(answers);
+
     console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+      'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+    );
+  } catch (err) {
+    console.error('Error creating project:', err);
+  }
+})();
