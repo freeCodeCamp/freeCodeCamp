@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { createPoly, createSource } from './polyvinyl';
 
 const polyData = {

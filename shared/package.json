@@ -9,6 +9,9 @@
     "node": ">=16",
     "pnpm": ">=10"
   },
+  "scripts": {
+    "test": "vitest"
+  },
   "type": "module",
   "repository": {
     "type": "git",
@@ -21,5 +24,9 @@
   "dependencies": {
     "@types/invariant": "^2.2.37",
     "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4",
+    "@vitest/ui": "^3.2.4"
   }
 }
