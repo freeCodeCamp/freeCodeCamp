@@ -17,47 +17,28 @@ describe('markdown linter', () => {
   });
 
   it('should pass `good` markdown', async () => {
-    await new Promise(resolve => {
-      function callback() {
-        expect(process.exitCode).toBe(0);
-        resolve();
-      }
-      lint(good, callback);
-    });
+    await new Promise(resolve => lint(good, resolve));
+    expect(process.exitCode).toBe(0);
   });
 
   it('should fail invalid YML blocks', async () => {
-    await new Promise(resolve => {
-      function callback() {
-        expect(process.exitCode).toBe(1);
-        resolve();
-      }
-      lint(badYML, callback);
-    });
+    await new Promise(resolve => lint(badYML, resolve));
+    expect(process.exitCode).toBe(1);
   });
 
   it('should fail when code fences are not surrounded by newlines', async () => {
-    await new Promise(resolve => {
-      function callback() {
-        expect(process.exitCode).toBe(1);
-        resolve();
-      }
-      lint(badFencing, callback);
-    });
+    await new Promise(resolve => lint(badFencing, resolve));
+    expect(process.exitCode).toBe(1);
   });
 
   it('should write to the console describing the problem', async () => {
-    await new Promise(resolve => {
-      function callback() {
-        const expected =
-          'badYML.md: 19: yaml-linter YAML code blocks should be valid [bad indentation of a mapping entry at line 3, column 17:\n          testString: testString\n                    ^] [Context: "```yml"]';
-        expect(console.log.mock.calls.length).toBe(1);
-        expect(console.log.mock.calls[0][0]).toEqual(
-          expect.stringContaining(expected)
-        );
-        resolve();
-      }
-      lint(badYML, callback);
-    });
+    await new Promise(resolve => lint(badYML, resolve));
+
+    const expected =
+      'badYML.md: 19: yaml-linter YAML code blocks should be valid [bad indentation of a mapping entry at line 3, column 17:\n          testString: testString\n                    ^] [Context: "```yml"]';
+    expect(console.log.mock.calls.length).toBe(1);
+    expect(console.log.mock.calls[0][0]).toEqual(
+      expect.stringContaining(expected)
+    );
   });
 });
