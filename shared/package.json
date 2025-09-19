@@ -9,6 +9,10 @@
     "node": ">=16",
     "pnpm": ">=10"
   },
+  "scripts": {
+    "test": "vitest run --config ./vitest.config.mjs",
+    "test:watch": "vitest --config ./vitest.config.mjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
@@ -20,5 +24,8 @@
   "dependencies": {
     "@types/invariant": "^2.2.37",
     "invariant": "2.2.4"
+  },
+  "devDependencies": {
+    "vitest": "^3.2.4"
   }
 }
