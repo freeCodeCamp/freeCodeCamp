@@ -10,8 +10,8 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "test": "vitest run --config ./vitest.config.mjs",
-    "test:watch": "vitest --config ./vitest.config.mjs"
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "repository": {
     "type": "git",
