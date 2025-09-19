@@ -7,4 +7,4 @@ export {
 export { examEnvironmentPostExamGeneratedExam } from './exam-environment-exam-generated-exam';
 export { examEnvironmentTokenMeta } from './token-meta';
 export { examEnvironmentExams } from './exam-environment-exams';
-export { examEnvironmentGetExamIdsByChallengeId } from './challenges';
+export { examEnvironmentGetExamChallenge } from './challenges';

@@ -443,7 +443,8 @@ export const examAttempts = createApi({
       query: examId => `/user/exam-environment/exams/${examId}/attempts`
     }),
     getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
-      query: challengeId => `/exam-environment/challenges/${challengeId}/exams`
+      query: challengeId =>
+        `/exam-environment/exam-challenge?challengeId=${challengeId}`
     })
   })
 });

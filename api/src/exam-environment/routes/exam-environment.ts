@@ -89,11 +89,11 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
     tokenMetaHandler
   );
   fastify.get(
-    '/exam-environment/challenges/:challengeId/exams',
+    '/exam-environment/exam-challenge',
     {
-      schema: schemas.examEnvironmentGetExamIdsByChallengeId
+      schema: schemas.examEnvironmentGetExamChallenge
     },
-    getExamIdsByChallengeId
+    getExamChallenge
   );
   done();
 };
@@ -1000,20 +1000,21 @@ export async function getExamAttemptsByExamIdHandler(
 /**
  * Gets all the relations for a given challenge and exam(s).
  */
-export async function getExamIdsByChallengeId(
+export async function getExamChallenge(
   this: FastifyInstance,
-  req: UpdateReqType<typeof schemas.examEnvironmentGetExamIdsByChallengeId>,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamChallenge>,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  const { challengeId } = req.params;
+  const { challengeId, examId } = req.query;
 
-  logger.info({ challengeId });
+  logger.info({ challengeId, examId });
 
   const maybeData = await mapErr(
     this.prisma.examEnvironmentChallenge.findMany({
       where: {
-        challengeId
+        challengeId: challengeId ?? undefined,
+        examId: examId ?? undefined
       }
     })
   );
