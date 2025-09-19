@@ -25,6 +25,79 @@ import {
 } from './speaking-modal-helpers';
 import './speaking-modal.css';
 
+interface ExactMatchFeedbackProps {
+  sentence: string;
+  feedback: string;
+}
+
+interface PartialMatchFeedbackProps {
+  comparisonResult: ComparisonResult;
+  sentence: string;
+  feedback: string;
+}
+
+const ExactMatchFeedback = ({
+  sentence,
+  feedback
+}: ExactMatchFeedbackProps) => (
+  <>
+    <div className='speaking-modal-correct-text'>{sentence}</div>
+    <p className='speaking-modal-feedback-message'>{feedback}</p>
+  </>
+);
+
+const PartialMatchFeedback = ({
+  comparisonResult,
+  sentence,
+  feedback
+}: PartialMatchFeedbackProps) => {
+  const { t } = useTranslation();
+  if (!comparisonResult?.comparison) return null;
+
+  const punctuationMark = sentence[sentence.length - 1];
+
+  const fullUtterance =
+    comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
+
+  const incorrectWords = comparisonResult.comparison
+    .filter(item => !item.isCorrect)
+    .map(item => item.word)
+    .join(', ');
+
+  return (
+    <>
+      <div>
+        {/* Render the utterance as a full sentence rather than separated words
+            so screen readers don't add a stop after each word */}
+        <p className='sr-only'>{fullUtterance}</p>
+
+        {incorrectWords && (
+          <p className='sr-only'>
+            {t('speaking-modal.incorrect-words', { words: incorrectWords })}
+          </p>
+        )}
+
+        {comparisonResult.comparison.map(
+          (item: ComparisonWord, index: number) => (
+            <span
+              key={index}
+              aria-hidden='true'
+              className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
+            >
+              {index === 0
+                ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
+                : item.word}
+            </span>
+          )
+        )}
+        <span aria-hidden='true'>{punctuationMark}</span>
+      </div>
+
+      <p className='speaking-modal-feedback-message'>{feedback}</p>
+    </>
+  );
+};
+
 interface SpeakingModalProps {
   closeSpeakingModal: () => void;
   isSpeakingModalOpen: boolean;
@@ -125,11 +198,9 @@ const SpeakingModal = ({
         setComparisonResult(null);
       }
 
-      // Reset the recording flag after processing
       setHasStartedRecording(false);
     }
 
-    // Update previous listening state
     setPreviouslyListening(listening);
   }, [
     listening,
@@ -209,72 +280,6 @@ const SpeakingModal = ({
     }
   };
 
-  const renderExactMatch = () => (
-    <>
-      <div className='speaking-modal-correct-text'>{sentence}</div>
-      <p className='speaking-modal-feedback-message'>{feedback}</p>
-    </>
-  );
-
-  const renderPartialMatch = () => {
-    if (!comparisonResult?.comparison) return null;
-
-    const punctuationMark = sentence[sentence.length - 1];
-
-    const fullUtterance =
-      comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
-
-    const incorrectWords = comparisonResult.comparison
-      .filter(item => !item.isCorrect)
-      .map(item => item.word)
-      .join(', ');
-
-    return (
-      <>
-        <div>
-          {/* Render the utterance as a full sentence rather than separated words
-              so screen readers don't add a stop after each word */}
-          <p className='sr-only'>{fullUtterance}</p>
-
-          {incorrectWords && (
-            <p className='sr-only'>
-              {t('speaking-modal.incorrect-words', { words: incorrectWords })}
-            </p>
-          )}
-
-          {comparisonResult.comparison.map(
-            (item: ComparisonWord, index: number) => (
-              <span
-                key={index}
-                aria-hidden='true'
-                className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
-              >
-                {index === 0
-                  ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
-                  : item.word}
-              </span>
-            )
-          )}
-          <span aria-hidden='true'>{punctuationMark}</span>
-        </div>
-
-        <p className='speaking-modal-feedback-message'>{feedback}</p>
-      </>
-    );
-  };
-
-  const renderFeedback = () => {
-    if (comparisonResult?.status === 'correct') {
-      return renderExactMatch();
-    }
-
-    if (comparisonResult?.comparison) {
-      return renderPartialMatch();
-    }
-
-    return feedback;
-  };
-
   return (
     <Modal onClose={closeSpeakingModal} open={isSpeakingModalOpen} size='large'>
       <Modal.Header closeButtonClassNames='close'>
@@ -331,7 +336,17 @@ const SpeakingModal = ({
           aria-live='polite'
           aria-atomic='true'
         >
-          {renderFeedback()}
+          {comparisonResult?.status === 'correct' ? (
+            <ExactMatchFeedback sentence={sentence} feedback={feedback} />
+          ) : comparisonResult?.comparison ? (
+            <PartialMatchFeedback
+              comparisonResult={comparisonResult}
+              sentence={sentence}
+              feedback={feedback}
+            />
+          ) : (
+            feedback
+          )}
         </div>
       </Modal.Body>
     </Modal>
