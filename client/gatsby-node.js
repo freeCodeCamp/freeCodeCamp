@@ -311,7 +311,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       scene: Scene
       transcript: String
       quizzes: [Quiz]
-      showSpeakingButton: Boolean
     }
     type FileContents {
       fileKey: String

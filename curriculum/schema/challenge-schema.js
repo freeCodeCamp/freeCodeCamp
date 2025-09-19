@@ -303,7 +303,6 @@ const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
-  showSpeakingButton: Joi.boolean(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),

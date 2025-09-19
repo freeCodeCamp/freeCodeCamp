@@ -18,7 +18,6 @@ type MultipleChoiceQuestionsProps = {
   handleOptionChange: (questionIndex: number, answerIndex: number) => void;
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
-  showSpeakingButton?: boolean;
 
   openSpeakingModal: () => void;
   superBlock: SuperBlocks;
@@ -34,7 +33,6 @@ function MultipleChoiceQuestions({
   handleOptionChange,
   submittedMcqAnswers,
   showFeedback,
-  showSpeakingButton,
   openSpeakingModal,
   superBlock
 }: MultipleChoiceQuestionsProps): JSX.Element {
@@ -97,6 +95,8 @@ function MultipleChoiceQuestions({
                 questions[questionIndex].solution - 1;
 
               const labelId = `mc-question-${questionIndex}-answer-${answerIndex}-label`;
+              const hasAudio =
+                questions[questionIndex]?.answers[answerIndex]?.audioId;
 
               return (
                 <div key={answerIndex} className='mcq-option-row'>
@@ -162,7 +162,7 @@ function MultipleChoiceQuestions({
                     )}
                   </div>
 
-                  {showSpeakingButton && (
+                  {hasAudio && (
                     <div className='mcq-speaking-button-wrapper'>
                       <Button
                         size='medium'
