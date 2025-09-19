@@ -2,10 +2,7 @@ const path = require('path');
 
 const comparison = require('string-similarity');
 
-const {
-  SuperBlocks,
-  generateSuperBlockList
-} = require('../shared-dist/config/curriculum');
+const { generateSuperBlockList } = require('../shared-dist/config/curriculum');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
@@ -27,15 +24,6 @@ exports.testedLang = function testedLang() {
 };
 
 function createSuperOrder(superBlocks) {
-  if (!Array.isArray(superBlocks)) {
-    throw Error(`superBlocks must be an Array`);
-  }
-  superBlocks.forEach(superBlock => {
-    if (!Object.values(SuperBlocks).includes(superBlock)) {
-      throw Error(`Invalid superBlock: ${superBlock}`);
-    }
-  });
-
   const superOrder = {};
 
   superBlocks.forEach((superBlock, i) => {
@@ -45,19 +33,16 @@ function createSuperOrder(superBlocks) {
   return superOrder;
 }
 
-const flatSuperBlockMap = generateSuperBlockList({
-  showUpcomingChanges: process.env.SHOW_UPCOMING_CHANGES === 'true'
-});
-const superOrder = createSuperOrder(flatSuperBlockMap);
+function getSuperOrder(
+  superblock,
+  showUpcomingChanges = process.env.SHOW_UPCOMING_CHANGES === 'true'
+) {
+  const flatSuperBlockMap = generateSuperBlockList({
+    showUpcomingChanges
+  });
 
-// gets the superOrder of a superBlock from the object created above
-function getSuperOrder(superblock) {
-  if (typeof superblock !== 'string')
-    throw Error(`superblock ${JSON.stringify(superblock)} must be a string`);
-  const order = superOrder[superblock];
-  if (typeof order === 'undefined')
-    throw Error(`${superblock} is not a valid superblock`);
-  return order;
+  const superOrder = createSuperOrder(flatSuperBlockMap);
+  return superOrder[superblock];
 }
 
 /**
