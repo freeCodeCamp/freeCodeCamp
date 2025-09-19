@@ -13,7 +13,7 @@ import {
   type CurriculumProps as CurriculumPropsV2
 } from './build-external-curricula-data-v2';
 
-const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
+const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
 // We are defaulting to English because the ids for the challenges are same
 // across all languages.
