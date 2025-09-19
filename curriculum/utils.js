@@ -2,10 +2,7 @@ const path = require('path');
 
 const comparison = require('string-similarity');
 
-const {
-  SuperBlocks,
-  generateSuperBlockList
-} = require('../shared-dist/config/curriculum');
+const { generateSuperBlockList } = require('../shared-dist/config/curriculum');
 
 require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
@@ -27,15 +24,6 @@ exports.testedLang = function testedLang() {
 };
 
 function createSuperOrder(superBlocks) {
-  if (!Array.isArray(superBlocks)) {
-    throw Error(`superBlocks must be an Array`);
-  }
-  superBlocks.forEach(superBlock => {
-    if (!Object.values(SuperBlocks).includes(superBlock)) {
-      throw Error(`Invalid superBlock: ${superBlock}`);
-    }
-  });
-
   const superOrder = {};
 
   superBlocks.forEach((superBlock, i) => {

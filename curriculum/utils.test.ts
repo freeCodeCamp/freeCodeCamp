@@ -67,62 +67,41 @@ describe('createSuperOrder', () => {
   });
 
   it('throws when not given an array of SuperBlocks', () => {
-    expect.assertions(4);
-    expect(() => getSuperOrder()).toThrow();
-    expect(() => getSuperOrder(null)).toThrow();
-    expect(() => getSuperOrder('')).toThrow();
-    expect(() => getSuperOrder(['respansive-wib-desoin'])).toThrow();
+    expect(() => createSuperOrder()).toThrow();
+    expect(() => createSuperOrder(null)).toThrow();
+    expect(() => createSuperOrder('')).toThrow();
   });
 });
 
 describe('getSuperOrder', () => {
   it('returns a number for valid curriculum', () => {
-    expect.assertions(1);
     expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
   });
 
-  it('throws for unknown curriculum', () => {
-    expect.assertions(4);
-    expect(() => getSuperOrder()).toThrow();
-    expect(() => getSuperOrder(null)).toThrow();
-    expect(() => getSuperOrder('')).toThrow();
-    expect(() => getSuperOrder('respansive-wib-desoin')).toThrow();
+  it('returns undefined for unknown curriculum', () => {
+    expect(getSuperOrder()).toBeUndefined();
+    expect(getSuperOrder(null)).toBeUndefined();
+    expect(getSuperOrder('')).toBeUndefined();
+    expect(getSuperOrder('respansive-wib-desoin')).toBeUndefined();
+    expect(getSuperOrder('certifications')).toBeUndefined();
   });
 
-  it('throws for "certifications"', () => {
-    expect.assertions(1);
-    expect(() => getSuperOrder('certifications')).toThrow();
+  it('returns numbers for all current curriculum', () => {
+    const superBlocks = Object.values(SuperBlocks);
+
+    const superOrderValues = superBlocks.map(sb => getSuperOrder(sb, true));
+    const definedValues = superOrderValues.filter(v => typeof v === 'number');
+
+    expect(definedValues.length).toBe(superBlocks.length);
   });
 
-  it.skip('returns unique numbers for all current curriculum', () => {
-    if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
-      expect.assertions(17);
-    } else {
-      expect.assertions(19);
-    }
+  it('returns unique numbers for all current curriculum', () => {
+    const superBlocks = Object.values(SuperBlocks);
 
-    expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
-    expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(1);
-    expect(getSuperOrder(SuperBlocks.FrontEndDevLibs)).toBe(2);
-    expect(getSuperOrder(SuperBlocks.DataVis)).toBe(3);
-    expect(getSuperOrder(SuperBlocks.RelationalDb)).toBe(4);
-    expect(getSuperOrder(SuperBlocks.BackEndDevApis)).toBe(5);
-    expect(getSuperOrder(SuperBlocks.QualityAssurance)).toBe(6);
-    expect(getSuperOrder(SuperBlocks.SciCompPy)).toBe(7);
-    expect(getSuperOrder(SuperBlocks.DataAnalysisPy)).toBe(8);
-    expect(getSuperOrder(SuperBlocks.InfoSec)).toBe(9);
-    expect(getSuperOrder(SuperBlocks.MachineLearningPy)).toBe(10);
-    expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(11);
-    expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(12);
-    expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(13);
-    expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(14);
-    expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
-    expect(getSuperOrder(SuperBlocks.JsAlgoDataStruct)).toBe(16);
+    const superOrderValues = superBlocks.map(sb => getSuperOrder(sb, true));
+    const uniqueValues = Array.from(new Set(superOrderValues));
 
-    if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.FullStackDeveloper)).toBe(18);
-    }
+    expect(uniqueValues.length).toBe(superBlocks.length);
   });
 });
 
