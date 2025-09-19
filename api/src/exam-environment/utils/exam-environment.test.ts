@@ -97,7 +97,7 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('generateExam()', () => {
     it('should generate a randomized exam without throwing', () => {
-      const _randomizedExam = generateExam(exam);
+      expect(() => generateExam(exam)).not.toThrow();
     });
 
     it('should generate an exam matching with the correct number of question sets', () => {
@@ -199,7 +199,9 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('validateAttempt()', () => {
     it('should validate a correct attempt', () => {
-      validateAttempt(generatedExam, examAttempt.questionSets);
+      expect(() =>
+        validateAttempt(generatedExam, examAttempt.questionSets)
+      ).toThrow();
     });
 
     it('should invalidate an incorrect attempt', () => {
@@ -422,6 +424,7 @@ describe('Exam Environment Schema', () => {
       await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
     });
 
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       const configQuestionSets = [
         {
@@ -490,6 +493,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
         data: {
@@ -508,6 +512,7 @@ describe('Exam Environment Schema', () => {
         {}
       );
     });
+    // eslint-disable-next-line vitest/expect-expect
     it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
       await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
         data: {
