@@ -10,8 +10,7 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
