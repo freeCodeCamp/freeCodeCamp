@@ -9,10 +9,8 @@ import {
   ExamEnvironmentChallenge
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-// import { defaultUserId } from '../vitest.utils';
-import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
-
-const defaultUserId = '5bd30e0f1caf6ac3ddddddb5';
+import { defaultUserId } from '../vitest.utils.js';
+import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
 export const oid = () => new ObjectId().toString();
 

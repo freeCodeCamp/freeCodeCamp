@@ -36,7 +36,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canSaveToDB,
   challengeTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,

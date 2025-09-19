@@ -7,20 +7,23 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import {
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared/config/curriculum';
+} from '../../../../../shared-dist/config/curriculum';
 import envData from '../../../../config/env.json';
-import { isAuditedSuperBlock } from '../../../../../shared/utils/is-audited';
+import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
 import CheckMark from './check-mark';
 import Challenges from './challenges';
 import BlockLabel from './block-label';
