@@ -129,7 +129,7 @@ function ShowExamDownload({
       <Spacer size='l' />
       {isSignedIn && (
         <>
-          <h2>Attempts</h2>
+          <h2>{t('exam.attempts')}</h2>
           <Attempts id={id} />
           <Spacer size='l' />
         </>

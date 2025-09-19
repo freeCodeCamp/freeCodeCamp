@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { Table } from '@freecodecamp/ui';
+import { useTranslation } from 'react-i18next';
 
 import { Loader } from '../../../components/helpers';
 import { examAttempts } from '../../../utils/ajax';
@@ -9,6 +10,8 @@ interface AttemptsProps {
 }
 
 export function Attempts({ id }: AttemptsProps) {
+  const { t } = useTranslation();
+
   const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
   const [getAttempts, attemptsMutation] =
     examAttempts.useGetExamAttemptsByExamIdMutation();
@@ -26,43 +29,49 @@ export function Attempts({ id }: AttemptsProps) {
     return <Loader />;
   }
   if (examIdsQuery.error || !examIdsQuery.data) {
-    return <p>{JSON.stringify(examIdsQuery.error)}</p>;
+    console.error(examIdsQuery.error);
+    return <p>{t('flash.generic-error')}</p>;
   }
 
   if (attemptsMutation.error) {
-    return <p>{JSON.stringify(attemptsMutation.error)}</p>;
+    console.error(attemptsMutation.error);
+    return <p>{t('flash.generic-error')}</p>;
   }
 
   const attempts = attemptsMutation.data;
 
-  if (!attempts) {
+  if (attempts === undefined) {
     return <Loader />;
   }
 
   if (attempts.length === 0) {
-    return <p>No attempts yet</p>;
+    return <p>{t('exam.no-attempts-yet')}</p>;
   }
 
   return (
     <Table striped>
       <thead>
         <tr>
-          <th>Date Taken</th>
-          <th>Score [%]</th>
-          <th>Status</th>
+          <th>{t('exam.date-taken')}</th>
+          <th>{t('exam.score')} [%]</th>
+          <th>{t('exam.status')}</th>
         </tr>
       </thead>
       <tbody>
         {attempts.map(attempt => (
           <tr key={attempt.startTimeInMS}>
             <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
-            <td>{attempt.result ? `${attempt.result.percent}%` : 'Pending'}</td>
+            <td>
+              {attempt.result
+                ? `${attempt.result.percent}%`
+                : t('exam.pending')}
+            </td>
             <td>
               {attempt.result
                 ? attempt.result.passed
-                  ? 'Passed'
-                  : 'Failed'
-                : 'Pending'}
+                  ? t('exam.passed')
+                  : t('exam.failed')
+                : t('exam.pending')}
             </td>
           </tr>
         ))}
