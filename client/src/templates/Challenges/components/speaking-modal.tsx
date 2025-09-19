@@ -30,7 +30,7 @@ interface SpeakingModalProps {
   isSpeakingModalOpen: boolean;
   sentence: string;
   audioUrl?: string;
-  answerIndex?: number;
+  answerIndex: number;
   superBlock: SuperBlocks;
 }
 
@@ -49,9 +49,9 @@ const SpeakingModal = ({
   const [hasStartedRecording, setHasStartedRecording] = useState(false);
   const [previouslyListening, setPreviouslyListening] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const stopListeningTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
-    null
-  );
+  const stopListeningTimeoutRef = useRef<
+    ReturnType<typeof setTimeout> | undefined
+  >();
 
   const {
     transcript,
@@ -89,22 +89,16 @@ const SpeakingModal = ({
       setComparisonResult(null);
       setHasStartedRecording(false);
       setPreviouslyListening(false);
+      setIsPlaying(false);
       resetTranscript();
       void SpeechRecognition.stopListening();
 
-      if (stopListeningTimeoutRef.current) {
-        clearTimeout(stopListeningTimeoutRef.current);
-        stopListeningTimeoutRef.current = null;
-      }
-
+      clearTimeout(stopListeningTimeoutRef.current);
       cleanupAudioResources();
     }
 
     return () => {
-      if (stopListeningTimeoutRef.current) {
-        clearTimeout(stopListeningTimeoutRef.current);
-        stopListeningTimeoutRef.current = null;
-      }
+      clearTimeout(stopListeningTimeoutRef.current);
       cleanupAudioResources();
     };
   }, [isSpeakingModalOpen, resetTranscript, cleanupAudioResources]);
@@ -193,7 +187,6 @@ const SpeakingModal = ({
 
       stopListeningTimeoutRef.current = setTimeout(() => {
         void SpeechRecognition.stopListening();
-        stopListeningTimeoutRef.current = null;
       }, 30000);
     } catch (error) {
       console.error('Error starting recording:', error);
@@ -203,12 +196,7 @@ const SpeakingModal = ({
 
   const handleStopRecording = () => {
     void SpeechRecognition.stopListening();
-
-    // clear any scheduled automatic stop
-    if (stopListeningTimeoutRef.current) {
-      clearTimeout(stopListeningTimeoutRef.current);
-      stopListeningTimeoutRef.current = null;
-    }
+    clearTimeout(stopListeningTimeoutRef.current);
 
     setFeedback(t('speaking-modal.recording-stopped-processing'));
   };
