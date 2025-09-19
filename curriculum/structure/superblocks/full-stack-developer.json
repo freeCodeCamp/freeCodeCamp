@@ -745,6 +745,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
+            "workshop-shortest-path-algorithm",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
