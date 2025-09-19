@@ -43,6 +43,7 @@
     "@babel/core": "7.23.7",
     "@babel/register": "7.23.7",
     "@types/polka": "^0.5.7",
+    "@types/string-similarity": "^4.0.2",
     "@vitest/ui": "^3.2.4",
     "chai": "4.4.1",
     "glob": "8.1.0",
