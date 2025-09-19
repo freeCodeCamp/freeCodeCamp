@@ -8,14 +8,14 @@ import {
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils';
-import { HOME_LOCATION } from '../utils/env';
-import { devAuth } from '../plugins/auth-dev';
-import prismaPlugin from '../db/prisma';
-import auth from './auth';
-import cookies from './cookies';
+import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils.js';
+import { HOME_LOCATION } from '../utils/env.js';
+import { devAuth } from '../plugins/auth-dev.js';
+import prismaPlugin from '../db/prisma.js';
+import auth from './auth.js';
+import cookies from './cookies.js';
 
-import { newUser } from './__fixtures__/user';
+import { newUser } from './__fixtures__/user.js';
 
 describe('dev login', () => {
   let fastify: FastifyInstance;

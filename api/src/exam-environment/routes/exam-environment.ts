@@ -1,22 +1,22 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { PrismaClientValidationError } from '@prisma/client/runtime/library';
+import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
-import * as schemas from '../schemas';
-import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
-import { JWT_SECRET } from '../../utils/env';
+import * as schemas from '../schemas/index.js';
+import { mapErr, syncMapErr, UpdateReqType } from '../../utils/index.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   checkPrerequisites,
   constructEnvExamAttempt,
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
-} from '../utils/exam-environment';
-import { ERRORS } from '../utils/errors';
-import { isObjectID } from '../../utils/validation';
+} from '../utils/exam-environment.js';
+import { ERRORS } from '../utils/errors.js';
+import { isObjectID } from '../../utils/validation.js';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.

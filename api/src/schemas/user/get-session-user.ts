@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
-import { examResults, profileUI, savedChallenge } from '../types';
+import { examResults, profileUI, savedChallenge } from '../types.js';
 
 const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
   Type.Literal(k)
