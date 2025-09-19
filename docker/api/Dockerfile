@@ -27,7 +27,7 @@ RUN cd api && pnpm prisma generate
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 
-RUN pnpm create:shared
+RUN pnpm compile:ts
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
