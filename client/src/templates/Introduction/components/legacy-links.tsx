@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Alert } from '@freecodecamp/ui';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import {
   isOldRespCert,
   isRelationalDbCert,

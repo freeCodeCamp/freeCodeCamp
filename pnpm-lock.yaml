@@ -195,11 +195,11 @@ importers:
         specifier: ^7.0.5
         version: 7.0.5
       ajv:
-        specifier: 8.12.0
-        version: 8.12.0
+        specifier: 8.17.1
+        version: 8.17.1
       ajv-formats:
-        specifier: 2.1.1
-        version: 2.1.1(ajv@8.12.0)
+        specifier: 3.0.1
+        version: 3.0.1(ajv@8.17.1)
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -227,6 +227,9 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      lodash-es:
+        specifier: 4.17.21
+        version: 4.17.21
       mongodb:
         specifier: 6.10.0
         version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
@@ -252,8 +255,8 @@ importers:
         specifier: 16.0.0
         version: 16.0.0
       validator:
-        specifier: 13.11.0
-        version: 13.11.0
+        specifier: 13.15.15
+        version: 13.15.15
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
@@ -261,6 +264,9 @@ importers:
       '@types/jsonwebtoken':
         specifier: 9.0.5
         version: 9.0.5
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/nodemailer':
         specifier: 6.4.14
         version: 6.4.14
@@ -5412,14 +5418,6 @@ packages:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
     engines: {node: '>=8'}
 
-  ajv-formats@2.1.1:
-    resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependencies:
-      ajv: ^8.0.0
-    peerDependenciesMeta:
-      ajv:
-        optional: true
-
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
     peerDependencies:
@@ -5438,6 +5436,9 @@ packages:
 
   ajv@8.12.0:
     resolution: {integrity: sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==}
+
+  ajv@8.17.1:
+    resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
   algoliasearch-helper@3.22.5:
     resolution: {integrity: sha512-lWvhdnc+aKOKx8jyA3bsdEgHzm/sglC4cYdMG4xSQyRiPLJVJtH/IVYZG3Hp6PkTEhQqhyVYkeP9z2IlcHJsWw==}
@@ -13866,6 +13867,10 @@ packages:
     resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
     engines: {node: '>= 0.10'}
 
+  validator@13.15.15:
+    resolution: {integrity: sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A==}
+    engines: {node: '>= 0.10'}
+
   value-or-promise@1.0.6:
     resolution: {integrity: sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==}
     engines: {node: '>=12'}
@@ -17311,8 +17316,8 @@ snapshots:
 
   '@fastify/ajv-compiler@4.0.2':
     dependencies:
-      ajv: 8.12.0
-      ajv-formats: 3.0.1(ajv@8.12.0)
+      ajv: 8.17.1
+      ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.0.6
 
   '@fastify/cookie@11.0.1':
@@ -20594,13 +20599,9 @@ snapshots:
       clean-stack: 2.2.0
       indent-string: 4.0.0
 
-  ajv-formats@2.1.1(ajv@8.12.0):
+  ajv-formats@3.0.1(ajv@8.17.1):
     optionalDependencies:
-      ajv: 8.12.0
-
-  ajv-formats@3.0.1(ajv@8.12.0):
-    optionalDependencies:
-      ajv: 8.12.0
+      ajv: 8.17.1
 
   ajv-keywords@3.5.2(ajv@6.12.6):
     dependencies:
@@ -20619,6 +20620,13 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+
+  ajv@8.17.1:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.0.6
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
 
   algoliasearch-helper@3.22.5(algoliasearch@4.22.1):
     dependencies:
@@ -23847,8 +23855,8 @@ snapshots:
   fast-json-stringify@6.0.1:
     dependencies:
       '@fastify/merge-json-schemas': 0.2.1
-      ajv: 8.12.0
-      ajv-formats: 3.0.1(ajv@8.12.0)
+      ajv: 8.17.1
+      ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.0.6
       json-schema-ref-resolver: 2.0.1
       rfdc: 1.4.1
@@ -31829,6 +31837,8 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validator@13.11.0: {}
+
+  validator@13.15.15: {}
 
   value-or-promise@1.0.6: {}
 

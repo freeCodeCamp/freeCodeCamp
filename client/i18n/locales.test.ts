@@ -4,11 +4,15 @@ import { fileURLToPath } from 'url';
 
 import { describe, test, expect } from 'vitest';
 
-import { availableLangs, LangNames, LangCodes } from '../../shared/config/i18n';
+import {
+  availableLangs,
+  LangNames,
+  LangCodes
+} from '../../shared-dist/config/i18n';
 import {
   catalogSuperBlocks,
   SuperBlocks
-} from '../../shared/config/curriculum';
+} from '../../shared-dist/config/curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {

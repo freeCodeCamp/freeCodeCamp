@@ -8,7 +8,8 @@ module.exports = {
     'tools/scripts/build/',
     'tools/scripts/lint/',
     'curriculum',
-    'client'
+    'client',
+    'shared/'
   ],
   moduleNameMapper: {
     // CSS Modules - match files that end with 'module.css'

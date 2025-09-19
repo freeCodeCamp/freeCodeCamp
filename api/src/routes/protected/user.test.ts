@@ -15,9 +15,9 @@ import {
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import { omit } from 'lodash-es';
 
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 import {
   defaultUserId,
   defaultUserEmail,
@@ -27,15 +27,15 @@ import {
   createSuperRequest,
   defaultUsername,
   resetDefaultUser
-} from '../../../vitest.utils';
-import { JWT_SECRET } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   clearEnvExam,
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exam-environment-exam';
-import { getMsTranscriptApiUrl } from './user';
+} from '../../../__mocks__/exam-environment-exam.js';
+import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -43,7 +43,9 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 let mockDeploymentEnv = 'staging';
 vi.mock('../../utils/env', async () => {
   const actualEnv =
-    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
+    await vi.importActual<typeof import('../../utils/env.js')>(
+      '../../utils/env'
+    );
   return {
     ...actualEnv,
     get DEPLOYMENT_ENV() {
@@ -828,7 +830,7 @@ describe('userRoutes', () => {
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
-          ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
+          ...omit(minimalUserData, ['externalId', 'unsubscribeId']),
           ...computedProperties,
           id: testUser.id,
           joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
