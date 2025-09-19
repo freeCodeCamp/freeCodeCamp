@@ -32,7 +32,7 @@ Some inline `code`
 
 That is not correct.
 
-### --audioid--
+### --audio-id--
 
 answer1-audio
 
@@ -42,7 +42,7 @@ Some *italics*
 
 A second answer paragraph.
 
-### --audioid--
+### --audio-id--
 
 answer2-audio
 

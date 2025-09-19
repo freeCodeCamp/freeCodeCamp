@@ -60,7 +60,7 @@ function getAnswers(answersNodes) {
     const answerTree = root(answerGroup);
 
     const feedbackNodes = getSection(answerTree, '--feedback--');
-    const audioIdNodes = getSection(answerTree, '--audioid--');
+    const audioIdNodes = getSection(answerTree, '--audio-id--');
     const hasFeedback = feedbackNodes.length > 0;
     const hasAudioId = audioIdNodes.length > 0;
 
@@ -74,18 +74,18 @@ function getAnswers(answersNodes) {
         });
         const audioIdHeading = find(answerTree, {
           type: 'heading',
-          children: [{ type: 'text', value: '--audioid--' }]
+          children: [{ type: 'text', value: '--audio-id--' }]
         });
 
         const feedbackIndex = answerTree.children.indexOf(feedbackHeading);
         const audioIdIndex = answerTree.children.indexOf(audioIdHeading);
         const firstMarker =
-          feedbackIndex < audioIdIndex ? '--feedback--' : '--audioid--';
+          feedbackIndex < audioIdIndex ? '--feedback--' : '--audio-id--';
         answerNodes = getAllBefore(answerTree, firstMarker);
       } else if (hasFeedback) {
         answerNodes = getAllBefore(answerTree, '--feedback--');
       } else {
-        answerNodes = getAllBefore(answerTree, '--audioid--');
+        answerNodes = getAllBefore(answerTree, '--audio-id--');
       }
 
       if (answerNodes.length < 1) {
