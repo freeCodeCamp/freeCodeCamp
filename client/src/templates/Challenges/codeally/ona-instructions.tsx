@@ -1,101 +1,40 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { connect } from 'react-redux';
 import { Spacer, Button } from '@freecodecamp/ui';
-import { postUserToken } from '../../../utils/ajax';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 
-import {
-  isSignedInSelector,
-  userTokenSelector
-} from '../../../redux/selectors';
-import { updateUserToken } from '../../../redux/actions';
+import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
-import RdbLocalLogoutAlert from './rdb-local-logout-alert';
+import RdbOnaContinueAlert from './rdb-ona-continue-alert';
+import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
 
-const mapStateToProps = (state: unknown) => ({
-  isSignedIn: isSignedInSelector(state),
-  userToken: userTokenSelector(state) as string | null
-});
-
-const mapDispatchToProps = {
-  createFlashMessage,
-  updateUserToken
-};
-
-interface RdbOnaInstructionsProps {
-  course: string;
-  createFlashMessage: typeof createFlashMessage;
+interface OneInstructionsProps {
+  challengeType: number;
+  copyUrl: () => void;
+  copyUserToken: () => void;
+  generateUserToken: () => Promise<void>;
   isSignedIn: boolean;
-  updateUserToken: (arg0: string) => void;
-  url: string;
+  title: string;
   userToken: string | null;
 }
 
-function RdbOnaInstructions({
-  course,
-  createFlashMessage,
+export function OnaInstructions({
+  challengeType,
+  copyUrl,
+  copyUserToken,
+  generateUserToken,
   isSignedIn,
-  updateUserToken,
-  url,
+  title,
   userToken
-}: RdbOnaInstructionsProps): JSX.Element {
+}: OneInstructionsProps) {
   const { t } = useTranslation();
 
-  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
+  function openOna() {
+    const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
+    const onaDomain = `https://app.ona.com/`;
+    const onaUrl = `${onaDomain}#${repoUrl}`;
 
-  const generateUserToken = async () => {
-    const createUserTokenResponse = await postUserToken();
-    const { data = { userToken: null } } = createUserTokenResponse;
-
-    if (data?.userToken) {
-      updateUserToken(data.userToken);
-      createFlashMessage({
-        type: 'success',
-        message: FlashMessages.UserTokenGenerated
-      });
-    } else {
-      createFlashMessage({
-        type: 'danger',
-        message: FlashMessages.UserTokenGenerateError
-      });
-    }
-  };
-
-  const copyUserToken = () => {
-    navigator.clipboard.writeText(userToken ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.UserTokenCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.UserTokenCopyError
-        });
-      }
-    );
-  };
-
-  const copyUrl = () => {
-    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.CourseUrlCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.CourseUrlCopyError
-        });
-      }
-    );
-  };
+    window.open(onaUrl, '_blank');
+  }
 
   return (
     <div className='ca-description'>
@@ -158,8 +97,6 @@ function RdbOnaInstructions({
                   <code>placeholder</code>
                 </Trans>
               </li>
-              <Spacer size='xs' />
-              <RdbLocalLogoutAlert course={course} />
             </ol>
             <Spacer size='s' />
           </>
@@ -185,6 +122,7 @@ function RdbOnaInstructions({
                 <code>placeholder</code>
               </Trans>
             </li>
+            <li>{t('learn.local.step-6')}</li>
             <li>{t('learn.local.step-7')}</li>
             <Spacer size='xxs' />
             <Button block={true} onClick={copyUrl}>
@@ -196,10 +134,10 @@ function RdbOnaInstructions({
         </li>
         <li>{t('learn.ona.step-9')}</li>
       </ol>
+      <Spacer size='m' />
+      <RdbOnaContinueAlert course={title} />
+      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
+      <CodeAllyButton challengeType={challengeType} onClick={openOna} />
     </div>
   );
 }
-
-RdbOnaInstructions.displayName = 'RdbOnaInstructions';
-
-export default connect(mapStateToProps, mapDispatchToProps)(RdbOnaInstructions);
