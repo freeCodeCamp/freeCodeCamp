@@ -45,7 +45,7 @@ function createNewModule(module: string, block: string) {
   };
 }
 
-type ChapterModuleSuperblockStructure = {
+export type ChapterModuleSuperblockStructure = {
   chapters: {
     dashedName: string;
     modules: {
