@@ -1,6 +1,6 @@
 ---
 id: 68bb001c22f3bcbd1fdf38fa
-title: "Task 1"
+title: Task 1
 challengeType: 19
 dashedName: task-1
 ---
@@ -14,14 +14,14 @@ Welcome to the A1 Professional Spanish course!
 
 This is an **elementary course** focused on teaching you the very basics of the Spanish language. 
 
-The section you're in now is called `warm-up`. This is where you'll be introduced to new words before they appear in longer sentences or conversations.
+The section you're in now is called **Warm-up**. This is where you'll be introduced to new words before they appear in longer sentences or conversations.
 
 Let's start by practicing your first word in Spanish.
 
 # --instructions--
 
 Listen to the audio and answer the question below.
-There's just **one** correct answer. If you need help, click on the `explanation` at the bottom of the lesson.
+There's just **one** correct answer. If you need help, click on **explanation** at the bottom of the lesson.
 
 # --questions--
 
@@ -65,7 +65,7 @@ This is a polite word, but it's not what you hear in the audio.
 
 The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi" in English. For example:
 
-`Hola, Buenos Días` – Hi, Good morning!  
+`¡Hola, buenos días!` – Hi, good morning!  
 
 # --scene--
 
@@ -88,7 +88,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
       "filename": "ES_A1_1.1.mp3",
       "startTime": 1,
       "startTimestamp": 0.35,
-      "finishTimestamp": 1.0
+      "finishTimestamp": 0.90
     }
   },
   "commands": [
@@ -100,7 +100,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     {
       "character": "Elena",
       "startTime": 1,
-      "finishTime": 1.65,
+      "finishTime": 1.55,
       "dialogue": {
         "text": "Hola",
         "align": "center"
@@ -109,7 +109,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     {
       "character": "Elena",
       "opacity": 0,
-      "startTime": 2.15
+      "startTime": 2.05
     }
   ]
 }
