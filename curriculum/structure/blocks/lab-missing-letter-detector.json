@@ -1,0 +1,15 @@
+{
+  "name": "Build a Missing Letter Detector",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-missing-letter-detector",
+  "challengeOrder": [
+    {
+      "id": "af7588ade1100bde429baf20",
+      "title": "Build a Missing Letter Detector"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}
