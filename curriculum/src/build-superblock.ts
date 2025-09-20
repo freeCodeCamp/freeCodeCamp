@@ -4,13 +4,13 @@ import { isEmpty } from 'lodash';
 import debug from 'debug';
 
 import { parseMD } from '../../tools/challenge-parser/parser';
-import { createPoly } from '../../shared/utils/polyvinyl';
-import { isAuditedSuperBlock } from '../../shared/utils/is-audited';
+import { createPoly } from '../../shared-dist/utils/polyvinyl';
+import { isAuditedSuperBlock } from '../../shared-dist/utils/is-audited';
 import {
   CommentDictionary,
   translateCommentsInChallenge
 } from '../../tools/challenge-parser/translation-parser';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '../../shared-dist/config/curriculum';
 import { getSuperOrder } from './utils.js';
 import type {
   BlockStructure,
