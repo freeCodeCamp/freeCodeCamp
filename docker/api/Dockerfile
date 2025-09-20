@@ -27,7 +27,7 @@ RUN cd api && pnpm prisma generate
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 
-RUN pnpm create:shared
+RUN pnpm compile:ts
 RUN pnpm build:curriculum
 RUN pnpm -F=api build
 
@@ -52,7 +52,7 @@ USER node
 WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
-COPY --from=builder --chown=node:node /home/node/build/shared/config/curriculum.json shared/config/
+COPY --from=builder --chown=node:node /home/node/build/shared-dist/config/curriculum.json shared-dist/config/
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/

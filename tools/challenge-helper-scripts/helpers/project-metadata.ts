@@ -2,7 +2,7 @@ import path from 'path';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../../curriculum/file-handler';
+} from '../../../curriculum/src/file-handler';
 import { getProjectPath } from './get-project-info';
 
 export type Meta = {
