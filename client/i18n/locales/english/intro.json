@@ -3479,6 +3479,12 @@
           "In this lab, you will convert special characters in a string to their corresponding HTML entities."
         ]
       },
+      "lab-odd-fibonacci-sum-calculator": {
+        "title": "Build an Odd Fibonacci Sum Calculator",
+        "intro": [
+          "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
+        ]
+      },
       "lab-optional-arguments-sum-function": {
         "title": "Build an Optional Arguments Sum Function",
         "intro": [
