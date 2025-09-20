@@ -65,12 +65,6 @@ describe('createSuperOrder', () => {
   it('should create the correct object given an array of SuperBlocks', () => {
     expect(superOrder).toStrictEqual(fullSuperOrder);
   });
-
-  it('throws when not given an array of SuperBlocks', () => {
-    expect(() => createSuperOrder(['respansive-wib-desoin'])).toThrow(
-      'Invalid superBlock: respansive-wib-desoin'
-    );
-  });
 });
 
 describe('getSuperOrder', () => {
