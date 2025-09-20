@@ -150,6 +150,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -718,7 +719,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"

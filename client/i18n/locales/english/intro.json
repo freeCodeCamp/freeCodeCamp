@@ -4865,6 +4865,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-feature-selection": {
+        "title": "Design a Feature Selection Page",
+        "intro": ["Design a Feature Selection Page", ""]
       }
     }
   },
