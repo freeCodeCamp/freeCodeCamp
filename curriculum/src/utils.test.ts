@@ -297,18 +297,21 @@ describe('filter utils', () => {
         {
           name: 'responsive-web-design',
           blocks: [
-            { dashedName: 'basic-html-and-html5' },
-            { dashedName: 'css-flexbox' }
+            { dashedName: 'basic-html-and-html5', challengeOrder: [] },
+            { dashedName: 'css-flexbox', challengeOrder: [] }
           ]
         },
         {
           name: 'javascript-algorithms-and-data-structures',
-          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+          blocks: [
+            { dashedName: 'basic-javascript', challengeOrder: [] },
+            { dashedName: 'es6', challengeOrder: [] }
+          ]
         }
       ];
 
       expect(
-        closestFilters({ superBlock: 'responsiv web design' }, superblocks)
+        closestFilters(superblocks, { superBlock: 'responsiv web design' })
       ).toEqual({ superBlock: 'responsive-web-design' });
     });
 
@@ -317,17 +320,20 @@ describe('filter utils', () => {
         {
           name: 'responsive-web-design',
           blocks: [
-            { dashedName: 'basic-html-and-html5' },
-            { dashedName: 'css-flexbox' }
+            { dashedName: 'basic-html-and-html5', challengeOrder: [] },
+            { dashedName: 'css-flexbox', challengeOrder: [] }
           ]
         },
         {
           name: 'javascript-algorithms-and-data-structures',
-          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+          blocks: [
+            { dashedName: 'basic-javascript', challengeOrder: [] },
+            { dashedName: 'es6', challengeOrder: [] }
+          ]
         }
       ];
 
-      expect(closestFilters({ block: 'basic-javascr' }, superblocks)).toEqual({
+      expect(closestFilters(superblocks, { block: 'basic-javascr' })).toEqual({
         block: 'basic-javascript'
       });
     });

@@ -13,7 +13,12 @@ import {
 } from './build-superblock.js';
 
 import { buildCertification } from './build-certification.js';
-import { applyFilters, closestFilters, getSuperOrder  } from './utils.js';
+import {
+  applyFilters,
+  closestFilters,
+  Filter,
+  getSuperOrder
+} from './utils.js';
 import {
   getContentDir,
   getLanguageConfig,
@@ -302,13 +307,7 @@ function validateBlocks(superblocks: string[], blockStructureDir: string) {
   }
 }
 
-type Filters = {
-  superBlock?: string;
-  block?: string;
-  challengeId?: string;
-};
-
-export async function parseCurriculumStructure(filters?: Filters) {
+export async function parseCurriculumStructure(filter?: Filter) {
   const curriculum = getCurriculumStructure();
   const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
@@ -323,15 +322,15 @@ export async function parseCurriculumStructure(filters?: Filters) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
-  const refinedFilters = closestFilters(filters, superblockList);
-  const fullSuperblockList = applyFilters(superblockList, refinedFilters);
+  const refinedFilter = closestFilters(superblockList, filter);
+  const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
     fullSuperblockList,
     certifications: curriculum.certifications
   };
 }
 
-export async function buildCurriculum(lang: string, filters?: Filters) {
+export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(

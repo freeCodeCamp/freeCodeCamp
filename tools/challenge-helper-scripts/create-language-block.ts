@@ -13,7 +13,8 @@ import {
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
-  writeBlockStructure,  getSuperblockStructure
+  writeBlockStructure,
+  getSuperblockStructure
 } from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';

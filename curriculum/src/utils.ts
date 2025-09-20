@@ -134,7 +134,7 @@ export function filterByChallengeId<
     .filter(superblock => superblock.blocks.length > 0);
 }
 
-interface FilterOptions {
+export interface Filter {
   superBlock?: string;
   block?: string;
   challengeId?: string;
@@ -149,13 +149,13 @@ interface Filterable {
 }
 
 interface GenericFilterFunction {
-  <T extends Filterable>(data: T[], filters?: FilterOptions): T[];
+  <T extends Filterable>(data: T[], filters?: Filter): T[];
 }
 
 function createFilterPipeline<T extends Filterable>(
   filterFunctions: GenericFilterFunction[]
-): (data: T[], filters?: FilterOptions) => T[] {
-  return (data: T[], filters?: FilterOptions) =>
+): (data: T[], filters?: Filter) => T[] {
+  return (data: T[], filters?: Filter) =>
     filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
 }
 
@@ -165,11 +165,14 @@ export const applyFilters: GenericFilterFunction = createFilterPipeline([
   filterByChallengeId
 ]);
 
-export function closestMatch(target, xs) {
+export function closestMatch(target: string, xs: string[]): string {
   return comparison.findBestMatch(target.toLowerCase(), xs).bestMatch.target;
 }
 
-export function closestFilters(target, superblocks) {
+export function closestFilters(
+  superblocks: Filterable[],
+  target?: Filter
+): Filter | undefined {
   if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
     return {
