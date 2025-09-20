@@ -5,7 +5,271 @@
   "challengeOrder": [
     {
       "id": "6823914bc8a5c9c820230d99",
-      "title": "Dialogue 1: PLACEHOLDER"
+      "title": "Dialogue 1: How Are You Today"
+    },
+    {
+      "id": "685aba8256c67a8555402fed",
+      "title": "Task 1"
+    },
+    {
+      "id": "683f175d833c400f019dc7b3",
+      "title": "Task 2"
+    },
+    {
+      "id": "6843011597b0a18011138c9c",
+      "title": "Task 3"
+    },
+    {
+      "id": "6840ad915ebc0fbbb9daf0b4",
+      "title": "Task 4"
+    },
+    {
+      "id": "6840bfe2d2a0e4c6ae3843e1",
+      "title": "Task 5"
+    },
+    {
+      "id": "6840d16190d00cd17ecedcda",
+      "title": "Task 6"
+    },
+    {
+      "id": "6840d8ad9dd41ad753e7d03d",
+      "title": "Task 7"
+    },
+    {
+      "id": "6840dbf5c40446da1c0f7883",
+      "title": "Task 8"
+    },
+    {
+      "id": "6840e8ddca5afee29928670c",
+      "title": "Task 9"
+    },
+    {
+      "id": "6841b08901d128ffa991ec74",
+      "title": "Task 10"
+    },
+    {
+      "id": "684205cd204a062c30a500a7",
+      "title": "Task 11"
+    },
+    {
+      "id": "68420a2b04e1d12e5c1a9a6c",
+      "title": "Task 12"
+    },
+    {
+      "id": "684b14cefc4e06c9b4746aed",
+      "title": "Task 13"
+    },
+    {
+      "id": "684898bc1b359cf84155e532",
+      "title": "Task 14"
+    },
+    {
+      "id": "6848a078f611aefe8e5a3ace",
+      "title": "Task 15"
+    },
+    {
+      "id": "6848dc3da7c6b224b35b7f5b",
+      "title": "Task 16"
+    },
+    {
+      "id": "6848dfe2a2a4e02a09e6d63f",
+      "title": "Task 17"
+    },
+    {
+      "id": "685bf9516709c43436b2ef5a",
+      "title": "Task 18"
+    },
+    {
+      "id": "685c297ebe9d6230df07701a",
+      "title": "Task 19"
+    },
+    {
+      "id": "685c3e0b73526b4f739ecad8",
+      "title": "Task 20"
+    },
+    {
+      "id": "68921e87eb8d41e87732dd54",
+      "title": "Task 21"
+    },
+    {
+      "id": "684b2c6234d37de0d8b5eda1",
+      "title": "Do You Like Your Job"
+    },
+    {
+      "id": "686d41536d8e1d28869608ea",
+      "title": "Task 22"
+    },
+    {
+      "id": "686d52493c2c6a366fc1bb84",
+      "title": "Task 23"
+    },
+    {
+      "id": "686d5be43a656f406a46adba",
+      "title": "Task 24"
+    },
+    {
+      "id": "686d77d21a0a9b5b508925f1",
+      "title": "Task 25"
+    },
+    {
+      "id": "686d858e54c40f71d9c44130",
+      "title": "Task 26"
+    },
+    {
+      "id": "686d97c94a8df78623d0479a",
+      "title": "Task 27"
+    },
+    {
+      "id": "686dcdceb6f91eae051fb644",
+      "title": "Task 28"
+    },
+    {
+      "id": "686fb3601dc86d677ab288d4",
+      "title": "Task 29"
+    },
+    {
+      "id": "686fbf02ac699d72665770f5",
+      "title": "Task 30"
+    },
+    {
+      "id": "68755f6b01cadd127ecb2058",
+      "title": "Task 31"
+    },
+    {
+      "id": "687672bb59392f5f202cd6f3",
+      "title": "Dialogue 3: Where Do You Work"
+    },
+    {
+      "id": "687682220f43bc6ac0ee0b0c",
+      "title": "Task 32"
+    },
+    {
+      "id": "68769abbb1cd417e34e243c4",
+      "title": "Task 33"
+    },
+    {
+      "id": "6876a0dfe76bd88289ce9ad4",
+      "title": "Task 34"
+    },
+    {
+      "id": "6876a73f721f1988ce9115d0",
+      "title": "Task 35"
+    },
+    {
+      "id": "6876bd2a31a868977c20c287",
+      "title": "Task 36"
+    },
+    {
+      "id": "6876c42be958c59e789757f4",
+      "title": "Task 37"
+    },
+    {
+      "id": "6876c86acebf1ba2c601f08c",
+      "title": "Task 38"
+    },
+    {
+      "id": "6877e3d195775ef0d795c833",
+      "title": "Task 39"
+    },
+    {
+      "id": "6877e9125c3538f6c368c64d",
+      "title": "Task 40"
+    },
+    {
+      "id": "6877f43431a9e1ffa80f3d80",
+      "title": "Task 41"
+    },
+    {
+      "id": "6877f85185ba1704c2ed7d56",
+      "title": "Task 42"
+    },
+    {
+      "id": "6877fe677a5d960ebc081acc",
+      "title": "Task 43"
+    },
+    {
+      "id": "6882a3e8fa1ec14f25e1992a",
+      "title": "Dialogue 4: Getting to Know You"
+    },
+    {
+      "id": "6882ab8c734b5756d5228f34",
+      "title": "Task 44"
+    },
+    {
+      "id": "6882cef3c74f506e7fed713d",
+      "title": "Task 45"
+    },
+    {
+      "id": "688385457aa326d1b509ef8a",
+      "title": "Task 46"
+    },
+    {
+      "id": "68963d1cde641c64efa52421",
+      "title": "Task 47"
+    },
+    {
+      "id": "6896481cc3f3cd6d6dcc52fb",
+      "title": "Task 48"
+    },
+    {
+      "id": "689648cb12af6e6e15f0f804",
+      "title": "Task 49"
+    },
+    {
+      "id": "6896623a9e58dc7812971034",
+      "title": "Task 50"
+    },
+    {
+      "id": "6896a2ea5195618d661a2dc6",
+      "title": "Task 51"
+    },
+    {
+      "id": "6896a69637015e9028191bcf",
+      "title": "Task 52"
+    },
+    {
+      "id": "6896a99c8f5ddd9288d098ff",
+      "title": "Task 53"
+    },
+    {
+      "id": "689cefaed8cca84b4a2ab515",
+      "title": "Dialogue 5: Can You Help Me"
+    },
+    {
+      "id": "68a86bda0ddbdc381b35c34a",
+      "title": "Task 54"
+    },
+    {
+      "id": "68af2a320c54336e13642fd3",
+      "title": "Task 55"
+    },
+    {
+      "id": "68af32126641817422c86998",
+      "title": "Task 56"
+    },
+    {
+      "id": "68af35135d6a2d76453bf019",
+      "title": "Task 57"
+    },
+    {
+      "id": "68af40b16e9b1579e8bcce3e",
+      "title": "Task 58"
+    },
+    {
+      "id": "68af4510debcf67c65f768ae",
+      "title": "Task 59"
+    },
+    {
+      "id": "68af4a0d0f84807fbe621dcc",
+      "title": "Task 60"
+    },
+    {
+      "id": "68af4c7437a43880a14660c9",
+      "title": "Task 61"
+    },
+    {
+      "id": "68af4ddeee48e681c0164dd0",
+      "title": "Task 62"
     }
   ],
   "helpCategory": "English",
