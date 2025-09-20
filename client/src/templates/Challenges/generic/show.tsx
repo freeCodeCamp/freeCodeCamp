@@ -277,6 +277,7 @@ const ShowGeneric = ({
                     handleOptionChange={handleMcqOptionChange}
                     submittedMcqAnswers={submittedMcqAnswers}
                     showFeedback={showFeedback}
+                    superBlock={superBlock}
                   />
                 </ObserveKeys>
               )}

@@ -91,7 +91,8 @@ const questionJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         answer: Joi.string().required(),
-        feedback: Joi.string().allow(null)
+        feedback: Joi.string().allow(null),
+        audioId: Joi.string().allow(null)
       })
     )
     .required()
