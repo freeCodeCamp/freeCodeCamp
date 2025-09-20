@@ -37,17 +37,15 @@ When using `extended=false`, values can be only strings or arrays. The object re
 The 'body-parser' middleware should be mounted
 
 ```js
-  $.get(code + '/_api/add-body-parser').then(
-    (data) => {
-      assert.isAbove(
-        data.mountedAt,
-        0,
-        '"body-parser" is not mounted correctly'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/add-body-parser');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isAbove(
+    data.mountedAt,
+    0,
+    '"body-parser" is not mounted correctly'
   );
 ```
 

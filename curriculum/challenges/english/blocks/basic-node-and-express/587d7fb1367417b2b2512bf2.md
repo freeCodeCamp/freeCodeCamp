@@ -27,16 +27,14 @@ You will need to use the `dotenv` package. It loads environment variables from y
 The response of the endpoint `/json` should change according to the environment variable `MESSAGE_STYLE`
 
 ```js
-  $.get(code + '/_api/use-env-vars').then(
-    (data) => {
-      assert.isTrue(
-        data.passed,
-        'The response of "/json" does not change according to MESSAGE_STYLE'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/use-env-vars');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isTrue(
+    data.passed,
+    'The response of "/json" does not change according to MESSAGE_STYLE'
   );
 ```
 
