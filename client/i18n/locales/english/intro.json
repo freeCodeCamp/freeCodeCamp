@@ -4865,6 +4865,12 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-resume-builder": {
+        "title": "Build a Resume Builder",
+        "intro": [
+          "In this workshop, you will practice using Typescript and React to build a resume builder."
+        ]
       }
     }
   },
