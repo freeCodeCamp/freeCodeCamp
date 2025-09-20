@@ -38,12 +38,19 @@ const fullStackStepMeta = {
   ...baseMeta,
   blockType: '',
   blockLayout: '',
-  usesMultifileEditor: true
+  usesMultifileEditor: true,
+  hasEditableBoundaries: true
 };
 
 const quizMeta = {
   ...baseMeta,
   blockType: 'quiz',
+  blockLayout: 'link'
+};
+
+const reviewMeta = {
+  ...baseMeta,
+  blockType: 'review',
   blockLayout: 'link'
 };
 
@@ -53,7 +60,7 @@ const languageMeta = {
 };
 
 export const getBaseMeta = (
-  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack'
+  projectType: 'Step' | 'Quiz' | 'Language' | 'FullStack' | 'Review'
 ): Meta => {
   switch (projectType) {
     case 'Step':
@@ -64,6 +71,8 @@ export const getBaseMeta = (
       return fullStackStepMeta;
     case 'Language':
       return languageMeta;
+    case 'Review':
+      return reviewMeta;
     default:
       return stepMeta;
   }
