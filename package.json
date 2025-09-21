@@ -69,15 +69,18 @@
     "serve:client": "cd ./client && pnpm run serve",
     "serve:client-ci": "cd ./client && pnpm run serve-ci",
     "start": "npm-run-all create:shared -p develop:server serve:client",
-    "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:*",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s create:shared build:curriculum build-workers test:**",
     "test:source": "jest",
     "test:api": "cd api && pnpm test",
-    "test:curriculum": "cd ./curriculum && pnpm test",
-    "test-curriculum-full-output": "cd ./curriculum && pnpm run test:full-output",
-    "test-client": "jest client",
+    "test:tools:challenge-helper-scripts": "cd ./tools/challenge-helper-scripts && pnpm test run",
+    "test:tools:scripts-build": "cd ./tools/scripts/build && pnpm test run",
+    "test:tools:scripts-lint": "cd ./tools/scripts/lint && pnpm test run",
+    "test:tools:challenge-parser": "cd ./tools/challenge-parser && pnpm test run",
+    "test:curriculum:content": "cd ./curriculum && pnpm test run",
+    "test:curriculum:tooling": "cd ./curriculum && pnpm vitest run",
+    "test-curriculum-full-output": "cd ./curriculum && pnpm run test:full-output run",
+    "test:client": "cd ./client && pnpm test run",
     "test-config": "jest config",
-    "test-curriculum-js": "jest curriculum",
-    "test-tools": "jest tools",
     "test-utils": "jest utils",
     "prepare": "husky",
     "playwright:run": "playwright test",
@@ -134,7 +137,7 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.15.0",
+  "packageManager": "pnpm@10.15.1",
   "pnpm": {
     "peerDependencyRules": {
       "allowedVersions": {
@@ -159,7 +162,8 @@
       "nodemon",
       "prisma",
       "puppeteer",
-      "sharp"
+      "sharp",
+      "unrs-resolver"
     ]
   }
 }

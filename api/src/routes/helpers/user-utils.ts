@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { pick, omit } from 'lodash-es';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to
@@ -45,5 +45,5 @@ type NullableFlags = (typeof nullableFlags)[number];
 export function splitUser<U extends Record<NullableFlags, unknown>>(
   user: U
 ): [Pick<U, NullableFlags>, Omit<U, NullableFlags>] {
-  return [_.pick(user, nullableFlags), _.omit(user, nullableFlags)];
+  return [pick(user, nullableFlags), omit(user, nullableFlags)];
 }

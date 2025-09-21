@@ -2,6 +2,23 @@ name: CD - Deploy - Clients
 
 on:
   workflow_dispatch:
+    inputs:
+      target_language:
+        description: 'Target language (or "all" for all languages)'
+        type: choice
+        options:
+          - all
+          - english
+          - chinese
+          - espanol
+          - chinese-traditional
+          - italian
+          - portuguese
+          - ukrainian
+          - japanese
+          - german
+          - swahili
+        default: all
 
 jobs:
   setup-jobs:
@@ -33,46 +50,103 @@ jobs:
               ;;
           esac
 
+  setup-matrix:
+    name: Setup Matrix
+    runs-on: ubuntu-22.04
+    needs: setup-jobs
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Setup Matrix
+        uses: actions/github-script@v7
+        id: matrix
+        env:
+          TARGET_LANG: ${{ inputs.target_language }}
+        with:
+          script: |
+            // Constants
+            const NODE_VERSION = 22;
+
+            // Input sanitization and validation
+            const rawTargetLang = process.env.TARGET_LANG || 'all';
+            const targetLang = rawTargetLang.trim().toLowerCase();
+            console.log(`Target language: ${targetLang}`);
+
+            // Language mappings (single source of truth)
+            const languageMap = {
+              'english': 'eng',
+              'chinese': 'chn',
+              'espanol': 'esp',
+              'chinese-traditional': 'cnt',
+              'italian': 'ita',
+              'portuguese': 'por',
+              'ukrainian': 'ukr',
+              'japanese': 'jpn',
+              'german': 'ger',
+              'swahili': 'swa'
+            };
+
+            const allLanguages = Object.keys(languageMap);
+            let matrix;
+
+            if (targetLang === 'all') {
+              console.log('Building matrix for all languages');
+              console.log(`Available languages: ${allLanguages.join(', ')}`);
+
+              // Build include array for all languages
+              const include = allLanguages.map(lang => ({
+                'node-version': NODE_VERSION,
+                'lang-name-full': lang,
+                'lang-name-short': languageMap[lang]
+              }));
+
+              matrix = {
+                include: include
+              };
+
+            } else {
+              console.log(`Building matrix for single language: ${targetLang}`);
+
+              // Validate language selection
+              if (!languageMap[targetLang]) {
+                const errorMsg = `Unknown language '${targetLang}'. Available: ${allLanguages.join(', ')}`;
+                console.error(errorMsg);
+                core.setFailed(errorMsg);
+                return;
+              }
+
+              console.log(`Processing: ${targetLang} -> ${languageMap[targetLang]}`);
+
+              // Create single language matrix
+              matrix = {
+                include: [{
+                  'node-version': NODE_VERSION,
+                  'lang-name-full': targetLang,
+                  'lang-name-short': languageMap[targetLang]
+                }]
+              };
+            }
+
+            // Final validation
+            if (!matrix || !matrix.include || matrix.include.length === 0) {
+              core.setFailed('Generated matrix is empty or invalid');
+              return;
+            }
+
+            console.log('Generated matrix:');
+            console.log(JSON.stringify(matrix, null, 2));
+            console.log(`Matrix will create ${matrix.include.length} job(s)`);
+
+            // Set output for GitHub Actions
+            core.setOutput('matrix', JSON.stringify(matrix));
+
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
-    needs: [setup-jobs]
+    needs: [setup-jobs, setup-matrix]
     runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
-      matrix:
-        node-version: [22]
-        lang-name-full:
-          - english
-          - chinese
-          - espanol
-          - chinese-traditional
-          - italian
-          - portuguese
-          - ukrainian
-          - japanese
-          - german
-          - swahili
-        include:
-          - lang-name-full: english
-            lang-name-short: eng
-          - lang-name-full: chinese
-            lang-name-short: chn
-          - lang-name-full: espanol
-            lang-name-short: esp
-          - lang-name-full: chinese-traditional
-            lang-name-short: cnt
-          - lang-name-full: italian
-            lang-name-short: ita
-          - lang-name-full: portuguese
-            lang-name-short: por
-          - lang-name-full: ukrainian
-            lang-name-short: ukr
-          - lang-name-full: japanese
-            lang-name-short: jpn
-          - lang-name-full: german
-            lang-name-short: ger
-          - lang-name-full: swahili
-            lang-name-short: swa
+      matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
     permissions:
       deployments: write
       contents: read
@@ -143,6 +217,26 @@ jobs:
           tags: tag:ci
           version: latest
 
+      - name: Wait for Tailscale Network Readiness
+        run: |
+          echo "Waiting for Tailscale network to be ready..."
+          max_wait=60
+          elapsed=0
+
+          while [ $elapsed -lt $max_wait ]; do
+            if tailscale status --json | jq -e '.BackendState == "Running"' > /dev/null 2>&1; then
+              echo "Tailscale network is ready"
+              break
+            fi
+            sleep 2
+            elapsed=$((elapsed + 2))
+          done
+
+          if [ $elapsed -ge $max_wait ]; then
+            echo "Tailscale network not ready after ${max_wait}s"
+            exit 1
+          fi
+
       - name: Configure SSH & Check Connection
         run: |
           mkdir -p ~/.ssh
@@ -150,14 +244,50 @@ jobs:
             UserKnownHostsFile=/dev/null
             StrictHostKeyChecking no" > ~/.ssh/config
           chmod 644 ~/.ssh/config
-          sleep 10
+
+          validate_connection() {
+            local machine_name=$1
+            local max_retries=3
+            local retry_delay=5
+            
+            for attempt in $(seq 1 $max_retries); do
+              echo "Connection attempt $attempt/$max_retries to $machine_name"
+              
+              if ! tailscale status | grep -q "$machine_name"; then
+                echo "Machine $machine_name not found in Tailscale network"
+                if [ $attempt -eq $max_retries ]; then
+                  return 1
+                fi
+                sleep $retry_delay
+                continue
+              fi
+              
+              MACHINE_IP=$(tailscale ip -4 $machine_name)
+              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; uptime" > /dev/null 2>&1; then
+                echo "Successfully validated connection to $machine_name"
+                return 0
+              fi
+              
+              echo "SSH validation failed for $machine_name"
+              if [ $attempt -lt $max_retries ]; then
+                sleep $retry_delay
+              fi
+            done
+            
+            echo "Failed to establish connection to $machine_name after $max_retries attempts"
+            return 1
+          }
+
+          echo -e "\nLOG:Validating connections to all machines..."
           for i in {0..1}; do
             TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            tailscale status | grep -q "$TS_MACHINE_NAME" || { echo "Machine not found"; exit 1; }
-            sleep 1
-            MACHINE_IP=$(tailscale ip -4 $TS_MACHINE_NAME)
-            ssh $TS_USERNAME@$MACHINE_IP "uptime"
+            echo "Validating connection to $TS_MACHINE_NAME"
+            if ! validate_connection "$TS_MACHINE_NAME"; then
+              echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
+              exit 1
+            fi
           done
+          echo "All machine connections validated successfully"
 
       - name: Upload and Deploy
         run: |

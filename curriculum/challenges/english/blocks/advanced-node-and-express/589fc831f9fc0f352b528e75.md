@@ -45,7 +45,6 @@ Submit your page when you think you've got it right. If you're running into erro
 `currentUsers` should be defined.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -54,13 +53,11 @@ async () => {
     /currentUsers/s,
     'You should have variable currentUsers defined'
   );
-}
 ```
 
 Server should emit the current user count at each new connection.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -69,13 +66,11 @@ async () => {
     /io.emit.*('|")user count('|").*currentUsers/s,
     'You should emit "user count" with data currentUsers'
   );
-}
 ```
 
 Your client should be listening for `'user count'` event.
 
 ```js
-async () => {
   const url = new URL("/public/client.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -84,6 +79,5 @@ async () => {
     /socket.on.*('|")user count('|")/s,
     'Your client should be connection to server with the connection defined as socket'
   );
-}
 ```
 

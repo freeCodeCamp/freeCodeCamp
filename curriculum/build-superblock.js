@@ -4,8 +4,8 @@ const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:build-superblock');
 
 const { parseMD } = require('../tools/challenge-parser/parser');
-const { createPoly } = require('../shared/utils/polyvinyl');
-const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared-dist/utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared-dist/utils/is-audited');
 const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');
@@ -226,8 +226,6 @@ class BlockCreator {
   /**
    * @param {object} options - Options object
    * @param {string} options.blockContentDir - Directory containing block content files
-   * @param {string} options.blockStructureDir - Directory containing block structure files (meta
-   * .json)
    * @param {string} options.i18nBlockContentDir - Directory containing i18n block content files
    * @param {string} options.lang - Language code for the block content
    * @param {object} options.commentTranslations - Translations for comments in challenges
@@ -238,14 +236,12 @@ class BlockCreator {
    */
   constructor({
     blockContentDir,
-    blockStructureDir,
     i18nBlockContentDir,
     lang,
     commentTranslations,
     skipValidation
   }) {
     this.blockContentDir = blockContentDir;
-    this.blockStructureDir = blockStructureDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
     this.commentTranslations = commentTranslations;
@@ -307,29 +303,6 @@ class BlockCreator {
         this.createChallenge({ filename, block, meta, isAudited })
       )
     );
-  }
-
-  /**
-   * Gets meta information for a block from its JSON file
-   * @param {string} blockName - Name of the block
-   * @returns {object} The meta information object for the block
-   * @throws {Error} If meta file is not found
-   */
-  getMetaForBlock(blockName) {
-    // Read meta.json for this block
-    const metaPath = path.resolve(this.blockStructureDir, `${blockName}.json`);
-    if (!fs.existsSync(metaPath)) {
-      throw new Error(
-        `Meta file not found for block ${blockName}: ${metaPath}`
-      );
-    }
-
-    // Not all "meta information" can be found in the meta.json.
-    const rawMeta = JSON.parse(fs.readFileSync(metaPath, 'utf8'));
-    debug(
-      `Meta file indicates ${rawMeta.challengeOrder.length} challenges should exist`
-    );
-    return rawMeta;
   }
 
   async processBlock(block, { superBlock, order }) {

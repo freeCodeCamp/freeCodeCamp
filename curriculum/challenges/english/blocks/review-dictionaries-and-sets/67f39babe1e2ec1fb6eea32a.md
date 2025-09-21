@@ -1,7 +1,7 @@
 ---
 id: 67f39babe1e2ec1fb6eea32a
 title: Dictionaries and Sets Review
-challengeType: 24
+challengeType: 31
 dashedName: review-dictionaries-and-sets
 ---
 

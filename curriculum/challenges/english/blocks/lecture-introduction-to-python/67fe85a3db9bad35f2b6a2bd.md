@@ -47,7 +47,7 @@ if condition:
 
 * `if` statements start with the `if` keyword.
     
-* `condition` is an expression that evaluates to `True` of `False`, followed by a colon (`:`).
+* `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
 
 * The indentation specifies the block of code within the body of the `if` statement.
     

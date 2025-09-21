@@ -1,7 +1,7 @@
 ---
 id: 671a999cc77b7f9bceb4caeb
 title: CSS Animations Review
-challengeType: 24
+challengeType: 31
 dashedName: review-css-animations
 ---
 

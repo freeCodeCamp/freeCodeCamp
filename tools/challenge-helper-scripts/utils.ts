@@ -15,9 +15,9 @@ import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
   stepNum: number;
-  challengeType: number;
+  challengeType?: number;
   projectPath?: string;
-  challengeSeeds?: Record<string, ChallengeSeed>;
+  challengeSeeds?: ChallengeSeed[];
   isFirstChallenge?: boolean;
 }
 
@@ -32,7 +32,7 @@ const createStepFile = ({
   stepNum,
   challengeType,
   projectPath = getProjectPath(),
-  challengeSeeds = {},
+  challengeSeeds = [],
   isFirstChallenge = false
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
@@ -112,20 +112,20 @@ interface InsertChallengeOptions {
   title: string;
 }
 
-function insertChallengeIntoMeta({
+async function insertChallengeIntoMeta({
   index,
   id,
   title
-}: InsertChallengeOptions): void {
+}: InsertChallengeOptions) {
   const existingMeta = getMetaData();
   const challengeOrder = [...existingMeta.challengeOrder];
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   challengeOrder.splice(index, 0, { id: id.toString(), title });
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
+async function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -136,10 +136,10 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
+async function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   oldOrder.splice(stepNum - 1, 1);
@@ -149,17 +149,17 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteChallengeFromMeta(challengeIndex: number): void {
+async function deleteChallengeFromMeta(challengeIndex: number) {
   const existingMeta = getMetaData();
   const challengeOrder = [...existingMeta.challengeOrder];
   challengeOrder.splice(challengeIndex, 1);
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function updateTaskMeta() {
+async function updateTaskMeta() {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
 
@@ -176,7 +176,7 @@ function updateTaskMeta() {
     }
   });
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
 const updateStepTitles = (): void => {
@@ -248,11 +248,15 @@ const updateTaskMarkdownFiles = (): void => {
   });
 };
 
-const getChallengeSeeds = (
-  challengeFilePath: string
-): Record<string, ChallengeSeed> => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-  return parseMDSync(challengeFilePath).challengeFiles;
+type Challenge = {
+  challengeType: number;
+  challengeFiles: ChallengeSeed[];
+};
+
+const getChallenge = (challengeId: string): Challenge => {
+  const challengePath = path.join(getProjectPath(), `${challengeId}.md`);
+  const challenge = parseMDSync(challengePath) as Challenge;
+  return challenge;
 };
 
 const validateBlockName = (block: string): boolean | string => {
@@ -272,7 +276,7 @@ export {
   updateStepTitles,
   updateTaskMeta,
   updateTaskMarkdownFiles,
-  getChallengeSeeds,
+  getChallenge,
   insertChallengeIntoMeta,
   insertStepIntoMeta,
   deleteChallengeFromMeta,

@@ -49,12 +49,11 @@ jobs:
           # Uncomment below to debug
           # dryrun_action: true
 
-      # restore once the translations have been migrated.
-      # - name: Remove deleted files
-      #   uses: freecodecamp/crowdin-action@main
-      #   env:
-      #     PLUGIN: 'remove-deleted-files'
-      #     FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
+      - name: Remove deleted files
+        uses: freecodecamp/crowdin-action@main
+        env:
+          PLUGIN: 'remove-deleted-files'
+          FILE_PATHS: '["curriculum/challenges/english", "curriculum/dictionaries/english"]'
 
       - name: Hide Non-Translated Strings
         uses: freecodecamp/crowdin-action@main
