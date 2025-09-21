@@ -9121,7 +9121,7 @@
       "workshop-resume-builder": {
         "title": "Build a Resume Builder",
         "intro": [
-          "In this workshop, you will practice using Typescript and React to build a resume builder."
+          "In this workshop, you will practice using Typescript and React to build a Resume Builder app."
         ]
       }
     }
