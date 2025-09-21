@@ -1,5 +1,4 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults } from '../types';
 import { profileUI, examResults, savedChallenge } from '../types.js';
 
 export const getPublicProfile = {
