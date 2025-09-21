@@ -2604,6 +2604,13 @@
           "In this lab, you'll design a contact form in HTML and style it using CSS."
         ]
       },
+      "lab-feature-selection": {
+        "title": "Design a Feature Selection Page",
+        "intro": [
+          "In this lab, you'll build a feature selection page with custom-styled checkboxes.",
+          "You'll create feature cards with labels and checkboxes, then give custom styling to the checkboxes."
+        ]
+      },
       "review-styling-forms": {
         "title": "Styling Forms Review",
         "intro": [
@@ -4865,10 +4872,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-feature-selection": {
-        "title": "Design a Feature Selection Page",
-        "intro": ["Design a Feature Selection Page", ""]
       }
     }
   },
