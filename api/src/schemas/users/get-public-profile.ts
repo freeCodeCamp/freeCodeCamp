@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, savedChallenge } from '../types.js';
+import { profileUI, examResults } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
