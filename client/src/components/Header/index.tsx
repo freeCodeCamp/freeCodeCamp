@@ -82,6 +82,10 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
     });
   }
 
+  componentWillUnmount(): void {
+    document.removeEventListener('click', this.handleClickOutside);
+  }
+
   render(): JSX.Element {
     const { displayMenu } = this.state;
     const { examInProgress, fetchState, user, skipButtonText, pathname } =
