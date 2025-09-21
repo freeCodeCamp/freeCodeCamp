@@ -1,5 +1,5 @@
 const path = require('path');
-const { viewTypes } = require('../../../shared/config/challenge-types');
+const { viewTypes } = require('../../../shared-dist/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -102,8 +102,6 @@ exports.createChallengePages = function (
       id,
       isLastChallengeInBlock
     } = node.challenge;
-    // TODO: challengeType === 7 and isPrivate are the same, right? If so, we
-    // should remove one of them.
 
     createPage({
       path: slug,

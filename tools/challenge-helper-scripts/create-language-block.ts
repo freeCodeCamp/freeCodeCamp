@@ -1,5 +1,5 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
+import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
@@ -8,10 +8,22 @@ import ObjectID from 'bson-objectid';
 import {
   SuperBlocks,
   languageSuperBlocks,
-  superBlockToFolderMap
+  chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
-import { createDialogueFile, validateBlockName } from './utils';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
+import {
+  getContentConfig,
+  writeBlockStructure,
+  getSuperblockStructure
+} from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
+import { createDialogueFile, createQuizFile, validateBlockName } from './utils';
+import {
+  updateSimpleSuperblockStructure,
+  updateChapterModuleSuperblockStructure
+} from './helpers/create-project';
 
 const helpCategories = ['English'] as const;
 
@@ -31,23 +43,72 @@ interface CreateBlockArgs {
   block: string;
   helpCategory: string;
   title?: string;
+  chapter?: string;
+  module?: string;
+  position?: number;
+  blockType?: string;
+  blockLayout?: string;
+  questionCount?: number;
 }
 
 async function createLanguageBlock(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  title?: string
+  title?: string,
+  chapter?: string,
+  module?: string,
+  position?: number,
+  blockType?: string,
+  blockLayout?: string,
+  questionCount?: number
 ) {
   if (!title) {
     title = block;
   }
-  void updateIntroJson(superBlock, block, title);
+  await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createDialogueChallenge(superBlock, block);
-  void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  let challengeId: ObjectID;
+
+  if (blockType === BlockTypes.quiz) {
+    challengeId = await createQuizChallenge(block, title, questionCount!);
+    blockLayout = BlockLayouts.Link;
+  } else {
+    challengeId = await createDialogueChallenge(superBlock, block);
+  }
+
+  await createMetaJson(
+    block,
+    title,
+    helpCategory,
+    challengeId,
+    blockType,
+    blockLayout
+  );
+
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[superBlock];
+
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
+    if (!chapter || !module || typeof position === 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+
+    void updateChapterModuleSuperblockStructure(
+      block,
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
+      superblockFilename
+    );
+  } else {
+    void updateSimpleSuperblockStructure(block, {}, superblockFilename);
+  }
+
   // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -72,70 +133,72 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectID,
+  blockType?: string,
+  blockLayout?: string
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.superBlock = superBlock;
+
+  if (blockType) {
+    newMeta.blockType = blockType;
+  }
+  if (blockLayout) {
+    newMeta.blockLayout = blockLayout;
+  }
+
+  const challengeTitle =
+    blockType === BlockTypes.quiz ? title : "Dialogue 1: I'm Tom";
+
   newMeta.challengeOrder = [
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
-    { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
+    {
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
+      id: challengeId.toString(),
+      title: challengeTitle
+    }
   ];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
-}
-
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
-
-## Introduction to the ${title}
-
-This page is for the ${title}
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
+  await writeBlockStructure(block, newMeta);
 }
 
 async function createDialogueChallenge(
   superBlock: SuperBlocks,
   block: string
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
+
+  return createDialogueFile({
+    projectPath: newChallengeDir + '/'
+  });
+}
+
+async function createQuizChallenge(
+  block: string,
+  title: string,
+  questionCount: number
+): Promise<ObjectID> {
   const newChallengeDir = path.resolve(
     __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
+    `../../curriculum/challenges/english/${block}`
   );
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
-  return createDialogueFile({
-    projectPath: newChallengeDir + '/'
+  return createQuizFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -185,11 +248,117 @@ void prompt([
     default: 'English',
     type: 'list',
     choices: helpCategories
+  },
+  {
+    name: 'blockType',
+    message: 'Choose a block type',
+    default: BlockTypes.learn,
+    type: 'list',
+    choices: Object.values(BlockTypes),
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'blockLayout',
+    message: 'Choose a block layout',
+    default: BlockLayouts.DialogueGrid,
+    type: 'list',
+    choices: Object.values(BlockLayouts),
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock) &&
+      answers.blockType !== BlockTypes.quiz
+  },
+  {
+    name: 'questionCount',
+    message: 'Choose a question count',
+    default: 20,
+    type: 'list',
+    choices: [10, 20],
+    when: (answers: CreateBlockArgs) => answers.blockType === BlockTypes.quiz
+  },
+  {
+    name: 'chapter',
+    message: 'What chapter should this language block go in?',
+    type: 'list',
+    choices: (answers: CreateBlockArgs) => {
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[answers.superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+      return structure.chapters.map(chapter => chapter.dashedName);
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'module',
+    message: 'What module should this language block go in?',
+    type: 'list',
+    choices: (answers: CreateBlockArgs) => {
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[answers.superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+      return (
+        structure.chapters
+          .find(chapter => chapter.dashedName === answers.chapter)
+          ?.modules.map(module => module.dashedName) ?? []
+      );
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock)
+  },
+  {
+    name: 'position',
+    message: 'At which position does this appear in the module?',
+    default: 1,
+    validate: (position: string) => {
+      return parseInt(position, 10) > 0
+        ? true
+        : 'Position must be an number greater than zero.';
+    },
+    when: (answers: CreateBlockArgs) =>
+      chapterBasedSuperBlocks.includes(answers.superBlock),
+    filter: (position: string) => {
+      return parseInt(position, 10);
+    }
   }
 ])
   .then(
-    async ({ superBlock, block, helpCategory, title }: CreateBlockArgs) =>
-      await createLanguageBlock(superBlock, block, helpCategory, title)
+    async ({
+      superBlock,
+      block,
+      helpCategory,
+      title,
+      chapter,
+      module,
+      position,
+      blockType,
+      blockLayout,
+      questionCount
+    }: CreateBlockArgs) =>
+      await createLanguageBlock(
+        superBlock,
+        block,
+        helpCategory,
+        title,
+        chapter,
+        module,
+        position,
+        blockType,
+        blockLayout,
+        questionCount
+      )
   )
   .then(() =>
     console.log(

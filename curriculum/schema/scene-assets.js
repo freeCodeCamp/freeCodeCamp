@@ -45,10 +45,8 @@ const availableCharacters = [
 ];
 
 const availableBackgrounds = [
-  'bedroom-empty.png',
   'cafe.png',
   'chaos.png',
-  'classroom.png',
   'company1-boardroom.png',
   'company1-breakroom.png',
   'company1-center.png',
@@ -75,26 +73,12 @@ const availableBackgrounds = [
   'company3-roof.png',
   'cubicle.png',
   'desk.png',
-  'farm.png',
   'hacker-space-cafe.png',
   'hacker-space.png',
-  'hall-audience.png',
-  'hall.png',
   'interview-room1.png',
   'interview-room2.png',
   'interview-room3.png',
-  'kid-home.png',
-  'kitchen.png',
-  'laptop-screen.png',
-  'living-room.png',
-  'office-cafe.png',
-  'office.png',
-  'park1.png',
-  'park2.png',
-  'park3.png',
-  'park4.png',
-  'pong-field.png',
-  'tunnel.png'
+  'living-room.png'
 ];
 
 const availableAudios = [
@@ -275,7 +259,17 @@ const availableAudios = [
   'B1_23-3.mp3',
   'B1_24-1.mp3',
   'B1_24-2.mp3',
-  'B1_24-3.mp3'
+  'B1_24-3.mp3',
+  'ES_A1_1.1.mp3',
+  'ES_A1_1.2.mp3',
+  'ES_A1_1.3.mp3',
+  'ES_A1_1.4.mp3',
+  'ES_A1_2.1.mp3',
+  'ES_A1_2.2.mp3',
+  'ES_A1_2.3.mp3',
+  'ES_A1_2.4.mp3',
+  'ES_A1_3.1.mp3',
+  'ES_A1_3.2.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

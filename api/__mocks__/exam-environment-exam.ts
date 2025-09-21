@@ -5,16 +5,14 @@ import {
   ExamEnvironmentExamAttempt,
   ExamEnvironmentExam,
   ExamEnvironmentGeneratedExam,
-  ExamEnvironmentQuestionSet
+  ExamEnvironmentQuestionSet,
+  ExamEnvironmentChallenge
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-// import { defaultUserId } from '../jest.utils';
-import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
-// import { generateExam } from '../src/exam-environment/utils/exam';
+import { defaultUserId } from '../vitest.utils.js';
+import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
 export const oid = () => new ObjectId().toString();
-
-const defaultUserId = '64c7810107dd4782d32baee7';
 
 export const examId = oid();
 
@@ -248,7 +246,8 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
         }
       ]
     }
-  ]
+  ],
+  version: 1
 };
 
 export const examAttempt: ExamEnvironmentExamAttempt = {
@@ -293,7 +292,8 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
     }
   ],
   startTimeInMS: Date.now(),
-  userId: defaultUserId
+  userId: defaultUserId,
+  version: 1
 };
 
 export const examAttemptSansSubmissionTimeInMS: Static<
@@ -340,7 +340,15 @@ export const exam: ExamEnvironmentExam = {
   config,
   questionSets,
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
-  deprecated: false
+  deprecated: false,
+  version: 1
+};
+
+export const examEnvironmentChallenge: ExamEnvironmentChallenge = {
+  id: oid(),
+  examId,
+  // Id of the certified full stack developer exam challenge page
+  challengeId: '645147516c245de4d11eb7ba'
 };
 
 export async function seedEnvExam() {

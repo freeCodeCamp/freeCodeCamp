@@ -4,7 +4,7 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Alert, Spacer, Container, Row, Col, Callout } from '@freecodecamp/ui';
 import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
@@ -55,8 +55,10 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.FullStackDeveloper
   ];
 

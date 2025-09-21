@@ -1,4 +1,4 @@
-name: DOCR - Cleanup Container Images
+name: CD - Docker - DOCR Cleanup Container Images
 on:
   workflow_dispatch:
   schedule:

@@ -21,7 +21,7 @@ import {
   getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage,
   submitTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowSectionDonationRequests,
@@ -35,7 +35,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -153,7 +153,7 @@ function submitModern(type, state) {
         }
 
         update = {
-          endpoint: '/modern-challenge-completed',
+          endpoint: '/encoded/modern-challenge-completed',
           payload: body
         };
       }

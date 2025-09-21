@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import APIIcon from './icons/api';
 import D3Icon from './icons/d3';
 import DatabaseIcon from './icons/database';
@@ -43,12 +43,15 @@ const iconMap = {
   [SuperBlocks.FullStackDeveloper]: Code,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
+  [SuperBlocks.A1Spanish]: A2EnglishIcon,
   [SuperBlocks.A2Spanish]: A2EnglishIcon,
   [SuperBlocks.A2Chinese]: A2EnglishIcon,
+  [SuperBlocks.A1Chinese]: A2EnglishIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon,
   [SuperBlocks.BasicHtml]: Code,
   [SuperBlocks.SemanticHtml]: Code,
+  [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code
 };
 

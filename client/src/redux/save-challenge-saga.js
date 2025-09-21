@@ -1,6 +1,6 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { canSaveToDB } from '../../../shared/config/challenge-types';
+import { canSaveToDB } from '../../../shared-dist/config/challenge-types';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {

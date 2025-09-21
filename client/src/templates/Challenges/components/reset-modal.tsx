@@ -8,7 +8,7 @@ import { Button, Modal } from '@freecodecamp/ui';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-import { canSaveToDB } from '../../../../../shared/config/challenge-types';
+import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 
 interface ResetModalProps {
   close: () => void;

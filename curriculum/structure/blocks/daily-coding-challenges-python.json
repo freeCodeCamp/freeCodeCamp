@@ -1,0 +1,258 @@
+{
+  "name": "Daily Coding Challenges Python",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-python",
+  "usesMultifileEditor": true,
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6814d8e1516e86b171929de4",
+      "title": "Challenge 1: Vowel Balance"
+    },
+    {
+      "id": "681cb05adab50c87ddb2e513",
+      "title": "Challenge 2: Base Check"
+    },
+    {
+      "id": "681cb1a2dab50c87ddb2e514",
+      "title": "Challenge 3: Fibonacci Sequence"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e515",
+      "title": "Challenge 4: S  P  A  C  E  J  A  M"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e516",
+      "title": "Challenge 5: Jbelmud Text"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e517",
+      "title": "Challenge 6: Anagram Checker"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e518",
+      "title": "Challenge 7: Targeted Sum"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e519",
+      "title": "Challenge 8: Factorializer"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51a",
+      "title": "Challenge 9: Sum of Squares"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51b",
+      "title": "Challenge 10: 3 Strikes"
+    },
+    {
+      "id": "68216eb60f957572e7c340c4",
+      "title": "Challenge 11: Mile Pace"
+    },
+    {
+      "id": "68216ef80f957572e7c340c5",
+      "title": "Challenge 12: Message Decoder"
+    },
+    {
+      "id": "6821ebc9237de8297eaee78f",
+      "title": "Challenge 13: Unnatural Prime"
+    },
+    {
+      "id": "6821ebce237de8297eaee790",
+      "title": "Challenge 14: Character Battle"
+    },
+    {
+      "id": "6821ebd4237de8297eaee791",
+      "title": "Challenge 15: camelCase"
+    },
+    {
+      "id": "6821ebda237de8297eaee792",
+      "title": "Challenge 16: Reverse Parenthesis"
+    },
+    {
+      "id": "6821ebdf237de8297eaee793",
+      "title": "Challenge 17: Unorder of Operations"
+    },
+    {
+      "id": "6821ebe4237de8297eaee794",
+      "title": "Challenge 18: Second Best"
+    },
+    {
+      "id": "6821ebea237de8297eaee795",
+      "title": "Challenge 19: Candlelight"
+    },
+    {
+      "id": "6821ebee237de8297eaee796",
+      "title": "Challenge 20: Array Duplicates"
+    },
+    {
+      "id": "6821ebf3237de8297eaee797",
+      "title": "Challenge 21: Hex Generator"
+    },
+    {
+      "id": "6821ebf8237de8297eaee798",
+      "title": "Challenge 22: Tribonacci Sequence"
+    },
+    {
+      "id": "6821ebfd237de8297eaee799",
+      "title": "Challenge 23: RGB to Hex"
+    },
+    {
+      "id": "6821ec02237de8297eaee79a",
+      "title": "Challenge 24: Pangram"
+    },
+    {
+      "id": "68adce01c0e1144d0a902956",
+      "title": "Challenge 25: Vowel Repeater"
+    },
+    {
+      "id": "68adce01c0e1144d0a902958",
+      "title": "Challenge 26: IPv4 Validator"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295a",
+      "title": "Challenge 27: Matrix Rotate"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295c",
+      "title": "Challenge 28: Roman Numeral Parser"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295e",
+      "title": "Challenge 29: Acronym Builder"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa547",
+      "title": "Challenge 30: Unique Characters"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa549",
+      "title": "Challenge 31: Array Diff"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54b",
+      "title": "Challenge 32: Reverse Sentence"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54d",
+      "title": "Challenge 33: Screen Time"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54f",
+      "title": "Challenge 34: Missing Numbers"
+    },
+    {
+      "id": "68b06e589bf227324381476f",
+      "title": "Challenge 35: Word Frequency"
+    },
+    {
+      "id": "68b06e589bf2273243814771",
+      "title": "Challenge 36: Thermostat Adjuster"
+    },
+    {
+      "id": "68b06e589bf2273243814773",
+      "title": "Challenge 37: Sentence Capitalizer"
+    },
+    {
+      "id": "68b06e589bf2273243814775",
+      "title": "Challenge 38: Slug Generator"
+    },
+    {
+      "id": "68b06e589bf2273243814777",
+      "title": "Challenge 39: Fill The Tank"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a02",
+      "title": "Challenge 40: Photo Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a04",
+      "title": "Challenge 41: File Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a06",
+      "title": "Challenge 42: Video Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a08",
+      "title": "Challenge 43: Digits vs Letters"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a0a",
+      "title": "Challenge 44: String Mirror"
+    },
+    {
+      "id": "68b7687dded630607aceccab",
+      "title": "Challenge 45: Perfect Square"
+    },
+    {
+      "id": "68b7687dded630607aceccad",
+      "title": "Challenge 46: 2nd Largest"
+    },
+    {
+      "id": "68b7687dded630607aceccaf",
+      "title": "Challenge 47: Caught Speeding"
+    },
+    {
+      "id": "68b7687dded630607aceccb1",
+      "title": "Challenge 48: Spam Detector"
+    },
+    {
+      "id": "68b7687dded630607aceccb3",
+      "title": "Challenge 49: CSV Header Parser"
+    },
+    {
+      "id": "68b7cadffed0e75a517da66f",
+      "title": "Challenge 50: Longest Word"
+    },
+    {
+      "id": "68b7cadffed0e75a517da671",
+      "title": "Challenge 51: Phone Number Formatter"
+    },
+    {
+      "id": "68b7cadffed0e75a517da673",
+      "title": "Challenge 52: Binary to Decimal"
+    },
+    {
+      "id": "68b7cadffed0e75a517da675",
+      "title": "Challenge 53: Decimal to Binary"
+    },
+    {
+      "id": "68b7cadffed0e75a517da677",
+      "title": "Challenge 54: P@ssw0rd Str3ngth!"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d2",
+      "title": "Challenge 55: Space Week Day 1: Stellar Classification"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d3",
+      "title": "Challenge 56: Space Week Day 2: Exoplanet Search"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d4",
+      "title": "Challenge 57: Space Week Day 3: Phone Home"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d5",
+      "title": "Challenge 58: Space Week Day 4: Landing Spot"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d6",
+      "title": "Challenge 59: Space Week Day 5: Goldilocks Zone"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e24",
+      "title": "Challenge 60: Space Week Day 6: Moon Phase"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e25",
+      "title": "Challenge 61: Space Week Day 7: Launch Fuel"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e26",
+      "title": "Challenge 62: Hex to Decimal"
+    }
+  ]
+}

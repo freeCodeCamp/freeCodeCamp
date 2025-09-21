@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -210,7 +210,6 @@ export type ChallengeNode = {
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     isLocked: boolean;
-    isPrivate: boolean;
     order: number;
     questions: Question[];
     quizzes: Quiz[];
@@ -244,6 +243,7 @@ export interface Hooks {
   beforeAll?: string;
   beforeEach?: string;
   afterEach?: string;
+  afterAll?: string;
 }
 
 export type PageContext = {
@@ -394,7 +394,7 @@ export type User = {
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;

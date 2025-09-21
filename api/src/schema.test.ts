@@ -1,7 +1,8 @@
-import Ajv from 'ajv';
-import secureSchema from 'ajv/lib/refs/json-schema-secure.json';
+import { describe, test, expect } from 'vitest';
+import secureSchema from 'ajv/lib/refs/json-schema-secure.json' with { type: 'json' };
+import { Ajv } from 'ajv';
 
-import * as schemas from './schemas';
+import * as schemas from './schemas.js';
 
 // it's not strict, but that's okay - we're not using it to validate data
 const ajv = new Ajv({ strictTypes: false });

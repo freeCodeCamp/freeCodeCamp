@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`challenge parser it should not parse directives we do not use 1`] = `
+exports[`challenge parser > it should not parse directives we do not use 1`] = `
 {
   "assignments": [],
   "description": "<section id="description">
@@ -18,7 +18,7 @@ a container directive
 }
 `;
 
-exports[`challenge parser it should parse md with a scene 1`] = `
+exports[`challenge parser > it should parse md with a scene 1`] = `
 {
   "assignments": [],
   "description": "<section id="description">
@@ -72,7 +72,7 @@ exports[`challenge parser it should parse md with a scene 1`] = `
 }
 `;
 
-exports[`challenge parser it should parse video questions 1`] = `
+exports[`challenge parser > it should parse video questions 1`] = `
 {
   "assignments": [],
   "description": "<section id="description">
@@ -113,7 +113,7 @@ exports[`challenge parser it should parse video questions 1`] = `
 }
 `;
 
-exports[`challenge parser should import md from other files 1`] = `
+exports[`challenge parser > should import md from other files 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
@@ -178,7 +178,7 @@ for (let index = 0; index < array.length; index++) {
 }
 `;
 
-exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
+exports[`challenge parser > should not mix other YAML with the frontmatter 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
@@ -243,7 +243,7 @@ exports[`challenge parser should not mix other YAML with the frontmatter 1`] = `
 }
 `;
 
-exports[`challenge parser should parse a more realistic md file 1`] = `
+exports[`challenge parser > should parse a more realistic md file 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
@@ -433,7 +433,7 @@ assert(
 }
 `;
 
-exports[`challenge parser should parse a simple md file 1`] = `
+exports[`challenge parser > should parse a simple md file 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
@@ -534,7 +534,7 @@ if(let x of xs) {
 }
 `;
 
-exports[`challenge parser should parse frontmatter 1`] = `
+exports[`challenge parser > should parse frontmatter 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
@@ -596,7 +596,7 @@ exports[`challenge parser should parse frontmatter 1`] = `
 }
 `;
 
-exports[`challenge parser should parse gfm strikethrough and frontmatter 1`] = `
+exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] = `
 {
   "assignments": [],
   "challengeFiles": [
