@@ -1,5 +1,5 @@
 import { WindowLocation } from '@gatsbyjs/reach-router';
-import { i18nConstants } from '../../../shared/config/constants';
+import { i18nConstants } from '../../../shared-dist/config/constants';
 
 const splitPath = (pathname: string): string[] =>
   pathname.split('/').filter(x => x);

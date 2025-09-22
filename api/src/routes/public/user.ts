@@ -1,11 +1,11 @@
 import { Portfolio } from '@prisma/client';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import { omit } from 'lodash-es';
 
-import { isRestricted } from '../helpers/is-restricted';
-import * as schemas from '../../schemas';
-import { splitUser } from '../helpers/user-utils';
+import { isRestricted } from '../helpers/is-restricted.js';
+import * as schemas from '../../schemas.js';
+import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
   NormalizedChallenge,
@@ -13,14 +13,14 @@ import {
   normalizeProfileUI,
   normalizeTwitter,
   removeNulls
-} from '../../utils/normalize';
+} from '../../utils/normalize.js';
 import {
   Calendar,
   getCalendar,
   getPoints,
   ProgressTimestamp
-} from '../../utils/progress';
-import { challengeTypes } from '../../../../shared/config/challenge-types';
+} from '../../utils/progress.js';
+import { challengeTypes } from '../../../../shared/config/challenge-types.js';
 
 type ProfileUI = Partial<{
   isLocked: boolean;
@@ -137,7 +137,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
 
       const [flags, rest] = splitUser(user);
 
-      const publicUser = _.omit(rest, [
+      const publicUser = omit(rest, [
         'currentChallengeId',
         'email',
         'emailVerified',

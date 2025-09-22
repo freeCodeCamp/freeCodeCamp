@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest';
-import { setupServer, superRequest } from '../../../vitest.utils';
-import { DEPLOYMENT_VERSION } from '../../utils/env';
+import { setupServer, superRequest } from '../../../vitest.utils.js';
+import { DEPLOYMENT_VERSION } from '../../utils/env.js';
 
 describe('/status', () => {
   setupServer();

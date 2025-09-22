@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { replaceAppleQuotes } from './replace-apple-quotes';
 
 describe('replaceAppleQuotes()', () => {
