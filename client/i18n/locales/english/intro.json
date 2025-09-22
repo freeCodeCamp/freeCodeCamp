@@ -3725,6 +3725,12 @@
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
       },
+      "lab-smart-word-replacement": {
+        "title": "Build a Smart Word Replacement Function",
+        "intro": [
+          "In this lab, you will use regex to create a function that performs a search and replace operation on a given string."
+        ]
+      },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
         "intro": [
