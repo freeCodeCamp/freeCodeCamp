@@ -7,6 +7,7 @@ module.exports = {
     'tools/challenge-parser/',
     'tools/scripts/build/',
     'tools/scripts/lint/',
+    'shared',
     'curriculum',
     'client',
     'shared/'
