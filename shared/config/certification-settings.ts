@@ -107,7 +107,8 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
+  javascript2025: 'isJavaScript2025Cert'
 } as const;
 
 export const certIds = {
@@ -129,7 +130,8 @@ export const certIds = {
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  jsAlgoDataStructV8Id: '658180220947283cdc0689ce'
+  jsAlgoDataStructV8Id: '658180220947283cdc0689ce',
+  javascript2025Id: '68c4069c1ef859270e17c495'
 };
 
 export const completionHours = {
@@ -176,7 +178,8 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+  [Certification.Js2025]: certTypes.javascript2025
 
   // upcoming
 };
@@ -204,6 +207,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+  [SuperBlocks.Js2025]: certTypes.javascript2025,
 
   // post-modern
   // TODO: use enum
@@ -254,7 +258,8 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.javascript2025]: 'JavaScript'
 };
 
 export const superBlockToCertMap: {
