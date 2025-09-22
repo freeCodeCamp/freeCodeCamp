@@ -1,14 +1,14 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import Stripe from 'stripe';
 
-import { STRIPE_SECRET_KEY } from '../../utils/env';
+import { STRIPE_SECRET_KEY } from '../../utils/env.js';
 import {
   donationSubscriptionConfig,
   allStripeProductIdsArray
-} from '../../../../shared/config/donation-settings';
-import * as schemas from '../../schemas';
-import { inLastFiveMinutes } from '../../utils/validate-donation';
-import { findOrCreateUser } from '../helpers/auth-helpers';
+} from '../../../../shared/config/donation-settings.js';
+import * as schemas from '../../schemas.js';
+import { inLastFiveMinutes } from '../../utils/validate-donation.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 /**
  * Plugin for public donation endpoints.

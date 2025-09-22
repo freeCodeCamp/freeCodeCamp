@@ -1,4 +1,4 @@
-import { Certification } from '../../../../../../shared/config/certification-settings';
+import { Certification } from '../../../../../../shared-dist/config/certification-settings';
 import { User } from '../../../../redux/prop-types';
 
 export const getCertifications = (user: User) => {

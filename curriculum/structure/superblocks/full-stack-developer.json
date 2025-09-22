@@ -385,6 +385,7 @@
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
             "lab-html-entitiy-converter",
@@ -402,7 +403,9 @@
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
             "lab-value-remover-function",
+            "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
+            "lab-deep-flattening-tool",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -705,6 +708,7 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
             "review-object-oriented-programming",
@@ -716,7 +720,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -821,6 +824,8 @@
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
+            "lecture-introduction-to-git-and-github",
+            "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
             "workshop-sql-reference-object",
             "lab-periodic-table-database",
             "lab-number-guessing-game",
@@ -875,26 +880,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -911,11 +904,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,

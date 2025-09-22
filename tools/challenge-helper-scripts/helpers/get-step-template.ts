@@ -22,7 +22,7 @@ ${content}`
 
 type StepOptions = {
   challengeId: ObjectID;
-  challengeSeeds: Record<string, ChallengeSeed>;
+  challengeSeeds: ChallengeSeed[];
   stepNum: number;
   challengeType?: number;
   isFirstChallenge?: boolean;
@@ -44,8 +44,8 @@ function getStepTemplate({
   challengeType,
   isFirstChallenge = false
 }: StepOptions): string {
-  const seedTexts = Object.values(challengeSeeds)
-    .map(({ contents, ext, editableRegionBoundaries }: ChallengeSeed) => {
+  const seedTexts = challengeSeeds
+    .map(({ contents, ext, editableRegionBoundaries }) => {
       let fullContents = contents;
       if (editableRegionBoundaries.length >= 2) {
         fullContents = insertErms(contents, editableRegionBoundaries);
@@ -54,14 +54,14 @@ function getStepTemplate({
     })
     .join('\n');
 
-  const seedHeads = Object.values(challengeSeeds)
-    .filter(({ head }: ChallengeSeed) => head)
-    .map(({ ext, head }: ChallengeSeed) => getCodeBlock(ext, head))
+  const seedHeads = challengeSeeds
+    .filter(({ head }) => head)
+    .map(({ ext, head }) => getCodeBlock(ext, head))
     .join('\n');
 
-  const seedTails = Object.values(challengeSeeds)
-    .filter(({ tail }: ChallengeSeed) => tail)
-    .map(({ ext, tail }: ChallengeSeed) => getCodeBlock(ext, tail))
+  const seedTails = challengeSeeds
+    .filter(({ tail }) => tail)
+    .map(({ ext, tail }) => getCodeBlock(ext, tail))
     .join('\n');
 
   const stepDescription = `step ${stepNum} instructions`;
