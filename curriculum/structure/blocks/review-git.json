@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-git",
-  "superBlock": "full-stack-developer",
   "challengeOrder": [
     { "id": "6724e4cfea0c4f2425a9d064", "title": "Git Review" }
   ],

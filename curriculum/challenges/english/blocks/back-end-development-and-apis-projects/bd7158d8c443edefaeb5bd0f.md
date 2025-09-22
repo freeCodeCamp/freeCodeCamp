@@ -32,29 +32,24 @@ You should provide your own project, not the example URL.
 You can submit a form that includes a file upload.
 
 ```js
-async () => {
   const site = await fetch(code);
   const data = await site.text();
   const doc = new DOMParser().parseFromString(data, 'text/html');
   assert(doc.querySelector('input[type="file"]'));
-};
 ```
 
 The form file input field has the `name` attribute set to `upfile`.
 
 ```js
-async () => {
   const site = await fetch(code);
   const data = await site.text();
   const doc = new DOMParser().parseFromString(data, 'text/html');
   assert(doc.querySelector('input[name="upfile"]'));
-};
 ```
 
 When you submit a file, you receive the file `name`, `type`, and `size` in bytes within the JSON response.
 
 ```js
-async () => {
   const formData = new FormData();
   const fileData = await fetch(
     'https://cdn.freecodecamp.org/weather-icons/01d.png'
@@ -69,6 +64,5 @@ async () => {
   assert.property(parsed, 'size');
   assert.equal(parsed.name, 'icon');
   assert.equal(parsed.type, 'image/png');
-};
 ```
 

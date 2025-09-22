@@ -32,7 +32,6 @@ assert(
 When `display` is set to `true`, a `div`, `button`, and `h1` should render.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -47,13 +46,11 @@ async () => {
       mockedComponent.find('button').length === 1 &&
       mockedComponent.find('h1').length === 1
   );
-};
 ```
 
 When `display` is set to `false`, only a `div` and `button` should render.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -68,7 +65,6 @@ async () => {
       mockedComponent.find('button').length === 1 &&
       mockedComponent.find('h1').length === 0
   );
-};
 ```
 
 The render method should use an `if/else` statement to check the condition of `this.state.display`.

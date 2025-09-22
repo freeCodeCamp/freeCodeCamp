@@ -1,12 +1,6 @@
 const Joi = require('joi');
 
-const {
-  SuperBlocks,
-  chapterBasedSuperBlocks
-} = require('../../shared/config/curriculum');
-
 const slugRE = new RegExp('^[a-z0-9-]+$');
-const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
 
 const schema = Joi.object()
   .keys({
@@ -27,23 +21,13 @@ const schema = Joi.object()
       'lecture',
       'review',
       'quiz',
-      'exam'
-    ).when('superBlock', {
-      is: 'full-stack-developer',
-      then: Joi.required(),
-      otherwise: Joi.optional()
-    }),
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
+    ),
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
-    superBlock: Joi.string()
-      .regex(slugWithSlashRE)
-      .valid(...Object.values(SuperBlocks))
-      .required(),
-    order: Joi.number().when('superBlock', {
-      is: chapterBasedSuperBlocks,
-      then: Joi.forbidden(),
-      otherwise: Joi.required()
-    }),
     usesMultifileEditor: Joi.boolean(),
     hasEditableBoundaries: Joi.boolean(),
     disableLoopProtectTests: Joi.boolean(),

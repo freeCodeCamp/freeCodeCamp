@@ -3,8 +3,6 @@
   "isUpcomingChange": false,
   "dashedName": "learn-relational-databases-by-building-a-database-of-video-game-characters",
   "helpCategory": "Backend Development",
-  "order": 1,
-  "superBlock": "relational-database",
   "challengeOrder": [
     {
       "id": "5f2c289f164c29556da632fd",

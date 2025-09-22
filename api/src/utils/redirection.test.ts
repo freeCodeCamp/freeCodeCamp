@@ -7,8 +7,8 @@ import {
   getRedirectParams,
   getPrefixedLandingPath,
   getLoginRedirectParams
-} from './redirection';
-import { HOME_LOCATION } from './env';
+} from './redirection.js';
+import { HOME_LOCATION } from './env.js';
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';

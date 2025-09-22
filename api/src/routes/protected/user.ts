@@ -1,18 +1,17 @@
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
 import { FastifyInstance, FastifyReply } from 'fastify';
 import jwt from 'jsonwebtoken';
-import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
+import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library.js';
 
-import * as schemas from '../../schemas';
-import * as examEnvironmentSchemas from '../../exam-environment/schemas';
-import { createResetProperties } from '../../utils/create-user';
-import { customNanoid } from '../../utils/ids';
-import { encodeUserToken } from '../../utils/tokens';
-import { trimTags } from '../../utils/validation';
-import { generateReportEmail } from '../../utils/email-templates';
-import { splitUser } from '../helpers/user-utils';
+import * as schemas from '../../schemas.js';
+import * as examEnvironmentSchemas from '../../exam-environment/schemas/index.js';
+import { createResetProperties } from '../../utils/create-user.js';
+import { customNanoid } from '../../utils/ids.js';
+import { encodeUserToken } from '../../utils/tokens.js';
+import { trimTags } from '../../utils/validation.js';
+import { generateReportEmail } from '../../utils/email-templates.js';
+import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
   normalizeFlags,
@@ -20,19 +19,20 @@ import {
   normalizeSurveys,
   normalizeTwitter,
   removeNulls
-} from '../../utils/normalize';
-import { mapErr, type UpdateReqType } from '../../utils';
+} from '../../utils/normalize.js';
+import { mapErr, type UpdateReqType } from '../../utils/index.js';
 import {
   getCalendar,
   getPoints,
   ProgressTimestamp
-} from '../../utils/progress';
-import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env';
+} from '../../utils/progress.js';
+import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
+  getExamAttemptsByExamIdHandler,
   getExamAttemptsHandler
-} from '../../exam-environment/routes/exam-environment';
-import { ERRORS } from '../../exam-environment/utils/errors';
+} from '../../exam-environment/routes/exam-environment.js';
+import { ERRORS } from '../../exam-environment/utils/errors.js';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -495,6 +495,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     getExamAttemptHandler
   );
+  fastify.get(
+    '/user/exam-environment/exams/:examId/attempts',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentGetExamAttemptsByExamId
+    },
+    getExamAttemptsByExamIdHandler
+  );
 
   done();
 };
@@ -519,7 +526,7 @@ async function examEnvironmentTokenHandler(
 
   // In non-production environments, only staff are allowed to generate a token
   if (
-    DEPLOYMENT_ENV !== 'org' &&
+    DEPLOYMENT_ENV !== 'production' &&
     (!req.user?.email?.endsWith('@freecodecamp.org') ||
       !req.user?.emailVerified)
   ) {
@@ -697,6 +704,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           user: {
             [username]: {
               ...removeNulls(publicUser),
+              sendQuincyEmail: publicUser.sendQuincyEmail,
               ...normalizeFlags(flags),
               picture: publicUser.picture ?? '',
               email: email ?? '',
