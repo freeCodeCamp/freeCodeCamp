@@ -1,7 +1,7 @@
 ---
 title: JavaScript Certification
-superBlock: javascript-2025
-certification: javascript-2025
+superBlock: javascript-v9
+certification: javascript-v9
 ---
 
 ## Introduction to JavaScript Certification

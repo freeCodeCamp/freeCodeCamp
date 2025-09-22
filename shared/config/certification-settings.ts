@@ -27,7 +27,7 @@ export enum Certification {
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
   FullStackDeveloper = 'full-stack-developer-v9',
-  Js2025 = 'javascript-2025',
+  JsV9 = 'javascript-v9',
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
@@ -80,7 +80,7 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.FullStackDeveloper,
-  Certification.Js2025,
+  Certification.JsV9,
   Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
@@ -108,7 +108,7 @@ export const certTypes = {
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
   jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
-  javascript2025: 'isJavaScript2025Cert'
+  jsV9: 'isJavaScriptV9Cert'
 } as const;
 
 export const certIds = {
@@ -131,7 +131,7 @@ export const certIds = {
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
   jsAlgoDataStructV8Id: '658180220947283cdc0689ce',
-  javascript2025Id: '68c4069c1ef859270e17c495'
+  javascriptV9Id: '68c4069c1ef859270e17c495'
 };
 
 export const completionHours = {
@@ -179,7 +179,7 @@ export const certSlugTypeMap = {
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [Certification.Js2025]: certTypes.javascript2025
+  [Certification.JsV9]: certTypes.jsV9
 
   // upcoming
 };
@@ -207,7 +207,7 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [SuperBlocks.Js2025]: certTypes.javascript2025,
+  [SuperBlocks.JsV9]: certTypes.jsV9,
 
   // post-modern
   // TODO: use enum
@@ -259,7 +259,7 @@ export const certTypeTitleMap = {
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
   [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
-  [certTypes.javascript2025]: 'JavaScript'
+  [certTypes.jsV9]: 'JavaScript'
 };
 
 export const superBlockToCertMap: {
@@ -281,7 +281,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.RespWebDesignNew]: Certification.RespWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: Certification.JsAlgoDataStruct,
   [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
-  [SuperBlocks.Js2025]: Certification.Js2025,
+  [SuperBlocks.JsV9]: Certification.JsV9,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
   [SuperBlocks.A1Spanish]: null,
@@ -321,7 +321,7 @@ export const linkedInCredentialIds = {
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
   [Certification.FullStackDeveloper]: 'fsd',
-  [Certification.Js2025]: 'jsc',
+  [Certification.JsV9]: 'js',
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd',

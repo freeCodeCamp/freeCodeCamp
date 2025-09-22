@@ -17,7 +17,7 @@ const idToPath = new Map(
     '5e44431b903586ffb414c951': Certification.SciCompPy,
     '5e46fc95ac417301a38fb934': Certification.DataAnalysisPy,
     '5e46fc95ac417301a38fb935': Certification.MachineLearningPy,
-    '68c4069c1ef859270e17c495': Certification.Js2025
+    '68c4069c1ef859270e17c495': Certification.JsV9
   })
 );
 
