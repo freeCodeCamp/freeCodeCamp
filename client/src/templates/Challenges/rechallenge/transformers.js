@@ -101,7 +101,7 @@ async function loadPresetTypescriptReact() {
 
   if (!presetTypescript)
     presetTypescript = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-typescript'
+      /* webpackChunkName: "@babel/preset-typescript" */ '@babel/preset-typescript'
     );
 
   presetsTSX = {
