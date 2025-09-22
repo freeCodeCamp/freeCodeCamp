@@ -3455,6 +3455,12 @@
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working with the arguments Object and Rest Parameters",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
@@ -3522,18 +3528,29 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
       "lab-sum-all-primes-calculator": {
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
+        ]
+      },
       "lab-all-true-property-validator": {
         "title": "Build an All-True Property Validator",
         "intro": [
           "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
-        ]
-      },
+        ]},
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -4484,9 +4501,11 @@
           "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
@@ -4647,7 +4666,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
         "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
+          "In this lecture, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
       "lab-nth-fibonacci-number": {
@@ -4811,7 +4830,16 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "rhhl": { "title": "328", "intro": [] },
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lectures."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lectures."
+        ]
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -4855,10 +4883,38 @@
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+    },
+    "modules": {
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+    },
+    "module-intros": {
+      "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "a1-professional-spanish-placeholder-block": {
-        "title": "A1 Professional Spanish Placeholder Block",
-        "intro": ["Placeholder intro text."]
+      "es-a1-warm-up-greetings-and-farewells-basics": {
+        "title": "Greetings and Farewells Basics",
+        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },

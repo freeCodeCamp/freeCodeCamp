@@ -1,5 +1,6 @@
 import React from 'react';
 import { create, ReactTestRendererJSON } from 'react-test-renderer';
+import { describe, expect, it, vi } from 'vitest';
 import AuthOrProfile from './components/auth-or-profile';
 
 const defaultUserProps = {
@@ -37,7 +38,7 @@ const topDonatingContributorUserProps = {
   }
 };
 
-jest.mock('../../analytics');
+vi.mock('../../analytics');
 
 describe('<AuthOrProfile />', () => {
   it('has avatar with default border for default users', () => {

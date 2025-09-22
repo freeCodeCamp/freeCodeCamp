@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<BlockIntros /> matches snapshot 1`] = `
+exports[`<BlockIntros /> > matches snapshot 1`] = `
 <div
   className="block-description"
 >
