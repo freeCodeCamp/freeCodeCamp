@@ -3473,6 +3473,12 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
+        ]
+      },
       "lab-html-entitiy-converter": {
         "title": "Implement an HTML Entity Converter",
         "intro": [
@@ -3724,6 +3730,12 @@
         "intro": [
           "In this lab, you'll implement a Pig Latin translator using JavaScript.",
           "You'll practice string manipulation, conditional logic, and regular expressions."
+        ]
+      },
+            "lab-smart-word-replacement": {
+        "title": "Build a Smart Word Replacement Function",
+        "intro": [
+          "In this lab, you will use regex to create a function that performs a search and replace operation on a given string."
         ]
       },
       "review-javascript-regular-expressions": {

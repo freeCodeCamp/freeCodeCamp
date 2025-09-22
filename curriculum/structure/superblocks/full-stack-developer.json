@@ -388,6 +388,7 @@
             "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
@@ -454,6 +455,7 @@
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
             "lab-pig-latin",
+            "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
