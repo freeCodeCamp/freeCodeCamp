@@ -3550,7 +3550,8 @@
         "title": "Build an All-True Property Validator",
         "intro": [
           "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
-        ]},
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
