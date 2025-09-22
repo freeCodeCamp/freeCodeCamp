@@ -5,8 +5,8 @@
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "68c38d803dabd3da2faa7b14", "title": "Adding CvPreview component" },
-    { "id": "68d0fae70ef80774d384d4c1", "title": "Step 2" }
+    { "id": "68c38d803dabd3da2faa7b14", "title": "Adding Main component" },
+    { "id": "68d0fae70ef80774d384d4c1", "title": "Adding CvPreview component" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true
