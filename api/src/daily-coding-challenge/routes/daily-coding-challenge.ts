@@ -1,11 +1,11 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import * as schemas from '../schemas';
+import * as schemas from '../schemas/index.js';
 import {
   getNowUsCentral,
   getUtcMidnight,
   dateStringToUtcMidnight
-} from '../utils/helpers';
+} from '../utils/helpers.js';
 
 /**
  * Plugin containing public GET routes for the daily coding challenges.

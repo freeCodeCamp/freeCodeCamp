@@ -16,10 +16,10 @@ import {
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
-import { omit } from 'lodash';
-import * as schemas from '../schemas';
-import { mapErr } from '../../utils';
-import { ERRORS } from './errors';
+import { omit } from 'lodash-es';
+import * as schemas from '../schemas/index.js';
+import { mapErr } from '../../utils/index.js';
+import { ERRORS } from './errors.js';
 
 interface CompletedChallengeId {
   completedChallenges: {

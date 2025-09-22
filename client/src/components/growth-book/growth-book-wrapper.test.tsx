@@ -1,4 +1,5 @@
 import React from 'react';
+import { vi, describe, test, expect, beforeEach } from 'vitest';
 import { render, waitFor } from '@testing-library/react';
 import GrowthBookWrapper from './growth-book-wrapper';
 
@@ -31,35 +32,39 @@ const UnconnectedTestWrapper = ({
   </GrowthBookWrapper>
 );
 
-jest.mock('react-redux', () => ({
+vi.mock('react-redux', () => ({
   connect: () => (Comp: React.ComponentType) => Comp
 }));
 
-jest.mock('./growth-book-redux-connector', () => ({
+vi.mock('./growth-book-redux-connector', () => ({
   __esModule: true,
   default: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
   )
 }));
 
-jest.mock('../../../config/env.json', () => ({
-  clientLocale: 'en',
-  growthbookUri: 'https://example.com/api/features/gb_client_123'
+vi.mock('../../../config/env.json', () => ({
+  default: {
+    clientLocale: 'en',
+    growthbookUri: 'https://example.com/api/features/gb_client_123'
+  }
 }));
 
-jest.mock('../../../config/growthbook-features-default.json', () => ({
-  mockFeature: { defaultValue: true }
+vi.mock('../../../config/growthbook-features-default.json', () => ({
+  default: {
+    mockFeature: { defaultValue: true }
+  }
 }));
 
 let currentInitImpl: () =>
   | Promise<{ success: boolean; source?: string }>
   | Promise<never> = () => Promise.resolve({ success: true });
 
-const mockInit = jest.fn(() => currentInitImpl());
-const mockSetPayload = jest.fn((_arg: Record<string, unknown>) =>
+const mockInit = vi.fn(() => currentInitImpl());
+const mockSetPayload = vi.fn((_arg: Record<string, unknown>) =>
   Promise.resolve()
 );
-const mockSetAttributes = jest.fn((_arg: Record<string, unknown>) =>
+const mockSetAttributes = vi.fn((_arg: Record<string, unknown>) =>
   Promise.resolve()
 );
 
@@ -69,8 +74,8 @@ export function setInitImpl(
   currentInitImpl = impl;
 }
 
-jest.mock('@growthbook/growthbook-react', () => ({
-  GrowthBook: jest.fn().mockImplementation(() => ({
+vi.mock('@growthbook/growthbook-react', () => ({
+  GrowthBook: vi.fn().mockImplementation(() => ({
     init: () => mockInit(),
     setPayload: (arg: Record<string, unknown>) => mockSetPayload(arg),
     setAttributes: (arg: Record<string, unknown>) => mockSetAttributes(arg)
@@ -98,7 +103,7 @@ function renderWrapper(initOptions: { complete: boolean }) {
 
 describe('GrowthBookWrapper init effect', () => {
   beforeEach(() => {
-    jest.clearAllMocks();
+    vi.clearAllMocks();
     setInitImpl(() => Promise.resolve({ success: true }));
     mockInit.mockImplementation(() => currentInitImpl());
   });

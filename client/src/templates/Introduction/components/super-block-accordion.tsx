@@ -3,17 +3,22 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: source the superblock structure via a GQL query, rather than directly
 // from the curriculum
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
+import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
-import { FsdChapters } from '../../../../../shared/config/chapters';
-import { type Module } from '../../../../../shared/config/modules';
+import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
+import { FsdChapters } from '../../../../../shared-dist/config/chapters';
+import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
@@ -174,12 +179,16 @@ export const SuperBlockAccordion = ({
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks) {
+  function getSuperblockStructure(superBlock: SuperBlocks): {
+    chapters: Chapter[];
+  } {
     switch (superBlock) {
       case SuperBlocks.FullStackOpen:
         return fullStackOpen;
       case SuperBlocks.FullStackDeveloper:
         return fullStackCert;
+      case SuperBlocks.A1Spanish:
+        return a1Spanish;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }

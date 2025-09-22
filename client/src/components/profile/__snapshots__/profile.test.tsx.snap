@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<Profile/> renders correctly 1`] = `
+exports[`<Profile/> > renders correctly 1`] = `
 <div>
   <div
     class="h-[30px]"

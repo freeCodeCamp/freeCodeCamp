@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { isContained } from './is-contained';
 
 describe('client/src isContained', () => {
