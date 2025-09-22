@@ -3455,6 +3455,12 @@
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working with the arguments Object and Rest Parameters",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
@@ -3526,6 +3532,12 @@
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4478,9 +4490,11 @@
           "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",

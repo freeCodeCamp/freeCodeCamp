@@ -11,7 +11,7 @@ import {
 
 vi.mock('../helpers/challenge-helpers', async () => {
   const originalModule = await vi.importActual<
-    typeof import('../helpers/challenge-helpers')
+    typeof import('../helpers/challenge-helpers.js')
   >('../helpers/challenge-helpers');
 
   return {
@@ -23,12 +23,12 @@ vi.mock('../helpers/challenge-helpers', async () => {
 
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
 import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
 import request from 'supertest';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../shared/config/challenge-types.js';
 import {
   defaultUserId,
   devLogin,
@@ -38,7 +38,7 @@ import {
   defaultUserEmail,
   createSuperRequest,
   defaultUsername
-} from '../../../vitest.utils';
+} from '../../../vitest.utils.js';
 import {
   completedExamChallengeOneCorrect,
   completedExamChallengeTwoCorrect,
@@ -53,15 +53,27 @@ import {
   examWithTwoCorrect,
   examWithAllCorrect,
   type ExamSubmission
-} from '../../../__mocks__/exam';
-import { Answer } from '../../utils/exam-types';
-import type { getSessionUser } from '../../schemas/user/get-session-user';
-import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers';
+} from '../../../__mocks__/exam.js';
+import { Answer } from '../../utils/exam-types.js';
+import type { getSessionUser } from '../../schemas/user/get-session-user.js';
+import { verifyTrophyWithMicrosoft } from '../helpers/challenge-helpers.js';
 
 const mockVerifyTrophyWithMicrosoft = vi.mocked(verifyTrophyWithMicrosoft);
 
 const EXISTING_COMPLETED_DATE = new Date('2024-11-08').getTime();
 const DATE_NOW = Date.now();
+
+vi.mock('../helpers/challenge-helpers.js', async () => {
+  const originalModule = await vi.importActual<
+    typeof import('../helpers/challenge-helpers.js')
+  >('../helpers/challenge-helpers');
+
+  return {
+    __esModule: true,
+    ...originalModule,
+    verifyTrophyWithMicrosoft: vi.fn()
+  };
+});
 
 const isValidChallengeCompletionErrorMsg = {
   type: 'error',

@@ -385,6 +385,7 @@
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
             "lab-html-entitiy-converter",
@@ -402,6 +403,7 @@
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
             "lab-sum-all-primes-calculator",
+            "lab-deep-flattening-tool",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -704,6 +706,7 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
             "review-object-oriented-programming",

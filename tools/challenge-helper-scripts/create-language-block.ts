@@ -1,4 +1,5 @@
 import fs from 'fs/promises';
+import { existsSync } from 'fs';
 import path from 'path';
 import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
@@ -6,17 +7,23 @@ import ObjectID from 'bson-objectid';
 
 import {
   SuperBlocks,
-  languageSuperBlocks
+  languageSuperBlocks,
+  chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
-  writeBlockStructure
+  writeBlockStructure,
+  getSuperblockStructure
 } from '../../curriculum/file-handler';
 import { superBlockToFilename } from '../../curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
-import { createDialogueFile, validateBlockName } from './utils';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+import { createDialogueFile, createQuizFile, validateBlockName } from './utils';
+import {
+  updateSimpleSuperblockStructure,
+  updateChapterModuleSuperblockStructure
+} from './helpers/create-project';
 
 const helpCategories = ['English'] as const;
 
@@ -36,25 +43,70 @@ interface CreateBlockArgs {
   block: string;
   helpCategory: string;
   title?: string;
+  chapter?: string;
+  module?: string;
+  position?: number;
+  blockType?: string;
+  blockLayout?: string;
+  questionCount?: number;
 }
 
 async function createLanguageBlock(
   superBlock: SuperBlocks,
   block: string,
   helpCategory: string,
-  title?: string
+  title?: string,
+  chapter?: string,
+  module?: string,
+  position?: number,
+  blockType?: string,
+  blockLayout?: string,
+  questionCount?: number
 ) {
   if (!title) {
     title = block;
   }
   await updateIntroJson(superBlock, block, title);
 
-  const challengeId = await createDialogueChallenge(superBlock, block);
-  await createMetaJson(block, title, helpCategory, challengeId);
+  let challengeId: ObjectID;
+
+  if (blockType === BlockTypes.quiz) {
+    challengeId = await createQuizChallenge(block, title, questionCount!);
+    blockLayout = BlockLayouts.Link;
+  } else {
+    challengeId = await createDialogueChallenge(superBlock, block);
+  }
+
+  await createMetaJson(
+    block,
+    title,
+    helpCategory,
+    challengeId,
+    blockType,
+    blockLayout
+  );
+
   const superblockFilename = (
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
-  void updateSimpleSuperblockStructure(block, {}, superblockFilename);
+
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
+    if (!chapter || !module || typeof position === 'undefined') {
+      throw Error(
+        'Missing one of the following arguments: chapter, module, position'
+      );
+    }
+
+    void updateChapterModuleSuperblockStructure(
+      block,
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
+      superblockFilename
+    );
+  } else {
+    void updateSimpleSuperblockStructure(block, {}, superblockFilename);
+  }
+
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
 }
@@ -84,15 +136,31 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectID,
+  blockType?: string,
+  blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
+
+  if (blockType) {
+    newMeta.blockType = blockType;
+  }
+  if (blockLayout) {
+    newMeta.blockLayout = blockLayout;
+  }
+
+  const challengeTitle =
+    blockType === BlockTypes.quiz ? title : "Dialogue 1: I'm Tom";
+
   newMeta.challengeOrder = [
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
-    { id: challengeId.toString(), title: "Dialogue 1: I'm Tom" }
+    {
+      // eslint-disable-next-line @typescript-eslint/no-base-to-string
+      id: challengeId.toString(),
+      title: challengeTitle
+    }
   ];
 
   await writeBlockStructure(block, newMeta);
@@ -111,6 +179,26 @@ async function createDialogueChallenge(
 
   return createDialogueFile({
     projectPath: newChallengeDir + '/'
+  });
+}
+
+async function createQuizChallenge(
+  block: string,
+  title: string,
+  questionCount: number
+): Promise<ObjectID> {
+  const newChallengeDir = path.resolve(
+    __dirname,
+    `../../curriculum/challenges/english/${block}`
+  );
+  if (!existsSync(newChallengeDir)) {
+    await withTrace(fs.mkdir, newChallengeDir);
+  }
+  return createQuizFile({
+    projectPath: newChallengeDir + '/',
+    title: title,
+    dashedName: block,
+    questionCount: questionCount
   });
 }
 
@@ -163,11 +251,85 @@ void (async () => {
       default: answers.block
     });
 
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the block?',
+      default: answers.block
+    });
+
+    // Set new fields conditionally
+    if (chapterBasedSuperBlocks.includes(answers.superBlock)) {
+      answers.blockType = await select({
+        message: 'Choose a block type',
+        choices: Object.values(BlockTypes),
+        default: BlockTypes.learn
+      });
+
+      if (answers.blockType !== BlockTypes.quiz) {
+        answers.blockLayout = await select({
+          message: 'Choose a block layout',
+          choices: Object.values(BlockLayouts),
+          default: BlockLayouts.DialogueGrid
+        });
+      }
+
+      if (answers.blockType === BlockTypes.quiz) {
+        answers.questionCount = await select({
+          message: 'Choose a question count',
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ],
+          default: 20
+        });
+      }
+
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[answers.superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+
+      answers.chapter = await select({
+        message: 'What chapter should this language block go in?',
+        choices: structure.chapters.map(ch => ch.dashedName)
+      });
+
+      const chapterData = structure.chapters.find(
+        ch => ch.dashedName === answers.chapter
+      );
+      answers.module = await select({
+        message: 'What module should this language block go in?',
+        choices: chapterData?.modules.map(m => m.dashedName) ?? []
+      });
+
+      answers.position = parseInt(
+        await input({
+          message: 'At which position does this appear in the module?',
+          default: '1',
+          validate: (pos: string) =>
+            parseInt(pos, 10) > 0
+              ? true
+              : 'Position must be a number greater than zero.'
+        })
+      );
+    }
+
     await createLanguageBlock(
       answers.superBlock,
       answers.block,
       answers.helpCategory,
-      answers.title
+      answers.title,
+      answers.chapter,
+      answers.module,
+      answers.position,
+      answers.blockType,
+      answers.blockLayout,
+      answers.questionCount
     );
 
     console.log(
