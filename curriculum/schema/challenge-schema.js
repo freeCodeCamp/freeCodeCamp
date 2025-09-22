@@ -1,11 +1,11 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../shared/config/challenge-types');
+const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks
-} = require('../../shared/config/curriculum');
+} = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -137,7 +137,10 @@ const schema = Joi.object().keys({
       'lecture',
       'review',
       'quiz',
-      'exam'
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ).required(),
     otherwise: Joi.valid(null)
   }),
@@ -306,7 +309,8 @@ const schema = Joi.object().keys({
   hooks: Joi.object().keys({
     beforeAll: Joi.string().allow(''),
     beforeEach: Joi.string().allow(''),
-    afterEach: Joi.string().allow('')
+    afterEach: Joi.string().allow(''),
+    afterAll: Joi.string().allow('')
   }),
   tests: Joi.array()
     .items(

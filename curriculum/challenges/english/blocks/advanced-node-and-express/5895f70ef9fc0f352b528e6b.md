@@ -33,7 +33,6 @@ Submit your page when you think you've got it right. If you're running into erro
 You should correctly add a Pug render variable to `/profile`.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -42,6 +41,5 @@ async () => {
     /username:( |)req.user.username/,
     'You should be passing the variable username with req.user.username into the render function of the profile page'
   );
-}
 ```
 

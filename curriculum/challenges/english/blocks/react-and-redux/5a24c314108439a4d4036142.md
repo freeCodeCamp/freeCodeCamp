@@ -39,7 +39,6 @@ assert(
 The `DisplayMessages` component should render a `div` containing an `h2` element, a `button` element, a `ul` element, and `li` elements as children.
 
 ```js
-() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
   const state = () => {
     mockedComponent.setState({ messages: ['__TEST__MESSAGE'] });
@@ -53,7 +52,6 @@ The `DisplayMessages` component should render a `div` containing an `h2` element
       updated.find('ul').length === 1 &&
       updated.find('li').length > 0
   );
-};
 ```
 
 `.map` should be used on the `messages` array.
@@ -65,7 +63,6 @@ assert(code.match(/this\.state\.messages\.map/g));
 The `input` element should render the value of `input` in local state.
 
 ```js
-() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
@@ -76,13 +73,11 @@ The `input` element should render the value of `input` in local state.
   };
   const updated = changed();
   assert(updated.find('input').props().value === testValue);
-};
 ```
 
 Calling the method `handleChange` should update the `input` value in state to the current input.
 
 ```js
-() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
@@ -97,13 +92,11 @@ Calling the method `handleChange` should update the `input` value in state to th
     initialState.input === '' &&
       afterInput.state().input === '__TEST__EVENT__MESSAGE__'
   );
-};
 ```
 
 Clicking the `Add message` button should call the method `submitMessage` which should add the current `input` to the `messages` array in state.
 
 ```js
-() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
@@ -138,13 +131,11 @@ Clicking the `Add message` button should call the method `submitMessage` which s
       submitState_2.messages.length === 2 &&
       submitState_2.messages[1] === testMessage_2
   );
-};
 ```
 
 The `submitMessage` method should clear the current input.
 
 ```js
-() => {
   const mockedComponent = Enzyme.mount(React.createElement(DisplayMessages));
   const causeChange = (c, v) =>
     c.find('input').simulate('change', { target: { value: v } });
@@ -163,7 +154,6 @@ The `submitMessage` method should clear the current input.
   const afterSubmit = firstSubmit();
   const submitState = afterSubmit.state();
   assert(firstState.input === testMessage && submitState.input === '');
-};
 ```
 
 # --seed--
