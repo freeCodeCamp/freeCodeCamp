@@ -7,7 +7,7 @@ dashedName: step-1
 
 # --description--
 
-In this workshop, you are going to build an *Email Simulator* that would simulate sending, receiving, and managing emails between different users. You'll learn about classes, objects, and how to organize code in an object-oriented way.
+In this workshop, you are going to build an *Email Simulator* that simulates sending, receiving, and managing emails between different users. You'll learn about classes, objects, and how to organize code in an object-oriented way.
 
 Begin by creating a class named `Email` using the `class` keyword.
 
