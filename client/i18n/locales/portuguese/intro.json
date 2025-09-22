@@ -3531,10 +3531,22 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
       "lab-sum-all-primes-calculator": {
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -4511,9 +4523,11 @@
           "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
@@ -4677,7 +4691,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
         "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
+          "In this lecture, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
       "lab-nth-fibonacci-number": {
