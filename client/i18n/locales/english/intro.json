@@ -3372,7 +3372,7 @@
       "lab-missing-letter-detector": {
         "title": "Build a Missing Letter Detector",
         "intro": [
-          "In this lab you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+          "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
         ]
       },
       "review-javascript-loops": {
