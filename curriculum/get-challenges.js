@@ -3,7 +3,7 @@ const path = require('path');
 const util = require('util');
 
 const { curriculum: curriculumLangs } =
-  require('../shared/config/i18n').availableLangs;
+  require('../shared-dist/config/i18n').availableLangs;
 const { buildCurriculum } = require('./build-curriculum');
 
 const access = util.promisify(fs.access);
@@ -14,7 +14,7 @@ exports.getChallengesForLang = async function getChallengesForLang(
 ) {
   const invalidLang = !curriculumLangs.includes(lang);
   if (invalidLang)
-    throw Error(`${lang} is not a accepted language.
+    throw Error(`${lang} is not an accepted language.
 Accepted languages are ${curriculumLangs.join(', ')}`);
 
   return buildCurriculum(lang, filters);

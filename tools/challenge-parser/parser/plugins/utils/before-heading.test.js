@@ -1,7 +1,8 @@
-const isArray = require('lodash/isArray');
+import isArray from 'lodash/isArray';
+import { describe, beforeAll, it, expect } from 'vitest';
 
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const getAllBefore = require('./before-heading');
+import parseFixture from '../../__fixtures__/parse-fixture';
+import getAllBefore from './before-heading';
 
 describe('before-headings', () => {
   let simpleAst;

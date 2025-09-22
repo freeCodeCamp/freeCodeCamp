@@ -169,19 +169,14 @@ function getContentDocument<T extends Document = FrameDocument>(
   return frameDocument as T;
 }
 
-export const runTestInTestFrame = async function (
-  test: string,
+export const runTestsInTestFrame = async function (
+  tests: string[],
   timeout: number,
   type: 'dom' | 'javascript' | 'python'
-): Promise<TestResult | undefined> {
+): Promise<TestResult[] | undefined> {
   const runner = window?.FCCTestRunner.getRunner(type);
 
-  return await Promise.race([
-    new Promise<
-      { pass: boolean } | { err: { message: string; stack?: string } }
-    >((_, reject) => setTimeout(() => reject(Error('timeout')), timeout)),
-    runner?.runTest(test)
-  ]);
+  return runner?.runAllTests(tests, timeout);
 };
 
 export const prepTestRunner = async ({

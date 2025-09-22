@@ -7,13 +7,15 @@ function plugin() {
     const beforeAll = getHook(tree, '--before-all--');
     const beforeEach = getHook(tree, '--before-each--');
     const afterEach = getHook(tree, '--after-each--');
+    const afterAll = getHook(tree, '--after-all--');
 
-    if (!beforeAll && !beforeEach && !afterEach) return;
+    if (!beforeAll && !beforeEach && !afterEach && !afterAll) return;
 
     file.data.hooks = file.data.hooks = {
       ...(beforeAll && { beforeAll }),
       ...(beforeEach && { beforeEach }),
-      ...(afterEach && { afterEach })
+      ...(afterEach && { afterEach }),
+      ...(afterAll && { afterAll })
     };
   }
 }

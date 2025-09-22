@@ -2,13 +2,14 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
+import { describe, test, expect } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared/config/curriculum';
+} from '../../../shared-dist/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
