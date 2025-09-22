@@ -388,6 +388,7 @@
             "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
@@ -402,6 +403,7 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
             "lab-deep-flattening-tool",
             "review-javascript-higher-order-functions",
@@ -718,7 +720,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -879,26 +880,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -915,11 +904,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,
