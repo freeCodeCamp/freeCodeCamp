@@ -1,6 +1,24 @@
 {
   "chapters": [
     {
+      "dashedName": "es-a1-chapter-welcome-to-a1-professional-spanish",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-introduction-and-certification-overview",
+          "blocks": []
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-letters-and-sounds",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-alphabet-accents-and-punctuation",
+          "blocks": []
+        }
+      ]
+    },
+    {
       "dashedName": "es-a1-chapter-greetings-and-introductions",
       "modules": [
         {
