@@ -118,6 +118,7 @@ describe('GrowthBookWrapper init effect', () => {
   });
 
   test('applies fallback when init resolves with success: false', async () => {
+    vi.spyOn(console, 'warn').mockImplementation(() => {});
     setInitImpl(() => Promise.resolve({ success: false, source: 'network' }));
 
     renderWrapper({ complete: false });
@@ -129,6 +130,7 @@ describe('GrowthBookWrapper init effect', () => {
   });
 
   test('applies fallback when init rejects', async () => {
+    vi.spyOn(console, 'error').mockImplementation(() => {});
     setInitImpl(() => Promise.reject(new Error('boom')));
 
     renderWrapper({ complete: false });

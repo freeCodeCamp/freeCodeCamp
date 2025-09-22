@@ -93,7 +93,6 @@ const GrowthBookWrapper = ({
     void growthbook
       .init({ timeout: 1000 })
       .then(res => {
-        console.log('GrowthBook initialized', res);
         if (!res || !res.success) {
           console.warn('GrowthBook initialization failed.', {
             source: res?.source,
