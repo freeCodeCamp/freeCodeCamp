@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 
-import { describe, it, beforeAll } from 'vitest';
+import { describe, it, beforeAll, expect } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
@@ -78,8 +78,12 @@ export async function defineTestsForBlock({ block }) {
     const dashedBlockName = challenge.block;
     if (dashedBlockName && !meta[dashedBlockName]) {
       meta[dashedBlockName] = getBlockStructure(dashedBlockName);
-      const result = validateMetaSchema(meta[dashedBlockName]);
-      if (result.error) throw new AssertionError(result.error);
+      describe(`Meta structure for block ${dashedBlockName}`, () => {
+        it('Has valid structure', () => {
+          const result = validateMetaSchema(meta[dashedBlockName]);
+          expect(result.error).toBeUndefined();
+        });
+      });
     }
   }
 
