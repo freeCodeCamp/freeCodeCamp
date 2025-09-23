@@ -45,9 +45,7 @@ describe('external curriculum data build', () => {
 
   test('there should be an endpoint to request submit types from', () => {
     expect(
-      fs.existsSync(
-        `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
-      )
+      fs.existsSync(`${clientStaticPath}/curriculum-data/submit-types.json`)
     ).toBeTruthy();
   });
 
