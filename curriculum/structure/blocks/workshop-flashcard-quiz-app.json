@@ -4,7 +4,10 @@
   "dashedName": "workshop-flashcard-quiz-app",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68c386c67b3209fcb7029c1d", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68c386c67b3209fcb7029c1d", "title": "Step 1" },
+    { "id": "68d1e1efd5361f066445d2ca", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true
 }
