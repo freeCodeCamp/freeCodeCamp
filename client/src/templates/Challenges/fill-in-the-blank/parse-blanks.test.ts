@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { parseBlanks } from './parse-blanks';
 
 describe('parseBlanks', () => {

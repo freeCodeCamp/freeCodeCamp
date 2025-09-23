@@ -11,7 +11,7 @@ import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -317,7 +317,9 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for the urriculum outline workshop
   const showIndependentLowerJaw =
-    blockName === 'workshop-curriculum-outline' && isIndependentLowerJawEnabled;
+    blockName === 'workshop-curriculum-outline' &&
+    isIndependentLowerJawEnabled &&
+    !isMobile;
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {

@@ -383,11 +383,14 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-title-case-converter",
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
@@ -402,7 +405,9 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
+            "lab-deep-flattening-tool",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -451,6 +456,7 @@
             "lab-palindrome-checker",
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
+            "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
@@ -705,6 +711,7 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
             "review-object-oriented-programming",
@@ -716,7 +723,6 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
-
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -821,6 +827,8 @@
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
+            "lecture-introduction-to-git-and-github",
+            "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
             "workshop-sql-reference-object",
             "lab-periodic-table-database",
             "lab-number-guessing-game",
@@ -875,26 +883,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -911,11 +907,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,

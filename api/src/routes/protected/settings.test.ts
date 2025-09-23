@@ -16,15 +16,15 @@ import {
   createSuperRequest,
   defaultUserId,
   defaultUserEmail
-} from '../../../vitest.utils';
-import { formatMessage } from '../../plugins/redirect-with-message';
-import { createUserInput } from '../../utils/create-user';
-import { API_LOCATION, HOME_LOCATION } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { formatMessage } from '../../plugins/redirect-with-message.js';
+import { createUserInput } from '../../utils/create-user.js';
+import { API_LOCATION, HOME_LOCATION } from '../../utils/env.js';
 import {
   isPictureWithProtocol,
   getWaitMessage,
   validateSocialUrl
-} from './settings';
+} from './settings.js';
 
 const baseProfileUI = {
   isLocked: false,

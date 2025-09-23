@@ -1,4 +1,6 @@
+// @vitest-environment jsdom
 import { expectSaga } from 'redux-saga-test-plan';
+import { describe, it, vi } from 'vitest';
 import {
   postChargeStripe,
   postChargeStripeCard,
@@ -18,11 +20,11 @@ import {
   updateCardError
 } from './actions';
 
-jest.mock('../utils/ajax');
-jest.mock('../analytics/call-ga');
-jest.mock('../utils/stripe', () => ({
+vi.mock('../utils/ajax');
+vi.mock('../analytics/call-ga');
+vi.mock('../utils/stripe', () => ({
   stripe: Promise.resolve({
-    redirectToCheckout: jest.fn()
+    redirectToCheckout: vi.fn()
   })
 }));
 
@@ -32,7 +34,7 @@ const postChargeDataMock = {
     paymentContext: 'donate page',
     amount: '500',
     duration: 'month',
-    handleAuthentication: jest.fn(),
+    handleAuthentication: vi.fn(),
     paymentMethodId: '123456'
   }
 };

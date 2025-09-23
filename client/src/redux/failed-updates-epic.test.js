@@ -1,10 +1,11 @@
 import { ActionsObservable, StateObservable } from 'redux-observable';
 import { Subject } from 'rxjs';
 import store from 'store';
+import { describe, it, expect, vi } from 'vitest';
 import { actionTypes } from './action-types';
 import failedUpdatesEpic from './failed-updates-epic';
 
-jest.mock('../analytics');
+vi.mock('../analytics');
 
 const key = 'fcc-failed-updates';
 
