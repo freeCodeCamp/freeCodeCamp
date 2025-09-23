@@ -1,6 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import * as schemas from '../../schemas';
+import * as schemas from '../../schemas.js';
 
 type Endpoints = [string, 'GET' | 'POST'][];
 

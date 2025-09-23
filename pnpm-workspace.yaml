@@ -11,6 +11,7 @@ packages:
   - 'tools/crowdin'
   - 'tools/daily-challenges'
   - 'tools/scripts/build'
+  - 'tools/scripts/lint'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
 

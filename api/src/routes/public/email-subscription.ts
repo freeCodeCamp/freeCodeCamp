@@ -1,6 +1,6 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import * as schemas from '../../schemas';
-import { getRedirectParams } from '../../utils/redirection';
+import * as schemas from '../../schemas.js';
+import { getRedirectParams } from '../../utils/redirection.js';
 
 /**
  * Endpoints to set 'sendQuincyEmail' to true or false using 'unsubscribeId'.

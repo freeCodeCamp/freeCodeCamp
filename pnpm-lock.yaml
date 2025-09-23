@@ -195,11 +195,11 @@ importers:
         specifier: ^7.0.5
         version: 7.0.5
       ajv:
-        specifier: 8.12.0
-        version: 8.12.0
+        specifier: 8.17.1
+        version: 8.17.1
       ajv-formats:
-        specifier: 2.1.1
-        version: 2.1.1(ajv@8.12.0)
+        specifier: 3.0.1
+        version: 3.0.1(ajv@8.17.1)
       date-fns:
         specifier: 4.1.0
         version: 4.1.0
@@ -227,6 +227,9 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
+      lodash-es:
+        specifier: 4.17.21
+        version: 4.17.21
       mongodb:
         specifier: 6.10.0
         version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
@@ -252,8 +255,8 @@ importers:
         specifier: 16.0.0
         version: 16.0.0
       validator:
-        specifier: 13.11.0
-        version: 13.11.0
+        specifier: 13.15.15
+        version: 13.15.15
     devDependencies:
       '@total-typescript/ts-reset':
         specifier: 0.5.1
@@ -261,6 +264,9 @@ importers:
       '@types/jsonwebtoken':
         specifier: 9.0.5
         version: 9.0.5
+      '@types/lodash-es':
+        specifier: ^4.17.12
+        version: 4.17.12
       '@types/nodemailer':
         specifier: 6.4.14
         version: 6.4.14
@@ -340,8 +346,8 @@ importers:
         specifier: 1.3.9
         version: 1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@growthbook/growthbook-react':
-        specifier: 0.20.0
-        version: 0.20.0(react@17.0.2)
+        specifier: 1.6.0
+        version: 1.6.0(react@17.0.2)
       '@headlessui/react':
         specifier: 1.7.19
         version: 1.7.19(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -718,6 +724,9 @@ importers:
       '@types/polka':
         specifier: ^0.5.7
         version: 0.5.7
+      '@types/string-similarity':
+        specifier: ^4.0.2
+        version: 4.0.2
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -727,9 +736,6 @@ importers:
       glob:
         specifier: 8.1.0
         version: 8.1.0
-      invariant:
-        specifier: 2.2.4
-        version: 2.2.4
       joi:
         specifier: 17.12.2
         version: 17.12.2
@@ -774,13 +780,13 @@ importers:
         version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   shared:
-    dependencies:
-      '@types/invariant':
-        specifier: ^2.2.37
-        version: 2.2.37
-      invariant:
-        specifier: 2.2.4
-        version: 2.2.4
+    devDependencies:
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   tools/challenge-editor/api:
     dependencies:
@@ -1075,6 +1081,15 @@ importers:
       readdirp:
         specifier: 3.6.0
         version: 3.6.0
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+
+  tools/scripts/lint:
+    devDependencies:
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
@@ -3029,18 +3044,18 @@ packages:
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
 
-  '@growthbook/growthbook-react@0.20.0':
-    resolution: {integrity: sha512-mFlp0z6oZv71uRcze7QMkr5xRqoWAFxXahY9DFa/mwHwLS1giqC7wE5DQUKz2ZaC8G3YZ7ORpXB9bOc9ucILZw==}
+  '@growthbook/growthbook-react@1.6.0':
+    resolution: {integrity: sha512-B1zSLfjRKfDlXNXMCvDLBGRAEslNDu2acUgCtHLvtGm/ZeiXtT4TuSG6dy9U2XcXczMFHoDtDln3skGb6mbo7g==}
     engines: {node: '>=10'}
     peerDependencies:
-      react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0
-
-  '@growthbook/growthbook@0.30.0':
-    resolution: {integrity: sha512-ennMHKZIhAZokHHcnA9/tOTLFdBB4DQR0WHT8Lf1pD80jWVv8JBCAzsV1jzSjYUQhb8R8pLR2Kho0IfgjzIZGQ==}
-    engines: {node: '>=10'}
+      react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0
 
   '@growthbook/growthbook@1.3.1':
     resolution: {integrity: sha512-ewtwq6+86rRKwcYUXEmBVR1JuiEIYZhxow/Z52qyAxJwEHdXmpS4Yk8sVeVD9bphCwE2r0zuifxFkBxmnIL4Mg==}
+    engines: {node: '>=10'}
+
+  '@growthbook/growthbook@1.6.0':
+    resolution: {integrity: sha512-0aMB8j1lVLob4uXpFpTmylMEzlMsaaeFZiXgtaveCQwF+vwdKZG+aCOX/XQyLEvdsU1x3M4s/kZSiFM1lRMgQw==}
     engines: {node: '>=10'}
 
   '@hapi/address@2.1.4':
@@ -4592,9 +4607,6 @@ packages:
   '@types/inquirer@8.2.11':
     resolution: {integrity: sha512-15UboTvxb9SOaPG7CcXZ9dkv8lNqfiAwuh/5WxJDLjmElBt9tbx1/FDsEnJddUBKvN4mlPKvr8FyO1rAmBanzg==}
 
-  '@types/invariant@2.2.37':
-    resolution: {integrity: sha512-IwpIMieE55oGWiXkQPSBY1nw1nFs6bsKXTFskNY8sdS17K24vyEBRQZEwlRS7ZmXCWnJcQtbxWzly+cODWGs2A==}
-
   '@types/istanbul-lib-coverage@2.0.4':
     resolution: {integrity: sha512-z/QT1XN4K4KYuslS23k62yDIDLwLFkzxOuMplDtObz0+y7VqJCaO2o+SPwHCvLFZh7xazvvoor2tA/hPz9ee7g==}
 
@@ -4807,6 +4819,9 @@ packages:
 
   '@types/store@2.0.5':
     resolution: {integrity: sha512-5NmTKe3GWdOaykzq7no+Ahf6mafJu0oLc9JNhJ3E26+0oFvd6GnksnZQpMXcH526mfG4xDYjFiKzyDL51PzeWQ==}
+
+  '@types/string-similarity@4.0.2':
+    resolution: {integrity: sha512-LkJQ/jsXtCVMK+sKYAmX/8zEq+/46f1PTQw7YtmQwb74jemS1SlNLmARM2Zml9DgdDTWKAtc5L13WorpHPDjDA==}
 
   '@types/superagent@4.1.19':
     resolution: {integrity: sha512-McM1mlc7PBZpCaw0fw/36uFqo0YeA6m8JqoyE4OfqXsZCIg0hPP2xdE6FM7r6fdprDZHlJwDpydUj1R++93hCA==}
@@ -5403,14 +5418,6 @@ packages:
     resolution: {integrity: sha512-4I7Td01quW/RpocfNayFdFVk1qSuoh0E7JrbRJ16nH01HhKFQ88INq9Sd+nd72zqRySlr9BmDA8xlEJ6vJMrYA==}
     engines: {node: '>=8'}
 
-  ajv-formats@2.1.1:
-    resolution: {integrity: sha512-Wx0Kx52hxE7C18hkMEggYlEifqWZtYaRgouJor+WMdPnQyEK13vgEWyVNup7SoeeoLMsr4kf5h6dOW11I15MUA==}
-    peerDependencies:
-      ajv: ^8.0.0
-    peerDependenciesMeta:
-      ajv:
-        optional: true
-
   ajv-formats@3.0.1:
     resolution: {integrity: sha512-8iUql50EUR+uUcdRQ3HDqa6EVyo3docL8g5WJ3FNcWmu62IbkGUue/pEyLBW8VGKKucTPgqeks4fIU1DA4yowQ==}
     peerDependencies:
@@ -5429,6 +5436,9 @@ packages:
 
   ajv@8.12.0:
     resolution: {integrity: sha512-sRu1kpcO9yLtYxBKvqfTeh9KzZEwO3STyX1HT+4CaDzC6HpTGYhIhPIzj9XuKU7KYDwnaeh5hcOwjy1QuJzBPA==}
+
+  ajv@8.17.1:
+    resolution: {integrity: sha512-B/gBuNg5SiMTrPkC+A2+cW0RszwxYmn6VYxB/inlBStS5nx6xHIt/ehKRhIMhqusl7a8LjQoZnjCs5vhwxOQ1g==}
 
   algoliasearch-helper@3.22.5:
     resolution: {integrity: sha512-lWvhdnc+aKOKx8jyA3bsdEgHzm/sglC4cYdMG4xSQyRiPLJVJtH/IVYZG3Hp6PkTEhQqhyVYkeP9z2IlcHJsWw==}
@@ -13857,6 +13867,10 @@ packages:
     resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
     engines: {node: '>= 0.10'}
 
+  validator@13.15.15:
+    resolution: {integrity: sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A==}
+    engines: {node: '>= 0.10'}
+
   value-or-promise@1.0.6:
     resolution: {integrity: sha512-9r0wQsWD8z/BxPOvnwbPf05ZvFngXyouE9EKB+5GbYix+BYnAwrIChCUyFIinfbf2FL/U71z+CPpbnmTdxrwBg==}
     engines: {node: '>=12'}
@@ -17302,8 +17316,8 @@ snapshots:
 
   '@fastify/ajv-compiler@4.0.2':
     dependencies:
-      ajv: 8.12.0
-      ajv-formats: 3.0.1(ajv@8.12.0)
+      ajv: 8.17.1
+      ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.0.6
 
   '@fastify/cookie@11.0.1':
@@ -17589,16 +17603,16 @@ snapshots:
     dependencies:
       graphql: 15.8.0
 
-  '@growthbook/growthbook-react@0.20.0(react@17.0.2)':
+  '@growthbook/growthbook-react@1.6.0(react@17.0.2)':
     dependencies:
-      '@growthbook/growthbook': 0.30.0
+      '@growthbook/growthbook': 1.6.0
       react: 17.0.2
 
-  '@growthbook/growthbook@0.30.0':
+  '@growthbook/growthbook@1.3.1':
     dependencies:
       dom-mutator: 0.6.0
 
-  '@growthbook/growthbook@1.3.1':
+  '@growthbook/growthbook@1.6.0':
     dependencies:
       dom-mutator: 0.6.0
 
@@ -19595,8 +19609,6 @@ snapshots:
       '@types/through': 0.0.33
       rxjs: 7.8.1
 
-  '@types/invariant@2.2.37': {}
-
   '@types/istanbul-lib-coverage@2.0.4': {}
 
   '@types/istanbul-lib-report@3.0.1':
@@ -19835,6 +19847,8 @@ snapshots:
   '@types/statuses@2.0.5': {}
 
   '@types/store@2.0.5': {}
+
+  '@types/string-similarity@4.0.2': {}
 
   '@types/superagent@4.1.19':
     dependencies:
@@ -20585,13 +20599,9 @@ snapshots:
       clean-stack: 2.2.0
       indent-string: 4.0.0
 
-  ajv-formats@2.1.1(ajv@8.12.0):
+  ajv-formats@3.0.1(ajv@8.17.1):
     optionalDependencies:
-      ajv: 8.12.0
-
-  ajv-formats@3.0.1(ajv@8.12.0):
-    optionalDependencies:
-      ajv: 8.12.0
+      ajv: 8.17.1
 
   ajv-keywords@3.5.2(ajv@6.12.6):
     dependencies:
@@ -20610,6 +20620,13 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+
+  ajv@8.17.1:
+    dependencies:
+      fast-deep-equal: 3.1.3
+      fast-uri: 3.0.6
+      json-schema-traverse: 1.0.0
+      require-from-string: 2.0.2
 
   algoliasearch-helper@3.22.5(algoliasearch@4.22.1):
     dependencies:
@@ -23838,8 +23855,8 @@ snapshots:
   fast-json-stringify@6.0.1:
     dependencies:
       '@fastify/merge-json-schemas': 0.2.1
-      ajv: 8.12.0
-      ajv-formats: 3.0.1(ajv@8.12.0)
+      ajv: 8.17.1
+      ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.0.6
       json-schema-ref-resolver: 2.0.1
       rfdc: 1.4.1
@@ -24351,7 +24368,7 @@ snapshots:
       '@babel/plugin-proposal-numeric-separator': 7.18.6(@babel/core@7.23.7)
       '@babel/plugin-proposal-optional-chaining': 7.17.12(@babel/core@7.23.7)
       '@babel/preset-typescript': 7.23.3(@babel/core@7.23.7)
-      '@babel/runtime': 7.27.3
+      '@babel/runtime': 7.23.9
       babel-plugin-remove-graphql-queries: 3.15.0(@babel/core@7.23.7)(gatsby@3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2))
       gatsby: 3.15.0(@types/node@20.12.8)(babel-eslint@10.1.0(eslint@7.32.0))(eslint-import-resolver-typescript@3.10.1)(eslint-plugin-testing-library@3.9.0(eslint@7.32.0)(typescript@5.2.2))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
     transitivePeerDependencies:
@@ -31820,6 +31837,8 @@ snapshots:
       spdx-expression-parse: 3.0.1
 
   validator@13.11.0: {}
+
+  validator@13.15.15: {}
 
   value-or-promise@1.0.6: {}
 

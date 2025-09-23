@@ -17,7 +17,7 @@ import {
 import {
   canSaveToDB,
   challengeTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {

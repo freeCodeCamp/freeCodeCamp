@@ -9,7 +9,7 @@ import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared/config/curriculum';
+} from '../../../shared-dist/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator

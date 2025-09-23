@@ -1,10 +1,10 @@
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
-import { build, buildOptions } from './src/app';
-import { createUserInput } from './src/utils/create-user';
-import { examJson } from './__mocks__/exam';
-import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
+import { build, buildOptions } from './src/app.js';
+import { createUserInput } from './src/utils/create-user.js';
+import { examJson } from './__mocks__/exam.js';
+import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -211,7 +211,8 @@ If you are seeing this error, the root cause is likely an error thrown in the be
   });
 }
 
-export const defaultUserId = '64c7810107dd4782d32baee7';
+// demoUser _id to allow testing with mock data
+export const defaultUserId = '5bd30e0f1caf6ac3ddddddb5';
 export const defaultUserEmail = 'foo@bar.com';
 export const defaultUsername = 'fcc-test-user';
 

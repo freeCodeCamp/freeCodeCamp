@@ -6,8 +6,11 @@ module.exports = {
     'tools/challenge-helper-scripts/',
     'tools/challenge-parser/',
     'tools/scripts/build/',
+    'tools/scripts/lint/',
+    'shared',
     'curriculum',
-    'client'
+    'client',
+    'shared/'
   ],
   moduleNameMapper: {
     // CSS Modules - match files that end with 'module.css'

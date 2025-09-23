@@ -1,10 +1,10 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
-import { submitTypes } from '../../../shared/config/challenge-types';
+import { submitTypes } from '../../../shared-dist/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import type { Chapter } from '../../../shared/config/chapters';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/build-curriculum';
 
 export type CurriculumIntros =

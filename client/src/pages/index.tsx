@@ -1,6 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useGrowthBook } from '@growthbook/growthbook-react';
 import SEO from '../components/seo';
+import { Loader } from '../components/helpers';
 import LandingTopB from '../components/landing/components/landing-top-b';
 import LandingTop from '../components/landing/components/landing-top';
 import Testimonials from '../components/landing/components/testimonials';
@@ -14,7 +16,11 @@ type LandingProps = {
 };
 
 const Landing = ({ showLandingPageRedesign }: LandingProps) => (
-  <main className={`landing-page`}>
+  <main
+    id='landing-content'
+    data-testid='landing-content'
+    className={`landing-page`}
+  >
     {showLandingPageRedesign ? <LandingTopB /> : <LandingTop />}
     <Benefits />
     <Testimonials />
@@ -25,13 +31,29 @@ const Landing = ({ showLandingPageRedesign }: LandingProps) => (
 
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
-
-  return (
-    <>
-      <SEO title={t('metaTags:title')} />
-      <Landing showLandingPageRedesign={true} />
-    </>
-  );
+  const growthbook = useGrowthBook();
+  if (growthbook && growthbook.ready) {
+    console.error('GrowthBook Ready', growthbook);
+    const showLandingPageRedesign = growthbook.getFeatureValue(
+      'landing-top-skill-focused',
+      false
+    );
+    growthbook.getFeatureValue('landing-aa-test', false);
+    return (
+      <>
+        <SEO title={t('metaTags:title')} />
+        <Landing showLandingPageRedesign={showLandingPageRedesign} />
+      </>
+    );
+  } else {
+    console.error('GrowthBook not ready yet', growthbook);
+    return (
+      <>
+        <SEO title={t('metaTags:title')} />
+        <Loader fullScreen={true} />
+      </>
+    );
+  }
 }
 
 IndexPage.displayName = 'IndexPage';
