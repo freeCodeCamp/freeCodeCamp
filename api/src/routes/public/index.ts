@@ -1,6 +1,7 @@
 export * from './auth-dev.js';
 export * from './auth.js';
 export * from './certificate.js';
+export { default as challengeMapRoutes } from './challenge-map.js';
 export * from './deprecated-endpoints.js';
 export * from './deprecated-unsubscribe.js';
 export * from './donate.js';

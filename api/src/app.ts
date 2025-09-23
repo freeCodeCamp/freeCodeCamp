@@ -245,6 +245,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(publicRoutes.challengeMapRoutes);
   void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
