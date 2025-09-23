@@ -60,6 +60,7 @@ describe('external curriculum data build', () => {
 
     const result = validateAvailableSuperBlocks(availableSuperblocks);
 
+    expect(result.error?.details).toBeUndefined();
     expect(result.error).toBeFalsy();
   });
 
@@ -88,10 +89,8 @@ describe('external curriculum data build', () => {
 
       const result = validateSuperBlock(JSON.parse(fileContent));
 
-      if (result.error) {
-        throw Error(`file: ${fileInArray}
-${result.error.message}`);
-      }
+      expect(result.error?.details).toBeUndefined();
+      expect(result.error).toBeFalsy();
     });
   });
 
