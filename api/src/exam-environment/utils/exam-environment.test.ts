@@ -201,7 +201,7 @@ describe('Exam Environment mocked Math.random', () => {
     it('should validate a correct attempt', () => {
       expect(() =>
         validateAttempt(generatedExam, examAttempt.questionSets)
-      ).toThrow();
+      ).not.toThrow();
     });
 
     it('should invalidate an incorrect attempt', () => {
