@@ -3436,6 +3436,12 @@
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
+      "lab-title-case-converter": {
+        "title": "Build a Title Case Converter",
+        "intro": [
+          "In this lab, you will build a function that converts a string to title case."
+        ]
+      },
       "lab-falsy-remover": {
         "title": "Implement a Falsy Remover",
         "intro": [
@@ -3471,6 +3477,12 @@
         "title": "Design a Sum All Numbers Algorithm",
         "intro": [
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
         ]
       },
       "lab-html-entitiy-converter": {
@@ -3528,10 +3540,22 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
       "lab-sum-all-primes-calculator": {
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -3706,6 +3730,12 @@
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
+      },
+      "lab-smart-word-replacement": {
+        "title": "Build a Smart Word Replacement Function",
+        "intro": [
+          "In this lab, you will use regex to create a function that performs a search and replace operation on a given string."
+        ]
       },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
@@ -4613,7 +4643,7 @@
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
         "intro": [
-          "Learn about Understanding Graphs and Trees in these lectures."
+          "In this lecture, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
       "workshop-shortest-path-algorithm": {
@@ -4649,7 +4679,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
         "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
+          "In this lecture, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
       "lab-nth-fibonacci-number": {
