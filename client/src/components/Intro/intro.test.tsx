@@ -7,6 +7,10 @@ import { createStore } from '../../redux/create-store';
 import Intro from '.';
 
 vi.mock('../../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false, value: undefined }),
+  useFeatureIsOn: () => false
+}));
 vi.mock('../../utils/get-words');
 
 function renderWithRedux(

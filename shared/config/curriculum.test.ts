@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { Languages } from './i18n';
 import {
   SuperBlocks,
