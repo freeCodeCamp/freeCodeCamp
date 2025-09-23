@@ -5,7 +5,7 @@ import { hasEnglishSource, getChallengesForLang } from './get-challenges.js';
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
 const MISSING_CHALLENGE_PATH = 'no/challenge.md';
 
-const basePath = '__fixtures__';
+const basePath = '../__fixtures__';
 
 describe('create non-English challenge', () => {
   describe('getChallengesForLang', () => {
