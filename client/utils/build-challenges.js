@@ -4,22 +4,22 @@ const _ = require('lodash');
 
 const {
   getChallengesForLang
-} = require('../../curriculum/dist/get-challenges');
+} = require('../../curriculum/dist/get-challenges.js');
 
 const {
   getBlockCreator,
   getSuperblocks,
   superBlockToFilename
-} = require('../../curriculum/dist/build-curriculum');
+} = require('../../curriculum/dist/build-curriculum.js');
 const {
   getContentDir,
   getBlockStructure,
   getSuperblockStructure
-} = require('../../curriculum/dist/file-handler');
+} = require('../../curriculum/dist/file-handler.js');
 const {
   transformSuperBlock
-} = require('../../curriculum/dist/build-superblock');
-const { getSuperOrder } = require('../../curriculum/dist/utils');
+} = require('../../curriculum/dist/build-superblock.js');
+const { getSuperOrder } = require('../../curriculum/dist/utils.js');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
