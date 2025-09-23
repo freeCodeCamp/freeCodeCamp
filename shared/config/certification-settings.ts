@@ -107,8 +107,7 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
-  jsV9: 'isJavaScriptV9Cert'
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
 } as const;
 
 export const certIds = {
@@ -178,8 +177,7 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [Certification.JsV9]: certTypes.jsV9
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
 
   // upcoming
 };
@@ -207,7 +205,6 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
   [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [SuperBlocks.JsV9]: certTypes.jsV9,
 
   // post-modern
   // TODO: use enum
@@ -258,8 +255,7 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
-  [certTypes.jsV9]: 'JavaScript'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
 };
 
 export const superBlockToCertMap: {
