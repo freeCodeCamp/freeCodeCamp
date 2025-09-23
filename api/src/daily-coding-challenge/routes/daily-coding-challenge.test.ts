@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { addDays } from 'date-fns';
 
-import { setupServer, superRequest } from '../../../vitest.utils';
-import { getNowUsCentral, getUtcMidnight } from '../utils/helpers';
+import { setupServer, superRequest } from '../../../vitest.utils.js';
+import { getNowUsCentral, getUtcMidnight } from '../utils/helpers.js';
 
 function dateToDateParam(date: Date): string {
   return date.toISOString().split('T')[0] as string;

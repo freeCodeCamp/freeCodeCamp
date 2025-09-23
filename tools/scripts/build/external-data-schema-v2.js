@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const {
   chapterBasedSuperBlocks
-} = require('../../../shared/config/curriculum');
+} = require('../../../shared-dist/config/curriculum');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
@@ -45,7 +45,10 @@ const blockSchema = Joi.object().keys({
         'lab',
         'review',
         'quiz',
-        'exam'
+        'exam',
+        'warm-up',
+        'learn',
+        'practice'
       ).when('superBlock', {
         is: chapterBasedSuperBlocks,
         then: Joi.required(),

@@ -1,5 +1,6 @@
 import React from 'react';
 import { runSaga } from 'redux-saga';
+import { describe, test, it, expect, beforeEach, vi, Mock } from 'vitest';
 import { render } from '../../../../utils/test-utils';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
@@ -15,21 +16,21 @@ import {
 } from '../redux/selectors';
 import { buildChallenge, getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
-jest.mock('../../../analytics');
-jest.mock('../../../utils/fire-confetti');
-jest.mock('../../../components/Progress');
-jest.mock('../redux/selectors');
-jest.mock('../utils/build');
-const mockFireConfetti = fireConfetti as jest.Mock;
-const mockTestRunner = jest.fn().mockReturnValue({ pass: true });
-const mockBuildEnabledSelector = isBuildEnabledSelector as jest.Mock;
-const mockChallengeTestsSelector = challengeTestsSelector as jest.Mock;
-const mockChallengeMetaSelector = challengeMetaSelector as jest.Mock;
-const mockChallengeDataSelector = challengeDataSelector as jest.Mock;
-const mockIsBlockNewlyCompletedSelector =
-  isBlockNewlyCompletedSelector as jest.Mock;
-const mockBuildChallenge = buildChallenge as jest.Mock;
-const mockGetTestRunner = getTestRunner as jest.Mock;
+vi.mock('../../../analytics');
+vi.mock('../../../utils/fire-confetti');
+vi.mock('../../../components/Progress');
+vi.mock('../redux/selectors');
+vi.mock('../utils/build');
+vi.mock('../../../utils/get-words');
+const mockFireConfetti = fireConfetti as Mock;
+const mockTestRunner = vi.fn().mockReturnValue({ pass: true });
+const mockBuildEnabledSelector = isBuildEnabledSelector as Mock;
+const mockChallengeTestsSelector = challengeTestsSelector as Mock;
+const mockChallengeMetaSelector = challengeMetaSelector as Mock;
+const mockChallengeDataSelector = challengeDataSelector as Mock;
+const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
+const mockBuildChallenge = buildChallenge as Mock;
+const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
 mockChallengeTestsSelector.mockReturnValue([
   { text: 'Test 1', testString: 'mock test code' }

@@ -44,7 +44,6 @@ assert(Enzyme.mount(React.createElement(MyComponent)).find('h1').length === 1);
 The rendered `h1` heading element should contain text rendered from the component's state.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -54,13 +53,11 @@ async () => {
   };
   const firstValue = await first();
   assert(/<h1>TestName<\/h1>/.test(firstValue));
-};
 ```
 
 Calling the `handleClick` method on `MyComponent` should set the name property in state to equal `React Rocks!`.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -75,7 +72,6 @@ async () => {
   const firstValue = await first();
   const secondValue = await second();
   assert(firstValue === 'Before' && secondValue === 'React Rocks!');
-};
 ```
 
 # --seed--

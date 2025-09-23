@@ -8,7 +8,7 @@ import {
   LangNames,
   LangCodes,
   hiddenLangs
-} from '../../../../../shared/config/i18n';
+} from '../../../../../shared-dist/config/i18n';
 import { hardGoTo as navigate } from '../../../redux/actions';
 import createLanguageRedirect from '../../create-language-redirect';
 import LanguageGlobe from '../../../assets/icons/language-globe';

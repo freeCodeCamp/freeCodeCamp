@@ -1451,7 +1451,7 @@
           "In this course, you'll learn different ways to talk about hobbies and things that interest you. You'll also learn how to ask about other people's hobbies and how to invite them to join you in these activities."
         ]
       },
-      "learn-how-to-discuss-roles-and-responsibilies": {
+      "learn-how-to-discuss-roles-and-responsibilities": {
         "title": "Learn How to Discuss Roles and Responsibilities",
         "intro": [
           "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
@@ -2120,6 +2120,12 @@
         "title": "HTML Fundamentals",
         "intro": [
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
         ]
       },
       "lab-travel-agency-page": {
@@ -2965,7 +2971,19 @@
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
+        ]
+      },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lectures, you will learn how to work with strings and string concatenation."
+        ]
+      },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
         ]
       },
       "workshop-greeting-bot": {
@@ -3254,10 +3272,22 @@
         "title": "JavaScript Arrays Quiz",
         "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
       },
-      "lecture-working-with-objects": {
-        "title": "Working with Objects",
+      "lecture-introduction-to-javascript-objects-and-their-properties": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript objects. The concepts you will learn include how to access properties from an object, check if an object has a property, how object methods differ from functions, object destructuring, and much more."
+          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
         ]
       },
       "workshop-recipe-tracker": {
@@ -3425,6 +3455,12 @@
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working with the arguments Object and Rest Parameters",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
@@ -3435,6 +3471,12 @@
         "title": "Design a Sum All Numbers Algorithm",
         "intro": [
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
         ]
       },
       "lab-html-entitiy-converter": {
@@ -3490,6 +3532,24 @@
         "title": "Build a Symmetric Difference Function",
         "intro": [
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
+      "lab-sum-all-primes-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
       "review-javascript-higher-order-functions": {
@@ -3670,6 +3730,12 @@
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
+      },
+      "lab-smart-word-replacement": {
+        "title": "Build a Smart Word Replacement Function",
+        "intro": [
+          "In this lab, you will use regex to create a function that performs a search and replace operation on a given string."
+        ]
       },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
@@ -4392,8 +4458,7 @@
       "review-error-handling": {
         "title": "Error Handling Review",
         "intro": [
-          "Before you're quizzed on error handling, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on error handling, you should review what you've learned about it."
         ]
       },
       "quiz-error-handling": {
@@ -4449,9 +4514,11 @@
           "Learn about Understanding Inheritance and Polymorphism in these lectures."
         ]
       },
-      "workshop-placeholder-oop-2": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-media-catalogue": {
+        "title": "Build a Media Catalogue",
+        "intro": [
+          "In this workshop, you will create a media catalogue application using object-oriented programming principles."
+        ]
       },
       "lab-polygon-area-calculator": {
         "title": "Build a Polygon Area Calculator",
@@ -4471,8 +4538,7 @@
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
-          "Before you're quizzed on object oriented programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on object oriented programming, you should review what you've learned about it."
         ]
       },
       "quiz-object-oriented-programming": {
@@ -4565,8 +4631,7 @@
       "review-searching-and-sorting-algorithms": {
         "title": "Searching and Sorting Algorithms Review",
         "intro": [
-          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on searching and sorting algorithms, you should review what you've learned about them."
         ]
       },
       "quiz-searching-and-sorting-algorithms": {
@@ -4602,8 +4667,7 @@
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
-          "Before you're quizzed on graphs and trees, you should review what you've learned about them.",
-          "[Add more details]"
+          "Before you're quizzed on graphs and trees, you should review what you've learned about them."
         ]
       },
       "quiz-graphs-and-trees": {
@@ -4615,7 +4679,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
         "intro": [
-          "Learn about Understanding Dynamic Programming in these lectures."
+          "In this lecture, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
       "lab-nth-fibonacci-number": {
@@ -4625,8 +4689,7 @@
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
         "intro": [
-          "Before you're quizzed on dynamic programming, you should review what you've learned about it.",
-          "[Add more details]"
+          "Before you're quizzed on dynamic programming, you should review what you've learned about it."
         ]
       },
       "quiz-dynamic-programming": {
@@ -4780,7 +4843,16 @@
           "In this 40-lesson workshop, you will learn how to edit files in the terminal with Nano while building a castle."
         ]
       },
-      "rhhl": { "title": "328", "intro": [] },
+      "lecture-introduction-to-git-and-github": {
+        "title": "Introduction to Git and GitHub",
+        "intro": ["Learn how to work with Git and GitHub in these lectures."]
+      },
+      "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
+        "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
+        "intro": [
+          "Learn about code reviews, branching, deployment, and CI/CD in these lectures."
+        ]
+      },
       "workshop-sql-reference-object": {
         "title": "Build an SQL Reference Object",
         "intro": [
@@ -4824,10 +4896,38 @@
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+    },
+    "modules": {
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+    },
+    "module-intros": {
+      "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "a1-professional-spanish-placeholder-block": {
-        "title": "A1 Professional Spanish Placeholder Block",
-        "intro": ["Placeholder intro text."]
+      "es-a1-warm-up-greetings-and-farewells-basics": {
+        "title": "Greetings and Farewells Basics",
+        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+      },
+      "es-a1-learn-greetings-during-the-day": {
+        "title": "Greetings During the Day",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-greetings-and-farewells": {
+        "title": "Greetings and Farewells Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-greetings-and-farewells": {
+        "title": "Greetings and Farewells Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-greetings-and-farewells": {
+        "title": "Greetings and Farewells Quiz",
+        "intro": ["", ""]
       }
     }
   },
@@ -4966,9 +5066,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
