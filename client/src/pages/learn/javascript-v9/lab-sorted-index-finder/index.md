@@ -1,7 +1,7 @@
 ---
 title: Introduction to Implement a Sorted Index Finder
 block: lab-sorted-index-finder
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Implement a Sorted Index Finder

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Regular Expressions Quiz
 block: quiz-javascript-regular-expressions
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Regular Expressions Quiz

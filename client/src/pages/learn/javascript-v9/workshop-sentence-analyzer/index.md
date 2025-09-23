@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Sentence Analyzer
 block: workshop-sentence-analyzer
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Sentence Analyzer

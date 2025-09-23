@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Maps and Sets
 block: lecture-working-with-maps-and-sets
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Maps and Sets

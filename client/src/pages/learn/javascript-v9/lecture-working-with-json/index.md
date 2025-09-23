@@ -1,7 +1,7 @@
 ---
 title: Working with JSON
 block: lecture-working-with-json
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Working with JSON

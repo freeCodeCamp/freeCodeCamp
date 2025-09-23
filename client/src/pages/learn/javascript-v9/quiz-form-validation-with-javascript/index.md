@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Form Validation with JavaScript Quiz
 block: quiz-form-validation-with-javascript
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Form Validation with JavaScript Quiz

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Project Idea Board
 block: lab-project-idea-board
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Project Idea Board

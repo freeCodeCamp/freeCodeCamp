@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Code Editors and IDE's
 block: lecture-working-with-code-editors-and-ides
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Code Editors and IDE's

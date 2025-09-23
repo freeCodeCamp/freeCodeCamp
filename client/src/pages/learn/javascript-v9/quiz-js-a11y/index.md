@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript and Accessibility Quiz
 block: quiz-js-a11y
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript and Accessibility Quiz

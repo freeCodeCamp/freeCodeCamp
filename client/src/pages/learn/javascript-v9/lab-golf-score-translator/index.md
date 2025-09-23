@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Golf Score Translator
 block: lab-golf-score-translator
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Golf Score Translator

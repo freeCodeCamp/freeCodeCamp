@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Spam Filter
 block: workshop-spam-filter
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Spam Filter

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the  a Leap Year Calculator
 block: lab-leap-year-calculator
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Leap Year Calculator

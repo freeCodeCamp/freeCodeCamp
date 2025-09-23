@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with String Modification Methods
 block: lecture-working-with-string-modification-methods
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with String Modification Methods

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Understanding aria-expanded, aria-live, and Common ARIA States
 block: lecture-understanding-aria-expanded-aria-live-and-common-aria-states
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Understanding aria-expanded, aria-live, and Common ARIA States

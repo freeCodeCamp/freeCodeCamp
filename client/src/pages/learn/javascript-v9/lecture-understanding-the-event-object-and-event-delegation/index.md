@@ -1,7 +1,7 @@
 ---
 title: Introduction to Understanding the Event Object and Event Delegation
 block: lecture-understanding-the-event-object-and-event-delegation
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Understanding the Event Object and Event Delegation

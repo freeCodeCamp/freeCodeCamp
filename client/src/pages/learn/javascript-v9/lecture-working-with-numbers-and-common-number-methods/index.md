@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Numbers and Common Number Methods
 block: lecture-working-with-numbers-and-common-number-methods
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Numbers and Common Number Methods

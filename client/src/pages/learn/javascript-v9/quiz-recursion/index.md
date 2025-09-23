@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Recursion Quiz
 block: quiz-recursion
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Recursion Quiz

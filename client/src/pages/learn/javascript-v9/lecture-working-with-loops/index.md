@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Loops
 block: lecture-working-with-loops
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Loops

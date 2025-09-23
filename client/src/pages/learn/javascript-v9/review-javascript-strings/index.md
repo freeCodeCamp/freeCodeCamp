@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Strings Review
 block: review-javascript-strings
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Strings Review

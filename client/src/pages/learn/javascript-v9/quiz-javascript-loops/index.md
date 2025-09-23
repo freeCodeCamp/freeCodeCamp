@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Loops Quiz
 block: quiz-javascript-loops
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Loops Quiz

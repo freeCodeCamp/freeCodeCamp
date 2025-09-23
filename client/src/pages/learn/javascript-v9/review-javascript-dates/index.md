@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Dates Review
 block: review-javascript-dates
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Dates Review

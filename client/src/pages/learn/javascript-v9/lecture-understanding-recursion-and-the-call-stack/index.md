@@ -1,7 +1,7 @@
 ---
 title: Introduction to Understanding Recursion and the Call Stack
 block: lecture-understanding-recursion-and-the-call-stack
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Understanding Recursion and the Call Stack

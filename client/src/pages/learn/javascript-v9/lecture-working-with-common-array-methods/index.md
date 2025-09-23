@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Common Array Methods
 block: lecture-working-with-common-array-methods
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Common Array Methods

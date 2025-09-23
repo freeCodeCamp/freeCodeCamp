@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Dates
 block: lecture-working-with-dates
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Dates

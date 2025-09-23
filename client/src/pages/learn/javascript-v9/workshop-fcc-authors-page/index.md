@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build an fCC Authors Page
 block: workshop-fcc-authors-page
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build an fCC Authors Page

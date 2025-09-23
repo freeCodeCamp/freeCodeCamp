@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Celsius to Fahrenheit Converter
 block: lab-celsius-to-fahrenheit-converter
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Celsius to Fahrenheit Converter

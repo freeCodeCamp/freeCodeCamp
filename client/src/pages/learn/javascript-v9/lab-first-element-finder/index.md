@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a First Element Finder
 block: lab-first-element-finder
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a First Element Finder

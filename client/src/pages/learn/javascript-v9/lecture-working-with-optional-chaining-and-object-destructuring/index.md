@@ -1,7 +1,7 @@
 ---
 title: Working with Optional Chaining and Object Destructuring
 block: lecture-working-with-optional-chaining-and-object-destructuring
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Working with Optional Chaining and Object Destructuring

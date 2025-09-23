@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Favorite Icon Toggler
 block: lab-favorite-icon-toggler
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Favorite Icon Toggler

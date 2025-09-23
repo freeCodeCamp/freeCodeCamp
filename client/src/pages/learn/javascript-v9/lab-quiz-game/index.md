@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Quiz Game
 block: lab-quiz-game
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Quiz Game

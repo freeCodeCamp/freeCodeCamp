@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Functional Programming Review
 block: review-javascript-functional-programming
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Functional Programming Review

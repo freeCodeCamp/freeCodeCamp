@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Implement the Slice and Splice Algorithm
 block: lab-slice-and-splice
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Implement the Slice and Splice Algorithm

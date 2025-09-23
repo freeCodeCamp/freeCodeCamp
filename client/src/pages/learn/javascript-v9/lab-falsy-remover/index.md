@@ -1,7 +1,7 @@
 ---
 title: Introduction to Implement a Falsy Remover
 block: lab-falsy-remover
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Implement a Falsy Remover

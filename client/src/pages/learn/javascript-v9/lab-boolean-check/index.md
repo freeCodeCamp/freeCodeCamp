@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Boolean Check Function
 block: lab-boolean-check
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Boolean Check Function

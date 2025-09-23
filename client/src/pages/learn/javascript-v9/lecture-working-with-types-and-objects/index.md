@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Types and Objects Lectures
 block: lecture-working-with-types-and-objects
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Working with Types and Objects Lectures

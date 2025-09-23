@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with the DOM, Click Events, and Web APIs
 block: lecture-working-with-the-dom-click-events-and-web-apis
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with the DOM, Click Events, and Web APIs

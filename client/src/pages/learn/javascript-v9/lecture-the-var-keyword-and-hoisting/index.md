@@ -1,7 +1,7 @@
 ---
 title: Introduction to The var Keyword and Hoisting
 block: lecture-the-var-keyword-and-hoisting
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to The var Keyword and Hoisting

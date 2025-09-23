@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Operator Behavior
 block: lecture-working-with-operator-behavior
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Working with Operator Behavior

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Regular Expressions
 block: lecture-working-with-regular-expressions
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Regular Expressions

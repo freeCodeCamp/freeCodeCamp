@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Higher Order Functions and Callbacks
 block: lecture-working-with-higher-order-functions-and-callbacks
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Higher Order Functions and Callbacks

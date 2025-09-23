@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Functions
 block: lecture-working-with-functions
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Functions

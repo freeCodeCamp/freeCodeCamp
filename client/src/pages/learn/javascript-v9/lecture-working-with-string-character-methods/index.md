@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with String Character Methods
 block: lecture-working-with-string-character-methods
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with String Character Methods

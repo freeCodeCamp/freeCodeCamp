@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Higher Order Functions Quiz
 block: quiz-javascript-higher-order-functions
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Higher Order Functions Quiz

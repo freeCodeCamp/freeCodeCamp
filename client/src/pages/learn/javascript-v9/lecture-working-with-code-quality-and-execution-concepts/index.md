@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Code Quality and Execution Concepts Lectures
 block: lecture-working-with-code-quality-and-execution-concepts
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Working with Code Quality and Execution Concepts Lectures

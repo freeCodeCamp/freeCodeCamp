@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Debugging JavaScript Quiz
 block: quiz-debugging-javascript
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Debugging JavaScript Quiz

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Calorie Counter
 block: workshop-calorie-counter
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Calorie Counter

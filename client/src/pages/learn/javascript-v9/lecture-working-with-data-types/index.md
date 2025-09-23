@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Data Types
 block: lecture-working-with-data-types
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Data Types

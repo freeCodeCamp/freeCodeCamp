@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Audio and Video
 block: lecture-working-with-audio-and-video
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Audio and Video

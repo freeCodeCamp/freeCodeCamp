@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Debugging JavaScript Review
 block: review-debugging-javascript
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Debugging JavaScript Review

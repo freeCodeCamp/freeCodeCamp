@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build an Optional Arguments Sum Function
 block: lab-optional-arguments-sum-function
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build an Optional Arguments Sum Function

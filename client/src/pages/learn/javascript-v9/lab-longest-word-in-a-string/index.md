@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Longest Word Finder App
 block: lab-longest-word-in-a-string
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Longest Word Finder App

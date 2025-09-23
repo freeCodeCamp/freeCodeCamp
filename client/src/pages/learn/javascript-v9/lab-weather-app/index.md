@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Weather App
 block: lab-weather-app
-superBlock: full-stack-development
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Weather App

@@ -1,7 +1,7 @@
 ---
 title: Build a Symmetric Difference Function
 block: lab-symmetric-difference
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Symmetric Difference Function

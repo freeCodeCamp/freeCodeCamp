@@ -1,7 +1,7 @@
 ---
 title: Introduction to Understanding Functional Programming
 block: lecture-understanding-functional-programming
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Understanding Functional Programming

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Review
 block: review-javascript
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Review

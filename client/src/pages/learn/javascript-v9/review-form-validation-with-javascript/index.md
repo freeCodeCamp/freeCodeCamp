@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Form Validation with JavaScript Review
 block: review-form-validation-with-javascript
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Form Validation with JavaScript Review

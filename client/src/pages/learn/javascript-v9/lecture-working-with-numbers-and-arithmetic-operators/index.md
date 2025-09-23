@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with Numbers and Arithmetic Operators
 block: lecture-working-with-numbers-and-arithmetic-operators
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Working with Numbers and Arithmetic Operators

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Fortune Teller
 block: lab-fortune-teller
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Building a Fortune Teller

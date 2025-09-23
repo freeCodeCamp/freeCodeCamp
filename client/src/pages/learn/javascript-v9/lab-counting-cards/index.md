@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Card Counting Assistant
 block: lab-counting-cards
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Card Counting Assistant

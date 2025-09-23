@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Maps and Sets Review
 block: review-javascript-maps-and-sets
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Maps and Sets Review

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Voting System
 block: lab-voting-system
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Voting System

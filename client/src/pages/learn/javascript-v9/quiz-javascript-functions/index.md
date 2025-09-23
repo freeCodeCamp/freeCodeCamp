@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Functions Quiz
 block: quiz-javascript-functions
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Functions Quiz

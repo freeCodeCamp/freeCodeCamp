@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Arrays Review
 block: review-javascript-arrays
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Arrays Review

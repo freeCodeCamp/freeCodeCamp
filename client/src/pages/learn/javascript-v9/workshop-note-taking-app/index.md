@@ -1,7 +1,7 @@
 ---
 title: Introduction to Build a Note Taking App
 block: workshop-note-taking-app
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Build a Note Taking App

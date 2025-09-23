@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Audio and Video Review
 block: review-javascript-audio-and-video
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Audio and Video Review

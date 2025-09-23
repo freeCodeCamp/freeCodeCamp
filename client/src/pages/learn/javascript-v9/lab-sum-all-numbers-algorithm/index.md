@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Sum All Numbers Algorithm
 block: lab-sum-all-numbers-algorithm
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Design a Sum All Numbers Algorithm

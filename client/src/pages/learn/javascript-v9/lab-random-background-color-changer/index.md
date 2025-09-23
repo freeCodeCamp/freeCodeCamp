@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Debug a Random Background Color Changer
 block: lab-random-background-color-changer
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Debug a Random Background Color Changer

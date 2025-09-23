@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Comparisons and Conditionals Review
 block: review-javascript-comparisons-and-conditionals
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Comparisons and Conditionals Review

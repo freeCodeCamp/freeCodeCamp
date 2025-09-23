@@ -1,7 +1,7 @@
 ---
 title: Introduction to Working with Arrays
 block: lecture-working-with-arrays
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Working with Arrays

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Chunky Monkey Algorithm
 block: lab-chunky-monkey
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Chunky Monkey Algorithm

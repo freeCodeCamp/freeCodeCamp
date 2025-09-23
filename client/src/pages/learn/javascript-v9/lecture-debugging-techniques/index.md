@@ -1,7 +1,7 @@
 ---
 title: Introduction to Debugging Techniques
 block: lecture-debugging-techniques
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Debugging Techniques

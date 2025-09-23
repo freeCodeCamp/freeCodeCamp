@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Record Collection
 block: lab-record-collection
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Record Collection

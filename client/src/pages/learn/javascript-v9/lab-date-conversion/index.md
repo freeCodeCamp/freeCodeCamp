@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Date Conversion Program
 block: lab-date-conversion
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Date Conversion Program

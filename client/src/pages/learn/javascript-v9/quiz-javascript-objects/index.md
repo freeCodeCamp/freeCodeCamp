@@ -1,7 +1,7 @@
 ---
 title: Introduction to the JavaScript Objects Quiz
 block: quiz-javascript-objects
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the JavaScript Objects Quiz

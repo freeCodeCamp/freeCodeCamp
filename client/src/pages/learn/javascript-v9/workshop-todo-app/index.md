@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Todo App using Local Storage
 block: workshop-todo-app
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Todo App using Local Storage

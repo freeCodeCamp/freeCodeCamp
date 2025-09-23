@@ -1,7 +1,7 @@
 ---
 title: Introduction to Implement an HTML Entity Converter
 block: lab-html-entitiy-converter
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Implement an HTML Entity Converter

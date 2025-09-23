@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build the Largest Number Finder
 block: lab-largest-number-finder
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build the Largest Number Finder

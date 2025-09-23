@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Decimal to Binary Converter
 block: workshop-decimal-to-binary-converter
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Decimal to Binary Converter

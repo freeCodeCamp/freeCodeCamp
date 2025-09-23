@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Set of Football Team Cards
 block: lab-football-team-cards
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Set of Football Team Cards

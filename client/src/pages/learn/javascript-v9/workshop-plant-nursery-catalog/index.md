@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Plant Nursery Catalog
 block: workshop-plant-nursery-catalog
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Plant Nursery Catalog

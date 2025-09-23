@@ -1,7 +1,7 @@
 ---
 title: Introduction to Understanding Modules, Imports, and Exports
 block: lecture-understanding-modules-imports-and-exports
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Understanding Modules, Imports, and Exports

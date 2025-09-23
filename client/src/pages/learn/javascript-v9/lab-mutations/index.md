@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Mutations Algorithm
 block: lab-mutations
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Mutations Algorithm

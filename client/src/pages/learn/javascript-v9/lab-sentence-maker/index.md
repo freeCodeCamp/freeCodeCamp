@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Sentence Maker
 block: lab-sentence-maker
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Build a Sentence Maker

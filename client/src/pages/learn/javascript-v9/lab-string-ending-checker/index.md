@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Confirm the Ending Tool
 block: lab-string-ending-checker
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Confirm the Ending Tool

@@ -1,7 +1,7 @@
 ---
 title: Introduction to Understanding Comparisons and Conditionals
 block: lecture-understanding-comparisons-and-conditionals
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to Understanding Comparisons and Conditionals
