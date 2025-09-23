@@ -3737,6 +3737,13 @@
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
       },
+      "lab-pig-latin": {
+        "title": "Implement a Pig Latin Translator",
+        "intro": [
+          "In this lab, you'll implement a Pig Latin translator using JavaScript.",
+          "You'll practice string manipulation, conditional logic, and regular expressions."
+        ]
+      },
       "lab-smart-word-replacement": {
         "title": "Build a Smart Word Replacement Function",
         "intro": [
