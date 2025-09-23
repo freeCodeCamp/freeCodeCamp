@@ -3540,6 +3540,12 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-value-remover-function": {
+        "title": "Implement a Value Remover Function",
+        "intro": [
+          "In this lab, you will create a function that removes all instances of a specified value from an array."
+        ]
+      },
       "lab-matching-object-filter": {
         "title": "Implement a Matching Object Filter",
         "intro": [
