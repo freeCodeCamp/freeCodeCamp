@@ -3586,7 +3586,7 @@
       "workshop-emoji-reactor": {
         "title": "Build an Emoji Reactor",
         "intro": [
-          "In this lab you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
+          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
         ]
       },
       "lab-favorite-icon-toggler": {

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build an Emoji Reactor
 
-In this lab you will build an emoji reactor to practice `querySelector` and `querySelectorAll`.
+In this workshop, you will build an emoji reactor to practice `querySelector` and `querySelectorAll`.
