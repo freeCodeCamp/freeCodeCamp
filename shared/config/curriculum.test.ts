@@ -6,7 +6,8 @@ import {
   superBlockStages,
   notAuditedSuperBlocks,
   generateSuperBlockList,
-  getAuditedSuperBlocks
+  getAuditedSuperBlocks,
+  getSuperBlockLangCode
 } from './curriculum';
 
 describe('superBlockOrder', () => {
@@ -72,5 +73,24 @@ describe('getAuditedSuperBlocks', () => {
         );
       });
     });
+  });
+});
+
+describe('getSuperBlockLangCode', () => {
+  it('should return correct language codes for language superblocks', () => {
+    expect(getSuperBlockLangCode(SuperBlocks.A1Spanish)).toBe('es');
+    expect(getSuperBlockLangCode(SuperBlocks.A2Spanish)).toBe('es');
+    expect(getSuperBlockLangCode(SuperBlocks.A1Chinese)).toBe('zh-CN');
+    expect(getSuperBlockLangCode(SuperBlocks.A2Chinese)).toBe('zh-CN');
+    expect(getSuperBlockLangCode(SuperBlocks.A2English)).toBe('en-US');
+    expect(getSuperBlockLangCode(SuperBlocks.B1English)).toBe('en-US');
+  });
+
+  it('should return undefined for non-language superblocks', () => {
+    expect(getSuperBlockLangCode(SuperBlocks.JsAlgoDataStruct)).toBeUndefined();
+    expect(getSuperBlockLangCode(SuperBlocks.RespWebDesignNew)).toBeUndefined();
+    expect(
+      getSuperBlockLangCode(SuperBlocks.FoundationalCSharp)
+    ).toBeUndefined();
   });
 });

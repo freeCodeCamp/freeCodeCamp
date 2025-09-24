@@ -234,6 +234,7 @@ const ShowFillInTheBlank = ({
                   feedback={feedback}
                   showWrong={showWrong}
                   handleInputChange={handleInputChange}
+                  challengeMeta={challengeMeta}
                 />
               </ObserveKeys>
 

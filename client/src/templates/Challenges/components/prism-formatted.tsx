@@ -1,25 +1,42 @@
 import Prism from 'prismjs';
 import React, { useRef, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { enhancePrismAccessibility } from '../utils';
+
+import { challengeMetaSelector } from '../redux/selectors';
+import type { ChallengeMeta } from '../../../redux/prop-types';
+import { getSuperBlockLangCode } from '../../../../../shared-dist/config/curriculum';
 
 interface PrismFormattedProps {
   className?: string;
   text: string;
   useSpan?: boolean;
   noAria?: boolean;
+  challengeMeta: ChallengeMeta;
 }
+
+const mapStateToProps = (state: unknown) => ({
+  challengeMeta: challengeMetaSelector(state) as ChallengeMeta
+});
 
 function PrismFormatted({
   className,
   text,
   useSpan,
-  noAria
+  noAria,
+  challengeMeta
 }: PrismFormattedProps): JSX.Element {
   const instructionsRef = useRef<HTMLDivElement>(null);
   const ElementName = useSpan ? 'span' : 'div';
 
   if (noAria) {
     text = text.replace(/<pre( [^>]+)?>/, '<pre$1 data-no-aria="true">');
+  }
+
+  // Add lang attribute to code elements for language learning content
+  const languageCode = getSuperBlockLangCode(challengeMeta.superBlock);
+  if (languageCode) {
+    text = text.replace(/<code(\s[^>]*)?>/g, `<code$1 lang="${languageCode}">`);
   }
 
   useEffect(() => {
@@ -50,4 +67,4 @@ function PrismFormatted({
 
 PrismFormatted.displayName = 'PrismFormatted';
 
-export default PrismFormatted;
+export default connect(mapStateToProps)(PrismFormatted);

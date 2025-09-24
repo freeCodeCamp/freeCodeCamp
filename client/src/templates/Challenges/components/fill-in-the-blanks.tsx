@@ -4,7 +4,8 @@ import { Spacer } from '@freecodecamp/ui';
 
 import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
-import { FillInTheBlank } from '../../../redux/prop-types';
+import { ChallengeMeta, FillInTheBlank } from '../../../redux/prop-types';
+import { getSuperBlockLangCode } from '../../../../../shared-dist/config/curriculum';
 import ChallengeHeading from './challenge-heading';
 
 type FillInTheBlankProps = {
@@ -14,6 +15,7 @@ type FillInTheBlankProps = {
   feedback: string | null;
   showWrong: boolean;
   handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  challengeMeta: ChallengeMeta;
 };
 
 function FillInTheBlanks({
@@ -22,7 +24,8 @@ function FillInTheBlanks({
   showFeedback,
   feedback,
   showWrong,
-  handleInputChange
+  handleInputChange,
+  challengeMeta
 }: FillInTheBlankProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -38,6 +41,7 @@ function FillInTheBlanks({
 
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
+  const languageCode = getSuperBlockLangCode(challengeMeta.superBlock);
 
   return (
     <>
@@ -48,7 +52,7 @@ function FillInTheBlanks({
           return (
             // both keys, i and j, are stable between renders, since
             // the paragraphs are static.
-            <p key={i}>
+            <p key={i} lang={languageCode}>
               {p.map((node, j) => {
                 const { type, value } = node;
                 if (type === 'text') {

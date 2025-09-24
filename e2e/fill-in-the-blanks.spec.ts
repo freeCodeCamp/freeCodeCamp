@@ -7,6 +7,15 @@ test.describe('Fill in the blanks challenge', () => {
     );
   });
 
+  test('should add lang attribute to sentence paragraphs', async ({ page }) => {
+    const paragraphs = page.locator('.fill-in-the-blank-wrap p');
+    const count = await paragraphs.count();
+
+    for (let i = 0; i < count; i++) {
+      await expect(paragraphs.nth(i)).toHaveAttribute('lang', 'en-US');
+    }
+  });
+
   test('should display feedback if there is an incorrect answer', async ({
     page
   }) => {

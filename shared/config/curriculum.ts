@@ -377,3 +377,29 @@ export function getAuditedSuperBlocks({
   );
   return auditedSuperBlocks;
 }
+
+/**
+ * Maps language learning super blocks to their corresponding ISO 639-1 language codes
+ */
+export const superBlockToLanguageMap: Partial<Record<SuperBlocks, string>> = {
+  [SuperBlocks.A1Spanish]: 'es',
+  [SuperBlocks.A2Spanish]: 'es',
+  [SuperBlocks.A1Chinese]: 'zh-CN',
+  [SuperBlocks.A2Chinese]: 'zh-CN',
+  [SuperBlocks.A2English]: 'en-US',
+  [SuperBlocks.B1English]: 'en-US'
+};
+
+/**
+ * Get the language code for a given super block
+ * @param superBlock The super block identifier
+ * @returns The ISO 639-1 language code or undefined if not a language learning super block
+ */
+export function getSuperBlockLangCode(
+  superBlock: SuperBlocks | 'daily-coding-challenge'
+) {
+  if (!languageSuperBlocks.includes(superBlock as SuperBlocks)) {
+    return;
+  }
+  return superBlockToLanguageMap[superBlock as SuperBlocks];
+}
