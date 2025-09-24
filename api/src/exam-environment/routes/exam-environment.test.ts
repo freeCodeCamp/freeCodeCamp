@@ -16,6 +16,7 @@ import {
   createSuperRequest,
   defaultUserId,
   devLogin,
+  serializeDates,
   setupServer
 } from '../../../vitest.utils.js';
 import {
@@ -453,7 +454,7 @@ describe('/exam-environment/', () => {
         expect(res).toMatchObject({
           status: 200,
           body: {
-            examAttempt: latestAttempt
+            examAttempt: serializeDates(latestAttempt)
           }
         });
       });
@@ -527,7 +528,7 @@ describe('/exam-environment/', () => {
           generatedExamId: generatedExam!.id,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          startTimeInMS: expect.any(Number),
+          startTime: expect.any(Date),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)
         });
@@ -598,10 +599,12 @@ describe('/exam-environment/', () => {
 
         const userExam = constructUserExam(generatedExam!, mock.exam);
 
-        expect(res.body).toMatchObject({
-          examAttempt,
-          exam: userExam
-        });
+        expect(res.body).toMatchObject(
+          serializeDates({
+            examAttempt,
+            exam: userExam
+          })
+        );
       });
     });
 
@@ -878,7 +881,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
 
@@ -918,7 +921,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
 
@@ -957,7 +960,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
     });
@@ -1012,7 +1015,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
 
@@ -1042,7 +1045,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
 
@@ -1079,7 +1082,7 @@ describe('/exam-environment/', () => {
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
     });
@@ -1130,7 +1133,8 @@ describe('/exam-environment/', () => {
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)
         };
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
     });
