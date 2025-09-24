@@ -595,7 +595,7 @@ enum ExamEnvironmentExamModerationStatus {
 ///
 /// Currently, this is manually created in order to grant access to the application.
 model ExamCreatorUser {
-  id        String                   @id @default(auto()) @map("_id") @db.ObjectId
+  id        String                  @id @default(auto()) @map("_id") @db.ObjectId
   email     String
   /// Unique id from GitHub for an account.
   ///
@@ -603,8 +603,8 @@ model ExamCreatorUser {
   github_id Int?
   name      String
   picture   String?
-  settings  ExamCreatorUserSettings?
-  version   Int                      @default(1)
+  settings  ExamCreatorUserSettings
+  version   Int                     @default(1)
 
   ExamCreatorSession ExamCreatorSession[]
 }
