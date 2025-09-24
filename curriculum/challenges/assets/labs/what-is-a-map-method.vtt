@@ -1,0 +1,21 @@
+WEBVTT
+
+1
+00:00:01.000 --> 00:00:05.000
+What is a map method and how does it work?
+
+2
+00:00:05.000 --> 00:00:10.000
+The map method is a powerful and widely used function in JavaScript that operates on arrays.
+
+3
+00:00:10.000 --> 00:00:15.000
+It's designed to create a new array by applying a given function to each element of the original array.
+
+4
+00:00:15.000 --> 00:00:20.000
+This method does not modify the original array, but instead returns a new array.
+
+5
+00:00:20.000 --> 00:00:25.000
+The new array contains the results of the function applied to each element.
