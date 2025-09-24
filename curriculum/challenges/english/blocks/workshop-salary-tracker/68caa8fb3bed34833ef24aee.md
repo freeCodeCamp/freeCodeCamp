@@ -7,7 +7,7 @@ dashedName: step-29
 
 # --description--
 
-When the level is modified, you need to updated the salary as well.
+When the level is modified, you need to update the salary as well.
 
 Before setting `self._level`, set `self._salary` to the base salary for the new level.
 
