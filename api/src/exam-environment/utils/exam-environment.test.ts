@@ -237,7 +237,7 @@ describe('Exam Environment mocked Math.random', () => {
       const allQuestions = databaseAttemptQuestionSets.flatMap(
         qs => qs.questions
       );
-      expect(allQuestions.every(q => q.submissionTimeInMS)).toBe(true);
+      expect(allQuestions.every(q => q.submissionTime)).toBe(true);
     });
 
     it('should not change the submission time of any questions that have not changed', () => {
@@ -262,7 +262,7 @@ describe('Exam Environment mocked Math.random', () => {
         userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
 
       const submissionTimes = databaseAttemptQuestionSets.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       const sameAttempt = userAttemptToDatabaseAttemptQuestionSets(
@@ -271,7 +271,7 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       const sameSubmissionTimes = sameAttempt.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       expect(submissionTimes).toEqual(sameSubmissionTimes);
@@ -312,9 +312,9 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       expect(
-        newAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        newAttemptQuestionSets[0]?.questions[0]?.submissionTime
       ).not.toEqual(
-        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTime
       );
     });
   });
@@ -443,9 +443,9 @@ describe('Exam Environment Schema', () => {
         note: '',
         passingPercent: 0.0,
         questionSets: configQuestionSets,
-        retakeTimeInMS: 0,
+        retakeTimeInS: 0,
         tags,
-        totalTimeInMS: 0
+        totalTimeInS: 0
       };
 
       const questions = [
@@ -517,11 +517,11 @@ describe('Exam Environment Schema', () => {
             {
               id: oid(),
               questions: [
-                { answers: [oid()], id: oid(), submissionTimeInMS: 0 }
+                { answers: [oid()], id: oid(), submissionTime: new Date() }
               ]
             }
           ],
-          startTimeInMS: 0,
+          startTime: new Date(),
           userId: oid()
         }
       });

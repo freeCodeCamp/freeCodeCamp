@@ -260,7 +260,7 @@ async function postExamGeneratedExamHandler(
 
   const lastAttempt = examAttempts.length
     ? examAttempts.reduce((latest, current) =>
-        latest.startTimeInMS > current.startTimeInMS ? latest : current
+        latest.startTime > current.startTime ? latest : current
       )
     : null;
 
@@ -301,10 +301,10 @@ async function postExamGeneratedExamHandler(
     }
 
     const examExpirationTime =
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+      lastAttempt.startTime.getTime() + exam.config.totalTimeInS * 1000;
     if (examExpirationTime < Date.now()) {
       const retakeAllowed =
-        examExpirationTime + exam.config.retakeTimeInMS < Date.now();
+        examExpirationTime + exam.config.retakeTimeInS * 1000 < Date.now();
 
       if (!retakeAllowed) {
         logger.warn(
@@ -443,7 +443,7 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
-        startTimeInMS: Date.now(),
+        startTime: new Date(),
         questionSets: []
       }
     })
@@ -541,7 +541,7 @@ async function postExamAttemptHandler(
   }
 
   const latestAttempt = attempts.reduce((latest, current) =>
-    latest.startTimeInMS > current.startTimeInMS ? latest : current
+    latest.startTime > current.startTime ? latest : current
   );
 
   const maybeExam = await mapErr(
@@ -574,7 +574,8 @@ async function postExamAttemptHandler(
   }
 
   const isAttemptExpired =
-    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+    latestAttempt.startTime.getTime() + exam.config.totalTimeInS * 1000 <
+    Date.now();
 
   if (isAttemptExpired) {
     logger.warn(
@@ -715,7 +716,7 @@ async function getExams(
       select: {
         id: true,
         examId: true,
-        startTimeInMS: true
+        startTime: true
       }
     })
   );
@@ -739,8 +740,8 @@ async function getExams(
       config: {
         name: exam.config.name,
         note: exam.config.note,
-        totalTimeInMS: exam.config.totalTimeInMS,
-        retakeTimeInMS: exam.config.retakeTimeInMS,
+        totalTimeInS: exam.config.totalTimeInS,
+        retakeTimeInS: exam.config.retakeTimeInS,
         passingPercent: exam.config.passingPercent
       },
       canTake: false
@@ -763,7 +764,7 @@ async function getExams(
 
     const lastAttempt = attemptsForExam.length
       ? attemptsForExam.reduce((latest, current) =>
-          latest.startTimeInMS > current.startTimeInMS ? latest : current
+          latest.startTime > current.startTime ? latest : current
         )
       : null;
 
@@ -775,9 +776,9 @@ async function getExams(
     }
 
     const retakeDateInMS =
-      lastAttempt.startTimeInMS +
-      exam.config.totalTimeInMS +
-      exam.config.retakeTimeInMS;
+      lastAttempt.startTime.getTime() +
+      exam.config.totalTimeInS * 1000 +
+      exam.config.retakeTimeInS * 1000;
     const isRetakeTimePassed = Date.now() > retakeDateInMS;
 
     if (!isRetakeTimePassed) {
