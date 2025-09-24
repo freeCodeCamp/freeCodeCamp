@@ -185,7 +185,7 @@ model ExamEnvironmentExam {
   deprecated    Boolean
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                          @default(1)
+  version       Int                          @default(2)
 
   // Relations
   generatedExams           ExamEnvironmentGeneratedExam[]
@@ -209,7 +209,7 @@ model ExamCreatorExam {
   deprecated    Boolean
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                          @default(1)
+  version       Int                          @default(2)
 }
 
 /// A grouping of one or more questions of a given type
@@ -275,12 +275,12 @@ type ExamEnvironmentConfig {
   note           String
   /// Category configuration for question selection
   tags           ExamEnvironmentTagConfig[]
-  /// Total time allocated for exam in milliseconds
-  totalTimeInMS  Int
+  /// Total time allocated for exam in seconds
+  totalTimeInS   Int
   /// Configuration for sets of questions
   questionSets   ExamEnvironmentQuestionSetConfig[]
-  /// Duration after exam completion before a retake is allowed in milliseconds
-  retakeTimeInMS Int
+  /// Duration after exam completion before a retake is allowed in seconds
+  retakeTimeInS  Int
   /// Passing percent for the exam
   passingPercent Float
 }
@@ -318,12 +318,12 @@ model ExamEnvironmentExamAttempt {
   /// Foreign key to generated exam id
   generatedExamId String @db.ObjectId
 
-  questionSets  ExamEnvironmentQuestionSetAttempt[]
-  /// Time exam was started as milliseconds since epoch
-  startTimeInMS Int
+  questionSets ExamEnvironmentQuestionSetAttempt[]
+  /// Time exam was started
+  startTime    DateTime
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                                 @default(1)
+  version      Int                                 @default(2)
 
   // Relations
   user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -339,13 +339,13 @@ type ExamEnvironmentQuestionSetAttempt {
 
 type ExamEnvironmentMultipleChoiceQuestionAttempt {
   /// Foreign key to question
-  id                 String   @db.ObjectId
+  id             String   @db.ObjectId
   /// An array of foreign keys to answers
-  answers            String[] @db.ObjectId
-  /// Time answers to question were submitted as milliseconds since epoch
+  answers        String[] @db.ObjectId
+  /// Time answers to question were submitted
   ///
   /// If the question is later revisited, this field is updated
-  submissionTimeInMS Int
+  submissionTime DateTime
 }
 
 /// A generated exam for the Exam Environment App
@@ -595,7 +595,7 @@ enum ExamEnvironmentExamModerationStatus {
 ///
 /// Currently, this is manually created in order to grant access to the application.
 model ExamCreatorUser {
-  id        String  @id @default(auto()) @map("_id") @db.ObjectId
+  id        String                   @id @default(auto()) @map("_id") @db.ObjectId
   email     String
   /// Unique id from GitHub for an account.
   ///
@@ -603,8 +603,19 @@ model ExamCreatorUser {
   github_id Int?
   name      String
   picture   String?
+  settings  ExamCreatorUserSettings?
+  version   Int                      @default(1)
 
   ExamCreatorSession ExamCreatorSession[]
+}
+
+type ExamCreatorUserSettings {
+  databaseEnvironment ExamCreatorDatabaseEnvironment
+}
+
+enum ExamCreatorDatabaseEnvironment {
+  Production
+  Staging
 }
 
 /// Exam Creator application collection to store auth sessions.
