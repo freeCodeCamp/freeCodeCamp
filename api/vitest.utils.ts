@@ -205,8 +205,6 @@ export function setupServer(): void {
 If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
-    // Due to a prisma bug, this is not enough, we need to --force-exit jest:
-    // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
   });
 }
