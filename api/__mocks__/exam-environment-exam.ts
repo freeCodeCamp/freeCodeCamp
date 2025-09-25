@@ -17,6 +17,7 @@ export const oid = () => new ObjectId().toString();
 export const examId = oid();
 
 export const config: ExamEnvironmentConfig = {
+  totalTimeInMS: 2 * 60 * 60 * 1000,
   totalTimeInS: 2 * 60 * 60,
   tags: [],
   name: 'Test Exam',
@@ -45,6 +46,7 @@ export const config: ExamEnvironmentConfig = {
       numberOfIncorrectAnswers: 1
     }
   ],
+  retakeTimeInMS: 24 * 60 * 60 * 1000,
   retakeTimeInS: 24 * 60 * 60
 };
 
@@ -261,6 +263,7 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
           answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
+          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
@@ -271,6 +274,7 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
           answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
+          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
@@ -281,16 +285,19 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
           answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
+          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
           answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
+          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
     }
   ],
+  startTimeInMS: Date.now(),
   startTime: new Date(),
   userId: defaultUserId,
   version: 2
@@ -348,7 +355,8 @@ export const examEnvironmentChallenge: ExamEnvironmentChallenge = {
   id: oid(),
   examId,
   // Id of the certified full stack developer exam challenge page
-  challengeId: '645147516c245de4d11eb7ba'
+  challengeId: '645147516c245de4d11eb7ba',
+  version: 1
 };
 
 export async function seedEnvExam() {

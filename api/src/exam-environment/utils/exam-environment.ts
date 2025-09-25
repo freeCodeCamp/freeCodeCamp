@@ -111,9 +111,11 @@ export function constructUserExam(
   });
 
   const config = {
+    totalTimeInMS: exam.config.totalTimeInMS,
     totalTimeInS: exam.config.totalTimeInS,
     name: exam.config.name,
     note: exam.config.note,
+    retakeTimeInMS: exam.config.retakeTimeInMS,
     retakeTimeInS: exam.config.retakeTimeInS,
     passingPercent: exam.config.passingPercent
   };
@@ -241,7 +243,11 @@ export function userAttemptToDatabaseAttemptQuestionSets(
       databaseAttemptQuestionSets.push({
         ...questionSet,
         questions: questionSet.questions.map(q => {
-          return { ...q, submissionTime: new Date() };
+          return {
+            ...q,
+            submissionTime: new Date(),
+            submissionTimeInMS: Date.now()
+          };
         })
       });
     } else {
@@ -254,14 +260,22 @@ export function userAttemptToDatabaseAttemptQuestionSets(
 
           // If no latest question, add submission time
           if (!latestQuestion) {
-            return { ...q, submissionTime: new Date() };
+            return {
+              ...q,
+              submissionTime: new Date(),
+              submissionTimeInMS: Date.now()
+            };
           }
 
           // If answers have changed, add submission time
           if (
             JSON.stringify(q.answers) !== JSON.stringify(latestQuestion.answers)
           ) {
-            return { ...q, submissionTime: new Date() };
+            return {
+              ...q,
+              submissionTime: new Date(),
+              submissionTimeInMS: Date.now()
+            };
           }
 
           return latestQuestion;
@@ -810,8 +824,13 @@ export async function constructEnvExamAttempt(
   }
 
   // If attempt is still in progress, return without result
+  const attemptStartTimeInMS =
+    attempt.startTime?.getTime() ?? attempt.startTimeInMS;
+  const examTotalTimeInMS = exam.config.totalTimeInS
+    ? exam.config.totalTimeInS * 1000
+    : exam.config.totalTimeInMS;
   const isAttemptExpired =
-    attempt.startTime.getTime() + exam.config.totalTimeInS * 1000 < Date.now();
+    attemptStartTimeInMS + examTotalTimeInMS < Date.now();
   if (!isAttemptExpired) {
     return {
       examEnvironmentExamAttempt: {
