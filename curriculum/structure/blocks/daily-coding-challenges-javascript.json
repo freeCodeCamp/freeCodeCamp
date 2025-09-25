@@ -261,7 +261,7 @@
     },
     {
       "id": "68cae5b538ff798bbd4da002",
-      "title": "Challenge 64: 12 to 24"
+      "title": "Challenge 64: 24 to 12"
     },
     {
       "id": "68cae5b538ff798bbd4da003",
@@ -301,11 +301,27 @@
     },
     {
       "id": "68d2ba1468508398389487cf",
-      "title": "Challenge 74: Duration Formatter"
+      "title": "Challenge 74: Favorite Songs"
     },
     {
       "id": "68d2ba1468508398389487d0",
-      "title": "Challenge 75: Integer Sequence"
+      "title": "Challenge 75: Missile Strike"
+    },
+    {
+      "id": "68d30845cc08266018fc46bc",
+      "title": "Challenge 76: Complementary DNA"
+    },
+    {
+      "id": "68d30845cc08266018fc46bd",
+      "title": "Challenge 77: Duration Formatter"
+    },
+    {
+      "id": "68d30845cc08266018fc46be",
+      "title": "Challenge 78: Integer Sequence"
+    },
+    {
+      "id": "68d30fc57588d97fd3027b30",
+      "title": "Challenge 79: Navigator"
     }
   ]
 }
