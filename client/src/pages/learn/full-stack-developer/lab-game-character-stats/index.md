@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Build a Game Character
+title: Introduction to the Build a Game Character Stats Tracker
 block: lab-game-character-stats
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Build a Game Character
+## Introduction to the Build a Game Character Stats Tracker
 
-This page is for the Build a Game Character
+In this lab, you will build a game character with different stats using object-oriented programming. You'll be able to create a character with specific attributes, update those attributes, and retrieve the current stats of the character.
