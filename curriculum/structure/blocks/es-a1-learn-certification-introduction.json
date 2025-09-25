@@ -1,0 +1,11 @@
+{
+  "name": "Certification Introduction",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-certification-introduction",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "68d2a81f50d01ea746462565", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockType": "learn"
+}
