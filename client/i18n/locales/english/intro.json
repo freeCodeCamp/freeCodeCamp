@@ -4496,9 +4496,11 @@
         "title": "Classes and Objects",
         "intro": ["Learn about Classes and Objects in these lectures."]
       },
-      "workshop-placeholder-classes-and-objects": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-musical-instrument-inventory": {
+        "title": "Build a Musical Instrument Inventory",
+        "intro": [
+          "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
+        ]
       },
       "lab-budget-app": {
         "title": "Build a Budget App",

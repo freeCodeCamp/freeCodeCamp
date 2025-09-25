@@ -703,6 +703,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
