@@ -1,4 +1,6 @@
-const { hasEnglishSource, getChallengesForLang } = require('./get-challenges');
+import { describe, it, expect } from 'vitest';
+
+import { hasEnglishSource, getChallengesForLang } from './get-challenges.js';
 
 const EXISTING_CHALLENGE_PATH = 'challenge.md';
 const MISSING_CHALLENGE_PATH = 'no/challenge.md';
@@ -9,7 +11,7 @@ describe('create non-English challenge', () => {
   describe('getChallengesForLang', () => {
     it('throws if lang is an invalid language', async () => {
       await expect(() => getChallengesForLang('notlang')).rejects.toThrow(
-        'notlang is not a accepted language'
+        'notlang is not an accepted language'
       );
     });
   });

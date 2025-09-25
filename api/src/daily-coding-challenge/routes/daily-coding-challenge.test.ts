@@ -1,8 +1,8 @@
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { addDays } from 'date-fns';
 
-import { setupServer, superRequest } from '../../../vitest.utils';
-import { getNowUsCentral, getUtcMidnight } from '../utils/helpers';
+import { setupServer, superRequest } from '../../../vitest.utils.js';
+import { getNowUsCentral, getUtcMidnight } from '../utils/helpers.js';
 
 function dateToDateParam(date: Date): string {
   return date.toISOString().split('T')[0] as string;
@@ -92,18 +92,29 @@ describe('/daily-coding-challenge', () => {
     });
 
     it('should return 400 for an invalid date format', async () => {
-      const res = await superRequest(
-        '/daily-coding-challenge/date/invalid-format',
-        {
-          method: 'GET'
-        }
-      ).send({});
+      const invalidFormats = [
+        'invalid-format',
+        '2025-07',
+        '07-18-2025',
+        '25-07-18',
+        '2025-7-18',
+        '2025-07-8'
+      ];
 
-      expect(res.status).toBe(400);
-      expect(res.body).toEqual({
-        type: 'error',
-        message: 'Invalid date format. Please use YYYY-MM-DD.'
-      });
+      for (const invalidFormat of invalidFormats) {
+        const res = await superRequest(
+          `/daily-coding-challenge/date/${invalidFormat}`,
+          {
+            method: 'GET'
+          }
+        ).send({});
+
+        expect(res.status).toBe(400);
+        expect(res.body).toEqual({
+          type: 'error',
+          message: 'Invalid date format. Please use YYYY-MM-DD.'
+        });
+      }
     });
 
     it('should return 404 for a date without a challenge', async () => {
@@ -184,6 +195,82 @@ describe('/daily-coding-challenge', () => {
       expect(res.body).toEqual({
         type: 'error',
         message: 'Challenge not found.'
+      });
+    });
+  });
+
+  describe('GET /daily-coding-challenge/month/:month', () => {
+    beforeEach(async () => {
+      await fastifyTestInstance.prisma.dailyCodingChallenges.createMany({
+        data: mockChallenges
+      });
+    });
+
+    afterEach(async () => {
+      await fastifyTestInstance.prisma.dailyCodingChallenges.deleteMany();
+    });
+
+    it('should return 400 for invalid month format', async () => {
+      const invalidFormats = ['invalid-month', '2025-13', '2025-1', '25-07'];
+
+      for (const invalidFormat of invalidFormats) {
+        const res = await superRequest(
+          `/daily-coding-challenge/month/${invalidFormat}`,
+          {
+            method: 'GET'
+          }
+        ).send({});
+
+        expect(res.status).toBe(400);
+        expect(res.body).toEqual({
+          type: 'error',
+          message: 'Invalid date format. Please use YYYY-MM.'
+        });
+      }
+    });
+
+    it('should return { id, date, challengeNumber, title } for all available challenges of the given month up to today US Central', async () => {
+      const currentMonth = todayUsCentral.toISOString().slice(0, 7);
+
+      const res = await superRequest(
+        `/daily-coding-challenge/month/${currentMonth}`,
+        {
+          method: 'GET'
+        }
+      ).send({});
+
+      expect(res.status).toBe(200);
+      expect(Array.isArray(res.body)).toBe(true);
+
+      // Should include yesterday's and today's challenges, but not tomorrow's
+      const expectedResponse = [
+        {
+          id: todaysChallenge.id,
+          challengeNumber: todaysChallenge.challengeNumber,
+          date: todaysChallenge.date.toISOString(),
+          title: todaysChallenge.title
+        },
+        {
+          id: yesterdaysChallenge.id,
+          challengeNumber: yesterdaysChallenge.challengeNumber,
+          date: yesterdaysChallenge.date.toISOString(),
+          title: yesterdaysChallenge.title
+        }
+      ];
+
+      expect(res.body).toHaveLength(2);
+      expect(res.body).toEqual(expectedResponse);
+    });
+
+    it('should return 404 when no challenges exist for the given month', async () => {
+      const res = await superRequest('/daily-coding-challenge/month/2024-01', {
+        method: 'GET'
+      }).send({});
+
+      expect(res.status).toBe(404);
+      expect(res.body).toEqual({
+        type: 'error',
+        message: 'No challenges found.'
       });
     });
   });

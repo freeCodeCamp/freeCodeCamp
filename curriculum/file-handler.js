@@ -3,8 +3,6 @@ const assert = require('node:assert');
 const fs = require('node:fs');
 const fsP = require('node:fs/promises');
 
-// const prettier = require('prettier');
-
 const debug = require('debug')('fcc:file-handler');
 
 const CURRICULUM_DIR = __dirname;
@@ -96,19 +94,31 @@ function getBlockStructurePath(block) {
   return path.resolve(BLOCK_STRUCTURE_DIR, `${block}.json`);
 }
 
+function getBlockStructureDir() {
+  return BLOCK_STRUCTURE_DIR;
+}
+
 function getBlockStructure(block) {
   return JSON.parse(fs.readFileSync(getBlockStructurePath(block), 'utf8'));
 }
 
 async function writeBlockStructure(block, structure) {
-  // TODO: format with prettier (jest, at least this version, is not compatible
-  // with prettier)
-  const content = JSON.stringify(structure);
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
+  const content = await prettier.format(JSON.stringify(structure), {
+    parser: 'json'
+  });
   await fsP.writeFile(getBlockStructurePath(block), content, 'utf8');
 }
 
 async function writeSuperblockStructure(superblock, structure) {
-  const content = JSON.stringify(structure);
+  // dynamically importing prettier because Gatsby build and develop fail when
+  // it's required.
+  const prettier = await import('prettier');
+  const content = await prettier.format(JSON.stringify(structure), {
+    parser: 'json'
+  });
   await fsP.writeFile(getSuperblockStructurePath(superblock), content);
 }
 
@@ -142,17 +152,15 @@ function getSuperblockStructurePath(superblockFilename) {
  */
 function getLanguageConfig(
   lang,
-  { baseDir, i18nBaseDir, structureDir } = {
+  { baseDir, i18nBaseDir } = {
     baseDir: CURRICULUM_DIR,
-    i18nBaseDir: I18N_CURRICULUM_DIR,
-    structureDir: STRUCTURE_DIR
+    i18nBaseDir: I18N_CURRICULUM_DIR
   }
 ) {
   const contentDir = path.resolve(baseDir, 'challenges', 'english');
   const i18nContentDir = path.resolve(i18nBaseDir, 'challenges', lang);
   const blockContentDir = path.resolve(contentDir, 'blocks');
   const i18nBlockContentDir = path.resolve(i18nContentDir, 'blocks');
-  const blockStructureDir = path.resolve(structureDir, 'blocks');
   const dictionariesDir = path.resolve(baseDir, 'dictionaries');
   const i18nDictionariesDir = path.resolve(i18nBaseDir, 'dictionaries');
 
@@ -173,7 +181,6 @@ function getLanguageConfig(
 
   debug(`Using content directory: ${contentDir}`);
   debug(`Using i18n content directory: ${i18nContentDir}`);
-  debug(`Using block content directory: ${blockContentDir}`);
   debug(`Using i18n block content directory: ${i18nBlockContentDir}`);
   debug(`Using dictionaries directory: ${dictionariesDir}`);
   debug(`Using i18n dictionaries directory: ${i18nDictionariesDir}`);
@@ -183,7 +190,6 @@ function getLanguageConfig(
     i18nContentDir,
     blockContentDir,
     i18nBlockContentDir,
-    blockStructureDir,
     dictionariesDir,
     i18nDictionariesDir
   };
@@ -191,7 +197,9 @@ function getLanguageConfig(
 
 exports.getContentConfig = getContentConfig;
 exports.getContentDir = getContentDir;
+exports.getBlockStructureDir = getBlockStructureDir;
 exports.getBlockStructure = getBlockStructure;
+exports.getBlockStructurePath = getBlockStructurePath;
 exports.getSuperblockStructure = getSuperblockStructure;
 exports.getCurriculumStructure = getCurriculumStructure;
 exports.writeBlockStructure = writeBlockStructure;

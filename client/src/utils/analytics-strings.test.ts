@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { stringifyDonationEvents } from './analytics-strings';
 
 describe('Analytics donation strings', () => {

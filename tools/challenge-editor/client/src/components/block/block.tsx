@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { ChallengeData } from '../../../interfaces/challenge-data';
+import {
+  ChallengeData,
+  ChallengeDataWithBlock
+} from '../../../interfaces/challenge-data';
 import { API_LOCATION } from '../../utils/handle-request';
 import './block.css';
 
 const stepBasedSuperblocks = [
-  '07-scientific-computing-with-python',
-  '14-responsive-web-design-22',
-  '15-javascript-algorithms-and-data-structures-22',
-  '25-front-end-development'
+  'scientific-computing-with-python',
+  'responsive-web-design-22',
+  'javascript-algorithms-and-data-structures-22',
+  'front-end-development'
 ];
 
 const taskBasedSuperblocks = [
-  '21-a2-english-for-developers',
-  '24-b1-english-for-developers',
-  '26-a2-professional-spanish',
-  '27-a2-professional-chinese',
-  '30-a1-professional-chinese'
+  'a2-english-for-developers',
+  'b1-english-for-developers',
+  'a1-professional-spanish',
+  'a2-professional-spanish',
+  'a2-professional-chinese',
+  'a1-professional-chinese'
 ];
 
 const Block = () => {
   const [error, setError] = useState<Error | null>(null);
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([] as ChallengeData[]);
+  const [blockName, setBlockName] = useState('');
+  const [superBlockName, setSuperBlockName] = useState('');
   const params = useParams() as { superblock: string; block: string };
 
   useEffect(() => {
@@ -33,11 +39,13 @@ const Block = () => {
   const fetchData = () => {
     setLoading(true);
     fetch(`${API_LOCATION}/${params.superblock}/${params.block}`)
-      .then(res => res.json() as Promise<ChallengeData[]>)
+      .then(res => res.json() as Promise<ChallengeDataWithBlock>)
       .then(
         superblocks => {
           setLoading(false);
-          setItems(superblocks);
+          setItems(superblocks.steps);
+          setBlockName(superblocks.currentBlock);
+          setSuperBlockName(superblocks.currentSuperBlock);
         },
         (error: Error) => {
           setLoading(false);
@@ -63,8 +71,8 @@ const Block = () => {
 
   return (
     <div>
-      <h1>{params.block}</h1>
-      <span className='breadcrumb'>{params.superblock}</span>
+      <h1>{blockName}</h1>
+      <span className='breadcrumb'>{superBlockName}</span>
       <ul className='step-grid'>
         {items.map((challenge, i) => (
           <li key={challenge.name}>
@@ -95,7 +103,7 @@ const Block = () => {
             Looking to add or remove challenges? Navigate to <br />
             <code>
               freeCodeCamp/curriculum/challenges/english
-              {`/${params.superblock}/${params.block}/`}
+              {`/${params.block}/`}
             </code>
             <br />
             in your terminal and run the following commands:

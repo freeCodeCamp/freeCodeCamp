@@ -8,14 +8,20 @@ import { insertInto } from './utils';
 
 export async function updateSimpleSuperblockStructure(
   block: string,
-  position: { order: number },
+  position: { order?: number },
   superblockFilename: string
 ) {
   const existing = getSuperblockStructure(superblockFilename) as {
     blocks: string[];
   };
+
+  const order =
+    typeof position.order === 'number'
+      ? position.order
+      : existing.blocks.length;
+
   const updated = {
-    blocks: insertInto(existing.blocks, position.order, block)
+    blocks: insertInto(existing.blocks, order, block)
   };
   await writeSuperblockStructure(superblockFilename, updated);
 }

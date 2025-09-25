@@ -2,13 +2,14 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
+import { describe, test, expect } from 'vitest';
 
 import {
   chapterBasedSuperBlocks,
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared/config/curriculum';
+} from '../../../shared-dist/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -81,12 +82,8 @@ describe('external curriculum data build', () => {
       expect.arrayContaining(filteredSuperBlockStages)
     );
 
-    if (result.error) {
-      throw Error(
-        `file: available-superblocks.json
-${result.error.message}`
-      );
-    }
+    expect(result.error?.details).toBeUndefined();
+    expect(result.error).toBeFalsy();
   });
 
   test('the super block files generated should have the correct schema', async () => {
@@ -117,10 +114,8 @@ ${result.error.message}`
 
       const result = validateSuperBlock(JSON.parse(fileContent));
 
-      if (result.error) {
-        throw Error(`file: ${fileInArray}
-${result.error.message}`);
-      }
+      expect(result.error?.details).toBeUndefined();
+      expect(result.error).toBeFalsy();
     });
   });
 
