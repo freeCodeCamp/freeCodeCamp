@@ -259,3 +259,52 @@ export function createFetchMock({ ok = true, body = {} } = {}) {
     })
   );
 }
+
+/**
+ * Utility type to recursively replace `Date` with `string`.
+ */
+export type ReplaceDates<T> = T extends Date
+  ? string
+  : T extends (infer U)[]
+    ? ReplaceDates<U>[]
+    : T extends Record<string, unknown>
+      ? { [K in keyof T]: ReplaceDates<T[K]> }
+      : T;
+
+/**
+ * Recursively finds and converts Date objects to ISO strings while preserving shape.
+ */
+export function serializeDates<T>(data: T): ReplaceDates<T> {
+  if (data === null || data === undefined) {
+    return data as ReplaceDates<T>;
+  }
+
+  // Preserve Vitest/Jest asymmetric matchers (e.g., expect.any(Number))
+  if (
+    typeof data === 'object' &&
+    data !== null &&
+    typeof (data as { asymmetricMatch?: unknown }).asymmetricMatch ===
+      'function'
+  ) {
+    return data as unknown as ReplaceDates<T>;
+  }
+
+  if (data instanceof Date) {
+    return data.toISOString() as ReplaceDates<T>;
+  }
+
+  if (Array.isArray(data)) {
+    return (data as unknown[]).map(item =>
+      serializeDates(item)
+    ) as ReplaceDates<T>;
+  }
+
+  if (typeof data === 'object') {
+    const entries = Object.entries(data as Record<string, unknown>).map(
+      ([key, value]) => [key, serializeDates(value)] as const
+    );
+    return Object.fromEntries(entries) as ReplaceDates<T>;
+  }
+
+  return data as ReplaceDates<T>;
+}

@@ -1,0 +1,62 @@
+/// A copy of `ExamEnvironmentExam` used as a staging collection for updates to the curriculum.
+///
+/// This collection schema must be kept in sync with `ExamEnvironmentExam`.
+model ExamCreatorExam {
+  /// Globally unique exam id
+  id            String                       @id @default(auto()) @map("_id") @db.ObjectId
+  /// All questions for a given exam
+  questionSets  ExamEnvironmentQuestionSet[]
+  /// Configuration for exam metadata
+  config        ExamEnvironmentConfig
+  /// ObjectIds for required challenges/blocks to take the exam
+  prerequisites String[]                     @db.ObjectId
+  /// If `deprecated`, the exam should no longer be considered for users
+  deprecated    Boolean
+  /// Version of the record
+  /// The default must be incremented by 1, if anything in the schema changes
+  version       Int                          @default(2)
+
+}
+
+/// Exam Creator application collection to store authZ users.
+///
+/// Currently, this is manually created in order to grant access to the application.
+model ExamCreatorUser {
+  id        String                  @id @default(auto()) @map("_id") @db.ObjectId
+  email     String
+  /// Unique id from GitHub for an account.
+  ///
+  /// Currently, this is unused. Consider removing.
+  github_id Int?
+  name      String
+  picture   String?
+  /// TODO: After migration, remove optionality
+  settings  ExamCreatorUserSettings?
+  version   Int                     @default(1)
+
+
+  ExamCreatorSession ExamCreatorSession[]
+}
+
+type ExamCreatorUserSettings {
+  databaseEnvironment ExamCreatorDatabaseEnvironment
+}
+
+enum ExamCreatorDatabaseEnvironment {
+  Production
+  Staging
+}
+
+/// Exam Creator application collection to store auth sessions.
+model ExamCreatorSession {
+  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  user_id    String   @db.ObjectId
+  session_id String
+  /// Expiration date for record.
+  expires_at DateTime
+
+  version   Int      @default(1)
+
+
+  ExamCreatorUser ExamCreatorUser @relation(fields: [user_id], references: [id])
+}

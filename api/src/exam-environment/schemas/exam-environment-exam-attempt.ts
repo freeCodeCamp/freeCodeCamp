@@ -30,6 +30,7 @@ const examEnvAttempt = Type.Object({
   id: Type.String(),
   examId: Type.String(),
   startTimeInMS: Type.Number(),
+  startTime: Type.String({ format: 'date-time' }),
   questionSets: Type.Array(
     Type.Object({
       id: Type.String(),
@@ -37,7 +38,8 @@ const examEnvAttempt = Type.Object({
         Type.Object({
           id: Type.String(),
           answers: Type.Array(Type.String()),
-          submissionTimeInMS: Type.Number()
+          submissionTimeInMS: Type.Number(),
+          submissionTime: Type.String({ format: 'date-time' })
         })
       )
     })
