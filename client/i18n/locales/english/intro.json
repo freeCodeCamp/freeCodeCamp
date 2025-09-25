@@ -3576,6 +3576,12 @@
           "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
+      "lab-all-true-property-validator": {
+        "title": "Build an All-True Property Validator",
+        "intro": [
+          "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
