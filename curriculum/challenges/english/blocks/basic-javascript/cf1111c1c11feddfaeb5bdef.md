@@ -3,7 +3,7 @@ id: cf1111c1c11feddfaeb5bdef
 title: Iterate with JavaScript For Loops
 challengeType: 1
 forumTopicId: 18219
-dashedName: iterate-with-javascript-for-loops
+dashedName: iterate-with-JavaScript-for-loops
 ---
 
 # --description--

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Build a JavaScript Trivia Bot
-block: lab-javascript-trivia-bot
+block: lab-JavaScript-trivia-bot
 superBlock: full-stack-developer
 ---
 

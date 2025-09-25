@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Objects Review
-block: review-javascript-objects
+block: review-JavaScript-objects
 superBlock: full-stack-developer
 ---
 

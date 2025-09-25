@@ -1,6 +1,6 @@
 ---
 title: Introduction to Understanding How to Work with Classes in JavaScript
-block: lecture-understanding-how-to-work-with-classes-in-javascript
+block: lecture-understanding-how-to-work-with-classes-in-JavaScript
 superBlock: full-stack-developer
 ---
 

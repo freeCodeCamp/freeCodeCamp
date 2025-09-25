@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Asynchronous JavaScript Review
-block: review-asynchronous-javascript
+block: review-asynchronous-JavaScript
 superBlock: full-stack-developer
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Functional Programming Quiz
-block: quiz-javascript-functional-programming
+block: quiz-JavaScript-functional-programming
 superBlock: full-stack-developer
 ---
 

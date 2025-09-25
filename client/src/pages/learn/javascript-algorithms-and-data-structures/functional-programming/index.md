@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Functional Programming Challenges
 block: functional-programming
-superBlock: javascript-algorithms-and-data-structures
+superBlock: JavaScript-algorithms-and-data-structures
 ---
 
 ## Introduction to the Functional Programming Challenges

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Classes Review
-block: review-javascript-classes
+block: review-JavaScript-classes
 superBlock: full-stack-developer
 ---
 

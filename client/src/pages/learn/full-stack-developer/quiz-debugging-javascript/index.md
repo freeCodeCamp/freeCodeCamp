@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Debugging JavaScript Quiz
-block: quiz-debugging-javascript
+block: quiz-debugging-JavaScript
 superBlock: full-stack-developer
 ---
 

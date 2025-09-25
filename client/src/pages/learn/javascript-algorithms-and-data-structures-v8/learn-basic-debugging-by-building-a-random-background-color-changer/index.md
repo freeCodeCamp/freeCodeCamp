@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn Basic Debugging by Building a Random Background Color Changer
 block: learn-basic-debugging-by-building-a-random-background-color-changer
-superBlock: javascript-algorithms-and-data-structures-v8
+superBlock: JavaScript-algorithms-and-data-structures-v8
 ---
 
 ## Introduction to the Learn Basic Debugging by Building a Random Background Color Changer

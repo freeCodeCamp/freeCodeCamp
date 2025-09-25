@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Variables and Data Types Review
-block: review-javascript-variables-and-data-types
+block: review-JavaScript-variables-and-data-types
 superBlock: full-stack-developer
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the DOM Manipulation and Click Events with JavaScript Quiz
-block: quiz-dom-manipulation-and-click-event-with-javascript
+block: quiz-dom-manipulation-and-click-event-with-JavaScript
 superBlock: full-stack-developer
 ---
 

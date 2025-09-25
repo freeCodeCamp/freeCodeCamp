@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Dates Review
-block: review-javascript-dates
+block: review-JavaScript-dates
 superBlock: full-stack-developer
 ---
 

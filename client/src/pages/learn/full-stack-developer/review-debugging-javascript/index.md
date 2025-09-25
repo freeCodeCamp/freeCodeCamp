@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Debugging JavaScript Review
-block: review-debugging-javascript
+block: review-debugging-JavaScript
 superBlock: full-stack-developer
 ---
 

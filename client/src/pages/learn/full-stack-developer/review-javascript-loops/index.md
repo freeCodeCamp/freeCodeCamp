@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Loops Review
-block: review-javascript-loops
+block: review-JavaScript-loops
 superBlock: full-stack-developer
 ---
 

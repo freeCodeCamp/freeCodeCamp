@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Learn localStorage by Building a Todo App
 block: learn-localstorage-by-building-a-todo-app
-superBlock: javascript-algorithms-and-data-structures-v8
+superBlock: JavaScript-algorithms-and-data-structures-v8
 ---
 
 ## Introduction to the Learn LocalStorage by Building a Todo App

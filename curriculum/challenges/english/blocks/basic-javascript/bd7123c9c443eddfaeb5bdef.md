@@ -3,7 +3,7 @@ id: bd7123c9c443eddfaeb5bdef
 title: Declare JavaScript Variables
 challengeType: 1
 forumTopicId: 17556
-dashedName: declare-javascript-variables
+dashedName: declare-JavaScript-variables
 ---
 
 # --description--

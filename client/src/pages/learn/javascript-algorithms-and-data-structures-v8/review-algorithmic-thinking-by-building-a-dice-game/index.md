@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Review Algorithmic Thinking by Building a Dice Game
 block: review-algorithmic-thinking-by-building-a-dice-game
-superBlock: javascript-algorithms-and-data-structures-v8
+superBlock: JavaScript-algorithms-and-data-structures-v8
 ---
 
 ## Introduction to the Review Algorithmic Thinking by Building a Dice Game

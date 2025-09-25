@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Math Review
-block: review-javascript-math
+block: review-JavaScript-math
 superBlock: full-stack-developer
 ---
 

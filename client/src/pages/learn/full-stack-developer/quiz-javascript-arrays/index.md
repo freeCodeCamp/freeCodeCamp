@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Arrays Quiz
-block: quiz-javascript-arrays
+block: quiz-JavaScript-arrays
 superBlock: full-stack-developer
 ---
 

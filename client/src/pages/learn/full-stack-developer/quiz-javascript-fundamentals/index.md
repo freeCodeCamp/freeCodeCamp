@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Fundamentals Quiz
-block: quiz-javascript-fundamentals
+block: quiz-JavaScript-fundamentals
 superBlock: full-stack-developer
 ---
 

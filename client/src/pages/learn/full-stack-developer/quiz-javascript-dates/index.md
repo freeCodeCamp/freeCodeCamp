@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Dates Quiz
-block: quiz-javascript-dates
+block: quiz-JavaScript-dates
 superBlock: full-stack-developer
 ---
 

@@ -3,13 +3,13 @@ id: bd7158d8c442eddfaeb5bd17
 title: Build a JavaScript Calculator
 challengeType: 3
 forumTopicId: 301371
-dashedName: build-a-javascript-calculator
+dashedName: build-a-JavaScript-calculator
 ---
 
 # --description--
 **Note:** **React 18 has known incompatibilities with the tests for this project (see [issue](https://github.com/freeCodeCamp/freeCodeCamp/issues/45922))**
 
-**Objective:** Build an app that is functionally similar to this: <a href="https://javascript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://javascript-calculator.freecodecamp.rocks/</a>.
+**Objective:** Build an app that is functionally similar to this: <a href="https://JavaScript-calculator.freecodecamp.rocks/" target="_blank" rel="noopener noreferrer nofollow">https://JavaScript-calculator.freecodecamp.rocks/</a>.
 
 Fulfill the below user stories and get all of the tests to pass. Use whichever libraries or APIs you need. Give it your own personal style.
 

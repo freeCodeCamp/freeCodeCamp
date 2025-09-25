@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Comparisons and Conditionals Quiz
-block: quiz-javascript-comparisons-and-conditionals
+block: quiz-JavaScript-comparisons-and-conditionals
 superBlock: full-stack-developer
 ---
 

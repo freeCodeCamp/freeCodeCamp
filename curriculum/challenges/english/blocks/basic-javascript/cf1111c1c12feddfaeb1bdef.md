@@ -3,7 +3,7 @@ id: cf1111c1c12feddfaeb1bdef
 title: Generate Random Whole Numbers with JavaScript
 challengeType: 1
 forumTopicId: 18186
-dashedName: generate-random-whole-numbers-with-javascript
+dashedName: generate-random-whole-numbers-with-JavaScript
 ---
 
 # --description--

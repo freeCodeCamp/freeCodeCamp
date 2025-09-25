@@ -1,6 +1,6 @@
 ---
 title: Introduction to Working with Strings in JavaScript
-block: lecture-working-with-strings-in-javascript
+block: lecture-working-with-strings-in-JavaScript
 superBlock: full-stack-developer
 ---
 

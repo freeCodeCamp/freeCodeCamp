@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Asynchronous JavaScript Quiz
-block: quiz-asynchronous-javascript
+block: quiz-asynchronous-JavaScript
 superBlock: full-stack-developer
 ---
 

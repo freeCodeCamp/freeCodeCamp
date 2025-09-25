@@ -1,6 +1,6 @@
 ---
 title: Introduction to the DOM Manipulation and Click Events with JavaScript Review
-block: review-dom-manipulation-and-click-events-with-javascript
+block: review-dom-manipulation-and-click-events-with-JavaScript
 superBlock: full-stack-developer
 ---
 

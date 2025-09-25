@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Audio and Video Review
-block: review-javascript-audio-and-video
+block: review-JavaScript-audio-and-video
 superBlock: full-stack-developer
 ---
 

@@ -3,7 +3,7 @@ id: bd7993c9c69feddfaeb7bdef
 title: Multiply Two Decimals with JavaScript
 challengeType: 1
 forumTopicId: 301173
-dashedName: multiply-two-decimals-with-javascript
+dashedName: multiply-two-decimals-with-JavaScript
 ---
 
 # --description--

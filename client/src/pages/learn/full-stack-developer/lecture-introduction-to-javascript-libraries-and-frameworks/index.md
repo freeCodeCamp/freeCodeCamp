@@ -1,6 +1,6 @@
 ---
 title: Introduction to Introduction to JavaScript Libraries and Frameworks
-block: lecture-introduction-to-javascript-libraries-and-frameworks
+block: lecture-introduction-to-JavaScript-libraries-and-frameworks
 superBlock: full-stack-developer
 ---
 

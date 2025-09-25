@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Math Quiz
-block: quiz-javascript-math
+block: quiz-JavaScript-math
 superBlock: full-stack-developer
 ---
 

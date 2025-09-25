@@ -3,7 +3,7 @@ title: >-
   Introduction to the Learn Advanced Array Methods by Building a Statistics
   Calculator
 block: learn-advanced-array-methods-by-building-a-statistics-calculator
-superBlock: javascript-algorithms-and-data-structures
+superBlock: JavaScript-algorithms-and-data-structures
 ---
 
 ## Introduction to the Learn Advanced Array Methods by Building a Statistics Calculator

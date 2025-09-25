@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Functional Programming Review
-block: review-javascript-functional-programming
+block: review-JavaScript-functional-programming
 superBlock: full-stack-developer
 ---
 

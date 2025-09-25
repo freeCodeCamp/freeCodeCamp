@@ -3,7 +3,7 @@ id: cf1111c1c11feddfaeb6bdef
 title: Divide One Number by Another with JavaScript
 challengeType: 1
 forumTopicId: 17566
-dashedName: divide-one-number-by-another-with-javascript
+dashedName: divide-one-number-by-another-with-JavaScript
 ---
 
 # --description--

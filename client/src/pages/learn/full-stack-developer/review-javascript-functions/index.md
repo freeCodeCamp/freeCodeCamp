@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Functions Review
-block: review-javascript-functions
+block: review-JavaScript-functions
 superBlock: full-stack-developer
 ---
 

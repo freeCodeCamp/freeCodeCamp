@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Objects Quiz
-block: quiz-javascript-objects
+block: quiz-JavaScript-objects
 superBlock: full-stack-developer
 ---
 

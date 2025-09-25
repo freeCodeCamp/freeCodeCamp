@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Variables and Data Types Quiz
-block: quiz-javascript-variables-and-data-types
+block: quiz-JavaScript-variables-and-data-types
 superBlock: full-stack-developer
 ---
 

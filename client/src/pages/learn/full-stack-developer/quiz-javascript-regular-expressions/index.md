@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Regular Expressions Quiz
-block: quiz-javascript-regular-expressions
+block: quiz-JavaScript-regular-expressions
 superBlock: full-stack-developer
 ---
 

@@ -3,7 +3,7 @@ id: cf1231c1c11feddfaeb5bdef
 title: Multiply Two Numbers with JavaScript
 challengeType: 1
 forumTopicId: 18243
-dashedName: multiply-two-numbers-with-javascript
+dashedName: multiply-two-numbers-with-JavaScript
 ---
 
 # --description--

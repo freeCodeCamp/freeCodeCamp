@@ -1,6 +1,6 @@
 ---
 title: Introduction to Introduction to JavaScript
-block: lecture-introduction-to-javascript
+block: lecture-introduction-to-JavaScript
 superBlock: full-stack-developer
 ---
 

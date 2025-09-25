@@ -3,7 +3,7 @@ id: bd7123c9c441eddfaeb4bdef
 title: Comment Your JavaScript Code
 challengeType: 1
 forumTopicId: 16783
-dashedName: comment-your-javascript-code
+dashedName: comment-your-JavaScript-code
 ---
 
 # --description--

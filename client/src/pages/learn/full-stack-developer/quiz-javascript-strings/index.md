@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Strings Quiz
-block: quiz-javascript-strings
+block: quiz-JavaScript-strings
 superBlock: full-stack-developer
 ---
 

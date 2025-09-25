@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Maps and Sets Quiz
-block: quiz-javascript-maps-and-sets
+block: quiz-JavaScript-maps-and-sets
 superBlock: full-stack-developer
 ---
 

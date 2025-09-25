@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Fundamentals Review
-block: review-javascript-fundamentals
+block: review-JavaScript-fundamentals
 superBlock: full-stack-developer
 ---
 

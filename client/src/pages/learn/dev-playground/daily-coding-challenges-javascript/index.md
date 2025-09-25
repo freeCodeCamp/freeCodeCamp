@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Daily Coding Challenges JavaScript
-block: daily-coding-challenges-javascript
+block: daily-coding-challenges-JavaScript
 superBlock: dev-playground
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Regular Expressions Review
-block: review-javascript-regular-expressions
+block: review-JavaScript-regular-expressions
 superBlock: full-stack-developer
 ---
 

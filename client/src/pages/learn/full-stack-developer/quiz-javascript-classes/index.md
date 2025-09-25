@@ -1,6 +1,6 @@
 ---
 title: Introduction to the JavaScript Classes Quiz
-block: quiz-javascript-classes
+block: quiz-JavaScript-classes
 superBlock: full-stack-developer
 ---
 

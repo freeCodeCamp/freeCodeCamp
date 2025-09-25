@@ -1,6 +1,6 @@
 ---
 title: Introduction to JavaScript Objects and Their Properties
-block: lecture-introduction-to-javascript-objects-and-their-properties
+block: lecture-introduction-to-JavaScript-objects-and-their-properties
 superBlock: full-stack-developer
 ---
 
