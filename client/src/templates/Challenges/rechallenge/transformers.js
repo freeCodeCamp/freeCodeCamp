@@ -192,7 +192,7 @@ const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
   await loadPresetTypescriptReact();
-  const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  const baseOptions = getBabelOptions(presetsTSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
     plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
