@@ -3,9 +3,9 @@ import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
-import { JWT_SECRET } from '../utils/env';
-import { type Token, isExpired } from '../utils/tokens';
-import { ERRORS } from '../exam-environment/utils/errors';
+import { JWT_SECRET } from '../utils/env.js';
+import { type Token, isExpired } from '../utils/tokens.js';
+import { ERRORS } from '../exam-environment/utils/errors.js';
 
 declare module 'fastify' {
   interface FastifyReply {
