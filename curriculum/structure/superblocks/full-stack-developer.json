@@ -366,6 +366,7 @@
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "lab-missing-letter-detector",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -391,6 +392,7 @@
             "lab-sum-all-numbers-algorithm",
             "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
+            "lab-odd-fibonacci-sum-calculator",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
@@ -404,6 +406,7 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-value-remover-function",
             "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
             "lab-deep-flattening-tool",
@@ -456,6 +459,7 @@
             "lab-palindrome-checker",
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
+            "lab-pig-latin",
             "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
@@ -700,6 +704,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
