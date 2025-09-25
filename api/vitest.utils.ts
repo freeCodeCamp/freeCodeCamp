@@ -1,10 +1,10 @@
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
-import { build, buildOptions } from './src/app';
-import { createUserInput } from './src/utils/create-user';
-import { examJson } from './__mocks__/exam';
-import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf';
+import { build, buildOptions } from './src/app.js';
+import { createUserInput } from './src/utils/create-user.js';
+import { examJson } from './__mocks__/exam.js';
+import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
@@ -205,8 +205,6 @@ export function setupServer(): void {
 If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
-    // Due to a prisma bug, this is not enough, we need to --force-exit jest:
-    // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
   });
 }

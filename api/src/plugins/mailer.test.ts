@@ -1,7 +1,7 @@
 import { describe, test, expect, vi } from 'vitest';
 import Fastify from 'fastify';
 
-import mailer from './mailer';
+import mailer from './mailer.js';
 
 describe('mailer', () => {
   test('should send an email via the provider', async () => {

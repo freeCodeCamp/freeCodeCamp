@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import * as mocks from '../../../__mocks__/exam-environment-exam';
-import { MONGOHQ_URL } from '../../../src/utils/env';
+import * as mocks from '../../../__mocks__/exam-environment-exam.js';
+import { MONGOHQ_URL } from '../../../src/utils/env.js';
 
 const prisma = new PrismaClient({
   datasources: {
