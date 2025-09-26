@@ -4712,7 +4712,13 @@
         "intro": [""]
       },
       "lab-depth-first-search": {
-        "title": "Build a Depth First Search",
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "lab-n-queens-problem": {
+        "title": "",
         "intro": [""]
       },
       "review-graphs-and-trees": {
