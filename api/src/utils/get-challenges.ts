@@ -4,10 +4,11 @@
 // via the user object, then we should *not* store this so it can be garbage
 // collected.
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { fileURLToPath } from 'node:url';
+import { join, dirname } from 'path';
 
 const CURRICULUM_PATH = '../../../shared/config/curriculum.json';
-
+const __dirname = dirname(fileURLToPath(import.meta.url));
 // Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
 const curriculum = JSON.parse(
   readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')

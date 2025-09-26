@@ -1,6 +1,4 @@
-const path = require('path');
 const chokidar = require('chokidar');
-const readdirp = require('readdirp');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -36,64 +34,34 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
+  function handleChallengeUpdate(filePath, action = 'changed') {
+    return onSourceChange(filePath)
+      .then(challenges => {
+        const actionText = action === 'added' ? 'creating' : 'replacing';
+        reporter.info(
+          `Challenge file ${action}: ${filePath}, ${actionText} challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
+        );
+        challenges.forEach(challenge =>
+          createVisibleChallenge(challenge, { isReloading: true })
+        );
+      })
+      .catch(e =>
+        reporter.error(
+          `fcc-replace-challenge\nattempting to replace ${filePath}\n\n${e.message}\n${e.stack ? `  ${e.stack}` : ''}`
+        )
+      );
+  }
+
+  // On file change, replace only the changed challenge. The key is ensuring
+  // onSourceChange returns a challenge with complete metadata.
   watcher.on('change', filePath =>
-    /\.md?$/.test(filePath)
-      ? onSourceChange(filePath)
-          .then(challenge => {
-            reporter.info(
-              `
-File changed at ${filePath}, replacing challengeNode id ${challenge.id}
-              `
-            );
-            createVisibleChallenge(challenge, { isReloading: true });
-          })
-          .catch(e =>
-            reporter.error(`fcc-replace-challenge
-  attempting to replace ${filePath}
-
-  ${e.message}
-  ${e.stack}
-
-  `)
-          )
-      : null
+    /\.md?$/.test(filePath) ? handleChallengeUpdate(filePath, 'changed') : null
   );
 
-  // if a file is added, that might change the order of the challenges in the
-  // containing block, so we recreate them all
+  // On file add, replace just the new challenge.
   watcher.on('add', filePath => {
-    if (/\.md?$/.test(filePath)) {
-      const blockPath = path.dirname(filePath);
-      const fullBlockPath = path.join(
-        __dirname,
-        '../../../curriculum/challenges/english/',
-        blockPath
-      );
-      readdirp(fullBlockPath, { fileFilter: '*.md' })
-        .on('data', entry => {
-          const { path: siblingPath } = entry;
-          const relativePath = path.join(blockPath, siblingPath);
-          onSourceChange(relativePath)
-            .then(challenge => {
-              reporter.info(
-                `
-File changed at ${relativePath}, replacing challengeNode id ${challenge.id}
-            `
-              );
-              createVisibleChallenge(challenge);
-            })
-            .catch(e =>
-              reporter.error(`fcc-replace-challenge
-attempting to replace ${relativePath}
-
-${e.message}
-
-`)
-            );
-        })
-        .on('warn', error => console.error('non-fatal error', error))
-        .on('error', error => console.error('fatal error', error));
-    }
+    if (!/\.md?$/.test(filePath)) return;
+    handleChallengeUpdate(filePath, 'added');
   });
 
   function sourceAndCreateNodes() {

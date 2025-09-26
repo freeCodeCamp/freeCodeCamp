@@ -4,8 +4,8 @@ const { isEmpty } = require('lodash');
 const debug = require('debug')('fcc:build-superblock');
 
 const { parseMD } = require('../tools/challenge-parser/parser');
-const { createPoly } = require('../shared/utils/polyvinyl');
-const { isAuditedSuperBlock } = require('../shared/utils/is-audited');
+const { createPoly } = require('../shared-dist/utils/polyvinyl');
+const { isAuditedSuperBlock } = require('../shared-dist/utils/is-audited');
 const {
   translateCommentsInChallenge
 } = require('../tools/challenge-parser/translation-parser');

@@ -1,5 +1,7 @@
-const { shuffleArray } = require('../../../shared/utils/shuffle-array');
-const { sortChallenges } = require('./sort-challenges');
+import { describe, it, expect } from 'vitest';
+
+import { shuffleArray } from '../../../shared-dist/utils/shuffle-array.js';
+import { sortChallenges } from './sort-challenges.js';
 
 const challenges = [
   {
