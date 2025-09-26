@@ -460,6 +460,7 @@
             "lab-palindrome-checker",
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
+            "lab-spinal-case-converter",
             "lab-pig-latin",
             "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
