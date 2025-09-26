@@ -4895,7 +4895,6 @@
     ],
     "chapters": { "javascript": "JavaScript" },
     "modules": {
-      "code-editors": "Code Editors",
       "javascript-variables-and-strings": "Variables and Strings",
       "javascript-booleans-and-numbers": "Booleans and Numbers",
       "javascript-functions": "Functions",

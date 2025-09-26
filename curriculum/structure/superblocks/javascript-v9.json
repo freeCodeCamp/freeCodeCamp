@@ -4,10 +4,6 @@
       "dashedName": "javascript",
       "modules": [
         {
-          "dashedName": "code-editors",
-          "blocks": ["lecture-working-with-code-editors-and-ides"]
-        },
-        {
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
