@@ -82,12 +82,8 @@ describe('external curriculum data build', () => {
       expect.arrayContaining(filteredSuperBlockStages)
     );
 
-    if (result.error) {
-      throw Error(
-        `file: available-superblocks.json
-${result.error.message}`
-      );
-    }
+    expect(result.error?.details).toBeUndefined();
+    expect(result.error).toBeFalsy();
   });
 
   test('the super block files generated should have the correct schema', async () => {
@@ -118,10 +114,8 @@ ${result.error.message}`
 
       const result = validateSuperBlock(JSON.parse(fileContent));
 
-      if (result.error) {
-        throw Error(`file: ${fileInArray}
-${result.error.message}`);
-      }
+      expect(result.error?.details).toBeUndefined();
+      expect(result.error).toBeFalsy();
     });
   });
 
