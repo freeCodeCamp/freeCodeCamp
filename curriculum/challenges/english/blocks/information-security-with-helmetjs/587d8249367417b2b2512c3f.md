@@ -25,35 +25,31 @@ Hint: in the `'self'` keyword, the single quotes are part of the keyword itself,
 helmet.contentSecurityPolicy() middleware should be mounted correctly
 
 ```js
-  $.get(code + '/_api/app-info').then(
-    (data) => {
-      assert.include(data.appStack, 'csp');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/app-info');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.include(data.appStack, 'csp');
 ```
 
 Your csp config is not correct. defaultSrc should be ["'self'"] and scriptSrc should be ["'self'", 'trusted-cdn.com']
 
 ```js
-  $.get(code + '/_api/app-info').then(
-    (data) => {
-      var cspHeader = Object.keys(data.headers).filter(function (k) {
-        return (
-          k === 'content-security-policy' ||
-          k === 'x-webkit-csp' ||
-          k === 'x-content-security-policy'
-        );
-      })[0];
-      assert.equal(
-        data.headers[cspHeader],
-        "default-src 'self'; script-src 'self' trusted-cdn.com"
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+const response = await fetch(code + '/_api/app-info');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+var cspHeader = Object.keys(data.headers).filter(function (k) {
+  return (
+    k === 'content-security-policy' ||
+    k === 'x-webkit-csp' ||
+    k === 'x-content-security-policy'
   );
+})[0];
+assert.equal(
+  data.headers[cspHeader],
+  "default-src 'self'; script-src 'self' trusted-cdn.com"
+);
 ```

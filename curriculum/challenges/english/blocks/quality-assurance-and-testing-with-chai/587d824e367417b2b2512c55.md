@@ -21,60 +21,52 @@ Within `tests/1_unit-tests.js` under the test labeled `#16` in the `Objects` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=15');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'notProperty',
-        'A car has not wings'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=15');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[0].method,
+  'notProperty',
+  'A car has not wings'
+);
 ```
 
 You should choose the correct method for the second assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'property',
-        'planes have engines'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=15');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[1].method,
+  'property',
+  'planes have engines'
+);
 ```
 
 You should choose the correct method for the third assertion - `property` vs. `notProperty`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=15').then(
-    (data) => {
-      assert.equal(data.assertions[2].method, 'property', 'Cars have wheels');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=15');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[2].method, 'property', 'Cars have wheels');
 ```
 
