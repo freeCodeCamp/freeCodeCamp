@@ -58,6 +58,7 @@
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
             "lecture-introduction-to-aria",
             "lecture-accessible-media-elements",

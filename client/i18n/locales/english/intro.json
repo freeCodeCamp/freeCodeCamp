@@ -2299,6 +2299,12 @@
           "In these lectures, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "workshop-debug-coding-journey-blog-page": {
+        "title": "Debug a Coding Journey Blog Page",
+        "intro": [
+          "In this workshop, you will debug and fix accessibility errors in a coding blog page."
+        ]
+      },
       "lecture-accessible-tables-forms": {
         "title": "Working with Accessible Tables and Forms",
         "intro": [
