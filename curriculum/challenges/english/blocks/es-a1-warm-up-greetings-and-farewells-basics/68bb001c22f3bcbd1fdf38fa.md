@@ -63,7 +63,7 @@ This is a polite word, but it's not what you hear in the audio.
 
 # --explanation--
 
-The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi" in English. For example:
+The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi". For example:
 
 `¡Hola, buenos días!` – Hi, good morning!  
 
