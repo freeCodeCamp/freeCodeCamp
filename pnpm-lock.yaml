@@ -1076,6 +1076,25 @@ importers:
         specifier: ^3.2.4
         version: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
+  tools/scripts/migrate:
+    dependencies:
+      dotenv:
+        specifier: '16'
+        version: 16.4.5
+      mongodb:
+        specifier: '6'
+        version: 6.10.0(@aws-sdk/credential-providers@3.521.0)(socks@2.8.3)
+      pino:
+        specifier: '9'
+        version: 9.7.0
+      pino-pretty:
+        specifier: '10'
+        version: 10.2.3
+    devDependencies:
+      tsx:
+        specifier: '4'
+        version: 4.19.1
+
   tools/scripts/seed:
     devDependencies:
       debug:
@@ -11301,12 +11320,13 @@ packages:
   puppeteer@22.12.1:
     resolution: {integrity: sha512-1GxY8dnEnHr1SLzdSDr0FCjM6JQfAh2E2I/EqzeF8a58DbGVk9oVjj4lFdqNoVbpgFSpAbz7VER9St7S1wDpNg==}
     engines: {node: '>=18'}
-    deprecated: < 24.9.0 is no longer supported
+    deprecated: < 24.10.2 is no longer supported
     hasBin: true
 
   puppeteer@24.10.0:
     resolution: {integrity: sha512-Oua9VkGpj0S2psYu5e6mCer6W9AU9POEQh22wRgSXnLXASGH+MwLUVWgLCLeP9QPHHcJ7tySUlg4Sa9OJmaLpw==}
     engines: {node: '>=18'}
+    deprecated: < 24.10.2 is no longer supported
     hasBin: true
 
   pyodide@0.23.3:
@@ -29841,7 +29861,7 @@ snapshots:
 
   tr46@4.1.1:
     dependencies:
-      punycode: 2.3.0
+      punycode: 2.3.1
 
   tr46@5.1.1:
     dependencies:
