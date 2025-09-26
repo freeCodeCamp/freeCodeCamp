@@ -4946,12 +4946,10 @@
   "javascript-v9": {
     "title": "JavaScript Certification",
     "intro": [
-      "This course teaches you core programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
+      "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
       "To earn your JavaScript Certification:",
-      "- Complete the Build a Drum Machine project.",
-      "- Complete the Build a Voting System project.",
-      "- Complete the Build a Weather App project.",
-      "- Pass the JavaScript Certification Exam."
+      "- Complete the three required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": { "javascript": "JavaScript" },
     "modules": {

@@ -6,8 +6,9 @@ certification: javascript-v9
 
 ## Introduction to JavaScript Certification
 
-This course will teach you how to use JavaScript to build interactive and dynamic web applications.
+This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.
 
-You will learn core programming concepts such as working with variables, functions, objects, arrays, and control flow. You will also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.
+To earn your JavaScript Certification:
 
-By working through hands-on lessons and projects, you will build practical skills that prepare you to solve a wide range of programming challenges.
+- Complete the three required projects to qualify for the certification exam.
+- Pass the JavaScript Certification exam.
