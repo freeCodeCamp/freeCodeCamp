@@ -199,6 +199,8 @@ curriculum/curricula.json
 ### Additional Folders ###
 curriculum/dist
 curriculum/build
+shared-dist/**/*
+curriculum/test/blocks-generated/*
 
 ### Playwright ###
 
@@ -206,3 +208,4 @@ curriculum/build
 
 ### Shadow Testing Log Files Folder ###
 api/logs/
+shared-dist/utils/polyvinyl.test.js
