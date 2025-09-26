@@ -9,14 +9,7 @@ dashedName: task-1
 
 # --description--
 
-`¡Bienvenidos!`  
-Welcome to the A1 Professional Spanish course!
-
-This is an **elementary course** focused on teaching you the very basics of the Spanish language. 
-
-The section you're in now is called **Warm-up**. This is where you'll be introduced to new words before they appear in longer sentences or conversations.
-
-Let's start by practicing your first word in Spanish.
+Elena wants to say "hi". You'll hear this word all the time in Spanish when people meet each other.
 
 # --instructions--
 
@@ -27,11 +20,11 @@ There's just **one** correct answer. If you need help, click on **explanation** 
 
 ## --text--
 
-What does the speaker say?
+What word does Elena use to say "hi"?
 
 ## --answers--
 
-`Hola`
+`¡Hola!`
 
 ---
 
@@ -51,11 +44,11 @@ This means the opposite of what the speaker says. Open the explanation section i
 
 ---
 
-`Gracias`
+`Buenos días`
 
 ### --feedback--
 
-This is a polite word, but it's not what you hear in the audio.
+This means "Good morning", but it's not what you hear in the audio.
 
 ## --video-solution--
 
@@ -65,7 +58,7 @@ This is a polite word, but it's not what you hear in the audio.
 
 The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi". For example:
 
-`¡Hola, buenos días!` – Hi, good morning!  
+`¡Hola, buenos días!` – Hi, good morning! 
 
 # --scene--
 
@@ -102,7 +95,7 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
       "startTime": 1,
       "finishTime": 1.55,
       "dialogue": {
-        "text": "Hola",
+        "text": "¡Hola!",
         "align": "center"
       }
     },
