@@ -6,6 +6,10 @@ dashedName: task-7
 ---
 <!-- (Audio) Elena: Hasta luego -->
 
+# --description--
+
+Elena is saying goodbye, but she expects to see you again.
+
 # --instructions--
 
 Listen to the audio and answer the question below.
@@ -14,7 +18,7 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-What does the speaker say?
+What phrase does Elena use to say "see you later"?
 
 ## --answers--
 
@@ -22,7 +26,7 @@ What does the speaker say?
 
 ---
 
-`Adiós.`
+`Adiós`
 
 ### --feedback--
 
@@ -30,7 +34,7 @@ This is a goodbye, but it's more final. The speaker uses a different phrase.
 
 ---
 
-`Chao.`
+`Chao`
 
 ### --feedback--
 
@@ -38,11 +42,11 @@ This is also an informal way to say goodbye, but it's not the one in the audio.
 
 ---
 
-`Hasta pronto.`
+`¡Hola!`
 
 ### --feedback--
 
-This means "See you soon", but the speaker says something slightly different.
+This means "Hi", a general greeting, but it's not what Elena says.
 
 ## --video-solution--
 
