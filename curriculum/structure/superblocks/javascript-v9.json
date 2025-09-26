@@ -206,10 +206,13 @@
           "blocks": [
             "lecture-working-with-audio-and-video",
             "workshop-music-player",
-            "lab-drum-machine",
             "review-javascript-audio-and-video",
             "quiz-javascript-audio-and-video"
           ]
+        },
+        {
+          "dashedName": "certification-project-drum-machine",
+          "blocks": ["lab-drum-machine"]
         },
         {
           "dashedName": "maps-and-sets",
@@ -220,6 +223,10 @@
             "review-javascript-maps-and-sets",
             "quiz-javascript-maps-and-sets"
           ]
+        },
+        {
+          "dashedName": "certification-project-voting-system",
+          "blocks": ["lab-voting-system"]
         },
         {
           "dashedName": "localstorage-and-crud-operations",
@@ -268,10 +275,13 @@
             "lecture-understanding-asynchronous-programming",
             "workshop-fcc-authors-page",
             "lab-fcc-forum-leaderboard",
-            "lab-weather-app",
             "review-asynchronous-javascript",
             "quiz-asynchronous-javascript"
           ]
+        },
+        {
+          "dashedName": "certification-project-weather-app",
+          "blocks": ["lab-weather-app"]
         },
         {
           "moduleType": "review",

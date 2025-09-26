@@ -4946,9 +4946,12 @@
   "javascript-v9": {
     "title": "JavaScript Certification",
     "intro": [
-      "This course will teach you how to use JavaScript to build interactive and dynamic web applications.",
-      "You will learn core programming concepts such as working with variables, functions, objects, arrays, and control flow. You will also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "By working through hands-on lessons and projects, you will build practical skills that prepare you to solve a wide range of programming challenges."
+      "This course teaches you core programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
+      "To earn your JavaScript Certification:",
+      "- Complete the Build a Drum Machine project.",
+      "- Complete the Build a Voting System project.",
+      "- Complete the Build a Weather App project.",
+      "- Pass the JavaScript Certification Exam."
     ],
     "chapters": { "javascript": "JavaScript" },
     "modules": {
@@ -4967,12 +4970,15 @@
       "form-validation": "Form Validation",
       "javascript-dates": "Dates",
       "audio-and-video-events": "Audio and Video Events",
+      "certification-project-drum-machine": "Build a Drum Machine",
       "maps-and-sets": "Maps and Sets",
+      "certification-project-voting-system": "Build a Voting System",
       "localstorage-and-crud-operations": "localStorage and CRUD Operations",
       "classes-and-the-this-keyword": "Classes",
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
+      "certification-project-weather-app": "Build a Weather App",
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
     },
