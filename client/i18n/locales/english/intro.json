@@ -5031,12 +5031,42 @@
     "title": "A1 Professional Chinese Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "zh-a1-chapter-greetings-and-introductions": "Learn How to Greet and Introduce Yourself"
+    },
+    "modules": {
+      "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions"
+    },
+    "module-intros": {
+      "zh-a1-module-greetings-and-basic-introductions": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "learn-essential-courtesies-at-the-office": {
-        "title": "Learn Essential Courtesies at the Office",
-        "intro": [
-          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
-        ]
+      "zh-a1-warm-up-greeting-new-colleagues": {
+        "title": "Greeting New Colleagues",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-understanding-the-greetings-and-introductions": {
+        "title": "Understanding the Greetings and Introductions",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-building-your-self-introduction": {
+        "title": "​Building Your Self-Introduction",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-greetings-and-introductions-grammar-and-glossary": {
+        "title": "Greetings and Introductions Grammar and Glossary",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-check-what-you-know-about-greetings-and-introductions": {
+        "title": "Check What You Know about Greetings and Introductions",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-certification-introduction": {
+        "title": "Certification Introduction",
+        "intro": ["", ""]
       }
     }
   },

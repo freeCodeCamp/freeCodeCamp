@@ -1,3 +1,16 @@
 {
-  "blocks": ["learn-essential-courtesies-at-the-office"]
+  "chapters": [
+    {
+      "dashedName": "zh-a1-chapter-greetings-and-introductions",
+      "modules": [
+        {
+          "dashedName": "zh-a1-module-greetings-and-basic-introductions",
+          "blocks": [
+            "zh-a1-warm-up-greeting-new-colleagues",
+            "zh-a1-learn-understanding-the-greetings-and-introductions"
+          ]
+        }
+      ]
+    }
+  ]
 }

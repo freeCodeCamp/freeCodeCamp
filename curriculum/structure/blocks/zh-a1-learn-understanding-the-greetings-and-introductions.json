@@ -1,0 +1,11 @@
+{
+  "name": "Understanding the Greetings and Introductions",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-learn-understanding-the-greetings-and-introductions",
+  "helpCategory": "English",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68d676255d8dd7a6b68c7cfd", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockType": "learn"
+}
