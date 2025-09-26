@@ -18,7 +18,13 @@ const config = {
       '@babel/preset-react',
       {
         useBuiltIns: true,
-        pragma: 'React.createElement'
+        pragma: 'React.createElement',
+        overrides: [
+          {
+            test: '*.tsx',
+            presets: [['@babel/preset-typescript'], { ignoreExtensions: true }]
+          }
+        ]
       }
     ],
     '@babel/preset-typescript'
@@ -54,6 +60,7 @@ const config = {
           'sql',
           'svg',
           'typescript',
+          'tsx',
           'xml'
         ],
         theme: 'default',
