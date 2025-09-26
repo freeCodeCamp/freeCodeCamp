@@ -343,6 +343,60 @@ Generic challenge description.
 Do the assignment.
 `;
 
+const getLabChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1.
+
+# --hints--
+
+Test 1
+
+\`\`\`js
+
+\`\`\`
+
+# --seed--
+
+## --seed-contents--
+
+\`\`\`html
+
+\`\`\`
+
+# --solutions--
+
+\`\`\`html
+
+\`\`\`
+`;
+
+const getReviewChallengeTemplate = (
+  options: ChallengeOptions
+): string => `${buildFrontMatter(options)}
+
+# --description--
+
+## Some topic
+
+- **Some topic**: description
+
+\`\`\`
+some code example
+\`\`\`
+
+# --assignment--
+
+Review the <title> topics and concepts.
+`;
+
 interface DailyCodingChallengeOptions {
   challengeId: ObjectID;
   challengeNumber: number;
@@ -482,5 +536,12 @@ const challengeTypeToTemplate: {
   21: getDialogueChallengeTemplate,
   22: getFillInTheBlankChallengeTemplate,
   23: null,
-  24: getGenericChallengeTemplate
+  24: getGenericChallengeTemplate,
+  25: null,
+  26: getLabChallengeTemplate,
+  27: getLabChallengeTemplate,
+  28: null,
+  29: null,
+  30: null,
+  31: getReviewChallengeTemplate
 };
