@@ -18,6 +18,7 @@ import {
   normalizeProfileUI,
   normalizeSurveys,
   normalizeTwitter,
+  normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
 import { mapErr, type UpdateReqType } from '../../utils/index.js';
@@ -646,6 +647,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             sendQuincyEmail: true,
             theme: true,
             twitter: true,
+            bluesky: true,
             username: true,
             usernameDisplay: true,
             website: true,
@@ -692,6 +694,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           completedDailyCodingChallenges,
           progressTimestamps,
           twitter,
+          bluesky,
           profileUI,
           currentChallengeId,
           location,
@@ -729,6 +732,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               name: name ?? '',
               theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
+              bluesky: normalizeBluesky(bluesky),
               username,
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
