@@ -69,6 +69,7 @@ import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 import './editor.css';
+import { useAutoSave } from './use-Auto-Save';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
@@ -878,6 +879,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }
 
+  const { challengeType, isSignedIn, saveChallenge, saveEditorContent } = props;
+
+  const debouncedStartInactivityTimer = useAutoSave({
+    challengeType,
+    isSignedIn,
+    saveChallenge,
+    saveEditorContent
+  });
+
   const onChange = (contents: string) => {
     const { updateFile, fileKey, isResetting } = props;
     if (isResetting) return;
@@ -906,6 +916,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       });
     }
     updateFile({ fileKey, contents, editableRegionBoundaries });
+    debouncedStartInactivityTimer();
   };
 
   function createBreadcrumb(): HTMLElement {
