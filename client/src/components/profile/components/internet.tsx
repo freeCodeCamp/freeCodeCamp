@@ -102,12 +102,12 @@ const InternetSettings = ({
     };
 
   const isFormPristine = () => {
-    const originalValues = { 
-      githubProfile, 
-      linkedin, 
-      twitter, 
-      bluesky, 
-      website 
+    const originalValues = {
+      githubProfile,
+      linkedin,
+      twitter,
+      bluesky,
+      website
     };
 
     return (Object.keys(originalValues) as Array<keyof Socials>).every(
