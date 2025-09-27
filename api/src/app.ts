@@ -197,6 +197,7 @@ export const build = async (
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
       await fastify.register(protectedRoutes.userGetRoutes);
+      await fastify.register(protectedRoutes.classroomRoutes);
     });
 
     // Routes that redirect if access is denied:
@@ -245,6 +246,7 @@ export const build = async (
   void fastify.register(publicRoutes.deprecatedEndpoints);
   void fastify.register(publicRoutes.statusRoute);
   void fastify.register(publicRoutes.unsubscribeDeprecated);
+  void fastify.register(publicRoutes.buildChallengeMapRoute);
   void fastify.register(dailyCodingChallengeRoutes);
 
   return fastify;
