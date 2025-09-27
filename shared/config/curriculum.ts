@@ -34,7 +34,8 @@ export enum SuperBlocks {
   BasicHtml = 'basic-html',
   SemanticHtml = 'semantic-html',
   DevPlayground = 'dev-playground',
-  FullStackOpen = 'full-stack-open'
+  FullStackOpen = 'full-stack-open',
+  RespWebDesign2025 = 'responsive-web-design-2025'
 }
 
 export const languageSuperBlocks = [
@@ -119,6 +120,7 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
+    SuperBlocks.RespWebDesign2025,
     SuperBlocks.FullStackOpen,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
@@ -344,7 +346,8 @@ Object.freeze(notAuditedSuperBlocks);
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
   SuperBlocks.FullStackOpen,
-  SuperBlocks.A1Spanish
+  SuperBlocks.A1Spanish,
+  SuperBlocks.RespWebDesign2025
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

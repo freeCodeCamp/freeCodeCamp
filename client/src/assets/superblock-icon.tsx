@@ -52,7 +52,8 @@ const iconMap = {
   [SuperBlocks.BasicHtml]: Code,
   [SuperBlocks.SemanticHtml]: Code,
   [SuperBlocks.FullStackOpen]: Code,
-  [SuperBlocks.DevPlayground]: Code
+  [SuperBlocks.DevPlayground]: Code,
+  [SuperBlocks.RespWebDesign2025]: ResponsiveDesign
 };
 
 type SuperBlockIconProps = {
