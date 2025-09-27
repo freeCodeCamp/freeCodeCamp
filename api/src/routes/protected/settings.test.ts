@@ -765,6 +765,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: 'https://twitter.com/ossia',
+          bluesky: 'https://bsky.app/profile/quincy.bsky.social',
           linkedin: 'https://www.linkedin.com/in/quincylarson',
           githubProfile: 'https://github.com/QuincyLarson'
         });
@@ -780,6 +781,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'https://www.freecodecamp.org/',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: ''
         });
@@ -795,6 +797,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: 'invalid',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: ''
         });
@@ -807,6 +810,7 @@ Happy coding!
         const response = await superPut('/update-my-socials').send({
           website: '',
           twitter: '',
+          bluesky: '',
           linkedin: '',
           githubProfile: 'https://x.com/should-be-github'
         });
@@ -1155,7 +1159,7 @@ describe('getWaitMessage', () => {
 });
 
 describe('validateSocialUrl', () => {
-  test.each(['githubProfile', 'linkedin', 'twitter'] as const)(
+  test.each(['githubProfile', 'linkedin', 'twitter', 'bluesky'] as const)(
     'accepts empty strings for %s',
     social => {
       expect(validateSocialUrl('', social)).toBe(true);
@@ -1165,7 +1169,8 @@ describe('validateSocialUrl', () => {
   test.each([
     ['githubProfile', 'https://something.com/user'],
     ['linkedin', 'https://www.x.com/in/username'],
-    ['twitter', 'https://www.toomanyexes.com/username']
+    ['twitter', 'https://www.toomanyexes.com/username'],
+    ['bluesky', 'https://www.twitter.com/username']
   ] as const)('rejects invalid urls for %s', (social, url) => {
     expect(validateSocialUrl(url, social)).toBe(false);
   });
@@ -1174,7 +1179,8 @@ describe('validateSocialUrl', () => {
     ['githubProfile', 'https://something.github.com/user'],
     ['linkedin', 'https://www.linkedin.com/in/username'],
     ['twitter', 'https://twitter.com/username'],
-    ['twitter', 'https://x.com/username']
+    ['twitter', 'https://x.com/username'],
+    ['bluesky', 'https://bsky.app/profile/username.bsky.social']
   ] as const)('accepts valid urls for %s', (social, url) => {
     expect(validateSocialUrl(url, social)).toBe(true);
   });
