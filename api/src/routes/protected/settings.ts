@@ -56,7 +56,8 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
-  twitter: ['twitter.com', 'x.com']
+  twitter: ['twitter.com', 'x.com'],
+  bluesky: ['bsky.app']
 };
 
 /**
@@ -339,12 +340,13 @@ ${isLinkSentWithinLimitTTL}`
 
       const socials = {
         twitter: req.body.twitter,
+        bluesky: req.body.bluesky,
         githubProfile: req.body.githubProfile,
         linkedin: req.body.linkedin,
         website: req.body.website
       };
 
-      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
+      const valid = (['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const).every(
         key => validateSocialUrl(socials[key], key)
       );
 
@@ -363,6 +365,7 @@ ${isLinkSentWithinLimitTTL}`
           data: {
             website: socials.website,
             twitter: socials.twitter,
+            bluesky: socials.bluesky,
             githubProfile: socials.githubProfile,
             linkedin: socials.linkedin
           }
