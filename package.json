@@ -101,6 +101,7 @@
     "@typescript-eslint/eslint-plugin": "8.24.0",
     "@typescript-eslint/parser": "8.23.0",
     "@vitest/eslint-plugin": "^1.3.12",
+    "cross-env": "^10.0.0",
     "debug": "4.3.4",
     "eslint": "9.19.0",
     "eslint-config-prettier": "10.0.1",
