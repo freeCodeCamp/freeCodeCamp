@@ -4551,9 +4551,11 @@
           "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
         ]
       },
-      "workshop-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-salary-tracker": {
+        "title": "Build a Salary Tracker",
+        "intro": [
+          "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
+        ]
       },
       "lab-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
