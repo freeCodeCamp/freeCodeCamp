@@ -10,6 +10,7 @@ import DropDown from '../../../assets/icons/dropdown';
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
+import a1Chinese from '../../../../../curriculum/structure/superblocks/a1-professional-chinese.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
@@ -189,6 +190,8 @@ export const SuperBlockAccordion = ({
         return fullStackCert;
       case SuperBlocks.A1Spanish:
         return a1Spanish;
+      case SuperBlocks.A1Chinese:
+        return a1Chinese;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }

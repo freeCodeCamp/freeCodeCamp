@@ -1,0 +1,11 @@
+{
+  "name": "Greetings and Introductions Grammar and Glossary",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-review-greetings-and-introductions-grammar-and-glossary",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "68d68ec3435862f781ead535", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockType": "review"
+}

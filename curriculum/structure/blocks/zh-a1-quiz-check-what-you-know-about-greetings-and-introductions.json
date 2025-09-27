@@ -1,0 +1,14 @@
+{
+  "name": "Check What You Know about Greetings and Introductions",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-quiz-check-what-you-know-about-greetings-and-introductions",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68d68f029401dafb9cf0a46a",
+      "title": "Check What You Know about Greetings and Introductions"
+    }
+  ],
+  "blockType": "quiz"
+}
