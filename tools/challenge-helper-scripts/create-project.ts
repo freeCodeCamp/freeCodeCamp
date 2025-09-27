@@ -5,8 +5,10 @@ import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
@@ -17,6 +19,7 @@ import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import {
+  ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project';
@@ -71,7 +74,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
     if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
@@ -133,7 +136,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   }
 
   if (
-    (projectArgs.superBlock === SuperBlocks.FullStackDeveloper &&
+    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
       projectArgs.blockType) == null
   ) {
     throw new Error('Missing argument: blockType when updating intro markdown');
@@ -178,7 +181,7 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   let newMeta;
-  if (superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
@@ -262,6 +265,31 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+async function getChapters(superBlock: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  return blockMetaData.chapters;
+}
+
+async function getModules(superBlock: string, chapterName: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  const modifiedChapter = blockMetaData.chapters.find(
+    x => x.dashedName === chapterName
+  );
+  return modifiedChapter?.modules;
+}
+
 void (async () => {
   try {
     const answers: CreateProjectArgs = {
@@ -296,7 +324,10 @@ void (async () => {
       default: answers.block
     });
 
-    if (answers.superBlock === SuperBlocks.FullStackDeveloper) {
+    if (chapterBasedSuperBlocks.includes(answers.superBlock)) {
+      const chapters = await getChapters(answers.superBlock);
+      const modules = await getModules(answers.superBlock, answers.chapter!);
+
       answers.blockType = await select({
         message: 'Choose a block type',
         choices: Object.values(BlockTypes),
@@ -326,17 +357,14 @@ void (async () => {
       answers.chapter = await select({
         message:
           'What chapter in full-stack.json should this full stack project go in?',
-        choices: fullStackData.chapters.map(x => x.dashedName),
+        choices: chapters.map(x => x.dashedName),
         default: 'html'
       });
 
       answers.module = await select({
         message:
           'What module in full-stack.json should this full stack project go in?',
-        choices:
-          fullStackData.chapters
-            .find(x => x.dashedName === answers.chapter)
-            ?.modules.map(x => x.dashedName) || [],
+        choices: modules!.map(x => x.dashedName),
         default: 'html'
       });
 

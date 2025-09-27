@@ -329,7 +329,11 @@ seed goes here
                 it(
                   `Solution ${index + 1} must pass the tests`,
                   async function () {
-                    await testRunner(tests);
+                    try {
+                      await testRunner(tests);
+                    } catch (e) {
+                      expect(e).toBeUndefined();
+                    }
                   },
                   timePerTest * tests.length + 2000
                 );
@@ -385,12 +389,8 @@ async function createTestRunner(
         const newMessage = solutionFromNext
           ? 'Check next step for solution!\n' + text
           : text;
-        // if the stack is missing, the message should be included. Otherwise it
-        // is redundant.
-        err.message = err.stack
-          ? newMessage
-          : `${newMessage}
-      ${err.message}`;
+        err.message = `${newMessage}
+Original message: ${err.message}`;
         throw err;
       }
     }
