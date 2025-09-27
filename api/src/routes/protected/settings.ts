@@ -346,9 +346,9 @@ ${isLinkSentWithinLimitTTL}`
         website: req.body.website
       };
 
-      const valid = (['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const).every(
-        key => validateSocialUrl(socials[key], key)
-      );
+      const valid = (
+        ['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const
+      ).every(key => validateSocialUrl(socials[key], key));
 
       if (!valid) {
         logger.warn({ socials }, `Invalid social URL`);

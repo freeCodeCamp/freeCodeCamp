@@ -99,7 +99,8 @@ function BlueskyIcon({ href, username }: IconProps): JSX.Element {
 }
 
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  const { githubProfile, linkedin, twitter, bluesky, username, website } = props;
+  const { githubProfile, linkedin, twitter, bluesky, username, website } =
+    props;
   const show = linkedin || githubProfile || website || twitter || bluesky;
   if (!show) {
     return null;

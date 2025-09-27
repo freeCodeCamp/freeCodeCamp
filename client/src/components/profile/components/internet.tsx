@@ -102,12 +102,12 @@ const InternetSettings = ({
     };
 
   const isFormPristine = () => {
-    const originalValues = { 
-      githubProfile, 
-      linkedin, 
-      twitter, 
-      bluesky, 
-      website 
+    const originalValues = {
+      githubProfile,
+      linkedin,
+      twitter,
+      bluesky,
+      website
     };
 
     return (Object.keys(originalValues) as Array<keyof Socials>).every(
@@ -256,13 +256,11 @@ const InternetSettings = ({
                 value={formValues.website}
                 id='internet-website-input'
               />
-
               <Check
                 url={formValues.website}
                 validation={websiteValidation}
                 dataPlaywrightTestLabel='internet-website-check'
               />
-
               <Info message={websiteValidationMessage} />
             </FormGroup>
           </div>
