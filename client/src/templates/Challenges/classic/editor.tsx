@@ -69,7 +69,7 @@ import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 import './editor.css';
-import { useAutoSave } from './use-Auto-Save';
+import { useAutoSave } from './use-auto-save';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
