@@ -1,0 +1,16 @@
+{
+  "name": "migrate",
+  "version": "0.0.1",
+  "dependencies": {
+    "dotenv": "16",
+    "mongodb": "6",
+    "pino": "9",
+    "pino-pretty": "10"
+  },
+  "devDependencies": {
+    "tsx": "4"
+  },
+  "scripts": {
+    "develop": "tsx ./index.ts"
+  }
+}

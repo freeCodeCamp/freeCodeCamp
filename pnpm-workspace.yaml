@@ -12,6 +12,7 @@ packages:
   - 'tools/daily-challenges'
   - 'tools/scripts/build'
   - 'tools/scripts/lint'
+  - 'tools/scripts/migrate'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
 
