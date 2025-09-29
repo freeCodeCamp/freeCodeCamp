@@ -7,3 +7,16 @@ export const deleteMyAccount = {
     default: genericError
   }
 };
+
+export const deleteUser = {
+  params: Type.Object({
+    userId: Type.String({ format: 'objectid' })
+  }),
+  response: {
+    204: Type.Null(),
+    default: Type.Object({
+      type: Type.String(),
+      message: Type.String()
+    })
+  }
+};
