@@ -3479,6 +3479,12 @@
           "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
         ]
       },
+      "lab-unique-sorted-union": {
+        "title": "Implement a Unique Sorted Union",
+        "intro": [
+          "In this lab, you will create a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
