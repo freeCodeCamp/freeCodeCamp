@@ -2285,6 +2285,12 @@
           "In these lectures, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "workshop-debug-coding-journey-blog-page": {
+        "title": "Debug a Coding Journey Blog Page",
+        "intro": [
+          "In this workshop, you will debug and fix accessibility errors in a coding blog page."
+        ]
+      },
       "lecture-accessible-tables-forms": {
         "title": "Робота з доступними таблицями і формами",
         "intro": [
@@ -3496,6 +3502,12 @@
           "In this lab, you will convert special characters in a string to their corresponding HTML entities."
         ]
       },
+      "lab-odd-fibonacci-sum-calculator": {
+        "title": "Build an Odd Fibonacci Sum Calculator",
+        "intro": [
+          "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
+        ]
+      },
       "lab-optional-arguments-sum-function": {
         "title": "Build an Optional Arguments Sum Function",
         "intro": [
@@ -3569,6 +3581,12 @@
           "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
         ]
       },
+      "lab-all-true-property-validator": {
+        "title": "Build an All-True Property Validator",
+        "intro": [
+          "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "Повторення функцій вищого порядку в JavaScript",
         "intro": [
@@ -3592,6 +3610,12 @@
         "title": "Створіть застосунок з оповіданнями",
         "intro": [
           "У цьому практичному занятті ви створите застосунок з оповіданнями, що дозволить відтворювати їхній список за жанром."
+        ]
+      },
+      "workshop-emoji-reactor": {
+        "title": "Build an Emoji Reactor",
+        "intro": [
+          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
         ]
       },
       "lab-favorite-icon-toggler": {
@@ -3744,6 +3768,12 @@
         "title": "Створіть пісочницю для регулярних виразів",
         "intro": [
           "У цій лабораторній роботі ви створите пісочницю для регулярних виразів."
+        ]
+      },
+      "lab-spinal-case-converter": {
+        "title": "Implement a Spinal Case Converter",
+        "intro": [
+          "In this lab, you will create a function that converts a given string to spinal case which is a style of writing where all letters are lowercase and separated by hyphens."
         ]
       },
       "lab-pig-latin": {
@@ -4503,9 +4533,11 @@
         "title": "Класи та об’єкти",
         "intro": ["У цих відеолекціях ви дізнаєтесь про класи та об’єкти."]
       },
-      "workshop-placeholder-classes-and-objects": {
-        "title": "Placeholder - waiting for title",
-        "intro": [""]
+      "workshop-musical-instrument-inventory": {
+        "title": "Build a Musical Instrument Inventory",
+        "intro": [
+          "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
+        ]
       },
       "lab-budget-app": {
         "title": "Створіть застосунок для ведення бюджету",
@@ -4692,7 +4724,13 @@
         "intro": [""]
       },
       "lab-depth-first-search": {
-        "title": "Створіть алгоритм пошуку в глибину",
+        "title": "Implement the Depth-First Search Algorithm",
+        "intro": [
+          "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "lab-n-queens-problem": {
+        "title": "",
         "intro": [""]
       },
       "review-graphs-and-trees": {
