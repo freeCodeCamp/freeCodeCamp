@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Importance of Accessibility and Good HTML Structure
 
-In these lecture videos, you will learn about importance of accessibility and using good HTML structure.
+In these lessons, you will learn about importance of accessibility and using good HTML structure.
