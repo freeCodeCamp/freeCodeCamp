@@ -410,6 +410,7 @@
             "lab-value-remover-function",
             "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
+            "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
             "review-javascript-higher-order-functions",

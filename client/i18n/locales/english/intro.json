@@ -3576,6 +3576,12 @@
           "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
+      "lab-range-based-lcm-calculator": {
+        "title": "Implement a Range-Based LCM Calculator",
+        "intro": [
+          "In this lab, you will create a function that takes an array of two numbers and returns the least common multiple (LCM) of those two numbers and all the numbers between them."
+        ]
+      },
       "lab-deep-flattening-tool": {
         "title": "Create a Deep Flattening Tool",
         "intro": [
@@ -4717,10 +4723,7 @@
           "In this lab, you will implement the Depth-First Search Algorithm."
         ]
       },
-      "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-n-queens-problem": { "title": "", "intro": [""] },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
