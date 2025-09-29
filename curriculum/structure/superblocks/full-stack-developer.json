@@ -7,7 +7,6 @@
           "dashedName": "basic-html",
           "blocks": [
             "workshop-curriculum-outline",
-            "lecture-welcome-to-freecodecamp",
             "lab-debug-camperbots-profile-page",
             "lecture-understanding-html-attributes",
             "lab-debug-pet-adoption-page",
