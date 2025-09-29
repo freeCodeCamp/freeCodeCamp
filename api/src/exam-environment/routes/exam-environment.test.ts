@@ -1304,6 +1304,16 @@ describe('/exam-environment/', () => {
         );
         expect(res3.status).toBe(200);
       });
+
+      it('should return 400 if neither challengeId or examId are provided', async () => {
+        const res = await superGet(`/exam-environment/exam-challenge`);
+        expect(res).toMatchObject({
+          status: 400,
+          body: {
+            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+          }
+        });
+      });
     });
   });
 });

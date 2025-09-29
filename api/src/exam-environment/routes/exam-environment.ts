@@ -1010,6 +1010,16 @@ export async function getExamChallenge(
 
   logger.info({ challengeId, examId });
 
+  if (!challengeId && !examId) {
+    logger.warn('No challenge or exam id provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        'Must provide either a challengeId or examId.'
+      )
+    );
+  }
+
   const maybeData = await mapErr(
     this.prisma.examEnvironmentChallenge.findMany({
       where: {
