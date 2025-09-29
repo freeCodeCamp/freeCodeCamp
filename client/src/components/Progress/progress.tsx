@@ -14,7 +14,7 @@ import {
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { updateAllChallengesInfo } from '../../redux/actions';
 import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
-import { getIsDailyCodingChallenge } from '../../../../shared/config/challenge-types';
+import { getIsDailyCodingChallenge } from '../../../../shared-dist/config/challenge-types';
 import {
   isValidDateString,
   formatDisplayDate

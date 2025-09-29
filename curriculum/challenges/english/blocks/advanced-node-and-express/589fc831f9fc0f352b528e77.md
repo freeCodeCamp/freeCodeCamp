@@ -72,7 +72,6 @@ Submit your page when you think you've got it right. If you're running into erro
 `passport.socketio` should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -81,13 +80,11 @@ async () => {
     'passport.socketio',
     'Your project should list "passport.socketio" as a dependency'
   );
-}
 ```
 
 `cookie-parser` should be a dependency.
 
 ```js
-async () => {
   const url = new URL("/_api/package.json", code);
   const res = await fetch(url);
   const packJson = await res.json();
@@ -96,13 +93,11 @@ async () => {
     'cookie-parser',
     'Your project should list "cookie-parser" as a dependency'
   );
-}
 ```
 
 passportSocketIo should be properly required.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -111,13 +106,11 @@ async () => {
     /require\((['"])passport\.socketio\1\)/gi,
     'You should correctly require and instantiate "passport.socketio"'
   );
-}
 ```
 
 passportSocketIo should be properly setup.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -126,6 +119,5 @@ async () => {
     /io\.use\(\s*\w+\.authorize\(/,
     'You should register "passport.socketio" as socket.io middleware and provide it correct options'
   );
-}
 ```
 

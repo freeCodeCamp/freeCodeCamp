@@ -15,7 +15,7 @@ import store from 'store';
 import {
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../shared/config/curriculum';
+} from '../../../../shared-dist/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -30,8 +30,11 @@ import {
 } from '../../redux/selectors';
 import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
-import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
-import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
+import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../shared-dist/config/blocks';
 import { ButtonLink } from '../../components/helpers';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';

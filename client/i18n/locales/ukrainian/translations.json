@@ -527,20 +527,23 @@
     "project-preview-title": "Попередній перегляд того, що ви будете створювати",
     "demo-project-title": "Ось приклад проєкту, який відповідає вимогам",
     "github-required": "<0>Створіть обліковий запис GitHub</0>, якщо у вас його немає. Він знадобиться під час створення віртуальної серверної машини Linux. Цей процес може зайняти кілька хвилин.",
-    "gitpod": {
-      "intro": "Цей курс виконується у віртуальній машині Linux за допомогою Gitpod. Дотримуйтесь цих інструкцій, щоб розпочати курс:",
-      "step-1": "<0>Створіть обліковий запис на GitHub</0>, якщо його немає",
-      "step-2": "Натисніть кнопку «Розпочати курс» нижче",
-      "step-3": "Увійдіть до Gitpod за допомогою облікового запису GitHub, якщо досі не зробили цього",
-      "step-4": "Як тільки віртуальна машина Linux завантажиться, запустіть розширення CodeRoad:",
-      "step-5": "натисніть на іконку «гамбургер» біля верхнього лівого кута вікна VSCode,",
-      "step-6": "перейдіть до меню «View»,",
-      "step-7": "натисніть на «Command Palette»,",
-      "step-8": "та виконайте команду «CodeRoad: Start»",
-      "step-9": "Дотримуйтесь інструкцій в CodeRoad, щоб завершити курс",
-      "continue-project": "Якщо натиснути на кнопку нижче, запуститься новий проєкт. Якщо ви вже працювали над курсом «{{course}}» та хочете продовжити, перейдіть на <0>свою панель Gitpod</0>.",
-      "learn-more": "Див. більше про <0>робочий простір Gitpod.</0>",
-      "logout-warning": "Якщо ви вийдете з freeCodeCamp, не завершивши весь курс «{{course}}», ваш прогрес не буде збережено в обліковому записі freeCodeCamp."
+    "ona": {
+      "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
+      "step-1": "<0>Create an Ona account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "In the modal that pops up, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Ona workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Secret</0> field, paste your token"
     },
     "local": {
       "intro": "Цей курс виконується на віртуальній машині Linux на вашому комп’ютері. Щоб розпочати, потрібно завантажити:",
@@ -647,7 +650,10 @@
       "lab": "Лабораторна робота",
       "review": "Повторення",
       "quiz": "Тест",
-      "exam": "Екзамен"
+      "exam": "Екзамен",
+      "warm-up": "Warm-up",
+      "learn": "Learn",
+      "practice": "Practice"
     }
   },
   "donate": {
@@ -1179,6 +1185,8 @@
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "full-stack-developer-v9": "Full Stack розробник",
       "full-stack-developer-v9-cert": "Сертифікація «Full Stack розробник»",
+      "a1-professional-spanish": "A1 Professional Spanish",
+      "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "Іспанська мова A2 для роботи",
       "a2-professional-spanish-cert": "Сертифікація «Іспанська мова A2 для роботи»",
       "a2-professional-chinese": "Китайська мова A2 для роботи",

@@ -1,1 +1,1 @@
-export { dailyCodingChallenge } from './daily-coding-challenge';
+export { dailyCodingChallenge } from './daily-coding-challenge.js';

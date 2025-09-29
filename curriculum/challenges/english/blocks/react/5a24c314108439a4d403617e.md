@@ -66,7 +66,6 @@ assert(
 Once the component has mounted, pressing `enter` should update its state and the rendered `h1` tag.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -86,7 +85,6 @@ async () => {
   assert(
     beforeState !== afterKeyPress.state && beforeText !== afterKeyPress.text
   );
-};
 ```
 
 # --seed--

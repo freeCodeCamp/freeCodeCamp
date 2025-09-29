@@ -11,11 +11,11 @@ import {
 import Fastify, { type FastifyInstance } from 'fastify';
 import { type user } from '@prisma/client';
 
-import { HOME_LOCATION } from '../utils/env';
-import bouncer from './bouncer';
-import auth from './auth';
-import cookies from './cookies';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
+import { HOME_LOCATION } from '../utils/env.js';
+import bouncer from './bouncer.js';
+import auth from './auth.js';
+import cookies from './cookies.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 
 let authorizeSpy: MockInstance<FastifyInstance['authorize']>;
 

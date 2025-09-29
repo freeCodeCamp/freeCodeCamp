@@ -8,7 +8,7 @@ import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared/config/curriculum';
+} from '../../../shared-dist/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -44,9 +44,9 @@ describe('external curriculum data build', () => {
   });
 
   test('there should be an endpoint to request submit types from', () => {
-    fs.existsSync(
-      `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
-    );
+    expect(
+      fs.existsSync(`${clientStaticPath}/curriculum-data/submit-types.json`)
+    ).toBeTruthy();
   });
 
   test('the available-superblocks file should have the correct structure', async () => {
@@ -60,12 +60,8 @@ describe('external curriculum data build', () => {
 
     const result = validateAvailableSuperBlocks(availableSuperblocks);
 
-    if (result.error) {
-      throw Error(
-        `file: available-superblocks.json
-${result.error.message}`
-      );
-    }
+    expect(result.error?.details).toBeUndefined();
+    expect(result.error).toBeFalsy();
   });
 
   test('the super block files generated should have the correct schema', async () => {
@@ -93,10 +89,8 @@ ${result.error.message}`
 
       const result = validateSuperBlock(JSON.parse(fileContent));
 
-      if (result.error) {
-        throw Error(`file: ${fileInArray}
-${result.error.message}`);
-      }
+      expect(result.error?.details).toBeUndefined();
+      expect(result.error).toBeFalsy();
     });
   });
 
