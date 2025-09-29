@@ -758,11 +758,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
-<<<<<<< HEAD
             "lab-depth-first-search",
-=======
-            "workshop-shortest-path-algorithm",
->>>>>>> 06ade9a1c5 (update to new curriculum structure)
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]

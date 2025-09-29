@@ -1,7 +1,6 @@
 ---
 title: Introduction to the Implement the Shortest Path Algorithm
 block: workshop-shortest-path-algorithm
-superBlock: full-stack-developer
 ---
 
 ## Introduction to the Implement the Shortest Path Algorithm
