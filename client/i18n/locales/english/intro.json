@@ -2069,13 +2069,6 @@
           "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
         ]
       },
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome Message from Quincy Larson",
-        "intro": [
-          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
-          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
-        ]
-      },
       "lab-debug-camperbots-profile-page": {
         "title": "Debug Camperbot's Profile Page",
         "intro": [
