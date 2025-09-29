@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "下載 freeCodeCamp 考試環境應用程序",
     "explanation": "要獲得認證，你必須參加考試以檢驗對所學知識的掌握程度。參加考試完全免費。",
     "version": "我們的應用程序的最新版本是：{{version}}。",
