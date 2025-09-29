@@ -5,7 +5,7 @@ Checklist:
 - [ ] I have read and followed the [contribution guidelines](https://contribute.freecodecamp.org).
 - [ ] I have read and followed the [how to open a pull request guide](https://contribute.freecodecamp.org/how-to-open-a-pull-request/).
 - [ ] My pull request targets the `main` branch of freeCodeCamp.
-- [ ] I have tested these changes either locally on my machine, or Ona.
+- [ ] I have tested these changes either locally on my machine, or GitHub Codespaces.
 
 <!--If your pull request closes a GitHub issue, replace the XXXXX below with the issue number.-->
 

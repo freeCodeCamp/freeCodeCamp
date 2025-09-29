@@ -58,6 +58,7 @@
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
             "lecture-introduction-to-aria",
             "lecture-accessible-media-elements",
@@ -367,6 +368,7 @@
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "lab-missing-letter-detector",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -383,13 +385,16 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-title-case-converter",
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
             "lecture-working-with-the-arguments-object-and-rest-parameters",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
+            "lab-odd-fibonacci-sum-calculator",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
@@ -403,8 +408,11 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-value-remover-function",
+            "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
             "lab-deep-flattening-tool",
+            "lab-all-true-property-validator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -414,6 +422,7 @@
           "blocks": [
             "lecture-working-with-the-dom-click-events-and-web-apis",
             "workshop-storytelling-app",
+            "workshop-emoji-reactor",
             "lab-favorite-icon-toggler",
             "lecture-understanding-the-event-object-and-event-delegation",
             "workshop-music-instrument-filter",
@@ -453,6 +462,9 @@
             "lab-palindrome-checker",
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
+            "lab-spinal-case-converter",
+            "lab-pig-latin",
+            "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
@@ -696,6 +708,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
@@ -746,6 +759,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
+            "lab-depth-first-search",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
@@ -879,26 +893,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -915,11 +917,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,

@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, savedChallenge } from '../types.js';
+import { profileUI, examResults } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -77,12 +77,6 @@ export const getPublicProfile = {
               linkedin: Type.Optional(Type.String()),
               location: Type.String(),
               name: Type.String(),
-              partiallyCompletedChallenges: Type.Array(
-                Type.Object({
-                  id: Type.String(),
-                  completedDate: Type.Number()
-                })
-              ),
               picture: Type.String(),
               // TODO(Post-MVP): points should be a number
               points: Type.Union([Type.Number(), Type.Null()]),
@@ -100,7 +94,6 @@ export const getPublicProfile = {
               website: Type.Optional(Type.String()),
               yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
               joinDate: Type.String(),
-              savedChallenges: Type.Array(savedChallenge),
               username: Type.String(),
               usernameDisplay: Type.String(),
               msUsername: Type.Optional(Type.String())

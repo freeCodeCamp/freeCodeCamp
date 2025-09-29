@@ -75,7 +75,7 @@
       {
         "guid": "donate-page",
         "type": "payment-provider",
-        "address": "https://donate.freecodecamp.org",
+        "address": "https://www.freecodecamp.org/donate",
         "description": "Donate directly through our official donation page."
       }
     ],
@@ -85,7 +85,7 @@
         "status": "active",
         "name": "Monthly Support Plan",
         "description": "Join over 11,000 monthly donors supporting freeCodeCamp's mission to provide free coding education.",
-        "amount": 0,
+        "amount": 5,
         "currency": "USD",
         "frequency": "monthly",
         "channels": [
@@ -98,7 +98,7 @@
         "status": "active",
         "name": "One-Time Donation",
         "description": "Make a one-time contribution to support our charity's open source development work.",
-        "amount": 0,
+        "amount": 100,
         "currency": "USD",
         "frequency": "one-time",
         "channels": [
