@@ -148,6 +148,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           where: { id: req.user.id }
         });
       } catch (err) {
+        // Whilst this is behind auth, this should never happen
         if (
           err instanceof PrismaClientKnownRequestError &&
           err.code === 'P2025'
