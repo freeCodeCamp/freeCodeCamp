@@ -2151,6 +2151,12 @@
           "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
+      "workshop-build-a-video-display-using-iframe": {
+        "title": "Build a Video Display Using iframe",
+        "intro": [
+          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
+        ]
+      },
       "lab-video-compilation-page": {
         "title": "Build a Video Compilation Page",
         "intro": [
