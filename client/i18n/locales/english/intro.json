@@ -2079,7 +2079,7 @@
       "lecture-understanding-html-attributes": {
         "title": "Understanding HTML Attributes",
         "intro": [
-          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "In these lessons, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
           "You will learn about HTML's role on the web, and what HTML attributes are."
         ]
       },
@@ -2092,7 +2092,7 @@
       "lecture-understanding-the-html-boilerplate": {
         "title": "Understanding the HTML Boilerplate",
         "intro": [
-          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "In these lessons, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
           "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
         ]
       },
@@ -2112,13 +2112,13 @@
       "lecture-html-fundamentals": {
         "title": "HTML Fundamentals",
         "intro": [
-          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+          "In these lessons, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
-          "In these lectures, you will learn how your HTML code impacts search engine optimization."
+          "In these lessons, you will learn how your HTML code impacts search engine optimization."
         ]
       },
       "lab-travel-agency-page": {
@@ -2130,13 +2130,13 @@
       "lecture-working-with-audio-and-video-elements": {
         "title": "Working with Audio and Video Elements",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+          "In these lessons, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
         ]
       },
       "lecture-working-with-images-and-svgs": {
         "title": "Working with Images and SVGs",
         "intro": [
-          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+          "In these lessons, you will learn how to work with SVGs and learn about techniques for optimizing your images."
         ]
       },
       "workshop-build-a-heart-icon": {
@@ -2148,7 +2148,7 @@
       "lecture-working-with-media": {
         "title": "Working with the iframe Element",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+          "In these lessons, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
         ]
       },
       "workshop-build-a-video-display-using-iframe": {
@@ -2166,7 +2166,7 @@
       "lecture-working-with-links": {
         "title": "Working with Links",
         "intro": [
-          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+          "In these lessons, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
         ]
       },
       "review-basic-html": {
@@ -2186,25 +2186,25 @@
       "lecture-importance-of-semantic-html": {
         "title": "Importance of Semantic HTML",
         "intro": [
-          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+          "In these lessons, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
         ]
       },
       "lecture-understanding-nuanced-semantic-elements": {
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
-          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+          "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
-          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+          "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
-          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+          "In this lesson, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
         ]
       },
       "workshop-blog-page": {
@@ -2236,7 +2236,7 @@
       "lecture-working-with-forms": {
         "title": "Working with Forms",
         "intro": [
-          "In these lectures, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
+          "In these lessons, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
         ]
       },
       "workshop-hotel-feedback-form": {
@@ -2256,7 +2256,7 @@
       "lecture-working-with-tables": {
         "title": "Working with Tables",
         "intro": [
-          "In these lectures, you will learn about HTML tables, how to create them, and when to use them."
+          "In these lessons, you will learn about HTML tables, how to create them, and when to use them."
         ]
       },
       "workshop-final-exams-table": {
@@ -2275,7 +2275,7 @@
       "lecture-working-with-html-tools": {
         "title": "Working with HTML Tools",
         "intro": [
-          "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
+          "In these lessons, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
         ]
       },
       "review-html-tables-and-forms": {
@@ -2295,7 +2295,7 @@
       "lecture-importance-of-accessibility-and-good-html-structure": {
         "title": "Importance of Accessibility and Good HTML Structure",
         "intro": [
-          "In these lectures, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
+          "In these lessons, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
       "workshop-debug-coding-journey-blog-page": {
@@ -2307,19 +2307,19 @@
       "lecture-accessible-tables-forms": {
         "title": "Working with Accessible Tables and Forms",
         "intro": [
-          "In these lectures, you will learn about how to create accessible tables and forms."
+          "In these lessons, you will learn about how to create accessible tables and forms."
         ]
       },
       "lecture-introduction-to-aria": {
         "title": "Introduction to ARIA",
         "intro": [
-          "In these lectures, you will learn about working with ARIA roles."
+          "In these lessons, you will learn about working with ARIA roles."
         ]
       },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
-          "In these lectures, you will learn about how to create accessible links, audio and video content."
+          "In these lessons, you will learn about how to create accessible links, audio and video content."
         ]
       },
       "lab-checkout-page": {
@@ -2368,19 +2368,19 @@
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
-          "In these lectures, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
+          "In these lessons, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
         ]
       },
       "lecture-working-with-file-systems": {
         "title": "Working with File Systems",
         "intro": [
-          "In these lectures, you will learn how to work with file and folder systems on your computers. You will learn how to create, move, and delete files and folders, the best practices for naming and organizing files and folders, and more."
+          "In these lessons, you will learn how to work with file and folder systems on your computers. You will learn how to create, move, and delete files and folders, the best practices for naming and organizing files and folders, and more."
         ]
       },
       "lecture-browsing-the-web-effectively": {
         "title": "Browsing the Web Effectively",
         "intro": [
-          "In these lectures, you will learn about what websites, search engine, and web browsers are, the different browsers available, and how to get the best out of a search engine."
+          "In these lessons, you will learn about what websites, search engine, and web browsers are, the different browsers available, and how to get the best out of a search engine."
         ]
       },
       "review-computer-basics": {
@@ -2399,7 +2399,7 @@
       "lecture-what-is-css": {
         "title": "What Is CSS?",
         "intro": [
-          "The following lectures are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+          "The following lessons are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
         ]
       },
       "workshop-cafe-menu": {
@@ -2419,7 +2419,7 @@
       "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
         "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
         "intro": [
-          "In these lectures, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
+          "In these lessons, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
         ]
       },
       "review-basic-css": {
@@ -2438,7 +2438,7 @@
       "lecture-styling-lists-and-links": {
         "title": "Styling Lists and Links",
         "intro": [
-          "In these lectures, you will learn the properties you need to know to effectively style lists and links, including link states like <code>link</code>, <code>visited</code>, <code>hover</code>, and <code>active</code>."
+          "In these lessons, you will learn the properties you need to know to effectively style lists and links, including link states like <code>link</code>, <code>visited</code>, <code>hover</code>, and <code>active</code>."
         ]
       },
       "lab-stylized-to-do-list": {
@@ -2451,7 +2451,7 @@
       "lecture-working-with-backgrounds-and-borders": {
         "title": "Working with Backgrounds and Borders",
         "intro": [
-          "In these lectures, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
+          "In these lessons, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
         ]
       },
       "lab-blog-post-card": {
@@ -2477,19 +2477,19 @@
       "lecture-user-interface-design-fundamentals": {
         "title": "User Interface Design Fundamentals",
         "intro": [
-          "In these lectures, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual hierarchy, scaling, alignment, whitespace, and much more."
+          "In these lessons, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual hierarchy, scaling, alignment, whitespace, and much more."
         ]
       },
       "lecture-user-centered-design": {
         "title": "User-Centered Design",
         "intro": [
-          "In these lectures, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
+          "In these lessons, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
         ]
       },
       "lecture-common-design-tools": {
         "title": "Common Design Tools",
         "intro": [
-          "In these lectures, you will learn about the common design tools developers should know. You will also learn about design briefs and how developers work with them."
+          "In these lessons, you will learn about the common design tools developers should know. You will also learn about design briefs and how developers work with them."
         ]
       },
       "review-design-fundamentals": {
@@ -2508,7 +2508,7 @@
       "lecture-working-with-relative-and-absolute-units": {
         "title": "Working with Relative and Absolute Units",
         "intro": [
-          "In these lectures, you will learn about relative and absolute units, and how they both impact what you see in the browser."
+          "In these lessons, you will learn about relative and absolute units, and how they both impact what you see in the browser."
         ]
       },
       "lab-event-flyer-page": {
@@ -2534,13 +2534,13 @@
       "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
         "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
         "intro": [
-          "In these lectures, you will learn about pseudo-classes and pseudo-elements, alongside their examples and how they work."
+          "In these lessons, you will learn about pseudo-classes and pseudo-elements, alongside their examples and how they work."
         ]
       },
       "workshop-greeting-card": {
         "title": "Design a Greeting Card",
         "intro": [
-          "In the previous lectures, you learned how to work with the different types of pseudo-classes.",
+          "In the previous lessons, you learned how to work with the different types of pseudo-classes.",
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
@@ -2565,7 +2565,7 @@
       "lecture-working-with-colors-in-css": {
         "title": "Working with Colors in CSS",
         "intro": [
-          "In these lectures, you will learn about linear and radial gradients, the color theory, different kinds of colors like named, RGB, Hex, and HSL colors. You will learn how these colors work, and which to use in specific cases."
+          "In these lessons, you will learn about linear and radial gradients, the color theory, different kinds of colors like named, RGB, Hex, and HSL colors. You will learn how these colors work, and which to use in specific cases."
         ]
       },
       "workshop-colored-markers": {
@@ -2594,7 +2594,7 @@
       "lecture-best-practices-for-styling-forms": {
         "title": "Best Practices for Styling Forms",
         "intro": [
-          "In these lectures, you will learn about the best practices for styling forms and issues you can encounter while styling special inputs like <code>color</code> and <code>datetime-local</code>."
+          "In these lessons, you will learn about the best practices for styling forms and issues you can encounter while styling special inputs like <code>color</code> and <code>datetime-local</code>."
         ]
       },
       "workshop-registration-form": {
@@ -2625,7 +2625,7 @@
       "lecture-working-with-css-transforms-overflow-and-filters": {
         "title": "Working with CSS Transforms, Overflow, and Filters",
         "intro": [
-          "In these lectures, you will learn about working with CSS transforms, overflow, and filters. You will also learn about the box model and how it works."
+          "In these lessons, you will learn about working with CSS transforms, overflow, and filters. You will also learn about the box model and how it works."
         ]
       },
       "workshop-rothko-painting": {
@@ -2657,7 +2657,7 @@
       "lecture-working-with-css-flexbox": {
         "title": "Working with CSS Flexbox",
         "intro": [
-          "In these lectures, you will learn how CSS flexbox works, its properties, and when you should use it."
+          "In these lessons, you will learn how CSS flexbox works, its properties, and when you should use it."
         ]
       },
       "workshop-flexbox-photo-gallery": {
@@ -2687,7 +2687,7 @@
       "lecture-working-with-css-fonts": {
         "title": "Working with CSS Fonts",
         "intro": [
-          "In these lectures, you will learn about typography and its best practices, fonts, and the <code>text-shadow</code> property."
+          "In these lessons, you will learn about typography and its best practices, fonts, and the <code>text-shadow</code> property."
         ]
       },
       "workshop-nutritional-label": {
@@ -2718,7 +2718,7 @@
       "lecture-best-practices-for-accessibility-and-css": {
         "title": "Best Practices for Accessibility and CSS",
         "intro": [
-          "In these lectures, you will learn about best practices for accessibility in CSS, and the tools for checking good color contrast on websites."
+          "In these lessons, you will learn about best practices for accessibility in CSS, and the tools for checking good color contrast on websites."
         ]
       },
       "workshop-accessibility-quiz": {
@@ -2750,7 +2750,7 @@
       "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
         "title": "Understanding How to Work with Floats and Positioning in CSS",
         "intro": [
-          "In these lectures, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+          "In these lessons, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
         ]
       },
       "workshop-cat-painting": {
@@ -2781,7 +2781,7 @@
       "lecture-working-with-attribute-selectors": {
         "title": "Working with Attribute Selectors",
         "intro": [
-          "In these lectures, you will learn about attribute selectors and how to use them to target elements like links and lists."
+          "In these lessons, you will learn about attribute selectors and how to use them to target elements like links and lists."
         ]
       },
       "workshop-balance-sheet": {
@@ -2813,7 +2813,7 @@
       "lecture-best-practices-for-responsive-web-design": {
         "title": "Best Practices for Responsive Web Design",
         "intro": [
-          "In these lectures, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
+          "In these lessons, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
         ]
       },
       "workshop-piano": {
@@ -2846,7 +2846,7 @@
       "lecture-working-with-css-variables": {
         "title": "Working with CSS Variables",
         "intro": [
-          "In these lectures, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
+          "In these lessons, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
         ]
       },
       "workshop-city-skyline": {
@@ -2877,7 +2877,7 @@
       "lecture-working-with-css-grid": {
         "title": "Working with CSS Grid",
         "intro": [
-          "In these lectures, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
+          "In these lessons, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
         ]
       },
       "workshop-magazine": {
@@ -2896,7 +2896,7 @@
       "lecture-debugging-css": {
         "title": "Debugging CSS",
         "intro": [
-          "In this lecture, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
+          "In this lesson, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
         ]
       },
       "lab-product-landing-page": {
@@ -2919,7 +2919,7 @@
       "lecture-animations-and-accessibility": {
         "title": "Animations and Accessibility",
         "intro": [
-          "In these lectures, you will learn about CSS animations and their accessibility concerns. You will also learn how <code>prefers-reduced-motion</code> can help address those accessibility concerns."
+          "In these lessons, you will learn about CSS animations and their accessibility concerns. You will also learn how <code>prefers-reduced-motion</code> can help address those accessibility concerns."
         ]
       },
       "workshop-ferris-wheel": {
@@ -2970,25 +2970,25 @@
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
         "intro": [
-          "In these lectures, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
+          "In these lessons, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
         ]
       },
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
+          "In these lessons, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, and much more."
         ]
       },
       "lecture-introduction-to-strings": {
         "title": "Introduction to Strings",
         "intro": [
-          "In these lectures, you will learn how to work with strings and string concatenation."
+          "In these lessons, you will learn how to work with strings and string concatenation."
         ]
       },
       "lecture-understanding-code-clarity": {
         "title": "Understanding Code Clarity",
         "intro": [
-          "In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming."
+          "In these lessons, you will learn about comments in JavaScript and the role of semicolons in programming."
         ]
       },
       "workshop-greeting-bot": {
@@ -3013,7 +3013,7 @@
       "lecture-working-with-data-types": {
         "title": "Working with Data Types",
         "intro": [
-          "In the following lectures, you will learn how to work with data types in JavaScript. You will also learn how dynamic typing differs from static typing, the <code>typeof</code> operator, and the <code>typeof null</code> bug."
+          "In the following lessons, you will learn how to work with data types in JavaScript. You will also learn how dynamic typing differs from static typing, the <code>typeof</code> operator, and the <code>typeof null</code> bug."
         ]
       },
       "review-javascript-variables-and-data-types": {
@@ -3032,7 +3032,7 @@
       "lecture-working-with-strings-in-javascript": {
         "title": "Working with Strings in JavaScript",
         "intro": [
-          "In these lectures, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
+          "In these lessons, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
         ]
       },
       "workshop-teacher-chatbot": {
@@ -3045,25 +3045,25 @@
       "lecture-working-with-string-character-methods": {
         "title": "Working with String Character Methods",
         "intro": [
-          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+          "In this lesson you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
         ]
       },
       "lecture-working-with-string-search-and-slice-methods": {
         "title": "Working with String Search and Slice Methods",
         "intro": [
-          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+          "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
-          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+          "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
-          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
+          "In this lesson you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
       "review-javascript-strings": {
@@ -3080,31 +3080,31 @@
       "lecture-working-with-numbers-and-arithmetic-operators": {
         "title": "Working with Numbers and Arithmetic Operators",
         "intro": [
-          "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
+          "In these lessons you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
-          "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+          "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
-          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+          "In these lessons you will learn about booleans, and equality and inequality operators, and other comparison operators."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
         "title": "Working with Unary and Bitwise Operators",
         "intro": [
-          "In these lectures you will learn about unary and bitwise operators."
+          "In these lessons you will learn about unary and bitwise operators."
         ]
       },
       "lecture-working-with-conditional-logic-and-math-methods": {
         "title": "Working with Conditional Logic and Math Methods",
         "intro": [
-          "In these lectures you will learn about conditional statements, binary logical operators, and the <code>Math</code> object."
+          "In these lessons you will learn about conditional statements, binary logical operators, and the <code>Math</code> object."
         ]
       },
       "workshop-mathbot": {
@@ -3123,7 +3123,7 @@
       "lecture-working-with-numbers-and-common-number-methods": {
         "title": "Working with Numbers and Common Number Methods",
         "intro": [
-          "In these lectures, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
+          "In these lessons, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
         ]
       },
       "review-javascript-math": {
@@ -3142,7 +3142,7 @@
       "lecture-understanding-comparisons-and-conditionals": {
         "title": "Understanding Comparisons and Conditionals",
         "intro": [
-          "In these lectures, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with <code>null</code> and <code>undefined</code>."
+          "In these lessons, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with <code>null</code> and <code>undefined</code>."
         ]
       },
       "review-javascript-comparisons-and-conditionals": {
@@ -3161,7 +3161,7 @@
       "lecture-working-with-functions": {
         "title": "Working with Functions",
         "intro": [
-          "In these lectures, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
+          "In these lessons, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
         ]
       },
       "workshop-calculator": {
@@ -3232,7 +3232,7 @@
       "lecture-working-with-arrays": {
         "title": "Working with Arrays",
         "intro": [
-          "In these lectures, you will learn how to work with JavaScript arrays. You will learn about what makes an array, one-dimensional and two-dimensional arrays, how to access and update the elements in an array, and much more."
+          "In these lessons, you will learn how to work with JavaScript arrays. You will learn about what makes an array, one-dimensional and two-dimensional arrays, how to access and update the elements in an array, and much more."
         ]
       },
       "workshop-shopping-list": {
@@ -3263,7 +3263,7 @@
       "lecture-working-with-common-array-methods": {
         "title": "Working with Common Array Methods",
         "intro": [
-          "In these lectures, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
+          "In these lessons, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
         ]
       },
       "review-javascript-arrays": {
@@ -3280,19 +3280,19 @@
       "lecture-introduction-to-javascript-objects-and-their-properties": {
         "title": "Introduction to JavaScript Objects and Their Properties",
         "intro": [
-          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+          "In these lessons, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
       "lecture-working-with-optional-chaining-and-object-destructuring": {
         "title": "Working with Optional Chaining and Object Destructuring",
         "intro": [
-          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+          "In these lessons, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
         ]
       },
       "lecture-working-with-json": {
         "title": "Working with JSON",
         "intro": [
-          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
+          "In these lessons, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
         ]
       },
       "workshop-recipe-tracker": {
@@ -3328,7 +3328,7 @@
       "lecture-working-with-loops": {
         "title": "Working with Loops",
         "intro": [
-          "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
+          "Loops are an essential part of JavaScript. That's why the following lessons have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
         ]
       },
       "workshop-sentence-analyzer": {
@@ -3394,19 +3394,19 @@
       "lecture-working-with-types-and-objects": {
         "title": "Working with Types and Objects",
         "intro": [
-          "In these lectures you will learn about string objects, the <code>toString()</code> method, the <code>Number</code> constructor and more."
+          "In these lessons you will learn about string objects, the <code>toString()</code> method, the <code>Number</code> constructor and more."
         ]
       },
       "lecture-working-with-arrays-variables-and-naming-practices": {
         "title": "Working with Arrays, Variables, and Naming Practices",
         "intro": [
-          "In these lectures you will learn about common practices for naming variables and functions, and how to work with arrays."
+          "In these lessons you will learn about common practices for naming variables and functions, and how to work with arrays."
         ]
       },
       "lecture-working-with-code-quality-and-execution-concepts": {
         "title": "Working with Code Quality and Execution Concepts",
         "intro": [
-          "In these lectures you will learn what are linters and formatters, what is memory management, and closures."
+          "In these lessons you will learn what are linters and formatters, what is memory management, and closures."
         ]
       },
       "lab-largest-number-finder": {
@@ -3444,7 +3444,7 @@
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
-          "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
+          "In these lessons, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
       "lab-title-case-converter": {
@@ -3469,13 +3469,13 @@
       "lecture-understanding-modules-imports-and-exports": {
         "title": "Understanding Modules, Imports, and Exports",
         "intro": [
-          "In this lecture, you will learn about modules, imports, and exports in JavaScript."
+          "In this lesson, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
       "lecture-working-with-the-arguments-object-and-rest-parameters": {
         "title": "Working with the arguments Object and Rest Parameters",
         "intro": [
-          "In these lectures, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+          "In these lessons, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
         ]
       },
       "lab-unique-sorted-union": {
@@ -3536,7 +3536,7 @@
       "lecture-working-with-higher-order-functions-and-callbacks": {
         "title": "Working with Higher Order Functions and Callbacks",
         "intro": [
-          "In these lectures, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
+          "In these lessons, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
         ]
       },
       "workshop-library-manager": {
@@ -3615,7 +3615,7 @@
       "lecture-working-with-the-dom-click-events-and-web-apis": {
         "title": "Working with the DOM, Click Events, and Web APIs",
         "intro": [
-          "In these lectures, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
+          "In these lessons, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
         ]
       },
       "workshop-storytelling-app": {
@@ -3639,7 +3639,7 @@
       "lecture-understanding-the-event-object-and-event-delegation": {
         "title": "Understanding the Event Object and Event Delegation",
         "intro": [
-          "In these lectures, you will learn about the event object, the change event, event bubbling, and event delegation."
+          "In these lessons, you will learn about the event object, the change event, event bubbling, and event delegation."
         ]
       },
       "workshop-music-instrument-filter": {
@@ -3690,7 +3690,7 @@
       "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
         "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
         "intro": [
-          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+          "In these lessons you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
         ]
       },
       "workshop-planets-tablist": {
@@ -3728,7 +3728,7 @@
       "lecture-debugging-techniques": {
         "title": "Debugging Techniques",
         "intro": [
-          "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
+          "In these lessons, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
         ]
       },
       "lab-random-background-color-changer": {
@@ -3751,7 +3751,7 @@
       "lecture-working-with-regular-expressions": {
         "title": "Working with Regular Expressions",
         "intro": [
-          "In these lectures, you will learn about regular expressions in JavaScript. You will learn about the methods for working with regular expressions, modifiers, character classes, lookaheads, lookbehinds, back-references, quantifiers, and more."
+          "In these lessons, you will learn about regular expressions in JavaScript. You will learn about the methods for working with regular expressions, modifiers, character classes, lookaheads, lookbehinds, back-references, quantifiers, and more."
         ]
       },
       "workshop-spam-filter": {
@@ -3813,7 +3813,7 @@
       "lecture-understanding-form-validation": {
         "title": "Understanding Form Validation",
         "intro": [
-          "In these lectures, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
+          "In these lessons, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
       "workshop-calorie-counter": {
@@ -3846,7 +3846,7 @@
       "lecture-working-with-dates": {
         "title": "Working with Dates",
         "intro": [
-          "In these lectures, you will learn about the JavaScript date object. You will learn about the methods for working with dates and how to format dates."
+          "In these lessons, you will learn about the JavaScript date object. You will learn about the methods for working with dates and how to format dates."
         ]
       },
       "lab-date-conversion": {
@@ -3871,7 +3871,7 @@
       "lecture-working-with-audio-and-video": {
         "title": "Working with Audio and Video",
         "intro": [
-          "In these lectures, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
+          "In these lessons, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
         ]
       },
       "workshop-music-player": {
@@ -3903,7 +3903,7 @@
       "lecture-working-with-maps-and-sets": {
         "title": "Working with Maps and Sets",
         "intro": [
-          "In these lectures, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
+          "In these lessons, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
         ]
       },
       "workshop-plant-nursery-catalog": {
@@ -3935,7 +3935,7 @@
       "lecture-working-with-client-side-storage-and-crud-operations": {
         "title": "Working with Client-Side Storage and CRUD Operations",
         "intro": [
-          "In these lectures, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
+          "In these lessons, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
         ]
       },
       "workshop-todo-app": {
@@ -3968,7 +3968,7 @@
       "lecture-understanding-how-to-work-with-classes-in-javascript": {
         "title": "Understanding How to Work with Classes in JavaScript",
         "intro": [
-          "In these lectures, you will learn about classes in JavaScript. You will learn about inheritance, the <code>this</code> keyword, static properties and methods, and more."
+          "In these lessons, you will learn about classes in JavaScript. You will learn about inheritance, the <code>this</code> keyword, static properties and methods, and more."
         ]
       },
       "workshop-shopping-cart": {
@@ -4007,7 +4007,7 @@
       "lecture-understanding-recursion-and-the-call-stack": {
         "title": "Understanding Recursion and the Call Stack",
         "intro": [
-          "In this lecture, you will learn about recursion and the call stack."
+          "In this lesson, you will learn about recursion and the call stack."
         ]
       },
       "workshop-decimal-to-binary-converter": {
@@ -4037,13 +4037,13 @@
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
-          "In these lectures, you will learn about functional programming and how to nest functions using a technique called currying."
+          "In these lessons, you will learn about functional programming and how to nest functions using a technique called currying."
         ]
       },
       "workshop-recipe-ingredient-converter": {
         "title": "Build a Recipe Ingredient Converter",
         "intro": [
-          "In the previous lectures, you learned the core concepts behind functional programming and currying.",
+          "In the previous lessons, you learned the core concepts behind functional programming and currying.",
           "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
         ]
       },
@@ -4069,7 +4069,7 @@
       "lecture-understanding-asynchronous-programming": {
         "title": "Understanding Asynchronous Programming",
         "intro": [
-          "In these lectures, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
+          "In these lessons, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
         ]
       },
       "workshop-fcc-authors-page": {
@@ -4115,13 +4115,13 @@
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
-          "In these lectures, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular frontend JavaScript library."
+          "In these lessons, you will get an introduction to JavaScript libraries and frameworks. You will learn about the roles of JavaScript libraries and frameworks, single page applications (SPAs) and the issue surrounding them, and React, the most popular frontend JavaScript library."
         ]
       },
       "workshop-reusable-mega-navbar": {
         "title": "Build a Reusable Mega Navbar",
         "intro": [
-          "In the previous lectures, you learned how to work with components in React.",
+          "In the previous lessons, you learned how to work with components in React.",
           "In this workshop, you will build a reusable Navbar component using React."
         ]
       },
@@ -4132,7 +4132,7 @@
       "lecture-working-with-data-in-react": {
         "title": "Working with Data in React",
         "intro": [
-          "In these lectures, you will learn how to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
+          "In these lessons, you will learn how to work with data in React. You will learn about <code>props</code> and how to pass them around, conditional rendering, how to render lists, and how to use inline styles."
         ]
       },
       "workshop-reusable-profile-card-component": {
@@ -4161,7 +4161,7 @@
       "lecture-working-with-state-and-responding-to-events-in-react": {
         "title": "Working with State and Responding to Events in React",
         "intro": [
-          "In these lectures, you will learn about working with state and responding to events with React."
+          "In these lessons, you will learn about working with state and responding to events with React."
         ]
       },
       "workshop-toggle-text-app": {
@@ -4180,7 +4180,7 @@
       "lecture-understanding-effects-and-referencing-values-in-react": {
         "title": "Understanding Effects and Referencing Values in React",
         "intro": [
-          "In these lectures, you will learn about effects and referencing values with React."
+          "In these lessons, you will learn about effects and referencing values with React."
         ]
       },
       "workshop-fruit-search-app": {
@@ -4212,7 +4212,7 @@
       "lecture-working-with-forms-in-react": {
         "title": "Working with Forms in React",
         "intro": [
-          "In these lectures, you will learn about working with forms in React."
+          "In these lessons, you will learn about working with forms in React."
         ]
       },
       "workshop-superhero-application-form": {
@@ -4231,7 +4231,7 @@
       "lecture-working-with-data-fetching-and-memoization-in-react": {
         "title": "Working with Data Fetching and Memoization in React",
         "intro": [
-          "In these lectures, you will learn about data fetching and memoization in React."
+          "In these lessons, you will learn about data fetching and memoization in React."
         ]
       },
       "workshop-shopping-list-app": {
@@ -4250,7 +4250,7 @@
       "lecture-routing-react-frameworks-and-dependency-management-tools": {
         "title": "Routing, React Frameworks, and Dependency Management Tools",
         "intro": [
-          "In these lectures, you will learn about routing in React, React frameworks, and dependency management tools."
+          "In these lessons, you will learn about routing in React, React frameworks, and dependency management tools."
         ]
       },
       "lab-tic-tac-toe": {
@@ -4263,7 +4263,7 @@
       "lecture-react-strategies-and-debugging": {
         "title": "React Strategies and Debugging",
         "intro": [
-          "In these lectures, you will learn about different strategies and debugging in React."
+          "In these lessons, you will learn about different strategies and debugging in React."
         ]
       },
       "review-react-forms-data-fetching-and-routing": {
@@ -4282,7 +4282,7 @@
       "lecture-understanding-performance-in-web-applications": {
         "title": "Understanding Performance in Web Applications",
         "intro": [
-          "In these lectures, you will learn performance in web applications."
+          "In these lessons, you will learn performance in web applications."
         ]
       },
       "review-web-performance": {
@@ -4301,7 +4301,7 @@
       "lecture-understanding-the-different-types-of-testing": {
         "title": "Understanding the Different Types of Testing",
         "intro": [
-          "In these lectures, you will learn about the different types of testing."
+          "In these lessons, you will learn about the different types of testing."
         ]
       },
       "review-testing": {
@@ -4318,7 +4318,7 @@
       "lecture-working-with-css-libraries-and-frameworks": {
         "title": "Working with CSS Libraries and Frameworks",
         "intro": [
-          "In these lectures, you will learn how to work with CSS libraries and frameworks."
+          "In these lessons, you will learn how to work with CSS libraries and frameworks."
         ]
       },
       "workshop-error-message-component": {
@@ -4369,19 +4369,19 @@
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
-          "In these lectures, you will learn what TypeScript is and how to use it."
+          "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
-          "In these lectures, you will learn about generics and type narrowing in TypeScript."
+          "In these lessons, you will learn about generics and type narrowing in TypeScript."
         ]
       },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
         "intro": [
-          "In this lecture, you will learn about TypeScript configuration files and how to use them."
+          "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
       "trvf": { "title": "293", "intro": [] },
@@ -4411,7 +4411,7 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lectures, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
         ]
       },
       "workshop-caesar-cipher": {
@@ -4442,7 +4442,7 @@
       "lecture-working-with-loops-and-sequences": {
         "title": "Working with Loops and Sequences",
         "intro": [
-          "Learn about Working with Loops and Sequences in these lectures."
+          "Learn about Working with Loops and Sequences in these lessons."
         ]
       },
       "workshop-pin-extractor": {
@@ -4471,12 +4471,12 @@
       "lecture-working-with-dictionaries-and-sets": {
         "title": "Working with Dictionaries and Sets",
         "intro": [
-          "Learn about working with dictionaries and sets in these lectures."
+          "Learn about working with dictionaries and sets in these lessons."
         ]
       },
       "lecture-working-with-modules": {
         "title": "Working with Modules",
-        "intro": ["Learn about working with modules in these lectures."]
+        "intro": ["Learn about working with modules in these lessons."]
       },
       "workshop-medical-data-validator": {
         "title": "Build a Medical Data Validator",
@@ -4506,7 +4506,7 @@
       "lecture-understanding-error-handling": {
         "title": "Understanding Error Handling",
         "intro": [
-          "In these lectures, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
+          "In these lessons, you will learn about error handling in Python. You will learn about the different types of errors, some good debugging practices, what exceptions are, and how to handle them."
         ]
       },
       "lab-isbn-validator": {
@@ -4529,7 +4529,7 @@
       },
       "lecture-classes-and-objects": {
         "title": "Classes and Objects",
-        "intro": ["Learn about Classes and Objects in these lectures."]
+        "intro": ["Learn about Classes and Objects in these lessons."]
       },
       "workshop-musical-instrument-inventory": {
         "title": "Build a Musical Instrument Inventory",
@@ -4559,7 +4559,7 @@
       "lecture-understanding-object-oriented-programming-and-encapsulation": {
         "title": "Understanding Object Oriented Programming and Encapsulation",
         "intro": [
-          "Learn about Understanding Object Oriented Programming and Encapsulation in these lectures."
+          "Learn about Understanding Object Oriented Programming and Encapsulation in these lessons."
         ]
       },
       "workshop-placeholder-oop-1": {
@@ -4573,7 +4573,7 @@
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
-          "Learn about Understanding Inheritance and Polymorphism in these lectures."
+          "Learn about Understanding Inheritance and Polymorphism in these lessons."
         ]
       },
       "workshop-media-catalogue": {
@@ -4590,7 +4590,7 @@
       },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
-        "intro": ["Learn about Understanding Abstraction in these lectures."]
+        "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
       "workshop-placeholder-oop-3": {
         "title": "Placeholder - Waiting for title",
@@ -4612,7 +4612,7 @@
       "lecture-working-with-common-data-structures": {
         "title": "Working with Common Data Structures",
         "intro": [
-          "Learn about Working with Common Data Structures in these lectures."
+          "Learn about Working with Common Data Structures in these lessons."
         ]
       },
       "workshop-linked-list-class": {
@@ -4645,7 +4645,7 @@
         "title": "Searching and Sorting Algorithms",
         "intro": [
           "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
-          "These lectures cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
       "workshop-binary-search": {
@@ -4707,7 +4707,7 @@
       "lecture-understanding-graphs-and-trees": {
         "title": "Understanding Graphs and Trees",
         "intro": [
-          "In this lecture, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
       "workshop-shortest-path-algorithm": {
@@ -4746,7 +4746,7 @@
       "lecture-understanding-dynamic-programming": {
         "title": "Understanding Dynamic Programming",
         "intro": [
-          "In this lecture, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
+          "In this lesson, you will learn about dynamic programming, an algorithmic technique used to solve complex problems efficiently by breaking them down into simpler subproblems."
         ]
       },
       "lab-nth-fibonacci-number": {
@@ -4772,7 +4772,7 @@
       "lecture-understanding-the-command-line-and-working-with-bash": {
         "title": "Understanding the Command Line and Working with Bash",
         "intro": [
-          "Learn about the Command Line and Working with Bash in these lectures."
+          "Learn about the Command Line and Working with Bash in these lessons."
         ]
       },
       "workshop-bash-boilerplate": {
@@ -4795,7 +4795,7 @@
       "lecture-working-with-relational-databases": {
         "title": "Working with Relational Databases",
         "intro": [
-          "Learn how to work with Relational Databases in these lectures."
+          "Learn how to work with Relational Databases in these lessons."
         ]
       },
       "workshop-database-of-video-game-characters": {
@@ -4825,7 +4825,7 @@
       },
       "lecture-understanding-bash-scripting": {
         "title": "Understanding Bash Scripting",
-        "intro": ["Learn about Bash Scripting in these lectures."]
+        "intro": ["Learn about Bash Scripting in these lessons."]
       },
       "workshop-bash-five-programs": {
         "title": "Build Five Programs",
@@ -4847,7 +4847,7 @@
       "lecture-working-with-sql": {
         "title": "Working With SQL",
         "intro": [
-          "In these lectures, you will learn about SQL injection, normalization, and the N+1 problem."
+          "In these lessons, you will learn about SQL injection, normalization, and the N+1 problem."
         ]
       },
       "workshop-sql-student-database-part-1": {
@@ -4901,7 +4901,7 @@
       },
       "lecture-working-with-nano": {
         "title": "Working With Nano",
-        "intro": ["Learn about Nano in this lecture."]
+        "intro": ["Learn about Nano in this lesson."]
       },
       "workshop-castle": {
         "title": "Build a Castle",
@@ -4912,12 +4912,12 @@
       },
       "lecture-introduction-to-git-and-github": {
         "title": "Introduction to Git and GitHub",
-        "intro": ["Learn how to work with Git and GitHub in these lectures."]
+        "intro": ["Learn how to work with Git and GitHub in these lessons."]
       },
       "lecture-working-with-code-reviews-branching-deployment-and-ci-cd": {
         "title": "Working With Code Reviews, Branching, Deployment, and CI/CD",
         "intro": [
-          "Learn about code reviews, branching, deployment, and CI/CD in these lectures."
+          "Learn about code reviews, branching, deployment, and CI/CD in these lessons."
         ]
       },
       "workshop-sql-reference-object": {
