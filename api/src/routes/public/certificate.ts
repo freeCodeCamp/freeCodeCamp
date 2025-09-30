@@ -65,6 +65,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isFullStackCert: true,
           isRespWebDesignCert: true,
           isFrontEndLibsCert: true,
+          isJavascriptCertV9: true,
           isJsAlgoDataStructCert: true,
           isJsAlgoDataStructCertV8: true,
           isDataVisCert: true,

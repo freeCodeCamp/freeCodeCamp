@@ -28,6 +28,7 @@ const {
   legacyFullStackId,
   respWebDesignId,
   frontEndDevLibsId,
+  javascriptV9Id,
   jsAlgoDataStructId,
   jsAlgoDataStructV8Id,
   dataVis2018Id,
@@ -156,7 +157,8 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
     [certTypes.foundationalCSharpV8]: getCertById(
       foundationalCSharpV8Id,
       challenges
-    )
+    ),
+    [certTypes.javascriptV9]: getCertById(javascriptV9Id, challenges)
 
     // upcoming
   };
@@ -182,6 +184,7 @@ interface CertI {
   isRelationalDatabaseCertV8?: boolean;
   isCollegeAlgebraPyCertV8?: boolean;
   isFoundationalCSharpCertV8?: boolean;
+  isJavascriptCertV9?: boolean;
 }
 
 function getUserIsCertMap(user: CertI) {
@@ -204,7 +207,8 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7 = false,
     isRelationalDatabaseCertV8 = false,
     isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false
+    isFoundationalCSharpCertV8 = false,
+    isJavascriptCertV9 = false
   } = user;
 
   return {
@@ -226,7 +230,8 @@ function getUserIsCertMap(user: CertI) {
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
     isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8
+    isFoundationalCSharpCertV8,
+    isJavascriptCertV9
   };
 }
 
@@ -390,7 +395,8 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isQaCertV7: true,
           isRelationalDatabaseCertV8: true,
           isRespWebDesignCert: true,
-          isSciCompPyCertV7: true
+          isSciCompPyCertV7: true,
+          isJavascriptCertV9: true
         }
       });
 

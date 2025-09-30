@@ -105,7 +105,8 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
+  javascriptV9: 'isJavascriptCertV9'
 } as const;
 
 export const certIds = {
@@ -149,7 +150,8 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.jsAlgoDataStructV8]: 300
+  [certTypes.jsAlgoDataStructV8]: 300,
+  [certTypes.javascriptV9]: 300
 };
 
 export const certSlugTypeMap = {
@@ -174,9 +176,10 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
+  [Certification.JsV9]: certTypes.javascriptV9
 };
 
 export const superBlockCertTypeMap = {
@@ -229,7 +232,8 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
+  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id,
+  [certTypes.javascriptV9]: certIds.javascriptV9Id
 };
 
 export const certTypeTitleMap = {
@@ -252,7 +256,8 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.javascriptV9]: 'JavaScript'
 };
 
 export const superBlockToCertMap: {

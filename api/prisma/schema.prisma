@@ -121,6 +121,7 @@ model user {
   isInfosecQaCert                Boolean? // Undefined
   isJsAlgoDataStructCert         Boolean? // Undefined
   isJsAlgoDataStructCertV8       Boolean? // Undefined
+  isJavascriptCertV9             Boolean? // Undefined
   isMachineLearningPyCertV7      Boolean? // Undefined
   isQaCertV7                     Boolean? // Undefined
   isRelationalDatabaseCertV8     Boolean? // Undefined
