@@ -5,7 +5,8 @@
   "helpCategory": "English",
   "blockLayout": "link",
   "challengeOrder": [
-    { "id": "68d2a81f50d01ea746462565", "title": "Dialogue 1: I'm Tom" }
+    { "id": "68dbeddd000f625f95f32de5", "title": "Why Learn Spansh" },
+    { "id": "68dbf2b25df6176d3df4fe1b", "title": "How the Certification Works" }
   ],
   "blockType": "learn"
 }
