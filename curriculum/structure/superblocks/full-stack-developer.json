@@ -733,6 +733,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
