@@ -174,7 +174,7 @@ export default tseslint.config(
     extends: [vitest.configs.recommended]
   },
   {
-    files: ['e2e/*.ts'],
+    files: ['e2e/specs/*.ts'],
 
     rules: {
       '@typescript-eslint/no-unsafe-member-access': 'off',
