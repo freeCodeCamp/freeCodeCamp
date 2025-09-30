@@ -10,6 +10,5 @@
       "title": "Responsive Web Design Certification Exam"
     }
   ],
-  "blockType": "exam",
-  "usesMultifileEditor": true
+  "blockType": "exam"
 }

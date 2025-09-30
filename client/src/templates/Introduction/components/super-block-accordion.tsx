@@ -206,7 +206,7 @@ export const SuperBlockAccordion = ({
   const isLinkModule = (name: string) => {
     const module = modules.find(module => module.dashedName === name);
 
-    return module?.moduleType === 'review';
+    return module?.moduleType === 'review' || module?.moduleType === 'exam';
   };
 
   const getBlockToChapterMap = () => {
@@ -298,7 +298,10 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (module.moduleType === 'review') {
+                if (
+                  module.moduleType === 'review' ||
+                  module.moduleType === 'exam'
+                ) {
                   return null;
                 }
 
