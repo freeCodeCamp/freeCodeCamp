@@ -205,12 +205,7 @@ export class Block extends Component<BlockProps> {
               </span>
             </div>
           </button>
-          {isExpanded && (
-            <ChallengesList
-              challenges={extendedChallenges}
-              isProjectBlock={isProjectBlock}
-            />
-          )}
+          {isExpanded && <ChallengesList challenges={extendedChallenges} />}
         </div>
       </ScrollableAnchor>
     );
@@ -238,10 +233,7 @@ export class Block extends Component<BlockProps> {
             )}
           </div>
           <BlockIntros intros={blockIntroArr} />
-          <ChallengesList
-            challenges={extendedChallenges}
-            isProjectBlock={isProjectBlock}
-          />
+          <ChallengesList challenges={extendedChallenges} />
         </div>
       </ScrollableAnchor>
     );
@@ -435,10 +427,7 @@ export class Block extends Component<BlockProps> {
                     isProjectBlock={isProjectBlock}
                   />
                 ) : (
-                  <ChallengesList
-                    challenges={extendedChallenges}
-                    isProjectBlock={isProjectBlock}
-                  />
+                  <ChallengesList challenges={extendedChallenges} />
                 )}
               </div>
             </div>

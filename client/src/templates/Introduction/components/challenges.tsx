@@ -51,25 +51,16 @@ const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   </Link>
 );
 
-export function ChallengesList({
-  challenges,
-  isProjectBlock
-}: ChallengesProps & { isProjectBlock: boolean }): JSX.Element {
+export function ChallengesList({ challenges }: ChallengesProps): JSX.Element {
   return (
     <ul className={`map-challenges-ul`}>
       {challenges.map(challenge => (
         <li
-          className={`map-challenge-title ${
-            isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-          }`}
+          className={'map-challenge-title map-challenge-wrap'}
           id={challenge.dashedName}
           key={'map-challenge' + challenge.fields.slug}
         >
-          {!isProjectBlock ? (
-            <ListChallenge challenge={challenge} />
-          ) : (
-            <CertChallenge challenge={challenge} />
-          )}
+          <ListChallenge challenge={challenge} />
         </li>
       ))}
     </ul>
