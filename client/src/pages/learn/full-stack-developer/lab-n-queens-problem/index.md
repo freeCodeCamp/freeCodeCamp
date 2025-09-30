@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Implement the N-Queens Algorithm
 
-This page is for the Implement the N-Queens Algorithm
+In this lab, you will implement a solution for the N-Queens problem.
