@@ -33,6 +33,7 @@ const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const fullStackDeveloperBase = '/learn/full-stack-developer';
+const respWebV9Base = '/learn/responsive-web-design-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -810,6 +811,19 @@ const allStandardCerts = [
         title: 'Certified Full Stack Developer Exam',
         link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloper
+      }
+    ]
+  },
+  {
+    id: '68db314d3c11a8bff07c7535',
+    title: 'Responsive Web Design',
+    certSlug: Certification.RespWebDesignV9,
+    projects: [
+      {
+        id: '68db37350b398ecddd1f5dac',
+        title: 'Responsive Web Design Certification Exam',
+        link: `${respWebV9Base}/responsive-web-design-certification-exam/exam-responsive-web-design-certification`,
+        certSlug: Certification.RespWebDesignV9
       }
     ]
   },

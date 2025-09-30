@@ -5015,18 +5015,15 @@
       }
     }
   },
-  "responsive-web-design-2025": {
-    "title": "Responsive Web Design 2025",
+  "responsive-web-design-v9": {
+    "title": "Responsive Web Design v9",
     "intro": [
       "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
       "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
       "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
       "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
     ],
-    "chapters": {
-      "html": "HTML",
-      "css": "CSS"
-    },
+    "chapters": { "html": "HTML", "css": "CSS" },
     "modules": {
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",
@@ -5052,7 +5049,8 @@
       "css-grid": "Grid",
       "css-animations": "Animations",
       "review-css": "CSS Review",
-      "exam-css": "CSS Exam"
+      "exam-css": "CSS Exam",
+      "responsive-web-design-v9-certification-exam": "Responsive Web Design Certification Exam"
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -5953,6 +5951,12 @@
         "intro": [
           "Before you take the CSS prep exam, you first need to review the concepts taught in the previous modules.",
           "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
+        ]
+      },
+      "exam-responsive-web-design-v9-certification": {
+        "title": "Responsive Web Design Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification Exam"
         ]
       }
     }

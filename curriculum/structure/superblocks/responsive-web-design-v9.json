@@ -2,7 +2,6 @@
   "chapters": [
     {
       "dashedName": "html",
-      "comingSoon": false,
       "modules": [
         {
           "dashedName": "basic-html",
@@ -78,7 +77,6 @@
     },
     {
       "dashedName": "css",
-      "comingSoon": false,
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -264,6 +262,12 @@
           "moduleType": "review",
           "dashedName": "review-css",
           "blocks": ["review-css"]
+        },
+        {
+          "moduleType": "exam",
+          "dashedName": "responsive-web-design-v9-certification-exam",
+          "comingSoon": true,
+          "blocks": ["exam-responsive-web-design-v9-certification"]
         }
       ]
     }

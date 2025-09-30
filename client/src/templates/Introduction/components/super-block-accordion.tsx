@@ -10,7 +10,7 @@ import DropDown from '../../../assets/icons/dropdown';
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
-import respWebDesign2025 from '../../../../../curriculum/structure/superblocks/responsive-web-design-2025.json';
+import respWebDesignV9 from '../../../../../curriculum/structure/superblocks/responsive-web-design-v9.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
@@ -190,8 +190,8 @@ export const SuperBlockAccordion = ({
         return fullStackCert;
       case SuperBlocks.A1Spanish:
         return a1Spanish;
-      case SuperBlocks.RespWebDesign2025:
-        return respWebDesign2025;
+      case SuperBlocks.RespWebDesignV9:
+        return respWebDesignV9;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }

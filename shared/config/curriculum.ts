@@ -35,7 +35,7 @@ export enum SuperBlocks {
   SemanticHtml = 'semantic-html',
   DevPlayground = 'dev-playground',
   FullStackOpen = 'full-stack-open',
-  RespWebDesign2025 = 'responsive-web-design-2025'
+  RespWebDesignV9 = 'responsive-web-design-v9'
 }
 
 export const languageSuperBlocks = [
@@ -120,8 +120,8 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
-    SuperBlocks.RespWebDesign2025,
     SuperBlocks.FullStackOpen,
+    SuperBlocks.RespWebDesignV9,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -164,7 +164,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -180,7 +181,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -196,7 +198,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -212,7 +215,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -226,7 +230,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -239,7 +244,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -253,7 +259,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.A1Chinese,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -276,7 +283,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -306,7 +314,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.PythonForEverybody,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -337,7 +346,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.RosettaCode,
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.RespWebDesignV9
   ]
 };
 
@@ -347,7 +357,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,
-  SuperBlocks.RespWebDesign2025
+  SuperBlocks.RespWebDesignV9
 ];
 Object.freeze(chapterBasedSuperBlocks);
 
