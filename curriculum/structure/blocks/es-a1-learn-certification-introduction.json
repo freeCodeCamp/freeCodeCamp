@@ -6,7 +6,14 @@
   "blockLayout": "link",
   "challengeOrder": [
     { "id": "68dbeddd000f625f95f32de5", "title": "Why Learn Spansh" },
-    { "id": "68dbf2b25df6176d3df4fe1b", "title": "How the Certification Works" }
+    {
+      "id": "68dbf2b25df6176d3df4fe1b",
+      "title": "How the Certification Works"
+    },
+    {
+      "id": "68dbf6032fbaae802567eed7",
+      "title": "How to Set Up the Spanish Keyboard on Your Computer"
+    }
   ],
   "blockType": "learn"
 }
