@@ -2,7 +2,12 @@ import { createSelector } from 'reselect';
 
 // TODO: source the superblock structure via a GQL query, rather than directly
 // from the curriculum
-import superBlockStructure from '../../../curriculum/structure/superblocks/full-stack-developer.json';
+import fullStackCert from '../../../curriculum/structure/superblocks/full-stack-developer.json';
+import fullStackOpen from '../../../curriculum/structure/superblocks/full-stack-open.json';
+import a1Spanish from '../../../curriculum/structure/superblocks/a1-professional-spanish.json';
+import javascriptV9 from '../../../curriculum/structure/superblocks/javascript-v9.json';
+import rwdV9 from '../../../curriculum/structure/superblocks/responsive-web-design-v9.json';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
@@ -133,10 +138,23 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [allChallengesInfoSelector, completedChallengesIdsSelector],
-  (allChallengesInfo, completedChallengesIds) => {
-    const chapters = superBlockStructure.chapters;
+  [
+    allChallengesInfoSelector,
+    completedChallengesIdsSelector,
+    state => state.challenge.challengeMeta
+  ],
+  (allChallengesInfo, completedChallengesIds, challengeMeta) => {
     const { challengeNodes } = allChallengesInfo;
+
+    const superBlockMap = {
+      [SuperBlocks.FullStackDeveloper]: fullStackCert,
+      [SuperBlocks.ResponsiveWebDesignV9]: rwdV9,
+      [SuperBlocks.JavaScriptV9]: javascriptV9,
+      [SuperBlocks.A1Spanish]: a1Spanish,
+      [SuperBlocks.FullStackOpen]: fullStackOpen
+    };
+
+    const chapters = superBlockMap[challengeMeta.superBlock].chapters;
 
     const getCompletionState = ({
       chapters,
