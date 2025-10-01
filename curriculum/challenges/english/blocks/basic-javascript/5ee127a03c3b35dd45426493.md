@@ -45,25 +45,6 @@ assert(/b\s*=\s*a\s*/g.test(__helpers.removeJSComments(code)));
 
 # --seed--
 
-## --before-user-code--
-
-```js
-if (typeof a != 'undefined') {
-  a = undefined;
-}
-if (typeof b != 'undefined') {
-  b = undefined;
-}
-```
-
-## --after-user-code--
-
-```js
-(function(a, b) {
-  return 'a = ' + a + ', b = ' + b;
-})(a, b);
-```
-
 ## --seed-contents--
 
 ```js

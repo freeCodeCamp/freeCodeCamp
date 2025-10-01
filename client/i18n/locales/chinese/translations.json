@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "下载 freeCodeCamp 考试环境应用程序",
     "explanation": "要获得认证，你必须参加考试以检验对所学知识的掌握程度。参加考试完全免费。",
     "version": "我们的应用程序的最新版本是：{{version}}。",
