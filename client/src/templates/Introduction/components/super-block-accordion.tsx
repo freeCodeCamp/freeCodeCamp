@@ -290,7 +290,9 @@ export const SuperBlockAccordion = ({
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
-            isExpanded={expandedChapter === chapter.name}
+            isExpanded={
+              expandedChapter === chapter.name || allChapters.length === 1
+            }
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
