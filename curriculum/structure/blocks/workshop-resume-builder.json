@@ -10,5 +10,6 @@
     { "id": "68d1642a54260facca13246a", "title": "Step 3" }
   ],
   "blockType": "workshop",
-  "usesMultifileEditor": true
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
 }
