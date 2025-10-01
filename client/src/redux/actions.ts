@@ -55,6 +55,10 @@ export const updateAllChallengesInfo = createAction(
   actionTypes.updateAllChallengesInfo
 );
 
+export const updateSuperBlockStructures = createAction(
+  actionTypes.updateSuperBlockStructures
+);
+
 export const postCharge = createAction(actionTypes.postCharge);
 export const postChargeProcessing = createAction(
   actionTypes.postChargeProcessing

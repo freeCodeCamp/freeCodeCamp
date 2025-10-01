@@ -68,6 +68,7 @@ const initialState = {
     challengeNodes: [],
     certificateNodes: []
   },
+  superBlockStructures: {},
   userProfileFetchState: {
     ...defaultFetchState
   },
@@ -171,6 +172,10 @@ export const reducer = handleActions(
     [actionTypes.updateAllChallengesInfo]: (state, { payload }) => ({
       ...state,
       allChallengesInfo: { ...payload }
+    }),
+    [actionTypes.updateSuperBlockStructures]: (state, { payload }) => ({
+      ...state,
+      superBlockStructures: { ...payload }
     }),
     [actionTypes.fetchUser]: state => ({
       ...state,

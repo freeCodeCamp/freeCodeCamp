@@ -5,11 +5,6 @@ import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-// TODO: source the superblock structure via a GQL query, rather than directly
-// from the curriculum
-import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
-import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
-import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
@@ -61,6 +56,9 @@ interface Challenge {
 interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
+  structure?: {
+    chapters: Chapter[];
+  };
   chosenBlock: string;
   completedChallengeIds: string[];
 }
@@ -176,25 +174,15 @@ const LinkBlock = ({
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
+  structure,
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks): {
-    chapters: Chapter[];
-  } {
-    switch (superBlock) {
-      case SuperBlocks.FullStackOpen:
-        return fullStackOpen;
-      case SuperBlocks.FullStackDeveloper:
-        return fullStackCert;
-      case SuperBlocks.A1Spanish:
-        return a1Spanish;
-      default:
-        throw new Error("The SuperBlock structure hasn't been imported.");
-    }
+  if (!structure) {
+    throw new Error(`No structure provided for superblock: ${superBlock}`);
   }
 
-  const superBlockStructure = getSuperblockStructure(superBlock);
+  const superBlockStructure = structure;
 
   const modules = superBlockStructure.chapters.flatMap<Module>(
     ({ modules }) => modules

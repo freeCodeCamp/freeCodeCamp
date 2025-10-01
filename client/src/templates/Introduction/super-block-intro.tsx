@@ -19,7 +19,10 @@ import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
 import callGA from '../../analytics/call-ga';
-import { tryToShowDonationModal } from '../../redux/actions';
+import {
+  tryToShowDonationModal,
+  updateSuperBlockStructures
+} from '../../redux/actions';
 import {
   isSignedInSelector,
   userSelector,
@@ -67,10 +70,22 @@ type ChallengeNode = {
   };
 };
 
+type SuperBlockStructureNode = {
+  superBlock: SuperBlocks;
+  chapters: Array<{
+    dashedName: string;
+    modules: Array<{
+      dashedName: string;
+      blocks: string[];
+    }>;
+  }>;
+};
+
 type SuperBlockProps = {
   currentChallengeId: string;
   data: {
     allChallengeNode: { nodes: ChallengeNode[] };
+    allSuperBlockStructure: { nodes: SuperBlockStructureNode[] };
   };
   expandedState: {
     [key: string]: boolean;
@@ -87,6 +102,9 @@ type SuperBlockProps = {
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
+  updateSuperBlockStructures: (
+    structures: Record<string, SuperBlockStructureNode>
+  ) => void;
   user: User | null;
 };
 
@@ -119,6 +137,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       tryToShowDonationModal,
+      updateSuperBlockStructures,
       resetExpansion,
       toggleBlock: b => toggleBlock(b)
     },
@@ -130,6 +149,13 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
+
+    // Dispatch superblock structures to Redux on mount
+    const structuresMap: Record<string, SuperBlockStructureNode> = {};
+    props.data.allSuperBlockStructure.nodes.forEach(node => {
+      structuresMap[node.superBlock] = node;
+    });
+    props.updateSuperBlockStructures(structuresMap);
 
     setTimeout(() => {
       configureAnchors({ offset: -40, scrollDuration: 400 });
@@ -143,7 +169,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   const {
     data: {
-      allChallengeNode: { nodes }
+      allChallengeNode: { nodes },
+      allSuperBlockStructure
     },
     isSignedIn,
     currentChallengeId,
@@ -172,6 +199,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   );
 
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+
+  const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
+    node => node.superBlock === superBlock
+  );
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -265,6 +296,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
+                  structure={currentSuperBlockStructure}
                   chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
@@ -356,6 +388,21 @@ export const query = graphql`
           blockLayout
           chapter
           module
+        }
+      }
+    }
+    allSuperBlockStructure {
+      nodes {
+        superBlock
+        chapters {
+          dashedName
+          comingSoon
+          modules {
+            dashedName
+            comingSoon
+            moduleType
+            blocks
+          }
         }
       }
     }

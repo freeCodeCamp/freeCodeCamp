@@ -11,7 +11,9 @@ import {
 } from '../templates/Challenges/redux';
 import {
   ns as curriculumMapNameSpace,
-  reducer as curriculumMap
+  reducer as curriculumMap,
+  superBlockStructuresNs as superBlockStructuresNameSpace,
+  superBlockStructuresReducer as superBlockStructures
 } from '../templates/Introduction/redux';
 import { examAttempts } from '../utils/ajax';
 import { ns as appNameSpace } from './action-types';
@@ -23,6 +25,7 @@ export default combineReducers({
   [appNameSpace]: app,
   [challengeNameSpace]: challenge,
   [curriculumMapNameSpace]: curriculumMap,
+  [superBlockStructuresNameSpace]: superBlockStructures,
   [flashNameSpace]: flash,
   [searchNameSpace]: search,
   [settingsNameSpace]: settings,

@@ -335,6 +335,20 @@ export type AllChallengesInfo = {
   certificateNodes: CertificateNode[];
 };
 
+export type SuperBlockStructure = {
+  superBlock: string;
+  chapters: Array<{
+    dashedName: string;
+    comingSoon?: boolean;
+    modules: Array<{
+      dashedName: string;
+      comingSoon?: boolean;
+      moduleType?: string;
+      blocks: string[];
+    }>;
+  }>;
+};
+
 export type AllChallengeNode = {
   edges: [
     {

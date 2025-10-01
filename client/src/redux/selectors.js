@@ -1,10 +1,8 @@
 import { createSelector } from 'reselect';
 
-// TODO: source the superblock structure via a GQL query, rather than directly
-// from the curriculum
-import superBlockStructure from '../../../curriculum/structure/superblocks/full-stack-developer.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
+import { superBlockStructuresNs } from '../templates/Introduction/redux';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -121,6 +119,10 @@ export const createUserByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+export const superBlockStructuresSelector = state =>
+  state[superBlockStructuresNs] || {};
+export const getSuperBlockStructure = (state, superBlock) =>
+  superBlockStructuresSelector(state)[superBlock];
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
@@ -133,10 +135,24 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [allChallengesInfoSelector, completedChallengesIdsSelector],
-  (allChallengesInfo, completedChallengesIds) => {
-    const chapters = superBlockStructure.chapters;
+  [
+    allChallengesInfoSelector,
+    completedChallengesIdsSelector,
+    superBlockStructuresSelector,
+    state => state.challenge.challengeMeta
+  ],
+  (
+    allChallengesInfo,
+    completedChallengesIds,
+    superBlockStructures,
+    challengeMeta
+  ) => {
     const { challengeNodes } = allChallengesInfo;
+
+    const structure = superBlockStructures[challengeMeta.superBlock];
+    if (!structure) return [];
+
+    const chapters = structure.chapters;
 
     const getCompletionState = ({
       chapters,

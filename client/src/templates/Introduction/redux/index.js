@@ -39,3 +39,26 @@ export const reducer = handleActions(
   },
   initialState
 );
+
+export const superBlockStructuresNs = 'superBlockStructures';
+
+const sbInitialState = {};
+
+const sbTypes = createTypes(
+  ['updateSuperBlockStructures'],
+  superBlockStructuresNs
+);
+
+export const updateSuperBlockStructures = createAction(
+  sbTypes.updateSuperBlockStructures
+);
+
+export const superBlockStructuresReducer = handleActions(
+  {
+    [sbTypes.updateSuperBlockStructures]: (state, { payload }) => ({
+      ...state,
+      ...payload
+    })
+  },
+  sbInitialState
+);
