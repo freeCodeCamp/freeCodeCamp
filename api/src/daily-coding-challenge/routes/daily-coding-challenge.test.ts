@@ -1,13 +1,4 @@
-import {
-  describe,
-  it,
-  expect,
-  beforeEach,
-  afterEach,
-  beforeAll,
-  vi,
-  afterAll
-} from 'vitest';
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
 import { addDays } from 'date-fns';
 
 import { setupServer, superRequest } from '../../../vitest.utils.js';
@@ -86,10 +77,10 @@ const mockChallenges = [
 describe('/daily-coding-challenge', () => {
   setupServer();
   // This has to happen after setupServer since it needs real timers.
-  beforeAll(() => {
+  beforeEach(() => {
     vi.useFakeTimers({ now: todayUsCentral });
   });
-  afterAll(() => {
+  afterEach(() => {
     vi.useRealTimers();
   });
 
@@ -242,18 +233,10 @@ describe('/daily-coding-challenge', () => {
       }
     });
 
-    it('should return { id, date, challengeNumber, title } for all available challenges of the given month up to today US Central', async () => {
-      const currentMonth = todayUsCentral.toISOString().slice(0, 7);
-
-      const res = await superRequest(
-        `/daily-coding-challenge/month/${currentMonth}`,
-        {
-          method: 'GET'
-        }
-      ).send({});
-
-      expect(res.status).toBe(200);
-      expect(Array.isArray(res.body)).toBe(true);
+    it('should return two challenges on the second day of the month', async () => {
+      const res = await superRequest(`/daily-coding-challenge/month/2025-10`, {
+        method: 'GET'
+      }).send({});
 
       // Should include yesterday's and today's challenges, but not tomorrow's
       const expectedResponse = [
@@ -271,8 +254,29 @@ describe('/daily-coding-challenge', () => {
         }
       ];
 
-      expect(res.body).toHaveLength(2);
       expect(res.body).toEqual(expectedResponse);
+      expect(res.status).toBe(200);
+    });
+
+    it('should return one challenge on the first day of the month', async () => {
+      vi.setSystemTime(new Date(Date.UTC(2025, 9, 1, 5))); // 2025-10-01 00:00:00 in US Central
+
+      const res = await superRequest(`/daily-coding-challenge/month/2025-10`, {
+        method: 'GET'
+      }).send({});
+
+      // Should include yesterday's challenges
+      const expectedResponse = [
+        {
+          id: yesterdaysChallenge.id,
+          challengeNumber: yesterdaysChallenge.challengeNumber,
+          date: yesterdaysChallenge.date.toISOString(),
+          title: yesterdaysChallenge.title
+        }
+      ];
+
+      expect(res.body).toEqual(expectedResponse);
+      expect(res.status).toBe(200);
     });
 
     it('should return 404 when no challenges exist for the given month', async () => {
