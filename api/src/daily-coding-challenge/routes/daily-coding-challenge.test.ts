@@ -249,16 +249,20 @@ describe('/daily-coding-challenge', () => {
           challengeNumber: todaysChallenge.challengeNumber,
           date: todaysChallenge.date.toISOString(),
           title: todaysChallenge.title
-        },
-        {
+        }
+      ];
+
+      // Only include yesterday's challenge if today is not the 1st of the month
+      if (todayUsCentral.getDate() !== 1) {
+        expectedResponse.push({
           id: yesterdaysChallenge.id,
           challengeNumber: yesterdaysChallenge.challengeNumber,
           date: yesterdaysChallenge.date.toISOString(),
           title: yesterdaysChallenge.title
-        }
-      ];
+        });
+      }
 
-      expect(res.body).toHaveLength(2);
+      expect(res.body).toHaveLength(expectedResponse.length);
       expect(res.body).toEqual(expectedResponse);
     });
 
