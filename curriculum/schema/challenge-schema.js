@@ -183,17 +183,21 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
-  interactiveElements: Joi.array().items(
+  // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
+  nodules: Joi.array().items(
     Joi.object().keys({
-      description: Joi.string(),
-      instructions: Joi.string(),
-      files: Joi.array().items(
-        Joi.object().keys({
-          ext: Joi.string().required(),
-          name: Joi.string().required(),
-          contents: Joi.string().required()
-        })
-      )
+      type: Joi.valid('paragraph', 'interactiveEditor').required(),
+      data: Joi.when('type', {
+        is: ['interactiveEditor'],
+        then: Joi.array().items(
+          Joi.object().keys({
+            ext: Joi.string().required(),
+            name: Joi.string().required(),
+            contents: Joi.string().required()
+          })
+        ),
+        otherwise: Joi.string().required()
+      })
     })
   ),
   guideUrl: Joi.string().uri({ scheme: 'https' }),

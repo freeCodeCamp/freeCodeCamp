@@ -1,60 +1,47 @@
 const { root } = require('mdast-builder');
+const find = require('unist-util-find');
 const { isEmpty } = require('lodash');
 
-const { getAllSections, getSection } = require('./utils/get-section');
-const mdastToHtml = require('./utils/mdast-to-html');
 const { getFilenames } = require('./utils/get-file-visitor');
+const { getSection, isMarker } = require('./utils/get-section');
+const mdastToHTML = require('./utils/mdast-to-html');
 
 function plugin() {
   return transformer;
-  function transformer(fullTree, file) {
-    // Get all --interactive-- sections
-    const interactiveSections = getAllSections(fullTree, '--interactive--');
 
-    if (!isEmpty(interactiveSections)) {
-      // Process each interactive section
-      const interactiveElements = interactiveSections.map(interactiveNodes => {
-        const tree = root(interactiveNodes);
-        const descriptionSection = getSection(tree, '--description--');
-        const filesSection = getSection(tree, '--files--');
-        const instructionsSection = getSection(tree, '--instructions--');
-
-        validate({ descriptionSection, filesSection, instructionsSection });
-
-        return {
-          ...(!isEmpty(descriptionSection) && {
-            description: mdastToHtml(descriptionSection)
-          }),
-          ...(!isEmpty(filesSection) && {
-            files: getFiles(filesSection)
-          }),
-          ...(!isEmpty(instructionsSection) && {
-            instructions: mdastToHtml(instructionsSection)
-          })
-        };
-      });
-
-      if (!isEmpty(interactiveElements)) {
-        file.data.interactiveElements = interactiveElements;
-      }
+  function transformer(tree, file) {
+    const interactiveNodes = getSection(tree, `--interactive--`, 1);
+    const subSection = find(root(interactiveNodes), isMarker);
+    if (subSection) {
+      throw Error(
+        `The --interactive-- section should not have any subsections. Found subsection ${subSection.children[0].value}`
+      );
     }
-  }
-}
 
-function validate({ descriptionSection, filesSection, instructionsSection }) {
-  if (isEmpty(filesSection) && !isEmpty(instructionsSection)) {
-    throw Error(
-      '--instructions-- must be in the same section as --files--. If you want a standalone description, use --description--'
-    );
-  }
-  if (
-    isEmpty(descriptionSection) &&
-    isEmpty(filesSection) &&
-    isEmpty(instructionsSection)
-  ) {
-    throw Error(
-      'Each interactive element must contain at least one subsection, e.g. --description-- or --files--'
-    );
+    if (!isEmpty(interactiveNodes)) {
+      const nodules =
+        interactiveNodes.map(node => {
+          if (
+            node.type === 'containerDirective' &&
+            node.name === 'interactive_editor'
+          ) {
+            return {
+              type: 'interactiveEditor',
+              data: getFiles(node.children)
+            };
+          } else {
+            const paragraph = mdastToHTML([node]);
+            return {
+              type: 'paragraph',
+              data: paragraph
+            };
+          }
+        }) ?? [];
+
+      file.data.nodules = nodules;
+    } else {
+      file.data.nodules = [];
+    }
   }
 }
 

@@ -301,6 +301,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       chapter: String
       explanation: String
       hooks: Hooks
+      nodules: [Nodule]
       notes: String
       url: String
       assignments: [String]
@@ -385,6 +386,10 @@ exports.createSchemaCustomization = ({ actions }) => {
       afterEach: String
       beforeAll: String
       afterAll: String
+    }
+    type Nodule {
+      type: String
+      data: JSON
     }
   `;
   createTypes(typeDefs);

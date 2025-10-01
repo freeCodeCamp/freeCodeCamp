@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import { isEmpty, isEqual } from 'lodash';
+import { isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
 import { ObserveKeys } from 'react-hotkeys';
@@ -71,6 +71,17 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
+function renderNodule(nodule: ChallengeNode['challenge']['nodules'][number]) {
+  switch (nodule.type) {
+    case 'paragraph':
+      return <PrismFormatted text={nodule.data} />;
+    case 'interactiveEditor':
+      return <InteractiveEditor files={nodule.data} />;
+    default:
+      return null;
+  }
+}
+
 const ShowGeneric = ({
   challengeMounted,
   data: {
@@ -81,7 +92,7 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
-        interactiveElements,
+        nodules,
         explanation,
         challengeType,
         fields: { blockName, tests },
@@ -231,7 +242,7 @@ const ShowGeneric = ({
               </Col>
             )}
 
-            {!isEmpty(interactiveElements) &&
+            {/* {!isEmpty(interactiveElements) &&
               interactiveElements!.map((element, index) => (
                 <React.Fragment key={index}>
                   {element.description && (
@@ -242,7 +253,12 @@ const ShowGeneric = ({
                   )}
                   {element.files && <InteractiveEditor files={element.files} />}
                 </React.Fragment>
-              ))}
+              ))} */}
+            {nodules?.map((nodule, i) => {
+              return (
+                <React.Fragment key={i}>{renderNodule(nodule)}</React.Fragment>
+              );
+            })}
 
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
@@ -348,14 +364,9 @@ export const query = graphql`
         blockType
         challengeType
         description
-        interactiveElements {
-          description
-          instructions
-          files {
-            ext
-            name
-            contents
-          }
+        nodules {
+          type
+          data
         }
         explanation
         helpCategory

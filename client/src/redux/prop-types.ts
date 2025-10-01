@@ -178,6 +178,18 @@ type InteractiveElement = {
   files?: { ext: Ext; name: string; contents: string }[];
 };
 
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  data: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  data: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -192,6 +204,7 @@ export type ChallengeNode = {
     challengeFiles: ChallengeFiles;
     interactiveFiles?: ChallengeFiles;
     interactiveElements?: InteractiveElement[];
+    nodules: Nodule[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
