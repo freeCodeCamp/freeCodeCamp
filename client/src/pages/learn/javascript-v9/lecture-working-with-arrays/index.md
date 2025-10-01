@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Working with Arrays
 
-In these lecture videos, you will learn about working with JavaScript arrays.
+In these lessons, you will learn about working with JavaScript arrays.

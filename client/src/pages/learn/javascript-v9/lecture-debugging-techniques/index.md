@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Debugging Techniques
 
-In these lecture videos, you will learn debugging techniques.
+In these lessons, you will learn debugging techniques.

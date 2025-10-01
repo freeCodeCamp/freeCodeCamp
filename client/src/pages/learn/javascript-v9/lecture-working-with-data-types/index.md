@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Working with Data Types
 
-In these lecture videos, you will learn about data types in JavaScript.
+In these lessons, you will learn about data types in JavaScript.

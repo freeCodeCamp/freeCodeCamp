@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Working with Client-Side Storage and CRUD Operations
 
-In these lecture videos, you will learn about client-side storage and CRUD operations with JavaScript.
+In these lessons, you will learn about client-side storage and CRUD operations with JavaScript.

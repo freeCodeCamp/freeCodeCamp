@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Understanding Functional Programming
 
-In these lecture videos, you will learn about functional programming.
+In these lessons, you will learn about functional programming.

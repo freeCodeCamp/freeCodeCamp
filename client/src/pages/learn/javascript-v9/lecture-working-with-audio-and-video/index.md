@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to Working with Audio and Video
 
-In these lecture videos, you will learn about working with audio and video using JavaScript.
+In these lessons, you will learn about working with audio and video using JavaScript.
