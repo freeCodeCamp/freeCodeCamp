@@ -39,8 +39,6 @@ function plugin() {
         }) ?? [];
 
       file.data.nodules = nodules;
-    } else {
-      file.data.nodules = [];
     }
   }
 }

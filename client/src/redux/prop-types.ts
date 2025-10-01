@@ -172,12 +172,6 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
-type InteractiveElement = {
-  description?: string;
-  instructions?: string;
-  files?: { ext: Ext; name: string; contents: string }[];
-};
-
 type Nodule = ParagraphNodule | InteractiveEditorNodule;
 
 type ParagraphNodule = {
@@ -202,8 +196,6 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
-    interactiveFiles?: ChallengeFiles;
-    interactiveElements?: InteractiveElement[];
     nodules: Nodule[];
     explanation: string;
     fields: Fields;

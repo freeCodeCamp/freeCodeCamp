@@ -387,6 +387,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeAll: String
       afterAll: String
     }
+
     type Nodule {
       type: String
       data: JSON

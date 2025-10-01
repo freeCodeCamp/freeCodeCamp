@@ -1,10 +1,6 @@
-# --description--
-
-Intro paragraph for interactive section. Should be ignored by the add-interactive-elements plugin
-
 # --interactive--
 
-## --description--
+Intro paragraph for interactive section. Should be ignored by the add-interactive-elements plugin
 
 Normal markdown
 
@@ -12,27 +8,28 @@ Normal markdown
 <div>This is NOT an interactive element</div>
 ```
 
+:::interactive_editor
+
 ```js
 console.log('Interactive JS');
 ```
 
-# --interactive--
+:::
 
-## --files--
+:::interactive_editor
 
 ```html
 <div>This is an interactive element</div>
 ```
 
-# --interactive--
+:::
 
-## --instructions--
 
 ```html
 <div>This contains the instructions, but is not interactive</div>
 ``` 
 
-## --files--
+:::interactive_editor
 
 ```html
 <div>This is an interactive element</div>
@@ -42,9 +39,7 @@ console.log('Interactive JS');
 console.log('Interactive JS');
 ```
 
-# --interactive--
-
-## --description--
+:::
 
 ```html
 <div>This contains the description, but is not interactive</div>

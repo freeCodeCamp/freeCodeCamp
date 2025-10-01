@@ -14,39 +14,24 @@ describe('add-interactive-editor plugin', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('adds an `interactiveElements` property to `file.data`', async () => {
+  it('adds a `nodules` property to `file.data`', async () => {
     const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
-    expect(file.data).toHaveProperty('interactiveElements');
-    expect(Array.isArray(file.data.interactiveElements)).toBe(true);
+    expect(file.data).toHaveProperty('nodules');
+    expect(Array.isArray(file.data.nodules)).toBe(true);
   });
 
-  it('populates `interactiveElements` with description objects', async () => {
+  it('populates `nodules` with editor objects', async () => {
     const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
-    const descriptionElements = file.data.interactiveElements.filter(
-      element => element.description
-    );
-    expect(descriptionElements).toEqual(
-      expect.arrayContaining([
-        {
-          description: expect.stringContaining('Normal markdown')
-        }
-      ])
-    );
-  });
-
-  it('populates `interactiveElements` with editor objects', async () => {
-    const mockAST = await parseFixture('with-interactive.md');
-    plugin(mockAST, file);
-    const editorElements = file.data.interactiveElements.filter(
-      element => element.files
+    const editorElements = file.data.nodules.filter(
+      element => element.type === 'interactiveEditor'
     );
 
     expect(editorElements).toEqual(
       expect.arrayContaining([
         {
-          files: [
+          data: [
             {
               ext: expect.any(String),
               name: expect.any(String),
@@ -54,7 +39,8 @@ describe('add-interactive-editor plugin', () => {
                 '<div>This is an interactive element</div>'
               )
             }
-          ]
+          ],
+          type: 'interactiveEditor'
         }
       ])
     );
@@ -62,17 +48,19 @@ describe('add-interactive-editor plugin', () => {
     expect(editorElements).toEqual(
       expect.arrayContaining([
         {
-          instructions: expect.stringContaining(
-            'This contains the instructions, but is not interactive'
-          ),
-          files: [
+          data: [
             {
               ext: expect.any(String),
               name: expect.any(String),
               contents: expect.stringContaining(
                 'This is an interactive element'
               )
-            },
+            }
+          ],
+          type: 'interactiveEditor'
+        },
+        {
+          data: [
             {
               ext: expect.any(String),
               name: expect.any(String),
@@ -80,7 +68,8 @@ describe('add-interactive-editor plugin', () => {
                 "console.log('Interactive JS');"
               )
             }
-          ]
+          ],
+          type: 'interactiveEditor'
         }
       ])
     );
@@ -89,13 +78,13 @@ describe('add-interactive-editor plugin', () => {
   it('provides unique names for each file with the same extension', async () => {
     const mockAST = await parseFixture('with-multiple-js-files.md');
     plugin(mockAST, file);
-    const editorElements = file.data.interactiveElements.filter(
-      element => element.files
+    const editorElements = file.data.nodules.filter(
+      element => element.type === 'interactiveEditor'
     );
 
     expect(editorElements).toHaveLength(1);
 
-    const files = editorElements[0].files;
+    const files = editorElements[0].data;
     expect(files).toHaveLength(2);
 
     // Both files should be JavaScript but have unique names
@@ -113,41 +102,12 @@ describe('add-interactive-editor plugin', () => {
   it('respects the order of elements in the original markdown', async () => {
     const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
-    const elements = file.data.interactiveElements;
-    expect(elements).toHaveLength(4);
+    const elements = file.data.nodules;
+    expect(elements).toHaveLength(8);
 
-    expect(elements[0]).toHaveProperty('description');
-    expect(elements[1]).toHaveProperty('files');
-    expect(elements[2]).toHaveProperty('files');
-    expect(elements[3]).toHaveProperty('description');
-  });
-
-  it('throws if there are "instructions" without "files"', async () => {
-    const instructionsWithoutFilesAST = await parseFixture(
-      'with-instructions-without-files.md'
-    );
-    expect(() => {
-      plugin(instructionsWithoutFilesAST, { data: {} });
-    }).toThrow();
-  });
-
-  it('should throw if there is anything other than a code block inside the --files-- section', async () => {
-    const filesWithNonCodeAST = await parseFixture(
-      'with-files-containing-non-code.md'
-    );
-    expect(() => {
-      plugin(filesWithNonCodeAST, { data: {} });
-    }).toThrow('The --files-- section should only contain code blocks.');
-  });
-
-  it('throws if an interactive element is empty', async () => {
-    const emptyInteractiveElementAST = await parseFixture(
-      'with-empty-interactive-element.md'
-    );
-    expect(() => {
-      plugin(emptyInteractiveElementAST, { data: {} });
-    }).toThrow(
-      'Each interactive element must contain at least one subsection, e.g. --description-- or --files--'
-    );
+    expect(elements[0]).toHaveProperty('data');
+    expect(elements[1]).toHaveProperty('data');
+    expect(elements[2]).toHaveProperty('data');
+    expect(elements[3]).toHaveProperty('data');
   });
 });
