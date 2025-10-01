@@ -176,11 +176,14 @@
             "lecture-working-with-regular-expressions",
             "workshop-spam-filter",
             "lab-palindrome-checker",
-            "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
+        },
+        {
+          "dashedName": "certification-project-markdown-to-html-converter",
+          "blocks": ["lab-markdown-to-html-converter"]
         },
         {
           "dashedName": "form-validation",
@@ -244,10 +247,13 @@
             "lecture-understanding-how-to-work-with-classes-in-javascript",
             "workshop-shopping-cart",
             "lab-project-idea-board",
-            "lab-bank-account-manager",
             "review-javascript-classes",
             "quiz-javascript-classes"
           ]
+        },
+        {
+          "dashedName": "certification-project-bank-account-manager",
+          "blocks": ["lab-bank-account-manager"]
         },
         {
           "dashedName": "recursion",
