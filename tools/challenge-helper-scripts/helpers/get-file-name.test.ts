@@ -4,10 +4,7 @@ import { join } from 'path';
 import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { getFileName } from './get-file-name';
 
-const basePath = join(
-  process.cwd(),
-  '__fixtures__' + process.env.JEST_WORKER_ID
-);
+const basePath = join(process.cwd(), '__fixtures__');
 const commonPath = join(basePath, 'curriculum', 'challenges');
 
 const block = 'project-get-file-name';

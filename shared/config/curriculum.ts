@@ -1,6 +1,6 @@
 // TODO: eventually this should all flow from the curriculum service, since it
 // defines the top-level structure of the curriculum.
-import { Languages } from './i18n';
+import { Languages } from './i18n.js';
 
 // all superblocks
 export enum SuperBlocks {
@@ -343,7 +343,8 @@ Object.freeze(notAuditedSuperBlocks);
 
 export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
-  SuperBlocks.FullStackOpen
+  SuperBlocks.FullStackOpen,
+  SuperBlocks.A1Spanish
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

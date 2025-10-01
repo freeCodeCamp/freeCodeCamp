@@ -17,17 +17,17 @@ import {
   defaultUserId,
   devLogin,
   setupServer
-} from '../../../vitest.utils';
+} from '../../../vitest.utils.js';
 import {
   examEnvironmentPostExamAttempt,
   examEnvironmentPostExamGeneratedExam
-} from '../schemas';
-import * as mock from '../../../__mocks__/exam-environment-exam';
-import { constructUserExam } from '../utils/exam-environment';
-import { JWT_SECRET } from '../../utils/env';
+} from '../schemas/index.js';
+import * as mock from '../../../__mocks__/exam-environment-exam.js';
+import { constructUserExam } from '../utils/exam-environment.js';
+import { JWT_SECRET } from '../../utils/env.js';
 
 vi.mock('../../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../../utils/env')>();
+  const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
     FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
@@ -531,7 +531,10 @@ describe('/exam-environment/', () => {
 
       it('should unwind (delete) the exam attempt if the user exam cannot be constructed', async () => {
         const _mockConstructUserExam = vi
-          .spyOn(await import('../utils/exam-environment'), 'constructUserExam')
+          .spyOn(
+            await import('../utils/exam-environment.js'),
+            'constructUserExam'
+          )
           .mockImplementationOnce(() => {
             throw new Error('Test error');
           });
@@ -1070,6 +1073,57 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
     });
+
+    describe('GET /exam-environment/exams/:examId/attempts', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+      });
+
+      it('should return 200 if no attempts exist for the exam and user', async () => {
+        const res = await superGet(
+          `/exam-environment/exams/${mock.examId}/attempts`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+        expect(res.body).toEqual([]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return 200 with attempts for the given examId and user', async () => {
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: {
+              ...mock.examAttempt,
+              userId: defaultUserId,
+              examId: mock.examId
+            }
+          });
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Pending
+          }
+        });
+        const res = await superGet(
+          `/exam-environment/exams/${mock.examId}/attempts`
+        ).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+        const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
+          result: null,
+          startTimeInMS: attempt.startTimeInMS,
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
+        };
+        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.status).toBe(200);
+      });
+    });
   });
 
   describe('Authenticated user without exam environment authorization token', () => {
@@ -1175,6 +1229,90 @@ describe('/exam-environment/', () => {
         );
 
         expect(res.status).toBe(403);
+      });
+    });
+
+    describe('GET /exam-environment/exam-challenge', () => {
+      afterAll(async () => {
+        await fastifyTestInstance.prisma.examEnvironmentChallenge.deleteMany(
+          {}
+        );
+      });
+      it('should return 200 and an empty array if no mapping exists', async () => {
+        const challengeId = mock.oid();
+        const examId = mock.oid();
+
+        const res1 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${challengeId}`
+        );
+        expect(res1.body).toStrictEqual([]);
+        expect(res1.status).toBe(200);
+
+        const res2 = await superGet(
+          `/exam-environment/exam-challenge?examId=${examId}`
+        );
+        expect(res2.body).toStrictEqual([]);
+        expect(res2.status).toBe(200);
+
+        const res3 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${challengeId}&examId=${examId}`
+        );
+        expect(res3.body).toStrictEqual([]);
+        expect(res3.status).toBe(200);
+      });
+
+      it('should return 200 and a list of challenge-exam mappings if one exists', async () => {
+        await fastifyTestInstance.prisma.examEnvironmentChallenge.create({
+          data: mock.examEnvironmentChallenge
+        });
+        const res1 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${mock.examEnvironmentChallenge.challengeId}`
+        );
+        expect(res1.body).toEqual(
+          expect.arrayContaining([
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
+          ])
+        );
+        expect(res1.status).toBe(200);
+
+        const res2 = await superGet(
+          `/exam-environment/exam-challenge?examId=${mock.examId}`
+        );
+        expect(res2.body).toEqual(
+          expect.arrayContaining([
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
+          ])
+        );
+        expect(res2.status).toBe(200);
+
+        const res3 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${mock.examEnvironmentChallenge.challengeId}&examId=${mock.examId}`
+        );
+        expect(res3.body).toEqual(
+          expect.arrayContaining([
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
+          ])
+        );
+        expect(res3.status).toBe(200);
+      });
+
+      it('should return 400 if neither challengeId or examId are provided', async () => {
+        const res = await superGet(`/exam-environment/exam-challenge`);
+        expect(res).toMatchObject({
+          status: 400,
+          body: {
+            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+          }
+        });
       });
     });
   });

@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
-import { inLastFiveMinutes } from './validate-donation';
+import { inLastFiveMinutes } from './validate-donation.js';
 
 describe('inLastFiveMinutes', () => {
   beforeAll(() => {

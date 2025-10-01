@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "Faça o download do aplicativo de exame gratuito do freeCodeCamp",
     "explanation": "Para obter uma certificação, você deve fazer um exame para testar sua compreensão do material que você aprendeu. Fazer o exame é absolutamente gratuito.",
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
@@ -527,20 +535,23 @@
     "project-preview-title": "Aqui está uma prévia do que você vai criar",
     "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
-    "gitpod": {
-      "intro": "Este curso é executado em uma máquina virtual Linux usando o Gitpod. Siga estas instruções para iniciar o curso:",
-      "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
-      "step-3": "Faça login no Gitpod com sua conta do GitHub se você ainda não o fez",
-      "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
-      "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
-      "step-6": "A partir do menu \"Exibir\",",
-      "step-7": "Clicando na opção \"Paleta de Comando\",",
-      "step-8": "e executando o comando \"CodeRoad: Start\"",
-      "step-9": "Siga as instruções no CodeRoad para concluir o curso",
-      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{course}}, vá para <0>seu painel no Gitpod</0> para continuar.",
-      "learn-more": "Saiba mais sobre <0>Gitpod workspaces.</0>",
-      "logout-warning": "Se você sair do FreeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp."
+    "ona": {
+      "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
+      "step-1": "<0>Create an Ona account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "In the modal that pops up, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Ona workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Secret</0> field, paste your token"
     },
     "local": {
       "intro": "Este curso é executado em uma máquina virtual Linux no seu computador. Para executar o curso, você primeiro precisa baixar cada um se você ainda não os possui:",
@@ -642,12 +653,15 @@
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
     "block-type": {
-      "lecture": "Aula",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",
       "quiz": "Questionário",
-      "exam": "Teste"
+      "exam": "Teste",
+      "warm-up": "Warm-up",
+      "learn": "Learn",
+      "practice": "Practice"
     }
   },
   "donate": {

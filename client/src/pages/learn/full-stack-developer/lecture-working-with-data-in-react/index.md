@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Data in React
 
-In these lecture videos, you will learn about working with data in React.
+In these lessons, you will learn about working with data in React.
