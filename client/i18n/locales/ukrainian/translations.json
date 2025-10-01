@@ -653,7 +653,7 @@
       "invalid-transcript": "Ваше посилання на стенограму невірне. Воно повинне мати такий формат: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> — перевірте, чи текст ВЕЛИКИМИ ЛІТЕРАМИ правильний."
     },
     "block-type": {
-      "lecture": "Лекція",
+      "lecture": "Theory",
       "workshop": "Практичне заняття",
       "lab": "Лабораторна робота",
       "review": "Повторення",

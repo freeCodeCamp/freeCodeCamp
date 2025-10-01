@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Performance in Web Applications
 
-Learn about Understanding Performance in Web Applications in these lectures.
+Learn about Understanding Performance in Web Applications in these lessons.
