@@ -653,7 +653,7 @@
       "invalid-transcript": "你的成绩单链接不正确，它应该有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 请检查你的链接中的 UPPERCASE 项目是否正确。"
     },
     "block-type": {
-      "lecture": "讲座",
+      "lecture": "Theory",
       "workshop": "工作坊",
       "lab": "实验室",
       "review": "复习",
