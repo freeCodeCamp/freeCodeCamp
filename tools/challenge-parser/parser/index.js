@@ -19,7 +19,6 @@ const tableAndStrikeThrough = require('./plugins/table-and-strikethrough');
 const addScene = require('./plugins/add-scene');
 const addQuizzes = require('./plugins/add-quizzes');
 const addInteractiveElements = require('./plugins/add-interactive-elements');
-// const replaceInteractiveEditorDirectives = require('./plugins/replace-interactive-editor-directives');
 
 // by convention, anything that adds to file.data has the name add<name>.
 const processor = unified()

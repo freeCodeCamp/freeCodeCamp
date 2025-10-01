@@ -242,18 +242,6 @@ const ShowGeneric = ({
               </Col>
             )}
 
-            {/* {!isEmpty(interactiveElements) &&
-              interactiveElements!.map((element, index) => (
-                <React.Fragment key={index}>
-                  {element.description && (
-                    <PrismFormatted text={element.description} />
-                  )}
-                  {element.instructions && (
-                    <PrismFormatted text={element.instructions} />
-                  )}
-                  {element.files && <InteractiveEditor files={element.files} />}
-                </React.Fragment>
-              ))} */}
             {nodules?.map((nodule, i) => {
               return (
                 <React.Fragment key={i}>{renderNodule(nodule)}</React.Fragment>
