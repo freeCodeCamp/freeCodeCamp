@@ -4700,7 +4700,7 @@
       "workshop-shortest-path-algorithm": {
         "title": "Implement the Shortest Path Algorithm",
         "intro": [
-          "In this workshop you will implement the shortest path algorithm to find the shortest path between nodes"
+          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
