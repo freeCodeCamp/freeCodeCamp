@@ -2,8 +2,8 @@ import { Prisma } from '@prisma/client';
 import {
   certSlugTypeMap,
   certIds
-} from '../../../../shared/config/certification-settings';
-import { normalizeDate } from '../../utils/normalize';
+} from '../../../../shared/config/certification-settings.js';
+import { normalizeDate } from '../../utils/normalize.js';
 
 const {
   legacyInfosecQaId,

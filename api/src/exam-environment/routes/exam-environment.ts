@@ -1,22 +1,22 @@
 /* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { PrismaClientValidationError } from '@prisma/client/runtime/library';
+import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
 import { ExamEnvironmentExamModerationStatus } from '@prisma/client';
 import jwt from 'jsonwebtoken';
 
-import * as schemas from '../schemas';
-import { mapErr, syncMapErr, UpdateReqType } from '../../utils';
-import { JWT_SECRET } from '../../utils/env';
+import * as schemas from '../schemas/index.js';
+import { mapErr, syncMapErr, UpdateReqType } from '../../utils/index.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   checkPrerequisites,
   constructEnvExamAttempt,
   constructUserExam,
   userAttemptToDatabaseAttemptQuestionSets,
   validateAttempt
-} from '../utils/exam-environment';
-import { ERRORS } from '../utils/errors';
-import { isObjectID } from '../../utils/validation';
+} from '../utils/exam-environment.js';
+import { ERRORS } from '../utils/errors.js';
+import { isObjectID } from '../../utils/validation.js';
 
 /**
  * Wrapper for endpoints related to the exam environment desktop app.
@@ -60,6 +60,13 @@ export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
       },
       getExamAttemptHandler
     );
+    fastify.get(
+      '/exam-environment/exams/:examId/attempts',
+      {
+        schema: schemas.examEnvironmentGetExamAttemptsByExamId
+      },
+      getExamAttemptsByExamIdHandler
+    );
 
     done();
   };
@@ -80,6 +87,13 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
       schema: schemas.examEnvironmentTokenMeta
     },
     tokenMetaHandler
+  );
+  fastify.get(
+    '/exam-environment/exam-challenge',
+    {
+      schema: schemas.examEnvironmentGetExamChallenge
+    },
+    getExamChallenge
   );
   done();
 };
@@ -924,4 +938,107 @@ export async function getExamAttemptHandler(
   }
 
   return reply.send(examEnvironmentExamAttempt);
+}
+
+/**
+ * Gets the requested exam attempt by id owned by authz user.
+ *
+ * If the attempt is completed, the result is included.
+ */
+export async function getExamAttemptsByExamIdHandler(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamAttemptsByExamId>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+
+  const user = req.user!;
+  const { examId } = req.params;
+
+  logger.info({ examId, userId: user.id });
+
+  // If attempt id is given, only return that attempt
+  const maybeAttempts = await mapErr(
+    this.prisma.examEnvironmentExamAttempt.findMany({
+      where: {
+        examId: examId,
+        userId: user.id
+      }
+    })
+  );
+
+  if (maybeAttempts.hasError) {
+    logger.error(maybeAttempts.error);
+    this.Sentry.captureException(maybeAttempts.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeAttempts.error))
+    );
+  }
+
+  const attempts = maybeAttempts.data;
+
+  const examEnvironmentExamAttempts = [];
+  for (const attempt of attempts) {
+    const { error, examEnvironmentExamAttempt } = await constructEnvExamAttempt(
+      this,
+      attempt,
+      logger
+    );
+
+    if (error) {
+      void reply.code(error.code);
+      return reply.send(error.data);
+    }
+
+    examEnvironmentExamAttempts.push(examEnvironmentExamAttempt);
+  }
+
+  return reply.send(examEnvironmentExamAttempts);
+}
+
+/**
+ * Gets all the relations for a given challenge and exam(s).
+ */
+export async function getExamChallenge(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamChallenge>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req });
+  const { challengeId, examId } = req.query;
+
+  logger.info({ challengeId, examId });
+
+  if (!challengeId && !examId) {
+    logger.warn('No challenge or exam id provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        'Must provide either a challengeId or examId.'
+      )
+    );
+  }
+
+  const maybeData = await mapErr(
+    this.prisma.examEnvironmentChallenge.findMany({
+      where: {
+        challengeId: challengeId ?? undefined,
+        examId: examId ?? undefined
+      }
+    })
+  );
+
+  if (maybeData.hasError) {
+    logger.error(maybeData.error);
+    this.Sentry.captureException(maybeData.error);
+    void reply.code(500);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(JSON.stringify(maybeData.error))
+    );
+  }
+
+  const data = maybeData.data;
+
+  return reply.send(data);
 }

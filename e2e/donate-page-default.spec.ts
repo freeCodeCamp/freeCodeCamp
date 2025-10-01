@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
+import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const pageElements = {
   mainHeading: 'main-head',
@@ -16,9 +17,13 @@ const donationStringReplacements = {
 };
 
 const donationFormStrings = {
-  conformTwentyDollar: translations.donate['confirm-monthly'].replace(
+  confirmTwentyDollar: translations.donate['confirm-monthly'].replace(
     donationStringReplacements.usdPlaceHolder,
     '20'
+  ),
+  confirmTwentyFiveDollar: translations.donate['confirm-monthly'].replace(
+    donationStringReplacements.usdPlaceHolder,
+    '25'
   ),
   confirmFiveDollars: translations.donate['confirm-monthly'].replace(
     donationStringReplacements.usdPlaceHolder,
@@ -27,6 +32,9 @@ const donationFormStrings = {
   twentyDollarsLearningContribution: translations.donate['your-donation-2']
     .replace(donationStringReplacements.usdPlaceHolder, '20')
     .replace(donationStringReplacements.hoursPlaceHolder, '1,000'),
+  twentyFiveDollarsLearningContribution: translations.donate['your-donation-2']
+    .replace(donationStringReplacements.usdPlaceHolder, '25')
+    .replace(donationStringReplacements.hoursPlaceHolder, '1,250'),
   fiveDollarsLearningContribution: translations.donate['your-donation-2']
     .replace(donationStringReplacements.usdPlaceHolder, '5')
     .replace(donationStringReplacements.hoursPlaceHolder, '250'),
@@ -213,31 +221,6 @@ function donatePageTests() {
     await faq12.click();
   });
 
-  test('should select $20 tier by default', async ({ page }) => {
-    await expect(
-      page.getByText(donationFormStrings.conformTwentyDollar)
-    ).toBeVisible();
-
-    const tabs = await page.$$('[role="tab"]');
-    expect(tabs.length).toBe(4);
-
-    for (const tab of tabs) {
-      const tabText = await tab.innerText();
-      expect(['$5', '$10', '$20', '$40']).toContain(tabText);
-
-      if (tabText === '$20') {
-        const isActive = await tab.getAttribute('data-state');
-        expect(isActive).toBe('active');
-      } else {
-        const isActive = await tab.getAttribute('data-state');
-        expect(isActive).not.toBe('active');
-      }
-    }
-    await expect(
-      page.getByText(donationFormStrings.twentyDollarsLearningContribution)
-    ).toBeVisible();
-  });
-
   test('should make $5 tier selectable', async ({ page }) => {
     await page.click('[role="tab"]:has-text("$5")');
 
@@ -281,11 +264,51 @@ function donatePageTests() {
   });
 }
 
+interface DefaultTierTestConfig {
+  defaultTier: string;
+  tiers: string[];
+  confirmationText: string;
+  contributionText: string;
+}
+
+function donatePageDefault(config: DefaultTierTestConfig) {
+  const { defaultTier, tiers, confirmationText, contributionText } = config;
+  test(`should select ${defaultTier} tier by default`, async ({ page }) => {
+    await expect(page.getByText(confirmationText)).toBeVisible();
+    const tabs = await page.$$('[role="tab"]');
+    expect(tabs.length).toBe(tiers.length);
+    for (const tab of tabs) {
+      const tabText = await tab.innerText();
+      expect(tiers).toContain(tabText);
+      const isActive = await tab.getAttribute('data-state');
+      if (tabText === defaultTier) {
+        expect(isActive).toBe('active');
+      } else {
+        expect(isActive).not.toBe('active');
+      }
+    }
+    await expect(page.getByText(contributionText)).toBeVisible();
+  });
+}
+
 test.describe('Authenticated User', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/donate');
   });
   donatePageTests();
+});
+
+test.describe('Authenticated User Page Defaults - Variation A', () => {
+  test.beforeEach(async ({ context, page }) => {
+    await addGrowthbookCookie({ context, variation: 'A243' });
+    await page.goto('/donate');
+  });
+  donatePageDefault({
+    defaultTier: '$20',
+    tiers: ['$5', '$10', '$20', '$40'],
+    confirmationText: donationFormStrings.confirmTwentyDollar,
+    contributionText: donationFormStrings.twentyDollarsLearningContribution
+  });
 });
 
 test.describe('Unauthenticated User', () => {
@@ -294,4 +317,18 @@ test.describe('Unauthenticated User', () => {
     await page.goto('/donate');
   });
   donatePageTests();
+});
+
+test.describe('Unauthenticated User Page Default - Variation B', () => {
+  test.use({ storageState: { cookies: [], origins: [] } });
+  test.beforeEach(async ({ context, page }) => {
+    await addGrowthbookCookie({ context, variation: 'B145' });
+    await page.goto('/donate');
+  });
+  donatePageDefault({
+    defaultTier: '$25',
+    tiers: ['$5', '$10', '$25', '$40'],
+    confirmationText: donationFormStrings.confirmTwentyFiveDollar,
+    contributionText: donationFormStrings.twentyFiveDollarsLearningContribution
+  });
 });

@@ -7,6 +7,7 @@ import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { isEmpty, isEqual } from 'lodash';
 import store from 'store';
 import { YouTubeEvent } from 'react-youtube';
+import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
 import PrismFormatted from '../components/prism-formatted';
@@ -27,7 +28,7 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
@@ -275,21 +276,25 @@ const ShowGeneric = ({
               )}
 
               {assignments.length > 0 && (
-                <Assignments
-                  assignments={assignments}
-                  allAssignmentsCompleted={allAssignmentsCompleted}
-                  handleAssignmentChange={handleAssignmentChange}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <Assignments
+                    assignments={assignments}
+                    allAssignmentsCompleted={allAssignmentsCompleted}
+                    handleAssignmentChange={handleAssignmentChange}
+                  />
+                </ObserveKeys>
               )}
 
               {questions.length > 0 && (
-                <MultipleChoiceQuestions
-                  questions={questions}
-                  selectedOptions={selectedMcqOptions}
-                  handleOptionChange={handleMcqOptionChange}
-                  submittedMcqAnswers={submittedMcqAnswers}
-                  showFeedback={showFeedback}
-                />
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <MultipleChoiceQuestions
+                    questions={questions}
+                    selectedOptions={selectedMcqOptions}
+                    handleOptionChange={handleMcqOptionChange}
+                    submittedMcqAnswers={submittedMcqAnswers}
+                    showFeedback={showFeedback}
+                  />
+                </ObserveKeys>
               )}
 
               {explanation ? (

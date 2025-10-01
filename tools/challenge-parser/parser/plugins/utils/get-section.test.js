@@ -1,9 +1,10 @@
-const isArray = require('lodash/isArray');
-const { root } = require('mdast-builder');
-const find = require('unist-util-find');
+import { describe, beforeAll, it, expect } from 'vitest';
+import isArray from 'lodash/isArray';
+import { root } from 'mdast-builder';
+import find from 'unist-util-find';
 
-const parseFixture = require('../../__fixtures__/parse-fixture');
-const { getSection } = require('./get-section');
+import parseFixture from '../../__fixtures__/parse-fixture';
+import { getSection } from './get-section';
 
 describe('getSection', () => {
   let simpleAst, extraHeadingAst;

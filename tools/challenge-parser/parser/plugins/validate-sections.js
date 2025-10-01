@@ -128,3 +128,5 @@ function validateSections() {
 }
 
 module.exports = validateSections;
+module.exports.VALID_MARKERS = VALID_MARKERS;
+module.exports.NON_HEADING_MARKERS = NON_HEADING_MARKERS;

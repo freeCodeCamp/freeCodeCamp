@@ -1,5 +1,6 @@
-const parseFixture = require('../__fixtures__/parse-fixture');
-const addText = require('./add-text');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addText from './add-text';
 
 describe('add-text', () => {
   let realisticAST, mockAST, withSubSectionAST, withNestedInstructionsAST;

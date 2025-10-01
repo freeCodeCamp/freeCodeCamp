@@ -1,3 +1,4 @@
+import { describe, beforeEach, it, expect } from 'vitest';
 const parseFixture = require('./../__fixtures__/parse-fixture');
 const addInteractiveElements = require('./add-interactive-elements');
 
