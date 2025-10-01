@@ -151,13 +151,13 @@ function SuperBlockIntro({
 
   const introTopA = (
     <>
+      {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
+      <Spacer size='s' />
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
       <Spacer size='m' />
       <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
-      <Spacer size='m' />
-      {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
       <Spacer size='m' />
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
