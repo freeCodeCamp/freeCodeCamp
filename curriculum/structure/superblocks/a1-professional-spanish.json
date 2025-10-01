@@ -34,6 +34,28 @@
             "es-a1-review-greetings-and-farewells",
             "es-a1-quiz-greetings-and-farewells"
           ]
+        },
+        {
+          "dashedName": "es-a1-module-introducing-yourself",
+          "blocks": [
+            "es-a1-warm-up-introducing-yourself-basics",
+            "es-a1-learn-meet-luna",
+            "es-a1-learn-meet-mateo",
+            "es-a1-learn-meet-julieta",
+            "es-a1-practice-introducing-yourself",
+            "es-a1-review-introducing-yourself",
+            "es-a1-quiz-introducing-yourself"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-first-questions",
+          "blocks": [
+            "es-a1-warm-up-first-questions-basics",
+            "es-a1-learn-meet-angela-and-basti",
+            "es-a1-practice-first-questions",
+            "es-a1-review-first-questions",
+            "es-a1-quiz-first-questions"
+          ]
         }
       ]
     }
