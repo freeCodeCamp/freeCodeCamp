@@ -10,5 +10,5 @@ This course teaches you core JavaScript programming concepts such as working wit
 
 To earn your JavaScript Certification:
 
-- Complete the three required projects to qualify for the certification exam.
+- Complete the five required projects to qualify for the certification exam.
 - Pass the JavaScript Certification exam.
