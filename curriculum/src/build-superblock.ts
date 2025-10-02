@@ -12,7 +12,7 @@ import {
 } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '../../shared-dist/config/curriculum';
 import type { Chapter } from '../../shared-dist/config/chapters';
-import { isCertification } from '../../shared-dist/config/certification-settings';
+import { Certification } from '../../shared-dist/config/certification-settings';
 import { getSuperOrder } from './utils.js';
 import type {
   BlockStructure,
@@ -193,14 +193,19 @@ export function addMetaToChallenge(
     cert => cert.dupe === meta.superBlock
   );
 
-  const maybeCert = hasDupe ? hasDupe.certification : meta.superBlock;
-  if (isCertification(maybeCert)) {
-    challenge.certification = maybeCert;
-  } else {
-    throw Error(
-      `Superblock ${meta.superBlock} does not map to a certification`
-    );
-  }
+  const maybeCert = (
+    hasDupe ? hasDupe.certification : meta.superBlock
+  ) as Certification;
+
+  challenge.certification = maybeCert;
+  // TODO: reimplement after updating the client to expect Certification | null
+  // if (isCertification(maybeCert)) {
+  //   challenge.certification = maybeCert;
+  // } else {
+  //   throw Error(
+  //     `Superblock ${meta.superBlock} does not map to a certification`
+  //   );
+  // }
 
   return challenge as Challenge;
 }
