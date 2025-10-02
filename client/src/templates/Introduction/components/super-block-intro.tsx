@@ -20,7 +20,7 @@ interface SuperBlockIntroQueryData {
         slug: string;
       };
     };
-  };
+  } | null;
 }
 
 type ReduxProps = ConnectedProps<typeof connector>;
@@ -115,13 +115,7 @@ function SuperBlockIntro({
     note: string;
   };
 
-  const {
-    challengeNode: {
-      challenge: {
-        fields: { slug: firstChallengeSlug }
-      }
-    }
-  } = useStaticQuery<SuperBlockIntroQueryData>(graphql`
+  const { challengeNode } = useStaticQuery<SuperBlockIntroQueryData>(graphql`
     query SuperBlockIntroQuery {
       challengeNode(
         challenge: {
@@ -139,6 +133,7 @@ function SuperBlockIntro({
     }
   `);
 
+  const firstChallengeSlug = challengeNode?.challenge?.fields?.slug || '';
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
