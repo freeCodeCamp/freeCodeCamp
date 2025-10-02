@@ -589,13 +589,13 @@ async function postExamAttemptHandler(
     );
   }
 
-  const lastestAttemptStartTime =
+  const latestAttemptStartTime =
     latestAttempt.startTime?.getTime() ?? latestAttempt.startTimeInMS;
   const examTotalTimeInMS = exam.config.totalTimeInS
     ? exam.config.totalTimeInS * 1000
     : exam.config.totalTimeInMS;
   const isAttemptExpired =
-    lastestAttemptStartTime + examTotalTimeInMS < Date.now();
+    latestAttemptStartTime + examTotalTimeInMS < Date.now();
 
   if (isAttemptExpired) {
     logger.warn(
