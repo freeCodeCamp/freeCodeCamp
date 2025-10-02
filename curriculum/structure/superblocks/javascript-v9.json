@@ -182,7 +182,7 @@
           ]
         },
         {
-          "dashedName": "certification-project-markdown-to-html-converter",
+          "dashedName": "lab-markdown-to-html-converter",
           "blocks": ["lab-markdown-to-html-converter"]
         },
         {
@@ -214,7 +214,7 @@
           ]
         },
         {
-          "dashedName": "certification-project-drum-machine",
+          "dashedName": "lab-drum-machine",
           "blocks": ["lab-drum-machine"]
         },
         {
@@ -228,7 +228,7 @@
           ]
         },
         {
-          "dashedName": "certification-project-voting-system",
+          "dashedName": "lab-voting-system",
           "blocks": ["lab-voting-system"]
         },
         {
@@ -252,7 +252,7 @@
           ]
         },
         {
-          "dashedName": "certification-project-bank-account-manager",
+          "dashedName": "lab-bank-account-manager",
           "blocks": ["lab-bank-account-manager"]
         },
         {
@@ -286,7 +286,7 @@
           ]
         },
         {
-          "dashedName": "certification-project-weather-app",
+          "dashedName": "lab-weather-app",
           "blocks": ["lab-weather-app"]
         },
         {

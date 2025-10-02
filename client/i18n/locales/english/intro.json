@@ -4981,30 +4981,24 @@
       "js-a11y": "JavaScript and Accessibility",
       "debugging-javascript": "Debugging",
       "basic-regex": "Basic Regex",
-      "certification-project-markdown-to-html-converter": "Build a Markdown to HTML Converter",
+      "lab-markdown-to-html-converter": "Build a Markdown to HTML Converter",
       "form-validation": "Form Validation",
       "javascript-dates": "Dates",
       "audio-and-video-events": "Audio and Video Events",
-      "certification-project-drum-machine": "Build a Drum Machine",
+      "lab-drum-machine": "Build a Drum Machine",
       "maps-and-sets": "Maps and Sets",
-      "certification-project-voting-system": "Build a Voting System",
+      "lab-voting-system": "Build a Voting System",
       "localstorage-and-crud-operations": "localStorage and CRUD Operations",
       "classes-and-the-this-keyword": "Classes",
-      "certification-project-bank-account-manager": "Build a Bank Account Management Program",
+      "lab-bank-account-manager": "Build a Bank Account Management Program",
       "recursion": "Recursion",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
-      "certification-project-weather-app": "Build a Weather App",
+      "lab-weather-app": "Build a Weather App",
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "blocks": {
-      "lecture-working-with-code-editors-and-ides": {
-        "title": "Working with Code Editors and IDEs",
-        "intro": [
-          "In these lectures, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
-        ]
-      },
       "lecture-introduction-to-javascript": {
         "title": "Introduction to JavaScript",
         "intro": [
