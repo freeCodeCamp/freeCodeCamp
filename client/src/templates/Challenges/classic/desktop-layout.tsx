@@ -4,7 +4,7 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import {
   ChallengeFiles,
   DailyCodingChallengeLanguages,
@@ -23,6 +23,7 @@ import {
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -337,6 +338,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
             </ReflexContainer>
           )}
+          {showIndependentLowerJaw && <IndependentLowerJaw />}
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (

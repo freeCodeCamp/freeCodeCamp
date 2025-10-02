@@ -1,6 +1,6 @@
 import { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { getRedirectParams } from '../../utils/redirection';
+import { getRedirectParams } from '../../utils/redirection.js';
 
 type Endpoint = [string, 'GET' | 'POST'];
 

@@ -353,9 +353,9 @@ export const getDailyJavascriptChallengeTemplate = ({
   challengeNumber
 }: DailyCodingChallengeOptions) => `---
 id: ${challengeId.toString()}
-title: "JavaScript Challenge ${challengeNumber}: Placeholder"
+title: "Challenge ${challengeNumber}: Placeholder"
 challengeType: 28
-dashedName: javascript-challenge-${challengeNumber}
+dashedName: challenge-${challengeNumber}
 ---
 
 # --description--
@@ -396,9 +396,9 @@ export const getDailyPythonChallengeTemplate = ({
   challengeNumber
 }: DailyCodingChallengeOptions) => `---
 id: ${challengeId.toString()}
-title: "Python Challenge ${challengeNumber}: Placeholder"
+title: "Challenge ${challengeNumber}: Placeholder"
 challengeType: 29
-dashedName: python-challenge-${challengeNumber}
+dashedName: challenge-${challengeNumber}
 ---
 
 # --description--

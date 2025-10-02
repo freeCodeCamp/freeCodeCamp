@@ -13,8 +13,8 @@ import accepts from '@fastify/accepts';
 import { http, HttpResponse } from 'msw';
 import { setupServer } from 'msw/node';
 
-vi.mock('../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../utils/env')>();
+vi.mock('../utils/env.js', async importOriginal => {
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
   return {
     ...actual,
     SENTRY_DSN: 'https://anything@goes/123'
@@ -22,8 +22,8 @@ vi.mock('../utils/env', async importOriginal => {
 });
 
 import '../instrument';
-import errorHandling from './error-handling';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
+import errorHandling from './error-handling.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 
 const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -138,7 +138,7 @@ describe('errorHandling', () => {
     expect(res.statusCode).toEqual(400);
   });
 
-  test('should return the error message if the status is not 500 ', async () => {
+  test('should return the error message if the status is not 500', async () => {
     const res = await fastify.inject({
       method: 'GET',
       url: '/test-bad-request'

@@ -1,7 +1,4 @@
-// originally based off of https://github.com/gulpjs/vinyl
-import invariant from 'invariant';
-
-const exts = ['js', 'html', 'css', 'jsx', 'ts', 'py'] as const;
+const exts = ['js', 'html', 'css', 'jsx', 'ts', 'tsx', 'py'] as const;
 export type Ext = (typeof exts)[number];
 
 export interface IncompleteChallengeFile {
@@ -48,15 +45,10 @@ export function createPoly<Rest>({
   history,
   ...rest
 }: PolyProps & Rest): PolyProps & AddedProperties & Rest {
-  invariant(typeof name === 'string', 'name must be a string but got %s', name);
-
-  invariant(typeof ext === 'string', 'ext must be a string, but was %s', ext);
-
-  invariant(
-    typeof contents === 'string',
-    'contents must be a string but got %s',
-    contents
-  );
+  if (typeof name !== 'string') throw new TypeError('name must be a string');
+  if (typeof ext !== 'string') throw new TypeError('ext must be a string');
+  if (typeof contents !== 'string')
+    throw new TypeError('contents must be a string');
 
   return {
     ...rest,
@@ -98,11 +90,7 @@ export function isPoly(poly: unknown): poly is ChallengeFile {
 }
 
 function checkPoly(poly: ChallengeFile) {
-  invariant(
-    isPoly(poly),
-    'function should receive a PolyVinyl, but got %s',
-    JSON.stringify(poly)
-  );
+  if (!isPoly(poly)) throw Error('Not a PolyVinyl: ' + JSON.stringify(poly));
 }
 
 // setContent will lose source if not supplied

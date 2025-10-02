@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import borderColorPicker from './border-color-picker';
 
 describe('Border color picker helper', () => {
