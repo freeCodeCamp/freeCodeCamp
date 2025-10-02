@@ -1818,6 +1818,7 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
+      "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
       "review-front-end-libraries": "Front End Libraries Review",
       "exam-front-end-libraries": "Front End Libraries Exam",
@@ -1866,6 +1867,12 @@
         "note": "Coming Fall 2025",
         "intro": [
           "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
+        ]
+      },
+      "data-visualization": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
