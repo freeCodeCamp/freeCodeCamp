@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Graphs and Trees
 
-Learn about Understanding Graphs and Trees in these lectures.
+In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science.

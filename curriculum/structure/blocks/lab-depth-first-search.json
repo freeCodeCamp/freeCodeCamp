@@ -1,0 +1,15 @@
+{
+  "name": "Implement the Depth-First Search Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-depth-first-search",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68d275dd800f404d22a07564",
+      "title": "Implement the Depth-First Search Algorithm"
+    }
+  ],
+  "blockType": "lab",
+  "usesMultifileEditor": true
+}

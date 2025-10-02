@@ -39,7 +39,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"poor"` should have the text `"Poor"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]')?.textContent, 'Poor');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="poor"]')?.textContent.trim(), 'Poor');
 ```
 
 You should have an `option` element with the `value` set to `"satisfactory"`.
@@ -51,7 +51,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"satisfactory"` should have the text `"Satisfactory"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]')?.textContent, 'Satisfactory');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="satisfactory"]')?.textContent.trim(), 'Satisfactory');
 ```
 
 You should have an `option` element with the `value` set to `"good"`.
@@ -64,7 +64,7 @@ Your `option` with the `value` of `"good"` should have the text `"Good"`.
 
 ```js
 
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent, 'Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="good"]')?.textContent.trim(), 'Good');
 ```
 
 You should have an `option` element with the value set to `"very-good"`.
@@ -76,7 +76,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"very-good"` should have the text `"Very Good"`.
 
 ```js
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]')?.textContent, 'Very Good');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="very-good"]')?.textContent.trim(), 'Very Good');
 ```
 
 You should have an `option` element with the value set to `"excellent"`.
@@ -88,8 +88,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 Your `option` with the `value` of `"excellent"` should have the text `"Excellent"`.
 
 ```js
-
-assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]')?.textContent, 'Excellent');
+assert.strictEqual(document.querySelector('fieldset:nth-of-type(4) select#food option[value="excellent"]')?.textContent.trim(), 'Excellent');
 ```
 
 You should have an `option` element with the `selected` attribute set to `"excellent"`.

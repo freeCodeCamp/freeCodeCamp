@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Browsing the Web Effectively
 
-In these lecture videos, you will learn how to browse the web effectively.
+In these lessons, you will learn how to browse the web effectively.

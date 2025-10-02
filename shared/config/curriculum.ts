@@ -1,6 +1,6 @@
 // TODO: eventually this should all flow from the curriculum service, since it
 // defines the top-level structure of the curriculum.
-import { Languages } from './i18n';
+import { Languages } from './i18n.js';
 
 // all superblocks
 export enum SuperBlocks {
@@ -132,6 +132,8 @@ export const superBlockStages: StageMap = {
 };
 
 Object.freeze(superBlockStages);
+
+export const archivedSuperBlocks = superBlockStages[SuperBlockStage.Legacy];
 
 export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
 

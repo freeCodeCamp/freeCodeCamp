@@ -64,9 +64,11 @@ describe('replace-imports', () => {
   it('should proceed when the imported file exists', async () => {
     const plugin = addImports();
 
-    await new Promise(resolve => {
-      plugin(importsAST, correctFile, resolve);
-    });
+    await expect(
+      new Promise(resolve => {
+        plugin(importsAST, correctFile, resolve);
+      })
+    ).resolves.toBeUndefined();
   });
 
   it('should fail when the imported file cannot be found', async () => {

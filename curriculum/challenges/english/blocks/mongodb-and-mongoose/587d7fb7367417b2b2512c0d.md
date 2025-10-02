@@ -19,20 +19,18 @@ Modify the `findPersonById` to find the only person having a given `_id`, using 
 Find an item by Id should succeed
 
 ```js
-  $.get(code + '/_api/find-by-id').then(
-    (data) => {
-      assert.equal(data.name, 'test', 'item.name is not what expected');
-      assert.equal(data.age, 0, 'item.age is not what expected');
-      assert.deepEqual(
-        data.favoriteFoods,
-        ['none'],
-        'item.favoriteFoods is not what expected'
-      );
-      assert.equal(data.__v, 0, 'The item should be not previously edited');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/find-by-id');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.name, 'test', 'item.name is not what expected');
+  assert.equal(data.age, 0, 'item.age is not what expected');
+  assert.deepEqual(
+    data.favoriteFoods,
+    ['none'],
+    'item.favoriteFoods is not what expected'
   );
+  assert.equal(data.__v, 0, 'The item should be not previously edited');
 ```
 

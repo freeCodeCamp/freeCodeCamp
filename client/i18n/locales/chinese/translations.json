@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "下载 freeCodeCamp 考试环境应用程序",
     "explanation": "要获得认证，你必须参加考试以检验对所学知识的掌握程度。参加考试完全免费。",
     "version": "我们的应用程序的最新版本是：{{version}}。",
@@ -645,7 +653,7 @@
       "invalid-transcript": "你的成绩单链接不正确，它应该有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 请检查你的链接中的 UPPERCASE 项目是否正确。"
     },
     "block-type": {
-      "lecture": "讲座",
+      "lecture": "Theory",
       "workshop": "工作坊",
       "lab": "实验室",
       "review": "复习",

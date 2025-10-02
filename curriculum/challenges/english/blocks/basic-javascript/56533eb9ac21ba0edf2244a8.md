@@ -45,20 +45,6 @@ assert(typeof a === 'number' && a === 7);
 
 # --seed--
 
-## --before-user-code--
-
-```js
-if (typeof a != 'undefined') {
-  a = undefined;
-}
-```
-
-## --after-user-code--
-
-```js
-(function(a){return "a = " + a;})(a);
-```
-
 ## --seed-contents--
 
 ```js

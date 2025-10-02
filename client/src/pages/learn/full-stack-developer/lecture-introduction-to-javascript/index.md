@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Introduction to JavaScript
 
-In these lecture videos, you will get a basic introduction to JavaScript.
+In these lessons, you will get a basic introduction to JavaScript.
