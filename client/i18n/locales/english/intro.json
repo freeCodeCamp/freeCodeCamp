@@ -2136,7 +2136,7 @@
       "lab-html-audio-and-video-player": {
         "title": "Build an HTML Audio and Video Player",
         "intro": [
-          "In this lab you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
+          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
         ]
       },
       "lecture-working-with-images-and-svgs": {
