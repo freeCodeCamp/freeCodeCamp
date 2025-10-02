@@ -1302,34 +1302,87 @@ describe('/exam-environment/', () => {
       });
     });
 
-    describe('GET /exam-environment/challenges/:challengeId/exam-mappings', () => {
+    describe('GET /exam-environment/exam-challenge', () => {
       afterAll(async () => {
         await fastifyTestInstance.prisma.examEnvironmentChallenge.deleteMany(
           {}
         );
       });
-      it('should return 200 and an empty array if no exams are mapped to the challenge', async () => {
+      it('should return 200 and an empty array if no mapping exists', async () => {
         const challengeId = mock.oid();
-        const res = await superGet(
-          `/exam-environment/challenges/${challengeId}/exam-mappings`
+        const examId = mock.oid();
+
+        const res1 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${challengeId}`
         );
-        expect(res.body).toStrictEqual([]);
-        expect(res.status).toBe(200);
+        expect(res1.body).toStrictEqual([]);
+        expect(res1.status).toBe(200);
+
+        const res2 = await superGet(
+          `/exam-environment/exam-challenge?examId=${examId}`
+        );
+        expect(res2.body).toStrictEqual([]);
+        expect(res2.status).toBe(200);
+
+        const res3 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${challengeId}&examId=${examId}`
+        );
+        expect(res3.body).toStrictEqual([]);
+        expect(res3.status).toBe(200);
       });
 
-      it('should return 200 and a list of exams mapped to the challenge', async () => {
+      it('should return 200 and a list of challenge-exam mappings if one exists', async () => {
         await fastifyTestInstance.prisma.examEnvironmentChallenge.create({
           data: mock.examEnvironmentChallenge
         });
-        const res = await superGet(
-          `/exam-environment/challenges/${mock.examEnvironmentChallenge.challengeId}/exam-mappings`
+        const res1 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${mock.examEnvironmentChallenge.challengeId}`
         );
-        expect(res.body).toEqual(
+        expect(res1.body).toEqual(
           expect.arrayContaining([
-            expect.objectContaining({ examId: mock.examId })
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
           ])
         );
-        expect(res.status).toBe(200);
+        expect(res1.status).toBe(200);
+
+        const res2 = await superGet(
+          `/exam-environment/exam-challenge?examId=${mock.examId}`
+        );
+        expect(res2.body).toEqual(
+          expect.arrayContaining([
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
+          ])
+        );
+        expect(res2.status).toBe(200);
+
+        const res3 = await superGet(
+          `/exam-environment/exam-challenge?challengeId=${mock.examEnvironmentChallenge.challengeId}&examId=${mock.examId}`
+        );
+        expect(res3.body).toEqual(
+          expect.arrayContaining([
+            expect.objectContaining({
+              examId: mock.examId,
+              challengeId: mock.examEnvironmentChallenge.challengeId
+            })
+          ])
+        );
+        expect(res3.status).toBe(200);
+      });
+
+      it('should return 400 if neither challengeId or examId are provided', async () => {
+        const res = await superGet(`/exam-environment/exam-challenge`);
+        expect(res).toMatchObject({
+          status: 400,
+          body: {
+            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+          }
+        });
       });
     });
   });

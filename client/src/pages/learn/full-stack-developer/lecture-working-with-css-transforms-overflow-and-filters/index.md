@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with CSS Transforms, Overflow, and Filters
 
-In these lecture videos, you will learn about working with CSS transforms, overflow, and filters.
+In these lessons, you will learn about working with CSS transforms, overflow, and filters.

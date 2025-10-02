@@ -89,11 +89,11 @@ export const examEnvironmentOpenRoutes: FastifyPluginCallbackTypebox = (
     tokenMetaHandler
   );
   fastify.get(
-    '/exam-environment/challenges/:challengeId/exam-mappings',
+    '/exam-environment/exam-challenge',
     {
-      schema: schemas.examEnvironmentGetExamMappingsByChallengeId
+      schema: schemas.examEnvironmentGetExamChallenge
     },
-    getExamMappingsByChallengeId
+    getExamChallenge
   );
   done();
 };
@@ -1034,22 +1034,31 @@ export async function getExamAttemptsByExamIdHandler(
 /**
  * Gets all the relations for a given challenge and exam(s).
  */
-export async function getExamMappingsByChallengeId(
+export async function getExamChallenge(
   this: FastifyInstance,
-  req: UpdateReqType<
-    typeof schemas.examEnvironmentGetExamMappingsByChallengeId
-  >,
+  req: UpdateReqType<typeof schemas.examEnvironmentGetExamChallenge>,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  const { challengeId } = req.params;
+  const { challengeId, examId } = req.query;
 
-  logger.info({ challengeId });
+  logger.info({ challengeId, examId });
+
+  if (!challengeId && !examId) {
+    logger.warn('No challenge or exam id provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        'Must provide either a challengeId or examId.'
+      )
+    );
+  }
 
   const maybeData = await mapErr(
     this.prisma.examEnvironmentChallenge.findMany({
       where: {
-        challengeId
+        challengeId: challengeId ?? undefined,
+        examId: examId ?? undefined
       }
     })
   );
