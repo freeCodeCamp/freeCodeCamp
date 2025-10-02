@@ -790,11 +790,9 @@
     },
     {
       "dashedName": "relational-databases",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-the-command-line-and-working-with-bash",
             "workshop-bash-boilerplate",
@@ -804,7 +802,6 @@
         },
         {
           "dashedName": "relational-databases",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
@@ -815,7 +812,6 @@
         },
         {
           "dashedName": "bash-scripting",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-bash-scripting",
             "workshop-bash-five-programs",
@@ -825,7 +821,6 @@
         },
         {
           "dashedName": "sql-and-bash",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-sql",
             "workshop-sql-student-database-part-1",
@@ -840,7 +835,6 @@
         },
         {
           "dashedName": "git",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
