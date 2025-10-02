@@ -9,7 +9,13 @@
     { "id": "68c38c3275a149b3cfed312a", "title": "Step 1" },
     { "id": "68d5b152417f6e8d1d88635f", "title": "Step 2" },
     { "id": "68d45de79b36aa640a46f57e", "title": "Step 3" },
-    { "id": "68de9361073cce61cc49cc1b", "title": "Step 4" }
+    { "id": "68de9361073cce61cc49cc1b", "title": "Step 4" },
+    { "id": "68decb1aa8a51651ab36557c", "title": "Step 5" },
+    { "id": "68deccc163f7e0733208079d", "title": "Step 6" },
+    { "id": "68ded29daa36f4e42ae63e97", "title": "Step 7" },
+    { "id": "68ded35072c5b0f2741634db", "title": "Step 8" },
+    { "id": "68ded461befea207a2f11a9a", "title": "Step 9" },
+    { "id": "68ded620ab19272a3fa97592", "title": "Step 10" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true
