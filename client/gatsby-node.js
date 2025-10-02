@@ -391,6 +391,9 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Hooks {
       beforeAll: String
+      beforeEach: String
+      afterAll: String
+      afterEach: String
     }
     type Test {
       id: String
