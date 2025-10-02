@@ -11,7 +11,7 @@ Many of you have been used to working with your keyboard and mouse for years on 
 
 But prolonged misuse of these devices can lead to serious health problems down the road.
 
-In this lecture, we will cover ways to work with your computer’s keyboard and mouse in healthy ways.
+In this lesson, we will cover ways to work with your computer’s keyboard and mouse in healthy ways.
 
 The first tip is to be mindful of the mouse grip. When working on serious tasks for work or during intense gaming moments, you may tend to grip the mouse too hard. However, this can lead to serious hand and wrist issues. To prevent this, you want to make sure to hold the mouse gently and keep your fingers nice and relaxed.
 
@@ -39,7 +39,7 @@ It can improve your accuracy in gaming.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip at the beginning of the lecture.
+Pay attention to the advice about mouse grip at the beginning of the lesson.
 
 ---
 
@@ -47,7 +47,7 @@ It helps you complete tasks faster.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip at the beginning of the lecture.
+Pay attention to the advice about mouse grip at the beginning of the lesson.
 
 ---
 
@@ -59,7 +59,7 @@ It improves your overall performance.
 
 ### --feedback--
 
-Pay attention to the advice about mouse grip at the beginning of the lecture.
+Pay attention to the advice about mouse grip at the beginning of the lesson.
 
 ## --video-solution--
 
@@ -75,7 +75,7 @@ They help you type faster.
 
 ### --feedback--
 
-The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lesson mentions ergonomic devices as a way to protect your hands and wrists.
 
 ---
 
@@ -83,7 +83,7 @@ They are designed for gaming performance.
 
 ### --feedback--
 
-The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lesson mentions ergonomic devices as a way to protect your hands and wrists.
 
 ---
 
@@ -95,7 +95,7 @@ They increase screen resolution.
 
 ### --feedback--
 
-The second tip in the lecture mentions ergonomic devices as a way to protect your hands and wrists.
+The second tip in the lesson mentions ergonomic devices as a way to protect your hands and wrists.
 
 ## --video-solution--
 

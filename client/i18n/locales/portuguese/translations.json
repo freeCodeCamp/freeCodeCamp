@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "Faça o download do aplicativo de exame gratuito do freeCodeCamp",
     "explanation": "Para obter uma certificação, você deve fazer um exame para testar sua compreensão do material que você aprendeu. Fazer o exame é absolutamente gratuito.",
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
@@ -645,7 +653,7 @@
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
     "block-type": {
-      "lecture": "Aula",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",

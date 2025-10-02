@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with the arguments Object and Rest Parameters
 
-In these lectures, you will learn how to work with the `arguments` object and rest parameter syntax.
+In these lessons, you will learn how to work with the `arguments` object and rest parameter syntax.
