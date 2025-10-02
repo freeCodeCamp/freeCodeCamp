@@ -1,7 +1,7 @@
 import i18next from 'i18next';
 import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
-import { useTranslation, Trans, withTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import {
   type SuperBlocks,
@@ -138,4 +138,4 @@ function Map({ forLanding = false }: MapProps) {
 
 Map.displayName = 'Map';
 
-export default withTranslation()(Map);
+export default Map;
