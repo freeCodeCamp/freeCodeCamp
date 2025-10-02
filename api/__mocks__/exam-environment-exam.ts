@@ -16,7 +16,7 @@ export const oid = () => new ObjectId().toString();
 
 export const examId = oid();
 
-export const config: ExamEnvironmentConfig = {
+export const config = {
   totalTimeInMS: 2 * 60 * 60 * 1000,
   totalTimeInS: 2 * 60 * 60,
   tags: [],
@@ -48,7 +48,7 @@ export const config: ExamEnvironmentConfig = {
   ],
   retakeTimeInMS: 24 * 60 * 60 * 1000,
   retakeTimeInS: 24 * 60 * 60
-};
+} satisfies ExamEnvironmentConfig;
 
 export const questionSets: ExamEnvironmentQuestionSet[] = [
   {
@@ -342,14 +342,14 @@ export const examAttemptSansSubmissionTime: Static<
   ]
 };
 
-export const exam: ExamEnvironmentExam = {
+export const exam = {
   id: examId,
   config,
   questionSets,
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
   deprecated: false,
   version: 2
-};
+} satisfies ExamEnvironmentExam;
 
 export const examEnvironmentChallenge: ExamEnvironmentChallenge = {
   id: oid(),

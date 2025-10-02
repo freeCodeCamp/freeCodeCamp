@@ -335,9 +335,8 @@ describe('/exam-environment/', () => {
       });
 
       it('should return an error if the exam has been attempted too recently to retake', async () => {
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
         const recentExamAttempt = {
           ...mock.examAttempt,
           // Set start time such that exam has just expired
@@ -366,9 +365,7 @@ describe('/exam-environment/', () => {
           }
         });
 
-        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS
-          ? mock.exam.config.retakeTimeInS * 1000
-          : mock.exam.config.retakeTimeInMS;
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
 
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
           where: {
@@ -407,9 +404,7 @@ describe('/exam-environment/', () => {
       it('should use a new exam attempt if all previous attempts were started > 24 hours ago', async () => {
         const recentExamAttempt = structuredClone(mock.examAttempt);
         // Set start time such that exam has expired, but 24 hours + 1s has passed
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
         recentExamAttempt.startTimeInMS =
           Date.now() - examTotalTimeInMS + (24 * 60 * 60 * 1000 + 1000);
@@ -479,9 +474,7 @@ describe('/exam-environment/', () => {
       it('should return an error if the database has insufficient generated exams', async () => {
         // Add completed attempt for generated exam
         const submittedAttempt = structuredClone(mock.examAttempt);
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
         // Long-enough ago to be considered "submitted", and not trigger cooldown
         submittedAttempt.startTimeInMS =
           Date.now() -
@@ -764,9 +757,8 @@ describe('/exam-environment/', () => {
 
       it("should indicate an exam's availability based on the last attempt's start time, and the exam retake time", async () => {
         // Create a recent exam attempt that's within the retake time
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
         const recentExamAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
@@ -785,9 +777,8 @@ describe('/exam-environment/', () => {
         expect(res.body).toMatchObject([{ canTake: false }]);
         expect(res.status).toBe(200);
 
-        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS
-          ? mock.exam.config.retakeTimeInS * 1000
-          : mock.exam.config.retakeTimeInMS;
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
+
         // Update the attempt to be outside the retake time
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
           where: { id: recentExamAttempt.id },
@@ -812,12 +803,8 @@ describe('/exam-environment/', () => {
 
       it('should indicate an exam is unavailable if there are any pending moderation records for the exam attempts', async () => {
         // Create an exam attempt that's outside the retake time
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
-        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS
-          ? mock.exam.config.retakeTimeInS * 1000
-          : mock.exam.config.retakeTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
         const examAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
@@ -972,9 +959,7 @@ describe('/exam-environment/', () => {
 
       it('should return the attempt with results, if the attempt has been moderated', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
         examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
         examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
@@ -1102,9 +1087,7 @@ describe('/exam-environment/', () => {
 
       it('should return the attempts with results, if they have been moderated', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS
-          ? mock.exam.config.totalTimeInS * 1000
-          : mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
         examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
         examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
