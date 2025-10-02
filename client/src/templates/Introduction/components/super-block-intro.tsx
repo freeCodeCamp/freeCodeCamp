@@ -4,7 +4,10 @@ import { useTranslation, Trans } from 'react-i18next';
 import { Alert, Spacer, Container, Row, Col, Callout } from '@freecodecamp/ui';
 import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import {
+  archivedSuperBlocks,
+  SuperBlocks
+} from '../../../../../shared-dist/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
@@ -12,6 +15,7 @@ import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import { completedChallengesSelector } from '../../../redux/selectors';
+import ArchivedWarning from '../../../components/archived-warning';
 
 interface SuperBlockIntroQueryData {
   challengeNode: {
@@ -142,6 +146,8 @@ function SuperBlockIntro({
 
   const introTopA = (
     <>
+      {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
+      <Spacer size='s' />
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
