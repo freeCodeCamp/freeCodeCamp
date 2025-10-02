@@ -11,7 +11,7 @@ Watch the video below to understand the context of the upcoming lessons.
 
 # --assignment--
 
-Watch the video
+Watch the video.
 
 # --scene--
 
@@ -264,7 +264,7 @@ Watch the video
         "startTime": 53.7,
         "finishTime": 56.2,
         "dialogue": {
-        "text": "Now let's get started with the project details",
+        "text": "Now, let's get started with the project details",
         "align": "left"
         }
     },
@@ -273,7 +273,7 @@ Watch the video
         "startTime": 56.2,
         "finishTime": 58.7,
         "dialogue": {
-        "text": "and your specific requirements, David…",
+        "text": "and your specific requirements, David.",
         "align": "left"
         }
     },

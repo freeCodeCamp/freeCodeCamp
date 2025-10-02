@@ -4,7 +4,7 @@ import type {
   FastifyReply
 } from 'fastify';
 import fp from 'fastify-plugin';
-import { getRedirectParams } from '../utils/redirection';
+import { getRedirectParams } from '../utils/redirection.js';
 
 declare module 'fastify' {
   interface FastifyInstance {

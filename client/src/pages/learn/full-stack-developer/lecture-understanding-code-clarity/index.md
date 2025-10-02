@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Understanding Code Clarity
 
-In these lectures, you will learn about comments in JavaScript and the role of semicolons in programming.
+In these lessons, you will learn about comments in JavaScript and the role of semicolons in programming.

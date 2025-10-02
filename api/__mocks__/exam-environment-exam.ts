@@ -5,19 +5,20 @@ import {
   ExamEnvironmentExamAttempt,
   ExamEnvironmentExam,
   ExamEnvironmentGeneratedExam,
-  ExamEnvironmentQuestionSet
+  ExamEnvironmentQuestionSet,
+  ExamEnvironmentChallenge
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas';
+import { defaultUserId } from '../vitest.utils.js';
+import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
 
 export const oid = () => new ObjectId().toString();
 
-const defaultUserId = '64c7810107dd4782d32baee7';
-
 export const examId = oid();
 
-export const config: ExamEnvironmentConfig = {
+export const config = {
   totalTimeInMS: 2 * 60 * 60 * 1000,
+  totalTimeInS: 2 * 60 * 60,
   tags: [],
   name: 'Test Exam',
   note: 'Some exam note...',
@@ -45,8 +46,9 @@ export const config: ExamEnvironmentConfig = {
       numberOfIncorrectAnswers: 1
     }
   ],
-  retakeTimeInMS: 24 * 60 * 60 * 1000
-};
+  retakeTimeInMS: 24 * 60 * 60 * 1000,
+  retakeTimeInS: 24 * 60 * 60
+} satisfies ExamEnvironmentConfig;
 
 export const questionSets: ExamEnvironmentQuestionSet[] = [
   {
@@ -247,7 +249,7 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
       ]
     }
   ],
-  version: 1
+  version: 2
 };
 
 export const examAttempt: ExamEnvironmentExamAttempt = {
@@ -261,7 +263,8 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
           answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
-          submissionTimeInMS: Date.now()
+          submissionTimeInMS: Date.now(),
+          submissionTime: new Date()
         }
       ]
     },
@@ -271,7 +274,8 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
           answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
-          submissionTimeInMS: Date.now()
+          submissionTimeInMS: Date.now(),
+          submissionTime: new Date()
         }
       ]
     },
@@ -281,22 +285,25 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
           answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
-          submissionTimeInMS: Date.now()
+          submissionTimeInMS: Date.now(),
+          submissionTime: new Date()
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
           answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
-          submissionTimeInMS: Date.now()
+          submissionTimeInMS: Date.now(),
+          submissionTime: new Date()
         }
       ]
     }
   ],
   startTimeInMS: Date.now(),
+  startTime: new Date(),
   userId: defaultUserId,
-  version: 1
+  version: 2
 };
 
-export const examAttemptSansSubmissionTimeInMS: Static<
+export const examAttemptSansSubmissionTime: Static<
   typeof examEnvironmentPostExamAttempt.body
 >['attempt'] = {
   examId,
@@ -335,12 +342,20 @@ export const examAttemptSansSubmissionTimeInMS: Static<
   ]
 };
 
-export const exam: ExamEnvironmentExam = {
+export const exam = {
   id: examId,
   config,
   questionSets,
   prerequisites: ['67112fe1c994faa2c26d0b1d'],
   deprecated: false,
+  version: 2
+} satisfies ExamEnvironmentExam;
+
+export const examEnvironmentChallenge: ExamEnvironmentChallenge = {
+  id: oid(),
+  examId,
+  // Id of the certified full stack developer exam challenge page
+  challengeId: '645147516c245de4d11eb7ba',
   version: 1
 };
 

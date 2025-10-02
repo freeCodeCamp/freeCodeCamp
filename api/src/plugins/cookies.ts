@@ -6,8 +6,8 @@ import {
   COOKIE_DOMAIN,
   COOKIE_SECRET,
   FREECODECAMP_NODE_ENV
-} from '../utils/env';
-import { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf';
+} from '../utils/env.js';
+import { CSRF_COOKIE, CSRF_SECRET_COOKIE } from './csrf.js';
 
 export { type CookieSerializeOptions } from '@fastify/cookie';
 

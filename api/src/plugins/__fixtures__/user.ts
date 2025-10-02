@@ -1,12 +1,11 @@
 import { expect } from 'vitest';
 
-import { nanoidCharSet } from '../../utils/create-user';
+import { nanoidCharSet } from '../../utils/create-user.js';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 const mongodbIdRe = /^[a-f0-9]{24}$/;
-
 
 // eslint-disable-next-line jsdoc/require-jsdoc
 export const newUser = (email: string) => ({
@@ -91,5 +90,4 @@ export const newUser = (email: string) => ({
   verificationToken: null,
   website: null,
   yearsTopContributor: []
-}
-)
+});

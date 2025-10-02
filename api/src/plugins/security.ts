@@ -1,7 +1,7 @@
 import { FastifyPluginCallback } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { FREECODECAMP_NODE_ENV } from '../utils/env';
+import { FREECODECAMP_NODE_ENV } from '../utils/env.js';
 
 const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
   // OWASP recommended headers

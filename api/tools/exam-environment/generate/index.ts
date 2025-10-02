@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { generateExam } from '../../../src/exam-environment/utils/exam-environment';
-import { MONGOHQ_URL } from '../../../src/utils/env';
+import { generateExam } from '../../../src/exam-environment/utils/exam-environment.js';
+import { MONGOHQ_URL } from '../../../src/utils/env.js';
 
 const args = process.argv.slice(2);
 const ENV_EXAM_ID = args[0];
