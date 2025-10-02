@@ -5,6 +5,7 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
+import { SuperBlocks } from '../../shared/config/curriculum.js';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -166,41 +167,40 @@ export function createCommentMap(
 }
 
 // Map of superblock filenames to their SuperBlocks enum values
-const superBlockNames = {
-  'responsive-web-design': 'responsive-web-design',
-  'javascript-algorithms-and-data-structures':
-    'javascript-algorithms-and-data-structures',
-  'front-end-development-libraries': 'front-end-development-libraries',
-  'data-visualization': 'data-visualization',
-  'back-end-development-and-apis': 'back-end-development-and-apis',
-  'quality-assurance': 'quality-assurance',
-  'scientific-computing-with-python': 'scientific-computing-with-python',
-  'data-analysis-with-python': 'data-analysis-with-python',
-  'information-security': 'information-security',
-  'coding-interview-prep': 'coding-interview-prep',
-  'machine-learning-with-python': 'machine-learning-with-python',
-  'relational-databases': 'relational-database',
-  'responsive-web-design-22': '2022/responsive-web-design',
+export const superBlockNames = {
+  'responsive-web-design': SuperBlocks.RespWebDesign,
+  'javascript-algorithms-and-data-structures': SuperBlocks.JsAlgoDataStruct,
+  'front-end-development-libraries': SuperBlocks.FrontEndDevLibs,
+  'data-visualization': SuperBlocks.DataVis,
+  'back-end-development-and-apis': SuperBlocks.BackEndDevApis,
+  'quality-assurance': SuperBlocks.QualityAssurance,
+  'scientific-computing-with-python': SuperBlocks.SciCompPy,
+  'data-analysis-with-python': SuperBlocks.DataAnalysisPy,
+  'information-security': SuperBlocks.InfoSec,
+  'coding-interview-prep': SuperBlocks.CodingInterviewPrep,
+  'machine-learning-with-python': SuperBlocks.MachineLearningPy,
+  'relational-databases': SuperBlocks.RelationalDb,
+  'responsive-web-design-22': SuperBlocks.RespWebDesignNew,
   'javascript-algorithms-and-data-structures-22':
-    'javascript-algorithms-and-data-structures-v8',
-  'the-odin-project': 'the-odin-project',
-  'college-algebra-with-python': 'college-algebra-with-python',
-  'project-euler': 'project-euler',
-  'foundational-c-sharp-with-microsoft': 'foundational-c-sharp-with-microsoft',
-  'a2-english-for-developers': 'a2-english-for-developers',
-  'rosetta-code': 'rosetta-code',
-  'python-for-everybody': 'python-for-everybody',
-  'b1-english-for-developers': 'b1-english-for-developers',
-  'full-stack-developer': 'full-stack-developer',
-  'a1-professional-spanish': 'a1-professional-spanish',
-  'a2-professional-spanish': 'a2-professional-spanish',
-  'a2-professional-chinese': 'a2-professional-chinese',
-  'basic-html': 'basic-html',
-  'semantic-html': 'semantic-html',
-  'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground',
-  'full-stack-open': 'full-stack-open',
-  'javascript-v9': 'javascript-v9'
+    SuperBlocks.JsAlgoDataStructNew,
+  'javascript-v9': SuperBlocks.JsV9,
+  'the-odin-project': SuperBlocks.TheOdinProject,
+  'college-algebra-with-python': SuperBlocks.CollegeAlgebraPy,
+  'project-euler': SuperBlocks.ProjectEuler,
+  'foundational-c-sharp-with-microsoft': SuperBlocks.FoundationalCSharp,
+  'a2-english-for-developers': SuperBlocks.A2English,
+  'rosetta-code': SuperBlocks.RosettaCode,
+  'python-for-everybody': SuperBlocks.PythonForEverybody,
+  'b1-english-for-developers': SuperBlocks.B1English,
+  'full-stack-developer': SuperBlocks.FullStackDeveloper,
+  'a1-professional-spanish': SuperBlocks.A1Spanish,
+  'a2-professional-spanish': SuperBlocks.A2Spanish,
+  'a2-professional-chinese': SuperBlocks.A2Chinese,
+  'basic-html': SuperBlocks.BasicHtml,
+  'semantic-html': SuperBlocks.SemanticHtml,
+  'a1-professional-chinese': SuperBlocks.A1Chinese,
+  'dev-playground': SuperBlocks.DevPlayground,
+  'full-stack-open': SuperBlocks.FullStackOpen
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(
@@ -213,26 +213,26 @@ export const superBlockToFilename = Object.entries(superBlockNames).reduce(
 /**
  * Builds an array of superblock structures from a curriculum object
 
- * @param {string[]} superblocks - Array of superblock filename strings
+ * @param {string[]} superBlockFilenames - Array of superblock filename strings
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
 export function addSuperblockStructure(
-  superblocks: string[],
+  superBlockFilenames: string[],
   showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
-  log(`Building structure for ${superblocks.length} superblocks`);
+  log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
-  const superblockStructures = superblocks.map(superblockFilename => {
+  const superblockStructures = superBlockFilenames.map(filename => {
     const superblockName =
-      superBlockNames[superblockFilename as keyof typeof superBlockNames];
+      superBlockNames[filename as keyof typeof superBlockNames];
     if (!superblockName) {
-      throw new Error(`Superblock name not found for ${superblockFilename}`);
+      throw new Error(`Superblock name not found for ${filename}`);
     }
 
     return {
       name: superblockName,
-      blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
+      blocks: transformSuperBlock(getSuperblockStructure(filename), {
         showComingSoon
       })
     };
@@ -248,9 +248,9 @@ export function addSuperblockStructure(
 type ProcessedBlock = BlockInfo & BlockStructure;
 
 export function addBlockStructure(
-  superblocks: { name: string; blocks: BlockInfo[] }[],
+  superblocks: { name: SuperBlocks; blocks: BlockInfo[] }[],
   _getBlockStructure = getBlockStructure
-): { name: string; blocks: ProcessedBlock[] }[] {
+): { name: SuperBlocks; blocks: ProcessedBlock[] }[] {
   return superblocks.map(superblock => ({
     ...superblock,
     blocks: superblock.blocks.map((block, index) => ({
@@ -280,7 +280,7 @@ export function getSuperblocks(
     .map(({ name }) => name);
 }
 
-function validateBlocks(superblocks: string[], blockStructureDir: string) {
+function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
   const withSuperblockStructure = addSuperblockStructure(superblocks, true);
   const blockInSuperblocks = withSuperblockStructure
     .flatMap(({ blocks }) => blocks)

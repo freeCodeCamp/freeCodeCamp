@@ -1,10 +1,12 @@
 import path from 'node:path';
 import { describe, it, expect, vi } from 'vitest';
 
+import { SuperBlocks } from '../../shared/config/curriculum.js';
 import {
   createCommentMap,
   addBlockStructure,
-  getSuperblocks
+  getSuperblocks,
+  superBlockNames
 } from './build-curriculum.js';
 import { getCurriculumStructure } from './file-handler.js';
 
@@ -170,5 +172,15 @@ describe('getSuperblocks', () => {
       'superblock-1',
       'superblock-2'
     ]);
+  });
+});
+
+describe('superBlockNames', () => {
+  it('should have mappings for each SuperBlock', () => {
+    const superBlocks = Object.values(SuperBlocks).sort(); // sorting to make comparison clearer
+    const names = Object.values(superBlockNames).sort();
+
+    expect(names).toHaveLength(superBlocks.length);
+    expect(names).toEqual(expect.arrayContaining(superBlocks));
   });
 });

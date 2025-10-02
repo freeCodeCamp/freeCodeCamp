@@ -3,9 +3,10 @@ import assert from 'node:assert';
 import { existsSync, readFileSync } from 'node:fs';
 import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-
 import debug from 'debug';
-import { Chapter } from './build-superblock.js';
+
+import type { Chapter } from '../../shared-dist/config/chapters.js';
+import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
 
 const log = debug('fcc:file-handler');
 
@@ -103,7 +104,7 @@ export function getCurriculumStructure() {
   }
 
   return JSON.parse(readFileSync(curriculumPath, 'utf8')) as {
-    superblocks: string[];
+    superblocks: SuperBlocks[];
     certifications: string[];
   };
 }
@@ -134,7 +135,7 @@ export type Challenge = {
   blockLayout?: string;
   hasEditableBoundaries?: boolean;
   order?: number;
-  superBlock?: string;
+  superBlock?: SuperBlocks;
   superOrder?: number;
   challengeOrder?: number;
   isLastChallengeInBlock?: boolean;

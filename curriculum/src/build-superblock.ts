@@ -11,6 +11,7 @@ import {
   translateCommentsInChallenge
 } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '../../shared-dist/config/curriculum';
+import type { Chapter } from '../../shared-dist/config/chapters';
 import { getSuperOrder } from './utils.js';
 import type {
   BlockStructure,
@@ -36,7 +37,7 @@ const createValidator = (throwOnError?: boolean) => (fn: () => void) => {
 
 interface Meta extends BlockStructure {
   order: number;
-  superBlock: string;
+  superBlock: SuperBlocks;
   superOrder: number;
 }
 
@@ -346,7 +347,7 @@ export class BlockCreator {
 
   async processBlock(
     block: BlockStructure,
-    { superBlock, order }: { superBlock: string; order: number }
+    { superBlock, order }: { superBlock: SuperBlocks; order: number }
   ) {
     const blockName = block.dashedName;
     log(`Processing block ${blockName} in superblock ${superBlock}`);
@@ -424,7 +425,7 @@ export class SuperblockCreator {
     name
   }: {
     blocks: BlockStructure[];
-    name: string;
+    name: SuperBlocks;
   }) {
     const superBlock: { blocks: Record<string, unknown> } = { blocks: {} };
 
@@ -450,18 +451,6 @@ export type BlockInfo = {
   dashedName: string;
   chapter?: string;
   module?: string;
-};
-
-type Module = {
-  dashedName: string;
-  comingSoon?: boolean;
-  blocks?: string[];
-};
-
-export type Chapter = {
-  dashedName: string;
-  comingSoon?: boolean;
-  modules?: Module[];
 };
 
 /**
