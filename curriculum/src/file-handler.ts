@@ -7,6 +7,7 @@ import debug from 'debug';
 
 import type { Chapter } from '../../shared-dist/config/chapters.js';
 import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import type { Certification } from '../../shared-dist/config/certification-settings.js';
 
 const log = debug('fcc:file-handler');
 
@@ -147,7 +148,7 @@ export type Challenge = {
   disableLoopProtectPreview?: boolean;
   chapter?: string;
   module?: string;
-  certification?: string;
+  certification?: Certification;
   translationPending?: boolean;
   missing?: boolean;
   challengeFiles?: ChallengeFile[];

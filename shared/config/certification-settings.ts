@@ -42,6 +42,10 @@ export enum Certification {
   LegacyFullStack = 'full-stack'
 }
 
+export function isCertification(x: string): x is Certification {
+  return Object.values(Certification).includes(x as Certification);
+}
+
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
