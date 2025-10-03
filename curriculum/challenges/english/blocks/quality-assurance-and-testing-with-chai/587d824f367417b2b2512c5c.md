@@ -50,13 +50,11 @@ suiteSetup(function(done) {
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=4').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=4');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 

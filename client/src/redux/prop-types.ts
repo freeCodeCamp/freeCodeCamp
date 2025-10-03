@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -189,7 +189,6 @@ export type ChallengeNode = {
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;

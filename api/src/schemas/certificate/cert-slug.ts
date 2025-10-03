@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { Certification } from '../../../../shared/config/certification-settings';
-import { genericError } from '../types';
+import { Certification } from '../../../../shared/config/certification-settings.js';
+import { genericError } from '../types.js';
 
 export const certSlug = {
   params: Type.Object({

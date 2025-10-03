@@ -32,32 +32,28 @@ mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }
 "mongoose version ^5.11.15" dependency should be in package.json
 
 ```js
-  $.get(code + '/_api/file/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(packJson.dependencies, 'mongoose');
-      assert.match(
-        packJson.dependencies.mongoose,
-        /^\^5\.11\.15/,
-        'Wrong version of "mongoose". It should be ^5.11.15'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/file/package.json');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.text();
+  var packJson = JSON.parse(data);
+  assert.property(packJson.dependencies, 'mongoose');
+  assert.match(
+    packJson.dependencies.mongoose,
+    /^\^5\.11\.15/,
+    'Wrong version of "mongoose". It should be ^5.11.15'
   );
 ```
 
 "mongoose" should be connected to a database
 
 ```js
-  $.get(code + '/_api/is-mongoose-ok').then(
-    (data) => {
-      assert.isTrue(data.isMongooseOk, 'mongoose is not connected');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/is-mongoose-ok');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isTrue(data.isMongooseOk, 'mongoose is not connected');
 ```
 

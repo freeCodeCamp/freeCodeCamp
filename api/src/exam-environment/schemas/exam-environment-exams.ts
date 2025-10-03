@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { STANDARD_ERROR } from '../utils/errors';
+import { STANDARD_ERROR } from '../utils/errors.js';
 export const examEnvironmentExams = {
   headers: Type.Object({
     'exam-environment-authorization-token': Type.String()
@@ -12,7 +12,9 @@ export const examEnvironmentExams = {
           name: Type.String(),
           note: Type.String(),
           totalTimeInMS: Type.Number(),
+          totalTimeInS: Type.Number(),
           retakeTimeInMS: Type.Number(),
+          retakeTimeInS: Type.Number(),
           passingPercent: Type.Number()
         }),
         canTake: Type.Boolean()

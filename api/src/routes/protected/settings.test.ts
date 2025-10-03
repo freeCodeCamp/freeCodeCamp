@@ -16,15 +16,15 @@ import {
   createSuperRequest,
   defaultUserId,
   defaultUserEmail
-} from '../../../vitest.utils';
-import { formatMessage } from '../../plugins/redirect-with-message';
-import { createUserInput } from '../../utils/create-user';
-import { API_LOCATION, HOME_LOCATION } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { formatMessage } from '../../plugins/redirect-with-message.js';
+import { createUserInput } from '../../utils/create-user.js';
+import { API_LOCATION, HOME_LOCATION } from '../../utils/env.js';
 import {
   isPictureWithProtocol,
   getWaitMessage,
   validateSocialUrl
-} from './settings';
+} from './settings.js';
 
 const baseProfileUI = {
   isLocked: false,
@@ -670,18 +670,16 @@ Happy coding!
         const response = await superPut('/update-my-username').send({
           username: 'TwaHa1'
         });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TwaHa1' }
-        });
-
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
         expect(user?.username).toEqual('twaha1');
+        expect(response.body).toStrictEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          variables: { username: 'TwaHa1' }
+        });
         expect(response.statusCode).toEqual(200);
       });
 
@@ -725,20 +723,6 @@ Happy coding!
         expect(existingUser.statusCode).toEqual(400);
       });
 
-      test('PUT returns 200 status code with "success" message', async () => {
-        await superPut('/update-my-username').send({ username: 'twaha3' });
-
-        const response = await superPut('/update-my-username').send({
-          username: 'TWaha3'
-        });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TWaha3' }
-        });
-        expect(response.statusCode).toEqual(200);
-      });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
         const response = await superPut('/update-my-username').send({
@@ -899,7 +883,7 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT with empty strings clears the values in about settings ', async () => {
+      test('PUT with empty strings clears the values in about settings', async () => {
         const initialResponse = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',

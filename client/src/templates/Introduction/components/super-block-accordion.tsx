@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: source the superblock structure via a GQL query, rather than directly
 // from the curriculum
@@ -12,10 +12,13 @@ import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
-import { type Chapter } from '../../../../../shared/config/chapters';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
-import { FsdChapters } from '../../../../../shared/config/chapters';
-import { type Module } from '../../../../../shared/config/modules';
+import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
+import { FsdChapters } from '../../../../../shared-dist/config/chapters';
+import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';

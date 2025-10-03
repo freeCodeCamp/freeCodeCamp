@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Asynchronous Programming
 
-In these lecture videos, you will learn about asynchronous programming.
+In these lessons, you will learn about asynchronous programming.

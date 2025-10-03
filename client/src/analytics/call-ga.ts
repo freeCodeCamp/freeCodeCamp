@@ -1,7 +1,7 @@
 import {
   DonationAmount,
   DonationDuration
-} from '../../../shared/config/donation-settings';
+} from '../../../shared-dist/config/donation-settings';
 import { ChallengeFiles } from '../redux/prop-types';
 import TagManager from '.';
 
