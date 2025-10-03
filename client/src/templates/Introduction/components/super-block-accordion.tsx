@@ -9,6 +9,7 @@ import DropDown from '../../../assets/icons/dropdown';
 // from the curriculum
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
+import a2EnglishCert from '../../../../../curriculum/structure/superblocks/a2-english-for-developers.json';
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
@@ -187,6 +188,8 @@ export const SuperBlockAccordion = ({
         return fullStackOpen;
       case SuperBlocks.FullStackDeveloper:
         return fullStackCert;
+      case SuperBlocks.A2English:
+        return a2EnglishCert;
       case SuperBlocks.A1Spanish:
         return a1Spanish;
       default:
