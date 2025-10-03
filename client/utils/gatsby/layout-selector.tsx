@@ -10,6 +10,8 @@ interface LayoutSelectorProps {
     data: { challengeNode?: { challenge?: { usesMultifileEditor?: boolean } } };
     location: { pathname: string };
     pageContext?: { challengeMeta?: { block?: string; superBlock?: string } };
+    params: { '*'?: string };
+    path: string;
   };
 }
 export default function layoutSelector({
@@ -20,7 +22,10 @@ export default function layoutSelector({
     location: { pathname }
   } = props;
 
-  const isChallenge = !!props.pageContext?.challengeMeta;
+  const isDailyChallenge = props.path === '/learn/daily-coding-challenge/*';
+  const dailyChallengeParam = props.params['*'];
+
+  const isChallenge = !!props.pageContext?.challengeMeta || isDailyChallenge;
 
   if (element.type === FourOhFourPage) {
     return (
@@ -38,6 +43,8 @@ export default function layoutSelector({
         pathname={pathname}
         showFooter={false}
         isChallenge={true}
+        isDailyChallenge={isDailyChallenge}
+        dailyChallengeParam={dailyChallengeParam}
         usesMultifileEditor={
           props.data?.challengeNode?.challenge?.usesMultifileEditor
         }

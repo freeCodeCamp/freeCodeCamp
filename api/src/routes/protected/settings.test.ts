@@ -1,20 +1,30 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  beforeEach,
+  vi,
+  MockInstance
+} from 'vitest';
+import {
   devLogin,
   setupServer,
   superRequest,
   createSuperRequest,
   defaultUserId,
   defaultUserEmail
-} from '../../../jest.utils';
-import { formatMessage } from '../../plugins/redirect-with-message';
-import { createUserInput } from '../../utils/create-user';
-import { API_LOCATION, HOME_LOCATION } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { formatMessage } from '../../plugins/redirect-with-message.js';
+import { createUserInput } from '../../utils/create-user.js';
+import { API_LOCATION, HOME_LOCATION } from '../../utils/env.js';
 import {
   isPictureWithProtocol,
   getWaitMessage,
   validateSocialUrl
-} from './settings';
+} from './settings.js';
 
 const baseProfileUI = {
   isLocked: false,
@@ -159,7 +169,7 @@ describe('settingRoutes', () => {
         });
       });
 
-      it('should reject requests without params', async () => {
+      test('should reject requests without params', async () => {
         const resNoParams = await superGet('/confirm-email');
 
         expect(resNoParams.headers.location).toBe(
@@ -168,7 +178,7 @@ describe('settingRoutes', () => {
         expect(resNoParams.status).toBe(302);
       });
 
-      it('should reject requests which have an invalid token param', async () => {
+      test('should reject requests which have an invalid token param', async () => {
         const res = await superGet(
           // token should be 64 characters long
           `/confirm-email?email=${encodedEmail}&token=tooshort`
@@ -180,7 +190,7 @@ describe('settingRoutes', () => {
         expect(res.status).toBe(302);
       });
 
-      it('should reject requests which have an invalid email param', async () => {
+      test('should reject requests which have an invalid email param', async () => {
         const res = await superGet(
           `/confirm-email?email=${notEmail}&token=${validToken}`
         );
@@ -191,7 +201,7 @@ describe('settingRoutes', () => {
         expect(res.status).toBe(302);
       });
 
-      it('should reject requests when the auth token is not in the database', async () => {
+      test('should reject requests when the auth token is not in the database', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
         );
@@ -202,7 +212,7 @@ describe('settingRoutes', () => {
         expect(res.status).toBe(302);
       });
 
-      it('should reject requests when the auth token exists, but the user does not', async () => {
+      test('should reject requests when the auth token exists, but the user does not', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
         );
@@ -215,11 +225,11 @@ describe('settingRoutes', () => {
 
       // TODO(Post-MVP): there's no need to keep the auth token around if,
       // somehow, the user is missing
-      it.todo(
+      test.todo(
         'should delete the auth token if there is no user associated with it'
       );
 
-      it('should reject requests when the email param is different from user.newEmail', async () => {
+      test('should reject requests when the email param is different from user.newEmail', async () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: { newEmail: 'an@oth.er' }
@@ -235,7 +245,7 @@ describe('settingRoutes', () => {
         expect(res.status).toBe(302);
       });
 
-      it('should reject requests if the auth token has expired', async () => {
+      test('should reject requests if the auth token has expired', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${expiredToken}`
         );
@@ -251,7 +261,7 @@ describe('settingRoutes', () => {
         expect(res.status).toBe(302);
       });
 
-      it('should update the user email', async () => {
+      test('should update the user email', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
@@ -265,7 +275,7 @@ describe('settingRoutes', () => {
         expect(user.email).toBe(newEmail);
       });
 
-      it('should clean up the user record', async () => {
+      test('should clean up the user record', async () => {
         await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
@@ -280,7 +290,7 @@ describe('settingRoutes', () => {
         expect(user.emailAuthLinkTTL).toBeNull();
       });
 
-      it('should remove the auth token on success', async () => {
+      test('should remove the auth token on success', async () => {
         await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validToken}`
         );
@@ -346,7 +356,7 @@ describe('settingRoutes', () => {
     });
 
     describe('/update-my-email', () => {
-      let sendEmailSpy: jest.SpyInstance;
+      let sendEmailSpy: MockInstance;
       beforeEach(async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: developerUserEmail },
@@ -358,13 +368,13 @@ describe('settingRoutes', () => {
           }
         });
 
-        sendEmailSpy = jest
+        sendEmailSpy = vi
           .spyOn(fastifyTestInstance, 'sendEmail')
-          .mockImplementationOnce(jest.fn());
+          .mockImplementationOnce(vi.fn());
       });
 
       afterEach(async () => {
-        jest.clearAllMocks();
+        vi.clearAllMocks();
         await fastifyTestInstance.prisma.authToken.deleteMany({
           where: { userId: defaultUserId }
         });
@@ -503,16 +513,53 @@ Please wait 5 minutes to resend an authentication link.`
         });
       });
 
+      test('PUT creates an auth token record for the requesting user', async () => {
+        // Reset user state to avoid rate limiting from previous tests
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            emailAuthLinkTTL: null,
+            newEmail: null
+          }
+        });
+
+        const noToken = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+        expect(noToken).toBeNull();
+
+        await superPut('/update-my-email').send({
+          email: unusedEmailTwo
+        });
+
+        const token = await fastifyTestInstance.prisma.authToken.findFirst({
+          where: { userId: defaultUserId }
+        });
+
+        expect(token).toEqual({
+          ttl: 15 * 60 * 1000,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          created: expect.any(Date),
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          id: expect.any(String),
+          userId: defaultUserId
+        });
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
       test('PUT sends an email to the new email address', async () => {
-        jest
-          .spyOn(fastifyTestInstance.prisma.authToken, 'create')
-          .mockImplementationOnce(() =>
-            // @ts-expect-error This is a mock implementation, all we're
-            // interested in is the id.
-            Promise.resolve({
-              id: '123'
-            })
-          );
+        vi.spyOn(
+          fastifyTestInstance.prisma.authToken,
+          'create'
+        ).mockImplementationOnce(() =>
+          // @ts-expect-error This is a mock implementation, all we're
+          // interested in is the id.
+          Promise.resolve({
+            id: '123'
+          })
+        );
         await superPut('/update-my-email').send({
           email: unusedEmailOne
         });
@@ -531,30 +578,6 @@ Happy coding!
 
 - The freeCodeCamp.org Team
 `
-        });
-      });
-
-      test('PUT creates an auth token record for the requesting user', async () => {
-        const noToken = await fastifyTestInstance.prisma.authToken.findFirst({
-          where: { userId: defaultUserId }
-        });
-        expect(noToken).toBeNull();
-
-        await superPut('/update-my-email').send({
-          email: unusedEmailOne
-        });
-
-        const token = await fastifyTestInstance.prisma.authToken.findFirst({
-          where: { userId: defaultUserId }
-        });
-
-        expect(token).toEqual({
-          ttl: 15 * 60 * 1000,
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          created: expect.any(Date),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          id: expect.any(String),
-          userId: defaultUserId
         });
       });
     });
@@ -647,18 +670,16 @@ Happy coding!
         const response = await superPut('/update-my-username').send({
           username: 'TwaHa1'
         });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TwaHa1' }
-        });
-
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: 'foo@bar.com' }
         });
 
         expect(user?.username).toEqual('twaha1');
+        expect(response.body).toStrictEqual({
+          message: 'flash.username-updated',
+          type: 'success',
+          variables: { username: 'TwaHa1' }
+        });
         expect(response.statusCode).toEqual(200);
       });
 
@@ -702,20 +723,6 @@ Happy coding!
         expect(existingUser.statusCode).toEqual(400);
       });
 
-      test('PUT returns 200 status code with "success" message', async () => {
-        await superPut('/update-my-username').send({ username: 'twaha3' });
-
-        const response = await superPut('/update-my-username').send({
-          username: 'TWaha3'
-        });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.username-updated',
-          type: 'success',
-          variables: { username: 'TWaha3' }
-        });
-        expect(response.statusCode).toEqual(200);
-      });
       test('PUT /update-my-username returns 400 status code when username is too long', async () => {
         const username = 'a'.repeat(1001);
         const response = await superPut('/update-my-username').send({
@@ -876,7 +883,7 @@ Happy coding!
         expect(response.statusCode).toEqual(200);
       });
 
-      test('PUT with empty strings clears the values in about settings ', async () => {
+      test('PUT with empty strings clears the values in about settings', async () => {
         const initialResponse = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
           name: 'Quincy Larson',
@@ -1051,7 +1058,7 @@ Happy coding!
     });
 
     describe('/confirm-email', () => {
-      it('redirects to the HOME_LOCATION with flash message', async () => {
+      test('redirects to the HOME_LOCATION with flash message', async () => {
         const res = await superRequest('/confirm-email', {
           method: 'GET'
         }).set('Referer', 'https://who.knows/');
@@ -1104,7 +1111,7 @@ Happy coding!
 describe('getWaitMessage', () => {
   const sec = 1000;
   const min = 60 * 1000;
-  it.each([
+  test.each([
     {
       sentAt: new Date(0),
       now: new Date(0),
@@ -1137,10 +1144,10 @@ describe('getWaitMessage', () => {
     }
   );
 
-  it('returns null when sentAt is null', () => {
+  test('returns null when sentAt is null', () => {
     expect(getWaitMessage({ sentAt: null, now: new Date(0) })).toBeNull();
   });
-  it('uses the current time when now is not provided', () => {
+  test('uses the current time when now is not provided', () => {
     expect(getWaitMessage({ sentAt: new Date() })).toEqual(
       'Please wait 5 minutes to resend an authentication link.'
     );
@@ -1148,14 +1155,14 @@ describe('getWaitMessage', () => {
 });
 
 describe('validateSocialUrl', () => {
-  it.each(['githubProfile', 'linkedin', 'twitter'] as const)(
+  test.each(['githubProfile', 'linkedin', 'twitter'] as const)(
     'accepts empty strings for %s',
     social => {
       expect(validateSocialUrl('', social)).toBe(true);
     }
   );
 
-  it.each([
+  test.each([
     ['githubProfile', 'https://something.com/user'],
     ['linkedin', 'https://www.x.com/in/username'],
     ['twitter', 'https://www.toomanyexes.com/username']
@@ -1163,7 +1170,7 @@ describe('validateSocialUrl', () => {
     expect(validateSocialUrl(url, social)).toBe(false);
   });
 
-  it.each([
+  test.each([
     ['githubProfile', 'https://something.github.com/user'],
     ['linkedin', 'https://www.linkedin.com/in/username'],
     ['twitter', 'https://twitter.com/username'],

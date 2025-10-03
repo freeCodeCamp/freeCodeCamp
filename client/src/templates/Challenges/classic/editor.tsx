@@ -36,7 +36,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canSaveToDB,
   challengeTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -111,7 +111,7 @@ export interface EditorProps {
     contents: string;
     editableRegionBoundaries?: number[];
   }) => void;
-  usesMultifileEditor: boolean;
+  usesMultifileEditor?: boolean;
   isChallengeCompleted: boolean;
   showIndependentLowerJaw?: boolean;
 }
@@ -188,6 +188,7 @@ const modeMap = {
   js: 'javascript',
   jsx: 'javascript',
   ts: 'typescript',
+  tsx: 'typescript',
   py: 'python',
   python: 'python'
 };
@@ -349,7 +350,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { usesMultifileEditor } = props;
+    const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -421,7 +422,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       addContentChangeListener();
       resetAttempts();
       showEditableRegion(editor);
-      if (isMathJaxAllowed(props.superBlock)) {
+      if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
         initializeMathJax();
       }
     }
@@ -800,7 +801,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
     descContainer.classList.add('description-container');
-    if (isMathJaxAllowed(props.superBlock)) {
+    if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
@@ -1317,8 +1318,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
+  const showFileName = challengeFile && props.challengeFiles!.length > 1;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
+      {showFileName && (
+        <div className='editor-file-name'>{`${challengeFile.name}.${challengeFile.ext}`}</div>
+      )}
       <span className='notranslate'>
         <MonacoEditor
           editorDidMount={editorDidMount}

@@ -9,10 +9,11 @@ import {
   PaymentProvider,
   type DonationDuration,
   type DonationAmount
-} from '../../../../shared/config/donation-settings';
+} from '../../../../shared-dist/config/donation-settings';
 import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
 import { LocalStorageThemes } from '../../redux/types';
+import type { User } from '../../redux/prop-types';
 import { DonationApprovalData, PostPayment } from './types';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
@@ -177,8 +178,8 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
-    isDonating,
+  (user: User | null, showLoading: boolean) => ({
+    isDonating: !!user?.isDonating,
     showLoading
   })
 );

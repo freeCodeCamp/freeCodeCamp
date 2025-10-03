@@ -18,8 +18,10 @@ import {
 import {
   canSaveToDB,
   challengeTypes,
+  getIsDailyCodingChallenge,
+  getDailyCodingChallengeLanguage,
   submitTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
   allowSectionDonationRequests,
@@ -33,7 +35,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -59,7 +61,13 @@ function postChallenge(update) {
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { type, savedChallenges, message, examResults } = data;
+      const {
+        type,
+        completedDailyCodingChallenges,
+        savedChallenges,
+        message,
+        examResults
+      } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -75,6 +83,7 @@ function postChallenge(update) {
       let actions = [
         submitComplete({
           submittedChallenge: payloadWithClientProperties,
+          completedDailyCodingChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges),
           examResults
         }),
@@ -103,7 +112,6 @@ function postChallenge(update) {
 }
 
 function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
   if (tests.length === 0 || tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.checkChallenge) {
@@ -111,26 +119,44 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
-      const challengeFiles = challengeFilesSelector(state);
+      const { id, block, challengeType } = challengeMetaSelector(state);
 
-      let body;
-      if (
-        block === 'javascript-algorithms-and-data-structures-projects' ||
-        canSaveToDB(challengeType)
-      ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
+      let update;
+
+      if (getIsDailyCodingChallenge(challengeType)) {
+        const language = getDailyCodingChallengeLanguage(challengeType);
+
+        const body = {
           id,
-          challengeType
+          challengeType,
+          language
+        };
+
+        update = {
+          endpoint: '/daily-coding-challenge-completed',
+          payload: body
+        };
+      } else {
+        const challengeFiles = challengeFilesSelector(state);
+
+        let body;
+        if (
+          block === 'javascript-algorithms-and-data-structures-projects' ||
+          canSaveToDB(challengeType)
+        ) {
+          body = standardizeRequestBody({ id, challengeType, challengeFiles });
+        } else {
+          body = {
+            id,
+            challengeType
+          };
+        }
+
+        update = {
+          endpoint: '/encoded/modern-challenge-completed',
+          payload: body
         };
       }
-
-      const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
-      };
       return postChallenge(update);
     }
   }
@@ -254,9 +280,16 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      let pathToNavigateTo = isLastChallengeInBlock
-        ? blockHashSlug
-        : nextChallengePath;
+      let pathToNavigateTo = nextChallengePath;
+
+      if (isLastChallengeInBlock) {
+        pathToNavigateTo = blockHashSlug;
+      }
+
+      // TODO: Navigate to the next daily challenge if it exists - archive if not.
+      if (getIsDailyCodingChallenge(challengeType)) {
+        pathToNavigateTo = '/learn/daily-coding-challenge/archive';
+      }
 
       const canAllowDonationRequest = (state, action) => {
         if (action.type !== submitActionTypes.submitComplete) return null;

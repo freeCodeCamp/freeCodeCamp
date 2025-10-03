@@ -2,12 +2,13 @@ import path from 'path';
 import fs, { readFileSync } from 'fs';
 
 import readdirp from 'readdirp';
+import { describe, test, expect } from 'vitest';
 
 import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared/config/curriculum';
+} from '../../../shared-dist/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -43,9 +44,9 @@ describe('external curriculum data build', () => {
   });
 
   test('there should be an endpoint to request submit types from', () => {
-    fs.existsSync(
-      `${clientStaticPath}/curriculum-data/${VERSION}/submit-types.json`
-    );
+    expect(
+      fs.existsSync(`${clientStaticPath}/curriculum-data/submit-types.json`)
+    ).toBeTruthy();
   });
 
   test('the available-superblocks file should have the correct structure', async () => {
@@ -59,12 +60,8 @@ describe('external curriculum data build', () => {
 
     const result = validateAvailableSuperBlocks(availableSuperblocks);
 
-    if (result.error) {
-      throw Error(
-        `file: available-superblocks.json
-${result.error.message}`
-      );
-    }
+    expect(result.error?.details).toBeUndefined();
+    expect(result.error).toBeFalsy();
   });
 
   test('the super block files generated should have the correct schema', async () => {
@@ -72,13 +69,17 @@ ${result.error.message}`
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
+          // path without extension:
+          const filePath = entry.path.replace(/\.json$/, '');
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
           const superBlocks = Object.values(SuperBlocks);
-          return superBlocks.includes(entry.basename);
+          return superBlocks.includes(filePath);
         }
       })
     ).map(file => file.path);
+
+    expect(fileArray.length).toBeGreaterThan(0);
 
     fileArray.forEach(fileInArray => {
       const fileContent = fs.readFileSync(
@@ -88,10 +89,8 @@ ${result.error.message}`
 
       const result = validateSuperBlock(JSON.parse(fileContent));
 
-      if (result.error) {
-        throw Error(`file: ${fileInArray}
-${result.error.message}`);
-      }
+      expect(result.error?.details).toBeUndefined();
+      expect(result.error).toBeFalsy();
     });
   });
 
@@ -100,13 +99,17 @@ ${result.error.message}`);
       await readdirp.promise(`${clientStaticPath}/curriculum-data/${VERSION}`, {
         directoryFilter: ['!challenges'],
         fileFilter: entry => {
+          // path without extension:
+          const filePath = entry.path.replace(/\.json$/, '');
           // The directory contains super block files and other curriculum-related files.
           // We're only interested in super block ones.
           const superBlocks = Object.values(SuperBlocks);
-          return superBlocks.includes(entry.basename);
+          return superBlocks.includes(filePath);
         }
       })
     ).map(file => file.path);
+
+    expect(superBlockFiles.length).toBeGreaterThan(0);
 
     superBlockFiles.forEach(file => {
       const fileContentJson = fs.readFileSync(

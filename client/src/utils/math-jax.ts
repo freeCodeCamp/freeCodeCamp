@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import { scriptLoader } from './script-loaders';
 
 export const mathJaxSrc =

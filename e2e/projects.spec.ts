@@ -27,7 +27,6 @@ interface Challenge {
   superBlock: string;
   dashedName: string;
   solutions: Solution[];
-  isPrivate?: boolean;
 }
 
 interface block {

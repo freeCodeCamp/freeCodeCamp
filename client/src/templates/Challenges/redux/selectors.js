@@ -1,11 +1,12 @@
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,
   isSignedInSelector,
   completionStateSelector,
-  completedChallengesIdsSelector
+  completedChallengesIdsSelector,
+  completedDailyCodingChallengesIdsSelector
 } from '../../../redux/selectors';
 import {
   getCurrentBlockIds,
@@ -26,8 +27,12 @@ export const consoleOutputSelector = state => {
     : out;
 };
 export const isChallengeCompletedSelector = createSelector(
-  [completedChallengesIdsSelector, challengeMetaSelector],
-  (ids, meta) => ids.includes(meta.id)
+  [
+    completedChallengesIdsSelector,
+    completedDailyCodingChallengesIdsSelector,
+    challengeMetaSelector
+  ],
+  (ids1, ids2, meta) => [...ids1, ...ids2].includes(meta.id)
 );
 export const isCodeLockedSelector = state => state[ns].isCodeLocked;
 export const isCompletionModalOpenSelector = state =>

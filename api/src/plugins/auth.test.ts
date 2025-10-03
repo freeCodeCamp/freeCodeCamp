@@ -1,10 +1,14 @@
+import { describe, test, expect, beforeEach, afterEach } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 import jwt from 'jsonwebtoken';
 
-import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env';
-import { type Token, createAccessToken } from '../utils/tokens';
-import cookies, { sign as signCookie, unsign as unsignCookie } from './cookies';
-import auth from './auth';
+import { COOKIE_DOMAIN, JWT_SECRET } from '../utils/env.js';
+import { type Token, createAccessToken } from '../utils/tokens.js';
+import cookies, {
+  sign as signCookie,
+  unsign as unsignCookie
+} from './cookies.js';
+import auth from './auth.js';
 
 async function setupServer() {
   const fastify = Fastify();
@@ -30,7 +34,7 @@ describe('auth', () => {
     // We won't need to keep doubly signing the cookie when we migrate the
     // authentication, but for the MVP we have to be able to read the cookies
     // set by the api-server. So, double signing:
-    it('should doubly sign the cookie', async () => {
+    test('should doubly sign the cookie', async () => {
       const token = createAccessToken('test-id');
       fastify.get('/test', async (req, reply) => {
         reply.setAccessTokenCookie(token);
@@ -68,7 +72,7 @@ describe('auth', () => {
       fastify.addHook('onRequest', fastify.authorize);
     });
 
-    it('should deny if the access token is missing', async () => {
+    test('should deny if the access token is missing', async () => {
       expect.assertions(4);
 
       fastify.addHook('onRequest', (req, _reply, done) => {
@@ -89,7 +93,7 @@ describe('auth', () => {
       expect(res.statusCode).toEqual(200);
     });
 
-    it('should deny if the access token is not signed', async () => {
+    test('should deny if the access token is not signed', async () => {
       expect.assertions(4);
 
       fastify.addHook('onRequest', (req, _reply, done) => {
@@ -117,7 +121,7 @@ describe('auth', () => {
       expect(res.statusCode).toEqual(200);
     });
 
-    it('should deny if the access token is invalid', async () => {
+    test('should deny if the access token is invalid', async () => {
       expect.assertions(4);
 
       fastify.addHook('onRequest', (req, _reply, done) => {
@@ -146,7 +150,7 @@ describe('auth', () => {
       expect(res.statusCode).toEqual(200);
     });
 
-    it('should deny if the access token has expired', async () => {
+    test('should deny if the access token has expired', async () => {
       expect.assertions(4);
 
       fastify.addHook('onRequest', (req, _reply, done) => {
@@ -175,7 +179,7 @@ describe('auth', () => {
       expect(res.statusCode).toEqual(200);
     });
 
-    it('should deny if the user is not found', async () => {
+    test('should deny if the user is not found', async () => {
       expect.assertions(4);
 
       fastify.addHook('onRequest', (req, _reply, done) => {
@@ -207,7 +211,7 @@ describe('auth', () => {
       expect(res.statusCode).toEqual(200);
     });
 
-    it('should populate the request with the user if the token is valid', async () => {
+    test('should populate the request with the user if the token is valid', async () => {
       const fakeUser = { id: '123', username: 'test-user' };
       // @ts-expect-error prisma isn't defined, since we're not building the
       // full application here.
@@ -235,7 +239,7 @@ describe('auth', () => {
   });
 
   describe('onRequest Hook', () => {
-    it('should update the jwt_access_token to httpOnly and secure', async () => {
+    test('should update the jwt_access_token to httpOnly and secure', async () => {
       const rawValue = 'should-not-change';
       fastify.get('/test', (req, reply) => {
         reply.send({ ok: true });
@@ -260,7 +264,7 @@ describe('auth', () => {
       expect(res.statusCode).toBe(200);
     });
 
-    it('should do nothing if there is no jwt_access_token', async () => {
+    test('should do nothing if there is no jwt_access_token', async () => {
       fastify.get('/test', (req, reply) => {
         reply.send({ ok: true });
       });

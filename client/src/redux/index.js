@@ -6,7 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
-import { createAcceptTermsSaga } from './accept-terms-saga';
+import { getIsDailyCodingChallenge } from '../../../shared-dist/config/challenge-types';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
@@ -50,7 +50,6 @@ export const defaultDonationFormState = {
 };
 
 const initialState = {
-  appUsername: '',
   isRandomCompletionThreshold: false,
   donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),
@@ -61,7 +60,7 @@ const initialState = {
   showCertFetchState: {
     ...defaultFetchState
   },
-  user: {},
+  user: { sessionUser: null, otherUser: null },
   userFetchState: {
     ...defaultFetchState
   },
@@ -88,7 +87,6 @@ const initialState = {
 export const epics = [hardGoToEpic, failedUpdatesEpic, updateCompleteEpic];
 
 export const sagas = [
-  ...createAcceptTermsSaga(actionTypes),
   ...createThemeSaga(actionTypes),
   ...createAppMountSaga(actionTypes),
   ...createDonationSaga(actionTypes),
@@ -107,8 +105,8 @@ function spreadThePayloadOnUser(state, payload) {
     ...state,
     user: {
       ...state.user,
-      [state.appUsername]: {
-        ...state.user[state.appUsername],
+      sessionUser: {
+        ...state.user.sessionUser,
         ...payload
       }
     }
@@ -117,27 +115,6 @@ function spreadThePayloadOnUser(state, payload) {
 
 export const reducer = handleActions(
   {
-    [actionTypes.acceptTermsComplete]: (state, { payload }) => {
-      const { appUsername } = state;
-      return {
-        ...state,
-        user: {
-          ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            // TODO: the user accepts the privacy terms in practice during auth
-            // however, it's currently being used to track if they've accepted
-            // or rejected the newsletter. Ideally this should be migrated,
-            // since they can't sign up without accepting the terms.
-            acceptedPrivacyTerms: true,
-            sendQuincyEmail:
-              payload === null
-                ? state.user[appUsername].sendQuincyEmail
-                : payload
-          }
-        }
-      };
-    },
     [actionTypes.allowSectionDonationRequests]: (state, { payload }) => {
       return {
         ...state,
@@ -175,17 +152,15 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
-      const { appUsername } = state;
+      const sessionUser = state.user.sessionUser
+        ? { ...state.user.sessionUser, isDonating: true }
+        : null;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
-            isDonating: true
-          }
+          sessionUser
         },
-
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },
@@ -205,20 +180,27 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [actionTypes.fetchUserComplete]: (
-      state,
-      { payload: { user, username } }
-    ) => ({
+    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => ({
       ...state,
       user: {
         ...state.user,
-        [username]: { ...user, sessionUser: true }
+        sessionUser: user
       },
-      appUsername: username,
       currentChallengeId:
-        user.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
+        user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
       userFetchState: {
         pending: false,
+        complete: true,
+        errored: false,
+        error: null
+      }
+    }),
+    [actionTypes.fetchUserTimeout]: state => ({
+      ...state,
+      userFetchState: {
+        // Pending because the fetch may still complete. This allows the UI to
+        // render what it can while waiting for the fetch to complete.
+        pending: true,
         complete: true,
         errored: false,
         error: null
@@ -228,22 +210,20 @@ export const reducer = handleActions(
       ...state,
       userFetchState: {
         pending: false,
-        complete: false,
+        complete: true,
         errored: true,
         error: payload
       }
     }),
     [actionTypes.fetchProfileForUserComplete]: (
       state,
-      { payload: { user, username } }
+      { payload: { user } }
     ) => {
-      const previousUserObject =
-        username in state.user ? state.user[username] : {};
       return {
         ...state,
         user: {
           ...state.user,
-          [username]: { ...previousUserObject, ...user }
+          otherUser: user
         },
         userProfileFetchState: {
           ...defaultFetchState,
@@ -291,8 +271,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.resetUserData]: state => ({
       ...state,
-      appUsername: '',
-      user: {}
+      user: { ...state.user, sessionUser: null }
     }),
     [actionTypes.openSignoutModal]: state => ({
       ...state,
@@ -329,53 +308,72 @@ export const reducer = handleActions(
     [actionTypes.submitComplete]: (state, { payload }) => {
       const {
         examResults = null,
+        completedDailyCodingChallenges = [],
         submittedChallenge,
         savedChallenges
       } = payload;
+
       let submittedchallenges = [
         { ...submittedChallenge, completedDate: Date.now() }
       ];
-      const { appUsername } = state;
 
-      return examResults && !examResults.passed
-        ? {
-            ...state,
-            user: {
-              ...state.user,
-              [appUsername]: {
-                ...state.user[appUsername],
-                examResults
-              }
+      // if daily coding challenge, only update completedDailyCodingChallenges
+      // Uses the whole completedDailyCodingChallenges array from the API response
+      // Todo: update with submittedChallenge instead
+      if (getIsDailyCodingChallenge(submittedChallenge.challengeType)) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            sessionUser: {
+              ...state.user.sessionUser,
+              completedDailyCodingChallenges
             }
           }
-        : {
-            ...state,
-            user: {
-              ...state.user,
-              [appUsername]: {
-                ...state.user[appUsername],
-                completedChallenges: uniqBy(
-                  [
-                    ...submittedchallenges,
-                    ...state.user[appUsername].completedChallenges
-                  ],
-                  'id'
-                ),
-                savedChallenges:
-                  savedChallenges ?? savedChallengesSelector(state[MainApp]),
-                examResults
-              }
+        };
+      }
+
+      // if exam not passed, don't update completedChallenges - only update the results
+      if (examResults && !examResults.passed) {
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            sessionUser: {
+              ...state.user.sessionUser,
+              examResults
             }
-          };
-    },
-    [actionTypes.setMsUsername]: (state, { payload }) => {
-      const { appUsername } = state;
+          }
+        };
+      }
+
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
+            completedChallenges: uniqBy(
+              [
+                ...submittedchallenges,
+                ...state.user.sessionUser.completedChallenges
+              ],
+              'id'
+            ),
+            savedChallenges:
+              savedChallenges ?? savedChallengesSelector(state[MainApp]),
+            examResults
+          }
+        }
+      };
+    },
+    [actionTypes.setMsUsername]: (state, { payload }) => {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...state.user.sessionUser,
             msUsername: payload
           }
         }
@@ -388,26 +386,24 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.updateUserToken]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             userToken: payload
           }
         }
       };
     },
     [actionTypes.deleteUserTokenComplete]: state => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             userToken: null
           }
         }
@@ -426,13 +422,12 @@ export const reducer = handleActions(
       };
     },
     [actionTypes.clearExamResults]: state => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             examResults: null
           }
         }
@@ -442,14 +437,13 @@ export const reducer = handleActions(
       state,
       { payload: { surveyResults } }
     ) => {
-      const { appUsername } = state;
-      const { completedSurveys = [] } = state.user[appUsername];
+      const { completedSurveys = [] } = state.user.sessionUser;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             completedSurveys: [...completedSurveys, surveyResults]
           }
         }
@@ -460,13 +454,12 @@ export const reducer = handleActions(
       currentChallengeId: payload
     }),
     [actionTypes.saveChallengeComplete]: (state, { payload }) => {
-      const { appUsername } = state;
       return {
         ...state,
         user: {
           ...state.user,
-          [appUsername]: {
-            ...state.user[appUsername],
+          sessionUser: {
+            ...state.user.sessionUser,
             savedChallenges: payload
           }
         }
@@ -478,8 +471,8 @@ export const reducer = handleActions(
             ...state,
             user: {
               ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 username: payload
               }
             }
@@ -511,8 +504,8 @@ export const reducer = handleActions(
             ...state,
             user: {
               ...state.user,
-              [state.appUsername]: {
-                ...state.user[state.appUsername],
+              sessionUser: {
+                ...state.user.sessionUser,
                 profileUI: { ...payload }
               }
             }

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with CSS Variables
 
-In these lecture videos, you will learn about working with CSS variables.
+In these lessons, you will learn about working with CSS variables.

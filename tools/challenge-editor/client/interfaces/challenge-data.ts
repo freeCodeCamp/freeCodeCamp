@@ -3,3 +3,9 @@ export interface ChallengeData {
   id: string;
   path: string;
 }
+
+export interface ChallengeDataWithBlock {
+  steps: ChallengeData[];
+  currentBlock: string;
+  currentSuperBlock: string;
+}

@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '../config/curriculum.js';
 
 /**
  * Certifications are not equivalent to superblocks. Each superblock corresponds
@@ -31,6 +31,7 @@ export enum Certification {
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
   A2Chinese = 'a2-professional-chinese-v8',
+  A1Chinese = 'a1-professional-chinese-v8',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -81,7 +82,8 @@ export const upcomingCertifications = [
   Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
-  Certification.A2Chinese
+  Certification.A2Chinese,
+  Certification.A1Chinese
 ] as const;
 
 export const certTypes = {
@@ -274,8 +276,10 @@ export const superBlockToCertMap: {
   [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
+  [SuperBlocks.A1Spanish]: null,
   [SuperBlocks.A2Spanish]: Certification.A2Spanish,
   [SuperBlocks.A2Chinese]: Certification.A2Chinese,
+  [SuperBlocks.A1Chinese]: Certification.A1Chinese,
   [SuperBlocks.PythonForEverybody]: null,
   [SuperBlocks.CodingInterviewPrep]: null,
   [SuperBlocks.ProjectEuler]: null,
@@ -283,7 +287,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.RosettaCode]: null,
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
-  [SuperBlocks.DevPlayground]: null
+  [SuperBlocks.DevPlayground]: null,
+  [SuperBlocks.FullStackOpen]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
@@ -312,7 +317,8 @@ export const linkedInCredentialIds = {
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd',
   [Certification.A2Spanish]: 'a2ps',
-  [Certification.A2Chinese]: 'a2pc'
+  [Certification.A2Chinese]: 'a2pc',
+  [Certification.A1Chinese]: 'a1pc'
 };
 
 export const oldDataVizId = '561add10cb82ac38a17513b3';

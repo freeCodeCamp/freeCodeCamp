@@ -1,14 +1,17 @@
+import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
-import growthBook from './growth-book';
+import growthBook from './growth-book.js';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-jest.mock('../utils/env', () => ({
-  ...jest.requireActual('../utils/env'),
-  // We're only interested in the production behaviour
-  FREECODECAMP_NODE_ENV: 'production'
-}));
+vi.mock('../utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
+  return {
+    ...actual,
+    // We're only interested in the production behaviour
+    FREECODECAMP_NODE_ENV: 'production'
+  };
+});
 
-const captureException = jest.fn();
+const captureException = vi.fn();
 
 describe('growth-book', () => {
   let fastify: FastifyInstance;
@@ -22,8 +25,8 @@ describe('growth-book', () => {
     await fastify.close();
   });
 
-  it('should log the error if the GrowthBook initialization fails', async () => {
-    const spy = jest.spyOn(fastify.log, 'error');
+  test('should log the error if the GrowthBook initialization fails', async () => {
+    const spy = vi.spyOn(fastify.log, 'error');
 
     await fastify.register(growthBook, {
       apiHost: 'invalid-url',

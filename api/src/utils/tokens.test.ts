@@ -1,9 +1,11 @@
-jest.useFakeTimers();
+import { describe, test, expect, vi } from 'vitest';
+
+vi.useFakeTimers();
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { createAccessToken, createAuthToken, isExpired } from './tokens';
+import { createAccessToken, createAuthToken, isExpired } from './tokens.js';
 
 describe('createAccessToken', () => {
-  it('creates an object with id, ttl, created and userId', () => {
+  test('creates an object with id, ttl, created and userId', () => {
     const userId = 'abc';
 
     const actual = createAccessToken(userId);
@@ -18,7 +20,7 @@ describe('createAccessToken', () => {
     });
   });
 
-  it('sets the ttl, defaulting to 77760000000 ms', () => {
+  test('sets the ttl, defaulting to 77760000000 ms', () => {
     const userId = 'abc';
     const ttl = 123;
     const actual = createAccessToken(userId, ttl);
@@ -29,7 +31,7 @@ describe('createAccessToken', () => {
 });
 
 describe('createAuthToken', () => {
-  it('creates an object with id, ttl, created and userId', () => {
+  test('creates an object with id, ttl, created and userId', () => {
     const userId = 'abc';
 
     const actual = createAuthToken(userId);
@@ -44,7 +46,7 @@ describe('createAuthToken', () => {
     });
   });
 
-  it('sets the ttl, defaulting to 900000 ms', () => {
+  test('sets the ttl, defaulting to 900000 ms', () => {
     const userId = 'abc';
     const ttl = 123;
     const actual = createAuthToken(userId, ttl);
@@ -55,23 +57,23 @@ describe('createAuthToken', () => {
 });
 
 describe('isExpired', () => {
-  it('returns true if the token expiry date is in the past', () => {
+  test('returns true if the token expiry date is in the past', () => {
     const token = createAccessToken('abc', 1000);
     expect(isExpired(token)).toBe(false);
-    jest.advanceTimersByTime(500);
+    vi.advanceTimersByTime(500);
     expect(isExpired(token)).toBe(false);
-    jest.advanceTimersByTime(500);
+    vi.advanceTimersByTime(500);
     expect(isExpired(token)).toBe(false);
-    jest.advanceTimersByTime(1);
+    vi.advanceTimersByTime(1);
     expect(isExpired(token)).toBe(true);
   });
 
-  it('handles tokens with Date values for created', () => {
+  test('handles tokens with Date values for created', () => {
     const token = { ...createAccessToken('abc', 2000), created: new Date() };
     expect(isExpired(token)).toBe(false);
-    jest.advanceTimersByTime(2000);
+    vi.advanceTimersByTime(2000);
     expect(isExpired(token)).toBe(false);
-    jest.advanceTimersByTime(1);
+    vi.advanceTimersByTime(1);
     expect(isExpired(token)).toBe(true);
   });
 });

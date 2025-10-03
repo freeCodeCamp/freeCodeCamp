@@ -1,6 +1,6 @@
 import { readFile } from 'fs/promises';
-import { EnvExam, PrismaClient } from '@prisma/client';
-import { MONGOHQ_URL } from '../../../src/utils/env';
+import { ExamEnvironmentExam, PrismaClient } from '@prisma/client';
+import { MONGOHQ_URL } from '../../../src/utils/env.js';
 
 const args = process.argv.slice(2);
 const EXAM_JSON_PATH = args[0];
@@ -24,10 +24,10 @@ async function main() {
 
   const exam_str = await readFile(EXAM_JSON_PATH, 'utf-8');
 
-  const exam = JSON.parse(exam_str) as EnvExam;
+  const exam = JSON.parse(exam_str) as ExamEnvironmentExam;
 
   try {
-    const res = await prisma.envExam.create({
+    const res = await prisma.examEnvironmentExam.create({
       data: exam
     });
 

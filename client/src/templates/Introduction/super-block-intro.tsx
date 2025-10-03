@@ -14,7 +14,7 @@ import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import {
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../shared/config/curriculum';
+} from '../../../../shared-dist/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -29,8 +29,11 @@ import {
 } from '../../redux/selectors';
 import type { User } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
-import { superBlockToCertMap } from '../../../../shared/config/certification-settings';
-import { BlockLayouts, BlockTypes } from '../../../../shared/config/blocks';
+import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../shared-dist/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
@@ -84,7 +87,7 @@ type SuperBlockProps = {
   resetExpansion: () => void;
   toggleBlock: (arg0: string) => void;
   tryToShowDonationModal: () => void;
-  user: User;
+  user: User | null;
 };
 
 configureAnchors({ offset: -40, scrollDuration: 0 });
@@ -101,7 +104,7 @@ const mapStateToProps = (state: Record<string, unknown>) => {
       isSignedIn,
       signInLoading: boolean,
       fetchState: FetchState,
-      user: User
+      user: User | null
     ) => ({
       currentChallengeId,
       isSignedIn,
@@ -147,8 +150,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     signInLoading,
     user,
     pageContext: { superBlock, title, certification },
-    location,
-    user: { completedChallenges: allCompletedChallenges }
+    location
   } = props;
 
   const allChallenges = useMemo(
@@ -163,10 +165,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   const completedChallenges = useMemo(
     () =>
-      allCompletedChallenges.filter(completedChallenge =>
+      (user?.completedChallenges ?? []).filter(completedChallenge =>
         superBlockChallenges.some(c => c.id === completedChallenge.id)
       ),
-    [superBlockChallenges, allCompletedChallenges]
+    [superBlockChallenges, user?.completedChallenges]
   );
 
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
@@ -251,7 +253,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 onCertificationDonationAlertClick={
                   onCertificationDonationAlertClick
                 }
-                isDonating={user.isDonating}
+                isDonating={user?.isDonating ?? false}
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
@@ -284,7 +286,7 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                       />
                     );
                   })}
-                  {showCertification && (
+                  {showCertification && !!user && (
                     <CertChallenge
                       certification={certification}
                       superBlock={superBlock}

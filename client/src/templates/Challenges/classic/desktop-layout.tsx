@@ -4,8 +4,12 @@ import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
-import { ChallengeFiles, ResizeProps } from '../../../redux/prop-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import {
+  ChallengeFiles,
+  DailyCodingChallengeLanguages,
+  ResizeProps
+} from '../../../redux/prop-types';
 import {
   removePortalWindow,
   setShowPreviewPortal,
@@ -19,6 +23,7 @@ import {
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -27,11 +32,16 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries: boolean;
+  hasEditableBoundaries?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
-  isFirstStep: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
+  isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -40,7 +50,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: string;
+  notes?: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
@@ -94,7 +104,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     setShowPreviewPortal,
     portalWindow,
     startWithConsoleShown,
-    showIndependentLowerJaw
+    showIndependentLowerJaw,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -265,6 +278,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           hasPreview={hasPreview}
           hasNotes={!!notes}
           areInstructionsDisplayable={areInstructionsDisplayable}
+          isDailyCodingChallenge={isDailyCodingChallenge}
+          dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+          setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
@@ -322,6 +338,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
             </ReflexContainer>
           )}
+          {showIndependentLowerJaw && <IndependentLowerJaw />}
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (

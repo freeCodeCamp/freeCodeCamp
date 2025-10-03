@@ -16,7 +16,11 @@ type LandingProps = {
 };
 
 const Landing = ({ showLandingPageRedesign }: LandingProps) => (
-  <main className={`landing-page`}>
+  <main
+    id='landing-content'
+    data-testid='landing-content'
+    className={`landing-page`}
+  >
     {showLandingPageRedesign ? <LandingTopB /> : <LandingTop />}
     <Benefits />
     <Testimonials />
@@ -29,6 +33,7 @@ function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
   if (growthbook && growthbook.ready) {
+    console.error('GrowthBook Ready', growthbook);
     const showLandingPageRedesign = growthbook.getFeatureValue(
       'landing-top-skill-focused',
       false
@@ -41,6 +46,7 @@ function IndexPage(): JSX.Element {
       </>
     );
   } else {
+    console.error('GrowthBook not ready yet', growthbook);
     return (
       <>
         <SEO title={t('metaTags:title')} />

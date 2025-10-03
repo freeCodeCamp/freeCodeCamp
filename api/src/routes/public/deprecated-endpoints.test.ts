@@ -1,7 +1,8 @@
 import request from 'supertest';
+import { describe, test, expect } from 'vitest';
 
-import { setupServer } from '../../../jest.utils';
-import { endpoints } from './deprecated-endpoints';
+import { setupServer } from '../../../vitest.utils.js';
+import { endpoints } from './deprecated-endpoints.js';
 
 describe('Deprecated endpoints', () => {
   setupServer();

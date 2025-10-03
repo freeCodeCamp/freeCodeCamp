@@ -1,7 +1,4 @@
-import {
-  type SuperBlocks,
-  getAuditedSuperBlocks
-} from '../../shared/config/curriculum';
+import { type SuperBlocks, getAuditedSuperBlocks } from '../config/curriculum';
 
 export function isAuditedSuperBlock(language: string, superblock: SuperBlocks) {
   // TODO: when all the consumers of this function use TypeScript we can remove

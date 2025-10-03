@@ -1,5 +1,25 @@
 import { join } from 'path';
 
+export const SUPERBLOCK_META_DIR = join(
+  process.cwd(),
+  '..',
+  '..',
+  '..',
+  'curriculum',
+  'structure',
+  'superblocks'
+);
+
+export const BLOCK_META_DIR = join(
+  process.cwd(),
+  '..',
+  '..',
+  '..',
+  'curriculum',
+  'structure',
+  'blocks'
+);
+
 export const CHALLENGE_DIR = join(
   process.cwd(),
   '..',
@@ -7,15 +27,17 @@ export const CHALLENGE_DIR = join(
   '..',
   'curriculum',
   'challenges',
-  'english'
+  'english',
+  'blocks'
 );
 
-export const META_DIR = join(
+export const ENGLISH_LANG_DIR = join(
   process.cwd(),
   '..',
   '..',
   '..',
-  'curriculum',
-  'challenges',
-  '_meta'
+  'client',
+  'i18n',
+  'locales',
+  'english'
 );
