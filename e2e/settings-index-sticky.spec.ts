@@ -63,7 +63,12 @@ test.describe('Settings Page - Sticky Index Widget', () => {
     const isVisible = await indexElement.isVisible();
     expect(isVisible).toBe(true);
 
-    const certTitles = page.getByTestId('certifications-header');
+    const certTitles = page
+      .getByRole('heading', {
+        name: 'Certifications',
+        exact: true
+      })
+      .nth(0);
     await expect(certTitles).toBeVisible();
   });
 
