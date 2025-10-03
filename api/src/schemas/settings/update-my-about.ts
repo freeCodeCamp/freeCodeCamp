@@ -5,7 +5,15 @@ export const updateMyAbout = {
     // TODO(Post-MVP): make these required
     about: Type.Optional(Type.String()),
     name: Type.Optional(Type.String()),
-    picture: Type.Optional(Type.String()),
+    picture: Type.Optional(
+      Type.Union([
+        Type.Literal(''),
+        Type.String({
+          format: 'uri',
+          pattern: '^(https?:)//'
+        })
+      ])
+    ),
     location: Type.Optional(Type.String())
   }),
   response: {
