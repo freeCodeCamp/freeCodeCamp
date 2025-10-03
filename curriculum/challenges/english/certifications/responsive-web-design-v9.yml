@@ -5,14 +5,3 @@ challengeType: 7
 tests:
   - id: 68db37350b398ecddd1f5dac
     title: Responsive Web Design Certification Exam
-# tests:
-#   - id: bd7158d8c442eddfaeb5bd18
-#     title: Build a Tribute Page
-#   - id: 587d78af367417b2b2512b03
-#     title: Build a Survey Form
-#   - id: 587d78af367417b2b2512b04
-#     title: Build a Product Landing Page
-#   - id: 587d78b0367417b2b2512b05
-#     title: Build a Technical Documentation Page
-#   - id: bd7158d8c242eddfaeb5bd13
-#     title: Build a Personal Portfolio Webpage

@@ -264,9 +264,9 @@
         },
         {
           "moduleType": "exam",
-          "dashedName": "responsive-web-design-v9-certification-exam",
+          "dashedName": "responsive-web-design-certification-exam",
           "comingSoon": true,
-          "blocks": ["exam-responsive-web-design-v9-certification"]
+          "blocks": ["exam-responsive-web-design-certification"]
         }
       ]
     }

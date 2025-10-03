@@ -5016,12 +5016,12 @@
     }
   },
   "responsive-web-design-v9": {
-    "title": "Responsive Web Design v9",
+    "title": "Responsive Web Design Certification",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "This course teaches you the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": { "html": "HTML", "css": "CSS" },
     "modules": {
@@ -5050,7 +5050,7 @@
       "css-animations": "Animations",
       "review-css": "CSS Review",
       "exam-css": "CSS Exam",
-      "responsive-web-design-v9-certification-exam": "Responsive Web Design Certification Exam"
+      "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "blocks": {
       "workshop-curriculum-outline": {
@@ -5058,13 +5058,6 @@
         "intro": [
           "Welcome to freeCodeCamp!",
           "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
-        ]
-      },
-      "lecture-welcome-to-freecodecamp": {
-        "title": "Welcome Message from Quincy Larson",
-        "intro": [
-          "Hear from Quincy Larson, the founder and teacher of freeCodeCamp.",
-          "Quincy will welcome you to the platform and talk about how the certification works. Quincy will also provide tips on how to learn effectively."
         ]
       },
       "lab-debug-camperbots-profile-page": {
@@ -5953,7 +5946,7 @@
           "Open up this page to review concepts around the basics of CSS, responsive web design, animations, accessibility and more."
         ]
       },
-      "exam-responsive-web-design-v9-certification": {
+      "exam-responsive-web-design-certification": {
         "title": "Responsive Web Design Certification Exam",
         "intro": [
           "Pass this exam to earn your Responsive Web Design Certification Exam"
