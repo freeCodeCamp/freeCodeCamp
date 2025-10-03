@@ -100,14 +100,28 @@ describe('add-interactive-editor plugin', () => {
   });
 
   it('respects the order of elements in the original markdown', async () => {
+    const expectedTypes = [
+      'paragraph',
+      'paragraph',
+      'interactiveEditor',
+      'interactiveEditor',
+      'paragraph',
+      'interactiveEditor',
+      'paragraph'
+    ];
+
     const mockAST = await parseFixture('with-interactive.md');
     plugin(mockAST, file);
     const elements = file.data.nodules;
-    expect(elements).toHaveLength(8);
+    const types = elements.map(element => element.type);
 
-    expect(elements[0]).toHaveProperty('data');
-    expect(elements[1]).toHaveProperty('data');
-    expect(elements[2]).toHaveProperty('data');
-    expect(elements[3]).toHaveProperty('data');
+    expect(types).toEqual(expectedTypes);
+  });
+
+  it('throws if the interactive_editor directive contains non-code nodes', async () => {
+    const mockAST = await parseFixture('with-interactive-non-code.md');
+    expect(() => plugin(mockAST, file)).toThrow(
+      'The --files-- section should only contain code blocks.'
+    );
   });
 });

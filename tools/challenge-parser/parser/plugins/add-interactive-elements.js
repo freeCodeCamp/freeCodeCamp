@@ -46,7 +46,7 @@ function plugin() {
 function getFiles(filesNodes) {
   const invalidNode = filesNodes.find(node => node.type !== 'code');
   if (invalidNode) {
-    throw Error('The --files-- section should only contain code blocks.');
+    throw Error('The :::interactive_editor should only contain code blocks.');
   }
 
   // TODO: refactor into two steps, 1) count languages, 2) map to files
