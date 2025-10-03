@@ -6,4 +6,9 @@ certification: responsive-web-design-v9
 
 ## New Responsive Web Design Certification
 
-Learn HTML, CSS, JavaScript, Relational Databases, React, and Node.js to become a Certified Full Stack Developer.
+This course teaches you the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.
+
+To earn your Responsive Web Design Certification:
+
+- Complete the five required projects to qualify for the certification exam.
+- Pass the Responsive Web Design Certification exam.
