@@ -2,10 +2,9 @@
   "name": "Build a Todo App using Local Storage",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "workshop-todo-app",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
   "challengeOrder": [
     {
       "id": "64e4e4c4ec263b62ae7bf54d",

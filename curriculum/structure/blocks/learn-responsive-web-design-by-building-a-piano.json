@@ -2,7 +2,7 @@
   "name": "Learn Responsive Web Design by Building a Piano",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-responsive-web-design-by-building-a-piano",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

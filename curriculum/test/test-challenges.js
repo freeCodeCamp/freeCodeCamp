@@ -164,9 +164,11 @@ function populateTestsForLang({ lang, challenges, meta }) {
             it('Common checks', function () {
               const result = validateChallenge(challenge);
 
-              if (result.error) {
-                throw new AssertionError(result.error);
-              }
+              assert.isUndefined(
+                result.error,
+                'Challenge fails schema validation'
+              );
+
               const { id, block, dashedName } = challenge;
               assert.exists(
                 dashedName,

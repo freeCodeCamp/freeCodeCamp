@@ -8,7 +8,6 @@ interface Meta {
     title: string;
   }>;
   usesMultifileEditor?: boolean;
-  hasEditableBoundaries?: boolean;
   blockType?: string;
   blockLayout?: string;
   order?: number;
@@ -30,8 +29,7 @@ const baseMeta: Meta = {
 
 const stepMeta = {
   ...baseMeta,
-  usesMultifileEditor: true,
-  hasEditableBoundaries: true
+  usesMultifileEditor: true
 };
 
 const fullStackStepMeta = {

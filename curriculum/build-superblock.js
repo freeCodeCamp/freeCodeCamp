@@ -134,7 +134,6 @@ function addMetaToChallenge(challenge, meta) {
   challenge.block = meta.dashedName;
   challenge.blockType = meta.blockType;
   challenge.blockLayout = meta.blockLayout;
-  challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
   challenge.order = meta.order;
 
   // Ensure required properties exist

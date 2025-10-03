@@ -2,10 +2,9 @@
   "name": "Implement the Binary Search Algorithm",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "workshop-binary-search",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
   "challengeOrder": [
     {
       "id": "683ec39565dbc7e3375263b1",

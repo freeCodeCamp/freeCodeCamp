@@ -2,7 +2,7 @@
   "name": "Learn CSS Transforms by Building a Penguin",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-css-transforms-by-building-a-penguin",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

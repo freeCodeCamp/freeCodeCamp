@@ -4,7 +4,6 @@
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "workshop-reusable-profile-card-component",
   "challengeOrder": [
     {

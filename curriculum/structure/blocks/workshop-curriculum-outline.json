@@ -2,7 +2,6 @@
   "name": "Build a Curriculum Outline",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-curriculum-outline",

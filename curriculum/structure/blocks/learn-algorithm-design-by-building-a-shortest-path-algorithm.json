@@ -2,7 +2,7 @@
   "name": "Learn Algorithm Design by Building a Shortest Path Algorithm",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-algorithm-design-by-building-a-shortest-path-algorithm",
   "challengeOrder": [
     {

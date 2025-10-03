@@ -4,7 +4,6 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "workshop-rothko-painting",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

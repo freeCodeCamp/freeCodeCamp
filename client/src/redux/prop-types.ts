@@ -189,7 +189,6 @@ export type ChallengeNode = {
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     head: string[];
-    hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
     id: string;
@@ -261,6 +260,7 @@ export type DailyCodingChallengeNode = {
     description: string;
     superBlock: 'daily-coding-challenge';
     block: 'daily-coding-challenge';
+    blockType?: BlockTypes;
     usesMultifileEditor: true;
 
     helpCategory: 'JavaScript' | 'Python';
@@ -275,7 +275,6 @@ export type DailyCodingChallengeNode = {
     instructions: string;
     demoType: null;
     hooks?: { beforeAll: string };
-    hasEditableBoundaries?: false;
     forumTopicId?: number;
     notes: string;
     videoUrl?: string;

@@ -2,7 +2,7 @@
   "name": "Learn Data Structures by Building the Merge Sort Algorithm",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-data-structures-by-building-the-merge-sort-algorithm",
   "challengeOrder": [
     {

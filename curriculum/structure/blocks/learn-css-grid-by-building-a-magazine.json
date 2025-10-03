@@ -2,7 +2,7 @@
   "name": "Learn CSS Grid by Building a Magazine",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-css-grid-by-building-a-magazine",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

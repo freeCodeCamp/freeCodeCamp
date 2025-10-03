@@ -11,6 +11,7 @@ import envData from '../../../../config/env.json';
 import { getLangCode } from '../../../../../shared-dist/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
 import { regenerateMissingProperties } from '../../../../../shared-dist/utils/polyvinyl';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import CertificationIcon from '../../../assets/icons/certification';
 import type {
   ChallengeData,
@@ -21,7 +22,6 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -260,7 +260,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
               }
               id
               superBlock
-              hasEditableBoundaries
+              blockType
               title
             }
           }
@@ -290,13 +290,12 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           fields: { slug, blockName },
           // @ts-expect-error Graphql needs typing
-          hasEditableBoundaries
+          blockType
         }
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
-      const shouldAppendBlockNameToTitle =
-        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
+      const shouldAppendBlockNameToTitle = blockType === BlockTypes.workshop;
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''

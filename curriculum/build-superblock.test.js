@@ -77,7 +77,6 @@ const dummyBlockMeta = {
   order: 1,
   superOrder: 2,
   usesMultifileEditor: true,
-  hasEditableBoundaries: false,
   disableLoopProtectTests: true,
   template: 'html/css',
   required: [
@@ -125,7 +124,6 @@ const expectedChallengeProperties = {
   block: dummyBlockMeta.dashedName,
   blockLayout: dummyBlockMeta.blockLayout,
   blockType: dummyBlockMeta.blockType,
-  hasEditableBoundaries: dummyBlockMeta.hasEditableBoundaries,
   order: dummyBlockMeta.order,
   description: '',
   instructions: '',

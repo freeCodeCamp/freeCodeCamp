@@ -2,7 +2,7 @@
   "name": "Learn Python List Comprehension by Building a Case Converter Program",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-list-comprehension-by-building-a-case-converter-program",
   "challengeOrder": [
     {

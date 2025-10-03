@@ -2,7 +2,7 @@
   "name": "Learn Regular Expressions by Building a Spam Filter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-regular-expressions-by-building-a-spam-filter",
   "helpCategory": "JavaScript",
   "challengeOrder": [

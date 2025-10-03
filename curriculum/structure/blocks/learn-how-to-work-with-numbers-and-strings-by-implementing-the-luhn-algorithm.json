@@ -2,7 +2,7 @@
   "name": "Learn How to Work with Numbers and Strings by Implementing the Luhn Algorithm",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-how-to-work-with-numbers-and-strings-by-implementing-the-luhn-algorithm",
   "challengeOrder": [
     {

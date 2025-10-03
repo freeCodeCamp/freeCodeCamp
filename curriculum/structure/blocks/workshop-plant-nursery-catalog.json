@@ -2,9 +2,8 @@
   "name": "Build a Plant Nursery Catalog",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
-  "dashedName": "workshop-plant-nursery-catalog",
   "blockType": "workshop",
+  "dashedName": "workshop-plant-nursery-catalog",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     {

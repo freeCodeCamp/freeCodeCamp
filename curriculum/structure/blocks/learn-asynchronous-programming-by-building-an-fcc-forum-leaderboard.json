@@ -2,7 +2,7 @@
   "name": "Learn Asynchronous Programming by Building an fCC Forum Leaderboard",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-asynchronous-programming-by-building-an-fcc-forum-leaderboard",
   "helpCategory": "JavaScript",
   "challengeOrder": [

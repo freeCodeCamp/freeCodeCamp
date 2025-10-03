@@ -2,7 +2,7 @@
   "name": "Learn localStorage by Building a Todo App",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-localstorage-by-building-a-todo-app",
   "challengeOrder": [
     {

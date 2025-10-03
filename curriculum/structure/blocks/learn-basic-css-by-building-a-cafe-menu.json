@@ -2,7 +2,7 @@
   "name": "Learn Basic CSS by Building a Cafe Menu",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-basic-css-by-building-a-cafe-menu",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

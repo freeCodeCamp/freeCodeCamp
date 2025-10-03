@@ -2,7 +2,7 @@
   "name": "Learn Intermediate CSS by Building a Cat Painting",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-intermediate-css-by-building-a-cat-painting",
   "challengeOrder": [
     {

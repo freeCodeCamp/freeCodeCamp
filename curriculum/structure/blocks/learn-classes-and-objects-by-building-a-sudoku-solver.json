@@ -2,7 +2,7 @@
   "name": "Learn Classes and Objects by Building a Sudoku Solver",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-classes-and-objects-by-building-a-sudoku-solver",
   "challengeOrder": [
     {

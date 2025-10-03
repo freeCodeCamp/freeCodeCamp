@@ -15,6 +15,5 @@
     { "id": "68ba9c4f1688914d72876098", "title": "Step 7" },
     { "id": "68ba9c4f1688914d72876099", "title": "Step 8" }
   ],
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "usesMultifileEditor": true
 }

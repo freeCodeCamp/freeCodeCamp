@@ -191,7 +191,7 @@
   flex-direction: column;
 }
 
-#learn-app-wrapper[data-has-editable-boundaries='true']
+#learn-app-wrapper[data-is-workshop='true']
   #mobile-layout
   .tab-content[data-state='active'] {
   padding-block-end: 0px;

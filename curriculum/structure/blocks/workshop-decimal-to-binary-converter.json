@@ -4,7 +4,6 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "workshop-decimal-to-binary-converter",
   "challengeOrder": [
     {

@@ -2,7 +2,6 @@
   "name": "Build a Storytelling App",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-storytelling-app",

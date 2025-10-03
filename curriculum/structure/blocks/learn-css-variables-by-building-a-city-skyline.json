@@ -2,7 +2,7 @@
   "name": "Learn CSS Variables by Building a City Skyline",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-css-variables-by-building-a-city-skyline",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [
