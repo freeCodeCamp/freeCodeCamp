@@ -1,3 +1,4 @@
+import { describe, test, expect, vi } from 'vitest';
 import jwt from 'jsonwebtoken';
 
 import {
@@ -6,8 +7,8 @@ import {
   getRedirectParams,
   getPrefixedLandingPath,
   getLoginRedirectParams
-} from './redirection';
-import { HOME_LOCATION } from './env';
+} from './redirection.js';
+import { HOME_LOCATION } from './env.js';
 
 const validJWTSecret = 'this is a super secret string';
 const invalidJWTSecret = 'This is not correct secret';
@@ -26,7 +27,7 @@ const defaultObject = {
 // TODO: tidy this up (the mocking is a bit of a mess)
 describe('redirection', () => {
   describe('getReturnTo', () => {
-    it('should extract returnTo from a jwt', () => {
+    test('should extract returnTo from a jwt', () => {
       expect.assertions(1);
 
       const encryptedReturnTo = jwt.sign(
@@ -41,10 +42,10 @@ describe('redirection', () => {
       });
     });
 
-    it('should return a default url if the secrets do not match', () => {
+    test('should return a default url if the secrets do not match', () => {
       const oldLog = console.log;
       expect.assertions(2);
-      console.log = jest.fn();
+      console.log = vi.fn();
       const encryptedReturnTo = jwt.sign(
         { returnTo: validReturnTo },
         invalidJWTSecret
@@ -56,7 +57,7 @@ describe('redirection', () => {
       console.log = oldLog;
     });
 
-    it('should return a default url for unknown origins', () => {
+    test('should return a default url for unknown origins', () => {
       expect.assertions(1);
       const encryptedReturnTo = jwt.sign(
         { returnTo: invalidReturnTo },
@@ -68,18 +69,18 @@ describe('redirection', () => {
     });
   });
   describe('normalizeParams', () => {
-    it('should return a {returnTo, origin, pathPrefix} object', () => {
+    test('should return a {returnTo, origin, pathPrefix} object', () => {
       expect.assertions(2);
       const keys = Object.keys(normalizeParams({}));
       const expectedKeys = ['returnTo', 'origin', 'pathPrefix'];
       expect(keys.length).toBe(3);
       expect(keys).toEqual(expect.arrayContaining(expectedKeys));
     });
-    it('should default to process.env.HOME_LOCATION', () => {
+    test('should default to process.env.HOME_LOCATION', () => {
       expect.assertions(1);
       expect(normalizeParams({}, defaultOrigin)).toEqual(defaultObject);
     });
-    it('should convert an unknown pathPrefix to ""', () => {
+    test('should convert an unknown pathPrefix to ""', () => {
       expect.assertions(1);
       const brokenPrefix = {
         ...defaultObject,
@@ -89,7 +90,7 @@ describe('redirection', () => {
         defaultObject
       );
     });
-    it('should not change a known pathPrefix', () => {
+    test('should not change a known pathPrefix', () => {
       expect.assertions(1);
       const spanishPrefix = {
         ...defaultObject,
@@ -103,7 +104,7 @@ describe('redirection', () => {
     // process.env.HOME_LOCATION/path, but if the origin is wrong something unexpected is
     // going on. In that case it's probably best to just send them to
     // process.env.HOME_LOCATION/learn.
-    it('should return default parameters if the origin is unknown', () => {
+    test('should return default parameters if the origin is unknown', () => {
       expect.assertions(1);
       const exampleOrigin = {
         ...defaultObject,
@@ -114,7 +115,7 @@ describe('redirection', () => {
         defaultObject
       );
     });
-    it('should return default parameters if the returnTo is unknown', () => {
+    test('should return default parameters if the returnTo is unknown', () => {
       expect.assertions(1);
       const exampleReturnTo = {
         ...defaultObject,
@@ -126,7 +127,7 @@ describe('redirection', () => {
       );
     });
 
-    it('should reject returnTo without trailing slashes', () => {
+    test('should reject returnTo without trailing slashes', () => {
       const exampleReturnTo = {
         ...defaultObject,
         returnTo: 'https://www.freecodecamp.dev'
@@ -136,7 +137,7 @@ describe('redirection', () => {
       );
     });
 
-    it('should not modify the returnTo if it is valid', () => {
+    test('should not modify the returnTo if it is valid', () => {
       const exampleReturnTo = {
         ...defaultObject,
         returnTo: 'https://www.freecodecamp.dev/'
@@ -148,7 +149,7 @@ describe('redirection', () => {
   });
 
   describe('getRedirectParams', () => {
-    it('should return origin, pathPrefix and returnTo given valid headers', () => {
+    test('should return origin, pathPrefix and returnTo given valid headers', () => {
       const req = {
         headers: {
           referer: `https://www.freecodecamp.org/espanol/learn/rosetta-code/`
@@ -165,7 +166,7 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
-    it('should strip off any query parameters from the referer', () => {
+    test('should strip off any query parameters from the referer', () => {
       const req = {
         headers: {
           referer: `https://www.freecodecamp.org/espanol/learn/rosetta-code/?query=param`
@@ -182,7 +183,7 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
-    it('should returnTo the origin if the referer is missing', () => {
+    test('should returnTo the origin if the referer is missing', () => {
       const req = {
         headers: {}
       };
@@ -197,7 +198,7 @@ describe('redirection', () => {
       expect(result).toEqual(expectedReturn);
     });
 
-    it('should returnTo the origin if the referrer is invalid', () => {
+    test('should returnTo the origin if the referrer is invalid', () => {
       const req = {
         headers: {
           referer: 'invalid-url'
@@ -216,7 +217,7 @@ describe('redirection', () => {
   });
 
   describe('getLoginRedirectParams', () => {
-    it('should use the login-returnto cookie if present', () => {
+    test('should use the login-returnto cookie if present', () => {
       const mockReq = {
         cookies: {
           'login-returnto': 'https://www.freecodecamp.org/espanol/learn'
@@ -236,25 +237,25 @@ describe('redirection', () => {
   });
 
   describe('getPrefixedLandingPath', () => {
-    it('should return the origin when no pathPrefix is provided', () => {
+    test('should return the origin when no pathPrefix is provided', () => {
       const result = getPrefixedLandingPath(defaultOrigin);
       expect(result).toEqual(defaultOrigin);
     });
 
-    it('should append pathPrefix to origin when pathPrefix is provided', () => {
+    test('should append pathPrefix to origin when pathPrefix is provided', () => {
       const expectedPath = `${defaultOrigin}/learn`;
       const result = getPrefixedLandingPath(defaultOrigin, 'learn');
       expect(result).toEqual(expectedPath);
     });
 
-    it('should handle empty origin', () => {
+    test('should handle empty origin', () => {
       const pathPrefix = 'learn';
       const expectedPath = '/learn';
       const result = getPrefixedLandingPath('', pathPrefix);
       expect(result).toEqual(expectedPath);
     });
 
-    it('should handle empty pathPrefix', () => {
+    test('should handle empty pathPrefix', () => {
       const result = getPrefixedLandingPath(defaultOrigin, '');
       expect(result).toEqual(defaultOrigin);
     });

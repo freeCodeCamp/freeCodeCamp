@@ -22,9 +22,10 @@ import {
   userSelector,
   donationFormStateSelector
 } from '../redux/selectors';
-import { PaymentContext } from '../../../shared/config/donation-settings';
+import { PaymentContext } from '../../../shared-dist/config/donation-settings';
 import { DonateFormState } from '../redux/types';
 import callGA from '../analytics/call-ga';
+import type { User } from '../redux/prop-types';
 interface DonatePageProps {
   isDonating?: boolean;
   showLoading: boolean;
@@ -37,11 +38,11 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   donationFormStateSelector,
   (
-    { isDonating }: { isDonating: boolean },
+    user: User | null,
     showLoading: boolean,
     donationFormState: DonateFormState
   ) => ({
-    isDonating,
+    isDonating: user?.isDonating || false,
     showLoading,
     donationFormState
   })

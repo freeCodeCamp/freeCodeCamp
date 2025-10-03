@@ -2,13 +2,16 @@
 // @ts-nocheck Likely need to not use ShallowRenderer
 import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { describe, it, expect, vi } from 'vitest';
 import envData from '../../config/env.json';
-
 import { ShowSettings } from './show-settings';
 
-const { apiLocation } = envData as Record<string, string>;
+vi.mock('../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeatureIsOn: () => false
+}));
 
-jest.mock('../analytics');
+const { apiLocation } = envData as Record<string, string>;
 
 describe('<ShowSettings />', () => {
   it('renders to the DOM when user is logged in', () => {
@@ -34,24 +37,24 @@ describe('<ShowSettings />', () => {
   });
 });
 
-const navigate = jest.fn();
+const navigate = vi.fn();
 const loggedInProps = {
-  createFlashMessage: jest.fn(),
-  hardGoTo: jest.fn(),
+  createFlashMessage: vi.fn(),
+  hardGoTo: vi.fn(),
   isSignedIn: true,
   navigate: navigate,
   showLoading: false,
-  submitNewAbout: jest.fn(),
-  toggleTheme: jest.fn(),
-  updateSocials: jest.fn(),
-  updateIsHonest: jest.fn(),
-  updatePortfolio: jest.fn(),
-  updateQuincyEmail: jest.fn(),
+  submitNewAbout: vi.fn(),
+  toggleTheme: vi.fn(),
+  updateSocials: vi.fn(),
+  updateIsHonest: vi.fn(),
+  updatePortfolio: vi.fn(),
+  updateQuincyEmail: vi.fn(),
   user: {
     about: '',
     completedChallenges: []
   },
-  verifyCert: jest.fn()
+  verifyCert: vi.fn()
 };
 const loggedOutProps = { ...loggedInProps };
 loggedOutProps.isSignedIn = false;

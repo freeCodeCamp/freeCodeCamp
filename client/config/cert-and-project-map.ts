@@ -3,7 +3,7 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../shared/config/certification-settings';
+} from '../../shared-dist/config/certification-settings';
 import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -37,6 +37,7 @@ const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
 const a2ChineseBase = '/learn/a2-professional-chinese';
+const a1ChineseBase = '/learn/a1-professional-chinese';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -863,6 +864,20 @@ const allStandardCerts = [
         link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
 /text-1`,
         certSlug: Certification.A2Chinese
+      }
+    ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A1 Professional Chinese',
+    certSlug: Certification.A1Chinese,
+    projects: [
+      {
+        id: '682c2753317b88f1ecdad894',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
+/text-1`,
+        certSlug: Certification.A1Chinese
       }
     ]
   }

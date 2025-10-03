@@ -4,8 +4,8 @@ import {
   SendEmailCommand
 } from '@aws-sdk/client-ses';
 
-import { MailProvider, SendEmailArgs } from '../mailer';
-import { SES_ID, SES_SECRET, SES_REGION } from '../../utils/env';
+import { MailProvider, SendEmailArgs } from '../mailer.js';
+import { SES_ID, SES_SECRET, SES_REGION } from '../../utils/env.js';
 
 /**
  * SESProvider is a wrapper around nodemailer that provides a clean interface

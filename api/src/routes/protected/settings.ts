@@ -3,14 +3,12 @@ import type { FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate';
-import * as schemas from '../../schemas';
-import { createAuthToken, isExpired } from '../../utils/tokens';
-import { API_LOCATION } from '../../utils/env';
-import { getRedirectParams } from '../../utils/redirection';
-import { isRestricted } from '../helpers/is-restricted';
-
-const { isEmail } = validator;
+import { isValidUsername } from '../../../../shared/utils/validate.js';
+import * as schemas from '../../schemas.js';
+import { createAuthToken, isExpired } from '../../utils/tokens.js';
+import { API_LOCATION } from '../../utils/env.js';
+import { getRedirectParams } from '../../utils/redirection.js';
+import { isRestricted } from '../helpers/is-restricted.js';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -774,7 +772,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
-      if (!isEmail(email)) {
+      if (!validator.default.isEmail(email)) {
         logger.warn(`Invalid email ${email}`);
         return reply.redirectWithMessage(origin, redirectMessage);
       }

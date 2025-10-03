@@ -1,10 +1,13 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
-import { Alert, Spacer, Container, Row, Col, Callout } from '@freecodecamp/ui';
+import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import {
+  archivedSuperBlocks,
+  SuperBlocks
+} from '../../../../../shared-dist/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
@@ -12,6 +15,7 @@ import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
 import { CompletedChallenge } from '../../../redux/prop-types';
 import { completedChallengesSelector } from '../../../redux/selectors';
+import ArchivedWarning from '../../../components/archived-warning';
 
 interface SuperBlockIntroQueryData {
   challengeNode: {
@@ -20,7 +24,7 @@ interface SuperBlockIntroQueryData {
         slug: string;
       };
     };
-  };
+  } | null;
 }
 
 type ReduxProps = ConnectedProps<typeof connector>;
@@ -55,14 +59,16 @@ export const ConditionalDonationAlert = ({
   const unfinishedCertifications = [
     SuperBlocks.A2English,
     SuperBlocks.B1English,
+    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
+    SuperBlocks.A1Chinese,
     SuperBlocks.FullStackDeveloper
   ];
 
   if (!isDonating && betaCertifications.includes(superBlock))
     return (
-      <Alert variant='info' className='annual-donation-alert'>
+      <Callout variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
         <hr />
         <p className='btn-container'>
@@ -76,12 +82,12 @@ export const ConditionalDonationAlert = ({
             {t('buttons.donate-now')}
           </Link>
         </p>
-      </Alert>
+      </Callout>
     );
 
   if (!isDonating && unfinishedCertifications.includes(superBlock))
     return (
-      <Alert variant='info' className='annual-donation-alert'>
+      <Callout variant='info' className='annual-donation-alert'>
         <p>
           <Trans i18nKey='donate.consider-donating-2'>
             <Link className='inline' to='/donate'>
@@ -89,7 +95,7 @@ export const ConditionalDonationAlert = ({
             </Link>
           </Trans>
         </p>
-      </Alert>
+      </Callout>
     );
 
   return null;
@@ -113,13 +119,7 @@ function SuperBlockIntro({
     note: string;
   };
 
-  const {
-    challengeNode: {
-      challenge: {
-        fields: { slug: firstChallengeSlug }
-      }
-    }
-  } = useStaticQuery<SuperBlockIntroQueryData>(graphql`
+  const { challengeNode } = useStaticQuery<SuperBlockIntroQueryData>(graphql`
     query SuperBlockIntroQuery {
       challengeNode(
         challenge: {
@@ -137,6 +137,7 @@ function SuperBlockIntro({
     }
   `);
 
+  const firstChallengeSlug = challengeNode?.challenge?.fields?.slug || '';
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
@@ -145,6 +146,8 @@ function SuperBlockIntro({
 
   const introTopA = (
     <>
+      {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
+      <Spacer size='s' />
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>

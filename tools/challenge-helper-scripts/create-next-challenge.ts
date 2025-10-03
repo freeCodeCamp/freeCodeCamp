@@ -22,7 +22,7 @@ const createNextChallenge = async () => {
     id: challengeId.toString(),
     title: options.title
   });
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void createNextChallenge();

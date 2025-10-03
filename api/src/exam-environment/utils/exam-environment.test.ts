@@ -1,11 +1,17 @@
-import { ExamEnvironmentAnswer } from '@prisma/client';
+import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
+import {
+  ExamEnvironmentAnswer,
+  ExamEnvironmentQuestionType
+} from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
 import {
   exam,
   examAttempt,
-  generatedExam
-} from '../../../__mocks__/exam-environment-exam';
-import * as schemas from '../schemas';
+  generatedExam,
+  oid
+} from '../../../__mocks__/exam-environment-exam.js';
+import * as schemas from '../schemas/index.js';
+import { setupServer } from '../../../vitest.utils.js';
 import {
   checkAttemptAgainstGeneratedExam,
   checkPrerequisites,
@@ -15,7 +21,7 @@ import {
   validateAttempt,
   compareAnswers,
   shuffleArray
-} from './exam-environment';
+} from './exam-environment.js';
 
 // NOTE: Whilst the tests could be run against a single generation of exam,
 //       it is more useful to run the tests against a new generation each time.
@@ -23,9 +29,9 @@ import {
 //       generate a valid exam.
 //       Another option is to call `generateExam` hundreds of times in a loop test :shrug:
 describe('Exam Environment mocked Math.random', () => {
-  let spy: jest.SpyInstance;
+  let spy: ReturnType<typeof vi.spyOn>;
   beforeAll(() => {
-    spy = jest.spyOn(Math, 'random').mockReturnValue(0.123456789);
+    spy = vi.spyOn(Math, 'random').mockReturnValue(0.123456789);
   });
   afterAll(() => {
     spy.mockRestore();
@@ -91,7 +97,7 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('generateExam()', () => {
     it('should generate a randomized exam without throwing', () => {
-      const _randomizedExam = generateExam(exam);
+      expect(() => generateExam(exam)).not.toThrow();
     });
 
     it('should generate an exam matching with the correct number of question sets', () => {
@@ -193,7 +199,9 @@ describe('Exam Environment mocked Math.random', () => {
 
   describe('validateAttempt()', () => {
     it('should validate a correct attempt', () => {
-      validateAttempt(generatedExam, examAttempt.questionSets);
+      expect(() =>
+        validateAttempt(generatedExam, examAttempt.questionSets)
+      ).not.toThrow();
     });
 
     it('should invalidate an incorrect attempt', () => {
@@ -231,7 +239,7 @@ describe('Exam Environment mocked Math.random', () => {
       const allQuestions = databaseAttemptQuestionSets.flatMap(
         qs => qs.questions
       );
-      expect(allQuestions.every(q => q.submissionTimeInMS)).toBe(true);
+      expect(allQuestions.every(q => q.submissionTime)).toBe(true);
     });
 
     it('should not change the submission time of any questions that have not changed', () => {
@@ -256,7 +264,7 @@ describe('Exam Environment mocked Math.random', () => {
         userAttemptToDatabaseAttemptQuestionSets(userAttempt, latestAttempt);
 
       const submissionTimes = databaseAttemptQuestionSets.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       const sameAttempt = userAttemptToDatabaseAttemptQuestionSets(
@@ -265,7 +273,7 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       const sameSubmissionTimes = sameAttempt.flatMap(qs =>
-        qs.questions.map(q => q.submissionTimeInMS)
+        qs.questions.map(q => q.submissionTime)
       );
 
       expect(submissionTimes).toEqual(sameSubmissionTimes);
@@ -306,9 +314,9 @@ describe('Exam Environment mocked Math.random', () => {
       );
 
       expect(
-        newAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        newAttemptQuestionSets[0]?.questions[0]?.submissionTime
       ).not.toEqual(
-        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTimeInMS
+        databaseAttemptQuestionSets[0]?.questions[0]?.submissionTime
       );
     });
   });
@@ -405,6 +413,131 @@ describe('Exam Environment', () => {
       shuffleArray(unshuff);
 
       expect(unshuff).toEqual(unshuff);
+    });
+  });
+});
+
+describe('Exam Environment Schema', () => {
+  setupServer();
+  describe('ExamEnvironmentExam', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExam.deleteMany({});
+    });
+
+    // eslint-disable-next-line vitest/expect-expect
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      const configQuestionSets = [
+        {
+          numberOfCorrectAnswers: 0,
+          numberOfIncorrectAnswers: 0,
+          numberOfQuestions: 0,
+          numberOfSet: 0,
+          type: ExamEnvironmentQuestionType.MultipleChoice
+        }
+      ];
+      const tags = [
+        {
+          group: [''],
+          numberOfQuestions: 0
+        }
+      ];
+      const config = {
+        name: '',
+        note: '',
+        passingPercent: 0.0,
+        questionSets: configQuestionSets,
+        retakeTimeInMS: 0,
+        retakeTimeInS: 0,
+        tags,
+        totalTimeInMS: 0,
+        totalTimeInS: 0
+      };
+
+      const questions = [
+        {
+          answers: [
+            {
+              id: oid(),
+              isCorrect: false,
+              text: ''
+            }
+          ],
+          audio: { captions: '', url: '' },
+          deprecated: false,
+          id: oid(),
+          tags: [''],
+          text: ''
+        }
+      ];
+      const questionSets = [
+        {
+          context: '',
+          id: oid(),
+          questions,
+          type: ExamEnvironmentQuestionType.MultipleChoice
+        }
+      ];
+      const data = {
+        config,
+        deprecated: false,
+        prerequisites: [oid()],
+        questionSets
+      };
+
+      await fastifyTestInstance.prisma.examEnvironmentExam.create({
+        data
+      });
+    });
+  });
+  describe('ExamEnvironmentGeneratedExam', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.deleteMany(
+        {}
+      );
+    });
+    // eslint-disable-next-line vitest/expect-expect
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
+        data: {
+          deprecated: false,
+          examId: oid(),
+          questionSets: [
+            { id: oid(), questions: [{ answers: [oid()], id: oid() }] }
+          ]
+        }
+      });
+    });
+  });
+  describe('ExamEnvironmentExamAttempt', () => {
+    afterAll(async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany(
+        {}
+      );
+    });
+    // eslint-disable-next-line vitest/expect-expect
+    it("If this test fails and you've deliberately altered the schema, then increment the `version` field by 1", async () => {
+      await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+        data: {
+          examId: oid(),
+          generatedExamId: oid(),
+          questionSets: [
+            {
+              id: oid(),
+              questions: [
+                {
+                  answers: [oid()],
+                  id: oid(),
+                  submissionTime: new Date(),
+                  submissionTimeInMS: Date.now()
+                }
+              ]
+            }
+          ],
+          startTimeInMS: Date.now(),
+          startTime: new Date(),
+          userId: oid()
+        }
+      });
     });
   });
 });

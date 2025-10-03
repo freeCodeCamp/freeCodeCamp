@@ -1,5 +1,5 @@
 import React from 'react';
-import { FsdChapters } from '../../../shared/config/chapters';
+import { FsdChapters } from '../../../shared-dist/config/chapters';
 import DatabaseIcon from './icons/database';
 import JavaScriptIcon from './icons/javascript';
 import ReactIcon from './icons/react';

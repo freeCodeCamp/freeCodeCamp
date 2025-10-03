@@ -42,14 +42,9 @@ export const saveChallengeComplete = createAction(
   actionTypes.saveChallengeComplete
 );
 
-export const acceptTerms = createAction(actionTypes.acceptTerms);
-export const acceptTermsComplete = createAction(
-  actionTypes.acceptTermsComplete
-);
-export const acceptTermsError = createAction(actionTypes.acceptTermsError);
-
 export const fetchUser = createAction(actionTypes.fetchUser);
 export const fetchUserComplete = createAction(actionTypes.fetchUserComplete);
+export const fetchUserTimeout = createAction(actionTypes.fetchUserTimeout);
 export const fetchUserError = createAction(actionTypes.fetchUserError);
 
 export const toggleTheme = createAction(actionTypes.toggleTheme);
