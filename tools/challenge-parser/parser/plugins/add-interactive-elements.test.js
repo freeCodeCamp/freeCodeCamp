@@ -121,7 +121,7 @@ describe('add-interactive-editor plugin', () => {
   it('throws if the interactive_editor directive contains non-code nodes', async () => {
     const mockAST = await parseFixture('with-interactive-non-code.md');
     expect(() => plugin(mockAST, file)).toThrow(
-      'The --files-- section should only contain code blocks.'
+      'The :::interactive_editor should only contain code blocks.'
     );
   });
 });
