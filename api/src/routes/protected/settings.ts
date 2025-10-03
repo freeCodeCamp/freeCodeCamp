@@ -53,6 +53,32 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+const commonImageExtensions = [
+  'apng',
+  'avif',
+  'gif',
+  'jpg',
+  'jpeg',
+  'jfif',
+  'pjpeg',
+  'pjp',
+  'png',
+  'svg',
+  'webp'
+];
+
+/**
+ * Validate that a picture URL has a common image extension.
+ *
+ * @param picture The URL to check.
+ * @returns Whether the URL has a common image extension.
+ */
+
+const validateImageExtension = (picture?: string): boolean => {
+  if (!picture) return true;
+  return commonImageExtensions.some(ext => picture.includes(`.${ext}`));
+};
+
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
@@ -482,8 +508,8 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
       const hasProtocol = isPictureWithProtocol(req.body.picture);
-
-      if (!hasProtocol && req.body.picture) {
+      const hasValidExtension = validateImageExtension(req.body.picture);
+      if ((!hasProtocol && req.body.picture) || !hasValidExtension) {
         logger.warn(`Invalid picture URL: ${req.body.picture}`);
         void reply.code(400);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
