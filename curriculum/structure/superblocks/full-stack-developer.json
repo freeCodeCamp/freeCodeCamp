@@ -725,6 +725,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
