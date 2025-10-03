@@ -882,6 +882,66 @@ Happy coding!
         expect(response.statusCode).toEqual(400);
       });
 
+      test('PUT returns 400 if the URL has no image extension', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/avatar'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 if the URL has a non-image extension', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/file.txt'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT accepts an image URL with query string', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/photo.png?size=200&cache=bust'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
+      test('PUT accepts an image URL with a different valid extension (.webp)', async () => {
+        const response = await superPut('/update-my-about').send({
+          about: 'Teacher at freeCodeCamp',
+          name: 'Quincy Larson',
+          location: 'USA',
+          picture: 'https://example.com/avatar.webp'
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+      });
+
       test('PUT with empty strings clears the values in about settings', async () => {
         const initialResponse = await superPut('/update-my-about').send({
           about: 'Teacher at freeCodeCamp',
