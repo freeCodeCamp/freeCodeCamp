@@ -6235,7 +6235,6 @@
       "html-forms-and-tables": "Forms and Tables",
       "html-and-accessibility": "Accessibility",
       "review-html": "HTML Review",
-      "exam-html": "HTML Exam",
       "computer-basics": "Computer Basics",
       "basic-css": "Basic CSS",
       "design-for-developers": "Design",
@@ -6254,7 +6253,6 @@
       "css-grid": "Grid",
       "css-animations": "Animations",
       "review-css": "CSS Review",
-      "exam-css": "CSS Exam",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "blocks": {
