@@ -35,7 +35,8 @@ export enum SuperBlocks {
   SemanticHtml = 'semantic-html',
   DevPlayground = 'dev-playground',
   FullStackOpen = 'full-stack-open',
-  RespWebDesignV9 = 'responsive-web-design-v9'
+  RespWebDesignV9 = 'responsive-web-design-v9',
+  JsV9 = 'javascript-v9'
 }
 
 export const languageSuperBlocks = [
@@ -122,6 +123,7 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.FullStackOpen,
     SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -134,6 +136,8 @@ export const superBlockStages: StageMap = {
 };
 
 Object.freeze(superBlockStages);
+
+export const archivedSuperBlocks = superBlockStages[SuperBlockStage.Legacy];
 
 export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
 
@@ -165,7 +169,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -182,7 +187,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -199,7 +205,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -216,7 +223,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -231,7 +239,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -245,7 +254,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -260,7 +270,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -284,7 +295,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -315,7 +327,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -347,7 +360,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.BasicHtml,
     SuperBlocks.SemanticHtml,
     SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9
   ]
 };
 
@@ -357,7 +371,8 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FullStackDeveloper,
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,
-  SuperBlocks.RespWebDesignV9
+  SuperBlocks.RespWebDesignV9,
+  SuperBlocks.JsV9
 ];
 Object.freeze(chapterBasedSuperBlocks);
 

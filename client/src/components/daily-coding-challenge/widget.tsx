@@ -34,7 +34,7 @@ function DailyCodingChallengeWidget({
         >
           <div className='daily-coding-challenge-button'>
             <DailyCodingChallengeIcon className='map-icon' />
-            {t(`buttons.start`)}
+            {t(`buttons.go-to-dcc-today`)}
           </div>
           {forLanding && <LinkButton />}
         </ButtonLink>
@@ -51,7 +51,7 @@ function DailyCodingChallengeWidget({
             >
               <div className='daily-coding-challenge-button'>
                 <CalendarIcon className='map-icon' />
-                {t(`buttons.go-to-archive`)}
+                {t(`buttons.go-to-dcc-archive`)}
               </div>
             </ButtonLink>
           </>
