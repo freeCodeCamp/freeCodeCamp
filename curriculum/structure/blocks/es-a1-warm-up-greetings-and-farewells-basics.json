@@ -2,9 +2,9 @@
   "name": "Greetings and Farewells Basics",
   "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
   "isUpcomingChange": true,
-  "blockType": "warm-up",
   "blockLayout": "dialogue-grid",
   "helpCategory": "English",
+  "blockType": "workshop",
   "challengeOrder": [
     {
       "id": "68bb001c22f3bcbd1fdf38fa",

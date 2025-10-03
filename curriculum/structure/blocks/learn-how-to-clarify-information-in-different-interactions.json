@@ -389,5 +389,6 @@
     }
   ],
   "helpCategory": "English",
+  "blockType": "workshop",
   "blockLayout": "dialogue-grid"
 }
