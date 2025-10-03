@@ -35,6 +35,27 @@ Once you've earned a certification, you will always have it. You will always be 
 
 The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
+
+## Quick Start
+
+Follow these steps to run this project locally:
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/harshit-2705/freeCodeCamp.git
+cd freeCodeCamp
+2. Install dependencies
+npm install
+3. Start the development server
+npm start
+4. Open the app
+Visit http://localhost:3000 in your browser to see the project running.
+5. Contributing
+We welcome contributions! Please check CONTRIBUTING.md for guidelines.
+6. Support
+If you run into issues, open a GitHub issue or join our Discord server for help.
+
+
 Here are our twelve core certifications:
 
 #### 1. [Responsive Web Design Certification](https://www.freecodecamp.org/learn/2022/responsive-web-design/)
