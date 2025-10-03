@@ -21,6 +21,7 @@
 
 .fcc_search_wrapper {
   position: relative;
+
 }
 
 .ais-SearchBox-loadingIndicator {
@@ -35,6 +36,8 @@
   grid-template-areas: 'submit input reset';
   grid-template-columns: 26px auto 36px;
   margin-bottom: 0;
+  border-radius: 25px; 
+  overflow: hidden; 
 }
 
 .ais-SearchBox-input {
@@ -44,6 +47,8 @@
   font-size: 18px;
   display: inline-block;
   height: var(--header-element-size);
+  border-radius: 12px;
+
 }
 
 .ais-SearchBox-submit,
@@ -58,13 +63,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 2px;
 }
 
 .ais-SearchBox-reset {
   grid-area: reset;
-  display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 2px;
 }
 
 .ais-SearchBox-form button:hover {
