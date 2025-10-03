@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Common Array Methods
 
-In these lecture videos, you will learn about common array methods.
+In these lessons, you will learn about common array methods.
