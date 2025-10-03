@@ -4714,8 +4714,10 @@
         ]
       },
       "workshop-breadth-first-search": {
-        "title": "Build a Breadth First Search",
-        "intro": [""]
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
       },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
@@ -4723,10 +4725,7 @@
           "In this lab, you will implement the Depth-First Search Algorithm."
         ]
       },
-      "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-n-queens-problem": { "title": "", "intro": [""] },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
