@@ -653,7 +653,7 @@
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
     "block-type": {
-      "lecture": "Aula",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",

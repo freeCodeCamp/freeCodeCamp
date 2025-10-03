@@ -162,7 +162,6 @@ const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   challengeType: Joi.number().min(0).max(31).required(),
-  checksum: Joi.number(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -183,24 +182,6 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
-  // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
-  nodules: Joi.array().items(
-    Joi.object().keys({
-      type: Joi.valid('paragraph', 'interactiveEditor').required(),
-      data: Joi.when('type', {
-        is: ['interactiveEditor'],
-        then: Joi.array().items(
-          Joi.object().keys({
-            ext: Joi.string().required(),
-            name: Joi.string().required(),
-            contents: Joi.string().required()
-          })
-        ),
-        otherwise: Joi.string().required()
-      })
-    })
-  ),
-  guideUrl: Joi.string().uri({ scheme: 'https' }),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
@@ -234,7 +215,6 @@ const schema = Joi.object().keys({
     otherwise: Joi.string().allow('')
   }),
   isComingSoon: Joi.bool(),
-  isLocked: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),

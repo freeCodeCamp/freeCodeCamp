@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert, Spacer } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 
 import {
   AllChallengeNode,
@@ -36,7 +36,7 @@ function MissingPrerequisites({
     });
 
   return (
-    <Alert variant='danger'>
+    <Callout variant='danger'>
       <p>{t('learn.exam.not-qualified')}</p>
       <Spacer size='xs' />
       <ul>
@@ -50,7 +50,7 @@ function MissingPrerequisites({
           )
         )}
       </ul>
-    </Alert>
+    </Callout>
   );
 }
 

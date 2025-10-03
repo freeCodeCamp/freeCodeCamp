@@ -133,6 +133,8 @@ export const superBlockStages: StageMap = {
 
 Object.freeze(superBlockStages);
 
+export const archivedSuperBlocks = superBlockStages[SuperBlockStage.Legacy];
+
 export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
 
 type NotAuditedSuperBlocks = {

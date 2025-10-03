@@ -201,7 +201,6 @@ export type ChallengeNode = {
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;

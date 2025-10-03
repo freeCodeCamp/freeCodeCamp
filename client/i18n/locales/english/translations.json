@@ -214,6 +214,7 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -662,6 +663,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
