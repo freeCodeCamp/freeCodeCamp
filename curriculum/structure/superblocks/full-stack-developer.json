@@ -777,6 +777,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
