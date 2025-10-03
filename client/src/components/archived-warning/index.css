@@ -1,0 +1,8 @@
+.archived-warning {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
+.archived-warning strong {
+  color: var(--blue-dark);
+}
