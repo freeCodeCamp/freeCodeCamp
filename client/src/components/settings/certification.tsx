@@ -373,7 +373,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
   return (
     <section className='certification-settings'>
-      <SectionHeader dataPlaywrightTestLabel='main-certifications-heading'>
+      <SectionHeader dataPlaywrightTestLabel='certifications-header'>
         {t('settings.headings.certs')}
       </SectionHeader>
       {currentCertifications.map(cert => (

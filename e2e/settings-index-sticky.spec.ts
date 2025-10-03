@@ -18,7 +18,7 @@ test.describe('Settings Page - Sticky Index Widget', () => {
   test('index widget should have sticky positioning CSS properties', async ({
     page
   }) => {
-    const indexElement = page.locator('.index');
+    const indexElement = page.locator('.certification-index');
     await expect(indexElement).toBeVisible();
 
     const position = await indexElement.evaluate(el =>
@@ -37,7 +37,7 @@ test.describe('Settings Page - Sticky Index Widget', () => {
   test('index widget should remain visible when scrolling down', async ({
     page
   }) => {
-    const indexElement = page.locator('.index');
+    const indexElement = page.locator('.certification-index');
     const initialBoundingBox = await indexElement.boundingBox();
 
     if (!initialBoundingBox) {
@@ -63,14 +63,16 @@ test.describe('Settings Page - Sticky Index Widget', () => {
     const isVisible = await indexElement.isVisible();
     expect(isVisible).toBe(true);
 
-    const certTitles = page.locator('.index h2:has-text("Certifications")');
+    const certTitles = page.getByTestId('certifications-header');
     await expect(certTitles).toBeVisible();
   });
 
   test('index widget should allow navigation to certification sections', async ({
     page
   }) => {
-    const firstCertLink = page.locator('.index button.cert-anchor-btn').first();
+    const firstCertLink = page
+      .locator('.certification-index a.cert-anchor-btn')
+      .first();
     const certName = await firstCertLink.textContent();
     await firstCertLink.click();
     await page.waitForTimeout(500);
