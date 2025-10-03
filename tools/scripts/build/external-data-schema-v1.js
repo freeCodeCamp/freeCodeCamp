@@ -1,4 +1,7 @@
 const Joi = require('joi');
+const {
+  chapterBasedSuperBlocks
+} = require('../../../shared-dist/config/curriculum');
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
@@ -40,9 +43,12 @@ const blockSchema = Joi.object({}).keys({
         'lab',
         'review',
         'quiz',
-        'exam'
+        'exam',
+        'warm-up',
+        'learn',
+        'practice'
       ).when('superBlock', {
-        is: 'full-stack-developer',
+        is: chapterBasedSuperBlocks,
         then: Joi.required(),
         otherwise: Joi.optional()
       }),
