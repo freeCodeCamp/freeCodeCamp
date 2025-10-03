@@ -6224,7 +6224,11 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Responsive Web Design Certification exam."
     ],
-    "chapters": { "html": "HTML", "css": "CSS" },
+    "chapters": {
+      "html": "HTML",
+      "css": "CSS",
+      "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+    },
     "modules": {
       "basic-html": "Basic HTML",
       "semantic-html": "Semantic HTML",

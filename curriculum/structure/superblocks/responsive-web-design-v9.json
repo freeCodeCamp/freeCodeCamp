@@ -261,11 +261,16 @@
           "moduleType": "review",
           "dashedName": "review-css",
           "blocks": ["review-css"]
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "responsive-web-design-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
           "dashedName": "responsive-web-design-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-responsive-web-design-certification"]
         }
       ]
