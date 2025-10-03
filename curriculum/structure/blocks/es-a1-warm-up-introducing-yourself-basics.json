@@ -7,7 +7,10 @@
   "challengeOrder": [
     { "id": "68deada768199f7410bda165", "title": "Task 1" },
     { "id": "68dec33d726ba397789a62ec", "title": "Task 2" },
-    { "id": "68dec93b79d995a4449c63a4", "title": "Task 3" }
+    { "id": "68dec93b79d995a4449c63a4", "title": "Task 3" },
+    { "id": "68df28fd4c9350f60d677e77", "title": "Task 4" },
+    { "id": "68df2d0bfdc47c0438a86747", "title": "Task 5" },
+    { "id": "68df2eb089231308d5addb91", "title": "Task 6" }
   ],
   "blockType": "warm-up"
 }
