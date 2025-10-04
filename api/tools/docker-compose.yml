@@ -7,7 +7,7 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - db-data:/data
+      - db-data:/data/db
     healthcheck:
       test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 2s
@@ -31,3 +31,4 @@ services:
 
 volumes:
   db-data:
+    driver: local
