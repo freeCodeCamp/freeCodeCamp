@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { ButtonLink } from '../components/helpers';
-import { catalog } from '../../../shared/config/catalog';
+import { catalog } from '../../../shared-dist/config/catalog';
 import { showUpcomingChanges } from '../../config/env.json';
 import FourOhFour from '../components/FourOhFour';
 
@@ -33,8 +33,8 @@ const CatalogPage = () => {
                 <div className='catalog-item-top'>
                   <h2>{title}</h2>
                   <hr />
-                  {summary.map(text => (
-                    <p key='text'>{text}</p>
+                  {summary.map((text, i) => (
+                    <p key={i}>{text}</p>
                   ))}
                 </div>
                 <div className='catalog-item-bottom'>

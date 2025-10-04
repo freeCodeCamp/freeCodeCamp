@@ -1,9 +1,9 @@
 ---
-title: Introduction to Introduction to TypeScript
+title: Introduction to TypeScript
 block: lecture-introduction-to-typescript
 superBlock: full-stack-developer
 ---
 
-## Introduction to Introduction to TypeScript
+## Introduction to TypeScript
 
-Learn about Introduction to TypeScript in these lectures.
+In these lessons, you will learn what TypeScript is and how to use it.

@@ -1,6 +1,6 @@
 import { describe, test, expect, beforeAll, afterAll, vi } from 'vitest';
 import Fastify, { FastifyInstance, LogLevel } from 'fastify';
-import cors from './cors';
+import cors from './cors.js';
 
 const NON_DEBUG_LOG_LEVELS: LogLevel[] = [
   'fatal',

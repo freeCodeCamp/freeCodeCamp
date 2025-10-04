@@ -3,15 +3,23 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 // TODO: source the superblock structure via a GQL query, rather than directly
 // from the curriculum
-import superBlockStructure from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
+import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
+import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
+import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
+import javascriptV9 from '../../../../../curriculum/structure/superblocks/javascript-v9.json';
+
 import { ChapterIcon } from '../../../assets/chapter-icon';
-import { BlockLayouts, BlockTypes } from '../../../../../shared/config/blocks';
-import { FsdChapters } from '../../../../../shared/config/chapters';
-import { type Module } from '../../../../../shared/config/modules';
+import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import {
+  BlockLayouts,
+  BlockTypes
+} from '../../../../../shared-dist/config/blocks';
+import { FsdChapters } from '../../../../../shared-dist/config/chapters';
+import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
@@ -57,44 +65,6 @@ interface SuperBlockAccordionProps {
   chosenBlock: string;
   completedChallengeIds: string[];
 }
-
-const modules = superBlockStructure.chapters.flatMap<Module>(
-  ({ modules }) => modules
-);
-const chapters = superBlockStructure.chapters;
-
-const isLinkModule = (name: string) => {
-  const module = modules.find(module => module.dashedName === name);
-
-  return module?.moduleType === 'review';
-};
-
-const getBlockToChapterMap = () => {
-  const blockToChapterMap = new Map<string, string>();
-  chapters.forEach(chapter => {
-    chapter.modules.forEach(module => {
-      module.blocks.forEach(block => {
-        blockToChapterMap.set(block, chapter.dashedName);
-      });
-    });
-  });
-
-  return blockToChapterMap;
-};
-
-const getBlockToModuleMap = () => {
-  const blockToModuleMap = new Map<string, string>();
-  modules.forEach(module => {
-    module.blocks.forEach(block => {
-      blockToModuleMap.set(block, module.dashedName);
-    });
-  });
-
-  return blockToModuleMap;
-};
-
-const blockToChapterMap = getBlockToChapterMap();
-const blockToModuleMap = getBlockToModuleMap();
 
 const Chapter = ({
   dashedName,
@@ -210,8 +180,65 @@ export const SuperBlockAccordion = ({
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
+  function getSuperblockStructure(superBlock: SuperBlocks): {
+    chapters: Chapter[];
+  } {
+    switch (superBlock) {
+      case SuperBlocks.FullStackOpen:
+        return fullStackOpen;
+      case SuperBlocks.FullStackDeveloper:
+        return fullStackCert;
+      case SuperBlocks.A1Spanish:
+        return a1Spanish;
+      case SuperBlocks.JsV9:
+        return javascriptV9;
+      default:
+        throw new Error("The SuperBlock structure hasn't been imported.");
+    }
+  }
+
+  const superBlockStructure = getSuperblockStructure(superBlock);
+
+  const modules = superBlockStructure.chapters.flatMap<Module>(
+    ({ modules }) => modules
+  );
+
+  const isLinkModule = (name: string) => {
+    const module = modules.find(module => module.dashedName === name);
+
+    return module?.moduleType === 'review';
+  };
+
+  const getBlockToChapterMap = () => {
+    const blockToChapterMap = new Map<string, string>();
+    superBlockStructure.chapters.forEach(chapter => {
+      chapter.modules.forEach(module => {
+        module.blocks.forEach(block => {
+          blockToChapterMap.set(block, chapter.dashedName);
+        });
+      });
+    });
+
+    return blockToChapterMap;
+  };
+
+  const getBlockToModuleMap = () => {
+    const blockToModuleMap = new Map<string, string>();
+    modules.forEach(module => {
+      module.blocks.forEach(block => {
+        blockToModuleMap.set(block, module.dashedName);
+      });
+    });
+
+    return blockToModuleMap;
+  };
+
+  const blockToChapterMap = getBlockToChapterMap();
+  const blockToModuleMap = getBlockToModuleMap();
+
   const { t } = useTranslation();
   const { allChapters } = useMemo(() => {
+    const chapters = superBlockStructure.chapters;
     const populateBlocks = (blocks: string[]) =>
       blocks.map(block => {
         const blockChallenges = challenges.filter(
@@ -237,7 +264,7 @@ export const SuperBlockAccordion = ({
     }));
 
     return { allChapters };
-  }, [challenges]);
+  }, [challenges, superBlockStructure.chapters]);
 
   // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = blockToChapterMap.get(chosenBlock);
@@ -263,7 +290,9 @@ export const SuperBlockAccordion = ({
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
-            isExpanded={expandedChapter === chapter.name}
+            isExpanded={
+              expandedChapter === chapter.name || allChapters.length === 1
+            }
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}

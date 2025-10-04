@@ -1,5 +1,6 @@
-const { isPoly } = require('../shared/utils/polyvinyl');
-const {
+import { describe, test, expect, vi } from 'vitest';
+import { isPoly } from '../shared-dist/utils/polyvinyl.js';
+import {
   validateChallenges,
   buildBlock,
   transformSuperBlock,
@@ -7,7 +8,7 @@ const {
   fixChallengeProperties,
   SuperblockCreator,
   finalizeChallenge
-} = require('./build-superblock');
+} from './build-superblock.js';
 
 const dummyFullStackSuperBlock = {
   chapters: [
@@ -297,7 +298,7 @@ describe('buildSuperblock pure functions', () => {
     });
 
     test('should log errors for duplicate titles in meta if shouldThrow is false', () => {
-      jest.spyOn(console, 'error');
+      vi.spyOn(console, 'error');
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 2' }
@@ -401,7 +402,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('finalizeChallenge', () => {
-    it('should add meta properties', async () => {
+    test('should add meta properties', async () => {
       const challenge = finalizeChallenge(
         {
           id: '1'
@@ -548,7 +549,7 @@ describe('buildSuperblock pure functions', () => {
 describe('SuperblockCreator class', () => {
   describe('processSuperblock', () => {
     test('should process blocks using the provided processing function', async () => {
-      const mockProcessBlockFn = jest
+      const mockProcessBlockFn = vi
         .fn()
         .mockResolvedValueOnce('Block 1')
         .mockResolvedValueOnce('Block 2')

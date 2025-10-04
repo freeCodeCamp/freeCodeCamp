@@ -16,10 +16,10 @@ import {
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
-import { omit } from 'lodash';
-import * as schemas from '../schemas';
-import { mapErr } from '../../utils';
-import { ERRORS } from './errors';
+import { omit } from 'lodash-es';
+import * as schemas from '../schemas/index.js';
+import { mapErr } from '../../utils/index.js';
+import { ERRORS } from './errors.js';
 
 interface CompletedChallengeId {
   completedChallenges: {
@@ -112,9 +112,11 @@ export function constructUserExam(
 
   const config = {
     totalTimeInMS: exam.config.totalTimeInMS,
+    totalTimeInS: exam.config.totalTimeInS,
     name: exam.config.name,
     note: exam.config.note,
     retakeTimeInMS: exam.config.retakeTimeInMS,
+    retakeTimeInS: exam.config.retakeTimeInS,
     passingPercent: exam.config.passingPercent
   };
 
@@ -241,7 +243,11 @@ export function userAttemptToDatabaseAttemptQuestionSets(
       databaseAttemptQuestionSets.push({
         ...questionSet,
         questions: questionSet.questions.map(q => {
-          return { ...q, submissionTimeInMS: Date.now() };
+          return {
+            ...q,
+            submissionTime: new Date(),
+            submissionTimeInMS: Date.now()
+          };
         })
       });
     } else {
@@ -254,14 +260,22 @@ export function userAttemptToDatabaseAttemptQuestionSets(
 
           // If no latest question, add submission time
           if (!latestQuestion) {
-            return { ...q, submissionTimeInMS: Date.now() };
+            return {
+              ...q,
+              submissionTime: new Date(),
+              submissionTimeInMS: Date.now()
+            };
           }
 
           // If answers have changed, add submission time
           if (
             JSON.stringify(q.answers) !== JSON.stringify(latestQuestion.answers)
           ) {
-            return { ...q, submissionTimeInMS: Date.now() };
+            return {
+              ...q,
+              submissionTime: new Date(),
+              submissionTimeInMS: Date.now()
+            };
           }
 
           return latestQuestion;
@@ -302,6 +316,10 @@ export function generateExam(
       questions: shuffledQuestions
     };
   });
+
+  if (examCopy.config.questionSets.length === 0) {
+    throw `${examCopy.id}: Invalid exam config - no question sets config.`;
+  }
 
   // Convert question set config by type: [[all question sets of type], [another type], ...]
   const typeConvertedQuestionSetsConfig = examCopy.config.questionSets.reduce(
@@ -806,8 +824,13 @@ export async function constructEnvExamAttempt(
   }
 
   // If attempt is still in progress, return without result
+  const attemptStartTimeInMS =
+    attempt.startTime?.getTime() ?? attempt.startTimeInMS;
+  const examTotalTimeInMS = exam.config.totalTimeInS
+    ? exam.config.totalTimeInS * 1000
+    : exam.config.totalTimeInMS;
   const isAttemptExpired =
-    attempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+    attemptStartTimeInMS + examTotalTimeInMS < Date.now();
   if (!isAttemptExpired) {
     return {
       examEnvironmentExamAttempt: {

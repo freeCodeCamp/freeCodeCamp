@@ -51,7 +51,6 @@ assert(
 Clicking the `button` element should run the `handleClick` method and set the state `text` to `You clicked!`.
 
 ```js
-async () => {
   const waitForIt = (fn) =>
     new Promise((resolve, reject) => setTimeout(() => resolve(fn()), 250));
   const mockedComponent = Enzyme.mount(React.createElement(MyComponent));
@@ -66,7 +65,6 @@ async () => {
   const firstValue = await first();
   const secondValue = await second();
   assert(firstValue === 'Hello' && secondValue === 'You clicked!');
-};
 ```
 
 # --seed--
