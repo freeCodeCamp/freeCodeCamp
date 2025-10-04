@@ -27,49 +27,43 @@ Choose the minimum range (3rd parameter) to make the test always pass. It should
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=9');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct range for the first assertion - `approximately(actual, expected, range)`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'approximately');
-      assert.equal(
-        data.assertions[0].args[2],
-        0.5,
-        "weirdNumbers(0.5) is in the range (0.5, 1.5]. It's within 1 +/- 0.5"
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=9');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[0].method, 'approximately');
+assert.equal(
+  data.assertions[0].args[2],
+  0.5,
+  "weirdNumbers(0.5) is in the range (0.5, 1.5]. It's within 1 +/- 0.5"
+);
 ```
 
 You should choose the correct range for the second assertion - `approximately(actual, expected, range)`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=9').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'approximately');
-      assert.equal(
-        data.assertions[1].args[2],
-        0.8,
-        "weirdNumbers(0.2) is in the range (0.2, 1.2]. It's within 1 +/- 0.8"
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=9');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[1].method, 'approximately');
+assert.equal(
+  data.assertions[1].args[2],
+  0.8,
+  "weirdNumbers(0.2) is in the range (0.2, 1.2]. It's within 1 +/- 0.8"
+);
 ```
 

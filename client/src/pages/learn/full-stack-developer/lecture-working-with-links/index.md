@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Links
 
-Learn about using links in HTML with these lecture videos.
+Learn about using links in HTML with these lessons.

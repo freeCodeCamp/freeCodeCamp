@@ -33,6 +33,7 @@ const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const fullStackDeveloperBase = '/learn/full-stack-developer';
+const jsV9Base = '/learn/javascript-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -810,6 +811,19 @@ const allStandardCerts = [
         title: 'Certified Full Stack Developer Exam',
         link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloper
+      }
+    ]
+  },
+  {
+    id: '68c4069c1ef859270e17c495',
+    title: 'JavaScript',
+    certSlug: Certification.JsV9,
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'JavaScript Certification Exam',
+        link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
+        certSlug: Certification.JsV9
       }
     ]
   },

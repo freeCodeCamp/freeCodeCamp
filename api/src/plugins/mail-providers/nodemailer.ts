@@ -11,8 +11,8 @@ export class NodemailerProvider implements MailProvider {
   private transporter: Transporter;
 
   /**
-   * Sets up nodemailer, with hardcodeded configuration.  This is intended for
-   * use in development.
+   * Sets up nodemailer, with hardcoded configuration. This is intended for
+   * use in development with Mailpit.
    */
   constructor() {
     this.transporter = nodemailer.createTransport({
