@@ -42,8 +42,7 @@ tasks:
   - name: db
     # starting mongod in background, so it doesn't block prebuilds
     before: >
-      cd api/tools &&
-      docker compose up -d
+      docker compose -f docker/docker-compose.yml up -d
 
   - name: server
     before: export COOKIE_DOMAIN=.gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
