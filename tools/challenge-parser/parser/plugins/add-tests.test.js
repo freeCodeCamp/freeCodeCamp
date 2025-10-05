@@ -1,10 +1,17 @@
-const brokenHintsAST = require('../__fixtures__/ast-broken-hints.json');
-const simpleAST = require('../__fixtures__/ast-simple.json');
-const addTests = require('./add-tests');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addTests from './add-tests';
 
 describe('add-tests plugin', () => {
+  let brokenHintsAST, simpleAST, missingTestStringAST;
   const plugin = addTests();
   let file = { data: {} };
+
+  beforeAll(async () => {
+    simpleAST = await parseFixture('simple.md');
+    brokenHintsAST = await parseFixture('with-broken-hints.md');
+    missingTestStringAST = await parseFixture('with-missing-teststring.md');
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -33,8 +40,14 @@ describe('add-tests plugin', () => {
 
   // TODO: make this a bit more robust and informative
   it('should throw if a test pair is out of order', () => {
-    expect.assertions(1);
+    // TODO: update the markdown so it makes this error
     expect(() => plugin(brokenHintsAST, file)).toThrow(
+      'Tests must be in (text, ```testString```) order'
+    );
+  });
+
+  it('should throw if a test string is not found', () => {
+    expect(() => plugin(missingTestStringAST, file)).toThrow(
       'testString (code block) is missing from hint'
     );
   });

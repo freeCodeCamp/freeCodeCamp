@@ -1,13 +1,13 @@
-import { first } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 import React, { useState, useEffect, ReactElement } from 'react';
 import { ReflexContainer, ReflexSplitter, ReflexElement } from 'react-reflex';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
-import { sortChallengeFiles } from '../../../../utils/sort-challengefiles';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import store from 'store';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import {
-  ChallengeFile,
   ChallengeFiles,
+  DailyCodingChallengeLanguages,
   ResizeProps
 } from '../../../redux/prop-types';
 import {
@@ -22,6 +22,8 @@ import {
   isAdvancingToChallengeSelector
 } from '../redux/selectors';
 import PreviewPortal from '../components/preview-portal';
+import Notes from '../components/notes';
+import IndependentLowerJaw from '../components/independent-lower-jaw';
 import ActionRow from './action-row';
 
 type Pane = { flex: number };
@@ -30,12 +32,16 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries: boolean;
-  hasNotes: boolean;
+  hasEditableBoundaries?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
-  isFirstStep: boolean;
+  isDailyCodingChallenge: boolean;
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
+  isFirstStep?: boolean;
   layoutState: {
     codePane: Pane;
     editorPane: Pane;
@@ -44,7 +50,7 @@ interface DesktopLayoutProps {
     previewPane: Pane;
     testsPane: Pane;
   };
-  notes: ReactElement;
+  notes?: string;
   onPreviewResize: () => void;
   preview: ReactElement;
   resizeProps: ResizeProps;
@@ -52,10 +58,12 @@ interface DesktopLayoutProps {
   windowTitle: string;
   showPreviewPortal: boolean;
   showPreviewPane: boolean;
+  startWithConsoleShown: boolean;
   removePortalWindow: () => void;
   setShowPreviewPortal: (arg: boolean) => void;
   setShowPreviewPane: (arg: boolean) => void;
   portalWindow: null | Window;
+  showIndependentLowerJaw: boolean;
 }
 
 const reflexProps = {
@@ -94,12 +102,85 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     removePortalWindow,
     setShowPreviewPane,
     setShowPreviewPortal,
-    portalWindow
+    portalWindow,
+    startWithConsoleShown,
+    showIndependentLowerJaw,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
   } = props;
 
-  const [showNotes, setShowNotes] = useState(false);
-  const [showConsole, setShowConsole] = useState(false);
-  const [showInstructions, setShowInstructions] = useState(true);
+  const initialShowState = (key: string, defaultValue: boolean): boolean => {
+    const savedState: string = store.get('layoutPaneBooleans') as string;
+    try {
+      if (savedState) {
+        const parsedState: Record<string, boolean> = JSON.parse(
+          savedState
+        ) as Record<string, boolean>;
+        return parsedState[key] || defaultValue;
+      }
+    } catch (error) {
+      console.error('Error parsing layoutPaneBooleans from store', error);
+    }
+    return defaultValue;
+  };
+
+  const [showNotes, setShowNotes] = useState(() =>
+    initialShowState('showNotes', false)
+  );
+  const [showConsole, setShowConsole] = useState(() =>
+    initialShowState('showConsole', startWithConsoleShown)
+  );
+  const [showInstructions, setShowInstructions] = useState(() =>
+    initialShowState('showInstructions', true)
+  );
+
+  /* eslint-disable react-hooks/exhaustive-deps */
+  useEffect(() => {
+    setShowPreviewPane(initialShowState('showPreviewPane', false));
+    setShowPreviewPortal(initialShowState('showPreviewPortal', false));
+  }, []);
+
+  useEffect(() => {
+    const layoutPaneBooleans = {
+      showNotes,
+      showConsole,
+      showInstructions,
+      showPreviewPane,
+      showPreviewPortal
+    };
+    store.set('layoutPaneBooleans', JSON.stringify(layoutPaneBooleans));
+  }, [
+    showNotes,
+    showConsole,
+    showInstructions,
+    showPreviewPane,
+    showPreviewPortal
+  ]);
+
+  useEffect(() => {
+    const layoutPaneBooleans: string = store.get(
+      'layoutPaneBooleans'
+    ) as string;
+    if (layoutPaneBooleans) {
+      let parsedLayoutPaneBooleans: Record<string, boolean> = {};
+      try {
+        parsedLayoutPaneBooleans = JSON.parse(layoutPaneBooleans) as Record<
+          string,
+          boolean
+        >;
+      } catch (error) {
+        console.error('Error parsing layoutPaneBooleans from store', error);
+      }
+      setShowNotes(parsedLayoutPaneBooleans.showNotes || false);
+      setShowConsole(
+        parsedLayoutPaneBooleans.showConsole || startWithConsoleShown
+      );
+      setShowInstructions(parsedLayoutPaneBooleans.showInstructions || true);
+      setShowPreviewPane(parsedLayoutPaneBooleans.showPreviewPane || false);
+      setShowPreviewPortal(parsedLayoutPaneBooleans.showPreviewPortal || false);
+    }
+  }, []);
 
   const togglePane = (pane: string): void => {
     if (pane === 'showPreviewPane') {
@@ -133,18 +214,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   };
 
-  const getChallengeFile = () => {
-    const { challengeFiles } = props;
-    return first(sortChallengeFiles(challengeFiles) as ChallengeFile[]);
-  };
-
   const {
+    challengeFiles,
     challengeType,
     resizeProps,
     instructions,
     editor,
     testOutput,
-    hasNotes,
     hasPreview,
     isAdvancing,
     isFirstStep,
@@ -163,23 +239,26 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     } else if (!isAdvancing && !showPreviewPane && !showPreviewPortal) {
       togglePane('showPreviewPane');
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const challengeFile = getChallengeFile();
   const projectBasedChallenge = hasEditableBoundaries;
-  const isMultifileCertProject =
-    challengeType === challengeTypes.multifileCertProject;
+  const areInstructionsDisplayable =
+    !projectBasedChallenge || showIndependentLowerJaw;
+  const isMultifileProject =
+    challengeType === challengeTypes.multifileCertProject ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.jsLab ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengeJs ||
+    challengeType === challengeTypes.dailyChallengePy;
+  const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && hasNotes : false;
-  const displayEditorConsole = !(
-    projectBasedChallenge || isMultifileCertProject
-  )
-    ? true
-    : false;
-  const displayPreviewConsole =
-    (projectBasedChallenge || isMultifileCertProject) && showConsole;
+  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
+  const displayEditorConsole = !isProjectStyle;
+  const displayPreviewConsole = !displayEditorConsole && showConsole;
+
   const {
     codePane,
     editorPane,
@@ -189,12 +268,19 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     testsPane
   } = layoutState;
 
+  const editorPaneFlex =
+    !displayPreviewConsole && !displayPreviewPane ? 1 : editorPane.flex;
+
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
-      {(projectBasedChallenge || isMultifileCertProject) && (
+      {isProjectStyle && (
         <ActionRow
-          hasNotes={hasNotes}
-          isProjectBasedChallenge={projectBasedChallenge}
+          hasPreview={hasPreview}
+          hasNotes={!!notes}
+          areInstructionsDisplayable={areInstructionsDisplayable}
+          isDailyCodingChallenge={isDailyCodingChallenge}
+          dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+          setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
           showConsole={showConsole}
           showNotes={showNotes}
           showInstructions={showInstructions}
@@ -208,31 +294,31 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
         orientation='vertical'
         data-playwright-test-label='main-container'
       >
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexElement
             flex={instructionPane.flex}
             {...resizeProps}
+            name='instructionPane'
             data-playwright-test-label='instruction-pane'
           >
             {instructions}
           </ReflexElement>
         )}
-        {!projectBasedChallenge && showInstructions && (
+        {areInstructionsDisplayable && showInstructions && (
           <ReflexSplitter propagate={true} {...resizeProps} />
         )}
 
         <ReflexElement
-          flex={editorPane.flex}
+          flex={editorPaneFlex}
+          name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
         >
-          {challengeFile && (
-            <ReflexContainer
-              key={challengeFile.fileKey}
-              orientation='horizontal'
-            >
+          {!isEmpty(challengeFiles) && (
+            <ReflexContainer key='codePane' orientation='horizontal'>
               <ReflexElement
-                flex={codePane.flex}
+                name='codePane'
+                {...(displayEditorConsole && { flex: codePane.flex })}
                 {...reflexProps}
                 {...resizeProps}
               >
@@ -252,30 +338,43 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
               )}
             </ReflexContainer>
           )}
+          {showIndependentLowerJaw && <IndependentLowerJaw />}
         </ReflexElement>
         {displayNotes && <ReflexSplitter propagate={true} {...resizeProps} />}
         {displayNotes && (
-          <ReflexElement flex={notesPane.flex} {...resizeProps}>
-            {notes}
+          <ReflexElement
+            name='notesPane'
+            flex={notesPane.flex}
+            {...resizeProps}
+          >
+            <Notes notes={notes} />
           </ReflexElement>
         )}
 
         {(displayPreviewPane || displayPreviewConsole) && (
-          <ReflexSplitter propagate={true} {...resizeProps} />
+          <ReflexSplitter
+            data-playwright-test-label='preview-left-splitter'
+            propagate={true}
+            {...resizeProps}
+          />
         )}
         {(displayPreviewPane || displayPreviewConsole) && (
           <ReflexElement
             flex={previewPane.flex}
+            name='previewPane'
             {...resizeProps}
             data-playwright-test-label='preview-pane'
           >
             <ReflexContainer orientation='horizontal'>
-              {displayPreviewPane && <ReflexElement>{preview}</ReflexElement>}
+              {displayPreviewPane && (
+                <ReflexElement {...reflexProps}>{preview}</ReflexElement>
+              )}
               {displayPreviewPane && displayPreviewConsole && (
                 <ReflexSplitter propagate={true} {...resizeProps} />
               )}
               {displayPreviewConsole && (
                 <ReflexElement
+                  name='testsPane'
                   {...(displayPreviewPane && { flex: testsPane.flex })}
                   {...resizeProps}
                 >

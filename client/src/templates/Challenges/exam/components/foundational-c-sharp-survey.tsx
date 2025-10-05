@@ -1,12 +1,12 @@
-import { Button, Modal } from '@freecodecamp/react-bootstrap';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { Button, Modal, Spacer } from '@freecodecamp/ui';
+
 import { SurveyResults, SurveyResponse } from '../../../../redux/prop-types';
-import { Spacer } from '../../../../components/helpers';
 import { setIsProcessing, submitSurvey } from '../../../../redux/actions';
 import { closeModal } from '../../redux/actions';
 import { isProcessingSelector } from '../../../../redux/selectors';
@@ -130,22 +130,19 @@ function FoundationalCSharpSurvey({
 
   return (
     <>
-      <Modal.Header data-cy='c-sharp-survey-modal' closeButton={true}>
-        <Modal.Title className='text-center'>
-          {t('survey.foundational-c-sharp.title')}
-        </Modal.Title>
+      <Modal.Header closeButtonClassNames='close'>
+        {t('survey.foundational-c-sharp.title')}
       </Modal.Header>
-      <Modal.Body className='reset-modal-body'>
+      <Modal.Body>
         {i18nSurvey.map((question, i) => (
           <div key={i}>
-            <Spacer size='medium' />
+            <Spacer size='m' />
             <div>{question.question}</div>
-            <Spacer size='small' />
+            <Spacer size='xs' />
             <div className='video-quiz-options'>
               {question.options.map((option, j) => (
                 <label className='video-quiz-option-label' key={j}>
                   <input
-                    aria-label={t('aria.answer')}
                     checked={surveyResponses[i].responseIndex === j}
                     className='sr-only'
                     name={question.question}
@@ -165,21 +162,21 @@ function FoundationalCSharpSurvey({
           </div>
         ))}
       </Modal.Body>
-      <Modal.Footer className='reset-modal-footer'>
+      <Modal.Footer>
         <Button
           block={true}
-          bsSize='medium'
-          bsStyle='primary'
-          data-cy='submit-csharp-survey-btn'
+          size='medium'
+          variant='primary'
           disabled={cantSubmitSurvey || isProcessing}
           onClick={createSurveyResults}
         >
           {t('survey.misc.submit')}
         </Button>
+        <Spacer size='xxs' />
         <Button
           block={true}
-          bsSize='medium'
-          bsStyle='primary'
+          size='medium'
+          variant='primary'
           disabled={isProcessing}
           onClick={closeSurveyModal}
         >

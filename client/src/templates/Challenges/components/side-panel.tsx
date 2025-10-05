@@ -1,12 +1,13 @@
-import React, { useEffect, ReactElement } from 'react';
+import React, { ReactElement, ReactNode } from 'react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Test } from '../../../redux/prop-types';
+import { Trans } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
-import { mathJaxScriptLoader } from '../../../utils/script-loaders';
+import { Test } from '../../../redux/prop-types';
 import { challengeTestsSelector } from '../redux/selectors';
+import { openModal } from '../redux/actions';
 import TestSuite from './test-suite';
-import ToolPanel from './tool-panel';
 
 import './side-panel.css';
 
@@ -16,62 +17,36 @@ const mapStateToProps = createSelector(
     tests
   })
 );
-interface SidePanelProps {
-  block: string;
+
+const mapDispatchToProps: {
+  openModal: (modal: string) => void;
+} = {
+  openModal
+};
+
+type StateProps = ReturnType<typeof mapStateToProps>;
+type DispatchProps = typeof mapDispatchToProps;
+
+interface SidePanelProps extends DispatchProps, StateProps {
   challengeDescription: ReactElement;
   challengeTitle: ReactElement;
-  guideUrl: string;
   instructionsPanelRef: React.RefObject<HTMLDivElement>;
-  showToolPanel: boolean;
-  superBlock: string;
+  hasDemo: boolean;
+  toolPanel: ReactNode;
   tests: Test[];
-  videoUrl: string;
+  showIndependentLowerJaw: boolean;
 }
 
 export function SidePanel({
-  block,
   challengeDescription,
   challengeTitle,
-  guideUrl,
   instructionsPanelRef,
-  showToolPanel = false,
-  superBlock,
+  hasDemo,
+  toolPanel,
   tests,
-  videoUrl
+  openModal,
+  showIndependentLowerJaw
 }: SidePanelProps): JSX.Element {
-  useEffect(() => {
-    const MathJax = global.MathJax;
-    const mathJaxMountPoint = document.querySelector('#mathjax');
-    const mathJaxChallenge =
-      block === 'rosetta-code' ||
-      superBlock === 'project-euler' ||
-      block === 'intermediate-algorithm-scripting';
-    if (MathJax) {
-      // Configure MathJax when it's loaded and
-      // users navigate from another challenge
-      MathJax.Hub.Config({
-        tex2jax: {
-          inlineMath: [
-            ['$', '$'],
-            ['\\(', '\\)']
-          ],
-          processEscapes: true,
-          processClass:
-            'rosetta-code|project-euler|intermediate-algorithm-scripting'
-        }
-      });
-      MathJax.Hub.Queue([
-        'Typeset',
-        MathJax.Hub,
-        document.querySelector('.intermediate-algorithm-scripting'),
-        document.querySelector('.rosetta-code'),
-        document.querySelector('.project-euler')
-      ]);
-    } else if (!mathJaxMountPoint && mathJaxChallenge) {
-      mathJaxScriptLoader();
-    }
-  }, [block, superBlock]);
-
   return (
     <div
       className='instructions-panel'
@@ -79,13 +54,35 @@ export function SidePanel({
       tabIndex={-1}
     >
       {challengeTitle}
+      {hasDemo && (
+        <p>
+          <Trans i18nKey='learn.example-app'>
+            <span
+              className='example-app-link'
+              onClick={() => openModal('projectPreview')}
+              role='button'
+              tabIndex={0}
+              onKeyDown={e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  openModal('projectPreview');
+                }
+              }}
+            ></span>
+          </Trans>
+        </p>
+      )}{' '}
       {challengeDescription}
-      {showToolPanel && <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />}
-      <TestSuite tests={tests} />
+      {!showIndependentLowerJaw && (
+        <>
+          <Spacer size='m' />
+          {toolPanel}
+          <TestSuite tests={tests} />
+        </>
+      )}
     </div>
   );
 }
 
 SidePanel.displayName = 'SidePanel';
 
-export default connect(mapStateToProps)(SidePanel);
+export default connect(mapStateToProps, mapDispatchToProps)(SidePanel);

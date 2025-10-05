@@ -1,7 +1,7 @@
 import { isEmpty } from 'lodash-es';
 import { handleActions } from 'redux-actions';
 
-import { getLines } from '../../../../../shared/utils/get-lines';
+import { getLines } from '../../../../../shared-dist/utils/get-lines';
 import { getTargetEditor } from '../utils/get-target-editor';
 import { actionTypes, ns } from './action-types';
 import codeStorageEpic from './code-storage-epic';
@@ -21,8 +21,9 @@ const initialState = {
     superBlock: '',
     block: '',
     blockHashSlug: '/',
+    blockType: '',
     id: '',
-    nextBlock: '',
+    isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
     challengeType: -1
@@ -42,6 +43,8 @@ const initialState = {
     reset: false,
     exitExam: false,
     finishExam: false,
+    exitQuiz: false,
+    finishQuiz: false,
     examResults: false,
     survey: false,
     projectPreview: false,
@@ -80,24 +83,31 @@ export const reducer = handleActions(
     }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
-      challengeFiles: payload,
-      visibleEditors: { [getTargetEditor(payload)]: true }
+      challengeFiles: payload.map(challengeFile => ({
+        ...challengeFile,
+        seed: challengeFile.contents.slice(),
+        editableContents: getLines(
+          challengeFile.contents,
+          challengeFile.editableRegionBoundaries
+        ),
+        editableRegionBoundaries:
+          challengeFile.editableRegionBoundaries?.slice() ?? [],
+        seedEditableRegionBoundaries:
+          challengeFile.editableRegionBoundaries?.slice() ?? []
+      }))
     }),
     [actionTypes.updateFile]: (
       state,
-      { payload: { fileKey, editorValue, editableRegionBoundaries } }
+      { payload: { fileKey, contents, editableRegionBoundaries } }
     ) => {
       const updates = {};
       // if a given part of the payload is null, we leave that part of the state
       // unchanged
       if (editableRegionBoundaries !== null)
         updates.editableRegionBoundaries = editableRegionBoundaries;
-      if (editorValue !== null) updates.contents = editorValue;
-      if (editableRegionBoundaries !== null && editorValue !== null)
-        updates.editableContents = getLines(
-          editorValue,
-          editableRegionBoundaries
-        );
+      if (contents !== null) updates.contents = contents;
+      if (editableRegionBoundaries !== null && contents !== null)
+        updates.editableContents = getLines(contents, editableRegionBoundaries);
       return {
         ...state,
         challengeFiles: state.challengeFiles.map(challengeFile =>
@@ -108,19 +118,18 @@ export const reducer = handleActions(
         isBuildEnabled: true
       };
     },
-    [actionTypes.storedCodeFound]: (state, { payload }) => ({
-      ...state,
-      challengeFiles: payload
-    }),
     [actionTypes.initTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
+    }),
+    [actionTypes.initHooks]: (state, { payload }) => ({
+      ...state,
+      challengeHooks: payload
     }),
     [actionTypes.updateTests]: (state, { payload }) => ({
       ...state,
       challengeTests: payload
     }),
-
     [actionTypes.initConsole]: (state, { payload }) => ({
       ...state,
       consoleOut: payload ? [payload] : []
@@ -143,6 +152,30 @@ export const reducer = handleActions(
         ? state.consoleOut
         : state.consoleOut.concat(payload, state.logsOut)
     }),
+    [actionTypes.initVisibleEditors]: state => {
+      let persistingVisibleEditors = {};
+      const prevVisibleEditorKeys = Object.keys(state.visibleEditors);
+      if (prevVisibleEditorKeys.length > 1) {
+        // Restore states of relevant visible editors for the current challengeFiles
+        persistingVisibleEditors = prevVisibleEditorKeys
+          .filter(editorKey => {
+            return state.challengeFiles.find(
+              challengeFile => challengeFile.fileKey === editorKey
+            );
+          })
+          .reduce((visibleEditors, key) => {
+            visibleEditors[key] = state.visibleEditors[key];
+            return visibleEditors;
+          }, {});
+      }
+      return {
+        ...state,
+        visibleEditors: {
+          ...persistingVisibleEditors,
+          [getTargetEditor(state.challengeFiles)]: true
+        }
+      };
+    },
     [actionTypes.updateChallengeMeta]: (state, { payload }) => ({
       ...state,
       challengeMeta: { ...payload }
@@ -255,7 +288,11 @@ export const reducer = handleActions(
           [payload]: !state.visibleEditors[payload]
         }
       };
-    }
+    },
+    [actionTypes.createQuestion]: (state, { payload }) => ({
+      ...state,
+      description: payload
+    })
   },
   initialState
 );

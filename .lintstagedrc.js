@@ -25,7 +25,7 @@ module.exports = {
       ];
     }
   },
-  '*.!(js|ts|tsx)': files => {
+  '*.!(js|ts|tsx|css)': files => {
     if (completedStages.has('not-js')) return [];
 
     if (files.length > 10) {
@@ -48,6 +48,17 @@ module.exports = {
       return files.map(
         filename => `node ./tools/scripts/lint/index.js '${filename}'`
       );
+    }
+  },
+
+  '*.css': files => {
+    if (completedStages.has('css')) return [];
+
+    if (files.length > 10) {
+      completedStages.add('css');
+      return 'stylelint --fix ./**/*.css';
+    } else {
+      return files.map(filename => `stylelint --fix '${filename}'`);
     }
   }
 };

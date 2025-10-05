@@ -74,6 +74,10 @@
   align-items: center;
 }
 
+.donation-completion-body .complete-button {
+  border-color: var(--green70);
+}
+
 .donation-email-container label {
   display: flex;
   flex-direction: column;
@@ -89,7 +93,10 @@
 }
 
 .donate-input-element {
-  padding-top: 8px;
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
 }
 
 .donation-form .form-control::placeholder {
@@ -259,9 +266,8 @@ li.disabled > a {
   }
 }
 
-.donation-modal .modal-title {
-  text-align: center;
-  font-weight: 600;
+.donation-modal h2 {
+  font-weight: 600 !important;
   font-size: 1.2rem;
 }
 
@@ -273,6 +279,21 @@ li.disabled > a {
 .donation-modal p {
   font-size: 0.9rem;
 }
+
+.donation-modal ul {
+  padding: 0;
+}
+
+.donation-modal li {
+  list-style-type: none;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+.donation-modal li svg {
+  margin: 0 5px;
+}
+
 .donation-label-modal {
   font-weight: normal;
   text-align: center;
@@ -312,11 +333,6 @@ li.disabled > a {
   text-decoration-line: none;
   background-color: var(--quaternary-background);
   color: var(--quaternary-color);
-}
-
-.donation-modal h2 {
-  font-family: var(--font-family-sans-serif);
-  font-size: 1.5rem;
 }
 
 @media (max-width: 500px) {
@@ -388,8 +404,8 @@ li.disabled > a {
     margin: 40px;
   }
 
-  .donation-modal .modal-title {
-    font-weight: 700;
+  .donation-modal h2 {
+    font-weight: 700 !important;
     font-size: 1.5rem;
   }
 }
@@ -438,7 +454,6 @@ button.confirm-donation-btn {
   align-content: center;
   border-radius: 5px;
   background-color: var(--yellow-light);
-  border-color: var(--yellow-light);
   color: black;
   font-weight: bold;
   width: 100%;
@@ -446,13 +461,6 @@ button.confirm-donation-btn {
   border: none;
   display: inline-flex;
   align-items: center;
-}
-button.confirm-donation-btn:focus,
-button.confirm-donation-btn:active,
-button.confirm-donation-btn:active:focus {
-  background-color: var(--quaternary-background);
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
 }
 button.confirm-donation-btn:hover {
   color: black;
@@ -637,13 +645,6 @@ a.patreon-button:hover {
 }
 
 /* donation page */
-
-.donate-supporter-page-section h1,
-.donate-supporter-page-section h2,
-.donate-supporter-page-section h3 {
-  font-family: var(--font-family-sans-serif);
-}
-
 .donate-supporter-page-section h1 {
   font-size: 2.5rem;
 }
@@ -691,6 +692,30 @@ a.patreon-button:hover {
     );
 }
 
+.light-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(0, 51, 133) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(150, 15, 46) 100%
+    ),
+    radial-gradient(circle, rgb(157, 1, 69) 0%, rgb(0, 89, 189) 100%);
+  color: transparent;
+  background-clip: text;
+}
+
+.dark-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(223 243 255) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(circle, rgb(255 139 189) 0%, rgb(187 219 255) 100%);
+  color: transparent;
+  background-clip: text;
+}
+
 .supporters-background {
   background-repeat: repeat;
 }
@@ -735,4 +760,241 @@ a.patreon-button:hover {
 .supporter-badge-container svg {
   height: 6em;
   width: auto;
+}
+
+#supporter-bear {
+  height: 250px;
+}
+
+.donation-animation-container,
+.donation-animation-bullet-points {
+  position: relative;
+  width: 100%;
+}
+
+.donation-animation-bullet-points p {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 200%;
+  padding: 0 20px;
+}
+
+.donation-animation-bullet-1 {
+  animation-name: animation-bullet-1;
+}
+
+.donation-animation-bullet-2 {
+  animation-name: animation-bullet-2;
+}
+
+.donation-animation-bullet-3 {
+  animation-name: animation-bullet-3;
+}
+
+.donation-animation-bullet-4 {
+  animation-name: animation-bullet-4;
+}
+
+.donation-animation-bullet-1,
+.donation-animation-bullet-2,
+.donation-animation-bullet-3,
+.donation-animation-bullet-4 {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  margin-top: 40px;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1 {
+  1% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  2.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  19.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  21% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-2 {
+  21% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  22.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  38.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  40% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3 {
+  40% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  41.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  64% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  65.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4 {
+  65.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  67% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  96% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  97.5% {
+    opacity: 0;
+  }
+}
+
+/* AB testing */
+p.donation-animation-bullet-1-b {
+  animation-name: animation-bullet-1-b;
+  margin-top: 450px;
+  font-size: 2.5rem;
+}
+
+.donation-animation-bullet-2-b {
+  animation-name: animation-bullet-2-b;
+}
+
+.donation-animation-bullet-3-b {
+  animation-name: animation-bullet-3-b;
+}
+
+.donation-animation-bullet-4-b {
+  animation-name: animation-bullet-4-b;
+}
+
+.donation-animation-bullet-1-b,
+.donation-animation-bullet-2-b,
+.donation-animation-bullet-3-b,
+.donation-animation-bullet-4-b {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1-b {
+  1% {
+    opacity: 0;
+  }
+  2.5% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  15.5% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation-bullet-2-b {
+  15.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  16% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  33.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  34% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3-b {
+  34.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  35% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4-b {
+  60.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  61% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85.5% {
+    opacity: 0;
+  }
+}
+/* END AB testing */
+
+.tester-text {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .donation-animation-bullet-points p {
+    font-size: 150%;
+  }
+  #donation-animation {
+    object-fit: cover;
+    min-height: 600px;
+    width: 100%;
+  }
 }

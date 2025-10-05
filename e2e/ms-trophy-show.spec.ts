@@ -3,7 +3,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const verifyTrophyButtonText = translations.buttons['verify-trophy'];
 const askForHelpButtonText = translations.buttons['ask-for-help'];
-
+test.use({ storageState: { cookies: [], origins: [] } });
 test.beforeEach(async ({ page }) => {
   await page.goto(
     '/learn/foundational-c-sharp-with-microsoft/write-your-first-code-using-c-sharp/trophy-write-your-first-code-using-c-sharp'

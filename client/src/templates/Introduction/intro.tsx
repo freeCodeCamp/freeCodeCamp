@@ -1,29 +1,15 @@
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
-import { Container } from '@freecodecamp/ui';
-import Spacer from '../../components/helpers/spacer';
+import { Container, Spacer } from '@freecodecamp/ui';
+import { ButtonLink } from '../../components/helpers';
 import FullWidthRow from '../../components/helpers/full-width-row';
 import LearnLayout from '../../components/layouts/learn';
 import type { MarkdownRemark, AllChallengeNode } from '../../redux/prop-types';
 
 import './intro.css';
-
-function Challenges({ challengeNodes }: { challengeNodes: AllChallengeNode }) {
-  return (
-    <ul className='intro-toc'>
-      {challengeNodes.edges
-        .map(({ node: { challenge } }) => challenge)
-        .map(({ title, fields: { slug } }) => (
-          <li key={'intro-' + slug}>
-            <Link to={slug}>{title}</Link>
-          </li>
-        ))}
-    </ul>
-  );
-}
 
 function IntroductionPage({
   data: { markdownRemark, allChallengeNode }
@@ -58,24 +44,15 @@ function IntroductionPage({
           />
         </FullWidthRow>
         <FullWidthRow>
-          <Link
-            className='btn btn-lg btn-primary btn-block'
-            to={firstLessonPath}
-          >
+          <ButtonLink block size='large' href={firstLessonPath || '/learn'}>
             {t('buttons.first-lesson')}
-          </Link>
-          <Spacer size='small' />
-          <Link className='btn btn-lg btn-primary btn-block' to='/learn'>
+          </ButtonLink>
+          <Spacer size='xs' />
+          <ButtonLink block size='large' href='/learn'>
             {t('buttons.view-curriculum')}
-          </Link>
-          <Spacer size='small' />
+          </ButtonLink>
+          <Spacer size='xs' />
           <hr />
-        </FullWidthRow>
-        <FullWidthRow>
-          <h2 className='intro-toc-title'>{t('learn.upcoming-lessons')}</h2>
-          {allChallengeNode ? (
-            <Challenges challengeNodes={allChallengeNode} />
-          ) : null}
         </FullWidthRow>
       </Container>
     </LearnLayout>
@@ -87,8 +64,8 @@ IntroductionPage.displayName = 'IntroductionPage';
 export default IntroductionPage;
 
 export const query = graphql`
-  query IntroPageBySlug($slug: String!, $block: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query IntroPageBySlug($id: String!, $block: String!) {
+    markdownRemark(id: { eq: $id }) {
       frontmatter {
         block
         superBlock
@@ -96,14 +73,9 @@ export const query = graphql`
       html
     }
     allChallengeNode(
+      sort: { fields: [challenge___challengeOrder] }
       filter: { challenge: { block: { eq: $block } } }
-      sort: {
-        fields: [
-          challenge___superOrder
-          challenge___order
-          challenge___challengeOrder
-        ]
-      }
+      limit: 1
     ) {
       edges {
         node {
@@ -111,7 +83,6 @@ export const query = graphql`
             fields {
               slug
             }
-            title
           }
         }
       }

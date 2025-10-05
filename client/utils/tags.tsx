@@ -1,21 +1,13 @@
-import { withPrefix } from 'gatsby';
 import i18next from 'i18next';
 import React from 'react';
+
+import { isMathJaxAllowed, mathJaxSrc } from '../src/utils/math-jax';
 
 export function getheadTagComponents(): JSX.Element[] {
   const socialImage =
     'https://cdn.freecodecamp.org/platform/universal/fcc_meta_1920X1080-indigo.png';
 
-  const pathToBootstrap = withPrefix('/css/bootstrap.min.css');
-
   const headTags = [
-    <link
-      as='style'
-      href={pathToBootstrap}
-      key='bootstrap-min-preload'
-      rel='preload'
-    />,
-    <link href={pathToBootstrap} key='bootstrap-min' rel='stylesheet' />,
     <meta content='freeCodeCamp.org' key='og:title' name='og:title' />,
     <meta
       content={i18next.t('metaTags:social-description')}
@@ -52,24 +44,54 @@ export function getheadTagComponents(): JSX.Element[] {
   return headTags;
 }
 
-export function getPostBodyComponents(pathname: string): JSX.Element[] {
+export function getPostBodyComponents(superblock: string): JSX.Element[] {
   const scripts = [];
   const mathJaxScriptElement = (
     <script
       async={false}
       id='mathjax'
       key='mathjax'
-      src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML'
+      src={mathJaxSrc}
       type='text/javascript'
     />
   );
 
-  if (
-    pathname.includes('/learn/rosetta-code') ||
-    pathname.includes('/learn/project-euler/')
-  ) {
+  if (isMathJaxAllowed(superblock)) {
     scripts.push(mathJaxScriptElement);
   }
 
   return scripts.filter(Boolean);
+}
+
+export function getPreBodyThemeScript(): JSX.Element[] {
+  const script = (
+    <script
+      key='prebody-theme-init'
+      dangerouslySetInnerHTML={{
+        __html: `
+(function(){
+  let theme = 'light';
+  const localTheme = localStorage.getItem('theme');
+
+  if (localTheme !== null) {
+    theme = localTheme === 'dark' ? 'dark' : 'light';
+  } else if (
+    window.matchMedia &&
+    window.matchMedia('(prefers-color-scheme: dark)').matches
+  ) {
+    theme = 'dark';
+  }
+
+  const bodyEl = document && document.body;
+
+  if (bodyEl && bodyEl.classList) {
+    bodyEl.classList.remove('light-palette');
+    bodyEl.classList.remove('dark-palette');
+    bodyEl.classList.add(theme + '-palette');
+  }
+})();`
+      }}
+    />
+  );
+  return [script];
 }

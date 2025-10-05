@@ -2,7 +2,7 @@ const path = require('path');
 const envData = require('./config/env.json');
 const {
   buildChallenges,
-  replaceChallengeNode,
+  replaceChallengeNodes,
   localeChallengesRootDir
 } = require('./utils/build-challenges');
 
@@ -30,7 +30,14 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postcssOptions: {
+          config: path.resolve(__dirname, 'postcss.config.js')
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-create-client-paths',
       options: {
@@ -50,7 +57,7 @@ module.exports = {
       options: {
         name: 'challenges',
         source: buildChallenges,
-        onSourceChange: replaceChallengeNode(curriculumLocale),
+        onSourceChange: replaceChallengeNodes(curriculumLocale),
         curriculumPath: localeChallengesRootDir
       }
     },

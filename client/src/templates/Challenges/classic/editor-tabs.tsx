@@ -11,6 +11,7 @@ import {
   challengeFilesSelector
 } from '../redux/selectors';
 
+import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import type { VisibleEditors } from './multifile-editor';
 
 interface EditorTabsProps {
@@ -34,13 +35,16 @@ const mapDispatchToProps = {
 
 class EditorTabs extends Component<EditorTabsProps> {
   static displayName: string;
+  isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
   render() {
     const { challengeFiles, toggleVisibleEditor, visibleEditors } = this.props;
+    const isMobile = window.innerWidth < MAX_MOBILE_WIDTH;
+    const sortedFiles = sortChallengeFiles(challengeFiles ?? []);
+    const showTabs = !isMobile || sortedFiles.length > 1;
     return (
-      <div className='monaco-editor-tabs'>
-        {/* eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call */}
-        {sortChallengeFiles(challengeFiles).map(
-          (challengeFile: ChallengeFile) => (
+      showTabs && (
+        <div className='monaco-editor-tabs'>
+          {sortedFiles.map((challengeFile: ChallengeFile) => (
             <button
               aria-expanded={
                 // @ts-expect-error TODO: validate challengeFile on io-boundary,
@@ -50,7 +54,6 @@ class EditorTabs extends Component<EditorTabsProps> {
                 visibleEditors[challengeFile.fileKey] ?? 'false'
               }
               key={challengeFile.fileKey}
-              data-cy={`editor-tab-${challengeFile.fileKey}`}
               onClick={() => toggleVisibleEditor(challengeFile.fileKey)}
             >
               {`${challengeFile.name}.${challengeFile.ext}`}{' '}
@@ -58,9 +61,9 @@ class EditorTabs extends Component<EditorTabsProps> {
                 {i18next.t('learn.editor-tabs.editor')}
               </span>
             </button>
-          )
-        )}
-      </div>
+          ))}
+        </div>
+      )
     );
   }
 }

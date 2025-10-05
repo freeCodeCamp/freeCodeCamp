@@ -1,0 +1,454 @@
+---
+id: 66edd3403d7077eece6dc4b6
+title: Form Validation with JavaScript Quiz
+challengeType: 8
+dashedName: quiz-form-validation-with-javascript
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which method is used to check if an `input` element's value satisfies the validation rules?
+
+#### --distractors--
+
+`validateInput()`
+
+---
+
+`isValid()`
+
+---
+
+`checkValue()`
+
+#### --answer--
+
+`checkValidity()`
+
+### --question--
+
+#### --text--
+
+What happens if the `checkValidity()` method finds an invalid `input`?
+
+#### --distractors--
+
+The form is automatically submitted.
+
+---
+
+Nothing happens.
+
+---
+
+The `input` value is cleared.
+
+#### --answer--
+
+The browser displays a validation message.
+
+### --question--
+
+#### --text--
+
+Which method is used to customize the message shown during validation failure?
+
+#### --distractors--
+
+`setErrorMessage()`
+
+---
+
+`setValidationMessage()`
+
+---
+
+`customMessage()`
+
+#### --answer--
+
+`setCustomValidity()`
+
+### --question--
+
+#### --text--
+
+What is the default validation behavior for required fields when the form is submitted?
+
+#### --distractors--
+
+The form is submitted even if required fields are empty.
+
+---
+
+The form submits but gives a warning.
+
+---
+
+The form resets the `input` values.
+
+#### --answer--
+
+The browser stops the form submission if required fields are empty.
+
+### --question--
+
+#### --text--
+
+Which actions does not cause an HTML form to be checked for errors?
+
+#### --distractors--
+
+Changing the `input` value.
+
+---
+
+Submitting the form.
+
+---
+
+Calling `reportValidity()`.
+
+#### --answer--
+
+Clicking a reset button.
+
+### --question--
+
+#### --text--
+
+What does `checkValidity()` return when all form inputs are valid?
+
+#### --distractors--
+
+`false`
+
+---
+
+`undefined`
+
+---
+
+`null`
+
+#### --answer--
+
+`true`
+
+### --question--
+
+#### --text--
+
+When does the `checkValidity()` method stop form submission?
+
+#### --distractors--
+
+When the form has no submit button.
+
+---
+
+When the form `action` is empty.
+
+---
+
+When the form method is POST.
+
+#### --answer--
+
+When the form has at least one invalid `input` (and the default behavior of form submission is prevented).
+
+### --question--
+
+#### --text--
+
+What happens if `checkValidity()` is called, but a field fails validation?
+
+#### --distractors--
+
+The form submits without error.
+
+---
+
+The `input` values are cleared.
+
+---
+
+The form closes immediately.
+
+#### --answer--
+
+The invalid field is highlighted and a message appears.
+
+### --question--
+
+#### --text--
+
+Which action will make `checkValidity()` run?
+
+#### --distractors--
+
+Resetting the form.
+
+---
+
+Changing an `input` value.
+
+---
+
+Clicking an anchor tag.
+
+#### --answer--
+
+Submitting the form manually.
+
+### --question--
+
+#### --text--
+
+What is the purpose of calling `checkValidity()` before submitting a form?
+
+#### --distractors--
+
+To automatically submit the form.
+
+---
+
+To reload the page.
+
+---
+
+To clear all `input` fields.
+
+#### --answer--
+
+To check if all `input` elements meet their specified constraints.
+
+### --question--
+
+#### --text--
+
+What is the main purpose of `e.preventDefault()`?
+
+#### --distractors--
+
+To reload the form.
+
+---
+
+To clear form data.
+
+---
+
+To reset the form values.
+
+#### --answer--
+
+To stop the default action of an event.
+
+### --question--
+
+#### --text--
+
+When used on a form's submit event, what does `e.preventDefault()` do?
+
+#### --distractors--
+
+It submits the form.
+
+---
+
+It clears all form fields.
+
+---
+
+It disables the form temporarily.
+
+#### --answer--
+
+It prevents the form from being submitted.
+
+### --question--
+
+#### --text--
+
+In which scenario is `e.preventDefault()` most useful?
+
+#### --distractors--
+
+When handling a button click that submits a form.
+
+---
+
+When closing a modal dialog.
+
+---
+
+When opening a new page.
+
+#### --answer--
+
+When submitting a form and preventing a page reload.
+
+### --question--
+
+#### --text--
+
+What happens if you forget to call `e.preventDefault()` on a form submit event?
+
+#### --distractors--
+
+All the input fields are set to their default values.
+
+---
+
+The form does not submit.
+
+---
+
+The form data is lost.
+
+#### --answer--
+
+The form submits and refreshes the page.
+
+### --question--
+
+#### --text--
+
+Which default behavior can be prevented using `e.preventDefault()`?
+
+#### --distractors--
+
+Editing a form.
+
+---
+
+Rendering the form.
+
+---
+
+Reloading the form.
+
+#### --answer--
+
+The default behavior caused by submitting a form.
+
+### --question--
+
+#### --text--
+
+What triggers the form's submit event?
+
+#### --distractors--
+
+When an input field changes.
+
+---
+
+When the form is reset.
+
+---
+
+When the form's action is cleared.
+
+#### --answer--
+
+When a form's submit button is clicked or Enter is pressed.
+
+### --question--
+
+#### --text--
+
+Where do you usually handle the submit event in JavaScript?
+
+#### --distractors--
+
+On a text input element.
+
+---
+
+On any field in the form.
+
+---
+
+On a button element outside the form.
+
+#### --answer--
+
+On the form element itself.
+
+### --question--
+
+#### --text--
+
+What does the submit event do by default?
+
+#### --distractors--
+
+It validates the form but doesn't submit it.
+
+---
+
+It clears the form fields.
+
+---
+
+It cancels form submission.
+
+#### --answer--
+
+It sends form data to the server specified in the form's action.
+
+### --question--
+
+#### --text--
+
+Which event should you listen for to handle form data when the form is submitted in JavaScript?
+
+#### --distractors--
+
+`"input"`
+
+---
+
+`"change"`
+
+---
+
+`"focus"`
+
+#### --answer--
+
+`"submit"`
+
+### --question--
+
+#### --text--
+
+What is the default value of the `method` attribute in an HTML form?
+
+#### --distractors--
+
+`"POST"`
+
+---
+
+`"UPDATE"`
+
+---
+
+`"PUT"`
+
+#### --answer--
+
+`"GET"`

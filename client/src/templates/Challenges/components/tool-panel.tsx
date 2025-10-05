@@ -1,5 +1,4 @@
-import { Button } from '@freecodecamp/react-bootstrap';
-import { Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Dropdown, MenuItem, Button, Spacer } from '@freecodecamp/ui';
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
@@ -7,14 +6,14 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
 
-import './tool-panel.css';
+import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
-
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
+
+import './tool-panel.css';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
@@ -49,7 +48,7 @@ interface ToolPanelProps {
   openVideoModal: () => void;
   openResetModal: () => void;
   guideUrl: string;
-  videoUrl: string;
+  videoUrl?: string;
 }
 
 function ToolPanel({
@@ -70,39 +69,32 @@ function ToolPanel({
   const { t } = useTranslation();
   return (
     <div
-      className={`tool-panel-group button-group ${
+      className={`tool-panel-group ${
         isMobile ? 'tool-panel-group-mobile' : ''
       }`}
     >
-      <Button
-        aria-label='Run the tests use shortcut Ctrl+enter'
-        block={true}
-        bsStyle='primary'
-        onClick={handleRunTests}
-      >
+      <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      {isSignedIn && challengeType === challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          data-cy='save-code-to-database-btn'
-          className='btn-invert'
-          onClick={saveChallenge}
-        >
-          {isMobile ? t('buttons.save') : t('buttons.save-code')}
-        </Button>
+      {isSignedIn && canSaveToDB(challengeType) && (
+        <>
+          <Spacer size='xxs' />
+          <Button block={true} variant='primary' onClick={saveChallenge}>
+            {isMobile ? t('buttons.save') : t('buttons.save-code')}
+          </Button>
+        </>
       )}
-      {challengeType !== challengeTypes.multifileCertProject && (
-        <Button
-          block={true}
-          bsStyle='primary'
-          className='btn-invert'
-          onClick={openResetModal}
-        >
-          {isMobile ? t('buttons.reset') : t('buttons.reset-lesson')}
-        </Button>
-      )}
+      <Spacer size='xxs' />
+      <Button block={true} variant='primary' onClick={openResetModal}>
+        {isMobile
+          ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
+          : t(
+              canSaveToDB(challengeType)
+                ? 'buttons.revert-to-saved-code'
+                : 'buttons.reset-lesson'
+            )}
+      </Button>
+      <Spacer size='xxs' />
       <Dropdown dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}

@@ -5,7 +5,6 @@
 import React from 'react';
 import { ConnectedProps, connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { User } from '../../redux/prop-types';
 import { examInProgressSelector } from '../../redux/selectors';
 
 import UniversalNav from './components/universal-nav';
@@ -26,8 +25,14 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 type Props = PropsFromRedux & {
   fetchState: { pending: boolean };
-  user: User;
+  user: {
+    isDonating: boolean;
+    username: string;
+    picture: string;
+    yearsTopContributor: string[];
+  };
   skipButtonText: string;
+  pathname: string;
 };
 
 class Header extends React.Component<Props, { displayMenu: boolean }> {
@@ -79,7 +84,8 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
 
   render(): JSX.Element {
     const { displayMenu } = this.state;
-    const { examInProgress, fetchState, user, skipButtonText } = this.props;
+    const { examInProgress, fetchState, user, skipButtonText, pathname } =
+      this.props;
     return (
       <header className='site-header'>
         <a
@@ -96,6 +102,7 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
             displayMenu={displayMenu}
             fetchState={fetchState}
             hideMenu={this.hideMenu}
+            pathname={pathname}
             menuButtonRef={this.menuButtonRef}
             searchBarRef={this.searchBarRef}
             showMenu={this.showMenu}

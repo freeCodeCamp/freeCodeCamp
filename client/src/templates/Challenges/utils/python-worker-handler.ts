@@ -4,12 +4,10 @@ import pythonWorkerData from '../../../../config/browser-scripts/python-worker.j
 const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
 
 let worker: Worker | null = null;
-let testWorker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
 type Code = {
   contents: string;
   editableContents: string;
-  original: string;
 };
 // We need to keep track of the last code message so we can re-run it if the
 // worker is reset.
@@ -20,13 +18,6 @@ function getPythonWorker(): Worker {
     worker = new Worker(pythonWorkerSrc);
   }
   return worker;
-}
-
-export function getPythonTestWorker(): Worker {
-  if (!testWorker) {
-    testWorker = new Worker(pythonWorkerSrc);
-  }
-  return testWorker;
 }
 
 type PythonWorkerEvent = {
@@ -94,7 +85,7 @@ export function interruptCodeExecution(): void {
   navigator.serviceWorker.controller?.postMessage(
     JSON.stringify({
       type: 'cancel',
-      value: '' + resetId // Converting to string for convenience. (TODO: check if necesary)
+      value: '' + resetId // Converting to string for convenience. (TODO: check if necessary)
     })
   );
 
@@ -110,7 +101,6 @@ export function interruptCodeExecution(): void {
 export function runPythonCode(code: {
   contents: string;
   editableContents: string;
-  original: string;
 }): void {
   lastCodeMessage = code;
   getPythonWorker().postMessage({ type: 'run', code });

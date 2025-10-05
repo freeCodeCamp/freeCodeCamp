@@ -25,11 +25,15 @@ test.describe('Challenge Test Suite Component Tests', () => {
     await expect(page.getByTestId('test-result')).toHaveCount(3);
     await expect(page.getByText(translations.icons.initial)).toHaveCount(3);
     await expect(
-      page.getByText('You should not change code above the specified comment.')
+      page.getByText(
+        '1. You should not change code above the specified comment.'
+      )
     ).toBeVisible();
-    await expect(page.getByText('b should have a value of 7.')).toBeVisible();
     await expect(
-      page.getByText('a should be assigned to b with =.')
+      page.getByText('2. b should have a value of 7.')
+    ).toBeVisible();
+    await expect(
+      page.getByText('3. a should be assigned to b with =.')
     ).toBeVisible();
   });
 

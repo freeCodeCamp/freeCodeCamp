@@ -1,0 +1,492 @@
+---
+id: 66f1ae758b77cfc3e4da6151
+title: TypeScript Quiz
+challengeType: 8
+dashedName: quiz-typescript
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is Typescript?
+
+#### --distractors--
+
+A framework used for system programming.
+
+---
+
+A database management tool.
+
+---
+
+A programming language used for styling websites.
+
+#### --answer--
+
+A superset of JavaScript that adds static typing.
+
+### --question--
+
+#### --text--
+
+Why should TypeScript be used in a project?
+
+#### --distractors--
+
+It eliminates the need for testing in applications.
+
+---
+
+It is faster than all other programming languages.
+
+---
+
+It makes styling websites easier.
+
+#### --answer--
+
+It improves maintainability by adding type definitions to JavaScript.
+
+### --question--
+
+#### --text--
+
+What language is TypeScript compiled down to?
+
+#### --distractors--
+
+Java
+
+---
+
+Python
+
+---
+
+C++
+
+#### --answer--
+
+JavaScript
+
+### --question--
+
+#### --text--
+
+What would be the output of the following code snippet?
+
+```ts
+function sum(a: number, b: number): number {
+  return a + b;
+}
+console.log(sum(2, 3));
+```
+
+#### --distractors--
+
+`2 + 3`
+
+---
+
+`undefined`
+
+---
+
+`Error: Type 'number' is not assignable to type 'string'`
+
+#### --answer--
+
+`5`
+
+### --question--
+
+#### --text--
+
+What is the primary purpose of an interface in TypeScript?
+
+#### --distractors--
+
+To compile TypeScript code into JavaScript.
+
+---
+
+To create a new data type.
+
+---
+
+To create a new JavaScript Object.
+
+#### --answer--
+
+To define the structure of an object.
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT a basic primitive in TypeScript?
+
+#### --distractors--
+
+string
+
+---
+
+boolean
+
+---
+
+number
+
+#### --answer--
+
+array
+
+### --question--
+
+#### --text--
+
+Which of the following correctly defines a literal type in TypeScript?
+
+#### --distractors--
+
+`let y: string;`
+
+---
+
+`let z: boolean;`
+
+---
+
+`let a: number[];`
+
+#### --answer--
+
+`let x: 5;`
+
+### --question--
+
+#### --text--
+
+What is the primary purpose of the `type` keyword in TypeScript?
+
+#### --distractors--
+
+To declare variables.
+
+---
+
+To create classes.
+
+---
+
+To implement interfaces.
+
+#### --answer--
+
+To define custom types.
+
+### --question--
+
+#### --text--
+
+Which of the following correctly defines a union type?
+
+#### --distractors--
+
+`type Result = Pass && Fail;`
+
+---
+
+`type Result = Pass & Fail;`
+
+---
+
+`type Result = Pass + Fail;`
+
+#### --answer--
+
+`type Result = Pass | Fail;`
+
+### --question--
+
+#### --text--
+
+Which of the following capabilities is unique to `interface` and CANNOT be achieved using `type` in TypeScript?
+
+#### --distractors--
+
+Defining object shapes.
+
+---
+
+Creating union types.
+
+---
+
+Defining types that include only specific values.
+
+#### --answer--
+
+Declaring class implementations.
+
+### --question--
+
+#### --text--
+
+What is the primary purpose of using generics in TypeScript?
+
+#### --distractors--
+
+To implement inheritance between classes.
+
+---
+
+To define structure of an object.
+
+---
+
+To create a new data type.
+
+#### --answer--
+
+To write reusable code that can work with multiple types.
+
+### --question--
+
+#### --text--
+
+Which of the following is a **proper example** of a generic function in TypeScript?
+
+#### --distractors--
+
+`function add(a: number, b: number): number { return a + b; }`
+
+---
+
+`function multiply(a: number, b: number): { return a * b; }`
+
+---
+
+`function getValue<T>(value: any): any { return value; }`
+
+#### --answer--
+
+`function identity<T>(value: T): T { return value; }`
+
+### --question--
+
+#### --text--
+
+What is type narrowing in TypeScript?
+
+#### --distractors--
+
+Reducing the size of compiled JavaScript.
+
+---
+
+Limiting the number of types in a union.
+
+---
+
+Removing unused types from a TypeScript project.
+
+#### --answer--
+
+To write code that narrows down a union type to a more specific type.
+
+### --question--
+
+#### --text--
+
+Which file is typically used to configure TypeScript compiler options?
+
+#### --distractors--
+
+`package.json`
+
+---
+
+`package.config.json`
+
+---
+
+`typescript.config.js`
+
+#### --answer--
+
+`tsconfig.json`
+
+### --question--
+
+#### --text--
+
+What does the `rootDir` option in the `tsconfig.json` file specify?
+
+#### --distractors--
+
+The version of TypeScript to use during compilation.
+
+---
+
+The target runtime environment (e.g., Node.js or browser) for the TypeScript code.
+
+---
+
+The specific module system to use for imports and exports.
+
+#### --answer--
+
+The directory that holds your source files.
+
+### --question--
+
+#### --text--
+
+Which example uses `instanceof` correctly to narrow the type to access the `value` property safely?
+
+#### --distractors--
+
+```ts
+const email = document.querySelector("#email");
+if (email instanceof <input>) {
+    console.log(email.value);
+}
+```
+
+---
+
+```ts
+const email = document.querySelector("#email");
+if (email instanceof Element) {
+    console.log(email.value);
+}
+```
+
+---
+
+```ts
+const email = document.querySelector("#email");
+if (email instanceof <HTMLInputElement>) {
+    console.log(email.value);
+}
+```
+
+#### --answer--
+
+```ts
+const email = document.querySelector("#email");
+if (email instanceof HTMLInputElement) {
+    console.log(email.value);
+}
+```
+
+### --question--
+
+#### --text--
+What does setting `"strict": true` in `tsconfig.json` do in TypeScript?
+
+#### --distractors--
+
+Enables static type check so that you can catch the mistakes before you run your code.
+
+---
+
+Enforces you to always use ES6 syntax.
+
+---
+
+Enforces you to compile the code before you run it.
+
+#### --answer--
+
+Enables a set of type-checking options such as requiring handling of `null` or `undefined` and preventing implicit `any`.
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `never` type in TypeScript?
+
+#### --distractors--
+
+To represent null or undefined.
+
+---
+
+To represent any possible value.
+
+---
+
+To represent a type that can be anything except null.
+
+#### --answer--
+
+To represent the type of values that never occur.
+
+### --question--
+
+#### --text--
+
+Which of the following `getRandomValue` function calls will compile successfully in TypeScript?
+
+```ts
+const getRandomValue = (array: string[]) => {
+  return array[Math.floor(Math.random() * array.length)];
+}
+```
+
+#### --distractors--
+
+`getRandomValue([1, 2, 3])`
+
+---
+
+`getRandomValue("ABC")`
+
+---
+
+`getRandomValue({A: "A", B: "B", C: "C"})`
+
+#### --answer--
+
+`getRandomValue(["A", "B", "C"])`
+
+### --question--
+
+#### --text--
+
+How can you fix the TypeScript compiler error `'email' is possibly 'null'` in the following code using optional chaining?
+
+```ts
+const email = document.querySelector<HTMLInputElement>("#email");
+console.log(email.value);
+```
+
+#### --distractors--
+
+`console.log(email?:value);`
+
+---
+
+`console.log(email?value);`
+
+---
+
+`console.log(email.?value);`
+
+#### --answer--
+
+`console.log(email?.value);`
+

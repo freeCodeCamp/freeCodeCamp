@@ -11,3 +11,7 @@
 #description ol li a {
   word-break: break-all;
 }
+
+#description ol li {
+  line-height: 1.5;
+}

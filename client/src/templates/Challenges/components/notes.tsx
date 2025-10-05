@@ -5,8 +5,8 @@ interface NotesProps {
   notes?: string;
 }
 
-function Notes({ notes }: NotesProps): JSX.Element {
-  return <>{notes && <PrismFormatted text={notes} />}</>;
+function Notes({ notes }: NotesProps): JSX.Element | null {
+  return notes ? <PrismFormatted text={notes} /> : null;
 }
 
 Notes.displayName = 'Notes';

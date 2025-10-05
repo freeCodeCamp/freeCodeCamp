@@ -1,72 +1,107 @@
 import React from 'react';
-import { Alert } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
 import { ProgressBar } from '../Progress/progress-bar';
 
 interface LearnAlertProps {
-  onDonationAlertClick: () => void;
+  onLearnDonationAlertClick: () => void;
   isDonating: boolean;
 }
 
 const LearnAlert = ({
-  onDonationAlertClick,
+  onLearnDonationAlertClick,
   isDonating
 }: LearnAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
-  const seasonalMessage = useFeature('seasonal-alert');
-
-  const progressFlag = useFeature('progress-alert');
-
-  const progressAlert = (
-    <Alert variant='info' className='annual-donation-alert'>
-      <div aria-hidden='true' className='progress-wrapper'>
-        <div>
-          <ProgressBar now={Number(progressFlag.value)} />
-        </div>
-      </div>
-      <h3 className='text-center'>{`${progressFlag.value}%`}</h3>
-      <p>{t('donate.help-us-reach-goal')}</p>
-      <hr />
-      <p className={'text-center'}>
+  const seasonalAlertFlag = useFeature('seasonal-alert');
+  const progressAlertFlag2024 = useFeature('progress-alert-2024');
+  const createUniversityFlag = useFeature('university-alert');
+  const progressAlertDefault = (text: string, value?: number) => (
+    <Callout variant='info' className='annual-donation-alert'>
+      {value && (
+        <>
+          <div className='text-center'>
+            <h2>{t('learn.donation-heading')}</h2>
+            <Spacer size='xs' />
+            <b className='m-0 progress-percent-value'>{`${value}%`}</b>
+          </div>
+          <div aria-hidden='true' className='progress-wrapper'>
+            <div>
+              <ProgressBar now={value} />
+            </div>
+          </div>
+        </>
+      )}
+      <p>{text}</p>
+      <Spacer size='m' />
+      <div className={'text-center'}>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
-          onClick={onDonationAlertClick}
+          onClick={onLearnDonationAlertClick}
         >
           {t('buttons.donate')}
         </Link>
-      </p>
-    </Alert>
+      </div>
+    </Callout>
   );
 
-  const seasonalMessageAlert = (
-    <Alert variant='info' className='annual-donation-alert'>
+  const seasonalAlertFlagAlert = (
+    <Callout variant='info' className='annual-donation-alert'>
       <p>
         <b>{t('learn.season-greetings-fcc')}</b>
       </p>
       <p>{t('learn.if-getting-value')}</p>
       <hr />
-      <p className={'text-center'}>
+      <p className='btn-container'>
         <Link
-          className='btn'
+          className='btn donate-button'
           key='donate'
           sameTab={false}
           to='/donate'
-          onClick={onDonationAlertClick}
+          onClick={onLearnDonationAlertClick}
         >
           {t('buttons.donate')}
         </Link>
       </p>
-    </Alert>
+    </Callout>
   );
 
-  if (progressFlag.on) return progressAlert;
+  const progressAlert2024 = progressAlertDefault(
+    t('donate.help-us-reach-20k'),
+    Number(progressAlertFlag2024.value)
+  );
 
-  if (seasonalMessage.on && !isDonating) return seasonalMessageAlert;
+  const universityAlert = (
+    <Callout variant='info' className='university-alert'>
+      <p>
+        <b>{t('learn.building-a-university')}</b>
+      </p>
+      <p>{t('learn.if-help-university')}</p>
+      <Spacer size='m' />
+      <p className={'text-center'}>
+        <Link
+          className='btn donate-button'
+          key='donate'
+          sameTab={false}
+          to='/donate'
+          onClick={onLearnDonationAlertClick}
+        >
+          {t('buttons.donate')}
+        </Link>
+      </p>
+    </Callout>
+  );
+
+  if (!isDonating) {
+    if (createUniversityFlag.on) return universityAlert;
+    if (progressAlertFlag2024.on) return progressAlert2024;
+    if (seasonalAlertFlag.on) return seasonalAlertFlagAlert;
+  }
   return null;
 };
 

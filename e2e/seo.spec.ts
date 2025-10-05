@@ -1,7 +1,29 @@
 import { test, expect } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/superblocks';
-import type { ListItem } from '../client/src/components/seo/';
+import { SuperBlocks } from '../shared/config/curriculum';
 import metaTags from '../client/i18n/locales/english/meta-tags.json';
+
+interface StructuredData {
+  '@context': string;
+  '@type': string;
+  itemListElement: ListItem[];
+}
+
+interface ListItem {
+  '@type': string;
+  position: number;
+  item: {
+    '@type': string;
+    url: string;
+    name: string;
+    description: string;
+    provider: {
+      '@type': string;
+      name: string;
+      sameAs: string;
+      nonprofitStatus: string;
+    };
+  };
+}
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/');
@@ -20,7 +42,7 @@ test('should inject structured data (JSON-LD) into the page', async ({
 
   expect(structuredData).toBeTruthy();
 
-  const parsedData = JSON.parse(structuredData ?? '');
+  const parsedData = JSON.parse(structuredData ?? '') as StructuredData;
 
   expect(parsedData?.['@context']).toBe('https://schema.org');
   expect(parsedData['@type']).toBe('ItemList');

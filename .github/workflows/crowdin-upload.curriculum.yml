@@ -2,8 +2,8 @@ name: i18n - Upload Curriculum
 on:
   workflow_dispatch:
   schedule:
-    # runs every weekday at 11:30 AM UTC
-    - cron: '30 11 * * 1-5'
+    # runs every weekday at 7:30 AM UTC
+    - cron: '30 7 * * 1-5'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main

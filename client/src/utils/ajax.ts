@@ -1,16 +1,19 @@
 import cookies from 'browser-cookies';
-import envData from '../../config/env.json';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import envData from '../../config/env.json';
 import type {
   ChallengeFile,
   ChallengeFiles,
   CompletedChallenge,
+  ExamTokenResponse,
   GenerateExamResponseWithData,
   SavedChallenge,
   SavedChallengeFile,
   SurveyResults,
   User
 } from '../redux/prop-types';
+import { DonationDuration } from '../../../shared-dist/config/donation-settings';
 
 const { apiLocation } = envData;
 
@@ -35,8 +38,15 @@ export interface ResponseWithData<T> {
 
 // TODO: Might want to handle flash messages as close to the request as possible
 // to make use of the Response object (message, status, etc)
-async function get<T>(path: string): Promise<ResponseWithData<T>> {
-  const response = await fetch(`${base}${path}`, defaultOptions);
+async function get<T>(
+  path: string,
+  signal?: AbortSignal
+): Promise<ResponseWithData<T>> {
+  const response = await fetch(`${base}${path}`, {
+    ...defaultOptions,
+    headers: { 'CSRF-Token': getCSRFToken() },
+    signal
+  });
 
   return combineDataWithResponse(response);
 }
@@ -55,7 +65,7 @@ export function post<T = void>(
 
 function put<T = void>(
   path: string,
-  body?: unknown
+  body: unknown
 ): Promise<ResponseWithData<T>> {
   return request('PUT', path, body);
 }
@@ -88,10 +98,6 @@ async function request<T>(
 
 /** GET **/
 
-interface SessionUser {
-  user?: { [username: string]: User };
-}
-
 type CompleteChallengeFromApi = {
   files: Array<Omit<ChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<CompletedChallenge, 'challengeFiles'>;
@@ -100,26 +106,19 @@ type SavedChallengeFromApi = {
   files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<SavedChallenge, 'challengeFiles'>;
 
-type ApiSessionResponse = Omit<SessionUser, 'user'>;
-type ApiUser = {
+type ApiUser = Omit<User, 'completedChallenges' & 'savedChallenges'> & {
+  completedChallenges?: CompleteChallengeFromApi[];
+  savedChallenges?: SavedChallengeFromApi[];
+};
+
+type ApiUserResponse = {
   user: {
-    [username: string]: Omit<
-      User,
-      'completedChallenges' & 'savedChallenges'
-    > & {
-      completedChallenges?: CompleteChallengeFromApi[];
-      savedChallenges?: SavedChallengeFromApi[];
-    };
+    [username: string]: ApiUser;
   };
   result?: string;
 };
 
-type UserResponse = {
-  user: { [username: string]: User } | Record<string, never>;
-  result: string | undefined;
-};
-
-function parseApiResponseToClientUser(data: ApiUser): UserResponse {
+function parseApiResponseToClientUser(data: ApiUserResponse): User | null {
   const userData = data.user?.[data?.result ?? ''];
   let completedChallenges: CompletedChallenge[] = [];
   let savedChallenges: SavedChallenge[] = [];
@@ -129,16 +128,12 @@ function parseApiResponseToClientUser(data: ApiUser): UserResponse {
     );
     savedChallenges = mapFilesToChallengeFiles(userData.savedChallenges);
   }
-  return {
-    user: {
-      [data.result ?? '']: { ...userData, completedChallenges, savedChallenges }
-    },
-    result: data.result
-  };
+  return data.result
+    ? { ...userData, completedChallenges, savedChallenges }
+    : null;
 }
 
 // TODO: this at least needs a few aliases so it's human readable
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function mapFilesToChallengeFiles<File, Rest>(
   fileContainer: ({ files: (File & { key: string })[] } & Rest)[] = []
 ) {
@@ -154,44 +149,41 @@ function mapKeyToFileKey<K>(
   return files.map(({ key, ...rest }) => ({ ...rest, fileKey: key }));
 }
 
-export function getSessionUser(): Promise<ResponseWithData<SessionUser>> {
-  const responseWithData: Promise<
-    ResponseWithData<ApiUser & ApiSessionResponse>
-  > = get('/user/get-session-user');
+export function getSessionUser(
+  signal?: AbortSignal
+): Promise<ResponseWithData<User | null>> {
+  const responseWithData: Promise<ResponseWithData<ApiUserResponse>> = get(
+    '/user/get-session-user',
+    signal
+  );
   // TODO: Once DB is migrated, no longer need to parse `files` -> `challengeFiles` etc.
   return responseWithData.then(({ response, data }) => {
-    const { result, user } = parseApiResponseToClientUser(data);
+    const user = parseApiResponseToClientUser(data);
     return {
       response,
-      data: {
-        result,
-        user
-      }
+      data: user
     };
   });
 }
 
 type UserProfileResponse = {
-  entities: Omit<UserResponse, 'result'>;
+  entities: Omit<ApiUserResponse, 'result'>;
   result: string | undefined;
 };
 export function getUserProfile(
   username: string
-): Promise<ResponseWithData<UserProfileResponse>> {
-  const responseWithData = get<{ entities?: ApiUser; result?: string }>(
-    `/api/users/get-public-profile?username=${username}`
+): Promise<ResponseWithData<User | null>> {
+  const responseWithData = get<UserProfileResponse>(
+    `/users/get-public-profile?username=${username}`
   );
   return responseWithData.then(({ response, data }) => {
-    const { result, user } = parseApiResponseToClientUser({
+    const user = parseApiResponseToClientUser({
       user: data.entities?.user ?? {},
       result: data.result
     });
     return {
       response,
-      data: {
-        entities: { user },
-        result
-      }
+      data: user
     };
   });
 }
@@ -212,13 +204,39 @@ export function getShowCert(
 export function getUsernameExists(
   username: string
 ): Promise<ResponseWithData<boolean>> {
-  return get(`/api/users/exists?username=${username}`);
+  return get(`/users/exists?username=${username}`);
 }
 
 export function getGenerateExam(
   challengeId: string
 ): Promise<GenerateExamResponseWithData> {
   return get(`/exam/${challengeId}`);
+}
+
+export interface Exam {
+  id: string;
+  config: {
+    name: string;
+  };
+}
+
+export interface Attempt {
+  id: string;
+  examId: string;
+  startTimeInMS: number;
+  questionSets: unknown[];
+  result?: {
+    passed: boolean;
+    percent: number;
+  };
+}
+
+export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
+  return get('/user/exam-environment/exams');
+}
+
+export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
+  return get('/user/exam-environment/exam/attempts');
 }
 
 /** POST **/
@@ -239,7 +257,7 @@ export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
 }
 
 export function updateStripeCard() {
-  return put('/donate/update-stripe-card');
+  return put('/donate/update-stripe-card', {});
 }
 
 export function postChargeStripe(
@@ -253,6 +271,37 @@ export function postChargeStripeCard(
 ): Promise<ResponseWithData<void>> {
   return post('/donate/charge-stripe-card', body);
 }
+
+export function generateExamToken(): Promise<
+  ResponseWithData<ExamTokenResponse>
+> {
+  return post('/user/exam-environment/token', {});
+}
+
+type PaymentIntentResponse = Promise<
+  ResponseWithData<
+    | {
+        clientSecret?: never;
+        subscriptionId?: never;
+        error: string;
+      }
+    | {
+        clientSecret: string;
+        subscriptionId: string;
+        error?: never;
+      }
+  >
+>;
+
+export function createStripePaymentIntent(body: {
+  email: string | undefined;
+  name: string | undefined;
+  amount: number;
+  duration: DonationDuration;
+}): PaymentIntentResponse {
+  return post('/donate/create-stripe-payment-intent', body);
+}
+
 interface Report {
   username: string;
   reportDescription: string;
@@ -286,7 +335,7 @@ export function postSaveChallenge(body: {
   id: string;
   files: ChallengeFiles;
 }): Promise<ResponseWithData<void>> {
-  return post('/save-challenge', body);
+  return post('/encoded/save-challenge', body);
 }
 
 export function postSubmitSurvey(body: {
@@ -327,12 +376,6 @@ export function putUpdateMySocials(
   return put('/update-my-socials', update);
 }
 
-export function putUpdateMyTheme(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
-  return put('/update-my-theme', update);
-}
-
 export function putUpdateMyKeyboardShortcuts(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
@@ -345,9 +388,9 @@ export function putUpdateMyHonesty(
   return put('/update-my-honesty', update);
 }
 
-export function putUpdateMyQuincyEmail(
-  update: Record<string, string>
-): Promise<ResponseWithData<void>> {
+export function putUpdateMyQuincyEmail(update: {
+  sendQuincyEmail: boolean;
+}): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
 }
 
@@ -355,12 +398,6 @@ export function putUpdateMyPortfolio(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-portfolio', update);
-}
-
-export function putUserAcceptsTerms(
-  quincyEmails: boolean
-): Promise<ResponseWithData<void>> {
-  return put('/update-privacy-terms', { quincyEmails });
 }
 
 export function putUserUpdateEmail(
@@ -383,3 +420,31 @@ export function deleteUserToken(): Promise<ResponseWithData<void>> {
 export function deleteMsUsername(): Promise<ResponseWithData<void>> {
   return deleteRequest('/user/ms-username', {});
 }
+
+/** RTK */
+
+export interface ExamEnvironmentChallenge {
+  id: string;
+  examId: string;
+  challengeId: string;
+}
+
+export const examAttempts = createApi({
+  reducerPath: 'exam-attempts',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    getExamAttemptsByExamId: build.mutation<Attempt[], string>({
+      query: examId => `/user/exam-environment/exams/${examId}/attempts`
+    }),
+    getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
+      query: challengeId =>
+        `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    })
+  })
+});

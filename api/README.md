@@ -18,13 +18,6 @@ cd tools
 docker compose up -d
 ```
 
-Once that's running, update the connection string in the `.env` file to use port `27018`.
-
-```txt
-# Database
-MONGOHQ_URL=mongodb://127.0.0.1:27018/freecodecamp?directConnection=true
-```
-
 The new db will be empty, so you can run the seed script to populate it.
 
 ```bash
@@ -32,6 +25,22 @@ cd ../.. # back to the root of the repo
 pnpm seed
 ```
 
+### Troubleshooting
+
+If you have any issues connecting to the database (e.g. MongoServerError: not primary), try removing the volume and recreating the containers.
+
+```bash
+cd tools
+docker compose down -v
+docker compose up -d
+```
+
 ## Login in development/testing
 
 During development and testing, the api exposes the endpoint GET auth/dev-callback. Calling this will log you in as the user with the email `foo@bar.com` by setting the session cookie for that user.
+
+## Generating Exams
+
+```bash
+pnpm run exam-env:generate <ENV_EXAM_ID> <NUMBER_OF_EXAMS_TO_GENERATE>
+```

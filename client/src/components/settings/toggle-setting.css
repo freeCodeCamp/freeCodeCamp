@@ -42,6 +42,7 @@
 
 .toggle-button-group button > span {
   position: relative;
+  display: flex;
 }
 
 .toggle-button-group button > span > svg {
@@ -72,6 +73,10 @@
 
 .toggle-radio-group label + label {
   margin-inline-start: 2rem;
+}
+
+.toggle-radio-group label.not-checked {
+  cursor: pointer;
 }
 
 .toggle-radio-group input {

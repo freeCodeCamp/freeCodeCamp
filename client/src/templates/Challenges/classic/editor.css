@@ -1,3 +1,8 @@
+/* Monaco editor has its own font-family rule, which overrides ours */
+.monaco-editor {
+  font-family: inherit;
+}
+
 .monaco-editor .margin-view-overlays .line-numbers,
 .monaco-editor .margin-view-overlays .myLineDecoration + .line-numbers {
   color: var(--primary-color);
@@ -33,6 +38,13 @@ textarea.inputarea {
   height: var(--breadcrumbs-height);
 }
 
+@media screen and (max-height: 300px) {
+  .default-layout:has(#mobile-layout) .breadcrumbs-demo {
+    height: auto;
+    padding-block: 2px;
+  }
+}
+
 .editor-upper-jaw,
 .editor-lower-jaw {
   padding-inline: 0 15px;
@@ -41,6 +53,19 @@ textarea.inputarea {
 
 .editor-upper-jaw {
   max-width: unset !important;
+}
+
+.editor-upper-jaw code,
+.editor-lower-jaw code {
+  white-space: pre-wrap;
+}
+
+.editor-file-name {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 1px solid var(--quaternary-background);
+  padding-left: 11px;
+  overflow: hidden;
 }
 
 .action-row-container,
@@ -55,7 +80,54 @@ textarea.inputarea {
 
 .challenge-description-header {
   display: flex;
+  align-items: center;
   gap: 7px;
+  margin: 0.1em 0 0.6rem;
+}
+
+.description-container .breadcrumbs {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  list-style-type: none;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 0.8rem;
+  padding-inline-start: 0;
+  width: 100%;
+  min-width: 0;
+  color: var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs li:first-child {
+  position: relative;
+  max-width: 35%;
+}
+
+.description-container .breadcrumbs li:first-child:after {
+  content: ' >';
+  font-size: 17px;
+  position: absolute;
+  top: 0;
+  right: -0.7rem;
+}
+
+.description-container .breadcrumbs li:nth-child(2) {
+  min-width: 0;
+}
+
+.description-container .breadcrumbs a {
+  width: 100%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  border-bottom: 1px solid var(--foreground-quaternary);
+}
+
+.description-container .breadcrumbs a:focus {
+  background-color: inherit;
 }
 
 .description-container h1 {
@@ -63,7 +135,7 @@ textarea.inputarea {
   font-size: 1.1rem;
   font-weight: 700;
   line-height: 1.1;
-  margin: 0.1em 0 0.6rem;
+  margin: 0;
 }
 
 .description-highlighter {
@@ -82,6 +154,7 @@ textarea.inputarea {
   from {
     background-color: var(--highlight-background);
   }
+
   to {
     background-color: var(--secondary-background);
   }
@@ -152,28 +225,53 @@ textarea.inputarea {
   0% {
     opacity: 0;
   }
+
   /* keep test feedback contents initially hidden for 200ms*/
   40% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
 }
 
 .utility-bar {
-  display: grid;
-  /* 8rem is a safe default for all currently supported languages. Will need to be increased if a new language has longer words for Reset/Help. */
-  grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.utility-bar .utility-bar-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.utility-bar .utility-bar-top a {
+  width: 30%;
+}
+
+.utility-bar .utility-bar-top svg {
+  display: block;
+  margin: 0 auto;
+}
+
+.utility-bar .utility-bar-bottom {
+  width: 100%;
+  display: flex;
   gap: 0.75rem;
 }
 
-.utility-bar > * {
+.utility-bar .utility-bar-bottom button {
   display: flex;
-  align-items: center;
+  width: 50%;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
   justify-content: center;
+  align-items: center;
   gap: 0.3rem;
-  padding: 6px 0;
 }
 
 .progress-bar-container {
@@ -193,6 +291,20 @@ textarea.inputarea {
   margin-bottom: 18px;
 }
 
+.code-details {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.code-details-summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+.editor-upper-jaw pre code {
+  white-space: pre;
+}
+
 /* overwriting default arrow styles for accessibility */
 :root {
   --monaco-scrollbar-arrow-box-size: 0;
@@ -210,7 +322,7 @@ textarea.inputarea {
 .vs .monaco-scrollable-element .scrollbar .arrow-background {
   height: var(--monaco-scrollbar-arrow-box-size) !important;
   background-color: #666;
-  z-index: 998;
+  z-index: 199;
 }
 
 /* arrow icons - includes both up and down */
@@ -221,7 +333,7 @@ textarea.inputarea {
   height: var(--monaco-scrollbar-arrow-icon-size) !important;
   font-size: var(--monaco-scrollbar-arrow-icon-font-size) !important;
   color: white;
-  z-index: 999;
+  z-index: 199;
 }
 
 /* down arrow icon only */
@@ -230,7 +342,7 @@ textarea.inputarea {
   bottom: var(--monaco-scrollbar-arrow-icon-top-bottom) !important;
 }
 
-/* we can live with with no color change for hover state if browser doesn't
+/* we can live with no color change for hover state if browser doesn't
    support :has (the mouse cursor will still change to pointer) */
 @supports (selector(html:has(body))) {
   .vs .monaco-scrollable-element .scrollbar .arrow-background:hover,

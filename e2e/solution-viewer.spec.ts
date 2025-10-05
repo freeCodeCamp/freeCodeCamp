@@ -1,26 +1,18 @@
 import { test, expect } from '@playwright/test';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
-test.beforeEach(async ({ page }) => {
-  await page.goto(
-    '/certification/certifieduser/javascript-algorithms-and-data-structures'
-  );
-});
-
 test.describe('Solution Viewer component', () => {
   test('renders the modal correctly', async ({ page }) => {
-    await page.getByRole('button').filter({ hasText: /view/i }).first().click();
-
-    const projectSolutionViewerModal = page.getByTestId(
-      'project-solution-viewer-modal'
+    await page.goto(
+      '/certification/certifieduser/javascript-algorithms-and-data-structures'
     );
-    await expect(projectSolutionViewerModal).toBeVisible();
 
+    await page.getByRole('button', { name: /view/i }).first().click();
+
+    const projectSolutionViewerModal = page.getByRole('dialog', {
+      name: 'Solution for'
+    });
     // The modal should show the solution title...
-    await expect(
-      page.getByRole('heading').and(page.getByText(/solution for/i))
-    ).toBeVisible();
+    await expect(projectSolutionViewerModal).toBeVisible();
     // ...and relevant code file/s
     await expect(page.getByText(/js/i)).toBeVisible();
     await expect(page.locator('pre').first()).toBeVisible();
@@ -37,5 +29,48 @@ test.describe('Solution Viewer component', () => {
     const bottomRightCloseButton = closeButtons[1];
     await bottomRightCloseButton.click();
     await expect(projectSolutionViewerModal).toBeHidden();
+  });
+
+  test('renders external project links correctly', async ({ page }) => {
+    await page.goto(
+      '/certification/certifieduser/front-end-development-libraries'
+    );
+
+    const projectLink = page.getByRole('link', { name: 'View' }).first();
+    const browserContext = page.context();
+
+    const [newPage] = await Promise.all([
+      browserContext.waitForEvent('page'),
+      projectLink.click()
+    ]);
+
+    await newPage.waitForLoadState();
+
+    await expect(newPage).toHaveURL(/^https:\/\/codepen\.io/);
+
+    await newPage.close();
+  });
+
+  test('render projects with multiple solutions correctly', async ({
+    page
+  }) => {
+    await page.goto('/certification/certifieduser/quality-assurance-v7');
+
+    const dropdownButton = page.getByRole('button', { name: 'View' }).first();
+    await dropdownButton.click();
+
+    await expect(page.getByRole('menu')).toBeVisible();
+
+    const sourceLink = page.getByRole('menuitem', { name: /source/i }).first();
+
+    const browserContext = page.context();
+    const [newPage] = await Promise.all([
+      browserContext.waitForEvent('page'),
+      sourceLink.click()
+    ]);
+
+    await newPage.waitForLoadState();
+
+    await newPage.close();
   });
 });

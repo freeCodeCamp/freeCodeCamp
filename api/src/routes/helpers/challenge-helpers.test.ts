@@ -1,13 +1,17 @@
+import { describe, test, expect, afterEach, vi } from 'vitest';
 import type {
   PartiallyCompletedChallenge,
   CompletedChallenge
 } from '@prisma/client';
 
-import { createFetchMock } from '../../../jest.utils';
+import { createFetchMock } from '../../../vitest.utils.js';
 import {
   canSubmitCodeRoadCertProject,
-  verifyTrophyWithMicrosoft
-} from './challenge-helpers';
+  verifyTrophyWithMicrosoft,
+  decodeFiles,
+  decodeBase64,
+  encodeBase64
+} from './challenge-helpers.js';
 
 const id = 'abc';
 
@@ -32,7 +36,7 @@ const completedChallenges: CompletedChallenge[] = [
 
 describe('Challenge Helpers', () => {
   describe('canSubmitCodeRoadCertProject', () => {
-    it('returns true if the user has completed the required challenges or partially completed them', () => {
+    test('returns true if the user has completed the required challenges or partially completed them', () => {
       expect(
         canSubmitCodeRoadCertProject(id, {
           partiallyCompletedChallenges,
@@ -55,7 +59,7 @@ describe('Challenge Helpers', () => {
       ).toBe(true);
     });
 
-    it('returns false if the user has not completed the required challenges', () => {
+    test('returns false if the user has not completed the required challenges', () => {
       expect(
         canSubmitCodeRoadCertProject(id, {
           partiallyCompletedChallenges: [],
@@ -64,7 +68,7 @@ describe('Challenge Helpers', () => {
       ).toBe(false);
     });
 
-    it('returns false if the id is undefined', () => {
+    test('returns false if the id is undefined', () => {
       expect(
         canSubmitCodeRoadCertProject(undefined, {
           partiallyCompletedChallenges,
@@ -79,13 +83,13 @@ describe('Challenge Helpers', () => {
     const msUsername = 'ANRandom';
     const msTrophyId = 'learn.wwl.get-started-c-sharp-part-3.trophy';
     const verifyData = { msUsername, msTrophyId };
-    const gamestatusUrl = `https://learn.microsoft.com/api/gamestatus/${userId}`;
+    const achievementsUrl = `https://learn.microsoft.com/api/achievements/user/${userId}`;
 
-    afterEach(() => jest.clearAllMocks());
+    afterEach(() => vi.clearAllMocks());
 
     test("handles failure to reach Microsoft's profile api", async () => {
       const notOk = createFetchMock({ ok: false });
-      jest.spyOn(globalThis, 'fetch').mockImplementation(notOk);
+      vi.spyOn(globalThis, 'fetch').mockImplementation(notOk);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -98,13 +102,12 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test("handles failure to reach Microsoft's gamestatus api", async () => {
+    test("handles failure to reach Microsoft's achievements api", async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({ ok: false });
-      jest
-        .spyOn(globalThis, 'fetch')
+      const fetchAchievements = createFetchMock({ ok: false });
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -116,11 +119,10 @@ describe('Challenge Helpers', () => {
 
     test('handles the case where the user has no achievements', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({ body: { achievements: [] } });
-      jest
-        .spyOn(globalThis, 'fetch')
+      const fetchAchievements = createFetchMock({ body: { achievements: [] } });
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -132,13 +134,12 @@ describe('Challenge Helpers', () => {
 
     test("handles failure to find the trophy in the user's achievements", async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({
-        body: { achievements: [{ awardUid: 'fake-id' }] }
+      const fetchAchievements = createFetchMock({
+        body: { achievements: [{ typeId: 'fake-id' }] }
       });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
@@ -151,22 +152,100 @@ describe('Challenge Helpers', () => {
       });
     });
 
-    test('returns msGameStatusApiUrl on success', async () => {
+    test('returns msUserAchievementsApiUrl on success', async () => {
       const fetchProfile = createFetchMock({ body: { userId } });
-      const fetchGameStatus = createFetchMock({
-        body: { achievements: [{ awardUid: msTrophyId }] }
+      const fetchAchievements = createFetchMock({
+        body: { achievements: [{ typeId: msTrophyId }] }
       });
-      jest
-        .spyOn(globalThis, 'fetch')
+      vi.spyOn(globalThis, 'fetch')
         .mockImplementationOnce(fetchProfile)
-        .mockImplementationOnce(fetchGameStatus);
+        .mockImplementationOnce(fetchAchievements);
 
       const verification = await verifyTrophyWithMicrosoft(verifyData);
 
       expect(verification).toEqual({
         type: 'success',
-        msGameStatusApiUrl: gamestatusUrl
+        msUserAchievementsApiUrl: achievementsUrl
       });
+    });
+  });
+
+  describe('decodeFiles', () => {
+    test('decodes base64 encoded file contents', () => {
+      const encodedFiles = [
+        {
+          contents: btoa('console.log("Hello, world!");')
+        },
+        {
+          contents: btoa('<h1>Hello, world!</h1>')
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, world!");'
+        },
+        {
+          contents: '<h1>Hello, world!</h1>'
+        }
+      ]);
+    });
+
+    test('leaves all other file properties unchanged', () => {
+      const encodedFiles = [
+        {
+          contents: btoa('console.log("Hello, world!");'),
+          ext: '.js',
+          history: [],
+          key: 'file1',
+          name: 'hello.js'
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, world!");',
+          ext: '.js',
+          history: [],
+          key: 'file1',
+          name: 'hello.js'
+        }
+      ]);
+    });
+
+    test('can handle unicode characters', () => {
+      const encodedFiles = [
+        {
+          contents: encodeBase64('console.log("Hello, ✅🚀!");')
+        }
+      ];
+
+      const decodedFiles = decodeFiles(encodedFiles);
+
+      expect(decodedFiles).toEqual([
+        {
+          contents: 'console.log("Hello, ✅🚀!");'
+        }
+      ]);
+    });
+  });
+
+  describe('decodeBase64', () => {
+    test('decodes a base64 encoded string', () => {
+      const encoded = encodeBase64('Hello, world!');
+      const decoded = decodeBase64(encoded);
+      expect(decoded).toBe('Hello, world!');
+    });
+
+    test('can handle unicode characters', () => {
+      const original = 'Hello, ✅🚀!';
+      const encoded = encodeBase64(original);
+      const decoded = decodeBase64(encoded);
+      expect(decoded).toBe(original);
     });
   });
 });

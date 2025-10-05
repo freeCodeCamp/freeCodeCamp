@@ -6,12 +6,13 @@ import { connect } from 'react-redux';
 import Spinner from 'react-spinkit';
 import { createSelector } from 'reselect';
 import type { TFunction } from 'i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import {
   defaultDonation,
   DonationAmount,
   type DonationConfig
-} from '../../../../shared/config/donation-settings';
+} from '../../../../shared-dist/config/donation-settings';
 import { defaultDonationFormState } from '../../redux';
 import { updateDonationFormState, postCharge } from '../../redux/actions';
 import {
@@ -20,12 +21,11 @@ import {
   isDonatingSelector,
   signInLoadingSelector,
   donationFormStateSelector,
-  completedChallengesSelector
+  completedChallengesSelector,
+  themeSelector
 } from '../../redux/selectors';
-import Spacer from '../helpers/spacer';
-import { Themes } from '../settings/theme';
-import { DonateFormState } from '../../redux/types';
-import type { CompletedChallenge } from '../../redux/prop-types';
+import { LocalStorageThemes, DonateFormState } from '../../redux/types';
+import type { CompletedChallenge, User } from '../../redux/prop-types';
 import { CENTS_IN_DOLLAR, formattedAmountLabel } from './utils';
 import DonateCompletion from './donate-completion';
 import PatreonButton from './patreon-button';
@@ -56,12 +56,13 @@ type PostCharge = (data: {
   name?: string | undefined;
   paymentMethodId?: string;
   handleAuthentication?: HandleAuthentication;
+  subscriptionId?: string;
 }) => void;
 
 type DonateFormProps = {
   postCharge: PostCharge;
-  defaultTheme?: Themes;
-  email: string;
+  defaultTheme?: LocalStorageThemes;
+  email?: string;
   handleProcessing?: () => void;
   editAmount?: () => void;
   selectedDonationAmount?: DonationAmount;
@@ -71,10 +72,10 @@ type DonateFormProps = {
   isDonating: boolean;
   showLoading: boolean;
   t: TFunction;
-  theme: Themes;
   updateDonationFormState: (state: DonationApprovalData) => unknown;
   paymentContext: PaymentContext;
   completedChallenges: CompletedChallenge[];
+  theme: LocalStorageThemes;
 };
 
 const mapStateToProps = createSelector(
@@ -84,21 +85,23 @@ const mapStateToProps = createSelector(
   donationFormStateSelector,
   userSelector,
   completedChallengesSelector,
+  themeSelector,
   (
     showLoading: DonateFormProps['showLoading'],
     isSignedIn: DonateFormProps['isSignedIn'],
     isDonating: DonateFormProps['isDonating'],
     donationFormState: DonateFormState,
-    { email, theme }: { email: string; theme: Themes },
-    completedChallenges: CompletedChallenge[]
+    user: User | null,
+    completedChallenges: CompletedChallenge[],
+    theme: LocalStorageThemes
   ) => ({
     isSignedIn,
     isDonating,
     showLoading,
     donationFormState,
-    email,
-    theme,
-    completedChallenges
+    email: user?.email,
+    completedChallenges,
+    theme
   })
 );
 
@@ -162,9 +165,9 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     data,
     payerEmail,
     payerName,
-    token,
     paymentMethodId,
-    handleAuthentication
+    handleAuthentication,
+    subscriptionId
   }: PostPayment): void => {
     const { donationAmount, donationDuration: duration } = this.state;
     const { paymentContext, email, selectedDonationAmount } = this.props;
@@ -176,11 +179,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
       amount,
       duration,
       data,
-      token,
       email: email || payerEmail,
       name: payerName,
       paymentMethodId,
-      handleAuthentication
+      handleAuthentication,
+      subscriptionId
     });
     if (this.props.handleProcessing) this.props.handleProcessing();
   };
@@ -241,7 +244,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
     return (
       <>
         <div className={confirmationClass()}>{confirmationWithEditAmount}</div>
-        <Spacer size={editAmount ? 'small' : 'medium'} />
+        <Spacer size={editAmount ? 'xs' : 'm'} />
         <fieldset
           data-playwright-test-label='donation-form'
           className={'donate-btn-group security-legend'}
@@ -254,11 +257,11 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
           {loading.stripe && loading.paypal && <PaymentButtonsLoader />}
           <WalletsWrapper
             amount={donationAmount}
+            duration={donationDuration}
             handlePaymentButtonLoad={this.handlePaymentButtonLoad}
             label={walletlabel}
             onDonationStateChange={this.onDonationStateChange}
             postPayment={this.postPayment}
-            refreshErrorMessage={t('donate.refresh-needed')}
             theme={priorityTheme}
           />
           <PaypalButton
@@ -295,11 +298,7 @@ class DonateForm extends Component<DonateFormProps, DonateFormComponentState> {
   }
 
   renderPageForm() {
-    return (
-      <>
-        <div>{this.renderButtonGroup()}</div>
-      </>
-    );
+    return <div>{this.renderButtonGroup()}</div>;
   }
 
   render() {

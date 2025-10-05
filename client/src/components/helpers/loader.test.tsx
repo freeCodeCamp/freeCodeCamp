@@ -1,11 +1,10 @@
-import { render, cleanup, screen } from '@testing-library/react';
+import { describe, it, expect } from 'vitest';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import Loader from './loader';
 
 describe('<Loader />', () => {
-  afterEach(cleanup);
-
   it('renders to the DOM', () => {
     const { container } = render(<Loader />);
     expect(container).toBeTruthy();

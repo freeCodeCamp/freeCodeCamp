@@ -2,6 +2,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import ShallowRenderer from 'react-test-renderer/shallow';
+import { describe, test, expect, vi } from 'vitest';
 
 import FourOhFourPage from '../../src/pages/404';
 import Certification from '../../src/pages/certification';
@@ -9,7 +10,9 @@ import Learn from '../../src/pages/learn';
 import { createStore } from '../../src/redux/create-store';
 import layoutSelector from './layout-selector';
 
-jest.mock('../../src/analytics');
+vi.mock('../../src/analytics');
+
+vi.mock('../../src/utils/get-words');
 
 const store = createStore();
 
@@ -31,10 +34,13 @@ function getComponentNameAndProps(
   const LayoutReactComponent = layoutSelector({
     element: { type: elementType, props: {}, key: '' },
     props: {
+      data: {},
       location: {
         pathname
       },
-      pageContext
+      pageContext,
+      params: { '*': '' },
+      path: ''
     }
   });
   utils.render(<Provider store={store}>{LayoutReactComponent}</Provider>);
@@ -57,55 +63,60 @@ const challengePageContext = {
   }
 };
 
-test('Challenges should have DefaultLayout and no footer', () => {
-  const challengePath =
-    '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements';
-  const componentObj = getComponentNameAndProps(
-    Learn,
-    challengePath,
-    challengePageContext
-  );
-  expect(componentObj.name).toEqual('DefaultLayout');
-  expect(componentObj.props.showFooter).toEqual(false);
-});
+describe('Layout selector', () => {
+  test('Challenges should have DefaultLayout and no footer', () => {
+    const challengePath =
+      '/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements';
+    const componentObj = getComponentNameAndProps(
+      Learn,
+      challengePath,
+      challengePageContext
+    );
+    expect(componentObj.name).toEqual('DefaultLayout');
+    expect(componentObj.props.showFooter).toEqual(false);
+  });
 
-test('SuperBlock path should have DefaultLayout and footer', () => {
-  const superBlockPath = '/learn/responsive-web-design/';
-  const componentObj = getComponentNameAndProps(Learn, superBlockPath);
-  expect(componentObj.name).toEqual('DefaultLayout');
-  expect(componentObj.props.showFooter).toEqual(true);
-});
+  test('SuperBlock path should have DefaultLayout and footer', () => {
+    const superBlockPath = '/learn/responsive-web-design/';
+    const componentObj = getComponentNameAndProps(Learn, superBlockPath);
+    expect(componentObj.name).toEqual('DefaultLayout');
+    expect(componentObj.props.showFooter).toEqual(true);
+  });
 
-test('i18n challenge path should have DefaultLayout and no footer', () => {
-  const challengePath =
-    'espanol/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements/';
-  const componentObj = getComponentNameAndProps(
-    Learn,
-    challengePath,
-    challengePageContext
-  );
-  expect(componentObj.name).toEqual('DefaultLayout');
-  expect(componentObj.props.showFooter).toEqual(false);
-});
+  test('i18n challenge path should have DefaultLayout and no footer', () => {
+    const challengePath =
+      'espanol/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements/';
+    const componentObj = getComponentNameAndProps(
+      Learn,
+      challengePath,
+      challengePageContext
+    );
+    expect(componentObj.name).toEqual('DefaultLayout');
+    expect(componentObj.props.showFooter).toEqual(false);
+  });
 
-test('i18n superBlock path should have DefaultLayout and footer', () => {
-  const superBlockPath = '/learn/responsive-web-design/';
-  const componentObj = getComponentNameAndProps(Learn, superBlockPath);
-  expect(componentObj.name).toEqual('DefaultLayout');
-  expect(componentObj.props.showFooter).toEqual(true);
-});
+  test('i18n superBlock path should have DefaultLayout and footer', () => {
+    const superBlockPath = '/learn/responsive-web-design/';
+    const componentObj = getComponentNameAndProps(Learn, superBlockPath);
+    expect(componentObj.name).toEqual('DefaultLayout');
+    expect(componentObj.props.showFooter).toEqual(true);
+  });
 
-test('404 page should have DefaultLayout and footer', () => {
-  const challengePath =
-    '/espanol/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements/';
-  const componentObj = getComponentNameAndProps(FourOhFourPage, challengePath);
-  expect(componentObj.name).toEqual('DefaultLayout');
-  expect(componentObj.props.showFooter).toEqual(true);
-});
+  test('404 page should have DefaultLayout and footer', () => {
+    const challengePath =
+      '/espanol/learn/responsive-web-design/basic-html-and-html5/say-hello-to-html-elements/';
+    const componentObj = getComponentNameAndProps(
+      FourOhFourPage,
+      challengePath
+    );
+    expect(componentObj.name).toEqual('DefaultLayout');
+    expect(componentObj.props.showFooter).toEqual(true);
+  });
 
-test('Certification path should have CertificationLayout', () => {
-  const challengePath =
-    '/certification/mot01/javascript-algorithms-and-data-structures/';
-  const componentObj = getComponentNameAndProps(Certification, challengePath);
-  expect(componentObj.name).toEqual('CertificationLayout');
+  test('Certification path should have CertificationLayout', () => {
+    const challengePath =
+      '/certification/mot01/javascript-algorithms-and-data-structures/';
+    const componentObj = getComponentNameAndProps(Certification, challengePath);
+    expect(componentObj.name).toEqual('CertificationLayout');
+  });
 });

@@ -1,23 +1,34 @@
-const path = require('path');
-const cloneDeep = require('lodash/cloneDeep');
-const toVfile = require('to-vfile');
-const selectAll = require('unist-util-select').selectAll;
+import { resolve } from 'path';
+import { describe, beforeAll, beforeEach, it, expect, vi } from 'vitest';
+import cloneDeep from 'lodash/cloneDeep';
+import toVfile from 'to-vfile';
+import { selectAll } from 'unist-util-select';
+import parseFixture from '../__fixtures__/parse-fixture';
 
-const originalImportsExtraAST = require('../__fixtures__/ast-imports-extra.json');
-const originalImportsTwoAST = require('../__fixtures__/ast-imports-two.json');
-const originalImportsAST = require('../__fixtures__/ast-imports.json');
-const originalMarkerAST = require('../__fixtures__/ast-marker-imports.json');
-const originalSimpleAST = require('../__fixtures__/ast-simple.json');
-const addImports = require('./replace-imports');
+import addImports from './replace-imports';
 
 describe('replace-imports', () => {
-  let importsAST;
-  let importsTwoAST;
-  let importsExtraAST;
-  let simpleAST;
-  let markerAST;
-  let correctFile;
-  let incorrectFile;
+  let importsAST,
+    importsTwoAST,
+    importsExtraAST,
+    simpleAST,
+    markerAST,
+    correctFile,
+    incorrectFile;
+
+  let originalImportsAST,
+    originalImportsTwoAST,
+    originalImportsExtraAST,
+    originalMarkerAST,
+    originalSimpleAST;
+
+  beforeAll(async () => {
+    originalImportsAST = await parseFixture('with-imports.md');
+    originalImportsTwoAST = await parseFixture('with-imports-two.md');
+    originalImportsExtraAST = await parseFixture('with-imports-extra.md');
+    originalSimpleAST = await parseFixture('simple.md');
+    originalMarkerAST = await parseFixture('with-marker-imports.md');
+  });
 
   beforeEach(() => {
     importsAST = cloneDeep(originalImportsAST);
@@ -26,10 +37,10 @@ describe('replace-imports', () => {
     simpleAST = cloneDeep(originalSimpleAST);
     markerAST = cloneDeep(originalMarkerAST);
     correctFile = toVfile(
-      path.resolve(__dirname, '../__fixtures__/with-imports.md')
+      resolve(__dirname, '../__fixtures__/with-imports.md')
     );
     incorrectFile = toVfile(
-      path.resolve(__dirname, '../__fixtures__/incorrect-path/with-imports.md')
+      resolve(__dirname, '../__fixtures__/incorrect-path/with-imports.md')
     );
   });
 
@@ -40,70 +51,68 @@ describe('replace-imports', () => {
     expect(typeof plugin).toEqual('function');
   });
 
-  it('should fail when the imported file is null', done => {
+  it('should fail when the imported file is null', () => {
     const plugin = addImports();
-    const next = err => {
-      if (err) {
-        done();
-      } else {
-        done('An error should have been thrown by addImports');
-      }
-    };
-    plugin(importsAST, null, next);
+    const nextSpy = vi.fn();
+
+    plugin(importsAST, null, nextSpy);
+    expect(nextSpy).toHaveBeenCalledWith(
+      'replace-imports must be passed a file'
+    );
   });
 
-  it('should proceed when the imported file exists', done => {
-    const plugin = addImports();
-    plugin(importsAST, correctFile, done);
-  });
-
-  it('should fail when the imported file cannot be found', done => {
-    expect.assertions(1);
-    console.error = jest.fn();
+  it('should proceed when the imported file exists', async () => {
     const plugin = addImports();
 
-    // we have to rely on the next callback, because that is how you get error
-    // messages out of transformers
-    const next = err => {
-      if (err) {
-        expect(console.error).toHaveBeenCalledTimes(2);
-        done();
-      } else {
-        done('An error should have been thrown by addImports');
-      }
-    };
-    plugin(importsAST, incorrectFile, next);
+    await expect(
+      new Promise(resolve => {
+        plugin(importsAST, correctFile, resolve);
+      })
+    ).resolves.toBeUndefined();
   });
 
-  it('should modify the tree when there are imports', done => {
-    expect.assertions(1);
+  it('should fail when the imported file cannot be found', async () => {
+    expect.assertions(2);
+    console.error = vi.fn();
     const plugin = addImports();
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        expect(importsAST).not.toEqual(originalImportsAST);
-        done();
-      }
-    };
-    plugin(importsAST, correctFile, next);
+
+    await expect(
+      new Promise((resolve, reject) => {
+        plugin(importsAST, incorrectFile, err => {
+          if (err) {
+            expect(console.error).toHaveBeenCalledTimes(2);
+            resolve();
+          } else {
+            reject('An error should have been thrown by addImports');
+          }
+        });
+      })
+    ).resolves.toBeUndefined();
   });
 
-  it('should NOT modify the tree when there are NO imports', done => {
+  it('should modify the tree when there are imports', async () => {
     expect.assertions(1);
     const plugin = addImports();
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        expect(simpleAST).toEqual(originalSimpleAST);
-        done();
-      }
-    };
-    plugin(simpleAST, correctFile, next);
+
+    await new Promise(resolve => {
+      plugin(importsAST, correctFile, resolve);
+    });
+
+    expect(importsAST).not.toEqual(originalImportsAST);
   });
 
-  it('should remove all import statements', done => {
+  it('should NOT modify the tree when there are NO imports', async () => {
+    expect.assertions(1);
+    const plugin = addImports();
+
+    await new Promise(resolve => {
+      plugin(simpleAST, correctFile, resolve);
+    });
+
+    expect(simpleAST).toEqual(originalSimpleAST);
+  });
+
+  it('should remove all import statements', async () => {
     expect.assertions(2);
     const selector = 'leafDirective[name=import]';
     const plugin = addImports();
@@ -111,19 +120,15 @@ describe('replace-imports', () => {
 
     expect(importNodes.length).toBe(1);
 
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        const importNodes = selectAll(selector, importsAST);
-        expect(importNodes.length).toBe(0);
-        done();
-      }
-    };
-    plugin(importsAST, correctFile, next);
+    await new Promise(resolve => {
+      plugin(importsAST, correctFile, resolve);
+    });
+
+    const importNodesAfter = selectAll(selector, importsAST);
+    expect(importNodesAfter.length).toBe(0);
   });
 
-  it('should not remove an ::import without the required attributes', done => {
+  it('should not remove an ::import without the required attributes', async () => {
     expect.assertions(2);
     const selector = 'leafDirective[name=import]';
     const plugin = addImports();
@@ -131,19 +136,15 @@ describe('replace-imports', () => {
 
     expect(importNodes.length).toBe(3);
 
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        const importNodes = selectAll(selector, importsExtraAST);
-        expect(importNodes.length).toBe(1);
-        done();
-      }
-    };
-    plugin(importsExtraAST, correctFile, next);
+    await new Promise(resolve => {
+      plugin(importsExtraAST, correctFile, resolve);
+    });
+
+    const importNodesAfter = selectAll(selector, importsExtraAST);
+    expect(importNodesAfter.length).toBe(1);
   });
 
-  it('should remove all matching ::use statements', done => {
+  it('should remove all matching ::use statements', async () => {
     expect.assertions(2);
     const selector = 'leafDirective[name=use]';
     const plugin = addImports();
@@ -152,108 +153,97 @@ describe('replace-imports', () => {
     // one matching component and two other jsx nodes
     expect(components.length).toBe(1);
 
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        const components = selectAll(selector, importsAST);
-        expect(components.length).toBe(0);
-        done();
-      }
-    };
-    plugin(importsAST, correctFile, next);
+    await new Promise(resolve => {
+      plugin(importsAST, correctFile, resolve);
+    });
+
+    const componentsAfter = selectAll(selector, importsAST);
+    expect(componentsAfter.length).toBe(0);
   });
 
-  it('should replace the ::use statement with the imported content', done => {
+  it('should replace the ::use statement with the imported content', async () => {
     // checks the contents of script.md are there after the import step
     expect.assertions(2);
     const plugin = addImports();
 
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        const jsNodes = selectAll('code[lang=js]', importsAST);
-        expect(jsNodes.length).toBe(4);
+    await new Promise(resolve => {
+      plugin(importsAST, correctFile, resolve);
+    });
 
-        const codeValues = jsNodes.map(({ value }) => value);
-        expect(codeValues).toEqual(
-          expect.arrayContaining([
-            `for (let index = 0; index < array.length; index++) {
+    const jsNodes = selectAll('code[lang=js]', importsAST);
+    expect(jsNodes.length).toBe(4);
+
+    const codeValues = jsNodes.map(({ value }) => value);
+    expect(codeValues).toEqual(
+      expect.arrayContaining([
+        `for (let index = 0; index < array.length; index++) {
   const element = array[index];
   // imported from script.md
 }`
-          ])
-        );
-        done();
-      }
-    };
-    plugin(importsAST, correctFile, next);
+      ])
+    );
   });
 
-  it('should handle multiple import statements', done => {
+  it('should handle multiple import statements', async () => {
     // checks the contents of script.md are there after the import step
     expect.assertions(4);
     const plugin = addImports();
 
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        const jsNodes = selectAll('code[lang=js]', importsTwoAST);
-        expect(jsNodes.length).toBe(4);
+    await new Promise(resolve => {
+      plugin(importsTwoAST, correctFile, resolve);
+    });
 
-        const codeValues = jsNodes.map(({ value }) => value);
-        expect(codeValues).toEqual(
-          expect.arrayContaining([
-            `for (let index = 0; index < array.length; index++) {
+    const jsNodes = selectAll('code[lang=js]', importsTwoAST);
+    expect(jsNodes.length).toBe(4);
+
+    const codeValues = jsNodes.map(({ value }) => value);
+    expect(codeValues).toEqual(
+      expect.arrayContaining([
+        `for (let index = 0; index < array.length; index++) {
   const element = array[index];
   // imported from script.md
 }`
-          ])
-        );
-        const cssNodes = selectAll('code[lang=css]', importsTwoAST);
-        expect(cssNodes.length).toBe(2);
+      ])
+    );
+    const cssNodes = selectAll('code[lang=css]', importsTwoAST);
+    expect(cssNodes.length).toBe(2);
 
-        const cssValues = cssNodes.map(({ value }) => value);
-        expect(cssValues).toEqual(
-          expect.arrayContaining([
-            `div {
+    const cssValues = cssNodes.map(({ value }) => value);
+    expect(cssValues).toEqual(
+      expect.arrayContaining([
+        `div {
   background: red
 }`
-          ])
-        );
-        done();
-      }
-    };
-    plugin(importsTwoAST, correctFile, next);
+      ])
+    );
   });
 
-  it('should reject imported files with editable region markers', done => {
-    expect.assertions(1);
-    console.error = jest.fn();
+  it('should reject imported files with editable region markers', async () => {
+    expect.assertions(2); // One inside the callback and one for the outer expect
+    console.error = vi.fn();
     const plugin = addImports();
-    const next = err => {
-      if (err) {
-        expect(console.error).toHaveBeenCalledTimes(2);
-        done();
-      } else {
-        done('An error should have been thrown by addImports');
-      }
-    };
-    plugin(markerAST, correctFile, next);
+
+    await expect(
+      new Promise((resolve, reject) => {
+        plugin(markerAST, correctFile, err => {
+          if (err) {
+            expect(console.error).toHaveBeenCalledTimes(2);
+          } else {
+            reject('An error should have been thrown by addImports');
+          }
+          resolve();
+        });
+      })
+    ).resolves.toBeUndefined();
   });
 
-  it('should have an output to match the snapshot', done => {
+  it('should have an output to match the snapshot', async () => {
     const plugin = addImports();
-    const next = err => {
-      if (err) {
-        done(err);
-      } else {
-        expect(importsAST).toMatchSnapshot();
-        done();
-      }
-    };
-    plugin(importsAST, correctFile, next);
+
+    await new Promise(resolve => {
+      plugin(importsAST, correctFile, resolve);
+    });
+
+    expect(importsAST).toMatchSnapshot();
   });
 });

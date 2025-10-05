@@ -1,8 +1,16 @@
-const isArray = require('lodash/isArray');
-const simpleAst = require('../../__fixtures__/ast-simple.json');
-const getAllBefore = require('./before-heading');
+import isArray from 'lodash/isArray';
+import { describe, beforeAll, it, expect } from 'vitest';
+
+import parseFixture from '../../__fixtures__/parse-fixture';
+import getAllBefore from './before-heading';
 
 describe('before-headings', () => {
+  let simpleAst;
+
+  beforeAll(async () => {
+    simpleAst = await parseFixture('simple.md');
+  });
+
   it('should return an array', () => {
     expect.assertions(1);
     const actual = getAllBefore(simpleAst, '--hints--');

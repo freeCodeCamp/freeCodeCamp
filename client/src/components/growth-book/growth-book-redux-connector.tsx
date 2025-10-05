@@ -1,59 +1,78 @@
-import React, { ReactNode, useEffect } from 'react';
+import { useEffect } from 'react';
 
 import { useFeature } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import {
   isSignedInSelector,
-  showMultipleProgressModalsSelector
+  isRandomCompletionThresholdSelector,
+  userIdSelector,
+  userFetchStateSelector
 } from '../../redux/selectors';
-import { setShowMultipleProgressModals } from '../../redux/actions';
+import { setIsRandomCompletionThreshold } from '../../redux/actions';
+import { UserFetchState } from '../../redux/prop-types';
+import callGA from '../../analytics/call-ga';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
-  showMultipleProgressModalsSelector,
-  (isSignedIn, showMultipleProgressModals: boolean) => ({
+  isRandomCompletionThresholdSelector,
+  userIdSelector,
+  userFetchStateSelector,
+  (
+    isSignedIn: boolean,
+    isRandomCompletionThreshold: boolean,
+    userId: string,
+    userFetchState: UserFetchState
+  ) => ({
     isSignedIn,
-    showMultipleProgressModals
+    isRandomCompletionThreshold,
+    userId,
+    userFetchState
   })
 );
 
 type StateProps = ReturnType<typeof mapStateToProps>;
-type DispatchProps = { setShowMultipleProgressModals: (arg: boolean) => void };
+type DispatchProps = { setIsRandomCompletionThreshold: (arg: boolean) => void };
 
 interface GrowthBookReduxConnector extends StateProps, DispatchProps {
-  children: ReactNode;
+  children: JSX.Element;
 }
 
 const mapDispatchToProps = {
-  setShowMultipleProgressModals
+  setIsRandomCompletionThreshold
 };
 
 const GrowthBookReduxConnector = ({
   children,
   isSignedIn,
-  showMultipleProgressModals,
-  setShowMultipleProgressModals
+  isRandomCompletionThreshold,
+  userId,
+  setIsRandomCompletionThreshold,
+  userFetchState
 }: GrowthBookReduxConnector) => {
-  const displayProgressModalMultipleTimes = useFeature(
-    'display_progress_modal_multiple_times'
-  ).on;
+  // Send user id to GA
+  useEffect(() => {
+    if (userFetchState.complete && isSignedIn) {
+      callGA({
+        event: 'user_data',
+        user_id: userId
+      });
+    }
+  }, [userFetchState, userId, isSignedIn]);
+
+  const showModalsRandomly = useFeature('show-modal-randomly').on;
   useFeature('aa-test');
   useEffect(() => {
-    if (
-      isSignedIn &&
-      displayProgressModalMultipleTimes &&
-      !showMultipleProgressModals
-    ) {
-      setShowMultipleProgressModals(true);
+    if (isSignedIn && showModalsRandomly && !isRandomCompletionThreshold) {
+      setIsRandomCompletionThreshold(true);
     }
   }, [
     isSignedIn,
-    showMultipleProgressModals,
-    displayProgressModalMultipleTimes,
-    setShowMultipleProgressModals
+    isRandomCompletionThreshold,
+    showModalsRandomly,
+    setIsRandomCompletionThreshold
   ]);
-  return <>{children}</>;
+  return children;
 };
 
 export default connect(

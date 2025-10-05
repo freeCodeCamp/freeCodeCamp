@@ -1,28 +1,22 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import CalendarHeatMap from '@freecodecamp/react-calendar-heatmap';
-import addDays from 'date-fns/addDays';
-import addMonths from 'date-fns/addMonths';
-import isEqual from 'date-fns/isEqual';
-import startOfDay from 'date-fns/startOfDay';
+import CalendarHeatMap from 'react-calendar-heatmap';
+
+import { addDays, addMonths, isEqual, startOfDay } from 'date-fns';
 import React, { Component } from 'react';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
 import ReactTooltip from 'react-tooltip';
-import { Row } from '@freecodecamp/ui';
+import { Row, Spacer } from '@freecodecamp/ui';
 
-import '@freecodecamp/react-calendar-heatmap/dist/styles.css';
+import 'react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
+import { getLangCode } from '../../../../../shared-dist/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
-import Spacer from '../../helpers/spacer';
 
-// eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
 const { clientLocale } = envData;
 
 const localeCode = getLangCode(clientLocale);
@@ -43,8 +37,6 @@ interface CalendarData {
 
 interface HeatMapInnerProps {
   calendarData: CalendarData[];
-  currentStreak: number;
-  longestStreak: number;
   pages: PageData[];
   points?: number;
   t: TFunction;
@@ -85,7 +77,7 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
   }
 
   render() {
-    const { calendarData, currentStreak, longestStreak, pages, t } = this.props;
+    const { calendarData, pages, t } = this.props;
     const { startOfCalendar, endOfCalendar } = pages[this.state.pageIndex];
     const title = `${startOfCalendar.toLocaleDateString([localeCode, 'en-US'], {
       year: 'numeric',
@@ -100,83 +92,77 @@ class HeatMapInner extends Component<HeatMapInnerProps, HeatMapInnerState> {
 
     return (
       <FullWidthRow>
-        <Row className='heatmap-nav'>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex - 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.prevPage}
-            style={{
-              visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &lt;
-          </button>
-          <span>{title}</span>
-          <button
-            className='heatmap-nav-btn'
-            disabled={!pages[this.state.pageIndex + 1]}
-            // eslint-disable-next-line @typescript-eslint/unbound-method
-            onClick={this.nextPage}
-            style={{
-              visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
-            }}
-          >
-            &gt;
-          </button>
-        </Row>
-        <Spacer size='medium' />
+        <section className='card'>
+          <h2>{t('profile.activity')}</h2>
+          <Spacer size='m' />
 
-        <CalendarHeatMap
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          classForValue={(value: any) => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (!value || value.count < 1) return 'color-empty';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count < 4) return 'color-scale-1';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count < 8) return 'color-scale-2';
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (value.count >= 8) return 'color-scale-a-lot';
-            return 'color-empty';
-          }}
-          endDate={endOfCalendar}
-          startDate={startOfCalendar}
-          tooltipDataAttrs={(value: { count: number; date: Date }) => {
-            const dateFormatted: string =
-              value && value.date
-                ? value.date.toLocaleDateString([localeCode, 'en-US'], {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
-                  })
-                : '';
-            return {
-              'data-tip':
-                value && value.count > -1
-                  ? t('profile.points', {
-                      count: value.count,
-                      date: dateFormatted
+          <CalendarHeatMap
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            classForValue={(value: any) => {
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (!value || value.count < 1) return 'color-empty';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count < 4) return 'color-scale-1';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count < 8) return 'color-scale-2';
+              // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+              if (value.count >= 8) return 'color-scale-a-lot';
+              return 'color-empty';
+            }}
+            endDate={endOfCalendar}
+            startDate={startOfCalendar}
+            tooltipDataAttrs={(value: { count: number; date: Date }) => {
+              const dateFormatted: string =
+                value && value.date
+                  ? value.date.toLocaleDateString([localeCode, 'en-US'], {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric'
                     })
-                  : ''
-            };
-          }}
-          values={dataToDisplay}
-        />
-        <ReactTooltip className='react-tooltip' effect='solid' html={true} />
-
-        <Spacer size='medium' />
-        <Row>
-          <div className='streak-container'>
-            <span className='streak' data-testid='longest-streak'>
-              <b>{t('profile.longest-streak')}</b> {longestStreak || 0}
-            </span>
-            <span className='streak' data-testid='current-streak'>
-              <b>{t('profile.current-streak')}</b> {currentStreak || 0}
-            </span>
-          </div>
-        </Row>
-        <hr />
+                  : '';
+              if (!value || value.count < 0) {
+                return { 'data-tip': '' };
+              }
+              return {
+                'data-tip': t('profile.points', {
+                  count: value.count,
+                  date: dateFormatted
+                })
+              };
+            }}
+            values={dataToDisplay}
+          />
+          <ReactTooltip className='react-tooltip' effect='solid' html={true} />
+          <Row className='text-center'>
+            <Spacer size='xs' />
+            <button
+              className='heatmap-nav-btn'
+              disabled={!pages[this.state.pageIndex - 1]}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              onClick={this.prevPage}
+              style={{
+                visibility: pages[this.state.pageIndex - 1] ? 'unset' : 'hidden'
+              }}
+              aria-label={t('aria.previous-page')}
+            >
+              &lt;
+            </button>
+            <span>{title}</span>
+            <button
+              className='heatmap-nav-btn'
+              disabled={!pages[this.state.pageIndex + 1]}
+              // eslint-disable-next-line @typescript-eslint/unbound-method
+              onClick={this.nextPage}
+              style={{
+                visibility: pages[this.state.pageIndex + 1] ? 'unset' : 'hidden'
+              }}
+              aria-label={t('aria.next-page')}
+            >
+              &gt;
+            </button>
+          </Row>
+          <Spacer size='xs' />
+        </section>
       </FullWidthRow>
     );
   }
@@ -188,7 +174,7 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
 
   /**
    *  the following logic creates the data for the heatmap
-   *  from the users calendar and calculates their streaks
+   *  from the users calendar
    */
 
   // create array of timestamps and turn into milliseconds
@@ -232,11 +218,7 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
     dayCounter = addDays(dayCounter, 1);
   }
 
-  let longestStreak = 0;
-  let currentStreak = 0;
-  let lastIndex = -1;
-
-  // add a point to each day with a completed timestamp and calculate streaks
+  // add a point to each day with a completed timestamp
   timestamps.forEach(stamp => {
     const index = calendarData.findIndex(day =>
       isEqual(day.date, startOfDay(stamp))
@@ -245,42 +227,10 @@ const HeatMap = (props: HeatMapProps): JSX.Element => {
     if (index >= 0) {
       // add one point for today
       calendarData[index].count++;
-
-      // if timestamp is on a new day, deal with streaks
-      if (index !== lastIndex) {
-        // if yesterday has points
-        if (calendarData[index - 1] && calendarData[index - 1].count > 0) {
-          currentStreak++;
-        } else {
-          currentStreak = 1;
-        }
-
-        if (currentStreak > longestStreak) {
-          longestStreak = currentStreak;
-        }
-      }
-
-      lastIndex = index;
     }
   });
 
-  // if today has no points
-  if (
-    calendarData[calendarData.length - 1] &&
-    calendarData[calendarData.length - 1].count === 0
-  ) {
-    currentStreak = 0;
-  }
-
-  return (
-    <HeatMapInner
-      calendarData={calendarData}
-      currentStreak={currentStreak}
-      longestStreak={longestStreak}
-      pages={pages}
-      t={t}
-    />
-  );
+  return <HeatMapInner calendarData={calendarData} pages={pages} t={t} />;
 };
 
 HeatMap.displayName = 'HeatMap';

@@ -1,6 +1,6 @@
 // Configuration for client side
 
-export type DonationAmount = 500 | 1000 | 2000 | 4000;
+export type DonationAmount = 500 | 1000 | 2000 | 2500 | 4000;
 export type DonationDuration = 'one-time' | 'month';
 export interface DonationConfig {
   donationAmount: DonationAmount;
@@ -8,6 +8,7 @@ export interface DonationConfig {
 }
 
 export const subscriptionAmounts: DonationAmount[] = [500, 1000, 2000, 4000];
+export const subscriptionAmountsB: DonationAmount[] = [500, 1000, 2500, 4000];
 
 export const defaultDonation: DonationConfig = {
   donationAmount: 500,
@@ -15,9 +16,10 @@ export const defaultDonation: DonationConfig = {
 };
 
 export const defaultTierAmount: DonationAmount = 2000;
+export const defaultTierAmountB: DonationAmount = 2500;
 
 export const onetimeSKUConfig = {
-  live: [
+  production: [
     { amount: '15000', id: 'sku_IElisJHup0nojP' },
     { amount: '10000', id: 'sku_IEliodY88lglPk' },
     { amount: '7500', id: 'sku_IEli9AXW8DwNtT' },
@@ -38,21 +40,22 @@ export const durationKeysConfig = ['month', 'one-time'];
 export const donationOneTimeConfig = [100000, 25000, 6000];
 export const donationSubscriptionConfig = {
   duration: {
-    month: 'Monthly'
+    month: 'monthly'
   },
   plans: {
-    month: [25000, 3500, 500]
+    month: subscriptionAmounts
   }
 };
 
 // Shared paypal configuration
 // keep the 5 dollars for the modal
 export const paypalConfigTypes = {
-  live: {
+  production: {
     month: {
       500: { planId: 'P-6B636789V3105190KMTJFH7A' },
       1000: { planId: 'P-53P76823N8780520DMVTWF3I' },
       2000: { planId: 'P-8HY47434FB9663500MVTWFOA' },
+      2500: { planId: 'P-1E758922LA293854BNC3SK3A' },
       3000: { planId: 'P-1KY930839N8045117L6E4BKY' },
       4000: { planId: 'P-0MH28916302828423MVTWEBI' },
       5000: { planId: 'P-0WR49877YD949401BL6E4CTA' }
@@ -63,6 +66,7 @@ export const paypalConfigTypes = {
       500: { planId: 'P-37N14480BW163382FLZYPVMA' },
       1000: { planId: 'P-28B62039J8092810UL6E3FXA' },
       2000: { planId: 'P-7HR706961M9170433L6HI5VI' },
+      2500: { planId: 'P-2BK29709FB733490FNC3RPGQ' },
       3000: { planId: 'P-35V33574BU596924JL6HI6XY' },
       4000: { planId: 'P-45M45060289267734L6HJSXA' },
       5000: { planId: 'P-0MD70861FY4172444L6HJTUQ' }
@@ -90,6 +94,7 @@ export const paypalConfigurator = (
       500: { planId: string };
       1000: { planId: string };
       2000: { planId: string };
+      2500: { planId: string };
       3000: { planId: string };
       4000: { planId: string };
       5000: { planId: string };
@@ -123,3 +128,29 @@ export enum PaymentProvider {
   Stripe = 'stripe',
   StripeCard = 'stripe card'
 }
+
+const stripeProductIds = {
+  production: {
+    month: {
+      500: 'prod_Cc9bIxB2NvjpLy',
+      1000: 'prod_BuiSxWk7jGSFlJ',
+      2000: 'prod_IElpZVK7kOn6Fe',
+      2500: 'prod_JCakZSxh12ZaDF',
+      4000: 'prod_IElq1foW39g3Cx'
+    }
+  },
+  staging: {
+    month: {
+      500: 'prod_GD1GGbJsqQaupl',
+      1000: 'prod_GD1IzNEXfSCGgy',
+      2000: 'prod_IEkNp8M03xvsuB',
+      2500: 'prod_T12UtcRPvzzVN1',
+      4000: 'prod_IEkPebxS63mVbs'
+    }
+  }
+};
+
+export const allStripeProductIdsArray = [
+  ...Object.values(stripeProductIds['production']['month']),
+  ...Object.values(stripeProductIds['staging']['month'])
+];

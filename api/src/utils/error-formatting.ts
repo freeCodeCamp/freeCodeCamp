@@ -34,6 +34,8 @@ export const formatProjectCompletedValidation = (
 ): FormattedError => {
   const error = getError(errors);
 
+  // TODO: split this into two functions. There's no need for it to handle both
+  // /project-completed and /save-challenge
   return error.instancePath === '' &&
     error.params.missingProperty === 'solution'
     ? {

@@ -1,75 +1,331 @@
-import React, { useEffect, useState, useRef } from 'react'; //, ReactElement } from 'react';
-import { Col } from '@freecodecamp/ui';
+import React, {
+  useEffect,
+  useState,
+  useRef,
+  useMemo,
+  useCallback
+} from 'react';
+import { Col, Spacer } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePause, faCirclePlay } from '@fortawesome/free-solid-svg-icons';
+import { isEmpty } from 'lodash-es';
+import { useTranslation } from 'react-i18next';
 import { FullScene } from '../../../../redux/prop-types';
 import { Loader } from '../../../../components/helpers';
-import AccessibilityIcon from '../../../../assets/icons/accessibility';
-import { sounds, images, backgrounds } from './scene-assets';
+import ClosedCaptionsIcon from '../../../../assets/icons/closedcaptions';
+import ChallengeTranscript from '../challenge-transcript';
+import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
+import { SceneSubject } from './scene-subject';
 
 import './scene.css';
 
-export function Scene({ scene }: { scene: FullScene }): JSX.Element {
+const sToMs = (n: number) => n * 1000;
+
+const loadImage = (src: string | null) => {
+  if (src) new Image().src = src;
+};
+
+const initDialogue = { label: '', text: '', align: 'left' };
+
+export function Scene({
+  scene,
+  sceneSubject
+}: {
+  scene: FullScene;
+  sceneSubject: SceneSubject;
+}): JSX.Element {
+  const { t } = useTranslation();
+  const canPauseRef = useRef(false);
   const { setup, commands } = scene;
   const { audio, alwaysShowDialogue } = setup;
 
-  const audioTimestamp =
-    audio.startTimestamp !== null && audio.finishTimestamp !== null
-      ? `#t=${audio.startTimestamp},${audio.finishTimestamp}`
-      : '';
+  const audioRef = useRef<HTMLAudioElement>(new Audio());
 
-  const audioRef = useRef<HTMLAudioElement>(
-    new Audio(`${sounds}/${audio.filename}${audioTimestamp}`)
-  );
+  // if there are timestamps, we use the difference between them as the duration
+  // if not, we assume we're playing the whole audio file.
+  const duration =
+    audio.startTimestamp !== null && audio.finishTimestamp !== null
+      ? sToMs(audio.finishTimestamp - audio.startTimestamp)
+      : Infinity;
+
+  const pauseAudio = () => {
+    // Until the play() promise resolves, we can't pause the audio
+    if (canPauseRef.current) audioRef.current.pause();
+    canPauseRef.current = false;
+    clearTimeout(startTimerRef.current);
+    clearTimeout(finishTimerRef.current);
+  };
+
+  const pauseAnimation = () => {
+    setIsPlaying(false);
+    // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
+    // know that
+    window.cancelAnimationFrame(animationRef.current);
+  };
+
+  const resetAudio = useCallback(() => {
+    pauseAudio();
+    audioRef.current.currentTime = audio.startTimestamp || 0;
+    pausedAtRef.current = 0;
+  }, [audio.startTimestamp]);
 
   // on mount
   useEffect(() => {
     const { current } = audioRef;
-    current.addEventListener('canplaythrough', audioLoaded);
+    const { audio } = setup;
+
+    if (current) {
+      const audioTimestamp =
+        duration !== Infinity ? `#t=${audio.startTimestamp}` : '';
+      current.volume = 1;
+      current.addEventListener('canplaythrough', audioLoaded);
+      current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
+      current.preload = 'auto';
+      current.load();
+    }
+
+    // preload images
+    loadImage(`${backgrounds}/${setup.background}`);
+
+    setup.characters
+      .map(({ character }) => Object.values(characterAssets[character]))
+      .flat()
+      .forEach(loadImage);
+
+    commands
+      .map(({ background }) =>
+        background ? `${backgrounds}/${background}` : null
+      )
+      .forEach(loadImage);
 
     // on unmount
     return () => {
-      const { current } = audioRef;
-
-      current.pause();
-      current.currentTime = 0;
+      resetAudio();
       current.removeEventListener('canplaythrough', audioLoaded);
     };
-  }, [audioRef]);
+  }, [duration, setup, commands, resetAudio]);
+
+  const initBackground = setup.background;
+
+  // The characters are memoized to prevent the useEffect from running on every
+  // render,
+  const initCharacters = useMemo(
+    () =>
+      setup.characters.map(character => {
+        return {
+          ...character,
+          opacity: character.opacity ?? 1,
+          isTalking: false
+        };
+      }),
+    [setup.characters]
+  );
+
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [sceneIsReady, setSceneIsReady] = useState(false);
+  const [accessibilityOn, setAccessibilityOn] = useState(false);
+  const [characters, setCharacters] = useState(initCharacters);
+  const [dialogue, setDialogue] = useState(initDialogue);
+  const [background, setBackground] = useState(initBackground);
+  const startClocktimeRef = useRef<number>(0);
+  const pausedAtRef = useRef<number>(0);
+  const startTimerRef = useRef<number>();
+  const finishTimerRef = useRef<number>();
+  const animationRef = useRef<number>();
+  const usedCommandsRef = useRef(new Set<number>());
+
+  const [currentTime, setCurrentTime] = useState(0);
+  // TODO: I'm using a ref so that the maybeStopAudio closure doesn't get stuck
+  // with the initial value of isPlaying. Given that we also have a state,
+  // isPlaying, it feels like there's a better way.
+  const isPlayingSceneRef = useRef(false);
+
+  // memoizing to prevent the useEffect from running on every render
+  const sortedCommands = useMemo(() => {
+    const normalized = commands.flatMap(command => {
+      const { startTime, finishTime, ...rest } = command;
+
+      const startCommand = {
+        ...rest,
+        time: sToMs(startTime),
+        isTalking: !!rest.dialogue
+      };
+      const finishCommand = finishTime
+        ? { ...rest, time: sToMs(finishTime), isTalking: false }
+        : null;
+
+      return finishCommand ? [startCommand, finishCommand] : [startCommand];
+    });
+    normalized.sort((a, b) => a.time - b.time);
+    return normalized;
+  }, [commands]);
+
+  // an extra 500ms at the end to let the characters fade out (CSS transition
+  const resetTime = sortedCommands.at(-1)!.time + 500;
 
   const audioLoaded = () => {
     setSceneIsReady(true);
   };
 
-  const initBackground = setup.background;
-  const initDialogue = { label: '', text: '', align: 'left' };
-  const initCharacters = setup.characters.map(character => {
-    return {
-      ...character,
-      opacity: character.opacity ?? 1,
-      isTalking: false
+  const buildTranscript = () => {
+    let transcriptText = '';
+    commands.forEach(command => {
+      if (command.character && command.dialogue && command.startTime) {
+        transcriptText =
+          transcriptText +
+          '\n' +
+          '<strong>' +
+          command.character +
+          '</strong>:' +
+          ' ' +
+          command.dialogue.text +
+          '\n';
+      }
+    });
+
+    return transcriptText;
+  };
+
+  const handlePlay = useCallback(() => {
+    const pausedAt = pausedAtRef.current;
+    const updateCurrentTime = () => {
+      const time = Date.now() - startClocktimeRef.current;
+      setCurrentTime(time);
+
+      if (isPlayingSceneRef.current) {
+        animationRef.current = window.requestAnimationFrame(updateCurrentTime);
+      }
     };
-  });
-
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [sceneIsReady, setSceneIsReady] = useState(true);
-  const [showDialogue, setShowDialogue] = useState(false);
-  const [accessibilityOn, setAccessibilityOn] = useState(false);
-  const [characters, setCharacters] = useState(initCharacters);
-  const [dialogue, setDialogue] = useState(initDialogue);
-  const [background, setBackground] = useState(initBackground);
-
-  const playScene = () => {
+    // TODO: if we manage the playing state in another module, we should not
+    // need the early return here. It should not be possible for this to be
+    // called at all if the scene is already playing.
+    if (isPlaying || !sceneIsReady) return;
     setIsPlaying(true);
-    setShowDialogue(true);
+    isPlayingSceneRef.current = true;
 
-    commands.forEach((command, commandIndex) => {
-      // Start audio timeout
-      setTimeout(function () {
-        void audioRef.current.play();
-      }, audio.startTime * 1000);
+    // when we paused, the startRef was the clock time when we started and
+    // pausedAt was the currentTime (i.e. how long we've been playing). That
+    // means to resume we need to set the startRef to the current time minus
+    // the time we've already played.
+    startClocktimeRef.current = Date.now() - pausedAt;
+    updateCurrentTime();
 
+    const audioStartDelay = sToMs(audio.startTime) - pausedAt;
+
+    // @ts-expect-error it's not a node timer
+    startTimerRef.current = setTimeout(() => {
+      if (audioRef.current.paused) {
+        void audioRef.current.play().then(() => {
+          canPauseRef.current = true;
+
+          // If the duration is Infinity, that means the duration is simply the
+          // length of the file. However we need to actively stop the audio to
+          // ensure that cleanup (i.e. resetAudio is called) )
+          const effectiveDuration =
+            duration === Infinity ? sToMs(audioRef.current.duration) : duration;
+
+          // If the delay is positive, the setTimeout will have already waited
+          // that amount of time. However, if it's negative, then the setTimeout
+          // has no delay and we need to account for that when calculating how
+          // much audio is left to play.
+          const effectiveStartDelay = Math.min(0, audioStartDelay);
+          const audioEndDelay = effectiveDuration + effectiveStartDelay;
+
+          if (audioEndDelay < 0) {
+            resetAudio();
+            return;
+          }
+          // @ts-expect-error it's not a node timer
+          finishTimerRef.current = setTimeout(() => {
+            const endTimeStamp = sToMs(audio.finishTimestamp!); // it exists because duration is not Infinity
+            const audioCurrentTime = sToMs(audioRef.current.currentTime);
+            const remainingTime = endTimeStamp - audioCurrentTime;
+            // For some reason, despite the setTimeout resolving at the right
+            // time, the currentTime can be smaller than expected. That means
+            // that if we pause now it will cut off the last part.
+            if (remainingTime < 100) {
+              // 100ms is arbitrary and may need to be adjusted if people still
+              // notice the cut off
+
+              resetAudio();
+            } else {
+              // @ts-expect-error it's not a node timer
+              finishTimerRef.current = setTimeout(() => {
+                resetAudio();
+              }, remainingTime);
+            }
+          }, audioEndDelay);
+        });
+      }
+    }, audioStartDelay);
+  }, [audio, duration, isPlaying, resetAudio, sceneIsReady]);
+
+  const handlePause = useCallback(() => {
+    isPlayingSceneRef.current = false;
+    pausedAtRef.current = currentTime;
+    pauseAudio();
+    pauseAnimation();
+  }, [currentTime]);
+
+  const handleStop = useCallback(() => {
+    usedCommandsRef.current.clear();
+    pauseAudio();
+    pauseAnimation();
+    audioRef.current.currentTime = audio.startTimestamp || 0;
+    setCurrentTime(0);
+    setIsPlaying(false);
+    isPlayingSceneRef.current = false;
+    setDialogue(initDialogue);
+    setCharacters(initCharacters);
+    setBackground(initBackground);
+  }, [audio, initCharacters, initBackground]);
+
+  const resetAnimation = useCallback(() => {
+    usedCommandsRef.current.clear();
+    startClocktimeRef.current = 0;
+    setCurrentTime(0);
+    setDialogue(initDialogue);
+    setCharacters(initCharacters);
+    setBackground(initBackground);
+  }, [initCharacters, initBackground]);
+
+  const resetScene = () => {
+    setIsPlaying(false);
+    isPlayingSceneRef.current = false;
+    pausedAtRef.current = 0;
+  };
+
+  const onNotify = useCallback(
+    (eventType: 'play' | 'pause' | 'stop') => {
+      if (eventType === 'play') {
+        handlePlay();
+      } else if (eventType === 'pause') {
+        handlePause();
+      } else {
+        handleStop();
+      }
+    },
+    [handlePlay, handlePause, handleStop]
+  );
+
+  useEffect(() => {
+    sceneSubject.attach(onNotify);
+    return () => {
+      sceneSubject.detach(onNotify);
+    };
+  }, [onNotify, sceneSubject]);
+
+  useEffect(() => {
+    if (isEmpty(sortedCommands)) return;
+
+    sortedCommands.forEach((command, commandIndex) => {
       // Start command timeout
-      setTimeout(() => {
+      if (
+        currentTime > command.time &&
+        !usedCommandsRef.current.has(commandIndex)
+      ) {
+        usedCommandsRef.current.add(commandIndex);
         if (command.background) setBackground(command.background);
 
         setDialogue(
@@ -85,61 +341,35 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                 ...character,
                 position: command.position ?? character.position,
                 opacity: command.opacity ?? character.opacity,
-                isTalking: command.dialogue ? true : false
+                isTalking: command.isTalking
               };
             }
             return character;
           });
           return newCharacters;
         });
-      }, command.startTime * 1000);
-
-      // Finish command timeout, only used when there's a dialogue
-      if (command.dialogue) {
-        setTimeout(
-          () => {
-            setCharacters(prevCharacters => {
-              const newCharacters = prevCharacters.map(character => {
-                if (character.character === command.character) {
-                  return {
-                    ...character,
-                    isTalking: false
-                  };
-                }
-                return character;
-              });
-              return newCharacters;
-            });
-          },
-          (command.finishTime as number) * 1000
-        );
-      }
-
-      // Last command timeout
-      if (commandIndex === commands.length - 1) {
-        setTimeout(
-          () => {
-            finishScene();
-          },
-          command.finishTime
-            ? command.finishTime * 1000 + 500
-            : command.startTime * 1000 + 500
-        );
       }
     });
-  };
 
-  const finishScene = () => {
-    audioRef.current.pause();
-    audioRef.current.src = `${sounds}/${audio.filename}${audioTimestamp}`;
-    audioRef.current.currentTime = audio.startTimestamp || 0;
-    setIsPlaying(false);
-    setShowDialogue(false);
-    setDialogue(initDialogue);
-    setCharacters(initCharacters);
-    setBackground(initBackground);
-  };
+    if (currentTime >= resetTime) {
+      // resetAnimation only works if called AFTER the commands, otherwise the
+      // commands will undo the reset.
+      resetAnimation();
+      resetScene();
+    }
+  }, [currentTime, resetTime, sortedCommands, resetAnimation]);
 
+  useEffect(() => {
+    return () => {
+      clearTimeout(startTimerRef.current);
+      clearTimeout(finishTimerRef.current);
+      // @ts-expect-error cancelAnimationFrame accepts undefined, but TS doesn't
+      // know that
+      window.cancelAnimationFrame(animationRef.current);
+    };
+  }, []);
+
+  const transcriptText = buildTranscript();
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
       <div
@@ -167,14 +397,14 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                     name={character}
                     position={position}
                     opacity={opacity}
-                    isTalking={isTalking}
-                    isBlinking={isPlaying}
+                    isTalking={isPlaying && isTalking}
+                    sceneSubject={sceneSubject}
                   />
                 );
               }
             )}
 
-            {showDialogue && (alwaysShowDialogue || accessibilityOn) && (
+            {(alwaysShowDialogue || accessibilityOn) && (
               <div
                 className={`scene-dialogue-wrap ${
                   dialogue.align ? `scene-dialogue-align-${dialogue.align}` : ''
@@ -184,34 +414,46 @@ export function Scene({ scene }: { scene: FullScene }): JSX.Element {
                 <div className='scene-dialogue-text'>{dialogue.text}</div>
               </div>
             )}
-
-            {!isPlaying && (
-              <div className='scene-start-screen'>
-                <button
-                  className='scene-start-btn scene-play-btn'
-                  onClick={playScene}
-                >
-                  <img src={`${images}/play-button.png`} alt='Press Play' />
-                </button>
-
-                {!alwaysShowDialogue && (
-                  <button
-                    className='scene-start-btn scene-a11y-btn'
-                    aria-label='Accessibility On/Off'
-                    onClick={() => setAccessibilityOn(!accessibilityOn)}
-                  >
-                    <AccessibilityIcon
-                      fill={
-                        accessibilityOn ? 'var(--gray-00)' : 'var(--gray-15)'
-                      }
-                    />
-                  </button>
-                )}
-              </div>
-            )}
           </>
         )}
       </div>
+      <div className='scene-controls'>
+        <button
+          className='scene-btn scene-play-btn'
+          onClick={() => sceneSubject.notify(isPlaying ? 'pause' : 'play')}
+        >
+          {isPlaying ? (
+            <>
+              <span className='sr-only'>{t('buttons.pause')}</span>
+              <FontAwesomeIcon icon={faCirclePause} size='3x' />
+            </>
+          ) : (
+            <>
+              <span className='sr-only'>{t('buttons.play')}</span>
+              <FontAwesomeIcon icon={faCirclePlay} size='3x' />
+            </>
+          )}
+        </button>
+
+        {alwaysShowDialogue ? (
+          <div className='scene-a11y-btn'></div>
+        ) : (
+          <button
+            className='scene-btn scene-a11y-btn'
+            aria-label={t('buttons.closed-caption')}
+            aria-pressed={accessibilityOn}
+            onClick={() => setAccessibilityOn(!accessibilityOn)}
+          >
+            <ClosedCaptionsIcon
+              fill={
+                accessibilityOn ? 'var(--tertiary-color)' : 'var(--gray-45)'
+              }
+            />
+          </button>
+        )}
+      </div>
+      <ChallengeTranscript transcript={transcriptText} />
+      <Spacer size='m' />
     </Col>
   );
 }

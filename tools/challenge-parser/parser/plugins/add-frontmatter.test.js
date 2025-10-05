@@ -1,9 +1,16 @@
-const { isObject } = require('lodash');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import { isObject } from 'lodash';
 
-const mockAST = require('../__fixtures__/ast-yaml-challenge.json');
-const processFrontmatter = require('./add-frontmatter');
+import parse from '../__fixtures__/parse-fixture';
+import processFrontmatter from './add-frontmatter';
 
 describe('process-frontmatter plugin', () => {
+  let mockAST;
+
+  beforeAll(async () => {
+    mockAST = await parse('with-frontmatter.md');
+  });
+
   const plugin = processFrontmatter();
   let file = { data: {} };
   beforeEach(() => {
@@ -26,6 +33,7 @@ describe('process-frontmatter plugin', () => {
       'id',
       'title',
       'challengeType',
+      'isHidden',
       'videoUrl',
       'forumTopicId'
     ];
@@ -35,7 +43,6 @@ describe('process-frontmatter plugin', () => {
   });
 
   it('should not mutate any type held in the frontmatter', () => {
-    expect.assertions(5);
     plugin(mockAST, file);
     const { id, title, challengeType, videoUrl, forumTopicId } = file.data;
     expect(typeof id).toEqual('string');
@@ -46,7 +53,6 @@ describe('process-frontmatter plugin', () => {
   });
 
   it('should trim extra whitespace from keys and values', () => {
-    expect.assertions(8);
     plugin(mockAST, file);
     const whitespaceRE = /(^\s\S+|\S\s$)/;
     const keys = Object.keys(file.data);

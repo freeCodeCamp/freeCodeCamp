@@ -1,57 +1,81 @@
+import { execSync } from 'child_process';
+
 import { test, expect } from '@playwright/test';
 
+import translations from '../client/i18n/locales/english/translations.json';
+
 const settingsPageElement = {
-  emailSettingsSectionHeader: 'email-settings-header',
   emailVerificationAlert: 'email-verification-alert',
   emailVerificationLink: 'email-verification-link',
-  currentEmailText: 'current-email',
-  newEmailInput: 'new-email-input',
-  confirmEmailInput: 'confirm-email-input',
-  saveButton: 'save-email-button',
-  emailSubscriptionYesPleaseButton: 'yes-please-button',
-  emailSubscriptionNoThanksButton: 'no-thanks-button',
-  flashMessageAlert: 'flash-message'
+  flashMessageAlert: 'flash-message',
+  newEmailValidation: 'new-email-validation',
+  confirmEmailValidation: 'confirm-email-validation'
 } as const;
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
+const originalEmail = 'foo@bar.com';
+const newEmail = 'foo-update@bar.com';
 
 test.beforeEach(async ({ page }) => {
+  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
   await page.goto('/settings');
 });
 
 test.describe('Email Settings', () => {
-  test('should display email settings section header on settings page', async ({
-    page
-  }) => {
+  test('should display the content correctly', async ({ page }) => {
     await expect(
-      page.getByTestId(settingsPageElement.emailSettingsSectionHeader)
-    ).toHaveText('Email Settings');
-  });
+      page.getByRole('heading', { name: translations.settings.email.heading })
+    ).toBeVisible();
 
-  test('should display current email address', async ({ page }) => {
+    await expect(page.getByText(originalEmail)).toBeVisible();
+
     await expect(
-      page.getByTestId(settingsPageElement.currentEmailText)
-    ).toHaveText('foo@bar.com');
+      page.getByRole('button', {
+        name: `${translations.buttons.save} ${translations.settings.email.heading}`
+      })
+    ).toBeDisabled();
+
+    await expect(
+      page
+        .getByRole('group', { name: translations.settings.email.weekly })
+        .locator('legend')
+    ).toBeVisible();
+
+    await expect(
+      page.getByRole('button', {
+        name: translations.buttons['yes-please']
+      })
+    ).toHaveAttribute('aria-pressed', 'false');
+
+    await expect(
+      page.getByRole('button', {
+        name: translations.buttons['no-thanks']
+      })
+    ).toHaveAttribute('aria-pressed', 'true');
   });
 
   test('should display email verification alert after email update', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+    const flashMessageAlert = page.getByTestId(
+      settingsPageElement.flashMessageAlert
+    );
+    // Need exact match as there are "New email" and "Confirm new email" labels
+    await page
+      .getByLabel(translations.settings.email.new, { exact: true })
+      .fill(newEmail);
 
-    const newEmailAddress = 'foo-update@bar.com';
+    await page.getByLabel(translations.settings.email.confirm).fill(newEmail);
 
     await page
-      .getByTestId(settingsPageElement.newEmailInput)
-      .fill(newEmailAddress);
-    await page
-      .getByTestId(settingsPageElement.confirmEmailInput)
-      .fill(newEmailAddress);
-    await page.getByTestId(settingsPageElement.saveButton).click();
-    await expect(
-      page.getByTestId(settingsPageElement.flashMessageAlert)
-    ).toBeVisible();
+      .getByRole('button', {
+        name: `${translations.buttons.save} ${translations.settings.email.heading}`
+      })
+      .click();
+
+    await expect(flashMessageAlert).toBeVisible();
+    await expect(flashMessageAlert).toContainText(
+      'Check your email and click the link we sent you to confirm your new email address.'
+    );
 
     await page.reload();
     await expect(
@@ -67,14 +91,62 @@ test.describe('Email Settings', () => {
     );
   });
 
-  test('should display flash message when email subscription is toggled', async ({
-    page,
-    browserName
+  test('should show the user error messages if the input is invalid', async ({
+    page
   }) => {
-    test.skip(browserName === 'webkit', 'csrf_token cookie is being deleted');
+    const newEmailInput = page.getByLabel(translations.settings.email.new, {
+      exact: true
+    });
+    const confirmEmailInput = page.getByLabel(
+      translations.settings.email.confirm
+    );
+    const confirmValidation = page.getByTestId(
+      settingsPageElement.confirmEmailValidation
+    );
+    const newEmailValidation = page.getByTestId(
+      settingsPageElement.newEmailValidation
+    );
 
+    await newEmailInput.fill(newEmail);
+    await confirmEmailInput.fill(originalEmail);
+
+    await expect(confirmValidation).toBeVisible();
+    await expect(confirmValidation).toContainText(
+      translations.validation['email-mismatch']
+    );
+
+    await newEmailInput.fill(originalEmail);
+
+    await expect(newEmailValidation).toBeVisible();
+    await expect(newEmailValidation).toContainText(
+      translations.validation['same-email']
+    );
+  });
+
+  test('should toggle email subscription correctly', async ({ page }) => {
+    const yesPleaseButton = page.getByRole('button', {
+      name: translations.buttons['yes-please']
+    });
+    const noThanksButton = page.getByRole('button', {
+      name: translations.buttons['no-thanks']
+    });
+
+    await yesPleaseButton.click();
+    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'true');
+    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'false');
+
+    await noThanksButton.click();
+    await expect(yesPleaseButton).toHaveAttribute('aria-pressed', 'false');
+    await expect(noThanksButton).toHaveAttribute('aria-pressed', 'true');
+  });
+
+  test('should display flash message when email subscription is toggled', async ({
+    page
+  }) => {
     await page
-      .getByTestId(settingsPageElement.emailSubscriptionYesPleaseButton)
+      .getByRole('button', {
+        name: translations.buttons['yes-please']
+      })
       .click();
 
     await expect(
@@ -89,7 +161,9 @@ test.describe('Email Settings', () => {
           response.status() === 200
       ),
       page
-        .getByTestId(settingsPageElement.emailSubscriptionNoThanksButton)
+        .getByRole('button', {
+          name: translations.buttons['no-thanks']
+        })
         .click()
     ]);
   });

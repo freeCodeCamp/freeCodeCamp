@@ -28,7 +28,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt='Shawn Wang, a young-looking Asian man, smiling for a selfie with a snow-capped mountain in the background.'
+              alt={t('landing.testimonials.shawn.img-alt')}
               className='testimonial-image'
               src={shawnImg}
             />
@@ -37,7 +37,6 @@ const Testimonials = (): JSX.Element => {
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
               <h3 data-playwright-test-label='testimonials-endorser-location'>
-                {' '}
                 <Trans>landing.testimonials.shawn.location</Trans>
               </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
@@ -63,7 +62,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt='Sarah Chima, a young-looking Black woman, smiling for the camera while sitting in a chair.'
+              alt={t('landing.testimonials.sarah.img-alt')}
               className='testimonial-image'
               src={sarahImg}
             />
@@ -72,7 +71,6 @@ const Testimonials = (): JSX.Element => {
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
               <h3 data-playwright-test-label='testimonials-endorser-location'>
-                {' '}
                 <Trans>landing.testimonials.sarah.location</Trans>
               </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>
@@ -98,7 +96,7 @@ const Testimonials = (): JSX.Element => {
             data-playwright-test-label='testimonials-endorser-image-container'
           >
             <LazyImage
-              alt='Emma Bostian, a young-looking White woman, smiling for the camera in front of green foliage.'
+              alt={t('landing.testimonials.emma.img-alt')}
               className='testimonial-image'
               src={emmaImg}
             />
@@ -107,7 +105,6 @@ const Testimonials = (): JSX.Element => {
           <div className='testimonials-footer'>
             <div className='testimonial-meta'>
               <h3 data-playwright-test-label='testimonials-endorser-location'>
-                {' '}
                 <Trans>landing.testimonials.emma.location</Trans>
               </h3>
               <p data-playwright-test-label='testimonials-endorser-occupation'>

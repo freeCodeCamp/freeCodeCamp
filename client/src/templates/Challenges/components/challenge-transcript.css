@@ -1,0 +1,17 @@
+.challenge-transcript-heading {
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1.5em;
+}
+
+#learn-app-wrapper .transcript-table {
+  display: table;
+  width: 100%;
+  border: 1px solid var(--gray-05);
+  border-collapse: collapse;
+}
+
+#learn-app-wrapper .transcript-table td {
+  border: none;
+  text-align: start;
+}

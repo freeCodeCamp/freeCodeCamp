@@ -2,11 +2,11 @@
   "name": "@freecodecamp/curriculum-helper-scripts",
   "version": "0.0.0-next.1",
   "description": "freeCodeCamp's project-based curriculum scripts",
-  "license": "(BSD-3-Clause AND CC-BY-SA-4.0)",
+  "license": "BSD-3-Clause",
   "private": true,
   "engines": {
     "node": ">=16",
-    "pnpm": "8"
+    "pnpm": ">=10"
   },
   "repository": {
     "type": "git",
@@ -19,19 +19,22 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "utils.js",
   "scripts": {
-    "test": "mocha --delay --reporter progress --bail",
-    "create-project": "ts-node create-project"
+    "create-daily-challenges": "tsx create-daily-challenges",
+    "create-project": "tsx create-project",
+    "create-language-block": "tsx create-language-block",
+    "create-quiz": "tsx create-quiz",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
+    "@vitest/ui": "^3.2.4",
     "bson-objectid": "2.0.4",
-    "cross-env": "7.0.3",
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
-    "prettier": "3.1.0",
-    "ts-node": "10.9.1",
-    "typescript": "5.2.2"
+    "prettier": "3.2.5",
+    "typescript": "5.2.2",
+    "vitest": "^3.2.4"
   }
 }

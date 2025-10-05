@@ -2,19 +2,13 @@ import React, { useRef } from 'react';
 import { connect } from 'react-redux';
 import { ReflexContainer, ReflexElement, ReflexSplitter } from 'react-reflex';
 import { createSelector } from 'reselect';
-import {
-  userSelector,
-  isDonationModalOpenSelector
-} from '../../../redux/selectors';
+import { isDonationModalOpenSelector } from '../../../redux/selectors';
 import {
   canFocusEditorSelector,
-  consoleOutputSelector,
   visibleEditorsSelector
 } from '../redux/selectors';
 import { getTargetEditor } from '../utils/get-target-editor';
 import './editor.css';
-import { FileKey } from '../../../redux/prop-types';
-import { Themes } from '../../../components/settings/theme';
 import Editor, { type EditorProps } from './editor';
 
 export type VisibleEditors = {
@@ -22,6 +16,8 @@ export type VisibleEditors = {
   indexjsx?: boolean;
   stylescss?: boolean;
   scriptjs?: boolean;
+  indexts?: boolean;
+  indextsx?: boolean;
   mainpy?: boolean;
 };
 type MultifileEditorProps = Pick<
@@ -35,10 +31,13 @@ type MultifileEditorProps = Pick<
   | 'initialTests'
   | 'editorRef'
   | 'containerRef'
+  | 'block'
+  | 'superBlock'
   | 'challengeFiles'
   | 'description'
   // We use dimensions to trigger a re-render of the editor
   | 'dimensions'
+  | 'showIndependentLowerJaw'
 > & {
   visibleEditors: VisibleEditors;
 };
@@ -46,25 +45,17 @@ type MultifileEditorProps = Pick<
 const mapStateToProps = createSelector(
   visibleEditorsSelector,
   canFocusEditorSelector,
-  consoleOutputSelector,
   isDonationModalOpenSelector,
-  userSelector,
-  (
-    visibleEditors: VisibleEditors,
-    canFocus: boolean,
-    output: string[],
-    open,
-    { theme }: { theme: Themes }
-  ) => ({
+  (visibleEditors: VisibleEditors, canFocus: boolean, open) => ({
     visibleEditors,
-    canFocus: open ? false : canFocus,
-    output,
-    theme
+    canFocus: open ? false : canFocus
   })
 );
 
 const MultifileEditor = (props: MultifileEditorProps) => {
   const {
+    block,
+    superBlock,
     challengeFiles,
     containerRef,
     description,
@@ -74,9 +65,18 @@ const MultifileEditor = (props: MultifileEditorProps) => {
     isUsingKeyboardInTablist,
     resizeProps,
     title,
-    visibleEditors: { stylescss, indexhtml, scriptjs, indexjsx, mainpy },
+    visibleEditors: {
+      stylescss,
+      indexhtml,
+      scriptjs,
+      indexts,
+      indexjsx,
+      indextsx,
+      mainpy
+    },
     usesMultifileEditor,
-    showProjectPreview
+    showProjectPreview,
+    showIndependentLowerJaw
   } = props;
   // TODO: the tabs mess up the rendering (scroll doesn't work properly and
   // the in-editor description)
@@ -94,11 +94,14 @@ const MultifileEditor = (props: MultifileEditorProps) => {
 
   const editorKeys = [];
 
+  // The order of the keys should match the order set by sortChallengeFiles
   if (indexjsx) editorKeys.push('indexjsx');
+  if (indextsx) editorKeys.push('indextsx');
   if (indexhtml) editorKeys.push('indexhtml');
   if (stylescss) editorKeys.push('stylescss');
   if (scriptjs) editorKeys.push('scriptjs');
   if (mainpy) editorKeys.push('mainpy');
+  if (indexts) editorKeys.push('indexts');
 
   const editorAndSplitterKeys = editorKeys.reduce((acc: string[] | [], key) => {
     if (acc.length === 0) {
@@ -126,7 +129,6 @@ const MultifileEditor = (props: MultifileEditorProps) => {
             } else {
               return (
                 <ReflexElement
-                  data-cy={`editor-container-${key}`}
                   data-playwright-test-label={`editor-container-${key}`}
                   {...reflexProps}
                   {...resizeProps}
@@ -134,11 +136,13 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                 >
                   <Editor
                     canFocusOnMountRef={canFocusOnMountRef}
+                    block={block}
+                    superBlock={superBlock}
                     challengeFiles={challengeFiles}
                     containerRef={containerRef}
                     description={targetEditor === key ? description : ''}
                     editorRef={editorRef}
-                    fileKey={key as FileKey}
+                    fileKey={key}
                     initialTests={initialTests}
                     isMobileLayout={isMobileLayout}
                     isUsingKeyboardInTablist={isUsingKeyboardInTablist}
@@ -147,6 +151,7 @@ const MultifileEditor = (props: MultifileEditorProps) => {
                     title={title}
                     usesMultifileEditor={usesMultifileEditor}
                     showProjectPreview={showProjectPreview}
+                    showIndependentLowerJaw={showIndependentLowerJaw}
                   />
                 </ReflexElement>
               );

@@ -32,15 +32,22 @@ function redirectWithMessage(
   url: string,
   message: Message
 ) {
-  return this.redirect(
-    `${url}?${qs.stringify(
-      {
-        messages: qs.stringify(prepareMessage(message), {
-          arrayFormat: 'index'
-        })
-      },
-      { arrayFormat: 'index' }
-    )}`
+  return this.redirect(`${url}?${formatMessage(message)}`);
+}
+
+/**
+ * Formats the message into a querystring.
+ * @param message The message to format.
+ * @returns The formatted message string.
+ */
+export function formatMessage(message: Message): string {
+  return qs.stringify(
+    {
+      messages: qs.stringify(prepareMessage(message), {
+        arrayFormat: 'index'
+      })
+    },
+    { arrayFormat: 'index' }
   );
 }
 
@@ -50,4 +57,4 @@ const plugin: FastifyPluginCallback = (fastify, _options, done) => {
   done();
 };
 
-export default fp(plugin);
+export default fp(plugin, { name: 'redirect-with-message' });

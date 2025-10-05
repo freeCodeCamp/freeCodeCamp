@@ -50,7 +50,9 @@ export function enhancePrismAccessibility(
     sql: 'SQL',
     http: 'HTTP',
     json: 'JSON',
-    pug: 'pug'
+    pug: 'pug',
+    ts: 'TypeScript',
+    typescript: 'TypeScript'
   };
   const parent = prismEnv?.element?.parentElement;
   if (
@@ -73,6 +75,36 @@ export function enhancePrismAccessibility(
       codeName
     })
   );
+}
+
+// Make PrismJS code blocks collapsible
+export function makePrismCollapsible(
+  prismEnv: Prism.hooks.ElementHighlightedEnvironment
+): void {
+  const preElem = prismEnv?.element?.parentElement;
+  const sectionElem = preElem?.parentElement;
+  if (
+    !preElem ||
+    preElem.nodeName !== 'PRE' ||
+    preElem.tabIndex !== 0 ||
+    !sectionElem ||
+    sectionElem.nodeName !== 'SECTION'
+  ) {
+    return;
+  }
+
+  const details = document.createElement('details');
+  details.classList.add('code-details');
+
+  const summary = document.createElement('summary');
+  summary.classList.add('code-details-summary');
+  summary.innerHTML = i18next.t('learn.example-code');
+
+  details.appendChild(summary);
+  details.appendChild(preElem.cloneNode(true));
+  details.open = true;
+
+  sectionElem.replaceChild(details, preElem);
 }
 
 // Adjusts scrollbar arrows based on scrollbar width

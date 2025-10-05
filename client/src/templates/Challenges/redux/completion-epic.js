@@ -16,13 +16,15 @@ import {
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
+  canSaveToDB,
   challengeTypes,
-  hasNoTests,
+  getIsDailyCodingChallenge,
+  getDailyCodingChallengeLanguage,
   submitTypes
-} from '../../../../../shared/config/challenge-types';
+} from '../../../../../shared-dist/config/challenge-types';
 import { actionTypes as submitActionTypes } from '../../../redux/action-types';
 import {
-  allowBlockDonationRequests,
+  allowSectionDonationRequests,
   setIsProcessing,
   setRenderStartTime,
   submitComplete,
@@ -33,6 +35,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -47,17 +50,24 @@ import {
   challengeTestsSelector,
   userCompletedExamSelector,
   projectFormValuesSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  isModuleNewlyCompletedSelector
 } from './selectors';
 
-function postChallenge(update, username) {
+function postChallenge(update) {
   const {
     payload: { challengeType }
   } = update;
   const saveChallenge = postUpdate$(update).pipe(
     retry(3),
     switchMap(({ data }) => {
-      const { savedChallenges, points, message, examResults } = data;
+      const {
+        type,
+        completedDailyCodingChallenges,
+        savedChallenges,
+        message,
+        examResults
+      } = data;
       const payloadWithClientProperties = {
         ...omit(update.payload, ['files'])
       };
@@ -72,11 +82,8 @@ function postChallenge(update, username) {
 
       let actions = [
         submitComplete({
-          submittedChallenge: {
-            username,
-            points,
-            ...payloadWithClientProperties
-          },
+          submittedChallenge: payloadWithClientProperties,
+          completedDailyCodingChallenges,
           savedChallenges: mapFilesToChallengeFiles(savedChallenges),
           examResults
         }),
@@ -84,8 +91,15 @@ function postChallenge(update, username) {
         submitChallengeComplete()
       ];
 
-      if (message && challengeType === challengeTypes.msTrophy) {
-        actions = [createFlashMessage(data), submitChallengeError()];
+      if (
+        type === 'error' ||
+        (message && challengeType === challengeTypes.msTrophy)
+      ) {
+        actions = [];
+        if (message) {
+          actions.push(createFlashMessage(data));
+        }
+        actions.push(submitChallengeError());
       } else if (challengeType === challengeTypes.msTrophy) {
         actions.push(createFlashMessage(msTrophyVerified));
       }
@@ -98,39 +112,52 @@ function postChallenge(update, username) {
 }
 
 function submitModern(type, state) {
-  const challengeType = state.challenge.challengeMeta.challengeType;
   const tests = challengeTestsSelector(state);
-  if (
-    hasNoTests(challengeType) ||
-    (tests.length > 0 && tests.every(test => test.pass && !test.err))
-  ) {
+  if (tests.length === 0 || tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.checkChallenge) {
       return of({ type: 'this was a check challenge' });
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block } = challengeMetaSelector(state);
-      const challengeFiles = challengeFilesSelector(state);
-      const { username } = userSelector(state);
+      const { id, block, challengeType } = challengeMetaSelector(state);
 
-      let body;
-      if (
-        block === 'javascript-algorithms-and-data-structures-projects' ||
-        challengeType === challengeTypes.multifileCertProject
-      ) {
-        body = standardizeRequestBody({ id, challengeType, challengeFiles });
-      } else {
-        body = {
+      let update;
+
+      if (getIsDailyCodingChallenge(challengeType)) {
+        const language = getDailyCodingChallengeLanguage(challengeType);
+
+        const body = {
           id,
-          challengeType
+          challengeType,
+          language
+        };
+
+        update = {
+          endpoint: '/daily-coding-challenge-completed',
+          payload: body
+        };
+      } else {
+        const challengeFiles = challengeFilesSelector(state);
+
+        let body;
+        if (
+          block === 'javascript-algorithms-and-data-structures-projects' ||
+          canSaveToDB(challengeType)
+        ) {
+          body = standardizeRequestBody({ id, challengeType, challengeFiles });
+        } else {
+          body = {
+            id,
+            challengeType
+          };
+        }
+
+        update = {
+          endpoint: '/encoded/modern-challenge-completed',
+          payload: body
         };
       }
-
-      const update = {
-        endpoint: '/modern-challenge-completed',
-        payload: body
-      };
-      return postChallenge(update, username);
+      return postChallenge(update);
     }
   }
   return empty();
@@ -163,7 +190,6 @@ function submitBackendChallenge(type, state) {
   if (tests.length > 0 && tests.every(test => test.pass && !test.err)) {
     if (type === actionTypes.submitChallenge) {
       const { id } = challengeMetaSelector(state);
-      const { username } = userSelector(state);
       const {
         solution: { value: solution }
       } = projectFormValuesSelector(state);
@@ -173,7 +199,7 @@ function submitBackendChallenge(type, state) {
         endpoint: '/backend-challenge-completed',
         payload: challengeInfo
       };
-      return postChallenge(update, username);
+      return postChallenge(update);
     }
   }
   return empty();
@@ -210,14 +236,13 @@ function submitMsTrophy(type, state) {
   if (type === actionTypes.submitChallenge) {
     const { id, challengeType } = challengeMetaSelector(state);
 
-    const { username } = userSelector(state);
     const challengeInfo = { id, challengeType };
 
     const update = {
       endpoint: '/ms-trophy-challenge-completed',
       payload: challengeInfo
     };
-    return postChallenge(update, username);
+    return postChallenge(update);
   }
   return empty();
 }
@@ -229,11 +254,13 @@ export default function completionEpic(action$, state$) {
       const state = state$.value;
 
       const {
-        nextBlock,
+        isLastChallengeInBlock,
         nextChallengePath,
         challengeType,
         superBlock,
+        blockType,
         block,
+        module,
         blockHashSlug
       } = challengeMetaSelector(state);
       // Default to submitChallengeComplete since we do not want the user to
@@ -253,24 +280,41 @@ export default function completionEpic(action$, state$) {
         submitter = submitters[submitTypes[challengeType]];
       }
 
-      const lastChallengeInBlock = block !== nextBlock;
-      let pathToNavigateTo = lastChallengeInBlock
-        ? blockHashSlug
-        : nextChallengePath;
+      let pathToNavigateTo = nextChallengePath;
 
-      const canAllowDonationRequest = (state, action) =>
-        isBlockNewlyCompletedSelector(state) &&
-        action.type === submitActionTypes.submitComplete;
+      if (isLastChallengeInBlock) {
+        pathToNavigateTo = blockHashSlug;
+      }
+
+      // TODO: Navigate to the next daily challenge if it exists - archive if not.
+      if (getIsDailyCodingChallenge(challengeType)) {
+        pathToNavigateTo = '/learn/daily-coding-challenge/archive';
+      }
+
+      const canAllowDonationRequest = (state, action) => {
+        if (action.type !== submitActionTypes.submitComplete) return null;
+
+        const donationData =
+          superBlock === SuperBlocks.FullStackDeveloper &&
+          blockType !== 'review' &&
+          isModuleNewlyCompletedSelector(state)
+            ? { module, superBlock }
+            : superBlock !== SuperBlocks.FullStackDeveloper &&
+                isBlockNewlyCompletedSelector(state)
+              ? { block, superBlock }
+              : null;
+
+        return donationData ? allowSectionDonationRequests(donationData) : null;
+      };
 
       return submitter(type, state).pipe(
         concat(
-          of(setIsAdvancing(!lastChallengeInBlock), setIsProcessing(false))
+          of(setIsAdvancing(!isLastChallengeInBlock), setIsProcessing(false))
         ),
-        mergeMap(x =>
-          canAllowDonationRequest(state, x)
-            ? of(x, allowBlockDonationRequests({ superBlock, block }))
-            : of(x)
-        ),
+        mergeMap(x => {
+          const donationAction = canAllowDonationRequest(state, x);
+          return donationAction ? of(x, donationAction) : of(x);
+        }),
         mergeMap(x => of(x, setRenderStartTime(Date.now()))),
         tap(res => {
           if (res.type !== submitActionTypes.updateFailed) {

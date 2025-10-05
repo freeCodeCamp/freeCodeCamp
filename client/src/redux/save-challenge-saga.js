@@ -1,12 +1,13 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { canSaveToDB } from '../../../shared-dist/config/challenge-types';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {
   challengeDataSelector,
   challengeMetaSelector
 } from '../templates/Challenges/redux/selectors';
+import { createFiles } from '../templates/Challenges/redux/actions';
 import { mapFilesToChallengeFiles, postSaveChallenge } from '../utils/ajax';
 import {
   bodySizeFits,
@@ -33,8 +34,7 @@ function* saveChallengeSaga() {
     );
   }
 
-  // only allow saving of multifileCertProject's
-  if (challengeType === challengeTypes.multifileCertProject) {
+  if (canSaveToDB(challengeType)) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 
@@ -53,6 +53,7 @@ function* saveChallengeSaga() {
         if (data?.message) {
           yield put(createFlashMessage(data));
         } else if (data?.savedChallenges) {
+          yield put(createFiles(challengeFiles));
           yield put(
             saveChallengeComplete(
               mapFilesToChallengeFiles(data.savedChallenges)
@@ -65,7 +66,7 @@ function* saveChallengeSaga() {
             })
           );
         }
-      } catch (e) {
+      } catch {
         yield put(
           createFlashMessage({
             type: 'danger',

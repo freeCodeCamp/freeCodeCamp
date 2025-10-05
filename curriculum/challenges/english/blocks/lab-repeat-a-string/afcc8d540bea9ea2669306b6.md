@@ -1,0 +1,105 @@
+---
+id: afcc8d540bea9ea2669306b6
+title: Build a String Repeating Function
+challengeType: 26
+dashedName: build-a-string-repeating-function
+---
+
+# --description--
+
+In this lab, you will create a function that repeats a given string a specific number of times. For the purpose of this lab, do _not_ use the built-in `.repeat()` method.
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1. You should create a function named `repeatStringNumTimes` that takes two parameters: a string and a number.
+2. The function should return the string repeated the specified number of times.
+3. If the number is less than or equal to zero, the function should return an empty string.
+
+# --hints--
+
+You should create a function named `repeatStringNumTimes`.
+
+```js
+assert.isFunction(repeatStringNumTimes);
+```
+
+`repeatStringNumTimes` should take two parameters.
+
+```js
+assert.lengthOf(repeatStringNumTimes, 2);
+```
+
+The function `repeatStringNumTimes` should always return a string.
+
+```js
+assert.isString(repeatStringNumTimes('hello', 3));
+```
+
+`repeatStringNumTimes("*", 3)` should return the string `***`.
+
+```js
+assert.strictEqual(repeatStringNumTimes('*', 3), '***');
+```
+
+`repeatStringNumTimes("abc", 3)` should return the string `abcabcabc`.
+
+```js
+assert.strictEqual(repeatStringNumTimes('abc', 3), 'abcabcabc');
+```
+
+`repeatStringNumTimes("abc", 4)` should return the string `abcabcabcabc`.
+
+```js
+assert.strictEqual(repeatStringNumTimes('abc', 4), 'abcabcabcabc');
+```
+
+`repeatStringNumTimes("abc", 1)` should return the string `abc`.
+
+```js
+assert.strictEqual(repeatStringNumTimes('abc', 1), 'abc');
+```
+
+`repeatStringNumTimes("*", 8)` should return the string `********`.
+
+```js
+assert.strictEqual(repeatStringNumTimes('*', 8), '********');
+```
+
+`repeatStringNumTimes("abc", -2)` should return an empty string (`""`).
+
+```js
+assert.isEmpty(repeatStringNumTimes('abc', -2));
+```
+
+`repeatStringNumTimes("abc", 0)` should return `""`.
+
+```js
+assert.isEmpty(repeatStringNumTimes('abc', 0));
+```
+
+The built-in `repeat()` method should not be used.
+
+```js
+assert.notMatch(__helpers.removeJSComments(code), /\.repeat/g);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```js
+
+```
+
+# --solutions--
+
+```js
+function repeatStringNumTimes(str, num) {
+  if (num < 1) return '';
+  return num === 1 ? str : str + repeatStringNumTimes(str, num - 1);
+}
+
+repeatStringNumTimes('abc', 3);
+```

@@ -6,21 +6,26 @@ import { connect } from 'react-redux';
 import { HandlerProps } from 'react-reflex';
 import { useMediaQuery } from 'react-responsive';
 import { bindActionCreators, Dispatch } from 'redux';
-import { createStructuredSelector } from 'reselect';
 import store from 'store';
 import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { useFeature } from '@growthbook/growthbook-react';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
-import {
+import type {
   ChallengeFiles,
   ChallengeMeta,
   ChallengeNode,
-  CompletedChallenge,
+  Hooks,
+  DailyCodingChallengeLanguages,
+  DailyCodingChallengeNode,
+  DailyCodingChallengePageContext,
+  PageContext,
   ResizeProps,
+  SavedChallenge,
   SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
@@ -32,7 +37,6 @@ import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import ShortcutsModal from '../components/shortcuts-modal';
-import Notes from '../components/notes';
 import Output from '../components/output';
 import Preview, { type PreviewProps } from '../components/preview';
 import ProjectPreviewModal from '../components/project-preview-modal';
@@ -45,6 +49,8 @@ import {
   executeChallenge,
   initConsole,
   initTests,
+  initHooks,
+  initVisibleEditors,
   previewMounted,
   updateChallengeMeta,
   openModal,
@@ -58,19 +64,25 @@ import {
 } from '../redux/selectors';
 import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
+import { preloadPage } from '../../../../utils/gatsby/page-loading';
+import envData from '../../../../config/env.json';
+import ToolPanel from '../components/tool-panel';
+import { getChallengePaths } from '../utils/challenge-paths';
+import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
 import MobileLayout from './mobile-layout';
+import { mergeChallengeFiles } from './saved-challenges';
 
 import './classic.css';
 import '../components/test-frame.css';
 
-const mapStateToProps = createStructuredSelector({
-  challengeFiles: challengeFilesSelector,
-  output: consoleOutputSelector,
-  isChallengeCompleted: isChallengeCompletedSelector,
-  savedChallenges: savedChallengesSelector
+const mapStateToProps = (state: unknown) => ({
+  challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
+  output: consoleOutputSelector(state) as string,
+  isChallengeCompleted: isChallengeCompletedSelector(state),
+  savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -79,6 +91,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
       createFiles,
       initConsole,
       initTests,
+      initHooks,
+      initVisibleEditors,
       updateChallengeMeta,
       challengeMounted,
       executeChallenge,
@@ -95,25 +109,26 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   cancelTests: () => void;
   challengeMounted: (arg0: string) => void;
   createFiles: (arg0: ChallengeFiles | SavedChallengeFiles) => void;
-  data: { challengeNode: ChallengeNode };
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
+  data: { challengeNode: ChallengeNode | DailyCodingChallengeNode };
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   challengeFiles: ChallengeFiles;
   initConsole: (arg0: string) => void;
   initTests: (tests: Test[]) => void;
+  initHooks: (hooks?: Hooks) => void;
+  initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
-  output: string[];
-  pageContext: {
-    challengeMeta: ChallengeMeta;
-    projectPreview: {
-      challengeData: CompletedChallenge;
-      showProjectPreview: boolean;
-    };
-  };
+  isDailyCodingChallenge?: boolean;
+  output: string;
+  pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
   openModal: (modal: string) => void;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   setEditorFocusability: (canFocus: boolean) => void;
   setIsAdvancing: (arg: boolean) => void;
-  savedChallenges: CompletedChallenge[];
+  savedChallenges: SavedChallenge[];
 }
 
 interface ReflexLayout {
@@ -150,6 +165,7 @@ const handleContentWidgetEvents = (e: MouseEvent | TouchEvent): void => {
 };
 
 const StepPreview = ({
+  dimensions,
   disableIframe,
   previewMounted,
   challengeType,
@@ -157,15 +173,15 @@ const StepPreview = ({
 }: Pick<PreviewProps, 'disableIframe' | 'previewMounted'> & {
   challengeType: number;
   xtermFitRef: React.MutableRefObject<FitAddon | null>;
+  dimensions?: { width: number; height: number };
 }) => {
-  return challengeType === challengeTypes.python ? (
-    <XtermTerminal xtermFitRef={xtermFitRef} />
+  return challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy ? (
+    <XtermTerminal dimensions={dimensions} xtermFitRef={xtermFitRef} />
   ) : (
-    <Preview
-      className='full-height'
-      disableIframe={disableIframe}
-      previewMounted={previewMounted}
-    />
+    <Preview disableIframe={disableIframe} previewMounted={previewMounted} />
   );
 };
 
@@ -176,19 +192,20 @@ const defaultOutput = `
 */`;
 
 function ShowClassic({
-  challengeFiles: reduxChallengeFiles,
+  challengeFiles,
   data: {
     challengeNode: {
       challenge: {
-        challengeFiles,
+        challengeFiles: seedChallengeFiles,
         block,
+        demoType,
         title,
         description,
         instructions,
+        hooks,
         fields: { tests, blockName },
         challengeType,
-        removeComments,
-        hasEditableBoundaries,
+        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -201,14 +218,19 @@ function ShowClassic({
   },
   pageContext: {
     challengeMeta,
-    challengeMeta: { isFirstStep, nextChallengePath, prevChallengePath },
-    projectPreview: { challengeData, showProjectPreview }
+    challengeMeta: { isFirstStep, nextChallengePath },
+    projectPreview: { challengeData }
   },
   createFiles,
   cancelTests,
   challengeMounted,
   initConsole,
   initTests,
+  initHooks,
+  initVisibleEditors,
+  dailyCodingChallengeLanguage,
+  isDailyCodingChallenge = false,
+  setDailyCodingChallengeLanguage,
   updateChallengeMeta,
   openModal,
   setIsAdvancing,
@@ -229,32 +251,25 @@ function ShowClassic({
     query: `(max-width: ${MAX_MOBILE_WIDTH}px)`
   });
 
+  const guideUrl = getGuideUrl({ forumTopicId, title });
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
-  // TODO: show preview should NOT be computed like this. That determination is
-  // made during the build (at least twice!). It should be either a prop or
-  // computed from challengeType
-  const showPreview =
-    challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.python;
-
+  const openConsole = isJavaScriptChallenge({ challengeType });
+  const hasPreview = challengeHasPreview({ challengeType });
   const getLayoutState = () => {
-    const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout;
-
-    // Validate if user has not done any resize of the panes
-    if (!reflexLayout) return BASE_LAYOUT;
+    const reflexLayout = store.get(REFLEX_LAYOUT) as ReflexLayout | null;
 
     // Check that the layout values stored are valid (exist in base layout). If
     // not valid, it will fallback to the base layout values and be set on next
     // user resize.
-    const isValidLayout = isContained(
-      Object.keys(BASE_LAYOUT),
-      Object.keys(reflexLayout)
-    );
+    const isValidLayout =
+      reflexLayout &&
+      isContained(Object.keys(BASE_LAYOUT), Object.keys(reflexLayout));
+
+    if (!isValidLayout) store.remove(REFLEX_LAYOUT);
 
     return isValidLayout ? reflexLayout : BASE_LAYOUT;
   };
@@ -265,25 +280,17 @@ function ShowClassic({
   const [layout, setLayout] = useState(getLayoutState());
 
   const onStopResize = (event: HandlerProps) => {
+    setResizing(false);
+    // 'name' is used to identify the Elements whose layout is stored.
     const { name, flex } = event.component.props;
 
-    // Only interested in tracking layout updates for ReflexElement's
-    if (!name) {
-      setResizing(false);
-      return;
-    }
-
-    // Forcing a state update with the value of each panel since on stop resize
-    // is executed per each panel.
-    if (typeof layout === 'object') {
-      setLayout({
-        ...layout,
-        [name]: { flex }
-      });
-    }
-    setResizing(false);
-
-    store.set(REFLEX_LAYOUT, layout);
+    // onStopResize can be called multiple times before the state changes, so
+    // we need an updater function to ensure all updates are applied.
+    setLayout(l => {
+      const newLayout = name ? { ...l, [name]: { flex } } : l;
+      store.set(REFLEX_LAYOUT, newLayout);
+      return newLayout;
+    });
   };
 
   const setHtmlHeight = () => {
@@ -303,6 +310,22 @@ function ShowClassic({
   ): void => {
     setUsingKeyboardInTablist(usingKeyboardInTablist);
   };
+
+  // AB testing Pre-fetch in the Spanish locale
+  const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
+  const isIndependentLowerJawEnabled = useFeature('independent-lower-jaw').on;
+
+  // Independent lower jaw is only enabled for the urriculum outline workshop
+  const showIndependentLowerJaw =
+    blockName === 'workshop-curriculum-outline' &&
+    isIndependentLowerJawEnabled &&
+    !isMobile;
+
+  useEffect(() => {
+    if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
+      preloadPage(nextChallengePath);
+    }
+  }, [nextChallengePath, isPreFetchEnabled]);
 
   useEffect(() => {
     initializeComponent(title);
@@ -344,7 +367,7 @@ function ShowClassic({
       window.removeEventListener('resize', setHtmlHeight);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dailyCodingChallengeLanguage]);
 
   const initializeComponent = (title: string): void => {
     initConsole('');
@@ -353,32 +376,45 @@ function ShowClassic({
       return challenge.id === challengeMeta.id;
     });
 
-    createFiles(savedChallenge?.challengeFiles || challengeFiles || []);
+    createFiles(
+      mergeChallengeFiles(seedChallengeFiles, savedChallenge?.challengeFiles)
+    );
 
     initTests(tests);
-    if (showProjectPreview) openModal('projectPreview');
+    initHooks(hooks);
+
+    initVisibleEditors();
+
+    // Typically, this kind of preview only appears on the first step of a
+    // project and is shown (once) automatically. In contrast, labs are more
+    // freeform, so the preview is shown on demand.
+    if (demoType === 'onLoad') openModal('projectPreview');
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
+
     updateChallengeMeta({
       ...challengeMeta,
       title,
-      removeComments: removeComments !== false,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
     setIsAdvancing(false);
   };
 
   const renderInstructionsPanel = ({
-    showToolPanel
+    toolPanel,
+    hasDemo
   }: {
-    showToolPanel: boolean;
+    toolPanel: React.ReactNode;
+    hasDemo: boolean;
   }) => {
     return (
       <SidePanel
-        block={block}
         challengeDescription={
           <ChallengeDescription
-            block={block}
             description={description}
             instructions={instructions}
             superBlock={superBlock}
@@ -392,11 +428,10 @@ function ShowClassic({
             {title}
           </ChallengeTitle>
         }
-        guideUrl={getGuideUrl({ forumTopicId, title })}
         instructionsPanelRef={instructionsPanelRef}
-        showToolPanel={showToolPanel}
-        superBlock={superBlock}
-        videoUrl={videoUrl}
+        toolPanel={toolPanel}
+        hasDemo={hasDemo}
+        showIndependentLowerJaw={showIndependentLowerJaw}
       />
     );
   };
@@ -406,9 +441,11 @@ function ShowClassic({
     isUsingKeyboardInTablist
   }: RenderEditorArgs) => {
     return (
-      reduxChallengeFiles && (
+      challengeFiles && (
         <MultifileEditor
-          challengeFiles={reduxChallengeFiles}
+          challengeFiles={challengeFiles}
+          block={block}
+          superBlock={superBlock}
           containerRef={containerRef}
           description={description}
           editorRef={editorRef}
@@ -418,7 +455,8 @@ function ShowClassic({
           resizeProps={resizeProps}
           title={title}
           usesMultifileEditor={usesMultifileEditor}
-          showProjectPreview={showProjectPreview}
+          showProjectPreview={demoType === 'onLoad'}
+          showIndependentLowerJaw={showIndependentLowerJaw}
         />
       )
     );
@@ -430,8 +468,6 @@ function ShowClassic({
       executeChallenge={executeChallenge}
       containerRef={containerRef}
       instructionsPanelRef={instructionsPanelRef}
-      nextChallengePath={nextChallengePath}
-      prevChallengePath={prevChallengePath}
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
@@ -443,14 +479,13 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            guideUrl={getGuideUrl({ forumTopicId, title })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: false
+              toolPanel: null,
+              hasDemo: demoType === 'onClick'
             })}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
@@ -464,28 +499,33 @@ function ShowClassic({
             testOutput={
               <Output defaultOutput={defaultOutput} output={output} />
             }
+            toolPanel={
+              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+            }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
-            videoUrl={videoUrl}
           />
         )}
         {!isMobile && (
           <DesktopLayout
-            challengeFiles={reduxChallengeFiles}
+            challengeFiles={challengeFiles}
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
-            hasNotes={!!notes}
-            hasPreview={showPreview}
+            hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              showToolPanel: true
+              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              hasDemo: demoType === 'onClick'
             })}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
             isFirstStep={isFirstStep}
             layoutState={layout}
-            notes={<Notes notes={notes} />}
+            notes={notes}
             onPreviewResize={onPreviewResize}
             preview={
               <StepPreview
@@ -500,17 +540,26 @@ function ShowClassic({
               <Output defaultOutput={defaultOutput} output={output} />
             }
             windowTitle={windowTitle}
+            startWithConsoleShown={openConsole}
+            showIndependentLowerJaw={showIndependentLowerJaw}
           />
         )}
         <CompletionModal />
-        <HelpModal challengeTitle={title} challengeBlock={blockName} />
+        <HelpModal
+          challengeTitle={title}
+          challengeBlock={blockName}
+          superBlock={superBlock}
+        />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal />
+        <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
-          previewTitle={t('learn.project-preview-title')}
-          showProjectPreview={showProjectPreview}
+          previewTitle={
+            demoType === 'onClick'
+              ? t('learn.demo-project-title')
+              : t('learn.project-preview-title')
+          }
         />
         <ShortcutsModal />
       </LearnLayout>
@@ -523,23 +572,29 @@ ShowClassic.displayName = 'ShowClassic';
 export default connect(mapStateToProps, mapDispatchToProps)(ShowClassic);
 
 export const query = graphql`
-  query ClassicChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ClassicChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         block
+        demoType
         title
         description
         id
         hasEditableBoundaries
         instructions
         notes
-        removeComments
         challengeType
         helpCategory
         videoUrl
         superBlock
         translationPending
         forumTopicId
+        hooks {
+          beforeAll
+          beforeEach
+          afterEach
+          afterAll
+        }
         fields {
           blockName
           slug

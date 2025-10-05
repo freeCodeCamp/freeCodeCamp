@@ -1,0 +1,216 @@
+---
+id: 6421f98f4999d1179ce37cb4
+title: Step 11
+challengeType: 0
+dashedName: step-11
+---
+
+# --description--
+
+Arrays have a `some()` method. Like the `filter()` method, `some()` accepts a callback function which should take an element of the array as the argument. The `some()` method will return `true` if the callback function returns `true` for at least one element in the array.
+
+Here is an example of a `.some()` method call to check if any element in the array is an uppercase letter.
+
+```js
+const arr = ["A", "b", "C"];
+arr.some(letter => letter === letter.toUpperCase());
+```
+
+Update the `isSpam()` function to use the `some()` method, which will check if testing `msg` against any of the regular expressions in `denyList` returns `true`." 
+
+# --hints--
+
+Your `isSpam` function should use the `.some()` method.
+
+```js
+let flag = false;
+const temp = Array.prototype.some;
+Array.prototype.some = (arg) => {flag = true};
+try {
+  isSpam("");
+  assert.isTrue(flag);
+} finally {
+  Array.prototype.some = temp;
+}
+```
+
+Your `isSpam` function should call `denyList.some()`.
+
+```js
+let flag = false;
+const temp = denyList.some;
+denyList.some = (arg) => {flag = true};
+try {
+  isSpam("");
+  assert.isTrue(flag);
+} finally {
+  denyList.some = temp;
+} 
+```
+
+Your `isSpam` function should return the result of `denyList.some()`, where its callback should evaluate `.test(msg)` on each item of `denyList`.
+
+```js
+const help = "plEase hElp";
+const assist = "AssIst ME";
+const notSpam = "not spam";
+const mockSpam = (msg) => denyList.some((regex) => regex.test(msg));
+denyList = [helpRegex, /test1/, /test2/]
+assert.strictEqual(isSpam(help), mockSpam(help));
+assert.strictEqual(isSpam(assist), mockSpam(assist));
+assert.strictEqual(isSpam(notSpam), mockSpam(notSpam));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Learn Regular Expressions by Building a Spam Filter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="main-text">
+      <h1 class="title">Is this Spam?</h1>
+      <p class="description">
+        Enter a phrase to check if it would be marked as spam or not.
+      </p>
+    </header>
+
+    <main>
+      <label class="message-label" for="message-input">Message: </label>
+      <textarea
+        placeholder="Enter message here"
+        value=""
+        type="text"
+        name="message"
+        id="message-input"
+        rows="10"
+        cols="40"
+      ></textarea>
+      <button class="btn" id="check-message-btn" type="button">
+        Check message
+      </button>
+      <p id="result-message"></p>
+    </main>
+
+    <footer class="footer">&copy; freeCodeCamp</footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
+```
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-grey: #1b1b32;
+  --light-grey: #f5f6f7;
+  --golden-yellow: #fecc4c;
+  --yellow: #ffcc4c;
+  --gold: #feac32;
+  --orange: #ffac33;
+  --dark-orange: #f89808;
+}
+
+body {
+  background-color: var(--dark-grey);
+  color: var(--light-grey);
+}
+
+body,
+#message-input:placeholder-shown {
+  text-align: center;
+}
+
+textarea {
+  max-width: 90%;
+}
+
+.main-text {
+  margin: 25px 0;
+}
+
+.title {
+  font-size: 2.5rem;
+}
+
+.description {
+  margin-top: 15px;
+  font-size: 1.4rem;
+}
+
+.message-label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+#message-input:placeholder-shown,
+textarea {
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 200px;
+  margin: 10px auto;
+  color: var(--dark-grey);
+  background-color: var(--gold);
+  background-image: linear-gradient(var(--golden-yellow), var(--orange));
+  border-color: var(--gold);
+  border-width: 3px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(var(--yellow), var(--dark-orange));
+}
+
+#result {
+  font-size: 2rem;
+  margin: 20px 0;
+}
+
+.footer {
+  margin-top: 10px;
+}
+```
+
+```js
+const messageInput = document.getElementById("message-input");
+const result = document.getElementById("result-message");
+const checkMessageButton = document.getElementById("check-message-btn");
+
+const helpRegex = /please help|assist me/i;
+
+const denyList = [helpRegex];
+
+--fcc-editable-region--
+const isSpam = (msg) => helpRegex.test(msg);
+--fcc-editable-region--
+
+checkMessageButton.addEventListener("click", () => {
+  if (messageInput.value === "") {
+    alert("Please enter a message.");
+    return;
+  }
+
+  result.textContent = isSpam(messageInput.value)
+    ? "Oh no! This looks like a spam message."
+    : "This message does not seem to contain any spam.";
+  messageInput.value = "";
+});
+```

@@ -30,7 +30,11 @@ test.describe('Template Challenges Show', () => {
       .click();
 
     await expect(
-      page.getByText(translations.learn['assignment-not-complete'])
+      page.getByText(translations.learn['assignment-not-complete_one'])
+    ).not.toBeVisible();
+
+    await expect(
+      page.getByText(translations.learn['assignment-not-complete_other'])
     ).not.toBeVisible();
 
     await expect(

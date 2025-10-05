@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
-import { Alert } from '@freecodecamp/ui';
+import { Alert, Spacer } from '@freecodecamp/ui';
 
-import { Link, Spacer } from '../helpers';
+import { Link } from '../helpers';
 
 type DonateCompletionProps = {
   error: string | null;
@@ -37,7 +37,7 @@ function DonateCompletion({
   return (
     <Alert variant={style} className='donation-completion'>
       <b>{heading}</b>
-      <Spacer size={'medium'} />
+      <Spacer size='m' />
       <div className='donation-completion-body'>
         {(processing || redirecting) && (
           <Spinner
@@ -48,14 +48,14 @@ function DonateCompletion({
           />
         )}
         {success && (
-          <div>
+          <>
             <p>{t('donate.free-tech')}</p>
             {isSignedIn && (
               <>
                 <p>{t('donate.visit-supporters')}</p>
 
                 <Link
-                  className='btn'
+                  className='btn complete-button'
                   key='supporters'
                   sameTab={false}
                   to='/supporters'
@@ -64,7 +64,7 @@ function DonateCompletion({
                 </Link>
               </>
             )}
-          </div>
+          </>
         )}
         {error && <p>{error}</p>}
       </div>

@@ -2,10 +2,11 @@ import {
   createHistory,
   createMemorySource,
   LocationProvider
-} from '@reach/router';
+} from '@gatsbyjs/reach-router';
 import { render } from '@testing-library/react';
 import { navigate, withPrefix } from 'gatsby';
 import React from 'react';
+import { describe, it, expect } from 'vitest';
 
 import Challenges from './challenges';
 

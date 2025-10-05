@@ -1,39 +1,41 @@
 // Package Utilities
-import { Button } from '@freecodecamp/react-bootstrap';
 import { graphql } from 'gatsby';
-import React, { Component, Fragment } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import ShortcutsModal from '../components/shortcuts-modal';
 
 // Local Utilities
-import Spacer from '../../../components/helpers/spacer';
 import LearnLayout from '../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../redux/prop-types';
+import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
-import ChallengeHeading from '../components/challenge-heading';
+import ChallegeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
+import FillInTheBlanks from '../components/fill-in-the-blanks';
+import ChallengeTranscript from '../components/challenge-transcript';
 import PrismFormatted from '../components/prism-formatted';
 import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../redux/actions';
 import Scene from '../components/scene/scene';
+import { SceneSubject } from '../components/scene/scene-subject';
+import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { parseBlanks } from './parse-blanks';
+import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 
-// Styles
-import '../video.css';
 import './show.css';
 
 // Redux Setup
@@ -46,6 +48,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -59,8 +62,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ShowFillInTheBlankProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
-  description: string;
   isChallengeCompleted: boolean;
+  initTests: (xs: Test[]) => void;
   openCompletionModal: () => void;
   openHelpModal: () => void;
   pageContext: {
@@ -71,142 +74,93 @@ interface ShowFillInTheBlankProps {
   updateSolutionFormValues: () => void;
 }
 
-interface ShowFillInTheBlankState {
-  showWrong: boolean;
-  userAnswers: (string | null)[];
-  answersCorrect: (boolean | null)[];
-  allBlanksFilled: boolean;
-  feedback: string | null;
-  showFeedback: boolean;
-}
-
-// Component
-class ShowFillInTheBlank extends Component<
-  ShowFillInTheBlankProps,
-  ShowFillInTheBlankState
-> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
-
-  constructor(props: ShowFillInTheBlankProps) {
-    super(props);
-
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            fillInTheBlank: { blanks }
-          }
-        }
+const ShowFillInTheBlank = ({
+  data: {
+    challengeNode: {
+      challenge: {
+        title,
+        description,
+        instructions,
+        explanation,
+        transcript,
+        superBlock,
+        block,
+        translationPending,
+        fields: { blockName, tests },
+        challengeType,
+        fillInTheBlank,
+        helpCategory,
+        scene
       }
-    } = props;
+    }
+  },
+  challengeMounted,
+  openHelpModal,
+  updateChallengeMeta,
+  openCompletionModal,
+  pageContext: { challengeMeta },
+  isChallengeCompleted
+}: ShowFillInTheBlankProps) => {
+  const { t } = useTranslation();
+  const emptyArray = fillInTheBlank.blanks.map(() => null);
 
-    const emptyArray = blanks.map(() => null);
+  const [showWrong, setShowWrong] = useState(false);
+  const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
+  const [answersCorrect, setAnswersCorrect] =
+    useState<(null | boolean)[]>(emptyArray);
+  const [allBlanksFilled, setAllBlanksFilled] = useState(false);
+  const [feedback, setFeedback] = useState<string | null>(null);
+  const [showFeedback, setShowFeedback] = useState(false);
 
-    this.state = {
-      showWrong: false,
-      userAnswers: emptyArray,
-      answersCorrect: emptyArray,
-      allBlanksFilled: false,
-      feedback: null,
-      showFeedback: false
-    };
+  const container = useRef<HTMLElement | null>(null);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount(): void {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { title, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      updateChallengeMeta
-    } = this.props;
+  useEffect(() => {
+    initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    this.container.current?.focus();
-  }
+    container.current?.focus();
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidUpdate(prevProps: ShowFillInTheBlankProps): void {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { title: prevTitle }
-        }
-      }
-    } = prevProps;
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      updateChallengeMeta
-    } = this.props;
-    if (prevTitle !== currentTitle) {
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType,
-        helpCategory
-      });
-      challengeMounted(challengeMeta.id);
-    }
-  }
-
-  handleSubmit() {
-    const {
-      openCompletionModal,
-      data: {
-        challengeNode: {
-          challenge: {
-            fillInTheBlank: { blanks }
-          }
-        }
-      }
-    } = this.props;
-    const { userAnswers } = this.state;
-
-    const blankAnswers = blanks.map(b => b.answer);
+  const handleSubmit = () => {
+    const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) => !!userAnswer && userAnswer.trim() === blankAnswers[i]
+      (userAnswer, i) =>
+        !!userAnswer &&
+        replaceAppleQuotes(userAnswer.trim()).toLowerCase() ===
+          blankAnswers[i].toLowerCase()
     );
-
+    setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
-      this.setState({
-        answersCorrect: newAnswersCorrect
-      });
-
+      setShowFeedback(false);
+      setFeedback(null);
       openCompletionModal();
     } else {
       const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
       const feedback =
-        firstWrongIndex >= 0 ? blanks[firstWrongIndex].feedback : null;
+        firstWrongIndex >= 0
+          ? fillInTheBlank.blanks[firstWrongIndex].feedback
+          : null;
 
-      this.setState({
-        answersCorrect: newAnswersCorrect,
-        showWrong: true,
-        showFeedback: true,
-        feedback: feedback
-      });
+      setFeedback(feedback);
+      setShowWrong(true);
+      setShowFeedback(true);
     }
-  }
+  };
 
-  handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const { userAnswers, answersCorrect } = this.state;
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
 
     const newUserAnswers = [...userAnswers];
@@ -217,222 +171,118 @@ class ShowFillInTheBlank extends Component<
 
     const allBlanksFilled = newUserAnswers.every(a => a);
 
-    this.setState({
-      userAnswers: newUserAnswers,
-      answersCorrect: newAnswersCorrect,
-      allBlanksFilled,
-      showWrong: false
-    });
+    setUserAnswers(newUserAnswers);
+    setAnswersCorrect(newAnswersCorrect);
+    setAllBlanksFilled(allBlanksFilled);
+    setShowWrong(false);
   };
 
-  addCodeTags(str: string, index: number, numberOfBlanks: number): string {
-    if (index === 0) return `${str}</code>`;
-    if (index < numberOfBlanks) return `<code>${str}</code>`;
-    return `<code>${str}`;
-  }
+  const handlePlayScene = () => {
+    sceneSubject.notify('play');
+  };
 
-  addPrismClass(index: number, numberOfBlanks: number): string {
-    if (index === 0) return `first-code-tag`;
-    if (index < numberOfBlanks) return `middle-code-tag`;
-    return `last-code-tag`;
-  }
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
 
-  addInputClass(index: number): string {
-    const { answersCorrect } = this.state;
-    if (answersCorrect[index] === true) return 'green-underline';
-    if (answersCorrect[index] === false) return 'red-underline';
-    return '';
-  }
+  const sceneSubject = new SceneSubject();
 
-  render() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title,
-            description,
-            instructions,
-            superBlock,
-            block,
-            translationPending,
-            fields: { blockName },
-            fillInTheBlank: { sentence, blanks },
-            audioPath,
-            scene
-          }
-        }
-      },
-      openHelpModal,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      t,
-      isChallengeCompleted
-    } = this.props;
+  return (
+    <Hotkeys
+      executeChallenge={() => handleSubmit()}
+      containerRef={container}
+      playScene={handlePlayScene}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Spacer size='m' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
 
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )} - ${title}`;
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <PrismFormatted text={description} />
+              <Spacer size='m' />
+            </Col>
 
-    const { allBlanksFilled, feedback, showFeedback, showWrong } = this.state;
-    const paragraphs = parseBlanks(sentence);
+            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
-    const blankAnswers = blanks.map(b => b.answer);
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {transcript && <ChallengeTranscript transcript={transcript} />}
 
-    return (
-      <Hotkeys
-        executeChallenge={() => this.handleSubmit()}
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
-              <Spacer size='medium' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <PrismFormatted text={description} />
-                <Spacer size='medium' />
-                {audioPath && (
-                  <>
-                    {/* TODO: Add tracks for audio elements */}
-                    {/* eslint-disable-next-line jsx-a11y/media-has-caption*/}
-                    <audio className='audio' controls>
-                      <source
-                        src={`https://cdn.freecodecamp.org/${audioPath}`}
-                        type='audio/mp3'
-                      ></source>
-                    </audio>
-                    <Spacer size='medium' />
-                  </>
-                )}
-              </Col>
-
-              {scene && (
+              {instructions && (
                 <>
-                  <Scene scene={scene} />
-                  <Spacer size='medium' />
+                  <PrismFormatted text={instructions} />
+                  <Spacer size='xs' />
                 </>
               )}
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeHeading heading={t('learn.fill-in-the-blank')} />
-                <Spacer size='small' />
-                {instructions && (
-                  <>
-                    <PrismFormatted text={instructions} />
-                    <Spacer size='small' />
-                  </>
-                )}
-                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+              {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
-                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <div className='fill-in-the-blank-wrap'>
-                    {paragraphs.map((p, i) => {
-                      return (
-                        // both keys, i and j, are stable between renders, since
-                        // the paragraphs are static.
-                        <p key={i}>
-                          {p.map((node, j) => {
-                            if (node.type === 'text') return node.value;
-                            if (node.type === 'blank')
-                              return (
-                                <input
-                                  key={j}
-                                  type='text'
-                                  maxLength={
-                                    blankAnswers[node.value].length + 3
-                                  }
-                                  className={`fill-in-the-blank-input ${this.addInputClass(
-                                    node.value
-                                  )}`}
-                                  onChange={this.handleInputChange}
-                                  data-index={node.value}
-                                  style={{
-                                    width: `${
-                                      blankAnswers[node.value].length * 11 + 11
-                                    }px`
-                                  }}
-                                  aria-label={t('learn.blank')}
-                                />
-                              );
-                          })}
-                        </p>
-                      );
-                    })}
-                  </div>
-                </ObserveKeys>
-                <Spacer size='medium' />
-                {showFeedback && feedback && (
-                  <>
-                    <PrismFormatted text={feedback} />
-                    <Spacer size='small' />
-                  </>
-                )}
-                <div
-                  style={{
-                    textAlign: 'center'
-                  }}
-                >
-                  {showWrong ? (
-                    <span>{t('learn.wrong-answer')}</span>
-                  ) : (
-                    <span>{t('learn.check-answer')}</span>
-                  )}
-                </div>
-                <Spacer size='medium' />
-                <Button
-                  block={true}
-                  bsStyle='primary'
-                  disabled={!allBlanksFilled}
-                  onClick={() => this.handleSubmit()}
-                >
-                  {t('buttons.check-answer')}
-                </Button>
-                <Button
-                  block={true}
-                  bsStyle='primary'
-                  className='btn-invert'
-                  onClick={openHelpModal}
-                >
-                  {t('buttons.ask-for-help')}
-                </Button>
-                <Spacer size='large' />
-              </Col>
-              <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
-}
+              <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                <FillInTheBlanks
+                  fillInTheBlank={fillInTheBlank}
+                  answersCorrect={answersCorrect}
+                  showFeedback={showFeedback}
+                  feedback={feedback}
+                  showWrong={showWrong}
+                  handleInputChange={handleInputChange}
+                />
+              </ObserveKeys>
+
+              {explanation ? (
+                <ChallegeExplanation explanation={explanation} />
+              ) : (
+                <Spacer size='m' />
+              )}
+
+              <Button
+                block={true}
+                variant='primary'
+                disabled={!allBlanksFilled}
+                onClick={() => handleSubmit()}
+              >
+                {t('buttons.check-answer')}
+              </Button>
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={openHelpModal}>
+                {t('buttons.ask-for-help')}
+              </Button>
+              <Spacer size='l' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+        <ShortcutsModal />
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
 
 ShowFillInTheBlank.displayName = 'ShowFillInTheBlank';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(ShowFillInTheBlank));
+export default connect(mapStateToProps, mapDispatchToProps)(ShowFillInTheBlank);
 
 export const query = graphql`
-  query FillInTheBlankChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query FillInTheBlankChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         title
         description
         instructions
+        explanation
         challengeType
         helpCategory
         superBlock
@@ -440,6 +290,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
         fillInTheBlank {
           sentence
@@ -448,6 +302,7 @@ export const query = graphql`
             feedback
           }
         }
+        transcript
         scene {
           setup {
             background
@@ -486,7 +341,6 @@ export const query = graphql`
           }
         }
         translationPending
-        audioPath
       }
     }
   }

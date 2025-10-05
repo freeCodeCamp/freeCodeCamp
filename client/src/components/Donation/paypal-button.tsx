@@ -9,10 +9,11 @@ import {
   PaymentProvider,
   type DonationDuration,
   type DonationAmount
-} from '../../../../shared/config/donation-settings';
+} from '../../../../shared-dist/config/donation-settings';
 import envData from '../../../config/env.json';
 import { userSelector, signInLoadingSelector } from '../../redux/selectors';
-import { Themes } from '../settings/theme';
+import { LocalStorageThemes } from '../../redux/types';
+import type { User } from '../../redux/prop-types';
 import { DonationApprovalData, PostPayment } from './types';
 import PayPalButtonScriptLoader from './paypal-button-script-loader';
 
@@ -34,7 +35,7 @@ type PaypalButtonProps = {
   isPaypalLoading: boolean;
   t: (label: string) => string;
   ref?: Ref<PaypalButton>;
-  theme: Themes;
+  theme: LocalStorageThemes;
   isSubscription?: boolean;
   handlePaymentButtonLoad: (provider: 'stripe' | 'paypal') => void;
   isMinimalForm: boolean | undefined;
@@ -50,10 +51,10 @@ type PaypalButtonState = {
 const {
   paypalClientId,
   deploymentEnv
-}: { paypalClientId: string | null; deploymentEnv: 'staging' | 'live' } =
+}: { paypalClientId: string | null; deploymentEnv: 'staging' | 'production' } =
   envData as {
     paypalClientId: string | null;
-    deploymentEnv: 'staging' | 'live';
+    deploymentEnv: 'staging' | 'production';
   };
 
 class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
@@ -91,7 +92,7 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
     const { duration, planId, amount } = this.state;
     const { t, theme, isPaypalLoading, isMinimalForm } = this.props;
     const isSubscription = duration !== 'one-time';
-    const buttonColor = theme === Themes.Night ? 'white' : 'gold';
+    const buttonColor = theme === LocalStorageThemes.Dark ? 'white' : 'gold';
     if (!paypalClientId) {
       return null;
     }
@@ -177,8 +178,8 @@ class PaypalButton extends Component<PaypalButtonProps, PaypalButtonState> {
 const mapStateToProps = createSelector(
   userSelector,
   signInLoadingSelector,
-  ({ isDonating }: { isDonating: boolean }, showLoading: boolean) => ({
-    isDonating,
+  (user: User | null, showLoading: boolean) => ({
+    isDonating: !!user?.isDonating,
     showLoading
   })
 );

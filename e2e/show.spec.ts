@@ -40,8 +40,6 @@ test.describe('Odin challenges', () => {
   });
 
   test.describe('When the user is signed in', () => {
-    test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
     test('should render the content correctly', async ({ page }) => {
       await expect(page).toHaveTitle(
         'Write Your First Code Using C# - Write Your First C# Code | Learn | freeCodeCamp.org'

@@ -1,10 +1,18 @@
-const leadingInlineHTMLNode = require('./__fixtures__/leading-html-node.json');
-const mdastMixedNodes = require('./__fixtures__/mdast-mixed-nodes.json');
-const mdastWithEmNode = require('./__fixtures__/mdast-with-em.json');
-const singleNode = require('./__fixtures__/non-id-node.json');
-const mdastToHTML = require('./mdast-to-html');
+import { describe, beforeAll, it, expect } from 'vitest';
+import parseFixture from '../../__fixtures__/parse-fixture';
+import mdastToHTML from './mdast-to-html';
 
 describe('mdast-to-html', () => {
+  let mdastMixedNodes, singleNode, inlineHTMLNodes;
+
+  beforeAll(async () => {
+    const mdastMixedAST = await parseFixture('mixed-nodes.md');
+    const mdastInlineHTMLAST = await parseFixture('inline-html.md');
+    mdastMixedNodes = mdastMixedAST.children;
+    singleNode = mdastMixedAST.children[0];
+    inlineHTMLNodes = mdastInlineHTMLAST.children;
+  });
+
   it('should return a string', () => {
     expect.assertions(1);
     const actual = mdastToHTML(mdastMixedNodes);
@@ -18,13 +26,6 @@ describe('mdast-to-html', () => {
     );
   });
 
-  it('should convert markdown nodes into html', () => {
-    const actual = mdastToHTML([mdastWithEmNode]);
-    expect(actual).toBe(
-      '<p>Just some <em>emphasis</em> and a bit of <strong>bold</strong></p>'
-    );
-  });
-
   it('should not escape html', () => {
     const actual = mdastToHTML(mdastMixedNodes);
     expect(actual).toBe(`<p>Paragraph 1</p>
@@ -32,7 +33,7 @@ describe('mdast-to-html', () => {
   });
 
   it('should put inline html inside the enclosing paragraph', () => {
-    const actual = mdastToHTML([leadingInlineHTMLNode]);
+    const actual = mdastToHTML(inlineHTMLNodes);
     expect(actual).toBe(
       '<p><code> code in </code> code tags <em>emphasis</em> followed' +
         ' by <div><span>some nested html </span></div></p>'

@@ -6,4 +6,6 @@ superBlock: college-algebra-with-python
 
 ## Introduction to Learn Quadratic Equations
 
-This unit will go beyond linear equations, to work with exponents and graph parabolas. You will learn how to find key points in parabolas and how to solve quadratic equations.
+Quadratic equations are foundational in mathematics, representing parabolic relationships between variables and finding applications across various fields. In this video series, we will explore the essential concepts of quadratic equations, equipping you with the skills to understand, solve, and apply these fundamental mathematical models.
+
+By the end of this series, you'll have a solid understanding of quadratic equations and how to apply various methods to solve them effectively. You'll be equipped with practical skills to interpret quadratic relationships and solve problems confidently.

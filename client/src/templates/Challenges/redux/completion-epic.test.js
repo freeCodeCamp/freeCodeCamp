@@ -1,4 +1,5 @@
 import { TestScheduler } from 'rxjs/testing';
+import { describe, it, expect } from 'vitest';
 import completionEpic from './completion-epic';
 import { submitChallenge, submitChallengeComplete } from './actions';
 
@@ -17,7 +18,10 @@ describe('completionEpic', () => {
       const state$ = {
         value: {
           challenge: { challengeMeta: { challengeType: 0 } },
-          app: { user: { username: 'test' } }
+          app: {
+            user: { username: 'test' },
+            allChallengesInfo: { challengeNodes: [], certificateNodes: [] }
+          }
         }
       };
 

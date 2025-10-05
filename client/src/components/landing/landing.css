@@ -9,10 +9,6 @@
   white-space: pre-line;
 }
 
-.cert-btn {
-  margin-top: 40px;
-}
-
 .landing-page ul {
   list-style: none;
   padding-inline-start: 0;
@@ -25,13 +21,7 @@
   margin-top: 0;
 }
 
-.landing-page h1,
-.landing-page h2 {
-  font-family: var(--font-family-sans-serif);
-}
-
 .landing-page .landing-page-happy {
-  font-family: var(--font-family-monospace);
   font-size: 1.1rem;
   margin-top: 0;
 }
@@ -47,6 +37,9 @@ figcaption.caption {
   background-color: var(--gray-75);
   color: var(--gray-15);
   padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .as-seen-in .big-heading {
@@ -77,7 +70,6 @@ figcaption.caption {
 .faq-question {
   font-weight: bold;
   font-size: 1.25rem;
-  font-family: var(--font-family-sans-serif);
   margin-bottom: 1.2rem;
 }
 
@@ -106,7 +98,6 @@ figcaption.caption {
 
 .landing-top p {
   font-size: 1.2rem;
-  font-weight: bold;
   margin: 0.6rem 0;
 }
 
@@ -151,7 +142,6 @@ figcaption.caption {
 }
 
 .testimonial-meta h3 {
-  font-family: var(--font-family-sans-serif);
   font-size: 1.3rem;
   font-weight: normal;
   margin-bottom: 0;
@@ -166,6 +156,8 @@ figcaption.caption {
 .testimonial-image {
   height: var(--image-size);
   width: var(--image-size);
+  /* Override the default max-width (100%) set by Tailwind */
+  max-width: var(--image-size);
 }
 
 .testimonials-footer {
@@ -184,11 +176,13 @@ figcaption.caption {
 .landing-top,
 .as-seen-in,
 .certification-section,
+.benefits,
 .testimonials {
-  padding-block: 4vw;
+  padding: 4vw 15px;
 }
 
-.certification-section {
+.certification-section,
+.faq-section {
   padding-inline: 4vw;
 }
 
@@ -220,4 +214,131 @@ figcaption.caption {
   .testimonials-footer {
     padding: 40px;
   }
+}
+
+/* AB testing styles */
+.landing-top .mega-heading {
+  font-size: 2.2rem;
+  margin: 0px 0px 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.landing-top .btn-cta-big {
+  max-width: fit-content;
+  padding: 12px 20px;
+}
+
+@media (min-width: 500px) {
+  .landing-top .mega-heading {
+    font-size: 3rem;
+    line-height: 2.5rem;
+  }
+  .landing-top .btn-cta-big {
+    padding: 12px 40px;
+  }
+}
+
+.logo-row-title {
+  font-weight: normal;
+}
+
+.landing-page {
+  overflow-x: hidden;
+}
+
+.landing-benefits {
+  display: grid;
+  grid-template-columns: 1fr; /* Default: 1 column */
+  gap: 30px; /* Adjust the space between the grid items */
+}
+
+/* When the screen is larger than 700px */
+@media screen and (min-width: 700px) {
+  .landing-benefits {
+    grid-template-columns: 1fr 1fr; /* Two columns */
+  }
+}
+
+.landing-top figure,
+.landing-top figure img {
+  margin-top: 50px;
+  height: 442px;
+  width: 750px;
+}
+
+.landing-benefits svg path {
+  fill: var(--gray-15);
+}
+
+.benefits-container {
+  background: var(--gray-75);
+}
+
+.benefits-container h2,
+.benefits-container h3 {
+  color: var(--gray-10);
+}
+
+.benefits-container p {
+  color: var(--gray-15);
+}
+
+/* AB testing styles */
+.landing-top-two-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.landing-top-two-column p {
+  font-size: 1.3rem;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+@media (min-width: 1200px) {
+  .landing-top-two-column {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .landing-top-two-column .landing-top-left {
+    flex: 0 0 50%;
+    max-width: 50%;
+    z-index: 1;
+  }
+
+  .landing-top-two-column .landing-top-right {
+    flex: 0 1 auto;
+    min-width: 0;
+    overflow: visible;
+  }
+}
+
+.landing-top .landing-top-two-column figure,
+.landing-top .landing-top-two-column figure img {
+  margin-left: -100px;
+  margin-top: 0px;
+  height: 550px;
+  width: 850px;
+  max-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 20%);
+  mask-image: linear-gradient(to right, transparent 0%, black 20%);
+}
+
+.landing-top .ultra-heading {
+  font-size: 4rem;
+}
+
+.landing-top-right figcaption {
+  display: none;
+}
+
+.landing-top .brands-container p {
+  color: var(--quaternary-color);
+  font-weight: normal;
+  text-align: center;
 }

@@ -1,18 +1,17 @@
 import ObjectID from 'bson-objectid';
 import { prompt } from 'inquirer';
-import { challengeTypeToTemplate } from './helpers/get-challenge-template';
+import { getTemplate } from './helpers/get-challenge-template';
 import { newChallengePrompts } from './helpers/new-challenge-prompts';
 import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { createChallengeFile } from './utils';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 
 const insertChallenge = async () => {
   const path = getProjectPath();
 
   const options = await newChallengePrompts();
 
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
 
   const challengeAfter = await prompt<{ id: string }>({
     name: 'id',
@@ -27,13 +26,10 @@ const insertChallenge = async () => {
     ({ id }) => id === challengeAfter.id
   );
 
-  const templateGenerator = challengeTypeToTemplate[options.challengeType];
-  if (!templateGenerator) {
-    return;
-  }
+  const template = getTemplate(options.challengeType);
   const challengeId = new ObjectID();
-  const template = templateGenerator({ ...options, challengeId });
-  createChallengeFile(options.dashedName, template, path);
+  const challengeText = template({ ...options, challengeId });
+  createChallengeFile(options.dashedName, challengeText, path);
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToInsert, 0, {
@@ -41,7 +37,7 @@ const insertChallenge = async () => {
     id: challengeId.toString(),
     title: options.title
   });
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void insertChallenge();

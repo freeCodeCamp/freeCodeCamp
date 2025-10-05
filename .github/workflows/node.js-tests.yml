@@ -1,21 +1,18 @@
 name: CI - Node.js
-env:
-  NODE_OPTIONS: '--max_old_space_size=6144'
 
 on:
-  # Run on push events, but only for the below branches
   push:
     branches:
       - 'main'
       - 'prod-**'
-  # Run on pull requests, but only for the below targets
   pull_request:
     branches:
       - 'main'
-      - 'next-**'
-  # Run on Merge Queue
-  merge_group:
-    types: [checks_requested]
+      - 'temp-**' # Temporary branches allowed on Upstream
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
+  cancel-in-progress: ${{ !contains(github.ref, 'main') && !contains(github.ref, 'prod-') }}
 
 permissions:
   contents: read
@@ -26,12 +23,14 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22]
       fail-fast: false
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        with:
+          submodules: 'recursive'
 
       - name: Check number of lockfiles
         run: |
@@ -41,21 +40,20 @@ jobs:
             exit 1
           fi
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
           cp sample.env .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Install node_modules
@@ -71,8 +69,6 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm run create:shared
-          npm i --prefix=curriculum-server
-          npm i --prefix=web
           pnpm run build:curriculum
           pnpm run lint
 
@@ -84,25 +80,28 @@ jobs:
     runs-on: ubuntu-22.04
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          version: 8
+          submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set freeCodeCamp Environment Variables
-        run: cp sample.env .env
+        run: |
+          cp sample.env .env
 
       - name: Install and Build
         run: |
@@ -117,22 +116,24 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          version: 8
+          submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
@@ -142,7 +143,7 @@ jobs:
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
-          mongodb-version: 6.0
+          mongodb-version: 8.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 
@@ -150,8 +151,9 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         run: pnpm test
@@ -164,34 +166,35 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [20.x]
+        node-version: [22]
 
     steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
         with:
-          version: 8
+          submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: pnpm
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        id: pnpm-install
+        with:
+          run_install: false
 
       - name: Set Environment variables
         run: |
           cp sample.env .env
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          echo 'SHOW_NEW_CURRICULUM=true' >> .env
           cat .env
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
         with:
-          mongodb-version: 6.0
+          mongodb-version: 8.0
           mongodb-replica-set: test-rs
           mongodb-port: 27017
 
@@ -199,70 +202,75 @@ jobs:
         run: |
           echo pnpm version $(pnpm -v)
           pnpm install
-          pnpm run create:shared
-          pnpm run build:curriculum
+
+      - name: Install Chrome for Puppeteer
+        run: pnpm -F=curriculum install-puppeteer
 
       - name: Run Tests
         run: pnpm test
 
-  test-localization:
-    name: Test - i18n
-    needs: build
-    runs-on: ubuntu-22.04
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node-version: [20.x]
-        locale: [portuguese, italian]
-
-    steps:
-      - name: Checkout Source Files
-        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744 # v3
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: pnpm
-
-      - name: Set Environment variables
-        run: |
-          cp sample.env .env
-          cat .env
-
-      - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
-        with:
-          mongodb-version: 6.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
-
-      - name: Install Dependencies
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
-        run: |
-          echo pnpm version $(pnpm -v)
-          pnpm install
-          pnpm run create:shared
-
-      # DONT REMOVE THIS STEP.
-      # TODO: Refactor and use re-usable workflow and shared artifacts
-      - name: Build Client in ${{ matrix.locale }}
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
-        run: |
-          pnpm run build
-
-      - name: Run Tests
-        env:
-          CURRICULUM_LOCALE: ${{ matrix.locale }}
-          CLIENT_LOCALE: ${{ matrix.locale }}
-        run: pnpm test
+  # test-localization:
+  #   name: Test - i18n
+  #   needs: build
+  #   runs-on: ubuntu-22.04
+  #
+  #   strategy:
+  #     fail-fast: false
+  #     matrix:
+  #       node-version: [22]
+  #       locale: [portuguese, italian]
+  #
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+  #       with:
+  #         submodules: 'recursive'
+  #
+  #     - name: Use Node.js ${{ matrix.node-version }}
+  #       uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+  #       with:
+  #         node-version: ${{ matrix.node-version }}
+  #
+  #     - name: Install pnpm
+  #       uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+  #       id: pnpm-install
+  #       with:
+  #         run_install: false
+  #
+  #     - name: Set Environment variables
+  #       run: |
+  #         cp sample.env .env
+  #         cat .env
+  #
+  #     - name: Start MongoDB
+  #       uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
+  #       with:
+  #         mongodb-version: 8.0
+  #         mongodb-replica-set: test-rs
+  #         mongodb-port: 27017
+  #
+  #     - name: Install Dependencies
+  #       env:
+  #         CURRICULUM_LOCALE: ${{ matrix.locale }}
+  #         CLIENT_LOCALE: ${{ matrix.locale }}
+  #       run: |
+  #         echo pnpm version $(pnpm -v)
+  #         pnpm install
+  #
+  #     # DONT REMOVE THIS STEP.
+  #     # TODO: Refactor and use re-usable workflow and shared artifacts
+  #     - name: Build Client in ${{ matrix.locale }}
+  #       env:
+  #         CURRICULUM_LOCALE: ${{ matrix.locale }}
+  #         CLIENT_LOCALE: ${{ matrix.locale }}
+  #       run: |
+  #         pnpm run build
+  #
+  #     - name: Install Chrome for Puppeteer
+  #       run: pnpm -F=curriculum install-puppeteer
+  #
+  #     - name: Run Tests
+  #       env:
+  #         CURRICULUM_LOCALE: ${{ matrix.locale }}
+  #         CLIENT_LOCALE: ${{ matrix.locale }}
+  #       run: pnpm test

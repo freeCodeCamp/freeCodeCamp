@@ -74,17 +74,9 @@ test.describe('Challenge Title Component (signed out)', () => {
 });
 
 test.describe('Challenge Title Component (signed in)', () => {
-  test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
   test('should display GreenPass after challenge completion', async ({
-    page,
-    browserName
+    page
   }) => {
-    test.skip(
-      browserName === 'webkit',
-      'user does not seem to be authenticated on Safari'
-    );
-
     await expect(
       page.getByRole('heading', { name: 'Developing a Port Scanner' })
     ).toBeVisible();

@@ -35,26 +35,22 @@ const config = {
       }
     ],
     [
-      'babel-plugin-transform-imports',
-      {
-        'react-bootstrap': {
-          transform: 'react-bootstrap/lib/${member}',
-          preventFullImport: true
-        }
-      }
-    ],
-    [
       'prismjs',
       {
         languages: [
+          'bash',
           'clike',
           'css',
           'html',
           'javascript',
+          'json',
+          'jsx',
           'markup',
           'mathml',
           'pug',
           'python',
+          'scss',
+          'sass',
           'sql',
           'svg',
           'typescript',
@@ -67,10 +63,4 @@ const config = {
     ]
   ]
 };
-if (
-  process.env.FREECODECAMP_NODE_ENV === 'development' &&
-  process.env.CODESEE === 'true'
-) {
-  config.plugins.push(['@codesee/instrument', { hosted: true }]);
-}
 module.exports = config;

@@ -1,0 +1,61 @@
+---
+id: 5dc23f9bf86c76b9248c6eba
+title: Step 7
+challengeType: 0
+dashedName: step-7
+---
+
+# --description--
+
+You can add images to your website by using the `img` element. `img` elements have an opening tag without a closing tag. An element without a closing tag is known as a <dfn>void element</dfn>.
+
+Add an `img` element below the `p` element. At this point, no image will show up in the browser.
+
+# --hints--
+
+Your `img` element should have an opening tag. Opening tags have this syntax: `<elementName>`.
+
+```js
+assert.exists(document.querySelector('img'));
+```
+
+Your `img` element should not have a closing tag `</img>`.
+
+```js
+assert.notMatch(code, /<\/img\>/);
+```
+
+You should only have one `img` element. Remove any extras.
+
+```js
+assert.lengthOf(document.querySelectorAll('img'), 1);
+```
+
+Your `img` element should be below the `p` element. You have them in the wrong order.
+
+```js
+const collection = [...document.querySelectorAll('p,img')].map(
+  (node) => node.nodeName
+);
+assert.isBelow(collection.indexOf('P'), collection.indexOf('IMG'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<html>
+  <body>
+    <main>
+      <h1>CatPhotoApp</h1>
+      <h2>Cat Photos</h2>
+      <!-- TODO: Add link to cat photos -->
+--fcc-editable-region--
+      <p>Everyone loves cute cats online!</p>
+      
+--fcc-editable-region--
+    </main>
+  </body>
+</html>
+```

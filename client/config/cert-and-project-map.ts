@@ -3,7 +3,7 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../shared/config/certification-settings';
+} from '../../shared-dist/config/certification-settings';
 import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -23,9 +23,7 @@ const apiMicroBase =
   '/learn/back-end-development-and-apis/back-end-development-and-apis-projects';
 const qaBase = '/learn/quality-assurance/quality-assurance-projects';
 const infoSecBase = '/learn/information-security/information-security-projects';
-const sciCompPyBase =
-  '/learn/scientific-computing-with-python/' +
-  'scientific-computing-with-python-projects';
+const sciCompPyBase = '/learn/scientific-computing-with-python';
 const dataAnalysisPyBase =
   '/learn/data-analysis-with-python/data-analysis-with-python-projects';
 const machineLearningPyBase =
@@ -34,9 +32,13 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const upcomingPythonBase = '/learn/upcoming-python';
-const exampleCertBase = '/learn/example-certification';
+const fullStackDeveloperBase = '/learn/full-stack-developer';
+const jsV9Base = '/learn/javascript-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
+const b1EnglishBase = '/learn/b1-english-for-developers';
+const a2SpanishBase = '/learn/a2-professional-spanish';
+const a2ChineseBase = '/learn/a2-professional-chinese';
+const a1ChineseBase = '/learn/a1-professional-chinese';
 const legacyFrontEndBase = feLibsBase;
 const legacyFrontEndResponsiveBase = responsiveWebBase;
 const legacyFrontEndTakeHomeBase = takeHomeBase;
@@ -100,7 +102,7 @@ const allStandardCerts = [
   },
   {
     id: '658180220947283cdc0689ce',
-    title: 'JavaScript Algorithms and Data Structures (Beta)',
+    title: 'JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStructNew,
     projects: [
       {
@@ -129,8 +131,8 @@ const allStandardCerts = [
       },
       {
         id: '6555c1d3e11a1574434cf8b5',
-        title: 'Build a Pokémon Search App',
-        link: getJavaScriptAlgoPath('build-a-pokemon-search-app'),
+        title: 'Build an RPG Creature Search App',
+        link: getJavaScriptAlgoPath('build-an-rpg-creature-search-app'),
         certSlug: Certification.JsAlgoDataStructNew
       }
     ]
@@ -328,31 +330,31 @@ const allStandardCerts = [
       {
         id: '5e44412c903586ffb414c94c',
         title: 'Arithmetic Formatter',
-        link: `${sciCompPyBase}/arithmetic-formatter`,
+        link: `${sciCompPyBase}/build-an-arithmetic-formatter-project/build-an-arithmetic-formatter-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444136903586ffb414c94d',
         title: 'Time Calculator',
-        link: `${sciCompPyBase}/time-calculator`,
+        link: `${sciCompPyBase}/build-a-time-calculator-project/build-a-time-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44413e903586ffb414c94e',
         title: 'Budget App',
-        link: `${sciCompPyBase}/budget-app`,
+        link: `${sciCompPyBase}/build-a-budget-app-project/build-a-budget-app-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e444147903586ffb414c94f',
         title: 'Polygon Area Calculator',
-        link: `${sciCompPyBase}/polygon-area-calculator`,
+        link: `${sciCompPyBase}/build-a-polygon-area-calculator-project/build-a-polygon-area-calculator-project`,
         certSlug: Certification.SciCompPy
       },
       {
         id: '5e44414f903586ffb414c950',
         title: 'Probability Calculator',
-        link: `${sciCompPyBase}/probability-calculator`,
+        link: `${sciCompPyBase}/build-a-probability-calculator-project/build-a-probability-calculator-project`,
         certSlug: Certification.SciCompPy
       }
     ]
@@ -568,15 +570,15 @@ const allStandardCerts = [
       },
       {
         id: 'bd7158d8c442eddfaeb5bd1c',
-        title: 'Build a Simon Game',
-        link: `${legacyFrontEndTakeHomeBase}/build-a-simon-game`,
+        title: 'Build a Memory Light Game',
+        link: `${legacyFrontEndTakeHomeBase}/build-a-memory-light-game`,
         certSlug: Certification.LegacyFrontEnd
       }
     ]
   },
   {
     id: '561abd10cb81ac38a17513bc',
-    title: 'JavaScript Algorithms and Data Structures',
+    title: 'Legacy JavaScript Algorithms and Data Structures',
     certSlug: Certification.JsAlgoDataStruct,
     projects: [
       {
@@ -801,27 +803,27 @@ const allStandardCerts = [
   // Upcoming Certifications
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Example Certification',
-    certSlug: 'example-certification-v8',
+    title: 'Certified Full Stack Developer',
+    certSlug: Certification.FullStackDeveloper,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Certification Exam',
-        link: `${exampleCertBase}/example-certification-exam`,
-        certSlug: 'example-certification-v8'
+        title: 'Certified Full Stack Developer Exam',
+        link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
+        certSlug: Certification.FullStackDeveloper
       }
     ]
   },
   {
-    id: '64afc4e8f3b37856e035b85f',
-    title: 'Upcoming Python Certification',
-    certSlug: Certification.UpcomingPython,
+    id: '68c4069c1ef859270e17c495',
+    title: 'JavaScript',
+    certSlug: Certification.JsV9,
     projects: [
       {
-        id: '64afc37bf3b37856e035b85e',
-        title: 'Upcoming Python Project',
-        link: `${upcomingPythonBase}/upcoming-python-project`,
-        certSlug: Certification.UpcomingPython
+        id: '645147516c245de4d11eb7ba',
+        title: 'JavaScript Certification Exam',
+        link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
+        certSlug: Certification.JsV9
       }
     ]
   },
@@ -832,9 +834,64 @@ const allStandardCerts = [
     projects: [
       {
         id: '651dd3e06ffb500e3f2ce478',
-        title: 'Challenge 1',
-        link: `${a2EnglishBase}/learn-greetings-in-your-first-day-at-the-office/challenge-1`,
+        title: 'A2 English for Developers Certification Exam',
+        link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
         certSlug: Certification.A2English
+      }
+    ]
+  },
+  {
+    id: '66607e53317411dd5e8aae21',
+    title: 'B1 English for Developers',
+    certSlug: Certification.B1English,
+    projects: [
+      {
+        id: '66607e5b317411dd5e8aae22',
+        title: "Dialogue 1: I'm Tom",
+        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        certSlug: Certification.B1English
+      }
+    ]
+  },
+  {
+    id: '681a6b22e5a782fe3459984a',
+    title: 'A2 Professional Spanish',
+    certSlug: Certification.A2Spanish,
+    projects: [
+      {
+        id: '681a8796e5a782fe3459984b',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2SpanishBase}/talk-about-who-you-are-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Spanish
+      }
+    ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A2 Professional Chinese',
+    certSlug: Certification.A2Chinese,
+    projects: [
+      {
+        id: '682c2753317b88f1ecdad894',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a2ChineseBase}/talk-about-what-you-do-by-using-key-verbs
+/text-1`,
+        certSlug: Certification.A2Chinese
+      }
+    ]
+  },
+  {
+    id: '682c3153086dd7cabe7f48bc',
+    title: 'A1 Professional Chinese',
+    certSlug: Certification.A1Chinese,
+    projects: [
+      {
+        id: '682c2753317b88f1ecdad894',
+        title: 'Dialogue 1: PLACEHOLDER',
+        link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
+/text-1`,
+        certSlug: Certification.A1Chinese
       }
     ]
   }
@@ -883,29 +940,19 @@ const liveCerts = showUpcomingChanges
   : [...currentCerts, ...legacyCerts, fullstackCert];
 
 type CertsToProjects = Record<
-  (typeof allStandardCerts)[number]['title'],
+  (typeof allStandardCerts)[number]['certSlug'],
   (typeof allStandardCerts)[number]['projects']
 >;
 
 const certsToProjects = allStandardCerts.reduce((acc, curr) => {
   return {
     ...acc,
-    [curr.title]: curr.projects
+    [curr.certSlug]: curr.projects
   };
 }, {} as CertsToProjects);
-
-const currentCertTitles = currentCerts.map(({ title }) => title);
-const legacyCertTitles = legacyCerts.map(({ title }) => title);
-const upcomingCertTitles = upcomingCerts.map(({ title }) => title);
 
 export type CertTitle =
   | (typeof liveCerts)[number]['title']
   | 'Legacy Full Stack';
 
-export {
-  currentCertTitles,
-  legacyCertTitles,
-  upcomingCertTitles,
-  liveCerts,
-  certsToProjects
-};
+export { liveCerts, certsToProjects };

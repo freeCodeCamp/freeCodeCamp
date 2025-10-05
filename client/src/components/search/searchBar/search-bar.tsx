@@ -1,10 +1,8 @@
 import { isEqual } from 'lodash-es';
-import React, { Component } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { HotKeys, ObserveKeys } from 'react-hotkeys';
-import type { TFunction } from 'i18next';
-import { withTranslation } from 'react-i18next';
-import { Hit } from 'react-instantsearch-core';
-import { SearchBox } from 'react-instantsearch-dom';
+import { useTranslation, withTranslation } from 'react-i18next';
+import { SearchBox } from 'react-instantsearch';
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
@@ -14,15 +12,14 @@ import {
   isSearchDropdownEnabledSelector,
   isSearchBarFocusedSelector,
   toggleSearchDropdown,
-  toggleSearchFocused,
-  updateSearchQuery
+  toggleSearchFocused
 } from '../redux';
 import WithInstantSearch from '../with-instant-search';
-
-import SearchHits from './search-hits';
+import type { Hit } from './types';
 
 import './searchbar-base.css';
 import './searchbar.css';
+import SearchHits from './search-hits';
 
 const searchUrl = searchPageUrl;
 const mapStateToProps = createSelector(
@@ -35,88 +32,73 @@ const mapStateToProps = createSelector(
 );
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) =>
-  bindActionCreators(
-    { toggleSearchDropdown, toggleSearchFocused, updateSearchQuery },
-    dispatch
-  );
+  bindActionCreators({ toggleSearchDropdown, toggleSearchFocused }, dispatch);
 
-export type SearchBarProps = {
+type SearchBarProps = {
   innerRef?: React.RefObject<HTMLDivElement>;
   toggleSearchDropdown: typeof toggleSearchDropdown;
   toggleSearchFocused: typeof toggleSearchFocused;
-  updateSearchQuery: typeof updateSearchQuery;
   isDropdownEnabled?: boolean;
   isSearchFocused?: boolean;
-  t: TFunction;
-};
-type SearchBarState = {
-  index: number;
-  hits: Array<Hit>;
 };
 
-export class SearchBar extends Component<SearchBarProps, SearchBarState> {
-  static displayName: string;
-  constructor(props: SearchBarProps) {
-    super(props);
+const keyMap = {
+  indexUp: ['up'],
+  indexDown: ['down']
+};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSearch = this.handleSearch.bind(this);
-    this.handleMouseEnter = this.handleMouseEnter.bind(this);
-    this.handleMouseLeave = this.handleMouseLeave.bind(this);
-    this.handleFocus = this.handleFocus.bind(this);
-    this.handleHits = this.handleHits.bind(this);
-    this.state = {
-      index: -1,
-      hits: []
-    };
-  }
+export function SearchBar({
+  isDropdownEnabled,
+  isSearchFocused,
+  innerRef,
+  toggleSearchDropdown,
+  toggleSearchFocused
+}: SearchBarProps): JSX.Element {
+  const { t } = useTranslation();
+  const [index, setIndex] = useState(-1);
+  const [hits, setHits] = useState<Array<Hit>>([]);
+  // We need a ref because we have to get the current value of hits in handlers
+  const hitsRef = useRef(hits);
 
-  componentDidMount(): void {
-    const { t } = this.props;
-
-    document.addEventListener('click', this.handleFocus);
-
-    const searchInput = document.querySelector('.ais-SearchBox-input');
-    if (searchInput) {
-      searchInput.setAttribute('aria-label', t('search.label'));
-    }
-  }
-
-  componentWillUnmount(): void {
-    document.removeEventListener('click', this.handleFocus);
-  }
-
-  handleChange = (): void => {
-    const { isSearchFocused, toggleSearchFocused } = this.props;
+  const handleChange = (): void => {
     if (!isSearchFocused) {
       toggleSearchFocused(true);
     }
 
-    this.setState({
-      index: -1
-    });
+    setIndex(-1);
   };
 
-  handleFocus = (e: React.FocusEvent<Node> | Event): AnyAction | void => {
-    const { toggleSearchFocused } = this.props;
-    const isSearchFocused = this.props.innerRef?.current?.contains(
-      e.target as HTMLElement
-    );
-    if (!isSearchFocused) {
-      // Reset if user clicks outside of
-      // search bar / closes dropdown
-      this.setState({ index: -1 });
+  const handleFocus = useCallback(
+    (e: React.FocusEvent<Node> | Event): AnyAction | void => {
+      const isSearchFocused = innerRef?.current?.contains(
+        e.target as HTMLElement
+      );
+      if (!isSearchFocused) {
+        // Reset if user clicks outside of
+        // search bar / closes dropdown
+        setIndex(-1);
+      }
+      return toggleSearchFocused(isSearchFocused);
+    },
+    [innerRef, toggleSearchFocused]
+  );
+
+  useEffect(() => {
+    document.addEventListener('click', handleFocus);
+    const searchInput = document.querySelector('.ais-SearchBox-input');
+    if (searchInput) {
+      searchInput.setAttribute('aria-label', t('search.label'));
     }
-    return toggleSearchFocused(isSearchFocused);
-  };
+    return () => {
+      document.removeEventListener('click', handleFocus);
+    };
+  }, [handleFocus, t]);
 
-  handleSearch = (
+  const handleSearch = (
     e: React.SyntheticEvent<HTMLFormElement, Event>,
     query?: string
   ): boolean | void => {
     e.preventDefault();
-    const { toggleSearchDropdown, updateSearchQuery } = this.props;
-    const { index, hits } = this.state;
     const selectedHit = hits[index];
 
     // Disable the search dropdown
@@ -128,7 +110,6 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       // Set query to value in search bar if enter is pressed
       query = (e.currentTarget?.children?.[0] as HTMLInputElement).value;
     }
-    updateSearchQuery(query);
 
     //clear input value
     const searchInput = e.currentTarget?.children?.[0] as HTMLInputElement;
@@ -149,100 +130,83 @@ export class SearchBar extends Component<SearchBarProps, SearchBarState> {
       : false;
   };
 
-  handleMouseEnter = (e: React.SyntheticEvent<HTMLElement, Event>): void => {
+  const handleMouseEnter = (
+    e: React.SyntheticEvent<HTMLElement, Event>
+  ): void => {
     e.persist();
-    const hoveredText = e.currentTarget.innerText;
 
-    this.setState(({ hits }) => {
+    if (e.target instanceof HTMLElement) {
       const hitsTitles = hits.map(hit => hit.title);
-      const hoveredIndex = hitsTitles.indexOf(hoveredText);
+      const targetText = e.target.textContent;
+      const hoveredIndex = targetText ? hitsTitles.indexOf(targetText) : -1;
 
-      return { index: hoveredIndex };
-    });
+      setIndex(hoveredIndex);
+    }
+    setIndex(-1);
   };
 
-  handleMouseLeave = (): void => {
-    this.setState({
-      index: -1
-    });
+  const handleMouseLeave = () => {
+    setIndex(-1);
   };
 
-  handleHits = (currHits: Array<Hit>): void => {
-    const { hits } = this.state;
-
+  const handleHits = (currHits: Array<Hit>): void => {
     if (!isEqual(hits, currHits)) {
-      this.setState({
-        index: -1,
-        hits: currHits
-      });
+      setIndex(-1);
+      hitsRef.current = currHits;
+      setHits(currHits);
     }
   };
 
-  keyMap = {
-    indexUp: ['up'],
-    indexDown: ['down']
-  };
-
-  keyHandlers = {
+  const keyHandlers = {
     indexUp: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
-      this.setState(({ index, hits }) => ({
-        index: index === -1 ? hits.length - 1 : index - 1
-      }));
+      setIndex(index => (index === -1 ? hitsRef.current.length : index - 1));
     },
     indexDown: (e: KeyboardEvent | undefined): void => {
       e?.preventDefault();
-      this.setState(({ index, hits }) => ({
-        index: index === hits.length - 1 ? -1 : index + 1
-      }));
+      setIndex(index => (index === hitsRef.current.length ? -1 : index + 1));
     }
   };
 
-  render(): JSX.Element {
-    const { isDropdownEnabled, isSearchFocused, innerRef, t } = this.props;
-    const { index } = this.state;
+  const searchPlaceholder = t('search-bar:placeholder').startsWith(
+    'search.placeholder.'
+  )
+    ? t('search.placeholder')
+    : t('search-bar:placeholder');
 
-    return (
-      <WithInstantSearch>
-        <div
-          className='fcc_searchBar'
-          data-testid='fcc_searchBar'
-          ref={innerRef}
-        >
-          <HotKeys handlers={this.keyHandlers} keyMap={this.keyMap}>
-            <div className='fcc_search_wrapper'>
-              <ObserveKeys except={['Space']}>
-                <div onFocus={this.handleFocus} role='textbox'>
-                  <SearchBox
-                    data-playwright-test-label='header-search'
-                    focusShortcuts={['83', '191']}
-                    onChange={this.handleChange}
-                    onSubmit={e => {
-                      this.handleSearch(e);
-                    }}
-                    showLoadingIndicator={false}
-                    translations={{
-                      submitTitle: t('icons.magnifier'),
-                      resetTitle: t('icons.input-reset'),
-                      placeholder: t('search.placeholder')
-                    }}
-                  />
-                </div>
-              </ObserveKeys>
-              {isDropdownEnabled && isSearchFocused && (
-                <SearchHits
-                  handleHits={this.handleHits}
-                  handleMouseEnter={this.handleMouseEnter}
-                  handleMouseLeave={this.handleMouseLeave}
-                  selectedIndex={index}
-                />
-              )}
-            </div>
-          </HotKeys>
-        </div>
-      </WithInstantSearch>
-    );
-  }
+  return (
+    <WithInstantSearch>
+      <div className='fcc_searchBar' data-testid='fcc_searchBar' ref={innerRef}>
+        <HotKeys handlers={keyHandlers} keyMap={keyMap}>
+          <div className='fcc_search_wrapper'>
+            <ObserveKeys except={['Space']}>
+              <SearchBox
+                data-playwright-test-label='header-search'
+                onSubmit={e => {
+                  handleSearch(e);
+                }}
+                onInput={handleChange}
+                translations={{
+                  submitButtonTitle: t('icons.input-search'),
+                  resetButtonTitle: t('icons.input-reset')
+                }}
+                placeholder={searchPlaceholder}
+                onFocus={handleFocus}
+              />
+            </ObserveKeys>
+            {isDropdownEnabled && isSearchFocused && (
+              <SearchHits
+                handleMouseEnter={handleMouseEnter}
+                handleMouseLeave={handleMouseLeave}
+                handleHits={handleHits}
+                selectedIndex={index}
+              />
+            )}
+          </div>
+        </HotKeys>
+      </div>
+    </WithInstantSearch>
+  );
 }
 
 SearchBar.displayName = 'SearchBar';

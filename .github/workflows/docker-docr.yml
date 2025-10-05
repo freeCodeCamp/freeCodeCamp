@@ -1,0 +1,72 @@
+name: CD - Docker - DOCR
+
+on:
+  workflow_dispatch:
+    inputs:
+      site_tld:
+        required: true
+        type: choice
+        description: 'Input: The site tld (variant) to build'
+        options:
+          - dev
+          - org
+        default: 'dev'
+      app:
+        required: true
+        type: string
+        description: 'Input: The app (component) to build'
+        default: 'api'
+  workflow_call:
+    inputs:
+      site_tld:
+        required: true
+        type: string
+        description: 'Input: The site tld (variant) to build'
+      app:
+        required: true
+        type: string
+        description: 'Input: The app (component) to build'
+    outputs:
+      tagname:
+        description: 'Output: The tagname for the image built'
+        value: ${{ jobs.build.outputs.tagname }}
+
+jobs:
+  build:
+    name: Build & Push
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: read
+    outputs:
+      tagname: ${{ steps.tagname.outputs.tagname }}
+
+    steps:
+      - name: Checkout Source Files
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+      - name: Create a tagname
+        id: tagname
+        run: |
+          tagname=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)
+          echo "tagname=$tagname" >> $GITHUB_ENV
+          echo "tagname=$tagname" >> $GITHUB_OUTPUT
+
+      - name: Build & Tag Image
+        run: |
+          docker build \
+            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname \
+            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest \
+            --file docker/${{ inputs.app }}/Dockerfile .
+
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
+      - name: Log in to DigitalOcean Container Registry with short-lived credentials
+        run: doctl registry login --expiry-seconds 1200
+
+      - name: Push image to DigitalOcean Container Registry
+        run: |
+          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname
+          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest

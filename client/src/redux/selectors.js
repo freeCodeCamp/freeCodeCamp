@@ -1,31 +1,50 @@
-import { Certification } from '../../../shared/config/certification-settings';
+import { createSelector } from 'reselect';
+
+// TODO: source the superblock structure via a GQL query, rather than directly
+// from the curriculum
+import superBlockStructure from '../../../curriculum/structure/superblocks/full-stack-developer.json';
+import { randomBetween } from '../utils/random-between';
+import { getSessionChallengeData } from '../utils/session-storage';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
-  userSelector(state).savedChallenges || [];
+  userSelector(state)?.savedChallenges || [];
 export const completedChallengesSelector = state =>
-  userSelector(state).completedChallenges || [];
+  userSelector(state)?.completedChallenges || [];
+export const completedDailyCodingChallengesSelector = state =>
+  userSelector(state)?.completedDailyCodingChallenges || [];
+export const userIdSelector = state => userSelector(state)?.id;
 export const partiallyCompletedChallengesSelector = state =>
-  userSelector(state).partiallyCompletedChallenges || [];
+  userSelector(state)?.partiallyCompletedChallenges || [];
 export const currentChallengeIdSelector = state =>
   state[MainApp].currentChallengeId;
-export const completionCountSelector = state => state[MainApp].completionCount;
-export const showMultipleProgressModalsSelector = state =>
-  state[MainApp].showMultipleProgressModals;
-export const completionCountWhenShownProgressModalSelector = state =>
-  state[MainApp].completionCountWhenShownProgressModal;
-export const progressDonationModalShownSelector = state =>
-  state[MainApp].progressDonationModalShown;
-export const isDonatingSelector = state => userSelector(state).isDonating;
+export const isRandomCompletionThresholdSelector = state =>
+  state[MainApp].isRandomCompletionThreshold;
+export const isDonatingSelector = state => userSelector(state)?.isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
-export const isSignedInSelector = state => !!state[MainApp].appUsername;
+export const isSignedInSelector = state => !!userSelector(state);
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>
   state[MainApp].showSignoutModal;
-export const recentlyClaimedBlockSelector = state =>
-  state[MainApp].recentlyClaimedBlock;
+export const donatableSectionRecentlyCompletedSelector = state => {
+  const donatableSectionRecentlyCompletedState =
+    state[MainApp].donatableSectionRecentlyCompleted;
+
+  if (donatableSectionRecentlyCompletedState) {
+    const { block, module, superBlock } =
+      donatableSectionRecentlyCompletedState;
+
+    if (superBlock !== 'daily-coding-challenge') {
+      if (module) return { section: 'module', title: module, superBlock };
+      else if (block) return { section: 'block', title: block, superBlock };
+    }
+  }
+
+  return null;
+};
+
 export const donationFormStateSelector = state =>
   state[MainApp].donationFormState;
 export const updateCardStateSelector = state => state[MainApp].updateCardState;
@@ -35,237 +54,154 @@ export const showCertSelector = state => state[MainApp].showCert;
 export const showCertFetchStateSelector = state =>
   state[MainApp].showCertFetchState;
 export const shouldRequestDonationSelector = state => {
-  const completedChallengesLength = completedChallengesSelector(state).length;
-  const completionCount = completionCountSelector(state);
-  const lastCompletionCount =
-    completionCountWhenShownProgressModalSelector(state);
-  const progressDonationModalShown = progressDonationModalShownSelector(state);
+  const completedChallengeCount = completedChallengesSelector(state).length;
   const isDonating = isDonatingSelector(state);
-  const recentlyClaimedBlock = recentlyClaimedBlockSelector(state);
-  const showMultipleProgressModals = showMultipleProgressModalsSelector(state);
+  const donatableSectionRecentlyCompleted =
+    donatableSectionRecentlyCompletedSelector(state);
+  const isRandomCompletionThreshold =
+    isRandomCompletionThresholdSelector(state);
 
   // don't request donation if already donating
   if (isDonating) return false;
 
-  // a block has been completed
-  if (recentlyClaimedBlock) return true;
-
-  /*
-  When AB testing for showing multiple progress modals is active,
-  show a donation modal every 30 challenges after the first 50
-   */
-  if (
-    showMultipleProgressModals &&
-    progressDonationModalShown &&
-    completedChallengesLength > 50 &&
-    completionCount - lastCompletionCount >= 30
-  )
-    return true;
-
-  // a donation has already been requested
-  if (progressDonationModalShown) return false;
-
   // donations only appear after the user has completed ten challenges (i.e.
   // not before the 11th challenge has mounted)
-  if (completedChallengesLength < 10) return false;
+  if (completedChallengeCount < 10) return false;
 
-  // this will mean we have completed 3 or more challenges this browser session
-  // and enough challenges overall to not be new
-  return completionCount >= 3;
+  // a block or module has been completed
+  if (donatableSectionRecentlyCompleted) return true;
+
+  const sessionChallengeData = getSessionChallengeData();
+  /*
+    Different intervals need to be tested for optimization.
+   */
+  // the assumption is that we save the count when we request donations
+  if (sessionChallengeData.isSaved) {
+    // only request if sufficient challenges have been completed since last
+    // request
+    return sessionChallengeData.countSinceSave >= 20;
+  }
+
+  /*
+   Show modal if user has completed 10 challanged in total
+   and 3 or more in this session.
+   The isRandomCompletionThreshold flag is used to AB test interval randomness
+  */
+  if (isRandomCompletionThreshold) {
+    return sessionChallengeData.currentCount >= randomBetween(3, 7);
+  } else {
+    return sessionChallengeData.currentCount >= 3;
+  }
 };
 
-export const userTokenSelector = state => {
-  return userSelector(state).userToken;
-};
+export const userTokenSelector = state => userSelector(state)?.userToken;
 
-export const showCodeAllySelector = state => {
-  return state[MainApp].showCodeAlly;
-};
+export const examInProgressSelector = state => state[MainApp].examInProgress;
 
-export const examInProgressSelector = state => {
-  return state[MainApp].examInProgress;
-};
+export const examResultsSelector = state => userSelector(state)?.examResults;
 
-export const examResultsSelector = state => userSelector(state).examResults;
-
-export const msUsernameSelector = state => {
-  return userSelector(state).msUsername;
-};
+export const msUsernameSelector = state => userSelector(state)?.msUsername;
 
 export const completedSurveysSelector = state =>
-  userSelector(state).completedSurveys || [];
+  userSelector(state)?.completedSurveys || [];
 
 export const isProcessingSelector = state => {
   return state[MainApp].isProcessing;
 };
 
-export const userByNameSelector = username => state => {
-  const { user } = state[MainApp];
-  // return initial state empty user empty object instead of empty
-  // object literal to prevent components from re-rendering unnecessarily
-  // TODO: confirm if "initialState" can be moved here or action-types.js
-  return user[username] ?? {};
-};
-
-export const currentCertsSelector = state =>
-  certificatesByNameSelector(state[MainApp]?.appUsername)(state)?.currentCerts;
-
-export const certificatesByNameSelector = username => state => {
-  const {
-    isRespWebDesignCert,
-    is2018DataVisCert,
-    isFrontEndLibsCert,
-    isJsAlgoDataStructCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJsAlgoDataStructCertV8
-  } = userByNameSelector(username)(state);
-  return {
-    hasModernCert:
-      isRespWebDesignCert ||
-      is2018DataVisCert ||
-      isFrontEndLibsCert ||
-      isJsAlgoDataStructCert ||
-      isApisMicroservicesCert ||
-      isQaCertV7 ||
-      isInfosecCertV7 ||
-      isFullStackCert ||
-      isSciCompPyCertV7 ||
-      isDataAnalysisPyCertV7 ||
-      isMachineLearningPyCertV7 ||
-      isRelationalDatabaseCertV8 ||
-      isCollegeAlgebraPyCertV8 ||
-      isFoundationalCSharpCertV8 ||
-      isJsAlgoDataStructCertV8,
-    hasLegacyCert:
-      isFrontEndCert || isBackEndCert || isDataVisCert || isInfosecQaCert,
-    isFullStackCert,
-    currentCerts: [
-      {
-        show: isRespWebDesignCert,
-        title: 'Responsive Web Design Certification',
-        certSlug: Certification.RespWebDesign
-      },
-      {
-        show: isJsAlgoDataStructCert,
-        title: 'JavaScript Algorithms and Data Structures Certification',
-        certSlug: Certification.JsAlgoDataStruct
-      },
-      {
-        show: isFrontEndLibsCert,
-        title: 'Front End Development Libraries Certification',
-        certSlug: Certification.FrontEndDevLibs
-      },
-      {
-        show: is2018DataVisCert,
-        title: 'Data Visualization Certification',
-        certSlug: Certification.DataVis
-      },
-      {
-        show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs Certification',
-        certSlug: Certification.BackEndDevApis
-      },
-      {
-        show: isQaCertV7,
-        title: ' Quality Assurance Certification',
-        certSlug: Certification.QualityAssurance
-      },
-      {
-        show: isInfosecCertV7,
-        title: 'Information Security Certification',
-        certSlug: Certification.InfoSec
-      },
-      {
-        show: isSciCompPyCertV7,
-        title: 'Scientific Computing with Python Certification',
-        certSlug: Certification.SciCompPy
-      },
-      {
-        show: isDataAnalysisPyCertV7,
-        title: 'Data Analysis with Python Certification',
-        certSlug: Certification.DataAnalysisPy
-      },
-      {
-        show: isMachineLearningPyCertV7,
-        title: 'Machine Learning with Python Certification',
-        certSlug: Certification.MachineLearningPy
-      },
-      {
-        show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
-        certSlug: Certification.RelationalDb
-      },
-      {
-        show: isCollegeAlgebraPyCertV8,
-        title: 'College Algebra with Python Certification',
-        certSlug: Certification.CollegeAlgebraPy
-      },
-      {
-        show: isFoundationalCSharpCertV8,
-        title: 'Foundational C# with Microsoft Certification',
-        certSlug: Certification.FoundationalCSharp
-      },
-      {
-        show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures (Beta) Certification',
-        certSlug: Certification.JsAlgoDataStructNew
-      }
-    ],
-    legacyCerts: [
-      {
-        show: isFrontEndCert,
-        title: 'Front End Certification',
-        certSlug: Certification.LegacyFrontEnd
-      },
-      {
-        show: isBackEndCert,
-        title: 'Back End Certification',
-        certSlug: Certification.LegacyBackEnd
-      },
-      {
-        show: isDataVisCert,
-        title: 'Data Visualization Certification',
-        certSlug: Certification.LegacyDataVis
-      },
-      {
-        show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
-        // Keep the current public profile cert slug
-        certSlug: Certification.LegacyInfoSecQa
-      },
-      {
-        show: isFullStackCert,
-        title: 'Full Stack Certification',
-        // Keep the current public profile cert slug
-        certSlug: Certification.LegacyFullStack
-      }
-    ]
-  };
+export const createUserByNameSelector = username => state => {
+  const sessionUser = userSelector(state);
+  const otherUser = otherUserSelector(state);
+  const isSessionUser = sessionUser?.username === username;
+  const isOtherUser = otherUser?.username === username;
+  const user = isSessionUser ? sessionUser : isOtherUser ? otherUser : null;
+  return user;
 };
 
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+
+export const completedChallengesIdsSelector = createSelector(
+  completedChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
+export const completedDailyCodingChallengesIdsSelector = createSelector(
+  completedDailyCodingChallengesSelector,
+  completedChallenges => completedChallenges.map(node => node.id)
+);
+
+export const completionStateSelector = createSelector(
+  [allChallengesInfoSelector, completedChallengesIdsSelector],
+  (allChallengesInfo, completedChallengesIds) => {
+    const chapters = superBlockStructure.chapters;
+    const { challengeNodes } = allChallengesInfo;
+
+    const getCompletionState = ({
+      chapters,
+      challenges,
+      completedChallengesIds
+    }) => {
+      const populateBlocks = blocks =>
+        blocks.map(block => {
+          const blockChallenges = challenges.filter(
+            ({ block: blockName }) => blockName === block
+          );
+
+          const completedBlockChallenges = blockChallenges.every(({ id }) =>
+            completedChallengesIds.includes(id)
+          );
+
+          return {
+            name: block,
+            isCompleted:
+              completedBlockChallenges.length === blockChallenges.length
+          };
+        });
+
+      const populateModules = modules =>
+        modules.map(module => {
+          const blocks = populateBlocks(module.blocks);
+          const isCompleted = blocks.every(block => block.isCompleted === true);
+
+          return {
+            name: module.dashedName,
+            blocks,
+            isCompleted
+          };
+        });
+
+      const allChapters = chapters.map(chapter => {
+        const modules = populateModules(chapter.modules);
+        const isCompleted = modules.every(
+          module => module.isCompleted === true
+        );
+
+        return {
+          name: chapter.dashedName,
+          modules: populateModules(chapter.modules),
+          isCompleted
+        };
+      });
+
+      return allChapters;
+    };
+
+    return getCompletionState({
+      chapters,
+      challenges: challengeNodes.map(({ challenge }) => challenge),
+      completedChallengesIds
+    });
+  }
+);
 export const userProfileFetchStateSelector = state =>
   state[MainApp].userProfileFetchState;
-export const usernameSelector = state => state[MainApp].appUsername;
-export const userSelector = state => {
-  const username = usernameSelector(state);
+export const usernameSelector = state => userSelector(state)?.username ?? '';
+export const themeSelector = state => state[MainApp].theme;
+export const userThemeSelector = state => userSelector(state)?.theme;
 
-  return state[MainApp].user[username] || {};
-};
+export const userSelector = state => state[MainApp].user.sessionUser;
+export const otherUserSelector = state => state[MainApp].user.otherUser;
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;

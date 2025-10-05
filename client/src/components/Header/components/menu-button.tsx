@@ -2,7 +2,6 @@ import React, { RefObject } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import { User } from '../../../redux/prop-types';
 
 interface MenuButtonProps {
   className?: string;
@@ -10,7 +9,6 @@ interface MenuButtonProps {
   innerRef?: RefObject<HTMLButtonElement>;
   showMenu: () => void;
   hideMenu: () => void;
-  user?: User;
 }
 
 const MenuButton = ({

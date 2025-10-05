@@ -1,19 +1,13 @@
-import React, { ReactNode, useEffect } from 'react';
-import {
-  FeatureDefinition,
-  GrowthBook,
-  GrowthBookProvider
-} from '@growthbook/growthbook-react';
+import React, { useEffect, useMemo } from 'react';
+import { GrowthBook, GrowthBookProvider } from '@growthbook/growthbook-react';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import {
-  isSignedInSelector,
-  userSelector,
-  userFetchStateSelector
-} from '../../redux/selectors';
+import { userSelector, userFetchStateSelector } from '../../redux/selectors';
 import envData from '../../../config/env.json';
-import { User, UserFetchState } from '../../redux/prop-types';
+import defaultGrowthBookFeatures from '../../../config/growthbook-features-default.json';
+import type { User, UserFetchState } from '../../redux/prop-types';
 import { getUUID } from '../../utils/growthbook-cookie';
+import callGA from '../../analytics/call-ga';
 import GrowthBookReduxConnector from './growth-book-redux-connector';
 
 const { clientLocale, growthbookUri } = envData as {
@@ -21,29 +15,35 @@ const { clientLocale, growthbookUri } = envData as {
   growthbookUri: string | null;
 };
 
+// Parses GrowthBook URL to extract apiHost and clientKey
+function parseGrowthBookUrl(
+  url: string | null | undefined
+): { apiHost: string; clientKey: string } | null {
+  if (!url) return null;
+  try {
+    const u = new URL(url);
+    // Expect: /api/features/<clientKey> (with optional trailing slash)
+    const match = u.pathname.match(/^\/api\/features\/([^/]+)\/?$/);
+    if (!match) return null;
+    const clientKey = match[1];
+    const apiHost = `${u.protocol}//${u.host}`;
+    if (!clientKey || !apiHost) return null;
+    return { apiHost, clientKey };
+  } catch {
+    return null;
+  }
+}
+
 declare global {
   interface Window {
     dataLayer: [Record<string, number | string>];
   }
 }
 
-const growthbook = new GrowthBook({
-  trackingCallback: (experiment, result) => {
-    window?.dataLayer.push({
-      event: 'experiment_viewed',
-      event_category: 'experiment',
-      experiment_id: experiment.key,
-      variation_id: result.variationId
-    });
-  }
-});
-
 const mapStateToProps = createSelector(
-  isSignedInSelector,
   userSelector,
   userFetchStateSelector,
-  (isSignedIn, user: User, userFetchState: UserFetchState) => ({
-    isSignedIn,
+  (user: User | null, userFetchState: UserFetchState) => ({
     user,
     userFetchState
   })
@@ -51,7 +51,7 @@ const mapStateToProps = createSelector(
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 interface GrowthBookWrapper extends StateProps {
-  children: ReactNode;
+  children: JSX.Element;
 }
 
 interface UserAttributes {
@@ -65,28 +65,59 @@ interface UserAttributes {
 
 const GrowthBookWrapper = ({
   children,
-  isSignedIn,
   user,
   userFetchState
 }: GrowthBookWrapper) => {
-  useEffect(() => {
-    async function setGrowthBookFeatures() {
-      if (!growthbookUri) return;
+  const parsedUrl = parseGrowthBookUrl(growthbookUri);
+  const growthbook = useMemo(
+    () =>
+      new GrowthBook({
+        ...(parsedUrl && {
+          apiHost: parsedUrl.apiHost,
+          clientKey: parsedUrl.clientKey
+        }),
+        trackingCallback: (experiment, result) => {
+          callGA({
+            event: 'experiment_viewed',
+            event_category: 'experiment',
+            experiment_id: experiment.key,
+            variation_id: result.variationId
+          });
+        }
+      }),
 
-      try {
-        const res = await fetch(growthbookUri);
-        const data = (await res.json()) as {
-          features: Record<string, FeatureDefinition>;
-        };
-        growthbook.setFeatures(data.features);
-      } catch (e) {
-        // TODO: report to sentry when it's enabled
-        console.error(e);
+    [parsedUrl]
+  );
+
+  useEffect(() => {
+    void growthbook
+      .init({ timeout: 1000 })
+      .then(res => {
+        if (!res || !res.success) {
+          console.warn('GrowthBook initialization failed.', {
+            source: res?.source,
+            error: res?.error
+          });
+          void growthbook.setPayload({ features: defaultGrowthBookFeatures });
+          return;
+        }
+      })
+      .catch(error => {
+        console.error('Error initializing GrowthBook:', error);
+        void growthbook.setPayload({ features: defaultGrowthBookFeatures });
+      });
+  }, [growthbook]);
+
+  useEffect(() => {
+    function setGrowthBookFeatures() {
+      if (!growthbookUri) {
+        // Defaults are added to facilitate testing, and avoid passing the related env
+        void growthbook.setPayload({ features: defaultGrowthBookFeatures });
       }
     }
 
     void setGrowthBookFeatures();
-  }, []);
+  }, [growthbook]);
 
   useEffect(() => {
     if (userFetchState.complete) {
@@ -95,7 +126,7 @@ const GrowthBookWrapper = ({
         clientLocal: clientLocale
       };
 
-      if (isSignedIn) {
+      if (user) {
         userAttributes = {
           ...userAttributes,
           staff: user.email.includes('@freecodecamp'),
@@ -104,9 +135,9 @@ const GrowthBookWrapper = ({
           signedIn: true
         };
       }
-      growthbook.setAttributes(userAttributes);
+      void growthbook.setAttributes(userAttributes);
     }
-  }, [isSignedIn, user, userFetchState]);
+  }, [user, userFetchState, growthbook]);
 
   return (
     <GrowthBookProvider growthbook={growthbook}>

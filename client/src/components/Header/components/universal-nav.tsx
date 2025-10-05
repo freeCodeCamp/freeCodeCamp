@@ -5,24 +5,33 @@ import { useMediaQuery } from 'react-responsive';
 import { isLanding } from '../../../utils/path-parsers';
 import { Link, SkeletonSprite } from '../../helpers';
 import { SEARCH_EXPOSED_WIDTH } from '../../../../config/misc';
+import FreeCodeCampLogo from '../../../assets/icons/freecodecamp-logo';
 import MenuButton from './menu-button';
-import NavLinks, { type NavLinksProps } from './nav-links';
-import NavLogo from './nav-logo';
-import './universal-nav.css';
+import NavLinks from './nav-links';
 import AuthOrProfile from './auth-or-profile';
 import LanguageList from './language-list';
+
+import './universal-nav.css';
 
 const SearchBar = Loadable(() => import('../../search/searchBar/search-bar'));
 const SearchBarOptimized = Loadable(
   () => import('../../search/searchBar/search-bar-optimized')
 );
 
-type UniversalNavProps = Omit<
-  NavLinksProps,
-  'toggleNightMode' | 'openSignoutModal'
-> & {
+type UniversalNavProps = {
+  displayMenu: boolean;
+  showMenu: () => void;
+  hideMenu: () => void;
+  menuButtonRef: React.RefObject<HTMLButtonElement>;
+  user: {
+    isDonating: boolean;
+    username: string;
+    picture: string;
+    yearsTopContributor: string[];
+  };
   fetchState: { pending: boolean };
-  searchBarRef?: React.RefObject<HTMLDivElement>;
+  searchBarRef: React.RefObject<HTMLDivElement>;
+  pathname: string;
 };
 const UniversalNav = ({
   displayMenu,
@@ -31,7 +40,8 @@ const UniversalNav = ({
   menuButtonRef,
   searchBarRef,
   user,
-  fetchState
+  fetchState,
+  pathname
 }: UniversalNavProps): JSX.Element => {
   const { pending } = fetchState;
   const { t } = useTranslation();
@@ -39,13 +49,11 @@ const UniversalNav = ({
     query: `(min-width: ${SEARCH_EXPOSED_WIDTH}px)`
   });
 
-  const search =
-    typeof window !== `undefined` && isLanding(window.location.pathname) ? (
-      <SearchBarOptimized innerRef={searchBarRef} />
-    ) : (
-      <SearchBar innerRef={searchBarRef} />
-    );
-
+  const search = isLanding(pathname) ? (
+    <SearchBarOptimized innerRef={searchBarRef} />
+  ) : (
+    <SearchBar innerRef={searchBarRef} />
+  );
   return (
     <nav
       aria-label={t('aria.primary-nav')}
@@ -62,7 +70,10 @@ const UniversalNav = ({
         to='/learn'
         data-playwright-test-label='header-universal-nav-logo'
       >
-        <NavLogo />
+        <FreeCodeCampLogo
+          aria-label={t('aria.fcc-curriculum')}
+          data-playwright-test-label='header-logo'
+        />
       </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (
@@ -77,7 +88,6 @@ const UniversalNav = ({
               hideMenu={hideMenu}
               innerRef={menuButtonRef}
               showMenu={showMenu}
-              user={user}
             />
             {!isSearchExposedWidth && search}
             <NavLinks

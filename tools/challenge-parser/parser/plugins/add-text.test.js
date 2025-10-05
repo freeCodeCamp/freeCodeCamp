@@ -1,14 +1,19 @@
-// eslint-disable-next-line max-len
-const incorrectMarkersAST = require('../__fixtures__/ast-incorrect-markers.json');
-const realisticAST = require('../__fixtures__/ast-realistic.json');
-const mockAST = require('../__fixtures__/ast-simple.json');
-const addText = require('./add-text');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addText from './add-text';
 
 describe('add-text', () => {
+  let realisticAST, mockAST, withSubSectionAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
-  // const unexpectedField = 'does-not-exist';
+  const missingId = 'missing';
   let file = { data: {} };
+
+  beforeAll(async () => {
+    realisticAST = await parseFixture('realistic.md');
+    mockAST = await parseFixture('simple.md');
+    withSubSectionAST = await parseFixture('with-subsection.md');
+  });
 
   beforeEach(() => {
     file = { data: {} };
@@ -38,6 +43,16 @@ describe('add-text', () => {
     expect(() => {
       addText([]);
     }).toThrow(expectedError);
+  });
+
+  it('throws when there is a sub-section in one of the sections', () => {
+    const plugin = addText([instructionsId, descriptionId]);
+
+    expect(() => {
+      plugin(withSubSectionAST, file);
+    }).toThrow(
+      'The --description-- section should not have any subsections. Found subsection --not-allowed--'
+    );
   });
 
   it('should add a string relating to the section id to `file.data`', () => {
@@ -81,10 +96,9 @@ describe('add-text', () => {
     expect(file.data[instructionsId]).toBe(instructionsSectionText);
   });
 
-  // eslint-disable-next-line max-len
   it('should add nothing if a section id does not appear in the md', () => {
-    const plugin = addText([descriptionId]);
-    plugin(incorrectMarkersAST, file);
+    const plugin = addText([missingId]);
+    plugin(mockAST, file);
     expect(file.data[descriptionId]).toBeUndefined();
   });
 
@@ -107,7 +121,6 @@ describe('add-text', () => {
     expect(file.data[descriptionId]).toEqual(expect.stringContaining(expected));
   });
 
-  // eslint-disable-next-line max-len
   it('should not add paragraphs when html elements are separated by whitespace', () => {
     const plugin = addText([instructionsId]);
     plugin(realisticAST, file);

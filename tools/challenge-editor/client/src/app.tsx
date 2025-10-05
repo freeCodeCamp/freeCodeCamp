@@ -1,5 +1,4 @@
 import * as React from 'react';
-import './app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/header/header';
 import Landing from './components/landing/landing';
@@ -7,6 +6,8 @@ import SuperBlock from './components/superblock/super-block';
 import Block from './components/block/block';
 import Editor from './components/editor/editor';
 import Tools from './components/tools/tools';
+import ChapterLanding from './components/chapter/chapter';
+import ModuleLanding from './components/module/module';
 
 const App = () => {
   return (
@@ -17,6 +18,14 @@ const App = () => {
           <Route index element={<Landing />} />
           <Route path=':superblock' element={<SuperBlock />} />
           <Route path=':superblock/:block' element={<Block />} />
+          <Route
+            path=':superblock/chapters/:chapter'
+            element={<ChapterLanding />}
+          />
+          <Route
+            path=':superblock/chapters/:chapter/modules/:module'
+            element={<ModuleLanding />}
+          />
           <Route path=':superblock/:block/_tools' element={<Tools />} />
           <Route path=':superblock/:block/:challenge' element={<Editor />} />
         </Routes>

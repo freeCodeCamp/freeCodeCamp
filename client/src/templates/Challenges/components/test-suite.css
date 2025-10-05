@@ -11,6 +11,10 @@
   text-align: center;
 }
 
+.sk-spinner {
+  color: var(--primary-color);
+}
+
 .challenge-test-suite code {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
@@ -20,10 +24,15 @@
   display: flex;
   width: 100%;
   align-items: center;
+  line-height: 1.5;
 }
 
 .test-result:nth-child(odd) {
   background-color: var(--tertiary-background);
+}
+
+.test-result:nth-child(odd) code {
+  background-color: var(--secondary-background);
 }
 
 .test-output {

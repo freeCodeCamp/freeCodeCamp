@@ -1,4 +1,7 @@
-const { sortChallenges } = require('./sort-challenges');
+import { describe, it, expect } from 'vitest';
+
+import { shuffleArray } from '../../../shared-dist/utils/shuffle-array.js';
+import { sortChallenges } from './sort-challenges.js';
 
 const challenges = [
   {
@@ -222,7 +225,7 @@ const challenges = [
 describe('sortChallenges', () => {
   it('sorts challenges by superblock, block and challenge order', () => {
     const copyOfChallenges = [...challenges];
-    shuffle(copyOfChallenges);
+    shuffleArray(copyOfChallenges);
     const actualChallenges = sortChallenges(copyOfChallenges);
 
     expect(actualChallenges).toEqual(challenges);
@@ -241,11 +244,3 @@ describe('sortChallenges', () => {
     expect(actualChallenges[0]).not.toEqual(copyOfChallenges[0]);
   });
 });
-
-// Use the Fisher–Yates shuffle algorithm to shuffle array
-const shuffle = arr => {
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
-};

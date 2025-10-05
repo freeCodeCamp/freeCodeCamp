@@ -1,4 +1,3 @@
-declare module '@freecodecamp/react-bootstrap';
 declare module '@freecodecamp/loop-protect';
 declare module '@freecodecamp/strip-comments';
 declare module '@types/react-redux';

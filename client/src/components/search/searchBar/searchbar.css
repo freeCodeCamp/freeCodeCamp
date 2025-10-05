@@ -55,12 +55,16 @@
 
 .ais-SearchBox-submit {
   grid-area: submit;
-  padding-inline: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ais-SearchBox-reset {
   grid-area: reset;
-  padding-block: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ais-SearchBox-form button:hover {
@@ -84,6 +88,7 @@
 .fcc_searchBar .ais-Highlight-highlighted {
   background-color: transparent;
   font-style: normal;
+  color: white;
   font-weight: bold;
 }
 
@@ -115,19 +120,12 @@
   cursor: default;
 }
 
-.fcc_sr_only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
 .ais-Hits-item {
   background-color: var(--gray-75);
+}
+
+.ais-Hits-item:not(:has(.no-hits-footer.fcc_suggestion_item)):hover {
+  background-color: var(--blue-dark);
 }
 
 /* Hit selected with arrow keys or mouse */
@@ -148,7 +146,7 @@ and arrow keys */
   padding: 6.5px 8px 8px;
 }
 
-.fcc_suggestion_footer .hit-name .ais-Highlight {
+.fcc_suggestion_footer span[class='ais-Highlight-nonHighlighted'] {
   font-weight: bold;
 }
 

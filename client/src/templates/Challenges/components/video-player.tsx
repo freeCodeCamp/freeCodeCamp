@@ -1,5 +1,8 @@
 import React from 'react';
-import YouTube from 'react-youtube';
+import YouTube, { YouTubeEvent } from 'react-youtube';
+import store from 'store';
+
+import Loader from '../../../components/helpers/loader';
 import envData from '../../../../config/env.json';
 import type { BilibiliIds, VideoLocaleIds } from '../../../redux/prop-types';
 
@@ -17,10 +20,14 @@ const { clientLocale } = envData as {
 interface VideoPlayerProps {
   videoId: string;
   videoLocaleIds?: VideoLocaleIds;
-  onVideoLoad: () => void;
+  onVideoLoad: (e: YouTubeEvent) => void;
   videoIsLoaded: boolean;
   bilibiliIds?: BilibiliIds;
   title: string;
+}
+
+function setPlaybackRate(e: YouTubeEvent<number>) {
+  store.set('fcc-yt-playback-rate', e.data);
 }
 
 function VideoPlayer({
@@ -47,7 +54,13 @@ function VideoPlayer({
   }
 
   return (
-    <>
+    <div className='video-wrapper'>
+      {!videoIsLoaded ? (
+        <div className='video-placeholder-loader'>
+          <Loader />
+        </div>
+      ) : null}
+
       {bilibiliSrc ? (
         <iframe
           frameBorder='no'
@@ -61,6 +74,7 @@ function VideoPlayer({
             videoIsLoaded ? 'display-youtube-video' : 'hide-youtube-video'
           }
           onReady={onVideoLoad}
+          onPlaybackRateChange={setPlaybackRate}
           opts={{
             playerVars: {
               rel: 0
@@ -71,7 +85,7 @@ function VideoPlayer({
           videoId={videoId}
         />
       )}
-    </>
+    </div>
   );
 }
 

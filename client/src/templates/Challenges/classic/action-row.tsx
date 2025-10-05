@@ -2,11 +2,19 @@ import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import store from 'store';
+import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 
 interface ActionRowProps {
+  dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
-  isProjectBasedChallenge: boolean;
+  hasPreview: boolean;
+  areInstructionsDisplayable: boolean;
+  isDailyCodingChallenge: boolean;
+  setDailyCodingChallengeLanguage: (
+    language: DailyCodingChallengeLanguages
+  ) => void;
   showConsole: boolean;
   showNotes: boolean;
   showInstructions: boolean;
@@ -16,6 +24,7 @@ interface ActionRowProps {
 }
 
 const ActionRow = ({
+  hasPreview,
   hasNotes,
   togglePane,
   showNotes,
@@ -23,7 +32,10 @@ const ActionRow = ({
   showPreviewPortal,
   showConsole,
   showInstructions,
-  isProjectBasedChallenge
+  areInstructionsDisplayable,
+  isDailyCodingChallenge,
+  dailyCodingChallengeLanguage,
+  setDailyCodingChallengeLanguage
 }: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
@@ -49,20 +61,50 @@ const ActionRow = ({
     return previewBtnsSrText;
   }
 
+  const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
+    store.set('dailyCodingChallengeLanguage', language);
+    setDailyCodingChallengeLanguage(language);
+  };
+
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
-        {!isProjectBasedChallenge && (
-          <button
-            data-playwright-test-label='instructions-button'
-            aria-expanded={!!showInstructions}
-            onClick={() => togglePane('showInstructions')}
-          >
-            {t('learn.editor-tabs.instructions')}
-          </button>
-        )}
-        <EditorTabs data-playwright-test-label='editor-tabs' />
-        <div className='panel-display-tabs'>
+        {/* left */}
+        <div className='tabs-row-left'>
+          {areInstructionsDisplayable && (
+            <button
+              data-playwright-test-label='instructions-button'
+              aria-expanded={!!showInstructions}
+              onClick={() => togglePane('showInstructions')}
+            >
+              {t('learn.editor-tabs.instructions')}
+            </button>
+          )}
+          <EditorTabs data-playwright-test-label='editor-tabs' />
+        </div>
+        {/* middle - only used with daily coding challenges for now */}
+        <div className='tabs-row-middle'>
+          {isDailyCodingChallenge && (
+            <>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+                disabled={dailyCodingChallengeLanguage === 'javascript'}
+                onClick={() => handleLanguageChange('javascript')}
+              >
+                JavaScript
+              </button>
+              <button
+                aria-expanded={dailyCodingChallengeLanguage === 'python'}
+                disabled={dailyCodingChallengeLanguage === 'python'}
+                onClick={() => handleLanguageChange('python')}
+              >
+                Python
+              </button>
+            </>
+          )}
+        </div>
+        {/* right */}
+        <div className='tabs-row-right panel-display-tabs'>
           <button
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}
@@ -77,21 +119,25 @@ const ActionRow = ({
               {t('learn.editor-tabs.notes')}
             </button>
           )}
-          <button
-            data-playwright-test-label='preview-pane-button'
-            aria-expanded={!!showPreviewPane}
-            onClick={() => togglePane('showPreviewPane')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-            <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
-          </button>
-          <button
-            aria-expanded={!!showPreviewPortal}
-            onClick={() => togglePane('showPreviewPortal')}
-          >
-            <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
-            <FontAwesomeIcon icon={faWindowRestore} />
-          </button>
+          {hasPreview && (
+            <>
+              <button
+                data-playwright-test-label='preview-pane-button'
+                aria-expanded={!!showPreviewPane}
+                onClick={() => togglePane('showPreviewPane')}
+              >
+                <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
+                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+              </button>
+              <button
+                aria-expanded={!!showPreviewPortal}
+                onClick={() => togglePane('showPreviewPortal')}
+              >
+                <span className='sr-only'>{getPreviewBtnsSrText().portal}</span>
+                <FontAwesomeIcon icon={faWindowRestore} />
+              </button>
+            </>
+          )}
         </div>
       </div>
     </div>

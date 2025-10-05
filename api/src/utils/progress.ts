@@ -1,5 +1,5 @@
 export type ProgressTimestamp = number | { timestamp: number } | null;
-
+export type Calendar = Record<number, 1>;
 /**
  * Converts a ProgressTimestamp array to a object with keys based on the timestamps.
  *
@@ -8,8 +8,8 @@ export type ProgressTimestamp = number | { timestamp: number } | null;
  */
 export const getCalendar = (
   progressTimestamps: ProgressTimestamp[] | null
-): Record<string, 1> => {
-  const calendar: Record<string, 1> = {};
+): Calendar => {
+  const calendar: Calendar = {};
 
   progressTimestamps?.forEach(progress => {
     if (progress === null) return;

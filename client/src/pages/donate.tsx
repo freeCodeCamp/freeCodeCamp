@@ -1,11 +1,9 @@
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
@@ -18,24 +16,17 @@ import {
   CommunityAchievementsText,
   GetSupporterBenefitsText
 } from '../components/Donation/donation-text-components';
-import { Spacer, Loader } from '../components/helpers';
-import { executeGA } from '../redux/actions';
+import { Loader } from '../components/helpers';
 import {
   signInLoadingSelector,
   userSelector,
   donationFormStateSelector
 } from '../redux/selectors';
-import { PaymentContext } from '../../../shared/config/donation-settings';
+import { PaymentContext } from '../../../shared-dist/config/donation-settings';
 import { DonateFormState } from '../redux/types';
-
-export interface ExecuteGaArg {
-  event: string;
-  action: string;
-  duration?: string;
-  amount?: number;
-}
+import callGA from '../analytics/call-ga';
+import type { User } from '../redux/prop-types';
 interface DonatePageProps {
-  executeGA: (arg: ExecuteGaArg) => void;
   isDonating?: boolean;
   showLoading: boolean;
   t: TFunction;
@@ -47,33 +38,27 @@ const mapStateToProps = createSelector(
   signInLoadingSelector,
   donationFormStateSelector,
   (
-    { isDonating }: { isDonating: boolean },
+    user: User | null,
     showLoading: boolean,
     donationFormState: DonateFormState
   ) => ({
-    isDonating,
+    isDonating: user?.isDonating || false,
     showLoading,
     donationFormState
   })
 );
 
-const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ executeGA }, dispatch);
-
 function DonatePage({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  executeGA = () => {},
   isDonating = false,
   showLoading,
   t,
   donationFormState
 }: DonatePageProps) {
   useEffect(() => {
-    executeGA({
+    callGA({
       event: 'donation_view',
       action: `Displayed Donate Page`
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return showLoading ? (
@@ -108,19 +93,19 @@ function DonatePage({
       <Container className='donate-supporter-page-section'>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <SupportBenefitsText />
           </Col>
         </Row>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <CurrentInitiativesText />
           </Col>
         </Row>
         <Row>
           <Col lg={6} lgOffset={0} md={8} mdOffset={2} sm={10}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <CommunityAchievementsText />
           </Col>
         </Row>
@@ -133,9 +118,9 @@ function DonatePage({
       <Container fluid={true}>
         <Row>
           <Col sm={12}>
-            <Spacer size='large' />
+            <Spacer size='l' />
             <hr />
-            <Spacer size='large' />
+            <Spacer size='l' />
           </Col>
         </Row>
       </Container>
@@ -145,7 +130,7 @@ function DonatePage({
             <DonationFaqText />
           </Col>
         </Row>
-        <Spacer size='large' />
+        <Spacer size='l' />
       </Container>
     </>
   );
@@ -153,7 +138,4 @@ function DonatePage({
 
 DonatePage.displayName = 'DonatePage';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(DonatePage));
+export default connect(mapStateToProps)(withTranslation()(DonatePage));

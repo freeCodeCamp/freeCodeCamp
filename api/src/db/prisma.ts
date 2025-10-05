@@ -1,60 +1,62 @@
-import { execSync } from 'node:child_process';
 import fp from 'fastify-plugin';
 import { FastifyPluginAsync } from 'fastify';
 import { PrismaClient } from '@prisma/client';
 
-import { FREECODECAMP_NODE_ENV, MONGOHQ_URL } from '../utils/env';
+// importing MONGOHQ_URL so we can mock it in testing.
+import { MONGOHQ_URL } from '../utils/env.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
-    prisma: PrismaClient;
+    prisma: ReturnType<typeof extendClient>;
   }
 }
 
-// Appends the dbId to the existing database name
-const createTestConnectionURL = (url: string, dbId: string) =>
-  url.replace(/(.*)(\?.*)/, `$1${dbId}$2`);
-
-const isTest = (workerId: string | undefined): workerId is string =>
-  !!workerId && FREECODECAMP_NODE_ENV === 'development';
-
 const prismaPlugin: FastifyPluginAsync = fp(async (server, _options) => {
-  if (isTest(process.env.JEST_WORKER_ID)) {
-    // push the schema to the test db to setup indexes, unique constraints, etc
-    execSync('pnpm prisma db push -- --skip-generate', {
-      env: {
-        ...process.env,
-        MONGOHQ_URL: createTestConnectionURL(
-          MONGOHQ_URL,
-          process.env.JEST_WORKER_ID
-        )
-      }
-    });
-  }
-
-  const prisma = isTest(process.env.JEST_WORKER_ID)
-    ? new PrismaClient({
-        datasources: {
-          db: {
-            url: createTestConnectionURL(
-              MONGOHQ_URL,
-              process.env.JEST_WORKER_ID
-            )
-          }
+  const prisma = extendClient(
+    new PrismaClient({
+      datasources: {
+        db: {
+          url: MONGOHQ_URL
         }
-      })
-    : new PrismaClient();
+      }
+    })
+  );
 
   await prisma.$connect();
 
   server.decorate('prisma', prisma);
 
   server.addHook('onClose', async server => {
-    if (isTest(process.env.JEST_WORKER_ID)) {
-      await server.prisma.$runCommandRaw({ dropDatabase: 1 });
-    }
     await server.prisma.$disconnect();
   });
 });
+
+// TODO: It would be nice to split this up into multiple update functions,
+//       but the types are a pain.
+// TODO: Multiple extended clients can be used for different restrictions (e.g. session vs non-session users)
+// TODO: Could be used to add other _easily forgotten_ fields like `progressTimestamp`
+function extendClient(prisma: PrismaClient) {
+  return prisma.$extends({
+    query: {
+      user: {
+        async update({ args, query }) {
+          args.data.updateCount = { increment: 1 };
+          return query(args);
+        },
+        async updateMany({ args, query }) {
+          args.data.updateCount = { increment: 1 };
+          return query(args);
+        },
+        async upsert({ args, query }) {
+          args.update.updateCount = { increment: 1 };
+          return query(args);
+        }
+        // NOTE: raw ops are untouched, as it is meant to be a direct passthrough to mongodb
+        // async findRaw({ model, operation, args, query }) {}
+        // async aggregateRaw({ model, operation, args, query }) {}
+      }
+    }
+  });
+}
 
 export default prismaPlugin;

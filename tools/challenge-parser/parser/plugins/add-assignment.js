@@ -1,4 +1,4 @@
-const getAllBetween = require('./utils/between-headings');
+const { getSection } = require('./utils/get-section');
 
 const mdastToHtml = require('./utils/mdast-to-html');
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
@@ -7,7 +7,7 @@ function plugin() {
   return transformer;
 
   function transformer(tree, file) {
-    const assignmentNodes = getAllBetween(tree, '--assignment--');
+    const assignmentNodes = getSection(tree, '--assignment--');
 
     const assignment = getAssignments(assignmentNodes).filter(a => a != '');
 

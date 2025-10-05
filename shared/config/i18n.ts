@@ -8,8 +8,8 @@ export enum Languages {
   Ukrainian = 'ukrainian',
   Japanese = 'japanese',
   German = 'german',
-  Arabic = 'arabic',
-  Swahili = 'swahili'
+  Swahili = 'swahili',
+  Korean = 'korean'
 }
 
 /*
@@ -31,8 +31,8 @@ export const availableLangs = {
     Languages.Ukrainian,
     Languages.Japanese,
     Languages.German,
-    Languages.Arabic,
-    Languages.Swahili
+    Languages.Swahili,
+    Languages.Korean
   ],
   curriculum: [
     Languages.English,
@@ -44,8 +44,8 @@ export const availableLangs = {
     Languages.Ukrainian,
     Languages.Japanese,
     Languages.German,
-    Languages.Arabic,
-    Languages.Swahili
+    Languages.Swahili,
+    Languages.Korean
   ]
 };
 
@@ -67,8 +67,8 @@ export const i18nextCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Arabic]: 'ar',
-  [Languages.Swahili]: 'sw'
+  [Languages.Swahili]: 'sw',
+  [Languages.Korean]: 'ko'
 };
 
 // These are for the language selector dropdown menu in the footer
@@ -82,8 +82,8 @@ export const LangNames: { [key: string]: string } = {
   [Languages.Ukrainian]: 'Українська',
   [Languages.Japanese]: '日本語',
   [Languages.German]: 'Deutsch',
-  [Languages.Arabic]: 'العربية',
-  [Languages.Swahili]: 'Swahili'
+  [Languages.Swahili]: 'Swahili',
+  [Languages.Korean]: '한국어'
 };
 
 /* These are for formatting dates and numbers. Used with JS .toLocaleString().
@@ -100,19 +100,19 @@ export const LangCodes = {
   [Languages.Ukrainian]: 'uk',
   [Languages.Japanese]: 'ja',
   [Languages.German]: 'de',
-  [Languages.Arabic]: 'ar',
-  [Languages.Swahili]: 'sw'
+  [Languages.Swahili]: 'sw',
+  [Languages.Korean]: 'ko'
 };
 
 /**
  * This array contains languages that should NOT appear in the language selector.
  */
-export const hiddenLangs = [Languages.Arabic];
+export const hiddenLangs = [Languages.Korean];
 
 /**
  * This array contains languages that use the RTL layouts.
  */
-export const rtlLangs = [Languages.Arabic];
+export const rtlLangs: Languages[] = [];
 
 // locale is sourced from a JSON file, so we use getLangCode to
 // find the associated enum values

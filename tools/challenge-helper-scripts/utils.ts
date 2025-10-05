@@ -2,28 +2,47 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import matter from 'gray-matter';
+import { challengeTypes } from '../../shared/config/challenge-types';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
 import { ChallengeSeed, getStepTemplate } from './helpers/get-step-template';
+import {
+  isTaskChallenge,
+  getTaskNumberFromTitle
+} from './helpers/task-helpers';
+import { getTemplate } from './helpers/get-challenge-template';
 
 interface Options {
   stepNum: number;
+  challengeType?: number;
   projectPath?: string;
-  challengeSeeds?: Record<string, ChallengeSeed>;
+  challengeSeeds?: ChallengeSeed[];
+  isFirstChallenge?: boolean;
+}
+
+interface QuizOptions {
+  projectPath?: string;
+  title: string;
+  dashedName: string;
+  questionCount: number;
 }
 
 const createStepFile = ({
   stepNum,
+  challengeType,
   projectPath = getProjectPath(),
-  challengeSeeds = {}
+  challengeSeeds = [],
+  isFirstChallenge = false
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
 
   const template = getStepTemplate({
     challengeId,
     challengeSeeds,
-    stepNum
+    stepNum,
+    challengeType,
+    isFirstChallenge
   });
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -33,11 +52,53 @@ const createStepFile = ({
 };
 
 const createChallengeFile = (
-  title: string,
+  filename: string,
   template: string,
   path = getProjectPath()
 ): void => {
-  fs.writeFileSync(`${path}${title}.md`, template);
+  fs.writeFileSync(`${path}${filename}.md`, template);
+};
+
+const createQuizFile = ({
+  projectPath = getProjectPath(),
+  title,
+  dashedName,
+  questionCount
+}: QuizOptions): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.quiz.toString();
+  const template = getTemplate(challengeType);
+
+  const quizText = template({
+    challengeId,
+    challengeType,
+    title,
+    dashedName,
+    questionCount
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
+  return challengeId;
+};
+
+const createDialogueFile = ({
+  projectPath
+}: {
+  projectPath: string;
+}): ObjectID => {
+  const challengeId = new ObjectID();
+  const challengeType = challengeTypes.dialogue.toString();
+  const template = getTemplate(challengeType);
+
+  const dialogueText = template({
+    challengeId,
+    challengeType,
+    title: "Dialogue 1: I'm Tom",
+    dashedName: 'dialogue-1-im-tom'
+  });
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, dialogueText);
+  return challengeId;
 };
 
 interface InsertOptions {
@@ -45,7 +106,26 @@ interface InsertOptions {
   stepId: ObjectID;
 }
 
-function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
+interface InsertChallengeOptions {
+  index: number;
+  id: ObjectID;
+  title: string;
+}
+
+async function insertChallengeIntoMeta({
+  index,
+  id,
+  title
+}: InsertChallengeOptions) {
+  const existingMeta = getMetaData();
+  const challengeOrder = [...existingMeta.challengeOrder];
+
+  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+  challengeOrder.splice(index, 0, { id: id.toString(), title });
+  await updateMetaData({ ...existingMeta, challengeOrder });
+}
+
+async function insertStepIntoMeta({ stepNum, stepId }: InsertOptions) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -56,10 +136,10 @@ function insertStepIntoMeta({ stepNum, stepId }: InsertOptions): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
-function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
+async function deleteStepFromMeta({ stepNum }: { stepNum: number }) {
   const existingMeta = getMetaData();
   const oldOrder = [...existingMeta.challengeOrder];
   oldOrder.splice(stepNum - 1, 1);
@@ -69,7 +149,34 @@ function deleteStepFromMeta({ stepNum }: { stepNum: number }): void {
     title: `Step ${index + 1}`
   }));
 
-  updateMetaData({ ...existingMeta, challengeOrder });
+  await updateMetaData({ ...existingMeta, challengeOrder });
+}
+
+async function deleteChallengeFromMeta(challengeIndex: number) {
+  const existingMeta = getMetaData();
+  const challengeOrder = [...existingMeta.challengeOrder];
+  challengeOrder.splice(challengeIndex, 1);
+  await updateMetaData({ ...existingMeta, challengeOrder });
+}
+
+async function updateTaskMeta() {
+  const existingMeta = getMetaData();
+  const oldOrder = [...existingMeta.challengeOrder];
+
+  let currentTaskNumber = 1;
+
+  const challengeOrder = oldOrder.map(challenge => {
+    if (isTaskChallenge(challenge.title)) {
+      return {
+        id: challenge.id,
+        title: `Task ${currentTaskNumber++}`
+      };
+    } else {
+      return challenge;
+    }
+  });
+
+  await updateMetaData({ ...existingMeta, challengeOrder });
 }
 
 const updateStepTitles = (): void => {
@@ -98,18 +205,82 @@ const updateStepTitles = (): void => {
   });
 };
 
-const getChallengeSeeds = (
-  challengeFilePath: string
-): Record<string, ChallengeSeed> => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access
-  return parseMDSync(challengeFilePath).challengeFiles;
+const updateTaskMarkdownFiles = (): void => {
+  const meta = getMetaData();
+
+  const fileNames: string[] = [];
+  fs.readdirSync(getProjectPath()).forEach(fileName => {
+    if (path.extname(fileName).toLowerCase() === '.md') {
+      fileNames.push(fileName);
+    }
+  });
+
+  fileNames.forEach(fileName => {
+    const filePath = `${getProjectPath()}${fileName}`;
+    const frontMatter = matter.read(filePath);
+
+    const challenge = meta.challengeOrder.find(
+      ({ id }) => id === frontMatter.data.id
+    );
+
+    if (!challenge || !challenge.title) {
+      throw new Error(
+        `Challenge id from ${fileName} not found in meta.json file.`
+      );
+    }
+
+    // only update task challenges, dialogue challenges shouldn't change
+    if (isTaskChallenge(challenge.title)) {
+      const newTaskNumber = getTaskNumberFromTitle(challenge.title);
+
+      const title = `Task ${newTaskNumber}`;
+      const dashedName = `task-${newTaskNumber}`;
+      const newData = {
+        ...frontMatter.data,
+        title,
+        dashedName
+      };
+      fs.writeFileSync(
+        filePath,
+        matter.stringify(frontMatter.content, newData)
+      );
+    }
+  });
+};
+
+type Challenge = {
+  challengeType: number;
+  challengeFiles: ChallengeSeed[];
+};
+
+const getChallenge = (challengeId: string): Challenge => {
+  const challengePath = path.join(getProjectPath(), `${challengeId}.md`);
+  const challenge = parseMDSync(challengePath) as Challenge;
+  return challenge;
+};
+
+const validateBlockName = (block: string): boolean | string => {
+  if (!block.trim().length) {
+    return 'please enter a dashed name';
+  }
+  if (/[^a-z0-9-]/.test(block.trim())) {
+    return 'please use alphanumerical characters and kebab case';
+  }
+  return true;
 };
 
 export {
   createStepFile,
+  createDialogueFile,
   createChallengeFile,
   updateStepTitles,
-  getChallengeSeeds,
+  updateTaskMeta,
+  updateTaskMarkdownFiles,
+  getChallenge,
+  insertChallengeIntoMeta,
   insertStepIntoMeta,
-  deleteStepFromMeta
+  deleteChallengeFromMeta,
+  deleteStepFromMeta,
+  validateBlockName,
+  createQuizFile
 };

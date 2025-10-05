@@ -1,13 +1,12 @@
 import store from 'store';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { Themes } from '../../components/settings/theme';
-
+import { LocalStorageThemes } from '../../redux/types';
 const TRY_AGAIN = 'https://campfire-mode.freecodecamp.org/try-again.mp3';
 const CHAL_COMP = 'https://campfire-mode.freecodecamp.org/chal-comp.mp3';
 
 const toneUrls = {
-  [Themes.Default]: 'https://campfire-mode.freecodecamp.org/day.mp3',
-  [Themes.Night]: 'https://campfire-mode.freecodecamp.org/night.mp3',
+  [LocalStorageThemes.Light]: 'https://campfire-mode.freecodecamp.org/day.mp3',
+  [LocalStorageThemes.Dark]: 'https://campfire-mode.freecodecamp.org/night.mp3',
   donation: 'https://campfire-mode.freecodecamp.org/donate.mp3',
   'tests-completed': CHAL_COMP,
   'block-toggle': 'https://tonejs.github.io/audio/berklee/guitar_chord1.mp3',
@@ -26,6 +25,8 @@ const toneUrls = {
   [FlashMessages.CodeSaveError]: TRY_AGAIN,
   [FlashMessages.CodeSaveLess]: TRY_AGAIN,
   [FlashMessages.CompleteProjectFirst]: TRY_AGAIN,
+  [FlashMessages.CourseUrlCopied]: CHAL_COMP,
+  [FlashMessages.CourseUrlCopyError]: TRY_AGAIN,
   [FlashMessages.DeleteTokenErr]: TRY_AGAIN,
   [FlashMessages.EmailValid]: CHAL_COMP,
   [FlashMessages.GenerateExamError]: TRY_AGAIN,
@@ -54,7 +55,7 @@ const toneUrls = {
   // [FlashMessages.None]: '',
   [FlashMessages.NotEligible]: TRY_AGAIN,
   [FlashMessages.NotHonest]: TRY_AGAIN,
-  [FlashMessages.NotRight]: TRY_AGAIN,
+  [FlashMessages.GenericError]: TRY_AGAIN,
   [FlashMessages.ProfilePrivate]: TRY_AGAIN,
   [FlashMessages.ProgressReset]: TRY_AGAIN,
   [FlashMessages.ProvideUsername]: TRY_AGAIN,
@@ -81,6 +82,10 @@ const toneUrls = {
   [FlashMessages.UsernameUpdated]: CHAL_COMP,
   [FlashMessages.UsernameUsed]: TRY_AGAIN,
   [FlashMessages.UserNotCertified]: TRY_AGAIN,
+  [FlashMessages.UserTokenCopied]: CHAL_COMP,
+  [FlashMessages.UserTokenCopyError]: TRY_AGAIN,
+  [FlashMessages.UserTokenGenerated]: CHAL_COMP,
+  [FlashMessages.UserTokenGenerateError]: TRY_AGAIN,
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
   [FlashMessages.WentWrong]: TRY_AGAIN

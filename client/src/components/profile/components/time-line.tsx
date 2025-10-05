@@ -5,20 +5,23 @@ import React, { useMemo, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Modal } from '@freecodecamp/react-bootstrap';
-import { Table, Button } from '@freecodecamp/ui';
+import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
+import { getLangCode } from '../../../../../shared-dist/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regeneratePathAndHistory } from '../../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../../../shared-dist/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
-import { CompletedChallenge } from '../../../redux/prop-types';
+import type {
+  ChallengeData,
+  CompletedChallenge
+} from '../../../redux/prop-types';
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -160,13 +163,14 @@ function TimelineInner({
     );
   }
 
-  const challengeData: CompletedChallenge | null = completedChallenge
+  const challengeData: ChallengeData | null = completedChallenge
     ? {
         ...completedChallenge,
         // // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
         challengeFiles:
-          completedChallenge?.challengeFiles?.map(regeneratePathAndHistory) ??
-          null
+          completedChallenge?.challengeFiles?.map(
+            regenerateMissingProperties
+          ) ?? null
       }
     : null;
 
@@ -176,75 +180,71 @@ function TimelineInner({
 
   return (
     <FullWidthRow>
-      <h2 className='text-center'>{t('profile.timeline')}</h2>
-      {completedMap.length === 0 ? (
-        <p className='text-center'>
-          {t('profile.none-completed')}&nbsp;
-          <Link to='/learn'>{t('profile.get-started')}</Link>
-        </p>
-      ) : (
-        <Table condensed={true} striped={true}>
-          <thead>
-            <tr>
-              <th>{t('profile.challenge')}</th>
-              <th>{t('settings.labels.solution')}</th>
-              <th className='text-center'>{t('profile.completed')}</th>
-            </tr>
-          </thead>
-          <tbody>
-            {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
-          </tbody>
-        </Table>
-      )}
-      {id && (
-        <Modal
-          aria-labelledby='contained-modal-title'
-          onHide={closeSolution}
-          show={solutionOpen}
-        >
-          <Modal.Header closeButton={true}>
-            <Modal.Title id='contained-modal-title' className='text-center'>
+      <section className='card'>
+        <h2>{t('profile.timeline')}</h2>
+        <Spacer size='s' />
+        {completedMap.length === 0 ? (
+          <p className='text-center'>
+            {t('profile.none-completed')}&nbsp;
+            <Link to='/learn'>{t('profile.get-started')}</Link>
+          </p>
+        ) : (
+          <Table condensed={true} striped={true}>
+            <thead>
+              <tr>
+                <th>{t('profile.challenge')}</th>
+                <th>{t('settings.labels.solution')}</th>
+                <th className='text-center'>{t('profile.completed')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
+            </tbody>
+          </Table>
+        )}
+        {id && (
+          <Modal onClose={closeSolution} open={solutionOpen} size='large'>
+            <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
               {`${username}'s Solution to ${
                 idToNameMap.get(id)?.challengeTitle ?? ''
               }`}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <SolutionViewer
-              challengeFiles={challengeData.challengeFiles}
-              solution={challengeData.solution ?? ''}
-            />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={closeSolution}>{t('buttons.close')}</Button>
-          </Modal.Footer>
-        </Modal>
-      )}
-      {totalPages > 1 && (
-        <TimelinePagination
-          firstPage={firstPage}
-          lastPage={lastPage}
-          nextPage={nextPage}
-          pageNo={pageNo}
-          prevPage={prevPage}
-          totalPages={totalPages}
+            </Modal.Header>
+            <Modal.Body alignment='left'>
+              <SolutionViewer
+                challengeFiles={challengeData.challengeFiles}
+                solution={challengeData.solution ?? ''}
+              />
+            </Modal.Body>
+            <Modal.Footer>
+              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+            </Modal.Footer>
+          </Modal>
+        )}
+        {totalPages > 1 && (
+          <TimelinePagination
+            firstPage={firstPage}
+            lastPage={lastPage}
+            nextPage={nextPage}
+            pageNo={pageNo}
+            prevPage={prevPage}
+            totalPages={totalPages}
+          />
+        )}
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          closeText={t('buttons.close')}
+          previewTitle={projectTitle}
         />
-      )}
-      <ProjectPreviewModal
-        challengeData={challengeData}
-        closeText={t('buttons.close')}
-        previewTitle={projectTitle}
-        showProjectPreview={true}
-      />
-      <ExamResultsModal
-        projectTitle={projectTitle}
-        examResults={completedChallenge?.examResults}
-      />
+        <ExamResultsModal
+          projectTitle={projectTitle}
+          examResults={completedChallenge?.examResults}
+        />
+      </section>
     </FullWidthRow>
   );
 }
 
-/* eslint-disable @typescript-eslint/no-unsafe-assignment, @typescript-eslint/restrict-template-expressions, @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
+/* eslint-disable @typescript-eslint/no-unsafe-assignment,  @typescript-eslint/no-unsafe-return, @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call*/
 function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const {
     allChallengeNode: { edges }
@@ -271,7 +271,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
   const idToNameMap = new Map();
   for (const id of getCertIds()) {
     const certPath = getPathFromID(id);
-    const certName = t(`certification.title.${certPath}`);
+    const certName = t(`certification.title.${certPath}-cert`);
     idToNameMap.set(id, {
       challengeTitle: certName,
       certPath: certPath
@@ -295,9 +295,11 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const shouldAppendBlockNameToTitle =
+        hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
-          hasEditableBoundaries ? blockNameTitle + ' - ' : ''
+          shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
         }${title}`,
         challengePath: slug
       });

@@ -1,24 +1,26 @@
 import protect from '@freecodecamp/loop-protect';
 import {
-  attempt,
   cond,
   flow,
   identity,
-  isError,
   matchesProperty,
   overSome,
   partial,
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../../client/config/browser-scripts/sass-compile.json';
+import sassData from '../../../../config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
-  setExt,
-  compileHeadTail
-} from '../../../../../shared/utils/polyvinyl';
-import createWorker from '../utils/worker-executor';
+  compileHeadTail,
+  createSource
+} from '../../../../../shared-dist/utils/polyvinyl';
+import { WorkerExecutor } from '../utils/worker-executor';
+import {
+  compileTypeScriptCode,
+  checkTSServiceIsReady
+} from '../utils/typescript-worker-handler';
 
 const { filename: sassCompile } = sassData;
 
@@ -26,6 +28,7 @@ const protectTimeout = 100;
 const testProtectTimeout = 1500;
 const loopsPerTimeoutCheck = 100;
 const testLoopsPerTimeoutCheck = 2000;
+const MODULE_TRANSFORM_PLUGIN = 'transform-modules-umd';
 
 function loopProtectCB(line) {
   console.log(
@@ -47,11 +50,9 @@ let presetsJS, presetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
-  /* eslint-disable no-inline-comments */
   Babel = await import(
     /* webpackChunkName: "@babel/standalone" */ '@babel/standalone'
   );
-  /* eslint-enable no-inline-comments */
   Babel.registerPlugin(
     'loopProtection',
     protect(protectTimeout, loopProtectCB, loopsPerTimeoutCheck)
@@ -63,12 +64,10 @@ async function loadBabel() {
 }
 
 async function loadPresetEnv() {
-  /* eslint-disable no-inline-comments */
   if (!presetEnv)
     presetEnv = await import(
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
     );
-  /* eslint-enable no-inline-comments */
 
   presetsJS = {
     presets: [presetEnv]
@@ -76,7 +75,6 @@ async function loadPresetEnv() {
 }
 
 async function loadPresetReact() {
-  /* eslint-disable no-inline-comments */
   if (!presetReact)
     presetReact = await import(
       /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
@@ -85,7 +83,7 @@ async function loadPresetReact() {
     presetEnv = await import(
       /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
     );
-  /* eslint-enable no-inline-comments */
+
   presetsJSX = {
     presets: [presetEnv, presetReact]
   };
@@ -98,60 +96,74 @@ const NBSPReg = new RegExp(String.fromCharCode(160), 'g');
 
 const testJS = matchesProperty('ext', 'js');
 const testJSX = matchesProperty('ext', 'jsx');
+const testTypeScript = matchesProperty('ext', 'ts');
 const testHTML = matchesProperty('ext', 'html');
-const testHTML$JS$JSX = overSome(testHTML, testJS, testJSX);
+const testHTML$JS$JSX$TS = overSome(testHTML, testJS, testJSX, testTypeScript);
 
 const replaceNBSP = cond([
   [
-    testHTML$JS$JSX,
+    testHTML$JS$JSX$TS,
     partial(transformContents, contents => contents.replace(NBSPReg, ' '))
   ],
   [stubTrue, identity]
 ]);
 
-function tryTransform(wrap = identity) {
-  return function transformWrappedPoly(source) {
-    const result = attempt(wrap, source);
-    if (isError(result)) {
-      // note(Bouncey): Error thrown here to collapse the build pipeline
-      // At the minute, it will not bubble up
-      // We collapse the pipeline so the app doesn't fall over trying
-      // parse bad code (syntax/type errors etc...)
-      throw result;
-    }
-    return result;
-  };
-}
+const getJSTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetEnv();
+  const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
+  return transformHeadTailAndContents(
+    babelTransformCode(babelOptions),
+    challengeFile
+  );
+};
 
-const babelTransformer = loopProtectOptions => {
+const getJSXTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  return transformHeadTailAndContents(
+    babelTransformCode(babelOptions),
+    challengeFile
+  );
+};
+
+const getJSXModuleTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await loadPresetReact();
+  const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
+  const babelOptions = {
+    ...baseOptions,
+    plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
+    moduleId: 'index' // TODO: this should be dynamic
+  };
+  return transformContents(babelTransformCode(babelOptions), challengeFile);
+};
+
+const getTSTranspiler = loopProtectOptions => async challengeFile => {
+  await loadBabel();
+  await checkTSServiceIsReady();
+  const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
+  return flow(
+    partial(transformHeadTailAndContents, compileTypeScriptCode),
+    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+  )(challengeFile);
+};
+
+const createTranspiler = loopProtectOptions => {
   return cond([
-    [
-      testJS,
-      async code => {
-        await loadBabel();
-        await loadPresetEnv();
-        const babelOptions = getBabelOptions(presetsJS, loopProtectOptions);
-        return partial(
-          transformHeadTailAndContents,
-          tryTransform(babelTransformCode(babelOptions))
-        )(code);
-      }
-    ],
-    [
-      testJSX,
-      async code => {
-        await loadBabel();
-        await loadPresetReact();
-        const babelOptions = getBabelOptions(presetsJSX, loopProtectOptions);
-        return flow(
-          partial(
-            transformHeadTailAndContents,
-            tryTransform(babelTransformCode(babelOptions))
-          ),
-          partial(setExt, 'js')
-        )(code);
-      }
-    ],
+    [testJS, getJSTranspiler(loopProtectOptions)],
+    [testJSX, getJSXTranspiler(loopProtectOptions)],
+    [testTypeScript, getTSTranspiler(loopProtectOptions)],
+    [testHTML, getHtmlTranspiler({ useModules: false })],
+    [stubTrue, identity]
+  ]);
+};
+
+const createModuleTransformer = loopProtectOptions => {
+  return cond([
+    [testJSX, getJSXModuleTranspiler(loopProtectOptions)],
+    [testHTML, getHtmlTranspiler({ useModules: true })],
     [stubTrue, identity]
   ]);
 };
@@ -173,7 +185,7 @@ function getBabelOptions(
   return presets;
 }
 
-const sassWorker = createWorker(sassCompile);
+const sassWorkerExecutor = new WorkerExecutor(sassCompile);
 async function transformSASS(documentElement) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.
@@ -184,35 +196,76 @@ async function transformSASS(documentElement) {
   await Promise.all(
     [].map.call(styleTags, async style => {
       style.type = 'text/css';
-      style.innerHTML = await sassWorker.execute(style.innerHTML, 5000).done;
+      style.innerHTML = await sassWorkerExecutor.execute(style.innerHTML, 5000)
+        .done;
     })
   );
 }
 
-async function transformScript(documentElement) {
+async function transformScript(documentElement, { useModules }) {
   await loadBabel();
   await loadPresetEnv();
+  await loadPresetReact();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
-    script.innerHTML = tryTransform(
-      babelTransformCode(getBabelOptions(presetsJS))
-    )(script.innerHTML);
+    const isBabel = script.type === 'text/babel';
+    const hasSource = !!script.src;
+    // TODO: make the use of JSX conditional on more than just the script type.
+    // It should only be used for React challenges since it would be confusing
+    // for learners to see the results of a transformation they didn't ask for.
+    const baseOptions = isBabel ? presetsJSX : presetsJS;
+
+    const options = {
+      ...baseOptions,
+      ...(useModules && { plugins: [MODULE_TRANSFORM_PLUGIN] })
+    };
+
+    // The type has to be removed, otherwise the browser will ignore the script.
+    // However, if we're importing modules, the type will be removed when the
+    // scripts are embedded in the HTML.
+    if (isBabel && !useModules) script.removeAttribute('type');
+    // We could use babel standalone to transform inline code in the preview,
+    // but that generates a warning that's shown to learner. By removing the
+    // type attribute and transforming the code we can avoid that warning.
+    if (isBabel && !hasSource) {
+      script.removeAttribute('type');
+      script.setAttribute('data-type', 'text/babel');
+    }
+
+    // Skip unnecessary transformations
+    script.innerHTML = script.innerHTML
+      ? babelTransformCode(options)(script.innerHTML)
+      : '';
   });
 }
 
 // This does the final transformations of the files needed to embed them into
 // HTML.
 export const embedFilesInHtml = async function (challengeFiles) {
-  const { indexHtml, stylesCss, scriptJs, indexJsx } =
+  const { indexHtml, stylesCss, scriptJs, indexJsx, indexTs } =
     challengeFilesToObject(challengeFiles);
 
-  const embedStylesAndScript = (documentElement, contentDocument) => {
+  const embedStylesAndScript = contentDocument => {
+    const documentElement = contentDocument.documentElement;
     const link =
       documentElement.querySelector('link[href="styles.css"]') ??
       documentElement.querySelector('link[href="./styles.css"]');
     const script =
       documentElement.querySelector('script[src="script.js"]') ??
       documentElement.querySelector('script[src="./script.js"]');
+
+    const tsScript =
+      documentElement.querySelector('script[src="index.ts"]') ??
+      documentElement.querySelector('script[src="./index.ts"]');
+
+    const jsxScript =
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="index.jsx"]`
+      ) ??
+      documentElement.querySelector(
+        `script[data-plugins="${MODULE_TRANSFORM_PLUGIN}"][type="text/babel"][src="./index.jsx"]`
+      );
+
     if (link) {
       const style = contentDocument.createElement('style');
       style.classList.add('fcc-injected-styles');
@@ -228,90 +281,84 @@ export const embedFilesInHtml = async function (challengeFiles) {
       script.removeAttribute('src');
       script.setAttribute('data-src', 'script.js');
     }
-    return {
-      contents: documentElement.innerHTML
-    };
+    if (tsScript) {
+      tsScript.innerHTML = indexTs?.contents;
+      tsScript.removeAttribute('src');
+      tsScript.setAttribute('data-src', 'index.ts');
+    }
+    if (jsxScript) {
+      jsxScript.innerHTML = indexJsx?.contents;
+      jsxScript.removeAttribute('src');
+      jsxScript.removeAttribute('type');
+      jsxScript.setAttribute('data-src', 'index.jsx');
+      jsxScript.setAttribute('data-type', 'text/babel');
+    }
+    return documentElement.innerHTML;
   };
 
   if (indexHtml) {
-    const { contents } = await transformWithFrame(
+    const contents = await parseAndTransform(
       embedStylesAndScript,
       indexHtml.contents
     );
-    return [challengeFiles, contents];
+    return contents;
   } else if (indexJsx) {
-    return [challengeFiles, `<script>${indexJsx.contents}</script>`];
+    return `<script>${indexJsx.contents}</script>`;
   } else if (scriptJs) {
-    return [challengeFiles, `<script>${scriptJs.contents}</script>`];
+    return `<script>${scriptJs.contents}</script>`;
+  } else if (indexTs) {
+    return `<script>${indexTs.contents}</script>`;
   } else {
-    throw Error('No html or js(x) file found');
+    throw Error('No html, ts or js(x) file found');
   }
 };
 
 function challengeFilesToObject(challengeFiles) {
   const indexHtml = challengeFiles.find(file => file.fileKey === 'indexhtml');
-  const indexJsx = challengeFiles.find(
-    file => file.fileKey === 'indexjs' && file.history[0] === 'index.jsx'
-  );
+  const indexJsx = challengeFiles.find(file => file.fileKey === 'indexjsx');
   const stylesCss = challengeFiles.find(file => file.fileKey === 'stylescss');
   const scriptJs = challengeFiles.find(file => file.fileKey === 'scriptjs');
-  return { indexHtml, indexJsx, stylesCss, scriptJs };
+  const indexTs = challengeFiles.find(file => file.fileKey === 'indexts');
+  return { indexHtml, indexJsx, stylesCss, scriptJs, indexTs };
 }
 
-const transformWithFrame = async function (transform, contents) {
-  // we use iframe here since file.contents is destined to be be inserted into
-  // the root of an iframe.
-  const frame = document.createElement('iframe');
-  frame.style = 'display: none';
-  let out = { contents };
-  try {
-    // the frame needs to be inserted into the document to create the html
-    // element
-    document.body.appendChild(frame);
-    // replace the root element with user code
-    frame.contentDocument.documentElement.innerHTML = contents;
-    // grab the contents now, in case the transformation fails
-    out = { contents: frame.contentDocument.documentElement.innerHTML };
-    // it's important to pass around the documentElement and NOT the frame
-    // itself. It appears that the frame's documentElement can get replaced by a
-    // blank documentElement without the contents. This seems only to happen on
-    // Firefox.
-    out = await transform(
-      frame.contentDocument.documentElement,
-      frame.contentDocument
-    );
-  } finally {
-    document.body.removeChild(frame);
-  }
-  return out;
+const parseAndTransform = async function (transform, contents) {
+  const parser = new DOMParser();
+  const newDoc = parser.parseFromString(contents, 'text/html');
+
+  return await transform(newDoc);
 };
 
-const transformHtml = async function (file) {
-  const transform = async documentElement => {
-    await Promise.all([
-      transformSASS(documentElement),
-      transformScript(documentElement)
-    ]);
-    return { contents: documentElement.innerHTML };
+const getHtmlTranspiler = scriptOptions =>
+  async function (file) {
+    const transform = async contentDocument => {
+      const documentElement = contentDocument.documentElement;
+      await Promise.all([
+        transformSASS(documentElement),
+        transformScript(documentElement, scriptOptions)
+      ]);
+      return documentElement.innerHTML;
+    };
+
+    const contents = await parseAndTransform(transform, file.contents);
+    return transformContents(() => contents, file);
   };
 
-  const { contents } = await transformWithFrame(transform, file.contents);
-  return transformContents(() => contents, file);
-};
-
-const htmlTransformer = cond([
-  [testHTML, flow(transformHtml)],
-  [stubTrue, identity]
-]);
-
 export const getTransformers = loopProtectOptions => [
+  createSource,
   replaceNBSP,
-  babelTransformer(loopProtectOptions),
-  partial(compileHeadTail, ''),
-  htmlTransformer
+  createTranspiler(loopProtectOptions),
+  partial(compileHeadTail, '')
+];
+
+export const getMultifileJSXTransformers = loopProtectOptions => [
+  createSource,
+  replaceNBSP,
+  createModuleTransformer(loopProtectOptions)
 ];
 
 export const getPythonTransformers = () => [
+  createSource,
   replaceNBSP,
   partial(compileHeadTail, '')
 ];

@@ -1,17 +1,12 @@
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
 import { isSignedInSelector } from '../../../../redux/selectors';
 import {
@@ -39,7 +34,9 @@ import {
   consoleOutputSelector,
   isChallengeCompletedSelector
 } from '../../redux/selectors';
+
 import { getGuideUrl } from '../../utils';
+import { getChallengePaths } from '../../utils/challenge-paths';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 
@@ -52,7 +49,7 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   (
-    output: string[],
+    output: string,
     tests: Test[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean
@@ -85,7 +82,7 @@ interface BackEndProps {
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  output: string[];
+  output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -96,59 +93,18 @@ interface BackEndProps {
   updateSolutionFormValues: () => void;
 }
 
-// Component
-class BackEnd extends Component<BackEndProps> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
+const ShowBackEnd = (props: BackEndProps) => {
+  const container = useRef<HTMLElement>(null);
 
-  constructor(props: BackEndProps) {
-    super(props);
-    this.state = {};
-    this.updateDimensions = this.updateDimensions.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
+  const handleSubmit = ({
+    showCompletionModal
+  }: {
+    showCompletionModal: boolean;
+  }) => {
+    props.executeChallenge({ showCompletionModal });
+  };
 
-  componentDidMount() {
-    this.initializeComponent();
-    window.addEventListener('resize', () => this.updateDimensions());
-    this.container.current?.focus();
-  }
-
-  updateDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('resize', () => this.updateDimensions());
-  }
-
-  componentDidUpdate(prevProps: BackEndProps) {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: prevTitle,
-            fields: { tests: prevTests }
-          }
-        }
-      }
-    } = prevProps;
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            title: currentTitle,
-            fields: { tests: currTests }
-          }
-        }
-      }
-    } = this.props;
-    if (prevTitle !== currentTitle || prevTests !== currTests) {
-      this.initializeComponent();
-    }
-  }
-
-  initializeComponent() {
+  useEffect(() => {
     const {
       challengeMounted,
       initConsole,
@@ -165,125 +121,115 @@ class BackEnd extends Component<BackEndProps> {
         }
       },
       pageContext: { challengeMeta }
-    } = this.props;
+    } = props;
     initConsole();
     initTests(tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-  }
+    container.current?.focus();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  handleSubmit({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }): void {
-    this.props.executeChallenge({
-      showCompletionModal
-    });
-  }
-
-  render() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { blockName },
-            challengeType,
-            forumTopicId,
-            title,
-            description,
-            instructions,
-            translationPending,
-            superBlock,
-            block
-          }
+  const {
+    data: {
+      challengeNode: {
+        challenge: {
+          fields: { blockName },
+          challengeType,
+          forumTopicId,
+          title,
+          description,
+          instructions,
+          translationPending,
+          superBlock,
+          block
         }
-      },
-      isChallengeCompleted,
-      output,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      t,
-      tests,
-      updateSolutionFormValues
-    } = this.props;
+      }
+    },
+    isChallengeCompleted,
+    output,
+    t,
+    tests,
+    updateSolutionFormValues
+  } = props;
 
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )} - ${title}`;
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
 
-    return (
-      <Hotkeys
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <ChallengeDescription
-                  description={description}
-                  instructions={instructions}
-                />
-                <SolutionForm
-                  challengeType={challengeType}
-                  // eslint-disable-next-line @typescript-eslint/unbound-method
-                  onSubmit={this.handleSubmit}
-                  updateSolutionForm={updateSolutionFormValues}
-                />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
-                <br />
-                <Output
-                  defaultOutput={`/**
+  return (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <ChallengeDescription
+                superBlock={superBlock}
+                description={description}
+                instructions={instructions}
+              />
+              <Spacer size='m' />
+              <SolutionForm
+                challengeType={challengeType}
+                onSubmit={handleSubmit}
+                updateSolutionForm={updateSolutionFormValues}
+              />
+              <ProjectToolPanel
+                guideUrl={getGuideUrl({ forumTopicId, title })}
+              />
+              <br />
+              <Output
+                defaultOutput={`/**
 *
 * ${t('learn.test-output')}
 *
 *
 */`}
-                  output={output}
-                />
-                <TestSuite tests={tests} />
-                <Spacer size='medium' />
-              </Col>
-              <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
-}
-
-BackEnd.displayName = 'BackEnd';
+                output={output}
+              />
+              <TestSuite tests={tests} />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToActions
-)(withTranslation()(BackEnd));
+)(withTranslation()(ShowBackEnd));
 
 export const query = graphql`
-  query BackendChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query BackendChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         forumTopicId
         title

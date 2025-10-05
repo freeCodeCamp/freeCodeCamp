@@ -1,48 +1,19 @@
-import { setupServer, superRequest } from '../jest.utils';
-import { HOME_LOCATION, COOKIE_DOMAIN } from './utils/env';
+import { describe, test, expect, vi } from 'vitest';
+import { setupServer, superRequest } from '../vitest.utils.js';
+import { HOME_LOCATION } from './utils/env.js';
 
-jest.mock('./utils/env', () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+vi.mock('./utils/env', async importOriginal => {
+  const actual = await importOriginal<typeof import('./utils/env.js')>();
   return {
-    ...jest.requireActual('./utils/env'),
-    COOKIE_DOMAIN: '.freecodecamp.org'
+    ...actual,
+    COOKIE_DOMAIN: 'freecodecamp.org'
   };
 });
 
 describe('server', () => {
   setupServer();
 
-  describe('CSRF protection', () => {
-    it('should receive a new CSRF token with the expected properties', async () => {
-      const response = await superRequest('/status/ping', { method: 'GET' });
-      const newCookies = response.get('Set-Cookie');
-      const csrfTokenCookie = newCookies.find(cookie =>
-        cookie.includes('csrf_token')
-      );
-
-      expect(csrfTokenCookie).toEqual(
-        expect.stringContaining('SameSite=Strict')
-      );
-      expect(csrfTokenCookie).toEqual(
-        expect.stringContaining(`Domain=${COOKIE_DOMAIN}`)
-      );
-      expect(csrfTokenCookie).toEqual(expect.stringContaining('Path=/'));
-      // Since we're not mocking FREECODECAMP_NODE_ENV to production, there's no
-      // point checking if it is secure (it won't be in testing).
-    });
-  });
-
   describe('GET /', () => {
-    test('have a 200 response', async () => {
-      const res = await superRequest('/', { method: 'GET' });
-      expect(res.statusCode).toBe(200);
-    });
-
-    test('return { "hello": "world"}', async () => {
-      const res = await superRequest('/', { method: 'GET' });
-      expect(res.body).toEqual({ hello: 'world' });
-    });
-
     test('should have OWASP recommended headers', async () => {
       const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
@@ -92,7 +63,7 @@ describe('server', () => {
       const res = await superRequest('/', { method: 'GET' });
       expect(res.headers).toMatchObject({
         'access-control-allow-headers':
-          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token',
+          'Origin, X-Requested-With, Content-Type, Accept, Csrf-Token, Coderoad-User-Token, Exam-Environment-Authorization-Token',
         'access-control-allow-credentials': 'true',
         'access-control-allow-methods': 'GET, PUT, POST, DELETE'
       });
@@ -107,7 +78,6 @@ describe('server', () => {
       expect(res.headers).toMatchObject({
         'cache-control': 'no-store',
         'content-security-policy': "frame-ancestors 'none'",
-        'content-type': 'text/html; charset=utf-8',
         'x-content-type-options': 'nosniff',
         'x-frame-options': 'DENY'
       });

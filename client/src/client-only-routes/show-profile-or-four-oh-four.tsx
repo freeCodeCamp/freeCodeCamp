@@ -8,46 +8,43 @@ import Loader from '../components/helpers/loader';
 import Profile from '../components/profile/profile';
 import { fetchProfileForUser } from '../redux/actions';
 import {
-  usernameSelector,
-  userByNameSelector,
-  userProfileFetchStateSelector
+  userSelector,
+  userProfileFetchStateSelector,
+  createUserByNameSelector
 } from '../redux/selectors';
-import { User } from '../redux/prop-types';
+import type { User } from '../redux/prop-types';
+import { Socials } from '../components/profile/components/internet';
 
 interface ShowProfileOrFourOhFourProps {
   fetchProfileForUser: (username: string) => void;
-  fetchState: {
-    pending: boolean;
-    complete: boolean;
-    errored: boolean;
-  };
+  updateMyPortfolio: () => void;
+  submitNewAbout: () => void;
+  updateMySocials: (formValues: Socials) => void;
   isSessionUser: boolean;
   maybeUser?: string;
-  requestedUser: User;
+  requestedUser: User | null;
   showLoading: boolean;
 }
 
-const createRequestedUserSelector =
-  () =>
-  (state: unknown, { maybeUser = '' }) =>
-    userByNameSelector(maybeUser.toLowerCase())(state) as User;
-const createIsSessionUserSelector =
-  () =>
-  (state: unknown, { maybeUser = '' }) =>
-    maybeUser.toLowerCase() === usernameSelector(state);
-
 const makeMapStateToProps =
-  () => (state: unknown, props: ShowProfileOrFourOhFourProps) => {
-    const requestedUserSelector = createRequestedUserSelector();
-    const isSessionUserSelector = createIsSessionUserSelector();
-    const fetchState = userProfileFetchStateSelector(
-      state
-    ) as ShowProfileOrFourOhFourProps['fetchState'];
+  () =>
+  (state: unknown, { maybeUser = '' }) => {
+    const username = maybeUser.toLowerCase();
+    const requestedUser = (
+      createUserByNameSelector as (
+        maybeUser: string
+      ) => (state: unknown) => User | null
+    )(username)(state);
+    const sessionUser = userSelector(state) as User | null;
+    const isSessionUser = username === sessionUser?.username;
+    const fetchState = userProfileFetchStateSelector(state) as {
+      pending: boolean;
+    };
+
     return {
-      requestedUser: requestedUserSelector(state, props),
-      isSessionUser: isSessionUserSelector(state, props),
-      showLoading: fetchState.pending,
-      fetchState
+      requestedUser,
+      isSessionUser,
+      showLoading: fetchState.pending
     };
   };
 
@@ -66,10 +63,8 @@ function ShowProfileOrFourOhFour({
 }: ShowProfileOrFourOhFourProps) {
   useEffect(() => {
     // If the user is not already in the store, fetch it
-    if (isEmpty(requestedUser)) {
-      if (maybeUser) {
-        fetchProfileForUser(maybeUser);
-      }
+    if (isEmpty(requestedUser) && maybeUser) {
+      fetchProfileForUser(maybeUser);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

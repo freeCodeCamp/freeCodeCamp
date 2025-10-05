@@ -1,13 +1,19 @@
 // We have to specify pyodide.js because we need to import that file (not .mjs)
-// and 'import' defaults to .mjs
+// and 'import' defaults to .mjs.
+
+// This is to do with how webpack handles node fallbacks - it uses the node
+// resolution algorithm to find the file, but that requires the full file name.
+// We can't add the extension, because it's in a bundle we're importing. However
+// we can import the .js file and then the strictness does not apply.
 import { loadPyodide, type PyodideInterface } from 'pyodide/pyodide.js';
 import pkg from 'pyodide/package.json';
 import type { PyProxy, PythonError } from 'pyodide/ffi';
+import * as helpers from '@freecodecamp/curriculum-helpers';
 
 const ctx: Worker & typeof globalThis = self as unknown as Worker &
   typeof globalThis;
 
-let pyodide: PyodideInterface;
+let pyodide: PyodideInterface | null = null;
 
 interface PythonRunEvent extends MessageEvent {
   data: {
@@ -15,7 +21,6 @@ interface PythonRunEvent extends MessageEvent {
     code: {
       contents: string;
       editableContents: string;
-      original: { [id: string]: string };
     };
   };
 }
@@ -53,13 +58,28 @@ async function setupPyodide() {
   // pyodide modifies self while loading.
   Object.freeze(self);
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+  pyodide.FS.writeFile(
+    '/home/pyodide/ast_helpers.py',
+    helpers.python.astHelpers,
+    {
+      encoding: 'utf8'
+    }
+  );
+
   ignoreRunMessages = true;
   postMessage({ type: 'stopped' });
+}
+
+function resetPyodide() {
+  if (pyodide) pyodide = null;
+  void setupPyodide();
 }
 
 void setupPyodide();
 
 function initRunPython() {
+  if (!pyodide) throw new Error('pyodide not loaded');
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const str = pyodide.globals.get('str') as (x: unknown) => string;
 
@@ -85,6 +105,10 @@ function initRunPython() {
     };
   }
 
+  function __interruptExecution() {
+    postMessage({ type: 'reset' });
+  }
+
   // I tried setting jsglobals here, to provide 'input' and 'print' to python,
   // without having to modify the global window object. However, it didn't work
   // because pyodide needs access to that object. Instead, I used
@@ -93,7 +117,8 @@ function initRunPython() {
   // Make print available to python
   pyodide.registerJsModule('jscustom', {
     print,
-    input
+    input,
+    __interruptExecution
   });
   // Create fresh globals each time user code is run.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -102,20 +127,29 @@ function initRunPython() {
   // have this set by default.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   globals.set('__name__', '__main__');
+
   // The runPython helper is a shortcut for running python code with our
   // custom globals.
   const runPython = (pyCode: string) =>
-    pyodide.runPython(pyCode, { globals }) as unknown;
+    pyodide!.runPython(pyCode, { globals }) as unknown;
+
   runPython(`
+  from pyodide.ffi import JsException
+
   import jscustom
   from jscustom import print
   from jscustom import input
+
   def __wrap(func):
     def fn(*args):
-      data = func(*args)
-      if data.type == 'cancel':
-        raise KeyboardInterrupt(data.value)
-      return data.value
+      try:
+        data = func(*args)
+        if data.type == 'cancel':
+          raise KeyboardInterrupt(data.value)
+        return data.value
+      except JsException:
+        jscustom.__interruptExecution()
+        raise
     return fn
   input = __wrap(input)
   `);
@@ -134,9 +168,19 @@ function initRunPython() {
     else:
       return ""
   `);
+  runPython(`
+def print_exception():
+    from ast_helpers import format_exception
+    formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
+    print(formatted)
+`);
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+  const printException = globals.get('print_exception') as PyProxy &
+    (() => string);
+
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
-  return { runPython, getResetId, globals };
+  return { runPython, getResetId, globals, printException };
 }
 
 ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
@@ -160,32 +204,43 @@ function handleListenRequest() {
 }
 
 function handleRunRequest(data: PythonRunEvent['data']) {
-  if (ignoreRunMessages) return;
-  const code = (data.code.contents || '').slice();
-  // TODO: use reset-terminal for clarity?
-  postMessage({ type: 'reset' });
-
-  const { runPython, getResetId, globals } = initRunPython();
-  // use pyodide.runPythonAsync if we want top-level await
   try {
-    runPython(code);
-  } catch (e) {
-    const err = e as PythonError;
-    console.error(e);
-    const resetId = getResetId();
-    // TODO: if a user raises a KeyboardInterrupt with a custom message this
-    // will be treated as a reset, the client will resend their code and this
-    // will loop. Can we fix that? Perhaps by using a custom exception?
-    if (err.type === 'KeyboardInterrupt' && resetId) {
-      // If the client sends a lot of run messages, it's easy for them to build
-      // up while the worker is busy. As such, we both ignore any queued run
-      // messages...
-      ignoreRunMessages = true;
-      // ...and tell the client that we're ignoring them.
-      postMessage({ type: 'stopped', text: getResetId() });
+    if (ignoreRunMessages) return;
+    const code = (data.code.contents || '').slice();
+    // TODO: use reset-terminal for clarity?
+    postMessage({ type: 'reset' });
+
+    const { runPython, getResetId, globals, printException } = initRunPython();
+    // use pyodide.runPythonAsync if we want top-level await
+    try {
+      runPython(code);
+    } catch (e) {
+      const err = e as PythonError;
+      // the formatted exception is printed to the terminal
+      printException();
+      // but the full error is logged to the console for debugging
+      console.error(err);
+      const resetId = getResetId();
+      // TODO: if a user raises a KeyboardInterrupt with a custom message this
+      // will be treated as a reset, the client will resend their code and this
+      // will loop. Can we fix that? Perhaps by using a custom exception?
+      if (err.type === 'KeyboardInterrupt' && resetId) {
+        // If the client sends a lot of run messages, it's easy for them to build
+        // up while the worker is busy. As such, we both ignore any queued run
+        // messages...
+        ignoreRunMessages = true;
+        // ...and tell the client that we're ignoring them.
+        postMessage({ type: 'stopped', text: getResetId() });
+      }
+    } finally {
+      getResetId.destroy();
+      printException.destroy();
+      globals.destroy();
     }
-  } finally {
-    getResetId.destroy();
-    globals.destroy();
+  } catch (e) {
+    // This should only be reach if pyodide crashes, but it's helpful to log
+    // the error in case it's something else.
+    console.error(e);
+    void resetPyodide();
   }
 }

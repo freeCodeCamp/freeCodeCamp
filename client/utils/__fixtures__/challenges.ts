@@ -2,7 +2,20 @@ import { ChallengeFile } from "../../src/redux/prop-types";
 
 export const challengeFiles: ChallengeFile[] = [
   {
-    id: '1',
+    contents: 'some ts',
+    error: null,
+    ext: 'ts',
+    head: '',
+    history: ['index.ts'],
+    fileKey: 'indexts',
+    name: 'index',
+    seed: 'some ts',
+    tail: '',
+    editableRegionBoundaries: [],
+    usesMultifileEditor: true,
+    path: 'index.ts',
+  },
+  {
     contents: 'some css',
     error: null,
     ext: 'css',
@@ -14,9 +27,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'styles.css',
   },
   {
-    id: '2',
     contents: 'some html',
     error: null,
     ext: 'html',
@@ -28,9 +41,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'index.html',
   },
   {
-    id: '3',
     contents: 'some js',
     error: null,
     ext: 'js',
@@ -42,9 +55,9 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'script.js',
   },
   {
-    id: '4',
     contents: 'some jsx',
     error: null,
     ext: 'jsx',
@@ -56,5 +69,20 @@ export const challengeFiles: ChallengeFile[] = [
     tail: '',
     editableRegionBoundaries: [],
     usesMultifileEditor: true,
+    path: 'index.jsx',
+  },
+  {
+    contents: 'some tsx',
+    error: null,
+    ext: 'tsx',
+    head: '',
+    history: ['index.tsx'],
+    fileKey: 'indextsx',
+    name: 'index',
+    seed: 'some tsx',
+    tail: '',
+    editableRegionBoundaries: [],
+    usesMultifileEditor: true,
+    path: 'index.tsx',
   }
 ]

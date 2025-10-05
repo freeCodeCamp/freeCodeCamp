@@ -2,49 +2,98 @@ import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
 
-const currentUrlPath =
-  '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1';
+test.describe('Should be shown automatically', () => {
+  test.beforeEach(async ({ page }) => {
+    const urlWithProjectPreview =
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-1';
+    await page.goto(urlWithProjectPreview);
+  });
 
-test.beforeEach(async ({ page }) => {
-  await page.goto(currentUrlPath);
-});
-
-test.describe('Exit Project Preview Modal E2E Test Suite', () => {
-  test('Verifies the Correct Rendering of the Project Preview Modal', async ({
-    page
-  }) => {
+  test('it should contain a non-empty preview frame', async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toBeVisible();
+    const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
-      page.getByRole('button', {
-        name: translations.buttons.close
-      })
-    ).toBeVisible();
-    await expect(page.getByTestId('project-preview-modal-title')).toBeVisible();
-    await expect(
-      page.locator('div.modal-body').getByTestId('preview-iframe')
-    ).toBeVisible();
-    // JS will generate 2 iframes, the right one should be chosen
-    await expect(
-      page.getByTestId('project-preview-modal-closeButton')
+      // This is a part of the Cat Photo App that we expect to see. Essentially,
+      // it's a proxy for "not empty"
+      previewFrame.getByRole('heading', { name: 'Cat Photos' })
     ).toBeVisible();
   });
 
-  test('Closes the Project Preview Modal When the User clicks on the close Button', async ({
-    page
-  }) => {
-    await page.getByTestId('project-preview-modal-closeButton').click();
-    await expect(
-      page.getByTestId('project-preview-modal-title')
-    ).not.toBeVisible();
+  test('it can be closed by the Start Coding! button', async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).toBeVisible();
+    await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
+
+    await page.getByRole('button', { name: 'Start Coding!' }).click();
+
+    await expect(dialog).not.toBeVisible();
   });
 
-  test('Closes the Project Preview Modal when the User clicks on X button', async ({
-    page
-  }) => {
+  test('it can be closed by the close button', async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+
+    await expect(dialog).toBeVisible();
+
     await page
       .getByRole('button', { name: translations.buttons.close })
       .click();
+
+    await expect(dialog).not.toBeVisible();
+  });
+});
+
+test.describe('Should be shown manually', () => {
+  test.beforeEach(async ({ page }) => {
+    const urlWithProjectPreview =
+      '/learn/full-stack-developer/lab-drum-machine/build-drum-machine';
+    await page.goto(urlWithProjectPreview);
+  });
+
+  test("when the user clicks on 'this example project'", async ({ page }) => {
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['demo-project-title']
+    });
+    await expect(dialog).not.toBeVisible();
+    await page
+      .getByRole('button', {
+        name: 'this example project'
+      })
+      .click();
+    await expect(dialog).toBeVisible();
+    const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
-      page.getByTestId('project-preview-modal-title')
-    ).not.toBeVisible();
+      // This is a part of the Drum Machine that we expect to see. Essentially,
+      // it's a proxy for "not empty"
+      previewFrame.getByText('Power: On')
+    ).toBeVisible();
+  });
+});
+
+test.describe('Should not render', () => {
+  test('on the second step of a project', async ({ page }) => {
+    await page.goto(
+      '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    );
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).not.toBeVisible();
+  });
+
+  test('on first step of a project without a preview', async ({ page }) => {
+    await page.goto(
+      '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
+    );
+    const dialog = page.getByRole('dialog', {
+      name: translations.learn['project-preview-title']
+    });
+    await expect(dialog).not.toBeVisible();
   });
 });

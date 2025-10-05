@@ -1,11 +1,17 @@
-// utils are not typed (yet), so we have to disable some checks
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-import fs from 'fs';
 import path from 'path';
 import { config } from 'dotenv';
-import { SuperBlocks } from '../shared/config/superblocks';
-import { createSuperOrder, getSuperOrder, getSuperBlockFromDir } from './utils';
+import { describe, it, expect } from 'vitest';
+
+import { SuperBlocks } from '../shared-dist/config/curriculum';
+import {
+  closestFilters,
+  closestMatch,
+  createSuperOrder,
+  filterByBlock,
+  filterByChallengeId,
+  filterBySuperblock,
+  getSuperOrder
+} from './utils';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
@@ -28,7 +34,7 @@ const mockSuperBlocks = [
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStruct,
   SuperBlocks.TheOdinProject,
-  SuperBlocks.ExampleCertification
+  SuperBlocks.FullStackDeveloper
 ];
 
 const fullSuperOrder = {
@@ -50,7 +56,7 @@ const fullSuperOrder = {
   [SuperBlocks.RespWebDesign]: 15,
   [SuperBlocks.JsAlgoDataStruct]: 16,
   [SuperBlocks.TheOdinProject]: 17,
-  [SuperBlocks.ExampleCertification]: 18
+  [SuperBlocks.FullStackDeveloper]: 18
 };
 
 describe('createSuperOrder', () => {
@@ -61,121 +67,271 @@ describe('createSuperOrder', () => {
   });
 
   it('throws when not given an array of SuperBlocks', () => {
-    expect.assertions(4);
-    expect(() => getSuperOrder()).toThrow();
-    expect(() => getSuperOrder(null)).toThrow();
-    expect(() => getSuperOrder('')).toThrow();
-    expect(() => getSuperOrder(['respansive-wib-desoin'])).toThrow();
+    expect(() => createSuperOrder()).toThrow();
+    expect(() => createSuperOrder(null)).toThrow();
+    expect(() => createSuperOrder('')).toThrow();
   });
 });
 
 describe('getSuperOrder', () => {
-  it('returns a number for valid superblocks', () => {
-    expect.assertions(1);
+  it('returns a number for valid curriculum', () => {
     expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
   });
 
-  it('throws for unknown superblocks', () => {
-    expect.assertions(4);
-    expect(() => getSuperOrder()).toThrow();
-    expect(() => getSuperOrder(null)).toThrow();
-    expect(() => getSuperOrder('')).toThrow();
-    expect(() => getSuperOrder('respansive-wib-desoin')).toThrow();
+  it('returns undefined for unknown curriculum', () => {
+    expect(getSuperOrder()).toBeUndefined();
+    expect(getSuperOrder(null)).toBeUndefined();
+    expect(getSuperOrder('')).toBeUndefined();
+    expect(getSuperOrder('respansive-wib-desoin')).toBeUndefined();
+    expect(getSuperOrder('certifications')).toBeUndefined();
   });
 
-  it('throws for "certifications"', () => {
-    expect.assertions(1);
-    expect(() => getSuperOrder('certifications')).toThrow();
+  it('returns numbers for all current curriculum', () => {
+    const superBlocks = Object.values(SuperBlocks);
+
+    const superOrderValues = superBlocks.map(sb => getSuperOrder(sb, true));
+    const definedValues = superOrderValues.filter(v => typeof v === 'number');
+
+    expect(definedValues.length).toBe(superBlocks.length);
   });
 
-  it.skip('returns unique numbers for all current superblocks', () => {
-    if (
-      process.env.SHOW_NEW_CURRICULUM !== 'true' &&
-      process.env.SHOW_UPCOMING_CHANGES !== 'true'
-    ) {
-      expect.assertions(17);
-    } else if (process.env.SHOW_NEW_CURRICULUM !== 'true') {
-      expect.assertions(17);
-    } else if (process.env.SHOW_UPCOMING_CHANGES !== 'true') {
-      expect.assertions(17);
-    } else {
-      expect.assertions(19);
-    }
+  it('returns unique numbers for all current curriculum', () => {
+    const superBlocks = Object.values(SuperBlocks);
 
-    expect(getSuperOrder(SuperBlocks.RespWebDesignNew)).toBe(0);
-    expect(getSuperOrder(SuperBlocks.JsAlgoDataStructNew)).toBe(1);
-    expect(getSuperOrder(SuperBlocks.FrontEndDevLibs)).toBe(2);
-    expect(getSuperOrder(SuperBlocks.DataVis)).toBe(3);
-    expect(getSuperOrder(SuperBlocks.RelationalDb)).toBe(4);
-    expect(getSuperOrder(SuperBlocks.BackEndDevApis)).toBe(5);
-    expect(getSuperOrder(SuperBlocks.QualityAssurance)).toBe(6);
-    expect(getSuperOrder(SuperBlocks.SciCompPy)).toBe(7);
-    expect(getSuperOrder(SuperBlocks.DataAnalysisPy)).toBe(8);
-    expect(getSuperOrder(SuperBlocks.InfoSec)).toBe(9);
-    expect(getSuperOrder(SuperBlocks.MachineLearningPy)).toBe(10);
-    expect(getSuperOrder(SuperBlocks.CollegeAlgebraPy)).toBe(11);
-    expect(getSuperOrder(SuperBlocks.FoundationalCSharp)).toBe(12);
-    expect(getSuperOrder(SuperBlocks.CodingInterviewPrep)).toBe(13);
-    expect(getSuperOrder(SuperBlocks.ProjectEuler)).toBe(14);
-    expect(getSuperOrder(SuperBlocks.RespWebDesign)).toBe(15);
-    expect(getSuperOrder(SuperBlocks.JsAlgoDataStruct)).toBe(16);
+    const superOrderValues = superBlocks.map(sb => getSuperOrder(sb, true));
+    const uniqueValues = Array.from(new Set(superOrderValues));
 
-    if (
-      process.env.SHOW_NEW_CURRICULUM === 'true' &&
-      process.env.SHOW_UPCOMING_CHANGES === 'true'
-    ) {
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
-    } else if (process.env.SHOW_NEW_CURRICULUM === 'true') {
-      return;
-    } else if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
-      expect(getSuperOrder(SuperBlocks.TheOdinProject)).toBe(17);
-      expect(getSuperOrder(SuperBlocks.ExampleCertification)).toBe(18);
-    }
+    expect(uniqueValues.length).toBe(superBlocks.length);
   });
 });
 
-describe('getSuperBlockFromPath', () => {
-  const directories = fs.readdirSync(
-    path.join(__dirname, './challenges/english')
-  );
+describe('filter utils', () => {
+  describe('filterByChallengeId', () => {
+    it('returns the same superblocks if no challengeId is provided', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1', challengeOrder: [{ id: '1' }] }]
+        },
+        {
+          name: 'superblock-2',
+          blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+        }
+      ];
+      expect(filterByChallengeId(superblocks)).toEqual(superblocks);
+    });
 
-  it('handles all the directories in ./challenges/english', () => {
-    expect.assertions(24);
+    it('ignores blocks without the specified challengeId', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [
+            { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+            { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+          ]
+        }
+      ];
+      const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+        }
+      ]);
+    });
 
-    for (const directory of directories) {
-      expect(() => getSuperBlockFromDir(directory)).not.toThrow();
-    }
+    it('returns only the specified challenge and its solution challenge', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [
+            {
+              dashedName: 'block-1',
+              challengeOrder: [{ id: '1' }, { id: '2' }, { id: '3' }]
+            },
+            { dashedName: 'block-2', challengeOrder: [{ id: '4' }] }
+          ]
+        }
+      ];
+      const filtered = filterByChallengeId(superblocks, { challengeId: '1' });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [
+            {
+              dashedName: 'block-1',
+              challengeOrder: [{ id: '1' }, { id: '2' }]
+            }
+          ]
+        }
+      ]);
+    });
+
+    it('returns only superblocks containing the specified challenge', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [
+            { dashedName: 'block-1', challengeOrder: [{ id: '1' }] },
+            { dashedName: 'block-2', challengeOrder: [{ id: '2' }] }
+          ]
+        },
+        {
+          name: 'superblock-2',
+          blocks: [{ dashedName: 'block-3', challengeOrder: [{ id: '3' }] }]
+        }
+      ];
+      const filtered = filterByChallengeId(superblocks, { challengeId: '2' });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-2', challengeOrder: [{ id: '2' }] }]
+        }
+      ]);
+    });
   });
 
-  it("returns valid superblocks (or 'certifications') for all valid arguments", () => {
-    expect.assertions(24);
+  describe('filterByBlock', () => {
+    it('returns the same superblocks if no block is provided', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        }
+      ];
+      expect(filterByBlock(superblocks)).toEqual(superblocks);
+    });
 
-    const superBlockPaths = directories.filter(x => x !== '00-certifications');
+    it('returns only the specified block', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        }
+      ];
+      const filtered = filterByBlock(superblocks, { block: 'block-1' });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }]
+        }
+      ]);
+    });
 
-    for (const directory of superBlockPaths) {
-      expect(Object.values(SuperBlocks)).toContain(
-        getSuperBlockFromDir(directory)
-      );
-    }
-    expect(getSuperBlockFromDir('00-certifications')).toBe('certifications');
+    it('returns an empty array if no blocks match the specified block', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        }
+      ];
+      const filtered = filterByBlock(superblocks, {
+        block: 'nonexistent-block'
+      });
+      expect(filtered).toEqual([]);
+    });
   });
 
-  it("returns all valid superblocks (and 'certifications')", () => {
-    expect.assertions(1);
+  describe('filterBySuperblock', () => {
+    it('returns the same superblocks if no superBlock is provided', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        }
+      ];
+      expect(filterBySuperblock(superblocks)).toEqual(superblocks);
+    });
 
-    const superBlocks = new Set();
-    for (const directory of directories) {
-      superBlocks.add(getSuperBlockFromDir(directory));
-    }
-
-    // + 1 for 'certifications'
-    expect(superBlocks.size).toBe(Object.values(SuperBlocks).length + 1);
+    it('returns only the specified superblock', () => {
+      const superblocks = [
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        },
+        {
+          name: 'superblock-2',
+          blocks: [{ dashedName: 'block-3' }]
+        }
+      ];
+      const filtered = filterBySuperblock(superblocks, {
+        superBlock: 'superblock-1'
+      });
+      expect(filtered).toEqual([
+        {
+          name: 'superblock-1',
+          blocks: [{ dashedName: 'block-1' }, { dashedName: 'block-2' }]
+        }
+      ]);
+    });
   });
 
-  it('throws if a directory is unknown', () => {
-    expect.assertions(1);
+  describe('closestMatch', () => {
+    it('returns the closest matching element', () => {
+      const items = [
+        'responsive-web-design',
+        'javascript-algorithms-and-data-structures',
+        'front-end-development-libraries',
+        'data-visualization'
+      ];
+      const input = 'responsiv web design';
+      const closest = 'responsive-web-design';
+      expect(closestMatch(input, items)).toBe(closest);
+    });
 
-    expect(() => getSuperBlockFromDir('unknown')).toThrow();
+    it('ignores case when finding the closest match', () => {
+      const items = [
+        'responsive-web-design',
+        'ReSPonSivE-WeB-DeSiGne',
+        'javascript-algorithms-and-data-structures',
+        'front-end-development-libraries',
+        'data-visualization'
+      ];
+      const input = 'ReSPonSiv WeB DeSiGn';
+      const closest = 'responsive-web-design';
+      expect(closestMatch(input, items)).toBe(closest);
+    });
+  });
+
+  describe('closestFilters', () => {
+    it('returns the closest matching superblock filter', () => {
+      const superblocks = [
+        {
+          name: 'responsive-web-design',
+          blocks: [
+            { dashedName: 'basic-html-and-html5' },
+            { dashedName: 'css-flexbox' }
+          ]
+        },
+        {
+          name: 'javascript-algorithms-and-data-structures',
+          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+        }
+      ];
+
+      expect(
+        closestFilters({ superBlock: 'responsiv web design' }, superblocks)
+      ).toEqual({ superBlock: 'responsive-web-design' });
+    });
+
+    it('returns the closest matching block filter', () => {
+      const superblocks = [
+        {
+          name: 'responsive-web-design',
+          blocks: [
+            { dashedName: 'basic-html-and-html5' },
+            { dashedName: 'css-flexbox' }
+          ]
+        },
+        {
+          name: 'javascript-algorithms-and-data-structures',
+          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+        }
+      ];
+
+      expect(closestFilters({ block: 'basic-javascr' }, superblocks)).toEqual({
+        block: 'basic-javascript'
+      });
+    });
   });
 });

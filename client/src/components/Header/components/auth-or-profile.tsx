@@ -1,11 +1,15 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import type { User } from '../../../redux/prop-types';
 import { Link, AvatarRenderer } from '../../helpers';
 import Login from './login';
 
 interface AuthOrProfileProps {
-  user?: User;
+  user?: {
+    isDonating: boolean;
+    username: string;
+    picture: string;
+    yearsTopContributor: string[];
+  };
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
   const { t } = useTranslation();
@@ -25,7 +29,6 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
           isDonating={isUserDonating}
           isTopContributor={isTopContributor}
           picture={user.picture}
-          userName={user.username}
         />
       </Link>
     );

@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../shared/config/superblocks';
+import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
 
 interface SEOProps {
   title?: string;
@@ -73,7 +73,10 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
     const superBlockIntroObj: {
       title: string;
       intro: string[];
-    } = t(`intro:${superBlock}`);
+    } = t(`intro:${superBlock}`, { returnObjects: true }) as {
+      title: string;
+      intro: string[];
+    };
 
     const { title: i18nTitle, intro: introText } = superBlockIntroObj;
 

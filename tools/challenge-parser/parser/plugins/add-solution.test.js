@@ -1,11 +1,17 @@
-const { isObject } = require('lodash');
-const editableSolutionAST = require('../__fixtures__/ast-erm-in-solution.json');
-const multiSolnsAST = require('../__fixtures__/ast-multiple-solutions.json');
-const mockAST = require('../__fixtures__/ast-simple.json');
-
-const addSolution = require('./add-solution');
+import { describe, beforeAll, beforeEach, it, expect } from 'vitest';
+import { isObject } from 'lodash';
+import parseFixture from '../__fixtures__/parse-fixture';
+import addSolution from './add-solution';
 
 describe('add solution plugin', () => {
+  let mockAST, multiSolnsAST, editableSolutionAST;
+
+  beforeAll(async () => {
+    editableSolutionAST = await parseFixture('with-erm-in-solution.md');
+    mockAST = await parseFixture('simple.md');
+    multiSolnsAST = await parseFixture('with-multiple-solns.md');
+  });
+
   const plugin = addSolution();
   let file = { data: {} };
 

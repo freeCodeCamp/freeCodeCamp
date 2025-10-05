@@ -1,0 +1,79 @@
+---
+id: 61764c602bee6974e7790f35
+title: Step 11
+challengeType: 0
+dashedName: step-11
+---
+
+# --description--
+
+To give the markers different colors, you'll need to add a unique class to each one. You can add multiple classes to an element by listing them in the `class` attribute and separating them with a space. For example, the following code adds both the `animal` and `dog` classes to a `div` element:
+
+```html
+<div class="animal dog">
+```
+
+If you add multiple classes to an HTML element, the styles of the first classes you list in the stylesheet may be overridden by later classes.
+
+To begin, add the class `one` to the first marker `div` element.
+
+
+# --hints--
+
+You should add the class `one` to the first marker `div` element.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert.isTrue(containerFirstChild?.classList?.contains('one'));
+```
+
+Your first marker `div` should have the classes `marker` and `one`.
+
+```js
+const containerFirstChild = [...document.querySelector('.container')?.children][0];
+assert.isTrue(containerFirstChild?.classList?.contains('marker'));
+assert.isTrue(containerFirstChild?.classList?.contains('one'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colored Markers</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>CSS Color Markers</h1>
+    <div class="container">
+--fcc-editable-region--
+      <div class="marker">
+      </div>
+      <div class="marker">
+      </div>
+      <div class="marker">
+      </div>
+--fcc-editable-region--
+    </div>
+  </body>
+</html>
+```
+
+```css
+h1 {
+  text-align: center;
+}
+
+.marker {
+  width: 200px;
+  height: 25px;
+  background-color: red;
+  margin: 10px auto;
+}
+
+```

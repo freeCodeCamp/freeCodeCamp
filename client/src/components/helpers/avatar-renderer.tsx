@@ -44,7 +44,7 @@ function AvatarRenderer({
     <div className={`avatar-container ${borderColor}`}>
       <span className='sr-only'>{t('buttons.profile')}</span>
       {isPlaceHolderImage ? (
-        <DefaultAvatar className='avatar default-avatar' />
+        <DefaultAvatar className='avatar' />
       ) : (
         <Image alt='' className='avatar' src={picture} responsive />
       )}

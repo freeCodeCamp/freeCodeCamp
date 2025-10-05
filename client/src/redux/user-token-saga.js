@@ -26,7 +26,7 @@ function* deleteUserTokenSaga() {
     } else {
       yield put(createFlashMessage(message.deleteErr));
     }
-  } catch (e) {
+  } catch {
     yield put(createFlashMessage(message.deleteErr));
   }
 }

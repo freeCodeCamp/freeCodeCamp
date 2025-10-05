@@ -14,6 +14,7 @@ static/curriculum-data
 # Generated config
 config/browser-scripts/*.json
 i18n/locales/**/trending.json
+i18n/locales/**/search-bar.json
 
 # Config
 

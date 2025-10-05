@@ -23,20 +23,23 @@
 }
 
 .monaco-editor-tabs button[aria-expanded='true'],
-.panel-display-tabs button[aria-expanded='true'] {
+.panel-display-tabs button[aria-expanded='true'],
+.tabs-row button[aria-expanded='true'] {
   border-color: var(--primary-color);
   background-color: var(--primary-color);
   color: var(--secondary-background);
 }
 
 .monaco-editor-tabs button:hover,
-.panel-display-tabs button:hover {
+.panel-display-tabs button:hover,
+.tabs-row button:hover {
   color: var(--secondary-color);
   background-color: var(--primary-background);
 }
 
 .monaco-editor-tabs button[aria-expanded='true']:hover,
-.panel-display-tabs button[aria-expanded='true']:hover {
+.panel-display-tabs button[aria-expanded='true']:hover,
+.tabs-row button[aria-expanded='true']:hover {
   background-color: var(--quaternary-color);
   color: var(--secondary-background);
 }
@@ -59,6 +62,25 @@
   border-style: solid;
 }
 
+.tabs-row-left {
+  width: 30%;
+  display: flex;
+  gap: 10px;
+}
+
+.tabs-row-middle {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.tabs-row-right {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .monaco-editor-tabs button + button {
   margin-inline-start: 3px;
 }
@@ -75,6 +97,10 @@
 
 .panel-display-tabs button:last-of-type {
   border-inline-start-width: 1px;
+}
+
+.panel-display-tabs button:last-of-type:first-of-type {
+  border-inline-start-width: 3px;
 }
 
 .panel-display-tabs button:nth-last-child(2) {
@@ -183,10 +209,14 @@
 
 #mobile-layout .portal-button-wrap {
   position: absolute;
-  top: calc(var(--header-height) + var(--breadcrumbs-height));
+  top: auto;
   right: 0;
   height: 2rem;
   border-bottom: 1px solid var(--quaternary-color);
+}
+
+#mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+  transform: translateY(-2rem);
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -216,4 +246,51 @@
 /* Focus indicator for tab panel */
 .nav-lists [role='tab']:focus {
   outline-offset: -3px;
+}
+
+@media screen and (max-width: 480px) {
+  #mobile-layout .monaco-editor-tabs {
+    padding: 10px 5px;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  #mobile-layout .nav-lists {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .nav-lists > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mobile-layout .portal-button-wrap {
+    height: 1.5rem;
+  }
+
+  #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
+    height: 1.52rem;
+    transform: translateY(-1.5rem);
+  }
+
+  #mobile-layout .portal-button-wrap button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.43rem;
+    font-size: initial;
+  }
+
+  #mobile-layout .portal-button-wrap button svg {
+    scale: 0.8;
+  }
+
+  #mobile-layout .monaco-editor-tabs {
+    padding: 5px;
+  }
+
+  .monaco-editor-tabs button {
+    padding: 2px 12px;
+  }
 }

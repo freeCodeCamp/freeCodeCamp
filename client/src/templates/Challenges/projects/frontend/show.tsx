@@ -1,17 +1,20 @@
 import { graphql } from 'gatsby';
-import React, { Component } from 'react';
+import React, { useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
+import { type TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
-import Spacer from '../../../../components/helpers/spacer';
 import LearnLayout from '../../../../components/layouts/learn';
-import { ChallengeNode, ChallengeMeta } from '../../../../redux/prop-types';
+import {
+  ChallengeNode,
+  ChallengeMeta,
+  Test
+} from '../../../../redux/prop-types';
 import ChallengeDescription from '../../components/challenge-description';
 import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
@@ -21,12 +24,14 @@ import {
   challengeMounted,
   updateChallengeMeta,
   openModal,
-  updateSolutionFormValues
+  updateSolutionFormValues,
+  initTests
 } from '../../redux/actions';
 import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
+import { getChallengePaths } from '../../utils/challenge-paths';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -39,6 +44,7 @@ const mapStateToProps = createSelector(
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
+      initTests,
       updateChallengeMeta,
       challengeMounted,
       updateSolutionFormValues,
@@ -51,6 +57,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 interface ProjectProps {
   challengeMounted: (arg0: string) => void;
   data: { challengeNode: ChallengeNode };
+  initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   openCompletionModal: () => void;
   pageContext: {
@@ -61,161 +68,128 @@ interface ProjectProps {
   updateSolutionFormValues: () => void;
 }
 
-// Component
-class Project extends Component<ProjectProps> {
-  static displayName: string;
-  private container: React.RefObject<HTMLElement> = React.createRef();
+const ShowFrontEndProject = (props: ProjectProps) => {
+  const handleSubmit = ({
+    showCompletionModal
+  }: {
+    showCompletionModal: boolean;
+  }): void => {
+    if (showCompletionModal) {
+      props.openCompletionModal();
+    }
+  };
 
-  constructor(props: ProjectProps) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  componentDidMount() {
+  const container = useRef<HTMLElement>(null);
+
+  useEffect(() => {
     const {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { title, challengeType, helpCategory }
+          challenge: { fields, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
+      initTests,
       updateChallengeMeta
-    } = this.props;
+    } = props;
+    initTests(fields.tests);
+    const challengePaths = getChallengePaths({
+      currentCurriculumPaths: challengeMeta
+    });
     updateChallengeMeta({
       ...challengeMeta,
       title,
       challengeType,
-      helpCategory
+      helpCategory,
+      ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    this.container.current?.focus();
-  }
+    container.current?.focus();
+    // This effect should be run once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  componentDidUpdate(prevProps: ProjectProps): void {
-    const {
-      data: {
-        challengeNode: {
-          challenge: { title: prevTitle }
+  const {
+    data: {
+      challengeNode: {
+        challenge: {
+          challengeType,
+          fields: { blockName },
+          forumTopicId,
+          title,
+          description,
+          instructions,
+          superBlock,
+          block,
+          translationPending
         }
       }
-    } = prevProps;
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { title: currentTitle, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      updateChallengeMeta
-    } = this.props;
-    if (prevTitle !== currentTitle) {
-      updateChallengeMeta({
-        ...challengeMeta,
-        title: currentTitle,
-        challengeType,
-        helpCategory
-      });
-      challengeMounted(challengeMeta.id);
-    }
-  }
+    },
+    isChallengeCompleted,
+    t,
+    updateSolutionFormValues
+  } = props;
 
-  handleSubmit({
-    showCompletionModal
-  }: {
-    showCompletionModal: boolean;
-  }): void {
-    if (showCompletionModal) {
-      this.props.openCompletionModal();
-    }
-  }
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
 
-  render() {
-    const {
-      data: {
-        challengeNode: {
-          challenge: {
-            challengeType,
-            fields: { blockName },
-            forumTopicId,
-            title,
-            description,
-            instructions,
-            superBlock,
-            block,
-            translationPending
-          }
-        }
-      },
-      isChallengeCompleted,
-      pageContext: {
-        challengeMeta: { nextChallengePath, prevChallengePath }
-      },
-      t,
-      updateSolutionFormValues
-    } = this.props;
-
-    const blockNameTitle = `${t(
-      `intro:${superBlock}.blocks.${block}.title`
-    )} - ${title}`;
-
-    return (
-      <Hotkeys
-        containerRef={this.container}
-        nextChallengePath={nextChallengePath}
-        prevChallengePath={prevChallengePath}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='medium' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <ChallengeDescription
-                  description={description}
-                  instructions={instructions}
-                />
-                <SolutionForm
-                  challengeType={challengeType}
-                  description={description}
-                  // eslint-disable-next-line @typescript-eslint/unbound-method
-                  onSubmit={this.handleSubmit}
-                  updateSolutionForm={updateSolutionFormValues}
-                />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
-                <br />
-                <Spacer size='medium' />
-              </Col>
-              <CompletionModal />
-              <HelpModal challengeTitle={title} challengeBlock={blockName} />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    );
-  }
-}
-
-Project.displayName = 'Project';
+  return (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <ChallengeDescription
+                superBlock={superBlock}
+                description={description}
+                instructions={instructions}
+              />
+              <Spacer size='m' />
+              <SolutionForm
+                challengeType={challengeType}
+                description={description}
+                onSubmit={handleSubmit}
+                updateSolutionForm={updateSolutionFormValues}
+              />
+              <ProjectToolPanel
+                guideUrl={getGuideUrl({ forumTopicId, title })}
+              />
+              <br />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={blockName}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
+  );
+};
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withTranslation()(Project));
+)(withTranslation()(ShowFrontEndProject));
 
 export const query = graphql`
-  query ProjectChallenge($slug: String!) {
-    challengeNode(challenge: { fields: { slug: { eq: $slug } } }) {
+  query ProjectChallenge($id: String!) {
+    challengeNode(id: { eq: $id }) {
       challenge {
         forumTopicId
         title
@@ -229,6 +203,10 @@ export const query = graphql`
         fields {
           blockName
           slug
+          tests {
+            text
+            testString
+          }
         }
       }
     }

@@ -1,8 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 
-test.use({ storageState: 'playwright/.auth/certified-user.json' });
-
 test.describe('Test form with only solution link', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto(
@@ -83,7 +81,7 @@ test.describe('Test form with solution link and github link', () => {
     );
     await expect(githubLinkInputLabel).toBeVisible();
     await expect(githubLinkInputLabel).toHaveText(
-      translations.learn['github-link']
+      translations.learn['source-code-link']
     );
 
     const githubLinkInput = solutionForm.getByTestId('githubLink-form-control');

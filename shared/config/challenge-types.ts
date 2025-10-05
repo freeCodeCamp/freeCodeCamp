@@ -22,6 +22,15 @@ const multipleChoice = 19;
 const python = 20;
 const dialogue = 21;
 const fillInTheBlank = 22;
+const multifilePythonCertProject = 23;
+const generic = 24;
+const lab = 25;
+const jsLab = 26;
+const pyLab = 27;
+const dailyChallengeJs = 28;
+const dailyChallengePy = 29;
+const examDownload = 30;
+const review = 31;
 
 export const challengeTypes = {
   html,
@@ -47,37 +56,45 @@ export const challengeTypes = {
   multipleChoice,
   python,
   dialogue,
-  fillInTheBlank
+  fillInTheBlank,
+  multifilePythonCertProject,
+  generic,
+  lab,
+  jsLab,
+  pyLab,
+  dailyChallengeJs,
+  dailyChallengePy,
+  examDownload,
+  review
 };
 
-export const isFinalProject = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return (
-    challengeType === frontEndProject ||
-    challengeType === backEndProject ||
-    challengeType === jsProject ||
-    challengeType === pythonProject ||
-    challengeType === codeAllyCert ||
-    challengeType === multifileCertProject ||
-    challengeType === exam
-  );
-};
+export const hasNoSolution = (challengeType: number): boolean => {
+  const noSolutions = [
+    backend,
+    zipline,
+    frontEndProject,
+    backEndProject,
+    step,
+    quiz,
+    invalid,
+    pythonProject,
+    video,
+    codeAllyPractice,
+    codeAllyCert,
+    theOdinProject,
+    colab,
+    exam,
+    msTrophy,
+    multipleChoice,
+    dialogue,
+    fillInTheBlank,
+    generic,
+    examDownload,
+    review
+  ];
 
-export const isCodeAllyPractice = (challengeType: number) => {
-  // TODO: remove the type check once everything is converted to TS
-  if (typeof challengeType !== 'number')
-    throw Error('challengeType must be a number');
-  return challengeType === codeAllyPractice;
+  return noSolutions.includes(challengeType);
 };
-
-export const hasNoTests = (challengeType: number): boolean =>
-  challengeType === multipleChoice ||
-  challengeType === theOdinProject ||
-  challengeType === video ||
-  challengeType === dialogue ||
-  challengeType === fillInTheBlank;
 
 // determine the component view for each challenge
 export const viewTypes = {
@@ -91,18 +108,27 @@ export const viewTypes = {
   [step]: 'step',
   [quiz]: 'quiz',
   [backend]: 'backend',
-  [video]: 'video',
+  [video]: 'generic',
   [codeAllyPractice]: 'codeAlly',
   [codeAllyCert]: 'codeAlly',
   [multifileCertProject]: 'classic',
-  [theOdinProject]: 'odin',
+  [theOdinProject]: 'generic',
   [colab]: 'frontend',
   [exam]: 'exam',
   [msTrophy]: 'msTrophy',
-  [multipleChoice]: 'odin',
+  [multipleChoice]: 'generic',
   [python]: 'modern',
-  [dialogue]: 'dialogue',
-  [fillInTheBlank]: 'fillInTheBlank'
+  [dialogue]: 'generic',
+  [fillInTheBlank]: 'fillInTheBlank',
+  [multifilePythonCertProject]: 'classic',
+  [generic]: 'generic',
+  [lab]: 'classic',
+  [jsLab]: 'classic',
+  [pyLab]: 'classic',
+  [dailyChallengeJs]: 'classic',
+  [dailyChallengePy]: 'classic',
+  [examDownload]: 'examDownload',
+  [review]: 'generic'
 };
 
 // determine the type of submit function to use for the challenge on completion
@@ -119,7 +145,7 @@ export const submitTypes = {
   [backEndProject]: 'project.backEnd',
   [pythonProject]: 'project.backEnd',
   [step]: 'step',
-  [quiz]: 'quiz',
+  [quiz]: 'tests',
   [backend]: 'backend',
   [modern]: 'tests',
   [video]: 'tests',
@@ -132,5 +158,35 @@ export const submitTypes = {
   [multipleChoice]: 'tests',
   [python]: 'tests',
   [dialogue]: 'tests',
-  [fillInTheBlank]: 'tests'
+  [fillInTheBlank]: 'tests',
+  [multifilePythonCertProject]: 'tests',
+  [generic]: 'tests',
+  [lab]: 'tests',
+  [jsLab]: 'tests',
+  [pyLab]: 'tests',
+  [dailyChallengeJs]: 'tests',
+  [dailyChallengePy]: 'tests',
+  [examDownload]: 'examDownload',
+  [review]: 'tests'
 };
+
+export const canSaveToDB = (challengeType: number): boolean =>
+  challengeType === challengeTypes.multifileCertProject ||
+  challengeType === challengeTypes.multifilePythonCertProject;
+
+export const dailyCodingChallengeTypes = [
+  challengeTypes.dailyChallengeJs,
+  challengeTypes.dailyChallengePy
+];
+
+export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
+  dailyCodingChallengeTypes.includes(challengeType);
+
+export const dailyCodingChallengeLanguages = {
+  [challengeTypes.dailyChallengeJs]: 'javascript',
+  [challengeTypes.dailyChallengePy]: 'python'
+};
+
+export const getDailyCodingChallengeLanguage = (
+  challengeType: number
+): string | undefined => dailyCodingChallengeLanguages[challengeType];

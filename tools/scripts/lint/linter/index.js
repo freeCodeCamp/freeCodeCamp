@@ -2,13 +2,14 @@ const markdownlint = require('markdownlint');
 
 const lintPrism = require('./markdown-prism');
 const lintYAML = require('./markdown-yaml');
+const fencedCodeBlock = require('./fenced-code-block');
 
 function linter(rules) {
   const lint = (file, next) => {
     const options = {
       files: [file.path],
       config: rules,
-      customRules: [lintYAML, lintPrism]
+      customRules: [lintYAML, lintPrism, fencedCodeBlock]
     };
     markdownlint(options, function callback(err, result) {
       const resultString = (result || '').toString();

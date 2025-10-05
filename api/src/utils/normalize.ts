@@ -1,12 +1,23 @@
 /* This module's job is to parse the database output and prepare it for
 serialization */
-import { ProfileUI, CompletedChallenge, ExamResults } from '@prisma/client';
-import _ from 'lodash';
+import type {
+  ProfileUI,
+  CompletedChallenge,
+  ExamResults,
+  Survey,
+  Prisma
+} from '@prisma/client';
+import { pickBy, mapValues } from 'lodash-es';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
+type NullToFalse<T> = T extends null ? false : T;
 
 type NoNullProperties<T> = {
   [P in keyof T]: NullToUndefined<T[P]>;
+};
+
+type DefaultToFalse<T> = {
+  [P in keyof T]: NullToFalse<T[P]>;
 };
 
 /**
@@ -27,6 +38,55 @@ export const normalizeTwitter = (
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
+};
+
+/**
+ * Normalizes a date value to a timestamp number.
+ *
+ * @param date An object with a $date string or a number.
+ * @returns The date as a timestamp number.
+ */
+export const normalizeDate = (date?: Prisma.JsonValue): number => {
+  if (typeof date === 'number') {
+    return date;
+  } else if (
+    date &&
+    typeof date === 'object' &&
+    '$date' in date &&
+    typeof date.$date === 'string'
+  ) {
+    return new Date(date.$date).getTime();
+  } else {
+    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  }
+};
+
+/**
+ * Normalizes a challenge type value to a number.
+ *
+ * @param challengeType A JSON value that can be a number, string, or null.
+ * @returns The challenge type as a number or null.
+ */
+export const normalizeChallengeType = (
+  challengeType?: Prisma.JsonValue
+): number | null => {
+  if (typeof challengeType === 'number') {
+    return challengeType;
+  } else if (typeof challengeType === 'string') {
+    const parsed = parseInt(challengeType, 10);
+    if (isNaN(parsed)) {
+      throw Error(
+        'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+      );
+    }
+    return parsed;
+  } else if (challengeType === null) {
+    return null;
+  } else {
+    throw Error(
+      'Unexpected challengeType value: ' + JSON.stringify(challengeType)
+    );
+  }
 };
 
 /**
@@ -63,7 +123,7 @@ export const normalizeProfileUI = (
 export const removeNulls = <T extends Record<string, unknown>>(
   obj: T
 ): NoNullProperties<T> =>
-  _.pickBy(obj, value => value !== null) as NoNullProperties<T>;
+  pickBy(obj, value => value !== null) as NoNullProperties<T>;
 
 type NormalizedFile = {
   contents: string;
@@ -73,7 +133,7 @@ type NormalizedFile = {
   path?: string;
 };
 
-type NormalizedChallenge = {
+export type NormalizedChallenge = {
   challengeType?: number;
   completedDate: number;
   files: NormalizedFile[];
@@ -93,9 +153,16 @@ type NormalizedChallenge = {
 export const normalizeChallenges = (
   completedChallenges: CompletedChallenge[]
 ): NormalizedChallenge[] => {
-  const noNullProps = completedChallenges.map(challenge =>
-    removeNulls(challenge)
-  );
+  const fixedDateAndType = completedChallenges.map(challenge => {
+    const { completedDate, challengeType, ...rest } = challenge;
+    return {
+      ...rest,
+      completedDate: normalizeDate(completedDate),
+      challengeType: normalizeChallengeType(challengeType)
+    };
+  });
+
+  const noNullProps = fixedDateAndType.map(challenge => removeNulls(challenge));
   // files.path is optional
   const noNullPath = noNullProps.map(challenge => {
     const { files, ...rest } = challenge;
@@ -106,3 +173,36 @@ export const normalizeChallenges = (
 
   return noNullPath;
 };
+
+type NormalizedSurvey = {
+  title: string;
+  responses: {
+    question: string;
+    response: string;
+  }[];
+};
+
+/**
+ * Remove the extra properties from the SurveyResults array.
+ *
+ * @param surveyResults The SurveyResults array.
+ * @returns The input without the id and userid.
+ */
+export const normalizeSurveys = (
+  surveyResults: Survey[]
+): NormalizedSurvey[] => {
+  return surveyResults.map(survey => {
+    const { title, responses } = survey;
+    return { title, responses };
+  });
+};
+
+/**
+ * Replace null flags with false.
+ * @param flags Object with nullable boolean flags.
+ * @returns Same object with boolean flags, defaulting to false.
+ */
+export const normalizeFlags = <T extends Record<string, boolean | null>>(
+  flags: T
+): DefaultToFalse<T> =>
+  mapValues(flags, flag => flag ?? false) as DefaultToFalse<T>;

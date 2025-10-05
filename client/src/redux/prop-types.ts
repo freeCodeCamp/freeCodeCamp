@@ -1,7 +1,11 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/superblocks';
-import { Themes } from '../components/settings/theme';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
+import { UserThemes } from './types';
+
+export type { ChallengeFile, Ext };
 
 export type Steps = {
   isHonest?: boolean;
@@ -18,36 +22,18 @@ export type CurrentCert = {
 };
 
 export type MarkdownRemark = {
-  fields: [{ component: string; nodeIdentity: string; slug: string }];
-  fileAbsolutePath: string;
   frontmatter: {
     block: string;
-    isBeta: boolean;
     superBlock: SuperBlocks;
     // TODO: make enum like superBlock
     certification: string;
     title: CertTitle;
   };
-  headings: [
-    {
-      depth: number;
-      value: string;
-      id: string;
-    }
-  ];
   html: string;
-  htmlAst: Record<string, unknown>;
   id: string;
-  rawMarkdownBody: string;
-  timeToRead: number;
-  wordCount: {
-    paragraphs: number;
-    sentences: number;
-    words: number;
-  };
 };
 
-export type MultipleChoiceAnswer = {
+type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
 };
@@ -88,7 +74,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-export interface Dialogue {
+interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -99,7 +85,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-export interface SceneCommand {
+interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -110,37 +96,65 @@ export interface SceneCommand {
 }
 
 export type Characters =
+  // English
   | 'Alice'
   | 'Amy'
   | 'Anna'
   | 'Bob'
   | 'Brian'
+  | 'Candidate'
   | 'David'
+  | 'Delivery Man'
+  | 'Expert'
   | 'Jake'
   | 'James'
+  | 'Jessica'
+  | 'Jim'
+  | 'Josh'
   | 'Linda'
   | 'Lisa'
   | 'Maria'
   | 'Mark'
+  | 'Riker'
   | 'Sarah'
+  | 'Second Candidate'
   | 'Sophie'
-  | 'Tom';
+  | 'Tom'
 
-export interface SetupCharacter {
+  // Spanish
+  | 'Alex'
+  | 'Ángela'
+  | 'Camila'
+  | 'Carlos'
+  | 'Elena'
+  | 'Esteban'
+  | 'Joaquín'
+  | 'Julieta'
+  | 'Luis'
+  | 'Luna'
+  | 'Marisol'
+  | 'Mateo'
+  | 'Noelia'
+  | 'René'
+  | 'Sebastián'
+  | 'Diego'
+  | 'Valeria';
+
+interface SetupCharacter {
   character: Characters;
   position: CharacterPosition;
   opacity: number;
   isTalking?: boolean;
 }
 
-export interface SetupAudio {
+interface SetupAudio {
   filename: string;
   startTime: number;
-  startTimestamp?: number;
-  finishTimestamp?: number;
+  startTimestamp: number | null;
+  finishTimestamp: number | null;
 }
 
-export interface SceneSetup {
+interface SceneSetup {
   background: string;
   characters: SetupCharacter[];
   audio: SetupAudio;
@@ -155,39 +169,29 @@ export interface FullScene {
 export interface PrerequisiteChallenge {
   id: string;
   title: string;
+  slug?: string;
 }
-
-export type ChallengeWithCompletedNode = {
-  block: string;
-  challengeType: number;
-  dashedName: string;
-  fields: {
-    slug: string;
-  };
-  id: string;
-  isCompleted: boolean;
-  order: number;
-  superBlock: SuperBlocks;
-  title: string;
-};
 
 export type ChallengeNode = {
   challenge: {
-    audioPath: string;
     block: string;
+    blockType: BlockTypes;
+    blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
     challengeType: number;
     dashedName: string;
+    demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
+    hooks?: Hooks;
     id: string;
     instructions: string;
     isComingSoon: boolean;
@@ -204,16 +208,15 @@ export type ChallengeNode = {
     msTrophyId: string;
     notes: string;
     prerequisites: PrerequisiteChallenge[];
-    removeComments: boolean;
     isLocked: boolean;
-    isPrivate: boolean;
     order: number;
-    question: Question;
+    questions: Question[];
+    quizzes: Quiz[];
     assignments: string[];
     required: Required[];
     scene: FullScene;
     solutions: {
-      [T in FileKey]: FileKeyChallenge;
+      [T: string]: FileKeyChallenge;
     };
     sourceInstanceName: string;
     superOrder: number;
@@ -221,8 +224,8 @@ export type ChallengeNode = {
     tail: string[];
     template: string;
     tests: Test[];
-    time: string;
     title: string;
+    transcript: string;
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
@@ -230,7 +233,92 @@ export type ChallengeNode = {
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
     videoUrl: string;
+    chapter?: string;
+    module?: string;
   };
+};
+
+export interface Hooks {
+  beforeAll?: string;
+  beforeEach?: string;
+  afterEach?: string;
+  afterAll?: string;
+}
+
+export type PageContext = {
+  challengeMeta: ChallengeMeta;
+  projectPreview: {
+    challengeData: ChallengeData;
+  };
+};
+
+export type DailyCodingChallengeNode = {
+  challenge: {
+    date: string;
+    id: string;
+    challengeNumber: number;
+    title: string;
+    description: string;
+    superBlock: 'daily-coding-challenge';
+    block: 'daily-coding-challenge';
+    usesMultifileEditor: true;
+
+    helpCategory: 'JavaScript' | 'Python';
+    challengeType: 28 | 29;
+    fields: {
+      blockName: 'daily-coding-challenge';
+      tests: Test[];
+    };
+    challengeFiles: ChallengeFiles;
+
+    // props to satisfy the show classic component
+    instructions: string;
+    demoType: null;
+    hooks?: { beforeAll: string };
+    hasEditableBoundaries?: false;
+    forumTopicId?: number;
+    notes: string;
+    videoUrl?: string;
+    translationPending: false;
+  };
+};
+
+export type DailyCodingChallengePageContext = {
+  challengeMeta: {
+    block: 'daily-coding-challenge';
+    id: string;
+    superBlock: 'daily-coding-challenge';
+    disableLoopProtectTests: boolean;
+
+    // props to satisfy the show classic component
+    isFirstStep: boolean;
+    nextChallengePath?: string;
+    prevChallengePath?: string;
+    disableLoopProtectPreview: boolean;
+  };
+
+  // props to satisfy the show classic component
+  projectPreview: {
+    challengeData?: null;
+  };
+};
+
+export type DailyCodingChallengeLanguages = 'javascript' | 'python';
+
+export interface CompletedDailyCodingChallenge {
+  id: string;
+  completedDate: number;
+  completedLanguages: DailyCodingChallengeLanguages[];
+}
+
+type Quiz = {
+  questions: QuizQuestion[];
+};
+
+type QuizQuestion = {
+  text: string;
+  distractors: string[];
+  answer: string;
 };
 
 export type CertificateNode = {
@@ -242,7 +330,7 @@ export type CertificateNode = {
 };
 
 export type AllChallengesInfo = {
-  challengeEdges: { node: ChallengeNode }[];
+  challengeNodes: ChallengeNode[];
   certificateNodes: CertificateNode[];
 };
 
@@ -267,6 +355,7 @@ export type Dimensions = {
 export type Test = {
   pass?: boolean;
   err?: string;
+  message?: string;
 } & (ChallengeTest | CertTest);
 
 export type ChallengeTest = {
@@ -284,6 +373,7 @@ export type User = {
   about: string;
   acceptedPrivacyTerms: boolean;
   completedChallenges: CompletedChallenge[];
+  completedChallengeCount: number;
   completedSurveys: SurveyResults[];
   currentChallengeId: string;
   email: string;
@@ -303,9 +393,9 @@ export type User = {
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   sound: boolean;
-  theme: Themes;
+  theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
   username: string;
@@ -356,17 +446,20 @@ export type SavedChallenge = {
   challengeFiles: SavedChallengeFiles;
 };
 
+// TODO: remove unused properties and stop returning them from api? (e.g.
+// history, ext, name)
 export type SavedChallengeFile = {
   fileKey: string;
   ext: Ext;
   name: string;
   history?: string[];
+  editableRegionBoundaries?: number[];
   contents: string;
 };
 
 export type SavedChallengeFiles = SavedChallengeFile[];
 
-export type CompletedChallenge = {
+export interface CompletedChallenge {
   id: string;
   solution?: string | null;
   githubLink?: string;
@@ -376,25 +469,28 @@ export type CompletedChallenge = {
     | Pick<ChallengeFile, 'contents' | 'ext' | 'fileKey' | 'name'>[]
     | null;
   examResults?: GeneratedExamResults;
-};
+}
 
-export type Ext = 'js' | 'html' | 'css' | 'jsx';
-export type FileKey = 'scriptjs' | 'indexhtml' | 'stylescss' | 'indexjsx';
+export interface ChallengeData extends CompletedChallenge {
+  challengeFiles: ChallengeFile[] | null;
+}
 
 export type ChallengeMeta = {
   block: string;
   id: string;
-  introPath: string;
   isFirstStep: boolean;
-  nextChallengePath: string | null;
-  prevChallengePath: string | null;
-  removeComments: boolean;
-  superBlock: SuperBlocks;
+  superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
+  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+} & NavigationPaths;
+
+export type NavigationPaths = {
+  nextChallengePath?: string;
+  prevChallengePath?: string;
 };
 
 export type PortfolioProjectData = {
@@ -410,24 +506,9 @@ export type FileKeyChallenge = {
   ext: Ext;
   head: string;
   id: string;
-  key: FileKey;
+  key: string;
   name: string;
   tail: string;
-};
-
-export type ChallengeFile = {
-  fileKey: string;
-  ext: Ext;
-  name: string;
-  editableRegionBoundaries?: number[];
-  usesMultifileEditor?: boolean;
-  error: null | string;
-  head: string;
-  tail: string;
-  seed: string;
-  contents: string;
-  id: string;
-  history: string[];
 };
 
 export type ChallengeFiles = ChallengeFile[] | null;
@@ -452,7 +533,7 @@ export interface GeneratedExamQuestion {
   answers: GeneratedExamAnswer[];
 }
 
-export interface GenerateExamResponse {
+interface GenerateExamResponse {
   error?: string;
   generatedExam?: GeneratedExamQuestion[];
 }
@@ -462,6 +543,9 @@ export interface GenerateExamResponseWithData {
   data: GenerateExamResponse;
 }
 
+export interface ExamTokenResponse {
+  examEnvironmentAuthorizationToken: string;
+}
 // User Exam (null until they answer the question)
 interface UserExamAnswer {
   id: string | null;
