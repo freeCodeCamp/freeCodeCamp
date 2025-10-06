@@ -5,7 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "workshop-todo-app",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     {
       "id": "64e4e4c4ec263b62ae7bf54d",

@@ -6,6 +6,6 @@
     { "id": "67f39d848979082814c07d9c", "title": "Review Classes and Objects" }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

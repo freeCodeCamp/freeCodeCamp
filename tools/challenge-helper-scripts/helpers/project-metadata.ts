@@ -8,7 +8,7 @@ import { getProjectPath } from './get-project-info';
 export type Meta = {
   name: string;
   blockLayout: string;
-  blockType: string;
+  blockLabel: string;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;

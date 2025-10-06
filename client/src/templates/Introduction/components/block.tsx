@@ -22,7 +22,7 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../../shared-dist/config/blocks';
 import CheckMark from './check-mark';
 import {
@@ -67,7 +67,7 @@ interface ChallengeInfo {
 
 interface BlockProps {
   block: string;
-  blockType: BlockTypes | null;
+  blockLabel: BlockLabel | null;
   challenges: ChallengeInfo[];
   completedChallengeIds: string[];
   isExpanded: boolean;
@@ -108,7 +108,7 @@ export class Block extends Component<BlockProps> {
   render(): ReactNode {
     const {
       block,
-      blockType,
+      blockLabel,
       completedChallengeIds,
       challenges,
       isExpanded,
@@ -187,7 +187,7 @@ export class Block extends Component<BlockProps> {
         >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!isAudited && (
               <div className='block-cta-wrapper'>
                 <Link
@@ -243,7 +243,7 @@ export class Block extends Component<BlockProps> {
         >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!isAudited && (
               <div className='block-cta-wrapper'>
                 <Link
@@ -323,7 +323,7 @@ export class Block extends Component<BlockProps> {
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
@@ -387,7 +387,7 @@ export class Block extends Component<BlockProps> {
             )}
           </div>
           <div className='title-wrapper map-title'>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
@@ -427,7 +427,7 @@ export class Block extends Component<BlockProps> {
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}

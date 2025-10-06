@@ -1,6 +1,6 @@
 {
   "name": "Error Handling Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-error-handling",
