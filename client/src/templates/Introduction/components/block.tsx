@@ -22,7 +22,7 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
   BlockLayouts,
-  BlockLabel
+  BlockLabel as BlockLabelType
 } from '../../../../../shared-dist/config/blocks';
 import CheckMark from './check-mark';
 import {
@@ -67,7 +67,7 @@ interface ChallengeInfo {
 
 interface BlockProps {
   block: string;
-  blockLabel: BlockLabel | null;
+  blockLabel: BlockLabelType | null;
   challenges: ChallengeInfo[];
   completedChallengeIds: string[];
   isExpanded: boolean;
