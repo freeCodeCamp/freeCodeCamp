@@ -1,9 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BlockLabel } from '../../../../../shared-dist/config/blocks';
+import { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
 
 interface BlockLabelProps {
-  blockLabel: BlockLabel;
+  blockLabel: BlockLabelType;
 }
 
 function BlockLabel({ blockLabel }: BlockLabelProps): JSX.Element {

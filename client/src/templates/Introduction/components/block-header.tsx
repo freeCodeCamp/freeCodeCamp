@@ -1,7 +1,7 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
 
-import { BlockLabel } from '../../../../../shared-dist/config/blocks';
+import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
@@ -11,7 +11,7 @@ import BlockIntros from './block-intros';
 interface BlockHeaderProps {
   blockDashed: string;
   blockTitle: string;
-  blockLabel: BlockLabel | null;
+  blockLabel: BlockLabelType | null;
   courseCompletionStatus: string;
   completedCount: number;
   handleClick: () => void;
