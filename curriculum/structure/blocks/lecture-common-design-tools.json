@@ -1,6 +1,6 @@
 {
   "name": "Common Design Tools",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-common-design-tools",

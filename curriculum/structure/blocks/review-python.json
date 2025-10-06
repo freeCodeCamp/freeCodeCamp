@@ -6,6 +6,6 @@
     { "id": "67f39e391c9b373069def02c", "title": "Python Review" }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

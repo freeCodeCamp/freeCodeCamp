@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "exam-javascript-certification",
   "helpCategory": "JavaScript",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
   "challengeOrder": [
     {

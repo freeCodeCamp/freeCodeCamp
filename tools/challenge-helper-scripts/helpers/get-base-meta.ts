@@ -9,7 +9,7 @@ interface Meta {
   }>;
   usesMultifileEditor?: boolean;
   hasEditableBoundaries?: boolean;
-  blockType?: string;
+  blockLabel?: string;
   blockLayout?: string;
   order?: number;
 }
@@ -36,14 +36,14 @@ const stepMeta = {
 
 const fullStackStepMeta = {
   ...baseMeta,
-  blockType: '',
+  blockLabel: '',
   blockLayout: '',
   usesMultifileEditor: true
 };
 
 const quizMeta = {
   ...baseMeta,
-  blockType: 'quiz',
+  blockLabel: 'quiz',
   blockLayout: 'link'
 };
 

@@ -1,6 +1,6 @@
 {
   "name": "Understanding Modules, Imports, and Exports",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-modules-imports-and-exports",

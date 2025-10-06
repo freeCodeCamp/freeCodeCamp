@@ -1,6 +1,6 @@
 {
   "name": "Lists, Links, CSS Background and Borders Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-backgrounds-and-borders",

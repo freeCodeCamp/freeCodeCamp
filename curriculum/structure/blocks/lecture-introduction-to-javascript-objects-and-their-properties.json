@@ -1,6 +1,6 @@
 {
   "name": "Introduction to JavaScript Objects and Their Properties",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript-objects-and-their-properties",

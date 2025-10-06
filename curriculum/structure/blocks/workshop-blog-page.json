@@ -1,6 +1,6 @@
 {
   "name": "Build a Cat Blog Page",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

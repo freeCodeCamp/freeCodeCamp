@@ -1,6 +1,6 @@
 {
   "name": "React Forms, Data Fetching and Routing Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-react-forms-data-fetching-and-routing",

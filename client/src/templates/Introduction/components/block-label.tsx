@@ -1,17 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BlockTypes } from '../../../../../shared-dist/config/blocks';
+import { BlockLabel } from '../../../../../shared-dist/config/blocks';
 
 interface BlockLabelProps {
-  blockType: BlockTypes;
+  blockLabel: BlockLabel;
 }
 
-function BlockLabel({ blockType }: BlockLabelProps): JSX.Element {
+function BlockLabel({ blockLabel }: BlockLabelProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <div className={`block-label block-label-${blockType}`}>
-      {t(`learn.block-type.${blockType}`)}
+    <div className={`block-label block-label-${blockLabel}`}>
+      {t(`learn.block-type.${blockLabel}`)}
     </div>
   );
 }

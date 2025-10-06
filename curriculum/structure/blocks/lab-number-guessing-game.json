@@ -1,6 +1,6 @@
 {
   "name": "Build a Number Guessing Game",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "lab-number-guessing-game",

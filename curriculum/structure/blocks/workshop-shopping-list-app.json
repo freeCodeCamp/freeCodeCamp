@@ -1,6 +1,6 @@
 {
   "name": "Build a Shopping List App",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

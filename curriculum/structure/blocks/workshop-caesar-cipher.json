@@ -107,6 +107,6 @@
     }
   ],
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "helpCategory": "Python"
 }

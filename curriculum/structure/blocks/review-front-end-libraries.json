@@ -1,6 +1,6 @@
 {
   "name": "Front End Libraries Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-front-end-libraries",

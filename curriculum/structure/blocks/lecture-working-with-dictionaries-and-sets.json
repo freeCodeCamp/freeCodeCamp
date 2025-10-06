@@ -2,7 +2,7 @@
   "name": "Working with Dictionaries and Sets",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-dictionaries-and-sets",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

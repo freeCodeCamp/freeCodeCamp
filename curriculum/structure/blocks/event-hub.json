@@ -1,6 +1,6 @@
 {
   "name": "Build an Event Hub",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,

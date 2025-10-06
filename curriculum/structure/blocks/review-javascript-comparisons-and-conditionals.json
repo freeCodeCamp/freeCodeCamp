@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Comparisons and Conditionals Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript-comparisons-and-conditionals",

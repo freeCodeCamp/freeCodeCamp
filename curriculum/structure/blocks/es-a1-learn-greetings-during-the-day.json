@@ -4,7 +4,7 @@
   "dashedName": "es-a1-learn-greetings-during-the-day",
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
-  "blockType": "learn",
+  "blockLabel": "learn",
   "challengeOrder": [
     { "id": "68c84d44d91406c37b3ad73f", "title": "Dialogue 1: I'm Tom" }
   ]

@@ -1,6 +1,6 @@
 {
   "name": "Local Storage and CRUD Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-local-storage-and-crud",

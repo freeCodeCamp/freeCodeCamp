@@ -7,6 +7,6 @@
     { "id": "67172b43f84bcd2dec238a3d", "title": "Build a Book Organizer" }
   ],
   "helpCategory": "JavaScript",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }
