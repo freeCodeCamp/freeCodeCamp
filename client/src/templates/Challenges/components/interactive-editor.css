@@ -9,5 +9,5 @@
 
 .sp-tab-button:hover {
   background-color: var(--gray-10);
-  color: var(--gray-90);
+  color: var(--gray-90) !important;
 }
