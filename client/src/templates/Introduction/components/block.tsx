@@ -20,6 +20,7 @@ import { completedChallengesSelector } from '../../../redux/selectors';
 import { playTone } from '../../../utils/tone';
 import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
+import { fetchUser } from '../../../redux/actions';
 import {
   BlockLayouts,
   BlockLabel as BlockLabelType
@@ -32,6 +33,7 @@ import {
 } from './challenges';
 import BlockLabel from './block-label';
 import BlockHeader from './block-header';
+import ResetProgressModal from './reset-progress-modal';
 
 import '../intro.css';
 import './block.css';
@@ -52,7 +54,7 @@ const mapStateToProps = (state: unknown, ownProps: { block: string }) => {
 };
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
-  bindActionCreators({ toggleBlock }, dispatch);
+  bindActionCreators({ toggleBlock, fetchUser }, dispatch);
 
 interface ChallengeInfo {
   id: string;
@@ -73,16 +75,27 @@ interface BlockProps {
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
+  fetchUser: typeof fetchUser;
   accordion?: boolean;
 }
 
-export class Block extends Component<BlockProps> {
+interface BlockState {
+  showResetModal: boolean;
+}
+
+export class Block extends Component<BlockProps, BlockState> {
   static displayName: string;
   constructor(props: BlockProps) {
     super(props);
 
+    this.state = {
+      showResetModal: false
+    };
     this.handleBlockClick = this.handleBlockClick.bind(this);
     this.handleChallengeClick = this.handleChallengeClick.bind(this);
+    this.handleResetClick = this.handleResetClick.bind(this);
+    this.handleResetConfirm = this.handleResetConfirm.bind(this);
+    this.handleResetModalClose = this.handleResetModalClose.bind(this);
   }
 
   handleBlockClick = (): void => {
@@ -98,6 +111,19 @@ export class Block extends Component<BlockProps> {
       .replace(/\s+/g, '-')
       .replace(/[^a-z0-9-]/g, '');
     window.history.pushState(null, '', `#${dashedBlock}`);
+  };
+
+  handleResetClick = (): void => {
+    this.setState({ showResetModal: true });
+  };
+
+  handleResetConfirm = (): void => {
+    const { fetchUser } = this.props;
+    fetchUser();
+  };
+
+  handleResetModalClose = (): void => {
+    this.setState({ showResetModal: false });
   };
 
   render(): ReactNode {
@@ -275,6 +301,9 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
+            showReset={true}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -325,6 +354,9 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
+            showReset={true}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -422,6 +454,9 @@ export class Block extends Component<BlockProps> {
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
             accordion={accordion}
+            showReset={true}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -479,6 +514,9 @@ export class Block extends Component<BlockProps> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={blockIntroArr}
+            showReset={true}
+            isResetDisabled={completedCount === 0}
+            onResetClick={this.handleResetClick}
           />
 
           {isExpanded && (
@@ -536,6 +574,9 @@ export class Block extends Component<BlockProps> {
           percentageCompleted={percentageCompleted}
           accordion={accordion}
           blockUrl={challenges?.[0]?.fields?.slug ?? ''}
+          showReset={true}
+          isResetDisabled={completedCount === 0}
+          onResetClick={this.handleResetClick}
         />
       </>
     );
@@ -558,6 +599,13 @@ export class Block extends Component<BlockProps> {
           {!chapterBasedSuperBlocks.includes(superBlock) && (
             <Spacer size='xs' />
           )}
+          <ResetProgressModal
+            blockTitle={blockTitle}
+            blockDashedName={block}
+            show={this.state.showResetModal}
+            onHide={this.handleResetModalClose}
+            onResetComplete={this.handleResetConfirm}
+          />
         </>
       )
     );

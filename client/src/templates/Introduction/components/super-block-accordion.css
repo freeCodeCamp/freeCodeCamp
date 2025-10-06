@@ -22,13 +22,65 @@
   margin-bottom: 16px;
 }
 
+.super-block-accordion .chapter-header-wrapper,
+.super-block-accordion .module-header-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.super-block-accordion .chapter-header-wrapper .chapter-button-main,
+.super-block-accordion .module-header-wrapper .module-button-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.super-block-accordion .chapter-header-wrapper .chapter-button-toggle,
+.super-block-accordion .module-header-wrapper .module-button-toggle {
+  flex-shrink: 0;
+}
+
+.super-block-accordion .chapter-header-wrapper .block-reset-button,
+.super-block-accordion .module-header-wrapper .block-reset-button {
+  padding: 8px;
+  flex-shrink: 0;
+}
+
+.super-block-accordion .chapter-header-wrapper:hover .block-reset-button,
+.super-block-accordion .module-header-wrapper:hover .block-reset-button {
+  opacity: 1;
+}
+
+.super-block-accordion
+  .chapter-header-wrapper:hover
+  .block-reset-button:disabled,
+.super-block-accordion
+  .module-header-wrapper:hover
+  .block-reset-button:disabled {
+  opacity: 0.3;
+}
+
+.super-block-accordion .chapter-header-wrapper {
+  background-color: var(--primary-background);
+}
+
 .super-block-accordion .chapter-button {
   border: none;
-  background-color: var(--primary-background);
-  width: 100%;
+  background-color: transparent;
   padding: 16px;
   display: flex;
   align-items: center;
+}
+
+.super-block-accordion .chapter-button-toggle {
+  padding-left: 0;
+}
+
+.super-block-accordion .chapter-link {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  background-color: var(--primary-background);
+  padding: 16px;
   justify-content: space-between;
 }
 
@@ -41,7 +93,8 @@
   max-height: 40px;
 }
 
-.super-block-accordion .chapter-button .chapter-button-left {
+.super-block-accordion .chapter-button .chapter-button-left,
+.super-block-accordion .chapter-link .chapter-button-left {
   display: flex;
   align-items: center;
   text-align: start;
@@ -71,7 +124,8 @@ button .block-header-button-text {
   justify-content: start;
 }
 
-.super-block-accordion .chapter-button .chapter-button-right {
+.super-block-accordion .chapter-button .chapter-button-right,
+.super-block-accordion .chapter-link .chapter-button-right {
   display: flex;
   align-items: center;
   column-gap: 15px;
@@ -91,13 +145,20 @@ button .block-header-button-text {
 .super-block-accordion .block-header {
   border: none;
   background-color: transparent;
-  width: 100%;
   padding: 10px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-weight: normal;
   gap: 10px;
+}
+
+.super-block-accordion .module-button-toggle {
+  padding-left: 0;
+}
+
+.super-block-accordion .block-header {
+  width: 100%;
+  justify-content: space-between;
 }
 
 .super-block-accordion .module-button-left,
@@ -120,8 +181,21 @@ button .block-header-button-text {
   color: var(--quaternary-color);
 }
 
-.super-block-accordion .chapter-button:hover,
-.super-block-accordion .module-button:hover,
+.super-block-accordion .chapter-header-wrapper:hover,
+.super-block-accordion .module-header-wrapper:hover {
+  background-color: var(--tertiary-background);
+}
+
+.super-block-accordion .chapter-header-wrapper:hover .chapter-button,
+.super-block-accordion .module-header-wrapper:hover .module-button {
+  color: var(--primary-text);
+}
+
+.super-block-accordion .chapter-link:hover {
+  background-color: var(--tertiary-background);
+  color: var(--primary-text);
+}
+
 .super-block-accordion .block-header:hover {
   background-color: var(--tertiary-background);
   color: var(--primary-text);

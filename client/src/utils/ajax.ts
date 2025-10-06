@@ -330,6 +330,12 @@ export function postResetProgress(): Promise<ResponseWithData<void>> {
   return post('/account/reset-progress', {});
 }
 
+export function postResetModule(body: {
+  blockId: string;
+}): Promise<ResponseWithData<void>> {
+  return post('/account/reset-module', body);
+}
+
 export function postUserToken(): Promise<ResponseWithData<void>> {
   return post('/user/user-token', {});
 }
