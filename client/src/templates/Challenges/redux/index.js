@@ -21,7 +21,6 @@ const initialState = {
     superBlock: '',
     block: '',
     blockHashSlug: '/',
-    blockType: '',
     id: '',
     isLastChallengeInBlock: false,
     nextChallengePath: '/',

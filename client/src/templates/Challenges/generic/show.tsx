@@ -76,7 +76,6 @@ const ShowGeneric = ({
         assignments,
         bilibiliIds,
         block,
-        blockType,
         description,
         explanation,
         challengeType,
@@ -118,7 +117,6 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
-      blockType,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -328,7 +326,6 @@ export const query = graphql`
           cid
         }
         block
-        blockType
         challengeType
         description
         explanation
