@@ -118,11 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
-    "start": "开始",
-    "go-to-today": "访问今天的挑战",
-    "go-to-today-long": "访问今天的编程挑战",
-    "go-to-archive": "访问存档",
-    "go-to-archive-long": "访问每日编程挑战存档"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "每日编程挑战",
@@ -214,6 +211,7 @@
     "next-heading": "试试我们的测试版课程：",
     "upcoming-heading": "即将推出的课程：",
     "catalog-heading": "探索我们的目录：",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -662,6 +660,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
