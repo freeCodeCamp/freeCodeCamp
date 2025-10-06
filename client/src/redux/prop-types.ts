@@ -514,7 +514,6 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
-  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
