@@ -43,6 +43,7 @@ export const newUser = (email: string) => ({
   isHonest: false,
   isInfosecCertV7: false,
   isInfosecQaCert: false,
+  isJavascriptCertV9: false,
   isJsAlgoDataStructCert: false,
   isJsAlgoDataStructCertV8: false,
   isMachineLearningPyCertV7: false,
