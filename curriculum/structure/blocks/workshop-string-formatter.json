@@ -1,0 +1,11 @@
+{
+  "name": "Build a String Formatter",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-string-formatter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e4276483b0c71658aab1ca", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
