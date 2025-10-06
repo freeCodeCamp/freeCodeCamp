@@ -10,6 +10,7 @@ import DropDown from '../../../assets/icons/dropdown';
 import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
 import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
+import javascriptV9 from '../../../../../curriculum/structure/superblocks/javascript-v9.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
@@ -189,6 +190,8 @@ export const SuperBlockAccordion = ({
         return fullStackCert;
       case SuperBlocks.A1Spanish:
         return a1Spanish;
+      case SuperBlocks.JsV9:
+        return javascriptV9;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }
@@ -287,7 +290,9 @@ export const SuperBlockAccordion = ({
           <Chapter
             key={chapter.name}
             dashedName={chapter.name}
-            isExpanded={expandedChapter === chapter.name}
+            isExpanded={
+              expandedChapter === chapter.name || allChapters.length === 1
+            }
             comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}

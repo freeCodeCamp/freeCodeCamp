@@ -27,35 +27,31 @@ Submit your page when you think you've got it right.
 BCrypt should be a dependency.
 
 ```js
-  $.get(code + '/_api/package.json').then(
-    (data) => {
-      var packJson = JSON.parse(data);
-      assert.property(
-        packJson.dependencies,
-        'bcrypt',
-        'Your project should list "bcrypt" as a dependency'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+const response = await fetch(code + '/_api/package.json');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.text();
+var packJson = JSON.parse(data);
+assert.property(
+  packJson.dependencies,
+  'bcrypt',
+  'Your project should list "bcrypt" as a dependency'
+);
 ```
 
 BCrypt should be properly required.
 
 ```js
-  $.get(code + '/_api/server.js').then(
-    (data) => {
-      assert.match(
-        data,
-        /bcrypt.*=.*require.*('|")bcrypt('|")/gi,
-        'You should correctly require and instantiate socket.io as io.'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.statusText);
-    }
-  );
+const response = await fetch(code + '/_api/server.js');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.text();
+assert.match(
+  data,
+  /bcrypt.*=.*require.*('|")bcrypt('|")/gi,
+  'You should correctly require and instantiate bcrypt as bcrypt.'
+);
 ```
 

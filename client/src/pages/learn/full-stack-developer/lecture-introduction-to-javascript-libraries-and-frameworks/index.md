@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Introduction to JavaScript Libraries and Frameworks
 
-In these lecture videos, you will get an introduction to JavaScript libraries and frameworks.
+In these lessons, you will get an introduction to JavaScript libraries and frameworks.

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Abstraction
 
-Learn about Understanding Abstraction in these lectures.
+Learn about Understanding Abstraction in these lessons.
