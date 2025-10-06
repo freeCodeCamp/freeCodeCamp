@@ -355,7 +355,18 @@
       "reset-confirm": "Reset everything. I want to start from the beginning",
       "verify-text": "To verify, type \"{{ verifyText }}\" below:",
       "verify-reset-text": "I agree that all progress will be lost",
-      "verify-delete-text": "I agree to delete my account"
+      "verify-delete-text": "I agree to delete my account",
+      "reset-module": "Reset a specific module",
+      "reset-module-heading": "Reset Module Progress",
+      "reset-module-p1": "This will permanently delete and reset the following for the selected module:",
+      "reset-module-item-1": "Your progress through each step/challenge in this module (all completed challenges will be lost)",
+      "reset-module-item-2": "Any saved code for challenges in this module",
+      "reset-module-p2": "Your certifications will NOT be affected.",
+      "reset-module-p3": "We won't be able to recover any of it for you later, even if you change your mind.",
+      "block-id-label": "Module ID (dashedName):",
+      "nevermind-3": "Nevermind, I don't want to reset this module",
+      "reset-module-confirm": "Reset this module. I understand this cannot be undone",
+      "verify-reset-module-text": "I agree to reset this module"
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
@@ -939,6 +950,7 @@
     "went-wrong": "Something went wrong, please check and try again",
     "account-deleted": "Your account has been successfully deleted",
     "progress-reset": "Your progress has been reset",
+    "module-reset": "Your module progress has been reset",
     "not-authorized": "You are not authorized to continue on this route",
     "could-not-find": "We couldn't find what you were looking for. Please check and try again",
     "wrong-updating": "Something went wrong updating your account. Please check and try again",

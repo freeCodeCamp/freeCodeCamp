@@ -98,6 +98,9 @@ export const verifyCertError = createAction(types.verifyCertError);
 export const resetProgress = createAction(types.resetProgress);
 export const resetProgressError = createAction(types.resetProgressError);
 
+export const resetModule = createAction(types.resetModule);
+export const resetModuleError = createAction(types.resetModuleError);
+
 export const resetMyEditorLayout = createAction(types.resetMyEditorLayout);
 export const resetMyEditorLayoutComplete = createAction(
   types.resetMyEditorLayoutComplete
