@@ -35,6 +35,7 @@ import {
   getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
+import { getChallengeIdsByBlock } from '../../utils/get-challenges.js';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -194,6 +195,98 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       });
 
       return {};
+    }
+  );
+
+  fastify.post(
+    '/account/reset-module',
+    {
+      schema: schemas.resetModule
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+
+      const { blockId } = req.body;
+      logger.info(
+        `User ${req.user?.id} requested module reset for block: ${blockId}`
+      );
+
+      // Get challenge IDs for this block from curriculum
+      const challengeIdsToReset = getChallengeIdsByBlock(blockId);
+
+      // Fetch user's current data
+      const user = await fastify.prisma.user.findUnique({
+        where: { id: req.user!.id },
+        select: {
+          completedChallenges: true,
+          savedChallenges: true,
+          partiallyCompletedChallenges: true
+        }
+      });
+
+      if (!user) {
+        logger.error(`User ${req.user?.id} not found`);
+        void reply.code(500);
+        return {
+          message: 'User not found',
+          type: 'error'
+        };
+      }
+
+      // Filter out challenges from this block
+
+      const filteredCompletedChallenges = (
+        user.completedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      const filteredSavedChallenges = (
+        user.savedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      const filteredPartiallyCompletedChallenges = (
+        user.partiallyCompletedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      // Calculate how many challenges were removed
+      const completedRemoved =
+        (user.completedChallenges as unknown[]).length -
+        filteredCompletedChallenges.length;
+      const savedRemoved =
+        (user.savedChallenges as unknown[]).length -
+        filteredSavedChallenges.length;
+      const partiallyCompletedRemoved =
+        (user.partiallyCompletedChallenges as unknown[]).length -
+        filteredPartiallyCompletedChallenges.length;
+
+      // Update user with filtered challenges
+      await fastify.prisma.user.update({
+        where: { id: req.user!.id },
+        data: {
+          completedChallenges: filteredCompletedChallenges as never,
+          savedChallenges: filteredSavedChallenges as never,
+          partiallyCompletedChallenges:
+            filteredPartiallyCompletedChallenges as never
+        }
+      });
+
+      return {
+        blockId,
+        completedChallengesRemoved: completedRemoved,
+        savedChallengesRemoved: savedRemoved,
+        partiallyCompletedChallengesRemoved: partiallyCompletedRemoved
+      };
     }
   );
   // TODO(Post-MVP): POST -> PUT
