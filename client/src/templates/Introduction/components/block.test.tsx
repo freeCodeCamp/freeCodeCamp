@@ -87,7 +87,9 @@ const defaultProps = {
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
   superBlock: SuperBlocks.FullStackDeveloperV9,
-  toggleBlock: vi.fn()
+  toggleBlock: vi.fn(),
+  resetModule: vi.fn(),
+  fetchUser: vi.fn()
 };
 
 describe('<Block />', () => {

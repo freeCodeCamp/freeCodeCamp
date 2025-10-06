@@ -44,6 +44,7 @@ export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
 export { reportUser } from './schemas/user/report-user.js';
 export { resetMyProgress } from './schemas/user/reset-my-progress.js';
+export { resetModule } from './schemas/user/reset-module.js';
 export { submitSurvey } from './schemas/user/submit-survey.js';
 export {
   userExamEnvironmentToken,

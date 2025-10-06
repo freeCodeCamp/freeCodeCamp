@@ -2,9 +2,24 @@ import React from 'react';
 import { render, screen, within } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import '@testing-library/jest-dom/vitest';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockAccordion } from './super-block-accordion';
 import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
+
+// Create a minimal mock store for testing
+const createMockStore = () =>
+  configureStore({
+    reducer: {
+      app: () => ({})
+    }
+  });
+
+const renderWithProvider = (ui: React.ReactElement) => {
+  const store = createMockStore();
+  return render(<Provider store={store}>{ui}</Provider>);
+};
 
 const mockStructure = {
   superBlock: SuperBlocks.RespWebDesign,
@@ -36,7 +51,7 @@ const mockChallenge = {
 
 describe('SuperBlockAccordion', () => {
   it('does not show completed checkmark when there are zero challenges in a chapter', () => {
-    render(
+    renderWithProvider(
       <SuperBlockAccordion
         challenges={[]}
         superBlock={SuperBlocks.RespWebDesign}
@@ -76,7 +91,7 @@ describe('SuperBlockAccordion', () => {
       ]
     };
 
-    render(
+    renderWithProvider(
       <SuperBlockAccordion
         challenges={[mockChallenge]}
         superBlock={SuperBlocks.RespWebDesign}
@@ -86,12 +101,8 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    const moduleButtons = screen.getAllByRole('button', {
-      name: /test-module/i
-    });
-    const moduleButton = moduleButtons[0];
-
-    const moduleRight = within(moduleButton).getByTestId('module-button-right');
+    // The module-button-right is now a separate toggle button with the testid
+    const moduleRight = screen.getByTestId('module-button-right');
     const moduleSteps = within(moduleRight).getByText(
       /learn\.steps-completed/i
     );
@@ -119,7 +130,7 @@ describe('SuperBlockAccordion', () => {
       ]
     };
 
-    render(
+    renderWithProvider(
       <SuperBlockAccordion
         challenges={[mockChallenge]}
         superBlock={SuperBlocks.RespWebDesign}
@@ -129,12 +140,8 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    const moduleButtons = screen.getAllByRole('button', {
-      name: /test-module/i
-    });
-    const moduleButton = moduleButtons[0];
-
-    const moduleRight = within(moduleButton).getByTestId('module-button-right');
+    // The module-button-right is now a separate toggle button with the testid
+    const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 
@@ -158,7 +165,7 @@ describe('SuperBlockAccordion', () => {
       ]
     };
 
-    render(
+    renderWithProvider(
       <SuperBlockAccordion
         challenges={[]}
         superBlock={SuperBlocks.RespWebDesign}
@@ -168,12 +175,8 @@ describe('SuperBlockAccordion', () => {
       />
     );
 
-    const moduleButtons = screen.getAllByRole('button', {
-      name: /test-module/i
-    });
-    const moduleButton = moduleButtons[0];
-
-    const moduleRight = within(moduleButton).getByTestId('module-button-right');
+    // The module-button-right is now a separate toggle button with the testid
+    const moduleRight = screen.getByTestId('module-button-right');
     expect(within(moduleRight).queryByText(/steps/i)).not.toBeInTheDocument();
   });
 });

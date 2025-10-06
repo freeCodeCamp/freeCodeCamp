@@ -15,3 +15,65 @@
 .accordion-block-expanded .map-challenges-grid {
   margin: 0 15px 18px;
 }
+
+.block-header-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.block-header-wrapper .block-grid-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.block-reset-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  color: var(--foreground-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition:
+    opacity 0.2s,
+    color 0.2s,
+    background-color 0.2s;
+}
+
+.block-header-wrapper:hover .block-reset-button,
+.block-header-wrapper .block-reset-button:focus {
+  opacity: 1;
+  color: var(--primary-text);
+}
+
+.block-header-wrapper:hover .block-reset-button:hover,
+.block-header-wrapper .block-reset-button:hover {
+  color: var(--primary-text);
+  background-color: var(--quaternary-background);
+}
+
+.block-reset-button:focus {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
+}
+
+.block-reset-button:disabled {
+  opacity: 0;
+  cursor: not-allowed;
+}
+
+.block-header-wrapper:hover .block-reset-button:disabled {
+  opacity: 0.3;
+  color: var(--primary-text);
+}
+
+.block-reset-button:disabled:hover {
+  color: inherit;
+}
