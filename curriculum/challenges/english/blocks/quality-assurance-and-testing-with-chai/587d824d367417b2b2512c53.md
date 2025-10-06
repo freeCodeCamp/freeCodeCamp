@@ -21,47 +21,41 @@ Within `tests/1_unit-tests.js` under the test labeled `#14` in the `Strings` sui
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=13').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=13');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `include` vs. `notInclude`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=13').then(
-    (data) => {
-      assert.equal(
-        data.assertions[0].method,
-        'include',
-        "'Arrow' contains 'row'..."
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=13');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[0].method,
+  'include',
+  "'Arrow' contains 'row'..."
+);
 ```
 
 You should choose the correct method for the second assertion - `include` vs. `notInclude`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=13').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'notInclude',
-        "... a 'dart' doesn't contain a 'queue'"
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=unit&n=13');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(
+  data.assertions[1].method,
+  'notInclude',
+  "... a 'dart' doesn't contain a 'queue'"
+);
 ```
 

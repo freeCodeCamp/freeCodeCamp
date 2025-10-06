@@ -1,8 +1,17 @@
+import {
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  vi,
+  MockInstance
+} from 'vitest';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
+import { getLangCode } from '../../../../../shared-dist/config/i18n';
 import HeatMap from './heat-map';
 
 const { clientLocale } = envData;
@@ -24,11 +33,10 @@ props.calendar[date1] = 1;
 props.calendar[date2] = 1;
 props.calendar[date3] = 1;
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let dateNowMockFn: jest.MockInstance<any, unknown[]>;
+let dateNowMockFn: MockInstance;
 
 beforeEach(() => {
-  dateNowMockFn = jest.spyOn(Date, 'now').mockImplementation(() => now);
+  dateNowMockFn = vi.spyOn(Date, 'now').mockImplementation(() => now);
 });
 
 afterEach(() => {

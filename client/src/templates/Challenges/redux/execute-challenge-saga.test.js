@@ -1,8 +1,23 @@
+// All tests use expectSaga which the eslint-plugin-vitest plugin does not
+// recognize
+/* eslint-disable vitest/expect-expect */
 import { expectSaga } from 'redux-saga-test-plan';
+import { describe, it, vi } from 'vitest';
 
-jest.mock('redux-saga/effects', () => ({
-  ...jest.requireActual('redux-saga/effects'),
-  delay: jest.fn()
+import { previewChallengeSaga, executeTests } from './execute-challenge-saga';
+
+vi.mock('redux-saga/effects', async importOriginal => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    delay: vi.fn()
+  };
+});
+
+vi.mock('i18next', async () => ({
+  default: {
+    t: key => key
+  }
 }));
 
 const initialState = {
@@ -14,13 +29,11 @@ function reducer(state = initialState) {
   return state;
 }
 
-import { previewChallengeSaga } from './execute-challenge-saga';
-
 const challengeMounted = { type: 'challenge.challengeMounted' };
 const previewMounted = { type: 'challenge.previewMounted' };
 const resetChallenge = { type: 'challenge.resetChallenge' };
 
-describe('execute-challenge-saga', () => {
+describe('previewChallengeSaga', () => {
   it('flushes logs on challengeMounted', () => {
     return expectSaga(previewChallengeSaga, challengeMounted)
       .withReducer(reducer)
@@ -40,5 +53,40 @@ describe('execute-challenge-saga', () => {
       .withReducer(reducer)
       .not.put({ type: 'challenge.initLogs' })
       .silentRun();
+  });
+});
+
+describe('executeTests generator', () => {
+  it('sets a special message for IndentationErrors', () => {
+    const mockTestRunner = () => {
+      return [
+        {
+          err: {
+            type: 'IndentationError',
+            message: 'Unexpected token',
+            stack: '...'
+          }
+        }
+      ];
+    };
+
+    const tests = [{ testString: 'assert(true);', text: 'Test 1' }];
+
+    return expectSaga(executeTests, mockTestRunner, tests)
+      .put({
+        type: 'challenge.updateConsole',
+        payload: '<p>1. learn.indentation-error</p>'
+      })
+      .returns([
+        {
+          err: 'Unexpected token\n...',
+          text: 'Test 1',
+          testString: 'assert(true);',
+          running: false,
+          message: '<p>learn.indentation-error</p>',
+          stack: '...'
+        }
+      ])
+      .run();
   });
 });

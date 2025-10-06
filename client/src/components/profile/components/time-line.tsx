@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared/config/i18n';
+import { getLangCode } from '../../../../../shared-dist/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regenerateMissingProperties } from '../../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../../../shared-dist/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import type {
   ChallengeData,
@@ -21,7 +21,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared/config/curriculum';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(

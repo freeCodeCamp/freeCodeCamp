@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Inheritance and Polymorphism
 
-Learn about Understanding Inheritance and Polymorphism in these lectures.
+Learn about Understanding Inheritance and Polymorphism in these lessons.

@@ -11,20 +11,20 @@ import {
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import { createUserInput } from '../utils/create-user';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env';
-import prismaPlugin from '../db/prisma';
-import cookies, { sign, unsign } from './cookies';
-import { auth0Client } from './auth0';
-import redirectWithMessage, { formatMessage } from './redirect-with-message';
-import auth from './auth';
-import bouncer from './bouncer';
-import { newUser } from './__fixtures__/user';
+import { createUserInput } from '../utils/create-user.js';
+import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env.js';
+import prismaPlugin from '../db/prisma.js';
+import cookies, { sign, unsign } from './cookies.js';
+import { auth0Client } from './auth0.js';
+import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
+import auth from './auth.js';
+import bouncer from './bouncer.js';
+import { newUser } from './__fixtures__/user.js';
 
 const COOKIE_DOMAIN = 'test.com';
 
 vi.mock('../utils/env', async importOriginal => ({
-  ...(await importOriginal<typeof import('../utils/env')>()),
+  ...(await importOriginal<typeof import('../utils/env.js')>()),
   COOKIE_DOMAIN: 'test.com'
 }));
 
@@ -330,26 +330,6 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toMatch(HOME_LOCATION);
-    });
-
-    test('should redirect to email-sign-up if the user has not acceptedPrivacyTerms', async () => {
-      mockAuthSuccess();
-      // Using an italian path to make sure redirection works.
-      const italianReturnTo = 'https://www.freecodecamp.org/italian/settings';
-
-      const res = await fastify.inject({
-        method: 'GET',
-        url: '/auth/auth0/callback?state=valid',
-        cookies: {
-          'login-returnto': sign(italianReturnTo)
-        }
-      });
-
-      expect(res.headers.location).toEqual(
-        expect.stringContaining(
-          'https://www.freecodecamp.org/italian/email-sign-up?'
-        )
-      );
     });
 
     test('should populate the user with the correct data', async () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert, Spacer } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
@@ -19,7 +19,7 @@ const LearnAlert = ({
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
   const createUniversityFlag = useFeature('university-alert');
   const progressAlertDefault = (text: string, value?: number) => (
-    <Alert variant='info' className='annual-donation-alert'>
+    <Callout variant='info' className='annual-donation-alert'>
       {value && (
         <>
           <div className='text-center'>
@@ -47,11 +47,11 @@ const LearnAlert = ({
           {t('buttons.donate')}
         </Link>
       </div>
-    </Alert>
+    </Callout>
   );
 
   const seasonalAlertFlagAlert = (
-    <Alert variant='info' className='annual-donation-alert'>
+    <Callout variant='info' className='annual-donation-alert'>
       <p>
         <b>{t('learn.season-greetings-fcc')}</b>
       </p>
@@ -68,7 +68,7 @@ const LearnAlert = ({
           {t('buttons.donate')}
         </Link>
       </p>
-    </Alert>
+    </Callout>
   );
 
   const progressAlert2024 = progressAlertDefault(
@@ -77,7 +77,7 @@ const LearnAlert = ({
   );
 
   const universityAlert = (
-    <Alert variant='info' className='university-alert'>
+    <Callout variant='info' className='university-alert'>
       <p>
         <b>{t('learn.building-a-university')}</b>
       </p>
@@ -94,7 +94,7 @@ const LearnAlert = ({
           {t('buttons.donate')}
         </Link>
       </p>
-    </Alert>
+    </Callout>
   );
 
   if (!isDonating) {

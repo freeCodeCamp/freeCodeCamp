@@ -1,11 +1,11 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../shared/config/challenge-types');
+const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks
-} = require('../../shared/config/curriculum');
+} = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -137,7 +137,10 @@ const schema = Joi.object().keys({
       'lecture',
       'review',
       'quiz',
-      'exam'
+      'exam',
+      'warm-up',
+      'learn',
+      'practice'
     ).required(),
     otherwise: Joi.valid(null)
   }),
@@ -159,7 +162,6 @@ const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   challengeType: Joi.number().min(0).max(31).required(),
-  checksum: Joi.number(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -180,7 +182,6 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
-  guideUrl: Joi.string().uri({ scheme: 'https' }),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
@@ -214,7 +215,6 @@ const schema = Joi.object().keys({
     otherwise: Joi.string().allow('')
   }),
   isComingSoon: Joi.bool(),
-  isLocked: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),
@@ -306,7 +306,8 @@ const schema = Joi.object().keys({
   hooks: Joi.object().keys({
     beforeAll: Joi.string().allow(''),
     beforeEach: Joi.string().allow(''),
-    afterEach: Joi.string().allow('')
+    afterEach: Joi.string().allow(''),
+    afterAll: Joi.string().allow('')
   }),
   tests: Joi.array()
     .items(

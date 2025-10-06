@@ -1,8 +1,10 @@
 import assert from 'node:assert';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { config } from 'dotenv';
 import { LogLevel } from 'fastify';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
@@ -155,7 +157,7 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
-// Mailhog is used in development and test environments, hence the localhost
+// Mailpit is used in development and test environments, hence the localhost
 // default.
 export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =

@@ -1,4 +1,4 @@
-import { Certification } from '../../shared/config/certification-settings';
+import { Certification } from '../../shared-dist/config/certification-settings';
 
 const idToPath = new Map(
   Object.entries({
@@ -16,7 +16,8 @@ const idToPath = new Map(
     '561add10cb82ac38a17213bd': Certification.LegacyFullStack,
     '5e44431b903586ffb414c951': Certification.SciCompPy,
     '5e46fc95ac417301a38fb934': Certification.DataAnalysisPy,
-    '5e46fc95ac417301a38fb935': Certification.MachineLearningPy
+    '5e46fc95ac417301a38fb935': Certification.MachineLearningPy,
+    '68c4069c1ef859270e17c495': Certification.JsV9
   })
 );
 

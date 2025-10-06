@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 
 import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
@@ -9,7 +9,7 @@ import {
   getMultifileJSXTransformers
 } from '../rechallenge/transformers';
 import {
-  runTestInTestFrame,
+  runTestsInTestFrame,
   createMainPreviewFramer,
   createProjectPreviewFramer,
   ProxyLogger,
@@ -159,8 +159,8 @@ export async function getTestRunner(buildData: BuildChallengeData) {
   }
   await prepTestRunner({ ...buildData, type });
 
-  return (testString: string, testTimeout: number) =>
-    runTestInTestFrame(testString, testTimeout, type);
+  return (testStrings: string[], testTimeout: number) =>
+    runTestsInTestFrame(testStrings, testTimeout, type);
 }
 
 type BuildResult = {
