@@ -24,7 +24,7 @@ What word does Elena use to say "hi"?
 
 ## --answers--
 
-`¡Hola!`
+`Hola`
 
 ---
 
