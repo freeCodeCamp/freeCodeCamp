@@ -1,0 +1,14 @@
+{
+  "sentence": "<p>This is BLANK simple BLANK with two blanks.</p>",
+  "blanks": [
+    {
+      "answer": "foo",
+      "feedback": "This is the first blank feedback."
+    },
+    {
+      "answer": "bar",
+      "feedback": "This is the second blank feedback."
+    }
+  ],
+  "explanation": "Test explanation."
+}

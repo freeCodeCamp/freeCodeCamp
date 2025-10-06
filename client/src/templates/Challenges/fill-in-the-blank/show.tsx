@@ -17,7 +17,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
-import ChallegeExplanation from '../components/challenge-explanation';
+import ChallengeExplanation from '../components/challenge-explanation';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import FillInTheBlanks from '../components/fill-in-the-blanks';
@@ -111,6 +111,7 @@ const ShowFillInTheBlank = ({
   const [allBlanksFilled, setAllBlanksFilled] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
   const [showFeedback, setShowFeedback] = useState(false);
+  const [isExplanationExpanded, setIsExplanationExpanded] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
 
@@ -164,12 +165,17 @@ const ShowFillInTheBlank = ({
     const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
 
     const newUserAnswers = [...userAnswers];
-    newUserAnswers[inputIndex] = e.target.value;
+    const newValue = e.target.value;
+    newUserAnswers[inputIndex] = newValue;
 
     const newAnswersCorrect = [...answersCorrect];
     newAnswersCorrect[inputIndex] = null;
 
     const allBlanksFilled = newUserAnswers.every(a => a);
+
+    if (!isExplanationExpanded && newValue.trim() !== '') {
+      setIsExplanationExpanded(true);
+    }
 
     setUserAnswers(newUserAnswers);
     setAnswersCorrect(newAnswersCorrect);
@@ -238,7 +244,10 @@ const ShowFillInTheBlank = ({
               </ObserveKeys>
 
               {explanation ? (
-                <ChallegeExplanation explanation={explanation} />
+                <ChallengeExplanation
+                  explanation={explanation}
+                  isExpanded={isExplanationExpanded}
+                />
               ) : (
                 <Spacer size='m' />
               )}

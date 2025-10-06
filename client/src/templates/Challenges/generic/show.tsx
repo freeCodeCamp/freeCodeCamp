@@ -160,6 +160,8 @@ const ShowGeneric = ({
     questions.map<number | null>(() => null)
   );
 
+  const [isExplanationExpanded, setIsExplanationExpanded] = useState(false);
+
   const [hasAnsweredMcqCorrectly, sethasAnsweredMcqCorrectly] = useState(true);
 
   const [showFeedback, setShowFeedback] = useState(false);
@@ -173,6 +175,9 @@ const ShowGeneric = ({
         index === questionIndex ? answerIndex : option
       )
     );
+    if (!isExplanationExpanded) {
+      setIsExplanationExpanded(true);
+    }
   };
 
   const handleSubmit = () => {
@@ -282,7 +287,10 @@ const ShowGeneric = ({
               )}
 
               {explanation ? (
-                <ChallengeExplanation explanation={explanation} />
+                <ChallengeExplanation
+                  explanation={explanation}
+                  isExpanded={isExplanationExpanded}
+                />
               ) : null}
 
               {!hasAnsweredMcqCorrectly && (

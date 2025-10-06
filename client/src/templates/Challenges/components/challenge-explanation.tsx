@@ -7,16 +7,18 @@ import './challenge-explanation.css';
 
 interface ChallengeExplanationProps {
   explanation: string;
+  isExpanded?: boolean;
 }
 
 function ChallengeExplanation({
-  explanation
+  explanation,
+  isExpanded
 }: ChallengeExplanationProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
     <>
-      <details>
+      <details open={isExpanded}>
         <summary className='challenge-summary'>
           {t('learn.explanation')}
         </summary>
