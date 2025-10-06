@@ -30,7 +30,8 @@
     "semantic-html",
     "a1-professional-chinese",
     "dev-playground",
-    "full-stack-open"
+    "full-stack-open",
+    "javascript-v9"
   ],
   "certifications": [
     "a2-english-for-developers",
@@ -57,6 +58,7 @@
     "relational-database",
     "responsive-web-design",
     "scientific-computing-with-python",
-    "a1-professional-chinese"
+    "a1-professional-chinese",
+    "javascript-v9"
   ]
 }

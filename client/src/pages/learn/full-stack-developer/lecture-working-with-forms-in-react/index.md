@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Forms in React
 
-Learn about Working with Forms in React in these lectures.
+Learn about Working with Forms in React in these lessons.

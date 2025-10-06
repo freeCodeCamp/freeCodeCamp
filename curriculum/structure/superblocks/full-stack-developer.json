@@ -17,6 +17,7 @@
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
@@ -151,6 +152,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -638,6 +640,11 @@
           ]
         },
         {
+          "dashedName": "data-visualization",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
@@ -720,6 +727,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
@@ -772,6 +780,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
