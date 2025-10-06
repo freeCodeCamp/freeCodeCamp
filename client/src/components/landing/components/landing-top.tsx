@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { clientLocale } from '../../../../config/env.json';
 import {
@@ -12,10 +13,12 @@ import {
   AlibabaLogo
 } from '../../../assets/images/components';
 import BigCallToAction from './big-call-to-action';
+import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
 
 function LandingTop(): JSX.Element {
   const { t } = useTranslation();
+  const showTwoButtonCTA = useFeature('landing-two-button-cta').on;
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
@@ -26,7 +29,7 @@ function LandingTop(): JSX.Element {
       className='landing-top lading-top-c gradient-container'
     >
       <Container>
-        <Row className='landing-top-two-column'>
+        <Row className='landing-top-two-column' data-test-label='landing-top'>
           <Spacer size='m' />
           <Col className='landing-top-left'>
             <h1
@@ -42,7 +45,7 @@ function LandingTop(): JSX.Element {
             </p>
             <Spacer size='m' />
 
-            <BigCallToAction />
+            {showTwoButtonCTA ? <TwoButtonCTA /> : <BigCallToAction />}
             <Spacer size='m' />
           </Col>
           <Col className='landing-top-right'>

@@ -6,13 +6,15 @@ import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {
   heading: 'landing-header',
-  callToAction: 'landing-big-cta',
   certifications: 'certifications',
   curriculumBtns: 'curriculum-map-button',
   testimonials: 'testimonial-card',
   landingPageImage: 'landing-page-figure',
   faq: 'landing-page-faq',
-  jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:'
+  jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:',
+  googleCTA: 'landing-google-cta',
+  moreWaysCTA: 'landing-more-ways-cta',
+  signInButton: 'sign-in-button'
 } as const;
 
 const superBlocks = [
@@ -45,9 +47,42 @@ async function goToLandingPage(page: Page) {
   await page.goto('/');
 }
 
-test.describe('Landing Top - Variation B', () => {
+test.describe('Main CTA - Variation A', () => {
+  test.beforeEach(async ({ context, page }) => {
+    await addGrowthbookCookie({ context, variation: 'A' });
+    await goToLandingPage(page);
+  });
+  test('Two-button CTA renders correctly', async ({ page }) => {
+    const signInButtons = page.getByTestId(landingPageElements.signInButton);
+    await expect(signInButtons).toHaveCount(6);
+    const googleCTA = page.getByTestId(landingPageElements.googleCTA);
+    const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
+    await expect(googleCTA).toBeHidden();
+    await expect(moreWaysCTA).toBeHidden();
+  });
+});
+
+test.describe('Main CTA - Variation B', () => {
   test.beforeEach(async ({ context, page }) => {
     await addGrowthbookCookie({ context, variation: 'B' });
+    await goToLandingPage(page);
+  });
+  test('Two-button CTA renders correctly', async ({ page }) => {
+    const googleCTA = page.getByTestId(landingPageElements.googleCTA);
+    const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
+    const signInButtons = page.getByTestId(landingPageElements.signInButton);
+    await expect(signInButtons).toHaveCount(5);
+    await expect(googleCTA).toHaveText(
+      translations.buttons['sign-in-with-google']
+    );
+    await expect(moreWaysCTA).toHaveText(
+      translations.buttons['more-ways-to-sign-in']
+    );
+  });
+});
+
+test.describe('Landing Page', () => {
+  test.beforeEach(async ({ page }) => {
     await goToLandingPage(page);
   });
 
@@ -68,61 +103,6 @@ test.describe('Landing Top - Variation B', () => {
     await expect(landingH2Heading).toHaveText(
       translations.landing['graduates-work'].replace(/<\/?strong>/g, '')
     );
-  });
-});
-
-/*
- *
- * not currently in use after https://github.com/freeCodeCamp/freeCodeCamp/pull/61359
- * bring back after we fix GB
- */
-
-// test.describe('Landing Top - Variation A', () => {
-//   test.beforeEach(async ({ context, page }) => {
-//     await addGrowthbookCookie({ context, variation: 'newA' });
-//     await goToLandingPage(page);
-//   });
-
-//   test('The headline renders correctly', async ({ page }) => {
-//     const landingHeading1 = page.getByTestId('landing-big-heading-1');
-//     await expect(landingHeading1).toHaveText(
-//       translations.landing['big-heading-1']
-//     );
-
-//     const landingHeading2 = page.getByTestId('landing-big-heading-2');
-//     await expect(landingHeading2).toHaveText(
-//       translations.landing['big-heading-2']
-//     );
-
-//     const landingHeading3 = page.getByTestId('landing-big-heading-3');
-//     await expect(landingHeading3).toHaveText(
-//       translations.landing['big-heading-3']
-//     );
-//   });
-
-//   test('Logo row copy renders correctly', async ({ page }) => {
-//     const landingH2Heading = page.getByTestId('h2-heading');
-//     await expect(landingH2Heading).toHaveText(
-//       translations.landing['h2-heading'].replace(/<\/?strong>/g, '')
-//     );
-//   });
-
-//   test('Hero image should have  a description', async ({ isMobile, page }) => {
-//     const captionText = page.getByText(
-//       translations.landing['hero-img-description']
-//     );
-
-//     if (isMobile) {
-//       await expect(captionText).toBeHidden();
-//     } else {
-//       await expect(captionText).toBeVisible();
-//     }
-//   });
-// });
-
-test.describe('Landing Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await goToLandingPage(page);
   });
 
   test('The component Why learn with freeCodeCamp renders correctly', async ({

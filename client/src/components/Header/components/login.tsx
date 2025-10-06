@@ -35,7 +35,7 @@ const Login = ({
     <a
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
-      data-playwright-test-label='header-sign-in-button'
+      data-playwright-test-label='sign-in-button'
       href={href}
       onClick={() => {
         callGA({
