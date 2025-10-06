@@ -7,7 +7,6 @@
           "dashedName": "basic-html",
           "blocks": [
             "workshop-curriculum-outline",
-            "lecture-welcome-to-freecodecamp",
             "lab-debug-camperbots-profile-page",
             "lecture-understanding-html-attributes",
             "lab-debug-pet-adoption-page",
@@ -18,9 +17,11 @@
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
+            "workshop-build-a-video-display-using-iframe",
             "lab-video-compilation-page",
             "lecture-working-with-links",
             "review-basic-html",
@@ -151,6 +152,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -389,6 +391,7 @@
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
             "lecture-working-with-the-arguments-object-and-rest-parameters",
+            "lab-unique-sorted-union",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
             "lab-dna-pair-generator",
@@ -410,6 +413,7 @@
             "lab-value-remover-function",
             "lab-matching-object-filter",
             "lab-sum-all-primes-calculator",
+            "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
             "review-javascript-higher-order-functions",
@@ -636,6 +640,11 @@
           ]
         },
         {
+          "dashedName": "data-visualization",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
@@ -718,6 +727,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
@@ -731,6 +741,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -769,6 +780,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
