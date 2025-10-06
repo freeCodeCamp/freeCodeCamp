@@ -380,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "Завантажте застосунок для екзаменів freeCodeCamp",
     "explanation": "Щоб отримати сертифікацію, потрібно скласти екзамен з метою перевірки отриманих знань. Екзамен абсолютно безоплатний.",
     "version": "Найновіша версія застосунку: {{version}}.",
@@ -645,7 +653,7 @@
       "invalid-transcript": "Ваше посилання на стенограму невірне. Воно повинне мати такий формат: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> — перевірте, чи текст ВЕЛИКИМИ ЛІТЕРАМИ правильний."
     },
     "block-type": {
-      "lecture": "Лекція",
+      "lecture": "Theory",
       "workshop": "Практичне заняття",
       "lab": "Лабораторна робота",
       "review": "Повторення",

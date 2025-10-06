@@ -4,15 +4,9 @@ import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import Map from '../../../components/Map';
 import DailyCodingChallengeCalendar from '../../../components/daily-coding-challenge/calendar';
 import DailyCodingChallengeIcon from '../../../assets/icons/daily-coding-challenge';
-import FourOhFour from '../../../components/FourOhFour';
-import { showDailyCodingChallenges } from '../../../../config/env.json';
 
 function Archive(): JSX.Element {
   const { t } = useTranslation();
-
-  if (!showDailyCodingChallenges) {
-    return <FourOhFour />;
-  }
 
   return (
     <Container>

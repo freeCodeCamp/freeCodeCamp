@@ -17,7 +17,7 @@ const landingPageElements = {
   signInButton: 'sign-in-button'
 } as const;
 
-const superBlocks = [
+const nonArchivedSuperBlocks = [
   intro[SuperBlocks.FullStackDeveloper].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
@@ -25,21 +25,6 @@ const superBlocks = [
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,
   intro[SuperBlocks.RosettaCode].title,
-  intro[SuperBlocks.RespWebDesignNew].title,
-  intro[SuperBlocks.JsAlgoDataStructNew].title,
-  intro[SuperBlocks.FrontEndDevLibs].title,
-  intro[SuperBlocks.DataVis].title,
-  intro[SuperBlocks.RelationalDb].title,
-  intro[SuperBlocks.BackEndDevApis].title,
-  intro[SuperBlocks.QualityAssurance].title,
-  intro[SuperBlocks.SciCompPy].title,
-  intro[SuperBlocks.DataAnalysisPy].title,
-  intro[SuperBlocks.InfoSec].title,
-  intro[SuperBlocks.MachineLearningPy].title,
-  intro[SuperBlocks.CollegeAlgebraPy].title,
-  intro[SuperBlocks.RespWebDesign].title,
-  intro[SuperBlocks.JsAlgoDataStruct].title,
-  intro[SuperBlocks.PythonForEverybody].title,
   intro[SuperBlocks.FoundationalCSharp].title
 ];
 
@@ -189,14 +174,21 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('Links to all superblocks in order', async ({ page }) => {
+  test('Links to all non-archived superblocks in order', async ({ page }) => {
     const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
-    await expect(curriculumBtns).toHaveCount(superBlocks.length);
-    for (let index = 0; index < superBlocks.length; index++) {
+    await expect(curriculumBtns).toHaveCount(nonArchivedSuperBlocks.length);
+    for (let index = 0; index < nonArchivedSuperBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
-      const link = btn.getByRole('link', { name: superBlocks[index] });
+      const link = btn.getByRole('link', {
+        name: nonArchivedSuperBlocks[index]
+      });
       await expect(link).toBeVisible();
     }
+  });
+
+  test('Links to the archive page', async ({ page }) => {
+    const archiveLink = page.locator('a[href="/learn/archive"]');
+    await expect(archiveLink).toBeVisible();
   });
 
   test('Has FAQ section', async ({ page }) => {

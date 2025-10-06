@@ -152,16 +152,15 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
+      const sessionUser = state.user.sessionUser
+        ? { ...state.user.sessionUser, isDonating: true }
+        : null;
       return {
         ...state,
         user: {
           ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            isDonating: true
-          }
+          sessionUser
         },
-
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },

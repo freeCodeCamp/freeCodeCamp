@@ -118,13 +118,10 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
-    "start": "Start",
-    "go-to-today": "Go to Today's Challenge",
-    "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to Archive",
-    "go-to-archive-long": "Go to Daily Coding Challenge Archive",
     "more-ways-to-sign-in": "More ways to sign in",
     "sign-in-with-google": "Sign in with Google"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -216,6 +213,7 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -382,6 +380,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
@@ -647,7 +653,7 @@
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     },
     "block-type": {
-      "lecture": "Lecture",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Lab",
       "review": "Review",
@@ -656,6 +662,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {

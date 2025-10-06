@@ -24,7 +24,7 @@ describe('<Intro />', () => {
   it('has no blockquotes when loggedOut', () => {
     renderWithRedux(<Intro {...loggedOutProps} />);
     expect(screen.queryByTestId('quote-block')).not.toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 1 }));
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
   it('has a blockquote when loggedIn', () => {
