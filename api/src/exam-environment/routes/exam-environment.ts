@@ -376,11 +376,7 @@ async function postExamGeneratedExamHandler(
   const maybeGeneratedExams = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findMany({
       where: {
-        // Find generated exams user has not already seen
         examId: exam.id,
-        id: {
-          notIn: examAttempts.map(a => a.generatedExamId)
-        },
         deprecated: false
       },
       select: {
@@ -403,7 +399,7 @@ async function postExamGeneratedExamHandler(
   if (generatedExams.length === 0) {
     const error = {
       data: { examId: exam.id },
-      message: `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+      message: `Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.`
     };
     logger.error(error.data, error.message);
     this.Sentry.captureException(error);
@@ -411,13 +407,28 @@ async function postExamGeneratedExamHandler(
     return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
-  const randomGeneratedExam =
-    generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
+  // Randomly pick an exam from available generations, prioritising generations not already taken
+  const untakenGeneratedExams = generatedExams.filter(
+    ge => !examAttempts.find(ea => ea.generatedExamId === ge.id)
+  );
+  let randomGeneratedExamId: string;
+  if (untakenGeneratedExams.length === 0) {
+    logger.info(
+      `User has taken all generated exams. Reusing previously taken generated exams.`
+    );
+    randomGeneratedExamId =
+      generatedExams[Math.floor(Math.random() * generatedExams.length)]!.id;
+  } else {
+    randomGeneratedExamId =
+      untakenGeneratedExams[
+        Math.floor(Math.random() * untakenGeneratedExams.length)
+      ]!.id;
+  }
 
   const maybeGeneratedExam = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findFirst({
       where: {
-        id: randomGeneratedExam.id
+        id: randomGeneratedExamId
       }
     })
   );
@@ -439,7 +450,7 @@ async function postExamGeneratedExamHandler(
 
   if (generatedExam === null) {
     const error = {
-      data: { generatedExamId: randomGeneratedExam.id },
+      data: { generatedExamId: randomGeneratedExamId },
       message: 'Unreachable. Generated exam not found.'
     };
     logger.error(error.data, 'Unreachable. Generated exam not found.');
