@@ -24,6 +24,12 @@ Then we can call `testFun` like this: `testFun("Hello", "World");`. We have pass
 
 <ol><li>Create a function called <code>functionWithArgs</code> that accepts two arguments and outputs their sum to the dev console.</li><li>Call the function with two numbers as arguments.</li></ol>
 
+# --before-each--
+
+```js
+var logOutput;
+```
+
 # --hints--
 
 `functionWithArgs` should be a function.
@@ -35,22 +41,20 @@ assert(typeof functionWithArgs === 'function');
 `functionWithArgs(1,2)` should output `3`.
 
 ```js
-if (typeof functionWithArgs === 'function') {
-  capture();
-  functionWithArgs(1, 2);
-  uncapture();
-}
+console.log = function (message) {
+  logOutput = message
+};
+functionWithArgs(1, 2);
 assert(logOutput == 3);
 ```
 
 `functionWithArgs(7,9)` should output `16`.
 
 ```js
-if (typeof functionWithArgs === 'function') {
-  capture();
-  functionWithArgs(7, 9);
-  uncapture();
-}
+console.log = function (message) {
+  logOutput = message
+};
+functionWithArgs(7, 9);
 assert(logOutput == 16);
 ```
 
@@ -65,43 +69,6 @@ assert(
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        if(message) logOutput = JSON.stringify(message).trim();
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-capture();
-```
-
-## --after-user-code--
-
-```js
-uncapture();
-
-if (typeof functionWithArgs !== "function") { 
-  (function() { return "functionWithArgs is not defined"; })();
-} else {
-  (function() { return logOutput || "console.log never called"; })();
-}
-```
 
 ## --seed-contents--
 

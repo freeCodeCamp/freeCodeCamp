@@ -57,7 +57,7 @@ interface LearnPageProps {
       challenge: {
         fields: Slug;
       };
-    };
+    } | null;
   };
 }
 
@@ -67,17 +67,13 @@ function LearnPage({
   isSignedIn,
   fetchState: { pending, complete },
   user,
-  data: {
-    challengeNode: {
-      challenge: {
-        fields: { slug }
-      }
-    }
-  }
+  data: { challengeNode }
 }: LearnPageProps) {
   const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
 
   const { t } = useTranslation();
+
+  const slug = challengeNode?.challenge?.fields?.slug || '';
 
   const onLearnDonationAlertClick = () => {
     callGA({

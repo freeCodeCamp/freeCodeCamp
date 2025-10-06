@@ -259,9 +259,13 @@ async function postExamGeneratedExamHandler(
   const examAttempts = maybeExamAttempts.data;
 
   const lastAttempt = examAttempts.length
-    ? examAttempts.reduce((latest, current) =>
-        latest.startTimeInMS > current.startTimeInMS ? latest : current
-      )
+    ? examAttempts.reduce((latest, current) => {
+        const latestStartTime =
+          latest.startTime?.getTime() ?? latest.startTimeInMS;
+        const currentStartTime =
+          current.startTime?.getTime() ?? current.startTimeInMS;
+        return latestStartTime > currentStartTime ? latest : current;
+      })
     : null;
 
   if (lastAttempt) {
@@ -300,11 +304,19 @@ async function postExamGeneratedExamHandler(
       );
     }
 
-    const examExpirationTime =
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+    const lastAttemptStartTime =
+      lastAttempt.startTime?.getTime() ?? lastAttempt.startTimeInMS;
+    const examTotalTimeInMS = exam.config.totalTimeInS
+      ? exam.config.totalTimeInS * 1000
+      : exam.config.totalTimeInMS;
+    const examExpirationTime = lastAttemptStartTime + examTotalTimeInMS;
+
     if (examExpirationTime < Date.now()) {
+      const examRetakeTimeInMS = exam.config.retakeTimeInS
+        ? exam.config.retakeTimeInS * 1000
+        : exam.config.retakeTimeInMS;
       const retakeAllowed =
-        examExpirationTime + exam.config.retakeTimeInMS < Date.now();
+        examExpirationTime + examRetakeTimeInMS < Date.now();
 
       if (!retakeAllowed) {
         logger.warn(
@@ -364,11 +376,7 @@ async function postExamGeneratedExamHandler(
   const maybeGeneratedExams = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findMany({
       where: {
-        // Find generated exams user has not already seen
         examId: exam.id,
-        id: {
-          notIn: examAttempts.map(a => a.generatedExamId)
-        },
         deprecated: false
       },
       select: {
@@ -391,7 +399,7 @@ async function postExamGeneratedExamHandler(
   if (generatedExams.length === 0) {
     const error = {
       data: { examId: exam.id },
-      message: `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+      message: `Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.`
     };
     logger.error(error.data, error.message);
     this.Sentry.captureException(error);
@@ -399,13 +407,28 @@ async function postExamGeneratedExamHandler(
     return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
-  const randomGeneratedExam =
-    generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
+  // Randomly pick an exam from available generations, prioritising generations not already taken
+  const untakenGeneratedExams = generatedExams.filter(
+    ge => !examAttempts.find(ea => ea.generatedExamId === ge.id)
+  );
+  let randomGeneratedExamId: string;
+  if (untakenGeneratedExams.length === 0) {
+    logger.info(
+      `User has taken all generated exams. Reusing previously taken generated exams.`
+    );
+    randomGeneratedExamId =
+      generatedExams[Math.floor(Math.random() * generatedExams.length)]!.id;
+  } else {
+    randomGeneratedExamId =
+      untakenGeneratedExams[
+        Math.floor(Math.random() * untakenGeneratedExams.length)
+      ]!.id;
+  }
 
   const maybeGeneratedExam = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findFirst({
       where: {
-        id: randomGeneratedExam.id
+        id: randomGeneratedExamId
       }
     })
   );
@@ -427,7 +450,7 @@ async function postExamGeneratedExamHandler(
 
   if (generatedExam === null) {
     const error = {
-      data: { generatedExamId: randomGeneratedExam.id },
+      data: { generatedExamId: randomGeneratedExamId },
       message: 'Unreachable. Generated exam not found.'
     };
     logger.error(error.data, 'Unreachable. Generated exam not found.');
@@ -444,6 +467,7 @@ async function postExamGeneratedExamHandler(
         examId: exam.id,
         generatedExamId: generatedExam.id,
         startTimeInMS: Date.now(),
+        startTime: new Date(),
         questionSets: []
       }
     })
@@ -540,9 +564,12 @@ async function postExamAttemptHandler(
     );
   }
 
-  const latestAttempt = attempts.reduce((latest, current) =>
-    latest.startTimeInMS > current.startTimeInMS ? latest : current
-  );
+  const latestAttempt = attempts.reduce((latest, current) => {
+    const latestStartTime = latest.startTime?.getTime() ?? latest.startTimeInMS;
+    const currentStartTime =
+      current.startTime?.getTime() ?? current.startTimeInMS;
+    return latestStartTime > currentStartTime ? latest : current;
+  });
 
   const maybeExam = await mapErr(
     this.prisma.examEnvironmentExam.findUnique({
@@ -573,8 +600,13 @@ async function postExamAttemptHandler(
     );
   }
 
+  const latestAttemptStartTime =
+    latestAttempt.startTime?.getTime() ?? latestAttempt.startTimeInMS;
+  const examTotalTimeInMS = exam.config.totalTimeInS
+    ? exam.config.totalTimeInS * 1000
+    : exam.config.totalTimeInMS;
   const isAttemptExpired =
-    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+    latestAttemptStartTime + examTotalTimeInMS < Date.now();
 
   if (isAttemptExpired) {
     logger.warn(
@@ -715,7 +747,8 @@ async function getExams(
       select: {
         id: true,
         examId: true,
-        startTimeInMS: true
+        startTimeInMS: true,
+        startTime: true
       }
     })
   );
@@ -740,7 +773,9 @@ async function getExams(
         name: exam.config.name,
         note: exam.config.note,
         totalTimeInMS: exam.config.totalTimeInMS,
+        totalTimeInS: exam.config.totalTimeInS,
         retakeTimeInMS: exam.config.retakeTimeInMS,
+        retakeTimeInS: exam.config.retakeTimeInS,
         passingPercent: exam.config.passingPercent
       },
       canTake: false
@@ -762,9 +797,13 @@ async function getExams(
     const attemptsForExam = attempts.filter(a => a.examId === exam.id);
 
     const lastAttempt = attemptsForExam.length
-      ? attemptsForExam.reduce((latest, current) =>
-          latest.startTimeInMS > current.startTimeInMS ? latest : current
-        )
+      ? attemptsForExam.reduce((latest, current) => {
+          const latestStartTime =
+            latest.startTime?.getTime() ?? latest.startTimeInMS;
+          const currentStartTime =
+            current.startTime?.getTime() ?? current.startTimeInMS;
+          return latestStartTime > currentStartTime ? latest : current;
+        })
       : null;
 
     if (!lastAttempt) {
@@ -774,10 +813,16 @@ async function getExams(
       continue;
     }
 
+    const lastAttemptStartTime =
+      lastAttempt.startTime?.getTime() ?? lastAttempt.startTimeInMS;
+    const examTotalTimeInMS = exam.config.totalTimeInS
+      ? exam.config.totalTimeInS * 1000
+      : exam.config.totalTimeInMS;
+    const examRetakeTimeInMS = exam.config.retakeTimeInS
+      ? exam.config.retakeTimeInS * 1000
+      : exam.config.retakeTimeInMS;
     const retakeDateInMS =
-      lastAttempt.startTimeInMS +
-      exam.config.totalTimeInMS +
-      exam.config.retakeTimeInMS;
+      lastAttemptStartTime + examTotalTimeInMS + examRetakeTimeInMS;
     const isRetakeTimePassed = Date.now() > retakeDateInMS;
 
     if (!isRetakeTimePassed) {
@@ -1009,6 +1054,16 @@ export async function getExamChallenge(
   const { challengeId, examId } = req.query;
 
   logger.info({ challengeId, examId });
+
+  if (!challengeId && !examId) {
+    logger.warn('No challenge or exam id provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        'Must provide either a challengeId or examId.'
+      )
+    );
+  }
 
   const maybeData = await mapErr(
     this.prisma.examEnvironmentChallenge.findMany({

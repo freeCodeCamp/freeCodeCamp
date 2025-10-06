@@ -16,6 +16,7 @@ import {
   createSuperRequest,
   defaultUserId,
   devLogin,
+  serializeDates,
   setupServer
 } from '../../../vitest.utils.js';
 import {
@@ -102,6 +103,7 @@ describe('/exam-environment/', () => {
             examId,
             generatedExamId: mock.oid(),
             startTimeInMS: Date.now(),
+            startTime: new Date(),
             userId: defaultUserId
           }
         });
@@ -133,6 +135,7 @@ describe('/exam-environment/', () => {
             examId: mock.examId,
             generatedExamId: mock.oid(),
             startTimeInMS: Date.now() - (1000 * 60 * 60 * 2 + 1000),
+            startTime: new Date(Date.now() - (1000 * 60 * 60 * 2 + 1000)),
             userId: defaultUserId
           }
         });
@@ -164,6 +167,7 @@ describe('/exam-environment/', () => {
             examId: mock.examId,
             generatedExamId: mock.oid(),
             startTimeInMS: Date.now(),
+            startTime: new Date(),
             userId: defaultUserId
           }
         });
@@ -235,12 +239,13 @@ describe('/exam-environment/', () => {
               examId: mock.examId,
               generatedExamId: mock.generatedExam.id,
               startTimeInMS: Date.now(),
+              startTime: new Date(),
               questionSets: []
             }
           });
 
         const body: Static<typeof examEnvironmentPostExamAttempt.body> = {
-          attempt: mock.examAttemptSansSubmissionTimeInMS
+          attempt: mock.examAttemptSansSubmissionTime
         };
 
         const res = await superPost('/exam-environment/exam/attempt')
@@ -265,8 +270,7 @@ describe('/exam-environment/', () => {
     });
 
     describe('POST /exam-environment/generated-exam', () => {
-      afterEach(async () => {
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+      beforeEach(async () => {
         // Add prerequisite id to user completed challenge
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
@@ -277,6 +281,9 @@ describe('/exam-environment/', () => {
           }
         });
         await mock.seedEnvExam();
+      });
+      afterEach(async () => {
+        await mock.clearEnvExam();
         const a =
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
@@ -330,10 +337,13 @@ describe('/exam-environment/', () => {
       });
 
       it('should return an error if the exam has been attempted too recently to retake', async () => {
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
         const recentExamAttempt = {
           ...mock.examAttempt,
           // Set start time such that exam has just expired
-          startTimeInMS: Date.now() - mock.exam.config.totalTimeInMS
+          startTimeInMS: Date.now() - examTotalTimeInMS,
+          startTime: new Date(Date.now() - examTotalTimeInMS)
         };
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
           data: recentExamAttempt
@@ -357,6 +367,8 @@ describe('/exam-environment/', () => {
           }
         });
 
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
+
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
           where: {
             id: recentExamAttempt.id
@@ -364,9 +376,10 @@ describe('/exam-environment/', () => {
           data: {
             // Set start time such that exam has expired, but retake time -1s has passed
             startTimeInMS:
-              Date.now() -
-              (mock.exam.config.totalTimeInMS +
-                (mock.exam.config.retakeTimeInMS - 1000))
+              Date.now() - (examTotalTimeInMS + (examRetakeTimeInMS - 1000)),
+            startTime: new Date(
+              Date.now() - (examTotalTimeInMS + (examRetakeTimeInMS - 1000))
+            )
           }
         });
 
@@ -393,9 +406,14 @@ describe('/exam-environment/', () => {
       it('should use a new exam attempt if all previous attempts were started > 24 hours ago', async () => {
         const recentExamAttempt = structuredClone(mock.examAttempt);
         // Set start time such that exam has expired, but 24 hours + 1s has passed
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
         recentExamAttempt.startTimeInMS =
-          Date.now() -
-          (mock.exam.config.totalTimeInMS + (24 * 60 * 60 * 1000 + 1000));
+          Date.now() - examTotalTimeInMS + (24 * 60 * 60 * 1000 + 1000);
+        recentExamAttempt.startTime = new Date(
+          Date.now() - (examTotalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
+        );
+
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
           data: recentExamAttempt
         });
@@ -450,24 +468,20 @@ describe('/exam-environment/', () => {
         expect(res).toMatchObject({
           status: 200,
           body: {
-            examAttempt: latestAttempt
+            examAttempt: serializeDates(latestAttempt)
           }
         });
       });
 
-      it('should return an error if the database has insufficient generated exams', async () => {
-        // Add completed attempt for generated exam
-        const submittedAttempt = structuredClone(mock.examAttempt);
-        // Long-enough ago to be considered "submitted", and not trigger cooldown
-        submittedAttempt.startTimeInMS =
-          Date.now() -
-          24 * 60 * 60 * 1000 -
-          mock.exam.config.totalTimeInMS -
-          1 * 60 * 60 * 1000;
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-          data: submittedAttempt
+      it('should prioritise not-yet-taken generated exams, and reuse completed ones if necessary', async () => {
+        // Create a second generated exams for the user
+        const genExam1 = structuredClone(mock.generatedExam);
+        genExam1.id = mock.oid();
+        await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
+          data: genExam1
         });
 
+        // Request generated exam, thereby creating an attempt with one of the generated exam ids
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -478,12 +492,76 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        expect(res).toMatchObject({
-          status: 500,
-          body: {
-            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+        expect(res.status).toBe(200);
+
+        // Finish attempt
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          where: { id: res.body.examAttempt.id },
+          data: {
+            startTime: new Date(
+              Date.now() -
+                mock.exam.config.totalTimeInMS -
+                mock.exam.config.retakeTimeInMS
+            )
           }
         });
+
+        // Request generated exam again, which should use the other generated exam
+        const res2 = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res2.status).toBe(200);
+
+        // Expect examEnvironmentExamAttempt to include 2 records
+        const eas =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findMany({
+            where: {
+              userId: defaultUserId
+            }
+          });
+
+        expect(eas).toHaveLength(2);
+        // Expect eas[].generatedExamId to not be the same
+        const geIds = eas.map(ea => ea.generatedExamId);
+        expect(geIds[0]).not.toBe(geIds[1]);
+
+        // Finish attempt
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          where: { id: res2.body.examAttempt.id },
+          data: {
+            startTime: new Date(
+              Date.now() -
+                mock.exam.config.totalTimeInMS -
+                mock.exam.config.retakeTimeInMS
+            )
+          }
+        });
+
+        // Request generated exam again, which should reuse one of the generated exams
+        const res3 = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res3.status).toBe(200);
+
+        // Expect examEnvironmentExamAttempt to include 3 records, with only 2 unique `generatedExamId`s
+        const eas2 =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findMany({
+            where: { userId: defaultUserId }
+          });
+
+        expect(eas2).toHaveLength(3);
+        const geIds2 = eas2.map(ea => ea.generatedExamId);
+        expect(new Set(geIds2).size).toBe(2);
       });
 
       it('should record the fact the user has started an exam by creating an exam attempt', async () => {
@@ -522,6 +600,8 @@ describe('/exam-environment/', () => {
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
           questionSets: [],
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          startTime: expect.any(Date),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTimeInMS: expect.any(Number),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
@@ -594,10 +674,12 @@ describe('/exam-environment/', () => {
 
         const userExam = constructUserExam(generatedExam!, mock.exam);
 
-        expect(res.body).toMatchObject({
-          examAttempt,
-          exam: userExam
-        });
+        expect(res.body).toMatchObject(
+          serializeDates({
+            examAttempt,
+            exam: userExam
+          })
+        );
       });
     });
 
@@ -638,7 +720,9 @@ describe('/exam-environment/', () => {
               name: mock.exam.config.name,
               note: mock.exam.config.note,
               passingPercent: mock.exam.config.passingPercent,
+              totalTimeInS: mock.exam.config.totalTimeInS,
               totalTimeInMS: mock.exam.config.totalTimeInMS,
+              retakeTimeInS: mock.exam.config.retakeTimeInS,
               retakeTimeInMS: mock.exam.config.retakeTimeInMS
             },
             id: mock.examId
@@ -713,7 +797,9 @@ describe('/exam-environment/', () => {
               name: mock.exam.config.name,
               note: mock.exam.config.note,
               passingPercent: mock.exam.config.passingPercent,
+              totalTimeInS: mock.exam.config.totalTimeInS,
               totalTimeInMS: mock.exam.config.totalTimeInMS,
+              retakeTimeInS: mock.exam.config.retakeTimeInS,
               retakeTimeInMS: mock.exam.config.retakeTimeInMS
             },
             id: mock.examId
@@ -725,10 +811,13 @@ describe('/exam-environment/', () => {
 
       it("should indicate an exam's availability based on the last attempt's start time, and the exam retake time", async () => {
         // Create a recent exam attempt that's within the retake time
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
         const recentExamAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
-          startTimeInMS: Date.now() - mock.exam.config.totalTimeInMS
+          startTimeInMS: Date.now() - examTotalTimeInMS,
+          startTime: new Date(Date.now() - examTotalTimeInMS)
         };
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
           data: recentExamAttempt
@@ -742,15 +831,17 @@ describe('/exam-environment/', () => {
         expect(res.body).toMatchObject([{ canTake: false }]);
         expect(res.status).toBe(200);
 
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
+
         // Update the attempt to be outside the retake time
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
           where: { id: recentExamAttempt.id },
           data: {
             startTimeInMS:
-              Date.now() -
-              (mock.exam.config.totalTimeInMS +
-                mock.exam.config.retakeTimeInMS +
-                1000)
+              Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000),
+            startTime: new Date(
+              Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000)
+            )
           }
         });
 
@@ -766,14 +857,16 @@ describe('/exam-environment/', () => {
 
       it('should indicate an exam is unavailable if there are any pending moderation records for the exam attempts', async () => {
         // Create an exam attempt that's outside the retake time
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+        const examRetakeTimeInMS = mock.exam.config.retakeTimeInS * 1000;
         const examAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
           startTimeInMS:
-            Date.now() -
-            (mock.exam.config.totalTimeInMS +
-              mock.exam.config.retakeTimeInMS +
-              1000)
+            Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000),
+          startTime: new Date(
+            Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000)
+          )
         };
         const createdAttempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
@@ -868,11 +961,12 @@ describe('/exam-environment/', () => {
           id: attempt.id,
           examId: mock.exam.id,
           result: null,
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
 
@@ -908,17 +1002,21 @@ describe('/exam-environment/', () => {
           id: attempt.id,
           examId: mock.exam.id,
           result: null,
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
 
       it('should return the attempt with results, if the attempt has been moderated', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
-        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
+        examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
+        examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
             data: examAttempt
@@ -945,11 +1043,12 @@ describe('/exam-environment/', () => {
             score: 25,
             passingPercent: 80
           },
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual(examEnvironmentExamAttempt);
+        expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
         expect(res.status).toBe(200);
       });
     });
@@ -1000,11 +1099,12 @@ describe('/exam-environment/', () => {
           id: attempt.id,
           examId: mock.exam.id,
           result: null,
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
 
@@ -1030,17 +1130,21 @@ describe('/exam-environment/', () => {
           id: attempt.id,
           examId: mock.exam.id,
           result: null,
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
 
       it('should return the attempts with results, if they have been moderated', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
-        examAttempt.startTimeInMS = Date.now() - mock.exam.config.totalTimeInMS;
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
+        examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
+        examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
             data: examAttempt
@@ -1065,11 +1169,12 @@ describe('/exam-environment/', () => {
             score: 25,
             passingPercent: 80
           },
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
     });
@@ -1115,12 +1220,14 @@ describe('/exam-environment/', () => {
           id: attempt.id,
           examId: mock.exam.id,
           result: null,
+          startTime: attempt.startTime,
           startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)
         };
-        expect(res.body).toEqual([examEnvironmentExamAttempt]);
+
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
         expect(res.status).toBe(200);
       });
     });
@@ -1303,6 +1410,16 @@ describe('/exam-environment/', () => {
           ])
         );
         expect(res3.status).toBe(200);
+      });
+
+      it('should return 400 if neither challengeId or examId are provided', async () => {
+        const res = await superGet(`/exam-environment/exam-challenge`);
+        expect(res).toMatchObject({
+          status: 400,
+          body: {
+            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+          }
+        });
       });
     });
   });

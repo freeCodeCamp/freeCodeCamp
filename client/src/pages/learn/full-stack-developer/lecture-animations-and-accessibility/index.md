@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Animations and Accessibility
 
-In these lecture videos, you will learn about animations and accessibility.
+In these lessons, you will learn about animations and accessibility.

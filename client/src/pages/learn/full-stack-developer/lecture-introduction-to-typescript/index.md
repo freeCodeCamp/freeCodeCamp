@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to TypeScript
 
-In these lectures, you will learn what TypeScript is and how to use it.
+In these lessons, you will learn what TypeScript is and how to use it.
