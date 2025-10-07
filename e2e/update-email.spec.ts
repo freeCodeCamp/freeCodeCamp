@@ -69,7 +69,7 @@ test.describe('The update-email page when the user is signed in', () => {
     await submitButton.click();
     await expect(async () => {
       const emails = await getAllEmails();
-      expect(emails.items).toHaveLength(1);
+      expect(emails.messages).toHaveLength(1);
       expect(getSubject(getFirstEmail(emails))).toBe(
         'Please confirm your updated email address for freeCodeCamp.org'
       );

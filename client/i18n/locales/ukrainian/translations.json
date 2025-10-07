@@ -118,11 +118,8 @@
     "share-on-threads": "Поділитись на Threads",
     "play-scene": "Натисніть «Відтворити»",
     "download-latest-version": "Завантажити найновішу версію",
-    "start": "Розпочати",
-    "go-to-today": "Перейти до сьогоднішнього завдання",
-    "go-to-today-long": "Перейти до сьогоднішнього завдання з програмування",
-    "go-to-archive": "Перейти до архіву",
-    "go-to-archive-long": "Перейти до архіву завдань з програмування"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Щоденні завдання з програмування",
@@ -214,6 +211,7 @@
     "next-heading": "Спробуйте бета-версію навчальної програми:",
     "upcoming-heading": "Майбутня навчальна програма:",
     "catalog-heading": "Ознайомтесь з нашим каталогом:",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Часті питання:",
     "faqs": [
       {
@@ -662,6 +660,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {

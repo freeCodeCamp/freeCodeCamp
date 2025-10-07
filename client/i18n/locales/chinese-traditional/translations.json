@@ -118,11 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放鍵",
     "download-latest-version": "下載最新版本",
-    "start": "開始",
-    "go-to-today": "訪問今天的挑戰",
-    "go-to-today-long": "訪問今天的編程挑戰",
-    "go-to-archive": "訪問存檔",
-    "go-to-archive-long": "訪問每日編程挑戰存檔"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "每日編程挑戰",
@@ -214,6 +211,7 @@
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
     "catalog-heading": "探索我們的目錄：",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常見問題：",
     "faqs": [
       {
@@ -662,6 +660,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {

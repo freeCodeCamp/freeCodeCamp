@@ -270,8 +270,7 @@ describe('/exam-environment/', () => {
     });
 
     describe('POST /exam-environment/generated-exam', () => {
-      afterEach(async () => {
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.deleteMany();
+      beforeEach(async () => {
         // Add prerequisite id to user completed challenge
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
@@ -282,6 +281,9 @@ describe('/exam-environment/', () => {
           }
         });
         await mock.seedEnvExam();
+      });
+      afterEach(async () => {
+        await mock.clearEnvExam();
         const a =
           await fastifyTestInstance.prisma.examEnvironmentExamModeration.findMany(
             {}
@@ -471,27 +473,15 @@ describe('/exam-environment/', () => {
         });
       });
 
-      it('should return an error if the database has insufficient generated exams', async () => {
-        // Add completed attempt for generated exam
-        const submittedAttempt = structuredClone(mock.examAttempt);
-        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
-        // Long-enough ago to be considered "submitted", and not trigger cooldown
-        submittedAttempt.startTimeInMS =
-          Date.now() -
-          24 * 60 * 60 * 1000 -
-          examTotalTimeInMS -
-          1 * 60 * 60 * 1000;
-        submittedAttempt.startTime = new Date(
-          Date.now() -
-            24 * 60 * 60 * 1000 -
-            examTotalTimeInMS -
-            1 * 60 * 60 * 1000
-        );
-
-        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-          data: submittedAttempt
+      it('should prioritise not-yet-taken generated exams, and reuse completed ones if necessary', async () => {
+        // Create a second generated exams for the user
+        const genExam1 = structuredClone(mock.generatedExam);
+        genExam1.id = mock.oid();
+        await fastifyTestInstance.prisma.examEnvironmentGeneratedExam.create({
+          data: genExam1
         });
 
+        // Request generated exam, thereby creating an attempt with one of the generated exam ids
         const body: Static<typeof examEnvironmentPostExamGeneratedExam.body> = {
           examId: mock.examId
         };
@@ -502,12 +492,76 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        expect(res).toMatchObject({
-          status: 500,
-          body: {
-            code: 'FCC_ERR_EXAM_ENVIRONMENT'
+        expect(res.status).toBe(200);
+
+        // Finish attempt
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          where: { id: res.body.examAttempt.id },
+          data: {
+            startTime: new Date(
+              Date.now() -
+                mock.exam.config.totalTimeInMS -
+                mock.exam.config.retakeTimeInMS
+            )
           }
         });
+
+        // Request generated exam again, which should use the other generated exam
+        const res2 = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res2.status).toBe(200);
+
+        // Expect examEnvironmentExamAttempt to include 2 records
+        const eas =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findMany({
+            where: {
+              userId: defaultUserId
+            }
+          });
+
+        expect(eas).toHaveLength(2);
+        // Expect eas[].generatedExamId to not be the same
+        const geIds = eas.map(ea => ea.generatedExamId);
+        expect(geIds[0]).not.toBe(geIds[1]);
+
+        // Finish attempt
+        await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+          where: { id: res2.body.examAttempt.id },
+          data: {
+            startTime: new Date(
+              Date.now() -
+                mock.exam.config.totalTimeInMS -
+                mock.exam.config.retakeTimeInMS
+            )
+          }
+        });
+
+        // Request generated exam again, which should reuse one of the generated exams
+        const res3 = await superPost('/exam-environment/exam/generated-exam')
+          .send(body)
+          .set(
+            'exam-environment-authorization-token',
+            examEnvironmentAuthorizationToken
+          );
+
+        expect(res3.status).toBe(200);
+
+        // Expect examEnvironmentExamAttempt to include 3 records, with only 2 unique `generatedExamId`s
+        const eas2 =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.findMany({
+            where: { userId: defaultUserId }
+          });
+
+        expect(eas2).toHaveLength(3);
+        const geIds2 = eas2.map(ea => ea.generatedExamId);
+        expect(new Set(geIds2).size).toBe(2);
       });
 
       it('should record the fact the user has started an exam by creating an exam attempt', async () => {

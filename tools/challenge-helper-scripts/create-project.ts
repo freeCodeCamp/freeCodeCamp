@@ -185,6 +185,9 @@ async function createMetaJson(
     newMeta = getBaseMeta('FullStack');
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
+    if (blockType === BlockTypes.workshop) {
+      newMeta.hasEditableBoundaries = true;
+    }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;

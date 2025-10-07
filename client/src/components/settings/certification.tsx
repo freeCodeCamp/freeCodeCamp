@@ -89,6 +89,7 @@ const createCertifiedMap = ({
   // be rendered. The new FullStackDeveloper certification is a normal
   // certification with projects.
   [Certification.FullStackDeveloper]: false,
+  [Certification.JsV9]: false,
   [Certification.A2English]: false,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,

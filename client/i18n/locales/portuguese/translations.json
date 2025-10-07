@@ -118,11 +118,8 @@
     "share-on-threads": "Compartilhe no Threads",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
-    "start": "Iniciar",
-    "go-to-today": "Vá para o desafio diário",
-    "go-to-today-long": "Vá para o desafio de código diário",
-    "go-to-archive": "Vá para o arquivo",
-    "go-to-archive-long": "Vá para o arquivo do desafio de código diário"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -214,6 +211,7 @@
     "next-heading": "Experimente nosso currículo beta:",
     "upcoming-heading": "Próximo currículo:",
     "catalog-heading": "Explore nosso catálogo:",
+    "archive-link": "Procurando por um curso mais antigo? Confira <0>nossa página de arquivos</0>.",
     "faq": "Perguntas frequentes:",
     "faqs": [
       {
@@ -380,14 +378,14 @@
     }
   },
   "exam": {
-    "attempts": "Attempts",
-    "no-attempts-yet": "No attempts yet",
-    "date-taken": "Date Taken",
-    "score": "Score",
+    "attempts": "Tentativas",
+    "no-attempts-yet": "Nenhuma tentativa ainda",
+    "date-taken": "Data de captura",
+    "score": "Pontuação",
     "status": "Status",
-    "pending": "Pending",
-    "passed": "Passed",
-    "failed": "Failed",
+    "pending": "Pendente",
+    "passed": "Aprovado",
+    "failed": "Falhou",
     "download-header": "Faça o download do aplicativo de exame gratuito do freeCodeCamp",
     "explanation": "Para obter uma certificação, você deve fazer um exame para testar sua compreensão do material que você aprendeu. Fazer o exame é absolutamente gratuito.",
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
@@ -536,22 +534,22 @@
     "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "ona": {
-      "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
-      "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
-      "step-3": "In the modal that pops up, click the create button",
-      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
-      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
-      "step-6": "Going to the <0>View</0> menu,",
-      "step-7": "Clicking on the <0>Command Palette</0> option,",
-      "step-8": "and running the <0>CodeRoad: Start</0> command",
-      "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
-      "learn-more": "Learn more about <0>Ona workspaces.</0>",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
-      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token"
+      "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
+      "step-1": "<0>Crie uma conta no Ona</0> se você não tiver uma",
+      "step-2": "Clique no botão de iniciar abaixo",
+      "step-3": "No modal que aparece para cima, clique no botão criar",
+      "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
+      "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
+      "step-6": "A partir do menu <0>Exibir</0>,",
+      "step-7": "Clicando na opção <0>Paleta de comando</0>,",
+      "step-8": "e executando o comando <0>CodeRoad: Start</0>",
+      "step-9": "Siga as instruções no CodeRoad para concluir o curso",
+      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{course}}, vá para <0>seu painel no Ona</0> para continuar.",
+      "learn-more": "Saiba mais sobre <0>Ona workspaces.</0>",
+      "logout-warning": "Se você sair do FreeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp.",
+      "sub-step-3": "Navegue para a sua <0>Página de segredos do Ona</0>",
+      "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "No campo <0>Secret</0>, cole seu token"
     },
     "local": {
       "intro": "Este curso é executado em uma máquina virtual Linux no seu computador. Para executar o curso, você primeiro precisa baixar cada um se você ainda não os possui:",
@@ -653,15 +651,19 @@
       "invalid-transcript": "O link da transcrição não está correto. Ele deve ter esta aparência: <1>https://learn.microsoft.com/IDIOMA_DE_LOCALIZACAO/users/NOME_DO_USUARIO/transcript/ID</1> - Confira os itens que aparecem em MAIÚSCULAS no seu link para ver se estão corretos."
     },
     "block-type": {
-      "lecture": "Theory",
+      "lecture": "Teoria",
       "workshop": "Workshop",
       "lab": "Laboratório",
       "review": "Revisão",
       "quiz": "Questionário",
       "exam": "Teste",
-      "warm-up": "Warm-up",
-      "learn": "Learn",
-      "practice": "Practice"
+      "warm-up": "Aquecimento",
+      "learn": "Aprender",
+      "practice": "Praticar"
+    },
+    "archive": {
+      "title": "Nossos cursos arquivados",
+      "content-not-updated": "<0>Aviso:</0> o conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <1>nosso currículo atual</1>."
     }
   },
   "donate": {
@@ -1193,8 +1195,8 @@
       "b1-english-for-developers-cert": "Certificação B1 Inglês para Desenvolvedores",
       "full-stack-developer-v9": "Desenvolvimento Full Stack",
       "full-stack-developer-v9-cert": "Certificação de desenvolvimento Full Stack",
-      "a1-professional-spanish": "A1 Professional Spanish",
-      "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
+      "a1-professional-spanish": "Espanhol Profissional A1",
+      "a1-professional-spanish-cert": "Certificação de Espanhol Profissional A1",
       "a2-professional-spanish": "Espanhol Profissional A2",
       "a2-professional-spanish-cert": "Certificação Profissional de espanhol A2",
       "a2-professional-chinese": "Chinês Profissional A2",

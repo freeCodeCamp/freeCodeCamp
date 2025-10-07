@@ -43,11 +43,11 @@ function DailyCodingChallengeNotFound(): JSX.Element {
               block={true}
               href={`/learn/daily-coding-challenge/${getTodayUsCentral()}`}
             >
-              {t(`buttons.go-to-today-long`)}
+              {t(`buttons.go-to-dcc-today`)}
             </Button>
             <Spacer size='xs' />
             <Button block={true} href='/learn/daily-coding-challenge/archive'>
-              {t(`buttons.go-to-archive-long`)}
+              {t(`buttons.go-to-dcc-archive`)}
             </Button>
           </div>
           <Spacer size='l' />

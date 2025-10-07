@@ -1804,6 +1804,7 @@
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
+      "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
       "review-front-end-libraries": "Front End Libraries Review",
       "exam-front-end-libraries": "Front End Libraries Exam",
@@ -1852,6 +1853,12 @@
         "note": "Coming Fall 2025",
         "intro": [
           "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
+        ]
+      },
+      "data-visualization": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
@@ -2117,6 +2124,12 @@
         "title": "Working with Audio and Video Elements",
         "intro": [
           "In these lessons, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "lab-html-audio-and-video-player": {
+        "title": "Build an HTML Audio and Video Player",
+        "intro": [
+          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
         ]
       },
       "lecture-working-with-images-and-svgs": {
@@ -2596,6 +2609,13 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "lab-feature-selection": {
+        "title": "Design a Feature Selection Page",
+        "intro": [
+          "In this lab, you'll build a feature selection page with custom-styled checkboxes.",
+          "You'll create feature cards with labels and checkboxes, then give custom styling to the checkboxes."
         ]
       },
       "review-styling-forms": {
@@ -4575,9 +4595,11 @@
           "Learn about Understanding Object Oriented Programming and Encapsulation in these lessons."
         ]
       },
-      "workshop-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-salary-tracker": {
+        "title": "Build a Salary Tracker",
+        "intro": [
+          "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
+        ]
       },
       "lab-placeholder-oop-1": {
         "title": "Placeholder - Waiting for title",
@@ -4770,7 +4792,9 @@
       },
       "lab-nth-fibonacci-number": {
         "title": "Build an Nth Fibonacci Number Calculator",
-        "intro": [""]
+        "intro": [
+          "In this lab you will implement a Fibonacci sequence calculator using a dynamic programming approach."
+        ]
       },
       "review-dynamic-programming": {
         "title": "Dynamic Programming Review",
@@ -4978,6 +5002,1083 @@
       }
     }
   },
+  "javascript-v9": {
+    "title": "JavaScript Certification",
+    "intro": [
+      "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
+    ],
+    "chapters": {
+      "javascript": "JavaScript"
+    },
+    "modules": {
+      "javascript-variables-and-strings": "Variables and Strings",
+      "javascript-booleans-and-numbers": "Booleans and Numbers",
+      "javascript-functions": "Functions",
+      "javascript-arrays": "Arrays",
+      "javascript-objects": "Objects",
+      "javascript-loops": "Loops",
+      "review-javascript-fundamentals": "JavaScript Fundamentals Review",
+      "higher-order-functions-and-callbacks": "Higher Order Functions and Callbacks",
+      "dom-manipulation-and-events": "DOM Manipulation and Events",
+      "js-a11y": "JavaScript and Accessibility",
+      "debugging-javascript": "Debugging",
+      "basic-regex": "Basic Regex",
+      "lab-markdown-to-html-converter": "Build a Markdown to HTML Converter",
+      "form-validation": "Form Validation",
+      "javascript-dates": "Dates",
+      "audio-and-video-events": "Audio and Video Events",
+      "lab-drum-machine": "Build a Drum Machine",
+      "maps-and-sets": "Maps and Sets",
+      "lab-voting-system": "Build a Voting System",
+      "localstorage-and-crud-operations": "localStorage and CRUD Operations",
+      "classes-and-the-this-keyword": "Classes",
+      "lab-bank-account-manager": "Build a Bank Account Management Program",
+      "recursion": "Recursion",
+      "functional-programming": "Functional Programming",
+      "asynchronous-javascript": "Asynchronous JavaScript",
+      "lab-weather-app": "Build a Weather App",
+      "review-javascript": "JavaScript Review",
+      "javascript-certification-exam": "JavaScript Certification Exam"
+    },
+    "blocks": {
+      "lecture-introduction-to-javascript": {
+        "title": "Introduction to JavaScript",
+        "intro": [
+          "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
+        ]
+      },
+      "workshop-greeting-bot": {
+        "title": "Build a Greeting Bot",
+        "intro": [
+          "In this workshop, you will learn JavaScript fundamentals by building a greeting bot.",
+          "You will learn about variables, <code>let</code>, <code>const</code>, <code>console.log</code> and basic string usage."
+        ]
+      },
+      "lab-javascript-trivia-bot": {
+        "title": "Build a JavaScript Trivia Bot",
+        "intro": [
+          "In this lab, you'll practice working with JavaScript variables and strings by building a trivia bot."
+        ]
+      },
+      "lab-sentence-maker": {
+        "title": "Build a Sentence Maker",
+        "intro": [
+          "In this lab, you will continue practicing with strings and concatenation by creating and customizing various stories."
+        ]
+      },
+      "lecture-working-with-data-types": {
+        "title": "Working with Data Types",
+        "intro": [
+          "In the following lectures, you will learn how to work with data types in JavaScript. You will also learn how dynamic typing differs from static typing, the <code>typeof</code> operator, and the <code>typeof null</code> bug."
+        ]
+      },
+      "review-javascript-variables-and-data-types": {
+        "title": "JavaScript Variables and Data Types Review",
+        "intro": [
+          "Before you are quizzed on JavaScript variables and data types you first need to review the concepts.",
+          "Open up this page to review variables, data types, logging and commenting."
+        ]
+      },
+      "quiz-javascript-variables-and-data-types": {
+        "title": "JavaScript Variables and Data Types Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript variables and data types with this quiz."
+        ]
+      },
+      "lecture-working-with-strings-in-javascript": {
+        "title": "Working with Strings in JavaScript",
+        "intro": [
+          "In these lectures, you will learn how to work with strings in JavaScript. You will learn how to access characters from a string, how to use template literals and interpolation, how to create a new line in strings, and much more."
+        ]
+      },
+      "workshop-teacher-chatbot": {
+        "title": "Build a Teacher Chatbot",
+        "intro": [
+          "In this workshop, you will continue to learn more about JavaScript strings by building a chatbot.",
+          "You will learn how to work with template literals, and the <code>indexOf</code> method."
+        ]
+      },
+      "lecture-working-with-string-character-methods": {
+        "title": "Working with String Character Methods",
+        "intro": [
+          "In this lecture you will learn about ASCII character encoding and how to use JavaScript's <code>charCodeAt()</code> and <code>fromCharCode()</code> methods to convert between characters and their numerical ASCII values."
+        ]
+      },
+      "lecture-working-with-string-search-and-slice-methods": {
+        "title": "Working with String Search and Slice Methods",
+        "intro": [
+          "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "lecture-working-with-string-formatting-methods": {
+        "title": "Working with String Formatting Methods",
+        "intro": [
+          "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "lecture-working-with-string-modification-methods": {
+        "title": "Working with String Modification Methods",
+        "intro": [
+          "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
+        ]
+      },
+      "review-javascript-strings": {
+        "title": "JavaScript Strings Review",
+        "intro": [
+          "Before you are quizzed on working with JavaScript strings, you first need to review.",
+          "Open up this page to review how to work with template literals, the <code>slice</code> method, the <code>includes</code> method, the <code>trim</code> method and more."
+        ]
+      },
+      "quiz-javascript-strings": {
+        "title": "JavaScript Strings Quiz",
+        "intro": ["Test your knowledge of JavaScript strings with this quiz."]
+      },
+      "lecture-working-with-numbers-and-arithmetic-operators": {
+        "title": "Working with Numbers and Arithmetic Operators",
+        "intro": [
+          "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
+        ]
+      },
+      "lecture-working-with-operator-behavior": {
+        "title": "Working with Operator Behavior",
+        "intro": [
+          "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lecture-working-with-comparison-and-boolean-operators": {
+        "title": "Working with Comparison and Boolean Operators",
+        "intro": [
+          "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+        ]
+      },
+      "lecture-working-with-unary-and-bitwise-operators": {
+        "title": "Working with Unary and Bitwise Operators",
+        "intro": [
+          "In these lectures, you will learn about unary and bitwise operators."
+        ]
+      },
+      "lecture-working-with-conditional-logic-and-math-methods": {
+        "title": "Working with Conditional Logic and Math Methods",
+        "intro": [
+          "In these lectures, you will learn about conditional statements, binary logical operators, and the <code>Math</code> object."
+        ]
+      },
+      "workshop-mathbot": {
+        "title": "Build a Mathbot",
+        "intro": [
+          "In this workshop, you will review how to work with the different Math object methods by building a Mathbot."
+        ]
+      },
+      "lab-fortune-teller": {
+        "title": "Build a Fortune Teller",
+        "intro": [
+          "In this lab, you'll build a fortune teller by randomly selecting a fortune from the available fortunes.",
+          "You'll practice how to work with the <code>Math.random()</code> method and the <code>Math.floor()</code> method to generate random numbers."
+        ]
+      },
+      "lecture-working-with-numbers-and-common-number-methods": {
+        "title": "Working with Numbers and Common Number Methods",
+        "intro": [
+          "In these lectures, you will learn about numbers and common number methods. These include <code>isNaN()</code>, <code>parseInt()</code>, <code>parseFloat()</code>, and <code>toFixed()</code>."
+        ]
+      },
+      "review-javascript-math": {
+        "title": "JavaScript Math Review",
+        "intro": [
+          "Before you're quizzed on working with the <code>Math</code> object, you should review what you've learned.",
+          "Open up this page to review how to work with the <code>Math.random()</code> method, the <code>Math.floor()</code> method and more."
+        ]
+      },
+      "quiz-javascript-math": {
+        "title": "JavaScript Math Quiz",
+        "intro": [
+          "Test your knowledge of the JavaScript <code>Math</code> object with this quiz."
+        ]
+      },
+      "lecture-understanding-comparisons-and-conditionals": {
+        "title": "Understanding Comparisons and Conditionals",
+        "intro": [
+          "In these lectures, you will learn about comparison operators and conditionals. You will learn how the various conditionals differ from one another, and how comparisons work with <code>null</code> and <code>undefined</code>."
+        ]
+      },
+      "review-javascript-comparisons-and-conditionals": {
+        "title": "JavaScript Comparisons and Conditionals Review",
+        "intro": [
+          "Before you're quizzed on working with conditionals, you should review what you've learned about them.",
+          "Open up this page to review how to work with <code>switch</code> statements, other types of conditionals and more."
+        ]
+      },
+      "quiz-javascript-comparisons-and-conditionals": {
+        "title": "JavaScript Comparisons and Conditionals Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript Comparisons and Conditionals with this quiz."
+        ]
+      },
+      "lecture-working-with-functions": {
+        "title": "Working with Functions",
+        "intro": [
+          "In these lectures, you will learn how to reuse a block of code with functions. You will learn what the purpose of a function is and how they work, and how scope works in programming. "
+        ]
+      },
+      "workshop-calculator": {
+        "title": "Build a Calculator",
+        "intro": [
+          "In this workshop, you will review your knowledge of functions by building a calculator."
+        ]
+      },
+      "lab-boolean-check": {
+        "title": "Build a Boolean Check Function",
+        "intro": [
+          "In this lab, you'll implement a function that checks if a value is a boolean."
+        ]
+      },
+      "lab-email-masker": {
+        "title": "Build an Email Masker",
+        "intro": [
+          "In this lab, you'll build an email masker that will take an email address and obscure it.",
+          "You'll practice string slicing, concatenation, and using functions."
+        ]
+      },
+      "workshop-loan-qualification-checker": {
+        "title": "Build a Loan Qualification Checker",
+        "intro": [
+          "In this workshop, you will continue to learn how to work with conditionals by building a loan qualification checker app.",
+          "You will learn more about <code>if</code> statements, and how to use comparison operators and multiple conditions in an <code>if</code> statement."
+        ]
+      },
+      "lab-celsius-to-fahrenheit-converter": {
+        "title": "Build a Celsius to Fahrenheit Converter",
+        "intro": [
+          "In this lab you will implement a function that converts the temperature from Celsius to Fahrenheit."
+        ]
+      },
+      "lab-counting-cards": {
+        "title": "Build a Card Counting Assistant",
+        "intro": ["In this lab you will use JavaScript to count dealt cards."]
+      },
+      "lab-leap-year-calculator": {
+        "title": "Build a Leap Year Calculator ",
+        "intro": [
+          "In this lab you'll use conditional statements and loops to determine if a year is a leap year."
+        ]
+      },
+      "lab-truncate-string": {
+        "title": "Implement the Truncate String Algorithm",
+        "intro": [
+          "In this lab, you will practice truncating a string at a certain length."
+        ]
+      },
+      "lab-string-ending-checker": {
+        "title": "Build a Confirm the Ending Tool",
+        "intro": [
+          "In this lab, you will implement a function that checks if a given string ends with a specified target string."
+        ]
+      },
+      "review-javascript-functions": {
+        "title": "JavaScript Functions Review",
+        "intro": [
+          "Before you're quizzed on JavaScript functions, you should review what you've learned about them.",
+          "Open up this page to review functions, arrow functions and scope."
+        ]
+      },
+      "quiz-javascript-functions": {
+        "title": "JavaScript Functions Quiz",
+        "intro": ["Test your knowledge of JavaScript functions with this quiz."]
+      },
+      "lecture-working-with-arrays": {
+        "title": "Working with Arrays",
+        "intro": [
+          "In these lectures, you will learn how to work with JavaScript arrays. You will learn about what makes an array, one-dimensional and two-dimensional arrays, how to access and update the elements in an array, and much more."
+        ]
+      },
+      "workshop-shopping-list": {
+        "title": "Build a Shopping List",
+        "intro": [
+          "In this workshop, you will practice how to work with arrays by building a shopping list.",
+          "You will review how to add and remove elements from an array using methods like <code>push</code>, <code>pop</code>, <code>shift</code>, and <code>unshift</code>."
+        ]
+      },
+      "lab-lunch-picker-program": {
+        "title": "Build a Lunch Picker Program",
+        "intro": [
+          "In this lab, you'll review working with arrays and random numbers by building a lunch picker program."
+        ]
+      },
+      "lab-golf-score-translator": {
+        "title": "Build a Golf Score Translator",
+        "intro": [
+          "For this lab, you will use array methods to translate golf scores into their nickname."
+        ]
+      },
+      "lab-reverse-a-string": {
+        "title": "Build a String Inverter",
+        "intro": [
+          "In this lab, you create a function that reverses a given string."
+        ]
+      },
+      "lecture-working-with-common-array-methods": {
+        "title": "Working with Common Array Methods",
+        "intro": [
+          "In these lectures, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
+        ]
+      },
+      "review-javascript-arrays": {
+        "title": "JavaScript Arrays Review",
+        "intro": [
+          "Before you're quizzed on JavaScript arrays, you should review what you've learned about them.",
+          "Open up this page to review concepts like array destructuring, how to add and remove elements from an array, and more."
+        ]
+      },
+      "quiz-javascript-arrays": {
+        "title": "JavaScript Arrays Quiz",
+        "intro": ["Test your knowledge of JavaScript arrays with this quiz."]
+      },
+      "lecture-introduction-to-javascript-objects-and-their-properties": {
+        "title": "Introduction to JavaScript Objects and Their Properties",
+        "intro": [
+          "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
+        ]
+      },
+      "lecture-working-with-optional-chaining-and-object-destructuring": {
+        "title": "Working with Optional Chaining and Object Destructuring",
+        "intro": [
+          "In these lectures, you will learn about advanced object manipulation techniques in JavaScript, including the optional chaining operator and object destructuring syntax."
+        ]
+      },
+      "lecture-working-with-json": {
+        "title": "Working with JSON",
+        "intro": [
+          "In these lectures, you will learn about JavaScript Object Notation (JSON), including how to access JSON data and use the <code>JSON.parse()</code> and <code>JSON.stringify()</code> methods."
+        ]
+      },
+      "workshop-recipe-tracker": {
+        "title": "Build a Recipe Tracker",
+        "intro": [
+          "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
+        ]
+      },
+      "lab-quiz-game": {
+        "title": "Build a Quiz Game",
+        "intro": [
+          "In this lab, you'll build a quiz game using JavaScript arrays and objects.",
+          "You'll also practice using functions to randomly select a question and an answer from an array and compare them."
+        ]
+      },
+      "lab-record-collection": {
+        "title": "Build a Record Collection",
+        "intro": [
+          "In this lab you will build a function to manage a record collection."
+        ]
+      },
+      "review-javascript-objects": {
+        "title": "JavaScript Objects Review",
+        "intro": [
+          "Before you're quizzed on JavaScript objects, you should review what you've learned about them.",
+          "Open up this page to review concepts including how to access information from objects, object destructuring, working with JSON, and more."
+        ]
+      },
+      "quiz-javascript-objects": {
+        "title": "JavaScript Objects Quiz",
+        "intro": ["Test your knowledge of JavaScript objects with this quiz."]
+      },
+      "lecture-working-with-loops": {
+        "title": "Working with Loops",
+        "intro": [
+          "Loops are an essential part of JavaScript. That's why the following lectures have been prepared for you to learn about the different types of loops and how they work, and also how iteration works."
+        ]
+      },
+      "workshop-sentence-analyzer": {
+        "title": "Build a Sentence Analyzer",
+        "intro": [
+          "In this workshop, you'll review how to work with JavaScript loops by building a sentence analyzer app."
+        ]
+      },
+      "lab-longest-word-in-a-string": {
+        "title": "Build a Longest Word Finder App",
+        "intro": [
+          "In this lab, you will use JavaScript loops to find the length of the longest word in the given sentence."
+        ]
+      },
+      "lab-factorial-calculator": {
+        "title": "Build a Factorial Calculator ",
+        "intro": [
+          "In this lab, you'll build a factorial calculator.",
+          "You'll practice using loops and conditionals to calculate the factorial of a number."
+        ]
+      },
+      "lab-mutations": {
+        "title": "Implement the Mutations Algorithm",
+        "intro": [
+          "In this lab, you will practice iterating over two different strings to compare their characters."
+        ]
+      },
+      "lab-chunky-monkey": {
+        "title": "Implement the Chunky Monkey Algorithm",
+        "intro": [
+          "In this lab, you will practice dividing an array into smaller arrays with the technique of your choice."
+        ]
+      },
+      "lab-profile-lookup": {
+        "title": "Build a Profile Lookup",
+        "intro": [
+          "In this lab, you'll create a function that looks up profile information."
+        ]
+      },
+      "lab-repeat-a-string": {
+        "title": "Build a String Repeating Function",
+        "intro": [
+          "In this lab, you will implement loops to repeat a string a specified number of times."
+        ]
+      },
+      "review-javascript-loops": {
+        "title": "JavaScript Loops Review",
+        "intro": [
+          "Before you're quizzed on the different JavaScript loops, you should review them.",
+          "Open up this page to review the <code>for...of</code> loop, <code>while</code> loop, <code>break and continue</code> statements and more."
+        ]
+      },
+      "quiz-javascript-loops": {
+        "title": "JavaScript Loops Quiz",
+        "intro": ["Test your knowledge of JavaScript loops with this quiz."]
+      },
+      "lecture-working-with-types-and-objects": {
+        "title": "Working with Types and Objects",
+        "intro": [
+          "In these lectures you will learn about string objects, the <code>toString()</code> method, the <code>Number</code> constructor and more."
+        ]
+      },
+      "lecture-working-with-arrays-variables-and-naming-practices": {
+        "title": "Working with Arrays, Variables, and Naming Practices",
+        "intro": [
+          "In these lectures you will learn about common practices for naming variables and functions, and how to work with arrays."
+        ]
+      },
+      "lecture-working-with-code-quality-and-execution-concepts": {
+        "title": "Working with Code Quality and Execution Concepts",
+        "intro": [
+          "In these lectures you will learn what are linters and formatters, what is memory management, and closures."
+        ]
+      },
+      "lab-largest-number-finder": {
+        "title": "Build the Largest Number Finder",
+        "intro": [
+          "In this lab, you will use JavaScript fundamentals to create a function that finds the largest number in each sub-array of a given array."
+        ]
+      },
+      "lab-first-element-finder": {
+        "title": "Build a First Element Finder",
+        "intro": [
+          "In this lab, you will create a function that looks through an array and returns the first element in it that passes a \"truth test\"."
+        ]
+      },
+      "lab-slice-and-splice": {
+        "title": "Implement the Slice and Splice Algorithm",
+        "intro": [
+          "In this lab, you will practice merging an array with another."
+        ]
+      },
+      "lab-pyramid-generator": {
+        "title": "Build a Pyramid Generator",
+        "intro": [
+          "In this lab you'll build a pyramid generator.",
+          "You'll take a number as input and generate a pyramid with that many levels using a loop."
+        ]
+      },
+      "lab-gradebook-app": {
+        "title": "Build a Gradebook App",
+        "intro": [
+          "For this lab, you'll create a gradebook app.",
+          "You'll practice conditionals to determine the student's grade based on their score."
+        ]
+      },
+      "lecture-the-var-keyword-and-hoisting": {
+        "title": "The var Keyword and Hoisting",
+        "intro": [
+          "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
+        ]
+      },
+      "lab-falsy-remover": {
+        "title": "Implement a Falsy Remover",
+        "intro": [
+          "In this lab, you will create a function that removes all falsy values from an array."
+        ]
+      },
+      "lab-inventory-management-program": {
+        "title": "Build an Inventory Management Program",
+        "intro": [
+          "For this lab, you'll build an inventory management program using JavaScript.",
+          "You'll use JavaScript array of objects to manage the inventory."
+        ]
+      },
+      "lecture-understanding-modules-imports-and-exports": {
+        "title": "Understanding Modules, Imports, and Exports",
+        "intro": [
+          "In this lecture, you will learn about modules, imports, and exports in JavaScript."
+        ]
+      },
+      "lab-password-generator": {
+        "title": "Build a Password Generator App",
+        "intro": [
+          "In this lab, you'll build a password generator app based on the user's input."
+        ]
+      },
+      "lab-sum-all-numbers-algorithm": {
+        "title": "Design a Sum All Numbers Algorithm",
+        "intro": [
+          "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
+        ]
+      },
+      "lab-html-entitiy-converter": {
+        "title": "Implement an HTML Entity Converter",
+        "intro": [
+          "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+        ]
+      },
+      "lab-optional-arguments-sum-function": {
+        "title": "Build an Optional Arguments Sum Function",
+        "intro": [
+          "In this lab you will build a function that accepts up to two arguments, and sum them, but if there is only one argument returns a function that waits for the second number to sum."
+        ]
+      },
+      "review-javascript-fundamentals": {
+        "title": "JavaScript Fundamentals Review",
+        "intro": [
+          "Before you are quizzed on JavaScript fundamentals, you first need to review the concepts.",
+          "Open up this page to review concepts like closures, memory management, and more."
+        ]
+      },
+      "quiz-javascript-fundamentals": {
+        "title": "JavaScript Fundamentals Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript fundamentals with this quiz."
+        ]
+      },
+      "lecture-working-with-higher-order-functions-and-callbacks": {
+        "title": "Working with Higher Order Functions and Callbacks",
+        "intro": [
+          "In these lectures, you will learn how to work with higher order functions and callbacks. The higher order functions you will learn include <code>map()</code>, <code>filter()</code>, <code>reduce()</code>, <code>sort()</code>, <code>every()</code>, and <code>some()</code>. You will also learn how to chain these methods together to achieve your desired results."
+        ]
+      },
+      "workshop-library-manager": {
+        "title": "Build a Library Manager",
+        "intro": [
+          "In this workshop, you will learn higher order array methods by building a library manager."
+        ]
+      },
+      "lab-book-organizer": {
+        "title": "Build a Book Organizer",
+        "intro": [
+          "In this lab, you'll build a book organizer using higher order functions in JavaScript."
+        ]
+      },
+      "lab-sorted-index-finder": {
+        "title": "Implement a Sorted Index Finder",
+        "intro": [
+          "In this lab, you will create a function that finds the index at which a given number should be inserted into a sorted array to maintain the array's sorted order."
+        ]
+      },
+      "lab-symmetric-difference": {
+        "title": "Build a Symmetric Difference Function",
+        "intro": [
+          "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
+        ]
+      },
+      "review-javascript-higher-order-functions": {
+        "title": "JavaScript Higher Order Functions Review",
+        "intro": [
+          "Before you're quizzed on JavaScript higher order functions, you should review them.",
+          "Open up this page to review concepts including how to work with the <code>map()</code>, <code>filter()</code>, and <code>reduce()</code> methods."
+        ]
+      },
+      "quiz-javascript-higher-order-functions": {
+        "title": "JavaScript Higher Order Functions Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript higher order functions with this quiz."
+        ]
+      },
+      "lecture-working-with-the-dom-click-events-and-web-apis": {
+        "title": "Working with the DOM, Click Events, and Web APIs",
+        "intro": [
+          "In these lectures, you will learn how to work with the Document Object Model (DOM), the <code>addEventListener()</code> method and events, and web APIs."
+        ]
+      },
+      "workshop-storytelling-app": {
+        "title": "Build a Storytelling App",
+        "intro": [
+          "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+        ]
+      },
+      "lab-favorite-icon-toggler": {
+        "title": "Build a Favorite Icon Toggler",
+        "intro": [
+          "In this lab, you'll build a favorite icon toggler by utilizing JavaScript click events."
+        ]
+      },
+      "lecture-understanding-the-event-object-and-event-delegation": {
+        "title": "Understanding the Event Object and Event Delegation",
+        "intro": [
+          "In these lectures, you will learn about the event object, the change event, event bubbling, and event delegation."
+        ]
+      },
+      "workshop-music-instrument-filter": {
+        "title": "Build a Music Instrument Filter",
+        "intro": [
+          "In this workshop, you will build a music instrument filter with JavaScript."
+        ]
+      },
+      "lab-real-time-counter": {
+        "title": "Build a Real Time Counter",
+        "intro": [
+          "In this lab, you'll build a real-time character counter",
+          "You'll practice how to work with the <code>input</code> event when the user types in the input field."
+        ]
+      },
+      "lab-lightbox-viewer": {
+        "title": "Build a Lightbox Viewer",
+        "intro": [
+          "In this lab, you'll build a lightbox viewer for viewing images in a focused mode.",
+          "You'll practice click events and toggling classes."
+        ]
+      },
+      "workshop-rps-game": {
+        "title": "Build a Rock, Paper, Scissors Game",
+        "intro": [
+          "In this workshop, you will review DOM manipulation and events by building a Rock, Paper, Scissors Game."
+        ]
+      },
+      "lab-football-team-cards": {
+        "title": "Build a Set of Football Team Cards",
+        "intro": [
+          "In this lab, you'll use DOM manipulation, object destructuring, event handling, and data filtering to build a set of football team cards."
+        ]
+      },
+      "review-dom-manipulation-and-click-events-with-javascript": {
+        "title": "DOM Manipulation and Click Events with JavaScript Review",
+        "intro": [
+          "Before you're quizzed on the DOM, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>DOM</code>, <code>Web APIs</code>, the <code>addEventListener()</code> method, change events, event bubbling and more."
+        ]
+      },
+      "quiz-dom-manipulation-and-click-event-with-javascript": {
+        "title": "DOM Manipulation and Click Events with JavaScript Quiz",
+        "intro": [
+          "Test your knowledge of DOM manipulation and click events in JavaScript with this quiz."
+        ]
+      },
+      "lecture-understanding-aria-expanded-aria-live-and-common-aria-states": {
+        "title": "Understanding aria-expanded, aria-live, and Common ARIA States",
+        "intro": [
+          "In these lectures you will learn more about ARIA attributes like <code>aria-expanded</code>, <code>aria-live</code>, and common ARIA states."
+        ]
+      },
+      "workshop-planets-tablist": {
+        "title": "Build a Planets Tablist",
+        "intro": [
+          "In this workshop, you will build a dynamic tabbed interface that showcases facts about the planets in the solar system."
+        ]
+      },
+      "workshop-note-taking-app": {
+        "title": "Build a Note Taking App",
+        "intro": [
+          "In this workshop, you are going to build an accessible note taking app.",
+          "This will provide you with the opportunity to practice working with <code>aria-live</code> attribute."
+        ]
+      },
+      "lab-theme-switcher": {
+        "title": "Build a Theme Switcher",
+        "intro": [
+          "In this lab, you will build a theme switcher and practice working with the <code>aria-haspopup</code>, <code>aria-expanded</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
+      "review-js-a11y": {
+        "title": "JavaScript and Accessibility Review",
+        "intro": [
+          "Before you're quizzed on JavaScript and accessibility, you should review what you've learned about it.",
+          "Open up this page to review concepts including how to work with the <code>aria-expanded</code>, <code>aria-live</code>, and <code>aria-controls</code> attributes."
+        ]
+      },
+      "quiz-js-a11y": {
+        "title": "JavaScript and Accessibility Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript and accessibility best practices with this quiz."
+        ]
+      },
+      "lecture-debugging-techniques": {
+        "title": "Debugging Techniques",
+        "intro": [
+          "In these lectures, you will learn about the common errors in JavaScript and the techniques you can use to fix them – a process called debugging."
+        ]
+      },
+      "lab-random-background-color-changer": {
+        "title": "Debug a Random Background Color Changer",
+        "intro": [
+          "In this lab, you'll debug a random background color changer and fix the errors to make it work properly."
+        ]
+      },
+      "review-debugging-javascript": {
+        "title": "Debugging JavaScript Review",
+        "intro": [
+          "Before you're quizzed on common debugging techniques, you should review what you've learned.",
+          "Open up this page to review concepts including how to work with the <code>throw statement</code>, <code>try...catch...finally</code> and more."
+        ]
+      },
+      "quiz-debugging-javascript": {
+        "title": "Debugging JavaScript Quiz",
+        "intro": ["Test your knowledge of JavaScript debugging with this quiz."]
+      },
+      "lecture-working-with-regular-expressions": {
+        "title": "Working with Regular Expressions",
+        "intro": [
+          "In these lectures, you will learn about regular expressions in JavaScript. You will learn about the methods for working with regular expressions, modifiers, character classes, lookaheads, lookbehinds, back-references, quantifiers, and more."
+        ]
+      },
+      "workshop-spam-filter": {
+        "title": "Build a Spam Filter",
+        "intro": [
+          "Regular expressions, often shortened to \"regex\" or \"regexp\", are patterns that help programmers match, search, and replace text. Regular expressions are powerful, but can be difficult to understand because they use so many special characters.",
+          "In this workshop, you'll use capture groups, positive lookaheads, negative lookaheads, and other techniques to match any text you want."
+        ]
+      },
+      "lab-palindrome-checker": {
+        "title": "Build a Palindrome Checker",
+        "intro": [
+          "For this lab, you'll build an application that checks whether a given word is a palindrome."
+        ]
+      },
+      "lab-markdown-to-html-converter": {
+        "title": "Build a Markdown to HTML Converter",
+        "intro": [
+          "For this lab, you'll build a Markdown to HTML converter using JavaScript.",
+          "You'll practice regular expressions, string manipulation, and more."
+        ]
+      },
+      "lab-regex-sandbox": {
+        "title": "Build a RegEx Sandbox",
+        "intro": ["In this lab you'll build a regex sandbox."]
+      },
+      "review-javascript-regular-expressions": {
+        "title": "JavaScript Regular Expressions Review",
+        "intro": [
+          "Before you're quizzed on Regular Expressions, you should review what you've learned.",
+          "Open up this page to review concepts like lookaheads, lookbehinds, common regex modifiers and more."
+        ]
+      },
+      "quiz-javascript-regular-expressions": {
+        "title": "JavaScript Regular Expressions Quiz",
+        "intro": [
+          "Test your knowledge of JavaScript Regular Expressions with this quiz."
+        ]
+      },
+      "lecture-understanding-form-validation": {
+        "title": "Understanding Form Validation",
+        "intro": [
+          "In these lectures, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
+        ]
+      },
+      "workshop-calorie-counter": {
+        "title": "Build a Calorie Counter",
+        "intro": [
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
+        ]
+      },
+      "lab-customer-complaint-form": {
+        "title": "Build a Customer Complaint Form",
+        "intro": [
+          "For this lab, you'll use JavaScript to validate a customer complaint form.",
+          "You'll practice how to validate form inputs, display error messages, and prevent the form from submitting if there are errors."
+        ]
+      },
+      "review-form-validation-with-javascript": {
+        "title": "Form Validation with JavaScript Review",
+        "intro": [
+          "Before you're quizzed on form validation, you should review what you've learned.",
+          "Open up this page to review concepts including the <code>preventDefault()</code> method, the submit event and more."
+        ]
+      },
+      "quiz-form-validation-with-javascript": {
+        "title": "Form Validation with JavaScript Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript form validation with this quiz."
+        ]
+      },
+      "lecture-working-with-dates": {
+        "title": "Working with Dates",
+        "intro": [
+          "In these lectures, you will learn about the JavaScript date object. You will learn about the methods for working with dates and how to format dates."
+        ]
+      },
+      "lab-date-conversion": {
+        "title": "Build a Date Conversion Program",
+        "intro": [
+          "In this lab, you'll build a program to convert a date from one format to another."
+        ]
+      },
+      "review-javascript-dates": {
+        "title": "JavaScript Dates Review",
+        "intro": [
+          "Before you're quizzed on working with dates, you should review what you've learned.",
+          "Open up this page to review the <code>Date()</code> object and common methods."
+        ]
+      },
+      "quiz-javascript-dates": {
+        "title": "JavaScript Dates Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript Dates with this quiz."
+        ]
+      },
+      "lecture-working-with-audio-and-video": {
+        "title": "Working with Audio and Video",
+        "intro": [
+          "In these lectures, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
+        ]
+      },
+      "workshop-music-player": {
+        "title": "Build a Music Player",
+        "intro": [
+          "In this workshop, you'll code a basic MP3 player using HTML, CSS, and JavaScript.",
+          "The project covers fundamental concepts such as handling audio playback, managing a playlist, implementing play, pause, next, and previous functionalities and dynamically update your user interface based on the current song."
+        ]
+      },
+      "lab-drum-machine": {
+        "title": "Build a Drum Machine",
+        "intro": [
+          "For this lab you will use the <code>audio</code> element to build a drum machine."
+        ]
+      },
+      "review-javascript-audio-and-video": {
+        "title": "JavaScript Audio and Video Review",
+        "intro": [
+          "Before you're quizzed on working with audio and video in JavaScript, you should review what you've learned about them.",
+          "Open up this page to review concepts including the <code>Audio</code> constructor, the <code>HTMLMediaElement</code> API and more."
+        ]
+      },
+      "quiz-javascript-audio-and-video": {
+        "title": "JavaScript Audio and Video Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript audio and video with this quiz."
+        ]
+      },
+      "lecture-working-with-maps-and-sets": {
+        "title": "Working with Maps and Sets",
+        "intro": [
+          "In these lectures, you will learn about JavaScript <code>Map</code> and <code>Set</code>. You will also learn how they both differ from <code>WeakSets</code> and <code>WeakMaps</code>."
+        ]
+      },
+      "workshop-plant-nursery-catalog": {
+        "title": "Build a Plant Nursery Catalog",
+        "intro": [
+          "In this workshop, you will practice using Maps and Sets by building a plant nursery catalog."
+        ]
+      },
+      "lab-voting-system": {
+        "title": "Build a Voting System",
+        "intro": [
+          "In this lab, you'll build a voting system using Maps and Sets.",
+          "You'll practice how to use the <code>Map</code> object to store key-value pairs and the <code>Set</code> object to store unique values."
+        ]
+      },
+      "review-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Review",
+        "intro": [
+          "Before you're quizzed on JavaScript Maps and Sets, you should review what you've learned about them.",
+          "Open up this page to review concepts such as the <code>Map</code> and <code>Set</code> objects, as well as WeakSet and WeakMap."
+        ]
+      },
+      "quiz-javascript-maps-and-sets": {
+        "title": "JavaScript Maps and Sets Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript Maps and Sets with this quiz."
+        ]
+      },
+      "lecture-working-with-client-side-storage-and-crud-operations": {
+        "title": "Working with Client-Side Storage and CRUD Operations",
+        "intro": [
+          "In these lectures, you will learn about client-side storage and CRUD operations in JavaScript. You will learn about <code>localStorage</code> and <code>sessionStorage</code> alongside their methods and properties, cookies, the Cache API, IndexDB, and much more."
+        ]
+      },
+      "workshop-todo-app": {
+        "title": "Build a Todo App using Local Storage",
+        "intro": [
+          "Local storage is a web browser feature that lets web applications store key-value pairs persistently within a user's browser. This allows web apps to save data during one session, then retrieve it in a later page session.",
+          "In this workshop, you'll learn how to handle form inputs, manage local storage, perform CRUD (Create, Read, Update, Delete) operations on tasks, implement event listeners, and toggle UI elements."
+        ]
+      },
+      "lab-bookmark-manager-app": {
+        "title": "Build a Bookmark Manager App",
+        "intro": [
+          "For this lab, you'll build a bookmark manager app.",
+          "You'll utilize local storage to store bookmarks, and practice how to add, remove, and display bookmarks."
+        ]
+      },
+      "review-local-storage-and-crud": {
+        "title": "Local Storage and CRUD Review",
+        "intro": [
+          "Before you are quizzed on working with <code>localStorage</code>, you first need to review the concepts.",
+          "Open up this page to review the <code>localStorage</code> property, <code>sessionStorage</code> property and more."
+        ]
+      },
+      "quiz-local-storage-and-crud": {
+        "title": "Local Storage and CRUD Quiz",
+        "intro": [
+          "Test what you've learned about local storage and CRUD with this quiz."
+        ]
+      },
+      "lecture-understanding-how-to-work-with-classes-in-javascript": {
+        "title": "Understanding How to Work with Classes in JavaScript",
+        "intro": [
+          "In these lectures, you will learn about classes in JavaScript. You will learn about inheritance, the <code>this</code> keyword, static properties and methods, and more."
+        ]
+      },
+      "workshop-shopping-cart": {
+        "title": "Build a Shopping Cart",
+        "intro": [
+          "In this workshop you'll create a shopping cart using JavaScript classes.",
+          "You will practice how to use the this keyword, create class instances, implement methods for data manipulation and more."
+        ]
+      },
+      "lab-project-idea-board": {
+        "title": "Build a Project Idea Board",
+        "intro": [
+          "In this lab, you'll build a project idea board using OOP in JavaScript.",
+          "You'll practice how to create classes, add methods to classes, and create instances of classes."
+        ]
+      },
+      "lab-bank-account-manager": {
+        "title": "Build a Bank Account Management Program",
+        "intro": [
+          "In this lab, you'll build a simple transaction management system for a bank account."
+        ]
+      },
+      "review-javascript-classes": {
+        "title": "JavaScript Classes Review",
+        "intro": [
+          "Before you're quizzed on how to work with classes, you should review what you've learned about them.",
+          "Open up this page to review concepts including the <code>this</code> keyword, class inheritance and more."
+        ]
+      },
+      "quiz-javascript-classes": {
+        "title": "JavaScript Classes Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript classes with this quiz."
+        ]
+      },
+      "lecture-understanding-recursion-and-the-call-stack": {
+        "title": "Understanding Recursion and the Call Stack",
+        "intro": [
+          "In this lecture, you will learn about recursion and the call stack."
+        ]
+      },
+      "workshop-decimal-to-binary-converter": {
+        "title": "Build a Decimal to Binary Converter",
+        "intro": [
+          "Recursion is a programming concept where a function calls itself. This can reduce a complex problem into simpler sub-problems, until they become straightforward to solve.",
+          "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
+        ]
+      },
+      "lab-permutation-generator": {
+        "title": "Build a Permutation Generator",
+        "intro": [
+          "For this lab, you'll build a permutation generator that produces all possible permutations of a given string."
+        ]
+      },
+      "review-recursion": {
+        "title": "Recursion Review",
+        "intro": [
+          "Before you're quizzed on recursion, you should review what you've learned.",
+          "Open up this page to review what is recursion and what is it used for."
+        ]
+      },
+      "quiz-recursion": {
+        "title": "Recursion Quiz",
+        "intro": ["Test your knowledge of Recursion with this quiz."]
+      },
+      "lecture-understanding-functional-programming": {
+        "title": "Understanding Functional Programming",
+        "intro": [
+          "In these lectures, you will learn about functional programming and how to nest functions using a technique called currying."
+        ]
+      },
+      "workshop-recipe-ingredient-converter": {
+        "title": "Build a Recipe Ingredient Converter",
+        "intro": [
+          "In the previous lectures, you learned the core concepts behind functional programming and currying.",
+          "Now you will be able to apply what you have learned about currying and functional programming by building a recipe ingredient converter application."
+        ]
+      },
+      "lab-sorting-visualizer": {
+        "title": "Build a Sorting Visualizer",
+        "intro": [
+          "For this lab, you'll use JavaScript to visualize the steps that the Bubble Sort algorithm takes to reorder an array of integers."
+        ]
+      },
+      "review-javascript-functional-programming": {
+        "title": "JavaScript Functional Programming Review",
+        "intro": [
+          "Before you're quizzed on functional programming, you should review what you've learned.",
+          "Open up this page to review concepts on functional programming, currying and more."
+        ]
+      },
+      "quiz-javascript-functional-programming": {
+        "title": "JavaScript Functional Programming Quiz",
+        "intro": [
+          "Test what you've learned about JavaScript functional programming with this quiz."
+        ]
+      },
+      "lecture-understanding-asynchronous-programming": {
+        "title": "Understanding Asynchronous Programming",
+        "intro": [
+          "In these lectures, you will learn about asynchronous programming in JavaScript. You will learn about the differences between synchronous and asynchronous programming, how the <code>async</code> keyword works, the <code>Fetch</code> API, promises, <code>async/await</code>, the <code>Geolocation</code> API, and much more."
+        ]
+      },
+      "workshop-fcc-authors-page": {
+        "title": "Build an fCC Authors Page",
+        "intro": [
+          "One common aspect of web development is learning how to fetch data from an external API, then work with asynchronous JavaScript.",
+          "In this workshop you will practice how to use the fetch method, dynamically update the DOM to display the fetched data and paginate your data so you can load results in batches."
+        ]
+      },
+      "lab-fcc-forum-leaderboard": {
+        "title": "Build an fCC Forum Leaderboard",
+        "intro": [
+          "For this lab you'll practice asynchronous JavaScript by coding your own freeCodeCamp forum leaderboard."
+        ]
+      },
+      "lab-weather-app": {
+        "title": "Build a Weather App",
+        "intro": [
+          "In this lab you'll build a Weather App using an API",
+          "You'll practice how to fetch data from the API, store and display it on your app."
+        ]
+      },
+      "review-asynchronous-javascrip": {
+        "title": "Asynchronous JavaScript Review",
+        "intro": [
+          "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-asynchronous-javascript": {
+        "title": "Asynchronous JavaScript Quiz",
+        "intro": [
+          "Test what you've learned about asynchronous JavaScript with this quiz."
+        ]
+      },
+      "review-javascript": {
+        "title": "JavaScript Review",
+        "intro": [
+          "Before you take the JavaScript prep exam, you should review everything you've learned about JavaScript.",
+          "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
+        ]
+      },
+      "exam-javascript-certification": {
+        "title": "JavaScript Certification Exam",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
+    }
+  },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
@@ -4990,7 +6091,9 @@
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
       "es-a1-module-alphabet-accents-and-punctuation": "Alphabet, Accents, and Punctuation",
-      "es-a1-module-greetings-and-farewells": "Greetings and Farewells"
+      "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
+      "es-a1-module-introducing-yourself": "Introducing Yourself",
+      "es-a1-module-first-questions": "First Questions"
     },
     "module-intros": {
       "es-a1-module-introduction-and-certification-overview": {
@@ -5002,6 +6105,14 @@
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
       "es-a1-module-greetings-and-farewells": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-introducing-yourself": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-first-questions": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       }
@@ -5041,6 +6152,54 @@
       },
       "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
         "title": "Alphabet, Accent and Punctuation Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-introducing-yourself-basics": {
+        "title": "Introducing Yourself Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-luna": {
+        "title": "Meet Luna",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-mateo": {
+        "title": "Meet Mateo",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-julieta": {
+        "title": "Meet Julieta",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-introducing-yourself": {
+        "title": "Introducing Yourself Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-introducing-yourself": {
+        "title": "Introducing Yourself Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-introducing-yourself": {
+        "title": "Introducing Yourself Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-first-questions-basics": {
+        "title": "First Questions Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-angela-and-basti": {
+        "title": "Meet Angela and Basti",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-first-questions": {
+        "title": "First Questions Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-review-first-questions": {
+        "title": "First Questions Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-first-questions": {
+        "title": "First Questions Quiz",
         "intro": ["", ""]
       }
     }
