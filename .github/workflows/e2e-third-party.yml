@@ -152,7 +152,7 @@ jobs:
 
       - name: Start apps
         run: |
-          docker compose up -d
+          docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
           pnpm run serve:client-ci &
           sleep 10
 
