@@ -1,30 +1,28 @@
 ---
-id: 68bb001c22f3bcbd1fdf38fa
-title: Task 1
+id: 68c58aa8c9d2a2dfea45deb7
+title: Task 7
 challengeType: 19
-dashedName: task-1
+dashedName: task-7
 ---
-
-<!-- (Audio) Elena: Hola -->
+<!-- (Audio) Elena: Hasta luego -->
 
 # --description--
 
-Elena wants to say "hi". You'll hear this word all the time in Spanish when people meet each other.
+Elena is saying goodbye, but she expects to see you again.
 
 # --instructions--
 
 Listen to the audio and answer the question below.
-There's just **one** correct answer. If you need help, click on **explanation** at the bottom of the lesson.
 
 # --questions--
 
 ## --text--
 
-What word does Elena use to say "hi"?
+What phrase does Elena use to say "see you later"?
 
 ## --answers--
 
-`Hola`
+`Hasta luego.`
 
 ---
 
@@ -32,7 +30,7 @@ What word does Elena use to say "hi"?
 
 ### --feedback--
 
-This means the opposite of what the speaker says. Open the explanation section if you need further help.
+This is a goodbye, but it's more final. The speaker uses a different phrase.
 
 ---
 
@@ -40,15 +38,15 @@ This means the opposite of what the speaker says. Open the explanation section i
 
 ### --feedback--
 
-This means the opposite of what the speaker says. Open the explanation section if you need further help.
+This is also an informal way to say goodbye, but it's not the one in the audio.
 
 ---
 
-`Buenos días`
+`¡Hola!`
 
 ### --feedback--
 
-This means "Good morning", but it's not what you hear in the audio.
+This means "Hi", a general greeting, but it's not what Elena says.
 
 ## --video-solution--
 
@@ -56,9 +54,11 @@ This means "Good morning", but it's not what you hear in the audio.
 
 # --explanation--
 
-The word `Hola` is a greeting. It is used when you meet someone, similar to "Hello" or "Hi". For example:
+`Hasta luego` is a common way to say goodbye in Spanish. It translates to "See you later".
 
-`¡Hola, buenos días!` – Hi, good morning! 
+It's used when you expect to see the person again, but not necessarily soon. For example:  
+
+`Hasta luego, Marta.` – See you later, Marta.
 
 # --scene--
 
@@ -80,8 +80,8 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     "audio": {
       "filename": "ES_A1_1.1.mp3",
       "startTime": 1,
-      "startTimestamp": 0.35,
-      "finishTimestamp": 0.90
+      "startTimestamp": 5.68,
+      "finishTimestamp": 6.64
     }
   },
   "commands": [
@@ -93,16 +93,16 @@ The word `Hola` is a greeting. It is used when you meet someone, similar to "Hel
     {
       "character": "Elena",
       "startTime": 1,
-      "finishTime": 1.55,
+      "finishTime": 1.96,
       "dialogue": {
-        "text": "¡Hola!",
+        "text": "Hasta luego.",
         "align": "center"
       }
     },
     {
       "character": "Elena",
       "opacity": 0,
-      "startTime": 2.05
+      "startTime": 2.46
     }
   ]
 }
