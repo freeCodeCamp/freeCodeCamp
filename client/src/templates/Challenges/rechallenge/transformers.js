@@ -45,8 +45,8 @@ function testLoopProtectCB(line) {
 // hold Babel and presets so we don't try to import them multiple times
 
 let Babel;
-let presetEnv, presetReact, presetTypescript;
-let presetsJS, presetsJSX, presetsTSX;
+let presetEnv, presetReact;
+let presetsJS, presetsJSX;
 
 async function loadBabel() {
   if (Babel) return;
@@ -86,26 +86,6 @@ async function loadPresetReact() {
 
   presetsJSX = {
     presets: [presetEnv, presetReact]
-  };
-}
-
-async function loadPresetTypescriptReact() {
-  if (!presetReact)
-    presetReact = await import(
-      /* webpackChunkName: "@babel/preset-react" */ '@babel/preset-react'
-    );
-  if (!presetEnv)
-    presetEnv = await import(
-      /* webpackChunkName: "@babel/preset-env" */ '@babel/preset-env'
-    );
-
-  if (!presetTypescript)
-    presetTypescript = await import(
-      /* webpackChunkName: "@babel/preset-typescript" */ '@babel/preset-typescript'
-    );
-
-  presetsTSX = {
-    presets: [presetEnv, presetReact, presetTypescript]
   };
 }
 
@@ -177,21 +157,9 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
   )(challengeFile);
 };
 
-const getTSXTranspiler = loopProtectOptions => async challengeFile => {
-  await loadBabel();
-  await checkTSServiceIsReady();
-  await loadPresetTypescriptReact();
-  const babelOptions = getBabelOptions(presetsTSX, loopProtectOptions);
-  return flow(
-    partial(transformHeadTailAndContents, compileTypeScriptCode),
-    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
-  )(challengeFile);
-};
-
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
-  await loadPresetTypescriptReact();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
@@ -206,7 +174,6 @@ const createTranspiler = loopProtectOptions => {
     [testJS, getJSTranspiler(loopProtectOptions)],
     [testJSX, getJSXTranspiler(loopProtectOptions)],
     [testTypeScript, getTSTranspiler(loopProtectOptions)],
-    [testTSX, getTSXTranspiler(loopProtectOptions)],
     [testHTML, getHtmlTranspiler({ useModules: false })],
     [stubTrue, identity]
   ]);
@@ -259,7 +226,6 @@ async function transformScript(documentElement, { useModules }) {
   await loadBabel();
   await loadPresetEnv();
   await loadPresetReact();
-  await loadPresetTypescriptReact();
   const scriptTags = documentElement.querySelectorAll('script');
   scriptTags.forEach(script => {
     const isBabel = script.type === 'text/babel';

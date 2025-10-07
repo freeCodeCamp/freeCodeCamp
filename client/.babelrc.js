@@ -18,13 +18,7 @@ const config = {
       '@babel/preset-react',
       {
         useBuiltIns: true,
-        pragma: 'React.createElement',
-        overrides: [
-          {
-            test: '*.tsx',
-            presets: [['@babel/preset-typescript'], { ignoreExtensions: true }]
-          }
-        ]
+        pragma: 'React.createElement'
       }
     ],
     '@babel/preset-typescript'
