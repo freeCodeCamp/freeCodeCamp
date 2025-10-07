@@ -40,7 +40,6 @@ Submit your page when you think you've got it right. If you're running into erro
 The middleware `ensureAuthenticated` should be implemented and attached to the `/profile` route.
 
 ```js
-async () => {
   const url = new URL("/_api/server.js", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -54,13 +53,11 @@ async () => {
     /profile[^]*get[^]*ensureAuthenticated/,
     'Your ensureAuthenticated middleware should be attached to the /profile route'
   );
-}
 ```
 
 An unauthenticated GET request to `/profile` should correctly redirect to `/`.
 
 ```js
-async () => {
   const url = new URL("/profile", code);
   const res = await fetch(url);
   const data = await res.text();
@@ -69,6 +66,5 @@ async () => {
     /Home page/,
     'An attempt to go to the profile at this point should redirect to the homepage since we are not logged in'
   );
-}
 ```
 

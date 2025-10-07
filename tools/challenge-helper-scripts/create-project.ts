@@ -5,8 +5,10 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
-import fullStackData from '../../curriculum/structure/superblocks/full-stack-developer.json';
-import { SuperBlocks } from '../../shared/config/curriculum';
+import {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} from '../../shared/config/curriculum';
 import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
@@ -17,6 +19,7 @@ import { createQuizFile, createStepFile, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import {
+  ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project';
@@ -71,7 +74,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     superBlockToFilename as Record<SuperBlocks, string>
   )[projectArgs.superBlock];
 
-  if (projectArgs.superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(projectArgs.superBlock)) {
     if (!chapter || !module || typeof position == 'undefined') {
       throw Error(
         'Missing one of the following arguments: chapter, module, position'
@@ -133,7 +136,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
   }
 
   if (
-    (projectArgs.superBlock === SuperBlocks.FullStackDeveloper &&
+    (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
       projectArgs.blockType) == null
   ) {
     throw new Error('Missing argument: blockType when updating intro markdown');
@@ -178,10 +181,13 @@ async function createMetaJson(
   blockLayout?: string
 ) {
   let newMeta;
-  if (superBlock === SuperBlocks.FullStackDeveloper) {
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
     newMeta.blockType = blockType;
     newMeta.blockLayout = blockLayout;
+    if (blockType === BlockTypes.workshop) {
+      newMeta.hasEditableBoundaries = true;
+    }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
@@ -205,13 +211,13 @@ async function createFirstChallenge(block: string): Promise<ObjectID> {
 
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
-  const challengeSeeds = {
-    indexhtml: {
+  const challengeSeeds = [
+    {
       contents: '',
       ext: 'html',
       editableRegionBoundaries: [0, 2]
     }
-  };
+  ];
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
     projectPath: newChallengeDir + '/',
@@ -262,6 +268,31 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+async function getChapters(superBlock: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  return blockMetaData.chapters;
+}
+
+async function getModules(superBlock: string, chapterName: string) {
+  const blockMetaFile = await fs.readFile(
+    '../../curriculum/structure/superblocks/' + superBlock + '.json',
+    { encoding: 'utf8' }
+  );
+  const blockMetaData = JSON.parse(
+    blockMetaFile
+  ) as ChapterModuleSuperblockStructure;
+  const modifiedChapter = blockMetaData.chapters.find(
+    x => x.dashedName === chapterName
+  );
+  return modifiedChapter?.modules;
+}
+
 void prompt([
   {
     name: 'superBlock',
@@ -296,7 +327,7 @@ void prompt([
     type: 'list',
     choices: Object.values(BlockTypes),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'blockLayout',
@@ -309,7 +340,7 @@ void prompt([
     type: 'list',
     choices: Object.values(BlockLayouts),
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'questionCount',
@@ -321,26 +352,27 @@ void prompt([
   },
   {
     name: 'chapter',
-    message:
-      'What chapter in full-stack.json should this full stack project go in?',
+    message: 'What chapter should this project go in?',
     default: 'html',
     type: 'list',
-    choices: fullStackData.chapters.map(x => x.dashedName),
+    choices: async (answers: CreateProjectArgs) => {
+      const chapters = await getChapters(answers.superBlock);
+      return chapters.map(x => x.dashedName);
+    },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'module',
-    message:
-      'What module in full-stack.json should this full stack project go in?',
+    message: 'What module should this project go in?',
     default: 'html',
     type: 'list',
-    choices: (answers: CreateProjectArgs) =>
-      fullStackData.chapters
-        .find(x => x.dashedName === answers.chapter)
-        ?.modules.map(x => x.dashedName),
+    choices: async (answers: CreateProjectArgs) => {
+      const modules = await getModules(answers.superBlock, answers.chapter!);
+      return modules!.map(x => x.dashedName);
+    },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper
+      chapterBasedSuperBlocks.includes(answers.superBlock)
   },
   {
     name: 'position',
@@ -352,7 +384,7 @@ void prompt([
         : 'Position must be an number greater than zero.';
     },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock === SuperBlocks.FullStackDeveloper,
+      chapterBasedSuperBlocks.includes(answers.superBlock),
     filter: (position: string) => {
       return parseInt(position, 10);
     }
@@ -367,7 +399,7 @@ void prompt([
         : 'Order must be an number greater than zero.';
     },
     when: (answers: CreateProjectArgs) =>
-      answers.superBlock !== SuperBlocks.FullStackDeveloper,
+      !chapterBasedSuperBlocks.includes(answers.superBlock),
     filter: (order: string) => {
       return parseInt(order, 10);
     }

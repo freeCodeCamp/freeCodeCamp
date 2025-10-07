@@ -1,10 +1,10 @@
 import { describe, test, expect, beforeAll, afterEach, vi } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
-import db from '../../db/prisma';
-import { createUserInput } from '../../utils/create-user';
-import { checkCanConnectToDb } from '../../../vitest.utils';
-import { findOrCreateUser } from './auth-helpers';
+import db from '../../db/prisma.js';
+import { createUserInput } from '../../utils/create-user.js';
+import { checkCanConnectToDb } from '../../../vitest.utils.js';
+import { findOrCreateUser } from './auth-helpers.js';
 
 const captureException = vi.fn();
 

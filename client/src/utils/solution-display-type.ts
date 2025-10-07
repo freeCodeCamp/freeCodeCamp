@@ -1,5 +1,5 @@
 import type { CompletedChallenge } from '../redux/prop-types';
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../shared-dist/config/challenge-types';
 import { hasProtocolRE } from '.';
 
 type DisplayType =

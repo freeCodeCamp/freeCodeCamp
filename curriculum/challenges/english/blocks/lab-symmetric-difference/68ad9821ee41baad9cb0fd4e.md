@@ -1,7 +1,7 @@
 ---
 id: 68ad9821ee41baad9cb0fd4e
 title: Build a Symmetric Difference Function
-challengeType: 25
+challengeType: 26
 dashedName: lab-symmetric-difference
 ---
 
@@ -51,7 +51,7 @@ assert.deepEqual(diffArray(
 ), ["pink wool"]);
 ```
 
-`diffArray*["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])` should return `["diorite", "pink wool"]`.
+`diffArray(["diorite", "andesite", "grass", "dirt", "pink wool", "dead shrub"], ["andesite", "grass", "dirt", "dead shrub"])` should return `["diorite", "pink wool"]`.
 
 ```js
 assert.deepEqual(diffArray(

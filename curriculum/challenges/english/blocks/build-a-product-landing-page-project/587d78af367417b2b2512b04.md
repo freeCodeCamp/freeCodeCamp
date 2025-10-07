@@ -206,7 +206,6 @@ assert(!!el && el.name === 'email')
 Your `#nav-bar` should always be at the top of the viewport.
 
 ```js
-(async () => {
   const timeout = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
 
   const header = document.getElementById('header');
@@ -240,7 +239,6 @@ Your `#nav-bar` should always be at the top of the viewport.
   );
     
   window.scroll(0, 0);
-})();
 ```
 
 Your Product Landing Page should use at least one media query.
