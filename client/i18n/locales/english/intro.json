@@ -165,13 +165,6 @@
           "In this course, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
-      "workshop-advanced-flexbox-dashboard": {
-        "title": "Advanced Flexbox Dashboard Workshop",
-        "intro": [
-          "Take your Flexbox skills to the next level by building a complex dashboard layout.",
-          "In this workshop, you'll learn advanced Flexbox techniques including ordering, nested flex containers, and responsive layouts. You'll build a professional dashboard with header, sidebar, main content, and footer areas that adapts to different screen sizes."
-        ]
-      },
       "learn-css-grid-by-building-a-magazine": {
         "title": "Learn CSS Grid by Building a Magazine",
         "intro": [
@@ -4991,6 +4984,13 @@
       "lab-pricing-plans-layout": {
         "title": "Design a Pricing Plans Layout Page",
         "intro": ["Design a Pricing Plans Layout Page", ""]
+      },
+      "workshop-advanced-flexbox-dashboard": {
+        "title": "Advanced Flexbox Dashboard Workshop",
+        "intro": [
+          "Take your Flexbox skills to the next level by building a complex dashboard layout.",
+          "In this workshop, you'll learn advanced Flexbox techniques including ordering, nested flex containers, and responsive layouts. You'll build a professional dashboard with header, sidebar, main content, and footer areas that adapts to different screen sizes."
+        ]
       }
     }
   },
