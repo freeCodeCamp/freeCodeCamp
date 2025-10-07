@@ -1,0 +1,11 @@
+{
+  "name": "Build a Quincy's Job Tips Page",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-quincys-job-tips",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e4c81577243e4db1676491", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
