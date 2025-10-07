@@ -63,7 +63,7 @@ function DonatePage({
   }, []);
   const growthbook = useGrowthBook();
 
-  return showLoading || !growthbook || !growthbook.ready ? (
+  return showLoading ? (
     <Loader fullScreen={true} />
   ) : (
     <>
