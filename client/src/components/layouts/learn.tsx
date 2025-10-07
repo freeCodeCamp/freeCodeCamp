@@ -11,6 +11,7 @@ import './prism.css';
 import './prism-night.css';
 import 'react-reflex/styles.css';
 import './learn.css';
+import { BlockTypes } from '../../../../shared-dist/config/blocks';
 
 type FetchState = {
   pending: boolean;
@@ -33,14 +34,14 @@ type LearnLayoutProps = {
   fetchState: FetchState;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
-  hasEditableBoundaries?: boolean;
+  blockType?: BlockTypes;
 };
 
 function LearnLayout({
   fetchState,
   tryToShowDonationModal,
   children,
-  hasEditableBoundaries
+  blockType
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     tryToShowDonationModal();
@@ -67,7 +68,9 @@ function LearnLayout({
       </Helmet>
       <main
         id='learn-app-wrapper'
-        {...(hasEditableBoundaries && { 'data-has-editable-boundaries': true })}
+        {...(blockType == BlockTypes.workshop && {
+          'data-is-workshop': true
+        })}
       >
         {children}
       </main>

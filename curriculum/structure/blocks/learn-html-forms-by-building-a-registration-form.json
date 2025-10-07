@@ -2,7 +2,7 @@
   "name": "Learn HTML Forms by Building a Registration Form",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-html-forms-by-building-a-registration-form",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

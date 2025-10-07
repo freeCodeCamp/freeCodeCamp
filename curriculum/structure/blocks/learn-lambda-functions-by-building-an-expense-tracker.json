@@ -2,7 +2,7 @@
   "name": "Learn Lambda Functions by Building an Expense Tracker",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-lambda-functions-by-building-an-expense-tracker",
   "challengeOrder": [
     {

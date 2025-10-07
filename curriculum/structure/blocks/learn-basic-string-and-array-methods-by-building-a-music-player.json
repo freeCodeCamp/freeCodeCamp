@@ -2,7 +2,7 @@
   "name": "Learn Basic String and Array Methods by Building a Music Player",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-basic-string-and-array-methods-by-building-a-music-player",
   "challengeOrder": [
     {

@@ -29,7 +29,6 @@ const schema = Joi.object()
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
     usesMultifileEditor: Joi.boolean(),
-    hasEditableBoundaries: Joi.boolean(),
     disableLoopProtectTests: Joi.boolean(),
     disableLoopProtectPreview: Joi.boolean(),
     template: Joi.string(),

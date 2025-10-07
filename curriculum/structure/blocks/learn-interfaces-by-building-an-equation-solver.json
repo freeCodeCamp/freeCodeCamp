@@ -2,7 +2,7 @@
   "name": "Learn Interfaces by Building an Equation Solver",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-interfaces-by-building-an-equation-solver",
   "challengeOrder": [
     {

@@ -2,7 +2,6 @@
   "name": "Build a Calorie Counter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "blockType": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-calorie-counter",

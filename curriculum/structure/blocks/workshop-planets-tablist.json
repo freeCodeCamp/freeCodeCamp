@@ -6,7 +6,6 @@
   "dashedName": "workshop-planets-tablist",
   "helpCategory": "JavaScript",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "challengeOrder": [
     {
       "id": "685db0bd1280154ae85bcf9f",

@@ -2,7 +2,7 @@
   "name": "Learn CSS Flexbox by Building a Photo Gallery",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-css-flexbox-by-building-a-photo-gallery",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

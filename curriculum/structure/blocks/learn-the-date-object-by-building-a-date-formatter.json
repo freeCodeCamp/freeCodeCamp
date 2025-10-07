@@ -2,7 +2,7 @@
   "name": "Learn the Date Object by Building a Date Formatter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-the-date-object-by-building-a-date-formatter",
   "challengeOrder": [
     {

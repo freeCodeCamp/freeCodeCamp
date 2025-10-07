@@ -2,7 +2,7 @@
   "name": "Learn Functional Programming by Building a Spreadsheet",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-functional-programming-by-building-a-spreadsheet",
   "helpCategory": "JavaScript",
   "challengeOrder": [

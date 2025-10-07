@@ -2,7 +2,7 @@
   "name": "Learn Accessibility by Building a Quiz",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-accessibility-by-building-a-quiz",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

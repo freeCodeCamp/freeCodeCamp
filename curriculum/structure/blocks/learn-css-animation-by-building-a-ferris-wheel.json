@@ -2,7 +2,7 @@
   "name": "Learn CSS Animation by Building a Ferris Wheel",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-css-animation-by-building-a-ferris-wheel",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

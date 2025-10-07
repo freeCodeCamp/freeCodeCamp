@@ -2,7 +2,7 @@
   "name": "Learn HTML by Building a Cat Photo App",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-html-by-building-a-cat-photo-app",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

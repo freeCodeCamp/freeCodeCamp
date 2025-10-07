@@ -17,13 +17,14 @@ import {
   showPreviewPaneSelector
 } from '../redux/selectors';
 import { TOOL_PANEL_HEIGHT } from '../../../../config/misc';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import PreviewPortal from '../components/preview-portal';
 import Notes from '../components/notes';
 import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
+  blockType?: BlockTypes;
   editor: JSX.Element | null;
-  hasEditableBoundaries: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
   notes: string;
@@ -84,9 +85,10 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   #toolPanelGroup!: HTMLElement;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries
-      ? tabs.editor
-      : tabs.instructions
+    currentTab:
+      this.props.blockType == BlockTypes.workshop
+        ? tabs.editor
+        : tabs.instructions
   };
 
   switchTab = (tab: string): void => {
@@ -148,7 +150,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
-      hasEditableBoundaries,
+      blockType,
       instructions,
       editor,
       testOutput,
@@ -167,6 +169,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       usesMultifileEditor
     } = this.props;
 
+    const isWorkshop = blockType === BlockTypes.workshop;
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
 
@@ -221,7 +224,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
-            {!hasEditableBoundaries && (
+            {!isWorkshop && (
               <TabsTrigger value={tabs.instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
@@ -252,7 +255,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
-          {!hasEditableBoundaries && (
+          {!isWorkshop && (
             <TabsContent
               tabIndex={-1}
               className='tab-content'
@@ -306,7 +309,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               )}
             </TabsContent>
           )}
-          {!hasEditableBoundaries && toolPanel}
+          {!isWorkshop && toolPanel}
           {hasPreview && this.state.currentTab !== 'preview' && (
             <div className='portal-button-wrap'>
               <button

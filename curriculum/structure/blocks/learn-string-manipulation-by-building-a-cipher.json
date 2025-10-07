@@ -2,7 +2,7 @@
   "name": "Learn String Manipulation by Building a Cipher",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-string-manipulation-by-building-a-cipher",
   "challengeOrder": [
     {

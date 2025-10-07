@@ -4,7 +4,6 @@
   "blockLayout": "link",
   "isUpcomingChange": true,
   "usesMultifileEditor": false,
-  "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-student-database-part-1",
   "challengeOrder": [
     {

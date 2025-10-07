@@ -2,7 +2,7 @@
   "name": "Build a Caesar Cipher",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "workshop-caesar-cipher",
   "challengeOrder": [
     {
@@ -107,6 +107,5 @@
     }
   ],
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
   "helpCategory": "Python"
 }

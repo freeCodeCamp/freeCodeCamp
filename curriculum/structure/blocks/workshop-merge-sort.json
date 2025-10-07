@@ -4,7 +4,6 @@
   "blockType": "workshop",
   "isUpcomingChange": true,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "workshop-merge-sort",
   "challengeOrder": [
     {

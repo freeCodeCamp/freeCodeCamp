@@ -2,9 +2,8 @@
   "name": "Build an Animated Ferris Wheel",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
-  "dashedName": "workshop-ferris-wheel",
   "blockType": "workshop",
+  "dashedName": "workshop-ferris-wheel",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     {

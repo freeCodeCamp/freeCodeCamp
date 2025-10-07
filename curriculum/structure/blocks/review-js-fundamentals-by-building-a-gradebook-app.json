@@ -2,7 +2,7 @@
   "name": "Review JavaScript Fundamentals by Building a Gradebook App",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "review-js-fundamentals-by-building-a-gradebook-app",
   "challengeOrder": [
     {

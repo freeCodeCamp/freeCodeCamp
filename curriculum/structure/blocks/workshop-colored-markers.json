@@ -3,7 +3,6 @@
   "blockType": "workshop",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
   "dashedName": "workshop-colored-markers",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",

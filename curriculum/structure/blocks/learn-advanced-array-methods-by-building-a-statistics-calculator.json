@@ -2,7 +2,7 @@
   "name": "Learn Advanced Array Methods by Building a Statistics Calculator",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-advanced-array-methods-by-building-a-statistics-calculator",
   "helpCategory": "JavaScript",
   "challengeOrder": [

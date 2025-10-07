@@ -126,23 +126,25 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
+const blockTypeJoi = Joi.valid(
+  'workshop',
+  'lab',
+  'lecture',
+  'review',
+  'quiz',
+  'exam',
+  'warm-up',
+  'learn',
+  'practice'
+);
+
 const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockType: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
-    then: Joi.valid(
-      'workshop',
-      'lab',
-      'lecture',
-      'review',
-      'quiz',
-      'exam',
-      'warm-up',
-      'learn',
-      'practice'
-    ).required(),
-    otherwise: Joi.valid(null)
+    then: blockTypeJoi.required(),
+    otherwise: blockTypeJoi
   }),
   blockLayout: Joi.valid(
     'challenge-list',
@@ -182,7 +184,6 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
-  hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
     'HTML-CSS',

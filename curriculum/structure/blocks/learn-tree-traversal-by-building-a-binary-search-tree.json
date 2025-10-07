@@ -2,7 +2,7 @@
   "name": "Learn Tree Traversal by Building a Binary Search Tree",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "blockType": "workshop",
   "dashedName": "learn-tree-traversal-by-building-a-binary-search-tree",
   "challengeOrder": [
     {

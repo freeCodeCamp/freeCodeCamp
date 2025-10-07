@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 import store from 'store';
 import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import {
   ChallengeFiles,
   DailyCodingChallengeLanguages,
@@ -29,10 +30,10 @@ import ActionRow from './action-row';
 type Pane = { flex: number };
 
 interface DesktopLayoutProps {
+  blockType?: BlockTypes;
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -215,6 +216,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   };
 
   const {
+    blockType,
     challengeFiles,
     challengeType,
     resizeProps,
@@ -228,7 +230,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     onPreviewResize,
     preview,
-    hasEditableBoundaries,
     windowTitle
   } = props;
 
@@ -241,7 +242,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   }, []);
 
-  const projectBasedChallenge = hasEditableBoundaries;
+  const projectBasedChallenge = blockType === BlockTypes.workshop;
   const areInstructionsDisplayable =
     !projectBasedChallenge || showIndependentLowerJaw;
   const isMultifileProject =

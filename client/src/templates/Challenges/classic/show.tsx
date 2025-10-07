@@ -198,6 +198,7 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        blockType,
         demoType,
         title,
         description,
@@ -205,7 +206,6 @@ function ShowClassic({
         hooks,
         fields: { tests, blockName },
         challengeType,
-        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -471,7 +471,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout blockType={blockType}>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -479,7 +479,7 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
+            blockType={blockType}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -508,13 +508,13 @@ function ShowClassic({
         )}
         {!isMobile && (
           <DesktopLayout
+            blockType={blockType}
             challengeFiles={challengeFiles}
             challengeType={challengeType}
             editor={renderEditor({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -576,11 +576,11 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        blockType
         demoType
         title
         description
         id
-        hasEditableBoundaries
         instructions
         notes
         challengeType
