@@ -25,7 +25,7 @@ Processor
 
 ---
 
-Graphics Card.
+Graphics Card
 
 ---
 
@@ -77,7 +77,7 @@ Cable
 
 #### --answer--
 
-Fiber Optic.
+Fiber Optic
 
 ### --question--
 
@@ -117,11 +117,11 @@ Opera
 
 ---
 
-Microsoft Edge.
+Microsoft Edge
 
 #### --answer--
 
-Google Drive.
+Google Drive
 
 ### --question--
 
@@ -131,11 +131,11 @@ When you need to edit a piece of code, which of the following are you most likel
 
 #### --distractors--
 
-Node Package Manager.
+Node Package Manager
 
 ---
 
-Microsoft Edge.
+Microsoft Edge
 
 ---
 
@@ -143,7 +143,7 @@ GitHub
 
 #### --answer--
 
-Visual Studio Code.
+Visual Studio Code
 
 ### --question--
 
@@ -157,15 +157,15 @@ Dropbox
 
 ---
 
-Microsoft OneDrive.
+Microsoft OneDrive
 
 ---
 
-Google Drive.
+Google Drive
 
 #### --answer--
 
-Windows File Explorer.
+Windows File Explorer
 
 ### --question--
 
@@ -307,11 +307,11 @@ What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
-Internet Content Displayer.
+Internet Content Displayer
 
 ---
 
-Search Engine.
+Search Engine
 
 ---
 
@@ -319,7 +319,7 @@ Website
 
 #### --answer--
 
-Web Browser.
+Web Browser
 
 ### --question--
 
@@ -329,11 +329,11 @@ What is a piece of software that lists web pages related to a user's query calle
 
 #### --distractors--
 
-Page Finder.
+Page Finder
 
 ---
 
-Web Browser.
+Web Browser
 
 ---
 
@@ -341,7 +341,7 @@ Website
 
 #### --answer--
 
-Search Engine.
+Search Engine
 
 ### --question--
 
@@ -351,7 +351,7 @@ What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
-Web Browser.
+Web Browser
 
 ---
 
@@ -359,7 +359,7 @@ Hyperlink
 
 ---
 
-Search Engine.
+Search Engine
 
 #### --answer--
 
@@ -385,7 +385,7 @@ Brackets
 
 #### --answer--
 
-Quotation marks.
+Quotation marks
 
 ### --question--
 
@@ -439,19 +439,19 @@ Which of the following parts is located in a socket on the motherboard?
 
 #### --distractors--
 
-The Router.
+The Router
 
 ---
 
-The Keyboard.
+The Keyboard
 
 ---
 
-The Hard Drive (HDD).
+The Hard Drive (HDD)
 
 #### --answer--
 
-The CPU.
+The CPU
 
 ## --quiz--
 
@@ -507,19 +507,19 @@ What is a type of ISP provider?
 
 #### --distractors--
 
-Satellite.
+Satellite
 
 ---
 
-Fiber optic.
+Fiber optic
 
 ---
 
-Dial up.
+Dial up
 
 #### --answer--
 
-Tier 1.
+Tier 1
 
 ### --question--
 
@@ -749,19 +749,19 @@ What is the built-in way you can use to search for files on your computer?
 
 #### --distractors--
 
-Google or Firefox.
+Google or Firefox
 
 ---
 
-A search engine.
+A search engine
 
 ---
 
-GitHub.
+GitHub
 
 #### --answer--
 
-The file explorer.
+The file explorer
 
 ### --question--
 
@@ -815,19 +815,19 @@ Which file managers can you use to create, move, and delete files?
 
 #### --distractors--
 
-Google or Bing.
+Google or Bing
 
 ---
 
-Windows or MacOS.
+Windows or MacOS
 
 ---
 
-Findex or Firefox.
+Findex or Firefox
 
 #### --answer--
 
-Explorer or Finder.
+Explorer or Finder
 
 ### --question--
 
