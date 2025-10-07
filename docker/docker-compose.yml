@@ -4,6 +4,7 @@ services:
     container_name: mongodb
     command: mongod --replSet rs0
     restart: unless-stopped
+    hostname: mongodb
     ports:
       - 27017:27017
     volumes:
@@ -22,12 +23,25 @@ services:
     # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
     command: >
       mongosh --host db:27017 --eval '
+        var cfg = {
+          _id: "rs0",
+          members: [
+            { _id: 0, host: "mongodb:27017" }
+          ]
+        };
         try {
-          rs.initiate();
+          rs.initiate(cfg);
         } catch (err) {
           if(err.codeName !== "AlreadyInitialized") throw err;
         }
       '
+
+  mailpit:
+    restart: unless-stopped
+    image: axllent/mailpit
+    ports:
+      - '1025:1025'
+      - '8025:8025'
 
 volumes:
   db-data:
