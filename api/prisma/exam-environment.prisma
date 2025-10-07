@@ -14,7 +14,6 @@ model ExamEnvironmentExam {
   /// The default must be incremented by 1, if anything in the schema changes
   version       Int                          @default(2)
 
-
   // Relations
   generatedExams           ExamEnvironmentGeneratedExam[]
   examAttempts             ExamEnvironmentExamAttempt[]
@@ -140,7 +139,6 @@ model ExamEnvironmentExamAttempt {
   /// The default must be incremented by 1, if anything in the schema changes
   version       Int                                 @default(2)
 
-
   // Relations
   user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
   exam                          ExamEnvironmentExam             @relation(fields: [examId], references: [id], onDelete: Cascade)
@@ -180,7 +178,6 @@ model ExamEnvironmentGeneratedExam {
   /// The default must be incremented by 1, if anything in the schema changes
   version      Int                                   @default(1)
 
-
   // Relations
   exam           ExamEnvironmentExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
   EnvExamAttempt ExamEnvironmentExamAttempt[]
@@ -208,7 +205,6 @@ model ExamEnvironmentChallenge {
 
   version Int @default(1)
 
-
   exam ExamEnvironmentExam @relation(fields: [examId], references: [id], onDelete: Cascade)
 }
 
@@ -219,7 +215,6 @@ model ExamEnvironmentAuthorizationToken {
   expireAt DateTime @db.Date
   userId   String   @unique @db.ObjectId
   version  Int      @default(1)
-
 
   // Relations
   user user @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -238,12 +233,11 @@ model ExamEnvironmentExamModeration {
   /// Foreign key to moderator. This is `null` until the item is moderated.
   moderatorId    String?                             @db.ObjectId
 
-  /// Date the exam attempt was added to the moderation queue
+  /// Date the exam attempt expired
   submissionDate DateTime @default(now()) @db.Date
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version        Int      @default(1)
-
+  version        Int      @default(2)
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
