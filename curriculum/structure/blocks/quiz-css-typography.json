@@ -1,6 +1,6 @@
 {
   "name": "CSS Typography Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-css-typography",

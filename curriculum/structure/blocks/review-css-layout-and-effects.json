@@ -1,6 +1,6 @@
 {
   "name": "CSS Layouts and Effects Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-layout-and-effects",

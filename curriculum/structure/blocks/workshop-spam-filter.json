@@ -1,6 +1,6 @@
 {
   "name": "Build a Spam Filter",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

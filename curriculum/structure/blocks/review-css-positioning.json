@@ -1,6 +1,6 @@
 {
   "name": "CSS Positioning Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-positioning",

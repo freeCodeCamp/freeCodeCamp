@@ -1,7 +1,7 @@
 {
   "name": "Build a Profile Lookup",
   "isUpcomingChange": false,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-profile-lookup",
   "helpCategory": "JavaScript",

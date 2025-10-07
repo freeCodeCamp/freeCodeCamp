@@ -1,6 +1,6 @@
 {
   "name": "Build an Availability Table",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

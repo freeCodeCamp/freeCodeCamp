@@ -10,6 +10,6 @@
       "title": "Build an Nth Fibonacci Number Calculator"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

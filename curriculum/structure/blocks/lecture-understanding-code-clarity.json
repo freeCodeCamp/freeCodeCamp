@@ -1,6 +1,6 @@
 {
   "name": "Understanding Code Clarity",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-code-clarity",

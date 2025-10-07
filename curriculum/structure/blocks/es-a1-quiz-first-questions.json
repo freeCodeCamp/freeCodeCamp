@@ -7,5 +7,5 @@
   "challengeOrder": [
     { "id": "68dc75ee867ccc79d18df2ef", "title": "First Questions Quiz" }
   ],
-  "blockType": "quiz"
+  "blockLabel": "quiz"
 }

@@ -1,6 +1,6 @@
 {
   "name": "Computer Basics Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-computer-basics",

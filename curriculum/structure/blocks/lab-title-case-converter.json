@@ -4,7 +4,7 @@
   "dashedName": "lab-title-case-converter",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "challengeOrder": [
     {
       "id": "ab6137d4e35944e21037b769",

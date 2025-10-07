@@ -1,6 +1,6 @@
 {
   "name": "Build a Quiz Game",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

@@ -10,6 +10,6 @@
     }
   ],
   "helpCategory": "JavaScript",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }

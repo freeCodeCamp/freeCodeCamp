@@ -1,6 +1,6 @@
 {
   "name": "Basic CSS Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-basic-css",

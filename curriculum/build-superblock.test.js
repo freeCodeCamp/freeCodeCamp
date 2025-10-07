@@ -70,7 +70,7 @@ const dummyUnfinishedSuperBlock = {
 const dummyBlockMeta = {
   name: 'Test Block',
   blockLayout: 'challenge-list',
-  blockType: 'workshop',
+  blockLabel: 'workshop',
   isUpcomingChange: false,
   dashedName: 'test-block',
   superBlock: 'responsive-web-design',
@@ -124,7 +124,7 @@ const expectedChallengeProperties = {
   isLastChallengeInBlock: expect.any(Boolean),
   block: dummyBlockMeta.dashedName,
   blockLayout: dummyBlockMeta.blockLayout,
-  blockType: dummyBlockMeta.blockType,
+  blockLabel: dummyBlockMeta.blockLabel,
   hasEditableBoundaries: dummyBlockMeta.hasEditableBoundaries,
   order: dummyBlockMeta.order,
   description: '',

@@ -4,7 +4,7 @@
   "dashedName": "es-a1-practice-greetings-and-farewells",
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
-  "blockType": "practice",
+  "blockLabel": "practice",
   "challengeOrder": [
     { "id": "68c850c5eb642cc96ed86544", "title": "Dialogue 1: I'm Tom" }
   ]

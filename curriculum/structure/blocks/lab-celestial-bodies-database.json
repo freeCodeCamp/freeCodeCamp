@@ -1,6 +1,6 @@
 {
   "name": "Build a Celestial Bodies Database",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "lab-celestial-bodies-database",

@@ -1,6 +1,6 @@
 {
   "name": "CSS Specificity, the Cascade Algorithm, and Inheritance",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-css-specificity-the-cascade-algorithm-and-inheritance",

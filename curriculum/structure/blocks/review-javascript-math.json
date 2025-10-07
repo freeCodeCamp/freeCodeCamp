@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Math Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript-math",

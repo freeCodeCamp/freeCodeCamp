@@ -1,7 +1,7 @@
 {
   "name": "Introduction to Strings",
   "isUpcomingChange": false,
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-introduction-to-strings",
   "helpCategory": "JavaScript",

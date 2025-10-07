@@ -1,6 +1,6 @@
 {
   "name": "Create a Deep Flattening Tool",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

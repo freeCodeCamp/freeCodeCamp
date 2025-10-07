@@ -1,6 +1,6 @@
 {
   "name": "Build a Lightbox Viewer",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

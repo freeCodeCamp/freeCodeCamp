@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Variables and Data Types Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript-variables-and-data-types",

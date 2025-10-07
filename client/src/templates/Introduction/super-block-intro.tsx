@@ -32,7 +32,7 @@ import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../shared-dist/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
@@ -55,7 +55,7 @@ type ChallengeNode = {
     fields: { slug: string; blockName: string };
     id: string;
     block: string;
-    blockType: BlockTypes;
+    blockLabel: BlockLabel;
     challengeType: number;
     title: string;
     order: number;
@@ -274,13 +274,13 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                     const blockChallenges = superBlockChallenges.filter(
                       c => c.block === block
                     );
-                    const blockType = blockChallenges[0].blockType;
+                    const blockLabel = blockChallenges[0].blockLabel;
 
                     return (
                       <Block
                         key={block}
                         block={block}
-                        blockType={blockType}
+                        blockLabel={blockLabel}
                         challenges={blockChallenges}
                         superBlock={superBlock}
                       />
@@ -347,7 +347,7 @@ export const query = graphql`
           }
           id
           block
-          blockType
+          blockLabel
           challengeType
           title
           order
