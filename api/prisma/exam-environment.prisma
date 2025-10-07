@@ -233,7 +233,7 @@ model ExamEnvironmentExamModeration {
   /// Foreign key to moderator. This is `null` until the item is moderated.
   moderatorId    String?                             @db.ObjectId
 
-  /// Date the exam attempt was added to the moderation queue
+  /// Date the exam attempt expired
   submissionDate    DateTime @default(now()) @db.Date
   /// Whether the `challengeId` for the `ExamEnvironmentChallenge` has been awarded to the user
   challengesAwarded Boolean  @default(false)

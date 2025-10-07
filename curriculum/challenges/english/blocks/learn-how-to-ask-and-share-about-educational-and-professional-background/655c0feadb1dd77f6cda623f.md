@@ -11,7 +11,7 @@ Watch the video below to understand the context of the upcoming lessons.
 
 # --assignment--
 
-Watch the video
+Watch the video.
 
 # --scene--
 
@@ -69,7 +69,7 @@ Watch the video
       "startTime": 7.1,
       "finishTime": 10.6,
       "dialogue": {
-        "text": "Good afternoon! Sure, I was a programmer at Acme Tech.",
+        "text": "Good afternoon. Sure. I was a programmer in Acme Tech.",
         "align": "right"
       }
     },
@@ -105,7 +105,7 @@ Watch the video
       "startTime": 17.9,
       "finishTime": 19.9,
       "dialogue": {
-        "text": "I was also part of the software update team.",
+        "text": "I was also a part of the software update team.",
         "align": "right"
       }
     },
@@ -123,7 +123,7 @@ Watch the video
       "startTime": 23.9,
       "finishTime": 26.0,
       "dialogue": {
-        "text": "Yes, in one of my team's projects,",
+        "text": "Yes. In one of my team's projects,",
         "align": "right"
       }
     },
@@ -159,7 +159,7 @@ Watch the video
       "startTime": 35.4,
       "finishTime": 37.1,
       "dialogue": {
-        "text": "Great! Can you tell me about your qualifications?",
+        "text": "Great. Can you tell me about your qualifications?",
         "align": "left"
       }
     },
@@ -213,7 +213,7 @@ Watch the video
       "startTime": 52,
       "finishTime": 55.3,
       "dialogue": {
-        "text": "Wonderful! We value candidates with a strong educational background.",
+        "text": "Wonderful. We value candidates with a strong educational background.",
         "align": "left"
       }
     },
