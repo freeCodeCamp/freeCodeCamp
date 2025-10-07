@@ -1,0 +1,11 @@
+{
+  "name": "Build a String Inspector",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-string-inspector",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e51d8f163d3f8b70f9c4e5", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
