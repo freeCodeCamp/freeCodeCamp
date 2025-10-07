@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Spacer, Button, Alert } from '@freecodecamp/ui';
+import { Spacer, Button, Callout } from '@freecodecamp/ui';
 
 import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
 
@@ -149,7 +149,7 @@ interface CodespacesContinueAlertProps {
 
 function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
   return (
-    <Alert variant='info'>
+    <Callout variant='info'>
       <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
         <a
           href='https://github.com/freeCodeCamp/rdb-alpha'
@@ -169,7 +169,7 @@ function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
           placeholder
         </a>
       </Trans>
-    </Alert>
+    </Callout>
   );
 }
 
@@ -183,8 +183,8 @@ function CodespacesLogoutAlert({
   const { t } = useTranslation();
 
   return (
-    <Alert variant='danger'>
+    <Callout variant='danger'>
       {t('learn.codespaces.logout-warning', { course })}
-    </Alert>
+    </Callout>
   );
 }
