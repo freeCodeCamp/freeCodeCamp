@@ -2214,6 +2214,10 @@
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Build a Quincy's Job Tips Page",
+        "intro": ["Build a Quincy's Job Tips Page", ""]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
@@ -4980,10 +4984,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-quincys-job-tips": {
-        "title": "Build a Quincy's Job Tips Page",
-        "intro": ["Build a Quincy's Job Tips Page", ""]
       }
     }
   },
