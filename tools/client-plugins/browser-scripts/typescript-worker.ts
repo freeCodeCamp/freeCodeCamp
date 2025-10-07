@@ -41,7 +41,6 @@ interface CancelEvent extends MessageEvent {
 
 // Pin at the latest TS version available as cdnjs doesn't support version range.
 const TS_VERSION = '5.7.3';
-const REACT_VERSION = '18.3.1';
 
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
@@ -59,12 +58,6 @@ function importTS(version: string) {
   );
   cachedVersion = version;
 }
-
-// NOTE: Importing to support TSX
-importScripts(
-  `https://cdnjs.cloudflare.com/ajax/libs/react/${REACT_VERSION}/umd/react.development.min.js`,
-  `https://cdnjs.cloudflare.com/ajax/libs/react-dom/${REACT_VERSION}/umd/react-dom.development.min.js`
-);
 
 async function setupTypeScript() {
   importTS(TS_VERSION);
@@ -93,6 +86,14 @@ async function setupTypeScript() {
     ts,
     compilerOptions
   );
+  // TODO: create and import a local copy.
+  const reactTypes = await fetch(
+    'https://cdn.jsdelivr.net/npm/@types/react@18.3.26/index.d.ts'
+  )
+    .then(res => res.text())
+    .catch(() => null);
+  env.createFile('/react.d.ts', reactTypes || '');
+
   compilerHost = createVirtualCompilerHost(
     system,
     compilerOptions,

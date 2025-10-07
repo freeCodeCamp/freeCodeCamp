@@ -166,7 +166,10 @@ const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
     plugins: [...baseOptions.plugins, MODULE_TRANSFORM_PLUGIN],
     moduleId: 'index' // TODO: this should be dynamic
   };
-  return transformContents(babelTransformCode(babelOptions), challengeFile);
+  return flow(
+    partial(transformHeadTailAndContents, compileTypeScriptCode),
+    partial(transformHeadTailAndContents, babelTransformCode(babelOptions))
+  )(challengeFile);
 };
 
 const createTranspiler = loopProtectOptions => {
