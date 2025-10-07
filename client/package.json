@@ -28,7 +28,7 @@
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
     "predevelop": "pnpm run common-setup && pnpm run build:scripts --env development",
-    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby develop --inspect=9230",
+    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168\" gatsby develop --host=localhost --inspect=9230",
     "lint": "tsx ./i18n/schema-validation.ts",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c serve.json public",

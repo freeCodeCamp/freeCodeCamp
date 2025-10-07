@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  yoga-layout-prebuilt: 1.9.6
+
 packageExtensionsChecksum: sha256-pFEExG4o57joHucsVi/dgGpp9BfdxYD7y4blLQUpCqI=
 
 importers:
@@ -14115,8 +14118,8 @@ packages:
     resolution: {integrity: sha512-cYVsTjKl8b+FrnidjibDWskAv7UKOfcwaVZdp/it9n1s9fU3IkgDbhdIRKCW4JDsAlECJY0ytoVPT3sK6kideA==}
     engines: {node: '>=18'}
 
-  yoga-layout-prebuilt@1.10.0:
-    resolution: {integrity: sha512-YnOmtSbv4MTf7RGJMK0FvZ+KD8OEe/J5BNnR0GHhD8J/XcG/Qvxgszm0Un6FTHWW4uHlTgP0IztiXQnGyIR45g==}
+  yoga-layout-prebuilt@1.9.6:
+    resolution: {integrity: sha512-Wursw6uqLXLMjBAO4SEShuzj8+EJXhCF71/rJ7YndHTkRAYSU0GY3OghRqfAk9HPUAAFMuqp3U1Wl+01vmGRQQ==}
     engines: {node: '>=8'}
 
   youtube-player@5.5.2:
@@ -23615,7 +23618,7 @@ snapshots:
       update-notifier: 5.1.0
       uuid: 3.4.0
       yargs: 15.4.1
-      yoga-layout-prebuilt: 1.10.0
+      yoga-layout-prebuilt: 1.9.6
       yurnalist: 2.1.0
     transitivePeerDependencies:
       - bufferutil
@@ -23848,7 +23851,7 @@ snapshots:
       uuid: 3.4.0
       ws: 7.5.9
       xstate: 4.38.2
-      yoga-layout-prebuilt: 1.10.0
+      yoga-layout-prebuilt: 1.9.6
     transitivePeerDependencies:
       - bufferutil
       - encoding
@@ -31446,7 +31449,7 @@ snapshots:
 
   yoctocolors-cjs@2.1.2: {}
 
-  yoga-layout-prebuilt@1.10.0:
+  yoga-layout-prebuilt@1.9.6:
     dependencies:
       '@types/yoga-layout': 1.9.2
 

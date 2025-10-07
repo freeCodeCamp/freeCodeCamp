@@ -158,6 +158,9 @@
       "puppeteer",
       "sharp",
       "unrs-resolver"
-    ]
+    ],
+    "overrides": {
+      "yoga-layout-prebuilt": "1.9.6"
+    }
   }
 }

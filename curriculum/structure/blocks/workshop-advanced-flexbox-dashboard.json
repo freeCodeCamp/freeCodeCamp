@@ -1,0 +1,35 @@
+{
+  "name": "Advanced Flexbox Dashboard Workshop",
+  "blockType": "workshop",
+  "blockLayout": "step-based",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "workshop-advanced-flexbox-dashboard",
+  "challengeOrder": [
+    {
+      "id": "68e420f3d4bc7ae590dc7954",
+      "title": "Step 1"
+    },
+    {
+      "id": "68e420f3d4bc7ae590dc7955",
+      "title": "Step 2"
+    },
+    {
+      "id": "68e420f3d4bc7ae590dc7956",
+      "title": "Step 3"
+    },
+    {
+      "id": "68e420f3d4bc7ae590dc7957",
+      "title": "Step 4"
+    },
+    {
+      "id": "68e420f3d4bc7ae590dc7958",
+      "title": "Step 5"
+    },
+    {
+      "id": "68e420f3d4bc7ae590dc7959",
+      "title": "Step 6"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}
