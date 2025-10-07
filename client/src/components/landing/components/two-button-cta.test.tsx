@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { describe, expect, test } from 'vitest';
 import { createStore } from '../../../redux/create-store';
 import TwoButtonCTA from './two-button-cta';
 
@@ -18,7 +19,7 @@ describe('TwoButtonCTA', () => {
   });
 
   test('links go to API when signed out', () => {
-    const store = createStore({ app: { user: { isSignedIn: false } } });
+    const store = createStore({ app: { user: { sessionUser: null } } });
     render(
       <Provider store={store}>
         <TwoButtonCTA />
@@ -38,7 +39,7 @@ describe('TwoButtonCTA', () => {
   });
 
   test('links go to learn when signed in', () => {
-    const store = createStore({ app: { user: { isSignedIn: true } } });
+    const store = createStore({ app: { user: { sessionUser: {} } } });
     render(
       <Provider store={store}>
         <TwoButtonCTA />
