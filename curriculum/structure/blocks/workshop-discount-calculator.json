@@ -1,0 +1,13 @@
+{
+  "name": "Build a Discount Calculator",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-discount-calculator",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e524c94e2e4ab7b4bfc7e2", "title": "Build a Discount Calculator" }
+  ],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
