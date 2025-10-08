@@ -4538,7 +4538,7 @@
         "intro": [""]
       },
       "lab-game-character-stats": {
-        "title": "Build a Game Character",
+        "title": "Build a Game Character Stats Tracker",
         "intro": [
           "In this lab, you will build a game character with different stats using object-oriented programming."
         ]

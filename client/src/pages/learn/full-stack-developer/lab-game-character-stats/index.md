@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Build a Game Character Stats Tracker
+title: Build a Game Character Stats Tracker
 block: lab-game-character-stats
 superBlock: full-stack-developer
 ---
