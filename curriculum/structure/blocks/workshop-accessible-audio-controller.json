@@ -1,0 +1,11 @@
+{
+  "name": "Build an Accessible Audio Controller",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-accessible-audio-controller",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e6aff5325410118e76e7be", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
