@@ -6097,6 +6097,29 @@
       }
     }
   },
+  "front-end-development-libraries-v9": {
+    "title": "Front End Development Libraries Certification",
+    "intro": [
+      "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
+      "To earn your Front End Development Libraries Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Front End Development Libraries Certification exam."
+    ],
+    "chapters": {
+      "front-end-development-libraries": "Front End Development Libraries"
+    },
+    "modules": {
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+    },
+    "blocks": {
+      "exam-front-end-development-libraries-certification": {
+        "title": "Front End Development Libraries Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Front End Development Libraries Certification"
+        ]
+      }
+    }
+  },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",

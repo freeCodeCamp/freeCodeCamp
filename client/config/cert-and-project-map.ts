@@ -35,6 +35,7 @@ const foundationalCSharpBase =
 const fullStackDeveloperBase = '/learn/full-stack-developer';
 const respWebV9Base = '/learn/responsive-web-design-v9';
 const jsV9Base = '/learn/javascript-v9';
+const frontEndDevLibsV9Base = '/learn/front-end-development-libraries-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -838,6 +839,19 @@ const allStandardCerts = [
         title: 'JavaScript Certification Exam',
         link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
         certSlug: Certification.JsV9
+      }
+    ]
+  },
+  {
+    id: '68e008aa5f80c6099d47b3a2',
+    title: 'Front End Development Libraries',
+    certSlug: Certification.FrontEndDevLibsV9,
+    projects: [
+      {
+        id: '68e00b355f80c6099d47b3a3',
+        title: 'Front End Development Libraries Certification Exam',
+        link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
+        certSlug: Certification.FrontEndDevLibsV9
       }
     ]
   },

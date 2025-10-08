@@ -91,6 +91,7 @@ const createCertifiedMap = ({
   [Certification.FullStackDeveloper]: false,
   [Certification.RespWebDesignV9]: false,
   [Certification.JsV9]: false,
+  [Certification.FrontEndDevLibsV9]: false,
   [Certification.A2English]: false,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,
