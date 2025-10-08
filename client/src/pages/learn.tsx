@@ -18,6 +18,7 @@ import {
 import callGA from '../analytics/call-ga';
 import { clientLocale } from '../../config/env.json';
 import createLanguageRedirect from '../components/create-language-redirect';
+import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
 
 interface FetchState {
   pending: boolean;
@@ -72,6 +73,7 @@ function LearnPage({
   const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
 
   const { t } = useTranslation();
+  useClaimableCertsNotification();
 
   const slug = challengeNode?.challenge?.fields?.slug || '';
 
