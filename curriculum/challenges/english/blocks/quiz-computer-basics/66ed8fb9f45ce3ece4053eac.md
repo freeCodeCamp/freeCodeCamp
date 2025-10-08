@@ -105,7 +105,7 @@ Using passwords based on personal information like your birthday.
 
 #### --text--
 
-Which of the following is NOT a Web Browser?
+Which of the following is NOT a web browser?
 
 #### --distractors--
 
@@ -391,11 +391,11 @@ Quotation marks
 
 #### --text--
 
-Which is NOT a way to install a Web Browser?
+Which is NOT a way to install a web browser?
 
 #### --distractors--
 
-Using a Package Manager.
+Using a package manager.
 
 ---
 
@@ -463,19 +463,19 @@ Which of the following is a basic part of the computer?
 
 #### --distractors--
 
-The word processor. 
+The word processor
 
 ---
 
-The task manager.
+The task manager
 
 ---
 
-The memory manager.
+The memory manager
 
 #### --answer--
 
-The central processing unit.
+The central processing unit
 
 ### --question--
 
@@ -485,19 +485,19 @@ What is a pointing device for a computer?
 
 #### --distractors--
 
-A stick for pointing at computers.
+A stick for pointing at computers
 
 ---
 
-A retractable device used in PowerPoint presentations.
+A retractable device used in PowerPoint presentations
 
 ---
 
-A laser pointer.
+A laser pointer
 
 #### --answer--
 
-A mouse or touchpad.
+A mouse or touchpad
 
 ### --question--
 
