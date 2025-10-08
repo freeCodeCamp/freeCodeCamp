@@ -40,7 +40,7 @@ interface CancelEvent extends MessageEvent {
 }
 
 // Pin at the latest TS version available as cdnjs doesn't support version range.
-const TS_VERSION = '5.7.3';
+const TS_VERSION = '5.9.2';
 
 let tsEnv: VirtualTypeScriptEnvironment | null = null;
 let compilerHost: CompilerHost | null = null;
@@ -54,7 +54,12 @@ importScripts(
 function importTS(version: string) {
   if (cachedVersion == version) return;
   importScripts(
-    `https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.min.js`
+    /*  typescript.min.js fails with
+
+    typescript.min.js:320 Uncaught TypeError: Class constructors cannot be invoked without 'new'
+
+    so we're using the non-minified version for now. */
+    `https://cdnjs.cloudflare.com/ajax/libs/typescript/${version}/typescript.js`
   );
   cachedVersion = version;
 }
@@ -63,10 +68,12 @@ async function setupTypeScript() {
   importTS(TS_VERSION);
   const compilerOptions: CompilerOptions = {
     target: ts.ScriptTarget.ES2015,
-    skipLibCheck: true // TODO: look into why this is needed. Are we doing something wrong? Could it be that it's not "synced"  with this TS version?
+    module: ts.ModuleKind.Preserve, // Babel is handling module transformation, so TS should leave them alone.
+    skipLibCheck: true, // TODO: look into why this is needed. Are we doing something wrong? Could it be that it's not "synced"  with this TS version?
     // from the docs: "Note: it's possible for this list to get out of
     // sync with TypeScript over time. It was last synced with TypeScript
     // 3.8.0-rc."
+    jsx: ts.JsxEmit.Preserve // Babel will handle JSX
   };
   const fsMap = await createDefaultMapFromCDN(
     compilerOptions,
@@ -87,12 +94,22 @@ async function setupTypeScript() {
     compilerOptions
   );
   // TODO: create and import a local copy.
+  // TODO: get all the types (global.d.ts etc)
   const reactTypes = await fetch(
     'https://cdn.jsdelivr.net/npm/@types/react@18.3.26/index.d.ts'
   )
     .then(res => res.text())
     .catch(() => null);
-  env.createFile('/react.d.ts', reactTypes || '');
+  env.createFile('/node_modules/@types/react/index.d.ts', reactTypes || '');
+  // We're currently adding React to the global scope (via the UMD script), so
+  // we need to make sure TS knows about it:
+  env.createFile(
+    '/import-react.d.ts',
+    `import type React from 'react';
+declare global {
+  const React: React;
+}`
+  );
 
   compilerHost = createVirtualCompilerHost(
     system,
@@ -141,11 +158,12 @@ function handleCompileRequest(data: TSCompileEvent['data'], port: MessagePort) {
 
   // TODO: If creating the file fresh each time is too slow, we can try checking
   // if the file exists and updating it if it does.
-  tsEnv?.createFile('index.ts', code);
+  // TODO: make sure the .tsx extension doesn't cause issues with vanilla TS.
+  tsEnv?.createFile('/index.tsx', code);
 
   const program = tsEnv!.languageService.getProgram()!;
 
-  const emitOutput = tsEnv!.languageService.getEmitOutput('index.ts');
+  const emitOutput = tsEnv!.languageService.getEmitOutput('index.tsx');
   const compiled = emitOutput.outputFiles[0].text;
 
   const message: TSCompiledMessage = {
