@@ -159,7 +159,12 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 export const HOME_LOCATION = process.env.HOME_LOCATION;
 // Mailpit is used in development and test environments, hence the localhost
 // default.
-export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
+// TODO: Remove MAILHOG_HOST in a few months
+// We renamed MailHog to MailPit, but kept the same port and API
+// This is to keep backward compatibility with existing setups
+// that might still use MAILHOG_HOST environment variable
+export const MAILPIT_HOST =
+  process.env.MAILPIT_HOST ?? process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
