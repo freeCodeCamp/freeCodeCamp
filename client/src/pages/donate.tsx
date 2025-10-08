@@ -1,6 +1,5 @@
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import type { TFunction } from 'i18next';
-import { useGrowthBook } from '@growthbook/growthbook-react';
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { withTranslation } from 'react-i18next';
@@ -61,7 +60,6 @@ function DonatePage({
       action: `Displayed Donate Page`
     });
   }, []);
-  const growthbook = useGrowthBook();
 
   return showLoading ? (
     <Loader fullScreen={true} />
