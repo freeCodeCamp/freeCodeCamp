@@ -25,7 +25,7 @@ Processor
 
 ---
 
-Graphics Card
+Graphics card
 
 ---
 
@@ -77,7 +77,7 @@ Cable
 
 #### --answer--
 
-Fiber Optic
+Fiber optic
 
 ### --question--
 
@@ -307,11 +307,11 @@ What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
-Internet Content Displayer
+Internet content displayer
 
 ---
 
-Search Engine
+Search engine
 
 ---
 
@@ -319,7 +319,7 @@ Website
 
 #### --answer--
 
-Web Browser
+Web browser
 
 ### --question--
 
@@ -329,11 +329,11 @@ What is a piece of software that lists web pages related to a user's query calle
 
 #### --distractors--
 
-Page Finder
+Page finder
 
 ---
 
-Web Browser
+Web browser
 
 ---
 
@@ -341,7 +341,7 @@ Website
 
 #### --answer--
 
-Search Engine
+Search engine
 
 ### --question--
 
@@ -351,7 +351,7 @@ What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
-Web Browser
+Web browser
 
 ---
 
@@ -359,7 +359,7 @@ Hyperlink
 
 ---
 
-Search Engine
+Search engine
 
 #### --answer--
 
@@ -439,15 +439,15 @@ Which of the following parts is located in a socket on the motherboard?
 
 #### --distractors--
 
-The Router
+The router
 
 ---
 
-The Keyboard
+The keyboard
 
 ---
 
-The Hard Drive (HDD)
+The hard drive (HDD)
 
 #### --answer--
 
@@ -819,7 +819,7 @@ Google or Bing
 
 ---
 
-Windows or MacOS
+Windows or macOS
 
 ---
 
