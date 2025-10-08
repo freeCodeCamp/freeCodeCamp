@@ -4,7 +4,10 @@
   "dashedName": "workshop-quincys-job-tips",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68e4c81577243e4db1676491", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68e4c81577243e4db1676491", "title": "Step 1" },
+    { "id": "68e65ec5348e40a739903e6d", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
