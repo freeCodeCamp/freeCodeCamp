@@ -1,11 +1,11 @@
 import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
-// eslint-disable-next-line import/no-duplicates
+
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import type {
+import {
   IRange,
-  editor
-  // eslint-disable-next-line import/no-duplicates
+  editor,
+  languages
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
@@ -68,6 +68,9 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+// Direct from npm, license in react-types-licence
+import reactTypes from './react-types.json';
+
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
@@ -353,15 +356,43 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+      ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
+      jsx: languages.typescript.JsxEmit.Preserve
+    });
+
     defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
+    // TODO: make sure these aren't getting created over and over
+    function createModel(contents: string, language: string) {
+      if (language !== 'typescript') {
+        return monaco.editor.createModel(contents, language);
+      } else {
+        const reactFile = monaco.Uri.file('react.d.ts');
+        const importHack = `
+        type ReactType = typeof React;
+
+        declare global {
+          const React: ReactType;
+          }`;
+        monaco.editor.createModel(
+          reactTypes['react-18'] + importHack,
+          'typescript',
+          reactFile
+        );
+
+        const file = monaco.Uri.file('index.tsx');
+        return monaco.editor.createModel(contents, language, file);
+      }
+    }
+
     const model =
       dataRef.current.model ||
-      monaco.editor.createModel(
+      createModel(
         challengeFile?.contents ?? '',
         modeMap[challengeFile?.ext ?? 'html']
       );

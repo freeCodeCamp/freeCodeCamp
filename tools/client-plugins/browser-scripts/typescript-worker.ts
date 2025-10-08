@@ -1,5 +1,6 @@
 import { type VirtualTypeScriptEnvironment } from '@typescript/vfs';
 import type { CompilerOptions, CompilerHost } from 'typescript';
+import reactTypes from './react-types.json';
 
 // Most of the ts types are only a guideline. This is because we're not bundling
 // TS in this worker. The specific TS version is going to be determined by the
@@ -93,14 +94,18 @@ async function setupTypeScript() {
     ts,
     compilerOptions
   );
-  // TODO: create and import a local copy.
   // TODO: get all the types (global.d.ts etc)
-  const reactTypes = await fetch(
-    'https://cdn.jsdelivr.net/npm/@types/react@18.3.26/index.d.ts'
-  )
-    .then(res => res.text())
-    .catch(() => null);
-  env.createFile('/node_modules/@types/react/index.d.ts', reactTypes || '');
+
+  const importHack = `
+type ReactType = typeof React;
+
+declare global {
+  const React: ReactType;
+}`;
+  env.createFile(
+    '/node_modules/@types/react/index.d.ts',
+    reactTypes['react-18'] + importHack || ''
+  );
   // We're currently adding React to the global scope (via the UMD script), so
   // we need to make sure TS knows about it:
   env.createFile(
