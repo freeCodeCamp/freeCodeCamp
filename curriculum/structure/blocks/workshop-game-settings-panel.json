@@ -1,0 +1,11 @@
+{
+  "name": "Build a Game Settings Panel",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-game-settings-panel",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e6a99a0fd7386fb66e156f", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
