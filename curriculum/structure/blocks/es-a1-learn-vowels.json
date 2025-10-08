@@ -1,0 +1,11 @@
+{
+  "name": "Vowels",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-vowels",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    { "id": "68e6dc3b0ebe9038abc244f5", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockType": "learn"
+}
