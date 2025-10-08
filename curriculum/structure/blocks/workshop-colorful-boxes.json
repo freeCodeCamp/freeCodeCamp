@@ -1,0 +1,11 @@
+{
+  "name": "Design a Set of Colorful Boxes",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-colorful-boxes",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e6e65b98a050a573cc97bb", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
