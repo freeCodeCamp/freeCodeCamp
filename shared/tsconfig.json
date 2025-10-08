@@ -3,7 +3,7 @@
   "extends": "../tsconfig-base.json",
   "compilerOptions": {
     "outDir": "../shared-dist",
-    "declaration": true,
+    "composite": true,
     "noEmit": false,
     "module": "CommonJS"
   }
