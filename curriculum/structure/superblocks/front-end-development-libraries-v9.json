@@ -6,7 +6,6 @@
         {
           "moduleType": "exam",
           "dashedName": "front-end-development-libraries-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-front-end-development-libraries-certification"]
         }
       ]

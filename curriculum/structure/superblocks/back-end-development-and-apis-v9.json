@@ -6,7 +6,6 @@
         {
           "moduleType": "exam",
           "dashedName": "back-end-development-and-apis-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-back-end-development-and-apis-certification"]
         }
       ]

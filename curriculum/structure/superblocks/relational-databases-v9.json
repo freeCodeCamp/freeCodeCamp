@@ -6,7 +6,6 @@
         {
           "moduleType": "exam",
           "dashedName": "relational-databases-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-relational-databases-certification"]
         }
       ]

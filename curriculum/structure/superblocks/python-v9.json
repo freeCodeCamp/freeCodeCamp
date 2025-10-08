@@ -6,7 +6,6 @@
         {
           "moduleType": "exam",
           "dashedName": "python-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-python-certification"]
         }
       ]
