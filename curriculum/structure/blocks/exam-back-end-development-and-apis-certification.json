@@ -1,0 +1,14 @@
+{
+  "name": "Back End Development and APIs Certification Exam",
+  "blockType": "exam",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "exam-back-end-development-and-apis-certification",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "68e6bfa120effa1586e7985a",
+      "title": "Back End Development and APIs Certification Exam"
+    }
+  ]
+}
