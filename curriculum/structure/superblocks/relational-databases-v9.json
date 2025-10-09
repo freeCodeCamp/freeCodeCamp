@@ -19,10 +19,13 @@
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
-            "lab-celestial-bodies-database",
             "review-relational-database",
             "quiz-relational-database"
           ]
+        },
+        {
+          "dashedName": "lab-celestial-bodies-database",
+          "blocks": ["lab-celestial-bodies-database"]
         },
         {
           "dashedName": "bash-scripting",
@@ -41,13 +44,19 @@
             "lecture-working-with-sql",
             "workshop-sql-student-database-part-1",
             "workshop-sql-student-database-part-2",
-            "lab-world-cup-database",
             "workshop-kitty-ipsum-translator",
             "workshop-bike-rental-shop",
-            "lab-salon-appointment-scheduler",
             "review-bash-and-sql",
             "quiz-bash-and-sql"
           ]
+        },
+        {
+          "dashedName": "lab-world-cup-database",
+          "blocks": ["lab-world-cup-database"]
+        },
+        {
+          "dashedName": "lab-salon-appointment-scheduler",
+          "blocks": ["lab-salon-appointment-scheduler"]
         },
         {
           "dashedName": "git",
@@ -58,11 +67,17 @@
             "lecture-introduction-to-git-and-github",
             "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
             "workshop-sql-reference-object",
-            "lab-periodic-table-database",
-            "lab-number-guessing-game",
             "review-git",
             "quiz-git"
           ]
+        },
+        {
+          "dashedName": "lab-periodic-table-database",
+          "blocks": ["lab-periodic-table-database"]
+        },
+        {
+          "dashedName": "lab-number-guessing-game",
+          "blocks": ["lab-number-guessing-game"]
         },
         {
           "moduleType": "review",

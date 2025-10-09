@@ -6814,6 +6814,11 @@
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
+      "lab-celestial-bodies-database": "Build a Celestial Bodies Database",
+      "lab-world-cup-database": "Build a World Cup Database",
+      "lab-salon-appointment-scheduler": "Build a Salon Appointment Scheduler",
+      "lab-periodic-table-database": "Build a Periodic Table Database",
+      "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "blocks": {
