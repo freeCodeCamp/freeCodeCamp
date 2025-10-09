@@ -1,11 +1,12 @@
 import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
 
+// eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
-import {
+import type {
   IRange,
-  editor,
-  languages
+  editor
+  // eslint-disable-next-line import/no-duplicates
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
@@ -357,34 +358,13 @@ const Editor = (props: EditorProps): JSX.Element => {
     return edRegBounds ? [...edRegBounds] : [];
   };
 
-  const setupTSModels = (monaco: typeof monacoEditor) => {
-    const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-    // TS expects React to be imported before use, but our lessons typically
-    // expect a global React variable to be defined. To prevent TS from
-    // objecting, we have to patch the types with a global declaration.
-    const importHack = `
-        type ReactType = typeof React;
-
-        declare global {
-          const React: ReactType;
-        }`;
-    monaco.editor.createModel(
-      reactTypes['react-18'] + importHack,
-      'typescript',
-      reactFile
-    );
-
-    const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
-    return monaco.editor.createModel('', 'typescript', file);
-  };
-
   const editorWillMount = (monaco: typeof monacoEditor) => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
     monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
       ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
-      jsx: languages.typescript.JsxEmit.Preserve
+      jsx: monaco.languages.typescript.JsxEmit.Preserve
     });
 
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -392,6 +372,27 @@ const Editor = (props: EditorProps): JSX.Element => {
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
+
+    const setupTSModels = (monaco: typeof monacoEditor) => {
+      const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+      // TS expects React to be imported before use, but our lessons typically
+      // expect a global React variable to be defined. To prevent TS from
+      // objecting, we have to patch the types with a global declaration.
+      const importHack = `
+        type ReactType = typeof React;
+
+        declare global {
+          const React: ReactType;
+        }`;
+      monaco.editor.createModel(
+        reactTypes['react-18'] + importHack,
+        'typescript',
+        reactFile
+      );
+
+      const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+      return monaco.editor.createModel('', 'typescript', file);
+    };
 
     // TODO: make sure these aren't getting created over and over
     function createModel(contents: string, language: string) {
