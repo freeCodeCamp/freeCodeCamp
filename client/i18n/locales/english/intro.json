@@ -6097,6 +6097,96 @@
       }
     }
   },
+  "front-end-development-libraries-v9": {
+    "title": "Front End Development Libraries Certification",
+    "intro": [
+      "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
+      "To earn your Front End Development Libraries Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Front End Development Libraries Certification exam."
+    ],
+    "chapters": {
+      "front-end-development-libraries": "Front End Development Libraries"
+    },
+    "modules": {
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+    },
+    "blocks": {
+      "exam-front-end-development-libraries-certification": {
+        "title": "Front End Development Libraries Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Front End Development Libraries Certification"
+        ]
+      }
+    }
+  },
+  "python-v9": {
+    "title": "Python Certification",
+    "intro": [
+      "This course teaches you the fundamentals of Python programming.",
+      "To earn your Python Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Python Certification exam."
+    ],
+    "chapters": {
+      "python": "Python"
+    },
+    "modules": {
+      "python-certification-exam": "Python Certification Exam"
+    },
+    "blocks": {
+      "exam-python-certification": {
+        "title": "Python Certification Exam",
+        "intro": ["Pass this exam to earn your Python Certification"]
+      }
+    }
+  },
+  "relational-databases-v9": {
+    "title": "Relational Databases Certification",
+    "intro": [
+      "This course teaches you the fundamentals of relational databases.",
+      "To earn your Relational Databases Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Relational Databases Certification exam."
+    ],
+    "chapters": {
+      "relational-databases": "Relational Databases"
+    },
+    "modules": {
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
+    },
+    "blocks": {
+      "exam-relational-databases-certification": {
+        "title": "Relational Databases Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Relational Databases Certification"
+        ]
+      }
+    }
+  },
+  "back-end-development-and-apis-v9": {
+    "title": "Back End Development and APIs Certification",
+    "intro": [
+      "This course teaches you the fundamentals of back end development and APIs.",
+      "To earn your Back End Development and APIs Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Back End Development and APIs Certification exam."
+    ],
+    "chapters": {
+      "back-end-development-and-apis": "Back End Development and APIs"
+    },
+    "modules": {
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+    },
+    "blocks": {
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
+      }
+    }
+  },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
