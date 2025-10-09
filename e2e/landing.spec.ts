@@ -14,7 +14,7 @@ const landingPageElements = {
   jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:',
   googleCTA: 'landing-google-cta',
   moreWaysCTA: 'landing-more-ways-cta',
-  signInButton: 'sign-in-button'
+  landingTopCta: 'landing-top-big-cta'
 } as const;
 
 const nonArchivedSuperBlocks = [
@@ -37,11 +37,24 @@ test.describe('Main CTA - Variation A', () => {
     await addGrowthbookCookie({ context, variation: 'A' });
     await goToLandingPage(page);
   });
-  test('Two-button CTA renders correctly', async ({ page }) => {
-    const signInButtons = page.getByTestId(landingPageElements.signInButton);
-    await expect(signInButtons).toHaveCount(6);
+  test('Five main CTAs render correctly', async ({ page }) => {
+    const landingTopCta = page.getByTestId(landingPageElements.landingTopCta);
     const googleCTA = page.getByTestId(landingPageElements.googleCTA);
     const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    const benefitsCtas = page.getByRole('link', {
+      name: translations.landing.benefits.cta
+    });
+    await expect(benefitsCtas).toHaveCount(1);
+    await expect(landingTopCta).toHaveText(
+      translations.buttons['logged-in-cta-btn']
+    );
+    await expect(ctas).toHaveCount(4);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
     await expect(googleCTA).toBeHidden();
     await expect(moreWaysCTA).toBeHidden();
   });
@@ -52,11 +65,22 @@ test.describe('Main CTA - Variation B', () => {
     await addGrowthbookCookie({ context, variation: 'B' });
     await goToLandingPage(page);
   });
-  test('Two-button CTA renders correctly', async ({ page }) => {
+  test('Four main and two stacked CTAs render correctly', async ({ page }) => {
+    const landingTopCta = page.getByTestId(landingPageElements.landingTopCta);
     const googleCTA = page.getByTestId(landingPageElements.googleCTA);
     const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
-    const signInButtons = page.getByTestId(landingPageElements.signInButton);
-    await expect(signInButtons).toHaveCount(5);
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    const benefitsCtas = page.getByRole('link', {
+      name: translations.landing.benefits.cta
+    });
+    await expect(benefitsCtas).toHaveCount(1);
+    await expect(landingTopCta).toBeHidden();
+    await expect(ctas).toHaveCount(3);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
     await expect(googleCTA).toHaveText(
       translations.buttons['sign-in-with-google']
     );
@@ -101,16 +125,6 @@ test.describe('Landing Page', () => {
     );
 
     await expect(h2Element).toBeVisible();
-  });
-
-  test('Call to action buttons should render correctly', async ({ page }) => {
-    const ctas = page.getByRole('link', {
-      name: translations.buttons['logged-in-cta-btn']
-    });
-    await expect(ctas).toHaveCount(4);
-    for (const cta of await ctas.all()) {
-      await expect(cta).toBeVisible();
-    }
   });
 
   test('Hero image should have an alt', async ({ isMobile, page }) => {

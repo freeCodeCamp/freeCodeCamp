@@ -45,7 +45,11 @@ function LandingTop(): JSX.Element {
             </p>
             <Spacer size='m' />
 
-            {showTwoButtonCTA ? <TwoButtonCTA /> : <BigCallToAction />}
+            {showTwoButtonCTA ? (
+              <TwoButtonCTA />
+            ) : (
+              <BigCallToAction testLabel='landing-top-big-cta' />
+            )}
             <Spacer size='m' />
           </Col>
           <Col className='landing-top-right'>
