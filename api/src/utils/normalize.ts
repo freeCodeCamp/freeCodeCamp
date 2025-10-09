@@ -41,6 +41,26 @@ export const normalizeTwitter = (
 };
 
 /**
+ * Converts a Bluesky handle or URL to a URL.
+ *
+ * @param handleOrUrl Bluesky handle or URL.
+ * @returns Bluesky URL.
+ */
+export const normalizeBluesky = (
+  handleOrUrl: string | null
+): string | undefined => {
+  if (!handleOrUrl) return undefined;
+
+  let url;
+  try {
+    new URL(handleOrUrl);
+  } catch {
+    url = `https://bsky.app/profile/${handleOrUrl.replace(/^@/, '')}`;
+  }
+  return url ?? handleOrUrl;
+};
+
+/**
  * Normalizes a date value to a timestamp number.
  *
  * @param date An object with a $date string or a number.
