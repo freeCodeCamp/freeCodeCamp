@@ -1,102 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Trans, useTranslation } from 'react-i18next';
 import { Spacer, Button } from '@freecodecamp/ui';
-import { postUserToken } from '../../../utils/ajax';
-import { createFlashMessage } from '../../../components/Flash/redux';
-import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 
-import {
-  isSignedInSelector,
-  userTokenSelector
-} from '../../../redux/selectors';
-import { updateUserToken } from '../../../redux/actions';
 import { Link } from '../../../components/helpers';
-
 import RdbLocalLogoutAlert from './rdb-local-logout-alert';
 
-const mapStateToProps = (state: unknown) => ({
-  isSignedIn: isSignedInSelector(state),
-  userToken: userTokenSelector(state) as string | null
-});
-
-const mapDispatchToProps = {
-  createFlashMessage,
-  updateUserToken
-};
-
-interface RdbLocalInstructionsProps {
-  course: string;
-  createFlashMessage: typeof createFlashMessage;
+interface LocalInstructionsProps {
+  copyUrl: () => void;
+  copyUserToken: () => void;
+  generateUserToken: () => Promise<void>;
   isSignedIn: boolean;
-  updateUserToken: (arg0: string) => void;
-  url: string;
+  title: string;
   userToken: string | null;
 }
 
-function RdbLocalInstructions({
-  course,
-  createFlashMessage,
+export function LocalInstructions({
+  copyUrl,
+  copyUserToken,
+  generateUserToken,
   isSignedIn,
-  updateUserToken,
-  url,
+  title,
   userToken
-}: RdbLocalInstructionsProps): JSX.Element {
+}: LocalInstructionsProps) {
   const { t } = useTranslation();
-
-  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
-
-  const generateUserToken = async () => {
-    const createUserTokenResponse = await postUserToken();
-    const { data = { userToken: null } } = createUserTokenResponse;
-
-    if (data?.userToken) {
-      updateUserToken(data.userToken);
-      createFlashMessage({
-        type: 'success',
-        message: FlashMessages.UserTokenGenerated
-      });
-    } else {
-      createFlashMessage({
-        type: 'danger',
-        message: FlashMessages.UserTokenGenerateError
-      });
-    }
-  };
-
-  const copyUserToken = () => {
-    navigator.clipboard.writeText(userToken ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.UserTokenCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.UserTokenCopyError
-        });
-      }
-    );
-  };
-
-  const copyUrl = () => {
-    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
-      () => {
-        createFlashMessage({
-          type: 'success',
-          message: FlashMessages.CourseUrlCopied
-        });
-      },
-      () => {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.CourseUrlCopyError
-        });
-      }
-    );
-  };
 
   return (
     <div className='ca-description'>
@@ -174,7 +100,7 @@ function RdbLocalInstructions({
                 </Trans>
               </li>
               <Spacer size='xs' />
-              <RdbLocalLogoutAlert course={course} />
+              <RdbLocalLogoutAlert title={title} />
             </ol>
             <Spacer size='s' />
           </>
@@ -203,10 +129,3 @@ function RdbLocalInstructions({
     </div>
   );
 }
-
-RdbLocalInstructions.displayName = 'RdbLocalInstructions';
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(RdbLocalInstructions);
