@@ -95,6 +95,7 @@ export const certTypes = {
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
   respWebDesign: 'isRespWebDesignCert',
+  respWebDesignV9: 'isRespWebDesignCertV9',
   frontEndDevLibs: 'isFrontEndLibsCert',
   dataVis2018: 'is2018DataVisCert',
   jsAlgoDataStruct: 'isJsAlgoDataStructCert',
@@ -144,6 +145,7 @@ export const completionHours = {
   [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
+  [certTypes.respWebDesignV9]: 300,
   [certTypes.frontEndDevLibs]: 300,
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
@@ -185,6 +187,7 @@ export const certSlugTypeMap = {
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
+  [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
   [Certification.JsV9]: certTypes.javascriptV9
 };
 
@@ -226,6 +229,7 @@ export const certTypeIdMap = {
   [certTypes.infosecQa]: certIds.legacyInfosecQaId,
   [certTypes.fullStack]: certIds.legacyFullStackId,
   [certTypes.respWebDesign]: certIds.respWebDesignId,
+  [certTypes.respWebDesignV9]: certIds.respWebDesignV9Id,
   [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
   [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
   [certTypes.dataVis2018]: certIds.dataVis2018Id,
@@ -249,6 +253,7 @@ export const certTypeTitleMap = {
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.respWebDesignV9]: 'Responsive Web Design',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
   [certTypes.jsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures',

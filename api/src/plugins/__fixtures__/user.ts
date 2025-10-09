@@ -51,6 +51,7 @@ export const newUser = (email: string) => ({
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
   keyboardShortcuts: false,
   linkedin: null,

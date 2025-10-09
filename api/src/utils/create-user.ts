@@ -34,6 +34,7 @@ export const createResetProperties = () => ({
   isQaCertV7: false,
   isRelationalDatabaseCertV8: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
   needsModeration: false,
   partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
