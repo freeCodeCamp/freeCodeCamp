@@ -27,6 +27,7 @@ export enum Certification {
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
   FullStackDeveloper = 'full-stack-developer-v9',
+  RespWebDesignV9 = 'responsive-web-design-v9',
   JsV9 = 'javascript-v9',
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
@@ -80,6 +81,7 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.FullStackDeveloper,
+  Certification.RespWebDesignV9,
   Certification.JsV9,
   Certification.A2English,
   Certification.B1English,
@@ -131,6 +133,7 @@ export const certIds = {
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
   foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
   jsAlgoDataStructV8Id: '658180220947283cdc0689ce',
+  respWebDesignV9Id: '68db314d3c11a8bff07c7535',
   javascriptV9Id: '68c4069c1ef859270e17c495'
 };
 
@@ -282,6 +285,7 @@ export const superBlockToCertMap: {
   [SuperBlocks.RespWebDesignNew]: Certification.RespWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: Certification.JsAlgoDataStruct,
   [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
+  [SuperBlocks.RespWebDesignV9]: Certification.RespWebDesignV9,
   [SuperBlocks.JsV9]: Certification.JsV9,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
@@ -322,6 +326,7 @@ export const linkedInCredentialIds = {
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
   [Certification.FullStackDeveloper]: 'fsd',
+  [Certification.RespWebDesignV9]: 'rwdv9',
   [Certification.JsV9]: 'js',
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',

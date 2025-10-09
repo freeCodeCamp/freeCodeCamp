@@ -53,6 +53,7 @@ const iconMap = {
   [SuperBlocks.SemanticHtml]: Code,
   [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code,
+  [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
   [SuperBlocks.JsV9]: JavaScriptIcon
 };
 
