@@ -75,6 +75,11 @@ import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
+const monacoModelFileMap = {
+  tsxFile: 'index.tsx',
+  reactTypes: 'react.d.ts'
+};
+
 export interface EditorProps {
   attempts: number;
   canFocus: boolean;
@@ -352,6 +357,27 @@ const Editor = (props: EditorProps): JSX.Element => {
     return edRegBounds ? [...edRegBounds] : [];
   };
 
+  const setupTSModels = (monaco: typeof monacoEditor) => {
+    const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+    // TS expects React to be imported before use, but our lessons typically
+    // expect a global React variable to be defined. To prevent TS from
+    // objecting, we have to patch the types with a global declaration.
+    const importHack = `
+        type ReactType = typeof React;
+
+        declare global {
+          const React: ReactType;
+        }`;
+    monaco.editor.createModel(
+      reactTypes['react-18'] + importHack,
+      'typescript',
+      reactFile
+    );
+
+    const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+    return monaco.editor.createModel('', 'typescript', file);
+  };
+
   const editorWillMount = (monaco: typeof monacoEditor) => {
     const { usesMultifileEditor = false } = props;
 
@@ -372,21 +398,9 @@ const Editor = (props: EditorProps): JSX.Element => {
       if (language !== 'typescript') {
         return monaco.editor.createModel(contents, language);
       } else {
-        const reactFile = monaco.Uri.file('react.d.ts');
-        const importHack = `
-        type ReactType = typeof React;
-
-        declare global {
-          const React: ReactType;
-          }`;
-        monaco.editor.createModel(
-          reactTypes['react-18'] + importHack,
-          'typescript',
-          reactFile
-        );
-
-        const file = monaco.Uri.file('index.tsx');
-        return monaco.editor.createModel(contents, language, file);
+        const model = setupTSModels(monaco);
+        model.setValue(contents);
+        return model;
       }
     }
 
@@ -1359,6 +1373,15 @@ const Editor = (props: EditorProps): JSX.Element => {
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
+          editorWillUnmount={(editor, monaco) => {
+            const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+            const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+            // Any model we've created has to be manually disposed of to prevent
+            // memory leaks.
+            editor.getModel()?.dispose();
+            monaco.editor.getModel(reactFile)?.dispose();
+            monaco.editor.getModel(file)?.dispose();
+          }}
           onChange={onChange}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}
