@@ -2,6 +2,7 @@
   "chapters": [
     {
       "dashedName": "back-end-development-and-apis",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "nodejs-core-libraries",
@@ -53,6 +54,7 @@
         },
         {
           "moduleType": "exam",
+          "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
           "blocks": ["exam-back-end-development-and-apis-certification"]
         }

@@ -56,10 +56,12 @@
         },
         {
           "dashedName": "lab-world-cup-database",
+          "comingSoon": true,
           "blocks": ["lab-world-cup-database"]
         },
         {
           "dashedName": "lab-salon-appointment-scheduler",
+          "comingSoon": true,
           "blocks": ["lab-salon-appointment-scheduler"]
         },
         {
@@ -77,10 +79,12 @@
         },
         {
           "dashedName": "lab-periodic-table-database",
+          "comingSoon": true,
           "blocks": ["lab-periodic-table-database"]
         },
         {
           "dashedName": "lab-number-guessing-game",
+          "comingSoon": true,
           "blocks": ["lab-number-guessing-game"]
         },
         {
@@ -91,6 +95,7 @@
         },
         {
           "moduleType": "exam",
+          "comingSoon": true,
           "dashedName": "relational-databases-certification-exam",
           "blocks": ["exam-relational-databases-certification"]
         }
