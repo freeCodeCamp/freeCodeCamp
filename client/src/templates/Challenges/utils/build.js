@@ -161,27 +161,48 @@ export function buildDOMChallenge(
     });
 }
 
-export function buildJSChallenge({ challengeFiles }, options) {
-  const pipeLine = composeFunctions(...getTransformers(options));
+export async function buildJSChallenge(
+  {
+    challengeFiles,
+    challengeType
+  }: { challengeFiles?: ChallengeFile[]; challengeType: number },
+  options: BuildOptions
+): Promise<BuildResult> {
+  if (!challengeFiles) throw Error('No challenge files provided');
 
-  const finalFiles = challengeFiles.map(pipeLine);
-  return Promise.all(finalFiles)
-    .then(checkFilesErrors)
-    .then(challengeFiles => ({
-      challengeType: challengeTypes.js,
-      build: challengeFiles
-        .reduce(
-          (body, challengeFile) => [
-            ...body,
-            challengeFile.head,
-            challengeFile.contents,
-            challengeFile.tail
-          ],
-          []
-        )
-        .join('\n'),
-      sources: buildSourceMap(challengeFiles)
-    }));
+  const pipeLine = composeFunctions(
+    ...(getTransformers(options) as unknown as ApplyFunctionProps[])
+  );
+
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
+  const error = finalFiles.find(({ error }) => error)?.error;
+
+  if (error) {
+    return {
+      challengeType,
+      build: '',
+      sources: buildSourceMap(finalFiles),
+      error
+    };
+  }
+
+  // 🔹 Step 1: Concatenate all code sections together (head + contents + tail)
+  const unifiedCode = finalFiles
+    .map(file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`)
+    .join('\n');
+
+  // 🔹 Step 2: Transpile everything together using Babel
+  const transpiled = Babel.transform(unifiedCode, {
+    presets: ['env']
+  }).code;
+
+  // 🔹 Step 3: Return the transpiled code for execution
+  return {
+    challengeType,
+    build: transpiled,
+    sources: buildSourceMap(finalFiles),
+    error: undefined
+  };
 }
 
 export function buildBackendChallenge({ url }) {
