@@ -397,6 +397,21 @@ export const reducer = handleActions(
         }
       };
     },
+    [actionTypes.updateExamEnvironmentAuthorizationToken]: (
+      state,
+      { payload }
+    ) => {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: {
+            ...state.user.sessionUser,
+            examEnvironmentAuthorizationToken: payload
+          }
+        }
+      };
+    },
     [actionTypes.deleteUserTokenComplete]: state => {
       return {
         ...state,

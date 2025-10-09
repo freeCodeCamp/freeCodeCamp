@@ -448,3 +448,25 @@ export const examAttempts = createApi({
     })
   })
 });
+
+export const examEnvironmentAuthorizationTokenApi = createApi({
+  reducerPath: 'exam-environment-authorization-token',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    postGenerateExamEnvironmentAuthorizationToken: build.mutation<
+      ExamTokenResponse,
+      void
+    >({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'POST'
+      })
+    })
+  })
+});

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import type { Dispatch as ReduxDispatch } from 'redux';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import {
@@ -17,7 +18,12 @@ import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
 import { ChallengeNode } from '../../../redux/prop-types';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  isSignedInSelector,
+  examEnvironmentAuthorizationTokenSelector
+} from '../../../redux/selectors';
+import { updateExamEnvironmentAuthorizationToken } from '../../../redux/actions';
+import { examEnvironmentAuthorizationTokenApi } from '../../../utils/ajax';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
 
@@ -31,9 +37,15 @@ interface GitProps {
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
-  (isChallengeCompleted: boolean, isSignedIn: boolean) => ({
+  examEnvironmentAuthorizationTokenSelector,
+  (
+    isChallengeCompleted: boolean,
+    isSignedIn: boolean,
+    examEnvironmentAuthorizationToken: string | null
+  ) => ({
     isChallengeCompleted,
-    isSignedIn
+    isSignedIn,
+    examEnvironmentAuthorizationToken
   })
 );
 
@@ -41,6 +53,8 @@ interface ShowExamDownloadProps {
   data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  examEnvironmentAuthorizationToken: string | null;
+  dispatch: ReduxDispatch; // injected by connect when mapDispatch not provided
 }
 
 function ShowExamDownload({
@@ -50,7 +64,9 @@ function ShowExamDownload({
     }
   },
   isChallengeCompleted,
-  isSignedIn
+  isSignedIn,
+  examEnvironmentAuthorizationToken,
+  dispatch
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
@@ -60,6 +76,42 @@ function ShowExamDownload({
   const os = useDetectOS();
 
   const { t } = useTranslation();
+
+  const [copySuccess, setCopySuccess] = useState<string | null>(null);
+  const [copyError, setCopyError] = useState<string | null>(null);
+
+  const [postGenerateExamEnvironmentAuthorizationToken, generateMutation] =
+    examEnvironmentAuthorizationTokenApi.usePostGenerateExamEnvironmentAuthorizationTokenMutation();
+
+  console.log(generateMutation.data);
+  useEffect(() => {
+    const data = generateMutation.data;
+    console.log(data);
+    if (!data) return;
+
+    dispatch(
+      updateExamEnvironmentAuthorizationToken(
+        data.examEnvironmentAuthorizationToken
+      )
+    );
+  }, [generateMutation.data, dispatch]);
+
+  async function handleGenerateExamToken() {
+    await postGenerateExamEnvironmentAuthorizationToken();
+  }
+
+  function handleCopyExamToken() {
+    navigator.clipboard.writeText(examEnvironmentAuthorizationToken ?? '').then(
+      () => {
+        setCopySuccess(t('exam-token.copied'));
+        setCopyError(null);
+      },
+      () => {
+        setCopyError(t('exam-token.copy-error'));
+        setCopySuccess(null);
+      }
+    );
+  }
 
   function handleDownloadLink(downloadLinks: string[]) {
     const win = downloadLinks.find(link => link.match(/\.exe/));
@@ -156,7 +208,7 @@ function ShowExamDownload({
         {isSignedIn && (
           <>
             <h2>{t('exam.attempts')}</h2>
-            <Attempts id={id} />
+            <Attempts examChallengeId={id} />
             <Spacer size='l' />
           </>
         )}
@@ -177,6 +229,39 @@ function ShowExamDownload({
           <>
             <Spacer size='m' />
             <strong>{t('exam.unable-to-detect-os')}</strong>
+          </>
+        )}
+        <Spacer size='m' />
+        {isSignedIn && (
+          <>
+            <Spacer size='m' />
+            <h3>{t('exam-token.exam-token')}</h3>
+            {generateMutation.isError && (
+              <p style={{ color: 'red' }}>{generateMutation.error}</p>
+            )}
+            {generateMutation.isSuccess && (
+              <p style={{ color: 'green' }}>
+                {t('exam-token.exam-token-generated')}
+              </p>
+            )}
+            <Button
+              block={true}
+              disabled={generateMutation.isLoading}
+              onClick={() => void handleGenerateExamToken()}
+            >
+              {t('exam-token.generate-exam-token')}
+            </Button>
+            <Spacer size='s' />
+            {copySuccess && <p style={{ color: 'green' }}>{copySuccess}</p>}
+            {copyError && <p style={{ color: 'red' }}>{copyError}</p>}
+            <Button
+              block={true}
+              disabled={!examEnvironmentAuthorizationToken}
+              onClick={handleCopyExamToken}
+            >
+              {t('buttons.copy')}
+            </Button>
+            <Spacer size='m' />
           </>
         )}
         <Spacer size='m' />

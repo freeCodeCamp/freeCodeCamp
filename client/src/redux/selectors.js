@@ -95,6 +95,8 @@ export const shouldRequestDonationSelector = state => {
 };
 
 export const userTokenSelector = state => userSelector(state)?.userToken;
+export const examEnvironmentAuthorizationTokenSelector = state =>
+  userSelector(state)?.examEnvironmentAuthorizationToken;
 
 export const examInProgressSelector = state => state[MainApp].examInProgress;
 
