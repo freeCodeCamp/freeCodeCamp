@@ -1,54 +1,70 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { describe, expect, test } from 'vitest';
+import { describe, expect, test, vi } from 'vitest';
 import { createStore } from '../../../redux/create-store';
 import TwoButtonCTA from './two-button-cta';
 
-describe('TwoButtonCTA', () => {
-  test('renders Google and More ways CTAs', () => {
-    const store = createStore({ app: { user: { isSignedIn: false } } });
-    render(
-      <Provider store={store}>
-        <TwoButtonCTA />
-      </Provider>
-    );
+vi.mock('../../../utils/get-words');
 
-    expect(screen.getByTestId('landing-google-cta')).toBeInTheDocument();
-    expect(screen.getByTestId('landing-more-ways-cta')).toBeInTheDocument();
+const renderWithStore = ({ isSignedIn }: { isSignedIn: boolean }) => {
+  const preloadedState = {
+    app: {
+      user: {
+        sessionUser: isSignedIn ? { id: 'user-id', username: 'fcc-user' } : null
+      }
+    }
+  };
+
+  const store = createStore(preloadedState);
+
+  render(
+    <Provider store={store}>
+      <TwoButtonCTA />
+    </Provider>
+  );
+
+  const googleCta = screen.getByRole('link', {
+    name: 'buttons.sign-in-with-google'
+  });
+  const moreWaysCta = screen.getByRole('link', {
+    name: 'buttons.more-ways-to-sign-in'
+  });
+
+  return { googleCta, moreWaysCta };
+};
+
+describe('Stacked landing CTA', () => {
+  test('renders Google and More ways CTAs', () => {
+    const { googleCta, moreWaysCta } = renderWithStore({ isSignedIn: false });
+
+    expect(googleCta).toBeInTheDocument();
+    expect(moreWaysCta).toBeInTheDocument();
   });
 
   test('links go to API when signed out', () => {
-    const store = createStore({ app: { user: { sessionUser: null } } });
-    render(
-      <Provider store={store}>
-        <TwoButtonCTA />
-      </Provider>
-    );
+    const { googleCta, moreWaysCta } = renderWithStore({ isSignedIn: false });
 
-    const google = screen.getByTestId('landing-google-cta');
-    const moreWays = screen.getByTestId('landing-more-ways-cta');
-    expect(google).toHaveAttribute(
+    expect(googleCta).toHaveAttribute(
       'href',
       expect.stringMatching(/\/signin\/google$/)
     );
-    expect(moreWays).toHaveAttribute(
+    expect(moreWaysCta).toHaveAttribute(
       'href',
       expect.stringMatching(/\/signin$/)
     );
   });
 
   test('links go to learn when signed in', () => {
-    const store = createStore({ app: { user: { sessionUser: {} } } });
-    render(
-      <Provider store={store}>
-        <TwoButtonCTA />
-      </Provider>
-    );
+    const { googleCta, moreWaysCta } = renderWithStore({ isSignedIn: true });
 
-    const google = screen.getByTestId('landing-google-cta');
-    const moreWays = screen.getByTestId('landing-more-ways-cta');
-    expect(google).toHaveAttribute('href', expect.stringMatching(/\/learn$/));
-    expect(moreWays).toHaveAttribute('href', expect.stringMatching(/\/learn$/));
+    expect(googleCta).toHaveAttribute(
+      'href',
+      expect.stringMatching(/\/learn$/)
+    );
+    expect(moreWaysCta).toHaveAttribute(
+      'href',
+      expect.stringMatching(/\/learn$/)
+    );
   });
 });
