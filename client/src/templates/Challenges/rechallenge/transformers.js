@@ -160,6 +160,7 @@ const getTSTranspiler = loopProtectOptions => async challengeFile => {
 const getTSXModuleTranspiler = loopProtectOptions => async challengeFile => {
   await loadBabel();
   await loadPresetReact();
+  await checkTSServiceIsReady();
   const baseOptions = getBabelOptions(presetsJSX, loopProtectOptions);
   const babelOptions = {
     ...baseOptions,
