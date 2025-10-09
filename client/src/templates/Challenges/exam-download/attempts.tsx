@@ -45,11 +45,7 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
 
   const attempts = attemptsMutation.data;
 
-  if (attempts === undefined) {
-    return <Loader />;
-  }
-
-  if (attempts.length === 0) {
+  if (attempts === undefined || attempts.length === 0) {
     return <p>{t('exam.no-attempts-yet')}</p>;
   }
 

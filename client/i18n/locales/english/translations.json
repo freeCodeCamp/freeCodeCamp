@@ -391,7 +391,8 @@
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
@@ -1284,7 +1285,8 @@
     "error": "There was an error generating your token, please try again in a moment.",
     "your-exam-token": "Your Exam Token is: {{token}}",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "The Exam Environment authorization token is used to log into the desktop application."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
