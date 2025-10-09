@@ -6349,6 +6349,11 @@
       "css-grid": "Grid",
       "css-animations": "Animations",
       "review-css": "CSS Review",
+      "lab-survey-form": "Build a Survey Form",
+      "lab-page-of-playing-cards": "Build a Page of Playing Cards",
+      "lab-book-inventory-app": "Build a Book Inventory App",
+      "lab-technical-documentation-page": "Build a Technical Documentation Page",
+      "lab-product-landing-page": "Build a Product Landing Page",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "blocks": {
