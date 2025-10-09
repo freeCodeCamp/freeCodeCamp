@@ -193,7 +193,11 @@ const superBlockNames = {
   'dev-playground': 'dev-playground',
   'full-stack-open': 'full-stack-open',
   'responsive-web-design-v9': 'responsive-web-design-v9',
-  'javascript-v9': 'javascript-v9'
+  'javascript-v9': 'javascript-v9',
+  'front-end-development-libraries-v9': 'front-end-development-libraries-v9',
+  'python-v9': 'python-v9',
+  'relational-databases-v9': 'relational-databases-v9',
+  'back-end-development-and-apis-v9': 'back-end-development-and-apis-v9'
 };
 
 const superBlockToFilename = Object.entries(superBlockNames).reduce(
