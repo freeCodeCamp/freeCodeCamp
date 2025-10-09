@@ -4,6 +4,10 @@
       "dashedName": "relational-databases",
       "modules": [
         {
+          "dashedName": "code-editors",
+          "blocks": ["lecture-working-with-code-editors-and-ides"]
+        },
+        {
           "dashedName": "bash-fundamentals",
           "comingSoon": true,
           "blocks": [

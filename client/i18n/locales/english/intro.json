@@ -6808,6 +6808,7 @@
       "relational-databases": "Relational Databases"
     },
     "modules": {
+      "code-editors": "Code Editors",
       "bash-fundamentals": "Bash Fundamentals",
       "relational-databases": "Relational Databases",
       "bash-scripting": "Bash Scripting",
@@ -6822,6 +6823,12 @@
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "blocks": {
+      "lecture-working-with-code-editors-and-ides": {
+        "title": "Working with Code Editors and IDEs",
+        "intro": [
+          "In these lessons, you will learn how to work with code editors and IDEs. You will learn various concepts about the most popular code editor, VS Code such as its installation, how to create a project in it, keyboard shortcuts, and extensions."
+        ]
+      },
       "lecture-understanding-the-command-line-and-working-with-bash": {
         "title": "Understanding the Command Line and Working with Bash",
         "intro": [
