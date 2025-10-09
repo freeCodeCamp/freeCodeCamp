@@ -4986,10 +4986,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-parent-teacher-conference-form": {
-        "title": "Design a Parent Teacher Conference Form",
-        "intro": ["Design a Parent Teacher Conference Form", ""]
       }
     }
   },
@@ -6693,6 +6689,10 @@
           "In the previous lectures, you learned how to work with the different types of pseudo-classes.",
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
+      },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": ["Design a Parent Teacher Conference Form", ""]
       },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
