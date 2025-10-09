@@ -234,10 +234,13 @@ model ExamEnvironmentExamModeration {
   moderatorId    String?                             @db.ObjectId
 
   /// Date the exam attempt expired
-  submissionDate DateTime @default(now()) @db.Date
+  submissionDate    DateTime @default(now()) @db.Date
+  /// Whether the `challengeId` for the `ExamEnvironmentChallenge` has been awarded to the user
+  challengesAwarded Boolean  @default(false)
+
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version        Int      @default(2)
+  version Int @default(2)
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)
