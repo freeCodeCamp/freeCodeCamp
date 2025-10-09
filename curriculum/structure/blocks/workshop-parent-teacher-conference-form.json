@@ -4,7 +4,10 @@
   "dashedName": "workshop-parent-teacher-conference-form",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68e707257ea91c2e12d489fb", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68e707257ea91c2e12d489fb", "title": "Step 1" },
+    { "id": "68e7e729f6d14f69a23786ef", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
