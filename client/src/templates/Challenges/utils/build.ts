@@ -232,30 +232,39 @@ export async function buildJSChallenge(
   options: BuildOptions
 ): Promise<BuildResult> {
   if (!challengeFiles) throw Error('No challenge files provided');
+
   const pipeLine = composeFunctions(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
   const error = finalFiles.find(({ error }) => error)?.error;
 
-  const toBuild = error ? [] : finalFiles;
+  if (error) {
+    return {
+      challengeType,
+      build: '',
+      sources: buildSourceMap(finalFiles),
+      error
+    };
+  }
 
+  // 🔹 Step 1: Concatenate all code sections together (head + contents + tail)
+  const unifiedCode = finalFiles
+    .map(file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`)
+    .join('\n');
+
+  // 🔹 Step 2: Transpile everything together using Babel
+  const transpiled = Babel.transform(unifiedCode, {
+    presets: ['env']
+  }).code;
+
+  // 🔹 Step 3: Return the transpiled code for execution
   return {
     challengeType,
-    build: toBuild
-      .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
-        [] as string[]
-      )
-      .join('\n'),
+    build: transpiled,
     sources: buildSourceMap(finalFiles),
-    error
+    error: undefined
   };
 }
 
