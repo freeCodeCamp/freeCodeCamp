@@ -45,6 +45,8 @@
     "@babel/preset-react": "7.23.3",
     "@babel/preset-typescript": "7.23.3",
     "@babel/standalone": "7.23.7",
+    "@codesandbox/sandpack-react": "2.6.9",
+    "@codesandbox/sandpack-themes": "2.0.21",
     "@fortawesome/fontawesome-svg-core": "6.7.1",
     "@fortawesome/free-brands-svg-icons": "6.7.1",
     "@fortawesome/free-solid-svg-icons": "6.7.1",
