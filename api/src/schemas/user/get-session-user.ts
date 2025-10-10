@@ -111,6 +111,7 @@ export const getSessionUser = {
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),

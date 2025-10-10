@@ -1,7 +1,7 @@
 import nodemailer, { Transporter } from 'nodemailer';
 
 import { MailProvider, SendEmailArgs } from '../mailer.js';
-import { MAILHOG_HOST } from '../../utils/env.js';
+import { MAILPIT_HOST } from '../../utils/env.js';
 
 /**
  * NodemailerProvider is a wrapper around nodemailer that provides a clean
@@ -11,12 +11,12 @@ export class NodemailerProvider implements MailProvider {
   private transporter: Transporter;
 
   /**
-   * Sets up nodemailer, with hardcodeded configuration.  This is intended for
-   * use in development.
+   * Sets up nodemailer, with hardcoded configuration. This is intended for
+   * use in development with Mailpit.
    */
   constructor() {
     this.transporter = nodemailer.createTransport({
-      host: MAILHOG_HOST,
+      host: MAILPIT_HOST,
       secure: false,
       port: 1025,
       auth: {
