@@ -1,4 +1,4 @@
-import { Compiler } from './setup-typescript';
+import { Compiler } from './modules/typescript-compiler';
 
 // Most of the ts types are only a guideline. This is because we're not bundling
 // TS in this worker. The specific TS version is going to be determined by the
