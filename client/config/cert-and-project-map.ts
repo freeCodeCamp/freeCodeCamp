@@ -33,7 +33,12 @@ const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
 const fullStackDeveloperBase = '/learn/full-stack-developer';
+const respWebV9Base = '/learn/responsive-web-design-v9';
 const jsV9Base = '/learn/javascript-v9';
+const frontEndDevLibsV9Base = '/learn/front-end-development-libraries-v9';
+const pythonV9Base = '/learn/python-v9';
+const relationalDbV9Base = '/learn/relational-databases-v9';
+const backEndDevApisV9Base = '/learn/back-end-development-and-apis-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -815,6 +820,19 @@ const allStandardCerts = [
     ]
   },
   {
+    id: '68db314d3c11a8bff07c7535',
+    title: 'Responsive Web Design',
+    certSlug: Certification.RespWebDesignV9,
+    projects: [
+      {
+        id: '68db37350b398ecddd1f5dac',
+        title: 'Responsive Web Design Certification Exam',
+        link: `${respWebV9Base}/responsive-web-design-certification-exam/exam-responsive-web-design-certification`,
+        certSlug: Certification.RespWebDesignV9
+      }
+    ]
+  },
+  {
     id: '68c4069c1ef859270e17c495',
     title: 'JavaScript',
     certSlug: Certification.JsV9,
@@ -824,6 +842,58 @@ const allStandardCerts = [
         title: 'JavaScript Certification Exam',
         link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
         certSlug: Certification.JsV9
+      }
+    ]
+  },
+  {
+    id: '68e008aa5f80c6099d47b3a2',
+    title: 'Front End Development Libraries',
+    certSlug: Certification.FrontEndDevLibsV9,
+    projects: [
+      {
+        id: '68e00b355f80c6099d47b3a3',
+        title: 'Front End Development Libraries Certification Exam',
+        link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
+        certSlug: Certification.FrontEndDevLibsV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5020effa1586e79855',
+    title: 'Python',
+    certSlug: Certification.PythonV9,
+    projects: [
+      {
+        id: '68e6bf0320effa1586e79858',
+        title: 'Python Certification Exam',
+        link: `${pythonV9Base}/exam-python-certification/exam-python-certification`,
+        certSlug: Certification.PythonV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5120effa1586e79856',
+    title: 'Relational Databases',
+    certSlug: Certification.RelationalDbV9,
+    projects: [
+      {
+        id: '68e6bf3f20effa1586e79859',
+        title: 'Relational Databases Certification Exam',
+        link: `${relationalDbV9Base}/exam-relational-databases-certification/exam-relational-databases-certification`,
+        certSlug: Certification.RelationalDbV9
+      }
+    ]
+  },
+  {
+    id: '68e6bd5120effa1586e79857',
+    title: 'Back End Development and APIs',
+    certSlug: Certification.BackEndDevApisV9,
+    projects: [
+      {
+        id: '68e6bfa120effa1586e7985a',
+        title: 'Back End Development and APIs Certification Exam',
+        link: `${backEndDevApisV9Base}/exam-back-end-development-and-apis-certification/exam-back-end-development-and-apis-certification`,
+        certSlug: Certification.BackEndDevApisV9
       }
     ]
   },

@@ -1,0 +1,14 @@
+{
+  "chapters": [
+    {
+      "dashedName": "relational-databases",
+      "modules": [
+        {
+          "moduleType": "exam",
+          "dashedName": "relational-databases-certification-exam",
+          "blocks": ["exam-relational-databases-certification"]
+        }
+      ]
+    }
+  ]
+}
