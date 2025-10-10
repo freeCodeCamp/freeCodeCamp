@@ -1,6 +1,7 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Panel, Button } from '@freecodecamp/ui';
+import ScrollableAnchor from 'react-scrollable-anchor';
 
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
@@ -20,32 +21,34 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
     : t('buttons.agree-honesty');
 
   return (
-    <section id='honesty-policy'>
-      <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
-      <FullWidthRow>
-        <Panel className='honesty-panel'>
-          <p>{t('settings.honesty.p1')}</p>
-          <p>{t('settings.honesty.p2')}</p>
-          <p>{t('settings.honesty.p3')}</p>
-          <p>{t('settings.honesty.p4')}</p>
-          <p>{t('settings.honesty.p5')}</p>
-          <p>{t('settings.honesty.p6')}</p>
-          <p>
-            <Trans i18nKey='settings.honesty.p7'>
-              <a href={`mailto:${email}`}>{{ email }}</a>
-            </Trans>
-          </p>
-        </Panel>
-        <Button
-          block={true}
-          variant='primary'
-          disabled={isHonest}
-          onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
-        >
-          {buttonText}
-        </Button>
-      </FullWidthRow>
-    </section>
+    <ScrollableAnchor id='settings-honesty'>
+      <section id='honesty-policy'>
+        <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
+        <FullWidthRow>
+          <Panel className='honesty-panel'>
+            <p>{t('settings.honesty.p1')}</p>
+            <p>{t('settings.honesty.p2')}</p>
+            <p>{t('settings.honesty.p3')}</p>
+            <p>{t('settings.honesty.p4')}</p>
+            <p>{t('settings.honesty.p5')}</p>
+            <p>{t('settings.honesty.p6')}</p>
+            <p>
+              <Trans i18nKey='settings.honesty.p7'>
+                <a href={`mailto:${email}`}>{{ email }}</a>
+              </Trans>
+            </p>
+          </Panel>
+          <Button
+            block={true}
+            variant='primary'
+            disabled={isHonest}
+            onClick={() => !isHonest && updateIsHonest({ isHonest: true })}
+          >
+            {buttonText}
+          </Button>
+        </FullWidthRow>
+      </section>
+    </ScrollableAnchor>
   );
 };
 

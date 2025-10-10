@@ -3,27 +3,36 @@
   min-height: calc(100vh - var(--header-height));
 }
 
-.certification-index ul {
+.settings-main {
+  flex: 1;
+  padding: 1rem;
+}
+
+.settings-ledger ul {
   list-style-type: none;
   padding-left: 1rem;
 }
 
-.certification-index ul li {
+.settings-ledger ul li {
   margin-bottom: 0.5rem;
 }
 
-.certification-index {
+.settings-ledger {
   position: sticky;
   top: var(--header-height);
   padding: 1rem;
-  width: 40%;
+  overflow-y: scroll;
   height: calc(100vh - var(--header-height));
-  overflow-y: auto;
   background-color: var(--tertiary-background);
 }
 
+.settings-ledger .ledger-anchor-btn {
+  display: inline-block;
+  text-decoration: none;
+}
+
 @media (max-width: 767px) {
-  .certification-index {
+  .settings-ledger {
     display: none;
   }
 

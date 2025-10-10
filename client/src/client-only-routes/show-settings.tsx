@@ -156,12 +156,51 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <div className='settings-container'>
-        <aside className='certification-index'>
+        <aside className='settings-ledger'>
+          <h2 data-playwright-test-label='settings-ledger-heading'>
+            {t('settings.headings.ledger')}
+          </h2>
+          <ul>
+            <li>
+              <a href='#settings-account' className='ledger-anchor-btn'>
+                {t('settings.headings.account')}
+              </a>
+            </li>
+            <li>
+              <a href='#settings-privacy' className='ledger-anchor-btn'>
+                {t('settings.headings.privacy')}
+              </a>
+            </li>
+            <li>
+              <a href='#settings-email' className='ledger-anchor-btn'>
+                {t('settings.email.heading')}
+              </a>
+            </li>
+            <li>
+              <a href='#settings-honesty' className='ledger-anchor-btn'>
+                {t('settings.headings.honesty')}
+              </a>
+            </li>
+
+            <li>
+              <a href='#settings-certifications' className='ledger-anchor-btn'>
+                {t('settings.headings.certs')}
+              </a>
+            </li>
+            <li>
+              <a href='#settings-legacy-certs' className='ledger-anchor-btn'>
+                {t('settings.headings.legacy-certs')}
+              </a>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
           <h2>{t('settings.headings.certs')}</h2>
           <ul>
             {currentCertifications.map(slug => (
               <li key={slug}>
-                <a href={`#cert-${slug}`} className={'cert-anchor-btn'}>
+                <a href={`#cert-${slug}`} className={'ledger-anchor-btn'}>
                   {t(`certification.title.${slug}`, slug)}
                 </a>
                 <br />
@@ -169,7 +208,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             ))}
           </ul>
         </aside>
-        <main>
+        <main className='settings-main'>
           <Spacer size='l' />
           <h1
             id='content-start'

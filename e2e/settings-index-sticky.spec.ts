@@ -18,7 +18,7 @@ test.describe('Settings Page - Sticky Index Widget', () => {
   test('index widget should have sticky positioning CSS properties', async ({
     page
   }) => {
-    const indexElement = page.locator('.certification-index');
+    const indexElement = page.locator('.settings-ledger');
     await expect(indexElement).toBeVisible();
 
     const position = await indexElement.evaluate(el =>
@@ -76,7 +76,7 @@ test.describe('Settings Page - Sticky Index Widget', () => {
     page
   }) => {
     const firstCertLink = page
-      .locator('.certification-index a.cert-anchor-btn')
+      .locator('.settings-ledger a.ledger-anchor-btn')
       .first();
     const certName = await firstCertLink.textContent();
     await firstCertLink.click();
