@@ -74,7 +74,8 @@ async function setupTypeScript() {
     // from the docs: "Note: it's possible for this list to get out of
     // sync with TypeScript over time. It was last synced with TypeScript
     // 3.8.0-rc."
-    jsx: ts.JsxEmit.Preserve // Babel will handle JSX
+    jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
+    allowUmdGlobalAccess: true // Necessary because React is loaded via a UMD script.
   };
   const fsMap = await createDefaultMapFromCDN(
     compilerOptions,
@@ -83,6 +84,12 @@ async function setupTypeScript() {
     ts
   );
 
+  // This can be any path, but doing this means import React from 'react' works, if we ever need it.
+  const reactTypesPath = `/node_modules/@types/react/index.d.ts`;
+
+  // It may be necessary to get all the types (global.d.ts etc)
+  fsMap.set(reactTypesPath, reactTypes['react-18'] || '');
+
   const system = tsvfs.createSystem(fsMap);
   // TODO: if passed an invalid compiler options object (e.g. { module:
   // ts.ModuleKind.CommonJS, moduleResolution: ts.ModuleResolutionKind.NodeNext
@@ -90,30 +97,9 @@ async function setupTypeScript() {
   // show them the diagnostics from this function.
   const env = tsvfs.createVirtualTypeScriptEnvironment(
     system,
-    [],
+    [reactTypesPath],
     ts,
     compilerOptions
-  );
-  // TODO: get all the types (global.d.ts etc)
-
-  const importHack = `
-type ReactType = typeof React;
-
-declare global {
-  const React: ReactType;
-}`;
-  env.createFile(
-    '/node_modules/@types/react/index.d.ts',
-    reactTypes['react-18'] + importHack || ''
-  );
-  // We're currently adding React to the global scope (via the UMD script), so
-  // we need to make sure TS knows about it:
-  env.createFile(
-    '/import-react.d.ts',
-    `import type React from 'react';
-declare global {
-  const React: React;
-}`
   );
 
   compilerHost = createVirtualCompilerHost(

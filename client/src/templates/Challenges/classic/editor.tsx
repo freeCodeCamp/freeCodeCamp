@@ -364,7 +364,8 @@ const Editor = (props: EditorProps): JSX.Element => {
     monacoRef.current = monaco;
     monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
       ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
-      jsx: monaco.languages.typescript.JsxEmit.Preserve
+      jsx: monaco.languages.typescript.JsxEmit.Preserve,
+      allowUmdGlobalAccess: true
     });
 
     defineMonacoThemes(monaco, { usesMultifileEditor });
@@ -375,17 +376,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const setupTSModels = (monaco: typeof monacoEditor) => {
       const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-      // TS expects React to be imported before use, but our lessons typically
-      // expect a global React variable to be defined. To prevent TS from
-      // objecting, we have to patch the types with a global declaration.
-      const importHack = `
-        type ReactType = typeof React;
-
-        declare global {
-          const React: ReactType;
-        }`;
       monaco.editor.createModel(
-        reactTypes['react-18'] + importHack,
+        reactTypes['react-18'],
         'typescript',
         reactFile
       );
