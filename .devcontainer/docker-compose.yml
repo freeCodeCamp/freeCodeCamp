@@ -13,6 +13,7 @@ services:
     image: mongo
     command: mongod --replSet rs0
     restart: unless-stopped
+    hostname: mongodb
     volumes:
       - mongodb-data:/data/db
   mongo-setup:
@@ -24,8 +25,9 @@ services:
         'bash',
         '-c',
         # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
-        'mongosh --host mongo-db:27017 --eval ''try {rs.initiate();} catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
+        'mongosh --host mongo-db:27017 --eval ''try {var cfg = { _id: "rs0", members: [{ _id: 0, host: "mongodb:27017" }] }; rs.initiate(cfg); } catch (err) { if(err.codeName !== "AlreadyInitialized") throw err };'''
       ]
 
 volumes:
   mongodb-data:
+    driver: local

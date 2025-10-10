@@ -172,6 +172,18 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  data: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  data: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -184,11 +196,11 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    nodules: Nodule[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
@@ -399,6 +411,7 @@ export type User = {
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
+  bluesky: string;
   username: string;
   website: string;
   yearsTopContributor: string[];

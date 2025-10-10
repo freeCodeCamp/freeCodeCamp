@@ -1,0 +1,19 @@
+# Docker Compose override for E2E testing
+# Usage: docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
+services:
+  api:
+    restart: unless-stopped
+    depends_on:
+      - db
+      - mailpit
+    image: fcc-api
+    env_file:
+      - ../.env
+    environment:
+      # The api cannot connect to mongodb or mailpit via localhost from inside the
+      # container, so we have to override these variables.
+      - MONGOHQ_URL=mongodb://db:27017/freecodecamp?directConnection=true
+      - MAILHOG_HOST=mailpit
+      - HOST=0.0.0.0
+    ports:
+      - '3000:3000'

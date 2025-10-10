@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Tables
 
-In these lecture videos, you will learn about HTML tables.
+In these lessons, you will learn about HTML tables.

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Best Practices for Responsive Web Design
 
-In these lecture videos, you will learn about the best practices for responsive web design.
+In these lessons, you will learn about the best practices for responsive web design.

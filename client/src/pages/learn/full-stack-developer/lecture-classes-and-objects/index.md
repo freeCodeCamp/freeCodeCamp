@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Classes and Objects
 
-Learn about Classes and Objects in these lectures.
+Learn about Classes and Objects in these lessons.

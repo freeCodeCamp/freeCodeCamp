@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Functional Programming
 
-In these lecture videos, you will learn about functional programming.
+In these lessons, you will learn about functional programming.
