@@ -25,7 +25,7 @@ Processor
 
 ---
 
-Graphics Card.
+Graphics card
 
 ---
 
@@ -77,7 +77,7 @@ Cable
 
 #### --answer--
 
-Fiber Optic.
+Fiber optic
 
 ### --question--
 
@@ -105,7 +105,7 @@ Using passwords based on personal information like your birthday.
 
 #### --text--
 
-Which of the following is NOT a Web Browser?
+Which of the following is NOT a web browser?
 
 #### --distractors--
 
@@ -117,11 +117,11 @@ Opera
 
 ---
 
-Microsoft Edge.
+Microsoft Edge
 
 #### --answer--
 
-Google Drive.
+Google Drive
 
 ### --question--
 
@@ -131,11 +131,11 @@ When you need to edit a piece of code, which of the following are you most likel
 
 #### --distractors--
 
-Node Package Manager.
+Node Package Manager
 
 ---
 
-Microsoft Edge.
+Microsoft Edge
 
 ---
 
@@ -143,7 +143,7 @@ GitHub
 
 #### --answer--
 
-Visual Studio Code.
+Visual Studio Code
 
 ### --question--
 
@@ -157,15 +157,15 @@ Dropbox
 
 ---
 
-Microsoft OneDrive.
+Microsoft OneDrive
 
 ---
 
-Google Drive.
+Google Drive
 
 #### --answer--
 
-Windows File Explorer.
+Windows File Explorer
 
 ### --question--
 
@@ -307,11 +307,11 @@ What is a piece of software that allows you to look at online content called?
 
 #### --distractors--
 
-Internet Content Displayer.
+Internet content displayer
 
 ---
 
-Search Engine.
+Search engine
 
 ---
 
@@ -319,7 +319,7 @@ Website
 
 #### --answer--
 
-Web Browser.
+Web browser
 
 ### --question--
 
@@ -329,11 +329,11 @@ What is a piece of software that lists web pages related to a user's query calle
 
 #### --distractors--
 
-Page Finder.
+Page finder
 
 ---
 
-Web Browser.
+Web browser
 
 ---
 
@@ -341,7 +341,7 @@ Website
 
 #### --answer--
 
-Search Engine.
+Search engine
 
 ### --question--
 
@@ -351,7 +351,7 @@ What is a set of one or more web pages under one domain name called?
 
 #### --distractors--
 
-Web Browser.
+Web browser
 
 ---
 
@@ -359,7 +359,7 @@ Hyperlink
 
 ---
 
-Search Engine.
+Search engine
 
 #### --answer--
 
@@ -385,17 +385,17 @@ Brackets
 
 #### --answer--
 
-Quotation marks.
+Quotation marks
 
 ### --question--
 
 #### --text--
 
-Which is NOT a way to install a Web Browser?
+Which is NOT a way to install a web browser?
 
 #### --distractors--
 
-Using a Package Manager.
+Using a package manager.
 
 ---
 
@@ -439,19 +439,19 @@ Which of the following parts is located in a socket on the motherboard?
 
 #### --distractors--
 
-The Router.
+The router
 
 ---
 
-The Keyboard.
+The keyboard
 
 ---
 
-The Hard Drive (HDD).
+The hard drive (HDD)
 
 #### --answer--
 
-The CPU.
+The CPU
 
 ## --quiz--
 
@@ -463,19 +463,19 @@ Which of the following is a basic part of the computer?
 
 #### --distractors--
 
-The word processor. 
+The word processor
 
 ---
 
-The task manager.
+The task manager
 
 ---
 
-The memory manager.
+The memory manager
 
 #### --answer--
 
-The central processing unit.
+The central processing unit
 
 ### --question--
 
@@ -485,19 +485,19 @@ What is a pointing device for a computer?
 
 #### --distractors--
 
-A stick for pointing at computers.
+A stick for pointing at computers
 
 ---
 
-A retractable device used in PowerPoint presentations.
+A retractable device used in PowerPoint presentations
 
 ---
 
-A laser pointer.
+A laser pointer
 
 #### --answer--
 
-A mouse or touchpad.
+A mouse or touchpad
 
 ### --question--
 
@@ -507,19 +507,19 @@ What is a type of ISP provider?
 
 #### --distractors--
 
-Satellite.
+Satellite
 
 ---
 
-Fiber optic.
+Fiber optic
 
 ---
 
-Dial up.
+Dial up
 
 #### --answer--
 
-Tier 1.
+Tier 1
 
 ### --question--
 
@@ -749,19 +749,19 @@ What is the built-in way you can use to search for files on your computer?
 
 #### --distractors--
 
-Google or Firefox.
+Google or Firefox
 
 ---
 
-A search engine.
+A search engine
 
 ---
 
-GitHub.
+GitHub
 
 #### --answer--
 
-The file explorer.
+The file explorer
 
 ### --question--
 
@@ -815,19 +815,19 @@ Which file managers can you use to create, move, and delete files?
 
 #### --distractors--
 
-Google or Bing.
+Google or Bing
 
 ---
 
-Windows or MacOS.
+Windows or macOS
 
 ---
 
-Findex or Firefox.
+Findex or Firefox
 
 #### --answer--
 
-Explorer or Finder.
+Explorer or Finder
 
 ### --question--
 

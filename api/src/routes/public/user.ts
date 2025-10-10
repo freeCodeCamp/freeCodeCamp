@@ -12,6 +12,7 @@ import {
   normalizeFlags,
   normalizeProfileUI,
   normalizeTwitter,
+  normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
 import {
@@ -197,6 +198,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           // setting control it? Same applies to website, githubProfile,
           // and linkedin.
           twitter: normalizeTwitter(user.twitter),
+          bluesky: normalizeBluesky(user.bluesky),
           yearsTopContributor: user.yearsTopContributor,
           usernameDisplay: user.usernameDisplay || user.username
         };
