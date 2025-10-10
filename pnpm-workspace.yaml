@@ -18,5 +18,4 @@ packages:
 packageExtensions:
   '@testing-library/jest-dom':
     peerDependencies:
-      jest: '*'
       vitest: '*'

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to The var Keyword and Hoisting
 
-In these lecture videos, you will learn about the var keyword and hoisting in JavaScript.
+In these lessons, you will learn about the var keyword and hoisting in JavaScript.

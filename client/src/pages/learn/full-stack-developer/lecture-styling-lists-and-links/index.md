@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Styling Lists and Links
 
-In these lecture videos, you will learn about styling lists and links.
+In these lessons, you will learn about styling lists and links.

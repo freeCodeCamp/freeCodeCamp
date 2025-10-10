@@ -1,6 +1,6 @@
 import { createRequire } from 'node:module';
 
-import { describe, it, beforeAll } from 'vitest';
+import { describe, it, beforeAll, expect } from 'vitest';
 import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
@@ -60,14 +60,16 @@ async function newPageContext() {
   return globalThis.__fccPuppeteerPages[poolId];
 }
 
-export async function defineTestsForBlock({ block }) {
+export async function defineTestsForBlock(testFilter) {
   const lang = testedLang();
-  const challenges = await getChallenges(lang, { block });
+  const challenges = await getChallenges(lang, testFilter);
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
   if (isEmpty(nonCertificationChallenges)) {
-    console.warn(`No non-certification challenges to test for block ${block}.`);
+    console.warn(
+      `No non-certification challenges to test for block ${testFilter.block}.`
+    );
     describe('Check challenges', () => {
       it('No non-certification challenges to test', () => {});
     });
@@ -78,8 +80,12 @@ export async function defineTestsForBlock({ block }) {
     const dashedBlockName = challenge.block;
     if (dashedBlockName && !meta[dashedBlockName]) {
       meta[dashedBlockName] = getBlockStructure(dashedBlockName);
-      const result = validateMetaSchema(meta[dashedBlockName]);
-      if (result.error) throw new AssertionError(result.error);
+      describe(`Meta structure for block ${dashedBlockName}`, () => {
+        it('Has valid structure', () => {
+          const result = validateMetaSchema(meta[dashedBlockName]);
+          expect(result.error).toBeUndefined();
+        });
+      });
     }
   }
 
@@ -325,7 +331,11 @@ seed goes here
                 it(
                   `Solution ${index + 1} must pass the tests`,
                   async function () {
-                    await testRunner(tests);
+                    try {
+                      await testRunner(tests);
+                    } catch (e) {
+                      expect(e).toBeUndefined();
+                    }
                   },
                   timePerTest * tests.length + 2000
                 );
@@ -381,12 +391,8 @@ async function createTestRunner(
         const newMessage = solutionFromNext
           ? 'Check next step for solution!\n' + text
           : text;
-        // if the stack is missing, the message should be included. Otherwise it
-        // is redundant.
-        err.message = err.stack
-          ? newMessage
-          : `${newMessage}
-      ${err.message}`;
+        err.message = `${newMessage}
+Original message: ${err.message}`;
         throw err;
       }
     }
