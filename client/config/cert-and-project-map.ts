@@ -823,7 +823,7 @@ const allStandardCerts = [
       {
         id: '68db37350b398ecddd1f5dac',
         title: 'Responsive Web Design Certification Exam',
-        link: `${respWebV9Base}/responsive-web-design-certification-exam/exam-responsive-web-design-certification`,
+        link: `${respWebV9Base}/exam-responsive-web-design-certification/exam-responsive-web-design-certification`,
         certSlug: Certification.RespWebDesignV9
       }
     ]
