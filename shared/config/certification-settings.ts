@@ -338,7 +338,7 @@ export const linkedInCredentialIds = {
   [Certification.FoundationalCSharp]: 'fcswm',
   [Certification.FullStackDeveloper]: 'fsd',
   [Certification.RespWebDesignV9]: 'rwdv9',
-  [Certification.JsV9]: 'js',
+  [Certification.JsV9]: 'jsv9',
   [Certification.FrontEndDevLibsV9]: 'felv9',
   [Certification.PythonV9]: 'pyv9',
   [Certification.RelationalDbV9]: 'rdv9',
