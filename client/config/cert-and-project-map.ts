@@ -834,7 +834,7 @@ const allStandardCerts = [
     certSlug: Certification.JsV9,
     projects: [
       {
-        id: '645147516c245de4d11eb7ba',
+        id: '68c462d7dc707f3ca82f8e6d',
         title: 'JavaScript Certification Exam',
         link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
         certSlug: Certification.JsV9
