@@ -154,7 +154,6 @@
     "@types/react-redux": "7.1.33",
     "@types/react-responsive": "8.0.8",
     "@types/react-scroll": "^1.8.10",
-    "@types/react-scrollable-anchor": "0.6.4",
     "@types/react-spinkit": "3.0.10",
     "@types/react-test-renderer": "16.9.12",
     "@types/react-transition-group": "4.4.10",
