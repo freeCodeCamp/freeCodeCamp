@@ -7,7 +7,8 @@
   "challengeOrder": [
     { "id": "68e4c81577243e4db1676491", "title": "Step 1" },
     { "id": "68e65ec5348e40a739903e6d", "title": "Step 2" },
-    { "id": "68e90335bd53a901c41dfc13", "title": "Step 3" }
+    { "id": "68e90335bd53a901c41dfc13", "title": "Step 3" },
+    { "id": "68e964b84f954c322376e592", "title": "Step 4" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
