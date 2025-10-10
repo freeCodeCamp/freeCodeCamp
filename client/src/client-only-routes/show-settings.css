@@ -29,6 +29,7 @@
 .settings-ledger .ledger-anchor-btn {
   display: inline-block;
   text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 767px) {

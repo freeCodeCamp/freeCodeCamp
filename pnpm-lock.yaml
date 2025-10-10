@@ -513,9 +513,9 @@ importers:
       react-responsive:
         specifier: 9.0.2
         version: 9.0.2(react@17.0.2)
-      react-scrollable-anchor:
-        specifier: 0.6.1
-        version: 0.6.1(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react-scroll:
+        specifier: 1.8.7
+        version: 1.8.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       react-spinkit:
         specifier: 3.0.0
         version: 3.0.0
@@ -631,6 +631,9 @@ importers:
       '@types/react-responsive':
         specifier: 8.0.8
         version: 8.0.8
+      '@types/react-scroll':
+        specifier: ^1.8.10
+        version: 1.8.10
       '@types/react-scrollable-anchor':
         specifier: 0.6.4
         version: 0.6.4
@@ -984,7 +987,7 @@ importers:
     dependencies:
       '@freecodecamp/curriculum-helpers':
         specifier: ^6.0.1
-        version: 6.0.1(debug@4.3.4)(typescript@5.8.2)
+        version: 6.0.1(debug@4.3.4)(typescript@5.7.3)
       xterm:
         specifier: ^5.2.1
         version: 5.3.0
@@ -1006,7 +1009,7 @@ importers:
         version: 8.0.1(webpack-cli@4.10.0)
       '@typescript/vfs':
         specifier: ^1.6.0
-        version: 1.6.1(typescript@5.8.2)
+        version: 1.6.1(typescript@5.7.3)
       babel-loader:
         specifier: 8.3.0
         version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
@@ -4742,6 +4745,9 @@ packages:
 
   '@types/react-responsive@8.0.8':
     resolution: {integrity: sha512-HDUZtoeFRHrShCGaND23HmXAB9evOOTjkghd2wAasLkuorYYitm5A1XLeKkhXKZppcMBxqB/8V4Snl6hRUTA8g==}
+
+  '@types/react-scroll@1.8.10':
+    resolution: {integrity: sha512-RD4Z7grbdNGOKwKnUBKar6zNxqaW3n8m9QSrfvljW+gmkj1GArb8AFBomVr6xMOgHPD3v1uV3BrIf01py57daQ==}
 
   '@types/react-scrollable-anchor@0.6.4':
     resolution: {integrity: sha512-Yn81DRAXPdOkqvDC6JO9KsTQv2g3bu45WGDfuI5G08vMntT7EvbBGrOeCuPkMQ8Q2JeZoP3TbKEMzLhJ8yAlGA==}
@@ -9506,9 +9512,6 @@ packages:
     resolution: {integrity: sha512-ZZow9HBI5O6EPgSJLUb8n2NKgmVWTwCvHGwFuJlMjvLFqlGG6pjirPhtdsseaLZjSibD8eegzmYpUZwoIlj2cQ==}
     engines: {node: '>=4.0'}
 
-  jump.js@1.0.1:
-    resolution: {integrity: sha512-KXS4lfs3AcGdYl7cXk4X9mHb6PWIdrvBzGJs/QnG2g6niRoORkwisedbdjKu0VyUYmE2x7V+cV9ypSpaGRL0zg==}
-
   just-curry-it@3.2.1:
     resolution: {integrity: sha512-Q8206k8pTY7krW32cdmPsP+DqqLgWx/hYPSj9/+7SYqSqz7UuwPbfSe07lQtvuuaVyiSJveXk0E5RydOuWwsEg==}
 
@@ -11782,11 +11785,11 @@ packages:
     peerDependencies:
       react: '>=16.8'
 
-  react-scrollable-anchor@0.6.1:
-    resolution: {integrity: sha512-baaZKLXEmmaJzVXthx57K0jFgZjRiSEkhVTTssX03bzB097lIE1BYPVgtpgpAoETxTbiM+vDRJ2IPtClSQlj0A==}
+  react-scroll@1.8.7:
+    resolution: {integrity: sha512-fBOIwweAlhicx8RqP9tQXn/Uhd+DTtVRjw+0VBsIn1Z+MjRYLhTZ0tMoTAU1vOD3dce8mI6copexI4yWII+Luw==}
     peerDependencies:
-      react: ^15.3.0 || ^16.0.0
-      react-dom: ^15.3.0 || ^16.0.0
+      react: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^15.5.4 || ^16.0.0 || ^17.0.0 || ^18.0.0
 
   react-shallow-renderer@16.15.0:
     resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
@@ -12896,11 +12899,12 @@ packages:
   superagent@8.1.2:
     resolution: {integrity: sha512-6WTxW1EB6yCxV5VFOIPQruWGHqc3yI7hEmZK6h+pyk69Lk/Ut7rLUY6W/ONF2MjBuGjvmMiIpsrVJ2vjrHlslA==}
     engines: {node: '>=6.4.0 <13 || >=14'}
-    deprecated: Please upgrade to v9.0.0+ as we have fixed a public vulnerability with formidable dependency. Note that v9.0.0+ requires Node.js v14.18.0+. See https://github.com/ladjs/superagent/pull/1800 for insight. This project is supported and maintained by the team at Forward Email @ https://forwardemail.net
+    deprecated: Please upgrade to superagent v10.2.2+, see release notes at https://github.com/forwardemail/superagent/releases/tag/v10.2.2 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supertest@6.3.3:
     resolution: {integrity: sha512-EMCG6G8gDu5qEqRQ3JjjPs6+FYT1a7Hv5ApHvtSghmOFJYtsU5S+pSb6Y2EUeCEY3CmEL3mmQ8YWlPOzQomabA==}
     engines: {node: '>=6.4.0'}
+    deprecated: Please upgrade to supertest v7.1.3+, see release notes at https://github.com/forwardemail/supertest/releases/tag/v7.1.3 - maintenance is supported by Forward Email @ https://forwardemail.net
 
   supports-color@5.5.0:
     resolution: {integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==}
@@ -17293,7 +17297,7 @@ snapshots:
       prop-types: 15.8.1
       react: 17.0.2
 
-  '@freecodecamp/curriculum-helpers@6.0.1(debug@4.3.4)(typescript@5.8.2)':
+  '@freecodecamp/curriculum-helpers@6.0.1(debug@4.3.4)(typescript@5.7.3)':
     dependencies:
       '@sinonjs/fake-timers': 14.0.0
       '@types/jquery': 3.5.32
@@ -17306,10 +17310,10 @@ snapshots:
       http-server: 14.1.1(debug@4.3.4)
       jquery: 3.7.1
       process: 0.11.10
-      puppeteer: 24.10.0(typescript@5.8.2)
+      puppeteer: 24.10.0(typescript@5.7.3)
       pyodide: 0.23.3
       util: 0.12.5
-      vitest-environment-puppeteer: 11.0.3(debug@4.3.4)(typescript@5.8.2)
+      vitest-environment-puppeteer: 11.0.3(debug@4.3.4)(typescript@5.7.3)
     transitivePeerDependencies:
       - bare-buffer
       - bufferutil
@@ -19488,6 +19492,10 @@ snapshots:
     dependencies:
       '@types/react': 17.0.83
 
+  '@types/react-scroll@1.8.10':
+    dependencies:
+      '@types/react': 17.0.83
+
   '@types/react-scrollable-anchor@0.6.4':
     dependencies:
       '@types/react': 17.0.83
@@ -19985,10 +19993,10 @@ snapshots:
       '@typescript-eslint/types': 8.44.0
       eslint-visitor-keys: 4.2.1
 
-  '@typescript/vfs@1.6.1(typescript@5.8.2)':
+  '@typescript/vfs@1.6.1(typescript@5.7.3)':
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
-      typescript: 5.8.2
+      typescript: 5.7.3
     transitivePeerDependencies:
       - supports-color
 
@@ -20142,7 +20150,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.14
       tinyrainbow: 2.0.0
-      vitest: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.8.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
+      vitest: 3.2.4(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -25878,8 +25886,6 @@ snapshots:
       object.assign: 4.1.5
       object.values: 1.1.7
 
-  jump.js@1.0.1: {}
-
   just-curry-it@3.2.1: {}
 
   jwa@1.4.1:
@@ -28341,11 +28347,11 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  puppeteer@24.10.0(typescript@5.8.2):
+  puppeteer@24.10.0(typescript@5.7.3):
     dependencies:
       '@puppeteer/browsers': 2.10.5
       chromium-bidi: 5.1.0(devtools-protocol@0.0.1452169)
-      cosmiconfig: 9.0.0(typescript@5.8.2)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       devtools-protocol: 0.0.1452169
       puppeteer-core: 24.10.0
       typed-query-selector: 2.12.0
@@ -28653,9 +28659,9 @@ snapshots:
       '@remix-run/router': 1.11.0
       react: 17.0.2
 
-  react-scrollable-anchor@0.6.1(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
+  react-scroll@1.8.7(react-dom@17.0.2(react@17.0.2))(react@17.0.2):
     dependencies:
-      jump.js: 1.0.1
+      lodash.throttle: 4.1.1
       prop-types: 15.8.1
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
@@ -31112,10 +31118,10 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  vitest-environment-puppeteer@11.0.3(debug@4.3.4)(typescript@5.8.2):
+  vitest-environment-puppeteer@11.0.3(debug@4.3.4)(typescript@5.7.3):
     dependencies:
       chalk: 4.1.2
-      cosmiconfig: 9.0.0(typescript@5.8.2)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       deepmerge: 4.3.1
       vitest-dev-server: 11.0.3(debug@4.3.4)
     transitivePeerDependencies:

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
 import { Panel, Button } from '@freecodecamp/ui';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 
 import { FullWidthRow } from '../helpers';
 import SectionHeader from './section-header';
@@ -21,7 +21,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
     : t('buttons.agree-honesty');
 
   return (
-    <ScrollableAnchor id='settings-honesty'>
+    <Element name='settings-honesty'>
       <section id='honesty-policy'>
         <SectionHeader>{t('settings.headings.honesty')}</SectionHeader>
         <FullWidthRow>
@@ -48,7 +48,7 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
           </Button>
         </FullWidthRow>
       </section>
-    </ScrollableAnchor>
+    </Element>
   );
 };
 

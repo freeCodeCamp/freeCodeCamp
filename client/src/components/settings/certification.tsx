@@ -2,7 +2,7 @@ import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
@@ -38,8 +38,6 @@ import SectionHeader from './section-header';
 import './certification.css';
 
 const { showUpcomingChanges } = env;
-
-configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const mapDispatchToProps = {
   openModal
@@ -293,7 +291,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     t: TFunction;
   }) => {
     return (
-      <ScrollableAnchor id={`cert-${certSlug}`}>
+      <Element name={`cert-${certSlug}`}>
         <section>
           <FullWidthRow>
             <Spacer size='m' />
@@ -316,7 +314,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </Table>
           </FullWidthRow>
         </section>
-      </ScrollableAnchor>
+      </Element>
     );
   };
 
@@ -379,14 +377,18 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
   return (
     <section className='certification-settings'>
-      <SectionHeader dataPlaywrightTestLabel='certifications-header'>
-        {t('settings.headings.certs')}
-      </SectionHeader>
+      <Element name='settings-certifications'>
+        <SectionHeader dataPlaywrightTestLabel='certifications-header'>
+          {t('settings.headings.certs')}
+        </SectionHeader>
+      </Element>
       {currentCertifications.map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
-      <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      <Element name='settings-legacy-certs'>
+        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      </Element>
       <LegacyFullStack {...props} />
       {legacyCertifications.map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />

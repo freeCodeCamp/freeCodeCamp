@@ -6,8 +6,8 @@ import { createSelector } from 'reselect';
 
 import { Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-import { configureAnchors } from 'react-scrollable-anchor';
 import store from 'store';
+import { Link as ScrollLink } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
@@ -109,7 +109,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
-  configureAnchors({ offset: -50, scrollDuration: 200 });
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
   if (showLoading || !user) {
@@ -162,35 +161,71 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           </h2>
           <ul>
             <li>
-              <a href='#settings-account' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-account'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.headings.account')}
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a href='#settings-privacy' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-privacy'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.headings.privacy')}
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a href='#settings-email' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-email'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.email.heading')}
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a href='#settings-honesty' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-honesty'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.headings.honesty')}
-              </a>
+              </ScrollLink>
             </li>
 
             <li>
-              <a href='#settings-certifications' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-certifications'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.headings.certs')}
-              </a>
+              </ScrollLink>
             </li>
             <li>
-              <a href='#settings-legacy-certs' className='ledger-anchor-btn'>
+              <ScrollLink
+                to='settings-legacy-certs'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
                 {t('settings.headings.legacy-certs')}
-              </a>
+              </ScrollLink>
             </li>
             <li>
               <hr />
@@ -200,9 +235,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <ul>
             {currentCertifications.map(slug => (
               <li key={slug}>
-                <a href={`#cert-${slug}`} className={'ledger-anchor-btn'}>
+                <ScrollLink
+                  to={`cert-${slug}`}
+                  className={'ledger-anchor-btn'}
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                >
                   {t(`certification.title.${slug}`, slug)}
-                </a>
+                </ScrollLink>
                 <br />
               </li>
             ))}

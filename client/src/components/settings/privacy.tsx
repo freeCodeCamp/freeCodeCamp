@@ -5,7 +5,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Button, Spacer } from '@freecodecamp/ui';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 
 import { userSelector } from '../../redux/selectors';
 import type { ProfileUI } from '../../redux/prop-types';
@@ -53,7 +53,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
   }
 
   return (
-    <ScrollableAnchor id='settings-privacy'>
+    <Element name='settings-privacy'>
       <div className='privacy-settings' id='privacy-settings'>
         <SectionHeader>{t('settings.headings.privacy')}</SectionHeader>
         <FullWidthRow>
@@ -174,7 +174,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
           </Button>
         </FullWidthRow>
       </div>
-    </ScrollableAnchor>
+    </Element>
   );
 }
 

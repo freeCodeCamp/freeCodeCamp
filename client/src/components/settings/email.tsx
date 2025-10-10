@@ -9,7 +9,7 @@ import {
   Spacer
 } from '@freecodecamp/ui';
 import React, { useState } from 'react';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import type { TFunction } from 'i18next';
 import { Trans, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -164,7 +164,7 @@ function EmailSettings({
     );
   }
   return (
-    <ScrollableAnchor id='settings-email'>
+    <Element name='settings-email'>
       <div className='email-settings'>
         <SectionHeader>{t('settings.email.heading')}</SectionHeader>
         {isEmailVerified ? null : (
@@ -260,7 +260,7 @@ function EmailSettings({
           />
         </FullWidthRow>
       </div>
-    </ScrollableAnchor>
+    </Element>
   );
 }
 
