@@ -230,40 +230,43 @@ export async function buildJSChallenge(
     challengeType
   }: { challengeFiles?: ChallengeFile[]; challengeType: number },
   options: BuildOptions
-): Promise<BuildResult> {
-  if (!challengeFiles) throw Error('No challenge files provided');
+): Promise<{
+  challengeType: number;
+  build: string;
+  sources: unknown;
+  error?: Error;
+}> {
+  if (!challengeFiles) throw new Error('No challenge files provided');
 
   const pipeLine = composeFunctions(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
   const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
-  const error = finalFiles.find(({ error }) => error)?.error;
 
-  if (error) {
+  const foundError = finalFiles.find(
+    file => file.error instanceof Error
+  )?.error;
+
+  if (foundError) {
     return {
       challengeType,
       build: '',
-      sources: buildSourceMap(finalFiles),
-      error
+      sources: buildSourceMap(finalFiles) as unknown,
+      error: foundError
     };
   }
 
-  // 🔹 Step 1: Concatenate all code sections together (head + contents + tail)
   const unifiedCode = finalFiles
-    .map(file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`)
+    .map(
+      file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`
+    )
     .join('\n');
 
-  // 🔹 Step 2: Transpile everything together using Babel
-  const transpiled = Babel.transform(unifiedCode, {
-    presets: ['env']
-  }).code;
-
-  // 🔹 Step 3: Return the transpiled code for execution
   return {
     challengeType,
-    build: transpiled,
-    sources: buildSourceMap(finalFiles),
+    build: unifiedCode,
+    sources: buildSourceMap(finalFiles) as unknown,
     error: undefined
   };
 }
