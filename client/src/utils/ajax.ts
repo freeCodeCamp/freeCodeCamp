@@ -467,6 +467,16 @@ export const examEnvironmentAuthorizationTokenApi = createApi({
         url: `/user/exam-environment/token`,
         method: 'POST'
       })
+    }),
+    getExamEnvironmentAuthorizationToken: build.query<ExamTokenResponse, void>({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'GET'
+      }),
+      transformResponse: async (response: ExamTokenResponse) => {
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        return response;
+      }
     })
   })
 });

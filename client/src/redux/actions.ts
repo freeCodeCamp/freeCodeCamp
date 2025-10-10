@@ -90,9 +90,6 @@ export const showCertComplete = createAction(actionTypes.showCertComplete);
 export const showCertError = createAction(actionTypes.showCertError);
 
 export const updateUserToken = createAction(actionTypes.updateUserToken);
-export const updateExamEnvironmentAuthorizationToken = createAction(
-  actionTypes.updateExamEnvironmentAuthorizationToken
-);
 export const deleteUserToken = createAction(actionTypes.deleteUserToken);
 export const deleteUserTokenComplete = createAction(
   actionTypes.deleteUserTokenComplete

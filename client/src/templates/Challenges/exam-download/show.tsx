@@ -193,6 +193,7 @@ function ShowExamDownload({
             {downloadLinks
               .filter(link => !link.match(/\.sig|\.json/))
               .map((link, index) => {
+                const urlEnd = link.split('/').pop() ?? '';
                 return (
                   <MenuItem
                     href={link}
@@ -200,7 +201,7 @@ function ShowExamDownload({
                     key={index}
                     variant='primary'
                   >
-                    {link}
+                    {urlEnd}
                   </MenuItem>
                 );
               })}
@@ -209,6 +210,7 @@ function ShowExamDownload({
         <Spacer size='l' />
         <strong>{t('exam.download-trouble')}</strong>{' '}
         <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
+        <Spacer size='l' />
       </Container>
     </LearnLayout>
   );

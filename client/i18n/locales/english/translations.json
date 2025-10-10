@@ -1283,10 +1283,11 @@
     "invalidation": "If you generate a new token, your old token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
     "error": "There was an error generating your token, please try again in a moment.",
-    "your-exam-token": "Your Exam Token is: {{token}}",
+    "fetch-error": "There was an error fetching your token, please refresh the page.",
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
-    "token-usage": "The Exam Environment authorization token is used to log into the desktop application."
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "Your Exam Environment authorization token has been generated."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

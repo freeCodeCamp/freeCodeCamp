@@ -1,44 +1,41 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 
 import { examEnvironmentAuthorizationTokenApi } from '../../../utils/ajax';
-import { updateExamEnvironmentAuthorizationToken } from '../../../redux/actions';
-import { examEnvironmentAuthorizationTokenSelector } from '../../../redux/selectors';
+import { Loader } from '../../../components/helpers';
 
 export function ExamTokenControls(): JSX.Element {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
-
-  const selectExamToken = (state: unknown): string | null => {
-    const selector = examEnvironmentAuthorizationTokenSelector as unknown as (
-      s: unknown
-    ) => string | null;
-    return selector(state);
-  };
-
-  const examEnvironmentAuthorizationToken = useSelector(selectExamToken);
 
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
   const [copyError, setCopyError] = useState<string | null>(null);
 
-  const [postGenerateExamEnvironmentAuthorizationToken, generateMutation] =
+  const [generateToken, generateMutation] =
     examEnvironmentAuthorizationTokenApi.usePostGenerateExamEnvironmentAuthorizationTokenMutation();
+
+  const getTokenQuery =
+    examEnvironmentAuthorizationTokenApi.useGetExamEnvironmentAuthorizationTokenQuery();
+  const [token, setToken] = useState<string | null>(
+    getTokenQuery.data?.examEnvironmentAuthorizationToken ?? null
+  );
 
   useEffect(() => {
     const data = generateMutation.data;
     if (!data) return;
 
-    dispatch(
-      updateExamEnvironmentAuthorizationToken(
-        data.examEnvironmentAuthorizationToken
-      )
-    );
-  }, [generateMutation.data, dispatch]);
+    setToken(data.examEnvironmentAuthorizationToken);
+  }, [generateMutation.data]);
+
+  useEffect(() => {
+    const data = getTokenQuery.data;
+    if (!data) return;
+
+    setToken(data.examEnvironmentAuthorizationToken);
+  }, [getTokenQuery.data]);
 
   function handleCopyExamToken() {
-    navigator.clipboard.writeText(examEnvironmentAuthorizationToken ?? '').then(
+    navigator.clipboard.writeText(token ?? '').then(
       () => {
         setCopySuccess(t('exam-token.copied'));
         setCopyError(null);
@@ -58,25 +55,43 @@ export function ExamTokenControls(): JSX.Element {
         <p style={{ color: 'red' }}>{t('exam-token.error')}</p>
       )}
       {generateMutation.isSuccess && (
-        <p style={{ color: 'green' }}>{t('exam-token.exam-token-generated')}</p>
+        <p style={{ color: 'green' }}>{t('exam-token.generated')}</p>
       )}
-      <Button
-        block={true}
-        disabled={generateMutation.isLoading}
-        onClick={() => void postGenerateExamEnvironmentAuthorizationToken()}
-      >
-        {t('exam-token.generate-exam-token')}
-      </Button>
+      {!!token && (
+        <p style={{ color: 'orange' }}>{t('exam-token.invalidation')}</p>
+      )}
+      {getTokenQuery.isError && (
+        <p style={{ color: 'red' }}>{t('exam-token.fetch-error')}</p>
+      )}
+      {generateMutation.isLoading || getTokenQuery.isLoading ? (
+        <Button block={true}>
+          <Loader />
+        </Button>
+      ) : (
+        <Button
+          block={true}
+          disabled={
+            generateMutation.isLoading ||
+            getTokenQuery.isLoading ||
+            getTokenQuery.isError
+          }
+          onClick={() => void generateToken()}
+        >
+          {t('exam-token.generate-exam-token')}
+        </Button>
+      )}
       <Spacer size='s' />
       {copySuccess && <p style={{ color: 'green' }}>{copySuccess}</p>}
       {copyError && <p style={{ color: 'red' }}>{copyError}</p>}
-      <Button
-        block={true}
-        disabled={!examEnvironmentAuthorizationToken}
-        onClick={handleCopyExamToken}
-      >
-        {t('buttons.copy')}
-      </Button>
+      {generateMutation.isLoading || getTokenQuery.isLoading ? (
+        <Button block={true}>
+          <Loader />
+        </Button>
+      ) : (
+        <Button block={true} disabled={!token} onClick={handleCopyExamToken}>
+          {t('buttons.copy')}
+        </Button>
+      )}
       <Spacer size='m' />
     </>
   );
