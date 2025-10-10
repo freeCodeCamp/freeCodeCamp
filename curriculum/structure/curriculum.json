@@ -32,7 +32,11 @@
     "dev-playground",
     "full-stack-open",
     "responsive-web-design-v9",
-    "javascript-v9"
+    "javascript-v9",
+    "front-end-development-libraries-v9",
+    "python-v9",
+    "relational-databases-v9",
+    "back-end-development-and-apis-v9"
   ],
   "certifications": [
     "a2-english-for-developers",
@@ -61,6 +65,10 @@
     "scientific-computing-with-python",
     "a1-professional-chinese",
     "responsive-web-design-v9",
-    "javascript-v9"
+    "javascript-v9",
+    "front-end-development-libraries-v9",
+    "python-v9",
+    "relational-databases-v9",
+    "back-end-development-and-apis-v9"
   ]
 }

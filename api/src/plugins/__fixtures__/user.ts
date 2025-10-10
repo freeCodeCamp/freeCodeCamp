@@ -84,6 +84,7 @@ export const newUser = (email: string) => ({
   theme: 'default',
   timezone: null,
   twitter: null,
+  bluesky: null,
   updateCount: 0, // see extendClient in prisma.ts
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   username: expect.stringMatching(fccUuidRe),

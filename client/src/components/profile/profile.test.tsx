@@ -48,6 +48,7 @@ const userProps = {
     keyboardShortcuts: false,
     theme: UserThemes.Default,
     twitter: 'string',
+    bluesky: 'string',
     username: 'string',
     website: 'string',
     yearsTopContributor: [],

@@ -154,6 +154,7 @@ model user {
   theme                          String? // Undefined
   timezone                       String? // Undefined
   twitter                        String? // Null | Undefined
+  bluesky                        String? // Null | Undefined
   unsubscribeId                  String
   /// Used to track the number of times the user's record was written to.
   ///

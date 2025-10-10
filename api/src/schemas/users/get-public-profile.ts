@@ -93,6 +93,7 @@ export const getPublicProfile = {
               ),
               profileUI,
               twitter: Type.Optional(Type.String()),
+              bluesky: Type.Optional(Type.String()),
               website: Type.Optional(Type.String()),
               yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
               joinDate: Type.String(),

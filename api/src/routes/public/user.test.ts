@@ -105,6 +105,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar'
 };
 
@@ -217,6 +218,7 @@ const publicUserData = {
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   twitter: 'https://twitter.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,

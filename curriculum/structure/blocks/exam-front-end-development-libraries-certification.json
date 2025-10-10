@@ -1,0 +1,14 @@
+{
+  "name": "Front End Development Libraries Certification Exam",
+  "blockType": "exam",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "exam-front-end-development-libraries-certification",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "68e00b355f80c6099d47b3a3",
+      "title": "Front End Development Libraries Certification Exam"
+    }
+  ]
+}

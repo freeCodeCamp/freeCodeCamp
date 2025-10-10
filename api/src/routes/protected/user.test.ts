@@ -153,6 +153,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar',
   sendQuincyEmail: false
 };
@@ -306,6 +307,7 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
