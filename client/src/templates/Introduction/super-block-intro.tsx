@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { scroller } from 'react-scroll';
 
 import {
   chapterBasedSuperBlocks,
@@ -127,6 +128,22 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
+
+    const handleHashChange = () => {
+      const id = window.location.hash.replace('#', '');
+      if (id) {
+        scroller.scrollTo(id, {
+          smooth: true,
+          duration: 500,
+          offset: -50
+        });
+      }
+    };
+
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
