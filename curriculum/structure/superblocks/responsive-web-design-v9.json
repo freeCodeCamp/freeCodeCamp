@@ -44,7 +44,6 @@
           "blocks": [
             "lecture-working-with-forms",
             "workshop-hotel-feedback-form",
-            "lab-survey-form",
             "lecture-working-with-tables",
             "workshop-final-exams-table",
             "lab-book-catalog-table",
@@ -52,6 +51,10 @@
             "review-html-tables-and-forms",
             "quiz-html-tables-and-forms"
           ]
+        },
+        {
+          "dashedName": "lab-survey-form",
+          "blocks": ["lab-survey-form"]
         },
         {
           "dashedName": "html-and-accessibility",
@@ -168,10 +171,13 @@
           "blocks": [
             "lecture-working-with-css-flexbox",
             "workshop-flexbox-photo-gallery",
-            "lab-page-of-playing-cards",
             "review-css-flexbox",
             "quiz-css-flexbox"
           ]
+        },
+        {
+          "dashedName": "lab-page-of-playing-cards",
+          "blocks": ["lab-page-of-playing-cards"]
         },
         {
           "dashedName": "css-typography",
@@ -208,20 +214,26 @@
           "blocks": [
             "lecture-working-with-attribute-selectors",
             "workshop-balance-sheet",
-            "lab-book-inventory-app",
             "review-css-attribute-selectors",
             "quiz-css-attribute-selectors"
           ]
+        },
+        {
+          "dashedName": "lab-book-inventory-app",
+          "blocks": ["lab-book-inventory-app"]
         },
         {
           "dashedName": "responsive-design",
           "blocks": [
             "lecture-best-practices-for-responsive-web-design",
             "workshop-piano",
-            "lab-technical-documentation-page",
             "review-responsive-web-design",
             "quiz-responsive-web-design"
           ]
+        },
+        {
+          "dashedName": "lab-technical-documentation-page",
+          "blocks": ["lab-technical-documentation-page"]
         },
         {
           "dashedName": "css-variables",
@@ -240,10 +252,13 @@
             "workshop-magazine",
             "lab-newspaper-layout",
             "lecture-debugging-css",
-            "lab-product-landing-page",
             "review-css-grid",
             "quiz-css-grid"
           ]
+        },
+        {
+          "dashedName": "lab-product-landing-page",
+          "blocks": ["lab-product-landing-page"]
         },
         {
           "dashedName": "css-animations",
