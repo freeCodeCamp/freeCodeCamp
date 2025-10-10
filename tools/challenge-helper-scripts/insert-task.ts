@@ -1,5 +1,5 @@
 import ObjectID from 'bson-objectid';
-import { prompt } from 'inquirer';
+import { select } from '@inquirer/prompts';
 import { getTemplate } from './helpers/get-challenge-template';
 import { newTaskPrompts } from './helpers/new-task-prompts';
 import { getProjectPath } from './helpers/get-project-info';
@@ -13,19 +13,15 @@ import { getMetaData } from './helpers/project-metadata';
 
 const insertChallenge = async () => {
   const challenges = getMetaData().challengeOrder;
-  const challengeAfter = await prompt<{ id: string }>({
-    name: 'id',
+  const challengeAfter = await select({
     message: 'Which challenge should come AFTER this new one?',
-    type: 'list',
     choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
   });
 
-  const indexToInsert = challenges.findIndex(
-    ({ id }) => id === challengeAfter.id
-  );
+  const indexToInsert = challenges.findIndex(({ id }) => id === challengeAfter);
 
   const newTaskTitle = 'Task 0';
 

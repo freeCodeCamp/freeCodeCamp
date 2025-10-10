@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { input, select } from '@inquirer/prompts';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
@@ -222,65 +222,68 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.A2English,
-    type: 'list',
-    choices: Object.values(languageSuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this block?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'English',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'blockType',
-    message: 'Choose a block type',
-    default: BlockTypes.learn,
-    type: 'list',
-    choices: Object.values(BlockTypes),
-    when: (answers: CreateBlockArgs) =>
-      chapterBasedSuperBlocks.includes(answers.superBlock)
-  },
-  {
-    name: 'blockLayout',
-    message: 'Choose a block layout',
-    default: BlockLayouts.DialogueGrid,
-    type: 'list',
-    choices: Object.values(BlockLayouts),
-    when: (answers: CreateBlockArgs) =>
-      chapterBasedSuperBlocks.includes(answers.superBlock) &&
-      answers.blockType !== BlockTypes.quiz
-  },
-  {
-    name: 'questionCount',
-    message: 'Choose a question count',
-    default: 20,
-    type: 'list',
-    choices: [10, 20],
-    when: (answers: CreateBlockArgs) => answers.blockType === BlockTypes.quiz
-  },
-  {
-    name: 'chapter',
-    message: 'What chapter should this language block go in?',
-    type: 'list',
-    choices: (answers: CreateBlockArgs) => {
+void (async () => {
+  try {
+    const answers: CreateBlockArgs = {
+      superBlock: await select({
+        message: 'Which certification does this belong to?',
+        choices: Object.values(languageSuperBlocks),
+        default: SuperBlocks.A2English
+      }),
+
+      block: await input({
+        message: 'What is the dashed name (in kebab-case) for this block?',
+        validate: validateBlockName,
+        transformer: (b: string) => b.toLowerCase().trim()
+      }),
+
+      title: undefined, // will set below
+      helpCategory: await select({
+        message: 'Choose a help category',
+        choices: helpCategories,
+        default: 'English'
+      })
+    };
+
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the block?',
+      default: answers.block
+    });
+
+    // Set title after block is known
+    answers.title = await input({
+      message: 'What is the title of the block?',
+      default: answers.block
+    });
+
+    // Set new fields conditionally
+    if (chapterBasedSuperBlocks.includes(answers.superBlock)) {
+      answers.blockType = await select({
+        message: 'Choose a block type',
+        choices: Object.values(BlockTypes),
+        default: BlockTypes.learn
+      });
+
+      if (answers.blockType !== BlockTypes.quiz) {
+        answers.blockLayout = await select({
+          message: 'Choose a block layout',
+          choices: Object.values(BlockLayouts),
+          default: BlockLayouts.DialogueGrid
+        });
+      }
+
+      if (answers.blockType === BlockTypes.quiz) {
+        answers.questionCount = await select({
+          message: 'Choose a question count',
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ],
+          default: 20
+        });
+      }
+
       const superblockFilename = (
         superBlockToFilename as Record<SuperBlocks, string>
       )[answers.superBlock];
@@ -290,78 +293,49 @@ void prompt([
           modules: { dashedName: string; blocks: string[] }[];
         }[];
       };
-      return structure.chapters.map(chapter => chapter.dashedName);
-    },
-    when: (answers: CreateBlockArgs) =>
-      chapterBasedSuperBlocks.includes(answers.superBlock)
-  },
-  {
-    name: 'module',
-    message: 'What module should this language block go in?',
-    type: 'list',
-    choices: (answers: CreateBlockArgs) => {
-      const superblockFilename = (
-        superBlockToFilename as Record<SuperBlocks, string>
-      )[answers.superBlock];
-      const structure = getSuperblockStructure(superblockFilename) as {
-        chapters: {
-          dashedName: string;
-          modules: { dashedName: string; blocks: string[] }[];
-        }[];
-      };
-      return (
-        structure.chapters
-          .find(chapter => chapter.dashedName === answers.chapter)
-          ?.modules.map(module => module.dashedName) ?? []
+
+      answers.chapter = await select({
+        message: 'What chapter should this language block go in?',
+        choices: structure.chapters.map(ch => ch.dashedName)
+      });
+
+      const chapterData = structure.chapters.find(
+        ch => ch.dashedName === answers.chapter
       );
-    },
-    when: (answers: CreateBlockArgs) =>
-      chapterBasedSuperBlocks.includes(answers.superBlock)
-  },
-  {
-    name: 'position',
-    message: 'At which position does this appear in the module?',
-    default: 1,
-    validate: (position: string) => {
-      return parseInt(position, 10) > 0
-        ? true
-        : 'Position must be an number greater than zero.';
-    },
-    when: (answers: CreateBlockArgs) =>
-      chapterBasedSuperBlocks.includes(answers.superBlock),
-    filter: (position: string) => {
-      return parseInt(position, 10);
+      answers.module = await select({
+        message: 'What module should this language block go in?',
+        choices: chapterData?.modules.map(m => m.dashedName) ?? []
+      });
+
+      answers.position = parseInt(
+        await input({
+          message: 'At which position does this appear in the module?',
+          default: '1',
+          validate: (pos: string) =>
+            parseInt(pos, 10) > 0
+              ? true
+              : 'Position must be a number greater than zero.'
+        })
+      );
     }
-  }
-])
-  .then(
-    async ({
-      superBlock,
-      block,
-      helpCategory,
-      title,
-      chapter,
-      module,
-      position,
-      blockType,
-      blockLayout,
-      questionCount
-    }: CreateBlockArgs) =>
-      await createLanguageBlock(
-        superBlock,
-        block,
-        helpCategory,
-        title,
-        chapter,
-        module,
-        position,
-        blockType,
-        blockLayout,
-        questionCount
-      )
-  )
-  .then(() =>
+
+    await createLanguageBlock(
+      answers.superBlock,
+      answers.block,
+      answers.helpCategory,
+      answers.title,
+      answers.chapter,
+      answers.module,
+      answers.position,
+      answers.blockType,
+      answers.blockLayout,
+      answers.questionCount
+    );
+
     console.log(
-      'All set.  Now use pnpm run clean:client in the root and it should be good to go.'
-    )
-  );
+      'All set. Now use pnpm run clean:client in the root and it should be good to go.'
+    );
+  } catch (err) {
+    console.error('Error creating language block:', err);
+  }
+})();
