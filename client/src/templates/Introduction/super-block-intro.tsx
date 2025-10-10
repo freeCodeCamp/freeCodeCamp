@@ -27,7 +27,11 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { User } from '../../redux/prop-types';
+import type {
+  SuperBlockStructure,
+  User,
+  ChapterBasedSuperBlockStructure
+} from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
 import {
@@ -71,6 +75,7 @@ type SuperBlockProps = {
   currentChallengeId: string;
   data: {
     allChallengeNode: { nodes: ChallengeNode[] };
+    allSuperBlockStructure: { nodes: SuperBlockStructure[] };
   };
   expandedState: {
     [key: string]: boolean;
@@ -143,7 +148,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   const {
     data: {
-      allChallengeNode: { nodes }
+      allChallengeNode: { nodes },
+      allSuperBlockStructure
     },
     isSignedIn,
     currentChallengeId,
@@ -172,6 +178,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   );
 
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+
+  const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
+    node => node.superBlock === superBlock
+  );
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -265,6 +275,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 <SuperBlockAccordion
                   challenges={superBlockChallenges}
                   superBlock={superBlock}
+                  structure={
+                    currentSuperBlockStructure as ChapterBasedSuperBlockStructure
+                  }
                   chosenBlock={initialExpandedBlock}
                   completedChallengeIds={completedChallenges.map(c => c.id)}
                 />
@@ -356,6 +369,21 @@ export const query = graphql`
           blockLayout
           chapter
           module
+        }
+      }
+    }
+    allSuperBlockStructure {
+      nodes {
+        superBlock
+        chapters {
+          dashedName
+          comingSoon
+          modules {
+            dashedName
+            comingSoon
+            moduleType
+            blocks
+          }
         }
       }
     }

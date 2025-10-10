@@ -5,18 +5,7 @@ import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-// TODO: source the superblock structure via a GQL query, rather than directly
-// from the curriculum
-import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
-import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
-import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
-import respWebDesignV9 from '../../../../../curriculum/structure/superblocks/responsive-web-design-v9.json';
-import javascriptV9 from '../../../../../curriculum/structure/superblocks/javascript-v9.json';
-import frontEndDevLibsV9 from '../../../../../curriculum/structure/superblocks/front-end-development-libraries-v9.json';
-import pythonV9 from '../../../../../curriculum/structure/superblocks/python-v9.json';
-import relationalDbV9 from '../../../../../curriculum/structure/superblocks/relational-databases-v9.json';
-import backEndDevApisV9 from '../../../../../curriculum/structure/superblocks/back-end-development-and-apis-v9.json';
-
+import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
 import {
@@ -67,6 +56,7 @@ interface Challenge {
 interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
+  structure: ChapterBasedSuperBlockStructure;
   chosenBlock: string;
   completedChallengeIds: string[];
 }
@@ -182,37 +172,11 @@ const LinkBlock = ({
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
+  structure,
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks): {
-    chapters: Chapter[];
-  } {
-    switch (superBlock) {
-      case SuperBlocks.FullStackOpen:
-        return fullStackOpen;
-      case SuperBlocks.FullStackDeveloper:
-        return fullStackCert;
-      case SuperBlocks.A1Spanish:
-        return a1Spanish;
-      case SuperBlocks.RespWebDesignV9:
-        return respWebDesignV9;
-      case SuperBlocks.JsV9:
-        return javascriptV9;
-      case SuperBlocks.FrontEndDevLibsV9:
-        return frontEndDevLibsV9;
-      case SuperBlocks.PythonV9:
-        return pythonV9;
-      case SuperBlocks.RelationalDbV9:
-        return relationalDbV9;
-      case SuperBlocks.BackEndDevApisV9:
-        return backEndDevApisV9;
-      default:
-        throw new Error("The SuperBlock structure hasn't been imported.");
-    }
-  }
-
-  const superBlockStructure = getSuperblockStructure(superBlock);
+  const superBlockStructure = structure;
 
   const modules = superBlockStructure.chapters.flatMap<Module>(
     ({ modules }) => modules
