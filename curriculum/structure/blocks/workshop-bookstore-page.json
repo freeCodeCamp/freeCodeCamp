@@ -1,0 +1,11 @@
+{
+  "name": "Build a Bookstore Page",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-bookstore-page",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e97fe79367ad7b5dd6c9cd", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
