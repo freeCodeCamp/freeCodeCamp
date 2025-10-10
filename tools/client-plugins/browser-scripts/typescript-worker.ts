@@ -1,4 +1,4 @@
-import { setupTypeScript } from './setup-typescript';
+import { Compiler } from './setup-typescript';
 
 // Most of the ts types are only a guideline. This is because we're not bundling
 // TS in this worker. The specific TS version is going to be determined by the
@@ -67,12 +67,10 @@ ctx.onmessage = (
   }
 };
 
-let tsEnv: import('@typescript/vfs').VirtualTypeScriptEnvironment | null = null;
-let compilerHost: import('typescript').CompilerHost | null = null;
-
 importTS(TS_VERSION);
 
-const setupPromise = setupTypeScript(ts, tsvfs);
+const compiler = new Compiler(ts, tsvfs);
+const isSetup = compiler.setup();
 
 // This lets the client know that there is nothing to cancel.
 function handleCancelRequest({ value }: { value: number }) {
@@ -80,10 +78,7 @@ function handleCancelRequest({ value }: { value: number }) {
 }
 
 async function handleCheckIsReadyRequest(port: MessagePort) {
-  const setup = await setupPromise;
-  tsEnv = setup.tsEnv;
-  compilerHost = setup.compilerHost;
-
+  await isSetup;
   // We freeze this to prevent learners from getting the worker into a weird
   // state.
   Object.freeze(self);
@@ -96,24 +91,11 @@ function handleCompileRequest(data: TSCompileEvent['data'], port: MessagePort) {
   // permanently unable to interact with that file. The workaround is to create
   // a file with a single newline character.
   const code = (data.code || '').slice() || '\n';
-
-  // TODO: If creating the file fresh each time is too slow, we can try checking
-  // if the file exists and updating it if it does.
-  tsEnv?.createFile('index.ts', code);
-
-  const program = tsEnv!.languageService.getProgram()!;
-
-  const emitOutput = tsEnv!.languageService.getEmitOutput('index.ts');
-  const compiled = emitOutput.outputFiles[0].text;
-
+  const { result, error } = compiler.compile(code, 'file.ts');
   const message: TSCompiledMessage = {
     type: 'compiled',
-    value: compiled,
-    // TODO: stop forcing the non-null assertions here.
-    error: ts.formatDiagnostics(
-      ts.getPreEmitDiagnostics(program),
-      compilerHost!
-    )
+    value: result,
+    error: error
   };
 
   port.postMessage(message);
