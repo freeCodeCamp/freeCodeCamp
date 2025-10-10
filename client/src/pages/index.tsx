@@ -9,6 +9,8 @@ import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
 import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
+import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
+
 import '../components/landing/landing.css';
 
 type LandingProps = {
@@ -32,6 +34,8 @@ const Landing = ({ showLandingPageRedesign }: LandingProps) => (
 function IndexPage(): JSX.Element {
   const { t } = useTranslation();
   const growthbook = useGrowthBook();
+  useClaimableCertsNotification();
+
   if (growthbook && growthbook.ready) {
     console.error('GrowthBook Ready', growthbook);
     const showLandingPageRedesign = growthbook.getFeatureValue(
