@@ -1,4 +1,5 @@
-import { describe, it, beforeAll, expect } from 'vitest';
+import { describe, it, beforeAll, expect, vi } from 'vitest';
+
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 
@@ -27,6 +28,18 @@ import createPseudoWorker from './utils/pseudo-worker.js';
 import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+vi.mock(
+  '../../client/src/templates/Challenges/utils/typescript-worker-handler',
+  async importOriginal => {
+    const actual = await importOriginal();
+    return {
+      ...actual,
+      checkTSServiceIsReady: () => Promise.resolve(true),
+      compileTypeScriptCode: code => code
+    };
+  }
+);
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
