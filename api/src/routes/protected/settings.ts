@@ -53,6 +53,45 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   }
 };
 
+const commonImageExtensions = [
+  'apng',
+  'avif',
+  'gif',
+  'jpg',
+  'jpeg',
+  'jfif',
+  'pjpeg',
+  'pjp',
+  'png',
+  'svg',
+  'webp'
+];
+
+/**
+ * Validate that a picture URL has a common image extension.
+ *
+ * @param picture The URL to check.
+ * @returns Whether the URL has a common image extension.
+ */
+
+const validateImageExtension = (picture?: string): boolean => {
+  if (!picture) return true;
+  return commonImageExtensions.some(ext => picture.includes(`.${ext}`));
+};
+
+/**
+ * Validate that a picture URL is valid. A valid picture URL either:
+ *  - is empty/undefined (no update), or
+ *  - has a valid http/https protocol AND has a common image extension.
+ *
+ * @param picture The URL to validate.
+ * @returns Whether the picture URL is considered valid.
+ */
+const isValidPictureUrl = (picture?: string): boolean => {
+  if (!picture) return true;
+  return isPictureWithProtocol(picture) && validateImageExtension(picture);
+};
+
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
@@ -484,7 +523,12 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const hasProtocol = isPictureWithProtocol(req.body.picture);
+      const pictureIsValid = isValidPictureUrl(req.body.picture);
+      if (!pictureIsValid) {
+        logger.warn(`Invalid picture URL: ${req.body.picture}`);
+        void reply.code(400);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
 
       try {
         await fastify.prisma.user.update({
@@ -493,7 +537,7 @@ ${isLinkSentWithinLimitTTL}`
             about: req.body.about,
             name: req.body.name,
             location: req.body.location,
-            picture: hasProtocol ? req.body.picture : ''
+            picture: req.body.picture
           }
         });
 
