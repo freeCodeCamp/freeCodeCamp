@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
-import { Alert, Spacer, Container, Row, Col, Callout } from '@freecodecamp/ui';
+import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import { ConnectedProps, connect } from 'react-redux';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import {
@@ -68,7 +68,7 @@ export const ConditionalDonationAlert = ({
 
   if (!isDonating && betaCertifications.includes(superBlock))
     return (
-      <Alert variant='info' className='annual-donation-alert'>
+      <Callout variant='info' className='annual-donation-alert'>
         <p>{t('donate.beta-certification')}</p>
         <hr />
         <p className='btn-container'>
@@ -82,12 +82,12 @@ export const ConditionalDonationAlert = ({
             {t('buttons.donate-now')}
           </Link>
         </p>
-      </Alert>
+      </Callout>
     );
 
   if (!isDonating && unfinishedCertifications.includes(superBlock))
     return (
-      <Alert variant='info' className='annual-donation-alert'>
+      <Callout variant='info' className='annual-donation-alert'>
         <p>
           <Trans i18nKey='donate.consider-donating-2'>
             <Link className='inline' to='/donate'>
@@ -95,7 +95,7 @@ export const ConditionalDonationAlert = ({
             </Link>
           </Trans>
         </p>
-      </Alert>
+      </Callout>
     );
 
   return null;

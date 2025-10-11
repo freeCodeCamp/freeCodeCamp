@@ -1,15 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import { Button, Dropdown, MenuItem, Spacer } from '@freecodecamp/ui';
+import Helmet from 'react-helmet';
+import {
+  Button,
+  Dropdown,
+  MenuItem,
+  Spacer,
+  Container
+} from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
-import { FullWidthRow } from '../../../components/helpers';
+import LearnLayout from '../../../components/layouts/learn';
+import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
 import { ChallengeNode } from '../../../redux/prop-types';
 import { isSignedInSelector } from '../../../redux/selectors';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
 
 interface GitProps {
@@ -20,23 +29,27 @@ interface GitProps {
 }
 
 const mapStateToProps = createSelector(
+  isChallengeCompletedSelector,
   isSignedInSelector,
-  (isSignedIn: boolean) => ({
+  (isChallengeCompleted: boolean, isSignedIn: boolean) => ({
+    isChallengeCompleted,
     isSignedIn
   })
 );
 
 interface ShowExamDownloadProps {
   data: { challengeNode: ChallengeNode };
+  isChallengeCompleted: boolean;
   isSignedIn: boolean;
 }
 
 function ShowExamDownload({
   data: {
     challengeNode: {
-      challenge: { id }
+      challenge: { id, title, translationPending }
     }
   },
+  isChallengeCompleted,
   isSignedIn
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
@@ -122,61 +135,75 @@ function ShowExamDownload({
   }, [os]);
 
   return (
-    <FullWidthRow>
-      <Spacer size='l' />
-      <h2>{t('exam.download-header')}</h2>
-      <p>{t('exam.explanation')}</p>
-      <Spacer size='l' />
-      {isSignedIn && (
-        <>
-          <h2>{t('exam.attempts')}</h2>
-          <Attempts id={id} />
-          <Spacer size='l' />
-        </>
-      )}
-      <p>
-        {t('exam.version', {
-          version: latestVersion || '...'
-        })}
-      </p>
-      <Button
-        disabled={!downloadLink}
-        aria-disabled={!downloadLink}
-        href={downloadLink}
-        download={downloadLink}
-      >
-        {t('buttons.download-latest-version')}
-      </Button>
-      {!downloadLink && (
-        <>
-          <Spacer size='m' />
-          <strong>{t('exam.unable-to-detect-os')}</strong>
-        </>
-      )}
-      <Spacer size='m' />
-      <Dropdown>
-        <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
-        <Dropdown.Menu>
-          {downloadLinks
-            .filter(link => !link.match(/\.sig|\.json/))
-            .map((link, index) => {
-              return (
-                <MenuItem
-                  href={link}
-                  download={link}
-                  key={index}
-                  variant='primary'
-                >
-                  {link}
-                </MenuItem>
-              );
-            })}
-        </Dropdown.Menu>
-      </Dropdown>
-      <Spacer size='l' />
-      <strong>{t('exam.download-trouble')}</strong>{' '}
-      <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
-    </FullWidthRow>
+    <LearnLayout>
+      <Helmet>
+        <title>
+          {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
+        </title>
+      </Helmet>
+      <Container>
+        <Spacer size='m' />
+        <ChallengeTitle
+          isCompleted={isChallengeCompleted}
+          translationPending={translationPending}
+        >
+          {title}
+        </ChallengeTitle>
+        <Spacer size='l' />
+        <h2>{t('exam.download-header')}</h2>
+        <p>{t('exam.explanation')}</p>
+        <Spacer size='l' />
+        {isSignedIn && (
+          <>
+            <h2>{t('exam.attempts')}</h2>
+            <Attempts id={id} />
+            <Spacer size='l' />
+          </>
+        )}
+        <p>
+          {t('exam.version', {
+            version: latestVersion || '...'
+          })}
+        </p>
+        <Button
+          disabled={!downloadLink}
+          aria-disabled={!downloadLink}
+          href={downloadLink}
+          download={downloadLink}
+        >
+          {t('buttons.download-latest-version')}
+        </Button>
+        {!downloadLink && (
+          <>
+            <Spacer size='m' />
+            <strong>{t('exam.unable-to-detect-os')}</strong>
+          </>
+        )}
+        <Spacer size='m' />
+        <Dropdown>
+          <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+          <Dropdown.Menu>
+            {downloadLinks
+              .filter(link => !link.match(/\.sig|\.json/))
+              .map((link, index) => {
+                return (
+                  <MenuItem
+                    href={link}
+                    download={link}
+                    key={index}
+                    variant='primary'
+                  >
+                    {link}
+                  </MenuItem>
+                );
+              })}
+          </Dropdown.Menu>
+        </Dropdown>
+        <Spacer size='l' />
+        <strong>{t('exam.download-trouble')}</strong>{' '}
+        <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
+      </Container>
+    </LearnLayout>
   );
 }
 
@@ -188,6 +215,8 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         id
+        title
+        translationPending
       }
     }
   }
