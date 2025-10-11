@@ -1,0 +1,27 @@
+{
+  "name": "Build a Fortune Telling App",
+  "isUpcomingChange": true,
+  "hasEditableBoundaries": true,
+  "dashedName": "workshop-fortune-teller-app",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68c38c3275a149b3cfed312a", "title": "Step 1" },
+    { "id": "68d5b152417f6e8d1d88635f", "title": "Step 2" },
+    { "id": "68d45de79b36aa640a46f57e", "title": "Step 3" },
+    { "id": "68de9361073cce61cc49cc1b", "title": "Step 4" },
+    { "id": "68decb1aa8a51651ab36557c", "title": "Step 5" },
+    { "id": "68deccc163f7e0733208079d", "title": "Step 6" },
+    { "id": "68ded29daa36f4e42ae63e97", "title": "Step 7" },
+    { "id": "68ded35072c5b0f2741634db", "title": "Step 8" },
+    { "id": "68ded461befea207a2f11a9a", "title": "Step 9" },
+    { "id": "68ded620ab19272a3fa97592", "title": "Step 10" },
+    { "id": "68e023b93769353c635fb93a", "title": "Step 11" },
+    { "id": "68e0280810407794171d6558", "title": "Step 12" },
+    { "id": "68e41d22815bf83a559a9e7b", "title": "Step 13" },
+    { "id": "68e420817107eb7cb2d4d4d6", "title": "Step 14" },
+    { "id": "68e4220fadf4239b7e722e0a", "title": "Step 15" }
+  ],
+  "blockType": "workshop",
+  "usesMultifileEditor": true
+}
