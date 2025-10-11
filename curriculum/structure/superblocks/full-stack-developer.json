@@ -717,6 +717,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "lab-planets",
             "workshop-musical-instrument-inventory",
             "lab-budget-app",
             "review-classes-and-objects",
