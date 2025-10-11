@@ -141,6 +141,86 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       return {};
     }
   );
+
+  fastify.post(
+    '/account/reset-module',
+    {
+      schema: schemas.resetModule
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+
+      const { blockId } = req.body;
+      logger.info(
+        `User ${req.user?.id} requested module reset for block: ${blockId}`
+      );
+
+      // Get challenge IDs for this block from curriculum
+      const { getChallengeIdsByBlock } = await import(
+        '../../utils/get-challenges.js'
+      );
+
+      const challengeIdsToReset = getChallengeIdsByBlock(blockId);
+
+      // Fetch user's current data
+      const user = await fastify.prisma.user.findUnique({
+        where: { id: req.user!.id },
+        select: {
+          completedChallenges: true,
+          savedChallenges: true,
+          partiallyCompletedChallenges: true
+        }
+      });
+
+      if (!user) {
+        logger.error(`User ${req.user?.id} not found`);
+        void reply.code(500);
+        return {
+          message: 'User not found',
+          type: 'error'
+        };
+      }
+
+      // Filter out challenges from this block
+
+      const filteredCompletedChallenges = (
+        user.completedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      const filteredSavedChallenges = (
+        user.savedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      const filteredPartiallyCompletedChallenges = (
+        user.partiallyCompletedChallenges as unknown[]
+      ).filter((c: unknown) => {
+        const challenge = c as { id: string };
+
+        return !challengeIdsToReset.includes(challenge.id);
+      });
+
+      // Update user with filtered challenges
+      await fastify.prisma.user.update({
+        where: { id: req.user!.id },
+        data: {
+          completedChallenges: filteredCompletedChallenges as never,
+          savedChallenges: filteredSavedChallenges as never,
+          partiallyCompletedChallenges:
+            filteredPartiallyCompletedChallenges as never
+        }
+      });
+
+      return {};
+    }
+  );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, reply) => {
     const logger = fastify.log.child({ req, res: reply });

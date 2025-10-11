@@ -51,3 +51,21 @@ export function getChallenges(): Block['challenges'] {
       return [...acc, ...challengesForBlock.flat()];
     }, []);
 }
+
+/**
+ * Get all challenge IDs for a specific block.
+ * @param blockId The dashedName of the block.
+ * @returns An array of challenge IDs for the block, or empty array if block not found.
+ */
+export function getChallengeIdsByBlock(blockId: string): string[] {
+  const curricula = Object.values(curriculum);
+
+  for (const superBlock of curricula) {
+    const block = superBlock.blocks[blockId];
+    if (block) {
+      return block.challenges.map(challenge => challenge.id);
+    }
+  }
+
+  return [];
+}
