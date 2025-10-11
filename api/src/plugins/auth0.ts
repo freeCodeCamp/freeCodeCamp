@@ -82,6 +82,25 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         );
         void reply.redirect(redirectUrl);
       });
+
+      fastify.get('/signin/google', async function (request, reply) {
+        const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
+        void reply.setCookie('login-returnto', returnTo, {
+          domain: COOKIE_DOMAIN,
+          httpOnly: true,
+          secure: true,
+          signed: true,
+          sameSite: 'lax'
+        });
+
+        const authorizationEndpoint =
+          await this.auth0OAuth.generateAuthorizationUri(request, reply);
+
+        const url = new URL(authorizationEndpoint);
+        url.searchParams.set('connection', 'google-oauth2');
+
+        void reply.redirect(url.toString());
+      });
       done();
     });
 
