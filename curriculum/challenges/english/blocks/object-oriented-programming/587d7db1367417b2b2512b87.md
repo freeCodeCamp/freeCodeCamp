@@ -79,54 +79,22 @@ assert(beagle.constructor === Dog);
 `beagle.eat()` should log the string `nom nom nom`
 
 ```js
-capture();
+const spy = __helpers.spyOn(console, 'log');
 beagle.eat();
-uncapture();
-assert(logOutput == 'nom nom nom');
+assert.lengthOf(spy.calls,1);
+assert(spy.calls[0][0] == 'nom nom nom');
 ```
 
 `beagle.bark()` should log the string `Woof!`
 
 ```js
-capture();
+const spy = __helpers.spyOn(console, 'log');
 beagle.bark();
-uncapture();
-assert(logOutput == 'Woof!');
+assert.lengthOf(spy.calls,1);
+assert(spy.calls[0][0] == 'Woof!');
 ```
 
 # --seed--
-
-## --before-user-code--
-
-```js
-var logOutput = "";
-var originalConsole = console
-function capture() {
-    var nativeLog = console.log;
-    console.log = function (message) {
-        logOutput = message;
-        if(nativeLog.apply) {
-          nativeLog.apply(originalConsole, arguments);
-        } else {
-          var nativeMsg = Array.prototype.slice.apply(arguments).join(' ');
-          nativeLog(nativeMsg);
-        }
-    };
-}
-
-function uncapture() {
-  console.log = originalConsole.log;
-}
-
-capture();
-```
-
-## --after-user-code--
-
-```js
-uncapture();
-(function() { return logOutput || "console.log never called"; })();
-```
 
 ## --seed-contents--
 

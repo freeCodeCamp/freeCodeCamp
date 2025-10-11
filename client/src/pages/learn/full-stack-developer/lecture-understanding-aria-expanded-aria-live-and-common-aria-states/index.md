@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Understanding aria-expanded, aria-live, and Common ARIA States
 
-In these lectures you will learn more about ARIA attributes like `aria-expanded`, `aria-live`, and common ARIA states.
+In these lessons you will learn more about ARIA attributes like `aria-expanded`, `aria-live`, and common ARIA states.

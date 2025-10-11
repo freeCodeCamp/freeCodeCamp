@@ -2,7 +2,7 @@ import type { FastifyPluginCallback } from 'fastify';
 
 import fp from 'fastify-plugin';
 
-import { getRedirectParams } from '../utils/redirection';
+import { getRedirectParams } from '../utils/redirection.js';
 
 /**
  * Plugin for handling missing endpoints.

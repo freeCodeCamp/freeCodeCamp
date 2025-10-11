@@ -1,8 +1,4 @@
-import { SuperBlocks } from '../../../shared/config/curriculum';
-
-export function isOldRespCert(superBlock: string): boolean {
-  return superBlock === String(SuperBlocks.RespWebDesign);
-}
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 
 export function isRelationalDbCert(superBlock: string): boolean {
   return superBlock === String(SuperBlocks.RelationalDb);

@@ -11,7 +11,7 @@ describe('create non-English challenge', () => {
   describe('getChallengesForLang', () => {
     it('throws if lang is an invalid language', async () => {
       await expect(() => getChallengesForLang('notlang')).rejects.toThrow(
-        'notlang is not a accepted language'
+        'notlang is not an accepted language'
       );
     });
   });

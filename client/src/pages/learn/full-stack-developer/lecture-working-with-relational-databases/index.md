@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Relational Databases
 
-Learn about Working with Relational Databases in these lectures.
+Learn about Working with Relational Databases in these lessons.

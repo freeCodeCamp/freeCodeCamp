@@ -2,6 +2,8 @@
   "include": ["**/*.ts", "**/*.test.ts"],
   "extends": "../tsconfig-base.json",
   "compilerOptions": {
+    "outDir": "../shared-dist",
+    "declaration": true,
     "noEmit": false,
     "module": "CommonJS"
   }

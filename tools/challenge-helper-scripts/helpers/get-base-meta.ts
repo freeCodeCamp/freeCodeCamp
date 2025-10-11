@@ -2,7 +2,6 @@ interface Meta {
   name: string;
   isUpcomingChange: boolean;
   dashedName: string;
-  superBlock: string;
   helpCategory: string;
   challengeOrder: Array<{
     id: string;
@@ -17,7 +16,6 @@ interface Meta {
 
 const baseMeta: Meta = {
   name: '',
-  superBlock: '',
   isUpcomingChange: true,
   dashedName: '',
   helpCategory: '',

@@ -1,0 +1,14 @@
+{
+  "chapters": [
+    {
+      "dashedName": "python",
+      "modules": [
+        {
+          "moduleType": "exam",
+          "dashedName": "python-certification-exam",
+          "blocks": ["exam-python-certification"]
+        }
+      ]
+    }
+  ]
+}

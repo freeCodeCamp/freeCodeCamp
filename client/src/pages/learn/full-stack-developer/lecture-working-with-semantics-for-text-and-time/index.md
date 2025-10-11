@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Text and Time Semantic Elements
 
-In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the `time`, `blockquote` elements and more.
+In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the `time`, `blockquote` elements and more.

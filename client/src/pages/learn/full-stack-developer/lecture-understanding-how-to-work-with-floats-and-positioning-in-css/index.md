@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding How to Work with Floats and Positioning in CSS
 
-In these lecture videos, you will learn about how to work with floats and positioning in CSS.
+In these lessons, you will learn about how to work with floats and positioning in CSS.

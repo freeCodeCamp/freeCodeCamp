@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Git and GitHub
 
-Learn about working with Git and GitHub in these lectures.
+Learn about working with Git and GitHub in these lessons.

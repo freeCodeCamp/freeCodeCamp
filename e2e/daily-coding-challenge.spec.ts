@@ -220,7 +220,11 @@ test.describe('Daily Coding Challenge Archive', () => {
     ).toBeVisible();
 
     await expect(
-      page.getByRole('link', { name: /go to today/i })
+      page
+        .locator('div')
+        .filter({ hasText: /New challenges are released/ })
+        .getByRole('link', { name: /go to today/i })
+        .first()
     ).toBeVisible();
 
     const totalCalendarDays = await page.getByTestId('calendar-day').count();

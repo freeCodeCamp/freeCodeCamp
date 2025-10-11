@@ -9,7 +9,7 @@ dashedName: task-77
 
 # --description--
 
-Listen to the audio and answer the question.
+Listen to the audio and answer the question below.
 
 # --questions--
 
@@ -19,31 +19,31 @@ What does the phrase `Would you like to come?` convey in this context?
 
 ## --answers--
 
-Declining an invitation
+Declining an invitation.
 
 ### --feedback--
 
-The phrase is not a response indicating refusal; instead, it is an invitation being extended.
+The phrase doesn't mean saying "no". It is about offering an invitation.
 
 ---
 
-Extending an invitation
+Extending an invitation.
 
 ---
 
-Expressing gratitude
+Expressing gratitude.
 
 ### --feedback--
 
-The phrase is more about offering an invitation than expressing thanks.
+The phrase doesn't mean "thank you". It is about inviting someone.
 
 ---
 
-Asking for information
+Asking for information.
 
 ### --feedback--
 
-The phrase is not seeking information; rather, it is an invitation to join an event.
+The phrase isn't a question to get information, but a polite invitation to an event.
 
 ## --video-solution--
 

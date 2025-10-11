@@ -1,0 +1,15 @@
+{
+  "name": "Implement a Pig Latin Translator",
+  "blockType": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-pig-latin",
+  "challengeOrder": [
+    {
+      "id": "aa7697ea2477d1316795783b",
+      "title": "Implement a Pig Latin Translator"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

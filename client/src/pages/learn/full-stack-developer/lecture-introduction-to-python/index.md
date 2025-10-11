@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Introduction to Python
 
-Learn about Introduction to Python in these lectures.
+Learn about Introduction to Python in these lessons.

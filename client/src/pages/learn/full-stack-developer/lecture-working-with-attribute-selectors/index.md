@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Attribute Selectors
 
-In these lecture videos, you will learn about working with attribute selectors.
+In these lessons, you will learn about working with attribute selectors.

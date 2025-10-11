@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Introduction to ARIA
 
-In these lecture videos, you will learn about working with ARIA roles.
+In these lessons, you will learn about working with ARIA roles.

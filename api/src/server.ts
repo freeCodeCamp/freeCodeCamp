@@ -1,7 +1,7 @@
-import './instrument';
+import './instrument.js';
 
-import { build, buildOptions } from './app';
-import { HOST, PORT } from './utils/env';
+import { build, buildOptions } from './app.js';
+import { HOST, PORT } from './utils/env.js';
 
 const start = async () => {
   const fastify = await build(buildOptions);

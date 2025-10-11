@@ -1,0 +1,14 @@
+{
+  "chapters": [
+    {
+      "dashedName": "front-end-development-libraries",
+      "modules": [
+        {
+          "moduleType": "exam",
+          "dashedName": "front-end-development-libraries-certification-exam",
+          "blocks": ["exam-front-end-development-libraries-certification"]
+        }
+      ]
+    }
+  ]
+}

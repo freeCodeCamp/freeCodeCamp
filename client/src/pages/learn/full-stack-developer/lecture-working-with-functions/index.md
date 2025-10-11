@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Functions
 
-In these lecture videos, you will learn about working with Functions.
+In these lessons, you will learn about working with Functions.

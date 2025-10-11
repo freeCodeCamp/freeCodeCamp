@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to React Strategies and Debugging
 
-Learn about React Strategies and Debugging in these lectures.
+Learn about React Strategies and Debugging in these lessons.

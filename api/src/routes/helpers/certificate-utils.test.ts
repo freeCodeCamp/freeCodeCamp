@@ -1,5 +1,6 @@
 import { describe, test, expect } from 'vitest';
-import { getFallbackFullStackDate } from './certificate-utils';
+
+import { getFallbackFullStackDate } from './certificate-utils.js';
 
 const fullStackChallenges = [
   {

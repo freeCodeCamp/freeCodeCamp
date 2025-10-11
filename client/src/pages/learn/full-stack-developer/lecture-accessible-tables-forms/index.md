@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Accessible Tables and Forms
 
-In these lecture videos, you will learn about how to create accessible tables and forms.
+In these lessons, you will learn about how to create accessible tables and forms.

@@ -21,43 +21,37 @@ Send your name as a URL query by appending `?name=<your_name>` to the route. The
 All tests should pass
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=1').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=1');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.state, 'passed');
 ```
 
 You should test for `res.status` == 200
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=1').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'equal');
-      assert.equal(data.assertions[0].args[0], 'res.status');
-      assert.equal(data.assertions[0].args[1], '200');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=1');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[0].method, 'equal');
+assert.equal(data.assertions[0].args[0], 'res.status');
+assert.equal(data.assertions[0].args[1], '200');
 ```
 
 You should test for `res.text` == `'hello <your_name>'`
 
 ```js
-  $.get(code + '/_api/get-tests?type=functional&n=1').then(
-    (data) => {
-      assert.equal(data.assertions[1].method, 'equal');
-      assert.equal(data.assertions[1].args[0], 'res.text');
-      assert.match(data.assertions[1].args[1], /hello [\w\d_-]/);
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/get-tests?type=functional&n=1');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.equal(data.assertions[1].method, 'equal');
+assert.equal(data.assertions[1].args[0], 'res.text');
+assert.match(data.assertions[1].args[1], /hello [\w\d_-]/);
 ```
 

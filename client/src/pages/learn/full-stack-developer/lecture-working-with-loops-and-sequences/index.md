@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Loops and Sequences
 
-Learn about Working with Loops and Sequences in these lectures.
+Learn about Working with Loops and Sequences in these lessons.

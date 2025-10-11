@@ -2,11 +2,11 @@ import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import Fastify, { type FastifyInstance } from 'fastify';
 import fastifyCookie from '@fastify/cookie';
 
-import { COOKIE_SECRET } from '../utils/env';
-import cookies from './cookies';
+import { COOKIE_SECRET } from '../utils/env.js';
+import cookies from './cookies.js';
 
 vi.mock('../utils/env', async importOriginal => {
-  const actual = await importOriginal<typeof import('../utils/env')>();
+  const actual = await importOriginal<typeof import('../utils/env.js')>();
   return {
     ...actual,
     COOKIE_DOMAIN: 'www.example.com',

@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { STANDARD_ERROR } from '../utils/errors';
+import { STANDARD_ERROR } from '../utils/errors.js';
 
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
@@ -30,6 +30,7 @@ const examEnvAttempt = Type.Object({
   id: Type.String(),
   examId: Type.String(),
   startTimeInMS: Type.Number(),
+  startTime: Type.String({ format: 'date-time' }),
   questionSets: Type.Array(
     Type.Object({
       id: Type.String(),
@@ -37,7 +38,8 @@ const examEnvAttempt = Type.Object({
         Type.Object({
           id: Type.String(),
           answers: Type.Array(Type.String()),
-          submissionTimeInMS: Type.Number()
+          submissionTimeInMS: Type.Number(),
+          submissionTime: Type.String({ format: 'date-time' })
         })
       )
     })
@@ -76,4 +78,19 @@ export const examEnvironmentGetExamAttempt = {
     200: examEnvAttempt,
     default: STANDARD_ERROR
   }
+};
+
+export const examEnvironmentGetExamAttemptsByExamId = {
+  params: Type.Object({
+    examId: Type.String({ format: 'objectid' })
+  }),
+  headers: Type.Object({
+    // Optional, because the handler is used in both the `/user/` base and `/exam-environment/` base.
+    // If it is missing, auth will catch.
+    'exam-environment-authorization-token': Type.Optional(Type.String())
+  })
+  // response: {
+  //   200: Type.Array(examEnvAttempt),
+  //   default: STANDARD_ERROR
+  // }
 };

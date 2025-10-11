@@ -67,4 +67,4 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: pnpm test:curriculum
+        run: pnpm test:curriculum:content

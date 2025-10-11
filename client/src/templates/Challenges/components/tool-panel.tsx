@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { canSaveToDB } from '../../../../../shared/config/challenge-types';
+import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
 import { saveChallenge } from '../../../redux/actions';

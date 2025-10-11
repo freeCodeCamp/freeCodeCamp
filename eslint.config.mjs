@@ -11,7 +11,7 @@ import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import prettierConfig from 'eslint-config-prettier';
 import reactPlugin from 'eslint-plugin-react';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
-import jestDomPlugin from 'eslint-plugin-jest-dom';
+import vitest from '@vitest/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import tseslint from 'typescript-eslint';
 import jsdoc from 'eslint-plugin-jsdoc';
@@ -35,7 +35,8 @@ export default tseslint.config(
       'shared/**/*.js',
       'docs/**/*.md',
       '**/playwright*.config.ts',
-      'playwright/**/*'
+      'playwright/**/*',
+      'shared-dist/**/*'
     ]
   },
   js.configs.recommended,
@@ -61,13 +62,13 @@ export default tseslint.config(
         ...globals.browser,
         ...globals.mocha,
         ...globals.node,
-        ...globals.jest,
         Promise: true,
         window: true,
         $: true,
         ga: true,
         jQuery: true,
-        router: true
+        router: true,
+        globalThis: true
       },
 
       parser: babelParser,
@@ -165,10 +166,12 @@ export default tseslint.config(
   {
     files: ['client/**/*.test.[jt]s?(x)'],
 
-    extends: [
-      testingLibraryPlugin.configs['flat/react'],
-      jestDomPlugin.configs['flat/recommended']
-    ]
+    extends: [testingLibraryPlugin.configs['flat/react']]
+  },
+  {
+    files: ['**/*.test.[jt]s?(x)'],
+    plugins: { vitest },
+    extends: [vitest.configs.recommended]
   },
   {
     files: ['e2e/*.ts'],

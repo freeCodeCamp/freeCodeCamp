@@ -163,7 +163,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: /Lecture Understanding HTML Attributes/
+          name: /Theory Understanding HTML Attributes/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });

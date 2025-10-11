@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Common Data Structures
 
-Learn about Working with Common Data Structures in these lectures.
+Learn about Working with Common Data Structures in these lessons.

@@ -1,11 +1,11 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import * as schemas from '../schemas';
+import * as schemas from '../schemas/index.js';
 import {
   getNowUsCentral,
   getUtcMidnight,
   dateStringToUtcMidnight
-} from '../utils/helpers';
+} from '../utils/helpers.js';
 
 /**
  * Plugin containing public GET routes for the daily coding challenges.
@@ -104,6 +104,79 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         logger.error(error, "Failed to get today's daily coding challenge.");
+        await reply
+          .status(500)
+          .send({ type: 'error', message: 'Internal server error.' });
+      }
+    }
+  );
+
+  fastify.get(
+    '/daily-coding-challenge/month/:month',
+    {
+      schema: schemas.dailyCodingChallenge.month
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      logger.info('Received request for month of daily coding challenges', {
+        month: req.params.month
+      });
+
+      const { month } = req.params;
+
+      try {
+        // Month is guaranteed YYYY-MM format from schema validation
+        const parts = month.split('-');
+        const parsedYear = parseInt(parts[0]!, 10);
+        const parsedMonth = parseInt(parts[1]!, 10);
+
+        // Validate month range
+        if (parsedMonth < 1 || parsedMonth > 12) {
+          logger.warn('Invalid month value requested', { month });
+          return reply.status(400).send({
+            type: 'error',
+            message: 'Invalid date format. Please use YYYY-MM.'
+          });
+        }
+
+        const monthStart = new Date(Date.UTC(parsedYear, parsedMonth - 1, 1));
+        const monthEnd = new Date(Date.UTC(parsedYear, parsedMonth, 1));
+        const todayUsCentral = getUtcMidnight(getNowUsCentral());
+
+        const challenges = await fastify.prisma.dailyCodingChallenges.findMany({
+          where: {
+            date: {
+              gte: monthStart,
+              lt: monthEnd,
+              lte: todayUsCentral
+            }
+          },
+          orderBy: {
+            date: 'desc'
+          },
+          select: {
+            id: true,
+            challengeNumber: true,
+            date: true,
+            title: true
+          }
+        });
+
+        if (!challenges || challenges.length === 0) {
+          logger.warn('No challenges found for month', { month });
+          return reply
+            .status(404)
+            .send({ type: 'error', message: 'No challenges found.' });
+        }
+
+        const response = challenges.map(challenge => ({
+          ...challenge,
+          date: challenge.date.toISOString()
+        }));
+
+        return reply.send(response);
+      } catch (error) {
+        logger.error(error, 'Failed to get monthly daily coding challenges.');
         await reply
           .status(500)
           .send({ type: 'error', message: 'Internal server error.' });

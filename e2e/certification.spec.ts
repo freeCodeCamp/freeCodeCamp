@@ -30,7 +30,7 @@ test.describe('Claim a certification - almost certified user', () => {
     // verify that an email is sent
     await expect(async () => {
       const emails = await getAllEmails();
-      expect(emails.items).toHaveLength(1);
+      expect(emails.messages).toHaveLength(1);
       expect(getSubject(getFirstEmail(emails))).toBe(
         'Congratulations on completing all of the freeCodeCamp certifications!'
       );

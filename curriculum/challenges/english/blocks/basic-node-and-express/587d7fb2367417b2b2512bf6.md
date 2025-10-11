@@ -23,34 +23,30 @@ Build an API endpoint, mounted at `GET /name`. Respond with a JSON document, tak
 Test 1 : Your API endpoint should respond with `{ "name": "Mick Jagger" }` when the `/name` endpoint is called with `?first=Mick&last=Jagger`
 
 ```js
-  $.get(code + '/name?first=Mick&last=Jagger').then(
-    (data) => {
-      assert.equal(
-        data.name,
-        'Mick Jagger',
-        'Test 1: "GET /name" route does not behave as expected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/name?first=Mick&last=Jagger');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.name,
+    'Mick Jagger',
+    'Test 1: "GET /name" route does not behave as expected'
   );
 ```
 
 Test 2 : Your API endpoint should respond with `{ "name": "Keith Richards" }` when the `/name` endpoint is called with `?first=Keith&last=Richards`
 
 ```js
-  $.get(code + '/name?last=Richards&first=Keith').then(
-    (data) => {
-      assert.equal(
-        data.name,
-        'Keith Richards',
-        'Test 2: "GET /name" route does not behave as expected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/name?last=Richards&first=Keith');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.name,
+    'Keith Richards',
+    'Test 2: "GET /name" route does not behave as expected'
   );
 ```
 

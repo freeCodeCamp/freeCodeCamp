@@ -1,0 +1,14 @@
+{
+  "chapters": [
+    {
+      "dashedName": "back-end-development-and-apis",
+      "modules": [
+        {
+          "moduleType": "exam",
+          "dashedName": "back-end-development-and-apis-certification-exam",
+          "blocks": ["exam-back-end-development-and-apis-certification"]
+        }
+      ]
+    }
+  ]
+}

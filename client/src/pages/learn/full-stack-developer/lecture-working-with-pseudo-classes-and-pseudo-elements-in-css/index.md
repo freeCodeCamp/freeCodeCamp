@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Pseudo-Classes and Pseudo-Elements in CSS
 
-In these lecture videos, you will learn about working with pseudo-classes and pseudo-elements in CSS.
+In these lessons, you will learn about working with pseudo-classes and pseudo-elements in CSS.

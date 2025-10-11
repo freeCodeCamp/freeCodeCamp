@@ -11,7 +11,7 @@ Conditional statements, or conditionals, let you control the flow of your progra
 
 But before we get into all that, let's go over the basic building blocks of conditional statements, starting with comparison operators. Comparison operators are operators that let you compare two or more values, and return a boolean value.
 
-In a previous lecture, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
+In a previous lesson, you learned that booleans are one of the data types in Python, and can only be `True` or `False`.
 
 Here's a table with the comparison operators in Python:
 
@@ -47,7 +47,7 @@ if condition:
 
 * `if` statements start with the `if` keyword.
     
-* `condition` is an expression that evaluates to `True` of `False`, followed by a colon (`:`).
+* `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
 
 * The indentation specifies the block of code within the body of the `if` statement.
     
@@ -196,7 +196,7 @@ else:
 
 ### --feedback--
 
-Review the last part of the lecture for the correct answer.
+Review the last part of the lesson for the correct answer.
 
 ---
 
@@ -204,7 +204,7 @@ Review the last part of the lecture for the correct answer.
 
 ### --feedback--
 
-Review the last part of the lecture for the correct answer.
+Review the last part of the lesson for the correct answer.
 
 ---
 
@@ -216,7 +216,7 @@ An error will be printed to the console.
 
 ### --feedback--
 
-Review the last part of the lecture for the correct answer.
+Review the last part of the lesson for the correct answer.
 
 ## --video-solution--
 

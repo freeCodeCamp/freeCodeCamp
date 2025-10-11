@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Comparisons and Conditionals
 
-In these lecture videos, you will learn about comparisons and conditionals.
+In these lessons, you will learn about comparisons and conditionals.

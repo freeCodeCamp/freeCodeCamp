@@ -1,12 +1,13 @@
 import { Transform, TransformCallback, TransformOptions } from 'stream';
 import { FastifyRequest, FastifyReply } from 'fastify';
-import { isEmpty } from 'lodash';
-import pino, {
+import { isEmpty } from 'lodash-es';
+import type {
   TransportTargetOptions,
   DestinationStream,
   LoggerOptions
 } from 'pino';
-import { FCC_API_LOG_LEVEL, FCC_API_LOG_TRANSPORT } from './env';
+import { pino } from 'pino';
+import { FCC_API_LOG_LEVEL, FCC_API_LOG_TRANSPORT } from './env.js';
 
 const serializers = {
   req: (req: FastifyRequest) => {

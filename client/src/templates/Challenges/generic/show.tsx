@@ -10,9 +10,11 @@ import { YouTubeEvent } from 'react-youtube';
 import { ObserveKeys } from 'react-hotkeys';
 
 // Local Utilities
+import PrismFormatted from '../components/prism-formatted';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
+import InteractiveEditor from '../components/interactive-editor';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import VideoPlayer from '../components/video-player';
@@ -26,7 +28,7 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { BlockTypes } from '../../../../../shared/config/blocks';
+import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
@@ -69,6 +71,17 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
+function renderNodule(nodule: ChallengeNode['challenge']['nodules'][number]) {
+  switch (nodule.type) {
+    case 'paragraph':
+      return <PrismFormatted text={nodule.data} />;
+    case 'interactiveEditor':
+      return <InteractiveEditor files={nodule.data} />;
+    default:
+      return null;
+  }
+}
+
 const ShowGeneric = ({
   challengeMounted,
   data: {
@@ -79,6 +92,7 @@ const ShowGeneric = ({
         block,
         blockType,
         description,
+        nodules,
         explanation,
         challengeType,
         fields: { blockName, tests },
@@ -228,6 +242,12 @@ const ShowGeneric = ({
               </Col>
             )}
 
+            {nodules?.map((nodule, i) => {
+              return (
+                <React.Fragment key={i}>{renderNodule(nodule)}</React.Fragment>
+              );
+            })}
+
             <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
               {videoId && (
                 <>
@@ -332,6 +352,10 @@ export const query = graphql`
         blockType
         challengeType
         description
+        nodules {
+          type
+          data
+        }
         explanation
         helpCategory
         instructions

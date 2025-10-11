@@ -4,7 +4,7 @@ import { Type } from '@sinclair/typebox';
 import { Value } from '@sinclair/typebox/value';
 import fp from 'fastify-plugin';
 
-import { isError } from 'lodash';
+import { isError } from 'lodash-es';
 import {
   API_LOCATION,
   AUTH0_CLIENT_ID,
@@ -12,10 +12,10 @@ import {
   AUTH0_DOMAIN,
   COOKIE_DOMAIN,
   HOME_LOCATION
-} from '../utils/env';
-import { findOrCreateUser } from '../routes/helpers/auth-helpers';
-import { createAccessToken } from '../utils/tokens';
-import { getLoginRedirectParams } from '../utils/redirection';
+} from '../utils/env.js';
+import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
+import { createAccessToken } from '../utils/tokens.js';
+import { getLoginRedirectParams } from '../utils/redirection.js';
 
 declare module 'fastify' {
   interface FastifyInstance {

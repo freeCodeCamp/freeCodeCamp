@@ -272,29 +272,6 @@ const Button = () => {
 };`);
   });
 
-  /* Revisit this once we've decided what to do about multifile imports. I
-  think the best approach is likely to be use the following format for .files
-
-  it('combines all the code of a specific language into a single file', () => {
-
-    { css: [css files],
-      html: [html files],
-      ...
-    }
-
-    or
-
-     { css: {css files},
-      html: {html files},
-      ...
-    }
-
-    depending on what's easier to work with in graphQL
-
-  });
-
-  */
-
   it('should throw an error if a seed has no contents', () => {
     expect.assertions(1);
     expect(() => plugin(withEmptyContentsAST, file)).toThrow(

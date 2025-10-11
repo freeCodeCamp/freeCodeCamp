@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the HTML Fundamentals
 
-Learn HTML fundamentals in these lecture videos.
+Learn HTML fundamentals in these lessons.

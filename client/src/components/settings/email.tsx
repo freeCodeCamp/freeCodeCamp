@@ -1,6 +1,6 @@
 import {
   HelpBlock,
-  Alert,
+  Callout,
   FormGroup,
   FormGroupProps,
   FormControl,
@@ -168,7 +168,7 @@ function EmailSettings({
       {isEmailVerified ? null : (
         <FullWidthRow>
           <HelpBlock>
-            <Alert
+            <Callout
               variant='info'
               className='text-center'
               data-playwright-test-label='email-verification-alert'
@@ -181,7 +181,7 @@ function EmailSettings({
                   to='/update-email'
                 />
               </Trans>
-            </Alert>
+            </Callout>
           </HelpBlock>
         </FullWidthRow>
       )}

@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Specialized Semantic Elements
 
-In this lecture, you will learn about specialized semantic elements like `u`, `s`, `code` elements and more.
+In this lesson, you will learn about specialized semantic elements like `u`, `s`, `code` elements and more.

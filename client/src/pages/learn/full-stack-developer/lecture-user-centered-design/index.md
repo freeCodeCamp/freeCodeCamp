@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to User-Centered Design
 
-In these lecture videos, you will learn about user-centered design.
+In these lessons, you will learn about user-centered design.

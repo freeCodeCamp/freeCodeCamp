@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with CSS Libraries and Frameworks
 
-Learn about Working with CSS Libraries and Frameworks in these lectures.
+Learn about Working with CSS Libraries and Frameworks in these lessons.

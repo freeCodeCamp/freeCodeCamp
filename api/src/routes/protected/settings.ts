@@ -3,14 +3,12 @@ import type { FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate';
-import * as schemas from '../../schemas';
-import { createAuthToken, isExpired } from '../../utils/tokens';
-import { API_LOCATION } from '../../utils/env';
-import { getRedirectParams } from '../../utils/redirection';
-import { isRestricted } from '../helpers/is-restricted';
-
-const { isEmail } = validator;
+import { isValidUsername } from '../../../../shared/utils/validate.js';
+import * as schemas from '../../schemas.js';
+import { createAuthToken, isExpired } from '../../utils/tokens.js';
+import { API_LOCATION } from '../../utils/env.js';
+import { getRedirectParams } from '../../utils/redirection.js';
+import { isRestricted } from '../helpers/is-restricted.js';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -58,7 +56,8 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
 const ALLOWED_DOMAINS_MAP = {
   githubProfile: ['github.com'],
   linkedin: ['linkedin.com'],
-  twitter: ['twitter.com', 'x.com']
+  twitter: ['twitter.com', 'x.com'],
+  bluesky: ['bsky.app']
 };
 
 /**
@@ -341,14 +340,15 @@ ${isLinkSentWithinLimitTTL}`
 
       const socials = {
         twitter: req.body.twitter,
+        bluesky: req.body.bluesky,
         githubProfile: req.body.githubProfile,
         linkedin: req.body.linkedin,
         website: req.body.website
       };
 
-      const valid = (['twitter', 'githubProfile', 'linkedin'] as const).every(
-        key => validateSocialUrl(socials[key], key)
-      );
+      const valid = (
+        ['twitter', 'bluesky', 'githubProfile', 'linkedin'] as const
+      ).every(key => validateSocialUrl(socials[key], key));
 
       if (!valid) {
         logger.warn({ socials }, `Invalid social URL`);
@@ -365,6 +365,7 @@ ${isLinkSentWithinLimitTTL}`
           data: {
             website: socials.website,
             twitter: socials.twitter,
+            bluesky: socials.bluesky,
             githubProfile: socials.githubProfile,
             linkedin: socials.linkedin
           }
@@ -768,7 +769,7 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
       const email = Buffer.from(req.query.email, 'base64').toString();
 
       const { origin } = getRedirectParams(req);
-      if (!isEmail(email)) {
+      if (!validator.default.isEmail(email)) {
         logger.warn(`Invalid email ${email}`);
         return reply.redirectWithMessage(origin, redirectMessage);
       }

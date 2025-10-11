@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Alert, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
 
@@ -38,7 +38,7 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>{t('profile.you-change-privacy')}</Alert>
+      <Callout variant='info'>{t('profile.you-change-privacy')}</Callout>
       <Spacer size='xl' />
     </FullWidthRow>
   );
@@ -69,9 +69,9 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <Alert variant='info'>
+      <Callout variant='info'>
         {t('profile.username-change-privacy', { username })}
-      </Alert>
+      </Callout>
       <Spacer size='m' />
     </FullWidthRow>
   );

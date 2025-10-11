@@ -45,21 +45,21 @@ describe('challenge parser', () => {
     expect(parsed).toMatchSnapshot();
   });
 
-  it('it should parse video questions', async () => {
+  it('should parse video questions', async () => {
     const parsed = await parseMD(
       resolve(__dirname, '__fixtures__/with-video-question.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
-  it('it should not parse directives we do not use', async () => {
+  it('should not parse directives we do not use', async () => {
     const parsed = await parseMD(
       resolve(__dirname, '__fixtures__/with-directives.md')
     );
     expect(parsed).toMatchSnapshot();
   });
 
-  it('it should parse md with a scene', async () => {
+  it('should parse md with a scene', async () => {
     const parsed = await parseMD(resolve(__dirname, '__fixtures__/scene.md'));
     expect(parsed).toMatchSnapshot();
   });

@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -172,6 +172,18 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  data: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  data: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -184,11 +196,11 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    nodules: Nodule[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
@@ -399,6 +411,7 @@ export type User = {
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
+  bluesky: string;
   username: string;
   website: string;
   yearsTopContributor: string[];
