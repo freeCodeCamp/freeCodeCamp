@@ -2,7 +2,7 @@
   "name": "Bash Scripting Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-bash-scripting",
   "challengeOrder": [
     { "id": "6724e417419c2f211bb41bfc", "title": "Bash Scripting Review" }

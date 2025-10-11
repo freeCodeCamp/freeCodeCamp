@@ -2,7 +2,7 @@
   "name": "Bash Scripting Quiz",
   "blockType": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-bash-scripting",
   "challengeOrder": [
     { "id": "66f1afbd9998e9c985d8e73b", "title": "Bash Scripting Quiz" }

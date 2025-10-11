@@ -2,7 +2,7 @@
   "name": "Build a Periodic Table Database",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-periodic-table-database",
   "challengeOrder": [
     {

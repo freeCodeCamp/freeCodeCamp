@@ -2,7 +2,7 @@
   "name": "Working With Code Reviews, Branching, Deployment, and CI/CD",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
   "helpCategory": "Backend Development",
   "challengeOrder": [

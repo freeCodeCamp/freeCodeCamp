@@ -2,7 +2,7 @@
   "name": "Introduction to Git and GitHub",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-git-and-github",
   "helpCategory": "Backend Development",
   "challengeOrder": [

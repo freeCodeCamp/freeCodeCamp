@@ -2,7 +2,7 @@
   "name": "Relational Databases Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-relational-databases",
   "challengeOrder": [
     { "id": "6724e5e321bce627736ea145", "title": "Relational Databases Review" }

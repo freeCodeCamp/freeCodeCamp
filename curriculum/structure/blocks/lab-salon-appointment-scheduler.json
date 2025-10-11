@@ -2,7 +2,7 @@
   "name": "Build a Salon Appointment Scheduler",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-salon-appointment-scheduler",
   "helpCategory": "Backend Development",
   "challengeOrder": [

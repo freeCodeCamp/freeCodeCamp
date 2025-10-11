@@ -2,7 +2,7 @@
   "name": "Working with Relational Databases",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-relational-databases",
   "helpCategory": "Backend Development",
   "challengeOrder": [
