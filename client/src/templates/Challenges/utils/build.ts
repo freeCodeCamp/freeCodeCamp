@@ -230,32 +230,44 @@ export async function buildJSChallenge(
     challengeType
   }: { challengeFiles?: ChallengeFile[]; challengeType: number },
   options: BuildOptions
-): Promise<BuildResult> {
-  if (!challengeFiles) throw Error('No challenge files provided');
+): Promise<{
+  challengeType: number;
+  build: string;
+  sources: unknown;
+  error?: Error;
+}> {
+  if (!challengeFiles) throw new Error('No challenge files provided');
+
   const pipeLine = composeFunctions(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
-  const error = finalFiles.find(({ error }) => error)?.error;
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
 
-  const toBuild = error ? [] : finalFiles;
+  const foundError = finalFiles.find(
+    file => file.error instanceof Error
+  )?.error;
+
+  if (foundError) {
+    return {
+      challengeType,
+      build: '',
+      sources: buildSourceMap(finalFiles) as unknown,
+      error: foundError
+    };
+  }
+
+  const unifiedCode = finalFiles
+    .map(
+      file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`
+    )
+    .join('\n');
 
   return {
     challengeType,
-    build: toBuild
-      .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
-        [] as string[]
-      )
-      .join('\n'),
-    sources: buildSourceMap(finalFiles),
-    error
+    build: unifiedCode,
+    sources: buildSourceMap(finalFiles) as unknown,
+    error: undefined
   };
 }
 
