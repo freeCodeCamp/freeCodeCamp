@@ -1,0 +1,25 @@
+{
+  "name": "Design a Parent Teacher Conference Form",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-parent-teacher-conference-form",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e707257ea91c2e12d489fb", "title": "Step 1" },
+    { "id": "68e7e729f6d14f69a23786ef", "title": "Step 2" },
+    { "id": "68ea7c41f2555e16174e7cfa", "title": "Step 3" },
+    { "id": "68ea81da9f687732368a5322", "title": "Step 4" },
+    { "id": "68ea8666b8b473455f5b33ef", "title": "Step 5" },
+    { "id": "68ea8a5db73b155708992687", "title": "Step 6" },
+    { "id": "68ea8c330ed07b60879f3d38", "title": "Step 7" },
+    { "id": "68ea8e6a87a2816b0bb2eb7d", "title": "Step 8" },
+    { "id": "68ea8fdf2c9b167307e7f671", "title": "Step 9" },
+    { "id": "68ea95c833f0518ae6e366cd", "title": "Step 10" },
+    { "id": "68ea975c7cbbb894a386e402", "title": "Step 11" },
+    { "id": "68ea9f01c51b66b937793611", "title": "Step 12" },
+    { "id": "68eaa310c153c0d0c5c9b78e", "title": "Step 13" }
+  ],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
