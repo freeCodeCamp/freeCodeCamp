@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
+import store from 'store';
 import envData, { clientLocale } from '../../../config/env.json';
 
 import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
@@ -180,6 +181,36 @@ function DefaultLayout({
       isBrowser() && 'navigator' in window ? window.navigator.onLine : null;
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
+
+  useEffect(() => {
+    if (isChallenge && superBlock && !isDailyChallenge && !examInProgress) {
+      const pathWithoutTrailingSlash = pathname.endsWith('/')
+        ? pathname.slice(0, -1)
+        : pathname;
+
+      const lastSlashIndex = pathWithoutTrailingSlash.lastIndexOf('/');
+      if (lastSlashIndex !== -1) {
+        const secondLastSlashIndex = pathWithoutTrailingSlash.lastIndexOf(
+          '/',
+          lastSlashIndex - 1
+        );
+        if (secondLastSlashIndex !== -1) {
+          const blockAndChallenge = pathWithoutTrailingSlash.slice(
+            secondLastSlashIndex + 1
+          );
+
+          try {
+            const lastChallengePaths = (store.get('lastChallengePaths') ||
+              {}) as Record<string, string>;
+            lastChallengePaths[superBlock] = blockAndChallenge;
+            store.set('lastChallengePaths', lastChallengePaths);
+          } catch (e) {
+            console.error('Error saving last challenge path to store', e);
+          }
+        }
+      }
+    }
+  }, [isChallenge, pathname, superBlock, isDailyChallenge, examInProgress]);
 
   const isJapanese = clientLocale === 'japanese';
 
