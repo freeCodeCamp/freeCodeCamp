@@ -1,7 +1,8 @@
 import {
   faLinkedin,
   faGithub,
-  faXTwitter
+  faXTwitter,
+  faBluesky
 } from '@fortawesome/free-brands-svg-icons';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -17,6 +18,7 @@ interface SocialIconsProps {
   linkedin: string;
   show?: boolean;
   twitter: string;
+  bluesky: string;
   username: string;
   website: string;
 }
@@ -82,9 +84,24 @@ function TwitterIcon({ href, username }: IconProps): JSX.Element {
   );
 }
 
+function BlueskyIcon({ href, username }: IconProps): JSX.Element {
+  const { t } = useTranslation();
+  return (
+    <a
+      aria-label={t('aria.bluesky', { username })}
+      href={href}
+      rel='noopener noreferrer'
+      target='_blank'
+    >
+      <FontAwesomeIcon icon={faBluesky} size='2x' />
+    </a>
+  );
+}
+
 function SocialIcons(props: SocialIconsProps): JSX.Element | null {
-  const { githubProfile, linkedin, twitter, username, website } = props;
-  const show = linkedin || githubProfile || website || twitter;
+  const { githubProfile, linkedin, twitter, bluesky, username, website } =
+    props;
+  const show = linkedin || githubProfile || website || twitter || bluesky;
   if (!show) {
     return null;
   }
@@ -98,6 +115,7 @@ function SocialIcons(props: SocialIconsProps): JSX.Element | null {
         ) : null}
         {website ? <WebsiteIcon href={website} username={username} /> : null}
         {twitter ? <TwitterIcon href={twitter} username={username} /> : null}
+        {bluesky ? <BlueskyIcon href={bluesky} username={username} /> : null}
       </Col>
     </Row>
   );
