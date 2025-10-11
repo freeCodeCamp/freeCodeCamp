@@ -2,7 +2,7 @@
 
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
-[![LFX Health Score](https://insights.linuxfoundation.org/api/badge/health-score?project=freecodecamp)](https://insights.linuxfoundation.org/project/freecodecamp)
+[![LFX Active Contributors](https://insights.linuxfoundation.org/api/badge/active-contributors?project=freecodecamp&repos=https://github.com/freeCodeCamp/freeCodeCamp)](https://insights.linuxfoundation.org/project/freecodecamp/repository/freecodecamp-freecodecamp)
 
 ## freeCodeCamp.org's open-source codebase and curriculum
 
