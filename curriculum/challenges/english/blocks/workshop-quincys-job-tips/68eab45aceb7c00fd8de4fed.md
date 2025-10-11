@@ -7,7 +7,9 @@ dashedName: step-11
 
 # --description--
 
-Inside the second `section` element, nest an `h2` element with the text `Importance of Networking`. Below this heading, add a block quotation element.
+Inside the second `section` element, nest an `h2` element with the text `Importance of Networking`. 
+
+Below this heading, add a block quotation element with a `cite` attribute with the value `https://www.freecodecamp.org/news/learn-to-code-book/`.
 
 # --hints--
 
