@@ -4590,6 +4590,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
+      },
       "lab-budget-app": {
         "title": "Build a Budget App",
         "intro": [
