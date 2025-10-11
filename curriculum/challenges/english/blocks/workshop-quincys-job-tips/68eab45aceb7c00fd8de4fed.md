@@ -7,7 +7,7 @@ dashedName: step-11
 
 # --description--
 
-step 11 instructions
+Inside the second `section` element, nest an `h2` element with the text `Importance of Networking`. Below this heading, add a block quotation element.
 
 # --hints--
 
@@ -44,14 +44,14 @@ Test 1
         <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
           Can you imagine what it would be like to be a successful developer? To have built software systems that people rely upon?
         </blockquote>  
---fcc-editable-region--
         <p cite="https://www.freecodecamp.org/news/learn-to-code-book/">
-          —Quincy Larson, How to Learn to Code and Get a Developer Job [Full Book]
+          —Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
         </p>
---fcc-editable-region--
       </section>
       <section>
+--fcc-editable-region--
         
+--fcc-editable-region--
       </section>
       <section>
         
