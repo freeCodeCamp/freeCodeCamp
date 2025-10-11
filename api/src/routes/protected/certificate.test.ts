@@ -356,8 +356,9 @@ describe('certificate routes', () => {
       test('should return 400 if certSlug is not allowed', async () => {
         const claimableCerts = [
           Certification.RespWebDesign,
-          Certification.RespWebDesignV9,
-          Certification.JsV9,
+          // TODO: Enable, once these are no longer "upcoming".
+          // Certification.RespWebDesignV9,
+          // Certification.JsV9,
           Certification.JsAlgoDataStruct,
           Certification.FrontEndDevLibs,
           Certification.DataVis,
