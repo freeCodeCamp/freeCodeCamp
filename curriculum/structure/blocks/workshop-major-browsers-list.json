@@ -1,0 +1,11 @@
+{
+  "name": "Build a List of Major Web Browsers",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-major-browsers-list",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68e6698b29e562d21b1d260c", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
