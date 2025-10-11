@@ -6,7 +6,8 @@
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68e707257ea91c2e12d489fb", "title": "Step 1" },
-    { "id": "68e7e729f6d14f69a23786ef", "title": "Step 2" }
+    { "id": "68e7e729f6d14f69a23786ef", "title": "Step 2" },
+    { "id": "68ea7c41f2555e16174e7cfa", "title": "Step 3" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
