@@ -293,6 +293,8 @@ describe('certificate routes', () => {
           },
           isCertMap: {
             isRespWebDesignCert: true,
+            isRespWebDesignCertV9: false,
+            isJavascriptCertV9: false,
             isJsAlgoDataStructCert: false,
             isFrontEndLibsCert: false,
             is2018DataVisCert: false,
@@ -354,6 +356,9 @@ describe('certificate routes', () => {
       test('should return 400 if certSlug is not allowed', async () => {
         const claimableCerts = [
           Certification.RespWebDesign,
+          // TODO: Enable, once these are no longer "upcoming".
+          // Certification.RespWebDesignV9,
+          // Certification.JsV9,
           Certification.JsAlgoDataStruct,
           Certification.FrontEndDevLibs,
           Certification.DataVis,
