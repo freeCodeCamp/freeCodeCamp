@@ -16,7 +16,8 @@
     { "id": "68eaa3593b6ffd019d772a1f", "title": "Step 9" },
     { "id": "68eaa9ef8a0867071f195f59", "title": "Step 10" },
     { "id": "68eab45aceb7c00fd8de4fed", "title": "Step 11" },
-    { "id": "68eab6a2b37d2f13602d0c3f", "title": "Step 12" }
+    { "id": "68eab6a2b37d2f13602d0c3f", "title": "Step 12" },
+    { "id": "68ebe9cd7523d340c0b343d3", "title": "Step 13" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
