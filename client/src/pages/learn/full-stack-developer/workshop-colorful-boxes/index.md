@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Introducto to Design a Set of Colorful Boxes
+title: Introduction to the Design a Set of Colorful Boxes
 block: workshop-colorful-boxes
 superBlock: full-stack-developer
 ---
