@@ -4,7 +4,10 @@
   "dashedName": "workshop-colorful-boxes",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68eaeaf8b317a4294f170f40", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68eaeaf8b317a4294f170f40", "title": "Step 1" },
+    { "id": "68ed661e9f463c155bb677a1", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
