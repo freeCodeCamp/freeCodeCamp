@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Build a String Inspector
+title: Introduction to Build a String Inspector
 block: workshop-string-inspector
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Build a String Inspector
+## Introduction to Build a String Inspector
 
-This page is for the Build a String Inspector
+In this workshop, you will learn how to work with the `includes()` and `slice()` methods by building a string inspector.

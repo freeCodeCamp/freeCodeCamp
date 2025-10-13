@@ -3080,6 +3080,12 @@
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will learn how to work with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
@@ -4986,10 +4992,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-string-inspector": {
-        "title": "Build a String Inspector",
-        "intro": ["Build a String Inspector", ""]
       }
     }
   },
