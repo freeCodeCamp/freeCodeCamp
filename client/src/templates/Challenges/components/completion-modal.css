@@ -101,3 +101,21 @@
     font-size: 1rem;
   }
 }
+
+/* Small viewport: make modal login/signup button icon-only to avoid overflow */
+@media (max-width: 400px) {
+  .completion-modal-login-btn .signup-btn {
+    padding-inline: 0;
+    min-width: 40px;
+    max-width: 40px;
+    justify-content: center;
+  }
+
+  .completion-modal-login-btn .signup-btn .login-btn-text {
+    display: none !important;
+  }
+
+  .completion-modal-login-btn .signup-btn .login-btn-icon {
+    display: inline-block !important;
+  }
+}

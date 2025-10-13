@@ -420,6 +420,34 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   }
 }
 
+/* Small viewport: make the signup/login CTA compact (icon-only) to avoid overflow
+   without changing visual design. Kept conservative to not affect >=401px. */
+@media (max-width: 400px) {
+  .signup-btn {
+    padding-inline: 0; /* remove extra horizontal padding */
+    min-width: var(--header-element-size);
+    max-width: var(--header-element-size);
+    justify-content: center;
+  }
+
+  /* Hide text label and show the icon for login/signup buttons */
+  #universal-nav .login-btn-text,
+  #universal-nav .signup-btn .login-btn-text {
+    display: none !important;
+  }
+
+  #universal-nav .login-btn-icon,
+  .signup-btn .login-btn-icon {
+    display: inline-block !important;
+  }
+
+  /* Ensure the right-side nav doesn't force horizontal scroll */
+  .universal-nav-right {
+    gap: 6px;
+  }
+}
+
+
 /**
  * Handle submenu containers collapsed and expanded states
  */
