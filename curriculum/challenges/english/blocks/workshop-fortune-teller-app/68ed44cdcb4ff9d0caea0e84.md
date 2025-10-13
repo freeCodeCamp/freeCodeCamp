@@ -1,15 +1,14 @@
 ---
-id: 68ed40e9b9a39c757618f302
-title: Step 16
+id: 68ed44cdcb4ff9d0caea0e84
+title: Step 22
 challengeType: 0
-dashedName: step-16
+dashedName: step-22
 ---
 
 # --description--
 
 
-Now you need a main class that will help render the UI dynamically in the DOM.
-Create a class named `Game`. Inside it, add a property called `cards` of type `Card[]`, and for now, initialize it with an empty array.
+Since you’re calling the fetchCardsData() method inside the constructor, you now need to define it inside the class Create a private method named `fetchCardsData`
 
 
 
@@ -452,8 +451,58 @@ enum DrawingType {
   Present = "present",
   Future = "future",
 }
+
+class Game {
+  cards: Card[] = [];
+
+  private elements: {
+    singleCardBtn: HTMLElement;
+    singleCard: HTMLElement;
+    multipleCardsBtn: HTMLElement;
+    multipleCard: HTMLElement;
+    title: HTMLElement;
+    newReadingBtn: HTMLElement;
+    fortuneContainer: HTMLElement;
+    fortuneDescription: HTMLElement;
+    headerTitle: HTMLElement;
+    subTitle: HTMLElement;
+    cardTitle: HTMLElement;
+    description: HTMLElement;
+    text: HTMLElement;
+  }
+
+
+  
+    constructor() {
+      
+    this.elements = {
+      singleCardBtn: getElement("#btn-single-card"),
+      singleCard: getElement(".single_card"),
+      multipleCardsBtn: getElement("#btn-multiple-cards"),
+      multipleCard: getElement(".multiple_card"),
+      title: getElement(".title"),
+      newReadingBtn: getElement(".btn_reveal"),
+      fortuneContainer: getElement(".fortune_container"),
+      fortuneDescription: getElement(".fortune_description"),
+      headerTitle: getElement(".header_title"),
+      subTitle: getElement(".sub_title"),
+      cardTitle: getElement(".desc_title"),
+      description: getElement(".description"),
+      text: getElement(".text"),
+    }
+    
+    this.fetchCardsData();
+    this.initializeEventListeners();
+
+
+    }
+
 --fcc-editable-region--
 
 --fcc-editable-region--
+
+
+}
+
 
 ```
