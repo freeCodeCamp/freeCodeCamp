@@ -4,7 +4,10 @@
   "dashedName": "workshop-bookstore-page",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68e97fe79367ad7b5dd6c9cd", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68e97fe79367ad7b5dd6c9cd", "title": "Step 1" },
+    { "id": "68ebdbacdd3fa474132cc975", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
