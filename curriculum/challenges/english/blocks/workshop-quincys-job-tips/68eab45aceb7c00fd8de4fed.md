@@ -13,10 +13,43 @@ Below this heading, add a block quotation element with a `cite` attribute with t
 
 # --hints--
 
-Test 1
+Your should have an `h2` element nested inside the second section.
 
 ```js
+assert.exists(document.querySelector('main > section:nth-of-type(2) > h2'));
+```
 
+Your `h2` element should have the text `Importance of Networking`.
+
+```js
+const h2El = document.querySelector('main > section:nth-of-type(2) > h2');
+assert.equal(h2El?.innerText.trim(), 'Importance of Networking');
+```
+
+You should have a `blockquote` element nested inside the second section.
+
+```js
+assert.exists(document.querySelector('main > section:nth-of-type(2) > blockquote'));
+```
+
+Your `blockquote` element should be below your `h2` element.
+
+```js
+assert.exists(document.querySelector('main > section:nth-of-type(2) > h2 + blockquote'));
+```
+
+Your `blockquote` element should have a `cite` attribute.
+
+```js
+const blockquoteEl = document.querySelector('main > section:nth-of-type(2) > blockquote');
+assert.exists(blockquoteEl?.getAttribute('cite'));
+```
+
+Your `cite` attribute of the `blockquote` element should have the value `https://www.freecodecamp.org/news/learn-to-code-book/`.
+
+```js
+const blockquoteEl = document.querySelector('main > section:nth-of-type(2) > blockquote');
+assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/news/learn-to-code-book/');
 ```
 
 # --seed--
