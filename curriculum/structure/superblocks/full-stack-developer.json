@@ -33,8 +33,8 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
-            "lecture-working-with-text-and-time-semantic-elements",
             "workshop-major-browsers-list",
+            "lecture-working-with-text-and-time-semantic-elements",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
