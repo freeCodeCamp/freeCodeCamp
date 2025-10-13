@@ -1,13 +1,13 @@
 ---
-id: 68eca2a795b333ca5fee30a8
-title: Step 10
+id: 68eca3cfeebef2cd8cc5f814
+title: Step 11
 challengeType: 0
-dashedName: step-10
+dashedName: step-11
 ---
 
 # --description--
 
-Now create a second book card. Add another `<div>` with the `class` attribute set to `card`. Notice how you can reuse the same class name for multiple elements to apply consistent styling.
+step 11 instructions
 
 # --hints--
 
@@ -31,6 +31,7 @@ Test 1
           <p>This is an epic story of Sally and her dog Rex as they navigate through other worlds.</p>
            <button class="btn">Buy Now</button>
      </div>
+     <div class="card"></div>
 </div>
 --fcc-editable-region--
 ```
