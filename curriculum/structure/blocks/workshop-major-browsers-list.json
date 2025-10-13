@@ -4,7 +4,14 @@
   "dashedName": "workshop-major-browsers-list",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68e6698b29e562d21b1d260c", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68e6698b29e562d21b1d260c", "title": "Step 1" },
+    { "id": "68ecfa0f03d88990bb96a33c", "title": "Step 2" },
+    { "id": "68ecfa1003d88990bb96a33d", "title": "Step 3" },
+    { "id": "68ecfa1003d88990bb96a33e", "title": "Step 4" },
+    { "id": "68ecfa1003d88990bb96a33f", "title": "Step 5" },
+    { "id": "68ecfa1003d88990bb96a340", "title": "Step 6" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
