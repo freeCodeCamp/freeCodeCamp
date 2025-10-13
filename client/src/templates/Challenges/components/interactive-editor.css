@@ -1,0 +1,13 @@
+.interactive-editor-wrapper {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.sp-cm .cm-gutters {
+  color: var(--gray-45);
+}
+
+.sp-tab-button:hover {
+  background-color: var(--gray-10);
+  color: var(--gray-90) !important;
+}
