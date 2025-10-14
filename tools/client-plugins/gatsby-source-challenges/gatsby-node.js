@@ -1,5 +1,6 @@
 const path = require('path');
 const chokidar = require('chokidar');
+const { getSuperblockStructure } = require('../../../curriculum/file-handler');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -108,15 +109,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     Object.keys(superBlockToFilename).forEach(superBlock => {
       const filename = superBlockToFilename[superBlock] || superBlock;
       try {
-        const structurePath = path.resolve(
-          curriculumPath,
-          '..',
-          '..',
-          'structure',
-          'superblocks',
-          `${filename}.json`
-        );
-        const structure = require(structurePath);
+        const structure = getSuperblockStructure(filename);
 
         const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
         const nodeContent = JSON.stringify(structure);
@@ -135,7 +128,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         });
       } catch (err) {
         reporter.warn(
-          `Could not load structure for ${superBlock} (${filename}.json): ${err.message}`
+          `Could not load structure for ${superBlock} (${filename}): ${err.message}`
         );
       }
     });
