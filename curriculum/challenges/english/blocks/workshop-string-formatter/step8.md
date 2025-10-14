@@ -1,0 +1,37 @@
+
+---
+
+### Step 8 – `step-8.md`
+
+```md
+---
+id: 68e4276483b0c71658aab1d1
+title: Step 8
+challengeType: 0
+dashedName: step-8
+demoType: onClick
+---
+
+# --description--
+
+Convert your cleaned string to lowercase using `toLowerCase()`.  
+
+Create `lowerCaseInput = cleanedInput.toLowerCase()` and log it.
+
+# --hints--
+
+You should define and log `lowerCaseInput`.
+
+# --seed--
+
+## --seed-contents--
+
+```js
+const userInput = "   Hello World!   ";
+const cleanedInput = userInput.trim();
+const upperCaseInput = cleanedInput.toUpperCase();
+// --fcc-editable-region--
+const lowerCaseInput = cleanedInput.toLowerCase();
+console.log("Result of using the toLowerCase() method:", lowerCaseInput);
+// --fcc-editable-region--
+```
