@@ -413,7 +413,7 @@
             "lab-symmetric-difference",
             "lab-value-remover-function",
             "lab-matching-object-filter",
-            "lab-sum-all-primes-calculator",
+            "lab-prime-number-sum-calculator",
             "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
             "lab-all-true-property-validator",
@@ -719,6 +719,7 @@
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
+            "workshop-email-simulator",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
