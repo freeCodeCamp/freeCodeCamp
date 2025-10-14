@@ -2628,6 +2628,12 @@
           "In this lab, you'll design a contact form in HTML and style it using CSS."
         ]
       },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+        ]
+      },
       "lab-feature-selection": {
         "title": "Design a Feature Selection Page",
         "intro": [
@@ -4986,10 +4992,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-game-settings-panel": {
-        "title": "Build a Game Settings Panel",
-        "intro": ["Build a Game Settings Panel", ""]
       }
     }
   },
