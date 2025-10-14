@@ -29,7 +29,7 @@ const table = document.querySelectorAll('table')?.[1];
 const tbody = table?.querySelector('tbody');
 const tableRow = tbody?.querySelectorAll('tr')?.[2];
 assert.strictEqual(
-  tableRow?.querySelector('th')?.innerText,
+  tableRow?.querySelector('th')?.innerText.trim(),
   'Credit The outstanding balance on our credit card.'
 );
 ```
