@@ -321,6 +321,26 @@
     {
       "id": "68d30fc57588d97fd3027b30",
       "title": "Challenge 79: Navigator"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd62",
+      "title": "Challenge 80: Email Sorter"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd63",
+      "title": "Challenge 81: Nth Prime"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd64",
+      "title": "Challenge 82: SpOoKy~CaSe"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd65",
+      "title": "Challenge 83: Signature Validation"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd66",
+      "title": "Challenge 84: Infected"
     }
   ]
 }
