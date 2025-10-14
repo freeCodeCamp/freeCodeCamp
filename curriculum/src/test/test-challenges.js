@@ -46,10 +46,7 @@ vi.mock(
     return {
       ...actual,
       checkTSServiceIsReady: () => Promise.resolve(true),
-      compileTypeScriptCode: c => {
-        // TODO: move the '\n' replacement into the compiler
-        const code = (c || '').slice() || '\n';
-
+      compileTypeScriptCode: code => {
         try {
           const compiled = compiler.compile(code, 'file.ts');
           return compiled.result;

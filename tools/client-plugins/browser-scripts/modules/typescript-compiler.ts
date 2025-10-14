@@ -65,10 +65,14 @@ export class Compiler {
     ).compilerHost;
   }
 
-  compile(code: string, fileName: string) {
+  compile(rawCode: string, fileName: string) {
     if (!this.tsEnv || !this.compilerHost) {
       throw Error('TypeScript environment not set up');
     }
+    // If we try to update or create an empty file, the environment will become
+    // permanently unable to interact with that file. The workaround is to create
+    // a file with a single newline character.
+    const code = rawCode || '\n';
     // TODO: If creating the file fresh each time is too slow, we can try checking
     // if the file exists and updating it if it does.
     this.tsEnv.createFile(fileName, code);
