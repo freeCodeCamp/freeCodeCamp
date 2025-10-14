@@ -3604,10 +3604,10 @@
           "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
         ]
       },
-      "lab-sum-all-primes-calculator": {
+      "lab-prime-number-sum-calculator": {
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
-          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "lab-range-based-lcm-calculator": {
