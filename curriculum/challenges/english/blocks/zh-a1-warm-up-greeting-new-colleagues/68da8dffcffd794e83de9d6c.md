@@ -1,11 +1,11 @@
 ---
 id: 68da8dffcffd794e83de9d6c
-title: Task 13
+title: Task 10
 challengeType: 19
-dashedName: task-13
+dashedName: task-10
 ---
 
-<!-- (Audio) Zhou Yongjie: 你们好 -->
+<!-- (Audio) Chen Na: 你们好 (nǐ men hǎo) -->
 
 # --instructions--
 
@@ -15,7 +15,7 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-What is Zhou Yongjie saying to greet a group of people?
+What is Chen Na saying to greet a group of people?
 
 ## --answers--
 
@@ -23,7 +23,7 @@ What is Zhou Yongjie saying to greet a group of people?
 
 ### --feedback--
 
-This is a greeting to one person, but Zhou Yongjie is greeting more than one.
+This is a greeting to one person, but Chen Na is greeting more than one.
 
 ---
 
@@ -43,7 +43,7 @@ This form is not standard in Chinese.
 
 ### --feedback--
 
-This also means "hello, everyone", but Zhou Yongjie uses a different phrase.
+This also means "hello, everyone", but Chen Na uses a different phrase.
 
 ## --video-solution--
 
@@ -51,7 +51,7 @@ This also means "hello, everyone", but Zhou Yongjie uses a different phrase.
 
 # --explanation--
 
-The question is asking what Zhou Yongjie is saying to greet **a group of people**.
+The question is asking what Chen Na is saying to greet **a group of people**.
 
 `你好 (nǐ hǎo)` is a greeting to one person, while `您好 (nín hǎo)` is a polite greeting to one person. `您们好 (nín men hǎo)` is not standard in Chinese; `您` is polite singular, not usually pluralized.
 
