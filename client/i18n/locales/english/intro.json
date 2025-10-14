@@ -2208,6 +2208,10 @@
           "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": ["Build a List of Major Web Browsers", ""]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
@@ -4986,10 +4990,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-major-browsers-list": {
-        "title": "Build a List of Major Web Browsers",
-        "intro": ["Build a List of Major Web Browsers", ""]
       }
     }
   },
