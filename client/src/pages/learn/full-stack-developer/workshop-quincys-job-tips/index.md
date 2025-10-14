@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Quincy's Job Tips Page
 
-This page is for the Build a Quincy's Job Tips Page
+In this workshop, you will practice working with semantic HTML by using the `q`, `blockquote` and `cite` elements.
