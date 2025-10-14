@@ -6692,7 +6692,10 @@
       },
       "workshop-parent-teacher-conference-form": {
         "title": "Design a Parent Teacher Conference Form",
-        "intro": ["Design a Parent Teacher Conference Form", ""]
+        "intro": [
+          "In this workshop, you will learn how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll learn concepts like <code>:before</code>, <code>transform</code>, and more."
+        ]
       },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
