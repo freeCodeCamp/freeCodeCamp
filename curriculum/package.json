@@ -43,7 +43,7 @@
     "@babel/register": "7.23.7",
     "@types/polka": "^0.5.7",
     "@types/string-similarity": "^4.0.2",
-    "@typescript/vfs": "^1.6.1",
+    "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.1",
     "@vitest/ui": "^3.2.4",
     "chai": "4.4.1",
     "glob": "8.1.0",
@@ -60,6 +60,7 @@
     "readdirp": "3.6.0",
     "sirv": "^3.0.2",
     "string-similarity": "4.0.4",
+    "typescript-5.9.2": "npm:typescript@5.9.2",
     "vitest": "^3.2.4"
   }
 }
