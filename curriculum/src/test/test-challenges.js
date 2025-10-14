@@ -33,10 +33,10 @@ vi.mock(
   '../../client/src/templates/Challenges/utils/typescript-worker-handler',
   async importOriginal => {
     const actual = await importOriginal();
-    // TODO: use one of the specific TS + VFS versions, rather than the one used
-    // in this project.
-    const tsvfs = await import('@typescript/vfs');
-    const ts = await import('typescript');
+
+    // ts and tsvfs must match the versions used in the typescript-worker.
+    const tsvfs = await import('@typescript/vfs-1.6.1');
+    const ts = await import('typescript-5.9.2');
     // use the same TS compiler as the client
     const tsCompiler = await import(
       '../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
