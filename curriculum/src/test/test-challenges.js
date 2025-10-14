@@ -33,10 +33,31 @@ vi.mock(
   '../../client/src/templates/Challenges/utils/typescript-worker-handler',
   async importOriginal => {
     const actual = await importOriginal();
+    // TODO: use one of the specific TS + VFS versions, rather than the one used
+    // in this project.
+    const tsvfs = await import('@typescript/vfs');
+    const ts = await import('typescript');
+    // use the same TS compiler as the client
+    const tsCompiler = await import(
+      '../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
+    );
+    const compiler = new tsCompiler.Compiler(ts, tsvfs);
+    await compiler.setup();
     return {
       ...actual,
       checkTSServiceIsReady: () => Promise.resolve(true),
-      compileTypeScriptCode: code => code
+      compileTypeScriptCode: c => {
+        // TODO: move the '\n' replacement into the compiler
+        const code = (c || '').slice() || '\n';
+
+        try {
+          const compiled = compiler.compile(code, 'file.ts');
+          return compiled.result;
+        } catch (e) {
+          console.error('TypeScript compilation error:', e);
+          throw e;
+        }
+      }
     };
   }
 );
