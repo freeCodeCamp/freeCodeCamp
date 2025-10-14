@@ -1,0 +1,1856 @@
+[33mcommit c1ce0194250006e9c52ced792fc9f2af5fada76d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32madd-flexbox-workshop[m[33m, [m[1;31morigin/add-flexbox-workshop[m[33m)[m
+Author: Sebastian <214313960+sebacodes@users.noreply.github.com>
+Date:   Mon Oct 13 22:01:32 2025 +0000
+
+    fix: typo on index.md file
+
+[33mcommit 8091449933757de9ca860d91ba4aab99ac424373[m
+Author: Sebastian <214313960+sebacodes@users.noreply.github.com>
+Date:   Mon Oct 13 21:47:25 2025 +0000
+
+    fix: typos, workshop order, intro and step 1 hints and test
+
+[33mcommit 89d34a775e6cab915bccab497fe499c1c0b4a251[m
+Author: Sebastian <214313960+sebacodes@users.noreply.github.com>
+Date:   Mon Oct 13 01:18:03 2025 +0000
+
+    add setp 1 to the workshop
+
+[33mcommit bf7f622fe9e405b22bdac5c9810950994a8f69fc[m
+Author: Sebastian <214313960+sebacodes@users.noreply.github.com>
+Date:   Sun Oct 12 00:41:04 2025 +0000
+
+    fix typo on workshop title
+
+[33mcommit de1fc4d1142583404931e8d3fb4877f0c1297786[m
+Author: Sebastian <214313960+sebacodes@users.noreply.github.com>
+Date:   Sat Oct 11 23:44:49 2025 +0000
+
+    add second flexbox workshop
+
+[33mcommit 7b333597466b07e6172f21f298f0377c3612ef25[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Sat Oct 11 19:58:44 2025 +0530
+
+    chore: use active contributions badge
+
+[33mcommit 69a0d1d8c8239d92907e39cad95328df253f1a14[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Sat Oct 11 19:54:53 2025 +0530
+
+    chore: cleanup badges
+
+[33mcommit 9932f6ea721e70352fd76fd5a5f49d9815fb5ff0[m
+Author: minjo70 <175584197+minjo70@users.noreply.github.com>
+Date:   Fri Oct 10 16:59:16 2025 -0600
+
+    feat(curriculum): add interactive examples to target attribute lesson (#62674)
+
+[33mcommit fbcd965f1554814a1708f6f45fa8d292189f7c8a[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 23:07:56 2025 +0100
+
+    feat(curriculum): Add interactive examples to description lists lesson (#62688)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit d3b35ed0f6c762bc33d747f42d0abff89301014d[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 23:07:18 2025 +0100
+
+    feat(curriculum): Add interactive examples to link states lesson (#62676)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit b81d4252a3c5f605ab960669f89aba5d2dda01af[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:11:10 2025 +0100
+
+    feat(curriculum): Add interactive examples to types of buttons lesson (#62708)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit b83c0cd5b5610c92fe550b39c6e12bc98a115855[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:09:53 2025 +0100
+
+    feat(curriculum): Add interactive examples for form elements lesson (#62706)
+
+[33mcommit db55392e615a3a62310d786127b79e55ddc975dc[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:09:06 2025 +0100
+
+    feat(curriculum): Add interactive examples for u,s, ruby elements lesson (#62704)
+
+[33mcommit e0c0b86020949b0f2c5c3b86123dc42fbb51bf21[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:08:34 2025 +0100
+
+    feat(curriculum): Add interactive examples to code element lesson (#62703)
+
+[33mcommit a124dd0aea24ecb4396fa340089cb036f0d4177e[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:08:08 2025 +0100
+
+    feat(curriculum): Add interactive examples to sup & sub elements lesson (#62701)
+
+[33mcommit 747b1ebebd08fbd84d55947d1cdf86ed4d63729b[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:07:35 2025 +0100
+
+    feat(curriculum): Add interactive examples to date/time lesson (#62699)
+
+[33mcommit b6588b005ca8908e46efb6cc3be34eb3c7a2c740[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 22:06:04 2025 +0100
+
+    feat(curriculum):  Add interactive example to address element lesson (#62698)
+
+[33mcommit feffa6ef35b02d679ed8c08cc573738516e9168d[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:28:47 2025 +0100
+
+    feat(curriculum): Add interactive examples to abbreviations lesson (#62693)
+
+[33mcommit ebf8c688f7efaec307739ea98e5ed35d02daacdf[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:28:20 2025 +0100
+
+    feat(curriculum): Add interactive examples to quotes lesson (#62690)
+
+[33mcommit d2c76cf0db9257ee3a049ee7379ff6138129e0e6[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:25:55 2025 +0100
+
+    feat(curriculum): Add interactive examples to strong element lesson (#62686)
+
+[33mcommit 3e22711499a3c18bb87615b1e34ded80d734a0de[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:25:11 2025 +0100
+
+    feat(curriculum): Add interactive examples to em element lesson (#62684)
+
+[33mcommit f0ca02978ffecfbaf457e29f5b89a39f5a1f1e29[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:24:21 2025 +0100
+
+    feat(curriculum): Add interactive examples to presentational html lesson (#62682)
+
+[33mcommit 85db5401a333c4d7529b3009903df312815fd039[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 20:21:58 2025 +0100
+
+    feat(curriculum): Add interactive example to Good Structural Hierarchy lesson (#62679)
+
+[33mcommit ea11f2e12d1dab347ef7468102b5d48519e92a49[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Fri Oct 10 17:38:55 2025 +0200
+
+    fix(tools): adjust challenge editor terminal path to match new curriculum structure (#62573)
+
+[33mcommit 899351436141b1a06f62f4adfd1f3fa3d09aecc6[m
+Author: Amit Upadhyay <2648amitupadhyay@gmail.com>
+Date:   Fri Oct 10 18:21:31 2025 +0530
+
+    fix(curriculum): add a description and examples of array flattening (#62552)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit f3239ffc2260efb0f286a38d3c79ebef8a36e4f8[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Oct 10 14:46:49 2025 +0200
+
+    fix(client): non-serializable-payload error (#62664)
+
+[33mcommit 7f89b11e4e86e85ba427855c6b1be3223a89ef20[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Fri Oct 10 11:20:49 2025 +0100
+
+    feat(curriculum): Add interactive examples to iframe element lesson (#62656)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 6fc368404985a197095db80c8c67761e493483a0[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Oct 10 11:58:26 2025 +0200
+
+    fix(tools): prevent create-new-x overwriting old projects (#62621)
+
+[33mcommit f5361f4341141b0d0f7eeb58603a7229ff4ac9a5[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Oct 10 07:48:27 2025 +0200
+
+    fix(client): apply i18n prefix to test-runner (#62523)
+
+[33mcommit f6db89fdbcea323a3cb227558ac1d69838523285[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Oct 10 05:04:34 2025 +0200
+
+    feat: relax challenge auditor (#62601)
+
+[33mcommit 4fc3277aef55cadd95fb29aec259d704309db5b1[m
+Author: minjo70 <175584197+minjo70@users.noreply.github.com>
+Date:   Thu Oct 9 20:29:17 2025 -0600
+
+    fix(curriculum): removed a misplaced comma (#62660)
+
+[33mcommit 3746ab841310d8499af5f27031e4211363f35bf6[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Fri Oct 10 09:03:53 2025 +0700
+
+    fix(curriculum): add cert projects to RWD checkpoint cert (#62640)
+
+[33mcommit c808f7aab529cc16332493cc4aea11504686e239[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Fri Oct 10 08:58:17 2025 +0700
+
+    fix(config): change LinkedIn ID of JS checkpoint cert (#62636)
+
+[33mcommit 613f55e3ea28894fbf206f80262594087a2470b6[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Oct 10 00:03:57 2025 +0100
+
+    feat(curriculum): Add interactive examples to replaced elements lesson (#62654)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 63ef93a1db211dfd919c43447374b9fb9902d5cb[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 22:59:25 2025 +0100
+
+    feat(curriculum): Add interactive examples to svg lesson (#62651)
+
+[33mcommit d960b48c0ef65aab967633766aa28d138eb39e3d[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 22:58:51 2025 +0100
+
+    feat(curriculum): Add interactive examples to the HTML audio & video lesson (#62648)
+
+[33mcommit eb59d7e3e268970e505921b9299294e8847c47b3[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 22:58:12 2025 +0100
+
+    feat(curriculum): Add interactive example to script element lesson (#62647)
+
+[33mcommit d584d64929ee6aa8d3848965536b585a080aac16[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 22:57:38 2025 +0100
+
+    feat(curriculum): Add interactive examples to HTML entities lesson (#62646)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 4660bcd793c67bb1e1a34d12cd430ea8e1c843db[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 21:55:23 2025 +0100
+
+    feat(curriculum): Add interactive examples to ids and classes lesson (#62639)
+
+[33mcommit 02e4292f90b7f07a8eafabfc9014f521068e3970[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 17:36:19 2025 +0100
+
+    feat(curriculum): Add interactive examples to div lesson (#62634)
+
+[33mcommit b4ccd9db62572cf08b998029fd8fba7c56bf5c6b[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 17:36:11 2025 +0100
+
+    fix(curriculum): Add interactive examples to what are attributes lesson (#62630)
+
+[33mcommit f14934c3266bd9191eb474ca04dc0c0f1172f0d3[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 17:35:55 2025 +0100
+
+    feat(curriculum): Add interactive examples to intro HTML lesson (#62627)
+
+[33mcommit 4afd65e683fa6a88104b56b79be8aef46fc2feae[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Thu Oct 9 10:54:56 2025 -0500
+
+    feat(curriculum): add remaining new superblocks (4 of them) (#62611)
+
+[33mcommit 2cb3baba7f843f67fd9ad19f355d2ca40abe8ae2[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Thu Oct 9 17:12:47 2025 +0200
+
+    fix(gha): use updated test command in submodule CI (#62633)
+
+[33mcommit 3f4a399aa05004e1c356e3aeed58a8bf4527a410[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 14:04:22 2025 +0100
+
+    fix(curriculum): correct spelling from begining to beginning (#62628)
+
+[33mcommit ee86bccdc7723820ce4036b1d1cb084c47eb132c[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 11:54:10 2025 +0100
+
+    fix(curriculum): .trim() to textContent for workshop-accessibility-quiz (#62615)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit e1e2292b698484d2bc1f8fe67e0cba89625f0f9d[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Thu Oct 9 12:42:09 2025 +0200
+
+    fix(curriculum): filter by challengeId when building blocks (#62622)
+
+[33mcommit 9c31ffdf8de1fef29933259436dc2bc020fa9649[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 11:35:59 2025 +0100
+
+    fix(curriculum): add .trim() to  textContent for workshop-cafe-menu (#62616)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit fa80f066ad81b9707ea5db30318be13d977d3d93[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Oct 9 08:16:40 2025 +0100
+
+    fix(curriculum): add .trim() to textContent for workshop-final-exams-table (#62609)
+
+[33mcommit b707f80d63196ba28ac9167c7a82c5498a3fa941[m
+Author: swdev33 <crissiepreis@gmail.com>
+Date:   Thu Oct 9 09:07:12 2025 +0200
+
+    feat(client, api): bluesky profile link (#62400)
+    
+    Co-authored-by: swdev33 <18295918+swdev33@users.noreply.github.com>
+
+[33mcommit 137b371b34c2cf0bede71930c51794ea4fbefb27[m
+Author: a-mamal <mamalikidou.anastasia@gmail.com>
+Date:   Thu Oct 9 09:59:49 2025 +0300
+
+    fix(curriculum): remove unnecessary punctuation from Computer Basics Quiz answers (#62588)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit d8f3dc4dec20ed7307aa32f2378cc8c8ad564dfc[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Thu Oct 9 13:48:50 2025 +0700
+
+    fix(curriculum): punctuation and formatting issues in English tasks (#62571)
+
+[33mcommit 082bff570bfebba2b2180c7f414544f3147bbda6[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Thu Oct 9 06:05:44 2025 +0200
+
+    feat(api): add moderation schema challengesAwarded field (#62490)
+
+[33mcommit 7c20027732976f31e08319660ac5caa236ea7cd6[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Thu Oct 9 06:04:03 2025 +0200
+
+    feat(client): add challenge interactive editor (#61805)
+    
+    Co-authored-by: sembauke <semboot699@gmail.com>
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit 03d9d14d2d759136cbb8158543c97a1b75b74044[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Wed Oct 8 21:33:55 2025 +0100
+
+    fix(curriculum): correct spelling from accordng to according (#62610)
+
+[33mcommit ea3e22f1af27a2a4e33dcb29c6070b03f51ff4c6[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Wed Oct 8 21:24:44 2025 +0100
+
+    fix(curriculum): add .trim() to textContent assertions (#62608)
+
+[33mcommit a9fab953611926c0abb1229e9e134cc4c208c92c[m
+Author: Niraj Nandish <nirajnandish@icloud.com>
+Date:   Wed Oct 8 23:54:21 2025 +0530
+
+    feat(curriculum): RWD checkpoint certification (#62039)
+    
+    Co-authored-by: moT01 <20648924+moT01@users.noreply.github.com>
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 4a1d74304488628a813beefb393784cca0fe0532[m
+Author: Diem-Trang Pham <6422507+pdtrang@users.noreply.github.com>
+Date:   Wed Oct 8 12:30:37 2025 -0500
+
+    fix(curriculum): add empty space to code example Toggle Text - step 13 (#62604)
+
+[33mcommit dd43d979249bff0b06044ad856e34fb9a1367b70[m
+Author: Ahmad Abdolsaheb <ahmad.abdolsaheb@gmail.com>
+Date:   Wed Oct 8 20:00:20 2025 +0300
+
+    fix(client): update 25 tier ab test (#62553)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit d282d0aa64a647ec0af307ae9260260770f57b8b[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Wed Oct 8 22:15:49 2025 +0530
+
+    chore(i18n,client): processed translations (#62595)
+
+[33mcommit 863e79a21e0dd42ad9410d2353efa1bdab5032ca[m
+Author: Shubh Srivastava <123496162+Shubh-Srivastava-5911@users.noreply.github.com>
+Date:   Wed Oct 8 13:07:47 2025 +0530
+
+    fix(curriculum): test case improvement for CSS Lab "Build a moon orbit" (#62521)
+    
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 8b8e27bf37631ff6bca4d9d313b61ab1dd69c0d0[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Wed Oct 8 20:26:48 2025 +1300
+
+    fix(curriculum): test for unique characters (#62544)
+
+[33mcommit 8238495c8b3e6f88a22f5781798164dd5e3dd0fb[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Wed Oct 8 13:31:59 2025 +0700
+
+    fix(client): add challenge title to exam download page (#62584)
+
+[33mcommit 677ca70eedf0dd82703ac1fd0243b9a2a6bf43ef[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Tue Oct 7 23:27:57 2025 +0200
+
+    feat(client): add 3 disclosure cde for rdb (#62178)
+    
+    Co-authored-by: Ahmad Abdolsaheb <ahmad.abdolsaheb@gmail.com>
+
+[33mcommit 940a38127b0ceb71cc09d23e48c57caf3c92c8ae[m
+Author: Robert Jarman <robertpj235@gmail.com>
+Date:   Tue Oct 7 13:33:57 2025 -0400
+
+    fix(curriculum): add missing ')' to Build a User Configuration Manager test (#62580)
+
+[33mcommit 1b4dbd19569f063ba9fe3bee5cb33ece00cb960b[m
+Author: Nielda Karla <90112119+nieldakarla@users.noreply.github.com>
+Date:   Tue Oct 7 14:18:00 2025 -0300
+
+    feat(Curriculum) Add A1 Spanish Module 1 (#62201)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+    Co-authored-by: Estefania Cassingena Navone <85124911+estefaniacn@users.noreply.github.com>
+    Co-authored-by: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+
+[33mcommit 9e3fcde50dd657e472a6d93c0170a119d4760f02[m
+Author: Abiram <131433061+abiramcodes@users.noreply.github.com>
+Date:   Tue Oct 7 22:22:07 2025 +0530
+
+    fix(curriculum): fix typo in lab-user-config-manager (#62576)
+
+[33mcommit 1343692a361fd1abd8c5f99ee0110198e1697028[m
+Author: Dario <105294544+Dario-DC@users.noreply.github.com>
+Date:   Tue Oct 7 18:05:54 2025 +0200
+
+    fix(curriculum): Python OOP lessons order (#62575)
+
+[33mcommit cf6dbc02182583ed9f09934919fc385a8020853a[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Tue Oct 7 16:46:52 2025 +0200
+
+    fix(api): can take exam if attempt not expired (#62543)
+
+[33mcommit 5228e6818c95703eb0f054b33fb333d1d56e307e[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Wed Oct 8 02:43:20 2025 +1300
+
+    fix(curriculum): specify min and max restrictions for House Painting (#61794)
+    
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 4d4418f1583a053d0d334b6e078a2fc254d485d3[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Wed Oct 8 02:02:28 2025 +1300
+
+    fix(curriculum): spacing and backticks (#62565)
+
+[33mcommit f184da462b5e76622ff73e888bac6fa5b3524642[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Oct 7 13:26:07 2025 +0200
+
+    fix(ci): upload client without compression (#62570)
+
+[33mcommit 806be69c887c30190ebac0f4d947b4b16fb93e09[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Tue Oct 7 11:43:27 2025 +0200
+
+    chore: initiate replica with defined host (#62477)
+
+[33mcommit c8aeac5ce86b126ac989b83b282543507bb41a40[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Tue Oct 7 01:12:47 2025 -0700
+
+    feat(curriculum):  add accessibility table workshop (#62161)
+    
+    Co-authored-by: Dario <105294544+Dario-DC@users.noreply.github.com>
+
+[33mcommit d488e7cbde399ff8b5aa8db75633fdba91c11d21[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Oct 7 10:07:45 2025 +0200
+
+    chore: simplify lintstaged config (#62550)
+
+[33mcommit 3cbe2ab8b1dc514a82310a2f9bc267a4ae1be1e6[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Tue Oct 7 10:49:41 2025 +0530
+
+    fix(tools): consolidate docker compose setup (#62525)
+
+[33mcommit f002f1b83599fb39a06baa8935cdc5791d93bf61[m
+Author: Ezoh Zhang <104738718+errantpianist@users.noreply.github.com>
+Date:   Mon Oct 6 19:33:52 2025 +0100
+
+    fix(curriculum): enforce variable usage in sentence maker lab (#62078)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 0d7de236a65ef70828f12992bd2de1fc3bb36888[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Oct 7 07:00:03 2025 +1300
+
+    fix(curriculum): typo in closed captions (#62549)
+
+[33mcommit 4ce5afffe9c286c053b79c15fb516be1f291caa5[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Oct 7 06:59:08 2025 +1300
+
+    fix(curriculum): typos, punctuation, missing words (#62537)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 5b045aa1748e72fdd248949accfdf631247cc8c6[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Mon Oct 6 19:11:33 2025 +0530
+
+    chore(i18n,client): processed translations (#62551)
+
+[33mcommit 7dd74aa4e6c98cd6a0a81d337281e27847706266[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Mon Oct 6 15:07:48 2025 +0300
+
+    fix(curriculum): updates to A2 english curriculum block 7 (#62181)
+
+[33mcommit 3176f36bd261ea90bc29e908a57db17807f14a3a[m
+Author: l3onhard <l3onhard@users.noreply.github.com>
+Date:   Mon Oct 6 13:54:04 2025 +0200
+
+    fix(curriculum): add brief explanation of strings (#62495)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit a389bc7364a52a0db5b43c4f5b7e25df1f742394[m
+Author: Yusuf Can Aşur <67542813+yusufasur@users.noreply.github.com>
+Date:   Mon Oct 6 14:36:09 2025 +0300
+
+    fix(curriculum): correct example abbreviation (#62534)
+
+[33mcommit afdbf9913f7f325a175a273c7791ba0f22b5f161[m
+Author: Satyam Kumar Jha <83828535+satyam536@users.noreply.github.com>
+Date:   Mon Oct 6 16:24:38 2025 +0530
+
+    fix(curriculum): replace comma with semicolon in toString method example (#62542)
+
+[33mcommit e7c939985780198fe48ae8b78750aa70abf2da11[m
+Author: a-mamal <mamalikidou.anastasia@gmail.com>
+Date:   Mon Oct 6 13:09:23 2025 +0300
+
+    fix(curriculum): remove unnecessary punctuation from MCQ answers (#62536)
+
+[33mcommit 9a399bf67d0b1cdb2c67097432fac28b4ca240e1[m
+Author: Yusuf Can Aşur <67542813+yusufasur@users.noreply.github.com>
+Date:   Mon Oct 6 13:07:05 2025 +0300
+
+    fix(curriculum): correct placeholder text example (#62533)
+
+[33mcommit 9abf0c970c725715ae3c34ad4e27a21468c05920[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Mon Oct 6 11:37:40 2025 +0200
+
+    feat(api): reuse exam generations (#62459)
+
+[33mcommit 8a6ae7a8ba6fccb372e3bf92a30b3fb7b70545b8[m
+Author: Mrugesh Mohapatra <noreply@mrugesh.dev>
+Date:   Mon Oct 6 14:30:45 2025 +0530
+
+    fix: update pnpm
+
+[33mcommit c0fa2ca4249e6bc6da4e9f438ca40b6e85598e13[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Mon Oct 6 08:57:00 2025 +0300
+
+    fix(curriculum): updates to A2 english curriculum block 8 (#62364)
+    
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+
+[33mcommit fe848a071d16fa915656bd2ad356359ccb7565e3[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Mon Oct 6 07:23:02 2025 +0200
+
+    feat(curriculum): add content to python chapter review (#62440)
+
+[33mcommit 9d5580128d664c26f5c79c5252d483aa9bb10b79[m
+Author: Mridul <141915155+mriduldoeswork@users.noreply.github.com>
+Date:   Sun Oct 5 14:35:18 2025 +0530
+
+    fix(curriculum): correct typo in step-9 of Tailwind Pricing Component (#62516)
+
+[33mcommit a6cdf5ca92e3958060c79229a4c35a0840f781e5[m
+Author: Diem-Trang Pham <6422507+pdtrang@users.noreply.github.com>
+Date:   Sun Oct 5 03:05:16 2025 -0500
+
+    fix(curriculum): improve instructions of  Library Manager step 5 and 11 (#62499)
+
+[33mcommit 1548b7ec2a4592fcea9d4861c1848ecb21310e4a[m
+Author: Vivaan Teotia <60779432+dragon-slayer27@users.noreply.github.com>
+Date:   Sun Oct 5 00:03:36 2025 +0530
+
+    fix(curriculum): clarify expected input (#62493)
+
+[33mcommit 299e1771feaafeb9f329a27dfcef2541d3263a8a[m
+Author: l3onhard <l3onhard@users.noreply.github.com>
+Date:   Sat Oct 4 18:40:32 2025 +0200
+
+    fix(curriculum): remove duplicate tests in daily coding challenge 2025 10 03 (#62510)
+
+[33mcommit d230b45f5d947462ea2c5094a878e12b34c572e5[m
+Author: Alifa Ara <alifaaraheya@gmail.com>
+Date:   Sat Oct 4 12:38:12 2025 -0400
+
+    fix(curriculum): Clarify OS as operating system in Python intro lesson (#62500)
+
+[33mcommit ef610dd36c1ce2ef429d0e9d513ccb0a957212e4[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Sat Oct 4 01:55:33 2025 +0530
+
+    fix(tools): s/MailHog/Mailpit/g (#62481)
+
+[33mcommit 034d6b1569f9175f8733eb6b9320e40f174041e2[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Sat Oct 4 00:50:59 2025 +0700
+
+    feat(curriculum): JS checkpoint cert (#62188)
+    
+    Co-authored-by: moT01 <20648924+moT01@users.noreply.github.com>
+
+[33mcommit 1a6fdad624d15ef96021e6996f9dd76d36667852[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Oct 3 18:21:52 2025 +0200
+
+    feat(curriculum): add Build an HTML Audio and Video Player lab (#62460)
+
+[33mcommit 1a3dbe46d885b9e2bbe10b9a0269ddd1dfa48a44[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Oct 3 18:16:45 2025 +0200
+
+    feat(curriculum): add lab feature selection to full stack (#62289)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit 0a9e3a8360ab2f51fd0abaa4ea164ceff2121b69[m
+Author: Mrugesh Mohapatra <noreply@mrugesh.dev>
+Date:   Fri Oct 3 16:19:50 2025 +0530
+
+    fix: add seeding script to root
+
+[33mcommit 7ff864149c0447179a083f58c73130ba80e056b5[m
+Author: Mrugesh Mohapatra <noreply@mrugesh.dev>
+Date:   Fri Oct 3 15:07:18 2025 +0530
+
+    fix(client): update CTA for daily challenges
+
+[33mcommit d7f1da61e4b34ca35371d26b4cf4d4b26446795c[m
+Author: Sajid Hasan <sajidhasan2641@gmail.com>
+Date:   Fri Oct 3 21:47:16 2025 +0600
+
+    fix(curriculum): correct capitalization inconsistency in MCQ section (BDD question) (#62483)
+
+[33mcommit 179d92b1903e167a92ec3b49128811ca8c6b8515[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Fri Oct 3 16:12:25 2025 +0200
+
+    chore(api): remove vitest import from mock (#62478)
+
+[33mcommit eac87fb5ac750ab04a6644f66ea93f63ea1c279f[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Fri Oct 3 18:47:17 2025 +0500
+
+    feat(curriculum): add dynamic programming lab (#62462)
+
+[33mcommit 972e6449347b5fe0c13615757cbd2cafcff26d0c[m
+Author: Hritik Sharma <130376335+Hritik-sharmaa@users.noreply.github.com>
+Date:   Fri Oct 3 16:46:08 2025 +0530
+
+    fix(curriculum): remove trailing periods from answer options  (#62473)
+
+[33mcommit 5516d22c4db8d06536a0f4c581c042670ece6f57[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Oct 3 12:36:10 2025 +0200
+
+    fix(scripts): add hasEditableBoundaries property for workshop metadata (#62413)
+    
+    Co-authored-by: Mauricio Scioville <invasormou@gmail.com>
+
+[33mcommit 06ef7746c80145eaff991692c1e088e82c19b24d[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Fri Oct 3 09:31:23 2025 +0100
+
+    fix(curriculum): block title typo in es a1 review introducing yourself (#62461)
+
+[33mcommit 3a5a409f8ed17649631484f9f81751fe6c9a5470[m
+Author: Dario <105294544+Dario-DC@users.noreply.github.com>
+Date:   Fri Oct 3 09:50:08 2025 +0200
+
+    feat(curriculum): add salary tracker workshop (#62253)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 80026e26c41b6cdc19b095765a8e5f171b7a1560[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Fri Oct 3 11:22:12 2025 +0700
+
+    fix(a11y): replace Alert with Callout for non-critical messages (#62466)
+
+[33mcommit 0b71e8779dba264064d9a696eba9dfb61924f593[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Thu Oct 2 14:30:33 2025 -0500
+
+    feat(client): archive page (#62450)
+
+[33mcommit 8704883aeb44ebc461fe31891ecbe08b0bd29c3d[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Thu Oct 2 18:14:19 2025 +0200
+
+    refactor: improve description of DNA Pair Generator (#62393)
+
+[33mcommit 517b9f05760ae4bf55062d9c9eb5a46bb202fb98[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Thu Oct 2 16:44:27 2025 +0200
+
+    fix(client): handle builds without all challenges (#61040)
+    
+    Co-authored-by: Shaun Hamilton <shauhami020@gmail.com>
+
+[33mcommit 568840b8d8a7b2023ac666eae840196ca4c36440[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Thu Oct 2 14:28:36 2025 +0200
+
+    feat(api): exam date use + split prisma files (#62344)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit 3dc1e8b9d82b6b2709986fcf1a40ebe3beaca5fd[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Thu Oct 2 04:57:44 2025 -0700
+
+    feat(curriculum): adding relational DB chapter review page (#62266)
+
+[33mcommit 3e3c843cc35e3ec242fdb442b6fc93b9d2c7e46e[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Thu Oct 2 03:12:14 2025 -0700
+
+    feat(curriculum): adding data visualization module (#62448)
+
+[33mcommit 1b82d617e6142b31f0782021528dc7b4144405de[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Thu Oct 2 11:10:53 2025 +0100
+
+    fix(curriculum): typo in es a1 learn certification introduction (#62439)
+
+[33mcommit 5f35c61a04e5e6603b696ad0de300e75c36b0061[m
+Author: Rahul bisht <96163503+bisht0968@users.noreply.github.com>
+Date:   Thu Oct 2 12:47:40 2025 +0530
+
+    fix(curriculum): clarify instructions and update tests for Step 27  (#62240)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit b77f36f58f1b0dc67dcd2f54d7ffe18cfbe40308[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Thu Oct 2 11:24:23 2025 +0700
+
+    fix(challenge-editor): use chapterBasedSuperBlocks from config (#62457)
+
+[33mcommit 1214dbed666c617f0c1d602e80c3bb3eec258024[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Thu Oct 2 11:33:49 2025 +1300
+
+    fix(curriculum): typos, missing words, phrases, and punctuation (#62417)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit ad76294c4246bffd4025cf216a8f83d09f977334[m
+Author: Sachin Ajeetkumar Singh <152496895+SachinSingh008@users.noreply.github.com>
+Date:   Thu Oct 2 02:07:32 2025 +0530
+
+    fix(curriculum): replace 'Ex.' with 'e.g.' in Cat Photo App step 42 (#62451)
+
+[33mcommit e1902188409388c7997937f5a6ff33a9862ca614[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Wed Oct 1 21:17:27 2025 +0200
+
+    fix(api): adjust daily-challenge time from UTC (#62444)
+
+[33mcommit e5ee7c61097e1212e56464b32dc2a8d2bf93201d[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Wed Oct 1 20:29:27 2025 +0530
+
+    chore(i18n,client): processed translations (#62443)
+
+[33mcommit ba31773fcd60cc8e052fc1e13df8182464a2ebe4[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Wed Oct 1 14:05:16 2025 +0200
+
+    chore(deps): update curriculum-helpers to v6 (#61399)
+
+[33mcommit 97d5d89d03e35575fe1ca9e4dc0450099638ef58[m
+Author: Nielda Karla <90112119+nieldakarla@users.noreply.github.com>
+Date:   Wed Oct 1 07:32:41 2025 -0300
+
+    feat(Curriculum): Add Block Structure in Spanish Greetings and Introductions Modules 2 and 3  (#62433)
+
+[33mcommit 67fc60785a65034bba0e7905f699e645bb80eaad[m
+Author: JeevaRamanathan <64531160+JeevaRamanathan@users.noreply.github.com>
+Date:   Wed Oct 1 14:11:00 2025 +0530
+
+    fix(curriculum): update digit length in Phone Number Formatter (2025-09-30) instructions (#62432)
+    
+    Signed-off-by: JeevaRamanathan <jeevaramanathan.m@infosys.com>
+
+[33mcommit 8cca7db4a3e841b5bbae60ee5f061230b267ac5b[m
+Author: Rafael D. Hernandez <rafaeldavish443@gmail.com>
+Date:   Tue Sep 30 16:04:50 2025 -0400
+
+    feat(Curriculum):add Certification Introduction- 4 articles (#62424)
+    
+    Co-authored-by: Rafael Hernandez <mac@Rafaels-MacBook-Pro.local>
+    Co-authored-by: Nielda Karla <90112119+nieldakarla@users.noreply.github.com>
+
+[33mcommit 23ec4003a9479addd9d15634351ed8f8da6f89ae[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Tue Sep 30 12:59:12 2025 -0500
+
+    fix(curriculum): change 'lecture' to 'theory' and 'lesson' (#62414)
+
+[33mcommit 58802c81129a11a7735e2262068de4161f75f5a6[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 30 18:41:16 2025 +0200
+
+    refactor: remove before after user code (#59204)
+
+[33mcommit 8eab57a5488561aac7989816aea055605ca283cd[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Tue Sep 30 16:24:31 2025 +0300
+
+    feat(curriculum): add graphs and trees review page (#62355)
+
+[33mcommit 7347511393b86ed6c6463efec967f4faabc8374f[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 30 15:05:05 2025 +0200
+
+    refactor(curriculum): replace $.ajax with fetch (#61425)
+    
+    Co-authored-by: Shaun Hamilton <shauhami020@gmail.com>
+
+[33mcommit dbe38ede57924ea61e47c8ea3315558829a9f913[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Wed Oct 1 01:15:56 2025 +1300
+
+    fix(curriculum): typo and missing word (#62416)
+
+[33mcommit 086454dc7b64841b76ac34ab5c4af11e8425c8f9[m
+Author: Ihechikara Abba <ihechikara.dev@gmail.com>
+Date:   Tue Sep 30 10:22:01 2025 +0100
+
+    feat(curriculum): add linked list workshop (#61424)
+    
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+
+[33mcommit b60dc22ea20cdba0bbefcdcea169485536e904e1[m
+Author: Kolade Chris <65571316+Ksound22@users.noreply.github.com>
+Date:   Tue Sep 30 09:41:45 2025 +0100
+
+    feat(curriculum): add iframe video workshop (#62053)
+    
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+
+[33mcommit d7505e9833faa134768b72071cd35c326e444683[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Tue Sep 30 01:47:38 2025 -0500
+
+    chore(client): remove daily challenge env variables (#62105)
+
+[33mcommit 6e01904ce6a99fa46ba460f76c59ef9282b85c33[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Mon Sep 29 22:24:17 2025 -0500
+
+    feat(curriculum): daily challenges 63-79 (#62367)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit f55140c8959a159b05cfd3332c90b1c228dd41a1[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Mon Sep 29 23:13:31 2025 +0300
+
+    fix: updates to A2 english curriculum block 2 (#61667)
+
+[33mcommit 2633178598f998d0a0838a08d5ef06dcfbe424d1[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Mon Sep 29 10:35:00 2025 -0700
+
+    chore(curriculum): removing welcome block from FSD cert (#62412)
+
+[33mcommit d690ff13ab27147dc70149d89aea588f07d0a6f4[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Mon Sep 29 19:40:09 2025 +0530
+
+    chore(i18n,client): processed translations (#62410)
+
+[33mcommit c7a8b183d3cba3917482c40fce960b32bd95630a[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Mon Sep 29 15:26:29 2025 +0200
+
+    fix(api): 400 for exam-challenge route with no params (#62404)
+
+[33mcommit 20a77c44d02378f0baf7b066da8ec048954cf671[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Mon Sep 29 15:55:28 2025 +0300
+
+    fix: updates to A2 english curriculum block 5 (#62026)
+
+[33mcommit a7c71569c0bce8d3c529c8e01dc76238872a942a[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Mon Sep 29 15:26:14 2025 +0300
+
+    feat(curriculum): add smallest common multiple lab (#62407)
+
+[33mcommit a627116efdbcfd434338592ccb1d68df7fc5c18f[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Mon Sep 29 12:09:40 2025 +0100
+
+    fix(curriculum): typo in top introduction to flexbox challenge type 15 (#62405)
+
+[33mcommit c9626fc86fd5ed948497ca0ac508ab7fe65120c7[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Mon Sep 29 11:47:44 2025 +0200
+
+    feat(curriculum): add implement a Unique Sorted Union lab (#62226)
+
+[33mcommit ef717e4e313ad9796bbe741467aadff793ec2129[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Sun Sep 28 12:23:52 2025 +0530
+
+    docs: prefer codespaces
+    
+    Updated the pull request template to reflect testing environments.
+
+[33mcommit 457123d96643bd312c75d386311a4b9efbcbcf2d[m
+Author: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+Date:   Sun Sep 28 10:48:11 2025 +0530
+
+    fix(tools): improve devcontainer experience (#62395)
+
+[33mcommit 51d65b79417abcdaa4cd0941658cf8b5e9f32d6b[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Sat Sep 27 15:25:30 2025 +0100
+
+    fix(curriculum): typo in workshop emoji reactor Step 14 (#62390)
+
+[33mcommit 95b4056e207cda3fb462bf5f91775249a807d205[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Sat Sep 27 20:22:21 2025 +0700
+
+    test(challenge-parser): improve validate-sections test (#62385)
+
+[33mcommit fb3be5c01858d9ff16d0bd1bc7165cff283e5b88[m
+Author: swdev33 <crissiepreis@gmail.com>
+Date:   Sat Sep 27 06:58:48 2025 +0200
+
+    fix(curriculum): 2 typos in the dom click events and web api lecture (#62389)
+    
+    Co-authored-by: swdev33 <18295918+swdev33@users.noreply.github.com>
+
+[33mcommit adc886019456251fe042db3e72f51251d0ca6dc8[m
+Author: Dario <105294544+Dario-DC@users.noreply.github.com>
+Date:   Fri Sep 26 22:02:03 2025 +0200
+
+    feat(curriculum): add dfs python lab (#62322)
+
+[33mcommit 6dbc2f72b301de5320463549054c5f3b9701f73b[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Fri Sep 26 20:46:59 2025 +0100
+
+    fix(curriculum): typo in lecture introduction to git and github (#62383)
+
+[33mcommit 762f87442d44405d5731d9099c14983c2ee323bb[m
+Author: Thunderer44 <82762761+Thunderer44@users.noreply.github.com>
+Date:   Sat Sep 27 00:40:02 2025 +0530
+
+    fix(curriculum): correct arguments for `isNotEmpty` (#62382)
+
+[33mcommit 84f5d7375b108f9fa01bfe7adedc329ca3fe75f8[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 26 16:10:57 2025 +0200
+
+    feat: add emoji reactor workshop (#61638)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+
+[33mcommit 71adf50f6a8b80272a4b7e5a02be5e47ac819d56[m
+Author: ran-cho <110224260+ran-cho@users.noreply.github.com>
+Date:   Fri Sep 26 04:26:00 2025 -0700
+
+    fix(curriculum): clarify shallow copy explanation and add nested array examples (#61756)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+
+[33mcommit acf368d2d8579d1e732a9afdef6618651d137d75[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Fri Sep 26 16:18:32 2025 +0500
+
+    feat(curriculum) : convert spinal case challenge to lab (#62117)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit c486fc5d57fce6528e679bf332e1cde0ce05b655[m
+Author: Aamish Bharati <146932136+AamishB@users.noreply.github.com>
+Date:   Fri Sep 26 16:44:47 2025 +0530
+
+    fix(curriculum): correct typo in Navbar ("remainder" → "reminder") (#62378)
+
+[33mcommit 301232ce4f9d7f3062c3833c5036c5ee559ed54b[m
+Author: Ismail Muhammed <138693397+ismaeeelxd@users.noreply.github.com>
+Date:   Fri Sep 26 13:55:18 2025 +0300
+
+    fix(curriculum): move editable region markers to wrap Navbar component (#62377)
+
+[33mcommit e9349432c5ebd4b42925baae92aa294e62f33ffd[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Fri Sep 26 03:33:55 2025 -0700
+
+    feat(curriculum): adding debug a coding journey blog page (#62160)
+
+[33mcommit 502482b188e87a52a5013fe6350981e774dbca38[m
+Author: Mayank Raj <138772349+Mayank230106@users.noreply.github.com>
+Date:   Fri Sep 26 15:12:07 2025 +0530
+
+    fix: resolve issue with adding eventListner to step 17 and completing updateResultsList in step 18  (#61393) (#61766)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+
+[33mcommit 2d3b271089d9c39a6e2dae789d5defb6bcbf70f2[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Fri Sep 26 12:34:40 2025 +0300
+
+    fix(curriculum): updates to A2 english curriculum block 6 (#62102)
+
+[33mcommit 0a4d30852d1ef83de4a5ab44672894c86b350b7f[m
+Author: Kolade Chris <65571316+Ksound22@users.noreply.github.com>
+Date:   Fri Sep 26 08:50:15 2025 +0100
+
+    feat (curriculum): add OOP review (#62131)
+    
+    Co-authored-by: Zaira <33151350+zairahira@users.noreply.github.com>
+
+[33mcommit b6b2d8ad548a3dc745cac03e42b35a21205879ae[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Fri Sep 26 10:41:00 2025 +0300
+
+    fix: updates to A2 english curriculum block 4 (#61903)
+
+[33mcommit c4a4abe487f3984eaedf87f9465c039f2a4fb710[m
+Author: Anna <a.rcottrill521@gmail.com>
+Date:   Fri Sep 26 02:04:45 2025 -0400
+
+    fix(tools): allow more chapter based superblocks (#62203)
+
+[33mcommit 047a268e383a577ad2d5aa79199670dd24f62a8c[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 26 08:00:41 2025 +0200
+
+    fix(client): fake sign in after donating (#61710)
+
+[33mcommit 2923cf7331a5828c8d8cf74ac73d7fe2fb5c1864[m
+Author: Diem-Trang Pham <6422507+pdtrang@users.noreply.github.com>
+Date:   Thu Sep 25 23:19:42 2025 -0500
+
+    fix(curriculum): correct casing of JavaScript (#62369)
+
+[33mcommit 1f8acc6df57d5e4a0d48e28c619dd4e3d0ad58cd[m
+Author: Kolade Chris <65571316+Ksound22@users.noreply.github.com>
+Date:   Thu Sep 25 21:00:31 2025 +0100
+
+    feat (curriculum): add oop and encapsulation lectures (#62121)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit 35d05d2c0560c1f19ec98e0e189dbb13533b156b[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Thu Sep 25 21:27:31 2025 +0200
+
+    feat(client): add exam attempts to exam-download page (#61361)
+    
+    Co-authored-by: Tom <20648924+moT01@users.noreply.github.com>
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+    Co-authored-by: Mrugesh Mohapatra <1884376+raisedadead@users.noreply.github.com>
+
+[33mcommit 6c3bc14f52ebd7e0a895dba42915785c4a8b85bb[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Thu Sep 25 16:29:14 2025 +0200
+
+    feat(curriculum): add Build an All-True Property Validator lab (#62198)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+
+[33mcommit 57c515e230bcaa4a0ac5e438eb64ea00bff50e20[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Sep 25 14:58:34 2025 +0100
+
+    chore(curriculum): update rps-game instructions and hasPlayerWonTheRound parameter (#62310)
+
+[33mcommit 1a59985a51d60da19b22a225c0927ab8518273c5[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Sep 25 14:56:56 2025 +0100
+
+    fix(curriculum): Maintain getMode function consistency in steps 39 - 59 (#62313)
+
+[33mcommit 8a404bface758263f9f2a73160c7b5e1b47d8210[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Thu Sep 25 18:45:46 2025 +0500
+
+    feat(curriculum): add musical instrument workshop (#61750)
+    
+    Co-authored-by: Dario <105294544+Dario-DC@users.noreply.github.com>
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 6263791d2d558e74b33108bba0b0e2d337b5b102[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Thu Sep 25 13:40:28 2025 +0100
+
+    fix(curriculum): update organises to organizes (#62359)
+
+[33mcommit 89bebfa39123de67a9c0dd5f39f7075b655b2155[m
+Author: Amit Upadhyay <78224774+ppl-call-me-tima@users.noreply.github.com>
+Date:   Thu Sep 25 15:48:38 2025 +0530
+
+    fix(curriculum): add description for HTML snippet in Football Team Cards (#62357)
+
+[33mcommit bc58d9c40225cd706309bd00c5ff2dc7784d789a[m
+Author: Ahmer Ijaz Syed <ahmer.ijaz@gmail.com>
+Date:   Thu Sep 25 14:55:57 2025 +0500
+
+    fix(curriculum): rephrase the fillArrContainer description (#62356)
+
+[33mcommit 0bd86c02783523213b65237dbfd43a06f0f24596[m
+Author: Ismail Muhammed <138693397+ismaeeelxd@users.noreply.github.com>
+Date:   Thu Sep 25 11:33:39 2025 +0300
+
+    fix(curriculum): correct formatting in Python print function lecture (#62353)
+
+[33mcommit c29dc53f1ac8145c10b2492d73afd97b406f5624[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Thu Sep 25 10:48:52 2025 +0300
+
+    feat(curriculum): add odd Fibonacci sum calc challenge lab (#62271)
+
+[33mcommit 945be2126f2b6e89297bd107f61b4fa7f2f3104a[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Thu Sep 25 11:32:27 2025 +0530
+
+    chore(i18n,client): processed translations (#62345)
+
+[33mcommit 2366e1ab6ba929c441640dde07045f2a266cc56e[m
+Author: Jonathan Reimer <41432658+jonathimer@users.noreply.github.com>
+Date:   Wed Sep 24 13:51:02 2025 +0200
+
+    docs: Add Linux Foundation Health Score badge (#62339)
+
+[33mcommit 51eba06a7dc9c07f5cf5df40bab6f520787db164[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Wed Sep 24 09:27:03 2025 +0200
+
+    refactor: remove jest and lint vitest (#62330)
+
+[33mcommit d96d528e8c43066593b45ddeed22dd0ff84829ef[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 23 20:10:28 2025 +0200
+
+    refactor: clearer errors for curriculum tests (#62331)
+
+[33mcommit bbe7752ef133669ca0e881c33db8fec0b00de69b[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Tue Sep 23 17:28:09 2025 +0100
+
+    fix(curriculum): correct spelling from behaviours to behavior (#62332)
+
+[33mcommit 143c0452759ab3e905ade72589e5cabdd79986c0[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Tue Sep 23 18:05:07 2025 +0200
+
+    feat(curriculum): add Build a Missing Letter Detector lab (#62227)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit 093f99d5e4b8c62f549ccf927e3c480ed33b9a5c[m
+Author: Sonu <152873883+Sonudhukia143@users.noreply.github.com>
+Date:   Tue Sep 23 21:28:22 2025 +0530
+
+    fix(api): cleanup props from get public profile endpoint (#62007)
+
+[33mcommit 60697413b36c64c50fe76331ef106b23d46b3ebd[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Tue Sep 23 17:53:55 2025 +0200
+
+    feat: add Implement a Pig Latin Translator lab (#62128)
+    
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+    Co-authored-by: Anna <a.rcottrill521@gmail.com>
+
+[33mcommit 5dda96afc03a2d8c7c0d153bdc62ce47009f437c[m
+Author: Swapnanilb <74533112+Swapnanilb@users.noreply.github.com>
+Date:   Tue Sep 23 21:05:27 2025 +0530
+
+    fix(curriculum): correct superBlock name in Build a Weather App lab (#62325)
+
+[33mcommit 3a305ae69cb1a3a2b72cb54b4047fd15512b391f[m
+Author: Mrugesh Mohapatra <noreply@mrugesh.dev>
+Date:   Tue Sep 23 20:28:37 2025 +0530
+
+    fix: update amount and links
+
+[33mcommit a89bf48ae9c66fae01829af4a34579ed4cc6a489[m
+Author: Nielda Karla <90112119+nieldakarla@users.noreply.github.com>
+Date:   Tue Sep 23 11:43:50 2025 -0300
+
+    feat(curriculum): Add two new chapters to A1 Spanish (#62329)
+
+[33mcommit 5f66eb106def44aae571393762799f744ceb945c[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Tue Sep 23 17:38:30 2025 +0300
+
+    feat: add seek and destroy challenge lab (#62118)
+
+[33mcommit 032d7c8a42b858624727218518acc1573dd22bce[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Tue Sep 23 14:52:48 2025 +0100
+
+    fix(curriculum): typo in lecture introduction to git and github (#62327)
+
+[33mcommit 0d000127355a314f2f2c6ae8878ad5e5ea80090d[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Tue Sep 23 13:52:02 2025 +0100
+
+    fix(curriculum): fix typo from MediaeError to MediaError (#62324)
+
+[33mcommit e6066a1d50a1835b7f12cabb107ec8c57ee12d0c[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Tue Sep 23 07:49:37 2025 -0500
+
+    feat(api): daily challenge by month endpoint (#61400)
+
+[33mcommit b2817c28de270b052cf3b92e284f2ece695acee0[m
+Author: Anastasiia <109740924+anastasiiauk@users.noreply.github.com>
+Date:   Tue Sep 23 15:12:16 2025 +0300
+
+    fix: updates to A2 english curriculum block 3 (#61788)
+
+[33mcommit 392b8eda87c493198833c419d1f5f312169983e4[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Tue Sep 23 04:28:43 2025 -0700
+
+    feat(curriculum): add dynamic programming review page content (#62269)
+
+[33mcommit 27e3a5cb65ec68229c3c33323a7336b4d7e07204[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Sep 23 22:48:37 2025 +1200
+
+    fix(curriculum): typos and missing words in Places and Events (#62300)
+
+[33mcommit 8ef8f5a0ab6492ca25d56c75047a37112c21976b[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Tue Sep 23 15:22:16 2025 +0530
+
+    chore(i18n,client): processed translations (#62306)
+
+[33mcommit 19af1cdcd29b894d584a5156728fb9b02ae0b96e[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 23 11:44:09 2025 +0200
+
+    fix(client): prevent client double prefixing i18n paths on quiz exit (#61659)
+
+[33mcommit fa217349314429254e6b7cd5e30ac9230e138c11[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Tue Sep 23 00:46:57 2025 -0700
+
+    feat(curriculum): adding git and github review page (#62189)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit 5ef528a894750372e03d8f79e872329929211531[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Tue Sep 23 08:05:57 2025 +0100
+
+    fix(curriculum): typo in workshop media catalogue (#62319)
+
+[33mcommit 0eab63f2c5f586e0f6dbe70c4e6c53e785f159b6[m
+Author: l3onhard <l3onhard@users.noreply.github.com>
+Date:   Tue Sep 23 07:00:32 2025 +0200
+
+    fix(curriculum): rephrased instructions for assigning the variable currentContent (#62317)
+
+[33mcommit 572a58f8cd51324305e78e6dcd88c4005bf9e58e[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Sep 23 06:37:04 2025 +1200
+
+    fix(curriculum): update acronym example (#61700)
+    
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit ccaa500fa9fa04d01a05057b480e2da1f32ae6a1[m
+Author: Kolade Chris <65571316+Ksound22@users.noreply.github.com>
+Date:   Mon Sep 22 19:35:54 2025 +0100
+
+    feat (curriculum): add oop quiz (#62150)
+    
+    Co-authored-by: Krzysztof G. <60067306+gikf@users.noreply.github.com>
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+
+[33mcommit ec36cf60cc1eba4368bf3aea9c531210c6bb46f7[m
+Author: Prateek Bisht <143113996+prateekbisht23@users.noreply.github.com>
+Date:   Mon Sep 22 23:20:22 2025 +0530
+
+    fix(curriculum): update references to 'coach' to 'headCoach' in user story description (#62312)
+
+[33mcommit f5b2774043f87fd6ec1d39d25001265512e4d206[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Mon Sep 22 18:12:05 2025 +0100
+
+    fix(curriculum): Make Build an Optional Arguments Sum Function visible (#62311)
+
+[33mcommit 3d720f0f813d7d9f2447cffb7e0816952a582e9e[m
+Author: Shashank Shekhar <shekharshashankara@gmail.com>
+Date:   Mon Sep 22 22:41:48 2025 +0530
+
+    fix(curriculum): Update business card tests to allow flexible containers and anchors (#61911)
+    
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+
+[33mcommit 3a6c2fa160ec030bb5cb2af7e7cf590e7f773325[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Mon Sep 22 18:01:57 2025 +0100
+
+    fix(curriculum): fix typo from correspondant to correspondent (#62314)
+
+[33mcommit c1018150ccc473bdd72f816d4e52fac148b9e7fc[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Mon Sep 22 18:50:47 2025 +0200
+
+    feat(curriculum): add graphs and trees lecture (#62055)
+    
+    Co-authored-by: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+    Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+[33mcommit aee89b025be221f7fea3d56eb78f47ca4832e982[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Mon Sep 22 21:31:43 2025 +0500
+
+    feat(curriculum): convert title case challenge to lab (#62108)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 00a015cd924cb82b188d7b31a9a8745ca14f320c[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Mon Sep 22 17:36:38 2025 +0200
+
+    feat: update growthbook and handle network errors (#61374)
+    
+    Co-authored-by: ahmad abdolsaheb <ahmad.abdolsaheb@gmail.com>
+
+[33mcommit 8d791e0718628544b9c385cd0f387ce8a0436f3c[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Sep 23 03:17:40 2025 +1200
+
+    fix(curriculum): make concatenation optional (#62232)
+
+[33mcommit 62c47f46e5d03c2dc31db4a3567b386bdef6c81e[m
+Author: Stuart Mosquera <stuartmosquera18@gmail.com>
+Date:   Mon Sep 22 12:14:27 2025 -0300
+
+    fix(curriculum): add more tests for the golf translator lab (#62248)
+
+[33mcommit 5ada45dc6004df6a82a503b1050374d1a4856ab2[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Mon Sep 22 17:11:41 2025 +0200
+
+    refactor: semantic update to complaint form (#62255)
+
+[33mcommit 0e08e2dd09eb10211e036e28cf248671bed568ad[m
+Author: Amit Upadhyay <78224774+ppl-call-me-tima@users.noreply.github.com>
+Date:   Mon Sep 22 20:14:12 2025 +0530
+
+    refactor(curriculum): expand the editable region in Decimal to Binary workshop Step 18 (#62309)
+
+[33mcommit 0ce17abdd4f81b47b61304c5c5ed1854a35cdbf1[m
+Author: Ansh Malgotra <anshmalgotra@gmail.com>
+Date:   Mon Sep 22 20:12:35 2025 +0530
+
+    fix(curriculum): change 'display' to 'return' in lab-voting-system challenge (#62305)
+
+[33mcommit 923e6c4c7d029bedb6a8d8dfeb3db4753b754546[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Mon Sep 22 08:57:47 2025 -0500
+
+    fix(curriculum): daily challenge 42 test (#62308)
+
+[33mcommit 0f0d91f50fb6c70c5b991a32c9cdd9480baee01b[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Mon Sep 22 14:50:41 2025 +0200
+
+    chore(tests): migrate shared folder to Vitests (#62270)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 2eab3662f51f1bb183b6d070ed75f2203e249872[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Mon Sep 22 17:43:29 2025 +0500
+
+    feat(curriculum): convert search and replace challenge to lab (#62129)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit ae6357fe43d6e29500fe0e660af3c9497e160f5c[m
+Author: Ezoh Zhang <104738718+errantpianist@users.noreply.github.com>
+Date:   Mon Sep 22 12:16:41 2025 +0100
+
+    fix(curriculum): add guidance and tests for lowercase HTML tags (#61875)
+
+[33mcommit 428918f9668d42de1e0858b52b055772f578d3e7[m
+Author: Vivek Kavala <vivek43143@gmail.com>
+Date:   Mon Sep 22 16:38:32 2025 +0530
+
+    fix(curriculum): typo fix in JavaScript Fundamentals (#62302)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit de6da1ba7b18bb110f0c844705b8a3a10de80a69[m
+Author: Tawfiq Khalilieh <taw.coding@gmail.com>
+Date:   Mon Sep 22 13:22:11 2025 +0300
+
+    fix(curriculum): Clarifiy the explanation of Python’s `//` (floor division) operator. (#62297)
+    
+    Co-authored-by: Dario <105294544+Dario-DC@users.noreply.github.com>
+
+[33mcommit d78024cce2840718c2496906d3a9f6a3ed8082af[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Mon Sep 22 02:58:14 2025 -0700
+
+    feat(curriculum): adding graphs and trees quiz questions (#62264)
+    
+    Co-authored-by: Dario <105294544+Dario-DC@users.noreply.github.com>
+
+[33mcommit 8d1b3a67dfebebf8893f32b60936cbf1b14bb4da[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Mon Sep 22 16:54:43 2025 +0700
+
+    fix(curriculum): revise user stories of Checkout Page lab  (#61819)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 949ceff4e099499c582bf586c961880ebb5d0688[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Mon Sep 22 10:34:57 2025 +0100
+
+    fix(curriculum): typo in daily coding challenges py & js (#62301)
+
+[33mcommit 8f4fdeda58c56aff86e5dc543dcaf03a9daa7bee[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Mon Sep 22 13:30:25 2025 +0500
+
+    feat(curriculum): convert DNA pairing challenge to lab (#62132)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 2098a0d36470d1baaea390e4e7aaca2095324bab[m
+Author: Zaira <33151350+zairahira@users.noreply.github.com>
+Date:   Mon Sep 22 12:03:32 2025 +0500
+
+    feat(curriculum): add dynamic programming lecture (#62272)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit ad098e2fba2535aa8efec0341df928ca9251a753[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Mon Sep 22 08:39:59 2025 +0300
+
+    feat(curriculum): add wherefore art thou challenge lab (#62173)
+
+[33mcommit ccfcca1f4670cf57965c36692c661d7b0057d509[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Mon Sep 22 09:06:14 2025 +1200
+
+    fix(curriculum): typo in workshop description (#62295)
+
+[33mcommit 66e8c98867e91b9b5585620aa7268bc023b89f39[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Sun Sep 21 16:10:27 2025 +0100
+
+    fix(curriculum):  typo in workshop media catalogue (#62283)
+
+[33mcommit 3b756676c49c91ada07f5a7b363e54cdd3a29ee7[m
+Author: Jatin_Mehta <143813065+JatinMehta007@users.noreply.github.com>
+Date:   Sat Sep 20 23:23:34 2025 +0530
+
+    fix(curriculum): format code blocks in quiz answers (#62282)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 4af015a08ffe3aae6474eaa6ba1be6b8a36c14f6[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Fri Sep 19 19:15:20 2025 -0500
+
+    fix(curriculum): typo in daily challenge (#62235)
+
+[33mcommit ee8e7504937a4cf2b2e27ce2fb830c7ff29b58ae[m
+Author: Nithyakala Rajendran <nithyakala1988@gmail.com>
+Date:   Fri Sep 19 17:13:39 2025 -0700
+
+    fix(tools): typo in error message (#62208)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 9f410666e6b4200c2d69016387a4f3370d369723[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Sat Sep 20 03:36:49 2025 +0700
+
+    fix(challenge-helper-scripts): make `create-language-block` support chapter-based structure (#62268)
+
+[33mcommit e9cf3b35be5dc35a54a3b47a960c429c8f67ae55[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 19 22:08:31 2025 +0200
+
+    feat(curriculum): add Create a Deep Flattening Tool lab (#62216)
+    
+    Co-authored-by: Dario <105294544+Dario-DC@users.noreply.github.com>
+
+[33mcommit 57415e2a11b4021c5a2058f67c59a378edf8e53f[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 19:40:06 2025 +0200
+
+    fix: skip upcoming superblocks in normal builds (#62263)
+
+[33mcommit 243678e4348ca59bc48f83edcc1e000cae0d9870[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 19:39:12 2025 +0200
+
+    test: handle meta validation errors (#62274)
+
+[33mcommit c6498cf0b428dea8df4da1f6a69a42a544a1d38d[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 19:36:20 2025 +0200
+
+    refactor: remove invariant (#62275)
+
+[33mcommit 56c34a3bd6b988df8b1ef60ba9479bc9c71af14e[m
+Author: LeoYann <166632095+ENAwareness@users.noreply.github.com>
+Date:   Sat Sep 20 01:56:36 2025 +0900
+
+    fix: change 'of' to 'or' in this Python lecture (#62277)
+
+[33mcommit 8672be653ab0cdcee45267e40f053738e5eed8ac[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Fri Sep 19 17:13:47 2025 +0100
+
+    fix(curriculum): typo in daily coding challenges py (#62273)
+
+[33mcommit 80f8b6ffcd07210e2be2d2d7dfe812985ffff43f[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 19 14:47:09 2025 +0200
+
+    fix(curriculum): allow spaces in book catalog table lab inside elements (#62258)
+
+[33mcommit 2e5d3e86e8049f56864e0a4684c03f83783b3293[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 19 14:46:00 2025 +0200
+
+    fix(curriculum): allow spaces in travel agency page (#62259)
+
+[33mcommit 74f663b8f1714c68f9a5828c7415c567c0d5d9c1[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 19 14:45:29 2025 +0200
+
+    fix: allow spaces around text content of elements in workshop blog page (#62261)
+
+[33mcommit adf8b1644e33e0ae3777ee9c561f862a6579736d[m
+Author: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+Date:   Fri Sep 19 14:44:20 2025 +0200
+
+    fix: allow spaces around element content in workshop hotel feedback form (#62262)
+
+[33mcommit dc5a75fbc38214c46bac768dccb611e9af07118f[m
+Author: happypepii <131305082+happypepii@users.noreply.github.com>
+Date:   Fri Sep 19 18:09:33 2025 +0800
+
+    fix(curriculum): add generate-btn click to sort-btn test (#62252)
+
+[33mcommit 39164ca87f2cbd28564a533d77de42d4553f22a2[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 10:48:29 2025 +0200
+
+    fix: ensure daily challenge tests run (#62260)
+
+[33mcommit 3a41a6137a31a99141d24196a48cf4f93ed46f82[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 10:25:40 2025 +0200
+
+    feat: find closest matching block and superblock for testing (#62089)
+
+[33mcommit bdccefef08c4ac4e380919f9a944ea403db63d06[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Fri Sep 19 15:00:36 2025 +0700
+
+    refactor(challenge-helper-scripts): remove superBlock field from base meta (#62267)
+
+[33mcommit bed3811952941059488dc19e803128a2b248065b[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 19 09:58:06 2025 +0200
+
+    feat(api): migrate to esm (#61915)
+
+[33mcommit 68614b43a98e98344c35914a783c357554e40018[m
+Author: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+Date:   Fri Sep 19 14:46:06 2025 +0700
+
+    chore(tools): migrate scripts/lint test to vitest (#62265)
+    
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit 3a2e0b112a9bc95dfc86afebd32bc4dbf9215721[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Thu Sep 18 09:20:54 2025 -0700
+
+    chore(curriculum): updating git and github quiz questions (#62191)
+    
+    Co-authored-by: Sem Bauke <sem@freecodecamp.org>
+    Co-authored-by: Zaira <33151350+zairahira@users.noreply.github.com>
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 92d6901c2f7ad0e9597373f1eb61dbeb71e93a3d[m
+Author: Shaun Hamilton <shauhami020@gmail.com>
+Date:   Thu Sep 18 15:32:44 2025 +0200
+
+    feat(api): add exam->challenge map and routes (#61683)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit a6d186a73d3d9831253c390cc4f5070a9cfbd66c[m
+Author: Dario <105294544+Dario-DC@users.noreply.github.com>
+Date:   Thu Sep 18 08:54:23 2025 +0200
+
+    feat(curriculum): add media catalogue workshop (#62051)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Zaira <33151350+zairahira@users.noreply.github.com>
+
+[33mcommit 7e81540d2ed2ae461e1447d35810ce8dfc84057d[m
+Author: Jannis Klose <69921578+janni1288@users.noreply.github.com>
+Date:   Wed Sep 17 21:27:26 2025 +0200
+
+    fix(curriculum): make Theme Switcher click events bubble (#62234)
+
+[33mcommit 0ec12631e9f841a733de2e6c1c36c308a8ecc451[m
+Author: Sem Bauke <semboot699@gmail.com>
+Date:   Wed Sep 17 21:11:50 2025 +0200
+
+    test(test): migrate from Mocha to Vitest (#62085)
+    
+    Co-authored-by: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+
+[33mcommit a0c1876e368467a3b3222cdc69d2b7bbd0caf71b[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Wed Sep 17 20:51:32 2025 +0530
+
+    chore(i18n,client): processed translations (#62242)
+
+[33mcommit 4ad144fc67d325262093b8a5e73a950e1ee5432e[m
+Author: Niyati Raiyani <niyati4201@gmail.com>
+Date:   Tue Sep 16 23:39:40 2025 +0530
+
+    fix(dev): preserve step order during hot reload by reloading all chal… (#62048)
+
+[33mcommit 3931ed159d272e9b1e614dd0af66ba6f9f3ab857[m
+Author: Jessica Wilkins <67210629+jdwilkin4@users.noreply.github.com>
+Date:   Tue Sep 16 10:17:22 2025 -0700
+
+    feat(curriculum): add lectures for rest parameter syntax and arguments object (#62067)
+    
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+    Co-authored-by: Naomi <accounts+github@nhcarrigan.com>
+
+[33mcommit 91e4c05b9fba3ec1322eb9836a567376822a3eb6[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 16 16:37:09 2025 +0200
+
+    fix(api): handle termination signals (#61171)
+
+[33mcommit b80b849058e92ccd99d948903289938ecb601dfb[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 16 16:36:42 2025 +0200
+
+    fix: indentation error reporting (#62182)
+
+[33mcommit dc0d39c548a7bd9094f0d6096f16664332808765[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Sep 16 22:30:00 2025 +1200
+
+    fix(curriculum): Casing typo in JavaScript quiz (#62217)
+
+[33mcommit 054d2448faa24c7b21e2f918c442700b83c1d296[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 16 09:50:25 2025 +0200
+
+    fix(tools): insert step with appropriate challenge type (#62179)
+
+[33mcommit fbf6bf2bcddbe5b95fe02d8afb48f790cb0730ec[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Tue Sep 16 18:41:49 2025 +1200
+
+    fix(curriculum): rework variable declarations in Greeting Bot workshop (#61783)
+    
+    Co-authored-by: Ilenia M <nethleen@gmail.com>
+
+[33mcommit 881dfd8f7890e72f2518f026a53cbd9f158d94a5[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Tue Sep 16 08:30:06 2025 +0200
+
+    refactor: client jest -> vitest (#62177)
+
+[33mcommit c7354cff89e4e4f7a20d1732a2363568e190ed8d[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Tue Sep 16 01:28:10 2025 -0500
+
+    feat(curriculum): daily challenges 55-62 - Oct 4-11 (#62225)
+
+[33mcommit df1c226cc608cbc69eb730b7a2a8fad186957f7f[m
+Author: Tom <20648924+moT01@users.noreply.github.com>
+Date:   Mon Sep 15 21:04:15 2025 -0500
+
+    feat(curriculum): add git and GitHub lectures (#62116)
+    
+    Co-authored-by: Zaira <33151350+zairahira@users.noreply.github.com>
+    Co-authored-by: Ilenia <26656284+ilenia-magoni@users.noreply.github.com>
+
+[33mcommit 75e825d5fa2b6dc2d516a095cd6188567bac871e[m
+Author: Nielda Karla <90112119+nieldakarla@users.noreply.github.com>
+Date:   Mon Sep 15 16:39:48 2025 -0300
+
+    Feat(Curriculum): Implement Chapter Based Layout to A1 Spanish (#62190)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 954117ce5e951fa7e340b56525bce0e51261a5cd[m
+Author: Anna <a.rcottrill521@gmail.com>
+Date:   Mon Sep 15 10:30:13 2025 -0400
+
+    chore(tools): display chapters in challenge editor (#62050)
+
+[33mcommit eb2c74b4e6f29726a5c25deaae6ac0517deb74e9[m
+Author: freeCodeCamp's Camper Bot <camperbot@users.noreply.github.com>
+Date:   Mon Sep 15 19:31:01 2025 +0530
+
+    chore(i18n,client): processed translations (#62221)
+
+[33mcommit d631c760875caf1655651efa01378fd551ce4965[m
+Author: Ahmad Abdolsaheb <ahmad.abdolsaheb@gmail.com>
+Date:   Mon Sep 15 10:29:24 2025 +0300
+
+    feat: ab test for independent lowerjaw under editor (#61269)
+
+[33mcommit 8e8a813365408e6570ef48d6a703c23c37986b5c[m
+Author: Supravisor <153783117+Supravisor@users.noreply.github.com>
+Date:   Mon Sep 15 15:51:39 2025 +1200
+
+    fix(curriculum): typo in language feedback (#62214)
+
+[33mcommit e3d68d5c528d6f488d51f402b346f53bebd094cf[m
+Author: Clarence Bakosi <clarencepenz@users.noreply.github.com>
+Date:   Sun Sep 14 08:18:04 2025 +0100
+
+    fix(curriculum): changed theme switcher value (#62202)
+
+[33mcommit a6596b8836ef506e1b195341eb31614158b70185[m
+Author: Rahul bisht <96163503+bisht0968@users.noreply.github.com>
+Date:   Sun Sep 14 12:45:55 2025 +0530
+
+    fix(curriculum): correct typo in symmetric difference challenge test (#62207)
+    
+    Co-authored-by: DivyaAggarwal08 <your-email@example.com>
+
+[33mcommit fe3fac9eee851739b293981d6001a88b4a29d645[m
+Author: Abhisek sahoo <126792721+abhisek7154@users.noreply.github.com>
+Date:   Sat Sep 13 01:47:33 2025 +0530
+
+    fix: remove placeholder text from english intro.json (#62185)
+
+[33mcommit ee05b0d5da15a49a8c6a6b3338e3eefc71f23d25[m
+Author: Anna <a.rcottrill521@gmail.com>
+Date:   Fri Sep 12 14:16:37 2025 -0400
+
+    feat(tools): allow tsx tabs (#61936)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit 28411a2cece75d086b7c994ddf7ea7daf8a507e8[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 12 18:50:02 2025 +0200
+
+    refactor: migrate challenge parser tests to vitest (#62186)
+
+[33mcommit 2590c1c8206b28d1bb377500c27d6a6ce0a03d7f[m
+Author: dley18 <123342361+dley18@users.noreply.github.com>
+Date:   Fri Sep 12 11:06:13 2025 -0400
+
+    fix(curriculum): correct function name used in hints for base check daily challenge (#62172)
+
+[33mcommit d0cfac8c42cc0bf26e2bb44c5e08fd08c1036064[m
+Author: Hillary Nyakundi <63947040+larymak@users.noreply.github.com>
+Date:   Fri Sep 12 16:28:35 2025 +0300
+
+    feat: add sum all prime challenge lab (#62084)
+
+[33mcommit 9237d61f89177d3fff6fa563dee01bd3e12749c2[m
+Author: Giftea ☕ <Eleojogiftuhiene@gmail.com>
+Date:   Fri Sep 12 12:20:06 2025 +0100
+
+    fix(curriculum): Add select value example to step 9 (#62163)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+
+[33mcommit a0ba2054841ebeb8ded3c7f4d6b7ae27cf254f07[m
+Author: Oliver Eyton-Williams <ojeytonwilliams@gmail.com>
+Date:   Fri Sep 12 12:55:39 2025 +0200
+
+    refactor: use top-level await in challenge tests (#61398)
+    
+    Co-authored-by: Huyen Nguyen <25715018+huyenltnguyen@users.noreply.github.com>
+    Co-authored-by: Sem Bauke <semboot699@gmail.com>
