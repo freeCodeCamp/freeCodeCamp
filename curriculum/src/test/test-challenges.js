@@ -47,7 +47,7 @@ vi.mock(
       ...actual,
       checkTSServiceIsReady: () => Promise.resolve(true),
       compileTypeScriptCode: code => {
-        const { result, error } = compiler.compile(code, 'file.ts');
+        const { result, error } = compiler.compile(code, 'index.tsx');
         if (error) throw error;
         return result;
       }
