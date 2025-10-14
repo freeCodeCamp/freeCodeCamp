@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Greetings and Introductions Grammar and Glossary
-block: zh-a1-review-greetings-and-introductions-grammar-and-glossary
+title: Introduction to the Greeting and Self-introduction Review
+block: zh-a1-review-greeting-and-self-introduction-review
 superBlock: a1-professional-chinese
 ---
 
-## Introduction to the Greetings and Introductions Grammar and Glossary
+## Introduction to the Greeting and Self-introduction Review
 
-This page is for the Greetings and Introductions Grammar and Glossary
+This page is for the Greeting and Self-introduction Review

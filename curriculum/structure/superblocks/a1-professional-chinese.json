@@ -1,7 +1,7 @@
 {
   "chapters": [
     {
-      "dashedName": "zh-a1-chapter-greetings-and-introductions",
+      "dashedName": "zh-a1-chapter-greeting-and-self-introduction",
       "modules": [
         {
           "dashedName": "zh-a1-module-greetings-and-basic-introductions",
@@ -9,8 +9,8 @@
             "zh-a1-warm-up-greeting-new-colleagues",
             "zh-a1-learn-understanding-the-greetings-and-introductions",
             "zh-a1-practice-building-your-self-introduction",
-            "zh-a1-review-greetings-and-introductions-grammar-and-glossary",
-            "zh-a1-quiz-check-what-you-know-about-greetings-and-introductions"
+            "zh-a1-review-greeting-and-self-introduction-review",
+            "zh-a1-quiz-greeting-and-self-introduction-quiz"
           ]
         }
       ]

@@ -5032,7 +5032,7 @@
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
     "chapters": {
-      "zh-a1-chapter-greetings-and-introductions": "Learn How to Greet and Introduce Yourself"
+      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction"
     },
     "modules": {
       "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions"
@@ -5056,12 +5056,12 @@
         "title": "​Building Your Self-Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-review-greetings-and-introductions-grammar-and-glossary": {
-        "title": "Greetings and Introductions Grammar and Glossary",
+      "zh-a1-review-greeting-and-self-introduction-review": {
+        "title": "Greeting and Self-introduction Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-check-what-you-know-about-greetings-and-introductions": {
-        "title": "Check What You Know about Greetings and Introductions",
+      "zh-a1-quiz-greeting-and-self-introduction-quiz": {
+        "title": "Greeting and Self-introduction Quiz",
         "intro": ["", ""]
       },
       "zh-a1-learn-certification-introduction": {
