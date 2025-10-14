@@ -4,7 +4,10 @@
   "dashedName": "workshop-string-formatter",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68e4276483b0c71658aab1ca", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68e4276483b0c71658aab1ca", "title": "Step 1" },
+    { "id": "68ed6079fe0e3e98b94a1b75", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
