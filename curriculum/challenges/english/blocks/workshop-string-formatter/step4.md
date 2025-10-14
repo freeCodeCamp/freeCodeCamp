@@ -1,7 +1,3 @@
-
-And **step 4**:
-
-```md
 ---
 id: 68e4276483b0c71658aab1cd
 title: Step 4
