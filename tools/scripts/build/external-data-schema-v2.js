@@ -1,7 +1,7 @@
 const Joi = require('joi');
 const {
   chapterBasedSuperBlocks
-} = require('../../../shared/config/curriculum');
+} = require('../../../shared-dist/config/curriculum');
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 

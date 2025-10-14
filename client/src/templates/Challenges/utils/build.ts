@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 
 import type { ChallengeFile } from '../../../redux/prop-types';
 import { concatHtml } from '../rechallenge/builders';
@@ -186,7 +186,7 @@ export async function buildDOMChallenge(
   // TODO: make this required in the schema.
   if (!challengeFiles) throw Error('No challenge files provided');
   const hasJsx = challengeFiles.some(
-    challengeFile => challengeFile.ext === 'jsx'
+    challengeFile => challengeFile.ext === 'jsx' || challengeFile.ext === 'tsx'
   );
   const isMultifile = challengeFiles.length > 1;
 

@@ -15,9 +15,9 @@ import {
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { DailyCodingChallengeLanguage, type Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import { omit } from 'lodash-es';
 
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 import {
   defaultUserId,
   defaultUserEmail,
@@ -27,15 +27,15 @@ import {
   createSuperRequest,
   defaultUsername,
   resetDefaultUser
-} from '../../../vitest.utils';
-import { JWT_SECRET } from '../../utils/env';
+} from '../../../vitest.utils.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   clearEnvExam,
   seedEnvExam,
   seedEnvExamAttempt,
   seedExamEnvExamAuthToken
-} from '../../../__mocks__/exam-environment-exam';
-import { getMsTranscriptApiUrl } from './user';
+} from '../../../__mocks__/exam-environment-exam.js';
+import { getMsTranscriptApiUrl } from './user.js';
 
 const mockedFetch = vi.fn();
 vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
@@ -43,7 +43,9 @@ vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 let mockDeploymentEnv = 'staging';
 vi.mock('../../utils/env', async () => {
   const actualEnv =
-    await vi.importActual<typeof import('../../utils/env')>('../../utils/env');
+    await vi.importActual<typeof import('../../utils/env.js')>(
+      '../../utils/env'
+    );
   return {
     ...actualEnv,
     get DEPLOYMENT_ENV() {
@@ -151,6 +153,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar',
   sendQuincyEmail: false
 };
@@ -302,6 +305,7 @@ const publicUserData = {
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
@@ -412,15 +416,17 @@ describe('userRoutes', () => {
       });
 
       test('POST returns 200 status code with empty object', async () => {
-        expect(await fastifyTestInstance.prisma.user.count()).toBe(1);
+        const initialCount = await fastifyTestInstance.prisma.user.count();
         const response = await superPost('/account/delete');
-        const userCount = await fastifyTestInstance.prisma.user.count({
+        const finalCount = await fastifyTestInstance.prisma.user.count();
+        const deletedUser = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: testUserData.email }
         });
 
         expect(response.body).toStrictEqual({});
         expect(response.status).toBe(200);
-        expect(userCount).toBe(0);
+        expect(finalCount).toBe(initialCount - 1);
+        expect(deletedUser).toBeNull();
       });
 
       test('POST deletes Microsoft usernames associated with the user', async () => {
@@ -512,18 +518,26 @@ describe('userRoutes', () => {
       });
 
       test("only deletes the logged in user's data", async () => {
-        await fastifyTestInstance.prisma.user.create({
+        const initialCount = await fastifyTestInstance.prisma.user.count();
+        const otherEmail = 'an.random@user';
+        const otherUser = await fastifyTestInstance.prisma.user.create({
           data: {
             ...testUserData,
-            email: 'an.random@user'
+            email: otherEmail
           }
         });
-        expect(await fastifyTestInstance.prisma.user.count()).toBe(2);
+        expect(otherUser.email).toBe(otherEmail);
+        const afterAdd = await fastifyTestInstance.prisma.user.count();
+        expect(afterAdd).toBe(initialCount + 1);
 
         await superPost('/account/delete');
 
-        const userCount = await fastifyTestInstance.prisma.user.count();
-        expect(userCount).toBe(1);
+        const finalCount = await fastifyTestInstance.prisma.user.count();
+        expect(finalCount).toBe(initialCount);
+        const remaining = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: otherEmail }
+        });
+        expect(remaining).not.toBeNull();
       });
 
       test('logs if it is asked to delete a non-existent user', async () => {
@@ -536,13 +550,147 @@ describe('userRoutes', () => {
           superPost('/account/delete')
         );
         await Promise.all(deletePromises);
+        const messages: string[] = spy.mock.calls.map(call =>
+          call.map(part => String(part)).join(' ')
+        );
+        const found = messages.some(m =>
+          m.includes(`User with id ${defaultUserId} not found for deletion.`)
+        );
+        expect(found).toBe(true);
+      });
+    });
 
-        expect(spy).toHaveBeenCalledTimes(1);
-        expect(spy.mock.calls[0]).toEqual(
+    describe('/users/:userId', () => {
+      afterEach(async () => {
+        await fastifyTestInstance.prisma.userToken.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await fastifyTestInstance.prisma.msUsername.deleteMany({
+          where: { OR: [{ userId: defaultUserId }, { userId: otherUserId }] }
+        });
+        await clearEnvExam();
+      });
+
+      test('DELETE returns 204 status code with empty object', async () => {
+        const response = await superDelete(`/users/${defaultUserId}`);
+        const userCount = await fastifyTestInstance.prisma.user.count({
+          where: { email: testUserData.email }
+        });
+
+        expect(response.body).toStrictEqual({});
+        expect(response.status).toBe(204);
+        expect(userCount).toBe(0);
+      });
+
+      test('DELETE deletes Microsoft usernames associated with the user', async () => {
+        await fastifyTestInstance.prisma.msUsername.createMany({
+          data: msUsernameData
+        });
+
+        await superDelete(`/users/${defaultUserId}`);
+        expect(await fastifyTestInstance.prisma.msUsername.count()).toBe(1);
+      });
+
+      test('DELETE deletes userTokens associated with the user', async () => {
+        await fastifyTestInstance.prisma.userToken.createMany({
+          data: tokenData
+        });
+
+        await superDelete(`/users/${defaultUserId}`);
+
+        const userTokens =
+          await fastifyTestInstance.prisma.userToken.findMany();
+        expect(userTokens).toHaveLength(1);
+        expect(userTokens[0]?.userId).toBe(otherUserId);
+      });
+
+      test("DELETE deletes all the user's cookies", async () => {
+        const res = await superDelete(`/users/${defaultUserId}`);
+
+        const setCookie = res.headers['set-cookie'] as string[];
+        expect(setCookie).toEqual(
           expect.arrayContaining([
-            `User with id ${defaultUserId} not found for deletion.`
+            expect.stringMatching(
+              /^_csrf=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^csrf_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^jwt_access_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            )
           ])
         );
+        expect(setCookie).toHaveLength(3);
+      });
+
+      test("DELETE deletes all the user's exam attempts", async () => {
+        await seedEnvExam();
+        await seedEnvExamAttempt();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
+        expect(countBefore).toBe(1);
+
+        const res = await superDelete(`/users/${defaultUserId}`);
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(204);
+      });
+
+      test("DELETE deletes all the user's exam tokens", async () => {
+        await seedExamEnvExamAuthToken();
+        const countBefore =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countBefore).toBe(1);
+
+        const res = await superDelete(`/users/${defaultUserId}`);
+
+        const countAfter =
+          await fastifyTestInstance.prisma.examEnvironmentAuthorizationToken.count();
+        expect(countAfter).toBe(0);
+        expect(res.status).toBe(204);
+      });
+
+      test("only deletes the logged in user's data", async () => {
+        const initialCount = await fastifyTestInstance.prisma.user.count();
+        await fastifyTestInstance.prisma.user.create({
+          data: {
+            ...testUserData,
+            email: 'an.random@user'
+          }
+        });
+        expect(await fastifyTestInstance.prisma.user.count()).toBe(
+          initialCount + 1
+        );
+
+        await superDelete(`/users/${defaultUserId}`);
+
+        const userCount = await fastifyTestInstance.prisma.user.count();
+        expect(userCount).toBe(initialCount);
+      });
+
+      test('logs if it is asked to delete a non-existent user', async () => {
+        const spy = vi.spyOn(fastifyTestInstance.log, 'warn');
+
+        const deletePromises = Array.from({ length: 2 }, () =>
+          superDelete(`/users/${defaultUserId}`)
+        );
+
+        await Promise.all(deletePromises);
+
+        const messages = spy.mock.calls.flat().map(String);
+        expect(
+          messages.some(m =>
+            m.includes(`User with id ${defaultUserId} not found for deletion.`)
+          )
+        ).toBe(true);
+      });
+
+      test('returns 403 if attempting to delete a different user', async () => {
+        const res = await superDelete(`/users/${otherUserId}`);
+        expect(res.status).toBe(403);
       });
     });
 
@@ -828,7 +976,7 @@ describe('userRoutes', () => {
         const setCookies = res.get('Set-Cookie');
 
         const publicUser = {
-          ..._.omit(minimalUserData, ['externalId', 'unsubscribeId']),
+          ...omit(minimalUserData, ['externalId', 'unsubscribeId']),
           ...computedProperties,
           id: testUser.id,
           joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
@@ -1423,6 +1571,7 @@ Thanks and regards,
     });
 
     const endpoints: { path: string; method: 'GET' | 'POST' | 'DELETE' }[] = [
+      { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
       { path: '/user/get-session-user', method: 'GET' },

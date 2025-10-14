@@ -1,12 +1,11 @@
 import { expect } from 'vitest';
 
-import { nanoidCharSet } from '../../utils/create-user';
+import { nanoidCharSet } from '../../utils/create-user.js';
 
 const uuidRe = /^[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const fccUuidRe = /^fcc-[a-f0-9]{8}-([a-f0-9]{4}-){3}[a-f0-9]{12}$/;
 const unsubscribeIdRe = new RegExp(`^[${nanoidCharSet}]{21}$`);
 const mongodbIdRe = /^[a-f0-9]{24}$/;
-
 
 // eslint-disable-next-line jsdoc/require-jsdoc
 export const newUser = (email: string) => ({
@@ -83,6 +82,7 @@ export const newUser = (email: string) => ({
   theme: 'default',
   timezone: null,
   twitter: null,
+  bluesky: null,
   updateCount: 0, // see extendClient in prisma.ts
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   username: expect.stringMatching(fccUuidRe),
@@ -91,5 +91,4 @@ export const newUser = (email: string) => ({
   verificationToken: null,
   website: null,
   yearsTopContributor: []
-}
-)
+});

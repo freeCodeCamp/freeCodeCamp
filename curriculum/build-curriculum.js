@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const { isEmpty } = require('lodash');
+const { isEmpty, isUndefined } = require('lodash');
 const debug = require('debug')('fcc:build-curriculum');
 
 const {
@@ -11,14 +11,15 @@ const {
 } = require('./build-superblock');
 
 const { buildCertification } = require('./build-certification');
-const { applyFilters } = require('./utils');
+const { applyFilters, closestFilters, getSuperOrder } = require('./utils');
 const {
   getContentDir,
   getLanguageConfig,
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
-  getBlockStructurePath
+  getBlockStructurePath,
+  getBlockStructureDir
 } = require('./file-handler');
 
 /**
@@ -190,7 +191,13 @@ const superBlockNames = {
   'semantic-html': 'semantic-html',
   'a1-professional-chinese': 'a1-professional-chinese',
   'dev-playground': 'dev-playground',
-  'full-stack-open': 'full-stack-open'
+  'full-stack-open': 'full-stack-open',
+  'responsive-web-design-v9': 'responsive-web-design-v9',
+  'javascript-v9': 'javascript-v9',
+  'front-end-development-libraries-v9': 'front-end-development-libraries-v9',
+  'python-v9': 'python-v9',
+  'relational-databases-v9': 'relational-databases-v9',
+  'back-end-development-and-apis-v9': 'back-end-development-and-apis-v9'
 };
 
 const superBlockToFilename = Object.entries(superBlockNames).reduce(
@@ -294,14 +301,9 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function buildCurriculum(lang, filters) {
-  const contentDir = getContentDir(lang);
-  const blockStructureDir = getLanguageConfig(lang).blockStructureDir;
-  const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang, !isEmpty(filters))
-  });
-
+async function parseCurriculumStructure(filters) {
   const curriculum = getCurriculumStructure();
+  const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
@@ -314,16 +316,43 @@ async function buildCurriculum(lang, filters) {
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
+  const refinedFilters = closestFilters(filters, superblockList);
+  const fullSuperblockList = applyFilters(superblockList, refinedFilters);
+  return {
+    fullSuperblockList,
+    certifications: curriculum.certifications
+  };
+}
 
-  const fullSuperblockList = applyFilters(superblockList, filters);
+async function buildCurriculum(lang, filters) {
+  const contentDir = getContentDir(lang);
+
+  const builder = new SuperblockCreator({
+    blockCreator: getBlockCreator(lang, !isEmpty(filters))
+  });
+
+  const { fullSuperblockList, certifications } =
+    await parseCurriculumStructure(filters);
+
   const fullCurriculum = { certifications: { blocks: {} } };
 
-  for (const superblock of fullSuperblockList) {
+  const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
+    const superOrder = getSuperOrder(name);
+    const upcomingSuperOrder = getSuperOrder(name, true);
+
+    // If a superblock is not in either order list it should not exist.
+    if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
+      throw Error(`Invalid superBlock: ${name}`);
+    }
+    return !isUndefined(superOrder);
+  });
+
+  for (const superblock of liveSuperblocks) {
     fullCurriculum[superblock.name] =
       await builder.processSuperblock(superblock);
   }
 
-  for (const cert of curriculum.certifications) {
+  for (const cert of certifications) {
     const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
     if (!fs.existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
@@ -344,5 +373,7 @@ module.exports = {
   getSuperblockStructure,
   createCommentMap,
   superBlockToFilename,
-  getSuperblocks
+  getSuperblocks,
+  addSuperblockStructure,
+  parseCurriculumStructure
 };

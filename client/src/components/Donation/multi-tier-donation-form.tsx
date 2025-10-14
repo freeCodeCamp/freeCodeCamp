@@ -18,7 +18,7 @@ import {
   defaultTierAmount,
   defaultTierAmountB,
   type DonationAmount
-} from '../../../../shared/config/donation-settings'; // You can further extract these into separate components and import them
+} from '../../../../shared-dist/config/donation-settings'; // You can further extract these into separate components and import them
 import callGA from '../../analytics/call-ga';
 import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';
@@ -83,7 +83,7 @@ function SelectionTabs({
         <Spacer size='xs' />
         <Tabs
           className={'donate-btn-group'}
-          defaultValue={donationAmount.toString()}
+          value={donationAmount.toString()}
           onValueChange={switchTab}
         >
           <TabsList className='nav-lists'>
@@ -181,6 +181,10 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   );
 
   const [showDonateForm, setShowDonateForm] = useState(false);
+
+  useEffect(() => {
+    setDonationAmount(replace20With25 ? defaultTierAmountB : defaultTierAmount);
+  }, [replace20With25]);
 
   useEffect(() => {
     if (setShowHeaderAndFooter) setShowHeaderAndFooter(!showDonateForm);

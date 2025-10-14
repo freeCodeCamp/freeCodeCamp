@@ -25,38 +25,35 @@ Now your app should be able to serve a CSS stylesheet. Note that the `/public/st
 Your app should serve asset files from the `/public` directory to the `/public` path
 
 ```js
-  $.get(code + '/public/style.css').then(
-    (data) => {
-      assert.match(
-        data,
-        /body\s*\{[^\}]*\}/,
-        'Your app does not serve static assets'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/public/style.css');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.text();
+  assert.match(
+    data,
+    /body\s*\{[^\}]*\}/,
+    'Your app does not serve static assets'
   );
 ```
 
 Your app should not serve files from any other folders except from `/public` directory 
 
 ```js
-  $.get(code + '/server.js').then(
-    (data) => {
-       assert.equal(
-        data?.status + '',
-        404 + '',
-        'Your app must serve files only from "public" directory'
-      );
-    },
-    (xhr) => {
-      assert.equal(
-        xhr?.status + '',
-        404 + '',
-        'Your app must serve files only from "public" directory'
-      );
-    }
-  );
+  const response = await fetch(code + '/server.js');
+  if (response.ok) {
+    const data = await response.text();
+    assert.equal(
+      response.status + '',
+      404 + '',
+      'Your app must serve files only from "public" directory'
+    );
+  } else {
+    assert.equal(
+      response.status + '',
+      404 + '',
+      'Your app must serve files only from "public" directory'
+    );
+  }
 ```
 

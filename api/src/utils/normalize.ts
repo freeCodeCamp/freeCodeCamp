@@ -7,7 +7,7 @@ import type {
   Survey,
   Prisma
 } from '@prisma/client';
-import _ from 'lodash';
+import { pickBy, mapValues } from 'lodash-es';
 
 type NullToUndefined<T> = T extends null ? undefined : T;
 type NullToFalse<T> = T extends null ? false : T;
@@ -36,6 +36,26 @@ export const normalizeTwitter = (
     new URL(handleOrUrl);
   } catch {
     url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
+  }
+  return url ?? handleOrUrl;
+};
+
+/**
+ * Converts a Bluesky handle or URL to a URL.
+ *
+ * @param handleOrUrl Bluesky handle or URL.
+ * @returns Bluesky URL.
+ */
+export const normalizeBluesky = (
+  handleOrUrl: string | null
+): string | undefined => {
+  if (!handleOrUrl) return undefined;
+
+  let url;
+  try {
+    new URL(handleOrUrl);
+  } catch {
+    url = `https://bsky.app/profile/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
 };
@@ -123,7 +143,7 @@ export const normalizeProfileUI = (
 export const removeNulls = <T extends Record<string, unknown>>(
   obj: T
 ): NoNullProperties<T> =>
-  _.pickBy(obj, value => value !== null) as NoNullProperties<T>;
+  pickBy(obj, value => value !== null) as NoNullProperties<T>;
 
 type NormalizedFile = {
   contents: string;
@@ -205,4 +225,4 @@ export const normalizeSurveys = (
 export const normalizeFlags = <T extends Record<string, boolean | null>>(
   flags: T
 ): DefaultToFalse<T> =>
-  _.mapValues(flags, flag => flag ?? false) as DefaultToFalse<T>;
+  mapValues(flags, flag => flag ?? false) as DefaultToFalse<T>;

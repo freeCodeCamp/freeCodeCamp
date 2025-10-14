@@ -6,7 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
-import { getIsDailyCodingChallenge } from '../../../shared/config/challenge-types';
+import { getIsDailyCodingChallenge } from '../../../shared-dist/config/challenge-types';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';
@@ -152,16 +152,15 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
+      const sessionUser = state.user.sessionUser
+        ? { ...state.user.sessionUser, isDonating: true }
+        : null;
       return {
         ...state,
         user: {
           ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            isDonating: true
-          }
+          sessionUser
         },
-
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },
