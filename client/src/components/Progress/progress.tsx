@@ -109,13 +109,14 @@ function Progress({
     updateAllChallengesInfo({ challengeNodes, certificateNodes });
 
     const structuresMap: Record<string, SuperBlockStructure> = {};
-    superBlockStructureNodes.forEach((node: SuperBlockStructure) => {
-      structuresMap[node.superBlock] = node;
-    });
 
     // The super block structures are pretty static, so we only want to
     // update them if we don't already have them in the store.
     if (Object.keys(superBlockStructuresFromStore).length === 0) {
+      superBlockStructureNodes.forEach((node: SuperBlockStructure) => {
+        structuresMap[node.superBlock] = node;
+      });
+
       updateSuperBlockStructures(structuresMap);
     }
   }, [
