@@ -47,13 +47,9 @@ vi.mock(
       ...actual,
       checkTSServiceIsReady: () => Promise.resolve(true),
       compileTypeScriptCode: code => {
-        try {
-          const compiled = compiler.compile(code, 'file.ts');
-          return compiled.result;
-        } catch (e) {
-          console.error('TypeScript compilation error:', e);
-          throw e;
-        }
+        const { result, error } = compiler.compile(code, 'file.ts');
+        if (error) throw error;
+        return result;
       }
     };
   }
