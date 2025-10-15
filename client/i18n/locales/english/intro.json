@@ -2215,7 +2215,7 @@
         ]
       },
       "workshop-quincys-job-tips": {
-        "title": "Build a Quincy's Job Tips Page",
+        "title": "Build Quincy's Job Tips Page",
         "intro": [
           "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
         ]
