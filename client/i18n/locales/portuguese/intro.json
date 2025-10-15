@@ -3630,10 +3630,10 @@
           "Neste laboratório, você criará uma função que percorre um array de objetos e retorna um array de todos os objetos que têm pares de propriedade e valor correspondentes."
         ]
       },
-      "lab-sum-all-primes-calculator": {
-        "title": "Crie uma Calculadora de Soma de Números Primos",
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
         "intro": [
-          "Neste laboratório, você criará uma calculadora que soma todos os números primos até um determinado número."
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -4632,6 +4632,12 @@
           "Neste workshop, você aprenderá sobre classes, objetos e métodos em Python criando um inventário simples de instrumentos musicais."
         ]
       },
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
+      },
       "lab-budget-app": {
         "title": "Crie um Aplicativo de Orçamento",
         "intro": [
@@ -5082,9 +5088,13 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Markdown to HTML Converter",
+      "- Build a Drum Machine",
+      "- Build a Voting System",
+      "- Build a Bank Account Management Program",
+      "- Build a Weather App",
+      "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": {
       "javascript": "JavaScript"
@@ -6373,10 +6383,14 @@
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
     "intro": [
-      "This course teaches you the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "To earn your Responsive Web Design Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Survey Form",
+      "- Build a Page of Playing Cards",
+      "- Build a Book Inventory App",
+      "- Build a Technical Documentation Page",
+      "- Build a Product Landing Page",
+      "Pass the exam to earn your Responsive Web Design Certification."
     ],
     "chapters": {
       "html": "HTML",
