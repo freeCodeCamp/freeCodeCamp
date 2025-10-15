@@ -3,9 +3,9 @@ import fp from 'fastify-plugin';
 import jwt from 'jsonwebtoken';
 import { type user } from '@prisma/client';
 
-import { JWT_SECRET } from '../utils/env';
-import { type Token, isExpired } from '../utils/tokens';
-import { ERRORS } from '../exam-environment/utils/errors';
+import { JWT_SECRET } from '../utils/env.js';
+import { type Token, isExpired } from '../utils/tokens.js';
+import { ERRORS } from '../exam-environment/utils/errors.js';
 
 declare module 'fastify' {
   interface FastifyReply {
@@ -19,7 +19,7 @@ declare module 'fastify' {
   }
 
   interface FastifyInstance {
-    authorize: (req: FastifyRequest, reply: FastifyReply) => void;
+    authorize: (req: FastifyRequest, reply: FastifyReply) => Promise<void>;
     authorizeExamEnvironmentToken: (
       req: FastifyRequest,
       reply: FastifyReply
@@ -60,26 +60,26 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
   const setAccessDenied = (req: FastifyRequest, content: string) =>
     (req.accessDeniedMessage = { type: 'info', content });
 
-  const handleAuth = async (req: FastifyRequest) => {
+  const handleAuth = async (req: FastifyRequest): Promise<void> => {
     const tokenCookie = req.cookies.jwt_access_token;
-    if (!tokenCookie) return setAccessDenied(req, TOKEN_REQUIRED);
+    if (!tokenCookie) return void setAccessDenied(req, TOKEN_REQUIRED);
 
     const unsignedToken = req.unsignCookie(tokenCookie);
-    if (!unsignedToken.valid) return setAccessDenied(req, TOKEN_REQUIRED);
+    if (!unsignedToken.valid) return void setAccessDenied(req, TOKEN_REQUIRED);
 
     const jwtAccessToken = unsignedToken.value;
 
     try {
       jwt.verify(jwtAccessToken, JWT_SECRET);
     } catch {
-      return setAccessDenied(req, TOKEN_INVALID);
+      return void setAccessDenied(req, TOKEN_INVALID);
     }
 
     const { accessToken } = jwt.decode(jwtAccessToken) as {
       accessToken: Token;
     };
 
-    if (isExpired(accessToken)) return setAccessDenied(req, TOKEN_EXPIRED);
+    if (isExpired(accessToken)) return void setAccessDenied(req, TOKEN_EXPIRED);
     // We're using token.userId since it's possible for the user record to be
     // malformed and for prisma to throw while trying to find the user.
     fastify.Sentry?.setUser({
@@ -89,7 +89,7 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
     const user = await fastify.prisma.user.findUnique({
       where: { id: accessToken.userId }
     });
-    if (!user) return setAccessDenied(req, TOKEN_INVALID);
+    if (!user) return void setAccessDenied(req, TOKEN_INVALID);
     req.user = user;
   };
 

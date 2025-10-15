@@ -2,13 +2,12 @@ import { unlink } from 'fs/promises';
 import { prompt } from 'inquirer';
 import { getProjectPath } from './helpers/get-project-info';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getChallengeOrderFromMeta } from './helpers/get-challenge-order';
 import { getFileName } from './helpers/get-file-name';
 
 const deleteChallenge = async () => {
   const path = getProjectPath();
 
-  const challenges = getChallengeOrderFromMeta();
+  const challenges = getMetaData().challengeOrder;
 
   const challengeToDelete = (await prompt({
     name: 'id',
@@ -32,7 +31,7 @@ const deleteChallenge = async () => {
 
   const meta = getMetaData();
   meta.challengeOrder.splice(indexToDelete, 1);
-  updateMetaData(meta);
+  await updateMetaData(meta);
 };
 
 void deleteChallenge();

@@ -34,18 +34,19 @@ function _getSection(tree) {
   };
 }
 
-const startNode = marker => ({
+const startNode = (marker, depth) => ({
   type: 'heading',
   children: [
     {
       type: 'text',
       value: marker
     }
-  ]
+  ],
+  ...((typeof depth === 'number' && { depth }) || {})
 });
 
-function getSection(tree, marker) {
-  const start = find(tree, startNode(marker));
+function getSection(tree, marker, depth) {
+  const start = find(tree, startNode(marker, depth));
   return _getSection(tree)(start);
 }
 

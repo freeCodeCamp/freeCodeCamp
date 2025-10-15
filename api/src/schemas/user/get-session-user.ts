@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
-import { examResults, profileUI, savedChallenge } from '../types';
+import { examResults, profileUI, savedChallenge } from '../types.js';
 
 const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
   Type.Literal(k)
@@ -108,9 +108,10 @@ export const getSessionUser = {
             })
           ),
           profileUI: Type.Optional(profileUI),
-          sendQuincyEmail: Type.Boolean(),
+          sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),

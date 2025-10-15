@@ -118,11 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
-    "start": "开始",
-    "go-to-today": "访问今天的挑战",
-    "go-to-today-long": "访问今天的编程挑战",
-    "go-to-archive": "访问存档",
-    "go-to-archive-long": "访问每日编程挑战存档"
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "每日编程挑战",
@@ -153,7 +150,7 @@
   "landing": {
     "big-heading-1": "免费学习编程",
     "big-heading-2": "构建项目",
-    "big-heading-1-b": "免费提升你的技能。",
+    "big-heading-1-b": "免费提升你的技能",
     "big-heading-3": "获得认证",
     "advance-career": "学习编程、 DevOps、 网络安全、 AI 工程和开发者英语，提升你的职业能力。",
     "h2-heading": "已有超过 <strong>100,000</strong> 名 freeCodeCamp.org 毕业生<strong>入职</strong>科技公司，例如：",
@@ -214,6 +211,7 @@
     "next-heading": "试试我们的测试版课程：",
     "upcoming-heading": "即将推出的课程：",
     "catalog-heading": "探索我们的目录：",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常见问题：",
     "faqs": [
       {
@@ -380,6 +378,14 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
     "download-header": "下载 freeCodeCamp 考试环境应用程序",
     "explanation": "要获得认证，你必须参加考试以检验对所学知识的掌握程度。参加考试完全免费。",
     "version": "我们的应用程序的最新版本是：{{version}}。",
@@ -527,20 +533,44 @@
     "project-preview-title": "下面是你将构建的项目的预览",
     "demo-project-title": "这是一个符合要求的项目示例。",
     "github-required": "如果你没有 GitHub 账户，你需要 <0>创建 GitHub</0> 账户。 你需要创建虚拟 Linux 服务器，这个过程可能需要几分钟。",
-    "gitpod": {
-      "intro": "本课程使用 Gitpod 在虚拟的 Linux 机器中运行。按照这些说明开始学习课程：",
-      "step-1": "如果你没有 GitHub 账户，<0>创建一个</0>。",
-      "step-2": "点击下面的开始按钮",
-      "step-3": "如果你尚未登录，使用你的 GitHub 账户登录 Gitpod",
-      "step-4": "虚拟 Linux 机器加载完成后，启动 CodeRoad 扩展：",
-      "step-5": "点击 VSCode 窗口左上角的 “hamburger” 菜单，",
-      "step-6": "前往“查看”菜单，",
-      "step-7": "点击“命令面板”选项，",
-      "step-8": "并运行 “CodeRoad: Start” 命令",
-      "step-9": "按照 CodeRoad 中的说明完成课程",
-      "continue-project": "点击下面的按钮将启动一个新项目。如果你已经开始了 {{course}} 课程，请进入 <0>你的 Gitpod 面板</0> 继续。",
-      "learn-more": "了解更多关于 <0>Gitpod 工作区</0>的信息。",
-      "logout-warning": "如果你在完成整个 {{course}} 课程之前退出 freeCodeCamp，你的进度将不会被保存到你的 freeCodeCamp 账户中。"
+    "codespaces": {
+      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
+      "step-1": "<0>Create an GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "On that page, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Value</0> field, paste your token",
+      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "summary": "Codespaces Setup"
+    },
+    "ona": {
+      "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
+      "step-1": "<0>Create an Ona account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "In the modal that pops up, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{course}} course, go to <0>your Ona dashboard</0> to continue.",
+      "learn-more": "Learn more about <0>Ona workspaces.</0>",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Secret</0> field, paste your token",
+      "summary": "Ona Setup"
     },
     "local": {
       "intro": "本课程将在你电脑上的虚拟 Linux 环境中运行。要开始学习，你需要先下载以下必备软件（如尚未安装）：",
@@ -562,7 +592,8 @@
       "step-7": "复制下面的课程 URL，将其粘贴到网址输入框中，然后点击 “Load”（加载）。",
       "copy-url": "复制课程 URL",
       "step-8": "点击 “Start”（开始）以开始。",
-      "step-9": "按照 CodeRoad 中的说明完成课程。注意：你可能需要将终端重启一次，以便终端设置生效并通过测试。"
+      "step-9": "按照 CodeRoad 中的说明完成课程。注意：你可能需要将终端重启一次，以便终端设置生效并通过测试。",
+      "summary": "Local Setup"
     },
     "step-1": "步骤 1：完成项目",
     "step-2": "步骤 2：提交你的代码",
@@ -642,12 +673,19 @@
       "invalid-transcript": "你的成绩单链接不正确，它应该有以下表格：<1>https://learn.microsoft.com/LOCALE/usERNAME/transcript/ID</1> - 请检查你的链接中的 UPPERCASE 项目是否正确。"
     },
     "block-type": {
-      "lecture": "讲座",
+      "lecture": "Theory",
       "workshop": "工作坊",
       "lab": "实验室",
       "review": "复习",
       "quiz": "测验",
-      "exam": "考试"
+      "exam": "考试",
+      "warm-up": "Warm-up",
+      "learn": "Learn",
+      "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
@@ -1179,6 +1217,8 @@
       "b1-english-for-developers-cert": "开发者 B1 英语认证",
       "full-stack-developer-v9": "全栈开发者",
       "full-stack-developer-v9-cert": "全栈开发者认证",
+      "a1-professional-spanish": "A1 Professional Spanish",
+      "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "A2 专业西班牙语",
       "a2-professional-spanish-cert": "A2 专业西班牙语认证",
       "a2-professional-chinese": "A2 专业中文",

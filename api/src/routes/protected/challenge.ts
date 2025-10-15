@@ -1,12 +1,13 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import jwt from 'jsonwebtoken';
-import { uniqBy, matches } from 'lodash';
-import { CompletedExam, ExamResults } from '@prisma/client';
-import isURL from 'validator/lib/isURL';
-import type { FastifyInstance, FastifyReply } from 'fastify';
+import { CompletedExam, ExamResults, SavedChallengeFile } from '@prisma/client';
+import type { FastifyBaseLogger, FastifyInstance, FastifyReply } from 'fastify';
+import { uniqBy, matches } from 'lodash-es';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types';
-import * as schemas from '../../schemas';
+import validator from 'validator';
+
+import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import * as schemas from '../../schemas.js';
 import {
   jsCertProjectIds,
   multifileCertProjectIds,
@@ -15,27 +16,31 @@ import {
   type CompletedChallenge,
   saveUserChallengeData,
   msTrophyChallenges
-} from '../../utils/common-challenge-functions';
-import { JWT_SECRET } from '../../utils/env';
+} from '../../utils/common-challenge-functions.js';
+import { JWT_SECRET } from '../../utils/env.js';
 import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
-} from '../../utils/error-formatting';
-import { getChallenges } from '../../utils/get-challenges';
-import { ProgressTimestamp, getPoints } from '../../utils/progress';
+} from '../../utils/error-formatting.js';
+import { getChallenges } from '../../utils/get-challenges.js';
+import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
   validateGeneratedExamSchema,
   validateUserCompletedExamSchema,
   validateExamResultsSchema
-} from '../../utils/exam-schemas';
-import { generateRandomExam, createExamResults } from '../../utils/exam';
+} from '../../utils/exam-schemas.js';
+import { generateRandomExam, createExamResults } from '../../utils/exam.js';
 import {
   canSubmitCodeRoadCertProject,
+  decodeFiles,
   verifyTrophyWithMicrosoft
-} from '../helpers/challenge-helpers';
-import { UpdateReqType } from '../../utils';
-import { normalizeChallengeType, normalizeDate } from '../../utils/normalize';
+} from '../helpers/challenge-helpers.js';
+import { UpdateReqType } from '../../utils/index.js';
+import {
+  normalizeChallengeType,
+  normalizeDate
+} from '../../utils/normalize.js';
 
 interface JwtPayload {
   userToken: string;
@@ -93,7 +98,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       // - `solution` needs to exist, but does not have to be valid URL
       // - `githubLink` needs to exist and be valid URL
       if (challengeType === challengeTypes.backEndProject) {
-        if (!solution || !isURL(githubLink + '')) {
+        if (!solution || !validator.default.isURL(githubLink + '')) {
           logger.warn(
             { solution, githubLink },
             'Invalid backEndProject submission'
@@ -103,7 +108,7 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
             message: 'That does not appear to be a valid challenge submission.'
           });
         }
-      } else if (solution && !isURL(solution + '')) {
+      } else if (solution && !validator.default.isURL(solution + '')) {
         logger.warn({ solution }, 'Invalid solution URL');
         return void reply.code(403).send({
           type: 'error',
@@ -237,44 +242,49 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       const { id, files, challengeType } = req.body;
-
-      const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id },
-        select: userChallengeSelect
-      });
-      const RawProgressTimestamp = user.progressTimestamps as
-        | ProgressTimestamp[]
-        | null;
-      const points = getPoints(RawProgressTimestamp);
-
-      const completedChallenge: CompletedChallenge = {
+      return await postModernChallengeCompleted(fastify, {
         id,
         files,
-        completedDate: Date.now()
-      };
+        challengeType,
+        userId: req.user!.id
+      });
+    }
+  );
 
-      if (challengeType === challengeTypes.multifileCertProject) {
-        completedChallenge.isManuallyApproved = false;
-        user.needsModeration = true;
+  fastify.post(
+    '/encoded/modern-challenge-completed',
+    {
+      schema: schemas.modernChallengeCompleted,
+      errorHandler(error, req, reply) {
+        if (error.validation) {
+          const logger = fastify.log.child({ req, res: reply });
+          // This is another highly used route, so debug log level is used to
+          // avoid excessive logging
+          logger.debug({ validationError: error.validation });
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, req, reply);
+        }
       }
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      // This is another highly used route, so debug log level is used to
+      // avoid excessive logging
+      logger.debug(
+        { userId: req.user?.id },
+        'User submitted a modern challenge'
+      );
 
-      if (
-        jsCertProjectIds.includes(id) ||
-        multifileCertProjectIds.includes(id) ||
-        multifilePythonCertProjectIds.includes(id)
-      ) {
-        completedChallenge.challengeType = challengeType;
-      }
-
-      const { alreadyCompleted, userSavedChallenges: savedChallenges } =
-        await updateUserChallengeData(fastify, user, id, completedChallenge);
-
-      return {
-        alreadyCompleted,
-        points: alreadyCompleted ? points : points + 1,
-        completedDate: completedChallenge.completedDate,
-        savedChallenges
-      };
+      const { id, files: encodedFiles, challengeType } = req.body;
+      const files = encodedFiles ? decodeFiles(encodedFiles) : undefined;
+      return await postModernChallengeCompleted(fastify, {
+        id,
+        files,
+        challengeType,
+        userId: req.user!.id
+      });
     }
   );
 
@@ -319,43 +329,42 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       logger.info({ userId: req.user?.id }, 'User saved a challenge');
 
       const { files, id: challengeId } = req.body;
-      const user = await fastify.prisma.user.findUniqueOrThrow({
-        where: { id: req.user?.id }
-      });
-      const challenge = {
-        id: challengeId,
-        files
-      };
-
-      if (
-        !multifileCertProjectIds.includes(challengeId) &&
-        !multifilePythonCertProjectIds.includes(challengeId)
-      ) {
-        logger.warn(
-          {
-            challengeId
-          },
-          'User tried to save a challenge that is not saveable'
-        );
-        return void reply
-          .code(400)
-          .send('That challenge type is not saveable.');
-      }
-
-      const userSavedChallenges = saveUserChallengeData(
-        challengeId,
-        user.savedChallenges,
-        challenge
+      await postSaveChallenge(
+        fastify,
+        { challengeId, files, userId: req.user!.id },
+        logger,
+        reply
       );
+    }
+  );
 
-      await fastify.prisma.user.update({
-        where: { id: user.id },
-        data: {
-          savedChallenges: userSavedChallenges
+  fastify.post(
+    '/encoded/save-challenge',
+    {
+      schema: schemas.saveChallenge,
+      errorHandler(error, req, reply) {
+        const logger = fastify.log.child({ req, res: reply });
+        if (error.validation) {
+          logger.warn({ validationError: error.validation });
+          void reply.code(400);
+          return formatProjectCompletedValidation(error.validation);
+        } else {
+          fastify.errorHandler(error, req, reply);
         }
-      });
+      }
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      logger.info({ userId: req.user?.id }, 'User saved a challenge');
 
-      void reply.send({ savedChallenges: userSavedChallenges });
+      const { files: encodedFiles, id: challengeId } = req.body;
+      const files = decodeFiles(encodedFiles);
+      await postSaveChallenge(
+        fastify,
+        { challengeId, files, userId: req.user!.id },
+        logger,
+        reply
+      );
     }
   );
 
@@ -1097,4 +1106,108 @@ async function postDailyCodingChallengeCompleted(
       completedDailyCodingChallenges: newCompletedChallenges
     });
   }
+}
+
+async function postSaveChallenge(
+  fastify: FastifyInstance,
+  {
+    challengeId,
+    userId,
+    files
+  }: {
+    challengeId: string;
+    userId: string;
+    files: SavedChallengeFile[];
+  },
+  logger: FastifyBaseLogger,
+  reply: FastifyReply
+) {
+  const user = await fastify.prisma.user.findUniqueOrThrow({
+    where: { id: userId }
+  });
+  const challenge = {
+    id: challengeId,
+    files
+  };
+
+  if (
+    !multifileCertProjectIds.includes(challengeId) &&
+    !multifilePythonCertProjectIds.includes(challengeId)
+  ) {
+    logger.warn(
+      {
+        challengeId
+      },
+      'User tried to save a challenge that is not saveable'
+    );
+    return void reply.code(400).send('That challenge type is not saveable.');
+  }
+
+  const userSavedChallenges = saveUserChallengeData(
+    challengeId,
+    user.savedChallenges,
+    challenge
+  );
+
+  await fastify.prisma.user.update({
+    where: { id: user.id },
+    data: {
+      savedChallenges: userSavedChallenges
+    }
+  });
+
+  void reply.send({ savedChallenges: userSavedChallenges });
+}
+
+async function postModernChallengeCompleted(
+  fastify: FastifyInstance,
+  {
+    id,
+    userId,
+    challengeType,
+    files
+  }: {
+    id: string;
+    userId: string;
+    challengeType: number;
+    files: CompletedChallenge['files'];
+  }
+) {
+  const user = await fastify.prisma.user.findUniqueOrThrow({
+    where: { id: userId },
+    select: userChallengeSelect
+  });
+  const RawProgressTimestamp = user.progressTimestamps as
+    | ProgressTimestamp[]
+    | null;
+  const points = getPoints(RawProgressTimestamp);
+
+  const completedChallenge: CompletedChallenge = {
+    id,
+    files,
+    completedDate: Date.now()
+  };
+
+  if (challengeType === challengeTypes.multifileCertProject) {
+    completedChallenge.isManuallyApproved = false;
+    user.needsModeration = true;
+  }
+
+  if (
+    jsCertProjectIds.includes(id) ||
+    multifileCertProjectIds.includes(id) ||
+    multifilePythonCertProjectIds.includes(id)
+  ) {
+    completedChallenge.challengeType = challengeType;
+  }
+
+  const { alreadyCompleted, userSavedChallenges: savedChallenges } =
+    await updateUserChallengeData(fastify, user, id, completedChallenge);
+
+  return {
+    alreadyCompleted,
+    points: alreadyCompleted ? points : points + 1,
+    completedDate: completedChallenge.completedDate,
+    savedChallenges
+  };
 }

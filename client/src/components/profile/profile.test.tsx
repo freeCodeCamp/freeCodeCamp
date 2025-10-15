@@ -1,3 +1,4 @@
+import { describe, it, expect, vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { Provider } from 'react-redux';
@@ -5,13 +6,12 @@ import { createStore } from 'redux';
 import { UserThemes } from '../../redux/types';
 import Profile from './profile';
 
-jest.mock('../../analytics');
+vi.mock('../../analytics');
 //workaround to avoid some strange gatsby error:
 window.___loader = { enqueue: () => {}, hovering: () => {} };
 
 const userProps = {
   user: {
-    acceptedPrivacyTerms: true,
     currentChallengeId: 'string',
     email: 'string',
     emailVerified: true,
@@ -48,6 +48,7 @@ const userProps = {
     keyboardShortcuts: false,
     theme: UserThemes.Default,
     twitter: 'string',
+    bluesky: 'string',
     username: 'string',
     website: 'string',
     yearsTopContributor: [],

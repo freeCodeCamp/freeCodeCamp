@@ -1,4 +1,7 @@
 const Joi = require('joi');
+const {
+  chapterBasedSuperBlocks
+} = require('../../../shared-dist/config/curriculum');
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
@@ -20,11 +23,7 @@ const blockSchema = Joi.object({}).keys({
         'Euler',
         'Rosetta'
       ).required(),
-      order: Joi.number().when('superBlock', {
-        is: 'full-stack-developer',
-        then: Joi.forbidden(),
-        otherwise: Joi.required()
-      }),
+      order: Joi.number().required(),
       template: Joi.string().allow(''),
       required: Joi.array(),
       superBlock: Joi.string().required(),
@@ -44,9 +43,12 @@ const blockSchema = Joi.object({}).keys({
         'lab',
         'review',
         'quiz',
-        'exam'
+        'exam',
+        'warm-up',
+        'learn',
+        'practice'
       ).when('superBlock', {
-        is: 'full-stack-developer',
+        is: chapterBasedSuperBlocks,
         then: Joi.required(),
         otherwise: Joi.optional()
       }),

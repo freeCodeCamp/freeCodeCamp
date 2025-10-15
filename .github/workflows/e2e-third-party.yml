@@ -99,8 +99,8 @@ jobs:
         image: mongo:8.0
         ports:
           - 27017:27017
-      mailhog:
-        image: mailhog/mailhog
+      mailpit:
+        image: axllent/mailpit
         ports:
           - 1025:1025
     steps:
@@ -152,7 +152,7 @@ jobs:
 
       - name: Start apps
         run: |
-          docker compose up -d
+          docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
           pnpm run serve:client-ci &
           sleep 10
 

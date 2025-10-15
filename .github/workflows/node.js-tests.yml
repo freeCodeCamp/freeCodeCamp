@@ -213,6 +213,7 @@ jobs:
     name: Test - i18n
     needs: build
     runs-on: ubuntu-22.04
+    if: github.event.pull_request.user.login == 'camperbot' && github.head_ref == 'chore/update-i18n-curriculum-submodule'
 
     strategy:
       fail-fast: false

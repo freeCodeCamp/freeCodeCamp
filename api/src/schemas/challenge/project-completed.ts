@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { genericError } from '../types';
+import { genericError } from '../types.js';
 
 export const projectCompleted = {
   body: Type.Object({

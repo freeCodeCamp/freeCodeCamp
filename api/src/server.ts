@@ -1,10 +1,21 @@
-import './instrument';
+import './instrument.js';
 
-import { build, buildOptions } from './app';
-import { HOST, PORT } from './utils/env';
+import { build, buildOptions } from './app.js';
+import { HOST, PORT } from './utils/env.js';
 
 const start = async () => {
   const fastify = await build(buildOptions);
+
+  const stop = async (signal: NodeJS.Signals) => {
+    fastify.log.info(`Received ${signal}, shutting down.`);
+    await fastify.close();
+    fastify.log.info('Shutdown complete');
+    process.exit(0);
+  };
+
+  process.on('SIGINT', signal => void stop(signal));
+  process.on('SIGTERM', signal => void stop(signal));
+
   try {
     const port = Number(PORT);
     fastify.log.info(`Starting server on port ${port}`);

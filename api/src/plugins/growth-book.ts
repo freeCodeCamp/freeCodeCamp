@@ -2,7 +2,7 @@ import { GrowthBook, Options } from '@growthbook/growthbook';
 import { FastifyPluginAsync } from 'fastify';
 import fp from 'fastify-plugin';
 
-import { FREECODECAMP_NODE_ENV } from '../utils/env';
+import { FREECODECAMP_NODE_ENV } from '../utils/env.js';
 
 declare module 'fastify' {
   interface FastifyInstance {
