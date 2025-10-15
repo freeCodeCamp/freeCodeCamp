@@ -2335,6 +2335,10 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": ["Build an Accessible Audio Controller", ""]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -4986,10 +4990,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-accessible-audio-controller": {
-        "title": "Build an Accessible Audio Controller",
-        "intro": ["Build an Accessible Audio Controller", ""]
       }
     }
   },
