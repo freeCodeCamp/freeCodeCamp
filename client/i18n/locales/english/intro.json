@@ -4818,16 +4818,16 @@
           "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
       },
-      "review-relational-database": {
-        "title": "Relational Database Review",
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
         "intro": [
-          "Review the Relational Database concepts to prepare for the upcoming quiz."
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
         ]
       },
       "quiz-relational-database": {
-        "title": "Relational Database Quiz",
+        "title": "SQL and PostgreSQL Quiz",
         "intro": [
-          "Test what you've learned on relational databases with this quiz."
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
         ]
       },
       "lecture-understanding-bash-scripting": {
