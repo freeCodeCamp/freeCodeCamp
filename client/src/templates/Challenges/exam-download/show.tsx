@@ -6,7 +6,9 @@ import {
   Dropdown,
   MenuItem,
   Spacer,
-  Container
+  Container,
+  Row,
+  Col
 } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation, withTranslation } from 'react-i18next';
@@ -20,6 +22,8 @@ import { ChallengeNode } from '../../../redux/prop-types';
 import { isSignedInSelector } from '../../../redux/selectors';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
+
+import './show.css';
 
 interface GitProps {
   tag_name: string;
@@ -142,66 +146,65 @@ function ShowExamDownload({
         </title>
       </Helmet>
       <Container>
-        <Spacer size='m' />
-        <ChallengeTitle
-          isCompleted={isChallengeCompleted}
-          translationPending={translationPending}
-        >
-          {title}
-        </ChallengeTitle>
-        <Spacer size='l' />
-        <h2>{t('exam.download-header')}</h2>
-        <p>{t('exam.explanation')}</p>
-        <Spacer size='l' />
-        {isSignedIn && (
-          <>
-            <h2>{t('exam.attempts')}</h2>
-            <Attempts id={id} />
-            <Spacer size='l' />
-          </>
-        )}
-        <p>
-          {t('exam.version', {
-            version: latestVersion || '...'
-          })}
-        </p>
-        <Button
-          disabled={!downloadLink}
-          aria-disabled={!downloadLink}
-          href={downloadLink}
-          download={downloadLink}
-        >
-          {t('buttons.download-latest-version')}
-        </Button>
-        {!downloadLink && (
-          <>
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='m' />
-            <strong>{t('exam.unable-to-detect-os')}</strong>
-          </>
-        )}
-        <Spacer size='m' />
-        <Dropdown>
-          <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
-          <Dropdown.Menu>
-            {downloadLinks
-              .filter(link => !link.match(/\.sig|\.json/))
-              .map((link, index) => {
-                return (
-                  <MenuItem
-                    href={link}
-                    download={link}
-                    key={index}
-                    variant='primary'
-                  >
-                    {link}
-                  </MenuItem>
-                );
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
+            <Spacer size='m' />
+            <h2>{t('exam.download-header')}</h2>
+            <p>{t('exam.explanation')}</p>
+            <Spacer size='l' />
+            {isSignedIn && (
+              <>
+                <h2>{t('exam.attempts')}</h2>
+                <Attempts id={id} />
+                <Spacer size='l' />
+              </>
+            )}
+            <p>
+              {t('exam.version', {
+                version: latestVersion || '...'
               })}
-          </Dropdown.Menu>
-        </Dropdown>
-        <Spacer size='l' />
-        <strong>{t('exam.download-trouble')}</strong>{' '}
-        <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
+            </p>
+            <div className='exam-download-buttons'>
+              {downloadLink ? (
+                <Button href={downloadLink} download={downloadLink}>
+                  {t('buttons.download-latest-version')}
+                </Button>
+              ) : (
+                <strong>{t('exam.unable-to-detect-os')}</strong>
+              )}
+              <Spacer size='xs' />
+              <Dropdown>
+                <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {downloadLinks
+                    .filter(link => !link.match(/\.sig|\.json/))
+                    .map((link, index) => (
+                      <MenuItem
+                        href={link}
+                        download={link}
+                        key={index}
+                        variant='primary'
+                      >
+                        {link}
+                      </MenuItem>
+                    ))}
+                </Dropdown.Menu>
+              </Dropdown>
+            </div>
+            <Spacer size='l' />
+            <strong>{t('exam.download-trouble')}</strong>{' '}
+            <a href='mailto: support@freecodecamp.org'>
+              support@freecodecamp.org
+            </a>
+          </Col>
+        </Row>
       </Container>
     </LearnLayout>
   );
