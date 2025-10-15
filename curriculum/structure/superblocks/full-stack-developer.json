@@ -801,7 +801,7 @@
           ]
         },
         {
-          "dashedName": "relational-databases",
+          "dashedName": "sql-and-postgresql",
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
