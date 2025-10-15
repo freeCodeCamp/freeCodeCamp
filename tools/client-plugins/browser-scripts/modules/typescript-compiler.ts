@@ -11,10 +11,7 @@ export class Compiler {
   tsvfs: TSVFS;
   tsEnv?: VirtualTypeScriptEnvironment;
   compilerHost?: CompilerHost;
-  constructor(
-    ts: typeof import('typescript'),
-    tsvfs: typeof import('@typescript/vfs')
-  ) {
+  constructor(ts: TS, tsvfs: TSVFS) {
     this.ts = ts;
     this.tsvfs = tsvfs;
   }
@@ -44,6 +41,7 @@ export class Compiler {
     const reactTypesPath = `/node_modules/@types/react/index.d.ts`;
 
     // It may be necessary to get all the types (global.d.ts etc)
+
     fsMap.set(reactTypesPath, reactTypes['react-18'] || '');
 
     const system = tsvfs.createSystem(fsMap);
@@ -65,10 +63,14 @@ export class Compiler {
     ).compilerHost;
   }
 
-  compile(code: string, fileName: string) {
+  compile(rawCode: string, fileName: string) {
     if (!this.tsEnv || !this.compilerHost) {
       throw Error('TypeScript environment not set up');
     }
+    // If we try to update or create an empty file, the environment will become
+    // permanently unable to interact with that file. The workaround is to create
+    // a file with a single newline character.
+    const code = rawCode || '\n';
     // TODO: If creating the file fresh each time is too slow, we can try checking
     // if the file exists and updating it if it does.
     this.tsEnv.createFile(fileName, code);
