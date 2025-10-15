@@ -1,6 +1,6 @@
 {
   "name": "Build Quincy's Job Tips Page",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-quincys-job-tips",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
