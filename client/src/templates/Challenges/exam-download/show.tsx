@@ -185,16 +185,19 @@ function ShowExamDownload({
                 <Dropdown.Menu>
                   {downloadLinks
                     .filter(link => !link.match(/\.sig|\.json/))
-                    .map((link, index) => (
-                      <MenuItem
-                        href={link}
-                        download={link}
-                        key={index}
-                        variant='primary'
-                      >
-                        {link}
-                      </MenuItem>
-                    ))}
+                    .map((link, index) => {
+                      const fileName = link.split('/').pop();
+                      return (
+                        <MenuItem
+                          href={link}
+                          download={link}
+                          key={index}
+                          variant='primary'
+                        >
+                          {fileName}
+                        </MenuItem>
+                      );
+                    })}
                 </Dropdown.Menu>
               </Dropdown>
             </div>
