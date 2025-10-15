@@ -849,7 +849,6 @@
         },
         {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-relational-databases",
           "blocks": ["review-relational-databases"]
         }
