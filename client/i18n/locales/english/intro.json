@@ -2383,10 +2383,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -3543,6 +3540,12 @@
           "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
         ]
       },
+      "lab-element-skipper": {
+        "title": "Implement an Element Skipper",
+        "intro": [
+          "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
       "lab-optional-arguments-sum-function": {
         "title": "Build an Optional Arguments Sum Function",
         "intro": [
@@ -4140,10 +4143,7 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": {
-        "title": "258",
-        "intro": []
-      },
+      "kagw": { "title": "258", "intro": [] },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -4416,26 +4416,11 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
-      "trvf": {
-        "title": "293",
-        "intro": []
-      },
-      "kwmg": {
-        "title": "294",
-        "intro": []
-      },
-      "nodx": {
-        "title": "295",
-        "intro": []
-      },
-      "erfj": {
-        "title": "296",
-        "intro": []
-      },
-      "muyw": {
-        "title": "297",
-        "intro": []
-      },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -4453,14 +4438,8 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": {
-        "title": "301",
-        "intro": []
-      },
-      "vtpz": {
-        "title": "302",
-        "intro": []
-      },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -4657,10 +4636,7 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
@@ -4794,10 +4770,7 @@
           "In this lab, you will implement the Depth-First Search Algorithm."
         ]
       },
-      "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
-      },
+      "lab-n-queens-problem": { "title": "", "intro": [""] },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
@@ -6138,12 +6111,8 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Python Certification exam."
     ],
-    "chapters": {
-      "python": "Python"
-    },
-    "modules": {
-      "python-certification-exam": "Python Certification Exam"
-    },
+    "chapters": { "python": "Python" },
+    "modules": { "python-certification-exam": "Python Certification Exam" },
     "blocks": {
       "exam-python-certification": {
         "title": "Python Certification Exam",
@@ -6159,9 +6128,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Relational Databases Certification exam."
     ],
-    "chapters": {
-      "relational-databases": "Relational Databases"
-    },
+    "chapters": { "relational-databases": "Relational Databases" },
     "modules": {
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
@@ -6264,10 +6231,7 @@
         "title": "Alphabet and Accents",
         "intro": ["", ""]
       },
-      "es-a1-learn-punctuation": {
-        "title": "Punctuation",
-        "intro": ["", ""]
-      },
+      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
       "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
         "title": "Alphabet, Accent and Punctuation Quiz",
         "intro": ["", ""]
@@ -6276,14 +6240,8 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": {
-        "title": "Meet Luna",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-meet-mateo": {
-        "title": "Meet Mateo",
-        "intro": ["", ""]
-      },
+      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
+      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -7407,9 +7365,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -7422,9 +7378,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
