@@ -1,6 +1,6 @@
 {
   "name": "Build a Game Settings Panel",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-game-settings-panel",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
