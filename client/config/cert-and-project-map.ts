@@ -903,7 +903,7 @@ const allStandardCerts = [
     certSlug: Certification.A2English,
     projects: [
       {
-        id: '651dd3e06ffb500e3f2ce478',
+        id: '6721db5d9f0c116e6a0fe25a',
         title: 'A2 English for Developers Certification Exam',
         link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
         certSlug: Certification.A2English
@@ -952,12 +952,12 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '682c3153086dd7cabe7f48bc',
+    id: '68f1268149f045a650d4229e',
     title: 'A1 Professional Chinese',
     certSlug: Certification.A1Chinese,
     projects: [
       {
-        id: '682c2753317b88f1ecdad894',
+        id: '688f1daf0133dbe2a36b140b',
         title: 'Dialogue 1: PLACEHOLDER',
         link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
 /text-1`,
