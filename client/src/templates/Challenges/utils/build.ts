@@ -208,7 +208,7 @@ export async function buildDOMChallenge(
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
   const toBuild = error
-    ? {}
+    ? undefined
     : {
         required,
         template,
