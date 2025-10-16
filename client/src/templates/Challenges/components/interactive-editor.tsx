@@ -43,12 +43,12 @@ const InteractiveEditor = ({ files }: Props) => {
     return files.some(f => f.ext === ext);
   }
 
-  // 1. Check if the example is only JavaScript/TypeScript (no HTML or CSS)
-  const isPureScriptExample =
-    (got('js') || got('ts')) && !got('html') && !got('css');
+  const hasHtmlOrCss = got('html') || got('css');
+  const hasScript = got('js') || got('ts');
+  const isPureScript = hasScript && !hasHtmlOrCss;
 
-  const showConsole = isPureScriptExample ? false : got('js') || got('ts');
-
+  const layout = isPureScript ? 'console' : 'preview';
+  const showConsole = layout === 'preview' && hasScript;
   const freeCodeCampDarkSyntax = {
     ...freeCodeCampDark.syntax,
     punctuation: '#ffff00',
