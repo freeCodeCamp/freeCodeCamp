@@ -5,6 +5,8 @@ challengeType: 22
 dashedName: task-6
 ---
 
+<!-- (Audio) Julieta: d -->
+
 # --description--
 
 The letter `d` is called `de` (pronounced `deh`).
