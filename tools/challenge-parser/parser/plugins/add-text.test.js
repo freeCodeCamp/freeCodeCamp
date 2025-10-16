@@ -3,7 +3,7 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addText from './add-text';
 
 describe('add-text', () => {
-  let realisticAST, mockAST, withSubSectionAST;
+  let realisticAST, mockAST, withSubSectionAST, withNestedInstructionsAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -13,6 +13,9 @@ describe('add-text', () => {
     realisticAST = await parseFixture('realistic.md');
     mockAST = await parseFixture('simple.md');
     withSubSectionAST = await parseFixture('with-subsection.md');
+    withNestedInstructionsAST = await parseFixture(
+      'with-nested-instructions.md'
+    );
   });
 
   beforeEach(() => {
@@ -132,6 +135,20 @@ describe('add-text', () => {
     expect(file.data[instructionsId]).toEqual(
       expect.stringContaining(expectedText2)
     );
+  });
+
+  it('should ignore --instructions-- markers that are not at depth 1', () => {
+    const plugin = addText([instructionsId]);
+    plugin(withNestedInstructionsAST, file);
+
+    // Should only include the depth 1 instructions, not the nested ones
+    const expectedText = `<section id="instructions">
+<p>These are the main instructions at depth 1.</p>
+<pre><code class="language-html">&#x3C;div>Main instructions code&#x3C;/div>
+</code></pre>
+</section>`;
+
+    expect(file.data[instructionsId]).toEqual(expectedText);
   });
 
   it('should have an output to match the snapshot', () => {

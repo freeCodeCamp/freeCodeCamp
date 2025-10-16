@@ -7,6 +7,8 @@ export const genericError = Type.Object({
 
 export const isCertMap = Type.Object({
   isRespWebDesignCert: Type.Boolean(),
+  isRespWebDesignCertV9: Type.Boolean(),
+  isJavascriptCertV9: Type.Boolean(),
   isJsAlgoDataStructCert: Type.Boolean(),
   isFrontEndLibsCert: Type.Boolean(),
   is2018DataVisCert: Type.Boolean(),

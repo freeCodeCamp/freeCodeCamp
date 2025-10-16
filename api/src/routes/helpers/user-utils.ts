@@ -18,6 +18,7 @@ const nullableFlags = [
   'isFrontEndCert',
   'isFullStackCert',
   'isFrontEndLibsCert',
+  'isJavascriptCertV9',
   'isHonest',
   'isInfosecCertV7',
   'isInfosecQaCert',
@@ -27,6 +28,7 @@ const nullableFlags = [
   'isQaCertV7',
   'isRelationalDatabaseCertV8',
   'isRespWebDesignCert',
+  'isRespWebDesignCertV9',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
   // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server

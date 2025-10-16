@@ -12,6 +12,10 @@ import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-
 import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
 import respWebDesignV9 from '../../../../../curriculum/structure/superblocks/responsive-web-design-v9.json';
 import javascriptV9 from '../../../../../curriculum/structure/superblocks/javascript-v9.json';
+import frontEndDevLibsV9 from '../../../../../curriculum/structure/superblocks/front-end-development-libraries-v9.json';
+import pythonV9 from '../../../../../curriculum/structure/superblocks/python-v9.json';
+import relationalDbV9 from '../../../../../curriculum/structure/superblocks/relational-databases-v9.json';
+import backEndDevApisV9 from '../../../../../curriculum/structure/superblocks/back-end-development-and-apis-v9.json';
 
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
@@ -195,6 +199,14 @@ export const SuperBlockAccordion = ({
         return respWebDesignV9;
       case SuperBlocks.JsV9:
         return javascriptV9;
+      case SuperBlocks.FrontEndDevLibsV9:
+        return frontEndDevLibsV9;
+      case SuperBlocks.PythonV9:
+        return pythonV9;
+      case SuperBlocks.RelationalDbV9:
+        return relationalDbV9;
+      case SuperBlocks.BackEndDevApisV9:
+        return backEndDevApisV9;
       default:
         throw new Error("The SuperBlock structure hasn't been imported.");
     }

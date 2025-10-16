@@ -43,6 +43,7 @@ export const newUser = (email: string) => ({
   isHonest: false,
   isInfosecCertV7: false,
   isInfosecQaCert: false,
+  isJavascriptCertV9: false,
   isJsAlgoDataStructCert: false,
   isJsAlgoDataStructCertV8: false,
   isMachineLearningPyCertV7: false,
@@ -50,6 +51,7 @@ export const newUser = (email: string) => ({
   isRelationalDatabaseCertV8: false,
   isCollegeAlgebraPyCertV8: false,
   isRespWebDesignCert: false,
+  isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
   keyboardShortcuts: false,
   linkedin: null,
@@ -82,6 +84,7 @@ export const newUser = (email: string) => ({
   theme: 'default',
   timezone: null,
   twitter: null,
+  bluesky: null,
   updateCount: 0, // see extendClient in prisma.ts
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   username: expect.stringMatching(fccUuidRe),

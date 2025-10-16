@@ -9,6 +9,7 @@ export const updateMySocials = {
   body: Type.Object({
     website: urlOrEmptyString,
     twitter: urlOrEmptyString,
+    bluesky: urlOrEmptyString,
     githubProfile: urlOrEmptyString,
     linkedin: urlOrEmptyString
   }),

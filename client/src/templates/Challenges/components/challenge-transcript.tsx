@@ -7,21 +7,27 @@ import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
+  shouldPersistExpanded?: boolean;
 }
 
 function ChallengeTranscript({
-  transcript
+  transcript,
+  shouldPersistExpanded
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
   // default to collapsed
-  const [isOpen, setIsOpen] = useState(
-    () => (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+  const [isOpen, setIsOpen] = useState(() =>
+    shouldPersistExpanded
+      ? (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+      : false
   );
 
   function toggleExpandedState(e: React.MouseEvent<HTMLDetailsElement>) {
     e.preventDefault();
-    store.set('fcc-transcript-expanded', !isOpen);
+    if (shouldPersistExpanded) {
+      store.set('fcc-transcript-expanded', !isOpen);
+    }
     setIsOpen(!isOpen);
   }
 
