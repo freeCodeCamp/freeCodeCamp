@@ -1,6 +1,6 @@
 {
   "name": "Design a Set of Colorful Boxes",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-colorful-boxes",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
@@ -18,7 +18,12 @@
     { "id": "68ef1b1c657f1b2396d98592", "title": "Step 11" },
     { "id": "68ef1eda8fdbe33f87cfc71d", "title": "Step 12" },
     { "id": "68ef2080ba680d4c8c0213aa", "title": "Step 13" },
-    { "id": "68ef216359687854fa2f3081", "title": "Step 14" }
+    { "id": "68ef216359687854fa2f3081", "title": "Step 14" },
+    { "id": "68ef96d3fc1b7b4db79e093a", "title": "Step 15" },
+    { "id": "68ef9855a1aa425c78b0bc4a", "title": "Step 16" },
+    { "id": "68ef9a0b710ba66dd23ed260", "title": "Step 17" },
+    { "id": "68ef9ac77f6b4176b773e3ac", "title": "Step 18" },
+    { "id": "68ef9c7dbdab54899bdf1738", "title": "Step 19" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
