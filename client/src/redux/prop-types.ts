@@ -172,6 +172,18 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  data: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  data: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -184,6 +196,7 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    nodules: Nodule[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
@@ -398,6 +411,7 @@ export type User = {
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
+  bluesky: string;
   username: string;
   website: string;
   yearsTopContributor: string[];
@@ -428,11 +442,13 @@ export type ClaimedCertifications = {
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
   isInfosecQaCert: boolean;
+  isJavascriptCertV9: boolean;
   isQaCertV7: boolean;
   isInfosecCertV7: boolean;
   isJsAlgoDataStructCert: boolean;
   isRelationalDatabaseCertV8: boolean;
   isRespWebDesignCert: boolean;
+  isRespWebDesignCertV9: boolean;
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;

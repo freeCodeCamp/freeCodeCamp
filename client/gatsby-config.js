@@ -5,11 +5,11 @@ const {
   replaceChallengeNodes,
   localeChallengesRootDir
 } = require('./utils/build-challenges');
+const { pathPrefix } = require('./utils/gatsby/path-prefix');
 
-const { clientLocale, curriculumLocale, homeLocation } = envData;
+const { curriculumLocale, homeLocation } = envData;
 
 const curriculumIntroRoot = path.resolve(__dirname, './src/pages');
-const pathPrefix = clientLocale === 'english' ? '' : '/' + clientLocale;
 
 module.exports = {
   flags: {

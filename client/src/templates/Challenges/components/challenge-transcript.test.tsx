@@ -1,15 +1,16 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import store from 'store';
-import { describe, it, expect, beforeEach } from 'vitest';
+import { describe, it, expect, vi, afterEach } from 'vitest';
 import ChallengeTranscript from './challenge-transcript';
 
 const baseProps = {
-  transcript: 'Sample transcript text'
+  transcript: 'Sample transcript text',
+  shouldPersistExpanded: false
 };
 
 describe('<ChallengeTranscript />', () => {
-  beforeEach(() => {
+  afterEach(() => {
     store.clearAll();
   });
 
@@ -35,10 +36,26 @@ describe('<ChallengeTranscript />', () => {
     expect(screen.getByText('Sample transcript text')).not.toBeVisible();
   });
 
-  it("renders expanded when 'fcc-transcript-expanded = true'", () => {
+  it("renders expanded when 'fcc-transcript-expanded = true' and shouldPersistExpanded = true", () => {
     store.set('fcc-transcript-expanded', true);
-    render(<ChallengeTranscript {...baseProps} />);
+    render(<ChallengeTranscript {...baseProps} shouldPersistExpanded={true} />);
     expect(screen.getByTestId('challenge-transcript')).toHaveAttribute('open');
     expect(screen.getByText('Sample transcript text')).toBeVisible();
+  });
+
+  it('writes to localstorage when shouldPersistExpanded = true', () => {
+    const setSpy = vi.spyOn(store, 'set');
+    render(<ChallengeTranscript {...baseProps} shouldPersistExpanded={true} />);
+    fireEvent.click(screen.getByText('learn.transcript'));
+    expect(setSpy).toHaveBeenCalledWith('fcc-transcript-expanded', true);
+    setSpy.mockRestore();
+  });
+
+  it('does not write to localstorage when shouldPersistExpanded = false', () => {
+    const setSpy = vi.spyOn(store, 'set');
+    render(<ChallengeTranscript {...baseProps} />);
+    fireEvent.click(screen.getByText('learn.transcript'));
+    expect(setSpy).not.toHaveBeenCalled();
+    setSpy.mockRestore();
   });
 });

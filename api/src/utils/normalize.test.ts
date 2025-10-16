@@ -1,6 +1,7 @@
 import { describe, test, expect } from 'vitest';
 import {
   normalizeTwitter,
+  normalizeBluesky,
   normalizeProfileUI,
   normalizeChallenges,
   normalizeFlags,
@@ -22,6 +23,22 @@ describe('normalize', () => {
     });
     test('returns undefined  if that is the input', () => {
       expect(normalizeTwitter('')).toBeUndefined();
+    });
+  });
+
+  describe('normalizeBluesky', () => {
+    test('returns the input if it is a url', () => {
+      const url = 'https://bsky.app/profile/a_generic_user';
+      expect(normalizeBluesky(url)).toEqual(url);
+    });
+    test('adds the handle to bsky.app if it is not a url', () => {
+      const handle = '@a_generic_user';
+      expect(normalizeBluesky(handle)).toEqual(
+        'https://bsky.app/profile/a_generic_user'
+      );
+    });
+    test('returns undefined if that is the input', () => {
+      expect(normalizeBluesky('')).toBeUndefined();
     });
   });
 

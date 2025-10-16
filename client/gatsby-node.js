@@ -324,6 +324,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       isPrivate: Boolean
       module: String
       msTrophyId: String
+      nodules: [Nodule]
       notes: String
       order: Int
       prerequisites: [PrerequisiteChallenge]
@@ -461,6 +462,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       afterEach: String
       beforeAll: String
       afterAll: String
+    }
+
+    type Nodule {
+      type: String
+      data: JSON
     }
   `;
   createTypes(typeDefs);

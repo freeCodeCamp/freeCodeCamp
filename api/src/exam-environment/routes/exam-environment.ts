@@ -823,8 +823,17 @@ async function getExams(
       : exam.config.retakeTimeInMS;
     const retakeDateInMS =
       lastAttemptStartTime + examTotalTimeInMS + examRetakeTimeInMS;
-    const isRetakeTimePassed = Date.now() > retakeDateInMS;
 
+    const lastAttemptExpired =
+      Date.now() > lastAttemptStartTime + examTotalTimeInMS;
+    if (!lastAttemptExpired) {
+      logger.info(`Exam ${exam.id} in progress.`);
+      availableExam.canTake = true;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const isRetakeTimePassed = Date.now() > retakeDateInMS;
     if (!isRetakeTimePassed) {
       logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
       availableExam.canTake = false;

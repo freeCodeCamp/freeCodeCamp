@@ -79,6 +79,7 @@ export const getSessionUser = {
           isFrontEndCert: Type.Boolean(),
           isFrontEndLibsCert: Type.Boolean(),
           isFullStackCert: Type.Boolean(),
+          isJavascriptCertV9: Type.Boolean(),
           isHonest: Type.Boolean(),
           isInfosecCertV7: Type.Boolean(),
           isInfosecQaCert: Type.Boolean(),
@@ -88,6 +89,7 @@ export const getSessionUser = {
           isQaCertV7: Type.Boolean(),
           isRelationalDatabaseCertV8: Type.Boolean(),
           isRespWebDesignCert: Type.Boolean(),
+          isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
@@ -111,6 +113,7 @@ export const getSessionUser = {
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),

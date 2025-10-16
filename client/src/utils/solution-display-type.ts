@@ -8,7 +8,8 @@ type DisplayType =
   | 'showUserCode'
   | 'showProjectAndGithubLinks'
   | 'showProjectLink'
-  | 'showExamResults';
+  | 'showExamResults'
+  | 'noSolutionToDisplay';
 
 export const getSolutionDisplayType = ({
   solution,
@@ -17,6 +18,8 @@ export const getSolutionDisplayType = ({
   challengeType,
   examResults
 }: CompletedChallenge): DisplayType => {
+  if (challengeType === challengeTypes.examDownload)
+    return 'noSolutionToDisplay';
   if (examResults) return 'showExamResults';
   if (challengeFiles?.length)
     return challengeType === challengeTypes.multifileCertProject

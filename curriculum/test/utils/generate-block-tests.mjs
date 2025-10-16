@@ -32,17 +32,17 @@ async function main() {
 
   for (const block of blocks) {
     const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
-    const contents = generateSingleBlockFile({ block });
+    const contents = generateSingleBlockFile({ ...testFilter, block });
     await fs.promises.writeFile(filePath, contents, 'utf8');
   }
 
   console.log(`Generated ${blocks.length} block test file(s).`);
 }
 
-function generateSingleBlockFile({ block }) {
+function generateSingleBlockFile(testFilter) {
   return `import { defineTestsForBlock } from '../test-challenges.js';
 
-await defineTestsForBlock({ block: ${JSON.stringify(block)} });
+await defineTestsForBlock(${JSON.stringify(testFilter)});
 `;
 }
 

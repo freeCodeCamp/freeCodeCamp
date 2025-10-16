@@ -13,6 +13,7 @@ const VALID_MARKERS = [
   '# --fillInTheBlank--',
   '# --hints--',
   '# --instructions--',
+  '# --interactive--',
   '# --notes--',
   '# --questions--',
   '# --quizzes--',
