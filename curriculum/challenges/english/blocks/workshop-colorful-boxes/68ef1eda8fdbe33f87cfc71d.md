@@ -7,9 +7,9 @@ dashedName: step-12
 
 # --description--
 
-Now change the second number `0` to `1` within our `flex` property in our `style.css` file to see the variation in the flex container.
+Now change the second number in `flex` from `0` to `1` in the `box` class of our `styles.css` file.
 
-The second value represents `flex-shrink` and specifies how much the flex item will shrink if all the items are larger than the flex container's available space.
+The second value represents `flex-shrink`. This property controls how much the flex item will shrink when there isn't enough space in the container for all items.
 
 # --hints--
 
@@ -43,6 +43,7 @@ Test 1
       <div  class="box"></div>
       <div  class="box"></div>
       <div  class="box"></div>
+      <div  class="box"></div>    
     </div>
 
   </body>
@@ -65,7 +66,7 @@ h1 {
   padding: 10px;
   margin: 20px auto;
   height: 400px;
-  align-content: space-around;
+  align-content: space-evenly;
 }
 
 .box {
