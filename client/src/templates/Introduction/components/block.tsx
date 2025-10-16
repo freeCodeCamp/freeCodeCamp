@@ -78,12 +78,27 @@ export class Block extends Component<BlockProps> {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
+    this.handleBlockHover = this.handleBlockHover.bind(this);
   }
 
   handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
+  };
+
+  /*
+   * This function handles the block hover event.
+   * It also updates the URL hash to reflect the current block.
+   */
+  handleBlockHover = (): void => {
+    const { block } = this.props;
+    // Convert block to dashed format
+    const dashedBlock = block
+      .toLowerCase()
+      .replace(/\s+/g, '-')
+      .replace(/[^a-z0-9-]/g, '');
+    window.history.pushState(null, '', `#${dashedBlock}`);
   };
 
   render(): ReactNode {
@@ -161,7 +176,11 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeListBlock = (
       <ScrollableAnchor id={block}>
-        <div className={`block ${isExpanded ? 'open' : ''}`}>
+        <div
+          className={`block ${isExpanded ? 'open' : ''}`}
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
+        >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockType && <BlockLabel blockType={blockType} />}
@@ -218,7 +237,11 @@ export class Block extends Component<BlockProps> {
      */
     const ProjectListBlock = (
       <ScrollableAnchor id={block}>
-        <div className='block'>
+        <div
+          className='block'
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
+        >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockType && <BlockLabel blockType={blockType} />}
@@ -249,7 +272,11 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeGridBlock = (
       <ScrollableAnchor id={block}>
-        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
+        <div
+          className={`block block-grid ${isExpanded ? 'open' : ''}`}
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
+        >
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -297,7 +324,11 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyLinkBlock = (
       <ScrollableAnchor id={block}>
-        <div className='block block-grid grid-project-block'>
+        <div
+          className='block block-grid grid-project-block'
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
+        >
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
@@ -349,6 +380,8 @@ export class Block extends Component<BlockProps> {
         </ScrollableAnchor>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}

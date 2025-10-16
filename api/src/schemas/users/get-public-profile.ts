@@ -64,6 +64,7 @@ export const getPublicProfile = {
               isFrontEndCert: Type.Boolean(),
               isFrontEndLibsCert: Type.Boolean(),
               isFullStackCert: Type.Boolean(),
+              isJavascriptCertV9: Type.Boolean(),
               isHonest: Type.Boolean(),
               isInfosecCertV7: Type.Boolean(),
               isInfosecQaCert: Type.Boolean(),
@@ -73,6 +74,7 @@ export const getPublicProfile = {
               isQaCertV7: Type.Boolean(),
               isRelationalDatabaseCertV8: Type.Boolean(),
               isRespWebDesignCert: Type.Boolean(),
+              isRespWebDesignCertV9: Type.Boolean(),
               isSciCompPyCertV7: Type.Boolean(),
               linkedin: Type.Optional(Type.String()),
               location: Type.String(),
@@ -91,6 +93,7 @@ export const getPublicProfile = {
               ),
               profileUI,
               twitter: Type.Optional(Type.String()),
+              bluesky: Type.Optional(Type.String()),
               website: Type.Optional(Type.String()),
               yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
               joinDate: Type.String(),

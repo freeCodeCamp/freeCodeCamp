@@ -83,7 +83,7 @@ function SelectionTabs({
         <Spacer size='xs' />
         <Tabs
           className={'donate-btn-group'}
-          defaultValue={donationAmount.toString()}
+          value={donationAmount.toString()}
           onValueChange={switchTab}
         >
           <TabsList className='nav-lists'>
@@ -181,6 +181,10 @@ const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
   );
 
   const [showDonateForm, setShowDonateForm] = useState(false);
+
+  useEffect(() => {
+    setDonationAmount(replace20With25 ? defaultTierAmountB : defaultTierAmount);
+  }, [replace20With25]);
 
   useEffect(() => {
     if (setShowHeaderAndFooter) setShowHeaderAndFooter(!showDonateForm);
