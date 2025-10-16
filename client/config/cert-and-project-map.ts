@@ -1008,6 +1008,12 @@ const upcomingCerts = allStandardCerts.filter((cert): cert is UpcomingCert =>
 const liveCerts = showUpcomingChanges
   ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
   : [...currentCerts, ...legacyCerts, fullstackCert];
+const allCerts = [
+  ...currentCerts,
+  ...legacyCerts,
+  fullstackCert,
+  ...upcomingCerts
+];
 
 type CertsToProjects = Record<
   (typeof allStandardCerts)[number]['certSlug'],
@@ -1025,4 +1031,4 @@ export type CertTitle =
   | (typeof liveCerts)[number]['title']
   | 'Legacy Full Stack';
 
-export { liveCerts, certsToProjects };
+export { liveCerts, certsToProjects, allCerts };

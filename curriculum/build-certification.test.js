@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { describe, test, expect } from 'vitest';
 
-import { liveCerts } from '../client/config/cert-and-project-map.js';
+import { allCerts } from '../client/config/cert-and-project-map.js';
 import { buildCertification } from './build-certification.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -41,11 +41,11 @@ describe('build-certification', () => {
         const certData = result.challenges[0];
         const certTests = certData.tests;
 
-        const matchingCert = liveCerts.find(cert => cert.id === certData.id);
+        const matchingCert = allCerts.find(cert => cert.id === certData.id);
 
         expect(
           matchingCert,
-          `Cert ID ${certData.id} not found in liveCerts.`
+          `Cert ID ${certData.id} not found in allCerts.`
         ).toBeDefined();
         expect(
           matchingCert,
@@ -63,7 +63,7 @@ describe('build-certification', () => {
 
           expect(
             certProjects.length,
-            `Project count mismatch: liveCerts has ${certProjects.length} projects, YAML has ${certTests.length} tests`
+            `Project count mismatch: allCerts has ${certProjects.length} projects, YAML has ${certTests.length} tests`
           ).toBe(certTests.length);
 
           certTests.forEach((test, i) => {
@@ -84,7 +84,7 @@ describe('build-certification', () => {
             ).toBeDefined();
             expect(
               matchingProject.id,
-              `Project ID mismatch at index ${i}: liveCerts has "${matchingProject.id}", YAML has "${test.id}"`
+              `Project ID mismatch at index ${i}: allCerts has "${matchingProject.id}", YAML has "${test.id}"`
             ).toBe(test.id);
           });
         }
