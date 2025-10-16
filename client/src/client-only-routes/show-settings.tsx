@@ -122,6 +122,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     completedChallenges,
     email,
     is2018DataVisCert,
+    isA2EnglishCert,
     isApisMicroservicesCert,
     isJavascriptCertV9,
     isJsAlgoDataStructCert,
@@ -190,6 +191,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
+            isA2EnglishCert={isA2EnglishCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}

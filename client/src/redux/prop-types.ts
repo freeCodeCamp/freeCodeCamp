@@ -432,6 +432,7 @@ export type ProfileUI = {
 
 export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
+  isA2EnglishCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
   isDataVisCert: boolean;

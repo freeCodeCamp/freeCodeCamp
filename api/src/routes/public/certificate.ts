@@ -60,6 +60,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         select: {
           isBanned: true,
           isCheater: true,
+          isA2EnglishCert: true,
           isFrontEndCert: true,
           isBackEndCert: true,
           isFullStackCert: true,

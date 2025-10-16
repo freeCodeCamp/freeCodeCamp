@@ -274,6 +274,7 @@ const publicUserData = {
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
+  isA2EnglishCert: testUserData.isA2EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -326,6 +327,7 @@ const sessionUserData = {
 
 const baseProgressData = {
   currentChallengeId: '',
+  isA2EnglishCert: false,
   isRespWebDesignCert: false,
   is2018DataVisCert: false,
   isFrontEndLibsCert: false,
@@ -998,6 +1000,7 @@ describe('userRoutes', () => {
           yearsTopContributor: [],
           is2018DataVisCert: false,
           is2018FullStackCert: false,
+          isA2EnglishCert: false,
           isApisMicroservicesCert: false,
           isBackEndCert: false,
           isCheater: false,
