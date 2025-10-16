@@ -11,10 +11,19 @@ Add an `id` attribute to your second card div and set its value to `dave-cooking
 
 # --hints--
 
-Test 1
+Your second `.card` div should have an `id` attribute.
 
 ```js
+const cards = document.querySelectorAll('.card');
+assert.exists(cards[1]?.getAttribute('id'));
+console.log(cards)
+```
 
+Your second `.card` div should have an `id` with value `dave-cooking-book`.
+
+```js
+const cards = document.querySelectorAll('.card');
+assert.equal(cards[1]?.id, 'dave-cooking-book');
 ```
 
 # --seed--
