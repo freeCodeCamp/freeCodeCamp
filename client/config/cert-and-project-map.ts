@@ -793,7 +793,7 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '647e3159823e0ef219c7359b',
+    id: '647f7da207d29547b3bee1ba',
     title: 'Foundational C# with Microsoft',
     certSlug: Certification.FoundationalCSharp,
     projects: [
