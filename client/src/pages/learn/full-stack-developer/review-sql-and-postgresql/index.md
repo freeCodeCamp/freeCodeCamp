@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Relational Database Review
+title: Introduction to the SQL and PostgreSQL Review
 block: review-sql-and-postgresql
 superBlock: full-stack-developer
 ---
