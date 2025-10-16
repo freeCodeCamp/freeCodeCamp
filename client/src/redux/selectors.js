@@ -213,11 +213,6 @@ export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
 
 export const claimableCertsSelector = createSelector([userSelector], user => {
   if (!user) return [];
-  // TODO: These checks are performed on the server.
-  // So, it could be beneficial to NOT do them here
-  // - instead letting the server explain what settings
-  // are needed to claim a certification.
-  if (!user.name || !user.isHonest) return [];
 
   const completedChallengeIds = (user.completedChallenges || []).map(
     ({ id }) => id
