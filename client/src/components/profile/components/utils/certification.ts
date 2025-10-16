@@ -4,8 +4,10 @@ import { User } from '../../../../redux/prop-types';
 export const getCertifications = (user: User) => {
   const {
     isRespWebDesignCert,
+    isRespWebDesignCertV9,
     is2018DataVisCert,
     isFrontEndLibsCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
@@ -27,6 +29,7 @@ export const getCertifications = (user: User) => {
   return {
     hasModernCert:
       isRespWebDesignCert ||
+      isRespWebDesignCertV9 ||
       is2018DataVisCert ||
       isFrontEndLibsCert ||
       isApisMicroservicesCert ||
@@ -39,6 +42,7 @@ export const getCertifications = (user: User) => {
       isRelationalDatabaseCertV8 ||
       isCollegeAlgebraPyCertV8 ||
       isFoundationalCSharpCertV8 ||
+      isJavascriptCertV9 ||
       isJsAlgoDataStructCertV8,
     hasLegacyCert:
       isFrontEndCert ||
@@ -52,6 +56,16 @@ export const getCertifications = (user: User) => {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',
         certSlug: Certification.RespWebDesign
+      },
+      {
+        show: isRespWebDesignCertV9,
+        title: 'Responsive Web Design Certification',
+        certSlug: Certification.RespWebDesignV9
+      },
+      {
+        show: isJavascriptCertV9,
+        title: 'JavaScript Certification',
+        certSlug: Certification.JsV9
       },
       {
         show: isJsAlgoDataStructCertV8,

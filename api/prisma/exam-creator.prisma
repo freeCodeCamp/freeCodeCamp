@@ -14,8 +14,7 @@ model ExamCreatorExam {
   deprecated    Boolean
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                          @default(2)
-
+  version       Int                          @default(3)
 }
 
 /// Exam Creator application collection to store authZ users.
@@ -30,10 +29,8 @@ model ExamCreatorUser {
   github_id Int?
   name      String
   picture   String?
-  /// TODO: After migration, remove optionality
-  settings  ExamCreatorUserSettings?
-  version   Int                     @default(1)
-
+  settings  ExamCreatorUserSettings
+  version   Int                     @default(2)
 
   ExamCreatorSession ExamCreatorSession[]
 }
@@ -55,8 +52,7 @@ model ExamCreatorSession {
   /// Expiration date for record.
   expires_at DateTime
 
-  version   Int      @default(1)
-
+  version Int @default(1)
 
   ExamCreatorUser ExamCreatorUser @relation(fields: [user_id], references: [id])
 }

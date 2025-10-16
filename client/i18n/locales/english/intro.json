@@ -3098,6 +3098,12 @@
           "In this lesson you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+        ]
+      },
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
@@ -3546,6 +3552,12 @@
           "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
         ]
       },
+      "lab-element-skipper": {
+        "title": "Implement an Element Skipper",
+        "intro": [
+          "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
       "lab-optional-arguments-sum-function": {
         "title": "Build an Optional Arguments Sum Function",
         "intro": [
@@ -3607,10 +3619,10 @@
           "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
         ]
       },
-      "lab-sum-all-primes-calculator": {
+      "lab-prime-number-sum-calculator": {
         "title": "Build a Prime Number Sum Calculator",
         "intro": [
-          "In this lab you will build a sum all primes calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -5005,9 +5017,13 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Markdown to HTML Converter",
+      "- Build a Drum Machine",
+      "- Build a Voting System",
+      "- Build a Bank Account Management Program",
+      "- Build a Weather App",
+      "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": { "javascript": "JavaScript" },
     "modules": {
@@ -6107,12 +6123,8 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Python Certification exam."
     ],
-    "chapters": {
-      "python": "Python"
-    },
-    "modules": {
-      "python-certification-exam": "Python Certification Exam"
-    },
+    "chapters": { "python": "Python" },
+    "modules": { "python-certification-exam": "Python Certification Exam" },
     "blocks": {
       "exam-python-certification": {
         "title": "Python Certification Exam",
@@ -6128,9 +6140,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Relational Databases Certification exam."
     ],
-    "chapters": {
-      "relational-databases": "Relational Databases"
-    },
+    "chapters": { "relational-databases": "Relational Databases" },
     "modules": {
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
@@ -6285,10 +6295,14 @@
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
     "intro": [
-      "This course teaches you the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "To earn your Responsive Web Design Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Survey Form",
+      "- Build a Page of Playing Cards",
+      "- Build a Book Inventory App",
+      "- Build a Technical Documentation Page",
+      "- Build a Product Landing Page",
+      "Pass the exam to earn your Responsive Web Design Certification."
     ],
     "chapters": {
       "html": "HTML",
