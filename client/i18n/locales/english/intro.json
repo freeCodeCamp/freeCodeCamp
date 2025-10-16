@@ -3092,6 +3092,12 @@
           "In this lesson you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+        ]
+      },
       "review-javascript-strings": {
         "title": "JavaScript Strings Review",
         "intro": [
