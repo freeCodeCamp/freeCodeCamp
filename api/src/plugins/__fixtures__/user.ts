@@ -28,6 +28,7 @@ export const newUser = (email: string) => ({
   id: expect.stringMatching(mongodbIdRe),
   is2018DataVisCert: false,
   is2018FullStackCert: false,
+  isA2EnglishCert: false,
   isApisMicroservicesCert: false,
   isBackEndCert: false,
   isBanned: false,

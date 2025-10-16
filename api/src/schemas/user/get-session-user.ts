@@ -68,6 +68,7 @@ export const getSessionUser = {
           id: Type.String(),
           is2018DataVisCert: Type.Boolean(),
           is2018FullStackCert: Type.Boolean(),
+          isA2EnglishCert: Type.Boolean(),
           isApisMicroservicesCert: Type.Boolean(),
           isBackEndCert: Type.Boolean(),
           isCheater: Type.Boolean(),
