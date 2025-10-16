@@ -17,7 +17,7 @@ import { isSpeakingModalOpenSelector } from '../redux/selectors';
 import {
   SuperBlocks,
   superBlockToSpeechLang
-} from '../../../../../shared/config/curriculum';
+} from '../../../../../shared-dist/config/curriculum';
 import {
   compareTexts,
   type ComparisonResult,

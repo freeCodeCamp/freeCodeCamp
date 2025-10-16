@@ -349,6 +349,7 @@ export const query = graphql`
           answers {
             answer
             feedback
+            audioId
           }
           solution
         }
