@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 
-import { chapterBasedSuperBlocks } from '../../../shared-dist/config/curriculum';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
 import { superBlockStructuresSelector } from '../templates/Introduction/redux';
@@ -146,13 +145,11 @@ export const completionStateSelector = createSelector(
     superBlockStructures,
     challengeMeta
   ) => {
-    if (!chapterBasedSuperBlocks.includes(challengeMeta.superBlock)) return [];
-
     const { challengeNodes } = allChallengesInfo;
 
     const structure = superBlockStructures[challengeMeta.superBlock];
 
-    const chapters = structure.chapters;
+    const chapters = structure.chapters ?? [];
 
     const getCompletionState = ({
       chapters,
