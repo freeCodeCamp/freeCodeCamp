@@ -217,7 +217,7 @@ export async function buildDOMChallenge(
 
   return {
     challengeType,
-    build: concatHtml(toBuild),
+    build: toBuild ? concatHtml(toBuild) : '',
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
     error
@@ -253,7 +253,7 @@ export async function buildJSChallenge(
       challengeType,
       build: '',
       sources: buildSourceMap(finalFiles) as unknown,
-      error: foundError
+      error: foundError as Error
     };
   }
 
