@@ -17,6 +17,7 @@
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "workshop-html-video-player",
             "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
@@ -909,26 +910,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
@@ -945,11 +934,7 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "capstone-project",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
           "comingSoon": true,

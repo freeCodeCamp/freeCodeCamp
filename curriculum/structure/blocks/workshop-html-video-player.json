@@ -1,0 +1,11 @@
+{
+  "name": "Build an HTML Video Player",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-html-video-player",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "68f1236481fd3a3a73fbc9c2", "title": "Step 1" }],
+  "blockType": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
