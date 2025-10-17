@@ -83,7 +83,7 @@ const showConsole = hasHtmlOrCss && hasScript;
           editorWidthPercentage: 60,
           showConsole: showConsole,
           showConsoleButton: showConsole,
-          layout: got('html') ? 'preview' : 'console',
+          layout: layout,
           showLineNumbers: true
         }}
       />
