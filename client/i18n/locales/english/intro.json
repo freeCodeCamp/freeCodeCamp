@@ -2124,7 +2124,9 @@
       },
       "workshop-bookstore-page": {
         "title": "Build a Bookstore Page",
-        "intro": ["Build a Bookstore Page", ""]
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
       },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
