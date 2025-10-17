@@ -13,10 +13,12 @@ The second value represents `flex-shrink`. This property controls how much the f
 
 # --hints--
 
-Test 1
+Your class `box` should have a property `flex` replace the second number `0` with the value `1`.
 
 ```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px');
 ```
+
 
 # --seed--
 
@@ -68,7 +70,7 @@ Test 1
 ```
 
 ```css
-
+--fcc-editable-region--
 h1 {
   text-align: center;
   margin-bottom: 10px;
@@ -100,6 +102,5 @@ h1 {
   border-radius: 5px;
   order: 0; 
 }
-
-
+--fcc-editable-region--
 ```
