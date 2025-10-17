@@ -6177,6 +6177,10 @@
       "es-a1-learn-consonants-and-special-characters": {
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
+      },
+      "es-a1-review-the-alphabet": {
+        "title": "The Spanish Alphabet review",
+        "intro": ["", ""]
       }
     }
   },
