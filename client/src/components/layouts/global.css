@@ -569,47 +569,6 @@ pre code {
   margin-bottom: 0;
 }
 
-.learn-alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #1e40af;
-}
-
-.learn-alert .btn {
-  background-color: transparent;
-  color: inherit;
-  border-color: inherit;
-}
-.learn-alert .btn:hover,
-.learn-alert .btn:focus,
-.learn-alert a:hover,
-.learn-alert a:focus {
-  background-color: #31708f;
-  color: #d9edf7;
-  border-color: #31708f;
-}
-
-.annual-donation-alert {
-  background: linear-gradient(
-      -10deg,
-      rgba(217, 237, 247, 1) 35%,
-      rgba(237, 202, 216, 0) 75%,
-      rgb(255 215 224) 100%
-    ),
-    radial-gradient(
-      circle,
-      rgba(255, 202, 225, 1) 0%,
-      rgba(218, 234, 252, 1) 100%
-    );
-}
-
-.university-alert p,
-.annual-donation-alert p {
-  color: inherit;
-}
-
 /* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);

@@ -2,8 +2,10 @@ import React from 'react';
 import { Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
+
 import { Link } from '../helpers';
 import { ProgressBar } from '../Progress/progress-bar';
+import './learn-alert.css';
 
 interface LearnAlertProps {
   onLearnDonationAlertClick: () => void;
