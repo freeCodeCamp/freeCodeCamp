@@ -1,5 +1,6 @@
 import * as ReactDOMServer from 'react-dom/server';
 import Loadable from '@loadable/component';
+
 // eslint-disable-next-line import/no-duplicates
 import type * as monacoEditor from 'monaco-editor/esm/vs/editor/editor.api';
 import type {
@@ -68,9 +69,17 @@ import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
+// Direct from npm, license in react-types-licence
+import reactTypes from './react-types.json';
+
 import './editor.css';
 
 const MonacoEditor = Loadable(() => import('react-monaco-editor'));
+
+const monacoModelFileMap = {
+  tsxFile: 'index.tsx',
+  reactTypes: 'react.d.ts'
+};
 
 export interface EditorProps {
   attempts: number;
@@ -353,15 +362,44 @@ const Editor = (props: EditorProps): JSX.Element => {
     const { usesMultifileEditor = false } = props;
 
     monacoRef.current = monaco;
+    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
+      ...monaco.languages.typescript.typescriptDefaults.getCompilerOptions(),
+      jsx: monaco.languages.typescript.JsxEmit.Preserve,
+      allowUmdGlobalAccess: true
+    });
+
     defineMonacoThemes(monaco, { usesMultifileEditor });
     // If a model is not provided, then the editor 'owns' the model it creates
     // and will dispose of that model if it is replaced. Since we intend to
     // swap and reuse models, we have to create our own models to prevent
     // disposal.
 
+    const setupTSModels = (monaco: typeof monacoEditor) => {
+      const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+      monaco.editor.createModel(
+        reactTypes['react-18'],
+        'typescript',
+        reactFile
+      );
+
+      const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+      return monaco.editor.createModel('', 'typescript', file);
+    };
+
+    // TODO: make sure these aren't getting created over and over
+    function createModel(contents: string, language: string) {
+      if (language !== 'typescript') {
+        return monaco.editor.createModel(contents, language);
+      } else {
+        const model = setupTSModels(monaco);
+        model.setValue(contents);
+        return model;
+      }
+    }
+
     const model =
       dataRef.current.model ||
-      monaco.editor.createModel(
+      createModel(
         challengeFile?.contents ?? '',
         modeMap[challengeFile?.ext ?? 'html']
       );
@@ -1328,6 +1366,15 @@ const Editor = (props: EditorProps): JSX.Element => {
         <MonacoEditor
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
+          editorWillUnmount={(editor, monaco) => {
+            const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+            const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+            // Any model we've created has to be manually disposed of to prevent
+            // memory leaks.
+            editor.getModel()?.dispose();
+            monaco.editor.getModel(reactFile)?.dispose();
+            monaco.editor.getModel(file)?.dispose();
+          }}
           onChange={onChange}
           options={{ ...options, folding: !hasEditableRegion() }}
           theme={editorTheme}

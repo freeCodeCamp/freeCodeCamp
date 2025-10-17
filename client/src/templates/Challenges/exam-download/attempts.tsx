@@ -59,8 +59,8 @@ export function Attempts({ id }: AttemptsProps) {
       </thead>
       <tbody>
         {attempts.map(attempt => (
-          <tr key={attempt.startTimeInMS}>
-            <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
+          <tr key={attempt.startTime}>
+            <td>{new Date(attempt.startTime).toTimeString()}</td>
             <td>
               {attempt.result
                 ? `${attempt.result.percent}%`
