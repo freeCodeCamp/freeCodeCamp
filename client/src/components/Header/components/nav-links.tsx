@@ -246,7 +246,7 @@ function NavLinks({
         <button
           aria-pressed={theme === LocalStorageThemes.Dark}
           className={'nav-link nav-link-flex'}
-          onClick={toggleTheme}
+          onClick={() => toggleTheme()}
           onKeyDown={currentUserName ? handleMenuKeyDown : handleSignOutKeys}
         >
           <span>{t('settings.labels.night-mode')}</span>

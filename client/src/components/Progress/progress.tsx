@@ -13,7 +13,15 @@ import {
 } from '../../templates/Challenges/redux/selectors';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import { updateAllChallengesInfo } from '../../redux/actions';
-import { CertificateNode, ChallengeNode } from '../../redux/prop-types';
+import type {
+  CertificateNode,
+  ChallengeNode,
+  SuperBlockStructure
+} from '../../redux/prop-types';
+import {
+  updateSuperBlockStructures,
+  superBlockStructuresSelector
+} from '../../templates/Introduction/redux';
 import { getIsDailyCodingChallenge } from '../../../../shared-dist/config/challenge-types';
 import {
   isValidDateString,
@@ -26,6 +34,7 @@ const mapStateToProps = createSelector(
   challengeMetaSelector,
   completedChallengesInBlockSelector,
   completedPercentageSelector,
+  superBlockStructuresSelector,
   (
     currentBlockIds: string[],
     {
@@ -40,7 +49,8 @@ const mapStateToProps = createSelector(
       superBlock: string;
     },
     completedChallengesInBlock: number,
-    completedPercent: number
+    completedPercent: number,
+    superBlockStructures: Record<string, SuperBlockStructure>
   ) => ({
     currentBlockIds,
     challengeType,
@@ -48,11 +58,15 @@ const mapStateToProps = createSelector(
     block,
     superBlock,
     completedChallengesInBlock,
-    completedPercent
+    completedPercent,
+    superBlockStructures
   })
 );
 
-const mapDispatchToProps = { updateAllChallengesInfo };
+const mapDispatchToProps = {
+  updateAllChallengesInfo,
+  updateSuperBlockStructures
+};
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
@@ -68,7 +82,9 @@ function Progress({
   completedChallengesInBlock,
   completedPercent,
   t,
-  updateAllChallengesInfo
+  updateAllChallengesInfo,
+  updateSuperBlockStructures,
+  superBlockStructures: superBlockStructuresFromStore
 }: ProgressProps): JSX.Element {
   let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
@@ -86,10 +102,31 @@ function Progress({
     }
   }
 
-  const { challengeNodes, certificateNodes } = useGetAllBlockIds();
+  const { challengeNodes, certificateNodes, superBlockStructureNodes } =
+    useGetAllChallengeData();
+
   useEffect(() => {
     updateAllChallengesInfo({ challengeNodes, certificateNodes });
-  }, [challengeNodes, certificateNodes, updateAllChallengesInfo]);
+
+    const structuresMap: Record<string, SuperBlockStructure> = {};
+
+    // The super block structures are pretty static, so we only want to
+    // update them if we don't already have them in the store.
+    if (Object.keys(superBlockStructuresFromStore).length === 0) {
+      superBlockStructureNodes.forEach((node: SuperBlockStructure) => {
+        structuresMap[node.superBlock] = node;
+      });
+
+      updateSuperBlockStructures(structuresMap);
+    }
+  }, [
+    challengeNodes,
+    certificateNodes,
+    superBlockStructureNodes,
+    updateAllChallengesInfo,
+    updateSuperBlockStructures,
+    superBlockStructuresFromStore
+  ]);
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
@@ -119,13 +156,15 @@ function Progress({
 // and in completion-modal). Then we don't have to pass the data into redux.
 // This would mean that we have to memoize any complex calculations in the hook.
 // Otherwise, this will undo all the recent performance improvements.
-const useGetAllBlockIds = () => {
+const useGetAllChallengeData = () => {
   const {
     allChallengeNode: { nodes: challengeNodes },
-    allCertificateNode: { nodes: certificateNodes }
+    allCertificateNode: { nodes: certificateNodes },
+    allSuperBlockStructure: { nodes: superBlockStructureNodes }
   }: {
     allChallengeNode: { nodes: ChallengeNode[] };
     allCertificateNode: { nodes: CertificateNode[] };
+    allSuperBlockStructure: { nodes: SuperBlockStructure[] };
   } = useStaticQuery(graphql`
     query getBlockNode {
       allChallengeNode(
@@ -154,10 +193,25 @@ const useGetAllBlockIds = () => {
           }
         }
       }
+      allSuperBlockStructure {
+        nodes {
+          superBlock
+          chapters {
+            dashedName
+            comingSoon
+            modules {
+              dashedName
+              comingSoon
+              moduleType
+              blocks
+            }
+          }
+        }
+      }
     }
   `);
 
-  return { challengeNodes, certificateNodes };
+  return { challengeNodes, certificateNodes, superBlockStructureNodes };
 };
 
 Progress.displayName = 'Progress';

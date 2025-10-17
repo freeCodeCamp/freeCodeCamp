@@ -827,7 +827,7 @@ const allStandardCerts = [
       {
         id: '68db37350b398ecddd1f5dac',
         title: 'Responsive Web Design Certification Exam',
-        link: `${respWebV9Base}/responsive-web-design-certification-exam/exam-responsive-web-design-certification`,
+        link: `${respWebV9Base}/exam-responsive-web-design-certification/exam-responsive-web-design-certification`,
         certSlug: Certification.RespWebDesignV9
       }
     ]
@@ -838,7 +838,7 @@ const allStandardCerts = [
     certSlug: Certification.JsV9,
     projects: [
       {
-        id: '645147516c245de4d11eb7ba',
+        id: '68c462d7dc707f3ca82f8e6d',
         title: 'JavaScript Certification Exam',
         link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
         certSlug: Certification.JsV9
@@ -903,7 +903,7 @@ const allStandardCerts = [
     certSlug: Certification.A2English,
     projects: [
       {
-        id: '651dd3e06ffb500e3f2ce478',
+        id: '6721db5d9f0c116e6a0fe25a',
         title: 'A2 English for Developers Certification Exam',
         link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
         certSlug: Certification.A2English

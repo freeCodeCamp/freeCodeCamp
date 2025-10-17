@@ -35,7 +35,7 @@ import { isSignedInSelector, userSelector } from '../../../redux/selectors';
 import { mapFilesToChallengeFiles } from '../../../utils/ajax';
 import { standardizeRequestBody } from '../../../utils/challenge-request-helpers';
 import postUpdate$ from '../utils/post-update';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { actionTypes } from './action-types';
 import {
   closeModal,
@@ -295,11 +295,11 @@ export default function completionEpic(action$, state$) {
         if (action.type !== submitActionTypes.submitComplete) return null;
 
         const donationData =
-          superBlock === SuperBlocks.FullStackDeveloper &&
+          chapterBasedSuperBlocks.includes(superBlock) &&
           blockType !== 'review' &&
           isModuleNewlyCompletedSelector(state)
             ? { module, superBlock }
-            : superBlock !== SuperBlocks.FullStackDeveloper &&
+            : !chapterBasedSuperBlocks.includes(superBlock) &&
                 isBlockNewlyCompletedSelector(state)
               ? { block, superBlock }
               : null;
