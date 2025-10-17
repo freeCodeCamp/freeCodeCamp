@@ -14,7 +14,22 @@
     { "id": "68d73681d73f691468d61ffb", "title": "Step 7" },
     { "id": "68d73682c9e50414e4247097", "title": "Step 8" },
     { "id": "68d736849efe3915604c5233", "title": "Step 9" },
-    { "id": "68d73685371fc715dc4f1bcb", "title": "Step 10" }
+    { "id": "68d73685371fc715dc4f1bcb", "title": "Step 10" },
+    { "id": "68f1984d9a25b85041360605", "title": "Step 11" },
+    { "id": "68f1985199e7c050bb45e987", "title": "Step 12" },
+    { "id": "68f19854584b7c511e277837", "title": "Step 13" },
+    { "id": "68f19858d57bbd518d480656", "title": "Step 14" },
+    { "id": "68f1985ba6179d51f572a333", "title": "Step 15" },
+    { "id": "68f1985e1a85d95257418ada", "title": "Step 16" },
+    { "id": "68f1986620798952cd5dc474", "title": "Step 17" },
+    { "id": "68f1986ac2951353351867dd", "title": "Step 18" },
+    { "id": "68f1987035195e53a31490ed", "title": "Step 19" },
+    { "id": "68f198828bbd51543b4bdc17", "title": "Step 20" },
+    { "id": "68f1988ed37e8254b5844fac", "title": "Step 21" },
+    { "id": "68f19891ca4d9d551da7523b", "title": "Step 22" },
+    { "id": "68f19893e44b3d557f81084e", "title": "Step 23" },
+    { "id": "68f1989fcaa97356476b2b87", "title": "Step 24" },
+    { "id": "68f198a29ba1ea56d4a39312", "title": "Step 25" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true
