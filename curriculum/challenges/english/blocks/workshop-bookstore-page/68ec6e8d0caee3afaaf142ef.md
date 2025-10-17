@@ -39,6 +39,8 @@ assert.exists(document.querySelector('.card-container .card'));
 --fcc-editable-region--
 <h1>XYZ Bookstore</h1>
 <p>Browse our collection of amazing books!</p>
-<div class='card-container'></div>
+<div class="card-container">
+
+</div>
 --fcc-editable-region--
 ```
