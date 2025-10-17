@@ -7,13 +7,13 @@ dashedName: step-5
 
 # --description--
 
-Inside the `card-container` div, create another `<div>` element. This `div` will represent the first book card and will also need styling, so it should have a `class`
+Inside the `.card-container` element, create another `div` element. This `div` will represent the first book card.
 
-Add a `class` attribute to this new `div` and set its value to `card`
+Add a `class` attribute to this new `div` element and set value of the class to `card`.
 
 # --hints--
 
-You should have a `div` element nested inside the `card-container` div.
+You should have a `div` element nested inside the `.card-container` element.
 
 ```js
 assert.exists(document.querySelector('.card-container div'));
@@ -25,7 +25,7 @@ Your new `div` element should have a `class` attribute.
 assert.exists(document.querySelector('.card-container div')?.getAttribute('class'));
 ```
 
-Your new `div` element should have a `class` with value `card`.
+Your new `div` element should have a `class` with the value of `card`.
 
 ```js
 assert.exists(document.querySelector('.card-container .card'));

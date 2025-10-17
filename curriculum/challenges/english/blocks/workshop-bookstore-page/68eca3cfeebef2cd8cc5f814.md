@@ -7,11 +7,11 @@ dashedName: step-11
 
 # --description--
 
-Add an `id` attribute to your second card div and set its value to `dave-cooking-book` . Remember that each `id` must be unique.
+Add an `id` attribute to your second `.card` element and set its value to `dave-cooking-book`. Remember that each `id` must be unique.
 
 # --hints--
 
-Your second `.card` div should have an `id` attribute.
+Your second `.card` element should have an `id` attribute.
 
 ```js
 const cards = document.querySelectorAll('.card');
@@ -19,7 +19,7 @@ assert.exists(cards[1]?.getAttribute('id'));
 console.log(cards)
 ```
 
-Your second `.card` div should have an `id` with value `dave-cooking-book` .
+Your second `.card` element should have an `id` with value of `dave-cooking-book`.
 
 ```js
 const cards = document.querySelectorAll('.card');
