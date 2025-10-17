@@ -2209,7 +2209,9 @@
       },
       "workshop-major-browsers-list": {
         "title": "Build a List of Major Web Browsers",
-        "intro": ["Build a List of Major Web Browsers", ""]
+        "intro": [
+          "In this lesson you are going to get familiar with some major browsers and you will also learn how to use semantic tags like `dl`, `dt`, and `dd` visually."
+        ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
