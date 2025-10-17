@@ -569,24 +569,23 @@ pre code {
   margin-bottom: 0;
 }
 
-.alert {
+.learn-alert {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
   border-radius: 4px;
+  color: #1e40af;
 }
 
-.alert .btn,
-[role='alert'] .btn {
+.learn-alert .btn {
   background-color: transparent;
   color: inherit;
   border-color: inherit;
 }
-.alert .btn:hover,
-.alert .btn:focus,
-.alert a:hover,
-.alert a:focus,
-[role='alert'] :is(a, .btn):is(:hover, :focus) {
+.learn-alert .btn:hover,
+.learn-alert .btn:focus,
+.learn-alert a:hover,
+.learn-alert a:focus {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
