@@ -9,7 +9,6 @@
         },
         {
           "dashedName": "bash-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-the-command-line-and-working-with-bash",
             "workshop-bash-boilerplate",
@@ -19,12 +18,11 @@
         },
         {
           "dashedName": "relational-databases",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
-            "review-relational-database",
-            "quiz-relational-database"
+            "review-sql-and-postgresql",
+            "quiz-sql-and-postgresql"
           ]
         },
         {
@@ -33,7 +31,6 @@
         },
         {
           "dashedName": "bash-scripting",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-bash-scripting",
             "workshop-bash-five-programs",
@@ -43,7 +40,6 @@
         },
         {
           "dashedName": "sql-and-bash",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-sql",
             "workshop-sql-student-database-part-1",
@@ -56,17 +52,14 @@
         },
         {
           "dashedName": "lab-world-cup-database",
-          "comingSoon": true,
           "blocks": ["lab-world-cup-database"]
         },
         {
           "dashedName": "lab-salon-appointment-scheduler",
-          "comingSoon": true,
           "blocks": ["lab-salon-appointment-scheduler"]
         },
         {
           "dashedName": "git",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
@@ -79,17 +72,14 @@
         },
         {
           "dashedName": "lab-periodic-table-database",
-          "comingSoon": true,
           "blocks": ["lab-periodic-table-database"]
         },
         {
           "dashedName": "lab-number-guessing-game",
-          "comingSoon": true,
           "blocks": ["lab-number-guessing-game"]
         },
         {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-relational-databases",
           "blocks": ["review-relational-databases"]
         },
