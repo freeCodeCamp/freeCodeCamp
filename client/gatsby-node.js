@@ -261,7 +261,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         process: require.resolve('process/browser')
       }
     },
-    plugins: newPlugins
+    plugins: newPlugins,
+    ignoreWarnings: [
+      {
+        module: /env\.json/,
+        message: /only default export is available soon/
+      },
+      {
+        module: /mini-css-extract-plugin/,
+        message: /Conflicting order/
+      }
+    ]
   });
 };
 
