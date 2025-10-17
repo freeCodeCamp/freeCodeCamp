@@ -4,7 +4,10 @@
   "dashedName": "workshop-html-video-player",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68f18724d71db1dda8d6fec7", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "68f18724d71db1dda8d6fec7", "title": "Step 1" },
+    { "id": "68f1eb9ad0a7575e4dbc31d5", "title": "Step 2" }
+  ],
   "blockType": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
