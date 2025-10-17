@@ -5004,10 +5004,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-html-video-player": {
-        "title": "Build a HTML Video Player",
-        "intro": ["Build a HTML Video Player", ""]
       }
     }
   },
@@ -5845,6 +5841,13 @@
         "title": "Working with Audio and Video",
         "intro": [
           "In these lectures, you will learn how to work with audio and video files using JavaScript. You will learn about the <code>Audio</code> and <code>Video</code> constructors, their methods and properties, audio and video formats, codecs, the <code>HTMLMediaElement</code> API, and much more."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build a HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the video element, the video player setup, and multiple video formats support."
         ]
       },
       "workshop-music-player": {
