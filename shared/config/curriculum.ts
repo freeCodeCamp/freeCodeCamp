@@ -97,7 +97,10 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
-  [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
+  [SuperBlockStage.Core]: [
+    SuperBlocks.FullStackDeveloper,
+    SuperBlocks.BackEndDevApisV9
+  ],
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
@@ -131,7 +134,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
+    // SuperBlocks.BackEndDevApisV9,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
