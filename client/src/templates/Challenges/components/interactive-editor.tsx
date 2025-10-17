@@ -45,10 +45,8 @@ const InteractiveEditor = ({ files }: Props) => {
 
   const hasHtmlOrCss = got('html') || got('css');
   const hasScript = got('js') || got('ts');
-  const isPureScript = hasScript && !hasHtmlOrCss;
-
-  const layout = isPureScript ? 'console' : 'preview';
-  const showConsole = layout === 'preview' && hasScript;
+const layout = hasHtmlOrCss ? 'preview' : 'console';
+const showConsole = hasHtmlOrCss && hasScript;
   const freeCodeCampDarkSyntax = {
     ...freeCodeCampDark.syntax,
     punctuation: '#ffff00',
