@@ -569,6 +569,29 @@ pre code {
   margin-bottom: 0;
 }
 
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert .btn,
+[role='alert'] .btn {
+  background-color: transparent;
+  color: inherit;
+  border-color: inherit;
+}
+.alert .btn:hover,
+.alert .btn:focus,
+.alert a:hover,
+.alert a:focus,
+[role='alert'] :is(a, .btn):is(:hover, :focus) {
+  background-color: #31708f;
+  color: #d9edf7;
+  border-color: #31708f;
+}
+
 /* gatsby 404 */
 #search {
   background-color: var(--quaternary-background);

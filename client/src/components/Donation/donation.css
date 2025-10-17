@@ -122,6 +122,10 @@
   word-break: break-all;
 }
 
+.alert p {
+  color: inherit;
+}
+
 .donate-tabs > .nav-pills {
   display: flex;
   align-content: space-between;
