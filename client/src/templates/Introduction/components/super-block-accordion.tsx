@@ -281,10 +281,7 @@ export const SuperBlockAccordion = ({
                 (module.comingSoon && !showUpcomingChanges) ||
                 chapter.comingSoon
               ) {
-                if (
-                  module.moduleType === 'review' ||
-                  module.moduleType === 'exam'
-                ) {
+                if (module.moduleType === 'review') {
                   return null;
                 }
 
