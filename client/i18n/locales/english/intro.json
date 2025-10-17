@@ -1858,18 +1858,6 @@
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
     },
     "module-intros": {
-      "js-a11y": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will learn how to work with the aria-expanded, aria-live and aria-controls attributes inside of your HTML, CSS and JavaScript applications."
-        ]
-      },
-      "css-libraries-and-frameworks": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will be introduced to CSS libraries, frameworks, and preprocessors, including Tailwind CSS, Bootstrap, and Sass. You will build out various components using Tailwind CSS and test your knowledge of these tools with a short quiz."
-        ]
-      },
       "data-visualization": {
         "note": "Coming Winter 2025",
         "intro": [
@@ -1880,30 +1868,6 @@
         "note": "Coming Fall 2025",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
-        ]
-      },
-      "python-basics": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will be introduced to Python, which is used in many fields like data science, machine learning, web development, scripting and automation, embedded systems, IoT, and more. You will build out a workshop and lab to practice Python basics and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-loops-and-sequences": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will learn how to work with lists, tuples, lambda functions, loops, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dictionaries-and-sets": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-error-handling": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "python-classes-and-objects": {
