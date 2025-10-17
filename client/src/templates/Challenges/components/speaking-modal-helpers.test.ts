@@ -47,7 +47,6 @@ describe('speaking-modal-helpers', () => {
       it('should return exact match for identical text', () => {
         const result = compareTexts('Hello world', 'Hello world');
         expect(result).toEqual({
-          highlightedText: 'Hello world',
           status: 'correct'
         });
       });
@@ -55,7 +54,6 @@ describe('speaking-modal-helpers', () => {
       it('should return exact match ignoring punctuation and case', () => {
         const result = compareTexts('Hello, World!', 'hello world');
         expect(result).toEqual({
-          highlightedText: 'Hello, World!',
           status: 'correct'
         });
       });
@@ -63,24 +61,117 @@ describe('speaking-modal-helpers', () => {
       it('should return exact match ignoring extra spaces', () => {
         const result = compareTexts('Hello   world', '  hello world  ');
         expect(result).toEqual({
-          highlightedText: 'Hello   world',
           status: 'correct'
         });
       });
     });
 
     describe('partial matches', () => {
-      it('should return high accuracy for mostly correct utterance', () => {
+      it('should mark individual wrong words as incorrect', () => {
         const result = compareTexts(
           'Hello beautiful world',
           'Hello wonderful world'
         );
         expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: true },
-          { word: 'beautiful', isCorrect: false, isMissing: true },
-          { word: 'wonderful', isCorrect: false },
-          { word: 'world', isCorrect: true }
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'beautiful', actual: 'wonderful' },
+          { expected: 'world', actual: 'world' }
         ]);
+      });
+
+      it('should handle shorter utterance with a missing word', () => {
+        const result = compareTexts('Hello beautiful world', 'Hello world');
+        expect(result.comparison).toEqual([
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'beautiful', actual: '' },
+          { expected: 'world', actual: 'world' }
+        ]);
+      });
+
+      it('should ignore trailing extra words', () => {
+        const result = compareTexts('Hello', 'Hello beautiful world');
+        expect(result.comparison).toEqual([
+          { expected: 'hello', actual: 'hello' }
+        ]);
+      });
+
+      it('should handle completely different text', () => {
+        const result = compareTexts('Hello world', 'Goodbye universe');
+        expect(result.comparison).toEqual([
+          { expected: 'hello', actual: 'goodbye' },
+          { expected: 'world', actual: 'universe' }
+        ]);
+      });
+
+      it('should handle repeated words correctly', () => {
+        const result = compareTexts(
+          'hello hello hello hello hello',
+          'hello hello hello hello'
+        );
+
+        expect(result.comparison).toEqual([
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'hello', actual: 'hello' },
+          { expected: 'hello' }
+        ]);
+      });
+
+      it('should not ignore incorrect words in the middle of the sentence', () => {
+        const result = compareTexts(
+          'The cat sat on the mat',
+          'The black cat sat on the mat'
+        );
+        expect(result.comparison).toEqual([
+          { expected: 'the', actual: 'the' },
+          { actual: 'black' },
+          { expected: 'cat', actual: 'cat' },
+          { expected: 'sat', actual: 'sat' },
+          { expected: 'on', actual: 'on' },
+          { expected: 'the', actual: 'the' },
+          { expected: 'mat', actual: 'mat' }
+        ]);
+      });
+    });
+
+    describe('edge cases', () => {
+      it('should handle empty original text', () => {
+        const result = compareTexts('', 'Hello world');
+        expect(result.comparison).toEqual([
+          { actual: 'hello' },
+          { actual: 'world' }
+        ]);
+      });
+
+      it('should handle empty utterance', () => {
+        const result = compareTexts('Hello world', '');
+        expect(result.comparison).toEqual([
+          { expected: 'hello' },
+          { expected: 'world' }
+        ]);
+      });
+
+      it('should handle single word comparison', () => {
+        const result = compareTexts('Hello', 'Hello');
+        expect(result.status).toBe('correct');
+      });
+
+      it('should handle punctuation-only original text', () => {
+        const result = compareTexts('!!!', 'hello');
+        expect(result.comparison).toEqual([{ actual: 'hello' }]);
+      });
+    });
+
+    describe('accuracy calculations', () => {
+      it('should calculate accuracy based on correct words', () => {
+        const result = compareTexts('Hello beautiful world', 'Hello world');
+        expect(result.status).toBe('incorrect');
+      });
+
+      it('should handle zero division when original is empty after normalization', () => {
+        const result = compareTexts('   ', 'hello');
+        expect(result.status).toBe('incorrect');
       });
 
       it('should return partially-correct for 80% accuracy', () => {
@@ -91,118 +182,11 @@ describe('speaking-modal-helpers', () => {
         expect(result.status).toBe('partially-correct');
       });
 
-      it('should handle shorter utterance with missing words', () => {
-        const result = compareTexts('Hello beautiful world', 'Hello world');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: true },
-          { word: 'beautiful', isCorrect: false, isMissing: true },
-          { word: 'world', isCorrect: true }
-        ]);
-      });
-
-      it('should handle longer utterance with extra words', () => {
-        const result = compareTexts('Hello world', 'Hello beautiful world');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: true },
-          { word: 'beautiful', isCorrect: false },
-          { word: 'world', isCorrect: true }
-        ]);
-      });
-
-      it('should handle completely different text', () => {
-        const result = compareTexts('Hello world', 'Goodbye universe');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: false, isMissing: true },
-          { word: 'world', isCorrect: false, isMissing: true },
-          { word: 'goodbye', isCorrect: false },
-          { word: 'universe', isCorrect: false }
-        ]);
-      });
-
-      it('should handle repeated words correctly', () => {
-        const result = compareTexts(
-          'hello hello hello hello hello',
-          'hello hello hello hello'
-        );
-        const correctCount = result.comparison!.filter(w => w.isCorrect).length;
-        const missingCount = result.comparison!.filter(w => w.isMissing).length;
-        expect(correctCount).toBe(4);
-        expect(missingCount).toBe(1);
-        expect(result.comparison!.length).toBe(5);
-        expect(result.status).toBe('partially-correct');
-      });
-
-      it('should handle missing word in middle of sentence', () => {
-        const result = compareTexts(
-          'The cat sat on the mat',
-          'The cat on the mat'
-        );
-        expect(result.comparison).toEqual([
-          { word: 'the', isCorrect: true },
-          { word: 'cat', isCorrect: true },
-          { word: 'sat', isCorrect: false, isMissing: true },
-          { word: 'on', isCorrect: true },
-          { word: 'the', isCorrect: true },
-          { word: 'mat', isCorrect: true }
-        ]);
-        expect(result.status).toBe('partially-correct');
-      });
-    });
-
-    describe('edge cases', () => {
-      it('should handle empty original text', () => {
-        const result = compareTexts('', 'Hello world');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: false },
-          { word: 'world', isCorrect: false }
-        ]);
-      });
-
-      it('should handle empty utterance', () => {
-        const result = compareTexts('Hello world', '');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: false, isMissing: true },
-          { word: 'world', isCorrect: false, isMissing: true }
-        ]);
-      });
-
       it('should handle both empty strings', () => {
         const result = compareTexts('', '');
         expect(result).toEqual({
-          highlightedText: '',
           status: 'correct'
         });
-      });
-
-      it('should handle single word comparison', () => {
-        const result = compareTexts('Hello', 'Hello');
-        expect(result.status).toBe('correct');
-      });
-
-      it('should handle punctuation-only original text', () => {
-        const result = compareTexts('!!!', 'hello');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: false }
-        ]);
-      });
-    });
-
-    describe('accuracy calculations', () => {
-      it('should calculate accuracy based on correct words', () => {
-        const result = compareTexts('Hello beautiful world', 'Hello world');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: true },
-          { word: 'beautiful', isCorrect: false, isMissing: true },
-          { word: 'world', isCorrect: true }
-        ]);
-        expect(result.status).toBe('incorrect');
-      });
-
-      it('should handle zero division when original is empty after normalization', () => {
-        const result = compareTexts('   ', 'hello');
-        expect(result.comparison).toEqual([
-          { word: 'hello', isCorrect: false }
-        ]);
       });
     });
   });

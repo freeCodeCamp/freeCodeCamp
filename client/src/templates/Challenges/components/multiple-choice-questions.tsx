@@ -105,7 +105,7 @@ function MultipleChoiceQuestions({
                       <label
                         id={labelId}
                         className={`video-quiz-option-label mcq-option-label
-                            ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''} 
+                            ${showFeedback && isSubmittedAnswer ? 'mcq-hide-border' : ''}
                             ${showFeedback && isSubmittedAnswer ? (isCorrect ? 'mcq-correct-border' : 'mcq-incorrect-border') : ''}`}
                         htmlFor={`mc-question-${questionIndex}-answer-${answerIndex}`}
                       >

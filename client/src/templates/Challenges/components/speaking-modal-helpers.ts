@@ -8,13 +8,11 @@ export const normalizeText = (text: string) => {
 };
 
 export interface ComparisonWord {
-  word: string;
-  isCorrect: boolean;
-  isMissing?: boolean;
+  expected: string;
+  actual?: string;
 }
 
 export interface ComparisonResult {
-  highlightedText?: string;
   comparison?: ComparisonWord[];
   status?: 'correct' | 'partially-correct' | 'incorrect';
 }
@@ -28,14 +26,15 @@ export const compareTexts = (
 
   if (originalWords.join(' ') === utteranceWords.join(' ')) {
     return {
-      highlightedText: original,
       status: 'correct'
     };
   }
 
   const alignment = alignWords(originalWords, utteranceWords);
 
-  const correctCount = alignment.filter(item => item.isCorrect).length;
+  const correctCount = alignment.filter(
+    item => item.expected === item.actual
+  ).length;
   const accuracy =
     originalWords.length > 0 ? (correctCount / originalWords.length) * 100 : 0;
 
@@ -81,22 +80,20 @@ function alignWords(
   while (i > 0 || j > 0) {
     if (i > 0 && j > 0 && originalWords[i - 1] === utteranceWords[j - 1]) {
       result.unshift({
-        word: originalWords[i - 1],
-        isCorrect: true
+        expected: originalWords[i - 1],
+        actual: originalWords[i - 1]
       });
       i--;
       j--;
     } else if (j > 0 && (i === 0 || dp[i][j - 1] >= dp[i - 1][j])) {
       result.unshift({
-        word: utteranceWords[j - 1],
-        isCorrect: false
+        expected: originalWords[i - 1],
+        actual: utteranceWords[j - 1]
       });
       j--;
     } else {
       result.unshift({
-        word: originalWords[i - 1],
-        isCorrect: false,
-        isMissing: true
+        expected: originalWords[i - 1]
       });
       i--;
     }

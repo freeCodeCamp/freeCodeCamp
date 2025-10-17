@@ -46,6 +46,20 @@ const ExactMatchFeedback = ({
   </>
 );
 
+function processComparison({ actual, expected }: ComparisonWord): {
+  status: 'correct' | 'misplaced' | 'extra' | 'wrong';
+  word: string;
+} {
+  if (actual === expected) return { status: 'correct', word: expected };
+  if (!actual) return { status: 'misplaced', word: expected };
+  if (!expected) return { status: 'extra', word: actual };
+
+  return {
+    status: 'wrong',
+    word: actual
+  };
+}
+
 const PartialMatchFeedback = ({
   comparisonResult,
   sentence,
@@ -57,10 +71,17 @@ const PartialMatchFeedback = ({
   const punctuationMark = sentence[sentence.length - 1];
 
   const fullUtterance =
-    comparisonResult.comparison.map(w => w.word).join(' ') + punctuationMark;
+    comparisonResult.comparison.map(w => w.actual).join(' ') + punctuationMark;
 
-  const incorrectWords = comparisonResult.comparison
-    .filter(item => !item.isCorrect)
+  const comparison = comparisonResult.comparison.map(processComparison);
+
+  const misplacedWords = comparison
+    .filter(item => item.status === 'misplaced')
+    .map(item => item.word)
+    .join(', ');
+
+  const incorrectWords = comparison
+    .filter(item => item.status === 'extra' || item.status === 'wrong')
     .map(item => item.word)
     .join(', ');
 
@@ -71,25 +92,31 @@ const PartialMatchFeedback = ({
             so screen readers don't add a stop after each word */}
         <p className='sr-only'>{fullUtterance}</p>
 
+        {misplacedWords && (
+          <p>
+            {t('speaking-modal.misplaced-words', { words: misplacedWords })}
+          </p>
+        )}
+
         {incorrectWords && (
-          <p className='sr-only'>
+          <p>
             {t('speaking-modal.incorrect-words', { words: incorrectWords })}
           </p>
         )}
 
-        {comparisonResult.comparison.map(
-          (item: ComparisonWord, index: number) => (
+        {comparison
+          .filter(({ status }) => status !== 'misplaced')
+          .map((item, index: number) => (
             <span
               key={index}
               aria-hidden='true'
-              className={`${item.isCorrect ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
+              className={`${item.status === 'correct' ? 'speaking-modal-comparison-word-correct' : 'speaking-modal-comparison-word-incorrect'}`}
             >
               {index === 0
                 ? item.word.charAt(0).toUpperCase() + item.word.slice(1)
                 : item.word}
             </span>
-          )
-        )}
+          ))}
         <span aria-hidden='true'>{punctuationMark}</span>
       </div>
 
