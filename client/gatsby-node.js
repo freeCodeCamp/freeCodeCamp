@@ -265,11 +265,6 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     ignoreWarnings: [
       warning => {
         if (warning instanceof Error) {
-          if (
-            warning.message.includes('only default export is available soon')
-          ) {
-            return true;
-          }
           if (warning.message.includes('mini-css-extract-plugin')) {
             return true;
           }
