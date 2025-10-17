@@ -185,10 +185,7 @@ export const reducer = handleActions(
         ...state,
         user: {
           ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            ...user
-          }
+          sessionUser: user
         },
         currentChallengeId:
           user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
