@@ -382,6 +382,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Answer {
       answer: String
       feedback: String
+      audioId: String
     }
     type RequiredResource {
       link: String
