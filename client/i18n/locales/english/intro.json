@@ -1868,18 +1868,6 @@
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
-      "python-dictionaries-and-sets": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will be introduced to dictionaries, sets, and the Python standard library. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-error-handling": {
-        "note": "Coming Fall 2025",
-        "intro": [
-          "In this module, you will talk about common error messages, good debugging techniques, and exception handling. You will build a lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
       "python-classes-and-objects": {
         "note": "Coming Winter 2025",
         "intro": [
