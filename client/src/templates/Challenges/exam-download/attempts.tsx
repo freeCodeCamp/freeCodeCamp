@@ -60,11 +60,11 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       </thead>
       <tbody>
         {attempts.map(attempt => (
-          <tr key={attempt.startTimeInMS}>
-            <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
+          <tr key={attempt.startTime}>
+            <td>{new Date(attempt.startTime).toTimeString()}</td>
             <td>
               {attempt.result
-                ? `${attempt.result.percent}%`
+                ? `${attempt.result.score.toFixed(2)}%`
                 : t('exam.pending')}
             </td>
             <td>
