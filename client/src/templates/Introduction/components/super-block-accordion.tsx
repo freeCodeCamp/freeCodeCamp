@@ -272,17 +272,16 @@ export const SuperBlockAccordion = ({
             isExpanded={
               expandedChapter === chapter.name || allChapters.length === 1
             }
-            comingSoon={chapter.comingSoon}
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
             superBlock={superBlock}
           >
             {chapter.modules.map(module => {
-              if (module.comingSoon && !showUpcomingChanges) {
-                if (
-                  module.moduleType === 'review' ||
-                  module.moduleType === 'exam'
-                ) {
+              if (
+                (module.comingSoon && !showUpcomingChanges) ||
+                chapter.comingSoon
+              ) {
+                if (module.moduleType === 'review') {
                   return null;
                 }
 

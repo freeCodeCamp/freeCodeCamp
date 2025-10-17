@@ -403,6 +403,7 @@ function transformSuperBlock(
   { showComingSoon } = { showComingSoon: false }
 ) {
   let blocks = [];
+  let shouldAllowEmptyBlocks = false;
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
@@ -414,6 +415,7 @@ function transformSuperBlock(
   else if (superblockData.chapters) {
     for (const chapter of superblockData.chapters) {
       if (chapter.comingSoon && !showComingSoon) {
+        shouldAllowEmptyBlocks = true;
         continue;
       }
 
@@ -437,7 +439,7 @@ function transformSuperBlock(
     }
   }
 
-  if (isEmpty(blocks)) {
+  if (isEmpty(blocks) && !shouldAllowEmptyBlocks) {
     throw Error(`No blocks found in superblock data`);
   }
 
