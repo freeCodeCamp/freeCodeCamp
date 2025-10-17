@@ -294,6 +294,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "lecture-working-with-string-formatting-methods",
             "lecture-working-with-string-modification-methods",
+            "workshop-string-transformer",
             "review-javascript-strings",
             "quiz-javascript-strings"
           ]
@@ -398,6 +399,7 @@
             "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
+            "lab-element-skipper",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"

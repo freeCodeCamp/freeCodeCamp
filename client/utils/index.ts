@@ -22,7 +22,8 @@ const idToPath = new Map(
     '68e008aa5f80c6099d47b3a2': Certification.FrontEndDevLibsV9,
     '68e6bd5020effa1586e79855': Certification.PythonV9,
     '68e6bd5120effa1586e79856': Certification.RelationalDbV9,
-    '68e6bd5120effa1586e79857': Certification.BackEndDevApisV9
+    '68e6bd5120effa1586e79857': Certification.BackEndDevApisV9,
+    '651dd7e01d697d0aab7833b7': Certification.A2English
   })
 );
 
