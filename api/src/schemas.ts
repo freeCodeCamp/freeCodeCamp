@@ -34,7 +34,10 @@ export { updateMySocials } from './schemas/settings/update-my-socials.js';
 export { updateMyTheme } from './schemas/settings/update-my-theme.js';
 export { updateMyUsername } from './schemas/settings/update-my-username.js';
 export { deleteMsUsername } from './schemas/user/delete-ms-username.js';
-export { deleteMyAccount } from './schemas/user/delete-my-account.js';
+export {
+  deleteMyAccount,
+  deleteUser
+} from './schemas/user/delete-my-account.js';
 export { deleteUserToken } from './schemas/user/delete-user-token.js';
 export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
