@@ -2,7 +2,7 @@
   "name": "Build a Boilerplate",
   "blockType": "workshop",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bash-boilerplate",

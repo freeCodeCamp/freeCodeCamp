@@ -1834,10 +1834,12 @@
       "review-python": "Python Review",
       "exam-python": "Python Exam",
       "bash-fundamentals": "Bash Fundamentals",
-      "relational-databases": "Relational Databases",
+      "sql-and-postgresql": "SQL and PostgreSQL",
       "bash-scripting": "Bash Scripting",
       "sql-and-bash": "SQL and Bash",
       "git": "Git",
+      "review-relational-databases": "Relational Databases Review",
+      "exam-relational-databases": "Relational Databases Exam",
       "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
@@ -1946,7 +1948,7 @@
           "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
         ]
       },
-      "relational-databases": {
+      "sql-and-postgresql": {
         "note": "Coming Winter 2025",
         "intro": [
           "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
@@ -4858,16 +4860,16 @@
           "For this project, you will build a database of celestial bodies using PostgreSQL."
         ]
       },
-      "review-relational-database": {
-        "title": "Relational Database Review",
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
         "intro": [
-          "Review the Relational Database concepts to prepare for the upcoming quiz."
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
         ]
       },
-      "quiz-relational-database": {
-        "title": "Relational Database Quiz",
+      "quiz-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Quiz",
         "intro": [
-          "Test what you've learned on relational databases with this quiz."
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
         ]
       },
       "lecture-understanding-bash-scripting": {
