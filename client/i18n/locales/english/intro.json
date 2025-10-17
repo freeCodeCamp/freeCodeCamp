@@ -5004,6 +5004,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-html-video-player": {
+        "title": "Build a HTML Video Player",
+        "intro": ["Build a HTML Video Player", ""]
       }
     }
   },
