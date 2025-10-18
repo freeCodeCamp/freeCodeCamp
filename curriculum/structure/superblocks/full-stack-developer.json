@@ -879,7 +879,7 @@
         {
           "dashedName": "http-and-the-web-standards-model",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-understanding-the-http-request-response-model"]
         },
         {
           "dashedName": "rest-api-and-web-services",
