@@ -261,7 +261,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         process: require.resolve('process/browser')
       }
     },
-    plugins: newPlugins
+    plugins: newPlugins,
+    ignoreWarnings: [
+      warning => {
+        if (warning instanceof Error) {
+          if (warning.message.includes('mini-css-extract-plugin')) {
+            return true;
+          }
+        }
+        return false;
+      }
+    ]
   });
 };
 

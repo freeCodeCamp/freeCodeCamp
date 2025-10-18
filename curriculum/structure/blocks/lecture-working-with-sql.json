@@ -2,7 +2,7 @@
   "name": "Working With SQL",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-sql",
   "helpCategory": "Backend Development",
   "challengeOrder": [

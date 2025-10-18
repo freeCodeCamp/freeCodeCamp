@@ -477,10 +477,6 @@ fieldset[disabled] .btn {
   }
 }
 
-strong {
-  color: var(--secondary-color);
-}
-
 .form-control {
   color: var(--primary-color);
   border-color: var(--quaternary-background);
