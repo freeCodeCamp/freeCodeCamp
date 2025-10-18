@@ -204,6 +204,7 @@ const publicUserData = {
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
+  isClassroomAccount: testUserData.isClassroomAccount ?? false,
   isCollegeAlgebraPyCertV8: testUserData.isCollegeAlgebraPyCertV8,
   isDataAnalysisPyCertV7: testUserData.isDataAnalysisPyCertV7,
   isDataVisCert: testUserData.isDataVisCert,

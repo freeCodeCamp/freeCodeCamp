@@ -85,6 +85,7 @@ export const getSessionUser = {
           isFrontEndLibsCert: Type.Boolean(),
           isFullStackCert: Type.Boolean(),
           isJavascriptCertV9: Type.Boolean(),
+          isClassroomAccount: Type.Boolean(),
           isHonest: Type.Boolean(),
           isInfosecCertV7: Type.Boolean(),
           isInfosecQaCert: Type.Boolean(),

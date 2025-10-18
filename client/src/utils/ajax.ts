@@ -391,6 +391,12 @@ export function putUpdateMyKeyboardShortcuts(
   return put('/update-my-keyboard-shortcuts', update);
 }
 
+export function putUpdateMyClassroomMode(
+  update: Record<string, boolean>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-classroom-mode', update);
+}
+
 export function putUpdateMyHonesty(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
