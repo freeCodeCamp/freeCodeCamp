@@ -217,7 +217,6 @@ figcaption.caption {
   }
 }
 
-/* AB testing styles */
 .landing-top .mega-heading {
   font-size: 2.2rem;
   margin: 0px 0px 2rem;
@@ -228,6 +227,109 @@ figcaption.caption {
 .landing-top .btn-cta-big {
   max-width: fit-content;
   padding: 12px 20px;
+}
+
+.two-button-cta {
+  display: grid;
+  gap: 10px;
+  max-width: 500px;
+}
+
+@media (max-width: 1200px) {
+  .two-button-cta {
+    margin: 0 auto;
+  }
+}
+
+.google-btn {
+  align-items: center;
+  background: #fff;
+  border: 3px solid #ffffff;
+  color: #000;
+  display: inline-flex;
+  font-family: var(--font-family-sans-serif);
+  font-size: 1rem;
+  min-height: 48px;
+  padding: 10px 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.google-btn:hover,
+.google-btn:focus {
+  background: #000;
+  border-color: #ffffff;
+  color: #fff;
+}
+
+.light-palette .google-btn {
+  background: #000;
+  border-color: #000000;
+  color: #fff;
+}
+
+.light-palette .google-btn:hover,
+.light-palette .google-btn:focus {
+  background: #ffffff;
+  border-color: #000000;
+  color: #000000;
+  text-decoration: none;
+}
+
+.google-btn svg {
+  display: block;
+  height: 18px;
+  width: 18px;
+  margin: 0 10px;
+}
+.google-btn-icon {
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  min-width: 20px;
+  padding-inline-end: 4px;
+  position: relative;
+}
+
+.more-ways-btn {
+  align-items: center;
+  background-image: linear-gradient(#fecc4c, #ffac33);
+  border: 3px solid #feac32;
+  color: #0a0a23;
+  display: inline-flex;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.more-ways-btn:hover,
+.more-ways-btn:focus {
+  background-color: #fecc4c;
+  background-image: none;
+  border-color: #f1a02a;
+  color: #0a0a23;
+  text-decoration: none;
+}
+
+.cta-divider {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--secondary-color);
+  text-transform: lowercase;
+  font-size: 0.95rem;
+  margin-block: 12px;
+  width: 100%;
+}
+
+.cta-divider-line {
+  height: 1px;
+  background: none;
+  border-top: 1px dashed var(--gray-45);
+  flex: 1 1 auto;
 }
 
 @media (min-width: 500px) {

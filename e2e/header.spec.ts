@@ -15,7 +15,7 @@ const headerComponentElements = {
   languageButton: 'header-lang-list-option',
   menuButton: 'header-menu-button',
   menu: 'header-menu',
-  signInButton: 'header-sign-in-button'
+  signInButton: 'sign-in-button'
 } as const;
 
 const examUrl =
