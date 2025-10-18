@@ -186,10 +186,12 @@ test.describe('Settings - Certified User', () => {
 
     // Certifications
     await expect(
-      page.getByRole('heading', {
-        name: translations.settings.headings.certs,
-        exact: true
-      })
+      page
+        .getByRole('heading', {
+          name: translations.settings.headings.certs,
+          exact: true
+        })
+        .nth(1)
     ).toBeVisible();
     for (let i = 0; i < certifications.length; i++) {
       await expect(

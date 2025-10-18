@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Container, Spacer } from '@freecodecamp/ui';
+import { Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-
 import store from 'store';
+import { Link as ScrollLink } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
@@ -36,6 +36,9 @@ import {
   verifyCert,
   resetMyEditorLayout
 } from '../redux/settings/actions';
+
+import './show-settings.css';
+import { currentCertifications } from '../../../shared-dist/config/certification-settings';
 
 const { apiLocation } = envData;
 
@@ -106,7 +109,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
-
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
   if (showLoading || !user) {
@@ -155,8 +157,102 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Container>
-        <main>
+      <div className='settings-container'>
+        <aside className='settings-ledger'>
+          <h2 data-playwright-test-label='settings-ledger-heading'>
+            {t('settings.headings.ledger')}
+          </h2>
+          <ul>
+            <li>
+              <ScrollLink
+                to='settings-account'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.headings.account')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='settings-privacy'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.headings.privacy')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='settings-email'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.email.heading')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='settings-honesty'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.headings.honesty')}
+              </ScrollLink>
+            </li>
+
+            <li>
+              <ScrollLink
+                to='settings-certifications'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.headings.certs')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='settings-legacy-certs'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+              >
+                {t('settings.headings.legacy-certs')}
+              </ScrollLink>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+          <h2>{t('settings.headings.certs')}</h2>
+          <ul>
+            {currentCertifications.map(slug => (
+              <li key={slug}>
+                <ScrollLink
+                  to={`cert-${slug}`}
+                  className={'ledger-anchor-btn'}
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                >
+                  {t(`certification.title.${slug}`, slug)}
+                </ScrollLink>
+                <br />
+              </li>
+            ))}
+          </ul>
+        </aside>
+        <main className='settings-main'>
           <Spacer size='l' />
           <h1
             id='content-start'
@@ -226,7 +322,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='m' />
           <DangerZone />
         </main>
-      </Container>
+      </div>
     </>
   );
 }

@@ -133,12 +133,6 @@
   },
   "packageManager": "pnpm@10.18.0",
   "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {
-        "react-scrollable-anchor>react": "17",
-        "react-scrollable-anchor>react-dom": "17"
-      }
-    },
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
       "@prisma/client",
