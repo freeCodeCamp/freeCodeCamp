@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Planet
 
-This page is for the Build a Planet
+In this lab you will create a class that represents a planet
