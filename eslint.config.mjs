@@ -36,7 +36,8 @@ export default tseslint.config(
       'docs/**/*.md',
       '**/playwright*.config.ts',
       'playwright/**/*',
-      'shared-dist/**/*'
+      'shared-dist/**/*',
+      'api/dist/**/*'
     ]
   },
   js.configs.recommended,

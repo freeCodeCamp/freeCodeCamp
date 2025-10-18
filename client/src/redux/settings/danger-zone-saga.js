@@ -3,10 +3,18 @@ import { call, put, take, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
 import { FlashMessages } from '../../components/Flash/redux/flash-messages';
-import { postDeleteAccount, postResetProgress } from '../../utils/ajax';
+import {
+  postDeleteAccount,
+  postResetProgress,
+  postResetModule
+} from '../../utils/ajax';
 import { actionTypes as appTypes } from '../action-types';
 import { fetchUser, resetUserData } from '../actions';
-import { deleteAccountError, resetProgressError } from './actions';
+import {
+  deleteAccountError,
+  resetProgressError,
+  resetModuleError
+} from './actions';
 
 function* deleteAccountSaga() {
   try {
@@ -45,9 +53,28 @@ function* resetProgressSaga() {
   }
 }
 
+function* resetModuleSaga({ payload: blockId }) {
+  try {
+    yield call(postResetModule, { blockId });
+    yield put(
+      createFlashMessage({
+        type: 'info',
+        message: FlashMessages.ModuleReset
+      })
+    );
+    // refresh current user data in application state
+    yield put(fetchUser());
+    // wait for the refresh to complete
+    yield take(appTypes.fetchUserComplete);
+  } catch (e) {
+    yield put(resetModuleError(e));
+  }
+}
+
 export function createDangerZoneSaga(types) {
   return [
     takeEvery(types.deleteAccount, deleteAccountSaga),
-    takeEvery(types.resetProgress, resetProgressSaga)
+    takeEvery(types.resetProgress, resetProgressSaga),
+    takeEvery(types.resetModule, resetModuleSaga)
   ];
 }

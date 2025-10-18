@@ -44,6 +44,7 @@ export enum FlashMessages {
   GenericError = 'flash.generic-error',
   ProfilePrivate = 'flash.profile-private',
   ProgressReset = 'flash.progress-reset',
+  ModuleReset = 'flash.module-reset',
   ProvideUsername = 'flash.provide-username',
   ReallyWeird = 'flash.really-weird',
   ReportSent = 'flash.report-sent',
