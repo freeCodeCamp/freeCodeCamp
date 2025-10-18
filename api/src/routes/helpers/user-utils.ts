@@ -20,6 +20,7 @@ const nullableFlags = [
   'isFullStackCert',
   'isFrontEndLibsCert',
   'isJavascriptCertV9',
+  'isClassroomAccount',
   'isHonest',
   'isInfosecCertV7',
   'isInfosecQaCert',
