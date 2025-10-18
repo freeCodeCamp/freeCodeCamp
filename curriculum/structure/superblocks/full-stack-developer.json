@@ -719,6 +719,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
+            "lab-planet-class",
             "workshop-musical-instrument-inventory",
             "workshop-email-simulator",
             "lab-budget-app",
