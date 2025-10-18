@@ -51,6 +51,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
     isURL: boolean,
     name: string
   ) => {
+    if (typeof value !== 'string') return null;
     let validationError: string | undefined;
     if (value && isURL) {
       try {
@@ -82,7 +83,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
       validationError ||
       validationWarning) as string;
     return message ? (
-      <HelpBlock>
+      <HelpBlock id={`${name}-message`}>
         <Alert variant={error || validationError ? 'danger' : 'info'}>
           {message}
         </Alert>
@@ -94,7 +95,6 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
-          // TODO: verify if the value is always a string
           <Field key={`${name}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const placeholder =
@@ -115,8 +115,9 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
                     placeholder={placeholder}
                     required={required.includes(name)}
                     rows={4}
-                    type='url'
+                    type={types[name] || 'text'}
                     value={value as string}
+                    aria-describedby={`${name}-message`}
                     data-playwright-test-label={`${name}-form-control`}
                   />
                   {nullOrWarning(
