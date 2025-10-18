@@ -1,11 +1,11 @@
 {
-  "name": "Build a Planet",
+  "name": "Build a Planet Class",
   "isUpcomingChange": true,
-  "dashedName": "lab-planets",
+  "dashedName": "lab-planet-class",
   "helpCategory": "Python",
   "blockLayout": "link",
   "challengeOrder": [
-    { "id": "68e76b1ce8216249d04df670", "title": "Build a Planet" }
+    { "id": "68e76b1ce8216249d04df670", "title": "Build a Planet Class" }
   ],
   "blockType": "lab",
   "usesMultifileEditor": true
