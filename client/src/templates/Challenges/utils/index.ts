@@ -52,7 +52,8 @@ export function enhancePrismAccessibility(
     json: 'JSON',
     pug: 'pug',
     ts: 'TypeScript',
-    typescript: 'TypeScript'
+    typescript: 'TypeScript',
+    tsx: 'TSX'
   };
   const parent = prismEnv?.element?.parentElement;
   if (

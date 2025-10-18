@@ -2,7 +2,7 @@
   "name": "Working With Nano",
   "blockType": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-working-with-nano",
   "helpCategory": "Backend Development",
   "challengeOrder": [

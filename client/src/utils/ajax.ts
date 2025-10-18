@@ -223,7 +223,8 @@ export interface Exam {
 export interface Attempt {
   id: string;
   examId: string;
-  startTimeInMS: number;
+  // ISO 8601 string
+  startTime: string;
   questionSets: unknown[];
   result?: {
     passed: boolean;

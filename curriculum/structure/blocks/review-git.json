@@ -2,7 +2,7 @@
   "name": "Git Review",
   "blockType": "review",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-git",
   "challengeOrder": [
     { "id": "6724e4cfea0c4f2425a9d064", "title": "Git Review" }

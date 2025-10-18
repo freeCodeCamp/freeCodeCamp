@@ -7,6 +7,7 @@ import { pick, omit } from 'lodash-es';
 const nullableFlags = [
   'is2018DataVisCert',
   'is2018FullStackCert',
+  'isA2EnglishCert',
   'isApisMicroservicesCert',
   'isBackEndCert',
   'isCheater',
@@ -18,6 +19,7 @@ const nullableFlags = [
   'isFrontEndCert',
   'isFullStackCert',
   'isFrontEndLibsCert',
+  'isJavascriptCertV9',
   'isHonest',
   'isInfosecCertV7',
   'isInfosecQaCert',
@@ -27,6 +29,7 @@ const nullableFlags = [
   'isQaCertV7',
   'isRelationalDatabaseCertV8',
   'isRespWebDesignCert',
+  'isRespWebDesignCertV9',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
   // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server

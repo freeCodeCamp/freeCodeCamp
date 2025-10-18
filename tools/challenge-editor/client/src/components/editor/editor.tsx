@@ -13,7 +13,14 @@ import { ChallengeContent } from '../../../interfaces/challenge-content';
 import SaveChallenge from '../buttons/save-challenge';
 import './editor.css';
 import { API_LOCATION } from '../../utils/handle-request';
-import { superBlockNameMap } from '../../utils/block-name-translator';
+
+// only includes superblocks whose folder names don't match their dashed names?
+export const superBlockNameMap: { [key: string]: string } = {
+  'responsive-web-design-22': '2022/responsive-web-design',
+  'javascript-algorithms-and-data-structures-22':
+    'javascript-algorithms-and-data-structures-v8',
+  'front-end-development': 'full-stack-developer'
+};
 
 const Editor = () => {
   const [error, setError] = useState<Error | null>(null);
@@ -24,7 +31,12 @@ const Editor = () => {
     fileData: ''
   });
   const [stepContent, setStepContent] = useState('');
-  const { superblock, block, challenge } = useParams();
+  const { superblock = '', block = '', challenge = '' } = useParams();
+
+  const superblockUrl =
+    superblock in superBlockNameMap
+      ? superBlockNameMap[superblock]
+      : superblock;
 
   useEffect(() => {
     fetchData();
@@ -33,9 +45,7 @@ const Editor = () => {
 
   const fetchData = () => {
     setLoading(true);
-    fetch(
-      `${API_LOCATION}/${superblock || ''}/${block || ''}/${challenge || ''}`
-    )
+    fetch(`${API_LOCATION}/${superblock}/${block}/${challenge}`)
       .then(res => res.json() as Promise<ChallengeContent>)
       .then(
         content => {
@@ -65,7 +75,7 @@ const Editor = () => {
     <div>
       <h1>{items.name}</h1>
       <span className='breadcrumb'>
-        {superblock || ''} / {block || ''}
+        {superblock} / {block}
       </span>
       <CodeMirror
         value={stepContent}
@@ -81,17 +91,17 @@ const Editor = () => {
         }}
       />
       <SaveChallenge
-        superblock={superblock || ''}
-        block={block || ''}
+        superblock={superblock}
+        block={block}
         challenge={challenge}
         content={stepContent}
       />
       <p>
-        <Link to={`/${superblock || ''}/${block || ''}`}>Return to Block</Link>
+        <Link to={`/${superblock}/${block}`}>Return to Block</Link>
       </p>
       <p>
         <Link
-          to={`${import.meta.env.CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION}/learn/${superBlockNameMap[superblock || '']}/${block || ''}/${
+          to={`${import.meta.env.CHALLENGE_EDITOR_LEARN_CLIENT_LOCATION}/learn/${superblockUrl}/${block || ''}/${
             items.dashedName
           }`}
           target='_blank'
