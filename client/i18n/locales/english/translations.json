@@ -391,7 +391,8 @@
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
@@ -1280,12 +1281,16 @@
   "exam-token": {
     "exam-token": "Exam Token",
     "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
-    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
     "error": "There was an error generating your token, please try again in a moment.",
-    "your-exam-token": "Your Exam Token is: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

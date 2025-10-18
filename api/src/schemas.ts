@@ -44,5 +44,8 @@ export { postMsUsername } from './schemas/user/post-ms-username.js';
 export { reportUser } from './schemas/user/report-user.js';
 export { resetMyProgress } from './schemas/user/reset-my-progress.js';
 export { submitSurvey } from './schemas/user/submit-survey.js';
-export { userExamEnvironmentToken } from './schemas/user/exam-environment-token.js';
+export {
+  userExamEnvironmentToken,
+  getUserExamEnvironmentToken
+} from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';
