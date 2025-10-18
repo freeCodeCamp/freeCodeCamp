@@ -226,7 +226,7 @@ function SuperBlockIntro({
   );
 
   const showFSDnewIntro = useFeatureIsOn('fsd-new-intro');
-
+  const isUserDataLoaded = Array.isArray(completedChallenges);
   const showIntroTopB =
     completedChallenges.length === 0 &&
     superBlock === SuperBlocks.FullStackDeveloper &&
@@ -234,7 +234,7 @@ function SuperBlockIntro({
 
   return (
     <>
-      {showIntroTopB ? introTopB : introTopA}
+      {isUserDataLoaded ? (showIntroTopB ? introTopB : introTopA) : introTopA}
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
