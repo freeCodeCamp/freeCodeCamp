@@ -10,6 +10,7 @@ import { configureAnchors } from 'react-scrollable-anchor';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import store from 'store';
 
 import {
   chapterBasedSuperBlocks,
@@ -38,8 +39,10 @@ import {
   BlockLayouts,
   BlockTypes
 } from '../../../../shared-dist/config/blocks';
+import { ButtonLink } from '../../components/helpers';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
+
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
@@ -231,6 +234,16 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     return blocks[0];
   };
 
+  const getContinuePath = () => {
+    const lastChallengePaths = store.get('lastChallengePaths') as
+      | Record<string, string>
+      | undefined;
+    if (lastChallengePaths && lastChallengePaths[superBlock]) {
+      return lastChallengePaths[superBlock];
+    }
+    return null;
+  };
+
   const initializeExpandedState = () => {
     const { resetExpansion, toggleBlock } = props;
 
@@ -246,6 +259,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       action: `Certification Donation Alert Click`
     });
   };
+
+  const lastPath = getContinuePath();
 
   return (
     <>
@@ -270,6 +285,14 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <h2 className='text-center big-subheading'>
                 {t(`intro:misc-text.courses`)}
               </h2>
+              {lastPath && (
+                <ButtonLink
+                  href={`/learn/${superBlock}/${lastPath}`}
+                  block={true}
+                >
+                  {t('buttons.continue-where-left-off')}
+                </ButtonLink>
+              )}
               <Spacer size='m' />
               {chapterBasedSuperBlocks.includes(superBlock) ? (
                 <SuperBlockAccordion
