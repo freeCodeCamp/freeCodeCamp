@@ -2300,6 +2300,10 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": ["Build an Accessible Audio Controller", ""]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
