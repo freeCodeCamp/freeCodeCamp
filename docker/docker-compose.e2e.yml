@@ -12,8 +12,8 @@ services:
     environment:
       # The api cannot connect to mongodb or mailpit via localhost from inside the
       # container, so we have to override these variables.
-      - MONGOHQ_URL=mongodb://db:27017/freecodecamp?directConnection=true
-      - MAILHOG_HOST=mailpit
+      - MONGOHQ_URL=mongodb://mongodb:27017/freecodecamp?replicaSet=rs0
+      - MAILPIT_HOST=mailpit
       - HOST=0.0.0.0
     ports:
       - '3000:3000'
