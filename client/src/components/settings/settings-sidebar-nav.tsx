@@ -9,6 +9,7 @@ import {
   legacyFullStackCertification,
   upcomingCertifications
 } from '@freecodecamp/shared/config/certification-settings';
+import { IfFeatureEnabled } from '@growthbook/growthbook-react';
 import env from '../../../config/env.json';
 
 type SettingsSidebarNavProps = {
@@ -90,6 +91,23 @@ function SettingsSidebarNav({
             {t('settings.headings.honesty')}
           </ScrollLink>
         </SidebarPanel.Item>
+        <IfFeatureEnabled feature='classroom-mode'>
+          <SidebarPanel.Item>
+            <ScrollLink
+              to='classroom-mode'
+              href='#classroom-mode'
+              className='sidebar-nav-section-heading'
+              smooth={true}
+              offset={scrollOffset}
+              duration={300}
+              spy={true}
+              hashSpy={true}
+              activeClass='active'
+            >
+              {t('settings.classroom-mode.heading')}
+            </ScrollLink>
+          </SidebarPanel.Item>
+        </IfFeatureEnabled>
         <SidebarPanel.Item>
           <ScrollLink
             to='exam-token'
