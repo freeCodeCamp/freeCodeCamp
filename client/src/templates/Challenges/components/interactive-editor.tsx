@@ -43,7 +43,11 @@ const InteractiveEditor = ({ files }: Props) => {
     return files.some(f => f.ext === ext);
   }
 
-  const showConsole = got('js') || got('ts');
+  const hasHtmlOrCss = got('html') || got('css');
+  const hasScript = got('js') || got('ts');
+  const layout = hasHtmlOrCss ? 'preview' : 'console';
+  const showConsole = hasHtmlOrCss && hasScript;
+  
   const freeCodeCampDarkSyntax = {
     ...freeCodeCampDark.syntax,
     punctuation: '#ffff00',
@@ -80,7 +84,7 @@ const InteractiveEditor = ({ files }: Props) => {
           editorWidthPercentage: 60,
           showConsole: showConsole,
           showConsoleButton: showConsole,
-          layout: got('html') ? 'preview' : 'console',
+          layout: layout,
           showLineNumbers: true
         }}
       />
