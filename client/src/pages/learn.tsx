@@ -16,6 +16,7 @@ import {
 } from '../redux/selectors';
 
 import callGA from '../analytics/call-ga';
+import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
 
 interface FetchState {
   pending: boolean;
@@ -70,6 +71,7 @@ function LearnPage({
   const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
 
   const { t } = useTranslation();
+  useClaimableCertsNotification();
 
   const slug = challengeNode?.challenge?.fields?.slug || '';
 

@@ -998,6 +998,7 @@
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",
     "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} has not yet agreed to our Academic Honesty Pledge.",
     "user-not-certified": "It looks like user {{username}} is not {{cert}} certified",
     "invalid-challenge": "That does not appear to be a valid challenge submission",
