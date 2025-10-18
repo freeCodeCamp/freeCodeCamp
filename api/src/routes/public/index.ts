@@ -1,5 +1,6 @@
 export * from './auth-dev.js';
 export * from './auth.js';
+export * from './build-challenge-map.js';
 export * from './certificate.js';
 export * from './deprecated-endpoints.js';
 export * from './deprecated-unsubscribe.js';
