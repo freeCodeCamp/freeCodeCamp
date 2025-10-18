@@ -208,7 +208,7 @@ export async function buildDOMChallenge(
   // if there is an error, we just build the test runner so that it can be
   // used to run tests against the code without actually running the code.
   const toBuild = error
-    ? {}
+    ? undefined
     : {
         required,
         template,
@@ -217,7 +217,7 @@ export async function buildDOMChallenge(
 
   return {
     challengeType,
-    build: concatHtml(toBuild),
+    build: toBuild ? concatHtml(toBuild) : '',
     sources: buildSourceMap(finalFiles),
     loadEnzyme: requiresReact16,
     error
@@ -230,32 +230,44 @@ export async function buildJSChallenge(
     challengeType
   }: { challengeFiles?: ChallengeFile[]; challengeType: number },
   options: BuildOptions
-): Promise<BuildResult> {
-  if (!challengeFiles) throw Error('No challenge files provided');
+): Promise<{
+  challengeType: number;
+  build: string;
+  sources: unknown;
+  error?: Error;
+}> {
+  if (!challengeFiles) throw new Error('No challenge files provided');
+
   const pipeLine = composeFunctions(
     ...(getTransformers(options) as unknown as ApplyFunctionProps[])
   );
 
-  const finalFiles = await Promise.all(challengeFiles?.map(pipeLine));
-  const error = finalFiles.find(({ error }) => error)?.error;
+  const finalFiles = await Promise.all(challengeFiles.map(pipeLine));
 
-  const toBuild = error ? [] : finalFiles;
+  const foundError = finalFiles.find(
+    file => file.error instanceof Error
+  )?.error;
+
+  if (foundError) {
+    return {
+      challengeType,
+      build: '',
+      sources: buildSourceMap(finalFiles) as unknown,
+      error: foundError as Error
+    };
+  }
+
+  const unifiedCode = finalFiles
+    .map(
+      file => `${file.head || ''}\n${file.contents || ''}\n${file.tail || ''}`
+    )
+    .join('\n');
 
   return {
     challengeType,
-    build: toBuild
-      .reduce(
-        (body, challengeFile) => [
-          ...body,
-          challengeFile.head,
-          challengeFile.contents,
-          challengeFile.tail
-        ],
-        [] as string[]
-      )
-      .join('\n'),
-    sources: buildSourceMap(finalFiles),
-    error
+    build: unifiedCode,
+    sources: buildSourceMap(finalFiles) as unknown,
+    error: undefined
   };
 }
 
