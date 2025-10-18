@@ -694,6 +694,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isFrontEndCert: true,
             isFrontEndLibsCert: true,
             isFullStackCert: true,
+            isClassroomAccount: true,
             isHonest: true,
             isInfosecCertV7: true,
             isInfosecQaCert: true,

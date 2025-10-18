@@ -4,9 +4,15 @@ import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { Provider } from 'react-redux';
 import envData from '../../config/env.json';
 import ShowSettings from './show-settings';
-
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
+
+vi.mock('../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeatureIsOn: () => false,
+  IfFeatureEnabled: ({ children: _children }: { children: React.ReactNode }) =>
+    null
+}));
 
 vi.mock('../utils/get-words');
 
