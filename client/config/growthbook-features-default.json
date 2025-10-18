@@ -142,6 +142,9 @@
       }
     ]
   },
+  "classroom-mode": {
+    "defaultValue": false
+  },
   "disabled_blocks": {
     "defaultValue": []
   }

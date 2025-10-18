@@ -57,6 +57,15 @@ export const updateMyKeyboardShortcutsError = createAction(
   types.updateMyKeyboardShortcutsError
 );
 
+export const updateMyClassroomMode = createAction(types.updateMyClassroomMode);
+export const updateMyClassroomModeComplete = createAction(
+  types.updateMyClassroomModeComplete,
+  checkForSuccessPayload
+);
+export const updateMyClassroomModeError = createAction(
+  types.updateMyClassroomModeError
+);
+
 export const updateMyHonesty = createAction(types.updateMyHonesty);
 export const updateMyHonestyComplete = createAction(
   types.updateMyHonestyComplete,
