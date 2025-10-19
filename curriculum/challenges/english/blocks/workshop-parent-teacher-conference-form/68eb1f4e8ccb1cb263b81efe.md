@@ -16,7 +16,7 @@ Select the element with the class `description` and set its `font-size` to `1.2r
 You should target the element with the class `description`.
 
 ```js
-assert(new __helpers.CSSHelp(document).getStyle('.description'));
+assert.exists(new __helpers.CSSHelp(document).getStyle('.description'));
 ```
 
 Set the `font-size` property to `1.2rem`.
