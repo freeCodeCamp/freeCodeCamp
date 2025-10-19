@@ -1,0 +1,22 @@
+{
+  "name": "Understanding the HTTP request-response model",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-the-http-request-response-model",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68dd96cf8084504ca0322e98",
+      "title": "What Is the HTTP Request-Response Model?"
+    },
+    {
+      "id": "68dd97fbd18ede5ae983e342",
+      "title": "What Are the Different Kinds of Assets That Are Returned in an HTTP Response?"
+    },
+    {
+      "id": "68dd97fbd18ede5ae983e343",
+      "title": "What Happens When a Form Is Submitted and How Do the Different Form Submissions Work?"
+    }
+  ],
+  "blockType": "lecture"
+}

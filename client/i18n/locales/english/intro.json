@@ -4966,6 +4966,12 @@
           "Review relational databases concepts to prepare for the upcoming quiz."
         ]
       },
+      "lecture-understanding-the-http-request-response-model": {
+        "title": "Understanding the HTTP Request-Response Model",
+        "intro": [
+          "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
