@@ -29,11 +29,10 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px'
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colored Boxes</title>
-    
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
