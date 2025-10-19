@@ -5029,7 +5029,7 @@
       "lab-digital-pet-game": {
         "title": "Build a Digital Pet Game",
         "intro": [
-          "For this lab, you will use Typescript and React to build a digital pet game."
+          "For this lab, you will use TypeScript and React to build a digital pet game."
         ]
       }
     }
