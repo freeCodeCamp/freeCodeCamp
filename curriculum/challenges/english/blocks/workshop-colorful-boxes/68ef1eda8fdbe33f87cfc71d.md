@@ -36,7 +36,7 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px'
   </head>
   <body>
     <header>
-      <h1>CSS flexbox colorful boxes</h1>
+      <h1>Colored Boxes Layout</h1>
     </header>
     <div class="flex-container">
       <div class="box">
