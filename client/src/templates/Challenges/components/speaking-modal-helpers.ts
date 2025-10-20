@@ -9,10 +9,22 @@ export const normalizeText = (text: string) => {
     .filter((word: string) => word.length > 0);
 };
 
-export interface ComparisonWord {
+interface Missing {
   expected: string;
-  actual?: string;
+  actual?: never;
 }
+
+interface Extra {
+  actual: string;
+  expected?: never;
+}
+
+interface Comparison {
+  expected: string;
+  actual: string;
+}
+
+export type ComparisonWord = Missing | Extra | Comparison;
 
 export interface ComparisonResult {
   comparison?: ComparisonWord[];
@@ -58,24 +70,24 @@ export const compareTexts = (
 const isExtra = (word: ComparisonWord) =>
   word.expected == undefined && !!word.actual;
 
-const toMissing = (word?: string) => ({ expected: word ?? '', actual: '' });
-const toExtra = (word?: string) => ({ expected: '', actual: word ?? '' });
+const toMissing = (word?: string): ComparisonWord => ({ expected: word! });
+const toExtra = (word?: string): ComparisonWord => ({ actual: word! });
 
 // If the speaker kept going after saying the required words, we simply ignore
 // the rest.
 const removeTrailingExtraWords = (words: ComparisonWord[]): ComparisonWord[] =>
   dropRightWhile(words, isExtra);
 
-function search(
-  needle: string | undefined,
-  haystack: (string | undefined)[],
+function search<T extends string | undefined>(
+  needle: T,
+  haystack: T[],
   compare: (x?: string) => ComparisonWord
 ): {
   comparisons: ComparisonWord[];
-  updatedHaystack: (string | undefined)[];
+  updatedHaystack: T[];
 } {
   const id = haystack.indexOf(needle);
-  const match = { expected: needle!, actual: needle };
+  const match = { expected: needle!, actual: needle! };
 
   return {
     comparisons: id > -1 ? [...haystack.slice(0, id).map(compare), match] : [],
@@ -93,22 +105,22 @@ function matchTexts(
   let utterances = [...utteranceWords];
 
   while (utterances.length > 0 || originals.length > 0) {
-    const comparison = { expected: originals[0], actual: utterances[0] };
+    const expected = originals[0];
+    const actual = utterances[0];
 
-    if (originals[0] === utterances[0]) {
-      results.push(comparison);
+    if (expected === actual) {
+      results.push({ expected, actual });
     } else {
       // If it's not a direct match, see if there is a match in the original
       // text, i.e. find out if the speaker omitted some words
-      if (originals.includes(utterances[0]!)) {
-        const output = search(utterances[0], originals, toMissing);
+      if (originals.includes(actual!)) {
+        const output = search(actual!, originals, toMissing);
         if (isEmpty(output.comparisons)) {
-          results.push(comparison);
+          results.push({ expected, actual });
         } else {
           results.push(...output.comparisons);
         }
-        // TODO: fix the types. This assertion shouldn't be necessary.
-        originals = output.updatedHaystack as string[];
+        originals = output.updatedHaystack;
       } else {
         // The utterance isn't in the original, but the original may be later on
         // in the utterances. i.e. we find out if the speaker inserted some
@@ -116,7 +128,7 @@ function matchTexts(
 
         const output = search(originals[0], utterances, toExtra);
         if (isEmpty(output.comparisons)) {
-          results.push(comparison);
+          results.push({ expected, actual });
         } else {
           results.push(...output.comparisons);
         }

@@ -49,14 +49,22 @@ const ExactMatchFeedback = ({
 function processComparison({ actual, expected }: ComparisonWord): {
   status: 'correct' | 'misplaced' | 'extra' | 'wrong';
   word: string;
+};
+
+function processComparison(comparison: ComparisonWord): {
+  status: 'correct' | 'misplaced' | 'extra' | 'wrong';
+  word: string;
 } {
-  if (actual === expected) return { status: 'correct', word: expected };
-  if (!actual) return { status: 'misplaced', word: expected };
-  if (!expected) return { status: 'extra', word: actual };
+  if (comparison.actual === undefined)
+    return { status: 'misplaced', word: comparison.expected };
+  if (comparison.expected === undefined)
+    return { status: 'extra', word: comparison.actual };
+  if (comparison.actual === comparison.expected)
+    return { status: 'correct', word: comparison.expected };
 
   return {
     status: 'wrong',
-    word: actual
+    word: comparison.actual
   };
 }
 

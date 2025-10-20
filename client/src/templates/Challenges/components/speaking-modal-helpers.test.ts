@@ -83,7 +83,7 @@ describe('speaking-modal-helpers', () => {
         const result = compareTexts('Hello beautiful world', 'Hello world');
         expect(result.comparison).toEqual([
           { expected: 'hello', actual: 'hello' },
-          { expected: 'beautiful', actual: '' },
+          { expected: 'beautiful' },
           { expected: 'world', actual: 'world' }
         ]);
       });
@@ -92,8 +92,8 @@ describe('speaking-modal-helpers', () => {
         const result = compareTexts('a b c d', 'a d');
         expect(result.comparison).toEqual([
           { expected: 'a', actual: 'a' },
-          { expected: 'b', actual: '' },
-          { expected: 'c', actual: '' },
+          { expected: 'b' },
+          { expected: 'c' },
           { expected: 'd', actual: 'd' }
         ]);
       });
@@ -102,8 +102,8 @@ describe('speaking-modal-helpers', () => {
         const result = compareTexts('a d', 'a b c d');
         expect(result.comparison).toEqual([
           { expected: 'a', actual: 'a' },
-          { expected: '', actual: 'b' },
-          { expected: '', actual: 'c' },
+          { actual: 'b' },
+          { actual: 'c' },
           { expected: 'd', actual: 'd' }
         ]);
       });
@@ -114,7 +114,7 @@ describe('speaking-modal-helpers', () => {
           { expected: 'a', actual: 'a' },
           { expected: 'b', actual: 'b' },
           { expected: 'c', actual: 'c' },
-          { expected: 'd', actual: '' },
+          { expected: 'd' },
           { expected: 'e', actual: 'e' },
           { expected: 'f', actual: 'f' },
           { expected: 'g', actual: 'g' }
@@ -167,7 +167,7 @@ describe('speaking-modal-helpers', () => {
         );
         expect(result.comparison).toEqual([
           { expected: 'the', actual: 'the' },
-          { expected: '', actual: 'black' },
+          { actual: 'black' },
           { expected: 'cat', actual: 'cat' },
           { expected: 'sat', actual: 'sat' },
           { expected: 'on', actual: 'on' },
