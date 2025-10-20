@@ -1,0 +1,15 @@
+{
+  "name": "Implement an Element Skipper",
+  "isUpcomingChange": false,
+  "dashedName": "lab-element-skipper",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockType": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "a5deed1811a43193f9f1c841",
+      "title": "Implement an Element Skipper"
+    }
+  ]
+}

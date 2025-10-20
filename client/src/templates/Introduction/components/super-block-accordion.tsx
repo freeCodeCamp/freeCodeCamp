@@ -5,13 +5,7 @@ import { Disclosure } from '@headlessui/react';
 
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
-// TODO: source the superblock structure via a GQL query, rather than directly
-// from the curriculum
-import fullStackCert from '../../../../../curriculum/structure/superblocks/full-stack-developer.json';
-import fullStackOpen from '../../../../../curriculum/structure/superblocks/full-stack-open.json';
-import a1Spanish from '../../../../../curriculum/structure/superblocks/a1-professional-spanish.json';
-import javascriptV9 from '../../../../../curriculum/structure/superblocks/javascript-v9.json';
-
+import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
 import {
@@ -62,6 +56,7 @@ interface Challenge {
 interface SuperBlockAccordionProps {
   challenges: Challenge[];
   superBlock: SuperBlocks;
+  structure: ChapterBasedSuperBlockStructure;
   chosenBlock: string;
   completedChallengeIds: string[];
 }
@@ -177,27 +172,11 @@ const LinkBlock = ({
 export const SuperBlockAccordion = ({
   challenges,
   superBlock,
+  structure,
   chosenBlock,
   completedChallengeIds
 }: SuperBlockAccordionProps) => {
-  function getSuperblockStructure(superBlock: SuperBlocks): {
-    chapters: Chapter[];
-  } {
-    switch (superBlock) {
-      case SuperBlocks.FullStackOpen:
-        return fullStackOpen;
-      case SuperBlocks.FullStackDeveloper:
-        return fullStackCert;
-      case SuperBlocks.A1Spanish:
-        return a1Spanish;
-      case SuperBlocks.JsV9:
-        return javascriptV9;
-      default:
-        throw new Error("The SuperBlock structure hasn't been imported.");
-    }
-  }
-
-  const superBlockStructure = getSuperblockStructure(superBlock);
+  const superBlockStructure = structure;
 
   const modules = superBlockStructure.chapters.flatMap<Module>(
     ({ modules }) => modules
@@ -206,7 +185,7 @@ export const SuperBlockAccordion = ({
   const isLinkModule = (name: string) => {
     const module = modules.find(module => module.dashedName === name);
 
-    return module?.moduleType === 'review';
+    return module?.moduleType === 'review' || module?.moduleType === 'exam';
   };
 
   const getBlockToChapterMap = () => {
@@ -300,7 +279,10 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (module.moduleType === 'review') {
+                if (
+                  module.moduleType === 'review' ||
+                  module.moduleType === 'exam'
+                ) {
                   return null;
                 }
 
