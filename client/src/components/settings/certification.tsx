@@ -47,6 +47,7 @@ const mapDispatchToProps = {
 
 const createCertifiedMap = ({
   is2018DataVisCert,
+  isA2EnglishCert,
   isApisMicroservicesCert,
   isJavascriptCertV9,
   isJsAlgoDataStructCert,
@@ -97,7 +98,7 @@ const createCertifiedMap = ({
   [Certification.PythonV9]: false,
   [Certification.RelationalDbV9]: false,
   [Certification.BackEndDevApisV9]: false,
-  [Certification.A2English]: false,
+  [Certification.A2English]: isA2EnglishCert,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,
   [Certification.A2Chinese]: false,
