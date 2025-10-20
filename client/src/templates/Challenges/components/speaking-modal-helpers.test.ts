@@ -88,6 +88,39 @@ describe('speaking-modal-helpers', () => {
         ]);
       });
 
+      it('should handle consecutive missing words', () => {
+        const result = compareTexts('a b c d', 'a d');
+        expect(result.comparison).toEqual([
+          { expected: 'a', actual: 'a' },
+          { expected: 'b', actual: '' },
+          { expected: 'c', actual: '' },
+          { expected: 'd', actual: 'd' }
+        ]);
+      });
+
+      it('should handle consecutive extra words', () => {
+        const result = compareTexts('a d', 'a b c d');
+        expect(result.comparison).toEqual([
+          { expected: 'a', actual: 'a' },
+          { expected: '', actual: 'b' },
+          { expected: '', actual: 'c' },
+          { expected: 'd', actual: 'd' }
+        ]);
+      });
+
+      it('should handle missing words in longer sentences', () => {
+        const result = compareTexts('a b c d e f g', 'a b c e f g');
+        expect(result.comparison).toEqual([
+          { expected: 'a', actual: 'a' },
+          { expected: 'b', actual: 'b' },
+          { expected: 'c', actual: 'c' },
+          { expected: 'd', actual: '' },
+          { expected: 'e', actual: 'e' },
+          { expected: 'f', actual: 'f' },
+          { expected: 'g', actual: 'g' }
+        ]);
+      });
+
       it('should ignore trailing extra words', () => {
         const result = compareTexts('Hello', 'Hello beautiful world');
         expect(result.comparison).toEqual([
@@ -95,11 +128,20 @@ describe('speaking-modal-helpers', () => {
         ]);
       });
 
-      it('should handle completely different text', () => {
-        const result = compareTexts('Hello world', 'Goodbye universe');
+      it('should handle completely different texts that are longer than the original', () => {
+        const result = compareTexts('a b', 'c d e');
         expect(result.comparison).toEqual([
-          { expected: 'hello', actual: 'goodbye' },
-          { expected: 'world', actual: 'universe' }
+          { expected: 'a', actual: 'c' },
+          { expected: 'b', actual: 'd' }
+        ]);
+      });
+
+      it('should handle completely different texts that are shorter than the original', () => {
+        const result = compareTexts('a b c', 'd e');
+        expect(result.comparison).toEqual([
+          { expected: 'a', actual: 'd' },
+          { expected: 'b', actual: 'e' },
+          { expected: 'c' }
         ]);
       });
 
@@ -125,7 +167,7 @@ describe('speaking-modal-helpers', () => {
         );
         expect(result.comparison).toEqual([
           { expected: 'the', actual: 'the' },
-          { actual: 'black' },
+          { expected: '', actual: 'black' },
           { expected: 'cat', actual: 'cat' },
           { expected: 'sat', actual: 'sat' },
           { expected: 'on', actual: 'on' },
@@ -136,12 +178,9 @@ describe('speaking-modal-helpers', () => {
     });
 
     describe('edge cases', () => {
-      it('should handle empty original text', () => {
+      it('should return an empty array if there is no original text', () => {
         const result = compareTexts('', 'Hello world');
-        expect(result.comparison).toEqual([
-          { actual: 'hello' },
-          { actual: 'world' }
-        ]);
+        expect(result.comparison).toEqual([]);
       });
 
       it('should handle empty utterance', () => {
@@ -157,9 +196,9 @@ describe('speaking-modal-helpers', () => {
         expect(result.status).toBe('correct');
       });
 
-      it('should handle punctuation-only original text', () => {
+      it('should treat punctuation-only original text as if it was empty', () => {
         const result = compareTexts('!!!', 'hello');
-        expect(result.comparison).toEqual([{ actual: 'hello' }]);
+        expect(result.comparison).toEqual([]);
       });
     });
 
