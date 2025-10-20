@@ -1,5 +1,5 @@
 ---
-title: Introduction to the Build a Planet
+title: Introduction to the Build a Planet Class
 block: lab-planet-class
 superBlock: full-stack-developer
 ---
