@@ -7,7 +7,7 @@ dashedName: step-11
 
 # --description--
 
-Inside the second `section` element, nest an `h2` element with the text `Importance of Networking`. 
+Inside the second `section` element, nest an `h2` element with the text `Importance of Networking`.
 
 Below this heading, add a block quotation element with a `cite` attribute with the value `https://www.freecodecamp.org/news/learn-to-code-book/`.
 
@@ -67,29 +67,29 @@ assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/n
   <body>
     <h1>Quincy's Tips for Getting a Developer Job</h1>
     <p>
-      Learning to code is hard, but as Quincy Larson says, 
-      <q cite="https://www.freecodecamp.org/news/learn-to-code-book/">
-        You can become a developer.
-      </q>
+      Learning to code is hard, but as Quincy Larson says,
+      <q cite="https://www.freecodecamp.org/news/learn-to-code-book/"
+        >You can become a developer.<
+      /q>
     </p>
-    
+
     <main>
       <section>
         <h2>Envisioning Success</h2>
         <blockquote cite="https://www.freecodecamp.org/news/learn-to-code-book/">
           Can you imagine what it would be like to be a successful developer? To have built software systems that people rely upon?
-        </blockquote>  
+        </blockquote>
         <p cite="https://www.freecodecamp.org/news/learn-to-code-book/">
           —Quincy Larson, <cite>How to Learn to Code and Get a Developer Job [Full Book]</cite>
         </p>
       </section>
       <section>
 --fcc-editable-region--
-        
+
 --fcc-editable-region--
       </section>
       <section>
-        
+
       </section>
     </main>
   </body>
