@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build an Accessible Audio Controller
 
-This page is for the Build an Accessible Audio Controller
+In this workshop, you will practice accessible HTML by building an audio controller that uses the `aria-labelledby` attribute.
