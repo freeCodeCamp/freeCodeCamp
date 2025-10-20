@@ -1151,7 +1151,6 @@
       "Цей розділ містить завдання з програмування, які перевіряють ваші знання алгоритмів, структур даних і математики. Тут також є декілька проєктів, які ви можете використати для зміцнення навичок або просто додати їх до свого портфоліо.",
       "Тут містяться матеріали з <a href=\"https://www.wikipedia.org/\" target=\"_blank\">вікіпедії</a>, які дозволені ліцензією <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a>. Оригінальний вміст міг бути змінений та адаптований. Для перегляду оригінальної версії та інших деталей відвідайте оригінальну сторінку на <a href=\"https://www.wikipedia.org/\" target\"_blank\">вікіпедії</a>."
     ],
-    "note": "Проєкт Ейлера та Rosetta Code переміщені в окремі курси. Поверніться до навчальної програми, щоб побачити перелік всіх курсів.",
     "blocks": {
       "algorithms": {
         "title": "Алгоритми",
@@ -1821,10 +1820,12 @@
       "review-python": "Повторення Python",
       "exam-python": "Екзамен «Python»",
       "bash-fundamentals": "Основи Bash",
-      "relational-databases": "Реляційні бази даних",
+      "sql-and-postgresql": "SQL and PostgreSQL",
       "bash-scripting": "Скрипти Bash",
       "sql-and-bash": "SQL та Bash",
       "git": "Git",
+      "review-relational-databases": "Relational Databases Review",
+      "exam-relational-databases": "Relational Databases Exam",
       "introduction-to-nodejs": "Вступ до Node.js",
       "nodejs-core-libraries": "Основні бібліотеки Node.js",
       "node-package-manager": "Node Package Manager",
@@ -1843,18 +1844,6 @@
       "certified-full-stack-developer-exam": "Екзамен «Сертифікований Full Stack розробник»"
     },
     "module-intros": {
-      "js-a11y": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви навчитесь працювати з атрибутами aria-expanded, aria-live та aria-controls в застосунках HTML, CSS і JavaScript."
-        ]
-      },
-      "css-libraries-and-frameworks": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви ознайомитесь з бібліотеками, фреймворками і препроцесорами CSS, включно з Tailwind CSS, Bootstrap та Sass. Ви побудуєте різні компоненти за допомогою Tailwind CSS і перевірите отримані знання, виконавши короткий тест."
-        ]
-      },
       "data-visualization": {
         "note": "Coming Winter 2025",
         "intro": [
@@ -1865,30 +1854,6 @@
         "note": "Очікуйте цієї осені",
         "intro": [
           "У цьому модулі ви ознайомитесь з TypeScript — розширеною версією JavaScript, яка дозволяє додавати статичну типізацію до JavaScript-коду. Ви виконаєте декілька практичних занять і лабораторних робіт, де застосуєте узагальнення, звуження типів, TSX і багато іншого. А потім перевірите отримані знання з основ TypeScript, пройшовши короткий тест."
-        ]
-      },
-      "python-basics": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви ознайомитесь з мовою Python, яку використовують в багатьох галузях (зокрема в інформатиці, машинному навчанні, веброзробці, скриптуванні й автоматизації, вбудованих системах, IoT тощо). Ви застосуєте основи Python в практичному занятті і лабораторній роботі, а також виконаєте короткий тест."
-        ]
-      },
-      "python-loops-and-sequences": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви навчитесь працювати зі списками, кортежами, лямбда-функціями, циклами і багато іншим. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
-        ]
-      },
-      "python-dictionaries-and-sets": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви ознайомитесь зі словниками, наборами і стандартною бібліотекою Python. Ви застосуєте ці поняття в практичних заняттях і лабораторних роботах, а також перевірите отримані знання за допомогою тесту."
-        ]
-      },
-      "python-error-handling": {
-        "note": "Очікуйте цієї осені",
-        "intro": [
-          "У цьому модулі ви дізнаєтесь про поширені повідомлення з помилками, хороші способи їх налагодження і обробку винятків. Ви застосуєте ці поняття в лабораторній роботі, а також перевірите отримані знання за допомогою тесту."
         ]
       },
       "python-classes-and-objects": {
@@ -1933,10 +1898,10 @@
           "У цьому модулі ви дізнаєтесь про командний рядок та поширені команди Bash. Потім ви виконаєте практичне заняття і перевірите отримані знання завдяки короткому тесту."
         ]
       },
-      "relational-databases": {
-        "note": "Очікуйте цієї зими",
+      "sql-and-postgresql": {
+        "note": "Coming Winter 2025",
         "intro": [
-          "У цьому модулі ви дізнаєтесь, як працювати з реляційними базами даних, які зберігають дані як колекції в таблицях. Зокрема, ви ознайомитесь з додаванням і переглядом даних таблиці, первинними і зовнішніми ключами в SQL тощо. Потім ви виконаєте практичне заняття і лабораторну роботу, а також перевірите отримані знання за допомогою тесту."
+          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "bash-scripting": {
@@ -3083,6 +3048,12 @@
           "In this lesson you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
         ]
       },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+        ]
+      },
       "review-javascript-strings": {
         "title": "Повторення рядків у JavaScript",
         "intro": [
@@ -3537,6 +3508,12 @@
         "title": "Build an Odd Fibonacci Sum Calculator",
         "intro": [
           "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-element-skipper": {
+        "title": "Implement an Element Skipper",
+        "intro": [
+          "In this lab you will create a function that skips elements in an array based on a specified step value."
         ]
       },
       "lab-optional-arguments-sum-function": {
@@ -4862,15 +4839,17 @@
           "У цьому проєкті ви побудуєте базу даних небесних тіл, використовуючи PostgreSQL."
         ]
       },
-      "review-relational-database": {
-        "title": "Повторення реляційних баз даних",
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
         "intro": [
-          "Пригадайте поняття з теми «Реляційні бази даних», щоб підготуватись до тесту."
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
         ]
       },
-      "quiz-relational-database": {
-        "title": "Тест «Реляційні бази даних»",
-        "intro": ["Перевірте, що ви дізнались про реляційні бази даних."]
+      "quiz-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Quiz",
+        "intro": [
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
+        ]
       },
       "lecture-understanding-bash-scripting": {
         "title": "Understanding Bash Scripting",
@@ -5002,6 +4981,12 @@
         "title": "Повторення реляційних баз даних",
         "intro": [
           "Пригадайте поняття з теми «Реляційні бази даних», щоб підготуватись до тесту."
+        ]
+      },
+      "lecture-understanding-the-http-request-response-model": {
+        "title": "Understanding the HTTP Request-Response Model",
+        "intro": [
+          "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
       "exam-certified-full-stack-developer": {
