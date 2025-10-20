@@ -7,16 +7,16 @@ dashedName: step-13
 
 # --description--
 
-Now change the second number in `flex` from `0` to `1` in the `box` class of our `styles.css` file.
+Now change the second number in `flex` from `1` to `0` in the `box` class of our `styles.css` file.
 
 The second value represents `flex-shrink`. This property controls how much the flex item will shrink when there isn't enough space in the container for all items.
 
 # --hints--
 
-Your class `box` should have a property `flex` replace the second number `0` with the value `1`.
+Your class `box` should have a property `flex` with a value of `0 0 400px`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 0 400px');
 ```
 
 
@@ -25,7 +25,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px'
 ## --seed-contents--
 
 ```html
---fcc-editable-region--
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -66,7 +65,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 1 250px'
     </div>
   </body>
 </html>
---fcc-editable-region--
 ```
 
 ```css
@@ -88,7 +86,7 @@ h1 {
 }
 
 .box {
-  flex: 0 0 250px;
+  flex: 0 1 400px;
   max-height: 120px;
   color: #fff;
   border: 1px solid #000;
