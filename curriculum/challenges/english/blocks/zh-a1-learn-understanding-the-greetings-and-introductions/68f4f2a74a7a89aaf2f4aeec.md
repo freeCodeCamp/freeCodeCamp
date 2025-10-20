@@ -17,7 +17,9 @@ Click the character from the list to fill in the blanks. You can click the chara
 
 ## --sentence--
 
-`我是 BLANK BLANK BLANK BLANK。character list: 国, 拿, 大, 加, 中, 人`
+`我是 BLANK BLANK BLANK BLANK。`
+
+`character list: 国, 拿, 大, 加, 中, 人`
 
 ## --blanks--
 
