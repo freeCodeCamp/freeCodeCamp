@@ -60,7 +60,6 @@ import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
-import ChallengeTitle from '../../templates/Challenges/components/challenge-title';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -141,6 +140,7 @@ function DefaultLayout({
   usesMultifileEditor,
   block,
   superBlock,
+  challengeTitle,
   theme,
   user,
   pathname,
@@ -310,7 +310,7 @@ function DefaultLayout({
                 <BreadCrumb
                   block={block as string}
                   superBlock={superBlock as string}
-                  challengeTitle={ChallengeTitle as string}
+                  challengeTitle={challengeTitle as string}
                 />
               </div>
             ) : (
