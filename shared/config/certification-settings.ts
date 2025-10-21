@@ -103,6 +103,7 @@ export const certTypes = {
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
   respWebDesign: 'isRespWebDesignCert',
+  respWebDesignV9: 'isRespWebDesignCertV9',
   frontEndDevLibs: 'isFrontEndLibsCert',
   dataVis2018: 'is2018DataVisCert',
   jsAlgoDataStruct: 'isJsAlgoDataStructCert',
@@ -117,7 +118,9 @@ export const certTypes = {
   relationalDatabaseV8: 'isRelationalDatabaseCertV8',
   collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8'
+  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
+  javascriptV9: 'isJavascriptCertV9',
+  a2English: 'isA2EnglishCert'
 } as const;
 
 export const certIds = {
@@ -145,7 +148,8 @@ export const certIds = {
   frontEndLibsV9Id: '68e008aa5f80c6099d47b3a2',
   pythonV9Id: '68e6bd5020effa1586e79855',
   relationalDbV9Id: '68e6bd5120effa1586e79856',
-  backEndDevApisV9Id: '68e6bd5120effa1586e79857'
+  backEndDevApisV9Id: '68e6bd5120effa1586e79857',
+  a2EnglishId: '651dd7e01d697d0aab7833b7'
 };
 
 export const completionHours = {
@@ -155,6 +159,7 @@ export const completionHours = {
   [certTypes.infosecQa]: 300,
   [certTypes.fullStack]: 1800,
   [certTypes.respWebDesign]: 300,
+  [certTypes.respWebDesignV9]: 300,
   [certTypes.frontEndDevLibs]: 300,
   [certTypes.jsAlgoDataStruct]: 300,
   [certTypes.dataVis2018]: 300,
@@ -167,7 +172,9 @@ export const completionHours = {
   [certTypes.relationalDatabaseV8]: 300,
   [certTypes.collegeAlgebraPyV8]: 300,
   [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.jsAlgoDataStructV8]: 300
+  [certTypes.jsAlgoDataStructV8]: 300,
+  [certTypes.javascriptV9]: 300,
+  [certTypes.a2English]: 300
 };
 
 export const certSlugTypeMap = {
@@ -192,9 +199,12 @@ export const certSlugTypeMap = {
   [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8
+  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
 
   // upcoming
+  [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
+  [Certification.JsV9]: certTypes.javascriptV9,
+  [Certification.A2English]: certTypes.a2English
 };
 
 export const superBlockCertTypeMap = {
@@ -223,9 +233,10 @@ export const superBlockCertTypeMap = {
 
   // post-modern
   // TODO: use enum
-  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign
+  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
 
   // upcoming
+  [SuperBlocks.A2English]: certTypes.a2English
 };
 
 export const certTypeIdMap = {
@@ -235,6 +246,7 @@ export const certTypeIdMap = {
   [certTypes.infosecQa]: certIds.legacyInfosecQaId,
   [certTypes.fullStack]: certIds.legacyFullStackId,
   [certTypes.respWebDesign]: certIds.respWebDesignId,
+  [certTypes.respWebDesignV9]: certIds.respWebDesignV9Id,
   [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
   [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
   [certTypes.dataVis2018]: certIds.dataVis2018Id,
@@ -247,7 +259,9 @@ export const certTypeIdMap = {
   [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
   [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id
+  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id,
+  [certTypes.javascriptV9]: certIds.javascriptV9Id,
+  [certTypes.a2English]: certIds.a2EnglishId
 };
 
 export const certTypeTitleMap = {
@@ -257,6 +271,7 @@ export const certTypeTitleMap = {
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Legacy Full Stack',
   [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.respWebDesignV9]: 'Responsive Web Design',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
   [certTypes.jsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures',
@@ -270,7 +285,9 @@ export const certTypeTitleMap = {
   [certTypes.relationalDatabaseV8]: 'Relational Database',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures'
+  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.javascriptV9]: 'JavaScript',
+  [certTypes.a2English]: 'A2 English for Developers'
 };
 
 export const superBlockToCertMap: {
