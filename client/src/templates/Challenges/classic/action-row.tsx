@@ -6,7 +6,7 @@ import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 
-interface ActionRowProps {
+interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
@@ -23,21 +23,51 @@ interface ActionRowProps {
   togglePane: (pane: string) => void;
 }
 
-const ActionRow = ({
-  hasPreview,
-  hasNotes,
-  togglePane,
-  showNotes,
-  showPreviewPane,
-  showPreviewPortal,
-  showConsole,
-  showInstructions,
-  areInstructionsDisplayable,
-  isDailyCodingChallenge,
-  dailyCodingChallengeLanguage,
-  setDailyCodingChallengeLanguage
-}: ActionRowProps): JSX.Element => {
+interface InteractiveEditorProps {
+  hasInteractiveEditor: boolean;
+  showInteractiveEditor: boolean;
+  toggleInteractiveEditor: () => void;
+}
+
+type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
+
+const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+
+  if ('hasInteractiveEditor' in props && props.hasInteractiveEditor) {
+    const { toggleInteractiveEditor, showInteractiveEditor } = props;
+
+    return (
+      <div className='action-row' data-playwright-test-label='action-row'>
+        <div className='tabs-row' data-playwright-test-label='tabs-row'>
+          <div className='tabs-row-right panel-display-tabs'>
+            <button
+              aria-expanded={!!showInteractiveEditor}
+              onClick={toggleInteractiveEditor}
+            >
+              {t('learn.editor-tabs.interactive-editor')}
+            </button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const classicProps = props as ClassicLayoutProps;
+  const {
+    togglePane,
+    hasPreview,
+    hasNotes,
+    areInstructionsDisplayable,
+    showConsole,
+    showNotes,
+    showInstructions,
+    showPreviewPane,
+    showPreviewPortal,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
+  } = classicProps;
 
   // sets screen reader text for the two preview buttons
   function getPreviewBtnsSrText() {

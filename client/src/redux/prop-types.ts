@@ -182,7 +182,7 @@ type ParagraphNodule = {
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: { ext: Ext; name: string; contents: string }[];
+  data: { ext: Ext; name: string; contents: string; contentsHtml: string }[];
 };
 
 export type ChallengeNode = {

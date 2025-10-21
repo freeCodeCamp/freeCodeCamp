@@ -15,6 +15,7 @@ import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
 import InteractiveEditor from '../components/interactive-editor';
+import ActionRow from '../classic/action-row';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import VideoPlayer from '../components/video-player';
@@ -71,12 +72,22 @@ interface ShowQuizProps {
   updateSolutionFormValues: () => void;
 }
 
-function renderNodule(nodule: ChallengeNode['challenge']['nodules'][number]) {
+function renderNodule(
+  nodule: ChallengeNode['challenge']['nodules'][number],
+  showInteractiveEditor: boolean
+) {
   switch (nodule.type) {
     case 'paragraph':
       return <PrismFormatted text={nodule.data} />;
     case 'interactiveEditor':
-      return <InteractiveEditor files={nodule.data} />;
+      if (showInteractiveEditor) {
+        return <InteractiveEditor files={nodule.data} />;
+      } else {
+        const files = nodule.data;
+        return files.map((file, index) => (
+          <PrismFormatted key={index} text={file.contentsHtml} />
+        ));
+      }
     default:
       return null;
   }
@@ -122,6 +133,19 @@ const ShowGeneric = ({
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
+
+  const hasInteractiveEditor = nodules?.some(
+    nodule => nodule.type === 'interactiveEditor'
+  );
+
+  const [showInteractiveEditor, setShowInteractiveEditor] = useState(
+    () => (store.get('showInteractiveEditor') as boolean | null) ?? false
+  );
+
+  const toggleInteractiveEditor = () => {
+    store.set('showInteractiveEditor', !showInteractiveEditor);
+    setShowInteractiveEditor(!showInteractiveEditor);
+  };
 
   useEffect(() => {
     initTests(tests);
@@ -221,6 +245,13 @@ const ShowGeneric = ({
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
         <Container>
+          {hasInteractiveEditor && (
+            <ActionRow
+              hasInteractiveEditor={hasInteractiveEditor}
+              showInteractiveEditor={showInteractiveEditor}
+              toggleInteractiveEditor={toggleInteractiveEditor}
+            />
+          )}
           <Row>
             <Spacer size='m' />
             <ChallengeTitle
@@ -244,7 +275,9 @@ const ShowGeneric = ({
 
             {nodules?.map((nodule, i) => {
               return (
-                <React.Fragment key={i}>{renderNodule(nodule)}</React.Fragment>
+                <React.Fragment key={i}>
+                  {renderNodule(nodule, showInteractiveEditor)}
+                </React.Fragment>
               );
             })}
 

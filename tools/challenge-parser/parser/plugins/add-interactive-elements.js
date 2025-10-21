@@ -54,12 +54,17 @@ function getFiles(filesNodes) {
 
   return filesNodes.map(node => {
     counts[node.lang] = counts[node.lang] ? counts[node.lang] + 1 : 1;
+
+    // Convert the code block to HTML with proper pre/code tags
+    const contentsHtml = mdastToHTML([node]);
+
     const out = {
       contents: node.value,
       ext: node.lang,
       name:
         getFilenames(node.lang) +
-        (counts[node.lang] ? `-${counts[node.lang]}` : '')
+        (counts[node.lang] ? `-${counts[node.lang]}` : ''),
+      contentsHtml: contentsHtml
     };
 
     return out;
