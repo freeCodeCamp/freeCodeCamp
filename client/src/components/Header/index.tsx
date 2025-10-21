@@ -10,6 +10,13 @@ import { examInProgressSelector } from '../../redux/selectors';
 import UniversalNav from './components/universal-nav';
 import ExamNav from './components/exam-nav';
 
+import DarkModeToggle from './components/dark-mode-toggle';
+
+<header>
+  {' '}
+  <DarkModeToggle />{' '}
+</header>;
+
 import './header.css';
 
 const mapStateToProps = createSelector(
