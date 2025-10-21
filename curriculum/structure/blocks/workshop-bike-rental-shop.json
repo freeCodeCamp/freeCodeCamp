@@ -2,7 +2,7 @@
   "name": "Build a Bike Rental Shop",
   "blockType": "workshop",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bike-rental-shop",

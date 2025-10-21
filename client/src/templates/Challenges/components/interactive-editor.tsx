@@ -52,7 +52,7 @@ const InteractiveEditor = ({ files }: Props) => {
   };
 
   return (
-    <div className='interactive-editor-wrapper'>
+    <div className='interactive-editor-wrapper' aria-hidden='true'>
       <Sandpack
         template={
           got('tsx')
