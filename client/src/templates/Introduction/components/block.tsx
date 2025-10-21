@@ -2,7 +2,7 @@ import React, { Component, ReactNode } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
@@ -179,7 +179,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
     const LegacyChallengeListBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className={`block ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
@@ -226,7 +226,7 @@ export class Block extends Component<BlockProps> {
           </button>
           {isExpanded && <ChallengesList challenges={extendedChallenges} />}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -235,7 +235,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
      */
     const ProjectListBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className='block'
           onMouseOver={this.handleBlockHover}
@@ -258,7 +258,7 @@ export class Block extends Component<BlockProps> {
           <BlockIntros intros={blockIntroArr} />
           <ChallengesList challenges={extendedChallenges} />
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -267,7 +267,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
      */
     const LegacyChallengeGridBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className={`block block-grid ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
@@ -309,7 +309,7 @@ export class Block extends Component<BlockProps> {
             </>
           )}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -318,7 +318,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
      */
     const TaskGridBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
@@ -355,7 +355,7 @@ export class Block extends Component<BlockProps> {
             </>
           )}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -364,7 +364,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
      */
     const LegacyLinkBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className='block block-grid grid-project-block'
           onMouseOver={this.handleBlockHover}
@@ -408,7 +408,7 @@ export class Block extends Component<BlockProps> {
           </div>
           <BlockIntros intros={blockIntroArr} />
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -416,9 +416,9 @@ export class Block extends Component<BlockProps> {
      */
     const AccordionBlock = (
       <>
-        <ScrollableAnchor id={block}>
+        <Element name={block}>
           <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
+        </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}

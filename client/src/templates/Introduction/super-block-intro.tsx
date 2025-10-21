@@ -6,7 +6,7 @@ import React, { useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { configureAnchors } from 'react-scrollable-anchor';
+import { scroller } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
@@ -95,8 +95,6 @@ type SuperBlockProps = {
   user: User | null;
 };
 
-configureAnchors({ offset: -40, scrollDuration: 0 });
-
 const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
@@ -135,14 +133,21 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
-
-    setTimeout(() => {
-      configureAnchors({ offset: -40, scrollDuration: 400 });
-    }, 0);
-
-    return () => {
-      configureAnchors({ offset: -40, scrollDuration: 0 });
+    const handleHashChange = () => {
+      const id = window.location.hash.replace('#', '');
+      if (id) {
+        scroller.scrollTo(id, {
+          smooth: true,
+          duration: 500,
+          offset: -50
+        });
+      }
     };
+
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
