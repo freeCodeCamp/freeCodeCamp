@@ -4743,7 +4743,12 @@
           "In this lab, you will implement the Depth-First Search Algorithm."
         ]
       },
-      "lab-n-queens-problem": { "title": "", "intro": [""] },
+      "lab-n-queens-problem": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
+      },
       "review-graphs-and-trees": {
         "title": "Graphs and Trees Review",
         "intro": [
