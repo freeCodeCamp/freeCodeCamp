@@ -773,6 +773,7 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
             "lab-depth-first-search",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
