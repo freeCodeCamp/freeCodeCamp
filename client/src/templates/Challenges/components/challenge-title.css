@@ -22,26 +22,34 @@
 
 .challenge-title-breadcrumbs {
   font-size: 16px;
-  border: 1px solid var(--quaternary-background);
-  text-align: center;
+  border: none;
+  text-align: left;
 }
 
 .challenge-title-breadcrumbs ol {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   list-style-type: none;
   margin-bottom: 0;
-  padding-inline-start: 0;
+  padding-inline-start: 10px;
   width: 100%;
 }
 
 .challenge-title-breadcrumbs ol a {
-  width: 100%;
+  width: auto;
   text-decoration: none;
   overflow: hidden;
   text-overflow: ellipsis;
   display: block;
   padding: 0 3px;
+  color: var(--primary-color);
+}
+
+.challenge-title-breadcrumbs ol li {
+  display: flex;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .challenge-title-breadcrumbs ol a:focus {
@@ -53,37 +61,34 @@
   text-decoration: underline;
 }
 
+.breadcrumb-separator {
+  margin: 0 6px; 
+  color: var(--quinary-color); 
+  font-weight: normal;
+}
+
 .breadcrumb-left,
 .breadcrumb-right {
   text-decoration: none;
-  display: inline-flex;
+  display: block;
   align-items: center;
   justify-content: center;
   text-overflow: ellipsis;
   white-space: nowrap;
-  flex-grow: 1;
-  flex-shrink: 2;
+  flex-grow: 0;
+  flex-shrink: 0;
   padding: 0;
 }
 
 .breadcrumb-left {
-  min-width: 3rem;
-  background-color: var(--quaternary-background);
-  margin-inline-end: 0.57rem;
+  min-width: 0;
+  background-color: transparent;
+  margin-inline-end: 0;
 }
 
-.breadcrumb-left:after {
-  background-color: var(--secondary-background);
-  content: '';
-  border-top: calc(1.375rem / 2) solid transparent;
-  border-bottom: calc(1.2rem / 2) solid transparent;
-  border-inline-start: calc(1.1rem / 2) solid var(--quaternary-background);
-  height: 100%;
-  margin-left: 3px;
-}
-
-.breadcrumb-right {
-  min-width: 50px;
+.breadcrumb-right span {
+  font-weight: bold; 
+  color: var(--primary-color); 
 }
 
 .breadcrumb-rule {

@@ -8,9 +8,15 @@ import './challenge-title.css';
 interface BreadCrumbProps {
   block: string;
   superBlock: string;
+  // New prop for the current challenge/lesson title
+  challengeTitle: string;
 }
 
-function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
+function BreadCrumb({
+  block,
+  superBlock,
+  challengeTitle
+}: BreadCrumbProps): JSX.Element {
   const { t } = useTranslation();
   return (
     <nav
@@ -25,14 +31,25 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
           >
             <span>{i18next.t(`intro:${superBlock}.title`)}</span>
           </Link>
+          <span className='breadcrumb-separator'> &gt; </span>{' '}
+          {/* Added separator */}
         </li>
-        <li className='breadcrumb-right'>
+
+        {/* 1. Block (e.g., Typescript Fundamentals) */}
+        <li>
           <Link
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}/#${block}`}
           >
             {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
           </Link>
+          <span className='breadcrumb-separator'> &gt; </span>{' '}
+          {/* Added separator */}
+        </li>
+
+        {/* 2. Current Challenge/Lesson Title (Non-clickable) */}
+        <li className='breadcrumb-right'>
+          <span aria-current='page'>{challengeTitle}</span>
         </li>
       </ol>
     </nav>
