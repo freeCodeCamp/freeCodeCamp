@@ -1,5 +1,6 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import type { Chapter } from '../../../shared-dist/config/chapters';
 import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
@@ -347,6 +348,20 @@ export type AllChallengesInfo = {
   certificateNodes: CertificateNode[];
 };
 
+export type ChapterBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  chapters: Chapter[];
+};
+
+export type BlockBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  blocks: string[];
+};
+
+export type SuperBlockStructure =
+  | ChapterBasedSuperBlockStructure
+  | BlockBasedSuperBlockStructure;
+
 export type AllChallengeNode = {
   edges: [
     {
@@ -432,6 +447,7 @@ export type ProfileUI = {
 
 export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
+  isA2EnglishCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
   isDataVisCert: boolean;

@@ -111,11 +111,9 @@ export function constructUserExam(
   });
 
   const config = {
-    totalTimeInMS: exam.config.totalTimeInMS,
     totalTimeInS: exam.config.totalTimeInS,
     name: exam.config.name,
     note: exam.config.note,
-    retakeTimeInMS: exam.config.retakeTimeInMS,
     retakeTimeInS: exam.config.retakeTimeInS,
     passingPercent: exam.config.passingPercent
   };
@@ -245,8 +243,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
         questions: questionSet.questions.map(q => {
           return {
             ...q,
-            submissionTime: new Date(),
-            submissionTimeInMS: Date.now()
+            submissionTime: new Date()
           };
         })
       });
@@ -262,8 +259,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
           if (!latestQuestion) {
             return {
               ...q,
-              submissionTime: new Date(),
-              submissionTimeInMS: Date.now()
+              submissionTime: new Date()
             };
           }
 
@@ -273,8 +269,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
           ) {
             return {
               ...q,
-              submissionTime: new Date(),
-              submissionTimeInMS: Date.now()
+              submissionTime: new Date()
             };
           }
 
@@ -824,11 +819,8 @@ export async function constructEnvExamAttempt(
   }
 
   // If attempt is still in progress, return without result
-  const attemptStartTimeInMS =
-    attempt.startTime?.getTime() ?? attempt.startTimeInMS;
-  const examTotalTimeInMS = exam.config.totalTimeInS
-    ? exam.config.totalTimeInS * 1000
-    : exam.config.totalTimeInMS;
+  const attemptStartTimeInMS = attempt.startTime.getTime();
+  const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
   const isAttemptExpired =
     attemptStartTimeInMS + examTotalTimeInMS < Date.now();
   if (!isAttemptExpired) {

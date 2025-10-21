@@ -3,6 +3,7 @@ import { User } from '../../../../redux/prop-types';
 
 export const getCertifications = (user: User) => {
   const {
+    isA2EnglishCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
     is2018DataVisCert,
@@ -28,6 +29,7 @@ export const getCertifications = (user: User) => {
 
   return {
     hasModernCert:
+      isA2EnglishCert ||
       isRespWebDesignCert ||
       isRespWebDesignCertV9 ||
       is2018DataVisCert ||
@@ -52,6 +54,11 @@ export const getCertifications = (user: User) => {
       isInfosecQaCert,
     isFullStackCert,
     currentCerts: [
+      {
+        show: isA2EnglishCert,
+        title: 'A2 English for Developers Certification',
+        certSlug: Certification.A2English
+      },
       {
         show: isRespWebDesignCert,
         title: 'Responsive Web Design Certification',

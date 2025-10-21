@@ -2,7 +2,7 @@
   "name": "Build a Database of Video Game Characters",
   "blockType": "workshop",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-database-of-video-game-characters",
