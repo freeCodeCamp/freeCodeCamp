@@ -1103,6 +1103,7 @@
       "heading": "Come parte di questa certificazione, {{user}} ha costruito i seguenti progetti e ha superato tutte le suite di test automatizzate per superare:",
       "solution": "Solution",
       "no-solution": "errore nel mostrare la soluzione, manda una email a support@freecodecamp.org per ottenere aiuto.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "Se sospetti che uno di questi progetti violi la politica di onestà accademica <2></2>, per favore <5>segnalalo al nostro team</5>.",
       "title": {

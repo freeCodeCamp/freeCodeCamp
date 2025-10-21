@@ -1103,6 +1103,7 @@
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
       "solution": "Solution",
       "no-solution": "hitilafu ya kuonyesha suluhisho, tuma barua pepe kwa support@freeCodeCamp.org ili kupata usaidizi.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "Iwapo unashuku kuwa yoyote ya miradi hii inakiuka <2>sera ya uaminifu ya kitaaluma</2>, tafadhali <5>ripoti hili kwa timu yetu</5>.",
       "title": {

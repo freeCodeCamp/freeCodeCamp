@@ -116,7 +116,6 @@ figcaption.caption {
 .testimonials strong {
   font-size: 1.1rem;
   margin: 0;
-  color: var(--quaternary-color);
 }
 .testimonial-meta p:last-child {
   margin-top: 15px;
@@ -130,6 +129,7 @@ figcaption.caption {
   background-color: var(--primary-background);
   -webkit-box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
   box-shadow: 0 3px 13px 1px rgba(0, 0, 0, 0.09);
+  color: var(--quaternary-color);
 }
 
 .testimonial-meta {
@@ -145,6 +145,7 @@ figcaption.caption {
   font-size: 1.3rem;
   font-weight: normal;
   margin-bottom: 0;
+  color: var(--quaternary-color);
 }
 
 .testimonial-meta p,
