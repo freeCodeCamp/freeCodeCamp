@@ -62,8 +62,8 @@
 }
 
 .breadcrumb-separator {
-  margin: 0 6px; 
-  color: var(--quinary-color); 
+  margin: 0 6px;
+  color: var(--quinary-color);
   font-weight: normal;
 }
 
@@ -87,8 +87,8 @@
 }
 
 .breadcrumb-right span {
-  font-weight: bold; 
-  color: var(--primary-color); 
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 .breadcrumb-rule {
