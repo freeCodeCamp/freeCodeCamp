@@ -127,7 +127,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     completedChallenges,
     email,
     is2018DataVisCert,
+    isA2EnglishCert,
     isApisMicroservicesCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isBackEndCert,
     isDataVisCert,
@@ -138,6 +140,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFrontEndLibsCert,
     isFullStackCert,
     isRespWebDesignCert,
+    isRespWebDesignCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -315,6 +318,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
+            isA2EnglishCert={isA2EnglishCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
@@ -324,6 +328,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
+            isJavascriptCertV9={isJavascriptCertV9}
             isHonest={isHonest}
             isInfosecCertV7={isInfosecCertV7}
             isInfosecQaCert={isInfosecQaCert}
@@ -332,6 +337,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isQaCertV7={isQaCertV7}
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
+            isRespWebDesignCertV9={isRespWebDesignCertV9}
             isSciCompPyCertV7={isSciCompPyCertV7}
             isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
             username={username}
