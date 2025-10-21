@@ -3,24 +3,49 @@ import { useTranslation } from 'react-i18next';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
+import JavaScriptIcon from '../../assets/icons/javascript';
+import PythonIcon from '../../assets/icons/python';
 import { formatDisplayDate } from './helpers';
 
 interface CalendarDayProps {
   dayNumber: number;
   date?: string;
-  isCompleted?: boolean;
+  challengeNumber?: number;
+  completedLanguages?: string[];
   isAvailable?: boolean;
+  title?: string;
 }
 
-// Todo: Change this to render checkmarks for JS and Python
+function Checkmark({ completed }: { completed: boolean }): JSX.Element {
+  return completed ? (
+    <span
+      className='dc-checkmark dc-small-checkmark completed'
+      data-playwright-test-label='calendar-day-completed'
+    >
+      <GreenPass />
+    </span>
+  ) : (
+    <span
+      className='dc-checkmark dc-small-checkmark not-completed'
+      data-playwright-test-label='calendar-day-not-completed'
+    >
+      <GreenNotCompleted />
+    </span>
+  );
+}
 
 function DailyCodingChallengeCalendarDay({
   dayNumber,
   date,
-  isCompleted = false,
-  isAvailable = false
+  isAvailable = false,
+  title,
+  completedLanguages = [],
+  challengeNumber
 }: CalendarDayProps): JSX.Element {
   const { t } = useTranslation();
+
+  console.log(completedLanguages);
+
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
 
@@ -50,21 +75,39 @@ function DailyCodingChallengeCalendarDay({
         {dayNumber}
       </span>
 
-      {isCompleted ? (
-        <span
-          className='completed'
-          data-playwright-test-label='calendar-day-completed'
-        >
-          <GreenPass />
-        </span>
-      ) : (
-        <span
-          className='not-completed'
-          data-playwright-test-label='calendar-day-not-completed'
-        >
-          <GreenNotCompleted />
-        </span>
-      )}
+      <span className='dc-number'>#{challengeNumber}</span>
+
+      <div className='dc-info'>
+        <div className='dc-title'>{title}</div>
+
+        <hr />
+
+        {completedLanguages.length === 2 ? (
+          <span className='dc-checkmark dc-big-checkmark completed'>
+            <GreenPass />
+          </span>
+        ) : (
+          <div className='dc-languages'>
+            <div className='dc-language'>
+              <div className='dc-language-icon'>
+                <JavaScriptIcon />
+              </div>
+              <div className='dc-language-name'>JavaScript</div>
+              <Checkmark
+                completed={completedLanguages.includes('javascript')}
+              />
+            </div>
+
+            <div className='dc-language'>
+              <div className='dc-language-icon'>
+                <PythonIcon />
+              </div>
+              <div className='dc-language-name'>Python</div>
+              <Checkmark completed={completedLanguages.includes('python')} />
+            </div>
+          </div>
+        )}
+      </div>
     </Link>
   );
 }
