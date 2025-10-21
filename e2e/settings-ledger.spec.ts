@@ -2,7 +2,10 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { currentCertifications } from '../shared/config/certification-settings';
+import {
+  currentCertifications,
+  legacyCertifications
+} from '../shared/config/certification-settings';
 
 test.describe('Settings Ledger Navigation', () => {
   test.beforeEach(async ({ page }) => {
@@ -13,12 +16,6 @@ test.describe('Settings Ledger Navigation', () => {
   test('Should display the ledger with all expected sections', async ({
     page
   }) => {
-    const ledgerHeading = page.getByTestId('settings-ledger-heading');
-    await expect(ledgerHeading).toBeVisible();
-    await expect(ledgerHeading).toContainText(
-      translations.settings.headings.ledger
-    );
-
     await expect(
       page.locator('.ledger-anchor-btn', {
         hasText: translations.settings.headings.account
@@ -52,12 +49,31 @@ test.describe('Settings Ledger Navigation', () => {
       })
     ).toBeVisible();
 
-    const certsHeading = page.locator('.settings-ledger h2', {
-      hasText: translations.settings.headings.certs
-    });
+    const certsHeading = page.locator(
+      '.settings-ledger .ledger-section-heading',
+      {
+        hasText: translations.settings.headings.certs
+      }
+    );
     await expect(certsHeading).toBeVisible();
 
+    const legacyCertsHeading = page.locator(
+      '.settings-ledger .ledger-section-heading',
+      {
+        hasText: translations.settings.headings['legacy-certs']
+      }
+    );
+    await expect(legacyCertsHeading).toBeVisible();
+
     for (const slug of currentCertifications) {
+      const certName = translations.certification.title[slug] || slug;
+      const certLink = page.locator('.ledger-anchor-btn', {
+        hasText: certName
+      });
+      await expect(certLink).toBeVisible();
+    }
+
+    for (const slug of legacyCertifications) {
       const certName = translations.certification.title[slug] || slug;
       const certLink = page.locator('.ledger-anchor-btn', {
         hasText: certName
@@ -159,6 +175,38 @@ test.describe('Settings Ledger Navigation', () => {
     await expect(legacyCertsSection).toBeInViewport();
   });
 
+  test('Should navigate to Certifications section when clicking section heading', async ({
+    page
+  }) => {
+    await page
+      .locator('.ledger-section-heading', {
+        hasText: translations.settings.headings.certs
+      })
+      .click();
+
+    await page.waitForTimeout(500);
+
+    const certsSection = page.locator('div[name="settings-certifications"]');
+    await expect(certsSection).toBeInViewport();
+  });
+
+  test('Should navigate to Legacy Certifications section when clicking section heading', async ({
+    page
+  }) => {
+    await page
+      .locator('.ledger-section-heading', {
+        hasText: translations.settings.headings['legacy-certs']
+      })
+      .click();
+
+    await page.waitForTimeout(500);
+
+    const legacyCertsSection = page.locator(
+      'div[name="settings-legacy-certs"]'
+    );
+    await expect(legacyCertsSection).toBeInViewport();
+  });
+
   test('Should navigate to specific certification when clicking certification link in ledger', async ({
     page
   }) => {
@@ -232,7 +280,7 @@ test.describe('Settings Ledger Navigation', () => {
     await expect(ledger).toBeVisible();
   });
 
-  test('Should have correct structure with two lists in ledger', async ({
+  test('Should have correct structure with multiple lists and section headings', async ({
     page
   }) => {
     const firstList = page.locator('.settings-ledger ul').first();
@@ -241,8 +289,25 @@ test.describe('Settings Ledger Navigation', () => {
     const secondList = page.locator('.settings-ledger ul').nth(1);
     await expect(secondList).toBeVisible();
 
-    const certLinks = await secondList.locator('li').count();
-    expect(certLinks).toBe(currentCertifications.length);
+    const thirdList = page.locator('.settings-ledger ul').nth(2);
+    await expect(thirdList).toBeVisible();
+
+    const certsHeading = page.locator('.ledger-section-heading').first();
+    await expect(certsHeading).toBeVisible();
+
+    const legacyCertsHeading = page.locator('.ledger-section-heading').nth(1);
+    await expect(legacyCertsHeading).toBeVisible();
+
+    const topLevelLinks = await firstList
+      .locator('li .ledger-anchor-btn')
+      .count();
+    expect(topLevelLinks).toBe(6);
+
+    const currentCertLinks = await secondList.locator('li').count();
+    expect(currentCertLinks).toBe(currentCertifications.length);
+
+    const legacyCertLinks = await thirdList.locator('li').count();
+    expect(legacyCertLinks).toBe(legacyCertifications.length);
   });
 
   test('Should navigate to last certification in the list', async ({

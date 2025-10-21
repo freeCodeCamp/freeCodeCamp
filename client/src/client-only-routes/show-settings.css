@@ -23,7 +23,18 @@
   padding: 1rem;
   overflow-y: scroll;
   height: calc(100vh - var(--header-height));
-  background-color: var(--tertiary-background);
+  border-right: 1px solid var(--gray-00);
+}
+
+.settings-ledger .ledger-section-heading {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .settings-ledger .ledger-anchor-btn {

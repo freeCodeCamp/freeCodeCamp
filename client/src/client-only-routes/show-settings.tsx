@@ -38,7 +38,10 @@ import {
 } from '../redux/settings/actions';
 
 import './show-settings.css';
-import { currentCertifications } from '../../../shared-dist/config/certification-settings';
+import {
+  currentCertifications,
+  legacyCertifications
+} from '../../../shared-dist/config/certification-settings';
 
 const { apiLocation } = envData;
 
@@ -156,9 +159,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <div className='settings-container'>
         <aside className='settings-ledger'>
-          <h2 data-playwright-test-label='settings-ledger-heading'>
-            {t('settings.headings.ledger')}
-          </h2>
           <ul>
             <li>
               <ScrollLink
@@ -231,7 +231,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               <hr />
             </li>
           </ul>
-          <h2>{t('settings.headings.certs')}</h2>
+          <ScrollLink
+            to='settings-certifications'
+            className='ledger-section-heading'
+            smooth={true}
+            offset={-48}
+            duration={300}
+          >
+            {t('settings.headings.certs')}
+          </ScrollLink>
           <ul>
             {currentCertifications.map(slug => (
               <li key={slug}>
@@ -244,7 +252,30 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
                 >
                   {t(`certification.title.${slug}`, slug)}
                 </ScrollLink>
-                <br />
+              </li>
+            ))}
+          </ul>
+          <ScrollLink
+            to='settings-legacy-certs'
+            className='ledger-section-heading'
+            smooth={true}
+            offset={-48}
+            duration={300}
+          >
+            {t('settings.headings.legacy-certs')}
+          </ScrollLink>
+          <ul>
+            {legacyCertifications.map(slug => (
+              <li key={slug}>
+                <ScrollLink
+                  to={`cert-${slug}`}
+                  className={'ledger-anchor-btn'}
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                >
+                  {t(`certification.title.${slug}`, slug)}
+                </ScrollLink>
               </li>
             ))}
           </ul>
