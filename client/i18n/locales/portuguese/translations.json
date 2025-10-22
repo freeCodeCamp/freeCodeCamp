@@ -1103,6 +1103,7 @@
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "Solução",
       "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
+      "no-solution-to-display": "No solution to display",
       "source": "Fonte",
       "footnote": "Se você suspeitar que algum destes projetos viola a <2>política de honestidade acadêmica</2>, <5>reporte isto à nossa equipe</5>.",
       "title": {

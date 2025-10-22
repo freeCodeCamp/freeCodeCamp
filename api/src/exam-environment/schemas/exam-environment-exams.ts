@@ -11,9 +11,7 @@ export const examEnvironmentExams = {
         config: Type.Object({
           name: Type.String(),
           note: Type.String(),
-          totalTimeInMS: Type.Number(),
           totalTimeInS: Type.Number(),
-          retakeTimeInMS: Type.Number(),
           retakeTimeInS: Type.Number(),
           passingPercent: Type.Number()
         }),

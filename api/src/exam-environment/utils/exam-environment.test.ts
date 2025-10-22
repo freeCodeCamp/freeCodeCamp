@@ -446,10 +446,8 @@ describe('Exam Environment Schema', () => {
         note: '',
         passingPercent: 0.0,
         questionSets: configQuestionSets,
-        retakeTimeInMS: 0,
         retakeTimeInS: 0,
         tags,
-        totalTimeInMS: 0,
         totalTimeInS: 0
       };
 
@@ -527,13 +525,11 @@ describe('Exam Environment Schema', () => {
                 {
                   answers: [oid()],
                   id: oid(),
-                  submissionTime: new Date(),
-                  submissionTimeInMS: Date.now()
+                  submissionTime: new Date()
                 }
               ]
             }
           ],
-          startTimeInMS: Date.now(),
           startTime: new Date(),
           userId: oid()
         }

@@ -2,7 +2,7 @@
   "name": "Build a Celestial Bodies Database",
   "blockType": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-celestial-bodies-database",
   "challengeOrder": [
     {
