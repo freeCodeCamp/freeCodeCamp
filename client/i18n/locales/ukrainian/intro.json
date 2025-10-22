@@ -4744,8 +4744,10 @@
         ]
       },
       "workshop-breadth-first-search": {
-        "title": "Створіть алгоритм пошуку в ширину",
-        "intro": [""]
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
       },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
@@ -4754,8 +4756,10 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
       },
       "review-graphs-and-trees": {
         "title": "Повторення графів та дерев",
