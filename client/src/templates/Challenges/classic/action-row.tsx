@@ -21,10 +21,11 @@ interface ClassicLayoutProps {
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
   togglePane: (pane: string) => void;
+  hasInteractiveEditor?: never;
 }
 
 interface InteractiveEditorProps {
-  hasInteractiveEditor: boolean;
+  hasInteractiveEditor: true;
   showInteractiveEditor: boolean;
   toggleInteractiveEditor: () => void;
 }
@@ -34,7 +35,7 @@ type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
 
-  if ('hasInteractiveEditor' in props && props.hasInteractiveEditor) {
+  if (props.hasInteractiveEditor) {
     const { toggleInteractiveEditor, showInteractiveEditor } = props;
 
     return (
@@ -57,7 +58,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     );
   }
 
-  const classicLayoutProps = props as ClassicLayoutProps;
   const {
     togglePane,
     hasPreview,
@@ -71,7 +71,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage
-  } = classicLayoutProps;
+  } = props;
 
   // sets screen reader text for the two preview buttons
   function getPreviewBtnsSrText() {

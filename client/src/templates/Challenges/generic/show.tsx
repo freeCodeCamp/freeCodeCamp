@@ -227,7 +227,7 @@ const ShowGeneric = ({
   );
 
   const [showInteractiveEditor, setShowInteractiveEditor] = useState(
-    () => (store.get('showInteractiveEditor') as boolean | null) ?? false
+    () => !!store.get('showInteractiveEditor')
   );
 
   const toggleInteractiveEditor = () => {
