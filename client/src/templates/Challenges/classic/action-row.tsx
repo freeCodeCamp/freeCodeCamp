@@ -43,10 +43,14 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
           <div className='tabs-row-right panel-display-tabs'>
             <button
               aria-expanded={!!showInteractiveEditor}
+              aria-describedby='interactive-editor-desc'
               onClick={toggleInteractiveEditor}
             >
               {t('learn.editor-tabs.interactive-editor')}
             </button>
+            <span id='interactive-editor-desc' className='sr-only'>
+              {t('aria.interactive-editor-desc')}
+            </span>
           </div>
         </div>
       </div>

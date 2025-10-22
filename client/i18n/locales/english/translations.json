@@ -952,7 +952,8 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
