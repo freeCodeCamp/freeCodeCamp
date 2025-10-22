@@ -6,14 +6,20 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { Panel, Button, Spacer } from '@freecodecamp/ui';
 
-import { deleteAccount, resetProgress } from '../../redux/settings/actions';
+import {
+  deleteAccount,
+  resetProgress,
+  resetModule
+} from '../../redux/settings/actions';
 import { FullWidthRow } from '../helpers';
 import DeleteModal from './delete-modal';
 import ResetModal from './reset-modal';
+import ResetModuleModal from './reset-module-modal';
 
 interface DangerZoneProps {
   deleteAccount: () => void;
   resetProgress: () => void;
+  resetModule: (blockId: string) => void;
   t: TFunction;
 }
 
@@ -22,18 +28,29 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       deleteAccount,
-      resetProgress
+      resetProgress,
+      resetModule
     },
     dispatch
   );
 
-function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
+function DangerZone({
+  deleteAccount,
+  resetProgress,
+  resetModule,
+  t
+}: DangerZoneProps) {
   const [reset, setReset] = useState(false);
+  const [resetMod, setResetMod] = useState(false);
   const [delete_, setDelete] = useState(false);
   // delete is reserved
 
   function toggleResetModal(): void {
     setReset(prev => !prev);
+  }
+
+  function toggleResetModuleModal(): void {
+    setResetMod(prev => !prev);
   }
 
   function toggleDeleteModal(): void {
@@ -47,6 +64,16 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
         <Spacer size='m' />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>
+          <Button
+            block={true}
+            size='large'
+            variant='danger'
+            onClick={toggleResetModuleModal}
+            type='button'
+          >
+            {t('settings.danger.reset-module')}
+          </Button>
+          <Spacer size='m' />
           <Button
             block={true}
             size='large'
@@ -70,6 +97,11 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
         </FullWidthRow>
       </Panel>
 
+      <ResetModuleModal
+        onHide={toggleResetModuleModal}
+        reset={resetModule}
+        show={resetMod}
+      />
       <ResetModal
         onHide={toggleResetModal}
         reset={resetProgress}

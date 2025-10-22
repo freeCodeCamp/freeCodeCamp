@@ -58,6 +58,7 @@ const toneUrls = {
   [FlashMessages.GenericError]: TRY_AGAIN,
   [FlashMessages.ProfilePrivate]: TRY_AGAIN,
   [FlashMessages.ProgressReset]: TRY_AGAIN,
+  [FlashMessages.ModuleReset]: TRY_AGAIN,
   [FlashMessages.ProvideUsername]: TRY_AGAIN,
   [FlashMessages.ReallyWeird]: TRY_AGAIN,
   [FlashMessages.ReportSent]: CHAL_COMP,
