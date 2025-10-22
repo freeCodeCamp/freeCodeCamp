@@ -247,13 +247,11 @@ const ShowGeneric = ({
         />
         <Container fluid>
           {hasInteractiveEditor && (
-            <Row>
-              <ActionRow
-                hasInteractiveEditor={hasInteractiveEditor}
-                showInteractiveEditor={showInteractiveEditor}
-                toggleInteractiveEditor={toggleInteractiveEditor}
-              />
-            </Row>
+            <ActionRow
+              hasInteractiveEditor={hasInteractiveEditor}
+              showInteractiveEditor={showInteractiveEditor}
+              toggleInteractiveEditor={toggleInteractiveEditor}
+            />
           )}
 
           <Container>

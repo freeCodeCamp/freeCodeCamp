@@ -40,7 +40,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     return (
       <div className='action-row'>
         <div className='tabs-row'>
-          <div className='tabs-row-right panel-display-tabs'>
+          <div className='tabs-row-right'>
             <button
               aria-expanded={!!showInteractiveEditor}
               aria-describedby='interactive-editor-desc'
