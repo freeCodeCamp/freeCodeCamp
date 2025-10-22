@@ -26,7 +26,7 @@ Your `__init__` method should have a return type hint of `None`.
 
 ```js
 ({
-  test: () => runPython(`assert _Node(_code).find_class("Product").find_function("__init__").has_returns(None)`)
+  test: () => runPython(`assert _Node(_code).find_class("Product").find_function("__init__").has_returns("None")`)
 })
 ```
 
