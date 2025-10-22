@@ -331,7 +331,7 @@ void getAllBlocks()
       },
       {
         name: 'blockLabel',
-        message: 'Choose a block type',
+        message: 'Choose a block label',
         default: BlockLabel.lab,
         type: 'list',
         choices: Object.values(BlockLabel),
