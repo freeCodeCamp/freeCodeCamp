@@ -1,6 +1,6 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
-import { examResults, profileUI, savedChallenge } from '../types';
+import { examResults, profileUI, savedChallenge } from '../types.js';
 
 const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
   Type.Literal(k)
@@ -68,6 +68,7 @@ export const getSessionUser = {
           id: Type.String(),
           is2018DataVisCert: Type.Boolean(),
           is2018FullStackCert: Type.Boolean(),
+          isA2EnglishCert: Type.Boolean(),
           isApisMicroservicesCert: Type.Boolean(),
           isBackEndCert: Type.Boolean(),
           isCheater: Type.Boolean(),
@@ -79,6 +80,7 @@ export const getSessionUser = {
           isFrontEndCert: Type.Boolean(),
           isFrontEndLibsCert: Type.Boolean(),
           isFullStackCert: Type.Boolean(),
+          isJavascriptCertV9: Type.Boolean(),
           isHonest: Type.Boolean(),
           isInfosecCertV7: Type.Boolean(),
           isInfosecQaCert: Type.Boolean(),
@@ -88,6 +90,7 @@ export const getSessionUser = {
           isQaCertV7: Type.Boolean(),
           isRelationalDatabaseCertV8: Type.Boolean(),
           isRespWebDesignCert: Type.Boolean(),
+          isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
@@ -108,9 +111,10 @@ export const getSessionUser = {
             })
           ),
           profileUI: Type.Optional(profileUI),
-          sendQuincyEmail: Type.Boolean(),
+          sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
+          bluesky: Type.Optional(Type.String()),
           website: Type.Optional(Type.String()),
           yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
           isEmailVerified: Type.Boolean(),

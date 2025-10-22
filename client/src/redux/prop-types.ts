@@ -1,7 +1,8 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../../shared/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared/utils/polyvinyl';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import type { Chapter } from '../../../shared-dist/config/chapters';
+import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -172,6 +173,18 @@ export interface PrerequisiteChallenge {
   slug?: string;
 }
 
+type Nodule = ParagraphNodule | InteractiveEditorNodule;
+
+type ParagraphNodule = {
+  type: 'paragraph';
+  data: string;
+};
+
+type InteractiveEditorNodule = {
+  type: 'interactiveEditor';
+  data: { ext: Ext; name: string; contents: string }[];
+};
+
 export type ChallengeNode = {
   challenge: {
     block: string;
@@ -184,11 +197,11 @@ export type ChallengeNode = {
     demoType: 'onClick' | 'onLoad' | null;
     description: string;
     challengeFiles: ChallengeFiles;
+    nodules: Nodule[];
     explanation: string;
     fields: Fields;
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
-    guideUrl: string;
     head: string[];
     hasEditableBoundaries: boolean;
     helpCategory: string;
@@ -210,7 +223,6 @@ export type ChallengeNode = {
     notes: string;
     prerequisites: PrerequisiteChallenge[];
     isLocked: boolean;
-    isPrivate: boolean;
     order: number;
     questions: Question[];
     quizzes: Quiz[];
@@ -244,6 +256,7 @@ export interface Hooks {
   beforeAll?: string;
   beforeEach?: string;
   afterEach?: string;
+  afterAll?: string;
 }
 
 export type PageContext = {
@@ -335,6 +348,20 @@ export type AllChallengesInfo = {
   certificateNodes: CertificateNode[];
 };
 
+export type ChapterBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  chapters: Chapter[];
+};
+
+export type BlockBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  blocks: string[];
+};
+
+export type SuperBlockStructure =
+  | ChapterBasedSuperBlockStructure
+  | BlockBasedSuperBlockStructure;
+
 export type AllChallengeNode = {
   edges: [
     {
@@ -394,11 +421,12 @@ export type User = {
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
-  sendQuincyEmail: boolean;
+  sendQuincyEmail: boolean | null;
   sound: boolean;
   theme: UserThemes;
   keyboardShortcuts: boolean;
   twitter: string;
+  bluesky: string;
   username: string;
   website: string;
   yearsTopContributor: string[];
@@ -419,6 +447,7 @@ export type ProfileUI = {
 
 export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
+  isA2EnglishCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
   isDataVisCert: boolean;
@@ -429,11 +458,13 @@ export type ClaimedCertifications = {
   isFrontEndLibsCert: boolean;
   isFullStackCert: boolean;
   isInfosecQaCert: boolean;
+  isJavascriptCertV9: boolean;
   isQaCertV7: boolean;
   isInfosecCertV7: boolean;
   isJsAlgoDataStructCert: boolean;
   isRelationalDatabaseCertV8: boolean;
   isRespWebDesignCert: boolean;
+  isRespWebDesignCertV9: boolean;
   isSciCompPyCertV7: boolean;
   isDataAnalysisPyCertV7: boolean;
   isMachineLearningPyCertV7: boolean;

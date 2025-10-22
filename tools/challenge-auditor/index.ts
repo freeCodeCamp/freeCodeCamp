@@ -1,4 +1,4 @@
-import { access, readdir } from 'fs/promises';
+import { readdir } from 'fs/promises';
 import { join, resolve } from 'path';
 
 import { flatten } from 'lodash/fp';
@@ -11,8 +11,7 @@ import { availableLangs } from '../../shared/config/i18n';
 import { getChallengesForLang } from '../../curriculum/get-challenges';
 import {
   SuperBlocks,
-  getAuditedSuperBlocks,
-  superBlockToFolderMap
+  getAuditedSuperBlocks
 } from '../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
@@ -38,14 +37,17 @@ type ChallengeNode = {
 
 const getChallenges = async (lang: string) => {
   const curriculum = await getChallengesForLang(lang);
-  return Object.keys(curriculum)
-    .map(key => curriculum[key].blocks)
-    .reduce((challengeArray, superBlock) => {
-      const challengesForBlock = Object.keys(superBlock).map(
-        key => superBlock[key].challenges
-      );
-      return [...challengeArray, ...flatten(challengesForBlock)];
-    }, []) as unknown as ChallengeNode[];
+  return (
+    Object.keys(curriculum)
+      // @ts-expect-error - curriculum comes from a JS file.
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, []) as unknown as ChallengeNode[]
+  );
 };
 
 /* eslint-enable @typescript-eslint/no-unsafe-return */
@@ -62,23 +64,16 @@ void (async () => {
     'english'
   );
   const englishFilePaths: string[] = [];
-  const englishSuperblocks = await readdir(englishCurriculumDirectory);
-  for (const englishSuperblock of englishSuperblocks) {
-    const englishBlocks = await readdir(
-      join(englishCurriculumDirectory, englishSuperblock)
+  const englishBlocks = await readdir(englishCurriculumDirectory);
+  for (const englishBlock of englishBlocks) {
+    if (englishBlock.endsWith('.txt')) {
+      continue;
+    }
+    const englishChallenges = await readdir(
+      join(englishCurriculumDirectory, englishBlock)
     );
-    for (const englishBlock of englishBlocks) {
-      if (englishBlock.endsWith('.txt')) {
-        continue;
-      }
-      const englishChallenges = await readdir(
-        join(englishCurriculumDirectory, englishSuperblock, englishBlock)
-      );
-      for (const englishChallenge of englishChallenges) {
-        englishFilePaths.push(
-          join(englishSuperblock, englishBlock, englishChallenge)
-        );
-      }
+    for (const englishChallenge of englishChallenges) {
+      englishFilePaths.push(join(englishBlock, englishChallenge));
     }
   }
   const langsToCheck = availableLangs.curriculum.filter(
@@ -87,28 +82,9 @@ void (async () => {
   for (const language of langsToCheck) {
     console.log(`\n=== ${language} ===`);
     const certs = getAuditedSuperBlocks({ language });
-    const langCurriculumDirectory = join(
-      process.cwd(),
-      'curriculum',
-      'i18n-curriculum',
-      'curriculum',
-      'challenges',
-      language
-    );
-    const auditedFiles = englishFilePaths.filter(file =>
-      certs.some(
-        cert =>
-          // we're not ready to audit the new curriculum yet
-          (cert !== SuperBlocks.JsAlgoDataStructNew ||
-            process.env.SHOW_UPCOMING_CHANGES === 'true') &&
-          file.startsWith(superBlockToFolderMap[cert])
-      )
-    );
-    const noMissingFiles = await auditChallengeFiles(auditedFiles, {
-      langCurriculumDirectory
-    });
+
     const noDuplicateSlugs = await auditSlugs(language, certs);
-    if (noMissingFiles && noDuplicateSlugs) {
+    if (noDuplicateSlugs) {
       console.log(`All challenges pass.`);
     } else {
       actionShouldFail = true;
@@ -116,24 +92,6 @@ void (async () => {
   }
   process.exit(actionShouldFail ? 1 : 0);
 })();
-
-async function auditChallengeFiles(
-  auditedFiles: string[],
-  { langCurriculumDirectory }: { langCurriculumDirectory: string }
-) {
-  let auditPassed = true;
-  for (const file of auditedFiles) {
-    const filePath = join(langCurriculumDirectory, file);
-    const fileExists = await access(filePath)
-      .then(() => true)
-      .catch(() => false);
-    if (!fileExists) {
-      console.log(`${filePath} does not exist.`);
-      auditPassed = false;
-    }
-  }
-  return auditPassed;
-}
 
 async function auditSlugs(lang: string, certs: SuperBlocks[]) {
   let auditPassed = true;

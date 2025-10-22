@@ -1,0 +1,26 @@
+{
+  "name": "Build a Tech Conference Schedule Table",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-tech-conference-schedule",
+  "helpCategory": "HTML-CSS",
+  "blockType": "workshop",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68c33e502cd97f2fd52cb63b", "title": "Step 1" },
+    { "id": "68c341332d98fe38fae733af", "title": "Step 2" },
+    { "id": "68c3420cb0176439a95af1b8", "title": "Step 3" },
+    { "id": "68c34329d430583a6cd5f7f1", "title": "Step 4" },
+    { "id": "68c343692285523aef0fc6bf", "title": "Step 5" },
+    { "id": "68c346d03709343bff132707", "title": "Step 6" },
+    { "id": "68c3482278a14e3cf225e897", "title": "Step 7" },
+    { "id": "68c34a35c91b053dbae2a8c6", "title": "Step 8" },
+    { "id": "68c34ace730ca43e5fa7b8d6", "title": "Step 9" },
+    { "id": "68c34c608cf9e53f5d36b1d5", "title": "Step 10" },
+    { "id": "68c34d57ed874e4004f7b5d4", "title": "Step 11" },
+    { "id": "68c34e201b347c40acda8111", "title": "Step 12" },
+    { "id": "68c34f4aeb2b1a4170506751", "title": "Step 13" },
+    { "id": "68c353c4b114aa428c01f260", "title": "Step 14" }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

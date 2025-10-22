@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-import superBlockStructure from '../../../curriculum/superblock-structure/full-stack.json';
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
+import { superBlockStructuresSelector } from '../templates/Introduction/redux';
 import { ns as MainApp } from './action-types';
 
 export const savedChallengesSelector = state =>
@@ -119,6 +119,8 @@ export const createUserByNameSelector = username => state => {
 export const userFetchStateSelector = state => state[MainApp].userFetchState;
 export const allChallengesInfoSelector = state =>
   state[MainApp].allChallengesInfo;
+export const getSuperBlockStructure = (state, superBlock) =>
+  superBlockStructuresSelector(state)[superBlock];
 
 export const completedChallengesIdsSelector = createSelector(
   completedChallengesSelector,
@@ -131,10 +133,23 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
 );
 
 export const completionStateSelector = createSelector(
-  [allChallengesInfoSelector, completedChallengesIdsSelector],
-  (allChallengesInfo, completedChallengesIds) => {
-    const chapters = superBlockStructure.chapters;
+  [
+    allChallengesInfoSelector,
+    completedChallengesIdsSelector,
+    superBlockStructuresSelector,
+    state => state.challenge.challengeMeta
+  ],
+  (
+    allChallengesInfo,
+    completedChallengesIds,
+    superBlockStructures,
+    challengeMeta
+  ) => {
     const { challengeNodes } = allChallengesInfo;
+
+    const structure = superBlockStructures[challengeMeta.superBlock];
+
+    const chapters = structure.chapters ?? [];
 
     const getCompletionState = ({
       chapters,
@@ -144,7 +159,7 @@ export const completionStateSelector = createSelector(
       const populateBlocks = blocks =>
         blocks.map(block => {
           const blockChallenges = challenges.filter(
-            ({ block: blockName }) => blockName === block.dashedName
+            ({ block: blockName }) => blockName === block
           );
 
           const completedBlockChallenges = blockChallenges.every(({ id }) =>
@@ -152,7 +167,7 @@ export const completionStateSelector = createSelector(
           );
 
           return {
-            name: block.dashedName,
+            name: block,
             isCompleted:
               completedBlockChallenges.length === blockChallenges.length
           };

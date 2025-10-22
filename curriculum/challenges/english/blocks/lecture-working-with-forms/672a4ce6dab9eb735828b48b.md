@@ -1,0 +1,187 @@
+---
+id: 672a4ce6dab9eb735828b48b
+title: What Is Client-Side Form Validation in HTML Forms, and What Are Some Examples?
+challengeType: 19
+dashedName: what-is-client-side-form-validation-in-html-forms
+---
+
+# --interactive--
+
+When a user fills out a form on your website, it is important that they fill out all of the necessary information in the correct format. HTML form controls, like inputs, have a lot of built-in validation that you can use to check for invalid data. This will help ensure that the user fixes these mistakes before the information is submitted and processed by the server.
+
+The term "client-side" refers to everything that happens on the user's computer or device, like the part of a website or app you interact with directly. This includes the layout, design, and any interactive features.
+
+The term "server-side" refers to everything that happens on the server, the computer, or system, that hosts the website or app. This includes processing data, running applications, and handling requests that come from the user's device.
+
+While client-side validation is important, you also need server-side validation for added security. Malicious users can bypass client-side checks, so robust server-side measures are essential. You'll learn more about this in a later module. For now, let's take a look at some examples of client-side form validation.
+
+One common example of built-in form validation is to use the `required` attribute in inputs. The `required` attribute specifies that the user needs to fill out that portion of the form before it gets submitted. Here is an example of using the `required` attribute in an email input.
+
+Click on the `Submit Form` button without providing an email address and you will see a message pop up telling you to fill out the field.
+
+:::interactive_editor
+
+```html
+<form action="">
+  <label for="email">Email Address (Required field):</label>
+  <input required type="email" name="email" id="email" />
+  <button type="submit">Submit Form</button>
+</form>
+```
+
+:::
+
+Each browser will have its own set of styles for showing this alert message.
+
+Another advantage of using the email input is that email inputs have some basic validation to ensure correctly formatted email addresses. For example, if you type in random words and click submit, then the browser will show an alert that an `@` sign is missing. 
+
+Type `abc` into the email field and click on the submit button. You should see a message pop up because it is not a valid email address.
+
+:::interactive_editor
+
+```html
+<form action="">
+  <label for="email">Email Address (Required field):</label>
+  <input required type="email" name="email" id="email" />
+  <button type="submit">Submit Form</button>
+</form>
+```
+
+:::
+
+It is important to note that browsers only check for basic validation for standard email addresses. It is up to you to add additional layers of validation, which you will learn about in later modules.
+
+Other forms of validation for email inputs are to use the `minlength` and `maxlength` attributes. Here is an example using the extra validation.
+
+Type `b@m` in the field and click on the submit button. You will see a message pop up because it doesn't meet the minimum required length.
+
+:::interactive_editor
+
+```html
+<form action="">
+  <label for="email">Email Address (Required field):</label>
+  <input
+    required
+    type="email"
+    name="email"
+    id="email"
+    minlength="4"
+    maxlength="64"
+  />
+  <button type="submit">Submit Form</button>
+</form>
+```
+
+:::
+
+The `minlength` and `maxlength` attributes are used to set the minimum and maximum length in characters for the email input. If you don't include the minimum length or exceed the max length of characters, the browser will show an alert message.
+
+# --questions--
+
+## --text--
+
+What is the purpose of the `minlength` and `maxlength` attributes inside inputs?
+
+## --answers--
+
+They're used to control the font size of the text inside the input field.
+
+### --feedback--
+
+The names for these attribute suggest what they are used for.
+
+---
+
+They're used to set the minimum and maximum length in characters for the input.
+
+---
+
+They're used to define the `width` of the input field on the page.
+
+### --feedback--
+
+The names for these attribute suggest what they are used for.
+
+---
+
+They're used to specify the maximum number of characters that can be typed in a `textarea`.
+
+### --feedback--
+
+The names for these attribute suggest what they are used for.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which attribute is used to ensure that an input field is marked as required?
+
+## --answers--
+
+`required` 
+
+---
+
+`size` 
+
+### --feedback--
+
+One of these attribute names heavily implies what it does.
+
+---
+
+`minlength` 
+
+### --feedback--
+
+One of these attribute names heavily implies what it does.
+
+---
+
+`autoplay`
+
+### --feedback--
+
+One of these attribute names heavily implies what it does.
+
+## --video-solution--
+
+1
+
+## --text--
+
+What happens if you try to submit a value without an `@` sign for the `email` input?
+
+## --answers--
+
+The program will crash.
+
+### --feedback--
+
+Refer back to the middle of the lesson where this was discussed.
+
+---
+
+The form will submit just fine.
+
+### --feedback--
+
+Refer back to the middle of the lesson where this was discussed.
+
+---
+
+Nothing will happen.
+
+### --feedback--
+
+Refer back to the middle of the lesson where this was discussed.
+
+---
+
+The browser will show an alert message that the input is missing the `@` sign.
+
+## --video-solution--
+
+4

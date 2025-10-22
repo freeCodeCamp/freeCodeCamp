@@ -1,0 +1,141 @@
+{
+  "name": "Learn Essential Courtesies at the Office",
+  "isUpcomingChange": true,
+  "dashedName": "learn-essential-courtesies-at-the-office",
+  "challengeOrder": [
+    {
+      "id": "688f1daf0133dbe2a36b140b",
+      "title": "Dialogue 1: PLACEHOLDER"
+    },
+    {
+      "id": "68917aad28289da2a22adc41",
+      "title": "Task 1"
+    },
+    {
+      "id": "68917b8d340254a640dd9b34",
+      "title": "Task 2"
+    },
+    {
+      "id": "68902bdd7751fb8236d4aa57",
+      "title": "Task 3"
+    },
+    {
+      "id": "6891769071bf5c99898e7f78",
+      "title": "Task 4"
+    },
+    {
+      "id": "68904468e27a859077e99b7b",
+      "title": "Task 5"
+    },
+    {
+      "id": "689365f88f47151e7f76ab22",
+      "title": "Task 6"
+    },
+    {
+      "id": "68918445648932bd2e94322f",
+      "title": "Task 7"
+    },
+    {
+      "id": "689496c95cbfbf0872935016",
+      "title": "Dialogue 2: PLACEHOLDER"
+    },
+    {
+      "id": "689079b1e2b78e337f21138d",
+      "title": "Task 8"
+    },
+    {
+      "id": "68907e2a068a9c46110c4888",
+      "title": "Task 9"
+    },
+    {
+      "id": "6894929f977eb452f773b132",
+      "title": "Task 10"
+    },
+    {
+      "id": "68aa9f7a3dc86af23bfe2424",
+      "title": "Task 11"
+    },
+    {
+      "id": "68937136229e2842d81e83db",
+      "title": "Task 12"
+    },
+    {
+      "id": "689472771da80dffde34b21a",
+      "title": "Task 13"
+    },
+    {
+      "id": "6894978586eded102e67e914",
+      "title": "Task 14"
+    },
+    {
+      "id": "689591cbeeb999ca2169dce3",
+      "title": "Task 15"
+    },
+    {
+      "id": "6895c6ee7d2af9e217d1d3f3",
+      "title": "Task 16"
+    },
+    {
+      "id": "68960a2959c746067d762a5f",
+      "title": "Dialogue 3: Placeholder"
+    },
+    {
+      "id": "68960a6528428608cc3cd328",
+      "title": "Task 17"
+    },
+    {
+      "id": "68960d598b68f5149dc2617a",
+      "title": "Task 18"
+    },
+    {
+      "id": "6896bd6dfbc4f039f529b4c2",
+      "title": "Task 19"
+    },
+    {
+      "id": "6896bfa72ebf034214fb0852",
+      "title": "Task 20"
+    },
+    {
+      "id": "6896c0d61dad6c46f323c930",
+      "title": "Task 21"
+    },
+    {
+      "id": "6896c233b19d314c82f2ea9a",
+      "title": "Task 22"
+    },
+    {
+      "id": "6896c33e28918050522e56f0",
+      "title": "Dialogue 4: Placeholder"
+    },
+    {
+      "id": "6897244580230f60d85a2f75",
+      "title": "Task 23"
+    },
+    {
+      "id": "689724d6d625d96209db7de1",
+      "title": "Task 24"
+    },
+    {
+      "id": "6897257e04080d62c36b5324",
+      "title": "Task 25"
+    },
+    {
+      "id": "689728b1de0942657cc5e56d",
+      "title": "Task 26"
+    },
+    {
+      "id": "68972a6883871467e76de24a",
+      "title": "Task 27"
+    },
+    {
+      "id": "68975435a473aa6ca41ac118",
+      "title": "Task 28"
+    },
+    {
+      "id": "689758bfba3b6e709b20cef9",
+      "title": "Task 29"
+    }
+  ],
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid"
+}

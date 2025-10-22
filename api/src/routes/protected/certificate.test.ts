@@ -1,11 +1,21 @@
-import { Certification } from '../../../../shared/config/certification-settings';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  beforeEach,
+  vi
+} from 'vitest';
+
+import { Certification } from '../../../../shared/config/certification-settings.js';
 import {
   defaultUserEmail,
   defaultUserId,
   devLogin,
   setupServer,
   superRequest
-} from '../../../jest.utils';
+} from '../../../vitest.utils.js';
 
 describe('certificate routes', () => {
   setupServer();
@@ -18,7 +28,7 @@ describe('certificate routes', () => {
     });
 
     afterEach(() => {
-      jest.restoreAllMocks();
+      vi.restoreAllMocks();
     });
 
     describe('PUT /certificate/verify', () => {
@@ -80,14 +90,15 @@ describe('certificate routes', () => {
       // TODO: Revisit this test after deciding if we need/want to fetch the
       // entire user during authorization or just the user id.
       test.skip('should return 500 if user not found in db', async () => {
-        jest
-          .spyOn(fastifyTestInstance.prisma.user, 'findUnique')
-          .mockImplementation(
-            () =>
-              Promise.resolve(null) as ReturnType<
-                typeof fastifyTestInstance.prisma.user.findUnique
-              >
-          );
+        vi.spyOn(
+          fastifyTestInstance.prisma.user,
+          'findUnique'
+        ).mockImplementation(
+          () =>
+            Promise.resolve(null) as ReturnType<
+              typeof fastifyTestInstance.prisma.user.findUnique
+            >
+        );
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
           setCookies
@@ -203,38 +214,6 @@ describe('certificate routes', () => {
         expect(response.status).toBe(400);
       });
 
-      test('should return 500 if db update fails', async () => {
-        await fastifyTestInstance.prisma.user.updateMany({
-          where: { email: defaultUserEmail },
-          data: {
-            completedChallenges: [
-              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
-              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
-              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
-              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
-              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
-            ]
-          }
-        });
-        jest
-          .spyOn(fastifyTestInstance.prisma.user, 'update')
-          .mockImplementation(() => {
-            throw new Error('test');
-          });
-        const response = await superRequest('/certificate/verify', {
-          method: 'PUT',
-          setCookies
-        }).send({
-          certSlug: Certification.RespWebDesign
-        });
-
-        expect(response.body).toStrictEqual({
-          message: 'flash.generic-error',
-          type: 'danger'
-        });
-        expect(response.status).toBe(500);
-      });
-
       // Note: Email does not actually send (work) in development, but status should still be 200.
       test('should send the certified email, if all current certifications are met', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
@@ -263,7 +242,7 @@ describe('certificate routes', () => {
           }
         });
 
-        const spy = jest.spyOn(fastifyTestInstance, 'sendEmail');
+        const spy = vi.spyOn(fastifyTestInstance, 'sendEmail');
 
         const response = await superRequest('/certificate/verify', {
           method: 'PUT',
@@ -313,7 +292,10 @@ describe('certificate routes', () => {
             }
           },
           isCertMap: {
+            isA2EnglishCert: false,
             isRespWebDesignCert: true,
+            isRespWebDesignCertV9: false,
+            isJavascriptCertV9: false,
             isJsAlgoDataStructCert: false,
             isFrontEndLibsCert: false,
             is2018DataVisCert: false,
@@ -375,6 +357,9 @@ describe('certificate routes', () => {
       test('should return 400 if certSlug is not allowed', async () => {
         const claimableCerts = [
           Certification.RespWebDesign,
+          // TODO: Enable, once these are no longer "upcoming".
+          // Certification.RespWebDesignV9,
+          // Certification.JsV9,
           Certification.JsAlgoDataStruct,
           Certification.FrontEndDevLibs,
           Certification.DataVis,
@@ -426,6 +411,43 @@ describe('certificate routes', () => {
           });
           expect(response.status).toBe(400);
         }
+      });
+
+      // This has to be the last test since vi.mockRestore replaces the original
+      // function with undefined when restoring a prisma function (for some
+      // reason)
+      test('should return 500 if db update fails', async () => {
+        await fastifyTestInstance.prisma.user.updateMany({
+          where: { email: defaultUserEmail },
+          data: {
+            completedChallenges: [
+              { id: 'bd7158d8c442eddfaeb5bd18', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b03', completedDate: 123456789 },
+              { id: '587d78af367417b2b2512b04', completedDate: 123456789 },
+              { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
+              { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
+            ]
+          }
+        });
+
+        vi.spyOn(fastifyTestInstance.prisma.user, 'update').mockImplementation(
+          () => {
+            throw new Error('test');
+          }
+        );
+
+        const response = await superRequest('/certificate/verify', {
+          method: 'PUT',
+          setCookies
+        }).send({
+          certSlug: Certification.RespWebDesign
+        });
+
+        expect(response.body).toStrictEqual({
+          message: 'flash.generic-error',
+          type: 'danger'
+        });
+        expect(response.status).toBe(500);
       });
     });
   });

@@ -6,7 +6,7 @@ import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
-import { regenerateMissingProperties } from '../../../../shared/utils/polyvinyl';
+import { regenerateMissingProperties } from '../../../../shared-dist/utils/polyvinyl';
 import ProjectPreviewModal from '../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../SolutionViewer/exam-results-modal';
 import { openModal } from '../../templates/Challenges/redux/actions';
@@ -21,7 +21,7 @@ import {
   currentCertifications,
   legacyCertifications,
   upcomingCertifications
-} from '../../../../shared/config/certification-settings';
+} from '../../../../shared-dist/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {
@@ -47,13 +47,16 @@ const mapDispatchToProps = {
 
 const createCertifiedMap = ({
   is2018DataVisCert,
+  isA2EnglishCert,
   isApisMicroservicesCert,
+  isJavascriptCertV9,
   isJsAlgoDataStructCert,
   isInfosecQaCert,
   isQaCertV7,
   isInfosecCertV7,
   isFrontEndLibsCert,
   isRespWebDesignCert,
+  isRespWebDesignCertV9,
   isDataVisCert,
   isFrontEndCert,
   isBackEndCert,
@@ -89,7 +92,13 @@ const createCertifiedMap = ({
   // be rendered. The new FullStackDeveloper certification is a normal
   // certification with projects.
   [Certification.FullStackDeveloper]: false,
-  [Certification.A2English]: false,
+  [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
+  [Certification.JsV9]: isJavascriptCertV9,
+  [Certification.FrontEndDevLibsV9]: false,
+  [Certification.PythonV9]: false,
+  [Certification.RelationalDbV9]: false,
+  [Certification.BackEndDevApisV9]: false,
+  [Certification.A2English]: isA2EnglishCert,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,
   [Certification.A2Chinese]: false,

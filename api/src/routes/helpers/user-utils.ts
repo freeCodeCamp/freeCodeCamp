@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { pick, omit } from 'lodash-es';
 
 // user flags that the api-server returns as false if they're missing in the
 // user document. Since Prisma returns null for missing fields, we need to
@@ -7,6 +7,7 @@ import _ from 'lodash';
 const nullableFlags = [
   'is2018DataVisCert',
   'is2018FullStackCert',
+  'isA2EnglishCert',
   'isApisMicroservicesCert',
   'isBackEndCert',
   'isCheater',
@@ -18,6 +19,7 @@ const nullableFlags = [
   'isFrontEndCert',
   'isFullStackCert',
   'isFrontEndLibsCert',
+  'isJavascriptCertV9',
   'isHonest',
   'isInfosecCertV7',
   'isInfosecQaCert',
@@ -27,6 +29,7 @@ const nullableFlags = [
   'isQaCertV7',
   'isRelationalDatabaseCertV8',
   'isRespWebDesignCert',
+  'isRespWebDesignCertV9',
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
   // isUpcomingPythonCertV8 exists in the db, but is not returned by the api-server
@@ -45,5 +48,5 @@ type NullableFlags = (typeof nullableFlags)[number];
 export function splitUser<U extends Record<NullableFlags, unknown>>(
   user: U
 ): [Pick<U, NullableFlags>, Omit<U, NullableFlags>] {
-  return [_.pick(user, nullableFlags), _.omit(user, nullableFlags)];
+  return [pick(user, nullableFlags), omit(user, nullableFlags)];
 }

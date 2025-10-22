@@ -1,5 +1,5 @@
 import type { CompletedChallenge } from '../redux/prop-types';
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../shared-dist/config/challenge-types';
 import { hasProtocolRE } from '.';
 
 type DisplayType =
@@ -8,7 +8,8 @@ type DisplayType =
   | 'showUserCode'
   | 'showProjectAndGithubLinks'
   | 'showProjectLink'
-  | 'showExamResults';
+  | 'showExamResults'
+  | 'noSolutionToDisplay';
 
 export const getSolutionDisplayType = ({
   solution,
@@ -17,6 +18,8 @@ export const getSolutionDisplayType = ({
   challengeType,
   examResults
 }: CompletedChallenge): DisplayType => {
+  if (challengeType === challengeTypes.examDownload)
+    return 'noSolutionToDisplay';
   if (examResults) return 'showExamResults';
   if (challengeFiles?.length)
     return challengeType === challengeTypes.multifileCertProject

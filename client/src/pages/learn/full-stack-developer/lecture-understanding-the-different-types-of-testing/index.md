@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding the Different Types of Testing
 
-Learn about Understanding the Different Types of Testing in these lectures.
+Learn about Understanding the Different Types of Testing in these lessons.

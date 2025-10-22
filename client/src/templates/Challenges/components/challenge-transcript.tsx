@@ -2,40 +2,34 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import store from 'store';
-import PrismFormatted from './prism-formatted';
 
 import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
-  showTranscriptTabs?: boolean;
+  shouldPersistExpanded?: boolean;
 }
 
 function ChallengeTranscript({
   transcript,
-  showTranscriptTabs
+  shouldPersistExpanded
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
   // default to collapsed
-  const [isOpen, setIsOpen] = useState(
-    () => (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+  const [isOpen, setIsOpen] = useState(() =>
+    shouldPersistExpanded
+      ? (store.get('fcc-transcript-expanded') as boolean | null) ?? false
+      : false
   );
 
   function toggleExpandedState(e: React.MouseEvent<HTMLDetailsElement>) {
     e.preventDefault();
-    store.set('fcc-transcript-expanded', !isOpen);
+    if (shouldPersistExpanded) {
+      store.set('fcc-transcript-expanded', !isOpen);
+    }
     setIsOpen(!isOpen);
   }
-
-  if (showTranscriptTabs)
-    return (
-      <>
-        <Spacer size='m' />
-        <PrismFormatted className={'line-numbers'} text={transcript} />
-        <Spacer size='m' />
-      </>
-    );
 
   return (
     <>
@@ -48,7 +42,20 @@ function ChallengeTranscript({
           {t('learn.transcript')}
         </summary>
         <Spacer size='m' />
-        <PrismFormatted className={'line-numbers'} text={transcript} />
+        <table className='transcript-table'>
+          <tbody>
+            {transcript
+              .split('\n')
+              .filter(line => line.trim() !== '')
+              .map((line, idx) => {
+                return (
+                  <tr key={idx}>
+                    <td dangerouslySetInnerHTML={{ __html: line }} />
+                  </tr>
+                );
+              })}
+          </tbody>
+        </table>
       </details>
       <Spacer size='m' />
     </>

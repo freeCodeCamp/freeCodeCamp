@@ -1,19 +1,19 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { find } from 'lodash';
-import * as schemas from '../../schemas';
+import { find } from 'lodash-es';
+import * as schemas from '../../schemas.js';
 import {
   certSlugTypeMap,
   certTypeTitleMap,
   certTypeIdMap,
   completionHours,
   oldDataVizId
-} from '../../../../shared/config/certification-settings';
+} from '../../../../shared/config/certification-settings.js';
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
-} from '../helpers/certificate-utils';
-import { normalizeDate } from '../../utils/normalize';
+} from '../helpers/certificate-utils.js';
+import { normalizeDate } from '../../utils/normalize.js';
 
 /**
  * Plugin for the unprotected certificate endpoints.
@@ -60,11 +60,14 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         select: {
           isBanned: true,
           isCheater: true,
+          isA2EnglishCert: true,
           isFrontEndCert: true,
           isBackEndCert: true,
           isFullStackCert: true,
           isRespWebDesignCert: true,
+          isRespWebDesignCertV9: true,
           isFrontEndLibsCert: true,
+          isJavascriptCertV9: true,
           isJsAlgoDataStructCert: true,
           isJsAlgoDataStructCertV8: true,
           isDataVisCert: true,

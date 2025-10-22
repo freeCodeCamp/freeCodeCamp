@@ -1,21 +1,32 @@
 import type { Prisma } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import _ from 'lodash';
+import { omit } from 'lodash-es';
+import {
+  describe,
+  it,
+  test,
+  expect,
+  beforeAll,
+  beforeEach,
+  afterAll,
+  vi
+} from 'vitest';
 
-import { createUserInput } from '../../utils/create-user';
+import { createUserInput } from '../../utils/create-user.js';
 import {
   defaultUserEmail,
   setupServer,
   createSuperRequest
-} from '../../../jest.utils';
-import { replacePrivateData } from './user';
+} from '../../../vitest.utils.js';
+import { replacePrivateData } from './user.js';
 
-const mockedFetch = jest.fn();
-jest.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
+const mockedFetch = vi.fn();
+vi.spyOn(globalThis, 'fetch').mockImplementation(mockedFetch);
 
 // This is used to build a test user.
 const testUserData: Prisma.userCreateInput = {
   ...createUserInput(defaultUserEmail),
+  sendQuincyEmail: true,
   username: 'foobar',
   usernameDisplay: 'Foo Bar',
   progressTimestamps: [1520002973119, 1520440323273],
@@ -94,6 +105,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar'
 };
 
@@ -175,6 +187,7 @@ const publicUserData = {
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
+  isA2EnglishCert: testUserData.isA2EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -186,6 +199,7 @@ const publicUserData = {
   isFrontEndCert: testUserData.isFrontEndCert,
   isFrontEndLibsCert: testUserData.isFrontEndLibsCert,
   isFullStackCert: testUserData.isFullStackCert,
+  isJavascriptCertV9: testUserData.isJavascriptCertV9,
   isHonest: testUserData.isHonest,
   isInfosecCertV7: testUserData.isInfosecCertV7,
   isInfosecQaCert: testUserData.isInfosecQaCert,
@@ -195,17 +209,17 @@ const publicUserData = {
   isQaCertV7: testUserData.isQaCertV7,
   isRelationalDatabaseCertV8: testUserData.isRelationalDatabaseCertV8,
   isRespWebDesignCert: testUserData.isRespWebDesignCert,
+  isRespWebDesignCertV9: testUserData.isRespWebDesignCertV9,
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
   linkedin: testUserData.linkedin,
   location: testUserData.location,
   name: testUserData.name,
-  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,
@@ -367,7 +381,7 @@ describe('userRoutes', () => {
           // it should contain the entire body.
           const publicUser = {
             // TODO(Post-MVP, maybe): return completedSurveys?
-            ..._.omit(publicUserData, 'completedSurveys'),
+            ...omit(publicUserData, 'completedSurveys'),
             username: publicUsername,
             joinDate: new ObjectId(testUser.id).getTimestamp().toISOString(),
             profileUI: unlockedUserProfileUI
@@ -581,9 +595,7 @@ describe('get-public-profile helpers', () => {
     });
 
     test('returns the expected public user object if all showX flags are true', () => {
-      expect(replacePrivateData(user)).toEqual(
-        _.omit(user, ['id', 'profileUI'])
-      );
+      expect(replacePrivateData(user)).toEqual(omit(user, ['id', 'profileUI']));
     });
   });
 });

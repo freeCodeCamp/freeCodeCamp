@@ -1,16 +1,19 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
+import { SuperBlocks } from '../../shared/config/curriculum';
 import {
-  SuperBlocks,
-  superBlockToFolderMap
-} from '../../shared/config/curriculum';
-import { createQuizFile, validateBlockName } from './utils';
+  getContentConfig,
+  writeBlockStructure
+} from '../../curriculum/file-handler';
+import { superBlockToFilename } from '../../curriculum/build-curriculum';
+import { createQuizFile, getAllBlocks, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
+import { createIntroMD } from './helpers/create-intro';
+import { updateSimpleSuperblockStructure } from './helpers/create-project';
 
 const helpCategories = [
   'HTML-CSS',
@@ -48,7 +51,7 @@ async function createQuiz(
   if (!title) {
     title = block;
   }
-  void updateIntroJson(superBlock, block, title);
+  await updateIntroJson(superBlock, block, title);
 
   const challengeId = await createQuizChallenge(
     superBlock,
@@ -56,9 +59,13 @@ async function createQuiz(
     title,
     questionCount
   );
-  void createMetaJson(superBlock, block, title, helpCategory, challengeId);
+  await createMetaJson(block, title, helpCategory, challengeId);
+  const superblockFilename = (
+    superBlockToFilename as Record<SuperBlocks, string>
+  )[superBlock];
+  void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
   // TODO: remove once we stop relying on markdown in the client.
-  void createIntroMD(superBlock, block, title);
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -83,52 +90,19 @@ async function updateIntroJson(
 }
 
 async function createMetaJson(
-  superBlock: SuperBlocks,
   block: string,
   title: string,
   helpCategory: string,
   challengeId: ObjectID
 ) {
-  const metaDir = path.resolve(__dirname, '../../curriculum/challenges/_meta');
   const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  newMeta.superBlock = superBlock;
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
-  const newMetaDir = path.resolve(metaDir, block);
-  if (!existsSync(newMetaDir)) {
-    await withTrace(fs.mkdir, newMetaDir);
-  }
 
-  void withTrace(
-    fs.writeFile,
-    path.resolve(metaDir, `${block}/meta.json`),
-    await format(JSON.stringify(newMeta), { parser: 'json' })
-  );
-}
-
-async function createIntroMD(superBlock: string, block: string, title: string) {
-  const introMD = `---
-title: Introduction to the ${title}
-block: ${block}
-superBlock: ${superBlock}
----
-
-## Introduction to the ${title}
-
-This page is for the ${title}
-`;
-  const dirPath = path.resolve(
-    __dirname,
-    `../../client/src/pages/learn/${superBlock}/${block}/`
-  );
-  const filePath = path.resolve(dirPath, 'index.md');
-  if (!existsSync(dirPath)) {
-    await withTrace(fs.mkdir, dirPath);
-  }
-  void withTrace(fs.writeFile, filePath, introMD, { encoding: 'utf8' });
+  await writeBlockStructure(block, newMeta);
 }
 
 async function createQuizChallenge(
@@ -137,14 +111,13 @@ async function createQuizChallenge(
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const superBlockSubPath = superBlockToFolderMap[superBlock];
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${superBlockSubPath}/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
+  await fs.mkdir(newChallengeDir, { recursive: true });
+
   return createQuizFile({
     projectPath: newChallengeDir + '/',
     title: title,
@@ -172,41 +145,44 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.FullStackDeveloper,
-    type: 'list',
-    choices: Object.values(SuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this quiz?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'HTML-CSS',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'questionCount',
-    message: 'Should this quiz have either ten or twenty questions?',
-    default: 20,
-    type: 'list',
-    choices: [20, 10]
-  }
-])
+void getAllBlocks()
+  .then(existingBlocks =>
+    prompt([
+      {
+        name: 'superBlock',
+        message: 'Which certification does this belong to?',
+        default: SuperBlocks.FullStackDeveloper,
+        type: 'list',
+        choices: Object.values(SuperBlocks)
+      },
+      {
+        name: 'block',
+        message: 'What is the dashed name (in kebab-case) for this quiz?',
+        validate: (block: string) => validateBlockName(block, existingBlocks),
+        filter: (block: string) => {
+          return block.toLowerCase().trim();
+        }
+      },
+      {
+        name: 'title',
+        default: ({ block }: { block: string }) => block
+      },
+      {
+        name: 'helpCategory',
+        message: 'Choose a help category',
+        default: 'HTML-CSS',
+        type: 'list',
+        choices: helpCategories
+      },
+      {
+        name: 'questionCount',
+        message: 'Should this quiz have either ten or twenty questions?',
+        default: 20,
+        type: 'list',
+        choices: [20, 10]
+      }
+    ])
+  )
   .then(
     async ({
       superBlock,

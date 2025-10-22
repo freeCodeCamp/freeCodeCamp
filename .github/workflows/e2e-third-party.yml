@@ -94,15 +94,6 @@ jobs:
       matrix:
         browsers: [chromium]
         node-version: [22]
-    services:
-      mongodb:
-        image: mongo:8.0
-        ports:
-          - 27017:27017
-      mailhog:
-        image: mailhog/mailhog
-        ports:
-          - 1025:1025
     steps:
       - name: Set Action Environment Variables
         run: |
@@ -152,7 +143,7 @@ jobs:
 
       - name: Start apps
         run: |
-          docker compose up -d
+          docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d
           pnpm run serve:client-ci &
           sleep 10
 
