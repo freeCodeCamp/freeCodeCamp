@@ -56,14 +56,16 @@ async function newPageContext() {
   return globalThis.__fccPuppeteerPages[poolId];
 }
 
-export async function defineTestsForBlock({ block }) {
+export async function defineTestsForBlock(testFilter) {
   const lang = testedLang();
-  const challenges = await getChallenges(lang, { block });
+  const challenges = await getChallenges(lang, testFilter);
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
   if (isEmpty(nonCertificationChallenges)) {
-    console.warn(`No non-certification challenges to test for block ${block}.`);
+    console.warn(
+      `No non-certification challenges to test for block ${testFilter.block}.`
+    );
     describe('Check challenges', () => {
       it('No non-certification challenges to test', () => {});
     });

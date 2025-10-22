@@ -200,7 +200,12 @@ export const superBlockNames = {
   'semantic-html': SuperBlocks.SemanticHtml,
   'a1-professional-chinese': SuperBlocks.A1Chinese,
   'dev-playground': SuperBlocks.DevPlayground,
-  'full-stack-open': SuperBlocks.FullStackOpen
+  'full-stack-open': SuperBlocks.FullStackOpen,
+  'responsive-web-design-v9': SuperBlocks.RespWebDesignV9,
+  'front-end-development-libraries-v9': SuperBlocks.FrontEndDevLibsV9,
+  'python-v9': SuperBlocks.PythonV9,
+  'relational-databases-v9': SuperBlocks.RelationalDbV9,
+  'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

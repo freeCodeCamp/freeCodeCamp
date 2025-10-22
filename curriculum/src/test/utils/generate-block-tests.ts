@@ -4,6 +4,7 @@ import path from 'node:path';
 import _ from 'lodash';
 
 import { parseCurriculumStructure } from '../../build-curriculum.js';
+import { Filter } from '../../utils.js';
 
 let __dirnameCompat: string;
 
@@ -15,7 +16,7 @@ if (typeof __dirname !== 'undefined') {
   __dirnameCompat = new Function('return import.meta.dirname')() as string;
 }
 
-const testFilter = {
+const testFilter: Filter = {
   block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
   challengeId: process.env.FCC_CHALLENGE_ID
     ? process.env.FCC_CHALLENGE_ID.trim()
@@ -40,17 +41,17 @@ async function main() {
 
   for (const block of blocks) {
     const filePath = path.join(GENERATED_DIR, `${block}.test.js`);
-    const contents = generateSingleBlockFile({ block });
+    const contents = generateSingleBlockFile({ ...testFilter, block });
     await fs.promises.writeFile(filePath, contents, 'utf8');
   }
 
   console.log(`Generated ${blocks.length} block test file(s).`);
 }
 
-function generateSingleBlockFile({ block }: { block: string }) {
+function generateSingleBlockFile(testFilter: Filter) {
   return `import { defineTestsForBlock } from '../test-challenges.js';
 
-await defineTestsForBlock({ block: ${JSON.stringify(block)} });
+await defineTestsForBlock(${JSON.stringify(testFilter)});
 `;
 }
 
