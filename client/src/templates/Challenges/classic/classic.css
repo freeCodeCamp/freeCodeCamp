@@ -18,6 +18,7 @@
 }
 
 .action-row {
+  margin-top: var(--breadcrumbs-height);
   padding: 10px;
   border-bottom: 1px solid var(--quaternary-background);
 }
@@ -79,6 +80,7 @@
   width: 30%;
   display: flex;
   justify-content: flex-end;
+  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {

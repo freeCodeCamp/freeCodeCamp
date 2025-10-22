@@ -38,8 +38,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     const { toggleInteractiveEditor, showInteractiveEditor } = props;
 
     return (
-      <div className='action-row' data-playwright-test-label='action-row'>
-        <div className='tabs-row' data-playwright-test-label='tabs-row'>
+      <div className='action-row'>
+        <div className='tabs-row'>
           <div className='tabs-row-right panel-display-tabs'>
             <button
               aria-expanded={!!showInteractiveEditor}
@@ -53,7 +53,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     );
   }
 
-  const classicProps = props as ClassicLayoutProps;
+  const classicLayoutProps = props as ClassicLayoutProps;
   const {
     togglePane,
     hasPreview,
@@ -67,7 +67,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage
-  } = classicProps;
+  } = classicLayoutProps;
 
   // sets screen reader text for the two preview buttons
   function getPreviewBtnsSrText() {

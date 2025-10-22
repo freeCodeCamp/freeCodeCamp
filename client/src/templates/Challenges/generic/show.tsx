@@ -244,123 +244,128 @@ const ShowGeneric = ({
         <Helmet
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
-        <Container>
+        <Container fluid>
           {hasInteractiveEditor && (
-            <ActionRow
-              hasInteractiveEditor={hasInteractiveEditor}
-              showInteractiveEditor={showInteractiveEditor}
-              toggleInteractiveEditor={toggleInteractiveEditor}
-            />
+            <Row>
+              <ActionRow
+                hasInteractiveEditor={hasInteractiveEditor}
+                showInteractiveEditor={showInteractiveEditor}
+                toggleInteractiveEditor={toggleInteractiveEditor}
+              />
+            </Row>
           )}
-          <Row>
-            <Spacer size='m' />
-            <ChallengeTitle
-              isCompleted={isChallengeCompleted}
-              translationPending={translationPending}
-            >
-              {title}
-            </ChallengeTitle>
 
-            <Spacer size='m' />
+          <Container>
+            <Row>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
 
-            {description && (
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <ChallengeDescription
-                  description={description}
-                  superBlock={superBlock}
-                />
-                <Spacer size='m' />
-              </Col>
-            )}
+              <Spacer size='m' />
 
-            {nodules?.map((nodule, i) => {
-              return (
-                <React.Fragment key={i}>
-                  {renderNodule(nodule, showInteractiveEditor)}
-                </React.Fragment>
-              );
-            })}
-
-            <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-              {videoId && (
-                <>
-                  <VideoPlayer
-                    bilibiliIds={bilibiliIds}
-                    onVideoLoad={handleVideoIsLoaded}
-                    title={title}
-                    videoId={videoId}
-                    videoIsLoaded={videoIsLoaded}
-                    videoLocaleIds={videoLocaleIds}
-                  />
-                  <Spacer size='m' />
-                </>
-              )}
-            </Col>
-
-            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
-
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
-
-              {instructions && (
-                <>
+              {description && (
+                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
                   <ChallengeDescription
-                    instructions={instructions}
+                    description={description}
                     superBlock={superBlock}
                   />
                   <Spacer size='m' />
-                </>
+                </Col>
               )}
 
-              {assignments.length > 0 && (
-                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <Assignments
-                    assignments={assignments}
-                    allAssignmentsCompleted={allAssignmentsCompleted}
-                    handleAssignmentChange={handleAssignmentChange}
-                  />
-                </ObserveKeys>
-              )}
+              {nodules?.map((nodule, i) => {
+                return (
+                  <React.Fragment key={i}>
+                    {renderNodule(nodule, showInteractiveEditor)}
+                  </React.Fragment>
+                );
+              })}
 
-              {questions.length > 0 && (
-                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <MultipleChoiceQuestions
-                    questions={questions}
-                    selectedOptions={selectedMcqOptions}
-                    handleOptionChange={handleMcqOptionChange}
-                    submittedMcqAnswers={submittedMcqAnswers}
-                    showFeedback={showFeedback}
-                  />
-                </ObserveKeys>
-              )}
+              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+                {videoId && (
+                  <>
+                    <VideoPlayer
+                      bilibiliIds={bilibiliIds}
+                      onVideoLoad={handleVideoIsLoaded}
+                      title={title}
+                      videoId={videoId}
+                      videoIsLoaded={videoIsLoaded}
+                      videoLocaleIds={videoLocaleIds}
+                    />
+                    <Spacer size='m' />
+                  </>
+                )}
+              </Col>
 
-              {explanation ? (
-                <ChallengeExplanation explanation={explanation} />
-              ) : null}
+              {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
-              {!hasAnsweredMcqCorrectly && (
-                <p className='text-center'>{t('learn.answered-mcq')}</p>
-              )}
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {transcript && <ChallengeTranscript transcript={transcript} />}
 
-              <Button block={true} variant='primary' onClick={handleSubmit}>
-                {blockType === BlockTypes.review
-                  ? t('buttons.submit')
-                  : t('buttons.check-answer')}
-              </Button>
-              <Spacer size='xxs' />
-              <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
-              </Button>
+                {instructions && (
+                  <>
+                    <ChallengeDescription
+                      instructions={instructions}
+                      superBlock={superBlock}
+                    />
+                    <Spacer size='m' />
+                  </>
+                )}
 
-              <Spacer size='l' />
-            </Col>
-            <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={blockName}
-              superBlock={superBlock}
-            />
-          </Row>
+                {assignments.length > 0 && (
+                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                    <Assignments
+                      assignments={assignments}
+                      allAssignmentsCompleted={allAssignmentsCompleted}
+                      handleAssignmentChange={handleAssignmentChange}
+                    />
+                  </ObserveKeys>
+                )}
+
+                {questions.length > 0 && (
+                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                    <MultipleChoiceQuestions
+                      questions={questions}
+                      selectedOptions={selectedMcqOptions}
+                      handleOptionChange={handleMcqOptionChange}
+                      submittedMcqAnswers={submittedMcqAnswers}
+                      showFeedback={showFeedback}
+                    />
+                  </ObserveKeys>
+                )}
+
+                {explanation ? (
+                  <ChallengeExplanation explanation={explanation} />
+                ) : null}
+
+                {!hasAnsweredMcqCorrectly && (
+                  <p className='text-center'>{t('learn.answered-mcq')}</p>
+                )}
+
+                <Button block={true} variant='primary' onClick={handleSubmit}>
+                  {blockType === BlockTypes.review
+                    ? t('buttons.submit')
+                    : t('buttons.check-answer')}
+                </Button>
+                <Spacer size='xxs' />
+                <Button block={true} variant='primary' onClick={openHelpModal}>
+                  {t('buttons.ask-for-help')}
+                </Button>
+
+                <Spacer size='l' />
+              </Col>
+              <CompletionModal />
+              <HelpModal
+                challengeTitle={title}
+                challengeBlock={blockName}
+                superBlock={superBlock}
+              />
+            </Row>
+          </Container>
         </Container>
       </LearnLayout>
     </Hotkeys>
