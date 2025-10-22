@@ -2,8 +2,6 @@
   "name": "Learn How to Read and Type Pinyin",
   "isUpcomingChange": true,
   "dashedName": "learn-how-to-read-and-type-pinyin",
-  "order": 1,
-  "superBlock": "a1-professional-chinese",
   "challengeOrder": [
     {
       "id": "606104b17eec94d3295719df",
