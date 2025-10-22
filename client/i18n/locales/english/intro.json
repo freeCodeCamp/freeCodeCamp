@@ -6773,10 +6773,22 @@
           "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
         ]
       },
+      "workshop-breadth-first-search": {
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
+      },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
         "intro": [
           "In this lab, you will implement the Depth-First Search Algorithm."
+        ]
+      },
+      "lab-n-queens-problem": {
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
         ]
       },
       "review-graphs-and-trees": {
@@ -7076,6 +7088,7 @@
       "express-middleware": "Express Middleware",
       "error-handling-in-express": "Error Handling in Express",
       "websockets": "WebSockets",
+      "node-and-sql": "Node and SQL",
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
@@ -7158,6 +7171,14 @@
         "note": "Coming Late 2026",
         "intro": [
           "Pass this exam to earn your Back End Development and APIs Certification."
+        ]
+      }
+    },
+    "blocks": {
+      "lecture-understanding-the-http-request-response-model": {
+        "title": "Understanding the HTTP Request-Response Model",
+        "intro": [
+          "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       }
     }

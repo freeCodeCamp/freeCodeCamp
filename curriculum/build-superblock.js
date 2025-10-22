@@ -405,7 +405,7 @@ function transformSuperBlock(
   let blocks = [];
   let shouldAllowEmptyBlocks =
     !showComingSoon &&
-    superblockData.chapters.every(chapter => chapter.comingSoon);
+    superblockData.chapters?.every(chapter => chapter.comingSoon);
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
