@@ -1,8 +1,10 @@
 const chokidar = require('chokidar');
-const { getSuperblockStructure } = require('../../../curriculum/file-handler');
+const {
+  getSuperblockStructure
+} = require('../../../curriculum/dist/file-handler');
 const {
   superBlockToFilename
-} = require('../../../curriculum/build-curriculum');
+} = require('../../../curriculum/dist/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
