@@ -773,7 +773,9 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
             "lab-depth-first-search",
+            "lab-n-queens-problem",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
@@ -879,7 +881,7 @@
         {
           "dashedName": "http-and-the-web-standards-model",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-understanding-the-http-request-response-model"]
         },
         {
           "dashedName": "rest-api-and-web-services",

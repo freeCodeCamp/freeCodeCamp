@@ -1103,6 +1103,7 @@
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "Solution",
       "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {
