@@ -28,60 +28,51 @@ describe('add-interactive-editor plugin', () => {
       element => element.type === 'interactiveEditor'
     );
 
-    expect(editorElements).toEqual(
-      expect.arrayContaining([
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                '<div>This is an interactive element</div>'
-              ),
-              contentsHtml: expect.stringContaining(
-                '<pre><code class="language-'
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        }
-      ])
-    );
-
-    expect(editorElements).toEqual(
-      expect.arrayContaining([
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                'This is an interactive element'
-              ),
-              contentsHtml: expect.stringContaining(
-                '<pre><code class="language-'
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        },
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                "console.log('Interactive JS');"
-              ),
-              contentsHtml: expect.stringContaining(
-                '<pre><code class="language-'
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        }
-      ])
-    );
+    expect(editorElements).toEqual([
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: "console.log('Interactive JS');",
+            ext: 'js',
+            name: 'script-1',
+            contentsHtml:
+              '<pre><code class="language-js">console.log(\'Interactive JS\');\n</code></pre>'
+          }
+        ]
+      },
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: '<div>This is an interactive element</div>',
+            ext: 'html',
+            name: 'index-1',
+            contentsHtml:
+              '<pre><code class="language-html">&#x3C;div>This is an interactive element&#x3C;/div>\n</code></pre>'
+          }
+        ]
+      },
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: '<div>This is an interactive element</div>',
+            ext: 'html',
+            name: 'index-1',
+            contentsHtml:
+              '<pre><code class="language-html">&#x3C;div>This is an interactive element&#x3C;/div>\n</code></pre>'
+          },
+          {
+            contents: "console.log('Interactive JS');",
+            ext: 'js',
+            name: 'script-1',
+            contentsHtml:
+              '<pre><code class="language-js">console.log(\'Interactive JS\');\n</code></pre>'
+          }
+        ]
+      }
+    ]);
   });
 
   it('provides unique names for each file with the same extension', async () => {
@@ -107,10 +98,10 @@ describe('add-interactive-editor plugin', () => {
     expect(files[0].contents).toBe("console.log('First JavaScript file');");
     expect(files[1].contents).toBe("console.log('Second JavaScript file');");
 
-    // Both files should have contentsHtml
     expect(files[0].contentsHtml).toContain('<pre><code class="language-js">');
     expect(files[1].contentsHtml).toContain('<pre><code class="language-js">');
   });
+
   it('respects the order of elements in the original markdown', async () => {
     const expectedTypes = [
       'paragraph',
@@ -135,29 +126,5 @@ describe('add-interactive-editor plugin', () => {
     expect(() => plugin(mockAST, file)).toThrow(
       'The :::interactive_editor should only contain code blocks.'
     );
-  });
-
-  it('includes rawHTML with proper pre/code tags for syntax highlighting', async () => {
-    const mockAST = await parseFixture('with-interactive.md');
-    plugin(mockAST, file);
-    const editorElements = file.data.nodules.filter(
-      element => element.type === 'interactiveEditor'
-    );
-
-    // Check that contentsHtml is properly formatted
-    const jsFile = editorElements.find(element => element.data[0].ext === 'js');
-    expect(jsFile.data[0].contentsHtml).toMatch(
-      /<pre><code class="language-js">console\.log\('Interactive JS'\);?\n?<\/code><\/pre>/
-    );
-
-    const htmlFile = editorElements.find(
-      element => element.data[0].ext === 'html'
-    );
-    expect(htmlFile.data[0].contentsHtml).toContain(
-      '<pre><code class="language-html">'
-    );
-    expect(htmlFile.data[0].contentsHtml).toContain('</code></pre>');
-    // HTML entities: < is encoded as &#x3C; but > stays as >
-    expect(htmlFile.data[0].contentsHtml).toContain('&#x3C;div>');
   });
 });

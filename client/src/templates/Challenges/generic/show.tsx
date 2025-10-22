@@ -134,19 +134,6 @@ const ShowGeneric = ({
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
 
-  const hasInteractiveEditor = nodules?.some(
-    nodule => nodule.type === 'interactiveEditor'
-  );
-
-  const [showInteractiveEditor, setShowInteractiveEditor] = useState(
-    () => (store.get('showInteractiveEditor') as boolean | null) ?? false
-  );
-
-  const toggleInteractiveEditor = () => {
-    store.set('showInteractiveEditor', !showInteractiveEditor);
-    setShowInteractiveEditor(!showInteractiveEditor);
-  };
-
   useEffect(() => {
     initTests(tests);
     const challengePaths = getChallengePaths({
@@ -233,6 +220,20 @@ const ShowGeneric = ({
   };
 
   const sceneSubject = new SceneSubject();
+
+  // interactive editor
+  const hasInteractiveEditor = nodules?.some(
+    nodule => nodule.type === 'interactiveEditor'
+  );
+
+  const [showInteractiveEditor, setShowInteractiveEditor] = useState(
+    () => (store.get('showInteractiveEditor') as boolean | null) ?? false
+  );
+
+  const toggleInteractiveEditor = () => {
+    store.set('showInteractiveEditor', !showInteractiveEditor);
+    setShowInteractiveEditor(!showInteractiveEditor);
+  };
 
   return (
     <Hotkeys
