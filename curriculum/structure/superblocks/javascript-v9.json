@@ -295,6 +295,7 @@
           "blocks": ["review-javascript"]
         },
         {
+          "moduleType": "exam",
           "dashedName": "javascript-certification-exam",
           "comingSoon": true,
           "blocks": ["exam-javascript-certification"]
