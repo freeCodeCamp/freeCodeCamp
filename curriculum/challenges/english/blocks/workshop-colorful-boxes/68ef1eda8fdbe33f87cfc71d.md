@@ -16,9 +16,8 @@ The second value represents `flex-shrink`. This property controls how much the f
 Your class `box` should have a property `flex` with a value of `0 0 400px`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 0 400px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('flex'), '0 0 400px');
 ```
-
 
 # --seed--
 
