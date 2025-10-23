@@ -1,0 +1,10 @@
+{
+  "name": "Talking about Skills",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-practice-talking-about-skills",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    { "id": "68fa3bc5b64441e51cb8b54b", "title": "Dialogue 1: I'm Tom" }
+  ]
+}

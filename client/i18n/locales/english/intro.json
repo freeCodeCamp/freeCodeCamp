@@ -7256,12 +7256,204 @@
     "title": "A1 Professional Chinese Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
+      "zh-a1-chapter-pinyin": "Pinyin",
+      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
+      "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
+    },
+    "modules": {
+      "zh-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
+      "zh-a1-module-initials-and-finals": "Initials and Finals",
+      "zh-a1-module-greetings-and-basic-introductions": "Greetings and Basic Introductions",
+      "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information",
+      "zh-a1-module-introducing-others": "Introducing Others",
+      "zh-a1-module-getting-to-know-the-team": "Getting to Know the Team",
+      "zh-a1-module-talking-about-personal-skills": "Talking about Personal Skills",
+      "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
+    },
+    "module-intros": {
+      "zh-a1-module-introduction-and-certification-overview": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-initials-and-finals": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-greetings-and-basic-introductions": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-asking-and-giving-basic-information": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-introducing-others": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-getting-to-know-the-team": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-talking-about-personal-skills": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "zh-a1-module-discussing-team-skills": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "learn-essential-courtesies-at-the-office": {
-        "title": "Learn Essential Courtesies at the Office",
-        "intro": [
-          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
-        ]
+      "zh-a1-learn-certification-introduction": {
+        "title": "Certification Introduction",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-single-finals": {
+        "title": "Single Finals",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
+      "zh-a1-learn-compound-finals": {
+        "title": "Compound Finals",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-nasal-finals": {
+        "title": "Nasal Finals",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-the-pinyin-review": {
+        "title": "The Pinyin Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-the-pinyin-quiz": {
+        "title": "The Pinyin Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-greeting-new-colleagues": {
+        "title": "Greeting New Colleagues",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-understanding-the-greetings-and-introductions": {
+        "title": "Understanding the Greetings and Introductions",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-building-your-self-introduction": {
+        "title": "Greetings and Introductions Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-greetings-and-introductions-review": {
+        "title": "Greetings and Introductions Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-greetings-and-introductions-quiz": {
+        "title": "Greetings and Introductions Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-understanding-the-questions-and-answers": {
+        "title": "Understanding the Questions and Answers",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-exchanging-basic-information": {
+        "title": "Exchanging Basic Information",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-introduction-questions-review": {
+        "title": "Introduction Questions Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-introduction-questions-quiz": {
+        "title": "Introduction Questions Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-introducing-others-basics": {
+        "title": "Introducing Others Basics",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-the-team": { "title": "The Team", "intro": ["", ""] },
+      "zh-a1-learn-a-new-colleague": {
+        "title": "A New Colleague",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
+      "zh-a1-practice-introducing-others-practice": {
+        "title": "Introducing Others Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-introducing-others-review": {
+        "title": "Introducing Others Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-check-your-introduction": {
+        "title": "Check Your Introduction",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-knowing-the-team-basics": {
+        "title": "Knowing the Team Basics",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-asking-about-the-team": {
+        "title": "Asking about the Team",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-talking-about-others": {
+        "title": "Talking about Others",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-team-introduction-review": {
+        "title": "Team Introduction Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-team-introduction-quiz": {
+        "title": "Team Introduction Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-personal-skills-basics": {
+        "title": "Personal Skills Basics",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-can-or-cannot": {
+        "title": "Can or Can't",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-personal-skills-practice": {
+        "title": "Personal Skills Practice",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-describing-skills-review": {
+        "title": "Describing Skills Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-describing-skills-quiz": {
+        "title": "Describing Skills Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-team-skills-basics": {
+        "title": "Team Skills Basics",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-who-can-do-what-on-the-team": {
+        "title": "Who Can Do What on the Team",
+        "intro": ["Learn to discuss team member capabilities and roles."]
+      },
+      "zh-a1-practice-talking-about-skills": {
+        "title": "Talking about Skills",
+        "intro": ["Practice discussing various skills in team contexts."]
+      },
+      "zh-a1-review-discussing-team-skills-review": {
+        "title": "Discussing Team Skills Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-discussing-team-skills-quiz": {
+        "title": "Discussing Team Skills Quiz",
+        "intro": ["", ""]
+      },
+      "zh-a1-warm-up-meeting-new-teammates": {
+        "title": "Meeting New Teammates",
+        "intro": ["", ""]
       }
     }
   },

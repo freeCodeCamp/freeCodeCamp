@@ -1,0 +1,10 @@
+{
+  "name": "Team Introduction Quiz",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-quiz-team-introduction-quiz",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    { "id": "68fa3a185c66aadc3525bcb2", "title": "Dialogue 1: I'm Tom" }
+  ]
+}

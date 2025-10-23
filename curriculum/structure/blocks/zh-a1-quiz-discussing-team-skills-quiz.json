@@ -1,0 +1,10 @@
+{
+  "name": "Discussing Team Skills Quiz",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-quiz-discussing-team-skills-quiz",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    { "id": "68fa3be75fd89ce730060f0f", "title": "Dialogue 1: I'm Tom" }
+  ]
+}
