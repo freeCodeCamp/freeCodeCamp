@@ -45,8 +45,6 @@ function DailyCodingChallengeCalendarDay({
 }: CalendarDayProps): JSX.Element {
   const { t } = useTranslation();
 
-  console.log(completedLanguages);
-
   // dayNumber = 0 -> render nothing
   if (dayNumber === 0) return <div></div>;
 
@@ -80,8 +78,6 @@ function DailyCodingChallengeCalendarDay({
 
       <div className='dc-info'>
         <div className='dc-title'>{title}</div>
-
-        {/* <hr /> */}
 
         {completedLanguages.length === 2 ? (
           <span className='dc-checkmark dc-big-checkmark completed'>
