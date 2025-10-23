@@ -13,7 +13,7 @@ The `align-items` property aligns flex items along the cross axis (perpendicular
 
 # --hints--
 
-Add a property `align-items` with the value `center`
+You should have a property `align-items` with the value `center`.
 
 ```js
 assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('align-items'), 'center');
