@@ -2,21 +2,21 @@
 """Extract all block introductions from intro.json into a flat lookup.
 
 Usage:
-    python3 extract_blocks.py
+    python3 extract_blocks.py [language]
 
-The script reads `client/i18n/locales/english/intro.json`, gathers every
-`blocks` entry, and writes them to `blocks-intro.json` in the repository root.
-If duplicate block slugs contain conflicting definitions, the script attempts
-to automatically resolve minor wording differences between "lesson" and
-"lecture" variants. Remaining conflicts are logged with a unified diff while
-the script keeps the newer curriculum's version in `blocks-intro.json`.
-Finally, it removes each curriculum's `blocks` property from
-`client/i18n/locales/english/intro.json` and writes the updated file back to
-disk.
+The script reads `client/i18n/locales/<language>/intro.json`, gathers every
+`blocks` entry, and writes them to a `blocks-intro.json` file alongside the
+specified intro file. If duplicate block slugs contain conflicting definitions,
+the script attempts to automatically resolve minor wording differences between
+"lesson" and "lecture" variants. Remaining conflicts are logged with a unified
+diff while the script keeps the newer curriculum's version in
+`blocks-intro.json`. Finally, it removes each curriculum's `blocks` property
+from the source `intro.json` and writes the updated file back to disk.
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -25,8 +25,18 @@ from difflib import unified_diff
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
-INTRO_JSON = Path("client/i18n/locales/english/intro.json")
-OUTPUT_JSON = Path("blocks-intro.json")
+DEFAULT_LANGUAGE = "english"
+LOCALES_ROOT = Path("client/i18n/locales")
+OUTPUT_FILENAME = "blocks-intro.json"
+
+
+def resolve_intro_json_path(language: str) -> Path:
+    sanitized_language = language.strip().lower()
+    return LOCALES_ROOT / sanitized_language / "intro.json"
+
+
+def resolve_output_path(intro_path: Path) -> Path:
+    return intro_path.parent / OUTPUT_FILENAME
 
 
 def load_intro_data(path: Path) -> Dict[str, Any]:
@@ -318,22 +328,37 @@ def format_block_diff(
     return "\n".join(header)
 
 
-def main() -> int:
+def main(argv: Iterable[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(
+        description="Extract block introductions into a shared lookup file."
+    )
+    parser.add_argument(
+        "language",
+        nargs="?",
+        default=DEFAULT_LANGUAGE,
+        help="Language folder under client/i18n/locales (default: english)",
+    )
+
+    args = parser.parse_args(list(argv) if argv is not None else None)
+
+    intro_path = resolve_intro_json_path(args.language)
+    output_path = resolve_output_path(intro_path)
+
     try:
-        data = load_intro_data(INTRO_JSON)
+        data = load_intro_data(intro_path)
         blocks = collect_blocks(data)
-        write_blocks(OUTPUT_JSON, blocks)
+        write_blocks(output_path, blocks)
         removed_blocks = remove_blocks_from_intro(data)
         if removed_blocks:
-            write_intro_data(INTRO_JSON, data)
+            write_intro_data(intro_path, data)
     except Exception as exc:  # noqa: BLE001
         print(exc, file=sys.stderr)
         return 1
 
     try:
-        output_display = OUTPUT_JSON.resolve().relative_to(Path.cwd())
+        output_display = output_path.resolve().relative_to(Path.cwd())
     except ValueError:
-        output_display = OUTPUT_JSON.resolve()
+        output_display = output_path.resolve()
 
     if removed_blocks:
         print(
