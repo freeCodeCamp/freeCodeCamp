@@ -94,15 +94,6 @@ jobs:
       matrix:
         browsers: [chromium]
         node-version: [22]
-    services:
-      mongodb:
-        image: mongo:8.0
-        ports:
-          - 27017:27017
-      mailpit:
-        image: axllent/mailpit
-        ports:
-          - 1025:1025
     steps:
       - name: Set Action Environment Variables
         run: |
@@ -147,7 +138,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:shared
+          pnpm compile:ts
           pnpm run build:curriculum
 
       - name: Start apps
