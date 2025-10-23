@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
@@ -75,19 +76,23 @@ function DailyCodingChallengeCalendarDay({
         {dayNumber}
       </span>
 
-      <span className='dc-number'>#{challengeNumber}</span>
+      <div className='dc-number'>#{challengeNumber}</div>
 
       <div className='dc-info'>
         <div className='dc-title'>{title}</div>
 
-        <hr />
+        {/* <hr /> */}
 
         {completedLanguages.length === 2 ? (
           <span className='dc-checkmark dc-big-checkmark completed'>
+            <span className='dc-spacer'>
+              <Spacer size='s' />
+            </span>
             <GreenPass />
           </span>
         ) : (
           <div className='dc-languages'>
+            <hr />
             <div className='dc-language'>
               <div className='dc-language-icon'>
                 <JavaScriptIcon />

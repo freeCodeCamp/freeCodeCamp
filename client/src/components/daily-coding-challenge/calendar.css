@@ -44,9 +44,7 @@
 .dc-number {
   font-style: italic;
   color: var(--gray-45);
-  position: absolute;
-  bottom: 0;
-  right: 5px;
+  text-align: center;
 }
 
 .dc-info {
@@ -59,7 +57,7 @@
   width: 100%;
   text-align: center;
   align-self: center;
-  margin-top: 20px;
+  margin-top: 5px;
   height: 50px;
   margin-bottom: -5px;
 }
@@ -126,13 +124,8 @@
   color: var(--primary-background);
 }
 
-.available:hover .language-icon svg path,
-.available:active .language-icon svg path,
-.available:hover .completed svg circle,
-.available:active .completed svg circle {
-  fill: var(--primary-background);
-}
-
+.available:hover .dc-language-icon svg path,
+.available:active .dc-language-icon svg path,
 .available:hover .completed svg circle,
 .available:active .completed svg circle {
   fill: var(--primary-background);
@@ -151,35 +144,23 @@
   stroke: var(--primary-color);
 }
 
-/* .calendar-day svg,
-.empty-cirle {
-  width: calc(10px + 2vw);
-  height: calc(10px + 2vw);
-  max-width: 40px;
-  max-height: 40px;
+.available:hover .dc-title,
+.available:active .dc-title,
+.available:hover .dc-language-name,
+.available:active .dc-language-name {
+  color: var(--primary-background);
 }
 
-.empty-cirle {
-  width: calc(10px + 2vw);
-  height: calc(10px + 2vw);
-  max-width: 40px;
-  max-height: 40px;
-  border-radius: 50%;
-  border: 2px solid var(--primary-color);
-} */
+.available:hover .dc-number,
+.available:active .dc-number {
+  color: var(--quaternary-background);
+}
 
 @media (max-width: 500px) {
   .calendar-day {
     min-height: 75px;
   }
 }
-
-/* @media (max-width: 1050px) {
-  .calendar-weekday-labels,
-  .calendar-grid {
-    margin: 0;
-  }
-} */
 
 @media (max-width: 1345px) {
   .calendar-day-number,
@@ -224,6 +205,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 80%;
+  }
+
+  .dc-spacer {
+    display: none;
   }
 }
 
@@ -233,12 +219,17 @@
     padding: 0;
   }
 
+  .dc-number {
+    text-align: right;
+    padding-right: 5px;
+  }
+
   .dc-languages {
     padding: 0;
   }
 
   .dc-big-checkmark svg {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 }
