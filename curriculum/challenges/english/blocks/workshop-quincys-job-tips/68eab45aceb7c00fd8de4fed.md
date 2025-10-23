@@ -45,7 +45,7 @@ const blockquoteEl = document.querySelector('main > section:nth-of-type(2) > blo
 assert.exists(blockquoteEl?.getAttribute('cite'));
 ```
 
-Your `cite` attribute of the `blockquote` element should have the value `https://www.freecodecamp.org/news/learn-to-code-book/`.
+The `cite` attribute of your `blockquote` element should have the value `https://www.freecodecamp.org/news/learn-to-code-book/`.
 
 ```js
 const blockquoteEl = document.querySelector('main > section:nth-of-type(2) > blockquote');
