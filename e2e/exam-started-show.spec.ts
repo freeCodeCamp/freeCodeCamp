@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import intro from '../client/i18n/locales/english/intro.json';
+import intro from '../client/i18n/locales/english/blocks-intro.json';
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
@@ -39,9 +39,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
     for (let i = 0; i < QUESTION_COUNT; i++) {
       await expect(headerTitle).toBeVisible();
       await expect(headerTitle).toContainText(
-        intro['foundational-c-sharp-with-microsoft'].blocks[
-          'foundational-c-sharp-with-microsoft-certification-exam'
-        ].title
+        intro['foundational-c-sharp-with-microsoft-certification-exam'].title
       );
 
       await expect(page.getByTestId('exam-show-question-time')).toContainText(
@@ -75,9 +73,7 @@ test.describe('Exam Show E2E Test Suite for started exam', () => {
     const headerTitle = page.getByTestId('exam-show-title');
     await expect(headerTitle).toBeVisible();
     await expect(headerTitle).toContainText(
-      intro['foundational-c-sharp-with-microsoft'].blocks[
-        'foundational-c-sharp-with-microsoft-certification-exam'
-      ].title
+      intro['foundational-c-sharp-with-microsoft-certification-exam'].title
     );
     await expect(page.getByTestId('exam-show-question-time')).toContainText(
       translations.learn.exam.time.split(':')[0]

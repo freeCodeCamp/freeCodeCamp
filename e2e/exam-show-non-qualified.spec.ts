@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import intro from '../client/i18n/locales/english/intro.json';
+import intro from '../client/i18n/locales/english/blocks-intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
 
 const examUrl =
@@ -20,9 +20,7 @@ test.describe('Exam Show E2E Test Suite for non-qualified user', () => {
     const header = page.getByTestId('challenge-title');
     await expect(header).toBeVisible();
     await expect(header).toContainText(
-      intro['foundational-c-sharp-with-microsoft'].blocks[
-        'foundational-c-sharp-with-microsoft-certification-exam'
-      ].title
+      intro['foundational-c-sharp-with-microsoft-certification-exam'].title
     );
   });
 
