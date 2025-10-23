@@ -1,6 +1,6 @@
 {
   "name": "Relational Databases Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-relational-databases",

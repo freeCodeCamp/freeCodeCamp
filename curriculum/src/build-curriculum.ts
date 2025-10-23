@@ -1,26 +1,36 @@
-const fs = require('fs');
-const path = require('path');
+import { readdirSync, readFileSync, existsSync } from 'fs';
+import { resolve, basename } from 'path';
 
-const { isEmpty, isUndefined } = require('lodash');
-const debug = require('debug')('fcc:build-curriculum');
+import { isEmpty, isUndefined } from 'lodash';
+import debug from 'debug';
 
-const {
+import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
+import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import {
   SuperblockCreator,
   BlockCreator,
-  transformSuperBlock
-} = require('./build-superblock');
+  transformSuperBlock,
+  BlockInfo
+} from './build-superblock.js';
 
-const { buildCertification } = require('./build-certification');
-const { applyFilters, closestFilters, getSuperOrder } = require('./utils');
-const {
+import { buildCertification } from './build-certification.js';
+import {
+  applyFilters,
+  closestFilters,
+  Filter,
+  getSuperOrder
+} from './utils.js';
+import {
   getContentDir,
   getLanguageConfig,
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
   getBlockStructurePath,
-  getBlockStructureDir
-} = require('./file-handler');
+  getBlockStructureDir,
+  type BlockStructure
+} from './file-handler.js';
+const log = debug('fcc:build-curriculum');
 
 /**
  * Creates a BlockCreator instance for a specific language with appropriate configuration
@@ -32,7 +42,11 @@ const {
  * @param {string} [opts.structureDir] - Directory containing curriculum structure
  * @returns {BlockCreator} A configured BlockCreator instance
  */
-const getBlockCreator = (lang, skipValidation, opts) => {
+export const getBlockCreator = (
+  lang: string,
+  skipValidation?: boolean,
+  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string }
+) => {
   const {
     blockContentDir,
     i18nBlockContentDir,
@@ -63,9 +77,12 @@ const getBlockCreator = (lang, skipValidation, opts) => {
  * @param {string} params.text - The fallback English text to use if translation not found
  * @returns {Object} Object mapping language codes to translated text or fallback English text
  */
-function getTranslationEntry(dicts, { engId, text }) {
+export function getTranslationEntry(
+  dicts: Record<string, Record<string, unknown>>,
+  { engId, text }: { engId: string; text: string }
+) {
   return Object.keys(dicts).reduce((acc, lang) => {
-    const entry = dicts[lang][engId];
+    const entry = dicts[lang]?.[engId];
     if (entry) {
       return { ...acc, [lang]: entry };
     } else {
@@ -81,19 +98,18 @@ function getTranslationEntry(dicts, { engId, text }) {
  * @param {string} targetDictionariesDir - Path to the target (i18n or english) dictionaries directory
  * @returns {Object} Object mapping English comment text to translations in all languages
  */
-function createCommentMap(dictionariesDir, targetDictionariesDir) {
-  debug(
+export function createCommentMap(
+  dictionariesDir: string,
+  targetDictionariesDir: string
+): CommentDictionary {
+  log(
     `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
   );
-  const languages = fs.readdirSync(targetDictionariesDir);
+  const languages = readdirSync(targetDictionariesDir);
 
   const dictionaries = languages.reduce((acc, lang) => {
-    const commentsPath = path.resolve(
-      targetDictionariesDir,
-      lang,
-      'comments.json'
-    );
-    const commentsData = JSON.parse(fs.readFileSync(commentsPath, 'utf8'));
+    const commentsPath = resolve(targetDictionariesDir, lang, 'comments.json');
+    const commentsData = JSON.parse(readFileSync(commentsPath, 'utf8'));
     return {
       ...acc,
       [lang]: commentsData
@@ -101,22 +117,15 @@ function createCommentMap(dictionariesDir, targetDictionariesDir) {
   }, {});
 
   const COMMENTS_TO_TRANSLATE = JSON.parse(
-    fs.readFileSync(
-      path.resolve(dictionariesDir, 'english', 'comments.json'),
-      'utf8'
-    )
-  );
+    readFileSync(resolve(dictionariesDir, 'english', 'comments.json'), 'utf8')
+  ) as Record<string, string>;
 
   const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
-    fs.readFileSync(
-      path.resolve(
-        dictionariesDir,
-        'english',
-        'comments-to-not-translate.json'
-      ),
+    readFileSync(
+      resolve(dictionariesDir, 'english', 'comments-to-not-translate.json'),
       'utf8'
     )
-  );
+  ) as Record<string, string>;
 
   // map from english comment text to translations
   const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
@@ -126,7 +135,7 @@ function createCommentMap(dictionariesDir, targetDictionariesDir) {
         [text]: getTranslationEntry(dictionaries, { engId: id, text })
       };
     },
-    {}
+    {} as CommentDictionary
   );
 
   // map from english comment text to itself
@@ -144,63 +153,62 @@ function createCommentMap(dictionariesDir, targetDictionariesDir) {
       ...acc,
       [text]: englishEntry
     };
-  }, {});
+  }, {} as CommentDictionary);
 
   const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
 
   // the english entries need to be added here, because english is not in
   // languages
   Object.keys(allComments).forEach(comment => {
-    allComments[comment].english = comment;
+    allComments[comment]!.english = comment;
   });
 
   return allComments;
 }
 
 // Map of superblock filenames to their SuperBlocks enum values
-const superBlockNames = {
-  'responsive-web-design': 'responsive-web-design',
-  'javascript-algorithms-and-data-structures':
-    'javascript-algorithms-and-data-structures',
-  'front-end-development-libraries': 'front-end-development-libraries',
-  'data-visualization': 'data-visualization',
-  'back-end-development-and-apis': 'back-end-development-and-apis',
-  'quality-assurance': 'quality-assurance',
-  'scientific-computing-with-python': 'scientific-computing-with-python',
-  'data-analysis-with-python': 'data-analysis-with-python',
-  'information-security': 'information-security',
-  'coding-interview-prep': 'coding-interview-prep',
-  'machine-learning-with-python': 'machine-learning-with-python',
-  'relational-databases': 'relational-database',
-  'responsive-web-design-22': '2022/responsive-web-design',
+export const superBlockNames = {
+  'responsive-web-design': SuperBlocks.RespWebDesign,
+  'javascript-algorithms-and-data-structures': SuperBlocks.JsAlgoDataStruct,
+  'front-end-development-libraries': SuperBlocks.FrontEndDevLibs,
+  'data-visualization': SuperBlocks.DataVis,
+  'back-end-development-and-apis': SuperBlocks.BackEndDevApis,
+  'quality-assurance': SuperBlocks.QualityAssurance,
+  'scientific-computing-with-python': SuperBlocks.SciCompPy,
+  'data-analysis-with-python': SuperBlocks.DataAnalysisPy,
+  'information-security': SuperBlocks.InfoSec,
+  'coding-interview-prep': SuperBlocks.CodingInterviewPrep,
+  'machine-learning-with-python': SuperBlocks.MachineLearningPy,
+  'relational-databases': SuperBlocks.RelationalDb,
+  'responsive-web-design-22': SuperBlocks.RespWebDesignNew,
   'javascript-algorithms-and-data-structures-22':
-    'javascript-algorithms-and-data-structures-v8',
-  'the-odin-project': 'the-odin-project',
-  'college-algebra-with-python': 'college-algebra-with-python',
-  'project-euler': 'project-euler',
-  'foundational-c-sharp-with-microsoft': 'foundational-c-sharp-with-microsoft',
-  'a2-english-for-developers': 'a2-english-for-developers',
-  'rosetta-code': 'rosetta-code',
-  'python-for-everybody': 'python-for-everybody',
-  'b1-english-for-developers': 'b1-english-for-developers',
-  'full-stack-developer': 'full-stack-developer',
-  'a1-professional-spanish': 'a1-professional-spanish',
-  'a2-professional-spanish': 'a2-professional-spanish',
-  'a2-professional-chinese': 'a2-professional-chinese',
-  'basic-html': 'basic-html',
-  'semantic-html': 'semantic-html',
-  'a1-professional-chinese': 'a1-professional-chinese',
-  'dev-playground': 'dev-playground',
-  'full-stack-open': 'full-stack-open',
-  'responsive-web-design-v9': 'responsive-web-design-v9',
-  'javascript-v9': 'javascript-v9',
-  'front-end-development-libraries-v9': 'front-end-development-libraries-v9',
-  'python-v9': 'python-v9',
-  'relational-databases-v9': 'relational-databases-v9',
-  'back-end-development-and-apis-v9': 'back-end-development-and-apis-v9'
+    SuperBlocks.JsAlgoDataStructNew,
+  'javascript-v9': SuperBlocks.JsV9,
+  'the-odin-project': SuperBlocks.TheOdinProject,
+  'college-algebra-with-python': SuperBlocks.CollegeAlgebraPy,
+  'project-euler': SuperBlocks.ProjectEuler,
+  'foundational-c-sharp-with-microsoft': SuperBlocks.FoundationalCSharp,
+  'a2-english-for-developers': SuperBlocks.A2English,
+  'rosetta-code': SuperBlocks.RosettaCode,
+  'python-for-everybody': SuperBlocks.PythonForEverybody,
+  'b1-english-for-developers': SuperBlocks.B1English,
+  'full-stack-developer': SuperBlocks.FullStackDeveloper,
+  'a1-professional-spanish': SuperBlocks.A1Spanish,
+  'a2-professional-spanish': SuperBlocks.A2Spanish,
+  'a2-professional-chinese': SuperBlocks.A2Chinese,
+  'basic-html': SuperBlocks.BasicHtml,
+  'semantic-html': SuperBlocks.SemanticHtml,
+  'a1-professional-chinese': SuperBlocks.A1Chinese,
+  'dev-playground': SuperBlocks.DevPlayground,
+  'full-stack-open': SuperBlocks.FullStackOpen,
+  'responsive-web-design-v9': SuperBlocks.RespWebDesignV9,
+  'front-end-development-libraries-v9': SuperBlocks.FrontEndDevLibsV9,
+  'python-v9': SuperBlocks.PythonV9,
+  'relational-databases-v9': SuperBlocks.RelationalDbV9,
+  'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9
 };
 
-const superBlockToFilename = Object.entries(superBlockNames).reduce(
+export const superBlockToFilename = Object.entries(superBlockNames).reduce(
   (map, entry) => {
     return { ...map, [entry[1]]: entry[0] };
   },
@@ -210,41 +218,44 @@ const superBlockToFilename = Object.entries(superBlockNames).reduce(
 /**
  * Builds an array of superblock structures from a curriculum object
 
- * @param {string[]} superblocks - Array of superblock filename strings
+ * @param {string[]} superBlockFilenames - Array of superblock filename strings
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-function addSuperblockStructure(
-  superblocks,
+export function addSuperblockStructure(
+  superBlockFilenames: string[],
   showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
-  debug(`Building structure for ${superblocks.length} superblocks`);
+  log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
-  const superblockStructures = superblocks.map(superblockFilename => {
-    const superblockName = superBlockNames[superblockFilename];
+  const superblockStructures = superBlockFilenames.map(filename => {
+    const superblockName =
+      superBlockNames[filename as keyof typeof superBlockNames];
     if (!superblockName) {
-      throw new Error(`Superblock name not found for ${superblockFilename}`);
+      throw new Error(`Superblock name not found for ${filename}`);
     }
 
     return {
       name: superblockName,
-      blocks: transformSuperBlock(getSuperblockStructure(superblockFilename), {
+      blocks: transformSuperBlock(getSuperblockStructure(filename), {
         showComingSoon
       })
     };
   });
 
-  debug(
+  log(
     `Successfully built ${superblockStructures.length} superblock structures`
   );
 
   return superblockStructures;
 }
 
-function addBlockStructure(
-  superblocks,
+type ProcessedBlock = BlockInfo & BlockStructure;
+
+export function addBlockStructure(
+  superblocks: { name: SuperBlocks; blocks: BlockInfo[] }[],
   _getBlockStructure = getBlockStructure
-) {
+): { name: SuperBlocks; blocks: ProcessedBlock[] }[] {
   return superblocks.map(superblock => ({
     ...superblock,
     blocks: superblock.blocks.map((block, index) => ({
@@ -260,8 +271,8 @@ function addBlockStructure(
  * Returns a list of all the superblocks that contain the given block
  * @param {string} block
  */
-function getSuperblocks(
-  block,
+export function getSuperblocks(
+  block: string,
   _addSuperblockStructure = addSuperblockStructure
 ) {
   const { superblocks } = getCurriculumStructure();
@@ -274,23 +285,23 @@ function getSuperblocks(
     .map(({ name }) => name);
 }
 
-function validateBlocks(superblocks, blockStructureDir) {
+function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
   const withSuperblockStructure = addSuperblockStructure(superblocks, true);
   const blockInSuperblocks = withSuperblockStructure
     .flatMap(({ blocks }) => blocks)
     .map(b => b.dashedName);
   for (const block of blockInSuperblocks) {
     const blockPath = getBlockStructurePath(block);
-    if (!fs.existsSync(blockPath)) {
+    if (!existsSync(blockPath)) {
       throw Error(
         `Block "${block}" is in a superblock, but has no block structure file at ${blockPath}`
       );
     }
   }
 
-  const blockStructureFiles = fs
-    .readdirSync(blockStructureDir)
-    .map(file => path.basename(file, '.json'));
+  const blockStructureFiles = readdirSync(blockStructureDir).map(file =>
+    basename(file, '.json')
+  );
 
   for (const block of blockStructureFiles) {
     if (!blockInSuperblocks.includes(block)) {
@@ -301,40 +312,45 @@ function validateBlocks(superblocks, blockStructureDir) {
   }
 }
 
-async function parseCurriculumStructure(filters) {
+export async function parseCurriculumStructure(filter?: Filter) {
   const curriculum = getCurriculumStructure();
   const blockStructureDir = getBlockStructureDir();
   if (isEmpty(curriculum.superblocks))
     throw Error('No superblocks found in curriculum.json');
   if (isEmpty(curriculum.certifications))
     throw Error('No certifications found in curriculum.json');
-  debug(`Found ${curriculum.superblocks.length} superblocks to build`);
-  debug(`Found ${curriculum.certifications.length} certifications to build`);
+  log(`Found ${curriculum.superblocks.length} superblocks to build`);
+  log(`Found ${curriculum.certifications.length} certifications to build`);
 
   validateBlocks(curriculum.superblocks, blockStructureDir);
 
   const superblockList = addBlockStructure(
     addSuperblockStructure(curriculum.superblocks)
   );
-  const refinedFilters = closestFilters(filters, superblockList);
-  const fullSuperblockList = applyFilters(superblockList, refinedFilters);
+  const refinedFilter = closestFilters(superblockList, filter);
+  const fullSuperblockList = applyFilters(superblockList, refinedFilter);
   return {
     fullSuperblockList,
     certifications: curriculum.certifications
   };
 }
 
-async function buildCurriculum(lang, filters) {
+export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
 
-  const builder = new SuperblockCreator({
-    blockCreator: getBlockCreator(lang, !isEmpty(filters))
-  });
+  const builder = new SuperblockCreator(
+    getBlockCreator(lang, !isEmpty(filters))
+  );
 
   const { fullSuperblockList, certifications } =
     await parseCurriculumStructure(filters);
 
-  const fullCurriculum = { certifications: { blocks: {} } };
+  const fullCurriculum: {
+    [key: string]: unknown;
+    certifications: { blocks: { [key: string]: unknown } };
+  } = {
+    certifications: { blocks: {} }
+  };
 
   const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
     const superOrder = getSuperOrder(name);
@@ -353,27 +369,13 @@ async function buildCurriculum(lang, filters) {
   }
 
   for (const cert of certifications) {
-    const certPath = path.resolve(contentDir, 'certifications', `${cert}.yml`);
-    if (!fs.existsSync(certPath)) {
+    const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
+    if (!existsSync(certPath)) {
       throw Error(`Certification file not found: ${certPath}`);
     }
-    debug(`=== Processing certification ${cert} ===`);
+    log(`=== Processing certification ${cert} ===`);
     fullCurriculum.certifications.blocks[cert] = buildCertification(certPath);
   }
 
   return fullCurriculum;
 }
-
-module.exports = {
-  addBlockStructure,
-  buildCurriculum,
-  getContentDir,
-  getBlockCreator,
-  getBlockStructure,
-  getSuperblockStructure,
-  createCommentMap,
-  superBlockToFilename,
-  getSuperblocks,
-  addSuperblockStructure,
-  parseCurriculumStructure
-};

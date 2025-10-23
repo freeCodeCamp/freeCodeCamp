@@ -1,7 +1,7 @@
 {
   "name": "Build a Number Pattern Generator",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "isUpcomingChange": false,
   "dashedName": "lab-number-pattern-generator",
   "challengeOrder": [

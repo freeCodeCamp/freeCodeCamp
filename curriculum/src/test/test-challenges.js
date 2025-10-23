@@ -1,35 +1,30 @@
-import { createRequire } from 'node:module';
-
 import { describe, it, beforeAll, expect } from 'vitest';
-import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 
 import {
   buildChallenge,
   runnerTypes
-} from '../../client/src/templates/Challenges/utils/build';
+} from '../../../client/src/templates/Challenges/utils/build';
 import {
   challengeTypes,
   hasNoSolution
-} from '../../shared/config/challenge-types';
-import { getLines } from '../../shared/utils/get-lines';
-import { prefixDoctype } from '../../client/src/templates/Challenges/utils/frame';
+} from '../../../shared/config/challenge-types';
+import { getLines } from '../../../shared/utils/get-lines';
+import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
 
-const require = createRequire(import.meta.url);
+import { getChallengesForLang } from '../get-challenges.js';
+import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
+import { testedLang } from '../utils.js';
 
-const { getChallengesForLang } = require('../get-challenges');
-const { challengeSchemaValidator } = require('../schema/challenge-schema');
-const { testedLang } = require('../utils');
+import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
+import { validateMetaSchema } from '../../schema/meta-schema.js';
+import { getBlockStructure } from '../file-handler.js';
+import ChallengeTitles from './utils/challenge-titles.js';
+import MongoIds from './utils/mongo-ids.js';
+import createPseudoWorker from './utils/pseudo-worker.js';
 
-const { curriculumSchemaValidator } = require('../schema/curriculum-schema');
-const { validateMetaSchema } = require('../schema/meta-schema');
-const { getBlockStructure } = require('../file-handler');
-const ChallengeTitles = require('./utils/challenge-titles');
-const MongoIds = require('./utils/mongo-ids');
-const createPseudoWorker = require('./utils/pseudo-worker');
-
-const { sortChallenges } = require('./utils/sort-challenges');
+import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
 
@@ -155,33 +150,28 @@ function populateTestsForLang({ lang, challenges, meta }) {
               const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
                 ({ id }) => id === challenge.id
               );
-
-              if (index < 0) {
-                throw new AssertionError(
-                  `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
-                );
-              }
+              expect(
+                index,
+                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
+              ).toBeGreaterThanOrEqual(0);
             });
 
             it('Common checks', function () {
               const result = validateChallenge(challenge);
 
-              if (result.error) {
-                throw new AssertionError(result.error);
-              }
+              expect(result.error).toBeUndefined();
               const { id, block, dashedName } = challenge;
-              assert.exists(
-                dashedName,
-                `Missing dashedName for challenge ${id} in ${block}.`
-              );
+
+              expect(dashedName).toBeDefined();
+
               const pathAndTitle = `${block}/${dashedName}`;
               const idVerificationMessage = mongoIds.check(id, block);
-              assert.isNull(idVerificationMessage, idVerificationMessage);
+              expect(idVerificationMessage).toBeNull();
               const dupeTitleCheck = challengeTitles.check(dashedName, block);
-              assert.isTrue(
+              expect(
                 dupeTitleCheck,
                 `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
-              );
+              ).toBeTruthy();
             });
 
             const { challengeType } = challenge;
@@ -235,10 +225,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
                   }
                 }
                 console.error = oldConsoleError;
-                assert(
-                  fails,
-                  'Test suite does not fail on the initial contents'
-                );
+                expect(fails, 'Test suite should fail on the initial contents');
               },
               timePerTest * tests.length + 20000
             );

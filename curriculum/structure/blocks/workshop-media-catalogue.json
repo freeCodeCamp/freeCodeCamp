@@ -6,7 +6,7 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     { "id": "68af272f60e009597dd861e1", "title": "Step 1" },
     { "id": "68af273960e009597dd861e2", "title": "Step 2" },

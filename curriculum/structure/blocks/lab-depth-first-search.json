@@ -10,6 +10,6 @@
       "title": "Implement the Depth-First Search Algorithm"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

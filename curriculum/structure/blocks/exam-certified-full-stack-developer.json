@@ -1,6 +1,6 @@
 {
   "name": "Certified Full Stack Developer Exam",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "exam-certified-full-stack-developer",

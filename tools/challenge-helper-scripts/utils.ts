@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { uniq } from 'lodash';
 
 import { challengeTypes } from '../../shared/config/challenge-types';
-import { parseCurriculumStructure } from '../../curriculum/build-curriculum';
+import { parseCurriculumStructure } from '../../curriculum/src/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';

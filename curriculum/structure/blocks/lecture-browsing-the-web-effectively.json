@@ -1,6 +1,6 @@
 {
   "name": "Browsing the Web Effectively",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-browsing-the-web-effectively",

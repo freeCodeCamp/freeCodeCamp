@@ -74,7 +74,7 @@ exports.createPages = async function createPages({
             id
             challenge {
               block
-              blockType
+              blockLabel
               blockLayout
               certification
               challengeType
@@ -304,7 +304,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       block: String
       blockId: String
       blockLayout: String
-      blockType: String
+      blockLabel: String
       certification: String
       challengeFiles: [FileContents]
       challengeOrder: Int

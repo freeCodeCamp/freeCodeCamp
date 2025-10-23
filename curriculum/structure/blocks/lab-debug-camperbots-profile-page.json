@@ -1,6 +1,6 @@
 {
   "name": "Debug Camperbot's Profile Page",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
