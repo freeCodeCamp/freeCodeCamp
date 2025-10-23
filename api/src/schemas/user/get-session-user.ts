@@ -4,7 +4,10 @@ import { examResults, profileUI, savedChallenge } from '../types.js';
 
 const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
   Type.Literal(k)
-);
+) as [
+  ReturnType<typeof Type.Literal<'javascript'>>,
+  ReturnType<typeof Type.Literal<'python'>>
+];
 
 export const getSessionUser = {
   response: {
