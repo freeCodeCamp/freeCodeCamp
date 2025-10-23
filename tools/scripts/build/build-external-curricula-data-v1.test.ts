@@ -21,12 +21,21 @@ import {
 } from './build-external-curricula-data-v1';
 
 const VERSION = 'v1';
-const intros = JSON.parse(
+const superBlockIntros = JSON.parse(
   readFileSync(
     path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
     'utf-8'
   )
 ) as CurriculumIntros;
+const blockIntros = JSON.parse(
+  readFileSync(
+    path.resolve(
+      __dirname,
+      '../../../client/i18n/locales/english/blocks-intro.json'
+    ),
+    'utf-8'
+  )
+) as Record<string, { title: string; intro?: string[] }>;
 
 describe('external curriculum data build', () => {
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
@@ -128,9 +137,11 @@ describe('external curriculum data build', () => {
       const randomBlockIndex = Math.floor(Math.random() * blocks.length);
       const randomBlock = blocks[randomBlockIndex];
 
-      expect(fileContent[superBlock].intro).toEqual(intros[superBlock].intro);
+      expect(fileContent[superBlock].intro).toEqual(
+        superBlockIntros[superBlock].intro
+      );
       expect(fileContent[superBlock].blocks[randomBlock].desc).toEqual(
-        intros[superBlock].blocks[randomBlock].intro
+        blockIntros[randomBlock].intro
       );
     });
   });

@@ -1,4 +1,4 @@
-import { mkdirSync, writeFileSync, readFileSync } from 'fs';
+import { mkdirSync, writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
@@ -7,6 +7,8 @@ import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
 import { patchBlock } from './patches';
+import superBlockIntros from '../../../client/i18n/locales/english/intro.json';
+import blockIntros from '../../../client/i18n/locales/english/blocks-intro.json';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
@@ -20,14 +22,15 @@ type BlockBasedCurriculumIntros = {
   };
 };
 
+type ChapterBasedSuperBlock = {
+  title: string;
+  intro: string[];
+  chapters: Record<string, string>;
+  modules: Record<string, string>;
+};
+
 export type ChapterBasedCurriculumIntros = {
-  [keyValue in SuperBlocks]: {
-    title: string;
-    intro: string[];
-    chapters: Record<string, string>;
-    modules: Record<string, string>;
-    blocks: Record<string, { title: string; intro: string[] }>;
-  };
+  [keyValue in SuperBlocks]: ChapterBasedSuperBlock;
 };
 
 export type Curriculum<T> = {
@@ -103,20 +106,13 @@ const ver = 'v2';
 
 const staticFolderPath = resolve(__dirname, '../../../client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
-const blockIntroPath = resolve(
-  __dirname,
-  '../../../client/i18n/locales/english/intro.json'
-);
-const intros = JSON.parse(
-  readFileSync(blockIntroPath, 'utf-8')
-) as CurriculumIntros;
 
 export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.FullStackDeveloper,
       public: false,
-      title: intros[SuperBlocks.FullStackDeveloper].title
+      title: superBlockIntros[SuperBlocks.FullStackDeveloper].title
     }
   ],
 
@@ -124,12 +120,12 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
     {
       dashedName: SuperBlocks.A2English,
       public: true,
-      title: intros[SuperBlocks.A2English].title
+      title: superBlockIntros[SuperBlocks.A2English].title
     },
     {
       dashedName: SuperBlocks.B1English,
       public: true,
-      title: intros[SuperBlocks.B1English].title
+      title: superBlockIntros[SuperBlocks.B1English].title
     }
   ],
 
@@ -137,22 +133,22 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
     {
       dashedName: SuperBlocks.TheOdinProject,
       public: true,
-      title: intros[SuperBlocks.TheOdinProject].title
+      title: superBlockIntros[SuperBlocks.TheOdinProject].title
     },
     {
       dashedName: SuperBlocks.CodingInterviewPrep,
       public: false,
-      title: intros[SuperBlocks.CodingInterviewPrep].title
+      title: superBlockIntros[SuperBlocks.CodingInterviewPrep].title
     },
     {
       dashedName: SuperBlocks.ProjectEuler,
       public: false,
-      title: intros[SuperBlocks.ProjectEuler].title
+      title: superBlockIntros[SuperBlocks.ProjectEuler].title
     },
     {
       dashedName: SuperBlocks.RosettaCode,
       public: false,
-      title: intros[SuperBlocks.RosettaCode].title
+      title: superBlockIntros[SuperBlocks.RosettaCode].title
     }
   ],
 
@@ -160,77 +156,77 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
     {
       dashedName: SuperBlocks.RespWebDesignNew,
       public: true,
-      title: intros[SuperBlocks.RespWebDesignNew].title
+      title: superBlockIntros[SuperBlocks.RespWebDesignNew].title
     },
     {
       dashedName: SuperBlocks.JsAlgoDataStructNew,
       public: false,
-      title: intros[SuperBlocks.JsAlgoDataStructNew].title
+      title: superBlockIntros[SuperBlocks.JsAlgoDataStructNew].title
     },
     {
       dashedName: SuperBlocks.FrontEndDevLibs,
       public: false,
-      title: intros[SuperBlocks.FrontEndDevLibs].title
+      title: superBlockIntros[SuperBlocks.FrontEndDevLibs].title
     },
     {
       dashedName: SuperBlocks.DataVis,
       public: false,
-      title: intros[SuperBlocks.DataVis].title
+      title: superBlockIntros[SuperBlocks.DataVis].title
     },
     {
       dashedName: SuperBlocks.RelationalDb,
       public: false,
-      title: intros[SuperBlocks.RelationalDb].title
+      title: superBlockIntros[SuperBlocks.RelationalDb].title
     },
     {
       dashedName: SuperBlocks.BackEndDevApis,
       public: false,
-      title: intros[SuperBlocks.BackEndDevApis].title
+      title: superBlockIntros[SuperBlocks.BackEndDevApis].title
     },
     {
       dashedName: SuperBlocks.QualityAssurance,
       public: false,
-      title: intros[SuperBlocks.QualityAssurance].title
+      title: superBlockIntros[SuperBlocks.QualityAssurance].title
     },
     {
       dashedName: SuperBlocks.SciCompPy,
       public: false,
-      title: intros[SuperBlocks.SciCompPy].title
+      title: superBlockIntros[SuperBlocks.SciCompPy].title
     },
     {
       dashedName: SuperBlocks.DataAnalysisPy,
       public: true,
-      title: intros[SuperBlocks.DataAnalysisPy].title
+      title: superBlockIntros[SuperBlocks.DataAnalysisPy].title
     },
     {
       dashedName: SuperBlocks.InfoSec,
       public: false,
-      title: intros[SuperBlocks.InfoSec].title
+      title: superBlockIntros[SuperBlocks.InfoSec].title
     },
     {
       dashedName: SuperBlocks.MachineLearningPy,
       public: true,
-      title: intros[SuperBlocks.MachineLearningPy].title
+      title: superBlockIntros[SuperBlocks.MachineLearningPy].title
     },
     {
       dashedName: SuperBlocks.CollegeAlgebraPy,
       public: true,
-      title: intros[SuperBlocks.CollegeAlgebraPy].title
+      title: superBlockIntros[SuperBlocks.CollegeAlgebraPy].title
     },
     {
       dashedName: SuperBlocks.RespWebDesign,
       public: true,
-      title: intros[SuperBlocks.RespWebDesign].title
+      title: superBlockIntros[SuperBlocks.RespWebDesign].title
     },
     {
       dashedName: SuperBlocks.JsAlgoDataStruct,
       public: false,
-      title: intros[SuperBlocks.JsAlgoDataStruct].title
+      title: superBlockIntros[SuperBlocks.JsAlgoDataStruct].title
     },
     {
       dashedName: SuperBlocks.PythonForEverybody,
       public: true,
-      title: intros[SuperBlocks.PythonForEverybody].title
+      title: superBlockIntros[SuperBlocks.PythonForEverybody].title
     }
   ],
 
@@ -238,7 +234,7 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
     {
       dashedName: SuperBlocks.FoundationalCSharp,
       public: false,
-      title: intros[SuperBlocks.FoundationalCSharp].title
+      title: superBlockIntros[SuperBlocks.FoundationalCSharp].title
     }
   ]
 };
@@ -283,28 +279,30 @@ export function buildExtCurriculumDataV2(
     }
   }
 
-  function buildChapterBasedCurriculum(superBlockKey: SuperBlocks) {
+  function buildChapterBasedCurriculum(
+    superBlockKey: SuperBlocks.FullStackDeveloper
+  ) {
     const { chapters } = getSuperblockStructure('full-stack-developer') as {
       chapters: Chapter[];
     };
     const blocksWithData = curriculum[superBlockKey].blocks;
 
-    const superBlockIntros = intros[
+    const chapterBasedSuperBlock = superBlockIntros[
       superBlockKey
-    ] as ChapterBasedCurriculumIntros[SuperBlocks];
+    ] as ChapterBasedSuperBlock;
 
     // Skip upcoming chapter/module as the metadata of their blocks
     // is not included in the `curriculum` object.
     const allChapters = chapters.map(chapter => ({
       dashedName: chapter.dashedName,
-      name: superBlockIntros.chapters[chapter.dashedName],
+      name: chapterBasedSuperBlock.chapters[chapter.dashedName],
       comingSoon: chapter.comingSoon,
       chapterType: chapter.chapterType,
       modules: chapter.comingSoon
         ? []
         : chapter.modules.map(module => ({
             dashedName: module.dashedName,
-            name: superBlockIntros.modules[module.dashedName],
+            name: chapterBasedSuperBlock.modules[module.dashedName],
             comingSoon: module.comingSoon,
             moduleType: module.moduleType,
             blocks: module.comingSoon
@@ -315,8 +313,13 @@ export function buildExtCurriculumDataV2(
                   .filter(block => blocksWithData[block])
                   .map(block => {
                     const blockData = blocksWithData[block];
+                    // @ts-expect-error intro seems to be missing for daily-coding-challenges
+                    const intros = blockIntros as Record<
+                      string,
+                      { title: string; intro: string[] }
+                    >;
                     return {
-                      intro: superBlockIntros.blocks[block].intro,
+                      intro: intros[block].intro,
                       meta: patchBlock(
                         omit(blockData.meta, ['chapter', 'module'])
                       )
@@ -327,7 +330,7 @@ export function buildExtCurriculumDataV2(
 
     const superBlock = {
       [superBlockKey]: {
-        intro: intros[superBlockKey].intro,
+        intro: superBlockIntros[superBlockKey].intro,
         chapters: allChapters
       }
     };
@@ -336,19 +339,25 @@ export function buildExtCurriculumDataV2(
   }
 
   function buildBlockBasedCurriculum(superBlockKey: SuperBlocks) {
-    const blockNames = Object.keys(curriculum[superBlockKey].blocks);
+    const blockNames = Object.keys(
+      curriculum[superBlockKey].blocks
+    ) as (keyof typeof blockIntros)[];
     const blocks = blockNames.map(blockName => {
       const blockData = curriculum[superBlockKey].blocks[blockName];
-
+      // @ts-expect-error intro seems to be missing for daily-coding-challenges
+      const intros = blockIntros as Record<
+        string,
+        { title: string; intro: string[] }
+      >;
       return {
-        intro: intros[superBlockKey].blocks[blockName].intro,
+        intro: intros[blockName].intro,
         meta: patchBlock(blockData.meta)
       };
     });
 
     const superBlock = {
       [superBlockKey]: {
-        intro: intros[superBlockKey].intro,
+        intro: superBlockIntros[superBlockKey].intro,
         blocks
       }
     };

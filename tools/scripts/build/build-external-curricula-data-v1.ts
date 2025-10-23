@@ -1,9 +1,11 @@
-import { mkdirSync, writeFileSync, readFileSync } from 'fs';
+import { mkdirSync, writeFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import superBlockIntros from '../../../client/i18n/locales/english/intro.json';
+import blockIntros from '../../../client/i18n/locales/english/blocks-intro.json';
 import { patchBlock } from './patches';
 
 export type CurriculumIntros = {
@@ -72,13 +74,6 @@ export function buildExtCurriculumDataV1(
 ): void {
   const staticFolderPath = resolve(__dirname, '../../../client/static');
   const dataPath = `${staticFolderPath}/curriculum-data/`;
-  const blockIntroPath = resolve(
-    __dirname,
-    '../../../client/i18n/locales/english/intro.json'
-  );
-  const intros = JSON.parse(
-    readFileSync(blockIntroPath, 'utf-8')
-  ) as CurriculumIntros;
 
   mkdirSync(dataPath, { recursive: true });
 
@@ -93,7 +88,7 @@ export function buildExtCurriculumDataV1(
     writeToFile('available-superblocks', {
       superblocks: orderedSuperBlockInfo.map(x => ({
         ...x,
-        title: intros[x.dashedName].title
+        title: superBlockIntros[x.dashedName].title
       }))
     });
 
@@ -104,7 +99,8 @@ export function buildExtCurriculumDataV1(
       if (blockNames.length === 0) continue;
 
       superBlock[superBlockKey] = <GeneratedCurriculumProps>{};
-      superBlock[superBlockKey].intro = intros[superBlockKey]['intro'];
+      superBlock[superBlockKey].intro =
+        superBlockIntros[superBlockKey]['intro'];
       superBlock[superBlockKey].blocks = {};
 
       for (const blockName of blockNames) {
@@ -112,7 +108,9 @@ export function buildExtCurriculumDataV1(
           Block<Record<string, unknown>>
         >{};
 
-        const block = intros[superBlockKey]['blocks'][blockName];
+        const block = (
+          blockIntros as Record<string, { title: string; intro?: string[] }>
+        )[blockName];
 
         if (!block) {
           throw Error(
@@ -120,6 +118,8 @@ export function buildExtCurriculumDataV1(
           );
         }
 
+        // @ts-expect-error daily-coding-challenges does not have an intro, but
+        // this may be fine
         superBlock[superBlockKey]['blocks'][blockName]['desc'] = block['intro'];
 
         superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
