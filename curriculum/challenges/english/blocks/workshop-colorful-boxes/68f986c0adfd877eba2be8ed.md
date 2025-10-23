@@ -1,22 +1,22 @@
 ---
-id: 68ef2080ba680d4c8c0213aa
-title: Step 32
+id: 68f986c0adfd877eba2be8ed
+title: Step 24
 challengeType: 0
-dashedName: step-32
+dashedName: step-24
 ---
 
 # --description--
 
-Finally, change the last value in `flex` from `400px` to `250px` in the `box` class of our `styles.css` file.
+Now add an `align-items` property with the value `center` to the `box` class.
 
-The last value represents `flex-basis`. This property sets the starting size of a flex item before it grows or shrinks.
+The `align-items` property aligns flex items along the cross axis (perpendicular to the main axis). Since the `box` class has `flex-direction: column`, the cross axis is horizontal, so `center` will center items horizontally within the box.
 
 # --hints--
 
-Your `box` class should have a property `flex` with a value of `0 0 250px`.
+Add the property `align-items` with the value `center`
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 0 250px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('align-items'), 'center');
 ```
 
 # --seed--
@@ -67,7 +67,6 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.flex, '0 0 250px'
 ```
 
 ```css
---fcc-editable-region--
 h1 {
   text-align: center;
   margin-bottom: 10px;
@@ -81,23 +80,17 @@ h1 {
   padding: 10px;
   margin: 20px auto;
   height: 400px;
-  align-content: space-evenly;
+  align-content: space-around;
 }
-
+--fcc-editable-region--
 .box {
-  flex: 0 0 400px;
+  flex: 1 1 400px;
   max-height: 120px;
   color: #fff;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin: 10px;
-  font-weight: bold;
-  font-size: 1.125rem;
-  border-radius: 5px;
-  order: 0; 
 }
 --fcc-editable-region--
 ```
