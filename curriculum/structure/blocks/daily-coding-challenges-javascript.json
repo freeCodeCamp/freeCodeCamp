@@ -305,7 +305,7 @@
     },
     {
       "id": "68d2ba1468508398389487d0",
-      "title": "Challenge 75: Missile Strike"
+      "title": "Challenge 75: Hidden Treasure"
     },
     {
       "id": "68d30845cc08266018fc46bc",
@@ -322,6 +322,46 @@
     {
       "id": "68d30fc57588d97fd3027b30",
       "title": "Challenge 79: Navigator"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd62",
+      "title": "Challenge 80: Email Sorter"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd63",
+      "title": "Challenge 81: Nth Prime"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd64",
+      "title": "Challenge 82: SpOoKy~CaSe"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd65",
+      "title": "Challenge 83: Signature Validation"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd66",
+      "title": "Challenge 84: Infected"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a4",
+      "title": "Challenge 85: Word Counter"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a5",
+      "title": "Challenge 86: Image Search"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a6",
+      "title": "Challenge 87: Matrix Builder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a7",
+      "title": "Challenge 88: Weekday Finder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a8",
+      "title": "Challenge 89: Counting Cards"
     }
   ]
 }
