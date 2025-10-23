@@ -1,5 +1,4 @@
 import { describe, it, beforeAll, expect } from 'vitest';
-import { assert, AssertionError } from 'chai';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 
@@ -151,33 +150,28 @@ function populateTestsForLang({ lang, challenges, meta }) {
               const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
                 ({ id }) => id === challenge.id
               );
-
-              if (index < 0) {
-                throw new AssertionError(
-                  `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
-                );
-              }
+              expect(
+                index,
+                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
+              ).toBeGreaterThanOrEqual(0);
             });
 
             it('Common checks', function () {
               const result = validateChallenge(challenge);
 
-              if (result.error) {
-                throw new AssertionError(result.error);
-              }
+              expect(result.error).toBeUndefined();
               const { id, block, dashedName } = challenge;
-              assert.exists(
-                dashedName,
-                `Missing dashedName for challenge ${id} in ${block}.`
-              );
+
+              expect(dashedName).toBeDefined();
+
               const pathAndTitle = `${block}/${dashedName}`;
               const idVerificationMessage = mongoIds.check(id, block);
-              assert.isNull(idVerificationMessage, idVerificationMessage);
+              expect(idVerificationMessage).toBeNull();
               const dupeTitleCheck = challengeTitles.check(dashedName, block);
-              assert.isTrue(
+              expect(
                 dupeTitleCheck,
                 `All challenges within a block must have a unique dashed name. ${dashedName} (at ${pathAndTitle}) is already assigned`
-              );
+              ).toBeTruthy();
             });
 
             const { challengeType } = challenge;
@@ -231,10 +225,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
                   }
                 }
                 console.error = oldConsoleError;
-                assert(
-                  fails,
-                  'Test suite does not fail on the initial contents'
-                );
+                expect(fails, 'Test suite should fail on the initial contents');
               },
               timePerTest * tests.length + 20000
             );
