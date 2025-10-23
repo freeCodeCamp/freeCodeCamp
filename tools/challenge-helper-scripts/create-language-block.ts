@@ -2,7 +2,6 @@ import fs from 'fs/promises';
 import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
-import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
 import {
@@ -29,19 +28,9 @@ import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
 } from './helpers/create-project';
+import { updateIntroJson } from './helpers/update-intro';
 
 const helpCategories = ['English'] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateBlockArgs {
   superBlock: SuperBlocks;
@@ -71,7 +60,7 @@ async function createLanguageBlock(
   if (!title) {
     title = block;
   }
-  await updateIntroJson(superBlock, block, title);
+  await updateIntroJson(block, title);
 
   let challengeId: ObjectID;
 
@@ -114,27 +103,6 @@ async function createLanguageBlock(
 
   // TODO: remove once we stop relying on markdown in the client.
   await createIntroMD(superBlock, block, title);
-}
-
-async function updateIntroJson(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string
-) {
-  const introJsonPath = path.resolve(
-    __dirname,
-    '../../client/i18n/locales/english/intro.json'
-  );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
-  newIntro[superBlock].blocks[block] = {
-    title,
-    intro: ['', '']
-  };
-  void withTrace(
-    fs.writeFile,
-    introJsonPath,
-    await format(JSON.stringify(newIntro), { parser: 'json' })
-  );
 }
 
 async function createMetaJson(
@@ -205,15 +173,6 @@ async function createQuizChallenge(
     dashedName: block,
     questionCount: questionCount
   });
-}
-
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
 }
 
 // fs Promise functions return errors, but no stack trace.  This adds back in
