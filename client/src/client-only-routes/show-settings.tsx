@@ -116,7 +116,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
       scroller.scrollTo(id, {
         smooth: true,
         duration: 500,
-        offset: -50
+        offset: -100
       });
     }
   };
