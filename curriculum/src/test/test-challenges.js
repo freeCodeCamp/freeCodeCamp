@@ -1,4 +1,4 @@
-import { describe, it, beforeAll, expect } from 'vitest';
+import { describe, it, beforeAll, expect, vi } from 'vitest';
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 
@@ -27,6 +27,32 @@ import createPseudoWorker from './utils/pseudo-worker.js';
 import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+vi.mock(
+  '../../client/src/templates/Challenges/utils/typescript-worker-handler',
+  async importOriginal => {
+    const actual = await importOriginal();
+
+    // ts and tsvfs must match the versions used in the typescript-worker.
+    const tsvfs = await import('@typescript/vfs-1.6.1');
+    const ts = await import('typescript-5.9.2');
+    // use the same TS compiler as the client
+    const tsCompiler = await import(
+      '../../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
+    );
+    const compiler = new tsCompiler.Compiler(ts, tsvfs);
+    await compiler.setup();
+    return {
+      ...actual,
+      checkTSServiceIsReady: () => Promise.resolve(true),
+      compileTypeScriptCode: code => {
+        const { result, error } = compiler.compile(code, 'index.tsx');
+        if (error) throw error;
+        return result;
+      }
+    };
+  }
+);
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
