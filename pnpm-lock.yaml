@@ -712,6 +712,15 @@ importers:
       '@babel/register':
         specifier: 7.23.7
         version: 7.23.7(@babel/core@7.23.7)
+      '@total-typescript/ts-reset':
+        specifier: ^0.6.1
+        version: 0.6.1
+      '@types/debug':
+        specifier: ^4.1.12
+        version: 4.1.12
+      '@types/js-yaml':
+        specifier: 4.0.5
+        version: 4.0.5
       '@types/polka':
         specifier: ^0.5.7
         version: 0.5.7
@@ -4434,6 +4443,9 @@ packages:
   '@total-typescript/ts-reset@0.5.1':
     resolution: {integrity: sha512-AqlrT8YA1o7Ff5wPfMOL0pvL+1X+sw60NN6CcOCqs658emD6RfiXhF7Gu9QcfKBH7ELY2nInLhKSCWVoNL70MQ==}
 
+  '@total-typescript/ts-reset@0.6.1':
+    resolution: {integrity: sha512-cka47fVSo6lfQDIATYqb/vO1nvFfbPw7uWLayIXIhGETj0wcOOlrlkobOMDNQOFr9QOafegUPq13V2+6vtD7yg==}
+
   '@trysound/sax@0.2.0':
     resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
     engines: {node: '>=10.13.0'}
@@ -4514,6 +4526,9 @@ packages:
 
   '@types/debug@0.0.30':
     resolution: {integrity: sha512-orGL5LXERPYsLov6CWs3Fh6203+dXzJkR7OnddIr2514Hsecwc8xRpzCapshBbKFImCsvS/mk6+FWiN5LyZJAQ==}
+
+  '@types/debug@4.1.12':
+    resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
 
   '@types/debug@4.1.9':
     resolution: {integrity: sha512-8Hz50m2eoS56ldRlepxSBa6PWEVCtzUo/92HgLc2qTMnotJNIm7xP+UZhyWoYsyOdd5dxZ+NZLb24rsKyFs2ow==}
@@ -19127,6 +19142,8 @@ snapshots:
 
   '@total-typescript/ts-reset@0.5.1': {}
 
+  '@total-typescript/ts-reset@0.6.1': {}
+
   '@trysound/sax@0.2.0': {}
 
   '@turist/fetch@7.2.0(node-fetch@2.7.0)':
@@ -19230,6 +19247,10 @@ snapshots:
       '@types/node': 20.11.20
 
   '@types/debug@0.0.30': {}
+
+  '@types/debug@4.1.12':
+    dependencies:
+      '@types/ms': 0.7.32
 
   '@types/debug@4.1.9':
     dependencies:
@@ -26857,7 +26878,7 @@ snapshots:
 
   micromark@3.2.0:
     dependencies:
-      '@types/debug': 4.1.9
+      '@types/debug': 4.1.12
       debug: 4.3.4(supports-color@8.1.1)
       decode-named-character-reference: 1.0.2
       micromark-core-commonmark: 1.1.0
@@ -31148,6 +31169,7 @@ snapshots:
       vite-node: 3.2.4(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@types/debug': 4.1.12
       '@types/node': 20.12.8
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       jsdom: 16.7.0
@@ -31191,6 +31213,7 @@ snapshots:
       vite-node: 3.2.4(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@types/debug': 4.1.12
       '@types/node': 20.12.8
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       jsdom: 26.1.0
@@ -31234,6 +31257,7 @@ snapshots:
       vite-node: 3.2.4(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@types/debug': 4.1.12
       '@types/node': 20.12.8
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       jsdom: 26.1.0
@@ -31277,6 +31301,7 @@ snapshots:
       vite-node: 3.2.4(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)
       why-is-node-running: 2.3.0
     optionalDependencies:
+      '@types/debug': 4.1.12
       '@types/node': 20.12.8
       '@vitest/ui': 3.2.4(vitest@3.2.4)
       jsdom: 26.1.0

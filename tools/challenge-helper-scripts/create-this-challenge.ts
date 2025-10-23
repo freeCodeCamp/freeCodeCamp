@@ -11,7 +11,7 @@ import ObjectID from 'bson-objectid';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../curriculum/file-handler';
+} from '../../curriculum/src/file-handler';
 import { createChallengeFile } from './utils';
 import { getProjectPath } from './helpers/get-project-info';
 import { getBlock, type Meta } from './helpers/project-metadata';
