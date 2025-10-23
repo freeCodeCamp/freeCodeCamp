@@ -276,7 +276,7 @@ export class Block extends Component<BlockProps> {
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
