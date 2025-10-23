@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest';
-import { isPoly } from '../shared-dist/utils/polyvinyl.js';
+import { isPoly } from '../../shared-dist/utils/polyvinyl.js';
 import {
   validateChallenges,
   buildBlock,
@@ -565,9 +565,7 @@ describe('SuperblockCreator class', () => {
         { dashedName: 'block-3' }
       ];
 
-      const parser = new SuperblockCreator({
-        blockCreator: mockBlockCreator
-      });
+      const parser = new SuperblockCreator(mockBlockCreator);
 
       const result = await parser.processSuperblock({
         blocks,

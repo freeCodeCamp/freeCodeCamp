@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { describe, test, expect } from 'vitest';
 
-import { allCerts } from '../client/config/cert-and-project-map.js';
+import { allCerts } from '../../client/config/cert-and-project-map.js';
 import { buildCertification } from './build-certification.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -12,6 +12,7 @@ const __dirname = path.dirname(__filename);
 describe('build-certification', () => {
   const certificationsDir = path.join(
     __dirname,
+    '..',
     'challenges/english/certifications'
   );
   const yamlFiles = fs

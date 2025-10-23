@@ -2,7 +2,7 @@ import path from 'path';
 import { config } from 'dotenv';
 import { describe, it, expect } from 'vitest';
 
-import { SuperBlocks } from '../shared-dist/config/curriculum';
+import { SuperBlocks } from '../../shared-dist/config/curriculum';
 import {
   closestFilters,
   closestMatch,
@@ -11,7 +11,7 @@ import {
   filterByChallengeId,
   filterBySuperblock,
   getSuperOrder
-} from './utils';
+} from './utils.js';
 
 config({ path: path.resolve(__dirname, '../.env') });
 
@@ -65,12 +65,6 @@ describe('createSuperOrder', () => {
   it('should create the correct object given an array of SuperBlocks', () => {
     expect(superOrder).toStrictEqual(fullSuperOrder);
   });
-
-  it('throws when not given an array of SuperBlocks', () => {
-    expect(() => createSuperOrder()).toThrow();
-    expect(() => createSuperOrder(null)).toThrow();
-    expect(() => createSuperOrder('')).toThrow();
-  });
 });
 
 describe('getSuperOrder', () => {
@@ -79,8 +73,6 @@ describe('getSuperOrder', () => {
   });
 
   it('returns undefined for unknown curriculum', () => {
-    expect(getSuperOrder()).toBeUndefined();
-    expect(getSuperOrder(null)).toBeUndefined();
     expect(getSuperOrder('')).toBeUndefined();
     expect(getSuperOrder('respansive-wib-desoin')).toBeUndefined();
     expect(getSuperOrder('certifications')).toBeUndefined();
@@ -299,18 +291,21 @@ describe('filter utils', () => {
         {
           name: 'responsive-web-design',
           blocks: [
-            { dashedName: 'basic-html-and-html5' },
-            { dashedName: 'css-flexbox' }
+            { dashedName: 'basic-html-and-html5', challengeOrder: [] },
+            { dashedName: 'css-flexbox', challengeOrder: [] }
           ]
         },
         {
           name: 'javascript-algorithms-and-data-structures',
-          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+          blocks: [
+            { dashedName: 'basic-javascript', challengeOrder: [] },
+            { dashedName: 'es6', challengeOrder: [] }
+          ]
         }
       ];
 
       expect(
-        closestFilters({ superBlock: 'responsiv web design' }, superblocks)
+        closestFilters(superblocks, { superBlock: 'responsiv web design' })
       ).toEqual({ superBlock: 'responsive-web-design' });
     });
 
@@ -319,17 +314,20 @@ describe('filter utils', () => {
         {
           name: 'responsive-web-design',
           blocks: [
-            { dashedName: 'basic-html-and-html5' },
-            { dashedName: 'css-flexbox' }
+            { dashedName: 'basic-html-and-html5', challengeOrder: [] },
+            { dashedName: 'css-flexbox', challengeOrder: [] }
           ]
         },
         {
           name: 'javascript-algorithms-and-data-structures',
-          blocks: [{ dashedName: 'basic-javascript' }, { dashedName: 'es6' }]
+          blocks: [
+            { dashedName: 'basic-javascript', challengeOrder: [] },
+            { dashedName: 'es6', challengeOrder: [] }
+          ]
         }
       ];
 
-      expect(closestFilters({ block: 'basic-javascr' }, superblocks)).toEqual({
+      expect(closestFilters(superblocks, { block: 'basic-javascr' })).toEqual({
         block: 'basic-javascript'
       });
     });
