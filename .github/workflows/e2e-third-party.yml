@@ -138,7 +138,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm run create:shared
+          pnpm compile:ts
           pnpm run build:curriculum
 
       - name: Start apps

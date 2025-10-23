@@ -1,5 +1,5 @@
 var glob = require('glob');
-const lint = require('../tools/scripts/lint');
+const lint = require('../../tools/scripts/lint');
 const { testedLang } = require('./utils');
 
 glob(`challenges/${testedLang()}/**/*.md`, (err, files) => {

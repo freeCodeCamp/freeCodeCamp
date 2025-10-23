@@ -13,8 +13,8 @@ import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure
-} from '../../curriculum/file-handler';
-import { superBlockToFilename } from '../../curriculum/build-curriculum';
+} from '../../curriculum/src/file-handler';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
 import {
   createQuizFile,
   createStepFile,

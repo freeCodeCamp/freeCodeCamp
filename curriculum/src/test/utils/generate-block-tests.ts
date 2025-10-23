@@ -4,10 +4,19 @@ import path from 'node:path';
 import _ from 'lodash';
 
 import { parseCurriculumStructure } from '../../build-curriculum.js';
+import { Filter } from '../../utils.js';
 
-const __dirname = import.meta.dirname;
+let __dirnameCompat: string;
 
-const testFilter = {
+if (typeof __dirname !== 'undefined') {
+  // CJS
+  __dirnameCompat = __dirname;
+} else {
+  // ESM – wrap in Function so CJS parsers don't see it
+  __dirnameCompat = new Function('return import.meta.dirname')() as string;
+}
+
+const testFilter: Filter = {
   block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
   challengeId: process.env.FCC_CHALLENGE_ID
     ? process.env.FCC_CHALLENGE_ID.trim()
@@ -17,7 +26,7 @@ const testFilter = {
     : undefined
 };
 
-const GENERATED_DIR = path.resolve(__dirname, '../blocks-generated');
+const GENERATED_DIR = path.resolve(__dirnameCompat, '../blocks-generated');
 
 async function main() {
   // clean and recreate directory
@@ -39,7 +48,7 @@ async function main() {
   console.log(`Generated ${blocks.length} block test file(s).`);
 }
 
-function generateSingleBlockFile(testFilter) {
+function generateSingleBlockFile(testFilter: Filter) {
   return `import { defineTestsForBlock } from '../test-challenges.js';
 
 await defineTestsForBlock(${JSON.stringify(testFilter)});

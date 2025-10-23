@@ -1,22 +1,27 @@
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 import { describe, it, expect, vi } from 'vitest';
 
+import { SuperBlocks } from '../../shared/config/curriculum.js';
 import {
   createCommentMap,
   addBlockStructure,
-  getSuperblocks
+  getSuperblocks,
+  superBlockNames
 } from './build-curriculum.js';
 import { getCurriculumStructure } from './file-handler.js';
 
 vi.mock('./file-handler');
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 describe('createCommentMap', () => {
-  const dictionaryDir = path.resolve(__dirname, '__fixtures__', 'dictionaries');
+  const dictionaryDir = path.resolve(
+    import.meta.dirname,
+    '..',
+    '__fixtures__',
+    'dictionaries'
+  );
   const incompleteDictDir = path.resolve(
-    __dirname,
+    import.meta.dirname,
+    '..',
     '__fixtures__',
     'incomplete-dicts'
   );
@@ -167,5 +172,15 @@ describe('getSuperblocks', () => {
       'superblock-1',
       'superblock-2'
     ]);
+  });
+});
+
+describe('superBlockNames', () => {
+  it('should have mappings for each SuperBlock', () => {
+    const superBlocks = Object.values(SuperBlocks).sort(); // sorting to make comparison clearer
+    const names = Object.values(superBlockNames).sort();
+
+    expect(names).toHaveLength(superBlocks.length);
+    expect(names).toEqual(expect.arrayContaining(superBlocks));
   });
 });

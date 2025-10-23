@@ -1,10 +1,10 @@
 import { assert, describe, it, vi } from 'vitest';
-import { testedLang } from '../utils';
 
 vi.stubEnv('SHOW_UPCOMING_CHANGES', 'true');
 
-// We need to use dynamic import here to ensure the environment variable is set
+// We need to use dynamic imports here to ensure the environment variable is set
 // before the module is loaded.
+const { testedLang } = await import('../utils.js');
 const { getChallenges } = await import('./test-challenges.js');
 
 describe('Daily Coding Challenges', async () => {
