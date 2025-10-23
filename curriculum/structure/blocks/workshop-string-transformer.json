@@ -17,7 +17,7 @@
     { "id": "68e44abea678a65b877864dc", "title": "Step 10" },
     { "id": "68e44c305f1f935d949d76bb", "title": "Step 11" }
   ],
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
 }

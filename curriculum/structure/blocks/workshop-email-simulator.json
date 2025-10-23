@@ -4,7 +4,7 @@
   "dashedName": "workshop-email-simulator",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     { "id": "6852ea0c3cadb54e897acdac", "title": "Step 1" },
     { "id": "6852ef95ccc27660275692cd", "title": "Step 2" },
