@@ -182,7 +182,7 @@ const ShowFillInTheBlank = ({
   };
 
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `blocksIntro:${block}.title`
   )} - ${title}`;
 
   const sceneSubject = new SceneSubject();

@@ -351,7 +351,7 @@ function ShowExam(props: ShowExamProps) {
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `blocksIntro:${block}.title`
   )}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 

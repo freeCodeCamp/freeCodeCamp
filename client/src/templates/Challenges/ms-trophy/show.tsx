@@ -154,7 +154,7 @@ function MsTrophy(props: MsTrophyProps) {
   } = props;
 
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `blocksIntro:${block}.title`
   )} - ${title}`;
 
   return (

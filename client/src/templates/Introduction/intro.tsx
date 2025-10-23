@@ -30,7 +30,7 @@ function IntroductionPage({
     ? firstLesson.fields.slug
     : '/strange-place';
   const blockTitle =
-    t(`intro:${superBlock}.blocks.${block}.title`) + ' | freeCodeCamp.org';
+    t(`blocksIntro:${block}.title`) + ' | freeCodeCamp.org';
   return (
     <LearnLayout>
       <Helmet>

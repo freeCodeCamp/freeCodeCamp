@@ -133,7 +133,7 @@ const ShowQuiz = ({
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
 
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `blocksIntro:${block}.title`
   )} - ${title}`;
 
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));

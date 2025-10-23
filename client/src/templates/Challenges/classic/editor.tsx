@@ -957,7 +957,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       breadcrumbRightLink = document.createElement('a');
     breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
     breadcrumbRightLink.innerHTML = t(
-      `intro:${superBlock}.blocks.${block}.title`
+      `blocksIntro:${block}.title`
     );
     breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
     breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);

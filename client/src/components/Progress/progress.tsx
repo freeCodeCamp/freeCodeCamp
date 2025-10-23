@@ -86,7 +86,7 @@ function Progress({
   updateSuperBlockStructures,
   superBlockStructures: superBlockStructuresFromStore
 }: ProgressProps): JSX.Element {
-  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  let blockTitle = t(`blocksIntro:${block}.title`);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)

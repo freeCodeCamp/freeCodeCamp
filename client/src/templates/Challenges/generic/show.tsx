@@ -129,7 +129,7 @@ const ShowGeneric = ({
   const container = useRef<HTMLElement | null>(null);
 
   const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
+    `blocksIntro:${block}.title`
   )} - ${title}`;
 
   useEffect(() => {

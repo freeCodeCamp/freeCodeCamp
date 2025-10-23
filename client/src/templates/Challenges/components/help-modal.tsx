@@ -40,7 +40,7 @@ export const generateSearchLink = (
   block: string,
   superBlock: string
 ) => {
-  const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
+  const titleText = t(`blocksIntro:${block}.title`);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
 

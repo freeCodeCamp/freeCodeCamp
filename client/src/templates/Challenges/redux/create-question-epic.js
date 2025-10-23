@@ -161,7 +161,7 @@ function createQuestionEpic(action$, state$, { window }) {
         userAgent
       });
       const challengeHeading = i18next.t('forum-help.challenge');
-      const blockTitle = i18next.t(`intro:${superBlock}.blocks.${block}.title`);
+      const blockTitle = i18next.t(`blocksIntro:${block}.title`);
       const endingText = `### ${browserInfoHeading}\n\n${userAgentHeading}\n\n### ${challengeHeading}\n${blockTitle} - ${challengeTitle}\n${challengeUrl}`;
 
       const camperCodeHeading = nonCodeChallenges.includes(challengeType)
@@ -196,7 +196,7 @@ function createQuestionEpic(action$, state$, { window }) {
 
       const titleText = window.encodeURIComponent(
         `${i18next.t(
-          `intro:${superBlock}.blocks.${block}.title`
+          `blocksIntro:${block}.title`
         )} - ${challengeTitle}`
       );
 
