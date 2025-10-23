@@ -127,22 +127,22 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     },
     dispatch
   );
+const handleHashChange = () => {
+  const id = window.location.hash.replace('#', '');
+  if (id) {
+    scroller.scrollTo(id, {
+      smooth: true,
+      duration: 500,
+      offset: -50
+    });
+  }
+};
 
 const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   const { t } = useTranslation();
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
-    const handleHashChange = () => {
-      const id = window.location.hash.replace('#', '');
-      if (id) {
-        scroller.scrollTo(id, {
-          smooth: true,
-          duration: 500,
-          offset: -50
-        });
-      }
-    };
 
     handleHashChange();
 

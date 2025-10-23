@@ -133,9 +133,6 @@
   },
   "packageManager": "pnpm@10.18.0",
   "pnpm": {
-    "peerDependencyRules": {
-      "allowedVersions": {}
-    },
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
       "@prisma/client",
