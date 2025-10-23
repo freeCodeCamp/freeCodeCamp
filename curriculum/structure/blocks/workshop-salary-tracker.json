@@ -4,7 +4,7 @@
   "dashedName": "workshop-salary-tracker",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     { "id": "68c15a2a1f0e70ca7154aba5", "title": "Step 1" },
     { "id": "68c16924498728d259e4781c", "title": "Step 2" },

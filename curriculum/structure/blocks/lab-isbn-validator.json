@@ -7,5 +7,5 @@
     { "id": "686b9720ee1d032bd77a480a", "title": "Debug an ISBN Validator" }
   ],
   "blockLayout": "link",
-  "blockType": "lab"
+  "blockLabel": "lab"
 }

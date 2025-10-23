@@ -2,7 +2,7 @@
   "name": "Build a Music Shopping Cart Page",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-music-shopping-cart-page",
   "helpCategory": "HTML-CSS",

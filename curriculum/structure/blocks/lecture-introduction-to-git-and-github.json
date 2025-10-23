@@ -1,6 +1,6 @@
 {
   "name": "Introduction to Git and GitHub",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-git-and-github",
