@@ -1,6 +1,6 @@
 {
   "name": "Build an fCC Authors Page",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

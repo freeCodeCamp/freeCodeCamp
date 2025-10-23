@@ -1,6 +1,6 @@
 {
   "name": "Introduction to Python",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-python",

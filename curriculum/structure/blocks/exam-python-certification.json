@@ -1,6 +1,6 @@
 {
   "name": "Python Certification Exam",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "exam-python-certification",

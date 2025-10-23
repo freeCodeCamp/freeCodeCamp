@@ -1,6 +1,6 @@
 {
   "name": "Asynchronous JavaScript Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-asynchronous-javascript",

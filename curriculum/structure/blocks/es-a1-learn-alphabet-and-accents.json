@@ -7,5 +7,5 @@
   "challengeOrder": [
     { "id": "68d2a85831f330ab9c100e87", "title": "Dialogue 1: I'm Tom" }
   ],
-  "blockType": "learn"
+  "blockLabel": "learn"
 }

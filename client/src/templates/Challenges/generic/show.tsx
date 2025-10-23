@@ -29,7 +29,6 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { BlockTypes } from '../../../../../shared-dist/config/blocks';
 import { getChallengePaths } from '../utils/challenge-paths';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
@@ -101,7 +100,6 @@ const ShowGeneric = ({
         assignments,
         bilibiliIds,
         block,
-        blockType,
         description,
         nodules,
         explanation,
@@ -144,7 +142,6 @@ const ShowGeneric = ({
       title,
       challengeType,
       helpCategory,
-      blockType,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -346,7 +343,7 @@ const ShowGeneric = ({
                 )}
 
                 <Button block={true} variant='primary' onClick={handleSubmit}>
-                  {blockType === BlockTypes.review
+                  {questions.length == 0
                     ? t('buttons.submit')
                     : t('buttons.check-answer')}
                 </Button>
@@ -386,7 +383,6 @@ export const query = graphql`
           cid
         }
         block
-        blockType
         challengeType
         description
         nodules {

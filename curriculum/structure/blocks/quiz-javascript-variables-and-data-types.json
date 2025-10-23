@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Variables and Data Types Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-javascript-variables-and-data-types",

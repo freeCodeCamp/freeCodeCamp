@@ -1,6 +1,6 @@
 {
   "name": "Build an All-True Property Validator",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

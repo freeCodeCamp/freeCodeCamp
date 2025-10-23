@@ -13,6 +13,6 @@
     }
   ],
   "helpCategory": "HTML-CSS",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list"
 }
