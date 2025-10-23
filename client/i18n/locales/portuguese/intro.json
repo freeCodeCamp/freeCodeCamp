@@ -1161,7 +1161,6 @@
       "Esta seção contém dezenas de desafios de programação que testam seu conhecimento de algoritmos, estruturas de dados e matemática. Ela também possui vários projetos adicionais, que você pode usar para fortalecer suas habilidades ou adicionar ao seu portfólio.",
       "Este trabalho incorpora material da <a href=\"https://www.wikipedia.org/\" target=\"_blank\">Wikipedia</a>, que está licenciada sob a <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\" target=\"_blank\">Creative Commons Attribution-ShareAlike License 4.0</a>. O conteúdo original pode ter sido modificado e adaptado. Para a versão inalterada e detalhes adicionais, veja a página original na <a href=\"https://www.wikipedia.org/\" target\"_blank\">Wikipedia</a>."
     ],
-    "note": "O Projeto Euler e o Rosetta Code foram transferidos para seus próprios cursos. Volte para o currículo para ver a lista de cursos que oferecemos.",
     "blocks": {
       "algorithms": {
         "title": "Algoritmos",
@@ -1833,10 +1832,12 @@
       "review-python": "Revisão de Python",
       "exam-python": "Exame de Python",
       "bash-fundamentals": "Fundamentos de Bash",
-      "relational-databases": "Bancos de Dados Relacionais",
+      "sql-and-postgresql": "SQL and PostgreSQL",
       "bash-scripting": "Scripts Bash",
       "sql-and-bash": "SQL e Bash",
       "git": "Git",
+      "review-relational-databases": "Relational Databases Review",
+      "exam-relational-databases": "Relational Databases Exam",
       "introduction-to-nodejs": "Introdução a Node.js",
       "nodejs-core-libraries": "Bibliotecas Principais do Node.js",
       "node-package-manager": "Node Package Manager",
@@ -1855,18 +1856,6 @@
       "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
     "module-intros": {
-      "js-a11y": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá a trabalhar com os atributos aria-expanded, aria-live e aria-controls dentro de suas aplicações HTML, CSS e JavaScript."
-        ]
-      },
-      "css-libraries-and-frameworks": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você será apresentado a bibliotecas de CSS, frameworks e preprocessadores, incluindo Tailwind CSS, Bootstrap e Sass. Você criará vários componentes usando Tailwind CSS e testará seu conhecimento dessas ferramentas com um pequeno questionário."
-        ]
-      },
       "data-visualization": {
         "note": "Disponível no Inverno de 2025",
         "intro": [
@@ -1877,30 +1866,6 @@
         "note": "Próximo Lançamento: Outono de 2025",
         "intro": [
           "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
-        ]
-      },
-      "python-basics": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você será apresentado ao Python, que é usado em muitos campos como ciência de dados, aprendizado de máquina, desenvolvimento web, script e automação, sistemas embarcados, IoT e mais. Você criará um workshop e lab para praticar os fundamentos do Python e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-loops-and-sequences": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá a trabalhar com listas, tuplas, funções lambda, laços, e mais. Você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-dictionaries-and-sets": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você será apresentado a dicionários, conjuntos e à biblioteca padrão do Python. Você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-error-handling": {
-        "note": "Próximo Lançamento: Outono de 2025",
-        "intro": [
-          "Neste módulo, você falará sobre mensagens de erro comuns, boas técnicas de depuração e tratamento de exceções. Você construirá um laboratório para praticar estes conceitos e fará um breve questionário para testar seu conhecimento."
         ]
       },
       "python-classes-and-objects": {
@@ -1945,10 +1910,10 @@
           "Neste módulo, você aprenderá sobre a linha de comando e comandos Bash comuns. Em seguida, você praticará suas habilidades com um workshop e fará um curto quiz para testar seu conhecimento."
         ]
       },
-      "relational-databases": {
-        "note": "Próximo Lançamento: Inverno de 2025",
+      "sql-and-postgresql": {
+        "note": "Coming Winter 2025",
         "intro": [
-          "Neste módulo, você aprenderá como trabalhar com bancos de dados relacionais que armazenam dados como coleções em tabelas. Alguns dos conceitos que aprenderá incluem inserção e visualização de dados da tabela, chaves primárias e estrangeiras em SQL, e mais. Em seguida, você construirá um workshop e laboratório para praticar esses conceitos e testar seus conhecimentos em um breve questionário."
+          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
         ]
       },
       "bash-scripting": {
@@ -3109,6 +3074,12 @@
           "Nesta lição, você aprenderá a modificar strings substituindo partes delas usando o método <code>replace()</code> e como repetir strings várias vezes usando o método <code>repeat()</code>."
         ]
       },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
+        ]
+      },
       "review-javascript-strings": {
         "title": "Revisão sobre strings em JavaScript",
         "intro": [
@@ -3569,6 +3540,12 @@
           "Neste laboratório, você criará uma calculadora de soma de Fibonacci ímpar que considera um número e retorna a soma de todos os números de Fibonacci ímpares até esse número."
         ]
       },
+      "lab-element-skipper": {
+        "title": "Implement an Element Skipper",
+        "intro": [
+          "In this lab you will create a function that skips elements in an array based on a specified step value."
+        ]
+      },
       "lab-optional-arguments-sum-function": {
         "title": "Crie uma Função de Soma de Argumentos Opcionais",
         "intro": [
@@ -3630,10 +3607,10 @@
           "Neste laboratório, você criará uma função que percorre um array de objetos e retorna um array de todos os objetos que têm pares de propriedade e valor correspondentes."
         ]
       },
-      "lab-sum-all-primes-calculator": {
-        "title": "Crie uma Calculadora de Soma de Números Primos",
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
         "intro": [
-          "Neste laboratório, você criará uma calculadora que soma todos os números primos até um determinado número."
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
         ]
       },
       "lab-range-based-lcm-calculator": {
@@ -4632,6 +4609,12 @@
           "Neste workshop, você aprenderá sobre classes, objetos e métodos em Python criando um inventário simples de instrumentos musicais."
         ]
       },
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
+      },
       "lab-budget-app": {
         "title": "Crie um Aplicativo de Orçamento",
         "intro": [
@@ -4821,8 +4804,10 @@
         ]
       },
       "workshop-breadth-first-search": {
-        "title": "Crie uma Busca em Largura",
-        "intro": [""]
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
       },
       "lab-depth-first-search": {
         "title": "Implemente o Algoritmo de Busca em Profundidade",
@@ -4831,8 +4816,10 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
       },
       "review-graphs-and-trees": {
         "title": "Revisão de Grafos e Árvores",
@@ -4920,16 +4907,16 @@
           "Para este projeto, você vai construir um banco de dados de corpos celestiais usando PostgreSQL."
         ]
       },
-      "review-relational-database": {
-        "title": "Revisão sobre banco de dados Relacional",
+      "review-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Review",
         "intro": [
-          "Reveja os conceitos de Banco de Dados Relacional para se preparar para o próximo questionário."
+          "Review SQL and PostgreSQL concepts to prepare for the upcoming quiz."
         ]
       },
-      "quiz-relational-database": {
-        "title": "Questionário sobre bancos de dados relacionais",
+      "quiz-sql-and-postgresql": {
+        "title": "SQL and PostgreSQL Quiz",
         "intro": [
-          "Teste o que você aprendeu sobre bancos de dados relacionais com este questionário."
+          "Test what you've learned about SQL and PostgreSQL with this quiz."
         ]
       },
       "lecture-understanding-bash-scripting": {
@@ -5070,6 +5057,12 @@
           "Revise os conceitos de bancos de dados relacionais para se preparar para o próximo questionário."
         ]
       },
+      "lecture-understanding-the-http-request-response-model": {
+        "title": "Understanding the HTTP Request-Response Model",
+        "intro": [
+          "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
       "exam-certified-full-stack-developer": {
         "title": "Exame para Desenvolvedor Full Stack Certificado",
         "intro": [
@@ -5082,9 +5075,13 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Markdown to HTML Converter",
+      "- Build a Drum Machine",
+      "- Build a Voting System",
+      "- Build a Bank Account Management Program",
+      "- Build a Weather App",
+      "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": {
       "javascript": "JavaScript"
@@ -6373,10 +6370,14 @@
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
     "intro": [
-      "This course teaches you the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
-      "To earn your Responsive Web Design Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
+      "To qualify for the exam, you must complete the following projects:",
+      "- Build a Survey Form",
+      "- Build a Page of Playing Cards",
+      "- Build a Book Inventory App",
+      "- Build a Technical Documentation Page",
+      "- Build a Product Landing Page",
+      "Pass the exam to earn your Responsive Web Design Certification."
     ],
     "chapters": {
       "html": "HTML",

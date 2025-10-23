@@ -20,7 +20,9 @@ exports.translateCommentsInChallenge = (challenge, lang, dict) => {
   if (challClone?.challengeFiles) {
     challClone.challengeFiles.forEach(challengeFile => {
       if (challengeFile.contents) {
-        let { text } = this.translateComments(
+        // It cannot be this.translateComments because 'this' does not exist
+        // when imported into an ES module.
+        let { text } = exports.translateComments(
           challengeFile.contents,
           lang,
           dict,

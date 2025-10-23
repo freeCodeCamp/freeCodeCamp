@@ -47,13 +47,16 @@ const mapDispatchToProps = {
 
 const createCertifiedMap = ({
   is2018DataVisCert,
+  isA2EnglishCert,
   isApisMicroservicesCert,
+  isJavascriptCertV9,
   isJsAlgoDataStructCert,
   isInfosecQaCert,
   isQaCertV7,
   isInfosecCertV7,
   isFrontEndLibsCert,
   isRespWebDesignCert,
+  isRespWebDesignCertV9,
   isDataVisCert,
   isFrontEndCert,
   isBackEndCert,
@@ -89,13 +92,13 @@ const createCertifiedMap = ({
   // be rendered. The new FullStackDeveloper certification is a normal
   // certification with projects.
   [Certification.FullStackDeveloper]: false,
-  [Certification.RespWebDesignV9]: false,
-  [Certification.JsV9]: false,
+  [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
+  [Certification.JsV9]: isJavascriptCertV9,
   [Certification.FrontEndDevLibsV9]: false,
   [Certification.PythonV9]: false,
   [Certification.RelationalDbV9]: false,
   [Certification.BackEndDevApisV9]: false,
-  [Certification.A2English]: false,
+  [Certification.A2English]: isA2EnglishCert,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,
   [Certification.A2Chinese]: false,
