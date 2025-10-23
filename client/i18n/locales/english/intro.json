@@ -6181,6 +6181,10 @@
       "es-a1-review-the-alphabet": {
         "title": "The Spanish Alphabet review",
         "intro": ["", ""]
+      },
+      "es-a1-practice-the-alphabet": {
+        "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
       }
     }
   },
