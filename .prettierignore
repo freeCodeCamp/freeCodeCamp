@@ -20,3 +20,4 @@ shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
 shared-dist
+dist
