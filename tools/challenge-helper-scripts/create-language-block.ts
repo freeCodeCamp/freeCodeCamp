@@ -227,6 +227,15 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+function getBlockPrefix(
+  superBlock: SuperBlocks,
+  blockLabel?: string
+): string | null {
+  // Only chapter-based super blocks use blockLabel so prefix only applies to them.
+  if (!chapterBasedSuperBlocks.includes(superBlock)) return null;
+  return `${superBlock}-${blockLabel}-`;
+}
+
 void getAllBlocks()
   .then(existingBlocks =>
     prompt([
@@ -238,11 +247,55 @@ void getAllBlocks()
         choices: Object.values(languageSuperBlocks)
       },
       {
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.learn,
+        type: 'list',
+        choices: Object.values(BlockLabel),
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock)
+      },
+      {
         name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this block?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
+        message: (answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          return prefix
+            ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
+            : 'What is the dashed name (in kebab-case) for this block?';
+        },
+        validate: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+
+          if (prefix) {
+            const uniquePart = block.slice(prefix.length);
+
+            // Check if user accidentally included block label at the end
+            if (answers.blockLabel) {
+              const blockLabelValues = Object.values(BlockLabel);
+              const endsWithLabel = blockLabelValues.some(label =>
+                uniquePart.endsWith(`-${label}`)
+              );
+              if (endsWithLabel) {
+                return `Block name should not end with a block label (e.g., '-${answers.blockLabel}'). The label is already in the prefix.`;
+              }
+            }
+          }
+
+          return validateBlockName(block, existingBlocks);
+        },
+        filter: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          const normalized = block.toLowerCase().trim();
+
+          if (prefix) {
+            // Strip prefix if already present (happens on re-validation), then re-add it
+            const withoutPrefix = normalized.startsWith(prefix)
+              ? normalized.slice(prefix.length)
+              : normalized;
+            return prefix + withoutPrefix;
+          }
+
+          return normalized;
         }
       },
       {
@@ -255,15 +308,6 @@ void getAllBlocks()
         default: 'English',
         type: 'list',
         choices: helpCategories
-      },
-      {
-        name: 'blockLabel',
-        message: 'Choose a block label',
-        default: BlockLabel.learn,
-        type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
         name: 'blockLayout',
