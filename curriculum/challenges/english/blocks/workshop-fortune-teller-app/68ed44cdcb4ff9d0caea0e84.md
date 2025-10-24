@@ -8,13 +8,17 @@ dashedName: step-22
 # --description--
 
 
-Since you’re calling the fetchCardsData() method inside the constructor, you now need to define it inside the class Create a private method named `fetchCardsData`
-
-
+Since you’re calling the fetchCardsData() method inside the constructor, you now need to define it inside the class. Create a private method named `fetchCardsData`. don't forget to make it asynchronous
 
 # --hints--
 
-Test 1
+you should have private method named fetchCardsData
+
+```js
+
+```
+
+your fetchCardsData method should be asynchronous
 
 ```js
 
