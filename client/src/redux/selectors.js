@@ -149,7 +149,7 @@ export const completionStateSelector = createSelector(
 
     const structure = superBlockStructures[challengeMeta.superBlock];
 
-    const chapters = structure.chapters ?? [];
+    const chapters = structure?.chapters ?? [];
 
     const getCompletionState = ({
       chapters,
