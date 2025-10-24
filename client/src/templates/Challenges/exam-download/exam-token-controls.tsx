@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 
@@ -16,23 +16,9 @@ export function ExamTokenControls(): JSX.Element {
 
   const getTokenQuery =
     examEnvironmentAuthorizationTokenApi.useGetExamEnvironmentAuthorizationTokenQuery();
-  const [token, setToken] = useState<string | null>(
-    getTokenQuery.data?.examEnvironmentAuthorizationToken ?? null
-  );
-
-  useEffect(() => {
-    const data = generateMutation.data;
-    if (!data) return;
-
-    setToken(data.examEnvironmentAuthorizationToken);
-  }, [generateMutation.data]);
-
-  useEffect(() => {
-    const data = getTokenQuery.data;
-    if (!data) return;
-
-    setToken(data.examEnvironmentAuthorizationToken);
-  }, [getTokenQuery.data]);
+  const existingToken = getTokenQuery.data?.examEnvironmentAuthorizationToken;
+  const updatedToken = generateMutation.data?.examEnvironmentAuthorizationToken;
+  const token = updatedToken ?? existingToken;
 
   function handleCopyExamToken() {
     navigator.clipboard.writeText(token ?? '').then(
