@@ -6,7 +6,7 @@ import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import EditorTabs from './editor-tabs';
 
-interface ActionRowProps {
+interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
@@ -21,23 +21,57 @@ interface ActionRowProps {
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
   togglePane: (pane: string) => void;
+  hasInteractiveEditor?: never;
 }
 
-const ActionRow = ({
-  hasPreview,
-  hasNotes,
-  togglePane,
-  showNotes,
-  showPreviewPane,
-  showPreviewPortal,
-  showConsole,
-  showInstructions,
-  areInstructionsDisplayable,
-  isDailyCodingChallenge,
-  dailyCodingChallengeLanguage,
-  setDailyCodingChallengeLanguage
-}: ActionRowProps): JSX.Element => {
+interface InteractiveEditorProps {
+  hasInteractiveEditor: true;
+  showInteractiveEditor: boolean;
+  toggleInteractiveEditor: () => void;
+}
+
+type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
+
+const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+
+  if (props.hasInteractiveEditor) {
+    const { toggleInteractiveEditor, showInteractiveEditor } = props;
+
+    return (
+      <div className='action-row'>
+        <div className='tabs-row'>
+          <div className='tabs-row-right'>
+            <button
+              aria-expanded={!!showInteractiveEditor}
+              aria-describedby='interactive-editor-desc'
+              onClick={toggleInteractiveEditor}
+            >
+              {t('learn.editor-tabs.interactive-editor')}
+            </button>
+            <span id='interactive-editor-desc' className='sr-only'>
+              {t('aria.interactive-editor-desc')}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const {
+    togglePane,
+    hasPreview,
+    hasNotes,
+    areInstructionsDisplayable,
+    showConsole,
+    showNotes,
+    showInstructions,
+    showPreviewPane,
+    showPreviewPortal,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage
+  } = props;
 
   // sets screen reader text for the two preview buttons
   function getPreviewBtnsSrText() {
