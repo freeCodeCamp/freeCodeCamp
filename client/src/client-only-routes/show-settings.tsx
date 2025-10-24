@@ -45,7 +45,7 @@ import './show-settings.css';
 import {
   currentCertifications,
   legacyCertifications
-} from '../../../shared/config/certification-settings';
+} from '../../../shared-dist/config/certification-settings';
 
 const { apiLocation } = envData;
 

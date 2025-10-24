@@ -192,7 +192,8 @@ const schema = Joi.object().keys({
           Joi.object().keys({
             ext: Joi.string().required(),
             name: Joi.string().required(),
-            contents: Joi.string().required()
+            contents: Joi.string().required(),
+            contentsHtml: Joi.string().required()
           })
         ),
         otherwise: Joi.string().required()
