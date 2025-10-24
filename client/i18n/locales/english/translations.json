@@ -325,6 +325,7 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "account": "Account Settings",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
       "honesty": "Academic Honesty Policy",

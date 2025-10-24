@@ -3,12 +3,15 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { scroller } from 'react-scroll';
 
-import { Container, Spacer } from '@freecodecamp/ui';
+import { Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
-
 import store from 'store';
+import {
+  scroller,
+  Link as ScrollLink,
+  Element as ScrollElement
+} from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
@@ -37,6 +40,12 @@ import {
   verifyCert,
   resetMyEditorLayout
 } from '../redux/settings/actions';
+
+import './show-settings.css';
+import {
+  currentCertifications,
+  legacyCertifications
+} from '../../../shared-dist/config/certification-settings';
 
 const { apiLocation } = envData;
 
@@ -107,7 +116,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
-
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
   const handleHashChange = () => {
@@ -174,68 +182,195 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Container>
-        <main>
-          <Spacer size='l' />
-          <h1
-            id='content-start'
-            className='text-center'
-            style={{ overflowWrap: 'break-word' }}
-            data-playwright-test-label='settings-heading'
+      <div className='settings-container'>
+        <aside className='settings-ledger'>
+          <ul>
+            <li>
+              <ScrollLink
+                to='account'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+                spy={true}
+                activeClass='active'
+              >
+                {t('settings.headings.account')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='privacy'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+                spy={true}
+                activeClass='active'
+              >
+                {t('settings.headings.privacy')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='email'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+                spy={true}
+                activeClass='active'
+              >
+                {t('settings.email.heading')}
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to='honesty'
+                className='ledger-anchor-btn'
+                smooth={true}
+                offset={-48}
+                duration={300}
+                spy={true}
+                activeClass='active'
+              >
+                {t('settings.headings.honesty')}
+              </ScrollLink>
+            </li>
+            <li>
+              <hr />
+            </li>
+          </ul>
+          <ScrollLink
+            to='certifications'
+            className='ledger-section-heading'
+            smooth={true}
+            offset={-48}
+            duration={300}
+            spy={true}
+            activeClass='active'
           >
-            {t('settings.for', { username: username })}
-          </h1>
-          <MiscSettings
-            keyboardShortcuts={keyboardShortcuts}
-            sound={sound}
-            editorLayout={editorLayout}
-            resetEditorLayout={resetEditorLayout}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            toggleSoundMode={toggleSoundMode}
-          />
+            {t('settings.headings.certs')}
+          </ScrollLink>
+          <ul>
+            {currentCertifications.map(slug => (
+              <li key={slug}>
+                <ScrollLink
+                  to={`cert-${slug}`}
+                  className={'ledger-anchor-btn'}
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                  spy={true}
+                  activeClass='active'
+                >
+                  {t(`certification.title.${slug}`, slug)}
+                </ScrollLink>
+              </li>
+            ))}
+          </ul>
+          <ScrollLink
+            to='legacy-certifications'
+            className='ledger-section-heading'
+            smooth={true}
+            offset={-48}
+            duration={300}
+            spy={true}
+            activeClass='active'
+          >
+            {t('settings.headings.legacy-certs')}
+          </ScrollLink>
+          <ul>
+            {legacyCertifications.map(slug => (
+              <li key={slug}>
+                <ScrollLink
+                  to={`cert-${slug}`}
+                  className={'ledger-anchor-btn'}
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                  spy={true}
+                  activeClass='active'
+                >
+                  {t(`certification.title.${slug}`, slug)}
+                </ScrollLink>
+              </li>
+            ))}
+          </ul>
+        </aside>
+        <main className='settings-main'>
+          <Spacer size='l' />
+          <ScrollElement name='username'>
+            <h1
+              id='content-start'
+              className='text-center'
+              style={{ overflowWrap: 'break-word' }}
+              data-playwright-test-label='settings-heading'
+            >
+              {t('settings.for', { username: username })}
+            </h1>
+          </ScrollElement>
+          <ScrollElement name='account'>
+            <MiscSettings
+              keyboardShortcuts={keyboardShortcuts}
+              sound={sound}
+              editorLayout={editorLayout}
+              resetEditorLayout={resetEditorLayout}
+              toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+              toggleSoundMode={toggleSoundMode}
+            />
+          </ScrollElement>
           <Spacer size='m' />
-          <Privacy />
+          <ScrollElement name='privacy'>
+            <Privacy />
+          </ScrollElement>
           <Spacer size='m' />
-          <Email
-            email={email}
-            isEmailVerified={isEmailVerified}
-            sendQuincyEmail={sendQuincyEmail}
-            updateQuincyEmail={updateQuincyEmail}
-          />
+          <ScrollElement name='email'>
+            <Email
+              email={email}
+              isEmailVerified={isEmailVerified}
+              sendQuincyEmail={sendQuincyEmail}
+              updateQuincyEmail={updateQuincyEmail}
+            />
+          </ScrollElement>
           <Spacer size='m' />
-          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          <ScrollElement name='honesty'>
+            <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          </ScrollElement>
           <Spacer size='m' />
           {examTokenFlag && <ExamToken />}
-          <Certification
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isA2EnglishCert={isA2EnglishCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isJavascriptCertV9={isJavascriptCertV9}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isRespWebDesignCertV9={isRespWebDesignCertV9}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
-            username={username}
-            verifyCert={verifyCert}
-            isEmailVerified={isEmailVerified}
-          />
+          <ScrollElement name='certifications'>
+            <Certification
+              completedChallenges={completedChallenges}
+              createFlashMessage={createFlashMessage}
+              is2018DataVisCert={is2018DataVisCert}
+              isA2EnglishCert={isA2EnglishCert}
+              isApisMicroservicesCert={isApisMicroservicesCert}
+              isBackEndCert={isBackEndCert}
+              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+              isDataVisCert={isDataVisCert}
+              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+              isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
+              isFrontEndCert={isFrontEndCert}
+              isFrontEndLibsCert={isFrontEndLibsCert}
+              isFullStackCert={isFullStackCert}
+              isJavascriptCertV9={isJavascriptCertV9}
+              isHonest={isHonest}
+              isInfosecCertV7={isInfosecCertV7}
+              isInfosecQaCert={isInfosecQaCert}
+              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isQaCertV7={isQaCertV7}
+              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRespWebDesignCert={isRespWebDesignCert}
+              isRespWebDesignCertV9={isRespWebDesignCertV9}
+              isSciCompPyCertV7={isSciCompPyCertV7}
+              isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              username={username}
+              verifyCert={verifyCert}
+              isEmailVerified={isEmailVerified}
+            />
+          </ScrollElement>
           {userToken && (
             <>
               <Spacer size='m' />
@@ -245,7 +380,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='m' />
           <DangerZone />
         </main>
-      </Container>
+      </div>
     </>
   );
 }
