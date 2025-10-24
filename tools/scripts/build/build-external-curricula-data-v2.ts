@@ -6,9 +6,9 @@ import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
-import { patchBlock } from './patches';
 import superBlockIntros from '../../../client/i18n/locales/english/intro.json';
 import blockIntros from '../../../client/i18n/locales/english/blocks-intro.json';
+import { patchBlock } from './patches';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
