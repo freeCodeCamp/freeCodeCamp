@@ -1,6 +1,6 @@
 {
   "name": "Design a Parent Teacher Conference Form",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-parent-teacher-conference-form",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
@@ -43,7 +43,7 @@
     { "id": "68eb3acbc5d86e4d53b58d91", "title": "Step 36" },
     { "id": "68eb3bdd830d4e552f0bb24a", "title": "Step 37" }
   ],
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
 }
