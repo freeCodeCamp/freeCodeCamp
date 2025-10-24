@@ -31,11 +31,3 @@ input[type='checkbox']:checked::before {
 audio {
   background-color: aqua;
 }
-
-.generic-challenge-container {
-  padding-top: var(--breadcrumbs-height);
-}
-
-.generic-challenge-container.has-action-row {
-  padding-top: calc(var(--breadcrumbs-height) + var(--action-row-height));
-}
