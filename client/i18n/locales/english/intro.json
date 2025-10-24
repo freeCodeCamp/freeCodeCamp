@@ -5035,6 +5035,18 @@
           "In these lectures, you will learn the fundamentals of JavaScript. Topics covered include, but are not limited to, variables, data types, how JavaScript interacts with HTML and CSS, strings, and much more."
         ]
       },
+      "lecture-introduction-to-strings": {
+        "title": "Introduction to Strings",
+        "intro": [
+          "In these lessons, you will learn how to work with strings and string concatenation."
+        ]
+      },
+      "lecture-understanding-code-clarity": {
+        "title": "Understanding Code Clarity",
+        "intro": [
+          "In these lessons, you will learn about comments in JavaScript and the role of semicolons in programming."
+        ]
+      },
       "workshop-greeting-bot": {
         "title": "Build a Greeting Bot",
         "intro": [
@@ -5108,6 +5120,12 @@
         "title": "Working with String Modification Methods",
         "intro": [
           "In this lecture you will learn how to modify strings by replacing parts of them using the <code>replace()</code> method and how to repeat strings multiple times using the <code>repeat()</code> method."
+        ]
+      },
+      "workshop-string-transformer": {
+        "title": "Build a String Transformer",
+        "intro": [
+          "In this workshop, you will practice working with the <code>replace()</code>, <code>replaceAll()</code> and <code>repeat()</code> methods."
         ]
       },
       "review-javascript-strings": {
@@ -5418,6 +5436,12 @@
           "In this lab, you will implement loops to repeat a string a specified number of times."
         ]
       },
+      "lab-missing-letter-detector": {
+        "title": "Build a Missing Letter Detector",
+        "intro": [
+          "In this lab, you will build a function that finds the missing letter in a given range of consecutive letters and returns it."
+        ]
+      },
       "review-javascript-loops": {
         "title": "JavaScript Loops Review",
         "intro": [
@@ -5485,6 +5509,12 @@
           "In these lectures, you will learn about the <code>var</code> keyword and why it is not recommended for use anymore. You will also learn about hoisting in JavaScript so you can avoid subtle bugs in your code."
         ]
       },
+      "lab-title-case-converter": {
+        "title": "Build a Title Case Converter",
+        "intro": [
+          "In this lab, you will build a function that converts a string to title case."
+        ]
+      },
       "lab-falsy-remover": {
         "title": "Implement a Falsy Remover",
         "intro": [
@@ -5504,6 +5534,18 @@
           "In this lecture, you will learn about modules, imports, and exports in JavaScript."
         ]
       },
+      "lecture-working-with-the-arguments-object-and-rest-parameters": {
+        "title": "Working With the Arguments Object and Rest Parameters",
+        "intro": [
+          "In these lessons, you will learn how to work with the <code>arguments</code> object and rest parameter syntax."
+        ]
+      },
+      "lab-unique-sorted-union": {
+        "title": "Implement a Unique Sorted Union",
+        "intro": [
+          "In this lab, you will create a function that takes two or more arrays and returns a new array of unique values in the order of the original provided arrays."
+        ]
+      },
       "lab-password-generator": {
         "title": "Build a Password Generator App",
         "intro": [
@@ -5516,10 +5558,28 @@
           "In this lab, you will design a sum all numbers algorithm. This algorithm takes an array of two numbers and returns the sum of those two numbers plus the sum of all the numbers between them."
         ]
       },
+      "lab-dna-pair-generator": {
+        "title": "Implement a DNA Pair Generator",
+        "intro": [
+          "In this lab you will implement a DNA base pairing algorithm that converts a single DNA strand into complementary base pairs."
+        ]
+      },
       "lab-html-entitiy-converter": {
         "title": "Implement an HTML Entity Converter",
         "intro": [
           "In this lab, you will convert special characters in a string to their corresponding HTML entities."
+        ]
+      },
+      "lab-odd-fibonacci-sum-calculator": {
+        "title": "Build an Odd Fibonacci Sum Calculator",
+        "intro": [
+          "In this lab you will build an odd Fibonacci sum calculator that takes a number and returns the sum of all odd Fibonacci numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-element-skipper": {
+        "title": "Implement an Element Skipper",
+        "intro": [
+          "In this lab you will create a function that skips elements in an array based on a specified step value."
         ]
       },
       "lab-optional-arguments-sum-function": {
@@ -5571,6 +5631,42 @@
           "In this lab, you will practice using higher order functions to find the symmetric difference between two arrays."
         ]
       },
+      "lab-value-remover-function": {
+        "title": "Implement a Value Remover Function",
+        "intro": [
+          "In this lab, you will create a function that removes all instances of a specified value from an array."
+        ]
+      },
+      "lab-matching-object-filter": {
+        "title": "Implement a Matching Object Filter",
+        "intro": [
+          "In this lab, you will create a function that looks through an array of objects and returns an array of all objects that have matching property and value pairs."
+        ]
+      },
+      "lab-prime-number-sum-calculator": {
+        "title": "Build a Prime Number Sum Calculator",
+        "intro": [
+          "In this lab you will build a prime number sum calculator that takes a number and returns the sum of all prime numbers that are less than or equal to that number."
+        ]
+      },
+      "lab-range-based-lcm-calculator": {
+        "title": "Implement a Range-Based LCM Calculator",
+        "intro": [
+          "In this lab, you will create a function that takes an array of two numbers and returns the least common multiple (LCM) of those two numbers and all the numbers between them."
+        ]
+      },
+      "lab-deep-flattening-tool": {
+        "title": "Create a Deep Flattening Tool",
+        "intro": [
+          "In this lab you will create a function that can flatten deeply nested arrays, handling any level of nesting without using built-in flat methods."
+        ]
+      },
+      "lab-all-true-property-validator": {
+        "title": "Build an All-True Property Validator",
+        "intro": [
+          "In this lab you will build a function that checks if all objects in an array have a truthy value for a specific property."
+        ]
+      },
       "review-javascript-higher-order-functions": {
         "title": "JavaScript Higher Order Functions Review",
         "intro": [
@@ -5594,6 +5690,12 @@
         "title": "Build a Storytelling App",
         "intro": [
           "In this workshop, you will build a storytelling app that will allow you to list different stories based on genre."
+        ]
+      },
+      "workshop-emoji-reactor": {
+        "title": "Build an Emoji Reactor",
+        "intro": [
+          "In this workshop, you will build an emoji reactor to practice <code>querySelector</code> and <code>querySelectorAll</code>."
         ]
       },
       "lab-favorite-icon-toggler": {
@@ -5743,6 +5845,25 @@
       "lab-regex-sandbox": {
         "title": "Build a RegEx Sandbox",
         "intro": ["In this lab you'll build a regex sandbox."]
+      },
+      "lab-spinal-case-converter": {
+        "title": "Implement a Spinal Case Converter",
+        "intro": [
+          "In this lab, you will create a function that converts a given string to spinal case which is a style of writing where all letters are lowercase and separated by hyphens."
+        ]
+      },
+      "lab-pig-latin": {
+        "title": "Implement a Pig Latin Translator",
+        "intro": [
+          "In this lab, you'll implement a Pig Latin translator using JavaScript.",
+          "You'll practice string manipulation, conditional logic, and regular expressions."
+        ]
+      },
+      "lab-smart-word-replacement": {
+        "title": "Build a Smart Word Replacement Function",
+        "intro": [
+          "In this lab, you will use regex to create a function that performs a search and replace operation on a given string."
+        ]
       },
       "review-javascript-regular-expressions": {
         "title": "JavaScript Regular Expressions Review",
@@ -6601,6 +6722,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "workshop-email-simulator": {
+        "title": "Build an Email Simulator",
+        "intro": [
+          "In this workshop you will implement classes and objects by building an email simulator that simulates sending, receiving, and managing emails between different users."
+        ]
+      },
       "lab-budget-app": {
         "title": "Build a Budget App",
         "intro": [
@@ -7419,6 +7546,12 @@
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
         ]
       },
+      "lab-html-audio-and-video-player": {
+        "title": "Build an HTML Audio and Video Player",
+        "intro": [
+          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
+        ]
+      },
       "lecture-working-with-images-and-svgs": {
         "title": "Working with Images and SVGs",
         "intro": [
@@ -7435,6 +7568,12 @@
         "title": "Working with the iframe Element",
         "intro": [
           "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+        ]
+      },
+      "workshop-build-a-video-display-using-iframe": {
+        "title": "Build a Video Display Using iframe",
+        "intro": [
+          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
         ]
       },
       "lab-video-compilation-page": {
@@ -7578,10 +7717,22 @@
           "In these lectures, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
         ]
       },
+      "workshop-debug-coding-journey-blog-page": {
+        "title": "Debug a Coding Journey Blog Page",
+        "intro": [
+          "In this workshop, you will debug and fix accessibility errors in a coding blog page."
+        ]
+      },
       "lecture-accessible-tables-forms": {
         "title": "Working with Accessible Tables and Forms",
         "intro": [
           "In these lectures, you will learn about how to create accessible tables and forms."
+        ]
+      },
+      "workshop-tech-conference-schedule": {
+        "title": "Build a Tech Conference Schedule Table",
+        "intro": [
+          "In this workshop, you will build an accessible tech conference schedule table."
         ]
       },
       "lecture-introduction-to-aria": {
@@ -7881,6 +8032,13 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "lab-feature-selection": {
+        "title": "Design a Feature Selection Page",
+        "intro": [
+          "In this lab, you'll build a feature selection page with custom-styled checkboxes.",
+          "You'll create feature cards with labels and checkboxes, then give custom styling to the checkboxes."
         ]
       },
       "review-styling-forms": {
