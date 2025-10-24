@@ -7,6 +7,6 @@
     { "id": "56533eb9ac21ba0edf2244cf", "title": "Build a Record Collection" }
   ],
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }

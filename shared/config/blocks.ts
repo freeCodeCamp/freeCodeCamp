@@ -1,4 +1,4 @@
-export enum BlockTypes {
+export enum BlockLabel {
   lecture = 'lecture',
   workshop = 'workshop',
   lab = 'lab',

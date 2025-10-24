@@ -1,6 +1,6 @@
 {
   "name": "The var Keyword and Hoisting",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-the-var-keyword-and-hoisting",

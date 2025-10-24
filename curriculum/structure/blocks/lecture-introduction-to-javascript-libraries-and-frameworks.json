@@ -1,6 +1,6 @@
 {
   "name": "Introduction to JavaScript Libraries and Frameworks",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-introduction-to-javascript-libraries-and-frameworks",

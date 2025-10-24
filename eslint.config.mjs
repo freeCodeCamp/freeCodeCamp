@@ -38,7 +38,7 @@ export default tseslint.config(
       '**/playwright*.config.ts',
       'playwright/**/*',
       'shared-dist/**/*',
-      'curriculum/dist/**/*'
+      '**/dist/**/*'
     ]
   },
   js.configs.recommended,

@@ -1,6 +1,6 @@
 {
   "name": "HTML Fundamentals",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-html-fundamentals",
