@@ -20,6 +20,7 @@ import { ChallengeNode } from '../../../redux/prop-types';
 import { isSignedInSelector } from '../../../redux/selectors';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
+import ExamTokenControls from './exam-token-controls';
 
 interface GitProps {
   tag_name: string;
@@ -156,8 +157,9 @@ function ShowExamDownload({
         {isSignedIn && (
           <>
             <h2>{t('exam.attempts')}</h2>
-            <Attempts id={id} />
+            <Attempts examChallengeId={id} />
             <Spacer size='l' />
+            <ExamTokenControls />
           </>
         )}
         <p>
@@ -165,6 +167,11 @@ function ShowExamDownload({
             version: latestVersion || '...'
           })}
         </p>
+        {/* TODO: confirm this works on MacOS */}
+        <Button href={'exam-environment://'}>
+          {t('exam.open-exam-application')}
+        </Button>
+        <Spacer size='s' />
         <Button
           disabled={!downloadLink}
           aria-disabled={!downloadLink}
@@ -186,6 +193,7 @@ function ShowExamDownload({
             {downloadLinks
               .filter(link => !link.match(/\.sig|\.json/))
               .map((link, index) => {
+                const urlEnd = link.split('/').pop() ?? '';
                 return (
                   <MenuItem
                     href={link}
@@ -193,7 +201,7 @@ function ShowExamDownload({
                     key={index}
                     variant='primary'
                   >
-                    {link}
+                    {urlEnd}
                   </MenuItem>
                 );
               })}
@@ -202,6 +210,7 @@ function ShowExamDownload({
         <Spacer size='l' />
         <strong>{t('exam.download-trouble')}</strong>{' '}
         <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
+        <Spacer size='l' />
       </Container>
     </LearnLayout>
   );
