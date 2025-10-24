@@ -6166,7 +6166,7 @@
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introdução e Visão Geral da Certificação",
-      "es-a1-module-alphabet-accents-and-punctuation": "Alfabeto, Acentos e Pontuação",
+      "es-a1-module-alphabet-and-special-characters": "Alfabeto, Acentos e Pontuação",
       "es-a1-module-greetings-and-farewells": "Saudações e Despedidas",
       "es-a1-module-introducing-yourself": "Apresentando-se",
       "es-a1-module-first-questions": "Primeiras Perguntas"
@@ -6176,7 +6176,7 @@
         "note": "Inverno de 2025",
         "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
       },
-      "es-a1-module-alphabet-accents-and-punctuation": {
+      "es-a1-module-alphabet-and-special-characters": {
         "note": "Inverno de 2025",
         "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
       },
