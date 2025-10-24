@@ -9,8 +9,7 @@ describe('generateSearchLink', () => {
     await i18n.reloadResources('en', 'intro');
     const link = generateSearchLink(
       'Step 10',
-      'learn-basic-javascript-by-building-a-role-playing-game',
-      'javascript-algorithms-and-data-structures-v8'
+      'learn-basic-javascript-by-building-a-role-playing-game'
     );
 
     expect(link).toBe(
@@ -21,8 +20,7 @@ describe('generateSearchLink', () => {
   it("should return a link with search query containing block name and challenge title if the title includes 'task'", () => {
     const link = generateSearchLink(
       'Task 10',
-      'learn-greetings-in-your-first-day-at-the-office',
-      'a2-english-for-developers'
+      'learn-greetings-in-your-first-day-at-the-office'
     );
 
     expect(link).toBe(
@@ -33,8 +31,7 @@ describe('generateSearchLink', () => {
   it("should return a link with search query containing only challenge title if the title does not include 'step' or 'task'", () => {
     const link = generateSearchLink(
       'Perform Basic String Formatting in C#',
-      'write-your-first-code-using-c-sharp',
-      'foundational-c-sharp-with-microsoft'
+      'write-your-first-code-using-c-sharp'
     );
 
     expect(link).toBe(
