@@ -49,6 +49,7 @@ const examEnvAttempt = Type.Object({
       passingPercent: Type.Number()
     })
   ]),
+  version: Type.Number(),
   status: Type.Enum(['InProgress', 'PendingModeration', 'Approved', 'Denied'])
 });
 
