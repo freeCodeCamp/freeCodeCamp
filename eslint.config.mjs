@@ -33,10 +33,12 @@ export default tseslint.config(
       'client/.cache/**/*',
       'client/public/**/*',
       'shared/**/*.js',
+      'shared/**/*.d.ts',
       'docs/**/*.md',
       '**/playwright*.config.ts',
       'playwright/**/*',
-      'shared-dist/**/*'
+      'shared-dist/**/*',
+      '**/dist/**/*'
     ]
   },
   js.configs.recommended,

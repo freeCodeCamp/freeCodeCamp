@@ -1,6 +1,6 @@
 {
   "name": "Build a Note Taking App",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "dashedName": "workshop-note-taking-app",

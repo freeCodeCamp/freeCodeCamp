@@ -73,7 +73,7 @@ exports.createPages = async function createPages({
             id
             challenge {
               block
-              blockType
+              blockLabel
               blockLayout
               certification
               challengeType
@@ -261,7 +261,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         process: require.resolve('process/browser')
       }
     },
-    plugins: newPlugins
+    plugins: newPlugins,
+    ignoreWarnings: [
+      warning => {
+        if (warning instanceof Error) {
+          if (warning.message.includes('mini-css-extract-plugin')) {
+            return true;
+          }
+        }
+        return false;
+      }
+    ]
   });
 };
 
@@ -300,7 +310,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       block: String
       blockId: String
       blockLayout: String
-      blockType: String
+      blockLabel: String
       certification: String
       challengeFiles: [FileContents]
       challengeOrder: Int
@@ -324,6 +334,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       isPrivate: Boolean
       module: String
       msTrophyId: String
+      nodules: [Nodule]
       notes: String
       order: Int
       prerequisites: [PrerequisiteChallenge]
@@ -461,6 +472,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       afterEach: String
       beforeAll: String
       afterAll: String
+    }
+
+    type Nodule {
+      type: String
+      data: JSON
     }
   `;
   createTypes(typeDefs);

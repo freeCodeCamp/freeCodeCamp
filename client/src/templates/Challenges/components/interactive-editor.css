@@ -1,0 +1,29 @@
+.interactive-editor-wrapper {
+  margin-bottom: 1rem;
+  border-radius: 4px;
+}
+
+.sp-cm .cm-gutters {
+  color: var(--gray-45);
+}
+
+.sp-tabs .sp-tab-button {
+  color: var(--gray-10) !important;
+}
+
+.sp-tabs .sp-tab-button[aria-selected='true'],
+.sp-tabs .sp-tab-button:hover {
+  background-color: var(--gray-10);
+  color: var(--gray-90) !important;
+}
+
+.sp-preview-actions .sp-button {
+  background-color: var(--gray-90);
+  color: var(--gray-10) !important;
+}
+
+.sp-preview-actions .sp-button:hover {
+  background-color: var(--gray-10) !important;
+  color: var(--gray-90) !important;
+  border-color: var(--gray-90) !important;
+}

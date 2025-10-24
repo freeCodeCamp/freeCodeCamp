@@ -1,6 +1,6 @@
 {
   "name": "Build an Emoji Reactor",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "dashedName": "workshop-emoji-reactor",

@@ -102,7 +102,6 @@ describe('/exam-environment/', () => {
           data: {
             examId,
             generatedExamId: mock.oid(),
-            startTimeInMS: Date.now(),
             startTime: new Date(),
             userId: defaultUserId
           }
@@ -134,7 +133,6 @@ describe('/exam-environment/', () => {
           data: {
             examId: mock.examId,
             generatedExamId: mock.oid(),
-            startTimeInMS: Date.now() - (1000 * 60 * 60 * 2 + 1000),
             startTime: new Date(Date.now() - (1000 * 60 * 60 * 2 + 1000)),
             userId: defaultUserId
           }
@@ -166,7 +164,6 @@ describe('/exam-environment/', () => {
           data: {
             examId: mock.examId,
             generatedExamId: mock.oid(),
-            startTimeInMS: Date.now(),
             startTime: new Date(),
             userId: defaultUserId
           }
@@ -238,7 +235,6 @@ describe('/exam-environment/', () => {
               userId: defaultUserId,
               examId: mock.examId,
               generatedExamId: mock.generatedExam.id,
-              startTimeInMS: Date.now(),
               startTime: new Date(),
               questionSets: []
             }
@@ -342,7 +338,6 @@ describe('/exam-environment/', () => {
         const recentExamAttempt = {
           ...mock.examAttempt,
           // Set start time such that exam has just expired
-          startTimeInMS: Date.now() - examTotalTimeInMS,
           startTime: new Date(Date.now() - examTotalTimeInMS)
         };
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
@@ -375,8 +370,6 @@ describe('/exam-environment/', () => {
           },
           data: {
             // Set start time such that exam has expired, but retake time -1s has passed
-            startTimeInMS:
-              Date.now() - (examTotalTimeInMS + (examRetakeTimeInMS - 1000)),
             startTime: new Date(
               Date.now() - (examTotalTimeInMS + (examRetakeTimeInMS - 1000))
             )
@@ -408,8 +401,6 @@ describe('/exam-environment/', () => {
         // Set start time such that exam has expired, but 24 hours + 1s has passed
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
-        recentExamAttempt.startTimeInMS =
-          Date.now() - examTotalTimeInMS + (24 * 60 * 60 * 1000 + 1000);
         recentExamAttempt.startTime = new Date(
           Date.now() - (examTotalTimeInMS + (24 * 60 * 60 * 1000 + 1000))
         );
@@ -501,8 +492,8 @@ describe('/exam-environment/', () => {
           data: {
             startTime: new Date(
               Date.now() -
-                mock.exam.config.totalTimeInMS -
-                mock.exam.config.retakeTimeInMS
+                mock.exam.config.totalTimeInS * 1000 -
+                mock.exam.config.retakeTimeInS * 1000
             )
           }
         });
@@ -537,8 +528,8 @@ describe('/exam-environment/', () => {
           data: {
             startTime: new Date(
               Date.now() -
-                mock.exam.config.totalTimeInMS -
-                mock.exam.config.retakeTimeInMS
+                mock.exam.config.totalTimeInS * 1000 -
+                mock.exam.config.retakeTimeInS * 1000
             )
           }
         });
@@ -602,8 +593,6 @@ describe('/exam-environment/', () => {
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          startTimeInMS: expect.any(Number),
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)
         });
@@ -721,9 +710,7 @@ describe('/exam-environment/', () => {
               note: mock.exam.config.note,
               passingPercent: mock.exam.config.passingPercent,
               totalTimeInS: mock.exam.config.totalTimeInS,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInS: mock.exam.config.retakeTimeInS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
+              retakeTimeInS: mock.exam.config.retakeTimeInS
             },
             id: mock.examId
           }
@@ -798,9 +785,7 @@ describe('/exam-environment/', () => {
               note: mock.exam.config.note,
               passingPercent: mock.exam.config.passingPercent,
               totalTimeInS: mock.exam.config.totalTimeInS,
-              totalTimeInMS: mock.exam.config.totalTimeInMS,
-              retakeTimeInS: mock.exam.config.retakeTimeInS,
-              retakeTimeInMS: mock.exam.config.retakeTimeInMS
+              retakeTimeInS: mock.exam.config.retakeTimeInS
             },
             id: mock.examId
           }
@@ -816,7 +801,6 @@ describe('/exam-environment/', () => {
         const recentExamAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
-          startTimeInMS: Date.now() - examTotalTimeInMS,
           startTime: new Date(Date.now() - examTotalTimeInMS)
         };
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
@@ -837,8 +821,6 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.examEnvironmentExamAttempt.update({
           where: { id: recentExamAttempt.id },
           data: {
-            startTimeInMS:
-              Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000),
             startTime: new Date(
               Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000)
             )
@@ -862,8 +844,6 @@ describe('/exam-environment/', () => {
         const examAttempt = {
           ...mock.examAttempt,
           userId: defaultUserId,
-          startTimeInMS:
-            Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000),
           startTime: new Date(
             Date.now() - (examTotalTimeInMS + examRetakeTimeInMS + 1000)
           )
@@ -962,7 +942,6 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1003,7 +982,6 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1015,7 +993,6 @@ describe('/exam-environment/', () => {
         const examAttempt = structuredClone(mock.examAttempt);
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
-        examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
         examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
@@ -1044,7 +1021,6 @@ describe('/exam-environment/', () => {
             passingPercent: 80
           },
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1100,7 +1076,6 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1131,7 +1106,6 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1143,7 +1117,6 @@ describe('/exam-environment/', () => {
         const examAttempt = structuredClone(mock.examAttempt);
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
-        examAttempt.startTimeInMS = Date.now() - examTotalTimeInMS;
         examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
@@ -1170,7 +1143,6 @@ describe('/exam-environment/', () => {
             passingPercent: 80
           },
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets
         };
 
@@ -1221,7 +1193,6 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          startTimeInMS: attempt.startTimeInMS,
           questionSets: attempt.questionSets,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           version: expect.any(Number)

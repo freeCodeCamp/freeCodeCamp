@@ -129,7 +129,7 @@ const quizJoi = Joi.object().keys({
 const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
-  blockType: Joi.when('superBlock', {
+  blockLabel: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
     then: Joi.valid(
       'workshop',
@@ -182,6 +182,24 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
+  // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
+  nodules: Joi.array().items(
+    Joi.object().keys({
+      type: Joi.valid('paragraph', 'interactiveEditor').required(),
+      data: Joi.when('type', {
+        is: ['interactiveEditor'],
+        then: Joi.array().items(
+          Joi.object().keys({
+            ext: Joi.string().required(),
+            name: Joi.string().required(),
+            contents: Joi.string().required(),
+            contentsHtml: Joi.string().required()
+          })
+        ),
+        otherwise: Joi.string().required()
+      })
+    })
+  ),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',

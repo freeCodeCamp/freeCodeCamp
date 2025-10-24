@@ -1,9 +1,9 @@
 import { join } from 'path';
 import { describe, it, expect, vi } from 'vitest';
-import { getBlockStructure } from '../../../curriculum/file-handler';
+import { getBlockStructure } from '../../../curriculum/src/file-handler';
 import { getMetaData } from './project-metadata';
 
-vi.mock('../../../curriculum/file-handler');
+vi.mock('../../../curriculum/src/file-handler');
 
 const commonPath = join('curriculum', 'challenges', 'blocks');
 const block = 'block-name';
