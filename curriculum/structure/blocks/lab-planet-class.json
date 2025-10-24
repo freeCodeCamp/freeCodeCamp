@@ -7,6 +7,6 @@
   "challengeOrder": [
     { "id": "68e76b1ce8216249d04df670", "title": "Build a Planet Class" }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

@@ -235,7 +235,7 @@ export type Attempt = {
       status: 'Approved';
       result: {
         passed: boolean;
-        percent: number;
+        score: number;
       };
     }
 );
@@ -454,6 +454,34 @@ export const examAttempts = createApi({
     getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
       query: challengeId =>
         `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    })
+  })
+});
+
+export const examEnvironmentAuthorizationTokenApi = createApi({
+  reducerPath: 'exam-environment-authorization-token',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    postGenerateExamEnvironmentAuthorizationToken: build.mutation<
+      ExamTokenResponse,
+      void
+    >({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'POST'
+      })
+    }),
+    getExamEnvironmentAuthorizationToken: build.query<ExamTokenResponse, void>({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'GET'
+      })
     })
   })
 });

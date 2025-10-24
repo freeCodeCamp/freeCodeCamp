@@ -6,13 +6,14 @@ import { Loader } from '../../../components/helpers';
 import { Attempt, examAttempts } from '../../../utils/ajax';
 
 interface AttemptsProps {
-  id: string;
+  examChallengeId: string;
 }
 
-export function Attempts({ id }: AttemptsProps) {
+export function Attempts({ examChallengeId }: AttemptsProps) {
   const { t } = useTranslation();
 
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+  const examIdsQuery =
+    examAttempts.useGetExamIdsByChallengeIdQuery(examChallengeId);
   const [getAttempts, attemptsMutation] =
     examAttempts.useGetExamAttemptsByExamIdMutation();
 
@@ -21,7 +22,11 @@ export function Attempts({ id }: AttemptsProps) {
       return;
     }
 
-    const examId = examIdsQuery.data.at(0)!.examId;
+    const examId = examIdsQuery.data.at(0)?.examId;
+    if (examId === undefined) {
+      return;
+    }
+
     void getAttempts(examId);
   }, [examIdsQuery.data, getAttempts]);
 
@@ -40,18 +45,14 @@ export function Attempts({ id }: AttemptsProps) {
 
   const attempts = attemptsMutation.data;
 
-  if (attempts === undefined) {
-    return <Loader />;
-  }
-
-  if (attempts.length === 0) {
+  if (attempts === undefined || attempts.length === 0) {
     return <p>{t('exam.no-attempts-yet')}</p>;
   }
 
   function renderScore(attempt: Attempt) {
     switch (attempt.status) {
       case 'Approved':
-        return `${attempt.result.percent}%`;
+        return `${attempt.result.score.toFixed(2)}%`;
       case 'Denied':
         return t('exam.denied');
       case 'InProgress':
