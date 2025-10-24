@@ -543,11 +543,7 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
-        <HelpModal
-          challengeTitle={title}
-          challengeBlock={blockName}
-          superBlock={superBlock}
-        />
+        <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal

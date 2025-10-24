@@ -152,7 +152,6 @@ function ShowExam(props: ShowExamProps) {
           fields: { blockName },
           instructions,
           prerequisites,
-          superBlock,
           title,
           translationPending
         }
@@ -526,11 +525,7 @@ function ShowExam(props: ShowExamProps) {
               </Button>
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={blockName}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
           </Row>
         </Container>
       </LearnLayout>
@@ -569,7 +564,6 @@ export const query = graphql`
           id
           title
         }
-        superBlock
         title
         translationPending
       }

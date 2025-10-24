@@ -356,11 +356,7 @@ const ShowGeneric = ({
                 <Spacer size='l' />
               </Col>
               <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={blockName}
-                superBlock={superBlock}
-              />
+              <HelpModal challengeTitle={title} challengeBlock={blockName} />
             </Row>
           </Container>
         </Container>

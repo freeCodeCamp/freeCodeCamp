@@ -360,11 +360,7 @@ function ShowCodeAlly({
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={block} />
           </Row>
         </Container>
       </LearnLayout>

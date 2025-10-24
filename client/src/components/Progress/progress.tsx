@@ -40,13 +40,11 @@ const mapStateToProps = createSelector(
     {
       challengeType,
       id,
-      block,
-      superBlock
+      block
     }: {
       challengeType: number;
       id: string;
       block: string;
-      superBlock: string;
     },
     completedChallengesInBlock: number,
     completedPercent: number,
@@ -56,7 +54,6 @@ const mapStateToProps = createSelector(
     challengeType,
     id,
     block,
-    superBlock,
     completedChallengesInBlock,
     completedPercent,
     superBlockStructures
@@ -77,7 +74,6 @@ function Progress({
   currentBlockIds,
   block,
   id,
-  superBlock,
   challengeType,
   completedChallengesInBlock,
   completedPercent,
