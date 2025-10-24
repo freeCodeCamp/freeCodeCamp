@@ -5,6 +5,10 @@
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
   "challengeOrder": [
-    { "id": "68fa3feda781cdf645e7d9a0", "title": "Dialogue 1: I'm Tom" }
-  ]
+    {
+      "id": "68fa3feda781cdf645e7d9a0",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "review"
 }
