@@ -162,9 +162,7 @@ const ShowBackEnd = (props: BackEndProps) => {
     updateSolutionFormValues
   } = props;
 
-  const blockNameTitle = `${t(
-    `blocksIntro:${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>

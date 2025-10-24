@@ -128,9 +128,7 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
-  const blockNameTitle = `${t(
-    `blocksIntro:${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   useEffect(() => {
     initTests(tests);

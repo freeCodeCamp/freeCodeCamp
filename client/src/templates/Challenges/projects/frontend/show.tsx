@@ -131,9 +131,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
     updateSolutionFormValues
   } = props;
 
-  const blockNameTitle = `${t(
-    `blocksIntro:${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>

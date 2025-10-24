@@ -181,9 +181,7 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  const blockNameTitle = `${t(
-    `blocksIntro:${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   const sceneSubject = new SceneSubject();
 

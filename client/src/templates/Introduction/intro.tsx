@@ -22,15 +22,14 @@ function IntroductionPage({
   const { t } = useTranslation();
   const {
     html,
-    frontmatter: { block, superBlock }
+    frontmatter: { block }
   } = markdownRemark;
   const firstLesson =
     allChallengeNode && allChallengeNode.edges[0].node.challenge;
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
-  const blockTitle =
-    t(`blocksIntro:${block}.title`) + ' | freeCodeCamp.org';
+  const blockTitle = t(`blocksIntro:${block}.title`) + ' | freeCodeCamp.org';
   return (
     <LearnLayout>
       <Helmet>

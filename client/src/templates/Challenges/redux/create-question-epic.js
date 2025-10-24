@@ -128,7 +128,6 @@ function createQuestionEpic(action$, state$, { window }) {
       let challengeFiles = challengeFilesSelector(state);
       const {
         title: challengeTitle,
-        superBlock,
         block,
         helpCategory,
         challengeType
@@ -195,9 +194,7 @@ function createQuestionEpic(action$, state$, { window }) {
       const altTextMessage = `### ${whatsHappeningHeading}\n${describe}\n\n${camperCodeHeading}\n\n${warning}\n\n${tooLongOne}\n\n${tooLongTwo}\n\n${tooLongThree}\n\n\`\`\`text\n${addCodeOne}\n${addCodeTwo}\n${addCodeThree}\n\`\`\`\n\n${endingText}`;
 
       const titleText = window.encodeURIComponent(
-        `${i18next.t(
-          `blocksIntro:${block}.title`
-        )} - ${challengeTitle}`
+        `${i18next.t(`blocksIntro:${block}.title`)} - ${challengeTitle}`
       );
 
       const category = window.encodeURIComponent(
