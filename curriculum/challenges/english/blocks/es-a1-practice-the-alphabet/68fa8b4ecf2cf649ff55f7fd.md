@@ -13,7 +13,7 @@ Listen to the audio and answer the question below.
 
 ## --text--
 
-What is the second letter pronounced in this audio?
+What is the **second** letter pronounced in this audio?
 
 ## --answers--
 
@@ -21,7 +21,7 @@ What is the second letter pronounced in this audio?
 
 ### --feedback--
 
-This is the first letter in the audio, not the second one.
+This is the first letter pronounced in the audio, not the second one.
 
 ---
 
