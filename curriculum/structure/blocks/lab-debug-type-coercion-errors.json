@@ -4,7 +4,7 @@
   "dashedName": "lab-debug-type-coercion-errors",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true,
   "challengeOrder": [
     {
