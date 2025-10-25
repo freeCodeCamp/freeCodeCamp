@@ -22,6 +22,7 @@ interface ClassicLayoutProps {
   showPreviewPortal: boolean;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
+  usesTerminal: boolean;
 }
 
 interface InteractiveEditorProps {
@@ -70,7 +71,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     showPreviewPortal,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
-    setDailyCodingChallengeLanguage
+    setDailyCodingChallengeLanguage,
+    usesTerminal
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -99,6 +101,11 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     store.set('dailyCodingChallengeLanguage', language);
     setDailyCodingChallengeLanguage(language);
   };
+
+  const previewPaneButtonText =
+    usesTerminal == false
+      ? 'learn.editor-tabs.preview'
+      : 'learn.editor-tabs.terminal';
 
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
@@ -161,7 +168,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+                <span aria-hidden='true'>{t(previewPaneButtonText)}</span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}

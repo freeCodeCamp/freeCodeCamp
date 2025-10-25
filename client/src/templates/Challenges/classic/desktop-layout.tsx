@@ -258,6 +258,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
+  const usesTerminal =
+    challengeFiles == null
+      ? false
+      : challengeFiles.some(file => file.ext == 'py');
 
   const {
     codePane,
@@ -287,6 +291,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
+          usesTerminal={usesTerminal}
           data-playwright-test-label='action-row'
         />
       )}

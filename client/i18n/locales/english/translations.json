@@ -524,7 +524,8 @@
       "notes": "Notes",
       "preview": "Preview",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
