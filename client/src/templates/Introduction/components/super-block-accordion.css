@@ -1,12 +1,12 @@
 .super-block-accordion {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   padding: 0;
 }
 
 .super-block-accordion ul {
   padding: 0;
+  margin: 0;
 }
 
 .super-block-accordion li {
@@ -17,14 +17,14 @@
   text-decoration: none;
 }
 
-.super-block-accordion .chapter,
-.super-block-accordion .link-block {
-  background-color: var(--primary-background);
+.super-block-accordion .chapter {
+  border: 3px solid var(--tertiary-background);
+  margin-bottom: 16px;
 }
 
 .super-block-accordion .chapter-button {
   border: none;
-  background-color: transparent;
+  background-color: var(--primary-background);
   width: 100%;
   padding: 16px;
   display: flex;
@@ -32,12 +32,43 @@
   justify-content: space-between;
 }
 
+.super-block-accordion .aligner-dash {
+  width: 14px;
+}
+
+.super-block-accordion .map-icon {
+  width: 26px;
+  max-height: 40px;
+}
+
 .super-block-accordion .chapter-button .chapter-button-left {
   display: flex;
   align-items: center;
   text-align: start;
   column-gap: 10px;
-  font-size: 1.5em;
+}
+
+.super-block-accordion .block-grid {
+  border: none;
+}
+
+.super-block-accordion .block-grid .block-header[aria-expanded='true'] {
+  border: none;
+}
+
+button .block-header-button-text {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.super-block-accordion .map-title,
+.super-block-accordion .block-header-button-text {
+  gap: 10px;
+  padding: 0px;
+}
+
+.super-block-accordion .block-header-button-text {
+  justify-content: start;
 }
 
 .super-block-accordion .chapter-button .chapter-button-right {
@@ -56,15 +87,16 @@
   right: 5px;
 }
 
-.super-block-accordion .module-button {
+.super-block-accordion .module-button,
+.super-block-accordion .block-header {
   border: none;
   background-color: transparent;
   width: 100%;
-  font-size: 1.25em;
-  padding: 16px;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-weight: normal;
   gap: 10px;
 }
 
@@ -88,7 +120,8 @@
 }
 
 .super-block-accordion .chapter-button:hover,
-.super-block-accordion .module-button:hover {
+.super-block-accordion .module-button:hover,
+.super-block-accordion .block-header:hover {
   background-color: var(--tertiary-background);
   color: var(--primary-text);
 }
@@ -104,17 +137,60 @@
 }
 
 .super-block-accordion .chapter-panel {
-  padding: 0 16px;
+  background-color: var(--primary-background);
+  border-top: 1px solid var(--tertiary-background);
 }
 
-.super-block-accordion .module-panel {
-  padding: 0 24px;
+.super-block-accordion .module-panel .block-header {
+  padding: 10px 0px;
+  padding-inline-start: 26px;
 }
 
-.super-block-accordion .chapter-panel > li {
-  border-bottom: 4px solid var(--secondary-background);
+.super-block-accordion .block-label {
+  font-size: 0.6rem;
 }
 
+.super-block-accordion
+  .module-panel
+  .accordion-block-expanded
+  .map-challenge-title
+  > * {
+  padding-inline: 64px 10px;
+  padding-block: 10px;
+}
+
+.super-block-accordion
+  .module-panel
+  .accordion-block-expanded
+  .map-challenge-title
+  > .map-grid-item {
+  padding: 0;
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.super-block-accordion
+  .module-panel
+  .accordion-block-expanded
+  .map-challenges-grid {
+  padding-block: 10px;
+  padding-inline-start: 64px;
+  grid-template-columns: repeat(auto-fill, 2.1rem);
+}
+
+.super-block-accordion .map-challenge-title {
+  font-size: 1rem;
+}
+
+.super-block-accordion .accordion-block-expanded .map-challenges-grid,
+.super-block-accordion .challenge-grid-block .challenge-grid-block-panel {
+  margin: 0;
+}
+
+.super-block-accordion .map-challenge-title a,
+.super-block-accordion .accordion-block-expanded {
+  padding: 0;
+}
 .super-block-accordion .chapter-panel > li:last-child {
   border-bottom: none;
 }
@@ -122,6 +198,34 @@
 .super-block-accordion .chapter-panel > li:last-child .block-grid,
 .super-block-accordion .module-panel > li:last-child .block-grid {
   border-bottom: 0;
+}
+
+.super-block-accordion .module-panel,
+.super-block-accordion .accordion-block-expanded {
+  position: relative;
+}
+.super-block-accordion .module-panel::before {
+  position: absolute;
+  left: 16px;
+  width: 1px;
+  height: 100%;
+  content: '';
+  background: var(--quaternary-background);
+}
+
+.super-block-accordion .accordion-block-expanded::before {
+  position: absolute;
+  left: 32px;
+  width: 1px;
+  height: 100%;
+  top: 0;
+  content: '';
+  background: var(--quaternary-background);
+}
+
+.super-block-accordion .chapter-steps {
+  font-size: 0.85rem;
+  color: var(--quaternary-color);
 }
 
 .super-block-accordion .badge {
@@ -140,8 +244,44 @@
 }
 
 .super-block-accordion .module-intro {
-  margin-left: 17px;
-  margin-top: 16px;
+  padding: 16px 16px 0px 32px;
+}
+
+.super-block-accordion .module-intro p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.super-block-accordion
+  .chapter-panel
+  .chapter-button[aria-expanded='false']
+  .dropdown-icon,
+.super-block-accordion
+  .chapter-panel
+  .module-button[aria-expanded='false']
+  .dropdown-icon,
+.super-block-accordion
+  .chapter-panel
+  .block-grid
+  .block-header[aria-expanded='false']
+  .dropdown-icon {
+  transform: rotate(90deg);
+}
+
+.super-block-accordion
+  .chapter-panel
+  .chapter-button[aria-expanded='true']
+  .dropdown-icon,
+.super-block-accordion
+  .chapter-panel
+  .module-button[aria-expanded='true']
+  .dropdown-icon,
+.super-block-accordion
+  .chapter-panel
+  .block-grid
+  .block-header[aria-expanded='true']
+  .dropdown-icon {
+  transform: rotate(180deg);
 }
 
 .full-width-container {

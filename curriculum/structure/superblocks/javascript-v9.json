@@ -296,6 +296,7 @@
         },
         {
           "dashedName": "javascript-certification-exam",
+          "moduleType": "exam",
           "comingSoon": true,
           "blocks": ["exam-javascript-certification"]
         }
