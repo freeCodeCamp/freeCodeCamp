@@ -19,8 +19,8 @@
             "zh-a1-learn-initials",
             "zh-a1-learn-compound-finals",
             "zh-a1-learn-nasal-finals",
-            "zh-a1-review-pinyin",
-            "zh-a1-quiz-pinyin"
+            "zh-a1-review-the-pinyin-review",
+            "zh-a1-quiz-the-pinyin-quiz"
           ]
         }
       ]
@@ -34,8 +34,8 @@
             "zh-a1-warm-up-greeting-new-colleagues",
             "zh-a1-learn-understanding-the-greetings-and-introductions",
             "zh-a1-practice-building-your-self-introduction",
-            "zh-a1-review-greetings-and-introductions",
-            "zh-a1-quiz-greetings-and-introductions"
+            "zh-a1-review-greetings-and-introductions-review",
+            "zh-a1-quiz-greetings-and-introductions-quiz"
           ]
         },
         {
@@ -44,8 +44,8 @@
             "zh-a1-warm-up-meeting-new-teammates",
             "zh-a1-learn-understanding-the-questions-and-answers",
             "zh-a1-practice-exchanging-basic-information",
-            "zh-a1-review-introduction-questions",
-            "zh-a1-quiz-introduction-questions"
+            "zh-a1-review-introduction-questions-review",
+            "zh-a1-quiz-introduction-questions-quiz"
           ]
         }
       ]
@@ -60,8 +60,8 @@
             "zh-a1-learn-the-team",
             "zh-a1-learn-a-new-colleague",
             "zh-a1-learn-my-family",
-            "zh-a1-practice-introducing-others",
-            "zh-a1-review-introducing-others",
+            "zh-a1-practice-introducing-others-practice",
+            "zh-a1-review-introducing-others-review",
             "zh-a1-quiz-check-your-introduction"
           ]
         },
@@ -71,8 +71,8 @@
             "zh-a1-warm-up-knowing-the-team-basics",
             "zh-a1-learn-asking-about-the-team",
             "zh-a1-practice-talking-about-others",
-            "zh-a1-review-team-introduction",
-            "zh-a1-quiz-team-introduction"
+            "zh-a1-review-team-introduction-review",
+            "zh-a1-quiz-team-introduction-quiz"
           ]
         }
       ]
@@ -85,9 +85,9 @@
           "blocks": [
             "zh-a1-warm-up-personal-skills-basics",
             "zh-a1-learn-can-or-cannot",
-            "zh-a1-practice-personal-skills",
-            "zh-a1-review-describing-skills",
-            "zh-a1-quiz-describing-skills"
+            "zh-a1-practice-personal-skills-practice",
+            "zh-a1-review-describing-skills-review",
+            "zh-a1-quiz-describing-skills-quiz"
           ]
         },
         {
@@ -96,8 +96,8 @@
             "zh-a1-warm-up-team-skills-basics",
             "zh-a1-learn-who-can-do-what-on-the-team",
             "zh-a1-practice-talking-about-skills",
-            "zh-a1-review-discussing-team-skills",
-            "zh-a1-quiz-discussing-team-skills"
+            "zh-a1-review-discussing-team-skills-review",
+            "zh-a1-quiz-discussing-team-skills-quiz"
           ]
         }
       ]
