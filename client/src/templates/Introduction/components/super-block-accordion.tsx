@@ -11,7 +11,7 @@ import { type Chapter } from '../../../../../shared-dist/config/chapters';
 import { Link } from '../../../components/helpers';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../../shared-dist/config/blocks';
 import { FsdChapters } from '../../../../../shared-dist/config/chapters';
 import { type Module } from '../../../../../shared-dist/config/modules';
@@ -48,7 +48,7 @@ interface ModuleProps {
 interface Challenge {
   id: string;
   block: string;
-  blockType: BlockTypes;
+  blockLabel: BlockLabel;
   title: string;
   fields: { slug: string };
   dashedName: string;
@@ -219,8 +219,8 @@ const LinkModule = ({
   return (
     <li className='link-block'>
       <Block
-        block={firstChallenge.block}
-        blockType={firstChallenge.blockType}
+        block={challenges[0].block}
+        blockLabel={challenges[0].blockLabel}
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}
@@ -287,7 +287,7 @@ export const SuperBlockAccordion = ({
 
         return {
           name: block,
-          blockType: blockChallenges[0]?.blockType ?? null,
+          blockLabel: blockChallenges[0]?.blockLabel ?? null,
           challenges: blockChallenges
         };
       });
@@ -400,7 +400,7 @@ export const SuperBlockAccordion = ({
                     <li key={block.name}>
                       <Block
                         block={block.name}
-                        blockType={block.blockType}
+                        blockLabel={block.blockLabel}
                         challenges={block.challenges}
                         superBlock={superBlock}
                         accordion={accordion}

@@ -68,7 +68,7 @@ jobs:
       - name: Lint Source Files
         run: |
           echo pnpm version $(pnpm -v)
-          pnpm run create:shared
+          pnpm compile:ts
           pnpm run build:curriculum
           pnpm run lint
 
@@ -141,11 +141,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
-        with:
-          mongodb-version: 8.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
+        run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
         run: |
@@ -192,11 +188,7 @@ jobs:
           cat .env
 
       - name: Start MongoDB
-        uses: supercharge/mongodb-github-action@b0a1493307c4e9b82ed61f3858d606c5ff190c64 # v1.10.0
-        with:
-          mongodb-version: 8.0
-          mongodb-replica-set: test-rs
-          mongodb-port: 27017
+        run: docker compose -f docker/docker-compose.yml up -d
 
       - name: Install Dependencies
         run: |

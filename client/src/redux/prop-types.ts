@@ -1,7 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
@@ -182,13 +182,18 @@ type ParagraphNodule = {
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: { ext: Ext; name: string; contents: string }[];
+  data: {
+    ext: Ext;
+    name: string;
+    contents: string;
+    contentsHtml: string;
+  }[];
 };
 
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockType: BlockTypes;
+    blockLabel: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
@@ -514,7 +519,6 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
-  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;

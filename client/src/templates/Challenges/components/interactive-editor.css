@@ -23,7 +23,7 @@
 }
 
 .sp-preview-actions .sp-button:hover {
-  background-color: var(--gray-10);
+  background-color: var(--gray-10) !important;
   color: var(--gray-90) !important;
-  border-color: var(--gray-90);
+  border-color: var(--gray-90) !important;
 }

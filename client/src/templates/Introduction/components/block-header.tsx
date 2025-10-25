@@ -2,7 +2,7 @@ import React from 'react';
 import { isEmpty } from 'lodash';
 import { Button } from '@freecodecamp/ui';
 
-import { BlockTypes } from '../../../../../shared-dist/config/blocks';
+import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
@@ -12,7 +12,7 @@ import BlockIntros from './block-intros';
 interface BlockHeaderProps {
   blockDashed: string;
   blockTitle: string;
-  blockType: BlockTypes | null;
+  blockLabel: BlockLabelType | null;
   courseCompletionStatus: string;
   completedCount: number;
   handleClick: () => void;
@@ -27,7 +27,7 @@ interface BlockHeaderProps {
 function BlockHeader({
   blockDashed,
   blockTitle,
-  blockType,
+  blockLabel,
   completedCount,
   courseCompletionStatus,
   handleClick,
@@ -56,7 +56,7 @@ function BlockHeader({
                 <DropDown />
               ))}
             <CheckMark isCompleted={isCompleted} />
-            {!accordion && blockType && <BlockLabel blockType={blockType} />}
+            {!accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
             <span>
               {blockTitle}
               <span className='sr-only'>, {courseCompletionStatus}</span>

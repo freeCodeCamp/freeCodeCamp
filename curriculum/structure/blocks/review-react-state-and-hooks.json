@@ -1,7 +1,7 @@
 {
   "name": "React State and Hooks Review",
   "isUpcomingChange": false,
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "dashedName": "review-react-state-and-hooks",
   "challengeOrder": [

@@ -1,6 +1,6 @@
 {
   "name": "Semantic HTML Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-semantic-html",
