@@ -51,6 +51,6 @@ function Preview({
   );
 }
 
-Preview.displayName = 'Preview';
+Preview.displayName = 'Terminal';
 
 export default Preview;

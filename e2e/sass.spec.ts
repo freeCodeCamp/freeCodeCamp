@@ -9,7 +9,7 @@ test.describe('Sass Challenge', () => {
 
   test('should render the sass preview', async ({ page, isMobile }) => {
     if (isMobile) {
-      await page.getByRole('tab', { name: 'Preview' }).click();
+      await page.getByRole('tab', { name: 'Terminal' }).click();
     }
 
     const frame = page.frameLocator('.challenge-preview iframe');

@@ -27,7 +27,7 @@ test.describe('Should be shown automatically', () => {
       name: translations.learn['project-preview-title']
     });
     await expect(dialog).toBeVisible();
-    await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
+  await expect(dialog.getByTitle('CatPhotoApp terminal')).toBeVisible();
 
     await page.getByRole('button', { name: 'Start Coding!' }).click();
 

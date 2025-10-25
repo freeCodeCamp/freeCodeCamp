@@ -59,7 +59,7 @@ test.describe('Desktop view', () => {
 
     test('Clicking Preview Pane button hides preview', async ({ page }) => {
       const previewButton = page.getByTestId('preview-pane-button');
-      const previewFrame = page.getByTitle('challenge preview');
+      const previewFrame = page.getByTitle('challenge terminal');
 
       await previewButton.click();
       await expect(previewFrame).toBeHidden();

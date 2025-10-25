@@ -8,7 +8,7 @@ test.describe('Classic challenge - 5 tabs mobile layout component', () => {
     'Skip testing on desktop as this component is only used for mobile'
   );
 
-  test('The page has mobile layout with "Instruction", "Code", "Console", "Preview", "Portal Preview" tabs', async ({
+  test('The page has mobile layout with "Instruction", "Code", "Console", "Terminal", "Portal Terminal" tabs', async ({
     page
   }) => {
     await page.goto(
