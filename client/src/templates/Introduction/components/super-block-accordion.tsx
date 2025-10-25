@@ -59,7 +59,7 @@ interface Challenge {
 
 interface PopulatedBlock {
   name: string;
-  blockType: BlockTypes | null;
+  blockLabel: BlockLabel | null;
   challenges: Challenge[];
 }
 
@@ -214,8 +214,6 @@ const LinkModule = ({
 }) => {
   if (!challenges?.length) return null;
 
-  const [firstChallenge] = challenges;
-
   return (
     <li className='link-block'>
       <Block
@@ -333,7 +331,7 @@ export const SuperBlockAccordion = ({
         const isLinkChapter =
           chapter.modules.length === 1 &&
           firstChapterModule?.blocks.length === 1 &&
-          firstModuleBlock?.blockType === BlockTypes.exam &&
+          firstModuleBlock?.blockLabel === BlockLabel.exam &&
           firstModuleBlock.challenges.length === 1;
 
         const examSlug = isLinkChapter

@@ -478,9 +478,9 @@ export class Block extends Component<BlockProps> {
       </>
     ) : (
       <>
-        <ScrollableAnchor id={block}>
+        <Element name={block}>
           <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
+        </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
@@ -489,7 +489,7 @@ export class Block extends Component<BlockProps> {
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
@@ -535,13 +535,13 @@ export class Block extends Component<BlockProps> {
 
     const LinkBlock = (
       <>
-        <ScrollableAnchor id={block}>
+        <Element name={block}>
           <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
+        </Element>
         <BlockHeader
           blockDashed={block}
           blockTitle={blockTitle}
-          blockType={blockType}
+          blockLabel={blockLabel}
           completedCount={completedCount}
           courseCompletionStatus={courseCompletionStatus()}
           handleClick={this.handleBlockClick}

@@ -61,7 +61,7 @@ function BlockHeader({
               {blockTitle}
               <span className='sr-only'>, {courseCompletionStatus}</span>
             </span>
-            {accordion && blockType && <BlockLabel blockType={blockType} />}
+            {accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!accordion && <DropDown />}
           </span>
           {!isExpanded && !isCompleted && completedCount > 0 && (
