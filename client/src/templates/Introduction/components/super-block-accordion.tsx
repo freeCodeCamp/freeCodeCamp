@@ -171,6 +171,8 @@ const Module = ({
     intro: string[];
   };
 
+  const showModuleContent = !(comingSoon && !showUpcomingChanges);
+
   return (
     <Disclosure as='li' defaultOpen={isExpanded}>
       <Disclosure.Button className='module-button'>
@@ -195,7 +197,7 @@ const Module = ({
             {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
           </div>
         )}
-        {!(comingSoon && !showUpcomingChanges) && children}
+        {showModuleContent && children}
       </Disclosure.Panel>
     </Disclosure>
   );
