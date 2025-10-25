@@ -2,7 +2,6 @@ import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
-import { format } from 'prettier';
 import ObjectID from 'bson-objectid';
 
 import {
@@ -28,6 +27,7 @@ import {
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './helpers/create-project';
+import { updateIntroJson } from './helpers/update-intro';
 
 const helpCategories = [
   'HTML-CSS',
@@ -39,17 +39,6 @@ const helpCategories = [
   'Euler',
   'Rosetta'
 ] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
@@ -101,11 +90,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     );
   }
 
-  void updateIntroJson(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
+  void updateIntroJson(projectArgs.block, projectArgs.title);
 
   if (projectArgs.blockLabel === BlockLabel.quiz) {
     if (projectArgs.questionCount == null) {
@@ -153,27 +138,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.superBlock,
     projectArgs.block,
     projectArgs.title
-  );
-}
-
-async function updateIntroJson(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string
-) {
-  const introJsonPath = path.resolve(
-    __dirname,
-    '../../client/i18n/locales/english/intro.json'
-  );
-  const newIntro = await parseJson<IntroJson>(introJsonPath);
-  newIntro[superBlock].blocks[block] = {
-    title,
-    intro: [title, '']
-  };
-  void withTrace(
-    fs.writeFile,
-    introJsonPath,
-    await format(JSON.stringify(newIntro), { parser: 'json' })
   );
 }
 
@@ -253,15 +217,6 @@ async function createQuizChallenge(
     dashedName: block,
     questionCount: questionCount
   });
-}
-
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
 }
 
 // fs Promise functions return errors, but no stack trace.  This adds back in

@@ -28,7 +28,7 @@ describe('useShare', () => {
     );
 
     const freecodecampLearnDomain = 'www.freecodecamp.org/learn';
-    const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+    const i18nSupportedBlock = t(`blocksIntro:${block}.title`);
     const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
     const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomain}/${superBlock}/${hastag}${block}`;
 

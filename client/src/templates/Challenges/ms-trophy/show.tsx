@@ -153,9 +153,7 @@ function MsTrophy(props: MsTrophyProps) {
     t
   } = props;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   return (
     <Hotkeys containerRef={container}>
@@ -202,11 +200,7 @@ function MsTrophy(props: MsTrophyProps) {
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={blockName}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
           </Row>
         </Container>
       </LearnLayout>

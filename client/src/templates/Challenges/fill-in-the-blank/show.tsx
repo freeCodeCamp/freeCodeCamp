@@ -83,7 +83,6 @@ const ShowFillInTheBlank = ({
         instructions,
         explanation,
         transcript,
-        superBlock,
         block,
         translationPending,
         fields: { blockName, tests },
@@ -181,9 +180,7 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)} - ${title}`;
 
   const sceneSubject = new SceneSubject();
 
@@ -258,11 +255,7 @@ const ShowFillInTheBlank = ({
               <Spacer size='l' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={blockName}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
           </Row>
         </Container>
         <ShortcutsModal />
@@ -285,7 +278,6 @@ export const query = graphql`
         explanation
         challengeType
         helpCategory
-        superBlock
         block
         fields {
           blockName

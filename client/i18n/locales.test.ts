@@ -40,6 +40,9 @@ const filesThatShouldExist = [
     name: 'intro.json'
   },
   {
+    name: 'blocks-intro.json'
+  },
+  {
     name: 'meta-tags.json'
   },
   {

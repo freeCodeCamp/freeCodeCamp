@@ -142,8 +142,8 @@ export class Block extends Component<BlockProps> {
 
     const isAudited = isAuditedSuperBlock(curriculumLocale, superBlock);
 
-    const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-    const blockIntroArr = t(`intro:${superBlock}.blocks.${block}.intro`, {
+    const blockTitle = t(`blocksIntro:${block}.title`);
+    const blockIntroArr = t(`blocksIntro:${block}.intro`, {
       returnObjects: true
     }) as string[];
     const expandText = t('intro:misc-text.expand');

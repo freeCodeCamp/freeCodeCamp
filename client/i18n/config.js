@@ -19,6 +19,13 @@ i18n.use(initReactI18next).init({
   // english, we simply export nothing from the preval
   resources: {
     [i18nextCode]: {
+      blocksIntro: preval`
+      const envData = require('../config/env.json');
+      const { clientLocale } = envData;
+      if (clientLocale !== 'english') {
+        module.exports = require('./locales/' + clientLocale + '/blocks-intro.json');
+      }
+    `,
       translations: preval`
       const envData = require('../config/env.json');
       const { clientLocale } = envData;
@@ -63,6 +70,7 @@ i18n.use(initReactI18next).init({
     `
     },
     en: {
+      blocksIntro: preval`module.exports = require('./locales/english/blocks-intro.json')`,
       translations: preval`module.exports = require('./locales/english/translations.json')`,
       trending: preval`module.exports = require('./locales/english/trending.json')`,
       intro: preval`module.exports = require('./locales/english/intro.json')`,
@@ -71,7 +79,15 @@ i18n.use(initReactI18next).init({
       'search-bar': preval`module.exports = require('./locales/english/search-bar.json')`
     }
   },
-  ns: ['translations', 'trending', 'intro', 'metaTags', 'links', 'search-bar'],
+  ns: [
+    'translations',
+    'trending',
+    'intro',
+    'metaTags',
+    'links',
+    'search-bar',
+    'blocksIntro'
+  ],
   defaultNS: 'translations',
   returnObjects: true,
   // Uncomment the next line for debug logging

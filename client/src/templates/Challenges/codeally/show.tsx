@@ -151,9 +151,7 @@ function ShowCodeAlly({
     }
   } = data;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   const isPartiallyCompleted = partiallyCompletedChallenges.some(
@@ -362,11 +360,7 @@ function ShowCodeAlly({
               <Spacer size='m' />
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={block} />
           </Row>
         </Container>
       </LearnLayout>

@@ -152,7 +152,6 @@ function ShowExam(props: ShowExamProps) {
           fields: { blockName },
           instructions,
           prerequisites,
-          superBlock,
           title,
           translationPending
         }
@@ -350,9 +349,7 @@ function ShowExam(props: ShowExamProps) {
   const prerequisitesComplete = missingPrerequisites.length === 0;
   const qualifiedForExam = prerequisitesComplete && surveyCompleted;
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
 
   // TODO: If already taken exam, show different messages
@@ -528,11 +525,7 @@ function ShowExam(props: ShowExamProps) {
               </Button>
             </Col>
             <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={blockName}
-              superBlock={superBlock}
-            />
+            <HelpModal challengeTitle={title} challengeBlock={blockName} />
           </Row>
         </Container>
       </LearnLayout>
@@ -571,7 +564,6 @@ export const query = graphql`
           id
           title
         }
-        superBlock
         title
         translationPending
       }

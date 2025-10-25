@@ -18,7 +18,6 @@ interface HelpModalProps {
   isOpen?: boolean;
   challengeTitle: string;
   challengeBlock: string;
-  superBlock: string;
 }
 
 const { forumLocation } = envData;
@@ -35,12 +34,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     dispatch
   );
 
-export const generateSearchLink = (
-  title: string,
-  block: string,
-  superBlock: string
-) => {
-  const titleText = t(`intro:${superBlock}.blocks.${block}.title`);
+export const generateSearchLink = (title: string, block: string) => {
+  const titleText = t(`blocksIntro:${block}.title`);
   const selector = 'in:title';
   const query = encodeURIComponent(`${titleText} - ${title} ${selector}`);
 
@@ -98,7 +93,6 @@ function HelpModal({
   createQuestion,
   isOpen,
   challengeBlock,
-  superBlock,
   challengeTitle
 }: HelpModalProps): JSX.Element {
   const { t } = useTranslation();
@@ -184,11 +178,7 @@ function HelpModal({
                   setSimilarQuestionsCheckbox(event.target.checked)
                 }
                 value={similarQuestionsCheckbox}
-                href={generateSearchLink(
-                  challengeTitle,
-                  challengeBlock,
-                  superBlock
-                )}
+                href={generateSearchLink(challengeTitle, challengeBlock)}
               />
             </fieldset>
 
@@ -264,11 +254,7 @@ function HelpModal({
               <p>
                 <Trans i18nKey='learn.rsa-forum'>
                   <a
-                    href={generateSearchLink(
-                      challengeTitle,
-                      challengeBlock,
-                      superBlock
-                    )}
+                    href={generateSearchLink(challengeTitle, challengeBlock)}
                     rel='noopener noreferrer'
                     target='_blank'
                   >

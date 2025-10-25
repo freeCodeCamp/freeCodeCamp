@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import intro from '../client/i18n/locales/english/intro.json';
+import intro from '../client/i18n/locales/english/blocks-intro.json';
 
 const examUrl =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
@@ -44,9 +44,7 @@ test.describe('Exam Results E2E Test Suite', () => {
       page
         .locator('div.exam-results-wrapper')
         .getByText(
-          intro['foundational-c-sharp-with-microsoft'].blocks[
-            'foundational-c-sharp-with-microsoft-certification-exam'
-          ].title
+          intro['foundational-c-sharp-with-microsoft-certification-exam'].title
         )
     ).toBeVisible();
     await expect(
@@ -86,9 +84,7 @@ test.describe('Exam Results E2E Test Suite', () => {
       page
         .locator('div.exam-results-wrapper')
         .getByText(
-          intro['foundational-c-sharp-with-microsoft'].blocks[
-            'foundational-c-sharp-with-microsoft-certification-exam'
-          ].title
+          intro['foundational-c-sharp-with-microsoft-certification-exam'].title
         )
     ).not.toBeVisible();
     await expect(page).not.toHaveURL(examUrl);

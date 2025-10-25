@@ -2,6 +2,7 @@ import path from 'path';
 import { readFile } from 'fs/promises';
 import { availableLangs } from '../../shared-dist/config/i18n';
 import introSchema from './locales/english/intro.json';
+import blocksIntroSchema from './locales/english/blocks-intro.json';
 import linksSchema from './locales/english/links.json';
 import metaTagsSchema from './locales/english/meta-tags.json';
 import motivationSchema from './locales/english/motivation.json';
@@ -114,6 +115,7 @@ const noEmptyObjectValues = (
 const translationSchemaKeys = Object.keys(flattenAnObject(translationsSchema));
 const motivationSchemaKeys = Object.keys(flattenAnObject(motivationSchema));
 const introSchemaKeys = Object.keys(flattenAnObject(introSchema));
+const blocksIntroSchemaKeys = Object.keys(flattenAnObject(blocksIntroSchema));
 const metaTagsSchemaKeys = Object.keys(flattenAnObject(metaTagsSchema));
 const linksSchemaKeys = Object.keys(flattenAnObject(linksSchema));
 
@@ -157,6 +159,24 @@ const introSchemaValidation = (languages: string[]) => {
   languages.forEach(language => {
     void readJsonFile(language, 'intro').then(fileJson => {
       schemaValidation(language, 'intro', fileJson, introSchemaKeys);
+    });
+  });
+};
+
+/**
+ * Function that checks the blocks-intro.json file
+ * for each available client language.
+ * @param {String[]} languages List of languages to test
+ */
+const blocksIntroSchemaValidation = (languages: string[]) => {
+  languages.forEach(language => {
+    void readJsonFile(language, 'intro').then(fileJson => {
+      schemaValidation(
+        language,
+        'blocks-intro',
+        fileJson,
+        blocksIntroSchemaKeys
+      );
     });
   });
 };
@@ -242,5 +262,6 @@ const translatedLangs = availableLangs.client.filter(
 translationSchemaValidation(translatedLangs);
 motivationSchemaValidation(translatedLangs);
 introSchemaValidation(translatedLangs);
+blocksIntroSchemaValidation(translatedLangs);
 metaTagsSchemaValidation(translatedLangs);
 linksSchemaValidation(translatedLangs);

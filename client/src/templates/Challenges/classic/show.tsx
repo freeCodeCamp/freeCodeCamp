@@ -253,9 +253,7 @@ function ShowClassic({
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )}: ${title}`;
+  const blockNameTitle = `${t(`blocksIntro:${block}.title`)}: ${title}`;
   const windowTitle = `${blockNameTitle} | freeCodeCamp.org`;
   const openConsole = isJavaScriptChallenge({ challengeType });
   const hasPreview = challengeHasPreview({ challengeType });
@@ -545,11 +543,7 @@ function ShowClassic({
           />
         )}
         <CompletionModal />
-        <HelpModal
-          challengeTitle={title}
-          challengeBlock={blockName}
-          superBlock={superBlock}
-        />
+        <HelpModal challengeTitle={title} challengeBlock={blockName} />
         <VideoModal videoUrl={videoUrl} />
         <ResetModal challengeType={challengeType} challengeTitle={title} />
         <ProjectPreviewModal

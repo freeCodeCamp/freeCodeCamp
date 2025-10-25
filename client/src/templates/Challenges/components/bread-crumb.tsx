@@ -31,7 +31,7 @@ function BreadCrumb({ block, superBlock }: BreadCrumbProps): JSX.Element {
             state={{ breadcrumbBlockClick: block }}
             to={`/learn/${superBlock}/#${block}`}
           >
-            {i18next.t(`intro:${superBlock}.blocks.${block}.title`)}
+            {i18next.t(`blocksIntro:${block}.title`)}
           </Link>
         </li>
       </ol>

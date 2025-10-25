@@ -294,7 +294,7 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         }
       }
     }) => {
-      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const blockNameTitle = t(`blocksIntro:${blockName}.title`);
       const shouldAppendBlockNameToTitle =
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {

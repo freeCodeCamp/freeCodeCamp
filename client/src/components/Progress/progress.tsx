@@ -40,13 +40,11 @@ const mapStateToProps = createSelector(
     {
       challengeType,
       id,
-      block,
-      superBlock
+      block
     }: {
       challengeType: number;
       id: string;
       block: string;
-      superBlock: string;
     },
     completedChallengesInBlock: number,
     completedPercent: number,
@@ -56,7 +54,6 @@ const mapStateToProps = createSelector(
     challengeType,
     id,
     block,
-    superBlock,
     completedChallengesInBlock,
     completedPercent,
     superBlockStructures
@@ -77,7 +74,6 @@ function Progress({
   currentBlockIds,
   block,
   id,
-  superBlock,
   challengeType,
   completedChallengesInBlock,
   completedPercent,
@@ -86,7 +82,7 @@ function Progress({
   updateSuperBlockStructures,
   superBlockStructures: superBlockStructuresFromStore
 }: ProgressProps): JSX.Element {
-  let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
+  let blockTitle = t(`blocksIntro:${block}.title`);
   // Always false for legacy full stack, since it has no projects.
   const isCertificationProject = liveCerts.some(cert =>
     cert.projects?.some((project: { id: string }) => project.id === id)
