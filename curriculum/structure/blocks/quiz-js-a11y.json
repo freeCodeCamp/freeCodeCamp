@@ -1,7 +1,7 @@
 {
   "name": "JavaScript and Accessibility Quiz",
   "isUpcomingChange": false,
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "dashedName": "quiz-js-a11y",
   "challengeOrder": [

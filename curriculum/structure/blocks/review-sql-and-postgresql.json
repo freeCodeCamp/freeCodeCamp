@@ -1,6 +1,6 @@
 {
   "name": "SQL and PostgreSQL Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-sql-and-postgresql",

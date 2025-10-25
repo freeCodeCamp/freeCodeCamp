@@ -7,6 +7,6 @@
     { "id": "673b567e3ba535dda140d278", "title": "Build a Voting System" }
   ],
   "helpCategory": "JavaScript",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }

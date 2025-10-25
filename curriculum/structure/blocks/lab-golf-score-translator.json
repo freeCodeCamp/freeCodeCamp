@@ -9,7 +9,7 @@
       "title": "Build a Golf Score Translator"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "usesMultifileEditor": true
 }

@@ -1,6 +1,6 @@
 {
   "name": "Build a Stylized To-Do List",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

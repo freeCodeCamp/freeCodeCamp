@@ -1,6 +1,6 @@
 {
   "name": "Understanding Bash Scripting",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-bash-scripting",

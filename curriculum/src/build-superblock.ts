@@ -156,7 +156,7 @@ export function addMetaToChallenge(
 
   // Add basic meta properties
   challenge.block = meta.dashedName;
-  challenge.blockType = meta.blockType;
+  challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
   challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
   challenge.order = meta.order;

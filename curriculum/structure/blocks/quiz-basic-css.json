@@ -1,6 +1,6 @@
 {
   "name": "Basic CSS Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-basic-css",

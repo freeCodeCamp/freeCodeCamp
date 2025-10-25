@@ -7,6 +7,6 @@
     { "id": "67051431a73f1ca25d9a6f25", "title": "Build a Project Idea Board" }
   ],
   "helpCategory": "JavaScript",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }
