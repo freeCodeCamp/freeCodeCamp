@@ -84,14 +84,25 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     };
 
     // preview open in main window
-    if (showPreviewPane && !showPreviewPortal) {
+    if (showPreviewPane && !showPreviewPortal && !usesTerminal) {
       previewBtnsSrText.pane = t('aria.hide-preview');
       previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
 
       // preview open in external window
-    } else if (showPreviewPortal && !showPreviewPane) {
+    } else if (showPreviewPortal && !showPreviewPane && !usesTerminal) {
       previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
       previewBtnsSrText.portal = t('aria.close-external-preview-window');
+    }
+
+    // terminal open in main window
+    if (showPreviewPane && !showPreviewPortal && usesTerminal) {
+      previewBtnsSrText.pane = t('aria.hide-terminal');
+      previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
+
+      // terminal open in external window
+    } else if (showPreviewPortal && !showPreviewPane && usesTerminal) {
+      previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
+      previewBtnsSrText.portal = t('aria.close-external-terminal-window');
     }
 
     return previewBtnsSrText;
