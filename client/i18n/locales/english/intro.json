@@ -7325,12 +7325,12 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-the-pinyin-review": {
-        "title": "The Pinyin Review",
+      "zh-a1-review-pinyin": {
+        "title": "Pinyin Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-the-pinyin-quiz": {
-        "title": "The Pinyin Quiz",
+      "zh-a1-quiz-pinyin": {
+        "title": "Pinyin Quiz",
         "intro": ["", ""]
       },
       "zh-a1-warm-up-greeting-new-colleagues": {
@@ -7345,11 +7345,11 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-review-greetings-and-introductions-review": {
+      "zh-a1-review-greetings-and-introductions": {
         "title": "Greetings and Introductions Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-greetings-and-introductions-quiz": {
+      "zh-a1-quiz-greetings-and-introductions": {
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
@@ -7361,11 +7361,11 @@
         "title": "Exchanging Basic Information",
         "intro": ["", ""]
       },
-      "zh-a1-review-introduction-questions-review": {
+      "zh-a1-review-introduction-questions": {
         "title": "Introduction Questions Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-introduction-questions-quiz": {
+      "zh-a1-quiz-introduction-questions": {
         "title": "Introduction Questions Quiz",
         "intro": ["", ""]
       },
@@ -7379,11 +7379,11 @@
         "intro": ["", ""]
       },
       "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
-      "zh-a1-practice-introducing-others-practice": {
+      "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
       },
-      "zh-a1-review-introducing-others-review": {
+      "zh-a1-review-introducing-others": {
         "title": "Introducing Others Review",
         "intro": ["", ""]
       },
@@ -7403,11 +7403,11 @@
         "title": "Talking about Others",
         "intro": ["", ""]
       },
-      "zh-a1-review-team-introduction-review": {
+      "zh-a1-review-team-introduction": {
         "title": "Team Introduction Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-team-introduction-quiz": {
+      "zh-a1-quiz-team-introduction": {
         "title": "Team Introduction Quiz",
         "intro": ["", ""]
       },
@@ -7419,15 +7419,15 @@
         "title": "Can or Can't",
         "intro": ["", ""]
       },
-      "zh-a1-practice-personal-skills-practice": {
+      "zh-a1-practice-personal-skills": {
         "title": "Personal Skills Practice",
         "intro": ["", ""]
       },
-      "zh-a1-review-describing-skills-review": {
+      "zh-a1-review-describing-skills": {
         "title": "Describing Skills Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-describing-skills-quiz": {
+      "zh-a1-quiz-describing-skills": {
         "title": "Describing Skills Quiz",
         "intro": ["", ""]
       },
@@ -7443,11 +7443,11 @@
         "title": "Talking about Skills",
         "intro": ["Practice discussing various skills in team contexts."]
       },
-      "zh-a1-review-discussing-team-skills-review": {
+      "zh-a1-review-discussing-team-skills": {
         "title": "Discussing Team Skills Review",
         "intro": ["", ""]
       },
-      "zh-a1-quiz-discussing-team-skills-quiz": {
+      "zh-a1-quiz-discussing-team-skills": {
         "title": "Discussing Team Skills Quiz",
         "intro": ["", ""]
       },
