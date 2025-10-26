@@ -51,7 +51,7 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   position?: number;
-  blockLabel?: string;
+  blockLabel?: BlockLabel;
   blockLayout?: string;
   questionCount?: number;
 }
@@ -64,7 +64,7 @@ async function createLanguageBlock(
   chapter?: string,
   module?: string,
   position?: number,
-  blockLabel?: string,
+  blockLabel?: BlockLabel,
   blockLayout?: string,
   questionCount?: number
 ) {
@@ -142,7 +142,7 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectID,
-  blockLabel?: string,
+  blockLabel?: BlockLabel,
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
@@ -229,7 +229,7 @@ function withTrace<Args extends unknown[], Result>(
 
 function getBlockPrefix(
   superBlock: SuperBlocks,
-  blockLabel?: string
+  blockLabel?: BlockLabel
 ): string | null {
   // Only chapter-based super blocks use blockLabel so prefix only applies to them.
   if (!chapterBasedSuperBlocks.includes(superBlock)) return null;
