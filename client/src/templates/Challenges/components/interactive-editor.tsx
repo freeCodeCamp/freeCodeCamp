@@ -53,7 +53,10 @@ const InteractiveEditor = ({ files }: Props) => {
   };
 
   return (
-    <div className='interactive-editor-wrapper'>
+    <div
+      className='interactive-editor-wrapper'
+      data-playwright-test-label='sp-interactive-editor'
+    >
       <Sandpack
         template={
           got('tsx')
