@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Sandpack } from '@codesandbox/sandpack-react';
 import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
@@ -30,11 +30,10 @@ const InteractiveEditor = ({ files }: Props) => {
       else if (ext === 'css') path = '/styles.css';
       else if (ext === 'js' || ext === 'ts') path = `/index.${ext}`;
       else if (ext === 'py')
-        return; // python not supported in sandpack vanilla template
+        return;
       else if (ext === 'jsx') path = '/App.jsx';
       else if (ext === 'tsx') path = '/App.tsx';
       else path = `/index.${ext}`;
-      // TODO: Consider making active file first file in markdown
       obj[path] = { code: file.contents, active: path === '/index.html' };
     });
     return obj;
@@ -52,22 +51,53 @@ const InteractiveEditor = ({ files }: Props) => {
     keyword: '#569cd6'
   };
 
+  const [runToggle, setRunToggle] = useState(false);
+
+  const onKeyDown = useCallback((e: KeyboardEvent) => {
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+    if ((isMac && e.metaKey && e.key === 'Enter') || (!isMac && e.ctrlKey && e.key === 'Enter')) {
+      e.preventDefault();
+      setRunToggle(prev => !prev);
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [onKeyDown]);
+
+  const handleRunClick = useCallback(() => {
+    setRunToggle(prev => !prev);
+  }, []);
+
   return (
     <div
-      className='interactive-editor-wrapper'
-      data-playwright-test-label='sp-interactive-editor'
+      className="interactive-editor-wrapper"
+      data-playwright-test-label="sp-interactive-editor"
     >
+      <div className="interactive-editor-toolbar" aria-hidden={false} style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+        <button
+          type="button"
+          className="sp-run-button"
+          onClick={handleRunClick}
+          title="Run code (Ctrl/Cmd + Enter)"
+        >
+          Run
+        </button>
+      </div>
+
       <Sandpack
+        key={String(runToggle)}
         template={
           got('tsx')
             ? 'react-ts'
             : got('jsx')
-              ? 'react'
-              : got('ts')
-                ? 'vanilla-ts'
-                : got('html')
-                  ? 'static'
-                  : 'vanilla'
+            ? 'react'
+            : got('ts')
+            ? 'vanilla-ts'
+            : got('html')
+            ? 'static'
+            : 'vanilla'
         }
         files={spFiles}
         theme={{
@@ -79,13 +109,16 @@ const InteractiveEditor = ({ files }: Props) => {
           },
           syntax: freeCodeCampDarkSyntax
         }}
+        autorun={false}
+        recompileMode="delayed"
         options={{
           editorHeight: 450,
           editorWidthPercentage: 60,
           showConsole: showConsole,
           showConsoleButton: showConsole,
           layout: got('html') ? 'preview' : 'console',
-          showLineNumbers: true
+          showLineNumbers: true,
+          recompileDelay: 800
         }}
       />
     </div>
