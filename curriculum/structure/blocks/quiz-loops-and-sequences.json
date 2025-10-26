@@ -1,6 +1,6 @@
 {
   "name": "Loops and Sequences Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-loops-and-sequences",

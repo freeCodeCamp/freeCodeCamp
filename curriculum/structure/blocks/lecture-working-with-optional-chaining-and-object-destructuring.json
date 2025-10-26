@@ -1,6 +1,6 @@
 {
   "name": "Working with Optional Chaining and Object Destructuring",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-optional-chaining-and-object-destructuring",

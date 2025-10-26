@@ -1103,6 +1103,7 @@
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
       "solution": "解决方案",
       "no-solution": "显示解决方案出错时，发送电子邮件到 support@freeCodeCamp.org 获得帮助。",
+      "no-solution-to-display": "No solution to display",
       "source": "来源",
       "footnote": "如果你怀疑其中任何项目违反了<2>学术诚信条例</2>，请<5>向我们的团队报告</5>。",
       "title": {

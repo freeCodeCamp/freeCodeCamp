@@ -2,13 +2,13 @@ import path from 'path';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../../curriculum/file-handler';
+} from '../../../curriculum/src/file-handler';
 import { getProjectPath } from './get-project-info';
 
 export type Meta = {
   name: string;
   blockLayout: string;
-  blockType: string;
+  blockLabel: string;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;

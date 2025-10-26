@@ -1,6 +1,6 @@
 {
   "name": "Understanding Error Handling",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-error-handling",
