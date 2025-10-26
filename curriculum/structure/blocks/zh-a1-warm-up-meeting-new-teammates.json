@@ -5,7 +5,14 @@
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
   "challengeOrder": [
-    { "id": "68fd9e5d50f8be0479de6748", "title": "Dialogue 1: I'm Tom" }
+    { "id": "68fde5aae5c365188e109f1a", "title": "Task 1" },
+    { "id": "68fde7d178ecf21c4ca19597", "title": "Task 2" },
+    { "id": "68fde9137e03cd1ea40a672b", "title": "Task 3" },
+    { "id": "68fe153a6494282327edcb3a", "title": "Task 4" },
+    { "id": "68fe222654ed3a27dca71523", "title": "Task 5" },
+    { "id": "68fe24240970a329b3a49dcf", "title": "Task 6" },
+    { "id": "68fe27f120a1443005dfa6ef", "title": "Task 7" },
+    { "id": "68fe2a172c224732e94e794e", "title": "Task 8" }
   ],
   "blockLabel": "warm-up"
 }

@@ -1,10 +1,19 @@
 {
-  "blocks": [
-    "learn-essential-courtesies-at-the-office",
-    "zh-a1-warm-up-meeting-new-teammates",
-    "zh-a1-learn-understanding-the-questions-and-answers",
-    "zh-a1-practice-exchanging-basic-information",
-    "zh-a1-review-introduction-questions",
-    "zh-a1-quiz-introduction-questions"
+  "chapters": [
+    {
+      "dashedName": "zh-a1-chapter-greeting-and-self-introduction",
+      "modules": [
+        {
+          "dashedName": "zh-a1-module-asking-and-giving-basic-information",
+          "blocks": [
+            "zh-a1-warm-up-meeting-new-teammates",
+            "zh-a1-learn-understanding-the-questions-and-answers",
+            "zh-a1-practice-exchanging-basic-information",
+            "zh-a1-review-introduction-questions",
+            "zh-a1-quiz-introduction-questions"
+          ]
+        }
+      ]
+    }
   ]
 }
