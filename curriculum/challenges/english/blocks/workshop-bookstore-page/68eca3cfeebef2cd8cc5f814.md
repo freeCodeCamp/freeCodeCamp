@@ -16,7 +16,6 @@ Your second `.card` element should have an `id` attribute.
 ```js
 const cards = document.querySelectorAll('.card');
 assert.exists(cards[1]?.getAttribute('id'));
-console.log(cards)
 ```
 
 Your second `.card` element should have an `id` with value of `dave-cooking-book`.
