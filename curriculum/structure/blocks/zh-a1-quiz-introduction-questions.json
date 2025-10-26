@@ -1,0 +1,11 @@
+{
+  "name": "Introduction Questions Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-quiz-introduction-questions",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    { "id": "68fde0e64a011b0d76dc753e", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "quiz"
+}

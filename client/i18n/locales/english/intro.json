@@ -7262,12 +7262,38 @@
     "title": "A1 Professional Chinese Certification (Beta)",
     "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
     "intro": ["Placeholder intro"],
+    "chapters": {
+      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction"
+    },
+    "modules": {
+      "zh-a1-module-asking-and-giving-basic-information": "Asking and Giving Basic Information"
+    },
+    "module-intros": {
+      "zh-a1-module-asking-and-giving-basic-information": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      }
+    },
     "blocks": {
-      "learn-essential-courtesies-at-the-office": {
-        "title": "Learn Essential Courtesies at the Office",
-        "intro": [
-          "Learn simple and polite ways to communicate at work. In this module, you'll learn essential phrases for greeting colleagues, expressing thanks, apologizing, and saying goodbye."
-        ]
+      "zh-a1-warm-up-meeting-new-teammates": {
+        "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-understanding-the-questions-and-answers": {
+        "title": "Understanding the Questions and Answers",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-exchanging-basic-information": {
+        "title": "Exchanging Basic Information",
+        "intro": ["", ""]
+      },
+      "zh-a1-review-introduction-questions": {
+        "title": "Introduction Questions Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-introduction-questions": {
+        "title": "Introduction Questions Quiz",
+        "intro": ["", ""]
       }
     }
   },
