@@ -6,8 +6,7 @@ import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import EditorTabs from './editor-tabs';
-// Add this import to the top of ActionRow.tsx
-// The exact path may vary, but this is the standard freeCodeCamp structure.
+
 interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
@@ -22,7 +21,6 @@ interface ClassicLayoutProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
-
   challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
@@ -177,7 +175,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
                 <span aria-hidden='true'>{previewButtonText}</span>
-                {/* <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span> */}
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}
