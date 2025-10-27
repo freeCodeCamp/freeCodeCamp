@@ -40,7 +40,8 @@ export enum SuperBlocks {
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
-  BackEndDevApisV9 = 'back-end-development-and-apis-v9'
+  BackEndDevApisV9 = 'back-end-development-and-apis-v9',
+  FullStackDeveloperV9 = 'full-stack-developer-v9'
 }
 
 export const languageSuperBlocks = [
@@ -132,6 +133,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
     SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
@@ -182,7 +184,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
@@ -204,7 +207,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -226,7 +230,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -248,7 +253,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Portuguese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -268,7 +274,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -287,7 +294,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -307,7 +315,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -336,7 +345,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -372,7 +382,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -409,7 +420,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ]
 };
 
@@ -425,6 +437,7 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.PythonV9,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
+  SuperBlocks.FullStackDeveloperV9,
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
