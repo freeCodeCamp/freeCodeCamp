@@ -248,6 +248,8 @@ We appreciate responsible disclosure of vulnerabilities that might impact the in
 ### Contributing
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+My first GitHub contribution!
+
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
