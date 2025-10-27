@@ -1,7 +1,7 @@
 {
   "name": "React Forms, Data Fetching and Routing Review",
   "isUpcomingChange": false,
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "dashedName": "review-react-forms-data-fetching-and-routing",
   "challengeOrder": [

@@ -1,16 +1,18 @@
-const path = require('path');
+import { resolve } from 'path';
 
-const comparison = require('string-similarity');
+import comparison from 'string-similarity';
+import { config } from 'dotenv';
 
-const { generateSuperBlockList } = require('../shared-dist/config/curriculum');
+import { generateSuperBlockList } from '../../shared-dist/config/curriculum.js';
 
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+config({ path: resolve(__dirname, '../../.env') });
 
-const { availableLangs } = require('../shared-dist/config/i18n');
+import { availableLangs } from '../../shared-dist/config/i18n.js';
+
 const curriculumLangs = availableLangs.curriculum;
 
 // checks that the CURRICULUM_LOCALE exists and is an available language
-exports.testedLang = function testedLang() {
+export function testedLang() {
   if (process.env.CURRICULUM_LOCALE) {
     if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
       return process.env.CURRICULUM_LOCALE;
@@ -21,10 +23,10 @@ exports.testedLang = function testedLang() {
   } else {
     throw Error('LOCALE must be set for testing');
   }
-};
+}
 
-function createSuperOrder(superBlocks) {
-  const superOrder = {};
+export function createSuperOrder(superBlocks: string[]) {
+  const superOrder: { [sb: string]: number } = {};
 
   superBlocks.forEach((superBlock, i) => {
     superOrder[superBlock] = i;
@@ -33,8 +35,8 @@ function createSuperOrder(superBlocks) {
   return superOrder;
 }
 
-function getSuperOrder(
-  superblock,
+export function getSuperOrder(
+  superblock: string,
   showUpcomingChanges = process.env.SHOW_UPCOMING_CHANGES === 'true'
 ) {
   const flatSuperBlockMap = generateSuperBlockList({
@@ -54,7 +56,10 @@ function getSuperOrder(
  * @param {string} [options.block] - The dashedName of the block to filter for (in kebab case).
  * @returns {Array<Object>} Array with one superblock containing the specified block, or the original array if block is not provided.
  */
-function filterByBlock(superblocks, { block } = {}) {
+export function filterByBlock<T extends { blocks: { dashedName: string }[] }>(
+  superblocks: T[],
+  { block }: { block?: string } = {}
+): T[] {
   if (!block) return superblocks;
 
   const superblock = superblocks
@@ -76,7 +81,10 @@ function filterByBlock(superblocks, { block } = {}) {
  * @param {string} [options.superBlock] - The name of the superblock to filter for.
  * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock, or the original array if superBlock is not provided.
  */
-function filterBySuperblock(superblocks, { superBlock } = {}) {
+export function filterBySuperblock<T extends { name: string }>(
+  superblocks: T[],
+  { superBlock }: { superBlock?: string } = {}
+): T[] {
   if (!superBlock) return superblocks;
   return superblocks.filter(({ name }) => name === superBlock);
 }
@@ -88,15 +96,20 @@ function filterBySuperblock(superblocks, { superBlock } = {}) {
  * @param {string} [options.challengeId] - The specific challenge id to filter for
  * @returns {Array<Object>} Filtered superblocks containing only the matching challenge
  */
-function filterByChallengeId(superblocks, { challengeId } = {}) {
+export function filterByChallengeId<
+  T extends { blocks: { challengeOrder: { id: string }[] }[] }
+>(superblocks: T[], { challengeId }: { challengeId?: string } = {}): T[] {
   if (!challengeId) {
     return superblocks;
   }
 
-  const findChallengeIndex = (challengeOrder, id) =>
+  const findChallengeIndex = (challengeOrder: { id: string }[], id: string) =>
     challengeOrder.findIndex(challenge => challenge.id === id);
 
-  const filterChallengeOrder = (challengeOrder, id) => {
+  const filterChallengeOrder = (
+    challengeOrder: { id: string }[],
+    id: string
+  ) => {
     const index = findChallengeIndex(challengeOrder, id);
     if (index === -1) return [];
 
@@ -121,20 +134,45 @@ function filterByChallengeId(superblocks, { challengeId } = {}) {
     .filter(superblock => superblock.blocks.length > 0);
 }
 
-const createFilterPipeline = filterFunctions => (data, filters) =>
-  filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
+export interface Filter {
+  superBlock?: string;
+  block?: string;
+  challengeId?: string;
+}
 
-const applyFilters = createFilterPipeline([
+interface Filterable {
+  name: string;
+  blocks: {
+    challengeOrder: { id: string }[];
+    dashedName: string;
+  }[];
+}
+
+interface GenericFilterFunction {
+  <T extends Filterable>(data: T[], filters?: Filter): T[];
+}
+
+function createFilterPipeline<T extends Filterable>(
+  filterFunctions: GenericFilterFunction[]
+): (data: T[], filters?: Filter) => T[] {
+  return (data: T[], filters?: Filter) =>
+    filterFunctions.reduce((acc, filterFn) => filterFn(acc, filters), data);
+}
+
+export const applyFilters: GenericFilterFunction = createFilterPipeline([
   filterBySuperblock,
   filterByBlock,
   filterByChallengeId
 ]);
 
-function closestMatch(target, xs) {
+export function closestMatch(target: string, xs: string[]): string {
   return comparison.findBestMatch(target.toLowerCase(), xs).bestMatch.target;
 }
 
-function closestFilters(target, superblocks) {
+export function closestFilters(
+  superblocks: Filterable[],
+  target?: Filter
+): Filter | undefined {
   if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
     return {
@@ -155,12 +193,3 @@ function closestFilters(target, superblocks) {
 
   return target;
 }
-
-exports.closestFilters = closestFilters;
-exports.closestMatch = closestMatch;
-exports.createSuperOrder = createSuperOrder;
-exports.filterByBlock = filterByBlock;
-exports.filterBySuperblock = filterBySuperblock;
-exports.filterByChallengeId = filterByChallengeId;
-exports.getSuperOrder = getSuperOrder;
-exports.applyFilters = applyFilters;

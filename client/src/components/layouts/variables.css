@@ -37,6 +37,9 @@
   --header-sub-element-size: 45px;
   --header-height: 38px;
   --breadcrumbs-height: 44px;
+  --action-row-height: 64px;
+  --z-index-breadcrumbs: 100;
+  --z-index-flash: 150;
   --z-index-site-header: 200;
 }
 

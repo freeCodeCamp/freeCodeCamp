@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest';
-import { isPoly } from '../shared-dist/utils/polyvinyl.js';
+import { isPoly } from '../../shared-dist/utils/polyvinyl.js';
 import {
   validateChallenges,
   buildBlock,
@@ -70,7 +70,7 @@ const dummyUnfinishedSuperBlock = {
 const dummyBlockMeta = {
   name: 'Test Block',
   blockLayout: 'challenge-list',
-  blockType: 'workshop',
+  blockLabel: 'workshop',
   isUpcomingChange: false,
   dashedName: 'test-block',
   superBlock: 'responsive-web-design',
@@ -124,7 +124,7 @@ const expectedChallengeProperties = {
   isLastChallengeInBlock: expect.any(Boolean),
   block: dummyBlockMeta.dashedName,
   blockLayout: dummyBlockMeta.blockLayout,
-  blockType: dummyBlockMeta.blockType,
+  blockLabel: dummyBlockMeta.blockLabel,
   hasEditableBoundaries: dummyBlockMeta.hasEditableBoundaries,
   order: dummyBlockMeta.order,
   description: '',
@@ -565,9 +565,7 @@ describe('SuperblockCreator class', () => {
         { dashedName: 'block-3' }
       ];
 
-      const parser = new SuperblockCreator({
-        blockCreator: mockBlockCreator
-      });
+      const parser = new SuperblockCreator(mockBlockCreator);
 
       const result = await parser.processSuperblock({
         blocks,

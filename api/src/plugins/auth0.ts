@@ -1,7 +1,7 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Type } from '@sinclair/typebox';
-import { Value } from '@sinclair/typebox/value';
+import { Type } from 'typebox';
+import { Value } from 'typebox/value';
 import fp from 'fastify-plugin';
 
 import { isError } from 'lodash-es';

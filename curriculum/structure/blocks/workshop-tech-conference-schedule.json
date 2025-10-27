@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "dashedName": "workshop-tech-conference-schedule",
   "helpCategory": "HTML-CSS",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68c33e502cd97f2fd52cb63b", "title": "Step 1" },

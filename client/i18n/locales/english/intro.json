@@ -4540,6 +4540,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -4975,7 +4981,7 @@
       "review-relational-databases": {
         "title": "Relational Databases Review",
         "intro": [
-          "Review relational databases concepts to prepare for the upcoming quiz."
+          "Review relational databases concepts to prepare for the exam."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {

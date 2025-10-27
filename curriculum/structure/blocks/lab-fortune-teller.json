@@ -1,6 +1,6 @@
 {
   "name": "Build a Fortune Teller App",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

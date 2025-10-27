@@ -1,6 +1,6 @@
 {
   "name": "Relational Databases Certification Exam",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "exam-relational-databases-certification",

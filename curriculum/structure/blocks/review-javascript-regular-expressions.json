@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Regular Expressions Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript-regular-expressions",
