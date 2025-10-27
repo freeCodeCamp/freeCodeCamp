@@ -338,12 +338,30 @@ export async function parseCurriculumStructure(filter?: Filter) {
 export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
 
+  const fullSuperblockFromEnv = process.env.FULL_SUPERBLOCK;
+
+  const fullSuperblockEnum = fullSuperblockFromEnv
+    ? superBlockNames[fullSuperblockFromEnv as keyof typeof superBlockNames]
+    : undefined;
+
+  const selectiveFilter = fullSuperblockFromEnv
+    ? { superBlock: fullSuperblockFromEnv }
+    : undefined;
+  const combinedFilters = selectiveFilter || filters;
+
+  if (fullSuperblockFromEnv) {
+    log(
+      `Selective build mode active: Building full content for "${fullSuperblockFromEnv}"`
+    );
+    log(`Other superblocks will be skipped entirely`);
+  }
+
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(filters))
+    getBlockCreator(lang, !isEmpty(combinedFilters))
   );
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(filters);
+    await parseCurriculumStructure(combinedFilters);
 
   const fullCurriculum: {
     [key: string]: unknown;
@@ -364,8 +382,18 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   });
 
   for (const superblock of liveSuperblocks) {
-    fullCurriculum[superblock.name] =
-      await builder.processSuperblock(superblock);
+    log(`Processing superblock: ${superblock.name}`);
+    // Skip processing other superblocks entirely in selective build mode
+    if (fullSuperblockEnum && superblock.name !== fullSuperblockEnum) {
+      log(
+        `Skipping superblock: ${superblock.name} (looking for ${fullSuperblockEnum})`
+      );
+      continue;
+    }
+
+    log(`Building full superblock: ${superblock.name}`);
+    const processedSuperblock = await builder.processSuperblock(superblock);
+    fullCurriculum[superblock.name] = processedSuperblock;
   }
 
   for (const cert of certifications) {
