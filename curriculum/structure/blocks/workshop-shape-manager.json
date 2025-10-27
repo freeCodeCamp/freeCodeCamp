@@ -1,0 +1,28 @@
+{
+  "name": "Build a Shape Manager",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-shape-manager",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68ff37f55fb2122df640cd78", "title": "Step 1" },
+    { "id": "68ff41972b5bb84f802ee6ca", "title": "Step 2" },
+    { "id": "68ff420e11f90153864d39e2", "title": "Step 3" },
+    { "id": "68ff42692df48e5ab1429b79", "title": "Step 4" },
+    { "id": "68ff42cfa7004f6353fbb5f0", "title": "Step 5" },
+    { "id": "68ff433e64a4c367915bd7bd", "title": "Step 6" },
+    { "id": "68ff495abf98da70d59e6f44", "title": "Step 7" },
+    { "id": "68ff4d778884847a60af06a5", "title": "Step 8" },
+    { "id": "68ff4e5ee8f33f8820e42fe1", "title": "Step 9" },
+    { "id": "68ff4f334662748f8c875790", "title": "Step 10" },
+    { "id": "68ff4f9c41aa6e999fd91cb1", "title": "Step 11" },
+    { "id": "68ff61fa8a079ead040472ee", "title": "Step 12" },
+    { "id": "68ff62eadabee6b65afac0ef", "title": "Step 13" },
+    { "id": "68ff645e5941a4c18c15fb6b", "title": "Step 14" },
+    { "id": "68ff64fd87cec4ca12c50c99", "title": "Step 15" },
+    { "id": "68ff662bbcdfb3d2d9e625da", "title": "Step 16" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
