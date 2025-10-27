@@ -1,6 +1,6 @@
 {
   "name": "Build a Missing Letter Detector",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

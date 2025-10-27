@@ -70,10 +70,7 @@ const UniversalNav = ({
         to='/learn'
         data-playwright-test-label='header-universal-nav-logo'
       >
-        <FreeCodeCampLogo
-          aria-label={t('aria.fcc-curriculum')}
-          data-playwright-test-label='header-logo'
-        />
+        <FreeCodeCampLogo aria-label={t('aria.fcc-curriculum')} />
       </Link>
       <div className='universal-nav-right main-nav'>
         {pending ? (

@@ -6,6 +6,7 @@ import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
+import { patchBlock } from './patches';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
@@ -316,7 +317,9 @@ export function buildExtCurriculumDataV2(
                     const blockData = blocksWithData[block];
                     return {
                       intro: superBlockIntros.blocks[block].intro,
-                      meta: omit(blockData.meta, ['chapter', 'module'])
+                      meta: patchBlock(
+                        omit(blockData.meta, ['chapter', 'module'])
+                      )
                     };
                   })
           }))
@@ -339,7 +342,7 @@ export function buildExtCurriculumDataV2(
 
       return {
         intro: intros[superBlockKey].blocks[blockName].intro,
-        meta: blockData.meta
+        meta: patchBlock(blockData.meta)
       };
     });
 

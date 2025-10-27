@@ -2,7 +2,7 @@
   "name": "Working with Common Data Structures",
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-common-data-structures",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

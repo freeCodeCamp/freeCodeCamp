@@ -132,7 +132,7 @@ export type Challenge = {
   instructions?: string;
   questions?: string[];
   block?: string;
-  blockType?: string;
+  blockLabel?: string;
   blockLayout?: string;
   hasEditableBoundaries?: boolean;
   order?: number;
@@ -165,7 +165,7 @@ export interface BlockStructure {
   disableLoopProtectTests?: boolean;
   disableLoopProtectPreview?: boolean;
   blockLayout: string;
-  blockType: string;
+  blockLabel: string;
   challengeOrder: Challenge[];
   dashedName: string;
   isUpcomingChange?: boolean;

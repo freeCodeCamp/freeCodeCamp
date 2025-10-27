@@ -1,6 +1,6 @@
 {
   "name": "HTML Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-html",

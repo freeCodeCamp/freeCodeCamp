@@ -2,6 +2,7 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
+import { currentCertifications } from '../shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
@@ -319,5 +320,25 @@ test.describe('Settings - New User', () => {
     // Button for full stack cert is disabled if the user hasn't claimed the required certs
     await expect(claimFullStackCertButton).toBeVisible();
     await expect(claimFullStackCertButton).toBeDisabled();
+  });
+});
+
+test.describe('Setting - Hash Navigation', () => {
+  test('should scroll to certification sections when navigating with hash', async ({
+    page
+  }) => {
+    for (const certSlug of currentCertifications) {
+      await page.goto(`/settings#cert-${certSlug}`);
+
+      // Wait for scroll animation
+      await page.waitForTimeout(300);
+
+      const certHeading = page.getByRole('heading', {
+        name: translations.certification.title[certSlug],
+        exact: true
+      });
+
+      await expect(certHeading).toBeInViewport();
+    }
   });
 });

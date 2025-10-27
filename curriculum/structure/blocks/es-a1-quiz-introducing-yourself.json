@@ -7,5 +7,5 @@
   "challengeOrder": [
     { "id": "68dc7558bca0aa734dba9c05", "title": "Introducing Yourself Quiz" }
   ],
-  "blockType": "quiz"
+  "blockLabel": "quiz"
 }

@@ -60,5 +60,5 @@
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "blockLayout": "challenge-grid",
-  "blockType": "workshop"
+  "blockLabel": "workshop"
 }

@@ -3,7 +3,7 @@
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "dashedName": "workshop-calorie-counter",
   "challengeOrder": [

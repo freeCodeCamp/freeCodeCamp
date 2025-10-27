@@ -1,6 +1,6 @@
 {
   "name": "Object Oriented Programming Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-object-oriented-programming",
