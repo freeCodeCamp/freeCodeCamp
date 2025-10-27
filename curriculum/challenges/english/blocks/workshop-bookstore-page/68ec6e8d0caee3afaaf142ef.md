@@ -22,13 +22,13 @@ assert.exists(document.querySelector('.card-container div'));
 Your new `div` element should have a `class` attribute.
 
 ```js
-assert.exists(document.querySelector('.card-container div')?.getAttribute('class'));
+assert.isTrue(document.querySelector('.card-container div')?.hasAttribute('class'));
 ```
 
 Your new `div` element should have a `class` with the value of `card`.
 
 ```js
-assert.exists(document.querySelector('.card-container .card'));
+assert.exists(document.querySelector('.card-container div.card'));
 ```
 
 # --seed--
