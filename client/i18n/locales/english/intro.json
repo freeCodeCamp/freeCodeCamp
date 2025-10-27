@@ -3048,7 +3048,7 @@
       "workshop-string-inspector": {
         "title": "Build a String Inspector",
         "intro": [
-          "In this workshop, you will learn how to work with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
