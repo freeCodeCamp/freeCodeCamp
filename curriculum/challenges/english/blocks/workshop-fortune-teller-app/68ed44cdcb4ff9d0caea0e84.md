@@ -12,13 +12,13 @@ Since you’re calling the fetchCardsData() method inside the constructor, you n
 
 # --hints--
 
-you should have private method named fetchCardsData.
+You should have `private` method named `fetchCardsData`.
 
 ```js
 
 ```
 
-your fetchCardsData method should be asynchronous.
+Your fetchCardsData method should be `asynchronous`.
 
 ```js
 
