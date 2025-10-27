@@ -292,7 +292,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
           usesTerminal={usesTerminal}
-          challengeType={challengeType}
           data-playwright-test-label='action-row'
         />
       )}

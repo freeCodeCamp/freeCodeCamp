@@ -28,6 +28,36 @@ test.describe('Desktop view', () => {
       await expect(previewPortalButton).toBeVisible();
     });
 
+    test('Preview button is visible during HTML/CSS/JS challenges', async ({
+      page
+    }) => {
+      const previewPaneButton = page.getByTestId('preview-pane-button');
+      const previewPortalButton = page.getByRole('button', {
+        name: translations.aria['move-preview-to-new-window']
+      });
+      await expect(previewPortalButton).toHaveText(
+        'Move the preview to a new window and focus it'
+      );
+      await expect(previewPaneButton).toHaveText('Hide the preview\nPreview');
+    });
+
+    test('Terminal button is visible during Python challenges', async ({
+      page
+    }) => {
+      await page.goto(
+        '/learn/full-stack-developer/workshop-caesar-cipher/step-1'
+      );
+      const previewPaneButton = page.getByTestId('preview-pane-button');
+      const previewPortalButton = page.getByRole('button', {
+        name: translations.aria['move-preview-to-new-window']
+      });
+
+      await expect(previewPaneButton).toHaveText('Hide the terminal\nTerminal');
+      await expect(previewPortalButton).toHaveText(
+        'Move the terminal to a new window and focus it'
+      );
+    });
+
     test('Clicking instructions button hides instructions panel, but not any buttons', async ({
       page
     }) => {
