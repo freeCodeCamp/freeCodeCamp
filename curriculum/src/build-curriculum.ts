@@ -344,6 +344,13 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     ? superBlockNames[fullSuperblockFromEnv as keyof typeof superBlockNames]
     : undefined;
 
+  if (fullSuperblockFromEnv && !fullSuperblockEnum) {
+    const availableSuperblocks = Object.keys(superBlockNames).join(', ');
+    throw new Error(
+      `Invalid FULL_SUPERBLOCK: "${fullSuperblockFromEnv}". Available superblocks are: ${availableSuperblocks}`
+    );
+  }
+
   const selectiveFilter = fullSuperblockFromEnv
     ? { superBlock: fullSuperblockFromEnv }
     : undefined;
@@ -383,7 +390,7 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
 
   for (const superblock of liveSuperblocks) {
     log(`Processing superblock: ${superblock.name}`);
-    // Skip processing other superblocks entirely in selective build mode
+
     if (fullSuperblockEnum && superblock.name !== fullSuperblockEnum) {
       log(
         `Skipping superblock: ${superblock.name} (looking for ${fullSuperblockEnum})`
