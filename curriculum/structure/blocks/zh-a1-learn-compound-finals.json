@@ -1,0 +1,14 @@
+{
+  "name": "Compound Finals",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-compound-finals",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3f3afde57af150880ba0",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}

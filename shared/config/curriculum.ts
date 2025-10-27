@@ -424,7 +424,8 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
   SuperBlocks.RelationalDbV9,
-  SuperBlocks.BackEndDevApisV9
+  SuperBlocks.BackEndDevApisV9,
+  SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
 
