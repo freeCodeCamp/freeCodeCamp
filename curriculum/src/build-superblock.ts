@@ -480,6 +480,9 @@ export function transformSuperBlock(
   { showComingSoon } = { showComingSoon: false }
 ) {
   let blocks: BlockInfo[] = [];
+  const shouldAllowEmptyBlocks =
+    !showComingSoon &&
+    superblockData.chapters?.every(chapter => chapter.comingSoon);
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
@@ -514,7 +517,7 @@ export function transformSuperBlock(
     }
   }
 
-  if (isEmpty(blocks)) {
+  if (isEmpty(blocks) && !shouldAllowEmptyBlocks) {
     throw Error(`No blocks found in superblock data`);
   }
 
