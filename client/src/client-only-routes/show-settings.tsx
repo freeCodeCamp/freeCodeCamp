@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { scroller } from 'react-scroll';
 
 import { Container, Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
@@ -108,6 +109,24 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const isSignedInRef = useRef(isSignedIn);
 
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
+
+  const handleHashChange = () => {
+    const id = window.location.hash.replace('#', '');
+    if (id) {
+      scroller.scrollTo(id, {
+        smooth: true,
+        duration: 500,
+        offset: -100
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   if (showLoading || !user) {
     return <Loader fullScreen={true} />;

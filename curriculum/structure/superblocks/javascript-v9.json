@@ -7,6 +7,8 @@
           "dashedName": "javascript-variables-and-strings",
           "blocks": [
             "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
             "workshop-greeting-bot",
             "lab-javascript-trivia-bot",
             "lab-sentence-maker",
@@ -19,6 +21,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "lecture-working-with-string-formatting-methods",
             "lecture-working-with-string-modification-methods",
+            "workshop-string-transformer",
             "review-javascript-strings",
             "quiz-javascript-strings"
           ]
@@ -95,6 +98,7 @@
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "lab-missing-letter-detector",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -111,12 +115,18 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-title-case-converter",
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
+            "lab-unique-sorted-union",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
+            "lab-odd-fibonacci-sum-calculator",
+            "lab-element-skipper",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
@@ -130,6 +140,12 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-value-remover-function",
+            "lab-matching-object-filter",
+            "lab-prime-number-sum-calculator",
+            "lab-range-based-lcm-calculator",
+            "lab-deep-flattening-tool",
+            "lab-all-true-property-validator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -139,6 +155,7 @@
           "blocks": [
             "lecture-working-with-the-dom-click-events-and-web-apis",
             "workshop-storytelling-app",
+            "workshop-emoji-reactor",
             "lab-favorite-icon-toggler",
             "lecture-understanding-the-event-object-and-event-delegation",
             "workshop-music-instrument-filter",
@@ -177,6 +194,9 @@
             "workshop-spam-filter",
             "lab-palindrome-checker",
             "lab-regex-sandbox",
+            "lab-spinal-case-converter",
+            "lab-pig-latin",
+            "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
@@ -295,6 +315,7 @@
           "blocks": ["review-javascript"]
         },
         {
+          "moduleType": "exam",
           "dashedName": "javascript-certification-exam",
           "comingSoon": true,
           "blocks": ["exam-javascript-certification"]
