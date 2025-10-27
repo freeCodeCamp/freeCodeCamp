@@ -885,7 +885,7 @@
         {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-node-js-core-libraries"]
         },
         {
           "dashedName": "node-package-manager",
