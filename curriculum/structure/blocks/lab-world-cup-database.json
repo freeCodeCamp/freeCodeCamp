@@ -1,8 +1,8 @@
 {
   "name": "Build a World Cup Database",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "lab-world-cup-database",

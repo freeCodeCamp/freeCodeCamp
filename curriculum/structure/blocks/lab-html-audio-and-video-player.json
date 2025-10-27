@@ -1,0 +1,15 @@
+{
+  "name": "Build an HTML Audio and Video Player",
+  "isUpcomingChange": false,
+  "dashedName": "lab-html-audio-and-video-player",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68de40f53fcaf106f51cc20f",
+      "title": "Build an HTML Audio and Video Player"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

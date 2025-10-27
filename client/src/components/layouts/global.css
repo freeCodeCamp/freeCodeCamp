@@ -139,6 +139,14 @@ hr {
   min-height: 0;
 }
 
+.default-layout:has(.breadcrumbs-demo) #learn-app-wrapper {
+  padding-top: var(--breadcrumbs-height);
+}
+
+.default-layout:has(.action-row) #learn-app-wrapper {
+  padding-top: calc(var(--breadcrumbs-height) + var(--action-row-height));
+}
+
 h1 {
   color: var(--secondary-color);
   font-weight: 700;
@@ -475,10 +483,6 @@ fieldset[disabled] .btn {
     width: 120px;
     height: 120px;
   }
-}
-
-strong {
-  color: var(--secondary-color);
 }
 
 .form-control {

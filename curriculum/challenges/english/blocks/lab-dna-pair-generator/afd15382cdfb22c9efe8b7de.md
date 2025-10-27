@@ -7,25 +7,24 @@ dashedName: implement-a-dna-pair-generator
 
 # --description--
 
-Pairs of DNA strands consist of nucleobase pairs. Base pairs are represented by the characters <em>AT</em> and <em>CG</em>, which form building blocks of the DNA double helix.
+In the double helix of the DNA, the bases are always paired together: if on one strand there is an <em>A</em> base, on the other strand directly in front there is a <em>T</em> base, the other pair is <em>C</em> and <em>G</em>.
 
 In this lab, you will write a function to match the missing base pairs for the provided DNA strand. For each character in the provided string, find the base pair character.
 
-For example, for the input `GCG`, return `[["G", "C"], ["C", "G"], ["G", "C"]]`
+For example, for the input `ATCG`, return `[["A", "T"], ["T", "A"], ["C", "G"], ["G", "C"]]`
 
-The character and its pair are paired up in an array, and all the arrays are grouped into one encapsulating array.
+The <em>A</em> base gets paired with a <em>T</em> base, the <em>T</em> base is paired with a <em>A</em> base, the <em>C</em> is paired with the <em>G</em> base, and finally the <em>G</em> base is paired with a <em>C</em> base.
 
 **Objective**: Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 **User Stories:**
 
-1. You should have a `pairElement` function that takes a string as an argument.
-1. The `pairElement` function should return a 2d array.
+1. You should have a `pairElement` function that takes a string of any length as an argument.
+1. The `pairElement` function should return a 2d array, where each inner array has two strings inside, the first string is one base from the input, and the second string the paired base.
 1. When given `A`, the function should pair it with `T`.
 1. When given `T`, the function should pair it with `A`.
 1. When given `C`, the function should pair it with `G`.
 1. When given `G`, the function should pair it with `C`.
-1. Each pair should be returned as an array with the original character first and its complement second.
 
 # --hints--
 

@@ -1,6 +1,6 @@
 {
   "name": "Understanding Form Validation",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-form-validation",

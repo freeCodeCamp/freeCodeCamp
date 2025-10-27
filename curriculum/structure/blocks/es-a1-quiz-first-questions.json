@@ -1,0 +1,11 @@
+{
+  "name": "First Questions Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-quiz-first-questions",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "68dc75ee867ccc79d18df2ef", "title": "First Questions Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

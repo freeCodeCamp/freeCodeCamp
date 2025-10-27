@@ -1,0 +1,72 @@
+{
+  "name": "Build an Emoji Reactor",
+  "blockLabel": "workshop",
+  "blockLayout": "challenge-grid",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-emoji-reactor",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "688c90634eb5ae69845ac35d",
+      "title": "Step 1"
+    },
+    {
+      "id": "6899b0d1825ff24e9fe8d747",
+      "title": "Step 2"
+    },
+    {
+      "id": "6899b1d3bb656e56bd6937e2",
+      "title": "Step 3"
+    },
+    {
+      "id": "6899b593d232e07617f74055",
+      "title": "Step 4"
+    },
+    {
+      "id": "6899b7755876b10444ae3bcd",
+      "title": "Step 5"
+    },
+    {
+      "id": "6899b84e392df30ae370985e",
+      "title": "Step 6"
+    },
+    {
+      "id": "6899c30b1d26094e11170c92",
+      "title": "Step 7"
+    },
+    {
+      "id": "689af0bf1c707336ee9a1842",
+      "title": "Step 8"
+    },
+    {
+      "id": "689b15aacce1ae176ec768dc",
+      "title": "Step 9"
+    },
+    {
+      "id": "689b17e7e63b8e2c13839e98",
+      "title": "Step 10"
+    },
+    {
+      "id": "68a9f8378ddba1261a268cce",
+      "title": "Step 11"
+    },
+    {
+      "id": "68a9fa161498c3324ac06fe1",
+      "title": "Step 12"
+    },
+    {
+      "id": "68a9fa1787009f3293b7ba7f",
+      "title": "Step 13"
+    },
+    {
+      "id": "68a9fa1976616e330813a96c",
+      "title": "Step 14"
+    },
+    {
+      "id": "68a9fa18ad7a8432d0fc8621",
+      "title": "Step 15"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

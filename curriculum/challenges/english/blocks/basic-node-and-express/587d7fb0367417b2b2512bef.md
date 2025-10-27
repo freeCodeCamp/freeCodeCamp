@@ -25,17 +25,15 @@ Send the `/views/index.html` file as a response to GET requests to the `/` path.
 Your app should serve the file views/index.html
 
 ```js
-  $.get(code).then(
-    (data) => {
-      assert.match(
-        data,
-        /<h1>.*<\/h1>/,
-        'Your app does not serve the expected HTML'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code);
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.text();
+  assert.match(
+    data,
+    /<h1>.*<\/h1>/,
+    'Your app does not serve the expected HTML'
   );
 ```
 

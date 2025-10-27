@@ -1,4 +1,4 @@
-import { access, readdir } from 'fs/promises';
+import { readdir } from 'fs/promises';
 import { join, resolve } from 'path';
 
 import { flatten } from 'lodash/fp';
@@ -8,7 +8,7 @@ const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
 import { availableLangs } from '../../shared/config/i18n';
-import { getChallengesForLang } from '../../curriculum/get-challenges';
+import { getChallengesForLang } from '../../curriculum/src/get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
@@ -82,30 +82,9 @@ void (async () => {
   for (const language of langsToCheck) {
     console.log(`\n=== ${language} ===`);
     const certs = getAuditedSuperBlocks({ language });
-    const langCurriculumDirectory = join(
-      process.cwd(),
-      'curriculum',
-      'i18n-curriculum',
-      'curriculum',
-      'challenges',
-      language
-    );
-    // TODO: decide if we need to audit files at all.
-    const auditedFiles = englishFilePaths;
-    // const auditedFiles = englishFilePaths.filter(file =>
-    //   certs.some(
-    //     cert =>
-    //       // we're not ready to audit the new curriculum yet
-    //       (cert !== SuperBlocks.JsAlgoDataStructNew ||
-    //         process.env.SHOW_UPCOMING_CHANGES === 'true') &&
-    //       file.startsWith(superBlockToFolderMap[cert])
-    //   )
-    // );
-    const noMissingFiles = await auditChallengeFiles(auditedFiles, {
-      langCurriculumDirectory
-    });
+
     const noDuplicateSlugs = await auditSlugs(language, certs);
-    if (noMissingFiles && noDuplicateSlugs) {
+    if (noDuplicateSlugs) {
       console.log(`All challenges pass.`);
     } else {
       actionShouldFail = true;
@@ -113,24 +92,6 @@ void (async () => {
   }
   process.exit(actionShouldFail ? 1 : 0);
 })();
-
-async function auditChallengeFiles(
-  auditedFiles: string[],
-  { langCurriculumDirectory }: { langCurriculumDirectory: string }
-) {
-  let auditPassed = true;
-  for (const file of auditedFiles) {
-    const filePath = join(langCurriculumDirectory, file);
-    const fileExists = await access(filePath)
-      .then(() => true)
-      .catch(() => false);
-    if (!fileExists) {
-      console.log(`${filePath} does not exist.`);
-      auditPassed = false;
-    }
-  }
-  return auditPassed;
-}
 
 async function auditSlugs(lang: string, certs: SuperBlocks[]) {
   let auditPassed = true;

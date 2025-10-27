@@ -8,9 +8,9 @@ import { SuperBlocks } from '../../shared/config/curriculum';
 import {
   getContentConfig,
   writeBlockStructure
-} from '../../curriculum/file-handler';
-import { superBlockToFilename } from '../../curriculum/build-curriculum';
-import { createQuizFile, validateBlockName } from './utils';
+} from '../../curriculum/src/file-handler';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
+import { createQuizFile, getAllBlocks, validateBlockName } from './utils';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import { updateSimpleSuperblockStructure } from './helpers/create-project';
@@ -145,41 +145,44 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
-void prompt([
-  {
-    name: 'superBlock',
-    message: 'Which certification does this belong to?',
-    default: SuperBlocks.FullStackDeveloper,
-    type: 'list',
-    choices: Object.values(SuperBlocks)
-  },
-  {
-    name: 'block',
-    message: 'What is the dashed name (in kebab-case) for this quiz?',
-    validate: validateBlockName,
-    filter: (block: string) => {
-      return block.toLowerCase().trim();
-    }
-  },
-  {
-    name: 'title',
-    default: ({ block }: { block: string }) => block
-  },
-  {
-    name: 'helpCategory',
-    message: 'Choose a help category',
-    default: 'HTML-CSS',
-    type: 'list',
-    choices: helpCategories
-  },
-  {
-    name: 'questionCount',
-    message: 'Should this quiz have either ten or twenty questions?',
-    default: 20,
-    type: 'list',
-    choices: [20, 10]
-  }
-])
+void getAllBlocks()
+  .then(existingBlocks =>
+    prompt([
+      {
+        name: 'superBlock',
+        message: 'Which certification does this belong to?',
+        default: SuperBlocks.FullStackDeveloper,
+        type: 'list',
+        choices: Object.values(SuperBlocks)
+      },
+      {
+        name: 'block',
+        message: 'What is the dashed name (in kebab-case) for this quiz?',
+        validate: (block: string) => validateBlockName(block, existingBlocks),
+        filter: (block: string) => {
+          return block.toLowerCase().trim();
+        }
+      },
+      {
+        name: 'title',
+        default: ({ block }: { block: string }) => block
+      },
+      {
+        name: 'helpCategory',
+        message: 'Choose a help category',
+        default: 'HTML-CSS',
+        type: 'list',
+        choices: helpCategories
+      },
+      {
+        name: 'questionCount',
+        message: 'Should this quiz have either ten or twenty questions?',
+        default: 20,
+        type: 'list',
+        choices: [20, 10]
+      }
+    ])
+  )
   .then(
     async ({
       superBlock,
