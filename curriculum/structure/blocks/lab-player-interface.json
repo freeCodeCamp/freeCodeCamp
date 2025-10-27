@@ -10,6 +10,6 @@
       "title": "Build a Player Interface"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }
