@@ -430,6 +430,19 @@ export interface ExamEnvironmentChallenge {
   challengeId: string;
 }
 
+export type GetExamsResponse = Array<{
+  id: string;
+  config: {
+    name: string;
+    note: string;
+    totalTimeInS: number;
+    retakeTimeInS: number;
+    passingPercent: number;
+  };
+  canTake: boolean;
+  prerequisites: string[];
+}>;
+
 export const examAttempts = createApi({
   reducerPath: 'exam-attempts',
   baseQuery: fetchBaseQuery({
@@ -446,6 +459,9 @@ export const examAttempts = createApi({
     getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
       query: challengeId =>
         `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    }),
+    getExams: build.query<GetExamsResponse, void>({
+      query: () => '/user/exam-environment/exams'
     })
   })
 });
