@@ -54,6 +54,10 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
+  Certification.FoundationalCSharp
+] as const;
+
+export const legacyCertifications = [
   Certification.RespWebDesign,
   Certification.JsAlgoDataStructNew,
   Certification.FrontEndDevLibs,
@@ -66,12 +70,6 @@ export const currentCertifications = [
   Certification.InfoSec,
   Certification.MachineLearningPy,
   Certification.CollegeAlgebraPy,
-  Certification.FoundationalCSharp
-] as const;
-
-// "Legacy" certifications are another class of standard certifications. They're
-// still live and claimable, but some parts of the UI handle them differently.
-export const legacyCertifications = [
   Certification.LegacyFrontEnd,
   Certification.JsAlgoDataStruct,
   Certification.LegacyBackEnd,
