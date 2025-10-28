@@ -3086,6 +3086,13 @@
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
         ]
       },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
+        ]
+      },
       "lecture-working-with-comparison-and-boolean-operators": {
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
@@ -6539,9 +6546,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Python Certification exam."
     ],
-    "chapters": {
-      "python": "Python"
-    },
+    "chapters": { "python": "Python" },
     "modules": {
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
@@ -8524,14 +8529,8 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
+      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
+      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
