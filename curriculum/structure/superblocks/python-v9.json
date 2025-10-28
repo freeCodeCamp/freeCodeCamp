@@ -4,7 +4,134 @@
       "dashedName": "python",
       "modules": [
         {
+          "dashedName": "python-basics",
+          "comingSoon": false,
+          "blocks": [
+            "lecture-introduction-to-python",
+            "workshop-caesar-cipher",
+            "lab-rpg-character",
+            "review-python-basics",
+            "quiz-python-basics"
+          ]
+        },
+        {
+          "dashedName": "python-loops-and-sequences",
+          "comingSoon": false,
+          "blocks": [
+            "lecture-working-with-loops-and-sequences",
+            "workshop-pin-extractor",
+            "lab-number-pattern-generator",
+            "review-loops-and-sequences",
+            "quiz-loops-and-sequences"
+          ]
+        },
+        {
+          "dashedName": "python-dictionaries-and-sets",
+          "comingSoon": false,
+          "blocks": [
+            "lecture-working-with-dictionaries-and-sets",
+            "lecture-working-with-modules",
+            "workshop-medical-data-validator",
+            "lab-user-configuration-manager",
+            "review-dictionaries-and-sets",
+            "quiz-dictionaries-and-sets"
+          ]
+        },
+        {
+          "dashedName": "python-error-handling",
+          "comingSoon": false,
+          "blocks": [
+            "lecture-understanding-error-handling",
+            "lab-isbn-validator",
+            "review-error-handling",
+            "quiz-error-handling"
+          ]
+        },
+        {
+          "dashedName": "python-classes-and-objects",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
+            "workshop-email-simulator",
+            "lab-budget-app",
+            "review-classes-and-objects",
+            "quiz-classes-and-objects"
+          ]
+        },
+        {
+          "dashedName": "python-object-oriented-programming",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
+            "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
+            "lab-polygon-area-calculator",
+            "lecture-understanding-abstraction",
+            "review-object-oriented-programming",
+            "quiz-object-oriented-programming"
+          ]
+        },
+        {
+          "dashedName": "python-linear-data-structures",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
+            "lab-hash-table",
+            "review-data-structures",
+            "quiz-data-structures"
+          ]
+        },
+        {
+          "dashedName": "python-algorithms",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-searching-and-sorting-algorithms",
+            "workshop-binary-search",
+            "lab-bisection-method",
+            "workshop-merge-sort",
+            "lab-quicksort",
+            "lab-selection-sort",
+            "lab-luhn-algorithm",
+            "lab-tower-of-hanoi",
+            "review-searching-and-sorting-algorithms",
+            "quiz-searching-and-sorting-algorithms"
+          ]
+        },
+        {
+          "dashedName": "python-graphs-and-trees",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-graphs-and-trees",
+            "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
+            "lab-depth-first-search",
+            "lab-n-queens-problem",
+            "review-graphs-and-trees",
+            "quiz-graphs-and-trees"
+          ]
+        },
+        {
+          "dashedName": "python-dynamic-programming",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
+            "review-dynamic-programming",
+            "quiz-dynamic-programming"
+          ]
+        },
+        {
+          "comingSoon": true,
+          "moduleType": "review",
+          "dashedName": "review-python",
+          "blocks": ["review-python"]
+        },
+        {
           "moduleType": "exam",
+          "comingSoon": true,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }
