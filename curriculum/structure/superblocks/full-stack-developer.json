@@ -883,6 +883,11 @@
       "comingSoon": true,
       "modules": [
         {
+          "dashedName": "introduction-to-nodejs",
+          "comingSoon": true,
+          "blocks": ["quiz-node-js-intro"]
+        },
+        {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
           "blocks": []
