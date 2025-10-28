@@ -1,4 +1,12 @@
-import { describe, test, expect, beforeAll, afterEach, vi } from 'vitest';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  afterAll,
+  vi
+} from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
 import db from '../../db/prisma.js';
@@ -22,6 +30,11 @@ describe('findOrCreateUser', () => {
   const email = 'test@user.com';
   beforeAll(async () => {
     fastify = await setupServer();
+  });
+
+  afterAll(async () => {
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
+    await fastify.close();
   });
 
   afterEach(async () => {
