@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-step 16 instructions
+Inside `chooseShape` function, use `Object.entries()` with `forEach()` to loop through the `propertyInputs` object. The callback for the `forEach()` should receive `name` and `group` as destructured parameters.
 
 # --hints--
 
@@ -305,35 +305,34 @@ type Shapes = Circle | Triangle | Rectangle;
 
 document.addEventListener("DOMContentLoaded", () => {
   const GetElements = <T extends HTMLElement>(selector: string): T => {
+    const el = document.getElementById(selector);
     if (!el) throw new Error(`Element not found: ${selector}`);
     return el as T;
   };
+
+  const shapeTypeSelect = GetElements<HTMLSelectElement>("shape-type");
+
+  const propertyGroups = {
+    circle: GetElements<HTMLElement>("circle-props"),
+    rectangle: GetElements<HTMLElement>("rectangle-props"),
+    triangle: GetElements<HTMLElement>("triangle-props"),
+  };
+
+  const propertyInputs = {
+    radius: GetElements<HTMLInputElement>("radius"),
+    width: GetElements<HTMLInputElement>("width"),
+    height: GetElements<HTMLInputElement>("height"),
+    base: GetElements<HTMLInputElement>("base"),
+    triangleHeight: GetElements<HTMLInputElement>("triangle-height"),
+  };
+
+  const resultText = GetElements<HTMLElement>("result-text");
+  const resultCard = GetElements<HTMLElement>("result-card");
+
+  const chooseShape = (shapeType: string) => {
+  --fcc-editable-region--
+
+  --fcc-editable-region--
+  };
 });
-
-const shapeTypeSelect = GetElements<HTMLSelectElement>("shape-type");
-
-const propertyGroups = {
-  circle: GetElements<HTMLElement>("circle-props"),
-  rectangle: GetElements<HTMLElement>("rectangle-props"),
-  triangle: GetElements<HTMLElement>("triangle-props"),
-};
-
-const propertyInputs = {
-  radius: GetElements<HTMLInputElement>("radius"),
-  width: GetElements<HTMLInputElement>("width"),
-  height: GetElements<HTMLInputElement>("height"),
-  base: GetElements<HTMLInputElement>("base"),
-  triangleHeight: GetElements<HTMLInputElement>("triangle-height"),
-};
-
-const resultText = GetElements<HTMLElement>("result-text");
-const resultCard = GetElements<HTMLElement>("result-card");
-
-const chooseShape = (shapeType: string) => {
-
-};
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```

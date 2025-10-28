@@ -307,19 +307,20 @@ type Shapes = Circle | Triangle | Rectangle;
 
 document.addEventListener("DOMContentLoaded", () => {
   const GetElements = <T extends HTMLElement>(selector: string): T => {
+    const el = document.getElementById(selector);
     if (!el) throw new Error(`Element not found: ${selector}`);
     return el as T;
   };
+
+  const shapeTypeSelect = GetElements<HTMLSelectElement>("shape-type");
+  const propertyGroups = {
+    circle: GetElements<HTMLElement>("circle-props"),
+    rectangle: GetElements<HTMLElement>("rectangle-props"),
+    triangle: GetElements<HTMLElement>("triangle-props"),
+  };
+
+  --fcc-editable-region--
+
+  --fcc-editable-region--
 });
-
-const shapeTypeSelect = GetElements<HTMLSelectElement>("shape-type");
-const propertyGroups = {
-  circle: GetElements<HTMLElement>("circle-props"),
-  rectangle: GetElements<HTMLElement>("rectangle-props"),
-  triangle: GetElements<HTMLElement>("triangle-props"),
-};
-
---fcc-editable-region--
-
---fcc-editable-region--
 ```
