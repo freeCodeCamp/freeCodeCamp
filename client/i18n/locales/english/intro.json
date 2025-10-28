@@ -4616,7 +4616,7 @@
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
-          "In this lab, you'll use the abc module to build a player interface."
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
         ]
       },
       "review-object-oriented-programming": {
