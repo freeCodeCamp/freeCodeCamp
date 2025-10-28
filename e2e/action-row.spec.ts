@@ -38,10 +38,7 @@ test.describe('Desktop view', () => {
       await expect(previewPortalButton).toHaveText(
         'Move the preview to a new window and focus it'
       );
-      await expect(previewPaneButton).toHaveText([
-        'Hide the preview',
-        'Preview'
-      ]);
+      await expect(previewPaneButton).toHaveText('Hide the previewPreview');
     });
 
     test('Terminal button is visible during Python challenges', async ({
@@ -55,10 +52,7 @@ test.describe('Desktop view', () => {
         name: translations.aria['move-preview-to-new-window']
       });
 
-      await expect(previewPaneButton).toHaveText([
-        'Hide the terminal',
-        'Terminal'
-      ]);
+      await expect(previewPaneButton).toHaveText('Hide the terminalTerminal');
       await expect(previewPortalButton).toHaveText(
         'Move the terminal to a new window and focus it'
       );
