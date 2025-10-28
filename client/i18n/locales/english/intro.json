@@ -5082,13 +5082,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "review-node-js-intro": {
-        "title": "NodeJS Intro Review",
-        "intro": [
-          "NodeJS Intro Review",
-          "Review the basics of NodeJS to prepare for the upcoming quiz."
-        ]
       }
     }
   },
@@ -7376,6 +7369,13 @@
         "title": "Relational Databases Review",
         "intro": [
           "Review relational databases concepts to prepare for the exam."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "NodeJS Intro Review",
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
         ]
       },
       "exam-relational-databases-certification": {
