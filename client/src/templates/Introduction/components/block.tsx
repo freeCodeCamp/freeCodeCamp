@@ -31,7 +31,6 @@ import {
   ChallengesWithDialogues
 } from './challenges';
 import BlockLabel from './block-label';
-import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
 
 import '../intro.css';
@@ -201,7 +200,6 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          {!accordion && <BlockIntros intros={blockIntroArr} />}
           <button
             aria-expanded={isExpanded}
             className='map-title'
@@ -257,7 +255,6 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          {!accordion && <BlockIntros intros={blockIntroArr} />}
           <ChallengesList challenges={extendedChallenges} />
         </div>
       </Element>
@@ -303,7 +300,6 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                {!accordion && <BlockIntros intros={blockIntroArr} />}
                 <GridMapChallenges
                   jumpLink={!accordion}
                   challenges={extendedChallenges}
@@ -353,7 +349,6 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                {!accordion && <BlockIntros intros={blockIntroArr} />}
                 <ChallengesWithDialogues
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
@@ -414,7 +409,6 @@ export class Block extends Component<BlockProps> {
               </Link>
             </h3>
           </div>
-          {!accordion && <BlockIntros intros={blockIntroArr} />}
         </div>
       </Element>
     );
