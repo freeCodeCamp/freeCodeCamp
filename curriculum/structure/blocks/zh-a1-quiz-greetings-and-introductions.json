@@ -1,0 +1,14 @@
+{
+  "name": "Greetings and Introductions Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-quiz-greetings-and-introductions",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa4006bf11f8f8d1a4b838",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "quiz"
+}

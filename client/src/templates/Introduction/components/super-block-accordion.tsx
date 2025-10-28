@@ -279,10 +279,7 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (
-                  module.moduleType === 'review' ||
-                  module.moduleType === 'exam'
-                ) {
+                if (module.moduleType === 'review') {
                   return null;
                 }
 
