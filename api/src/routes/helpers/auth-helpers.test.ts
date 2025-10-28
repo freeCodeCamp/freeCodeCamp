@@ -1,4 +1,12 @@
-import { describe, test, expect, beforeAll, afterEach, vi } from 'vitest';
+import {
+  describe,
+  test,
+  expect,
+  beforeAll,
+  afterEach,
+  afterAll,
+  vi
+} from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
 
 import db from '../../db/prisma.js';
