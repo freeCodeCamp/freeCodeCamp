@@ -66,7 +66,8 @@ export const currentCertifications = [
   Certification.InfoSec,
   Certification.MachineLearningPy,
   Certification.CollegeAlgebraPy,
-  Certification.FoundationalCSharp
+  Certification.FoundationalCSharp,
+  Certification.A2English
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -95,7 +96,6 @@ export const upcomingCertifications = [
   Certification.PythonV9,
   Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
-  Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
   Certification.A2Chinese,
@@ -204,11 +204,11 @@ export const certSlugTypeMap = {
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+  [Certification.A2English]: certTypes.a2English,
 
   // upcoming
   [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
-  [Certification.JsV9]: certTypes.javascriptV9,
-  [Certification.A2English]: certTypes.a2English
+  [Certification.JsV9]: certTypes.javascriptV9
 };
 
 export const superBlockCertTypeMap = {

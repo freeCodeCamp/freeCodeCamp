@@ -72,7 +72,7 @@ export const superBlockList = [
     path: 'foundational-c-sharp-with-microsoft'
   },
   {
-    name: 'A2 English for Developers (Beta)',
+    name: 'A2 English for Developers',
     path: 'a2-english-for-developers'
   },
   {

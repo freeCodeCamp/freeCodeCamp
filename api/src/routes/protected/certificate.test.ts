@@ -38,6 +38,7 @@ describe('certificate routes', () => {
           data: {
             completedChallenges: [],
             name: 'fcc',
+            isA2EnglishCert: false,
             isRespWebDesignCert: false,
             isJsAlgoDataStructCert: false,
             isFrontEndLibsCert: false,
@@ -135,6 +136,7 @@ describe('certificate routes', () => {
           },
           isCertMap: {
             is2018DataVisCert: false,
+            isA2EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
@@ -238,7 +240,8 @@ describe('certificate routes', () => {
             isInfosecCertV7: true,
             isMachineLearningPyCertV7: true,
             isCollegeAlgebraPyCertV8: true,
-            isFoundationalCSharpCertV8: true
+            isFoundationalCSharpCertV8: true,
+            isA2EnglishCert: true
           }
         });
 
