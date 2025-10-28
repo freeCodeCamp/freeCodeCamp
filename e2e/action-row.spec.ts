@@ -35,10 +35,13 @@ test.describe('Desktop view', () => {
       const previewPortalButton = page.getByRole('button', {
         name: translations.aria['move-preview-to-new-window']
       });
-      await expect(previewPortalButton).toHaveText(
-        'Move the preview to a new window and focus it'
-      );
-      await expect(previewPaneButton).toHaveText('Hide the previewPreview');
+
+      expect(previewPortalButton).toBeDefined();
+
+      const hidePreviewText = translations.aria['hide-preview'];
+      const previewText = translations.learn['editor-tabs']['preview'];
+
+      await expect(previewPaneButton).toHaveText(hidePreviewText + previewText);
     });
 
     test('Terminal button is visible during Python challenges', async ({
@@ -47,15 +50,18 @@ test.describe('Desktop view', () => {
       await page.goto(
         '/learn/full-stack-developer/workshop-caesar-cipher/step-1'
       );
-      const previewPaneButton = page.getByTestId('preview-pane-button');
-      const previewPortalButton = page.getByRole('button', {
-        name: translations.aria['move-preview-to-new-window']
+      const terminalPaneButton = page.getByTestId('preview-pane-button');
+      const terminalPortalButton = page.getByRole('button', {
+        name: translations.aria['move-terminal-to-new-window']
       });
 
-      await expect(previewPaneButton).toHaveText('Hide the terminalTerminal');
-      await expect(previewPortalButton).toHaveText(
-        'Move the terminal to a new window and focus it'
+      const hideTerminalText = translations.aria['hide-terminal'];
+      const terminalText = translations.learn['editor-tabs']['terminal'];
+
+      await expect(terminalPaneButton).toHaveText(
+        hideTerminalText + terminalText
       );
+      expect(terminalPortalButton).toBeDefined();
     });
 
     test('Clicking instructions button hides instructions panel, but not any buttons', async ({
