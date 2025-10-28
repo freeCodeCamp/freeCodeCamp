@@ -33,7 +33,7 @@ export enum Certification {
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
-  A2English = 'a2-english-for-developers-v8',
+  A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
   A2Chinese = 'a2-professional-chinese-v8',
