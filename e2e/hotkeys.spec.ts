@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 import { authedRequest } from './utils/request';
 import { getEditors } from './utils/editor';
 import { alertToBeVisible } from './utils/alerts';

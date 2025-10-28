@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import intro from '../client/i18n/locales/english/intro.json';
+import intro from '../apps/client/i18n/locales/english/intro.json';
 import { SuperBlocks } from '../shared/config/curriculum';
 
 const archivedSuperBlocks = [

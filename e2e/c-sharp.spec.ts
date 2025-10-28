@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 const checkAnswerButtonText = translations.buttons['check-answer'];
 const askForHelpButtonText = translations.buttons['ask-for-help'];
 const trophyButtonText = translations.buttons['verify-trophy'];

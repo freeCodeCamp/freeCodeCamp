@@ -1,8 +1,8 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 import { availableLangs, hiddenLangs, LangNames } from '../shared/config/i18n';
-import links from '../client/i18n/locales/english/links.json';
+import links from '../apps/client/i18n/locales/english/links.json';
 
 const headerComponentElements = {
   skipContent: 'header-skip-content',

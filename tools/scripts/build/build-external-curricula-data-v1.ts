@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
-import { type ChallengeNode } from '../../../client/src/redux/prop-types';
+import { type ChallengeNode } from '../../../apps/client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import { patchBlock } from './patches';
 
@@ -70,11 +70,11 @@ const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 export function buildExtCurriculumDataV1(
   curriculum: Curriculum<CurriculumProps>
 ): void {
-  const staticFolderPath = resolve(__dirname, '../../../client/static');
+  const staticFolderPath = resolve(__dirname, '../../../apps/client/static');
   const dataPath = `${staticFolderPath}/curriculum-data/`;
   const blockIntroPath = resolve(
     __dirname,
-    '../../../client/i18n/locales/english/intro.json'
+    '../../../apps/client/i18n/locales/english/intro.json'
   );
   const intros = JSON.parse(
     readFileSync(blockIntroPath, 'utf-8')

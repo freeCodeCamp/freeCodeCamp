@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
-import links from '../client/i18n/locales/english/links.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
+import links from '../apps/client/i18n/locales/english/links.json';
 
 const BOTTOM_LINKS = [
   {

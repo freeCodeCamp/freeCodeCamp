@@ -2,7 +2,7 @@ import { execSync } from 'child_process';
 
 import { test, expect } from '@playwright/test';
 
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 import { allowTrailingSlash } from './utils/url';
 
 const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';

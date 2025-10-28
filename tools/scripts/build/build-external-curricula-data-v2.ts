@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
-import { type ChallengeNode } from '../../../client/src/redux/prop-types';
+import { type ChallengeNode } from '../../../apps/client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
@@ -101,11 +101,11 @@ export type OrderedSuperBlocks = Record<
 
 const ver = 'v2';
 
-const staticFolderPath = resolve(__dirname, '../../../client/static');
+const staticFolderPath = resolve(__dirname, '../../../apps/client/static');
 const dataPath = `${staticFolderPath}/curriculum-data/`;
 const blockIntroPath = resolve(
   __dirname,
-  '../../../client/i18n/locales/english/intro.json'
+  '../../../apps/client/i18n/locales/english/intro.json'
 );
 const intros = JSON.parse(
   readFileSync(blockIntroPath, 'utf-8')

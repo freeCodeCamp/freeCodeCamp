@@ -4,7 +4,7 @@ import sirv from 'sirv';
 import polka from 'polka';
 import puppeteer from 'puppeteer';
 
-import { helperVersion } from '../../../client/src/templates/Challenges/utils/frame';
+import { helperVersion } from '../../../apps/client/src/templates/Challenges/utils/frame';
 
 const clientPath = path.resolve(__dirname, '../../../client');
 

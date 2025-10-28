@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('/learn');

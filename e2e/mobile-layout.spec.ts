@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 
 test.describe('Classic challenge - 5 tabs mobile layout component', () => {
   test.skip(

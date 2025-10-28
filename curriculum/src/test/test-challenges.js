@@ -5,13 +5,13 @@ import lodash from 'lodash';
 import {
   buildChallenge,
   runnerTypes
-} from '../../../client/src/templates/Challenges/utils/build';
+} from '../../../apps/client/src/templates/Challenges/utils/build';
 import {
   challengeTypes,
   hasNoSolution
 } from '../../../shared/config/challenge-types';
 import { getLines } from '../../../shared/utils/get-lines';
-import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
+import { prefixDoctype } from '../../../apps/client/src/templates/Challenges/utils/frame';
 
 import { getChallengesForLang } from '../get-challenges.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';

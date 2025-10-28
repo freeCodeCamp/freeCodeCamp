@@ -29,9 +29,9 @@ const compat = new FlatCompat({
 export default tseslint.config(
   {
     ignores: [
-      'client/static/**/*',
-      'client/.cache/**/*',
-      'client/public/**/*',
+      'apps/client/static/**/*',
+      'apps/client/.cache/**/*',
+      'apps/client/public/**/*',
       'shared/**/*.js',
       'shared/**/*.d.ts',
       'docs/**/*.md',
@@ -154,7 +154,7 @@ export default tseslint.config(
   },
   {
     files: [
-      'client/**/*.ts?(x)',
+      'apps/client/**/*.ts?(x)',
       'api/**/*.ts',
       'shared/**/*.ts',
       'tools/client-plugins/**/*.ts',
@@ -166,7 +166,7 @@ export default tseslint.config(
     extends: [tseslint.configs.recommendedTypeChecked]
   },
   {
-    files: ['client/**/*.test.[jt]s?(x)'],
+    files: ['apps/client/**/*.test.[jt]s?(x)'],
 
     extends: [testingLibraryPlugin.configs['flat/react']]
   },

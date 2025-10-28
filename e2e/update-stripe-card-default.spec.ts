@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 
 test.describe('Update Card Page for Non-Donor Authenticated User', () => {
   test('should render correctly', async ({ page }) => {

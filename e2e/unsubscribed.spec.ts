@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import translations from '../client/i18n/locales/english/translations.json';
-import metaTags from '../client/i18n/locales/english/meta-tags.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
+import metaTags from '../apps/client/i18n/locales/english/meta-tags.json';
 
 test.describe('The unsubscribed page without unsubscribeId', () => {
   test.beforeEach(async ({ page }) => {
