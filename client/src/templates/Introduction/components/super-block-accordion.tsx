@@ -353,11 +353,8 @@ export const SuperBlockAccordion = ({
             examSlug={examSlug}
           >
             {chapter.modules.map(module => {
-              if (module.comingSoon && showUpcomingChanges) {
-                if (
-                  module.moduleType === 'review' ||
-                  module.moduleType === 'exam'
-                ) {
+              if (module.comingSoon && !showUpcomingChanges) {
+                if (module.moduleType === 'review') {
                   return null;
                 }
               }
