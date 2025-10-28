@@ -70,12 +70,10 @@ const dashedNames = orderedSuperBlockInfo.map(({ dashedName }) => dashedName);
 export function buildExtCurriculumDataV1(
   curriculum: Curriculum<CurriculumProps>
 ): void {
-  const staticFolderPath = resolve(__dirname, '../../../apps/client/static');
+  const clientPath = resolve(__dirname, '../../../apps/client');
+  const staticFolderPath = resolve(clientPath, 'static');
   const dataPath = `${staticFolderPath}/curriculum-data/`;
-  const blockIntroPath = resolve(
-    __dirname,
-    '../../../apps/client/i18n/locales/english/intro.json'
-  );
+  const blockIntroPath = resolve(clientPath, 'i18n/locales/english/intro.json');
   const intros = JSON.parse(
     readFileSync(blockIntroPath, 'utf-8')
   ) as CurriculumIntros;
