@@ -319,7 +319,11 @@ All 12 unit tests are complete and passing.
 
 ```js
   try {
-    const getTests = await $.get(code + '/_api/get-tests');
+    const response = await fetch(code + '/_api/get-tests');
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const getTests = await response.json();
     assert.isArray(getTests);
     const unitTests = getTests.filter((test) => {
       return !!test.context.match(/Unit\s*Tests/gi);
@@ -342,7 +346,11 @@ All 14 functional tests are complete and passing.
 
 ```js
   try {
-    const getTests = await $.get(code + '/_api/get-tests');
+    const response = await fetch(code + '/_api/get-tests');
+    if (!response.ok) {
+      throw Error(await response.text());
+    }
+    const getTests = await response.json();
     assert.isArray(getTests);
     const functTests = getTests.filter((test) => {
       return !!test.context.match(/Functional\s*Tests/gi);

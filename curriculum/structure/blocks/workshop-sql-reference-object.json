@@ -1,8 +1,8 @@
 {
   "name": "Build an SQL Reference Object",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-sql-reference-object",

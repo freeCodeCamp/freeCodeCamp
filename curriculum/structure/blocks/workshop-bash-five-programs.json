@@ -1,8 +1,8 @@
 {
   "name": "Build Five Programs",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": false,
   "hasEditableBoundaries": false,
   "dashedName": "workshop-bash-five-programs",

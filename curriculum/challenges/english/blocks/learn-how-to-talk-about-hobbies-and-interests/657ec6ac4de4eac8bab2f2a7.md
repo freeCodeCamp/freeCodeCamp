@@ -5,17 +5,19 @@ challengeType: 22
 dashedName: task-39
 ---
 
-<!-- (Audio) Linda: Ok, it's a bike date, then. -->
+<!-- (Audio) Linda: Okay, it's a bike date then. -->
 
 # --description--
 
-The word `date` can be used in different contexts. While it often refers to a romantic meeting between two people, it can also simply mean an appointment or a planned event between friends or colleagues. For example, saying `Let's set a date for our next meeting` uses `date` in a non-romantic way, referring to choosing a day for a meeting.
+The word `date` can be used in different contexts. While it often refers to a romantic meeting between two people, it can also simply mean an appointment or a planned event between friends or colleagues. For example:
+
+`Let's set a date for our next meeting.` - Here, `date` is used in a non-romantic way, referring to choosing a day for a meeting.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`Ok, it's a BLANK BLANK, then.`
+`Okay, it's a BLANK BLANK then.`
 
 ## --blanks--
 
@@ -64,7 +66,7 @@ This word refers to a scheduled meeting or event.
       "startTime": 1,
       "finishTime": 2.94,
       "dialogue": {
-        "text": "Okay, it's a bike date, then.",
+        "text": "Okay, it's a bike date then.",
         "align": "center"
       }
     },

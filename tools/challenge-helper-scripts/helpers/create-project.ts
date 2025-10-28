@@ -3,7 +3,7 @@
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/file-handler';
+} from '../../../curriculum/src/file-handler';
 import { insertInto } from './utils';
 
 export async function updateSimpleSuperblockStructure(
@@ -45,7 +45,7 @@ function createNewModule(module: string, block: string) {
   };
 }
 
-type ChapterModuleSuperblockStructure = {
+export type ChapterModuleSuperblockStructure = {
   chapters: {
     dashedName: string;
     modules: {

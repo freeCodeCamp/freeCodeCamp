@@ -18,10 +18,10 @@ ports:
     visibility: public
   - port: 3300 # challenge editor client
     visibility: public
-  - port: 8025 # MailHog
+  - port: 8025 # Mailpit
     visibility: public
     onOpen: ignore
-  - port: 1025 # MailHog
+  - port: 1025 # Mailpit
     onOpen: ignore
   - port: 9323 # Playwright
     visibility: public
@@ -42,8 +42,7 @@ tasks:
   - name: db
     # starting mongod in background, so it doesn't block prebuilds
     before: >
-      cd api/tools &&
-      docker compose up -d
+      docker compose -f docker/docker-compose.yml up -d
 
   - name: server
     before: export COOKIE_DOMAIN=.gitpod.io && export HOME_LOCATION=$(gp url 8000) && export API_LOCATION=$(gp url 3000)
@@ -53,6 +52,7 @@ tasks:
       cp sample.env .env &&
       pnpm install &&
       gp sync-done pnpm-install &&
+      pnpm compile:ts &&
       pnpm run build:curriculum &&
       gp ports await 27017
     command: >

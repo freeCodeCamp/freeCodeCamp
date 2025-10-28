@@ -1,6 +1,6 @@
 {
   "name": "Build a Fruit Search App",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

@@ -2,7 +2,7 @@
   "name": "Classes and Objects",
   "isUpcomingChange": true,
   "dashedName": "lecture-classes-and-objects",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

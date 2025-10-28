@@ -253,6 +253,114 @@
     {
       "id": "68c497f3aaefc9fd9f1b0e26",
       "title": "Challenge 62: Hex to Decimal"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da001",
+      "title": "Challenge 63: Battle of Words"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da002",
+      "title": "Challenge 64: 24 to 12"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da003",
+      "title": "Challenge 65: String Count"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da004",
+      "title": "Challenge 66: HTML Tag Stripper"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da005",
+      "title": "Challenge 67: Email Validator"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da006",
+      "title": "Challenge 68: Credit Card Masker"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da007",
+      "title": "Challenge 69: Missing Socks"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da008",
+      "title": "Challenge 70: HTML Attribute Extractor"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da009",
+      "title": "Challenge 71: Tip Calculator"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da00a",
+      "title": "Challenge 72: Thermostat Adjuster 2"
+    },
+    {
+      "id": "68d2ba1468508398389487ce",
+      "title": "Challenge 73: Speak Wisely, You Must"
+    },
+    {
+      "id": "68d2ba1468508398389487cf",
+      "title": "Challenge 74: Favorite Songs"
+    },
+    {
+      "id": "68d2ba1468508398389487d0",
+      "title": "Challenge 75: Hidden Treasure"
+    },
+    {
+      "id": "68d30845cc08266018fc46bc",
+      "title": "Challenge 76: Complementary DNA"
+    },
+    {
+      "id": "68d30845cc08266018fc46bd",
+      "title": "Challenge 77: Duration Formatter"
+    },
+    {
+      "id": "68d30845cc08266018fc46be",
+      "title": "Challenge 78: Integer Sequence"
+    },
+    {
+      "id": "68d30fc57588d97fd3027b30",
+      "title": "Challenge 79: Navigator"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd62",
+      "title": "Challenge 80: Email Sorter"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd63",
+      "title": "Challenge 81: Nth Prime"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd64",
+      "title": "Challenge 82: SpOoKy~CaSe"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd65",
+      "title": "Challenge 83: Signature Validation"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd66",
+      "title": "Challenge 84: Infected"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a4",
+      "title": "Challenge 85: Word Counter"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a5",
+      "title": "Challenge 86: Image Search"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a6",
+      "title": "Challenge 87: Matrix Builder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a7",
+      "title": "Challenge 88: Weekday Finder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a8",
+      "title": "Challenge 89: Counting Cards"
     }
   ]
 }

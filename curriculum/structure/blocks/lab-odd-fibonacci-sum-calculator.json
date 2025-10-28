@@ -1,0 +1,15 @@
+{
+  "name": "Build an Odd Fibonacci Sum Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-odd-fibonacci-sum-calculator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "a5229172f011153519423690",
+      "title": "Build an Odd Fibonacci Sum Calculator"
+    }
+  ]
+}

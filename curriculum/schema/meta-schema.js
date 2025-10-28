@@ -15,7 +15,7 @@ const schema = Joi.object()
       'legacy-link',
       'legacy-challenge-grid'
     ).required(),
-    blockType: Joi.valid(
+    blockLabel: Joi.valid(
       'workshop',
       'lab',
       'lecture',

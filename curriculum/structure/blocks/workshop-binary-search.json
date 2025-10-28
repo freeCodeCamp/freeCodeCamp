@@ -5,7 +5,7 @@
   "hasEditableBoundaries": true,
   "dashedName": "workshop-binary-search",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     {
       "id": "683ec39565dbc7e3375263b1",

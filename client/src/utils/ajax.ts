@@ -1,6 +1,7 @@
 import cookies from 'browser-cookies';
-import envData from '../../config/env.json';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
+import envData from '../../config/env.json';
 import type {
   ChallengeFile,
   ChallengeFiles,
@@ -212,6 +213,33 @@ export function getGenerateExam(
   return get(`/exam/${challengeId}`);
 }
 
+export interface Exam {
+  id: string;
+  config: {
+    name: string;
+  };
+}
+
+export interface Attempt {
+  id: string;
+  examId: string;
+  // ISO 8601 string
+  startTime: string;
+  questionSets: unknown[];
+  result?: {
+    passed: boolean;
+    score: number;
+  };
+}
+
+export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
+  return get('/user/exam-environment/exams');
+}
+
+export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
+  return get('/user/exam-environment/exam/attempts');
+}
+
 /** POST **/
 
 interface Donation {
@@ -393,3 +421,59 @@ export function deleteUserToken(): Promise<ResponseWithData<void>> {
 export function deleteMsUsername(): Promise<ResponseWithData<void>> {
   return deleteRequest('/user/ms-username', {});
 }
+
+/** RTK */
+
+export interface ExamEnvironmentChallenge {
+  id: string;
+  examId: string;
+  challengeId: string;
+}
+
+export const examAttempts = createApi({
+  reducerPath: 'exam-attempts',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    getExamAttemptsByExamId: build.mutation<Attempt[], string>({
+      query: examId => `/user/exam-environment/exams/${examId}/attempts`
+    }),
+    getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
+      query: challengeId =>
+        `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    })
+  })
+});
+
+export const examEnvironmentAuthorizationTokenApi = createApi({
+  reducerPath: 'exam-environment-authorization-token',
+  baseQuery: fetchBaseQuery({
+    baseUrl: apiLocation,
+    headers: {
+      'CSRF-Token': getCSRFToken()
+    },
+    credentials: 'include'
+  }),
+  endpoints: build => ({
+    postGenerateExamEnvironmentAuthorizationToken: build.mutation<
+      ExamTokenResponse,
+      void
+    >({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'POST'
+      })
+    }),
+    getExamEnvironmentAuthorizationToken: build.query<ExamTokenResponse, void>({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'GET'
+      })
+    })
+  })
+});

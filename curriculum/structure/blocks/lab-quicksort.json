@@ -4,7 +4,7 @@
   "usesMultifileEditor": true,
   "dashedName": "lab-quicksort",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "challengeOrder": [
     {
       "id": "681dbcca65bbda5f286dc0ca",
