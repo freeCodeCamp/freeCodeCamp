@@ -156,7 +156,14 @@ export function getLoginRedirectParams(
 ): RedirectParams {
   const signedUrl = req.cookies['login-returnto'];
   const url = signedUrl ? req.unsignCookie(signedUrl).value : null;
-  return getParamsFromUrl(url, _normalizeParams);
+  const params = getParamsFromUrl(url, _normalizeParams);
+
+  if (haveSamePath(params.origin, params.returnTo)) {
+    const prefixSegment = params.pathPrefix ? `/${params.pathPrefix}` : '';
+    params.returnTo = `${params.origin}${prefixSegment}/learn`;
+  }
+
+  return params;
 }
 
 /**
