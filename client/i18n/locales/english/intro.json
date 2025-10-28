@@ -5073,6 +5073,12 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
@@ -7369,13 +7375,6 @@
         "title": "Relational Databases Review",
         "intro": [
           "Review relational databases concepts to prepare for the exam."
-        ]
-      },
-      "review-node-js-intro": {
-        "title": "NodeJS Intro Review",
-        "intro": [
-          "NodeJS Intro Review",
-          "Review the basics of NodeJS to prepare for the upcoming quiz."
         ]
       },
       "exam-relational-databases-certification": {
