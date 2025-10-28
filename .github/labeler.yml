@@ -4,7 +4,7 @@
 
 'platform: learn':
   - changed-files:
-      - any-glob-to-any-file: client/**/*
+      - any-glob-to-any-file: apps/client/**/*
 
 'platform: api':
   - changed-files:
@@ -21,6 +21,6 @@
 'scope: i18n':
   - changed-files:
       - any-glob-to-any-file:
-          - client/i18n/**/*
+          - apps/client/i18n/**/*
           - config/crowdin/**/*
           - shared/config/i18n/**/*
