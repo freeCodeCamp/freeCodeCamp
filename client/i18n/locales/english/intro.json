@@ -5082,6 +5082,13 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "NodeJS Intro Review",
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
       }
     }
   },
@@ -6680,10 +6687,7 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Python Certification exam."
     ],
-    "chapters": {
-      "python": "Python",
-      "python-certification-exam": "Python Certification Exam"
-    },
+    "chapters": { "python": "Python" },
     "modules": {
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
