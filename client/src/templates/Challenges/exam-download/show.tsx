@@ -16,11 +16,7 @@ import { connect } from 'react-redux';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
-import {
-  ChallengeNode,
-  CompletedChallenge,
-  PrerequisiteChallenge
-} from '../../../redux/prop-types';
+import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
 import {
   completedChallengesSelector,
   isSignedInSelector
@@ -78,50 +74,9 @@ function ShowExamDownload({
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
-  const [missingPrerequisites, setMissingPrerequisites] = useState<
-    PrerequisiteChallenge[]
-  >([]);
 
   const getExamsQuery = examAttempts.useGetExamsQuery();
   const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
-
-  useEffect(() => {
-    if (!examIdsQuery.data) {
-      return;
-    }
-
-    const examId = examIdsQuery.data.at(0)?.examId;
-    if (examId === undefined) {
-      return;
-    }
-
-    if (!getExamsQuery.data) {
-      return;
-    }
-
-    const exam = getExamsQuery.data.find(examItem => examItem.id === examId);
-    if (!exam) {
-      return;
-    }
-
-    const unmetPrerequisites = exam.prerequisites.filter(
-      prereq => !completedChallenges.some(challenge => challenge.id === prereq)
-    );
-
-    const challenges = nodes.filter(({ challenge }) =>
-      unmetPrerequisites.includes(challenge.id)
-    );
-
-    const prerequisiteChallenges = challenges.map(({ challenge }) => {
-      return {
-        id: challenge.id,
-        title: challenge.title,
-        slug: challenge.fields?.slug || ''
-      };
-    });
-
-    setMissingPrerequisites(prerequisiteChallenges);
-  }, [completedChallenges, examIdsQuery.data, getExamsQuery.data, nodes]);
 
   const os = useDetectOS();
 
@@ -199,6 +154,22 @@ function ShowExamDownload({
     void checkLatestVersion();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
+
+  const examId = examIdsQuery.data?.at(0)?.examId;
+  const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
+  const unmetPrerequisites = exam?.prerequisites?.filter(
+    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
+  );
+  const challenges = nodes.filter(({ challenge }) =>
+    unmetPrerequisites?.includes(challenge.id)
+  );
+  const missingPrerequisites = challenges.map(({ challenge }) => {
+    return {
+      id: challenge.id,
+      title: challenge.title,
+      slug: challenge.fields?.slug || ''
+    };
+  });
 
   return (
     <LearnLayout>
