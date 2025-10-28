@@ -883,9 +883,14 @@
       "comingSoon": true,
       "modules": [
         {
+          "dashedName": "introduction-to-nodejs",
+          "comingSoon": true,
+          "blocks": ["review-node-js-intro"]
+        },
+        {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
-          "blocks": ["lecture-node-js-core-libraries"]
+          "blocks": []
         },
         {
           "dashedName": "node-package-manager",
