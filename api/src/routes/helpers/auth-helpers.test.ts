@@ -24,6 +24,11 @@ describe('findOrCreateUser', () => {
     fastify = await setupServer();
   });
 
+  afterAll(async () => {
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
+    await fastify.close();
+  });
+
   afterEach(async () => {
     await fastify.prisma.user.deleteMany({ where: { email } });
     await fastify.close();
