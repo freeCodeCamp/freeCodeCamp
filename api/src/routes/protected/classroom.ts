@@ -14,18 +14,63 @@ export const classroomRoutes: FastifyPluginCallback = (
   _options,
   done
 ) => {
-  // Endpoint to retrieve user(s) data from a list of emails
-  fastify.get(
+  // Endpoint to retrieve a user's ID from a user's email.
+  fastify.post(
+    '/api/protected/classroom/get-user-id',
+    {
+      schema: {
+        body: Type.Object({
+          email: Type.String({ format: 'email' })
+        }),
+        response: {
+          200: Type.Object({
+            userId: Type.String()
+          }),
+          404: Type.Object({
+            error: Type.String()
+          })
+        }
+      }
+    },
+    async (request, reply) => {
+      const { email } = request.body as { email: string };
+
+      try {
+        // Find the user by email
+        const user = await fastify.prisma.user.findFirst({
+          where: { email },
+          select: {
+            id: true,
+            isClassroomAccount: true
+          }
+        });
+
+        if (!user || !user.isClassroomAccount) {
+          return reply.code(404).send({ error: 'User not found' });
+        }
+
+        return reply.send({
+          userId: user.id
+        });
+      } catch (error) {
+        fastify.log.error(error);
+        return reply.code(500).send({ error: 'Failed to retrieve user id' });
+      }
+    }
+  );
+
+  // Endpoint to retrieve user(s) data from a list of user ids
+  fastify.post(
     '/api/protected/classroom/get-user-data',
     {
       schema: {
-        querystring: Type.Object({
-          emails: Type.String() // Comma-separated
+        body: Type.Object({
+          userIds: Type.Array(Type.String())
         }),
         response: {
           200: Type.Object({
             data: Type.Record(
-              Type.String(), // Email as key
+              Type.String(), // Id as key
               Type.Array(
                 Type.Object({
                   id: Type.String(),
@@ -37,34 +82,36 @@ export const classroomRoutes: FastifyPluginCallback = (
                 })
               )
             )
+          }),
+          400: Type.Object({
+            error: Type.String()
+          }),
+          500: Type.Object({
+            error: Type.String()
           })
         }
       }
     },
     async (request, reply) => {
-      const { emails = '' } = request.query as { emails: string };
-
-      // Split the comma-separated string into an array
-      const emailArray = emails.split(',').filter(Boolean);
-
-      console.log('emails to query:', emailArray);
+      const { userIds = [] } = request.body as { userIds: string[] };
 
       // Limit number of users per request for performance
-      if (emailArray.length > 50) {
+      if (userIds.length > 50) {
         return reply.code(400).send({
           error: 'Too many users requested. Maximum 50 allowed.'
         });
       }
 
       try {
-        // Find all the requested users by email instead of username
+        // Find all the requested users by user id
         const users = await fastify.prisma.user.findMany({
           where: {
-            email: { in: emailArray }
+            id: { in: userIds }
           },
           select: {
-            email: true,
-            completedChallenges: true
+            id: true,
+            completedChallenges: true,
+            isClassroomAccount: true
           }
         });
 
@@ -72,18 +119,17 @@ export const classroomRoutes: FastifyPluginCallback = (
         const userData: Record<string, object[]> = {};
 
         users.forEach(user => {
+          if (!user.isClassroomAccount) {
+            return;
+          }
+
           // Normalize challenges
           const normalizedChallenges = normalizeChallenges(
             user.completedChallenges
           );
-          console.log(
-            'normalizedChallenges for user',
-            user.email,
-            normalizedChallenges.length
-          );
 
-          if (user.email !== null) {
-            userData[user.email] = normalizedChallenges;
+          if (user.id !== null) {
+            userData[user.id] = normalizedChallenges;
           }
         });
 
