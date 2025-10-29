@@ -220,17 +220,25 @@ export interface Exam {
   };
 }
 
-export interface Attempt {
+export type Attempt = {
   id: string;
   examId: string;
   // ISO 8601 string
   startTime: string;
   questionSets: unknown[];
-  result?: {
-    passed: boolean;
-    score: number;
-  };
-}
+} & (
+  | {
+      result: null;
+      status: 'InProgress' | 'PendingModeration' | 'Denied';
+    }
+  | {
+      status: 'Approved';
+      result: {
+        passed: boolean;
+        score: number;
+      };
+    }
+);
 
 export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
   return get('/user/exam-environment/exams');
@@ -430,6 +438,19 @@ export interface ExamEnvironmentChallenge {
   challengeId: string;
 }
 
+export type GetExamsResponse = Array<{
+  id: string;
+  config: {
+    name: string;
+    note: string;
+    totalTimeInS: number;
+    retakeTimeInS: number;
+    passingPercent: number;
+  };
+  canTake: boolean;
+  prerequisites: string[];
+}>;
+
 export const examAttempts = createApi({
   reducerPath: 'exam-attempts',
   baseQuery: fetchBaseQuery({
@@ -446,6 +467,9 @@ export const examAttempts = createApi({
     getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
       query: challengeId =>
         `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    }),
+    getExams: build.query<GetExamsResponse, void>({
+      query: () => '/user/exam-environment/exams'
     })
   })
 });
