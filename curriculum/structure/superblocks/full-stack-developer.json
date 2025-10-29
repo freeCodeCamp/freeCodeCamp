@@ -885,7 +885,7 @@
         {
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": ["lecture-node-js-core-libraries"]
+          "blocks": ["lecture-intro-to-nodejs"]
         },
         {
           "dashedName": "nodejs-core-libraries",

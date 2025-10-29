@@ -5073,7 +5073,7 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
-      "lecture-node-js-core-libraries": {
+      "lecture-intro-to-nodejs": {
         "title": "Working with NodeJS and event driven architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
