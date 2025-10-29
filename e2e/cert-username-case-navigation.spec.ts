@@ -48,7 +48,7 @@ test.describe('Public profile certifications', () => {
     await page.waitForURL('/certifiedboozer');
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
-    ).toHaveCount(19);
+    ).toHaveCount(20);
   });
 
   test.afterAll(() => {
