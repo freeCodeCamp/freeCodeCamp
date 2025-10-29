@@ -4,6 +4,10 @@
   "dashedName": "es-a1-warm-up-introducing-yourself-basics",
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc7452147bb2678bccc29a", "title": "Task 1" }],
-  "blockLabel": "warm-up"
+  "challengeOrder": [
+    { "id": "68deada768199f7410bda165", "title": "Task 1" },
+    { "id": "68dec33d726ba397789a62ec", "title": "Task 2" },
+    { "id": "68dec93b79d995a4449c63a4", "title": "Task 3" }
+  ],
+  "blockType": "warm-up"
 }
