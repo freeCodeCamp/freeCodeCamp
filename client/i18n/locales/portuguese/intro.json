@@ -4609,6 +4609,12 @@
           "Neste workshop, você aprenderá sobre classes, objetos e métodos em Python criando um inventário simples de instrumentos musicais."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -5054,7 +5060,7 @@
       "review-relational-databases": {
         "title": "Revisão de Bancos de Dados Relacionais",
         "intro": [
-          "Revise os conceitos de bancos de dados relacionais para se preparar para o próximo questionário."
+          "Review relational databases concepts to prepare for the exam."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {

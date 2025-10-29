@@ -4,6 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import EditorTabs from './editor-tabs';
 
 interface ClassicLayoutProps {
@@ -20,6 +21,7 @@ interface ClassicLayoutProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
+  challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
 }
@@ -70,7 +72,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     showPreviewPortal,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
-    setDailyCodingChallengeLanguage
+    setDailyCodingChallengeLanguage,
+    challengeType
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -94,6 +97,16 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
 
     return previewBtnsSrText;
   }
+
+  const isPythonChallenge =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
+  const previewButtonText = isPythonChallenge
+    ? t('learn.editor-tabs.terminal')
+    : t('learn.editor-tabs.preview');
 
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
@@ -161,7 +174,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+                <span aria-hidden='true'>{previewButtonText}</span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}

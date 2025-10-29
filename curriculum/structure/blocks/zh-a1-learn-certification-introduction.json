@@ -1,0 +1,14 @@
+{
+  "name": "Certification Introduction",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-certification-introduction",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3f03c70cc1ee76e50a68",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}

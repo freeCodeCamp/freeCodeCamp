@@ -2,7 +2,7 @@ import { Type } from '@fastify/type-provider-typebox';
 import { STANDARD_ERROR } from '../utils/errors.js';
 export const examEnvironmentExams = {
   headers: Type.Object({
-    'exam-environment-authorization-token': Type.String()
+    'exam-environment-authorization-token': Type.Optional(Type.String())
   }),
   response: {
     200: Type.Array(
@@ -15,7 +15,8 @@ export const examEnvironmentExams = {
           retakeTimeInS: Type.Number(),
           passingPercent: Type.Number()
         }),
-        canTake: Type.Boolean()
+        canTake: Type.Boolean(),
+        prerequisites: Type.Array(Type.String())
       })
     ),
     500: STANDARD_ERROR

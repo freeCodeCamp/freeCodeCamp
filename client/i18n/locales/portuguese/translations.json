@@ -391,7 +391,8 @@
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
     "download-details": "Faça o download manual do aplicativo",
     "unable-to-detect-os": "Não foi possível detectar seu sistema operacional. Por favor, faça o download manual do aplicativo abaixo.",
-    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:"
+    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
@@ -522,7 +523,8 @@
       "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar",
-      "editor": "Editor"
+      "editor": "Editor",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
@@ -951,7 +953,8 @@
     "editor-a11y-on-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Command+E para desativar ou pressione Option+F1 para mais opções.",
     "editor-a11y-on-non-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Ctrl+E para desativar ou pressione Alt+F1 para mais opções.",
     "terminal-output": "Saída do terminal",
-    "not-available": "Não disponível"
+    "not-available": "Não disponível",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "Não foi possível recuperar um e-mail do provedor escolhido. Por favor, tente outro provedor ou use a opção 'Continuar com o Email'.",
@@ -1280,12 +1283,16 @@
   "exam-token": {
     "exam-token": "Token de exame",
     "note": "O token de exame é uma chave secreta que permite que você acesse os exames. Não compartilhe esse token com ninguém.",
-    "invalidation": "Se você gerar um novo token, seu token antigo será invalidado.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Gerar token de exame",
     "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
-    "your-exam-token": "Seu token de exame é: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copiado para a área de transferência",
-    "copy-error": "Erro ao copiar o token para a área de transferência"
+    "copy-error": "Erro ao copiar o token para a área de transferência",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "Atalhos do teclado",

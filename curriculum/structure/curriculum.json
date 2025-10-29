@@ -36,7 +36,8 @@
     "front-end-development-libraries-v9",
     "python-v9",
     "relational-databases-v9",
-    "back-end-development-and-apis-v9"
+    "back-end-development-and-apis-v9",
+    "full-stack-developer-v9"
   ],
   "certifications": [
     "a2-english-for-developers",
@@ -49,7 +50,6 @@
     "data-visualization",
     "foundational-c-sharp-with-microsoft",
     "front-end-development-libraries",
-    "full-stack-developer",
     "information-security",
     "javascript-algorithms-and-data-structures",
     "javascript-algorithms-and-data-structures-v8",
@@ -69,6 +69,7 @@
     "front-end-development-libraries-v9",
     "python-v9",
     "relational-databases-v9",
-    "back-end-development-and-apis-v9"
+    "back-end-development-and-apis-v9",
+    "full-stack-developer-v9"
   ]
 }

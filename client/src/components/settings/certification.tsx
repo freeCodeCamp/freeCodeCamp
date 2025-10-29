@@ -89,13 +89,13 @@ const createCertifiedMap = ({
   // LegacyFullStack cannot be handled by this because there are no projects to
   // be rendered. The new FullStackDeveloper certification is a normal
   // certification with projects.
-  [Certification.FullStackDeveloper]: false,
   [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
   [Certification.JsV9]: isJavascriptCertV9,
   [Certification.FrontEndDevLibsV9]: false,
   [Certification.PythonV9]: false,
   [Certification.RelationalDbV9]: false,
   [Certification.BackEndDevApisV9]: false,
+  [Certification.FullStackDeveloperV9]: false,
   [Certification.A2English]: isA2EnglishCert,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,

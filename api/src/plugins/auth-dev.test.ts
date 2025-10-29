@@ -40,6 +40,7 @@ describe('dev login', () => {
     await fastify.prisma.user.deleteMany({
       where: { email: defaultUserEmail }
     });
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
     await fastify.close();
   });
 

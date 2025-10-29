@@ -712,7 +712,8 @@ describe('/exam-environment/', () => {
               totalTimeInS: mock.exam.config.totalTimeInS,
               retakeTimeInS: mock.exam.config.retakeTimeInS
             },
-            id: mock.examId
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
           }
         ]);
 
@@ -787,7 +788,8 @@ describe('/exam-environment/', () => {
               totalTimeInS: mock.exam.config.totalTimeInS,
               retakeTimeInS: mock.exam.config.retakeTimeInS
             },
-            id: mock.examId
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
           }
         ]);
         expect(res.body).toMatchObject([{ canTake: true }]);

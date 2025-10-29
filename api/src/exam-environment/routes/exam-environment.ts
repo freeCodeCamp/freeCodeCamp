@@ -694,7 +694,11 @@ async function postExamAttemptHandler(
   return reply.code(200).send();
 }
 
-async function getExams(
+/**
+ * Get all the public information about all exams.
+ * @returns Public information about exams + whether Camper may take the exam or not.
+ */
+export async function getExams(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
@@ -763,7 +767,8 @@ async function getExams(
         retakeTimeInS: exam.config.retakeTimeInS,
         passingPercent: exam.config.passingPercent
       },
-      canTake: false
+      canTake: false,
+      prerequisites: exam.prerequisites
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
