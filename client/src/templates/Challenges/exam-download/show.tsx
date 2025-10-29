@@ -16,10 +16,16 @@ import { connect } from 'react-redux';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
-import { ChallengeNode } from '../../../redux/prop-types';
-import { isSignedInSelector } from '../../../redux/selectors';
+import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
+import {
+  completedChallengesSelector,
+  isSignedInSelector
+} from '../../../redux/selectors';
+import { examAttempts } from '../../../utils/ajax';
+import MissingPrerequisites from '../exam/components/missing-prerequisites';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
+import ExamTokenControls from './exam-token-controls';
 
 interface GitProps {
   tag_name: string;
@@ -29,16 +35,26 @@ interface GitProps {
 }
 
 const mapStateToProps = createSelector(
+  completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
-  (isChallengeCompleted: boolean, isSignedIn: boolean) => ({
+  (
+    completedChallenges: CompletedChallenge[],
+    isChallengeCompleted: boolean,
+    isSignedIn: boolean
+  ) => ({
+    completedChallenges,
     isChallengeCompleted,
     isSignedIn
   })
 );
 
 interface ShowExamDownloadProps {
-  data: { challengeNode: ChallengeNode };
+  data: {
+    challengeNode: ChallengeNode;
+    allChallengeNode: { nodes: ChallengeNode[] };
+  };
+  completedChallenges: CompletedChallenge[];
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
 }
@@ -47,8 +63,10 @@ function ShowExamDownload({
   data: {
     challengeNode: {
       challenge: { id, title, translationPending }
-    }
+    },
+    allChallengeNode: { nodes }
   },
+  completedChallenges,
   isChallengeCompleted,
   isSignedIn
 }: ShowExamDownloadProps): JSX.Element {
@@ -56,6 +74,9 @@ function ShowExamDownload({
 
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
+
+  const getExamsQuery = examAttempts.useGetExamsQuery();
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
 
   const os = useDetectOS();
 
@@ -134,6 +155,22 @@ function ShowExamDownload({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
 
+  const examId = examIdsQuery.data?.at(0)?.examId;
+  const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
+  const unmetPrerequisites = exam?.prerequisites?.filter(
+    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
+  );
+  const challenges = nodes.filter(({ challenge }) =>
+    unmetPrerequisites?.includes(challenge.id)
+  );
+  const missingPrerequisites = challenges.map(({ challenge }) => {
+    return {
+      id: challenge.id,
+      title: challenge.title,
+      slug: challenge.fields?.slug || ''
+    };
+  });
+
   return (
     <LearnLayout>
       <Helmet>
@@ -150,14 +187,18 @@ function ShowExamDownload({
           {title}
         </ChallengeTitle>
         <Spacer size='l' />
+        {!!missingPrerequisites.length && (
+          <MissingPrerequisites missingPrerequisites={missingPrerequisites} />
+        )}
         <h2>{t('exam.download-header')}</h2>
         <p>{t('exam.explanation')}</p>
         <Spacer size='l' />
         {isSignedIn && (
           <>
             <h2>{t('exam.attempts')}</h2>
-            <Attempts id={id} />
+            <Attempts examChallengeId={id} />
             <Spacer size='l' />
+            <ExamTokenControls />
           </>
         )}
         <p>
@@ -165,6 +206,11 @@ function ShowExamDownload({
             version: latestVersion || '...'
           })}
         </p>
+        {/* TODO: confirm this works on MacOS */}
+        <Button href={'exam-environment://'}>
+          {t('exam.open-exam-application')}
+        </Button>
+        <Spacer size='s' />
         <Button
           disabled={!downloadLink}
           aria-disabled={!downloadLink}
@@ -186,6 +232,7 @@ function ShowExamDownload({
             {downloadLinks
               .filter(link => !link.match(/\.sig|\.json/))
               .map((link, index) => {
+                const urlEnd = link.split('/').pop() ?? '';
                 return (
                   <MenuItem
                     href={link}
@@ -193,7 +240,7 @@ function ShowExamDownload({
                     key={index}
                     variant='primary'
                   >
-                    {link}
+                    {urlEnd}
                   </MenuItem>
                 );
               })}
@@ -202,6 +249,7 @@ function ShowExamDownload({
         <Spacer size='l' />
         <strong>{t('exam.download-trouble')}</strong>{' '}
         <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
+        <Spacer size='l' />
       </Container>
     </LearnLayout>
   );
@@ -217,6 +265,17 @@ export const query = graphql`
         id
         title
         translationPending
+      }
+    }
+    allChallengeNode {
+      nodes {
+        challenge {
+          id
+          title
+          fields {
+            slug
+          }
+        }
       }
     }
   }

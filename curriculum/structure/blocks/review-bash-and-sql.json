@@ -1,6 +1,6 @@
 {
   "name": "Bash and SQL Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-bash-and-sql",

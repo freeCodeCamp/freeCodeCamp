@@ -6,6 +6,6 @@
     { "id": "67f39b91583dec1e1eddbb9e", "title": "Loops and Sequences Review" }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

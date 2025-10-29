@@ -10,3 +10,12 @@ export const userExamEnvironmentToken = {
     // default: STANDARD_ERROR
   }
 };
+
+export const getUserExamEnvironmentToken = {
+  response: {
+    200: Type.Object({
+      examEnvironmentAuthorizationToken: Type.String()
+    }),
+    404: STANDARD_ERROR
+  }
+};

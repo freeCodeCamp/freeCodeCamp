@@ -1,6 +1,6 @@
 {
   "name": "Working With Nano",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-nano",

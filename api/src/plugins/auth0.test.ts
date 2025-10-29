@@ -43,6 +43,7 @@ describe('auth0 plugin', () => {
   });
 
   afterAll(async () => {
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
     await fastify.close();
   });
 

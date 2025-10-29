@@ -4553,6 +4553,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -4744,8 +4750,10 @@
         ]
       },
       "workshop-breadth-first-search": {
-        "title": "Створіть алгоритм пошуку в ширину",
-        "intro": [""]
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
       },
       "lab-depth-first-search": {
         "title": "Implement the Depth-First Search Algorithm",
@@ -4754,8 +4762,10 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
       },
       "review-graphs-and-trees": {
         "title": "Повторення графів та дерев",
@@ -4980,7 +4990,7 @@
       "review-relational-databases": {
         "title": "Повторення реляційних баз даних",
         "intro": [
-          "Пригадайте поняття з теми «Реляційні бази даних», щоб підготуватись до тесту."
+          "Review relational databases concepts to prepare for the exam."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {

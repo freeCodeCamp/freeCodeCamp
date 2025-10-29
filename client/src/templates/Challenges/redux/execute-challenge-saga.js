@@ -222,7 +222,11 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.stack = stack;
       }
 
-      if (type === 'IndentationError' || type === 'SyntaxError') {
+      if (
+        type === 'IndentationError' ||
+        type === 'SyntaxError' ||
+        type === 'NameError'
+      ) {
         const msgKey =
           type === 'IndentationError'
             ? 'learn.indentation-error'

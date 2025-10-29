@@ -4609,6 +4609,12 @@
           "Neste workshop, você aprenderá sobre classes, objetos e métodos em Python criando um inventário simples de instrumentos musicais."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -4804,8 +4810,10 @@
         ]
       },
       "workshop-breadth-first-search": {
-        "title": "Crie uma Busca em Largura",
-        "intro": [""]
+        "title": "Implement the Breadth-First Search Algorithm",
+        "intro": [
+          "In this workshop, you will use the bread-first search algorithm to generate all valid combinations of parentheses."
+        ]
       },
       "lab-depth-first-search": {
         "title": "Implemente o Algoritmo de Busca em Profundidade",
@@ -4814,8 +4822,10 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "",
-        "intro": [""]
+        "title": "Implement the N-Queens Problem",
+        "intro": [
+          "In this lab, you will implement a solution for the N-Queens problem."
+        ]
       },
       "review-graphs-and-trees": {
         "title": "Revisão de Grafos e Árvores",
@@ -5050,7 +5060,7 @@
       "review-relational-databases": {
         "title": "Revisão de Bancos de Dados Relacionais",
         "intro": [
-          "Revise os conceitos de bancos de dados relacionais para se preparar para o próximo questionário."
+          "Review relational databases concepts to prepare for the exam."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {

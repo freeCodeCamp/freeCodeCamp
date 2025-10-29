@@ -258,7 +258,6 @@ export default function completionEpic(action$, state$) {
         nextChallengePath,
         challengeType,
         superBlock,
-        blockType,
         block,
         module,
         blockHashSlug
@@ -296,7 +295,7 @@ export default function completionEpic(action$, state$) {
 
         const donationData =
           chapterBasedSuperBlocks.includes(superBlock) &&
-          blockType !== 'review' &&
+          challengeType !== challengeTypes.review &&
           isModuleNewlyCompletedSelector(state)
             ? { module, superBlock }
             : !chapterBasedSuperBlocks.includes(superBlock) &&

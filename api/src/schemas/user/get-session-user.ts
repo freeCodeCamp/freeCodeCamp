@@ -1,9 +1,8 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { DailyCodingChallengeLanguage } from '@prisma/client';
 import { examResults, profileUI, savedChallenge } from '../types.js';
 
-const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
-  Type.Literal(k)
+const languages = Type.Array(
+  Type.Union([Type.Literal('javascript'), Type.Literal('python')])
 );
 
 export const getSessionUser = {
@@ -58,7 +57,7 @@ export const getSessionUser = {
             Type.Object({
               id: Type.String(),
               completedDate: Type.Number(),
-              languages: Type.Array(Type.Union(languages))
+              languages
             })
           ),
           currentChallengeId: Type.String(),
