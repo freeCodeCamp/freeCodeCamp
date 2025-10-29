@@ -3,7 +3,7 @@ import { Table } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 
 import { Loader } from '../../../components/helpers';
-import { examAttempts } from '../../../utils/ajax';
+import { Attempt, examAttempts } from '../../../utils/ajax';
 
 interface AttemptsProps {
   examChallengeId: string;
@@ -49,6 +49,32 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
     return <p>{t('exam.no-attempts-yet')}</p>;
   }
 
+  function renderScore(attempt: Attempt) {
+    switch (attempt.status) {
+      case 'Approved':
+        return `${attempt.result.score.toFixed(2)}%`;
+      case 'Denied':
+        return t('exam.denied');
+      case 'InProgress':
+        return t('exam.in-progress');
+      case 'PendingModeration':
+        return t('exam.pending');
+    }
+  }
+
+  function renderStatus(attempt: Attempt) {
+    switch (attempt.status) {
+      case 'Approved':
+        return attempt.result.passed ? t('exam.passed') : t('exam.failed');
+      case 'Denied':
+        return t('exam.denied');
+      case 'InProgress':
+        return t('exam.in-progress');
+      case 'PendingModeration':
+        return t('exam.pending');
+    }
+  }
+
   return (
     <Table striped>
       <thead>
@@ -62,18 +88,8 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
         {attempts.map(attempt => (
           <tr key={attempt.startTime}>
             <td>{new Date(attempt.startTime).toTimeString()}</td>
-            <td>
-              {attempt.result
-                ? `${attempt.result.score.toFixed(2)}%`
-                : t('exam.pending')}
-            </td>
-            <td>
-              {attempt.result
-                ? attempt.result.passed
-                  ? t('exam.passed')
-                  : t('exam.failed')
-                : t('exam.pending')}
-            </td>
+            <td>{renderScore(attempt)}</td>
+            <td>{renderStatus(attempt)}</td>
           </tr>
         ))}
       </tbody>
