@@ -1,5 +1,6 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
+import { useFeature } from '@growthbook/growthbook-react';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { clientLocale } from '../../../../config/env.json';
 import {
@@ -12,78 +13,78 @@ import {
   AlibabaLogo
 } from '../../../assets/images/components';
 import BigCallToAction from './big-call-to-action';
+import TwoButtonCTA from './two-button-cta';
 import CampersImage from './campers-image';
 
-const LogoRow = (): JSX.Element => {
+function LandingTop(): JSX.Element {
+  const { t } = useTranslation();
+  const showTwoButtonCTA = useFeature('landing-two-button-cta').on;
   const showChineseLogos = ['chinese', 'chinese-tradition'].includes(
     clientLocale
   );
 
   return (
-    <>
-      <p className='logo-row-title' data-playwright-test-label='h2-heading'>
-        <Trans>landing.h2-heading</Trans>
-      </p>
-      <div
-        className='logo-row'
-        data-playwright-test-label='brand-logo-container'
-      >
-        <AppleLogo />
-        <GoogleLogo />
-        <MicrosoftLogo />
-        {showChineseLogos ? (
-          <>
-            <TencentLogo />
-            <AlibabaLogo />
-          </>
-        ) : (
-          <>
-            <SpotifyLogo />
-            <AmazonLogo />
-          </>
-        )}
-      </div>
-    </>
-  );
-};
-
-function LandingTop(): JSX.Element {
-  const { t } = useTranslation();
-
-  return (
-    <Container fluid={true} className='gradient-container'>
-      <Container className='landing-top'>
-        <Spacer size='m' />
-        <Row>
-          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
+    <Container
+      fluid={true}
+      className='landing-top lading-top-c gradient-container'
+    >
+      <Container>
+        <Row className='landing-top-two-column' data-test-label='landing-top'>
+          <Spacer size='m' />
+          <Col className='landing-top-left'>
             <h1
               id='content-start'
-              className='mega-heading'
+              className='ultra-heading'
               data-test-label='landing-header'
-              data-playwright-test-label='landing-big-heading-1'
+              data-playwright-test-label='big-heading-1-b'
             >
-              {t('landing.big-heading-1')}
+              {t('landing.big-heading-1-b')}
             </h1>
-            <p
-              className='mega-heading'
-              data-playwright-test-label='landing-big-heading-2'
-            >
-              {t('landing.big-heading-2')}
+            <p data-playwright-test-label='advance-career'>
+              {t('landing.advance-career')}
             </p>
-            <p
-              className='mega-heading'
-              data-playwright-test-label='landing-big-heading-3'
-            >
-              {t('landing.big-heading-3')}
-            </p>
-            <LogoRow />
             <Spacer size='m' />
-            <BigCallToAction />
+
+            {showTwoButtonCTA ? (
+              <TwoButtonCTA />
+            ) : (
+              <BigCallToAction testLabel='landing-top-big-cta' />
+            )}
+            <Spacer size='m' />
+          </Col>
+          <Col className='landing-top-right'>
+            <CampersImage />
+            <Spacer size='m' />
           </Col>
         </Row>
+      </Container>
+      <Container>
         <Row>
-          <Col lg={8} lgOffset={2} sm={10} smOffset={1} xs={12}>
-            <CampersImage />
+          <Col sm={10} smOffset={1} xs={12} className='brands-container'>
+            <Spacer size='l' />
+            <p data-playwright-test-label='graduates-work'>
+              <Trans>landing.graduates-work</Trans>
+            </p>
+            <Spacer size='s' />
+            <div
+              className='logo-row'
+              data-playwright-test-label='brand-logo-container'
+            >
+              <AppleLogo />
+              <GoogleLogo />
+              <MicrosoftLogo />
+              {showChineseLogos ? (
+                <>
+                  <TencentLogo />
+                  <AlibabaLogo />
+                </>
+              ) : (
+                <>
+                  <SpotifyLogo />
+                  <AmazonLogo />
+                </>
+              )}
+            </div>
             <Spacer size='m' />
           </Col>
         </Row>
