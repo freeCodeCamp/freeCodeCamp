@@ -1,6 +1,6 @@
 import React from 'react';
 
-function B2EnglishIcon(
+function A2SpanishIcon(
   props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
 ): JSX.Element {
   return (
@@ -27,9 +27,8 @@ function B2EnglishIcon(
         fill='currentColor'
         stroke='none'
       >
-        B
+        A
       </text>
-
       <text
         x={36}
         y={14}
@@ -43,7 +42,6 @@ function B2EnglishIcon(
       >
         2
       </text>
-
       <text
         x={12}
         y={37}
@@ -57,7 +55,6 @@ function B2EnglishIcon(
       >
         E
       </text>
-
       <text
         x={36}
         y={37}
@@ -69,12 +66,12 @@ function B2EnglishIcon(
         fill='currentColor'
         stroke='none'
       >
-        N
+        S
       </text>
     </svg>
   );
 }
 
-B2EnglishIcon.displayName = 'B2EnglishIcon';
+A2SpanishIcon.displayName = 'A2SpanishIcon';
 
-export default B2EnglishIcon;
+export default A2SpanishIcon;
