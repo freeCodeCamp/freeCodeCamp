@@ -17,7 +17,8 @@ function addText(sectionIds) {
           `The --${sectionId}-- section should not have any subsections. Found subsection ${subSection.children[0].value}`
         );
       }
-      const sectionText = mdastToHTML(textNodes);
+      const lang = file.data.lang;
+      const sectionText = mdastToHTML(textNodes, { lang });
       if (!isEmpty(sectionText)) {
         file.data = {
           ...file.data,

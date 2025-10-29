@@ -33,7 +33,11 @@ function plugin() {
         const answersNodes = getSection(questionTree, '--answers--');
         const solutionNodes = getSection(questionTree, '--video-solution--');
 
-        questions.push(getQuestion(textNodes, answersNodes, solutionNodes));
+        questions.push(
+          getQuestion(textNodes, answersNodes, solutionNodes, {
+            lang: file.data.lang
+          })
+        );
       });
 
       file.data.questions = questions;
@@ -41,9 +45,9 @@ function plugin() {
   }
 }
 
-function getQuestion(textNodes, answersNodes, solutionNodes) {
-  const text = mdastToHtml(textNodes);
-  const answers = getAnswers(answersNodes);
+function getQuestion(textNodes, answersNodes, solutionNodes, { lang }) {
+  const text = mdastToHtml(textNodes, { lang });
+  const answers = getAnswers(answersNodes, { lang });
   const solution = getSolution(solutionNodes);
 
   if (!text) throw Error('text is missing from question');
@@ -53,7 +57,7 @@ function getQuestion(textNodes, answersNodes, solutionNodes) {
   return { text, answers, solution };
 }
 
-function getAnswers(answersNodes) {
+function getAnswers(answersNodes, { lang }) {
   const answerGroups = splitOnThematicBreak(answersNodes);
 
   return answerGroups.map(answerGroup => {
@@ -69,12 +73,12 @@ function getAnswers(answersNodes) {
       }
 
       return {
-        answer: mdastToHtml(answerNodes),
-        feedback: mdastToHtml(feedbackNodes)
+        answer: mdastToHtml(answerNodes, { lang }),
+        feedback: mdastToHtml(feedbackNodes, { lang })
       };
     }
 
-    return { answer: mdastToHtml(answerGroup), feedback: null };
+    return { answer: mdastToHtml(answerGroup, { lang }), feedback: null };
   });
 }
 
