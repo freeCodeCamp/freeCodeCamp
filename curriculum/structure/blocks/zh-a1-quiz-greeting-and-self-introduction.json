@@ -1,9 +1,0 @@
-{
-  "name": "Greeting and Self-introduction Quiz",
-  "isUpcomingChange": false,
-  "dashedName": "zh-a1-quiz-greeting-and-self-introduction",
-  "helpCategory": "English",
-  "blockLayout": "link",
-  "challengeOrder": [{ "id": "68f749ad2770e507dedfbd6b", "title": "Task 1" }],
-  "blockType": "quiz"
-}
