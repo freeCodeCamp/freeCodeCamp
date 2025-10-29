@@ -2605,6 +2605,12 @@
           "In this lab, you'll design a contact form in HTML and style it using CSS."
         ]
       },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+        ]
+      },
       "lab-feature-selection": {
         "title": "Design a Feature Selection Page",
         "intro": [
