@@ -128,10 +128,15 @@
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "python-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
-          "comingSoon": true,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }
