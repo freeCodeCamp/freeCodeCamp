@@ -57,9 +57,16 @@ export const currentCertifications = [
   Certification.FoundationalCSharp
 ] as const;
 
+// "Legacy" certifications are another class of standard certifications. They're
+// still live and claimable, but some parts of the UI handle them differently.
 export const legacyCertifications = [
   Certification.RespWebDesign,
   Certification.JsAlgoDataStructNew,
+  Certification.LegacyFrontEnd,
+  Certification.JsAlgoDataStruct,
+  Certification.LegacyBackEnd,
+  Certification.LegacyDataVis,
+  Certification.LegacyInfoSecQa,
   Certification.FrontEndDevLibs,
   Certification.DataVis,
   Certification.RelationalDb,
@@ -69,12 +76,7 @@ export const legacyCertifications = [
   Certification.DataAnalysisPy,
   Certification.InfoSec,
   Certification.MachineLearningPy,
-  Certification.CollegeAlgebraPy,
-  Certification.LegacyFrontEnd,
-  Certification.JsAlgoDataStruct,
-  Certification.LegacyBackEnd,
-  Certification.LegacyDataVis,
-  Certification.LegacyInfoSecQa
+  Certification.CollegeAlgebraPy
 ] as const;
 
 // The Legacy Full Stack certification can only be claimed when specific
