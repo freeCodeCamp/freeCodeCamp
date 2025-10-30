@@ -7,7 +7,7 @@ dashedName: step-16
 
 # --description--
 
-Inside `chooseShape` function, use `Object.entries()` with `forEach()` to loop through the `propertyInputs` object. The callback for the `forEach()` should receive `name` and `group` as destructured parameters.
+Inside the `chooseShape` function, use `Object.entries()` with `forEach()` to loop through the `propertyInputs` object. The callback for the `forEach()` should receive `name` and `group` as destructured parameters.
 
 # --hints--
 

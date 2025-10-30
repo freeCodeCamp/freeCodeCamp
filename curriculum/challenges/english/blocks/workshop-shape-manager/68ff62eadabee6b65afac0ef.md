@@ -7,7 +7,7 @@ dashedName: step-13
 
 # --description--
 
-Using the same technique, create an object named `propertyInputs` and grab the label elements with the ids `radius`, `width`, `height`, `base`, and `triangle-height`. This represents all the input fields where you will enter measurements for different shape properties.
+Using the same technique, create an object named `propertyInputs` and grab the label elements with the ids `radius`, `width`, `height`, `base`, and `triangle-height`. This represents all the input fields where you will enter the number for different shape properties so the area will be calculated.
 
 This time around, use the `GetElements` function with `HTMLInputElement` type.
 
