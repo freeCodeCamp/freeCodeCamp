@@ -26,6 +26,19 @@ export const examEnvironmentPostExamAttempt = {
   }
 };
 
+export enum ExamAttemptStatus {
+  // Attempt has not expired yet.
+  InProgress = 'InProgress',
+  // Moderation record is not created for practice exam. Also, it might not exist until exam service cron is run.
+  Expired = 'Expired',
+  // Attempt has expired && moderation record has been created but not yet moderated
+  PendingModeration = 'PendingModeration',
+  // Attempt has been approved
+  Approved = 'Approved',
+  // Attempt has been denied
+  Denied = 'Denied'
+}
+
 const examEnvAttempt = Type.Object({
   id: Type.String(),
   examId: Type.String(),
@@ -50,7 +63,7 @@ const examEnvAttempt = Type.Object({
     })
   ]),
   version: Type.Number(),
-  status: Type.Enum(['InProgress', 'PendingModeration', 'Approved', 'Denied'])
+  status: Type.Enum(ExamAttemptStatus)
 });
 
 export const examEnvironmentGetExamAttempts = {
