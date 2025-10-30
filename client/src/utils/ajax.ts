@@ -229,7 +229,7 @@ export type Attempt = {
 } & (
   | {
       result: null;
-      status: 'InProgress' | 'PendingModeration' | 'Denied';
+      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
     }
   | {
       status: 'Approved';
