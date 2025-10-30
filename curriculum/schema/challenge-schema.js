@@ -129,7 +129,7 @@ const quizJoi = Joi.object().keys({
 const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
-  blockType: Joi.when('superBlock', {
+  blockLabel: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
     then: Joi.valid(
       'workshop',
@@ -192,7 +192,8 @@ const schema = Joi.object().keys({
           Joi.object().keys({
             ext: Joi.string().required(),
             name: Joi.string().required(),
-            contents: Joi.string().required()
+            contents: Joi.string().required(),
+            contentsHtml: Joi.string().required()
           })
         ),
         otherwise: Joi.string().required()

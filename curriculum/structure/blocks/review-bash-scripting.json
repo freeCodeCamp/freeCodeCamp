@@ -1,6 +1,6 @@
 {
   "name": "Bash Scripting Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-bash-scripting",

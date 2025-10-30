@@ -1,6 +1,6 @@
 {
   "name": "SQL and PostgreSQL Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-sql-and-postgresql",

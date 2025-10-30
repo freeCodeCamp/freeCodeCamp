@@ -1,6 +1,6 @@
 {
   "name": "Bash and SQL Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-bash-and-sql",

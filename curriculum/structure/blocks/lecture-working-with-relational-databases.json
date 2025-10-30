@@ -1,6 +1,6 @@
 {
   "name": "Working with Relational Databases",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-relational-databases",

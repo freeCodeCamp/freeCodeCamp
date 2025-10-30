@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript",

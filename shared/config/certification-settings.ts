@@ -26,13 +26,13 @@ export enum Certification {
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
   // Upcoming certifications
-  FullStackDeveloper = 'full-stack-developer-v9',
   RespWebDesignV9 = 'responsive-web-design-v9',
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
+  FullStackDeveloperV9 = 'full-stack-developer-v9',
   A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
@@ -45,6 +45,10 @@ export enum Certification {
   LegacyDataVis = 'legacy-data-visualization',
   LegacyInfoSecQa = 'information-security-and-quality-assurance',
   LegacyFullStack = 'full-stack'
+}
+
+export function isCertification(x: string): x is Certification {
+  return Object.values(Certification).includes(x as Certification);
 }
 
 // "Current" certifications are the subset of standard certifications that are
@@ -84,13 +88,13 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
-  Certification.FullStackDeveloper,
   Certification.RespWebDesignV9,
   Certification.JsV9,
   Certification.FrontEndDevLibsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
+  Certification.FullStackDeveloperV9,
   Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
@@ -149,6 +153,7 @@ export const certIds = {
   pythonV9Id: '68e6bd5020effa1586e79855',
   relationalDbV9Id: '68e6bd5120effa1586e79856',
   backEndDevApisV9Id: '68e6bd5120effa1586e79857',
+  fullStackDeveloperV9Id: '64514fda6c245de4d11eb7bb',
   a2EnglishId: '651dd7e01d697d0aab7833b7'
 };
 
@@ -308,13 +313,13 @@ export const superBlockToCertMap: {
   [SuperBlocks.FoundationalCSharp]: Certification.FoundationalCSharp,
   [SuperBlocks.RespWebDesignNew]: Certification.RespWebDesign,
   [SuperBlocks.JsAlgoDataStruct]: Certification.JsAlgoDataStruct,
-  [SuperBlocks.FullStackDeveloper]: Certification.FullStackDeveloper,
   [SuperBlocks.RespWebDesignV9]: Certification.RespWebDesignV9,
   [SuperBlocks.JsV9]: Certification.JsV9,
   [SuperBlocks.FrontEndDevLibsV9]: Certification.FrontEndDevLibsV9,
   [SuperBlocks.PythonV9]: Certification.PythonV9,
   [SuperBlocks.RelationalDbV9]: Certification.RelationalDbV9,
   [SuperBlocks.BackEndDevApisV9]: Certification.BackEndDevApisV9,
+  [SuperBlocks.FullStackDeveloperV9]: Certification.FullStackDeveloperV9,
   [SuperBlocks.A2English]: Certification.A2English,
   [SuperBlocks.B1English]: Certification.B1English,
   [SuperBlocks.A1Spanish]: null,
@@ -329,7 +334,8 @@ export const superBlockToCertMap: {
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null,
-  [SuperBlocks.FullStackOpen]: null
+  [SuperBlocks.FullStackOpen]: null,
+  [SuperBlocks.FullStackDeveloper]: null
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
@@ -353,13 +359,13 @@ export const linkedInCredentialIds = {
   [Certification.RelationalDb]: 'rd',
   [Certification.CollegeAlgebraPy]: 'cawp',
   [Certification.FoundationalCSharp]: 'fcswm',
-  [Certification.FullStackDeveloper]: 'fsd',
   [Certification.RespWebDesignV9]: 'rwdv9',
   [Certification.JsV9]: 'jsv9',
   [Certification.FrontEndDevLibsV9]: 'felv9',
   [Certification.PythonV9]: 'pyv9',
   [Certification.RelationalDbV9]: 'rdv9',
   [Certification.BackEndDevApisV9]: 'bedv9',
+  [Certification.FullStackDeveloperV9]: 'fsdv9',
   [Certification.JsAlgoDataStructNew]: 'jaads',
   [Certification.A2English]: 'a2efd',
   [Certification.B1English]: 'b1efd',

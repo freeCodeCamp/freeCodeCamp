@@ -24,7 +24,10 @@ import {
   examEnvironmentPostExamGeneratedExam
 } from '../schemas/index.js';
 import * as mock from '../../../__mocks__/exam-environment-exam.js';
-import { constructUserExam } from '../utils/exam-environment.js';
+import {
+  constructUserExam,
+  ExamAttemptStatus
+} from '../utils/exam-environment.js';
 import { JWT_SECRET } from '../../utils/env.js';
 
 vi.mock('../../utils/env', async importOriginal => {
@@ -712,7 +715,8 @@ describe('/exam-environment/', () => {
               totalTimeInS: mock.exam.config.totalTimeInS,
               retakeTimeInS: mock.exam.config.retakeTimeInS
             },
-            id: mock.examId
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
           }
         ]);
 
@@ -787,7 +791,8 @@ describe('/exam-environment/', () => {
               totalTimeInS: mock.exam.config.totalTimeInS,
               retakeTimeInS: mock.exam.config.retakeTimeInS
             },
-            id: mock.examId
+            id: mock.examId,
+            prerequisites: mock.exam.prerequisites
           }
         ]);
         expect(res.body).toMatchObject([{ canTake: true }]);
@@ -919,9 +924,12 @@ describe('/exam-environment/', () => {
       });
 
       it('should return 200 with the examEnvironmentExamAttempt if the attempt exists and belongs to the user', async () => {
+        const startTime = new Date(
+          Date.now() - mock.exam.config.totalTimeInS * 1000
+        );
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-            data: { ...mock.examAttempt, userId: defaultUserId }
+            data: { ...mock.examAttempt, userId: defaultUserId, startTime }
           });
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
@@ -942,7 +950,10 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          status: ExamAttemptStatus.PendingModeration,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         };
 
         expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
@@ -959,9 +970,12 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the attempt without results, if the attempt has not been moderated', async () => {
+        const startTime = new Date(
+          Date.now() - mock.exam.config.totalTimeInS * 1000
+        );
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-            data: { ...mock.examAttempt, userId: defaultUserId }
+            data: { ...mock.examAttempt, userId: defaultUserId, startTime }
           });
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
@@ -982,7 +996,10 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          status: ExamAttemptStatus.PendingModeration,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number)
         };
 
         expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
@@ -1021,7 +1038,10 @@ describe('/exam-environment/', () => {
             passingPercent: 80
           },
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.Approved
         };
 
         expect(res.body).toEqual(serializeDates(examEnvironmentExamAttempt));
@@ -1055,9 +1075,12 @@ describe('/exam-environment/', () => {
       });
 
       it('should return 200 with the attempts if they exist and belong to the user', async () => {
+        const startTime = new Date(
+          Date.now() - mock.exam.config.totalTimeInS * 1000
+        );
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-            data: { ...mock.examAttempt, userId: defaultUserId }
+            data: { ...mock.examAttempt, userId: defaultUserId, startTime }
           });
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
@@ -1076,7 +1099,10 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.PendingModeration
         };
 
         expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
@@ -1084,9 +1110,12 @@ describe('/exam-environment/', () => {
       });
 
       it('should return the attempts without results, if they have not been moderated', async () => {
+        const startTime = new Date(
+          Date.now() - mock.exam.config.totalTimeInS * 1000
+        );
         const attempt =
           await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
-            data: { ...mock.examAttempt, userId: defaultUserId }
+            data: { ...mock.examAttempt, userId: defaultUserId, startTime }
           });
 
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
@@ -1106,7 +1135,10 @@ describe('/exam-environment/', () => {
           examId: mock.exam.id,
           result: null,
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.PendingModeration
         };
 
         expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
@@ -1143,7 +1175,10 @@ describe('/exam-environment/', () => {
             passingPercent: 80
           },
           startTime: attempt.startTime,
-          questionSets: attempt.questionSets
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.Approved
         };
 
         expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
@@ -1195,7 +1230,8 @@ describe('/exam-environment/', () => {
           startTime: attempt.startTime,
           questionSets: attempt.questionSets,
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          version: expect.any(Number)
+          version: expect.any(Number),
+          status: ExamAttemptStatus.InProgress
         };
 
         expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);

@@ -1,6 +1,6 @@
 {
   "name": "Git Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-git",

@@ -1,6 +1,6 @@
 {
   "name": "Understanding Computer, Internet, and Tooling Basics",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-computer-internet-and-tooling-basics",

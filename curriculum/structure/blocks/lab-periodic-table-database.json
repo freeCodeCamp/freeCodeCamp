@@ -1,6 +1,6 @@
 {
   "name": "Build a Periodic Table Database",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "lab-periodic-table-database",

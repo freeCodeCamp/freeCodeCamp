@@ -4,7 +4,7 @@
   "dashedName": "lab-prime-number-sum-calculator",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true,
   "challengeOrder": [
     {

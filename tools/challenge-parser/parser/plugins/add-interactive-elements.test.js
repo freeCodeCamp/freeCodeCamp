@@ -28,51 +28,51 @@ describe('add-interactive-editor plugin', () => {
       element => element.type === 'interactiveEditor'
     );
 
-    expect(editorElements).toEqual(
-      expect.arrayContaining([
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                '<div>This is an interactive element</div>'
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        }
-      ])
-    );
-
-    expect(editorElements).toEqual(
-      expect.arrayContaining([
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                'This is an interactive element'
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        },
-        {
-          data: [
-            {
-              ext: expect.any(String),
-              name: expect.any(String),
-              contents: expect.stringContaining(
-                "console.log('Interactive JS');"
-              )
-            }
-          ],
-          type: 'interactiveEditor'
-        }
-      ])
-    );
+    expect(editorElements).toEqual([
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: "console.log('Interactive JS');",
+            ext: 'js',
+            name: 'script-1',
+            contentsHtml:
+              '<pre><code class="language-js">console.log(\'Interactive JS\');\n</code></pre>'
+          }
+        ]
+      },
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: '<div>This is an interactive element</div>',
+            ext: 'html',
+            name: 'index-1',
+            contentsHtml:
+              '<pre><code class="language-html">&#x3C;div>This is an interactive element&#x3C;/div>\n</code></pre>'
+          }
+        ]
+      },
+      {
+        type: 'interactiveEditor',
+        data: [
+          {
+            contents: '<div>This is an interactive element</div>',
+            ext: 'html',
+            name: 'index-1',
+            contentsHtml:
+              '<pre><code class="language-html">&#x3C;div>This is an interactive element&#x3C;/div>\n</code></pre>'
+          },
+          {
+            contents: "console.log('Interactive JS');",
+            ext: 'js',
+            name: 'script-1',
+            contentsHtml:
+              '<pre><code class="language-js">console.log(\'Interactive JS\');\n</code></pre>'
+          }
+        ]
+      }
+    ]);
   });
 
   it('provides unique names for each file with the same extension', async () => {
@@ -97,6 +97,9 @@ describe('add-interactive-editor plugin', () => {
     // Contents should match
     expect(files[0].contents).toBe("console.log('First JavaScript file');");
     expect(files[1].contents).toBe("console.log('Second JavaScript file');");
+
+    expect(files[0].contentsHtml).toContain('<pre><code class="language-js">');
+    expect(files[1].contentsHtml).toContain('<pre><code class="language-js">');
   });
 
   it('respects the order of elements in the original markdown', async () => {

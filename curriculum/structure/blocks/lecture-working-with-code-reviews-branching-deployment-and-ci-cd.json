@@ -1,6 +1,6 @@
 {
   "name": "Working With Code Reviews, Branching, Deployment, and CI/CD",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
