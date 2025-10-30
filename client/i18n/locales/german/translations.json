@@ -523,6 +523,7 @@
       "instructions": "Anweisungen",
       "notes": "Hinweise",
       "preview": "Vorschau",
+      "terminal": "Terminal",
       "editor": "Editor",
       "interactive-editor": "Interactive Editor"
     },

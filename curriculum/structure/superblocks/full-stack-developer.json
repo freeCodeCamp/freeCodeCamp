@@ -35,6 +35,7 @@
             "lecture-understanding-nuanced-semantic-elements",
             "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -64,6 +65,7 @@
             "lecture-accessible-tables-forms",
             "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -154,6 +156,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
             "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
@@ -293,6 +296,7 @@
             "workshop-teacher-chatbot",
             "lecture-working-with-string-character-methods",
             "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
@@ -734,10 +738,12 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]

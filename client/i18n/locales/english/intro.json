@@ -1564,7 +1564,7 @@
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
       },
-      "a2-english-for-developers-certification-exam": {
+      "en-a2-certification-exam": {
         "title": "A2 English for Developers Certification Exam",
         "intro": [
           "This exam is required to claim the A2 English for Developers Certification."
@@ -2185,6 +2185,12 @@
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
@@ -2304,6 +2310,12 @@
         "title": "Introduction to ARIA",
         "intro": [
           "In these lessons, you will learn about working with ARIA roles."
+        ]
+      },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
         ]
       },
       "lecture-accessible-media-elements": {
@@ -2597,6 +2609,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
@@ -3049,6 +3067,12 @@
         "title": "Working with String Search and Slice Methods",
         "intro": [
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -4589,9 +4613,11 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
@@ -4619,7 +4645,12 @@
         "title": "Placeholder - Waiting for title",
         "intro": [""]
       },
-      "lab-placeholder-oop-3": { "title": "", "intro": [""] },
+      "lab-player-interface": {
+        "title": "Build a Player Interface",
+        "intro": [
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+        ]
+      },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
         "intro": [
@@ -7319,6 +7350,35 @@
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
+      }
+    }
+  },
+  "full-stack-developer-v9": {
+    "title": "Certified Full Stack Developer Curriculum",
+    "intro": [
+      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
+      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
+      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
+      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+    ],
+    "chapters": {
+      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+    },
+    "modules": {
+      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+    },
+    "module-intros": {
+      "certified-full-stack-developer-exam": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "This will be a 90 question exam testing what you have learned throughout this certification."
+        ]
+      }
+    },
+    "blocks": {
+      "exam-certified-full-stack-developer": {
+        "title": "Certified Full Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
       }
     }
   },

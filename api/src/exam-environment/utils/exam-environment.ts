@@ -768,6 +768,13 @@ export function shuffleArray<T>(array: Array<T>) {
 }
 /* eslint-enable jsdoc/require-description-complete-sentence */
 
+export enum ExamAttemptStatus {
+  InProgress = 'InProgress',
+  PendingModeration = 'PendingModeration',
+  Approved = 'Approved',
+  Denied = 'Denied'
+}
+
 /**
  * From an exam attempt, construct the attempt with result (if ready).
  *
@@ -827,7 +834,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.InProgress
       },
       error: null
     };
@@ -875,7 +883,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.PendingModeration
       },
       error: null
     };
@@ -887,7 +896,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.Denied
       },
       error: null
     };
@@ -941,7 +951,8 @@ export async function constructEnvExamAttempt(
 
   const examEnvironmentExamAttempt = {
     ...omitAttemptReferenceIds(attempt),
-    result
+    result,
+    status: ExamAttemptStatus.Approved
   };
   return { error: null, examEnvironmentExamAttempt };
 }
