@@ -82,10 +82,15 @@
           "moduleType": "review",
           "dashedName": "review-relational-databases",
           "blocks": ["review-relational-databases"]
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "relational-databases-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
-          "comingSoon": true,
           "dashedName": "relational-databases-certification-exam",
           "blocks": ["exam-relational-databases-certification"]
         }

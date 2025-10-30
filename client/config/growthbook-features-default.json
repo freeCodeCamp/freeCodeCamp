@@ -141,5 +141,8 @@
         "name": "prod-landing-two-button-cta"
       }
     ]
+  },
+  "disabled_blocks": {
+    "defaultValue": []
   }
 }
