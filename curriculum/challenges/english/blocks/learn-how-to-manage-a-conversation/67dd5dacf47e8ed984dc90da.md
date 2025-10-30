@@ -3,6 +3,7 @@ id: 67dd5dacf47e8ed984dc90da
 title: Task 17
 challengeType: 19
 dashedName: task-17
+lang: en-US
 ---
 
 <!-- (Audio) James: By the way, did we decide on the deadline for the first phase? -->
