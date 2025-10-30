@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a List of Major Web Browsers
 
-In this workshop you are going to practice using semantic tags like `dl`, `dt`, and `dd`.
+In this workshop, you will build a description list and work with the `dl`, `dt`, and `dd` elements.

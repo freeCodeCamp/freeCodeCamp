@@ -2176,7 +2176,7 @@
       "workshop-major-browsers-list": {
         "title": "Build a List of Major Web Browsers",
         "intro": [
-          "In this workshop you are going to practice using semantic tags like <code>dl</code>, <code>dt</code>, and <code>dd</code>."
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
