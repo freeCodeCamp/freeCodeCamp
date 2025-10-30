@@ -2179,6 +2179,12 @@
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
@@ -2298,6 +2304,12 @@
         "title": "Introduction to ARIA",
         "intro": [
           "In these lessons, you will learn about working with ARIA roles."
+        ]
+      },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
         ]
       },
       "lecture-accessible-media-elements": {
@@ -2594,6 +2606,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
@@ -3046,6 +3064,12 @@
         "title": "Working with String Search and Slice Methods",
         "intro": [
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -4610,9 +4634,11 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
@@ -5036,7 +5062,8 @@
       "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": {
-      "javascript": "JavaScript"
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -6200,7 +6227,7 @@
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
-      "review-asynchronous-javascrip": {
+      "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
           "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
@@ -6234,7 +6261,8 @@
       "- Pass the Front End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries"
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -6574,7 +6602,8 @@
       "- Pass the Python Certification exam."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -7013,7 +7042,8 @@
       "- Pass the Relational Databases Certification exam."
     ],
     "chapters": {
-      "relational-databases": "Relational Databases"
+      "relational-databases": "Relational Databases",
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "modules": {
       "code-editors": "Code Editors",
@@ -7246,7 +7276,8 @@
       "- Pass the Back End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs"
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
       "nodejs-core-libraries": "Node.js Core Libraries",

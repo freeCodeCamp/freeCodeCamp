@@ -220,17 +220,25 @@ export interface Exam {
   };
 }
 
-export interface Attempt {
+export type Attempt = {
   id: string;
   examId: string;
   // ISO 8601 string
   startTime: string;
   questionSets: unknown[];
-  result?: {
-    passed: boolean;
-    score: number;
-  };
-}
+} & (
+  | {
+      result: null;
+      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+    }
+  | {
+      status: 'Approved';
+      result: {
+        passed: boolean;
+        score: number;
+      };
+    }
+);
 
 export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
   return get('/user/exam-environment/exams');
