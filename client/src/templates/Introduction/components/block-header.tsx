@@ -42,11 +42,14 @@ function BlockHeader({
     <>
       <h3 className='block-grid-title'>
         <Button
-          aria-expanded={isExpanded ? 'true' : 'false'}
-          aria-controls={`${blockDashed}-panel`}
           className='block-header'
           onClick={handleClick}
-          {...(accordion && blockUrl ? { href: blockUrl } : {})}
+          {...(accordion && blockUrl
+            ? { href: blockUrl }
+            : {
+                'aria-expanded': isExpanded ? 'true' : 'false',
+                'aria-controls': `${blockDashed}-panel`
+              })}
         >
           <span className='block-header-button-text map-title'>
             {accordion &&
