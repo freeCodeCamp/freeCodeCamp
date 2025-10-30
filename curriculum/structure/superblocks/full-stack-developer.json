@@ -885,7 +885,9 @@
         {
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": ["lecture-intro-to-nodejs"]
+          "blocks": [
+            "lecture-working-with-nodejs-and-event-driven-architecture"
+          ]
         },
         {
           "dashedName": "nodejs-core-libraries",

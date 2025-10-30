@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Working with NodeJS and event driven architecture
-block: lecture-intro-to-nodejs
+block: lecture-working-with-nodejs-and-event-driven-architecture
 superBlock: full-stack-developer
 ---
 
