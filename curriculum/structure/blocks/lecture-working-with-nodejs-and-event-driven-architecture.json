@@ -1,7 +1,7 @@
 {
   "name": "Working with NodeJS and event driven architecture",
   "isUpcomingChange": true,
-  "dashedName": "lecture-intro-to-nodejs",
+  "dashedName": "lecture-working-with-nodejs-and-event-driven-architecture",
   "helpCategory": "Backend Development",
   "blockLayout": "challenge-list",
   "challengeOrder": [
