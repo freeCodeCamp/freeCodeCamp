@@ -5034,7 +5034,10 @@
       "- Build a Weather App",
       "Pass the exam to earn your JavaScript Certification."
     ],
-    "chapters": { "javascript": "JavaScript" },
+    "chapters": {
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "JavaScript Certification Exam"
+    },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
       "javascript-booleans-and-numbers": "Booleans and Numbers",
@@ -6197,7 +6200,7 @@
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
-      "review-asynchronous-javascrip": {
+      "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
           "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
@@ -6231,7 +6234,8 @@
       "- Pass the Front End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries"
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -6571,7 +6575,8 @@
       "- Pass the Python Certification exam."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -7009,7 +7014,10 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Relational Databases Certification exam."
     ],
-    "chapters": { "relational-databases": "Relational Databases" },
+    "chapters": {
+      "relational-databases": "Relational Databases",
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
+    },
     "modules": {
       "code-editors": "Code Editors",
       "bash-fundamentals": "Bash Fundamentals",
@@ -7241,7 +7249,8 @@
       "- Pass the Back End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs"
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
       "nodejs-core-libraries": "Node.js Core Libraries",
