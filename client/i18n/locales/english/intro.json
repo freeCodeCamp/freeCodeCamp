@@ -2306,6 +2306,12 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -2597,6 +2603,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
