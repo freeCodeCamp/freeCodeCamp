@@ -175,6 +175,8 @@ function ShowExamDownload({
     };
   });
 
+  console.log('missing prerequisites:', missingPrerequisites);
+
   return (
     <LearnLayout>
       <Helmet>
@@ -229,7 +231,7 @@ function ShowExamDownload({
               )}
             </div>
             <Spacer size='xs' />
-            <Dropdown>
+            <Dropdown dropup>
               <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
               <Dropdown.Menu>
                 {downloadLinks
