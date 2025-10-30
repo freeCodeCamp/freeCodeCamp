@@ -937,7 +937,6 @@
         { "dashedName": "capstone-project", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "certified-full-stack-developer-exam",
-          "moduleType": "exam",
           "comingSoon": true,
           "blocks": ["exam-certified-full-stack-developer"]
         }
