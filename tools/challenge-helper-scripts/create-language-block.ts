@@ -10,6 +10,7 @@ import {
   languageSuperBlocks,
   chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
+
 import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
   getContentConfig,
@@ -233,7 +234,37 @@ function getBlockPrefix(
 ): string | null {
   // Only chapter-based super blocks use blockLabel so prefix only applies to them.
   if (!chapterBasedSuperBlocks.includes(superBlock)) return null;
-  return `${superBlock}-${blockLabel}-`;
+
+  let langLevel;
+
+  switch (superBlock) {
+    case SuperBlocks.A2English:
+      langLevel = 'en-a2';
+      break;
+    case SuperBlocks.B1English:
+      langLevel = 'en-b1';
+      break;
+    case SuperBlocks.A1Spanish:
+      langLevel = 'es-a1';
+      break;
+    case SuperBlocks.A2Spanish:
+      langLevel = 'es-a2';
+      break;
+    case SuperBlocks.A1Chinese:
+      langLevel = 'zh-a1';
+      break;
+    case SuperBlocks.A2Chinese:
+      langLevel = 'zh-a2';
+      break;
+    default:
+      langLevel = superBlock;
+  }
+
+  if (blockLabel === BlockLabel.exam) {
+    return `${langLevel}-`;
+  }
+
+  return `${langLevel}-${blockLabel}-`;
 }
 
 void getAllBlocks()
@@ -271,10 +302,15 @@ void getAllBlocks()
 
             // Check if user accidentally included block label at the end
             if (answers.blockLabel) {
-              const blockLabelValues = Object.values(BlockLabel);
+              // Exclude exam as it is an exception
+              const blockLabelValues = Object.values(BlockLabel).filter(
+                label => label !== BlockLabel.exam
+              );
+
               const endsWithLabel = blockLabelValues.some(label =>
                 uniquePart.endsWith(`-${label}`)
               );
+
               if (endsWithLabel) {
                 return `Block name should not end with a block label (e.g., '-${answers.blockLabel}'). The label is already in the prefix.`;
               }
