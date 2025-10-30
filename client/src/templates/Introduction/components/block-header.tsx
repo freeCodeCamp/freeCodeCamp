@@ -64,7 +64,7 @@ function BlockHeader({
             {accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!accordion && <DropDown />}
           </span>
-          {!isExpanded && !isCompleted && completedCount > 0 && (
+          {!accordion && !isExpanded && !isCompleted && completedCount > 0 && (
             <div aria-hidden='true' className='progress-wrapper'>
               <div>
                 <ProgressBar now={percentageCompleted} />

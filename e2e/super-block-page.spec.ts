@@ -43,7 +43,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.addInitScript(() => {
         window.localStorage.setItem(
           'currentChallengeId',
-          '62a3b3eab50e193608c19fc6' // Learn Basic JavaScript by Building a Role Playing Game setp 9
+          '62a3b3eab50e193608c19fc6' // Learn Basic JavaScript by Building a Role Playing Game step 9
         );
       });
 
