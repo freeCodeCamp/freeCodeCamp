@@ -3,16 +3,17 @@ import { Table } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 
 import { Loader } from '../../../components/helpers';
-import { examAttempts } from '../../../utils/ajax';
+import { Attempt, examAttempts } from '../../../utils/ajax';
 
 interface AttemptsProps {
-  id: string;
+  examChallengeId: string;
 }
 
-export function Attempts({ id }: AttemptsProps) {
+export function Attempts({ examChallengeId }: AttemptsProps) {
   const { t } = useTranslation();
 
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+  const examIdsQuery =
+    examAttempts.useGetExamIdsByChallengeIdQuery(examChallengeId);
   const [getAttempts, attemptsMutation] =
     examAttempts.useGetExamAttemptsByExamIdMutation();
 
@@ -21,7 +22,11 @@ export function Attempts({ id }: AttemptsProps) {
       return;
     }
 
-    const examId = examIdsQuery.data.at(0)!.examId;
+    const examId = examIdsQuery.data.at(0)?.examId;
+    if (examId === undefined) {
+      return;
+    }
+
     void getAttempts(examId);
   }, [examIdsQuery.data, getAttempts]);
 
@@ -40,12 +45,34 @@ export function Attempts({ id }: AttemptsProps) {
 
   const attempts = attemptsMutation.data;
 
-  if (attempts === undefined) {
-    return <Loader />;
+  if (attempts === undefined || attempts.length === 0) {
+    return <p>{t('exam.no-attempts-yet')}</p>;
   }
 
-  if (attempts.length === 0) {
-    return <p>{t('exam.no-attempts-yet')}</p>;
+  function renderScore(attempt: Attempt) {
+    switch (attempt.status) {
+      case 'Approved':
+        return `${attempt.result.score.toFixed(2)}%`;
+      case 'Denied':
+        return t('exam.denied');
+      case 'InProgress':
+        return t('exam.in-progress');
+      case 'PendingModeration':
+        return t('exam.pending');
+    }
+  }
+
+  function renderStatus(attempt: Attempt) {
+    switch (attempt.status) {
+      case 'Approved':
+        return attempt.result.passed ? t('exam.passed') : t('exam.failed');
+      case 'Denied':
+        return t('exam.denied');
+      case 'InProgress':
+        return t('exam.in-progress');
+      case 'PendingModeration':
+        return t('exam.pending');
+    }
   }
 
   return (
@@ -59,20 +86,10 @@ export function Attempts({ id }: AttemptsProps) {
       </thead>
       <tbody>
         {attempts.map(attempt => (
-          <tr key={attempt.startTimeInMS}>
-            <td>{new Date(attempt.startTimeInMS).toTimeString()}</td>
-            <td>
-              {attempt.result
-                ? `${attempt.result.percent}%`
-                : t('exam.pending')}
-            </td>
-            <td>
-              {attempt.result
-                ? attempt.result.passed
-                  ? t('exam.passed')
-                  : t('exam.failed')
-                : t('exam.pending')}
-            </td>
+          <tr key={attempt.startTime}>
+            <td>{new Date(attempt.startTime).toTimeString()}</td>
+            <td>{renderScore(attempt)}</td>
+            <td>{renderStatus(attempt)}</td>
           </tr>
         ))}
       </tbody>

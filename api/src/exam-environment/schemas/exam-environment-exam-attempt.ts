@@ -29,7 +29,6 @@ export const examEnvironmentPostExamAttempt = {
 const examEnvAttempt = Type.Object({
   id: Type.String(),
   examId: Type.String(),
-  startTimeInMS: Type.Number(),
   startTime: Type.String({ format: 'date-time' }),
   questionSets: Type.Array(
     Type.Object({
@@ -38,7 +37,6 @@ const examEnvAttempt = Type.Object({
         Type.Object({
           id: Type.String(),
           answers: Type.Array(Type.String()),
-          submissionTimeInMS: Type.Number(),
           submissionTime: Type.String({ format: 'date-time' })
         })
       )
@@ -50,7 +48,9 @@ const examEnvAttempt = Type.Object({
       score: Type.Number(),
       passingPercent: Type.Number()
     })
-  ])
+  ]),
+  version: Type.Number(),
+  status: Type.Enum(['InProgress', 'PendingModeration', 'Approved', 'Denied'])
 });
 
 export const examEnvironmentGetExamAttempts = {
@@ -88,9 +88,9 @@ export const examEnvironmentGetExamAttemptsByExamId = {
     // Optional, because the handler is used in both the `/user/` base and `/exam-environment/` base.
     // If it is missing, auth will catch.
     'exam-environment-authorization-token': Type.Optional(Type.String())
-  })
-  // response: {
-  //   200: Type.Array(examEnvAttempt),
-  //   default: STANDARD_ERROR
-  // }
+  }),
+  response: {
+    200: Type.Array(examEnvAttempt)
+    //   default: STANDARD_ERROR
+  }
 };

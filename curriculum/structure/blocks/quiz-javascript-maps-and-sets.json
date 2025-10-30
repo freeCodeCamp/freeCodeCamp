@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Maps and Sets Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-javascript-maps-and-sets",

@@ -3,9 +3,10 @@
   "isUpcomingChange": true,
   "dashedName": "es-a1-review-greetings-and-farewells",
   "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
-  "blockType": "review",
+  "blockLayout": "link",
+  "blockLabel": "review",
   "challengeOrder": [
-    { "id": "68c850ed23d494c9be5cb22a", "title": "Dialogue 1: I'm Tom" }
+    { "id": "68c850ed23d494c9be5cb22a", "title": "Grammar Highlights" },
+    { "id": "68c994e8517cd6bde390e923", "title": "Glossary" }
   ]
 }

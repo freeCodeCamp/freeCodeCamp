@@ -28,7 +28,7 @@ test.describe('After creating token', () => {
     await page.goto(
       '/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate'
     );
-    await page.getByRole('button', { name: 'Start the course' }).click();
+    await page.getByText('Generate User Token').first().click();
 
     await page.goto('/settings');
     // Set `exact` to `true` to only match the panel heading

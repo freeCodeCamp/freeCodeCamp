@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Row, Spacer, Callout } from '@freecodecamp/ui';
+import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import Intro from '../components/Intro';
 import Map from '../components/Map';
@@ -16,8 +16,7 @@ import {
 } from '../redux/selectors';
 
 import callGA from '../analytics/call-ga';
-import { clientLocale } from '../../config/env.json';
-import createLanguageRedirect from '../components/create-language-redirect';
+import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
 
 interface FetchState {
   pending: boolean;
@@ -72,6 +71,7 @@ function LearnPage({
   const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
 
   const { t } = useTranslation();
+  useClaimableCertsNotification();
 
   const slug = challengeNode?.challenge?.fields?.slug || '';
 
@@ -97,33 +97,6 @@ function LearnPage({
               onLearnDonationAlertClick={onLearnDonationAlertClick}
               isDonating={isDonating}
             />
-            {clientLocale === 'english' ? null : (
-              <>
-                <Spacer size='m' />
-                <Callout variant='info'>
-                  <p className='text-center'>
-                    <strong style={{ color: 'var(--blue-dark)' }}>
-                      Warning: The localized content in this language is not
-                      being updated.
-                    </strong>
-                  </p>
-                  <p>
-                    Your previous progress is being saved, but you should{' '}
-                    <a
-                      href={createLanguageRedirect({
-                        clientLocale,
-                        lang: 'english'
-                      })}
-                    >
-                      visit the English version
-                    </a>{' '}
-                    for up to date content. We recognize this is not ideal and
-                    are working to fix it.
-                  </p>
-                  <p>We appreciate your patience.</p>
-                </Callout>
-              </>
-            )}
             <Map />
             <Spacer size='l' />
           </Col>
