@@ -252,6 +252,11 @@ button .block-header-button-text {
   margin-bottom: 1rem;
 }
 
+.super-block-accordion .module-intro p:last-of-type {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
 .super-block-accordion
   .chapter-panel
   .chapter-button[aria-expanded='false']
