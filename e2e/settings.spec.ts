@@ -330,7 +330,6 @@ test.describe('Setting - Hash Navigation', () => {
   test('should scroll to certification sections when navigating with hash', async ({
     page
   }) => {
-    // Test both current and legacy certifications
     const allCerts = [...currentCertifications, ...legacyCerts];
     for (const certSlug of allCerts) {
       await page.goto(`/settings#cert-${certSlug}`);
