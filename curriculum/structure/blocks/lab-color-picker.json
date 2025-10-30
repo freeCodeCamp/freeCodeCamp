@@ -7,7 +7,7 @@
     { "id": "67bf4350777ac6ffdc027745", "title": "Build a Color Picker App" }
   ],
   "helpCategory": "JavaScript",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "disableLoopProtectPreview": true
 }

@@ -292,6 +292,7 @@ describe('certificate routes', () => {
             }
           },
           isCertMap: {
+            isA2EnglishCert: false,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: false,
             isJavascriptCertV9: false,

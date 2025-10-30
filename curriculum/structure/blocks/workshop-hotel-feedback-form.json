@@ -1,6 +1,6 @@
 {
   "name": "Build a Hotel Feedback Form",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

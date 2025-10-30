@@ -1,8 +1,8 @@
 {
   "name": "Build a Number Guessing Game",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-number-guessing-game",
   "challengeOrder": [
     {

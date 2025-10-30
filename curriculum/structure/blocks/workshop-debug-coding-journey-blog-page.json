@@ -2,7 +2,7 @@
   "name": "Debug a Coding Journey Blog Page",
   "dashedName": "workshop-debug-coding-journey-blog-page",
   "helpCategory": "HTML-CSS",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68c2fb153760d075321c5da3", "title": "Step 1" },

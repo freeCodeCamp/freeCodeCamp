@@ -17,9 +17,11 @@
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
+            "workshop-build-a-video-display-using-iframe",
             "lab-video-compilation-page",
             "lecture-working-with-links",
             "review-basic-html",
@@ -60,7 +62,9 @@
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
+            "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
@@ -152,6 +156,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]

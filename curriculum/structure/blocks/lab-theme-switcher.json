@@ -1,7 +1,7 @@
 {
   "name": "Build a Theme Switcher",
   "isUpcomingChange": false,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-theme-switcher",
   "helpCategory": "JavaScript",

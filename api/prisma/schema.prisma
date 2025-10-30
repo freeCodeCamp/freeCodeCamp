@@ -105,6 +105,7 @@ model user {
   emailVerifyTTL                 DateTime? // Null | Undefined
   externalId                     String
   githubProfile                  String? // Undefined
+  isA2EnglishCert                Boolean? // Undefined
   isApisMicroservicesCert        Boolean? // Undefined
   isBackEndCert                  Boolean? // Undefined
   isBanned                       Boolean? // Undefined

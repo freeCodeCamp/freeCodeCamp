@@ -391,7 +391,8 @@
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "他の人がポートフォリオを見られるようにするには、プライバシー設定を変更する必要があります。これはポートフォリオが公開されたときにどのように見えるかのプレビューです。",
@@ -522,7 +523,9 @@
       "instructions": "手順書",
       "notes": "ノート",
       "preview": "プレビュー",
-      "editor": "エディター"
+      "terminal": "Terminal",
+      "editor": "エディター",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "タブキーを押すとタブ文字が入力されます",
@@ -951,7 +954,8 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1103,6 +1107,7 @@
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
+      "no-solution-to-display": "No solution to display",
       "source": "ソースコード",
       "footnote": "これらのプロジェクトのいずれかが<2>学問的誠実性ポリシー</2>に反すると思われる場合は、<5>freeCodeCamp チームに報告</5>してください。",
       "title": {
@@ -1279,12 +1284,16 @@
   "exam-token": {
     "exam-token": "試験用トークン",
     "note": "試験用トークンは、試験にアクセスするために必要な秘密鍵です。このトークンを他の人に共有しないでください。",
-    "invalidation": "新しいトークンを生成すると、古いトークンは無効になります。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "試験用トークンを生成",
     "error": "トークンの生成中にエラーが発生しました。時間を置いて再度お試しください。",
-    "your-exam-token": "あなたの試験用トークンは次のとおりです: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "トークンをクリップボードにコピーしました",
-    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました"
+    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "キーボードショートカット",

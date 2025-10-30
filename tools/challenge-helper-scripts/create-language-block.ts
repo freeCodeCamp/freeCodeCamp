@@ -10,13 +10,13 @@ import {
   languageSuperBlocks,
   chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure,
   getSuperblockStructure
-} from '../../curriculum/file-handler';
-import { superBlockToFilename } from '../../curriculum/build-curriculum';
+} from '../../curriculum/src/file-handler';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
 import { createIntroMD } from './helpers/create-intro';
 import {
@@ -51,7 +51,7 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   position?: number;
-  blockType?: string;
+  blockLabel?: string;
   blockLayout?: string;
   questionCount?: number;
 }
@@ -64,7 +64,7 @@ async function createLanguageBlock(
   chapter?: string,
   module?: string,
   position?: number,
-  blockType?: string,
+  blockLabel?: string,
   blockLayout?: string,
   questionCount?: number
 ) {
@@ -75,7 +75,7 @@ async function createLanguageBlock(
 
   let challengeId: ObjectID;
 
-  if (blockType === BlockTypes.quiz) {
+  if (blockLabel === BlockLabel.quiz) {
     challengeId = await createQuizChallenge(block, title, questionCount!);
     blockLayout = BlockLayouts.Link;
   } else {
@@ -87,7 +87,7 @@ async function createLanguageBlock(
     title,
     helpCategory,
     challengeId,
-    blockType,
+    blockLabel,
     blockLayout
   );
 
@@ -142,7 +142,7 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectID,
-  blockType?: string,
+  blockLabel?: string,
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
@@ -150,15 +150,15 @@ async function createMetaJson(
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
 
-  if (blockType) {
-    newMeta.blockType = blockType;
+  if (blockLabel) {
+    newMeta.blockLabel = blockLabel;
   }
   if (blockLayout) {
     newMeta.blockLayout = blockLayout;
   }
 
   const challengeTitle =
-    blockType === BlockTypes.quiz ? title : "Dialogue 1: I'm Tom";
+    blockLabel === BlockLabel.quiz ? title : "Dialogue 1: I'm Tom";
 
   newMeta.challengeOrder = [
     {
@@ -257,11 +257,11 @@ void getAllBlocks()
         choices: helpCategories
       },
       {
-        name: 'blockType',
-        message: 'Choose a block type',
-        default: BlockTypes.learn,
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.learn,
         type: 'list',
-        choices: Object.values(BlockTypes),
+        choices: Object.values(BlockLabel),
         when: (answers: CreateBlockArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
@@ -273,7 +273,7 @@ void getAllBlocks()
         choices: Object.values(BlockLayouts),
         when: (answers: CreateBlockArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.blockType !== BlockTypes.quiz
+          answers.blockLabel !== BlockLabel.quiz
       },
       {
         name: 'questionCount',
@@ -282,7 +282,7 @@ void getAllBlocks()
         type: 'list',
         choices: [10, 20],
         when: (answers: CreateBlockArgs) =>
-          answers.blockType === BlockTypes.quiz
+          answers.blockLabel === BlockLabel.quiz
       },
       {
         name: 'chapter',
@@ -352,7 +352,7 @@ void getAllBlocks()
       chapter,
       module,
       position,
-      blockType,
+      blockLabel,
       blockLayout,
       questionCount
     }: CreateBlockArgs) =>
@@ -364,7 +364,7 @@ void getAllBlocks()
         chapter,
         module,
         position,
-        blockType,
+        blockLabel,
         blockLayout,
         questionCount
       )

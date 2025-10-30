@@ -1,6 +1,6 @@
 {
   "name": "React Basics Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-react-basics",

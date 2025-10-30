@@ -220,6 +220,7 @@ module.exports.fullyCertifiedUser = {
   sendQuincyEmail: null,
   currentChallengeId: '',
   isHonest: true,
+  isA2EnglishCert: true,
   isFrontEndCert: true,
   isDataVisCert: true,
   isBackEndCert: true,

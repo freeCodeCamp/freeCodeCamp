@@ -29,13 +29,14 @@ const Login = ({
   isSignedIn
 }: LoginProps): JSX.Element => {
   const { t } = useTranslation();
-
   const href = isSignedIn ? `${homeLocation}/learn` : `${apiLocation}/signin`;
   return (
     <a
       className={(block ? 'btn-cta-big btn-block' : '') + ' signup-btn btn-cta'}
       data-test-label={dataTestLabel}
-      data-playwright-test-label='header-sign-in-button'
+      data-playwright-test-label={
+        dataTestLabel ? dataTestLabel : 'sign-in-button'
+      }
       href={href}
       onClick={() => {
         callGA({
@@ -43,9 +44,8 @@ const Login = ({
         });
       }}
     >
-      <span className='login-btn-icon'>
+      <span className='login-btn-icon' aria-hidden='true'>
         <FontAwesomeIcon icon={faRightToBracket} />
-        <span className='sr-only'> {t('buttons.sign-in')}</span>
       </span>
       <span className='login-btn-text'>{children || t('buttons.sign-in')}</span>
     </a>
