@@ -1,7 +1,7 @@
 {
   "name": "Build a Reusable Profile Card Component",
   "isUpcomingChange": false,
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

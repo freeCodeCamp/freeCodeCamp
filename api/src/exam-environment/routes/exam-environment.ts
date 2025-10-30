@@ -260,10 +260,8 @@ async function postExamGeneratedExamHandler(
 
   const lastAttempt = examAttempts.length
     ? examAttempts.reduce((latest, current) => {
-        const latestStartTime =
-          latest.startTime?.getTime() ?? latest.startTimeInMS;
-        const currentStartTime =
-          current.startTime?.getTime() ?? current.startTimeInMS;
+        const latestStartTime = latest.startTime;
+        const currentStartTime = current.startTime;
         return latestStartTime > currentStartTime ? latest : current;
       })
     : null;
@@ -304,17 +302,12 @@ async function postExamGeneratedExamHandler(
       );
     }
 
-    const lastAttemptStartTime =
-      lastAttempt.startTime?.getTime() ?? lastAttempt.startTimeInMS;
-    const examTotalTimeInMS = exam.config.totalTimeInS
-      ? exam.config.totalTimeInS * 1000
-      : exam.config.totalTimeInMS;
+    const lastAttemptStartTime = lastAttempt.startTime.getTime();
+    const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
     const examExpirationTime = lastAttemptStartTime + examTotalTimeInMS;
 
     if (examExpirationTime < Date.now()) {
-      const examRetakeTimeInMS = exam.config.retakeTimeInS
-        ? exam.config.retakeTimeInS * 1000
-        : exam.config.retakeTimeInMS;
+      const examRetakeTimeInMS = exam.config.retakeTimeInS * 1000;
       const retakeAllowed =
         examExpirationTime + examRetakeTimeInMS < Date.now();
 
@@ -466,7 +459,6 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
-        startTimeInMS: Date.now(),
         startTime: new Date(),
         questionSets: []
       }
@@ -565,9 +557,8 @@ async function postExamAttemptHandler(
   }
 
   const latestAttempt = attempts.reduce((latest, current) => {
-    const latestStartTime = latest.startTime?.getTime() ?? latest.startTimeInMS;
-    const currentStartTime =
-      current.startTime?.getTime() ?? current.startTimeInMS;
+    const latestStartTime = latest.startTime;
+    const currentStartTime = current.startTime;
     return latestStartTime > currentStartTime ? latest : current;
   });
 
@@ -600,11 +591,8 @@ async function postExamAttemptHandler(
     );
   }
 
-  const latestAttemptStartTime =
-    latestAttempt.startTime?.getTime() ?? latestAttempt.startTimeInMS;
-  const examTotalTimeInMS = exam.config.totalTimeInS
-    ? exam.config.totalTimeInS * 1000
-    : exam.config.totalTimeInMS;
+  const latestAttemptStartTime = latestAttempt.startTime.getTime();
+  const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
   const isAttemptExpired =
     latestAttemptStartTime + examTotalTimeInMS < Date.now();
 
@@ -706,7 +694,11 @@ async function postExamAttemptHandler(
   return reply.code(200).send();
 }
 
-async function getExams(
+/**
+ * Get all the public information about all exams.
+ * @returns Public information about exams + whether Camper may take the exam or not.
+ */
+export async function getExams(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
@@ -747,7 +739,6 @@ async function getExams(
       select: {
         id: true,
         examId: true,
-        startTimeInMS: true,
         startTime: true
       }
     })
@@ -772,13 +763,12 @@ async function getExams(
       config: {
         name: exam.config.name,
         note: exam.config.note,
-        totalTimeInMS: exam.config.totalTimeInMS,
         totalTimeInS: exam.config.totalTimeInS,
-        retakeTimeInMS: exam.config.retakeTimeInMS,
         retakeTimeInS: exam.config.retakeTimeInS,
         passingPercent: exam.config.passingPercent
       },
-      canTake: false
+      canTake: false,
+      prerequisites: exam.prerequisites
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
@@ -798,10 +788,8 @@ async function getExams(
 
     const lastAttempt = attemptsForExam.length
       ? attemptsForExam.reduce((latest, current) => {
-          const latestStartTime =
-            latest.startTime?.getTime() ?? latest.startTimeInMS;
-          const currentStartTime =
-            current.startTime?.getTime() ?? current.startTimeInMS;
+          const latestStartTime = latest.startTime;
+          const currentStartTime = current.startTime;
           return latestStartTime > currentStartTime ? latest : current;
         })
       : null;
@@ -813,14 +801,9 @@ async function getExams(
       continue;
     }
 
-    const lastAttemptStartTime =
-      lastAttempt.startTime?.getTime() ?? lastAttempt.startTimeInMS;
-    const examTotalTimeInMS = exam.config.totalTimeInS
-      ? exam.config.totalTimeInS * 1000
-      : exam.config.totalTimeInMS;
-    const examRetakeTimeInMS = exam.config.retakeTimeInS
-      ? exam.config.retakeTimeInS * 1000
-      : exam.config.retakeTimeInMS;
+    const lastAttemptStartTime = lastAttempt.startTime.getTime();
+    const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
+    const examRetakeTimeInMS = exam.config.retakeTimeInS * 1000;
     const retakeDateInMS =
       lastAttemptStartTime + examTotalTimeInMS + examRetakeTimeInMS;
 

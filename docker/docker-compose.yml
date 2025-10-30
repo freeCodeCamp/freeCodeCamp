@@ -1,6 +1,6 @@
 services:
   db:
-    image: mongo
+    image: mongo:8.0
     container_name: mongodb
     command: mongod --replSet rs0
     restart: unless-stopped
@@ -15,14 +15,14 @@ services:
       retries: 5
 
   setup:
-    image: mongo
+    image: mongo:8.0
     depends_on:
       db:
         condition: service_healthy
     restart: on-failure
     # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
     command: >
-      mongosh --host db:27017 --eval '
+      mongosh --host mongodb:27017 --eval '
         var cfg = {
           _id: "rs0",
           members: [
