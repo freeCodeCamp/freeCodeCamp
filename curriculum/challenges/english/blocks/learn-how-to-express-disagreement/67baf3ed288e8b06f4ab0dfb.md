@@ -3,6 +3,7 @@ id: 67baf3ed288e8b06f4ab0dfb
 title: Task 76
 challengeType: 22
 dashedName: task-76
+lang: en-US
 ---
 
 <!-- (Audio) David: It builds team spirit and makes problem-solving easier. -->
