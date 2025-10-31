@@ -1,0 +1,14 @@
+{
+  "name": "Nasal Finals",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-nasal-finals",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3f4c6382c6f20fbcf4be",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}
