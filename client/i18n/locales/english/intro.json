@@ -3107,7 +3107,7 @@
       "lab-debug-type-coercion-errors": {
         "title": "Debug Type Coercion Errors in a Buggy App",
         "intro": [
-          "In this lab, you will be working with a Buggy App that contains several type coercion errors.",
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
           "Your task is to identify and fix these errors to ensure the application functions correctly."
         ]
       },
