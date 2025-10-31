@@ -25,7 +25,7 @@ test.describe('Claim a certification - almost certified user', () => {
   }) => {
     await page.goto('/settings#cert-front-end-development-libraries');
     await page
-      .getByRole('button', { name: 'Claim Certification Front End' })
+      .getByRole('button', { name: 'Claim Certification Legacy Front End' })
       .click();
     // verify that an email is sent
     await expect(async () => {

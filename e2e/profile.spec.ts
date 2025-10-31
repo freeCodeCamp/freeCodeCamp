@@ -4,51 +4,51 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const certs = [
   {
-    name: 'Responsive Web Design',
+    name: 'Legacy Responsive Web Design',
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
+    name: 'Legacy JavaScript Algorithms and Data Structures V8',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
-    name: 'Front End Development Libraries',
+    name: 'Legacy Front End Development Libraries',
     url: '/certification/certifieduser/front-end-development-libraries'
   },
   {
-    name: 'Data Visualization',
+    name: 'Legacy Data Visualization V8',
     url: '/certification/certifieduser/data-visualization'
   },
   {
-    name: 'Relational Database',
+    name: 'Legacy Relational Database',
     url: '/certification/certifieduser/relational-database-v8'
   },
   {
-    name: 'Back End Development and APIs',
+    name: 'Legacy Back End Development and APIs',
     url: '/certification/certifieduser/back-end-development-and-apis'
   },
   {
-    name: 'Quality Assurance',
+    name: 'Legacy Quality Assurance',
     url: '/certification/certifieduser/quality-assurance-v7'
   },
   {
-    name: 'Scientific Computing with Python',
+    name: 'Legacy Scientific Computing with Python',
     url: '/certification/certifieduser/scientific-computing-with-python-v7'
   },
   {
-    name: 'Data Analysis with Python',
+    name: 'Legacy Data Analysis with Python',
     url: '/certification/certifieduser/data-analysis-with-python-v7'
   },
   {
-    name: 'Information Security',
+    name: 'Legacy Information Security',
     url: '/certification/certifieduser/information-security-v7'
   },
   {
-    name: 'Machine Learning with Python',
+    name: 'Legacy Machine Learning with Python',
     url: '/certification/certifieduser/machine-learning-with-python-v7'
   },
   {
-    name: 'College Algebra with Python',
+    name: 'Legacy College Algebra with Python',
     url: '/certification/certifieduser/college-algebra-with-python-v8'
   },
   {
@@ -63,7 +63,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/legacy-front-end'
   },
   {
-    name: 'Legacy JavaScript Algorithms and Data Structures',
+    name: 'Legacy JavaScript Algorithms and Data Structures V7',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
   },
   {
@@ -71,14 +71,17 @@ const legacyCerts = [
     url: '/certification/certifieduser/legacy-back-end'
   },
   {
-    name: 'Legacy Data Visualization',
+    name: 'Legacy Data Visualization V7',
     url: '/certification/certifieduser/legacy-data-visualization'
   },
   {
     name: 'Legacy Information Security and Quality Assurance',
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
-  { name: 'Legacy Full Stack', url: '/certification/certifieduser/full-stack' }
+  {
+    name: 'Legacy Full Stack',
+    url: '/certification/certifieduser/full-stack'
+  }
 ];
 
 test.describe('Profile component', () => {

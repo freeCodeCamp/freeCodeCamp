@@ -61,7 +61,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isRespWebDesignCert,
-        title: 'Responsive Web Design Certification',
+        title: 'Legacy Responsive Web Design Certification',
         certSlug: Certification.RespWebDesign
       },
       {
@@ -76,57 +76,58 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isJsAlgoDataStructCertV8,
-        title: 'JavaScript Algorithms and Data Structures Certification',
+        title:
+          'Legacy JavaScript Algorithms and Data Structures V8 Certification',
         certSlug: Certification.JsAlgoDataStructNew
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Development Libraries Certification',
+        title: 'Legacy Front End Development Libraries Certification',
         certSlug: Certification.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
-        title: 'Data Visualization Certification',
+        title: 'Legacy Data Visualization V8 Certification',
         certSlug: Certification.DataVis
       },
       {
         show: isRelationalDatabaseCertV8,
-        title: 'Relational Database Certification',
+        title: 'Legacy Relational Database Certification',
         certSlug: Certification.RelationalDb
       },
       {
         show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs Certification',
+        title: 'Legacy Back End Development and APIs Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
         show: isQaCertV7,
-        title: 'Quality Assurance Certification',
+        title: 'Legacy Quality Assurance Certification',
         certSlug: Certification.QualityAssurance
       },
       {
         show: isSciCompPyCertV7,
-        title: 'Scientific Computing with Python Certification',
+        title: 'Legacy Scientific Computing with Python Certification',
         certSlug: Certification.SciCompPy
       },
       {
         show: isDataAnalysisPyCertV7,
-        title: 'Data Analysis with Python Certification',
+        title: 'Legacy Data Analysis with Python Certification',
         certSlug: Certification.DataAnalysisPy
       },
       {
         show: isInfosecCertV7,
-        title: 'Information Security Certification',
+        title: 'Legacy Information Security Certification',
         certSlug: Certification.InfoSec
       },
       {
         show: isMachineLearningPyCertV7,
-        title: 'Machine Learning with Python Certification',
+        title: 'Legacy Machine Learning with Python Certification',
         certSlug: Certification.MachineLearningPy
       },
       {
         show: isCollegeAlgebraPyCertV8,
-        title: 'College Algebra with Python Certification',
+        title: 'Legacy College Algebra with Python Certification',
         certSlug: Certification.CollegeAlgebraPy
       },
       {
@@ -138,33 +139,35 @@ export const getCertifications = (user: User) => {
     legacyCerts: [
       {
         show: isFrontEndCert,
-        title: 'Front End Certification',
+        title: 'Legacy Front End Certification',
         certSlug: Certification.LegacyFrontEnd
       },
       {
         show: isJsAlgoDataStructCert,
-        title: 'Legacy JavaScript Algorithms and Data Structures Certification',
+        title:
+          'Legacy JavaScript Algorithms and Data Structures V7 Certification',
         certSlug: Certification.JsAlgoDataStruct
       },
       {
         show: isBackEndCert,
-        title: 'Back End Certification',
+        title: 'Legacy Back End Certification',
         certSlug: Certification.LegacyBackEnd
       },
       {
         show: isDataVisCert,
-        title: 'Data Visualization Certification',
+        title: 'Legacy Data Visualization V7 Certification',
         certSlug: Certification.LegacyDataVis
       },
       {
         show: isInfosecQaCert,
-        title: 'Information Security and Quality Assurance Certification',
+        title:
+          'Legacy Information Security and Quality Assurance Certification',
         // Keep the current public profile cert slug
         certSlug: Certification.LegacyInfoSecQa
       },
       {
         show: isFullStackCert,
-        title: 'Full Stack Certification',
+        title: 'Legacy Full Stack Certification',
         // Keep the current public profile cert slug
         certSlug: Certification.LegacyFullStack
       }
