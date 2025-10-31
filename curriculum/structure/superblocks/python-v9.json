@@ -53,6 +53,7 @@
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
+            "lab-planet-class",
             "workshop-email-simulator",
             "lab-budget-app",
             "review-classes-and-objects",
@@ -65,10 +66,12 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]
@@ -128,10 +131,15 @@
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "python-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
-          "comingSoon": true,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }
