@@ -3,6 +3,7 @@ id: 661bd3fc29debe22a71eedb5
 title: Task 69
 challengeType: 19
 dashedName: task-69
+lang: en-US
 ---
 
 # --description--

@@ -1,5 +1,6 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
+import { Button } from '@freecodecamp/ui';
 
 import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
@@ -19,6 +20,8 @@ interface BlockHeaderProps {
   isExpanded: boolean;
   percentageCompleted: number;
   blockIntroArr?: string[];
+  accordion?: boolean;
+  blockUrl?: string;
 }
 
 function BlockHeader({
@@ -31,27 +34,37 @@ function BlockHeader({
   isCompleted,
   isExpanded,
   percentageCompleted,
-  blockIntroArr
+  blockIntroArr,
+  accordion,
+  blockUrl
 }: BlockHeaderProps): JSX.Element {
   return (
     <>
       <h3 className='block-grid-title'>
-        <button
+        <Button
           aria-expanded={isExpanded ? 'true' : 'false'}
           aria-controls={`${blockDashed}-panel`}
           className='block-header'
           onClick={handleClick}
+          {...(accordion && blockUrl ? { href: blockUrl } : {})}
         >
           <span className='block-header-button-text map-title'>
+            {accordion &&
+              (blockUrl ? (
+                <span className='aligner-dash'></span>
+              ) : (
+                <DropDown />
+              ))}
             <CheckMark isCompleted={isCompleted} />
-            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
+            {!accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
             <span>
               {blockTitle}
               <span className='sr-only'>, {courseCompletionStatus}</span>
             </span>
-            <DropDown />
+            {accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
+            {!accordion && <DropDown />}
           </span>
-          {!isExpanded && !isCompleted && completedCount > 0 && (
+          {!accordion && !isExpanded && !isCompleted && completedCount > 0 && (
             <div aria-hidden='true' className='progress-wrapper'>
               <div>
                 <ProgressBar now={percentageCompleted} />
@@ -59,7 +72,7 @@ function BlockHeader({
               <span>{`${percentageCompleted}%`}</span>
             </div>
           )}
-        </button>
+        </Button>
       </h3>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />

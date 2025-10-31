@@ -19,6 +19,7 @@
             "workshop-teacher-chatbot",
             "lecture-working-with-string-character-methods",
             "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
@@ -313,11 +314,16 @@
           "moduleType": "review",
           "dashedName": "review-javascript",
           "blocks": ["review-javascript"]
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "javascript-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
           "dashedName": "javascript-certification-exam",
-          "comingSoon": true,
           "blocks": ["exam-javascript-certification"]
         }
       ]
