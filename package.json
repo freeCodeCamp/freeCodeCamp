@@ -44,7 +44,7 @@
     "develop": "npm-run-all -p develop:client develop:api",
     "develop:client": "cd ./client && pnpm run develop",
     "develop:api": "cd ./api && pnpm run develop",
-    "develop:fsd": "FULL_SUPERBLOCK=full-stack-developer npm-run-all predevelop -p develop:client develop:api",
+    "develop:fsd": "BUILD_SUPERBLOCKS=full-stack-developer npm-run-all predevelop -p develop:client develop:api",
     "format": "run-s format:eslint format:prettier",
     "format:eslint": "eslint . --fix",
     "format:prettier": "prettier --write .",

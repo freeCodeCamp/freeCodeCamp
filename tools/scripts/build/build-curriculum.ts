@@ -15,7 +15,7 @@ import {
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
-const shouldBuildExternalCurriculum = !process.env.FULL_SUPERBLOCK;
+const shouldBuildExternalCurriculum = !process.env.BUILD_SUPERBLOCKS;
 
 void getChallengesForLang('english')
   .then(result => {
