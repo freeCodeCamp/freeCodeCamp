@@ -11,6 +11,10 @@ on:
           - info
           - warn
         default: info
+      show_upcoming_changes:
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        type: boolean
+        default: false
 
 jobs:
   setup-jobs:
@@ -21,12 +25,21 @@ jobs:
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }}
       api_log_lvl: ${{ steps.setup.outputs.api_log_lvl }}
+      show_upcoming_changes: ${{ steps.setup.outputs.show_upcoming_changes }}
     steps:
       - name: Setup
         id: setup
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
+
+          # Convert boolean input to string 'true' or 'false'
+          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+          fi
+
           case "$BRANCH" in
             "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
@@ -49,6 +62,7 @@ jobs:
     with:
       site_tld: ${{ needs.setup-jobs.outputs.site_tld }}
       app: api
+      show_upcoming_changes: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
     secrets: inherit
 
   deploy:
@@ -168,6 +182,7 @@ jobs:
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
           DEPLOYMENT_TLD: ${{ needs.setup-jobs.outputs.site_tld }}
           FCC_API_LOG_LEVEL: ${{ needs.setup-jobs.outputs.api_log_lvl }}
+          SHOW_UPCOMING_CHANGES: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
           # Stack name
           STACK_NAME: ${{ needs.setup-jobs.outputs.tgt_env_short }}-api
         run: |
@@ -205,6 +220,7 @@ jobs:
               echo \"DEPLOYMENT_TLD=$DEPLOYMENT_TLD\"
               echo \"DEPLOYMENT_ENV=$DEPLOYMENT_ENV\"
               echo \"FCC_API_LOG_LEVEL=$FCC_API_LOG_LEVEL\"
+              echo \"SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES\"
             } >> .env
 
             echo -e '\nLOG:Sourcing environment...'
