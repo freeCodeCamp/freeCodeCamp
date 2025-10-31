@@ -1,6 +1,6 @@
 {
   "name": "Debug Increment and Decrement Operator Errors in a Buggy App",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-debug-increment-and-decrement-operator-errors",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
