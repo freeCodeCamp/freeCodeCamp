@@ -218,17 +218,17 @@ test.describe('JavaScript projects can be submitted and then viewed in /settings
 
     await page
       .getByRole('button', {
-        name: 'Claim Certification Legacy JavaScript Algorithms and Data Structures V7'
+        name: 'Claim Certification JavaScript Algorithms and Data Structures V7'
       })
       .click();
 
     await alertToBeVisible(
       page,
-      '@developmentuser, you have successfully claimed the Legacy JavaScript Algorithms and Data Structures V7 Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      '@developmentuser, you have successfully claimed the JavaScript Algorithms and Data Structures V7 Certification! Congratulations on behalf of the freeCodeCamp.org team!'
     );
 
     const showCertLink = page.getByRole('link', {
-      name: 'Show Certification Legacy JavaScript Algorithms and Data Structures V7'
+      name: 'Show Certification JavaScript Algorithms and Data Structures V7'
     });
     await expect(showCertLink).toBeVisible();
     await expect(showCertLink).toHaveAttribute(

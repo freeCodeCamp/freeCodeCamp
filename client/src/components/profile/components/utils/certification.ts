@@ -61,7 +61,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isRespWebDesignCert,
-        title: 'Legacy Responsive Web Design Certification',
+        title: 'Responsive Web Design V8 Certification',
         certSlug: Certification.RespWebDesign
       },
       {
@@ -76,58 +76,57 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isJsAlgoDataStructCertV8,
-        title:
-          'Legacy JavaScript Algorithms and Data Structures V8 Certification',
+        title: 'JavaScript Algorithms and Data Structures V8 Certification',
         certSlug: Certification.JsAlgoDataStructNew
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Legacy Front End Development Libraries Certification',
+        title: 'Front End Development Libraries V8 Certification',
         certSlug: Certification.FrontEndDevLibs
       },
       {
         show: is2018DataVisCert,
-        title: 'Legacy Data Visualization V8 Certification',
+        title: 'Data Visualization V8 Certification',
         certSlug: Certification.DataVis
       },
       {
         show: isRelationalDatabaseCertV8,
-        title: 'Legacy Relational Database Certification',
+        title: 'Relational Database V8 Certification',
         certSlug: Certification.RelationalDb
       },
       {
         show: isApisMicroservicesCert,
-        title: 'Legacy Back End Development and APIs Certification',
+        title: 'Back End Development and APIs V8 Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
         show: isQaCertV7,
-        title: 'Legacy Quality Assurance Certification',
+        title: 'Quality Assurance Certification',
         certSlug: Certification.QualityAssurance
       },
       {
         show: isSciCompPyCertV7,
-        title: 'Legacy Scientific Computing with Python Certification',
+        title: 'Scientific Computing with Python Certification',
         certSlug: Certification.SciCompPy
       },
       {
         show: isDataAnalysisPyCertV7,
-        title: 'Legacy Data Analysis with Python Certification',
+        title: 'Data Analysis with Python Certification',
         certSlug: Certification.DataAnalysisPy
       },
       {
         show: isInfosecCertV7,
-        title: 'Legacy Information Security Certification',
+        title: 'Information Security Certification',
         certSlug: Certification.InfoSec
       },
       {
         show: isMachineLearningPyCertV7,
-        title: 'Legacy Machine Learning with Python Certification',
+        title: 'Machine Learning with Python Certification',
         certSlug: Certification.MachineLearningPy
       },
       {
         show: isCollegeAlgebraPyCertV8,
-        title: 'Legacy College Algebra with Python Certification',
+        title: 'College Algebra with Python Certification',
         certSlug: Certification.CollegeAlgebraPy
       },
       {
@@ -144,8 +143,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isJsAlgoDataStructCert,
-        title:
-          'Legacy JavaScript Algorithms and Data Structures V7 Certification',
+        title: 'JavaScript Algorithms and Data Structures V7 Certification',
         certSlug: Certification.JsAlgoDataStruct
       },
       {
@@ -155,7 +153,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isDataVisCert,
-        title: 'Legacy Data Visualization V7 Certification',
+        title: 'Legacy Data Visualization Certification',
         certSlug: Certification.LegacyDataVis
       },
       {

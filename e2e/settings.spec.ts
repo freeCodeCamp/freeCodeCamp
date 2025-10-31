@@ -313,7 +313,7 @@ test.describe('Settings - New User', () => {
     });
 
     const claimRwdCertButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Responsive Web Design'
+      name: 'Claim Certification Responsive Web Design V8'
     });
 
     // Buttons for normal certs are enabled
