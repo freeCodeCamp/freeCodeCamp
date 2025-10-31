@@ -24,11 +24,9 @@ import {
   examEnvironmentPostExamGeneratedExam
 } from '../schemas/index.js';
 import * as mock from '../../../__mocks__/exam-environment-exam.js';
-import {
-  constructUserExam,
-  ExamAttemptStatus
-} from '../utils/exam-environment.js';
+import { constructUserExam } from '../utils/exam-environment.js';
 import { JWT_SECRET } from '../../utils/env.js';
+import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
 
 vi.mock('../../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../../utils/env.js')>();

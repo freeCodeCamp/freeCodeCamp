@@ -6,7 +6,9 @@ import {
   Dropdown,
   MenuItem,
   Spacer,
-  Container
+  Container,
+  Row,
+  Col
 } from '@freecodecamp/ui';
 import { isEmpty } from 'lodash';
 import { useTranslation, withTranslation } from 'react-i18next';
@@ -26,6 +28,8 @@ import MissingPrerequisites from '../exam/components/missing-prerequisites';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
+
+import './show.css';
 
 interface GitProps {
   tag_name: string;
@@ -75,8 +79,12 @@ function ShowExamDownload({
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
 
-  const getExamsQuery = examAttempts.useGetExamsQuery();
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+  const getExamsQuery = examAttempts.useGetExamsQuery(undefined, {
+    skip: !isSignedIn
+  });
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id, {
+    skip: !isSignedIn
+  });
 
   const os = useDetectOS();
 
@@ -179,77 +187,80 @@ function ShowExamDownload({
         </title>
       </Helmet>
       <Container>
-        <Spacer size='m' />
-        <ChallengeTitle
-          isCompleted={isChallengeCompleted}
-          translationPending={translationPending}
-        >
-          {title}
-        </ChallengeTitle>
-        <Spacer size='l' />
-        {!!missingPrerequisites.length && (
-          <MissingPrerequisites missingPrerequisites={missingPrerequisites} />
-        )}
-        <h2>{t('exam.download-header')}</h2>
-        <p>{t('exam.explanation')}</p>
-        <Spacer size='l' />
-        {isSignedIn && (
-          <>
-            <h2>{t('exam.attempts')}</h2>
-            <Attempts examChallengeId={id} />
-            <Spacer size='l' />
-            <ExamTokenControls />
-          </>
-        )}
-        <p>
-          {t('exam.version', {
-            version: latestVersion || '...'
-          })}
-        </p>
-        {/* TODO: confirm this works on MacOS */}
-        <Button href={'exam-environment://'}>
-          {t('exam.open-exam-application')}
-        </Button>
-        <Spacer size='s' />
-        <Button
-          disabled={!downloadLink}
-          aria-disabled={!downloadLink}
-          href={downloadLink}
-          download={downloadLink}
-        >
-          {t('buttons.download-latest-version')}
-        </Button>
-        {!downloadLink && (
-          <>
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
             <Spacer size='m' />
-            <strong>{t('exam.unable-to-detect-os')}</strong>
-          </>
-        )}
-        <Spacer size='m' />
-        <Dropdown>
-          <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
-          <Dropdown.Menu>
-            {downloadLinks
-              .filter(link => !link.match(/\.sig|\.json/))
-              .map((link, index) => {
-                const urlEnd = link.split('/').pop() ?? '';
-                return (
-                  <MenuItem
-                    href={link}
-                    download={link}
-                    key={index}
-                    variant='primary'
-                  >
-                    {urlEnd}
-                  </MenuItem>
-                );
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
+            <Spacer size='m' />
+            {!!missingPrerequisites.length && (
+              <MissingPrerequisites
+                missingPrerequisites={missingPrerequisites}
+              />
+            )}
+            <h2>{t('exam.download-header')}</h2>
+            <p>{t('exam.explanation')}</p>
+            <Spacer size='l' />
+            {isSignedIn && (
+              <>
+                <h2>{t('exam.attempts')}</h2>
+                <Attempts examChallengeId={id} />
+                <Spacer size='l' />
+                <ExamTokenControls />
+              </>
+            )}
+            <p>
+              {t('exam.version', {
+                version: latestVersion || '...'
               })}
-          </Dropdown.Menu>
-        </Dropdown>
-        <Spacer size='l' />
-        <strong>{t('exam.download-trouble')}</strong>{' '}
-        <a href='mailto: support@freecodecamp.org'>support@freecodecamp.org</a>
-        <Spacer size='l' />
+            </p>
+            {/* TODO: confirm this works on MacOS */}
+            <Button href={'exam-environment://'}>
+              {t('exam.open-exam-application')}
+            </Button>
+            <Spacer size='s' />
+            <div className='exam-download-buttons'>
+              {downloadLink ? (
+                <Button href={downloadLink} download={downloadLink}>
+                  {t('buttons.download-latest-version')}
+                </Button>
+              ) : (
+                <strong>{t('exam.unable-to-detect-os')}</strong>
+              )}
+            </div>
+            <Spacer size='xs' />
+            <Dropdown dropup>
+              <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+              <Dropdown.Menu>
+                {downloadLinks
+                  .filter(link => !link.match(/\.sig|\.json/))
+                  .map((link, index) => {
+                    const urlEnd = link.split('/').pop() ?? '';
+                    return (
+                      <MenuItem
+                        href={link}
+                        download={link}
+                        key={index}
+                        variant='primary'
+                      >
+                        {urlEnd}
+                      </MenuItem>
+                    );
+                  })}
+              </Dropdown.Menu>
+            </Dropdown>
+            <Spacer size='l' />
+            <strong>{t('exam.download-trouble')}</strong>{' '}
+            <a href='mailto: support@freecodecamp.org'>
+              support@freecodecamp.org
+            </a>
+            <Spacer size='l' />
+          </Col>
+        </Row>
       </Container>
     </LearnLayout>
   );
