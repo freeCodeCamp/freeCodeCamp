@@ -335,33 +335,88 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
+async function ensureGraphQLSchema(
+  fullSuperblockEnums: SuperBlocks[],
+  fullSuperblockFromEnv: string | undefined,
+  fullCurriculum: Record<string, unknown>,
+  builder: SuperblockCreator
+) {
+  if (
+    fullSuperblockEnums.length > 0 &&
+    !fullSuperblockFromEnv?.includes('full-stack-developer') &&
+    !fullCurriculum[SuperBlocks.FullStackDeveloper]
+  ) {
+    log(
+      'Building minimal full-stack-developer challenge for GraphQL schema validation.'
+    );
+
+    const { fullSuperblockList: allSuperblocks } =
+      await parseCurriculumStructure();
+    const fsdSuperblock = allSuperblocks.find(
+      sb => sb.name === SuperBlocks.FullStackDeveloper
+    );
+
+    if (fsdSuperblock && fsdSuperblock.blocks.length > 0) {
+      const firstBlock = fsdSuperblock.blocks[0];
+      if (firstBlock) {
+        log(`Building minimal challenge from block: ${firstBlock.dashedName}`);
+        const blockResult = await builder.blockCreator.processBlock(
+          firstBlock,
+          {
+            superBlock: SuperBlocks.FullStackDeveloper,
+            order: 0
+          }
+        );
+        if (blockResult) {
+          fullCurriculum[SuperBlocks.FullStackDeveloper] = {
+            blocks: {
+              [firstBlock.dashedName]: blockResult
+            }
+          };
+        }
+      }
+    }
+  }
+}
+
 export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
 
   const fullSuperblockFromEnv = process.env.FULL_SUPERBLOCK;
 
-  const fullSuperblockEnum = fullSuperblockFromEnv
-    ? superBlockNames[fullSuperblockFromEnv as keyof typeof superBlockNames]
-    : undefined;
-
-  if (fullSuperblockFromEnv && !fullSuperblockEnum) {
-    const availableSuperblocks = Object.keys(superBlockNames).join(', ');
-    throw new Error(
-      `Invalid FULL_SUPERBLOCK: "${fullSuperblockFromEnv}". Available superblocks are: ${availableSuperblocks}`
-    );
-  }
-
-  const selectiveFilter = fullSuperblockFromEnv
-    ? { superBlock: fullSuperblockFromEnv }
-    : undefined;
-  const combinedFilters = selectiveFilter || filters;
-
+  const fullSuperblockEnums: SuperBlocks[] = [];
   if (fullSuperblockFromEnv) {
+    const superblockList = fullSuperblockFromEnv
+      .split(',')
+      .map(s => s.trim())
+      .filter(s => s.length > 0);
+
+    const availableSuperblocks = Object.keys(superBlockNames).join(', ');
+
+    for (const superblockName of superblockList) {
+      const enumValue =
+        superBlockNames[superblockName as keyof typeof superBlockNames];
+
+      if (!enumValue) {
+        throw new Error(
+          `Invalid FULL_SUPERBLOCK: "${superblockName}". Available superblocks are: ${availableSuperblocks}`
+        );
+      }
+
+      fullSuperblockEnums.push(enumValue);
+    }
+
     log(
-      `Selective build mode active: Building full content for "${fullSuperblockFromEnv}"`
+      `Selective build mode active: Building full content for ${fullSuperblockEnums.length} superblock(s): "${superblockList.join('", "')}"`
     );
     log(`Other superblocks will be skipped entirely`);
   }
+
+  const firstSuperblock = fullSuperblockFromEnv?.split(',')[0]?.trim();
+  const selectiveFilter = firstSuperblock
+    ? { superBlock: firstSuperblock }
+    : undefined;
+  const combinedFilters = selectiveFilter || filters;
 
   const builder = new SuperblockCreator(
     getBlockCreator(lang, !isEmpty(combinedFilters))
@@ -391,9 +446,12 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   for (const superblock of liveSuperblocks) {
     log(`Processing superblock: ${superblock.name}`);
 
-    if (fullSuperblockEnum && superblock.name !== fullSuperblockEnum) {
+    if (
+      fullSuperblockEnums.length > 0 &&
+      !fullSuperblockEnums.includes(superblock.name)
+    ) {
       log(
-        `Skipping superblock: ${superblock.name} (looking for ${fullSuperblockEnum})`
+        `Skipping superblock: ${superblock.name} (not in target list: ${fullSuperblockEnums.join(', ')})`
       );
       continue;
     }
@@ -402,6 +460,16 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     const processedSuperblock = await builder.processSuperblock(superblock);
     fullCurriculum[superblock.name] = processedSuperblock;
   }
+
+  // When in selective mode, we need to ensure that GraphQL is satisfied with basic query data,
+  // so we build a minimal full-stack-developer challenge if it wasn't included above.
+
+  await ensureGraphQLSchema(
+    fullSuperblockEnums,
+    fullSuperblockFromEnv,
+    fullCurriculum,
+    builder
+  );
 
   for (const cert of certifications) {
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
