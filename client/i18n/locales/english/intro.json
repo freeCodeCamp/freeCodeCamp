@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Legacy JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures V7",
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "Legacy JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures V8",
     "intro": [
       "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
@@ -553,7 +553,7 @@
     }
   },
   "data-visualization": {
-    "title": "Legacy Data Visualization",
+    "title": "Legacy Data Visualization V8",
     "intro": [
       "Data is all around us, but it doesn't mean much without shape or context.",
       "In the Data Visualization Certification, you'll build charts, graphs, and maps to present different types of data with the D3.js library.",
