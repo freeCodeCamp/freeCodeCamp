@@ -1,26 +1,8 @@
 .learn-alert {
-  padding: 15px;
-  margin-bottom: 20px;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  color: #1e40af;
-}
-
-.learn-alert .btn {
-  background-color: transparent;
-  color: inherit;
-  border-color: inherit;
-}
-.learn-alert .btn:hover,
-.learn-alert .btn:focus,
-.learn-alert a:hover,
-.learn-alert a:focus {
-  background-color: #31708f;
-  color: #d9edf7;
-  border-color: #31708f;
-}
-
-.annual-donation-alert {
+  padding: 20px;
+  margin-bottom: 40px;
+  border: 1px solid #31708f;
+  color: #31708f;
   background: linear-gradient(
       -10deg,
       rgba(217, 237, 247, 1) 35%,
@@ -34,12 +16,26 @@
     );
 }
 
+.learn-alert .btn {
+  background-color: transparent;
+  color: #31708f;
+  border-color: #31708f;
+}
+.learn-alert .btn:hover,
+.learn-alert .btn:focus,
+.learn-alert a:hover,
+.learn-alert a:focus {
+  background-color: #31708f;
+  color: #d9edf7;
+  border-color: #31708f;
+}
+
 .university-alert p,
-.annual-donation-alert p {
+.learn-alert p {
   color: inherit;
 }
 
-.annual-donation-alert .progress-wrapper {
+.learn-alert .progress-wrapper {
   display: inline-block;
   width: 100%;
   margin: 1.2rem 0;
@@ -47,26 +43,26 @@
   border: 1px solid var(--blue70);
 }
 
-.annual-donation-alert h3,
-.annual-donation-alert h2 {
+.learn-alert h3,
+.learn-alert h2 {
   color: var(--blue70);
 }
 
-.annual-donation-alert .progress-bar-wrap,
+.learn-alert .progress-bar-wrap,
 .progress-bar-background {
   background-color: transparent;
 }
 
-.annual-donation-alert hr {
+.learn-alert hr {
   border-top-color: var(--blue10);
 }
 
-.annual-donation-alert .btn-container {
+.learn-alert .btn-container {
   display: flex;
   justify-content: center;
 }
 
-.annual-donation-alert .donate-button,
+.learn-alert .donate-button,
 .university-alert .donate-button {
   border-color: #31708f;
 }
@@ -87,7 +83,7 @@
   }
 }
 
-.annual-donation-alert .progress-bar-percent {
+.learn-alert .progress-bar-percent {
   border-right: 1px solid var(--blue70);
   background-color: var(--blue-mid);
   background-image: linear-gradient(to right, #31708f, #198eee);

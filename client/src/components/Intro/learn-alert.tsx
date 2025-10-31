@@ -38,7 +38,7 @@ const LearnAlert = ({
       )}
       <p>{text}</p>
       <Spacer size='m' />
-      <div className={'text-center'}>
+      <p className={'btn-container'}>
         <Link
           className='btn donate-button'
           key='donate'
@@ -48,7 +48,7 @@ const LearnAlert = ({
         >
           {t('buttons.donate')}
         </Link>
-      </div>
+      </p>
     </div>
   );
 
@@ -85,7 +85,7 @@ const LearnAlert = ({
       </p>
       <p>{t('learn.if-help-university')}</p>
       <Spacer size='m' />
-      <p className={'text-center'}>
+      <p className='btn-container text-center'>
         <Link
           className='btn donate-button'
           key='donate'
