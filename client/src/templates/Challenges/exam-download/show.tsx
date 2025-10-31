@@ -79,8 +79,12 @@ function ShowExamDownload({
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
 
-  const getExamsQuery = examAttempts.useGetExamsQuery();
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+  const getExamsQuery = examAttempts.useGetExamsQuery(undefined, {
+    skip: !isSignedIn
+  });
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id, {
+    skip: !isSignedIn
+  });
 
   const os = useDetectOS();
 
@@ -174,8 +178,6 @@ function ShowExamDownload({
       slug: challenge.fields?.slug || ''
     };
   });
-
-  console.log('missing prerequisites:', missingPrerequisites);
 
   return (
     <LearnLayout>
