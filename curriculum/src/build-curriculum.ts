@@ -379,48 +379,42 @@ async function ensureGraphQLSchema(
   }
 }
 
-export async function buildCurriculum(lang: string, filters?: Filter) {
-  const contentDir = getContentDir(lang);
+async function buildSelectiveCurriculum(
+  lang: string,
+  fullSuperblockFromEnv: string,
+  filters?: Filter
+) {
+  const superblockList = fullSuperblockFromEnv
+    .split(',')
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
 
-  const fullSuperblockFromEnv = process.env.FULL_SUPERBLOCK;
-
+  const availableSuperblocks = Object.keys(superBlockNames).join(', ');
   const fullSuperblockEnums: SuperBlocks[] = [];
-  if (fullSuperblockFromEnv) {
-    const superblockList = fullSuperblockFromEnv
-      .split(',')
-      .map(s => s.trim())
-      .filter(s => s.length > 0);
 
-    const availableSuperblocks = Object.keys(superBlockNames).join(', ');
+  for (const superblockName of superblockList) {
+    const enumValue =
+      superBlockNames[superblockName as keyof typeof superBlockNames];
 
-    for (const superblockName of superblockList) {
-      const enumValue =
-        superBlockNames[superblockName as keyof typeof superBlockNames];
-
-      if (!enumValue) {
-        throw new Error(
-          `Invalid FULL_SUPERBLOCK: "${superblockName}". Available superblocks are: ${availableSuperblocks}`
-        );
-      }
-
-      fullSuperblockEnums.push(enumValue);
+    if (!enumValue) {
+      throw new Error(
+        `Invalid FULL_SUPERBLOCK: "${superblockName}". Available superblocks are: ${availableSuperblocks}`
+      );
     }
 
-    log(
-      `Selective build mode active: Building full content for ${fullSuperblockEnums.length} superblock(s): "${superblockList.join('", "')}"`
-    );
-    log(`Other superblocks will be skipped entirely`);
+    fullSuperblockEnums.push(enumValue);
   }
 
-  const firstSuperblock = fullSuperblockFromEnv?.split(',')[0]?.trim();
-  const selectiveFilter = firstSuperblock
-    ? { superBlock: firstSuperblock }
-    : undefined;
-  const combinedFilters = selectiveFilter || filters;
-
-  const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(combinedFilters))
+  log(
+    `Selective build mode active: Building full content for ${fullSuperblockEnums.length} superblock(s): "${superblockList.join('", "')}"`
   );
+  log(`Other superblocks will be skipped entirely`);
+
+  const firstSuperblock = superblockList[0];
+  const selectiveFilter = { superBlock: firstSuperblock };
+  const combinedFilters = filters || selectiveFilter;
+
+  const builder = new SuperblockCreator(getBlockCreator(lang, true));
 
   const { fullSuperblockList, certifications } =
     await parseCurriculumStructure(combinedFilters);
@@ -434,25 +428,11 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
 
   const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
     const superOrder = getSuperOrder(name);
-    const upcomingSuperOrder = getSuperOrder(name, true);
-
-    // If a superblock is not in either order list it should not exist.
-    if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
-      throw Error(`Invalid superBlock: ${name}`);
-    }
     return !isUndefined(superOrder);
   });
 
   for (const superblock of liveSuperblocks) {
-    log(`Processing superblock: ${superblock.name}`);
-
-    if (
-      fullSuperblockEnums.length > 0 &&
-      !fullSuperblockEnums.includes(superblock.name)
-    ) {
-      log(
-        `Skipping superblock: ${superblock.name} (not in target list: ${fullSuperblockEnums.join(', ')})`
-      );
+    if (!fullSuperblockEnums.includes(superblock.name)) {
       continue;
     }
 
@@ -470,6 +450,51 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     fullCurriculum,
     builder
   );
+
+  return { fullCurriculum, certifications };
+}
+
+async function buildFullCurriculum(lang: string, filters?: Filter) {
+  const builder = new SuperblockCreator(
+    getBlockCreator(lang, !isEmpty(filters))
+  );
+
+  const { fullSuperblockList, certifications } =
+    await parseCurriculumStructure(filters);
+
+  const fullCurriculum: {
+    [key: string]: unknown;
+    certifications: { blocks: { [key: string]: unknown } };
+  } = {
+    certifications: { blocks: {} }
+  };
+
+  const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
+    const superOrder = getSuperOrder(name);
+    const upcomingSuperOrder = getSuperOrder(name, true);
+
+    if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
+      throw Error(`Invalid superBlock: ${name}`);
+    }
+    return !isUndefined(superOrder);
+  });
+
+  for (const superblock of liveSuperblocks) {
+    log(`Building full superblock: ${superblock.name}`);
+    const processedSuperblock = await builder.processSuperblock(superblock);
+    fullCurriculum[superblock.name] = processedSuperblock;
+  }
+
+  return { fullCurriculum, certifications };
+}
+
+export async function buildCurriculum(lang: string, filters?: Filter) {
+  const contentDir = getContentDir(lang);
+  const fullSuperblockFromEnv = process.env.FULL_SUPERBLOCK;
+
+  const { fullCurriculum, certifications } = fullSuperblockFromEnv
+    ? await buildSelectiveCurriculum(lang, fullSuperblockFromEnv, filters)
+    : await buildFullCurriculum(lang, filters);
 
   for (const cert of certifications) {
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
