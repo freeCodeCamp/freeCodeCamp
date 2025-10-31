@@ -3,6 +3,7 @@ id: 68fa8b4ecf2cf649ff55f7fd
 title: Task 2
 challengeType: 19
 dashedName: task-2
+lang: es
 ---
 
 # --instructions--
@@ -21,7 +22,7 @@ What is the **second** letter pronounced in this audio?
 
 ### --feedback--
 
-This is the first letter pronounced in the audio, not the second one.
+The letter `b` has a different sound.
 
 ---
 
@@ -33,7 +34,7 @@ This is the first letter pronounced in the audio, not the second one.
 
 ### --feedback--
 
-This is the third letter pronounced in the audio, not the second one.
+The letter `z` has a different sound.
 
 ---
 
@@ -41,7 +42,7 @@ This is the third letter pronounced in the audio, not the second one.
 
 ### --feedback--
 
-This letter is not pronounced in the audio.
+The letter `m` has a different sound.
 
 ## --video-solution--
 

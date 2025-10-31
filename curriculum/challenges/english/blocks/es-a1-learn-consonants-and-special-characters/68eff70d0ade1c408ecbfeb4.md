@@ -3,6 +3,7 @@ id: 68eff70d0ade1c408ecbfeb4
 title: Task 6
 challengeType: 22
 dashedName: task-6
+lang: es
 ---
 
 <!-- (Audio) Julieta: d -->
@@ -11,7 +12,7 @@ dashedName: task-6
 
 The letter `d` is called `de` (pronounced `deh`).
 
-At the beginning of a word or after `l` or `n`, its sound is similar to the English letter `d`. However, between vowels, the letter `d` softens to a sound similar to the "th" in "this".
+At the beginning of a word or after `l` or `n`, its sound is stronger, like in the word `dos` ("two"). However, it's softer between vowels, like in the word `idea` ("idea").
 
 An example is `doctor` ("doctor").
 
