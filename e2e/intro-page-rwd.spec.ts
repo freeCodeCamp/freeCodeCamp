@@ -21,7 +21,7 @@ test.describe('Certification intro page', () => {
     await page.goto('/learn/2022/responsive-web-design');
 
     await expect(page).toHaveTitle(
-      'Responsive Web Design V8 | freeCodeCamp.org'
+      'Legacy Responsive Web Design V8 | freeCodeCamp.org'
     );
     await expect(superBlockText).toBeVisible();
     await expect(firstBlockText).toBeVisible();

@@ -1194,12 +1194,12 @@
       }
     },
     "title": {
-      "responsive-web-design": "Responsive Web Design V8",
-      "responsive-web-design-cert": "Responsive Web Design V8 Certification",
+      "responsive-web-design": "Legacy Responsive Web Design V8",
+      "responsive-web-design-cert": "Legacy Responsive Web Design V8 Certification",
       "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures V7",
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures V8",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures V8 Certification",
+      "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
       "front-end-development-libraries": "Front End Development Libraries V8",
       "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
       "data-visualization": "Data Visualization V8",
@@ -1245,19 +1245,7 @@
       "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
       "full-stack": "Legacy Full Stack",
-      "full-stack-cert": "Legacy Full Stack Certification",
-      "responsive-web-design-v9": "Responsive Web Design",
-      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
-      "javascript-v9": "JavaScript",
-      "javascript-v9-cert": "JavaScript Certification",
-      "front-end-development-libraries-v9": "Front End Development Libraries",
-      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
-      "python-v9": "Python",
-      "python-v9-cert": "Python Certification",
-      "relational-databases-v9": "Relational Databases",
-      "relational-databases-v9-cert": "Relational Databases Certification",
-      "back-end-development-and-apis-v9": "Back End Development and APIs",
-      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification"
+      "full-stack-cert": "Legacy Full Stack Certification"
     }
   },
   "certification-card": {

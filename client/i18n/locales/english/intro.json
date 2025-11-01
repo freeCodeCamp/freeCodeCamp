@@ -60,7 +60,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design V8",
+    "title": "Legacy Responsive Web Design V8",
     "intro": [
       "In this Responsive Web Design Certification, you'll learn the languages that developers use to build webpages: HTML (Hypertext Markup Language) for content, and CSS (Cascading Style Sheets) for design.",
       "First, you'll build a cat photo app to learn the basics of HTML and CSS. Later, you'll learn modern techniques like CSS variables by building a penguin, and best practices for accessibility by building a quiz site.",
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "JavaScript Algorithms and Data Structures V7",
+    "title": "Legacy JavaScript Algorithms and Data Structures V7",
     "intro": [
       "While HTML and CSS control the content and styling of a page, JavaScript is used to make it interactive. In the JavaScript Algorithm and Data Structures Certification, you'll learn the fundamentals of JavaScript including variables, arrays, objects, loops, and functions.",
       "Once you have the fundamentals down, you'll apply that knowledge by creating algorithms to manipulate strings, factorialize numbers, and even calculate the orbit of the International Space Station.",
@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures V8",
+    "title": "Legacy JavaScript Algorithms and Data Structures V8",
     "intro": [
       "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",

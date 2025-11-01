@@ -275,10 +275,11 @@ export const certTypeTitleMap = {
   [certTypes.dataVis]: 'Legacy Data Visualization',
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Legacy Full Stack',
-  [certTypes.respWebDesign]: 'Responsive Web Design V8',
+  [certTypes.respWebDesign]: 'Legacy Responsive Web Design V8',
   [certTypes.respWebDesignV9]: 'Responsive Web Design',
   [certTypes.frontEndDevLibs]: 'Front End Development Libraries V8',
-  [certTypes.jsAlgoDataStruct]: 'JavaScript Algorithms and Data Structures V7',
+  [certTypes.jsAlgoDataStruct]:
+    'Legacy JavaScript Algorithms and Data Structures V7',
   [certTypes.dataVis2018]: 'Data Visualization V8',
   [certTypes.apisMicroservices]: 'Back End Development and APIs V8',
   [certTypes.qaV7]: 'Quality Assurance',
@@ -290,7 +291,7 @@ export const certTypeTitleMap = {
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
   [certTypes.jsAlgoDataStructV8]:
-    'JavaScript Algorithms and Data Structures V8',
+    'Legacy JavaScript Algorithms and Data Structures V8',
   [certTypes.javascriptV9]: 'JavaScript',
   [certTypes.a2English]: 'A2 English for Developers'
 };

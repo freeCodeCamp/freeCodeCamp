@@ -4,7 +4,14 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const certs = [
   {
-    name: 'Legacy Responsive Web Design',
+    name: 'Foundational C# with Microsoft',
+    url: '/certification/certifieduser/foundational-c-sharp-with-microsoft'
+  }
+];
+
+const legacyCerts = [
+  {
+    name: 'Legacy Responsive Web Design V8',
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
@@ -12,52 +19,45 @@ const certs = [
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
-    name: 'Legacy Front End Development Libraries',
+    name: 'Front End Development Libraries V8',
     url: '/certification/certifieduser/front-end-development-libraries'
   },
   {
-    name: 'Legacy Data Visualization V8',
+    name: 'Data Visualization V8',
     url: '/certification/certifieduser/data-visualization'
   },
   {
-    name: 'Legacy Relational Database',
+    name: 'Relational Database V8',
     url: '/certification/certifieduser/relational-database-v8'
   },
   {
-    name: 'Legacy Back End Development and APIs',
+    name: 'Back End Development and APIs V8',
     url: '/certification/certifieduser/back-end-development-and-apis'
   },
   {
-    name: 'Legacy Quality Assurance',
+    name: 'Quality Assurance',
     url: '/certification/certifieduser/quality-assurance-v7'
   },
   {
-    name: 'Legacy Scientific Computing with Python',
+    name: 'Scientific Computing with Python',
     url: '/certification/certifieduser/scientific-computing-with-python-v7'
   },
   {
-    name: 'Legacy Data Analysis with Python',
+    name: 'Data Analysis with Python',
     url: '/certification/certifieduser/data-analysis-with-python-v7'
   },
   {
-    name: 'Legacy Information Security',
+    name: 'Information Security',
     url: '/certification/certifieduser/information-security-v7'
   },
   {
-    name: 'Legacy Machine Learning with Python',
+    name: 'Machine Learning with Python',
     url: '/certification/certifieduser/machine-learning-with-python-v7'
   },
   {
-    name: 'Legacy College Algebra with Python',
+    name: 'College Algebra with Python',
     url: '/certification/certifieduser/college-algebra-with-python-v8'
   },
-  {
-    name: 'Foundational C# with Microsoft',
-    url: '/certification/certifieduser/foundational-c-sharp-with-microsoft'
-  }
-];
-
-const legacyCerts = [
   {
     name: 'Legacy Front End',
     url: '/certification/certifieduser/legacy-front-end'
@@ -71,7 +71,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/legacy-back-end'
   },
   {
-    name: 'Legacy Data Visualization V7',
+    name: 'Legacy Data Visualization',
     url: '/certification/certifieduser/legacy-data-visualization'
   },
   {
