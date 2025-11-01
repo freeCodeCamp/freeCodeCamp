@@ -1,0 +1,25 @@
+{
+  "name": "Build Quincy's Job Tips Page",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-quincys-job-tips",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e4c81577243e4db1676491", "title": "Step 1" },
+    { "id": "68e65ec5348e40a739903e6d", "title": "Step 2" },
+    { "id": "68e90335bd53a901c41dfc13", "title": "Step 3" },
+    { "id": "68e964b84f954c322376e592", "title": "Step 4" },
+    { "id": "68e96ce52087043b0e999296", "title": "Step 5" },
+    { "id": "68ea5ccc1229b85eca38a3e8", "title": "Step 6" },
+    { "id": "68ea7e7b916e8270483689b6", "title": "Step 7" },
+    { "id": "68ea9d23318b6481ac3de777", "title": "Step 8" },
+    { "id": "68eaa3593b6ffd019d772a1f", "title": "Step 9" },
+    { "id": "68eaa9ef8a0867071f195f59", "title": "Step 10" },
+    { "id": "68eab45aceb7c00fd8de4fed", "title": "Step 11" },
+    { "id": "68eab6a2b37d2f13602d0c3f", "title": "Step 12" },
+    { "id": "68ebe9cd7523d340c0b343d3", "title": "Step 13" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

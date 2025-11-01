@@ -34,6 +34,7 @@
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -63,6 +64,7 @@
             "lecture-accessible-tables-forms",
             "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -154,6 +156,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
             "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
@@ -293,6 +296,7 @@
             "workshop-teacher-chatbot",
             "lecture-working-with-string-character-methods",
             "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
@@ -304,6 +308,7 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
             "lecture-working-with-comparison-and-boolean-operators",
             "lecture-working-with-unary-and-bitwise-operators",
@@ -734,10 +739,12 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]

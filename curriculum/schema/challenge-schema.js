@@ -227,6 +227,7 @@ const schema = Joi.object().keys({
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
+  lang: Joi.string(),
   instructions: Joi.string().when('challengeType', {
     is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
     then: Joi.string().min(1).required(),

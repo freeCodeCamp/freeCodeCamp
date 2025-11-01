@@ -242,10 +242,7 @@ const ShowGeneric = ({
         <Helmet
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
-        <Container
-          fluid
-          className={`generic-challenge-container${hasInteractiveEditor ? ' has-action-row' : ''}`}
-        >
+        <Container fluid>
           {hasInteractiveEditor && (
             <ActionRow
               hasInteractiveEditor={hasInteractiveEditor}
