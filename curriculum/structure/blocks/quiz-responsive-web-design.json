@@ -1,6 +1,6 @@
 {
   "name": "Responsive Web Design Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-responsive-web-design",

@@ -4,7 +4,7 @@
   "dashedName": "lab-element-skipper",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true,
   "challengeOrder": [
     {

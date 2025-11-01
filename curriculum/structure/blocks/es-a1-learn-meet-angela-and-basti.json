@@ -5,5 +5,5 @@
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
   "challengeOrder": [{ "id": "68dc7593a29e5c7621d873ee", "title": "Task 1" }],
-  "blockType": "learn"
+  "blockLabel": "learn"
 }

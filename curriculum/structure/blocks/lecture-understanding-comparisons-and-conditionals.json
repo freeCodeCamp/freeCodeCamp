@@ -1,6 +1,6 @@
 {
   "name": "Understanding Comparisons and Conditionals",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-comparisons-and-conditionals",
