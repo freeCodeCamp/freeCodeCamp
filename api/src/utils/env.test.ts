@@ -1,12 +1,9 @@
-// api/src/utils/env.test.ts
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 
-// Mock o módulo 'dotenv' ANTES de tudo
 vi.mock('dotenv', () => ({
   config: vi.fn(() => ({ error: null, parsed: {} }))
 }));
 
-// Esta função helper é o setup MÍNIMO para passar no bloco de produção
 const setupMinimalProdEnv = () => {
   vi.stubEnv('FREECODECAMP_NODE_ENV', 'production');
   vi.stubEnv('EMAIL_PROVIDER', 'ses');
@@ -26,14 +23,11 @@ const setupMinimalProdEnv = () => {
   vi.stubEnv('GROWTHBOOK_FASTIFY_CLIENT_KEY', 'my-real-growthbook-key');
 };
 
-// Força os testes a rodarem em ordem, um de cada vez
 describe.sequential('Environment Variable Validation (env.ts)', () => {
-  // --- Configuração Padrão (Ambiente de Desenvolvimento) ---
   beforeEach(() => {
     vi.resetModules();
     vi.unstubAllEnvs();
 
-    // --- SETUP DO AMBIENTE MÍNIMO VIÁVEL ---
     vi.stubEnv('HOME_LOCATION', 'http://localhost:8000');
     vi.stubEnv('FREECODECAMP_NODE_ENV', 'development');
     vi.stubEnv('DEPLOYMENT_ENV', 'staging');
@@ -57,7 +51,6 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     vi.unstubAllEnvs();
   });
 
-  // --- Testes da Lógica `dotenv` (Aviso de .env) ---
   describe('dotenv Warning Logic', () => {
     it('should warn if .env is missing in development', async () => {
       const consoleWarnSpy = vi
@@ -92,7 +85,6 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     });
   });
 
-  // --- Testes de Cobertura de Decisão (O seu trabalho original) ---
   describe('FCC_API_LOG_TRANSPORT Logic (MC/DC)', () => {
     it('CT1: should not throw error when FCC_API_LOG_TRANSPORT is "pretty"', async () => {
       vi.stubEnv('FCC_API_LOG_TRANSPORT', 'pretty');
@@ -117,9 +109,7 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     });
   });
 
-  // --- Testes de Cobertura de Outros Valores Padrão (|| e ??) ---
   describe('Default Value Assignments', () => {
-    // Este teste cobre o "ramo verdadeiro" (quando o valor é fornecido)
     it('should use the provided values from stubs', async () => {
       const envModule = await import('./env.js');
       expect(envModule.EMAIL_PROVIDER).toBe('nodemailer');
@@ -128,35 +118,25 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
       expect(envModule.DEPLOYMENT_VERSION).toBe('unknown');
     });
 
-    // CORREÇÃO: Teste dividido. Este testa os padrões seguros do modo 'development'.
     it('should use default values for EMAIL_PROVIDER and LOG_LEVEL in development', async () => {
-      // O beforeEach já define FREECODECAMP_NODE_ENV = 'development'
-      // Então o bloco de produção é pulado.
       vi.stubEnv('EMAIL_PROVIDER', undefined);
       vi.stubEnv('FCC_API_LOG_LEVEL', undefined);
 
       const envModule = await import('./env.js');
 
-      expect(envModule.EMAIL_PROVIDER).toBe('ses'); // Valor padrão
-      expect(envModule.FCC_API_LOG_LEVEL).toBe('info'); // Valor padrão
+      expect(envModule.EMAIL_PROVIDER).toBe('ses');
+      expect(envModule.FCC_API_LOG_LEVEL).toBe('info');
     });
 
-    // CORREÇÃO: Novo teste. Testa o padrão do FREECODECAMP_NODE_ENV
     it('should use default value for FREECODECAMP_NODE_ENV (production)', async () => {
-      // 1. Configura um ambiente de produção válido
       setupMinimalProdEnv();
-      // 2. Sobrescreve a variável-alvo para undefined
       vi.stubEnv('FREECODECAMP_NODE_ENV', undefined);
 
-      // 3. Importa
       const envModule = await import('./env.js');
-
-      // 4. Verifica se o padrão 'production' foi usado
       expect(envModule.FREECODECAMP_NODE_ENV).toBe('production');
     });
   });
 
-  // --- Testes de Cobertura para Flags Booleanas (undefinedOrBool) ---
   describe('Boolean Flag (undefinedOrBool) Logic', () => {
     it('should correctly parse "true" string to boolean true', async () => {
       vi.stubEnv('FCC_ENABLE_DEV_LOGIN_MODE', 'true');
@@ -180,7 +160,6 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     });
   });
 
-  // --- Testes de Cobertura para Lógica de Sentry (Ternários) ---
   describe('Sentry Default Value Logic', () => {
     it('should return empty strings for default Sentry values', async () => {
       vi.stubEnv('SENTRY_DSN', 'dsn_from_sentry_dashboard');
@@ -199,7 +178,6 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     });
   });
 
-  // --- Testes de Cobertura da Lógica do Banco de Dados (Test Env) ---
   describe('Database URL (MONGOHQ_URL) Logic', () => {
     it('should use the plain MONGOHQ_URL in development', async () => {
       vi.stubEnv('NODE_ENV', 'development');
@@ -236,7 +214,6 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
     });
   });
 
-  // --- Testes de Cobertura do Bloco de Produção (o mais importante) ---
   describe('Production Environment (Strict Assertions)', () => {
     it('should NOT throw errors in production if all secrets are valid', async () => {
       setupMinimalProdEnv();
@@ -245,7 +222,7 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
 
     it('should throw errors if production env uses default secrets', async () => {
       setupMinimalProdEnv();
-      vi.stubEnv('JWT_SECRET', 'a_jwt_secret'); // INVÁLIDO (padrão)
+      vi.stubEnv('JWT_SECRET', 'a_jwt_secret');
 
       await expect(import('./env.js')).rejects.toThrow(
         'The JWT secret should be changed from the default value.'
