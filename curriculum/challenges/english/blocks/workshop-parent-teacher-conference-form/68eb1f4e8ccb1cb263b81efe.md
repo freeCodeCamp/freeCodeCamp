@@ -53,7 +53,7 @@ assert.strictEqual(style?.fontSize, '1.2rem')
             name="student-name"
             id="student-name"
             required
-            placeholder="e.g., Jane Doe"
+            placeholder="E.g., Jane Doe"
           />
 
           <label for="grade">Student Grade: </label>
@@ -62,7 +62,7 @@ assert.strictEqual(style?.fontSize, '1.2rem')
             name="grade"
             id="grade"
             required
-            placeholder="e.g., 4"
+            placeholder="E.g., 4"
           />
         </fieldset>
         
@@ -74,7 +74,7 @@ assert.strictEqual(style?.fontSize, '1.2rem')
             name="parent-name"
             id="parent-name"
             required
-            placeholder="e.g., Nancy Doe"
+            placeholder="E.g., Nancy Doe"
           />
         </fieldset>
 
