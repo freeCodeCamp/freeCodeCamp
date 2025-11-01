@@ -1,6 +1,6 @@
 {
   "name": "Build a Loan Qualification Checker",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

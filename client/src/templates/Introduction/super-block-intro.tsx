@@ -6,10 +6,11 @@ import React, { useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { configureAnchors } from 'react-scrollable-anchor';
+import { scroller } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeatureValue } from '@growthbook/growthbook-react';
 
 import {
   chapterBasedSuperBlocks,
@@ -36,7 +37,7 @@ import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../shared-dist/config/blocks';
 import Block from './components/block';
 import CertChallenge from './components/cert-challenge';
@@ -59,7 +60,7 @@ type ChallengeNode = {
     fields: { slug: string; blockName: string };
     id: string;
     block: string;
-    blockType: BlockTypes;
+    blockLabel: BlockLabel;
     challengeType: number;
     title: string;
     order: number;
@@ -95,8 +96,6 @@ type SuperBlockProps = {
   user: User | null;
 };
 
-configureAnchors({ offset: -40, scrollDuration: 0 });
-
 const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
     currentChallengeIdSelector,
@@ -129,6 +128,16 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     },
     dispatch
   );
+const handleHashChange = () => {
+  const id = window.location.hash.replace('#', '');
+  if (id) {
+    scroller.scrollTo(id, {
+      smooth: true,
+      duration: 500,
+      offset: -50
+    });
+  }
+};
 
 const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   const { t } = useTranslation();
@@ -136,15 +145,17 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     initializeExpandedState();
     props.tryToShowDonationModal();
 
-    setTimeout(() => {
-      configureAnchors({ offset: -40, scrollDuration: 400 });
-    }, 0);
+    handleHashChange();
 
-    return () => {
-      configureAnchors({ offset: -40, scrollDuration: 0 });
-    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const disabledBlocksFeature = useFeatureValue<string[]>(
+    'disabled_blocks',
+    []
+  );
 
   const {
     data: {
@@ -283,22 +294,26 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 />
               ) : (
                 <div className='block-ui'>
-                  {blocks.map(block => {
-                    const blockChallenges = superBlockChallenges.filter(
-                      c => c.block === block
-                    );
-                    const blockType = blockChallenges[0].blockType;
+                  {blocks
+                    .filter(block => {
+                      return !disabledBlocksFeature.includes(block);
+                    })
+                    .map(block => {
+                      const blockChallenges = superBlockChallenges.filter(
+                        c => c.block === block
+                      );
+                      const blockLabel = blockChallenges[0].blockLabel;
 
-                    return (
-                      <Block
-                        key={block}
-                        block={block}
-                        blockType={blockType}
-                        challenges={blockChallenges}
-                        superBlock={superBlock}
-                      />
-                    );
-                  })}
+                      return (
+                        <Block
+                          key={block}
+                          block={block}
+                          blockLabel={blockLabel}
+                          challenges={blockChallenges}
+                          superBlock={superBlock}
+                        />
+                      );
+                    })}
                   {showCertification && !!user && (
                     <CertChallenge
                       certification={certification}
@@ -360,7 +375,7 @@ export const query = graphql`
           }
           id
           block
-          blockType
+          blockLabel
           challengeType
           title
           order

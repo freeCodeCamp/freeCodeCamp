@@ -1,6 +1,6 @@
 {
   "name": "Build Five Programs",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": false,

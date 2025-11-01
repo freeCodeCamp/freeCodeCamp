@@ -5,7 +5,7 @@ challengeType: 19
 dashedName: what-is-the-difference-between-content-box-and-border-box
 ---
 
-# --description--
+# --interactive--
 
 The `box-sizing` property can be set to either `content-box` or `border-box` to control how the width and height of elements are calculated. Here you can see the `box-sizing` property and the two possible values: 
 
@@ -37,6 +37,13 @@ Likewise, the total height of an element can be found by adding the content heig
 
 For example, here we have a CSS type selector for all the `div` elements. 
 
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css">
+<div></div>
+```
+
 ```css
 div {
   width: 300px;
@@ -45,6 +52,8 @@ div {
   border: 4px solid black;
 }
 ```
+
+:::
 
 In this case, if `content-box` is used the content area will have a width of 300 pixels and a height of 200 pixels. However, the total width, what you will see on the screen, will be the result of adding the width of the content area, which is 300 pixels, plus the padding on both sides (40 pixels), and the borders on both sides (8 pixels). 
 
@@ -54,6 +63,13 @@ Great! Now let's explore `border-box`. They are a bit different, with `border-bo
 
 The padding and border are inside the box, so when you set the `width` and `height` properties of an element, you're really setting the width and height of the inner part of the box. Here's our `div` example with the same properties and values that we had before: 
 
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css">
+<div></div>
+```
+
 ```css
 div {
   width: 300px;
@@ -63,40 +79,44 @@ div {
 }
 ```
 
+:::
+
 With `border-box` the value of the `width` property will be the result of adding the width of the content area, the left and right padding, and the left and right border. So, the width equals the width of the content, plus the left padding, plus the right padding, plus the left border, plus the right border.
 
 Likewise, the value of the `height` property is the result of adding the height of the content area, the top and bottom padding, and the top and bottom border. Height equals the height of the content, plus top padding, plus bottom padding, plus top border, plus bottom border. The margin is not included in the width or height.
 
-If you check the size of the `div` in the browser using the `content-box` and `border-box` you will notice that there's a very important difference. These are the two `div`s in HTML:
+If you check the size of the `div` in the browser using the `content-box` and `border-box` you will notice that there's a very important difference. Here are two `div` elements each with the same dimensions but different `box-sizing` values:
+
+:::interactive_editor
 
 ```html
-<div id="red-div"></div>
-<div id="blue-div"></div>
+<link rel="stylesheet" href="styles.css">
+<div class="box" id="red-div"></div>
+<div class="box" id="blue-div"></div>
 ```
 
-We assign them `id`s to select them individually in CSS. These are the CSS rules for the `#red-div` and the `#blue-div`:
 
 ```css
-#red-div {
-  box-sizing: content-box;
+.box {
   width: 300px;
   height: 200px;
   padding: 20px;
   border: 4px solid black;
   margin: 10px;
+}
+
+#red-div {
+  box-sizing: content-box;
   background-color: red;
 }
 
 #blue-div {
   box-sizing: border-box;
-  width: 300px;
-  height: 200px;
-  padding: 20px;
-  border: 4px solid black;
-  margin: 10px;
   background-color: blue;
 }
 ```
+
+:::
 
 You can see that they both have the same `width`, `height`, `padding`, `border` and `margin`. The only differences are the colors and the value of the `box-sizing` property. This small difference has a very important impact on the final dimensions. 
 

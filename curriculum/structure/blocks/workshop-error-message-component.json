@@ -1,7 +1,7 @@
 {
   "name": "Build an Error Message Component",
   "isUpcomingChange": false,
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,

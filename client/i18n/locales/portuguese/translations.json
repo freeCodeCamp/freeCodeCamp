@@ -118,8 +118,8 @@
     "share-on-threads": "Compartilhe no Threads",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
-    "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
+    "go-to-dcc-today": "Vá para o desafio diário",
+    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -391,7 +391,8 @@
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
     "download-details": "Faça o download manual do aplicativo",
     "unable-to-detect-os": "Não foi possível detectar seu sistema operacional. Por favor, faça o download manual do aplicativo abaixo.",
-    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:"
+    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:",
+    "open-exam-application": "Abrir Aplicativo do Ambiente de Exame"
   },
   "profile": {
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
@@ -522,7 +523,9 @@
       "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar",
-      "editor": "Editor"
+      "terminal": "Terminal",
+      "editor": "Editor",
+      "interactive-editor": "Editor Interativo"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
@@ -534,24 +537,24 @@
     "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "codespaces": {
-      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
-      "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
-      "step-3": "On that page, click the create button",
-      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
-      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
-      "step-6": "Going to the <0>View</0> menu,",
-      "step-7": "Clicking on the <0>Command Palette</0> option,",
-      "step-8": "and running the <0>CodeRoad: Start</0> command",
-      "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
-      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
-      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Value</0> field, paste your token",
-      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
-      "summary": "Codespaces Setup"
+      "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
+      "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
+      "step-2": "Clique no botão de iniciar abaixo",
+      "step-3": "Naquela página, clique no botão criar",
+      "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
+      "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
+      "step-6": "A partir do menu <0>Exibir</0>,",
+      "step-7": "Clicando na opção <0>Paleta de comando</0>,",
+      "step-8": "e executando o comando <0>CodeRoad: Start</0>",
+      "step-9": "Siga as instruções no CodeRoad para concluir o curso",
+      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{title}}, vá para a <0>página do repositório</0> para reabrir um espaço de trabalho anterior.",
+      "learn-more": "Saiba mais sobre <0>Espaços de trabalho Codespace</0>.",
+      "logout-warning": "Se você sair do freeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp.",
+      "sub-step-3": "Navegue para a sua <0>Página de segredos do Codespaces</0>",
+      "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "No campo <0>Valor</0>, cole seu token",
+      "sub-step-6": "No campo <0>Acesso ao Repositório</0>, selecione o repositório <1>freeCodeCamp/rdb-alpha</1>",
+      "summary": "Configuração do Codespaces"
     },
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
@@ -570,7 +573,7 @@
       "sub-step-3": "Navegue para a sua <0>Página de segredos do Ona</0>",
       "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "No campo <0>Secret</0>, cole seu token",
-      "summary": "Ona Setup"
+      "summary": "Configuração do Ona"
     },
     "local": {
       "intro": "Este curso é executado em uma máquina virtual Linux no seu computador. Para executar o curso, você primeiro precisa baixar cada um se você ainda não os possui:",
@@ -593,7 +596,7 @@
       "copy-url": "Copiar URL do curso",
       "step-8": "Clique em \"Start\" para começar",
       "step-9": "Siga as instruções no CodeRoad para completar o curso. Nota: Pode ser necessário reiniciar o terminal uma vez para que as configurações tenham efeito e os testes terminem.",
-      "summary": "Local Setup"
+      "summary": "Configuração Local"
     },
     "step-1": "Etapa 1: Conclua o projeto",
     "step-2": "Etapa 2: Envie seu código",
@@ -951,7 +954,8 @@
     "editor-a11y-on-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Command+E para desativar ou pressione Option+F1 para mais opções.",
     "editor-a11y-on-non-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Ctrl+E para desativar ou pressione Alt+F1 para mais opções.",
     "terminal-output": "Saída do terminal",
-    "not-available": "Não disponível"
+    "not-available": "Não disponível",
+    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página."
   },
   "flash": {
     "no-email-in-userinfo": "Não foi possível recuperar um e-mail do provedor escolhido. Por favor, tente outro provedor ou use a opção 'Continuar com o Email'.",
@@ -1103,7 +1107,7 @@
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "Solução",
       "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
-      "no-solution-to-display": "No solution to display",
+      "no-solution-to-display": "Nenhuma solução a exibir",
       "source": "Fonte",
       "footnote": "Se você suspeitar que algum destes projetos viola a <2>política de honestidade acadêmica</2>, <5>reporte isto à nossa equipe</5>.",
       "title": {
@@ -1280,12 +1284,16 @@
   "exam-token": {
     "exam-token": "Token de exame",
     "note": "O token de exame é uma chave secreta que permite que você acesse os exames. Não compartilhe esse token com ninguém.",
-    "invalidation": "Se você gerar um novo token, seu token antigo será invalidado.",
+    "invalidation-1": "Parece que você tem um token de exame válido. Se você gerar um novo, seu token existente será invalidado.",
+    "invalidation-2": "Se você gerar um novo token, seu token existente será invalidado.",
     "generate-exam-token": "Gerar token de exame",
     "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
-    "your-exam-token": "Seu token de exame é: {{token}}",
+    "no-token": "Parece que você não tem um token de exame válido.",
+    "copy": "Copiar Token de Exame",
     "copied": "Token copiado para a área de transferência",
-    "copy-error": "Erro ao copiar o token para a área de transferência"
+    "copy-error": "Erro ao copiar o token para a área de transferência",
+    "token-usage": "Seu token de autorização do ambiente de exame é usado para fazer login no aplicativo de desktop.",
+    "generated": "Um novo token de autorização do ambiente de exame foi gerado para sua conta."
   },
   "shortcuts": {
     "title": "Atalhos do teclado",

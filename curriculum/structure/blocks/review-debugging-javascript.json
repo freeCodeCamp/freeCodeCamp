@@ -1,6 +1,6 @@
 {
   "name": "Debugging JavaScript Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-debugging-javascript",

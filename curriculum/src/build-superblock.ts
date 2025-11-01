@@ -156,7 +156,7 @@ export function addMetaToChallenge(
 
   // Add basic meta properties
   challenge.block = meta.dashedName;
-  challenge.blockType = meta.blockType;
+  challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
   challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
   challenge.order = meta.order;
@@ -480,6 +480,9 @@ export function transformSuperBlock(
   { showComingSoon } = { showComingSoon: false }
 ) {
   let blocks: BlockInfo[] = [];
+  const shouldAllowEmptyBlocks =
+    !showComingSoon &&
+    superblockData.chapters?.every(chapter => chapter.comingSoon);
 
   // Handle simple blocks array format
   if (superblockData.blocks) {
@@ -514,7 +517,7 @@ export function transformSuperBlock(
     }
   }
 
-  if (isEmpty(blocks)) {
+  if (isEmpty(blocks) && !shouldAllowEmptyBlocks) {
     throw Error(`No blocks found in superblock data`);
   }
 

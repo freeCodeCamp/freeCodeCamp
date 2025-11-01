@@ -9,7 +9,7 @@ import {
   SuperBlocks,
   chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure
@@ -55,7 +55,7 @@ interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  blockType?: string;
+  blockLabel?: string;
   blockLayout?: string;
   questionCount?: number;
   order?: number;
@@ -107,7 +107,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.title
   );
 
-  if (projectArgs.blockType === BlockTypes.quiz) {
+  if (projectArgs.blockLabel === BlockLabel.quiz) {
     if (projectArgs.questionCount == null) {
       throw new Error(
         'Property `questionCount` is null when creating new Quiz Challenge'
@@ -134,7 +134,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.helpCategory,
       challengeId,
       projectArgs.order,
-      projectArgs.blockType,
+      projectArgs.blockLabel,
       projectArgs.blockLayout
     );
     // TODO: remove once we stop relying on markdown in the client.
@@ -142,9 +142,11 @@ async function createProject(projectArgs: CreateProjectArgs) {
 
   if (
     (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
-      projectArgs.blockType) == null
+      projectArgs.blockLabel) == null
   ) {
-    throw new Error('Missing argument: blockType when updating intro markdown');
+    throw new Error(
+      'Missing argument: blockLabel when updating intro markdown'
+    );
   }
 
   void createIntroMD(
@@ -182,15 +184,15 @@ async function createMetaJson(
   helpCategory: string,
   challengeId: ObjectID,
   order?: number,
-  blockType?: string,
+  blockLabel?: string,
   blockLayout?: string
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
-    newMeta.blockType = blockType;
+    newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
-    if (blockType === BlockTypes.workshop) {
+    if (blockLabel === BlockLabel.workshop) {
       newMeta.hasEditableBoundaries = true;
     }
   } else {
@@ -328,11 +330,11 @@ void getAllBlocks()
         choices: helpCategories
       },
       {
-        name: 'blockType',
-        message: 'Choose a block type',
-        default: BlockTypes.lab,
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.lab,
         type: 'list',
-        choices: Object.values(BlockTypes),
+        choices: Object.values(BlockLabel),
         when: (answers: CreateProjectArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
@@ -340,8 +342,8 @@ void getAllBlocks()
         name: 'blockLayout',
         message: 'Choose a block layout',
 
-        default: (answers: { blockType: BlockTypes }) =>
-          answers.blockType == BlockTypes.quiz
+        default: (answers: { blockLabel: BlockLabel }) =>
+          answers.blockLabel == BlockLabel.quiz
             ? BlockLayouts.Link
             : BlockLayouts.ChallengeList,
         type: 'list',
@@ -356,7 +358,7 @@ void getAllBlocks()
         type: 'list',
         choices: [10, 20],
         when: (answers: CreateProjectArgs) =>
-          answers.blockType === BlockTypes.quiz
+          answers.blockLabel === BlockLabel.quiz
       },
       {
         name: 'chapter',
@@ -421,7 +423,7 @@ void getAllBlocks()
         block,
         title,
         helpCategory,
-        blockType,
+        blockLabel,
         blockLayout,
         questionCount,
         chapter,
@@ -433,7 +435,7 @@ void getAllBlocks()
           superBlock,
           block,
           helpCategory,
-          blockType,
+          blockLabel,
           blockLayout,
           questionCount,
           title,

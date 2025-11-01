@@ -5,6 +5,7 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
+const { SuperBlocks } = require('../shared-dist/config/curriculum');
 const env = require('./config/env.json');
 const {
   createChallengePages,
@@ -73,7 +74,7 @@ exports.createPages = async function createPages({
             id
             challenge {
               block
-              blockType
+              blockLabel
               blockLayout
               certification
               challengeType
@@ -182,15 +183,8 @@ exports.createPages = async function createPages({
     )
   );
 
-  const superBlocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { superBlock }
-        }
-      }) => superBlock
-    )
-  );
+  // Includes upcoming superBlocks
+  const allSuperBlocks = Object.values(SuperBlocks);
 
   // Create intro pages
   // TODO: Remove allMarkdownRemark (populate from elsewhere)
@@ -210,7 +204,7 @@ exports.createPages = async function createPages({
       if (!blocks.includes(frontmatter.block)) {
         return;
       }
-    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
       return;
     }
 
@@ -310,7 +304,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       block: String
       blockId: String
       blockLayout: String
-      blockType: String
+      blockLabel: String
       certification: String
       challengeFiles: [FileContents]
       challengeOrder: Int

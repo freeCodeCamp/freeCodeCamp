@@ -1,4 +1,9 @@
 import { createSelector } from 'reselect';
+import { liveCerts } from '../../config/cert-and-project-map';
+import {
+  certTypeIdMap,
+  certTypeTitleMap
+} from '../../../shared-dist/config/certification-settings.js';
 
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
@@ -149,7 +154,7 @@ export const completionStateSelector = createSelector(
 
     const structure = superBlockStructures[challengeMeta.superBlock];
 
-    const chapters = structure.chapters ?? [];
+    const chapters = structure?.chapters ?? [];
 
     const getCompletionState = ({
       chapters,
@@ -218,3 +223,49 @@ export const userSelector = state => state[MainApp].user.sessionUser;
 export const otherUserSelector = state => state[MainApp].user.otherUser;
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
+
+export const claimableCertsSelector = createSelector([userSelector], user => {
+  if (!user) return [];
+
+  const completedChallengeIds = (user.completedChallenges || []).map(
+    ({ id }) => id
+  );
+
+  const isClaimedById = Object.entries(certTypeIdMap).reduce(
+    (acc, [userFlag, certId]) => {
+      acc[certId] = Boolean(user[userFlag]);
+      return acc;
+    },
+    {}
+  );
+  // Invert certTypeIdMap ({[userFlag]: certId}  => {[certId]: userFlag}) to get certType from id
+  const invertedCertTypeIdMap = Object.entries(certTypeIdMap).reduce(
+    (acc, [userFlag, certId]) => {
+      acc[certId] = userFlag;
+      return acc;
+    },
+    {}
+  );
+
+  const claimable = [];
+
+  for (const { id, projects } of liveCerts) {
+    if (!projects) continue;
+    if (isClaimedById[id]) continue;
+
+    const projectIds = projects.map(p => p.id);
+    const allProjectsComplete = projectIds.every(id =>
+      completedChallengeIds.includes(id)
+    );
+
+    const certType = invertedCertTypeIdMap[id];
+    const certTitle = certTypeTitleMap[certType];
+    if (allProjectsComplete) {
+      claimable.push({
+        certTitle
+      });
+    }
+  }
+
+  return claimable;
+});

@@ -3,6 +3,7 @@ id: 660684bfc24bf48cfaaf9cfa
 title: Task 8
 challengeType: 22
 dashedName: task-8
+lang: en-US
 ---
 
 <!-- (Audio) Sophie: Thanks, I'll give it a shot. -->

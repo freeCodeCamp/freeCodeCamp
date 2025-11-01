@@ -10,6 +10,6 @@
       "title": "Implement the N-Queens Algorithm"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }
