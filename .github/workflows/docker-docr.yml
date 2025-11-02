@@ -16,6 +16,11 @@ on:
         type: string
         description: 'Input: The app (component) to build'
         default: 'api'
+      show_upcoming_changes:
+        required: false
+        type: string
+        description: 'Input: Show upcoming changes flag (true/false)'
+        default: 'false'
   workflow_call:
     inputs:
       site_tld:
@@ -26,6 +31,11 @@ on:
         required: true
         type: string
         description: 'Input: The app (component) to build'
+      show_upcoming_changes:
+        required: false
+        type: string
+        description: 'Input: Show upcoming changes flag (true/false)'
+        default: 'false'
     outputs:
       tagname:
         description: 'Output: The tagname for the image built'
@@ -54,6 +64,7 @@ jobs:
       - name: Build & Tag Image
         run: |
           docker build \
+            --build-arg SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }} \
             --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname \
             --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest \
             --file docker/${{ inputs.app }}/Dockerfile .

@@ -19,6 +19,10 @@ on:
           - german
           - swahili
         default: all
+      show_upcoming_changes:
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        type: boolean
+        default: false
 
 jobs:
   setup-jobs:
@@ -29,12 +33,21 @@ jobs:
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
       tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
+      show_upcoming_changes: ${{ steps.setup.outputs.show_upcoming_changes }}
     steps:
       - name: Setup
         id: setup
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
+
+          # Convert boolean input to string 'true' or 'false'
+          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+          fi
+
           case "$BRANCH" in
             "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
@@ -195,7 +208,7 @@ jobs:
           PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
           PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
           STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
-          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
+          SHOW_UPCOMING_CHANGES: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
           FREECODECAMP_NODE_ENV: production
           # The below is used in ecosystem.config.js file for the API -- to be removed later
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
