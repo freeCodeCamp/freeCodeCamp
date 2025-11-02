@@ -127,6 +127,7 @@
     "tsx": "4.19.1",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.23.0",
+    "vitest": "^4.0.6",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
