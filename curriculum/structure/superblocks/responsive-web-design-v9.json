@@ -34,6 +34,7 @@
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -66,6 +67,7 @@
             "lecture-accessible-tables-forms",
             "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -156,6 +158,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
             "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"

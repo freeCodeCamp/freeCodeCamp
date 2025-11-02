@@ -3,6 +3,7 @@ id: 655b37ecf9da446bd1dcff4f
 title: Task 96
 challengeType: 22
 dashedName: task-96
+lang: en-US
 ---
 
 <!-- (Audio) Sophie: On Sunday, I have a lazy morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep early because on Monday it's back to work again. -->

@@ -3,6 +3,7 @@ id: 68c58aa8c9d2a2dfea45deb7
 title: Task 7
 challengeType: 19
 dashedName: task-7
+lang: es
 ---
 <!-- (Audio) Elena: Hasta luego -->
 
