@@ -3,6 +3,7 @@ id: 69032acee355bfd2ac9aaa8b
 title: Task 16
 challengeType: 24
 dashedName: task-16
+lang: zh-CN
 ---
 
 # --description--

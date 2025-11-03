@@ -3,6 +3,7 @@ id: 68feee5abac0c3186f90b3ad
 title: Task 9
 challengeType: 19
 dashedName: task-9
+lang: zh-CN
 ---
 
 <!-- (Audio) Wang Hua: 名字 (míng zi) -->
