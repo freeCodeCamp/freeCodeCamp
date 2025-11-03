@@ -86,24 +86,24 @@ describe.sequential('Environment Variable Validation (env.ts)', () => {
   });
 
   describe('FCC_API_LOG_TRANSPORT Logic (MC/DC)', () => {
-    it('CT1: should not throw error when FCC_API_LOG_TRANSPORT is "pretty"', async () => {
+    it('should not throw error when FCC_API_LOG_TRANSPORT is "pretty"', async () => {
       vi.stubEnv('FCC_API_LOG_TRANSPORT', 'pretty');
       await expect(import('./env.js')).resolves.toBeDefined();
     });
 
-    it('CT2: should not throw error when FCC_API_LOG_TRANSPORT is "default"', async () => {
+    it('should not throw error when FCC_API_LOG_TRANSPORT is "default"', async () => {
       vi.stubEnv('FCC_API_LOG_TRANSPORT', 'default');
       await expect(import('./env.js')).resolves.toBeDefined();
     });
 
-    it('CT3: should throw error when FCC_API_LOG_TRANSPORT is invalid', async () => {
+    it('should throw error when FCC_API_LOG_TRANSPORT is invalid', async () => {
       vi.stubEnv('FCC_API_LOG_TRANSPORT', 'invalid-value');
       await expect(import('./env.js')).rejects.toThrow(
         "FCC_API_LOG_TRANSPORT must be one of 'pretty' or 'default'. Found invalid-value"
       );
     });
 
-    it('CT4: should assign "default" and pass validation when FCC_API_LOG_TRANSPORT is undefined', async () => {
+    it('should assign "default" and pass validation when FCC_API_LOG_TRANSPORT is undefined', async () => {
       const envModule = await import('./env.js');
       expect(envModule.FCC_API_LOG_TRANSPORT).toBe('default');
     });
