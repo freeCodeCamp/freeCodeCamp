@@ -10,6 +10,7 @@ import {
   languageSuperBlocks,
   chapterBasedSuperBlocks
 } from '../../shared/config/curriculum';
+
 import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
   getContentConfig,
@@ -51,7 +52,7 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   position?: number;
-  blockLabel?: string;
+  blockLabel?: BlockLabel;
   blockLayout?: string;
   questionCount?: number;
 }
@@ -64,7 +65,7 @@ async function createLanguageBlock(
   chapter?: string,
   module?: string,
   position?: number,
-  blockLabel?: string,
+  blockLabel?: BlockLabel,
   blockLayout?: string,
   questionCount?: number
 ) {
@@ -142,7 +143,7 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectID,
-  blockLabel?: string,
+  blockLabel?: BlockLabel,
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
@@ -227,6 +228,45 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+function getBlockPrefix(
+  superBlock: SuperBlocks,
+  blockLabel?: BlockLabel
+): string | null {
+  // Only chapter-based super blocks use blockLabel so prefix only applies to them.
+  if (!chapterBasedSuperBlocks.includes(superBlock)) return null;
+
+  let langLevel;
+
+  switch (superBlock) {
+    case SuperBlocks.A2English:
+      langLevel = 'en-a2';
+      break;
+    case SuperBlocks.B1English:
+      langLevel = 'en-b1';
+      break;
+    case SuperBlocks.A1Spanish:
+      langLevel = 'es-a1';
+      break;
+    case SuperBlocks.A2Spanish:
+      langLevel = 'es-a2';
+      break;
+    case SuperBlocks.A1Chinese:
+      langLevel = 'zh-a1';
+      break;
+    case SuperBlocks.A2Chinese:
+      langLevel = 'zh-a2';
+      break;
+    default:
+      langLevel = superBlock;
+  }
+
+  if (blockLabel === BlockLabel.exam) {
+    return `${langLevel}-`;
+  }
+
+  return `${langLevel}-${blockLabel}-`;
+}
+
 void getAllBlocks()
   .then(existingBlocks =>
     prompt([
@@ -238,11 +278,60 @@ void getAllBlocks()
         choices: Object.values(languageSuperBlocks)
       },
       {
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.learn,
+        type: 'list',
+        choices: Object.values(BlockLabel),
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock)
+      },
+      {
         name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this block?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
+        message: (answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          return prefix
+            ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
+            : 'What is the dashed name (in kebab-case) for this block?';
+        },
+        validate: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+
+          if (prefix) {
+            const uniquePart = block.slice(prefix.length);
+
+            // Check if user accidentally included block label at the end
+            if (answers.blockLabel) {
+              // Exclude exam as it is an exception
+              const blockLabelValues = Object.values(BlockLabel).filter(
+                label => label !== BlockLabel.exam
+              );
+
+              const endsWithLabel = blockLabelValues.some(label =>
+                uniquePart.endsWith(`-${label}`)
+              );
+
+              if (endsWithLabel) {
+                return `Block name should not end with a block label (e.g., '-${answers.blockLabel}'). The label is already in the prefix.`;
+              }
+            }
+          }
+
+          return validateBlockName(block, existingBlocks);
+        },
+        filter: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          const normalized = block.toLowerCase().trim();
+
+          if (prefix) {
+            // Strip prefix if already present (happens on re-validation), then re-add it
+            const withoutPrefix = normalized.startsWith(prefix)
+              ? normalized.slice(prefix.length)
+              : normalized;
+            return prefix + withoutPrefix;
+          }
+
+          return normalized;
         }
       },
       {
@@ -255,15 +344,6 @@ void getAllBlocks()
         default: 'English',
         type: 'list',
         choices: helpCategories
-      },
-      {
-        name: 'blockLabel',
-        message: 'Choose a block label',
-        default: BlockLabel.learn,
-        type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
         name: 'blockLayout',
