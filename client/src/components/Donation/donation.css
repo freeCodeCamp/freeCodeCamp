@@ -124,6 +124,7 @@
 
 .alert p {
   color: inherit;
+  margin-bottom: 0;
 }
 
 .donate-tabs > .nav-pills {
