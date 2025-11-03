@@ -19,7 +19,7 @@ on:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }}
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }}
@@ -67,7 +67,7 @@ jobs:
 
   deploy:
     name: Deploy to Docker Swarm -- ${{ needs.setup-jobs.outputs.tgt_env_short }}
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: [setup-jobs, build]
     env:
       TS_USERNAME: ${{ secrets.TS_USERNAME }}
@@ -79,7 +79,7 @@ jobs:
 
     steps:
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@6cae46e2d796f265265cfcf628b72a32b4d7cade # v3
+        uses: tailscale/github-action@a392da0a182bba0e9613b6243ebd69529b1878aa # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
