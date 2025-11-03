@@ -1,6 +1,6 @@
 {
   "name": "Build a First Element Finder",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "lab-first-element-finder",

@@ -32,13 +32,13 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const fullStackDeveloperBase = '/learn/full-stack-developer';
 const respWebV9Base = '/learn/responsive-web-design-v9';
 const jsV9Base = '/learn/javascript-v9';
 const frontEndDevLibsV9Base = '/learn/front-end-development-libraries-v9';
 const pythonV9Base = '/learn/python-v9';
 const relationalDbV9Base = '/learn/relational-databases-v9';
 const backEndDevApisV9Base = '/learn/back-end-development-and-apis-v9';
+const fullStackDeveloperV9Base = '/learn/full-stack-developer-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -793,7 +793,7 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '647e3159823e0ef219c7359b',
+    id: '647f7da207d29547b3bee1ba',
     title: 'Foundational C# with Microsoft',
     certSlug: Certification.FoundationalCSharp,
     projects: [
@@ -807,19 +807,6 @@ const allStandardCerts = [
   },
   // Upcoming Certifications
   {
-    id: '64514fda6c245de4d11eb7bb',
-    title: 'Certified Full Stack Developer',
-    certSlug: Certification.FullStackDeveloper,
-    projects: [
-      {
-        id: '645147516c245de4d11eb7ba',
-        title: 'Certified Full Stack Developer Exam',
-        link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
-        certSlug: Certification.FullStackDeveloper
-      }
-    ]
-  },
-  {
     id: '68db314d3c11a8bff07c7535',
     title: 'Responsive Web Design',
     certSlug: Certification.RespWebDesignV9,
@@ -827,7 +814,7 @@ const allStandardCerts = [
       {
         id: '68db37350b398ecddd1f5dac',
         title: 'Responsive Web Design Certification Exam',
-        link: `${respWebV9Base}/responsive-web-design-certification-exam/exam-responsive-web-design-certification`,
+        link: `${respWebV9Base}/exam-responsive-web-design-certification/exam-responsive-web-design-certification`,
         certSlug: Certification.RespWebDesignV9
       }
     ]
@@ -838,7 +825,7 @@ const allStandardCerts = [
     certSlug: Certification.JsV9,
     projects: [
       {
-        id: '645147516c245de4d11eb7ba',
+        id: '68c462d7dc707f3ca82f8e6d',
         title: 'JavaScript Certification Exam',
         link: `${jsV9Base}/exam-javascript-certification/exam-javascript-certification`,
         certSlug: Certification.JsV9
@@ -898,14 +885,27 @@ const allStandardCerts = [
     ]
   },
   {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Certified Full Stack Developer',
+    certSlug: Certification.FullStackDeveloperV9,
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certified Full Stack Developer Exam',
+        link: `${fullStackDeveloperV9Base}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
+        certSlug: Certification.FullStackDeveloperV9
+      }
+    ]
+  },
+  {
     id: '651dd7e01d697d0aab7833b7',
     title: 'A2 English for Developers',
     certSlug: Certification.A2English,
     projects: [
       {
-        id: '651dd3e06ffb500e3f2ce478',
+        id: '6721db5d9f0c116e6a0fe25a',
         title: 'A2 English for Developers Certification Exam',
-        link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
+        link: `${a2EnglishBase}/en-a2-certification-exam/en-a2-certification-exam`,
         certSlug: Certification.A2English
       }
     ]
@@ -952,12 +952,12 @@ const allStandardCerts = [
     ]
   },
   {
-    id: '682c3153086dd7cabe7f48bc',
+    id: '68f1268149f045a650d4229e',
     title: 'A1 Professional Chinese',
     certSlug: Certification.A1Chinese,
     projects: [
       {
-        id: '682c2753317b88f1ecdad894',
+        id: '688f1daf0133dbe2a36b140b',
         title: 'Dialogue 1: PLACEHOLDER',
         link: `${a1ChineseBase}/learn-essential-courtesies-at-the-office
 /text-1`,
@@ -1008,6 +1008,12 @@ const upcomingCerts = allStandardCerts.filter((cert): cert is UpcomingCert =>
 const liveCerts = showUpcomingChanges
   ? [...currentCerts, ...legacyCerts, fullstackCert, ...upcomingCerts]
   : [...currentCerts, ...legacyCerts, fullstackCert];
+const allCerts = [
+  ...currentCerts,
+  ...legacyCerts,
+  fullstackCert,
+  ...upcomingCerts
+];
 
 type CertsToProjects = Record<
   (typeof allStandardCerts)[number]['certSlug'],
@@ -1025,4 +1031,4 @@ export type CertTitle =
   | (typeof liveCerts)[number]['title']
   | 'Legacy Full Stack';
 
-export { liveCerts, certsToProjects };
+export { liveCerts, certsToProjects, allCerts };

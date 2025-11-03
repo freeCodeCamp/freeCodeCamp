@@ -4,6 +4,7 @@ import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { patchBlock } from './patches';
 
 export type CurriculumIntros = {
   [keyValue in SuperBlocks]: {
@@ -121,10 +122,13 @@ export function buildExtCurriculumDataV1(
 
         superBlock[superBlockKey]['blocks'][blockName]['desc'] = block['intro'];
 
-        superBlock[superBlockKey]['blocks'][blockName]['challenges'] = omit(
-          curriculum[superBlockKey]['blocks'][blockName]['meta'],
-          ['chapter', 'module']
-        );
+        superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
+          patchBlock(
+            omit(curriculum[superBlockKey]['blocks'][blockName]['meta'], [
+              'chapter',
+              'module'
+            ])
+          );
 
         const blockChallenges =
           curriculum[superBlockKey]['blocks'][blockName]['challenges'];

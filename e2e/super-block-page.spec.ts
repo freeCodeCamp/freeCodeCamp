@@ -43,7 +43,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.addInitScript(() => {
         window.localStorage.setItem(
           'currentChallengeId',
-          '660ee6e3a242da6bd579de69' // JS Pyramid Generator step 2
+          '62a3b3eab50e193608c19fc6' // Learn Basic JavaScript by Building a Role Playing Game step 9
         );
       });
 
@@ -51,7 +51,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: 'Learn Basic JavaScript by Building a Role Playing Game'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -124,14 +124,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Module
       await expect(
         page.getByRole('button', {
-          name: /Basic CSS \d+ of \d+ steps complete/
+          name: 'Basic CSS'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
       await expect(
         page.getByRole('button', {
-          name: /Workshop Design a Cafe Menu/
+          name: 'Design a Cafe Menu'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -156,14 +156,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Basic HTML module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: /Theory Understanding HTML Attributes/
+          name: 'Understanding HTML Attributes'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -183,14 +183,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: /Build a Curriculum Outline/
+          name: 'Build a Curriculum Outline'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -212,7 +212,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Cat Blog Page block
       await expect(
         page.getByRole('button', {
-          name: 'Workshop Build a Cat Blog Page'
+          name: 'Build a Cat Blog Page'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -258,7 +258,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 

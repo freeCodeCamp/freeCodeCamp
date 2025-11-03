@@ -1,6 +1,6 @@
 {
   "name": "Build a Factorial Calculator ",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

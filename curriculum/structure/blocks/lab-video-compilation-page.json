@@ -1,6 +1,6 @@
 {
   "name": "Build a Video Compilation Page",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

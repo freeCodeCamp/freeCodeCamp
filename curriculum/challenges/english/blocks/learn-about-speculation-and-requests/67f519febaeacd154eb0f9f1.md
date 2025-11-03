@@ -3,6 +3,7 @@ id: 67f519febaeacd154eb0f9f1
 title: Task 96
 challengeType: 22
 dashedName: task-96
+lang: en-US
 ---
 
 <!-- (audio) Jake: For now, let's gather more information and stay vigilant. -->

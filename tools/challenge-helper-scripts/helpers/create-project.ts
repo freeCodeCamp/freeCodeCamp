@@ -3,7 +3,7 @@
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/file-handler';
+} from '../../../curriculum/src/file-handler';
 import { insertInto } from './utils';
 
 export async function updateSimpleSuperblockStructure(

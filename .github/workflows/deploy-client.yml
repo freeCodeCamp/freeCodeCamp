@@ -19,22 +19,35 @@ on:
           - german
           - swahili
         default: all
+      show_upcoming_changes:
+        description: 'Show upcoming changes (enables upcoming certifications and challenges)'
+        type: boolean
+        default: false
 
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
       tgt_env_long: ${{ steps.setup.outputs.tgt_env_long }} # production, staging
       tgt_env_branch: ${{ steps.setup.outputs.tgt_env_branch }} # prod-current, prod-staging
+      show_upcoming_changes: ${{ steps.setup.outputs.show_upcoming_changes }}
     steps:
       - name: Setup
         id: setup
         run: |
           BRANCH="${{ github.ref_name }}"
           echo "Current branch: $BRANCH"
+
+          # Convert boolean input to string 'true' or 'false'
+          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+            echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
+          fi
+
           case "$BRANCH" in
             "prod-current")
               echo "site_tld=org" >> $GITHUB_OUTPUT
@@ -52,13 +65,13 @@ jobs:
 
   setup-matrix:
     name: Setup Matrix
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: setup-jobs
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Setup Matrix
-        uses: actions/github-script@v7
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         id: matrix
         env:
           TARGET_LANG: ${{ inputs.target_language }}
@@ -143,7 +156,7 @@ jobs:
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
     needs: [setup-jobs, setup-matrix]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
@@ -158,17 +171,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4
         id: pnpm-install
         with:
           run_install: false
@@ -195,7 +208,7 @@ jobs:
           PATREON_CLIENT_ID: ${{ secrets.PATREON_CLIENT_ID }}
           PAYPAL_CLIENT_ID: ${{ secrets.PAYPAL_CLIENT_ID }}
           STRIPE_PUBLIC_KEY: ${{ secrets.STRIPE_PUBLIC_KEY }}
-          SHOW_UPCOMING_CHANGES: ${{ vars.SHOW_UPCOMING_CHANGES || 'false' }}
+          SHOW_UPCOMING_CHANGES: ${{ needs.setup-jobs.outputs.show_upcoming_changes }}
           FREECODECAMP_NODE_ENV: production
           # The below is used in ecosystem.config.js file for the API -- to be removed later
           DEPLOYMENT_ENV: ${{ needs.setup-jobs.outputs.tgt_env_long }}
@@ -208,7 +221,7 @@ jobs:
         run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
 
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@v3
+        uses: tailscale/github-action@a392da0a182bba0e9613b6243ebd69529b1878aa # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
