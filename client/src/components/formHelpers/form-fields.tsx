@@ -25,8 +25,7 @@ export type FormOptions = {
   isLocalLinkAllowed?: boolean;
   isSourceCodeLinkRequired?: boolean;
   required?: string[];
-  types?: { [key: string]: 
-  React.HTMLInputTypeAttribute };
+  types?: { [key: string]: React.HTMLInputTypeAttribute };
   placeholders?: { [key: string]: string };
 };
 
