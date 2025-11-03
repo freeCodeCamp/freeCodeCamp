@@ -33,6 +33,7 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
             "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
@@ -309,6 +310,7 @@
             "lecture-working-with-numbers-and-arithmetic-operators",
             "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",

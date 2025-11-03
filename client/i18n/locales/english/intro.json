@@ -2173,6 +2173,12 @@
           "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
@@ -2419,14 +2425,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -3115,6 +3121,13 @@
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -7966,14 +7979,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -8642,14 +8655,8 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
+      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
+      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
