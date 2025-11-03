@@ -1573,7 +1573,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers (Beta) Certification",
+    "title": "B1 English for Developers Certification (Beta)",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
@@ -2173,10 +2173,22 @@
           "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -2300,6 +2312,12 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -2410,14 +2428,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -2594,6 +2612,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
@@ -3048,6 +3072,12 @@
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
@@ -3083,10 +3113,24 @@
           "In these lessons you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the application functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -4610,9 +4654,11 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
@@ -5036,7 +5082,8 @@
       "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": {
-      "javascript": "JavaScript"
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5148,6 +5195,12 @@
         "title": "Working with String Search and Slice Methods",
         "intro": [
           "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -6200,7 +6253,7 @@
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
-      "review-asynchronous-javascrip": {
+      "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
           "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
@@ -6234,7 +6287,8 @@
       "- Pass the Front End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries"
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -6574,7 +6628,8 @@
       "- Pass the Python Certification exam."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -6762,6 +6817,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -6799,6 +6860,12 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
+      },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
@@ -6820,6 +6887,12 @@
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
+      },
+      "lab-player-interface": {
+        "title": "Build a Player Interface",
+        "intro": [
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+        ]
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
@@ -7013,7 +7086,8 @@
       "- Pass the Relational Databases Certification exam."
     ],
     "chapters": {
-      "relational-databases": "Relational Databases"
+      "relational-databases": "Relational Databases",
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "modules": {
       "code-editors": "Code Editors",
@@ -7246,7 +7320,8 @@
       "- Pass the Back End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs"
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
       "nodejs-core-libraries": "Node.js Core Libraries",
@@ -7700,6 +7775,12 @@
           "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
@@ -7821,6 +7902,12 @@
           "In these lectures, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -7931,14 +8018,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -8115,6 +8202,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
