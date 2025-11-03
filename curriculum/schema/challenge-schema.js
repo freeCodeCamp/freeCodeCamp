@@ -231,7 +231,7 @@ const schema = Joi.object().keys({
   lang: Joi.string().when('superBlock', {
     is: languageSuperBlocks,
     then: Joi.valid('en-US', 'es', 'zh-CN').required(),
-    otherwise: Joi.valid('en')
+    otherwise: Joi.forbidden()
   }),
   instructions: Joi.string().when('challengeType', {
     is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
