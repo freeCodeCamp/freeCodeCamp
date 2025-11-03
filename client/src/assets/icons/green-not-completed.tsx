@@ -10,6 +10,7 @@ interface GreenNotCompletedProps
 function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
   const { t } = useTranslation();
   const { hushScreenReaderText = false, ...rest } = props;
+
   return (
     <>
       {!hushScreenReaderText && (
@@ -21,16 +22,16 @@ function GreenNotCompleted(props: GreenNotCompletedProps): JSX.Element {
         viewBox='0 0 200 200'
         width='15'
         xmlns='http://www.w3.org/2000/svg'
+        className='green-not-completed-icon'
         {...rest}
       >
         <g>
           <title>{t('icons.not-passed')}</title>
           <circle
+            className='not-completed-circle'
             cx='100'
             cy='99'
-            fill='var(--primary-background)'
             r='95'
-            stroke='var(--primary-color)'
             strokeDasharray='null'
             strokeWidth='10'
           />
