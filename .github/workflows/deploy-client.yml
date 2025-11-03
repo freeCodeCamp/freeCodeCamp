@@ -198,6 +198,13 @@ jobs:
           echo "CLIENT_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
           echo "CURRICULUM_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
 
+      - name: Create deployment version
+        id: deployment-version
+        run: |
+          DEPLOYMENT_VERSION=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)
+          echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_ENV
+          echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_OUTPUT
+
       - name: Install and Build
         env:
           API_LOCATION: 'https://api.freecodecamp.${{ needs.setup-jobs.outputs.site_tld }}'
