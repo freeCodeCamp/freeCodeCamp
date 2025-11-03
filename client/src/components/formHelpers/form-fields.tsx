@@ -25,7 +25,8 @@ export type FormOptions = {
   isLocalLinkAllowed?: boolean;
   isSourceCodeLinkRequired?: boolean;
   required?: string[];
-  types?: { [key: string]: string };
+  types?: { [key: string]: 
+  React.HTMLInputTypeAttribute };
   placeholders?: { [key: string]: string };
 };
 
@@ -46,12 +47,12 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
   } = options;
 
   const nullOrWarning = (
-    value: string,
+    value: string | undefined,
     error: unknown,
     isURL: boolean,
     name: string
   ) => {
-    if (typeof value !== 'string') return null;
+    if (!value) return null;
     let validationError: string | undefined;
     if (value && isURL) {
       try {
@@ -95,7 +96,7 @@ function FormFields({ formFields, options }: FormFieldsProps): JSX.Element {
       {formFields
         .filter(formField => !ignored.includes(formField.name))
         .map(({ name, label }) => (
-          <Field key={`${name}-field`} name={name}>
+          <Field<string | undefined> key={`${name}-field`} name={name}>
             {({ input: { value, onChange }, meta: { pristine, error } }) => {
               const placeholder =
                 name in placeholders ? placeholders[name] : '';
