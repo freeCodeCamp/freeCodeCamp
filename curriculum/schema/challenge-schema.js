@@ -4,7 +4,8 @@ Joi.objectId = require('joi-objectid')(Joi);
 const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks
+  catalogSuperBlocks,
+  languageSuperBlocks
 } = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
@@ -227,7 +228,11 @@ const schema = Joi.object().keys({
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
-  lang: Joi.string(),
+  lang: Joi.string().when('superBlock', {
+    is: languageSuperBlocks,
+    then: Joi.valid('en-US', 'es', 'zh-CN').required(),
+    otherwise: Joi.valid('en')
+  }),
   instructions: Joi.string().when('challengeType', {
     is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
     then: Joi.string().min(1).required(),
