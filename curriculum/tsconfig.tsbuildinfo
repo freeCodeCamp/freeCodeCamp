@@ -1,0 +1,1 @@
+{"root":["./src/build-certification.ts","./src/build-curriculum.ts","./src/build-superblock.ts","./src/file-handler.ts","./src/get-challenges.ts","./src/reset.d.ts","./src/utils.test.ts","./src/utils.ts","./src/test/utils/generate-block-tests.ts"],"version":"5.7.3"}
