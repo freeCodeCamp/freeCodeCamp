@@ -1,7 +1,7 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Type } from '@sinclair/typebox';
-import { Value } from '@sinclair/typebox/value';
+import { Type } from 'typebox';
+import { Value } from 'typebox/value';
 import fp from 'fastify-plugin';
 
 import { isError } from 'lodash-es';
@@ -81,6 +81,25 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
           reply
         );
         void reply.redirect(redirectUrl);
+      });
+
+      fastify.get('/signin/google', async function (request, reply) {
+        const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
+        void reply.setCookie('login-returnto', returnTo, {
+          domain: COOKIE_DOMAIN,
+          httpOnly: true,
+          secure: true,
+          signed: true,
+          sameSite: 'lax'
+        });
+
+        const authorizationEndpoint =
+          await this.auth0OAuth.generateAuthorizationUri(request, reply);
+
+        const url = new URL(authorizationEndpoint);
+        url.searchParams.set('connection', 'google-oauth2');
+
+        void reply.redirect(url.toString());
       });
       done();
     });

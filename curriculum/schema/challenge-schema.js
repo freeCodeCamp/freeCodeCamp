@@ -4,7 +4,8 @@ Joi.objectId = require('joi-objectid')(Joi);
 const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks
+  catalogSuperBlocks,
+  languageSuperBlocks
 } = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
@@ -129,7 +130,7 @@ const quizJoi = Joi.object().keys({
 const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
-  blockType: Joi.when('superBlock', {
+  blockLabel: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
     then: Joi.valid(
       'workshop',
@@ -162,7 +163,6 @@ const schema = Joi.object().keys({
   }),
   certification: Joi.string().regex(slugWithSlashRE),
   challengeType: Joi.number().min(0).max(31).required(),
-  checksum: Joi.number(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
   demoType: Joi.string().valid('onClick', 'onLoad'),
@@ -183,7 +183,24 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
-  guideUrl: Joi.string().uri({ scheme: 'https' }),
+  // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
+  nodules: Joi.array().items(
+    Joi.object().keys({
+      type: Joi.valid('paragraph', 'interactiveEditor').required(),
+      data: Joi.when('type', {
+        is: ['interactiveEditor'],
+        then: Joi.array().items(
+          Joi.object().keys({
+            ext: Joi.string().required(),
+            name: Joi.string().required(),
+            contents: Joi.string().required(),
+            contentsHtml: Joi.string().required()
+          })
+        ),
+        otherwise: Joi.string().required()
+      })
+    })
+  ),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
@@ -211,13 +228,17 @@ const schema = Joi.object().keys({
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
+  lang: Joi.string().when('superBlock', {
+    is: languageSuperBlocks,
+    then: Joi.valid('en-US', 'es', 'zh-CN').required(),
+    otherwise: Joi.valid('en')
+  }),
   instructions: Joi.string().when('challengeType', {
     is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
   isComingSoon: Joi.bool(),
-  isLocked: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),

@@ -118,11 +118,10 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
-    "start": "Start",
-    "go-to-today": "Go to Today's Challenge",
-    "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to Archive",
-    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -214,6 +213,7 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Frequently asked questions:",
     "faqs": [
       {
@@ -388,12 +388,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "You need to change your privacy setting in order for your portfolio to be seen by others. This is a preview of how your portfolio will look when made public.",
@@ -524,7 +527,9 @@
       "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview",
-      "editor": "Editor"
+      "terminal": "Terminal",
+      "editor": "Editor",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -535,6 +540,26 @@
     "project-preview-title": "Here's a preview of what you will build",
     "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Create a GitHub</0> account if you don't have one. You'll need it when you create the virtual Linux server machine. This process may take a few minutes.",
+    "codespaces": {
+      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
+      "step-1": "<0>Create an GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "On that page, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Value</0> field, paste your token",
+      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "summary": "Codespaces Setup"
+    },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
@@ -551,7 +576,8 @@
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token"
+      "sub-step-5": "In the <0>Secret</0> field, paste your token",
+      "summary": "Ona Setup"
     },
     "local": {
       "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
@@ -573,7 +599,8 @@
       "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
       "copy-url": "Copy Course URL",
       "step-8": "Click \"Start\" to begin.",
-      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass.",
+      "summary": "Local Setup"
     },
     "step-1": "Step 1: Complete the project",
     "step-2": "Step 2: Submit your code",
@@ -653,7 +680,7 @@
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     },
     "block-type": {
-      "lecture": "Lecture",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Lab",
       "review": "Review",
@@ -662,6 +689,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
@@ -866,7 +897,8 @@
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "Gold Cup",
@@ -927,7 +959,8 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -974,6 +1007,7 @@
     "not-eligible": "This user is not eligible for freeCodeCamp.org certifications at this time.",
     "profile-private": "{{username}} has chosen to make their profile private. They will need to make their profile public in order for others to be able to view their certification.",
     "certs-private": "{{username}} has chosen to make their certifications private. They will need to make their certifications public in order for others to be able to view them.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} has not yet agreed to our Academic Honesty Pledge.",
     "user-not-certified": "It looks like user {{username}} is not {{cert}} certified",
     "invalid-challenge": "That does not appear to be a valid challenge submission",
@@ -1079,6 +1113,7 @@
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "Solution",
       "no-solution": "error displaying solution, email support@freeCodeCamp.org to get help.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "If you suspect that any of these projects violate the <2>academic honesty policy</2>, please <5>report this to our team</5>.",
       "title": {
@@ -1255,12 +1290,16 @@
   "exam-token": {
     "exam-token": "Exam Token",
     "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
-    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
     "error": "There was an error generating your token, please try again in a moment.",
-    "your-exam-token": "Your Exam Token is: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

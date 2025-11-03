@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Callout, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -502,9 +502,9 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Alert variant='info'>
+                <Callout variant='info'>
                   <p>{t('learn.exam.qualified')}</p>
-                </Alert>
+                </Callout>
               ) : !prerequisitesComplete ? (
                 <MissingPrerequisites
                   missingPrerequisites={missingPrerequisites}

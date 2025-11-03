@@ -240,7 +240,7 @@ function DailyCodingChallengeCalendar({
           block={true}
           href={`/learn/daily-coding-challenge/${todayUsCentral}`}
         >
-          {t('buttons.go-to-today')}
+          {t('buttons.go-to-dcc-today')}
         </Button>
       </Col>
 

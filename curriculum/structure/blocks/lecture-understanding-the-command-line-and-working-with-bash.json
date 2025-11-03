@@ -1,8 +1,8 @@
 {
   "name": "Understanding the Command Line and Working with Bash",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-the-command-line-and-working-with-bash",
   "helpCategory": "Backend Development",
   "challengeOrder": [

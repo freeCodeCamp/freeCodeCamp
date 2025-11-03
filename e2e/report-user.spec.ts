@@ -39,7 +39,7 @@ test('should be possible to report a user from their profile page', async ({
 
   await expect(async () => {
     const emails = await getAllEmails();
-    expect(emails.items).toHaveLength(1);
+    expect(emails.messages).toHaveLength(1);
     expect(getSubject(getFirstEmail(emails))).toBe(
       "Abuse Report : Reporting twaha's profile."
     );

@@ -12,6 +12,7 @@ import type {
   PythonDocument
 } from '../../../../../tools/client-plugins/browser-scripts';
 import { Hooks } from '../../../redux/prop-types';
+import { pathPrefix } from '../../../../utils/gatsby/path-prefix';
 
 export const helperVersion = _helperVersion;
 
@@ -85,7 +86,7 @@ export const scrollManager = new ScrollManager();
 export const mainPreviewId = 'fcc-main-frame';
 // the project preview frame demos the finished project
 export const projectPreviewId = 'fcc-project-preview-frame';
-const ASSET_PATH = `/js/test-runner/${helperVersion}/`;
+const ASSET_PATH = `${pathPrefix}/js/test-runner/${helperVersion}/`;
 
 const DOCUMENT_NOT_FOUND_ERROR = 'misc.document-notfound';
 
