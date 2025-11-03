@@ -724,7 +724,7 @@
         },
         {
           "dashedName": "python-classes-and-objects",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
@@ -737,7 +737,7 @@
         },
         {
           "dashedName": "python-object-oriented-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
@@ -754,7 +754,7 @@
         },
         {
           "dashedName": "python-linear-data-structures",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-working-with-common-data-structures",
             "workshop-linked-list-class",
@@ -765,7 +765,7 @@
         },
         {
           "dashedName": "python-algorithms",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
             "workshop-binary-search",
@@ -781,7 +781,7 @@
         },
         {
           "dashedName": "python-graphs-and-trees",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "workshop-shortest-path-algorithm",
@@ -795,7 +795,7 @@
         },
         {
           "dashedName": "python-dynamic-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-dynamic-programming",
             "lab-nth-fibonacci-number",
@@ -804,7 +804,7 @@
           ]
         },
         {
-          "comingSoon": true,
+          "comingSoon": false,
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]
