@@ -57,18 +57,17 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
 
 The word `soy` (I am) comes from the verb `ser` and is used to express **identity, nationality, or profession**. For example:
 
-- `Soy puertorriqueño` - I am Puerto Rican (masculine).
+- `Soy puertorriqueño` - I am Puerto Rican. (masculine)
 
-- `Soy puertorriqueña` - I am Puerto Rican (feminine).
+- `Soy puertorriqueña` - I am Puerto Rican. (feminine)
 
-- `Soy mexicano.` – I am Mexican (masculine).
+- `Soy mexicano.` – I am Mexican. (masculine)
 
-- `Soy mexicana.` – I am Mexican (feminine).
+- `Soy mexicana.` – I am Mexican. (feminine)
 
-- `Soy chileno.` – I am Chilean (masculine).
+- `Soy chileno.` – I am Chilean. (masculine)
 
-- `Soy chilena.` – I am Chilean (feminine).
-
+- `Soy chilena.` – I am Chilean. (feminine)
 
 # --scene--
 
