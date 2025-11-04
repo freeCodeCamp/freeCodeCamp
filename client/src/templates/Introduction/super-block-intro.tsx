@@ -10,6 +10,7 @@ import { scroller } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeatureValue } from '@growthbook/growthbook-react';
 
 import {
   chapterBasedSuperBlocks,
@@ -151,6 +152,11 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const disabledBlocksFeature = useFeatureValue<string[]>(
+    'disabled_blocks',
+    []
+  );
+
   const {
     data: {
       allChallengeNode: { nodes },
@@ -288,22 +294,26 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                 />
               ) : (
                 <div className='block-ui'>
-                  {blocks.map(block => {
-                    const blockChallenges = superBlockChallenges.filter(
-                      c => c.block === block
-                    );
-                    const blockLabel = blockChallenges[0].blockLabel;
+                  {blocks
+                    .filter(block => {
+                      return !disabledBlocksFeature.includes(block);
+                    })
+                    .map(block => {
+                      const blockChallenges = superBlockChallenges.filter(
+                        c => c.block === block
+                      );
+                      const blockLabel = blockChallenges[0].blockLabel;
 
-                    return (
-                      <Block
-                        key={block}
-                        block={block}
-                        blockLabel={blockLabel}
-                        challenges={blockChallenges}
-                        superBlock={superBlock}
-                      />
-                    );
-                  })}
+                      return (
+                        <Block
+                          key={block}
+                          block={block}
+                          blockLabel={blockLabel}
+                          challenges={blockChallenges}
+                          superBlock={superBlock}
+                        />
+                      );
+                    })}
                   {showCertification && !!user && (
                     <CertChallenge
                       certification={certification}

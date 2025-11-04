@@ -3,6 +3,7 @@ id: 6751bdd2f78adbed1ea0fa51
 title: Task 24
 challengeType: 19
 dashedName: task-24
+lang: en-US
 ---
 
 <!-- (Audio) Brian: Do you think we'll need to update the users about the downtime? -->

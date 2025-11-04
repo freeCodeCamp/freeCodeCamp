@@ -3,6 +3,7 @@ id: 662347b1bb7b3cdfcccffa57
 title: Task 50
 challengeType: 22
 dashedName: task-50
+lang: en-US
 ---
 
 <!-- (Audio) Brian: Sophie, I heard you're working on fixing that bug in the user authentication module. Need any help? -->

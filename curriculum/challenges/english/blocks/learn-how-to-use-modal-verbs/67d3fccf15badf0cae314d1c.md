@@ -3,6 +3,7 @@ id: 67d3fccf15badf0cae314d1c
 title: Task 7
 challengeType: 22
 dashedName: task-7
+lang: en-US
 ---
 
 <!-- (Audio) Mark: Sure, Jessica. What do I need to do? -->
