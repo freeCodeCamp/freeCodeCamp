@@ -3,7 +3,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import InteractiveEditor from './interactive-editor';
 
 const sampleFiles = [
-  { ext: 'js', name: 'index', contents: 'console.log("Hello")', contentsHtml: '' }
+  {
+    ext: 'js',
+    name: 'index',
+    contents: 'console.log("Hello")',
+    contentsHtml: ''
+  }
 ];
 
 describe('<InteractiveEditor />', () => {

@@ -29,8 +29,7 @@ const InteractiveEditor = ({ files }: Props) => {
       if (ext === 'html') path = '/index.html';
       else if (ext === 'css') path = '/styles.css';
       else if (ext === 'js' || ext === 'ts') path = `/index.${ext}`;
-      else if (ext === 'py')
-        return;
+      else if (ext === 'py') return;
       else if (ext === 'jsx') path = '/App.jsx';
       else if (ext === 'tsx') path = '/App.tsx';
       else path = `/index.${ext}`;
@@ -55,7 +54,10 @@ const InteractiveEditor = ({ files }: Props) => {
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-    if ((isMac && e.metaKey && e.key === 'Enter') || (!isMac && e.ctrlKey && e.key === 'Enter')) {
+    if (
+      (isMac && e.metaKey && e.key === 'Enter') ||
+      (!isMac && e.ctrlKey && e.key === 'Enter')
+    ) {
       e.preventDefault();
       setRunToggle(prev => !prev);
     }
@@ -72,15 +74,19 @@ const InteractiveEditor = ({ files }: Props) => {
 
   return (
     <div
-      className="interactive-editor-wrapper"
-      data-playwright-test-label="sp-interactive-editor"
+      className='interactive-editor-wrapper'
+      data-playwright-test-label='sp-interactive-editor'
     >
-      <div className="interactive-editor-toolbar" aria-hidden={false} style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}>
+      <div
+        className='interactive-editor-toolbar'
+        aria-hidden={false}
+        style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: 8 }}
+      >
         <button
-          type="button"
-          className="sp-run-button"
+          type='button'
+          className='sp-run-button'
           onClick={handleRunClick}
-          title="Run code (Ctrl/Cmd + Enter)"
+          title='Run code (Ctrl/Cmd + Enter)'
         >
           Run
         </button>
@@ -92,12 +98,12 @@ const InteractiveEditor = ({ files }: Props) => {
           got('tsx')
             ? 'react-ts'
             : got('jsx')
-            ? 'react'
-            : got('ts')
-            ? 'vanilla-ts'
-            : got('html')
-            ? 'static'
-            : 'vanilla'
+              ? 'react'
+              : got('ts')
+                ? 'vanilla-ts'
+                : got('html')
+                  ? 'static'
+                  : 'vanilla'
         }
         files={spFiles}
         theme={{
@@ -110,7 +116,7 @@ const InteractiveEditor = ({ files }: Props) => {
           syntax: freeCodeCampDarkSyntax
         }}
         autorun={false}
-        recompileMode="delayed"
+        recompileMode='delayed'
         options={{
           editorHeight: 450,
           editorWidthPercentage: 60,
