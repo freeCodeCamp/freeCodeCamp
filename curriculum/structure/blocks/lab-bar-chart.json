@@ -4,7 +4,9 @@
   "dashedName": "lab-bar-chart",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "68f64e5f51efb45e693f4be2", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "bd7168d8c242eddfaeb5bd13", "title": "Build a Bar Chart" }
+  ],
   "blockType": "lab",
   "usesMultifileEditor": true
 }

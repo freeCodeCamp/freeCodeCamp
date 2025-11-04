@@ -1,8 +1,8 @@
 ---
-id: 68f64e5f51efb45e693f4be2
-title: Step 1
+id: bd7168d8c242eddfaeb5bd13
+title: Build a Bar Chart
 challengeType: 25
-dashedName: step-1
+dashedName: build-a-bar-chart
 demoType: onClick
 ---
 
