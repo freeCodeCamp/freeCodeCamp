@@ -5,11 +5,13 @@ challengeType: 19
 dashedName: how-can-you-check-if-an-array-contains-a-certain-value
 ---
 
-# --description--
+# --interactive--
 
 In JavaScript, the `includes()` method is a simple and efficient way to check if an array contains a specific value. This method returns a boolean value: `true` if the array contains the specified element, and `false` otherwise. 
 
 The `includes()` method is particularly useful when you need to quickly verify the presence of an element in an array without needing to know its exact position. Let's start with an example of how to use the `includes()` method:
+
+:::interactive_editor
 
 ```js
 let fruits = ["apple", "banana", "orange", "mango"];
@@ -17,9 +19,13 @@ console.log(fruits.includes("banana")); // true
 console.log(fruits.includes("grape"));  // false
 ```
 
+:::
+
 In this example, we have an array of fruits. We use the `includes()` method to check if `banana` is in the array. It returns `true` because `banana` is indeed present. We then check for `grape`, which returns `false` because it's not in the array.
 
 The `includes()` method is case-sensitive when dealing with strings. This means that `Banana` with a capital B and `banana` with all lowercase letters are considered different values. Here's an example that illustrates this:
+
+:::interactive_editor
 
 ```js
 let fruits = ["apple", "banana", "orange"];
@@ -27,9 +33,13 @@ console.log(fruits.includes("banana")); // true
 console.log(fruits.includes("Banana")); // false
 ```
 
+:::
+
 In this case, `banana` (all in lowercase) is found in the array, but `Banana` (with the first letter capitalized) is not, so the second `includes()` call returns `false`.
 
 The `includes()` method can also accept an optional second parameter that specifies the position in the array to start the search. This is useful if you want to check for an element's presence in a specific part of the array. Here's how you can use this feature:
+
+:::interactive_editor
 
 ```js
 let numbers = [10, 20, 30, 40, 50, 30, 60];
@@ -37,17 +47,23 @@ console.log(numbers.includes(30, 3)); // true
 console.log(numbers.includes(30, 4)); // true
 ```
 
+:::
+
 For the first `console.log`, we are looking for the number `30` starting at index `3`. In this case, there is a number `30` that appears after index `3`, so the `includes()` method returns `true`. 
 
 The same is true for the second `console.log`. We are looking for the number `30` starting at index `4`. Since the number `30` does appear after that index, then it will return `true`. 
 
 It's worth noting that `includes()` uses the strict equality comparison (`===`), which means it can distinguish between different types. For example:
 
+:::interactive_editor
+
 ```js
 let mixedArray = [1, "2", 3, "4", 5];
 console.log(mixedArray.includes(2));  // false
 console.log(mixedArray.includes("2")); // true
 ```
+
+:::
 
 In this case, the number `2` and the string `"2"` are considered different data types. So, the first `console.log` will return `false`, while the second `console.log` will return `true`.
 

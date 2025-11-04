@@ -3,6 +3,7 @@ id: 67eff3ae8cca9823edafadc6
 title: Task 59
 challengeType: 19
 dashedName: task-59
+lang: en-US
 ---
 
 <!-- (audio) Jake: Have you checked whether all security updates were applied? -->

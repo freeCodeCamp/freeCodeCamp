@@ -3,6 +3,7 @@ id: 67a75a9acd71d2ed6eb9a6fa
 title: Task 20
 challengeType: 22
 dashedName: task-20
+lang: en-US
 ---
 
 <!-- (Audio) Linda: Absolutely. And I can also prepare some user scenarios for testing, so we can ensure a smooth user experience. -->

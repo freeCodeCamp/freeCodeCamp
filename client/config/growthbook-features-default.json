@@ -110,13 +110,13 @@
       }
     ]
   },
-  "show-benefits": {
+  "landing-two-button-cta": {
     "defaultValue": false,
     "rules": [
       {
         "coverage": 1,
         "hashAttribute": "id",
-        "seed": "show-benefits",
+        "seed": "landing-two-button-cta",
         "hashVersion": 2,
         "variations": [
           false,
@@ -126,7 +126,7 @@
           0.5,
           0.5
         ],
-        "key": "show-benefits",
+        "key": "landing-two-button-cta",
         "meta": [
           {
             "key": "0",
@@ -138,8 +138,11 @@
           }
         ],
         "phase": "0",
-        "name": "prod-show-benefits"
+        "name": "prod-landing-two-button-cta"
       }
     ]
+  },
+  "disabled_blocks": {
+    "defaultValue": []
   }
 }

@@ -3,6 +3,7 @@ id: 657e1fd7b5ffaebc0ff4bd9f
 title: Task 26
 challengeType: 19
 dashedName: task-26
+lang: en-US
 ---
 
 <!-- (audio) Tom: Thanks for sharing, Sophie. I want to get more organized and your tips are a great help to me. -->

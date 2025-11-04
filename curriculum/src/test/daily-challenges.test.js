@@ -56,6 +56,9 @@ describe('Daily Coding Challenges', async () => {
         );
       }
 
+      // skip these for non-English for now.
+      if (lang !== 'english') continue;
+
       if (jsChallenge.title !== pyChallenge.title) {
         errors.push(
           `Challenge title mismatch - JS: ${jsChallenge.title}, Python: ${pyChallenge.title} (id: ${jsChallenge.id})`

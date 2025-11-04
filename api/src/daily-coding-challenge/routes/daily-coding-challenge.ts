@@ -28,9 +28,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      logger.info('Received request for daily coding challenge', {
-        date: req.params.date
-      });
+      logger.info(
+        { date: req.params.date },
+        'Received request for daily coding challenge'
+      );
 
       const { date } = req.params;
 
@@ -38,7 +39,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         const parsedDate = dateStringToUtcMidnight(date);
 
         if (!parsedDate) {
-          logger.warn('Invalid date format requested', { date });
+          logger.warn({ date }, 'Invalid date format requested');
           return reply.status(400).send({
             type: 'error',
             message: 'Invalid date format. Please use YYYY-MM-DD.'
@@ -53,7 +54,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
 
         // don't return challenges > today US Central
         if (!challenge || challenge.date > getUtcMidnight(getNowUsCentral())) {
-          logger.warn('Challenge not found for date', { date: parsedDate });
+          logger.warn({ date: parsedDate }, 'Challenge not found for date');
           return reply
             .status(404)
             .send({ type: 'error', message: 'Challenge not found.' });
@@ -92,7 +93,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!todaysChallenge) {
-          logger.warn('Challenge not found for today', { date: today });
+          logger.warn({ date: today }, 'Challenge not found for today');
           return reply
             .status(404)
             .send({ type: 'error', message: 'Challenge not found.' });
@@ -118,9 +119,10 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      logger.info('Received request for month of daily coding challenges', {
-        month: req.params.month
-      });
+      logger.info(
+        { month: req.params.month },
+        'Received request for month of daily coding challenges'
+      );
 
       const { month } = req.params;
 
@@ -132,7 +134,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
 
         // Validate month range
         if (parsedMonth < 1 || parsedMonth > 12) {
-          logger.warn('Invalid month value requested', { month });
+          logger.warn({ month }, 'Invalid month value requested');
           return reply.status(400).send({
             type: 'error',
             message: 'Invalid date format. Please use YYYY-MM.'
@@ -163,7 +165,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
 
         if (!challenges || challenges.length === 0) {
-          logger.warn('No challenges found for month', { month });
+          logger.warn({ month }, 'No challenges found for month');
           return reply
             .status(404)
             .send({ type: 'error', message: 'No challenges found.' });
@@ -216,7 +218,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
           });
 
         if (!allChallenges || allChallenges.length === 0) {
-          logger.warn('No challenges found.', { date: today });
+          logger.warn({ date: today }, 'No challenges found.');
           return reply
             .status(404)
             .send({ type: 'error', message: 'No challenges found.' });

@@ -3,6 +3,7 @@ id: 65d6bc21bbb3fb20d47cd7ed
 title: Task 43
 challengeType: 22
 dashedName: task-43
+lang: en-US
 ---
 
 <!-- (Audio) Tom: I don't really know her, to be honest. What's her role?

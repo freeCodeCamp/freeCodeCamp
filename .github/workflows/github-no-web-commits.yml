@@ -12,11 +12,11 @@ on:
 
 jobs:
   has-web-commits:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check if PR author is allow-listed
         id: pr_author
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -52,7 +52,7 @@ jobs:
           fi
 
       - name: Add comment on PR if commits are made on GitHub Web UI
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

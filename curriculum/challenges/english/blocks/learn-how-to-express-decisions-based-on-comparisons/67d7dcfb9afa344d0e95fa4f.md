@@ -3,6 +3,7 @@ id: 67d7dcfb9afa344d0e95fa4f
 title: Task 122
 challengeType: 22
 dashedName: task-122
+lang: en-US
 ---
 
 <!-- (Audio) Sarah: However, outsourcing can lead to communication issues, which might delay the project. -->
