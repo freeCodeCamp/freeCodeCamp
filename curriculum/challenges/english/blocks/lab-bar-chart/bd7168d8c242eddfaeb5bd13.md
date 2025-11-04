@@ -153,8 +153,8 @@ The bar elements' "data-date" properties should match the order of the provided 
 
 ```js
 const res = await fetch(
-          'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json'
-        ); // TODO probably should mock this. or need updating to link on cdn. anyway move to an hook
+          'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
+        );
 
 if (res.ok) {
   const json = await res.json();
@@ -175,8 +175,8 @@ The bar elements' "data-gdp" properties should match the order of the provided d
 
 ```js
 const res = await fetch(
-          'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json'
-        ); // TODO probably should mock this. or need updating to link on cdn. anyway move to an hook
+          'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
+        );
 
 if (res.ok) {
   const json = await res.json();
