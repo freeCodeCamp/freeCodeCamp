@@ -7,6 +7,6 @@
   "challengeOrder": [
     { "id": "bd7168d8c242eddfaeb5bd13", "title": "Build a Bar Chart" }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

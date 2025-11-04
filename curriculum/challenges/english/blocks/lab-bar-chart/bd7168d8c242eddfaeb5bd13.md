@@ -400,7 +400,7 @@ __helpers.retryingTest(function () {
 When hovering over an area your bar chart should have a tooptip with a corresponding `id="tooltip"` which displays more information about the area.
 
 ```js
-__helpers.retryingTest(function () {
+__helpers.retryingTest(async function () {
   const areas = document.querySelectorAll('.bar');
   let pass = true;
   const firstRequestTimeout = 500;
@@ -447,7 +447,7 @@ __helpers.retryingTest(function () {
 The tooltip should have a `"data-date"` property that corresponds to the `"date-data"` of the active area.
 
 ```js
-__helpers.retryingTest(function () {
+__helpers.retryingTest(async function () {
   let pass = true;
   const areas = document.querySelectorAll('.bar');
   const randomIndex = getRandomIndex(areas.length);
