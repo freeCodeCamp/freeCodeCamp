@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import type { ExperienceData } from '../../../redux/prop-types';
 import { FullWidthRow } from '../../helpers';
@@ -17,6 +18,8 @@ const formatDate = (dateString: string): string => {
 export const ExperienceDisplay = ({
   experience
 }: ExperienceDisplayProps): JSX.Element | null => {
+  const { t } = useTranslation();
+
   if (!experience.length) {
     return null;
   }
@@ -24,7 +27,7 @@ export const ExperienceDisplay = ({
   return (
     <FullWidthRow>
       <section className='card'>
-        <h2>Experience</h2>
+        <h2>{t('profile.experience.heading')}</h2>
         <Spacer size='s' />
         {experience.map((exp, index) => (
           <React.Fragment key={exp.id}>
@@ -43,7 +46,9 @@ export const ExperienceDisplay = ({
               >
                 {formatDate(exp.startDate)}
                 {' - '}
-                {exp.endDate ? formatDate(exp.endDate) : 'Present'}
+                {exp.endDate
+                  ? formatDate(exp.endDate)
+                  : t('profile.experience.present')}
               </p>
               {exp.description && (
                 <p style={{ marginTop: '0.75rem', whiteSpace: 'pre-wrap' }}>

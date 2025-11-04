@@ -127,7 +127,7 @@ function PrivacySettings({ submitProfileUI, user }: PrivacyProps): JSX.Element {
               toggleFlag={toggleFlag('showPortfolio')}
             />
             <ToggleRadioSetting
-              action='My Experience'
+              action={t('settings.labels.my-experience')}
               flag={!privacyValues['showExperience']}
               flagName='showExperience'
               offLabel={t('buttons.public')}

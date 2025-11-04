@@ -320,6 +320,7 @@
       "my-heatmap": "My heatmap",
       "my-certs": "My certifications",
       "my-portfolio": "My portfolio",
+      "my-experience": "My experience",
       "my-timeline": "My timeline",
       "my-donations": "My donations",
       "night-mode": "Night Mode",
@@ -431,7 +432,22 @@
     "page-number": "{{pageNumber}} of {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add Experience",
+      "save": "Save Experience",
+      "remove": "Remove Experience",
+      "job-title": "Job Title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start Date",
+      "end-date": "End Date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present"
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -980,6 +996,7 @@
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
     "portfolio-item-updated": "We have updated your portfolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Email format is invalid",
     "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId is not a valid challenge ID",

@@ -237,7 +237,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-title-input`}>
-              Job Title *
+              {t('profile.experience.job-title')} *
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'title')}
@@ -260,7 +260,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-company-input`}>
-              Company *
+              {t('profile.experience.company')} *
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'company')}
@@ -278,7 +278,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           </FormGroup>
           <FormGroup controlId={`${id}-location`}>
             <ControlLabel htmlFor={`${id}-location-input`}>
-              Location
+              {t('profile.experience.location')}
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'location')}
@@ -295,7 +295,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-startDate-input`}>
-              Start Date *
+              {t('profile.experience.start-date')} *
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'startDate')}
@@ -313,7 +313,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
           </FormGroup>
           <FormGroup controlId={`${id}-endDate`}>
             <ControlLabel htmlFor={`${id}-endDate-input`}>
-              End Date (Leave blank if current position)
+              {t('profile.experience.end-date')} (
+              {t('profile.experience.end-date-helper')})
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'endDate')}
@@ -328,7 +329,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             validationState={pristine ? null : descriptionState}
           >
             <ControlLabel htmlFor={`${id}-description-input`}>
-              Description
+              {t('profile.experience.description')}
             </ControlLabel>
             <FormControl
               componentClass='textarea'
@@ -349,7 +350,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             data-playwright-test-label='save-experience'
             {...(isButtonDisabled && { tabIndex: -1 })}
           >
-            Save Experience
+            {t('profile.experience.save')}
           </BlockSaveButton>
           <Spacer size='xs' />
           <Button
@@ -359,7 +360,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             onClick={() => handleRemoveItem(id)}
             type='button'
           >
-            Remove Experience
+            {t('profile.experience.remove')}
           </Button>
         </form>
         {index + 1 !== arr.length && (
@@ -375,9 +376,9 @@ const ExperienceSettings = (props: ExperienceProps) => {
 
   return (
     <section id='experience-settings'>
-      <SectionHeader>Experience</SectionHeader>
+      <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
       <FullWidthRow>
-        <p>Share your professional experience</p>
+        <p>{t('profile.experience.share-experience')}</p>
         <Spacer size='xs' />
         <Button
           block
@@ -387,7 +388,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           onClick={handleAdd}
           type='button'
         >
-          Add Experience
+          {t('profile.experience.add')}
         </Button>
       </FullWidthRow>
       <Spacer size='l' />
