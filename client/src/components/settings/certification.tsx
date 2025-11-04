@@ -2,7 +2,7 @@ import { find } from 'lodash-es';
 import React, { MouseEvent, useState } from 'react';
 import { withTranslation } from 'react-i18next';
 import type { TFunction } from 'i18next';
-import ScrollableAnchor, { configureAnchors } from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import { connect } from 'react-redux';
 import { Table, Button, Spacer } from '@freecodecamp/ui';
 
@@ -39,21 +39,22 @@ import './certification.css';
 
 const { showUpcomingChanges } = env;
 
-configureAnchors({ offset: -40, scrollDuration: 0 });
-
 const mapDispatchToProps = {
   openModal
 };
 
 const createCertifiedMap = ({
   is2018DataVisCert,
+  isA2EnglishCert,
   isApisMicroservicesCert,
+  isJavascriptCertV9,
   isJsAlgoDataStructCert,
   isInfosecQaCert,
   isQaCertV7,
   isInfosecCertV7,
   isFrontEndLibsCert,
   isRespWebDesignCert,
+  isRespWebDesignCertV9,
   isDataVisCert,
   isFrontEndCert,
   isBackEndCert,
@@ -88,14 +89,14 @@ const createCertifiedMap = ({
   // LegacyFullStack cannot be handled by this because there are no projects to
   // be rendered. The new FullStackDeveloper certification is a normal
   // certification with projects.
-  [Certification.FullStackDeveloper]: false,
-  [Certification.RespWebDesignV9]: false,
-  [Certification.JsV9]: false,
+  [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
+  [Certification.JsV9]: isJavascriptCertV9,
   [Certification.FrontEndDevLibsV9]: false,
   [Certification.PythonV9]: false,
   [Certification.RelationalDbV9]: false,
   [Certification.BackEndDevApisV9]: false,
-  [Certification.A2English]: false,
+  [Certification.FullStackDeveloperV9]: false,
+  [Certification.A2English]: isA2EnglishCert,
   [Certification.B1English]: false,
   [Certification.A2Spanish]: false,
   [Certification.A2Chinese]: false,
@@ -293,7 +294,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     t: TFunction;
   }) => {
     return (
-      <ScrollableAnchor id={`cert-${certSlug}`}>
+      <Element name={`cert-${certSlug}`}>
         <section>
           <FullWidthRow>
             <Spacer size='m' />
@@ -316,7 +317,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
             </Table>
           </FullWidthRow>
         </section>
-      </ScrollableAnchor>
+      </Element>
     );
   };
 

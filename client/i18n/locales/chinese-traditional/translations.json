@@ -391,7 +391,8 @@
     "version": "我們的應用程序的最新版本是：{{version}}。",
     "download-details": "手動下載此應用",
     "unable-to-detect-os": "我們無法檢測到你的操作系統。請手動下載下面的應用程序。",
-    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊："
+    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊：",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
@@ -522,7 +523,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "editor": "編輯器"
+      "terminal": "Terminal",
+      "editor": "編輯器",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -951,7 +954,8 @@
     "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
     "editor-a11y-on-non-macos": "{{editorName}} 編輯器內容。無障礙模式被設置爲 “on”。按 Ctrl+E 關閉或者按 Alt+F1 查看更多選項。",
     "terminal-output": "終端輸出",
-    "not-available": "不可用"
+    "not-available": "不可用",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
@@ -1103,6 +1107,7 @@
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
       "solution": "解決方案",
       "no-solution": "顯示解決方案出錯時，發送電子郵件到 support@freeCodeCamp.org 獲得幫助。",
+      "no-solution-to-display": "No solution to display",
       "source": "來源",
       "footnote": "如果你懷疑其中任何項目違反了<2>學術誠信條例</2>，請<5>向我們的團隊報告</5>。",
       "title": {
@@ -1279,12 +1284,16 @@
   "exam-token": {
     "exam-token": "考試令牌",
     "note": "你的考試令牌是一個密鑰，允許你訪問考試。請勿與任何人分享此令牌。",
-    "invalidation": "如果你生成新的令牌，舊的令牌將失效。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "生成考試令牌",
     "error": "生成令牌時出錯，請稍後再試。",
-    "your-exam-token": "你的考試令牌是：{{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "令牌已複製到剪貼板",
-    "copy-error": "複製令牌到剪貼板時出錯"
+    "copy-error": "複製令牌到剪貼板時出錯",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",

@@ -20,5 +20,9 @@ module.exports = {
 
   './curriculum/challenges/**/*.md': files =>
     files.map(filename => `node ./tools/scripts/lint/index.js '${filename}'`),
-  '*.css': files => files.map(filename => `stylelint --fix '${filename}'`)
+
+  '*.css': files => [
+    ...files.map(filename => `stylelint --fix '${filename}'`),
+    ...files.map(filename => `prettier --write '${filename}'`)
+  ]
 };

@@ -1,7 +1,7 @@
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import { goToAnchor } from 'react-scrollable-anchor';
+import { scroller } from 'react-scroll';
 import { bindActionCreators, Dispatch, AnyAction } from 'redux';
 import { createSelector } from 'reselect';
 import { Modal } from '@freecodecamp/ui';
@@ -67,7 +67,10 @@ function DonateModal({
   const handleModalHide = () => {
     // If modal is open on a SuperBlock page
     if (isLocationSuperBlock(location)) {
-      goToAnchor('claim-cert-block');
+      scroller.scrollTo('claim-cert-block', {
+        duration: 0,
+        smooth: false
+      });
     }
 
     if (isA11yFeatureEnabled && canClose) {

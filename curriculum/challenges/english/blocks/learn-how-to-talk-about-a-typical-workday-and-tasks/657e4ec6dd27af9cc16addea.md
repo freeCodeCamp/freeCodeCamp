@@ -3,6 +3,7 @@ id: 657e4ec6dd27af9cc16addea
 title: Task 79
 challengeType: 19
 dashedName: task-79
+lang: en-US
 ---
 
 <!-- (audio) James: Compliance is when we put specific rules, policies, and regulations that are important to our industry into practice. It helps promote ethics at the workplace. -->

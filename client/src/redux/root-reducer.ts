@@ -13,7 +13,10 @@ import {
   ns as curriculumMapNameSpace,
   reducer as curriculumMap
 } from '../templates/Introduction/redux';
-import { examAttempts } from '../utils/ajax';
+import {
+  examAttempts,
+  examEnvironmentAuthorizationTokenApi
+} from '../utils/ajax';
 import { ns as appNameSpace } from './action-types';
 import { ns as settingsNameSpace, reducer as settings } from './settings';
 import { FlashApp as flashNameSpace } from './types';
@@ -26,5 +29,7 @@ export default combineReducers({
   [flashNameSpace]: flash,
   [searchNameSpace]: search,
   [settingsNameSpace]: settings,
-  [examAttempts.reducerPath]: examAttempts.reducer
+  [examAttempts.reducerPath]: examAttempts.reducer,
+  [examEnvironmentAuthorizationTokenApi.reducerPath]:
+    examEnvironmentAuthorizationTokenApi.reducer
 });

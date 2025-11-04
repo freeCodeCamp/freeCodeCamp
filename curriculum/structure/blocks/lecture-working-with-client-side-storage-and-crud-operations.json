@@ -1,6 +1,6 @@
 {
   "name": "Working with Client-Side Storage and CRUD Operations",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-client-side-storage-and-crud-operations",

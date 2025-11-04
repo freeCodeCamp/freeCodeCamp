@@ -1,0 +1,23 @@
+{
+  "name": "Build a String Transformer",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-string-transformer",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e41084bb275539f72de9fe", "title": "Step 1" },
+    { "id": "68e42b62d7093345c6975f22", "title": "Step 2" },
+    { "id": "68e42de6396f5c49d90d1951", "title": "Step 3" },
+    { "id": "68e43e884ef09d4d2ab05631", "title": "Step 4" },
+    { "id": "68e43f94365a964f26c88f78", "title": "Step 5" },
+    { "id": "68e4417b7317835208145323", "title": "Step 6" },
+    { "id": "68e44519c769bf545bb3f22a", "title": "Step 7" },
+    { "id": "68e4465fba0bd256868b7deb", "title": "Step 8" },
+    { "id": "68e448ec4ac4205968c0a805", "title": "Step 9" },
+    { "id": "68e44abea678a65b877864dc", "title": "Step 10" },
+    { "id": "68e44c305f1f935d949d76bb", "title": "Step 11" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

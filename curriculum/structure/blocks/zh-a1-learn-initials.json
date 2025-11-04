@@ -1,0 +1,14 @@
+{
+  "name": "Initials",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-initials",
+  "helpCategory": "English",
+  "blockLayout": "dialogue-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3f2d0b9700f0493346cb",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}

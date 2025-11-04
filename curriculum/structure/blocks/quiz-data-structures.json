@@ -1,6 +1,6 @@
 {
   "name": "Data Structures Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "quiz-data-structures",

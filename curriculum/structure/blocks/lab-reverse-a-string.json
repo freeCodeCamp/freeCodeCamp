@@ -1,7 +1,7 @@
 {
   "name": "Build a String Inverter",
   "isUpcomingChange": false,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-reverse-a-string",
   "helpCategory": "JavaScript",
