@@ -7562,12 +7562,12 @@
     "intro": ["Introdução de Espaço Reservado"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao A1 Espanhol Profissional",
-      "es-a1-chapter-the-spanish-alphabet": "Letras e Sons",
+      "es-a1-chapter-letters-and-sounds": "Letras e Sons",
       "es-a1-chapter-greetings-and-introductions": "Saudações e Apresentações"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introdução e Visão Geral da Certificação",
-      "es-a1-module-alphabet-and-special-characters": "Alfabeto, Acentos e Pontuação",
+      "es-a1-module-alphabet-accents-and-punctuation": "Alfabeto, Acentos e Pontuação",
       "es-a1-module-greetings-and-farewells": "Saudações e Despedidas",
       "es-a1-module-introducing-yourself": "Apresentando-se",
       "es-a1-module-first-questions": "Primeiras Perguntas"
@@ -7577,7 +7577,7 @@
         "note": "Inverno de 2025",
         "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-alphabet-accents-and-punctuation": {
         "note": "Inverno de 2025",
         "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
       },
@@ -7627,7 +7627,7 @@
         "title": "Pontuação",
         "intro": ["", ""]
       },
-      "es-a1-quiz-the-alphabet": {
+      "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
         "title": "Questionário de Alfabeto, Acentos e Pontuação",
         "intro": ["", ""]
       },

@@ -7448,12 +7448,12 @@
     "intro": ["Placeholder intro"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
+      "es-a1-chapter-letters-and-sounds": "Letters and Sounds",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
+      "es-a1-module-alphabet-accents-and-punctuation": "Alphabet, Accents, and Punctuation",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions"
@@ -7463,7 +7463,7 @@
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-alphabet-accents-and-punctuation": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
@@ -7513,8 +7513,8 @@
         "title": "Punctuation",
         "intro": ["", ""]
       },
-      "es-a1-quiz-the-spanish-alphabet": {
-        "title": "The Spanish Alphabet Quiz",
+      "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
+        "title": "Alphabet, Accent and Punctuation Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
