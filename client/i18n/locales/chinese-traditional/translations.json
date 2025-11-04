@@ -118,6 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放鍵",
     "download-latest-version": "下載最新版本",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,6 +388,8 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "下載 freeCodeCamp 考試環境應用程序",
     "explanation": "要獲得認證，你必須參加考試以檢驗對所學知識的掌握程度。參加考試完全免費。",
     "version": "我們的應用程序的最新版本是：{{version}}。",
@@ -893,7 +897,8 @@
     "fsd-b-benefit-2-title": "專業認證",
     "fsd-b-benefit-2-description": "通過一個官方的可驗證的認證證明你的技能。",
     "fsd-b-benefit-3-title": "500+ 練習",
-    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。"
+    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -1002,6 +1007,7 @@
     "not-eligible": "這個用戶目前不符合 freeCodeCamp.org 認證的條件。",
     "profile-private": "{{username}} 已選擇將他們的個人資料設爲私密。他們需要公開他們的個人資料，以便其他人能夠查看他們的認證。",
     "certs-private": "{{username}} 已將其作品集設置爲僅自己可見。用戶需要將認證設置爲公開，其他人才能查看該用戶的認證。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} 未接受我們的《學術誠信條例》。",
     "user-not-certified": "用戶 {{username}} 似乎未獲得 {{cert}} 認證",
     "invalid-challenge": "這似乎不是一個有效的提交",

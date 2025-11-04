@@ -3081,6 +3081,12 @@
           "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
@@ -3121,6 +3127,13 @@
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -8648,14 +8661,8 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
+      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
+      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
