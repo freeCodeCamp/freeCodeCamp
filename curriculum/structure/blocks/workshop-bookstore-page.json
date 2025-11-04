@@ -1,6 +1,6 @@
 {
   "name": "Build a Bookstore Page",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-bookstore-page",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
