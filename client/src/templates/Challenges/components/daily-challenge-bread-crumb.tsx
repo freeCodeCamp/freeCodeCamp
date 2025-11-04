@@ -23,7 +23,7 @@ function DailyChallengeBreadCrumb({
     >
       <ol data-playwright-test-label='breadcrumb-desktop'>
         <li className='breadcrumb-left'>
-          <Link to={`/learn`}>
+          <Link to={`/learn/daily-coding-challenge/archive`}>
             <span>{i18next.t(`intro:daily-coding-challenge.title`)}</span>
           </Link>
         </li>
