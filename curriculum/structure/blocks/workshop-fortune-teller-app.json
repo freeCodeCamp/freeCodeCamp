@@ -62,6 +62,6 @@
     { "id": "68f1ee5e2a1142b0aa64b941", "title": "Step 54" },
     { "id": "68f1eeb928a209b4ebd79688", "title": "Step 55" }
   ],
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "usesMultifileEditor": true
 }
