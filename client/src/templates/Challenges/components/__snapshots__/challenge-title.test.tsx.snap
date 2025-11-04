@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`<ChallengeTitle/> > renders correctly 1`] = `
+exports[\`<ChallengeTitle/> > renders correctly 1\`] = \`
 <div
   className="challenge-title-wrap"
 >
@@ -15,6 +15,7 @@ exports[`<ChallengeTitle/> > renders correctly 1`] = `
     </h1>
     <svg
       aria-label="icons.passed"
+      className="green-pass-icon"
       height="15"
       viewBox="0 0 200 200"
       width="15"
@@ -27,17 +28,15 @@ exports[`<ChallengeTitle/> > renders correctly 1`] = `
           icons.passed
         </title>
         <circle
+          className="pass-circle"
           cx="100"
           cy="99"
-          fill="var(--primary-color)"
           r="95"
-          stroke="var(--primary-color)"
           strokeDasharray="null"
         />
         <rect
-          fill="var(--primary-background)"
+          className="pass-checkmark"
           height="30"
-          stroke="var(--primary-background)"
           strokeDasharray="null"
           transform="rotate(-45, 120, 106.321)"
           width="128.85878"
@@ -45,9 +44,8 @@ exports[`<ChallengeTitle/> > renders correctly 1`] = `
           y="91.32089"
         />
         <rect
-          fill="var(--primary-background)"
+          className="pass-checkmark"
           height="30"
-          stroke="var(--primary-background)"
           strokeDasharray="null"
           transform="rotate(45, 66.75, 123.75)"
           width="80.66548"
@@ -58,4 +56,4 @@ exports[`<ChallengeTitle/> > renders correctly 1`] = `
     </svg>
   </div>
 </div>
-`;
+\`;
