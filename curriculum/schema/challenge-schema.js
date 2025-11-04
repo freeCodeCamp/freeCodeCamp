@@ -5,7 +5,8 @@ const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks,
-  languageSuperBlocks
+  languageSuperBlocks,
+  SuperBlocks
 } = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
@@ -231,6 +232,15 @@ const schema = Joi.object().keys({
   lang: Joi.string().when('superBlock', {
     is: languageSuperBlocks,
     then: Joi.valid('en-US', 'es', 'zh-CN').required(),
+    otherwise: Joi.forbidden()
+  }),
+  inputType: Joi.when('challengeType', {
+    is: challengeTypes.fillInTheBlank,
+    then: Joi.when('superBlock', {
+      is: Joi.valid(SuperBlocks.A1Chinese, SuperBlocks.A2Chinese),
+      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional(),
+      otherwise: Joi.forbidden()
+    }),
     otherwise: Joi.forbidden()
   }),
   instructions: Joi.string().when('challengeType', {
