@@ -89,7 +89,7 @@ Your fetchCardsData method should be `asynchronous`.
         <button class="btn_reveal">New Reading</button>
       </section>
     </main>
-    <script src="script.ts" type="module"></script>
+    <script src="index.ts" type="module"></script>
   </body>
 </html>
 ```
