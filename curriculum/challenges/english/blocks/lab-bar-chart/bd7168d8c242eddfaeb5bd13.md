@@ -241,37 +241,37 @@ assert.exists(document.getElementById('title'));
 The chart should have a `g` element x-axis with a corresponging id `x-axis`.
 
 ```js
-__helpers.retryingTest(() => document.querySelector('g#x-axis'), "g element with id x-axis not found");
+await __helpers.retryingTest(() => document.querySelector('g#x-axis'), "g element with id x-axis not found");
 ```
 
 The chart should have a `g` element y-axis with a corresponding id `y-axis`.
 
 ```js
-__helpers.retryingTest(() => document.querySelector('g#y-axis'), 'element g#y-axis not found');
+await __helpers.retryingTest(() => document.querySelector('g#y-axis'), 'element g#y-axis not found');
 ```
 
 The x axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
 
 ```js
-__helpers.retryingTest(() => document.querySelectorAll('#x-axis .tick').length > 1, 'There are not enough tick labels on the x-axis');
+await __helpers.retryingTest(() => document.querySelectorAll('#x-axis .tick').length > 1, 'There are not enough tick labels on the x-axis');
 ```
 
 The y axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
 
 ```js
-__helpers.retryingTest(() => document.querySelectorAll('#y-axis .tick').length > 1, 'There are not enough tick labels on the y-axis');
+await __helpers.retryingTest(() => document.querySelectorAll('#y-axis .tick').length > 1, 'There are not enough tick labels on the y-axis');
 ```
 
 My Chart should have a <rect> element for each data point with a corresponding class="bar" displaying the data
 
 ```js
-__helpers.retryingTest(() => document.querySelectorAll('rect.bar').length === 275, "The number of bars is not equal to the number of data points");
+await __helpers.retryingTest(() => document.querySelectorAll('rect.bar').length === 275, "The number of bars is not equal to the number of data points");
 ```
 
 Each bar should have the properties "data-date" and "data-gdp" containing date and GDP values
 
 ```js
-__helpers.retryingTest(() => {
+await __helpers.retryingTest(() => {
   const bars = document.querySelectorAll('rect.bar');
   if (!bars) return;
 
@@ -288,7 +288,7 @@ const res = await fetch(
 
 if (res.ok) {
   const json = await res.json();
-  __helpers.retryingTest(() => {
+  await __helpers.retryingTest(() => {
     const bars = document.querySelectorAll('rect.bar');
     if (!bars) return;
 
@@ -310,7 +310,7 @@ const res = await fetch(
 
 if (res.ok) {
   const json = await res.json();
-  __helpers.retryingTest(() => {
+  await __helpers.retryingTest(() => {
     const bars = document.querySelectorAll('rect.bar');
     if (!bars) return;
 
@@ -326,7 +326,7 @@ if (res.ok) {
 Each bar element's height should accurately represent the data's corresponding GDP
 
 ```js
-__helpers.retryingTest(() => {
+await __helpers.retryingTest(() => {
   const bars = document.querySelectorAll('rect.bar');
   // get the ratio of the first data point to the height of the first bar
   const firstRatio =
@@ -345,7 +345,7 @@ __helpers.retryingTest(() => {
 The data-date attribute and its corresponding bar element should align with the corresponding value on the x-axis.
 
 ```js
-__helpers.retryingTest(function () {
+await __helpers.retryingTest(function () {
         const axis = document.querySelector('#x-axis');
         const coordAttr = 'x';
         const barsCollection = document.querySelectorAll('.bar');
@@ -374,7 +374,7 @@ __helpers.retryingTest(function () {
 The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.
 
 ```js
-__helpers.retryingTest(function () {
+await __helpers.retryingTest(function () {
   const axis = document.querySelector('#y-axis');
   const coordAttr = 'y';
   const barsCollection = document.querySelectorAll('.bar');
@@ -400,7 +400,7 @@ __helpers.retryingTest(function () {
 When hovering over an area your bar chart should have a tooptip with a corresponding `id="tooltip"` which displays more information about the area.
 
 ```js
-__helpers.retryingTest(async function () {
+await __helpers.retryingTest(async function () {
   const areas = document.querySelectorAll('.bar');
   let pass = true;
   const firstRequestTimeout = 500;
@@ -447,7 +447,7 @@ __helpers.retryingTest(async function () {
 The tooltip should have a `"data-date"` property that corresponds to the `"date-data"` of the active area.
 
 ```js
-__helpers.retryingTest(async function () {
+await __helpers.retryingTest(async function () {
   let pass = true;
   const areas = document.querySelectorAll('.bar');
   const randomIndex = getRandomIndex(areas.length);
