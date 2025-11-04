@@ -3,6 +3,7 @@ id: 67dd5baa84d2fcc56c09dce3
 title: Task 15
 challengeType: 22
 dashedName: task-15
+lang: en-US
 ---
 
 <!-- (Audio) James: By the way, did we decide on the deadline for the first phase? -->

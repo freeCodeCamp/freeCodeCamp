@@ -1,6 +1,6 @@
 {
   "name": "Debugging Techniques",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-debugging-techniques",

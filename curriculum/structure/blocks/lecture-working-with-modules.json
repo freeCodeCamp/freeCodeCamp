@@ -2,7 +2,7 @@
   "name": "Working with Modules",
   "isUpcomingChange": false,
   "dashedName": "lecture-working-with-modules",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

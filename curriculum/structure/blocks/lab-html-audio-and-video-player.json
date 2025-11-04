@@ -10,6 +10,6 @@
       "title": "Build an HTML Audio and Video Player"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

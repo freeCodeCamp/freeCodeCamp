@@ -1,0 +1,19 @@
+{
+  "name": "Build an Accessible Audio Controller",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-accessible-audio-controller",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e6aff5325410118e76e7be", "title": "Step 1" },
+    { "id": "68eac57fadcc662ce917e75e", "title": "Step 2" },
+    { "id": "68eb7f2397da251a40e04aa2", "title": "Step 3" },
+    { "id": "68ec0a48c9d6db3594d768c3", "title": "Step 4" },
+    { "id": "68ed3a96e0ebcc36565b39e5", "title": "Step 5" },
+    { "id": "68ed4204ab7edc66b6cb2383", "title": "Step 6" },
+    { "id": "68ed488821845990c911a223", "title": "Step 7" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

@@ -7,6 +7,7 @@ import { pick, omit } from 'lodash-es';
 const nullableFlags = [
   'is2018DataVisCert',
   'is2018FullStackCert',
+  'isA2EnglishCert',
   'isApisMicroservicesCert',
   'isBackEndCert',
   'isCheater',

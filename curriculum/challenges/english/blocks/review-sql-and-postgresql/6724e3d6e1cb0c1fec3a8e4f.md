@@ -1,0 +1,392 @@
+---
+id: 6724e3d6e1cb0c1fec3a8e4f
+title: SQL and PostgreSQL Review
+challengeType: 31
+dashedName: review-sql-and-postgresql
+---
+
+# --description--
+
+## Introduction to Relational Databases
+
+- **Relational Databases**: Organize data into related tables made of rows and columns. Each row represents a record, and each column represents an attribute of the data.
+- **Advantages of Relational Databases**: Scalable, widely applicable across domains (e.g., healthcare, business, gaming), and structured to maintain reliable data.
+- **Common Use Cases**: Web development, inventory systems, e-commerce, healthcare, and enterprise applications.
+
+## Key Concepts
+
+- **Schema**: A relational database requires a schema that defines its structure—tables, columns, data types, constraints, and relationships.
+- **Primary Keys**: Unique identifiers for each row in a table. They are essential for data integrity and are used to relate records between tables via foreign keys.
+- **Foreign Keys**: References to primary keys in another table, used to link related data across tables.
+- **Relationships**: By connecting tables through primary and foreign keys, you can structure normalized data and perform meaningful queries.
+- **Entity Relationship Diagrams (ERDs)**: Visualize how entities (tables) relate to each other in a database schema.
+- **Data Integrity**: Enforced using keys and data types. Ensures consistency and accuracy of stored data.
+
+## SQL Basics
+
+- **Queries**: Requests to retrieve specific data from the database.
+
+```sql
+SELECT * FROM dogs WHERE age < 3;
+```
+
+- **WHERE clause**: Filter results based on conditions. Use comparison operators like `<`, `=`, `>`, etc.
+- **Select with ORDER BY**: Retrieve and sort results based on a column.
+
+```sql
+SELECT columns FROM table_name ORDER BY column_name;
+```
+
+## Table Operations
+
+- **`CREATE TABLE` Statement**: This statement is used to create a new table in a database.
+
+```sql
+CREATE TABLE first_table();
+```
+
+- **`ALTER TABLE ADD COLUMN` Statement**: This statement is used to add a column to an existing table.
+
+```sql
+ALTER TABLE table_name ADD COLUMN column_name DATATYPE;
+```
+
+- **`ALTER TABLE DROP COLUMN` Statement**: This statement is used to drop a column from an existing table.
+
+```sql
+ALTER TABLE table_name DROP COLUMN column_name;
+```
+
+- **`ALTER TABLE RENAME COLUMN` Statement**: This statement is used to rename a column in a table.
+
+```sql
+ALTER TABLE table_name RENAME COLUMN column_name TO new_name;
+```
+
+- **`DROP TABLE` Statement**: This statement is used to drop an entire table from the database.
+
+```sql
+DROP TABLE table_name;
+```
+
+- **`ALTER DATABASE RENAME` Statement**: This statement is used to rename a database.
+
+```sql
+ALTER DATABASE database_name RENAME TO new_database_name;
+```
+
+- **`DROP DATABASE` Statement**: This statement is used to drop an entire database.
+
+```sql
+DROP DATABASE database_name;
+```
+
+## Constraints & Data Integrity
+
+- **`ALTER TABLE ADD COLUMN` with Constraint**: This statement is used to add a column with a constraint to an existing table.
+
+```sql
+ALTER TABLE table_name ADD COLUMN column_name DATATYPE CONSTRAINT;
+```
+
+- **`NOT NULL` Constraint**: This constraint ensures that a column cannot have NULL values.
+
+```sql
+column_name VARCHAR(50) NOT NULL
+```
+
+- **`ALTER TABLE ADD PRIMARY KEY` Statement**: This statement is used to add a primary key constraint to a table.
+
+```sql
+ALTER TABLE table_name ADD PRIMARY KEY(column_name);
+```
+
+- **`ALTER TABLE DROP CONSTRAINT` Statement**: This statement is used to drop a constraint from a table.
+
+```sql
+ALTER TABLE table_name DROP CONSTRAINT constraint_name;
+```
+
+- **`ALTER TABLE ADD COLUMN` with Foreign Key**: This statement is used to add a foreign key column that references another table.
+
+```sql
+ALTER TABLE table_name ADD COLUMN column_name DATATYPE REFERENCES referenced_table_name(referenced_column_name);
+```
+
+- **`ALTER TABLE ADD UNIQUE` Statement**: This statement is used to add a UNIQUE constraint to a column.
+
+```sql
+ALTER TABLE table_name ADD UNIQUE(column_name);
+```
+
+- **`ALTER TABLE ALTER COLUMN SET NOT NULL` Statement**: This statement is used to set a NOT NULL constraint on an existing column.
+
+```sql
+ALTER TABLE table_name ALTER COLUMN column_name SET NOT NULL;
+```
+
+- **`INSERT` Statement with NULL Values**: This statement demonstrates how to insert NULL values into a table.
+
+```sql
+INSERT INTO table_name(column_a) VALUES(NULL);
+-- or
+INSERT INTO table_name(column_b) VALUES('value'); -- if column_a allows nulls
+```
+
+- **Composite Primary Key**: This constraint defines a primary key that consists of multiple columns.
+
+```sql
+CREATE TABLE course_enrollments (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id)
+);
+```
+
+## Data Manipulation (CRUD)
+
+- **`INSERT` Statement**: This statement is used to insert a single row into a table.
+
+```sql
+INSERT INTO table_name(column_1, column_2) VALUES(value1, value2);
+```
+
+- **`INSERT` Statement with Omitted Columns**: This statement shows how to insert values without explicitly listing the column names, relying on the default column order in the table.
+
+```sql
+INSERT INTO dogs VALUES ('Gino', 3);
+```
+
+- **`INSERT` Statement with Multiple Rows**: This statement is used to insert multiple rows into a table in a single operation.
+
+```sql
+INSERT INTO dogs (name, age) VALUES 
+('Gino', 3),
+('Nora', 2);
+```
+
+- **`UPDATE` Statement**: This statement is used to update existing data in a table based on a condition.
+
+```sql
+UPDATE table_name SET column_name=new_value WHERE condition;
+```
+
+- **`DELETE` Statement**: This statement is used to delete rows from a table based on a condition.
+
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+## Data Types
+
+- **`NUMERIC` Data Type**: This data type is used to store precise decimal numbers with a specified precision and scale.
+
+```sql
+price NUMERIC(10, 2)
+```
+
+- **`TEXT` Data Type**: This data type is used to store variable-length character strings with no specific length limit.
+
+```sql
+column_name TEXT
+```
+
+- **`INTEGER` Data Type**: This data type is used to store whole numbers without decimal places.
+
+```sql
+units_sold INTEGER
+```
+
+- **`SMALLINT` and `BIGINT` Data Types**: These are variants of INTEGER with smaller and larger ranges respectively.
+
+- **`SERIAL` Data Type**: This data type is used to create auto-incrementing integer columns in PostgreSQL.
+
+```sql
+id SERIAL
+```
+
+- **`AUTO_INCREMENT` Attribute**: This attribute is used in MySQL to create auto-incrementing integer columns.
+
+```sql
+id INT AUTO_INCREMENT
+```
+
+- **`VARCHAR` Data Type**: This data type is used to store variable-length character strings with a specified maximum length.
+
+```sql
+name VARCHAR(50)
+```
+
+- **`DATE` Data Type**: This data type is used to store date values (year, month, day).
+
+```sql
+event_date DATE
+```
+
+- **`TIME` Data Type**: This data type is used to store time values (hour, minute, second).
+
+```sql
+start_time TIME
+```
+
+- **`TIMESTAMP` Data Type**: This data type is used to store date and time values, optionally with time zone information.
+
+```sql
+event_timestamp TIMESTAMP
+event_timestamp TIMESTAMP WITH TIME ZONE
+```
+
+- **`BOOLEAN` Data Type**: This data type is used to store true/false values.
+
+```sql
+is_active BOOLEAN
+```
+
+## Database Relationships
+
+- **Types of Relationships**: These are the different ways tables can be related to each other in a relational database.
+  - One-to-one
+  - One-to-many
+  - Many-to-one
+  - Many-to-many
+  - Self-referencing (recursive)
+
+- **One-to-One Relationship**: This relationship type means that each record in one table corresponds to exactly one record in another table.
+
+```md
+One employee is assigned exactly one vehicle.
+Tables: employees, vehicles
+```
+
+- **One-to-Many Relationship**: This relationship type means that one record in a table can be associated with multiple records in another table.
+
+```md
+One customer can have many orders.
+Tables: customers → orders
+```
+
+- **Many-to-Many Relationship via Junction Table**: This relationship type is implemented using a junction table that contains foreign keys from both related tables.
+
+```sql
+CREATE TABLE books_authors (
+    author_id INT REFERENCES authors(id),
+    book_id INT REFERENCES books(id)
+);
+```
+
+- **Self-Referencing Relationships**: This relationship type occurs when a table references itself, creating a hierarchical structure.
+
+```md
+An employee table where each employee may report to another employee.
+```
+
+## Advanced SQL (Joins)
+
+- **`INNER JOIN` Statement**: This join returns only the rows that have matching values in both tables.
+
+```sql
+SELECT *
+FROM products
+INNER JOIN sales ON products.product_id = sales.product_id;
+```
+
+- **`FULL OUTER JOIN` Statement**: This join returns all rows from both tables, including unmatched rows from either table.
+
+```sql
+SELECT *
+FROM products
+FULL OUTER JOIN sales ON products.product_id = sales.product_id;
+```
+
+- **`LEFT OUTER JOIN` Statement**: This join returns all rows from the left table and matching rows from the right table.
+
+```sql
+SELECT *
+FROM products
+LEFT JOIN sales ON products.product_id = sales.product_id;
+```
+
+- **`RIGHT OUTER JOIN` Statement**: This join returns all rows from the right table and matching rows from the left table.
+
+```sql
+SELECT *
+FROM products
+RIGHT JOIN sales ON products.product_id = sales.product_id;
+```
+
+- **`SELF JOIN` Statement**: This join is used to join a table with itself to compare rows within the same table.
+
+```sql
+SELECT A.column_name, B.column_name
+FROM table_name A
+JOIN table_name B ON A.related_column = B.related_column;
+```
+
+- **`CROSS JOIN` Statement**: This join returns the Cartesian product of two tables, combining every row from the first table with every row from the second table.
+
+```sql
+SELECT *
+FROM table1
+CROSS JOIN table2;
+```
+
+## PostgreSQL Specific Commands
+
+- **`psql` Login Command**: This command is used to log in to PostgreSQL with specific username and database.
+
+```bash
+psql --username=freecodecamp --dbname=postgres
+```
+
+- **`\l` Command**: This command lists all databases in the PostgreSQL instance.
+
+```sql
+\l
+```
+
+- **`CREATE DATABASE` and `\c` Commands**: These commands are used to create a new database and connect to it.
+
+```sql
+CREATE DATABASE database_name;
+\c database_name
+```
+
+- **`\d` Command**: This command lists all tables in the current database.
+
+```sql
+\d
+```
+
+- **`\d table_name` Command**: This command displays the schema/structure of a specific table.
+
+```sql
+\d table_name
+```
+
+- **`\q` Command**: This command exits the PostgreSQL client.
+
+```bash
+\q
+```
+
+## Relational vs Non-Relational
+
+- **Non-Relational (NoSQL) Databases**: Store unstructured or semi-structured data. Do not require a rigid schema and are more flexible for evolving data models.
+- **Choosing Between Relational and Non-Relational**: Depends on the nature of your data and application requirements.
+- **Relational vs Non-Relational**: Choose relational for structured data and consistency; NoSQL for flexibility and fast-changing data.
+
+## Popular RDBMS Systems
+
+- **MySQL**: Open-source, reliable, widely used in web development, supported by a large community.
+- **PostgreSQL**: Open-source, advanced, extensible. Supports custom data types and server-side programming.
+- **SQLite**: Lightweight, file-based, serverless. Ideal for small applications.
+- **Microsoft SQL Server**: Proprietary, enterprise-grade database.
+- **Oracle Database**: Commercial RDBMS known for large-scale performance and scalability.
+
+## Best Practices
+
+- **Naming Convention**: Use `snake_case` (e.g., `delivery_orders`) for table and column names.
+
+# --assignment--
+
+Review SQL and PostgreSQL topics and concepts.

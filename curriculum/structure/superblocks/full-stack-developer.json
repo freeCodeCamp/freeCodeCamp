@@ -34,7 +34,9 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -64,6 +66,7 @@
             "lecture-accessible-tables-forms",
             "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -154,6 +157,7 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
             "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
@@ -293,7 +297,9 @@
             "workshop-teacher-chatbot",
             "lecture-working-with-string-character-methods",
             "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
             "review-javascript-strings",
@@ -304,7 +310,9 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
@@ -721,6 +729,7 @@
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
+            "lab-planet-class",
             "workshop-email-simulator",
             "lab-budget-app",
             "review-classes-and-objects",
@@ -733,10 +742,13 @@
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
+            "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]
@@ -774,7 +786,9 @@
           "blocks": [
             "lecture-understanding-graphs-and-trees",
             "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
             "lab-depth-first-search",
+            "lab-n-queens-problem",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
@@ -799,11 +813,9 @@
     },
     {
       "dashedName": "relational-databases",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-the-command-line-and-working-with-bash",
             "workshop-bash-boilerplate",
@@ -812,19 +824,17 @@
           ]
         },
         {
-          "dashedName": "relational-databases",
-          "comingSoon": true,
+          "dashedName": "sql-and-postgresql",
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
             "lab-celestial-bodies-database",
-            "review-relational-database",
-            "quiz-relational-database"
+            "review-sql-and-postgresql",
+            "quiz-sql-and-postgresql"
           ]
         },
         {
           "dashedName": "bash-scripting",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-bash-scripting",
             "workshop-bash-five-programs",
@@ -834,7 +844,6 @@
         },
         {
           "dashedName": "sql-and-bash",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-sql",
             "workshop-sql-student-database-part-1",
@@ -849,7 +858,6 @@
         },
         {
           "dashedName": "git",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
@@ -864,7 +872,6 @@
         },
         {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-relational-databases",
           "blocks": ["review-relational-databases"]
         }
@@ -887,7 +894,7 @@
         {
           "dashedName": "http-and-the-web-standards-model",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-understanding-the-http-request-response-model"]
         },
         {
           "dashedName": "rest-api-and-web-services",

@@ -6,7 +6,10 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
-import { examAttempts } from '../utils/ajax';
+import {
+  examAttempts,
+  examEnvironmentAuthorizationTokenApi
+} from '../utils/ajax';
 import rootEpic from './root-epic';
 import rootReducer from './root-reducer';
 import rootSaga from './root-saga';
@@ -44,8 +47,13 @@ export const createStore = (preloadedState = {}) => {
     store = reduxCreateStore(
       rootReducer,
       preloadedState,
-      // @ts-expect-error RTK uses unknown, Redux uses any
-      applyMiddleware(sagaMiddleware, epicMiddleware, examAttempts.middleware)
+      applyMiddleware(
+        sagaMiddleware,
+        epicMiddleware,
+        // @ts-expect-error RTK uses unknown, Redux uses any
+        examAttempts.middleware,
+        examEnvironmentAuthorizationTokenApi.middleware
+      )
     );
   } else {
     // store = reduxCreateStore(
@@ -63,6 +71,7 @@ export const createStore = (preloadedState = {}) => {
       middleware: getDefaultMiddleware => {
         return getDefaultMiddleware()
           .concat(examAttempts.middleware)
+          .concat(examEnvironmentAuthorizationTokenApi.middleware)
           .concat(sagaMiddleware)
           .concat(epicMiddleware);
       },

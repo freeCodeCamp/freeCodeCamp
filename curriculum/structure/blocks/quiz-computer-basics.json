@@ -1,6 +1,6 @@
 {
   "name": "Computer Basics Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-computer-basics",

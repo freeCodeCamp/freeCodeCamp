@@ -1,6 +1,6 @@
 {
   "name": "Introduction to TypeScript",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-introduction-to-typescript",

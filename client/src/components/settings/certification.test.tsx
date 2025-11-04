@@ -262,6 +262,7 @@ const defaultTestProps = {
   ],
   createFlashMessage: createFlashMessage,
   is2018DataVisCert: false,
+  isA2EnglishCert: false,
   isApisMicroservicesCert: false,
   isBackEndCert: false,
   isDataVisCert: true,

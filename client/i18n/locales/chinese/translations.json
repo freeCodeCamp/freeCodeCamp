@@ -118,6 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,12 +388,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "下载 freeCodeCamp 考试环境应用程序",
     "explanation": "要获得认证，你必须参加考试以检验对所学知识的掌握程度。参加考试完全免费。",
     "version": "我们的应用程序的最新版本是：{{version}}。",
     "download-details": "手动下载此应用",
     "unable-to-detect-os": "我们无法检测到你的操作系统。请手动下载下面的应用程序。",
-    "download-trouble": "如果在下载正确版本时遇到问题，请随时联系支持团队："
+    "download-trouble": "如果在下载正确版本时遇到问题，请随时联系支持团队：",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "你需要更改你的隐私设置，才能让他人看到你的作品集。这是你的作品集公开时候的预览。",
@@ -522,7 +527,9 @@
       "instructions": "说明",
       "notes": "注意",
       "preview": "预览",
-      "editor": "编辑器"
+      "terminal": "Terminal",
+      "editor": "编辑器",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下选项卡将插入选项卡字符",
@@ -890,7 +897,8 @@
     "fsd-b-benefit-2-title": "专业认证",
     "fsd-b-benefit-2-description": "通过一个官方的可验证的认证证明你的技能。",
     "fsd-b-benefit-3-title": "500+ 练习",
-    "fsd-b-benefit-3-description": "通过大量实践巩固你的知识。"
+    "fsd-b-benefit-3-description": "通过大量实践巩固你的知识。",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -951,7 +959,8 @@
     "editor-a11y-on-macos": "{{editorName}} 编辑器模式。无障碍模式被设置为 “on”。按 Command+E 关闭或按 Option+F1 查看更多选项。",
     "editor-a11y-on-non-macos": "{{editorName}} 编辑器内容。无障碍模式被设置为 “on”。按 Ctrl+E 关闭或者按 Alt+F1 查看更多选项。",
     "terminal-output": "终端输出",
-    "not-available": "不可用"
+    "not-available": "不可用",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "我们无法从你所选的供应商处获取该电子邮件。请尝试其他供应商，或者使用“继续使用电子邮件”选项。",
@@ -998,6 +1007,7 @@
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",
     "profile-private": "{{username}} 已选择将他们的个人资料设为私密。他们需要公开他们的个人资料，以便其他人能够查看他们的认证。",
     "certs-private": "{{username}} 已将其作品集设置为仅自己可见。用户需要将认证设置为公开，其他人才能查看该用户的认证。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} 未接受我们的《学术诚信条例》。",
     "user-not-certified": "用户 {{username}} 似乎未获得 {{cert}} 认证",
     "invalid-challenge": "这似乎不是一个有效的提交",
@@ -1103,6 +1113,7 @@
       "heading": "作为此认证的一部分，{{user}} 构建了以下项目，并通过所有自动测试：",
       "solution": "解决方案",
       "no-solution": "显示解决方案出错时，发送电子邮件到 support@freeCodeCamp.org 获得帮助。",
+      "no-solution-to-display": "No solution to display",
       "source": "来源",
       "footnote": "如果你怀疑其中任何项目违反了<2>学术诚信条例</2>，请<5>向我们的团队报告</5>。",
       "title": {
@@ -1279,12 +1290,16 @@
   "exam-token": {
     "exam-token": "考试令牌",
     "note": "你的考试令牌是一个密钥，允许你访问考试。请勿与任何人分享此令牌。",
-    "invalidation": "如果你生成新的令牌，旧的令牌将失效。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "生成考试令牌",
     "error": "生成令牌时出错，请稍后再试。",
-    "your-exam-token": "你的考试令牌是：{{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "令牌已复制到剪贴板",
-    "copy-error": "复制令牌到剪贴板时出错"
+    "copy-error": "复制令牌到剪贴板时出错",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "键盘快捷键",

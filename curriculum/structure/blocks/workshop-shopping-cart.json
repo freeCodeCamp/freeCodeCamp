@@ -1,6 +1,6 @@
 {
   "name": "Build a Shopping Cart",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
