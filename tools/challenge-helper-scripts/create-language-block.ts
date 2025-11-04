@@ -31,7 +31,11 @@ import {
   updateChapterModuleSuperblockStructure
 } from './helpers/create-project';
 
-const helpCategories = ['English'] as const;
+const helpCategories = [
+  'English',
+  'Chinese Curriculum',
+  'Spanish Curriculum'
+] as const;
 
 type BlockInfo = {
   title: string;
