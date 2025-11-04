@@ -166,6 +166,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               showName: req.body.profileUI.showName,
               showPoints: req.body.profileUI.showPoints,
               showPortfolio: req.body.profileUI.showPortfolio,
+              showExperience: req.body.profileUI.showExperience,
               showTimeLine: req.body.profileUI.showTimeLine
             }
           }
@@ -695,6 +696,53 @@ ${isLinkSentWithinLimitTTL}`
 
         return {
           message: 'flash.portfolio-item-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        logger.error(err);
+        fastify.Sentry.captureException(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-experience',
+    {
+      schema: schemas.updateMyExperience
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      try {
+        const experience = req.body.experience.map(
+          ({
+            id,
+            title,
+            company,
+            location,
+            startDate,
+            endDate,
+            description
+          }) => ({
+            id: id ? id : '',
+            title: title ? title : '',
+            company: company ? company : '',
+            location: location ? location : null,
+            startDate: startDate ? startDate : '',
+            endDate: endDate ? endDate : null,
+            description: description ? description : ''
+          })
+        );
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            experience
+          }
+        });
+
+        return {
+          message: 'flash.experience-updated',
           type: 'success'
         } as const;
       } catch (err) {

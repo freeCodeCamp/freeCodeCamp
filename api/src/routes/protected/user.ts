@@ -714,6 +714,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             partiallyCompletedChallenges: true,
             picture: true,
             portfolio: true,
+            experience: true,
             profileUI: true,
             progressTimestamps: true,
             savedChallenges: true,

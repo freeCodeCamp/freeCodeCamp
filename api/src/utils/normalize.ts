@@ -130,7 +130,8 @@ export const normalizeProfileUI = (
         showName: false,
         showPoints: false,
         showPortfolio: false,
-        showTimeLine: false
+        showTimeLine: false,
+        showExperience: false
       };
 };
 
