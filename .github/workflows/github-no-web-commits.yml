@@ -12,25 +12,31 @@ on:
 
 jobs:
   has-web-commits:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Check if PR author is allow-listed
         id: pr_author
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const prAuthor = context.payload.pull_request.user.login;
-            const response = await github.rest.teams
-              .getMembershipForUserInOrg({
-                org: context.repo.owner,
-                team_slug: 'moderators',
-                username: prAuthor
-              })
-              .catch(() => ({ status: 404 }));
-            let isAllowListed = false;
-            if (prAuthor === 'renovate[bot]' || response.status === 200) {
-              isAllowListed = true;
+            const allowedTeams = ['moderators', 'staff'];
+            let isAllowListed = prAuthor === 'renovate[bot]';
+            if (!isAllowListed) {
+              for (const team of allowedTeams) {
+                const response = await github.rest.teams
+                  .getMembershipForUserInOrg({
+                    org: context.repo.owner,
+                    team_slug: team,
+                    username: prAuthor
+                  })
+                  .catch(() => ({ status: 404 }));
+                if (response.status === 200) {
+                  isAllowListed = true;
+                  break;
+                }
+              }
             }
             core.setOutput('is_allow_listed', isAllowListed);
 
@@ -40,13 +46,13 @@ jobs:
         run: |
           PR_NUMBER=$(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")
           COMMITS_URL="https://api.github.com/repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER/commits"
-          IS_GITHUB_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | .commit.committer.name] | any(.[]; . == "GitHub")')
+          IS_GITHUB_COMMIT=$(curl --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" "$COMMITS_URL" | jq '[.[] | select(.commit.committer.name == "GitHub") | select(.commit.message | test("revert"; "i") | not)] | length > 0')
           if [ "$IS_GITHUB_COMMIT" = "true" ]; then
             echo "IS_GITHUB_COMMIT=true" >> $GITHUB_ENV
           fi
 
       - name: Add comment on PR if commits are made on GitHub Web UI
-        uses: actions/github-script@d7906e4ad0b1822421a7e6a35d5ca353c962f410 # v6
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         if: steps.pr_author.outputs.is_allow_listed == 'false' && env.IS_GITHUB_COMMIT == 'true'
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}

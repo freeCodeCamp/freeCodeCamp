@@ -2,7 +2,7 @@
   "name": "Implement the Truncate a String Algorithm",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-truncate-string",
   "challengeOrder": [

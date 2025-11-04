@@ -17,9 +17,11 @@
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
+            "workshop-build-a-video-display-using-iframe",
             "lab-video-compilation-page",
             "lecture-working-with-links",
             "review-basic-html",
@@ -32,6 +34,7 @@
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -44,7 +47,6 @@
           "blocks": [
             "lecture-working-with-forms",
             "workshop-hotel-feedback-form",
-            "lab-survey-form",
             "lecture-working-with-tables",
             "workshop-final-exams-table",
             "lab-book-catalog-table",
@@ -54,11 +56,18 @@
           ]
         },
         {
+          "dashedName": "lab-survey-form",
+          "blocks": ["lab-survey-form"]
+        },
+        {
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
+            "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -149,6 +158,8 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -168,10 +179,13 @@
           "blocks": [
             "lecture-working-with-css-flexbox",
             "workshop-flexbox-photo-gallery",
-            "lab-page-of-playing-cards",
             "review-css-flexbox",
             "quiz-css-flexbox"
           ]
+        },
+        {
+          "dashedName": "lab-page-of-playing-cards",
+          "blocks": ["lab-page-of-playing-cards"]
         },
         {
           "dashedName": "css-typography",
@@ -208,20 +222,26 @@
           "blocks": [
             "lecture-working-with-attribute-selectors",
             "workshop-balance-sheet",
-            "lab-book-inventory-app",
             "review-css-attribute-selectors",
             "quiz-css-attribute-selectors"
           ]
+        },
+        {
+          "dashedName": "lab-book-inventory-app",
+          "blocks": ["lab-book-inventory-app"]
         },
         {
           "dashedName": "responsive-design",
           "blocks": [
             "lecture-best-practices-for-responsive-web-design",
             "workshop-piano",
-            "lab-technical-documentation-page",
             "review-responsive-web-design",
             "quiz-responsive-web-design"
           ]
+        },
+        {
+          "dashedName": "lab-technical-documentation-page",
+          "blocks": ["lab-technical-documentation-page"]
         },
         {
           "dashedName": "css-variables",
@@ -240,10 +260,13 @@
             "workshop-magazine",
             "lab-newspaper-layout",
             "lecture-debugging-css",
-            "lab-product-landing-page",
             "review-css-grid",
             "quiz-css-grid"
           ]
+        },
+        {
+          "dashedName": "lab-product-landing-page",
+          "blocks": ["lab-product-landing-page"]
         },
         {
           "dashedName": "css-animations",

@@ -18,6 +18,10 @@ import CollegeAlgebra from './icons/college-algebra';
 import CSharpLogo from './icons/c-sharp-logo';
 import A2EnglishIcon from './icons/a2-english';
 import B1EnglishIcon from './icons/b1-english';
+import A1SpanishIcon from './icons/a1-spanish';
+import A2SpanishIcon from './icons/a2-spanish';
+import A1ChineseIcon from './icons/a1-chinese';
+import A2ChineseIcon from './icons/a2-chinese';
 import RosettaCodeIcon from './icons/rosetta-code';
 import Code from './icons/code';
 
@@ -43,10 +47,10 @@ const iconMap = {
   [SuperBlocks.FullStackDeveloper]: Code,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
-  [SuperBlocks.A1Spanish]: A2EnglishIcon,
-  [SuperBlocks.A2Spanish]: A2EnglishIcon,
-  [SuperBlocks.A2Chinese]: A2EnglishIcon,
-  [SuperBlocks.A1Chinese]: A2EnglishIcon,
+  [SuperBlocks.A1Spanish]: A1SpanishIcon,
+  [SuperBlocks.A2Spanish]: A2SpanishIcon,
+  [SuperBlocks.A2Chinese]: A2ChineseIcon,
+  [SuperBlocks.A1Chinese]: A1ChineseIcon,
   [SuperBlocks.RosettaCode]: RosettaCodeIcon,
   [SuperBlocks.PythonForEverybody]: PythonIcon,
   [SuperBlocks.BasicHtml]: Code,
@@ -54,7 +58,12 @@ const iconMap = {
   [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code,
   [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
-  [SuperBlocks.JsV9]: JavaScriptIcon
+  [SuperBlocks.JsV9]: JavaScriptIcon,
+  [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
+  [SuperBlocks.PythonV9]: PythonIcon,
+  [SuperBlocks.RelationalDbV9]: DatabaseIcon,
+  [SuperBlocks.BackEndDevApisV9]: APIIcon,
+  [SuperBlocks.FullStackDeveloperV9]: Code
 };
 
 type SuperBlockIconProps = {

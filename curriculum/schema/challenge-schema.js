@@ -4,7 +4,9 @@ Joi.objectId = require('joi-objectid')(Joi);
 const { challengeTypes } = require('../../shared-dist/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks
+  catalogSuperBlocks,
+  languageSuperBlocks,
+  SuperBlocks
 } = require('../../shared-dist/config/curriculum');
 const {
   availableCharacters,
@@ -129,7 +131,7 @@ const quizJoi = Joi.object().keys({
 const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
-  blockType: Joi.when('superBlock', {
+  blockLabel: Joi.when('superBlock', {
     is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
     then: Joi.valid(
       'workshop',
@@ -182,6 +184,24 @@ const schema = Joi.object().keys({
     then: Joi.string()
   }),
   challengeFiles: Joi.array().items(fileJoi),
+  // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
+  nodules: Joi.array().items(
+    Joi.object().keys({
+      type: Joi.valid('paragraph', 'interactiveEditor').required(),
+      data: Joi.when('type', {
+        is: ['interactiveEditor'],
+        then: Joi.array().items(
+          Joi.object().keys({
+            ext: Joi.string().required(),
+            name: Joi.string().required(),
+            contents: Joi.string().required(),
+            contentsHtml: Joi.string().required()
+          })
+        ),
+        otherwise: Joi.string().required()
+      })
+    })
+  ),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
@@ -209,6 +229,20 @@ const schema = Joi.object().keys({
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
+  lang: Joi.string().when('superBlock', {
+    is: languageSuperBlocks,
+    then: Joi.valid('en-US', 'es', 'zh-CN').required(),
+    otherwise: Joi.forbidden()
+  }),
+  inputType: Joi.when('challengeType', {
+    is: challengeTypes.fillInTheBlank,
+    then: Joi.when('superBlock', {
+      is: Joi.valid(SuperBlocks.A1Chinese, SuperBlocks.A2Chinese),
+      then: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional(),
+      otherwise: Joi.forbidden()
+    }),
+    otherwise: Joi.forbidden()
+  }),
   instructions: Joi.string().when('challengeType', {
     is: [challengeTypes.pythonProject, challengeTypes.codeAllyCert],
     then: Joi.string().min(1).required(),

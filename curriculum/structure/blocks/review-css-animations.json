@@ -1,6 +1,6 @@
 {
   "name": "CSS Animations Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-animations",

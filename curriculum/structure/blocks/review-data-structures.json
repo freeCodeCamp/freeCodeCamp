@@ -6,6 +6,6 @@
     { "id": "67f39dc7129b092b27099d8c", "title": "Data Structures Review" }
   ],
   "helpCategory": "Python",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link"
 }

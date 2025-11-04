@@ -118,6 +118,8 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,12 +388,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "Du musst deine Privatsphäre-Einstellung ändern, damit dein Portfolio von anderen gesehen wird. Dies ist eine Vorschau wie dein Portfolio aussehen wird, wenn es veröffentlicht wird.",
@@ -522,7 +527,9 @@
       "instructions": "Anweisungen",
       "notes": "Hinweise",
       "preview": "Vorschau",
-      "editor": "Editor"
+      "terminal": "Terminal",
+      "editor": "Editor",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -890,7 +897,8 @@
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "Goldpokal",
@@ -951,7 +959,8 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -998,6 +1007,7 @@
     "not-eligible": "Dieser Benutzer ist zu diesem Zeitpunkt nicht für freeCodeCamp.org-Zertifizierungen berechtigt.",
     "profile-private": "{{username}} hat sich entschieden, sein Profil privat zu halten. Du musst dein Profil öffentlich machen, damit andere deine Zertifikate sehen können.",
     "certs-private": "{{username}} hat sich entschieden, seine Zertifizierungen privat zu lassen. Sie müssen ihre Zertifizierungen öffentlich machen, damit andere sie sehen können.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} hat unserem akademischen Ehrlichkeitsversprechen noch nicht zugestimmt.",
     "user-not-certified": "Es sieht so aus, als ob Benutzer {{username}} nicht {{cert}} zertifiziert ist",
     "invalid-challenge": "Das scheint keine gültige Einreichung zu sein",
@@ -1103,6 +1113,7 @@
       "heading": "Im Rahmen dieser Zertifizierung hat {{user}} folgende Projekte erstellt und alle automatisierten Testsuiten bestanden:",
       "solution": "Solution",
       "no-solution": "Fehler bei der Anzeige der Lösung, schreibe eine E-Mail an support@freeCodeCamp.org, um Hilfe zu erhalten.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "Wenn du den Verdacht hast, dass eines dieser Projekte gegen die <2>Richtlinie zur akademischen Ehrlichkeit</2> verstößt, <5>melde dies bitte unserem Team</5>.",
       "title": {
@@ -1279,12 +1290,16 @@
   "exam-token": {
     "exam-token": "Exam Token",
     "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
-    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
     "error": "There was an error generating your token, please try again in a moment.",
-    "your-exam-token": "Your Exam Token is: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "Tastaturkurzbefehle",

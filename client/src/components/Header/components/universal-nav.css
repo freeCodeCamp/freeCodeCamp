@@ -73,6 +73,7 @@
   position: absolute;
   right: 0;
   width: 100%;
+  z-index: var(--z-index-site-header);
 }
 
 @media (min-width: 980px) {
