@@ -3081,6 +3081,12 @@
           "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [

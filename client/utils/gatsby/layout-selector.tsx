@@ -27,6 +27,11 @@ export default function layoutSelector({
 
   const isChallenge = !!props.pageContext?.challengeMeta || isDailyChallenge;
 
+  // Return raw element for status endpoints without any layout
+  if (/^\/status\//.test(pathname)) {
+    return element;
+  }
+
   if (element.type === FourOhFourPage) {
     return (
       <DefaultLayout pathname={pathname} showFooter={true}>
