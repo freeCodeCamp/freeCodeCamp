@@ -1,0 +1,17 @@
+<svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="cwTitle cwDesc">
+  <title id="cwTitle">Basic color wheel showing primary and secondary colors</title>
+  <desc id="cwDesc">A circular diagram with sections colored red, yellow, blue, green, orange, and violet, labelled with primary colors.</desc>
+  <circle cx="150" cy="150" r="120" fill="white" stroke="black" stroke-width="2"/>
+  <!-- Primary colors segments approximation -->
+  <path d="M150,30 A120,120 0 0,1 250,190 L150,150 Z" fill="#ff0000"/>
+  <path d="M250,190 A120,120 0 0,1 150,270 L150,150 Z" fill="#ffff00"/>
+  <path d="M150,270 A120,120 0 0,1 50,190 L150,150 Z" fill="#0000ff"/>
+  <path d="M50,190 A120,120 0 0,1 150,30 L150,150 Z" fill="#ff8000" opacity="0"/>
+  <!-- Secondary colors - simple overlays -->
+  <path d="M150,30 L190,150 L110,150 Z" fill="#800080"/>
+  <path d="M110,150 L150,190 L50,190 Z" fill="#008000"/>
+  <path d="M190,150 L250,190 L150,190 Z" fill="#ffa500"/>
+  <text x="150" y="18" text-anchor="middle" font-size="12">Red</text>
+  <text x="260" y="200" text-anchor="middle" font-size="12">Yellow</text>
+  <text x="40" y="200" text-anchor="middle" font-size="12">Blue</text>
+</svg>
