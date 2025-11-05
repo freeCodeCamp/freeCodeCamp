@@ -66,7 +66,7 @@ interface ShowExamDownloadProps {
 function ShowExamDownload({
   data: {
     challengeNode: {
-      challenge: { id, title, translationPending }
+      challenge: { id, superBlock: examSuperBlock, title, translationPending }
     },
     allChallengeNode: { nodes }
   },
@@ -168,8 +168,10 @@ function ShowExamDownload({
   const unmetPrerequisites = exam?.prerequisites?.filter(
     prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
-  const challenges = nodes.filter(({ challenge }) =>
-    unmetPrerequisites?.includes(challenge.id)
+  const challenges = nodes.filter(
+    ({ challenge }) =>
+      unmetPrerequisites?.includes(challenge.id) &&
+      challenge.superBlock === examSuperBlock
   );
   const missingPrerequisites = challenges.map(({ challenge }) => {
     return {
@@ -274,6 +276,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         id
+        superBlock
         title
         translationPending
       }
@@ -286,6 +289,7 @@ export const query = graphql`
           fields {
             slug
           }
+          superBlock
         }
       }
     }
