@@ -113,11 +113,11 @@ const intros = JSON.parse(
 
 export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
-    {
-      dashedName: SuperBlocks.FullStackDeveloper,
-      public: false,
-      title: intros[SuperBlocks.FullStackDeveloper].title
-    }
+    // {
+    //   dashedName: SuperBlocks.FullStackDeveloper,
+    //   public: false,
+    //   title: intros[SuperBlocks.FullStackDeveloper].title
+    // }
   ],
 
   [SuperBlockStage.English]: [
