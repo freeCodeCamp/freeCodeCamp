@@ -180,7 +180,7 @@ describe('certificate routes', () => {
           type: 'info',
           message: 'flash.already-claimed',
           variables: {
-            name: 'Responsive Web Design'
+            name: 'Legacy Responsive Web Design V8'
           }
         });
 
@@ -211,7 +211,7 @@ describe('certificate routes', () => {
         expect(response.body.response).toStrictEqual({
           message: 'flash.incomplete-steps',
           type: 'info',
-          variables: { name: 'Responsive Web Design' }
+          variables: { name: 'Legacy Responsive Web Design V8' }
         });
         expect(response.status).toBe(400);
       });
@@ -290,7 +290,7 @@ describe('certificate routes', () => {
             message: 'flash.cert-claim-success',
             type: 'success',
             variables: {
-              name: 'Responsive Web Design',
+              name: 'Legacy Responsive Web Design V8',
               username: 'fcc'
             }
           },
