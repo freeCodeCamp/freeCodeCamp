@@ -60,7 +60,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Responsive Webdesign",
     "intro": [
       "In dieser Zertifizierung für responsives Webdesign lernst du die Sprachen, die Entwickler/innen zum Erstellen von Webseiten verwenden: HTML (Hypertext Markup Language) für den Inhalt und CSS (Cascading Style Sheets) für das Design.",
       "Zunächst baust du eine Katzenfoto-App, um die Grundlagen von HTML und CSS zu erlernen. Später lernst du moderne Techniken wie CSS-Variablen, indem du einen Pinguin baust, und bewährte Praktiken für Barrierefreiheit, indem du eine Quiz-Site erstellst.",
@@ -155,7 +155,7 @@
         "title": "Erlerne responsives Webdesign, indem du ein Klavier erstellst",
         "intro": [
           "Responsives Design beschreibt, wie deine Webseite auf unterschiedlich großen Bildschirmen aussehen soll.",
-          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "In diesem Kurs wirst du CSS und responsives Design verwenden, um ein Klavier zu programmieren. Außerdem erfährst du mehr über Media-Queries und Pseudoselektoren."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
+        "title": "Erfahre mehr über CSS Pseudo-Selektoren, durch das Erstellen eines Bilanzblattes",
         "intro": [
           "Du kannst CSS-Pseudoselektoren verwenden, um bestimmte HTML-Elemente zu ändern.",
           "In diesem Kurs erstellst du eine Bilanz mit Pseudoselektoren. Du lernst, wie du den Stil eines Elements änderst, wenn du mit der Maus darüber fährst, und wie du andere Ereignisse auf deiner Webseite auslösen kannst."
@@ -208,10 +208,10 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "Lerne Fortgeschrittenes CSS durch die Erstellung eines Katzen-Gemäldes",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "Das Beherrschen der Positionierung in CSS ist für die Erstellung visuell ansprechender Responsive-Web-Layouts essenziell",
+          "In diesem Kurs wirst Du ein Katzengemälde erstellen und lernen, wie Du mit absoluter Positionierung, der z-Index-Eigenschaft und der Transformationseigenschaft arbeiten."
         ]
       }
     }
@@ -300,9 +300,9 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "JavaScript-Algorithmen und Datenstrukturen",
     "intro": [
-      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "Entwickler verwenden HTML und CSS um den Inhalt und das Styling einer Seite zu kontrollieren. Und sie verwenden JavaScript, um diese Seite interaktiv zu gestalten.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
       "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
@@ -3084,6 +3084,12 @@
           "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
@@ -4682,9 +4688,12 @@
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "Build a Discount Calculator",
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
       },
       "lab-player-interface": {
         "title": "Build a Player Interface",

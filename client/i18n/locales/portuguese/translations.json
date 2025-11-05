@@ -118,8 +118,8 @@
     "share-on-threads": "Compartilhe no Threads",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
-    "more-ways-to-sign-in": "More ways to sign in",
-    "sign-in-with-google": "Sign in with Google",
+    "more-ways-to-sign-in": "Mais maneiras de fazer login",
+    "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
     "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
   },
@@ -388,8 +388,8 @@
     "pending": "Pendente",
     "passed": "Aprovado",
     "failed": "Falhou",
-    "in-progress": "In Progress",
-    "denied": "Retake Required",
+    "in-progress": "Em andamento",
+    "denied": "Necessário refazer o teste",
     "download-header": "Faça o download do aplicativo de exame gratuito do freeCodeCamp",
     "explanation": "Para obter uma certificação, você deve fazer um exame para testar sua compreensão do material que você aprendeu. Fazer o exame é absolutamente gratuito.",
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
@@ -898,7 +898,7 @@
     "fsd-b-benefit-2-description": "Prove suas habilidades com uma certificação oficial e verificável.",
     "fsd-b-benefit-3-title": "Mais de 500 exercícios",
     "fsd-b-benefit-3-description": "Solifique o seu conhecimento com muita prática.",
-    "or": "OR"
+    "or": "OU"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -1007,7 +1007,7 @@
     "not-eligible": "Este usuário não é elegível para certificações do freeCodeCamp.org no momento.",
     "profile-private": "{{username}} escolheu tornar seu perfil privado. Ele/ela terá que tornar seu perfil público para que outros possam ver a sua certificação.",
     "certs-private": "{{username}} escolheu deixar suas certificações privadas. Ele/ela terá que tornar suas certificações públicas para que outros possam vê-las.",
-    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
+    "certs-claimable": "Agora você pode solicitar o certificado {{certName}}! Visite a sua página de configurações para solicitá-lo.",
     "not-honest": "{{username}} ainda não concordou com nosso compromisso com a honestidade acadêmica.",
     "user-not-certified": "Parece que o usuário {{username}} não possui o certificado {{cert}}",
     "invalid-challenge": "Este não parece ser um envio de desafio válido",

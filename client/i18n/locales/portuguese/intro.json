@@ -1573,7 +1573,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers Certification (Beta)",
+    "title": "Certificação B1 de Inglês para Desenvolvedores (Beta)",
     "intro": [
       "Neste Currículo de Inglês para Desenvolvedores, você aprenderá o essencial da comunicação em inglês. Isso seguirá o nível B1 do Quadro Europeu Comum de Referência (CEFR). E nós nos concentramos no vocabulário que é particularmente útil para os desenvolvedores.",
       "Isso ajudará você a fortalecer suas habilidades fundamentais enquanto introduz gramática e uso mais complexos. Você aprenderá como descrever lugares e coisas, compartilhar experiências passadas e usar com confiança tempos como Presente Perfeito e Futuro. Estratégias práticas de comunicação também estão incluídas, como gerenciar conversas, expressar opiniões e construir acordo ou discordância em discussões.",
@@ -2172,9 +2172,9 @@
         ]
       },
       "workshop-major-browsers-list": {
-        "title": "Build a List of Major Web Browsers",
+        "title": "Crie uma lista dos principais navegadores da Web",
         "intro": [
-          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+          "Neste workshop, você criará uma lista de descrição e trabalhará com elementos <code>dl</code>, <code>dt</code> e <code>dd</code>."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
@@ -2184,9 +2184,9 @@
         ]
       },
       "workshop-quincys-job-tips": {
-        "title": "Build Quincy's Job Tips Page",
+        "title": "Criar a página de dicas de trabalho do Quincy",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "Neste workshop, você praticará o trabalho com HTML semântico usando os elementos <code>q</code>, <code>blockquote</code> e <code>cite</code>."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -2311,9 +2311,9 @@
         ]
       },
       "workshop-accessible-audio-controller": {
-        "title": "Build an Accessible Audio Controller",
+        "title": "Crie um controlador de áudio com acessibilidade",
         "intro": [
-          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+          "Neste workshop, você praticará HTML acessível criando um controlador de áudio que usa o atributo <code>aria-labelledby</code>."
         ]
       },
       "lecture-accessible-media-elements": {
@@ -2426,14 +2426,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "CSS Fundamentals Review",
+        "title": "Revisão de fundamentos do CSS",
         "intro": [
           "Antes de você ser questionado sobre conceitos básicos de CSS, você precisa revisar.",
           "Abra esta página para revisar conceitos incluindo <code>margin</code>, <code>padding</code>, combinadores CSS, especificidade CSS e mais."
         ]
       },
       "quiz-basic-css": {
-        "title": "CSS Fundamentals Quiz",
+        "title": "Questionário de fundamentos do CSS",
         "intro": [
           "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
@@ -2617,9 +2617,9 @@
         ]
       },
       "workshop-game-settings-panel": {
-        "title": "Build a Game Settings Panel",
+        "title": "Criar um painel de configurações do jogo",
         "intro": [
-          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+          "Neste workshop, você praticará a estilização de caixas de seleção criando um painel de configurações de jogo."
         ]
       },
       "lab-feature-selection": {
@@ -3087,15 +3087,21 @@
         ]
       },
       "workshop-string-inspector": {
-        "title": "Build a String Inspector",
+        "title": "Criar um inspetor de strings",
         "intro": [
-          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+          "Neste workshop, você praticará o trabalho com os métodos <code>includes()</code> e <code>slice()</code> criando um inspetor de strings."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
         "title": "Trabalhando com Métodos de Formatação de String",
         "intro": [
           "Nesta lição, você aprenderá a formatar strings mudando seu caso usando os métodos <code>toUpperCase()</code> e <code>toLowerCase()</code>, e como remover espaços em branco usando os métodos <code>trim()</code>, <code>trimStart()</code> e <code>trimEnd()</code>."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -3130,10 +3136,10 @@
         ]
       },
       "lab-debug-type-coercion-errors": {
-        "title": "Debug Type Coercion Errors in a Buggy App",
+        "title": "Depurar erros de coerção de tipo em uma aplicação com bugs",
         "intro": [
-          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
-          "Your task is to identify and fix these errors to ensure the application functions correctly."
+          "Neste laboratório, você trabalhará com uma aplicação defeituosa que contém vários tipos de erros de coerção.",
+          "Sua tarefa é identificar e corrigir esses erros para garantir que a aplicação funcione corretamente."
         ]
       },
       "lecture-working-with-operator-behavior": {
@@ -3143,10 +3149,10 @@
         ]
       },
       "lab-debug-increment-and-decrement-operator-errors": {
-        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "title": "Depurar erros dos operadores de incremento e decremento em uma aplicação com bugs",
         "intro": [
-          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
-          "Your task is to identify and fix the errors so that the application works as intended."
+          "Neste laboratório, você vai depurar uma aplicação que tem vários erros relacionados aos operadores de incremento e decremento.",
+          "Sua tarefa é identificar e corrigir esses erros para garantir que a aplicação funcione corretamente."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -4697,9 +4703,9 @@
         ]
       },
       "lab-game-character-stats": {
-        "title": "Build a Game Character Stats Tracker",
+        "title": "Criar um rastreador de estatísticas do jogador",
         "intro": [
-          "In this lab, you will build a game character with different stats using object-oriented programming."
+          "Neste laboratório, você criará um personagem de jogos com estatísticas diferentes usando a programação orientada a objetos."
         ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
@@ -4724,14 +4730,17 @@
         "title": "Compreendendo Abstração",
         "intro": ["Aprenda sobre Compreender Abstração nestas lições."]
       },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Aguardando título",
-        "intro": [""]
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "Build a Discount Calculator",
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
       },
       "lab-player-interface": {
-        "title": "Build a Player Interface",
+        "title": "Criar uma interface de jogador",
         "intro": [
-          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+          "Neste laboratório, você usará o módulo <code>abc</code> para criar uma interface do jogador."
         ]
       },
       "review-object-oriented-programming": {
@@ -5139,7 +5148,7 @@
     ],
     "chapters": {
       "javascript": "JavaScript",
-      "javascript-certification-exam": "JavaScript Certification Exam"
+      "javascript-certification-exam": "Exame de certificação de JavaScript"
     },
     "modules": {
       "javascript-variables-and-strings": "Variáveis e Strings",
@@ -5254,9 +5263,9 @@
         ]
       },
       "workshop-string-inspector": {
-        "title": "Build a String Inspector",
+        "title": "Criar um inspetor de strings",
         "intro": [
-          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+          "Neste workshop, você praticará o trabalho com os métodos <code>includes()</code> e <code>slice()</code> criando um inspetor de strings."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -6328,9 +6337,9 @@
         ]
       },
       "review-asynchronous-javascript": {
-        "title": "Asynchronous JavaScript Review",
+        "title": "Revisão sobre JavaScript assíncrono",
         "intro": [
-          "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
+          "Revise conceitos de JavaScript assíncrono para se preparar para o próximo questionário."
         ]
       },
       "quiz-asynchronous-javascript": {
@@ -6364,7 +6373,7 @@
     ],
     "chapters": {
       "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "modules": {
       "react-fundamentals": "Fundamentos do React",
@@ -6713,7 +6722,7 @@
     ],
     "chapters": {
       "python": "Python",
-      "python-certification-exam": "Python Certification Exam"
+      "python-certification-exam": "Exame de Certificação em Python"
     },
     "modules": {
       "python-basics": "Noções básicas de Python",
@@ -6904,9 +6913,9 @@
         ]
       },
       "lab-planet-class": {
-        "title": "Build a Planet Class",
+        "title": "Crie uma Classe Planeta",
         "intro": [
-          "In this lab you will create a class that represents a planet."
+          "Neste laboratório, você criará uma classe que representa um planeta."
         ]
       },
       "workshop-email-simulator": {
@@ -6947,9 +6956,9 @@
         ]
       },
       "lab-game-character-stats": {
-        "title": "Build a Game Character Stats Tracker",
+        "title": "Criar um rastreador de estatísticas do jogador",
         "intro": [
-          "In this lab, you will build a game character with different stats using object-oriented programming."
+          "Neste laboratório, você criará um personagem de jogos com estatísticas diferentes usando a programação orientada a objetos."
         ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
@@ -6975,9 +6984,9 @@
         "intro": ["Aprenda sobre a Compreensão da Abstração nessas lições."]
       },
       "lab-player-interface": {
-        "title": "Build a Player Interface",
+        "title": "Criar uma interface de jogador",
         "intro": [
-          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+          "Neste laboratório, você usará o módulo <code>abc</code> para criar uma interface do jogador."
         ]
       },
       "review-object-oriented-programming": {
@@ -7175,7 +7184,7 @@
     ],
     "chapters": {
       "relational-databases": "Bancos de Dados Relacionais",
-      "relational-databases-certification-exam": "Relational Databases Certification Exam"
+      "relational-databases-certification-exam": "Exame de Certificação de Bancos de Dados Relacionais"
     },
     "modules": {
       "code-editors": "Editores de Código",
@@ -7419,7 +7428,7 @@
     ],
     "chapters": {
       "back-end-development-and-apis": "Desenvolvimento Back-End e APIs",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "modules": {
       "nodejs-core-libraries": "Bibliotecas Centrais do Node.js",
@@ -7876,9 +7885,9 @@
         ]
       },
       "workshop-quincys-job-tips": {
-        "title": "Build Quincy's Job Tips Page",
+        "title": "Criar a página de dicas de trabalho do Quincy",
         "intro": [
-          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+          "Neste workshop, você praticará o trabalho com HTML semântico usando os elementos <code>q</code>, <code>blockquote</code> e <code>cite</code>."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -8003,9 +8012,9 @@
         ]
       },
       "workshop-accessible-audio-controller": {
-        "title": "Build an Accessible Audio Controller",
+        "title": "Crie um controlador de áudio com acessibilidade",
         "intro": [
-          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+          "Neste workshop, você praticará HTML acessível criando um controlador de áudio que usa o atributo <code>aria-labelledby</code>."
         ]
       },
       "lecture-accessible-media-elements": {
@@ -8118,14 +8127,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "CSS Fundamentals Review",
+        "title": "Revisão de fundamentos do CSS",
         "intro": [
           "Antes de você ser questionado sobre conceitos básicos de CSS, você precisa revisar.",
           "Abra esta página para revisar conceitos incluindo <code>margin</code>, <code>padding</code>, combinadores CSS, especificidade CSS e mais."
         ]
       },
       "quiz-basic-css": {
-        "title": "CSS Fundamentals Quiz",
+        "title": "Questionário de fundamentos do CSS",
         "intro": [
           "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
@@ -8309,9 +8318,9 @@
         ]
       },
       "workshop-game-settings-panel": {
-        "title": "Build a Game Settings Panel",
+        "title": "Criar um painel de configurações do jogo",
         "intro": [
-          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+          "Neste workshop, você praticará a estilização de caixas de seleção criando um painel de configurações de jogo."
         ]
       },
       "lab-feature-selection": {
