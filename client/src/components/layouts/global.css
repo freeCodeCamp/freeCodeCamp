@@ -656,3 +656,27 @@ pre code {
 .col-xs-4 {
   width: 33.33333333%;
 }
+:root {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted-text: #475569;
+  --muted-border: #e2e8f0;
+  --accent: #2563eb;
+  --transition: 200ms ease;
+}
+
+html[data-theme="dark"] {
+  --bg: #0b1220;
+  --surface: #071022;
+  --text: #e6eef8;
+  --muted-text: #9fb0cc;
+  --muted-border: #1f2a3a;
+  --accent: #3b82f6;
+}
+
+html, body, #root {
+  background: var(--bg);
+  color: var(--text);
+  transition: background var(--transition), color var(--transition);
+}

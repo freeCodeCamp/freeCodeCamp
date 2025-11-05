@@ -6,6 +6,8 @@ import React from 'react';
 import { ConnectedProps, connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { examInProgressSelector } from '../../redux/selectors';
+import ThemeToggle from "../ThemeToggle";
+
 
 import UniversalNav from './components/universal-nav';
 import ExamNav from './components/exam-nav';
@@ -109,6 +111,7 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
             user={user}
           />
         )}
+        <ThemeToggle />
       </header>
     );
   }
