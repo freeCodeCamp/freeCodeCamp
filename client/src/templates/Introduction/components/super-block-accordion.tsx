@@ -96,7 +96,7 @@ const Chapter = ({
   examSlug
 }: ChapterProps) => {
   const { t } = useTranslation();
-  const isComplete = completedSteps === totalSteps;
+  const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
 
   const chapterButtonContent = (
