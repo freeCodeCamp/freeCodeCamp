@@ -60,7 +60,7 @@ const GrowthBookReduxConnector = ({
     }
   }, [userFetchState, userId, isSignedIn]);
 
-  const showModalsRandomly = useFeature('show-modal-randomly').on;
+  const showModalsRandomly = false; // replace with AB test for different intervals
   useFeature('aa-test');
   useEffect(() => {
     if (isSignedIn && showModalsRandomly && !isRandomCompletionThreshold) {
