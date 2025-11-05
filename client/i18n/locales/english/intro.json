@@ -4664,7 +4664,6 @@
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
         "intro": [
-          "Build a Discount Calculator",
           "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
         ]
       },
