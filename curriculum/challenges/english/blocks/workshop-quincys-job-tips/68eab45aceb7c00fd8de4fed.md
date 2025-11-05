@@ -69,8 +69,7 @@ assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/n
     <p>
       Learning to code is hard, but as Quincy Larson says,
       <q cite="https://www.freecodecamp.org/news/learn-to-code-book/"
-        >You can become a developer.<
-      /q>
+        >You can become a developer.</q>
     </p>
 
     <main>
