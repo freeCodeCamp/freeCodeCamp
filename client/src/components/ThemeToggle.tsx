@@ -165,7 +165,7 @@ button, input, select, textarea {
 }
 */
 
-/*
+
 Optional bootstrap snippet (place once in src/index.tsx or at app start)
 Purpose: avoid flash of wrong theme on first paint by setting attribute before React hydrates.
 
