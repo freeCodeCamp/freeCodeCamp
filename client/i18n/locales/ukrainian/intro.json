@@ -1565,7 +1565,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "Сертифікація «Англійська мова B1 для розробників» (бета)",
+    "title": "B1 English for Developers Certification (Beta)",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня B1 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Курс допоможе зміцнити базові знання, одночасно ознайомлюючи із більш складною граматикою та використанням. Ви навчитесь описувати місця та речі, ділитися досвідом і впевнено використовувати часи, серед яких теперішній доконаний та простий майбутній. А також отримаєте практичні поради: як вести розмову, ділитись думкою та висловлювати згоду чи незгоду.",
@@ -2159,10 +2159,22 @@
           "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Робота з семантичними елементами тексту і часу",
         "intro": [
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -2286,6 +2298,12 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Робота з доступними медіаелементами",
         "intro": [
@@ -2394,14 +2412,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Повторення основ CSS",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Перш ніж перейти до тесту «Основи CSS», повторіть основні поняття.",
           "Відкрийте цю сторінку, щоб пригадати <code>margin</code>, <code>padding</code>, комбінатори, специфічність та багато іншого."
         ]
       },
       "quiz-basic-css": {
-        "title": "Тест «Основи CSS»",
+        "title": "CSS Fundamentals Quiz",
         "intro": ["Перевірте, що ви дізнались про основи CSS."]
       },
       "lecture-styling-lists-and-links": {
@@ -2576,6 +2594,12 @@
         "title": "Розробіть контактну форму",
         "intro": [
           "У цій лабораторній роботі ви створите контактну форму в HTML та стилізуєте її за допомогою CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
@@ -3036,10 +3060,22 @@
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
           "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -3073,10 +3109,24 @@
           "In these lessons you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the application functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -4594,9 +4644,11 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Знайомство з успадкуванням та поліморфізмом",
@@ -4620,9 +4672,12 @@
         "title": "Знайомство з абстракцією",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "Build a Discount Calculator",
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
       },
       "lab-player-interface": {
         "title": "Build a Player Interface",
@@ -5022,7 +5077,8 @@
       "Pass the exam to earn your JavaScript Certification."
     ],
     "chapters": {
-      "javascript": "JavaScript"
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5134,6 +5190,12 @@
         "title": "Working with String Search and Slice Methods",
         "intro": [
           "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -6186,7 +6248,7 @@
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
-      "review-asynchronous-javascrip": {
+      "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
           "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
@@ -6220,7 +6282,8 @@
       "- Pass the Front End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries"
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -6560,7 +6623,8 @@
       "- Pass the Python Certification exam."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
     },
     "modules": {
       "python-basics": "Python Basics",
@@ -6748,6 +6812,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -6785,6 +6855,12 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
+      },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
@@ -6806,6 +6882,12 @@
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
+      },
+      "lab-player-interface": {
+        "title": "Build a Player Interface",
+        "intro": [
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+        ]
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
@@ -6999,7 +7081,8 @@
       "- Pass the Relational Databases Certification exam."
     ],
     "chapters": {
-      "relational-databases": "Relational Databases"
+      "relational-databases": "Relational Databases",
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "modules": {
       "code-editors": "Code Editors",
@@ -7232,7 +7315,8 @@
       "- Pass the Back End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs"
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
       "nodejs-core-libraries": "Node.js Core Libraries",
@@ -7686,6 +7770,12 @@
           "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Working with Specialized Semantic Elements",
         "intro": [
@@ -7807,6 +7897,12 @@
           "In these lectures, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -7917,14 +8013,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -8101,6 +8197,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {

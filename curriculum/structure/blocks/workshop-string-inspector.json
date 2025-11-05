@@ -1,6 +1,6 @@
 {
   "name": "Build a String Inspector",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-string-inspector",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",

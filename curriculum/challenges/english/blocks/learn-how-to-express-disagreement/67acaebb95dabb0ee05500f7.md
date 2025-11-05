@@ -3,6 +3,7 @@ id: 67acaebb95dabb0ee05500f7
 title: Task 21
 challengeType: 22
 dashedName: task-21
+lang: en-US
 ---
 
 <!-- (Audio) Anna: If people are working with outdated computers, it can be a setback for productivity. -->
