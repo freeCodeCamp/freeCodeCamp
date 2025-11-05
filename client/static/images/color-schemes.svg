@@ -1,0 +1,15 @@
+<svg width="300" height="150" viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="csTitle csDesc">
+  <title id="csTitle">Color scheme examples: complementary and analogous</title>
+  <desc id="csDesc">Two examples: complementary colors connected by a dashed line, and a row of analogous colors.</desc>
+  <!-- Complementary -->
+  <circle cx="75" cy="75" r="30" fill="#ff0000"/>
+  <circle cx="225" cy="75" r="30" fill="#00ff00"/>
+  <line x1="75" y1="75" x2="225" y2="75" stroke="black" stroke-dasharray="5,5"/>
+  <text x="150" y="30" text-anchor="middle" font-size="12">Complementary Colors</text>
+  
+  <!-- Analogous -->
+  <circle cx="75" cy="120" r="20" fill="#ff0000"/>
+  <circle cx="115" cy="120" r="20" fill="#ff8000"/>
+  <circle cx="155" cy="120" r="20" fill="#ffff00"/>
+  <text x="150" y="145" text-anchor="middle" font-size="12">Analogous Colors</text>
+</svg>
