@@ -335,52 +335,6 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
-// When in selective mode, we need to ensure that GraphQL is satisfied with basic query data,
-// so we build a minimal full-stack-developer challenge if it wasn't included above.
-async function ensureGraphQLSchema(
-  selectedSuperblockEnums: SuperBlocks[],
-  buildSuperblocks: string | undefined,
-  fullCurriculum: Record<string, unknown>,
-  builder: SuperblockCreator
-) {
-  if (
-    selectedSuperblockEnums.length > 0 &&
-    !buildSuperblocks?.includes('full-stack-developer') &&
-    !fullCurriculum[SuperBlocks.FullStackDeveloper]
-  ) {
-    log(
-      'Building minimal full-stack-developer challenge for GraphQL schema validation.'
-    );
-
-    const { fullSuperblockList: allSuperblocks } =
-      await parseCurriculumStructure();
-    const fsdSuperblock = allSuperblocks.find(
-      sb => sb.name === SuperBlocks.FullStackDeveloper
-    );
-
-    if (fsdSuperblock && fsdSuperblock.blocks.length > 0) {
-      const firstBlock = fsdSuperblock.blocks[0];
-      if (firstBlock) {
-        log(`Building minimal challenge from block: ${firstBlock.dashedName}`);
-        const blockResult = await builder.blockCreator.processBlock(
-          firstBlock,
-          {
-            superBlock: SuperBlocks.FullStackDeveloper,
-            order: 0
-          }
-        );
-        if (blockResult) {
-          fullCurriculum[SuperBlocks.FullStackDeveloper] = {
-            blocks: {
-              [firstBlock.dashedName]: blockResult
-            }
-          };
-        }
-      }
-    }
-  }
-}
-
 async function buildSelectiveCurriculum(
   lang: string,
   buildSuperblocks: string,
@@ -407,19 +361,10 @@ async function buildSelectiveCurriculum(
     selectedSuperblockEnums.push(enumValue);
   }
 
-  log(
-    `Selective build mode active: Building full content for ${selectedSuperblockEnums.length} superblock(s): "${superblockList.join('", "')}"`
-  );
-  log(`Other superblocks will be skipped entirely`);
-
-  const firstSuperblock = superblockList[0];
-  const selectiveFilter = { superBlock: firstSuperblock };
-  const combinedFilters = filters || selectiveFilter;
-
   const builder = new SuperblockCreator(getBlockCreator(lang, true));
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(combinedFilters);
+    await parseCurriculumStructure(filters);
 
   const fullCurriculum: {
     [key: string]: unknown;
@@ -434,21 +379,10 @@ async function buildSelectiveCurriculum(
   });
 
   for (const superblock of liveSuperblocks) {
-    if (!selectedSuperblockEnums.includes(superblock.name)) {
-      continue;
-    }
-
-    log(`Building full superblock: ${superblock.name}`);
+    if (!selectedSuperblockEnums.includes(superblock.name)) continue;
     const processedSuperblock = await builder.processSuperblock(superblock);
     fullCurriculum[superblock.name] = processedSuperblock;
   }
-
-  await ensureGraphQLSchema(
-    selectedSuperblockEnums,
-    buildSuperblocks,
-    fullCurriculum,
-    builder
-  );
 
   return { fullCurriculum, certifications };
 }
