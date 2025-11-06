@@ -103,7 +103,7 @@ describe('add-video-question plugin', () => {
 
   it('should NOT throw if there is no question', () => {
     expect.assertions(1);
-    expect(() => plugin(simpleAST)).not.toThrow();
+    expect(() => plugin(simpleAST, file)).not.toThrow();
   });
 
   it('should match the video snapshot', () => {
