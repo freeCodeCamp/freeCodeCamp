@@ -307,7 +307,7 @@ Each bar should have the properties "data-date" and "data-gdp" containing date a
 ```js
 await __helpers.retryingTest(() => {
   const bars = document.querySelectorAll('rect.bar');
-  if (!bars) return;
+  if (!bars.length) return;
 
   return [...bars].every(bar => bar.hasAttribute('data-date') && bar.hasAttribute('data-gdp'));
 }, "data-date or data-gdp attribute not found in all .bar elements");
@@ -362,6 +362,7 @@ Each bar element's height should accurately represent the data's corresponding G
 ```js
 await __helpers.retryingTest(() => {
   const bars = document.querySelectorAll('rect.bar');
+  if (!bars.length) return;
   // get the ratio of the first data point to the height of the first bar
   const firstRatio =
     parseFloat(bars[0]?.getAttribute('data-gdp')) /
@@ -381,17 +382,18 @@ The data-date attribute and its corresponding bar element should align with the 
 ```js
 await __helpers.retryingTest(function () {
         const axis = document.querySelector('#x-axis');
+        if (!axis) return;
         const coordAttr = 'x';
         const barsCollection = document.querySelectorAll('.bar');
+        if (!bars.length) return;
         const ticksCollection = axis.querySelectorAll('.tick');
+        if (ticksCollection.length) return;
         const shapeAttr = 'data-date';
         // options are 'minute', 'month', 'thousand', and 'year'
         const dataType = 'year' || Date;
         // what vertex of shape to measure against the axis
         // options are 'topLeft' and 'center'
         const shapeAlign = 'topLeft';
-
-        if (!barsCollection) return;
 
         return areShapesAlignedWithTicks(
             barsCollection,
@@ -402,7 +404,7 @@ await __helpers.retryingTest(function () {
             shapeAlign
           )
 
-      }, "");
+      }, "The data-date attribute and its corresponding bar element should align with the corresponding value on the x-axis.");
 ```
 
 The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.
@@ -410,14 +412,15 @@ The data-gdp attribute and its corresponding bar element should align with the c
 ```js
 await __helpers.retryingTest(function () {
   const axis = document.querySelector('#y-axis');
+  if (!axis) return;
   const coordAttr = 'y';
   const barsCollection = document.querySelectorAll('.bar');
+  if (!barsCollection.length) return;
   const ticksCollection = axis.querySelectorAll('.tick');
+  if (!ticksCollection.length) return;
   const shapeAttr = 'data-gdp';
   const dataType = 'thousand';
   const shapeAlign = 'topLeft';
-
-  if (!barsCollection) return;
 
   return areShapesAlignedWithTicks(
     barsCollection,
@@ -428,7 +431,7 @@ await __helpers.retryingTest(function () {
     shapeAlign
   )
 
-}, "")
+}, "The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.")
 ```
 
 When hovering over an area your bar chart should have a tooptip with a corresponding `id="tooltip"` which displays more information about the area.
@@ -436,6 +439,7 @@ When hovering over an area your bar chart should have a tooptip with a correspon
 ```js
 await __helpers.retryingTest(async function () {
   const areas = document.querySelectorAll('.bar');
+  if (!areas.length) return;
   let pass = true;
   const firstRequestTimeout = 500;
   const secondRequestTimeout = 2000;
@@ -484,6 +488,7 @@ The tooltip should have a `"data-date"` property that corresponds to the `"date-
 await __helpers.retryingTest(async function () {
   let pass = true;
   const areas = document.querySelectorAll('.bar');
+  if (!areas.length) return;
   const randomIndex = getRandomIndex(areas.length);
   const randomArea = areas[randomIndex];
 
