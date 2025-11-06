@@ -18,6 +18,7 @@ export enum FsdChapters {
   RdbExam = 'relational-databases-certification-exam',
   Bed = 'back-end-development-and-apis',
   BedExam = 'back-end-development-and-apis-certification-exam',
+  FsdExam = 'certified-full-stack-developer-exam',
 
   // used in both
   Html = 'html',

@@ -28,7 +28,8 @@ const iconMap = {
   [FsdChapters.PythonExam]: Graduation,
   [FsdChapters.RdbExam]: Graduation,
   [FsdChapters.Bed]: NodeIcon,
-  [FsdChapters.BedExam]: Graduation
+  [FsdChapters.BedExam]: Graduation,
+  [FsdChapters.FsdExam]: Graduation
 };
 
 type ChapterIconProps = {
