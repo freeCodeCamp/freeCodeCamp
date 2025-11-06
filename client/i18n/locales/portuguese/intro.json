@@ -1565,9 +1565,9 @@
         ]
       },
       "en-a2-certification-exam": {
-        "title": "A2 English for Developers Certification Exam",
+        "title": "Exame de Certificação de Inglês A2 para Desenvolvedores",
         "intro": [
-          "This exam is required to claim the A2 English for Developers Certification."
+          "Este exame é necessário para reivindicar a Certificação A2 em Inglês para Desenvolvedores."
         ]
       }
     }
@@ -2171,10 +2171,22 @@
           "Nestes cursos, você aprenderá quando deve usar certos elementos semânticos, como o elemento <code>em</code> em vez do <code>i</code>, listas de descrição, e mais."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Crie uma lista dos principais navegadores da Web",
+        "intro": [
+          "Neste workshop, você criará uma lista de descrição e trabalhará com elementos <code>dl</code>, <code>dt</code> e <code>dd</code>."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Trabalhando com Elementos Semânticos de Texto e Tempo ",
         "intro": [
           "Neste curso, você aprenderá sobre a importância da semântica em transmitir significados para o texto e conteúdos relacionados ao tempo, incluindo os elementos <code>time</code>, <code>blockquote</code> e mais."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Criar a página de dicas de trabalho do Quincy",
+        "intro": [
+          "Neste workshop, você praticará o trabalho com HTML semântico usando os elementos <code>q</code>, <code>blockquote</code> e <code>cite</code>."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -2298,6 +2310,12 @@
           "Nestes cursos, você aprenderá sobre o trabalho com funções ARIA."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Crie um controlador de áudio com acessibilidade",
+        "intro": [
+          "Neste workshop, você praticará HTML acessível criando um controlador de áudio que usa o atributo <code>aria-labelledby</code>."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Trabalhando com Elementos de Mídia Acessíveis",
         "intro": [
@@ -2408,14 +2426,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Revisão sobre o básico de CSS ",
+        "title": "Revisão de fundamentos do CSS",
         "intro": [
           "Antes de você ser questionado sobre conceitos básicos de CSS, você precisa revisar.",
           "Abra esta página para revisar conceitos incluindo <code>margin</code>, <code>padding</code>, combinadores CSS, especificidade CSS e mais."
         ]
       },
       "quiz-basic-css": {
-        "title": "Questionário básico de CSS ",
+        "title": "Questionário de fundamentos do CSS",
         "intro": [
           "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
@@ -2596,6 +2614,12 @@
         "title": "Crie um formulário de contato ",
         "intro": [
           "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Criar um painel de configurações do jogo",
+        "intro": [
+          "Neste workshop, você praticará a estilização de caixas de seleção criando um painel de configurações de jogo."
         ]
       },
       "lab-feature-selection": {
@@ -3062,10 +3086,22 @@
           "Nesta lição, você aprenderá a buscar substrings usando o método <code>includes()</code> e como extrair partes de strings usando o método <code>slice()</code>."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Criar um inspetor de strings",
+        "intro": [
+          "Neste workshop, você praticará o trabalho com os métodos <code>includes()</code> e <code>slice()</code> criando um inspetor de strings."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Trabalhando com Métodos de Formatação de String",
         "intro": [
           "Nesta lição, você aprenderá a formatar strings mudando seu caso usando os métodos <code>toUpperCase()</code> e <code>toLowerCase()</code>, e como remover espaços em branco usando os métodos <code>trim()</code>, <code>trimStart()</code> e <code>trimEnd()</code>."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -3099,10 +3135,24 @@
           "Nestas lições, você aprenderá sobre o tipo de número, operadores aritméticos e como usá-los com números e strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Depurar erros de coerção de tipo em uma aplicação com bugs",
+        "intro": [
+          "Neste laboratório, você trabalhará com uma aplicação defeituosa que contém vários tipos de erros de coerção.",
+          "Sua tarefa é identificar e corrigir esses erros para garantir que a aplicação funcione corretamente."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Trabalhando com Comportamento de Operadores",
         "intro": [
           "Nestas lições, você aprenderá sobre precedência de operadores, os operadores de incremento e decremento, e operadores de atribuição composta."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Depurar erros dos operadores de incremento e decremento em uma aplicação com bugs",
+        "intro": [
+          "Neste laboratório, você vai depurar uma aplicação que tem vários erros relacionados aos operadores de incremento e decremento.",
+          "Sua tarefa é identificar e corrigir esses erros para garantir que a aplicação funcione corretamente."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -4652,9 +4702,11 @@
           "Neste workshop, você praticará encapsulamento, propriedades e outros conceitos de POO construindo um sistema de rastreamento de salários para funcionários."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Aguardando título",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Criar um rastreador de estatísticas do jogador",
+        "intro": [
+          "Neste laboratório, você criará um personagem de jogos com estatísticas diferentes usando a programação orientada a objetos."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Compreendendo Herança e Polimorfismo",
@@ -4678,14 +4730,17 @@
         "title": "Compreendendo Abstração",
         "intro": ["Aprenda sobre Compreender Abstração nestas lições."]
       },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Aguardando título",
-        "intro": [""]
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "Build a Discount Calculator",
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
       },
       "lab-player-interface": {
-        "title": "Build a Player Interface",
+        "title": "Criar uma interface de jogador",
         "intro": [
-          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+          "Neste laboratório, você usará o módulo <code>abc</code> para criar uma interface do jogador."
         ]
       },
       "review-object-oriented-programming": {
@@ -5092,7 +5147,8 @@
       "Passe no exame para conquistar sua Certificação de JavaScript."
     ],
     "chapters": {
-      "javascript": "JavaScript"
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "Exame de certificação de JavaScript"
     },
     "modules": {
       "javascript-variables-and-strings": "Variáveis e Strings",
@@ -5204,6 +5260,12 @@
         "title": "Trabalhando com Métodos de Pesquisa e Segmentação de Strings",
         "intro": [
           "Nesta aula, você aprenderá a procurar substrings usando o método <code>includes()</code> e como extrair partes de strings usando o método <code>slice()</code>."
+        ]
+      },
+      "workshop-string-inspector": {
+        "title": "Criar um inspetor de strings",
+        "intro": [
+          "Neste workshop, você praticará o trabalho com os métodos <code>includes()</code> e <code>slice()</code> criando um inspetor de strings."
         ]
       },
       "lecture-working-with-string-formatting-methods": {
@@ -6274,8 +6336,8 @@
           "Você praticará como buscar dados da API, armazenar e exibi-los no seu aplicativo."
         ]
       },
-      "review-asynchronous-javascrip": {
-        "title": "Revisão sobre JavaScript Assíncrono",
+      "review-asynchronous-javascript": {
+        "title": "Revisão sobre JavaScript assíncrono",
         "intro": [
           "Revise conceitos de JavaScript assíncrono para se preparar para o próximo questionário."
         ]
@@ -6310,7 +6372,8 @@
       "- Passe no exame de Certificação de Bibliotecas de Desenvolvimento Front-End."
     ],
     "chapters": {
-      "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End"
+      "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End",
+      "front-end-development-libraries-certification-exam": "Exame de Certificação de Bibliotecas de Desenvolvimento Front-End"
     },
     "modules": {
       "react-fundamentals": "Fundamentos do React",
@@ -6658,7 +6721,8 @@
       "- Passe no exame de Certificação em Python."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Exame de Certificação em Python"
     },
     "modules": {
       "python-basics": "Noções básicas de Python",
@@ -6848,6 +6912,12 @@
           "Neste workshop, você aprenderá sobre classes, objetos e métodos em Python criando um inventário simples de instrumentos musicais."
         ]
       },
+      "lab-planet-class": {
+        "title": "Crie uma Classe Planeta",
+        "intro": [
+          "Neste laboratório, você criará uma classe que representa um planeta."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Crie um Simulador de E-mails",
         "intro": [
@@ -6885,6 +6955,12 @@
           "Neste workshop, você praticará encapsulamento, propriedades e outros conceitos de POO, criando um sistema de rastreamento de salários para empregados."
         ]
       },
+      "lab-game-character-stats": {
+        "title": "Criar um rastreador de estatísticas do jogador",
+        "intro": [
+          "Neste laboratório, você criará um personagem de jogos com estatísticas diferentes usando a programação orientada a objetos."
+        ]
+      },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Compreendendo Herança e Polimorfismo",
         "intro": [
@@ -6906,6 +6982,12 @@
       "lecture-understanding-abstraction": {
         "title": "Compreendendo a Abstração",
         "intro": ["Aprenda sobre a Compreensão da Abstração nessas lições."]
+      },
+      "lab-player-interface": {
+        "title": "Criar uma interface de jogador",
+        "intro": [
+          "Neste laboratório, você usará o módulo <code>abc</code> para criar uma interface do jogador."
+        ]
       },
       "review-object-oriented-programming": {
         "title": "Revisão sobre Programação Orientada a Objetos",
@@ -7101,7 +7183,8 @@
       "- Passe no exame de Certificação de Bancos de Dados Relacionais."
     ],
     "chapters": {
-      "relational-databases": "Bancos de Dados Relacionais"
+      "relational-databases": "Bancos de Dados Relacionais",
+      "relational-databases-certification-exam": "Exame de Certificação de Bancos de Dados Relacionais"
     },
     "modules": {
       "code-editors": "Editores de Código",
@@ -7344,7 +7427,8 @@
       "- Passe no exame de Certificação de Desenvolvimento Back-End e APIs."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Desenvolvimento Back-End e APIs"
+      "back-end-development-and-apis": "Desenvolvimento Back-End e APIs",
+      "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "modules": {
       "nodejs-core-libraries": "Bibliotecas Centrais do Node.js",
@@ -7451,31 +7535,33 @@
     }
   },
   "full-stack-developer-v9": {
-    "title": "Certified Full Stack Developer Curriculum",
+    "title": "Currículo de Desenvolvedor Full Stack Certificado",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "Este curso oferece um caminho abrangente para se tornar um Desenvolvedor Full Stack Certificado, cobrindo todas as tecnologias essenciais necessárias para desenvolver aplicações web modernas e escaláveis do início ao fim.",
+      "Por meio de uma combinação de lições interativas, exercícios de codificação e projetos do mundo real, você dominará o desenvolvimento frontend e backend. Você trabalhará com HTML, CSS e JavaScript para criar interfaces de usuário responsivas, explorará React e TypeScript para aplicações web avançadas e aprenderá a gerenciar dados com bancos de dados relacionais - no backend, você usará Git, Npm, Node.js e Python para criar soluções poderosas do lado do servidor.",
+      "Ao final deste curso, você terá as habilidades práticas e a experiência para desenvolver aplicações web completas com confiança, preparando-se para uma carreira de sucesso como Desenvolvedor Full Stack.",
+      "Esta certificação vai exigir uma quantidade substancial de tempo e esforço para ser concluída. Se você começar agora, poderá estar pronto para iniciar o material restante e o exame final quando o lançarmos nos próximos meses."
     ],
     "chapters": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
     "modules": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
-        "note": "Coming Late 2026",
+        "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "This will be a 90 question exam testing what you have learned throughout this certification."
+          "Este será um exame de 90 questões testando o que você aprendeu ao longo desta certificação."
         ]
       }
     },
     "blocks": {
       "exam-certified-full-stack-developer": {
-        "title": "Certified Full Stack Developer Exam",
-        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+        "title": "Exame de Desenvolvedor Full Stack Certificado",
+        "intro": [
+          "Passe neste exame para se tornar um Desenvolvedor Full Stack Certificado."
+        ]
       }
     }
   },
@@ -7798,6 +7884,12 @@
           "Neste curso, você aprenderá sobre a importância da semântica em transmitir significados para o texto e conteúdos relacionados ao tempo, incluindo os elementos <code>time</code>, <code>blockquote</code> e mais."
         ]
       },
+      "workshop-quincys-job-tips": {
+        "title": "Criar a página de dicas de trabalho do Quincy",
+        "intro": [
+          "Neste workshop, você praticará o trabalho com HTML semântico usando os elementos <code>q</code>, <code>blockquote</code> e <code>cite</code>."
+        ]
+      },
       "lecture-working-with-specialized-semantic-elements": {
         "title": "Trabalhando com Elementos Semânticos Especializados",
         "intro": [
@@ -7919,6 +8011,12 @@
           "Nestas lições, você aprenderá sobre o trabalho com funções ARIA."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Crie um controlador de áudio com acessibilidade",
+        "intro": [
+          "Neste workshop, você praticará HTML acessível criando um controlador de áudio que usa o atributo <code>aria-labelledby</code>."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Trabalhando com Elementos de Mídia Acessíveis",
         "intro": [
@@ -8029,14 +8127,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Revisão sobre o Básico de CSS",
+        "title": "Revisão de fundamentos do CSS",
         "intro": [
           "Antes de você ser questionado sobre conceitos básicos de CSS, você precisa revisar.",
           "Abra esta página para revisar conceitos incluindo <code>margin</code>, <code>padding</code>, combinadores CSS, especificidade CSS e mais."
         ]
       },
       "quiz-basic-css": {
-        "title": "Questionário Básico de CSS",
+        "title": "Questionário de fundamentos do CSS",
         "intro": [
           "Teste o que você aprendeu neste questionário de conhecimento básico sobre o CSS."
         ]
@@ -8217,6 +8315,12 @@
         "title": "Crie um Formulário de Contato",
         "intro": [
           "Neste laboratório, você projetará um formulário de contato em HTML e o estilizará usando CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Criar um painel de configurações do jogo",
+        "intro": [
+          "Neste workshop, você praticará a estilização de caixas de seleção criando um painel de configurações de jogo."
         ]
       },
       "lab-feature-selection": {

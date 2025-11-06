@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "es-a1-review-greetings-and-farewells",
   "helpCategory": "English",
-  "blockLayout": "link",
+  "blockLayout": "challenge-list",
   "blockLabel": "review",
   "challengeOrder": [
     { "id": "68c850ed23d494c9be5cb22a", "title": "Grammar Highlights" },

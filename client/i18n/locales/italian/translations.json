@@ -118,6 +118,8 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,6 +388,8 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
@@ -893,7 +897,8 @@
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -1002,6 +1007,7 @@
     "not-eligible": "Questo utente non è idoneo per le certificazioni freeCodeCamp.org al momento.",
     "profile-private": "{{username}} ha scelto di rendere il proprio profilo privato. Dovrà rendere il proprio profilo pubblico per rendere la propria certificazione visibile agli altri.",
     "certs-private": "{{username}} ha scelto di rendere privato il suo portfolio. Dovrà renderlo pubblico affinché altri possano vedere la sua certificazione.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} non ha ancora accettato il nostro Impegno di Onestà Accademica.",
     "user-not-certified": "Sembra che l'utente {{username}} non sia certificato {{cert}}",
     "invalid-challenge": "Questa non sembra essere un invio valido per la sfida",

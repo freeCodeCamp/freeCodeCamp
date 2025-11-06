@@ -118,6 +118,8 @@
     "share-on-threads": "Threads でシェア",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,6 +388,8 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
@@ -893,7 +897,8 @@
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
@@ -1002,6 +1007,7 @@
     "not-eligible": "現在、このユーザーは freeCodeCamp.org 認定証に不適格となっています。",
     "profile-private": "{{username}} さんはプロフィールを非公開に設定しています。他のユーザーが認定証を閲覧できるようにするにはプロフィールを公開する必要があります。",
     "certs-private": "{{username}} さんは認定証を非公開に設定しています。他のユーザーが認定証を閲覧できるようにするには認定証を公開する必要があります。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} さんはまだ学問的誠実性誓約に同意していません。",
     "user-not-certified": "ユーザー {{username}} さんは {{cert}} の認定を受けていないようです",
     "invalid-challenge": "チャレンジの提出情報が有効でないようです",
