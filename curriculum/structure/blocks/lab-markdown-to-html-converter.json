@@ -2,7 +2,7 @@
   "name": "Build a Markdown to HTML Converter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockLabel": "lab",
+  "blockLabel": "exam-project",
   "blockLayout": "link",
   "dashedName": "lab-markdown-to-html-converter",
   "challengeOrder": [

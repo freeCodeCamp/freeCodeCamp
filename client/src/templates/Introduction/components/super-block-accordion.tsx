@@ -246,7 +246,8 @@ export const SuperBlockAccordion = ({
     return (
       module?.moduleType === 'review' ||
       module?.moduleType === 'exam' ||
-      module?.moduleType === 'quiz'
+      module?.moduleType === 'quiz' ||
+      module?.moduleType === 'exam-project'
     );
   };
 
