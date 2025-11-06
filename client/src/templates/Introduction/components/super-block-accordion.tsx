@@ -66,7 +66,7 @@ interface PopulatedBlock {
 interface PopulatedModule {
   name: string;
   comingSoon?: boolean;
-  moduleType?: string;
+  moduleType?: Module['moduleType'];
   blocks: PopulatedBlock[];
 }
 
@@ -206,19 +206,23 @@ const Module = ({
 const LinkModule = ({
   superBlock,
   challenges,
-  accordion
+  accordion,
+  moduleType
 }: {
   superBlock: SuperBlocks;
   challenges?: Challenge[];
   accordion: boolean;
+  moduleType?: Module['moduleType'];
 }) => {
   if (!challenges?.length) return null;
+
+  const label = moduleType ?? challenges[0].blockLabel;
 
   return (
     <li className='link-block'>
       <Block
         block={challenges[0].block}
-        blockLabel={challenges[0].blockLabel}
+        blockLabel={label}
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}
@@ -244,9 +248,10 @@ export const SuperBlockAccordion = ({
     const module = modules.find(module => module.dashedName === name);
 
     return (
-      module?.moduleType === 'review' ||
-      module?.moduleType === 'exam' ||
-      module?.moduleType === 'quiz'
+      module?.moduleType === BlockLabel.review ||
+      module?.moduleType === BlockLabel.exam ||
+      module?.moduleType === BlockLabel.quiz ||
+      module?.moduleType === BlockLabel.certProject
     );
   };
 
@@ -354,7 +359,7 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (module.moduleType === 'review') {
+                if (module.moduleType === BlockLabel.review) {
                   return null;
                 }
               }
@@ -364,6 +369,7 @@ export const SuperBlockAccordion = ({
                   <LinkModule
                     key={module.name}
                     superBlock={superBlock}
+                    moduleType={module.moduleType}
                     challenges={module.blocks[0]?.challenges}
                     accordion={accordion}
                   />

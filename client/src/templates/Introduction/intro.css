@@ -57,6 +57,11 @@
   color: var(--quaternary-color);
 }
 
+.block-label-cert-project {
+  border-color: var(--love-color);
+  color: var(--love-color);
+}
+
 .block-label-warm-up {
   border-color: var(--yellow-color);
   color: var(--yellow-color);

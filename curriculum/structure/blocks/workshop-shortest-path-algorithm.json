@@ -2,7 +2,7 @@
   "name": "Implement the Shortest Path Algorithm",
   "blockLayout": "challenge-grid",
   "blockLabel": "workshop",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-shortest-path-algorithm",
   "helpCategory": "Python",
   "usesMultifileEditor": true,

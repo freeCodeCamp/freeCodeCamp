@@ -56,6 +56,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-survey-form",
           "blocks": ["lab-survey-form"]
         },
@@ -184,6 +185,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-page-of-playing-cards",
           "blocks": ["lab-page-of-playing-cards"]
         },
@@ -227,6 +229,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-book-inventory-app",
           "blocks": ["lab-book-inventory-app"]
         },
@@ -240,6 +243,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-technical-documentation-page",
           "blocks": ["lab-technical-documentation-page"]
         },
@@ -265,6 +269,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-product-landing-page",
           "blocks": ["lab-product-landing-page"]
         },
