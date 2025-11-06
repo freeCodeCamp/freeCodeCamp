@@ -10,14 +10,16 @@
       ]
     },
     {
-      "dashedName": "es-a1-chapter-letters-and-sounds",
+      "dashedName": "es-a1-chapter-the-spanish-alphabet",
       "modules": [
         {
-          "dashedName": "es-a1-module-alphabet-accents-and-punctuation",
+          "dashedName": "es-a1-module-alphabet-and-special-characters",
           "blocks": [
-            "es-a1-learn-alphabet-and-accents",
-            "es-a1-learn-punctuation",
-            "es-a1-quiz-alphabet-accent-and-punctuation-quiz"
+            "es-a1-learn-vowels",
+            "es-a1-learn-consonants-and-special-characters",
+            "es-a1-practice-the-alphabet",
+            "es-a1-review-the-alphabet",
+            "es-a1-quiz-the-alphabet"
           ]
         }
       ]

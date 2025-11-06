@@ -298,6 +298,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
             "review-javascript-strings",
@@ -746,6 +747,7 @@
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
             "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"

@@ -118,6 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放键",
     "download-latest-version": "下载最新版本",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -386,6 +388,8 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "下载 freeCodeCamp 考试环境应用程序",
     "explanation": "要获得认证，你必须参加考试以检验对所学知识的掌握程度。参加考试完全免费。",
     "version": "我们的应用程序的最新版本是：{{version}}。",
@@ -893,7 +897,8 @@
     "fsd-b-benefit-2-title": "专业认证",
     "fsd-b-benefit-2-description": "通过一个官方的可验证的认证证明你的技能。",
     "fsd-b-benefit-3-title": "500+ 练习",
-    "fsd-b-benefit-3-description": "通过大量实践巩固你的知识。"
+    "fsd-b-benefit-3-description": "通过大量实践巩固你的知识。",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "金奖杯",
@@ -1002,6 +1007,7 @@
     "not-eligible": "这个用户目前不符合 freeCodeCamp.org 认证的条件。",
     "profile-private": "{{username}} 已选择将他们的个人资料设为私密。他们需要公开他们的个人资料，以便其他人能够查看他们的认证。",
     "certs-private": "{{username}} 已将其作品集设置为仅自己可见。用户需要将认证设置为公开，其他人才能查看该用户的认证。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} 未接受我们的《学术诚信条例》。",
     "user-not-certified": "用户 {{username}} 似乎未获得 {{cert}} 认证",
     "invalid-challenge": "这似乎不是一个有效的提交",
