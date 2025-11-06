@@ -248,7 +248,6 @@ const schema = Joi.object().keys({
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
-  isComingSoon: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),

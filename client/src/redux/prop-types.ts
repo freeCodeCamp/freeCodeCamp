@@ -213,7 +213,6 @@ export type ChallengeNode = {
     hooks?: Hooks;
     id: string;
     instructions: string;
-    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;
