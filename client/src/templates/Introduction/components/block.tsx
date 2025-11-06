@@ -543,7 +543,7 @@ export class Block extends Component<BlockProps> {
           isExpanded={isExpanded}
           percentageCompleted={percentageCompleted}
           accordion={accordion}
-          blockUrl={challenges?.[0]?.fields?.slug ?? ''}
+          blockUrl={challenges[0].fields.slug}
         />
       </>
     );

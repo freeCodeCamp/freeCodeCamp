@@ -282,18 +282,23 @@ export const SuperBlockAccordion = ({
   const blockToChapterMap = getBlockToChapterMap();
   const blockToModuleMap = getBlockToModuleMap();
   const allChapters = useMemo<PopulatedChapter[]>(() => {
+    // Blocks with `isUpcomingChange: true` don't have any challenges
+    // so they need to be filtered out
     const populateBlocks = (blocks: string[]): PopulatedBlock[] =>
-      blocks.map(block => {
-        const blockChallenges = challenges.filter(
-          ({ block: blockName }) => blockName === block
-        );
-
-        return {
-          name: block,
-          blockLabel: blockChallenges[0]?.blockLabel ?? null,
-          challenges: blockChallenges
-        };
-      });
+      blocks
+        .filter(block =>
+          challenges.some(({ block: blockName }) => blockName === block)
+        )
+        .map(block => {
+          const blockChallenges = challenges.filter(
+            ({ block: blockName }) => blockName === block
+          );
+          return {
+            name: block,
+            blockLabel: blockChallenges[0]?.blockLabel ?? null,
+            challenges: blockChallenges
+          };
+        });
 
     return superBlockStructure.chapters.map((chapter: Chapter) => ({
       name: chapter.dashedName,
