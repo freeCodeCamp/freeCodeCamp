@@ -1127,9 +1127,9 @@ Happy coding!
             id: '',
             title: 'Developer',
             company: '',
-            location: null,
+            location: '',
             startDate: '',
-            endDate: null,
+            endDate: '',
             description: ''
           }
         ]);
@@ -1157,9 +1157,9 @@ Happy coding!
           id: 'x',
           title: 'Dev',
           company: 'Co',
-          location: null,
+          location: '',
           startDate: '',
-          endDate: null,
+          endDate: '',
           description: ''
         });
         // @ts-expect-error ensure extra key is not present after save
@@ -1199,10 +1199,9 @@ Happy coding!
             id: '',
             title: '',
             company: '',
-            // empty string becomes null for nullable fields
-            location: null,
+            location: '',
             startDate: '',
-            endDate: null,
+            endDate: '',
             description: ''
           }
         ]);
@@ -1230,9 +1229,9 @@ Happy coding!
           id: 'cur',
           title: 'Engineer',
           company: 'Now Co',
-          location: null,
+          location: '',
           startDate: '2023-01',
-          endDate: null,
+          endDate: '',
           description: ''
         });
       });

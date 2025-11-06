@@ -482,6 +482,7 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -492,7 +493,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 

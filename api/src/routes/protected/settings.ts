@@ -728,9 +728,9 @@ ${isLinkSentWithinLimitTTL}`
             id: id ? id : '',
             title: title ? title : '',
             company: company ? company : '',
-            location: location ? location : null,
+            location: location ? location : '',
             startDate: startDate ? startDate : '',
-            endDate: endDate ? endDate : null,
+            endDate: endDate ? endDate : '',
             description: description ? description : ''
           })
         );
