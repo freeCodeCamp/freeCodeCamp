@@ -784,6 +784,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
             "lab-adjacency-list-to-matrix-converter",
             "workshop-breadth-first-search",
             "lab-depth-first-search",
