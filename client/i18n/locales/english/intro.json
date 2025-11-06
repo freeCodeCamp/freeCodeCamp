@@ -4787,8 +4787,10 @@
         ]
       },
       "workshop-shortest-path-algorithm": {
-        "title": "Build a Shortest Path Algorithm",
-        "intro": [""]
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
+        ]
       },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
