@@ -203,7 +203,7 @@
           ]
         },
         {
-          "moduleType": "exam-project",
+          "moduleType": "cert-project",
           "dashedName": "lab-markdown-to-html-converter",
           "blocks": ["lab-markdown-to-html-converter"]
         },
@@ -236,7 +236,7 @@
           ]
         },
         {
-          "moduleType": "exam-project",
+          "moduleType": "cert-project",
           "dashedName": "lab-drum-machine",
           "blocks": ["lab-drum-machine"]
         },
@@ -251,7 +251,7 @@
           ]
         },
         {
-          "moduleType": "exam-project",
+          "moduleType": "cert-project",
           "dashedName": "lab-voting-system",
           "blocks": ["lab-voting-system"]
         },
@@ -276,7 +276,7 @@
           ]
         },
         {
-          "moduleType": "exam-project",
+          "moduleType": "cert-project",
           "dashedName": "lab-bank-account-manager",
           "blocks": ["lab-bank-account-manager"]
         },
@@ -311,7 +311,7 @@
           ]
         },
         {
-          "moduleType": "exam-project",
+          "moduleType": "cert-project",
           "dashedName": "lab-weather-app",
           "blocks": ["lab-weather-app"]
         },

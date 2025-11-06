@@ -251,7 +251,7 @@ export const SuperBlockAccordion = ({
       module?.moduleType === BlockLabel.review ||
       module?.moduleType === BlockLabel.exam ||
       module?.moduleType === BlockLabel.quiz ||
-      module?.moduleType === BlockLabel.examProject
+      module?.moduleType === BlockLabel.certProject
     );
   };
 
