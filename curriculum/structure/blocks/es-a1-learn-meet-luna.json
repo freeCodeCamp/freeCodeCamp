@@ -4,6 +4,11 @@
   "dashedName": "es-a1-learn-meet-luna",
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc747c75837c6bb82aeeb8", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "68dc747c75837c6bb82aeeb8", "title": "Task 1" },
+    { "id": "69038829cfac799092c44c5e", "title": "Task 2" },
+    { "id": "6903913aedf7c8a38ed31413", "title": "Task 3" },
+    { "id": "6903b0a4fca844c1bb1d9b84", "title": "Task 4" }
+  ],
   "blockLabel": "learn"
 }
