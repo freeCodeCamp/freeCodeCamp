@@ -113,15 +113,15 @@ function SuperBlockIntro({
       {nextChallengeSlug && (
         <>
           <Spacer size='l' />
-          <a
+          <Link
             className={'btn-cta-big btn-block signup-btn btn-cta'}
-            href={nextChallengeSlug}
+            to={nextChallengeSlug}
             data-test-label={
               hasNotstarted ? 'start-learning' : 'continue-learning'
             }
           >
             {hasNotstarted ? t('misc.fsd-b-cta') : t('misc.continue-learning')}
-          </a>
+          </Link>
           <Spacer size='m' />
         </>
       )}
@@ -155,13 +155,13 @@ function SuperBlockIntro({
       )}
       <Spacer size='s' />
       {nextChallengeSlug && (
-        <a
+        <Link
           className={'btn-cta-big btn-block signup-btn btn-cta'}
-          href={nextChallengeSlug}
+          to={nextChallengeSlug}
           data-test-label={'start-learning'}
         >
           {t('misc.fsd-b-cta')}
-        </a>
+        </Link>
       )}
       <Spacer size='l' />
       <Container
