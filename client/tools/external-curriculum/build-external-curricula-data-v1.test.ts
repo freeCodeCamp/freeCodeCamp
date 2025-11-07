@@ -1,9 +1,10 @@
 import path from 'path';
-import fs, { readFileSync } from 'fs';
+import fs from 'fs';
 
 import readdirp from 'readdirp';
 import { describe, test, expect } from 'vitest';
 
+import intros from '../../i18n/locales/english/intro.json';
 import {
   SuperBlocks,
   SuperBlockStage,
@@ -15,18 +16,11 @@ import {
 } from './external-data-schema-v1';
 import {
   type Curriculum,
-  type CurriculumIntros,
   type GeneratedCurriculumProps,
   orderedSuperBlockInfo
 } from './build-external-curricula-data-v1';
 
 const VERSION = 'v1';
-const intros = JSON.parse(
-  readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
-    'utf-8'
-  )
-) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
   const clientStaticPath = path.resolve(__dirname, '../../../client/static');
@@ -129,8 +123,13 @@ describe('external curriculum data build', () => {
       const randomBlock = blocks[randomBlockIndex];
 
       expect(fileContent[superBlock].intro).toEqual(intros[superBlock].intro);
-      expect(fileContent[superBlock].blocks[randomBlock].desc).toEqual(
-        intros[superBlock].blocks[randomBlock].intro
+      expect(fileContent[superBlock].blocks[randomBlock]?.desc).toEqual(
+        (
+          intros[superBlock].blocks as unknown as Record<
+            string,
+            { intro: unknown }
+          >
+        )[randomBlock].intro
       );
     });
   });

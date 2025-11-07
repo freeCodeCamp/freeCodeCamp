@@ -18,7 +18,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
-    "build": "tsx --tsconfig ../tsconfig.json ../tools/scripts/build/build-curriculum",
+    "build": "tsx ./src/generate/build-curriculum",
     "create-empty-steps": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
     "create-this-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-this-challenge",

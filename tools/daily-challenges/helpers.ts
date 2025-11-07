@@ -128,7 +128,7 @@ export function combineChallenges({
   return challengeData;
 }
 
-export function handleError(err: Error, client: MongoClient) {
+export function handleError(err: unknown, client: MongoClient) {
   if (err) {
     console.error('Oh noes!! Error seeding Daily Challenges.');
     console.error(err);
