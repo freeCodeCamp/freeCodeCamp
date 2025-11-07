@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-review-introduction-questions",
   "helpCategory": "English",
-  "blockLayout": "link",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "68fa376a7ec0adc64d68519a",
