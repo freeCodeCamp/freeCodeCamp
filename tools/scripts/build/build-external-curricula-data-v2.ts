@@ -112,7 +112,43 @@ const intros = JSON.parse(
 ) as CurriculumIntros;
 
 export const orderedSuperBlockInfo: OrderedSuperBlocks = {
-  [SuperBlockStage.Core]: [],
+  [SuperBlockStage.Core]: [
+    {
+      dashedName: SuperBlocks.RespWebDesignV9,
+      public: false,
+      title: intros[SuperBlocks.RespWebDesignV9].title
+    },
+    {
+      dashedName: SuperBlocks.JsV9,
+      public: false,
+      title: intros[SuperBlocks.JsV9].title
+    },
+    {
+      dashedName: SuperBlocks.FrontEndDevLibsV9,
+      public: false,
+      title: intros[SuperBlocks.FrontEndDevLibsV9].title
+    },
+    {
+      dashedName: SuperBlocks.PythonV9,
+      public: false,
+      title: intros[SuperBlocks.PythonV9].title
+    },
+    {
+      dashedName: SuperBlocks.RelationalDbV9,
+      public: false,
+      title: intros[SuperBlocks.RelationalDbV9].title
+    },
+    {
+      dashedName: SuperBlocks.BackEndDevApisV9,
+      public: false,
+      title: intros[SuperBlocks.BackEndDevApisV9].title
+    },
+    {
+      dashedName: SuperBlocks.FullStackDeveloperV9,
+      public: false,
+      title: intros[SuperBlocks.FullStackDeveloperV9].title
+    }
+  ],
 
   [SuperBlockStage.English]: [
     {
