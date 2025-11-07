@@ -212,7 +212,9 @@ const schema = Joi.object().keys({
     'English',
     'Odin',
     'Euler',
-    'Rosetta'
+    'Rosetta',
+    'Chinese Curriculum',
+    'Spanish Curriculum'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
