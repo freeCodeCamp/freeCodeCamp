@@ -1,6 +1,6 @@
 {
   "name": "Dynamic Programming Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-dynamic-programming",
   "challengeOrder": [
     { "id": "67f39e2119042d2f2ca926ff", "title": "Dynamic Programming Review" }

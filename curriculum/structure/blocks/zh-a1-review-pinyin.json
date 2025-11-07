@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-review-pinyin",
   "helpCategory": "English",
-  "blockLayout": "link",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "68fa3f5ec14d92f2f77d9c1b",

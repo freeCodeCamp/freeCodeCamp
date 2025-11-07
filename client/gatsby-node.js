@@ -323,7 +323,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       hooks: Hooks
       id: String
       instructions: String
-      isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
       module: String
@@ -387,6 +386,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Answer {
       answer: String
       feedback: String
+      audioId: String
     }
     type RequiredResource {
       link: String

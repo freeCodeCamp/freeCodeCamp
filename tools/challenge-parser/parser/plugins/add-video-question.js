@@ -29,23 +29,59 @@ function plugin() {
 
       return answerGroups.map(answerGroup => {
         const answerTree = root(answerGroup);
-        const feedback = find(answerTree, { value: '--feedback--' });
+        const feedbackNodes = getSection(answerTree, '--feedback--');
+        const audioIdNodes = getSection(answerTree, '--audio-id--');
+        const hasFeedback = feedbackNodes.length > 0;
+        const hasAudioId = audioIdNodes.length > 0;
 
-        if (feedback) {
-          const answerNodes = getAllBefore(answerTree, '--feedback--');
-          const feedbackNodes = getSection(answerTree, '--feedback--');
+        if (hasFeedback || hasAudioId) {
+          let answerNodes;
+
+          if (hasFeedback && hasAudioId) {
+            const feedbackHeading = find(answerTree, {
+              type: 'heading',
+              children: [{ type: 'text', value: '--feedback--' }]
+            });
+            const audioIdHeading = find(answerTree, {
+              type: 'heading',
+              children: [{ type: 'text', value: '--audio-id--' }]
+            });
+
+            const feedbackIndex = answerTree.children.indexOf(feedbackHeading);
+            const audioIdIndex = answerTree.children.indexOf(audioIdHeading);
+            const firstMarker =
+              feedbackIndex < audioIdIndex ? '--feedback--' : '--audio-id--';
+            answerNodes = getAllBefore(answerTree, firstMarker);
+          } else if (hasFeedback) {
+            answerNodes = getAllBefore(answerTree, '--feedback--');
+          } else {
+            answerNodes = getAllBefore(answerTree, '--audio-id--');
+          }
 
           if (answerNodes.length < 1) {
             throw Error('Answer missing');
           }
 
+          let extractedAudioId = null;
+          if (hasAudioId) {
+            const audioIdContent = getParagraphContent(audioIdNodes[0]);
+            if (audioIdContent && audioIdContent.trim()) {
+              extractedAudioId = audioIdContent.trim();
+            }
+          }
+
           return {
             answer: toHtml(answerNodes),
-            feedback: toHtml(feedbackNodes)
+            feedback: hasFeedback ? toHtml(feedbackNodes) : null,
+            audioId: extractedAudioId
           };
         }
 
-        return { answer: toHtml(answerGroup), feedback: null };
+        return {
+          answer: toHtml(answerGroup),
+          feedback: null,
+          audioId: null
+        };
       });
     }
 

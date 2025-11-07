@@ -1,6 +1,6 @@
 {
   "name": "Data Structures Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "review-data-structures",
   "challengeOrder": [
     { "id": "67f39dc7129b092b27099d8c", "title": "Data Structures Review" }

@@ -22,7 +22,16 @@ const character = {
   npc: `${characters}/npc`,
   sarah: `${characters}/sarah`,
   sophie: `${characters}/sophie`,
-  tom: `${characters}/tom`
+  tom: `${characters}/tom`,
+
+  // Chinese
+  chenNa: `${characters}/chen-na`,
+  liHong: `${characters}/li-hong`,
+  liPing: `${characters}/li-ping`,
+  liuMing: `${characters}/liu-ming`,
+  wangHua: `${characters}/wang-hua`,
+  zhang: `${characters}/zhang`,
+  zhou: `${characters}/zhou`
 };
 
 // All the available characters on our CDN. Do not add to this unless we add more characters there.
@@ -179,6 +188,70 @@ const characterImages = {
     glasses: null,
     mouthClosed: `${character.tom}/mouth-smile.png`,
     mouthOpen: `${character.tom}/mouth-laugh.png`
+  },
+  // Chinese
+  chenNa: {
+    base: `${character.chenNa}/base.png`,
+    brows: `${character.chenNa}/brows-neutral.png`,
+    eyesClosed: `${character.chenNa}/eyes-closed.png`,
+    eyesOpen: `${character.chenNa}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.chenNa}/mouth-smile.png`,
+    mouthOpen: `${character.chenNa}/mouth-open.png`
+  },
+  liHong: {
+    base: `${character.liHong}/base.png`,
+    brows: `${character.liHong}/brows-neutral.png`,
+    eyesClosed: `${character.liHong}/eyes-closed.png`,
+    eyesOpen: `${character.liHong}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liHong}/mouth-smile.png`,
+    mouthOpen: `${character.liHong}/mouth-open.png`
+  },
+  liPing: {
+    base: `${character.liPing}/base.png`,
+    brows: `${character.liPing}/brows-neutral.png`,
+    eyesClosed: `${character.liPing}/eyes-closed.png`,
+    eyesOpen: `${character.liPing}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liPing}/mouth-smile.png`,
+    mouthOpen: `${character.liPing}/mouth-open.png`
+  },
+  liuMing: {
+    base: `${character.liuMing}/base.png`,
+    brows: `${character.liuMing}/brows-neutral.png`,
+    eyesClosed: `${character.liuMing}/eyes-closed.png`,
+    eyesOpen: `${character.liuMing}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.liuMing}/mouth-smile.png`,
+    mouthOpen: `${character.liuMing}/mouth-open.png`
+  },
+  wangHua: {
+    base: `${character.wangHua}/base.png`,
+    brows: `${character.wangHua}/brows-neutral.png`,
+    eyesClosed: `${character.wangHua}/eyes-closed.png`,
+    eyesOpen: `${character.wangHua}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.wangHua}/mouth-smile.png`,
+    mouthOpen: `${character.wangHua}/mouth-open.png`
+  },
+  zhang: {
+    base: `${character.zhang}/base.png`,
+    brows: `${character.zhang}/brows-neutral.png`,
+    eyesClosed: `${character.zhang}/eyes-closed.png`,
+    eyesOpen: `${character.zhang}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.zhang}/mouth-smile.png`,
+    mouthOpen: `${character.zhang}/mouth-open.png`
+  },
+  zhou: {
+    base: `${character.zhou}/base.png`,
+    brows: `${character.zhou}/brows-neutral.png`,
+    eyesClosed: `${character.zhou}/eyes-closed.png`,
+    eyesOpen: `${character.zhou}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.zhou}/mouth-smile.png`,
+    mouthOpen: `${character.zhou}/mouth-open.png`
   }
 };
 
@@ -226,5 +299,14 @@ export const characterAssets = {
   René: characterImages.npcMan,
   Sebastián: characterImages.david,
   Diego: characterImages.tom,
-  Valeria: characterImages.alice
+  Valeria: characterImages.alice,
+
+  //Chinese
+  'Chen Na': characterImages.chenNa,
+  'Li Hong': characterImages.liHong,
+  'Li Ping': characterImages.liPing,
+  'Liu Ming': characterImages.liuMing,
+  'Wang Hua': characterImages.wangHua,
+  Zhang: characterImages.zhang,
+  Zhou: characterImages.zhou
 };

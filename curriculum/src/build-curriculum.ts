@@ -14,12 +14,8 @@ import {
 } from './build-superblock.js';
 
 import { buildCertification } from './build-certification.js';
-import {
-  applyFilters,
-  closestFilters,
-  Filter,
-  getSuperOrder
-} from './utils.js';
+import { getSuperOrder } from './super-order.js';
+import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
   getContentDir,
   getLanguageConfig,
@@ -30,6 +26,7 @@ import {
   getBlockStructureDir,
   type BlockStructure
 } from './file-handler.js';
+import { SHOW_UPCOMING_CHANGES } from './config.js';
 const log = debug('fcc:build-curriculum');
 
 /**
@@ -225,7 +222,7 @@ export const superBlockToFilename = Object.entries(superBlockNames).reduce(
  */
 export function addSuperblockStructure(
   superBlockFilenames: string[],
-  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+  showComingSoon = SHOW_UPCOMING_CHANGES
 ) {
   log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
@@ -338,13 +335,18 @@ export async function parseCurriculumStructure(filter?: Filter) {
 
 export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
+  const fccSuperblock = process.env.FCC_SUPERBLOCK;
+
+  const combinedFilters: Filter | undefined = fccSuperblock
+    ? { ...filters, superBlock: fccSuperblock }
+    : filters;
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(filters))
+    getBlockCreator(lang, !isEmpty(combinedFilters))
   );
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(filters);
+    await parseCurriculumStructure(combinedFilters);
 
   const fullCurriculum: {
     [key: string]: unknown;
@@ -357,7 +359,6 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     const superOrder = getSuperOrder(name);
     const upcomingSuperOrder = getSuperOrder(name, true);
 
-    // If a superblock is not in either order list it should not exist.
     if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
       throw Error(`Invalid superBlock: ${name}`);
     }
@@ -365,8 +366,8 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   });
 
   for (const superblock of liveSuperblocks) {
-    fullCurriculum[superblock.name] =
-      await builder.processSuperblock(superblock);
+    const processedSuperblock = await builder.processSuperblock(superblock);
+    fullCurriculum[superblock.name] = processedSuperblock;
   }
 
   for (const cert of certifications) {
