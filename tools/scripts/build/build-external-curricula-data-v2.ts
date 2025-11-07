@@ -3,7 +3,10 @@ import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
 import { type ChallengeNode } from '../../../client/src/redux/prop-types';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import {
+  SuperBlocks,
+  chapterBasedSuperBlocks
+} from '../../../shared-dist/config/curriculum';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
 import { patchBlock } from './patches';
@@ -303,7 +306,7 @@ export function buildExtCurriculumDataV2(
     });
 
     for (const superBlockKey of superBlockKeys) {
-      if (superBlockKey === SuperBlocks.FullStackDeveloper) {
+      if (chapterBasedSuperBlocks.includes(superBlockKey)) {
         buildChapterBasedCurriculum(superBlockKey);
       } else {
         buildBlockBasedCurriculum(superBlockKey);
@@ -314,7 +317,7 @@ export function buildExtCurriculumDataV2(
   }
 
   function buildChapterBasedCurriculum(superBlockKey: SuperBlocks) {
-    const { chapters } = getSuperblockStructure('full-stack-developer') as {
+    const { chapters } = getSuperblockStructure(superBlockKey) as {
       chapters: Chapter[];
     };
     const blocksWithData = curriculum[superBlockKey].blocks;
