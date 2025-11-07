@@ -334,10 +334,13 @@ export async function parseCurriculumStructure(filter?: Filter) {
 }
 
 export async function buildCurriculum(lang: string, filters?: Filter) {
+  // Block validation assumes the entire block is being built, if that's not the
+  // case, skip validation
+  const skipBlockValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(filters))
+    getBlockCreator(lang, skipBlockValidation)
   );
 
   const { fullSuperblockList, certifications } =
