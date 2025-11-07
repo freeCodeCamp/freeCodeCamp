@@ -112,13 +112,7 @@ const intros = JSON.parse(
 ) as CurriculumIntros;
 
 export const orderedSuperBlockInfo: OrderedSuperBlocks = {
-  [SuperBlockStage.Core]: [
-    // {
-    //   dashedName: SuperBlocks.FullStackDeveloper,
-    //   public: false,
-    //   title: intros[SuperBlocks.FullStackDeveloper].title
-    // }
-  ],
+  [SuperBlockStage.Core]: [],
 
   [SuperBlockStage.English]: [
     {
