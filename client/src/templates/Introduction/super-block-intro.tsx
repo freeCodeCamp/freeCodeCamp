@@ -12,7 +12,10 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { useFeatureValue } from '@growthbook/growthbook-react';
 
-import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
+import {
+  SuperBlocks,
+  certificationCollectionSuperBlocks
+} from '../../../../shared-dist/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
 import Map from '../../components/Map';
@@ -274,7 +277,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
               <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.courses`)}
+                {certificationCollectionSuperBlocks.includes(superBlock)
+                  ? t(`intro:misc-text.requirements`)
+                  : t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
               <SuperBlockMap
