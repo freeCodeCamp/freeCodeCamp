@@ -425,10 +425,14 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.PythonV9,
   SuperBlocks.RelationalDbV9,
   SuperBlocks.BackEndDevApisV9,
-  SuperBlocks.FullStackDeveloperV9,
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
+
+export const certificationCollectionSuperBlocks = [
+  SuperBlocks.FullStackDeveloperV9
+];
+Object.freeze(certificationCollectionSuperBlocks);
 
 type Config = {
   showUpcomingChanges: boolean;

@@ -1,0 +1,274 @@
+import React, { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
+
+import {
+  certificationCollectionSuperBlocks,
+  chapterBasedSuperBlocks,
+  SuperBlocks
+} from '../../../../../shared-dist/config/curriculum';
+import type { CertTitle } from '../../../../config/cert-and-project-map';
+import type {
+  ChapterBasedSuperBlockStructure,
+  ClaimedCertifications,
+  User
+} from '../../../redux/prop-types';
+import type {
+  BlockLabel,
+  BlockLayouts
+} from '../../../../../shared-dist/config/blocks';
+import { ChapterIcon } from '../../../assets/chapter-icon';
+import { SuperBlockIcon } from '../../../assets/superblock-icon';
+import { Link } from '../../../components/helpers';
+import { type FsdChapters } from '../../../../../shared-dist/config/chapters';
+import {
+  certSlugTypeMap,
+  certificationRequirements,
+  superBlockToCertMap
+} from '../../../../../shared-dist/config/certification-settings';
+import CheckMark from './check-mark';
+
+import Block from './block';
+import CertChallenge from './cert-challenge';
+import { SuperBlockAccordion } from './super-block-accordion';
+import './super-block-accordion.css';
+
+type Challenge = {
+  block: string;
+  blockLabel: BlockLabel;
+  blockLayout: BlockLayouts;
+  challengeType: number;
+  dashedName: string;
+  fields: { slug: string; blockName: string };
+  id: string;
+  module: string;
+  order: number;
+  superBlock: SuperBlocks;
+  title: string;
+};
+
+type SuperBlockMapProps = {
+  certification: string;
+  completedChallengeIds: string[];
+  disabledBlocks: string[];
+  initialExpandedBlock: string;
+  showCertification: boolean;
+  structure?: ChapterBasedSuperBlockStructure;
+  superBlock: SuperBlocks;
+  superBlockChallenges: Challenge[];
+  title: CertTitle;
+  user: User | null;
+};
+
+const BlockList = ({
+  certification,
+  disabledBlocks,
+  showCertification,
+  superBlock,
+  superBlockChallenges,
+  title,
+  user
+}: {
+  certification: string;
+  disabledBlocks: string[];
+  showCertification: boolean;
+  superBlock: SuperBlocks;
+  superBlockChallenges: Challenge[];
+  title: CertTitle;
+  user: User | null;
+}) => {
+  const visibleBlocks = useMemo(() => {
+    const uniqueBlocks = Array.from(
+      new Set(superBlockChallenges.map(({ block }) => block))
+    );
+
+    return uniqueBlocks.filter(block => !disabledBlocks.includes(block));
+  }, [disabledBlocks, superBlockChallenges]);
+
+  return (
+    <div className='block-ui'>
+      {visibleBlocks.map(block => {
+        const blockChallenges = superBlockChallenges.filter(
+          challenge => challenge.block === block
+        );
+        const blockLabel = blockChallenges[0]?.blockLabel ?? null;
+
+        if (!blockChallenges.length) return null;
+
+        return (
+          <Block
+            key={block}
+            block={block}
+            blockLabel={blockLabel}
+            challenges={blockChallenges}
+            superBlock={superBlock}
+          />
+        );
+      })}
+      {showCertification && !!user && (
+        <CertChallenge
+          certification={certification}
+          superBlock={superBlock}
+          title={title}
+          user={user}
+        />
+      )}
+    </div>
+  );
+};
+
+export const SuperBlockMap = ({
+  certification,
+  completedChallengeIds,
+  disabledBlocks,
+  initialExpandedBlock,
+  showCertification,
+  structure,
+  superBlock,
+  superBlockChallenges,
+  title,
+  user
+}: SuperBlockMapProps) => {
+  const { t } = useTranslation();
+  if (chapterBasedSuperBlocks.includes(superBlock)) {
+    if (!structure) return null;
+
+    return (
+      <SuperBlockAccordion
+        challenges={superBlockChallenges}
+        superBlock={superBlock}
+        structure={structure}
+        chosenBlock={initialExpandedBlock}
+        completedChallengeIds={completedChallengeIds}
+      />
+    );
+  }
+
+  if (certificationCollectionSuperBlocks.includes(superBlock)) {
+    if (!structure) return null;
+    const certificationForSuperBlock = superBlockToCertMap[superBlock];
+    const requirementsLookup = certificationRequirements as Partial<
+      Record<string, SuperBlocks[]>
+    >;
+    const requirements: SuperBlocks[] =
+      (certificationForSuperBlock &&
+        requirementsLookup[certificationForSuperBlock]) ??
+      [];
+
+    const requirementItems = requirements.map((requirement: SuperBlocks) => {
+      const requirementTitle = t(`intro:${requirement}.title`);
+      const requirementLink = `/learn/${requirement}/`;
+
+      const certSlug = superBlockToCertMap[requirement];
+      const certFlagLookup = certSlugTypeMap as Record<
+        string,
+        keyof ClaimedCertifications
+      >;
+      const certFlagKey = certSlug ? certFlagLookup[certSlug] : undefined;
+      const isRequirementComplete = Boolean(certFlagKey && user?.[certFlagKey]);
+
+      return (
+        <li className='chapter requirement' key={requirement}>
+          <Link
+            className='chapter-button'
+            data-playwright-test-label='requirement-button'
+            to={requirementLink}
+          >
+            <div className='chapter-button-left'>
+              <span className='checkmark-wrap chapter-checkmark-wrap'>
+                <CheckMark isCompleted={isRequirementComplete} />
+              </span>
+              <SuperBlockIcon className='map-icon' superBlock={requirement} />
+              {requirementTitle}
+            </div>
+          </Link>
+        </li>
+      );
+    });
+
+    const chapterItems = structure.chapters
+      .map(chapter => {
+        const blockNames = chapter.modules.flatMap(module => module.blocks);
+        const chapterChallenges = blockNames.flatMap(blockName =>
+          superBlockChallenges.filter(
+            challenge => challenge.block === blockName
+          )
+        );
+
+        const totalSteps = chapterChallenges.length;
+        const completedSteps = chapterChallenges.filter(challenge =>
+          completedChallengeIds.includes(challenge.id)
+        ).length;
+        const isComplete = totalSteps > 0 && completedSteps === totalSteps;
+
+        const firstChallengeSlug = chapterChallenges[0]?.fields.slug;
+        if (!firstChallengeSlug) return null;
+
+        const chapterLabel = t(
+          `intro:${superBlock}.chapters.${chapter.dashedName}`
+        );
+
+        return (
+          <li className='chapter' key={chapter.dashedName}>
+            <Link
+              className='chapter-button'
+              data-playwright-test-label='chapter-button'
+              to={firstChallengeSlug}
+            >
+              <div className='chapter-button-left'>
+                <span className='checkmark-wrap chapter-checkmark-wrap'>
+                  <CheckMark isCompleted={isComplete} />
+                </span>
+                <ChapterIcon
+                  className='map-icon'
+                  chapter={chapter.dashedName as FsdChapters}
+                />
+                {chapterLabel}
+              </div>
+              <div className='chapter-button-right'>
+                {!chapter.comingSoon && totalSteps > 0 && (
+                  <span className='chapter-steps'>
+                    {t('learn.steps-completed', {
+                      totalSteps,
+                      completedSteps
+                    })}
+                  </span>
+                )}
+              </div>
+            </Link>
+          </li>
+        );
+      })
+      .filter((chapter): chapter is JSX.Element => chapter !== null);
+
+    if (!chapterItems.length && !requirementItems.length) return null;
+
+    return (
+      <>
+        {requirementItems.length ? (
+          <ul className='super-block-accordion requirement-list'>
+            {requirementItems}
+          </ul>
+        ) : null}
+        {chapterItems.length ? (
+          <ul className='super-block-accordion'>{chapterItems}</ul>
+        ) : null}
+      </>
+    );
+  }
+
+  return (
+    <BlockList
+      certification={certification}
+      disabledBlocks={disabledBlocks}
+      showCertification={showCertification}
+      superBlock={superBlock}
+      superBlockChallenges={superBlockChallenges}
+      title={title}
+      user={user}
+    />
+  );
+};
+
+SuperBlockMap.displayName = 'SuperBlockMap';
+
+export default SuperBlockMap;
