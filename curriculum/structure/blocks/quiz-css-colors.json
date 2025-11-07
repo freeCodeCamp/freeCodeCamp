@@ -1,6 +1,6 @@
 {
   "name": "CSS Colors Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-css-colors",

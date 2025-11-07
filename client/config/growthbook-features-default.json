@@ -5,6 +5,15 @@
   "aa-test-in-component": {
     "defaultValue": false
   },
+  "rdb-codespaces-instructions": {
+    "defaultValue": true
+  },
+  "rdb-local-instructions": {
+    "defaultValue": true
+  },
+  "rdb-ona-instructions": {
+    "defaultValue": true
+  },
   "landing-top-skill-focused": {
     "defaultValue": false,
     "rules": [
@@ -13,8 +22,14 @@
         "hashAttribute": "id",
         "seed": "landing-top-skill-focused",
         "hashVersion": 2,
-        "variations": [false, true],
-        "weights": [0.5, 0.5],
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
         "key": "landing-top-skill-focused",
         "meta": [
           {
@@ -31,7 +46,7 @@
       }
     ]
   },
-    "replace-20-with-25": {
+  "replace-20-with-25": {
     "defaultValue": false,
     "rules": [
       {
@@ -39,8 +54,14 @@
         "hashAttribute": "id",
         "seed": "replace-20-with-25",
         "hashVersion": 2,
-        "variations": [false, true],
-        "weights": [0.5, 0.5],
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
         "key": "replace-20-with-25",
         "meta": [
           {
@@ -89,13 +110,13 @@
       }
     ]
   },
-  "show-benefits": {
+  "landing-two-button-cta": {
     "defaultValue": false,
     "rules": [
       {
         "coverage": 1,
         "hashAttribute": "id",
-        "seed": "show-benefits",
+        "seed": "landing-two-button-cta",
         "hashVersion": 2,
         "variations": [
           false,
@@ -105,7 +126,7 @@
           0.5,
           0.5
         ],
-        "key": "show-benefits",
+        "key": "landing-two-button-cta",
         "meta": [
           {
             "key": "0",
@@ -117,8 +138,11 @@
           }
         ],
         "phase": "0",
-        "name": "prod-show-benefits"
+        "name": "prod-landing-two-button-cta"
       }
     ]
+  },
+  "disabled_blocks": {
+    "defaultValue": []
   }
 }

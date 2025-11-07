@@ -4,7 +4,7 @@
   "dashedName": "lab-smart-word-replacement",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "challengeOrder": [
     {
       "id": "a0b5010f579e69b815e7c5d6",

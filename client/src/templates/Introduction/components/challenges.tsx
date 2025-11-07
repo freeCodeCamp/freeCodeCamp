@@ -1,5 +1,5 @@
 import React from 'react';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import GreenNotCompleted from '../../../assets/icons/green-not-completed';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -18,11 +18,20 @@ interface ChallengeInfo {
   challengeType: number;
 }
 
-interface Challenges {
+interface ChallengesProps {
   challenges: ChallengeInfo[];
+}
+
+interface JumpLinkProps {
+  jumpLink?: boolean;
+}
+
+interface BlockTitleProps {
+  blockTitle: string;
+}
+
+interface IsProjectBlockProps {
   isProjectBlock: boolean;
-  isGridMap?: boolean;
-  blockTitle?: string | null;
 }
 
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
@@ -46,21 +55,40 @@ const CertChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
   </Link>
 );
 
+export function ChallengesList({ challenges }: ChallengesProps): JSX.Element {
+  return (
+    <ul className={`map-challenges-ul`}>
+      {challenges.map(challenge => (
+        <li
+          className={'map-challenge-title map-challenge-wrap'}
+          id={challenge.dashedName}
+          key={'map-challenge' + challenge.fields.slug}
+        >
+          <ListChallenge challenge={challenge} />
+        </li>
+      ))}
+    </ul>
+  );
+}
 // Step or Task challenge
-const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
+const GridChallenge = ({
+  challenge,
+  isTask = false
+}: {
+  challenge: ChallengeInfo;
+  isTask?: boolean;
+}) => {
   const { t } = useTranslation();
 
   return (
     <Link
       to={challenge.fields.slug}
       className={`map-grid-item ${
-        +challenge.isCompleted ? 'challenge-completed' : ''
+        challenge.isCompleted ? 'challenge-completed' : ''
       }`}
     >
       <span className='sr-only'>
-        {challenge.superBlock === SuperBlocks.A2English
-          ? t('aria.task')
-          : t('aria.step')}
+        {isTask ? t('aria.task') : t('aria.step')}
       </span>
       <span>{challenge.stepNumber}</span>
       <span className='sr-only'>
@@ -70,12 +98,10 @@ const GridChallenge = ({ challenge }: { challenge: ChallengeInfo }) => {
   );
 };
 
-function Challenges({
+const LinkToFirstIncompleteChallenge = ({
   challenges,
-  isProjectBlock,
-  isGridMap = false,
   blockTitle
-}: Challenges): JSX.Element {
+}: ChallengesProps & BlockTitleProps) => {
   const { t } = useTranslation();
 
   const firstIncompleteChallenge = challenges.find(
@@ -85,28 +111,34 @@ function Challenges({
   const isChallengeStarted = !!challenges.find(
     challenge => challenge.isCompleted
   );
+  return firstIncompleteChallenge ? (
+    <div className='challenge-jump-link'>
+      <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
+        {!isChallengeStarted
+          ? t('buttons.start-project')
+          : t('buttons.resume-project')}{' '}
+        <span className='sr-only'>{blockTitle}</span>
+      </ButtonLink>
+    </div>
+  ) : null;
+};
 
-  return isGridMap ? (
+export const GridMapChallenges = ({
+  challenges,
+  blockTitle,
+  isProjectBlock,
+  jumpLink
+}: ChallengesProps & BlockTitleProps & IsProjectBlockProps & JumpLinkProps) => {
+  const { t } = useTranslation();
+  return (
     <>
-      {firstIncompleteChallenge && (
-        <div className='challenge-jump-link'>
-          <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
-            {!isChallengeStarted
-              ? t('buttons.start-project')
-              : t('buttons.resume-project')}{' '}
-            {blockTitle && <span className='sr-only'>{blockTitle}</span>}
-          </ButtonLink>
-        </div>
+      {jumpLink && (
+        <LinkToFirstIncompleteChallenge
+          challenges={challenges}
+          blockTitle={blockTitle}
+        />
       )}
-      <nav
-        aria-label={
-          blockTitle
-            ? challenges[0].superBlock === SuperBlocks.A2English
-              ? t('aria.dialogues-and-tasks-for', { blockTitle })
-              : t('aria.steps-for', { blockTitle })
-            : t('aria.steps')
-        }
-      >
+      <nav aria-label={t('aria.steps-for', { blockTitle })}>
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
             <li
@@ -120,11 +152,8 @@ function Challenges({
               id={challenge.dashedName}
               key={`map-challenge ${challenge.fields.slug}`}
             >
-              {!isProjectBlock &&
-              challenge.challengeType !== challengeTypes.dialogue ? (
+              {!isProjectBlock ? (
                 <GridChallenge challenge={challenge} />
-              ) : challenge.challengeType === challengeTypes.dialogue ? (
-                <ListChallenge challenge={challenge} />
               ) : (
                 <CertChallenge challenge={challenge} />
               )}
@@ -133,27 +162,45 @@ function Challenges({
         </ul>
       </nav>
     </>
-  ) : (
-    <ul className={`map-challenges-ul`}>
-      {challenges.map(challenge => (
-        <li
-          className={`map-challenge-title ${
-            isProjectBlock ? 'map-project-wrap' : 'map-challenge-wrap'
-          }`}
-          id={challenge.dashedName}
-          key={'map-challenge' + challenge.fields.slug}
-        >
-          {!isProjectBlock ? (
-            <ListChallenge challenge={challenge} />
-          ) : (
-            <CertChallenge challenge={challenge} />
-          )}
-        </li>
-      ))}
-    </ul>
   );
-}
+};
 
-Challenges.displayName = 'Challenges';
+export const ChallengesWithDialogues = ({
+  challenges,
+  blockTitle,
+  jumpLink
+}: ChallengesProps & BlockTitleProps & JumpLinkProps) => {
+  const { t } = useTranslation();
+  return (
+    <>
+      {jumpLink && (
+        <LinkToFirstIncompleteChallenge
+          challenges={challenges}
+          blockTitle={blockTitle}
+        />
+      )}
 
-export default withTranslation()(Challenges);
+      <nav aria-label={t('aria.dialogues-and-tasks-for', { blockTitle })}>
+        <ul className={`map-challenges-ul map-challenges-grid`}>
+          {challenges.map(challenge => (
+            <li
+              className={`map-challenge-title map-challenge-title-grid ${
+                challenge.challengeType === challengeTypes.dialogue
+                  ? 'map-dialogue-wrap'
+                  : 'map-challenge-wrap'
+              }`}
+              id={challenge.dashedName}
+              key={`map-challenge ${challenge.fields.slug}`}
+            >
+              {challenge.challengeType === challengeTypes.dialogue ? (
+                <ListChallenge challenge={challenge} />
+              ) : (
+                <GridChallenge challenge={challenge} isTask />
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </>
+  );
+};

@@ -1,6 +1,6 @@
 {
   "name": "CSS Libraries and Frameworks Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-libraries-and-frameworks",

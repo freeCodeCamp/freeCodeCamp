@@ -9,15 +9,15 @@ import {
   ExamEnvironmentChallenge
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
-import { defaultUserId } from '../vitest.utils.js';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
+
+const defaultUserId = '5bd30e0f1caf6ac3ddddddb5';
 
 export const oid = () => new ObjectId().toString();
 
 export const examId = oid();
 
 export const config = {
-  totalTimeInMS: 2 * 60 * 60 * 1000,
   totalTimeInS: 2 * 60 * 60,
   tags: [],
   name: 'Test Exam',
@@ -46,7 +46,6 @@ export const config = {
       numberOfIncorrectAnswers: 1
     }
   ],
-  retakeTimeInMS: 24 * 60 * 60 * 1000,
   retakeTimeInS: 24 * 60 * 60
 } satisfies ExamEnvironmentConfig;
 
@@ -263,7 +262,6 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
           answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
-          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
@@ -274,7 +272,6 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
           answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
-          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
@@ -285,19 +282,16 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
           answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
-          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
           answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
-          submissionTimeInMS: Date.now(),
           submissionTime: new Date()
         }
       ]
     }
   ],
-  startTimeInMS: Date.now(),
   startTime: new Date(),
   userId: defaultUserId,
   version: 2

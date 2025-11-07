@@ -88,7 +88,7 @@ function ExamToken(): JSX.Element {
         <Panel.Heading>{t('exam-token.exam-token')}</Panel.Heading>
         <Panel.Body>
           <p>{t('exam-token.note')}</p>
-          <strong>{t('exam-token.invalidation')}</strong>
+          <strong>{t('exam-token.invalidation-2')}</strong>
           <Spacer size='s' />
           <Button
             block={true}

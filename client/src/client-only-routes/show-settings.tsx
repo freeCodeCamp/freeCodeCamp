@@ -1,8 +1,9 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { scroller } from 'react-scroll';
 
 import { Container, Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
@@ -109,6 +110,24 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
 
   const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
+  const handleHashChange = () => {
+    const id = window.location.hash.replace('#', '');
+    if (id) {
+      scroller.scrollTo(id, {
+        smooth: true,
+        duration: 500,
+        offset: -100
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
@@ -122,7 +141,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     completedChallenges,
     email,
     is2018DataVisCert,
+    isA2EnglishCert,
     isApisMicroservicesCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isBackEndCert,
     isDataVisCert,
@@ -133,6 +154,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFrontEndLibsCert,
     isFullStackCert,
     isRespWebDesignCert,
+    isRespWebDesignCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -188,6 +210,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
+            isA2EnglishCert={isA2EnglishCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
@@ -197,6 +220,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isFrontEndCert={isFrontEndCert}
             isFrontEndLibsCert={isFrontEndLibsCert}
             isFullStackCert={isFullStackCert}
+            isJavascriptCertV9={isJavascriptCertV9}
             isHonest={isHonest}
             isInfosecCertV7={isInfosecCertV7}
             isInfosecQaCert={isInfosecQaCert}
@@ -205,6 +229,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isQaCertV7={isQaCertV7}
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
             isRespWebDesignCert={isRespWebDesignCert}
+            isRespWebDesignCertV9={isRespWebDesignCertV9}
             isSciCompPyCertV7={isSciCompPyCertV7}
             isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
             username={username}

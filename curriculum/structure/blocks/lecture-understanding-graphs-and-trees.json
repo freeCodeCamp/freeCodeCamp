@@ -1,6 +1,6 @@
 {
   "name": "Understanding Graphs and Trees",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-graphs-and-trees",
   "challengeOrder": [
     {
@@ -25,6 +25,6 @@
     }
   ],
   "helpCategory": "Python",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list"
 }

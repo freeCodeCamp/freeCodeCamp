@@ -5,5 +5,5 @@
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
   "challengeOrder": [{ "id": "68dc7578ad62ca74e21c23e0", "title": "Task 1" }],
-  "blockType": "warm-up"
+  "blockLabel": "warm-up"
 }

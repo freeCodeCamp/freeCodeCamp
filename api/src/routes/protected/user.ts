@@ -18,6 +18,7 @@ import {
   normalizeProfileUI,
   normalizeSurveys,
   normalizeTwitter,
+  normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
 import { mapErr, type UpdateReqType } from '../../utils/index.js';
@@ -30,7 +31,8 @@ import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
   getExamAttemptsByExamIdHandler,
-  getExamAttemptsHandler
+  getExamAttemptsHandler,
+  getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
 
@@ -112,6 +114,60 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       reply.clearOurCookies();
 
       return {};
+    }
+  );
+
+  fastify.delete(
+    '/users/:userId',
+    {
+      schema: schemas.deleteUser
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      const { userId } = req.params;
+
+      if (userId !== req.user?.id) {
+        logger.warn(
+          { requestedUserId: userId, authUserId: req.user?.id },
+          'User attempted to delete an account they do not have authorization to.'
+        );
+        void reply.code(403);
+        return { type: 'error', message: 'forbidden' } as const;
+      }
+
+      logger.info(`User ${req.user.id} requested account deletion`);
+      try {
+        await fastify.prisma.userToken.deleteMany({
+          where: { userId: req.user.id }
+        });
+        await fastify.prisma.msUsername.deleteMany({
+          where: { userId: req.user.id }
+        });
+        await fastify.prisma.survey.deleteMany({
+          where: { userId: req.user.id }
+        });
+        await fastify.prisma.user.delete({
+          where: { id: req.user.id }
+        });
+      } catch (err) {
+        // Whilst this is behind auth, this should never happen
+        if (
+          err instanceof PrismaClientKnownRequestError &&
+          err.code === 'P2025'
+        ) {
+          logger.warn(
+            err,
+            `User with id ${req.user?.id} not found for deletion.`
+          );
+          return reply.code(404).send({ type: 'error', message: 'not found' });
+        } else {
+          logger.error(err, 'Error deleting user account');
+          throw err;
+        }
+      }
+      reply.clearOurCookies();
+
+      return reply.code(204).send();
     }
   );
 
@@ -482,6 +538,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.get(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.getUserExamEnvironmentToken
+    },
+    getExamEnvironmentToken
+  );
+
+  fastify.get(
     '/user/exam-environment/exam/attempts',
     {
       schema: examEnvironmentSchemas.examEnvironmentGetExamAttempts
@@ -501,6 +565,13 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       schema: examEnvironmentSchemas.examEnvironmentGetExamAttemptsByExamId
     },
     getExamAttemptsByExamIdHandler
+  );
+  fastify.get(
+    '/user/exam-environment/exams',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentExams
+    },
+    getExams
   );
 
   done();
@@ -612,6 +683,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             id: true,
             is2018DataVisCert: true,
             is2018FullStackCert: true,
+            isA2EnglishCert: true,
             isApisMicroservicesCert: true,
             isBackEndCert: true,
             isCheater: true,
@@ -626,12 +698,14 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isHonest: true,
             isInfosecCertV7: true,
             isInfosecQaCert: true,
+            isJavascriptCertV9: true,
             isJsAlgoDataStructCert: true,
             isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
             isRespWebDesignCert: true,
+            isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
             keyboardShortcuts: true,
             linkedin: true,
@@ -646,6 +720,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             sendQuincyEmail: true,
             theme: true,
             twitter: true,
+            bluesky: true,
             username: true,
             usernameDisplay: true,
             website: true,
@@ -692,6 +767,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           completedDailyCodingChallenges,
           progressTimestamps,
           twitter,
+          bluesky,
           profileUI,
           currentChallengeId,
           location,
@@ -729,6 +805,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               name: name ?? '',
               theme: theme ?? 'default',
               twitter: normalizeTwitter(twitter),
+              bluesky: normalizeBluesky(bluesky),
               username,
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
@@ -749,3 +826,41 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
 
   done();
 };
+
+async function getExamEnvironmentToken(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.getUserExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req, res: reply });
+  logger.info(`User ${req.user?.id} requested their exam environment token`);
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
+    where: {
+      userId,
+      expireAt: {
+        gt: new Date()
+      }
+    }
+  });
+
+  if (!token) {
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('No valid token found for user.')
+    );
+  }
+
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
+
+  return reply.send({
+    examEnvironmentAuthorizationToken
+  });
+}

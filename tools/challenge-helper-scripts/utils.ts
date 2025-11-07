@@ -2,7 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import matter from 'gray-matter';
+import { uniq } from 'lodash';
+
 import { challengeTypes } from '../../shared/config/challenge-types';
+import { parseCurriculumStructure } from '../../curriculum/src/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
@@ -26,6 +29,19 @@ interface QuizOptions {
   title: string;
   dashedName: string;
   questionCount: number;
+}
+
+export async function getAllBlocks() {
+  const { fullSuperblockList } = (await parseCurriculumStructure()) as {
+    fullSuperblockList: {
+      blocks: { dashedName: string }[];
+    }[];
+  };
+  const existingBlocks = fullSuperblockList.flatMap(({ blocks }) =>
+    blocks.map(({ dashedName }) => dashedName)
+  );
+
+  return uniq(existingBlocks);
 }
 
 const createStepFile = ({
@@ -259,7 +275,13 @@ const getChallenge = (challengeId: string): Challenge => {
   return challenge;
 };
 
-const validateBlockName = (block: string): boolean | string => {
+const validateBlockName = (
+  block: string,
+  existingBlocks: string[]
+): true | string => {
+  if (existingBlocks.includes(block.trim())) {
+    return 'a block with this name already exists';
+  }
   if (!block.trim().length) {
     return 'please enter a dashed name';
   }

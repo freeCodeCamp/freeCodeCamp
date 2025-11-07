@@ -1,9 +1,15 @@
 const chokidar = require('chokidar');
+const {
+  getSuperblockStructure
+} = require('../../../curriculum/dist/file-handler');
+const {
+  superBlockToFilename
+} = require('../../../curriculum/dist/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
-  { actions, reporter },
+  { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
 ) {
   const { source, onSourceChange, curriculumPath } = pluginOptions;
@@ -67,9 +73,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   function sourceAndCreateNodes() {
     return source()
       .then(challenges => Promise.all(challenges))
-      .then(challenges =>
-        challenges.map(challenge => createVisibleChallenge(challenge))
-      )
+      .then(challenges => {
+        // create challenge nodes
+        challenges.forEach(challenge => createVisibleChallenge(challenge));
+        // create superblock structure nodes
+        createSuperBlockStructureNodes();
+        return Promise.resolve();
+      })
       .catch(e => {
         console.log(e);
         reporter.panic(`fcc-source-challenges
@@ -82,6 +92,35 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
 
   function createVisibleChallenge(challenge, options) {
     createNode(createChallengeNode(challenge, reporter, options));
+  }
+
+  function createSuperBlockStructureNodes() {
+    Object.keys(superBlockToFilename).forEach(superBlock => {
+      const filename = superBlockToFilename[superBlock] || superBlock;
+      try {
+        const structure = getSuperblockStructure(filename);
+
+        const nodeId = createNodeId(`SuperBlockStructure-${superBlock}`);
+        const nodeContent = JSON.stringify(structure);
+
+        createNode({
+          ...structure,
+          superBlock,
+          id: nodeId,
+          parent: null,
+          children: [],
+          internal: {
+            type: 'SuperBlockStructure',
+            content: nodeContent,
+            contentDigest: createContentDigest(structure)
+          }
+        });
+      } catch (err) {
+        reporter.warn(
+          `Could not load structure for ${superBlock} (${filename}): ${err.message}`
+        );
+      }
+    });
   }
 
   return new Promise((resolve, reject) => {

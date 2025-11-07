@@ -118,11 +118,10 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放鍵",
     "download-latest-version": "下載最新版本",
-    "start": "開始",
-    "go-to-today": "訪問今天的挑戰",
-    "go-to-today-long": "訪問今天的編程挑戰",
-    "go-to-archive": "訪問存檔",
-    "go-to-archive-long": "訪問每日編程挑戰存檔"
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "每日編程挑戰",
@@ -214,6 +213,7 @@
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
     "catalog-heading": "探索我們的目錄：",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常見問題：",
     "faqs": [
       {
@@ -388,12 +388,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "下載 freeCodeCamp 考試環境應用程序",
     "explanation": "要獲得認證，你必須參加考試以檢驗對所學知識的掌握程度。參加考試完全免費。",
     "version": "我們的應用程序的最新版本是：{{version}}。",
     "download-details": "手動下載此應用",
     "unable-to-detect-os": "我們無法檢測到你的操作系統。請手動下載下面的應用程序。",
-    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊："
+    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊：",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
@@ -524,7 +527,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "editor": "編輯器"
+      "terminal": "Terminal",
+      "editor": "編輯器",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -535,6 +540,26 @@
     "project-preview-title": "下面是你將構建的項目的預覽",
     "demo-project-title": "這是一個符合要求的項目示例。",
     "github-required": "如果你沒有 GitHub 賬戶，你需要 <0>創建 GitHub</0> 賬戶。 你需要創建虛擬 Linux 服務器，這個過程可能需要幾分鐘。",
+    "codespaces": {
+      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
+      "step-1": "<0>Create an GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "On that page, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Value</0> field, paste your token",
+      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "summary": "Codespaces Setup"
+    },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
@@ -551,7 +576,8 @@
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token"
+      "sub-step-5": "In the <0>Secret</0> field, paste your token",
+      "summary": "Ona Setup"
     },
     "local": {
       "intro": "本課程將在你電腦上的虛擬 Linux 環境中運行。要開始學習，你需要先下載以下必備軟件（如尚未安裝）：",
@@ -573,7 +599,8 @@
       "step-7": "複製下面的課程 URL，將其粘貼到網址輸入框中，然後點擊 “Load”（加載）。",
       "copy-url": "複製課程 URL",
       "step-8": "點擊 “Start”（開始）以開始。",
-      "step-9": "按照 CodeRoad 中的說明完成課程。注意：你可能需要將終端重啓一次，以便終端設置生效並通過測試。"
+      "step-9": "按照 CodeRoad 中的說明完成課程。注意：你可能需要將終端重啓一次，以便終端設置生效並通過測試。",
+      "summary": "Local Setup"
     },
     "step-1": "步驟 1：完成項目",
     "step-2": "步驟 2：提交你的代碼",
@@ -662,6 +689,10 @@
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
@@ -866,7 +897,8 @@
     "fsd-b-benefit-2-title": "專業認證",
     "fsd-b-benefit-2-description": "通過一個官方的可驗證的認證證明你的技能。",
     "fsd-b-benefit-3-title": "500+ 練習",
-    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。"
+    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -927,7 +959,8 @@
     "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
     "editor-a11y-on-non-macos": "{{editorName}} 編輯器內容。無障礙模式被設置爲 “on”。按 Ctrl+E 關閉或者按 Alt+F1 查看更多選項。",
     "terminal-output": "終端輸出",
-    "not-available": "不可用"
+    "not-available": "不可用",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
@@ -974,6 +1007,7 @@
     "not-eligible": "這個用戶目前不符合 freeCodeCamp.org 認證的條件。",
     "profile-private": "{{username}} 已選擇將他們的個人資料設爲私密。他們需要公開他們的個人資料，以便其他人能夠查看他們的認證。",
     "certs-private": "{{username}} 已將其作品集設置爲僅自己可見。用戶需要將認證設置爲公開，其他人才能查看該用戶的認證。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} 未接受我們的《學術誠信條例》。",
     "user-not-certified": "用戶 {{username}} 似乎未獲得 {{cert}} 認證",
     "invalid-challenge": "這似乎不是一個有效的提交",
@@ -1079,6 +1113,7 @@
       "heading": "作爲此認證的一部分，{{user}} 構建了以下項目，並通過所有自動測試：",
       "solution": "解決方案",
       "no-solution": "顯示解決方案出錯時，發送電子郵件到 support@freeCodeCamp.org 獲得幫助。",
+      "no-solution-to-display": "No solution to display",
       "source": "來源",
       "footnote": "如果你懷疑其中任何項目違反了<2>學術誠信條例</2>，請<5>向我們的團隊報告</5>。",
       "title": {
@@ -1255,12 +1290,16 @@
   "exam-token": {
     "exam-token": "考試令牌",
     "note": "你的考試令牌是一個密鑰，允許你訪問考試。請勿與任何人分享此令牌。",
-    "invalidation": "如果你生成新的令牌，舊的令牌將失效。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "生成考試令牌",
     "error": "生成令牌時出錯，請稍後再試。",
-    "your-exam-token": "你的考試令牌是：{{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "令牌已複製到剪貼板",
-    "copy-error": "複製令牌到剪貼板時出錯"
+    "copy-error": "複製令牌到剪貼板時出錯",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",

@@ -178,7 +178,7 @@ describe('certificate routes', () => {
           type: 'info',
           message: 'flash.already-claimed',
           variables: {
-            name: 'Responsive Web Design'
+            name: 'Legacy Responsive Web Design V8'
           }
         });
 
@@ -209,7 +209,7 @@ describe('certificate routes', () => {
         expect(response.body.response).toStrictEqual({
           message: 'flash.incomplete-steps',
           type: 'info',
-          variables: { name: 'Responsive Web Design' }
+          variables: { name: 'Legacy Responsive Web Design V8' }
         });
         expect(response.status).toBe(400);
       });
@@ -287,12 +287,15 @@ describe('certificate routes', () => {
             message: 'flash.cert-claim-success',
             type: 'success',
             variables: {
-              name: 'Responsive Web Design',
+              name: 'Legacy Responsive Web Design V8',
               username: 'fcc'
             }
           },
           isCertMap: {
+            isA2EnglishCert: false,
             isRespWebDesignCert: true,
+            isRespWebDesignCertV9: false,
+            isJavascriptCertV9: false,
             isJsAlgoDataStructCert: false,
             isFrontEndLibsCert: false,
             is2018DataVisCert: false,
@@ -354,6 +357,9 @@ describe('certificate routes', () => {
       test('should return 400 if certSlug is not allowed', async () => {
         const claimableCerts = [
           Certification.RespWebDesign,
+          // TODO: Enable, once these are no longer "upcoming".
+          // Certification.RespWebDesignV9,
+          // Certification.JsV9,
           Certification.JsAlgoDataStruct,
           Certification.FrontEndDevLibs,
           Certification.DataVis,

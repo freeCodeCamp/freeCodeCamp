@@ -1,0 +1,19 @@
+{
+  "name": "Build a List of Major Web Browsers",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-major-browsers-list",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e6698b29e562d21b1d260c", "title": "Step 1" },
+    { "id": "68ecfa0f03d88990bb96a33c", "title": "Step 2" },
+    { "id": "68ecfa1003d88990bb96a33d", "title": "Step 3" },
+    { "id": "68ecfa1003d88990bb96a33e", "title": "Step 4" },
+    { "id": "69038dd51a41ae215fcc030a", "title": "Step 5" },
+    { "id": "69038f5efad6f722def4a214", "title": "Step 6" },
+    { "id": "69038fe7da59ca23a5eba82d", "title": "Step 7" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
