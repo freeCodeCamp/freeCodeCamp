@@ -73,20 +73,27 @@ export function filterByBlock<T extends { blocks: { dashedName: string }[] }>(
 }
 
 /**
- * Filters the superblocks array to only include the superblock with the specified name.
+ * Filters the superblocks array to only include superblocks with the specified name(s).
  * If no superBlock is provided, returns the original superblocks array.
+ * Supports comma-separated superblock names for filtering multiple superblocks.
  *
  * @param {Array<Object>} superblocks - Array of superblock objects.
  * @param {Object} [options] - Options object
- * @param {string} [options.superBlock] - The name of the superblock to filter for.
- * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock, or the original array if superBlock is not provided.
+ * @param {string} [options.superBlock] - The name(s) of the superblock(s) to filter for (comma-separated for multiple).
+ * @returns {Array<Object>} Filtered array of superblocks containing only the specified superblock(s), or the original array if superBlock is not provided.
  */
 export function filterBySuperblock<T extends { name: string }>(
   superblocks: T[],
   { superBlock }: { superBlock?: string } = {}
 ): T[] {
   if (!superBlock) return superblocks;
-  return superblocks.filter(({ name }) => name === superBlock);
+
+  const superBlockList = superBlock
+    .split(',')
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  return superblocks.filter(({ name }) => superBlockList.includes(name));
 }
 
 /**
@@ -175,6 +182,12 @@ export function closestFilters(
 ): Filter | undefined {
   if (target?.superBlock) {
     const superblockNames = superblocks.map(({ name }) => name);
+
+    // If there are multiple superblocks, do not attempt to find a closest match.
+    if (target.superBlock.includes(',')) {
+      return target;
+    }
+
     return {
       ...target,
       superBlock: closestMatch(target.superBlock, superblockNames)
