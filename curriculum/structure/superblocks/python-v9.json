@@ -78,6 +78,7 @@
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
             "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
@@ -128,6 +129,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
             "lab-adjacency-list-to-matrix-converter",
             "workshop-breadth-first-search",
             "lab-depth-first-search",

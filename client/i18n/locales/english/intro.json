@@ -5198,6 +5198,12 @@
           "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
@@ -5227,10 +5233,24 @@
           "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the application functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -6879,6 +6899,12 @@
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
@@ -6996,6 +7022,12 @@
         "title": "Understanding Graphs and Trees",
         "intro": [
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
@@ -7686,6 +7718,12 @@
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -7770,6 +7808,12 @@
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
           "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
