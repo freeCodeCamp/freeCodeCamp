@@ -53,6 +53,12 @@ export const languageSuperBlocks = [
   SuperBlocks.A2Chinese
 ];
 
+// Mapping from superblock to a speech recognition language (BCP-47)
+export const superBlockToSpeechLang: Partial<Record<SuperBlocks, string>> = {
+  [SuperBlocks.A2English]: 'en-US',
+  [SuperBlocks.B1English]: 'en-US'
+};
+
 /*
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
  * 'Upcoming' is for development -> not shown on stag or prod anywhere

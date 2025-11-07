@@ -37,6 +37,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {

@@ -1354,6 +1354,26 @@
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
     }
   },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
+  },
   "curriculum": {
     "catalog": {
       "title": "Explore our Catalog",
