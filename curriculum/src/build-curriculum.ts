@@ -14,12 +14,8 @@ import {
 } from './build-superblock.js';
 
 import { buildCertification } from './build-certification.js';
-import {
-  applyFilters,
-  closestFilters,
-  Filter,
-  getSuperOrder
-} from './utils.js';
+import { getSuperOrder } from './super-order.js';
+import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
   getContentDir,
   getLanguageConfig,
@@ -30,6 +26,7 @@ import {
   getBlockStructureDir,
   type BlockStructure
 } from './file-handler.js';
+import { SHOW_UPCOMING_CHANGES } from './config.js';
 const log = debug('fcc:build-curriculum');
 
 /**
@@ -225,7 +222,7 @@ export const superBlockToFilename = Object.entries(superBlockNames).reduce(
  */
 export function addSuperblockStructure(
   superBlockFilenames: string[],
-  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+  showComingSoon = SHOW_UPCOMING_CHANGES
 ) {
   log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
