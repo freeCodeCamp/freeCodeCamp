@@ -7491,14 +7491,7 @@
     "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the following certifications:",
-      "- Responsive Web Design Certification",
-      "- JavaScript Certification",
-      "- Front End Development Libraries Certification",
-      "- Python Certification",
-      "- Relational Databases Certification",
-      "- Back End Development and APIs Certification",
-      "Pass the exam to earn your Full Stack Developer Certification."
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
