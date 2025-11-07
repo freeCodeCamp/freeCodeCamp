@@ -162,12 +162,14 @@ function alignWords(
     );
 
     const delta = firstOriginalIndex - firstUtteranceIndex;
-    // if delta is positive, the utterance is too short, so we pad the utterance with delta empty words
+    // if delta is positive, the utterance is too short, so we pad the utterance to align
     // if delta is negative, the utterance is too long, and we can ignore the first |delta| utterances
 
     const alignedUtterance: (string | undefined)[] =
       delta >= 0
-        ? Array<string>(delta).fill('').concat(utteranceWords)
+        ? Array<string | undefined>(delta)
+            .fill(undefined)
+            .concat(utteranceWords)
         : utteranceWords.slice(-delta);
 
     return removeTrailingExtraWords(

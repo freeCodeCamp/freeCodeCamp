@@ -46,11 +46,6 @@ const ExactMatchFeedback = ({
   </>
 );
 
-function processComparison({ actual, expected }: ComparisonWord): {
-  status: 'correct' | 'misplaced' | 'extra' | 'wrong';
-  word: string;
-};
-
 function processComparison(comparison: ComparisonWord): {
   status: 'correct' | 'misplaced' | 'extra' | 'wrong';
   word: string;
@@ -167,6 +162,8 @@ const SpeakingModal = ({
     resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
+
+  console.log('Speech recognition transcript:', transcript);
 
   const handleAudioEnded = useCallback(() => {
     setIsPlaying(false);

@@ -128,6 +128,15 @@ describe('speaking-modal-helpers', () => {
         ]);
       });
 
+      it('should pad shorter utterance with undefined for alignment', () => {
+        const result = compareTexts('a b c', 'b c');
+        expect(result.comparison).toEqual([
+          { expected: 'a' },
+          { expected: 'b', actual: 'b' },
+          { expected: 'c', actual: 'c' }
+        ]);
+      });
+
       it('should handle completely different texts that are longer than the original', () => {
         const result = compareTexts('a b', 'c d e');
         expect(result.comparison).toEqual([
