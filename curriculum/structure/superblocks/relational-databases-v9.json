@@ -96,6 +96,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "relational-databases-certification-exam",
           "blocks": ["exam-relational-databases-certification"]
         }
