@@ -15,11 +15,11 @@ import {
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
-const shouldBuildExternalCurriculum = !process.env.BUILD_SUPERBLOCKS;
+const isSelectiveBuild = !!process.env.FCC_SUPERBLOCK;
 
 void getChallengesForLang('english')
   .then(result => {
-    if (shouldBuildExternalCurriculum) {
+    if (!isSelectiveBuild) {
       console.log('Building external curriculum data...');
       buildExtCurriculumDataV1(
         result as unknown as CurriculumV1<CurriculumPropsV1>

@@ -335,65 +335,20 @@ export async function parseCurriculumStructure(filter?: Filter) {
   };
 }
 
-async function buildSelectiveCurriculum(
-  lang: string,
-  buildSuperblocks: string,
-  filters?: Filter
-) {
-  const superblockList = buildSuperblocks
-    .split(',')
-    .map(s => s.trim())
-    .filter(s => s.length > 0);
+export async function buildCurriculum(lang: string, filters?: Filter) {
+  const contentDir = getContentDir(lang);
+  const fccSuperblock = process.env.FCC_SUPERBLOCK;
 
-  const availableSuperblocks = Object.keys(superBlockNames).join(', ');
-  const selectedSuperblockEnums: SuperBlocks[] = [];
+  const combinedFilters: Filter | undefined = fccSuperblock
+    ? { ...filters, superBlock: fccSuperblock }
+    : filters;
 
-  for (const superblockName of superblockList) {
-    const enumValue =
-      superBlockNames[superblockName as keyof typeof superBlockNames];
-
-    if (!enumValue) {
-      throw new Error(
-        `Invalid BUILD_SUPERBLOCKS: "${superblockName}". Available superblocks are: ${availableSuperblocks}`
-      );
-    }
-
-    selectedSuperblockEnums.push(enumValue);
-  }
-
-  const builder = new SuperblockCreator(getBlockCreator(lang, true));
-
-  const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(filters);
-
-  const fullCurriculum: {
-    [key: string]: unknown;
-    certifications: { blocks: { [key: string]: unknown } };
-  } = {
-    certifications: { blocks: {} }
-  };
-
-  const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
-    const superOrder = getSuperOrder(name);
-    return !isUndefined(superOrder);
-  });
-
-  for (const superblock of liveSuperblocks) {
-    if (!selectedSuperblockEnums.includes(superblock.name)) continue;
-    const processedSuperblock = await builder.processSuperblock(superblock);
-    fullCurriculum[superblock.name] = processedSuperblock;
-  }
-
-  return { fullCurriculum, certifications };
-}
-
-async function buildFullCurriculum(lang: string, filters?: Filter) {
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(filters))
+    getBlockCreator(lang, !isEmpty(combinedFilters))
   );
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(filters);
+    await parseCurriculumStructure(combinedFilters);
 
   const fullCurriculum: {
     [key: string]: unknown;
@@ -413,21 +368,9 @@ async function buildFullCurriculum(lang: string, filters?: Filter) {
   });
 
   for (const superblock of liveSuperblocks) {
-    log(`Building full superblock: ${superblock.name}`);
     const processedSuperblock = await builder.processSuperblock(superblock);
     fullCurriculum[superblock.name] = processedSuperblock;
   }
-
-  return { fullCurriculum, certifications };
-}
-
-export async function buildCurriculum(lang: string, filters?: Filter) {
-  const contentDir = getContentDir(lang);
-  const buildSuperblocks = process.env.BUILD_SUPERBLOCKS;
-
-  const { fullCurriculum, certifications } = buildSuperblocks
-    ? await buildSelectiveCurriculum(lang, buildSuperblocks, filters)
-    : await buildFullCurriculum(lang, filters);
 
   for (const cert of certifications) {
     const certPath = resolve(contentDir, 'certifications', `${cert}.yml`);
