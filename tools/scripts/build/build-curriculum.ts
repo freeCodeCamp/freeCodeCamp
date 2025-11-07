@@ -15,7 +15,10 @@ import {
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
-const isSelectiveBuild = !!process.env.FCC_SUPERBLOCK;
+const isSelectiveBuild =
+  process.env.FCC_SUPERBLOCK ||
+  process.env.FCC_BLOCK ||
+  process.env.FCC_CHALLENGE_ID;
 
 void getChallengesForLang('english')
   .then(result => {

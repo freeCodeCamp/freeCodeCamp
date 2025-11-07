@@ -335,18 +335,13 @@ export async function parseCurriculumStructure(filter?: Filter) {
 
 export async function buildCurriculum(lang: string, filters?: Filter) {
   const contentDir = getContentDir(lang);
-  const fccSuperblock = process.env.FCC_SUPERBLOCK;
-
-  const combinedFilters: Filter | undefined = fccSuperblock
-    ? { ...filters, superBlock: fccSuperblock }
-    : filters;
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(combinedFilters))
+    getBlockCreator(lang, !isEmpty(filters))
   );
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(combinedFilters);
+    await parseCurriculumStructure(filters);
 
   const fullCurriculum: {
     [key: string]: unknown;
