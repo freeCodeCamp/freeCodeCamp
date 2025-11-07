@@ -121,13 +121,6 @@ describe('speaking-modal-helpers', () => {
         ]);
       });
 
-      it('should ignore trailing extra words', () => {
-        const result = compareTexts('Hello', 'Hello beautiful world');
-        expect(result.comparison).toEqual([
-          { expected: 'hello', actual: 'hello' }
-        ]);
-      });
-
       it('should pad shorter utterance with undefined for alignment', () => {
         const result = compareTexts('a b c', 'b c');
         expect(result.comparison).toEqual([
@@ -141,7 +134,8 @@ describe('speaking-modal-helpers', () => {
         const result = compareTexts('a b', 'c d e');
         expect(result.comparison).toEqual([
           { expected: 'a', actual: 'c' },
-          { expected: 'b', actual: 'd' }
+          { expected: 'b', actual: 'd' },
+          { actual: 'e' }
         ]);
       });
 
@@ -187,11 +181,6 @@ describe('speaking-modal-helpers', () => {
     });
 
     describe('edge cases', () => {
-      it('should return an empty array if there is no original text', () => {
-        const result = compareTexts('', 'Hello world');
-        expect(result.comparison).toEqual([]);
-      });
-
       it('should handle empty utterance', () => {
         const result = compareTexts('Hello world', '');
         expect(result.comparison).toEqual([
@@ -207,7 +196,11 @@ describe('speaking-modal-helpers', () => {
 
       it('should treat punctuation-only original text as if it was empty', () => {
         const result = compareTexts('!!!', 'hello');
-        expect(result.comparison).toEqual([]);
+        expect(result.comparison).toEqual([
+          {
+            actual: 'hello'
+          }
+        ]);
       });
     });
 

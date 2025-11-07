@@ -1,4 +1,4 @@
-import { dropRightWhile, isEmpty } from 'lodash-es';
+import { isEmpty } from 'lodash-es';
 
 export const normalizeText = (text: string) => {
   return text
@@ -67,16 +67,8 @@ export const compareTexts = (
   };
 };
 
-const isExtra = (word: ComparisonWord) =>
-  word.expected == undefined && !!word.actual;
-
 const toMissing = (word?: string): ComparisonWord => ({ expected: word! });
 const toExtra = (word?: string): ComparisonWord => ({ actual: word! });
-
-// If the speaker kept going after saying the required words, we simply ignore
-// the rest.
-const removeTrailingExtraWords = (words: ComparisonWord[]): ComparisonWord[] =>
-  dropRightWhile(words, isExtra);
 
 function search<T extends string | undefined>(
   needle: T,
@@ -172,9 +164,7 @@ function alignWords(
             .concat(utteranceWords)
         : utteranceWords.slice(-delta);
 
-    return removeTrailingExtraWords(
-      matchTexts(originalWords, alignedUtterance)
-    );
+    return matchTexts(originalWords, alignedUtterance);
   } else {
     const missingUtteranceCount =
       utteranceWords.length < originalWords.length
@@ -185,11 +175,9 @@ function alignWords(
       Array(missingUtteranceCount).fill(undefined)
     );
 
-    return removeTrailingExtraWords(
-      paddedUtterance.map((uttered, index) => ({
-        expected: originalWords[index],
-        actual: uttered
-      }))
-    );
+    return paddedUtterance.map((uttered, index) => ({
+      expected: originalWords[index],
+      actual: uttered
+    }));
   }
 }
