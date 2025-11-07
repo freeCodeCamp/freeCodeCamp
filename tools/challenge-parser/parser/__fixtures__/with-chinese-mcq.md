@@ -1,5 +1,5 @@
 ---
-id: test-with-mcq-chinese
+id: test-with-chinese-mcq
 title: Ruby Test
 challengeType: 19
 lang: zh-CN

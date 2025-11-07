@@ -20,7 +20,7 @@ describe('add-text', () => {
     withNestedInstructionsAST = await parseFixture(
       'with-nested-instructions.md'
     );
-    withChineseAST = await parseFixture('with-mcq-chinese.md');
+    withChineseAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {

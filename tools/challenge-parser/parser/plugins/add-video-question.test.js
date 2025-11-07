@@ -22,7 +22,7 @@ describe('add-video-question plugin', () => {
       'with-video-question-out-of-order.md'
     );
     videoWithAudioAST = await parseFixture('with-video-question-audio.md');
-    chineseVideoAST = await parseFixture('with-mcq-chinese.md');
+    chineseVideoAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {
