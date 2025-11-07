@@ -302,11 +302,11 @@ export const characterAssets = {
   Valeria: characterImages.alice,
 
   //Chinese
-  'Chen Na': characterImages.linda,
-  'Li Hong': characterImages.sarah,
-  'Li Ping': characterImages.anna,
-  'Liu Ming': characterImages.brian,
-  'Wang Hua': characterImages.maria,
-  Zhang: characterImages.bob,
-  Zhou: characterImages.tom
+  'Chen Na': characterImages.chenNa,
+  'Li Hong': characterImages.liHong,
+  'Li Ping': characterImages.liPing,
+  'Liu Ming': characterImages.liuMing,
+  'Wang Hua': characterImages.wangHua,
+  Zhang: characterImages.zhang,
+  Zhou: characterImages.zhou
 };
