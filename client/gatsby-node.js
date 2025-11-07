@@ -323,7 +323,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       hooks: Hooks
       id: String
       instructions: String
-      isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
       module: String
