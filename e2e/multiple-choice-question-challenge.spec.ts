@@ -6,8 +6,7 @@ const pageWithSpeaking =
 const pageWithoutSpeaking =
   '/learn/full-stack-developer/lecture-what-is-css/what-is-the-basic-anatomy-of-a-css-rule';
 
-// TODO: Enable this test suite when we have added audio to the challenge
-test.describe.skip(
+test.describe(
   'Multiple Choice Question Challenge - With Speaking Modal',
   () => {
     test.beforeEach(async ({ page }) => {

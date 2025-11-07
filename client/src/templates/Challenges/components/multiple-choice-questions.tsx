@@ -18,7 +18,6 @@ type MultipleChoiceQuestionsProps = {
   handleOptionChange: (questionIndex: number, answerIndex: number) => void;
   submittedMcqAnswers: (number | null)[];
   showFeedback: boolean;
-
   openSpeakingModal: () => void;
   superBlock: SuperBlocks;
 };
