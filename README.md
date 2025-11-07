@@ -12,7 +12,6 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 We welcome pull requests from everyone, especially first-time contributors. Whether you're fixing bugs, improving documentation, or adding new features, your contribution matters.
 
-
 ## Table of Contents
 
 - [Certifications](#certifications)
