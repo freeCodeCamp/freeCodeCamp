@@ -10,6 +10,9 @@
 
 Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
 
+We welcome pull requests from everyone, especially first-time contributors. Whether you're fixing bugs, improving documentation, or adding new features, your contribution matters.
+
+
 ## Table of Contents
 
 - [Certifications](#certifications)
