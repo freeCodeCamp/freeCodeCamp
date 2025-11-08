@@ -1,13 +1,7 @@
 import React, { useMemo } from 'react';
-import {
-  SandpackProvider,
-  SandpackLayout,
-  SandpackPreview,
-  SandpackConsole
-} from '@codesandbox/sandpack-react';
+import { Sandpack } from '@codesandbox/sandpack-react';
 import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
-import MonacoEditor from './monaco-editor';
 
 export interface InteractiveFile {
   ext: string;
@@ -49,9 +43,8 @@ const InteractiveEditor = ({ files }: Props) => {
   function got(ext: string) {
     return files.some(f => f.ext === ext);
   }
-  const showConsole = got('js') || got('ts');
-  const isHtmlOnly = got('html') && !showConsole;
 
+  const showConsole = got('js') || got('ts');
   const freeCodeCampDarkSyntax = {
     ...freeCodeCampDark.syntax,
     punctuation: '#ffff00',
@@ -64,7 +57,7 @@ const InteractiveEditor = ({ files }: Props) => {
       className='interactive-editor-wrapper'
       data-playwright-test-label='sp-interactive-editor'
     >
-      <SandpackProvider
+      <Sandpack
         template={
           got('tsx')
             ? 'react-ts'
@@ -86,19 +79,18 @@ const InteractiveEditor = ({ files }: Props) => {
           },
           syntax: freeCodeCampDarkSyntax
         }}
-      >
-        <SandpackLayout>
-          <MonacoEditor />
-          <SandpackPreview
-            style={{
-              display: isHtmlOnly ? 'flex' : 'none'
-            }}
-          />
-          {!isHtmlOnly && <SandpackConsole />}
-        </SandpackLayout>
-      </SandpackProvider>
+        options={{
+          editorHeight: 450,
+          editorWidthPercentage: 60,
+          showConsole: showConsole,
+          showConsoleButton: showConsole,
+          layout: got('html') ? 'preview' : 'console',
+          showLineNumbers: true
+        }}
+      />
     </div>
   );
 };
+
 InteractiveEditor.displayName = 'InteractiveEditor';
 export default InteractiveEditor;
