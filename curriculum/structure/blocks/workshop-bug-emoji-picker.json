@@ -1,7 +1,7 @@
 {
-  "name": "Build a Bug Emoji Tracker ",
+  "name": "Build a Bug Emoji Picker ",
   "isUpcomingChange": true,
-  "dashedName": "workshop-bug-emoji-tracker",
+  "dashedName": "workshop-bug-emoji-picker",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
   "challengeOrder": [

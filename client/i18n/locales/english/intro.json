@@ -6579,8 +6579,8 @@
         ]
       },
       "workshop-bug-emoji-tracker": {
-        "title": "Build a Bug Emoji Tracker ",
-        "intro": ["Build a Bug Emoji Tracker ", ""]
+        "title": "Build a Bug Emoji Picker ",
+        "intro": ["Build a Bug Emoji Picker ", ""]
       },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
