@@ -277,7 +277,11 @@ const availableAudios = [
   'ES_A1_vowels.mp3',
   'ES_A1_vowels_aiu.mp3',
   'ES_A1_vowels_oiu.mp3',
-  'ES_A1_vowels_uae.mp3'
+  'ES_A1_vowels_uae.mp3',
+  'ZH_A1_1.1.mp3',
+  'ZH_A1_1.2.mp3',
+  'ZH_A1_1.3.mp3',
+  'ZH_A1_1.4.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];
