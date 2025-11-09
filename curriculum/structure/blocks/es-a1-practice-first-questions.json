@@ -4,6 +4,17 @@
   "dashedName": "es-a1-practice-first-questions",
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc75b0fe65b57754913412", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "691078d4e99ddd082b12ee9c", "title": "Task 1" },
+    { "id": "69107e5c3d2e240f97b5742f", "title": "Task 2" },
+    { "id": "69107f5f897ed310bb08ecf7", "title": "Task 3" },
+    { "id": "691081b5ef232e138b301ac8", "title": "Task 4" },
+    { "id": "691083ce2c387615cf14e5f1", "title": "Task 5" },
+    { "id": "6910867bb3065a1924502732", "title": "Task 6" },
+    { "id": "69108a0006dd331d159c51f3", "title": "Task 7" },
+    { "id": "69108ccea9363f23b3aacb49", "title": "Task 8" },
+    { "id": "691090f4e43e61297523d064", "title": "Task 9" },
+    { "id": "6910932c6c4e812ca246cdae", "title": "Task 10" }
+  ],
   "blockLabel": "practice"
 }
