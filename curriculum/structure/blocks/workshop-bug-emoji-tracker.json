@@ -1,0 +1,14 @@
+{
+  "name": "Build a Bug Emoji Tracker ",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-bug-emoji-tracker",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "690fe8b8e39ebd4a4d217d6b", "title": "Step 1" },
+    { "id": "690ffbe80b0429c0d448050c", "title": "Step 2" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
