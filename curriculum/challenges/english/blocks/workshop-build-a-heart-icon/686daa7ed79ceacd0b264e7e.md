@@ -7,12 +7,18 @@ dashedName: step-3
 
 # --description--
 
-You are getting closer. The next thing to do is to set the `viewBox` attribute of the `svg` element. This will
-control how much of the image is visible. The first two numbers set the center of the image.
+You are getting closer, now look at this example:
 
-The following two numbers set the size of the image we can see: width followed by height.
+```html
+<svg width="24" height="24" viewBox="0 0 24 24">
+</svg>
+```
 
-Since here the entirety of the icon should be visible, you should set the `viewBox` attribute to `0 0 24 24`.
+The viewBox attribute controls what part of the image is visible inside the svg.
+- The **first two numbers** (0 0) set the starting position of the viewBox — the top-left corner (x and y). 
+- The **next two numbers** (24 24) define the visible area’s width and height. 
+
+So set the viewBox attribute to 0 0 24 24.
 
 # --hints--
 
