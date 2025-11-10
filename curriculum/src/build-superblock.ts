@@ -13,12 +13,13 @@ import {
 import { SuperBlocks } from '../../shared-dist/config/curriculum';
 import type { Chapter } from '../../shared-dist/config/chapters';
 import { Certification } from '../../shared-dist/config/certification-settings';
-import { getSuperOrder } from './utils.js';
+import { getSuperOrder } from './super-order.js';
 import type {
   BlockStructure,
   Challenge,
   ChallengeFile
 } from './file-handler.js';
+import { SHOW_UPCOMING_CHANGES } from './config';
 
 const log = debug('fcc:build-superblock');
 
@@ -372,10 +373,7 @@ export class BlockCreator {
       throw Error(`Block directory not found: ${blockContentDir}`);
     }
 
-    if (
-      block.isUpcomingChange &&
-      process.env.SHOW_UPCOMING_CHANGES !== 'true'
-    ) {
+    if (block.isUpcomingChange && !SHOW_UPCOMING_CHANGES) {
       log(`Ignoring upcoming block ${blockName}`);
       return null;
     }

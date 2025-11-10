@@ -37,6 +37,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -139,7 +140,16 @@ export type Characters =
   | 'René'
   | 'Sebastián'
   | 'Diego'
-  | 'Valeria';
+  | 'Valeria'
+
+  // Chinese
+  | 'Chen Na'
+  | 'Li Hong'
+  | 'Li Ping'
+  | 'Liu Ming'
+  | 'Wang Hua'
+  | 'Zhang'
+  | 'Zhou';
 
 interface SetupCharacter {
   character: Characters;
@@ -213,7 +223,6 @@ export type ChallengeNode = {
     hooks?: Hooks;
     id: string;
     instructions: string;
-    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;

@@ -16,7 +16,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'b1-english-for-developers',
-    name: 'B1 English for Developers (Beta) Certification'
+    name: 'B1 English for Developers Certification (Beta)'
   },
   {
     slug: 'foundational-c-sharp-with-microsoft',

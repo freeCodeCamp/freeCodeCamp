@@ -119,4 +119,24 @@ describe('Layout selector', () => {
     const componentObj = getComponentNameAndProps(Certification, challengePath);
     expect(componentObj.name).toEqual('CertificationLayout');
   });
+
+  test('Status paths should return raw element without layout', () => {
+    const TestComponent = () => <div>Test</div>;
+    const statusPath = '/status/version';
+
+    const result = layoutSelector({
+      element: { type: TestComponent, props: {}, key: '' },
+      props: {
+        data: {},
+        location: {
+          pathname: statusPath
+        },
+        params: { '*': '' },
+        path: ''
+      }
+    });
+
+    // The result should be the element directly, not wrapped in a layout
+    expect(result.type).toBe(TestComponent);
+  });
 });

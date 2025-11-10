@@ -1,9 +1,11 @@
 import React from 'react';
-import { Callout, Spacer } from '@freecodecamp/ui';
+import { Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 import { useTranslation } from 'react-i18next';
+
 import { Link } from '../helpers';
 import { ProgressBar } from '../Progress/progress-bar';
+import './learn-alert.css';
 
 interface LearnAlertProps {
   onLearnDonationAlertClick: () => void;
@@ -19,7 +21,7 @@ const LearnAlert = ({
   const progressAlertFlag2024 = useFeature('progress-alert-2024');
   const createUniversityFlag = useFeature('university-alert');
   const progressAlertDefault = (text: string, value?: number) => (
-    <Callout variant='info' className='annual-donation-alert'>
+    <div className='learn-alert annual-donation-alert'>
       {value && (
         <>
           <div className='text-center'>
@@ -36,7 +38,7 @@ const LearnAlert = ({
       )}
       <p>{text}</p>
       <Spacer size='m' />
-      <div className={'text-center'}>
+      <p className={'btn-container'}>
         <Link
           className='btn donate-button'
           key='donate'
@@ -46,12 +48,12 @@ const LearnAlert = ({
         >
           {t('buttons.donate')}
         </Link>
-      </div>
-    </Callout>
+      </p>
+    </div>
   );
 
   const seasonalAlertFlagAlert = (
-    <Callout variant='info' className='annual-donation-alert'>
+    <div className='learn-alert annual-donation-alert'>
       <p>
         <b>{t('learn.season-greetings-fcc')}</b>
       </p>
@@ -68,7 +70,7 @@ const LearnAlert = ({
           {t('buttons.donate')}
         </Link>
       </p>
-    </Callout>
+    </div>
   );
 
   const progressAlert2024 = progressAlertDefault(
@@ -77,13 +79,13 @@ const LearnAlert = ({
   );
 
   const universityAlert = (
-    <Callout variant='info' className='university-alert'>
+    <div className='learn-alert university-alert'>
       <p>
         <b>{t('learn.building-a-university')}</b>
       </p>
       <p>{t('learn.if-help-university')}</p>
       <Spacer size='m' />
-      <p className={'text-center'}>
+      <p className='btn-container text-center'>
         <Link
           className='btn donate-button'
           key='donate'
@@ -94,7 +96,7 @@ const LearnAlert = ({
           {t('buttons.donate')}
         </Link>
       </p>
-    </Callout>
+    </div>
   );
 
   if (!isDonating) {

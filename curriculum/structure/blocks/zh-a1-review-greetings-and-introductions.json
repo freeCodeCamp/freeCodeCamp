@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-review-greetings-and-introductions",
   "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     { "id": "69021904538f084f5772a1d6", "title": "Task 1" },
     { "id": "69021947fa86ab50f9d3e287", "title": "Task 2" }

@@ -323,7 +323,6 @@ exports.createSchemaCustomization = ({ actions }) => {
       hooks: Hooks
       id: String
       instructions: String
-      isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
       module: String
@@ -342,6 +341,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       superOrder: Int
       template: String
       tests: [Test]
+      fields: ChallengeFields
       title: String
       transcript: String
       translationPending: Boolean
@@ -387,6 +387,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Answer {
       answer: String
       feedback: String
+      audioId: String
     }
     type RequiredResource {
       link: String
@@ -467,7 +468,11 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeAll: String
       afterAll: String
     }
-
+    type ChallengeFields {
+      slug: String
+      blockName: String
+      tests: [Test]
+    }
     type Nodule {
       type: String
       data: JSON

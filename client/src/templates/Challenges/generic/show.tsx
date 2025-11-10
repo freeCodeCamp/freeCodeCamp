@@ -330,6 +330,7 @@ const ShowGeneric = ({
                       handleOptionChange={handleMcqOptionChange}
                       submittedMcqAnswers={submittedMcqAnswers}
                       showFeedback={showFeedback}
+                      superBlock={superBlock}
                     />
                   </ObserveKeys>
                 )}
@@ -405,6 +406,7 @@ export const query = graphql`
           answers {
             answer
             feedback
+            audioId
           }
           solution
         }
