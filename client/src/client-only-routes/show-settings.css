@@ -10,7 +10,7 @@
 
 .settings-ledger ul {
   list-style-type: none;
-  padding-left: 1rem;
+  padding-left: 0;
 }
 
 .settings-ledger ul li {
@@ -20,30 +20,31 @@
 .settings-ledger {
   position: sticky;
   top: var(--header-height);
-  padding: 1rem;
+  padding: 1rem 0;
   overflow-y: scroll;
   height: calc(100vh - var(--header-height));
-  border-right: 1px solid var(--gray-00);
+  border-right: 3px solid var(--tertiary-background);
 }
 
 .settings-ledger .ledger-section-heading {
   display: block;
   font-size: 1rem;
   font-weight: 600;
-  margin-top: 1rem;
   margin-bottom: 0.5rem;
-  padding-left: 0.5rem;
+  padding-left: 1rem;
   text-decoration: none;
   cursor: pointer;
 }
 
 .settings-ledger .ledger-anchor-btn {
   display: inline-block;
+  width: 100%;
   text-decoration: none;
   cursor: pointer;
+  padding: 0 2rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 980px) {
   .settings-ledger {
     display: none;
   }
