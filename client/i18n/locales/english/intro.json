@@ -5201,7 +5201,7 @@
       "workshop-string-formatter": {
         "title": "Build a String Formatter",
         "intro": [
-          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -5237,7 +5237,7 @@
         "title": "Debug Type Coercion Errors in a Buggy App",
         "intro": [
           "In this lab, you will be working with a buggy app that contains several type coercion errors.",
-          "Your task is to identify and fix these errors to ensure the application functions correctly."
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
         ]
       },
       "lecture-working-with-operator-behavior": {
@@ -5249,8 +5249,8 @@
       "lab-debug-increment-and-decrement-operator-errors": {
         "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
         "intro": [
-          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
-          "Your task is to identify and fix the errors so that the application works as intended."
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -7034,7 +7034,7 @@
       "workshop-shortest-path-algorithm": {
         "title": "Implement the Shortest Path Algorithm",
         "intro": [
-          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
