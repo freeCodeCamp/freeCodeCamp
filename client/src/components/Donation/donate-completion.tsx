@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import Spinner from 'react-spinkit';
 import { Alert, Spacer } from '@freecodecamp/ui';
 
+import type { TFunction } from 'i18next';
 import { Link } from '../helpers';
 
 type DonateCompletionProps = {
@@ -14,6 +15,26 @@ type DonateCompletionProps = {
   isSignedIn: boolean;
 };
 
+function getVisualState(
+  t: TFunction,
+  processing: boolean,
+  redirecting: boolean,
+  success: boolean
+): { style: 'info' | 'success' | 'danger'; heading: string } {
+  const style =
+    processing || redirecting ? 'info' : success ? 'success' : 'danger';
+
+  const heading = redirecting
+    ? t('donate.redirecting')
+    : processing
+      ? t('donate.processing')
+      : success
+        ? t('donate.thank-you')
+        : t('donate.error');
+
+  return { style, heading };
+}
+
 function DonateCompletion({
   processing,
   reset,
@@ -23,22 +44,24 @@ function DonateCompletion({
   error = null
 }: DonateCompletionProps): JSX.Element {
   const { t } = useTranslation();
-  const style =
-    processing || redirecting ? 'info' : success ? 'success' : 'danger';
 
-  const heading = redirecting
-    ? `${t('donate.redirecting')}`
-    : processing
-      ? `${t('donate.processing')}`
-      : success
-        ? `${t('donate.thank-you')}`
-        : `${t('donate.error')}`;
+  const { style, heading } = getVisualState(
+    t,
+    processing,
+    redirecting,
+    success
+  );
 
   return (
     <Alert variant={style} className='donation-completion'>
       <b>{heading}</b>
       <Spacer size='m' />
-      <div className='donation-completion-body'>
+      <div
+        className='donation-completion-body'
+        role='status'
+        aria-live='polite'
+        aria-atomic='true'
+      >
         {(processing || redirecting) && (
           <Spinner
             className='user-state-spinner'
@@ -47,13 +70,13 @@ function DonateCompletion({
             name='line-scale'
           />
         )}
+
         {success && (
           <>
             <p>{t('donate.free-tech')}</p>
             {isSignedIn && (
               <>
                 <p>{t('donate.visit-supporters')}</p>
-
                 <Link
                   className='btn complete-button'
                   key='supporters'
@@ -66,8 +89,10 @@ function DonateCompletion({
             )}
           </>
         )}
-        {error && <p>{error}</p>}
+
+        {error && <p>{String(error)}</p>}
       </div>
+
       <div className='donation-completion-buttons'>
         {error && (
           <button type='button' className='try-again-button' onClick={reset}>
