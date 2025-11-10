@@ -73,7 +73,6 @@
     "test": "NODE_OPTIONS='--max-old-space-size=7168' run-s compile:ts build:curriculum build-workers test:**",
     "test:api": "cd api && pnpm test",
     "test:tools:challenge-helper-scripts": "cd ./tools/challenge-helper-scripts && pnpm test run",
-    "test:tools:scripts-build": "cd ./tools/scripts/build && pnpm test run",
     "test:tools:scripts-lint": "cd ./tools/scripts/lint && pnpm test run",
     "test:tools:challenge-parser": "cd ./tools/challenge-parser && pnpm test run",
     "test:curriculum:content": "cd ./curriculum && pnpm test run",
