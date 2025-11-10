@@ -19,7 +19,7 @@ The `viewBox` attribute controls what part of the image is visible inside the `s
 - The **first two numbers** (`0 0`) set the starting position of the viewBox — the top-left corner (x and y).  
 - The **next two numbers** (`24 24`) define the visible area’s width and height.
   
-So set the viewBox attribute to 0 0 24 24.
+Set the viewBox attribute to 0 0 24 24.
 
 # --hints--
 
