@@ -334,19 +334,17 @@ export async function parseCurriculumStructure(filter?: Filter) {
 }
 
 export async function buildCurriculum(lang: string, filters?: Filter) {
+  // Block validation assumes the entire block is being built, if that's not the
+  // case, skip validation
+  const skipBlockValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
-  const fccSuperblock = process.env.FCC_SUPERBLOCK;
-
-  const combinedFilters: Filter | undefined = fccSuperblock
-    ? { ...filters, superBlock: fccSuperblock }
-    : filters;
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(combinedFilters))
+    getBlockCreator(lang, skipBlockValidation)
   );
 
   const { fullSuperblockList, certifications } =
-    await parseCurriculumStructure(combinedFilters);
+    await parseCurriculumStructure(filters);
 
   const fullCurriculum: {
     [key: string]: unknown;
