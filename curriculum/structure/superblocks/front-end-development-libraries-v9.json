@@ -107,6 +107,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "front-end-development-libraries-certification-exam",
           "blocks": ["exam-front-end-development-libraries-certification"]
         }
