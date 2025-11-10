@@ -16,10 +16,8 @@ import type {
   BlockLabel,
   BlockLayouts
 } from '../../../../../shared-dist/config/blocks';
-import { ChapterIcon } from '../../../assets/chapter-icon';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
-import { type FsdChapters } from '../../../../../shared-dist/config/chapters';
 import {
   certSlugTypeMap,
   certificationRequirements,
@@ -132,126 +130,67 @@ export const SuperBlockMap = ({
   if (chapterBasedSuperBlocks.includes(superBlock)) {
     if (!structure) return null;
 
-    return (
-      <SuperBlockAccordion
-        challenges={superBlockChallenges}
-        superBlock={superBlock}
-        structure={structure}
-        chosenBlock={initialExpandedBlock}
-        completedChallengeIds={completedChallengeIds}
-      />
-    );
-  }
-
-  if (certificationCollectionSuperBlocks.includes(superBlock)) {
-    if (!structure) return null;
-    const certificationForSuperBlock = superBlockToCertMap[superBlock];
-    const requirementsLookup = certificationRequirements as Partial<
-      Record<string, SuperBlocks[]>
-    >;
-    const requirements: SuperBlocks[] =
-      (certificationForSuperBlock &&
-        requirementsLookup[certificationForSuperBlock]) ??
-      [];
-
-    const requirementItems = requirements.map((requirement: SuperBlocks) => {
-      const requirementTitle = t(`intro:${requirement}.title`);
-      const requirementLink = `/learn/${requirement}/`;
-
-      const certSlug = superBlockToCertMap[requirement];
-      const certFlagLookup = certSlugTypeMap as Record<
-        string,
-        keyof ClaimedCertifications
+    const getRequirementItems = () => {
+      const certificationForSuperBlock = superBlockToCertMap[superBlock];
+      const requirementsLookup = certificationRequirements as Partial<
+        Record<string, SuperBlocks[]>
       >;
-      const certFlagKey = certSlug ? certFlagLookup[certSlug] : undefined;
-      const isRequirementComplete = Boolean(certFlagKey && user?.[certFlagKey]);
+      const requirements: SuperBlocks[] =
+        (certificationForSuperBlock &&
+          requirementsLookup[certificationForSuperBlock]) ??
+        [];
 
-      return (
-        <li className='chapter requirement' key={requirement}>
-          <Link
-            className='chapter-button'
-            data-playwright-test-label='requirement-button'
-            to={requirementLink}
-          >
-            <div className='chapter-button-left'>
-              <span className='checkmark-wrap chapter-checkmark-wrap'>
-                <CheckMark isCompleted={isRequirementComplete} />
-              </span>
-              <SuperBlockIcon className='map-icon' superBlock={requirement} />
-              {requirementTitle}
-            </div>
-          </Link>
-        </li>
-      );
-    });
+      const requirementItems = requirements.map((requirement: SuperBlocks) => {
+        const requirementTitle = t(`intro:${requirement}.title`);
+        const requirementLink = `/learn/${requirement}/`;
 
-    const chapterItems = structure.chapters
-      .map(chapter => {
-        const blockNames = chapter.modules.flatMap(module => module.blocks);
-        const chapterChallenges = blockNames.flatMap(blockName =>
-          superBlockChallenges.filter(
-            challenge => challenge.block === blockName
-          )
-        );
-
-        const totalSteps = chapterChallenges.length;
-        const completedSteps = chapterChallenges.filter(challenge =>
-          completedChallengeIds.includes(challenge.id)
-        ).length;
-        const isComplete = totalSteps > 0 && completedSteps === totalSteps;
-
-        const firstChallengeSlug = chapterChallenges[0]?.fields.slug;
-        if (!firstChallengeSlug) return null;
-
-        const chapterLabel = t(
-          `intro:${superBlock}.chapters.${chapter.dashedName}`
+        const certSlug = superBlockToCertMap[requirement];
+        const certFlagLookup = certSlugTypeMap as Record<
+          string,
+          keyof ClaimedCertifications
+        >;
+        const certFlagKey = certSlug ? certFlagLookup[certSlug] : undefined;
+        const isRequirementComplete = Boolean(
+          certFlagKey && user?.[certFlagKey]
         );
 
         return (
-          <li className='chapter' key={chapter.dashedName}>
+          <li className='chapter requirement' key={requirement}>
             <Link
               className='chapter-button'
-              data-playwright-test-label='chapter-button'
-              to={firstChallengeSlug}
+              data-playwright-test-label='requirement-button'
+              to={requirementLink}
             >
               <div className='chapter-button-left'>
                 <span className='checkmark-wrap chapter-checkmark-wrap'>
-                  <CheckMark isCompleted={isComplete} />
+                  <CheckMark isCompleted={isRequirementComplete} />
                 </span>
-                <ChapterIcon
-                  className='map-icon'
-                  chapter={chapter.dashedName as FsdChapters}
-                />
-                {chapterLabel}
-              </div>
-              <div className='chapter-button-right'>
-                {!chapter.comingSoon && totalSteps > 0 && (
-                  <span className='chapter-steps'>
-                    {t('learn.steps-completed', {
-                      totalSteps,
-                      completedSteps
-                    })}
-                  </span>
-                )}
+                <SuperBlockIcon className='map-icon' superBlock={requirement} />
+                {requirementTitle}
               </div>
             </Link>
           </li>
         );
-      })
-      .filter((chapter): chapter is JSX.Element => chapter !== null);
+      });
 
-    if (!chapterItems.length && !requirementItems.length) return null;
+      return requirementItems;
+    };
 
     return (
       <>
-        {requirementItems.length ? (
+        {certificationCollectionSuperBlocks.includes(superBlock) && (
           <ul className='super-block-accordion requirement-list'>
-            {requirementItems}
+            {getRequirementItems()}
           </ul>
-        ) : null}
-        {chapterItems.length ? (
-          <ul className='super-block-accordion'>{chapterItems}</ul>
-        ) : null}
+        )}
+
+        <SuperBlockAccordion
+          challenges={superBlockChallenges}
+          superBlock={superBlock}
+          structure={structure}
+          chosenBlock={initialExpandedBlock}
+          completedChallengeIds={completedChallengeIds}
+        />
       </>
     );
   }
