@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Spacer } from '@freecodecamp/ui';
 
 import {
   certificationCollectionSuperBlocks,
@@ -179,9 +180,16 @@ export const SuperBlockMap = ({
     return (
       <>
         {certificationCollectionSuperBlocks.includes(superBlock) && (
-          <ul className='super-block-accordion requirement-list'>
-            {getRequirementItems()}
-          </ul>
+          <>
+            <ul className='super-block-accordion requirement-list'>
+              {getRequirementItems()}
+            </ul>
+            <Spacer size='m' />
+            <h2 className='text-center big-subheading'>
+              {t(`intro:misc-text.courses`)}
+            </h2>
+            <Spacer size='m' />
+          </>
         )}
 
         <SuperBlockAccordion
