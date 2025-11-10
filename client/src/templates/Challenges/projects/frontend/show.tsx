@@ -115,7 +115,6 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeNode: {
         challenge: {
           challengeType,
-          fields: { blockName },
           forumTopicId,
           title,
           description,
@@ -172,7 +171,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -201,7 +200,6 @@ export const query = graphql`
         block
         translationPending
         fields {
-          blockName
           slug
         }
         tests {

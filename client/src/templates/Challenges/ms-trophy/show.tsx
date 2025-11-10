@@ -136,8 +136,7 @@ function MsTrophy(props: MsTrophyProps) {
           instructions,
           superBlock,
           block,
-          translationPending,
-          fields: { blockName }
+          translationPending
         }
       }
     },
@@ -199,7 +198,7 @@ function MsTrophy(props: MsTrophyProps) {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -226,9 +225,6 @@ export const query = graphql`
         superBlock
         block
         translationPending
-        fields {
-          blockName
-        }
         tests {
           text
           testString

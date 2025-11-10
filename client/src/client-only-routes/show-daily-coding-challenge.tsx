@@ -91,9 +91,6 @@ function formatChallengeData({
             ...baseChallengeProps,
             helpCategory: 'JavaScript',
             challengeType: 28,
-            fields: {
-              blockName: 'daily-coding-challenge'
-            },
             tests: javascript.tests,
             challengeFiles: [
               {
@@ -119,9 +116,6 @@ function formatChallengeData({
             ...baseChallengeProps,
             helpCategory: 'Python',
             challengeType: 29,
-            fields: {
-              blockName: 'daily-coding-challenge'
-            },
             tests: python.tests,
             challengeFiles: [
               {

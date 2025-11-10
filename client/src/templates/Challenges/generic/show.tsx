@@ -104,7 +104,6 @@ const ShowGeneric = ({
         nodules,
         explanation,
         challengeType,
-        fields: { blockName },
         helpCategory,
         instructions,
         questions,
@@ -359,7 +358,7 @@ const ShowGeneric = ({
               <CompletionModal />
               <HelpModal
                 challengeTitle={title}
-                challengeBlock={blockName}
+                challengeBlock={block}
                 superBlock={superBlock}
               />
             </Row>
@@ -395,7 +394,6 @@ export const query = graphql`
         helpCategory
         instructions
         fields {
-          blockName
           slug
         }
         questions {

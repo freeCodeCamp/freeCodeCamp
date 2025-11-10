@@ -149,7 +149,6 @@ function ShowExam(props: ShowExamProps) {
           block,
           dashedName,
           description,
-          fields: { blockName },
           instructions,
           prerequisites,
           superBlock,
@@ -525,7 +524,7 @@ function ShowExam(props: ShowExamProps) {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -553,7 +552,6 @@ export const query = graphql`
         description
         fields {
           blockHashSlug
-          blockName
         }
         helpCategory
         id

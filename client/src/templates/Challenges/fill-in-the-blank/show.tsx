@@ -86,7 +86,6 @@ const ShowFillInTheBlank = ({
         superBlock,
         block,
         translationPending,
-        fields: { blockName },
         challengeType,
         fillInTheBlank,
         helpCategory,
@@ -261,7 +260,7 @@ const ShowFillInTheBlank = ({
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -289,7 +288,6 @@ export const query = graphql`
         superBlock
         block
         fields {
-          blockName
           slug
         }
         fillInTheBlank {

@@ -54,7 +54,6 @@ export type FillInTheBlank = {
 export type Fields = {
   slug: string;
   blockHashSlug: string;
-  blockName: string;
 };
 type Required = {
   link: string;
@@ -292,9 +291,6 @@ export type DailyCodingChallengeNode = {
 
     helpCategory: 'JavaScript' | 'Python';
     challengeType: 28 | 29;
-    fields: {
-      blockName: 'daily-coding-challenge';
-    };
     tests: Test[];
     challengeFiles: ChallengeFiles;
 

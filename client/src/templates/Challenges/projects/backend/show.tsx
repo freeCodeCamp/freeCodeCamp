@@ -138,7 +138,6 @@ const ShowBackEnd = (props: BackEndProps) => {
     data: {
       challengeNode: {
         challenge: {
-          fields: { blockName },
           challengeType,
           forumTopicId,
           title,
@@ -207,7 +206,7 @@ const ShowBackEnd = (props: BackEndProps) => {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -236,7 +235,6 @@ export const query = graphql`
         block
         translationPending
         fields {
-          blockName
           slug
         }
         tests {

@@ -203,7 +203,6 @@ function ShowClassic({
         description,
         instructions,
         hooks,
-        fields: { blockName },
         tests,
         challengeType,
         hasEditableBoundaries = false,
@@ -318,7 +317,7 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for the urriculum outline workshop
   const showIndependentLowerJaw =
-    blockName === 'workshop-curriculum-outline' &&
+    block === 'workshop-curriculum-outline' &&
     isIndependentLowerJawEnabled &&
     !isMobile;
 
@@ -548,7 +547,7 @@ function ShowClassic({
         <CompletionModal />
         <HelpModal
           challengeTitle={title}
-          challengeBlock={blockName}
+          challengeBlock={block}
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
@@ -597,7 +596,6 @@ export const query = graphql`
           afterAll
         }
         fields {
-          blockName
           slug
         }
         required {

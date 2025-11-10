@@ -397,7 +397,6 @@ export const query = graphql`
         block
         fields {
           blockHashSlug
-          blockName
           slug
         }
         quizzes {
