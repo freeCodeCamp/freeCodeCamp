@@ -10,15 +10,15 @@ dashedName: step-3
 You are getting closer, now look at this example:
 
 ```html
-<svg width="24" height="24" viewBox="0 0 24 24">
+<svg viewBox="">
 </svg>
 ```
 
 The viewBox attribute controls what part of the image is visible inside the svg.
-- The **first two numbers** (0 0) set the starting position of the viewBox — the top-left corner (x and y). 
-- The **next two numbers** (24 24) define the visible area’s width and height. 
+- The **first two numbers** (`0 0`) set the starting position of the viewBox — the top-left corner (x and y). 
+- The **next two numbers** (`24 24`) define the visible area's width and height. 
 
-So set the viewBox attribute to 0 0 24 24.
+So set the viewBox attribute to `0 0 24 24`.
 
 # --hints--
 
