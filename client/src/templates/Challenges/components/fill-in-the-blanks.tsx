@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 
-import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
+import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
@@ -14,6 +14,23 @@ type FillInTheBlankProps = {
   feedback: string | null;
   showWrong: boolean;
   handleInputChange: (inputIndex: number, value: string) => void;
+};
+
+const AnswerText = ({ answer }: { answer: string }) => {
+  const parsedAnswer = parseAnswer(answer);
+
+  if (typeof parsedAnswer === 'string') {
+    return <span className='correct-blank-answer'>{parsedAnswer}</span>;
+  }
+
+  return (
+    <ruby className='correct-blank-answer'>
+      {parsedAnswer.hanzi}
+      <rp>(</rp>
+      <rt>{parsedAnswer.pinyin}</rt>
+      <rp>)</rp>
+    </ruby>
+  );
 };
 
 function FillInTheBlanks({
@@ -36,6 +53,17 @@ function FillInTheBlanks({
     return cls;
   };
 
+  const getAnswerLength = (answer: string): number => {
+    const parsedAnswer = parseAnswer(answer);
+
+    if (typeof parsedAnswer === 'string') {
+      return parsedAnswer.length;
+    }
+
+    // TODO: This is a simplification. Revisit later to account for tones and spaces.
+    return parsedAnswer.pinyin.length;
+  };
+
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
 
@@ -55,25 +83,34 @@ function FillInTheBlanks({
                   return value;
                 }
 
-                // If a blank is answered correctly, render the answer as part of the sentence.
-                if (type === 'blank' && answersCorrect[value] === true) {
+                if (type === 'hanzi-pinyin') {
                   return (
-                    <span key={j} className='correct-blank-answer'>
-                      {blankAnswers[value]}
-                    </span>
+                    <ruby key={j}>
+                      {value.hanzi}
+                      <rp>(</rp>
+                      <rt>{value.pinyin}</rt>
+                      <rp>)</rp>
+                    </ruby>
                   );
                 }
+
+                // If a blank is answered correctly, render the answer as part of the sentence.
+                if (type === 'blank' && answersCorrect[value] === true) {
+                  return <AnswerText key={j} answer={blankAnswers[value]} />;
+                }
+
+                const answerLength = getAnswerLength(blankAnswers[value]);
 
                 return (
                   <input
                     key={j}
                     type='text'
-                    maxLength={blankAnswers[value].length + 3}
+                    maxLength={answerLength + 3}
                     className={getInputClass(value)}
                     onChange={e =>
                       handleInputChange(node.value, e.target.value)
                     }
-                    size={blankAnswers[value].length}
+                    size={answerLength}
                     autoComplete='off'
                     aria-label={t('learn.fill-in-the-blank.blank')}
                     {...(answersCorrect[value] === false

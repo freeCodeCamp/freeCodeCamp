@@ -35,6 +35,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
+import { parseChinesePattern } from './parse-blanks';
 
 import './show.css';
 
@@ -135,12 +136,26 @@ const ShowFillInTheBlank = ({
   const handleSubmit = () => {
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
-    const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) =>
-        !!userAnswer &&
-        replaceAppleQuotes(userAnswer.trim()).toLowerCase() ===
-          blankAnswers[i].toLowerCase()
-    );
+    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
+      if (!userAnswer) return false;
+
+      const answer = blankAnswers[i];
+      const normalizedUserAnswer = replaceAppleQuotes(
+        userAnswer.trim()
+      ).toLowerCase();
+
+      const hanziPinyin = parseChinesePattern(answer);
+
+      if (hanziPinyin) {
+        const { hanzi } = hanziPinyin;
+        // TODO: Implement full hanzi-pinyin validation logic
+        // https://github.com/freeCodeCamp/language-curricula/issues/18
+        return normalizedUserAnswer === hanzi;
+      }
+
+      return normalizedUserAnswer === answer.toLowerCase();
+    });
+
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
