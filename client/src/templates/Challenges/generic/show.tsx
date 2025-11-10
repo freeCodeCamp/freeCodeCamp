@@ -104,10 +104,11 @@ const ShowGeneric = ({
         nodules,
         explanation,
         challengeType,
-        fields: { blockName, tests },
+        fields: { blockName },
         helpCategory,
         instructions,
         questions,
+        tests,
         title,
         transcript,
         translationPending,
@@ -396,10 +397,6 @@ export const query = graphql`
         fields {
           blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         questions {
           text
@@ -448,6 +445,10 @@ export const query = graphql`
           }
         }
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         transcript
         translationPending

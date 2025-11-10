@@ -112,12 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
+          challenge: { challengeType, helpCategory, tests, title }
         }
       },
       pageContext: { challengeMeta }
@@ -243,10 +238,10 @@ export const query = graphql`
         fields {
           blockName
           slug
-          tests {
-            text
-            testString
-          }
+        }
+        tests {
+          text
+          testString
         }
       }
     }

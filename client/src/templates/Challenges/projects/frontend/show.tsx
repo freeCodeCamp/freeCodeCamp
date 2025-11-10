@@ -86,14 +86,14 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { fields, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
       initTests,
       updateChallengeMeta
     } = props;
-    initTests(fields.tests);
+    initTests(tests);
     const challengePaths = getChallengePaths({
       currentCurriculumPaths: challengeMeta
     });
@@ -203,10 +203,10 @@ export const query = graphql`
         fields {
           blockName
           slug
-          tests {
-            text
-            testString
-          }
+        }
+        tests {
+          text
+          testString
         }
       }
     }

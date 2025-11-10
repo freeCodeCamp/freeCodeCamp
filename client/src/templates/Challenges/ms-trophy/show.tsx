@@ -97,12 +97,7 @@ function MsTrophy(props: MsTrophyProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            title,
-            challengeType,
-            helpCategory
-          }
+          challenge: { tests, title, challengeType, helpCategory }
         }
       },
       pageContext: { challengeMeta },
@@ -233,10 +228,10 @@ export const query = graphql`
         translationPending
         fields {
           blockName
-          tests {
-            text
-            testString
-          }
+        }
+        tests {
+          text
+          testString
         }
       }
     }

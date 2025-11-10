@@ -92,9 +92,9 @@ function formatChallengeData({
             helpCategory: 'JavaScript',
             challengeType: 28,
             fields: {
-              blockName: 'daily-coding-challenge',
-              tests: javascript.tests
+              blockName: 'daily-coding-challenge'
             },
+            tests: javascript.tests,
             challengeFiles: [
               {
                 name: 'script',
@@ -120,9 +120,9 @@ function formatChallengeData({
             helpCategory: 'Python',
             challengeType: 29,
             fields: {
-              blockName: 'daily-coding-challenge',
-              tests: python.tests
+              blockName: 'daily-coding-challenge'
             },
+            tests: python.tests,
             challengeFiles: [
               {
                 fileKey: 'mainpy',

@@ -203,7 +203,8 @@ function ShowClassic({
         description,
         instructions,
         hooks,
-        fields: { tests, blockName },
+        fields: { blockName },
+        tests,
         challengeType,
         hasEditableBoundaries = false,
         superBlock,
@@ -598,10 +599,6 @@ export const query = graphql`
         fields {
           blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         required {
           link
@@ -617,6 +614,10 @@ export const query = graphql`
           tail
           editableRegionBoundaries
           history
+        }
+        tests {
+          text
+          testString
         }
       }
     }

@@ -92,13 +92,14 @@ const ShowQuiz = ({
   data: {
     challengeNode: {
       challenge: {
-        fields: { tests, blockHashSlug },
+        fields: { blockHashSlug },
         title,
         description,
         challengeType,
         helpCategory,
         superBlock,
         block,
+        tests,
         translationPending,
         quizzes
       }
@@ -398,10 +399,6 @@ export const query = graphql`
           blockHashSlug
           blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         quizzes {
           questions {
@@ -409,6 +406,10 @@ export const query = graphql`
             text
             answer
           }
+        }
+        tests {
+          text
+          testString
         }
         translationPending
       }
