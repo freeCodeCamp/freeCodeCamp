@@ -7483,6 +7483,12 @@
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
       }
     }
   },
