@@ -30,6 +30,7 @@ import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
 } from './helpers/create-project';
+import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock';
 
 const helpCategories = [
   'English',
@@ -78,13 +79,23 @@ async function createLanguageBlock(
   }
   await updateIntroJson(superBlock, block, title);
 
+  const challengeLang = getLangFromSuperBlock(superBlock);
   let challengeId: ObjectID;
 
   if (blockLabel === BlockLabel.quiz) {
-    challengeId = await createQuizChallenge(block, title, questionCount!);
+    challengeId = await createQuizChallenge(
+      block,
+      title,
+      questionCount!,
+      challengeLang
+    );
     blockLayout = BlockLayouts.Link;
   } else {
-    challengeId = await createDialogueChallenge(superBlock, block);
+    challengeId = await createDialogueChallenge(
+      superBlock,
+      block,
+      challengeLang
+    );
   }
 
   await createMetaJson(
@@ -178,7 +189,8 @@ async function createMetaJson(
 
 async function createDialogueChallenge(
   superBlock: SuperBlocks,
-  block: string
+  block: string,
+  challengeLang: string
 ): Promise<ObjectID> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
@@ -188,14 +200,16 @@ async function createDialogueChallenge(
   await fs.mkdir(newChallengeDir, { recursive: true });
 
   return createDialogueFile({
-    projectPath: newChallengeDir + '/'
+    projectPath: newChallengeDir + '/',
+    challengeLang: challengeLang
   });
 }
 
 async function createQuizChallenge(
   block: string,
   title: string,
-  questionCount: number
+  questionCount: number,
+  challengeLang: string
 ): Promise<ObjectID> {
   const newChallengeDir = path.resolve(
     __dirname,
@@ -208,7 +222,8 @@ async function createQuizChallenge(
     projectPath: newChallengeDir + '/',
     title: title,
     dashedName: block,
-    questionCount: questionCount
+    questionCount: questionCount,
+    challengeLang
   });
 }
 
