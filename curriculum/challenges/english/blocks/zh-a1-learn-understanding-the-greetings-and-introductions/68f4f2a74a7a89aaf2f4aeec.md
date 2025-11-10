@@ -3,6 +3,7 @@ id: 68f4f2a74a7a89aaf2f4aeec
 title: Task 21
 challengeType: 22
 dashedName: task-21
+lang: zh-CN
 ---
 
 <!-- (Audio) Chen Na: 我是加拿大人。(wǒ shì jiā ná dà rén) -->

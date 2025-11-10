@@ -3,6 +3,7 @@ id: 68da8dffcffd794e83de9d6c
 title: Task 10
 challengeType: 19
 dashedName: task-10
+lang: zh-CN
 ---
 
 <!-- (Audio) Chen Na: 你们好 (nǐ men hǎo) -->
