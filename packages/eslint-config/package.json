@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
-    "./base": "./base.js"
+    "./base": "./base.js",
+    "./original": "./original.js"
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",

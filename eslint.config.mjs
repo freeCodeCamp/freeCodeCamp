@@ -1,3 +1,3 @@
-import { baseConfig } from '@freecodecamp/eslint-config/base';
+import { baseConfig } from '@freecodecamp/eslint-config/original';
 
 export default baseConfig;
