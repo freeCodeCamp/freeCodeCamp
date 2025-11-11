@@ -29,6 +29,7 @@ export const baseConfig = tseslint.config(
   {
     ignores: [
       'api',
+      'curriculum',
       'client/static/**/*',
       'client/.cache/**/*',
       'client/public/**/*',

@@ -1,6 +1,5 @@
-import { config } from '@freecodecamp/eslint-config/base';
-import tseslint from 'typescript-eslint';
-import tsParser from '@typescript-eslint/parser';
+import { configTypeChecked } from '@freecodecamp/eslint-config/base';
+
 import jsdoc from 'eslint-plugin-jsdoc';
 
 /**
@@ -9,17 +8,7 @@ import jsdoc from 'eslint-plugin-jsdoc';
  * @type {import("eslint").Linter.Config[]}
  * */
 export default [
-  ...config,
-  {
-    languageOptions: {
-      parser: tsParser,
-
-      parserOptions: {
-        projectService: true
-      }
-    }
-  },
-  ...tseslint.configs.recommendedTypeChecked,
+  ...configTypeChecked,
   {
     ...jsdoc.configs['flat/recommended-typescript-error'],
     rules: {
