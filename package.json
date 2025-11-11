@@ -126,6 +126,7 @@
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
     "tsx": "4.19.1",
+    "turbo": "^2.6.1",
     "typescript": "5.7.3",
     "typescript-eslint": "^8.23.0",
     "webpack-bundle-analyzer": "4.10.1",
