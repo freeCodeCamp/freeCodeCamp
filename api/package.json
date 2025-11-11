@@ -49,11 +49,13 @@
     "@types/validator": "13.11.2",
     "@vitest/ui": "^3.2.4",
     "dotenv-cli": "7.3.0",
+    "eslint-plugin-jsdoc": "48.2.1",
     "jsdom": "^26.1.0",
     "msw": "^2.7.0",
     "prisma": "6.16.2",
     "supertest": "6.3.3",
     "tsx": "4.19.1",
+    "typescript-eslint": "^8.33.0",
     "vitest": "^3.2.4"
   },
   "engines": {
@@ -75,6 +77,7 @@
     "clean": "rm -rf dist",
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
+    "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",

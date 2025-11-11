@@ -14,7 +14,6 @@ import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import vitest from '@vitest/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import tseslint from 'typescript-eslint';
-import jsdoc from 'eslint-plugin-jsdoc';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -29,6 +28,7 @@ const compat = new FlatCompat({
 export const baseConfig = tseslint.config(
   {
     ignores: [
+      'api',
       'client/static/**/*',
       'client/.cache/**/*',
       'client/public/**/*',
@@ -155,7 +155,6 @@ export const baseConfig = tseslint.config(
   {
     files: [
       'client/**/*.ts?(x)',
-      'api/**/*.ts',
       'shared/**/*.ts',
       'tools/client-plugins/**/*.ts',
       'tools/scripts/**/*.ts',
@@ -188,34 +187,6 @@ export const baseConfig = tseslint.config(
     files: ['.lintstagedrc.js', '**/.babelrc.js', '**/404.tsx'],
     rules: {
       'filenames-simple/naming-convention': 'off'
-    }
-  },
-  {
-    extends: [
-      jsdoc.configs['flat/recommended-typescript-error'],
-      tseslint.configs.recommendedTypeChecked
-    ],
-    files: ['**/api/src/**/*.ts'],
-
-    rules: {
-      'jsdoc/require-jsdoc': [
-        'error',
-        {
-          require: {
-            ArrowFunctionExpression: true,
-            ClassDeclaration: true,
-            ClassExpression: true,
-            FunctionDeclaration: true,
-            FunctionExpression: true,
-            MethodDefinition: true
-          },
-
-          publicOnly: true
-        }
-      ],
-
-      'jsdoc/require-description-complete-sentence': 'error',
-      'jsdoc/tag-lines': 'off'
     }
   }
 );
