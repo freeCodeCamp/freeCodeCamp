@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import words from '../client/i18n/locales/english/motivation.json';
+import words from '../apps/client/i18n/locales/english/motivation.json';
 
 test.describe('Learn - Unauthenticated user', () => {
   test.use({ storageState: { cookies: [], origins: [] } });

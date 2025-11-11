@@ -1,12 +1,12 @@
 import fs from 'fs';
 import path from 'path';
-import introObject from '../../../client/i18n/locales/english/intro.json';
-import linksObject from '../../../client/i18n/locales/english/links.json';
-import metaObject from '../../../client/i18n/locales/english/meta-tags.json';
-import motivationObject from '../../../client/i18n/locales/english/motivation.json';
-import translationsObject from '../../../client/i18n/locales/english/translations.json';
+import introObject from '../../../apps/client/i18n/locales/english/intro.json';
+import linksObject from '../../../apps/client/i18n/locales/english/links.json';
+import metaObject from '../../../apps/client/i18n/locales/english/meta-tags.json';
+import motivationObject from '../../../apps/client/i18n/locales/english/motivation.json';
+import translationsObject from '../../../apps/client/i18n/locales/english/translations.json';
 // If this trending.json is missing, most likely the download-trending script failed.
-import trendingObject from '../../../client/i18n/locales/english/trending.json';
+import trendingObject from '../../../apps/client/i18n/locales/english/trending.json';
 
 /**
  * Function to flatten a nested object. Written specifically for

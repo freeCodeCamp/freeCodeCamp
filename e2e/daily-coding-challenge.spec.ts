@@ -3,7 +3,7 @@ import {
   getTodayUsCentral,
   formatDate,
   formatDisplayDate
-} from '../client/src/components/daily-coding-challenge/helpers';
+} from '../apps/client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
 const allRouteRe = /.*\/daily-coding-challenge\/all/;

@@ -23,13 +23,19 @@ import {
 const VERSION = 'v1';
 const intros = JSON.parse(
   readFileSync(
-    path.resolve(__dirname, '../../../client/i18n/locales/english/intro.json'),
+    path.resolve(
+      __dirname,
+      '../../../apps/client/i18n/locales/english/intro.json'
+    ),
     'utf-8'
   )
 ) as CurriculumIntros;
 
 describe('external curriculum data build', () => {
-  const clientStaticPath = path.resolve(__dirname, '../../../client/static');
+  const clientStaticPath = path.resolve(
+    __dirname,
+    '../../../apps/client/static'
+  );
 
   const validateSuperBlock = superblockSchemaValidator();
 

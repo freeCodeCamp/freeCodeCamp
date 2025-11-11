@@ -8,11 +8,9 @@ const {
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
-  const staticPath = path.join(__dirname, '../../../client/static/js');
-  const configPath = path.join(
-    __dirname,
-    '../../../client/config/browser-scripts/'
-  );
+  const clientPath = path.join(__dirname, '../../../apps/client');
+  const staticPath = path.join(clientPath, 'static/js');
+  const configPath = path.join(clientPath, 'config/browser-scripts/');
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',

@@ -1,6 +1,6 @@
 packages:
   - 'api'
-  - 'client'
+  - 'apps/*'
   - 'curriculum'
   - 'shared'
   - 'tools/challenge-editor/api'

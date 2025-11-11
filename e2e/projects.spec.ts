@@ -1,7 +1,7 @@
 import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/curriculum';
-import translations from '../client/i18n/locales/english/translations.json';
+import translations from '../apps/client/i18n/locales/english/translations.json';
 import tributePage from './fixtures/tribute-page.json';
 import curriculum from './fixtures/js-ads-projects.json';
 import { authedRequest } from './utils/request';

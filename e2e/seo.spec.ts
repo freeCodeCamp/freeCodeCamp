@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { SuperBlocks } from '../shared/config/curriculum';
-import metaTags from '../client/i18n/locales/english/meta-tags.json';
+import metaTags from '../apps/client/i18n/locales/english/meta-tags.json';
 
 interface StructuredData {
   '@context': string;

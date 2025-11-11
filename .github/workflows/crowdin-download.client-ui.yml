@@ -62,7 +62,7 @@ jobs:
         uses: freecodecamp/crowdin-action@main
         env:
           PLUGIN: 'convert-chinese'
-          FILE_PATHS: '["client/i18n/locales/chinese"]'
+          FILE_PATHS: '["apps/client/i18n/locales/chinese"]'
 
       ##### Download Espanol #####
       - name: Crowdin Download Espanol Translations
@@ -301,8 +301,8 @@ jobs:
       # writes.
       - name: Format JSON
         run: |
-          sudo chown -R $(whoami): client/i18n/locales
-          npx --yes prettier --write client/i18n/locales/**/*.json
+          sudo chown -R $(whoami): apps/client/i18n/locales
+          npx --yes prettier --write apps/client/i18n/locales/**/*.json
 
       ###### Lowercase directory names #####
 
@@ -310,7 +310,7 @@ jobs:
         uses: freecodecamp/crowdin-action@main
         env:
           PLUGIN: 'lowercase-directories'
-          FILE_PATH: 'client/i18n/locales'
+          FILE_PATH: 'apps/client/i18n/locales'
       # Crowdin translators might have the directories
       # Create Commit
       - name: Commit Changes
