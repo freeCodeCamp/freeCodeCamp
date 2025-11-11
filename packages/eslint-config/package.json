@@ -14,6 +14,7 @@
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
+    "eslint": "^9.39.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",
     "eslint-plugin-filenames-simple": "0.9.0",
@@ -21,11 +22,10 @@
     "eslint-plugin-jsdoc": "48.2.1",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-no-only-tests": "3.1.0",
-    "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "7.1.1",
-    "eslint": "9.19.0",
-    "typescript-eslint": "^8.23.0",
-    "typescript": "5.7.3"
+    "typescript": "5.7.3",
+    "typescript-eslint": "^8.23.0"
   }
 }
