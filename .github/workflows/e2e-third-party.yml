@@ -50,7 +50,7 @@ jobs:
           pnpm run build
 
       - name: Move serve.json to Public Folder
-        run: cp client-config/serve.json client/public/serve.json
+        run: cp client-config/serve.json apps/client/public/serve.json
 
       - name: Tar Files
         run: tar -cf client-artifact.tar client/public

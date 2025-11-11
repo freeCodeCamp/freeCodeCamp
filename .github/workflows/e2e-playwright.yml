@@ -56,7 +56,7 @@ jobs:
           pnpm run build
 
       - name: Move serve.json to Public Folder
-        run: cp client-config/serve.json client/public/serve.json
+        run: cp client-config/serve.json apps/client/public/serve.json
 
       - name: Upload Client Artifact
         uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
