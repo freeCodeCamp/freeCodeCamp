@@ -40,6 +40,7 @@
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "@total-typescript/ts-reset": "0.5.1",
     "@types/jsonwebtoken": "9.0.5",
     "@types/lodash-es": "^4.17.12",
