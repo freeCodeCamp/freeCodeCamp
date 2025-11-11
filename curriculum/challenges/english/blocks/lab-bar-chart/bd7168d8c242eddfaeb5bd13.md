@@ -287,30 +287,31 @@ await __helpers.retryingTest(() => document.querySelector('g#y-axis'), 'element 
 The x axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
 
 ```js
-await __helpers.retryingTest(() => document.querySelectorAll('#x-axis .tick').length > 1, 'There are not enough tick labels on the x-axis');
+assert.isNotEmpty(document.querySelectorAll('#x-axis .tick'));
 ```
 
 The y axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
 
 ```js
-await __helpers.retryingTest(() => document.querySelectorAll('#y-axis .tick').length > 1, 'There are not enough tick labels on the y-axis');
+assert.isNotEmpty(document.querySelectorAll('#y-axis .tick'));
 ```
 
 My Chart should have a <rect> element for each data point with a corresponding class="bar" displaying the data
 
 ```js
-await __helpers.retryingTest(() => document.querySelectorAll('rect.bar').length === 275, "The number of bars is not equal to the number of data points");
+assert.lengthOf(document.querySelectorAll('rect.bar'), 275); // TODO: when I move fetch to the hooks the number should be computed from the data
 ```
 
 Each bar should have the properties "data-date" and "data-gdp" containing date and GDP values
 
 ```js
-await __helpers.retryingTest(() => {
-  const bars = document.querySelectorAll('rect.bar');
-  if (!bars.length) return;
+const bars = document.querySelectorAll('rect.bar');
+assert.isNotEmpty(bars);
 
-  return [...bars].every(bar => bar.hasAttribute('data-date') && bar.hasAttribute('data-gdp'));
-}, "data-date or data-gdp attribute not found in all .bar elements");
+bars.forEach(function (bar) {
+  assert.isTrue(bar.hasAttribute('data-date'));
+  assert.isTrue(bar.hasAttribute('data-gdp'));
+});
 ```
 
 The bar elements' "data-date" properties should match the order of the provided data
@@ -322,17 +323,35 @@ const res = await fetch(
 
 if (res.ok) {
   const json = await res.json();
-  await __helpers.retryingTest(() => {
-    const bars = document.querySelectorAll('rect.bar');
-    if (!bars.length) return;
+  const bars = document.querySelectorAll('rect.bar');
+  assert.isNotEmpty(bars);
 
-    return [...bars].every((bar, i) => bar.getAttribute('data-date') === json.data[i][0]);
+  bars.forEach(function(bar, i) {
+    assert.equal()
+  });
+ 
 
-  },  'Bars should have date data in the same order as the ' + 
-                'provided data ');
-} else {
-  assert.fail('JSON data not available')
-}
+const res = await fetch(
+          'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json'
+        );
+
+        if (res.ok) {
+          const json = await res.json();
+
+          assert.isAtLeast(
+            bars.length,
+            1,
+            'no <rect> elements with the class of "bar" are detected '
+          );
+          bars.forEach(function (bar, i) {
+            const currentBarDate = bar.getAttribute('data-date');
+            assert.equal(
+              currentBarDate,
+              json.data[i][0],
+              'Bars should have date data in the same order as the ' +
+                'provided data '
+            );
+          });
 ```
 
 The bar elements' "data-gdp" properties should match the order of the provided data
