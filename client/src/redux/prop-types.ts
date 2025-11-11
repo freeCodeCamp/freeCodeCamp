@@ -54,8 +54,6 @@ export type FillInTheBlank = {
 export type Fields = {
   slug: string;
   blockHashSlug: string;
-  blockName: string;
-  tests: Test[];
 };
 type Required = {
   link: string;
@@ -293,10 +291,7 @@ export type DailyCodingChallengeNode = {
 
     helpCategory: 'JavaScript' | 'Python';
     challengeType: 28 | 29;
-    fields: {
-      blockName: 'daily-coding-challenge';
-      tests: Test[];
-    };
+    tests: Test[];
     challengeFiles: ChallengeFiles;
 
     // props to satisfy the show classic component
