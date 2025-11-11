@@ -14,10 +14,10 @@ You are getting closer, now look at this example:
 </svg>
 ```
 
-The `viewBox` attribute controls what part of the image is visible inside the svg.
+The `viewBox` attribute controls what part of the image is visible inside the SVG.
 
-- The **first two numbers** (`0 0`) set the starting position of the `viewBox` — the top-left corner (x and y). 
-- The **next two numbers** (`50 50`) define the `viewBox`'s width and height.
+- The first two numbers (`0 0`) set the starting position of the `viewBox` — the top-left corner (x and y). 
+- The next two numbers (`50 50`) define the `viewBox`'s width and height.
 
 Set the `viewBox` attribute to `0 0 24 24`.
 
