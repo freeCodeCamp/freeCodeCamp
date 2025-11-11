@@ -577,7 +577,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
