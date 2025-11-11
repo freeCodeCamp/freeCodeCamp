@@ -3,6 +3,7 @@
   "tasks": {
     "lint": {
       "dependsOn": ["^lint"]
-    }
+    },
+    "//#lint": {}
   }
 }
