@@ -271,6 +271,7 @@ const availableAudios = [
   'ES_A1_2_vocabulary.mp3',
   'ES_A1_3.1.mp3',
   'ES_A1_3.2.mp3',
+  `ES_A1_first_questions_numbers.mp3`,
   'ES_A1_first_questions_warmup.mp3',
   'ES_A1_alphabet.mp3',
   'ES_A1_alphabet_practice.mp3',
