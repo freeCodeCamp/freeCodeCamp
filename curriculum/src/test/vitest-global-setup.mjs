@@ -6,7 +6,7 @@ import puppeteer from 'puppeteer';
 
 import { helperVersion } from '../../../apps/client/src/templates/Challenges/utils/frame';
 
-const clientPath = path.resolve(__dirname, '../../../client');
+const clientPath = path.resolve(__dirname, '../../../apps/client');
 
 async function createBrowser() {
   return puppeteer.launch({
