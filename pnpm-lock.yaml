@@ -47,6 +47,9 @@ importers:
       debug:
         specifier: 4.3.4
         version: 4.3.4(supports-color@8.1.1)
+      eslint:
+        specifier: ^9.39.1
+        version: 9.39.1(jiti@2.6.1)
       globals:
         specifier: ^15.14.0
         version: 15.15.0
@@ -4559,14 +4562,8 @@ packages:
   '@types/estree-jsx@1.0.1':
     resolution: {integrity: sha512-sHyakZlAezNFxmYRo0fopDZW+XvK6ipeZkkp5EAOLjdPfZp8VjZBJ67vSRI99RSCAoqXVmXOHS4fnWoxpuGQtQ==}
 
-  '@types/estree@1.0.2':
-    resolution: {integrity: sha512-VeiPZ9MMwXjO32/Xu7+OwflfmeoRwkE/qzndw42gGtgJwZopBnzy2gD//NN1+go1mADzkDcqf/KnFRSjTJ8xJA==}
-
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-
-  '@types/estree@1.0.6':
-    resolution: {integrity: sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -15067,7 +15064,7 @@ snapshots:
       '@babel/core': 7.23.0
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.11
     transitivePeerDependencies:
@@ -15078,7 +15075,7 @@ snapshots:
       '@babel/core': 7.23.7
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.11
     transitivePeerDependencies:
@@ -15089,7 +15086,7 @@ snapshots:
       '@babel/core': 7.23.0
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.11
     transitivePeerDependencies:
@@ -15100,7 +15097,7 @@ snapshots:
       '@babel/core': 7.23.7
       '@babel/helper-compilation-targets': 7.23.6
       '@babel/helper-plugin-utils': 7.27.1
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       lodash.debounce: 4.0.8
       resolve: 1.22.11
     transitivePeerDependencies:
@@ -16678,7 +16675,7 @@ snapshots:
       '@babel/parser': 7.27.4
       '@babel/template': 7.27.2
       '@babel/types': 7.28.5
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -16691,7 +16688,7 @@ snapshots:
       '@babel/parser': 7.28.5
       '@babel/template': 7.27.2
       '@babel/types': 7.28.5
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -19286,27 +19283,23 @@ snapshots:
   '@types/eslint-scope@3.7.5':
     dependencies:
       '@types/eslint': 8.44.3
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
 
   '@types/eslint@7.29.0':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
       '@types/json-schema': 7.0.15
 
   '@types/eslint@8.44.3':
     dependencies:
-      '@types/estree': 1.0.6
+      '@types/estree': 1.0.8
       '@types/json-schema': 7.0.15
 
   '@types/estree-jsx@1.0.1':
     dependencies:
       '@types/estree': 1.0.8
 
-  '@types/estree@1.0.2': {}
-
   '@types/estree@1.0.5': {}
-
-  '@types/estree@1.0.6': {}
 
   '@types/estree@1.0.8': {}
 
@@ -19621,7 +19614,7 @@ snapshots:
 
   '@types/tern@0.23.5':
     dependencies:
-      '@types/estree': 1.0.2
+      '@types/estree': 1.0.8
 
   '@types/testing-library__jest-dom@5.14.9':
     dependencies:
@@ -19688,7 +19681,7 @@ snapshots:
       debug: 4.3.4(supports-color@8.1.1)
       eslint: 7.32.0
       functional-red-black-tree: 1.0.1
-      ignore: 5.2.4
+      ignore: 5.3.2
       regexpp: 3.2.0
       semver: 7.7.3
       tsutils: 3.21.0(typescript@5.2.2)
@@ -19870,7 +19863,7 @@ snapshots:
     dependencies:
       '@typescript-eslint/types': 3.10.1
       '@typescript-eslint/visitor-keys': 3.10.1
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       glob: 7.2.3
       is-glob: 4.0.3
       lodash: 4.17.21
@@ -23188,7 +23181,7 @@ snapshots:
       '@humanwhocodes/config-array': 0.5.0
       ajv: 6.12.6
       chalk: 4.1.2
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       debug: 4.3.4(supports-color@8.1.1)
       doctrine: 3.0.0
       enquirer: 2.4.1
@@ -23348,7 +23341,7 @@ snapshots:
 
   execa@5.1.1:
     dependencies:
-      cross-spawn: 7.0.3
+      cross-spawn: 7.0.6
       get-stream: 6.0.1
       human-signals: 2.1.0
       is-stream: 2.0.1
@@ -27600,7 +27593,7 @@ snapshots:
     dependencies:
       '@tootallnate/quickjs-emscripten': 0.23.0
       agent-base: 7.1.3
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       get-uri: 6.0.3
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -28272,7 +28265,7 @@ snapshots:
   proxy-agent@6.5.0:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       lru-cache: 7.18.3
@@ -28318,7 +28311,7 @@ snapshots:
     dependencies:
       '@puppeteer/browsers': 2.2.3
       chromium-bidi: 0.5.24(devtools-protocol@0.0.1299070)
-      debug: 4.4.1
+      debug: 4.4.3
       devtools-protocol: 0.0.1299070
       ws: 8.18.0
     transitivePeerDependencies:
@@ -29694,7 +29687,7 @@ snapshots:
   socks-proxy-agent@8.0.5:
     dependencies:
       agent-base: 7.1.3
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       socks: 2.8.3
     transitivePeerDependencies:
       - supports-color
@@ -30299,7 +30292,7 @@ snapshots:
   terser@5.28.1:
     dependencies:
       '@jridgewell/source-map': 0.3.5
-      acorn: 8.11.3
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -30974,7 +30967,7 @@ snapshots:
 
   uri-js@4.4.1:
     dependencies:
-      punycode: 2.3.0
+      punycode: 2.3.1
 
   urix@0.1.0: {}
 
@@ -31101,7 +31094,7 @@ snapshots:
   vite-node@3.2.4(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.4.1
+      debug: 4.4.3
       es-module-lexer: 1.7.0
       pathe: 2.0.3
       vite: 7.1.3(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.0)

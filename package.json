@@ -99,6 +99,7 @@
     "@typescript-eslint/parser": "8.23.0",
     "@vitest/eslint-plugin": "^1.3.12",
     "debug": "4.3.4",
+    "eslint": "^9.39.1",
     "globals": "^15.14.0",
     "husky": "9.0.11",
     "identity-obj-proxy": "^3.0.0",
