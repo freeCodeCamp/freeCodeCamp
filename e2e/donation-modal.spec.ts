@@ -39,6 +39,14 @@ const completeFrontEndCert = async (page: Page, number?: number) => {
   }
 };
 
+const modalStrings = {
+  blockCompletionText:
+    'Nicely done. You just completed Front End Development Libraries Projects.',
+  animationText:
+    'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.',
+  moduleCompletionText: 'Nicely done. You just completed Code Editors.'
+};
+
 const challenges = [
   {
     url: '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code',
@@ -111,6 +119,20 @@ const completeChallenges = async ({
   }
 };
 
+const isDonationModalVisible = async (
+  page: Page,
+  visible: boolean,
+  string?: string
+) => {
+  const donationModal = page.getByRole('dialog');
+  if (visible) {
+    await expect(donationModal.getByText('Become a Supporter')).toBeVisible();
+    if (string) await slowExpect(donationModal.getByText(string)).toBeVisible();
+  } else {
+    await expect(donationModal).toBeHidden();
+  }
+};
+
 test.skip(
   ({ browserName }) => browserName !== 'chromium',
   'Only chromium allows us to use the clipboard API.'
@@ -132,11 +154,7 @@ test.describe('Donation modal display', () => {
 
     await completeChallenges({ page, browserName, isMobile, number: 3 });
 
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-
+    const donationModal = page.getByRole('dialog');
     await expect(
       donationModal.getByText(
         'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
@@ -144,9 +162,9 @@ test.describe('Donation modal display', () => {
     ).toBeVisible();
     await expect(donationModal.getByTestId('donation-animation')).toBeVisible();
     await expect(donationModal.getByText('Become a Supporter')).toBeVisible();
-    await expect(donationModal.getByText('Remove distractions')).toBeVisible();
+    await expect(donationModal.getByText('Remove interruptions')).toBeVisible();
     await expect(
-      donationModal.getByText('Reach your goals faster')
+      donationModal.getByText('Acquire skills faster')
     ).toBeVisible();
     await expect(
       donationModal.getByText('Help millions of people learn')
@@ -192,9 +210,9 @@ test.describe('Donation modal display', () => {
       donationModal.getByRole('button', { name: 'Become a Supporter' })
     ).toBeVisible();
 
-    await expect(
-      donationModal.getByRole('button', { name: 'Ask me later' })
-    ).toBeVisible();
+    // Ensure that the modal can be closed by clicking the 'Ask me later' button
+    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
+    await expect(donationModal).toBeHidden();
   });
 });
 
@@ -218,15 +236,11 @@ test.describe('Donation modal appearance logic - New user', () => {
     isMobile,
     context
   }) => {
+    test.setTimeout(40000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-
     // Development user doesn't have any completed challenges, we are completing the first 3.
     await completeChallenges({ page, browserName, isMobile, number: 3 });
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 
   test('should appear if the user has less than 10 completed challenges in total and has just completed 10 challenges', async ({
@@ -235,43 +249,20 @@ test.describe('Donation modal appearance logic - New user', () => {
     browserName,
     context
   }) => {
+    test.setTimeout(40000);
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-    test.setTimeout(50000);
-
     await completeChallenges({ page, isMobile, browserName, number: 10 });
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
-      donationModal.getByRole('heading', { name: 'Support us' })
-    ).toBeVisible();
-    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
-    // Ensure that the close state has been registered before ending the test.
-    // The modal will show up on another page/test otherwise.
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, true, modalStrings.animationText);
   });
 
   test('should not appear if the user has just completed a new block but has less than 10 completed challenges', async ({
-    page
+    page,
+    context
   }) => {
     test.setTimeout(40000);
-
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await completeFrontEndCert(page);
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 });
 
@@ -285,33 +276,12 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     page,
     context
   }) => {
-    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     test.setTimeout(40000);
-
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
     await completeFrontEndCert(page, 1);
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
-      donationModal.getByText(
-        'Nicely done. You just completed Front End Development Libraries Projects.'
-      )
-    ).toBeVisible();
-    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
-    await expect(donationModal).toBeHidden();
-
+    await isDonationModalVisible(page, true, modalStrings.blockCompletionText);
     await completeFrontEndCert(page, 1);
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 
   test("should not appear if the user has completed a new FSD block, but the block's module is not completed", async ({
@@ -320,15 +290,10 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     await page.goto(
       '/learn/full-stack-developer/review-basic-html/basic-html-review'
     );
-
     await page.getByRole('checkbox', { name: /Review/ }).click();
     await page.getByRole('button', { name: 'Submit', exact: true }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 
   test('should not appear if FSD review module is completed', async ({
@@ -339,10 +304,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     await page.getByRole('button', { name: 'Submit', exact: true }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
     await page.waitForTimeout(1000);
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 });
 
@@ -381,21 +343,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     await page.getByRole('button', { name: /Check your answer/ }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
 
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
-      donationModal.getByText('Nicely done. You just completed Code Editors.')
-    ).toBeVisible();
+    await isDonationModalVisible(page, true, modalStrings.moduleCompletionText);
   });
 });
 
@@ -415,27 +363,7 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 
     // Certified user already has more than 10 completed challenges, we are just completing 3 more.
     await completeChallenges({ page, isMobile, browserName, number: 3 });
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeVisible();
-
-    await expect(
-      donationModal.getByText(
-        'This is a 20 second animated advertisement to encourage campers to become supporters of freeCodeCamp. The animation starts with a teddy bear who becomes a supporter. As a result, distracting pop-ups disappear and the bear gets to complete all of its goals. Then, it graduates and becomes an education super hero helping people around the world.'
-      )
-    ).toBeVisible();
-
-    // Second part of the modal.
-    // Use `slowExpect` as we need to wait 20s for this part to show up.
-    await slowExpect(
-      donationModal.getByRole('heading', { name: 'Support us' })
-    ).toBeVisible();
-    await donationModal.getByRole('button', { name: 'Ask me later' }).click();
-    // Ensure that the close state has been registered before ending the test.
-    // The modal will show up on another page/test otherwise.
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, true, modalStrings.animationText);
   });
 });
 
@@ -457,12 +385,7 @@ test.describe('Donation modal appearance logic - Donor user', () => {
     context
   }) => {
     await context.grantPermissions(['clipboard-read', 'clipboard-write']);
-
     await completeChallenges({ page, browserName, isMobile, number: 3 });
-
-    const donationModal = page
-      .getByRole('dialog')
-      .filter({ hasText: 'Become a Supporter' });
-    await expect(donationModal).toBeHidden();
+    await isDonationModalVisible(page, false);
   });
 });
