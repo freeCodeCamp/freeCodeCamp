@@ -296,11 +296,9 @@
     },
     {
       "chapterType": "exam",
-      "comingSoon": true,
       "dashedName": "responsive-web-design-certification-exam",
       "modules": [
         {
-          "comingSoon": true,
           "dashedName": "responsive-web-design-certification-exam",
           "blocks": ["exam-responsive-web-design-certification"]
         }
