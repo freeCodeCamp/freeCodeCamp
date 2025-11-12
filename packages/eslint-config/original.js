@@ -10,7 +10,6 @@ import importPlugin from 'eslint-plugin-import';
 import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import prettierConfig from 'eslint-config-prettier';
 import reactPlugin from 'eslint-plugin-react';
-import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import vitest from '@vitest/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
 import tseslint from 'typescript-eslint';
@@ -106,20 +105,7 @@ export const baseConfig = tseslint.config(
       'import/named': 'error',
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off',
-      'import/order': 'error',
-
-      'import/no-cycle': [
-        2,
-        {
-          maxDepth: 2
-        }
-      ],
-
-      'react/prop-types': 'off',
-      'react/jsx-no-useless-fragment': 'error',
-      'no-only-tests/no-only-tests': 'error',
-      'no-unused-expressions': 'error', // This is so the js rules are more in line with the ts rules
-      'filenames-simple/naming-convention': ['warn']
+      'import/order': 'error'
     }
   },
   {
@@ -163,11 +149,6 @@ export const baseConfig = tseslint.config(
       'e2e/**/*.ts'
     ],
     extends: [tseslint.configs.recommendedTypeChecked]
-  },
-  {
-    files: ['client/**/*.test.[jt]s?(x)'],
-
-    extends: [testingLibraryPlugin.configs['flat/react']]
   },
   {
     files: ['**/*.test.[jt]s?(x)'],
