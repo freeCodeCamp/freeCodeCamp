@@ -5,6 +5,7 @@ import vitest from '@vitest/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 
 const base = [
+  { ignores: ['dist'] },
   js.configs.recommended,
   eslintConfigPrettier,
   {
