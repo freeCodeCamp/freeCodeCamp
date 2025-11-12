@@ -54,8 +54,6 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
-  Certification.RespWebDesignV9,
-  Certification.JsV9,
   Certification.A2English,
   Certification.FoundationalCSharp
 ] as const;
@@ -91,6 +89,8 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
+  Certification.RespWebDesignV9,
+  Certification.JsV9,
   Certification.FrontEndDevLibsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,

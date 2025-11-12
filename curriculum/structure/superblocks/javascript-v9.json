@@ -327,9 +327,11 @@
     },
     {
       "chapterType": "exam",
+      "comingSoon": true,
       "dashedName": "javascript-certification-exam",
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "javascript-certification-exam",
           "blocks": ["exam-javascript-certification"]
         }

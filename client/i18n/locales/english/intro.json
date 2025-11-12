@@ -5101,6 +5101,12 @@
       "javascript": "JavaScript",
       "javascript-certification-exam": "JavaScript Certification Exam"
     },
+    "module-intros": {
+      "javascript-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
+    },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
       "javascript-booleans-and-numbers": "Booleans and Numbers",
@@ -7671,6 +7677,14 @@
       "html": "HTML",
       "css": "CSS",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+    },
+    "module-intros": {
+      "responsive-web-design-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification."
+        ]
+      }
     },
     "modules": {
       "basic-html": "Basic HTML",
