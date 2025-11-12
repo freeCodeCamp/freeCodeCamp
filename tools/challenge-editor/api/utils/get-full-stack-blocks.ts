@@ -59,7 +59,7 @@ export const getModules = async (
   let modules: Module[] = [];
 
   modules = await Promise.all(
-    chapter.modules!.map(module => {
+    chapter.modules.map(module => {
       const modules = Object.entries(introData[superBlock]['modules']!);
       const moduleTrueName = modules.filter(
         x => x[0] === module.dashedName
