@@ -309,7 +309,8 @@ assert.isNotEmpty(document.querySelectorAll('#y-axis .tick'));
 My Chart should have a <rect> element for each data point with a corresponding class="bar" displaying the data
 
 ```js
-assert.lengthOf(document.querySelectorAll('rect.bar'), 275); // TODO: when I move fetch to the hooks the number should be computed from the data
+const GDPDataJson = await GDPDataJsonP;
+assert.lengthOf(document.querySelectorAll('rect.bar'), GDPDataJson.data.length);
 ```
 
 Each bar should have the properties "data-date" and "data-gdp" containing date and GDP values
@@ -327,7 +328,7 @@ bars.forEach(function (bar) {
 The bar elements' "data-date" properties should match the order of the provided data
 
 ```js
-const GDPDataJson = await GDPDataJsonP
+const GDPDataJson = await GDPDataJsonP;
 const bars = document.querySelectorAll('rect.bar');
 assert.isNotEmpty(bars);
 bars.forEach(function (bar, i) {
@@ -343,7 +344,7 @@ const currentBarDate = bar.getAttribute('data-date');
 The bar elements' "data-gdp" properties should match the order of the provided data
 
 ```js
-const GDPDataJson = await GDPDataJsonP
+const GDPDataJson = await GDPDataJsonP;
 const bars = document.querySelectorAll('rect.bar');
 assert.isNotEmpty(bars);
 bars.forEach(function (bar, i) {
