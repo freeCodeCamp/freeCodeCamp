@@ -875,6 +875,9 @@ importers:
       dotenv:
         specifier: 16.4.5
         version: 16.4.5
+      eslint:
+        specifier: ^9.39.1
+        version: 9.39.1(jiti@2.6.1)
       shx:
         specifier: 0.3.4
         version: 0.3.4
