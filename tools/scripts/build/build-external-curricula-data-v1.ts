@@ -40,6 +40,13 @@ interface Block<T> {
 const ver = 'v1';
 
 export const orderedSuperBlockInfo = [
+  { dashedName: SuperBlocks.RespWebDesignV9, public: false },
+  { dashedName: SuperBlocks.JsV9, public: false },
+  { dashedName: SuperBlocks.FrontEndDevLibsV9, public: false },
+  { dashedName: SuperBlocks.PythonV9, public: false },
+  { dashedName: SuperBlocks.RelationalDbV9, public: false },
+  { dashedName: SuperBlocks.BackEndDevApisV9, public: false },
+  { dashedName: SuperBlocks.FullStackDeveloperV9, public: false },
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
   { dashedName: SuperBlocks.MachineLearningPy, public: true },
@@ -49,7 +56,6 @@ export const orderedSuperBlockInfo = [
   { dashedName: SuperBlocks.TheOdinProject, public: true },
   { dashedName: SuperBlocks.RespWebDesign, public: true },
   { dashedName: SuperBlocks.PythonForEverybody, public: true },
-  { dashedName: SuperBlocks.FullStackDeveloper, public: false },
   { dashedName: SuperBlocks.JsAlgoDataStructNew, public: false },
   { dashedName: SuperBlocks.FrontEndDevLibs, public: false },
   { dashedName: SuperBlocks.DataVis, public: false },
