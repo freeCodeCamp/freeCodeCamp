@@ -101,7 +101,7 @@ function SuperBlockIntro({
     note: superBlockNoteText
   } = superBlockIntroObj;
 
-  const introTopDefault = (
+  const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>
       {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
       <Spacer size='s' />
@@ -110,22 +110,53 @@ function SuperBlockIntro({
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
-      {nextChallengeSlug && (
-        <>
-          <Spacer size='l' />
-          <Link
-            className={'btn-cta-big btn-block signup-btn btn-cta'}
-            to={nextChallengeSlug}
-            data-test-label={
-              hasNotstarted ? 'start-learning' : 'continue-learning'
-            }
-          >
-            {hasNotstarted ? t('misc.fsd-b-cta') : t('misc.continue-learning')}
-          </Link>
-          <Spacer size='m' />
-        </>
+      <Spacer size='l' />
+      {fsd && (
+        <Container
+          fluid={true}
+          className='full-width-container super-benefits-container'
+        >
+          <Container>
+            <Row>
+              <Col xs={12} className='super-block-benefits'>
+                <div>
+                  <CommunityIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-1-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-1-description')}</p>
+                  </div>
+                </div>
+                <div>
+                  <CapIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-2-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-2-description')}</p>
+                  </div>
+                </div>
+                <div>
+                  <DumbbellIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-3-description')}</p>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </Container>
       )}
-      <Spacer size='m' />
+      {nextChallengeSlug && !fsd && (
+        <Link
+          className={'btn-cta-big btn-block signup-btn btn-cta intro-top-cta'}
+          to={nextChallengeSlug}
+          data-test-label={
+            hasNotstarted ? 'start-learning' : 'continue-learning'
+          }
+        >
+          {hasNotstarted ? t('misc.fsd-b-cta') : t('misc.continue-learning')}
+        </Link>
+      )}
+      <Spacer size='l' />
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
@@ -138,74 +169,9 @@ function SuperBlockIntro({
     </>
   );
 
-  const introTopFSD = (
-    <>
-      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
-      <Spacer size='m' />
-      <h1 id='content-start' className='text-center big-heading'>
-        {i18nSuperBlock}
-      </h1>
-      <Spacer size='m' />
-      <p>{t('misc.fsd-b-description')}</p>
-      {superBlockNoteText && (
-        <>
-          <Spacer size='m' />
-          <Callout variant='info'>{superBlockNoteText}</Callout>
-        </>
-      )}
-      <Spacer size='s' />
-      {nextChallengeSlug && (
-        <Link
-          className={'btn-cta-big btn-block signup-btn btn-cta'}
-          to={nextChallengeSlug}
-          data-test-label={'start-learning'}
-        >
-          {t('misc.fsd-b-cta')}
-        </Link>
-      )}
-      <Spacer size='l' />
-      <Container
-        fluid={true}
-        className='full-width-container super-benefits-container'
-      >
-        <Container>
-          <Row>
-            <Col xs={12} className='super-block-benefits'>
-              <div>
-                <CommunityIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-1-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-1-description')}</p>
-                </div>
-              </div>
-              <div>
-                <CapIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-2-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-2-description')}</p>
-                </div>
-              </div>
-              <div>
-                <DumbbellIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-3-description')}</p>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-      <Spacer size='l' />
-    </>
-  );
-
-  const showIntroTopFSD =
-    hasNotstarted && superBlock === SuperBlocks.FullStackDeveloper;
-
   return (
     <>
-      {showIntroTopFSD ? introTopFSD : introTopDefault}
+      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloper} />
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}

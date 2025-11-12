@@ -323,7 +323,7 @@ type Scenario = {
 const scenarios: Scenario[] = [
   {
     description:
-      'non fullstack with progress --> should render the right button and the right slug',
+      'For a non full stack certification with progress it should render the continue button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1],
     expected: {
@@ -334,7 +334,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'non fullstack with no progress --> should render the right button and the right slug',
+      'For a non full stack certification without progress it should render the start button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [],
     expected: {
@@ -344,7 +344,8 @@ const scenarios: Scenario[] = [
     }
   },
   {
-    description: 'non fullstack with full progress --> no button',
+    description:
+      'For a non full stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1, 2, 3],
     expected: {
@@ -355,28 +356,29 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'fullstack with progress --> should render the right button and the right slug',
+      'For the full stack certification with progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloper,
     completedOrders: [1],
     expected: {
-      labelKey: 'misc.continue-learning',
-      dataLabel: 'continue-learning',
-      nextOrder: 2
+      labelKey: null,
+      dataLabel: null,
+      nextOrder: null
     }
   },
   {
     description:
-      'fullstack with no progress --> should render the right button and the right slug',
+      'For the full stack certification without progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloper,
     completedOrders: [],
     expected: {
-      labelKey: 'misc.fsd-b-cta',
-      dataLabel: 'start-learning',
-      nextOrder: 1
+      labelKey: null,
+      dataLabel: null,
+      nextOrder: null
     }
   },
   {
-    description: 'fullstack with full progress --> no button',
+    description:
+      'For the full stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.FullStackDeveloper,
     completedOrders: [1, 2, 3],
     expected: {
@@ -387,7 +389,7 @@ const scenarios: Scenario[] = [
   }
 ];
 
-describe('SuperBlockIntroductionPage CTA states', () => {
+describe('SuperBlockIntroductionPage', () => {
   it.each(scenarios)('%s', async scenario => {
     const { superBlock, completedOrders, expected } = scenario;
     const setup = createSetup(superBlock);
