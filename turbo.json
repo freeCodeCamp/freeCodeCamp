@@ -4,6 +4,6 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
-    "//#lint": {}
+    "//#lint-root": {}
   }
 }
