@@ -30,6 +30,16 @@ The tests require axes to be generated using the D3 axis property, which automat
 1. You should be able to mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
 1. Your tooltip should have a `data-date` property that corresponds to the `data-date` of the active area.
 
+# --before-all--
+
+```js
+const res = await fetch(
+          'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
+        );
+
+globalThis.GDPDataJson = await res.json();
+```
+
 # --before-each--
 
 ```js
@@ -317,224 +327,203 @@ bars.forEach(function (bar) {
 The bar elements' "data-date" properties should match the order of the provided data
 
 ```js
-const res = await fetch(
-          'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
-        );
+const bars = document.querySelectorAll('rect.bar');
+assert.isNotEmpty(bars);
+bars.forEach(function (bar, i) {
+const currentBarDate = bar.getAttribute('data-date');
+  assert.equal(
+    currentBarDate,
+    globalThis.GDPDataJson.data[i][0]
+  );
+});
 
-if (res.ok) {
-  const json = await res.json();
-  const bars = document.querySelectorAll('rect.bar');
-  assert.isNotEmpty(bars);
-
-  bars.forEach(function(bar, i) {
-    assert.equal()
-  });
- 
-
-const res = await fetch(
-          'https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/GDP-data.json'
-        );
-
-        if (res.ok) {
-          const json = await res.json();
-
-          assert.isAtLeast(
-            bars.length,
-            1,
-            'no <rect> elements with the class of "bar" are detected '
-          );
-          bars.forEach(function (bar, i) {
-            const currentBarDate = bar.getAttribute('data-date');
-            assert.equal(
-              currentBarDate,
-              json.data[i][0],
-              'Bars should have date data in the same order as the ' +
-                'provided data '
-            );
-          });
 ```
 
 The bar elements' "data-gdp" properties should match the order of the provided data
 
 ```js
-const res = await fetch(
-          'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
-        );
-
-if (res.ok) {
-  const json = await res.json();
-  await __helpers.retryingTest(() => {
-    const bars = document.querySelectorAll('rect.bar');
-    if (!bars.length) return;
-
-    return [...bars].every((bar, i) => bar.getAttribute('data-gdp') == json.data[i][1]);
-
-  },  'Bars should have gdp data in the same order as the ' + 
-                'provided data ');
-} else {
-  assert.fail('JSON data not available')
-}
+const bars = document.querySelectorAll('rect.bar');
+assert.isNotEmpty(bars);
+bars.forEach(function (bar, i) {
+  const currentBarGdp = bar.getAttribute('data-gdp');
+  assert.equal(
+    currentBarGdp,
+    globalThis.GDPDataJson.data[i][1]
+  );
+});
 ```
 
 Each bar element's height should accurately represent the data's corresponding GDP
 
 ```js
-await __helpers.retryingTest(() => {
-  const bars = document.querySelectorAll('rect.bar');
-  if (!bars.length) return;
-  // get the ratio of the first data point to the height of the first bar
-  const firstRatio =
-    parseFloat(bars[0]?.getAttribute('data-gdp')) /
-    parseFloat(bars[0]?.getAttribute('height'));
-
-  return [...bars].every(function (bar) {
-    const dataValue = bar.getAttribute('data-gdp');
-    const barHeight = bar.getAttribute('height');
-    const ratio = parseFloat(dataValue) / parseFloat(barHeight);
-    return firstRatio.toFixed(3) === ratio.toFixed(3);
-  })
-}, 'The heights of the bars should correspond to the data values');
+const bars = document.querySelectorAll('rect.bar');
+assert.isNotEmpty(bars);
+const firstRatio =
+  parseFloat(bars[0].getAttribute('data-gdp')) /
+  parseFloat(bars[0].getAttribute('height'));
+/* iterate through each bar and make sure that its height is consistent
+with its corresponding data point using the first ratio */
+/* this test completely validates the bars, but isn\'t very useful to
+the user, so data-date and data-gdp tests were added for clarity */
+bars.forEach(function (bar) {
+  const dataValue = bar.getAttribute('data-gdp');
+  const barHeight = bar.getAttribute('height');
+  const ratio = parseFloat(dataValue) / parseFloat(barHeight);
+  assert.equal(
+    firstRatio.toFixed(3),
+    ratio.toFixed(3)
+  );
+});
 ```
 
 The data-date attribute and its corresponding bar element should align with the corresponding value on the x-axis.
 
 ```js
-await __helpers.retryingTest(function () {
-        const axis = document.querySelector('#x-axis');
-        if (!axis) return;
-        const coordAttr = 'x';
-        const barsCollection = document.querySelectorAll('.bar');
-        if (!bars.length) return;
-        const ticksCollection = axis.querySelectorAll('.tick');
-        if (ticksCollection.length) return;
-        const shapeAttr = 'data-date';
-        // options are 'minute', 'month', 'thousand', and 'year'
-        const dataType = 'year' || Date;
-        // what vertex of shape to measure against the axis
-        // options are 'topLeft' and 'center'
-        const shapeAlign = 'topLeft';
+const axis = document.querySelector('#x-axis');
+assert.exists(axis);
+const coordAttr = 'x';
+const barsCollection = document.querySelectorAll('.bar');
+assert.isNotEmpty(barsCollection);
+const ticksCollection = axis.querySelectorAll('.tick');
+assert.isNotEmpty(ticksCollection);
+const shapeAttr = 'data-date';
+// options are 'minute', 'month', 'thousand', and 'year'
+const dataType = 'year' || Date;
+// what vertex of shape to measure against the axis
+// options are 'topLeft' and 'center'
+const shapeAlign = 'topLeft';
 
-        return areShapesAlignedWithTicks(
-            barsCollection,
-            ticksCollection,
-            coordAttr,
-            shapeAttr,
-            dataType,
-            shapeAlign
-          )
-
-      }, "The data-date attribute and its corresponding bar element should align with the corresponding value on the x-axis.");
-```
-
-The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.
-
-```js
-await __helpers.retryingTest(function () {
-  const axis = document.querySelector('#y-axis');
-  if (!axis) return;
-  const coordAttr = 'y';
-  const barsCollection = document.querySelectorAll('.bar');
-  if (!barsCollection.length) return;
-  const ticksCollection = axis.querySelectorAll('.tick');
-  if (!ticksCollection.length) return;
-  const shapeAttr = 'data-gdp';
-  const dataType = 'thousand';
-  const shapeAlign = 'topLeft';
-
-  return areShapesAlignedWithTicks(
+assert.isTrue(
+  areShapesAlignedWithTicks(
     barsCollection,
     ticksCollection,
     coordAttr,
     shapeAttr,
     dataType,
     shapeAlign
-  )
+  ),
+  "x values don't line up with x locations "
+);
+```
 
-}, "The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.")
+The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.
+
+```js
+const axis = document.querySelector('#y-axis');
+assert.exists(axis);
+const coordAttr = 'y';
+const barsCollection = document.querySelectorAll('.bar');
+assert.isNotEmpty(barsCollection);
+const ticksCollection = axis.querySelectorAll('.tick');
+assert.isNotEmpty(ticksCollection);
+const shapeAttr = 'data-gdp';
+const dataType = 'thousand';
+const shapeAlign = 'topLeft';
+
+assert.isTrue(
+  areShapesAlignedWithTicks(
+    barsCollection,
+    ticksCollection,
+    coordAttr,
+    shapeAttr,
+    dataType,
+    shapeAlign
+  ),
+  "y values don't line up with y locations "
+);
 ```
 
 When hovering over an area your bar chart should have a tooptip with a corresponding `id="tooltip"` which displays more information about the area.
 
 ```js
-await __helpers.retryingTest(async function () {
-  const areas = document.querySelectorAll('.bar');
-  if (!areas.length) return;
-  let pass = true;
-  const firstRequestTimeout = 500;
-  const secondRequestTimeout = 2000;
+const areas = document.querySelectorAll('.bar');
+assert.isNotEmpty(areas);
+const toolTipDataName = 'data-date';
+const areaDataName = 'data-date';
 
-  timeout(firstRequestTimeout + secondRequestTimeout + 1000);
+const firstRequestTimeout = 500;
+const secondRequestTimeout = 2000;
 
-  // Place mouse on random bar and check if tooltip is visible.
-  const randomIndex = getRandomIndex(areas.length);
-  const randomArea = areas[randomIndex];
-  triggerMouseEvent(randomArea, 'mouseover');
-  triggerMouseEvent(randomArea, 'mousemove');
-  triggerMouseEvent(randomArea, 'mouseenter');
+this.timeout(firstRequestTimeout + secondRequestTimeout + 1000);
 
-  // Timeout is used to accommodate tooltip transitions.
-  await timeout(firstRequestTimeout);
+// Place mouse on random bar and check if tooltip is visible.
+const randomIndex = getRandomIndex(areas.length);
+const randomArea = areas[randomIndex];
+triggerMouseEvent(randomArea, 'mouseover');
+triggerMouseEvent(randomArea, 'mousemove');
+triggerMouseEvent(randomArea, 'mouseenter');
 
-  const tooltip = document.getElementById('tooltip');
+// Timeout is used to accommodate tooltip transitions.
+await timeout(firstRequestTimeout);
 
-  if (!tooltip) pass = false; // should exists
+const tooltip = document.getElementById('tooltip');
+try {
+  assert.isNotNull(
+    tooltip,
+    'There should be an element with id="tooltip"'
+  );
 
-  if (tooltip) { // can't do the following if it does not exist
-    const hidden = isToolTipHidden(tooltip);
-    if (hidden) pass = false; // should not be hidden
-  }
-       
+  const hidden = isToolTipHidden(tooltip);
+  assert.isFalse(
+    hidden,
+    'Tooltip should be visible when mouse is on an area'
+  );
+} finally {
   // Remove mouse from cell and check if tooltip is hidden again.
   triggerMouseEvent(randomArea, 'mouseout');
   triggerMouseEvent(randomArea, 'mouseleave');
-  
-  await timeout(secondRequestTimeout);
+}
 
-  if (tooltip) {
-    const hidden = isToolTipHidden(tooltip);
-    if (!hidden) pass = false; // should be hidden
-  }
-    
+await timeout(secondRequestTimeout);
 
-  return pass;
-
-}, "The tooltip should appear when mousing over a bar");
+const hidden = isToolTipHidden(tooltip);
+assert.isTrue(
+  hidden,
+  'Tooltip should be hidden when mouse is not on an area'
+);
 ```
 
 The tooltip should have a `"data-date"` property that corresponds to the `"date-data"` of the active area.
 
 ```js
-await __helpers.retryingTest(async function () {
-  let pass = true;
-  const areas = document.querySelectorAll('.bar');
-  if (!areas.length) return;
-  const randomIndex = getRandomIndex(areas.length);
-  const randomArea = areas[randomIndex];
+const areas = document.querySelectorAll('.bar');
+assert.isNotEmpty(areas);
+const toolTipDataName = 'data-date';
+const areaDataName = 'data-date';
 
-  triggerMouseEvent(randomArea, 'mouseover');
-  triggerMouseEvent(randomArea, 'mousemove');
-  triggerMouseEvent(randomArea, 'mouseenter');
+const randomIndex = getRandomIndex(areas.length);
+const randomArea = areas[randomIndex];
 
-  await timeout(500);
-        
+triggerMouseEvent(randomArea, 'mouseover');
+triggerMouseEvent(randomArea, 'mousemove');
+triggerMouseEvent(randomArea, 'mouseenter');
+
+// Timeout is used to accommodate tooltip transitions.
+await timeout(500);
+
+try {
   const tooltip = document.getElementById('tooltip');
+  assert.isNotNull(
+    tooltip,
+    'There should be an element with id="tooltip"'
+  );
 
-  if (!tooltip) pass = false;
+  assert.isNotNull(
+    tooltip.getAttribute(toolTipDataName),
+    `Could not find property "${toolTipDataName}" in tooltip `
+  );
 
-  if (tooltip) {
-    const hasAttribute = tooltip.hasAttribute('data-date');
-
-    if (!hasAttribute) pass = false;
-
-    const tooltipAttr = tooltip.getAttribute('data-date');
-    const randomAreaAttr = randomArea.getAttribute('data-date');
-  }
-
+  assert.equal(
+    tooltip.getAttribute(toolTipDataName),
+    randomArea.getAttribute(areaDataName),
+    `Tooltip's "${toolTipDataName}" property should be equal to the ` +
+      `active area's "${areaDataName}" property`
+  );
+} finally {
+  // Clear out tooltip.
   triggerMouseEvent(randomArea, 'mouseout');
-  triggerMouseEvent(randomArea, 'mouseleave')
-
-  return pass;
-}, "The tooltip does not have the correct `data-date` value.");
+  triggerMouseEvent(randomArea, 'mouseleave');
+}
 ```
 
 # --seed--
