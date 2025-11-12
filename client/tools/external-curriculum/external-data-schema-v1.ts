@@ -1,7 +1,5 @@
-const Joi = require('joi');
-const {
-  chapterBasedSuperBlocks
-} = require('../../../shared-dist/config/curriculum');
+import Joi from 'joi';
+import { chapterBasedSuperBlocks } from '../../../shared-dist/config/curriculum';
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
@@ -88,8 +86,8 @@ const availableSuperBlocksSchema = Joi.object({
   )
 });
 
-exports.superblockSchemaValidator = () => superblock =>
+export const superblockSchemaValidator = () => (superblock: unknown) =>
   schema.validate(superblock);
 
-exports.availableSuperBlocksValidator = () => data =>
+export const availableSuperBlocksValidator = () => (data: unknown) =>
   availableSuperBlocksSchema.validate(data);

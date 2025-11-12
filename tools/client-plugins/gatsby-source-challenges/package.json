@@ -19,7 +19,6 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "gatsby-node.js",
   "devDependencies": {
-    "chokidar": "3.6.0",
-    "readdirp": "3.6.0"
+    "chokidar": "3.6.0"
   }
 }
