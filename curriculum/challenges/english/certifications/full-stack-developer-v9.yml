@@ -3,6 +3,33 @@ id: 64514fda6c245de4d11eb7bb
 title: Certified Full Stack Developer
 certification: full-stack-developer-v9
 challengeType: 7
+dashedName: certified-full-stack-developer
 tests:
   - id: 645147516c245de4d11eb7ba
     title: Certified Full Stack Developer Exam
+---
+
+## --description--
+
+Congratulations on reaching the final step of the Full Stack Developer certification!
+
+This certification demonstrates your proficiency in:
+- Frontend development (HTML, CSS, JavaScript, React)
+- Backend development (Node.js, Express, APIs)
+- Database management (SQL and NoSQL databases)
+- Full stack project architecture and deployment
+- Modern development tools and best practices
+
+To earn this certification, you must pass the comprehensive Full Stack Developer exam that covers all the concepts you've learned throughout the curriculum.
+
+## --question--
+
+### --text--
+
+Are you ready to take the Certified Full Stack Developer exam?
+
+### --assignment--
+
+Pass the Certified Full Stack Developer certification exam to earn your certificate.
+
+---
