@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Build a Shape Manager
 
-This workshop focuses on Typescript fundamentals to build a shape manager app.
+This workshop focuses on using Typescript fundamentals to build a shape manager app.
