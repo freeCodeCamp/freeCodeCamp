@@ -237,8 +237,22 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
                 {t('settings.headings.honesty')}
               </ScrollLink>
             </li>
+            {examTokenFlag && (
+              <li>
+                <ScrollLink
+                  to='honesty'
+                  className='ledger-section-heading'
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                  spy={true}
+                  activeClass='active'
+                >
+                  {t('user-token.title')}
+                </ScrollLink>
+              </li>
+            )}
             <li>
-              {' '}
               <ScrollLink
                 to='certifications'
                 className='ledger-section-heading'
@@ -298,10 +312,24 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
                 ))}
               </ul>
             </li>
+            {examTokenFlag && (
+              <li>
+                <ScrollLink
+                  to='user-token'
+                  className='ledger-section-heading'
+                  smooth={true}
+                  offset={-48}
+                  duration={300}
+                  spy={true}
+                  activeClass='active'
+                >
+                  {t('user-token.title')}
+                </ScrollLink>
+              </li>
+            )}
             <li>
-              {' '}
               <ScrollLink
-                to='danger-zone'
+                to='exam-token'
                 className='ledger-section-heading'
                 smooth={true}
                 offset={-48}

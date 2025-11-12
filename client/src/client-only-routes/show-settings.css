@@ -41,7 +41,7 @@
   width: 100%;
   text-decoration: none;
   cursor: pointer;
-  padding: 0 2rem;
+  padding: 0 1rem 0rem 2rem;
 }
 
 @media (max-width: 980px) {
