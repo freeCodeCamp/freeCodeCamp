@@ -1,13 +1,38 @@
 const { root } = require('mdast-builder');
 const { getSection, getAllSections } = require('./utils/get-section');
-const mdastToHtml = require('./utils/mdast-to-html');
+const { createMdastToHtml } = require('./utils/i18n-stringify');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
 function plugin() {
   return transformer;
   function transformer(tree, file) {
+    const toHtml = createMdastToHtml(file.data.lang);
     const quizzesNodes = getSection(tree, `--quizzes--`);
+
+    function getDistractors(distractorsNodes) {
+      const distractorsGroups = splitOnThematicBreak(distractorsNodes);
+
+      if (distractorsGroups.length !== 3)
+        throw Error('Three distractors are required per quiz-question');
+
+      return distractorsGroups.map(distractorsGroup => {
+        return toHtml(distractorsGroup);
+      });
+    }
+
+    function getQuestion(textNodes, distractorNodes, answerNodes) {
+      const text = toHtml(textNodes);
+      const distractors = getDistractors(distractorNodes);
+      const answer = toHtml(answerNodes);
+
+      if (!text) throw Error('--text-- is missing from the quiz question');
+      if (!distractors)
+        throw Error('--distractors-- are missing from quiz question');
+      if (!answer) throw Error('--answer-- is missing from quiz question');
+
+      return { text, distractors, answer };
+    }
 
     if (quizzesNodes.length > 0) {
       const compiledQuizzes = [];
@@ -49,30 +74,6 @@ function plugin() {
       }
     }
   }
-}
-
-function getQuestion(textNodes, distractorNodes, answerNodes) {
-  const text = mdastToHtml(textNodes);
-  const distractors = getDistractors(distractorNodes);
-  const answer = mdastToHtml(answerNodes);
-
-  if (!text) throw Error('--text-- is missing from the quiz question');
-  if (!distractors)
-    throw Error('--distractors-- are missing from quiz question');
-  if (!answer) throw Error('--answer-- is missing from quiz question');
-
-  return { text, distractors, answer };
-}
-
-function getDistractors(distractorsNodes) {
-  const distractorsGroups = splitOnThematicBreak(distractorsNodes);
-
-  if (distractorsGroups.length !== 3)
-    throw Error('Three distractors are required per quiz-question');
-
-  return distractorsGroups.map(distractorsGroup => {
-    return mdastToHtml(distractorsGroup);
-  });
 }
 
 module.exports = plugin;

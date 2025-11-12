@@ -360,6 +360,9 @@ importers:
       '@stripe/stripe-js':
         specifier: 1.54.2
         version: 1.54.2
+      '@types/react-speech-recognition':
+        specifier: 3.9.6
+        version: 3.9.6
       algoliasearch:
         specifier: 4.22.1
         version: 4.22.1
@@ -513,6 +516,9 @@ importers:
       react-scroll:
         specifier: 1.9.0
         version: 1.9.0(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+      react-speech-recognition:
+        specifier: 4.0.1
+        version: 4.0.1(react@17.0.2)
       react-spinkit:
         specifier: 3.0.0
         version: 3.0.0
@@ -4784,6 +4790,9 @@ packages:
 
   '@types/react-scroll@1.8.10':
     resolution: {integrity: sha512-RD4Z7grbdNGOKwKnUBKar6zNxqaW3n8m9QSrfvljW+gmkj1GArb8AFBomVr6xMOgHPD3v1uV3BrIf01py57daQ==}
+
+  '@types/react-speech-recognition@3.9.6':
+    resolution: {integrity: sha512-cdzwXIZXWyp8zfM2XI7APDW1rZf4Nz73T4SIS2y+cC7zHnZluCdumYKH6HacxgxJH+zemAq2oXbHWXcyW0eT3A==}
 
   '@types/react-spinkit@3.0.10':
     resolution: {integrity: sha512-grNfPdesm/xVJPyohfW752bM8N9kuJUx2yFo0I41mZwF3BuXt4+IV4TwaCPcBtA1V3C5r2NUPyqfEUpNTtWbvA==}
@@ -11832,6 +11841,11 @@ packages:
     resolution: {integrity: sha512-PVjOcvVOyIILrYoyGEpDN3vmYNLdy1CajSFNt4TDsVQC5KpTijDvWVoR+/7Rz2xT978D8/ZtFceXxzsPwZEDvw==}
     peerDependencies:
       react: ^16.3.0 || ^17.0.0 || ^18.0.0
+
+  react-speech-recognition@4.0.1:
+    resolution: {integrity: sha512-0fIqzLtfY8vuYA6AmJVK7qiabZx0oFKOO+rbiBgFI3COWVGREy0A+gdU16hWXmFebeyrI8JsOLYsWk6WaHUXRw==}
+    peerDependencies:
+      react: '>=16.8.0'
 
   react-spinkit@3.0.0:
     resolution: {integrity: sha512-RrfGRPjqxHQiy7quPqhjPynTu0zobgQaZu1QYBMpJJ6pCSRRRK16EZMaxdE6fLVYFRJWpX/eGATWLMoVFFT5uQ==}
@@ -19586,6 +19600,10 @@ snapshots:
   '@types/react-scroll@1.8.10':
     dependencies:
       '@types/react': 17.0.83
+
+  '@types/react-speech-recognition@3.9.6':
+    dependencies:
+      '@types/dom-speech-recognition': 0.0.1
 
   '@types/react-spinkit@3.0.10':
     dependencies:
@@ -28762,6 +28780,11 @@ snapshots:
 
   react-side-effect@2.1.2(react@17.0.2):
     dependencies:
+      react: 17.0.2
+
+  react-speech-recognition@4.0.1(react@17.0.2):
+    dependencies:
+      lodash.debounce: 4.0.8
       react: 17.0.2
 
   react-spinkit@3.0.0:

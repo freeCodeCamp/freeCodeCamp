@@ -57,7 +57,7 @@ type FetchState = {
 
 type ChallengeNode = {
   challenge: {
-    fields: { slug: string; blockName: string };
+    fields: { slug: string };
     id: string;
     block: string;
     blockLabel: BlockLabel;
@@ -371,7 +371,6 @@ export const query = graphql`
         challenge {
           fields {
             slug
-            blockName
           }
           id
           block

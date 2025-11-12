@@ -402,6 +402,46 @@
     {
       "id": "68f6587287ad1f4ad39b0c85",
       "title": "Challenge 99: Fingerprint Test"
+    },
+    {
+      "id": "68ffb91507a5b645769328c3",
+      "title": "Challenge 100: 100 Characters"
+    },
+    {
+      "id": "68ffb91507a5b645769328c4",
+      "title": "Challenge 101: Markdown Heading Converter"
+    },
+    {
+      "id": "68ffb91507a5b645769328c5",
+      "title": "Challenge 102: Longest Word"
+    },
+    {
+      "id": "68ffb91507a5b645769328c6",
+      "title": "Challenge 103: LCM"
+    },
+    {
+      "id": "68ffb91507a5b645769328c7",
+      "title": "Challenge 104: Recipe Scaler"
+    },
+    {
+      "id": "68ffb91507a5b645769328c8",
+      "title": "Challenge 105: Character Count"
+    },
+    {
+      "id": "68ffb91507a5b645769328c9",
+      "title": "Challenge 106: Message Validator"
+    },
+    {
+      "id": "68ffb91507a5b645769328ca",
+      "title": "Challenge 107: FizzBuzz"
+    },
+    {
+      "id": "68ffb91507a5b645769328cb",
+      "title": "Challenge 108: BuzzFizz"
+    },
+    {
+      "id": "68ffb91507a5b645769328cc",
+      "title": "Challenge 109: What's My Age Again?"
     }
   ]
 }

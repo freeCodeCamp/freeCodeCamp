@@ -32,8 +32,8 @@ export enum Certification {
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
+  A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
-  A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
   A2Chinese = 'a2-professional-chinese-v8',
@@ -54,29 +54,30 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
-  Certification.RespWebDesign,
-  Certification.JsAlgoDataStructNew,
-  Certification.FrontEndDevLibs,
-  Certification.DataVis,
-  Certification.RelationalDb,
-  Certification.BackEndDevApis,
-  Certification.QualityAssurance,
-  Certification.SciCompPy,
-  Certification.DataAnalysisPy,
-  Certification.InfoSec,
-  Certification.MachineLearningPy,
-  Certification.CollegeAlgebraPy,
+  Certification.A2English,
   Certification.FoundationalCSharp
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
 // still live and claimable, but some parts of the UI handle them differently.
 export const legacyCertifications = [
-  Certification.LegacyFrontEnd,
+  Certification.RespWebDesign,
   Certification.JsAlgoDataStruct,
+  Certification.FrontEndDevLibs,
+  Certification.DataVis,
+  Certification.BackEndDevApis,
+  Certification.LegacyInfoSecQa,
+  Certification.LegacyFrontEnd,
+  Certification.JsAlgoDataStructNew,
   Certification.LegacyBackEnd,
   Certification.LegacyDataVis,
-  Certification.LegacyInfoSecQa
+  Certification.RelationalDb,
+  Certification.QualityAssurance,
+  Certification.SciCompPy,
+  Certification.DataAnalysisPy,
+  Certification.InfoSec,
+  Certification.MachineLearningPy,
+  Certification.CollegeAlgebraPy
 ] as const;
 
 // The Legacy Full Stack certification can only be claimed when specific
@@ -95,7 +96,6 @@ export const upcomingCertifications = [
   Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
-  Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
   Certification.A2Chinese,
@@ -205,11 +205,11 @@ export const certSlugTypeMap = {
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+  [Certification.A2English]: certTypes.a2English,
 
   // upcoming
   [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
-  [Certification.JsV9]: certTypes.javascriptV9,
-  [Certification.A2English]: certTypes.a2English
+  [Certification.JsV9]: certTypes.javascriptV9
 };
 
 export const superBlockCertTypeMap = {
@@ -275,22 +275,23 @@ export const certTypeTitleMap = {
   [certTypes.dataVis]: 'Legacy Data Visualization',
   [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
   [certTypes.fullStack]: 'Legacy Full Stack',
-  [certTypes.respWebDesign]: 'Responsive Web Design',
+  [certTypes.respWebDesign]: 'Legacy Responsive Web Design V8',
   [certTypes.respWebDesignV9]: 'Responsive Web Design',
-  [certTypes.frontEndDevLibs]: 'Front End Development Libraries',
+  [certTypes.frontEndDevLibs]: 'Front End Development Libraries V8',
   [certTypes.jsAlgoDataStruct]:
-    'Legacy JavaScript Algorithms and Data Structures',
-  [certTypes.dataVis2018]: 'Data Visualization',
-  [certTypes.apisMicroservices]: 'Back End Development and APIs',
+    'Legacy JavaScript Algorithms and Data Structures V7',
+  [certTypes.dataVis2018]: 'Data Visualization V8',
+  [certTypes.apisMicroservices]: 'Back End Development and APIs V8',
   [certTypes.qaV7]: 'Quality Assurance',
   [certTypes.infosecV7]: 'Information Security',
   [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
   [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
   [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
-  [certTypes.relationalDatabaseV8]: 'Relational Database',
+  [certTypes.relationalDatabaseV8]: 'Relational Database V8',
   [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
   [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]: 'JavaScript Algorithms and Data Structures',
+  [certTypes.jsAlgoDataStructV8]:
+    'Legacy JavaScript Algorithms and Data Structures V8',
   [certTypes.javascriptV9]: 'JavaScript',
   [certTypes.a2English]: 'A2 English for Developers'
 };
