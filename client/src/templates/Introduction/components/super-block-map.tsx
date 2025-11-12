@@ -37,7 +37,7 @@ type Challenge = {
   blockLayout: BlockLayouts;
   challengeType: number;
   dashedName: string;
-  fields: { slug: string; blockName: string };
+  fields: { slug: string };
   id: string;
   module: string;
   order: number;
