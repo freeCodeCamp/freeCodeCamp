@@ -30,11 +30,10 @@ export const baseConfig = tseslint.config(
     ignores: [
       'api',
       'curriculum',
+      'shared',
       'client/static/**/*',
       'client/.cache/**/*',
       'client/public/**/*',
-      'shared/**/*.js',
-      'shared/**/*.d.ts',
       'docs/**/*.md',
       '**/playwright*.config.ts',
       'playwright/**/*',
