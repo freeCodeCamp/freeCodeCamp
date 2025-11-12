@@ -33,11 +33,11 @@ The tests require axes to be generated using the D3 axis property, which automat
 # --before-all--
 
 ```js
-const res = await fetch(
+const res = fetch(
           'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
         );
 
-globalThis.GDPDataJson = await res.json();
+const GDPDataJsonP = res.then(data => data.json());
 ```
 
 # --before-each--
@@ -327,13 +327,14 @@ bars.forEach(function (bar) {
 The bar elements' "data-date" properties should match the order of the provided data
 
 ```js
+const GDPDataJson = await GDPDataJsonP
 const bars = document.querySelectorAll('rect.bar');
 assert.isNotEmpty(bars);
 bars.forEach(function (bar, i) {
 const currentBarDate = bar.getAttribute('data-date');
   assert.equal(
     currentBarDate,
-    globalThis.GDPDataJson.data[i][0]
+    GDPDataJson.data[i][0]
   );
 });
 
@@ -342,13 +343,14 @@ const currentBarDate = bar.getAttribute('data-date');
 The bar elements' "data-gdp" properties should match the order of the provided data
 
 ```js
+const GDPDataJson = await GDPDataJsonP
 const bars = document.querySelectorAll('rect.bar');
 assert.isNotEmpty(bars);
 bars.forEach(function (bar, i) {
   const currentBarGdp = bar.getAttribute('data-gdp');
   assert.equal(
     currentBarGdp,
-    globalThis.GDPDataJson.data[i][1]
+    GDPDataJson.data[i][1]
   );
 });
 ```
@@ -444,7 +446,7 @@ const areaDataName = 'data-date';
 const firstRequestTimeout = 500;
 const secondRequestTimeout = 2000;
 
-this.timeout(firstRequestTimeout + secondRequestTimeout + 1000);
+await timeout(firstRequestTimeout + secondRequestTimeout + 1000);
 
 // Place mouse on random bar and check if tooltip is visible.
 const randomIndex = getRandomIndex(areas.length);
