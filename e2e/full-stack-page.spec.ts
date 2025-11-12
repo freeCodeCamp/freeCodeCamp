@@ -45,8 +45,6 @@ test.describe('Full Stack Developer V9 superBlock page', () => {
     }
   });
 
-  console.log('SHOW_UPCOMING_CHANGES:', process.env.SHOW_UPCOMING_CHANGES);
-
   if (process.env.SHOW_UPCOMING_CHANGES === 'true') {
     test('shows the exam', async ({ page }) => {
       await page.goto('/learn/full-stack-developer-v9/');
