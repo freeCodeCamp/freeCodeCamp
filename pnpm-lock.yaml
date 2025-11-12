@@ -662,8 +662,8 @@ importers:
         specifier: 10.4.17
         version: 10.4.17(postcss@8.4.35)
       babel-plugin-macros:
-        specifier: 3.1.0
-        version: 3.1.0
+         specifier: 3.33.0
+         version: 3.33.0
       core-js:
         specifier: 2.6.12
         version: 2.6.12
@@ -987,7 +987,7 @@ importers:
         version: 7.0.0(debug@4.3.4)(typescript@5.7.3)
       xterm:
         specifier: ^5.2.1
-        version: 5.3.0
+        version: 7.1.0(debug@4.3.4)(typescript@5.7.3)
     devDependencies:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
@@ -1009,7 +1009,7 @@ importers:
         version: 1.6.1(typescript@5.7.3)
       babel-loader:
         specifier: 8.3.0
-        version: 8.3.0(@babel/core@7.23.7)(webpack@5.90.3)
+         version: 1.6.1(typescript@5.7.3)
       copy-webpack-plugin:
         specifier: 9.1.0
         version: 9.1.0(webpack@5.90.3)

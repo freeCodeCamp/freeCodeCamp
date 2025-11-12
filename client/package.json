@@ -164,7 +164,7 @@
     "@vitest/ui": "^3.2.4",
     "autoprefixer": "10.4.17",
     "babel-plugin-macros": "3.1.0",
-    "core-js": "2.6.12",
+    "core-js": "3.33.0",
     "dotenv": "16.4.5",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "i18next-fs-backend": "2.6.0",
