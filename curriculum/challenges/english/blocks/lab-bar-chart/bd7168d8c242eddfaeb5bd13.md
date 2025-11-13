@@ -21,14 +21,14 @@ The tests require axes to be generated using the D3 axis property, which automat
 1. Your chart should have a `g` element y-axis with a corresponding `id="y-axis"`.
 1. Both axes should contain multiple tick labels, each with a corresponding `class="tick"`.
 1. Your chart should have a `rect` element for each data point with a corresponding `class="bar"` displaying the data.
-1. Each `.bar` should have the properties `data-date` and `data-gdp` containing `date` and `GDP` values.
-1. The `.bar` elements' `data-date` properties should match the order of the provided data.
-1. The `.bar` elements' `data-gdp` properties should match the order of the provided data.
+1. Each `.bar` should have the attributes `data-date` and `data-gdp` containing `date` and `GDP` values.
+1. The `.bar` elements' `data-date` attributes should match the order of the provided data.
+1. The `.bar` elements' `data-gdp` attributes should match the order of the provided data.
 1. Each `.bar` element's height should accurately represent the data's corresponding `GDP`.
 1. The `data-date` attribute and its corresponding `.bar` element should align with the corresponding value on the x-axis.
 1. The `data-gdp` attribute and its corresponding `.bar` element should align with the corresponding value on the y-axis.
 1. You should be able to mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
-1. Your tooltip should have a `data-date` property that corresponds to the `data-date` of the active area.
+1. Your tooltip should have a `data-date` attribute that corresponds to the `data-date` of the active area.
 
 # --before-all--
 
@@ -282,7 +282,7 @@ The chart should have an element with the `id` of `title` to contain the title.
 assert.exists(document.getElementById('title'));
 ```
 
-The chart should have a `g` element x-axis with a corresponging id `x-axis`.
+The chart should have a `g` element x-axis with a corresponding id `x-axis`.
 
 ```js
 await __helpers.retryingTest(() => document.querySelector('g#x-axis'), "g element with id x-axis not found");
@@ -294,26 +294,26 @@ The chart should have a `g` element y-axis with a corresponding id `y-axis`.
 await __helpers.retryingTest(() => document.querySelector('g#y-axis'), 'element g#y-axis not found');
 ```
 
-The x axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
+The x axis should contain multiple tick labels, each with the corresponding `class="tick"`.
 
 ```js
 assert.isNotEmpty(document.querySelectorAll('#x-axis .tick'));
 ```
 
-The y axe should contain multiple tick labels, eaxh with the corresponding `class="tick"`.
+The y axis should contain multiple tick labels, each with the corresponding `class="tick"`.
 
 ```js
 assert.isNotEmpty(document.querySelectorAll('#y-axis .tick'));
 ```
 
-My Chart should have a <rect> element for each data point with a corresponding class="bar" displaying the data
+Your chart should have a `rect` element for each data point with a corresponding `class="bar"` displaying the data.
 
 ```js
 const GDPDataJson = await GDPDataJsonP;
 assert.lengthOf(document.querySelectorAll('rect.bar'), GDPDataJson.data.length);
 ```
 
-Each bar should have the properties "data-date" and "data-gdp" containing date and GDP values
+Each bar should have the attributes `data-date` and `data-gdp` containing date and GDP values.
 
 ```js
 const bars = document.querySelectorAll('rect.bar');
@@ -325,7 +325,7 @@ bars.forEach(function (bar) {
 });
 ```
 
-The bar elements' "data-date" properties should match the order of the provided data
+The bar elements' `data-date` attributes should match the order of the provided data.
 
 ```js
 const GDPDataJson = await GDPDataJsonP;
@@ -341,7 +341,7 @@ const currentBarDate = bar.getAttribute('data-date');
 
 ```
 
-The bar elements' "data-gdp" properties should match the order of the provided data
+The bar elements' `data-gdp` attributes should match the order of the provided data.
 
 ```js
 const GDPDataJson = await GDPDataJsonP;
@@ -379,7 +379,7 @@ bars.forEach(function (bar) {
 });
 ```
 
-The data-date attribute and its corresponding bar element should align with the corresponding value on the x-axis.
+The `data-date` attribute and its corresponding bar element should align with the corresponding value on the x-axis.
 
 ```js
 const axis = document.querySelector('#x-axis');
@@ -409,7 +409,7 @@ assert.isTrue(
 );
 ```
 
-The data-gdp attribute and its corresponding bar element should align with the corresponding value on the y-axis.
+The `data-gdp` attribute and its corresponding bar element should align with the corresponding value on the y-axis.
 
 ```js
 const axis = document.querySelector('#y-axis');
@@ -436,7 +436,7 @@ assert.isTrue(
 );
 ```
 
-When hovering over an area your bar chart should have a tooptip with a corresponding `id="tooltip"` which displays more information about the area.
+When hovering over an area your bar chart should have a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
 
 ```js
 const areas = document.querySelectorAll('.bar');
@@ -444,7 +444,7 @@ assert.isNotEmpty(areas);
 const toolTipDataName = 'data-date';
 const areaDataName = 'data-date';
 
-const firstRequestTimeout = 500;
+const firstRequestTimeout = 600;
 const secondRequestTimeout = 2000;
 
 await timeout(firstRequestTimeout + secondRequestTimeout + 1000);
@@ -486,7 +486,7 @@ assert.isTrue(
 );
 ```
 
-The tooltip should have a `"data-date"` property that corresponds to the `"date-data"` of the active area.
+The tooltip should have a `data-date` attribute that corresponds to the `data-date` of the active area.
 
 ```js
 const areas = document.querySelectorAll('.bar');
@@ -513,14 +513,14 @@ try {
 
   assert.isNotNull(
     tooltip.getAttribute(toolTipDataName),
-    `Could not find property "${toolTipDataName}" in tooltip `
+    `Could not find attribute "${toolTipDataName}" in tooltip `
   );
 
   assert.equal(
     tooltip.getAttribute(toolTipDataName),
     randomArea.getAttribute(areaDataName),
-    `Tooltip's "${toolTipDataName}" property should be equal to the ` +
-      `active area's "${areaDataName}" property`
+    `Tooltip's "${toolTipDataName}" attribute should be equal to the ` +
+      `active area's "${areaDataName}" attribute`
   );
 } finally {
   // Clear out tooltip.
