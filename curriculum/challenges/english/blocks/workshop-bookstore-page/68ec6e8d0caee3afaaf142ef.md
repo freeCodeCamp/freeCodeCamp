@@ -36,11 +36,21 @@ assert.exists(document.querySelector('.card-container div.card'));
 ## --seed-contents--
 
 ```html
---fcc-editable-region--
-<h1>XYZ Bookstore</h1>
-<p>Browse our collection of amazing books!</p>
-<div class="card-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XYZ Bookstore Page</title>
+</head>
+<body>
+  <h1>XYZ Bookstore</h1>
+  <p>Browse our collection of amazing books!</p>
+ --fcc-editable-region--
+ <div class="card-container">
 
-</div>
+  </div>
 --fcc-editable-region--
+</body>
+</html>
 ```
