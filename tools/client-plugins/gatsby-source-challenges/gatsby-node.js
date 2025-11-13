@@ -36,8 +36,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
     persistent: true,
-    usePolling: true,
     cwd: curriculumPath
+  });
+
+  process.on('exit', () => watcher.close());
+  process.on('SIGINT', () => {
+    watcher.close();
+    process.exit();
   });
 
   function handleChallengeUpdate(filePath, action = 'changed') {
