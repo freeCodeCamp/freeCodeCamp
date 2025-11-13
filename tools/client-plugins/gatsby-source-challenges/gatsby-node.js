@@ -39,12 +39,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  process.on('exit', () => watcher.close());
-  process.on('SIGINT', () => {
-    watcher.close();
-    process.exit();
-  });
-
   function handleChallengeUpdate(filePath, action = 'changed') {
     return onSourceChange(filePath)
       .then(challenges => {
