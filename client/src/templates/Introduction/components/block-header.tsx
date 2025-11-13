@@ -1,5 +1,7 @@
 import React from 'react';
 import { isEmpty } from 'lodash';
+import { Button } from '@freecodecamp/ui';
+import { Link } from '../../../components/helpers';
 
 import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
@@ -19,6 +21,8 @@ interface BlockHeaderProps {
   isExpanded: boolean;
   percentageCompleted: number;
   blockIntroArr?: string[];
+  accordion?: boolean;
+  blockUrl?: string;
 }
 
 function BlockHeader({
@@ -31,35 +35,52 @@ function BlockHeader({
   isCompleted,
   isExpanded,
   percentageCompleted,
-  blockIntroArr
+  blockIntroArr,
+  accordion,
+  blockUrl
 }: BlockHeaderProps): JSX.Element {
+  const InnerBlockHeader = () => (
+    <>
+      <span className='block-header-button-text map-title'>
+        {accordion &&
+          (blockUrl ? <span className='aligner-dash'></span> : <DropDown />)}
+        <CheckMark isCompleted={isCompleted} />
+        {!accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
+        <span>
+          {blockTitle}
+          <span className='sr-only'>, {courseCompletionStatus}</span>
+        </span>
+        {accordion && blockLabel && <BlockLabel blockLabel={blockLabel} />}
+        {!accordion && <DropDown />}
+      </span>
+      {!accordion && !isExpanded && !isCompleted && completedCount > 0 && (
+        <div aria-hidden='true' className='progress-wrapper'>
+          <div>
+            <ProgressBar now={percentageCompleted} />
+          </div>
+          <span>{`${percentageCompleted}%`}</span>
+        </div>
+      )}
+    </>
+  );
+
   return (
     <>
       <h3 className='block-grid-title'>
-        <button
-          aria-expanded={isExpanded ? 'true' : 'false'}
-          aria-controls={`${blockDashed}-panel`}
-          className='block-header'
-          onClick={handleClick}
-        >
-          <span className='block-header-button-text map-title'>
-            <CheckMark isCompleted={isCompleted} />
-            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
-            <span>
-              {blockTitle}
-              <span className='sr-only'>, {courseCompletionStatus}</span>
-            </span>
-            <DropDown />
-          </span>
-          {!isExpanded && !isCompleted && completedCount > 0 && (
-            <div aria-hidden='true' className='progress-wrapper'>
-              <div>
-                <ProgressBar now={percentageCompleted} />
-              </div>
-              <span>{`${percentageCompleted}%`}</span>
-            </div>
-          )}
-        </button>
+        {accordion && blockUrl ? (
+          <Link className='block-header' to={blockUrl}>
+            <InnerBlockHeader />
+          </Link>
+        ) : (
+          <Button
+            aria-expanded={isExpanded ? 'true' : 'false'}
+            aria-controls={`${blockDashed}-panel`}
+            className='block-header'
+            onClick={handleClick}
+          >
+            <InnerBlockHeader />
+          </Button>
+        )}
       </h3>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />

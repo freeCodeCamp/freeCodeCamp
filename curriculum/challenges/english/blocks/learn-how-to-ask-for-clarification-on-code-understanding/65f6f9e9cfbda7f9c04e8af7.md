@@ -3,6 +3,7 @@ id: 65f6f9e9cfbda7f9c04e8af7
 title: Task 41
 challengeType: 19
 dashedName: task-41
+lang: en-US
 ---
 
 <!-- (Audio) Brian: Understood. We can investigate this together, and by the end of it, we should have a clearer picture of what's happening. -->

@@ -1,0 +1,16 @@
+{
+  "chapters": [
+    {
+      "chapterType": "exam",
+      "dashedName": "certified-full-stack-developer-exam",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "certified-full-stack-developer-exam",
+          "comingSoon": true,
+          "blocks": ["exam-certified-full-stack-developer"]
+        }
+      ]
+    }
+  ]
+}

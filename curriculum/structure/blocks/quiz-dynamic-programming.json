@@ -2,7 +2,7 @@
   "name": "Dynamic Programming Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-dynamic-programming",
   "challengeOrder": [
     { "id": "67f413a2abe9894c52e15c6e", "title": "Dynamic Programming Quiz" }
