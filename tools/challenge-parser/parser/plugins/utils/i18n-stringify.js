@@ -58,21 +58,47 @@ function chineseInlineCodeHandler(state, node) {
 
   return {
     type: 'element',
-    // TODO: change this to span
-    // https://github.com/freeCodeCamp/language-curricula/issues/22
-    tagName: 'code',
-    properties: {},
+    tagName: 'span',
+    properties: { className: 'highlighted-text' },
     children: [{ type: 'text', value: node.value }]
   };
 }
 
-const rubyOptions = {
+/**
+ * Custom handler for inline code to render as span elements
+ * @param {object} state - The state object from mdast-util-to-hast
+ * @param {object} node - The inlineCode node
+ * @returns {object} Hast element node
+ */
+function spanInlineCodeHandler(state, node) {
+  return {
+    type: 'element',
+    tagName: 'span',
+    properties: { className: 'highlighted-text' },
+    children: [{ type: 'text', value: node.value }]
+  };
+}
+
+const spanOrRubyOptions = {
   handlers: {
     inlineCode: chineseInlineCodeHandler
   }
 };
 
-const createMdastToHtml = lang =>
-  lang == 'zh-CN' ? x => mdastToHTML(x, rubyOptions) : mdastToHTML;
+const spanOptions = {
+  handlers: {
+    inlineCode: spanInlineCodeHandler
+  }
+};
+
+const createMdastToHtml = lang => {
+  if (lang === 'zh-CN') {
+    return x => mdastToHTML(x, spanOrRubyOptions);
+  } else if (lang === 'en-US' || lang === 'es') {
+    return x => mdastToHTML(x, spanOptions);
+  } else {
+    return mdastToHTML;
+  }
+};
 
 module.exports = { parseChinesePattern, createMdastToHtml };
