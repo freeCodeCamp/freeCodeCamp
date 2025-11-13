@@ -1307,6 +1307,7 @@
     "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
     "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
+    "your-exam-token": "Your Exam Token is: {{token}}",
     "error": "There was an error generating your token, please try again in a moment.",
     "no-token": "It looks like you don't have a valid exam token.",
     "copy": "Copy Exam Token",
