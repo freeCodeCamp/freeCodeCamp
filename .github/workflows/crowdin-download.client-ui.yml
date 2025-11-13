@@ -334,6 +334,17 @@ jobs:
           REPOSITORY: 'freecodecamp/freecodecamp'
           BASE: 'main'
           TITLE: 'chore(i18n,client): processed translations'
+               # Enable auto-merge for crowdin-sync PRs
+     - name: Enable Auto-Merge for Crowdin PR
+       if: success()
+       run: |
+         # Get the latest PR created by crowdin
+         PR_NUMBER=$(gh pr list --author camperbot --label crowdin-sync --base main --limit 1 --state open --json number --jq '.[0].number')
+         if [ ! -z "$PR_NUMBER" ]; then
+           gh pr merge $PR_NUMBER --squash --auto
+         fi
+       env:
+         GH_TOKEN: ${{ secrets.CROWDIN_CAMPERBOT_PAT }}
           BODY: 'This PR was opened auto-magically by Crowdin.'
           LABELS: 'crowdin-sync'
           TEAM_REVIEWERS: 'i18n'
