@@ -182,7 +182,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <div className='settings-container'>
+      <div className='settings-container' id='settings-container'>
         <aside className='settings-ledger ledger-fade'>
           <ul>
             <li>
@@ -240,7 +240,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {examTokenFlag && (
               <li>
                 <ScrollLink
-                  to='honesty'
+                  to='exam-token'
                   className='ledger-section-heading'
                   smooth={true}
                   offset={-48}
@@ -248,7 +248,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
                   spy={true}
                   activeClass='active'
                 >
-                  {t('user-token.title')}
+                  {t('exam-token.exam-token')}
                 </ScrollLink>
               </li>
             )}
@@ -312,7 +312,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
                 ))}
               </ul>
             </li>
-            {examTokenFlag && (
+            {userToken && (
               <li>
                 <ScrollLink
                   to='user-token'
@@ -329,7 +329,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             )}
             <li>
               <ScrollLink
-                to='exam-token'
+                to='danger-zone'
                 className='ledger-section-heading'
                 smooth={true}
                 offset={-48}
