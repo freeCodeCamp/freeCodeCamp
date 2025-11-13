@@ -39,14 +39,10 @@ interface Block<T> {
 
 const ver = 'v1';
 
+// NOTE: Please don't add new superblocks to this list as this version is being deprecated.
+// New superblocks should be added to v2 of the external curriculum data at
+// tools/scripts/build/build-external-curricula-data-v2.ts
 export const orderedSuperBlockInfo = [
-  { dashedName: SuperBlocks.RespWebDesignV9, public: false },
-  { dashedName: SuperBlocks.JsV9, public: false },
-  { dashedName: SuperBlocks.FrontEndDevLibsV9, public: false },
-  { dashedName: SuperBlocks.PythonV9, public: false },
-  { dashedName: SuperBlocks.RelationalDbV9, public: false },
-  { dashedName: SuperBlocks.BackEndDevApisV9, public: false },
-  { dashedName: SuperBlocks.FullStackDeveloperV9, public: false },
   { dashedName: SuperBlocks.RespWebDesignNew, public: true },
   { dashedName: SuperBlocks.DataAnalysisPy, public: true },
   { dashedName: SuperBlocks.MachineLearningPy, public: true },
