@@ -1,0 +1,23 @@
+# staging - configuration for .dev pointing to staging exam environment
+
+# Set the environment to staging for .dev domain
+ENVIRONMENT=staging
+
+# Base URL for exam download page should point to the staging latest release
+EXAM_DOWNLOAD_URL="https://staging.example.dev/exam/latest/"
+
+# Token generation widget visibility control
+# Only show token widget if user is authorized
+show_token_widget() {
+  if [ "$USER_AUTHORIZED" = true ]; then
+    echo "show"
+  else
+    echo "hide"
+  fi
+}
+
+# Example usage for token widget visibility on /settings page
+TOKEN_WIDGET_VISIBILITY=$(show_token_widget)
+
+# Export these for use in app or scripts
+export ENVIRONMENT EXAM_DOWNLOAD_URL TOKEN_WIDGET_VISIBILITY
