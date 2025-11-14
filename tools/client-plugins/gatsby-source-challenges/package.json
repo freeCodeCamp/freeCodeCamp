@@ -22,6 +22,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "gatsby-node.js",
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "chokidar": "3.6.0",
     "eslint": "^9.39.1"
   }

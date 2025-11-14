@@ -88,18 +88,14 @@
     "dotenv": "16.4.5"
   },
   "devDependencies": {
-    "@freecodecamp/eslint-config": "workspace:*",
     "@playwright/test": "^1.47.1",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
     "@types/lodash": "4.14.202",
     "@types/node": "20.12.8",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@typescript-eslint/eslint-plugin": "8.24.0",
-    "@typescript-eslint/parser": "8.23.0",
     "@vitest/eslint-plugin": "^1.3.12",
     "debug": "4.3.4",
-    "eslint": "^9.39.1",
     "globals": "^15.14.0",
     "husky": "9.0.11",
     "identity-obj-proxy": "^3.0.0",

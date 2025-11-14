@@ -19,6 +19,7 @@
     "postinstall": "shx cp ./sample.env ./.env"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "@types/codemirror": "5.60.15",
     "@types/react": "17.0.83",
     "@types/react-dom": "17.0.19",

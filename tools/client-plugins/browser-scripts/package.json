@@ -30,6 +30,7 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
+    "@freecodecamp/eslint-config": "workspace:*",
     "@types/copy-webpack-plugin": "^8.0.1",
     "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",

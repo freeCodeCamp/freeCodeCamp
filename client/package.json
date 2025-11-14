@@ -142,6 +142,7 @@
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@eslint/compat": "^1.2.9",
     "@eslint/eslintrc": "^3.3.1",
+    "@freecodecamp/eslint-config": "workspace:*",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
