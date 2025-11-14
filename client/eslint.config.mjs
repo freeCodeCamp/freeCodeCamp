@@ -1,35 +1,22 @@
-import { configTypeChecked } from '@freecodecamp/eslint-config/base';
+import {
+  configTypeChecked,
+  configReact
+} from '@freecodecamp/eslint-config/base';
 import globals from 'globals';
 import importPlugin from 'eslint-plugin-import';
 import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
-import reactPlugin from 'eslint-plugin-react';
-import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
-import { fixupConfigRules } from '@eslint/compat';
-import { FlatCompat } from '@eslint/eslintrc';
 
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import { defineConfig } from 'eslint/config';
 
-const __dirname = import.meta.dirname;
-
-const compat = new FlatCompat({
-  baseDirectory: __dirname
-});
-
 export default defineConfig(
+  configReact,
   { ignores: ['static', '.cache', 'public'] },
   importPlugin.flatConfigs.recommended,
   {
     files: ['**/*.ts?(x)'],
     extends: [importPlugin.flatConfigs['typescript']]
   },
-  ...fixupConfigRules(
-    compat.extends(
-      'plugin:react-hooks/recommended' // Note: at time of testing, upgrading to v5 creates false positives
-    )
-  ),
-  reactPlugin.configs['flat'].recommended,
-  jsxAllyPlugin.flatConfigs.recommended,
   {
     languageOptions: {
       globals: {
