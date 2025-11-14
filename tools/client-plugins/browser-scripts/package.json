@@ -20,6 +20,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint",
     "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
   },
   "type": "module",
