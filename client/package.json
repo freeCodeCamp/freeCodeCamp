@@ -173,6 +173,7 @@
     "core-js": "2.6.12",
     "dotenv": "16.4.5",
     "eslint": "^9.39.1",
+    "eslint-plugin-flowtype": "^8.0.3",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-jsx-a11y": "6.10.2",
     "eslint-plugin-react": "7.37.4",
