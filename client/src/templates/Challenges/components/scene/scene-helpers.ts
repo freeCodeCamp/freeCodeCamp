@@ -1,0 +1,20 @@
+import { SceneCommand } from '../../../../redux/prop-types';
+
+export const buildTranscript = (commands: SceneCommand[]): string => {
+  let transcriptText = '';
+  commands.forEach(command => {
+    if (command.character && command.dialogue) {
+      transcriptText =
+        transcriptText +
+        '\n' +
+        '<strong>' +
+        command.character +
+        '</strong>:' +
+        ' ' +
+        command.dialogue.text +
+        '\n';
+    }
+  });
+
+  return transcriptText;
+};
