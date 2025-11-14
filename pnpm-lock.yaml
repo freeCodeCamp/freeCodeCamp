@@ -863,6 +863,9 @@ importers:
         specifier: 4.0.3
         version: 4.0.3
     devDependencies:
+      '@freecodecamp/eslint-config':
+        specifier: workspace:*
+        version: link:../../../packages/eslint-config
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
