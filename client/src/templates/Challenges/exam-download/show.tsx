@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import {
   Button,
+  Callout,
   Dropdown,
   MenuItem,
   Spacer,
@@ -199,10 +200,14 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {!!missingPrerequisites.length && (
+            {missingPrerequisites.length > 0 ? (
               <MissingPrerequisites
                 missingPrerequisites={missingPrerequisites}
               />
+            ) : (
+              <Callout className='exam-qualified' variant='info'>
+                <p>{t('learn.exam.qualified')}</p>
+              </Callout>
             )}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>

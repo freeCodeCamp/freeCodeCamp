@@ -60,7 +60,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Адаптивний вебдизайн",
+    "title": "Legacy Responsive Web Design V8",
     "intro": [
       "В сертифікації «Адаптивний вебдизайн» ви вивчите мови, які розробники використовують для створення вебсторінок: HTML (мова розмітки гіпертексту) для вмісту та CSS (каскадні таблиці стилів) для дизайну.",
       "Спочатку ви створите застосунок із фотографіями котів, аби вивчити основи HTML та CSS. Пізніше ви опануєте сучасні методи, такі як змінні CSS, завдяки створенню пінгвіна, а також створите вікторину, щоб опанувати доступність.",
@@ -217,7 +217,7 @@
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Алгоритми JavaScript та структури даних (застаріла версія)",
+    "title": "Legacy JavaScript Algorithms and Data Structures V7",
     "intro": [
       "Якщо HTML та CSS відповідають за вміст і стилізацію сторінки, то JavaScript робить її інтерактивною. У сертифікації «Алгоритми JavaScript та структури даних» ви вивчите основи JavaScript, включно зі змінними, масивами, об’єктами, циклами та функціями.",
       "Як тільки ви вивчите основи, ви почнете застосовувати ці знання, створюючи алгоритми, щоб уміло маніпулювати рядками, факторизувати числа, і навіть зможете обчислити орбіту міжнародної космічної станції.",
@@ -300,7 +300,7 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "Алгоритми та структури даних JavaScript",
+    "title": "Legacy JavaScript Algorithms and Data Structures V8",
     "intro": [
       "Розробники використовують HTML та CSS, щоб контролювати вміст та стилізувати сторінку, а JavaScript — щоб зробити цю сторінку інтерактивною.",
       "У сертифікації «Алгоритми JavaScript та структури даних» ви вивчите основи JavaScript, включно зі змінними, масивами, об’єктами, циклами, функціями, об’єктною моделлю документа та багато іншого.",
@@ -490,7 +490,7 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Бібліотеки Front End",
+    "title": "Front End Development Libraries V8",
     "intro": [
       "Тепер, коли ви вже знайомі з HTML, CSS та JavaScript, піднімімо ваш рівень навичок, вивчаючи декілька найбільш популярних бібліотек верстки в галузі.",
       "У сертифікації «Бібліотеки Front End» ви навчитеся швидко стилізувати свій сайт за допомогою Bootstrap. Також ви навчитеся покращувати свої стилі CSS та розширювати їх за допомогою Sass.",
@@ -553,7 +553,7 @@
     }
   },
   "data-visualization": {
-    "title": "Візуалізація даних",
+    "title": "Data Visualization V8",
     "intro": [
       "Дані повсюди, але це не означає, що більшість з них без форми чи контексту.",
       "У сертифікації «Візуалізація даних» ви створите діаграми, графіки та карти, що показують різні типи даних, за допомогою бібліотеки D3.js.",
@@ -588,7 +588,7 @@
     }
   },
   "relational-database": {
-    "title": "Реляційна база даних",
+    "title": "Relational Database V8",
     "intro": [
       "У цих курсах ви використовуватимете реальні інструменти розробника та програмне забезпечення, включно з VS Code, PostgreSQL та командним рядком Linux / Unix для завершення інтерактивних уроків і створення проєктів.",
       "Ці курси починаються з основних команд Bash. За допомогою терміналу ви навчитеся усього необхідного (від навігації та маніпуляції файловою системою, написання скрипту в Bash до просунутого використання).",
@@ -696,7 +696,7 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Розробка Back End та API",
+    "title": "Back End Development and APIs V8",
     "intro": [
       "До цього моменту ви використовували JavaScript тільки для front end, аби зробити вебсторінку інтерактивнішою, розв’язати завдання з алгоритмами, або створити SPA. Але JavaScript можна використовувати й у back end, або на сервері, для створення цілих вебзастосунків.",
       "Сьогодні один із найпопулярніших способів створення застосунків — за допомогою мікрослужб, які є маленькими модульними застосунками та разом формують єдине ціле.",
@@ -1386,7 +1386,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Сертифікація «Англійська мова A2 для розробників» (бета)",
+    "title": "A2 English for Developers Certification",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня A2 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Перша частина допоможе освоїти граматику та використання англійської мови. Ви виконаєте багато практичних вправ, дізнавшись основи (наприклад, представлення себе, проведення коротких розмов і обговорення роботи).",
@@ -2071,6 +2071,12 @@
         "title": "Основи HTML",
         "intro": [
           "In these lessons, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
         ]
       },
       "lecture-understanding-how-html-affects-seo": {
@@ -4675,7 +4681,6 @@
       "workshop-discount-calculator": {
         "title": "Build a Discount Calculator",
         "intro": [
-          "Build a Discount Calculator",
           "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
         ]
       },
@@ -4797,8 +4802,10 @@
         ]
       },
       "workshop-shortest-path-algorithm": {
-        "title": "Створіть алгоритм найкоротшого шляху",
-        "intro": [""]
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
+        ]
       },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
@@ -5204,6 +5211,12 @@
           "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
@@ -5233,10 +5246,24 @@
           "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -6275,6 +6302,7 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front End Development Libraries Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
       "To earn your Front End Development Libraries Certification:",
@@ -6288,6 +6316,8 @@
     "modules": {
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
+      "lab-currency-converter": "Build a Currency Converter",
+      "lab-tic-tac-toe": "Build a Tic-Tac-Toe Game",
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
@@ -6616,6 +6646,7 @@
   },
   "python-v9": {
     "title": "Python Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -6630,11 +6661,16 @@
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
       "python-classes-and-objects": "Classes and Objects",
+      "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
+      "lab-hash-table": "Build a Hash Table",
       "python-algorithms": "Algorithms",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
@@ -6883,6 +6919,12 @@
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
@@ -7002,6 +7044,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
@@ -7074,6 +7122,7 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7308,6 +7357,7 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back End Development and APIs Certification",
+    "note": "This certification is currently in development and will be available soon.",
     "intro": [
       "This course teaches you the fundamentals of back end development and APIs.",
       "To earn your Back End Development and APIs Certification:",
@@ -7424,11 +7474,17 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
+    "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the following certifications:",
+      "- Responsive Web Design Certification",
+      "- JavaScript Certification",
+      "- Front End Development Libraries Certification",
+      "- Python Certification",
+      "- Relational Databases Certification",
+      "- Back End Development and APIs Certification",
+      "Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
@@ -7457,12 +7513,12 @@
     "intro": ["Placeholder intro"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-letters-and-sounds": "Letters and Sounds",
+      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-accents-and-punctuation": "Alphabet, Accents, and Punctuation",
+      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions"
@@ -7472,7 +7528,7 @@
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
-      "es-a1-module-alphabet-accents-and-punctuation": {
+      "es-a1-module-alphabet-and-special-characters": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
@@ -7522,8 +7578,8 @@
         "title": "Punctuation",
         "intro": ["", ""]
       },
-      "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
-        "title": "Alphabet, Accent and Punctuation Quiz",
+      "es-a1-quiz-the-alphabet": {
+        "title": "The Spanish Alphabet Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7572,6 +7628,22 @@
       },
       "es-a1-quiz-first-questions": {
         "title": "First Questions Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-consonants-and-special-characters": {
+        "title": "Consonants and Special Characters",
+        "intro": ["", ""]
+      },
+      "es-a1-review-the-alphabet": {
+        "title": "The Spanish Alphabet Review",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-alphabet": {
+        "title": "The Spanish Alphabet Practice",
         "intro": ["", ""]
       }
     }
@@ -7678,6 +7750,12 @@
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -7762,6 +7840,12 @@
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
           "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {

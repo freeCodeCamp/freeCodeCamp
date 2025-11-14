@@ -37,6 +37,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -53,8 +54,6 @@ export type FillInTheBlank = {
 export type Fields = {
   slug: string;
   blockHashSlug: string;
-  blockName: string;
-  tests: Test[];
 };
 type Required = {
   link: string;
@@ -139,7 +138,16 @@ export type Characters =
   | 'René'
   | 'Sebastián'
   | 'Diego'
-  | 'Valeria';
+  | 'Valeria'
+
+  // Chinese
+  | 'Chen Na'
+  | 'Li Hong'
+  | 'Li Ping'
+  | 'Liu Ming'
+  | 'Wang Hua'
+  | 'Zhang'
+  | 'Zhou';
 
 interface SetupCharacter {
   character: Characters;
@@ -213,7 +221,6 @@ export type ChallengeNode = {
     hooks?: Hooks;
     id: string;
     instructions: string;
-    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;
@@ -284,10 +291,7 @@ export type DailyCodingChallengeNode = {
 
     helpCategory: 'JavaScript' | 'Python';
     challengeType: 28 | 29;
-    fields: {
-      blockName: 'daily-coding-challenge';
-      tests: Test[];
-    };
+    tests: Test[];
     challengeFiles: ChallengeFiles;
 
     // props to satisfy the show classic component

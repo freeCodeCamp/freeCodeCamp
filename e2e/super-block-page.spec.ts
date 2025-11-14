@@ -106,7 +106,9 @@ test.describe('Super Block Page - Authenticated User', () => {
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({
       page
     }) => {
-      await page.goto(`/learn/full-stack-developer/workshop-cafe-menu/step-2`);
+      await page.goto(
+        `/learn/responsive-web-design-v9/workshop-cafe-menu/step-2`
+      );
 
       await page
         .getByRole('link', {
@@ -114,7 +116,9 @@ test.describe('Super Block Page - Authenticated User', () => {
         })
         .click();
 
-      await page.waitForURL('/learn/full-stack-developer/#workshop-cafe-menu');
+      await page.waitForURL(
+        '/learn/responsive-web-design-v9/#workshop-cafe-menu'
+      );
 
       // Chapter
       await expect(
@@ -146,7 +150,7 @@ test.describe('Super Block Page - Authenticated User', () => {
         );
       });
 
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // HTML chapter
       await expect(
@@ -173,7 +177,7 @@ test.describe('Super Block Page - Authenticated User', () => {
     }) => {
       test.setTimeout(20000);
 
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // HTML chapter
       await expect(
@@ -194,7 +198,9 @@ test.describe('Super Block Page - Authenticated User', () => {
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
-      await page.goto('/learn/full-stack-developer/workshop-blog-page/step-2');
+      await page.goto(
+        '/learn/responsive-web-design-v9/workshop-blog-page/step-2'
+      );
 
       // Wait for the page to finish loading so that the current challenge ID can be registered.
       await expect(
@@ -202,7 +208,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toBeVisible();
 
       // Go back to the super block page
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // Semantic HTML module
       await expect(
@@ -248,7 +254,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
     test('should expand the first block of the super block', async ({
       page
     }) => {
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // First chapter
       await expect(

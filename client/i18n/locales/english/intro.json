@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta) Certification",
+    "title": "A2 English for Developers Certification",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -2087,6 +2087,12 @@
           "In these lessons, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -2366,7 +2372,10 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": { "title": "30", "intro": [] },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -4164,7 +4173,10 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": { "title": "258", "intro": [] },
+      "kagw": {
+        "title": "258",
+        "intro": []
+      },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -4437,11 +4449,26 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
-      "trvf": { "title": "293", "intro": [] },
-      "kwmg": { "title": "294", "intro": [] },
-      "nodx": { "title": "295", "intro": [] },
-      "erfj": { "title": "296", "intro": [] },
-      "muyw": { "title": "297", "intro": [] },
+      "trvf": {
+        "title": "293",
+        "intro": []
+      },
+      "kwmg": {
+        "title": "294",
+        "intro": []
+      },
+      "nodx": {
+        "title": "295",
+        "intro": []
+      },
+      "erfj": {
+        "title": "296",
+        "intro": []
+      },
+      "muyw": {
+        "title": "297",
+        "intro": []
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -4459,8 +4486,14 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": { "title": "301", "intro": [] },
-      "vtpz": { "title": "302", "intro": [] },
+      "rdzk": {
+        "title": "301",
+        "intro": []
+      },
+      "vtpz": {
+        "title": "302",
+        "intro": []
+      },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -5054,6 +5087,7 @@
   },
   "javascript-v9": {
     "title": "JavaScript Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
       "To qualify for the exam, you must complete the following projects:",
@@ -5067,6 +5101,12 @@
     "chapters": {
       "javascript": "JavaScript",
       "javascript-certification-exam": "JavaScript Certification Exam"
+    },
+    "module-intros": {
+      "javascript-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5192,6 +5232,12 @@
           "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Working with String Modification Methods",
         "intro": [
@@ -5221,10 +5267,24 @@
           "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -6263,6 +6323,7 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front End Development Libraries Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
       "To earn your Front End Development Libraries Certification:",
@@ -6276,6 +6337,8 @@
     "modules": {
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
+      "lab-currency-converter": "Build a Currency Converter",
+      "lab-tic-tac-toe": "Build a Tic-Tac-Toe Game",
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
@@ -6604,6 +6667,7 @@
   },
   "python-v9": {
     "title": "Python Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -6618,11 +6682,16 @@
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
       "python-classes-and-objects": "Classes and Objects",
+      "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
+      "lab-hash-table": "Build a Hash Table",
       "python-algorithms": "Algorithms",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
@@ -6871,6 +6940,12 @@
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
@@ -6990,6 +7065,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
@@ -7062,6 +7143,7 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7296,6 +7378,7 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back End Development and APIs Certification",
+    "note": "This certification is currently in development and will be available soon.",
     "intro": [
       "This course teaches you the fundamentals of back end development and APIs.",
       "To earn your Back End Development and APIs Certification:",
@@ -7407,16 +7490,21 @@
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
       }
     }
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
+    "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
@@ -7428,7 +7516,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "This will be a 90 question exam testing what you have learned throughout this certification."
+          "This exam will test what you have learned throughout the previous six certifications."
         ]
       }
     },
@@ -7515,8 +7603,14 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
-      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
+      "es-a1-learn-meet-luna": {
+        "title": "Meet Luna",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-meet-mateo": {
+        "title": "Meet Mateo",
+        "intro": ["", ""]
+      },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -7570,6 +7664,7 @@
   },
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
       "To qualify for the exam, you must complete the following projects:",
@@ -7584,6 +7679,14 @@
       "html": "HTML",
       "css": "CSS",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+    },
+    "module-intros": {
+      "responsive-web-design-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification."
+        ]
+      }
     },
     "modules": {
       "basic-html": "Basic HTML",
@@ -7670,6 +7773,12 @@
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -7754,6 +7863,12 @@
         "title": "Understanding Nuanced Semantic Elements",
         "intro": [
           "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
@@ -7943,7 +8058,10 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": { "title": "30", "intro": [] },
+      "qpra": {
+        "title": "30",
+        "intro": []
+      },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -8669,7 +8787,10 @@
         "title": "Single Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
+      "zh-a1-learn-initials": {
+        "title": "Initials",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -8720,12 +8841,18 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": { "title": "The Team", "intro": ["", ""] },
+      "zh-a1-learn-the-team": {
+        "title": "The Team",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-a-new-colleague": {
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
+      "zh-a1-learn-my-family": {
+        "title": "My Family",
+        "intro": ["", ""]
+      },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -8888,7 +9015,9 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": { "basic-html": "Basic HTML" },
+    "modules": {
+      "basic-html": "Basic HTML"
+    },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -8901,12 +9030,15 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
+      "daily-coding-challenge": {
+        "title": "Daily Coding Challenge"
+      }
     }
   },
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Courses",
+    "requirements": "Requirements",
     "steps": "Steps",
     "expand": "Expand course",
     "collapse": "Collapse course",
