@@ -23,6 +23,7 @@
     "@types/react": "17.0.83",
     "@types/react-dom": "17.0.19",
     "@uiw/react-codemirror": "3.2.10",
+    "eslint": "^9.39.1",
     "shx": "0.3.4"
   }
 }

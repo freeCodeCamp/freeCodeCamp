@@ -24,6 +24,7 @@
   "devDependencies": {
     "debug": "4.3.4",
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
     "js-yaml": "4.1.0",

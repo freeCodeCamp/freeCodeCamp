@@ -34,6 +34,7 @@
     "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",
     "copy-webpack-plugin": "9.1.0",
+    "eslint": "^9.39.1",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",

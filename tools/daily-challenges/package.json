@@ -11,6 +11,7 @@
   "description": "",
   "devDependencies": {
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "mongodb": "6.10.0",
     "tsx": "4.19.1",
     "typescript": "5.8.2"

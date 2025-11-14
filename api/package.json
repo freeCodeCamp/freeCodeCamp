@@ -49,6 +49,7 @@
     "@types/validator": "13.11.2",
     "@vitest/ui": "^3.2.4",
     "dotenv-cli": "7.3.0",
+    "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.2.1",
     "jsdom": "^26.1.0",
     "msw": "^2.7.0",
