@@ -18,7 +18,7 @@ test.describe('Initially', () => {
   test('should not render', async ({ page }) => {
     await page.goto('/settings');
     await expect(
-      page.getByText('User Token', { exact: true }).nth(1)
+      page.getByRole('main').getByText('User Token', { exact: true })
     ).not.toBeVisible();
   });
 });
@@ -44,7 +44,7 @@ test.describe('After creating token', () => {
 
     await alertToBeVisible(page, translations.flash['token-deleted']);
     await expect(
-      page.getByText('User Token', { exact: true }).nth(1)
+      page.getByRole('main').getByText('User Token', { exact: true })
     ).not.toBeVisible();
   });
 });
