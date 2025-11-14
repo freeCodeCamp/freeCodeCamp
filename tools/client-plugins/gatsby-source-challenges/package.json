@@ -8,6 +8,9 @@
     "node": ">=16",
     "pnpm": ">=10"
   },
+  "scripts": {
+    "lint": "eslint"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
