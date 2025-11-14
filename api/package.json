@@ -78,7 +78,7 @@
     "clean": "rm -rf dist",
     "develop": "tsx watch --clear-screen=false src/server.ts",
     "start": "FREECODECAMP_NODE_ENV=production node dist/server.js",
-    "lint": "eslint .",
+    "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",

@@ -45,7 +45,7 @@
     "develop:client": "cd ./client && pnpm run develop",
     "develop:api": "cd ./api && pnpm run develop",
     "format": "run-s format:eslint format:prettier",
-    "format:eslint": "eslint . --fix",
+    "format:eslint": "eslint --fix",
     "format:prettier": "prettier --write .",
     "i18n-sync": "tsx ./tools/scripts/sync-i18n.ts",
     "knip": "npx -y knip@5 --include files",

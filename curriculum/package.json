@@ -31,7 +31,7 @@
     "delete-step": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
-    "lint": "eslint .",
+    "lint": "eslint",
     "lint-challenges": "tsx --tsconfig ../tsconfig.json src/lint-localized",
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
