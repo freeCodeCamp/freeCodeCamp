@@ -5,7 +5,15 @@ import vitest from '@vitest/eslint-plugin';
 import { defineConfig } from 'eslint/config';
 import noOnlyTests from 'eslint-plugin-no-only-tests';
 import filenamesSimple from 'eslint-plugin-filenames-simple';
-import { fixupPluginRules } from '@eslint/compat';
+import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
+import reactPlugin from 'eslint-plugin-react';
+import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const __dirname = import.meta.dirname;
+const compat = new FlatCompat({
+  baseDirectory: __dirname
+});
 
 const base = [
   { ignores: ['dist'] },
@@ -78,3 +86,13 @@ export const configTypeChecked = defineConfig(
     }
   }
 );
+
+export const configReact = [
+  reactPlugin.configs['flat'].recommended,
+  jsxAllyPlugin.flatConfigs.recommended,
+  ...fixupConfigRules(
+    compat.extends(
+      'plugin:react-hooks/recommended' // Note: at time of testing, upgrading to v5 creates false positives
+    )
+  )
+];
