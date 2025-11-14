@@ -1,0 +1,55 @@
+.console-counter-button {
+  position: relative;
+}
+
+.console-counter-button strong {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 12px;
+  height: 12px;
+  padding: 0 2px;
+  border-radius: 12px;
+  background-color: #999;
+  color: #0a0a23;
+  font-size: 8px;
+  line-height: 12px;
+  font-weight: 400;
+}
+
+.drag-handler {
+  position: absolute;
+  z-index: 10;
+
+  @media screen and (max-width: 768px) {
+    display: 'none';
+  }
+}
+
+.drag-handler--vertical {
+  right: 0;
+  left: 0;
+  height: 10px;
+  cursor: ns-resize;
+}
+
+.drag-handler--horizontal {
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  cursor: ew-resize;
+}
+
+.console-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.rtl-layout {
+  flex-direction: row-reverse;
+
+  @media screen and (max-width: 768px) {
+    flex-flow: wrap-reverse !important;
+    flex-direction: initial;
+  }
+}
