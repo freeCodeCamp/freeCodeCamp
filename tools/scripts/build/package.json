@@ -19,6 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
+    "lint": "eslint",
     "test": "vitest"
   },
   "devDependencies": {

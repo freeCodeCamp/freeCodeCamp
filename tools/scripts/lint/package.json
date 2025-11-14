@@ -15,6 +15,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
+    "lint": "eslint",
     "test": "vitest"
   },
   "devDependencies": {
