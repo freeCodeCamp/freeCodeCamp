@@ -5,10 +5,10 @@
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
   "challengeOrder": [
-    {
-      "id": "68fa373c2ced2cc4ff5739c4",
-      "title": "Dialogue 1: I'm Tom"
-    }
+    { "id": "6916dd268969c61abc6ce0aa", "title": "Task 1" },
+    { "id": "6916e7bcbaa6f71f810d2e04", "title": "Task 2" },
+    { "id": "6916e8ec8689c820a61a4c7a", "title": "Task 3" },
+    { "id": "691740419e56e024c83ad7c9", "title": "Task 4" }
   ],
   "blockLabel": "practice"
 }
