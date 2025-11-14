@@ -9,6 +9,7 @@
   "license": "BSD-3-Clause",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "eslint": "^9.39.1"
   }
 }
