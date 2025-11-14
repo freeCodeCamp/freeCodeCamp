@@ -3,6 +3,7 @@ id: 6914d94cee63aa7cbcafab2c
 title: Task 2
 challengeType: 22
 dashedName: task-2
+lang: es
 ---
 
 <!-- (Audio) Mateo: Soy Mateo. Soy ingeniero de software. -->
