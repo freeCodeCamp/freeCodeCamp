@@ -55,6 +55,7 @@
     "unist-util-visit-children": "1.1.4"
   },
   "devDependencies": {
+    "eslint": "^9.39.1",
     "unist-util-select": "3.0.4",
     "vitest": "^3.2.4"
   }

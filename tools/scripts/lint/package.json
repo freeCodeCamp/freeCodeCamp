@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
     "vitest": "^3.2.4"
   }
 }

@@ -20,5 +20,8 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "main": "gatsby-node.js"
+  "main": "gatsby-node.js",
+  "devDependencies": {
+    "eslint": "^9.39.1"
+  }
 }

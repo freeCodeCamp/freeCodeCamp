@@ -23,6 +23,7 @@
   "main": "gatsby-node.js",
   "devDependencies": {
     "chokidar": "3.6.0",
+    "eslint": "^9.39.1",
     "readdirp": "3.6.0"
   }
 }

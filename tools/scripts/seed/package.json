@@ -24,6 +24,7 @@
   "devDependencies": {
     "debug": "4.3.4",
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "mongodb": "6.10.0"
   }
 }

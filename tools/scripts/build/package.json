@@ -25,6 +25,7 @@
   "devDependencies": {
     "@total-typescript/ts-reset": "^0.5.0",
     "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
     "joi": "17.12.2",
     "readdirp": "3.6.0",
     "vitest": "^3.2.4"
