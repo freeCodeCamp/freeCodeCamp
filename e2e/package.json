@@ -1,0 +1,14 @@
+{
+  "name": "@freecodecamp/e2e",
+  "version": "1.0.0",
+  "scripts": {
+    "lint": "eslint"
+  },
+  "type": "module",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "eslint": "^9.39.1"
+  }
+}
