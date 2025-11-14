@@ -7,11 +7,7 @@ import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import store from 'store';
-import {
-  scroller,
-  Link as ScrollLink,
-  Element as ScrollElement
-} from 'react-scroll';
+import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
@@ -23,6 +19,7 @@ import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
+import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
@@ -42,10 +39,6 @@ import {
 } from '../redux/settings/actions';
 
 import './show-settings.css';
-import {
-  currentCertifications,
-  legacyCertifications
-} from '../../../shared-dist/config/certification-settings';
 
 const { apiLocation } = envData;
 
@@ -183,165 +176,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <div className='settings-container' id='settings-container'>
-        <aside className='settings-ledger ledger-fade'>
-          <ul>
-            <li>
-              <ScrollLink
-                to='account'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.headings.account')}
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to='privacy'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.headings.privacy')}
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to='email'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.email.heading')}
-              </ScrollLink>
-            </li>
-            <li>
-              <ScrollLink
-                to='honesty'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.headings.honesty')}
-              </ScrollLink>
-            </li>
-            {examTokenFlag && (
-              <li>
-                <ScrollLink
-                  to='exam-token'
-                  className='ledger-section-heading'
-                  smooth={true}
-                  offset={-48}
-                  duration={300}
-                  spy={true}
-                  activeClass='active'
-                >
-                  {t('exam-token.exam-token')}
-                </ScrollLink>
-              </li>
-            )}
-            <li>
-              <ScrollLink
-                to='certifications'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.headings.certs')}
-              </ScrollLink>
-              <ul>
-                {currentCertifications.map(slug => (
-                  <li key={slug}>
-                    <ScrollLink
-                      to={`cert-${slug}`}
-                      className={'ledger-anchor-btn'}
-                      smooth={true}
-                      offset={-48}
-                      duration={300}
-                      spy={true}
-                      activeClass='active'
-                    >
-                      {t(`certification.title.${slug}`, slug)}
-                    </ScrollLink>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            <li>
-              <ScrollLink
-                to='legacy-certifications'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.headings.legacy-certs')}
-              </ScrollLink>
-              <ul>
-                {legacyCertifications.map(slug => (
-                  <li key={slug}>
-                    <ScrollLink
-                      to={`cert-${slug}`}
-                      className={'ledger-anchor-btn'}
-                      smooth={true}
-                      offset={-48}
-                      duration={300}
-                      spy={true}
-                      activeClass='active'
-                    >
-                      {t(`certification.title.${slug}`, slug)}
-                    </ScrollLink>
-                  </li>
-                ))}
-              </ul>
-            </li>
-            {userToken && (
-              <li>
-                <ScrollLink
-                  to='user-token'
-                  className='ledger-section-heading'
-                  smooth={true}
-                  offset={-48}
-                  duration={300}
-                  spy={true}
-                  activeClass='active'
-                >
-                  {t('user-token.title')}
-                </ScrollLink>
-              </li>
-            )}
-            <li>
-              <ScrollLink
-                to='danger-zone'
-                className='ledger-section-heading'
-                smooth={true}
-                offset={-48}
-                duration={300}
-                spy={true}
-                activeClass='active'
-              >
-                {t('settings.danger.heading')}
-              </ScrollLink>
-            </li>
-          </ul>
-        </aside>
+        <SettingsSidebarNav
+          examTokenFlag={examTokenFlag}
+          userToken={userToken}
+        />
         <main className='settings-main'>
           <Spacer size='l' />
           <ScrollElement name='username'>

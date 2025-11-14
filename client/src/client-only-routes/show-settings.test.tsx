@@ -99,7 +99,7 @@ const renderShowSettings = (
   return { result: renderer.getRenderOutput(), props };
 };
 
-const getLedgerLinkTargets = (
+const getSidebarNavLinkTargets = (
   result: ReturnType<typeof renderShowSettings>['result']
 ) => {
   const children = React.Children.toArray(result.props.children);
@@ -111,12 +111,17 @@ const getLedgerLinkTargets = (
 
   if (!settingsContainer) return [];
 
-  const [aside] = React.Children.toArray(
+  const [sidebarNav] = React.Children.toArray(
     settingsContainer.props.children
-  ).filter(child => React.isValidElement(child) && child.type === 'aside');
+  ).filter(
+    child =>
+      React.isValidElement(child) &&
+      child.type.displayName === 'SettingsSidebarNav'
+  );
 
-  if (!aside || !React.isValidElement(aside)) return [];
+  if (!sidebarNav || !React.isValidElement(sidebarNav)) return [];
 
+  const aside = React.Children.only(sidebarNav.type(sidebarNav.props));
   const list = React.Children.only(aside.props.children);
   const items = React.Children.toArray(list.props.children);
 
@@ -189,9 +194,9 @@ describe('<ShowSettings />', () => {
     expect(result.type.displayName).toBe('Loader');
   });
 
-  it('renders the ledger with default sections', () => {
+  it('renders the sidebar nav with default sections', () => {
     const { result } = renderShowSettings();
-    const targets = getLedgerLinkTargets(result);
+    const targets = getSidebarNavLinkTargets(result);
 
     expect(targets).toStrictEqual([
       'account',
@@ -226,7 +231,7 @@ describe('<ShowSettings />', () => {
   it('includes exam token section when feature flag is enabled', () => {
     useFeatureIsOnMock.mockReturnValue(true);
     const { result } = renderShowSettings();
-    const targets = getLedgerLinkTargets(result);
+    const targets = getSidebarNavLinkTargets(result);
 
     expect(targets).toContain('exam-token');
 
@@ -236,13 +241,13 @@ describe('<ShowSettings />', () => {
 
   it('shows user token section only when a user token is present', () => {
     const { result: noTokenResult } = renderShowSettings();
-    expect(getLedgerLinkTargets(noTokenResult)).not.toContain('user-token');
+    expect(getSidebarNavLinkTargets(noTokenResult)).not.toContain('user-token');
 
     const { result: withTokenResult } = renderShowSettings({
       userToken: 'test-token'
     });
 
-    const targets = getLedgerLinkTargets(withTokenResult);
+    const targets = getSidebarNavLinkTargets(withTokenResult);
     expect(targets).toContain('user-token');
 
     const elementNames = getScrollElementNames(withTokenResult);

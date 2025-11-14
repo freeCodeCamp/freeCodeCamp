@@ -33,7 +33,7 @@ test.describe('After creating token', () => {
     await page.goto('/settings');
     // Set `exact` to `true` to only match the panel heading
     await expect(
-      page.getByText('User Token', { exact: true }).nth(1)
+      page.getByRole('main').getByText('User Token', { exact: true })
     ).toBeVisible();
     await expect(
       page.getByText(
