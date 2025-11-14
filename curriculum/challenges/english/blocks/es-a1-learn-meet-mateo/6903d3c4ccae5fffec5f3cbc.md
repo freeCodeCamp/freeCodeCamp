@@ -1,8 +1,8 @@
 ---
 id: 6903d3c4ccae5fffec5f3cbc
-title: Task 3
+title: Task 4
 challengeType: 19
-dashedName: task-3
+dashedName: task-4
 ---
 
 <!-- (Audio) Mateo: Soy puertorriqueño. -->
@@ -57,17 +57,16 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
 
 The word `soy` (I am) comes from the verb `ser` and is used to express **identity, nationality, or profession**. For example:
 
-- `Soy puertorriqueño` - I am Puerto Rican. (masculine)
+- `Soy chilena.` – I am Chilean. (feminine)
 
 - `Soy puertorriqueña` - I am Puerto Rican. (feminine)
 
-- `Soy mexicano.` – I am Mexican. (masculine)
-
-- `Soy mexicana.` – I am Mexican. (feminine)
-
 - `Soy chileno.` – I am Chilean. (masculine)
 
-- `Soy chilena.` – I am Chilean. (feminine)
+- `Soy puertorriqueño` - I am Puerto Rican. (masculine)
+
+- `Soy canadiense.` – I am Canadian. (neutral)
+
 
 # --scene--
 
