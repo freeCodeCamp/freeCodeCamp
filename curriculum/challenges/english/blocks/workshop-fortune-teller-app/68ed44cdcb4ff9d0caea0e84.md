@@ -15,13 +15,13 @@ Since you’re calling the fetchCardsData() method inside the constructor, you n
 You should have `private` method named `fetchCardsData`.
 
 ```js
-
+assert.match(code, /private\s+async\s*fetchCardsData\s*\(/);
 ```
 
 Your fetchCardsData method should be `asynchronous`.
 
 ```js
-
+assert.match(code, /async\s+fetchCardsData\s*\(/);
 ```
 
 # --seed--
