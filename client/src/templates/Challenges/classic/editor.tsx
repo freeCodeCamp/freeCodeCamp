@@ -10,6 +10,8 @@ import type {
 } from 'monaco-editor/esm/vs/editor/editor.api';
 import { OS } from 'monaco-editor/esm/vs/base/common/platform.js';
 import Prism from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-java';
 import React, { useEffect, Suspense, MutableRefObject, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { connect } from 'react-redux';

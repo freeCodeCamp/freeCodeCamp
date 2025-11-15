@@ -1,4 +1,6 @@
 import Prism from 'prismjs';
+import 'prismjs/components/prism-clike';
+import 'prismjs/components/prism-java';
 import React, { useRef, useEffect } from 'react';
 import { enhancePrismAccessibility } from '../utils';
 
