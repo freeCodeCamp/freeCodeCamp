@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Certificação Inglês A2 para Desenvolvedores (Beta)",
+    "title": "A2 English for Developers Certification",
     "intro": [
       "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
       "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
@@ -5281,6 +5281,12 @@
           "Nesta aula, você aprenderá a formatar strings mudando seu caso usando os métodos <code>toUpperCase()</code> e <code>toLowerCase()</code>, e como remover espaços em branco usando os métodos <code>trim()</code>, <code>trimStart()</code> e <code>trimEnd()</code>."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Trabalhando com Métodos de Modificação de Strings",
         "intro": [
@@ -5312,10 +5318,24 @@
           "Nestas aulas, você aprenderá sobre o tipo número, operadores aritméticos e como usá-los com números e strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Trabalhando com Comportamento de Operadores",
         "intro": [
           "Nestas aulas, você aprenderá sobre a precedência de operadores, operadores de incremento e decremento, e operadores de atribuição composta."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -6386,6 +6406,8 @@
     "modules": {
       "react-fundamentals": "Fundamentos do React",
       "react-state-hooks-and-routing": "Estado, Hooks e Roteamento no React",
+      "lab-currency-converter": "Build a Currency Converter",
+      "lab-tic-tac-toe": "Build a Tic-Tac-Toe Game",
       "performance": "Desempenho",
       "testing": "Testes",
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
@@ -6737,11 +6759,16 @@
       "python-basics": "Noções básicas de Python",
       "python-loops-and-sequences": "Laços e Sequências",
       "python-dictionaries-and-sets": "Dicionários e Conjuntos",
+      "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Tratamento de Erros",
       "python-classes-and-objects": "Classes e Objetos",
+      "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Programação Orientada a Objetos (OOP)",
+      "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Estruturas de Dados Lineares",
+      "lab-hash-table": "Build a Hash Table",
       "python-algorithms": "Algoritmos",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Grafos e Árvores",
       "python-dynamic-programming": "Programação Dinâmica",
       "review-python": "Revisão de Python",
@@ -6992,6 +7019,12 @@
         "title": "Compreendendo a Abstração",
         "intro": ["Aprenda sobre a Compreensão da Abstração nessas lições."]
       },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
       "lab-player-interface": {
         "title": "Criar uma interface de jogador",
         "intro": [
@@ -7109,6 +7142,12 @@
         "title": "Compreendendo Grafos e Árvores",
         "intro": [
           "Nesta lição, você aprenderá sobre estruturas de dados fundamentais como grafos, árvores e suas aplicações práticas em ciência da computação."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
@@ -7825,6 +7864,12 @@
           "Nestes cursos, você aprenderá sobre fundamentos do HTML, como o elemento <code>div</code>, os atributos <code>id</code> e <code>class</code>, o boilerplate HTML, entidades HTML e outros conceitos."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Entendendo Como o HTML Afeta o SEO",
         "intro": [
@@ -7909,6 +7954,12 @@
         "title": "Entendendo Elementos Semânticos Nuançados",
         "intro": [
           "Nestes cursos, você aprenderá quando deve usar certos elementos semânticos, como o elemento <code>em</code> em vez do <code>i</code>, listas de descrição, e mais."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {

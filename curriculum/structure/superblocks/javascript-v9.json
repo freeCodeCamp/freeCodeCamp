@@ -248,7 +248,6 @@
           "blocks": [
             "lecture-working-with-maps-and-sets",
             "workshop-plant-nursery-catalog",
-            "lab-voting-system",
             "review-javascript-maps-and-sets",
             "quiz-javascript-maps-and-sets"
           ]
@@ -327,9 +326,11 @@
     },
     {
       "chapterType": "exam",
+      "comingSoon": true,
       "dashedName": "javascript-certification-exam",
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "javascript-certification-exam",
           "blocks": ["exam-javascript-certification"]
         }

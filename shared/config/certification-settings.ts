@@ -339,6 +339,19 @@ export const superBlockToCertMap: {
   [SuperBlocks.FullStackDeveloper]: null
 };
 
+export const certificationRequirements: Partial<
+  Record<Certification, SuperBlocks[]>
+> = {
+  [Certification.FullStackDeveloperV9]: [
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.PythonV9,
+    SuperBlocks.RelationalDbV9,
+    SuperBlocks.BackEndDevApisV9
+  ]
+};
+
 export type CertSlug = (typeof Certification)[keyof typeof Certification];
 
 export const linkedInCredentialIds = {

@@ -18,6 +18,7 @@ import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
+import { default as BlockLabelComponent } from './block-label';
 
 import './super-block-accordion.css';
 
@@ -107,9 +108,12 @@ const Chapter = ({
         </span>
         <ChapterIcon className='map-icon' chapter={dashedName as FsdChapters} />
         {chapterLabel}
+        {isLinkChapter && examSlug && (
+          <BlockLabelComponent blockLabel={BlockLabel.exam} />
+        )}
       </div>
       <div className='chapter-button-right'>
-        {!comingSoon && (
+        {!comingSoon && !isLinkChapter && (
           <span className='chapter-steps'>
             {t('learn.steps-completed', {
               totalSteps,

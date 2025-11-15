@@ -104,7 +104,15 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
-  [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
+  [SuperBlockStage.Core]: [
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.PythonV9,
+    SuperBlocks.RelationalDbV9,
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
+  ],
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
@@ -133,18 +141,12 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.FullStackOpen,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9,
     SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.FullStackDeveloper
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -427,6 +429,11 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
+
+export const certificationCollectionSuperBlocks = [
+  SuperBlocks.FullStackDeveloperV9
+];
+Object.freeze(certificationCollectionSuperBlocks);
 
 type Config = {
   showUpcomingChanges: boolean;

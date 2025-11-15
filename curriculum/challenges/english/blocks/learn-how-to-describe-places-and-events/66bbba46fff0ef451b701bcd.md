@@ -30,7 +30,7 @@ Sarah says she is not busy.
 
 ---
 
-Yes, she is available and wants know what's the problem.
+Yes, she is available and wants to know what's the problem.
 
 ---
 
