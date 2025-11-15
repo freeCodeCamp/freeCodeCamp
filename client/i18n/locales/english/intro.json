@@ -6349,19 +6349,19 @@
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Coming Fall 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification."
         ]
