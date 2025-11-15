@@ -54,6 +54,7 @@ const userProps = {
     yearsTopContributor: [],
     isDonating: false,
     is2018DataVisCert: true,
+    isA2EnglishCert: true,
     isApisMicroservicesCert: true,
     isBackEndCert: true,
     isDataVisCert: true,

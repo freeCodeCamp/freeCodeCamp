@@ -1,8 +1,8 @@
 {
   "name": "Object Oriented Programming Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-object-oriented-programming",
   "challengeOrder": [
     {

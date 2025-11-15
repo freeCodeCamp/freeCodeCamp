@@ -1,8 +1,8 @@
 {
   "name": "Implement the Merge Sort Algorithm",
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
-  "isUpcomingChange": true,
+  "blockLabel": "workshop",
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-merge-sort",

@@ -54,12 +54,16 @@ function getFiles(filesNodes) {
 
   return filesNodes.map(node => {
     counts[node.lang] = counts[node.lang] ? counts[node.lang] + 1 : 1;
+
+    const contentsHtml = mdastToHTML([node]);
+
     const out = {
       contents: node.value,
       ext: node.lang,
       name:
         getFilenames(node.lang) +
-        (counts[node.lang] ? `-${counts[node.lang]}` : '')
+        (counts[node.lang] ? `-${counts[node.lang]}` : ''),
+      contentsHtml
     };
 
     return out;

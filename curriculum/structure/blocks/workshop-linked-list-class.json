@@ -1,12 +1,12 @@
 {
   "name": "Build a Linked List",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-linked-list-class",
   "helpCategory": "Python",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "blockLayout": "challenge-grid",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "challengeOrder": [
     { "id": "687d7deea6a2a22fa8816a73", "title": "Step 1" },
     { "id": "687d8c6f066877768f7ee441", "title": "Step 2" },

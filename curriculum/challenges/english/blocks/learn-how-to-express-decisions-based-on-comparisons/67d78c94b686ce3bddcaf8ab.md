@@ -3,6 +3,7 @@ id: 67d78c94b686ce3bddcaf8ab
 title: Task 117
 challengeType: 22
 dashedName: task-117
+lang: en-US
 ---
 
 <!-- (Audio) Brian: It could save us time and resources. What about timelines? Which option is faster? -->

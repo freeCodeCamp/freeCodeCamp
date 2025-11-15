@@ -1,0 +1,11 @@
+{
+  "name": "SQL and PostgreSQL Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-sql-and-postgresql",
+  "challengeOrder": [
+    { "id": "6724e3d6e1cb0c1fec3a8e4f", "title": "SQL and PostgreSQL Review" }
+  ],
+  "helpCategory": "Backend Development"
+}

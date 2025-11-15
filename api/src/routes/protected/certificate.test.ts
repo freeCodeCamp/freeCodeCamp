@@ -38,6 +38,7 @@ describe('certificate routes', () => {
           data: {
             completedChallenges: [],
             name: 'fcc',
+            isA2EnglishCert: false,
             isRespWebDesignCert: false,
             isJsAlgoDataStructCert: false,
             isFrontEndLibsCert: false,
@@ -51,6 +52,8 @@ describe('certificate routes', () => {
             isMachineLearningPyCertV7: false,
             isCollegeAlgebraPyCertV8: false,
             isFoundationalCSharpCertV8: false,
+            // isJavascriptCertV9: false,
+            // isRespWebDesignCertV9: false,
             username: 'fcc'
           }
         });
@@ -135,6 +138,7 @@ describe('certificate routes', () => {
           },
           isCertMap: {
             is2018DataVisCert: false,
+            isA2EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
@@ -178,7 +182,7 @@ describe('certificate routes', () => {
           type: 'info',
           message: 'flash.already-claimed',
           variables: {
-            name: 'Responsive Web Design'
+            name: 'Legacy Responsive Web Design V8'
           }
         });
 
@@ -209,7 +213,7 @@ describe('certificate routes', () => {
         expect(response.body.response).toStrictEqual({
           message: 'flash.incomplete-steps',
           type: 'info',
-          variables: { name: 'Responsive Web Design' }
+          variables: { name: 'Legacy Responsive Web Design V8' }
         });
         expect(response.status).toBe(400);
       });
@@ -238,7 +242,10 @@ describe('certificate routes', () => {
             isInfosecCertV7: true,
             isMachineLearningPyCertV7: true,
             isCollegeAlgebraPyCertV8: true,
-            isFoundationalCSharpCertV8: true
+            isFoundationalCSharpCertV8: true,
+            // isJavascriptCertV9: true,
+            // isRespWebDesignCertV9: true,
+            isA2EnglishCert: true
           }
         });
 
@@ -287,11 +294,12 @@ describe('certificate routes', () => {
             message: 'flash.cert-claim-success',
             type: 'success',
             variables: {
-              name: 'Responsive Web Design',
+              name: 'Legacy Responsive Web Design V8',
               username: 'fcc'
             }
           },
           isCertMap: {
+            isA2EnglishCert: false,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: false,
             isJavascriptCertV9: false,

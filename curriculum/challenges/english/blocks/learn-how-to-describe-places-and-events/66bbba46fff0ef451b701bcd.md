@@ -3,6 +3,7 @@ id: 66bbba46fff0ef451b701bcd
 title: Task 103
 challengeType: 19
 dashedName: task-103
+lang: en-US
 ---
 
 <!-- Audio Reference:
@@ -29,7 +30,7 @@ Sarah says she is not busy.
 
 ---
 
-Yes, she is available and wants know what's the problem.
+Yes, she is available and wants to know what's the problem.
 
 ---
 

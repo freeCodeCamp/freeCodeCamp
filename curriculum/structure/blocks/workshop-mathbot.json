@@ -1,6 +1,6 @@
 {
   "name": "Build a Mathbot",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

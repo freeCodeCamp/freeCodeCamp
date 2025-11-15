@@ -3,10 +3,11 @@ import { FastifyRequest, FastifyReply } from 'fastify';
 import { isEmpty } from 'lodash-es';
 import type {
   TransportTargetOptions,
-  DestinationStream,
-  LoggerOptions
+  // DestinationStream,
+  LoggerOptions,
+  DestinationStream
 } from 'pino';
-import { pino } from 'pino';
+import { pino, transport } from 'pino';
 import { FCC_API_LOG_LEVEL, FCC_API_LOG_TRANSPORT } from './env.js';
 
 const serializers = {
@@ -99,10 +100,11 @@ export const getLogger = () => {
   };
 
   if (isPretty) {
-    const transport = pino.transport({ targets: [prettyTarget] }) as
+    const stream = transport({ targets: [prettyTarget] }) as
       | DestinationStream
       | undefined;
-    return pino(options, transport);
+
+    return pino(options, stream);
   } else {
     // For non-pretty, use the custom de-duplicating transform stream
     // This logger will write to a stream that then pipes to our de-duplicator

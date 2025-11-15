@@ -1,19 +1,20 @@
 import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
-import { uniq, isEmpty, last } from 'lodash-es';
+import { isEmpty, last } from 'lodash-es';
 import React, { useEffect, memo, useMemo } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import { configureAnchors } from 'react-scrollable-anchor';
+import { scroller } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
+import { useFeatureValue } from '@growthbook/growthbook-react';
 
 import {
-  chapterBasedSuperBlocks,
-  SuperBlocks
+  SuperBlocks,
+  certificationCollectionSuperBlocks
 } from '../../../../shared-dist/config/curriculum';
 import DonateModal from '../../components/Donation/donation-modal';
 import Login from '../../components/Header/components/login';
@@ -27,19 +28,21 @@ import {
   userFetchStateSelector,
   signInLoadingSelector
 } from '../../redux/selectors';
-import type { User } from '../../redux/prop-types';
+import type {
+  SuperBlockStructure,
+  User,
+  ChapterBasedSuperBlockStructure
+} from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../shared-dist/config/blocks';
-import Block from './components/block';
-import CertChallenge from './components/cert-challenge';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';
-import { SuperBlockAccordion } from './components/super-block-accordion';
+import SuperBlockMap from './components/super-block-map';
 import { resetExpansion, toggleBlock } from './redux';
 
 import './intro.css';
@@ -52,10 +55,10 @@ type FetchState = {
 
 type ChallengeNode = {
   challenge: {
-    fields: { slug: string; blockName: string };
+    fields: { slug: string };
     id: string;
     block: string;
-    blockType: BlockTypes;
+    blockLabel: BlockLabel;
     challengeType: number;
     title: string;
     order: number;
@@ -71,6 +74,7 @@ type SuperBlockProps = {
   currentChallengeId: string;
   data: {
     allChallengeNode: { nodes: ChallengeNode[] };
+    allSuperBlockStructure: { nodes: SuperBlockStructure[] };
   };
   expandedState: {
     [key: string]: boolean;
@@ -89,8 +93,6 @@ type SuperBlockProps = {
   tryToShowDonationModal: () => void;
   user: User | null;
 };
-
-configureAnchors({ offset: -40, scrollDuration: 0 });
 
 const mapStateToProps = (state: Record<string, unknown>) => {
   return createSelector(
@@ -124,6 +126,16 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
     },
     dispatch
   );
+const handleHashChange = () => {
+  const id = window.location.hash.replace('#', '');
+  if (id) {
+    scroller.scrollTo(id, {
+      smooth: true,
+      duration: 500,
+      offset: -50
+    });
+  }
+};
 
 const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   const { t } = useTranslation();
@@ -131,19 +143,22 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     initializeExpandedState();
     props.tryToShowDonationModal();
 
-    setTimeout(() => {
-      configureAnchors({ offset: -40, scrollDuration: 400 });
-    }, 0);
+    handleHashChange();
 
-    return () => {
-      configureAnchors({ offset: -40, scrollDuration: 0 });
-    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const disabledBlocksFeature = useFeatureValue<string[]>(
+    'disabled_blocks',
+    []
+  );
+
   const {
     data: {
-      allChallengeNode: { nodes }
+      allChallengeNode: { nodes },
+      allSuperBlockStructure
     },
     isSignedIn,
     currentChallengeId,
@@ -161,8 +176,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     () => allChallenges.filter(c => c.superBlock === superBlock),
     [allChallenges, superBlock]
   );
-  const blocks = uniq(superBlockChallenges.map(({ block }) => block));
-
   const completedChallenges = useMemo(
     () =>
       (user?.completedChallenges ?? []).filter(completedChallenge =>
@@ -172,6 +185,10 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
   );
 
   const i18nTitle = i18next.t(`intro:${superBlock}.title`);
+
+  const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
+    node => node.superBlock === superBlock
+  );
 
   const showCertification = liveCerts.some(
     cert => superBlockToCertMap[superBlock] === cert.certSlug
@@ -218,7 +235,9 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
       }
     }
 
-    return blocks[0];
+    const fallbackBlock = superBlockChallenges[0]?.block;
+
+    return fallbackBlock ?? '';
   };
 
   const initializeExpandedState = () => {
@@ -258,44 +277,25 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
               <h2 className='text-center big-subheading'>
-                {t(`intro:misc-text.courses`)}
+                {certificationCollectionSuperBlocks.includes(superBlock)
+                  ? t(`intro:misc-text.requirements`)
+                  : t(`intro:misc-text.courses`)}
               </h2>
               <Spacer size='m' />
-              {chapterBasedSuperBlocks.includes(superBlock) ? (
-                <SuperBlockAccordion
-                  challenges={superBlockChallenges}
-                  superBlock={superBlock}
-                  chosenBlock={initialExpandedBlock}
-                  completedChallengeIds={completedChallenges.map(c => c.id)}
-                />
-              ) : (
-                <div className='block-ui'>
-                  {blocks.map(block => {
-                    const blockChallenges = superBlockChallenges.filter(
-                      c => c.block === block
-                    );
-                    const blockType = blockChallenges[0].blockType;
-
-                    return (
-                      <Block
-                        key={block}
-                        block={block}
-                        blockType={blockType}
-                        challenges={blockChallenges}
-                        superBlock={superBlock}
-                      />
-                    );
-                  })}
-                  {showCertification && !!user && (
-                    <CertChallenge
-                      certification={certification}
-                      superBlock={superBlock}
-                      title={title}
-                      user={user}
-                    />
-                  )}
-                </div>
-              )}
+              <SuperBlockMap
+                certification={certification}
+                completedChallengeIds={completedChallenges.map(c => c.id)}
+                disabledBlocks={disabledBlocksFeature}
+                initialExpandedBlock={initialExpandedBlock}
+                showCertification={showCertification}
+                structure={
+                  currentSuperBlockStructure as ChapterBasedSuperBlockStructure
+                }
+                superBlock={superBlock}
+                superBlockChallenges={superBlockChallenges}
+                title={title}
+                user={user}
+              />
               {!isSignedIn && !signInLoading && (
                 <>
                   <Spacer size='l' />
@@ -343,11 +343,10 @@ export const query = graphql`
         challenge {
           fields {
             slug
-            blockName
           }
           id
           block
-          blockType
+          blockLabel
           challengeType
           title
           order
@@ -356,6 +355,21 @@ export const query = graphql`
           blockLayout
           chapter
           module
+        }
+      }
+    }
+    allSuperBlockStructure {
+      nodes {
+        superBlock
+        chapters {
+          dashedName
+          comingSoon
+          modules {
+            dashedName
+            comingSoon
+            moduleType
+            blocks
+          }
         }
       }
     }

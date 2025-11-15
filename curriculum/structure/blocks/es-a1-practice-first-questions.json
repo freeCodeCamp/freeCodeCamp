@@ -5,5 +5,5 @@
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
   "challengeOrder": [{ "id": "68dc75b0fe65b57754913412", "title": "Task 1" }],
-  "blockType": "practice"
+  "blockLabel": "practice"
 }

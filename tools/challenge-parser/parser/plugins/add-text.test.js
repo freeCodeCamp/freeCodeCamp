@@ -3,7 +3,11 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addText from './add-text';
 
 describe('add-text', () => {
-  let realisticAST, mockAST, withSubSectionAST, withNestedInstructionsAST;
+  let realisticAST,
+    mockAST,
+    withSubSectionAST,
+    withNestedInstructionsAST,
+    withChineseAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -16,6 +20,7 @@ describe('add-text', () => {
     withNestedInstructionsAST = await parseFixture(
       'with-nested-instructions.md'
     );
+    withChineseAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {
@@ -155,5 +160,19 @@ describe('add-text', () => {
     const plugin = addText([descriptionId, instructionsId]);
     plugin(mockAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('should render Chinese inline code as ruby when lang is zh-CN', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const zhFile = { data: { lang: 'zh-CN' } };
+    plugin(withChineseAST, zhFile);
+
+    expect(zhFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>\n</section>'
+    );
+    expect(zhFile.data.explanation).toBe(
+      '<section id="explanation">\n<p>Wang Hua uses <ruby>请问<rp>(</rp><rt>qǐng wèn</rt><rp>)</rp></ruby> to politely start her question.</p>\n</section>'
+    );
   });
 });

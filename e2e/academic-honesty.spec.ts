@@ -55,7 +55,7 @@ test.describe('When the user has not accepted the Academic Honesty Policy', () =
     await page.goto('/settings#cert-responsive-web-design');
 
     const claimCertButton = page.getByRole('button', {
-      name: 'Claim Certification Responsive Web Design'
+      name: 'Claim Certification Legacy Responsive Web Design V8'
     });
     await claimCertButton.click();
 

@@ -1,7 +1,7 @@
 {
   "name": "Introduction to ARIA",
   "isUpcomingChange": false,
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "dashedName": "lecture-introduction-to-aria",
   "challengeOrder": [

@@ -16,6 +16,11 @@ on:
         type: string
         description: 'Input: The app (component) to build'
         default: 'api'
+      show_upcoming_changes:
+        required: false
+        type: string
+        description: 'Input: Show upcoming changes flag (true/false)'
+        default: 'false'
   workflow_call:
     inputs:
       site_tld:
@@ -26,6 +31,11 @@ on:
         required: true
         type: string
         description: 'Input: The app (component) to build'
+      show_upcoming_changes:
+        required: false
+        type: string
+        description: 'Input: Show upcoming changes flag (true/false)'
+        default: 'false'
     outputs:
       tagname:
         description: 'Output: The tagname for the image built'
@@ -34,7 +44,7 @@ on:
 jobs:
   build:
     name: Build & Push
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     permissions:
       contents: read
     outputs:
@@ -42,7 +52,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
 
       - name: Create a tagname
         id: tagname
@@ -54,6 +64,7 @@ jobs:
       - name: Build & Tag Image
         run: |
           docker build \
+            --build-arg SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }} \
             --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname \
             --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest \
             --file docker/${{ inputs.app }}/Dockerfile .

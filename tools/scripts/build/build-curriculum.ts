@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { getChallengesForLang } from '../../../curriculum/get-challenges';
+import { getChallengesForLang } from '../../../curriculum/src/get-challenges';
 import {
   buildExtCurriculumDataV1,
   type Curriculum as CurriculumV1,
@@ -13,18 +13,28 @@ import {
   type CurriculumProps as CurriculumPropsV2
 } from './build-external-curricula-data-v2';
 
-const globalConfigPath = path.resolve(__dirname, '../../../shared/config');
+const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
-// We are defaulting to English because the ids for the challenges are same
-// across all languages.
+const isSelectiveBuild =
+  process.env.FCC_SUPERBLOCK ||
+  process.env.FCC_BLOCK ||
+  process.env.FCC_CHALLENGE_ID;
+
 void getChallengesForLang('english')
   .then(result => {
-    buildExtCurriculumDataV1(
-      result as unknown as CurriculumV1<CurriculumPropsV1>
-    );
-    buildExtCurriculumDataV2(
-      result as unknown as CurriculumV2<CurriculumPropsV2>
-    );
+    if (!isSelectiveBuild) {
+      console.log('Building external curriculum data...');
+      buildExtCurriculumDataV1(
+        result as unknown as CurriculumV1<CurriculumPropsV1>
+      );
+      buildExtCurriculumDataV2(
+        result as unknown as CurriculumV2<CurriculumPropsV2>
+      );
+    } else {
+      console.log(
+        'Skipping external curriculum build (selective build mode active)'
+      );
+    }
     return result;
   })
   .then(JSON.stringify)
