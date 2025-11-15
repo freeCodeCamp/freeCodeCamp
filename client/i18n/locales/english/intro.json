@@ -4431,6 +4431,10 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["Build a Bar Chart", ""]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -5082,10 +5086,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-bar-chart": {
-        "title": "Build a Bar Chart",
-        "intro": ["Build a Bar Chart", ""]
       }
     }
   },
@@ -6625,6 +6625,10 @@
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["Build a Bar Chart", ""]
       },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
