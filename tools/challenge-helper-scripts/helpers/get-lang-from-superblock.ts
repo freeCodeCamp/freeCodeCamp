@@ -1,13 +1,13 @@
 import {
   ChallengeLang,
   SuperBlocks,
-  superBlockToLang
+  superBlockToSpeechLang
 } from '../../../shared/config/curriculum';
 
 export const getLangFromSuperBlock = (
   superBlock: SuperBlocks
 ): ChallengeLang => {
-  const lang = superBlockToLang[superBlock];
+  const lang = superBlockToSpeechLang[superBlock];
   if (!lang) {
     throw new Error(`Missing lang mapping for superBlock: ${superBlock}`);
   }

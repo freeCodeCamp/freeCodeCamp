@@ -59,19 +59,16 @@ export enum ChallengeLang {
   Chinese = 'zh-CN'
 }
 
-export const superBlockToLang: Partial<Record<SuperBlocks, ChallengeLang>> = {
+// Mapping from superblock to a speech recognition language (BCP-47)
+export const superBlockToSpeechLang: Partial<
+  Record<SuperBlocks, ChallengeLang>
+> = {
   [SuperBlocks.A1Chinese]: ChallengeLang.Chinese,
   [SuperBlocks.A2Chinese]: ChallengeLang.Chinese,
   [SuperBlocks.A2English]: ChallengeLang.English,
   [SuperBlocks.B1English]: ChallengeLang.English,
   [SuperBlocks.A1Spanish]: ChallengeLang.Spanish,
   [SuperBlocks.A2Spanish]: ChallengeLang.Spanish
-};
-
-// Mapping from superblock to a speech recognition language (BCP-47)
-export const superBlockToSpeechLang: Partial<Record<SuperBlocks, string>> = {
-  [SuperBlocks.A2English]: 'en-US',
-  [SuperBlocks.B1English]: 'en-US'
 };
 
 /*
