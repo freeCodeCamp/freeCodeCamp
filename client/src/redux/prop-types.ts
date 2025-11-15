@@ -331,7 +331,7 @@ export type DailyCodingChallengeLanguages = 'javascript' | 'python';
 export interface CompletedDailyCodingChallenge {
   id: string;
   completedDate: number;
-  completedLanguages: DailyCodingChallengeLanguages[];
+  languages: DailyCodingChallengeLanguages[];
 }
 
 type Quiz = {
