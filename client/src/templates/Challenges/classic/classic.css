@@ -70,23 +70,19 @@
 }
 
 .tabs-row-left {
-  width: 30%;
   display: flex;
   gap: 10px;
 }
 
 .tabs-row-middle {
-  width: 30%;
   display: flex;
   justify-content: center;
   gap: 3px;
 }
 
 .tabs-row-right {
-  width: 30%;
   display: flex;
   justify-content: flex-end;
-  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {
