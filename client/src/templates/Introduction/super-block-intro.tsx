@@ -256,6 +256,34 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     });
   };
 
+  const hasNotstarted = completedChallenges.length === 0;
+  const nextChallengeSlug = useMemo(() => {
+    if (hasNotstarted) return superBlockChallenges[0]?.fields.slug || null;
+    const lastCompletedChallenge = completedChallenges.reduce<
+      (typeof completedChallenges)[number] | null
+    >((latest, challenge) => {
+      if (!challenge?.completedDate) return latest;
+      if (
+        !latest?.completedDate ||
+        challenge.completedDate > latest.completedDate
+      ) {
+        return challenge;
+      }
+      return latest;
+    }, null);
+
+    const nextChallenge = () => {
+      if (!lastCompletedChallenge?.id) return null;
+      const lastCompletedIndex = superBlockChallenges.findIndex(
+        ({ id }) => id === lastCompletedChallenge?.id
+      );
+      if (lastCompletedIndex === -1) return null;
+      return superBlockChallenges[lastCompletedIndex + 1] ?? null;
+    };
+
+    return nextChallenge()?.fields.slug || null;
+  }, [completedChallenges, superBlockChallenges, hasNotstarted]);
+
   return (
     <>
       <Helmet>
@@ -273,6 +301,8 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
                   onCertificationDonationAlertClick
                 }
                 isDonating={user?.isDonating ?? false}
+                hasNotstarted={hasNotstarted}
+                nextChallengeSlug={nextChallengeSlug}
               />
               <HelpTranslate superBlock={superBlock} />
               <Spacer size='l' />
