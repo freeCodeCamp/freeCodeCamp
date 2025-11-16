@@ -321,7 +321,7 @@ describe('scene-helpers', () => {
       );
     });
 
-    it('should handle HTML-like content in dialogue', () => {
+    it('should preserve HTML content', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
