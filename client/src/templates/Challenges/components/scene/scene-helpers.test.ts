@@ -16,13 +16,15 @@ describe('scene-helpers', () => {
           character: 'Naomi',
           startTime: 1,
           dialogue: {
-            text: 'Hello world',
+            text: 'Hello world, I have 5 cats',
             align: 'left'
           }
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe('\n<strong>Naomi</strong>: Hello world\n');
+      expect(result).toBe(
+        '\n<strong>Naomi</strong>: Hello world, I have 5 cats\n'
+      );
     });
 
     it('should build transcript from multiple commands with dialogue', () => {
@@ -39,7 +41,7 @@ describe('scene-helpers', () => {
           character: 'Quincy',
           startTime: 1,
           dialogue: {
-            text: 'Hi there',
+            text: 'Hi there, I found 3 bugs',
             align: 'right'
           }
         },
@@ -55,7 +57,7 @@ describe('scene-helpers', () => {
       const result = buildTranscript(commands);
       expect(result).toBe(
         '\n<strong>Naomi</strong>: Hello\n' +
-          '\n<strong>Quincy</strong>: Hi there\n' +
+          '\n<strong>Quincy</strong>: Hi there, I found 3 bugs\n' +
           '\n<strong>Naomi</strong>: How are you?\n'
       );
     });
@@ -97,31 +99,14 @@ describe('scene-helpers', () => {
           character: 'Naomi',
           startTime: 1,
           dialogue: {
-            text: "I'm fine, thanks! How about you?",
+            text: 'He said "I love TypeScript!" & she replied, \'I prefer Ruby! #ruby #rubyonrails\'',
             align: 'left'
           }
         }
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        "\n<strong>Naomi</strong>: I'm fine, thanks! How about you?\n"
-      );
-    });
-
-    it('should handle dialogue with numbers', () => {
-      const commands: SceneCommand[] = [
-        {
-          character: 'Naomi',
-          startTime: 1,
-          dialogue: {
-            text: 'I have 3 apples and 5 oranges.',
-            align: 'left'
-          }
-        }
-      ];
-      const result = buildTranscript(commands);
-      expect(result).toBe(
-        '\n<strong>Naomi</strong>: I have 3 apples and 5 oranges.\n'
+        '\n<strong>Naomi</strong>: He said "I love TypeScript!" & she replied, \'I prefer Ruby! #ruby #rubyonrails\'\n'
       );
     });
 
@@ -140,19 +125,19 @@ describe('scene-helpers', () => {
       expect(result).toBe('\n<strong>Naomi</strong>: \n');
     });
 
-    it('should handle dialogue with newlines and whitespace', () => {
+    it('should handle dialogue with newlines', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
           startTime: 1,
           dialogue: {
-            text: 'Hello  world',
+            text: 'Hello\nworld',
             align: 'left'
           }
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe('\n<strong>Naomi</strong>: Hello  world\n');
+      expect(result).toBe('\n<strong>Naomi</strong>: Hello\nworld\n');
     });
 
     it('should handle multiple consecutive commands from same character', () => {
