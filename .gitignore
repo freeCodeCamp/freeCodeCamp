@@ -206,3 +206,5 @@ shared-dist
 ### Shadow Testing Log Files Folder ###
 api/logs/
 
+### Turborepo
+.turbo

@@ -14,6 +14,7 @@ packages:
   - 'tools/scripts/lint'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
+  - 'packages/*'
 
 packageExtensions:
   '@testing-library/jest-dom':

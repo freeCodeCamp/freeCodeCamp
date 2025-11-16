@@ -9,7 +9,6 @@ import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
 declare global {
-  // eslint-disable-next-line no-var
   var fastifyTestInstance: FastifyTestInstance;
 }
 
