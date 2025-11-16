@@ -4,6 +4,26 @@
   "dashedName": "es-a1-warm-up-first-questions-basics",
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc7578ad62ca74e21c23e0", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "68dc7578ad62ca74e21c23e0", "title": "Task 1" },
+    { "id": "690e399dcbcca11f0f171613", "title": "Task 2" },
+    { "id": "690e3b36537bbb20f7c1d62f", "title": "Task 3" },
+    { "id": "690e3d643e0cf5269fc248dc", "title": "Task 4" },
+    { "id": "690e428065f59a2b48813c79", "title": "Task 5" },
+    { "id": "690e44b76dc8f52d638e82b7", "title": "Task 6" },
+    { "id": "690e4698c0492430e49c3705", "title": "Task 7" },
+    { "id": "690e48893869863487c9d8af", "title": "Task 8" },
+    { "id": "6914e14b15579d2610af5c54", "title": "Task 9" },
+    { "id": "6914e966155354366f418a2d", "title": "Task 10" },
+    { "id": "6914e158fc489627068929d5", "title": "Task 11" },
+    { "id": "6914e7f76afe9430861af32c", "title": "Task 12" },
+    { "id": "6914e870b77341326df3f70e", "title": "Task 13" },
+    { "id": "6914e8d79ff89933f84f8ddf", "title": "Task 14" },
+    { "id": "690e4ae1ec236137adc148a1", "title": "Task 15" },
+    { "id": "690e4ce4d95c5c3ab09f2700", "title": "Task 16" },
+    { "id": "690e4e299e38f83d039e4811", "title": "Task 17" },
+    { "id": "690e50f994b82a40ab8664b8", "title": "Task 18" },
+    { "id": "690e52572154034292be27f5", "title": "Task 19" }
+  ],
   "blockLabel": "warm-up"
 }
