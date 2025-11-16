@@ -1,8 +1,8 @@
 ---
 id: 68eca3cfeebef2cd8cc5f814
-title: Step 11
+title: Step 13
 challengeType: 0
-dashedName: step-11
+dashedName: step-13
 ---
 
 # --description--
@@ -30,6 +30,13 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
 ## --seed-contents--
 
 ```html
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XYZ Bookstore Page</title>
+</head>
+<body>
 <h1>XYZ Bookstore</h1>
 <p>Browse our collection of amazing books!</p>
 <div class="card-container">
@@ -44,4 +51,6 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
   </div>
   --fcc-editable-region--
 </div>
+</body>
+</html>
 ```
