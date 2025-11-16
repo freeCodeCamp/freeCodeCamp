@@ -4431,6 +4431,10 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["Build a Bar Chart", ""]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6621,6 +6625,10 @@
         "intro": [
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
+      },
+      "lab-bar-chart": {
+        "title": "Build a Bar Chart",
+        "intro": ["Build a Bar Chart", ""]
       },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
