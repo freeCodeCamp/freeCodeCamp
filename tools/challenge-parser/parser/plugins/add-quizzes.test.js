@@ -103,36 +103,36 @@ describe('add-quizzes plugin', () => {
 
     // Quiz 1, Question 2
     expect(secondQuestion.text).toBe(
-      '<p>Quiz 1, question 2 with <code>中文</code></p>'
+      '<p>Quiz 1, question 2 with <span class="highlighted-text">中文</span></p>'
     );
     expect(secondQuestion.distractors[0]).toBe(
-      '<p>Quiz 1, question 2, distractor 1 with <code>中文</code></p>'
+      '<p>Quiz 1, question 2, distractor 1 with <span class="highlighted-text">中文</span></p>'
     );
     expect(secondQuestion.distractors[1]).toBe(
-      '<p>Quiz 1, question 2, distractor 2 with <code>中文</code></p>'
+      '<p>Quiz 1, question 2, distractor 2 with <span class="highlighted-text">中文</span></p>'
     );
     expect(secondQuestion.distractors[2]).toBe(
-      '<p>Quiz 1, question 2, distractor 3 with <code>中文</code></p>'
+      '<p>Quiz 1, question 2, distractor 3 with <span class="highlighted-text">中文</span></p>'
     );
     expect(secondQuestion.answer).toBe(
-      '<p>Quiz 1, question 2, answer with <code>中文</code></p>'
+      '<p>Quiz 1, question 2, answer with <span class="highlighted-text">中文</span></p>'
     );
 
     // Quiz 1, Question 3
     expect(thirdQuestion.text).toBe(
-      '<p>Quiz 1, question 3 with <code>zhōng wén</code></p>'
+      '<p>Quiz 1, question 3 with <span class="highlighted-text">zhōng wén</span></p>'
     );
     expect(thirdQuestion.distractors[0]).toBe(
-      '<p>Quiz 1, question 3, distractor 1 with <code>zhōng wén</code></p>'
+      '<p>Quiz 1, question 3, distractor 1 with <span class="highlighted-text">zhōng wén</span></p>'
     );
     expect(thirdQuestion.distractors[1]).toBe(
-      '<p>Quiz 1, question 3, distractor 2 with <code>zhōng wén</code></p>'
+      '<p>Quiz 1, question 3, distractor 2 with <span class="highlighted-text">zhōng wén</span></p>'
     );
     expect(thirdQuestion.distractors[2]).toBe(
-      '<p>Quiz 1, question 3, distractor 3 with <code>zhōng wén</code></p>'
+      '<p>Quiz 1, question 3, distractor 3 with <span class="highlighted-text">zhōng wén</span></p>'
     );
     expect(thirdQuestion.answer).toBe(
-      '<p>Quiz 1, question 3, answer with <code>zhōng wén</code></p>'
+      '<p>Quiz 1, question 3, answer with <span class="highlighted-text">zhōng wén</span></p>'
     );
   });
 });
