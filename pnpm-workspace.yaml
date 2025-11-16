@@ -2,6 +2,7 @@ packages:
   - 'api'
   - 'client'
   - 'curriculum'
+  - 'e2e'
   - 'shared'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
@@ -14,6 +15,7 @@ packages:
   - 'tools/scripts/lint'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
+  - 'packages/*'
 
 packageExtensions:
   '@testing-library/jest-dom':
