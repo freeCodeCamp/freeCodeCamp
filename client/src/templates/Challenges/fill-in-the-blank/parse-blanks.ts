@@ -1,6 +1,48 @@
-type TextNode = { type: 'text'; value: string };
+type PlainTextNode = {
+  type: 'text';
+  value: string;
+};
+
+// Hanzi/pinyin node representing an inline pronunciation pair
+type HanziPinyinNode = {
+  type: 'hanzi-pinyin';
+  value: { hanzi: string; pinyin: string };
+};
+
 type BlankNode = { type: 'blank'; value: number };
-type ParagraphElement = TextNode | BlankNode;
+
+type ParagraphElement = PlainTextNode | BlankNode | HanziPinyinNode;
+
+/**
+ * Parses all hanzi-pinyin pairs from text
+ * @param text - Text potentially containing hanzi (pinyin) patterns
+ * @returns Array of parsed hanzi and pinyin pairs
+ */
+export function parseHanziPinyinPairs(
+  text: string
+): Array<{ hanzi: string; pinyin: string }> {
+  const pairs: Array<{ hanzi: string; pinyin: string }> = [];
+  const regex = /([^()]+?)\s*\(([^)]+)\)/g;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    pairs.push({
+      hanzi: match[1].trim(),
+      pinyin: match[2].trim()
+    });
+  }
+
+  return pairs;
+}
+
+export function parseAnswer(
+  text: string
+): { hanzi: string; pinyin: string } | string {
+  const pairs = parseHanziPinyinPairs(text);
+  const hanziPinyin = pairs.length === 1 ? pairs[0] : null;
+
+  return hanziPinyin || text;
+}
 
 export const parseBlanks = (text: string) => {
   const trimmed = text.trim();
@@ -19,27 +61,15 @@ to be wrapped in <p> tags`);
 
   const { paragraphs } = rawParagraphs.reduce(
     (acc, p) => {
-      const splitByBlank = p.split('BLANK');
+      // Check if paragraph contains ruby elements (Chinese hanzi-pinyin)
+      const containsRuby = /<ruby>/.test(p);
+      const { elements, blankCount } = containsRuby
+        ? parseChineseParagraph(p, acc.count)
+        : parsePlainParagraph(p, acc.count);
 
-      const parsedParagraph = splitByBlank
-        .map<ParagraphElement[]>((text, i) => [
-          { type: 'text', value: text },
-          { type: 'blank', value: acc.count + i }
-        ])
-        .flat();
-      parsedParagraph.pop(); // remove last blank
-
-      const paragraph = parsedParagraph.filter(p => {
-        // remove empty strings
-        if (p.type === 'text') {
-          return p.value;
-        } else {
-          return true;
-        }
-      });
       return {
-        count: acc.count + splitByBlank.length - 1,
-        paragraphs: [...acc.paragraphs, paragraph]
+        count: acc.count + blankCount,
+        paragraphs: [...acc.paragraphs, elements]
       };
     },
     { count: 0, paragraphs: [] } as {
@@ -50,3 +80,92 @@ to be wrapped in <p> tags`);
 
   return paragraphs;
 };
+
+/**
+ * Parses a paragraph that contains ruby HTML elements (Chinese hanzi-pinyin)
+ * Handles multiple ruby elements separated by text and BLANK tokens
+ */
+function parseChineseParagraph(
+  paragraph: string,
+  startingBlankIndex: number
+): { elements: ParagraphElement[]; blankCount: number } {
+  const elements: ParagraphElement[] = [];
+  let blankIndex = startingBlankIndex;
+  let i = 0;
+
+  while (i < paragraph.length) {
+    const remaining = paragraph.substring(i);
+
+    // Check for BLANK token
+    if (remaining.startsWith('BLANK')) {
+      elements.push({ type: 'blank', value: blankIndex });
+      blankIndex++;
+      i += 5; // 'BLANK'.length
+      continue;
+    }
+
+    // Check for ruby element and capture hanzi/pinyin
+    const rubyMatch = remaining.match(
+      /^<ruby>([^<]+)<rp>\(<\/rp><rt>([^<]+)<\/rt><rp>\)<\/rp><\/ruby>/
+    );
+
+    if (rubyMatch) {
+      const hanzi = rubyMatch[1];
+      const pinyin = rubyMatch[2];
+      elements.push({ type: 'hanzi-pinyin', value: { hanzi, pinyin } });
+      i += rubyMatch[0].length;
+      continue;
+    }
+
+    // Otherwise, accumulate text until we hit BLANK or <ruby>
+    let text = '';
+    while (
+      i < paragraph.length &&
+      !paragraph.substring(i).startsWith('BLANK') &&
+      !paragraph.substring(i).startsWith('<ruby>')
+    ) {
+      text += paragraph[i];
+      i++;
+    }
+
+    if (text) {
+      elements.push({ type: 'text', value: text });
+    }
+  }
+
+  return {
+    elements,
+    blankCount: blankIndex - startingBlankIndex
+  };
+}
+
+/**
+ * Parses a plain (non-Chinese) paragraph
+ */
+function parsePlainParagraph(
+  paragraph: string,
+  startingBlankIndex: number
+): { elements: ParagraphElement[]; blankCount: number } {
+  const splitByBlank = paragraph.split('BLANK');
+
+  const elements: ParagraphElement[] = [];
+
+  for (let i = 0; i < splitByBlank.length; i++) {
+    const text = splitByBlank[i];
+
+    // Add text node if there's content
+    if (text) {
+      elements.push({ type: 'text', value: text });
+    }
+
+    // Add blank node after each segment except the last
+    if (i < splitByBlank.length - 1) {
+      elements.push({ type: 'blank', value: startingBlankIndex + i });
+    }
+  }
+
+  return {
+    elements,
+    blankCount: splitByBlank.length - 1
+  };
+}
