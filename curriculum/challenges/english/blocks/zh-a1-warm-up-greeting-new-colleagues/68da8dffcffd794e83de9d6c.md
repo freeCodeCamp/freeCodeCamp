@@ -57,3 +57,51 @@ The question is asking what Chen Na is saying to greet **a group of people**.
 `你好 (nǐ hǎo)` is a greeting to one person, while `您好 (nín hǎo)` is a polite greeting to one person. `您们好 (nín men hǎo)` is not standard in Chinese; `您` is polite singular, not usually pluralized.
 
 The correct phrase for greeting a group is `你们好 (nǐ men hǎo)`, which is a common way to say "hello, everyone". `大家好 (dà jiā hǎo)` is another way to greet a group, which you'll learn as you progress.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-boardroom.png",
+    "characters": [
+      {
+        "character": "Chen Na",
+        "position": {
+          "x": 50,
+          "y": 15,
+          "z": 1.4
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ZH_A1_warmup_vocabulary.mp3",
+      "startTime": 1,
+      "startTimestamp": 8.98,
+      "finishTimestamp": 9.9
+    }
+  },
+  "commands": [
+    {
+      "character": "Chen Na",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Chen Na",
+      "startTime": 1,
+      "finishTime": 1.92,
+      "dialogue": {
+        "text": "你们好 (nǐ men hǎo)",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Chen Na",
+      "opacity": 0,
+      "startTime": 2.42
+    }
+  ]
+}
+```
