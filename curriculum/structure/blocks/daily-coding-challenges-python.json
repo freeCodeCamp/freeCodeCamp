@@ -441,6 +441,46 @@
     {
       "id": "68ffb91507a5b645769328cc",
       "title": "Challenge 109: What's My Age Again?"
+    },
+    {
+      "id": "69162d64f96574d9bb629efb",
+      "title": "Challenge 110: Word Guesser"
+    },
+    {
+      "id": "69162d64f96574d9bb629efc",
+      "title": "Challenge 111: Ball Trajectory"
+    },
+    {
+      "id": "69162d64f96574d9bb629efd",
+      "title": "Challenge 112: AI Detector"
+    },
+    {
+      "id": "69162d64f96574d9bb629efe",
+      "title": "Challenge 113: Miles to Kilometers"
+    },
+    {
+      "id": "69162d64f96574d9bb629eff",
+      "title": "Challenge 114: Camel to Snake"
+    },
+    {
+      "id": "69162d64f96574d9bb629f00",
+      "title": "Challenge 115: Markdown Ordered List Item Converter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f01",
+      "title": "Challenge 116: Permutation Count"
+    },
+    {
+      "id": "69162d64f96574d9bb629f02",
+      "title": "Challenge 117: Symmetric Difference"
+    },
+    {
+      "id": "69162d64f96574d9bb629f03",
+      "title": "Challenge 118: Date Formatter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f04",
+      "title": "Challenge 119: String Compression"
     }
   ]
 }
