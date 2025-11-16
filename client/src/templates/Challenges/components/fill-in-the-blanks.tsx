@@ -84,11 +84,12 @@ function FillInTheBlanks({
                 }
 
                 if (type === 'hanzi-pinyin') {
+                  const { hanzi, pinyin } = value;
                   return (
                     <ruby key={j}>
-                      {value.hanzi}
+                      {hanzi}
                       <rp>(</rp>
-                      <rt>{value.pinyin}</rt>
+                      <rt>{pinyin}</rt>
                       <rp>)</rp>
                     </ruby>
                   );

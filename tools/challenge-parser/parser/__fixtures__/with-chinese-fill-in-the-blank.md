@@ -2,7 +2,7 @@
 
 ## --sentence--
 
-`BLANK好，BLANK是王华，请问你BLANK什么名字？ (BLANK hǎo BLANK shì Wang Hua qǐng wèn nǐ BLANK shén me míng zi)`
+`BLANK 好 (hǎo)，BLANK 是王华 (shì Wang Hua)，请问你 (qǐng wèn nǐ) BLANK 什么名字 (shén me míng zi)？`
 
 ## --blanks--
 
