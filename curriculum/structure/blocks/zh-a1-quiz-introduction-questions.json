@@ -4,11 +4,6 @@
   "dashedName": "zh-a1-quiz-introduction-questions",
   "helpCategory": "English",
   "blockLayout": "dialogue-grid",
-  "challengeOrder": [
-    {
-      "id": "68fa37b3666140c87dccbaef",
-      "title": "Dialogue 1: I'm Tom"
-    }
-  ],
+  "challengeOrder": [{ "id": "691935f625bc930d93368156", "title": "Task 1" }],
   "blockLabel": "quiz"
 }
