@@ -60,6 +60,32 @@
           ]
         }
       ]
+    },
+    {
+      "dashedName": "es-a1-chapter-basic-personal-details",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-numbers-10-to-29",
+          "blocks": [
+            "es-a1-warm-up-remember-first-numbers",
+            "es-a1-learn-numbers-10-to-29",
+            "es-a1-practice-using-numbers-10-to-29",
+            "es-a1-review-numbers-10-to-29",
+            "es-a1-quiz-numbers-10-to-29"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-sharing-your-personal-details",
+          "blocks": [
+            "es-a1-warm-up-getting-ready-to-share-personal-details",
+            "es-a1-learn-basic-personal-information",
+            "es-a1-learn-contact-information-and-spelling",
+            "es-a1-practice-personal-details-in-action",
+            "es-a1-review-sharing-your-personal-details",
+            "es-a1-quiz-sharing-your-personal-details"
+          ]
+        }
+      ]
     }
   ]
 }
