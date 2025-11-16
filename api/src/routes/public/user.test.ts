@@ -127,6 +127,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -250,6 +251,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showExperience: false,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -482,6 +484,7 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -492,7 +495,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 

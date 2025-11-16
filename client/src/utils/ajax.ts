@@ -409,6 +409,12 @@ export function putUpdateMyPortfolio(
   return put('/update-my-portfolio', update);
 }
 
+export function putUpdateMyExperience(
+  update: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-experience', update);
+}
+
 export function putUserUpdateEmail(
   email: string
 ): Promise<ResponseWithData<void>> {
