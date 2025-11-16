@@ -282,7 +282,8 @@ const availableAudios = [
   'ZH_A1_1.1.mp3',
   'ZH_A1_1.2.mp3',
   'ZH_A1_1.3.mp3',
-  'ZH_A1_1.4.mp3'
+  'ZH_A1_1.4.mp3',
+  'ZH_A1_warmup_vocabulary.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];
