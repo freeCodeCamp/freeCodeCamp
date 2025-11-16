@@ -14,7 +14,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'Hello world',
             align: 'left'
@@ -29,7 +29,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'Hello',
             align: 'left'
@@ -64,7 +64,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'Hello',
             align: 'left'
@@ -95,7 +95,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: "I'm fine, thanks! How about you?",
             align: 'left'
@@ -112,7 +112,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'I have 3 apples and 5 oranges.',
             align: 'left'
@@ -129,7 +129,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: '',
             align: 'left'
@@ -144,7 +144,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'Hello  world',
             align: 'left'
@@ -159,7 +159,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'First line',
             align: 'left'
@@ -194,7 +194,7 @@ describe('scene-helpers', () => {
       const commands: SceneCommand[] = [
         {
           character: 'Naomi',
-          startTime: 0,
+          startTime: 1,
           dialogue: {
             text: 'Use <div> and <span> tags',
             align: 'left'
