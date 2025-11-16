@@ -35,7 +35,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
-import { parseChinesePattern } from './parse-blanks';
+import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
 
@@ -144,7 +144,8 @@ const ShowFillInTheBlank = ({
         userAnswer.trim()
       ).toLowerCase();
 
-      const hanziPinyin = parseChinesePattern(answer);
+      const pairs = parseHanziPinyinPairs(answer);
+      const hanziPinyin = pairs.length === 1 ? pairs[0] : null;
 
       if (hanziPinyin) {
         const { hanzi } = hanziPinyin;
@@ -309,6 +310,7 @@ export const query = graphql`
             answer
             feedback
           }
+          inputType
         }
         tests {
           text

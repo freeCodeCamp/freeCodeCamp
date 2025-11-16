@@ -2,11 +2,11 @@
 
 ## --sentence--
 
-`BLANK好 BLANK (BLANK hǎo BLANK)`
+`BLANK 好 (hǎo) BLANK`
 
 ## --blanks--
 
-`你好`
+`你`
 
 ---
 

@@ -1,8 +1,13 @@
+---
+lang: zh-CN
+inputType: pinyin-to-hanzi
+---
+
 # --fillInTheBlank--
 
 ## --sentence--
 
-`BLANK好，BLANK是王华，请问你BLANK什么名字？ (BLANK hǎo BLANK shì Wang Hua qǐng wèn nǐ BLANK shén me míng zi)`
+`BLANK BLANK，BLANK 是王华 (shì Wang Hua)，请问你 (qǐng wèn nǐ) BLANK 什么名字 (shén me míng zi)？`
 
 ## --blanks--
 
@@ -11,6 +16,14 @@
 ### --feedback--
 
 Feedback text containing `汉字 (hàn zì)`.
+
+---
+
+`好 (hǎo)`
+
+### --feedback--
+
+This means "good" or "well".
 
 ---
 

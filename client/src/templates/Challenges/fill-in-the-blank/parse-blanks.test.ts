@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { parseBlanks, parseChinesePattern, parseAnswer } from './parse-blanks';
+import {
+  parseBlanks,
+  parseHanziPinyinPairs,
+  parseAnswer
+} from './parse-blanks';
 
 describe('parseBlanks', () => {
   it('handles strings without blanks', () => {
@@ -131,15 +135,14 @@ describe('parseBlanks', () => {
   });
 
   it('handles Chinese with single BLANK', () => {
-    expect(parseBlanks('<p>BLANK好 (BLANK hǎo)</p>')).toEqual([
+    expect(
+      parseBlanks('<p>BLANK<ruby>好<rp>(</rp><rt>hǎo</rt><rp>)</rp></ruby></p>')
+    ).toEqual([
       [
         { type: 'blank', value: 0 },
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '好',
-            pinyin: 'hǎo'
-          }
+          value: { hanzi: '好', pinyin: 'hǎo' }
         }
       ]
     ]);
@@ -157,38 +160,54 @@ describe('parseBlanks', () => {
 
   it('handles Chinese with multiple BLANKs', () => {
     expect(
-      parseBlanks('<p>BLANK好，BLANK是王华 (BLANK hǎo BLANK shì Wang Hua)</p>')
+      parseBlanks(
+        '<p>BLANK<ruby>好<rp>(</rp><rt>hǎo</rt><rp>)</rp></ruby>，BLANK<ruby>是王华<rp>(</rp><rt>shì Wang Hua</rt><rp>)</rp></ruby></p>'
+      )
     ).toEqual([
       [
         { type: 'blank', value: 0 },
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '好，',
-            pinyin: 'hǎo'
-          }
+          value: { hanzi: '好', pinyin: 'hǎo' }
         },
+        { type: 'text', value: '，' },
         { type: 'blank', value: 1 },
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '是王华',
-            pinyin: 'shì Wang Hua'
-          }
+          value: { hanzi: '是王华', pinyin: 'shì Wang Hua' }
+        }
+      ]
+    ]);
+  });
+
+  it('handles Chinese with multiple adjacent BLANKs', () => {
+    expect(
+      parseBlanks(
+        '<p>BLANK BLANK<ruby>好<rp>(</rp><rt>hǎo</rt><rp>)</rp></ruby></p>'
+      )
+    ).toEqual([
+      [
+        { type: 'blank', value: 0 },
+        { type: 'text', value: ' ' },
+        { type: 'blank', value: 1 },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '好', pinyin: 'hǎo' }
         }
       ]
     ]);
   });
 
   it('handles Chinese with BLANK at the end', () => {
-    expect(parseBlanks('<p>你好BLANK (nǐ hǎo BLANK)</p>')).toEqual([
+    expect(
+      parseBlanks(
+        '<p><ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>BLANK</p>'
+      )
+    ).toEqual([
       [
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '你好',
-            pinyin: 'nǐ hǎo'
-          }
+          value: { hanzi: '你好', pinyin: 'nǐ hǎo' }
         },
         { type: 'blank', value: 0 }
       ]
@@ -196,45 +215,120 @@ describe('parseBlanks', () => {
   });
 
   it('handles Chinese with spaces around BLANK', () => {
-    expect(parseBlanks('<p>你 BLANK 我 (nǐ BLANK wǒ)</p>')).toEqual([
+    expect(
+      parseBlanks(
+        '<p><ruby>你<rp>(</rp><rt>nǐ</rt><rp>)</rp></ruby> BLANK <ruby>我<rp>(</rp><rt>wǒ</rt><rp>)</rp></ruby></p>'
+      )
+    ).toEqual([
       [
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '你',
-            pinyin: 'nǐ'
-          }
+          value: { hanzi: '你', pinyin: 'nǐ' }
         },
+        { type: 'text', value: ' ' },
+        { type: 'blank', value: 0 },
+        { type: 'text', value: ' ' },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '我', pinyin: 'wǒ' }
+        }
+      ]
+    ]);
+  });
+
+  it('handles Latin text adjacent to BLANK', () => {
+    expect(
+      parseBlanks(
+        '<p><ruby>我<rp>(</rp><rt>wǒ</rt><rp>)</rp></ruby> BLANK UI <ruby>设计师<rp>(</rp><rt>shè jì shī</rt><rp>)</rp></ruby> 。</p>'
+      )
+    ).toEqual([
+      [
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '我', pinyin: 'wǒ' }
+        },
+        { type: 'text', value: ' ' },
+        { type: 'blank', value: 0 },
+        { type: 'text', value: ' UI ' },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '设计师', pinyin: 'shè jì shī' }
+        },
+        { type: 'text', value: ' 。' }
+      ]
+    ]);
+  });
+
+  it('handles Chinese with multiple separate groups', () => {
+    expect(
+      parseBlanks(
+        '<p>BLANK<ruby>好<rp>(</rp><rt>hǎo</rt><rp>)</rp></ruby>，<ruby>我是王华<rp>(</rp><rt>wǒ shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你<rp>(</rp><rt>qǐng wèn nǐ</rt><rp>)</rp></ruby>BLANK<ruby>什么名字<rp>(</rp><rt>shén me míng zi</rt><rp>)</rp></ruby>？</p>'
+      )
+    ).toEqual([
+      [
         { type: 'blank', value: 0 },
         {
           type: 'hanzi-pinyin',
-          value: {
-            hanzi: '我',
-            pinyin: 'wǒ'
-          }
-        }
+          value: { hanzi: '好', pinyin: 'hǎo' }
+        },
+        { type: 'text', value: '，' },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '我是王华', pinyin: 'wǒ shì Wang Hua' }
+        },
+        { type: 'text', value: '，' },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '请问你', pinyin: 'qǐng wèn nǐ' }
+        },
+        { type: 'blank', value: 1 },
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '什么名字', pinyin: 'shén me míng zi' }
+        },
+        { type: 'text', value: '？' }
+      ]
+    ]);
+  });
+
+  it('handles Chinese ruby with trailing punctuation', () => {
+    expect(
+      parseBlanks(
+        '<p><ruby>你是刘明吗<rp>(</rp><rt>nǐ shì Liu Ming ma</rt><rp>)</rp></ruby>？</p>'
+      )
+    ).toEqual([
+      [
+        {
+          type: 'hanzi-pinyin',
+          value: { hanzi: '你是刘明吗', pinyin: 'nǐ shì Liu Ming ma' }
+        },
+        { type: 'text', value: '？' }
       ]
     ]);
   });
 });
 
-describe('parseChinesePattern', () => {
-  it('parseChinesePattern returns hanzi and pinyin for well-formed input', () => {
-    expect(parseChinesePattern('你好 (nǐ hǎo)')).toEqual({
+describe('parseHanziPinyinPairs', () => {
+  it('parseHanziPinyinPairs returns array with one pair for well-formed input', () => {
+    const result = parseHanziPinyinPairs('你好 (nǐ hǎo)');
+    expect(result).toHaveLength(1);
+    expect(result[0]).toEqual({
       hanzi: '你好',
       pinyin: 'nǐ hǎo'
     });
   });
 
-  it('parseChinesePattern handles parentheses without a space', () => {
-    expect(parseChinesePattern('你好(nǐ hǎo)')).toEqual({
+  it('parseHanziPinyinPairs handles parentheses without a space', () => {
+    const result = parseHanziPinyinPairs('你好(nǐ hǎo)');
+    expect(result).toHaveLength(1);
+    expect(result[0]).toEqual({
       hanzi: '你好',
       pinyin: 'nǐ hǎo'
     });
   });
 
-  it('parseChinesePattern returns null for non-matching input', () => {
-    expect(parseChinesePattern('hello')).toBeNull();
+  it('parseHanziPinyinPairs returns empty array for non-matching input', () => {
+    expect(parseHanziPinyinPairs('hello')).toEqual([]);
   });
 
   it('parseAnswer returns parsed object when pattern matches', () => {

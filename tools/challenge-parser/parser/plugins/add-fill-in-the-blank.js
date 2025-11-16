@@ -5,7 +5,7 @@ const { getSection } = require('./utils/get-section');
 const getAllBefore = require('./utils/before-heading');
 const {
   createMdastToHtml,
-  parseChinesePattern
+  parseHanziPinyinPairs
 } = require('./utils/i18n-stringify');
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -60,28 +60,44 @@ function plugin() {
               throw Error(NOT_IN_PARAGRAPHS);
             if (child.type !== 'inlineCode') throw Error(NOT_IN_CODE_BLOCK);
           });
+
+          // For Chinese hanzi-pinyin, keep as inlineCode so handler generates ruby elements
+          if (lang === 'zh-CN') {
+            const hasChinesePairs = node.children.some(
+              child =>
+                child.type === 'inlineCode' &&
+                parseHanziPinyinPairs(child.value).length > 0
+            );
+
+            if (hasChinesePairs) {
+              return node;
+            }
+          }
+
+          // Convert inlineCode to text for non-Chinese content
           const children = node.children.map(child => ({
             ...child,
             type: 'text'
           }));
           return { ...node, children };
         });
+
         const sentence = toHtml(sentenceWithoutCodeBlocks);
         const blanks = getBlanks(blanksNodes);
 
         if (!sentence)
           throw Error('sentence is missing from fill in the blank');
         if (!blanks) throw Error('blanks are missing from fill in the blank');
-
-        validateBlankCount(sentenceNodes, blanks);
+        if (sentence.match(/BLANK/g).length !== blanks.length)
+          throw Error(`Number of BLANKs doesn't match the number of answers.`);
 
         // For 'pinyin-to-hanzi' inputType, all answers must be of type 'hanzi-pinyin'.
         // This validation ensures compatibility with the pinyin input in the UI,
         // where users type pinyin and the system automatically converts it to hanzi
         // if the input value matches the expected pinyin from the answer.
         if (inputType === 'pinyin-to-hanzi') {
-          const allAnswersAreHanziPinyin = blanks.every(blank =>
-            parseChinesePattern(blank.answer)
+          const allAnswersAreHanziPinyin = blanks.every(
+            blank => parseHanziPinyinPairs(blank.answer).length === 1
           );
 
           if (!allAnswersAreHanziPinyin) {
@@ -91,7 +107,7 @@ function plugin() {
           }
         }
 
-        return { sentence, blanks };
+        return { sentence, blanks, ...(inputType && { inputType }) };
       }
 
       function getBlanks(blanksNodes) {
@@ -131,45 +147,6 @@ function validateBlanksSectionCount(fillInTheBlankTree) {
     throw Error(
       `There should only be one --blanks-- section in the fillInTheBlank challenge`
     );
-}
-
-/**
- * Validates BLANK counts for fill-in-the-blank challenges.
- * - For `hanzi (pinyin)` pattern, we have an additional check
- * that the number of BLANKs in hanzi matches the number in pinyin.
- * - For all cases, validates that total BLANK count matches the number of answers.
- */
-function validateBlankCount(sentenceNodes, blanks) {
-  let totalBlankCount = 0;
-
-  sentenceNodes.forEach(node => {
-    node.children.forEach(child => {
-      const hanziPinyin = parseChinesePattern(child.value);
-
-      if (hanziPinyin) {
-        const hanziBlankCount = (hanziPinyin.hanzi.match(/BLANK/g) || [])
-          .length;
-        const pinyinBlankCount = (hanziPinyin.pinyin.match(/BLANK/g) || [])
-          .length;
-
-        if (hanziBlankCount !== pinyinBlankCount) {
-          throw Error(
-            "Number of BLANKs in hanzi doesn't match the number of BLANKs in pinyin."
-          );
-        }
-
-        // Count BLANKs from hanzi portion only
-        totalBlankCount += hanziBlankCount;
-      } else {
-        // Otherwise, count BLANKs directly
-        totalBlankCount += (child.value.match(/BLANK/g) || []).length;
-      }
-    });
-  });
-
-  if (totalBlankCount !== blanks.length) {
-    throw Error(`Number of BLANKs doesn't match the number of answers.`);
-  }
 }
 
 module.exports = plugin;

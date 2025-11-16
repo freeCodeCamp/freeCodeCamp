@@ -12,9 +12,9 @@ describe('fill-in-the-blanks plugin', () => {
     mockChineseFillInTheBlankAST,
     mockChineseFillInTheBlankNoPinyinAST,
     mockChineseFillInTheBlankNoHanziAST,
-    mockChineseFillInTheBlankTextAnswersAST,
+    mockChineseFillInTheBlankWrongAnswerFormatAST,
     mockChineseFillInTheBlankBlankAnswerMismatchAST,
-    mockChineseFillInTheBlankBlankCountMismatchAST;
+    mockChineseFillInTheBlankLatinAST;
   const plugin = addFillInTheBlankQuestion();
   let file = { data: {} };
 
@@ -44,14 +44,14 @@ describe('fill-in-the-blanks plugin', () => {
     mockChineseFillInTheBlankNoHanziAST = await parseFixture(
       'with-chinese-fill-in-the-blank-no-hanzi.md'
     );
-    mockChineseFillInTheBlankTextAnswersAST = await parseFixture(
-      'with-chinese-fill-in-the-blank-text-answers.md'
+    mockChineseFillInTheBlankWrongAnswerFormatAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-wrong-answer-format.md'
     );
     mockChineseFillInTheBlankBlankAnswerMismatchAST = await parseFixture(
       'with-chinese-fill-in-the-blank-blank-answer-mismatch.md'
     );
-    mockChineseFillInTheBlankBlankCountMismatchAST = await parseFixture(
-      'with-chinese-fill-in-the-blank-blank-count-mismatch.md'
+    mockChineseFillInTheBlankLatinAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-latin.md'
     );
   });
 
@@ -194,35 +194,34 @@ Example of good formatting:
 
   it('should parse Chinese fill-in-the-blank sentence and answer correctly if they are in `hanzi (pinyin)` format', () => {
     file.data.lang = 'zh-CN';
+    file.data.inputType = 'pinyin-to-hanzi';
     plugin(mockChineseFillInTheBlankAST, file);
     const testObject = file.data.fillInTheBlank;
 
+    expect(testObject.inputType).toBe('pinyin-to-hanzi');
+
     expect(testObject.sentence).toBe(
-      '<p>BLANK好，BLANK是王华，请问你BLANK什么名字？ (BLANK hǎo BLANK shì Wang Hua qǐng wèn nǐ BLANK shén me míng zi)</p>'
+      '<p>BLANK BLANK，BLANK <ruby>是王华<rp>(</rp><rt>shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你<rp>(</rp><rt>qǐng wèn nǐ</rt><rp>)</rp></ruby> BLANK <ruby>什么名字<rp>(</rp><rt>shén me míng zi</rt><rp>)</rp></ruby>？</p>'
     );
-    expect(testObject.blanks.length).toBe(3);
+    expect(testObject.blanks.length).toBe(4);
 
     expect(testObject.blanks[0].answer).toEqual('你 (nǐ)');
     expect(testObject.blanks[0].feedback).toBe(
       '<p>Feedback text containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>'
     );
 
-    expect(testObject.blanks[1].answer).toEqual('我 (wǒ)');
-    expect(testObject.blanks[1].feedback).toBe('<p>This means "I".</p>');
+    expect(testObject.blanks[1].answer).toEqual('好 (hǎo)');
+    expect(testObject.blanks[1].feedback).toBe(
+      '<p>This means "good" or "well".</p>'
+    );
 
-    expect(testObject.blanks[2].answer).toEqual('叫 (jiào)');
-    expect(testObject.blanks[2].feedback).toBe(
+    expect(testObject.blanks[2].answer).toEqual('我 (wǒ)');
+    expect(testObject.blanks[2].feedback).toBe('<p>This means "I".</p>');
+
+    expect(testObject.blanks[3].answer).toEqual('叫 (jiào)');
+    expect(testObject.blanks[3].feedback).toBe(
       '<p>This means "to be called".</p>'
     );
-  });
-
-  it('should return Chinese answers as plain text if they do not match `hanzi (pinyin)` pattern', () => {
-    file.data.lang = 'zh-CN';
-    plugin(mockChineseFillInTheBlankTextAnswersAST, file);
-    const testObject = file.data.fillInTheBlank;
-
-    expect(testObject.blanks[0].answer).toEqual('你好');
-    expect(testObject.blanks[1].answer).toEqual('nǐ');
   });
 
   it('should return sentence as plain text when sentence does not contain pinyin', () => {
@@ -250,23 +249,28 @@ Example of good formatting:
     }).toThrow(`Number of BLANKs doesn't match the number of answers.`);
   });
 
-  it("should throw if the number of blanks in the hanzi doesn't match the number of blanks in the pinyin", () => {
-    file.data.lang = 'zh-CN';
-    expect(() => {
-      plugin(mockChineseFillInTheBlankBlankCountMismatchAST, file);
-    }).toThrow(
-      `Number of BLANKs in hanzi doesn't match the number of BLANKs in pinyin.`
-    );
-  });
-
   it('should throw error when inputType is pinyin-to-hanzi but answer is not in hanzi-pinyin format', () => {
     file.data.lang = 'zh-CN';
     file.data.inputType = 'pinyin-to-hanzi';
 
     expect(() => {
-      plugin(mockChineseFillInTheBlankTextAnswersAST, file);
+      plugin(mockChineseFillInTheBlankWrongAnswerFormatAST, file);
     }).toThrow(
       "When inputType is 'pinyin-to-hanzi', all answers must be in 'hanzi (pinyin)' format."
     );
+  });
+
+  it('should separate BLANK and adjacent Latin text in Chinese sentences', () => {
+    file.data.lang = 'zh-CN';
+    plugin(mockChineseFillInTheBlankLatinAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe(
+      '<p><ruby>我<rp>(</rp><rt>wǒ</rt><rp>)</rp></ruby> BLANK UI <ruby>设计师<rp>(</rp><rt>shè jì shī</rt><rp>)</rp></ruby> 。</p>'
+    );
+    expect(testObject.blanks.length).toBe(1);
+
+    expect(testObject.blanks[0].answer).toEqual('是 (shì)');
+    expect(testObject.blanks[0].feedback).toBe('<p>Feedback text.</p>');
   });
 });
