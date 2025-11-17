@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { SceneCommand } from '../../../../redux/prop-types';
+import { type SceneCommand } from '../../../../redux/prop-types';
 import { buildTranscript } from './scene-helpers';
 
 describe('scene-helpers', () => {

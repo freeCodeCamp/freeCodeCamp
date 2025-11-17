@@ -1,4 +1,4 @@
-import { SceneCommand } from '../../../../redux/prop-types';
+import { type SceneCommand } from '../../../../redux/prop-types';
 
 export const buildTranscript = (commands: SceneCommand[]): string => {
   let transcriptText = '';
