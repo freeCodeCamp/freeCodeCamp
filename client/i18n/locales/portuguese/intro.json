@@ -5143,6 +5143,7 @@
   },
   "javascript-v9": {
     "title": "Certificação JavaScript",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "Este curso ensina conceitos fundamentais de programação JavaScript, como trabalhar com variáveis, funções, objetos, arrays e controle de fluxo. Você também aprenderá a manipular o DOM, lidar com eventos, e aplicar técnicas como programação funcional, assíncrona e práticas recomendadas de acessibilidade.",
       "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
@@ -5156,6 +5157,12 @@
     "chapters": {
       "javascript": "JavaScript",
       "javascript-certification-exam": "Exame de certificação de JavaScript"
+    },
+    "module-intros": {
+      "javascript-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
     },
     "modules": {
       "javascript-variables-and-strings": "Variáveis e Strings",
@@ -6418,19 +6425,19 @@
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Disponível no Inverno de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Neste módulo, você conhecerá a visualização de dados e aprenderá a trabalhar com a biblioteca D3."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Próximo Lançamento: Outono de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Disponível no Inverno de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Passe neste exame para conquistar a Certificação de Bibliotecas de Desenvolvimento Front-End."
         ]
@@ -7581,6 +7588,12 @@
         "intro": [
           "Aprenda os fundamentos de como a comunicação web funciona através do modelo de requisição-resposta HTTP, explore diferentes tipos de ativos e respostas web e entenda como os formulários lidam com o envio de dados usando vários métodos HTTP."
         ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
       }
     }
   },
@@ -7589,14 +7602,7 @@
     "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the following certifications:",
-      "- Responsive Web Design Certification",
-      "- JavaScript Certification",
-      "- Front End Development Libraries Certification",
-      "- Python Certification",
-      "- Relational Databases Certification",
-      "- Back End Development and APIs Certification",
-      "Pass the exam to earn your Full Stack Developer Certification."
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
@@ -7608,7 +7614,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "Este será um exame de 90 questões testando o que você aprendeu ao longo desta certificação."
+          "This exam will test what you have learned throughout the previous six certifications."
         ]
       }
     },
@@ -7764,6 +7770,7 @@
   },
   "responsive-web-design-v9": {
     "title": "Certificação de Design Responsivo para a Web",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "Este curso ensina os fundamentos de HTML e CSS, incluindo design de layout moderno, design, acessibilidade e desenvolvimento web responsivo. Você criará projetos práticos e adquirirá as habilidades necessárias para criar páginas da web profissionais e fáceis de usar.",
       "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
@@ -7778,6 +7785,14 @@
       "html": "HTML",
       "css": "CSS",
       "responsive-web-design-certification-exam": "Exame de Certificação de Design Responsivo para a Web"
+    },
+    "module-intros": {
+      "responsive-web-design-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification."
+        ]
+      }
     },
     "modules": {
       "basic-html": "HTML Básico",
@@ -9157,6 +9172,7 @@
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Cursos",
+    "requirements": "Requirements",
     "steps": "Passos",
     "expand": "Expandir o curso",
     "collapse": "Recolher o curso",
