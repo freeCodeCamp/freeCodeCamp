@@ -22,7 +22,7 @@ Is Sarah available to talk to Tom?
 
 ## --answers--
 
-No, she is busy and doesn´t want to know about his problems.
+No, she is busy and doesn't want to know about his problems.
 
 ### --feedback--
 
