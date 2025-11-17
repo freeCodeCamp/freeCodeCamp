@@ -32,7 +32,8 @@ const {
   PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
-  GROWTHBOOK_URI: growthbookUri
+  GROWTHBOOK_URI: growthbookUri,
+  DEPLOYMENT_VERSION: deploymentVersion
 } = process.env;
 
 const locations = {
@@ -74,5 +75,6 @@ export default Object.assign(locations, {
   growthbookUri:
     !growthbookUri || growthbookUri === 'api_URI_from_Growthbook_dashboard'
       ? null
-      : growthbookUri
+      : growthbookUri,
+  deploymentVersion: deploymentVersion || 'unknown'
 });

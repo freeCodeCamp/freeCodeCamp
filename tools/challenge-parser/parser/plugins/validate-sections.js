@@ -35,6 +35,7 @@ const VALID_MARKERS = [
   '## --before-user-code--',
 
   // Level 3
+  '### --audio-id--',
   '### --feedback--',
   '### --question--',
 

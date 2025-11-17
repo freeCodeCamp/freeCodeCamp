@@ -60,6 +60,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
           "blocks": ["exam-back-end-development-and-apis-certification"]
         }

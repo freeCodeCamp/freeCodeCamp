@@ -89,6 +89,10 @@ hr {
   border-top: 1px solid var(--quaternary-background);
 }
 
+rt {
+  font-size: 0.8rem;
+}
+
 #___gatsby {
   height: 100%;
 }

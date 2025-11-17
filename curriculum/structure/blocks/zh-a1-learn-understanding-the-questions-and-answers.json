@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-learn-understanding-the-questions-and-answers",
   "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "6904b3933a383d68ec0e5f0d", "title": "Task 1" },
     { "id": "6904bfa12f761c705b37b377", "title": "Task 2" },

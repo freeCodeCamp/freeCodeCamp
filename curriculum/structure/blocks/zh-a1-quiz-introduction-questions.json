@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-quiz-introduction-questions",
   "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "blockLayout": "link",
   "challengeOrder": [{ "id": "691935f625bc930d93368156", "title": "Task 1" }],
   "blockLabel": "quiz"
 }

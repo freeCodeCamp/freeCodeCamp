@@ -27,7 +27,7 @@ on:
 jobs:
   setup-jobs:
     name: Setup Jobs
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     outputs:
       site_tld: ${{ steps.setup.outputs.site_tld }} # org, dev
       tgt_env_short: ${{ steps.setup.outputs.tgt_env_short }} # prd, stg
@@ -65,13 +65,13 @@ jobs:
 
   setup-matrix:
     name: Setup Matrix
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     needs: setup-jobs
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
     steps:
       - name: Setup Matrix
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b # v7
+        uses: actions/github-script@ed597411d8f924073f98dfc5c65a23a2325f34cd # v8
         id: matrix
         env:
           TARGET_LANG: ${{ inputs.target_language }}
@@ -156,7 +156,7 @@ jobs:
   client:
     name: Clients - [${{ needs.setup-jobs.outputs.tgt_env_short }}] [${{ matrix.lang-name-short }}]
     needs: [setup-jobs, setup-matrix]
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     strategy:
       fail-fast: false
       matrix: ${{ fromJson(needs.setup-matrix.outputs.matrix) }}
@@ -171,12 +171,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -197,6 +197,13 @@ jobs:
           fi
           echo "CLIENT_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
           echo "CURRICULUM_LOCALE=${{ matrix.lang-name-full }}" >> $GITHUB_ENV
+
+      - name: Create deployment version
+        id: deployment-version
+        run: |
+          DEPLOYMENT_VERSION=$(git rev-parse --short HEAD)-$(date +%Y%m%d)-$(date +%H%M)
+          echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_ENV
+          echo "DEPLOYMENT_VERSION=$DEPLOYMENT_VERSION" >> $GITHUB_OUTPUT
 
       - name: Install and Build
         env:
@@ -221,7 +228,7 @@ jobs:
         run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
 
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@6cae46e2d796f265265cfcf628b72a32b4d7cade # v3
+        uses: tailscale/github-action@a392da0a182bba0e9613b6243ebd69529b1878aa # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}

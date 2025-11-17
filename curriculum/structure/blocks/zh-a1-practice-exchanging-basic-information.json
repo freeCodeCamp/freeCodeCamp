@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-practice-exchanging-basic-information",
   "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "6916dd268969c61abc6ce0aa", "title": "Task 1" },
     { "id": "6916e7bcbaa6f71f810d2e04", "title": "Task 2" },

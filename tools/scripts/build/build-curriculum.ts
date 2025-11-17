@@ -15,16 +15,26 @@ import {
 
 const globalConfigPath = path.resolve(__dirname, '../../../shared-dist/config');
 
-// We are defaulting to English because the ids for the challenges are same
-// across all languages.
+const isSelectiveBuild =
+  process.env.FCC_SUPERBLOCK ||
+  process.env.FCC_BLOCK ||
+  process.env.FCC_CHALLENGE_ID;
+
 void getChallengesForLang('english')
   .then(result => {
-    buildExtCurriculumDataV1(
-      result as unknown as CurriculumV1<CurriculumPropsV1>
-    );
-    buildExtCurriculumDataV2(
-      result as unknown as CurriculumV2<CurriculumPropsV2>
-    );
+    if (!isSelectiveBuild) {
+      console.log('Building external curriculum data...');
+      buildExtCurriculumDataV1(
+        result as unknown as CurriculumV1<CurriculumPropsV1>
+      );
+      buildExtCurriculumDataV2(
+        result as unknown as CurriculumV2<CurriculumPropsV2>
+      );
+    } else {
+      console.log(
+        'Skipping external curriculum build (selective build mode active)'
+      );
+    }
     return result;
   })
   .then(JSON.stringify)
