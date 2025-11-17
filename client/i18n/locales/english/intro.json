@@ -7714,6 +7714,10 @@
       "es-a1-quiz-sharing-your-personal-details": {
         "title": "Sharing Your Personal Details Quiz",
         "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
       }
     }
   },
