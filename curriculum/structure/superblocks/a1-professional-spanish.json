@@ -10,10 +10,10 @@
       ]
     },
     {
-      "dashedName": "es-a1-chapter-the-spanish-alphabet",
+      "dashedName": "es-a1-chapter-spanish-fundamentals",
       "modules": [
         {
-          "dashedName": "es-a1-module-alphabet-and-special-characters",
+          "dashedName": "es-a1-module-letters-sounds-and-first-numbers",
           "blocks": [
             "es-a1-learn-vowels",
             "es-a1-learn-consonants-and-special-characters",

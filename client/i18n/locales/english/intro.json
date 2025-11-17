@@ -7533,13 +7533,13 @@
     "intro": ["Placeholder intro"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
+      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
+      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions",
@@ -7551,7 +7551,7 @@
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-letters-sounds-and-first-numbers": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
