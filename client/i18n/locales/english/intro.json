@@ -7533,13 +7533,13 @@
     "intro": ["Placeholder intro"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
+      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
+      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions",
@@ -7551,7 +7551,7 @@
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-letters-sounds-and-first-numbers": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
@@ -7606,8 +7606,8 @@
         "intro": ["", ""]
       },
       "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
-      "es-a1-quiz-the-alphabet": {
-        "title": "The Spanish Alphabet Quiz",
+      "es-a1-quiz-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7663,8 +7663,8 @@
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
       },
-      "es-a1-review-the-alphabet": {
-        "title": "The Spanish Alphabet Review",
+      "es-a1-review-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
       },
       "es-a1-practice-the-alphabet": {
@@ -7713,6 +7713,14 @@
       },
       "es-a1-quiz-sharing-your-personal-details": {
         "title": "Sharing Your Personal Details Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
         "intro": ["", ""]
       }
     }
