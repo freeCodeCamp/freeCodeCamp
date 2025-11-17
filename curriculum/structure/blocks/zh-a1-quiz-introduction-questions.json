@@ -4,6 +4,11 @@
   "dashedName": "zh-a1-quiz-introduction-questions",
   "helpCategory": "English",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "691935f625bc930d93368156", "title": "Task 1" }],
+  "challengeOrder": [
+    {
+      "id": "691935f625bc930d93368156",
+      "title": "Introduction Questions Quiz"
+    }
+  ],
   "blockLabel": "quiz"
 }
