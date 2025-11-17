@@ -7718,6 +7718,10 @@
       "es-a1-learn-the-first-ten-numbers": {
         "title": "The First Ten Numbers",
         "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
+        "intro": ["", ""]
       }
     }
   },
