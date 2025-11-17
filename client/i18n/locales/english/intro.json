@@ -7534,14 +7534,17 @@
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
       "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
-      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
       "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
-      "es-a1-module-first-questions": "First Questions"
+      "es-a1-module-first-questions": "First Questions",
+      "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
       "es-a1-module-introduction-and-certification-overview": {
@@ -7561,6 +7564,14 @@
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
       "es-a1-module-first-questions": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-numbers-10-to-29": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-sharing-your-personal-details": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       }
@@ -7658,6 +7669,50 @@
       },
       "es-a1-practice-the-alphabet": {
         "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-remember-first-numbers": {
+        "title": "Remember First Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-10-to-29": {
+        "title": "Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-numbers-10-to-29": {
+        "title": "Using Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-review-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-getting-ready-to-share-personal-details": {
+        "title": "Getting Ready to Share Personal Details",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-basic-personal-information": {
+        "title": "Basic Personal Information",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-contact-information-and-spelling": {
+        "title": "Contact Information and Spelling",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-personal-details-in-action": {
+        "title": "Personal Details in Action",
+        "intro": ["", ""]
+      },
+      "es-a1-review-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Quiz",
         "intro": ["", ""]
       }
     }
