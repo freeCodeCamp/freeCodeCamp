@@ -234,7 +234,7 @@ export type Attempt = {
   | {
       status: 'Approved';
       result: {
-        passed: boolean;
+        passingPercent: number;
         score: number;
       };
     }

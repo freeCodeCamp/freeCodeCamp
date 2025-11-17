@@ -2,7 +2,7 @@
   "name": "Graphs and Trees Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-graphs-and-trees",
   "challengeOrder": [
     { "id": "67f4138c34cd9c4ac783ceef", "title": "Graphs and Trees Quiz" }

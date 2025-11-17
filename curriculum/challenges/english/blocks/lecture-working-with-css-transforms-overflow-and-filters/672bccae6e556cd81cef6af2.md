@@ -86,7 +86,7 @@ If an element has no content, padding, or border, its top and bottom margins can
 
 :::
 
-In this example the `empty-block`s top and bottom margins collapse into a single 30 pixels margin, the larger of the two.
+In this example, the `empty-block`'s top and bottom margins collapse into a single 20 pixels margin, the larger of the two.
 
 Here's another example of preventing collapse using padding: 
 

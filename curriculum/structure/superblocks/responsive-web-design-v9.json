@@ -14,6 +14,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "workshop-bookstore-page",
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
@@ -33,6 +34,7 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
             "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
@@ -56,6 +58,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-survey-form",
           "blocks": ["lab-survey-form"]
         },
@@ -184,6 +187,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-page-of-playing-cards",
           "blocks": ["lab-page-of-playing-cards"]
         },
@@ -227,6 +231,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-book-inventory-app",
           "blocks": ["lab-book-inventory-app"]
         },
@@ -240,6 +245,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-technical-documentation-page",
           "blocks": ["lab-technical-documentation-page"]
         },
@@ -265,6 +271,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-product-landing-page",
           "blocks": ["lab-product-landing-page"]
         },
@@ -289,10 +296,11 @@
     },
     {
       "chapterType": "exam",
-      "dashedName": "responsive-web-design-certification-exam",
       "comingSoon": true,
+      "dashedName": "responsive-web-design-certification-exam",
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "responsive-web-design-certification-exam",
           "blocks": ["exam-responsive-web-design-certification"]
         }

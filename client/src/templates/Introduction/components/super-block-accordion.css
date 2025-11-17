@@ -165,8 +165,8 @@ button .block-header-button-text {
   .map-challenge-title
   > .map-grid-item {
   padding: 0;
-  height: 2.1rem;
-  width: 2.1rem;
+  height: 2.6rem;
+  width: 2.6rem;
 }
 
 .super-block-accordion
@@ -175,7 +175,8 @@ button .block-header-button-text {
   .map-challenges-grid {
   padding-block: 10px;
   padding-inline-start: 64px;
-  grid-template-columns: repeat(auto-fill, 2.1rem);
+  grid-template-columns: repeat(auto-fill, 2.6rem);
+  grid-gap: 6px;
 }
 
 .super-block-accordion .map-challenge-title {

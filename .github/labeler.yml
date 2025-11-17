@@ -1,19 +1,26 @@
 'scope: curriculum':
-  - curriculum/challenges/**/*
+  - changed-files:
+      - any-glob-to-any-file: curriculum/challenges/**/*
 
 'platform: learn':
-  - client/**/*
+  - changed-files:
+      - any-glob-to-any-file: client/**/*
 
 'platform: api':
-  - api/**/*
+  - changed-files:
+      - any-glob-to-any-file: api/**/*
 
 'scope: tools/scripts':
-  - tools/**/*
-  - .github/**/*
-  - utils/**/*
-  - e2e/**/*
+  - changed-files:
+      - any-glob-to-any-file:
+          - tools/**/*
+          - .github/**/*
+          - utils/**/*
+          - e2e/**/*
 
 'scope: i18n':
-  - client/i18n/**/*
-  - config/crowdin/**/*
-  - shared/config/i18n/**/*
+  - changed-files:
+      - any-glob-to-any-file:
+          - client/i18n/**/*
+          - config/crowdin/**/*
+          - shared/config/i18n/**/*

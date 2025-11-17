@@ -1,6 +1,6 @@
 {
   "name": "Build an Nth Fibonacci Number Calculator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-nth-fibonacci-number",
   "helpCategory": "Python",
   "blockLayout": "link",

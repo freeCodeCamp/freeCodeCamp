@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import {
   Button,
+  Callout,
   Dropdown,
   MenuItem,
   Spacer,
@@ -66,7 +67,7 @@ interface ShowExamDownloadProps {
 function ShowExamDownload({
   data: {
     challengeNode: {
-      challenge: { id, title, translationPending }
+      challenge: { id, superBlock: examSuperBlock, title, translationPending }
     },
     allChallengeNode: { nodes }
   },
@@ -168,8 +169,10 @@ function ShowExamDownload({
   const unmetPrerequisites = exam?.prerequisites?.filter(
     prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
-  const challenges = nodes.filter(({ challenge }) =>
-    unmetPrerequisites?.includes(challenge.id)
+  const challenges = nodes.filter(
+    ({ challenge }) =>
+      unmetPrerequisites?.includes(challenge.id) &&
+      challenge.superBlock === examSuperBlock
   );
   const missingPrerequisites = challenges.map(({ challenge }) => {
     return {
@@ -197,10 +200,14 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {!!missingPrerequisites.length && (
+            {missingPrerequisites.length > 0 ? (
               <MissingPrerequisites
                 missingPrerequisites={missingPrerequisites}
               />
+            ) : (
+              <Callout className='exam-qualified' variant='info'>
+                <p>{t('learn.exam.qualified')}</p>
+              </Callout>
             )}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
@@ -274,6 +281,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         id
+        superBlock
         title
         translationPending
       }
@@ -286,6 +294,7 @@ export const query = graphql`
           fields {
             slug
           }
+          superBlock
         }
       }
     }
