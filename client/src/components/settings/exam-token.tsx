@@ -3,8 +3,15 @@ import { Button, Panel, Modal, Spacer } from '@freecodecamp/ui';
 import { useTranslation } from 'react-i18next';
 import { FullWidthRow } from '../helpers';
 import { generateExamToken } from '../../utils/ajax';
+import envData from '../../../config/env.json';
 
-function ExamToken(): JSX.Element {
+const { deploymentEnv } = envData;
+
+interface ExamTokenProps {
+  email: string;
+}
+
+function ExamToken({ email }: ExamTokenProps) {
   const [examToken, setExamToken] = useState<string | null>(null);
   const [examTokenError, setExamTokenError] = useState<string | null>(null);
 
@@ -31,6 +38,9 @@ function ExamToken(): JSX.Element {
     setRecentlyGenerated(true);
     setTimeout(() => setRecentlyGenerated(false), 10000);
   };
+
+  const nonStaffTesting =
+    deploymentEnv !== 'production' && !email.endsWith('@freecodecamp.org');
 
   return (
     <FullWidthRow>
@@ -90,9 +100,10 @@ function ExamToken(): JSX.Element {
           <p>{t('exam-token.note')}</p>
           <strong>{t('exam-token.invalidation-2')}</strong>
           <Spacer size='s' />
+          {nonStaffTesting && <p>{t('exam-token.non-staff-testing')}</p>}
           <Button
             block={true}
-            disabled={recentlyGenerated}
+            disabled={recentlyGenerated || nonStaffTesting}
             onClick={() => void getToken()}
           >
             {t('exam-token.generate-exam-token')}
