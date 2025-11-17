@@ -69,6 +69,14 @@ const translationMap: Record<string, unknown> = {
     intro: ['<strong>Build</strong> and deploy full stack apps.'],
     note: 'Stay curious.'
   },
+  'intro:full-stack-developer-v9': {
+    title: 'Certified Full Stack Developer Curriculum',
+    intro: [
+      'This certification represents the culmination of your full stack developer journey.',
+      'Pass the exam to earn your Full Stack Developer Certification.'
+    ],
+    note: 'Coming soon.'
+  },
   'intro:responsive-web-design': {
     title: 'Responsive Web Design',
     intro: ['Create responsive layouts across devices.'],
@@ -357,7 +365,7 @@ const scenarios: Scenario[] = [
   {
     description:
       'For the full stack certification with progress it should not render the start or continue button.',
-    superBlock: SuperBlocks.FullStackDeveloper,
+    superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1],
     expected: {
       labelKey: null,
@@ -368,7 +376,7 @@ const scenarios: Scenario[] = [
   {
     description:
       'For the full stack certification without progress it should not render the start or continue button.',
-    superBlock: SuperBlocks.FullStackDeveloper,
+    superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [],
     expected: {
       labelKey: null,
@@ -379,7 +387,7 @@ const scenarios: Scenario[] = [
   {
     description:
       'For the full stack certification with full progress it should not render the button.',
-    superBlock: SuperBlocks.FullStackDeveloper,
+    superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1, 2, 3],
     expected: {
       labelKey: null,

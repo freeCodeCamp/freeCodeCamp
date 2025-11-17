@@ -168,9 +168,13 @@ function SuperBlockIntro({
     </>
   );
 
+  const isFullStackDeveloper =
+    superBlock === SuperBlocks.FullStackDeveloper ||
+    superBlock === SuperBlocks.FullStackDeveloperV9;
+
   return (
     <>
-      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloper} />
+      <IntroTopDefault fsd={isFullStackDeveloper} />
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
