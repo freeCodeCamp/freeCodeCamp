@@ -1,22 +1,20 @@
 import {
   configTypeChecked,
-  configReact
+  configReact,
+  configImports,
+  configTestingLibrary
 } from '@freecodecamp/eslint-config/base';
 import globals from 'globals';
-import importPlugin from 'eslint-plugin-import';
 import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
 
-import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import { defineConfig } from 'eslint/config';
 
+// Order matters here; later configs can override settings in earlier ones.
 export default defineConfig(
-  configReact,
   { ignores: ['static', '.cache', 'public', 'node_modules'] },
-  importPlugin.flatConfigs.recommended,
-  {
-    files: ['**/*.ts?(x)'],
-    extends: [importPlugin.flatConfigs['typescript']]
-  },
+  ...configReact,
+  ...configImports,
+  ...configTestingLibrary,
   {
     languageOptions: {
       globals: {
@@ -62,11 +60,6 @@ export default defineConfig(
       'react/prop-types': 'off',
       'react/jsx-no-useless-fragment': 'error'
     }
-  },
-  {
-    files: ['**/*.test.[jt]s?(x)'],
-
-    extends: [testingLibraryPlugin.configs['flat/react']]
   },
   ...configTypeChecked
 );

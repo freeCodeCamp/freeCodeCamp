@@ -8,6 +8,9 @@ import filenamesSimple from 'eslint-plugin-filenames-simple';
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
 import reactPlugin from 'eslint-plugin-react';
 import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
+import importPlugin from 'eslint-plugin-import';
+import testingLibraryPlugin from 'eslint-plugin-testing-library';
+
 import { FlatCompat } from '@eslint/eslintrc';
 
 const __dirname = import.meta.dirname;
@@ -96,3 +99,17 @@ export const configReact = [
     )
   )
 ];
+
+export const configImports = defineConfig(
+  importPlugin.flatConfigs.recommended,
+  {
+    files: ['**/*.ts?(x)'],
+    extends: [importPlugin.flatConfigs['typescript']]
+  }
+);
+
+export const configTestingLibrary = defineConfig({
+  files: ['**/*.test.[jt]s?(x)'],
+
+  extends: [testingLibraryPlugin.configs['flat/react']]
+});
