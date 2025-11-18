@@ -211,10 +211,11 @@ async function createQuizChallenge(
   questionCount: number,
   challengeLang: string
 ): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newChallengeDir = path.resolve(blockContentDir, block);
   if (!existsSync(newChallengeDir)) {
     await withTrace(fs.mkdir, newChallengeDir);
   }
