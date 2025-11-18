@@ -11,7 +11,7 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig(
   configReact,
-  { ignores: ['static', '.cache', 'public'] },
+  { ignores: ['static', '.cache', 'public', 'node_modules'] },
   importPlugin.flatConfigs.recommended,
   {
     files: ['**/*.ts?(x)'],
