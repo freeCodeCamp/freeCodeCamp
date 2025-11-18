@@ -129,15 +129,12 @@ function Progress({
   ]);
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
-  const meta =
-    isCertificationProject && totalChallengesInBlock > 0
-      ? t('learn.project-complete', {
-          completedChallengesInBlock,
-          totalChallengesInBlock
-        })
-      : t('learn.percent-complete', {
-          percent: completedPercent
-        });
+  // Don't show completion message for certification projects in the completion modal
+  const meta = isCertificationProject && totalChallengesInBlock > 0
+    ? ''
+    : t('learn.percent-complete', {
+        percent: completedPercent
+      });
   return (
     <div
       className='progress-bar-container'
