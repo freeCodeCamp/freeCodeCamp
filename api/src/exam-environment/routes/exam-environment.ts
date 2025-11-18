@@ -513,7 +513,7 @@ async function postExamGeneratedExamHandler(
  * TODO: Consider validating req.user.id == lastAttempt.user_id?
  *
  * NOTE: Currently, questions can be _unanswered_ - taken away from a previous attempt submission.
- * Theorectically, this is fine. Practically, it is unclear when that would be useful.
+ * Theoretically, this is fine. Practically, it is unclear when that would be useful.
  */
 async function postExamAttemptHandler(
   this: FastifyInstance,
