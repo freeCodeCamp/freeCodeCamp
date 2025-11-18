@@ -8,7 +8,23 @@ dashedName: build-a-tribute-page
 
 # --description--
 
-**Objective:** Build an app that is functionally similar to <a href="https://tribute-page.freecodecamp.rocks" target="_blank" rel="noopener noreferrer nofollow">https://tribute-page.freecodecamp.rocks</a>. **Do not copy this demo project**.
+**Objective:** Create a tribute page that clearly presents information about the subject you choose.
+
+Your project should include the following required elements:
+
+1. A `<main>` element that wraps all primary content.
+2. A descriptive title that identifies the person or subject of your tribute.
+3. An image related to the subject, including a meaningful `alt` attribute for accessibility.
+4. A caption or short explanation placed below the image.
+5. A section with information explaining who the person is and why they are notable.
+6. At least one external link where users can learn more about the subject.
+7. A semantic HTML structure that uses appropriate headings and sections.
+
+**Notes:**
+- You may choose any real or fictional person or character.
+- Your written content should be original. Avoid copying text from external websites.
+- You do not need to replicate the example project; create your own design.
+- Follow basic accessibility practices (meaningful headings, alt text for images).
 
 **User Stories:**
 
