@@ -32,14 +32,12 @@ const mapStateToProps = createSelector(
       block: string;
       superBlock: string;
     },
-    completedChallengesInBlock: number,
     completedPercent: number
   ) => ({
     currentBlockIds,
     id,
     block,
     superBlock,
-    completedChallengesInBlock,
     completedPercent
   })
 );
@@ -56,7 +54,6 @@ function Progress({
   block,
   id,
   superBlock,
-  completedChallengesInBlock,
   completedPercent,
   t,
   updateAllChallengesInfo
@@ -75,10 +72,7 @@ function Progress({
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
     isCertificationProject && totalChallengesInBlock > 0
-      ? t('learn.project-complete', {
-          completedChallengesInBlock,
-          totalChallengesInBlock
-        })
+      ? t('learn.project-complete')
       : t('learn.percent-complete', {
           percent: completedPercent
         });
