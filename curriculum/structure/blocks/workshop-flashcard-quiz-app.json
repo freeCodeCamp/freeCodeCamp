@@ -45,7 +45,9 @@
     { "id": "6916aa08dbaedd0e1db5551f", "title": "Step 38" },
     { "id": "6916aa0c17a3040e79409f24", "title": "Step 39" },
     { "id": "6916aa0f38094d0ed5970203", "title": "Step 40" },
-    { "id": "6916aa12a58d680f31fd7e78", "title": "Step 41" }
+    { "id": "6916aa12a58d680f31fd7e78", "title": "Step 41" },
+    { "id": "691bbc97064dadb6ea5cd7dd", "title": "Step 42" },
+    { "id": "691bbe22a57b48cafdade09e", "title": "Step 43" }
   ],
   "blockType": "workshop",
   "usesMultifileEditor": true
