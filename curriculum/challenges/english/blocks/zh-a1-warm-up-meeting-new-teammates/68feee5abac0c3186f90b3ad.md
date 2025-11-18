@@ -59,7 +59,7 @@ Wang Hua is saying `míng zi`. The first syllable uses a nasal final `ng` and ha
 ```json
 {
   "setup": {
-    "background": "office-cafe.png",
+    "background": "company1-breakroom.png",
     "characters": [
       {
         "character": "Wang Hua",
