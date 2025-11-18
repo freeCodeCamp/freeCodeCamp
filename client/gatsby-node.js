@@ -470,8 +470,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type ChallengeFields {
       slug: String
-      blockName: String
-      tests: [Test]
     }
     type Nodule {
       type: String

@@ -7,7 +7,8 @@ describe('add-video-question plugin', () => {
     videoAST,
     multipleQuestionAST,
     videoOutOfOrderAST,
-    videoWithAudioAST;
+    videoWithAudioAST,
+    chineseVideoAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
 
@@ -21,6 +22,7 @@ describe('add-video-question plugin', () => {
       'with-video-question-out-of-order.md'
     );
     videoWithAudioAST = await parseFixture('with-video-question-audio.md');
+    chineseVideoAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {
@@ -107,7 +109,7 @@ describe('add-video-question plugin', () => {
 
   it('should NOT throw if there is no question', () => {
     expect.assertions(1);
-    expect(() => plugin(simpleAST)).not.toThrow();
+    expect(() => plugin(simpleAST, file)).not.toThrow();
   });
 
   it('should extract audioId from answers when present', () => {
@@ -138,5 +140,40 @@ describe('add-video-question plugin', () => {
   it('should match the video snapshot', () => {
     plugin(videoAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('should render Chinese inline code as ruby in question text, answers, and feedback', async () => {
+    const zhFile = { data: { lang: 'zh-CN' } };
+
+    plugin(chineseVideoAST, zhFile);
+
+    const question = zhFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toContain(
+      '<ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toContain(
+      '<ruby>请<rp>(</rp><rt>qǐng</rt><rp>)</rp></ruby>'
+    );
+    expect(answer2.feedback).toBe(
+      '<p><ruby>请<rp>(</rp><rt>qǐng</rt><rp>)</rp></ruby> is not correct.</p>'
+    );
+
+    const answer3 = question.answers[2];
+    expect(answer3.answer).toContain(
+      '<ruby>请问<rp>(</rp><rt>qǐng wèn</rt><rp>)</rp></ruby>'
+    );
+
+    const answer4 = question.answers[3];
+    expect(answer4.answer).toContain(
+      '<ruby>问<rp>(</rp><rt>wèn</rt><rp>)</rp></ruby>'
+    );
   });
 });

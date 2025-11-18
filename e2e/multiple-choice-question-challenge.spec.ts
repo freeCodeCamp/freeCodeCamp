@@ -4,7 +4,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 const pageWithSpeaking =
   '/learn/b1-english-for-developers/learn-about-adverbial-phrases/task-19';
 const pageWithoutSpeaking =
-  '/learn/full-stack-developer/lecture-what-is-css/what-is-the-basic-anatomy-of-a-css-rule';
+  '/learn/responsive-web-design-v9/lecture-what-is-css/what-is-the-basic-anatomy-of-a-css-rule';
 
 test.describe('Multiple Choice Question Challenge - With Speaking Modal', () => {
   test.beforeEach(async ({ page }) => {

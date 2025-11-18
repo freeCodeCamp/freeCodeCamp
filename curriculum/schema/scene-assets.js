@@ -271,9 +271,13 @@ const availableAudios = [
   'ES_A1_2_vocabulary.mp3',
   'ES_A1_3.1.mp3',
   'ES_A1_3.2.mp3',
+  `ES_A1_first_questions_numbers.mp3`,
   'ES_A1_first_questions_warmup.mp3',
   'ES_A1_alphabet.mp3',
   'ES_A1_alphabet_practice.mp3',
+  'ES_A1_basic_personal_details_numbers_10_29.mp3',
+  'ES_A1_describing_company_and_people_numbers_21_100.mp3',
+  'ES_A1_spanish_fundamentals_numbers_0_9.mp3',
   'ES_A1_vowels.mp3',
   'ES_A1_vowels_aiu.mp3',
   'ES_A1_vowels_oiu.mp3',
@@ -281,7 +285,8 @@ const availableAudios = [
   'ZH_A1_1.1.mp3',
   'ZH_A1_1.2.mp3',
   'ZH_A1_1.3.mp3',
-  'ZH_A1_1.4.mp3'
+  'ZH_A1_1.4.mp3',
+  'ZH_A1_warmup_vocabulary.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

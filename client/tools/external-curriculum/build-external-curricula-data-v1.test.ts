@@ -145,7 +145,8 @@ describe('external curriculum data build', () => {
         return (
           stage !== SuperBlockStage.Next &&
           stage !== SuperBlockStage.Upcoming &&
-          stage !== SuperBlockStage.Catalog
+          stage !== SuperBlockStage.Catalog &&
+          stage !== SuperBlockStage.Core
         );
       })
       .flatMap(([, superBlocks]) => superBlocks);

@@ -37,11 +37,9 @@ query {
           id
           title
           description
-          fields {
-            tests {
+          tests {
               testString
               text
-            }
           }
           challengeFiles {
             contents
@@ -78,14 +76,14 @@ export function combineChallenges({
     id: jsId,
     title: jsTitle,
     description: jsDescription,
-    fields: { tests: jsTests },
+    tests: jsTests,
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
 
   const {
     title: pyTitle,
     description: pyDescription,
-    fields: { tests: pyTests },
+    tests: pyTests,
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
 

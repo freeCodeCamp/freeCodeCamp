@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Certificação Inglês A2 para Desenvolvedores (Beta)",
+    "title": "A2 English for Developers Certification",
     "intro": [
       "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
       "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
@@ -5143,6 +5143,7 @@
   },
   "javascript-v9": {
     "title": "Certificação JavaScript",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "Este curso ensina conceitos fundamentais de programação JavaScript, como trabalhar com variáveis, funções, objetos, arrays e controle de fluxo. Você também aprenderá a manipular o DOM, lidar com eventos, e aplicar técnicas como programação funcional, assíncrona e práticas recomendadas de acessibilidade.",
       "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
@@ -5156,6 +5157,12 @@
     "chapters": {
       "javascript": "JavaScript",
       "javascript-certification-exam": "Exame de certificação de JavaScript"
+    },
+    "module-intros": {
+      "javascript-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
     },
     "modules": {
       "javascript-variables-and-strings": "Variáveis e Strings",
@@ -5281,6 +5288,12 @@
           "Nesta aula, você aprenderá a formatar strings mudando seu caso usando os métodos <code>toUpperCase()</code> e <code>toLowerCase()</code>, e como remover espaços em branco usando os métodos <code>trim()</code>, <code>trimStart()</code> e <code>trimEnd()</code>."
         ]
       },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
+        ]
+      },
       "lecture-working-with-string-modification-methods": {
         "title": "Trabalhando com Métodos de Modificação de Strings",
         "intro": [
@@ -5312,10 +5325,24 @@
           "Nestas aulas, você aprenderá sobre o tipo número, operadores aritméticos e como usá-los com números e strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Trabalhando com Comportamento de Operadores",
         "intro": [
           "Nestas aulas, você aprenderá sobre a precedência de operadores, operadores de incremento e decremento, e operadores de atribuição composta."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -6386,6 +6413,8 @@
     "modules": {
       "react-fundamentals": "Fundamentos do React",
       "react-state-hooks-and-routing": "Estado, Hooks e Roteamento no React",
+      "lab-currency-converter": "Build a Currency Converter",
+      "lab-tic-tac-toe": "Build a Tic-Tac-Toe Game",
       "performance": "Desempenho",
       "testing": "Testes",
       "css-libraries-and-frameworks": "Bibliotecas e Frameworks do CSS",
@@ -6396,19 +6425,19 @@
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Disponível no Inverno de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Neste módulo, você conhecerá a visualização de dados e aprenderá a trabalhar com a biblioteca D3."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Próximo Lançamento: Outono de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Neste módulo, você será apresentado ao TypeScript, que é um superset do JavaScript que permite adicionar tipagem estática ao seu código JavaScript. Você realizará vários workshops e laboratórios que darão a você prática trabalhando com genéricos, narrowing de tipos, TSX e mais. Depois, testará seu conhecimento em fundamentos do TypeScript com um pequeno questionário."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Disponível no Inverno de 2025",
+        "note": "Coming 2026",
         "intro": [
           "Passe neste exame para conquistar a Certificação de Bibliotecas de Desenvolvimento Front-End."
         ]
@@ -6737,11 +6766,16 @@
       "python-basics": "Noções básicas de Python",
       "python-loops-and-sequences": "Laços e Sequências",
       "python-dictionaries-and-sets": "Dicionários e Conjuntos",
+      "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Tratamento de Erros",
       "python-classes-and-objects": "Classes e Objetos",
+      "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Programação Orientada a Objetos (OOP)",
+      "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Estruturas de Dados Lineares",
+      "lab-hash-table": "Build a Hash Table",
       "python-algorithms": "Algoritmos",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Grafos e Árvores",
       "python-dynamic-programming": "Programação Dinâmica",
       "review-python": "Revisão de Python",
@@ -6992,6 +7026,12 @@
         "title": "Compreendendo a Abstração",
         "intro": ["Aprenda sobre a Compreensão da Abstração nessas lições."]
       },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
       "lab-player-interface": {
         "title": "Criar uma interface de jogador",
         "intro": [
@@ -7109,6 +7149,12 @@
         "title": "Compreendendo Grafos e Árvores",
         "intro": [
           "Nesta lição, você aprenderá sobre estruturas de dados fundamentais como grafos, árvores e suas aplicações práticas em ciência da computação."
+        ]
+      },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
         ]
       },
       "lab-adjacency-list-to-matrix-converter": {
@@ -7542,6 +7588,12 @@
         "intro": [
           "Aprenda os fundamentos de como a comunicação web funciona através do modelo de requisição-resposta HTTP, explore diferentes tipos de ativos e respostas web e entenda como os formulários lidam com o envio de dados usando vários métodos HTTP."
         ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
       }
     }
   },
@@ -7550,14 +7602,7 @@
     "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the following certifications:",
-      "- Responsive Web Design Certification",
-      "- JavaScript Certification",
-      "- Front End Development Libraries Certification",
-      "- Python Certification",
-      "- Relational Databases Certification",
-      "- Back End Development and APIs Certification",
-      "Pass the exam to earn your Full Stack Developer Certification."
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Exame de Desenvolvedor Full Stack Certificado"
@@ -7569,7 +7614,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Próximo Lançamento: Final de 2026",
         "intro": [
-          "Este será um exame de 90 questões testando o que você aprendeu ao longo desta certificação."
+          "This exam will test what you have learned throughout the previous six certifications."
         ]
       }
     },
@@ -7725,6 +7770,7 @@
   },
   "responsive-web-design-v9": {
     "title": "Certificação de Design Responsivo para a Web",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "Este curso ensina os fundamentos de HTML e CSS, incluindo design de layout moderno, design, acessibilidade e desenvolvimento web responsivo. Você criará projetos práticos e adquirirá as habilidades necessárias para criar páginas da web profissionais e fáceis de usar.",
       "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
@@ -7739,6 +7785,14 @@
       "html": "HTML",
       "css": "CSS",
       "responsive-web-design-certification-exam": "Exame de Certificação de Design Responsivo para a Web"
+    },
+    "module-intros": {
+      "responsive-web-design-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification."
+        ]
+      }
     },
     "modules": {
       "basic-html": "HTML Básico",
@@ -7825,6 +7879,12 @@
           "Nestes cursos, você aprenderá sobre fundamentos do HTML, como o elemento <code>div</code>, os atributos <code>id</code> e <code>class</code>, o boilerplate HTML, entidades HTML e outros conceitos."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Entendendo Como o HTML Afeta o SEO",
         "intro": [
@@ -7909,6 +7969,12 @@
         "title": "Entendendo Elementos Semânticos Nuançados",
         "intro": [
           "Nestes cursos, você aprenderá quando deve usar certos elementos semânticos, como o elemento <code>em</code> em vez do <code>i</code>, listas de descrição, e mais."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
         ]
       },
       "lecture-working-with-text-and-time-semantic-elements": {
@@ -9106,6 +9172,7 @@
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Cursos",
+    "requirements": "Requirements",
     "steps": "Passos",
     "expand": "Expandir o curso",
     "collapse": "Recolher o curso",
