@@ -15,6 +15,7 @@
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
+    "@vitest/eslint-plugin": "^1.4.3",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",

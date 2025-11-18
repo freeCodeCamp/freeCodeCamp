@@ -56,7 +56,6 @@
     "prisma": "6.16.2",
     "supertest": "6.3.3",
     "tsx": "4.19.1",
-    "typescript-eslint": "^8.33.0",
     "vitest": "^3.2.4"
   },
   "engines": {

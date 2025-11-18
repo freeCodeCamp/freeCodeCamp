@@ -63,7 +63,6 @@
     "puppeteer": "22.12.1",
     "sirv": "^3.0.2",
     "string-similarity": "4.0.4",
-    "typescript-eslint": "^8.46.4",
     "vitest": "^3.2.4"
   }
 }

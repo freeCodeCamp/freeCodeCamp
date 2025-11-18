@@ -94,7 +94,6 @@
     "@types/lodash": "4.14.202",
     "@types/node": "20.12.8",
     "@types/testing-library__jest-dom": "^5.14.5",
-    "@vitest/eslint-plugin": "^1.3.12",
     "debug": "4.3.4",
     "globals": "^15.14.0",
     "husky": "9.0.11",
