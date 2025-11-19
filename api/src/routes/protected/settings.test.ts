@@ -1073,6 +1073,11 @@ Happy coding!
     });
 
     describe('/update-my-classroom-mode', () => {
+      // IMPORTANT: Classroom mode is a ONE-WAY operation (like isHonest).
+      // Once enabled, it CANNOT be disabled via the API.
+      // This is intentional business logic to prevent accidental disabling.
+      // The schema uses Type.Literal(true) to enforce this at the type level.
+
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superPut('/update-my-classroom-mode').send({
           isClassroomAccount: true
@@ -1095,9 +1100,20 @@ Happy coding!
         expect(response.statusCode).toEqual(400);
       });
 
+      test('PUT returns 400 when attempting to set classroom mode to false (one-way operation)', async () => {
+        // This test documents that classroom mode cannot be disabled once enabled.
+        // DO NOT change this behavior without product approval.
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: false
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
       test('After updating the classroom mode, the user should have this property set', async () => {
         await superPut('/update-my-classroom-mode').send({
-          isClassroomAccount: false
+          isClassroomAccount: true
         });
 
         const user = await fastifyTestInstance?.prisma.user.findFirst({
@@ -1106,7 +1122,7 @@ Happy coding!
           }
         });
 
-        expect(user?.isClassroomAccount).toEqual(false);
+        expect(user?.isClassroomAccount).toEqual(true);
       });
     });
   });

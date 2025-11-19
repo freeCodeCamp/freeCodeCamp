@@ -8,7 +8,8 @@ import { ShowSettings } from './show-settings';
 
 vi.mock('../analytics');
 vi.mock('@growthbook/growthbook-react', () => ({
-  useFeatureIsOn: () => false
+  useFeatureIsOn: () => false,
+  IfFeatureEnabled: ({ children }: { children: React.ReactNode }) => null
 }));
 
 const { apiLocation } = envData as Record<string, string>;
