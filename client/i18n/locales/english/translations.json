@@ -1314,7 +1314,8 @@
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

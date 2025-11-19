@@ -19,10 +19,15 @@ import { connect } from 'react-redux';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
-import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  CompletedChallenge,
+  User
+} from '../../../redux/prop-types';
 import {
   completedChallengesSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  userSelector
 } from '../../../redux/selectors';
 import { examAttempts } from '../../../utils/ajax';
 import MissingPrerequisites from '../exam/components/missing-prerequisites';
@@ -43,14 +48,17 @@ const mapStateToProps = createSelector(
   completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
+  userSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
-    isSignedIn: boolean
+    isSignedIn: boolean,
+    user: User | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
-    isSignedIn
+    isSignedIn,
+    user
   })
 );
 
@@ -62,6 +70,7 @@ interface ShowExamDownloadProps {
   completedChallenges: CompletedChallenge[];
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  user: User | null;
 }
 
 function ShowExamDownload({
@@ -73,7 +82,8 @@ function ShowExamDownload({
   },
   completedChallenges,
   isChallengeCompleted,
-  isSignedIn
+  isSignedIn,
+  user
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
@@ -217,7 +227,7 @@ function ShowExamDownload({
                 <h2>{t('exam.attempts')}</h2>
                 <Attempts examChallengeId={id} />
                 <Spacer size='l' />
-                <ExamTokenControls />
+                <ExamTokenControls email={user!.email} />
               </>
             )}
             <p>
