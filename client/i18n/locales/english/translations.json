@@ -281,7 +281,7 @@
     "disabled": "Your certifications will be disabled, if set to private.",
     "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
-    "for": "Account Settings for {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
     "scrollbar-width": "Editor Scrollbar Width",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings",
+      "privacy": "Privacy",
       "personal-info": "Personal Information"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
-      "heading": "Email Settings",
+      "heading": "Email",
       "not-verified": "Your email has not been verified.",
       "check": "Please check your email, or <0>request a new verification email here</0>.",
       "current": "Current Email",

@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow } from '../helpers';
 
-import SoundSettings from '../../components/settings/sound';
-import KeyboardShortcutsSettings from '../../components/settings/keyboard-shortcuts';
-import ScrollbarWidthSettings from '../../components/settings/scrollbar-width';
+import SoundSettings from './sound';
+import KeyboardShortcutsSettings from './keyboard-shortcuts';
+import ScrollbarWidthSettings from './scrollbar-width';
+import SectionHeader from './section-header';
 
 type MiscSettingsProps = {
   keyboardShortcuts: boolean;
@@ -27,8 +28,8 @@ const MiscSettings = ({
   const { t } = useTranslation();
 
   return (
-    <>
-      <Spacer size='m' />
+    <div className='account-settings'>
+      <SectionHeader>{t('settings.headings.account')}</SectionHeader>
       <FullWidthRow>
         <SoundSettings sound={sound} toggleSoundMode={toggleSoundMode} />
         <KeyboardShortcutsSettings
@@ -51,7 +52,7 @@ const MiscSettings = ({
           {t('settings.reset-editor-layout')}
         </Button>
       </FullWidthRow>
-    </>
+    </div>
   );
 };
 

@@ -385,7 +385,9 @@ function CertificationSettings(props: CertificationSettingsProps) {
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
-      <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      <Element name='legacy-certifications'>
+        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      </Element>
       <LegacyFullStack {...props} />
       {legacyCertifications.map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
