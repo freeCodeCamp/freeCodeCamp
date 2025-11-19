@@ -18,13 +18,24 @@ const compat = new FlatCompat({
   baseDirectory: __dirname
 });
 
+export const jsFiles = ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'];
+export const tsFiles = ['**/*.ts', '**/*.tsx'];
+const testFiles = [
+  '**/*.test.js',
+  '**/*.test.jsx',
+  '**/*.test.mjs',
+  '**/*.test.cjs',
+  '**/*.test.ts',
+  '**/*.test.tsx'
+];
+
 const base = defineConfig(
   { ignores: ['dist'] },
   js.configs.recommended,
   eslintConfigPrettier,
   {
     ...vitest.configs.recommended,
-    files: ['**/*.test.js', '**/*.test.jsx', '**/*.test.ts', '**/*.test.tsx']
+    files: testFiles
   },
   {
     plugins: {
@@ -43,7 +54,7 @@ const base = defineConfig(
     rules: {
       'no-unused-expressions': 'error'
     }, // This is so the js rules are more in line with the ts rules
-    files: ['**/*.js?(x)']
+    files: jsFiles
   },
   {
     rules: {
@@ -56,7 +67,7 @@ const base = defineConfig(
         }
       ]
     },
-    files: ['**/*.ts?(x)']
+    files: tsFiles
   }
 );
 
@@ -66,7 +77,7 @@ const base = defineConfig(
  * @type {import("eslint").Linter.Config[]}
  * */
 export const config = defineConfig(...base, {
-  files: ['**/*.ts?(x)'],
+  files: tsFiles,
   extends: [tseslint.configs.recommended]
 });
 
@@ -78,7 +89,7 @@ export const config = defineConfig(...base, {
 export const configTypeChecked = defineConfig(
   ...base,
   {
-    files: ['**/*.ts?(x)'],
+    files: tsFiles,
     extends: [tseslint.configs.recommendedTypeChecked]
   },
   {
@@ -103,13 +114,13 @@ export const configReact = [
 export const configImports = defineConfig(
   importPlugin.flatConfigs.recommended,
   {
-    files: ['**/*.ts?(x)'],
+    files: tsFiles,
     extends: [importPlugin.flatConfigs['typescript']]
   }
 );
 
 export const configTestingLibrary = defineConfig({
-  files: ['**/*.test.[jt]s?(x)'],
+  files: testFiles,
 
   extends: [testingLibraryPlugin.configs['flat/react']]
 });

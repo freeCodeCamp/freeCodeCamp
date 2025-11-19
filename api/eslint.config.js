@@ -1,4 +1,4 @@
-import { configTypeChecked } from '@freecodecamp/eslint-config/base';
+import { configTypeChecked, tsFiles } from '@freecodecamp/eslint-config/base';
 
 import jsdoc from 'eslint-plugin-jsdoc';
 
@@ -31,6 +31,6 @@ export default [
       'jsdoc/require-description-complete-sentence': 'error',
       'jsdoc/tag-lines': 'off'
     },
-    files: ['src/**/*.ts']
+    files: tsFiles
   }
 ];

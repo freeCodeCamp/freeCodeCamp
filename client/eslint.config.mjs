@@ -3,7 +3,9 @@ import {
   configTypeChecked,
   configReact,
   configImports,
-  configTestingLibrary
+  configTestingLibrary,
+  jsFiles,
+  tsFiles
 } from '@freecodecamp/eslint-config/base';
 import globals from 'globals';
 import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
@@ -53,7 +55,7 @@ const baseConfig = {
 export default defineConfig(
   { ignores: ['static', '.cache', 'public', 'node_modules'] },
   {
-    files: ['**/*.js?(x)', '**/*.mjs', '**/*.cjs'],
+    files: jsFiles,
     extends: [configReact, configImports, configTestingLibrary, config],
     ...baseConfig,
     languageOptions: {
@@ -72,7 +74,7 @@ export default defineConfig(
     }
   },
   {
-    files: ['**/*.ts?(x)'],
+    files: tsFiles,
     extends: [
       configReact,
       configImports,
