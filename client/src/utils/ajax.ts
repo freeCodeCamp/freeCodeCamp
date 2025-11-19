@@ -456,8 +456,9 @@ export const examAttempts = createApi({
   baseQuery: retry(
     fetchBaseQuery({
       baseUrl: apiLocation,
-      headers: {
-        'CSRF-Token': getCSRFToken()
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
       },
       credentials: 'include'
     }),
@@ -483,8 +484,9 @@ export const examEnvironmentAuthorizationTokenApi = createApi({
   baseQuery: retry(
     fetchBaseQuery({
       baseUrl: apiLocation,
-      headers: {
-        'CSRF-Token': getCSRFToken()
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
       },
       credentials: 'include'
     }),
