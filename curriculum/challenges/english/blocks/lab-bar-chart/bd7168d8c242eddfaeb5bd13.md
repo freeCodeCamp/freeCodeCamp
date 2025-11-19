@@ -8,7 +8,7 @@ demoType: onClick
 
 # --description--
 
-In this project you will use the data from `https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json` to build a bar chart.
+In this project you will use the data from `https://cdn.freecodecamp.org/curriculum/labs/data/bar-chart/GDP-data.json` to build a bar chart.
 
 The tests require axes to be generated using the D3 axis property, which automatically generates ticks along the axis. These ticks are required for passing the D3 tests because their positions are used to determine alignment of graphed elements.
 
@@ -1805,7 +1805,7 @@ var svgContainer = d3
   .attr('height', height + 60);
 
 d3.json(
-  'https://cdn.freecodecamp.org/project-data/bar-chart/GDP-data.json'
+  'https://cdn.freecodecamp.org/curriculum/labs/data/bar-chart/GDP-data.json'
 )
   .then(data => {
     svgContainer
