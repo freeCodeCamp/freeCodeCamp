@@ -2,13 +2,11 @@ import {
   config,
   configTypeChecked,
   configReact,
-  configImports,
   configTestingLibrary,
   jsFiles,
   tsFiles
 } from '@freecodecamp/eslint-config/base';
 import globals from 'globals';
-import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
 
 import { defineConfig } from 'eslint/config';
 
@@ -56,11 +54,10 @@ export default defineConfig(
   { ignores: ['static', '.cache', 'public', 'node_modules'] },
   {
     files: jsFiles,
-    extends: [configReact, configImports, configTestingLibrary, config],
+    extends: [configReact, configTestingLibrary, config],
     ...baseConfig,
     languageOptions: {
       ...baseLanguageOptions,
-      parser: babelParser,
 
       parserOptions: {
         babelOptions: {
@@ -69,15 +66,11 @@ export default defineConfig(
         }
       }
     },
-    rules: {
-      'import/no-unresolved': [2, { commonjs: true }]
-    }
   },
   {
     files: tsFiles,
     extends: [
       configReact,
-      configImports,
       configTestingLibrary,
       configTypeChecked
     ],

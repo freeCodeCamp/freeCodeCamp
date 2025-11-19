@@ -10,6 +10,7 @@ import reactPlugin from 'eslint-plugin-react';
 import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
+import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
 
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -38,25 +39,46 @@ const base = defineConfig(
     files: testFiles
   },
   {
-    plugins: {
-      'no-only-tests': noOnlyTests,
-      'filenames-simple': fixupPluginRules(filenamesSimple)
-    },
+    extends: [importPlugin.flatConfigs.recommended],
+    settings: { 'import/resolver': { node: true, typescript: true } },
     rules: {
-      'filenames-simple/naming-convention': ['error'],
-      'no-only-tests/no-only-tests': 'error',
       // TODO: fix the errors, allow the rules.
       'import/no-named-as-default': 'off',
       'import/no-named-as-default-member': 'off'
     }
   },
   {
+    plugins: {
+      'no-only-tests': noOnlyTests,
+      'filenames-simple': fixupPluginRules(filenamesSimple)
+    },
     rules: {
-      'no-unused-expressions': 'error'
-    }, // This is so the js rules are more in line with the ts rules
-    files: jsFiles
+      'filenames-simple/naming-convention': ['error'],
+      'no-only-tests/no-only-tests': 'error'
+    }
   },
   {
+    files: jsFiles,
+    rules: {
+      'no-unused-expressions': 'error', // This is so the js rules are more in line with the ts rules
+      'import/no-unresolved': [2, { commonjs: true }] // commonjs is necessary while we still use require()
+    },
+    languageOptions: {
+      parser: babelParser,
+      parserOptions: {
+        requireConfigFile: false
+      }
+    }
+  },
+  {
+    files: tsFiles,
+    extends: [importPlugin.flatConfigs['typescript']],
+    rules: {
+      'import/no-unresolved': 'off' // handled by TS
+    }
+  },
+  {
+    files: tsFiles,
     rules: {
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -66,8 +88,7 @@ const base = defineConfig(
           caughtErrorsIgnorePattern: '^_'
         }
       ]
-    },
-    files: tsFiles
+    }
   }
 );
 
@@ -111,16 +132,7 @@ export const configReact = [
   )
 ];
 
-export const configImports = defineConfig(
-  importPlugin.flatConfigs.recommended,
-  {
-    files: tsFiles,
-    extends: [importPlugin.flatConfigs['typescript']]
-  }
-);
-
 export const configTestingLibrary = defineConfig({
   files: testFiles,
-
   extends: [testingLibraryPlugin.configs['flat/react']]
 });

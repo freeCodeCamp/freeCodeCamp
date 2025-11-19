@@ -138,7 +138,6 @@
     "xterm-addon-fit": "^0.8.0"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "7.26.5",
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@freecodecamp/eslint-config": "workspace:*",
     "@testing-library/jest-dom": "^6.8.0",
