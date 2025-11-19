@@ -22,6 +22,7 @@ import {
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
+import { liveCerts } from '../../../config/cert-and-project-map';
 import './completion-modal.css';
 import callGA from '../../../analytics/call-ga';
 
@@ -154,12 +155,18 @@ class CompletionModal extends Component<
       message,
       t,
       dashedName,
-      submitChallenge
+      submitChallenge,
+      id
     } = this.props;
 
     const isMacOS = navigator.userAgent.includes('Mac OS');
 
     const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+
+    // Check if this is a certification project
+    const isCertificationProject = liveCerts.some(cert =>
+      cert.projects?.some((project: { id: string }) => project.id === id)
+    );
 
     let buttonText;
     if (isDesktop) {
@@ -186,7 +193,9 @@ class CompletionModal extends Component<
         // eslint-disable-next-line @typescript-eslint/unbound-method
         onKeyDown={isOpen ? this.handleKeypress : undefined}
       >
-        <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
+        <Modal.Header closeButtonClassNames='close'>
+          {isCertificationProject ? '' : message}
+        </Modal.Header>
         <Modal.Body className='completion-modal-body'>
           <GreenPass
             className='completion-success-icon'
