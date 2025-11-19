@@ -1,4 +1,5 @@
 import {
+  config,
   configTypeChecked,
   configReact,
   configImports,
@@ -9,26 +10,54 @@ import babelParser from '@babel/eslint-parser'; // TODO: can we get away from us
 
 import { defineConfig } from 'eslint/config';
 
+const baseLanguageOptions = {
+  globals: {
+    ...globals.browser,
+    ...globals.mocha,
+    ...globals.node,
+    Promise: true,
+    window: true,
+    $: true,
+    ga: true,
+    jQuery: true,
+    router: true,
+    globalThis: true
+  }
+};
+
+const baseConfig = {
+  settings: {
+    react: {
+      version: '16.4.2'
+    },
+
+    'import/resolver': {
+      typescript: true,
+      node: true
+    }
+  },
+
+  rules: {
+    'import/no-cycle': [
+      2,
+      {
+        maxDepth: 2
+      }
+    ],
+    'react/prop-types': 'off',
+    'react/jsx-no-useless-fragment': 'error'
+  }
+};
+
 // Order matters here; later configs can override settings in earlier ones.
 export default defineConfig(
   { ignores: ['static', '.cache', 'public', 'node_modules'] },
-  ...configReact,
-  ...configImports,
-  ...configTestingLibrary,
   {
+    files: ['**/*.js?(x)', '**/*.mjs', '**/*.cjs'],
+    extends: [configReact, configImports, configTestingLibrary, config],
+    ...baseConfig,
     languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.mocha,
-        ...globals.node,
-        Promise: true,
-        window: true,
-        $: true,
-        ga: true,
-        jQuery: true,
-        router: true,
-        globalThis: true
-      },
+      ...baseLanguageOptions,
       parser: babelParser,
 
       parserOptions: {
@@ -38,28 +67,21 @@ export default defineConfig(
         }
       }
     },
-
-    settings: {
-      react: {
-        version: '16.4.2'
-      },
-
-      'import/resolver': {
-        typescript: true,
-        node: true
-      }
-    },
-
     rules: {
-      'import/no-cycle': [
-        2,
-        {
-          maxDepth: 2
-        }
-      ],
-      'react/prop-types': 'off',
-      'react/jsx-no-useless-fragment': 'error'
+      'import/no-unresolved': [2, { commonjs: true }]
     }
   },
-  ...configTypeChecked
+  {
+    files: ['**/*.ts?(x)'],
+    extends: [
+      configReact,
+      configImports,
+      configTestingLibrary,
+      configTypeChecked
+    ],
+    ...baseConfig,
+    languageOptions: {
+      ...baseLanguageOptions
+    }
+  }
 );

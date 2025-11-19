@@ -18,13 +18,13 @@ const compat = new FlatCompat({
   baseDirectory: __dirname
 });
 
-const base = [
+const base = defineConfig(
   { ignores: ['dist'] },
   js.configs.recommended,
   eslintConfigPrettier,
   {
     ...vitest.configs.recommended,
-    files: ['**/*.test.[jt]s?(x)']
+    files: ['**/*.test.js', '**/*.test.jsx', '**/*.test.ts', '**/*.test.tsx']
   },
   {
     plugins: {
@@ -58,7 +58,7 @@ const base = [
     },
     files: ['**/*.ts?(x)']
   }
-];
+);
 
 /**
  * A shared ESLint configuration for the repository.

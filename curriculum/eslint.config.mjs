@@ -1,4 +1,5 @@
 import { config } from '@freecodecamp/eslint-config/base';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
 
 /**
@@ -6,22 +7,20 @@ import globals from 'globals';
  *
  * @type {import("eslint").Linter.Config[]}
  * */
-export default [
-  ...config,
-  {
-    languageOptions: {
-      globals: {
-        ...globals.browser,
-        ...globals.mocha,
-        ...globals.node,
-        Promise: true,
-        window: true,
-        $: true,
-        ga: true,
-        jQuery: true,
-        router: true,
-        globalThis: true
-      }
+export default defineConfig({
+  extends: [config],
+  languageOptions: {
+    globals: {
+      ...globals.browser,
+      ...globals.mocha,
+      ...globals.node,
+      Promise: true,
+      window: true,
+      $: true,
+      ga: true,
+      jQuery: true,
+      router: true,
+      globalThis: true
     }
   }
-];
+});
