@@ -159,8 +159,7 @@ export function getLoginRedirectParams(
   const params = getParamsFromUrl(url, _normalizeParams);
 
   if (haveSamePath(params.origin, params.returnTo)) {
-    const prefixSegment = params.pathPrefix ? `/${params.pathPrefix}` : '';
-    params.returnTo = `${params.origin}${prefixSegment}/learn`;
+    params.returnTo = `${params.origin}/learn`;
   }
 
   return params;
