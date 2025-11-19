@@ -177,7 +177,7 @@ test.describe('Daily Coding Challenges', () => {
       '// JavaScript seed code'
     );
 
-    // Show show Python UI after changing language
+    // Show Python UI after changing language
     await page.getByRole('button', { name: /python/i }).click();
 
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
