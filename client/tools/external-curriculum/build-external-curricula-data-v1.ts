@@ -2,7 +2,6 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
-import { type ChallengeNode } from '../../../client/src/redux/prop-types';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
 import { patchBlock } from './patches';
 
@@ -22,7 +21,7 @@ export type Curriculum<T> = {
 
 export interface CurriculumProps {
   intro: string[];
-  blocks: Record<string, Block<ChallengeNode['challenge'][]>>;
+  blocks: Record<string, Block<{ id: string }[]>>;
 }
 
 export interface GeneratedCurriculumProps {
@@ -126,14 +125,14 @@ export function buildExtCurriculumDataV1(
 
         superBlock[superBlockKey]['blocks'][blockName]['challenges'] =
           patchBlock(
-            omit(curriculum[superBlockKey]['blocks'][blockName]['meta'], [
+            omit(curriculum[superBlockKey]['blocks'][blockName]?.meta, [
               'chapter',
               'module'
             ])
           );
 
         const blockChallenges =
-          curriculum[superBlockKey]['blocks'][blockName]['challenges'];
+          curriculum[superBlockKey]['blocks'][blockName]?.challenges;
 
         for (const challenge of blockChallenges) {
           const challengeId = challenge.id;

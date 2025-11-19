@@ -112,7 +112,9 @@ describe('external curriculum data build', () => {
         'utf-8'
       );
 
-      const result = validateSuperBlock(JSON.parse(fileContent));
+      const result = validateSuperBlock(
+        JSON.parse(fileContent) as Record<string, unknown>
+      );
 
       expect(result.error?.details).toBeUndefined();
       expect(result.error).toBeFalsy();
@@ -280,7 +282,7 @@ describe('external curriculum data build', () => {
     expect(stages).not.toContain('upcoming');
 
     for (const stage of stages) {
-      const superBlockDashedNames = orderedSuperBlockInfo[stage].map(
+      const superBlockDashedNames = orderedSuperBlockInfo[stage]?.map(
         superBlock => superBlock.dashedName
       );
 

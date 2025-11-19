@@ -2,7 +2,7 @@ import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
 import { submitTypes } from '../../../shared-dist/config/challenge-types';
-import { type ChallengeNode } from '../../../client/src/redux/prop-types';
+import { type ChallengeNode } from '../../src/redux/prop-types';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
