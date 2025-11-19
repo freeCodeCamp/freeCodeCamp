@@ -114,12 +114,6 @@
   },
   "packageManager": "pnpm@10.20.0",
   "pnpm": {
-    "overrides": {
-      "@typescript-eslint/eslint-plugin": "8.47.0",
-      "@typescript-eslint/parser": "8.47.0",
-      "@typescript-eslint/typescript-estree": "8.47.0",
-      "@typescript-eslint/utils": "8.47.0"
-    },
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
       "@prisma/client",
