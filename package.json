@@ -52,9 +52,8 @@
     "knip:all": "npx -y knip@5 ",
     "prelint": "pnpm run -F=client predevelop",
     "lint": "NODE_OPTIONS=\"--max-old-space-size=7168\" npm-run-all compile:ts -p lint:*",
-    "lint-root": "eslint",
     "lint:challenges": "cd ./curriculum && pnpm run lint-challenges",
-    "lint:js": "eslint --cache --max-warnings 0 .",
+    "lint:js": "eslint --cache --max-warnings 0 e2e",
     "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client && tsc -p curriculum",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
@@ -85,9 +84,11 @@
     "playwright:watch": "playwright test --ui-port=0"
   },
   "dependencies": {
-    "dotenv": "16.4.5"
+    "dotenv": "16.4.5",
+    "eslint": "^9.39.1"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "@playwright/test": "^1.47.1",
     "@testing-library/dom": "10.4.0",
     "@testing-library/jest-dom": "6.6.3",
