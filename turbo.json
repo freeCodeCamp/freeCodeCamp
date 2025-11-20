@@ -1,9 +1,20 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
-    "lint": {
-      "dependsOn": ["^lint"]
+    "lint": {},
+    "@freecodecamp/client#lint": {
+      "dependsOn": ["@freecodecamp/curriculum#compile"]
     },
-    "//#lint": {}
+    "@freecodecamp/gatsby-source-challenges#lint": {
+      "dependsOn": ["@freecodecamp/curriculum#compile"]
+    },
+    "//#lint": {
+      "dependsOn": [
+        "@freecodecamp/curriculum#compile",
+        "@freecodecamp/curriculum#build"
+      ]
+    },
+    "compile": {},
+    "build": { "dependsOn": ["compile"] }
   }
 }
