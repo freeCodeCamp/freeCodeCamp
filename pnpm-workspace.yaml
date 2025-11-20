@@ -22,4 +22,4 @@ packageExtensions:
       vitest: '*'
 
 hoistPattern:
-  - "!*eslint*"
+  - '!*eslint*'
