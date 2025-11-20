@@ -212,7 +212,8 @@ const characterImages = {
     eyesClosed: `${character.elena}/eyes-closed.png`,
     eyesOpen: `${character.elena}/eyes-open.png`,
     glasses: null,
-    mouthClosed: `${character.elena}/mouth-smile.png`
+    mouthClosed: `${character.elena}/mouth-smile.png`,
+    mouthOpen: `${character.elena}/mouth-open.png`
   },
   julieta: {
     base: `${character.julieta}/base.png`,
