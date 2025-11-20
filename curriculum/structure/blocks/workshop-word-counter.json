@@ -1,0 +1,11 @@
+{
+  "name": "Build a Word Counter",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-word-counter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "691f7bbf76229bb97c60827d", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

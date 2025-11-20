@@ -6318,6 +6318,12 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-word-counter": {
+        "title": "Build a Word Counter",
+        "intro": [
+          "In this workshop, you will practice using <code>for</code> loops by building a function that counts the occurrences of a string in an array of strings."
+        ]
       }
     }
   },
