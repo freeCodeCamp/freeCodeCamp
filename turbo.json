@@ -3,7 +3,7 @@
   "tasks": {
     "lint": {},
     "@freecodecamp/client#lint": {
-      "dependsOn": ["@freecodecamp/curriculum#compile"]
+      "dependsOn": ["@freecodecamp/curriculum#compile", "create:env"]
     },
     "@freecodecamp/gatsby-source-challenges#lint": {
       "dependsOn": ["@freecodecamp/curriculum#compile"]
@@ -22,7 +22,8 @@
       ]
     },
     "compile": {},
-    "create:trending": {},
+    "create:trending": { "cache": false },
+    "create:env": {},
     "build": { "dependsOn": ["compile"] }
   }
 }
