@@ -1,4 +1,4 @@
 /* eslint-disable filenames-simple/naming-convention */
-import lintstaged from '@freecodecamp/eslint-config/lintstaged';
+import { createLintStagedConfig } from '@freecodecamp/eslint-config/lintstaged';
 
-export default lintstaged;
+export default createLintStagedConfig(import.meta.dirname);
