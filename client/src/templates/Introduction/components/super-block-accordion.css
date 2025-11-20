@@ -117,6 +117,7 @@ button .block-header-button-text {
 
 .super-block-accordion .module-steps {
   font-size: 0.75em;
+  color: var(--quaternary-color);
 }
 
 .super-block-accordion .chapter-button:hover,
