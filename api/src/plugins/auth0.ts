@@ -124,7 +124,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
-      const { returnTo } = getLoginRedirectParams(req);
+      const { returnTo, origin } = getLoginRedirectParams(req);
 
       let token;
       try {
@@ -184,11 +184,20 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       const { id } = await findOrCreateUser(fastify, email);
 
       reply.setAccessTokenCookie(createAccessToken(id));
+      console.log({ origin, returnTo, HOME_LOCATION });
 
-      void reply.redirectWithMessage(returnTo, {
-        type: 'success',
-        content: 'flash.signin-success'
-      });
+      const homeURL = new URL(HOME_LOCATION);
+      if (homeURL.origin + homeURL.pathname === returnTo) {
+        void reply.redirectWithMessage(`${origin}/learn`, {
+          type: 'success',
+          content: 'flash.signin-success'
+        });
+      } else {
+        void reply.redirectWithMessage(returnTo, {
+          type: 'success',
+          content: 'flash.signin-success'
+        });
+      }
     });
 
     done();
