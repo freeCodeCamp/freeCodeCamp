@@ -24,6 +24,12 @@ const character = {
   sophie: `${characters}/sophie`,
   tom: `${characters}/tom`,
 
+  //Spanish:
+  camila: `${characters}/camila`,
+  elena: `${characters}/elena`,
+  julieta: `${characters}/julieta`,
+  luna: `${characters}/luna`,
+
   // Chinese
   chenNa: `${characters}/chen-na`,
   liHong: `${characters}/li-hong`,
@@ -190,6 +196,42 @@ const characterImages = {
     mouthClosed: `${character.tom}/mouth-smile.png`,
     mouthOpen: `${character.tom}/mouth-laugh.png`
   },
+  //Spanish
+  camila: {
+    base: `${character.camila}/base.png`,
+    brows: `${character.camila}/brows-neutral.png`,
+    eyesClosed: `${character.camila}/eyes-closed.png`,
+    eyesOpen: `${character.camila}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.camila}/mouth-smile.png`,
+    mouthOpen: `${character.camila}/mouth-open.png`
+  },
+  elena: {
+    base: `${character.elena}/base.png`,
+    brows: `${character.elena}/brows-neutral.png`,
+    eyesClosed: `${character.elena}/eyes-closed.png`,
+    eyesOpen: `${character.elena}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.elena}/mouth-smile.png`
+  },
+  julieta: {
+    base: `${character.julieta}/base.png`,
+    brows: `${character.julieta}/brows-neutral.png`,
+    eyesClosed: `${character.julieta}/eyes-closed.png`,
+    eyesOpen: `${character.julieta}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.julieta}/mouth-smile.png`,
+    mouthOpen: `${character.julieta}/mouth-open.png`
+  },
+  luna: {
+    base: `${character.luna}/base.png`,
+    brows: `${character.luna}/brows-neutral.png`,
+    eyesClosed: `${character.luna}/eyes-closed.png`,
+    eyesOpen: `${character.luna}/eyes-open.png`,
+    glasses: null,
+    mouthClosed: `${character.luna}/mouth-smile.png`,
+    mouthOpen: `${character.luna}/mouth-open.png`
+  },
   // Chinese
   chenNa: {
     base: `${character.chenNa}/base.png`,
@@ -295,14 +337,14 @@ export const characterAssets = {
   // Spanish
   Alex: characterImages.npcGirl,
   Ángela: characterImages.sarah,
-  Camila: characterImages.sophie,
+  Camila: characterImages.camila,
   Carlos: characterImages.brian,
-  Elena: characterImages.anna,
+  Elena: characterImages.elena,
   Esteban: characterImages.james,
   Joaquín: characterImages.jake,
-  Julieta: characterImages.maria,
+  Julieta: characterImages.julieta,
   Luis: characterImages.bob,
-  Luna: characterImages.lisa,
+  Luna: characterImages.luna,
   Marisol: characterImages.linda,
   Mateo: characterImages.npcBoy,
   Noelia: characterImages.npcWoman,
