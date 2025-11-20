@@ -160,11 +160,9 @@ const ShowFillInTheBlank = ({
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
-
+  const handleInputChange = (inputIndex: number, value: string): void => {
     const newUserAnswers = [...userAnswers];
-    newUserAnswers[inputIndex] = e.target.value;
+    newUserAnswers[inputIndex] = value;
 
     const newAnswersCorrect = [...answersCorrect];
     newAnswersCorrect[inputIndex] = null;
