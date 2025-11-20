@@ -6686,7 +6686,10 @@
       "- Complete the five required projects to qualify for the certification exam.",
       "- Pass the Python Certification exam."
     ],
-    "chapters": { "python": "Python" },
+    "chapters": {
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
+    },
     "modules": {
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
