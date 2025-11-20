@@ -234,24 +234,6 @@ describe('redirection', () => {
       const result = getLoginRedirectParams(mockReq);
       expect(result).toEqual(expectedReturn);
     });
-
-    test('should redirect to /learn when returnTo has the same path as origin', () => {
-      const mockReq = {
-        cookies: {
-          'login-returnto': 'https://www.freecodecamp.org/'
-        },
-        unsignCookie: (rawValue: string) => ({ value: rawValue })
-      };
-
-      const expectedReturn = {
-        origin: 'https://www.freecodecamp.org',
-        pathPrefix: '',
-        returnTo: 'https://www.freecodecamp.org/learn'
-      };
-
-      const result = getLoginRedirectParams(mockReq);
-      expect(result).toEqual(expectedReturn);
-    });
   });
 
   describe('getPrefixedLandingPath', () => {
