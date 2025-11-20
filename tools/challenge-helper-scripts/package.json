@@ -23,7 +23,7 @@
     "create-project": "tsx create-project",
     "create-language-block": "tsx create-language-block",
     "create-quiz": "tsx create-quiz",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "test": "vitest"
   },
   "devDependencies": {

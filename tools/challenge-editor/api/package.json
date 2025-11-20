@@ -6,7 +6,7 @@
   "scripts": {
     "start": "tsx server.ts",
     "postinstall": "shx cp ./sample.env ./.env",
-    "lint": "eslint"
+    "lint": "eslint --max-warnings 0"
   },
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",

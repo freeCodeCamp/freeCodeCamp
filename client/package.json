@@ -30,7 +30,7 @@
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
     "predevelop": "pnpm run common-setup && pnpm run build:scripts --env development",
     "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby develop --inspect=9230",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "serve": "gatsby serve -p 8000",
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",

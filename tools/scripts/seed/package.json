@@ -9,7 +9,7 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint --max-warnings 0"
   },
   "repository": {
     "type": "git",

@@ -14,7 +14,7 @@
   "scripts": {
     "start": "PORT=3300 vite",
     "build": "tsc && vite build",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "test": "echo \"no tests here yet\"",
     "postinstall": "shx cp ./sample.env ./.env"
   },

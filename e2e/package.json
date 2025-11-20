@@ -2,7 +2,7 @@
   "name": "@freecodecamp/e2e",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint"
+    "lint": "eslint --max-warnings 0"
   },
   "type": "module",
   "author": "freeCodeCamp <team@freecodecamp.org>",

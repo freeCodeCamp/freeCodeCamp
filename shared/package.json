@@ -11,7 +11,7 @@
   },
   "scripts": {
     "test": "vitest",
-    "lint": "eslint"
+    "lint": "eslint --max-warnings 0"
   },
   "type": "module",
   "repository": {
