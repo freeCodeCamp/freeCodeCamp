@@ -1,6 +1,5 @@
 import { isEmpty } from 'lodash-es';
 import React from 'react';
-import sanitizeHtml from 'sanitize-html';
 import i18next from 'i18next';
 
 import './output.css';
@@ -11,7 +10,7 @@ interface OutputProps {
 }
 
 function Output({ defaultOutput, output }: OutputProps): JSX.Element {
-const message = (!isEmpty(output) ? output : defaultOutput;
+  const message = !isEmpty(output) ? output : defaultOutput;
 
   return (
     <pre
