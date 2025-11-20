@@ -8,7 +8,7 @@ import {
 } from '@freecodecamp/eslint-config/base';
 import globals from 'globals';
 
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 
 const baseLanguageOptions = {
   globals: {
@@ -51,7 +51,7 @@ const baseConfig = {
 
 // Order matters here; later configs can override settings in earlier ones.
 export default defineConfig(
-  { ignores: ['static', '.cache', 'public', 'node_modules'] },
+  globalIgnores(['static', '.cache', 'public']),
   {
     files: jsFiles,
     extends: [configReact, configTestingLibrary, config],
@@ -65,15 +65,11 @@ export default defineConfig(
           configFile: './.babelrc.js'
         }
       }
-    },
+    }
   },
   {
     files: tsFiles,
-    extends: [
-      configReact,
-      configTestingLibrary,
-      configTypeChecked
-    ],
+    extends: [configReact, configTestingLibrary, configTypeChecked],
     ...baseConfig,
     languageOptions: {
       ...baseLanguageOptions

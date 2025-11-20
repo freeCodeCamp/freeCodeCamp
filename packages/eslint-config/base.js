@@ -2,7 +2,7 @@ import js from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import tseslint from 'typescript-eslint';
 import vitest from '@vitest/eslint-plugin';
-import { defineConfig } from 'eslint/config';
+import { defineConfig, globalIgnores } from 'eslint/config';
 import noOnlyTests from 'eslint-plugin-no-only-tests';
 import filenamesSimple from 'eslint-plugin-filenames-simple';
 import { fixupConfigRules, fixupPluginRules } from '@eslint/compat';
@@ -31,7 +31,7 @@ const testFiles = [
 ];
 
 const base = defineConfig(
-  { ignores: ['dist'] },
+  globalIgnores(['dist', '.turbo']),
   js.configs.recommended,
   eslintConfigPrettier,
   {
