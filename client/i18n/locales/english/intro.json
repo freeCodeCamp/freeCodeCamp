@@ -7494,6 +7494,12 @@
       }
     },
     "blocks": {
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
