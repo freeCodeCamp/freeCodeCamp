@@ -17,13 +17,13 @@
     },
     "//#lint": {
       "dependsOn": [
-        "@freecodecamp/curriculum#compile",
+        "@freecodecamp/shared#compile",
         "@freecodecamp/curriculum#build"
       ]
     },
     "compile": {},
     "create:trending": { "cache": false },
-    "create:env": {},
+    "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] }
   }
 }
