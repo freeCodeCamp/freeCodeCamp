@@ -24,7 +24,7 @@ const character = {
   sophie: `${characters}/sophie`,
   tom: `${characters}/tom`,
 
-  //Spanish:
+  // Spanish:
   camila: `${characters}/camila`,
   elena: `${characters}/elena`,
   julieta: `${characters}/julieta`,
@@ -196,7 +196,7 @@ const characterImages = {
     mouthClosed: `${character.tom}/mouth-smile.png`,
     mouthOpen: `${character.tom}/mouth-laugh.png`
   },
-  //Spanish
+  // Spanish
   camila: {
     base: `${character.camila}/base.png`,
     brows: `${character.camila}/brows-neutral.png`,
