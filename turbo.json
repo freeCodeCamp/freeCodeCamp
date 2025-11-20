@@ -8,6 +8,13 @@
     "@freecodecamp/gatsby-source-challenges#lint": {
       "dependsOn": ["@freecodecamp/curriculum#compile"]
     },
+    "@freecodecamp/scripts-lint#lint": {
+      "dependsOn": ["@freecodecamp/client#create:trending"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/client/i18n/locales/english/*"
+      ]
+    },
     "//#lint": {
       "dependsOn": [
         "@freecodecamp/curriculum#compile",
@@ -15,6 +22,7 @@
       ]
     },
     "compile": {},
+    "create:trending": {},
     "build": { "dependsOn": ["compile"] }
   }
 }
