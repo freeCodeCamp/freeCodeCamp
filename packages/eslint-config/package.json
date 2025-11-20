@@ -4,7 +4,7 @@
   "type": "module",
   "exports": {
     "./base": "./base.js",
-    "./original": "./original.js"
+    "./lintstaged": "./.lintstagedrc.js"
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
