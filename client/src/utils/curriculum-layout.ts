@@ -7,6 +7,7 @@ const projectBasedChallengeTypes = [
   challengeTypes.backEndProject,
   challengeTypes.jsProject,
   challengeTypes.pythonProject,
+  challengeTypes.colab,
   challengeTypes.codeAllyCert,
   challengeTypes.multifileCertProject,
   challengeTypes.exam,
