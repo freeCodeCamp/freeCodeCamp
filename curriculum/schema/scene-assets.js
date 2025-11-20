@@ -41,7 +41,17 @@ const availableCharacters = [
   'René',
   'Sebastián',
   'Diego',
-  'Valeria'
+  'Valeria',
+
+  // Chinese
+  'Chen Na',
+  'Li Hong',
+  'Li Ping',
+  'Lin Yating',
+  'Liu Ming',
+  'Wang Hua',
+  'Zhang Wei',
+  'Zhou Yongjie'
 ];
 
 const availableBackgrounds = [
