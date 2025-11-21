@@ -4,7 +4,6 @@
   "scripts": {
     "lint": "eslint --max-warnings 0"
   },
-  "type": "module",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
   "packageManager": "pnpm@10.20.0",
