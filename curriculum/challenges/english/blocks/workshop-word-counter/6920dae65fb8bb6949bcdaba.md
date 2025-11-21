@@ -1,13 +1,13 @@
 ---
-id: 6920d189e36b6b60a6330fee
-title: Step 3
+id: 6920dae65fb8bb6949bcdaba
+title: Step 4
 challengeType: 0
-dashedName: step-3
+dashedName: step-4
 ---
 
 # --description--
 
-Now, inside the loop, log the `char` variable to the console.
+step 4 instructions
 
 # --hints--
 
@@ -24,9 +24,10 @@ Test 1
 ```js
 function printCharacters(str) {
   for (const char of str) {
---fcc-editable-region--
-  
---fcc-editable-region--
+    console.log(char);
   }
 }
+--fcc-editable-region--
+
+--fcc-editable-region--
 ```
