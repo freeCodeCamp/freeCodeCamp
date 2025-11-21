@@ -59,6 +59,7 @@
     "polka": "^0.5.2",
     "puppeteer": "22.12.1",
     "readdirp": "3.6.0",
+    "sinon": "^21.0.0",
     "sirv": "^3.0.2",
     "string-similarity": "4.0.4",
     "vitest": "^3.2.4"
