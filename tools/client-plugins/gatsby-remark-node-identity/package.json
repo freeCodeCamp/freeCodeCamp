@@ -8,6 +8,9 @@
     "node": ">=16",
     "pnpm": ">=10"
   },
+  "scripts": {
+    "lint": "eslint --max-warnings 0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
@@ -17,5 +20,9 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
-  "main": "gatsby-node.js"
+  "main": "gatsby-node.js",
+  "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "eslint": "^9.39.1"
+  }
 }
