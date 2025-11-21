@@ -218,7 +218,7 @@ export class Block extends Component<BlockProps> {
           {isExpanded && (
             <ChallengesList
               challenges={extendedChallenges}
-              onChallengeClick={this.handleBlockClick}
+              onChallengeClick={this.handleChallengeClick}
             />
           )}
         </div>
@@ -249,7 +249,7 @@ export class Block extends Component<BlockProps> {
           </div>
           <ChallengesList
             challenges={extendedChallenges}
-            onChallengeClick={this.handleBlockClick}
+            onChallengeClick={this.handleChallengeClick}
           />
         </div>
       </Element>
