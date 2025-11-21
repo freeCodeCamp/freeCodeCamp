@@ -355,7 +355,7 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers.location).toEqual(
-        expect.stringContaining('https://www.freecodecamp.org/?')
+        expect.stringContaining('https://www.freecodecamp.org/learn?')
       );
     });
 
