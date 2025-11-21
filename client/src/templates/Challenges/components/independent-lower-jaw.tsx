@@ -10,6 +10,7 @@ import { apiLocation } from '../../../../config/env.json';
 import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
+import { capturePreAuthState } from '../../../utils/pre-auth-redirect';
 
 import './independent-lower-jaw.css';
 import Reset from '../../../assets/icons/reset';
@@ -80,6 +81,7 @@ export function IndependentLowerJaw({
                 href={`${apiLocation}/signin`}
                 className='btn-cta btn btn-block'
                 onClick={() => {
+                  capturePreAuthState({ reason: 'independent-lower-jaw' });
                   callGA({
                     event: 'sign_in'
                   });

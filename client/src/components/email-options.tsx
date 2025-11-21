@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Button, Spacer } from '@freecodecamp/ui';
 import { apiLocation } from '../../config/env.json';
+import { capturePreAuthState } from '../utils/pre-auth-redirect';
 
 interface EmailListOptInProps {
   isSignedIn: boolean;
@@ -44,7 +45,14 @@ export function EmailListOptIn({
       <Row>
         <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
           <Spacer size='xs' />
-          <Button block={true} variant='primary' href={`${apiLocation}/signin`}>
+          <Button
+            block={true}
+            variant='primary'
+            href={`${apiLocation}/signin`}
+            onClick={() =>
+              capturePreAuthState({ reason: 'email-list-signup' })
+            }
+          >
             {t('buttons.sign-up-email-list')}
           </Button>
           <Spacer size='xs' />

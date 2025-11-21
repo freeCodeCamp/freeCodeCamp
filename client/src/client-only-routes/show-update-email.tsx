@@ -1,6 +1,7 @@
 import React, {
   useState,
   useEffect,
+  useRef,
   type FormEvent,
   type ChangeEvent
 } from 'react';
@@ -27,6 +28,7 @@ import { isSignedInSelector, userSelector } from '../redux/selectors';
 import { hardGoTo as navigate } from '../redux/actions';
 import { updateMyEmail } from '../redux/settings/actions';
 import { maybeEmailRE } from '../utils';
+import { capturePreAuthState } from '../utils/pre-auth-redirect';
 import type { User } from '../redux/prop-types';
 
 const { apiLocation } = envData;
@@ -58,9 +60,14 @@ function ShowUpdateEmail({
 }: ShowUpdateEmailProps) {
   const { t } = useTranslation();
   const [emailValue, setEmailValue] = useState('');
+  const hasCapturedRedirect = useRef(false);
 
   useEffect(() => {
-    if (!isSignedIn) navigate(`${apiLocation}/signin`);
+    if (!isSignedIn && !hasCapturedRedirect.current) {
+      capturePreAuthState({ reason: 'update-email-route' });
+      hasCapturedRedirect.current = true;
+      navigate(`${apiLocation}/signin`);
+    }
   }, [isSignedIn, navigate]);
   if (!isSignedIn) return <Loader fullScreen={true} />;
 

@@ -6,6 +6,7 @@ import { createSelector } from 'reselect';
 import envData from '../../../../config/env.json';
 import { isSignedInSelector } from '../../../redux/selectors';
 import callGA from '../../../analytics/call-ga';
+import { capturePreAuthState } from '../../../utils/pre-auth-redirect';
 
 const { apiLocation, homeLocation } = envData as {
   apiLocation: string;
@@ -19,8 +20,14 @@ interface TwoButtonCTAProps {
 const TwoButtonCTA = ({ isSignedIn }: TwoButtonCTAProps): JSX.Element => {
   const { t } = useTranslation();
 
-  const handleGoogleClick = () => callGA({ event: 'sign_in' });
-  const handleMoreWaysClick = () => callGA({ event: 'sign_in' });
+  const trackSignInIntent = (reason: string) => {
+    if (!isSignedIn) {
+      capturePreAuthState({ reason });
+    }
+    callGA({ event: 'sign_in' });
+  };
+  const handleGoogleClick = () => trackSignInIntent('landing-google-cta');
+  const handleMoreWaysClick = () => trackSignInIntent('landing-more-cta');
 
   const googleHref = isSignedIn
     ? `${homeLocation}/learn`

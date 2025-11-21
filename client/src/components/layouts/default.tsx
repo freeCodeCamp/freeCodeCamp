@@ -1,4 +1,5 @@
-import React, { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect, useRef } from 'react';
+import { navigate } from 'gatsby';
 import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
@@ -60,6 +61,10 @@ import './variables.css';
 import './rtl-layout.css';
 import { LocalStorageThemes } from '../../redux/types';
 import DailyChallengeBreadCrumb from '../../templates/Challenges/components/daily-challenge-bread-crumb';
+import {
+  buildPathFromLocation,
+  consumePreAuthState
+} from '../../utils/pre-auth-redirect';
 
 const mapStateToProps = createSelector(
   isSignedInSelector,
@@ -153,6 +158,7 @@ function DefaultLayout({
   const isExSmallViewportHeight = useMediaQuery({
     maxHeight: EX_SMALL_VIEWPORT_HEIGHT
   });
+  const hasAppliedPostAuthRedirect = useRef(false);
 
   useEffect(() => {
     initializeTheme();
@@ -174,6 +180,20 @@ function DefaultLayout({
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!isSignedIn || hasAppliedPostAuthRedirect.current || !isBrowser()) {
+      return;
+    }
+    hasAppliedPostAuthRedirect.current = true;
+    const storedState = consumePreAuthState();
+    if (!storedState) return;
+    const targetPath = buildPathFromLocation(storedState);
+    if (!targetPath) return;
+    const currentPath = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    if (currentPath === targetPath) return;
+    void navigate(targetPath);
+  }, [isSignedIn]);
 
   const updateOnlineStatus = () => {
     const isOnline =

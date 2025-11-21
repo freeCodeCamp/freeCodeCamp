@@ -27,6 +27,7 @@ import {
   userTokenSelector
 } from '../redux/selectors';
 import type { User } from '../redux/prop-types';
+import { capturePreAuthState } from '../utils/pre-auth-redirect';
 import {
   submitNewAbout,
   updateMyHonesty,
@@ -106,6 +107,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
+  const hasCapturedRedirect = useRef(false);
 
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
@@ -130,6 +132,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   }
 
   if (!isSignedInRef.current) {
+    if (!hasCapturedRedirect.current) {
+      capturePreAuthState({ reason: 'settings-route' });
+      hasCapturedRedirect.current = true;
+    }
     navigate(`${apiLocation}/signin`);
     return <Loader fullScreen={true} />;
   }

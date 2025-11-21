@@ -22,6 +22,7 @@ import {
   completedPercentageSelector
 } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
+import { capturePreAuthState } from '../../../utils/pre-auth-redirect';
 
 interface LowerJawPanelProps extends ShareProps {
   resetButtonText: string;
@@ -319,6 +320,7 @@ const LowerJaw = ({
             href={`${apiLocation}/signin`}
             className='btn-cta btn btn-block'
             onClick={() => {
+              capturePreAuthState({ reason: 'classic-lower-jaw' });
               callGA({
                 event: 'sign_in'
               });
