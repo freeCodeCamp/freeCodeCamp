@@ -68,7 +68,7 @@ function BlockHeader({
     <>
       <h3 className='block-grid-title'>
         {accordion && blockUrl ? (
-          <Link className='block-header' to={blockUrl}>
+          <Link className='block-header' to={blockUrl} onClick={handleClick}>
             <InnerBlockHeader />
           </Link>
         ) : (

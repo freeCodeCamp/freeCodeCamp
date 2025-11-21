@@ -82,22 +82,13 @@ export class Block extends Component<BlockProps> {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
-    this.handleBlockHover = this.handleBlockHover.bind(this);
   }
 
   handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
-  };
 
-  /*
-   * This function handles the block hover event.
-   * It also updates the URL hash to reflect the current block.
-   */
-  handleBlockHover = (): void => {
-    const { block } = this.props;
-    // Convert block to dashed format
     const dashedBlock = block
       .toLowerCase()
       .replace(/\s+/g, '-')
@@ -181,11 +172,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeListBlock = (
       <Element name={block}>
-        <div
-          className={`block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block ${isExpanded ? 'open' : ''}`}>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -224,7 +211,12 @@ export class Block extends Component<BlockProps> {
               </span>
             </div>
           </button>
-          {isExpanded && <ChallengesList challenges={extendedChallenges} />}
+          {isExpanded && (
+            <ChallengesList
+              challenges={extendedChallenges}
+              onChallengeClick={this.handleBlockClick}
+            />
+          )}
         </div>
       </Element>
     );
@@ -236,11 +228,7 @@ export class Block extends Component<BlockProps> {
      */
     const ProjectListBlock = (
       <Element name={block}>
-        <div
-          className='block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -255,7 +243,10 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <ChallengesList challenges={extendedChallenges} />
+          <ChallengesList
+            challenges={extendedChallenges}
+            onChallengeClick={this.handleBlockClick}
+          />
         </div>
       </Element>
     );
@@ -267,11 +258,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeGridBlock = (
       <Element name={block}>
-        <div
-          className={`block block-grid ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -305,6 +292,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
+                  onChallengeClick={this.handleBlockClick}
                 />
               </div>
             </>
@@ -353,6 +341,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
                   jumpLink={!accordion}
+                  onChallengeClick={this.handleBlockClick}
                 />
               </div>
             </>
@@ -368,11 +357,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyLinkBlock = (
       <Element name={block}>
-        <div
-          className='block block-grid grid-project-block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
@@ -423,8 +408,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -461,9 +444,13 @@ export class Block extends Component<BlockProps> {
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
                     jumpLink={false}
+                    onChallengeClick={this.handleBlockClick}
                   />
                 ) : (
-                  <ChallengesList challenges={extendedChallenges} />
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleBlockClick}
+                  />
                 )}
               </div>
             </div>
@@ -477,8 +464,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -516,9 +501,13 @@ export class Block extends Component<BlockProps> {
                     challenges={extendedChallenges}
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
+                    onChallengeClick={this.handleBlockClick}
                   />
                 ) : (
-                  <ChallengesList challenges={extendedChallenges} />
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleBlockClick}
+                  />
                 )}
               </div>
             </div>
