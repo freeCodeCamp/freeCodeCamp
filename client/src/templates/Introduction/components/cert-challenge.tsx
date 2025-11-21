@@ -5,6 +5,7 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import {
+  Certification,
   certSlugTypeMap,
   superBlockCertTypeMap
 } from '../../../../../shared-dist/config/certification-settings';
@@ -73,18 +74,13 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
-
   useEffect(() => {
     const allCerts = [...currentCerts, ...legacyCerts];
 
     setIsCertified(
       allCerts.find(
-        (cert: { certSlug: string }) =>
-          certSlugTypeMapTyped[cert.certSlug] ===
-          superBlockCertTypeMapTyped[superBlock]
+        (cert: { certSlug: Certification }) =>
+          certSlugTypeMap[cert.certSlug] === superBlockCertTypeMap[superBlock]
       )?.show ?? false
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
