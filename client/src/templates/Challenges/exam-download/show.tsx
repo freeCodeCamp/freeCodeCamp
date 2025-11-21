@@ -246,7 +246,10 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {missingPrerequisites.length > 0 ? (
+            {isSignedIn &&
+            !examIdsQuery.isLoading &&
+            !getExamsQuery.isLoading &&
+            missingPrerequisites.length > 0 ? (
               <MissingPrerequisites
                 missingPrerequisites={missingPrerequisites}
               />
