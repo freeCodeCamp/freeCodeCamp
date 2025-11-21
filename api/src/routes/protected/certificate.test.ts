@@ -155,7 +155,9 @@ describe('certificate routes', () => {
             isQaCertV7: false,
             isRelationalDatabaseCertV8: false,
             isRespWebDesignCert: false,
-            isSciCompPyCertV7: false
+            isSciCompPyCertV7: false,
+            isJavascriptCertV9: false,
+            isRespWebDesignCertV9: false
           },
           completedChallenges: []
         });
