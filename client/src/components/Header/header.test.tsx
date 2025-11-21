@@ -8,7 +8,8 @@ const defaultUserProps = {
     username: 'test-user',
     picture: 'https://freecodecamp.org/image.png',
     isDonating: false,
-    yearsTopContributor: []
+    yearsTopContributor: [],
+    calendar: {}
   },
   pending: false,
   pathName: '/learn'
