@@ -3,13 +3,13 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    setupFiles: 'vitest-setup.js',
-    exclude: 'node_modules',
+    setupFiles: ['vitest-setup.js'],
+    exclude: ['node_modules'],
     projects: [
       {
         extends: true,
         test: {
-          include: '**/*.test.{jsx,tsx}',
+          include: ['**/*.test.{jsx,tsx}'],
           name: 'react',
           environment: 'jsdom'
         }
@@ -17,7 +17,7 @@ export default defineConfig({
       {
         extends: true,
         test: {
-          include: '**/*.test.{js,ts}',
+          include: ['**/*.test.{js,ts}'],
           name: 'js',
           environment: 'node'
         }
