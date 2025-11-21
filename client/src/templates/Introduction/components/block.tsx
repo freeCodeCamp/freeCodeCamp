@@ -82,13 +82,17 @@ export class Block extends Component<BlockProps> {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
+    this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
 
   handleBlockClick = (): void => {
     const { block, toggleBlock } = this.props;
     void playTone('block-toggle');
     toggleBlock(block);
+  };
 
+  handleChallengeClick = (): void => {
+    const { block } = this.props;
     const dashedBlock = block
       .toLowerCase()
       .replace(/\s+/g, '-')
@@ -292,7 +296,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
-                  onChallengeClick={this.handleBlockClick}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -341,7 +345,7 @@ export class Block extends Component<BlockProps> {
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
                   jumpLink={!accordion}
-                  onChallengeClick={this.handleBlockClick}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -379,9 +383,7 @@ export class Block extends Component<BlockProps> {
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
+                onClick={this.handleChallengeClick}
                 to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
@@ -444,12 +446,12 @@ export class Block extends Component<BlockProps> {
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
                     jumpLink={false}
-                    onChallengeClick={this.handleBlockClick}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 ) : (
                   <ChallengesList
                     challenges={extendedChallenges}
-                    onChallengeClick={this.handleBlockClick}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 )}
               </div>
@@ -501,12 +503,12 @@ export class Block extends Component<BlockProps> {
                     challenges={extendedChallenges}
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
-                    onChallengeClick={this.handleBlockClick}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 ) : (
                   <ChallengesList
                     challenges={extendedChallenges}
-                    onChallengeClick={this.handleBlockClick}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 )}
               </div>
@@ -528,6 +530,7 @@ export class Block extends Component<BlockProps> {
           completedCount={completedCount}
           courseCompletionStatus={courseCompletionStatus()}
           handleClick={this.handleBlockClick}
+          onLinkClick={this.handleChallengeClick}
           isCompleted={isBlockCompleted}
           isExpanded={isExpanded}
           percentageCompleted={percentageCompleted}

@@ -23,6 +23,7 @@ interface BlockHeaderProps {
   blockIntroArr?: string[];
   accordion?: boolean;
   blockUrl?: string;
+  onLinkClick?: () => void;
 }
 
 function BlockHeader({
@@ -37,7 +38,8 @@ function BlockHeader({
   percentageCompleted,
   blockIntroArr,
   accordion,
-  blockUrl
+  blockUrl,
+  onLinkClick
 }: BlockHeaderProps): JSX.Element {
   const InnerBlockHeader = () => (
     <>
@@ -68,7 +70,7 @@ function BlockHeader({
     <>
       <h3 className='block-grid-title'>
         {accordion && blockUrl ? (
-          <Link className='block-header' to={blockUrl} onClick={handleClick}>
+          <Link className='block-header' to={blockUrl} onClick={onLinkClick}>
             <InnerBlockHeader />
           </Link>
         ) : (
