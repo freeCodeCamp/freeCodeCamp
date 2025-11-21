@@ -5532,7 +5532,7 @@
       "workshop-word-counter": {
         "title": "Build a Word Counter",
         "intro": [
-          "In this workshop, you will practice using <code>for</code> loops by building a function that counts the occurrences of a string in an array of strings."
+          "In this workshop, you will practice using <code>for...of</code> loops by building a function that counts the occurrences of a string in an array of strings."
         ]
       },
       "workshop-sentence-analyzer": {
