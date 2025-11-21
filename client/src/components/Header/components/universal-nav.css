@@ -261,6 +261,12 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
 /**
  * User thumbnail
  */
+.auth-or-profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .avatar-nav-link {
   display: block;
   height: var(--header-element-size);

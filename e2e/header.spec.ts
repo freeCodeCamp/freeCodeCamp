@@ -233,6 +233,56 @@ test.describe('Header', () => {
     expect(avatarSize?.height).toBeLessThanOrEqual(26);
   });
 
+  test('The header should display the streak icon and count', async ({
+    page
+  }) => {
+    const streakLink = page.getByRole('link', {
+      name: /Current streak:/
+    });
+    await expect(streakLink).toBeVisible();
+    await expect(streakLink).toHaveAttribute('href', '/developmentuser');
+
+    const streakCount = streakLink.locator('.streak-count');
+    await expect(streakCount).toBeVisible();
+    await expect(streakCount).toHaveText(/^\d+$/);
+
+    const flameIcon = streakLink.locator('.streak-icon');
+    await expect(flameIcon).toBeVisible();
+  });
+
+  test('The streak icon should change color to orange on hover', async ({
+    page,
+    isMobile
+  }) => {
+    if (isMobile) {
+      test.skip();
+    }
+
+    const streakLink = page.getByRole('link', {
+      name: /Current streak:/
+    });
+    await expect(streakLink).toBeVisible();
+
+    const flameIcon = streakLink.locator('.streak-icon');
+    const streakCount = streakLink.locator('.streak-count');
+
+    const initialIconColor = await flameIcon.evaluate(
+      el => window.getComputedStyle(el).color
+    );
+
+    await streakLink.hover();
+
+    const hoverIconColor = await flameIcon.evaluate(
+      el => window.getComputedStyle(el).color
+    );
+    const hoverCountColor = await streakCount.evaluate(
+      el => window.getComputedStyle(el).color
+    );
+
+    expect(hoverIconColor).not.toBe(initialIconColor);
+    expect(hoverIconColor).toBe(hoverCountColor);
+  });
+
   test('The Sign In button should redirect to api/signin', async ({
     browser
   }) => {
@@ -272,6 +322,11 @@ test.describe('Header', () => {
         includeHidden: true // the svg is aria-hidden
       });
     await expect(avatar).toBeHidden();
+
+    const streakLink = page.getByRole('link', {
+      name: /Current streak:/
+    });
+    await expect(streakLink).toBeHidden();
   });
 });
 

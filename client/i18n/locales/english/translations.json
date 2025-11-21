@@ -930,6 +930,8 @@
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
     "twitter": "Link to {{username}}'s Twitter",
+    "streak-count": "Current streak: {{count}} day",
+    "streak-count_plural": "Current streak: {{count}} days",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Go to first page",

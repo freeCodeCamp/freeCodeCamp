@@ -1,0 +1,43 @@
+.streak-display-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  text-decoration: none;
+  margin-right: 0.75rem;
+}
+
+.streak-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: var(--gray-00);
+  transition: color 0.2s ease-in-out;
+}
+
+.streak-count {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--gray-00);
+  line-height: 1;
+  transition: color 0.2s ease-in-out;
+}
+
+.streak-display-link:hover,
+.streak-display-link:focus {
+  background-color: transparent;
+}
+
+.streak-display-link:hover .streak-icon,
+.streak-display-link:hover .streak-count {
+  color: #ff6b35;
+}
+
+@media (max-width: 767px) {
+  .streak-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  .streak-count {
+    font-size: 0.8125rem;
+  }
+}
