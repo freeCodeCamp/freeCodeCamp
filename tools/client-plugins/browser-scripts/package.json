@@ -20,7 +20,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env development"
   },
   "type": "module",
   "keywords": [],
@@ -33,6 +33,7 @@
     "@typescript/vfs": "^1.6.0",
     "babel-loader": "8.3.0",
     "copy-webpack-plugin": "9.1.0",
+    "cross-env": "^10.1.0",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",
