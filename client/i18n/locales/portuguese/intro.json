@@ -7633,22 +7633,25 @@
     "intro": ["Introdução de Espaço Reservado"],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao A1 Espanhol Profissional",
-      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
-      "es-a1-chapter-greetings-and-introductions": "Saudações e Apresentações"
+      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
+      "es-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introdução e Visão Geral da Certificação",
-      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
+      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
       "es-a1-module-greetings-and-farewells": "Saudações e Despedidas",
       "es-a1-module-introducing-yourself": "Apresentando-se",
-      "es-a1-module-first-questions": "Primeiras Perguntas"
+      "es-a1-module-first-questions": "Primeiras Perguntas",
+      "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
       "es-a1-module-introduction-and-certification-overview": {
         "note": "Inverno de 2025",
         "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-letters-sounds-and-first-numbers": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
@@ -7663,6 +7666,14 @@
       "es-a1-module-first-questions": {
         "note": "Disponível no Inverno de 2025",
         "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
+      },
+      "es-a1-module-numbers-10-to-29": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-sharing-your-personal-details": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
       }
     },
     "blocks": {
@@ -7698,8 +7709,8 @@
         "title": "Pontuação",
         "intro": ["", ""]
       },
-      "es-a1-quiz-the-alphabet": {
-        "title": "The Spanish Alphabet Quiz",
+      "es-a1-quiz-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7758,12 +7769,64 @@
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
       },
-      "es-a1-review-the-alphabet": {
-        "title": "The Spanish Alphabet Review",
+      "es-a1-review-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
       },
       "es-a1-practice-the-alphabet": {
         "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-remember-first-numbers": {
+        "title": "Remember First Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-10-to-29": {
+        "title": "Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-numbers-10-to-29": {
+        "title": "Using Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-review-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-getting-ready-to-share-personal-details": {
+        "title": "Getting Ready to Share Personal Details",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-basic-personal-information": {
+        "title": "Basic Personal Information",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-contact-information-and-spelling": {
+        "title": "Contact Information and Spelling",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-personal-details-in-action": {
+        "title": "Personal Details in Action",
+        "intro": ["", ""]
+      },
+      "es-a1-review-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
         "intro": ["", ""]
       }
     }

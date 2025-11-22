@@ -41,7 +41,17 @@ const availableCharacters = [
   'René',
   'Sebastián',
   'Diego',
-  'Valeria'
+  'Valeria',
+
+  // Chinese
+  'Chen Na',
+  'Li Hong',
+  'Li Ping',
+  'Lin Yating',
+  'Liu Ming',
+  'Wang Hua',
+  'Zhang Wei',
+  'Zhou Yongjie'
 ];
 
 const availableBackgrounds = [
@@ -276,8 +286,17 @@ const availableAudios = [
   'ES_A1_alphabet.mp3',
   'ES_A1_alphabet_practice.mp3',
   'ES_A1_basic_personal_details_numbers_10_29.mp3',
+  'ES_A1_basic_personal_details_numbers_mixed.mp3',
+  'ES_A1_basti_personal_details.mp3',
+  'ES_A1_esteban_personal_records_dialogue_with_angela.mp3',
   'ES_A1_describing_company_and_people_numbers_21_100.mp3',
+  'ES_A1_julieta_personal_details.mp3',
+  'ES_A1_luna_personal_data_form.mp3',
+  'ES_A1_mateo_camila_phone_number_dialogue.mp3',
+  'ES_A1_mateo_email_dialogue_with_camila.mp3',
+  'ES_A1_personal_details_just_questions.mp3',
   'ES_A1_spanish_fundamentals_numbers_0_9.mp3',
+  'ES_A1_spanish_fundamentals_numbers_mixed.mp3',
   'ES_A1_vowels.mp3',
   'ES_A1_vowels_aiu.mp3',
   'ES_A1_vowels_oiu.mp3',
@@ -286,7 +305,8 @@ const availableAudios = [
   'ZH_A1_1.2.mp3',
   'ZH_A1_1.3.mp3',
   'ZH_A1_1.4.mp3',
-  'ZH_A1_warmup_vocabulary.mp3'
+  'ZH_A1_warmup_vocabulary.mp3',
+  'ZH_A1_welcome_hello_world.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];

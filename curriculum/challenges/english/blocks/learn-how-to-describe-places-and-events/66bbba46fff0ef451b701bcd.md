@@ -34,7 +34,7 @@ Yes, she is available and wants to know what's the problem.
 
 ---
 
-No, she cannot talk right now she has her own problems.
+No, she cannot talk right now, she has her own problems.
 
 ### --feedback--
 
@@ -54,7 +54,7 @@ Sarah doesn't limit the time; she simply states that she is not busy.
 
 # --explanation--
 
-Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help. 
+Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help.
 
 This is a polite and indirect way to offer availability in English, commonly used to make the conversation more tactful.
 

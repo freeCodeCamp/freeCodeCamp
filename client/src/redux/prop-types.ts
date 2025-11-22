@@ -144,10 +144,11 @@ export type Characters =
   | 'Chen Na'
   | 'Li Hong'
   | 'Li Ping'
+  | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
-  | 'Zhang'
-  | 'Zhou';
+  | 'Zhang Wei'
+  | 'Zhou Yongjie';
 
 interface SetupCharacter {
   character: Characters;

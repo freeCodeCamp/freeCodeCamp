@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
-    "./base": "./base.js"
+    "./base": "./base.js",
+    "./lintstaged": "./.lintstagedrc.js"
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
@@ -14,6 +15,7 @@
     "@eslint/compat": "^1.2.6",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.19.0",
+    "@vitest/eslint-plugin": "^1.4.3",
     "eslint": "^9.39.1",
     "eslint-config-prettier": "10.0.1",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -26,6 +28,6 @@
     "eslint-plugin-react-hooks": "4.6.0",
     "eslint-plugin-testing-library": "7.1.1",
     "typescript": "5.7.3",
-    "typescript-eslint": "^8.23.0"
+    "typescript-eslint": "^8.47.0"
   }
 }

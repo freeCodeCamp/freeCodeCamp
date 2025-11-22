@@ -1,9 +1,6 @@
 import React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
 import { useTranslation, Trans } from 'react-i18next';
 import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
-import { ConnectedProps, connect } from 'react-redux';
-import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import {
   archivedSuperBlocks,
   SuperBlocks
@@ -13,21 +10,7 @@ import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
 import DumbbellIcon from '../../../assets/icons/dumbbell';
 import CommunityIcon from '../../../assets/icons/community';
-import { CompletedChallenge } from '../../../redux/prop-types';
-import { completedChallengesSelector } from '../../../redux/selectors';
 import ArchivedWarning from '../../../components/archived-warning';
-
-interface SuperBlockIntroQueryData {
-  challengeNode: {
-    challenge: {
-      fields: {
-        slug: string;
-      };
-    };
-  } | null;
-}
-
-type ReduxProps = ConnectedProps<typeof connector>;
 
 interface ConditionalDonationAlertProps {
   superBlock: SuperBlocks;
@@ -35,17 +18,10 @@ interface ConditionalDonationAlertProps {
   isDonating: boolean;
 }
 
-interface SuperBlockIntroProps
-  extends ConditionalDonationAlertProps,
-    ReduxProps {}
-
-const mapStateToProps = (state: unknown) => ({
-  completedChallenges: completedChallengesSelector(
-    state
-  ) as CompletedChallenge[]
-});
-
-const connector = connect(mapStateToProps);
+interface SuperBlockIntroProps extends ConditionalDonationAlertProps {
+  hasNotstarted: boolean;
+  nextChallengeSlug: string | null;
+}
 
 export const ConditionalDonationAlert = ({
   superBlock,
@@ -104,10 +80,10 @@ function SuperBlockIntro({
   superBlock,
   onCertificationDonationAlertClick,
   isDonating,
-  completedChallenges
+  hasNotstarted,
+  nextChallengeSlug
 }: SuperBlockIntroProps): JSX.Element {
   const { t } = useTranslation();
-
   const superBlockIntroObj: {
     title: string;
     intro: string[];
@@ -118,41 +94,68 @@ function SuperBlockIntro({
     note: string;
   };
 
-  const { challengeNode } = useStaticQuery<SuperBlockIntroQueryData>(graphql`
-    query SuperBlockIntroQuery {
-      challengeNode(
-        challenge: {
-          superOrder: { eq: 0 }
-          order: { eq: 0 }
-          challengeOrder: { eq: 0 }
-        }
-      ) {
-        challenge {
-          fields {
-            slug
-          }
-        }
-      }
-    }
-  `);
-
-  const firstChallengeSlug = challengeNode?.challenge?.fields?.slug || '';
   const {
     title: i18nSuperBlock,
     intro: superBlockIntroText,
     note: superBlockNoteText
   } = superBlockIntroObj;
 
-  const introTopA = (
+  const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>
       {archivedSuperBlocks.includes(superBlock) && <ArchivedWarning />}
       <Spacer size='s' />
+      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
+      <Spacer size='m' />
       <h1 id='content-start' className='text-center big-heading'>
         {i18nSuperBlock}
       </h1>
-      <Spacer size='m' />
-      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
-      <Spacer size='m' />
+      <Spacer size='l' />
+      {fsd && (
+        <Container
+          fluid={true}
+          className='full-width-container super-benefits-container'
+        >
+          <Container>
+            <Row>
+              <Col xs={12} className='super-block-benefits'>
+                <div>
+                  <CommunityIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-1-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-1-description')}</p>
+                  </div>
+                </div>
+                <div>
+                  <CapIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-2-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-2-description')}</p>
+                  </div>
+                </div>
+                <div>
+                  <DumbbellIcon />
+                  <div className='benefit-text'>
+                    <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
+                    <p>{t('misc.fsd-b-benefit-3-description')}</p>
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </Container>
+      )}
+      {nextChallengeSlug && !fsd && (
+        <Link
+          className={'btn-cta-big btn-block signup-btn btn-cta intro-top-cta'}
+          to={nextChallengeSlug}
+          data-test-label={
+            hasNotstarted ? 'start-learning' : 'continue-learning'
+          }
+        >
+          {hasNotstarted ? t('misc.fsd-b-cta') : t('misc.continue-learning')}
+        </Link>
+      )}
+      <Spacer size='l' />
       {superBlockIntroText.map((str, i) => (
         <p dangerouslySetInnerHTML={{ __html: str }} key={i} />
       ))}
@@ -165,75 +168,13 @@ function SuperBlockIntro({
     </>
   );
 
-  const introTopB = (
-    <>
-      <SuperBlockIcon className='cert-header-icon' superBlock={superBlock} />
-      <Spacer size='m' />
-      <h1 id='content-start' className='text-center big-heading'>
-        {i18nSuperBlock}
-      </h1>
-      <Spacer size='m' />
-      <p>{t('misc.fsd-b-description')}</p>
-      {superBlockNoteText && (
-        <>
-          <Spacer size='m' />
-          <Callout variant='info'>{superBlockNoteText}</Callout>
-        </>
-      )}
-      <Spacer size='s' />
-      <a
-        className={'btn-cta-big btn-block signup-btn btn-cta'}
-        href={firstChallengeSlug}
-      >
-        {t('misc.fsd-b-cta')}
-      </a>
-      <Spacer size='l' />
-      <Container
-        fluid={true}
-        className='full-width-container super-benefits-container'
-      >
-        <Container>
-          <Row>
-            <Col xs={12} className='super-block-benefits'>
-              <div>
-                <CommunityIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-1-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-1-description')}</p>
-                </div>
-              </div>
-              <div>
-                <CapIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-2-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-2-description')}</p>
-                </div>
-              </div>
-              <div>
-                <DumbbellIcon />
-                <div className='benefit-text'>
-                  <h3>{t('misc.fsd-b-benefit-3-title')}</h3>
-                  <p>{t('misc.fsd-b-benefit-3-description')}</p>
-                </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </Container>
-      <Spacer size='l' />
-    </>
-  );
-
-  const showFSDnewIntro = useFeatureIsOn('fsd-new-intro');
-
-  const showIntroTopB =
-    completedChallenges.length === 0 &&
-    superBlock === SuperBlocks.FullStackDeveloper &&
-    showFSDnewIntro;
+  const isFullStackDeveloper =
+    superBlock === SuperBlocks.FullStackDeveloper ||
+    superBlock === SuperBlocks.FullStackDeveloperV9;
 
   return (
     <>
-      {showIntroTopB ? introTopB : introTopA}
+      <IntroTopDefault fsd={isFullStackDeveloper} />
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}
@@ -245,4 +186,4 @@ function SuperBlockIntro({
 
 SuperBlockIntro.displayName = 'SuperBlockIntro';
 
-export default connector(SuperBlockIntro);
+export default SuperBlockIntro;
