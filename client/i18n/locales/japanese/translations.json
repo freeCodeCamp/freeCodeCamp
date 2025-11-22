@@ -1078,7 +1078,7 @@
       "success": "アンケートを送信しました。ご協力ありがとうございました。"
     },
     "classroom-mode-updated": "クラスルームモード設定を更新しました。",
-    "access-server-error": "現在サーバーに接続できません。サイトは利用できますが、進捗が保存されない可能性があります。"
+    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

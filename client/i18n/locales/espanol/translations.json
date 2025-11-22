@@ -1078,7 +1078,7 @@
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
     "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
-    "access-server-error": "No podemos conectar con el servidor en este momento. Aún puedes usar el sitio, pero es posible que tu progreso no se guarde."
+    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
