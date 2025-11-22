@@ -1,7 +1,6 @@
 import { challengeTypes } from '../../../shared-dist/config/challenge-types';
 
-// Show a single project in a certification layout
-
+// Show a single project in a certification Layout
 const projectBasedChallengeTypes = [
   challengeTypes.frontEndProject,
   challengeTypes.backEndProject,
@@ -16,7 +15,8 @@ const projectBasedChallengeTypes = [
   challengeTypes.jsLab,
   challengeTypes.pyLab,
   challengeTypes.dailyChallengeJs,
-  challengeTypes.dailyChallengePy
+  challengeTypes.dailyChallengePy,
+  challengeTypes.colab
 ];
 
 export const isProjectBased = (
