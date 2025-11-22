@@ -142,3 +142,7 @@ export function setScrollbarArrowStyles(scrollbarWidth: number): void {
     `${iconLeftPosition}px`
   );
 }
+
+// Re-export additional utilities for barrel module pattern
+export { getChallengePaths } from './challenge-paths';
+export { challengeHasPreview, isJavaScriptChallenge } from './build';

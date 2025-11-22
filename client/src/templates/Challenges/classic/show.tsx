@@ -30,18 +30,23 @@ import type {
   Test
 } from '../../../redux/prop-types';
 import { isContained } from '../../../utils/is-contained';
-import ChallengeDescription from '../components/challenge-description';
-import Hotkeys from '../components/hotkeys';
-import ResetModal from '../components/reset-modal';
-import ChallengeTitle from '../components/challenge-title';
-import CompletionModal from '../components/completion-modal';
-import HelpModal from '../components/help-modal';
-import ShortcutsModal from '../components/shortcuts-modal';
-import Output from '../components/output';
-import Preview, { type PreviewProps } from '../components/preview';
-import ProjectPreviewModal from '../components/project-preview-modal';
-import SidePanel from '../components/side-panel';
-import VideoModal from '../components/video-modal';
+// Consolidated component imports
+import {
+  ChallengeDescription,
+  Hotkeys,
+  ResetModal,
+  ChallengeTitle,
+  CompletionModal,
+  HelpModal,
+  ShortcutsModal,
+  Output,
+  Preview,
+  ProjectPreviewModal,
+  SidePanel,
+  VideoModal,
+  type PreviewProps
+} from '../components';
+// Consolidated Redux imports
 import {
   cancelTests,
   challengeMounted,
@@ -55,20 +60,21 @@ import {
   updateChallengeMeta,
   openModal,
   setEditorFocusability,
-  setIsAdvancing
-} from '../redux/actions';
-import {
+  setIsAdvancing,
   challengeFilesSelector,
   consoleOutputSelector,
   isChallengeCompletedSelector
-} from '../redux/selectors';
+} from '../redux/challenge-redux';
 import { savedChallengesSelector } from '../../../redux/selectors';
-import { getGuideUrl } from '../utils';
+// Consolidated utility imports
+import {
+  getGuideUrl,
+  getChallengePaths,
+  challengeHasPreview,
+  isJavaScriptChallenge
+} from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
-import ToolPanel from '../components/tool-panel';
-import { getChallengePaths } from '../utils/challenge-paths';
-import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';

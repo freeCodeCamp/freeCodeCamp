@@ -36,6 +36,7 @@ import {
   canSaveToDB,
   challengeTypes
 } from '../../../../../shared-dist/config/challenge-types';
+// Consolidated Redux imports
 import {
   executeChallenge,
   saveEditorContent,
@@ -45,9 +46,7 @@ import {
   initTests,
   stopResetting,
   openModal,
-  resetAttempts
-} from '../redux/actions';
-import {
+  resetAttempts,
   attemptsSelector,
   canFocusEditorSelector,
   challengeMetaSelector,
@@ -55,13 +54,14 @@ import {
   isResettingSelector,
   isProjectPreviewModalOpenSelector,
   isChallengeCompletedSelector
-} from '../redux/selectors';
+} from '../redux/challenge-redux';
 import GreenPass from '../../../assets/icons/green-pass';
+// Consolidated utility imports
 import {
   enhancePrismAccessibility,
   makePrismCollapsible,
   setScrollbarArrowStyles
-} from '../utils/index';
+} from '../utils';
 import { initializeMathJax, isMathJaxAllowed } from '../../../utils/math-jax';
 import { getScrollbarWidth } from '../../../utils/scrollbar-width';
 import { isProjectBased } from '../../../utils/curriculum-layout';
@@ -69,8 +69,9 @@ import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
-import { useEditorAccessibility } from './hooks/use-editor-accessibility';
-import { useEditorSound } from './hooks/use-editor-sound';
+// Consolidated hook imports
+import { useEditorAccessibility, useEditorSound } from './hooks';
+// Consolidated DOM helper imports
 import {
   getEditorContentWidth,
   createScrollGutterNode,
@@ -78,6 +79,15 @@ import {
   createBreadcrumbElement,
   createLowerJawContainer as createLowerJawContainerHelper
 } from './utils/editor-dom-helpers';
+import type {
+  ChallengeMeta,
+  EditorConfig,
+  TestState,
+  EditorActions,
+  UIHandlers,
+  FocusState,
+  EditorRefs
+} from './types/editor-types';
 
 import './editor.css';
 
@@ -88,7 +98,11 @@ const monacoModelFileMap = {
   reactTypes: 'react.d.ts'
 };
 
-export interface EditorProps {
+/**
+ * Legacy EditorProps interface - kept for backward compatibility
+ * New code should use semantic grouped props from editor-types.ts
+ */
+export interface EditorPropsLegacy {
   attempts: number;
   canFocus: boolean;
   challengeFiles: ChallengeFiles;
@@ -131,6 +145,9 @@ export interface EditorProps {
   isChallengeCompleted: boolean;
   showIndependentLowerJaw?: boolean;
 }
+
+// Keep using legacy props for Redux compatibility
+export type EditorProps = EditorPropsLegacy;
 
 // TODO: this is grab bag of unrelated properties.  There's no need for them to
 // all be in the same object.
@@ -257,14 +274,66 @@ const initialData: EditorProperties = {
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
-  const {
-    editorRef,
-    initTests,
-    resetAttempts,
-    isMobileLayout,
-    challengeFiles,
-    fileKey
-  } = props;
+  
+  // Group props semantically for better organization
+  const challengeMeta: ChallengeMeta = {
+    block: props.block,
+    superBlock: props.superBlock,
+    title: props.title,
+    description: props.description,
+    challengeType: props.challengeType,
+    challengeFiles: props.challengeFiles,
+    fileKey: props.fileKey
+  };
+
+  const editorConfig: EditorConfig = {
+    dimensions: props.dimensions,
+    theme: props.theme,
+    isMobileLayout: props.isMobileLayout,
+    isUsingKeyboardInTablist: props.isUsingKeyboardInTablist,
+    usesMultifileEditor: props.usesMultifileEditor,
+    showIndependentLowerJaw: props.showIndependentLowerJaw
+  };
+
+  const testState: TestState = {
+    attempts: props.attempts,
+    tests: props.tests,
+    initialTests: props.initialTests,
+    isResetting: props.isResetting,
+    isChallengeCompleted: props.isChallengeCompleted
+  };
+
+  const editorActions: EditorActions = {
+    executeChallenge: props.executeChallenge,
+    saveChallenge: props.saveChallenge,
+    saveEditorContent: props.saveEditorContent,
+    submitChallenge: props.submitChallenge,
+    updateFile: props.updateFile,
+    initTests: props.initTests,
+    stopResetting: props.stopResetting,
+    resetAttempts: props.resetAttempts
+  };
+
+  const uiHandlers: UIHandlers = {
+    openHelpModal: props.openHelpModal,
+    openResetModal: props.openResetModal,
+    setEditorFocusability: props.setEditorFocusability
+  };
+
+  const focusState: FocusState = {
+    canFocus: props.canFocus,
+    canFocusOnMountRef: props.canFocusOnMountRef,
+    showProjectPreview: props.showProjectPreview,
+    previewOpen: props.previewOpen
+  };
+
+  const editorRefs: EditorRefs = {
+    editorRef: props.editorRef,
+    containerRef: props.containerRef,
+    resizeProps: props.resizeProps
+  };
+
+  const { isSignedIn } = props;
   // These refs are used during initialisation of the editor as well as by
   // callbacks.  Since they have to be initialised before editorWillMount and
   // editorDidMount are called, we cannot use useState.  Reason being that will
@@ -278,7 +347,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     React.useState<HTMLDivElement | null>(null);
 
   const submitChallengeDebounceRef = useRef(
-    debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+    debounce(editorActions.submitChallenge, 1000, { leading: true, trailing: false })
   );
 
   // Custom hooks for separated concerns
@@ -296,12 +365,12 @@ const Editor = (props: EditorProps): JSX.Element => {
   // reference to *those* props. If we want it to use the latest props, we can
   // use a ref, since it will be updated on every render.
   const testRef = useRef<Test[]>([]);
-  testRef.current = props.tests;
+  testRef.current = testState.tests;
   const attemptsRef = useRef<number>(0);
-  attemptsRef.current = props.attempts;
+  attemptsRef.current = testState.attempts;
 
-  const challengeFile = challengeFiles?.find(
-    challengeFile => challengeFile.fileKey === fileKey
+  const challengeFile = challengeMeta.challengeFiles?.find(
+    challengeFile => challengeFile.fileKey === challengeMeta.fileKey
   );
 
   const ariaEditorName = `${challengeFile?.name}.${challengeFile?.ext}`;
@@ -315,10 +384,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     hideCursorInOverviewRuler: true,
     guides: {
       highlightActiveIndentation:
-        props.challengeType === challengeTypes.python ||
-        props.challengeType === challengeTypes.multifilePythonCertProject ||
-        props.challengeType === challengeTypes.pyLab ||
-        props.challengeType === challengeTypes.dailyChallengePy
+        challengeMeta.challengeType === challengeTypes.python ||
+        challengeMeta.challengeType === challengeTypes.multifilePythonCertProject ||
+        challengeMeta.challengeType === challengeTypes.pyLab ||
+        challengeMeta.challengeType === challengeTypes.dailyChallengePy
     },
     minimap: {
       enabled: false
@@ -339,10 +408,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       enabled: false
     },
     tabSize:
-      props.challengeType !== challengeTypes.python &&
-      props.challengeType !== challengeTypes.multifilePythonCertProject &&
-      props.challengeType !== challengeTypes.pyLab &&
-      props.challengeType !== challengeTypes.dailyChallengePy
+      challengeMeta.challengeType !== challengeTypes.python &&
+      challengeMeta.challengeType !== challengeTypes.multifilePythonCertProject &&
+      challengeMeta.challengeType !== challengeTypes.pyLab &&
+      challengeMeta.challengeType !== challengeTypes.dailyChallengePy
         ? 2
         : 4,
     dragAndDrop: true,
@@ -358,15 +427,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   };
 
   const getEditableRegionFromRedux = () => {
-    const { challengeFiles, fileKey } = props;
-    const edRegBounds = challengeFiles?.find(
-      challengeFile => challengeFile.fileKey === fileKey
+    const edRegBounds = challengeMeta.challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === challengeMeta.fileKey
     )?.editableRegionBoundaries;
     return edRegBounds ? [...edRegBounds] : [];
   };
 
   const editorWillMount = (monaco: typeof monacoEditor) => {
-    const { usesMultifileEditor = false } = props;
+    const { usesMultifileEditor = false } = editorConfig;
 
     monacoRef.current = monaco;
     monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
@@ -419,11 +487,10 @@ const Editor = (props: EditorProps): JSX.Element => {
   // Updates the model if the contents has changed. This is only necessary for
   // changes coming from outside the editor (such as code resets).
   const resetEditorValues = () => {
-    const { challengeFiles, fileKey } = props;
     const { model } = dataRef.current;
 
-    const initialContents = challengeFiles?.find(
-      challengeFile => challengeFile.fileKey === fileKey
+    const initialContents = challengeMeta.challengeFiles?.find(
+      challengeFile => challengeFile.fileKey === challengeMeta.fileKey
     )?.contents;
     if (model?.getValue() !== initialContents) {
       model?.setValue(initialContents ?? '');
@@ -442,9 +509,9 @@ const Editor = (props: EditorProps): JSX.Element => {
     editor: editor.IStandaloneCodeEditor,
     monaco: typeof monacoEditor
   ) => {
-    const { isMobileLayout, isUsingKeyboardInTablist } = props;
+    const { isMobileLayout, isUsingKeyboardInTablist } = editorConfig;
     // TODO this should *probably* be set on focus
-    editorRef.current = editor;
+    editorRefs.editorRef.current = editor;
     dataRef.current.editor = editor;
 
     if (hasEditableRegion()) {
@@ -453,9 +520,9 @@ const Editor = (props: EditorProps): JSX.Element => {
         addWidgetsToRegions();
       }
       addContentChangeListener();
-      resetAttempts();
+      editorActions.resetAttempts();
       showEditableRegion(editor);
-      if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
+      if (challengeMeta.superBlock && isMathJaxAllowed(challengeMeta.superBlock)) {
         initializeMathJax();
       }
     }
@@ -497,7 +564,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!isMobileLayout || !isUsingKeyboardInTablist) {
       // Users who are using screen readers should not have to move focus from
       // the editor to the description every time they open a challenge.
-      if (props.canFocus && !accessibilityMode) {
+      if (focusState.canFocus && !accessibilityMode) {
         focusIfTargetEditor();
       } else focusOnHotkeys();
     }
@@ -554,14 +621,14 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.Enter
       ],
       run: () => {
-        if (props.usesMultifileEditor && !isProjectBased(props.challengeType)) {
+        if (editorConfig.usesMultifileEditor && !isProjectBased(challengeMeta.challengeType)) {
           if (challengeIsComplete()) {
             tryToSubmitChallenge();
           } else {
             tryToExecuteChallenge();
           }
         } else {
-          props.executeChallenge({ showCompletionModal: true });
+          editorActions.executeChallenge({ showCompletionModal: true });
         }
       }
     });
@@ -571,7 +638,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       keybindings: [monaco.KeyCode.Escape],
       run: () => {
         focusOnHotkeys();
-        props.setEditorFocusability(false);
+        uiHandlers.setEditorFocusability(false);
       }
     });
     editor.addAction({
@@ -582,11 +649,11 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
       run:
-        canSaveToDB(props.challengeType) && props.isSignedIn
+        canSaveToDB(challengeMeta.challengeType) && isSignedIn
           ? // save to database
-            props.saveChallenge
+            editorActions.saveChallenge
           : // save to local storage
-            props.saveEditorContent
+            editorActions.saveEditorContent
     });
     editor.addAction({
       id: 'toggle-accessibility',
@@ -638,7 +705,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         }
       }
     });
-    editor.onDidFocusEditorWidget(() => props.setEditorFocusability(true));
+    editor.onDidFocusEditorWidget(() => uiHandlers.setEditorFocusability(true));
 
     // aria-roledescription is on (true) by default, check if it needs
     // to be removed.
@@ -733,7 +800,8 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function createDescription(editor: editor.IStandaloneCodeEditor) {
     if (dataRef.current.descriptionNode) return dataRef.current.descriptionNode;
-    const { description, title, isChallengeCompleted } = props;
+    const { description, title } = challengeMeta;
+    const { isChallengeCompleted } = testState;
     const jawHeading = isChallengeCompleted
       ? document.createElement('div')
       : document.createElement('h1');
@@ -758,12 +826,12 @@ const Editor = (props: EditorProps): JSX.Element => {
     const desc = document.createElement('div');
     const descContainer = document.createElement('div');
     descContainer.classList.add('description-container');
-    if (props.superBlock && isMathJaxAllowed(props.superBlock)) {
+    if (challengeMeta.superBlock && isMathJaxAllowed(challengeMeta.superBlock)) {
       descContainer.classList.add('mathjax-support');
     }
     domNode.classList.add('editor-upper-jaw');
     domNode.appendChild(descContainer);
-    if (isMobileLayout) descContainer.appendChild(createBreadcrumb());
+    if (editorConfig.isMobileLayout) descContainer.appendChild(createBreadcrumb());
     descContainer.appendChild(jawHeading);
     descContainer.appendChild(desc);
     desc.innerHTML = description;
@@ -809,15 +877,14 @@ const Editor = (props: EditorProps): JSX.Element => {
   }
 
   function focusOnHotkeys() {
-    const currContainerRef = props.containerRef?.current;
+    const currContainerRef = editorRefs.containerRef?.current;
     if (currContainerRef) {
       currContainerRef.focus();
     }
   }
 
   const onChange = (contents: string) => {
-    const { updateFile, fileKey, isResetting } = props;
-    if (isResetting) return;
+    if (testState.isResetting) return;
     // TODO: now that we have getCurrentEditableRegion, should the overlays
     // follow that directly? We could subscribe to changes to that and redraw if
     // those imply that the positions have changed (i.e. if the content height
@@ -831,12 +898,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     // Play sound on content change
     playNote();
 
-    updateFile({ fileKey, contents, editableRegionBoundaries });
+    editorActions.updateFile({ 
+      fileKey: challengeMeta.fileKey, 
+      contents, 
+      editableRegionBoundaries 
+    });
   };
 
   function createBreadcrumb(): HTMLElement {
-    const { block, superBlock } = props;
-    return createBreadcrumbElement(block, superBlock, t);
+    return createBreadcrumbElement(challengeMeta.block, challengeMeta.superBlock, t);
   }
 
   // TODO: DRY this and the update function
@@ -937,15 +1007,15 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   function focusIfTargetEditor() {
     const { editor } = dataRef.current;
-    const { canFocusOnMountRef } = props;
+    const { canFocusOnMountRef } = focusState;
     if (!editor || !canFocusOnMountRef.current) return;
-    if (!props.usesMultifileEditor) {
+    if (!editorConfig.usesMultifileEditor) {
       // Only one editor? Focus it.
       editor.focus();
-      canFocusOnMountRef.current = false;
+      focusState.canFocusOnMountRef.current = false;
     } else if (hasEditableRegion()) {
       editor.focus();
-      canFocusOnMountRef.current = false;
+      focusState.canFocusOnMountRef.current = false;
     }
   }
 
@@ -1083,7 +1153,7 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   // We need to set initialize the tests, but only once
   useEffect(() => {
-    initTests(props.initialTests);
+    editorActions.initTests(testState.initialTests);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -1093,21 +1163,21 @@ const Editor = (props: EditorProps): JSX.Element => {
     // editor.
     const { editor } = dataRef.current;
 
-    if (props.isResetting) {
+    if (testState.isResetting) {
       // NOTE: this looks a lot like a race condition, since stopResetting gets
       // called in each editor and changes isResetting. However, all open editor
       // are rendered in a batch (before stopResetting talks to redux), so they
       // all get to this point. Also stopResetting is idempotent, so it doesn't
       // matter that each editor calls it.
-      props.stopResetting();
+      editorActions.stopResetting();
       resetEditorValues();
       focusIfTargetEditor();
     }
 
     if (hasEditableRegion() && editor) {
-      if (props.isResetting) {
+      if (testState.isResetting) {
         initializeRegions();
-        if (!props.showIndependentLowerJaw) {
+        if (!editorConfig.showIndependentLowerJaw) {
           addWidgetsToRegions();
         }
         updateDescriptionZone();
@@ -1116,10 +1186,10 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.challengeFiles, props.isResetting, props.showIndependentLowerJaw]);
+  }, [challengeMeta.challengeFiles, testState.isResetting, editorConfig.showIndependentLowerJaw]);
 
   useEffect(() => {
-    const { showProjectPreview, previewOpen } = props;
+    const { showProjectPreview, previewOpen } = focusState;
     if (!previewOpen && showProjectPreview) {
       const description = document.getElementsByClassName(
         'description-container'
@@ -1127,7 +1197,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       description?.classList.add('description-highlighter');
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [props.previewOpen]);
+  }, [focusState.previewOpen]);
 
   useEffect(() => {
     const { model, insideEditDecId } = dataRef.current;
@@ -1152,7 +1222,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     if (!isTabTrapped()) {
       setMonacoTabTrapped(false);
     }
-  }, [props.dimensions]);
+  }, [editorConfig.dimensions]);
 
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;
@@ -1162,7 +1232,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     });
   }
 
-  const { theme } = props;
+  const { theme } = editorConfig;
 
   const preferDarkScheme = window.matchMedia(
     '(prefers-color-scheme: dark)'
@@ -1175,7 +1245,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         ? 'vs-custom'
         : editorSystemTheme;
 
-  const firstFailedTest = props.tests.find(test => !!test.err);
+  const firstFailedTest = testState.tests.find(test => !!test.err);
 
   const handleSubmitAndGoButtonBoolean = () => {
     const canShowModal = sessionStorage.getItem('canOpenModal');
@@ -1186,7 +1256,7 @@ const Editor = (props: EditorProps): JSX.Element => {
     return challengeIsComplete();
   };
 
-  const showFileName = challengeFile && props.challengeFiles!.length > 1;
+  const showFileName = challengeFile && challengeMeta.challengeFiles!.length > 1;
   return (
     <Suspense fallback={<Loader loaderDelay={600} />}>
       {showFileName && (
@@ -1213,15 +1283,15 @@ const Editor = (props: EditorProps): JSX.Element => {
       {lowerJawContainer !== null &&
         createPortal(
           <LowerJaw
-            openHelpModal={props.openHelpModal}
-            openResetModal={props.openResetModal}
+            openHelpModal={uiHandlers.openHelpModal}
+            openResetModal={uiHandlers.openResetModal}
             tryToExecuteChallenge={tryToExecuteChallenge}
             hint={firstFailedTest?.message}
-            testsLength={props.tests.length}
+            testsLength={testState.tests.length}
             attempts={attemptsRef.current}
             challengeIsCompleted={handleSubmitAndGoButtonBoolean()}
             tryToSubmitChallenge={tryToSubmitChallenge}
-            isSignedIn={props.isSignedIn}
+            isSignedIn={isSignedIn}
             updateContainer={() =>
               updateOutputViewZone(lowerJawContainer, dataRef.current.editor)
             }
