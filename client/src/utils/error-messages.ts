@@ -24,3 +24,8 @@ export const msTrophyVerified = {
   type: 'success',
   message: FlashMessages.MsTrophyVerified
 };
+
+export const accessServerErrorMessage = {
+  type: 'danger',
+  message: FlashMessages.AccessServerError
+};

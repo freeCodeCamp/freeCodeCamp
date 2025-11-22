@@ -1077,7 +1077,8 @@
       "err-3": "尝试保存你的调研问卷时发生错误。",
       "success": "谢谢，你的调研问卷已提交。"
     },
-    "classroom-mode-updated": "我们已更新你的课堂模式设置"
+    "classroom-mode-updated": "我们已更新你的课堂模式设置",
+    "access-server-error": "我们目前无法连接到服务器。你仍然可以使用本站，但你的进度可能无法保存。"
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",

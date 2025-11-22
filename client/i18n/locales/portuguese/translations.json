@@ -1077,7 +1077,8 @@
       "err-3": "Algo deu errado ao tentar salvar sua pesquisa.",
       "success": "Obrigado. Sua pesquisa foi enviada."
     },
-    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
+    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula",
+    "access-server-error": "Não conseguimos acessar o servidor no momento. Você ainda pode usar o site, mas seu progresso pode não ser salvo."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

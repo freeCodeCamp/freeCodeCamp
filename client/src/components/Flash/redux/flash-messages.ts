@@ -16,6 +16,7 @@ export enum FlashMessages {
   CourseUrlCopyError = 'flash.course-url-copy-error',
   DeleteTokenErr = 'flash.delete-token-err',
   EmailValid = 'flash.email-valid',
+  AccessServerError = 'flash.access-server-error',
   GenerateExamError = 'flash.generate-exam-error',
   HonestFirst = 'flash.honest-first',
   IncompleteSteps = 'flash.incomplete-steps',
