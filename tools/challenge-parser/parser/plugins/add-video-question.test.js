@@ -8,7 +8,9 @@ describe('add-video-question plugin', () => {
     multipleQuestionAST,
     videoOutOfOrderAST,
     videoWithAudioAST,
-    chineseVideoAST;
+    chineseVideoAST,
+    enUsVideoAST,
+    esVideoAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
 
@@ -23,6 +25,8 @@ describe('add-video-question plugin', () => {
     );
     videoWithAudioAST = await parseFixture('with-video-question-audio.md');
     chineseVideoAST = await parseFixture('with-chinese-mcq.md');
+    enUsVideoAST = await parseFixture('with-en-us-mcq.md');
+    esVideoAST = await parseFixture('with-es-mcq.md');
   });
 
   beforeEach(() => {
@@ -175,5 +179,57 @@ describe('add-video-question plugin', () => {
     expect(answer4.answer).toContain(
       '<ruby>问<rp>(</rp><rt>wèn</rt><rp>)</rp></ruby>'
     );
+  });
+
+  it('should render inline code as spans in question text, answers, and feedback for en-US', async () => {
+    const enUsFile = { data: { lang: 'en-US' } };
+
+    plugin(enUsVideoAST, enUsFile);
+
+    const question = enUsFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <span class="highlighted-text">highlighted text</span>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toBe(
+      '<p><span class="highlighted-text">correct answer</span></p>'
+    );
+    expect(answer1.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">highlighted text</span>.</p>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toBe(
+      '<p><span class="highlighted-text">wrong answer</span></p>'
+    );
+    expect(answer2.feedback).toBe('<p>Wrong answer feedback.</p>');
+  });
+
+  it('should render inline code as spans in question text, answers, and feedback for es', async () => {
+    const esFile = { data: { lang: 'es' } };
+
+    plugin(esVideoAST, esFile);
+
+    const question = esFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <span class="highlighted-text">texto resaltado</span>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toBe(
+      '<p><span class="highlighted-text">correct answer</span></p>'
+    );
+    expect(answer1.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">texto resaltado</span>.</p>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toBe(
+      '<p><span class="highlighted-text">wrong answer</span></p>'
+    );
+    expect(answer2.feedback).toBe('<p>Wrong answer feedback.</p>');
   });
 });
