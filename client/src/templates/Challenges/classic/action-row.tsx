@@ -4,7 +4,6 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import EditorTabs from './editor-tabs';
 
 interface ClassicLayoutProps {
@@ -21,9 +20,9 @@ interface ClassicLayoutProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
-  challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
+  usesTerminal: boolean;
 }
 
 interface InteractiveEditorProps {
@@ -73,7 +72,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
-    challengeType
+    usesTerminal
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -85,33 +84,39 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     };
 
     // preview open in main window
-    if (showPreviewPane && !showPreviewPortal) {
+    if (showPreviewPane && !showPreviewPortal && !usesTerminal) {
       previewBtnsSrText.pane = t('aria.hide-preview');
       previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
 
       // preview open in external window
-    } else if (showPreviewPortal && !showPreviewPane) {
+    } else if (showPreviewPortal && !showPreviewPane && !usesTerminal) {
       previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
       previewBtnsSrText.portal = t('aria.close-external-preview-window');
+    }
+
+    // terminal open in main window
+    if (showPreviewPane && !showPreviewPortal && usesTerminal) {
+      previewBtnsSrText.pane = t('aria.hide-terminal');
+      previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
+
+      // terminal open in external window
+    } else if (showPreviewPortal && !showPreviewPane && usesTerminal) {
+      previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
+      previewBtnsSrText.portal = t('aria.close-external-terminal-window');
     }
 
     return previewBtnsSrText;
   }
 
-  const isPythonChallenge =
-    challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.pyLab ||
-    challengeType === challengeTypes.dailyChallengePy;
-
-  const previewButtonText = isPythonChallenge
-    ? t('learn.editor-tabs.terminal')
-    : t('learn.editor-tabs.preview');
-
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
     setDailyCodingChallengeLanguage(language);
   };
+
+  const previewPaneButtonText =
+    usesTerminal == false
+      ? 'learn.editor-tabs.preview'
+      : 'learn.editor-tabs.terminal';
 
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
@@ -174,7 +179,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{previewButtonText}</span>
+                <span aria-hidden='true'>{t(previewPaneButtonText)}</span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}
