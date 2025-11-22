@@ -6,6 +6,7 @@ import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
+import PinyinToHanziInput from './pinyin-to-hanzi-input';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
@@ -34,7 +35,7 @@ const AnswerText = ({ answer }: { answer: string }) => {
 };
 
 function FillInTheBlanks({
-  fillInTheBlank: { sentence, blanks },
+  fillInTheBlank: { sentence, blanks, inputType },
   answersCorrect,
   showFeedback,
   feedback,
@@ -60,17 +61,20 @@ function FillInTheBlanks({
       return parsedAnswer.length;
     }
 
-    // TODO: This is a simplification. Revisit later to account for tones and spaces.
     return parsedAnswer.pinyin.length;
   };
 
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
 
+  const ariaInputDescription =
+    inputType === 'pinyin-to-hanzi' ? t('aria.pinyin-to-hanzi-input-desc') : '';
+
   return (
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
+      <p className='sr-only'>{t(ariaInputDescription)}</p>
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
           return (
@@ -101,6 +105,28 @@ function FillInTheBlanks({
                 }
 
                 const answerLength = getAnswerLength(blankAnswers[value]);
+
+                if (inputType === 'pinyin-to-hanzi') {
+                  const parsedAnswer = parseAnswer(blankAnswers[value]);
+                  const expectedAnswer =
+                    typeof parsedAnswer === 'string'
+                      ? { hanzi: parsedAnswer, pinyin: parsedAnswer }
+                      : parsedAnswer;
+
+                  return (
+                    <PinyinToHanziInput
+                      key={j}
+                      index={value}
+                      expectedAnswer={expectedAnswer}
+                      isCorrect={answersCorrect[value]}
+                      onChange={handleInputChange}
+                      className={getInputClass(value)}
+                      maxLength={answerLength + 3}
+                      size={answerLength}
+                      ariaLabel={t('learn.fill-in-the-blank.blank')}
+                    />
+                  );
+                }
 
                 return (
                   <input
