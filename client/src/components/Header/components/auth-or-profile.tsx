@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, AvatarRenderer } from '../../helpers';
 import Login from './login';
+import StreakDisplay from './streak-display';
 
 interface AuthOrProfileProps {
   user?: {
@@ -9,6 +10,7 @@ interface AuthOrProfileProps {
     username: string;
     picture: string;
     yearsTopContributor: string[];
+    calendar: Record<string, number>;
   };
 }
 const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
@@ -24,13 +26,16 @@ const AuthOrProfile = ({ user }: AuthOrProfileProps): JSX.Element => {
     );
   } else {
     return (
-      <Link className='avatar-nav-link' to={`/${user.username}`}>
-        <AvatarRenderer
-          isDonating={isUserDonating}
-          isTopContributor={isTopContributor}
-          picture={user.picture}
-        />
-      </Link>
+      <div className='auth-or-profile-wrapper'>
+        <StreakDisplay username={user.username} calendar={user.calendar} />
+        <Link className='avatar-nav-link' to={`/${user.username}`}>
+          <AvatarRenderer
+            isDonating={isUserDonating}
+            isTopContributor={isTopContributor}
+            picture={user.picture}
+          />
+        </Link>
+      </div>
     );
   }
 };
