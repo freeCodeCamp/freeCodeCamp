@@ -61,7 +61,8 @@ Once you open the MongoDB Atlas page, you should sign up for a new account.
 
 ### Add your IP address
 
-- If you now click on the green **Get Started** button in the bottom left of your screen, you should see the next step to take highlighted, **Add your IP address**, click on it.
+- If you now click on the green **Get Started** button in the bottom left of your screen, you should see the next step to take highlighted, **Add your IP address**, and click on it.
+
   - Follow the instructions by clicking on the `IP Access List` tab under the `Security` tab.
   - Click on the green **ADD IP ADDRESS** button.
   - In the modal, click the **ALLOW ACCESS FROM ANYWHERE** button and you should see `0.0.0.0/0` pre-filled for the whitelist entry field, click the green **Confirm** button.
