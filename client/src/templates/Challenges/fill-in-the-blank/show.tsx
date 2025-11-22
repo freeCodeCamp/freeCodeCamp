@@ -144,14 +144,16 @@ const ShowFillInTheBlank = ({
         userAnswer.trim()
       ).toLowerCase();
 
-      const pairs = parseHanziPinyinPairs(answer);
-      const hanziPinyin = pairs.length === 1 ? pairs[0] : null;
-
-      if (hanziPinyin) {
-        const { hanzi } = hanziPinyin;
-        // TODO: Implement full hanzi-pinyin validation logic
-        // https://github.com/freeCodeCamp/language-curricula/issues/18
-        return normalizedUserAnswer === hanzi;
+      if (fillInTheBlank.inputType === 'pinyin-to-hanzi') {
+        const pairs = parseHanziPinyinPairs(answer);
+        if (pairs.length === 1) {
+          const hanziPinyin = pairs[0];
+          const { hanzi } = hanziPinyin;
+          return (
+            normalizedUserAnswer.replace(/\s+/g, '') ===
+            hanzi.replace(/\s+/g, '')
+          );
+        }
       }
 
       return normalizedUserAnswer === answer.toLowerCase();
