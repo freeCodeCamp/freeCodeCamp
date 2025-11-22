@@ -32,8 +32,6 @@ import type {
   ResizeProps,
   Test
 } from '../../../redux/prop-types';
-import { editorToneOptions } from '../../../utils/tone/editor-config';
-import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canSaveToDB,
   challengeTypes
@@ -71,6 +69,15 @@ import envConfig from '../../../../config/env.json';
 import LowerJaw from './lower-jaw';
 // Direct from npm, license in react-types-licence
 import reactTypes from './react-types.json';
+import { useEditorAccessibility } from './hooks/use-editor-accessibility';
+import { useEditorSound } from './hooks/use-editor-sound';
+import {
+  getEditorContentWidth,
+  createScrollGutterNode,
+  createWidget,
+  createBreadcrumbElement,
+  createLowerJawContainer as createLowerJawContainerHelper
+} from './utils/editor-dom-helpers';
 
 import './editor.css';
 
@@ -274,16 +281,16 @@ const Editor = (props: EditorProps): JSX.Element => {
     debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
   );
 
-  const player = useRef<{
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    sampler: any;
-    noteIndex: number;
-    shouldPlay: boolean | undefined;
-  }>({
-    sampler: undefined,
-    noteIndex: 0,
-    shouldPlay: store.get('fcc-sound') as boolean | undefined
-  });
+  // Custom hooks for separated concerns
+  const {
+    ariaAlert,
+    toggleAriaRoledescription,
+    setAriaRoledescription,
+    getStoredAriaRoledescription,
+    storedAccessibilityMode
+  } = useEditorAccessibility();
+
+  const { playNote } = useEditorSound();
 
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
@@ -405,18 +412,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       );
     dataRef.current.model = model;
 
-    if (player.current.shouldPlay && !player.current.sampler) {
-      void import('tone').then(tone => {
-        const newSound = new tone.Sampler(editorToneOptions).toDestination();
-        player.current.sampler = newSound;
-
-        const storedVolume = (store.get('soundVolume') as number) ?? 50;
-        const calculateDecibel = -60 * (1 - storedVolume / 100);
-
-        newSound.volume.value = calculateDecibel;
-      });
-    }
-
     // TODO: do we need to return this?
     return { model };
   };
@@ -465,34 +460,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     }
 
-    const storedAccessibilityMode = () => {
-      const accessibility = store.get('accessibilityMode') as boolean;
-
-      const isMacOS = navigator.userAgent.includes('Mac OS');
-      const a11yOffText = isMacOS
-        ? t('aria.editor-a11y-off-macos', { editorName: ariaEditorName })
-        : t('aria.editor-a11y-off-non-macos', { editorName: ariaEditorName });
-      const a11yOnText = isMacOS
-        ? t('aria.editor-a11y-on-macos', { editorName: ariaEditorName })
-        : t('aria.editor-a11y-on-non-macos', { editorName: ariaEditorName });
-
-      if (!accessibility) {
-        store.set('accessibilityMode', false);
-
-        editor.updateOptions({
-          ariaLabel: a11yOffText
-        });
-      }
-
-      if (accessibility) {
-        editor.updateOptions({
-          ariaLabel: a11yOnText
-        });
-      }
-
-      return accessibility;
-    };
-
     const setTabTrapped = (
       trapped: boolean,
       opts: { announce: boolean } = { announce: true }
@@ -516,7 +483,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       setTabTrapped(false, { announce: false });
     }
 
-    const accessibilityMode = storedAccessibilityMode();
+    const accessibilityMode = storedAccessibilityMode(editor, ariaEditorName);
     editor.updateOptions({
       accessibilitySupport: accessibilityMode ? 'on' : 'auto'
     });
@@ -629,12 +596,17 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyE
       ],
       run: () => {
-        const currentAccessibility = storedAccessibilityMode();
+        const currentAccessibility = storedAccessibilityMode(
+          editor,
+          ariaEditorName
+        );
 
         store.set('accessibilityMode', !currentAccessibility);
 
         editor.updateOptions({
-          accessibilitySupport: storedAccessibilityMode() ? 'on' : 'auto'
+          accessibilitySupport: storedAccessibilityMode(editor, ariaEditorName)
+            ? 'on'
+            : 'auto'
         });
       }
     });
@@ -686,59 +658,6 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     // update scrollbar arrows
     setScrollbarArrowStyles(getScrollbarWidth());
-  };
-
-  const toggleAriaRoledescription = () => {
-    const newRoledescription = !getStoredAriaRoledescription();
-    setAriaRoledescription(newRoledescription);
-    ariaAlert(
-      `aria-roledescription has been turned ${
-        newRoledescription ? 'on' : 'off'
-      }`
-    );
-  };
-
-  const setAriaRoledescription = (value: boolean) => {
-    const textareas = document.querySelectorAll('.monaco-editor textarea');
-    textareas.forEach(textarea => {
-      if (value) {
-        textarea.setAttribute('aria-roledescription', 'editor');
-      } else {
-        textarea.removeAttribute('aria-roledescription');
-      }
-    });
-    store.set('ariaRoledescription', value);
-  };
-
-  const getStoredAriaRoledescription = () =>
-    !!(store.get('ariaRoledescription') ?? true);
-
-  // Borrowed from
-  // freeCodeCamp/node_modules/monaco-editor/esm/vs/base/browser/ui/aria/aria.js
-  // Uses the aria live region provided by monaco.
-  const ariaAlert = (message: string) => {
-    const ariaLive: NodeListOf<HTMLDivElement> =
-      document.querySelectorAll('.monaco-alert');
-    if (ariaLive.length > 0) {
-      const liveText = ariaLive[0];
-      liveText.textContent = message;
-      // Hack used by monaco to force older browsers to announce the update to
-      // the live region.
-      // See https://www.tpgi.com/html5-accessibility-chops-aria-rolealert-browser-support/
-      liveText.style.visibility = 'hidden';
-      liveText.style.visibility = 'visible';
-      // Need to remove message after a few seconds so screen readers don't
-      // run into it.
-      // First, track the latest message so it is shown for the full duration.
-      const time = `t${Date.now()}`;
-      liveText.dataset.timestamp = time;
-      setTimeout(function () {
-        // Now, only the latest message will have this timestamp.
-        if (liveText.dataset.timestamp === time) {
-          liveText.textContent = '';
-        }
-      }, 3000);
-    }
   };
 
   const descriptionZoneCallback = (
@@ -871,34 +790,14 @@ const Editor = (props: EditorProps): JSX.Element => {
     return domNode;
   }
 
-  // Take the current scrollbar width into account
-  function getEditorContentWidth(editor: editor.IStandaloneCodeEditor) {
-    return editor.getLayoutInfo().contentWidth - getScrollbarWidth();
-  }
-
   function createLowerJawContainer(editor: editor.IStandaloneCodeEditor) {
     if (lowerJawContainer) return lowerJawContainer;
-    const container = document.createElement('div');
-    container.classList.add('editor-lower-jaw');
-    container.setAttribute('id', 'editor-lower-jaw');
-    container.style.left = `${editor.getLayoutInfo().contentLeft}px`;
-    container.style.width = `${getEditorContentWidth(editor)}px`;
-    container.style.top = getOutputZoneTop();
+    const container = createLowerJawContainerHelper(
+      editor,
+      dataRef.current.outputZoneTop
+    );
     setLowerJawContainer(container);
     return container;
-  }
-
-  function createScrollGutterNode(
-    editor: editor.IStandaloneCodeEditor
-  ): HTMLDivElement {
-    const scrollGutterNode = document.createElement('div');
-    const lineGutterWidth = editor.getLayoutInfo().contentLeft;
-    scrollGutterNode.style.width = `${lineGutterWidth}px`;
-    scrollGutterNode.style.left = `-${lineGutterWidth}px`;
-    scrollGutterNode.style.top = '0';
-    scrollGutterNode.style.height = '10000px';
-    scrollGutterNode.style.background = 'transparent';
-    return scrollGutterNode;
   }
 
   function resetMarginDecorations() {
@@ -929,50 +828,15 @@ const Editor = (props: EditorProps): JSX.Element => {
       ? [coveringRange.startLineNumber - 1, coveringRange.endLineNumber + 1]
       : [];
 
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (player.current.sampler?.loaded && player.current.shouldPlay) {
-      void import('tone').then(tone => {
-        if (tone.context.state !== 'running') void tone.context.resume();
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-        player.current.sampler?.triggerAttack(
-          editorNotes[player.current.noteIndex]
-        );
-        player.current.noteIndex++;
-        if (player.current.noteIndex >= editorNotes.length) {
-          player.current.noteIndex = 0;
-        }
-      });
-    }
+    // Play sound on content change
+    playNote();
+
     updateFile({ fileKey, contents, editableRegionBoundaries });
   };
 
   function createBreadcrumb(): HTMLElement {
     const { block, superBlock } = props;
-    const breadcrumb = document.createElement('nav');
-    breadcrumb.setAttribute('aria-label', `${t('aria.breadcrumb-nav')}`);
-    const breadcrumbList = document.createElement('ol'),
-      breadcrumbLeft = document.createElement('li'),
-      breadcrumbLeftLink = document.createElement('a'),
-      breadcrumbRight = document.createElement('li'),
-      breadcrumbRightLink = document.createElement('a');
-    breadcrumbLeftLink.innerHTML = t(`intro:${superBlock}.title`);
-    breadcrumbRightLink.innerHTML = t(
-      `intro:${superBlock}.blocks.${block}.title`
-    );
-    breadcrumbLeftLink.setAttribute('href', `/learn/${superBlock}`);
-    breadcrumbRightLink.setAttribute('href', `/learn/${superBlock}/#${block}`);
-    breadcrumbLeft.appendChild(breadcrumbLeftLink);
-    breadcrumbRight.appendChild(breadcrumbRightLink);
-    breadcrumbList.setAttribute(
-      'data-playwright-test-label',
-      'breadcrumb-mobile'
-    );
-    breadcrumbList.className = 'breadcrumbs';
-    breadcrumbList.appendChild(breadcrumbLeft);
-    breadcrumbList.appendChild(breadcrumbRight);
-    breadcrumb.appendChild(breadcrumbList);
-
-    return breadcrumb;
+    return createBreadcrumbElement(block, superBlock, t);
   }
 
   // TODO: DRY this and the update function
@@ -1100,40 +964,6 @@ const Editor = (props: EditorProps): JSX.Element => {
       model
     })[0];
   }
-
-  const createWidget = (
-    editor: editor.IStandaloneCodeEditor,
-    id: string,
-    domNode: HTMLDivElement,
-    // If getTop function is not provided then no positioning will be done here.
-    // This allows scroll gutter to do its positioning elsewhere.
-    getTop?: () => string
-  ) => {
-    const getId = () => id;
-    const getDomNode = () => domNode;
-    const getPosition = () => {
-      if (getTop) {
-        domNode.style.width = `${getEditorContentWidth(editor)}px`;
-        domNode.style.top = getTop();
-      }
-      // must return null, so that Monaco knows the widget will position
-      // itself.
-      return null;
-    };
-
-    const afterRender = () => {
-      if (getTop) {
-        domNode.style.left = '0';
-      }
-    };
-
-    return {
-      getId,
-      getDomNode,
-      getPosition,
-      afterRender
-    };
-  };
 
   function addWidgetsToRegions() {
     const editor = dataRef.current.editor;

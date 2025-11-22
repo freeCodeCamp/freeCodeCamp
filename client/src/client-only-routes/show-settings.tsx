@@ -36,6 +36,11 @@ import {
   verifyCert,
   resetMyEditorLayout
 } from '../redux/settings/actions';
+import type {
+  CertificationFlags,
+  UIPreferences,
+  EmailSettings
+} from './settings-types';
 
 const { apiLocation } = envData;
 
@@ -107,6 +112,50 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
 
   const isSignedInRef = useRef(isSignedIn);
 
+  // Extract certification flags to reduce component complexity
+  const certificationFlags: CertificationFlags = user
+    ? {
+        is2018DataVisCert: user.is2018DataVisCert,
+        isA2EnglishCert: user.isA2EnglishCert,
+        isApisMicroservicesCert: user.isApisMicroservicesCert,
+        isJavascriptCertV9: user.isJavascriptCertV9,
+        isJsAlgoDataStructCert: user.isJsAlgoDataStructCert,
+        isBackEndCert: user.isBackEndCert,
+        isDataVisCert: user.isDataVisCert,
+        isFrontEndCert: user.isFrontEndCert,
+        isInfosecQaCert: user.isInfosecQaCert,
+        isQaCertV7: user.isQaCertV7,
+        isInfosecCertV7: user.isInfosecCertV7,
+        isFrontEndLibsCert: user.isFrontEndLibsCert,
+        isFullStackCert: user.isFullStackCert,
+        isRespWebDesignCert: user.isRespWebDesignCert,
+        isRespWebDesignCertV9: user.isRespWebDesignCertV9,
+        isSciCompPyCertV7: user.isSciCompPyCertV7,
+        isDataAnalysisPyCertV7: user.isDataAnalysisPyCertV7,
+        isMachineLearningPyCertV7: user.isMachineLearningPyCertV7,
+        isRelationalDatabaseCertV8: user.isRelationalDatabaseCertV8,
+        isCollegeAlgebraPyCertV8: user.isCollegeAlgebraPyCertV8,
+        isFoundationalCSharpCertV8: user.isFoundationalCSharpCertV8,
+        isJsAlgoDataStructCertV8: user.isJsAlgoDataStructCertV8
+      }
+    : ({} as CertificationFlags);
+
+  // Extract UI preferences
+  const uiPreferences: UIPreferences = {
+    keyboardShortcuts: user?.keyboardShortcuts ?? false,
+    sound: (store.get('fcc-sound') as boolean) ?? false,
+    editorLayout: (store.get('challenge-layout') as boolean) ?? false
+  };
+
+  // Extract email settings
+  const emailSettings: EmailSettings = user
+    ? {
+        email: user.email,
+        isEmailVerified: user.isEmailVerified,
+        sendQuincyEmail: user.sendQuincyEmail
+      }
+    : ({} as EmailSettings);
+
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
     if (id) {
@@ -134,40 +183,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return <Loader fullScreen={true} />;
   }
 
-  const {
-    completedChallenges,
-    email,
-    is2018DataVisCert,
-    isA2EnglishCert,
-    isApisMicroservicesCert,
-    isJavascriptCertV9,
-    isJsAlgoDataStructCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFrontEndCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndLibsCert,
-    isFullStackCert,
-    isRespWebDesignCert,
-    isRespWebDesignCertV9,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
-    isMachineLearningPyCertV7,
-    isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJsAlgoDataStructCertV8,
-    isEmailVerified,
-    isHonest,
-    sendQuincyEmail,
-    username,
-    keyboardShortcuts
-  } = user;
-
-  const sound = (store.get('fcc-sound') as boolean) ?? false;
-  const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
+  const { completedChallenges, isHonest, username } = user;
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
@@ -183,9 +199,9 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             {t('settings.for', { username: username })}
           </h1>
           <MiscSettings
-            keyboardShortcuts={keyboardShortcuts}
-            sound={sound}
-            editorLayout={editorLayout}
+            keyboardShortcuts={uiPreferences.keyboardShortcuts}
+            sound={uiPreferences.sound}
+            editorLayout={uiPreferences.editorLayout}
             resetEditorLayout={resetEditorLayout}
             toggleKeyboardShortcuts={toggleKeyboardShortcuts}
             toggleSoundMode={toggleSoundMode}
@@ -194,44 +210,23 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Privacy />
           <Spacer size='m' />
           <Email
-            email={email}
-            isEmailVerified={isEmailVerified}
-            sendQuincyEmail={sendQuincyEmail}
+            email={emailSettings.email}
+            isEmailVerified={emailSettings.isEmailVerified}
+            sendQuincyEmail={emailSettings.sendQuincyEmail}
             updateQuincyEmail={updateQuincyEmail}
           />
           <Spacer size='m' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='m' />
-          <ExamToken email={email} />
+          <ExamToken email={emailSettings.email} />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isA2EnglishCert={isA2EnglishCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isJavascriptCertV9={isJavascriptCertV9}
+            {...certificationFlags}
             isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isRespWebDesignCertV9={isRespWebDesignCertV9}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
             username={username}
             verifyCert={verifyCert}
-            isEmailVerified={isEmailVerified}
+            isEmailVerified={emailSettings.isEmailVerified}
           />
           {userToken && (
             <>
