@@ -1077,8 +1077,7 @@
       "err-3": "Algo deu errado ao tentar salvar sua pesquisa.",
       "success": "Obrigado. Sua pesquisa foi enviada."
     },
-    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",

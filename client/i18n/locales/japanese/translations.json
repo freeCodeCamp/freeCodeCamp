@@ -1077,8 +1077,7 @@
       "err-3": "アンケートの保存中に問題が発生しました。",
       "success": "アンケートを送信しました。ご協力ありがとうございました。"
     },
-    "classroom-mode-updated": "クラスルームモード設定を更新しました。",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "classroom-mode-updated": "クラスルームモード設定を更新しました。"
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",

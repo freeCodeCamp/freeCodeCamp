@@ -1077,8 +1077,7 @@
       "err-3": "Algo salió mal al intentar guardar tu encuesta.",
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
-    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase"
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",

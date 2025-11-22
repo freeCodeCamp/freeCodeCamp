@@ -1077,8 +1077,7 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "classroom-mode-updated": "我們已更新你的課堂模式設置"
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",

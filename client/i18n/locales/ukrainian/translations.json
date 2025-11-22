@@ -1077,8 +1077,7 @@
       "err-3": "Під час спроби зберегти відповіді виникла помилка.",
       "success": "Дякуємо. Ваші відповіді надіслано."
     },
-    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
