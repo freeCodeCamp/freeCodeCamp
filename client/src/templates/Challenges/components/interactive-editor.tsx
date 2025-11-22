@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import { Sandpack } from '@codesandbox/sandpack-react';
 import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
+import { CustomSandpack } from './custom-sandpack';
 
 export interface InteractiveFile {
   ext: string;
@@ -57,7 +57,7 @@ const InteractiveEditor = ({ files }: Props) => {
       className='interactive-editor-wrapper'
       data-playwright-test-label='sp-interactive-editor'
     >
-      <Sandpack
+      <CustomSandpack
         template={
           got('tsx')
             ? 'react-ts'
