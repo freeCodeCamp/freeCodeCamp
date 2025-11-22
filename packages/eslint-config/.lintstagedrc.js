@@ -24,7 +24,7 @@ export const createLintStagedConfig = cwd => {
             ...prettierCommand
           ];
     },
-    '*.!(mjs|js|ts|tsx|css)': files =>
+    '*.!(mjs|js|ts|tsx|css|md)': files =>
       files.map(filename => `prettier --write --ignore-unknown '${filename}'`),
 
     '*.css': files => [
