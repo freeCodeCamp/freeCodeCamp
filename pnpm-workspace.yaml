@@ -2,6 +2,7 @@ packages:
   - 'api'
   - 'client'
   - 'curriculum'
+  - 'e2e'
   - 'shared'
   - 'tools/challenge-editor/api'
   - 'tools/challenge-editor/client'
@@ -19,3 +20,6 @@ packageExtensions:
   '@testing-library/jest-dom':
     peerDependencies:
       vitest: '*'
+
+hoistPattern:
+  - '!*eslint*'
