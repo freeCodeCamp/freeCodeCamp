@@ -35,6 +35,7 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
+import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
 
@@ -135,12 +136,26 @@ const ShowFillInTheBlank = ({
   const handleSubmit = () => {
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
-    const newAnswersCorrect = userAnswers.map(
-      (userAnswer, i) =>
-        !!userAnswer &&
-        replaceAppleQuotes(userAnswer.trim()).toLowerCase() ===
-          blankAnswers[i].toLowerCase()
-    );
+    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
+      if (!userAnswer) return false;
+
+      const answer = blankAnswers[i];
+      const normalizedUserAnswer = replaceAppleQuotes(
+        userAnswer.trim()
+      ).toLowerCase();
+
+      const pairs = parseHanziPinyinPairs(answer);
+      if (pairs.length === 1) {
+        const hanziPinyin = pairs[0];
+        const { hanzi } = hanziPinyin;
+        return (
+          normalizedUserAnswer.replace(/\s+/g, '') === hanzi.replace(/\s+/g, '')
+        );
+      }
+
+      return normalizedUserAnswer === answer.toLowerCase();
+    });
+
     setAnswersCorrect(newAnswersCorrect);
     const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
     if (!hasWrongAnswer) {
@@ -294,6 +309,7 @@ export const query = graphql`
             answer
             feedback
           }
+          inputType
         }
         tests {
           text

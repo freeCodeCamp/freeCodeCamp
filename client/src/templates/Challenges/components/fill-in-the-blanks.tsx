@@ -2,10 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 
-import { parseBlanks } from '../fill-in-the-blank/parse-blanks';
+import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
+import PinyinToHanziInput from './pinyin-to-hanzi-input';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
@@ -16,8 +17,25 @@ type FillInTheBlankProps = {
   handleInputChange: (inputIndex: number, value: string) => void;
 };
 
+const AnswerText = ({ answer }: { answer: string }) => {
+  const parsedAnswer = parseAnswer(answer);
+
+  if (typeof parsedAnswer === 'string') {
+    return <span className='correct-blank-answer'>{parsedAnswer}</span>;
+  }
+
+  return (
+    <ruby className='correct-blank-answer'>
+      {parsedAnswer.hanzi}
+      <rp>(</rp>
+      <rt>{parsedAnswer.pinyin}</rt>
+      <rp>)</rp>
+    </ruby>
+  );
+};
+
 function FillInTheBlanks({
-  fillInTheBlank: { sentence, blanks },
+  fillInTheBlank: { sentence, blanks, inputType },
   answersCorrect,
   showFeedback,
   feedback,
@@ -36,13 +54,27 @@ function FillInTheBlanks({
     return cls;
   };
 
+  const getAnswerLength = (answer: string): number => {
+    const parsedAnswer = parseAnswer(answer);
+
+    if (typeof parsedAnswer === 'string') {
+      return parsedAnswer.length;
+    }
+
+    return parsedAnswer.pinyin.length;
+  };
+
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
+
+  const ariaInputDescription =
+    inputType === 'pinyin-to-hanzi' ? t('aria.pinyin-to-hanzi-input-desc') : '';
 
   return (
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
+      <p className='sr-only'>{t(ariaInputDescription)}</p>
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => {
           return (
@@ -55,12 +87,44 @@ function FillInTheBlanks({
                   return value;
                 }
 
+                if (type === 'hanzi-pinyin') {
+                  const { hanzi, pinyin } = value;
+                  return (
+                    <ruby key={j}>
+                      {hanzi}
+                      <rp>(</rp>
+                      <rt>{pinyin}</rt>
+                      <rp>)</rp>
+                    </ruby>
+                  );
+                }
+
                 // If a blank is answered correctly, render the answer as part of the sentence.
                 if (type === 'blank' && answersCorrect[value] === true) {
+                  return <AnswerText key={j} answer={blankAnswers[value]} />;
+                }
+
+                const answerLength = getAnswerLength(blankAnswers[value]);
+
+                if (inputType === 'pinyin-to-hanzi') {
+                  const parsedAnswer = parseAnswer(blankAnswers[value]);
+                  const expectedAnswer =
+                    typeof parsedAnswer === 'string'
+                      ? { hanzi: parsedAnswer, pinyin: parsedAnswer }
+                      : parsedAnswer;
+
                   return (
-                    <span key={j} className='correct-blank-answer'>
-                      {blankAnswers[value]}
-                    </span>
+                    <PinyinToHanziInput
+                      key={j}
+                      index={value}
+                      expectedAnswer={expectedAnswer}
+                      isCorrect={answersCorrect[value]}
+                      onChange={handleInputChange}
+                      className={getInputClass(value)}
+                      maxLength={answerLength + 3}
+                      size={answerLength}
+                      ariaLabel={t('learn.fill-in-the-blank.blank')}
+                    />
                   );
                 }
 
@@ -68,12 +132,12 @@ function FillInTheBlanks({
                   <input
                     key={j}
                     type='text'
-                    maxLength={blankAnswers[value].length + 3}
+                    maxLength={answerLength + 3}
                     className={getInputClass(value)}
                     onChange={e =>
                       handleInputChange(node.value, e.target.value)
                     }
-                    size={blankAnswers[value].length}
+                    size={answerLength}
                     autoComplete='off'
                     aria-label={t('learn.fill-in-the-blank.blank')}
                     {...(answersCorrect[value] === false
