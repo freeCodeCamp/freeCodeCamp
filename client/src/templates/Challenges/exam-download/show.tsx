@@ -292,6 +292,14 @@ function ShowExamDownload({
                   .filter(link => !link.match(/\.sig|\.json/))
                   .map((link, index) => {
                     const urlEnd = link.split('/').pop() ?? '';
+                    // App naming scheme is <app_name>_<version>?_<arch>(-setup)?(-debug)?.<ext>
+                    const urlParts = urlEnd.split('_');
+                    const archAndExt = urlParts.at(urlParts.length - 1);
+                    const arch = archAndExt?.split('-')?.at(0);
+                    const ext = archAndExt?.slice(archAndExt?.indexOf('.'));
+
+                    const recommendedOs =
+                      arch && ext ? getRecommendedOs({ arch, ext }) : '';
                     return (
                       <MenuItem
                         href={link}
@@ -299,7 +307,7 @@ function ShowExamDownload({
                         key={index}
                         variant='primary'
                       >
-                        {urlEnd}
+                        {urlEnd} {recommendedOs && `(${recommendedOs})`}
                       </MenuItem>
                     );
                   })}
@@ -316,6 +324,40 @@ function ShowExamDownload({
       </Container>
     </LearnLayout>
   );
+}
+
+function getRecommendedOs({
+  arch,
+  ext
+}: {
+  arch: string;
+  ext: string;
+}): string {
+  switch (arch) {
+    case 'x64':
+      switch (ext) {
+        case '.dmg':
+          return 'x64 MacOS';
+        case '.AppImage':
+        case '.app.tar.gz':
+          return 'x64 Linux';
+        default:
+          return 'x64 Windows';
+      }
+    case 'aarch64':
+      switch (ext) {
+        case '.dmg':
+          return 'ARM MacOS';
+        case '.app.tar.gz':
+          return 'ARM Linux';
+        default:
+          return 'ARM Windows';
+      }
+    case 'amd64':
+      return 'x64 Linux';
+    default:
+      return '';
+  }
 }
 
 function getLatest(releases: GitProps[]): GitProps {
