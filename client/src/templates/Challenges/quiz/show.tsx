@@ -22,6 +22,7 @@ import {
 import { shuffleArray } from '../../../../../shared-dist/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import { useChallengeLifecycle } from '../hooks';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
@@ -207,16 +208,15 @@ const ShowQuiz = ({
     []
   );
 
-  useEffect(() => {
-    initTests(tests);
-    const challengePaths = getChallengePaths({
-      currentCurriculumPaths: challengeMeta
-    });
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory,
+  useChallengeLifecycle({
+    challengeId: challengeMeta.id,
+    title,
+    challengeType,
+    helpCategory,
+    tests,
+    challengeMeta,
+    challengeMounted: () => {
+      // Original mount logic placeholder - challengeMounted,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);

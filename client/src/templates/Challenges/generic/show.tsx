@@ -13,6 +13,7 @@ import { ObserveKeys } from 'react-hotkeys';
 import PrismFormatted from '../components/prism-formatted';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
+import { useChallengeLifecycle } from '../hooks';
 import ChallengeDescription from '../components/challenge-description';
 import InteractiveEditor from '../components/interactive-editor';
 import ActionRow from '../classic/action-row';
@@ -132,21 +133,20 @@ const ShowGeneric = ({
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
 
-  useEffect(() => {
-    initTests(tests);
-    const challengePaths = getChallengePaths({
-      currentCurriculumPaths: challengeMeta
-    });
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory,
-      ...challengePaths
-    });
-    challengeMounted(challengeMeta.id);
-    container.current?.focus();
-    // This effect should be run once on mount
+  useChallengeLifecycle({
+    challengeId: challengeMeta.id,
+    title,
+    challengeType,
+    helpCategory,
+    tests,
+    challengeMeta,
+    challengeMounted,
+    updateChallengeMeta,
+    initTests,
+    onMount: () => container.current?.focus()
+  });
+
+  // Original effect continuation placeholder - This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

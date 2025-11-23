@@ -15,6 +15,7 @@ import {
   ChallengeMeta,
   Test
 } from '../../../../redux/prop-types';
+import { useChallengeLifecycle } from '../../hooks';
 import ChallengeDescription from '../../components/challenge-description';
 import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
@@ -81,34 +82,30 @@ const ShowFrontEndProject = (props: ProjectProps) => {
 
   const container = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory }
-        }
-      },
-      pageContext: { challengeMeta },
-      initTests,
-      updateChallengeMeta
-    } = props;
-    initTests(tests);
-    const challengePaths = getChallengePaths({
-      currentCurriculumPaths: challengeMeta
-    });
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory,
-      ...challengePaths
-    });
-    challengeMounted(challengeMeta.id);
-    container.current?.focus();
-    // This effect should be run once on mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const {
+    data: {
+      challengeNode: {
+        challenge: { tests, title, challengeType, helpCategory }
+      }
+    },
+    pageContext: { challengeMeta },
+    challengeMounted,
+    initTests,
+    updateChallengeMeta
+  } = props;
+
+  useChallengeLifecycle({
+    challengeId: challengeMeta.id,
+    title,
+    challengeType,
+    helpCategory,
+    tests,
+    challengeMeta,
+    challengeMounted,
+    updateChallengeMeta,
+    initTests,
+    onMount: () => container.current?.focus()
+  });
 
   const {
     data: {

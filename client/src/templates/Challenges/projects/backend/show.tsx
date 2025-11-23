@@ -14,6 +14,7 @@ import {
   ChallengeNode,
   Test
 } from '../../../../redux/prop-types';
+import { useChallengeLifecycle } from '../../hooks';
 import ChallengeDescription from '../../components/challenge-description';
 import Hotkeys from '../../components/hotkeys';
 import ChallengeTitle from '../../components/challenge-title';
@@ -104,35 +105,34 @@ const ShowBackEnd = (props: BackEndProps) => {
     props.executeChallenge({ showCompletionModal });
   };
 
-  useEffect(() => {
-    const {
-      challengeMounted,
-      initConsole,
-      initTests,
-      updateChallengeMeta,
-      data: {
-        challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
-        }
-      },
-      pageContext: { challengeMeta }
-    } = props;
-    initConsole();
-    initTests(tests);
-    const challengePaths = getChallengePaths({
-      currentCurriculumPaths: challengeMeta
-    });
-    updateChallengeMeta({
-      ...challengeMeta,
-      title,
-      challengeType,
-      helpCategory,
-      ...challengePaths
-    });
-    challengeMounted(challengeMeta.id);
-    container.current?.focus();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  const {
+    challengeMounted,
+    initConsole,
+    initTests,
+    updateChallengeMeta,
+    data: {
+      challengeNode: {
+        challenge: { challengeType, helpCategory, tests, title }
+      }
+    },
+    pageContext: { challengeMeta }
+  } = props;
+
+  useChallengeLifecycle({
+    challengeId: challengeMeta.id,
+    title,
+    challengeType,
+    helpCategory,
+    tests,
+    challengeMeta,
+    challengeMounted,
+    updateChallengeMeta,
+    initTests,
+    onMount: () => {
+      initConsole();
+      container.current?.focus();
+    }
+  });
 
   const {
     data: {
