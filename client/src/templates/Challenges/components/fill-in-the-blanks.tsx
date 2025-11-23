@@ -7,6 +7,7 @@ import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
 import PinyinToHanziInput from './pinyin-to-hanzi-input';
+import PinyinToneInput from './pinyin-tone-input';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
@@ -68,7 +69,11 @@ function FillInTheBlanks({
   const blankAnswers = blanks.map(b => b.answer);
 
   const ariaInputDescription =
-    inputType === 'pinyin-to-hanzi' ? t('aria.pinyin-to-hanzi-input-desc') : '';
+    inputType === 'pinyin-to-hanzi'
+      ? t('aria.pinyin-to-hanzi-input-desc')
+      : inputType === 'pinyin-tone'
+        ? t('aria.pinyin-tone-input-desc')
+        : '';
 
   return (
     <>
@@ -118,6 +123,21 @@ function FillInTheBlanks({
                       key={j}
                       index={value}
                       expectedAnswer={expectedAnswer}
+                      isCorrect={answersCorrect[value]}
+                      onChange={handleInputChange}
+                      className={getInputClass(value)}
+                      maxLength={answerLength + 3}
+                      size={answerLength}
+                      ariaLabel={t('learn.fill-in-the-blank.blank')}
+                    />
+                  );
+                }
+
+                if (inputType === 'pinyin-tone') {
+                  return (
+                    <PinyinToneInput
+                      key={j}
+                      index={value}
                       isCorrect={answersCorrect[value]}
                       onChange={handleInputChange}
                       className={getInputClass(value)}
