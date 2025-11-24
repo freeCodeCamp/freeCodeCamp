@@ -228,6 +228,9 @@ function ShowExamDownload({
     };
   });
 
+  const showPrereqAlert =
+    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
+
   return (
     <LearnLayout>
       <Helmet>
@@ -246,15 +249,16 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {missingPrerequisites.length > 0 ? (
-              <MissingPrerequisites
-                missingPrerequisites={missingPrerequisites}
-              />
-            ) : (
-              <Callout className='exam-qualified' variant='info'>
-                <p>{t('learn.exam.qualified')}</p>
-              </Callout>
-            )}
+            {showPrereqAlert &&
+              (missingPrerequisites.length > 0 ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
+              ) : (
+                <Callout className='exam-qualified' variant='info'>
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
+              ))}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />
