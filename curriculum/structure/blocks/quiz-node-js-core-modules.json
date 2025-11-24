@@ -1,0 +1,8 @@
+{
+  "name": "Node JS Core Modules Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-node-js-core-modules",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [{ "id": "692487767b6b728454f53f29", "title": "Step 1" }],
+  "usesMultifileEditor": true
+}

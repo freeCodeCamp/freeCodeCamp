@@ -7,7 +7,7 @@
         {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["quiz-node-js-core-modules"]
         },
         {
           "dashedName": "node-package-manager",
