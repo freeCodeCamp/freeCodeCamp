@@ -3,8 +3,9 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.describe('Network Failure specific alert should display on any pages', () => {
   test.beforeEach(async ({ page }) => {
-    await page.route('*/**/user/get-session-user', route =>
-      route.fulfill({ status: 500 })
+    await page.route(
+      '*/**/user/get-session-user',
+      async route => await route.fulfill({ status: 500 })
     );
   });
 
