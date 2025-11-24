@@ -4,10 +4,6 @@ import jsdom from 'jsdom';
 import lodash from 'lodash';
 
 import {
-  buildChallenge,
-  runnerTypes
-} from '../../../client/src/templates/Challenges/utils/build';
-import {
   challengeTypes,
   hasNoSolution
 } from '../../../shared/config/challenge-types';
@@ -30,7 +26,7 @@ import { sortChallenges } from './utils/sort-challenges.js';
 const { flatten, isEmpty, cloneDeep } = lodash;
 
 vi.mock(
-  '../../client/src/templates/Challenges/utils/typescript-worker-handler',
+  '../../../client/src/templates/Challenges/utils/typescript-worker-handler',
   async importOriginal => {
     const actual = await importOriginal();
 
@@ -113,13 +109,13 @@ export async function defineTestsForBlock(testFilter) {
 
   const challengeData = { meta, challenges, lang };
 
-  describe('Check challenges', () => {
+  describe('Check challenges', async () => {
     beforeAll(async () => {
       page = await newPageContext();
       global.Worker = createPseudoWorker(page);
     });
 
-    populateTestsForLang(challengeData, () => page);
+    await populateTestsForLang(challengeData, () => page);
   });
 }
 
@@ -150,7 +146,13 @@ export async function getChallenges(lang, filters) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta }) {
+async function populateTestsForLang({ lang, challenges, meta }) {
+  // We have to dynamically import this because otherwise it will not be mocked.
+  // Presumably this is because we import from_this file in the generated block
+  // test files and that happens before the mock is applied.
+  const { buildChallenge } = await import(
+    '../../../client/src/templates/Challenges/utils/build'
+  );
   const validateChallenge = challengeSchemaValidator();
 
   describe(`Language: ${lang}`, function () {
@@ -368,6 +370,10 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
+  const { runnerTypes } = await import(
+    '../../../client/src/templates/Challenges/utils/build'
+  );
+
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,
     solutionFiles
