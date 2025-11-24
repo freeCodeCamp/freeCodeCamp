@@ -7,6 +7,10 @@ import { createStore } from '../../redux/create-store';
 import Intro from '.';
 
 vi.mock('../../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeature: () => ({ on: false, value: undefined }),
+  useFeatureIsOn: () => false
+}));
 vi.mock('../../utils/get-words');
 
 function renderWithRedux(
@@ -20,7 +24,7 @@ describe('<Intro />', () => {
   it('has no blockquotes when loggedOut', () => {
     renderWithRedux(<Intro {...loggedOutProps} />);
     expect(screen.queryByTestId('quote-block')).not.toBeInTheDocument();
-    expect(screen.getByRole('heading', { level: 1 }));
+    expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
   });
 
   it('has a blockquote when loggedIn', () => {

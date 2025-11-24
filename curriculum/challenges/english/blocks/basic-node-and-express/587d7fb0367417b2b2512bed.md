@@ -36,13 +36,11 @@ Modify the `myApp.js` file to log "Hello World" to the console.
 `"Hello World"` should be in the console
 
 ```js
-  $.get(code + '/_api/hello-console').then(
-    (data) => {
-      assert.isTrue(data.passed, '"Hello World" is not in the server console');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/hello-console');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isTrue(data.passed, '"Hello World" is not in the server console');
 ```
 

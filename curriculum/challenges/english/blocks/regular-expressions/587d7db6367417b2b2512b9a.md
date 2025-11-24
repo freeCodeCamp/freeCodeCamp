@@ -26,7 +26,7 @@ In order, the three `match` calls would return the values `["goooooooo"]`, `["g"
 
 # --instructions--
 
-For this challenge, `chewieQuote` has been initialized as the string `Aaaaaaaaaaaaaaaarrrgh!` behind the scenes. Create a regex `chewieRegex` that uses the `*` character to match an uppercase `A` character immediately followed by zero or more lowercase `a` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
+Create a regex `chewieRegex` that uses the `*` character to match an uppercase `A` character immediately followed by zero or more lowercase `a` characters in `chewieQuote`. Your regex does not need flags or character classes, and it should not match any of the other quotes.
 
 # --hints--
 
@@ -72,15 +72,10 @@ assert(
 
 # --seed--
 
-## --before-user-code--
-
-```js
-const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
-```
-
 ## --seed-contents--
 
 ```js
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
 // Only change code below this line
 let chewieRegex = /change/; // Change this line
 // Only change code above this line
@@ -91,6 +86,7 @@ let result = chewieQuote.match(chewieRegex);
 # --solutions--
 
 ```js
-  let chewieRegex = /Aa*/;
-  let result = chewieQuote.match(chewieRegex);
+const chewieQuote = "Aaaaaaaaaaaaaaaarrrgh!";
+let chewieRegex = /Aa*/;
+let result = chewieQuote.match(chewieRegex);
 ```

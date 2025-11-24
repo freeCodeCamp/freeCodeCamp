@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Arrays
 
-In these lecture videos, you will learn about working with JavaScript arrays.
+In these lessons, you will learn about working with JavaScript arrays.

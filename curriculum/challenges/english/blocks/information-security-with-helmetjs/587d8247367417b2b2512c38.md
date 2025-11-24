@@ -23,31 +23,27 @@ Use `helmet.frameguard()` passing with the configuration object `{action: 'deny'
 helmet.frameguard() middleware should be mounted correctly
 
 ```js
-  $.get(code + '/_api/app-info').then(
-    (data) => {
-      assert.include(
-        data.appStack,
-        'frameguard',
-        'helmet.frameguard() middleware is not mounted correctly'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/app-info');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.include(
+  data.appStack,
+  'frameguard',
+  'helmet.frameguard() middleware is not mounted correctly'
+);
 ```
 
 helmet.frameguard() 'action' should be set to 'DENY'
 
 ```js
-  $.get(code + '/_api/app-info').then(
-    (data) => {
-      assert.property(data.headers, 'x-frame-options');
-      assert.equal(data.headers['x-frame-options'], 'DENY');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/app-info');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.property(data.headers, 'x-frame-options');
+assert.equal(data.headers['x-frame-options'], 'DENY');
 ```
 

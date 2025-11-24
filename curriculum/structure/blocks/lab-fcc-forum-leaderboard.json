@@ -2,7 +2,7 @@
   "name": "Build an fCC Forum Leaderboard",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-fcc-forum-leaderboard",
   "challengeOrder": [

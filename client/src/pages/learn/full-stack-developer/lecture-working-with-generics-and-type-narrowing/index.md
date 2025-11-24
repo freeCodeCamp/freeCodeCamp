@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Working with Generics and Type Narrowing
 
-In these lectures, you will learn about generics and type narrowing in TypeScript.
+In these lessons, you will learn about generics and type narrowing in TypeScript.

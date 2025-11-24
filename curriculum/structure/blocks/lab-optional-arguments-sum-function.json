@@ -1,7 +1,7 @@
 {
   "name": "Build an Optional Arguments Sum Function",
-  "isUpcomingChange": true,
-  "blockType": "lab",
+  "isUpcomingChange": false,
+  "blockLabel": "lab",
   "blockLayout": "link",
   "dashedName": "lab-optional-arguments-sum-function",
   "helpCategory": "JavaScript",

@@ -1,0 +1,14 @@
+{
+  "name": "Responsive Web Design Certification Exam",
+  "isUpcomingChange": false,
+  "dashedName": "exam-responsive-web-design-certification",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68db37350b398ecddd1f5dac",
+      "title": "Responsive Web Design Certification Exam"
+    }
+  ],
+  "blockLabel": "exam"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Greeting New Colleagues",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-warm-up-greeting-new-colleagues",
+  "helpCategory": "English",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3f8467ebb8f4bf838172",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "warm-up"
+}

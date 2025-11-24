@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with File Systems
 
-In these lecture videos, you will learn about working with file systems.
+In these lessons, you will learn about working with file systems.

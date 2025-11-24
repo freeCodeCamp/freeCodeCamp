@@ -7,7 +7,6 @@
           "dashedName": "basic-html",
           "blocks": [
             "workshop-curriculum-outline",
-            "lecture-welcome-to-freecodecamp",
             "lab-debug-camperbots-profile-page",
             "lecture-understanding-html-attributes",
             "lab-debug-pet-adoption-page",
@@ -15,12 +14,15 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "workshop-bookstore-page",
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
+            "workshop-build-a-video-display-using-iframe",
             "lab-video-compilation-page",
             "lecture-working-with-links",
             "review-basic-html",
@@ -32,7 +34,9 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -58,8 +62,11 @@
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
+            "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -150,6 +157,8 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -288,8 +297,11 @@
             "workshop-teacher-chatbot",
             "lecture-working-with-string-character-methods",
             "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
+            "workshop-string-transformer",
             "review-javascript-strings",
             "quiz-javascript-strings"
           ]
@@ -298,7 +310,9 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
@@ -366,6 +380,7 @@
             "lab-chunky-monkey",
             "lab-profile-lookup",
             "lab-repeat-a-string",
+            "lab-missing-letter-detector",
             "review-javascript-loops",
             "quiz-javascript-loops"
           ]
@@ -382,13 +397,18 @@
             "lab-pyramid-generator",
             "lab-gradebook-app",
             "lecture-the-var-keyword-and-hoisting",
+            "lab-title-case-converter",
             "lab-falsy-remover",
             "lab-inventory-management-program",
             "lecture-understanding-modules-imports-and-exports",
             "lecture-working-with-the-arguments-object-and-rest-parameters",
+            "lab-unique-sorted-union",
             "lab-password-generator",
             "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
             "lab-html-entitiy-converter",
+            "lab-odd-fibonacci-sum-calculator",
+            "lab-element-skipper",
             "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
@@ -402,9 +422,12 @@
             "lab-book-organizer",
             "lab-sorted-index-finder",
             "lab-symmetric-difference",
+            "lab-value-remover-function",
             "lab-matching-object-filter",
-            "lab-sum-all-primes-calculator",
+            "lab-prime-number-sum-calculator",
+            "lab-range-based-lcm-calculator",
             "lab-deep-flattening-tool",
+            "lab-all-true-property-validator",
             "review-javascript-higher-order-functions",
             "quiz-javascript-higher-order-functions"
           ]
@@ -414,6 +437,7 @@
           "blocks": [
             "lecture-working-with-the-dom-click-events-and-web-apis",
             "workshop-storytelling-app",
+            "workshop-emoji-reactor",
             "lab-favorite-icon-toggler",
             "lecture-understanding-the-event-object-and-event-delegation",
             "workshop-music-instrument-filter",
@@ -453,6 +477,9 @@
             "lab-palindrome-checker",
             "lab-markdown-to-html-converter",
             "lab-regex-sandbox",
+            "lab-spinal-case-converter",
+            "lab-pig-latin",
+            "lab-smart-word-replacement",
             "review-javascript-regular-expressions",
             "quiz-javascript-regular-expressions"
           ]
@@ -625,6 +652,11 @@
           ]
         },
         {
+          "dashedName": "data-visualization",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
           "dashedName": "typescript-fundamentals",
           "comingSoon": true,
           "blocks": [
@@ -693,9 +725,12 @@
         },
         {
           "dashedName": "python-classes-and-objects",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
+            "lab-planet-class",
+            "workshop-email-simulator",
             "lab-budget-app",
             "review-classes-and-objects",
             "quiz-classes-and-objects"
@@ -703,22 +738,27 @@
         },
         {
           "dashedName": "python-object-oriented-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
+            "lab-game-character-stats",
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
+            "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
           ]
         },
         {
           "dashedName": "python-linear-data-structures",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
             "lab-hash-table",
             "review-data-structures",
             "quiz-data-structures"
@@ -726,7 +766,7 @@
         },
         {
           "dashedName": "python-algorithms",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
             "workshop-binary-search",
@@ -742,25 +782,30 @@
         },
         {
           "dashedName": "python-graphs-and-trees",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
             "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
+            "lab-depth-first-search",
+            "lab-n-queens-problem",
             "review-graphs-and-trees",
             "quiz-graphs-and-trees"
           ]
         },
         {
           "dashedName": "python-dynamic-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
             "review-dynamic-programming",
             "quiz-dynamic-programming"
           ]
         },
         {
-          "comingSoon": true,
+          "comingSoon": false,
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]
@@ -769,11 +814,9 @@
     },
     {
       "dashedName": "relational-databases",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "bash-fundamentals",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-the-command-line-and-working-with-bash",
             "workshop-bash-boilerplate",
@@ -782,19 +825,17 @@
           ]
         },
         {
-          "dashedName": "relational-databases",
-          "comingSoon": true,
+          "dashedName": "sql-and-postgresql",
           "blocks": [
             "lecture-working-with-relational-databases",
             "workshop-database-of-video-game-characters",
             "lab-celestial-bodies-database",
-            "review-relational-database",
-            "quiz-relational-database"
+            "review-sql-and-postgresql",
+            "quiz-sql-and-postgresql"
           ]
         },
         {
           "dashedName": "bash-scripting",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-bash-scripting",
             "workshop-bash-five-programs",
@@ -804,7 +845,6 @@
         },
         {
           "dashedName": "sql-and-bash",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-sql",
             "workshop-sql-student-database-part-1",
@@ -819,7 +859,6 @@
         },
         {
           "dashedName": "git",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-nano",
             "workshop-castle",
@@ -834,7 +873,6 @@
         },
         {
           "moduleType": "review",
-          "comingSoon": true,
           "dashedName": "review-relational-databases",
           "blocks": ["review-relational-databases"]
         }
@@ -857,7 +895,7 @@
         {
           "dashedName": "http-and-the-web-standards-model",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-understanding-the-http-request-response-model"]
         },
         {
           "dashedName": "rest-api-and-web-services",

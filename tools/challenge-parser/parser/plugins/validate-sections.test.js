@@ -4,7 +4,10 @@ import remark from 'remark-parse';
 import frontmatter from 'remark-frontmatter';
 
 import addFrontmatter from './add-frontmatter';
-import validateSections from './validate-sections';
+import validateSections, {
+  VALID_MARKERS,
+  NON_HEADING_MARKERS
+} from './validate-sections';
 
 const processor = unified()
   .use(remark)
@@ -14,107 +17,15 @@ const processor = unified()
 
 describe('validate-sections plugin', () => {
   it('should pass when all section markers are valid', () => {
-    const file = `---
-id: test
-title: Test
----
-
-# --after-all--
-After all hook.
-
-# --after-each--
-After each hook.
-
-# --assignment--
-Assignment.
-
-# --before-all--
-Before all hook.
-
-# --before-each--
-Before each hook.
-
-# --description--
-Text content.
-
-# --explanation--
-Explanation.
-
-# --fillInTheBlank--
-Fill in blank.
-
-# --hints--
-Hints.
-
-# --instructions--
-More text.
-
-# --notes--
-Notes.
-
-# --questions--
-Video questions.
-
-# --quizzes--
-Quiz section.
-
-# --scene--
-Scene content.
-
-# --seed--
-Seed section.
-
-# --solutions--
-Solutions.
-
-# --transcript--
-Transcript.
-
-## --answers--
-Answers.
-
-## --blanks--
-Blanks.
-
-## --quiz--
-Individual quiz.
-
-## --seed-contents--
-Contents here.
-
-## --sentence--
-Sentence.
-
-## --text--
-Question text.
-
-## --video-solution--
-Video solution.
-
-## --after-user-code--
-After code.
-
-## --before-user-code--
-Before code.
-
-### --feedback--
-Feedback.
-
-### --question--
-Quiz question.
-
-#### --answer--
-Correct answer.
-
-#### --distractors--
-Distractors.
-
-#### --text--
-Question text.
-
---fcc-editable-region--
-Editable region.
-`;
+    const file = [
+      '---',
+      'id: test',
+      'title: Test',
+      '---',
+      '',
+      ...VALID_MARKERS.map(marker => `${marker}\nDummy content.`),
+      ...NON_HEADING_MARKERS.map(marker => `${marker}\nDummy content.`)
+    ].join('\n');
 
     expect(() => {
       processor.runSync(processor.parse(file));
@@ -174,8 +85,8 @@ id: test
 title: Test
 ---
 
-## --instructions--
-Instructions should be at level 1, not 2.
+## --interactive--
+Interactive should be at level 1, not 2.
 
 ### --seed-contents--
 Seed contents should be at level 2, not 3.
@@ -184,7 +95,7 @@ Seed contents should be at level 2, not 3.
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+      'Invalid heading levels: "## --interactive--" should be "# --interactive--", "### --seed-contents--" should be "## --seed-contents--".'
     );
   });
 
@@ -194,7 +105,7 @@ id: test
 title: Test
 ---
 
-## --instructions--
+## --interactive--
 Wrong level.
 
 # --invalid-marker--
@@ -207,7 +118,7 @@ Wrong level.
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid marker names: "--invalid-marker--".\nInvalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+      'Invalid marker names: "--invalid-marker--".\nInvalid heading levels: "## --interactive--" should be "# --interactive--", "### --seed-contents--" should be "## --seed-contents--".'
     );
   });
 

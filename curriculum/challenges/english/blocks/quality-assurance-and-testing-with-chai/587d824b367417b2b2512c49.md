@@ -29,60 +29,52 @@ Within `tests/1_unit-tests.js` under the test labeled `#4` in the `Basic Asserti
 All tests should pass.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=3').then(
-    (data) => {
-      assert.equal(data.state, 'passed');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=3');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.state, 'passed');
 ```
 
 You should choose the correct method for the first assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=3').then(
-    (data) => {
-      assert.equal(data.assertions[0].method, 'isTrue', 'True is true');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=3');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(data.assertions[0].method, 'isTrue', 'True is true');
 ```
 
 You should choose the correct method for the second assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=3').then(
-    (data) => {
-      assert.equal(
-        data.assertions[1].method,
-        'isTrue',
-        'Double negation of a truthy value is true'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=3');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[1].method,
+    'isTrue',
+    'Double negation of a truthy value is true'
   );
 ```
 
 You should choose the correct method for the third assertion - `isTrue` vs. `isNotTrue`.
 
 ```js
-  $.get(code + '/_api/get-tests?type=unit&n=3').then(
-    (data) => {
-      assert.equal(
-        data.assertions[2].method,
-        'isNotTrue',
-        'A truthy object is not true - neither is a false one'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/_api/get-tests?type=unit&n=3');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.assertions[2].method,
+    'isNotTrue',
+    'A truthy object is not true - neither is a false one'
   );
 ```
 

@@ -17,14 +17,12 @@ Hackers can exploit known vulnerabilities in Express/Node if they see that your 
 helmet.hidePoweredBy() middleware should be mounted correctly
 
 ```js
-  $.get(code + '/_api/app-info').then(
-    (data) => {
-      assert.include(data.appStack, 'hidePoweredBy');
-      assert.notEqual(data.headers['x-powered-by'], 'Express');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/app-info');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.json();
+assert.include(data.appStack, 'hidePoweredBy');
+assert.notEqual(data.headers['x-powered-by'], 'Express');
 ```
 

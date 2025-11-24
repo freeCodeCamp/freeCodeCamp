@@ -32,8 +32,8 @@ const {
   PATREON_CLIENT_ID: patreonClientId,
   DEPLOYMENT_ENV: deploymentEnv,
   SHOW_UPCOMING_CHANGES: showUpcomingChanges,
-  SHOW_DAILY_CODING_CHALLENGES: showDailyCodingChallenges,
-  GROWTHBOOK_URI: growthbookUri
+  GROWTHBOOK_URI: growthbookUri,
+  DEPLOYMENT_VERSION: deploymentVersion
 } = process.env;
 
 const locations = {
@@ -72,9 +72,9 @@ export default Object.assign(locations, {
       ? null
       : patreonClientId,
   showUpcomingChanges: showUpcomingChanges === 'true',
-  showDailyCodingChallenges: showDailyCodingChallenges === 'true',
   growthbookUri:
     !growthbookUri || growthbookUri === 'api_URI_from_Growthbook_dashboard'
       ? null
-      : growthbookUri
+      : growthbookUri,
+  deploymentVersion: deploymentVersion || 'unknown'
 });

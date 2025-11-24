@@ -31,17 +31,15 @@ Use the `app.get()` method to serve the string "Hello Express" to GET requests m
 Your app should serve the string 'Hello Express'
 
 ```js
-  $.get(code).then(
-    (data) => {
-      assert.equal(
-        data,
-        'Hello Express',
-        'Your app does not serve the text "Hello Express"'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code);
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.text();
+  assert.equal(
+    data,
+    'Hello Express',
+    'Your app does not serve the text "Hello Express"'
   );
 ```
 

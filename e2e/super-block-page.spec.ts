@@ -43,7 +43,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       await page.addInitScript(() => {
         window.localStorage.setItem(
           'currentChallengeId',
-          '660ee6e3a242da6bd579de69' // JS Pyramid Generator step 2
+          '62a3b3eab50e193608c19fc6' // Learn Basic JavaScript by Building a Role Playing Game step 9
         );
       });
 
@@ -51,7 +51,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: 'Learn Basic JavaScript by Building a Role Playing Game'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -106,7 +106,9 @@ test.describe('Super Block Page - Authenticated User', () => {
     test('should expand the correct block when user goes to the page from breadcrumb click', async ({
       page
     }) => {
-      await page.goto(`/learn/full-stack-developer/workshop-cafe-menu/step-2`);
+      await page.goto(
+        `/learn/responsive-web-design-v9/workshop-cafe-menu/step-2`
+      );
 
       await page
         .getByRole('link', {
@@ -114,7 +116,9 @@ test.describe('Super Block Page - Authenticated User', () => {
         })
         .click();
 
-      await page.waitForURL('/learn/full-stack-developer/#workshop-cafe-menu');
+      await page.waitForURL(
+        '/learn/responsive-web-design-v9/#workshop-cafe-menu'
+      );
 
       // Chapter
       await expect(
@@ -124,14 +128,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Module
       await expect(
         page.getByRole('button', {
-          name: /Basic CSS \d+ of \d+ steps complete/
+          name: 'Basic CSS'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
       await expect(
         page.getByRole('button', {
-          name: /Workshop Design a Cafe Menu/
+          name: 'Design a Cafe Menu'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -146,7 +150,7 @@ test.describe('Super Block Page - Authenticated User', () => {
         );
       });
 
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // HTML chapter
       await expect(
@@ -156,14 +160,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Basic HTML module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: /Lecture Understanding HTML Attributes/
+          name: 'Understanding HTML Attributes'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -173,7 +177,7 @@ test.describe('Super Block Page - Authenticated User', () => {
     }) => {
       test.setTimeout(20000);
 
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // HTML chapter
       await expect(
@@ -183,18 +187,20 @@ test.describe('Super Block Page - Authenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: /Build a Curriculum Outline/
+          name: 'Build a Curriculum Outline'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
-      await page.goto('/learn/full-stack-developer/workshop-blog-page/step-2');
+      await page.goto(
+        '/learn/responsive-web-design-v9/workshop-blog-page/step-2'
+      );
 
       // Wait for the page to finish loading so that the current challenge ID can be registered.
       await expect(
@@ -202,7 +208,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       ).toBeVisible();
 
       // Go back to the super block page
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // Semantic HTML module
       await expect(
@@ -212,7 +218,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Cat Blog Page block
       await expect(
         page.getByRole('button', {
-          name: 'Workshop Build a Cat Blog Page'
+          name: 'Build a Cat Blog Page'
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -248,7 +254,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
     test('should expand the first block of the super block', async ({
       page
     }) => {
-      await page.goto('/learn/full-stack-developer');
+      await page.goto('/learn/responsive-web-design-v9');
 
       // First chapter
       await expect(
@@ -258,7 +264,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: /Basic HTML \d+ of \d+ steps complete/
+          name: 'Basic HTML'
         })
       ).toHaveAttribute('aria-expanded', 'true');
 

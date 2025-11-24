@@ -33,18 +33,13 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
       { lang: 'dothraki', url: dothrakiPageURL }
     ].forEach(({ lang, url }) => {
-      it(
-        lang === 'english'
-          ? `should redirect to same version of page for lang == english`
-          : `should redirect to ${lang} version of page`,
-        () => {
-          const receivedPageURL = createLanguageRedirect({
-            ...envVars,
-            lang
-          });
-          expect(receivedPageURL).toBe(url);
-        }
-      );
+      it(`should redirect to ${lang} version of page`, () => {
+        const receivedPageURL = createLanguageRedirect({
+          ...envVars,
+          lang
+        });
+        expect(receivedPageURL).toBe(url);
+      });
     });
   });
 
@@ -70,18 +65,13 @@ describe('createLanguageRedirect for clientLocale === english', () => {
       { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
       { lang: 'dothraki', url: dothrakiPageURL }
     ].forEach(({ lang, url }) => {
-      it(
-        lang === 'english'
-          ? `should redirect to same version of page for lang == english`
-          : `should redirect to ${lang} version of page`,
-        () => {
-          const receivedPageURL = createLanguageRedirect({
-            ...envVars,
-            lang
-          });
-          expect(receivedPageURL).toBe(url);
-        }
-      );
+      it(`should redirect to ${lang} version of page`, () => {
+        const receivedPageURL = createLanguageRedirect({
+          ...envVars,
+          lang
+        });
+        expect(receivedPageURL).toBe(url);
+      });
     });
   });
 });
@@ -117,18 +107,13 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
       { lang: 'dothraki', url: dothrakiPageURL }
     ].forEach(({ lang, url }) => {
-      it(
-        lang === 'chinese'
-          ? `should redirect to same version of page for lang == chinese`
-          : `should redirect to ${lang} version of page`,
-        () => {
-          const receivedPageURL = createLanguageRedirect({
-            ...envVars,
-            lang
-          });
-          expect(receivedPageURL).toBe(url);
-        }
-      );
+      it(`should redirect to ${lang} version of page`, () => {
+        const receivedPageURL = createLanguageRedirect({
+          ...envVars,
+          lang
+        });
+        expect(receivedPageURL).toBe(url);
+      });
     });
   });
 
@@ -154,18 +139,13 @@ describe('createLanguageRedirect for clientLocale === chinese', () => {
       { lang: 'chinese-traditional', url: chineseTraditionalPageURL },
       { lang: 'dothraki', url: dothrakiPageURL }
     ].forEach(({ lang, url }) => {
-      it(
-        lang === 'chinese'
-          ? `should redirect to same version of page for lang == chinese`
-          : `should redirect to ${lang} version of page`,
-        () => {
-          const receivedPageURL = createLanguageRedirect({
-            ...envVars,
-            lang
-          });
-          expect(receivedPageURL).toBe(url);
-        }
-      );
+      it(`should redirect to ${lang} version of page`, () => {
+        const receivedPageURL = createLanguageRedirect({
+          ...envVars,
+          lang
+        });
+        expect(receivedPageURL).toBe(url);
+      });
     });
   });
 });

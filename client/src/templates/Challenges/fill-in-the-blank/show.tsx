@@ -86,11 +86,11 @@ const ShowFillInTheBlank = ({
         superBlock,
         block,
         translationPending,
-        fields: { blockName, tests },
         challengeType,
         fillInTheBlank,
         helpCategory,
-        scene
+        scene,
+        tests
       }
     }
   },
@@ -160,11 +160,9 @@ const ShowFillInTheBlank = ({
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const inputIndex = parseInt(e.target.getAttribute('data-index') as string);
-
+  const handleInputChange = (inputIndex: number, value: string): void => {
     const newUserAnswers = [...userAnswers];
-    newUserAnswers[inputIndex] = e.target.value;
+    newUserAnswers[inputIndex] = value;
 
     const newAnswersCorrect = [...answersCorrect];
     newAnswersCorrect[inputIndex] = null;
@@ -260,7 +258,7 @@ const ShowFillInTheBlank = ({
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -288,12 +286,7 @@ export const query = graphql`
         superBlock
         block
         fields {
-          blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         fillInTheBlank {
           sentence
@@ -301,6 +294,10 @@ export const query = graphql`
             answer
             feedback
           }
+        }
+        tests {
+          text
+          testString
         }
         transcript
         scene {

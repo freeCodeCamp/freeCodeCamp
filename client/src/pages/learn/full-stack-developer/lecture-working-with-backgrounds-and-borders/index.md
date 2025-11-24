@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Backgrounds and Borders
 
-In these lecture videos, you will learn about working with backgrounds and borders.
+In these lessons, you will learn about working with backgrounds and borders.

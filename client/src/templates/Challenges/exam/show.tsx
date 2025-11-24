@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { Container, Col, Alert, Row, Button, Spacer } from '@freecodecamp/ui';
+import { Container, Col, Callout, Row, Button, Spacer } from '@freecodecamp/ui';
 import { micromark } from 'micromark';
 
 // Local Utilities
@@ -149,7 +149,6 @@ function ShowExam(props: ShowExamProps) {
           block,
           dashedName,
           description,
-          fields: { blockName },
           instructions,
           prerequisites,
           superBlock,
@@ -186,12 +185,7 @@ function ShowExam(props: ShowExamProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            challengeType,
-            helpCategory,
-            title
-          }
+          challenge: { tests, challengeType, helpCategory, title }
         }
       },
       pageContext: { challengeMeta },
@@ -502,9 +496,9 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Alert variant='info'>
+                <Callout variant='info'>
                   <p>{t('learn.exam.qualified')}</p>
-                </Alert>
+                </Callout>
               ) : !prerequisitesComplete ? (
                 <MissingPrerequisites
                   missingPrerequisites={missingPrerequisites}
@@ -530,7 +524,7 @@ function ShowExam(props: ShowExamProps) {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -558,11 +552,6 @@ export const query = graphql`
         description
         fields {
           blockHashSlug
-          blockName
-          tests {
-            text
-            testString
-          }
         }
         helpCategory
         id
@@ -572,6 +561,10 @@ export const query = graphql`
           title
         }
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
       }

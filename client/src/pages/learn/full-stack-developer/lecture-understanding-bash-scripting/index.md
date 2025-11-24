@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Bash Scripting
 
-Learn about Bash Scripting in these lectures.
+Learn about Bash Scripting in these lessons.

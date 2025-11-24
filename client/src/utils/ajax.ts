@@ -1,6 +1,7 @@
 import cookies from 'browser-cookies';
-import envData from '../../config/env.json';
+import { createApi, fetchBaseQuery, retry } from '@reduxjs/toolkit/query/react';
 
+import envData from '../../config/env.json';
 import type {
   ChallengeFile,
   ChallengeFiles,
@@ -212,6 +213,41 @@ export function getGenerateExam(
   return get(`/exam/${challengeId}`);
 }
 
+export interface Exam {
+  id: string;
+  config: {
+    name: string;
+  };
+}
+
+export type Attempt = {
+  id: string;
+  examId: string;
+  // ISO 8601 string
+  startTime: string;
+  questionSets: unknown[];
+} & (
+  | {
+      result: null;
+      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+    }
+  | {
+      status: 'Approved';
+      result: {
+        passingPercent: number;
+        score: number;
+      };
+    }
+);
+
+export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
+  return get('/user/exam-environment/exams');
+}
+
+export function getExamAttempts(): Promise<ResponseWithData<Attempt[]>> {
+  return get('/user/exam-environment/exam/attempts');
+}
+
 /** POST **/
 
 interface Donation {
@@ -393,3 +429,85 @@ export function deleteUserToken(): Promise<ResponseWithData<void>> {
 export function deleteMsUsername(): Promise<ResponseWithData<void>> {
   return deleteRequest('/user/ms-username', {});
 }
+
+/** RTK */
+
+export interface ExamEnvironmentChallenge {
+  id: string;
+  examId: string;
+  challengeId: string;
+}
+
+export type GetExamsResponse = Array<{
+  id: string;
+  config: {
+    name: string;
+    note: string;
+    totalTimeInS: number;
+    retakeTimeInS: number;
+    passingPercent: number;
+  };
+  canTake: boolean;
+  prerequisites: string[];
+}>;
+
+export const examAttempts = createApi({
+  reducerPath: 'exam-attempts',
+  baseQuery: retry(
+    fetchBaseQuery({
+      baseUrl: apiLocation,
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
+      },
+      credentials: 'include'
+    }),
+    // Retry in the case this is the initial request - csrf is not set yet, and initial returns 403
+    { maxRetries: 2 }
+  ),
+  endpoints: build => ({
+    getExamAttemptsByExamId: build.mutation<Attempt[], string>({
+      query: examId => `/user/exam-environment/exams/${examId}/attempts`
+    }),
+    getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
+      query: challengeId =>
+        `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    }),
+    getExams: build.query<GetExamsResponse, void>({
+      query: () => '/user/exam-environment/exams'
+    })
+  })
+});
+
+export const examEnvironmentAuthorizationTokenApi = createApi({
+  reducerPath: 'exam-environment-authorization-token',
+  baseQuery: retry(
+    fetchBaseQuery({
+      baseUrl: apiLocation,
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
+      },
+      credentials: 'include'
+    }),
+    // Retry in the case this is the initial request - csrf is not set yet, and initial returns 403
+    { maxRetries: 2 }
+  ),
+  endpoints: build => ({
+    postGenerateExamEnvironmentAuthorizationToken: build.mutation<
+      ExamTokenResponse,
+      void
+    >({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'POST'
+      })
+    }),
+    getExamEnvironmentAuthorizationToken: build.query<ExamTokenResponse, void>({
+      query: () => ({
+        url: `/user/exam-environment/token`,
+        method: 'GET'
+      })
+    })
+  })
+});

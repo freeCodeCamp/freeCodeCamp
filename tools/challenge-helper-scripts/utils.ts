@@ -2,7 +2,10 @@ import fs from 'fs';
 import path from 'path';
 import ObjectID from 'bson-objectid';
 import matter from 'gray-matter';
+import { uniq } from 'lodash';
+
 import { challengeTypes } from '../../shared/config/challenge-types';
+import { parseCurriculumStructure } from '../../curriculum/src/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser';
 import { getMetaData, updateMetaData } from './helpers/project-metadata';
 import { getProjectPath } from './helpers/get-project-info';
@@ -19,6 +22,7 @@ interface Options {
   projectPath?: string;
   challengeSeeds?: ChallengeSeed[];
   isFirstChallenge?: boolean;
+  challengeLang?: string;
 }
 
 interface QuizOptions {
@@ -26,6 +30,20 @@ interface QuizOptions {
   title: string;
   dashedName: string;
   questionCount: number;
+  challengeLang?: string;
+}
+
+export async function getAllBlocks() {
+  const { fullSuperblockList } = (await parseCurriculumStructure()) as {
+    fullSuperblockList: {
+      blocks: { dashedName: string }[];
+    }[];
+  };
+  const existingBlocks = fullSuperblockList.flatMap(({ blocks }) =>
+    blocks.map(({ dashedName }) => dashedName)
+  );
+
+  return uniq(existingBlocks);
 }
 
 const createStepFile = ({
@@ -33,7 +51,8 @@ const createStepFile = ({
   challengeType,
   projectPath = getProjectPath(),
   challengeSeeds = [],
-  isFirstChallenge = false
+  isFirstChallenge = false,
+  challengeLang
 }: Options): ObjectID => {
   const challengeId = new ObjectID();
 
@@ -42,7 +61,8 @@ const createStepFile = ({
     challengeSeeds,
     stepNum,
     challengeType,
-    isFirstChallenge
+    isFirstChallenge,
+    challengeLang
   });
 
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
@@ -63,7 +83,8 @@ const createQuizFile = ({
   projectPath = getProjectPath(),
   title,
   dashedName,
-  questionCount
+  questionCount,
+  challengeLang
 }: QuizOptions): ObjectID => {
   const challengeId = new ObjectID();
   const challengeType = challengeTypes.quiz.toString();
@@ -74,7 +95,8 @@ const createQuizFile = ({
     challengeType,
     title,
     dashedName,
-    questionCount
+    questionCount,
+    challengeLang
   });
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, quizText);
@@ -82,9 +104,11 @@ const createQuizFile = ({
 };
 
 const createDialogueFile = ({
-  projectPath
+  projectPath,
+  challengeLang
 }: {
   projectPath: string;
+  challengeLang: string;
 }): ObjectID => {
   const challengeId = new ObjectID();
   const challengeType = challengeTypes.dialogue.toString();
@@ -94,7 +118,8 @@ const createDialogueFile = ({
     challengeId,
     challengeType,
     title: "Dialogue 1: I'm Tom",
-    dashedName: 'dialogue-1-im-tom'
+    dashedName: 'dialogue-1-im-tom',
+    challengeLang
   });
   // eslint-disable-next-line @typescript-eslint/no-base-to-string
   fs.writeFileSync(`${projectPath}${challengeId.toString()}.md`, dialogueText);
@@ -251,6 +276,7 @@ const updateTaskMarkdownFiles = (): void => {
 type Challenge = {
   challengeType: number;
   challengeFiles: ChallengeSeed[];
+  lang?: string;
 };
 
 const getChallenge = (challengeId: string): Challenge => {
@@ -259,7 +285,13 @@ const getChallenge = (challengeId: string): Challenge => {
   return challenge;
 };
 
-const validateBlockName = (block: string): boolean | string => {
+const validateBlockName = (
+  block: string,
+  existingBlocks: string[]
+): true | string => {
+  if (existingBlocks.includes(block.trim())) {
+    return 'a block with this name already exists';
+  }
   if (!block.trim().length) {
     return 'please enter a dashed name';
   }

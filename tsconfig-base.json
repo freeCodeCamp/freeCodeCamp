@@ -14,6 +14,6 @@
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
-    "types": ["node", "jest"]
+    "types": ["node"]
   }
 }

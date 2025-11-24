@@ -3,20 +3,20 @@ id: 655b37ecf9da446bd1dcff4f
 title: Task 96
 challengeType: 22
 dashedName: task-96
+lang: en-US
 ---
 
-<!-- (Audio)
-Sophie: On Sunday, I have a lazy morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep early, because, on Monday, it is back to work again. -->
+<!-- (Audio) Sophie: On Sunday, I have a lazy morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep early because on Monday it's back to work again. -->
 
 # --description--
 
-In this challenge, focus on identifying the adjectives Sophie uses to describe her Sunday routine.
+Listen to the audio and complete the sentence below.
 
 # --fillInTheBlank--
 
 ## --sentence--
 
-`On Sunday, I have a BLANK morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep BLANK, because, on Monday, it is back to work again`
+`On Sunday, I have a BLANK morning. I just stay at home and play some video games on my console. In the evening, I make dinner and go to sleep BLANK because on Monday it's back to work again.`
 
 ## --blanks--
 
@@ -24,7 +24,7 @@ In this challenge, focus on identifying the adjectives Sophie uses to describe h
 
 ### --feedback--
 
-Describes the relaxed nature of Sophie's Sunday morning.
+This adjective describes the relaxed nature of Sophie's Sunday morning.
 
 ---
 
@@ -32,7 +32,7 @@ Describes the relaxed nature of Sophie's Sunday morning.
 
 ### --feedback--
 
-Indicates the time Sophie chooses to go to sleep on Sunday evening.
+This word indicates the time Sophie chooses to go to sleep on Sunday evening.
 
 # --scene--
 
@@ -74,7 +74,7 @@ Indicates the time Sophie chooses to go to sleep on Sunday evening.
       "startTime": 6.14,
       "finishTime": 10.66,
       "dialogue": {
-        "text": "In the evening, I make dinner and go to sleep early because on Monday, it's back to work again.",
+        "text": "In the evening, I make dinner and go to sleep early because on Monday it's back to work again.",
         "align": "center"
       }
     },

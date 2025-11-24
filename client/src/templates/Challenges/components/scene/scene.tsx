@@ -17,6 +17,7 @@ import ChallengeTranscript from '../challenge-transcript';
 import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
+import { buildTranscript } from './scene-helpers';
 
 import './scene.css';
 
@@ -166,25 +167,6 @@ export function Scene({
 
   const audioLoaded = () => {
     setSceneIsReady(true);
-  };
-
-  const buildTranscript = () => {
-    let transcriptText = '';
-    commands.forEach(command => {
-      if (command.character && command.dialogue && command.startTime) {
-        transcriptText =
-          transcriptText +
-          '\n' +
-          '<strong>' +
-          command.character +
-          '</strong>:' +
-          ' ' +
-          command.dialogue.text +
-          '\n';
-      }
-    });
-
-    return transcriptText;
   };
 
   const handlePlay = useCallback(() => {
@@ -369,7 +351,7 @@ export function Scene({
     };
   }, []);
 
-  const transcriptText = buildTranscript();
+  const transcriptText = buildTranscript(commands);
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
       <div

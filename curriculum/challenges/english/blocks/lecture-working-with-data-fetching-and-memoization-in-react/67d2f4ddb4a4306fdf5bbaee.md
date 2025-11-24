@@ -31,7 +31,7 @@ To improve developer experience with memoization, React provides three tools –
 
 As you might guess, both `useMemo` and `useCallback` are hooks, but `React.memo` is a component wrapper, a higher-order component (HOC).
 
-In the next lecture, we will take a look at how the `useCallback` hook and `React.memo` work.
+In the next lesson, we will take a look at how the `useCallback` hook and `React.memo` work.
 
 `useMemo` lets you memoize computed values while `useCallback` does the same for function references.
 

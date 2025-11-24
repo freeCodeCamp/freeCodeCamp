@@ -118,11 +118,10 @@
     "share-on-threads": "Threads でシェア",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
-    "start": "Start",
-    "go-to-today": "Go to Today's Challenge",
-    "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to Archive",
-    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -214,6 +213,8 @@
     "next-heading": "ベータ版カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
     "catalog-heading": "Explore our Catalog:",
+    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "よくある質問:",
     "faqs": [
       {
@@ -380,12 +381,23 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "他の人がポートフォリオを見られるようにするには、プライバシー設定を変更する必要があります。これはポートフォリオが公開されたときにどのように見えるかのプレビューです。",
@@ -516,7 +528,9 @@
       "instructions": "手順書",
       "notes": "ノート",
       "preview": "プレビュー",
-      "editor": "エディター"
+      "terminal": "Terminal",
+      "editor": "エディター",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "タブキーを押すとタブ文字が入力されます",
@@ -527,6 +541,26 @@
     "project-preview-title": "これから作成する物のプレビューです。",
     "demo-project-title": "要件を満たすプロジェクトの例です。",
     "github-required": "<0>GitHub</0> アカウントをお持ちでない場合は作成してください。 仮想 Linux サーバーマシンを作成する際に必要です。この処理には数分かかることがあります。",
+    "codespaces": {
+      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
+      "step-1": "<0>Create an GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "On that page, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Value</0> field, paste your token",
+      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "summary": "Codespaces Setup"
+    },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
@@ -543,7 +577,8 @@
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token"
+      "sub-step-5": "In the <0>Secret</0> field, paste your token",
+      "summary": "Ona Setup"
     },
     "local": {
       "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
@@ -565,7 +600,8 @@
       "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
       "copy-url": "Copy Course URL",
       "step-8": "Click \"Start\" to begin.",
-      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass.",
+      "summary": "Local Setup"
     },
     "step-1": "ステップ 1: プロジェクトを完成させる",
     "step-2": "ステップ 2: コードを提出する",
@@ -645,15 +681,20 @@
       "invalid-transcript": "成績証明書のリンクが正しくありません。以下の形式になっているか確認してください: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - 特に大文字で示した部分が正しいか確認してください。"
     },
     "block-type": {
-      "lecture": "レクチャー",
+      "lecture": "Theory",
       "workshop": "ワークショップ",
       "lab": "ラボ",
       "review": "復習",
       "quiz": "クイズ",
+      "cert-project": "Certification Project",
       "exam": "試験",
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
@@ -858,7 +899,8 @@
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "ゴールドカップ",
@@ -919,7 +961,8 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -966,6 +1009,7 @@
     "not-eligible": "現在、このユーザーは freeCodeCamp.org 認定証に不適格となっています。",
     "profile-private": "{{username}} さんはプロフィールを非公開に設定しています。他のユーザーが認定証を閲覧できるようにするにはプロフィールを公開する必要があります。",
     "certs-private": "{{username}} さんは認定証を非公開に設定しています。他のユーザーが認定証を閲覧できるようにするには認定証を公開する必要があります。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} さんはまだ学問的誠実性誓約に同意していません。",
     "user-not-certified": "ユーザー {{username}} さんは {{cert}} の認定を受けていないようです",
     "invalid-challenge": "チャレンジの提出情報が有効でないようです",
@@ -1071,6 +1115,7 @@
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
       "no-solution": "解答の表示中にエラーが発生しました。 support@freeCodeCamp.org までメールにてお問い合わせください。",
+      "no-solution-to-display": "No solution to display",
       "source": "ソースコード",
       "footnote": "これらのプロジェクトのいずれかが<2>学問的誠実性ポリシー</2>に反すると思われる場合は、<5>freeCodeCamp チームに報告</5>してください。",
       "title": {
@@ -1151,20 +1196,20 @@
       }
     },
     "title": {
-      "responsive-web-design": "レスポンシブウェブデザイン",
-      "responsive-web-design-cert": "レスポンシブウェブデザイン認定証",
-      "javascript-algorithms-and-data-structures": "旧 JavaScript アルゴリズムとデータ構造",
-      "javascript-algorithms-and-data-structures-cert": "旧 JavaScript アルゴリズムとデータ構造認定証",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript アルゴリズムとデータ構造",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript アルゴリズムとデータ構造認定証",
-      "front-end-development-libraries": "フロントエンド開発ライブラリ",
-      "front-end-development-libraries-cert": "フロントエンド開発ライブラリ認定証",
-      "data-visualization": "データ可視化",
-      "data-visualization-cert": "データ可視化認定証",
-      "relational-database-v8": "リレーショナルデータベース",
-      "relational-database-v8-cert": "リレーショナルデータベース認定証",
-      "back-end-development-and-apis": "バックエンド開発と API",
-      "back-end-development-and-apis-cert": "バックエンド開発と API 認定証",
+      "responsive-web-design": "Legacy Responsive Web Design V8",
+      "responsive-web-design-cert": "Legacy Responsive Web Design V8 Certification",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures V7",
+      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
+      "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
+      "front-end-development-libraries": "Front End Development Libraries V8",
+      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "data-visualization": "Data Visualization V8",
+      "data-visualization-cert": "Data Visualization V8 Certification",
+      "relational-database-v8": "Relational Database V8",
+      "relational-database-v8-cert": "Relational Database V8 Certification",
+      "back-end-development-and-apis": "Back End Development and APIs V8",
+      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
       "quality-assurance-v7": "品質保証",
       "quality-assurance-v7-cert": "品質保証認定証",
       "scientific-computing-with-python-v7": "Python を用いた科学計算",
@@ -1183,6 +1228,18 @@
       "a2-english-for-developers-cert": "開発者のための A2 レベル英語認定証",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "フルスタック開発者",
       "full-stack-developer-v9-cert": "フルスタック開発者認定証",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1247,12 +1304,17 @@
   "exam-token": {
     "exam-token": "試験用トークン",
     "note": "試験用トークンは、試験にアクセスするために必要な秘密鍵です。このトークンを他の人に共有しないでください。",
-    "invalidation": "新しいトークンを生成すると、古いトークンは無効になります。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "試験用トークンを生成",
+    "your-exam-token": "Your Exam Token is: {{token}}",
     "error": "トークンの生成中にエラーが発生しました。時間を置いて再度お試しください。",
-    "your-exam-token": "あなたの試験用トークンは次のとおりです: {{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "トークンをクリップボードにコピーしました",
-    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました"
+    "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account."
   },
   "shortcuts": {
     "title": "キーボードショートカット",
@@ -1305,6 +1367,26 @@
       "exit": "アンケートを中止",
       "two-questions": "ここまでのコースの完了、おめでとうございます。試験を始める前に、こちらのアンケートにご協力ください。(2 問)"
     }
+  },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

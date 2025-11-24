@@ -3,7 +3,11 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addText from './add-text';
 
 describe('add-text', () => {
-  let realisticAST, mockAST, withSubSectionAST;
+  let realisticAST,
+    mockAST,
+    withSubSectionAST,
+    withNestedInstructionsAST,
+    withChineseAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -13,6 +17,10 @@ describe('add-text', () => {
     realisticAST = await parseFixture('realistic.md');
     mockAST = await parseFixture('simple.md');
     withSubSectionAST = await parseFixture('with-subsection.md');
+    withNestedInstructionsAST = await parseFixture(
+      'with-nested-instructions.md'
+    );
+    withChineseAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {
@@ -134,9 +142,37 @@ describe('add-text', () => {
     );
   });
 
+  it('should ignore --instructions-- markers that are not at depth 1', () => {
+    const plugin = addText([instructionsId]);
+    plugin(withNestedInstructionsAST, file);
+
+    // Should only include the depth 1 instructions, not the nested ones
+    const expectedText = `<section id="instructions">
+<p>These are the main instructions at depth 1.</p>
+<pre><code class="language-html">&#x3C;div>Main instructions code&#x3C;/div>
+</code></pre>
+</section>`;
+
+    expect(file.data[instructionsId]).toEqual(expectedText);
+  });
+
   it('should have an output to match the snapshot', () => {
     const plugin = addText([descriptionId, instructionsId]);
     plugin(mockAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('should render Chinese inline code as ruby when lang is zh-CN', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const zhFile = { data: { lang: 'zh-CN' } };
+    plugin(withChineseAST, zhFile);
+
+    expect(zhFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>\n</section>'
+    );
+    expect(zhFile.data.explanation).toBe(
+      '<section id="explanation">\n<p>Wang Hua uses <ruby>请问<rp>(</rp><rt>qǐng wèn</rt><rp>)</rp></ruby> to politely start her question.</p>\n</section>'
+    );
   });
 });

@@ -152,16 +152,15 @@ export const reducer = handleActions(
       donationFormState: { ...defaultDonationFormState, processing: true }
     }),
     [actionTypes.postChargeComplete]: state => {
+      const sessionUser = state.user.sessionUser
+        ? { ...state.user.sessionUser, isDonating: true }
+        : null;
       return {
         ...state,
         user: {
           ...state.user,
-          sessionUser: {
-            ...state.user.sessionUser,
-            isDonating: true
-          }
+          sessionUser
         },
-
         donationFormState: { ...defaultDonationFormState, success: true }
       };
     },
@@ -181,21 +180,23 @@ export const reducer = handleActions(
       ...state,
       userProfileFetchState: { ...defaultFetchState }
     }),
-    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => ({
-      ...state,
-      user: {
-        ...state.user,
-        sessionUser: user
-      },
-      currentChallengeId:
-        user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
-      userFetchState: {
-        pending: false,
-        complete: true,
-        errored: false,
-        error: null
-      }
-    }),
+    [actionTypes.fetchUserComplete]: (state, { payload: { user } }) => {
+      return {
+        ...state,
+        user: {
+          ...state.user,
+          sessionUser: user
+        },
+        currentChallengeId:
+          user?.currentChallengeId || store.get(CURRENT_CHALLENGE_KEY),
+        userFetchState: {
+          pending: false,
+          complete: true,
+          errored: false,
+          error: null
+        }
+      };
+    },
     [actionTypes.fetchUserTimeout]: state => ({
       ...state,
       userFetchState: {

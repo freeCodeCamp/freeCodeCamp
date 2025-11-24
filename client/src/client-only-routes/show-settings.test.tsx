@@ -4,12 +4,14 @@ import React from 'react';
 import ShallowRenderer from 'react-test-renderer/shallow';
 import { describe, it, expect, vi } from 'vitest';
 import envData from '../../config/env.json';
-
 import { ShowSettings } from './show-settings';
 
-const { apiLocation } = envData as Record<string, string>;
-
 vi.mock('../analytics');
+vi.mock('@growthbook/growthbook-react', () => ({
+  useFeatureIsOn: () => false
+}));
+
+const { apiLocation } = envData as Record<string, string>;
 
 describe('<ShowSettings />', () => {
   it('renders to the DOM when user is logged in', () => {

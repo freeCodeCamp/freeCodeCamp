@@ -1,6 +1,6 @@
 // Package Utilities
 import { graphql } from 'gatsby';
-import React, { useEffect, useRef } from 'react';
+import React, { Fragment, useEffect, useRef } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
@@ -48,16 +48,13 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
-import { CodeAllyButton } from '../../../components/growth-book/codeally-button';
-
-import RdbOnaContinueAlert from './rdb-ona-continue-alert';
-import RdbOnaInstructions from './rdb-ona-instructions';
-import RdbOnaLogoutAlert from './rdb-ona-logout-alert';
-import RdbLocalInstructions from './rdb-local-instructions';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
+import { LocalInstructions } from './local-instructions';
+import { OnaInstructions } from './ona-instructions';
 
 import './codeally.css';
+import { CodespacesInstructions } from './codespaces-instructions';
 
 // Redux
 const mapStateToProps = createSelector(
@@ -116,33 +113,43 @@ interface ShowCodeAllyProps {
   userToken: string | null;
 }
 
-function ShowCodeAlly(props: ShowCodeAllyProps) {
+function ShowCodeAlly({
+  completedChallenges,
+  data,
+  isChallengeCompleted,
+  isSignedIn,
+  partiallyCompletedChallenges,
+  t,
+  updateSolutionFormValues,
+  userToken,
+  updateUserToken,
+  createFlashMessage,
+  challengeMounted,
+  initTests,
+  pageContext: { challengeMeta },
+  updateChallengeMeta,
+  openCompletionModal
+}: ShowCodeAllyProps) {
   const container = useRef<HTMLElement>(null);
 
   const {
-    completedChallenges,
-    data: {
-      challengeNode: {
-        challenge: {
-          block,
-          challengeType,
-          description,
-          id: challengeId,
-          instructions,
-          notes,
-          superBlock,
-          title,
-          translationPending,
-          url
-        }
+    challengeNode: {
+      challenge: {
+        block,
+        challengeType,
+        tests,
+        description,
+        helpCategory,
+        id: challengeId,
+        instructions,
+        notes,
+        superBlock,
+        title,
+        translationPending,
+        url
       }
-    },
-    isChallengeCompleted,
-    isSignedIn,
-    partiallyCompletedChallenges,
-    t,
-    updateSolutionFormValues
-  } = props;
+    }
+  } = data;
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -158,22 +165,6 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
   );
 
   useEffect(() => {
-    const {
-      challengeMounted,
-      data: {
-        challengeNode: {
-          challenge: {
-            fields: { tests },
-            challengeType,
-            helpCategory,
-            title
-          }
-        }
-      },
-      pageContext: { challengeMeta },
-      initTests,
-      updateChallengeMeta
-    } = props;
     initTests(tests);
     const challengePaths = getChallengePaths({
       currentCurriculumPaths: challengeMeta
@@ -191,54 +182,11 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function openOna() {
-    const repoUrl = `https://github.com/freeCodeCamp/rdb-alpha`;
-    const onaDomain = `https://app.ona.com/`;
-    const onaUrl = `${onaDomain}#${repoUrl}`;
-
-    window.open(onaUrl, '_blank');
-  }
-
-  const startCourse = async () => {
-    const { isSignedIn, userToken, updateUserToken } = props;
-
-    if (!isSignedIn) {
-      openOna();
-    } else if (!userToken) {
-      const createUserTokenResponse = await postUserToken();
-      const { data = { userToken: null } } = createUserTokenResponse;
-
-      if (data?.userToken) {
-        updateUserToken(data.userToken);
-        openOna();
-      } else {
-        createFlashMessage({
-          type: 'danger',
-          message: FlashMessages.StartProjectErr
-        });
-      }
-    } else {
-      openOna();
-    }
-  };
-
   const handleSubmit = ({
     showCompletionModal
   }: {
     showCompletionModal: boolean;
   }) => {
-    const {
-      completedChallenges,
-      createFlashMessage,
-      data: {
-        challengeNode: {
-          challenge: { id: challengeId }
-        }
-      },
-      openCompletionModal,
-      partiallyCompletedChallenges
-    } = props;
-
     const isPartiallyCompleted = partiallyCompletedChallenges.some(
       challenge => challenge.id === challengeId
     );
@@ -257,7 +205,85 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
     }
   };
 
-  const onaDeprecated = useFeature('gitpod-deprecated').on;
+  const rdbLocalInstructions = useFeature('rdb-local-instructions');
+  const rdbCodespacesInstructions = useFeature('rdb-codespaces-instructions');
+  const rdbOnaInstructions = useFeature('rdb-ona-instructions');
+
+  const coderoadTutorial = `https://raw.githubusercontent.com/${url}/main/tutorial.json`;
+
+  async function generateUserToken() {
+    const createUserTokenResponse = await postUserToken();
+    const { data = { userToken: null } } = createUserTokenResponse;
+
+    if (data?.userToken) {
+      updateUserToken(data.userToken);
+      createFlashMessage({
+        type: 'success',
+        message: FlashMessages.UserTokenGenerated
+      });
+    } else {
+      createFlashMessage({
+        type: 'danger',
+        message: FlashMessages.UserTokenGenerateError
+      });
+    }
+  }
+
+  function copyUserToken() {
+    navigator.clipboard.writeText(userToken ?? '').then(
+      () => {
+        createFlashMessage({
+          type: 'success',
+          message: FlashMessages.UserTokenCopied
+        });
+      },
+      () => {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.UserTokenCopyError
+        });
+      }
+    );
+  }
+
+  function copyUrl() {
+    navigator.clipboard.writeText(coderoadTutorial ?? '').then(
+      () => {
+        createFlashMessage({
+          type: 'success',
+          message: FlashMessages.CourseUrlCopied
+        });
+      },
+      () => {
+        createFlashMessage({
+          type: 'danger',
+          message: FlashMessages.CourseUrlCopyError
+        });
+      }
+    );
+  }
+
+  const setups = [
+    {
+      name: t('learn.codespaces.summary'),
+      component: CodespacesInstructions,
+      on: rdbCodespacesInstructions.on
+    },
+    {
+      name: t('learn.local.summary'),
+      component: LocalInstructions,
+      on: rdbLocalInstructions.on
+    },
+    {
+      name: t('learn.ona.summary'),
+      component: OnaInstructions,
+      on: rdbOnaInstructions.on
+    }
+  ];
+
+  const setupsToShow = setups.filter(setup => {
+    return setup.on;
+  });
 
   return (
     <Hotkeys containerRef={container}>
@@ -279,88 +305,55 @@ function ShowCodeAlly(props: ShowCodeAllyProps) {
               <PrismFormatted text={description} />
               <Spacer size='m' />
 
-              {onaDeprecated ? (
+              {setupsToShow.map(({ name, component: SetupComponent }, i) => (
+                <Fragment key={name}>
+                  <details
+                    open={i === 0}
+                    style={{ border: '1px solid #ccc', padding: '16px' }}
+                  >
+                    <summary>{name}</summary>
+                    <Spacer size='s' />
+                    <SetupComponent
+                      {...{
+                        challengeType,
+                        copyUrl,
+                        copyUserToken,
+                        generateUserToken,
+                        isSignedIn,
+                        title,
+                        userToken
+                      }}
+                    />
+                  </details>
+                  <Spacer size='s' />
+                </Fragment>
+              ))}
+
+              <Spacer size='m' />
+              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
                 <>
-                  <RdbLocalInstructions course={title} url={url} />
+                  <div className='ca-description'>
+                    {t('learn.complete-both-steps')}
+                  </div>
+                  <hr />
                   <Spacer size='m' />
-                  {isSignedIn &&
-                    challengeType === challengeTypes.codeAllyCert && (
-                      <>
-                        <div className='ca-description'>
-                          {t('learn.complete-both-steps')}
-                        </div>
-                        <hr />
-                        <Spacer size='m' />
-                        <RdbStep1Instructions
-                          instructions={instructions}
-                          isCompleted={isPartiallyCompleted || isCompleted}
-                        />
-                        <hr />
-                        <Spacer size='m' />
-                        <RdbStep2Instructions
-                          isCompleted={isCompleted}
-                          notes={notes}
-                        />
-                        <Spacer size='m' />
-                        <SolutionForm
-                          challengeType={challengeType}
-                          description={description}
-                          onSubmit={handleSubmit}
-                          updateSolutionForm={updateSolutionFormValues}
-                        />
-                      </>
-                    )}
-                </>
-              ) : (
-                <>
-                  <RdbOnaInstructions course={title} url={url} />
+                  <RdbStep1Instructions
+                    instructions={instructions}
+                    isCompleted={isPartiallyCompleted || isCompleted}
+                  />
+                  <hr />
                   <Spacer size='m' />
-                  {isSignedIn &&
-                  challengeType === challengeTypes.codeAllyCert ? (
-                    <>
-                      <div className='ca-description'>
-                        {t('learn.complete-both-steps')}
-                      </div>
-                      <hr />
-                      <Spacer size='m' />
-                      <RdbStep1Instructions
-                        instructions={instructions}
-                        isCompleted={isPartiallyCompleted || isCompleted}
-                      />
-                      <Spacer size='m' />
-                      <RdbOnaContinueAlert course={title} />
-                      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
-                      <CodeAllyButton
-                        challengeType={challengeType}
-                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                        onClick={startCourse}
-                      />
-                      <hr />
-                      <Spacer size='m' />
-                      <RdbStep2Instructions
-                        isCompleted={isCompleted}
-                        notes={notes}
-                      />
-                      <Spacer size='m' />
-                      <SolutionForm
-                        challengeType={challengeType}
-                        description={description}
-                        onSubmit={handleSubmit}
-                        updateSolutionForm={updateSolutionFormValues}
-                      />
-                    </>
-                  ) : (
-                    <>
-                      <RdbOnaContinueAlert course={title} />
-                      {isSignedIn && <RdbOnaLogoutAlert course={title} />}
-                      <CodeAllyButton
-                        challengeType={challengeType}
-                        //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                        onClick={startCourse}
-                      />
-                    </>
-                  )}
-                  <Spacer size='xxs' />
+                  <RdbStep2Instructions
+                    isCompleted={isCompleted}
+                    notes={notes}
+                  />
+                  <Spacer size='m' />
+                  <SolutionForm
+                    challengeType={challengeType}
+                    description={description}
+                    onSubmit={handleSubmit}
+                    updateSolutionForm={updateSolutionFormValues}
+                  />
                 </>
               )}
 
@@ -392,12 +385,6 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
-        fields {
-          tests {
-            text
-            testString
-          }
-        }
         challengeType
         description
         helpCategory
@@ -405,6 +392,10 @@ export const query = graphql`
         instructions
         notes
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
         url

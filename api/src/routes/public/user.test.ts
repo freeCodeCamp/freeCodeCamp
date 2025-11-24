@@ -105,6 +105,7 @@ const testUserData: Prisma.userCreateInput = {
   ],
   yearsTopContributor: ['2018'],
   twitter: '@foobar',
+  bluesky: '@foobar',
   linkedin: 'linkedin.com/foobar'
 };
 
@@ -186,6 +187,7 @@ const publicUserData = {
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
+  isA2EnglishCert: testUserData.isA2EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -197,6 +199,7 @@ const publicUserData = {
   isFrontEndCert: testUserData.isFrontEndCert,
   isFrontEndLibsCert: testUserData.isFrontEndLibsCert,
   isFullStackCert: testUserData.isFullStackCert,
+  isJavascriptCertV9: testUserData.isJavascriptCertV9,
   isHonest: testUserData.isHonest,
   isInfosecCertV7: testUserData.isInfosecCertV7,
   isInfosecQaCert: testUserData.isInfosecQaCert,
@@ -206,17 +209,17 @@ const publicUserData = {
   isQaCertV7: testUserData.isQaCertV7,
   isRelationalDatabaseCertV8: testUserData.isRelationalDatabaseCertV8,
   isRespWebDesignCert: testUserData.isRespWebDesignCert,
+  isRespWebDesignCertV9: testUserData.isRespWebDesignCertV9,
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
   linkedin: testUserData.linkedin,
   location: testUserData.location,
   name: testUserData.name,
-  partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  savedChallenges: testUserData.savedChallenges,
   twitter: 'https://twitter.com/foobar',
+  bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
   website: testUserData.website,

@@ -21,34 +21,30 @@ Build an echo server, mounted at the route `GET /:word/echo`. Respond with a JSO
 Test 1 : Your echo server should repeat words correctly
 
 ```js
-  $.get(code + '/eChOtEsT/echo').then(
-    (data) => {
-      assert.equal(
-        data.echo,
-        'eChOtEsT',
-        'Test 1: the echo server is not working as expected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/eChOtEsT/echo');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.echo,
+    'eChOtEsT',
+    'Test 1: the echo server is not working as expected'
   );
 ```
 
 Test 2 : Your echo server should repeat words correctly
 
 ```js
-  $.get(code + '/ech0-t3st/echo').then(
-    (data) => {
-      assert.equal(
-        data.echo,
-        'ech0-t3st',
-        'Test 2: the echo server is not working as expected'
-      );
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  const response = await fetch(code + '/ech0-t3st/echo');
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.equal(
+    data.echo,
+    'ech0-t3st',
+    'Test 2: the echo server is not working as expected'
   );
 ```
 

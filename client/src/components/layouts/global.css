@@ -89,6 +89,10 @@ hr {
   border-top: 1px solid var(--quaternary-background);
 }
 
+rt {
+  font-size: 0.8rem;
+}
+
 #___gatsby {
   height: 100%;
 }
@@ -137,6 +141,14 @@ hr {
   flex-direction: column;
   flex-grow: 1;
   min-height: 0;
+}
+
+.default-layout:has(.breadcrumbs-demo) #learn-app-wrapper {
+  padding-top: var(--breadcrumbs-height);
+}
+
+.default-layout:has(.action-row) #learn-app-wrapper {
+  padding-top: calc(var(--breadcrumbs-height) + var(--action-row-height));
 }
 
 h1 {
@@ -477,10 +489,6 @@ fieldset[disabled] .btn {
   }
 }
 
-strong {
-  color: var(--secondary-color);
-}
-
 .form-control {
   color: var(--primary-color);
   border-color: var(--quaternary-background);
@@ -594,25 +602,6 @@ pre code {
   background-color: #31708f;
   color: #d9edf7;
   border-color: #31708f;
-}
-
-.annual-donation-alert {
-  background: linear-gradient(
-      -10deg,
-      rgba(217, 237, 247, 1) 35%,
-      rgba(237, 202, 216, 0) 75%,
-      rgb(255 215 224) 100%
-    ),
-    radial-gradient(
-      circle,
-      rgba(255, 202, 225, 1) 0%,
-      rgba(218, 234, 252, 1) 100%
-    );
-}
-
-.university-alert p,
-.annual-donation-alert p {
-  color: inherit;
 }
 
 /* gatsby 404 */

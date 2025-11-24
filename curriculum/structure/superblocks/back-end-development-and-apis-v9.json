@@ -1,0 +1,70 @@
+{
+  "chapters": [
+    {
+      "dashedName": "back-end-development-and-apis",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "nodejs-core-libraries",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "node-package-manager",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "http-and-the-web-standards-model",
+          "comingSoon": true,
+          "blocks": ["lecture-understanding-the-http-request-response-model"]
+        },
+        {
+          "dashedName": "rest-api-and-web-services",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "introduction-to-express",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "express-middleware",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "error-handling-in-express",
+          "comingSoon": true,
+          "blocks": []
+        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "security-and-privacy",
+          "comingSoon": true,
+          "blocks": []
+        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "tooling-and-deployment",
+          "comingSoon": true,
+          "blocks": []
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "back-end-development-and-apis-certification-exam",
+      "comingSoon": true,
+      "modules": [
+        {
+          "comingSoon": true,
+          "dashedName": "back-end-development-and-apis-certification-exam",
+          "blocks": ["exam-back-end-development-and-apis-certification"]
+        }
+      ]
+    }
+  ]
+}

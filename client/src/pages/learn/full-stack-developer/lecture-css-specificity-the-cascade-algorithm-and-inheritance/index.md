@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to CSS Specificity, the Cascade Algorithm, and Inheritance
 
-In these lecture videos, you will learn about CSS specificity, the cascade algorithm, and inheritance.
+In these lessons, you will learn about CSS specificity, the cascade algorithm, and inheritance.

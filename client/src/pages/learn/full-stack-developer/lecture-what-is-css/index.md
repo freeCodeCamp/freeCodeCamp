@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to What Is CSS?
 
-In these lecture videos, you will learn what CSS is.
+In these lessons, you will learn what CSS is.

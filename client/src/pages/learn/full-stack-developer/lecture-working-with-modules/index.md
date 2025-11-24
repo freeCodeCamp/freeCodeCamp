@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Modules
 
-Learn about working with modules in these lectures.
+Learn about working with modules in these lessons.

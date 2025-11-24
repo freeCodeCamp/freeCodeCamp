@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import { beforeAll, afterAll, expect, vi } from 'vitest';
 import request from 'supertest';
 
@@ -9,7 +10,6 @@ import { CSRF_COOKIE, CSRF_HEADER } from './src/plugins/csrf.js';
 type FastifyTestInstance = Awaited<ReturnType<typeof build>>;
 
 declare global {
-  // eslint-disable-next-line no-var
   var fastifyTestInstance: FastifyTestInstance;
 }
 
@@ -47,13 +47,13 @@ export const getCookies = (setCookies: string[]): string => {
  * A wrapper around supertest that handles common setup for requests. Namely
  * setting the Origin header, cookies and CSRF token.
  *
- * @param resource - The URL of the resource to be requested
- * @param config - The configuration for the request
- * @param config.method - The HTTP method to be used
- * @param config.setCookies - The cookies to be set in the request
- * @param options - Additional options for the request
- * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true)
- * @returns The request object
+ * @param resource - The URL of the resource to be requested.
+ * @param config - The configuration for the request.
+ * @param config.method - The HTTP method to be used.
+ * @param config.setCookies - The cookies to be set in the request.
+ * @param options - Additional options for the request.
+ * @param options.sendCSRFToken - Whether to send the CSRF token in the request (default: true).
+ * @returns The request object.
  */
 export function superRequest(
   resource: string,
@@ -84,9 +84,9 @@ export function superRequest(
  * request function with the desired method and setCookies baked in.
  *
  * @param config
- * @param config.method - HTTP method
- * @param config.setCookies - Cookies to be set in the request
- * @returns A superRequest function with the desired method and setCookies
+ * @param config.method - HTTP method.
+ * @param config.setCookies - Cookies to be set in the request.
+ * @returns A superRequest function with the desired method and setCookies.
  */
 export function createSuperRequest(config: {
   method: 'GET' | 'POST' | 'PUT' | 'DELETE';
@@ -205,8 +205,6 @@ export function setupServer(): void {
 If you are seeing this error, the root cause is likely an error thrown in the beforeAll hook.`);
     await fastifyTestInstance.prisma.$runCommandRaw({ dropDatabase: 1 });
 
-    // Due to a prisma bug, this is not enough, we need to --force-exit jest:
-    // https://github.com/prisma/prisma/issues/18146
     await fastifyTestInstance.close();
   });
 }
@@ -260,4 +258,53 @@ export function createFetchMock({ ok = true, body = {} } = {}) {
       json: () => Promise.resolve(body)
     })
   );
+}
+
+/**
+ * Utility type to recursively replace `Date` with `string`.
+ */
+export type ReplaceDates<T> = T extends Date
+  ? string
+  : T extends (infer U)[]
+    ? ReplaceDates<U>[]
+    : T extends Record<string, unknown>
+      ? { [K in keyof T]: ReplaceDates<T[K]> }
+      : T;
+
+/**
+ * Recursively finds and converts Date objects to ISO strings while preserving shape.
+ */
+export function serializeDates<T>(data: T): ReplaceDates<T> {
+  if (data === null || data === undefined) {
+    return data as ReplaceDates<T>;
+  }
+
+  // Preserve Vitest/Jest asymmetric matchers (e.g., expect.any(Number))
+  if (
+    typeof data === 'object' &&
+    data !== null &&
+    typeof (data as { asymmetricMatch?: unknown }).asymmetricMatch ===
+      'function'
+  ) {
+    return data as unknown as ReplaceDates<T>;
+  }
+
+  if (data instanceof Date) {
+    return data.toISOString() as ReplaceDates<T>;
+  }
+
+  if (Array.isArray(data)) {
+    return (data as unknown[]).map(item =>
+      serializeDates(item)
+    ) as ReplaceDates<T>;
+  }
+
+  if (typeof data === 'object') {
+    const entries = Object.entries(data as Record<string, unknown>).map(
+      ([key, value]) => [key, serializeDates(value)] as const
+    );
+    return Object.fromEntries(entries) as ReplaceDates<T>;
+  }
+
+  return data as ReplaceDates<T>;
 }

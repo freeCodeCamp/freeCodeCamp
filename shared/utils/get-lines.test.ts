@@ -1,3 +1,4 @@
+import { describe, it, expect } from 'vitest';
 import { getLines } from './get-lines';
 
 const content = 'one\ntwo\nthree';

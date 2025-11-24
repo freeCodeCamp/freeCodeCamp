@@ -3,9 +3,10 @@ id: 657ddcd61f516cacdc7a04ca
 title: Task 128
 challengeType: 19
 dashedName: task-128
+lang: en-US
 ---
 
-<!-- (audio) Maria: The bookstores I remember are all downtown. There is a bus that stops two blocks away. -->
+<!-- (audio) Maria: The bookstores I remember are all downtown. But there's a bus that stops two blocks away. -->
 
 # --description--
 
@@ -23,7 +24,7 @@ What does Maria say stops two blocks away?
 
 ## --answers--
 
-A taxi.
+A taxi
 
 ### --feedback--
 
@@ -31,7 +32,7 @@ Maria mentions a public transportation option, not a private service.
 
 ---
 
-A train.
+A train
 
 ### --feedback--
 
@@ -39,11 +40,11 @@ Trains don't typically stop at blocks; they stop at stations.
 
 ---
 
-A bus.
+A bus
 
 ---
 
-A bicycle rental.
+A bicycle rental
 
 ### --feedback--
 
@@ -84,7 +85,7 @@ Rentals are usually stationary services, not something that stops.
       "startTime": 1,
       "finishTime": 5.46,
       "dialogue": {
-        "text": "The bookstores I remember are all downtown, but there's a bus that stops two blocks away.",
+        "text": "The bookstores I remember are all downtown. But there's a bus that stops two blocks away.",
         "align": "center"
       }
     },

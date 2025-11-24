@@ -23,9 +23,7 @@
         "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "spdx:BSD-3-Clause"
-      ],
+      "licenses": ["spdx:BSD-3-Clause"],
       "tags": [
         "education",
         "programming",
@@ -50,9 +48,7 @@
         "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "spdx:BSD-3-Clause"
-      ],
+      "licenses": ["spdx:BSD-3-Clause"],
       "tags": [
         "education",
         "web-platform",
@@ -75,7 +71,7 @@
       {
         "guid": "donate-page",
         "type": "payment-provider",
-        "address": "https://donate.freecodecamp.org",
+        "address": "https://www.freecodecamp.org/donate",
         "description": "Donate directly through our official donation page."
       }
     ],
@@ -85,25 +81,20 @@
         "status": "active",
         "name": "Monthly Support Plan",
         "description": "Join over 11,000 monthly donors supporting freeCodeCamp's mission to provide free coding education.",
-        "amount": 0,
+        "amount": 5,
         "currency": "USD",
         "frequency": "monthly",
-        "channels": [
-          "donate-page",
-          "github-sponsors"
-        ]
+        "channels": ["donate-page", "github-sponsors"]
       },
       {
         "guid": "one-time-donations",
         "status": "active",
         "name": "One-Time Donation",
         "description": "Make a one-time contribution to support our charity's open source development work.",
-        "amount": 0,
+        "amount": 100,
         "currency": "USD",
         "frequency": "one-time",
-        "channels": [
-          "donate-page"
-        ]
+        "channels": ["donate-page"]
       }
     ],
     "history": [
@@ -121,7 +112,7 @@
         "expenses": 1390551,
         "taxes": 0,
         "currency": "USD",
-        "description": "Revenue: $4.28M; Expenses: $1.39M; Net Assets: $4.99M."
+        "description": "Revenue: $4.28M; Expenses: $1.39M; Net Assets: $5.0M."
       },
       {
         "year": 2021,
@@ -130,6 +121,30 @@
         "taxes": 0,
         "currency": "USD",
         "description": "Revenue: $3.24M; Expenses: $881K; Net Assets: $2.69M."
+      },
+      {
+        "year": 2020,
+        "income": 754030,
+        "expenses": 495146,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $754K; Expenses: $495K; Net Assets: $331K."
+      },
+      {
+        "year": 2019,
+        "income": 463840,
+        "expenses": 419156,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $464K; Expenses: $419K; Net Assets: $72K."
+      },
+      {
+        "year": 2018,
+        "income": 317254,
+        "expenses": 289626,
+        "taxes": 0,
+        "currency": "USD",
+        "description": "Revenue: $317K; Expenses: $290K; Net Assets: $49K."
       }
     ]
   }

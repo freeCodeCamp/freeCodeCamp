@@ -1,21 +1,19 @@
 import i18next from 'i18next';
 import React, { Fragment } from 'react';
 import { Spacer } from '@freecodecamp/ui';
-import { useTranslation } from 'react-i18next';
+import { useTranslation, Trans } from 'react-i18next';
 
 import {
   type SuperBlocks,
   SuperBlockStage,
   getStageOrder,
-  superBlockStages
+  superBlockStages,
+  archivedSuperBlocks
 } from '../../../../shared-dist/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
-import { ButtonLink } from '../helpers';
-import {
-  showUpcomingChanges,
-  showDailyCodingChallenges
-} from '../../../config/env.json';
+import { ButtonLink, Link } from '../helpers';
+import { showUpcomingChanges } from '../../../config/env.json';
 import DailyCodingChallengeWidget from '../daily-coding-challenge/widget';
 
 import './map.css';
@@ -71,6 +69,20 @@ function MapLi({
   );
 }
 
+// used on /learn/archive
+export function ArchiveMap() {
+  return (
+    <div className='map-ui' data-test-label='curriculum-map'>
+      <ul>
+        {archivedSuperBlocks.map(superblock => (
+          <MapLi key={superblock} superBlock={superblock} landing={false} />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+// used on /learn and landing page
 function Map({ forLanding = false }: MapProps) {
   const { t } = useTranslation();
 
@@ -78,40 +90,51 @@ function Map({ forLanding = false }: MapProps) {
     <div className='map-ui' data-test-label='curriculum-map'>
       {getStageOrder({
         showUpcomingChanges
-      }).map(stage => {
-        const superblocks = superBlockStages[stage];
-        if (superblocks.length === 0) {
-          return null;
-        }
+      })
+        // remove legacy superblocks from main maps - shown in archive map only
+        .filter(stage => stage !== SuperBlockStage.Legacy)
+        .map(stage => {
+          const superblocks = superBlockStages[stage];
+          if (superblocks.length === 0) {
+            return null;
+          }
 
-        return (
-          <Fragment key={stage}>
-            {
-              /* Show the daily coding challenge before the "English" curriculum */
-              showDailyCodingChallenges &&
+          return (
+            <Fragment key={stage}>
+              {
+                /* Show the daily coding challenge before the "English" curriculum */
                 stage === SuperBlockStage.English && (
                   <>
                     <DailyCodingChallengeWidget forLanding={forLanding} />
                     <Spacer size='m' />
                   </>
                 )
-            }
-            <h2 className={forLanding ? 'big-heading' : ''}>
-              {t(superBlockHeadings[stage])}
-            </h2>
-            <ul key={stage}>
-              {superblocks.map(superblock => (
-                <MapLi
-                  key={superblock}
-                  superBlock={superblock}
-                  landing={forLanding}
-                />
-              ))}
-            </ul>
-            <Spacer size='m' />
-          </Fragment>
-        );
-      })}
+              }
+              <h2 className={forLanding ? 'big-heading' : ''}>
+                {t(superBlockHeadings[stage])}
+              </h2>
+              {stage === SuperBlockStage.Core && (
+                <p>{t('landing.fsd-restructure-note')}</p>
+              )}
+              <ul key={stage}>
+                {superblocks.map(superblock => (
+                  <MapLi
+                    key={superblock}
+                    superBlock={superblock}
+                    landing={forLanding}
+                  />
+                ))}
+              </ul>
+              <Spacer size='m' />
+            </Fragment>
+          );
+        })}
+      <Spacer size='m' />
+      <p className='archive-link'>
+        <Trans i18nKey='landing.archive-link'>
+          <Link to={'/learn/archive'}>placeholder</Link>
+        </Trans>
+      </p>
     </div>
   );
 }

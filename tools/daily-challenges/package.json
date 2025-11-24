@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "main": "seed-daily-challenges.js",
   "scripts": {
-    "seed-daily-challenges": "tsx seed-daily-challenges.ts"
+    "seed-daily-challenges": "tsx seed-daily-challenges.ts",
+    "lint": "eslint --max-warnings 0"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "mongodb": "6.10.0",
     "tsx": "4.19.1",
     "typescript": "5.8.2"

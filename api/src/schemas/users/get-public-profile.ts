@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, savedChallenge } from '../types.js';
+import { profileUI, examResults } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -52,6 +52,7 @@ export const getPublicProfile = {
               githubProfile: Type.Optional(Type.String()),
               is2018DataVisCert: Type.Boolean(),
               is2018FullStackCert: Type.Boolean(),
+              isA2EnglishCert: Type.Boolean(),
               isApisMicroservicesCert: Type.Boolean(),
               isBackEndCert: Type.Boolean(),
               isCheater: Type.Boolean(),
@@ -64,6 +65,7 @@ export const getPublicProfile = {
               isFrontEndCert: Type.Boolean(),
               isFrontEndLibsCert: Type.Boolean(),
               isFullStackCert: Type.Boolean(),
+              isJavascriptCertV9: Type.Boolean(),
               isHonest: Type.Boolean(),
               isInfosecCertV7: Type.Boolean(),
               isInfosecQaCert: Type.Boolean(),
@@ -73,16 +75,11 @@ export const getPublicProfile = {
               isQaCertV7: Type.Boolean(),
               isRelationalDatabaseCertV8: Type.Boolean(),
               isRespWebDesignCert: Type.Boolean(),
+              isRespWebDesignCertV9: Type.Boolean(),
               isSciCompPyCertV7: Type.Boolean(),
               linkedin: Type.Optional(Type.String()),
               location: Type.String(),
               name: Type.String(),
-              partiallyCompletedChallenges: Type.Array(
-                Type.Object({
-                  id: Type.String(),
-                  completedDate: Type.Number()
-                })
-              ),
               picture: Type.String(),
               // TODO(Post-MVP): points should be a number
               points: Type.Union([Type.Number(), Type.Null()]),
@@ -97,10 +94,10 @@ export const getPublicProfile = {
               ),
               profileUI,
               twitter: Type.Optional(Type.String()),
+              bluesky: Type.Optional(Type.String()),
               website: Type.Optional(Type.String()),
               yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
               joinDate: Type.String(),
-              savedChallenges: Type.Array(savedChallenge),
               username: Type.String(),
               usernameDisplay: Type.String(),
               msUsername: Type.Optional(Type.String())

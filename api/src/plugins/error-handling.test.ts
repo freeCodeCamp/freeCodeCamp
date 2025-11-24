@@ -138,7 +138,7 @@ describe('errorHandling', () => {
     expect(res.statusCode).toEqual(400);
   });
 
-  test('should return the error message if the status is not 500 ', async () => {
+  test('should return the error message if the status is not 500', async () => {
     const res = await fastify.inject({
       method: 'GET',
       url: '/test-bad-request'
