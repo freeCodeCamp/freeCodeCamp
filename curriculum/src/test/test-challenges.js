@@ -39,7 +39,7 @@ vi.mock(
     const ts = await import('typescript-5.9.2');
     // use the same TS compiler as the client
     const tsCompiler = await import(
-      '../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
+      '../../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
     );
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
     await compiler.setup();
