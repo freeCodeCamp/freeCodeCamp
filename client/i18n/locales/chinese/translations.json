@@ -497,7 +497,7 @@
     "download-solution": "下载我的解决方案",
     "download-results": "下载我的结果",
     "percent-complete": "完成 {{percent}}%",
-    "project-complete": "已完成 {{totalChallengesInBlock}} 认证项目中的 {{completedChallengesInBlock}}",
+    "project-complete": "Completed",
     "tried-rsa": "如果你已经尝试了 <0>Read-Search-Ask（阅读-搜索-提问）</0>方法，那么你可以在 freeCodeCamp 论坛请求帮助。",
     "read-search-ask-checkbox": "我已经尝试了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已经<0>在论坛上搜索了类似的问题和相应的答案</0>",
@@ -894,6 +894,7 @@
     "navigation-warning": "如果你离开这个页面，你将丢失你的进度。你确定吗？",
     "fsd-b-description": "这个全面的课程使你准备好成为一名认证全栈开发者。你将会学习用 HTML、CSS、JavaScript、React、TypeScript、Node.js、Python 以及其他技术构建完整的 Web 应用。",
     "fsd-b-cta": "开始学习",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "10 万+ 学生",
     "fsd-b-benefit-1-description": "和 10 万+ 学员一起学习这个认证。",
     "fsd-b-benefit-2-title": "专业认证",
@@ -1314,7 +1315,8 @@
     "copied": "令牌已复制到剪贴板",
     "copy-error": "复制令牌到剪贴板时出错",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "键盘快捷键",

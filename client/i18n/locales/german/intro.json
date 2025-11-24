@@ -5087,7 +5087,6 @@
   },
   "javascript-v9": {
     "title": "JavaScript Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
       "To qualify for the exam, you must complete the following projects:",
@@ -5101,12 +5100,6 @@
     "chapters": {
       "javascript": "JavaScript",
       "javascript-certification-exam": "JavaScript Certification Exam"
-    },
-    "module-intros": {
-      "javascript-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your JavaScript Certification."]
-      }
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5291,6 +5284,12 @@
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
           "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+        ]
+      },
+      "workshop-logic-checker-app": {
+        "title": "Build a Logic Checker App",
+        "intro": [
+          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
@@ -7501,7 +7500,7 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
@@ -7733,7 +7732,6 @@
   },
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
       "To qualify for the exam, you must complete the following projects:",
@@ -7748,14 +7746,6 @@
       "html": "HTML",
       "css": "CSS",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
-    },
-    "module-intros": {
-      "responsive-web-design-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Responsive Web Design Certification."
-        ]
-      }
     },
     "modules": {
       "basic-html": "Basic HTML",

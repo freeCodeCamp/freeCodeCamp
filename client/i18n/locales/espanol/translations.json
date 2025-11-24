@@ -497,7 +497,7 @@
     "download-solution": "Descargar mi solución",
     "download-results": "Descargar mis resultados",
     "percent-complete": "{{percent}}% completo",
-    "project-complete": "Completado {{completedChallengesInBlock}} de {{totalChallengesInBlock}} proyectos de certificación",
+    "project-complete": "Completed",
     "tried-rsa": "Si ya has probado el método <0>Leer-Buscar-Preguntar</0>, entonces puedes pedir ayuda en el foro de freeCodeCamp.",
     "read-search-ask-checkbox": "He probado el método <0>Leer-Buscar-Preguntar</0>",
     "similar-questions-checkbox": "He buscado <0>preguntas similares que ya han sido contestadas en el foro</0>",
@@ -894,6 +894,7 @@
     "navigation-warning": "Si abandonas esta página, perderás tu progreso. ¿Estás seguro?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
@@ -1314,7 +1315,8 @@
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Atajos de teclado",

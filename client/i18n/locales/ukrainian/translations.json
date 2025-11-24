@@ -497,7 +497,7 @@
     "download-solution": "Завантажити розв’язок",
     "download-results": "Завантажити результати",
     "percent-complete": "виконано {{percent}}%",
-    "project-complete": "Завершено {{completedChallengesInBlock}} із {{totalChallengesInBlock}} сертифікаційних проєктів",
+    "project-complete": "Completed",
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
     "read-search-ask-checkbox": "Я спробував(-ла) метод <0>читати-шукати-питати</0>",
     "similar-questions-checkbox": "Я шукав(-ла) <0>схожі запитання на форумі, на які вже є відповідь</0>",
@@ -894,6 +894,7 @@
     "navigation-warning": "Ви втратите прогрес, якщо залишите цю сторінку. Ви впевнені?",
     "fsd-b-description": "Завдяки комплексному курсу ви станете сертифікованим full stack розробником. Ви навчитесь повністю створювати застосунки за допомогою HTML, CSS, JavaScript, React, TypeScript, Node.js, Python і багато іншого.",
     "fsd-b-cta": "Розпочати навчання",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100,000+ учнів",
     "fsd-b-benefit-1-description": "Станьте одним з учнів, які отримують сертифікацію.",
     "fsd-b-benefit-2-title": "Професійний сертифікат",
@@ -1314,7 +1315,8 @@
     "copied": "Токен скопійовано до буфера обміну",
     "copy-error": "Невдале копіювання токену",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Гарячі клавіші",

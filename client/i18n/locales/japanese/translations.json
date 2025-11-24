@@ -497,7 +497,7 @@
     "download-solution": "回答をダウンロード",
     "download-results": "結果をダウンロード",
     "percent-complete": "{{percent}}% 完了",
-    "project-complete": "{{totalChallengesInBlock}} 件中 {{completedChallengesInBlock}} 件の認定プロジェクトが完了しました",
+    "project-complete": "Completed",
     "tried-rsa": "すでに <0>Read-Search-Ask (読む - 検索する - 質問する)</0> メソッドを試したなら、freeCodeCamp フォーラムで助けを求めることができます。",
     "read-search-ask-checkbox": "<0>Read-Search-Ask (読む - 検索する - 質問する)</0>メソッドを試しました",
     "similar-questions-checkbox": "<0>フォーラムで解決済みの類似質問</0>を探しました",
@@ -894,6 +894,7 @@
     "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
@@ -1314,7 +1315,8 @@
     "copied": "トークンをクリップボードにコピーしました",
     "copy-error": "トークンをクリップボードにコピー中にエラーが発生しました",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "キーボードショートカット",
