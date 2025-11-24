@@ -1,7 +1,7 @@
 import { call, cancel, delay, fork, put, takeEvery } from 'redux-saga/effects';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import { wrapHandledError } from '../utils/handled-error';
-import { FlashMessages } from '../components/Flash/redux/flash-messages';
+import { networkErrorMessage } from '../utils/error-messages';
 import {
   fetchProfileForUserComplete,
   fetchProfileForUserError,
@@ -35,10 +35,7 @@ function* fetchSessionUser() {
     yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
-    const handledError = wrapHandledError(e, {
-      type: 'danger',
-      message: FlashMessages.AccessServerError
-    });
+    const handledError = wrapHandledError(e, networkErrorMessage);
     yield put(fetchUserError(handledError));
   } finally {
     yield cancel(timeoutTask);

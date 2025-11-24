@@ -1079,7 +1079,7 @@
       "success": "Thank you. Your survey was submitted."
     },
     "classroom-mode-updated": "We have updated your classroom mode settings",
-    "access-server-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
+    "network-error": "We cannot reach the server right now. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
