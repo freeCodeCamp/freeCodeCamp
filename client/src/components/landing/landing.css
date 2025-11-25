@@ -401,10 +401,6 @@ figcaption.caption {
   line-height: 1.5;
 }
 
-.landing-top-left {
-  text-align: center;
-}
-
 @media (min-width: 1200px) {
   .landing-top-two-column {
     flex-direction: row;
@@ -416,7 +412,6 @@ figcaption.caption {
     flex: 0 0 50%;
     max-width: 50%;
     z-index: 1;
-    text-align: left;
   }
 
   .landing-top-two-column .landing-top-right {
