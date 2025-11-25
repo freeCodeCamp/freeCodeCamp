@@ -228,7 +228,8 @@ const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required()
+      .required(),
+    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),

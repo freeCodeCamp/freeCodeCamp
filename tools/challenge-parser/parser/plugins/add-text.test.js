@@ -172,7 +172,7 @@ describe('add-text', () => {
       '<section id="instructions">\n<p>Instructions containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>\n</section>'
     );
     expect(zhFile.data.explanation).toBe(
-      '<section id="explanation">\n<p>Wang Hua uses <ruby>请问<rp>(</rp><rt>qǐng wèn</rt><rp>)</rp></ruby> to politely start her question.</p>\n</section>'
+      '<section id="explanation">\n<p><ruby>我是<rp>(</rp><rt>wǒ shì</rt><rp>)</rp></ruby> Web <ruby>开发者<rp>(</rp><rt>kāi fā zhě</rt><rp>)</rp></ruby>。 – I am a web developer.</p>\n<p><ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>我是王华<rp>(</rp><rt>wǒ shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你叫什么名字<rp>(</rp><rt>qǐng wèn nǐ jiào shén me míng zi</rt><rp>)</rp></ruby>？ – Hello, I am Wang Hua, may I ask what your name is?</p>\n</section>'
     );
   });
 });
