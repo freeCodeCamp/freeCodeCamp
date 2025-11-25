@@ -80,6 +80,16 @@
           ]
         },
         {
+          "moduleType": "review",
+          "dashedName": "review-html",
+          "blocks": ["review-html"]
+        }
+      ]
+    },
+    {
+      "dashedName": "computers",
+      "modules": [
+        {
           "dashedName": "computer-basics",
           "blocks": [
             "lecture-understanding-computer-internet-and-tooling-basics",
@@ -88,11 +98,6 @@
             "review-computer-basics",
             "quiz-computer-basics"
           ]
-        },
-        {
-          "moduleType": "review",
-          "dashedName": "review-html",
-          "blocks": ["review-html"]
         }
       ]
     },
