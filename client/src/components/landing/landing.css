@@ -392,7 +392,6 @@ figcaption.caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   gap: 20px;
 }
 
@@ -402,21 +401,17 @@ figcaption.caption {
   line-height: 1.5;
 }
 
-.landing-top-left {
-  text-align: center;
-}
-
 @media (min-width: 1200px) {
   .landing-top-two-column {
     flex-direction: row;
     align-items: center;
+    width: 100%;
   }
 
   .landing-top-two-column .landing-top-left {
     flex: 0 0 50%;
     max-width: 50%;
     z-index: 1;
-    text-align: left;
   }
 
   .landing-top-two-column .landing-top-right {
