@@ -117,20 +117,13 @@
       "@freecodecamp/ui",
       "@prisma/client",
       "@prisma/engines",
-      "core-js",
-      "ejs",
-      "es5-ext",
       "esbuild",
       "gatsby",
       "gatsby-cli",
-      "gatsby-telemetry",
       "lmdb",
       "msgpackr-extract",
-      "msw",
-      "nodemon",
       "prisma",
       "puppeteer",
-      "sharp",
       "unrs-resolver"
     ]
   }
