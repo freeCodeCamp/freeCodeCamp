@@ -92,11 +92,7 @@ async function handleCheckIsReadyRequest(port: MessagePort) {
 }
 
 function handleCompileRequest(data: TSCompileEvent['data'], port: MessagePort) {
-  // If we try to update or create an empty file, the environment will become
-  // permanently unable to interact with that file. The workaround is to create
-  // a file with a single newline character.
-  const code = (data.code || '').slice() || '\n';
-  const { result, error } = compiler.compile(code, 'index.tsx');
+  const { result, error } = compiler.compile(data.code, 'index.tsx');
   const message: TSCompiledMessage = {
     type: 'compiled',
     value: result,
