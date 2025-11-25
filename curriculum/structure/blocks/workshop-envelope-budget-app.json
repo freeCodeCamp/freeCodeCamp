@@ -1,0 +1,17 @@
+{
+  "name": "Build an Envelope Budget App",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-envelope-budget-app",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "challengeOrder":
+  [
+    {
+      "id": "5ddb965c65d27e1512d44d9a",
+      "title": "Step 1"
+    }
+  ]
+}
