@@ -11,15 +11,12 @@ export class Compiler {
   tsvfs: TSVFS;
   tsEnv?: VirtualTypeScriptEnvironment;
   compilerHost?: CompilerHost;
-  constructor(
-    ts: typeof import('typescript'),
-    tsvfs: typeof import('@typescript/vfs')
-  ) {
+  constructor(ts: TS, tsvfs: TSVFS) {
     this.ts = ts;
     this.tsvfs = tsvfs;
   }
 
-  async setup() {
+  async setup(opts?: { useNodeModules: boolean }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
 
@@ -33,17 +30,21 @@ export class Compiler {
       jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
       allowUmdGlobalAccess: true // Necessary because React is loaded via a UMD script.
     };
-    const fsMap = await tsvfs.createDefaultMapFromCDN(
-      compilerOptions,
-      ts.version,
-      false, // TODO: cache this. It needs a store that's available to workers and implements https://github.com/microsoft/TypeScript-Website/blob/ac68b8b8e4a621113c4ee45c4051002fd55ede24/packages/typescript-vfs/src/index.ts#L11
-      ts
-    );
+
+    const fsMap = opts?.useNodeModules
+      ? tsvfs.createDefaultMapFromNodeModules(compilerOptions, ts)
+      : await tsvfs.createDefaultMapFromCDN(
+          compilerOptions,
+          ts.version,
+          false, // TODO: cache this. It needs a store that's available to workers and implements https://github.com/microsoft/TypeScript-Website/blob/ac68b8b8e4a621113c4ee45c4051002fd55ede24/packages/typescript-vfs/src/index.ts#L11
+          ts
+        );
 
     // This can be any path, but doing this means import React from 'react' works, if we ever need it.
     const reactTypesPath = `/node_modules/@types/react/index.d.ts`;
 
     // It may be necessary to get all the types (global.d.ts etc)
+
     fsMap.set(reactTypesPath, reactTypes['react-18'] || '');
 
     const system = tsvfs.createSystem(fsMap);
@@ -65,10 +66,14 @@ export class Compiler {
     ).compilerHost;
   }
 
-  compile(code: string, fileName: string) {
+  compile(rawCode: string, fileName: string) {
     if (!this.tsEnv || !this.compilerHost) {
       throw Error('TypeScript environment not set up');
     }
+    // If we try to update or create an empty file, the environment will become
+    // permanently unable to interact with that file. The workaround is to create
+    // a file with a single newline character.
+    const code = rawCode || '\n';
     // TODO: If creating the file fresh each time is too slow, we can try checking
     // if the file exists and updating it if it does.
     this.tsEnv.createFile(fileName, code);

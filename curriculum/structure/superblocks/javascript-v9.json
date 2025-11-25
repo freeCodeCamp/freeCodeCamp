@@ -21,6 +21,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
             "review-javascript-strings",
@@ -31,8 +32,11 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
+            "workshop-logic-checker-app",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
             "workshop-mathbot",
@@ -203,6 +207,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-markdown-to-html-converter",
           "blocks": ["lab-markdown-to-html-converter"]
         },
@@ -235,6 +240,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-drum-machine",
           "blocks": ["lab-drum-machine"]
         },
@@ -243,12 +249,12 @@
           "blocks": [
             "lecture-working-with-maps-and-sets",
             "workshop-plant-nursery-catalog",
-            "lab-voting-system",
             "review-javascript-maps-and-sets",
             "quiz-javascript-maps-and-sets"
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-voting-system",
           "blocks": ["lab-voting-system"]
         },
@@ -273,6 +279,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-bank-account-manager",
           "blocks": ["lab-bank-account-manager"]
         },
@@ -307,6 +314,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-weather-app",
           "blocks": ["lab-weather-app"]
         },
@@ -320,7 +328,6 @@
     {
       "chapterType": "exam",
       "dashedName": "javascript-certification-exam",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "javascript-certification-exam",

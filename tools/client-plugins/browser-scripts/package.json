@@ -20,6 +20,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --max-warnings 0",
     "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
   },
   "type": "module",
@@ -29,13 +30,16 @@
     "@babel/plugin-transform-runtime": "7.23.7",
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
+    "@freecodecamp/eslint-config": "workspace:*",
     "@types/copy-webpack-plugin": "^8.0.1",
-    "@typescript/vfs": "^1.6.0",
+    "@typescript/vfs": "1.6.1",
     "babel-loader": "8.3.0",
     "copy-webpack-plugin": "9.1.0",
+    "eslint": "^9.39.1",
     "process": "0.11.10",
     "pyodide": "^0.23.3",
     "sass.js": "0.11.1",
+    "typescript": "5.9.2",
     "util": "0.12.5",
     "webpack": "5.90.3",
     "webpack-cli": "4.10.0"
