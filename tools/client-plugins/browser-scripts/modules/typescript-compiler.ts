@@ -16,7 +16,7 @@ export class Compiler {
     this.tsvfs = tsvfs;
   }
 
-  async setup() {
+  async setup(opts?: { useNodeModules: boolean }) {
     const ts = this.ts;
     const tsvfs = this.tsvfs;
 
@@ -30,12 +30,15 @@ export class Compiler {
       jsx: ts.JsxEmit.Preserve, // Babel will handle JSX,
       allowUmdGlobalAccess: true // Necessary because React is loaded via a UMD script.
     };
-    const fsMap = await tsvfs.createDefaultMapFromCDN(
-      compilerOptions,
-      ts.version,
-      false, // TODO: cache this. It needs a store that's available to workers and implements https://github.com/microsoft/TypeScript-Website/blob/ac68b8b8e4a621113c4ee45c4051002fd55ede24/packages/typescript-vfs/src/index.ts#L11
-      ts
-    );
+
+    const fsMap = opts?.useNodeModules
+      ? tsvfs.createDefaultMapFromNodeModules(compilerOptions, ts)
+      : await tsvfs.createDefaultMapFromCDN(
+          compilerOptions,
+          ts.version,
+          false, // TODO: cache this. It needs a store that's available to workers and implements https://github.com/microsoft/TypeScript-Website/blob/ac68b8b8e4a621113c4ee45c4051002fd55ede24/packages/typescript-vfs/src/index.ts#L11
+          ts
+        );
 
     // This can be any path, but doing this means import React from 'react' works, if we ever need it.
     const reactTypesPath = `/node_modules/@types/react/index.d.ts`;

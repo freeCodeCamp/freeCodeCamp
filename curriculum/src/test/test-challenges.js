@@ -38,7 +38,7 @@ vi.mock(
       '../../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
     );
     const compiler = new tsCompiler.Compiler(ts, tsvfs);
-    await compiler.setup();
+    await compiler.setup({ useNodeModules: true });
     return {
       ...actual,
       checkTSServiceIsReady: () => Promise.resolve(true),
