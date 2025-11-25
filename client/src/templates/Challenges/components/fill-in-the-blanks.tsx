@@ -13,7 +13,7 @@ type FillInTheBlankProps = {
   showFeedback: boolean;
   feedback: string | null;
   showWrong: boolean;
-  handleInputChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleInputChange: (inputIndex: number, value: string) => void;
 };
 
 function FillInTheBlanks({
@@ -70,8 +70,9 @@ function FillInTheBlanks({
                     type='text'
                     maxLength={blankAnswers[value].length + 3}
                     className={getInputClass(value)}
-                    onChange={handleInputChange}
-                    data-index={node.value}
+                    onChange={e =>
+                      handleInputChange(node.value, e.target.value)
+                    }
                     size={blankAnswers[value].length}
                     autoComplete='off'
                     aria-label={t('learn.fill-in-the-blank.blank')}

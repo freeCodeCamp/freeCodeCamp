@@ -1,0 +1,11 @@
+{
+  "name": "Remember First Numbers",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-warm-up-remember-first-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4a4930c4f277a9a29e84", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "warm-up"
+}

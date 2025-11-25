@@ -471,6 +471,10 @@
     {
       "source": "/learn/full-stack-developer/lab-sum-all-primes-calculator/build-a-sum-all-primes-calculator",
       "destination": "/learn/full-stack-developer/lab-prime-number-sum-calculator/build-a-prime-number-sum-calculator"
+    },
+    {
+      "source": "/learn/full-stack-developer",
+      "destination": "/learn/full-stack-developer-v9"
     }
   ]
 }

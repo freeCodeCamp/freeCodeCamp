@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 10 to 29",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-numbers-10-to-29",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4b9fec2e217948ffa058", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

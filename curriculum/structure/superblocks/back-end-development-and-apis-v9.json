@@ -51,9 +51,15 @@
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,
           "blocks": []
-        },
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "back-end-development-and-apis-certification-exam",
+      "comingSoon": true,
+      "modules": [
         {
-          "moduleType": "exam",
           "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
           "blocks": ["exam-back-end-development-and-apis-certification"]

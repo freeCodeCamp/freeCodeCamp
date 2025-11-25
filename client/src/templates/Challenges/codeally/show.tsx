@@ -137,7 +137,7 @@ function ShowCodeAlly({
       challenge: {
         block,
         challengeType,
-        fields: { tests },
+        tests,
         description,
         helpCategory,
         id: challengeId,
@@ -385,12 +385,6 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
-        fields {
-          tests {
-            text
-            testString
-          }
-        }
         challengeType
         description
         helpCategory
@@ -398,6 +392,10 @@ export const query = graphql`
         instructions
         notes
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
         url

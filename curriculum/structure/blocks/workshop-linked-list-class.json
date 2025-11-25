@@ -1,6 +1,6 @@
 {
   "name": "Build a Linked List",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-linked-list-class",
   "helpCategory": "Python",
   "usesMultifileEditor": true,

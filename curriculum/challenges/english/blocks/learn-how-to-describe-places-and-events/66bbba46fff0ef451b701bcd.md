@@ -3,6 +3,7 @@ id: 66bbba46fff0ef451b701bcd
 title: Task 103
 challengeType: 19
 dashedName: task-103
+lang: en-US
 ---
 
 <!-- Audio Reference:
@@ -21,7 +22,7 @@ Is Sarah available to talk to Tom?
 
 ## --answers--
 
-No, she is busy and doesn´t want to know about his problems.
+No, she is busy and doesn't want to know about his problems.
 
 ### --feedback--
 
@@ -29,11 +30,11 @@ Sarah says she is not busy.
 
 ---
 
-Yes, she is available and wants know what's the problem.
+Yes, she is available and wants to know what's the problem.
 
 ---
 
-No, she cannot talk right now she has her own problems.
+No, she cannot talk right now, she has her own problems.
 
 ### --feedback--
 
@@ -53,7 +54,7 @@ Sarah doesn't limit the time; she simply states that she is not busy.
 
 # --explanation--
 
-Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help. 
+Instead of directly saying she is free, Sarah uses the negative form `I'm not busy` to emphasize that she has time to help.
 
 This is a polite and indirect way to offer availability in English, commonly used to make the conversation more tactful.
 

@@ -2,7 +2,7 @@
   "name": "Implement the Merge Sort Algorithm",
   "blockLayout": "challenge-grid",
   "blockLabel": "workshop",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-merge-sort",

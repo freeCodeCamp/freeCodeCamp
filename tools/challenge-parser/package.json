@@ -19,6 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint --max-warnings 0",
     "test": "vitest"
   },
   "dependencies": {
@@ -54,6 +55,8 @@
     "unist-util-visit-children": "1.1.4"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "eslint": "^9.39.1",
     "unist-util-select": "3.0.4",
     "vitest": "^3.2.4"
   }

@@ -52,7 +52,7 @@ test.describe('Should be shown automatically', () => {
 test.describe('Should be shown manually', () => {
   test.beforeEach(async ({ page }) => {
     const urlWithProjectPreview =
-      '/learn/full-stack-developer/lab-drum-machine/build-drum-machine';
+      '/learn/javascript-v9/lab-drum-machine/build-drum-machine';
     await page.goto(urlWithProjectPreview);
   });
 

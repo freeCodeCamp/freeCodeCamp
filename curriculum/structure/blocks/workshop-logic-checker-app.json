@@ -1,0 +1,25 @@
+{
+  "name": "Build a Logic Checker App",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-logic-checker-app",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6909ed80e1c195f49564edac", "title": "Step 1" },
+    { "id": "690a51806fb743bc896c3af7", "title": "Step 2" },
+    { "id": "690a562fd611e8155599ce98", "title": "Step 3" },
+    { "id": "690a57095c4afb27bbe751b3", "title": "Step 4" },
+    { "id": "690a57fef66aac39dffc61a2", "title": "Step 5" },
+    { "id": "690a58cc4f828a49eab1b53a", "title": "Step 6" },
+    { "id": "690a06833d3e83b5226ade78", "title": "Step 7" },
+    { "id": "690a0df27ee9ee36d935d530", "title": "Step 8" },
+    { "id": "690a0f7a5c22c15222a6aa5c", "title": "Step 9" },
+    { "id": "690a110a76d0496d9e7c28eb", "title": "Step 10" },
+    { "id": "690a3ad44874a928a2fe3077", "title": "Step 11" },
+    { "id": "690a3ce03013be44d116136e", "title": "Step 12" },
+    { "id": "690a3f884e083a6a33b81fcf", "title": "Step 13" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

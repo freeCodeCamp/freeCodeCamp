@@ -1,6 +1,6 @@
 {
   "name": "Implement the Binary Search Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true,
   "dashedName": "workshop-binary-search",

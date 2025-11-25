@@ -1,6 +1,6 @@
 {
   "name": "Build a Media Catalogue",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-media-catalogue",
   "helpCategory": "Python",
   "usesMultifileEditor": true,

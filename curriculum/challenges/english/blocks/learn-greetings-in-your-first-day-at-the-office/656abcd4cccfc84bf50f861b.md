@@ -3,6 +3,7 @@ id: 656abcd4cccfc84bf50f861b
 title: Task 80
 challengeType: 19
 dashedName: task-80
+lang: en-US
 ---
 
 # --description--

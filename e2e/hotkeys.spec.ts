@@ -25,7 +25,7 @@ const links = {
   multipleChoiceQuestion:
     '/learn/a2-english-for-developers/learn-greetings-in-your-first-day-at-the-office/task-7',
   assignment:
-    '/learn/full-stack-developer/review-semantic-html/review-semantic-html'
+    '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
 };
 
 const titles = {

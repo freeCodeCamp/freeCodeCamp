@@ -1,6 +1,6 @@
 {
   "name": "Build a Musical Instrument Inventory",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-musical-instrument-inventory",
   "helpCategory": "Python",
   "challengeOrder": [

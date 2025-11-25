@@ -22,6 +22,10 @@ interface ChallengesProps {
   challenges: ChallengeInfo[];
 }
 
+interface JumpLinkProps {
+  jumpLink?: boolean;
+}
+
 interface BlockTitleProps {
   blockTitle: string;
 }
@@ -122,16 +126,18 @@ const LinkToFirstIncompleteChallenge = ({
 export const GridMapChallenges = ({
   challenges,
   blockTitle,
-  isProjectBlock
-}: ChallengesProps & BlockTitleProps & IsProjectBlockProps) => {
+  isProjectBlock,
+  jumpLink
+}: ChallengesProps & BlockTitleProps & IsProjectBlockProps & JumpLinkProps) => {
   const { t } = useTranslation();
-
   return (
     <>
-      <LinkToFirstIncompleteChallenge
-        challenges={challenges}
-        blockTitle={blockTitle}
-      />
+      {jumpLink && (
+        <LinkToFirstIncompleteChallenge
+          challenges={challenges}
+          blockTitle={blockTitle}
+        />
+      )}
       <nav aria-label={t('aria.steps-for', { blockTitle })}>
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (
@@ -161,16 +167,19 @@ export const GridMapChallenges = ({
 
 export const ChallengesWithDialogues = ({
   challenges,
-  blockTitle
-}: ChallengesProps & BlockTitleProps) => {
+  blockTitle,
+  jumpLink
+}: ChallengesProps & BlockTitleProps & JumpLinkProps) => {
   const { t } = useTranslation();
-
   return (
     <>
-      <LinkToFirstIncompleteChallenge
-        challenges={challenges}
-        blockTitle={blockTitle}
-      />
+      {jumpLink && (
+        <LinkToFirstIncompleteChallenge
+          challenges={challenges}
+          blockTitle={blockTitle}
+        />
+      )}
+
       <nav aria-label={t('aria.dialogues-and-tasks-for', { blockTitle })}>
         <ul className={`map-challenges-ul map-challenges-grid`}>
           {challenges.map(challenge => (

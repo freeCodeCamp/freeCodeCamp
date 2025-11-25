@@ -6,7 +6,6 @@ import { createSelector } from 'reselect';
 import { scroller } from 'react-scroll';
 
 import { Container, Spacer } from '@freecodecamp/ui';
-import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 import store from 'store';
 import envData from '../../config/env.json';
@@ -108,8 +107,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
 
   const isSignedInRef = useRef(isSignedIn);
 
-  const examTokenFlag = useFeatureIsOn('exam-token-widget');
-
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
     if (id) {
@@ -205,7 +202,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='m' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='m' />
-          {examTokenFlag && <ExamToken />}
+          <ExamToken email={email} />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}

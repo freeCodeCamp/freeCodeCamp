@@ -15,12 +15,10 @@ export type Challenge = {
   title: string;
   date: Date;
   description: string;
-  fields: {
-    tests: {
-      testString: string;
-      text: string;
-    }[];
-  };
+  tests: {
+    testString: string;
+    text: string;
+  }[];
   challengeFiles: {
     contents: string;
     filekey: string;

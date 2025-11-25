@@ -1,0 +1,11 @@
+{
+  "name": "Basic Personal Information",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-basic-personal-information",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4db0ffcafa800eae6b9d", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

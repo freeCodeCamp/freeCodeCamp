@@ -1,6 +1,6 @@
 ---
 id: 66ed8fa2f45ce3ece4053eab
-title: Basic CSS Quiz
+title: CSS Fundamentals Quiz
 challengeType: 8
 dashedName: quiz-basic-css
 ---

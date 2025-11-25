@@ -3,6 +3,7 @@ id: 683d4ae3cbcc8c94e78aade1
 title: Task 19
 challengeType: 19
 dashedName: task-19
+lang: en-US
 ---
 
 <!-- (Audio) Bob: Exactly. It's in the back, next to the emergency exit. -->

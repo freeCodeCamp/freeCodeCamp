@@ -1,0 +1,11 @@
+{
+  "name": "The First Ten Numbers Practice",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-the-first-ten-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691b669df9d00bd1bc30c7fc", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

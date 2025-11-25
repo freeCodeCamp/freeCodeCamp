@@ -38,10 +38,7 @@ function Preview({
   const id = previewId ?? mainPreviewId;
 
   return (
-    <div
-      data-playwright-test-label='preview-iframe'
-      className={`notranslate challenge-preview ${iframeToggle}-iframe`}
-    >
+    <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
       <iframe
         className={'challenge-preview-frame'}
         id={id}

@@ -15,11 +15,11 @@ import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/fr
 
 import { getChallengesForLang } from '../get-challenges.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
-import { testedLang } from '../utils.js';
 
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
 import { validateMetaSchema } from '../../schema/meta-schema.js';
 import { getBlockStructure } from '../file-handler.js';
+import { FCC_CHALLENGE_ID, testedLang } from '../config.js';
 import ChallengeTitles from './utils/challenge-titles.js';
 import MongoIds from './utils/mongo-ids.js';
 import createPseudoWorker from './utils/pseudo-worker.js';
@@ -135,7 +135,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
       // challenge to test (current challenge) might not have solution.
       // Instead seed from next challenge is tested against tests from
       // current challenge. Next challenge is skipped from testing.
-      if (process.env.FCC_CHALLENGE_ID && id > 0) return;
+      if (FCC_CHALLENGE_ID && id > 0) return;
 
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,

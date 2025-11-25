@@ -1,11 +1,12 @@
 {
-  "name": "@freecodecamp/challenge-editor",
+  "name": "@freecodecamp/challenge-editor-api",
   "version": "1.0.0",
   "private": true,
   "description": "Editor to help with new challenge structure",
   "scripts": {
     "start": "tsx server.ts",
-    "postinstall": "shx cp ./sample.env ./.env"
+    "postinstall": "shx cp ./sample.env ./.env",
+    "lint": "eslint --max-warnings 0"
   },
   "author": "freeCodeCamp",
   "license": "BSD-3-Clause",
@@ -15,9 +16,12 @@
     "gray-matter": "4.0.3"
   },
   "devDependencies": {
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@freecodecamp/eslint-config": "workspace:*",
     "@types/cors": "^2.8.13",
     "@types/express": "4.17.21",
     "dotenv": "16.4.5",
+    "eslint": "^9.39.1",
     "shx": "0.3.4",
     "typescript": "5.2.2"
   }

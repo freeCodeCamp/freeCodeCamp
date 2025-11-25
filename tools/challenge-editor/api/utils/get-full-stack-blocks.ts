@@ -58,15 +58,13 @@ export const getModules = async (
 
   let modules: Module[] = [];
 
-  modules = await Promise.all(
-    chapter.modules!.map(module => {
-      const modules = Object.entries(introData[superBlock]['modules']!);
-      const moduleTrueName = modules.filter(
-        x => x[0] === module.dashedName
-      )[0][1];
-      return { name: moduleTrueName, path: 'modules/' + module.dashedName };
-    })
-  );
+  modules = chapter.modules.map(module => {
+    const modules = Object.entries(introData[superBlock]['modules']!);
+    const moduleTrueName = modules.filter(
+      x => x[0] === module.dashedName
+    )[0][1];
+    return { name: moduleTrueName, path: 'modules/' + module.dashedName };
+  });
 
   return {
     modules: modules,

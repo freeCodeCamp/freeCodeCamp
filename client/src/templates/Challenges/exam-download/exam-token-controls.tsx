@@ -4,8 +4,17 @@ import { Button, Spacer } from '@freecodecamp/ui';
 
 import { examEnvironmentAuthorizationTokenApi } from '../../../utils/ajax';
 import { Loader } from '../../../components/helpers';
+import envData from '../../../../config/env.json';
 
-export function ExamTokenControls(): JSX.Element {
+const { deploymentEnv } = envData;
+
+interface ExamTokenControlsProps {
+  email: string;
+}
+
+export function ExamTokenControls({
+  email
+}: ExamTokenControlsProps): JSX.Element {
   const { t } = useTranslation();
 
   const [copySuccess, setCopySuccess] = useState<string | null>(null);
@@ -32,6 +41,9 @@ export function ExamTokenControls(): JSX.Element {
       }
     );
   }
+
+  const nonStaffTesting =
+    deploymentEnv !== 'production' && !email.endsWith('@freecodecamp.org');
 
   return (
     <>
@@ -60,6 +72,7 @@ export function ExamTokenControls(): JSX.Element {
           {t('exam-token.no-token')}
         </p>
       )}
+      {nonStaffTesting && <p>{t('exam-token.non-staff-testing')}</p>}
       {generateMutation.isLoading || getTokenQuery.isLoading ? (
         <Button block={true}>
           <Loader />
@@ -67,7 +80,11 @@ export function ExamTokenControls(): JSX.Element {
       ) : (
         <Button
           block={true}
-          disabled={generateMutation.isLoading || getTokenQuery.isLoading}
+          disabled={
+            generateMutation.isLoading ||
+            getTokenQuery.isLoading ||
+            nonStaffTesting
+          }
           onClick={() => void generateToken()}
         >
           {t('exam-token.generate-exam-token')}

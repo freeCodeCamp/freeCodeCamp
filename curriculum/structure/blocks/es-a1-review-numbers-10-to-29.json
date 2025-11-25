@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 10 to 29 Review",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-review-numbers-10-to-29",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4c6ee406cc7be5c85196", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "review"
+}

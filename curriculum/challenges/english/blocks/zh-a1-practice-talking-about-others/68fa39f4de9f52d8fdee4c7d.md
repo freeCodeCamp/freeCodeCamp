@@ -3,6 +3,7 @@ id: 68fa39f4de9f52d8fdee4c7d
 title: "Dialogue 1: I'm Tom"
 challengeType: 21
 dashedName: dialogue-1-im-tom
+lang: zh-CN
 ---
 
 # --description--

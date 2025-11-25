@@ -2,6 +2,24 @@ import { describe, it, expect } from 'vitest';
 import ObjectID from 'bson-objectid';
 import { getStepTemplate } from './get-step-template';
 
+const props = {
+  challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
+  challengeSeeds: [
+    {
+      contents: '',
+      editableRegionBoundaries: [0, 2],
+      ext: 'html',
+      head: '',
+      id: '',
+      key: 'indexhtml',
+      name: 'index',
+      tail: ''
+    }
+  ],
+  stepNum: 5,
+  challengeType: 0
+};
+
 // Note: evaluates at highlevel the process, but seedHeads and seedTails could
 // be tested if more specifics are needed.
 describe('getStepTemplate util', () => {
@@ -35,24 +53,20 @@ Test 1
 --fcc-editable-region--
 \`\`\`\n`;
 
-    const props = {
-      challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
-      challengeSeeds: [
-        {
-          contents: '',
-          editableRegionBoundaries: [0, 2],
-          ext: 'html',
-          head: '',
-          id: '',
-          key: 'indexhtml',
-          name: 'index',
-          tail: ''
-        }
-      ],
-      stepNum: 5,
-      challengeType: 0
-    };
-
     expect(getStepTemplate(props)).toEqual(baseOutput);
+  });
+
+  it('should add lang property when challengeLang is passed', () => {
+    const frontMatter = `---
+id: 60d4ebe4801158d1abe1b18f
+title: Step 5
+challengeType: 0
+dashedName: step-5
+lang: es
+---`;
+
+    expect(getStepTemplate({ ...props, challengeLang: 'es' })).match(
+      new RegExp(`^${frontMatter}`)
+    );
   });
 });

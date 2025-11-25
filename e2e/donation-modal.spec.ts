@@ -318,7 +318,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     page
   }) => {
     await page.goto(
-      '/learn/full-stack-developer/review-basic-html/basic-html-review'
+      '/learn/responsive-web-design-v9/review-basic-html/basic-html-review'
     );
 
     await page.getByRole('checkbox', { name: /Review/ }).click();
@@ -334,7 +334,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
   test('should not appear if FSD review module is completed', async ({
     page
   }) => {
-    await page.goto('/learn/full-stack-developer/review-html/review-html');
+    await page.goto('/learn/responsive-web-design-v9/review-html/review-html');
     await page.getByRole('checkbox', { name: /Review/ }).click();
     await page.getByRole('button', { name: 'Submit', exact: true }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
@@ -361,7 +361,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     // This lecture is not added to the seed data, so it is not completed.
     // By completing this lecture, we claim both the block and its module.
     await page.goto(
-      '/learn/full-stack-developer/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
+      '/learn/relational-databases-v9/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
     );
 
     // Wait for the page content to render

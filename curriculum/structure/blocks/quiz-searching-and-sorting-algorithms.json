@@ -2,7 +2,7 @@
   "name": "Searching and Sorting Algorithms Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-searching-and-sorting-algorithms",
   "challengeOrder": [
     {

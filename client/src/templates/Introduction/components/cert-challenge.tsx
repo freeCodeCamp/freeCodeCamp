@@ -58,7 +58,7 @@ const CertChallenge = ({
   const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
-  const { currentCerts } = getCertifications(user);
+  const { currentCerts, legacyCerts } = getCertifications(user);
   const { username } = user;
 
   const cert = liveCerts.find(x => x.title === title);
@@ -78,15 +78,17 @@ const CertChallenge = ({
     superBlockCertTypeMap;
 
   useEffect(() => {
+    const allCerts = [...currentCerts, ...legacyCerts];
+
     setIsCertified(
-      currentCerts?.find(
+      allCerts.find(
         (cert: { certSlug: string }) =>
           certSlugTypeMapTyped[cert.certSlug] ===
           superBlockCertTypeMapTyped[superBlock]
       )?.show ?? false
     );
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCerts]);
+  }, [currentCerts, legacyCerts]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
 

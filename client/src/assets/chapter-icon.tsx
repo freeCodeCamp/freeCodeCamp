@@ -20,7 +20,16 @@ const iconMap = {
   [FsdChapters.RelationalDatabases]: DatabaseIcon,
   [FsdChapters.BackendJavascript]: NodeIcon,
   [FsdChapters.Python]: Python,
-  [FsdChapters.Career]: Graduation
+  [FsdChapters.Career]: Graduation,
+  [FsdChapters.RwdExam]: Graduation,
+  [FsdChapters.JsExam]: Graduation,
+  [FsdChapters.Fed]: ReactIcon,
+  [FsdChapters.FedExam]: Graduation,
+  [FsdChapters.PythonExam]: Graduation,
+  [FsdChapters.RdbExam]: Graduation,
+  [FsdChapters.Bed]: NodeIcon,
+  [FsdChapters.BedExam]: Graduation,
+  [FsdChapters.FsdExam]: Graduation
 };
 
 type ChapterIconProps = {

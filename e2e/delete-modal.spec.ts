@@ -16,9 +16,9 @@ test.beforeEach(async ({ page }) => {
 test.afterAll(
   async () =>
     await Promise.all([
-      await execP('node ./tools/scripts/seed/seed-demo-user --certified-user'),
-      await execP('node ./tools/scripts/seed/seed-surveys'),
-      await execP('node ./tools/scripts/seed/seed-ms-username')
+      execP('node ./tools/scripts/seed/seed-demo-user --certified-user'),
+      execP('node ./tools/scripts/seed/seed-surveys'),
+      execP('node ./tools/scripts/seed/seed-ms-username')
     ])
 );
 

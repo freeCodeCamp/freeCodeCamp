@@ -15,7 +15,7 @@ const headerComponentElements = {
   languageButton: 'header-lang-list-option',
   menuButton: 'header-menu-button',
   menu: 'header-menu',
-  signInButton: 'header-sign-in-button'
+  signInButton: 'sign-in-button'
 } as const;
 
 const examUrl =
@@ -243,9 +243,9 @@ test.describe('Header', () => {
     const page = await context.newPage();
     await page.goto('/');
 
-    const signInButton = page.getByRole('link', {
-      name: translations.buttons['sign-in']
-    });
+    const signInButton = page
+      .locator('header')
+      .getByRole('link', { name: translations.buttons['sign-in'] });
 
     const apiLocation = process.env.API_LOCATION || 'http://localhost:3000';
 

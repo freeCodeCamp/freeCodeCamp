@@ -3,7 +3,12 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addVideoQuestion from './add-video-question';
 
 describe('add-video-question plugin', () => {
-  let simpleAST, videoAST, multipleQuestionAST, videoOutOfOrderAST;
+  let simpleAST,
+    videoAST,
+    multipleQuestionAST,
+    videoOutOfOrderAST,
+    videoWithAudioAST,
+    chineseVideoAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
 
@@ -16,6 +21,8 @@ describe('add-video-question plugin', () => {
     videoOutOfOrderAST = await parseFixture(
       'with-video-question-out-of-order.md'
     );
+    videoWithAudioAST = await parseFixture('with-video-question-audio.md');
+    chineseVideoAST = await parseFixture('with-chinese-mcq.md');
   });
 
   beforeEach(() => {
@@ -43,6 +50,7 @@ describe('add-video-question plugin', () => {
     expect(question.answers[0]).toHaveProperty('answer');
     expect(question.answers[0].answer).toBeTruthy();
     expect(question.answers[0]).toHaveProperty('feedback');
+    expect(question.answers[0]).toHaveProperty('audioId');
   };
 
   it('should generate a questions array from a video challenge AST', () => {
@@ -76,16 +84,19 @@ describe('add-video-question plugin', () => {
     expect(testObject.solution).toBe(3);
     expect(testObject.answers[0]).toStrictEqual({
       answer: '<p>Some inline <code>code</code></p>',
-      feedback: '<p>That is not correct.</p>'
+      feedback: '<p>That is not correct.</p>',
+      audioId: null
     });
     expect(testObject.answers[1]).toStrictEqual({
       answer: `<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>`,
-      feedback: null
+      feedback: null,
+      audioId: null
     });
     expect(testObject.answers[2]).toStrictEqual({
       answer: '<p><code> code in </code> code tags</p>',
-      feedback: null
+      feedback: null,
+      audioId: null
     });
   });
 
@@ -98,11 +109,71 @@ describe('add-video-question plugin', () => {
 
   it('should NOT throw if there is no question', () => {
     expect.assertions(1);
-    expect(() => plugin(simpleAST)).not.toThrow();
+    expect(() => plugin(simpleAST, file)).not.toThrow();
+  });
+
+  it('should extract audioId from answers when present', () => {
+    plugin(videoWithAudioAST, file);
+
+    const testObject = file.data.questions[0];
+
+    expect(testObject.answers[0]).toStrictEqual({
+      answer: '<p>Some inline <code>code</code></p>',
+      feedback: '<p>That is not correct.</p>',
+      audioId: 'answer1-audio'
+    });
+
+    expect(testObject.answers[1]).toStrictEqual({
+      answer: `<p>Some <em>italics</em></p>
+<p>A second answer paragraph.</p>`,
+      feedback: null,
+      audioId: 'answer2-audio'
+    });
+
+    expect(testObject.answers[2]).toStrictEqual({
+      answer: '<p><code> code in </code> code tags</p>',
+      feedback: null,
+      audioId: null
+    });
   });
 
   it('should match the video snapshot', () => {
     plugin(videoAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('should render Chinese inline code as ruby in question text, answers, and feedback', async () => {
+    const zhFile = { data: { lang: 'zh-CN' } };
+
+    plugin(chineseVideoAST, zhFile);
+
+    const question = zhFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toContain(
+      '<ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toContain(
+      '<ruby>请<rp>(</rp><rt>qǐng</rt><rp>)</rp></ruby>'
+    );
+    expect(answer2.feedback).toBe(
+      '<p><ruby>请<rp>(</rp><rt>qǐng</rt><rp>)</rp></ruby> is not correct.</p>'
+    );
+
+    const answer3 = question.answers[2];
+    expect(answer3.answer).toContain(
+      '<ruby>请问<rp>(</rp><rt>qǐng wèn</rt><rp>)</rp></ruby>'
+    );
+
+    const answer4 = question.answers[3];
+    expect(answer4.answer).toContain(
+      '<ruby>问<rp>(</rp><rt>wèn</rt><rp>)</rp></ruby>'
+    );
   });
 });

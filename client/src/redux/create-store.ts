@@ -1,10 +1,7 @@
-import { createStore as reduxCreateStore, applyMiddleware } from 'redux';
-// import { composeWithDevTools } from '@redux-devtools/extension';
 import { createEpicMiddleware } from 'redux-observable';
 import createSagaMiddleware from 'redux-saga';
 import { configureStore } from '@reduxjs/toolkit';
 
-import envData from '../../config/env.json';
 import { isBrowser } from '../../utils';
 import {
   examAttempts,
@@ -19,8 +16,6 @@ declare const module: {
     accept: (path: string, callback: () => void) => void;
   };
 };
-
-const { environment } = envData;
 
 const clientSide = isBrowser();
 
@@ -37,47 +32,20 @@ const epicMiddleware = createEpicMiddleware({
   }
 });
 
-// const composeEnhancers = composeWithDevTools({
-//   // options like actionSanitizer, stateSanitizer
-// });
-
 export const createStore = (preloadedState = {}) => {
-  let store;
-  if (environment === 'production') {
-    store = reduxCreateStore(
-      rootReducer,
-      preloadedState,
-      applyMiddleware(
-        sagaMiddleware,
-        epicMiddleware,
-        // @ts-expect-error RTK uses unknown, Redux uses any
-        examAttempts.middleware,
-        examEnvironmentAuthorizationTokenApi.middleware
-      )
-    );
-  } else {
-    // store = reduxCreateStore(
-    //   rootReducer,
-    //   preloadedState,
-    //   composeEnhancers(
-    //     // @ts-expect-error RTK uses unknown, Redux uses any
-    //     applyMiddleware(sagaMiddleware, epicMiddleware, examAttempts.middleware)
-    //   )
-    // );
-    store = configureStore({
-      // @ts-expect-error RTK uses unknown, Redux uses any
-      reducer: rootReducer,
-      // @ts-expect-error RTK uses unknown, Redux uses any
-      middleware: getDefaultMiddleware => {
-        return getDefaultMiddleware()
-          .concat(examAttempts.middleware)
-          .concat(examEnvironmentAuthorizationTokenApi.middleware)
-          .concat(sagaMiddleware)
-          .concat(epicMiddleware);
-      },
-      preloadedState
-    });
-  }
+  const store = configureStore({
+    // @ts-expect-error RTK uses unknown, Redux uses any
+    reducer: rootReducer,
+    // @ts-expect-error RTK uses unknown, Redux uses any
+    middleware: getDefaultMiddleware => {
+      return getDefaultMiddleware()
+        .concat(examAttempts.middleware)
+        .concat(examEnvironmentAuthorizationTokenApi.middleware)
+        .concat(sagaMiddleware)
+        .concat(epicMiddleware);
+    },
+    preloadedState
+  });
   sagaMiddleware.run(rootSaga);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   epicMiddleware.run(rootEpic);
