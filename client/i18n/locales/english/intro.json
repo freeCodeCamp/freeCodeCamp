@@ -2555,13 +2555,6 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
-      "workshop-parent-teacher-conference-form": {
-        "title": "Design a Parent Teacher Conference Form",
-        "intro": [
-          "In this workshop, you will learn how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
-          "You'll learn concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
-        ]
-      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -8299,6 +8292,13 @@
         "intro": [
           "In the previous lectures, you learned how to work with the different types of pseudo-classes.",
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+        ]
+      },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will learn how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll learn concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
         ]
       },
       "lab-job-application-form": {
