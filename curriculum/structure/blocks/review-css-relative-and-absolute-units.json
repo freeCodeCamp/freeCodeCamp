@@ -1,6 +1,6 @@
 {
   "name": "CSS Relative and Absolute Units Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-css-relative-and-absolute-units",

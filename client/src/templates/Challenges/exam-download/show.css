@@ -1,0 +1,8 @@
+.exam-download-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.exam-qualified p:last-of-type {
+  margin-bottom: 0;
+}

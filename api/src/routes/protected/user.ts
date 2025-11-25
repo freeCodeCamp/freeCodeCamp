@@ -31,7 +31,8 @@ import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
   getExamAttemptsByExamIdHandler,
-  getExamAttemptsHandler
+  getExamAttemptsHandler,
+  getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
 
@@ -537,6 +538,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   );
 
   fastify.get(
+    '/user/exam-environment/token',
+    {
+      schema: schemas.getUserExamEnvironmentToken
+    },
+    getExamEnvironmentToken
+  );
+
+  fastify.get(
     '/user/exam-environment/exam/attempts',
     {
       schema: examEnvironmentSchemas.examEnvironmentGetExamAttempts
@@ -557,11 +566,17 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     getExamAttemptsByExamIdHandler
   );
+  fastify.get(
+    '/user/exam-environment/exams',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentExams
+    },
+    getExams
+  );
 
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -667,6 +682,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             id: true,
             is2018DataVisCert: true,
             is2018FullStackCert: true,
+            isA2EnglishCert: true,
             isApisMicroservicesCert: true,
             isBackEndCert: true,
             isCheater: true,
@@ -809,3 +825,41 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
 
   done();
 };
+
+async function getExamEnvironmentToken(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.getUserExamEnvironmentToken>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req, res: reply });
+  logger.info(`User ${req.user?.id} requested their exam environment token`);
+  const userId = req.user?.id;
+  if (!userId) {
+    throw new Error('Unreachable. User should be authenticated.');
+  }
+
+  const token = await this.prisma.examEnvironmentAuthorizationToken.findUnique({
+    where: {
+      userId,
+      expireAt: {
+        gt: new Date()
+      }
+    }
+  });
+
+  if (!token) {
+    void reply.code(404);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT('No valid token found for user.')
+    );
+  }
+
+  const examEnvironmentAuthorizationToken = jwt.sign(
+    { examEnvironmentAuthorizationToken: token.id },
+    JWT_SECRET
+  );
+
+  return reply.send({
+    examEnvironmentAuthorizationToken
+  });
+}

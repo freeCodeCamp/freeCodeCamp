@@ -1,6 +1,7 @@
 import { HandlerProps } from 'react-reflex';
 import { SuperBlocks } from '../../../shared-dist/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../../shared-dist/config/blocks';
+import type { Chapter } from '../../../shared-dist/config/chapters';
+import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
@@ -36,6 +37,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -52,8 +54,6 @@ export type FillInTheBlank = {
 export type Fields = {
   slug: string;
   blockHashSlug: string;
-  blockName: string;
-  tests: Test[];
 };
 type Required = {
   link: string;
@@ -74,7 +74,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-interface Dialogue {
+export interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -85,7 +85,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-interface SceneCommand {
+export interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -138,7 +138,17 @@ export type Characters =
   | 'René'
   | 'Sebastián'
   | 'Diego'
-  | 'Valeria';
+  | 'Valeria'
+
+  // Chinese
+  | 'Chen Na'
+  | 'Li Hong'
+  | 'Li Ping'
+  | 'Lin Yating'
+  | 'Liu Ming'
+  | 'Wang Hua'
+  | 'Zhang Wei'
+  | 'Zhou Yongjie';
 
 interface SetupCharacter {
   character: Characters;
@@ -181,13 +191,18 @@ type ParagraphNodule = {
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: { ext: Ext; name: string; contents: string }[];
+  data: {
+    ext: Ext;
+    name: string;
+    contents: string;
+    contentsHtml: string;
+  }[];
 };
 
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockType: BlockTypes;
+    blockLabel: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
@@ -207,7 +222,6 @@ export type ChallengeNode = {
     hooks?: Hooks;
     id: string;
     instructions: string;
-    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;
@@ -278,10 +292,7 @@ export type DailyCodingChallengeNode = {
 
     helpCategory: 'JavaScript' | 'Python';
     challengeType: 28 | 29;
-    fields: {
-      blockName: 'daily-coding-challenge';
-      tests: Test[];
-    };
+    tests: Test[];
     challengeFiles: ChallengeFiles;
 
     // props to satisfy the show classic component
@@ -321,7 +332,7 @@ export type DailyCodingChallengeLanguages = 'javascript' | 'python';
 export interface CompletedDailyCodingChallenge {
   id: string;
   completedDate: number;
-  completedLanguages: DailyCodingChallengeLanguages[];
+  languages: DailyCodingChallengeLanguages[];
 }
 
 type Quiz = {
@@ -346,6 +357,20 @@ export type AllChallengesInfo = {
   challengeNodes: ChallengeNode[];
   certificateNodes: CertificateNode[];
 };
+
+export type ChapterBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  chapters: Chapter[];
+};
+
+export type BlockBasedSuperBlockStructure = {
+  superBlock: SuperBlocks;
+  blocks: string[];
+};
+
+export type SuperBlockStructure =
+  | ChapterBasedSuperBlockStructure
+  | BlockBasedSuperBlockStructure;
 
 export type AllChallengeNode = {
   edges: [
@@ -432,6 +457,7 @@ export type ProfileUI = {
 
 export type ClaimedCertifications = {
   is2018DataVisCert: boolean;
+  isA2EnglishCert: boolean;
   isApisMicroservicesCert: boolean;
   isBackEndCert: boolean;
   isDataVisCert: boolean;
@@ -498,7 +524,6 @@ export type ChallengeMeta = {
   superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;
-  blockType?: BlockTypes;
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;

@@ -3,6 +3,7 @@ id: 655b67f02eecf57fa75ceecf
 title: Task 8
 challengeType: 22
 dashedName: task-8
+lang: en-US
 ---
 
 <!-- (Audio) Sophie: That's important work. I'm helping our team learn how to stay safe online. -->

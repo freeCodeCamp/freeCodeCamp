@@ -1,11 +1,11 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
+import { scroller } from 'react-scroll';
 
 import { Container, Spacer } from '@freecodecamp/ui';
-import { useFeatureIsOn } from '@growthbook/growthbook-react';
 
 import store from 'store';
 import envData from '../../config/env.json';
@@ -107,7 +107,23 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
 
   const isSignedInRef = useRef(isSignedIn);
 
-  const examTokenFlag = useFeatureIsOn('exam-token-widget');
+  const handleHashChange = () => {
+    const id = window.location.hash.replace('#', '');
+    if (id) {
+      scroller.scrollTo(id, {
+        smooth: true,
+        duration: 500,
+        offset: -100
+      });
+    }
+  };
+
+  useEffect(() => {
+    handleHashChange();
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
 
   if (showLoading || !user) {
     return <Loader fullScreen={true} />;
@@ -122,6 +138,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     completedChallenges,
     email,
     is2018DataVisCert,
+    isA2EnglishCert,
     isApisMicroservicesCert,
     isJavascriptCertV9,
     isJsAlgoDataStructCert,
@@ -185,11 +202,12 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
           <Spacer size='m' />
           <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           <Spacer size='m' />
-          {examTokenFlag && <ExamToken />}
+          <ExamToken email={email} />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}
             is2018DataVisCert={is2018DataVisCert}
+            isA2EnglishCert={isA2EnglishCert}
             isApisMicroservicesCert={isApisMicroservicesCert}
             isBackEndCert={isBackEndCert}
             isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}

@@ -2,7 +2,7 @@ import React, { Component, ReactNode } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
-import ScrollableAnchor from 'react-scrollable-anchor';
+import { Element } from 'react-scroll';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
@@ -22,7 +22,7 @@ import { makeExpandedBlockSelector, toggleBlock } from '../redux';
 import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel as BlockLabelType
 } from '../../../../../shared-dist/config/blocks';
 import CheckMark from './check-mark';
 import {
@@ -31,7 +31,6 @@ import {
   ChallengesWithDialogues
 } from './challenges';
 import BlockLabel from './block-label';
-import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
 
 import '../intro.css';
@@ -67,13 +66,14 @@ interface ChallengeInfo {
 
 interface BlockProps {
   block: string;
-  blockType: BlockTypes | null;
+  blockLabel: BlockLabelType | null;
   challenges: ChallengeInfo[];
   completedChallengeIds: string[];
   isExpanded: boolean;
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
+  accordion?: boolean;
 }
 
 export class Block extends Component<BlockProps> {
@@ -108,12 +108,13 @@ export class Block extends Component<BlockProps> {
   render(): ReactNode {
     const {
       block,
-      blockType,
+      blockLabel,
       completedChallengeIds,
       challenges,
       isExpanded,
       superBlock,
-      t
+      t,
+      accordion = false
     } = this.props;
 
     let completedCount = 0;
@@ -179,7 +180,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#basic-javascript
      */
     const LegacyChallengeListBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className={`block ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
@@ -187,7 +188,7 @@ export class Block extends Component<BlockProps> {
         >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!isAudited && (
               <div className='block-cta-wrapper'>
                 <Link
@@ -199,7 +200,6 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <BlockIntros intros={blockIntroArr} />
           <button
             aria-expanded={isExpanded}
             className='map-title'
@@ -226,7 +226,7 @@ export class Block extends Component<BlockProps> {
           </button>
           {isExpanded && <ChallengesList challenges={extendedChallenges} />}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -235,7 +235,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/#javascript-algorithms-and-data-structures-projects
      */
     const ProjectListBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className='block'
           onMouseOver={this.handleBlockHover}
@@ -243,7 +243,7 @@ export class Block extends Component<BlockProps> {
         >
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             {!isAudited && (
               <div className='block-cta-wrapper'>
                 <Link
@@ -255,10 +255,9 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <BlockIntros intros={blockIntroArr} />
           <ChallengesList challenges={extendedChallenges} />
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -267,7 +266,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures-v8/#learn-basic-javascript-by-building-a-role-playing-game
      */
     const LegacyChallengeGridBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className={`block block-grid ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
@@ -276,13 +275,15 @@ export class Block extends Component<BlockProps> {
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={!accordion ? blockIntroArr : undefined}
           />
 
           {isExpanded && (
@@ -299,8 +300,8 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
                 <GridMapChallenges
+                  jumpLink={!accordion}
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
@@ -309,7 +310,7 @@ export class Block extends Component<BlockProps> {
             </>
           )}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -318,18 +319,20 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/a2-english-for-developers/#learn-greetings-in-your-first-day-at-the-office
      */
     const TaskGridBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={!accordion ? blockIntroArr : undefined}
           />
 
           {isExpanded && (
@@ -346,16 +349,16 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
                 <ChallengesWithDialogues
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
+                  jumpLink={!accordion}
                 />
               </div>
             </>
           )}
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
@@ -364,7 +367,7 @@ export class Block extends Component<BlockProps> {
      * Example: https://www.freecodecamp.org/learn/2022/responsive-web-design/#build-a-survey-form-project
      */
     const LegacyLinkBlock = (
-      <ScrollableAnchor id={block}>
+      <Element name={block}>
         <div
           className='block block-grid grid-project-block'
           onMouseOver={this.handleBlockHover}
@@ -387,7 +390,7 @@ export class Block extends Component<BlockProps> {
             )}
           </div>
           <div className='title-wrapper map-title'>
-            {blockType && <BlockLabel blockType={blockType} />}
+            {blockLabel && <BlockLabel blockLabel={blockLabel} />}
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
@@ -406,35 +409,34 @@ export class Block extends Component<BlockProps> {
               </Link>
             </h3>
           </div>
-          <BlockIntros intros={blockIntroArr} />
         </div>
-      </ScrollableAnchor>
+      </Element>
     );
 
     /**
      * AccordionBlock is used as the block layout in new accordion style superblocks.
      */
-    const AccordionBlock = (
+    const AccordionBlock = accordion ? (
       <>
-        <ScrollableAnchor id={block}>
+        <Element name={block}>
           <span className='hide-scrollable-anchor'></span>
-        </ScrollableAnchor>
+        </Element>
         <div
-          className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+          className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
           onMouseOver={this.handleBlockHover}
           onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
-            blockType={blockType}
+            blockLabel={blockLabel}
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
-            blockIntroArr={blockIntroArr}
+            accordion={accordion}
           />
 
           {isExpanded && (
@@ -458,6 +460,62 @@ export class Block extends Component<BlockProps> {
                     challenges={extendedChallenges}
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
+                    jumpLink={false}
+                  />
+                ) : (
+                  <ChallengesList challenges={extendedChallenges} />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </>
+    ) : (
+      <>
+        <Element name={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </Element>
+        <div
+          className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+          onMouseOver={this.handleBlockHover}
+          onFocus={this.handleBlockHover}
+        >
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockLabel={blockLabel}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={blockIntroArr}
+          />
+
+          {isExpanded && (
+            <div className='accordion-block-expanded'>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+              <div
+                id={`${block}-panel`}
+                className={isGridBlock ? 'challenge-grid-block-panel' : ''}
+              >
+                {isGridBlock ? (
+                  <GridMapChallenges
+                    jumpLink={true}
+                    challenges={extendedChallenges}
+                    blockTitle={blockTitle}
+                    isProjectBlock={isProjectBlock}
                   />
                 ) : (
                   <ChallengesList challenges={extendedChallenges} />
@@ -469,10 +527,31 @@ export class Block extends Component<BlockProps> {
       </>
     );
 
+    const LinkBlock = (
+      <>
+        <Element name={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </Element>
+        <BlockHeader
+          blockDashed={block}
+          blockTitle={blockTitle}
+          blockLabel={blockLabel}
+          completedCount={completedCount}
+          courseCompletionStatus={courseCompletionStatus()}
+          handleClick={this.handleBlockClick}
+          isCompleted={isBlockCompleted}
+          isExpanded={isExpanded}
+          percentageCompleted={percentageCompleted}
+          accordion={accordion}
+          blockUrl={challenges?.[0]?.fields?.slug ?? ''}
+        />
+      </>
+    );
+
     const layoutToComponent = {
       [BlockLayouts.ChallengeGrid]: AccordionBlock,
       [BlockLayouts.ChallengeList]: AccordionBlock,
-      [BlockLayouts.Link]: AccordionBlock,
+      [BlockLayouts.Link]: accordion ? LinkBlock : AccordionBlock,
       [BlockLayouts.ProjectList]: ProjectListBlock,
       [BlockLayouts.LegacyLink]: LegacyLinkBlock,
       [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,

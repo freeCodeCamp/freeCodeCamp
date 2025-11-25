@@ -1,6 +1,6 @@
 {
   "name": "Understanding Asynchronous Programming",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-understanding-asynchronous-programming",

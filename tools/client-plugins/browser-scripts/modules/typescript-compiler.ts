@@ -24,7 +24,7 @@ export class Compiler {
     const tsvfs = this.tsvfs;
 
     const compilerOptions: CompilerOptions = {
-      target: ts.ScriptTarget.ES2015,
+      target: ts.ScriptTarget.ES2024,
       module: ts.ModuleKind.Preserve, // Babel is handling module transformation, so TS should leave them alone.
       skipLibCheck: true, // TODO: look into why this is needed. Are we doing something wrong? Could it be that it's not "synced"  with this TS version?
       // from the docs: "Note: it's possible for this list to get out of

@@ -1,8 +1,8 @@
 {
   "name": "Understanding Bash Scripting",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-bash-scripting",
   "helpCategory": "Backend Development",
   "challengeOrder": [

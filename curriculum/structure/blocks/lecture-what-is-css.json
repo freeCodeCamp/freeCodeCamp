@@ -1,6 +1,6 @@
 {
   "name": "What Is CSS?",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
   "dashedName": "lecture-what-is-css",

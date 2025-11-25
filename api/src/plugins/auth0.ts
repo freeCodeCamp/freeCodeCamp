@@ -1,7 +1,7 @@
 import fastifyOauth2, { type OAuth2Namespace } from '@fastify/oauth2';
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import { Type } from '@sinclair/typebox';
-import { Value } from '@sinclair/typebox/value';
+import { Type } from 'typebox';
+import { Value } from 'typebox/value';
 import fp from 'fastify-plugin';
 
 import { isError } from 'lodash-es';
@@ -82,6 +82,25 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         );
         void reply.redirect(redirectUrl);
       });
+
+      fastify.get('/signin/google', async function (request, reply) {
+        const returnTo = request.headers.referer ?? `${HOME_LOCATION}/learn`;
+        void reply.setCookie('login-returnto', returnTo, {
+          domain: COOKIE_DOMAIN,
+          httpOnly: true,
+          secure: true,
+          signed: true,
+          sameSite: 'lax'
+        });
+
+        const authorizationEndpoint =
+          await this.auth0OAuth.generateAuthorizationUri(request, reply);
+
+        const url = new URL(authorizationEndpoint);
+        url.searchParams.set('connection', 'google-oauth2');
+
+        void reply.redirect(url.toString());
+      });
       done();
     });
 
@@ -105,7 +124,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
         }
       }
 
-      const { returnTo } = getLoginRedirectParams(req);
+      const { returnTo, origin } = getLoginRedirectParams(req);
 
       let token;
       try {
@@ -166,7 +185,10 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
 
       reply.setAccessTokenCookie(createAccessToken(id));
 
-      void reply.redirectWithMessage(returnTo, {
+      const returnPath = new URL(returnTo).pathname;
+      const returnURL = returnPath === '/' ? `${origin}/learn` : returnTo;
+
+      void reply.redirectWithMessage(returnURL, {
         type: 'success',
         content: 'flash.signin-success'
       });

@@ -21,6 +21,7 @@ import { SHOW_UPCOMING_CHANGES } from '../../utils/env.js';
 import { isKnownCertSlug } from '../helpers/certificate-utils.js';
 
 const {
+  a2EnglishId,
   legacyFrontEndChallengeId,
   legacyBackEndChallengeId,
   legacyDataVisId,
@@ -160,13 +161,15 @@ function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
       challenges
     ),
     [certTypes.javascriptV9]: getCertById(javascriptV9Id, challenges),
-    [certTypes.respWebDesignV9]: getCertById(respWebDesignV9Id, challenges)
+    [certTypes.respWebDesignV9]: getCertById(respWebDesignV9Id, challenges),
 
     // upcoming
+    [certTypes.a2English]: getCertById(a2EnglishId, challenges)
   };
 }
 
 interface CertI {
+  isA2EnglishCert?: boolean;
   isRespWebDesignCert?: boolean;
   isJsAlgoDataStructCert?: boolean;
   isJsAlgoDataStructCertV8?: boolean;
@@ -192,6 +195,7 @@ interface CertI {
 
 function getUserIsCertMap(user: CertI) {
   const {
+    isA2EnglishCert = false,
     isRespWebDesignCert = false,
     isJsAlgoDataStructCert = false,
     isJsAlgoDataStructCertV8 = false,
@@ -216,6 +220,7 @@ function getUserIsCertMap(user: CertI) {
   } = user;
 
   return {
+    isA2EnglishCert,
     isRespWebDesignCert,
     isJsAlgoDataStructCert,
     isJsAlgoDataStructCertV8,
@@ -383,6 +388,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           completedChallenges: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
+          isA2EnglishCert: true,
           isApisMicroservicesCert: true,
           isBackEndCert: true,
           isDataVisCert: true,
