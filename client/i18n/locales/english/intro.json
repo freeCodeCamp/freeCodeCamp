@@ -4507,7 +4507,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG Character",
+        "title": "Build an RPG character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -6752,7 +6752,8 @@
         ]
       },
       "lab-rpg-character": {
-    "title": "Build an RPG Character",        "intro": [
+    "title": "Build an RPG Character",
+              "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
       },
