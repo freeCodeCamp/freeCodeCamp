@@ -7604,7 +7604,10 @@
         "title": "Alphabet and Accents",
         "intro": ["", ""]
       },
-      "es-a1-learn-punctuation": { "title": "Punctuation", "intro": ["", ""] },
+      "es-a1-learn-punctuation": {
+        "title": "Punctuation",
+        "intro": ["", ""]
+      },
       "es-a1-quiz-spanish-fundamentals": {
         "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
@@ -7657,7 +7660,10 @@
         "title": "First Questions Quiz",
         "intro": ["", ""]
       },
-      "es-a1-learn-vowels": { "title": "Vowels", "intro": ["", ""] },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
       "es-a1-learn-consonants-and-special-characters": {
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
@@ -8859,8 +8865,14 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
-      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
+      "zh-a1-review-pinyin": {
+        "title": "Pinyin Review",
+        "intro": ["", ""]
+      },
+      "zh-a1-quiz-pinyin": {
+        "title": "Pinyin Quiz",
+        "intro": ["", ""]
+      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
