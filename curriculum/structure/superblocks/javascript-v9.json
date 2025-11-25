@@ -297,8 +297,8 @@
           "blocks": [
             "lecture-understanding-functional-programming",
             "workshop-recipe-ingredient-converter",
-            "lab-sorting-visualizer",
             "lab-optional-arguments-sum-function",
+            "lab-sorting-visualizer",
             "review-javascript-functional-programming",
             "quiz-javascript-functional-programming"
           ]
