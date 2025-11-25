@@ -1,4 +1,4 @@
-[![freeCodeCamp Social Banner](https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png)](https://www.freecodecamp.org/)
+[<img src="https://cdn.freecodecamp.org/platform/universal/fcc_banner_new.png" alt="freeCodeCamp Social Banner" style="border-radius:6px;" />](https://www.freecodecamp.org/)
 
 [![first-timers-only Friendly](https://img.shields.io/badge/first--timers--only-friendly-blue.svg)](https://www.firsttimersonly.com/)
 [![Discord](https://img.shields.io/discord/692816967895220344?logo=discord&label=Discord&color=5865F2)](https://discord.gg/PRyKn3Vbay)
@@ -61,7 +61,7 @@ The freeCodeCamp.org community is possible thanks to thousands of kind volunteer
 
 Recent Contributions:
 
-![Alt](https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg 'Repobeats analytics image')
+<img src="https://repobeats.axiom.co/api/embed/89be0a1a1c8f641c54f9234a7423e7755352c746.svg" alt="Repobeats analytics image" style="border:1px solid #555; border-radius:6px;" />
 
 ### License
 
@@ -69,5 +69,5 @@ Copyright © 2025 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 
-- The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org
+- The computer software is licensed under the BSD-3-Clause license.
+- The learning resources in the `/curriculum` directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org
