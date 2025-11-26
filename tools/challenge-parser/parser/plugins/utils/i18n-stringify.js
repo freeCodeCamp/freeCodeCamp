@@ -5,17 +5,62 @@ const mdastToHTML = require('./mdast-to-html');
  * @param {string} text - Text in format: hanzi (pinyin)
  * @returns {{ hanzi: string, pinyin: string } | null} Parsed hanzi and pinyin, or null if not matching
  */
-function parseChinesePattern(text) {
-  const match = text.match(/^(.+?)\s*\((.+?)\)$/);
+function normalizeChineseString(text) {
+  if (!text) return '';
 
-  if (!match) {
-    return null;
-  }
+  return text
+    .toString()
+    .normalize('NFC')
+    .replace(/（/g, '(')
+    .replace(/）/g, ')')
+    .replace(/[。．]/g, '.')
+    .replace(/[！]/g, '!')
+    .replace(/[？]/g, '?')
+    .replace(/[：]/g, ':')
+    .replace(/[；]/g, ';')
+    .replace(/[，]/g, ',')
+    .replace(/[“”]/g, '"')
+    .replace(/[‘’]/g, "'")
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/\s+([.,!?;:])/g, '$1');
+}
 
-  return {
-    hanzi: match[1].trim(),
-    pinyin: match[2].trim()
-  };
+function parseChinesePattern(rawText) {
+  const text = normalizeChineseString(rawText);
+
+  const pinyinCharsPart = 'a-zA-ZüÜ\\u0300-\\u036F0-9\\s\\-';
+  const hanziPunctPart = '.,!?;:、·“”‘’《》【】—…';
+
+  const pattern = [
+    '^(',
+    '(?=.*[\\u4e00-\\u9fff])',
+    '(?:\\s*BLANK\\s*|[\\u4e00-\\u9fff' + hanziPunctPart + '])+',
+    ')',
+    '\\s*',
+    '\\((' + '[' + pinyinCharsPart + ']+' + ')\\)',
+    '\\s*$'
+  ].join('');
+
+  // eslint-disable-next-line no-misleading-character-class
+  const regex = new RegExp(pattern, 'u');
+
+  const match = text.match(regex);
+  if (!match) return null;
+
+  let hanzi = match[1];
+  let pinyin = match[2];
+
+  // Clean Hanzi
+  hanzi = hanzi.replace(/\s+/g, ' ').trim();
+
+  // Clean Pinyin:
+  pinyin = pinyin
+    .replace(/\s*BLANK\s*/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  return { hanzi, pinyin };
 }
 
 /**
