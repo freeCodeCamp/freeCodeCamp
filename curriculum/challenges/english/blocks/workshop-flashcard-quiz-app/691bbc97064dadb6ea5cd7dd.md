@@ -7,33 +7,36 @@ dashedName: step-42
 
 # --description--
 
-In the `try` block, throw a new `InvalidUserInputError` if `questionText` is empty with the message `"Front text cannot be empty."`.
-Likewise throw a new `InvalidUserInputError` error if `answerText` is empty with the message `"Back text cannot be empty."`. 
+In the `try` block of `uploadNewCard`, throw a new `InvalidUserInputError` if `questionText` is empty with the message `"Front text 
+cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `answerText` is empty with the message 
+`"Back text cannot be empty."`. 
 
 # --hints--
 
 You should throw a `InvalidUserInputError` if `questionText` is empty. 
 
 ```js
-
+assert.throws(uploadNewCard(), InvalidUserInputError);
 ```
 
-If `questionText` is empty, the error message should be `"Front text cannot be empty.`. 
+If `questionText` is empty, the error message should be `Front text cannot be empty.`. 
 
 ```js
-
+assert.throws(uploadNewCard(), InvalidUserInputError, 'Front text cannot be empty.');
 ```
 
 You should throw a `InvalidUserInputError` if `answerText` is empty. 
 
 ```js
-
+frontInput.value = "Placeholder question";
+assert.throws(uploadNewCard(), InvalidUserInputError);
 ```
 
-If `answerText` is empty, the error message should be `"Back text cannot be empty.`. 
+If `answerText` is empty, the error message should be `Back text cannot be empty.`. 
 
 ```js
-
+frontInput.value = "Placeholder question";
+assert.throws(uploadNewCard(), InvalidUserInputError, 'Back text cannot be empty.');
 ```
 
 # --seed--
