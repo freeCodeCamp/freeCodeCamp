@@ -546,6 +546,22 @@
     {
       "id": "691f7773cddba1caf1bf5ece",
       "title": "Challenge 135: Re: Fwd: Fw: Count"
+    },
+    {
+      "id": "6925e2068081f40f549ced1a",
+      "title": "Challenge 136: Markdown Image Parser"
+    },
+    {
+      "id": "6925e2068081f40f549ced1b",
+      "title": "Challenge 137: Snowflake Generator"
+    },
+    {
+      "id": "6925e2068081f40f549ced1c",
+      "title": "Challenge 138: Sum of Divisors"
+    },
+    {
+      "id": "6925e2068081f40f549ced1d",
+      "title": "Challenge 139: Rock, Paper, Scissors"
     }
   ]
 }
