@@ -7,8 +7,8 @@ import { Button } from '@freecodecamp/ui';
 import {
   certSlugTypeMap,
   superBlockCertTypeMap
-} from '../../../../../shared-dist/config/certification-settings';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/certification-settings';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 import {
   isSignedInSelector,

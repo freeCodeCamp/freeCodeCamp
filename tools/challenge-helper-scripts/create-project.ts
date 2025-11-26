@@ -8,8 +8,8 @@ import ObjectID from 'bson-objectid';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+} from '@freecodecamp/shared/config/curriculum';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure

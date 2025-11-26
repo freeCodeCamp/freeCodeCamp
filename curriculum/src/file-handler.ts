@@ -5,9 +5,9 @@ import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
-import type { Chapter } from '../../shared-dist/config/chapters.js';
-import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
-import type { Certification } from '../../shared-dist/config/certification-settings.js';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import type { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import type { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 const log = debug('fcc:file-handler');
 

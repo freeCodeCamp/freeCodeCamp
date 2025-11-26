@@ -2,7 +2,7 @@ import {
   ChallengeLang,
   SuperBlocks,
   superBlockToSpeechLang
-} from '../../../shared/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 
 export const getLangFromSuperBlock = (
   superBlock: SuperBlocks

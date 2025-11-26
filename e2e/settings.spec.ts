@@ -5,7 +5,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 import {
   currentCertifications,
   legacyCertifications as legacyCerts
-} from '../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
