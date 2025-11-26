@@ -5,8 +5,8 @@
   "helpCategory": "English",
   "blockLayout": "challenge-list",
   "challengeOrder": [
-    { "id": "69021904538f084f5772a1d6", "title": "Task 1" },
-    { "id": "69021947fa86ab50f9d3e287", "title": "Task 2" }
+    { "id": "69021904538f084f5772a1d6", "title": "Glossary" },
+    { "id": "69021947fa86ab50f9d3e287", "title": "Grammar Highlights" }
   ],
   "blockLabel": "review"
 }
