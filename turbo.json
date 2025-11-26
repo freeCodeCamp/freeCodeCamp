@@ -27,7 +27,7 @@
         "@freecodecamp/curriculum#build"
       ]
     },
-    "compile": {},
+    "compile": { "dependsOn": ["^compile"] },
     "create:trending": { "cache": false },
     "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] },
