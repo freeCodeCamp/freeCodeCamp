@@ -8,6 +8,8 @@ describe('add-video-question plugin', () => {
     multipleQuestionAST,
     videoOutOfOrderAST,
     videoWithAudioAST,
+    videoWithSolutionAboveNumberOfAnswersAST,
+    videoWithFeedbackTwiceInARow,
     chineseVideoAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
@@ -22,6 +24,12 @@ describe('add-video-question plugin', () => {
       'with-video-question-out-of-order.md'
     );
     videoWithAudioAST = await parseFixture('with-video-question-audio.md');
+    videoWithSolutionAboveNumberOfAnswersAST = await parseFixture(
+      'with-video-question-solution-above-number-of-answers.md'
+    );
+    videoWithFeedbackTwiceInARow = await parseFixture(
+      'with-video-question-feedback-twice-in-a-row.md'
+    );
     chineseVideoAST = await parseFixture('with-chinese-mcq.md');
   });
 
@@ -106,6 +114,20 @@ describe('add-video-question plugin', () => {
     expect.assertions(1);
     expect(() => plugin(videoOutOfOrderAST, file)).toThrow(
       'question text is missing in questions section'
+    );
+  });
+
+  it('should throw if solution is higher than the number of answers', () => {
+    expect.assertions(1);
+    expect(() =>
+      plugin(videoWithSolutionAboveNumberOfAnswersAST, file)
+    ).toThrow('solution must be within range of number of answers: 1-3');
+  });
+
+  it('should throw if answer has more than one feedback section', () => {
+    expect.assertions(1);
+    expect(() => plugin(videoWithFeedbackTwiceInARow, file)).toThrow(
+      'answer 2 has multiple feedback sections'
     );
   });
 
