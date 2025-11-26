@@ -15,6 +15,158 @@
     "lint": "eslint --max-warnings 0"
   },
   "type": "module",
+  "exports": {
+    "./config/blocks": {
+      "import": {
+        "types": "./dist/es/config/blocks.d.ts",
+        "default": "./dist/es/config/blocks.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/blocks.d.cts",
+        "default": "./dist/cjs/config/blocks.cjs"
+      }
+    },
+    "./config/catalog": {
+      "import": {
+        "types": "./dist/es/config/catalog.d.ts",
+        "default": "./dist/es/config/catalog.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/catalog.d.cts",
+        "default": "./dist/cjs/config/catalog.cjs"
+      }
+    },
+    "./config/certification-settings": {
+      "import": {
+        "types": "./dist/es/config/certification-settings.d.ts",
+        "default": "./dist/es/config/certification-settings.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/certification-settings.d.cts",
+        "default": "./dist/cjs/config/certification-settings.cjs"
+      }
+    },
+    "./config/challenge-types": {
+      "import": {
+        "types": "./dist/es/config/challenge-types.d.ts",
+        "default": "./dist/es/config/challenge-types.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/challenge-types.d.cts",
+        "default": "./dist/cjs/config/challenge-types.cjs"
+      }
+    },
+    "./config/chapters": {
+      "import": {
+        "types": "./dist/es/config/chapters.d.ts",
+        "default": "./dist/es/config/chapters.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/chapters.d.cts",
+        "default": "./dist/cjs/config/chapters.cjs"
+      }
+    },
+    "./config/constants": {
+      "import": {
+        "types": "./dist/es/config/constants.d.ts",
+        "default": "./dist/es/config/constants.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/constants.d.cts",
+        "default": "./dist/cjs/config/constants.cjs"
+      }
+    },
+    "./config/curriculum": {
+      "import": {
+        "types": "./dist/es/config/curriculum.d.ts",
+        "default": "./dist/es/config/curriculum.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/curriculum.d.cts",
+        "default": "./dist/cjs/config/curriculum.cjs"
+      }
+    },
+    "./config/donation-settings": {
+      "import": {
+        "types": "./dist/es/config/donation-settings.d.ts",
+        "default": "./dist/es/config/donation-settings.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/donation-settings.d.cts",
+        "default": "./dist/cjs/config/donation-settings.cjs"
+      }
+    },
+    "./config/i18n": {
+      "import": {
+        "types": "./dist/es/config/i18n.d.ts",
+        "default": "./dist/es/config/i18n.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/i18n.d.cts",
+        "default": "./dist/cjs/config/i18n.cjs"
+      }
+    },
+    "./config/modules": {
+      "import": {
+        "types": "./dist/es/config/modules.d.ts",
+        "default": "./dist/es/config/modules.js"
+      },
+      "require": {
+        "types": "./dist/cjs/config/modules.d.cts",
+        "default": "./dist/cjs/config/modules.cjs"
+      }
+    },
+    "./utils/get-lines": {
+      "import": {
+        "types": "./dist/es/utils/get-lines.d.ts",
+        "default": "./dist/es/utils/get-lines.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/get-lines.d.cts",
+        "default": "./dist/cjs/utils/get-lines.cjs"
+      }
+    },
+    "./utils/is-audited": {
+      "import": {
+        "types": "./dist/es/utils/is-audited.d.ts",
+        "default": "./dist/es/utils/is-audited.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/is-audited.d.cts",
+        "default": "./dist/cjs/utils/is-audited.cjs"
+      }
+    },
+    "./utils/polyvinyl": {
+      "import": {
+        "types": "./dist/es/utils/polyvinyl.d.ts",
+        "default": "./dist/es/utils/polyvinyl.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/polyvinyl.d.cts",
+        "default": "./dist/cjs/utils/polyvinyl.cjs"
+      }
+    },
+    "./utils/shuffle-array": {
+      "import": {
+        "types": "./dist/es/utils/shuffle-array.d.ts",
+        "default": "./dist/es/utils/shuffle-array.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/shuffle-array.d.cts",
+        "default": "./dist/cjs/utils/shuffle-array.cjs"
+      }
+    },
+    "./utils/validate": {
+      "import": {
+        "types": "./dist/es/utils/validate.d.ts",
+        "default": "./dist/es/utils/validate.js"
+      },
+      "require": {
+        "types": "./dist/cjs/utils/validate.d.cts",
+        "default": "./dist/cjs/utils/validate.cjs"
+      }
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
