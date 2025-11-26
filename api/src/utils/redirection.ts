@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 
-import { availableLangs } from '../../../shared/config/i18n.js';
+import { availableLangs } from '@freecodecamp/shared/config/i18n';
 import { allowedOrigins } from './allowed-origins.js';
 
 // process.env.HOME_LOCATION is being used as a fallback here. If the one

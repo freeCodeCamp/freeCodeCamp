@@ -15,7 +15,7 @@ import {
   transformHeadTailAndContents,
   compileHeadTail,
   createSource
-} from '../../../../../shared-dist/utils/polyvinyl';
+} from '@freecodecamp/shared/utils/polyvinyl';
 import { WorkerExecutor } from '../utils/worker-executor';
 import {
   compileTypeScriptCode,

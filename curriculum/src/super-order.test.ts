@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import { SuperBlocks } from '../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { createSuperOrder, getSuperOrder } from './super-order.js';
 
 const mockSuperBlocks = [

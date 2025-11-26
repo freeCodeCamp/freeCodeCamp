@@ -21,7 +21,7 @@ import {
   getPoints,
   ProgressTimestamp
 } from '../../utils/progress.js';
-import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 type ProfileUI = Partial<{
   isLocked: boolean;
