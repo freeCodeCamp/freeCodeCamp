@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { config } from 'dotenv';
 
-import { availableLangs } from '../../shared-dist/config/i18n.js';
+import { availableLangs } from '@freecodecamp/shared/config/i18n';
 
 config({ path: resolve(__dirname, '../../.env') });
 

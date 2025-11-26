@@ -37,7 +37,7 @@ import { editorNotes } from '../../../utils/tone/editor-notes';
 import {
   canSaveToDB,
   challengeTypes
-} from '../../../../../shared-dist/config/challenge-types';
+} from '@freecodecamp/shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
