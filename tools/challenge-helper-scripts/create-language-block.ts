@@ -1,5 +1,4 @@
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
@@ -15,7 +14,8 @@ import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure,
-  getSuperblockStructure
+  getSuperblockStructure,
+  createBlockFolder
 } from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta';
@@ -211,16 +211,8 @@ async function createQuizChallenge(
   questionCount: number,
   challengeLang: string
 ): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount,
