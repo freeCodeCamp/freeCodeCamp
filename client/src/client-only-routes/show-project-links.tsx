@@ -19,9 +19,9 @@ import ExamResultsModal from '../components/SolutionViewer/exam-results-modal';
 
 import { openModal } from '../templates/Challenges/redux/actions';
 
-import { regenerateMissingProperties } from '../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import '../components/layouts/project-links.css';
-import { Certification } from '../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 interface ShowProjectLinksProps {
   certSlug: Certification;
   name: string;

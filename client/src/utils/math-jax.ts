@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { scriptLoader } from './script-loaders';
 
 export const mathJaxSrc =

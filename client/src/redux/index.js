@@ -6,7 +6,7 @@ import {
   actionTypes as challengeTypes,
   CURRENT_CHALLENGE_KEY
 } from '../templates/Challenges/redux/action-types';
-import { getIsDailyCodingChallenge } from '../../../shared-dist/config/challenge-types';
+import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes, ns as MainApp } from './action-types';
 import { createAppMountSaga } from './app-mount-saga';
 import { createDonationSaga } from './donation-saga';

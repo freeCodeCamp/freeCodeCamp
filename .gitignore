@@ -197,7 +197,6 @@ curriculum/curricula.json
 curriculum/dist
 curriculum/build
 curriculum/src/test/blocks-generated
-shared-dist
 
 ### Playwright ###
 
