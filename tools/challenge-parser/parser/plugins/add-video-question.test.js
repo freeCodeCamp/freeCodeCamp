@@ -104,7 +104,9 @@ describe('add-video-question plugin', () => {
   // 'The md is missing "x"', so it's obvious how to fix things.
   it('should throw if the subheadings are outside the question heading', () => {
     expect.assertions(1);
-    expect(() => plugin(videoOutOfOrderAST, file)).toThrow();
+    expect(() => plugin(videoOutOfOrderAST, file)).toThrow(
+      'question text is missing in questions section'
+    );
   });
 
   it('should NOT throw if there is no question', () => {
