@@ -20,6 +20,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:packages/shared
       '@playwright/test':
         specifier: ^1.47.1
         version: 1.52.0
@@ -195,6 +198,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
@@ -541,6 +547,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@testing-library/jest-dom':
         specifier: ^6.8.0
         version: 6.8.0(vitest@3.2.4)
@@ -688,6 +697,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -763,6 +775,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -827,11 +842,11 @@ importers:
         specifier: ^8.47.0
         version: 8.47.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.7.3)
 
-  shared:
+  packages/shared:
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
-        version: link:../packages/eslint-config
+        version: link:../eslint-config
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -930,6 +945,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../../packages/shared
       '@total-typescript/ts-reset':
         specifier: ^0.6.1
         version: 0.6.1
@@ -14506,7 +14524,7 @@ snapshots:
   '@babel/core@7.10.5':
     dependencies:
       '@babel/code-frame': 7.27.1
-      '@babel/generator': 7.23.6
+      '@babel/generator': 7.28.5
       '@babel/helper-module-transforms': 7.23.3(@babel/core@7.10.5)
       '@babel/helpers': 7.23.7
       '@babel/parser': 7.28.5
@@ -14609,7 +14627,7 @@ snapshots:
 
   '@babel/generator@7.23.6':
     dependencies:
-      '@babel/types': 7.23.9
+      '@babel/types': 7.28.5
       '@jridgewell/gen-mapping': 0.3.3
       '@jridgewell/trace-mapping': 0.3.22
       jsesc: 2.5.2
@@ -16356,7 +16374,7 @@ snapshots:
     dependencies:
       '@babel/code-frame': 7.24.7
       '@babel/parser': 7.28.5
-      '@babel/types': 7.23.3
+      '@babel/types': 7.28.5
 
   '@babel/template@7.25.0':
     dependencies:
@@ -17383,7 +17401,7 @@ snapshots:
   '@jridgewell/gen-mapping@0.3.3':
     dependencies:
       '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.5
       '@jridgewell/trace-mapping': 0.3.22
 
   '@jridgewell/remapping@2.3.5':
@@ -17409,7 +17427,7 @@ snapshots:
   '@jridgewell/trace-mapping@0.3.22':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.1
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   '@jridgewell/trace-mapping@0.3.25':
     dependencies:
@@ -25405,7 +25423,7 @@ snapshots:
 
   magic-string@0.30.17:
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.5
 
   make-dir@2.1.0:
     dependencies:
@@ -30173,7 +30191,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       '@vitest/utils': 3.2.4
       chai: 5.2.1
-      debug: 4.4.1
+      debug: 4.4.3
       expect-type: 1.2.2
       magic-string: 0.30.17
       pathe: 2.0.3
@@ -30217,7 +30235,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       '@vitest/utils': 3.2.4
       chai: 5.2.1
-      debug: 4.4.1
+      debug: 4.4.3
       expect-type: 1.2.2
       magic-string: 0.30.17
       pathe: 2.0.3
@@ -30261,7 +30279,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       '@vitest/utils': 3.2.4
       chai: 5.2.1
-      debug: 4.4.1
+      debug: 4.4.3
       expect-type: 1.2.2
       magic-string: 0.30.17
       pathe: 2.0.3
@@ -30305,7 +30323,7 @@ snapshots:
       '@vitest/spy': 3.2.4
       '@vitest/utils': 3.2.4
       chai: 5.2.1
-      debug: 4.4.1
+      debug: 4.4.3
       expect-type: 1.2.2
       magic-string: 0.30.17
       pathe: 2.0.3

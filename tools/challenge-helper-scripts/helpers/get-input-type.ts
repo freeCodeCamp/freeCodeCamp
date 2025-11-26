@@ -1,6 +1,6 @@
 import { prompt } from 'inquirer';
-import { ChallengeLang } from '../../../shared-dist/config/curriculum.js';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 export const getInputType = async (
   challengeType: string,
