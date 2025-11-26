@@ -12,4 +12,5 @@
   ],
   "blockLabel": "lab",
   "usesMultifileEditor": true
+   // Note: Ensure all user stories (1-3) have corresponding hints and tests in the challenge files
 }
