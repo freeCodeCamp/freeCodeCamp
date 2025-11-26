@@ -10,7 +10,9 @@
     "pnpm": ">=10"
   },
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "compile": "tsc",
+    "lint": "eslint --max-warnings 0"
   },
   "type": "module",
   "repository": {
@@ -22,7 +24,9 @@
   },
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
-    "vitest": "^3.2.4",
-    "@vitest/ui": "^3.2.4"
+    "@freecodecamp/eslint-config": "workspace:*",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
+    "vitest": "^3.2.4"
   }
 }
