@@ -90,6 +90,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
+    "tsdown": "^0.16.7",
     "vitest": "^3.2.4"
   }
 }
