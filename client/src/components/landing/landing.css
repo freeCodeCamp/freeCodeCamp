@@ -412,6 +412,7 @@ figcaption.caption {
     flex: 0 0 50%;
     max-width: 50%;
     z-index: 1;
+    text-align: center;
   }
 
   .landing-top-two-column .landing-top-right {
