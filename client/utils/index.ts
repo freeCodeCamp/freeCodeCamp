@@ -1,4 +1,4 @@
-import { Certification } from '../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 const idToPath = new Map(
   Object.entries({

@@ -4,7 +4,7 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
-import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createBlockFolder,
   writeBlockStructure

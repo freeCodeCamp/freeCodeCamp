@@ -7,8 +7,8 @@ import { ObjectId } from 'bson';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared-dist/config/curriculum.js';
-import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
+} from '@freecodecamp/shared/config/curriculum';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
   writeBlockStructure

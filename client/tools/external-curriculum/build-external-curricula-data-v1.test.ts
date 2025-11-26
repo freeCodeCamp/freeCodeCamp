@@ -9,7 +9,7 @@ import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
