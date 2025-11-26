@@ -4497,7 +4497,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Створіть RPG-персонажа",
+        "title": "Build an RPG Character",
         "intro": [
           "У цій лабораторній роботі ви попрактикуєтеся в основах Python, створивши RPG-персонажа."
         ]
