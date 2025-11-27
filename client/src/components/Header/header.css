@@ -25,3 +25,55 @@
     left: 5px;
   }
 }
+
+
+/* Mobile-first responsive improvements for issue #64189 */
+/* Enhanced touch-friendly navigation for mobile devices */
+
+@media screen and (max-width: 576px) {
+  .site-header {
+    position: sticky;
+    width: 100%;
+    padding: 8px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .skip-to-content-button {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+    font-size: 14px;
+    padding: 8px 16px;
+    z-index: 1000;
+  }
+
+  .skip-to-content-button:focus {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 5px;
+  }
+}
+
+/* Tablet responsiveness improvements */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+  .site-header {
+    padding: 10px 8px;
+  }
+
+  .skip-to-content-button {
+    font-size: 15px;
+    padding: 10px 18px;
+  }
+}
+
+/* Large screen optimizations */
+@media screen and (min-width: 769px) {
+  .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+  }
+}
