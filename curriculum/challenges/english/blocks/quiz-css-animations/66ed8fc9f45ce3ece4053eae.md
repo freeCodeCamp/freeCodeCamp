@@ -849,8 +849,7 @@ It changes the text color to black.
 
 #### --answer--
 
-It makes the element fade in by gradually increasing its transparency.
-
+It makes the element fade in by gradually increasing its opacity.
 ### --question--
 
 #### --text--
