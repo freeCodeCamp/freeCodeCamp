@@ -77,9 +77,11 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
   ) {
     return new Date(date.$date).getTime();
   } else if (typeof date === 'string') {
-    const parsed = parseInt(date);
+    const parsed = Number(date);
     if (!isNaN(parsed)) {
-      return parsed;
+      // Number() handles invalid strings e.g. '2023-10-01T00:00:00Z'
+      // parseInt() handles floats
+      return parseInt(String(parsed));
     }
   }
 
