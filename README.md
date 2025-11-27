@@ -22,7 +22,7 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects. Upon completion of these projects, you can claim the certification.
 
 Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
 
