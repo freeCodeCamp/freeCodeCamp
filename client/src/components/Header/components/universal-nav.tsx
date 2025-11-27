@@ -28,6 +28,7 @@ type UniversalNavProps = {
     username: string;
     picture: string;
     yearsTopContributor: string[];
+    calendar: Record<string, number>;
   };
   fetchState: { pending: boolean };
   searchBarRef: React.RefObject<HTMLDivElement>;
