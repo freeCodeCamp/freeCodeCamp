@@ -14,7 +14,8 @@ import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
   getContentConfig,
   writeBlockStructure,
-  createBlockFolder
+  createBlockFolder,
+  getSuperblockStructure
 } from '../../curriculum/src/file-handler.js';
 import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
