@@ -1,0 +1,66 @@
+/* Mobile-Friendly Responsive Styles */
+/* Issue #64189: Improve mobile user experience */
+
+/* Tablets and small devices (768px and below) */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  button,
+  .btn {
+    padding: 10px 15px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile phones (480px and below) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+
+  .container {
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  button,
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .modal {
+    width: 95%;
+  }
+
+  .touch-target {
+    min-width: 48px;
+    min-height: 48px;
+    padding: 12px;
+  }
+}
