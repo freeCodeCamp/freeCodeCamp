@@ -1,4 +1,3 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
@@ -11,7 +10,7 @@ import {
 } from '../../shared/config/curriculum';
 import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
 } from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
@@ -209,13 +208,6 @@ async function createMetaJson(
 }
 
 async function createFirstChallenge(block: string): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = [
@@ -227,7 +219,7 @@ async function createFirstChallenge(block: string): Promise<ObjectID> {
   ];
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
@@ -240,15 +232,8 @@ async function createQuizChallenge(
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount

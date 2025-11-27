@@ -341,6 +341,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       superOrder: Int
       template: String
       tests: [Test]
+      fields: ChallengeFields
       title: String
       transcript: String
       translationPending: Boolean
@@ -409,6 +410,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type FillInTheBlank {
       sentence: String
       blanks: [Blank]
+      inputType: String
     }
     type Blank {
       answer: String
@@ -467,7 +469,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeAll: String
       afterAll: String
     }
-
+    type ChallengeFields {
+      slug: String
+    }
     type Nodule {
       type: String
       data: JSON

@@ -28,10 +28,15 @@ export const FCC_CHALLENGE_ID = process.env.FCC_CHALLENGE_ID
   ? process.env.FCC_CHALLENGE_ID.trim()
   : undefined;
 
+const FCC_BLOCK = process.env.FCC_BLOCK
+  ? process.env.FCC_BLOCK.trim()
+  : undefined;
+const FCC_SUPERBLOCK = process.env.FCC_SUPERBLOCK
+  ? process.env.FCC_SUPERBLOCK.trim()
+  : undefined;
+
 export const curriculumFilter = {
-  block: process.env.FCC_BLOCK ? process.env.FCC_BLOCK.trim() : undefined,
-  challengeId: FCC_CHALLENGE_ID,
-  superBlock: process.env.FCC_SUPERBLOCK
-    ? process.env.FCC_SUPERBLOCK.trim()
-    : undefined
+  ...(FCC_CHALLENGE_ID && { challengeId: FCC_CHALLENGE_ID }),
+  ...(FCC_BLOCK && { block: FCC_BLOCK }),
+  ...(FCC_SUPERBLOCK && { superBlock: FCC_SUPERBLOCK })
 };

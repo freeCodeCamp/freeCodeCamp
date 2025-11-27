@@ -5,7 +5,6 @@
       "modules": [
         {
           "dashedName": "python-basics",
-          "comingSoon": false,
           "blocks": [
             "lecture-introduction-to-python",
             "workshop-caesar-cipher",
@@ -16,7 +15,6 @@
         },
         {
           "dashedName": "python-loops-and-sequences",
-          "comingSoon": false,
           "blocks": [
             "lecture-working-with-loops-and-sequences",
             "workshop-pin-extractor",
@@ -27,7 +25,6 @@
         },
         {
           "dashedName": "python-dictionaries-and-sets",
-          "comingSoon": false,
           "blocks": [
             "lecture-working-with-dictionaries-and-sets",
             "lecture-working-with-modules",
@@ -43,7 +40,6 @@
         },
         {
           "dashedName": "python-error-handling",
-          "comingSoon": false,
           "blocks": [
             "lecture-understanding-error-handling",
             "lab-isbn-validator",
@@ -53,7 +49,6 @@
         },
         {
           "dashedName": "python-classes-and-objects",
-          "comingSoon": true,
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
@@ -70,7 +65,6 @@
         },
         {
           "dashedName": "python-object-oriented-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
@@ -78,6 +72,7 @@
             "lecture-understanding-inheritance-and-polymorphism",
             "workshop-media-catalogue",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
             "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
@@ -90,7 +85,6 @@
         },
         {
           "dashedName": "python-linear-data-structures",
-          "comingSoon": true,
           "blocks": [
             "lecture-working-with-common-data-structures",
             "workshop-linked-list-class",
@@ -105,7 +99,6 @@
         },
         {
           "dashedName": "python-algorithms",
-          "comingSoon": true,
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
             "workshop-binary-search",
@@ -125,9 +118,9 @@
         },
         {
           "dashedName": "python-graphs-and-trees",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
             "lab-adjacency-list-to-matrix-converter",
             "workshop-breadth-first-search",
             "lab-depth-first-search",
@@ -138,7 +131,6 @@
         },
         {
           "dashedName": "python-dynamic-programming",
-          "comingSoon": true,
           "blocks": [
             "lecture-understanding-dynamic-programming",
             "lab-nth-fibonacci-number",
@@ -147,7 +139,6 @@
           ]
         },
         {
-          "comingSoon": true,
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]
@@ -160,6 +151,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "python-certification-exam",
           "blocks": ["exam-python-certification"]
         }

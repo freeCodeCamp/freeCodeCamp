@@ -409,7 +409,6 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
-            "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -559,6 +558,7 @@
           "blocks": [
             "lecture-understanding-functional-programming",
             "workshop-recipe-ingredient-converter",
+            "lab-optional-arguments-sum-function",
             "lab-sorting-visualizer",
             "review-javascript-functional-programming",
             "quiz-javascript-functional-programming"

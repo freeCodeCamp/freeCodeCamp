@@ -18,7 +18,13 @@ const landingPageElements = {
 } as const;
 
 const nonArchivedSuperBlocks = [
-  intro[SuperBlocks.FullStackDeveloper].title,
+  intro[SuperBlocks.RespWebDesignV9].title,
+  intro[SuperBlocks.JsV9].title,
+  intro[SuperBlocks.FrontEndDevLibsV9].title,
+  intro[SuperBlocks.PythonV9].title,
+  intro[SuperBlocks.RelationalDbV9].title,
+  intro[SuperBlocks.BackEndDevApisV9].title,
+  intro[SuperBlocks.FullStackDeveloperV9].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
   intro[SuperBlocks.TheOdinProject].title,
