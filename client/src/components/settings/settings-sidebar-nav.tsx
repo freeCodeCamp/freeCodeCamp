@@ -3,7 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Link as ScrollLink } from 'react-scroll';
 import {
   currentCertifications,
-  legacyCertifications
+  legacyCertifications,
+  legacyFullStackCertification
 } from '../../../../shared-dist/config/certification-settings';
 
 type SettingsSidebarNavProps = {
@@ -16,6 +17,10 @@ function SettingsSidebarNav({
   userToken
 }: SettingsSidebarNavProps): JSX.Element {
   const { t } = useTranslation();
+  const allLegacyCertifications = [
+    ...legacyFullStackCertification,
+    ...legacyCertifications
+  ];
 
   return (
     <aside className='settings-sidebar-nav sidebar-nav-fade'>
@@ -130,7 +135,7 @@ function SettingsSidebarNav({
             {t('settings.headings.legacy-certs')}
           </ScrollLink>
           <ul>
-            {legacyCertifications.map(slug => (
+            {allLegacyCertifications.map(slug => (
               <li key={slug}>
                 <ScrollLink
                   to={`cert-${slug}`}
