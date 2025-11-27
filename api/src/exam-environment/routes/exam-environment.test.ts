@@ -32,7 +32,6 @@ vi.mock('../../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
     DEPLOYMENT_ENV: 'production'
   };
 });

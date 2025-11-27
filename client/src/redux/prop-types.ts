@@ -49,6 +49,7 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
+  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
 };
 
 export type Fields = {
@@ -74,7 +75,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-interface Dialogue {
+export interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -85,7 +86,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-interface SceneCommand {
+export interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -144,10 +145,11 @@ export type Characters =
   | 'Chen Na'
   | 'Li Hong'
   | 'Li Ping'
+  | 'Lin Yating'
   | 'Liu Ming'
   | 'Wang Hua'
-  | 'Zhang'
-  | 'Zhou';
+  | 'Zhang Wei'
+  | 'Zhou Yongjie';
 
 interface SetupCharacter {
   character: Characters;
@@ -331,7 +333,7 @@ export type DailyCodingChallengeLanguages = 'javascript' | 'python';
 export interface CompletedDailyCodingChallenge {
   id: string;
   completedDate: number;
-  completedLanguages: DailyCodingChallengeLanguages[];
+  languages: DailyCodingChallengeLanguages[];
 }
 
 type Quiz = {

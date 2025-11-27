@@ -110,6 +110,8 @@ function plugin() {
           questionNode.children?.[0]?.value === '--text--';
         if (isStartOfQuestion) {
           questionTrees.push([questionNode]);
+        } else if (questionTrees.length === 0) {
+          throw Error('question text is missing in questions section');
         } else {
           questionTrees[questionTrees.length - 1].push(questionNode);
         }

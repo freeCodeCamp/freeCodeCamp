@@ -6,7 +6,7 @@ import ObjectID from 'bson-objectid';
 
 import { SuperBlocks } from '../../shared/config/curriculum';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
 } from '../../curriculum/src/file-handler';
 import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
@@ -111,15 +111,8 @@ async function createQuizChallenge(
   title: string,
   questionCount: number
 ): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount

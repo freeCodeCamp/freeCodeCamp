@@ -13,7 +13,7 @@ Below this heading, add a block quotation element with a `cite` attribute with t
 
 # --hints--
 
-Your should have an `h2` element nested inside the second section.
+You should have an `h2` element nested inside the second section.
 
 ```js
 assert.exists(document.querySelector('main > section:nth-of-type(2) > h2'));

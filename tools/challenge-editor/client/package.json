@@ -14,14 +14,17 @@
   "scripts": {
     "start": "PORT=3300 vite",
     "build": "tsc && vite build",
+    "lint": "eslint --max-warnings 0",
     "test": "echo \"no tests here yet\"",
     "postinstall": "shx cp ./sample.env ./.env"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
     "@types/codemirror": "5.60.15",
     "@types/react": "17.0.83",
     "@types/react-dom": "17.0.19",
     "@uiw/react-codemirror": "3.2.10",
+    "eslint": "^9.39.1",
     "shx": "0.3.4"
   }
 }
