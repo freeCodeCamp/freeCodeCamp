@@ -76,9 +76,14 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
     typeof date.$date === 'string'
   ) {
     return new Date(date.$date).getTime();
-  } else {
-    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  } else if (typeof date === 'string') {
+    const parsed = parseInt(date);
+    if (!isNaN(parsed)) {
+      return parsed;
+    }
   }
+
+  throw Error('Unexpected date value: ' + JSON.stringify(date));
 };
 
 /**
