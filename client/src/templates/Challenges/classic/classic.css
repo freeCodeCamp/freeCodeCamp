@@ -130,22 +130,26 @@
   padding: 0;
   display: flex;
   border-bottom: 1px solid var(--quaternary-color);
-  height: 2rem;
+  height: 44px;
+  min-height: 44px;
   flex-shrink: 0;
 }
 
 /* Need to narrow width of tabs to make room for preview toggle button */
 #mobile-layout[data-haspreview='true'] [role='tablist'] {
-  width: calc(100% - 2rem);
+  width: calc(100% - 44px);
 }
 
 #mobile-layout .nav-lists > button {
   height: 100%;
-  font-size: 0.8em;
-  /* Need to override radix-ui defaults on side padding to allow room for
-     four tabs and a preview toggle button at narrow view ports */
-  padding-left: 0.2rem;
-  padding-right: 0.2rem;
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  min-width: 44px;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 #mobile-layout .nav-lists button[data-state='active'] {
@@ -166,12 +170,20 @@
 }
 
 .portal-button {
-  width: 2rem;
+  width: 44px;
+  min-width: 44px;
   border: 0;
   padding: 0;
   background-color: inherit;
-  font-size: 0.8rem;
+  font-size: 1rem;
   height: 100%;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .portal-button[aria-expanded='true'] {
@@ -194,7 +206,7 @@
 }
 
 #mobile-layout .tab-content[data-state='active'] {
-  padding-block-end: 37px;
+  padding-block-end: 44px;
   display: flex;
   flex-direction: column;
 }
@@ -219,12 +231,12 @@
   position: absolute;
   top: auto;
   right: 0;
-  height: 2rem;
+  height: 44px;
   border-bottom: 1px solid var(--quaternary-color);
 }
 
 #mobile-layout .tab-content[data-state='active'] .portal-button-wrap {
-  transform: translateY(-2rem);
+  transform: translateY(-44px);
 }
 
 #mobile-layout #mobile-layout-pane-instructions {
@@ -249,6 +261,15 @@
 #mobile-layout .monaco-editor-tabs button {
   flex: 1;
   max-width: 50%;
+  min-height: 44px;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#mobile-layout .monaco-editor-tabs button:active {
+  background-color: var(--quaternary-background);
 }
 
 /* Focus indicator for tab panel */
@@ -259,6 +280,31 @@
 @media screen and (max-width: 480px) {
   #mobile-layout .monaco-editor-tabs {
     padding: 10px 5px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  #mobile-layout .nav-lists > button {
+    font-size: 0.75rem;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #mobile-layout .nav-lists > button {
+    font-size: 0.7rem;
+    padding-left: 0.15rem;
+    padding-right: 0.15rem;
+  }
+
+  .tool-panel-group-mobile button,
+  .tool-panel-group-mobile a {
+    font-size: 0.75rem;
+  }
+
+  #mobile-layout .monaco-editor-tabs button {
+    font-size: 0.85rem;
   }
 }
 
