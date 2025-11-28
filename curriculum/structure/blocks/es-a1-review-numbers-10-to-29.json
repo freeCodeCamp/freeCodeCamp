@@ -5,7 +5,8 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "691a4c6ee406cc7be5c85196", "title": "Dialogue 1: I'm Tom" }
+    { "id": "6923717ec5983eada5aefe1c", "title": "Task 1" },
+    { "id": "6923745a0f2505b360e96660", "title": "Task 2" }
   ],
   "blockLabel": "review"
 }
