@@ -12,6 +12,8 @@
   overflow-y: scroll;
   height: 100%;
   width: 100%;
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
 }
 
 #mobile-layout-pane-instructions > .instructions-panel {
@@ -21,6 +23,8 @@
 
 .example-app-link {
   text-decoration: underline;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .example-app-link:hover,
@@ -28,4 +32,15 @@
 .example-app-link:focus {
   text-decoration: none;
   background-color: var(--tertiary-background);
+}
+
+@media screen and (max-width: 767px) {
+  .instructions-panel {
+    padding: 0 15px;
+  }
+
+  .instructions-panel p,
+  .instructions-panel li {
+    line-height: 1.6;
+  }
 }
