@@ -5,21 +5,29 @@
 
 .tool-panel-group-mobile button,
 .tool-panel-group-mobile a {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+  min-height: 44px;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .tool-panel-group-mobile {
   display: flex;
   flex-direction: row-reverse;
-  height: 37px;
+  height: 44px;
+  min-height: 44px;
   width: 100%;
   background-color: var(--tertiary-background);
   position: absolute;
   bottom: 0;
+  gap: 1px;
 }
 
 .tool-panel-group-mobile #get-help-dropdown {
-  height: 36.5px;
+  height: 44px;
+  min-height: 44px;
 }
 
 .tool-panel-group-mobile button:focus-visible {
@@ -29,8 +37,17 @@
   box-shadow: none;
 }
 
+.tool-panel-group-mobile button:active {
+  background-color: var(--quaternary-background);
+}
+
 @media screen and (max-width: 450px) {
   #get-help-dropdown {
     min-width: 90px;
+  }
+
+  .tool-panel-group-mobile button,
+  .tool-panel-group-mobile a {
+    font-size: 0.85rem;
   }
 }
