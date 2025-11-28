@@ -337,31 +337,20 @@ function getRecommendedOs({
   arch: string;
   ext: string;
 }): string {
-  switch (arch) {
-    case 'x64':
-      switch (ext) {
-        case '.dmg':
-          return 'x64 MacOS';
-        case '.AppImage':
-        case '.app.tar.gz':
-          return 'x64 Linux';
-        default:
-          return 'x64 Windows';
-      }
-    case 'aarch64':
-      switch (ext) {
-        case '.dmg':
-          return 'ARM MacOS';
-        case '.app.tar.gz':
-          return 'ARM Linux';
-        default:
-          return 'ARM Windows';
-      }
-    case 'amd64':
-      return 'x64 Linux';
-    default:
-      return '';
-  }
+  const osToExt = {
+    MacOS: ['.dmg', '.app', '.app.tar.gz'],
+    Linux: ['.deb', '.rpm', '.AppImage', '.tar.gz', '.AppImage.tar.gz'],
+    Windows: ['.exe', '.msi']
+  } as const;
+  const archToHuman: Record<string, string> = {
+    x64: 'x64',
+    aarch64: 'ARM',
+    amd64: 'x64'
+  };
+
+  const os = Object.entries(osToExt).find(([_, exts]) => exts.includes(ext));
+
+  return `${archToHuman[arch] ?? arch} ${os ? os[0] : ''}`;
 }
 
 function getLatest(releases: GitProps[]): GitProps {
