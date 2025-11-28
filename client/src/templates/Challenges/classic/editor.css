@@ -257,6 +257,10 @@ textarea.inputarea {
 
 .utility-bar .utility-bar-top a {
   width: 30%;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .utility-bar .utility-bar-top svg {
@@ -273,11 +277,16 @@ textarea.inputarea {
 .utility-bar .utility-bar-bottom button {
   display: flex;
   width: 50%;
+  min-height: 44px;
   padding-top: 0.375rem;
   padding-bottom: 0.375rem;
   justify-content: center;
   align-items: center;
   gap: 0.3rem;
+  transition: background-color 0.15s ease-in-out;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .progress-bar-container {
