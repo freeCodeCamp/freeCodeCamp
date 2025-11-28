@@ -8,9 +8,9 @@ import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure,

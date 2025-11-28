@@ -1,4 +1,4 @@
-import curriculum from '../../../shared-dist/config/curriculum.json';
+import curriculum from '../../../curriculum/generated/curriculum.json';
 import {
   buildExtCurriculumDataV1,
   Curriculum as CurriculumV1,

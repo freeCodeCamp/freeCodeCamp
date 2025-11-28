@@ -2,7 +2,7 @@ import { Prisma } from '@prisma/client';
 import {
   certSlugTypeMap,
   certIds
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import { normalizeDate } from '../../utils/normalize.js';
 
 const {

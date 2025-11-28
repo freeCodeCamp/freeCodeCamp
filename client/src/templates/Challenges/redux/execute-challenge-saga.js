@@ -17,7 +17,7 @@ import {
 import {
   canSaveToDB,
   challengeTypes
-} from '../../../../../shared-dist/config/challenge-types';
+} from '@freecodecamp/shared/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {

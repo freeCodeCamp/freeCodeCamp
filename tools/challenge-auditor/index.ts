@@ -7,12 +7,13 @@ import { config } from 'dotenv';
 const envPath = resolve(__dirname, '../../.env');
 config({ path: envPath });
 
-import { availableLangs } from '../../shared/config/i18n';
+// TODO: Move this file to tools/scripts and use workspace imports.
+import { availableLangs } from '../../packages/shared/src/config/i18n';
 import { getChallengesForLang } from '../../curriculum/src/get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
-} from '../../shared/config/curriculum';
+} from '../../packages/shared/src/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
