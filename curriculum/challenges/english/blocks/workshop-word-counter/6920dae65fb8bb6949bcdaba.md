@@ -13,10 +13,10 @@ To see how the loop inside `printCharacters` behaves, call it with the argument 
 
 # --hints--
 
-Test 1
+You should call the function `printCharacters` with `"hello"` as its argument.
 
 ```js
-
+assert.match(code, /printCharacters\s*\(\s*('|"|`)hello\1\s*\)/);
 ```
 
 # --seed--
