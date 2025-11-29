@@ -392,7 +392,6 @@ figcaption.caption {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
   gap: 20px;
 }
 
@@ -406,6 +405,7 @@ figcaption.caption {
   .landing-top-two-column {
     flex-direction: row;
     align-items: center;
+    width: 100%;
   }
 
   .landing-top-two-column .landing-top-left {
