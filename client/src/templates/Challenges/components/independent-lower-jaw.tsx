@@ -78,7 +78,9 @@ export function IndependentLowerJaw({
   };
 
   const isMacOS = navigator.userAgent.includes('Mac OS');
-  const checkButtonText = isMacOS ? t('command-enter') : t('ctrl-enter');
+  const checkButtonText = isMacOS
+    ? t('buttons.command-enter')
+    : t('buttons.ctrl-enter');
 
   return (
     <div
