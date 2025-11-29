@@ -12,7 +12,7 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-working-with-npm-scripts"]
         },
         {
           "dashedName": "http-and-the-web-standards-model",
