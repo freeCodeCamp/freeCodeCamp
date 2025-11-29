@@ -24,6 +24,8 @@ function plugin() {
         throw Error(
           `solution must be within range of number of answers: 1-${answers.length}`
         );
+      if (answers[solution - 1].feedback)
+        throw Error('answer selected as solution cannot have feedback section');
 
       return { text, answers, solution };
     }

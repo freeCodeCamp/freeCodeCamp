@@ -10,6 +10,7 @@ describe('add-video-question plugin', () => {
     videoWithAudioAST,
     videoWithSolutionAboveNumberOfAnswersAST,
     videoWithFeedbackTwiceInARow,
+    videoWithCorrectAnswerWithFeedback,
     chineseVideoAST;
   const plugin = addVideoQuestion();
   let file = { data: {} };
@@ -29,6 +30,9 @@ describe('add-video-question plugin', () => {
     );
     videoWithFeedbackTwiceInARow = await parseFixture(
       'with-video-question-feedback-twice-in-a-row.md'
+    );
+    videoWithCorrectAnswerWithFeedback = await parseFixture(
+      'with-video-question-correct-answer-with-feedback.md'
     );
     chineseVideoAST = await parseFixture('with-chinese-mcq.md');
   });
@@ -128,6 +132,13 @@ describe('add-video-question plugin', () => {
     expect.assertions(1);
     expect(() => plugin(videoWithFeedbackTwiceInARow, file)).toThrow(
       'answer 2 has multiple feedback sections'
+    );
+  });
+
+  it('should throw if correct answer has feedback section', () => {
+    expect.assertions(1);
+    expect(() => plugin(videoWithCorrectAnswerWithFeedback, file)).toThrow(
+      'answer selected as solution cannot have feedback section'
     );
   });
 
