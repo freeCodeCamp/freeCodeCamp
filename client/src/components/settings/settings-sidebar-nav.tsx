@@ -23,7 +23,7 @@ function SettingsSidebarNav({
   ];
 
   return (
-    <aside className='settings-sidebar-nav sidebar-nav-fade'>
+    <aside className='settings-sidebar-nav'>
       <ul>
         <li>
           <ScrollLink
