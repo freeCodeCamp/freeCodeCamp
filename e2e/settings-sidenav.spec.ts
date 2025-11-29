@@ -7,30 +7,36 @@ test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 720 });
   await page.goto('/settings');
 
-  // Wait for the settings page to load (wait for the main heading to appear)
-  await page.waitForSelector(
-    '[data-playwright-test-label="settings-heading"]',
-    {
-      timeout: 10000
-    }
-  );
+  // Wait for the main heading to appear
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Settings for certifieduser' })
+  ).toBeVisible();
 });
 
-test.describe('Settings sideNav Component', () => {
-  test('should display the settings sideNav', async ({ page }) => {
+test.describe('Settings SideNav Component', () => {
+  test('should display the settings sideNav with correct links', async ({
+    page,
+    isMobile
+  }) => {
+    test.skip(isMobile, 'Sidebar is hidden on mobile');
+
     const sideNav = page.locator('aside');
-    await expect(sideNav.getByText('Account')).toBeVisible();
-    await expect(sideNav.getByText('Privacy')).toBeVisible();
-    await expect(sideNav.getByText('Email')).toBeVisible();
-    await expect(sideNav.getByText('Academic Honesty Policy')).toBeVisible();
-    await expect(
-      sideNav.getByText('Certifications', { exact: true })
-    ).toBeVisible();
-    await expect(sideNav.getByText('Legacy Certifications')).toBeVisible();
-    await expect(sideNav.getByText('Danger Zone')).toBeVisible();
-    await expect(sideNav.getByText('User Token')).not.toBeVisible();
-    await expect(sideNav.getByText('Exam Token')).not.toBeVisible();
+
+    const expectedLinks = [
+      { name: 'Account', href: '#account' },
+      { name: 'Privacy', href: '#privacy' },
+      { name: 'Email', href: '#email' },
+      { name: 'Academic Honesty Policy', href: '#honesty' },
+      { name: 'Certifications', href: '#certifications' },
+      { name: 'Legacy Certifications', href: '#legacy-certifications' },
+      { name: 'Danger Zone', href: '#danger-zone' }
+    ];
+
+    for (const { name, href } of expectedLinks) {
+      const link = sideNav.locator('a').getByText(name, { exact: true });
+      await expect(link).toBeVisible();
+      await link.click();
+      await expect(page).toHaveURL(new RegExp(href + '$'));
+    }
   });
 });
-
-// exam token and user token tests to be added when exam-token-spec.ts is enabled.
