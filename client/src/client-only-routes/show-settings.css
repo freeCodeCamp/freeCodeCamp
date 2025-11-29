@@ -49,7 +49,7 @@
     display: none;
   }
 
-  .settings-container > .container {
-    width: 100%;
+  .settings-container {
+    display: block;
   }
 }
