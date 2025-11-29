@@ -51,6 +51,10 @@ export function IndependentLowerJaw({
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
+  const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
+  const submitButtonRef = React.useRef<HTMLButtonElement>(null);
+  const [wasCheckButtonClicked, setWasCheckButtonClicked] =
+    React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
 
@@ -58,27 +62,60 @@ export function IndependentLowerJaw({
     setShowHint(!!hint);
   }, [hint]);
 
+  React.useEffect(() => {
+    if (!isChallengeComplete || !wasCheckButtonClicked) return;
+
+    const focusTarget = isSignedIn
+      ? submitButtonRef.current
+      : signInLinkRef.current;
+    focusTarget?.focus();
+    setWasCheckButtonClicked(false);
+  }, [isChallengeComplete, isSignedIn, wasCheckButtonClicked]);
+
+  const handleCheckButtonClick = () => {
+    setWasCheckButtonClicked(true);
+    executeChallenge();
+  };
+
   const isMacOS = navigator.userAgent.includes('Mac OS');
-  const checkButtonText = isMacOS ? t('command-enter') : t('ctrl-enter');
+  const checkButtonText = isMacOS
+    ? t('buttons.command-enter')
+    : t('buttons.ctrl-enter');
 
   return (
-    <div className='independent-lower-jaw' tabIndex={-1}>
+    <div
+      className='independent-lower-jaw'
+      data-playwright-test-label='independentLowerJaw-container'
+      tabIndex={-1}
+    >
       {showHint && hint && (
-        <div className='hint-container'>
+        <div
+          className='hint-container'
+          data-playwright-test-label='independentLowerJaw-failing-hint'
+        >
           <div dangerouslySetInnerHTML={{ __html: hint }} />
-          <button className={'tooltip'} onClick={() => setShowHint(false)}>
+          <button
+            className={'tooltip'}
+            data-playwright-test-label='independentLowerJaw-hint-close-button'
+            onClick={() => setShowHint(false)}
+          >
             ×<span className='tooltiptext'> {t('buttons.close')}</span>
           </button>
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
-        <div className='hint-container'>
+        <div
+          className='hint-container'
+          data-playwright-test-label='independentLowerJaw-submission-hint'
+        >
           <div>
             <p>{t('learn.congratulations-code-passes')}</p>
             {!isSignedIn && (
               <a
                 href={`${apiLocation}/signin`}
                 className='btn-cta btn btn-block'
+                data-playwright-test-label='independentLowerJaw-signin-link'
+                ref={signInLinkRef}
                 onClick={() => {
                   callGA({
                     event: 'sign_in'
@@ -91,6 +128,7 @@ export function IndependentLowerJaw({
           </div>
           <button
             className={'tooltip'}
+            data-playwright-test-label='independentLowerJaw-submission-hint-close-button'
             onClick={() => setShowSubmissionHint(false)}
           >
             ×<span className='tooltiptext'> {t('buttons.close')}</span>
@@ -104,7 +142,10 @@ export function IndependentLowerJaw({
             <Button
               block
               className={`${isSignedIn && 'btn-cta'} tooltip`}
+              id='independent-lower-jaw-submit-button'
+              data-playwright-test-label='independentLowerJaw-submit-button'
               onClick={() => submitChallenge()}
+              ref={submitButtonRef}
             >
               {t('buttons.submit-continue')}
               <span className='tooltiptext left-tooltip '>
@@ -115,7 +156,8 @@ export function IndependentLowerJaw({
             <button
               type='button'
               className='btn-cta tooltip'
-              onClick={() => executeChallenge()}
+              data-playwright-test-label='independentLowerJaw-check-button'
+              onClick={handleCheckButtonClick}
             >
               {t('buttons.check-code')}
               <span className='tooltiptext left-tooltip '>
@@ -128,6 +170,7 @@ export function IndependentLowerJaw({
           <button
             type='button'
             className='icon-botton tooltip'
+            data-playwright-test-label='independentLowerJaw-reset-button'
             onClick={openResetModal}
           >
             <Reset />
@@ -136,6 +179,7 @@ export function IndependentLowerJaw({
           <button
             type='button'
             className='icon-botton tooltip'
+            data-playwright-test-label='independentLowerJaw-help-button'
             onClick={openHelpModal}
           >
             <Help />
