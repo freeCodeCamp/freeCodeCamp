@@ -33,6 +33,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.headings.account')}
@@ -46,6 +47,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.headings.privacy')}
@@ -59,6 +61,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.email.heading')}
@@ -72,6 +75,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.headings.honesty')}
@@ -86,6 +90,7 @@ function SettingsSidebarNav({
               offset={-48}
               duration={300}
               spy={true}
+              hashSpy={true}
               activeClass='active'
             >
               {t('exam-token.exam-token')}
@@ -100,6 +105,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.headings.certs')}
@@ -114,6 +120,7 @@ function SettingsSidebarNav({
                   offset={-48}
                   duration={300}
                   spy={true}
+                  hashSpy={true}
                   activeClass='active'
                 >
                   {t(`certification.title.${slug}`, slug)}
@@ -130,6 +137,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.headings.legacy-certs')}
@@ -144,6 +152,7 @@ function SettingsSidebarNav({
                   offset={-48}
                   duration={300}
                   spy={true}
+                  hashSpy={true}
                   activeClass='active'
                 >
                   {t(`certification.title.${slug}`, slug)}
@@ -161,6 +170,7 @@ function SettingsSidebarNav({
               offset={-48}
               duration={300}
               spy={true}
+              hashSpy={true}
               activeClass='active'
             >
               {t('user-token.title')}
@@ -175,6 +185,7 @@ function SettingsSidebarNav({
             offset={-48}
             duration={300}
             spy={true}
+            hashSpy={true}
             activeClass='active'
           >
             {t('settings.danger.heading')}
