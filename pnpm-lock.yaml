@@ -705,7 +705,7 @@ importers:
         version: 4.0.2
       '@typescript/vfs-1.6.1':
         specifier: npm:@typescript/vfs@1.6.1
-        version: '@typescript/vfs@1.6.1(typescript@5.9.3)'
+        version: '@typescript/vfs@1.6.1(typescript@5.7.3)'
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -744,7 +744,7 @@ importers:
         version: 0.5.2
       puppeteer:
         specifier: 22.12.1
-        version: 22.12.1(typescript@5.9.3)
+        version: 22.12.1(typescript@5.7.3)
       sirv:
         specifier: ^3.0.2
         version: 3.0.2
@@ -756,7 +756,7 @@ importers:
         version: typescript@5.9.2
       vitest:
         specifier: ^3.2.4
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.9.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1)
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.7.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1)
 
   e2e:
     devDependencies:
@@ -930,6 +930,9 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../../packages/eslint-config
+      '@total-typescript/ts-reset':
+        specifier: ^0.6.1
+        version: 0.6.1
       '@types/glob':
         specifier: ^8.0.1
         version: 8.1.0
@@ -939,9 +942,9 @@ importers:
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
-      bson-objectid:
-        specifier: 2.0.4
-        version: 2.0.4
+      bson:
+        specifier: ^7.0.0
+        version: 7.0.0
       eslint:
         specifier: ^9.39.1
         version: 9.39.1(jiti@2.6.1)
@@ -5990,13 +5993,14 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
 
-  bson-objectid@2.0.4:
-    resolution: {integrity: sha512-vgnKAUzcDoa+AeyYwXCoHyF2q6u/8H46dxu5JN+4/TZeq/Dlinn0K6GvxsCLb3LHUJl0m/TLiEK31kUwtgocMQ==}
-
   bson@6.9.0:
     resolution: {integrity: sha512-X9hJeyeM0//Fus+0pc5dSUMhhrrmWwQUtdavaQeF3Ta6m69matZkGWV/MrBcnwUeLC8W9kwwc2hfkZgUuCX3Ig==}
     engines: {node: '>=16.20.1'}
     deprecated: a critical bug affecting only useBigInt64=true deserialization usage is fixed in bson@6.10.3
+
+  bson@7.0.0:
+    resolution: {integrity: sha512-Kwc6Wh4lQ5OmkqqKhYGKIuELXl+EPYSCObVE6bWsp1T/cGkOCBN0I8wF/T44BiuhHyNi1mmKVPXk60d41xZ7kw==}
+    engines: {node: '>=20.19.0'}
 
   buffer-crc32@0.2.13:
     resolution: {integrity: sha512-VO9Ht/+p3SN7SKWqcrgEzjGbRSJYTx+Q1pTQC0wrWqHx0vpJraQ6GtHx8tvcg1rlK1byhU5gccxgOgj7B0TDkQ==}
@@ -19628,17 +19632,17 @@ snapshots:
       '@typescript-eslint/types': 8.47.0
       eslint-visitor-keys: 4.2.1
 
+  '@typescript/vfs@1.6.1(typescript@5.7.3)':
+    dependencies:
+      debug: 4.3.4(supports-color@8.1.1)
+      typescript: 5.7.3
+    transitivePeerDependencies:
+      - supports-color
+
   '@typescript/vfs@1.6.1(typescript@5.9.2)':
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       typescript: 5.9.2
-    transitivePeerDependencies:
-      - supports-color
-
-  '@typescript/vfs@1.6.1(typescript@5.9.3)':
-    dependencies:
-      debug: 4.3.4(supports-color@8.1.1)
-      typescript: 5.9.3
     transitivePeerDependencies:
       - supports-color
 
@@ -19792,7 +19796,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.14
       tinyrainbow: 2.0.0
-      vitest: 3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.9.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1)
+      vitest: 3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.2.2))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -20805,9 +20809,9 @@ snapshots:
       node-releases: 2.0.27
       update-browserslist-db: 1.1.4(browserslist@4.28.0)
 
-  bson-objectid@2.0.4: {}
-
   bson@6.9.0: {}
+
+  bson@7.0.0: {}
 
   buffer-crc32@0.2.13: {}
 
@@ -21414,15 +21418,6 @@ snapshots:
       parse-json: 5.2.0
     optionalDependencies:
       typescript: 5.9.2
-
-  cosmiconfig@9.0.0(typescript@5.9.3):
-    dependencies:
-      env-paths: 2.2.1
-      import-fresh: 3.3.0
-      js-yaml: 4.1.0
-      parse-json: 5.2.0
-    optionalDependencies:
-      typescript: 5.9.3
 
   create-ecdh@4.0.4:
     dependencies:
@@ -22400,7 +22395,7 @@ snapshots:
       confusing-browser-globals: 1.0.11
       eslint: 7.32.0
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-react: 7.37.4(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-react-hooks: 4.6.0(eslint@9.39.1(jiti@2.6.1))
@@ -22430,7 +22425,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-module-utils@2.12.0(@typescript-eslint/parser@4.33.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1(jiti@2.6.1)):
+  eslint-module-utils@2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -22484,7 +22479,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1)):
+  eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1)):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.8
@@ -22495,7 +22490,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.1(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.0(@typescript-eslint/parser@4.33.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1(jiti@2.6.1))
+      eslint-module-utils: 2.12.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint-import-resolver-node@0.3.9)(eslint@9.39.1(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -23718,7 +23713,7 @@ snapshots:
       eslint-config-react-app: 6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0)(typescript@5.2.2))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(babel-eslint@10.1.0(eslint@9.39.1(jiti@2.6.1)))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.37.4(eslint@7.32.0))(eslint@7.32.0)(typescript@5.2.2)
       eslint-plugin-flowtype: 5.10.0(eslint@7.32.0)
       eslint-plugin-graphql: 4.0.0(@types/node@20.12.8)(graphql@15.8.0)(typescript@5.2.2)
-      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@9.39.1(jiti@2.6.1))(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1))
+      eslint-plugin-import: 2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.2.2))(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-react: 7.37.4(eslint@9.39.1(jiti@2.6.1))
       eslint-plugin-react-hooks: 4.6.0(eslint@9.39.1(jiti@2.6.1))
@@ -27627,10 +27622,10 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  puppeteer@22.12.1(typescript@5.9.3):
+  puppeteer@22.12.1(typescript@5.7.3):
     dependencies:
       '@puppeteer/browsers': 2.2.3
-      cosmiconfig: 9.0.0(typescript@5.9.3)
+      cosmiconfig: 9.0.0(typescript@5.7.3)
       devtools-protocol: 0.0.1299070
       puppeteer-core: 22.12.1
     transitivePeerDependencies:
@@ -29843,7 +29838,8 @@ snapshots:
 
   typescript@5.9.2: {}
 
-  typescript@5.9.3: {}
+  typescript@5.9.3:
+    optional: true
 
   uc.micro@2.0.0: {}
 
@@ -30332,11 +30328,11 @@ snapshots:
       - debug
       - typescript
 
-  vitest@3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.9.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1):
+  vitest@3.2.4(@types/debug@4.1.12)(@types/node@20.12.8)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.8.7(@types/node@20.12.8)(typescript@5.7.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1):
     dependencies:
       '@types/chai': 5.2.2
       '@vitest/expect': 3.2.4
-      '@vitest/mocker': 3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.9.3))(vite@7.1.3(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1))
+      '@vitest/mocker': 3.2.4(msw@2.8.7(@types/node@20.12.8)(typescript@5.7.3))(vite@7.1.3(@types/node@20.12.8)(jiti@2.6.1)(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1))
       '@vitest/pretty-format': 3.2.4
       '@vitest/runner': 3.2.4
       '@vitest/snapshot': 3.2.4

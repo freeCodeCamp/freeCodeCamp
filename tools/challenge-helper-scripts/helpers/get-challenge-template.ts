@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
 interface ChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   title: string;
   dashedName: string;
   challengeType: string;
@@ -359,7 +358,7 @@ Do the assignment.
 `;
 
 interface DailyCodingChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeNumber: number;
 }
 

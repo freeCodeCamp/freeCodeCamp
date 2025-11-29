@@ -1,5 +1,5 @@
 import { prompt } from 'inquirer';
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
 
 const taskChallenges = [
   challengeTypes.multipleChoice,

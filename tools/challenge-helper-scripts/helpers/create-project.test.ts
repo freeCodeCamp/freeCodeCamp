@@ -2,11 +2,11 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/src/file-handler';
+} from '../../../curriculum/src/file-handler.js';
 import {
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
-} from './create-project';
+} from './create-project.js';
 
 vi.mock('../../../curriculum/src/file-handler');
 

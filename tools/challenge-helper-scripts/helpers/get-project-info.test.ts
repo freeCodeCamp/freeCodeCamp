@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { getProjectName, getProjectPath } from './get-project-info';
+import { getProjectName, getProjectPath } from './get-project-info.js';
 
 describe('getProjectPath helper', () => {
   it('should return the calling dir path', () => {

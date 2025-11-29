@@ -1,8 +1,8 @@
 import { unlink } from 'fs/promises';
 import { prompt } from 'inquirer';
-import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
-import { getFileName } from './helpers/get-file-name';
+import { getProjectPath } from './helpers/get-project-info.js';
+import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
+import { getFileName } from './helpers/get-file-name.js';
 
 const deleteChallenge = async () => {
   const path = getProjectPath();

@@ -2,31 +2,31 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+} from '../../shared-dist/config/curriculum.js';
+import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
 import {
   createQuizFile,
   createStepFile,
   validateBlockName,
   getAllBlocks
-} from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import {
   ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
-} from './helpers/create-project';
+} from './helpers/create-project.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -181,7 +181,7 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
+  challengeId: ObjectId,
   order?: number,
   blockLabel?: string,
   blockLayout?: string
@@ -201,13 +201,13 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(block: string): Promise<ObjectID> {
+async function createFirstChallenge(block: string): Promise<ObjectId> {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = [
@@ -231,7 +231,7 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number
-): Promise<ObjectID> {
+): Promise<ObjectId> {
   return createQuizFile({
     projectPath: await createBlockFolder(block),
     title: title,
