@@ -196,6 +196,7 @@ export const build = async (
       fastify.addHook('onRequest', fastify.send401IfNoUser);
 
       await fastify.register(protectedRoutes.userGetRoutes);
+      await fastify.register(protectedRoutes.classroomRoutes);
     });
 
     // Routes that redirect if access is denied:
