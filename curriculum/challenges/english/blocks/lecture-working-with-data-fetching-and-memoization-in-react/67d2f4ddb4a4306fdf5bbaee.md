@@ -234,10 +234,6 @@ Memoization tools focus on caching values and functions, while this option handl
 
 `useEffect`
 
-### --feedback--
-
-Memoization tools focus on caching values and functions, while this option handles side effects.
-
 ## --video-solution--
 
 4
