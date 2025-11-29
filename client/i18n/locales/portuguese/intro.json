@@ -4547,7 +4547,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Crie um personagem de RPG",
+        "title": "Build an RPG Character",
         "intro": [
           "Neste laboratório, você praticará Python básico construindo um personagem de RPG."
         ]

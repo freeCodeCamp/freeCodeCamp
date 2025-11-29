@@ -409,8 +409,7 @@ exports[`challenge parser > should parse a simple md file 1`] = `
         "tail": "",
       },
       {
-        "contents": "var x = 'y';
-\`\`",
+        "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
         "id": "",
@@ -586,8 +585,7 @@ exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] =
         "tail": "",
       },
       {
-        "contents": "var x = 'y';
-\`\`",
+        "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
         "id": "",
