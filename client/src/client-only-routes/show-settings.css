@@ -44,6 +44,12 @@
   padding: 0 1rem 0rem 2rem;
 }
 
+.settings-sidebar-nav .sidebar-nav-section-heading.active,
+.settings-sidebar-nav .sidebar-nav-anchor-btn.active {
+  box-shadow: inset 3px 0 0 0 var(--highlight-color);
+  background-color: var(--tertiary-background);
+}
+
 @media (max-width: 980px) {
   .settings-sidebar-nav {
     display: none;
