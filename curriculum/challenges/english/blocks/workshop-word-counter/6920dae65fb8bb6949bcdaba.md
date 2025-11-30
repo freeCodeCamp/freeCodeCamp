@@ -16,7 +16,9 @@ To see how the loop inside `printCharacters` behaves, call it with the argument 
 You should call the function `printCharacters` with `"hello"` as its argument.
 
 ```js
-assert.match(code, /printCharacters\s*\(\s*('|"|`)hello\1\s*\)/);
+const codeWithoutJSComments = __helpers.removeJSComments(code);
+const normalizedCode = __helpers.removeWhiteSpace(codeWithoutJSComments);
+assert.match(normalizedCode, /printCharacters\(('|"|`)hello\1\)/);
 ```
 
 # --seed--
