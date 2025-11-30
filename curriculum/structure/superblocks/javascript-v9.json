@@ -96,6 +96,7 @@
           "dashedName": "javascript-loops",
           "blocks": [
             "lecture-working-with-loops",
+            "workshop-word-counter",
             "workshop-sentence-analyzer",
             "lab-longest-word-in-a-string",
             "lab-factorial-calculator",
