@@ -25,12 +25,12 @@ export enum Certification {
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  PythonV9 = 'python-v9',
+  RelationalDbV9 = 'relational-databases-v9',
   // Upcoming certifications
   RespWebDesignV9 = 'responsive-web-design-v9',
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
-  PythonV9 = 'python-v9',
-  RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -54,10 +54,12 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
-  Certification.RespWebDesignV9,
-  Certification.JsV9,
   Certification.A2English,
-  Certification.FoundationalCSharp
+  Certification.FoundationalCSharp,
+  Certification.JsV9,
+  Certification.PythonV9,
+  Certification.RelationalDbV9,
+  Certification.RespWebDesignV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -92,8 +94,6 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.FrontEndDevLibsV9,
-  Certification.PythonV9,
-  Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
   Certification.B1English,
@@ -124,7 +124,9 @@ export const certTypes = {
   foundationalCSharpV8: 'isFoundationalCSharpCertV8',
   jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
   javascriptV9: 'isJavascriptCertV9',
-  a2English: 'isA2EnglishCert'
+  a2English: 'isA2EnglishCert',
+  pythonV9: 'isPythonCertV9',
+  relationalDatabaseV9: 'isRelationalDatabaseCertV9'
 } as const;
 
 export const certIds = {
@@ -179,7 +181,9 @@ export const completionHours = {
   [certTypes.foundationalCSharpV8]: 300,
   [certTypes.jsAlgoDataStructV8]: 300,
   [certTypes.javascriptV9]: 300,
-  [certTypes.a2English]: 300
+  [certTypes.a2English]: 300,
+  [certTypes.pythonV9]: 300,
+  [certTypes.relationalDatabaseV9]: 300
 };
 
 export const certSlugTypeMap = {
@@ -206,10 +210,12 @@ export const certSlugTypeMap = {
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
   [Certification.A2English]: certTypes.a2English,
+  [Certification.PythonV9]: certTypes.pythonV9,
+  [Certification.RelationalDbV9]: certTypes.relationalDatabaseV9,
 
-  // upcoming
   [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
   [Certification.JsV9]: certTypes.javascriptV9
+  // upcoming
 };
 
 export const superBlockCertTypeMap = {
@@ -241,7 +247,9 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
 
   // upcoming
-  [SuperBlocks.A2English]: certTypes.a2English
+  [SuperBlocks.A2English]: certTypes.a2English,
+  [SuperBlocks.PythonV9]: certTypes.pythonV9,
+  [SuperBlocks.RelationalDbV9]: certTypes.relationalDatabaseV9
 };
 
 export const certTypeIdMap = {
@@ -266,7 +274,9 @@ export const certTypeIdMap = {
   [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
   [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id,
   [certTypes.javascriptV9]: certIds.javascriptV9Id,
-  [certTypes.a2English]: certIds.a2EnglishId
+  [certTypes.a2English]: certIds.a2EnglishId,
+  [certTypes.pythonV9]: certIds.pythonV9Id,
+  [certTypes.relationalDatabaseV9]: certIds.relationalDbV9Id
 };
 
 export const certTypeTitleMap = {
@@ -293,7 +303,9 @@ export const certTypeTitleMap = {
   [certTypes.jsAlgoDataStructV8]:
     'Legacy JavaScript Algorithms and Data Structures V8',
   [certTypes.javascriptV9]: 'JavaScript',
-  [certTypes.a2English]: 'A2 English for Developers'
+  [certTypes.a2English]: 'A2 English for Developers',
+  [certTypes.pythonV9]: 'Python V9',
+  [certTypes.relationalDatabaseV9]: 'Relational Databases V9'
 };
 
 export const superBlockToCertMap: {
