@@ -19,38 +19,52 @@ import { connect } from 'react-redux';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS from '../utils/use-detect-os';
-import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
+import {
+  ChallengeNode,
+  CompletedChallenge,
+  User
+} from '../../../redux/prop-types';
 import {
   completedChallengesSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  userSelector
 } from '../../../redux/selectors';
 import { examAttempts } from '../../../utils/ajax';
 import MissingPrerequisites from '../exam/components/missing-prerequisites';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import envData from '../../../../config/env.json';
 import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
+
+const { deploymentEnv } = envData;
 
 interface GitProps {
   tag_name: string;
   assets: {
     browser_download_url: string;
   }[];
+  name: string;
+  draft: boolean;
+  prerelease: boolean;
 }
 
 const mapStateToProps = createSelector(
   completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
+  userSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
-    isSignedIn: boolean
+    isSignedIn: boolean,
+    user: User | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
-    isSignedIn
+    isSignedIn,
+    user
   })
 );
 
@@ -62,6 +76,7 @@ interface ShowExamDownloadProps {
   completedChallenges: CompletedChallenge[];
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  user: User | null;
 }
 
 function ShowExamDownload({
@@ -73,7 +88,8 @@ function ShowExamDownload({
   },
   completedChallenges,
   isChallengeCompleted,
-  isSignedIn
+  isSignedIn,
+  user
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
@@ -144,23 +160,53 @@ function ShowExamDownload({
   useEffect(() => {
     async function checkLatestVersion() {
       try {
-        const response = await fetch(
-          'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
-        );
-        if (response.ok) {
+        let latest: GitProps;
+
+        if (deploymentEnv !== 'production') {
+          const response = await fetch(
+            'https://api.github.com/repos/freeCodeCamp/exam-env/releases'
+          );
+
+          if (!response.ok) {
+            setLatestVersion(null);
+            return;
+          }
+
+          const data = (await response.json()) as GitProps[];
+          if (!data || data.length === 0) {
+            setLatestVersion(null);
+            return;
+          }
+          latest = getLatest(data);
+        } else {
+          const response = await fetch(
+            'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
+          );
+          if (!response.ok) {
+            setLatestVersion(null);
+            return;
+          }
           const data = (await response.json()) as GitProps;
-          const { tag_name, assets } = data;
-          setLatestVersion(tag_name);
-          const urls = assets.map(link => link.browser_download_url);
-          setDownloadLink(handleDownloadLink(urls));
-          setDownloadLinks(urls);
+          if (!data) {
+            setLatestVersion(null);
+            return;
+          }
+          latest = data;
         }
+
+        const { tag_name, assets } = latest;
+        setLatestVersion(tag_name);
+        const urls = assets.map(link => link.browser_download_url);
+        setDownloadLink(handleDownloadLink(urls));
+        setDownloadLinks(urls);
       } catch {
-        setLatestVersion('...');
+        setLatestVersion(null);
       }
     }
 
-    void checkLatestVersion();
+    if (os.os) {
+      void checkLatestVersion();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [os]);
 
@@ -182,6 +228,9 @@ function ShowExamDownload({
     };
   });
 
+  const showPrereqAlert =
+    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
+
   return (
     <LearnLayout>
       <Helmet>
@@ -200,15 +249,16 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {missingPrerequisites.length > 0 ? (
-              <MissingPrerequisites
-                missingPrerequisites={missingPrerequisites}
-              />
-            ) : (
-              <Callout className='exam-qualified' variant='info'>
-                <p>{t('learn.exam.qualified')}</p>
-              </Callout>
-            )}
+            {showPrereqAlert &&
+              (missingPrerequisites.length > 0 ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
+              ) : (
+                <Callout className='exam-qualified' variant='info'>
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
+              ))}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />
@@ -217,7 +267,7 @@ function ShowExamDownload({
                 <h2>{t('exam.attempts')}</h2>
                 <Attempts examChallengeId={id} />
                 <Spacer size='l' />
-                <ExamTokenControls />
+                <ExamTokenControls email={user!.email} />
               </>
             )}
             <p>
@@ -225,7 +275,6 @@ function ShowExamDownload({
                 version: latestVersion || '...'
               })}
             </p>
-            {/* TODO: confirm this works on MacOS */}
             <Button href={'exam-environment://'}>
               {t('exam.open-exam-application')}
             </Button>
@@ -247,6 +296,14 @@ function ShowExamDownload({
                   .filter(link => !link.match(/\.sig|\.json/))
                   .map((link, index) => {
                     const urlEnd = link.split('/').pop() ?? '';
+                    // App naming scheme is <app_name>_<version>?_<arch>(-setup)?(-debug)?.<ext>
+                    const urlParts = urlEnd.split('_');
+                    const archAndExt = urlParts.at(urlParts.length - 1);
+                    const arch = archAndExt?.split('-')?.at(0);
+                    const ext = archAndExt?.slice(archAndExt?.indexOf('.'));
+
+                    const recommendedOs =
+                      arch && ext ? getRecommendedOs({ arch, ext }) : '';
                     return (
                       <MenuItem
                         href={link}
@@ -254,7 +311,7 @@ function ShowExamDownload({
                         key={index}
                         variant='primary'
                       >
-                        {urlEnd}
+                        {urlEnd} {recommendedOs && `(${recommendedOs})`}
                       </MenuItem>
                     );
                   })}
@@ -271,6 +328,64 @@ function ShowExamDownload({
       </Container>
     </LearnLayout>
   );
+}
+
+function getRecommendedOs({
+  arch,
+  ext
+}: {
+  arch: string;
+  ext: string;
+}): string {
+  switch (arch) {
+    case 'x64':
+      switch (ext) {
+        case '.dmg':
+          return 'x64 MacOS';
+        case '.AppImage':
+        case '.app.tar.gz':
+          return 'x64 Linux';
+        default:
+          return 'x64 Windows';
+      }
+    case 'aarch64':
+      switch (ext) {
+        case '.dmg':
+          return 'ARM MacOS';
+        case '.app.tar.gz':
+          return 'ARM Linux';
+        default:
+          return 'ARM Windows';
+      }
+    case 'amd64':
+      return 'x64 Linux';
+    default:
+      return '';
+  }
+}
+
+function getLatest(releases: GitProps[]): GitProps {
+  switch (deploymentEnv) {
+    case 'staging':
+      return (
+        releases.find(r => {
+          return !r.draft && r.name.endsWith('/staging');
+        }) || releases[0]
+      );
+    // Currently, this is never the case
+    case 'development':
+      return (
+        releases.find(r => {
+          return !r.draft && r.name.endsWith('/development');
+        }) || releases[0]
+      );
+    default:
+      return (
+        releases.find(r => {
+          return !r.prerelease && !r.draft && r.name.endsWith('/production');
+        }) || releases[0]
+      );
+  }
 }
 
 export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));

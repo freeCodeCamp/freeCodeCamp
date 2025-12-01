@@ -1,36 +1,36 @@
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
+} from '../../shared-dist/config/curriculum.js';
 
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
   getContentConfig,
   writeBlockStructure,
+  createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
   getAllBlocks,
   validateBlockName
-} from './utils';
+} from './utils.js';
 import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
-} from './helpers/create-project';
-import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock';
+} from './helpers/create-project.js';
+import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock.js';
 
 const helpCategories = [
   'English',
@@ -80,7 +80,7 @@ async function createLanguageBlock(
   await updateIntroJson(superBlock, block, title);
 
   const challengeLang = getLangFromSuperBlock(superBlock);
-  let challengeId: ObjectID;
+  let challengeId: ObjectId;
 
   if (blockLabel === BlockLabel.quiz) {
     challengeId = await createQuizChallenge(
@@ -157,7 +157,7 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
+  challengeId: ObjectId,
   blockLabel?: BlockLabel,
   blockLayout?: string
 ) {
@@ -178,7 +178,6 @@ async function createMetaJson(
 
   newMeta.challengeOrder = [
     {
-      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       id: challengeId.toString(),
       title: challengeTitle
     }
@@ -191,7 +190,7 @@ async function createDialogueChallenge(
   superBlock: SuperBlocks,
   block: string,
   challengeLang: string
-): Promise<ObjectID> {
+): Promise<ObjectId> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
   };
@@ -210,16 +209,9 @@ async function createQuizChallenge(
   title: string,
   questionCount: number,
   challengeLang: string
-): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount,

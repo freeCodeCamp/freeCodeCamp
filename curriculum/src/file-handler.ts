@@ -1,7 +1,7 @@
 import { dirname, resolve } from 'node:path';
 import assert from 'node:assert';
 import { existsSync, readFileSync } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
@@ -171,6 +171,16 @@ export interface BlockStructure {
   isUpcomingChange?: boolean;
   chapter?: string;
   module?: string;
+}
+
+export async function createBlockFolder(block: string) {
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newBlockDir = resolve(blockContentDir, block);
+  await mkdir(newBlockDir, { recursive: true });
+  return newBlockDir + '/';
 }
 
 export function getBlockStructure(block: string) {

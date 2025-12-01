@@ -26,8 +26,7 @@ exports[`add solution plugin > should have an output to match the snapshot 1`] =
         "tail": "",
       },
       {
-        "contents": "var x = 'y';
-\`\`",
+        "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
         "id": "",
