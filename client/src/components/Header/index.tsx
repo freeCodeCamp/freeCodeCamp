@@ -30,6 +30,7 @@ type Props = PropsFromRedux & {
     username: string;
     picture: string;
     yearsTopContributor: string[];
+    calendar: Record<string, number>;
   };
   skipButtonText: string;
   pathname: string;
