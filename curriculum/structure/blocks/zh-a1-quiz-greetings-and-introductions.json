@@ -4,6 +4,11 @@
   "dashedName": "zh-a1-quiz-greetings-and-introductions",
   "helpCategory": "English",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "69021889ec24994b6ad3d463", "title": "Greetings and Introductions Quiz" }],
+  "challengeOrder": [
+    {
+      "id": "69021889ec24994b6ad3d463",
+      "title": "Greetings and Introductions Quiz"
+    }
+  ],
   "blockLabel": "quiz"
 }
