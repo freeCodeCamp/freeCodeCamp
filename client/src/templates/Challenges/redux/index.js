@@ -48,7 +48,8 @@ const initialState = {
     survey: false,
     projectPreview: false,
     shortcuts: false,
-    speaking: false
+    speaking: false,
+    isIframeLoaded: false
   },
   portalWindow: null,
   showPreviewPortal: false,
@@ -264,6 +265,13 @@ export const reducer = handleActions(
       modal: {
         ...state.modal,
         [payload]: true
+      }
+    }),
+    [actionTypes.setIsIframeLoaded]: (state, { payload }) => ({
+      ...state,
+      modal: {
+        ...state.modal,
+        isIframeLoaded: payload
       }
     }),
     [actionTypes.executeChallenge]: state => ({

@@ -9,11 +9,18 @@ test.describe('Should be shown automatically', () => {
     await page.goto(urlWithProjectPreview);
   });
 
-  test('it should contain a non-empty preview frame', async ({ page }) => {
+  test('it should show loader, then a non-empty preview frame', async ({
+    page
+  }) => {
     const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
     });
     await expect(dialog).toBeVisible();
+
+    const loader = dialog.locator('.fcc-loader');
+    await expect(loader).toBeVisible();
+    await expect(loader).toHaveCount(0, { timeout: 10000 });
+
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
       // This is a part of the Cat Photo App that we expect to see. Essentially,
@@ -27,6 +34,10 @@ test.describe('Should be shown automatically', () => {
       name: translations.learn['project-preview-title']
     });
     await expect(dialog).toBeVisible();
+
+    const loader = dialog.locator('.fcc-loader');
+    await expect(loader).toBeVisible();
+    await expect(loader).toHaveCount(0, { timeout: 10000 });
     await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
 
     await page.getByRole('button', { name: 'Start Coding!' }).click();
@@ -67,6 +78,9 @@ test.describe('Should be shown manually', () => {
       })
       .click();
     await expect(dialog).toBeVisible();
+    const loader = dialog.locator('.fcc-loader');
+    await expect(loader).toBeVisible();
+    await expect(loader).toHaveCount(0, { timeout: 10000 });
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
       // This is a part of the Drum Machine that we expect to see. Essentially,

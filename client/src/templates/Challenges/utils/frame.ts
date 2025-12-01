@@ -48,7 +48,7 @@ export interface Context {
 export type ProxyLogger = (msg: string) => void;
 
 type InitFrame = (
-  frameInitiateDocument?: () => unknown,
+  frameInitiateDocument?: (isIframeLoaded: boolean) => unknown,
   frameConsoleLogger?: ProxyLogger
 ) => (frameContext: Context) => Context;
 
@@ -350,7 +350,7 @@ const updateWindowI18next = (frameContext: Context) => {
 };
 
 const initMainFrame =
-  (frameReady?: () => void, proxyLogger?: ProxyLogger) =>
+  (frameReady?: (isIframeLoaded: boolean) => void, proxyLogger?: ProxyLogger) =>
   (frameContext: Context) => {
     waitForFrame(frameContext)
       .then(async () => {
@@ -379,7 +379,8 @@ const initMainFrame =
         if (document && '__initPythonFrame' in document) {
           await document.__initPythonFrame();
         }
-        if (frameReady) frameReady();
+        //if (frameReady) frameReady();
+        frameReady?.(true);
       })
       .catch(handleDocumentNotFound);
     return frameContext;
@@ -443,7 +444,7 @@ export const createMainPreviewFramer = (
   document: Document,
   proxyLogger: ProxyLogger,
   frameTitle: string,
-  frameReady?: () => void
+  frameReady?: (isIframeLoaded: boolean) => void
 ): ((args: Context) => void) =>
   createFramer({
     document,
@@ -478,7 +479,7 @@ const createFramer = ({
   id: string;
   init: InitFrame;
   proxyLogger?: ProxyLogger;
-  frameReady?: () => void;
+  frameReady?: (isIframeLoaded: boolean) => void;
   frameTitle?: string;
   updateWindowFunctions?: (frameContext: Context) => Context;
 }) =>
