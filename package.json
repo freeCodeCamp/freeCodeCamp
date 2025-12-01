@@ -52,7 +52,7 @@
     "knip:all": "npx -y knip@5 ",
     "lint": "pnpm npm-run-all lint:*",
     "lint:challenges": "cd ./curriculum && pnpm run lint-challenges",
-    "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client && tsc -p curriculum",
+    "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client && tsc -p curriculum && tsc -p e2e && tsc -p tools/challenge-helper-scripts",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
     "preseed": "npm-run-all compile:ts",
