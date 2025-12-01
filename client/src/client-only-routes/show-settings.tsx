@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
 import { Spacer } from '@freecodecamp/ui';
-import { useFeatureIsOn } from '@growthbook/growthbook-react';
 import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
@@ -109,7 +108,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   } = props;
 
   const isSignedInRef = useRef(isSignedIn);
-  const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
@@ -176,10 +174,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <div className='settings-container' id='settings-container'>
-        <SettingsSidebarNav
-          examTokenFlag={examTokenFlag}
-          userToken={userToken}
-        />
+        <SettingsSidebarNav userToken={userToken} />
         <main className='settings-main'>
           <Spacer size='l' />
           <ScrollElement name='username'>
@@ -221,14 +216,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
           </ScrollElement>
           <Spacer size='m' />
-          {examTokenFlag && (
-            <>
-              <ScrollElement name='exam-token'>
-                <ExamToken />
-              </ScrollElement>
-              <Spacer size='m' />
-            </>
-          )}
           <ScrollElement name='certifications'>
             <Certification
               completedChallenges={completedChallenges}
@@ -262,7 +249,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             />
           </ScrollElement>
           <Spacer size='m' />
-          <ExamToken email={email} />
+          <ScrollElement name='exam-token'>
+            <ExamToken email={email} />
+          </ScrollElement>
+          <Spacer size='m' />
           <Certification
             completedChallenges={completedChallenges}
             createFlashMessage={createFlashMessage}

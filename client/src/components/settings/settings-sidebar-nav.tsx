@@ -8,12 +8,10 @@ import {
 } from '../../../../shared-dist/config/certification-settings';
 
 type SettingsSidebarNavProps = {
-  examTokenFlag: boolean;
   userToken: string | null;
 };
 
 function SettingsSidebarNav({
-  examTokenFlag,
   userToken
 }: SettingsSidebarNavProps): JSX.Element {
   const { t } = useTranslation();
@@ -81,22 +79,20 @@ function SettingsSidebarNav({
             {t('settings.headings.honesty')}
           </ScrollLink>
         </li>
-        {examTokenFlag && (
-          <li>
-            <ScrollLink
-              to='exam-token'
-              className='sidebar-nav-section-heading'
-              smooth={true}
-              offset={-48}
-              duration={300}
-              spy={true}
-              hashSpy={true}
-              activeClass='active'
-            >
-              {t('exam-token.exam-token')}
-            </ScrollLink>
-          </li>
-        )}
+        <li>
+          <ScrollLink
+            to='exam-token'
+            className='sidebar-nav-section-heading'
+            smooth={true}
+            offset={-48}
+            duration={300}
+            spy={true}
+            hashSpy={true}
+            activeClass='active'
+          >
+            {t('exam-token.exam-token')}
+          </ScrollLink>
+        </li>
         <li>
           <ScrollLink
             to='certifications'
