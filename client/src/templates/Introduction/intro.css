@@ -106,6 +106,7 @@ a.cert-tag:active {
 }
 
 .block-grid-title {
+  font-size: 1rem;
   margin: 0;
   overflow-wrap: break-word;
 }

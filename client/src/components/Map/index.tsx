@@ -113,6 +113,9 @@ function Map({ forLanding = false }: MapProps) {
               <h2 className={forLanding ? 'big-heading' : ''}>
                 {t(superBlockHeadings[stage])}
               </h2>
+              {stage === SuperBlockStage.Core && (
+                <p>{t('landing.fsd-restructure-note')}</p>
+              )}
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi

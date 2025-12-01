@@ -1,0 +1,11 @@
+{
+  "name": "Contact Information and Spelling",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-contact-information-and-spelling",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4dfe73dde4813c095839", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

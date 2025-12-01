@@ -26,7 +26,7 @@ interface PageData {
 }
 
 const challengePath =
-  '/learn/full-stack-developer/lecture-what-is-css/what-are-some-default-browser-styles-applied-to-html';
+  '/learn/responsive-web-design-v9/lecture-what-is-css/what-are-some-default-browser-styles-applied-to-html';
 
 const challengeTitle = 'Test Challenge Title';
 

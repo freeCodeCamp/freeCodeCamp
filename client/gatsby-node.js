@@ -410,6 +410,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type FillInTheBlank {
       sentence: String
       blanks: [Blank]
+      inputType: String
     }
     type Blank {
       answer: String
@@ -470,8 +471,6 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type ChallengeFields {
       slug: String
-      blockName: String
-      tests: [Test]
     }
     type Nodule {
       type: String

@@ -32,8 +32,8 @@ export enum Certification {
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
+  A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
-  A2English = 'a2-english-for-developers-v8',
   B1English = 'b1-english-for-developers-v8',
   A2Spanish = 'a2-professional-spanish-v8',
   A2Chinese = 'a2-professional-chinese-v8',
@@ -54,6 +54,9 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
+  Certification.RespWebDesignV9,
+  Certification.JsV9,
+  Certification.A2English,
   Certification.FoundationalCSharp
 ] as const;
 
@@ -88,14 +91,11 @@ export const legacyFullStackCertification = [
 // "Upcoming" certifications are standard certifications that are not live unless
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
-  Certification.RespWebDesignV9,
-  Certification.JsV9,
   Certification.FrontEndDevLibsV9,
   Certification.PythonV9,
   Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
-  Certification.A2English,
   Certification.B1English,
   Certification.A2Spanish,
   Certification.A2Chinese,
@@ -205,11 +205,11 @@ export const certSlugTypeMap = {
   [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
   [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
   [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
+  [Certification.A2English]: certTypes.a2English,
 
   // upcoming
   [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
-  [Certification.JsV9]: certTypes.javascriptV9,
-  [Certification.A2English]: certTypes.a2English
+  [Certification.JsV9]: certTypes.javascriptV9
 };
 
 export const superBlockCertTypeMap = {
@@ -337,6 +337,19 @@ export const superBlockToCertMap: {
   [SuperBlocks.DevPlayground]: null,
   [SuperBlocks.FullStackOpen]: null,
   [SuperBlocks.FullStackDeveloper]: null
+};
+
+export const certificationRequirements: Partial<
+  Record<Certification, SuperBlocks[]>
+> = {
+  [Certification.FullStackDeveloperV9]: [
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.PythonV9,
+    SuperBlocks.RelationalDbV9,
+    SuperBlocks.BackEndDevApisV9
+  ]
 };
 
 export type CertSlug = (typeof Certification)[keyof typeof Certification];

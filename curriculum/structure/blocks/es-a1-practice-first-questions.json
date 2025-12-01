@@ -4,6 +4,24 @@
   "dashedName": "es-a1-practice-first-questions",
   "helpCategory": "English",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc75b0fe65b57754913412", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "691606a74e875776d0c00634", "title": "Task 1" },
+    { "id": "691610efdd1f677c74eae91a", "title": "Task 2" },
+    { "id": "691613b96a5856810fdcd106", "title": "Task 3" },
+    { "id": "691615c732e6878518963786", "title": "Task 4" },
+    { "id": "6916172fb15c2b88c574ac88", "title": "Task 5" },
+    { "id": "6916190046c3a78bcf0b47c7", "title": "Task 6" },
+    { "id": "691078d4e99ddd082b12ee9c", "title": "Task 7" },
+    { "id": "69164c74aff66fc089750967", "title": "Task 8" },
+    { "id": "69107e5c3d2e240f97b5742f", "title": "Task 9" },
+    { "id": "691081b5ef232e138b301ac8", "title": "Task 10" },
+    { "id": "691083ce2c387615cf14e5f1", "title": "Task 11" },
+    { "id": "69164df41ff49cc2f332be4c", "title": "Task 12" },
+    { "id": "6910867bb3065a1924502732", "title": "Task 13" },
+    { "id": "69108a0006dd331d159c51f3", "title": "Task 14" },
+    { "id": "69108ccea9363f23b3aacb49", "title": "Task 15" },
+    { "id": "691090f4e43e61297523d064", "title": "Task 16" },
+    { "id": "6910932c6c4e812ca246cdae", "title": "Task 17" }
+  ],
   "blockLabel": "practice"
 }

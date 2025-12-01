@@ -23,13 +23,17 @@
     "create-project": "tsx create-project",
     "create-language-block": "tsx create-language-block",
     "create-quiz": "tsx create-quiz",
+    "lint": "eslint --max-warnings 0",
     "test": "vitest"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
     "@vitest/ui": "^3.2.4",
-    "bson-objectid": "2.0.4",
+    "bson": "^7.0.0",
+    "eslint": "^9.39.1",
     "glob": "^8.1.0",
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
