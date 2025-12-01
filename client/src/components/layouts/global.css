@@ -17,7 +17,6 @@ legend {
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
 blockquote {
   border-left: 5px solid #eeeeee;
 }
