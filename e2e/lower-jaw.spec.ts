@@ -4,7 +4,8 @@ import { signout } from './utils/logout';
 
 // Test the lower jaw on mobile viewport only
 test.use({
-  viewport: { width: 393, height: 851 }
+  viewport: { width: 393, height: 851 },
+  isMobile: true
 });
 
 test('Check the initial states of submit button and "check your code" button', async ({
