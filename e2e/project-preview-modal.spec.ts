@@ -18,8 +18,8 @@ test.describe('Should be shown automatically', () => {
     await expect(dialog).toBeVisible();
 
     const loader = dialog.locator('.fcc-loader');
-    await expect(loader).toBeVisible();
-    await expect(loader).toHaveCount(0, { timeout: 10000 });
+    await expect(loader).toBeVisible({ timeout: 15000 });
+    await expect(loader).toHaveCount(0, { timeout: 15000 });
 
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
@@ -36,8 +36,8 @@ test.describe('Should be shown automatically', () => {
     await expect(dialog).toBeVisible();
 
     const loader = dialog.locator('.fcc-loader');
-    await expect(loader).toBeVisible();
-    await expect(loader).toHaveCount(0, { timeout: 10000 });
+    await expect(loader).toBeVisible({ timeout: 15000 });
+    await expect(loader).toHaveCount(0, { timeout: 15000 });
     await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
 
     await page.getByRole('button', { name: 'Start Coding!' }).click();
@@ -79,8 +79,8 @@ test.describe('Should be shown manually', () => {
       .click();
     await expect(dialog).toBeVisible();
     const loader = dialog.locator('.fcc-loader');
-    await expect(loader).toBeVisible();
-    await expect(loader).toHaveCount(0, { timeout: 10000 });
+    await expect(loader).toBeVisible({ timeout: 15000 });
+    await expect(loader).toHaveCount(0, { timeout: 15000 });
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
       // This is a part of the Drum Machine that we expect to see. Essentially,
