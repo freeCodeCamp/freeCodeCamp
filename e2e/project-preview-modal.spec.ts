@@ -12,6 +12,10 @@ test.describe('Should be shown automatically', () => {
   test('it should show loader, then a non-empty preview frame', async ({
     page
   }) => {
+    await page.route('**/*', async route => {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      await route.continue();
+    });
     const dialog = page.getByRole('dialog', {
       name: translations.learn['project-preview-title']
     });
@@ -19,7 +23,7 @@ test.describe('Should be shown automatically', () => {
 
     const loader = dialog.locator('.loader-wrapper');
     await expect(loader).toBeVisible({ timeout: 15000 });
-    await expect(loader).toHaveCount(0, { timeout: 15000 });
+    await expect(loader).toHaveCount(0, { timeout: 20000 });
 
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
     await expect(
