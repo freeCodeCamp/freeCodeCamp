@@ -390,7 +390,7 @@ const cardButtonsContainer = document.querySelector<HTMLElement>("#cards-list");
 const frontInput = document.querySelector<HTMLTextAreaElement>("#front-text");
 const backInput = document.querySelector<HTMLTextAreaElement>("#back-text");
 const errorElement = document.querySelector<HTMLParagraphElement>("#entry-error");
-let currentCardIndex = -1;
+var currentCardIndex = -1;
 let currentCards: FlashCard[] = [];
 
 interface FlashCard {
@@ -462,12 +462,12 @@ function uploadNewCard(): void {
   try
   {
     const questionText = frontInput.value.trim();
-    const answerText = backInput.value.trim();
+    const questionAnswer = backInput.value.trim();
     if (!questionText)
       throw new InvalidUserInputError("Front text cannot be empty.");
     if (!answerText)
       throw new InvalidUserInputError("Back text cannot be empty.");
-    const newCard: FlashCard = { questionText, answerText };
+    const newCard: FlashCard = { questionText, questionAnswer  };
     currentCards.push(newCard);
     const newIndex = currentCards.length - 1;
     const cardBtn = createCardButton(questionText, newIndex);
@@ -891,7 +891,7 @@ const cardButtonsContainer = document.querySelector<HTMLElement>("#cards-list");
 const frontInput = document.querySelector<HTMLTextAreaElement>("#front-text");
 const backInput = document.querySelector<HTMLTextAreaElement>("#back-text");
 const errorElement = document.querySelector<HTMLParagraphElement>("#entry-error");
-let currentCardIndex = -1;
+var currentCardIndex = -1;
 let currentCards: FlashCard[] = [];
 
 interface FlashCard {
@@ -963,12 +963,12 @@ function uploadNewCard(): void {
   try
   {
     const questionText = frontInput.value.trim();
-    const answerText = backInput.value.trim();
+    const questionAnswer = backInput.value.trim();
     if (!questionText)
       throw new InvalidUserInputError("Front text cannot be empty.");
     if (!answerText)
       throw new InvalidUserInputError("Back text cannot be empty.");
-    const newCard: FlashCard = { questionText, answerText };
+    const newCard: FlashCard = { questionText, questionAnswer  };
     currentCards.push(newCard);
     const newIndex = currentCards.length - 1;
     const cardBtn = createCardButton(questionText, newIndex);

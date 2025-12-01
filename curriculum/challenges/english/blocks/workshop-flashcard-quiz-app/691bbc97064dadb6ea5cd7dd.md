@@ -8,7 +8,7 @@ dashedName: step-43
 # --description--
 
 In the `try` block of `uploadNewCard`, throw a new `InvalidUserInputError` if `questionText` is empty with the message `"Front text 
-cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `answerText` is empty with the message 
+cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `questionAnswer` is empty with the message 
 `"Back text cannot be empty."`. 
 
 # --hints--
@@ -25,14 +25,14 @@ If `questionText` is empty, the error message should be `Front text cannot be em
 assert.throws(uploadNewCard(), InvalidUserInputError, 'Front text cannot be empty.');
 ```
 
-You should throw a `InvalidUserInputError` if `answerText` is empty. 
+You should throw a `InvalidUserInputError` if `questionAnswer` is empty. 
 
 ```js
 frontInput.value = "Placeholder question";
 assert.throws(uploadNewCard(), InvalidUserInputError);
 ```
 
-If `answerText` is empty, the error message should be `Back text cannot be empty.`. 
+If `questionAnswer` is empty, the error message should be `Back text cannot be empty.`. 
 
 ```js
 frontInput.value = "Placeholder question";
@@ -402,7 +402,7 @@ const cardButtonsContainer = document.querySelector<HTMLElement>("#cards-list");
 const frontInput = document.querySelector<HTMLTextAreaElement>("#front-text");
 const backInput = document.querySelector<HTMLTextAreaElement>("#back-text");
 const errorElement = document.querySelector<HTMLParagraphElement>("#entry-error");
-let currentCardIndex = -1;
+var currentCardIndex = -1;
 let currentCards: FlashCard[] = [];
 
 interface FlashCard {
@@ -474,12 +474,12 @@ function uploadNewCard(): void {
   try
   {
     const questionText = frontInput.value.trim();
-    const answerText = backInput.value.trim();
+    const questionAnswer = backInput.value.trim();
     --fcc-editable-region--
 
 
     --fcc-editable-region--
-    const newCard: FlashCard = { questionText, answerText };
+    const newCard: FlashCard = { questionText, questionAnswer  };
     currentCards.push(newCard);
     const newIndex = currentCards.length - 1;
     const cardBtn = createCardButton(questionText, newIndex);
