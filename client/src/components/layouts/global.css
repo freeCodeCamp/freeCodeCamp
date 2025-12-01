@@ -12,7 +12,6 @@ body {
   background: var(--secondary-background);
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. (Though some styles might need to be dropped). */
 legend {
   color: #333;
   border-bottom: 1px solid #e5e5e5;
