@@ -21,7 +21,7 @@ blockquote {
   border-left: 5px solid #eeeeee;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
+/* TODO: Move this rule to components/Intro/intro.css. */
 blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
