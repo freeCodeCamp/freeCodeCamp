@@ -17,7 +17,7 @@ test.describe('Should be shown automatically', () => {
     });
     await expect(dialog).toBeVisible();
 
-    const loader = dialog.locator('.fcc-loader');
+    const loader = dialog.locator('.loader-wrapper');
     await expect(loader).toBeVisible({ timeout: 15000 });
     await expect(loader).toHaveCount(0, { timeout: 15000 });
 
@@ -35,7 +35,7 @@ test.describe('Should be shown automatically', () => {
     });
     await expect(dialog).toBeVisible();
 
-    const loader = dialog.locator('.fcc-loader');
+    const loader = dialog.locator('.loader-wrapper');
     await expect(loader).toBeVisible({ timeout: 15000 });
     await expect(loader).toHaveCount(0, { timeout: 15000 });
     await expect(dialog.getByTitle('CatPhotoApp preview')).toBeVisible();
@@ -78,7 +78,7 @@ test.describe('Should be shown manually', () => {
       })
       .click();
     await expect(dialog).toBeVisible();
-    const loader = dialog.locator('.fcc-loader');
+    const loader = dialog.locator('.loader-wrapper');
     await expect(loader).toBeVisible({ timeout: 15000 });
     await expect(loader).toHaveCount(0, { timeout: 15000 });
     const previewFrame = dialog.frameLocator('#fcc-project-preview-frame');
