@@ -375,11 +375,11 @@ void getAllBlocks()
       {
         name: 'position',
         message: 'At which position does this appear in the module?',
-        default: 1,
+        default: 0,
         validate: (position: string) => {
-          return parseInt(position, 10) > 0
+          return parseInt(position, 10) >= 0
             ? true
-            : 'Position must be an number greater than zero.';
+            : 'Position must be an number greater than or equal to zero.';
         },
         when: (answers: CreateProjectArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock),
