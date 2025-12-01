@@ -159,12 +159,12 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
       <FullWidthRow key={certSlug}>
         <Spacer size='m' />
         <h3 className='text-center'>
-          {t(`certification.title.${Certification.LegacyFullStack}`)}
+          {t(`certification.title.${Certification.LegacyFullStack}-cert`)}
         </h3>
         <div>
           <p>
             {t('settings.claim-legacy', {
-              cert: t(`certification.title.${Certification.LegacyFullStack}`)
+              cert: t(`certification.title.${Certification.LegacyFullStack}-cert`)
             })}
           </p>
           <ul>
