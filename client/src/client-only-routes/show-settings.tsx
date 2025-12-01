@@ -220,36 +220,38 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             <ExamToken email={email} />
           </ScrollElement>
           <Spacer size='m' />
-          <Certification
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isA2EnglishCert={isA2EnglishCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isJavascriptCertV9={isJavascriptCertV9}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isRespWebDesignCertV9={isRespWebDesignCertV9}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
-            username={username}
-            verifyCert={verifyCert}
-            isEmailVerified={isEmailVerified}
-          />
+          <ScrollElement name='certifications'>
+            <Certification
+              completedChallenges={completedChallenges}
+              createFlashMessage={createFlashMessage}
+              is2018DataVisCert={is2018DataVisCert}
+              isA2EnglishCert={isA2EnglishCert}
+              isApisMicroservicesCert={isApisMicroservicesCert}
+              isBackEndCert={isBackEndCert}
+              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+              isDataVisCert={isDataVisCert}
+              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+              isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
+              isFrontEndCert={isFrontEndCert}
+              isFrontEndLibsCert={isFrontEndLibsCert}
+              isFullStackCert={isFullStackCert}
+              isJavascriptCertV9={isJavascriptCertV9}
+              isHonest={isHonest}
+              isInfosecCertV7={isInfosecCertV7}
+              isInfosecQaCert={isInfosecQaCert}
+              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isQaCertV7={isQaCertV7}
+              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRespWebDesignCert={isRespWebDesignCert}
+              isRespWebDesignCertV9={isRespWebDesignCertV9}
+              isSciCompPyCertV7={isSciCompPyCertV7}
+              isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              username={username}
+              verifyCert={verifyCert}
+              isEmailVerified={isEmailVerified}
+            />
+          </ScrollElement>
           {userToken && (
             <>
               <ScrollElement name='user-token'>
