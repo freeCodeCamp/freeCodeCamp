@@ -293,7 +293,7 @@ function ShowExamDownload({
               )}
             </div>
             <Spacer size='xs' />
-            <Dropdown dropup>
+            <Dropdown block={true} dropup>
               <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
               <Dropdown.Menu>
                 {downloadLinks
