@@ -164,7 +164,9 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
         <div>
           <p>
             {t('settings.claim-legacy', {
-              cert: t(`certification.title.${Certification.LegacyFullStack}-cert`)
+              cert: t(
+                `certification.title.${Certification.LegacyFullStack}-cert`
+              )
             })}
           </p>
           <ul>
