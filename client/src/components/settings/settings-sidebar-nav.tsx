@@ -4,12 +4,16 @@ import { Link as ScrollLink } from 'react-scroll';
 import {
   currentCertifications,
   legacyCertifications,
-  legacyFullStackCertification
+  legacyFullStackCertification,
+  upcomingCertifications
 } from '../../../../shared-dist/config/certification-settings';
+import env from '../../../config/env.json';
 
 type SettingsSidebarNavProps = {
   userToken: string | null;
 };
+
+const { showUpcomingChanges } = env;
 
 function SettingsSidebarNav({
   userToken
@@ -26,6 +30,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='account'
+            href='#account'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -40,6 +45,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='privacy'
+            href='#privacy'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -54,6 +60,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='email'
+            href='#email'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -68,6 +75,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='honesty'
+            href='#honesty'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -82,6 +90,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='exam-token'
+            href='#exam-token'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -96,6 +105,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='certifications'
+            href='#certifications'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -111,6 +121,7 @@ function SettingsSidebarNav({
               <li key={slug}>
                 <ScrollLink
                   to={`cert-${slug}`}
+                  href={`#cert-${slug}`}
                   className={'sidebar-nav-anchor-btn'}
                   smooth={true}
                   offset={-48}
@@ -128,6 +139,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='legacy-certifications'
+            href='#legacy-certifications'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
@@ -143,6 +155,7 @@ function SettingsSidebarNav({
               <li key={slug}>
                 <ScrollLink
                   to={`cert-${slug}`}
+                  href={`#cert-${slug}`}
                   className={'sidebar-nav-anchor-btn'}
                   smooth={true}
                   offset={-48}
@@ -156,11 +169,32 @@ function SettingsSidebarNav({
               </li>
             ))}
           </ul>
+          <ul>
+            {showUpcomingChanges &&
+              upcomingCertifications.map(slug => (
+                <li key={slug}>
+                  <ScrollLink
+                    to={`cert-${slug}`}
+                    href={`#cert-${slug}`}
+                    className={'sidebar-nav-anchor-btn'}
+                    smooth={true}
+                    offset={-48}
+                    duration={300}
+                    spy={true}
+                    hashSpy={true}
+                    activeClass='active'
+                  >
+                    {t(`certification.title.${slug}`, slug)}
+                  </ScrollLink>
+                </li>
+              ))}
+          </ul>
         </li>
         {userToken && (
           <li>
             <ScrollLink
               to='user-token'
+              href='#user-token'
               className='sidebar-nav-section-heading'
               smooth={true}
               offset={-48}
@@ -176,6 +210,7 @@ function SettingsSidebarNav({
         <li>
           <ScrollLink
             to='danger-zone'
+            href='#danger-zone'
             className='sidebar-nav-section-heading'
             smooth={true}
             offset={-48}
