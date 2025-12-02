@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeAll, afterAll, vi } from 'vitest';
 import {
   ExamEnvironmentAnswer,
+  ExamEnvironmentQuestionEventKind,
   ExamEnvironmentQuestionType
 } from '@prisma/client';
 import { type Static } from '@fastify/type-provider-typebox';
@@ -222,11 +223,11 @@ describe('Exam Environment mocked Math.random', () => {
         questionSets: [
           {
             id: '0',
-            questions: [{ id: '00', answers: ['000'] }]
+            questions: [{ id: '00', answers: ['000'], events: [] }]
           },
           {
             id: '1',
-            questions: [{ id: '10', answers: ['100'] }]
+            questions: [{ id: '10', answers: ['100'], events: [] }]
           }
         ]
       };
@@ -250,11 +251,11 @@ describe('Exam Environment mocked Math.random', () => {
         questionSets: [
           {
             id: '0',
-            questions: [{ id: '00', answers: ['000'] }]
+            questions: [{ id: '00', answers: ['000'], events: [] }]
           },
           {
             id: '1',
-            questions: [{ id: '10', answers: ['100'] }]
+            questions: [{ id: '10', answers: ['100'], events: [] }]
           }
         ]
       };
@@ -287,11 +288,11 @@ describe('Exam Environment mocked Math.random', () => {
         questionSets: [
           {
             id: '0',
-            questions: [{ id: '00', answers: ['000'] }]
+            questions: [{ id: '00', answers: ['000'], events: [] }]
           },
           {
             id: '1',
-            questions: [{ id: '10', answers: ['100'] }]
+            questions: [{ id: '10', answers: ['100'], events: [] }]
           }
         ]
       };
@@ -525,7 +526,21 @@ describe('Exam Environment Schema', () => {
                 {
                   answers: [oid()],
                   id: oid(),
-                  submissionTime: new Date()
+                  submissionTime: new Date(),
+                  events: [
+                    {
+                      kind: ExamEnvironmentQuestionEventKind.Visit,
+                      timestamp: new Date()
+                    },
+                    {
+                      kind: ExamEnvironmentQuestionEventKind.Focus,
+                      timestamp: new Date()
+                    },
+                    {
+                      kind: ExamEnvironmentQuestionEventKind.Blur,
+                      timestamp: new Date()
+                    }
+                  ]
                 }
               ]
             }

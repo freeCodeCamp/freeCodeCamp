@@ -1,5 +1,13 @@
 import { Type } from '@fastify/type-provider-typebox';
 import { STANDARD_ERROR } from '../utils/errors.js';
+import { ExamEnvironmentQuestionEventKind } from '@prisma/client';
+
+const eventsType = Type.Array(
+  Type.Object({
+    kind: Type.Enum(ExamEnvironmentQuestionEventKind),
+    timestamp: Type.String({ format: 'date-time' })
+  })
+);
 
 export const examEnvironmentPostExamAttempt = {
   body: Type.Object({
@@ -11,7 +19,8 @@ export const examEnvironmentPostExamAttempt = {
           questions: Type.Array(
             Type.Object({
               id: Type.String({ format: 'objectid' }),
-              answers: Type.Array(Type.String({ format: 'objectid' }))
+              answers: Type.Array(Type.String({ format: 'objectid' })),
+              events: eventsType
             })
           )
         })
@@ -50,7 +59,8 @@ const examEnvAttempt = Type.Object({
         Type.Object({
           id: Type.String(),
           answers: Type.Array(Type.String()),
-          submissionTime: Type.String({ format: 'date-time' })
+          submissionTime: Type.String({ format: 'date-time' }),
+          events: eventsType
         })
       )
     })
