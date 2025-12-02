@@ -12,7 +12,7 @@ const ArchivedWarning = () => {
     <Callout variant='note' label={t('misc.note')}>
       <p className='archived-warning'>
         <Trans i18nKey='learn.archive.content-not-updated'>
-          <Link to={'/learn/full-stack-developer'}>placeholder</Link>
+          <Link to={'/learn'}>placeholder</Link>
         </Trans>
       </p>
     </Callout>
