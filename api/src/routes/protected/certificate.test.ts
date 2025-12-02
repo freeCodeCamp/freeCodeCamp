@@ -154,7 +154,7 @@ describe('certificate routes', () => {
             isInfosecQaCert: false,
             isJsAlgoDataStructCert: false,
             isMachineLearningPyCertV7: false,
-            isPythonV9: false,
+            isPythonCertV9: false,
             isQaCertV7: false,
             isRelationalDatabaseCertV8: false,
             isRelationalDatabaseCertV9: false,
@@ -247,8 +247,10 @@ describe('certificate routes', () => {
             isJavascriptCertV9: true,
             isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
             isRespWebDesignCert: false,
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true
@@ -325,7 +327,9 @@ describe('certificate routes', () => {
             isMachineLearningPyCertV7: false,
             isRelationalDatabaseCertV8: false,
             isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false
+            isFoundationalCSharpCertV8: false,
+            isPythonCertV9: false,
+            isRelationalDatabaseCertV9: false
           },
           completedChallenges: [
             {

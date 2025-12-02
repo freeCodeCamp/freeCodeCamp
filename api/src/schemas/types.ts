@@ -15,6 +15,7 @@ export const isCertMap = Type.Object({
   is2018DataVisCert: Type.Boolean(),
   isApisMicroservicesCert: Type.Boolean(),
   isInfosecQaCert: Type.Boolean(),
+  isPythonCertV9: Type.Boolean(),
   isQaCertV7: Type.Boolean(),
   isInfosecCertV7: Type.Boolean(),
   isFrontEndCert: Type.Boolean(),
@@ -25,6 +26,7 @@ export const isCertMap = Type.Object({
   isDataAnalysisPyCertV7: Type.Boolean(),
   isMachineLearningPyCertV7: Type.Boolean(),
   isRelationalDatabaseCertV8: Type.Boolean(),
+  isRelationalDatabaseCertV9: Type.Boolean(),
   isCollegeAlgebraPyCertV8: Type.Boolean(),
   isFoundationalCSharpCertV8: Type.Boolean()
 });

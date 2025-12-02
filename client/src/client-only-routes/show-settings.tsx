@@ -152,6 +152,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFullStackCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -223,8 +225,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
             isInfosecQaCert={isInfosecQaCert}
             isJsAlgoDataStructCert={isJsAlgoDataStructCert}
             isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+            isPythonCertV9={isPythonCertV9}
             isQaCertV7={isQaCertV7}
             isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+            isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
             isRespWebDesignCert={isRespWebDesignCert}
             isRespWebDesignCertV9={isRespWebDesignCertV9}
             isSciCompPyCertV7={isSciCompPyCertV7}
