@@ -25,10 +25,8 @@ test.describe('Archive Page', () => {
     await page.goto('/learn/archive');
   });
 
-  test('Links to new curriculum', async ({ page }) => {
-    const newCurriculumLink = page.locator(
-      'a[href="/learn/full-stack-developer"]'
-    );
+  test('Links to /learn', async ({ page }) => {
+    const newCurriculumLink = page.locator('a[href="/learn"]');
     await expect(newCurriculumLink).toBeVisible();
   });
 
