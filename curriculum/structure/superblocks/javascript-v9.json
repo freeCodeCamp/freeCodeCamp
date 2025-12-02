@@ -73,7 +73,6 @@
             "workshop-shopping-list",
             "lab-lunch-picker-program",
             "lab-golf-score-translator",
-            "lab-reverse-a-string",
             "lecture-working-with-common-array-methods",
             "review-javascript-arrays",
             "quiz-javascript-arrays"
@@ -114,6 +113,7 @@
             "lecture-working-with-types-and-objects",
             "lecture-working-with-arrays-variables-and-naming-practices",
             "lecture-working-with-code-quality-and-execution-concepts",
+            "lab-reverse-a-string",
             "lab-largest-number-finder",
             "lab-first-element-finder",
             "lab-slice-and-splice",
