@@ -38,7 +38,7 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
-    SuperBlocks.FullStackDeveloper
+    SuperBlocks.FullStackDeveloperV9
   ];
 
   if (!isDonating && betaCertifications.includes(superBlock))
@@ -178,13 +178,9 @@ function SuperBlockIntro({
     </>
   );
 
-  const isFullStackDeveloper =
-    superBlock === SuperBlocks.FullStackDeveloper ||
-    superBlock === SuperBlocks.FullStackDeveloperV9;
-
   return (
     <>
-      <IntroTopDefault fsd={isFullStackDeveloper} />
+      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}

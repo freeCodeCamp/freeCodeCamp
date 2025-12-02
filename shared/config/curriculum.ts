@@ -22,7 +22,6 @@ export enum SuperBlocks {
   ProjectEuler = 'project-euler',
   CollegeAlgebraPy = 'college-algebra-with-python',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
-  FullStackDeveloper = 'full-stack-developer',
   A2English = 'a2-english-for-developers',
   B1English = 'b1-english-for-developers',
   A1Spanish = 'a1-professional-spanish',
@@ -157,8 +156,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.FullStackDeveloper
+    SuperBlocks.DevPlayground
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -184,7 +182,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -207,7 +204,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -230,7 +226,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FoundationalCSharp,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -252,7 +247,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Portuguese]: [],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -273,7 +267,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -302,7 +295,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.ProjectEuler,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -339,7 +331,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.JsAlgoDataStruct,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -374,7 +365,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.TheOdinProject,
     SuperBlocks.FrontEndDevLibs,
     SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.FullStackDeveloper,
     SuperBlocks.A2English,
     SuperBlocks.B1English,
     SuperBlocks.A1Spanish,
@@ -401,7 +391,6 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
 Object.freeze(notAuditedSuperBlocks);
 
 export const chapterBasedSuperBlocks = [
-  SuperBlocks.FullStackDeveloper,
   SuperBlocks.FullStackOpen,
   SuperBlocks.A1Spanish,
   SuperBlocks.RespWebDesignV9,
