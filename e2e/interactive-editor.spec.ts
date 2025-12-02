@@ -178,4 +178,78 @@ test.describe('Interactive Editor', () => {
       page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
     ).resolves.toBe('false');
   });
+
+  test('should hide console panel in JS-only interactive editor to prevent output duplication', async ({
+    page
+  }) => {
+    await page.route(
+      `**/page-data${challengePath}/page-data.json`,
+      async route => {
+        const response = await route.fetch();
+        const body = await response.text();
+        const pageData = JSON.parse(body) as PageData;
+
+        pageData.result.data.challengeNode.challenge.title = challengeTitle;
+        pageData.result.data.challengeNode.challenge.nodules = [
+          {
+            type: 'paragraph',
+            data: '<p>This challenge has only JavaScript code.</p>'
+          },
+          {
+            type: 'interactiveEditor',
+            data: [
+              {
+                contents: 'console.log("Hello from JS-only editor");',
+                ext: 'js',
+                name: 'script-1',
+                contentsHtml:
+                  '<pre><code class="language-javascript">console.log("Hello from JS-only editor");</code></pre>'
+              }
+            ]
+          }
+        ];
+
+        await route.fulfill({
+          contentType: 'application/json',
+          body: JSON.stringify(pageData)
+        });
+      }
+    );
+
+    await page.goto(challengePath);
+
+    await expect(
+      page.getByRole('heading', { name: challengeTitle })
+    ).toBeVisible();
+    await expect(
+      page.getByText('This challenge has only JavaScript code.')
+    ).toBeVisible();
+
+    // Toggle button should be visible
+    const toggleButton = page.getByRole('button', {
+      name: /interactive editor/i
+    });
+    await expect(toggleButton).toBeVisible();
+
+    // Initially, static code view should be visible
+    await expect(page.getByTestId('sp-interactive-editor')).not.toBeVisible();
+    await expect(
+      page
+        .locator('pre code')
+        .filter({ hasText: 'console.log("Hello from JS-only editor");' })
+    ).toBeVisible();
+
+    // Click the toggle button to show interactive editor
+    await toggleButton.click();
+
+    // Interactive editor should be visible
+    await expect(page.getByTestId('sp-interactive-editor')).toBeVisible();
+    await expect(
+      page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
+    ).resolves.toBe('true');
+
+    // Check that the console is visible and the console wrapper is hidden
+    await expect(page.locator('.sp-console')).toBeVisible();
+    await expect(page.locator('.sp-console-wrapper')).not.toBeVisible();
+  });
 });
