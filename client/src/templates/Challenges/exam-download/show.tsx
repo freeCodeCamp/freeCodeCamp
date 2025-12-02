@@ -255,7 +255,11 @@ function ShowExamDownload({
                   missingPrerequisites={missingPrerequisites}
                 />
               ) : (
-                <Callout className='exam-qualified' variant='info'>
+                <Callout
+                  className='exam-qualified'
+                  variant='note'
+                  label={t('misc.note')}
+                >
                   <p>{t('learn.exam.qualified')}</p>
                 </Callout>
               ))}
