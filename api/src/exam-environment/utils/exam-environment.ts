@@ -255,8 +255,14 @@ export function userAttemptToDatabaseAttemptQuestionSets(
       databaseAttemptQuestionSets.push({
         ...questionSet,
         questions: questionSet.questions.map(q => {
+          // Convert event timestamps into strings
+          const events = q.events.map(e => ({
+            ...e,
+            timestamp: new Date(e.timestamp)
+          }));
           return {
             ...q,
+            events,
             submissionTime: new Date()
           };
         })
@@ -269,10 +275,15 @@ export function userAttemptToDatabaseAttemptQuestionSets(
             lq => lq.id === q.id
           );
 
+          const events = q.events.map(e => ({
+            ...e,
+            timestamp: new Date(e.timestamp)
+          }));
           // If no latest question, add submission time
           if (!latestQuestion) {
             return {
               ...q,
+              events,
               submissionTime: new Date()
             };
           }
@@ -283,6 +294,7 @@ export function userAttemptToDatabaseAttemptQuestionSets(
           ) {
             return {
               ...q,
+              events,
               submissionTime: new Date()
             };
           }

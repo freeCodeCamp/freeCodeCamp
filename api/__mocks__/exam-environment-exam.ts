@@ -7,7 +7,8 @@ import {
   ExamEnvironmentExam,
   ExamEnvironmentGeneratedExam,
   ExamEnvironmentQuestionSet,
-  ExamEnvironmentChallenge
+  ExamEnvironmentChallenge,
+  ExamEnvironmentQuestionEventKind
 } from '@prisma/client';
 import { ObjectId } from 'mongodb';
 import { examEnvironmentPostExamAttempt } from '../src/exam-environment/schemas/index.js';
@@ -255,6 +256,7 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
 export const examAttempt: ExamEnvironmentExamAttempt = {
   examId,
   generatedExamId: generatedExam.id,
+  examModerationId: null,
   id: oid(),
   questionSets: [
     {
@@ -263,7 +265,13 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
           answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
-          submissionTime: new Date()
+          submissionTime: new Date(),
+          events: [
+            {
+              kind: ExamEnvironmentQuestionEventKind.Visit,
+              timestamp: new Date()
+            }
+          ]
         }
       ]
     },
@@ -273,7 +281,13 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
           answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
-          submissionTime: new Date()
+          submissionTime: new Date(),
+          events: [
+            {
+              kind: ExamEnvironmentQuestionEventKind.Visit,
+              timestamp: new Date()
+            }
+          ]
         }
       ]
     },
@@ -283,12 +297,24 @@ export const examAttempt: ExamEnvironmentExamAttempt = {
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
           answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
-          submissionTime: new Date()
+          submissionTime: new Date(),
+          events: [
+            {
+              kind: ExamEnvironmentQuestionEventKind.Visit,
+              timestamp: new Date()
+            }
+          ]
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
           answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
-          submissionTime: new Date()
+          submissionTime: new Date(),
+          events: [
+            {
+              kind: ExamEnvironmentQuestionEventKind.Visit,
+              timestamp: new Date()
+            }
+          ]
         }
       ]
     }
@@ -308,7 +334,11 @@ export const examAttemptSansSubmissionTime: Static<
       questions: [
         {
           id: generatedExam.questionSets[0]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!]
+          answers: [generatedExam.questionSets[0]!.questions[0]!.answers[0]!],
+          events: examAttempt.questionSets[0]!.questions[0]!.events.map(e => ({
+            ...e,
+            timestamp: e.timestamp.toISOString()
+          }))
         }
       ]
     },
@@ -317,7 +347,11 @@ export const examAttemptSansSubmissionTime: Static<
       questions: [
         {
           id: generatedExam.questionSets[1]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!]
+          answers: [generatedExam.questionSets[1]!.questions[0]!.answers[1]!],
+          events: examAttempt.questionSets[1]!.questions[0]!.events.map(e => ({
+            ...e,
+            timestamp: e.timestamp.toISOString()
+          }))
         }
       ]
     },
@@ -326,11 +360,19 @@ export const examAttemptSansSubmissionTime: Static<
       questions: [
         {
           id: generatedExam.questionSets[2]!.questions[0]!.id,
-          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!]
+          answers: [generatedExam.questionSets[2]!.questions[0]!.answers[1]!],
+          events: examAttempt.questionSets[2]!.questions[0]!.events.map(e => ({
+            ...e,
+            timestamp: e.timestamp.toISOString()
+          }))
         },
         {
           id: generatedExam.questionSets[2]!.questions[1]!.id,
-          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!]
+          answers: [generatedExam.questionSets[2]!.questions[1]!.answers[0]!],
+          events: examAttempt.questionSets[2]!.questions[1]!.events.map(e => ({
+            ...e,
+            timestamp: e.timestamp.toISOString()
+          }))
         }
       ]
     }

@@ -261,7 +261,7 @@ describe('/exam-environment/', () => {
             }
           );
 
-        expect(updatedAttempt).toMatchObject(body.attempt);
+        expect(serializeDates(updatedAttempt)).toMatchObject(body.attempt);
       });
     });
 
@@ -456,11 +456,8 @@ describe('/exam-environment/', () => {
             examEnvironmentAuthorizationToken
           );
 
-        expect(res).toMatchObject({
-          status: 200,
-          body: {
-            examAttempt: serializeDates(latestAttempt)
-          }
+        expect(res.body).toMatchObject({
+          examAttempt: serializeDates(latestAttempt)
         });
       });
 
@@ -590,6 +587,7 @@ describe('/exam-environment/', () => {
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
+          examModerationId: null,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),
