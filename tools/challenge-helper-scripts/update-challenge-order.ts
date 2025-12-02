@@ -1,6 +1,6 @@
 import { prompt } from 'inquirer';
 
-import { getMetaData, updateMetaData } from './helpers/project-metadata';
+import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
 
 const updateChallengeOrder = async () => {
   const oldChallengeOrder = getMetaData().challengeOrder;

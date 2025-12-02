@@ -189,7 +189,7 @@ const Module = ({
           </span>
           {t(`intro:${superBlock}.modules.${dashedName}`)}
         </div>
-        <div className='module-button-right'>
+        <div className='module-button-right' data-testid='module-button-right'>
           {!comingSoon && !!totalSteps && (
             <span className='module-steps'>
               {t('learn.steps-completed', {

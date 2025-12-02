@@ -193,6 +193,10 @@ describe('normalize', () => {
         'Unexpected date value: {"date":"123"}'
       );
     });
+
+    test('should handle string numbers', () => {
+      expect(normalizeDate('1696118400000')).toEqual(1696118400000);
+    });
   });
 
   describe('normalizeChallengeType', () => {
