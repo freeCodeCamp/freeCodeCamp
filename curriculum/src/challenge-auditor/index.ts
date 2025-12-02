@@ -1,18 +1,11 @@
-import { readdir } from 'fs/promises';
-import { join, resolve } from 'path';
-
 import { flatten } from 'lodash/fp';
-import { config } from 'dotenv';
 
-const envPath = resolve(__dirname, '../../.env');
-config({ path: envPath });
-
-import { availableLangs } from '../../shared/config/i18n';
-import { getChallengesForLang } from '../../curriculum/src/get-challenges';
+import { availableLangs } from '../../../shared/config/i18n';
+import { getChallengesForLang } from '../get-challenges';
 import {
   SuperBlocks,
   getAuditedSuperBlocks
-} from '../../shared/config/curriculum';
+} from '../../../shared/config/curriculum';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -30,10 +23,6 @@ type ChallengeNode = {
 
 // Adding types for getChallengesForLang is possible, but not worth the effort
 // at this time.
-/* eslint-disable @typescript-eslint/no-unsafe-return */
-/* eslint-disable @typescript-eslint/no-unsafe-argument */
-/* eslint-disable @typescript-eslint/no-unsafe-assignment */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
 
 const getChallenges = async (lang: string) => {
   const curriculum = await getChallengesForLang(lang);
@@ -50,32 +39,9 @@ const getChallenges = async (lang: string) => {
   );
 };
 
-/* eslint-enable @typescript-eslint/no-unsafe-return */
-/* eslint-enable @typescript-eslint/no-unsafe-argument */
-/* eslint-enable @typescript-eslint/no-unsafe-assignment */
-/* eslint-enable @typescript-eslint/no-unsafe-member-access */
-
 void (async () => {
   let actionShouldFail = false;
-  const englishCurriculumDirectory = join(
-    process.cwd(),
-    'curriculum',
-    'challenges',
-    'english'
-  );
-  const englishFilePaths: string[] = [];
-  const englishBlocks = await readdir(englishCurriculumDirectory);
-  for (const englishBlock of englishBlocks) {
-    if (englishBlock.endsWith('.txt')) {
-      continue;
-    }
-    const englishChallenges = await readdir(
-      join(englishCurriculumDirectory, englishBlock)
-    );
-    for (const englishChallenge of englishChallenges) {
-      englishFilePaths.push(join(englishBlock, englishChallenge));
-    }
-  }
+
   const langsToCheck = availableLangs.curriculum.filter(
     lang => String(lang) !== 'english'
   );
