@@ -1,5 +1,4 @@
-import { readdir } from 'fs/promises';
-import { join, resolve } from 'path';
+import { resolve } from 'path';
 
 import { flatten } from 'lodash/fp';
 import { config } from 'dotenv';
@@ -13,7 +12,6 @@ import {
   SuperBlocks,
   getAuditedSuperBlocks
 } from '../../../shared/config/curriculum';
-import { getContentDir } from '../file-handler';
 
 // TODO: re-organise the types to a common 'types' folder that can be shared
 // between the workspaces so we don't have to declare ChallengeNode here and in
@@ -49,20 +47,7 @@ const getChallenges = async (lang: string) => {
 
 void (async () => {
   let actionShouldFail = false;
-  const englishCurriculumDirectory = getContentDir('english');
-  const englishFilePaths: string[] = [];
-  const englishBlocks = await readdir(englishCurriculumDirectory);
-  for (const englishBlock of englishBlocks) {
-    if (englishBlock.endsWith('.txt')) {
-      continue;
-    }
-    const englishChallenges = await readdir(
-      join(englishCurriculumDirectory, englishBlock)
-    );
-    for (const englishChallenge of englishChallenges) {
-      englishFilePaths.push(join(englishBlock, englishChallenge));
-    }
-  }
+
   const langsToCheck = availableLangs.curriculum.filter(
     lang => String(lang) !== 'english'
   );
