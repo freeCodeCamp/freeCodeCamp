@@ -20,7 +20,6 @@ const superblocks = [
   'coding-interview-prep',
   'relational-database',
   'javascript-algorithms-and-data-structures-v8',
-  'full-stack-developer',
   'semantic-html',
   'a2-professional-chinese',
   'b1-english-for-developers',
