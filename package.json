@@ -19,7 +19,7 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "none",
   "scripts": {
-    "audit-challenges": "pnpm run compile:ts && tsx tools/challenge-auditor/index.ts",
+    "audit-challenges": "cd curriculum && pnpm audit-challenges",
     "analyze-bundle": "webpack-bundle-analyzer",
     "prebuild": "npm-run-all compile:ts",
     "build": "npm-run-all -p build:*",
