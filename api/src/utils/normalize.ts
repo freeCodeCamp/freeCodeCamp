@@ -35,7 +35,7 @@ export const normalizeTwitter = (
   try {
     new URL(handleOrUrl);
   } catch {
-    url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
+    url = `https://x.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
 };
