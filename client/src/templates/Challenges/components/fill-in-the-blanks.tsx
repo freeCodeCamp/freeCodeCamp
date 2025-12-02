@@ -136,7 +136,7 @@ function FillInTheBlanks({
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
-      <p className='sr-only'>{t(ariaInputDescription)}</p>
+      <p className='sr-only'>{ariaInputDescription}</p>
       <div className='fill-in-the-blank-wrap'>
         {paragraphs.map((p, i) => (
           // both keys, i and j, are stable between renders, since
