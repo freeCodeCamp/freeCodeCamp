@@ -1,6 +1,6 @@
 {
   "name": "Implement the Depth-First Search Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-depth-first-search",
   "helpCategory": "Python",
   "blockLayout": "link",
@@ -10,6 +10,6 @@
       "title": "Implement the Depth-First Search Algorithm"
     }
   ],
-  "blockType": "lab",
+  "blockLabel": "lab",
   "usesMultifileEditor": true
 }

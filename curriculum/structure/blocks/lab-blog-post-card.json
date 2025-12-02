@@ -7,6 +7,6 @@
     { "id": "66eaddd04a9e533fba689001", "title": "Design a Blog Post Card" }
   ],
   "helpCategory": "HTML-CSS",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link"
 }

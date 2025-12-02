@@ -1,6 +1,6 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
-import { Alert, Spacer } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 
 interface RdbOnaContinueAlertProps {
   course: string;
@@ -10,7 +10,7 @@ function RdbOnaContinueAlert({
   course
 }: RdbOnaContinueAlertProps): JSX.Element {
   return (
-    <Alert variant='info'>
+    <Callout variant='info'>
       <Trans values={{ course }} i18nKey='learn.ona.continue-project'>
         <a href='https://app.ona.com' rel='noopener noreferrer' target='_blank'>
           placeholder
@@ -26,7 +26,7 @@ function RdbOnaContinueAlert({
           placeholder
         </a>
       </Trans>
-    </Alert>
+    </Callout>
   );
 }
 

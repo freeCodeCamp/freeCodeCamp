@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript Certification Exam",
+  "isUpcomingChange": false,
+  "dashedName": "exam-javascript-certification",
+  "helpCategory": "JavaScript",
+  "blockLabel": "exam",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68c462d7dc707f3ca82f8e6d",
+      "title": "JavaScript Certification Exam"
+    }
+  ]
+}

@@ -2,13 +2,13 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/file-handler';
+} from '../../../curriculum/src/file-handler.js';
 import {
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
-} from './create-project';
+} from './create-project.js';
 
-vi.mock('../../../curriculum/file-handler');
+vi.mock('../../../curriculum/src/file-handler');
 
 const mockGetSuperblockStructure = vi.mocked(getSuperblockStructure);
 const mockWriteSuperblockStructure = vi.mocked(writeSuperblockStructure);

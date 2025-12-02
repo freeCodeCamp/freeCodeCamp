@@ -32,10 +32,16 @@ textarea.inputarea {
 }
 
 .breadcrumbs-demo {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  z-index: var(--z-index-breadcrumbs);
   font-size: 16px;
   margin: 0;
   padding: 10px;
   height: var(--breadcrumbs-height);
+  background: var(--secondary-background);
 }
 
 @media screen and (max-height: 300px) {

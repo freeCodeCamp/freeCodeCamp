@@ -3,13 +3,14 @@ id: 657fb5afeeba2de5d01dda0e
 title: Task 81
 challengeType: 19
 dashedName: task-81
+lang: en-US
 ---
 
 <!-- (Audio) Tom: Thanks for the invite, Sarah. I appreciate it, but I'm not really into sci-fi. -->
 
 # --description--
 
-Sometimes people invite their friends to events or activities they enjoy. How you respond to these invitations shows you interest or lack of interest in the event.
+Listen to the audio and answer the question below.
 
 # --questions--
 
@@ -19,7 +20,7 @@ How does Tom respond to Sarah's invitation to the sci-fi convention?
 
 ## --answers--
 
-Accepts immediately
+Accepts immediately.
 
 ### --feedback--
 
@@ -27,11 +28,11 @@ Tom does not accept the invitation. He mentions his lack of interest in sci-fi.
 
 ---
 
-Declines politely
+Declines politely.
 
 ---
 
-Shows disinterest
+Shows disinterest.
 
 ### --feedback--
 
@@ -39,7 +40,7 @@ While Tom expresses a lack of interest, his response is more about declining the
 
 ---
 
-Ignores the invitation
+Ignores the invitation.
 
 ### --feedback--
 

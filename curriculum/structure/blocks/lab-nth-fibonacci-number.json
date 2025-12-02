@@ -1,0 +1,15 @@
+{
+  "name": "Build an Nth Fibonacci Number Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-nth-fibonacci-number",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68de7360e1832ea180577a8a",
+      "title": "Build an Nth Fibonacci Number Calculator"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

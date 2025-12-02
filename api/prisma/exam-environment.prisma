@@ -12,8 +12,7 @@ model ExamEnvironmentExam {
   deprecated    Boolean
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                          @default(2)
-
+  version       Int                          @default(3)
 
   // Relations
   generatedExams           ExamEnvironmentGeneratedExam[]
@@ -84,16 +83,12 @@ type ExamEnvironmentConfig {
   note           String
   /// Category configuration for question selection
   tags           ExamEnvironmentTagConfig[]
-  /// Deprecated: use `totalTimeInS` instead
-  totalTimeInMS  Int
   /// Total time allocated for exam in seconds
-  totalTimeInS   Int?
+  totalTimeInS   Int
   /// Configuration for sets of questions
   questionSets   ExamEnvironmentQuestionSetConfig[]
-  /// Deprecated: use `retakeTimeInS` instead
-  retakeTimeInMS Int
   /// Duration after exam completion before a retake is allowed in seconds
-  retakeTimeInS  Int?
+  retakeTimeInS  Int
   /// Passing percent for the exam
   passingPercent Float
 }
@@ -131,15 +126,12 @@ model ExamEnvironmentExamAttempt {
   /// Foreign key to generated exam id
   generatedExamId String @db.ObjectId
 
-  questionSets  ExamEnvironmentQuestionSetAttempt[]
-  /// Deprecated: Use `startTime` instead
-  startTimeInMS Int
+  questionSets ExamEnvironmentQuestionSetAttempt[]
   /// Time exam was started
-  startTime     DateTime?
+  startTime    DateTime
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version       Int                                 @default(2)
-
+  version      Int                                 @default(3)
 
   // Relations
   user                          user                            @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -155,15 +147,13 @@ type ExamEnvironmentQuestionSetAttempt {
 
 type ExamEnvironmentMultipleChoiceQuestionAttempt {
   /// Foreign key to question
-  id                 String    @db.ObjectId
+  id             String   @db.ObjectId
   /// An array of foreign keys to answers
-  answers            String[]  @db.ObjectId
-  /// Deprecated: Use `submissionTime` instead
-  submissionTimeInMS Int
+  answers        String[] @db.ObjectId
   /// Time answers to question were submitted
   ///
   /// If the question is later revisited, this field is updated
-  submissionTime     DateTime?
+  submissionTime DateTime
 }
 
 /// A generated exam for the Exam Environment App
@@ -179,7 +169,6 @@ model ExamEnvironmentGeneratedExam {
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
   version      Int                                   @default(1)
-
 
   // Relations
   exam           ExamEnvironmentExam          @relation(fields: [examId], references: [id], onDelete: Cascade)
@@ -208,7 +197,6 @@ model ExamEnvironmentChallenge {
 
   version Int @default(1)
 
-
   exam ExamEnvironmentExam @relation(fields: [examId], references: [id], onDelete: Cascade)
 }
 
@@ -219,7 +207,6 @@ model ExamEnvironmentAuthorizationToken {
   expireAt DateTime @db.Date
   userId   String   @unique @db.ObjectId
   version  Int      @default(1)
-
 
   // Relations
   user user @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -238,12 +225,14 @@ model ExamEnvironmentExamModeration {
   /// Foreign key to moderator. This is `null` until the item is moderated.
   moderatorId    String?                             @db.ObjectId
 
-  /// Date the exam attempt was added to the moderation queue
-  submissionDate DateTime @default(now()) @db.Date
+  /// Date the exam attempt expired
+  submissionDate    DateTime @default(now()) @db.Date
+  /// Whether the `challengeId` for the `ExamEnvironmentChallenge` has been awarded to the user
+  challengesAwarded Boolean  @default(false)
+
   /// Version of the record
   /// The default must be incremented by 1, if anything in the schema changes
-  version        Int      @default(1)
-
+  version Int @default(2)
 
   // Relations
   examAttempt ExamEnvironmentExamAttempt @relation(fields: [examAttemptId], references: [id], onDelete: Cascade)

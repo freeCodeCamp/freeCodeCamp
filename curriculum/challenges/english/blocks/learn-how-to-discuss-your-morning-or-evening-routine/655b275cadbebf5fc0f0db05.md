@@ -3,6 +3,7 @@ id: 655b275cadbebf5fc0f0db05
 title: Task 82
 challengeType: 22
 dashedName: task-82
+lang: en-US
 ---
 
 <!-- (Audio) Maria: On Tuesdays, I learn Japanese. I take online lessons at 7. -->

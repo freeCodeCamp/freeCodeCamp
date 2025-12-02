@@ -28,6 +28,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
     githubProfile,
     linkedin,
     twitter,
+    bluesky,
     website,
     isDonating,
     yearsTopContributor,
@@ -85,6 +86,7 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
           githubProfile={githubProfile}
           linkedin={linkedin}
           twitter={twitter}
+          bluesky={bluesky}
           username={username}
           website={website}
         />

@@ -1,8 +1,8 @@
 ---
 id: 66a97ca8c4cbae7d0bb6e0ad
-title: Step 32
+title: Step 29
 challengeType: 0
-dashedName: step-32
+dashedName: step-29
 ---
 
 # --description--
@@ -121,7 +121,7 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
         <fieldset>
           <legend>Personal Information</legend>
           <label for="full-name">Name (required):</label>
-          <input type="text" id="full-name" name="name" placeholder="Ex. John Doe" required size="20">
+          <input type="text" id="full-name" name="name" placeholder="e.g., John Doe" required size="20">
 
           <label for="email">Email address (required):</label>
           <input

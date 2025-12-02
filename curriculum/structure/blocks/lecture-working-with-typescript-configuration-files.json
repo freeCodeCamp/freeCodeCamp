@@ -1,6 +1,6 @@
 {
   "name": "Working with TypeScript Configuration Files",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "isUpcomingChange": true,
   "dashedName": "lecture-working-with-typescript-configuration-files",

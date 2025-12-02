@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 10 to 29 Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-quiz-numbers-10-to-29",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "691a4cc90808d77d2abab730", "title": "Numbers 10 to 29 Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

@@ -41,6 +41,26 @@ export const normalizeTwitter = (
 };
 
 /**
+ * Converts a Bluesky handle or URL to a URL.
+ *
+ * @param handleOrUrl Bluesky handle or URL.
+ * @returns Bluesky URL.
+ */
+export const normalizeBluesky = (
+  handleOrUrl: string | null
+): string | undefined => {
+  if (!handleOrUrl) return undefined;
+
+  let url;
+  try {
+    new URL(handleOrUrl);
+  } catch {
+    url = `https://bsky.app/profile/${handleOrUrl.replace(/^@/, '')}`;
+  }
+  return url ?? handleOrUrl;
+};
+
+/**
  * Normalizes a date value to a timestamp number.
  *
  * @param date An object with a $date string or a number.
@@ -56,9 +76,16 @@ export const normalizeDate = (date?: Prisma.JsonValue): number => {
     typeof date.$date === 'string'
   ) {
     return new Date(date.$date).getTime();
-  } else {
-    throw Error('Unexpected date value: ' + JSON.stringify(date));
+  } else if (typeof date === 'string') {
+    const parsed = Number(date);
+    if (!isNaN(parsed)) {
+      // Number() handles invalid strings e.g. '2023-10-01T00:00:00Z'
+      // parseInt() handles floats
+      return parseInt(String(parsed));
+    }
   }
+
+  throw Error('Unexpected date value: ' + JSON.stringify(date));
 };
 
 /**

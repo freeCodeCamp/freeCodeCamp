@@ -42,7 +42,39 @@ describe('auth0 plugin', () => {
     await fastify.register(prismaPlugin);
   });
 
+  describe('GET /signin/google', () => {
+    test('should redirect directly to Google via Auth0 with connection param', async () => {
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/signin/google'
+      });
+      const redirectUrl = new URL(res.headers.location!);
+      expect(redirectUrl.host).toMatch(AUTH0_DOMAIN);
+      expect(redirectUrl.pathname).toBe('/authorize');
+      expect(redirectUrl.searchParams.get('connection')).toBe('google-oauth2');
+      expect(res.statusCode).toBe(302);
+    });
+
+    test('sets a login-returnto cookie', async () => {
+      const returnTo = 'http://localhost:3000/learn';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/signin/google',
+        headers: { referer: returnTo }
+      });
+      const cookie = res.cookies.find(c => c.name === 'login-returnto');
+      expect(unsign(cookie!.value).value).toBe(returnTo);
+      expect(cookie).toMatchObject({
+        domain: COOKIE_DOMAIN,
+        httpOnly: true,
+        secure: true,
+        sameSite: 'Lax'
+      });
+    });
+  });
+
   afterAll(async () => {
+    await fastify.prisma.$runCommandRaw({ dropDatabase: 1 });
     await fastify.close();
   });
 
@@ -307,6 +339,23 @@ describe('auth0 plugin', () => {
 
       expect(res.headers.location).toBe(
         `${returnTo}?${formatMessage({ type: 'success', content: 'flash.signin-success' })}`
+      );
+    });
+
+    test('should redirect to learn if the user has signed in from the landing page', async () => {
+      mockAuthSuccess();
+
+      const returnTo = 'https://www.freecodecamp.org/';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: {
+          'login-returnto': sign(returnTo)
+        }
+      });
+
+      expect(res.headers.location).toEqual(
+        expect.stringContaining('https://www.freecodecamp.org/learn?')
       );
     });
 

@@ -87,9 +87,9 @@ export default defineConfig({
     // }
   ],
 
-  /* Some tests make the api send emails, so we need mailhog to catch them */
+  /* Some tests make the api send emails, so we need mailpit to catch them */
   webServer: {
-    command: 'docker run -d -p 1025:1025 -p 8025:8025 mailhog/mailhog',
+    command: 'docker run --rm -p 1025:1025 -p 8025:8025 axllent/mailpit',
     port: 1025,
     reuseExistingServer: true,
     timeout: 180000

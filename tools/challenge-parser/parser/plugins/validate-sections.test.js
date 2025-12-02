@@ -85,8 +85,8 @@ id: test
 title: Test
 ---
 
-## --instructions--
-Instructions should be at level 1, not 2.
+## --interactive--
+Interactive should be at level 1, not 2.
 
 ### --seed-contents--
 Seed contents should be at level 2, not 3.
@@ -95,7 +95,7 @@ Seed contents should be at level 2, not 3.
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+      'Invalid heading levels: "## --interactive--" should be "# --interactive--", "### --seed-contents--" should be "## --seed-contents--".'
     );
   });
 
@@ -105,7 +105,7 @@ id: test
 title: Test
 ---
 
-## --instructions--
+## --interactive--
 Wrong level.
 
 # --invalid-marker--
@@ -118,7 +118,7 @@ Wrong level.
     expect(() => {
       processor.runSync(processor.parse(file));
     }).toThrow(
-      'Invalid marker names: "--invalid-marker--".\nInvalid heading levels: "## --instructions--" should be "# --instructions--", "### --seed-contents--" should be "## --seed-contents--".'
+      'Invalid marker names: "--invalid-marker--".\nInvalid heading levels: "## --interactive--" should be "# --interactive--", "### --seed-contents--" should be "## --seed-contents--".'
     );
   });
 

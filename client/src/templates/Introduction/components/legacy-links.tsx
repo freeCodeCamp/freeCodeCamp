@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Callout } from '@freecodecamp/ui';
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { isRelationalDbCert, isExamCert } from '../../../utils/is-a-cert';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
@@ -22,17 +22,17 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       <>
         <CodeAllyDown />
         {clientLocale != 'english' && (
-          <Alert variant='info'>
+          <Callout variant='info'>
             <p>{t('intro:misc-text.english-only')}</p>
-          </Alert>
+          </Callout>
         )}
       </>
     );
   } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
-      <Alert variant='info'>
+      <Callout variant='info'>
         <p>{t('intro:misc-text.exam-english-only')}</p>
-      </Alert>
+      </Callout>
     );
   } else {
     return <OnaNote superBlock={superBlock} />;

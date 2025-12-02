@@ -467,6 +467,14 @@
     {
       "source": "/learn/full-stack-developer/lecture-html-fundamentals/what-is-the-role-of-open-graph-tags",
       "destination": "/learn/full-stack-developer/lecture-understanding-how-html-affects-seo/what-is-the-role-of-open-graph-tags"
+    },
+    {
+      "source": "/learn/full-stack-developer/lab-sum-all-primes-calculator/build-a-sum-all-primes-calculator",
+      "destination": "/learn/full-stack-developer/lab-prime-number-sum-calculator/build-a-prime-number-sum-calculator"
+    },
+    {
+      "source": "/learn/full-stack-developer",
+      "destination": "/learn/full-stack-developer-v9"
     }
   ]
 }
