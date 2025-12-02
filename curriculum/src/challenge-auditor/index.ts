@@ -1,10 +1,4 @@
-import { resolve } from 'path';
-
 import { flatten } from 'lodash/fp';
-import { config } from 'dotenv';
-
-const envPath = resolve(__dirname, '../../../.env');
-config({ path: envPath });
 
 import { availableLangs } from '../../../shared/config/i18n';
 import { getChallengesForLang } from '../get-challenges';
