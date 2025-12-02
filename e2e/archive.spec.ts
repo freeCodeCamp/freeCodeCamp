@@ -26,7 +26,9 @@ test.describe('Archive Page', () => {
   });
 
   test('Links to /learn', async ({ page }) => {
-    const newCurriculumLink = page.locator('a[href="/learn"]');
+    const newCurriculumLink = page.locator(
+      '.archived-warning a[href="/learn"]'
+    );
     await expect(newCurriculumLink).toBeVisible();
   });
 
