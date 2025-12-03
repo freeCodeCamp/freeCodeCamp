@@ -482,4 +482,13 @@ describe('createCertLookup', () => {
       expect(certData).toHaveProperty('challengeType');
     }
   });
+
+  test('each certification should have a unique challenge id', () => {
+    const certLookup = createCertLookup(challenges);
+    const ids = Object.values(certLookup)
+      .map(({ id }) => id)
+      .sort();
+    const uniqueIds = Array.from(new Set(ids)).sort();
+    expect(uniqueIds).toEqual(ids);
+  });
 });
