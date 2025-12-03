@@ -17,6 +17,12 @@ describe('convertToPinyinWithTones', () => {
     expect(convertToPinyinWithTones('ma3')).toBe('mǎ');
     expect(convertToPinyinWithTones('ma4')).toBe('mà');
     expect(convertToPinyinWithTones('ma5')).toBe('ma');
+
+    expect(convertToPinyinWithTones('v1')).toBe('ǖ');
+    expect(convertToPinyinWithTones('v2')).toBe('ǘ');
+    expect(convertToPinyinWithTones('v3')).toBe('ǚ');
+    expect(convertToPinyinWithTones('v4')).toBe('ǜ');
+    expect(convertToPinyinWithTones('v5')).toBe('ü');
   });
 
   test('should convert tone number before final letter', () => {
@@ -219,7 +225,7 @@ describe('PinyinToneInput component', () => {
     }
   });
 
-  test('"should remove final letter before tone mark when backspacing syllables with tone before final letter"', async () => {
+  test('should remove final letter before tone mark when backspacing syllables with tone before final letter', async () => {
     const mockOnChange = vi.fn();
 
     render(
