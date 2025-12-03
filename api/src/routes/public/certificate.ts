@@ -5,7 +5,7 @@ import * as schemas from '../../schemas.js';
 import {
   certSlugTypeMap,
   certToTitleMap,
-  certTypeIdMap,
+  certToIdMap,
   completionHours,
   oldDataVizId
 } from '../../../../shared/config/certification-settings.js';
@@ -52,7 +52,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const certType = certSlugTypeMap[certSlug];
-      const certId = certTypeIdMap[certType];
+      const certId = certToIdMap[certSlug];
       const certTitle = certToTitleMap[certSlug];
       const completionTime = completionHours[certType] || 300;
       const user = await fastify.prisma.user.findFirst({

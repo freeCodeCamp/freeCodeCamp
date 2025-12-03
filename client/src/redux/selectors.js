@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
-  certTypeIdMap,
+  certSlugTypeMap,
   certToTitleMap
 } from '../../../shared-dist/config/certification-settings.js';
 
@@ -231,9 +231,9 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
     ({ id }) => id
   );
 
-  const isClaimedById = Object.entries(certTypeIdMap).reduce(
-    (acc, [userFlag, certId]) => {
-      acc[certId] = Boolean(user[userFlag]);
+  const isClaimedByCert = Object.entries(certSlugTypeMap).reduce(
+    (acc, [cert, userFlag]) => {
+      acc[cert] = Boolean(user[userFlag]);
       return acc;
     },
     {}
@@ -241,9 +241,9 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
 
   const claimable = [];
 
-  for (const { id, projects, certSlug } of liveCerts) {
+  for (const { projects, certSlug } of liveCerts) {
     if (!projects) continue;
-    if (isClaimedById[id]) continue;
+    if (isClaimedByCert[certSlug]) continue;
 
     const projectIds = projects.map(p => p.id);
     const allProjectsComplete = projectIds.every(id =>
