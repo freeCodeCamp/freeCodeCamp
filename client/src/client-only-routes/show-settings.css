@@ -60,3 +60,12 @@
     display: block;
   }
 }
+
+.settings-user-token-heading,
+.settings-danger-zone-heading,
+.settings-exam-token-heading {
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  text-align: center;
+}

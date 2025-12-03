@@ -251,6 +251,7 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               verifyCert={verifyCert}
               isEmailVerified={isEmailVerified}
             />
+            <Spacer size='m' />
           </ScrollElement>
           {userToken && (
             <>
@@ -260,7 +261,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               <Spacer size='m' />
             </>
           )}
-          <Spacer size='m' />
           <ScrollElement name='danger-zone'>
             <DangerZone />
           </ScrollElement>
