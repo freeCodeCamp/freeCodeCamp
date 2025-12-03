@@ -255,6 +255,7 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
 export const examAttempt: ExamEnvironmentExamAttempt = {
   examId,
   generatedExamId: generatedExam.id,
+  examModerationId: null,
   id: oid(),
   questionSets: [
     {
