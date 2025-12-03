@@ -38,27 +38,27 @@ assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('flex'
     </header>
     <div class="flex-container">
       <div class="box">
-        <h3>Box 1</h3>
+        <h2>Box 1</h2>
         <p>Red</p>
       </div>
       <div class="box">
-        <h3>Box 2</h3>
+        <h2>Box 2</h2>
         <p>Orange</p>
       </div>
       <div class="box">
-        <h3>Box 3</h3>
+        <h2>Box 3</h2>
         <p>Yellow</p>
       </div>
       <div class="box">
-        <h3>Box 4</h3>
+        <h2>Box 4</h2>
         <p>Green</p>
       </div>
       <div class="box">
-        <h3>Box 5</h3>
+        <h2>Box 5</h2>
         <p>Blue</p>
       </div>
       <div class="box">
-        <h3>Box 6</h3>
+        <h2>Box 6</h2>
         <p>Indigo</p>
       </div>
     </div>
@@ -77,17 +77,16 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   width: 70%;
-  height: auto;
+  height: 600px;
   padding: 10px;
   margin: 20px auto;
-  height: 400px;
   align-content: space-evenly;
 }
 
 .box {
   flex: 0 1 400px;
   max-height: 120px;
-  color: #fff;
+  color: #000;
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
