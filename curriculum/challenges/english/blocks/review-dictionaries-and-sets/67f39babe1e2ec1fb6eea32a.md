@@ -242,8 +242,8 @@ my_set.clear()
 my_set = {1, 2, 3, 4, 5} 
 your_set = {2, 3, 4, 5}
 
-print(your_set.issubset(my_set)) # True
-print(my_set.issuperset(your_set)) # True
+print(your_set.issubset(my_set)) # False
+print(my_set.issuperset(your_set)) # False
 ```
 
 - **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don't have elements in common.
@@ -255,7 +255,7 @@ print(my_set.isdisjoint(your_set)) # False
 - **Union Operator (`|`)**: The union operator `|` returns a new set with all the elements from both sets.
 
 ```python
-my_set | your_set # {1, 2, 3, 4, 5, 6}
+my_set | your_set # {1, 2, 3, 4, 5, 7}
 ```
 
 - **Intersection Operator (`&`)**: The intersection operator `&` returns a new set with only the elements that the sets have in common.
@@ -273,13 +273,13 @@ my_set - your_set # {1, 5}
 - **Symmetric Difference Operator (`^`)**: The symmetric difference operator `^` returns a new set with the elements that are either on the first or the second set, but not both.
 
 ```python
-my_set ^ your_set # {1, 5, 6}
+my_set ^ your_set # {1, 5, 7}
 ```
 
 - **`in` Operator**: You can check if an element is in a set or not with the `in` operator.
 
 ```python
-print(5 in my_set)
+print(5 in my_set) # True
 ```
 
 ## Python Standard Library
