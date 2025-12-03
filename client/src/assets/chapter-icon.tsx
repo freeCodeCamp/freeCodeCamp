@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  EsA1SpanishChapters,
+  A1SpanishChapters,
   FsdChapters,
-  ZhA1ChineseChapters
+  A1ChineseChapters
 } from '../../../shared-dist/config/chapters';
 import DatabaseIcon from './icons/database';
 import JavaScriptIcon from './icons/javascript';
@@ -43,15 +43,15 @@ const iconMap = {
   [FsdChapters.Bed]: NodeIcon,
   [FsdChapters.BedExam]: Graduation,
   [FsdChapters.FsdExam]: Graduation,
-  [ZhA1ChineseChapters.zhA1Welcome]: faDoorOpen,
-  [ZhA1ChineseChapters.zhA1PinYin]: faCubes,
-  [ZhA1ChineseChapters.zhA1Greetings]: faComments,
-  [ZhA1ChineseChapters.zhA1Family]: faPeopleGroup,
-  [ZhA1ChineseChapters.zhA1Expressing]: faHands,
-  [EsA1SpanishChapters.esA1Welcome]: faDoorOpen,
-  [EsA1SpanishChapters.esA1Fundamentals]: faCubes,
-  [EsA1SpanishChapters.esA1Greetings]: faComments,
-  [EsA1SpanishChapters.esA1Details]: faIdCard
+  [A1ChineseChapters.zhA1Welcome]: faDoorOpen,
+  [A1ChineseChapters.zhA1PinYin]: faCubes,
+  [A1ChineseChapters.zhA1Greetings]: faComments,
+  [A1ChineseChapters.zhA1Family]: faPeopleGroup,
+  [A1ChineseChapters.zhA1Expressing]: faHands,
+  [A1SpanishChapters.esA1Welcome]: faDoorOpen,
+  [A1SpanishChapters.esA1Fundamentals]: faCubes,
+  [A1SpanishChapters.esA1Greetings]: faComments,
+  [A1SpanishChapters.esA1Details]: faIdCard
 };
 
 type ChapterIconProps = {

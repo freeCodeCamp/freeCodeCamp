@@ -27,7 +27,7 @@ export enum FsdChapters {
   RelationalDatabases = 'relational-databases'
 }
 
-export enum ZhA1ChineseChapters {
+export enum A1ChineseChapters {
   zhA1Welcome = 'zh-a1-chapter-welcome-to-a1-professional-chinese',
   zhA1PinYin = 'zh-a1-chapter-pinyin',
   zhA1Greetings = 'zh-a1-chapter-greeting-and-self-introduction',
@@ -35,7 +35,7 @@ export enum ZhA1ChineseChapters {
   zhA1Expressing = 'zh-a1-chapter-expressing-what-you-can-and-cant-do'
 }
 
-export enum EsA1SpanishChapters {
+export enum A1SpanishChapters {
   esA1Welcome = 'es-a1-chapter-welcome-to-a1-professional-spanish',
   esA1Fundamentals = 'es-a1-chapter-spanish-fundamentals',
   esA1Greetings = 'es-a1-chapter-greetings-and-introductions',
