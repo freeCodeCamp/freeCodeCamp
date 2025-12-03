@@ -5,9 +5,9 @@ import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { getChallenges } from '../../utils/get-challenges.js';
 import {
   certIds,
+  Certification,
   certSlugTypeMap,
   certToTitleMap,
-  certTypes,
   currentCertifications,
   legacyCertifications,
   legacyFullStackCertification,
@@ -19,31 +19,6 @@ import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';
 
 import { SHOW_UPCOMING_CHANGES } from '../../utils/env.js';
 import { isKnownCertSlug } from '../helpers/certificate-utils.js';
-
-const {
-  a2EnglishId,
-  legacyFrontEndChallengeId,
-  legacyBackEndChallengeId,
-  legacyDataVisId,
-  legacyInfosecQaId,
-  legacyFullStackId,
-  respWebDesignId,
-  frontEndDevLibsId,
-  javascriptV9Id,
-  jsAlgoDataStructId,
-  jsAlgoDataStructV8Id,
-  dataVis2018Id,
-  apisMicroservicesId,
-  qaV7Id,
-  infosecV7Id,
-  sciCompPyV7Id,
-  dataAnalysisPyV7Id,
-  machineLearningPyV7Id,
-  relationalDatabaseV8Id,
-  respWebDesignV9Id,
-  collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id
-} = certIds;
 
 function isCertAllowed(certSlug: string): boolean {
   if (
@@ -121,50 +96,111 @@ function getCertById(
   return { id, tests, challengeType };
 }
 
-function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
+function createCertLookup(
+  challenges: ReturnType<typeof getChallenges>
+): Record<
+  Certification,
+  { id: string; tests: { id: string }[]; challengeType: number }
+> {
   return {
     // legacy
-    [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, challenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, challenges),
-    [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, challenges),
-    [certTypes.dataVis]: getCertById(legacyDataVisId, challenges),
-    [certTypes.infosecQa]: getCertById(legacyInfosecQaId, challenges),
-    [certTypes.fullStack]: getCertById(legacyFullStackId, challenges),
+    [Certification.LegacyFrontEnd]: getCertById(
+      certIds.legacyFrontEndChallengeId,
+      challenges
+    ),
+    [Certification.JsAlgoDataStruct]: getCertById(
+      certIds.jsAlgoDataStructId,
+      challenges
+    ),
+
+    [Certification.LegacyBackEnd]: getCertById(
+      certIds.legacyBackEndChallengeId,
+      challenges
+    ),
+    [Certification.LegacyDataVis]: getCertById(
+      certIds.legacyDataVisId,
+      challenges
+    ),
+    [Certification.LegacyInfoSecQa]: getCertById(
+      certIds.legacyInfosecQaId,
+      challenges
+    ),
+    [Certification.LegacyFullStack]: getCertById(
+      certIds.legacyFullStackId,
+      challenges
+    ),
 
     // modern
-    [certTypes.respWebDesign]: getCertById(respWebDesignId, challenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, challenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, challenges),
-    [certTypes.jsAlgoDataStructV8]: getCertById(
-      jsAlgoDataStructV8Id,
+    [Certification.RespWebDesign]: getCertById(
+      certIds.respWebDesignId,
       challenges
     ),
-    [certTypes.apisMicroservices]: getCertById(apisMicroservicesId, challenges),
-    [certTypes.qaV7]: getCertById(qaV7Id, challenges),
-    [certTypes.infosecV7]: getCertById(infosecV7Id, challenges),
-    [certTypes.sciCompPyV7]: getCertById(sciCompPyV7Id, challenges),
-    [certTypes.dataAnalysisPyV7]: getCertById(dataAnalysisPyV7Id, challenges),
-    [certTypes.machineLearningPyV7]: getCertById(
-      machineLearningPyV7Id,
+    [Certification.FrontEndDevLibs]: getCertById(
+      certIds.frontEndDevLibsId,
       challenges
     ),
-    [certTypes.relationalDatabaseV8]: getCertById(
-      relationalDatabaseV8Id,
+    [Certification.DataVis]: getCertById(certIds.dataVis2018Id, challenges),
+    [Certification.JsAlgoDataStructNew]: getCertById(
+      certIds.jsAlgoDataStructV8Id,
       challenges
     ),
-    [certTypes.collegeAlgebraPyV8]: getCertById(
-      collegeAlgebraPyV8Id,
+    [Certification.BackEndDevApis]: getCertById(
+      certIds.apisMicroservicesId,
       challenges
     ),
-    [certTypes.foundationalCSharpV8]: getCertById(
-      foundationalCSharpV8Id,
+    [Certification.QualityAssurance]: getCertById(certIds.qaV7Id, challenges),
+    [Certification.InfoSec]: getCertById(certIds.infosecV7Id, challenges),
+    [Certification.SciCompPy]: getCertById(certIds.sciCompPyV7Id, challenges),
+    [Certification.DataAnalysisPy]: getCertById(
+      certIds.dataAnalysisPyV7Id,
       challenges
     ),
-    [certTypes.javascriptV9]: getCertById(javascriptV9Id, challenges),
-    [certTypes.respWebDesignV9]: getCertById(respWebDesignV9Id, challenges),
+    [Certification.MachineLearningPy]: getCertById(
+      certIds.machineLearningPyV7Id,
+      challenges
+    ),
+    [Certification.RelationalDb]: getCertById(
+      certIds.relationalDatabaseV8Id,
+      challenges
+    ),
+    [Certification.CollegeAlgebraPy]: getCertById(
+      certIds.collegeAlgebraPyV8Id,
+      challenges
+    ),
+    [Certification.FoundationalCSharp]: getCertById(
+      certIds.foundationalCSharpV8Id,
+      challenges
+    ),
+
+    [Certification.JsV9]: getCertById(certIds.javascriptV9Id, challenges),
+    [Certification.RespWebDesignV9]: getCertById(
+      certIds.respWebDesignV9Id,
+      challenges
+    ),
+    [Certification.A2English]: getCertById(certIds.a2EnglishId, challenges),
 
     // upcoming
-    [certTypes.a2English]: getCertById(a2EnglishId, challenges)
+    [Certification.FrontEndDevLibsV9]: getCertById(
+      certIds.frontEndLibsV9Id,
+      challenges
+    ),
+    [Certification.PythonV9]: getCertById(certIds.pythonV9Id, challenges),
+    [Certification.RelationalDbV9]: getCertById(
+      certIds.relationalDbV9Id,
+      challenges
+    ),
+    [Certification.BackEndDevApisV9]: getCertById(
+      certIds.backEndDevApisV9Id,
+      challenges
+    ),
+    [Certification.FullStackDeveloperV9]: getCertById(
+      certIds.fullStackDeveloperV9Id,
+      challenges
+    ),
+    [Certification.B1English]: getCertById(certIds.b1EnglishId, challenges),
+    [Certification.A2Spanish]: getCertById(certIds.a2SpanishId, challenges),
+    [Certification.A1Chinese]: getCertById(certIds.a1ChineseId, challenges),
+    [Certification.A2Chinese]: getCertById(certIds.a2ChineseId, challenges)
   };
 }
 
@@ -258,7 +294,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   const challenges = getChallenges();
-  const certTypeIds = createCertTypeIds(challenges);
+  const certLookup = createCertLookup(challenges);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
@@ -347,7 +383,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       }
 
-      const { id, tests, challengeType } = certTypeIds[certType];
+      const { id, tests, challengeType } = certLookup[certSlug];
       const hasCompletedTestRequirements = hasCompletedTests(
         tests,
         user.completedChallenges
