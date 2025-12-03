@@ -155,60 +155,66 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
     };
 
   return (
-    <FullWidthRow key={certSlug}>
-      <Spacer size='m' />
-      <h3 className='text-center'>
-        {t(`certification.title.${Certification.LegacyFullStack}-cert`)}
-      </h3>
-      <div>
-        <p>
-          {t('settings.claim-legacy', {
-            cert: t(`certification.title.${Certification.LegacyFullStack}-cert`)
-          })}
-        </p>
-        <ul>
-          <li>{t(`certification.title.${Certification.RespWebDesign}`)}</li>
-          <li>{t(`certification.title.${Certification.JsAlgoDataStruct}`)}</li>
-          <li>{t(`certification.title.${Certification.FrontEndDevLibs}`)}</li>
-          <li>{t(`certification.title.${Certification.DataVis}`)}</li>
-          <li>{t(`certification.title.${Certification.BackEndDevApis}`)}</li>
-          <li>{t(`certification.title.${Certification.LegacyInfoSecQa}`)}</li>
-        </ul>
-      </div>
+    <Element name={`cert-${certSlug}`}>
+      <FullWidthRow key={certSlug}>
+        <Spacer size='m' />
+        <h3 className='text-center'>
+          {t(`certification.title.${Certification.LegacyFullStack}`)}
+        </h3>
+        <div>
+          <p>
+            {t('settings.claim-legacy', {
+              cert: t(
+                `certification.title.${Certification.LegacyFullStack}-cert`
+              )
+            })}
+          </p>
+          <ul>
+            <li>{t(`certification.title.${Certification.RespWebDesign}`)}</li>
+            <li>
+              {t(`certification.title.${Certification.JsAlgoDataStruct}`)}
+            </li>
+            <li>{t(`certification.title.${Certification.FrontEndDevLibs}`)}</li>
+            <li>{t(`certification.title.${Certification.DataVis}`)}</li>
+            <li>{t(`certification.title.${Certification.BackEndDevApis}`)}</li>
+            <li>{t(`certification.title.${Certification.LegacyInfoSecQa}`)}</li>
+          </ul>
+        </div>
 
-      <div>
-        {isFullStackCert ? (
-          <Button
-            size='small'
-            variant='primary'
-            block={true}
-            href={certLocation}
-            id={'button-' + certSlug}
-            target='_blank'
-          >
-            {t('buttons.show-cert')}{' '}
-            <span className='sr-only'>
-              {t(`certification.title.${Certification.LegacyFullStack}`)}
-            </span>
-          </Button>
-        ) : (
-          <Button
-            size='small'
-            variant='primary'
-            block={true}
-            disabled={!fullStackClaimable}
-            id={'button-' + certSlug}
-            onClick={handleClaim(certSlug)}
-          >
-            {t('buttons.claim-cert')}{' '}
-            <span className='sr-only'>
-              {t(`certification.title.${Certification.LegacyFullStack}`)}
-            </span>
-          </Button>
-        )}
-      </div>
-      <Spacer size='m' />
-    </FullWidthRow>
+        <div>
+          {isFullStackCert ? (
+            <Button
+              size='small'
+              variant='primary'
+              block={true}
+              href={certLocation}
+              id={'button-' + certSlug}
+              target='_blank'
+            >
+              {t('buttons.show-cert')}{' '}
+              <span className='sr-only'>
+                {t(`certification.title.${Certification.LegacyFullStack}`)}
+              </span>
+            </Button>
+          ) : (
+            <Button
+              size='small'
+              variant='primary'
+              block={true}
+              disabled={!fullStackClaimable}
+              id={'button-' + certSlug}
+              onClick={handleClaim(certSlug)}
+            >
+              {t('buttons.claim-cert')}{' '}
+              <span className='sr-only'>
+                {t(`certification.title.${Certification.LegacyFullStack}`)}
+              </span>
+            </Button>
+          )}
+        </div>
+        <Spacer size='m' />
+      </FullWidthRow>
+    </Element>
   );
 };
 
@@ -385,7 +391,9 @@ function CertificationSettings(props: CertificationSettingsProps) {
         <Certification key={cert} certSlug={cert} t={t} />
       ))}
       <Spacer size='m' />
-      <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      <Element name='legacy-certifications'>
+        <SectionHeader>{t('settings.headings.legacy-certs')}</SectionHeader>
+      </Element>
       <LegacyFullStack {...props} />
       {legacyCertifications.map(cert => (
         <Certification key={cert} certSlug={cert} t={t} />
