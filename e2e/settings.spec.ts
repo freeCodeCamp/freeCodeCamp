@@ -232,7 +232,7 @@ test.describe('Settings - Certified User', () => {
     }
 
     // Danger Zone
-    await expect(page.getByText('Danger Zone')).toBeVisible();
+    await expect(page.getByRole('main').getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
         'Please be careful. Changes in this section are permanent.'
