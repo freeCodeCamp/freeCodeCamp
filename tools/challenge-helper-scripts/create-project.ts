@@ -62,6 +62,8 @@ interface CreateProjectArgs {
   position?: number;
   module?: string;
   title?: string;
+  instructionsInEditor?: boolean;
+  includeBlockInTitle?: boolean;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -337,6 +339,20 @@ void getAllBlocks()
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
+        name: 'instructionsInEditor',
+        message:
+          'Should instructions appear inside the editor? (If yes, instructions will render inside the editor pane)',
+        type: 'confirm',
+        default: false
+      },
+      {
+        name: 'includeBlockInTitle',
+        message:
+          'Should the block name be included in challenge titles in the timeline? (e.g. "Block - Step 1")',
+        type: 'confirm',
+        default: false
+      },
+      {
         name: 'questionCount',
         message: 'Choose a question count',
         default: 20,
@@ -414,7 +430,9 @@ void getAllBlocks()
         chapter,
         module,
         position,
-        order
+        order,
+        instructionsInEditor,
+        includeBlockInTitle
       }: CreateProjectArgs) =>
         await createProject({
           superBlock,
@@ -427,7 +445,9 @@ void getAllBlocks()
           chapter,
           module,
           position,
-          order
+          order,
+          instructionsInEditor,
+          includeBlockInTitle
         })
     )
   )
