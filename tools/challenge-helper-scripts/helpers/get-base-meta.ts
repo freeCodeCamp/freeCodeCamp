@@ -12,6 +12,8 @@ interface Meta {
   blockLabel?: string;
   blockLayout?: string;
   order?: number;
+  instructionsInEditor?: boolean;
+  includeBlockInTitle?: boolean;
 }
 
 const baseMeta: Meta = {

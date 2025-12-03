@@ -186,7 +186,9 @@ async function createMetaJson(
   challengeId: ObjectId,
   order?: number,
   blockLabel?: string,
-  blockLayout?: string
+  blockLayout?: string,
+  instructionsInEditor?: boolean,
+  includeBlockInTitle?: boolean
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
@@ -203,6 +205,12 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
+  if (typeof instructionsInEditor === 'boolean') {
+    newMeta.instructionsInEditor = instructionsInEditor;
+  }
+  if (typeof includeBlockInTitle === 'boolean') {
+    newMeta.includeBlockInTitle = includeBlockInTitle;
+  }
 
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
