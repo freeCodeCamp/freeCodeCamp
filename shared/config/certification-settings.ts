@@ -129,38 +129,43 @@ export const certTypes = {
   relationalDatabaseV9: 'isRelationalDatabaseCertV9'
 } as const;
 
-export const certIds = {
-  apisMicroservicesId: '561add10cb82ac38a17523bc',
-  backEndDevApisV9Id: '68e6bd5120effa1586e79857',
-  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
-  dataAnalysisPyV7Id: '5e46fc95ac417301a38fb934',
-  dataVis2018Id: '5a553ca864b52e1d8bceea14',
-  foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  frontEndDevLibsId: '561acd10cb82ac38a17513bc',
-  frontEndLibsV9Id: '68e008aa5f80c6099d47b3a2',
-  fullStackDeveloperV9Id: '64514fda6c245de4d11eb7bb',
-  infosecV7Id: '5e6021435ac9d0ecd8b94b00',
-  jsAlgoDataStructId: '561abd10cb81ac38a17513bc',
-  jsAlgoDataStructV8Id: '658180220947283cdc0689ce',
-  javascriptV9Id: '68c4069c1ef859270e17c495',
-  legacyBackEndChallengeId: '660add10cb82ac38a17513be',
-  legacyDataVisId: '561add10cb82ac39a17513bc',
-  legacyFrontEndChallengeId: '561add10cb82ac38a17513be',
-  legacyFullStackId: '561add10cb82ac38a17213bd',
-  legacyInfosecQaId: '561add10cb82ac38a17213bc',
-  machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
-  pythonV9Id: '68e6bd5020effa1586e79855',
-  respWebDesignId: '561add10cb82ac38a17513bc',
-  respWebDesignV9Id: '68db314d3c11a8bff07c7535',
-  sciCompPyV7Id: '5e44431b903586ffb414c951',
-  qaV7Id: '5e611829481575a52dc59c0e',
-  relationalDatabaseV8Id: '606243f50267e718b1e755f4',
-  relationalDatabaseV9Id: '68e6bd5120effa1586e79856',
-  a2EnglishId: '651dd7e01d697d0aab7833b7',
-  b1EnglishId: '66607e53317411dd5e8aae21',
-  a2SpanishId: '681a6b22e5a782fe3459984a',
-  a1ChineseId: '68f1268149f045a650d4229e',
-  a2ChineseId: '682c3153086dd7cabe7f48bc'
+export const certToIdMap: Record<Certification, string> = {
+  // Legacy certifications
+  [Certification.LegacyFrontEnd]: '561add10cb82ac38a17513be',
+  [Certification.JsAlgoDataStruct]: '561abd10cb81ac38a17513bc',
+  [Certification.LegacyBackEnd]: '660add10cb82ac38a17513be',
+  [Certification.LegacyDataVis]: '561add10cb82ac39a17513bc',
+  [Certification.LegacyInfoSecQa]: '561add10cb82ac38a17213bc',
+  [Certification.LegacyFullStack]: '561add10cb82ac38a17213bd',
+
+  // Current certifications
+  [Certification.RespWebDesign]: '561add10cb82ac38a17513bc',
+  [Certification.JsAlgoDataStructNew]: '658180220947283cdc0689ce',
+  [Certification.FrontEndDevLibs]: '561acd10cb82ac38a17513bc',
+  [Certification.DataVis]: '5a553ca864b52e1d8bceea14',
+  [Certification.BackEndDevApis]: '561add10cb82ac38a17523bc',
+  [Certification.QualityAssurance]: '5e611829481575a52dc59c0e',
+  [Certification.InfoSec]: '5e6021435ac9d0ecd8b94b00',
+  [Certification.SciCompPy]: '5e44431b903586ffb414c951',
+  [Certification.DataAnalysisPy]: '5e46fc95ac417301a38fb934',
+  [Certification.MachineLearningPy]: '5e46fc95ac417301a38fb935',
+  [Certification.RelationalDb]: '606243f50267e718b1e755f4',
+  [Certification.CollegeAlgebraPy]: '61531b20cc9dfa2741a5b800',
+  [Certification.FoundationalCSharp]: '647f7da207d29547b3bee1ba',
+  [Certification.A2English]: '651dd7e01d697d0aab7833b7',
+
+  // Upcoming certifications
+  [Certification.RespWebDesignV9]: '68db314d3c11a8bff07c7535',
+  [Certification.JsV9]: '68c4069c1ef859270e17c495',
+  [Certification.FrontEndDevLibsV9]: '68e008aa5f80c6099d47b3a2',
+  [Certification.PythonV9]: '68e6bd5020effa1586e79855',
+  [Certification.RelationalDbV9]: '68e6bd5120effa1586e79856',
+  [Certification.BackEndDevApisV9]: '68e6bd5120effa1586e79857',
+  [Certification.FullStackDeveloperV9]: '64514fda6c245de4d11eb7bb',
+  [Certification.B1English]: '66607e53317411dd5e8aae21',
+  [Certification.A2Spanish]: '681a6b22e5a782fe3459984a',
+  [Certification.A2Chinese]: '682c3153086dd7cabe7f48bc',
+  [Certification.A1Chinese]: '68f1268149f045a650d4229e'
 };
 
 export const completionHours = {
@@ -254,33 +259,6 @@ export const superBlockCertTypeMap = {
   [SuperBlocks.A2English]: certTypes.a2English,
   [SuperBlocks.PythonV9]: certTypes.pythonV9,
   [SuperBlocks.RelationalDbV9]: certTypes.relationalDatabaseV9
-};
-
-export const certTypeIdMap = {
-  [certTypes.a2English]: certIds.a2EnglishId,
-  [certTypes.apisMicroservices]: certIds.apisMicroservicesId,
-  [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
-  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
-  [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
-  [certTypes.dataVis]: certIds.legacyDataVisId,
-  [certTypes.dataVis2018]: certIds.dataVis2018Id,
-  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
-  [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
-  [certTypes.fullStack]: certIds.legacyFullStackId,
-  [certTypes.infosecQa]: certIds.legacyInfosecQaId,
-  [certTypes.infosecV7]: certIds.infosecV7Id,
-  [certTypes.javascriptV9]: certIds.javascriptV9Id,
-  [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
-  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id,
-  [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
-  [certTypes.pythonV9]: certIds.pythonV9Id,
-  [certTypes.qaV7]: certIds.qaV7Id,
-  [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
-  [certTypes.relationalDatabaseV9]: certIds.relationalDatabaseV9Id,
-  [certTypes.respWebDesign]: certIds.respWebDesignId,
-  [certTypes.respWebDesignV9]: certIds.respWebDesignV9Id,
-  [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id
 };
 
 // TODO: use i18n keys instead of hardcoded titles
