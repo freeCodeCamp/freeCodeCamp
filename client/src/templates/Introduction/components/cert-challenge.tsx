@@ -55,7 +55,6 @@ const CertChallenge = ({
   user
 }: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
-  const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
   const { currentCerts, legacyCerts } = getCertifications(user);
@@ -73,16 +72,13 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  useEffect(() => {
-    const allCerts = [...currentCerts, ...legacyCerts];
+  const allCerts = [...currentCerts, ...legacyCerts];
 
-    setIsCertified(
-      allCerts.find(
-        (cert: { certSlug: Certification }) =>
-          cert.certSlug === superBlockToCertMap[superBlock]
-      )?.show ?? false
-    );
-  }, [currentCerts, legacyCerts, superBlock]);
+  const isCertified =
+    allCerts.find(
+      (cert: { certSlug: Certification }) =>
+        cert.certSlug === superBlockToCertMap[superBlock]
+    )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
 
