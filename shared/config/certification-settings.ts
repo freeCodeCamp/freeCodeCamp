@@ -130,7 +130,6 @@ export const certTypes = {
 } as const;
 
 export const certIds = {
-  a2EnglishId: '651dd7e01d697d0aab7833b7',
   apisMicroservicesId: '561add10cb82ac38a17523bc',
   backEndDevApisV9Id: '68e6bd5120effa1586e79857',
   collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
@@ -151,12 +150,17 @@ export const certIds = {
   legacyInfosecQaId: '561add10cb82ac38a17213bc',
   machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
   pythonV9Id: '68e6bd5020effa1586e79855',
+  respWebDesignId: '561add10cb82ac38a17513bc',
+  respWebDesignV9Id: '68db314d3c11a8bff07c7535',
+  sciCompPyV7Id: '5e44431b903586ffb414c951',
   qaV7Id: '5e611829481575a52dc59c0e',
   relationalDatabaseV8Id: '606243f50267e718b1e755f4',
   relationalDatabaseV9Id: '68e6bd5120effa1586e79856',
-  respWebDesignId: '561add10cb82ac38a17513bc',
-  respWebDesignV9Id: '68db314d3c11a8bff07c7535',
-  sciCompPyV7Id: '5e44431b903586ffb414c951'
+  a2EnglishId: '651dd7e01d697d0aab7833b7',
+  b1EnglishId: '66607e53317411dd5e8aae21',
+  a2SpanishId: '681a6b22e5a782fe3459984a',
+  a1ChineseId: '68f1268149f045a650d4229e',
+  a2ChineseId: '682c3153086dd7cabe7f48bc'
 };
 
 export const completionHours = {
