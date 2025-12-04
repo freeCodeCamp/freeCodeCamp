@@ -7,9 +7,7 @@ dashedName: step-22
 
 # --description--
 
-Let's make the description text a bit larger.
-
-Select the element with the class `description` and set its `font-size` to `1.2rem`.
+The description text needs to be a bit larger. Select the element with the class `description` and set its `font-size` to `1.2rem`.
 
 # --hints--
 
