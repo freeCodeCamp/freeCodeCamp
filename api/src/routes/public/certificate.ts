@@ -54,7 +54,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       const certType = certSlugTypeMap[certSlug];
       const certId = certToIdMap[certSlug];
       const certTitle = certToTitleMap[certSlug];
-      const completionTime = completionHours[certType] || 300;
+      const completionTime = completionHours[certSlug] || 300;
       const user = await fastify.prisma.user.findFirst({
         where: { username },
         select: {
