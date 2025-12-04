@@ -117,6 +117,8 @@ Output:
 for product in products.keys():
     print(product)
 
+# Or
+
 for product in products:
     print(product)
 ```
