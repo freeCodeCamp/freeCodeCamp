@@ -154,7 +154,11 @@ export const certIds = {
   relationalDbV9Id: '68e6bd5120effa1586e79856',
   backEndDevApisV9Id: '68e6bd5120effa1586e79857',
   fullStackDeveloperV9Id: '64514fda6c245de4d11eb7bb',
-  a2EnglishId: '651dd7e01d697d0aab7833b7'
+  a2EnglishId: '651dd7e01d697d0aab7833b7',
+  b1EnglishId: '66607e53317411dd5e8aae21',
+  a2SpanishId: '681a6b22e5a782fe3459984a',
+  a1ChineseId: '68f1268149f045a650d4229e',
+  a2ChineseId: '682c3153086dd7cabe7f48bc'
 };
 
 export const completionHours = {

@@ -2,7 +2,8 @@ import { describe, it, expect } from 'vitest';
 import {
   Certification,
   linkedInCredentialIds,
-  certToTitleMap
+  certToTitleMap,
+  certIds
 } from './certification-settings';
 
 describe('linkedInCredentialIds', () => {
@@ -20,5 +21,14 @@ describe('certToTitleMap', () => {
     const uniqueTitles = Array.from(new Set(titles));
 
     expect(titles.length).toBe(uniqueTitles.length);
+  });
+});
+
+describe('certIds', () => {
+  it('should have no duplicate values', () => {
+    const ids = Object.values(certIds).sort();
+    const uniqueIds = Array.from(new Set(ids)).sort();
+
+    expect(uniqueIds).toEqual(ids);
   });
 });
