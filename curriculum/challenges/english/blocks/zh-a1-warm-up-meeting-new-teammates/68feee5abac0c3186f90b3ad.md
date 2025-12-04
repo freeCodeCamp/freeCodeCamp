@@ -52,7 +52,7 @@ The initial of the second syllable is different from what you hear in the audio.
 
 # --explanation--
 
-Wang Hua is saying `míng zi`. The first syllable uses a nasal final `ng` and has a rising tone. The second syllable uses the `z` initial and a neutral tone, pronounced lightly.
+Wang Hua is saying `míng zi`. The first syllable has a nasal final `ing` and a rising tone. The second syllable is a whole syllable with a neutral tone, pronounced lightly.
 
 # --scene--
 
