@@ -4,9 +4,9 @@ import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 
 import { getChallenges } from '../../utils/get-challenges.js';
 import {
-  certIds,
   Certification,
   certSlugTypeMap,
+  certToIdMap,
   certToTitleMap,
   currentCertifications,
   legacyCertifications,
@@ -83,10 +83,11 @@ function assertTestsExist(
   }
 }
 
-function getCertById(
-  challengeId: string,
+function getCertBySlug(
+  cert: Certification,
   challenges: ReturnType<typeof getChallenges>
 ): { id: string; tests: { id: string }[]; challengeType: number } {
+  const challengeId = certToIdMap[cert];
   const challengeById = challenges.filter(({ id }) => id === challengeId)[0];
   if (!challengeById) {
     throw new Error(`Challenge with id '${challengeId}' not found`);
@@ -96,112 +97,28 @@ function getCertById(
   return { id, tests, challengeType };
 }
 
-function createCertLookup(
-  challenges: ReturnType<typeof getChallenges>
-): Record<
+type CertLookup = Record<
   Certification,
   { id: string; tests: { id: string }[]; challengeType: number }
-> {
-  return {
-    // legacy
-    [Certification.LegacyFrontEnd]: getCertById(
-      certIds.legacyFrontEndChallengeId,
-      challenges
-    ),
-    [Certification.JsAlgoDataStruct]: getCertById(
-      certIds.jsAlgoDataStructId,
-      challenges
-    ),
+>;
 
-    [Certification.LegacyBackEnd]: getCertById(
-      certIds.legacyBackEndChallengeId,
-      challenges
-    ),
-    [Certification.LegacyDataVis]: getCertById(
-      certIds.legacyDataVisId,
-      challenges
-    ),
-    [Certification.LegacyInfoSecQa]: getCertById(
-      certIds.legacyInfosecQaId,
-      challenges
-    ),
-    [Certification.LegacyFullStack]: getCertById(
-      certIds.legacyFullStackId,
-      challenges
-    ),
+/**
+ * Create a lookup from Certification enum values to their corresponding
+ * challenge metadata (id, tests and challengeType) using the provided
+ * challenges array.
+ *
+ * @param challenges - The array returned by getChallenges().
+ * @returns A record mapping each Certification to an object with id, tests and challengeType.
+ */
+export function createCertLookup(
+  challenges: ReturnType<typeof getChallenges>
+): CertLookup {
+  const certLookup = {} as CertLookup;
 
-    // modern
-    [Certification.RespWebDesign]: getCertById(
-      certIds.respWebDesignId,
-      challenges
-    ),
-    [Certification.FrontEndDevLibs]: getCertById(
-      certIds.frontEndDevLibsId,
-      challenges
-    ),
-    [Certification.DataVis]: getCertById(certIds.dataVis2018Id, challenges),
-    [Certification.JsAlgoDataStructNew]: getCertById(
-      certIds.jsAlgoDataStructV8Id,
-      challenges
-    ),
-    [Certification.BackEndDevApis]: getCertById(
-      certIds.apisMicroservicesId,
-      challenges
-    ),
-    [Certification.QualityAssurance]: getCertById(certIds.qaV7Id, challenges),
-    [Certification.InfoSec]: getCertById(certIds.infosecV7Id, challenges),
-    [Certification.SciCompPy]: getCertById(certIds.sciCompPyV7Id, challenges),
-    [Certification.DataAnalysisPy]: getCertById(
-      certIds.dataAnalysisPyV7Id,
-      challenges
-    ),
-    [Certification.MachineLearningPy]: getCertById(
-      certIds.machineLearningPyV7Id,
-      challenges
-    ),
-    [Certification.RelationalDb]: getCertById(
-      certIds.relationalDatabaseV8Id,
-      challenges
-    ),
-    [Certification.CollegeAlgebraPy]: getCertById(
-      certIds.collegeAlgebraPyV8Id,
-      challenges
-    ),
-    [Certification.FoundationalCSharp]: getCertById(
-      certIds.foundationalCSharpV8Id,
-      challenges
-    ),
-
-    [Certification.JsV9]: getCertById(certIds.javascriptV9Id, challenges),
-    [Certification.RespWebDesignV9]: getCertById(
-      certIds.respWebDesignV9Id,
-      challenges
-    ),
-    [Certification.A2English]: getCertById(certIds.a2EnglishId, challenges),
-
-    // upcoming
-    [Certification.FrontEndDevLibsV9]: getCertById(
-      certIds.frontEndLibsV9Id,
-      challenges
-    ),
-    [Certification.PythonV9]: getCertById(certIds.pythonV9Id, challenges),
-    [Certification.RelationalDbV9]: getCertById(
-      certIds.relationalDbV9Id,
-      challenges
-    ),
-    [Certification.BackEndDevApisV9]: getCertById(
-      certIds.backEndDevApisV9Id,
-      challenges
-    ),
-    [Certification.FullStackDeveloperV9]: getCertById(
-      certIds.fullStackDeveloperV9Id,
-      challenges
-    ),
-    [Certification.B1English]: getCertById(certIds.b1EnglishId, challenges),
-    [Certification.A2Spanish]: getCertById(certIds.a2SpanishId, challenges),
-    [Certification.A1Chinese]: getCertById(certIds.a1ChineseId, challenges),
-    [Certification.A2Chinese]: getCertById(certIds.a2ChineseId, challenges)
-  };
+  for (const cert of Object.values(Certification)) {
+    certLookup[cert] = getCertBySlug(cert, challenges);
+  }
+  return certLookup;
 }
 
 interface CertI {

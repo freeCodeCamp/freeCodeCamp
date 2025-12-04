@@ -16,6 +16,8 @@ import {
   setupServer,
   superRequest
 } from '../../../vitest.utils.js';
+import { getChallenges } from '../../utils/get-challenges.js';
+import { createCertLookup } from './certificate.js';
 
 describe('certificate routes', () => {
   setupServer();
@@ -459,5 +461,34 @@ describe('certificate routes', () => {
         expect(response.status).toBe(500);
       });
     });
+  });
+});
+
+describe('createCertLookup', () => {
+  let challenges: ReturnType<typeof getChallenges>;
+
+  beforeAll(() => {
+    // TODO: create a mock challenges array specific to these tests.
+    challenges = getChallenges();
+  });
+
+  test('should create a lookup for all certifications', () => {
+    const certLookup = createCertLookup(challenges);
+
+    for (const cert of Object.values(Certification)) {
+      const certData = certLookup[cert];
+      expect(certData).toHaveProperty('id');
+      expect(certData).toHaveProperty('tests');
+      expect(certData).toHaveProperty('challengeType');
+    }
+  });
+
+  test('each certification should have a unique challenge id', () => {
+    const certLookup = createCertLookup(challenges);
+    const ids = Object.values(certLookup)
+      .map(({ id }) => id)
+      .sort();
+    const uniqueIds = Array.from(new Set(ids)).sort();
+    expect(uniqueIds).toEqual(ids);
   });
 });

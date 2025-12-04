@@ -590,6 +590,7 @@ describe('/exam-environment/', () => {
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
+          examModerationId: null,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),
