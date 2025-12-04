@@ -5,8 +5,8 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
+  type Certification,
+  superBlockToCertMap
 } from '../../../../../shared-dist/config/certification-settings';
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 
@@ -73,22 +73,16 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
-
   useEffect(() => {
     const allCerts = [...currentCerts, ...legacyCerts];
 
     setIsCertified(
       allCerts.find(
-        (cert: { certSlug: string }) =>
-          certSlugTypeMapTyped[cert.certSlug] ===
-          superBlockCertTypeMapTyped[superBlock]
+        (cert: { certSlug: Certification }) =>
+          cert.certSlug === superBlockToCertMap[superBlock]
       )?.show ?? false
     );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCerts, legacyCerts]);
+  }, [currentCerts, legacyCerts, superBlock]);
 
   const certLocation = `/certification/${username}/${certSlug}`;
 

@@ -17,7 +17,6 @@ import { FullWidthRow, Link } from '../helpers';
 import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
-  certSlugTypeMap,
   currentCertifications,
   legacyCertifications,
   upcomingCertifications
@@ -145,8 +144,7 @@ const LegacyFullStack = (props: CertificationSettingsProps) => {
   const certLocation = `/certification/${username}/${certSlug}`;
 
   const handleClaim =
-    (certSlug: keyof typeof certSlugTypeMap) =>
-    (e: MouseEvent<HTMLButtonElement>) => {
+    (certSlug: Certification) => (e: MouseEvent<HTMLButtonElement>) => {
       e.preventDefault();
 
       return isHonest

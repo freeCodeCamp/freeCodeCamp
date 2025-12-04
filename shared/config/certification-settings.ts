@@ -102,7 +102,7 @@ export const upcomingCertifications = [
   Certification.A1Chinese
 ] as const;
 
-export const certTypes = {
+const certTypes = {
   frontEnd: 'isFrontEndCert',
   backEnd: 'isBackEndCert',
   dataVis: 'isDataVisCert',
@@ -228,38 +228,6 @@ export const certSlugTypeMap = {
   // upcoming
   [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
   [Certification.JsV9]: certTypes.javascriptV9
-};
-
-export const superBlockCertTypeMap = {
-  // legacy
-  'legacy-front-end': certTypes.frontEnd,
-  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
-  'legacy-back-end': certTypes.backEnd,
-  'legacy-data-visualization': certTypes.dataVis,
-  'information-security-and-quality-assurance': certTypes.infosecQa,
-  'full-stack': certTypes.fullStack,
-
-  // modern
-  [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
-  [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
-  [SuperBlocks.DataVis]: certTypes.dataVis2018,
-  [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
-  [SuperBlocks.QualityAssurance]: certTypes.qaV7,
-  [SuperBlocks.InfoSec]: certTypes.infosecV7,
-  [SuperBlocks.SciCompPy]: certTypes.sciCompPyV7,
-  [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
-  [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
-  [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-
-  // post-modern
-  // TODO: use enum
-  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-
-  // upcoming
-  [SuperBlocks.A2English]: certTypes.a2English
 };
 
 // TODO: use i18n keys instead of hardcoded titles
