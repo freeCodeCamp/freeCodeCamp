@@ -102,31 +102,6 @@ export const upcomingCertifications = [
   Certification.A1Chinese
 ] as const;
 
-const certTypes = {
-  frontEnd: 'isFrontEndCert',
-  backEnd: 'isBackEndCert',
-  dataVis: 'isDataVisCert',
-  respWebDesign: 'isRespWebDesignCert',
-  respWebDesignV9: 'isRespWebDesignCertV9',
-  frontEndDevLibs: 'isFrontEndLibsCert',
-  dataVis2018: 'is2018DataVisCert',
-  jsAlgoDataStruct: 'isJsAlgoDataStructCert',
-  apisMicroservices: 'isApisMicroservicesCert',
-  infosecQa: 'isInfosecQaCert',
-  qaV7: 'isQaCertV7',
-  infosecV7: 'isInfosecCertV7',
-  sciCompPyV7: 'isSciCompPyCertV7',
-  dataAnalysisPyV7: 'isDataAnalysisPyCertV7',
-  machineLearningPyV7: 'isMachineLearningPyCertV7',
-  fullStack: 'isFullStackCert',
-  relationalDatabaseV8: 'isRelationalDatabaseCertV8',
-  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
-  javascriptV9: 'isJavascriptCertV9',
-  a2English: 'isA2EnglishCert'
-} as const;
-
 export const certToIdMap: Record<Certification, string> = {
   // Legacy certifications
   [Certification.LegacyFrontEnd]: '561add10cb82ac38a17513be',
@@ -202,33 +177,33 @@ export const completionHours: Record<Certification, number> = {
 
 export const certSlugTypeMap = {
   // legacy
-  [Certification.LegacyFrontEnd]: certTypes.frontEnd,
-  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
-  [Certification.LegacyBackEnd]: certTypes.backEnd,
-  [Certification.LegacyDataVis]: certTypes.dataVis,
-  [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
-  [Certification.LegacyFullStack]: certTypes.fullStack,
+  [Certification.LegacyFrontEnd]: 'isFrontEndCert',
+  [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
+  [Certification.LegacyBackEnd]: 'isBackEndCert',
+  [Certification.LegacyDataVis]: 'isDataVisCert',
+  [Certification.LegacyInfoSecQa]: 'isInfosecQaCert',
+  [Certification.LegacyFullStack]: 'isFullStackCert',
 
   // modern
-  [Certification.RespWebDesign]: certTypes.respWebDesign,
-  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
-  [Certification.FrontEndDevLibs]: certTypes.frontEndDevLibs,
-  [Certification.DataVis]: certTypes.dataVis2018,
-  [Certification.BackEndDevApis]: certTypes.apisMicroservices,
-  [Certification.QualityAssurance]: certTypes.qaV7,
-  [Certification.InfoSec]: certTypes.infosecV7,
-  [Certification.SciCompPy]: certTypes.sciCompPyV7,
-  [Certification.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
-  [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
-  [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [Certification.A2English]: certTypes.a2English,
+  [Certification.RespWebDesign]: 'isRespWebDesignCert',
+  [Certification.JsAlgoDataStructNew]: 'isJsAlgoDataStructCertV8',
+  [Certification.FrontEndDevLibs]: 'isFrontEndLibsCert',
+  [Certification.DataVis]: 'is2018DataVisCert',
+  [Certification.BackEndDevApis]: 'isApisMicroservicesCert',
+  [Certification.QualityAssurance]: 'isQaCertV7',
+  [Certification.InfoSec]: 'isInfosecCertV7',
+  [Certification.SciCompPy]: 'isSciCompPyCertV7',
+  [Certification.DataAnalysisPy]: 'isDataAnalysisPyCertV7',
+  [Certification.MachineLearningPy]: 'isMachineLearningPyCertV7',
+  [Certification.RelationalDb]: 'isRelationalDatabaseCertV8',
+  [Certification.CollegeAlgebraPy]: 'isCollegeAlgebraPyCertV8',
+  [Certification.FoundationalCSharp]: 'isFoundationalCSharpCertV8',
+  [Certification.A2English]: 'isA2EnglishCert',
 
   // upcoming
-  [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
-  [Certification.JsV9]: certTypes.javascriptV9
-};
+  [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
+  [Certification.JsV9]: 'isJavascriptCertV9'
+} as const;
 
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
