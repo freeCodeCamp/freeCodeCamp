@@ -18,7 +18,8 @@ In this example we are using the `innerHTML` to automatically convert the uncode
 You should set the `errorElement`'s `innerHTML` to `"\u26A0 "` plus the error message if there is an `InvalidUserInputError`. 
 
 ```js
-
+uploadNewCard(); 
+assert.strictEqual(errorElement.innerHTML, "\u26A0 Front text cannot be empty.")
 ```
 
 You should log to the console `"An unexpected error occurred:"` plus the exception's string representation if there is an unknown error.
@@ -982,7 +983,6 @@ function uploadNewCard(): void {
   catch(ex)
   {
     if (ex instanceof InvalidUserInputError) {
-        errorElement.textContent = "⚠️ " + ex.message;
         errorElement.innerHTML = "\u26A0 " + ex.message;
     } else {
       console.error("An unexpected error occurred:", ex);
