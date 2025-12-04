@@ -86,6 +86,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     }
     void updateChapterModuleSuperblockStructure(
       projectArgs.block,
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
       { order: position - 1, chapter, module },
       superblockFilename
     );
