@@ -6,7 +6,7 @@ import { getChallenges } from '../../utils/get-challenges.js';
 import {
   certIds,
   certSlugTypeMap,
-  certTypeTitleMap,
+  certToTitleMap,
   certTypes,
   currentCertifications,
   legacyCertifications,
@@ -298,7 +298,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const certType = certSlugTypeMap[certSlug];
-      const certName = certTypeTitleMap[certType];
+      const certName = certToTitleMap[certSlug];
 
       const user = await fastify.prisma.user.findUnique({
         where: { id: req.user?.id }
