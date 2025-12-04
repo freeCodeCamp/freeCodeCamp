@@ -63,7 +63,7 @@ export function ChapterIcon(props: ChapterIconProps): JSX.Element {
   const Icon = iconMap[chapter] ?? ResponsiveDesign;
 
   if (typeof Icon === 'object') {
-    return <FontAwesomeIcon icon={Icon} />;
+    return <FontAwesomeIcon icon={Icon} size='lg' />;
   }
 
   return <Icon {...iconProps} />;
