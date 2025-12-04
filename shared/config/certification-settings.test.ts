@@ -3,7 +3,7 @@ import {
   Certification,
   linkedInCredentialIds,
   certToTitleMap,
-  certIds
+  certToIdMap
 } from './certification-settings';
 
 describe('linkedInCredentialIds', () => {
@@ -24,9 +24,9 @@ describe('certToTitleMap', () => {
   });
 });
 
-describe('certIds', () => {
+describe('certToIdMap', () => {
   it('should have no duplicate values', () => {
-    const ids = Object.values(certIds).sort();
+    const ids = Object.values(certToIdMap).sort();
     const uniqueIds = Array.from(new Set(ids)).sort();
 
     expect(uniqueIds).toEqual(ids);
