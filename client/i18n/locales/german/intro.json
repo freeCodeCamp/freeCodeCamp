@@ -311,7 +311,7 @@
       "build-an-rpg-creature-search-app-project": {
         "title": "Build an RPG Creature Search App Project",
         "intro": [
-          "This is one of the required projects to earn your certification.",
+          "Dies ist eines der Projekte, die für den Erhalt der Zertifizierung erforderlich sind.",
           "For this project, you will build an RPG creature search app."
         ]
       },
@@ -7745,6 +7745,7 @@
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
