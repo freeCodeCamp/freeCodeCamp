@@ -498,10 +498,10 @@ class FlashCardController {
 
   constructor() {
   this.elements = {
-      flashcard: document.querySelector<HTMLElement>(".flashcard"),
-      flipBtn: document.querySelector<HTMLButtonElement>("#flip-btn"),
-      entryForm: document.querySelector<HTMLFormElement>(".entry-form"),
-      deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn"),
+      flashcard: document.querySelector<HTMLElement>(".flashcard")!,
+      flipBtn: document.querySelector<HTMLButtonElement>("#flip-btn")!,
+      entryForm: document.querySelector<HTMLFormElement>(".entry-form")!,
+      deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn")!,
     };
 
   }
@@ -1001,10 +1001,10 @@ class FlashCardController {
 
   constructor() {
   this.elements = {
-      flashcard: document.querySelector<HTMLElement>(".flashcard"),
-      flipBtn: document.querySelector<HTMLButtonElement>("#flip-btn"),
-      entryForm: document.querySelector<HTMLFormElement>(".entry-form"),
-      deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn"),
+      flashcard: document.querySelector<HTMLElement>(".flashcard")!,
+      flipBtn: document.querySelector<HTMLButtonElement>("#flip-btn")!,
+      entryForm: document.querySelector<HTMLFormElement>(".entry-form")!,
+      deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn")!,
     };
 
   }
