@@ -6,6 +6,8 @@ import { parseBlanks, parseAnswer } from '../fill-in-the-blank/parse-blanks';
 import PrismFormatted from '../components/prism-formatted';
 import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
+import PinyinToHanziInput from './pinyin-to-hanzi-input';
+import PinyinToneInput from './pinyin-tone-input';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
@@ -33,8 +35,75 @@ const AnswerText = ({ answer }: { answer: string }) => {
   );
 };
 
+type BlankInputProps = {
+  blankIndex: number;
+  answer: string;
+  isCorrect: boolean | null;
+  className: string;
+  onChange: (index: number, value: string) => void;
+  ariaLabel: string;
+  inputType?: 'pinyin-to-hanzi' | 'pinyin-tone';
+};
+
+const BlankInput = ({
+  blankIndex,
+  answer,
+  isCorrect,
+  className,
+  onChange,
+  ariaLabel,
+  inputType
+}: BlankInputProps) => {
+  const parsedAnswer = parseAnswer(answer);
+  const answerLength =
+    typeof parsedAnswer === 'string'
+      ? parsedAnswer.length
+      : parsedAnswer.pinyin.length;
+
+  if (inputType === 'pinyin-to-hanzi' && typeof parsedAnswer === 'object') {
+    return (
+      <PinyinToHanziInput
+        index={blankIndex}
+        expectedAnswer={parsedAnswer}
+        isCorrect={isCorrect}
+        onChange={onChange}
+        className={className}
+        maxLength={answerLength + 3}
+        size={answerLength}
+        ariaLabel={ariaLabel}
+      />
+    );
+  } else if (inputType === 'pinyin-tone' && typeof parsedAnswer === 'string') {
+    return (
+      <PinyinToneInput
+        index={blankIndex}
+        isCorrect={isCorrect}
+        onChange={onChange}
+        className={className}
+        maxLength={answerLength + 3}
+        size={answerLength}
+        ariaLabel={ariaLabel}
+      />
+    );
+  }
+
+  // Default text input
+  return (
+    <input
+      type='text'
+      maxLength={answerLength + 3}
+      className={className}
+      onChange={e => onChange(blankIndex, e.target.value)}
+      size={answerLength}
+      autoComplete='off'
+      aria-label={ariaLabel}
+      {...(isCorrect === false ? { 'aria-invalid': 'true' } : {})}
+    />
+  );
+};
+
 function FillInTheBlanks({
-  fillInTheBlank: { sentence, blanks },
+  fillInTheBlank: { sentence, blanks, inputType },
   answersCorrect,
   showFeedback,
   feedback,
@@ -53,76 +122,65 @@ function FillInTheBlanks({
     return cls;
   };
 
-  const getAnswerLength = (answer: string): number => {
-    const parsedAnswer = parseAnswer(answer);
-
-    if (typeof parsedAnswer === 'string') {
-      return parsedAnswer.length;
-    }
-
-    // TODO: This is a simplification. Revisit later to account for tones and spaces.
-    return parsedAnswer.pinyin.length;
-  };
-
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
+
+  const ariaInputDescription =
+    inputType === 'pinyin-to-hanzi'
+      ? t('aria.pinyin-to-hanzi-input-desc')
+      : inputType === 'pinyin-tone'
+        ? t('aria.pinyin-tone-input-desc')
+        : '';
 
   return (
     <>
       <ChallengeHeading heading={t('learn.fill-in-the-blank.heading')} />
       <Spacer size='xs' />
+      <p className='sr-only'>{ariaInputDescription}</p>
       <div className='fill-in-the-blank-wrap'>
-        {paragraphs.map((p, i) => {
-          return (
-            // both keys, i and j, are stable between renders, since
-            // the paragraphs are static.
-            <p key={i}>
-              {p.map((node, j) => {
-                const { type, value } = node;
-                if (type === 'text') {
-                  return value;
-                }
+        {paragraphs.map((p, i) => (
+          // both keys, i and j, are stable between renders, since
+          // the paragraphs are static.
+          <p key={i}>
+            {p.map((node, j) => {
+              const { type, value } = node;
 
-                if (type === 'hanzi-pinyin') {
-                  const { hanzi, pinyin } = value;
-                  return (
-                    <ruby key={j}>
-                      {hanzi}
-                      <rp>(</rp>
-                      <rt>{pinyin}</rt>
-                      <rp>)</rp>
-                    </ruby>
-                  );
-                }
+              if (type === 'text') {
+                return value;
+              }
 
-                // If a blank is answered correctly, render the answer as part of the sentence.
-                if (type === 'blank' && answersCorrect[value] === true) {
-                  return <AnswerText key={j} answer={blankAnswers[value]} />;
-                }
-
-                const answerLength = getAnswerLength(blankAnswers[value]);
-
+              if (type === 'hanzi-pinyin') {
+                const { hanzi, pinyin } = value;
                 return (
-                  <input
-                    key={j}
-                    type='text'
-                    maxLength={answerLength + 3}
-                    className={getInputClass(value)}
-                    onChange={e =>
-                      handleInputChange(node.value, e.target.value)
-                    }
-                    size={answerLength}
-                    autoComplete='off'
-                    aria-label={t('learn.fill-in-the-blank.blank')}
-                    {...(answersCorrect[value] === false
-                      ? { 'aria-invalid': 'true' }
-                      : {})}
-                  />
+                  <ruby key={j}>
+                    {hanzi}
+                    <rp>(</rp>
+                    <rt>{pinyin}</rt>
+                    <rp>)</rp>
+                  </ruby>
                 );
-              })}
-            </p>
-          );
-        })}
+              }
+
+              // If a blank is answered correctly, render the answer as part of the sentence.
+              if (answersCorrect[value] === true) {
+                return <AnswerText key={j} answer={blankAnswers[value]} />;
+              }
+
+              return (
+                <BlankInput
+                  key={j}
+                  blankIndex={value}
+                  answer={blankAnswers[value]}
+                  isCorrect={answersCorrect[value]}
+                  className={getInputClass(value)}
+                  onChange={handleInputChange}
+                  ariaLabel={t('learn.fill-in-the-blank.blank')}
+                  inputType={inputType}
+                />
+              );
+            })}
+          </p>
+        ))}
       </div>
       <Spacer size='m' />
       <div aria-live='polite'>

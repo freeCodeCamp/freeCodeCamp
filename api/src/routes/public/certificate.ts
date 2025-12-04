@@ -4,7 +4,7 @@ import { find } from 'lodash-es';
 import * as schemas from '../../schemas.js';
 import {
   certSlugTypeMap,
-  certTypeTitleMap,
+  certToTitleMap,
   certTypeIdMap,
   completionHours,
   oldDataVizId
@@ -53,7 +53,7 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
 
       const certType = certSlugTypeMap[certSlug];
       const certId = certTypeIdMap[certType];
-      const certTitle = certTypeTitleMap[certType];
+      const certTitle = certToTitleMap[certSlug];
       const completionTime = completionHours[certType] || 300;
       const user = await fastify.prisma.user.findFirst({
         where: { username },
@@ -182,16 +182,15 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user[certType]) {
-        const cert = certTypeTitleMap[certType];
         logger.info(
-          `User ${username} has not completed the ${cert} certification.`
+          `User ${username} has not completed the ${certTitle} certification.`
         );
         return reply.send({
           messages: [
             {
               type: 'info',
               message: 'flash.user-not-certified',
-              variables: { username, cert }
+              variables: { username, cert: certTitle }
             }
           ]
         });

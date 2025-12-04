@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { Certification, linkedInCredentialIds } from './certification-settings';
+import {
+  Certification,
+  linkedInCredentialIds,
+  certToTitleMap
+} from './certification-settings';
 
 describe('linkedInCredentialIds', () => {
   it('should contain a value for all certifications', () => {
@@ -7,5 +11,14 @@ describe('linkedInCredentialIds', () => {
     const linkedInCredentialIdsKeys = Object.keys(linkedInCredentialIds).sort();
 
     expect(linkedInCredentialIdsKeys).toEqual(allCertifications);
+  });
+});
+
+describe('certToTitleMap', () => {
+  it('should not contain duplicate titles', () => {
+    const titles = Object.values(certToTitleMap);
+    const uniqueTitles = Array.from(new Set(titles));
+
+    expect(titles.length).toBe(uniqueTitles.length);
   });
 });

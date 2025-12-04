@@ -4547,7 +4547,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG Character",
+        "title": "Crie um personagem de RPG",
         "intro": [
           "Neste laboratório, você praticará Python básico construindo um personagem de RPG."
         ]
@@ -7845,6 +7845,7 @@
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Exame de Certificação de Design Responsivo para a Web"
     },
     "modules": {
