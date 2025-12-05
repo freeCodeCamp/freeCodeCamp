@@ -474,10 +474,12 @@ export type ClaimedCertifications = {
   isFullStackCert: boolean;
   isInfosecQaCert: boolean;
   isJavascriptCertV9: boolean;
+  isPythonCertV9: boolean;
   isQaCertV7: boolean;
   isInfosecCertV7: boolean;
   isJsAlgoDataStructCert: boolean;
   isRelationalDatabaseCertV8: boolean;
+  isRelationalDatabaseCertV9: boolean;
   isRespWebDesignCert: boolean;
   isRespWebDesignCertV9: boolean;
   isSciCompPyCertV7: boolean;

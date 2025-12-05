@@ -25,12 +25,12 @@ export enum Certification {
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  PythonV9 = 'python-v9',
+  RelationalDbV9 = 'relational-databases-v9',
   // Upcoming certifications
   RespWebDesignV9 = 'responsive-web-design-v9',
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
-  PythonV9 = 'python-v9',
-  RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -54,10 +54,12 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
-  Certification.RespWebDesignV9,
-  Certification.JsV9,
   Certification.A2English,
-  Certification.FoundationalCSharp
+  Certification.FoundationalCSharp,
+  Certification.JsV9,
+  Certification.PythonV9,
+  Certification.RelationalDbV9,
+  Certification.RespWebDesignV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -92,8 +94,6 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.FrontEndDevLibsV9,
-  Certification.PythonV9,
-  Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
   Certification.B1English,
@@ -199,10 +199,11 @@ export const certSlugTypeMap = {
   [Certification.CollegeAlgebraPy]: 'isCollegeAlgebraPyCertV8',
   [Certification.FoundationalCSharp]: 'isFoundationalCSharpCertV8',
   [Certification.A2English]: 'isA2EnglishCert',
-
-  // upcoming
+  [Certification.PythonV9]: 'isPythonCertV9',
+  [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
   [Certification.JsV9]: 'isJavascriptCertV9'
+  // upcoming
 } as const;
 
 // TODO: use i18n keys instead of hardcoded titles
