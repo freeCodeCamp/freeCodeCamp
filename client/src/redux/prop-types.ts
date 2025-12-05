@@ -261,6 +261,9 @@ export type ChallengeNode = {
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
+    // NEW: optional UI flags added for new metadata
+    instructionsInEditor?: boolean;
+    includeBlockInTitle?: boolean;
     videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
@@ -309,6 +312,10 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+
+    // UI flags — optional so existing data stays compatible
+    instructionsInEditor?: boolean;
+    includeBlockInTitle?: boolean;
   };
 };
 
@@ -532,6 +539,8 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  instructionsInEditor?: boolean;
+  includeBlockInTitle?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
