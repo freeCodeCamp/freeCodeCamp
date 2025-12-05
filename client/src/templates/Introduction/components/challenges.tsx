@@ -23,6 +23,10 @@ interface ChallengesProps {
   onChallengeClick: () => void;
 }
 
+interface LastChallengeProps {
+  challenges: ChallengeInfo[];
+}
+
 interface JumpLinkProps {
   jumpLink?: boolean;
 }
@@ -127,7 +131,7 @@ const GridChallenge = ({
 const LinkToFirstIncompleteChallenge = ({
   challenges,
   blockTitle
-}: ChallengesProps & BlockTitleProps) => {
+}: LastChallengeProps & BlockTitleProps) => {
   const { t } = useTranslation();
 
   const firstIncompleteChallenge = challenges.find(
