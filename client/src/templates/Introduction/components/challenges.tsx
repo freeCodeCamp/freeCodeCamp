@@ -23,10 +23,6 @@ interface ChallengesProps {
   onChallengeClick: () => void;
 }
 
-interface LastChallengeProps {
-  challenges: ChallengeInfo[];
-}
-
 interface JumpLinkProps {
   jumpLink?: boolean;
 }
@@ -130,8 +126,9 @@ const GridChallenge = ({
 
 const LinkToFirstIncompleteChallenge = ({
   challenges,
-  blockTitle
-}: LastChallengeProps & BlockTitleProps) => {
+  blockTitle,
+  onChallengeClick
+}: ChallengesProps & BlockTitleProps) => {
   const { t } = useTranslation();
 
   const firstIncompleteChallenge = challenges.find(
@@ -143,7 +140,11 @@ const LinkToFirstIncompleteChallenge = ({
   );
   return firstIncompleteChallenge ? (
     <div className='challenge-jump-link'>
-      <ButtonLink size='small' href={firstIncompleteChallenge.fields.slug}>
+      <ButtonLink
+        size='small'
+        href={firstIncompleteChallenge.fields.slug}
+        onClick={onChallengeClick}
+      >
         {!isChallengeStarted
           ? t('buttons.start-project')
           : t('buttons.resume-project')}{' '}
@@ -167,6 +168,7 @@ export const GridMapChallenges = ({
         <LinkToFirstIncompleteChallenge
           challenges={challenges}
           blockTitle={blockTitle}
+          onChallengeClick={onChallengeClick}
         />
       )}
       <nav aria-label={t('aria.steps-for', { blockTitle })}>
@@ -215,6 +217,7 @@ export const ChallengesWithDialogues = ({
         <LinkToFirstIncompleteChallenge
           challenges={challenges}
           blockTitle={blockTitle}
+          onChallengeClick={onChallengeClick}
         />
       )}
 
