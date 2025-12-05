@@ -83,6 +83,7 @@
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
+  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {
