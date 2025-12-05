@@ -6,7 +6,7 @@ import {
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import env from '../../../config/env.json';
 
 type SettingsSidebarNavProps = {

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 
-import { shuffleArray } from '../../../../shared-dist/utils/shuffle-array.js';
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import { sortChallenges } from './sort-challenges.js';
 
 const challenges = [
