@@ -2372,10 +2372,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -4173,10 +4170,7 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": {
-        "title": "258",
-        "intro": []
-      },
+      "kagw": { "title": "258", "intro": [] },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -4449,26 +4443,11 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
-      "trvf": {
-        "title": "293",
-        "intro": []
-      },
-      "kwmg": {
-        "title": "294",
-        "intro": []
-      },
-      "nodx": {
-        "title": "295",
-        "intro": []
-      },
-      "erfj": {
-        "title": "296",
-        "intro": []
-      },
-      "muyw": {
-        "title": "297",
-        "intro": []
-      },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -4486,14 +4465,8 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": {
-        "title": "301",
-        "intro": []
-      },
-      "vtpz": {
-        "title": "302",
-        "intro": []
-      },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -4507,7 +4480,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG Character",
+        "title": "Build an RPG character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -5087,6 +5060,7 @@
   },
   "javascript-v9": {
     "title": "JavaScript Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
       "To qualify for the exam, you must complete the following projects:",
@@ -5100,6 +5074,12 @@
     "chapters": {
       "javascript": "JavaScript",
       "javascript-certification-exam": "JavaScript Certification Exam"
+    },
+    "module-intros": {
+      "javascript-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": ["Pass this exam to earn your JavaScript Certification."]
+      }
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5284,12 +5264,6 @@
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
           "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
-        ]
-      },
-      "workshop-logic-checker-app": {
-        "title": "Build a Logic Checker App",
-        "intro": [
-          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
@@ -6317,6 +6291,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-festival-crowd-flow-simulator": {
+        "title": "Festival Crowd Flow Simulator",
+        "intro": ["Festival Crowd Flow Simulator", ""]
       }
     }
   },
@@ -7500,7 +7478,7 @@
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
       "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
@@ -7613,14 +7591,8 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": {
-        "title": "Meet Luna",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-meet-mateo": {
-        "title": "Meet Mateo",
-        "intro": ["", ""]
-      },
+      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
+      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -7726,6 +7698,7 @@
   },
   "responsive-web-design-v9": {
     "title": "Responsive Web Design Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
       "To qualify for the exam, you must complete the following projects:",
@@ -7739,8 +7712,15 @@
     "chapters": {
       "html": "HTML",
       "css": "CSS",
-      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
+    },
+    "module-intros": {
+      "responsive-web-design-certification-exam": {
+        "note": "Coming Winter 2025",
+        "intro": [
+          "Pass this exam to earn your Responsive Web Design Certification."
+        ]
+      }
     },
     "modules": {
       "basic-html": "Basic HTML",
@@ -8112,10 +8092,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -8841,10 +8818,7 @@
         "title": "Single Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": {
-        "title": "Initials",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -8895,18 +8869,12 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-the-team": { "title": "The Team", "intro": ["", ""] },
       "zh-a1-learn-a-new-colleague": {
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": {
-        "title": "My Family",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -9069,9 +9037,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -9084,9 +9050,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {

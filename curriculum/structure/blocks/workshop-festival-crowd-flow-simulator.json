@@ -1,0 +1,19 @@
+{
+  "name": "Festival Crowd Flow Simulator",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-festival-crowd-flow-simulator",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6930c6bc033fa92bf084ecfd", "title": "Step 1" },
+    { "id": "6930c6ffe3de7934afe5e782", "title": "Step 2" },
+    { "id": "6930c6ffe3de7934afe5e783", "title": "Step 3" },
+    { "id": "6930c6ffe3de7934afe5e784", "title": "Step 4" },
+    { "id": "6930c6ffe3de7934afe5e785", "title": "Step 5" },
+    { "id": "6930c6ffe3de7934afe5e786", "title": "Step 6" },
+    { "id": "6930c6ffe3de7934afe5e787", "title": "Step 7" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

@@ -330,6 +330,7 @@
           "dashedName": "javascript-functions",
           "blocks": [
             "lecture-working-with-functions",
+            "workshop-festival-crowd-flow-simulator",
             "workshop-calculator",
             "lab-boolean-check",
             "lab-email-masker",
