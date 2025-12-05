@@ -214,6 +214,12 @@ export const certSlugTypeMap = {
   [Certification.A1Chinese]: 'isA1ChineseCertV8'
 } as const satisfies Record<Certification, string>;
 
+type CertificationFlag = (typeof certSlugTypeMap)[Certification];
+
+export type CertificationFlags = {
+  [key in CertificationFlag]: boolean;
+};
+
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
   // Legacy certifications
