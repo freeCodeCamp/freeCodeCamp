@@ -3,7 +3,8 @@ import {
   Certification,
   linkedInCredentialIds,
   certToTitleMap,
-  certToIdMap
+  certToIdMap,
+  certSlugTypeMap
 } from './certification-settings';
 
 describe('linkedInCredentialIds', () => {
@@ -30,5 +31,21 @@ describe('certToIdMap', () => {
     const uniqueIds = Array.from(new Set(ids)).sort();
 
     expect(uniqueIds).toEqual(ids);
+  });
+});
+
+describe('certSlugTypeMap', () => {
+  it.todo('should contain a value for all certifications', () => {
+    const allCertifications = Object.values(Certification).sort();
+    const certSlugTypeMapKeys = Object.keys(certSlugTypeMap).sort();
+
+    expect(certSlugTypeMapKeys).toEqual(allCertifications);
+  });
+
+  it('should have no duplicate values', () => {
+    const types = Object.values(certSlugTypeMap).sort();
+    const uniqueTypes = Array.from(new Set(types)).sort();
+
+    expect(uniqueTypes).toEqual(types);
   });
 });
