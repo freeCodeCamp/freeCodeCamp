@@ -361,7 +361,16 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isRespWebDesignCert: true,
           isSciCompPyCertV7: true,
           isJavascriptCertV9: true,
-          isRespWebDesignCertV9: true
+          isRespWebDesignCertV9: true,
+          isFrontEndLibsCertV9: true,
+          isPythonCertV9: true,
+          isRelationalDatabaseCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCertV8: true,
+          isA2SpanishCertV8: true,
+          isA2ChineseCertV8: true,
+          isA1ChineseCertV8: true
         }
       });
 
