@@ -117,6 +117,7 @@ button .block-header-button-text {
 
 .super-block-accordion .module-steps {
   font-size: 0.75em;
+  color: var(--quaternary-color);
 }
 
 .super-block-accordion .chapter-button:hover,
@@ -309,8 +310,9 @@ button .block-header-button-text {
   padding: 20px;
 }
 
-.super-block-intro-page .btn-cta-big {
-  max-width: 350px;
+.super-block-intro-page .intro-top-cta {
+  width: fit-content;
+  padding: 5px 30px;
 }
 
 .super-block-benefits > div {
