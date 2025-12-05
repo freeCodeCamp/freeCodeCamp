@@ -33,6 +33,8 @@ interface DesktopLayoutProps {
   challengeType: number;
   editor: ReactElement | null;
   hasEditableBoundaries?: boolean;
+  instructionsInEditor?: boolean;
+  includeBlockInTitle?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -107,7 +109,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     showIndependentLowerJaw,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
-    setDailyCodingChallengeLanguage
+    setDailyCodingChallengeLanguage,
+    instructionsInEditor,
+    includeBlockInTitle
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -242,8 +246,17 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   }, []);
 
   const projectBasedChallenge = hasEditableBoundaries;
+
+  // prefer explicit metadata; fall back to legacy hasEditableBoundaries
+  const instructionsAreInEditor =
+    typeof instructionsInEditor === 'boolean'
+      ? instructionsInEditor
+      : hasEditableBoundaries;
+
   const areInstructionsDisplayable =
-    !projectBasedChallenge || showIndependentLowerJaw;
+    !instructionsAreInEditor &&
+    (!projectBasedChallenge || showIndependentLowerJaw);
+
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -288,6 +301,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
           challengeType={challengeType}
+          includeBlockInTitle={includeBlockInTitle}
           data-playwright-test-label='action-row'
         />
       )}

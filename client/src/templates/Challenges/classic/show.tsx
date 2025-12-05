@@ -212,7 +212,9 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        instructionsInEditor,
+        includeBlockInTitle
       }
     }
   },
@@ -480,6 +482,8 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
+            includeBlockInTitle={includeBlockInTitle}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -515,6 +519,8 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
+            includeBlockInTitle={includeBlockInTitle}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -589,6 +595,8 @@ export const query = graphql`
         superBlock
         translationPending
         forumTopicId
+        instructionsInEditor
+        includeBlockInTitle
         hooks {
           beforeAll
           beforeEach

@@ -62,6 +62,8 @@ interface CreateProjectArgs {
   position?: number;
   module?: string;
   title?: string;
+  instructionsInEditor?: boolean;
+  includeBlockInTitle?: boolean;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -185,7 +187,9 @@ async function createMetaJson(
   challengeId: ObjectId,
   order?: number,
   blockLabel?: string,
-  blockLayout?: string
+  blockLayout?: string,
+  instructionsInEditor?: boolean,
+  includeBlockInTitle?: boolean
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
@@ -202,6 +206,12 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
+  if (typeof instructionsInEditor === 'boolean') {
+    newMeta.instructionsInEditor = instructionsInEditor;
+  }
+  if (typeof includeBlockInTitle === 'boolean') {
+    newMeta.includeBlockInTitle = includeBlockInTitle;
+  }
 
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
@@ -338,6 +348,20 @@ void getAllBlocks()
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
+        name: 'instructionsInEditor',
+        message:
+          'Should instructions appear inside the editor? (If yes, instructions will render inside the editor pane)',
+        type: 'confirm',
+        default: false
+      },
+      {
+        name: 'includeBlockInTitle',
+        message:
+          'Should the block name be included in challenge titles in the timeline? (e.g. "Block - Step 1")',
+        type: 'confirm',
+        default: false
+      },
+      {
         name: 'questionCount',
         message: 'Choose a question count',
         default: 20,
@@ -415,7 +439,9 @@ void getAllBlocks()
         chapter,
         module,
         position,
-        order
+        order,
+        instructionsInEditor,
+        includeBlockInTitle
       }: CreateProjectArgs) =>
         await createProject({
           superBlock,
@@ -428,7 +454,9 @@ void getAllBlocks()
           chapter,
           module,
           position,
-          order
+          order,
+          instructionsInEditor,
+          includeBlockInTitle
         })
     )
   )
