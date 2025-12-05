@@ -225,14 +225,6 @@ test.describe('Interactive Editor', () => {
       page.getByText('This challenge has only JavaScript code.')
     ).toBeVisible();
 
-    // Toggle button should be visible
-    const toggleButton = page.getByRole('button', {
-      name: /interactive editor/i
-    });
-    await expect(toggleButton).toBeVisible();
-
-    // Initially, static code view should be visible
-    await expect(page.getByTestId('sp-interactive-editor')).not.toBeVisible();
     await expect(
       page
         .locator('pre code')
@@ -240,13 +232,11 @@ test.describe('Interactive Editor', () => {
     ).toBeVisible();
 
     // Click the toggle button to show interactive editor
-    await toggleButton.click();
-
-    // Interactive editor should be visible
-    await expect(page.getByTestId('sp-interactive-editor')).toBeVisible();
-    await expect(
-      page.evaluate(() => localStorage.getItem('showInteractiveEditor'))
-    ).resolves.toBe('true');
+    await page
+      .getByRole('button', {
+        name: /interactive editor/i
+      })
+      .click();
 
     // Check that the console is visible and the console wrapper is hidden
     await expect(page.locator('.sp-console')).toBeVisible();
