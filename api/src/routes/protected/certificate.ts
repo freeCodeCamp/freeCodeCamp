@@ -4,10 +4,10 @@ import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 
 import { getChallenges } from '../../utils/get-challenges.js';
 import {
-  certIds,
+  Certification,
   certSlugTypeMap,
-  certTypeTitleMap,
-  certTypes,
+  certToIdMap,
+  certToTitleMap,
   currentCertifications,
   legacyCertifications,
   legacyFullStackCertification,
@@ -19,31 +19,6 @@ import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';
 
 import { SHOW_UPCOMING_CHANGES } from '../../utils/env.js';
 import { isKnownCertSlug } from '../helpers/certificate-utils.js';
-
-const {
-  a2EnglishId,
-  legacyFrontEndChallengeId,
-  legacyBackEndChallengeId,
-  legacyDataVisId,
-  legacyInfosecQaId,
-  legacyFullStackId,
-  respWebDesignId,
-  frontEndDevLibsId,
-  javascriptV9Id,
-  jsAlgoDataStructId,
-  jsAlgoDataStructV8Id,
-  dataVis2018Id,
-  apisMicroservicesId,
-  qaV7Id,
-  infosecV7Id,
-  sciCompPyV7Id,
-  dataAnalysisPyV7Id,
-  machineLearningPyV7Id,
-  relationalDatabaseV8Id,
-  respWebDesignV9Id,
-  collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id
-} = certIds;
 
 function isCertAllowed(certSlug: string): boolean {
   if (
@@ -108,10 +83,11 @@ function assertTestsExist(
   }
 }
 
-function getCertById(
-  challengeId: string,
+function getCertBySlug(
+  cert: Certification,
   challenges: ReturnType<typeof getChallenges>
 ): { id: string; tests: { id: string }[]; challengeType: number } {
+  const challengeId = certToIdMap[cert];
   const challengeById = challenges.filter(({ id }) => id === challengeId)[0];
   if (!challengeById) {
     throw new Error(`Challenge with id '${challengeId}' not found`);
@@ -121,51 +97,28 @@ function getCertById(
   return { id, tests, challengeType };
 }
 
-function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
-  return {
-    // legacy
-    [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, challenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, challenges),
-    [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, challenges),
-    [certTypes.dataVis]: getCertById(legacyDataVisId, challenges),
-    [certTypes.infosecQa]: getCertById(legacyInfosecQaId, challenges),
-    [certTypes.fullStack]: getCertById(legacyFullStackId, challenges),
+type CertLookup = Record<
+  Certification,
+  { id: string; tests: { id: string }[]; challengeType: number }
+>;
 
-    // modern
-    [certTypes.respWebDesign]: getCertById(respWebDesignId, challenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, challenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, challenges),
-    [certTypes.jsAlgoDataStructV8]: getCertById(
-      jsAlgoDataStructV8Id,
-      challenges
-    ),
-    [certTypes.apisMicroservices]: getCertById(apisMicroservicesId, challenges),
-    [certTypes.qaV7]: getCertById(qaV7Id, challenges),
-    [certTypes.infosecV7]: getCertById(infosecV7Id, challenges),
-    [certTypes.sciCompPyV7]: getCertById(sciCompPyV7Id, challenges),
-    [certTypes.dataAnalysisPyV7]: getCertById(dataAnalysisPyV7Id, challenges),
-    [certTypes.machineLearningPyV7]: getCertById(
-      machineLearningPyV7Id,
-      challenges
-    ),
-    [certTypes.relationalDatabaseV8]: getCertById(
-      relationalDatabaseV8Id,
-      challenges
-    ),
-    [certTypes.collegeAlgebraPyV8]: getCertById(
-      collegeAlgebraPyV8Id,
-      challenges
-    ),
-    [certTypes.foundationalCSharpV8]: getCertById(
-      foundationalCSharpV8Id,
-      challenges
-    ),
-    [certTypes.javascriptV9]: getCertById(javascriptV9Id, challenges),
-    [certTypes.respWebDesignV9]: getCertById(respWebDesignV9Id, challenges),
+/**
+ * Create a lookup from Certification enum values to their corresponding
+ * challenge metadata (id, tests and challengeType) using the provided
+ * challenges array.
+ *
+ * @param challenges - The array returned by getChallenges().
+ * @returns A record mapping each Certification to an object with id, tests and challengeType.
+ */
+export function createCertLookup(
+  challenges: ReturnType<typeof getChallenges>
+): CertLookup {
+  const certLookup = {} as CertLookup;
 
-    // upcoming
-    [certTypes.a2English]: getCertById(a2EnglishId, challenges)
-  };
+  for (const cert of Object.values(Certification)) {
+    certLookup[cert] = getCertBySlug(cert, challenges);
+  }
+  return certLookup;
 }
 
 interface CertI {
@@ -258,7 +211,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   const challenges = getChallenges();
-  const certTypeIds = createCertTypeIds(challenges);
+  const certLookup = createCertLookup(challenges);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
@@ -298,7 +251,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const certType = certSlugTypeMap[certSlug];
-      const certName = certTypeTitleMap[certType];
+      const certName = certToTitleMap[certSlug];
 
       const user = await fastify.prisma.user.findUnique({
         where: { id: req.user?.id }
@@ -347,7 +300,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       }
 
-      const { id, tests, challengeType } = certTypeIds[certType];
+      const { id, tests, challengeType } = certLookup[certSlug];
       const hasCompletedTestRequirements = hasCompletedTests(
         tests,
         user.completedChallenges

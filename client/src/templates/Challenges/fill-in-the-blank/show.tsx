@@ -187,6 +187,13 @@ const ShowFillInTheBlank = ({
             hanzi.replace(/\s+/g, '')
           );
         }
+      } else if (fillInTheBlank.inputType === 'pinyin-tone') {
+        // Ignore spaces to allow both syllable formats:
+        // spaced (e.g., 'nǐ hǎo') and unspaced (e.g., 'nǐhǎo').
+        return (
+          normalizedUserAnswer.replace(/\s+/g, '') ===
+          answer.toLowerCase().replace(/\s+/g, '')
+        );
       }
 
       return normalizedUserAnswer === answer.toLowerCase();

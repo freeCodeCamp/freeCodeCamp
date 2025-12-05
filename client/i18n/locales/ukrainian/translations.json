@@ -315,7 +315,7 @@
       "results-for": "Результати для {{projectTitle}}",
       "my-profile": "Мій профіль",
       "my-name": "Моє ім'я",
-      "my-location": "Моє місцеперебування",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Моя біографія",
       "my-points": "Мої бали",
       "my-heatmap": "Моя теплокарта",
@@ -963,7 +963,8 @@
     "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
     "terminal-output": "Вивід терміналу",
     "not-available": "Недоступно",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",

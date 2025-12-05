@@ -315,7 +315,7 @@
       "results-for": "Resultados para {{projectTitle}}",
       "my-profile": "Meu perfil",
       "my-name": "Meu nome",
-      "my-location": "Minha localização",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Sobre mim",
       "my-points": "Meus pontos",
       "my-heatmap": "Meu progresso",
@@ -963,7 +963,8 @@
     "editor-a11y-on-non-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Ctrl+E para desativar ou pressione Alt+F1 para mais opções.",
     "terminal-output": "Saída do terminal",
     "not-available": "Não disponível",
-    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página."
+    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "Não foi possível recuperar um e-mail do provedor escolhido. Por favor, tente outro provedor ou use a opção 'Continuar com o Email'.",
