@@ -10,7 +10,7 @@ import CheckMark from './check-mark';
 import BlockLabel from './block-label';
 import BlockIntros from './block-intros';
 
-interface BlockHeaderProps {
+interface BaseBlockHeaderProps {
   blockDashed: string;
   blockTitle: string;
   blockLabel: BlockLabelType | null;
