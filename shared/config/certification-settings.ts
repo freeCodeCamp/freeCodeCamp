@@ -175,7 +175,7 @@ export const completionHours: Record<Certification, number> = {
   [Certification.A1Chinese]: 300
 };
 
-export const certSlugTypeMap = {
+export const certSlugTypeMap: Record<Certification, string> = {
   // legacy
   [Certification.LegacyFrontEnd]: 'isFrontEndCert',
   [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
@@ -202,8 +202,16 @@ export const certSlugTypeMap = {
   [Certification.PythonV9]: 'isPythonCertV9',
   [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
-  [Certification.JsV9]: 'isJavascriptCertV9'
+  [Certification.JsV9]: 'isJavascriptCertV9',
+
   // upcoming
+  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
+  [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
+  [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
+  [Certification.B1English]: 'isB1EnglishCertV8',
+  [Certification.A2Spanish]: 'isA2SpanishCertV8',
+  [Certification.A2Chinese]: 'isA2ChineseCertV8',
+  [Certification.A1Chinese]: 'isA1ChineseCertV8'
 } as const;
 
 // TODO: use i18n keys instead of hardcoded titles

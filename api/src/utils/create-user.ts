@@ -39,6 +39,15 @@ export const createResetProperties = () => ({
   isRespWebDesignCert: false,
   isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
+  isFrontEndLibsCertV9: false,
+  isPythonCertV9: false,
+  isRelationalDatabaseCertV9: false,
+  isBackEndDevApisCertV9: false,
+  isFullStackDeveloperCertV9: false,
+  isB1EnglishCertV8: false,
+  isA2SpanishCertV8: false,
+  isA2ChineseCertV8: false,
+  isA1ChineseCertV8: false,
   needsModeration: false,
   partiallyCompletedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   progressTimestamps: [Date.now()], // TODO(Post-MVP): This may need normalising before we can omit it. Also, does it need to start with a timestamp?
