@@ -5,6 +5,7 @@ import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { getChallenges } from '../../utils/get-challenges.js';
 import {
   Certification,
+  type CertificationFlags,
   certSlugTypeMap,
   certToIdMap,
   certToTitleMap,
@@ -121,32 +122,7 @@ export function createCertLookup(
   return certLookup;
 }
 
-interface CertI {
-  isA2EnglishCert?: boolean;
-  isRespWebDesignCert?: boolean;
-  isJsAlgoDataStructCert?: boolean;
-  isJsAlgoDataStructCertV8?: boolean;
-  isFrontEndLibsCert?: boolean;
-  is2018DataVisCert?: boolean;
-  isApisMicroservicesCert?: boolean;
-  isInfosecQaCert?: boolean;
-  isQaCertV7?: boolean;
-  isInfosecCertV7?: boolean;
-  isFrontEndCert?: boolean;
-  isBackEndCert?: boolean;
-  isDataVisCert?: boolean;
-  isFullStackCert?: boolean;
-  isSciCompPyCertV7?: boolean;
-  isDataAnalysisPyCertV7?: boolean;
-  isMachineLearningPyCertV7?: boolean;
-  isRelationalDatabaseCertV8?: boolean;
-  isCollegeAlgebraPyCertV8?: boolean;
-  isFoundationalCSharpCertV8?: boolean;
-  isJavascriptCertV9?: boolean;
-  isRespWebDesignCertV9?: boolean;
-}
-
-function getUserIsCertMap(user: CertI) {
+function getUserIsCertMap(user: Partial<CertificationFlags>) {
   const {
     isA2EnglishCert = false,
     isRespWebDesignCert = false,
@@ -169,7 +145,16 @@ function getUserIsCertMap(user: CertI) {
     isCollegeAlgebraPyCertV8 = false,
     isFoundationalCSharpCertV8 = false,
     isJavascriptCertV9 = false,
-    isRespWebDesignCertV9 = false
+    isRespWebDesignCertV9 = false,
+    isA1ChineseCertV8 = false,
+    isA2ChineseCertV8 = false,
+    isA2SpanishCertV8 = false,
+    isB1EnglishCertV8 = false,
+    isPythonCertV9 = false,
+    isRelationalDatabaseCertV9 = false,
+    isBackEndDevApisCertV9 = false,
+    isFullStackDeveloperCertV9 = false,
+    isFrontEndLibsCertV9 = false
   } = user;
 
   return {
@@ -194,7 +179,16 @@ function getUserIsCertMap(user: CertI) {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJavascriptCertV9,
-    isRespWebDesignCertV9
+    isRespWebDesignCertV9,
+    isA1ChineseCertV8,
+    isA2ChineseCertV8,
+    isA2SpanishCertV8,
+    isB1EnglishCertV8,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isFrontEndLibsCertV9
   };
 }
 
