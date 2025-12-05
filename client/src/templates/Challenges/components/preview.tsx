@@ -50,7 +50,7 @@ function Preview({
     <div className={`notranslate challenge-preview ${iframeToggle}-iframe`}>
       {!isIframeLoaded && (
         <div className={'loader-wrapper'}>
-          <Loader fullScreen={false} />
+          <Loader fullScreen={true} overridePalette={true} />
         </div>
       )}
       <iframe

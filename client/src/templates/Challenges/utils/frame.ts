@@ -379,7 +379,6 @@ const initMainFrame =
         if (document && '__initPythonFrame' in document) {
           await document.__initPythonFrame();
         }
-        //if (frameReady) frameReady();
         frameReady?.(true);
       })
       .catch(handleDocumentNotFound);

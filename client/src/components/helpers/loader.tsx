@@ -8,11 +8,13 @@ interface LoaderProps {
   fullScreen?: boolean;
   loaderDelay?: number;
   messageDelay?: number;
+  overridePalette?: boolean;
 }
 function Loader({
   fullScreen,
   loaderDelay,
-  messageDelay
+  messageDelay,
+  overridePalette
 }: LoaderProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -34,7 +36,7 @@ function Loader({
 
   return (
     <div
-      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''}`}
+      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''} ${overridePalette ? 'override-palette' : ''}`}
       data-testid='fcc-loader'
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}
