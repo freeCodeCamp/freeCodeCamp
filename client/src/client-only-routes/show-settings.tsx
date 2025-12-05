@@ -163,6 +163,15 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
+    isFrontEndLibsCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isB1EnglishCertV8,
+    isA2SpanishCertV8,
+    isA2ChineseCertV8,
+    isA1ChineseCertV8,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -251,9 +260,17 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isRespWebDesignCertV9={isRespWebDesignCertV9}
               isSciCompPyCertV7={isSciCompPyCertV7}
               isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+              isPythonCertV9={isPythonCertV9}
+              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
+              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+              isB1EnglishCertV8={isB1EnglishCertV8}
+              isA2SpanishCertV8={isA2SpanishCertV8}
+              isA2ChineseCertV8={isA2ChineseCertV8}
+              isA1ChineseCertV8={isA1ChineseCertV8}
               username={username}
               verifyCert={verifyCert}
-              isEmailVerified={isEmailVerified}
             />
             <Spacer size='m' />
           </ScrollElement>
