@@ -12,7 +12,7 @@ const ArchivedWarning = () => {
       <p className='text-center archived-warning'>
         <Trans i18nKey='learn.archive.content-not-updated'>
           <strong>placeholder</strong>
-          <Link to={'/learn/full-stack-developer'}>placeholder</Link>
+          <Link to={'/learn'}>placeholder</Link>
         </Trans>
       </p>
     </Callout>
