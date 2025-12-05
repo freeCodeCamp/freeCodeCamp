@@ -39,8 +39,6 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
     SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
     SuperBlocks.BackEndDevApisV9,
     SuperBlocks.FullStackDeveloperV9
   ];
