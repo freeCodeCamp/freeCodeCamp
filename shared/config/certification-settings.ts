@@ -175,7 +175,7 @@ export const completionHours: Record<Certification, number> = {
   [Certification.A1Chinese]: 300
 };
 
-export const certSlugTypeMap: Record<Certification, string> = {
+export const certSlugTypeMap = {
   // legacy
   [Certification.LegacyFrontEnd]: 'isFrontEndCert',
   [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
@@ -212,7 +212,7 @@ export const certSlugTypeMap: Record<Certification, string> = {
   [Certification.A2Spanish]: 'isA2SpanishCertV8',
   [Certification.A2Chinese]: 'isA2ChineseCertV8',
   [Certification.A1Chinese]: 'isA1ChineseCertV8'
-} as const;
+} as const satisfies Record<Certification, string>;
 
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
