@@ -347,16 +347,23 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           username: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
+          isA1ChineseCertV8: true,
+          isA2ChineseCertV8: true,
           isA2EnglishCert: true,
+          isA2SpanishCertV8: true,
           isApisMicroservicesCert: true,
+          isB1EnglishCertV8: true,
           isBackEndCert: true,
+          isBackEndDevApisCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isDataAnalysisPyCertV7: true,
           isDataVisCert: true,
           isFoundationalCSharpCertV8: true,
           isFrontEndCert: true,
           isFrontEndLibsCert: true,
+          isFrontEndLibsCertV9: true,
           isFullStackCert: true,
+          isFullStackDeveloperCertV9: true,
           isInfosecCertV7: true,
           isInfosecQaCert: true,
           isJavascriptCertV9: true,
@@ -369,7 +376,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           isRelationalDatabaseCertV9: true,
           isRespWebDesignCert: true,
           isRespWebDesignCertV9: true,
-          isSciCompPyCertV7: true
+          isSciCompPyCertV7: true,
         }
       });
 
