@@ -83,6 +83,7 @@
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
+  /* Ensure the right group pins to the end even when no left/middle items exist */
   margin-inline-start: auto;
 }
 
