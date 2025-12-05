@@ -36,7 +36,7 @@ function Loader({
 
   return (
     <div
-      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''} ${overridePalette ? 'override-palette' : ''}`}
+      className={`fcc-loader ${fullScreen ? 'full-screen-wrapper' : ''} ${overridePalette ? 'override-palette' : ''}`.trim()}
       data-testid='fcc-loader'
     >
       {showSpinner && <Spinner name='line-scale-pulse-out' />}
