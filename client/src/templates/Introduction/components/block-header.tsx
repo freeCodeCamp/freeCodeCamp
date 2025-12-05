@@ -22,10 +22,19 @@ interface BlockHeaderProps {
   percentageCompleted: number;
   blockIntroArr?: string[];
   accordion?: boolean;
-  blockUrl?: string;
-  onLinkClick?: () => void;
 }
 
+interface BlockHeaderButtonProps extends BaseBlockHeaderProps {
+  blockUrl?: never;
+  onLinkClick?: never;
+}
+
+interface BlockHeaderLinkProps extends BaseBlockHeaderProps {
+  blockUrl: string;
+  onLinkClick: () => void;
+}
+
+type BlockHeaderProps = BlockHeaderButtonProps | BlockHeaderLinkProps;
 function BlockHeader({
   blockDashed,
   blockTitle,

@@ -20,7 +20,7 @@ interface ChallengeInfo {
 
 interface ChallengesProps {
   challenges: ChallengeInfo[];
-  onChallengeClick?: () => void;
+  onChallengeClick: () => void;
 }
 
 interface JumpLinkProps {
@@ -43,7 +43,7 @@ const ListChallenge = ({
   onChallengeClick
 }: {
   challenge: ChallengeInfo;
-  onChallengeClick?: () => void;
+  onChallengeClick: () => void;
 }) => {
   return (
     <Link to={challenge.fields.slug} onClick={onChallengeClick}>
@@ -60,7 +60,7 @@ const CertChallenge = ({
   onChallengeClick
 }: {
   challenge: ChallengeInfo;
-  onChallengeClick?: () => void;
+  onChallengeClick: () => void;
 }) => {
   return (
     <Link to={challenge.fields.slug} onClick={onChallengeClick}>
@@ -101,7 +101,7 @@ const GridChallenge = ({
 }: {
   challenge: ChallengeInfo;
   isTask?: boolean;
-  onChallengeClick?: () => void;
+  onChallengeClick: () => void;
 }) => {
   const { t } = useTranslation();
 
