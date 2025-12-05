@@ -3,10 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockAccordion } from './super-block-accordion';
-import {
-  BlockLabel,
-  BlockLayouts
-} from '../../../../../shared-dist/config/blocks';
+import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
 
 const mockStructure = {
   superBlock: SuperBlocks.RespWebDesign,
