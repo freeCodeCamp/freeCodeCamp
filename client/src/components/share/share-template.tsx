@@ -26,7 +26,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <FontAwesomeIcon
           icon={faXTwitter}
           size='1x'
-          aria-label='twitterIcon'
+          aria-label='xIcon'
           aria-hidden='true'
         />
         {t('buttons.share-on-x')}

@@ -307,7 +307,7 @@ const publicUserData = {
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
   savedChallenges: testUserData.savedChallenges,
-  twitter: 'https://twitter.com/foobar',
+  twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   sendQuincyEmail: testUserData.sendQuincyEmail,
   username: testUserData.username,
