@@ -7,7 +7,9 @@
         {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-working-with-nodejs-and-event-driven-architecture"
+          ]
         },
         {
           "dashedName": "node-package-manager",
