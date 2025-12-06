@@ -80,7 +80,7 @@
         {
           "dashedName": "data-visualization",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lab-bar-chart"]
         },
         {
           "dashedName": "typescript-fundamentals",
