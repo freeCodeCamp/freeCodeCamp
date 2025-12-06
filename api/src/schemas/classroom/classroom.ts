@@ -9,10 +9,6 @@ export const classroomGetUserIdSchema = {
     500: Type.Object({ error: Type.String() })
   }
 };
-const FileSchema = Type.Object({
-  filename: Type.Optional(Type.String()),
-  contents: Type.Optional(Type.String())
-});
 export const classroomGetUserDataSchema = {
   body: Type.Object({
     userIds: Type.Array(Type.String(), { maxItems: 50 })
@@ -25,10 +21,7 @@ export const classroomGetUserDataSchema = {
           Type.Object({
             id: Type.String(),
             completedDate: Type.Number(),
-            challengeName: Type.Optional(Type.String()),
-            files: Type.Optional(Type.Array(FileSchema)),
-            githubLink: Type.Optional(Type.String()),
-            solution: Type.Optional(Type.String())
+            challengeName: Type.Optional(Type.String())
           })
         )
       )
