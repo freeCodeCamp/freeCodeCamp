@@ -475,7 +475,10 @@ export function transformSuperBlock(
     blocks?: string[];
     chapters?: Chapter[];
   },
-  { showComingSoon } = { showComingSoon: false }
+  {
+    showComingSoon,
+    skipDuplicateCheck = false
+  }: { showComingSoon?: boolean; skipDuplicateCheck?: boolean } = {}
 ) {
   let blocks: BlockInfo[] = [];
   const shouldAllowEmptyBlocks =
@@ -520,6 +523,17 @@ export function transformSuperBlock(
   }
 
   const blockNames = blocks.map(block => block.dashedName);
+
+  // Check for duplicate blocks (skip for Upcoming/Catalog superblocks)
+  if (!skipDuplicateCheck) {
+    const duplicateBlocks = duplicates(blockNames);
+    if (duplicateBlocks.length > 0) {
+      throw Error(
+        `Duplicate blocks found in superblock: ${[...new Set(duplicateBlocks)].join(', ')}`
+      );
+    }
+  }
+
   log(`Found ${blocks.length} blocks: ${blockNames.join(', ')}`);
   return blocks;
 }
