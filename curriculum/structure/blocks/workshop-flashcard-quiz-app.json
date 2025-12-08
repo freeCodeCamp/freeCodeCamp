@@ -3,6 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "workshop-flashcard-quiz-app",
   "helpCategory": "JavaScript",
+  "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68c386c67b3209fcb7029c1d", "title": "Step 1" },

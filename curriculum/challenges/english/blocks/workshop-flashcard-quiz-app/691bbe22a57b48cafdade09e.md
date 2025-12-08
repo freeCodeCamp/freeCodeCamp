@@ -430,7 +430,7 @@ function deleteCard(): void {
       return;
     }
 
-    child.onclick = () => {
+    (child as HTMLButtonElement).onclick = () => {
       currentCardIndex = i;
       refresh();
     };
@@ -444,7 +444,7 @@ function createCardButton(questionText: string, index: number): HTMLButtonElemen
   const btn = document.createElement("button");
   btn.innerText =
     questionText.length > 20 ? questionText.slice(0, 20) + "..." : questionText;
-  btn.onclick = () => {
+  (btn as HTMLButtonElement).onclick= () => {
     currentCardIndex = index;
     refresh();
   };
@@ -931,7 +931,7 @@ function deleteCard(): void {
       return;
     }
 
-    child.onclick = () => {
+    (child as HTMLButtonElement).onclick = () => {
       currentCardIndex = i;
       refresh();
     };
@@ -945,7 +945,7 @@ function createCardButton(questionText: string, index: number): HTMLButtonElemen
   const btn = document.createElement("button");
   btn.innerText =
     questionText.length > 20 ? questionText.slice(0, 20) + "..." : questionText;
-  btn.onclick = () => {
+  (btn as HTMLButtonElement).onclick= () => {
     currentCardIndex = index;
     refresh();
   };

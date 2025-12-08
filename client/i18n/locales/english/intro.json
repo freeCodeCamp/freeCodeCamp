@@ -6627,6 +6627,12 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
+      "workshop-flashcard-quiz-app": {
+        "title": "Build a Flashcard Quiz App",
+        "intro": [
+          "In this workshop, you will practice using Typescript and React by building a flashcard quiz app"
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
@@ -7523,12 +7529,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "workshop-flashcard-quiz-app": {
-        "title": "Build a Flashcard Quiz App",
-        "intro": [
-          "In this workshop, you will practice using Typescript and React by building a flashcard quiz app"
-        ]
       }
     }
   },
