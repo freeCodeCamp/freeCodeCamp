@@ -8,8 +8,7 @@ dashedName: step-44
 # --description--
 
 Inside of the `catch` block, create an `if` statement checking if `ex` is instance of `InvalidUserInputError`. If so, 
-set `errorElement`'s `innerHTML` to `"\u26A0 "` plus the error's message. Otherwise log to the console `An unexpected error occurred:` 
-with the exception's string representation. 
+set `errorElement`'s `innerHTML` to `"\u26A0 "` plus the error's message.
 
 In this example we are using the `innerHTML` to automatically convert the uncode character `\u26A0` to an glyph. 
 
@@ -20,12 +19,6 @@ You should set the `errorElement`'s `innerHTML` to `"\u26A0 "` plus the error me
 ```js
 uploadNewCard(); 
 assert.strictEqual(errorElement.innerHTML, "\u26A0 Front text cannot be empty.")
-```
-
-You should log to the console `"An unexpected error occurred:"` plus the exception's string representation if there is an unknown error.
-
-```js
-
 ```
 
 # --seed--
