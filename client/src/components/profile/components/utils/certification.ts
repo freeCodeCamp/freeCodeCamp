@@ -56,7 +56,7 @@ export const getCertifications = (user: User) => {
     currentCerts: [
       {
         show: isA2EnglishCert,
-        title: 'A2 English for Developers Certification',
+        title: 'A2 English for Developers Certification (Beta)',
         certSlug: Certification.A2English
       },
       {
