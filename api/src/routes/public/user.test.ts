@@ -218,7 +218,7 @@ const publicUserData = {
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  twitter: 'https://twitter.com/foobar',
+  twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
