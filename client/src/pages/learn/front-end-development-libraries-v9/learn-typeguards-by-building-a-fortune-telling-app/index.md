@@ -1,7 +1,7 @@
 ---
 title: Build a Fortune Telling App
 block: workshop-fortune-teller-app
-superBlock: full-stack-developer
+superBlock: front-end-development-libraries-v9
 ---
 
 ## Build a Fortune Telling App
