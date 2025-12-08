@@ -121,8 +121,7 @@
     "more-ways-to-sign-in": "Mais maneiras de fazer login",
     "sign-in-with-google": "Faça login com o Google",
     "go-to-dcc-today": "Vá para o desafio diário",
-    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário",
-    "save-locally": "Save locally"
+    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -495,9 +494,6 @@
     "indentation-error": "Seu código tem um erro de indentação. Você pode precisar adicionar <code>pass</code> em uma nova linha para formar um bloco de código válido.",
     "sign-in-save": "Faça o login para salvar seu progresso",
     "download-solution": "Baixar minha solução",
-    "lab-local-save-heading": "Labs are not saved to your account",
-    "lab-local-save-body": "Use the \"Save locally\" button or Ctrl+S / Cmd+S to store your lab code in this browser. Local saves are cleared when you submit the lab, sign out, or switch browsers or devices.",
-    "lab-completion-warning": "Your lab code is not stored in your account. Any lab code you only saved locally in this browser will be cleared after you continue. Download your solution if you need a permanent copy.",
     "download-results": "Baixar meus resultados",
     "percent-complete": "{{percent}}% completo",
     "project-complete": "Concluídos {{completedChallengesInBlock}} de {{totalChallengesInBlock}} projetos de certificação",
