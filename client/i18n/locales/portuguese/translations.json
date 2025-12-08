@@ -1316,7 +1316,7 @@
   },
   "signout": {
     "heading": "Sair da sua conta",
-    "p1": "Aviso: se continuar, seu progresso não será mais salvo. Any lab code that you only saved locally in this browser may be lost.",
+    "p1": "Aviso: se continuar, seu progresso não será mais salvo.",
     "p2": "Esta ação encerrará a sua conta somente neste dispositivo e na sessão do navegador. Confirme se deseja prosseguir.",
     "certain": "Sim, sair da minha conta",
     "nevermind": "Deixa para lá, eu não quero sair da minha conta"

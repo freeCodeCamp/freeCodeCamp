@@ -1316,7 +1316,7 @@
   },
   "signout": {
     "heading": "Salir de tu cuenta",
-    "p1": "Advertencia: Si continúas, tu progreso ya no se guardará. Any lab code that you only saved locally in this browser may be lost.",
+    "p1": "Advertencia: Si continúas, tu progreso ya no se guardará.",
     "p2": "Esta acción te hará salir de tu cuenta sólo en este dispositivo y sesión del navegador. Por favor, confirma, si deseas continuar.",
     "certain": "Sí, cerrar la sesión de mi cuenta",
     "nevermind": "No importa, no quiero cerrar la sesión"
