@@ -30,7 +30,7 @@ export const ConditionalDonationAlert = ({
 }: ConditionalDonationAlertProps): JSX.Element | null => {
   const { t } = useTranslation();
 
-  const betaCertifications: SuperBlocks[] = [];
+  const betaCertifications: SuperBlocks[] = [SuperBlocks.A2English];
 
   const unfinishedCertifications = [
     SuperBlocks.B1English,

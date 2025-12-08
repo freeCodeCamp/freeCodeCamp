@@ -35,8 +35,7 @@
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
-    "test": "vitest",
-    "validate-keys": "tsx --tsconfig ../tsconfig.json ../tools/scripts/lint/validate-keys"
+    "test": "vitest"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",
