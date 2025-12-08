@@ -121,7 +121,8 @@
     "more-ways-to-sign-in": "More ways to sign in",
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "save-locally": "Save locally"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -494,6 +495,9 @@
     "indentation-error": "Tu código tiene un error de identación. Puede que necesites añadir <code>pass</code> en una nueva línea para formar un bloque de código válido.",
     "sign-in-save": "Inicia sesión para guardar tu progreso",
     "download-solution": "Descargar mi solución",
+    "lab-local-save-heading": "Labs are not saved to your account",
+    "lab-local-save-body": "Use the \"Save locally\" button or Ctrl+S / Cmd+S to store your lab code in this browser. Local saves are cleared when you submit the lab, sign out, or switch browsers or devices.",
+    "lab-completion-warning": "Your lab code is not stored in your account. Any lab code you only saved locally in this browser will be cleared after you continue. Download your solution if you need a permanent copy.",
     "download-results": "Descargar mis resultados",
     "percent-complete": "{{percent}}% completo",
     "project-complete": "Completado {{completedChallengesInBlock}} de {{totalChallengesInBlock}} proyectos de certificación",
@@ -1316,7 +1320,7 @@
   },
   "signout": {
     "heading": "Salir de tu cuenta",
-    "p1": "Advertencia: Si continúas, tu progreso ya no se guardará.",
+    "p1": "Advertencia: Si continúas, tu progreso ya no se guardará. Any lab code that you only saved locally in this browser may be lost.",
     "p2": "Esta acción te hará salir de tu cuenta sólo en este dispositivo y sesión del navegador. Por favor, confirma, si deseas continuar.",
     "certain": "Sí, cerrar la sesión de mi cuenta",
     "nevermind": "No importa, no quiero cerrar la sesión"

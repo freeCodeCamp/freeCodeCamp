@@ -285,6 +285,15 @@ const Editor = (props: EditorProps): JSX.Element => {
     shouldPlay: store.get('fcc-sound') as boolean | undefined
   });
 
+  const isLabLike =
+    props.challengeType === challengeTypes.lab ||
+    props.challengeType === challengeTypes.jsLab ||
+    props.challengeType === challengeTypes.pyLab;
+
+  const saveLocallyLabel = t('buttons.save-locally', {
+    defaultValue: 'Save Locally'
+  });
+
   // since editorDidMount runs once with the initial props object, it keeps a
   // reference to *those* props. If we want it to use the latest props, we can
   // use a ref, since it will be updated on every render.
@@ -1363,22 +1372,33 @@ const Editor = (props: EditorProps): JSX.Element => {
         <div className='editor-file-name'>{`${challengeFile.name}.${challengeFile.ext}`}</div>
       )}
       <span className='notranslate'>
-        <MonacoEditor
-          editorDidMount={editorDidMount}
-          editorWillMount={editorWillMount}
-          editorWillUnmount={(editor, monaco) => {
-            const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-            const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
-            // Any model we've created has to be manually disposed of to prevent
-            // memory leaks.
-            editor.getModel()?.dispose();
-            monaco.editor.getModel(reactFile)?.dispose();
-            monaco.editor.getModel(file)?.dispose();
-          }}
-          onChange={onChange}
-          options={{ ...options, folding: !hasEditableRegion() }}
-          theme={editorTheme}
-        />
+        <div className='editor-monaco-wrapper'>
+          <MonacoEditor
+            editorDidMount={editorDidMount}
+            editorWillMount={editorWillMount}
+            editorWillUnmount={(editor, monaco) => {
+              const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
+              const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
+              // Any model we've created has to be manually disposed of to prevent
+              // memory leaks.
+              editor.getModel()?.dispose();
+              monaco.editor.getModel(reactFile)?.dispose();
+              monaco.editor.getModel(file)?.dispose();
+            }}
+            onChange={onChange}
+            options={{ ...options, folding: !hasEditableRegion() }}
+            theme={editorTheme}
+          />
+          {isLabLike && (
+            <button
+              type='button'
+              className='editor-save-locally-btn'
+              onClick={props.saveEditorContent}
+            >
+              {saveLocallyLabel}
+            </button>
+          )}
+        </div>
       </span>
       {lowerJawContainer !== null &&
         createPortal(

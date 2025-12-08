@@ -121,7 +121,8 @@
     "more-ways-to-sign-in": "More ways to sign in",
     "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive",
+    "save-locally": "Save locally"
   },
   "daily-coding-challenges": {
     "title": "Щоденні завдання з програмування",
@@ -494,6 +495,9 @@
     "indentation-error": "У коді наявна помилка відступів. Спробуйте додати <code>pass</code> в новому рядку, щоб утворити дійсний блок коду.",
     "sign-in-save": "Увійдіть, щоб зберегти свій прогрес",
     "download-solution": "Завантажити розв’язок",
+    "lab-local-save-heading": "Labs are not saved to your account",
+    "lab-local-save-body": "Use the \"Save locally\" button or Ctrl+S / Cmd+S to store your lab code in this browser. Local saves are cleared when you submit the lab, sign out, or switch browsers or devices.",
+    "lab-completion-warning": "Your lab code is not stored in your account. Any lab code you only saved locally in this browser will be cleared after you continue. Download your solution if you need a permanent copy.",
     "download-results": "Завантажити результати",
     "percent-complete": "виконано {{percent}}%",
     "project-complete": "Завершено {{completedChallengesInBlock}} із {{totalChallengesInBlock}} сертифікаційних проєктів",
