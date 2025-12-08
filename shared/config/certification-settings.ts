@@ -247,10 +247,8 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.A1Chinese]: 'isA1ChineseCertV8'
 };
 
-type CertificationFlag = (typeof certSlugTypeMap)[Certification];
-
 export type CertificationFlags = {
-  [key in CertificationFlag]: boolean;
+  [key in UserCertFlag]: boolean;
 };
 
 // TODO: use i18n keys instead of hardcoded titles
