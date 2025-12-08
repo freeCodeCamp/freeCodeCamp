@@ -1,7 +1,7 @@
 ---
 id: 691bbc97064dadb6ea5cd7dd
 title: Step 43
-challengeType: 25
+challengeType: 0
 dashedName: step-43
 ---
 
