@@ -26,7 +26,6 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <FontAwesomeIcon
           icon={faXTwitter}
           size='1x'
-          aria-label='xIcon'
           aria-hidden='true'
         />
         {t('buttons.share-on-x')}
@@ -42,7 +41,6 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <FontAwesomeIcon
           icon={faBluesky}
           size='1x'
-          aria-label='blueSkyIcon'
           aria-hidden='true'
         />
         {t('buttons.share-on-bluesky')}
@@ -58,7 +56,6 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <FontAwesomeIcon
           icon={faInstagram}
           size='1x'
-          aria-label='instagramIcon'
           aria-hidden='true'
         />
         {t('buttons.share-on-threads')}
