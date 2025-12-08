@@ -5019,12 +5019,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-digital-pet-game": {
-        "title": "Build a Digital Pet Game",
-        "intro": [
-          "For this lab, you will use TypeScript and React to build a digital pet game."
-        ]
       }
     }
   },
@@ -6562,6 +6556,12 @@
         "title": "Front End Libraries Review",
         "intro": [
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "For this lab, you will use TypeScript and React to build a digital pet game."
         ]
       },
       "exam-front-end-development-libraries-certification": {

@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Digital Pet Game
 block: lab-digital-pet-game
-superBlock: full-stack-developer
+superBlock: front-end-development-libraries-v9
 ---
 
 ## Introduction to the Build a Digital Pet Game
