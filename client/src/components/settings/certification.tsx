@@ -271,7 +271,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certSlug: Exclude<Certification, Certification.LegacyFullStack>;
     isCert: boolean;
   }) {
-    console.log({ certSlug, isCert });
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
     const certLocation = `/certification/${username}/${certSlug}`;
 
