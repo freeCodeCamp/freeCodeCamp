@@ -18,6 +18,7 @@ import { SolutionDisplayWidget } from '../solution-display-widget';
 import {
   Certification,
   currentCertifications,
+  isCertified,
   legacyCertifications,
   upcomingCertifications,
   type CertificationFlags
@@ -41,69 +42,6 @@ const { showUpcomingChanges } = env;
 const mapDispatchToProps = {
   openModal
 };
-
-const createCertifiedMap = ({
-  is2018DataVisCert,
-  isA2EnglishCert,
-  isApisMicroservicesCert,
-  isJavascriptCertV9,
-  isJsAlgoDataStructCert,
-  isInfosecQaCert,
-  isPythonCertV9,
-  isQaCertV7,
-  isInfosecCertV7,
-  isFrontEndLibsCert,
-  isRespWebDesignCert,
-  isRespWebDesignCertV9,
-  isDataVisCert,
-  isFrontEndCert,
-  isBackEndCert,
-  isSciCompPyCertV7,
-  isDataAnalysisPyCertV7,
-  isMachineLearningPyCertV7,
-  isRelationalDatabaseCertV8,
-  isRelationalDatabaseCertV9,
-  isCollegeAlgebraPyCertV8,
-  isFoundationalCSharpCertV8,
-  isJsAlgoDataStructCertV8
-}: CertificationFlags): Record<
-  Exclude<Certification, Certification.LegacyFullStack>,
-  boolean
-> => ({
-  [Certification.RespWebDesign]: isRespWebDesignCert,
-  [Certification.JsAlgoDataStruct]: isJsAlgoDataStructCert,
-  [Certification.FrontEndDevLibs]: isFrontEndLibsCert,
-  [Certification.DataVis]: is2018DataVisCert,
-  [Certification.BackEndDevApis]: isApisMicroservicesCert,
-  [Certification.QualityAssurance]: isQaCertV7,
-  [Certification.InfoSec]: isInfosecCertV7,
-  [Certification.SciCompPy]: isSciCompPyCertV7,
-  [Certification.DataAnalysisPy]: isDataAnalysisPyCertV7,
-  [Certification.MachineLearningPy]: isMachineLearningPyCertV7,
-  [Certification.RelationalDb]: isRelationalDatabaseCertV8,
-  [Certification.CollegeAlgebraPy]: isCollegeAlgebraPyCertV8,
-  [Certification.FoundationalCSharp]: isFoundationalCSharpCertV8,
-  [Certification.LegacyFrontEnd]: isFrontEndCert,
-  [Certification.LegacyDataVis]: isDataVisCert,
-  [Certification.LegacyBackEnd]: isBackEndCert,
-  [Certification.LegacyInfoSecQa]: isInfosecQaCert,
-  // LegacyFullStack cannot be handled by this because there are no projects to
-  // be rendered. The new FullStackDeveloper certification is a normal
-  // certification with projects.
-  [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
-  [Certification.JsV9]: isJavascriptCertV9,
-  [Certification.FrontEndDevLibsV9]: false,
-  [Certification.PythonV9]: isPythonCertV9,
-  [Certification.RelationalDbV9]: isRelationalDatabaseCertV9,
-  [Certification.BackEndDevApisV9]: false,
-  [Certification.FullStackDeveloperV9]: false,
-  [Certification.A2English]: isA2EnglishCert,
-  [Certification.B1English]: false,
-  [Certification.A2Spanish]: false,
-  [Certification.A2Chinese]: false,
-  [Certification.A1Chinese]: false,
-  [Certification.JsAlgoDataStructNew]: isJsAlgoDataStructCertV8
-});
 
 const honestyInfoMessage = {
   type: 'info',
@@ -239,7 +177,6 @@ function CertificationSettings(props: CertificationSettingsProps) {
 
   const handleSolutionModalHide = () => initialiseState();
 
-  const isCertifiedMap = createCertifiedMap(props);
   const getProjectSolution = (projectId: string, projectTitle: string) => {
     const { completedChallenges, openModal } = props;
     const completedProject = find(
@@ -317,7 +254,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
               <tbody>
                 <ProjectsFor
                   certSlug={certSlug}
-                  isCert={isCertifiedMap[certSlug]}
+                  isCert={isCertified(props, certSlug)}
                 />
               </tbody>
             </Table>
@@ -334,6 +271,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
     certSlug: Exclude<Certification, Certification.LegacyFullStack>;
     isCert: boolean;
   }) {
+    console.log({ certSlug, isCert });
     const { username, isHonest, createFlashMessage, t, verifyCert } = props;
     const certLocation = `/certification/${username}/${certSlug}`;
 
