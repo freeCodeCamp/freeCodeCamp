@@ -488,7 +488,7 @@ class FlashCardController {
     flipBtn: HTMLButtonElement;
     entryForm: HTMLFormElement;
     deleteBtn: HTMLButtonElement;
-  }  
+  }  = {} as { flashcard: HTMLElement,flipBtn: HTMLButtonElement,entryForm: HTMLFormElement, deleteBtn: HTMLButtonElement}  
 
   constructor() {
   this.elements = {
@@ -990,7 +990,7 @@ class FlashCardController {
     flipBtn: HTMLButtonElement;
     entryForm: HTMLFormElement;
     deleteBtn: HTMLButtonElement;
-  }  
+  }  = {} as { flashcard: HTMLElement,flipBtn: HTMLButtonElement,entryForm: HTMLFormElement, deleteBtn: HTMLButtonElement}  
 
   constructor() {
   this.elements = {
