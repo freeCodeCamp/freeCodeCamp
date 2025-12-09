@@ -20,8 +20,7 @@ export const classroomGetUserDataSchema = {
         Type.Array(
           Type.Object({
             id: Type.String(),
-            completedDate: Type.Number(),
-            challengeName: Type.Optional(Type.String())
+            completedDate: Type.Number()
           })
         )
       )
