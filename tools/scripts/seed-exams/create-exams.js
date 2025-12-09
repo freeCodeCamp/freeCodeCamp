@@ -24,6 +24,11 @@ const examFilenames = [
 
 const client = new MongoClient(MONGOHQ_URL);
 
+/**
+ * Handles errors during exam seeding process
+ * @param {Error} err - The error that occurred
+ * @param {MongoClient} client - MongoDB client to close
+ */
 function handleError(err, client) {
   if (err) {
     console.error('Oh noes!! Error seeding exams.');
@@ -32,9 +37,8 @@ function handleError(err, client) {
       client.close();
     } catch {
       // no-op
-    } finally {
-      process.exit(1);
     }
+    process.exit(1);
   }
 }
 
