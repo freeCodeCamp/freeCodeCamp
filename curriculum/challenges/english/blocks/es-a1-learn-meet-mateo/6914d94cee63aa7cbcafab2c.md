@@ -10,8 +10,9 @@ lang: es
 
 # --description--
 
-Mateo is mentioning his **name** and **profession** in Spanish.  
-Here the verb `ser` is used to express the **identity, and profession** of the speaker.
+Mateo is mentioning his name and profession in Spanish. 
+
+Here the verb `ser` is used to express is identity and profession.
 
 # --instructions--
 
@@ -25,7 +26,7 @@ Listen to the audio and complete the sentence below.
 
 ## --blanks--
 
-`soy`
+`Soy`
 
 ### --feedback--
 
@@ -33,7 +34,7 @@ This verb form comes from `ser` and is used to describe who you are or what you 
 
 ---
 
-`soy`
+`Soy`
 
 ### --feedback--
 
@@ -42,7 +43,9 @@ This verb form comes from `ser` and is used to describe who you are or what you 
 # --explanation--
 
 
-The phrase `soy` means **"I am"** and comes from the verb `ser`.  
+`Soy` is a verb used to describe who you are or what you do. For example:
+
+`Soy Mateo. Soy ingeniero de software.`
 
 # --scene--
 

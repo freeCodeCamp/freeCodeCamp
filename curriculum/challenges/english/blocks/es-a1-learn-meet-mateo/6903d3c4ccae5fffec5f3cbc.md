@@ -8,10 +8,6 @@ lang: es
 
 <!-- (Audio) Mateo: Soy puertorriqueño. -->
 
-# --description--
-
-Mateo shared his nationality in Spanish.
-
 # --instructions--
 
 Listen to the audio and answer the question below.
@@ -56,7 +52,7 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
 
 # --explanation--
 
-The word `soy` (I am) comes from the verb `ser` and is used to express **identity, nationality, or profession**. For example:
+`Soy` (I am) comes from the verb `ser` and is used to express identity, nationality, or profession. For example:
 
 - `Soy chilena.` – I am Chilean. (feminine)
 
@@ -67,7 +63,6 @@ The word `soy` (I am) comes from the verb `ser` and is used to express **identit
 - `Soy puertorriqueño` - I am Puerto Rican. (masculine)
 
 - `Soy canadiense.` – I am Canadian. (neutral)
-
 
 # --scene--
 
