@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 
-import { SuperBlocks } from '../../../shared/config/curriculum';
-import { withTrace } from './utils';
+import { SuperBlocks } from '../../../shared-dist/config/curriculum.js';
+import { withTrace } from './utils.js';
 
 export type BlockInfo = {
   title: string;
