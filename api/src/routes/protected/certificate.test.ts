@@ -13,6 +13,7 @@ import {
   defaultUserEmail,
   defaultUserId,
   devLogin,
+  resetDefaultUser,
   setupServer,
   superRequest
 } from '../../../vitest.utils.js';
@@ -35,28 +36,13 @@ describe('certificate routes', () => {
 
     describe('PUT /certificate/verify', () => {
       beforeEach(async () => {
+        await resetDefaultUser();
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
             name: 'fcc',
-            isA2EnglishCert: false,
-            isRespWebDesignCert: false,
-            isJsAlgoDataStructCert: false,
-            isFrontEndLibsCert: false,
-            is2018DataVisCert: false,
-            isRelationalDatabaseCertV8: false,
-            isApisMicroservicesCert: false,
-            isQaCertV7: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isInfosecCertV7: false,
-            isMachineLearningPyCertV7: false,
-            isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false,
-            isJavascriptCertV9: false,
-            isRespWebDesignCertV9: false,
-            username: 'fcc'
+            username: 'fcc',
+            completedChallenges: []
           }
         });
       });
@@ -170,7 +156,6 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
             isRespWebDesignCert: true
           }
         });
@@ -323,7 +308,17 @@ describe('certificate routes', () => {
             isMachineLearningPyCertV7: false,
             isRelationalDatabaseCertV8: false,
             isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false
+            isFoundationalCSharpCertV8: false,
+            isBackEndDevApisCertV9: false,
+            isFullStackDeveloperCertV9: false,
+            isJsAlgoDataStructCertV8: false,
+            isFrontEndLibsCertV9: false,
+            isPythonCertV9: false,
+            isRelationalDatabaseCertV9: false,
+            isA1ChineseCertV8: false,
+            isA2ChineseCertV8: false,
+            isA2SpanishCertV8: false,
+            isB1EnglishCertV8: false
           },
           completedChallenges: [
             {

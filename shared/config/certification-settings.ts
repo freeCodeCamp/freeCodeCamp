@@ -175,7 +175,40 @@ export const completionHours: Record<Certification, number> = {
   [Certification.A1Chinese]: 300
 };
 
-export const certSlugTypeMap = {
+type UserCertFlag =
+  | 'isFrontEndCert'
+  | 'isJsAlgoDataStructCert'
+  | 'isBackEndCert'
+  | 'isDataVisCert'
+  | 'isInfosecQaCert'
+  | 'isFullStackCert'
+  | 'isRespWebDesignCert'
+  | 'isJsAlgoDataStructCertV8'
+  | 'isFrontEndLibsCert'
+  | 'is2018DataVisCert'
+  | 'isApisMicroservicesCert'
+  | 'isQaCertV7'
+  | 'isInfosecCertV7'
+  | 'isSciCompPyCertV7'
+  | 'isDataAnalysisPyCertV7'
+  | 'isMachineLearningPyCertV7'
+  | 'isRelationalDatabaseCertV8'
+  | 'isCollegeAlgebraPyCertV8'
+  | 'isFoundationalCSharpCertV8'
+  | 'isA2EnglishCert'
+  | 'isRespWebDesignCertV9'
+  | 'isJavascriptCertV9'
+  | 'isFrontEndLibsCertV9'
+  | 'isPythonCertV9'
+  | 'isRelationalDatabaseCertV9'
+  | 'isBackEndDevApisCertV9'
+  | 'isFullStackDeveloperCertV9'
+  | 'isB1EnglishCertV8'
+  | 'isA2SpanishCertV8'
+  | 'isA2ChineseCertV8'
+  | 'isA1ChineseCertV8';
+
+export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   // legacy
   [Certification.LegacyFrontEnd]: 'isFrontEndCert',
   [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
@@ -202,8 +235,29 @@ export const certSlugTypeMap = {
 
   // upcoming
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
-  [Certification.JsV9]: 'isJavascriptCertV9'
-} as const;
+  [Certification.JsV9]: 'isJavascriptCertV9',
+  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
+  [Certification.PythonV9]: 'isPythonCertV9',
+  [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
+  [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
+  [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
+  [Certification.B1English]: 'isB1EnglishCertV8',
+  [Certification.A2Spanish]: 'isA2SpanishCertV8',
+  [Certification.A2Chinese]: 'isA2ChineseCertV8',
+  [Certification.A1Chinese]: 'isA1ChineseCertV8'
+};
+
+export type CertificationFlags = {
+  [key in UserCertFlag]: boolean;
+};
+
+export function isCertified(
+  user: Partial<CertificationFlags>,
+  cert: Certification
+): boolean {
+  const certFlag = certSlugTypeMap[cert];
+  return Boolean(user[certFlag]);
+}
 
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
