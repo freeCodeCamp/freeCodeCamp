@@ -62,8 +62,8 @@ interface CreateProjectArgs {
   position?: number;
   module?: string;
   title?: string;
-  instructionsInEditor?: boolean;
-  includeBlockInTitle?: boolean;
+  instructionsInEditor: boolean;
+  includeBlockInTimeline: boolean;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -125,7 +125,9 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.block,
       projectArgs.title,
       projectArgs.helpCategory,
-      challengeId
+      challengeId,
+      projectArgs.includeBlockInTimeline,
+      projectArgs.instructionsInEditor
     );
   } else {
     const challengeId = await createFirstChallenge(projectArgs.block);
@@ -135,6 +137,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.title,
       projectArgs.helpCategory,
       challengeId,
+      projectArgs.instructionsInEditor,
+      projectArgs.includeBlockInTimeline,
       projectArgs.order,
       projectArgs.blockLabel,
       projectArgs.blockLayout
@@ -185,20 +189,20 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectId,
+  instructionsInEditor: boolean,
+  includeBlockInTimeline: boolean,
   order?: number,
   blockLabel?: string,
-  blockLayout?: string,
-  instructionsInEditor?: boolean,
-  includeBlockInTitle?: boolean
+  blockLayout?: string
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
     newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
-    if (blockLabel === BlockLabel.workshop) {
-      newMeta.hasEditableBoundaries = true;
-    }
+    // if (blockLabel === BlockLabel.workshop) {
+    //   newMeta.hasEditableBoundaries = true;
+    // }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
@@ -206,13 +210,6 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  if (typeof instructionsInEditor === 'boolean') {
-    newMeta.instructionsInEditor = instructionsInEditor;
-  }
-  if (typeof includeBlockInTitle === 'boolean') {
-    newMeta.includeBlockInTitle = includeBlockInTitle;
-  }
-
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
   await writeBlockStructure(block, newMeta);
@@ -441,7 +438,7 @@ void getAllBlocks()
         position,
         order,
         instructionsInEditor,
-        includeBlockInTitle
+        includeBlockInTimeline
       }: CreateProjectArgs) =>
         await createProject({
           superBlock,
@@ -456,7 +453,7 @@ void getAllBlocks()
           position,
           order,
           instructionsInEditor,
-          includeBlockInTitle
+          includeBlockInTimeline
         })
     )
   )

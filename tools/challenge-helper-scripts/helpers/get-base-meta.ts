@@ -8,12 +8,11 @@ interface Meta {
     title: string;
   }>;
   usesMultifileEditor?: boolean;
-  hasEditableBoundaries?: boolean;
   blockLabel?: string;
   blockLayout?: string;
   order?: number;
-  instructionsInEditor?: boolean;
-  includeBlockInTitle?: boolean;
+  instructionsInEditor: boolean;
+  includeBlockInTimeline: boolean;
 }
 
 const baseMeta: Meta = {
@@ -27,7 +26,9 @@ const baseMeta: Meta = {
       id: '',
       title: ''
     }
-  ]
+  ],
+  instructionsInEditor: false,
+  includeBlockInTimeline: false
 };
 
 const stepMeta = {

@@ -159,7 +159,9 @@ export function addMetaToChallenge(
   challenge.block = meta.dashedName;
   challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
-  challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
+  // challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
+  challenge.includesInstructionsInEditor = !!meta.includesInstructionsInEditor;
+  challenge.includesBlockInTimeline = !!meta.includesBlockInTimeline;
   challenge.order = meta.order;
 
   // Ensure required properties exist
@@ -233,7 +235,7 @@ export function challengeFilesToPolys(files: ChallengeFile[]) {
  * @param {object} challenge - The challenge object to fix
  * @returns {object} The challenge object with fixed properties
  */
-export function fixChallengeProperties(challenge: Challenge) {
+export function fixChallengeProperties(challenge: Partial<Challenge>) {
   const fixedChallenge = {
     ...challenge
   };
@@ -257,7 +259,7 @@ export function fixChallengeProperties(challenge: Challenge) {
  * @param {object} meta - The meta information object
  * @returns {object} The finalized challenge object
  */
-export function finalizeChallenge(challenge: Challenge, meta: Meta) {
+export function finalizeChallenge(challenge: Partial<Challenge>, meta: Meta) {
   return addMetaToChallenge(fixChallengeProperties(challenge), meta);
 }
 export class BlockCreator {
