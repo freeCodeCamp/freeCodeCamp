@@ -124,8 +124,10 @@ model user {
   isJsAlgoDataStructCert         Boolean? // Undefined
   isJsAlgoDataStructCertV8       Boolean? // Undefined
   isMachineLearningPyCertV7      Boolean? // Undefined
+  isPythonCertV9                 Boolean? // Undefined
   isQaCertV7                     Boolean? // Undefined
   isRelationalDatabaseCertV8     Boolean? // Undefined
+  isRelationalDatabaseCertV9     Boolean? // Undefined
   isRespWebDesignCert            Boolean? // Undefined
   isRespWebDesignCertV9          Boolean? // Undefined
   isSciCompPyCertV7              Boolean? // Undefined

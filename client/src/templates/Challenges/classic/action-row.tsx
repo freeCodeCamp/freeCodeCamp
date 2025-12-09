@@ -130,26 +130,24 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
         {/* middle - only used with daily coding challenges for now */}
-        <div className='tabs-row-middle'>
-          {isDailyCodingChallenge && (
-            <>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
-                disabled={dailyCodingChallengeLanguage === 'javascript'}
-                onClick={() => handleLanguageChange('javascript')}
-              >
-                JavaScript
-              </button>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'python'}
-                disabled={dailyCodingChallengeLanguage === 'python'}
-                onClick={() => handleLanguageChange('python')}
-              >
-                Python
-              </button>
-            </>
-          )}
-        </div>
+        {isDailyCodingChallenge && (
+          <div className='tabs-row-middle'>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+              disabled={dailyCodingChallengeLanguage === 'javascript'}
+              onClick={() => handleLanguageChange('javascript')}
+            >
+              JavaScript
+            </button>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'python'}
+              disabled={dailyCodingChallengeLanguage === 'python'}
+              onClick={() => handleLanguageChange('python')}
+            >
+              Python
+            </button>
+          </div>
+        )}
         {/* right */}
         <div className='tabs-row-right panel-display-tabs'>
           <button

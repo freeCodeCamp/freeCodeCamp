@@ -240,7 +240,7 @@ const ShareCertBtns = ({
           block={true}
           size='large'
           variant='primary'
-          href={`https://twitter.com/intent/tweet?text=${t('profile.tweet', {
+          href={`https://x.com/intent/post?text=${t('profile.tweet', {
             certTitle: urlFriendlyCertTitle,
             certURL
           })}`}
