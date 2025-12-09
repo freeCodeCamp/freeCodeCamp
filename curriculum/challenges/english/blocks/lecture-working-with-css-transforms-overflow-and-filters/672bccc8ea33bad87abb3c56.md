@@ -61,31 +61,13 @@ Likewise, the total height will be the result of adding the height of the conten
 
 Great! Now let's explore `border-box`. They are a bit different, with `border-box` the width and height of an element include the content area, the padding, and the border, but they don't include the margin. You should use `border-box` when you need to keep a fixed element size regardless of changes in padding or borders. It's also helpful for responsive web design since the content area will adjust automatically to fit the dimensions.
 
-The padding and border are inside the box, so when you set the `width` and `height` properties of an element, you're really setting the width and height of the inner part of the box. Here's our `div` example with the same properties and values that we had before: 
-
-:::interactive_editor
-
-```html
-<link rel="stylesheet" href="styles.css">
-<div></div>
-```
-
-```css
-div {
-  width: 300px;
-  height: 200px;
-  padding: 20px;
-  border: 4px solid black;
-}
-```
-
-:::
+The padding and border are inside the box, so when you set the `width` and `height` properties of an element, you're really setting the width and height of the inner part of the box. 
 
 With `border-box` the value of the `width` property will be the result of adding the width of the content area, the left and right padding, and the left and right border. So, the width equals the width of the content, plus the left padding, plus the right padding, plus the left border, plus the right border.
 
 Likewise, the value of the `height` property is the result of adding the height of the content area, the top and bottom padding, and the top and bottom border. Height equals the height of the content, plus top padding, plus bottom padding, plus top border, plus bottom border. The margin is not included in the width or height.
 
-If you check the size of the `div` in the browser using the `content-box` and `border-box` you will notice that there's a very important difference. Here are two `div` elements each with the same dimensions but different `box-sizing` values:
+In the following example there are two div elements, each with the same dimensions but with different box-sizing values. Notice that this causes the div elements to have different dimensions when viewed in the browser.
 
 :::interactive_editor
 
