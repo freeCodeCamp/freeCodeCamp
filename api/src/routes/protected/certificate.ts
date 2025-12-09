@@ -123,78 +123,84 @@ export function createCertLookup(
 
 interface CertI {
   isA2EnglishCert?: boolean;
-  isRespWebDesignCert?: boolean;
+  isApisMicroservicesCert?: boolean;
+  isBackEndCert?: boolean;
+  isCollegeAlgebraPyCertV8?: boolean;
+  isDataAnalysisPyCertV7?: boolean;
+  isDataVisCert?: boolean;
+  isFrontEndCert?: boolean;
+  isFrontEndLibsCert?: boolean;
+  isFoundationalCSharpCertV8?: boolean;
+  isFullStackCert?: boolean;
+  isInfosecCertV7?: boolean;
+  isInfosecQaCert?: boolean;
+  isJavascriptCertV9?: boolean;
   isJsAlgoDataStructCert?: boolean;
   isJsAlgoDataStructCertV8?: boolean;
-  isFrontEndLibsCert?: boolean;
-  is2018DataVisCert?: boolean;
-  isApisMicroservicesCert?: boolean;
-  isInfosecQaCert?: boolean;
-  isQaCertV7?: boolean;
-  isInfosecCertV7?: boolean;
-  isFrontEndCert?: boolean;
-  isBackEndCert?: boolean;
-  isDataVisCert?: boolean;
-  isFullStackCert?: boolean;
-  isSciCompPyCertV7?: boolean;
-  isDataAnalysisPyCertV7?: boolean;
   isMachineLearningPyCertV7?: boolean;
+  isPythonCertV9?: boolean;
+  isQaCertV7?: boolean;
   isRelationalDatabaseCertV8?: boolean;
-  isCollegeAlgebraPyCertV8?: boolean;
-  isFoundationalCSharpCertV8?: boolean;
-  isJavascriptCertV9?: boolean;
+  isRelationalDatabaseCertV9?: boolean;
+  isRespWebDesignCert?: boolean;
   isRespWebDesignCertV9?: boolean;
+  isSciCompPyCertV7?: boolean;
+  is2018DataVisCert?: boolean;
 }
 
 function getUserIsCertMap(user: CertI) {
   const {
     isA2EnglishCert = false,
-    isRespWebDesignCert = false,
+    isApisMicroservicesCert = false,
+    isBackEndCert = false,
+    isCollegeAlgebraPyCertV8 = false,
+    isDataAnalysisPyCertV7 = false,
+    isDataVisCert = false,
+    isFrontEndCert = false,
+    isFrontEndLibsCert = false,
+    isFoundationalCSharpCertV8 = false,
+    isFullStackCert = false,
+    isInfosecCertV7 = false,
+    isInfosecQaCert = false,
+    isJavascriptCertV9 = false,
     isJsAlgoDataStructCert = false,
     isJsAlgoDataStructCertV8 = false,
-    isFrontEndLibsCert = false,
-    is2018DataVisCert = false,
-    isApisMicroservicesCert = false,
-    isInfosecQaCert = false,
-    isQaCertV7 = false,
-    isInfosecCertV7 = false,
-    isFrontEndCert = false,
-    isBackEndCert = false,
-    isDataVisCert = false,
-    isFullStackCert = false,
-    isSciCompPyCertV7 = false,
-    isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
+    isPythonCertV9 = false,
+    isQaCertV7 = false,
     isRelationalDatabaseCertV8 = false,
-    isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false,
-    isJavascriptCertV9 = false,
-    isRespWebDesignCertV9 = false
+    isRelationalDatabaseCertV9 = false,
+    isRespWebDesignCert = false,
+    isRespWebDesignCertV9 = false,
+    isSciCompPyCertV7 = false,
+    is2018DataVisCert = false
   } = user;
 
   return {
     isA2EnglishCert,
-    isRespWebDesignCert,
+    isApisMicroservicesCert,
+    isBackEndCert,
+    isCollegeAlgebraPyCertV8,
+    isDataAnalysisPyCertV7,
+    isDataVisCert,
+    isFrontEndCert,
+    isFrontEndLibsCert,
+    isFoundationalCSharpCertV8,
+    isFullStackCert,
+    isInfosecCertV7,
+    isInfosecQaCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isJsAlgoDataStructCertV8,
-    isFrontEndLibsCert,
-    is2018DataVisCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
+    isPythonCertV9,
+    isQaCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJavascriptCertV9,
-    isRespWebDesignCertV9
+    isRelationalDatabaseCertV9,
+    isRespWebDesignCert,
+    isRespWebDesignCertV9,
+    isSciCompPyCertV7,
+    is2018DataVisCert
   };
 }
 
@@ -335,33 +341,35 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           }
         },
         select: {
-          username: true,
+          completedChallenges: true,
           email: true,
           name: true,
-          completedChallenges: true,
+          username: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
           isA2EnglishCert: true,
           isApisMicroservicesCert: true,
           isBackEndCert: true,
-          isDataVisCert: true,
           isCollegeAlgebraPyCertV8: true,
           isDataAnalysisPyCertV7: true,
+          isDataVisCert: true,
           isFoundationalCSharpCertV8: true,
           isFrontEndCert: true,
           isFrontEndLibsCert: true,
           isFullStackCert: true,
           isInfosecCertV7: true,
           isInfosecQaCert: true,
+          isJavascriptCertV9: true,
           isJsAlgoDataStructCert: true,
           isJsAlgoDataStructCertV8: true,
           isMachineLearningPyCertV7: true,
+          isPythonCertV9: true,
           isQaCertV7: true,
           isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
           isRespWebDesignCert: true,
-          isSciCompPyCertV7: true,
-          isJavascriptCertV9: true,
-          isRespWebDesignCertV9: true
+          isRespWebDesignCertV9: true,
+          isSciCompPyCertV7: true
         }
       });
 
