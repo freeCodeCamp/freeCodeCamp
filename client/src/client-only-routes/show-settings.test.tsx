@@ -41,7 +41,6 @@ const navigate = vi.fn();
 const loggedInProps = {
   createFlashMessage: vi.fn(),
   hardGoTo: vi.fn(),
-  isSignedIn: true,
   navigate: navigate,
   showLoading: false,
   submitNewAbout: vi.fn(),
@@ -56,5 +55,4 @@ const loggedInProps = {
   },
   verifyCert: vi.fn()
 };
-const loggedOutProps = { ...loggedInProps };
-loggedOutProps.isSignedIn = false;
+const loggedOutProps = { ...loggedInProps, user: null };
