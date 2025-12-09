@@ -205,7 +205,6 @@ function ShowClassic({
         hooks,
         tests,
         challengeType,
-        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -214,7 +213,7 @@ function ShowClassic({
         videoUrl,
         translationPending,
         instructionsInEditor,
-        includeBlockInTitle
+        includesBlockInTimeline
       }
     }
   },
@@ -473,7 +472,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout instructionsInEditor={instructionsInEditor}>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -481,9 +480,8 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
             instructionsInEditor={instructionsInEditor}
-            includeBlockInTitle={includeBlockInTitle}
+            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -518,9 +516,8 @@ function ShowClassic({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
             instructionsInEditor={instructionsInEditor}
-            includeBlockInTitle={includeBlockInTitle}
+            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -586,7 +583,6 @@ export const query = graphql`
         title
         description
         id
-        hasEditableBoundaries
         instructions
         notes
         challengeType
@@ -596,7 +592,7 @@ export const query = graphql`
         translationPending
         forumTopicId
         instructionsInEditor
-        includeBlockInTitle
+        includesBlockInTimeline
         hooks {
           beforeAll
           beforeEach

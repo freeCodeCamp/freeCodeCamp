@@ -260,10 +260,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
               }
               id
               superBlock
-              hasEditableBoundaries
               title
               instructionsInEditor
-              includeBlockInTitle
+              includesBlockInTimeline
             }
           }
         }
@@ -294,17 +293,12 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
           // @ts-expect-error Graphql needs typing
           fields: { slug },
           // @ts-expect-error Graphql needs typing
-          hasEditableBoundaries,
-          // @ts-expect-error Graphql needs typing
-          includeBlockInTitle
+          includesBlockInTimeline
         }
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-      const includeBlockFlag =
-        typeof includeBlockInTitle === 'boolean'
-          ? includeBlockInTitle
-          : hasEditableBoundaries;
+      const includeBlockFlag = includesBlockInTimeline;
 
       const shouldAppendBlockNameToTitle =
         includeBlockFlag || superBlock === SuperBlocks.A2English;

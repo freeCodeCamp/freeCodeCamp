@@ -32,9 +32,8 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries?: boolean;
-  instructionsInEditor?: boolean;
-  includeBlockInTitle?: boolean;
+  instructionsInEditor: boolean;
+  includesBlockInTimeline: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -111,7 +110,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
     instructionsInEditor,
-    includeBlockInTitle
+    includesBlockInTimeline
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -232,7 +231,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     onPreviewResize,
     preview,
-    hasEditableBoundaries,
+    // hasEditableBoundaries,
     windowTitle
   } = props;
 
@@ -245,17 +244,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   }, []);
 
-  const projectBasedChallenge = hasEditableBoundaries;
+  const projectBasedChallenge = instructionsInEditor;
 
   // prefer explicit metadata; fall back to legacy hasEditableBoundaries
-  const instructionsAreInEditor =
-    typeof instructionsInEditor === 'boolean'
-      ? instructionsInEditor
-      : hasEditableBoundaries;
+  const instructionsAreInEditor = instructionsInEditor;
 
   const areInstructionsDisplayable =
-    !instructionsAreInEditor &&
-    (!projectBasedChallenge || showIndependentLowerJaw);
+    !instructionsAreInEditor || showIndependentLowerJaw;
 
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
@@ -268,7 +263,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
+  const displayNotes = includesBlockInTimeline ? showNotes && !!notes : false;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
 
@@ -301,7 +296,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
           challengeType={challengeType}
-          includeBlockInTitle={includeBlockInTitle}
+          includesBlockInTimeline={includesBlockInTimeline}
           data-playwright-test-label='action-row'
         />
       )}

@@ -24,7 +24,7 @@ interface ClassicLayoutProps {
   challengeType: number;
   togglePane: (pane: string) => void;
   // UI: new metadata
-  includeBlockInTitle?: boolean;
+  includesBlockInTimeline?: boolean;
   hasInteractiveEditor?: never;
 }
 

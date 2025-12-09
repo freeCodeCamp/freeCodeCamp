@@ -8,7 +8,9 @@ const blockSchema = Joi.object({}).keys({
       name: Joi.string().required(),
       isUpcomingChange: Joi.bool().required(),
       usesMultifileEditor: Joi.bool().optional(),
-      hasEditableBoundaries: Joi.bool().optional(),
+      // hasEditableBoundaries: Joi.bool().optional(), <-- replaced with below two lines
+      includesBlockInTimeline: Joi.bool().required(),
+      instructionsInEditor: Joi.bool().required(),
       dashedName: Joi.string().required(),
       helpCategory: Joi.valid(
         'JavaScript',

@@ -203,9 +203,9 @@ const schema = Joi.object().keys({
       })
     })
   ),
-  // replaced- hasEditableBoundaries flag with (instructionsInEditor, includeBlockInTimeline)
+  // replaced- hasEditableBoundaries flag with (instructionsInEditor, includesBlockInTimeline)
   instructionsInEditor: Joi.boolean().required(),
-  includeBlockInTimeline: Joi.boolean().required(),
+  includesBlockInTimeline: Joi.boolean().required(),
   helpCategory: Joi.valid(
     'JavaScript',
     'HTML-CSS',

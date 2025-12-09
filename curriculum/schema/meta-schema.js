@@ -29,9 +29,9 @@ const schema = Joi.object()
     isUpcomingChange: Joi.boolean().required(),
     dashedName: Joi.string().regex(slugRE).required(),
     usesMultifileEditor: Joi.boolean(),
-    // replaced- hasEditableBoundaries flag with (instructionsInEditor, includeBlockInTimeline)
+    // replaced- hasEditableBoundaries flag with (instructionsInEditor, includesBlockInTimeline)
     instructionsInEditor: Joi.boolean().required(),
-    includeBlockInTimeline: Joi.boolean().required(),
+    includesBlockInTimeline: Joi.boolean().required(),
     disableLoopProtectTests: Joi.boolean(),
     disableLoopProtectPreview: Joi.boolean(),
     template: Joi.string(),

@@ -12,7 +12,7 @@ interface Meta {
   blockLayout?: string;
   order?: number;
   instructionsInEditor: boolean;
-  includeBlockInTimeline: boolean;
+  includesBlockInTimeline: boolean;
 }
 
 const baseMeta: Meta = {
@@ -28,7 +28,7 @@ const baseMeta: Meta = {
     }
   ],
   instructionsInEditor: false,
-  includeBlockInTimeline: false
+  includesBlockInTimeline: false
 };
 
 const stepMeta = {

@@ -23,10 +23,9 @@ import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
-  hasEditableBoundaries: boolean;
   // UI: new metadata
-  instructionsInEditor?: boolean;
-  includeBlockInTitle?: boolean;
+  instructionsInEditor: boolean;
+  includesBlockInTimeline: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
   notes: string;
@@ -88,10 +87,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
 
   constructor(props: MobileLayoutProps) {
     super(props);
-    const instructionsAreInEditor =
-      typeof props.instructionsInEditor === 'boolean'
-        ? props.instructionsInEditor
-        : props.hasEditableBoundaries;
+    const instructionsAreInEditor = props.instructionsInEditor;
 
     this.state = {
       currentTab: instructionsAreInEditor ? tabs.editor : tabs.instructions
@@ -157,7 +153,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
-      hasEditableBoundaries,
       instructions,
       editor,
       testOutput,
@@ -178,10 +173,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
     } = this.props;
 
     // prefer explicit metadata; fall back to legacy hasEditableBoundaries
-    const instructionsAreInEditor =
-      typeof instructionsInEditor === 'boolean'
-        ? instructionsInEditor
-        : hasEditableBoundaries;
+    const instructionsAreInEditor = instructionsInEditor;
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
 

@@ -130,7 +130,7 @@ export type Challenge = {
   // infer other properties:
   // hasEditableBoundaries?: boolean; <-- replaced this with below two properties
   includesBlockInTimeline: boolean;
-  includesInstructionsInEditor: boolean;
+  instructionsInEditor: boolean;
   description?: string;
   instructions?: string;
   questions?: string[];
@@ -161,7 +161,7 @@ export interface BlockStructure {
   name: string;
   // hasEditableBoundaries?: boolean; <-- replaced this with below two properties
   includesBlockInTimeline: boolean;
-  includesInstructionsInEditor: boolean;
+  instructionsInEditor: boolean;
   required?: string[];
   template?: string;
   helpCategory?: string;

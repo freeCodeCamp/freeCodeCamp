@@ -160,8 +160,8 @@ export function addMetaToChallenge(
   challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
   // challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
-  challenge.includesInstructionsInEditor = !!meta.includesInstructionsInEditor;
-  challenge.includesBlockInTimeline = !!meta.includesBlockInTimeline;
+  challenge.instructionsInEditor = meta.instructionsInEditor ?? false;
+  challenge.includesBlockInTimeline = meta.includesBlockInTimeline ?? false;
   challenge.order = meta.order;
 
   // Ensure required properties exist

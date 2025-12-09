@@ -33,14 +33,14 @@ type LearnLayoutProps = {
   fetchState: FetchState;
   tryToShowDonationModal: () => void;
   children?: React.ReactNode;
-  hasEditableBoundaries?: boolean;
+  instructionsInEditor: boolean;
 };
 
 function LearnLayout({
   fetchState,
   tryToShowDonationModal,
   children,
-  hasEditableBoundaries
+  instructionsInEditor
 }: LearnLayoutProps): JSX.Element {
   useEffect(() => {
     tryToShowDonationModal();
@@ -67,7 +67,7 @@ function LearnLayout({
       </Helmet>
       <main
         id='learn-app-wrapper'
-        {...(hasEditableBoundaries && { 'data-has-editable-boundaries': true })}
+        {...(instructionsInEditor && { 'data-has-editable-boundaries': true })}
       >
         {children}
       </main>

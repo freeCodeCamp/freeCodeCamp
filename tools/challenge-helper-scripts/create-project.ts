@@ -63,7 +63,7 @@ interface CreateProjectArgs {
   module?: string;
   title?: string;
   instructionsInEditor: boolean;
-  includeBlockInTimeline: boolean;
+  includesBlockInTimeline: boolean;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -126,7 +126,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.title,
       projectArgs.helpCategory,
       challengeId,
-      projectArgs.includeBlockInTimeline,
+      projectArgs.includesBlockInTimeline,
       projectArgs.instructionsInEditor
     );
   } else {
@@ -138,7 +138,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.helpCategory,
       challengeId,
       projectArgs.instructionsInEditor,
-      projectArgs.includeBlockInTimeline,
+      projectArgs.includesBlockInTimeline,
       projectArgs.order,
       projectArgs.blockLabel,
       projectArgs.blockLayout
@@ -189,8 +189,8 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectId,
-  instructionsInEditor: boolean,
-  includeBlockInTimeline: boolean,
+  instructionsInEditor: boolean = false,
+  includesBlockInTimeline: boolean = false,
   order?: number,
   blockLabel?: string,
   blockLayout?: string
@@ -201,7 +201,9 @@ async function createMetaJson(
     newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
     // if (blockLabel === BlockLabel.workshop) {
-    //   newMeta.hasEditableBoundaries = true;
+    //   // newMeta.hasEditableBoundaries = true;
+    //   newMeta.instructionsInEditor = true;
+    //   newMeta.includesBlockInTimeline = true;
     // }
   } else {
     newMeta = getBaseMeta('Step');
@@ -211,7 +213,8 @@ async function createMetaJson(
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-
+  newMeta.instructionsInEditor = instructionsInEditor;
+  newMeta.includesBlockInTimeline = includesBlockInTimeline;
   await writeBlockStructure(block, newMeta);
 }
 
@@ -352,7 +355,7 @@ void getAllBlocks()
         default: false
       },
       {
-        name: 'includeBlockInTitle',
+        name: 'includesBlockInTimeline',
         message:
           'Should the block name be included in challenge titles in the timeline? (e.g. "Block - Step 1")',
         type: 'confirm',
@@ -438,7 +441,7 @@ void getAllBlocks()
         position,
         order,
         instructionsInEditor,
-        includeBlockInTimeline
+        includesBlockInTimeline
       }: CreateProjectArgs) =>
         await createProject({
           superBlock,
@@ -453,7 +456,7 @@ void getAllBlocks()
           position,
           order,
           instructionsInEditor,
-          includeBlockInTimeline
+          includesBlockInTimeline
         })
     )
   )
