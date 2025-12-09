@@ -20,7 +20,7 @@ An example is `doctor` ("doctor").
 
 ## --sentence--
 
-`Write the letter: BLANK`
+`BLANK`
 
 ## --blanks--
 

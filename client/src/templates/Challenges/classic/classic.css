@@ -70,22 +70,20 @@
 }
 
 .tabs-row-left {
-  width: 30%;
   display: flex;
   gap: 10px;
 }
 
 .tabs-row-middle {
-  width: 30%;
   display: flex;
   justify-content: center;
   gap: 3px;
 }
 
 .tabs-row-right {
-  width: 30%;
   display: flex;
   justify-content: flex-end;
+  /* Ensure the right group pins to the end even when no left/middle items exist */
   margin-inline-start: auto;
 }
 

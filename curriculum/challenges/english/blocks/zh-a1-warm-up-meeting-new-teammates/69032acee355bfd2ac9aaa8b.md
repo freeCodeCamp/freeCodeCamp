@@ -27,4 +27,4 @@ This tone change is a natural adjustment in speech to make pronunciation smoothe
 
 # --assignment--
 
-Listen to the audio and read the example syllables.
+I've read this Pinyin rule.

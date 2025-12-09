@@ -21,7 +21,7 @@
         "$TURBO_ROOT$/client/i18n/locales/english/*"
       ]
     },
-    "//#lint": {
+    "//#lint-root": {
       "dependsOn": [
         "@freecodecamp/shared#compile",
         "@freecodecamp/curriculum#build"
