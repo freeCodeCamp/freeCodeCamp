@@ -99,7 +99,7 @@ const questionJoi = Joi.object().keys({
     )
     .required()
     .unique('answer'),
-  solution: Joi.number().required()
+  solution: Joi.number().min(1).max(Joi.ref('..answers.length')).required()
 });
 
 const quizJoi = Joi.object().keys({

@@ -16,6 +16,8 @@ import {
   setupServer,
   superRequest
 } from '../../../vitest.utils.js';
+import { getChallenges } from '../../utils/get-challenges.js';
+import { createCertLookup } from './certificate.js';
 
 describe('certificate routes', () => {
   setupServer();
@@ -37,23 +39,25 @@ describe('certificate routes', () => {
           where: { email: defaultUserEmail },
           data: {
             completedChallenges: [],
-            name: 'fcc',
-            isA2EnglishCert: false,
-            isRespWebDesignCert: false,
-            isJsAlgoDataStructCert: false,
-            isFrontEndLibsCert: false,
             is2018DataVisCert: false,
-            isRelationalDatabaseCertV8: false,
+            isA2EnglishCert: false,
             isApisMicroservicesCert: false,
-            isQaCertV7: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isInfosecCertV7: false,
-            isMachineLearningPyCertV7: false,
             isCollegeAlgebraPyCertV8: false,
+            isDataAnalysisPyCertV7: false,
             isFoundationalCSharpCertV8: false,
+            isFrontEndLibsCert: false,
+            isInfosecCertV7: false,
+            isJsAlgoDataStructCert: false,
             isJavascriptCertV9: false,
+            isMachineLearningPyCertV7: false,
+            isPythonCertV9: false,
+            isQaCertV7: false,
+            isRelationalDatabaseCertV8: false,
+            isRelationalDatabaseCertV9: false,
+            isRespWebDesignCert: false,
             isRespWebDesignCertV9: false,
+            isSciCompPyCertV7: false,
+            name: 'fcc',
             username: 'fcc'
           }
         });
@@ -152,8 +156,10 @@ describe('certificate routes', () => {
             isInfosecQaCert: false,
             isJsAlgoDataStructCert: false,
             isMachineLearningPyCertV7: false,
+            isPythonCertV9: false,
             isQaCertV7: false,
             isRelationalDatabaseCertV8: false,
+            isRelationalDatabaseCertV9: false,
             isRespWebDesignCert: false,
             isSciCompPyCertV7: false,
             isJavascriptCertV9: false,
@@ -232,22 +238,24 @@ describe('certificate routes', () => {
               { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
-            isRespWebDesignCert: false,
-            isJsAlgoDataStructCertV8: true,
-            isFrontEndLibsCert: true,
             is2018DataVisCert: true,
-            isRelationalDatabaseCertV8: true,
+            isA2EnglishCert: true,
             isApisMicroservicesCert: true,
-            isQaCertV7: true,
-            isSciCompPyCertV7: true,
-            isDataAnalysisPyCertV7: true,
-            isInfosecCertV7: true,
-            isMachineLearningPyCertV7: true,
             isCollegeAlgebraPyCertV8: true,
+            isDataAnalysisPyCertV7: true,
             isFoundationalCSharpCertV8: true,
+            isFrontEndLibsCert: true,
+            isInfosecCertV7: true,
             isJavascriptCertV9: true,
+            isJsAlgoDataStructCertV8: true,
+            isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
+            isQaCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
+            isRespWebDesignCert: false,
             isRespWebDesignCertV9: true,
-            isA2EnglishCert: true
+            isSciCompPyCertV7: true
           }
         });
 
@@ -321,7 +329,9 @@ describe('certificate routes', () => {
             isMachineLearningPyCertV7: false,
             isRelationalDatabaseCertV8: false,
             isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false
+            isFoundationalCSharpCertV8: false,
+            isPythonCertV9: false,
+            isRelationalDatabaseCertV9: false
           },
           completedChallenges: [
             {
@@ -459,5 +469,34 @@ describe('certificate routes', () => {
         expect(response.status).toBe(500);
       });
     });
+  });
+});
+
+describe('createCertLookup', () => {
+  let challenges: ReturnType<typeof getChallenges>;
+
+  beforeAll(() => {
+    // TODO: create a mock challenges array specific to these tests.
+    challenges = getChallenges();
+  });
+
+  test('should create a lookup for all certifications', () => {
+    const certLookup = createCertLookup(challenges);
+
+    for (const cert of Object.values(Certification)) {
+      const certData = certLookup[cert];
+      expect(certData).toHaveProperty('id');
+      expect(certData).toHaveProperty('tests');
+      expect(certData).toHaveProperty('challengeType');
+    }
+  });
+
+  test('each certification should have a unique challenge id', () => {
+    const certLookup = createCertLookup(challenges);
+    const ids = Object.values(certLookup)
+      .map(({ id }) => id)
+      .sort();
+    const uniqueIds = Array.from(new Set(ids)).sort();
+    expect(uniqueIds).toEqual(ids);
   });
 });

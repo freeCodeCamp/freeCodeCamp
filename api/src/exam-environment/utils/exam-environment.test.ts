@@ -518,6 +518,7 @@ describe('Exam Environment Schema', () => {
         data: {
           examId: oid(),
           generatedExamId: oid(),
+          examModerationId: null,
           questionSets: [
             {
               id: oid(),
