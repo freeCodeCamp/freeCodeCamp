@@ -281,7 +281,7 @@
     "disabled": "Ваші сертифікації будуть відключені, коли ввімкнено режим приватного перегляду.",
     "private-name": "Ваше ім’я не буде показуватися на сертифікаціях, якщо ввімкнено режим приватного перегляду.",
     "claim-legacy": "Як тільки ви виконаєте завдання наступних сертифікацій freeCodeCamp, ви зможете отримати {{cert}}:",
-    "for": "Налаштування облікового запису для {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Це додає приємне звучання акустичної гітари на всьому вебсайті. Ви почуєте музичний супровід, коли будете писати у редакторі, при завершенні випробувань, при затвердженні сертифікацій та інше.",
     "sound-volume": "Гучність багаття:",
     "scrollbar-width": "Ширина смуги прокрутки редактора",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Дозволити клавіатурні скорочення"
     },
     "headings": {
+      "account": "Account",
       "certs": "Сертифікації",
       "legacy-certs": "Застарілі сертифікації",
       "honesty": "Політика академічної доброчесності",
       "internet": "Присутність в інтернеті",
       "portfolio": "Налаштування портфоліо",
-      "privacy": "Налаштування конфіденційності",
+      "privacy": "Privacy",
       "personal-info": "Особиста інформація"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "У вас немає електронної пошти, пов’язаної з цим обліковим записом.",
-      "heading": "Налаштування електронної пошти",
+      "heading": "Email",
       "not-verified": "Вашу електронну пошту не підтверджено.",
       "check": "Будь ласка, перевірте свою електронну пошту, або <0>надішліть запит на новий лист для підтвердження</0>.",
       "current": "Поточна адреса електронної пошти",
@@ -964,7 +965,8 @@
     "terminal-output": "Вивід терміналу",
     "not-available": "Недоступно",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
-    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
