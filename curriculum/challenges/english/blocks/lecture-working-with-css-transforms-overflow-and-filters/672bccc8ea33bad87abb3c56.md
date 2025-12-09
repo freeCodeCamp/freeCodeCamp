@@ -67,7 +67,7 @@ With `border-box` the value of the `width` property will be the result of adding
 
 Likewise, the value of the `height` property is the result of adding the height of the content area, the top and bottom padding, and the top and bottom border. Height equals the height of the content, plus top padding, plus bottom padding, plus top border, plus bottom border. The margin is not included in the width or height.
 
-In the following example there are two div elements, each with the same dimensions but with different box-sizing values. Notice that this causes the div elements to have different dimensions when viewed in the browser.
+In the following example there are two `div` elements, each with the same dimensions but with different `box-sizing` values. Notice that this causes the `div` elements to have different dimensions when viewed in the browser.
 
 :::interactive_editor
 
