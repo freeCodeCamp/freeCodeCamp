@@ -32,5 +32,6 @@
   "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true
 }

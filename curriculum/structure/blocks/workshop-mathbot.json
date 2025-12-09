@@ -4,7 +4,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-mathbot",
   "challengeOrder": [
     { "id": "66ea7adae8053065a64f9002", "title": "Step 1" },

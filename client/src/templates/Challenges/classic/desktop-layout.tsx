@@ -246,7 +246,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
 
   const projectBasedChallenge = instructionsInEditor;
 
-  // prefer explicit metadata; fall back to legacy hasEditableBoundaries
   const instructionsAreInEditor = instructionsInEditor;
 
   const areInstructionsDisplayable =

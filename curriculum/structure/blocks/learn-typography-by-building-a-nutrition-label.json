@@ -2,7 +2,8 @@
   "name": "Learn Typography by Building a Nutrition Label",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-typography-by-building-a-nutrition-label",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

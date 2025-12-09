@@ -43,5 +43,6 @@
     { "id": "68cab17ac51b861a8458c42d", "title": "Step 35" }
   ],
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true
 }

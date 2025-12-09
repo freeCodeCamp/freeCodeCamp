@@ -2,7 +2,8 @@
   "name": "Learn Recursion by Building a Decimal to Binary Converter",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-recursion-by-building-a-decimal-to-binary-converter",
   "helpCategory": "JavaScript",
   "challengeOrder": [

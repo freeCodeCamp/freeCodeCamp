@@ -172,7 +172,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       instructionsInEditor
     } = this.props;
 
-    // prefer explicit metadata; fall back to legacy hasEditableBoundaries
     const instructionsAreInEditor = instructionsInEditor;
     const displayPreviewPane = hasPreview && showPreviewPane;
     const displayPreviewPortal = hasPreview && showPreviewPortal;
