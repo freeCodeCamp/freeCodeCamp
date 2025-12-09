@@ -36,7 +36,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'a2-english-for-developers',
-    name: 'A2 English for Developers Certification'
+    name: 'A2 English for Developers Certification (Beta)'
   },
   {
     slug: 'b1-english-for-developers',

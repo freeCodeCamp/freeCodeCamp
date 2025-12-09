@@ -38,6 +38,7 @@ import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
+import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -91,7 +92,8 @@ const ShowFillInTheBlank = ({
         fillInTheBlank,
         helpCategory,
         scene,
-        tests
+        tests,
+        lang
       }
     }
   },
@@ -133,7 +135,7 @@ const ShowFillInTheBlank = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmitNonChinese = () => {
     const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
 
     const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
@@ -144,14 +146,54 @@ const ShowFillInTheBlank = ({
         userAnswer.trim()
       ).toLowerCase();
 
-      const pairs = parseHanziPinyinPairs(answer);
-      const hanziPinyin = pairs.length === 1 ? pairs[0] : null;
+      return normalizedUserAnswer === answer.toLowerCase();
+    });
 
-      if (hanziPinyin) {
-        const { hanzi } = hanziPinyin;
-        // TODO: Implement full hanzi-pinyin validation logic
-        // https://github.com/freeCodeCamp/language-curricula/issues/18
-        return normalizedUserAnswer === hanzi;
+    setAnswersCorrect(newAnswersCorrect);
+    const hasWrongAnswer = newAnswersCorrect.some(a => a === false);
+    if (!hasWrongAnswer) {
+      setShowFeedback(false);
+      setFeedback(null);
+      openCompletionModal();
+    } else {
+      const firstWrongIndex = newAnswersCorrect.findIndex(a => a === false);
+      const feedback =
+        firstWrongIndex >= 0
+          ? fillInTheBlank.blanks[firstWrongIndex].feedback
+          : null;
+
+      setFeedback(feedback);
+      setShowWrong(true);
+      setShowFeedback(true);
+    }
+  };
+
+  const handleSubmitChinese = () => {
+    const blankAnswers = fillInTheBlank.blanks.map(b => b.answer);
+
+    const newAnswersCorrect = userAnswers.map((userAnswer, i) => {
+      if (!userAnswer) return false;
+
+      const answer = blankAnswers[i];
+      const normalizedUserAnswer = userAnswer.trim().toLowerCase();
+
+      if (fillInTheBlank.inputType === 'pinyin-to-hanzi') {
+        const pairs = parseHanziPinyinPairs(answer);
+        if (pairs.length === 1) {
+          const hanziPinyin = pairs[0];
+          const { hanzi } = hanziPinyin;
+          return (
+            normalizedUserAnswer.replace(/\s+/g, '') ===
+            hanzi.replace(/\s+/g, '')
+          );
+        }
+      } else if (fillInTheBlank.inputType === 'pinyin-tone') {
+        // Ignore spaces to allow both syllable formats:
+        // spaced (e.g., 'nǐ hǎo') and unspaced (e.g., 'nǐhǎo').
+        return (
+          normalizedUserAnswer.replace(/\s+/g, '') ===
+          answer.toLowerCase().replace(/\s+/g, '')
+        );
       }
 
       return normalizedUserAnswer === answer.toLowerCase();
@@ -173,6 +215,14 @@ const ShowFillInTheBlank = ({
       setFeedback(feedback);
       setShowWrong(true);
       setShowFeedback(true);
+    }
+  };
+
+  const handleSubmit = () => {
+    if (lang === ChallengeLang.Chinese) {
+      handleSubmitChinese();
+    } else {
+      handleSubmitNonChinese();
     }
   };
 
@@ -301,6 +351,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        lang
         fields {
           slug
         }
