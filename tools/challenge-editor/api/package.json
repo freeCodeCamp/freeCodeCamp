@@ -23,6 +23,6 @@
     "dotenv": "16.4.5",
     "eslint": "^9.39.1",
     "shx": "0.3.4",
-    "typescript": "5.2.2"
+    "typescript": "5.9.3"
   }
 }
