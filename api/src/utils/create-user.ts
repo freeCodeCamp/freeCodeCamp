@@ -40,8 +40,6 @@ export const createResetProperties = () => ({
   isRespWebDesignCertV9: false,
   isSciCompPyCertV7: false,
   isFrontEndLibsCertV9: false,
-  isPythonCertV9: false,
-  isRelationalDatabaseCertV9: false,
   isBackEndDevApisCertV9: false,
   isFullStackDeveloperCertV9: false,
   isB1EnglishCertV8: false,

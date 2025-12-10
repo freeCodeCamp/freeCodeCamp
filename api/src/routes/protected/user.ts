@@ -709,8 +709,6 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
             isFrontEndLibsCertV9: true,
-            isPythonCertV9: true,
-            isRelationalDatabaseCertV9: true,
             isBackEndDevApisCertV9: true,
             isFullStackDeveloperCertV9: true,
             isB1EnglishCertV8: true,

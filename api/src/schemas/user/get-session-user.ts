@@ -94,8 +94,6 @@ export const getSessionUser = {
           isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
           isFrontEndLibsCertV9: Type.Boolean(),
-          isPythonCertV9: Type.Boolean(),
-          isRelationalDatabaseCertV9: Type.Boolean(),
           isBackEndDevApisCertV9: Type.Boolean(),
           isFullStackDeveloperCertV9: Type.Boolean(),
           isB1EnglishCertV8: Type.Boolean(),

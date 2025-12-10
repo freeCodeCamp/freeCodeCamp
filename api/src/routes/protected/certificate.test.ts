@@ -322,7 +322,7 @@ describe('certificate routes', () => {
             isRelationalDatabaseCertV9: false,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: false,
-            isSciCompPyCertV7: false,
+            isSciCompPyCertV7: false
           },
           completedChallenges: [
             {

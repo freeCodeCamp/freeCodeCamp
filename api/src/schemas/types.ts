@@ -34,8 +34,6 @@ export const isCertMap = Type.Object({
   isA2ChineseCertV8: Type.Boolean(),
   isA2SpanishCertV8: Type.Boolean(),
   isB1EnglishCertV8: Type.Boolean(),
-  isPythonCertV9: Type.Boolean(),
-  isRelationalDatabaseCertV9: Type.Boolean(),
   isBackEndDevApisCertV9: Type.Boolean(),
   isFullStackDeveloperCertV9: Type.Boolean(),
   isFrontEndLibsCertV9: Type.Boolean()
