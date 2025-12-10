@@ -36,7 +36,7 @@
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
     "test": "vitest",
-    "type-check": "tsc"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",

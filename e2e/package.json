@@ -5,7 +5,7 @@
     "lint": "eslint --max-warnings 0",
     "playwright:watch": "playwright test --ui-port=0",
     "playwright:run": "playwright test",
-    "type-check": "tsc"
+    "type-check": "tsc --noEmit"
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",

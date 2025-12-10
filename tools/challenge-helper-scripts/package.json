@@ -26,7 +26,7 @@
     "rename-block": "tsx rename-block",
     "lint": "eslint --max-warnings 0",
     "test": "vitest",
-    "type-check": "tsc"
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
