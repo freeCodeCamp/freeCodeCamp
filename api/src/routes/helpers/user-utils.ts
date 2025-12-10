@@ -35,8 +35,6 @@ const nullableFlags = [
   'isSciCompPyCertV7',
   'isDataAnalysisPyCertV7',
   'isFrontEndLibsCertV9',
-  'isPythonCertV9',
-  'isRelationalDatabaseCertV9',
   'isBackEndDevApisCertV9',
   'isFullStackDeveloperCertV9',
   'isB1EnglishCert',
