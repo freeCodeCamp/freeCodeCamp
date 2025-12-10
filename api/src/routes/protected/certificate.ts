@@ -2,7 +2,7 @@ import type { CompletedChallenge } from '@prisma/client';
 import validator from 'validator';
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { getChallenges } from '../../utils/get-challenges.js';
+import { challenges, getChallenges } from '../../utils/get-challenges.js';
 import {
   Certification,
   certSlugTypeMap,
@@ -216,7 +216,6 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  const challenges = getChallenges();
   const certLookup = createCertLookup(challenges);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
