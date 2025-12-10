@@ -246,6 +246,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
+    saveSubmissionToDB?: boolean;
     scene: FullScene;
     solutions: {
       [T: string]: FileKeyChallenge;
@@ -309,6 +310,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    saveSubmissionToDB?: boolean;
   };
 };
 
@@ -534,6 +536,7 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
