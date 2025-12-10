@@ -2,7 +2,8 @@
   "name": "Learn Basic JavaScript by Building a Role Playing Game",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-basic-javascript-by-building-a-role-playing-game",
   "helpCategory": "JavaScript",
   "challengeOrder": [

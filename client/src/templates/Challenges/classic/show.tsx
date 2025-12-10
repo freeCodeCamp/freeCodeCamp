@@ -205,14 +205,15 @@ function ShowClassic({
         hooks,
         tests,
         challengeType,
-        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId,
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        instructionsInEditor,
+        includesBlockInTimeline
       }
     }
   },
@@ -471,7 +472,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout instructionsInEditor={instructionsInEditor}>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -479,7 +480,8 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
+            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -514,7 +516,8 @@ function ShowClassic({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
+            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -580,7 +583,6 @@ export const query = graphql`
         title
         description
         id
-        hasEditableBoundaries
         instructions
         notes
         challengeType
@@ -589,6 +591,8 @@ export const query = graphql`
         superBlock
         translationPending
         forumTopicId
+        instructionsInEditor
+        includesBlockInTimeline
         hooks {
           beforeAll
           beforeEach

@@ -4,7 +4,8 @@
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": false,
-  "hasEditableBoundaries": false,
+  "includesBlockInTimeline": false,
+  "instructionsInEditor": false,
   "dashedName": "workshop-sql-reference-object",
   "challengeOrder": [
     {

@@ -62,6 +62,8 @@ interface CreateProjectArgs {
   position?: number;
   module?: string;
   title?: string;
+  instructionsInEditor: boolean;
+  includesBlockInTimeline: boolean;
 }
 
 async function createProject(projectArgs: CreateProjectArgs) {
@@ -123,7 +125,9 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.block,
       projectArgs.title,
       projectArgs.helpCategory,
-      challengeId
+      challengeId,
+      projectArgs.includesBlockInTimeline,
+      projectArgs.instructionsInEditor
     );
   } else {
     const challengeId = await createFirstChallenge(projectArgs.block);
@@ -133,6 +137,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.title,
       projectArgs.helpCategory,
       challengeId,
+      projectArgs.instructionsInEditor,
+      projectArgs.includesBlockInTimeline,
       projectArgs.order,
       projectArgs.blockLabel,
       projectArgs.blockLayout
@@ -183,6 +189,8 @@ async function createMetaJson(
   title: string,
   helpCategory: string,
   challengeId: ObjectId,
+  instructionsInEditor: boolean = false,
+  includesBlockInTimeline: boolean = false,
   order?: number,
   blockLabel?: string,
   blockLayout?: string
@@ -192,9 +200,11 @@ async function createMetaJson(
     newMeta = getBaseMeta('FullStack');
     newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
-    if (blockLabel === BlockLabel.workshop) {
-      newMeta.hasEditableBoundaries = true;
-    }
+    // if (blockLabel === BlockLabel.workshop) {
+    //   // newMeta.hasEditableBoundaries = true;
+    //   newMeta.instructionsInEditor = true;
+    //   newMeta.includesBlockInTimeline = true;
+    // }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
@@ -202,9 +212,9 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
-
+  newMeta.instructionsInEditor = instructionsInEditor;
+  newMeta.includesBlockInTimeline = includesBlockInTimeline;
   await writeBlockStructure(block, newMeta);
 }
 
@@ -338,6 +348,20 @@ void getAllBlocks()
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
+        name: 'instructionsInEditor',
+        message:
+          'Should instructions appear inside the editor? (If yes, instructions will render inside the editor pane)',
+        type: 'confirm',
+        default: false
+      },
+      {
+        name: 'includesBlockInTimeline',
+        message:
+          'Should the block name be included in challenge titles in the timeline? (e.g. "Block - Step 1")',
+        type: 'confirm',
+        default: false
+      },
+      {
         name: 'questionCount',
         message: 'Choose a question count',
         default: 20,
@@ -415,7 +439,9 @@ void getAllBlocks()
         chapter,
         module,
         position,
-        order
+        order,
+        instructionsInEditor,
+        includesBlockInTimeline
       }: CreateProjectArgs) =>
         await createProject({
           superBlock,
@@ -428,7 +454,9 @@ void getAllBlocks()
           chapter,
           module,
           position,
-          order
+          order,
+          instructionsInEditor,
+          includesBlockInTimeline
         })
     )
   )

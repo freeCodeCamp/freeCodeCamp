@@ -2,7 +2,8 @@
   "name": "Learn Basic String and Array Methods by Building a Music Player",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-basic-string-and-array-methods-by-building-a-music-player",
   "challengeOrder": [
     {

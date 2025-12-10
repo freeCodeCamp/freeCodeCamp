@@ -32,7 +32,8 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries?: boolean;
+  instructionsInEditor: boolean;
+  includesBlockInTimeline: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -107,7 +108,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     showIndependentLowerJaw,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
-    setDailyCodingChallengeLanguage
+    setDailyCodingChallengeLanguage,
+    instructionsInEditor,
+    includesBlockInTimeline
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -228,7 +231,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     onPreviewResize,
     preview,
-    hasEditableBoundaries,
     windowTitle
   } = props;
 
@@ -241,9 +243,13 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   }, []);
 
-  const projectBasedChallenge = hasEditableBoundaries;
+  const projectBasedChallenge = instructionsInEditor;
+
+  const instructionsAreInEditor = instructionsInEditor;
+
   const areInstructionsDisplayable =
-    !projectBasedChallenge || showIndependentLowerJaw;
+    !instructionsAreInEditor || showIndependentLowerJaw;
+
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -255,7 +261,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const isProjectStyle = projectBasedChallenge || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
+  const displayNotes = includesBlockInTimeline ? showNotes && !!notes : false;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
 
@@ -288,6 +294,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
           challengeType={challengeType}
+          includesBlockInTimeline={includesBlockInTimeline}
           data-playwright-test-label='action-row'
         />
       )}

@@ -221,7 +221,6 @@ export type ChallengeNode = {
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     head: string[];
-    hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
     id: string;
@@ -261,6 +260,9 @@ export type ChallengeNode = {
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
+    // NEW: optional UI flags added for new metadata
+    instructionsInEditor: boolean;
+    includesBlockInTimeline: boolean;
     videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
@@ -304,11 +306,14 @@ export type DailyCodingChallengeNode = {
     instructions: string;
     demoType: null;
     hooks?: { beforeAll: string };
-    hasEditableBoundaries?: false;
     forumTopicId?: number;
     notes: string;
     videoUrl?: string;
     translationPending: false;
+
+    // UI flags — optional so existing data stays compatible
+    instructionsInEditor: boolean;
+    includesBlockInTimeline: boolean;
   };
 };
 
@@ -534,6 +539,8 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  instructionsInEditor?: boolean;
+  includesBlockInTimeline?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
