@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "eslint --max-warnings 0",
     "test": "vitest",
-    "type-check": "tsc"
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "hast-util-to-html": "7.1.3",
