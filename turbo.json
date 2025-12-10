@@ -2,6 +2,8 @@
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
     "lint": { "dependsOn": ["compile"] },
+    "type-check": {},
+    "//#type-check": {},
     "@freecodecamp/client#lint": {
       "dependsOn": [
         "@freecodecamp/curriculum#compile",

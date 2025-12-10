@@ -11,6 +11,7 @@
   },
   "scripts": {
     "test": "vitest",
+    "type-check": "tsc --noEmit",
     "compile": "tsdown --format cjs --format esm",
     "lint": "eslint --max-warnings 0"
   },

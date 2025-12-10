@@ -21,6 +21,7 @@
     "audit-challenges": "pnpm -w turbo compile && tsx ./src/challenge-auditor/index.ts",
     "build": "tsx ./src/generate/build-curriculum",
     "compile": "tsc",
+    "type-check": "tsc",
     "create-empty-steps": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
     "create-this-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-this-challenge",

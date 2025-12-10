@@ -84,6 +84,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
+    "type-check": "tsc",
     "prisma": "dotenv -e ../.env prisma",
     "postinstall": "prisma generate",
     "exam-env:generate": "tsx tools/exam-environment/generate/index.ts",
