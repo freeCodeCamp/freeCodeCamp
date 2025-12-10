@@ -18,6 +18,7 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
+    "audit-challenges": "pnpm -w run compile:ts && tsx ./src/challenge-auditor/index.ts",
     "build": "tsx ./src/generate/build-curriculum",
     "compile": "tsc --build --clean && tsc --build",
     "create-empty-steps": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",

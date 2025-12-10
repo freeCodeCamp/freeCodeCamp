@@ -2,8 +2,8 @@ import path from 'path';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../../curriculum/src/file-handler';
-import { getProjectPath } from './get-project-info';
+} from '../../../curriculum/src/file-handler.js';
+import { getProjectPath } from './get-project-info.js';
 
 export type Meta = {
   name: string;

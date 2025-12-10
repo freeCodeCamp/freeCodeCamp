@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
-import { insertErms } from './insert-erms';
+import { ObjectId } from 'bson';
+import { insertErms } from './insert-erms.js';
 
 // Builds a block
 function getCodeBlock(label: string, content?: string) {
@@ -21,7 +20,7 @@ ${content}`
 }
 
 type StepOptions = {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeSeeds: ChallengeSeed[];
   stepNum: number;
   challengeType?: number;
