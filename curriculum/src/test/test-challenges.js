@@ -1,11 +1,8 @@
-import { describe, it, beforeAll, expect } from 'vitest';
+import { describe, it, beforeAll, expect, vi } from 'vitest';
+
 import jsdom from 'jsdom';
 import lodash from 'lodash';
 
-import {
-  buildChallenge,
-  runnerTypes
-} from '../../../client/src/templates/Challenges/utils/build';
 import {
   challengeTypes,
   hasNoSolution
@@ -15,11 +12,11 @@ import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/fr
 
 import { getChallengesForLang } from '../get-challenges.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
-import { testedLang } from '../utils.js';
 
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
 import { validateMetaSchema } from '../../schema/meta-schema.js';
 import { getBlockStructure } from '../file-handler.js';
+import { FCC_CHALLENGE_ID, testedLang } from '../config.js';
 import ChallengeTitles from './utils/challenge-titles.js';
 import MongoIds from './utils/mongo-ids.js';
 import createPseudoWorker from './utils/pseudo-worker.js';
@@ -27,6 +24,32 @@ import createPseudoWorker from './utils/pseudo-worker.js';
 import { sortChallenges } from './utils/sort-challenges.js';
 
 const { flatten, isEmpty, cloneDeep } = lodash;
+
+vi.mock(
+  '../../../client/src/templates/Challenges/utils/typescript-worker-handler',
+  async importOriginal => {
+    const actual = await importOriginal();
+
+    // ts and tsvfs must match the versions used in the typescript-worker.
+    const tsvfs = await import('@typescript/vfs-1.6.1');
+    const ts = await import('typescript-5.9.2');
+    // use the same TS compiler as the client
+    const tsCompiler = await import(
+      '../../../tools/client-plugins/browser-scripts/modules/typescript-compiler'
+    );
+    const compiler = new tsCompiler.Compiler(ts, tsvfs);
+    await compiler.setup({ useNodeModules: true });
+    return {
+      ...actual,
+      checkTSServiceIsReady: () => Promise.resolve(true),
+      compileTypeScriptCode: code => {
+        const { result, error } = compiler.compile(code, 'index.tsx');
+        if (error) throw error;
+        return result;
+      }
+    };
+  }
+);
 
 const dom = new jsdom.JSDOM('');
 global.document = dom.window.document;
@@ -86,13 +109,13 @@ export async function defineTestsForBlock(testFilter) {
 
   const challengeData = { meta, challenges, lang };
 
-  describe('Check challenges', () => {
+  describe('Check challenges', async () => {
     beforeAll(async () => {
       page = await newPageContext();
       global.Worker = createPseudoWorker(page);
     });
 
-    populateTestsForLang(challengeData, () => page);
+    await populateTestsForLang(challengeData, () => page);
   });
 }
 
@@ -123,7 +146,13 @@ export async function getChallenges(lang, filters) {
   return sortChallenges(challenges);
 }
 
-function populateTestsForLang({ lang, challenges, meta }) {
+async function populateTestsForLang({ lang, challenges, meta }) {
+  // We have to dynamically import this because otherwise it will not be mocked.
+  // Presumably this is because we import from_this file in the generated block
+  // test files and that happens before the mock is applied.
+  const { buildChallenge } = await import(
+    '../../../client/src/templates/Challenges/utils/build'
+  );
   const validateChallenge = challengeSchemaValidator();
 
   describe(`Language: ${lang}`, function () {
@@ -135,7 +164,7 @@ function populateTestsForLang({ lang, challenges, meta }) {
       // challenge to test (current challenge) might not have solution.
       // Instead seed from next challenge is tested against tests from
       // current challenge. Next challenge is skipped from testing.
-      if (process.env.FCC_CHALLENGE_ID && id > 0) return;
+      if (FCC_CHALLENGE_ID && id > 0) return;
 
       const dashedBlockName = challenge.block;
       // TODO: once certifications are not included in the list of challenges,
@@ -341,6 +370,10 @@ async function createTestRunner(
   buildChallenge,
   solutionFromNext
 ) {
+  const { runnerTypes } = await import(
+    '../../../client/src/templates/Challenges/utils/build'
+  );
+
   const challengeFiles = replaceChallengeFilesContentsWithSolutions(
     challenge.challengeFiles,
     solutionFiles

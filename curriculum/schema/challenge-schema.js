@@ -93,12 +93,13 @@ const questionJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         answer: Joi.string().required(),
-        feedback: Joi.string().allow(null)
+        feedback: Joi.string().allow(null),
+        audioId: Joi.string().allow(null)
       })
     )
     .required()
     .unique('answer'),
-  solution: Joi.number().required()
+  solution: Joi.number().min(1).max(Joi.ref('..answers.length')).required()
 });
 
 const quizJoi = Joi.object().keys({
@@ -212,7 +213,9 @@ const schema = Joi.object().keys({
     'English',
     'Odin',
     'Euler',
-    'Rosetta'
+    'Rosetta',
+    'Chinese Curriculum',
+    'Spanish Curriculum'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
@@ -225,7 +228,8 @@ const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required()
+      .required(),
+    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
@@ -248,7 +252,6 @@ const schema = Joi.object().keys({
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
-  isComingSoon: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),
@@ -333,6 +336,7 @@ const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
+  showSpeakingButton: Joi.bool(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),
