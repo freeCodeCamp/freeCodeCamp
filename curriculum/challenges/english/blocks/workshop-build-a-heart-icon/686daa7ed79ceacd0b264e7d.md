@@ -1,30 +1,24 @@
 ---
-id: 686daa7ed79ceacd0b264e7d
+id: 686daa7ed79ceacd0b264e7f
 title: Step 2
 challengeType: 0
 dashedName: step-2
+demoType: onLoad
 ---
 
 # --description--
 
-The next step is to set the `width` and `height` attributes for the `svg` element. As you are creating an icon, both values should be set small.
+Now that you have the `svg` container, nest a `path` element inside it. The `path` will define the shape of the heart icon. (We'll add the shape details next.)
 
-Set both values to `24`.
+Create a `path` element.
 
 # --hints--
 
-Your `svg` element should have a `width` attribute of `24`.
+You should have a `path` element nested inside of your `svg` element.
 
 ```js
-const svg = document.querySelector('svg');
-assert.strictEqual(svg.getAttribute('width'), '24');
-```
-
-Your `svg` element should have a `height` attribute of `24`.
-
-```js
-const svg = document.querySelector('svg');
-assert.strictEqual(svg.getAttribute('height'), '24');
+const path = document.querySelector('svg path');
+assert.exists(path);
 ```
 
 # --seed--
@@ -41,6 +35,7 @@ assert.strictEqual(svg.getAttribute('height'), '24');
   <body>
     --fcc-editable-region--
     <svg>
+      
     </svg>
     --fcc-editable-region--
   </body>
