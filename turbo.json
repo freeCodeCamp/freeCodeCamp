@@ -1,10 +1,8 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
-    "lint": {
-      "dependsOn": ["@freecodecamp/shared#compile"]
-    },
-    "type-check": {},
+    "lint": { "dependsOn": ["@freecodecamp/shared#compile"] },
+    "type-check": { "dependsOn": ["@freecodecamp/shared#compile"] },
     "//#type-check": {},
     "@freecodecamp/client#lint": {
       "dependsOn": [
