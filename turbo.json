@@ -10,6 +10,13 @@
         "build:scripts"
       ]
     },
+    "@freecodecamp/client#type-check": {
+      "dependsOn": [
+        "@freecodecamp/curriculum#compile",
+        "create:env",
+        "@freecodecamp/curriculum#build"
+      ]
+    },
     "@freecodecamp/gatsby-source-challenges#lint": {
       "dependsOn": ["@freecodecamp/curriculum#compile"]
     },
