@@ -164,8 +164,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
     isFrontEndLibsCertV9,
-    isPythonCertV9,
-    isRelationalDatabaseCertV9,
     isBackEndDevApisCertV9,
     isFullStackDeveloperCertV9,
     isB1EnglishCertV8,
@@ -261,8 +259,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isSciCompPyCertV7={isSciCompPyCertV7}
               isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
               isFrontEndLibsCertV9={isFrontEndLibsCertV9}
-              isPythonCertV9={isPythonCertV9}
-              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
               isBackEndDevApisCertV9={isBackEndDevApisCertV9}
               isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
               isB1EnglishCertV8={isB1EnglishCertV8}

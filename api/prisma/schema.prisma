@@ -135,8 +135,6 @@ model user {
   is2018FullStackCert            Boolean? // Undefined
   isCollegeAlgebraPyCertV8       Boolean? // Undefined
   isFrontEndLibsCertV9           Boolean? // Undefined
-  isPythonCertV9                 Boolean? // Undefined
-  isRelationalDatabaseCertV9     Boolean? // Undefined
   isBackEndDevApisCertV9         Boolean? // Undefined
   isFullStackDeveloperCertV9     Boolean? // Undefined
   isB1EnglishCertV8              Boolean? // Undefined
