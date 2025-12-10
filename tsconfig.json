@@ -1,9 +1,4 @@
 {
-  "include": [
-    "*.ts",
-    "tools/challenge-editor/**/*",
-    "tools/scripts/**/*.ts",
-    "tools/daily-challenges/**/*.ts"
-  ],
+  "include": ["*.ts"],
   "extends": "./tsconfig-base.json"
 }
