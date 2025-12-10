@@ -24,7 +24,8 @@
     "create-language-block": "tsx create-language-block",
     "create-quiz": "tsx create-quiz",
     "lint": "eslint --max-warnings 0",
-    "test": "vitest"
+    "test": "vitest",
+    "type-check": "tsc"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",

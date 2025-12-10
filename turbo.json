@@ -4,6 +4,8 @@
     "lint": {
       "dependsOn": ["@freecodecamp/shared#compile"]
     },
+    "type-check": {},
+    "//#type-check": {},
     "@freecodecamp/client#lint": {
       "dependsOn": [
         "@freecodecamp/curriculum#compile",
