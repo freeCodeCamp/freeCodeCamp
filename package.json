@@ -52,7 +52,6 @@
     "lint-root": "pnpm npm-run-all lint:*",
     "lint": "turbo type-check && turbo lint && turbo lint-root",
     "lint:challenges": "cd ./curriculum && pnpm run lint-challenges",
-    "type-check": "tsc",
     "lint:prettier": "prettier --list-different .",
     "lint:css": "stylelint '**/*.css'",
     "preseed": "turbo compile",
