@@ -459,7 +459,7 @@ function uploadNewCard(): void {
     const questionAnswer = backInput.value.trim();
     if (!questionText)
       throw new InvalidUserInputError("Front text cannot be empty.");
-    if (!answerText)
+    if (!questionAnswer)
       throw new InvalidUserInputError("Back text cannot be empty.");
     const newCard: FlashCard = { questionText, questionAnswer  };
     currentCards.push(newCard);
@@ -477,7 +477,8 @@ function uploadNewCard(): void {
     --fcc-editable-region--
 
 
-    --fcc-editable-region--
+    --fcc-editable-region--    
+    throw ex; 
   }
 }
 
@@ -960,7 +961,7 @@ function uploadNewCard(): void {
     const questionAnswer = backInput.value.trim();
     if (!questionText)
       throw new InvalidUserInputError("Front text cannot be empty.");
-    if (!answerText)
+    if (!questionAnswer)
       throw new InvalidUserInputError("Back text cannot be empty.");
     const newCard: FlashCard = { questionText, questionAnswer  };
     currentCards.push(newCard);

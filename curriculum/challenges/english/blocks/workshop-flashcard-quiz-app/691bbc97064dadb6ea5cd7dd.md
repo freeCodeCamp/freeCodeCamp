@@ -492,7 +492,7 @@ function uploadNewCard(): void {
   }
   catch(ex)
   {
-
+    throw ex; 
   }
 }
 
