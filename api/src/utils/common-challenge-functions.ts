@@ -2,7 +2,7 @@ import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
 import { challengeTypes } from '../../../shared/config/challenge-types.js';
-import { challenges } from './get-challenges.js';
+import { challenges, savableChallenges } from './get-challenges.js';
 import { normalizeDate } from './normalize.js';
 
 export const jsCertProjectIds = [
@@ -133,9 +133,7 @@ export async function updateUserChallengeData(
     _completedChallenge;
   let completedChallenge: CompletedChallenge;
 
-  const challengeData = challenges.find(c => c.id === challengeId);
-
-  if (challengeData?.saveSubmissionToDB) {
+  if (savableChallenges.has(challengeId)) {
     completedChallenge = {
       ..._completedChallenge,
       files: files?.map(

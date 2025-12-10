@@ -54,3 +54,11 @@ export function getChallenges(): Block['challenges'] {
 }
 
 export const challenges = getChallenges();
+
+export const savableChallenges = challenges.reduce((acc, curr) => {
+  if (curr.saveSubmissionToDB) {
+    acc.add(curr.id);
+  }
+
+  return acc;
+}, new Set<string>());
