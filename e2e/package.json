@@ -9,6 +9,7 @@
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "eslint": "^9.39.1"
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3"
   }
 }
