@@ -2,7 +2,7 @@
   "name": "Python Certification Exam",
   "blockLabel": "exam",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "exam-python-certification",
   "helpCategory": "Python",
   "challengeOrder": [

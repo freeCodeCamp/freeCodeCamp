@@ -1,3 +1,3 @@
-import { updateStepTitles } from './utils';
+import { updateStepTitles } from './utils.js';
 
 updateStepTitles();

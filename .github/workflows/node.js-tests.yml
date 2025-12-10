@@ -68,7 +68,7 @@ jobs:
       - name: Lint Source Files
         run: |
           echo pnpm version $(pnpm -v)
-          pnpm turbo lint
+          pnpm lint
 
   # DONT REMOVE THIS JOB.
   # TODO: Refactor and use re-usable workflow and shared artifacts

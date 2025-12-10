@@ -234,10 +234,6 @@ Functional pseudo-classes use parentheses and accept arguments inside them.
 
 `:first-child`
 
-### --feedback--
-
-Functional pseudo-classes use parentheses and accept arguments inside them.
-
 ---
 
 `:has()`

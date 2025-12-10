@@ -3,11 +3,27 @@
   "isUpcomingChange": true,
   "dashedName": "zh-a1-learn-certification-introduction",
   "helpCategory": "English",
-  "blockLayout": "challenge-grid",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
-      "id": "68fa3f03c70cc1ee76e50a68",
-      "title": "Dialogue 1: I'm Tom"
+      "id": "691dcd913d383a6ba27d78c8",
+      "title": "How the Certification Works"
+    },
+    {
+      "id": "691fd70b91fd33630effdf6e",
+      "title": "Pinyin-Tone Input"
+    },
+    {
+      "id": "691f071bd6a0ee105c5f571e",
+      "title": "Pinyin-Hanzi Input"
+    },
+    {
+      "id": "691ecaaed19d057a2870c77b",
+      "title": "How to Set Up the Chinese Keyboard on Your Computer"
+    },
+    {
+      "id": "691ecaa9d0f569799594d38a",
+      "title": "How to Set Up the Chinese Keyboard on Mobile"
     }
   ],
   "blockLabel": "learn"

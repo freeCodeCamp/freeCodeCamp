@@ -95,7 +95,11 @@ function ExamToken({ email }: ExamTokenProps) {
         </Modal.Footer>
       </Modal>
       <Panel variant='info' id='exam-environment-authorization-token'>
-        <Panel.Heading>{t('exam-token.exam-token')}</Panel.Heading>
+        <Panel.Heading>
+          <h2 className='settings-exam-token-heading'>
+            {t('exam-token.exam-token')}
+          </h2>
+        </Panel.Heading>
         <Panel.Body>
           <p>{t('exam-token.note')}</p>
           <strong>{t('exam-token.invalidation-2')}</strong>

@@ -174,7 +174,7 @@ export const canSaveToDB = (challengeType: number): boolean =>
   challengeType === challengeTypes.multifileCertProject ||
   challengeType === challengeTypes.multifilePythonCertProject;
 
-export const dailyCodingChallengeTypes = [
+const dailyCodingChallengeTypes = [
   challengeTypes.dailyChallengeJs,
   challengeTypes.dailyChallengePy
 ];
@@ -182,7 +182,7 @@ export const dailyCodingChallengeTypes = [
 export const getIsDailyCodingChallenge = (challengeType: number): boolean =>
   dailyCodingChallengeTypes.includes(challengeType);
 
-export const dailyCodingChallengeLanguages = {
+const dailyCodingChallengeLanguages = {
   [challengeTypes.dailyChallengeJs]: 'javascript',
   [challengeTypes.dailyChallengePy]: 'python'
 };

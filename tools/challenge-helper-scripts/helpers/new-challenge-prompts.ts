@@ -1,6 +1,6 @@
 import { prompt } from 'inquirer';
-import { challengeTypes } from '../../../shared/config/challenge-types';
-import { getLastStep } from './get-last-step-file-number';
+import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
+import { getLastStep } from './get-last-step-file-number.js';
 
 export const newChallengePrompts = async (): Promise<{
   title: string;

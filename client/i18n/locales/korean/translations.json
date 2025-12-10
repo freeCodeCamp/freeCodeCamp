@@ -281,7 +281,7 @@
     "disabled": "Your certifications will be disabled, if set to private.",
     "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
-    "for": "Account Settings for {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
     "scrollbar-width": "Editor Scrollbar Width",
@@ -315,7 +315,7 @@
       "results-for": "Results for {{projectTitle}}",
       "my-profile": "My profile",
       "my-name": "My name",
-      "my-location": "My location",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "My about",
       "my-points": "My points",
       "my-heatmap": "My heatmap",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings",
+      "privacy": "Privacy",
       "personal-info": "Personal Information"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
-      "heading": "Email Settings",
+      "heading": "Email",
       "not-verified": "Your email has not been verified.",
       "check": "Please check your email, or <0>request a new verification email here</0>.",
       "current": "Current Email",
@@ -497,7 +498,7 @@
     "download-solution": "Download my solution",
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% complete",
-    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
+    "project-complete": "Completed",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
@@ -894,6 +895,7 @@
     "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
@@ -962,7 +964,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
     "not-available": "Not available",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1314,7 +1318,8 @@
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",

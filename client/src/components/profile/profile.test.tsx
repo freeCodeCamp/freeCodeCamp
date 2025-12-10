@@ -63,6 +63,7 @@ const userProps = {
     isFrontEndLibsCert: true,
     isFullStackCert: true,
     isInfosecQaCert: true,
+    isPythonCertV9: true,
     isQaCertV7: true,
     isInfosecCertV7: true,
     isJavascriptCertV9: true,
@@ -73,6 +74,7 @@ const userProps = {
     isDataAnalysisPyCertV7: true,
     isMachineLearningPyCertV7: true,
     isRelationalDatabaseCertV8: true,
+    isRelationalDatabaseCertV9: true,
     isCollegeAlgebraPyCertV8: true,
     isFoundationalCSharpVertV8: true
   },

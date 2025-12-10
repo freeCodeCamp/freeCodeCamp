@@ -2,18 +2,18 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { createQuizFile, getAllBlocks, validateBlockName } from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
+import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -93,13 +93,13 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectId
 ) {
   const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
 
   await writeBlockStructure(block, newMeta);
@@ -110,16 +110,9 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number
-): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount

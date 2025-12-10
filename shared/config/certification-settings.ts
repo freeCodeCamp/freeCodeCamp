@@ -25,12 +25,12 @@ export enum Certification {
   MachineLearningPy = 'machine-learning-with-python-v7',
   CollegeAlgebraPy = 'college-algebra-with-python-v8',
   FoundationalCSharp = 'foundational-c-sharp-with-microsoft',
+  PythonV9 = 'python-v9',
+  RelationalDbV9 = 'relational-databases-v9',
   // Upcoming certifications
   RespWebDesignV9 = 'responsive-web-design-v9',
   JsV9 = 'javascript-v9',
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
-  PythonV9 = 'python-v9',
-  RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
@@ -54,10 +54,12 @@ export function isCertification(x: string): x is Certification {
 // "Current" certifications are the subset of standard certifications that are
 // live and not legacy.
 export const currentCertifications = [
-  Certification.RespWebDesignV9,
-  Certification.JsV9,
   Certification.A2English,
-  Certification.FoundationalCSharp
+  Certification.FoundationalCSharp,
+  Certification.JsV9,
+  Certification.PythonV9,
+  Certification.RelationalDbV9,
+  Certification.RespWebDesignV9
 ] as const;
 
 // "Legacy" certifications are another class of standard certifications. They're
@@ -92,8 +94,6 @@ export const legacyFullStackCertification = [
 // showUpcomingChanges is true.
 export const upcomingCertifications = [
   Certification.FrontEndDevLibsV9,
-  Certification.PythonV9,
-  Certification.RelationalDbV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
   Certification.B1English,
@@ -102,198 +102,151 @@ export const upcomingCertifications = [
   Certification.A1Chinese
 ] as const;
 
-export const certTypes = {
-  frontEnd: 'isFrontEndCert',
-  backEnd: 'isBackEndCert',
-  dataVis: 'isDataVisCert',
-  respWebDesign: 'isRespWebDesignCert',
-  respWebDesignV9: 'isRespWebDesignCertV9',
-  frontEndDevLibs: 'isFrontEndLibsCert',
-  dataVis2018: 'is2018DataVisCert',
-  jsAlgoDataStruct: 'isJsAlgoDataStructCert',
-  apisMicroservices: 'isApisMicroservicesCert',
-  infosecQa: 'isInfosecQaCert',
-  qaV7: 'isQaCertV7',
-  infosecV7: 'isInfosecCertV7',
-  sciCompPyV7: 'isSciCompPyCertV7',
-  dataAnalysisPyV7: 'isDataAnalysisPyCertV7',
-  machineLearningPyV7: 'isMachineLearningPyCertV7',
-  fullStack: 'isFullStackCert',
-  relationalDatabaseV8: 'isRelationalDatabaseCertV8',
-  collegeAlgebraPyV8: 'isCollegeAlgebraPyCertV8',
-  foundationalCSharpV8: 'isFoundationalCSharpCertV8',
-  jsAlgoDataStructV8: 'isJsAlgoDataStructCertV8',
-  javascriptV9: 'isJavascriptCertV9',
-  a2English: 'isA2EnglishCert'
-} as const;
+export const certToIdMap: Record<Certification, string> = {
+  // Legacy certifications
+  [Certification.LegacyFrontEnd]: '561add10cb82ac38a17513be',
+  [Certification.JsAlgoDataStruct]: '561abd10cb81ac38a17513bc',
+  [Certification.LegacyBackEnd]: '660add10cb82ac38a17513be',
+  [Certification.LegacyDataVis]: '561add10cb82ac39a17513bc',
+  [Certification.LegacyInfoSecQa]: '561add10cb82ac38a17213bc',
+  [Certification.LegacyFullStack]: '561add10cb82ac38a17213bd',
 
-export const certIds = {
-  legacyFrontEndChallengeId: '561add10cb82ac38a17513be',
-  legacyBackEndChallengeId: '660add10cb82ac38a17513be',
-  legacyDataVisId: '561add10cb82ac39a17513bc',
-  legacyInfosecQaId: '561add10cb82ac38a17213bc',
-  legacyFullStackId: '561add10cb82ac38a17213bd',
-  respWebDesignId: '561add10cb82ac38a17513bc',
-  frontEndDevLibsId: '561acd10cb82ac38a17513bc',
-  dataVis2018Id: '5a553ca864b52e1d8bceea14',
-  jsAlgoDataStructId: '561abd10cb81ac38a17513bc',
-  apisMicroservicesId: '561add10cb82ac38a17523bc',
-  qaV7Id: '5e611829481575a52dc59c0e',
-  infosecV7Id: '5e6021435ac9d0ecd8b94b00',
-  sciCompPyV7Id: '5e44431b903586ffb414c951',
-  dataAnalysisPyV7Id: '5e46fc95ac417301a38fb934',
-  machineLearningPyV7Id: '5e46fc95ac417301a38fb935',
-  relationalDatabaseV8Id: '606243f50267e718b1e755f4',
-  collegeAlgebraPyV8Id: '61531b20cc9dfa2741a5b800',
-  foundationalCSharpV8Id: '647f7da207d29547b3bee1ba',
-  jsAlgoDataStructV8Id: '658180220947283cdc0689ce',
-  respWebDesignV9Id: '68db314d3c11a8bff07c7535',
-  javascriptV9Id: '68c4069c1ef859270e17c495',
-  frontEndLibsV9Id: '68e008aa5f80c6099d47b3a2',
-  pythonV9Id: '68e6bd5020effa1586e79855',
-  relationalDbV9Id: '68e6bd5120effa1586e79856',
-  backEndDevApisV9Id: '68e6bd5120effa1586e79857',
-  fullStackDeveloperV9Id: '64514fda6c245de4d11eb7bb',
-  a2EnglishId: '651dd7e01d697d0aab7833b7'
+  // Current certifications
+  [Certification.RespWebDesign]: '561add10cb82ac38a17513bc',
+  [Certification.JsAlgoDataStructNew]: '658180220947283cdc0689ce',
+  [Certification.FrontEndDevLibs]: '561acd10cb82ac38a17513bc',
+  [Certification.DataVis]: '5a553ca864b52e1d8bceea14',
+  [Certification.BackEndDevApis]: '561add10cb82ac38a17523bc',
+  [Certification.QualityAssurance]: '5e611829481575a52dc59c0e',
+  [Certification.InfoSec]: '5e6021435ac9d0ecd8b94b00',
+  [Certification.SciCompPy]: '5e44431b903586ffb414c951',
+  [Certification.DataAnalysisPy]: '5e46fc95ac417301a38fb934',
+  [Certification.MachineLearningPy]: '5e46fc95ac417301a38fb935',
+  [Certification.RelationalDb]: '606243f50267e718b1e755f4',
+  [Certification.CollegeAlgebraPy]: '61531b20cc9dfa2741a5b800',
+  [Certification.FoundationalCSharp]: '647f7da207d29547b3bee1ba',
+  [Certification.A2English]: '651dd7e01d697d0aab7833b7',
+
+  // Upcoming certifications
+  [Certification.RespWebDesignV9]: '68db314d3c11a8bff07c7535',
+  [Certification.JsV9]: '68c4069c1ef859270e17c495',
+  [Certification.FrontEndDevLibsV9]: '68e008aa5f80c6099d47b3a2',
+  [Certification.PythonV9]: '68e6bd5020effa1586e79855',
+  [Certification.RelationalDbV9]: '68e6bd5120effa1586e79856',
+  [Certification.BackEndDevApisV9]: '68e6bd5120effa1586e79857',
+  [Certification.FullStackDeveloperV9]: '64514fda6c245de4d11eb7bb',
+  [Certification.B1English]: '66607e53317411dd5e8aae21',
+  [Certification.A2Spanish]: '681a6b22e5a782fe3459984a',
+  [Certification.A2Chinese]: '682c3153086dd7cabe7f48bc',
+  [Certification.A1Chinese]: '68f1268149f045a650d4229e'
 };
 
-export const completionHours = {
-  [certTypes.frontEnd]: 300,
-  [certTypes.backEnd]: 300,
-  [certTypes.dataVis]: 300,
-  [certTypes.infosecQa]: 300,
-  [certTypes.fullStack]: 1800,
-  [certTypes.respWebDesign]: 300,
-  [certTypes.respWebDesignV9]: 300,
-  [certTypes.frontEndDevLibs]: 300,
-  [certTypes.jsAlgoDataStruct]: 300,
-  [certTypes.dataVis2018]: 300,
-  [certTypes.apisMicroservices]: 300,
-  [certTypes.qaV7]: 300,
-  [certTypes.infosecV7]: 300,
-  [certTypes.sciCompPyV7]: 300,
-  [certTypes.dataAnalysisPyV7]: 300,
-  [certTypes.machineLearningPyV7]: 300,
-  [certTypes.relationalDatabaseV8]: 300,
-  [certTypes.collegeAlgebraPyV8]: 300,
-  [certTypes.foundationalCSharpV8]: 300,
-  [certTypes.jsAlgoDataStructV8]: 300,
-  [certTypes.javascriptV9]: 300,
-  [certTypes.a2English]: 300
+export const completionHours: Record<Certification, number> = {
+  [Certification.LegacyFrontEnd]: 300,
+  [Certification.JsAlgoDataStruct]: 300,
+  [Certification.LegacyBackEnd]: 300,
+  [Certification.LegacyDataVis]: 300,
+  [Certification.LegacyInfoSecQa]: 300,
+  [Certification.LegacyFullStack]: 1800,
+  [Certification.RespWebDesign]: 300,
+  [Certification.JsAlgoDataStructNew]: 300,
+  [Certification.FrontEndDevLibs]: 300,
+  [Certification.DataVis]: 300,
+  [Certification.BackEndDevApis]: 300,
+  [Certification.QualityAssurance]: 300,
+  [Certification.InfoSec]: 300,
+  [Certification.SciCompPy]: 300,
+  [Certification.DataAnalysisPy]: 300,
+  [Certification.MachineLearningPy]: 300,
+  [Certification.RelationalDb]: 300,
+  [Certification.CollegeAlgebraPy]: 300,
+  [Certification.FoundationalCSharp]: 300,
+  [Certification.A2English]: 300,
+  [Certification.RespWebDesignV9]: 300,
+  [Certification.JsV9]: 300,
+  [Certification.FrontEndDevLibsV9]: 300,
+  [Certification.PythonV9]: 300,
+  [Certification.RelationalDbV9]: 300,
+  [Certification.BackEndDevApisV9]: 300,
+  [Certification.FullStackDeveloperV9]: 1800,
+  [Certification.B1English]: 300,
+  [Certification.A2Spanish]: 300,
+  [Certification.A2Chinese]: 300,
+  [Certification.A1Chinese]: 300
 };
 
 export const certSlugTypeMap = {
   // legacy
-  [Certification.LegacyFrontEnd]: certTypes.frontEnd,
-  [Certification.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
-  [Certification.LegacyBackEnd]: certTypes.backEnd,
-  [Certification.LegacyDataVis]: certTypes.dataVis,
-  [Certification.LegacyInfoSecQa]: certTypes.infosecQa,
-  [Certification.LegacyFullStack]: certTypes.fullStack,
+  [Certification.LegacyFrontEnd]: 'isFrontEndCert',
+  [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
+  [Certification.LegacyBackEnd]: 'isBackEndCert',
+  [Certification.LegacyDataVis]: 'isDataVisCert',
+  [Certification.LegacyInfoSecQa]: 'isInfosecQaCert',
+  [Certification.LegacyFullStack]: 'isFullStackCert',
 
   // modern
-  [Certification.RespWebDesign]: certTypes.respWebDesign,
-  [Certification.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
-  [Certification.FrontEndDevLibs]: certTypes.frontEndDevLibs,
-  [Certification.DataVis]: certTypes.dataVis2018,
-  [Certification.BackEndDevApis]: certTypes.apisMicroservices,
-  [Certification.QualityAssurance]: certTypes.qaV7,
-  [Certification.InfoSec]: certTypes.infosecV7,
-  [Certification.SciCompPy]: certTypes.sciCompPyV7,
-  [Certification.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
-  [Certification.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [Certification.RelationalDb]: certTypes.relationalDatabaseV8,
-  [Certification.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [Certification.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-  [Certification.A2English]: certTypes.a2English,
-
+  [Certification.RespWebDesign]: 'isRespWebDesignCert',
+  [Certification.JsAlgoDataStructNew]: 'isJsAlgoDataStructCertV8',
+  [Certification.FrontEndDevLibs]: 'isFrontEndLibsCert',
+  [Certification.DataVis]: 'is2018DataVisCert',
+  [Certification.BackEndDevApis]: 'isApisMicroservicesCert',
+  [Certification.QualityAssurance]: 'isQaCertV7',
+  [Certification.InfoSec]: 'isInfosecCertV7',
+  [Certification.SciCompPy]: 'isSciCompPyCertV7',
+  [Certification.DataAnalysisPy]: 'isDataAnalysisPyCertV7',
+  [Certification.MachineLearningPy]: 'isMachineLearningPyCertV7',
+  [Certification.RelationalDb]: 'isRelationalDatabaseCertV8',
+  [Certification.CollegeAlgebraPy]: 'isCollegeAlgebraPyCertV8',
+  [Certification.FoundationalCSharp]: 'isFoundationalCSharpCertV8',
+  [Certification.A2English]: 'isA2EnglishCert',
+  [Certification.PythonV9]: 'isPythonCertV9',
+  [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
+  [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
+  [Certification.JsV9]: 'isJavascriptCertV9'
   // upcoming
-  [Certification.RespWebDesignV9]: certTypes.respWebDesignV9,
-  [Certification.JsV9]: certTypes.javascriptV9
-};
+} as const;
 
-export const superBlockCertTypeMap = {
-  // legacy
-  'legacy-front-end': certTypes.frontEnd,
-  [SuperBlocks.JsAlgoDataStruct]: certTypes.jsAlgoDataStruct,
-  'legacy-back-end': certTypes.backEnd,
-  'legacy-data-visualization': certTypes.dataVis,
-  'information-security-and-quality-assurance': certTypes.infosecQa,
-  'full-stack': certTypes.fullStack,
-
-  // modern
-  [SuperBlocks.RespWebDesign]: certTypes.respWebDesign,
-  [SuperBlocks.JsAlgoDataStructNew]: certTypes.jsAlgoDataStructV8,
-  [SuperBlocks.FrontEndDevLibs]: certTypes.frontEndDevLibs,
-  [SuperBlocks.DataVis]: certTypes.dataVis2018,
-  [SuperBlocks.BackEndDevApis]: certTypes.apisMicroservices,
-  [SuperBlocks.QualityAssurance]: certTypes.qaV7,
-  [SuperBlocks.InfoSec]: certTypes.infosecV7,
-  [SuperBlocks.SciCompPy]: certTypes.sciCompPyV7,
-  [SuperBlocks.DataAnalysisPy]: certTypes.dataAnalysisPyV7,
-  [SuperBlocks.MachineLearningPy]: certTypes.machineLearningPyV7,
-  [SuperBlocks.RelationalDb]: certTypes.relationalDatabaseV8,
-  [SuperBlocks.CollegeAlgebraPy]: certTypes.collegeAlgebraPyV8,
-  [SuperBlocks.FoundationalCSharp]: certTypes.foundationalCSharpV8,
-
-  // post-modern
-  // TODO: use enum
-  [SuperBlocks.RespWebDesignNew]: certTypes.respWebDesign,
-
-  // upcoming
-  [SuperBlocks.A2English]: certTypes.a2English
-};
-
-export const certTypeIdMap = {
-  [certTypes.frontEnd]: certIds.legacyFrontEndChallengeId,
-  [certTypes.backEnd]: certIds.legacyBackEndChallengeId,
-  [certTypes.dataVis]: certIds.legacyDataVisId,
-  [certTypes.infosecQa]: certIds.legacyInfosecQaId,
-  [certTypes.fullStack]: certIds.legacyFullStackId,
-  [certTypes.respWebDesign]: certIds.respWebDesignId,
-  [certTypes.respWebDesignV9]: certIds.respWebDesignV9Id,
-  [certTypes.frontEndDevLibs]: certIds.frontEndDevLibsId,
-  [certTypes.jsAlgoDataStruct]: certIds.jsAlgoDataStructId,
-  [certTypes.dataVis2018]: certIds.dataVis2018Id,
-  [certTypes.apisMicroservices]: certIds.apisMicroservicesId,
-  [certTypes.qaV7]: certIds.qaV7Id,
-  [certTypes.infosecV7]: certIds.infosecV7Id,
-  [certTypes.sciCompPyV7]: certIds.sciCompPyV7Id,
-  [certTypes.dataAnalysisPyV7]: certIds.dataAnalysisPyV7Id,
-  [certTypes.machineLearningPyV7]: certIds.machineLearningPyV7Id,
-  [certTypes.relationalDatabaseV8]: certIds.relationalDatabaseV8Id,
-  [certTypes.collegeAlgebraPyV8]: certIds.collegeAlgebraPyV8Id,
-  [certTypes.foundationalCSharpV8]: certIds.foundationalCSharpV8Id,
-  [certTypes.jsAlgoDataStructV8]: certIds.jsAlgoDataStructV8Id,
-  [certTypes.javascriptV9]: certIds.javascriptV9Id,
-  [certTypes.a2English]: certIds.a2EnglishId
-};
-
-export const certTypeTitleMap = {
-  [certTypes.frontEnd]: 'Legacy Front End',
-  [certTypes.backEnd]: 'Legacy Back End',
-  [certTypes.dataVis]: 'Legacy Data Visualization',
-  [certTypes.infosecQa]: 'Legacy Information Security and Quality Assurance',
-  [certTypes.fullStack]: 'Legacy Full Stack',
-  [certTypes.respWebDesign]: 'Legacy Responsive Web Design V8',
-  [certTypes.respWebDesignV9]: 'Responsive Web Design',
-  [certTypes.frontEndDevLibs]: 'Front End Development Libraries V8',
-  [certTypes.jsAlgoDataStruct]:
+// TODO: use i18n keys instead of hardcoded titles
+export const certToTitleMap: Record<Certification, string> = {
+  // Legacy certifications
+  [Certification.LegacyFrontEnd]: 'Legacy Front End',
+  [Certification.JsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures V7',
-  [certTypes.dataVis2018]: 'Data Visualization V8',
-  [certTypes.apisMicroservices]: 'Back End Development and APIs V8',
-  [certTypes.qaV7]: 'Quality Assurance',
-  [certTypes.infosecV7]: 'Information Security',
-  [certTypes.sciCompPyV7]: 'Scientific Computing with Python',
-  [certTypes.dataAnalysisPyV7]: 'Data Analysis with Python',
-  [certTypes.machineLearningPyV7]: 'Machine Learning with Python',
-  [certTypes.relationalDatabaseV8]: 'Relational Database V8',
-  [certTypes.collegeAlgebraPyV8]: 'College Algebra with Python',
-  [certTypes.foundationalCSharpV8]: 'Foundational C# with Microsoft',
-  [certTypes.jsAlgoDataStructV8]:
+  [Certification.LegacyBackEnd]: 'Legacy Back End',
+  [Certification.LegacyDataVis]: 'Legacy Data Visualization',
+  [Certification.LegacyInfoSecQa]:
+    'Legacy Information Security and Quality Assurance',
+  [Certification.LegacyFullStack]: 'Legacy Full Stack',
+
+  // Current certifications
+  [Certification.RespWebDesign]: 'Legacy Responsive Web Design V8',
+  [Certification.JsAlgoDataStructNew]:
     'Legacy JavaScript Algorithms and Data Structures V8',
-  [certTypes.javascriptV9]: 'JavaScript',
-  [certTypes.a2English]: 'A2 English for Developers'
+  [Certification.FrontEndDevLibs]: 'Front End Development Libraries V8',
+  [Certification.DataVis]: 'Data Visualization V8',
+  [Certification.BackEndDevApis]: 'Back End Development and APIs V8',
+  [Certification.QualityAssurance]: 'Quality Assurance',
+  [Certification.InfoSec]: 'Information Security',
+  [Certification.SciCompPy]: 'Scientific Computing with Python',
+  [Certification.DataAnalysisPy]: 'Data Analysis with Python',
+  [Certification.MachineLearningPy]: 'Machine Learning with Python',
+  [Certification.RelationalDb]: 'Relational Database V8',
+  [Certification.CollegeAlgebraPy]: 'College Algebra with Python',
+  [Certification.FoundationalCSharp]: 'Foundational C# with Microsoft',
+  [Certification.A2English]: 'A2 English for Developers',
+
+  // Upcoming certifications
+  [Certification.RespWebDesignV9]: 'Responsive Web Design',
+  [Certification.JsV9]: 'JavaScript',
+  [Certification.FrontEndDevLibsV9]: 'Front End Development Libraries',
+  [Certification.PythonV9]: 'Python',
+  [Certification.RelationalDbV9]: 'Relational Database',
+  [Certification.BackEndDevApisV9]: 'Back End Development and APIs',
+  [Certification.FullStackDeveloperV9]: 'Full Stack Developer',
+  [Certification.B1English]: 'B1 English for Developers',
+  [Certification.A2Spanish]: 'A2 Professional Spanish',
+  [Certification.A2Chinese]: 'A2 Professional Chinese',
+  [Certification.A1Chinese]: 'A1 Professional Chinese'
 };
 
 export const superBlockToCertMap: {

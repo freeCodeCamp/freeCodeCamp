@@ -26,8 +26,8 @@
   --green-dark: #00471b;
   --red-light: #ffadad;
   --red-dark: #850000;
-  --love-light: #f8577c;
-  --love-dark: #f82153;
+  --love-light: var(--red30);
+  --love-dark: var(--red70);
   --editor-background-light: #fffffe;
   --editor-background-dark: #2a2b40;
   --focus-outline-color: var(--blue-mid);

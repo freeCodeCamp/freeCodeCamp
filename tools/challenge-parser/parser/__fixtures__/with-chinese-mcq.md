@@ -49,4 +49,6 @@ Feedback text.
 
 # --explanation--
 
-Wang Hua uses `请问 (qǐng wèn)` to politely start her question.
+`我是 (wǒ shì) Web 开发者 (kāi fā zhě)。` – I am a web developer.
+
+`你好 (nǐ hǎo)，我是王华 (wǒ shì Wang Hua)，请问你叫什么名字 (qǐng wèn nǐ jiào shén me míng zi)？` – Hello, I am Wang Hua, may I ask what your name is?

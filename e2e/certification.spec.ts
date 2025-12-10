@@ -99,7 +99,7 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      `https://twitter.com/intent/tweet?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
+      `https://x.com/intent/post?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
     const projectLinks = certLink.getByTestId('project-links');
@@ -259,7 +259,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      'https://twitter.com/intent/tweet?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
+      'https://x.com/intent/post?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
     const projectLinks = certLink.getByTestId('project-links');

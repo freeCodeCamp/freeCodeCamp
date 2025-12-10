@@ -36,16 +36,15 @@ pnpm-lock.yaml
 
 /curriculum/challenges/_meta/* @freecodecamp/curriculum
 /curriculum/challenges/english/* @freecodecamp/curriculum
+/client/i18n/locales/english/* @freecodecamp/curriculum
 
 # -------------------------------------------------
-# Files that need attention from Staff
+# Files that need attention from i18n & dev team
 # -------------------------------------------------
-
-# README, LICENSE, etc.
-/*.md @freeCodeCamp/staff
 
 # i18n Quotes
-**/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
+**/motivation.json @freeCodeCamp/dev-team @freeCodeCamp/i18n
+
 
 # -------------------------------------------------
 # Files that need attention from the mobile team

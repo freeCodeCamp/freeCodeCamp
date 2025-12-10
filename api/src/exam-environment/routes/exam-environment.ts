@@ -458,6 +458,7 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
+        examModerationId: null,
         startTime: new Date(),
         questionSets: []
       }

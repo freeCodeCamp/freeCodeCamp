@@ -12,6 +12,7 @@ export const getCertifications = (user: User) => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isPythonCertV9,
     isQaCertV7,
     isInfosecCertV7,
     isFrontEndCert,
@@ -22,6 +23,7 @@ export const getCertifications = (user: User) => {
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
+    isRelationalDatabaseCertV9,
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8
@@ -32,7 +34,9 @@ export const getCertifications = (user: User) => {
       isA2EnglishCert ||
       isRespWebDesignCertV9 ||
       isJavascriptCertV9 ||
-      isFoundationalCSharpCertV8,
+      isFoundationalCSharpCertV8 ||
+      isPythonCertV9 ||
+      isRelationalDatabaseCertV9,
     hasLegacyCert:
       isFrontEndCert ||
       isJsAlgoDataStructCert ||
@@ -56,7 +60,7 @@ export const getCertifications = (user: User) => {
     currentCerts: [
       {
         show: isA2EnglishCert,
-        title: 'A2 English for Developers Certification',
+        title: 'A2 English for Developers Certification (Beta)',
         certSlug: Certification.A2English
       },
       {
@@ -73,6 +77,16 @@ export const getCertifications = (user: User) => {
         show: isFoundationalCSharpCertV8,
         title: 'Foundational C# with Microsoft Certification',
         certSlug: Certification.FoundationalCSharp
+      },
+      {
+        show: isPythonCertV9,
+        title: 'Python Certification',
+        certSlug: Certification.PythonV9
+      },
+      {
+        show: isRelationalDatabaseCertV9,
+        title: 'Relational Database Certification',
+        certSlug: Certification.RelationalDbV9
       }
     ],
     legacyCerts: [

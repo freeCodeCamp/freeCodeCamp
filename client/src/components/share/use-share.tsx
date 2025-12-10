@@ -7,9 +7,9 @@ export const nextLine = '%0A';
 const freecodecampLearnDomainURL = 'www.freecodecamp.org/learn';
 
 export const twitterData = {
-  action: 'intent/tweet',
-  domain: 'twitter.com',
-  developerDomainURL: 'https://developer.twitter.com'
+  action: 'intent/post',
+  domain: 'x.com',
+  developerDomainURL: 'https://developer.x.com'
 };
 
 export const blueSkyData = {

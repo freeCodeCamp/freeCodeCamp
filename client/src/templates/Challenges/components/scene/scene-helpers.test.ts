@@ -191,5 +191,22 @@ describe('scene-helpers', () => {
         '\n<strong>Naomi</strong>: Use <div> and <span> tags\n'
       );
     });
+
+    it('should preserve Chinese dialogue with ruby annotations', () => {
+      const commands: SceneCommand[] = [
+        {
+          character: 'Naomi',
+          startTime: 1,
+          dialogue: {
+            text: '<ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>世界<rp>(</rp><rt>shì jiè</rt><rp>)</rp></ruby>。',
+            align: 'left'
+          }
+        }
+      ];
+      const result = buildTranscript(commands);
+      expect(result).toBe(
+        '\n<strong>Naomi</strong>: <ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>世界<rp>(</rp><rt>shì jiè</rt><rp>)</rp></ruby>。\n'
+      );
+    });
   });
 });

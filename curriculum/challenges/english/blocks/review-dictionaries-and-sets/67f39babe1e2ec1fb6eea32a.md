@@ -117,6 +117,8 @@ Output:
 for product in products.keys():
     print(product)
 
+# Or
+
 for product in products:
     print(product)
 ```
@@ -363,7 +365,7 @@ from module_name import name1 as alias1, name2 as alias2
 from module_name import *
 ```
 
-For example, if you this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
+For example, if you use this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
 
 ```python
 from math import *

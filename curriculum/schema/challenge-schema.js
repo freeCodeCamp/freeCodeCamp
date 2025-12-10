@@ -99,7 +99,7 @@ const questionJoi = Joi.object().keys({
     )
     .required()
     .unique('answer'),
-  solution: Joi.number().required()
+  solution: Joi.number().min(1).max(Joi.ref('..answers.length')).required()
 });
 
 const quizJoi = Joi.object().keys({
@@ -228,7 +228,8 @@ const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required()
+      .required(),
+    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),

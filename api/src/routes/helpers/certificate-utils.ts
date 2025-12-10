@@ -1,26 +1,18 @@
 import { Prisma } from '@prisma/client';
 import {
   certSlugTypeMap,
-  certIds
+  certToIdMap,
+  Certification
 } from '../../../../shared/config/certification-settings.js';
 import { normalizeDate } from '../../utils/normalize.js';
 
-const {
-  legacyInfosecQaId,
-  respWebDesignId,
-  frontEndDevLibsId,
-  jsAlgoDataStructId,
-  dataVis2018Id,
-  apisMicroservicesId
-} = certIds;
-
 const fullStackCertificateIds = [
-  respWebDesignId,
-  jsAlgoDataStructId,
-  frontEndDevLibsId,
-  dataVis2018Id,
-  apisMicroservicesId,
-  legacyInfosecQaId
+  certToIdMap[Certification.RespWebDesign],
+  certToIdMap[Certification.JsAlgoDataStruct],
+  certToIdMap[Certification.FrontEndDevLibs],
+  certToIdMap[Certification.DataVis],
+  certToIdMap[Certification.BackEndDevApis],
+  certToIdMap[Certification.LegacyInfoSecQa]
 ];
 
 /**
