@@ -5,7 +5,7 @@
   "scripts": {
     "seed-daily-challenges": "tsx seed-daily-challenges.ts",
     "lint": "eslint --max-warnings 0",
-    "type-check": "tsc"
+    "type-check": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",

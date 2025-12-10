@@ -12,7 +12,7 @@
   "scripts": {
     "test": "vitest",
     "compile": "tsc",
-    "type-check": "tsc",
+    "type-check": "tsc --noEmit",
     "lint": "eslint --max-warnings 0"
   },
   "type": "module",
