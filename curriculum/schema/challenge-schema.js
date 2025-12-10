@@ -203,7 +203,6 @@ const schema = Joi.object().keys({
       })
     })
   ),
-  // replaced- hasEditableBoundaries flag with (instructionsInEditor, includesBlockInTimeline)
   instructionsInEditor: Joi.boolean().required(),
   includesBlockInTimeline: Joi.boolean().required(),
   helpCategory: Joi.valid(

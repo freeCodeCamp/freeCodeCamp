@@ -159,7 +159,6 @@ export function addMetaToChallenge(
   challenge.block = meta.dashedName;
   challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
-  // challenge.hasEditableBoundaries = !!meta.hasEditableBoundaries;
   challenge.instructionsInEditor = meta.instructionsInEditor ?? false;
   challenge.includesBlockInTimeline = meta.includesBlockInTimeline ?? false;
   challenge.order = meta.order;

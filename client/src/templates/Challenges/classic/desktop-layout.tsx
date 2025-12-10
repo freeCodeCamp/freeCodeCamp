@@ -231,7 +231,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     onPreviewResize,
     preview,
-    // hasEditableBoundaries,
     windowTitle
   } = props;
 

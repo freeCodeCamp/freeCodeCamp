@@ -126,7 +126,6 @@ const expectedChallengeProperties = {
   block: dummyBlockMeta.dashedName,
   blockLayout: dummyBlockMeta.blockLayout,
   blockLabel: dummyBlockMeta.blockLabel,
-  // hasEditableBoundaries: dummyBlockMeta.hasEditableBoundaries,
   instructionsInEditor: dummyBlockMeta.instructionsInEditor,
   includesBlockInTimeline: dummyBlockMeta.includesBlockInTimeline,
   order: dummyBlockMeta.order,

@@ -33,8 +33,7 @@ const baseMeta: Meta = {
 
 const stepMeta = {
   ...baseMeta,
-  usesMultifileEditor: true,
-  hasEditableBoundaries: true
+  usesMultifileEditor: true
 };
 
 const fullStackStepMeta = {
