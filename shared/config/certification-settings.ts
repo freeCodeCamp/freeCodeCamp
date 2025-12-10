@@ -203,10 +203,10 @@ type UserCertFlag =
   | 'isRelationalDatabaseCertV9'
   | 'isBackEndDevApisCertV9'
   | 'isFullStackDeveloperCertV9'
-  | 'isB1EnglishCertV8'
-  | 'isA2SpanishCertV8'
-  | 'isA2ChineseCertV8'
-  | 'isA1ChineseCertV8';
+  | 'isB1EnglishCert'
+  | 'isA2SpanishCert'
+  | 'isA2ChineseCert'
+  | 'isA1ChineseCert';
 
 export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   // legacy
@@ -241,10 +241,10 @@ export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
   [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
   [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
-  [Certification.B1English]: 'isB1EnglishCertV8',
-  [Certification.A2Spanish]: 'isA2SpanishCertV8',
-  [Certification.A2Chinese]: 'isA2ChineseCertV8',
-  [Certification.A1Chinese]: 'isA1ChineseCertV8'
+  [Certification.B1English]: 'isB1EnglishCert',
+  [Certification.A2Spanish]: 'isA2SpanishCert',
+  [Certification.A2Chinese]: 'isA2ChineseCert',
+  [Certification.A1Chinese]: 'isA1ChineseCert'
 };
 
 export type CertificationFlags = {

@@ -166,10 +166,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFrontEndLibsCertV9,
     isBackEndDevApisCertV9,
     isFullStackDeveloperCertV9,
-    isB1EnglishCertV8,
-    isA2SpanishCertV8,
-    isA2ChineseCertV8,
-    isA1ChineseCertV8,
+    isB1EnglishCert,
+    isA2SpanishCert,
+    isA2ChineseCert,
+    isA1ChineseCert,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -261,10 +261,10 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isFrontEndLibsCertV9={isFrontEndLibsCertV9}
               isBackEndDevApisCertV9={isBackEndDevApisCertV9}
               isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
-              isB1EnglishCertV8={isB1EnglishCertV8}
-              isA2SpanishCertV8={isA2SpanishCertV8}
-              isA2ChineseCertV8={isA2ChineseCertV8}
-              isA1ChineseCertV8={isA1ChineseCertV8}
+              isB1EnglishCert={isB1EnglishCert}
+              isA2SpanishCert={isA2SpanishCert}
+              isA2ChineseCert={isA2ChineseCert}
+              isA1ChineseCert={isA1ChineseCert}
               username={username}
               verifyCert={verifyCert}
             />
