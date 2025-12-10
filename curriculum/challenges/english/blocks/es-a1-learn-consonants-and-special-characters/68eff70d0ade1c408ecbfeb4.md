@@ -10,11 +10,15 @@ lang: es
 
 # --description--
 
-The letter `d` is called `de` (pronounced `deh`).
+The letter `d` is called `de`.
 
 At the beginning of a word or after `l` or `n`, its sound is stronger, like in the word `dos` ("two"). However, it's softer between vowels, like in the word `idea` ("idea").
 
 An example is `doctor` ("doctor").
+
+# --instructions--
+
+Listen to the audio and write the letter in the blank space below.
 
 # --fillInTheBlank--
 
