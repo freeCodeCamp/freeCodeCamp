@@ -4,7 +4,8 @@
   "main": "seed-daily-challenges.js",
   "scripts": {
     "seed-daily-challenges": "tsx seed-daily-challenges.ts",
-    "lint": "eslint --max-warnings 0"
+    "lint": "eslint --max-warnings 0",
+    "type-check": "tsc"
   },
   "author": "",
   "license": "ISC",

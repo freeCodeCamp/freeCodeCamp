@@ -8,7 +8,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-router-dom": "6.18.0",
-    "typescript": "5.9.3",
     "vite": "4.5.2"
   },
   "scripts": {
@@ -16,6 +15,7 @@
     "build": "tsc && vite build",
     "lint": "eslint --max-warnings 0",
     "test": "echo \"no tests here yet\"",
+    "type-check": "tsc",
     "postinstall": "shx cp ./sample.env ./.env"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
     "@types/react-dom": "17.0.19",
     "@uiw/react-codemirror": "3.2.10",
     "eslint": "^9.39.1",
-    "shx": "0.3.4"
+    "shx": "0.3.4",
+    "typescript": "5.9.3"
   }
 }
