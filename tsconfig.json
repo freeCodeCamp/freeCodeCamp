@@ -2,7 +2,6 @@
   "include": [
     "*.ts",
     "curriculum/*.test.ts",
-    "tools/challenge-auditor/index.ts",
     "tools/challenge-editor/**/*",
     "tools/scripts/**/*.ts",
     "tools/daily-challenges/**/*.ts"

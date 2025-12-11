@@ -226,7 +226,6 @@ function PinyinToHanziInput({
       size={size}
       autoComplete='off'
       aria-label={ariaLabel}
-      aria-describedby={`pinyin-description-${index}`}
       {...(isCorrect === false ? { 'aria-invalid': 'true' } : {})}
     />
   );

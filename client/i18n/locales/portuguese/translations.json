@@ -281,7 +281,7 @@
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
-    "for": "Configurações de conta para {{username}}",
+    "for": "Configurações para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
@@ -315,7 +315,7 @@
       "results-for": "Resultados para {{projectTitle}}",
       "my-profile": "Meu perfil",
       "my-name": "Meu nome",
-      "my-location": "Minha localização",
+      "my-location": "Meu local declarado (o freeCodeCamp não rastreia a sua localização atual)",
       "my-about": "Sobre mim",
       "my-points": "Meus pontos",
       "my-heatmap": "Meu progresso",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
+      "account": "Conta",
       "certs": "Certificações",
       "legacy-certs": "Certificações legadas",
       "honesty": "Política de honestidade acadêmica",
       "internet": "Sua presença na internet",
       "portfolio": "Configurações do portfólio",
-      "privacy": "Configurações de privacidade",
+      "privacy": "Privacidade",
       "personal-info": "Informações pessoais"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "Você não tem um e-mail associado a esta conta.",
-      "heading": "Configurações de e-mail",
+      "heading": "E-mail",
       "not-verified": "O seu e-mail não foi verificado.",
       "check": "Verifique seu e-mail ou <0>solicite um novo e-mail de verificação aqui</0>.",
       "current": "E-mail atual",
@@ -929,7 +930,7 @@
     "linkedin": "Link para o LinkedIn de {{username}}",
     "github": "Link para o GitHub de {{username}}",
     "website": "Link para o site de {{username}}",
-    "twitter": "Link para o Twitter de {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Ir ao próximo mês",
     "previous-month": "Ir ao mês anterior",
     "first-page": "Ir para a primeira página",
@@ -963,7 +964,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Ctrl+E para desativar ou pressione Alt+F1 para mais opções.",
     "terminal-output": "Saída do terminal",
     "not-available": "Não disponível",
-    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página."
+    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
+    "pinyin-to-hanzi-input-desc": "Esta tarefa usa entradas de Pinyin para Hanzi. Digite o pinyin com os números do tonalidade (de 1 a 5). Quando você inserir uma sílaba correta, ela se tornará um caractere chinês. Se você pressionar backspace após um caractere chinês, mudará de volta para pinyin e removerá a última coisa que você digitou: se for um número de tonalidade, a tonalidade será removida; se for uma letra, ela será removida.",
+    "pinyin-tone-input-desc": "Esta tarefa usa entradas de tonalidade do Pinyin. Digite o pinyin com números de tonalidade (de 1 a 5). Quando você inserir um número, ele será convertido em uma marca tonal. Se você pressionar backspace, a última coisa que digitou será removida: se for uma tonalidade de número, ela será removida; se for uma letra, a letra será removida."
   },
   "flash": {
     "no-email-in-userinfo": "Não foi possível recuperar um e-mail do provedor escolhido. Por favor, tente outro provedor ou use a opção 'Continuar com o Email'.",
@@ -1226,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
-      "a2-english-for-developers-cert": "Certificação A2 Inglês para Desenvolvedores",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
       "b1-english-for-developers-cert": "Certificação B1 Inglês para Desenvolvedores",
       "responsive-web-design-v9": "Design responsivo para a web",

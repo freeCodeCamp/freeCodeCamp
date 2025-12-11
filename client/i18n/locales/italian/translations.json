@@ -281,7 +281,7 @@
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
-    "for": "Impostazioni Account per {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
     "scrollbar-width": "Larghezza barra di scorrimento editor",
@@ -315,7 +315,7 @@
       "results-for": "Risultati per {{projectTitle}}",
       "my-profile": "Il mio profilo",
       "my-name": "Il mio nome",
-      "my-location": "La mia posizione",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Le mie informazioni",
       "my-points": "I miei punti",
       "my-heatmap": "La mia mappa del calore",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certificazioni",
       "legacy-certs": "Vecchie certificazioni",
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
-      "privacy": "Impostazioni Privacy",
+      "privacy": "Privacy",
       "personal-info": "Informazioni personali"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "Non hai un'email associata a questo account.",
-      "heading": "Impostazioni email",
+      "heading": "Email",
       "not-verified": "La tua email non è stata verificata.",
       "check": "Per favore controlla la tua email, o <0>richiedi una nuova email di verifica qui</0>.",
       "current": "Email Attuale",
@@ -929,7 +930,7 @@
     "linkedin": "Link al LinkedIn di {{username}}",
     "github": "Link al GitHub di {{username}}",
     "website": "Link al sito web di {{username}}",
-    "twitter": "Link al Twitter di {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Va alla prima pagina",
@@ -963,7 +964,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
     "not-available": "Not available",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1226,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "responsive-web-design-v9": "Responsive Web Design",

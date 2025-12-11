@@ -95,7 +95,7 @@ function ToolPanel({
             )}
       </Button>
       <Spacer size='xxs' />
-      <Dropdown dropup>
+      <Dropdown block={true} dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}
           data-playwright-test-label='get-help-dropdown'
