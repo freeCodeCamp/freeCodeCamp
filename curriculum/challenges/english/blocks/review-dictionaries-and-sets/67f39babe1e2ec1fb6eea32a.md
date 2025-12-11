@@ -241,7 +241,8 @@ my_set.clear()
 - **`issubset()` and `issuperset()` Methods**: The `issubset()` and the `issuperset()` methods check if a set is a subset or superset of another set, respectively.
 
 ```python
-my_set = {1, 2, 3, 4, 5} 
+# Example sets for subset/superset
+my_set = {1, 2, 3, 4, 5}
 your_set = {2, 3, 4, 6}
 
 print(your_set.issubset(my_set)) # True
@@ -251,30 +252,50 @@ print(my_set.issuperset(your_set)) # True
 - **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don't have elements in common.
 
 ```python
-print(my_set.isdisjoint(your_set)) # False
+# Example sets for disjoint
+my_set = {1, 2, 3}
+your_set = {4, 5, 6}
+
+print(my_set.isdisjoint(your_set)) # True
 ```
 
 - **Union Operator (`|`)**: The union operator `|` returns a new set with all the elements from both sets.
 
 ```python
+# Example sets for union
+my_set = {1, 2, 3}
+your_set = {4, 5, 6}
+
 my_set | your_set # {1, 2, 3, 4, 5, 6}
 ```
 
 - **Intersection Operator (`&`)**: The intersection operator `&` returns a new set with only the elements that the sets have in common.
 
 ```python
+# Example sets for intersection
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set & your_set # {2, 3, 4}
 ```
 
 - **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other sets.
 
 ```python
+# Example sets for difference
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set - your_set # {1, 5}
 ```
 
 - **Symmetric Difference Operator (`^`)**: The symmetric difference operator `^` returns a new set with the elements that are either in the first or the second set, but not both.
 
 ```python
+# Example sets for symmetric difference
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set ^ your_set # {1, 5, 6}
 ```
 
