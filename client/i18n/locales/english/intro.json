@@ -7548,7 +7548,9 @@
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
         "note": "Coming 2026",
-        "intro": ["", ""]
+        "intro": [
+          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
       }
     },
     "blocks": {
