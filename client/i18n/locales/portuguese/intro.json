@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Certificação A2 Inglês para Desenvolvedores",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
       "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
@@ -5145,13 +5145,9 @@
     "title": "Certificação JavaScript",
     "intro": [
       "Este curso ensina conceitos fundamentais de programação JavaScript, como trabalhar com variáveis, funções, objetos, arrays e controle de fluxo. Você também aprenderá a manipular o DOM, lidar com eventos, e aplicar técnicas como programação funcional, assíncrona e práticas recomendadas de acessibilidade.",
-      "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
-      "- Crie um Conversor de Markdown para HTML",
-      "- Crie uma Bateria Eletrônica",
-      "- Crie um Sistema de Votação",
-      "- Crie um Programa de Gestão de Contas Bancárias",
-      "- Crie um Aplicativo do Tempo",
-      "Passe no exame para conquistar sua Certificação de JavaScript."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -6750,7 +6746,6 @@
   },
   "python-v9": {
     "title": "Certificação em Python",
-    "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Recomendamos completar os cursos disponíveis abaixo para se preparar para o exame de certificação assim que for lançado.",
     "intro": [
       "Este curso ensina os fundamentos da programação em Python.",
       "Para conquistar sua Certificação em Python:",
@@ -7230,7 +7225,6 @@
   },
   "relational-databases-v9": {
     "title": "Certificação de Bancos de Dados Relacionais",
-    "note": "Esta certificação está atualmente em desenvolvimento e estará disponível em breve. Recomendamos completar os cursos disponíveis abaixo para se preparar para o exame de certificação assim que for lançado.",
     "intro": [
       "Este curso ensina os fundamentos dos bancos de dados relacionais.",
       "Para conquistar sua Certificação de Bancos de Dados Relacionais:",
@@ -7628,8 +7622,14 @@
   },
   "a1-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A1 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, em breve haverá. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
-    "intro": ["Introdução de Espaço Reservado"],
+    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "- A Warm-up section for quick review.",
+      "- Learn sections with new vocabulary and grammar.",
+      "- Practice sections to check your comprehension and writing skills.",
+      "- A Review section with key grammar and vocabulary."
+    ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao A1 Espanhol Profissional",
       "es-a1-chapter-spanish-fundamentals": "Fundamentos do Espanhol",
@@ -7834,17 +7834,14 @@
     "title": "Certificação de Design Responsivo para a Web",
     "intro": [
       "Este curso ensina os fundamentos de HTML e CSS, incluindo design de layout moderno, design, acessibilidade e desenvolvimento web responsivo. Você criará projetos práticos e adquirirá as habilidades necessárias para criar páginas da web profissionais e fáceis de usar.",
-      "Para se qualificar para o exame, você deve concluir os seguintes projetos:",
-      "- Crie um Formulário de Pesquisa",
-      "- Crie uma Página de Baralhos",
-      "- Crie uma Aplicação de Inventário de Livros",
-      "- Crie uma Página de Documentação Técnica",
-      "- Crie uma Página de Produto",
-      "Passe no exame para conquistar sua Certificação de Design Responsivo para a Web."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computadores",
       "responsive-web-design-certification-exam": "Exame de Certificação de Design Responsivo para a Web"
     },
     "modules": {
