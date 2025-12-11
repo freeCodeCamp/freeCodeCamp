@@ -79,7 +79,7 @@ The word `Hola` is a greeting. It's used when you meet someone, similar to "Hell
       }
     ],
     "audio": {
-      "filename": "ES_A1_1.1.mp3",
+      "filename": "ES_A1_spanish_greetings_in_the_morning.mp3",
       "startTime": 1,
       "startTimestamp": 0.35,
       "finishTimestamp": 0.90
