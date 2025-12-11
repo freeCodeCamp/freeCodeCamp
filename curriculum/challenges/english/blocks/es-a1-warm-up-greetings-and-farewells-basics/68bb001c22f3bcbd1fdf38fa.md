@@ -72,17 +72,17 @@ The word `Hola` is a greeting. It's used when you meet someone, similar to "Hell
         "character": "Elena",
         "position": {
           "x": 50,
-          "y": 15,
-          "z": 1.2
+          "y": 25,
+          "z": 1.5
         },
         "opacity": 0
       }
     ],
     "audio": {
-      "filename": "ES_A1_1.1.mp3",
+      "filename": "ES_A1_spanish_greetings_in_the_morning.mp3",
       "startTime": 1,
       "startTimestamp": 0.35,
-      "finishTimestamp": 0.90
+      "finishTimestamp": 0.9
     }
   },
   "commands": [
