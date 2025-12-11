@@ -100,6 +100,7 @@ describe('convertToHanzi', () => {
       '你好'
     );
   });
+
   test('should convert "v" to "ü" and support tone marks', () => {
     // Correct tone gets converted to hanzi
     expect(convertToHanzi('nv3', { hanzi: '女', pinyin: 'nǚ' })).toBe('女');
