@@ -83,7 +83,7 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
       }
     ],
     "audio": {
-      "filename": "ES_A1_2.2.mp3",
+      "filename": "ES_A1_spanish_meet_mateo.mp3",
       "startTime": 1,
       "startTimestamp": 5.81,
       "finishTimestamp": 7.13

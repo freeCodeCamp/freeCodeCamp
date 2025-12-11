@@ -79,7 +79,7 @@ It's used when you expect to see the person again, but not necessarily soon. For
       }
     ],
     "audio": {
-      "filename": "ES_A1_1.1.mp3",
+      "filename": "ES_A1_spanish_greetings_in_the_morning.mp3",
       "startTime": 1,
       "startTimestamp": 5.68,
       "finishTimestamp": 6.64
