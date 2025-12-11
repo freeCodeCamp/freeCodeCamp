@@ -254,9 +254,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         edges {
           node {
             challenge {
+              block
               fields {
                 slug
-                blockName
               }
               id
               superBlock
@@ -282,19 +282,21 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       node: {
         challenge: {
           // @ts-expect-error Graphql needs typing
+          block,
+          // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
           superBlock,
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName },
+          fields: { slug },
           // @ts-expect-error Graphql needs typing
           hasEditableBoundaries
         }
       }
     }) => {
-      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
       const shouldAppendBlockNameToTitle =
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {

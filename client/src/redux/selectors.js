@@ -1,4 +1,9 @@
 import { createSelector } from 'reselect';
+import { liveCerts } from '../../config/cert-and-project-map';
+import {
+  certSlugTypeMap,
+  certToTitleMap
+} from '../../../shared-dist/config/certification-settings.js';
 
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';
@@ -218,3 +223,40 @@ export const userSelector = state => state[MainApp].user.sessionUser;
 export const otherUserSelector = state => state[MainApp].user.otherUser;
 
 export const renderStartTimeSelector = state => state[MainApp].renderStartTime;
+
+export const claimableCertsSelector = createSelector([userSelector], user => {
+  if (!user) return [];
+
+  const completedChallengeIds = (user.completedChallenges || []).map(
+    ({ id }) => id
+  );
+
+  const isClaimedByCert = Object.entries(certSlugTypeMap).reduce(
+    (acc, [cert, userFlag]) => {
+      acc[cert] = Boolean(user[userFlag]);
+      return acc;
+    },
+    {}
+  );
+
+  const claimable = [];
+
+  for (const { projects, certSlug } of liveCerts) {
+    if (!projects) continue;
+    if (isClaimedByCert[certSlug]) continue;
+
+    const projectIds = projects.map(p => p.id);
+    const allProjectsComplete = projectIds.every(id =>
+      completedChallengeIds.includes(id)
+    );
+
+    const certTitle = certToTitleMap[certSlug];
+    if (allProjectsComplete) {
+      claimable.push({
+        certTitle
+      });
+    }
+  }
+
+  return claimable;
+});

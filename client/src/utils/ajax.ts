@@ -1,5 +1,5 @@
 import cookies from 'browser-cookies';
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery, retry } from '@reduxjs/toolkit/query/react';
 
 import envData from '../../config/env.json';
 import type {
@@ -220,17 +220,25 @@ export interface Exam {
   };
 }
 
-export interface Attempt {
+export type Attempt = {
   id: string;
   examId: string;
   // ISO 8601 string
   startTime: string;
   questionSets: unknown[];
-  result?: {
-    passed: boolean;
-    score: number;
-  };
-}
+} & (
+  | {
+      result: null;
+      status: 'InProgress' | 'Expired' | 'PendingModeration' | 'Denied';
+    }
+  | {
+      status: 'Approved';
+      result: {
+        passingPercent: number;
+        score: number;
+      };
+    }
+);
 
 export function getExams(): Promise<ResponseWithData<{ exams: Exam[] }>> {
   return get('/user/exam-environment/exams');
@@ -430,15 +438,33 @@ export interface ExamEnvironmentChallenge {
   challengeId: string;
 }
 
+export type GetExamsResponse = Array<{
+  id: string;
+  config: {
+    name: string;
+    note: string;
+    totalTimeInS: number;
+    retakeTimeInS: number;
+    passingPercent: number;
+  };
+  canTake: boolean;
+  prerequisites: string[];
+}>;
+
 export const examAttempts = createApi({
   reducerPath: 'exam-attempts',
-  baseQuery: fetchBaseQuery({
-    baseUrl: apiLocation,
-    headers: {
-      'CSRF-Token': getCSRFToken()
-    },
-    credentials: 'include'
-  }),
+  baseQuery: retry(
+    fetchBaseQuery({
+      baseUrl: apiLocation,
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
+      },
+      credentials: 'include'
+    }),
+    // Retry in the case this is the initial request - csrf is not set yet, and initial returns 403
+    { maxRetries: 2 }
+  ),
   endpoints: build => ({
     getExamAttemptsByExamId: build.mutation<Attempt[], string>({
       query: examId => `/user/exam-environment/exams/${examId}/attempts`
@@ -446,19 +472,27 @@ export const examAttempts = createApi({
     getExamIdsByChallengeId: build.query<ExamEnvironmentChallenge[], string>({
       query: challengeId =>
         `/exam-environment/exam-challenge?challengeId=${challengeId}`
+    }),
+    getExams: build.query<GetExamsResponse, void>({
+      query: () => '/user/exam-environment/exams'
     })
   })
 });
 
 export const examEnvironmentAuthorizationTokenApi = createApi({
   reducerPath: 'exam-environment-authorization-token',
-  baseQuery: fetchBaseQuery({
-    baseUrl: apiLocation,
-    headers: {
-      'CSRF-Token': getCSRFToken()
-    },
-    credentials: 'include'
-  }),
+  baseQuery: retry(
+    fetchBaseQuery({
+      baseUrl: apiLocation,
+      prepareHeaders(headers) {
+        headers.set('CSRF-Token', getCSRFToken());
+        return headers;
+      },
+      credentials: 'include'
+    }),
+    // Retry in the case this is the initial request - csrf is not set yet, and initial returns 403
+    { maxRetries: 2 }
+  ),
   endpoints: build => ({
     postGenerateExamEnvironmentAuthorizationToken: build.mutation<
       ExamTokenResponse,

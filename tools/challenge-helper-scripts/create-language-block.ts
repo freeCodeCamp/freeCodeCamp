@@ -1,36 +1,42 @@
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+} from '../../shared-dist/config/curriculum.js';
+
+import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
   getContentConfig,
   writeBlockStructure,
+  createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
   getAllBlocks,
   validateBlockName
-} from './utils';
+} from './utils.js';
 import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
-} from './helpers/create-project';
+} from './helpers/create-project.js';
+import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock.js';
 
-const helpCategories = ['English'] as const;
+const helpCategories = [
+  'English',
+  'Chinese Curriculum',
+  'Spanish Curriculum'
+] as const;
 
 type BlockInfo = {
   title: string;
@@ -51,7 +57,7 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   position?: number;
-  blockLabel?: string;
+  blockLabel?: BlockLabel;
   blockLayout?: string;
   questionCount?: number;
 }
@@ -64,7 +70,7 @@ async function createLanguageBlock(
   chapter?: string,
   module?: string,
   position?: number,
-  blockLabel?: string,
+  blockLabel?: BlockLabel,
   blockLayout?: string,
   questionCount?: number
 ) {
@@ -73,13 +79,23 @@ async function createLanguageBlock(
   }
   await updateIntroJson(superBlock, block, title);
 
-  let challengeId: ObjectID;
+  const challengeLang = getLangFromSuperBlock(superBlock);
+  let challengeId: ObjectId;
 
   if (blockLabel === BlockLabel.quiz) {
-    challengeId = await createQuizChallenge(block, title, questionCount!);
+    challengeId = await createQuizChallenge(
+      block,
+      title,
+      questionCount!,
+      challengeLang
+    );
     blockLayout = BlockLayouts.Link;
   } else {
-    challengeId = await createDialogueChallenge(superBlock, block);
+    challengeId = await createDialogueChallenge(
+      superBlock,
+      block,
+      challengeLang
+    );
   }
 
   await createMetaJson(
@@ -141,8 +157,8 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
-  blockLabel?: string,
+  challengeId: ObjectId,
+  blockLabel?: BlockLabel,
   blockLayout?: string
 ) {
   const newMeta = getBaseMeta('Language');
@@ -162,7 +178,6 @@ async function createMetaJson(
 
   newMeta.challengeOrder = [
     {
-      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       id: challengeId.toString(),
       title: challengeTitle
     }
@@ -173,8 +188,9 @@ async function createMetaJson(
 
 async function createDialogueChallenge(
   superBlock: SuperBlocks,
-  block: string
-): Promise<ObjectID> {
+  block: string,
+  challengeLang: string
+): Promise<ObjectId> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
   };
@@ -183,27 +199,23 @@ async function createDialogueChallenge(
   await fs.mkdir(newChallengeDir, { recursive: true });
 
   return createDialogueFile({
-    projectPath: newChallengeDir + '/'
+    projectPath: newChallengeDir + '/',
+    challengeLang: challengeLang
   });
 }
 
 async function createQuizChallenge(
   block: string,
   title: string,
-  questionCount: number
-): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  questionCount: number,
+  challengeLang: string
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
-    questionCount: questionCount
+    questionCount: questionCount,
+    challengeLang
   });
 }
 
@@ -227,6 +239,45 @@ function withTrace<Args extends unknown[], Result>(
   });
 }
 
+function getBlockPrefix(
+  superBlock: SuperBlocks,
+  blockLabel?: BlockLabel
+): string | null {
+  // Only chapter-based super blocks use blockLabel so prefix only applies to them.
+  if (!chapterBasedSuperBlocks.includes(superBlock)) return null;
+
+  let langLevel;
+
+  switch (superBlock) {
+    case SuperBlocks.A2English:
+      langLevel = 'en-a2';
+      break;
+    case SuperBlocks.B1English:
+      langLevel = 'en-b1';
+      break;
+    case SuperBlocks.A1Spanish:
+      langLevel = 'es-a1';
+      break;
+    case SuperBlocks.A2Spanish:
+      langLevel = 'es-a2';
+      break;
+    case SuperBlocks.A1Chinese:
+      langLevel = 'zh-a1';
+      break;
+    case SuperBlocks.A2Chinese:
+      langLevel = 'zh-a2';
+      break;
+    default:
+      langLevel = superBlock;
+  }
+
+  if (blockLabel === BlockLabel.exam) {
+    return `${langLevel}-`;
+  }
+
+  return `${langLevel}-${blockLabel}-`;
+}
+
 void getAllBlocks()
   .then(existingBlocks =>
     prompt([
@@ -238,11 +289,60 @@ void getAllBlocks()
         choices: Object.values(languageSuperBlocks)
       },
       {
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.learn,
+        type: 'list',
+        choices: Object.values(BlockLabel),
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock)
+      },
+      {
         name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this block?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
+        message: (answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          return prefix
+            ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
+            : 'What is the dashed name (in kebab-case) for this block?';
+        },
+        validate: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+
+          if (prefix) {
+            const uniquePart = block.slice(prefix.length);
+
+            // Check if user accidentally included block label at the end
+            if (answers.blockLabel) {
+              // Exclude exam as it is an exception
+              const blockLabelValues = Object.values(BlockLabel).filter(
+                label => label !== BlockLabel.exam
+              );
+
+              const endsWithLabel = blockLabelValues.some(label =>
+                uniquePart.endsWith(`-${label}`)
+              );
+
+              if (endsWithLabel) {
+                return `Block name should not end with a block label (e.g., '-${answers.blockLabel}'). The label is already in the prefix.`;
+              }
+            }
+          }
+
+          return validateBlockName(block, existingBlocks);
+        },
+        filter: (block: string, answers: CreateBlockArgs) => {
+          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+          const normalized = block.toLowerCase().trim();
+
+          if (prefix) {
+            // Strip prefix if already present (happens on re-validation), then re-add it
+            const withoutPrefix = normalized.startsWith(prefix)
+              ? normalized.slice(prefix.length)
+              : normalized;
+            return prefix + withoutPrefix;
+          }
+
+          return normalized;
         }
       },
       {
@@ -255,15 +355,6 @@ void getAllBlocks()
         default: 'English',
         type: 'list',
         choices: helpCategories
-      },
-      {
-        name: 'blockLabel',
-        message: 'Choose a block label',
-        default: BlockLabel.learn,
-        type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
       },
       {
         name: 'blockLayout',

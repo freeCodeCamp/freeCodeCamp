@@ -2,7 +2,7 @@
   "name": "Relational Databases Certification Exam",
   "blockLabel": "exam",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "exam-relational-databases-certification",
   "helpCategory": "Backend Development",
   "challengeOrder": [

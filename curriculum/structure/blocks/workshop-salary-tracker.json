@@ -1,6 +1,6 @@
 {
   "name": "Build a Salary Tracker",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-salary-tracker",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
