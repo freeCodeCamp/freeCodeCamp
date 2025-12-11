@@ -5,7 +5,10 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "691b65744b1299cf5cba3bdc", "title": "Dialogue 1: I'm Tom" }
+    {
+      "id": "691b65744b1299cf5cba3bdc",
+      "title": "Dialogue 1: I'm Tom"
+    }
   ],
   "blockLabel": "learn"
 }

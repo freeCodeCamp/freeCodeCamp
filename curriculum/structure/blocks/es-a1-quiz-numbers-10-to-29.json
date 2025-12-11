@@ -5,7 +5,10 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "link",
   "challengeOrder": [
-    { "id": "691a4cc90808d77d2abab730", "title": "Numbers 10 to 29 Quiz" }
+    {
+      "id": "691a4cc90808d77d2abab730",
+      "title": "Numbers 10 to 29 Quiz"
+    }
   ],
   "blockLabel": "quiz"
 }
