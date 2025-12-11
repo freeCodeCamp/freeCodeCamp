@@ -66,7 +66,6 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
 
 # --scene--
 
-
 ```json
 {
   "setup": {
@@ -76,14 +75,14 @@ This refers to a woman from Colombia, and the ending `-a` indicates the feminine
         "character": "Mateo",
         "position": {
           "x": 50,
-          "y": 15,
-          "z": 1.2
+          "y": 18,
+          "z": 1.5
         },
         "opacity": 0
       }
     ],
     "audio": {
-      "filename": "ES_A1_2.2.mp3",
+      "filename": "ES_A1_spanish_meet_mateo.mp3",
       "startTime": 1,
       "startTimestamp": 5.81,
       "finishTimestamp": 7.13

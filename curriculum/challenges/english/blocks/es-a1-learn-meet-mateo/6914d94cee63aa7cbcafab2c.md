@@ -58,14 +58,14 @@ This verb form comes from `ser` and is used to describe who you are or what you 
         "character": "Mateo",
         "position": {
           "x": 50,
-          "y": 15,
-          "z": 1.2
+          "y": 18,
+          "z": 1.5
         },
         "opacity": 0
       }
     ],
     "audio": {
-      "filename": "ES_A1_2.2.mp3",
+      "filename": "ES_A1_spanish_meet_mateo.mp3",
       "startTime": 1,
       "startTimestamp": 2.35,
       "finishTimestamp": 5.39
