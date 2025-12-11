@@ -231,15 +231,14 @@ describe('add-video-question plugin', () => {
     expect(answer1.answer).toBe(
       '<p><span class="highlighted-text">correct answer</span></p>'
     );
-    expect(answer1.feedback).toBe(
-      '<p>Feedback text containing <span class="highlighted-text">highlighted text</span>.</p>'
-    );
 
     const answer2 = question.answers[1];
     expect(answer2.answer).toBe(
       '<p><span class="highlighted-text">wrong answer</span></p>'
     );
-    expect(answer2.feedback).toBe('<p>Wrong answer feedback.</p>');
+    expect(answer2.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">highlighted text</span>.</p>'
+    );
   });
 
   it('should render inline code as spans in question text, answers, and feedback for es', async () => {
@@ -257,14 +256,13 @@ describe('add-video-question plugin', () => {
     expect(answer1.answer).toBe(
       '<p><span class="highlighted-text">correct answer</span></p>'
     );
-    expect(answer1.feedback).toBe(
-      '<p>Feedback text containing <span class="highlighted-text">texto resaltado</span>.</p>'
-    );
 
     const answer2 = question.answers[1];
     expect(answer2.answer).toBe(
       '<p><span class="highlighted-text">wrong answer</span></p>'
     );
-    expect(answer2.feedback).toBe('<p>Wrong answer feedback.</p>');
+    expect(answer2.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">texto resaltado</span>.</p>'
+    );
   });
 });

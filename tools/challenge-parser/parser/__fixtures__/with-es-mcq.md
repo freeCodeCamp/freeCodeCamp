@@ -19,17 +19,13 @@ Question text containing `texto resaltado`.
 
 `correct answer`
 
-### --feedback--
-
-Feedback text containing `texto resaltado`.
-
 ---
 
 `wrong answer`
 
 ### --feedback--
 
-Wrong answer feedback.
+Feedback text containing `texto resaltado`.
 
 ## --video-solution--
 

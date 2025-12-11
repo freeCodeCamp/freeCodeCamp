@@ -19,17 +19,13 @@ Question text containing `highlighted text`.
 
 `correct answer`
 
-### --feedback--
-
-Feedback text containing `highlighted text`.
-
 ---
 
 `wrong answer`
 
 ### --feedback--
 
-Wrong answer feedback.
+Feedback text containing `highlighted text`.
 
 ## --video-solution--
 
