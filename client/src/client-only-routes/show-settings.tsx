@@ -115,12 +115,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (showLoading) {
-    return <Loader fullScreen={true} />;
-  }
+  useEffect(() => {
+    if (!user) navigate(`${apiLocation}/signin`);
+  }, [user, navigate]);
 
-  if (!user) {
-    navigate(`${apiLocation}/signin`);
+  if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
 
