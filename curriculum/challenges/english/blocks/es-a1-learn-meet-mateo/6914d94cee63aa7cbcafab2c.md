@@ -58,8 +58,8 @@ This verb form comes from `ser` and is used to describe who you are or what you 
         "character": "Mateo",
         "position": {
           "x": 50,
-          "y": 15,
-          "z": 1.2
+          "y": 18,
+          "z": 1.5
         },
         "opacity": 0
       }
