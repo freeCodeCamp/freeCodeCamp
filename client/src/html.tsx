@@ -1,6 +1,7 @@
 import React from 'react';
 import { clientLocale } from '../config/env.json';
 import { rtlLangs } from '../../shared-dist/config/i18n';
+import WebManifest from './components/webmanifest';
 
 interface HTMLProps {
   body: string;
@@ -29,6 +30,7 @@ export default function HTML({
       {...htmlAttributes}
       lang='en'
     >
+      <WebManifest />
       <head>
         <meta charSet='utf-8' />
         <meta content='ie=edge' httpEquiv='x-ua-compatible' />
