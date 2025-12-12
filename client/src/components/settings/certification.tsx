@@ -22,7 +22,7 @@ import {
   legacyCertifications,
   upcomingCertifications,
   type CertificationFlags
-} from '@freecodecamp/shared/config/certification-settings;
+} from '@freecodecamp/shared/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {
