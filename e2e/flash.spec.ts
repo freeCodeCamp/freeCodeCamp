@@ -50,7 +50,7 @@ test.describe('Flash Message component E2E test', () => {
     await page.goto('/');
     await checkFlashMessageVisibility(
       page,
-      translations.flash['network-error']
+      translations.flash['user-fetch-error']
     );
   });
 });

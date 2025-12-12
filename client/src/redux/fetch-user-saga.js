@@ -1,7 +1,7 @@
 import { call, cancel, delay, fork, put, takeEvery } from 'redux-saga/effects';
 import { getSessionUser, getUserProfile } from '../utils/ajax';
 import { wrapHandledError } from '../utils/handled-error';
-import { networkErrorMessage } from '../utils/error-messages';
+import { UserFetchErrorMessage } from '../utils/error-messages';
 import {
   fetchProfileForUserComplete,
   fetchProfileForUserError,
@@ -35,7 +35,7 @@ function* fetchSessionUser() {
     yield put(fetchUserComplete({ user }));
   } catch (e) {
     console.log('failed to fetch user', e);
-    const handledError = wrapHandledError(e, networkErrorMessage);
+    const handledError = wrapHandledError(e, UserFetchErrorMessage);
     yield put(fetchUserError(handledError));
   } finally {
     yield cancel(timeoutTask);
