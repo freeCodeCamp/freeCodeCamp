@@ -19,13 +19,13 @@ import {
   Certification,
   currentCertifications,
   legacyCertifications,
-  upcomingCertifications
+  upcomingCertifications,
+  type CertificationFlags
 } from '../../../../shared-dist/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {
   ChallengeData,
-  ClaimedCertifications,
   CompletedChallenge,
   GeneratedExamResults,
   User
@@ -49,6 +49,7 @@ const createCertifiedMap = ({
   isJavascriptCertV9,
   isJsAlgoDataStructCert,
   isInfosecQaCert,
+  isPythonCertV9,
   isQaCertV7,
   isInfosecCertV7,
   isFrontEndLibsCert,
@@ -61,10 +62,11 @@ const createCertifiedMap = ({
   isDataAnalysisPyCertV7,
   isMachineLearningPyCertV7,
   isRelationalDatabaseCertV8,
+  isRelationalDatabaseCertV9,
   isCollegeAlgebraPyCertV8,
   isFoundationalCSharpCertV8,
   isJsAlgoDataStructCertV8
-}: ClaimedCertifications): Record<
+}: CertificationFlags): Record<
   Exclude<Certification, Certification.LegacyFullStack>,
   boolean
 > => ({
@@ -91,8 +93,8 @@ const createCertifiedMap = ({
   [Certification.RespWebDesignV9]: isRespWebDesignCertV9,
   [Certification.JsV9]: isJavascriptCertV9,
   [Certification.FrontEndDevLibsV9]: false,
-  [Certification.PythonV9]: false,
-  [Certification.RelationalDbV9]: false,
+  [Certification.PythonV9]: isPythonCertV9,
+  [Certification.RelationalDbV9]: isRelationalDatabaseCertV9,
   [Certification.BackEndDevApisV9]: false,
   [Certification.FullStackDeveloperV9]: false,
   [Certification.A2English]: isA2EnglishCert,
@@ -113,7 +115,7 @@ type CertificationSettingsProps = {
   t: TFunction;
   verifyCert: typeof verifyCert;
   openModal: typeof openModal;
-} & ClaimedCertifications &
+} & CertificationFlags &
   Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
 
 const LegacyFullStack = (props: CertificationSettingsProps) => {

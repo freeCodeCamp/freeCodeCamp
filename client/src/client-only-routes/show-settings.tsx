@@ -154,6 +154,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFullStackCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -161,6 +163,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
+    isFrontEndLibsCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isB1EnglishCert,
+    isA2SpanishCert,
+    isA2ChineseCert,
+    isA1ChineseCert,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -241,15 +250,23 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isInfosecQaCert={isInfosecQaCert}
               isJsAlgoDataStructCert={isJsAlgoDataStructCert}
               isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isPythonCertV9={isPythonCertV9}
               isQaCertV7={isQaCertV7}
               isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
               isRespWebDesignCert={isRespWebDesignCert}
               isRespWebDesignCertV9={isRespWebDesignCertV9}
               isSciCompPyCertV7={isSciCompPyCertV7}
               isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+              isB1EnglishCert={isB1EnglishCert}
+              isA2SpanishCert={isA2SpanishCert}
+              isA2ChineseCert={isA2ChineseCert}
+              isA1ChineseCert={isA1ChineseCert}
               username={username}
               verifyCert={verifyCert}
-              isEmailVerified={isEmailVerified}
             />
             <Spacer size='m' />
           </ScrollElement>

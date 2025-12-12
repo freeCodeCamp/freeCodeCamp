@@ -1,8 +1,9 @@
 import { HandlerProps } from 'react-reflex';
-import {
+import type {
   ChallengeLang,
   SuperBlocks
 } from '../../../shared-dist/config/curriculum';
+import type { CertificationFlags } from '../../../shared-dist/config/certification-settings';
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
 import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
@@ -246,6 +247,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
+    saveSubmissionToDB?: boolean;
     scene: FullScene;
     solutions: {
       [T: string]: FileKeyChallenge;
@@ -309,6 +311,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    saveSubmissionToDB?: boolean;
   };
 };
 
@@ -422,6 +425,7 @@ export type User = {
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  isEmailVerified: boolean;
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
@@ -445,7 +449,7 @@ export type User = {
   username: string;
   website: string;
   yearsTopContributor: string[];
-} & ClaimedCertifications;
+} & CertificationFlags;
 
 export type ProfileUI = {
   isLocked: boolean;
@@ -458,32 +462,6 @@ export type ProfileUI = {
   showPoints: boolean;
   showPortfolio: boolean;
   showTimeLine: boolean;
-};
-
-export type ClaimedCertifications = {
-  is2018DataVisCert: boolean;
-  isA2EnglishCert: boolean;
-  isApisMicroservicesCert: boolean;
-  isBackEndCert: boolean;
-  isDataVisCert: boolean;
-  isEmailVerified: boolean;
-  isCollegeAlgebraPyCertV8: boolean;
-  isFoundationalCSharpCertV8: boolean;
-  isFrontEndCert: boolean;
-  isFrontEndLibsCert: boolean;
-  isFullStackCert: boolean;
-  isInfosecQaCert: boolean;
-  isJavascriptCertV9: boolean;
-  isQaCertV7: boolean;
-  isInfosecCertV7: boolean;
-  isJsAlgoDataStructCert: boolean;
-  isRelationalDatabaseCertV8: boolean;
-  isRespWebDesignCert: boolean;
-  isRespWebDesignCertV9: boolean;
-  isSciCompPyCertV7: boolean;
-  isDataAnalysisPyCertV7: boolean;
-  isMachineLearningPyCertV7: boolean;
-  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -532,6 +510,7 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {

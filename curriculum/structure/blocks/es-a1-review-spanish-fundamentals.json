@@ -2,7 +2,7 @@
   "name": "Spanish Fundamentals Review",
   "isUpcomingChange": true,
   "dashedName": "es-a1-review-spanish-fundamentals",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
@@ -12,7 +12,8 @@
     {
       "id": "68f245ba618d531136b99a19",
       "title": "Spanish Alphabet Pronunciation Review"
-    }
+    },
+    { "id": "69206e4d7c0cfd1935d08ae4", "title": "Task 1" }
   ],
   "blockLabel": "review"
 }

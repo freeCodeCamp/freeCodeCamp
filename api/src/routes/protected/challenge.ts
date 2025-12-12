@@ -22,7 +22,7 @@ import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
 } from '../../utils/error-formatting.js';
-import { getChallenges } from '../../utils/get-challenges.js';
+import { challenges } from '../../utils/get-challenges.js';
 import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
@@ -56,8 +56,6 @@ const userChallengeSelect = {
   needsModeration: true,
   savedChallenges: true
 };
-
-const challenges = getChallenges();
 
 /**
  * Plugin for the challenge submission endpoints.
