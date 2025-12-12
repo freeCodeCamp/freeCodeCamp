@@ -198,7 +198,7 @@ describe('createMdastToHtml', () => {
     );
   });
 
-  it('should fallback to code element if pattern does not match', () => {
+  it('should fallback to span element if pattern does not match', () => {
     const toHtml = createMdastToHtml('zh-CN');
     const nodes = [
       {
@@ -210,11 +210,49 @@ describe('createMdastToHtml', () => {
         ]
       }
     ];
-    const actual = toHtml(nodes, { lang: 'zh-CN' });
-    expect(actual).toBe('<p><code>你好</code> and <code>nǐ hǎo</code></p>');
+    const actual = toHtml(nodes);
+    expect(actual).toBe(
+      '<p><span class="highlighted-text">你好</span> and <span class="highlighted-text">nǐ hǎo</span></p>'
+    );
   });
 
-  it('should render as regular code when lang is not zh-CN', () => {
+  it('should render inline code as span when lang is en-US', () => {
+    const toHtml = createMdastToHtml('en-US');
+    const nodes = [
+      {
+        type: 'paragraph',
+        children: [
+          { type: 'text', value: 'This is ' },
+          { type: 'inlineCode', value: 'highlighted text' },
+          { type: 'text', value: '.' }
+        ]
+      }
+    ];
+    const actual = toHtml(nodes);
+    expect(actual).toBe(
+      '<p>This is <span class="highlighted-text">highlighted text</span>.</p>'
+    );
+  });
+
+  it('should render inline code as span when lang is es', () => {
+    const toHtml = createMdastToHtml('es');
+    const nodes = [
+      {
+        type: 'paragraph',
+        children: [
+          { type: 'text', value: 'Esto texto ' },
+          { type: 'inlineCode', value: 'está resaltado' },
+          { type: 'text', value: '.' }
+        ]
+      }
+    ];
+    const actual = toHtml(nodes);
+    expect(actual).toBe(
+      '<p>Esto texto <span class="highlighted-text">está resaltado</span>.</p>'
+    );
+  });
+
+  it('should render as regular code when lang is not zh-CN, en-US, or es', () => {
     const toHtml = createMdastToHtml('zh');
     const nodes = [
       {
