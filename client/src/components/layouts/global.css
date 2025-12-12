@@ -469,6 +469,19 @@ form {
 input:focus {
   border-color: var(--tertiary-color);
 }
+
+/*
+ * Text within backticks in en-US, es, and zh-CN challenge files
+ * is parsed into spans with this class.
+ */
+.highlighted-text {
+  padding: 1px 4px;
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  border: 1px solid var(--gray-45);
+  font-size: 90%;
+}
+
 code {
   padding: 1px 4px;
   background-color: var(--tertiary-background);

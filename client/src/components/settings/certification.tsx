@@ -19,13 +19,13 @@ import {
   Certification,
   currentCertifications,
   legacyCertifications,
-  upcomingCertifications
+  upcomingCertifications,
+  type CertificationFlags
 } from '../../../../shared-dist/config/certification-settings';
 import env from '../../../config/env.json';
 
 import type {
   ChallengeData,
-  ClaimedCertifications,
   CompletedChallenge,
   GeneratedExamResults,
   User
@@ -66,7 +66,7 @@ const createCertifiedMap = ({
   isCollegeAlgebraPyCertV8,
   isFoundationalCSharpCertV8,
   isJsAlgoDataStructCertV8
-}: ClaimedCertifications): Record<
+}: CertificationFlags): Record<
   Exclude<Certification, Certification.LegacyFullStack>,
   boolean
 > => ({
@@ -115,7 +115,7 @@ type CertificationSettingsProps = {
   t: TFunction;
   verifyCert: typeof verifyCert;
   openModal: typeof openModal;
-} & ClaimedCertifications &
+} & CertificationFlags &
   Pick<User, 'completedChallenges' | 'isHonest' | 'username'>;
 
 const LegacyFullStack = (props: CertificationSettingsProps) => {
