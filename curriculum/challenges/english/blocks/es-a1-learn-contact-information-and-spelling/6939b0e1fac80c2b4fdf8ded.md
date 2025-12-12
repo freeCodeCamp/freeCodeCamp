@@ -61,8 +61,8 @@ Basti spells his nickname as `b-a-s-t-i`.
         "character": "Mateo",
         "position": {
           "x": 50,
-          "y": 4,
-          "z": 1.3
+          "y": 18,
+          "z": 1.5
         },
         "opacity": 0
       }

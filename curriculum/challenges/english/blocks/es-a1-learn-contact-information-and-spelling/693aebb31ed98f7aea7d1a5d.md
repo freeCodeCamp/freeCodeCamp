@@ -69,8 +69,8 @@ There is a small error in the middle four digits.
         "character": "Mateo",
         "position": {
           "x": 50,
-          "y": 4,
-          "z": 1.3
+          "y": 18,
+          "z": 1.5
         },
         "opacity": 0
       }
