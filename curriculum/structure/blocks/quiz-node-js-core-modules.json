@@ -1,0 +1,14 @@
+{
+  "name": "NodeJS Core Modules Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-node-js-core-modules",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "692487767b6b728454f53f29",
+      "title": "NodeJS Core Modules Quiz"
+    }
+  ],
+  "blockLabel": "quiz",
+  "blockLayout": "link"
+}
