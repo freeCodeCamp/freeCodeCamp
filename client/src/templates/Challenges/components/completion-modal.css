@@ -43,6 +43,12 @@
   font-size: 1rem;
 }
 
+.completion-modal-lab-warning {
+  font-size: 0.9rem;
+  color: var(--quaternary-color);
+  margin: 0;
+}
+
 .progress-bar-wrap {
   width: 100%;
   position: relative;

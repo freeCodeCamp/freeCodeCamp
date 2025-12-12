@@ -29,3 +29,7 @@
   text-decoration: none;
   background-color: var(--tertiary-background);
 }
+
+.lab-local-save-notice {
+  margin-bottom: 1rem;
+}

@@ -19,6 +19,7 @@ import {
   challengeMetaSelector,
   isSubmittingSelector
 } from '../redux/selectors';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import Progress from '../../../components/Progress';
 import GreenPass from '../../../assets/icons/green-pass';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
@@ -35,7 +36,11 @@ const mapStateToProps = createSelector(
   isSubmittingSelector,
   (
     challengeFiles: ChallengeFiles,
-    { dashedName, id }: { dashedName: string; id: string },
+    {
+      dashedName,
+      id,
+      challengeType
+    }: { dashedName: string; id: string; challengeType: number },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -45,6 +50,7 @@ const mapStateToProps = createSelector(
     challengeFiles,
     id,
     dashedName,
+    challengeType,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -154,12 +160,18 @@ class CompletionModal extends Component<
       message,
       t,
       dashedName,
-      submitChallenge
+      submitChallenge,
+      challengeType
     } = this.props;
 
     const isMacOS = navigator.userAgent.includes('Mac OS');
 
     const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+
+    const isLabLike =
+      challengeType === challengeTypes.lab ||
+      challengeType === challengeTypes.jsLab ||
+      challengeType === challengeTypes.pyLab;
 
     let buttonText;
     if (isDesktop) {
@@ -214,6 +226,14 @@ class CompletionModal extends Component<
             {buttonText}
           </Button>
           <Spacer size='xxs' />
+          {isLabLike && (
+            <>
+              <p className='completion-modal-lab-warning'>
+                {t('learn.lab-completion-warning')}
+              </p>
+              <Spacer size='xxs' />
+            </>
+          )}
           {this.state.downloadURL ? (
             <Button
               block={true}

@@ -31,6 +31,32 @@ textarea.inputarea {
   background: var(--editor-background);
 }
 
+.editor-monaco-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.editor-save-locally-btn {
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-background);
+  color: var(--primary-color);
+  cursor: pointer;
+  z-index: 12;
+}
+
+.editor-save-locally-btn:hover,
+.editor-save-locally-btn:focus-visible {
+  background-color: var(--primary-color);
+  color: var(--primary-background);
+}
+
 .breadcrumbs-demo {
   position: fixed;
   top: var(--header-height);

@@ -69,6 +69,7 @@ import envData from '../../../../config/env.json';
 import ToolPanel from '../components/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { challengeHasPreview, isJavaScriptChallenge } from '../utils/build';
+import LabLocalSaveNotice from '../components/lab-local-save-notice';
 import { XtermTerminal } from './xterm';
 import MultifileEditor from './multifile-editor';
 import DesktopLayout from './desktop-layout';
@@ -254,6 +255,11 @@ function ShowClassic({
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
 
+  const isLabLike =
+    challengeType === challengeTypes.lab ||
+    challengeType === challengeTypes.jsLab ||
+    challengeType === challengeTypes.pyLab;
+
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )}: ${title}`;
@@ -415,11 +421,14 @@ function ShowClassic({
     return (
       <SidePanel
         challengeDescription={
-          <ChallengeDescription
-            description={description}
-            instructions={instructions}
-            superBlock={superBlock}
-          />
+          <>
+            {isLabLike && <LabLocalSaveNotice />}
+            <ChallengeDescription
+              description={description}
+              instructions={instructions}
+              superBlock={superBlock}
+            />
+          </>
         }
         challengeTitle={
           <ChallengeTitle
