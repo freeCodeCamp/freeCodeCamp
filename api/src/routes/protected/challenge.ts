@@ -22,7 +22,7 @@ import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
 } from '../../utils/error-formatting.js';
-import { challenges } from '../../utils/get-challenges.js';
+import { challenges, savableChallenges } from '../../utils/get-challenges.js';
 import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
@@ -1128,10 +1128,7 @@ async function postSaveChallenge(
     files
   };
 
-  if (
-    !multifileCertProjectIds.includes(challengeId) &&
-    !multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (!savableChallenges.has(challengeId)) {
     logger.warn(
       {
         challengeId
