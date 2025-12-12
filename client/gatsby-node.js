@@ -326,6 +326,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       instructions: String
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
+      lang: String
       module: String
       msTrophyId: String
       nodules: [Nodule]
