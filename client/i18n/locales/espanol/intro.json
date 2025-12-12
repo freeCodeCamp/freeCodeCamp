@@ -1396,7 +1396,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "En este plan de estudios de inglés para desarrolladores, aprenderá los conceptos básicos de la comunicación en inglés. Esto seguirá el nivel A2 del Marco Común Europeo de Referencia (MCER). Y nos hemos centrado en vocabulario que es particularmente útil para los desarrolladores.",
       "La primera mitad del plan de estudios te ayudará a sentirte cómodo con la gramática y el uso del inglés. Te brindará toneladas de práctica en tus manos. Aprenderá conceptos básicos de como presentarse, entablar una pequeña charla y discutir sobre tu trabajo.",
@@ -5139,13 +5139,9 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Markdown to HTML Converter",
-      "- Build a Drum Machine",
-      "- Build a Voting System",
-      "- Build a Bank Account Management Program",
-      "- Build a Weather App",
-      "Pass the exam to earn your JavaScript Certification."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -6716,7 +6712,6 @@
   },
   "python-v9": {
     "title": "Python Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -7192,7 +7187,6 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7790,13 +7784,9 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Survey Form",
-      "- Build a Page of Playing Cards",
-      "- Build a Book Inventory App",
-      "- Build a Technical Documentation Page",
-      "- Build a Product Landing Page",
-      "Pass the exam to earn your Responsive Web Design Certification."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
