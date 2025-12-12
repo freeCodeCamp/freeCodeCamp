@@ -8,6 +8,7 @@ import i18n from './i18n/config';
 import { stripe } from './src/utils/stripe';
 import { createStore } from './src/redux/create-store';
 import layoutSelector from './utils/gatsby/layout-selector';
+import { webmanifestComponents } from './src/components/webmanifest';
 import {
   getheadTagComponents,
   getPostBodyComponents,
@@ -41,7 +42,7 @@ export const onRenderBody = ({
   setPreBodyComponents,
   setPostBodyComponents
 }) => {
-  setHeadComponents(getheadTagComponents());
+  setHeadComponents([...getheadTagComponents(), ...webmanifestComponents]);
   setPreBodyComponents(getPreBodyThemeScript());
   setPostBodyComponents(getPostBodyComponents(pathname));
 };
