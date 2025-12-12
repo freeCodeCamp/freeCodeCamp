@@ -16,27 +16,27 @@ cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `quest
 You should throw a `InvalidUserInputError` if `questionText` is empty. 
 
 ```js
-assert.throws(uploadNewCard(), InvalidUserInputError);
+assert.throws(uploadNewCard, InvalidUserInputError);
 ```
 
 If `questionText` is empty, the error message should be `Front text cannot be empty.`. 
 
 ```js
-assert.throws(uploadNewCard(), InvalidUserInputError, 'Front text cannot be empty.');
+assert.throws(uploadNewCard, InvalidUserInputError, 'Front text cannot be empty.');
 ```
 
 You should throw a `InvalidUserInputError` if `questionAnswer` is empty. 
 
 ```js
 frontInput.value = "Placeholder question";
-assert.throws(uploadNewCard(), InvalidUserInputError);
+assert.throws(uploadNewCard, InvalidUserInputError, 'Back text cannot be empty.');
 ```
 
 If `questionAnswer` is empty, the error message should be `Back text cannot be empty.`. 
 
 ```js
 frontInput.value = "Placeholder question";
-assert.throws(uploadNewCard(), InvalidUserInputError, 'Back text cannot be empty.');
+assert.throws(uploadNewCard, InvalidUserInputError, 'Back text cannot be empty.');
 ```
 
 # --seed--
