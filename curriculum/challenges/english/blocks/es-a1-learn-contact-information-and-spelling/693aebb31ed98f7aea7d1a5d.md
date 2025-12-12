@@ -66,7 +66,7 @@ There is a small error in the middle four digits.
     "background": "desk.png",
     "characters": [
       {
-        "character": "Mateo",
+        "character": "Sebastián",
         "position": {
           "x": 50,
           "y": 18,
@@ -84,12 +84,12 @@ There is a small error in the middle four digits.
   },
   "commands": [
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "opacity": 1,
       "startTime": 0
     },
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "startTime": 1,
       "finishTime": 10.98,
       "dialogue": {
@@ -98,7 +98,7 @@ There is a small error in the middle four digits.
       }
     },
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "opacity": 0,
       "startTime": 11.48
     }

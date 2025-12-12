@@ -50,6 +50,7 @@ This is the final letter in "Basti" — listen for the vowel sound at the end.
 
 Basti spells his nickname as `b-a-s-t-i`.
 
+
 # --scene--
 
 ```json
@@ -58,7 +59,7 @@ Basti spells his nickname as `b-a-s-t-i`.
     "background": "desk.png",
     "characters": [
       {
-        "character": "Mateo",
+        "character": "Sebastián",
         "position": {
           "x": 50,
           "y": 18,
@@ -71,26 +72,26 @@ Basti spells his nickname as `b-a-s-t-i`.
       "filename": "ES_A1_basti_personal_details.mp3",
       "startTime": 1,
       "startTimestamp": 22.6,
-      "finishTimestamp": 27.14
+      "finishTimestamp": 26.74
     }
   },
   "commands": [
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "opacity": 1,
       "startTime": 0
     },
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "startTime": 1,
-      "finishTime": 5.54,
+      "finishTime": 5.14,
       "dialogue": {
         "text": "Se escribe b-a-s-t-i.",
         "align": "center"
       }
     },
     {
-      "character": "Mateo",
+      "character": "Sebastián",
       "opacity": 0,
       "startTime": 5.64
     }
