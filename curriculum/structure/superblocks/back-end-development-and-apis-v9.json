@@ -5,9 +5,11 @@
       "comingSoon": true,
       "modules": [
         {
-          "dashedName": "nodejs-core-libraries",
+          "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-working-with-nodejs-and-event-driven-architecture"
+          ]
         },
         {
           "dashedName": "node-package-manager",
