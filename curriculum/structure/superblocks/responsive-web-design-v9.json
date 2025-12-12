@@ -14,12 +14,15 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "workshop-bookstore-page",
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
+            "lab-html-audio-and-video-player",
             "lecture-working-with-images-and-svgs",
             "workshop-build-a-heart-icon",
             "lecture-working-with-media",
+            "workshop-build-a-video-display-using-iframe",
             "lab-video-compilation-page",
             "lecture-working-with-links",
             "review-basic-html",
@@ -31,7 +34,9 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
+            "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
             "workshop-blog-page",
             "lab-event-hub",
@@ -53,6 +58,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-survey-form",
           "blocks": ["lab-survey-form"]
         },
@@ -60,8 +66,11 @@
           "dashedName": "html-and-accessibility",
           "blocks": [
             "lecture-importance-of-accessibility-and-good-html-structure",
+            "workshop-debug-coding-journey-blog-page",
             "lecture-accessible-tables-forms",
+            "workshop-tech-conference-schedule",
             "lecture-introduction-to-aria",
+            "workshop-accessible-audio-controller",
             "lecture-accessible-media-elements",
             "lab-checkout-page",
             "lab-movie-review-page",
@@ -78,7 +87,7 @@
       ]
     },
     {
-      "dashedName": "css",
+      "dashedName": "computers",
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -89,7 +98,12 @@
             "review-computer-basics",
             "quiz-computer-basics"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "dashedName": "css",
+      "modules": [
         {
           "dashedName": "basic-css",
           "blocks": [
@@ -131,6 +145,7 @@
           "blocks": [
             "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
             "workshop-greeting-card",
+            "workshop-parent-teacher-conference-form",
             "lab-job-application-form",
             "review-css-pseudo-classes",
             "quiz-css-pseudo-classes"
@@ -152,6 +167,8 @@
             "lecture-best-practices-for-styling-forms",
             "workshop-registration-form",
             "lab-contact-form",
+            "workshop-game-settings-panel",
+            "lab-feature-selection",
             "review-styling-forms",
             "quiz-styling-forms"
           ]
@@ -171,11 +188,13 @@
           "blocks": [
             "lecture-working-with-css-flexbox",
             "workshop-flexbox-photo-gallery",
+            "workshop-colorful-boxes",
             "review-css-flexbox",
             "quiz-css-flexbox"
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-page-of-playing-cards",
           "blocks": ["lab-page-of-playing-cards"]
         },
@@ -219,6 +238,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-book-inventory-app",
           "blocks": ["lab-book-inventory-app"]
         },
@@ -232,6 +252,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-technical-documentation-page",
           "blocks": ["lab-technical-documentation-page"]
         },
@@ -257,6 +278,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-product-landing-page",
           "blocks": ["lab-product-landing-page"]
         },
@@ -282,7 +304,6 @@
     {
       "chapterType": "exam",
       "dashedName": "responsive-web-design-certification-exam",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "responsive-web-design-certification-exam",
