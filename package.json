@@ -113,26 +113,19 @@
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
   },
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.23.0",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
       "@prisma/client",
       "@prisma/engines",
-      "core-js",
-      "ejs",
-      "es5-ext",
       "esbuild",
       "gatsby",
       "gatsby-cli",
-      "gatsby-telemetry",
       "lmdb",
       "msgpackr-extract",
-      "msw",
-      "nodemon",
       "prisma",
       "puppeteer",
-      "sharp",
       "unrs-resolver"
     ]
   }
