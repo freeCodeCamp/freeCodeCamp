@@ -25,12 +25,14 @@ test.describe('Claim a certification - almost certified user', () => {
   }) => {
     await page.goto('/settings#cert-front-end-development-libraries');
     await page
-      .getByRole('button', { name: 'Claim Certification Front End' })
+      .getByRole('button', {
+        name: 'Claim Certification Front End Development Libraries V8'
+      })
       .click();
     // verify that an email is sent
     await expect(async () => {
       const emails = await getAllEmails();
-      expect(emails.items).toHaveLength(1);
+      expect(emails.messages).toHaveLength(1);
       expect(getSubject(getFirstEmail(emails))).toBe(
         'Congratulations on completing all of the freeCodeCamp certifications!'
       );
@@ -90,14 +92,14 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(linkedinLink).toBeVisible();
     await expect(linkedinLink).toHaveAttribute(
       'href',
-      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Responsive%20Web%20Design&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design&certId=certifieduser-rwd`
+      `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Legacy%20Responsive%20Web%20Design%20V8&organizationId=4831032&issueYear=2018&issueMonth=8&certUrl=https://freecodecamp.org/certification/certifieduser/responsive-web-design&certId=certifieduser-rwd`
     );
 
     const twitterLink = certLink.getByTestId('twitter-share-btn');
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      `https://twitter.com/intent/tweet?text=I just earned the Responsive%20Web%20Design certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
+      `https://x.com/intent/post?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
     const projectLinks = certLink.getByTestId('project-links');
@@ -257,7 +259,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      'https://twitter.com/intent/tweet?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
+      'https://x.com/intent/post?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
     const projectLinks = certLink.getByTestId('project-links');

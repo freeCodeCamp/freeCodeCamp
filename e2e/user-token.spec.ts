@@ -18,7 +18,7 @@ test.describe('Initially', () => {
   test('should not render', async ({ page }) => {
     await page.goto('/settings');
     await expect(
-      page.getByText('User Token', { exact: true })
+      page.getByRole('main').getByText('User Token', { exact: true })
     ).not.toBeVisible();
   });
 });
@@ -28,11 +28,13 @@ test.describe('After creating token', () => {
     await page.goto(
       '/learn/relational-database/learn-bash-by-building-a-boilerplate/build-a-boilerplate'
     );
-    await page.getByRole('button', { name: 'Start the course' }).click();
+    await page.getByText('Generate User Token').first().click();
 
     await page.goto('/settings');
     // Set `exact` to `true` to only match the panel heading
-    await expect(page.getByText('User Token', { exact: true })).toBeVisible();
+    await expect(
+      page.getByRole('main').getByText('User Token', { exact: true })
+    ).toBeVisible();
     await expect(
       page.getByText(
         'Your user token is used to save your progress on curriculum sections that use a virtual machine. If you suspect it has been compromised, you can delete it without losing any progress. A new one will be created automatically the next time you open a project.'
@@ -42,7 +44,7 @@ test.describe('After creating token', () => {
 
     await alertToBeVisible(page, translations.flash['token-deleted']);
     await expect(
-      page.getByText('User Token', { exact: true })
+      page.getByRole('main').getByText('User Token', { exact: true })
     ).not.toBeVisible();
   });
 });

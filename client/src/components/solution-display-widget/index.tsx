@@ -41,7 +41,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+    <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
       <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
@@ -106,7 +106,7 @@ export function SolutionDisplayWidget({
   );
   const ShowMultifileProjectSolution = (
     <div>
-      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+      <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
@@ -127,7 +127,7 @@ export function SolutionDisplayWidget({
 
   const ShowProjectAndGithubLinks = (
     <div>
-      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+      <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
@@ -194,6 +194,10 @@ export function SolutionDisplayWidget({
       <>{t('certification.project.no-solution')}</>
     ) : null;
 
+  const NoSolutionToDisplay = (
+    <> {t('certification.project.no-solution-to-display')} </>
+  );
+
   const displayComponents =
     displayContext === 'certification'
       ? {
@@ -202,7 +206,8 @@ export function SolutionDisplayWidget({
           showProjectAndGithubLinks: ShowProjectAndGithubLinkForCertification,
           showProjectLink: ShowProjectLinkForCertification,
           showExamResults: ShowExamResults,
-          none: MissingSolutionComponentForCertification
+          none: MissingSolutionComponentForCertification,
+          noSolutionToDisplay: NoSolutionToDisplay
         }
       : {
           showUserCode: ShowUserCode,
@@ -210,7 +215,8 @@ export function SolutionDisplayWidget({
           showProjectAndGithubLinks: ShowProjectAndGithubLinks,
           showProjectLink: ShowProjectLink,
           showExamResults: ShowExamResults,
-          none: MissingSolutionComponent
+          none: MissingSolutionComponent,
+          noSolutionToDisplay: NoSolutionToDisplay
         };
 
   return displayComponents[getSolutionDisplayType(completedChallenge)];

@@ -21,27 +21,26 @@ Modify the `removeManyPeople` function to delete all the people whose name is wi
 Deleting many items at once should succeed
 
 ```js
-  $.ajax({
-    url: code + '/_api/remove-many-people',
-    type: 'POST',
-    contentType: 'application/json',
-    data: JSON.stringify([
+  const response = await fetch(code + '/_api/remove-many-people', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify([
       { name: 'Mary', age: 16, favoriteFoods: ['lollipop'] },
       { name: 'Mary', age: 21, favoriteFoods: ['steak'] }
     ])
-  }).then(
-    (data) => {
-      assert.isTrue(!!data.ok, 'The mongo stats are not what expected');
-      assert.equal(
-        data.n,
-        2,
-        'The number of items affected is not what expected'
-      );
-      assert.equal(data.count, 0, 'the db items count is not what expected');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
+  }
+  const data = await response.json();
+  assert.isTrue(!!data.ok, 'The mongo stats are not what expected');
+  assert.equal(
+    data.n,
+    2,
+    'The number of items affected is not what expected'
   );
+  assert.equal(data.count, 0, 'the db items count is not what expected');
 ```
 

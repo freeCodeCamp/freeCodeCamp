@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Working with TypeScript Configuration Files
 
-In this lecture, you will learn about TypeScript configuration files and how to use them.
+In this lesson, you will learn about TypeScript configuration files and how to use them.

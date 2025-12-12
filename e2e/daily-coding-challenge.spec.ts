@@ -1,7 +1,8 @@
 import { test, expect } from '@playwright/test';
 import {
   getTodayUsCentral,
-  formatDate
+  formatDate,
+  formatDisplayDate
 } from '../client/src/components/daily-coding-challenge/helpers';
 
 const dateRouteRe = /.*\/daily-coding-challenge\/date\/.*/;
@@ -134,6 +135,24 @@ test.describe('Daily Coding Challenges', () => {
 
     await page.goto(`/learn/daily-coding-challenge/${todayUsCentral}`);
 
+    const leftBreadcrumb = page.getByRole('link', {
+      name: /daily coding challenge/i
+    });
+    await expect(leftBreadcrumb).toBeVisible();
+    await expect(leftBreadcrumb).toHaveAttribute(
+      'href',
+      '/learn/daily-coding-challenge/archive'
+    );
+
+    const rightBreadcrumb = page.getByRole('link', {
+      name: `${formatDisplayDate(todayUsCentral)}`
+    });
+    await expect(rightBreadcrumb).toBeVisible();
+    await expect(rightBreadcrumb).toHaveAttribute(
+      'href',
+      '/learn/daily-coding-challenge/archive'
+    );
+
     await expect(page.getByText('Test title')).toBeVisible();
 
     await expect(page.getByText('Test description')).toBeVisible();
@@ -158,7 +177,7 @@ test.describe('Daily Coding Challenges', () => {
       '// JavaScript seed code'
     );
 
-    // Show show Python UI after changing language
+    // Show Python UI after changing language
     await page.getByRole('button', { name: /python/i }).click();
 
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
@@ -220,7 +239,11 @@ test.describe('Daily Coding Challenge Archive', () => {
     ).toBeVisible();
 
     await expect(
-      page.getByRole('link', { name: /go to today/i })
+      page
+        .locator('div')
+        .filter({ hasText: /New challenges are released/ })
+        .getByRole('link', { name: /go to today/i })
+        .first()
     ).toBeVisible();
 
     const totalCalendarDays = await page.getByTestId('calendar-day').count();
@@ -228,6 +251,6 @@ test.describe('Daily Coding Challenge Archive', () => {
 
     await expect(page.getByTestId('calendar-day-completed')).toHaveCount(1);
 
-    await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(1);
+    await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(3);
   });
 });

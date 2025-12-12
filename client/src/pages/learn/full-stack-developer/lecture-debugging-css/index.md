@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Debugging CSS
 
-In these lecture videos, you will learn about debugging CSS.
+In these lessons, you will learn about debugging CSS.

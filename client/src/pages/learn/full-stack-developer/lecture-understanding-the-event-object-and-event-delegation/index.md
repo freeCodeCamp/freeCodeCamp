@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding the Event Object and Event Delegation
 
-In these lecture videos, you will learn about the event object and event delegation.
+In these lessons, you will learn about the event object and event delegation.

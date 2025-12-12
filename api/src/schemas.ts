@@ -34,12 +34,18 @@ export { updateMySocials } from './schemas/settings/update-my-socials.js';
 export { updateMyTheme } from './schemas/settings/update-my-theme.js';
 export { updateMyUsername } from './schemas/settings/update-my-username.js';
 export { deleteMsUsername } from './schemas/user/delete-ms-username.js';
-export { deleteMyAccount } from './schemas/user/delete-my-account.js';
+export {
+  deleteMyAccount,
+  deleteUser
+} from './schemas/user/delete-my-account.js';
 export { deleteUserToken } from './schemas/user/delete-user-token.js';
 export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
 export { reportUser } from './schemas/user/report-user.js';
 export { resetMyProgress } from './schemas/user/reset-my-progress.js';
 export { submitSurvey } from './schemas/user/submit-survey.js';
-export { userExamEnvironmentToken } from './schemas/user/exam-environment-token.js';
+export {
+  userExamEnvironmentToken,
+  getUserExamEnvironmentToken
+} from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';

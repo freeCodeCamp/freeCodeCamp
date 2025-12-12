@@ -3,6 +3,7 @@ id: 657e47d5fa5dea7cbdaf484b
 title: "Dialogue 5: Meeting a Client"
 challengeType: 21
 dashedName: dialogue-meeting-a-client
+lang: en-US
 ---
 
 # --description--
@@ -11,7 +12,7 @@ Watch the video below to understand the context of the upcoming lessons.
 
 # --assignment--
 
-Watch the video
+Watch the video.
 
 # --scene--
 
@@ -264,7 +265,7 @@ Watch the video
         "startTime": 53.7,
         "finishTime": 56.2,
         "dialogue": {
-        "text": "Now let's get started with the project details",
+        "text": "Now, let's get started with the project details",
         "align": "left"
         }
     },
@@ -273,7 +274,7 @@ Watch the video
         "startTime": 56.2,
         "finishTime": 58.7,
         "dialogue": {
-        "text": "and your specific requirements, David…",
+        "text": "and your specific requirements, David.",
         "align": "left"
         }
     },

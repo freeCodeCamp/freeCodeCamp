@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Callout } from '@freecodecamp/ui';
 import { useFeatureValue } from '@growthbook/growthbook-react';
 import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
 import { Link } from '../helpers';
@@ -16,7 +16,7 @@ export function OnaNote({ superBlock }: OnaNoteProps): JSX.Element | null {
   const { t } = useTranslation();
 
   return onaNoteFeature.superblocks.includes(superBlock) ? (
-    <Alert variant='info'>
+    <Callout variant='note' label={t('misc.note')}>
       <p>
         <Link
           external={true}
@@ -26,6 +26,6 @@ export function OnaNote({ superBlock }: OnaNoteProps): JSX.Element | null {
           {t('intro:misc-text.read-database-cert-article')}
         </Link>
       </p>
-    </Alert>
+    </Callout>
   ) : null;
 }

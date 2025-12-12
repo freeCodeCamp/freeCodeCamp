@@ -38,11 +38,6 @@ test.describe('The update-email page when the user is signed in', () => {
     );
     await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
-
-    const signOutButton = page.getByRole('link', { name: 'Sign out' });
-
-    await expect(signOutButton).toBeVisible();
-    await expect(signOutButton).toHaveAttribute('href', '/signout');
   });
 
   test('should enable the submit button if the email input is valid', async ({
@@ -69,7 +64,7 @@ test.describe('The update-email page when the user is signed in', () => {
     await submitButton.click();
     await expect(async () => {
       const emails = await getAllEmails();
-      expect(emails.items).toHaveLength(1);
+      expect(emails.messages).toHaveLength(1);
       expect(getSubject(getFirstEmail(emails))).toBe(
         'Please confirm your updated email address for freeCodeCamp.org'
       );

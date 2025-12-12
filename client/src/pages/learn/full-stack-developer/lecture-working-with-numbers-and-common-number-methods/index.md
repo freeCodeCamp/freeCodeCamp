@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Numbers and Common Number Methods
 
-In these lecture videos, you will learn about Numbers and common Number methods.
+In these lessons, you will learn about Numbers and common Number methods.

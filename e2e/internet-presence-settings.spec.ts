@@ -7,6 +7,7 @@ const settingsPageElement = {
   githubCheckmark: 'internet-github-check',
   linkedinCheckmark: 'internet-linkedin-check',
   twitterCheckmark: 'internet-twitter-check',
+  blueskyCheckmark: 'internet-bluesky-check',
   personalWebsiteCheckmark: 'internet-website-check',
   flashMessageAlert: 'flash-message',
   internetPresenceForm: 'internet-presence'
@@ -59,9 +60,15 @@ test.describe('Your Internet Presence', () => {
     },
     {
       name: 'twitter',
-      url: 'https://twitter.com/certified-user',
-      label: 'Twitter',
+      url: 'https://x.com/certified-user',
+      label: 'X',
       checkTestId: settingsPageElement.twitterCheckmark
+    },
+    {
+      name: 'bluesky',
+      url: 'https://bsky.app/profile/certified-user.bsky.social',
+      label: 'Bluesky',
+      checkTestId: settingsPageElement.blueskyCheckmark
     },
     {
       name: 'website',

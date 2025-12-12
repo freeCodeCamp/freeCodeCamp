@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Routing, React Frameworks, and Dependency Management Tools
 
-Learn about Routing, React Frameworks, and Dependency Management Tools in these lectures.
+Learn about Routing, React Frameworks, and Dependency Management Tools in these lessons.

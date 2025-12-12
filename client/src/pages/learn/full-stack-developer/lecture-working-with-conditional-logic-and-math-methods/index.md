@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to the Working with Conditional Logic and Math Methods
 
-In these lectures you will learn about conditional statements, binary logical operators, and the <code>Math</code> object.
+In these lessons you will learn about conditional statements, binary logical operators, and the <code>Math</code> object.

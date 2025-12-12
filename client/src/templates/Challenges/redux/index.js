@@ -21,12 +21,12 @@ const initialState = {
     superBlock: '',
     block: '',
     blockHashSlug: '/',
-    blockType: '',
     id: '',
     isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
-    challengeType: -1
+    challengeType: -1,
+    saveSubmissionToDB: false
   },
   challengeTests: [],
   consoleOut: [],
@@ -48,7 +48,8 @@ const initialState = {
     examResults: false,
     survey: false,
     projectPreview: false,
-    shortcuts: false
+    shortcuts: false,
+    speaking: false
   },
   portalWindow: null,
   showPreviewPortal: false,

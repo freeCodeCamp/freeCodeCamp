@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Form Validation
 
-In these lecture videos, you will learn about form validation in JavaScript.
+In these lessons, you will learn about form validation in JavaScript.

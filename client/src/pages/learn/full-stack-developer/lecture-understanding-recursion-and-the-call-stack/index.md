@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Recursion and the Call Stack
 
-In these lecture videos, you will learn about recursion and the call stack.
+In these lessons, you will learn about recursion and the call stack.

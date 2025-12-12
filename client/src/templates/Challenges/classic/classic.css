@@ -18,8 +18,15 @@
 }
 
 .action-row {
+  height: var(--action-row-height);
+  position: fixed;
+  top: calc(var(--header-height) + var(--breadcrumbs-height));
+  left: 0;
+  right: 0;
+  z-index: 100;
   padding: 10px;
   border-bottom: 1px solid var(--quaternary-background);
+  background-color: var(--secondary-background);
 }
 
 .monaco-editor-tabs button[aria-expanded='true'],
@@ -63,22 +70,21 @@
 }
 
 .tabs-row-left {
-  width: 30%;
   display: flex;
   gap: 10px;
 }
 
 .tabs-row-middle {
-  width: 30%;
   display: flex;
   justify-content: center;
   gap: 3px;
 }
 
 .tabs-row-right {
-  width: 30%;
   display: flex;
   justify-content: flex-end;
+  /* Ensure the right group pins to the end even when no left/middle items exist */
+  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {
@@ -191,9 +197,7 @@
   flex-direction: column;
 }
 
-#learn-app-wrapper[data-has-editable-boundaries='true']
-  #mobile-layout
-  .tab-content[data-state='active'] {
+#mobile-layout.has-editable-boundaries .tab-content[data-state='active'] {
   padding-block-end: 0px;
 }
 

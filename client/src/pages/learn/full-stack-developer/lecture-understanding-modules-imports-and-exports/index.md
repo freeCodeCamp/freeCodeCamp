@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding Modules, Imports, and Exports
 
-In these lecture videos, you will learn about modules, imports, and exports in JavaScript.
+In these lessons, you will learn about modules, imports, and exports in JavaScript.

@@ -1,29 +1,43 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
 interface ChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   title: string;
   dashedName: string;
   challengeType: string;
   questionCount?: number;
+  challengeLang?: string;
+  inputType?: string;
 }
 
 const buildFrontMatter = ({
   challengeId,
   title,
   dashedName,
-  challengeType
-}: ChallengeOptions) => `---
+  challengeType,
+  challengeLang,
+  inputType
+}: ChallengeOptions) => {
+  const langString = challengeLang
+    ? `
+lang: ${challengeLang}`
+    : '';
+  const inputTypeString = inputType
+    ? `
+inputType: ${inputType}`
+    : '';
+
+  return `---
 id: ${challengeId.toString()}
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-dashedName: ${dashedName}
+dashedName: ${dashedName}${langString}${inputTypeString}
 ---`;
+};
 
 const buildFrontMatterWithVideo = ({
   challengeId,
@@ -344,7 +358,7 @@ Do the assignment.
 `;
 
 interface DailyCodingChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeNumber: number;
 }
 

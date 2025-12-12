@@ -1,20 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Alert } from '@freecodecamp/ui';
+import { Callout } from '@freecodecamp/ui';
 
 interface RdbLocalLogoutAlertProps {
-  course: string;
+  title: string;
 }
 
-function RdbLocalLogoutAlert({
-  course
-}: RdbLocalLogoutAlertProps): JSX.Element {
+function RdbLocalLogoutAlert({ title }: RdbLocalLogoutAlertProps): JSX.Element {
   const { t } = useTranslation();
 
   return (
-    <Alert variant='danger'>
-      {t('learn.local.logout-warning', { course })}
-    </Alert>
+    <Callout variant='caution' label={t('misc.caution')}>
+      {t('learn.local.logout-warning', { course: title })}
+    </Callout>
   );
 }
 

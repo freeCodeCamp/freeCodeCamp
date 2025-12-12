@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding the Command Line and Working with Bash
 
-Learn about Understanding the Command Line and Working with Bash in these lectures.
+Learn about Understanding the Command Line and Working with Bash in these lessons.

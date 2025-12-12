@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Understanding How HTML Affects SEO
 
-In these lecture videos, you will how HTML affects search engine optimization.
+In these lessons, you will how HTML affects search engine optimization.

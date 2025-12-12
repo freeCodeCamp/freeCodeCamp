@@ -15,7 +15,7 @@ const schema = Joi.object()
       'legacy-link',
       'legacy-challenge-grid'
     ).required(),
-    blockType: Joi.valid(
+    blockLabel: Joi.valid(
       'workshop',
       'lab',
       'lecture',
@@ -63,7 +63,9 @@ const schema = Joi.object()
       'English',
       'Odin',
       'Euler',
-      'Rosetta'
+      'Rosetta',
+      'Chinese Curriculum',
+      'Spanish Curriculum'
     ).required()
   })
   // this makes sure there is no unknown key in the object

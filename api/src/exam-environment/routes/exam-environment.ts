@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
@@ -25,6 +24,20 @@ import { isObjectID } from '../../utils/validation.js';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.setErrorHandler((error, req, res) => {
+      // If the error does not match the format {code: string; message: string}, coerce into:
+      if (
+        !Object.hasOwnProperty.call(error, 'code') ||
+        !Object.hasOwnProperty.call(error, 'message')
+      ) {
+        const logger = fastify.log.child({ req, res });
+        logger.error(error, 'Unhandled error in exam environment routes.');
+        const str = JSON.stringify(error);
+        res.code(500);
+        res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+      }
+    });
+
     fastify.get(
       '/exam-environment/exams',
       {
@@ -183,7 +196,16 @@ async function postExamGeneratedExamHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
+
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -219,7 +241,6 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const user = req.user!;
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
@@ -259,9 +280,11 @@ async function postExamGeneratedExamHandler(
   const examAttempts = maybeExamAttempts.data;
 
   const lastAttempt = examAttempts.length
-    ? examAttempts.reduce((latest, current) =>
-        latest.startTimeInMS > current.startTimeInMS ? latest : current
-      )
+    ? examAttempts.reduce((latest, current) => {
+        const latestStartTime = latest.startTime;
+        const currentStartTime = current.startTime;
+        return latestStartTime > currentStartTime ? latest : current;
+      })
     : null;
 
   if (lastAttempt) {
@@ -300,11 +323,14 @@ async function postExamGeneratedExamHandler(
       );
     }
 
-    const examExpirationTime =
-      lastAttempt.startTimeInMS + exam.config.totalTimeInMS;
+    const lastAttemptStartTime = lastAttempt.startTime.getTime();
+    const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
+    const examExpirationTime = lastAttemptStartTime + examTotalTimeInMS;
+
     if (examExpirationTime < Date.now()) {
+      const examRetakeTimeInMS = exam.config.retakeTimeInS * 1000;
       const retakeAllowed =
-        examExpirationTime + exam.config.retakeTimeInMS < Date.now();
+        examExpirationTime + examRetakeTimeInMS < Date.now();
 
       if (!retakeAllowed) {
         logger.warn(
@@ -364,11 +390,7 @@ async function postExamGeneratedExamHandler(
   const maybeGeneratedExams = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findMany({
       where: {
-        // Find generated exams user has not already seen
         examId: exam.id,
-        id: {
-          notIn: examAttempts.map(a => a.generatedExamId)
-        },
         deprecated: false
       },
       select: {
@@ -391,7 +413,7 @@ async function postExamGeneratedExamHandler(
   if (generatedExams.length === 0) {
     const error = {
       data: { examId: exam.id },
-      message: `Unable to provide a generated exam. Either all generated exams have been exhausted, or all generated exams are deprecated.`
+      message: `Unable to provide a generated exam. Either no generations exist, or all generated exams are deprecated.`
     };
     logger.error(error.data, error.message);
     this.Sentry.captureException(error);
@@ -399,13 +421,28 @@ async function postExamGeneratedExamHandler(
     return reply.send(ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message));
   }
 
-  const randomGeneratedExam =
-    generatedExams[Math.floor(Math.random() * generatedExams.length)]!;
+  // Randomly pick an exam from available generations, prioritising generations not already taken
+  const untakenGeneratedExams = generatedExams.filter(
+    ge => !examAttempts.find(ea => ea.generatedExamId === ge.id)
+  );
+  let randomGeneratedExamId: string;
+  if (untakenGeneratedExams.length === 0) {
+    logger.info(
+      `User has taken all generated exams. Reusing previously taken generated exams.`
+    );
+    randomGeneratedExamId =
+      generatedExams[Math.floor(Math.random() * generatedExams.length)]!.id;
+  } else {
+    randomGeneratedExamId =
+      untakenGeneratedExams[
+        Math.floor(Math.random() * untakenGeneratedExams.length)
+      ]!.id;
+  }
 
   const maybeGeneratedExam = await mapErr(
     this.prisma.examEnvironmentGeneratedExam.findFirst({
       where: {
-        id: randomGeneratedExam.id
+        id: randomGeneratedExamId
       }
     })
   );
@@ -427,7 +464,7 @@ async function postExamGeneratedExamHandler(
 
   if (generatedExam === null) {
     const error = {
-      data: { generatedExamId: randomGeneratedExam.id },
+      data: { generatedExamId: randomGeneratedExamId },
       message: 'Unreachable. Generated exam not found.'
     };
     logger.error(error.data, 'Unreachable. Generated exam not found.');
@@ -443,7 +480,8 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
-        startTimeInMS: Date.now(),
+        examModerationId: null,
+        startTime: new Date(),
         questionSets: []
       }
     })
@@ -505,10 +543,18 @@ async function postExamAttemptHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-  const { attempt } = req.body;
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
+
+  const { attempt } = req.body;
 
   const maybeAttempts = await mapErr(
     this.prisma.examEnvironmentExamAttempt.findMany({
@@ -540,9 +586,11 @@ async function postExamAttemptHandler(
     );
   }
 
-  const latestAttempt = attempts.reduce((latest, current) =>
-    latest.startTimeInMS > current.startTimeInMS ? latest : current
-  );
+  const latestAttempt = attempts.reduce((latest, current) => {
+    const latestStartTime = latest.startTime;
+    const currentStartTime = current.startTime;
+    return latestStartTime > currentStartTime ? latest : current;
+  });
 
   const maybeExam = await mapErr(
     this.prisma.examEnvironmentExam.findUnique({
@@ -573,8 +621,10 @@ async function postExamAttemptHandler(
     );
   }
 
+  const latestAttemptStartTime = latestAttempt.startTime.getTime();
+  const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
   const isAttemptExpired =
-    latestAttempt.startTimeInMS + exam.config.totalTimeInMS < Date.now();
+    latestAttemptStartTime + examTotalTimeInMS < Date.now();
 
   if (isAttemptExpired) {
     logger.warn(
@@ -674,15 +724,27 @@ async function postExamAttemptHandler(
   return reply.code(200).send();
 }
 
-async function getExams(
+/**
+ * Get all the public information about all exams.
+ * @returns Public information about exams + whether Camper may take the exam or not.
+ */
+export async function getExams(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.examEnvironmentExams>,
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
+
   const maybeExams = await mapErr(
     this.prisma.examEnvironmentExam.findMany({
       where: {
@@ -715,7 +777,7 @@ async function getExams(
       select: {
         id: true,
         examId: true,
-        startTimeInMS: true
+        startTime: true
       }
     })
   );
@@ -739,11 +801,12 @@ async function getExams(
       config: {
         name: exam.config.name,
         note: exam.config.note,
-        totalTimeInMS: exam.config.totalTimeInMS,
-        retakeTimeInMS: exam.config.retakeTimeInMS,
+        totalTimeInS: exam.config.totalTimeInS,
+        retakeTimeInS: exam.config.retakeTimeInS,
         passingPercent: exam.config.passingPercent
       },
-      canTake: false
+      canTake: false,
+      prerequisites: exam.prerequisites
     };
 
     const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
@@ -762,9 +825,11 @@ async function getExams(
     const attemptsForExam = attempts.filter(a => a.examId === exam.id);
 
     const lastAttempt = attemptsForExam.length
-      ? attemptsForExam.reduce((latest, current) =>
-          latest.startTimeInMS > current.startTimeInMS ? latest : current
-        )
+      ? attemptsForExam.reduce((latest, current) => {
+          const latestStartTime = latest.startTime;
+          const currentStartTime = current.startTime;
+          return latestStartTime > currentStartTime ? latest : current;
+        })
       : null;
 
     if (!lastAttempt) {
@@ -774,12 +839,22 @@ async function getExams(
       continue;
     }
 
+    const lastAttemptStartTime = lastAttempt.startTime.getTime();
+    const examTotalTimeInMS = exam.config.totalTimeInS * 1000;
+    const examRetakeTimeInMS = exam.config.retakeTimeInS * 1000;
     const retakeDateInMS =
-      lastAttempt.startTimeInMS +
-      exam.config.totalTimeInMS +
-      exam.config.retakeTimeInMS;
-    const isRetakeTimePassed = Date.now() > retakeDateInMS;
+      lastAttemptStartTime + examTotalTimeInMS + examRetakeTimeInMS;
 
+    const lastAttemptExpired =
+      Date.now() > lastAttemptStartTime + examTotalTimeInMS;
+    if (!lastAttemptExpired) {
+      logger.info(`Exam ${exam.id} in progress.`);
+      availableExam.canTake = true;
+      availableExams.push(availableExam);
+      continue;
+    }
+
+    const isRetakeTimePassed = Date.now() > retakeDateInMS;
     if (!isRetakeTimePassed) {
       logger.info(`Time until retake: ${retakeDateInMS - Date.now()} [ms]`);
       availableExam.canTake = false;
@@ -832,9 +907,16 @@ export async function getExamAttemptsHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -892,9 +974,16 @@ export async function getExamAttemptHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+  logger.info({ userId: user.id });
+
   const { attemptId } = req.params;
 
   // If attempt id is given, only return that attempt
@@ -951,8 +1040,15 @@ export async function getExamAttemptsByExamIdHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
   const { examId } = req.params;
 
   logger.info({ examId, userId: user.id });
@@ -1009,6 +1105,16 @@ export async function getExamChallenge(
   const { challengeId, examId } = req.query;
 
   logger.info({ challengeId, examId });
+
+  if (!challengeId && !examId) {
+    logger.warn('No challenge or exam id provided.');
+    void reply.code(400);
+    return reply.send(
+      ERRORS.FCC_ERR_EXAM_ENVIRONMENT(
+        'Must provide either a challengeId or examId.'
+      )
+    );
+  }
 
   const maybeData = await mapErr(
     this.prisma.examEnvironmentChallenge.findMany({

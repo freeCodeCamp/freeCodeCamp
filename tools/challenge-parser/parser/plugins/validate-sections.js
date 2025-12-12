@@ -13,6 +13,7 @@ const VALID_MARKERS = [
   '# --fillInTheBlank--',
   '# --hints--',
   '# --instructions--',
+  '# --interactive--',
   '# --notes--',
   '# --questions--',
   '# --quizzes--',
@@ -34,6 +35,7 @@ const VALID_MARKERS = [
   '## --before-user-code--',
 
   // Level 3
+  '### --audio-id--',
   '### --feedback--',
   '### --question--',
 

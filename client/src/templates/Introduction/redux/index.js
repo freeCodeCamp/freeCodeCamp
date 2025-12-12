@@ -7,16 +7,25 @@ export const ns = 'curriculumMap';
 const initialState = {
   expandedState: {
     block: {}
-  }
+  },
+  superBlockStructures: {}
 };
 
-const types = createTypes(['resetExpansion', 'toggleBlock'], ns);
+const types = createTypes(
+  ['resetExpansion', 'toggleBlock', 'updateSuperBlockStructures'],
+  ns
+);
 
 export const resetExpansion = createAction(types.resetExpansion);
 export const toggleBlock = createAction(types.toggleBlock);
+export const updateSuperBlockStructures = createAction(
+  types.updateSuperBlockStructures
+);
 
 export const makeExpandedBlockSelector = block => state =>
   !!state[ns].expandedState.block[block];
+export const superBlockStructuresSelector = state =>
+  state[ns].superBlockStructures || {};
 
 export const reducer = handleActions(
   {
@@ -35,6 +44,10 @@ export const reducer = handleActions(
           [payload]: !state.expandedState.block[payload]
         }
       }
+    }),
+    [types.updateSuperBlockStructures]: (state, { payload }) => ({
+      ...state,
+      superBlockStructures: { ...payload }
     })
   },
   initialState

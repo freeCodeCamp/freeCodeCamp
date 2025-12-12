@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 import { vi, describe, it, expect, afterEach } from 'vitest';
 
 vi.mock('fs', () => {
@@ -22,9 +22,9 @@ vi.mock('gray-matter', () => {
   };
 });
 
-vi.mock('bson-objectid', () => {
+vi.mock('bson', () => {
   return {
-    default: vi.fn(() => ({ toString: () => mockChallengeId }))
+    ObjectId: vi.fn(() => ({ toString: () => mockChallengeId }))
   };
 });
 
@@ -46,15 +46,15 @@ vi.mock('./helpers/project-metadata', () => {
 });
 
 const mockChallengeId = '60d35cf3fe32df2ce8e31b03';
-import { getStepTemplate } from './helpers/get-step-template';
+import { getStepTemplate } from './helpers/get-step-template.js';
 import {
   createChallengeFile,
   createStepFile,
   insertStepIntoMeta,
   updateStepTitles,
   validateBlockName
-} from './utils';
-import { updateMetaData } from './helpers/project-metadata';
+} from './utils.js';
+import { updateMetaData } from './helpers/project-metadata.js';
 
 const block = 'utils-project';
 const projectPath = join(
@@ -81,9 +81,8 @@ describe('Challenge utils helper scripts', () => {
         challengeType: 0
       });
 
-      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       expect(step.toString()).toEqual(mockChallengeId);
-      expect(ObjectID).toHaveBeenCalledTimes(1);
+      expect(ObjectId).toHaveBeenCalledTimes(1);
 
       // Internal tasks
       // - Should generate a template for the step that is being created
@@ -98,24 +97,29 @@ describe('Challenge utils helper scripts', () => {
   describe('createProject util', () => {
     it('should allow alphanumerical names with trailing whitespace', () => {
       expect(
-        validateBlockName('learn-callbacks-by-creating-a-bookshelf ')
+        validateBlockName('learn-callbacks-by-creating-a-bookshelf ', [])
       ).toBe(true);
     });
     it('should allow alphanumerical names with no trailing whitespace', () => {
-      expect(validateBlockName('learn-callbacks-by-creating-a-bookshelf')).toBe(
-        true
-      );
+      expect(
+        validateBlockName('learn-callbacks-by-creating-a-bookshelf', [])
+      ).toBe(true);
     });
     it('should not allow non-kebab case names', () => {
-      expect(validateBlockName('learnCallbacksBetter')).toBe(
+      expect(validateBlockName('learnCallbacksBetter', [])).toBe(
         'please use alphanumerical characters and kebab case'
       );
     });
     it('should not allow white space names', () => {
-      expect(validateBlockName(' ')).toBe('please enter a dashed name');
+      expect(validateBlockName(' ', [])).toBe('please enter a dashed name');
     });
     it('should not allow empty names', () => {
-      expect(validateBlockName('')).toBe('please enter a dashed name');
+      expect(validateBlockName('', [])).toBe('please enter a dashed name');
+    });
+    it('should not allow names that already exist', () => {
+      expect(validateBlockName('name', ['name'])).toBe(
+        'a block with this name already exists'
+      );
     });
   });
 
@@ -139,7 +143,7 @@ describe('Challenge utils helper scripts', () => {
 
       await insertStepIntoMeta({
         stepNum: 3,
-        stepId: new ObjectID(mockChallengeId)
+        stepId: new ObjectId(mockChallengeId)
       });
 
       expect(updateMetaData).toHaveBeenCalledWith({

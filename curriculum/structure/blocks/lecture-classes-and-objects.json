@@ -1,8 +1,8 @@
 {
   "name": "Classes and Objects",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-classes-and-objects",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
@@ -16,6 +16,10 @@
     {
       "id": "6874b7d3b286c538b39d0c25",
       "title": "What Are Special Methods and What Are They Used For?"
+    },
+    {
+      "id": "6908d38f7cccc31602743340",
+      "title": "How to Handle Object Attributes Dynamically?"
     }
   ],
   "helpCategory": "Python"

@@ -1,5 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
+
+import { chapterBasedSuperBlocks } from '../../../../shared/config/curriculum';
 import {
   SUPERBLOCK_META_DIR,
   BLOCK_META_DIR,
@@ -20,8 +22,6 @@ type BlockLocation = {
   blocks: Block[];
   currentSuperBlock: string;
 };
-
-const chapterBasedSuperBlocks = ['full-stack-developer'];
 
 export const getBlocks = async (sup: string): Promise<BlockLocation> => {
   const superBlockDataPath = join(SUPERBLOCK_META_DIR, sup + '.json');
@@ -65,5 +65,5 @@ export const getBlocks = async (sup: string): Promise<BlockLocation> => {
     );
   }
 
-  return { blocks: blocks, currentSuperBlock: introData[sup].title };
+  return { blocks: blocks, currentSuperBlock: introData[sup]?.title };
 };

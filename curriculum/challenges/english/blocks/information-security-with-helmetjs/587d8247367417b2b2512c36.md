@@ -26,15 +26,13 @@ Helmet version `3.21.3` has already been installed, so require it as `helmet` in
 `helmet` version `3.21.3` should be in `package.json`
 
 ```js
-  $.get(code + '/_api/package.json').then(
-    (data) => {
-      const packJson = JSON.parse(data);
-      const helmet = packJson.dependencies.helmet;
-      assert(helmet === '3.21.3' || helmet === '^3.21.3');
-    },
-    (xhr) => {
-      throw new Error(xhr.responseText);
-    }
-  );
+const response = await fetch(code + '/_api/package.json');
+if (!response.ok) {
+  throw Error(await response.text());
+}
+const data = await response.text();
+const packJson = JSON.parse(data);
+const helmet = packJson.dependencies.helmet;
+assert(helmet === '3.21.3' || helmet === '^3.21.3');
 ```
 

@@ -1,0 +1,14 @@
+{
+  "name": "Introduction Questions Review",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-review-introduction-questions",
+  "helpCategory": "English",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68fa376a7ec0adc64d68519a",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "review"
+}

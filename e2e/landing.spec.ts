@@ -6,38 +6,31 @@ import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {
   heading: 'landing-header',
-  callToAction: 'landing-big-cta',
   certifications: 'certifications',
   curriculumBtns: 'curriculum-map-button',
   testimonials: 'testimonial-card',
   landingPageImage: 'landing-page-figure',
   faq: 'landing-page-faq',
-  jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:'
+  jobs: 'More than <strong>100,000</strong> freeCodeCamp.org graduates have gotten <strong>jobs</strong> at tech companies including:',
+  googleCTA: 'landing-google-cta',
+  moreWaysCTA: 'landing-more-ways-cta',
+  landingTopCta: 'landing-top-big-cta'
 } as const;
 
-const superBlocks = [
-  intro[SuperBlocks.FullStackDeveloper].title,
+const nonArchivedSuperBlocks = [
+  intro[SuperBlocks.RespWebDesignV9].title,
+  intro[SuperBlocks.JsV9].title,
+  intro[SuperBlocks.FrontEndDevLibsV9].title,
+  intro[SuperBlocks.PythonV9].title,
+  intro[SuperBlocks.RelationalDbV9].title,
+  intro[SuperBlocks.BackEndDevApisV9].title,
+  intro[SuperBlocks.FullStackDeveloperV9].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,
   intro[SuperBlocks.RosettaCode].title,
-  intro[SuperBlocks.RespWebDesignNew].title,
-  intro[SuperBlocks.JsAlgoDataStructNew].title,
-  intro[SuperBlocks.FrontEndDevLibs].title,
-  intro[SuperBlocks.DataVis].title,
-  intro[SuperBlocks.RelationalDb].title,
-  intro[SuperBlocks.BackEndDevApis].title,
-  intro[SuperBlocks.QualityAssurance].title,
-  intro[SuperBlocks.SciCompPy].title,
-  intro[SuperBlocks.DataAnalysisPy].title,
-  intro[SuperBlocks.InfoSec].title,
-  intro[SuperBlocks.MachineLearningPy].title,
-  intro[SuperBlocks.CollegeAlgebraPy].title,
-  intro[SuperBlocks.RespWebDesign].title,
-  intro[SuperBlocks.JsAlgoDataStruct].title,
-  intro[SuperBlocks.PythonForEverybody].title,
   intro[SuperBlocks.FoundationalCSharp].title
 ];
 
@@ -45,9 +38,66 @@ async function goToLandingPage(page: Page) {
   await page.goto('/');
 }
 
-test.describe('Landing Top - Variation B', () => {
+test.describe('Main CTA - Variation A', () => {
+  test.beforeEach(async ({ context, page }) => {
+    await addGrowthbookCookie({ context, variation: 'A' });
+    await goToLandingPage(page);
+  });
+  test('Five main CTAs render correctly', async ({ page }) => {
+    const landingTopCta = page.getByTestId(landingPageElements.landingTopCta);
+    const googleCTA = page.getByTestId(landingPageElements.googleCTA);
+    const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    const benefitsCtas = page.getByRole('link', {
+      name: translations.landing.benefits.cta
+    });
+    await expect(benefitsCtas).toHaveCount(1);
+    await expect(landingTopCta).toHaveText(
+      translations.buttons['logged-in-cta-btn']
+    );
+    await expect(ctas).toHaveCount(4);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
+    await expect(googleCTA).toBeHidden();
+    await expect(moreWaysCTA).toBeHidden();
+  });
+});
+
+test.describe('Main CTA - Variation B', () => {
   test.beforeEach(async ({ context, page }) => {
     await addGrowthbookCookie({ context, variation: 'B' });
+    await goToLandingPage(page);
+  });
+  test('Four main and two stacked CTAs render correctly', async ({ page }) => {
+    const landingTopCta = page.getByTestId(landingPageElements.landingTopCta);
+    const googleCTA = page.getByTestId(landingPageElements.googleCTA);
+    const moreWaysCTA = page.getByTestId(landingPageElements.moreWaysCTA);
+    const ctas = page.getByRole('link', {
+      name: translations.buttons['logged-in-cta-btn']
+    });
+    const benefitsCtas = page.getByRole('link', {
+      name: translations.landing.benefits.cta
+    });
+    await expect(benefitsCtas).toHaveCount(1);
+    await expect(landingTopCta).toBeHidden();
+    await expect(ctas).toHaveCount(3);
+    for (const cta of await ctas.all()) {
+      await expect(cta).toBeVisible();
+    }
+    await expect(googleCTA).toHaveText(
+      translations.buttons['sign-in-with-google']
+    );
+    await expect(moreWaysCTA).toHaveText(
+      translations.buttons['more-ways-to-sign-in']
+    );
+  });
+});
+
+test.describe('Landing Page', () => {
+  test.beforeEach(async ({ page }) => {
     await goToLandingPage(page);
   });
 
@@ -69,61 +119,6 @@ test.describe('Landing Top - Variation B', () => {
       translations.landing['graduates-work'].replace(/<\/?strong>/g, '')
     );
   });
-});
-
-/*
- *
- * not currently in use after https://github.com/freeCodeCamp/freeCodeCamp/pull/61359
- * bring back after we fix GB
- */
-
-// test.describe('Landing Top - Variation A', () => {
-//   test.beforeEach(async ({ context, page }) => {
-//     await addGrowthbookCookie({ context, variation: 'newA' });
-//     await goToLandingPage(page);
-//   });
-
-//   test('The headline renders correctly', async ({ page }) => {
-//     const landingHeading1 = page.getByTestId('landing-big-heading-1');
-//     await expect(landingHeading1).toHaveText(
-//       translations.landing['big-heading-1']
-//     );
-
-//     const landingHeading2 = page.getByTestId('landing-big-heading-2');
-//     await expect(landingHeading2).toHaveText(
-//       translations.landing['big-heading-2']
-//     );
-
-//     const landingHeading3 = page.getByTestId('landing-big-heading-3');
-//     await expect(landingHeading3).toHaveText(
-//       translations.landing['big-heading-3']
-//     );
-//   });
-
-//   test('Logo row copy renders correctly', async ({ page }) => {
-//     const landingH2Heading = page.getByTestId('h2-heading');
-//     await expect(landingH2Heading).toHaveText(
-//       translations.landing['h2-heading'].replace(/<\/?strong>/g, '')
-//     );
-//   });
-
-//   test('Hero image should have  a description', async ({ isMobile, page }) => {
-//     const captionText = page.getByText(
-//       translations.landing['hero-img-description']
-//     );
-
-//     if (isMobile) {
-//       await expect(captionText).toBeHidden();
-//     } else {
-//       await expect(captionText).toBeVisible();
-//     }
-//   });
-// });
-
-test.describe('Landing Page', () => {
-  test.beforeEach(async ({ page }) => {
-    await goToLandingPage(page);
-  });
 
   test('The component Why learn with freeCodeCamp renders correctly', async ({
     context,
@@ -136,16 +131,6 @@ test.describe('Landing Page', () => {
     );
 
     await expect(h2Element).toBeVisible();
-  });
-
-  test('Call to action buttons should render correctly', async ({ page }) => {
-    const ctas = page.getByRole('link', {
-      name: translations.buttons['logged-in-cta-btn']
-    });
-    await expect(ctas).toHaveCount(4);
-    for (const cta of await ctas.all()) {
-      await expect(cta).toBeVisible();
-    }
   });
 
   test('Hero image should have an alt', async ({ isMobile, page }) => {
@@ -209,14 +194,21 @@ test.describe('Landing Page', () => {
     }
   });
 
-  test('Links to all superblocks in order', async ({ page }) => {
+  test('Links to all non-archived superblocks in order', async ({ page }) => {
     const curriculumBtns = page.getByTestId(landingPageElements.curriculumBtns);
-    await expect(curriculumBtns).toHaveCount(superBlocks.length);
-    for (let index = 0; index < superBlocks.length; index++) {
+    await expect(curriculumBtns).toHaveCount(nonArchivedSuperBlocks.length);
+    for (let index = 0; index < nonArchivedSuperBlocks.length; index++) {
       const btn = curriculumBtns.nth(index);
-      const link = btn.getByRole('link', { name: superBlocks[index] });
+      const link = btn.getByRole('link', {
+        name: nonArchivedSuperBlocks[index]
+      });
       await expect(link).toBeVisible();
     }
+  });
+
+  test('Links to the archive page', async ({ page }) => {
+    const archiveLink = page.locator('a[href="/learn/archive"]');
+    await expect(archiveLink).toBeVisible();
   });
 
   test('Has FAQ section', async ({ page }) => {

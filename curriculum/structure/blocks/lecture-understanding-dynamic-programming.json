@@ -1,8 +1,8 @@
 {
   "name": "Understanding Dynamic Programming",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-dynamic-programming",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Trans, useTranslation } from 'react-i18next';
-import { Alert, Spacer } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 import { useFeature } from '@growthbook/growthbook-react';
 
 const Down = () => {
   const { t } = useTranslation();
   return (
-    <Alert variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>
         <Trans i18nKey='intro:misc-text.course-maintenance'>
           <a
@@ -20,14 +20,14 @@ const Down = () => {
       </p>
       <Spacer size='xs' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
-    </Alert>
+    </Callout>
   );
 };
 
 const Disabled = () => {
   const { t } = useTranslation();
   return (
-    <Alert variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       <p>
         <Trans i18nKey='intro:misc-text.course-disabled'>
           <a
@@ -41,7 +41,7 @@ const Disabled = () => {
       </p>
       <Spacer size='xs' />
       <p>{t('intro:misc-text.progress-wont-save')}</p>
-    </Alert>
+    </Callout>
   );
 };
 

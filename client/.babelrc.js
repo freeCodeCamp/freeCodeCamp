@@ -1,3 +1,4 @@
+/* eslint-disable filenames-simple/naming-convention */
 require('dotenv').config({ path: '../.env' });
 const config = {
   presets: [
@@ -54,6 +55,7 @@ const config = {
           'sql',
           'svg',
           'typescript',
+          'tsx',
           'xml'
         ],
         theme: 'default',

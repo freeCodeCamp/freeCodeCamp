@@ -157,9 +157,14 @@ if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
 }
 
 export const HOME_LOCATION = process.env.HOME_LOCATION;
-// Mailhog is used in development and test environments, hence the localhost
+// Mailpit is used in development and test environments, hence the localhost
 // default.
-export const MAILHOG_HOST = process.env.MAILHOG_HOST ?? 'localhost';
+// TODO: Remove MAILHOG_HOST in a few months
+// We renamed MailHog to MailPit, but kept the same port and API
+// This is to keep backward compatibility with existing setups
+// that might still use MAILHOG_HOST environment variable
+export const MAILPIT_HOST =
+  process.env.MAILPIT_HOST ?? process.env.MAILHOG_HOST ?? 'localhost';
 export const MONGOHQ_URL =
   process.env.NODE_ENV === 'test'
     ? createTestConnectionURL(
@@ -186,9 +191,6 @@ export const FCC_API_LOG_LEVEL = _FCC_API_LOG_LEVEL;
 export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
 export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
   process.env.FCC_ENABLE_SHADOW_CAPTURE
-);
-export const FCC_ENABLE_EXAM_ENVIRONMENT = undefinedOrBool(
-  process.env.FCC_ENABLE_EXAM_ENVIRONMENT
 );
 export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES

@@ -203,7 +203,7 @@ function ShowClassic({
         description,
         instructions,
         hooks,
-        fields: { tests, blockName },
+        tests,
         challengeType,
         hasEditableBoundaries = false,
         superBlock,
@@ -212,7 +212,8 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        saveSubmissionToDB
       }
     }
   },
@@ -317,7 +318,7 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for the urriculum outline workshop
   const showIndependentLowerJaw =
-    blockName === 'workshop-curriculum-outline' &&
+    block === 'workshop-curriculum-outline' &&
     isIndependentLowerJawEnabled &&
     !isMobile;
 
@@ -471,7 +472,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -547,11 +548,14 @@ function ShowClassic({
         <CompletionModal />
         <HelpModal
           challengeTitle={title}
-          challengeBlock={blockName}
+          challengeBlock={block}
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} challengeTitle={title} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
@@ -596,12 +600,7 @@ export const query = graphql`
           afterAll
         }
         fields {
-          blockName
           slug
-          tests {
-            text
-            testString
-          }
         }
         required {
           link
@@ -617,6 +616,11 @@ export const query = graphql`
           tail
           editableRegionBoundaries
           history
+        }
+        saveSubmissionToDB
+        tests {
+          text
+          testString
         }
       }
     }

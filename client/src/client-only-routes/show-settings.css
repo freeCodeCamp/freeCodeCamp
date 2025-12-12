@@ -1,0 +1,71 @@
+.settings-container {
+  display: flex;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.settings-main {
+  flex: 4;
+  padding: 1rem;
+}
+
+.settings-sidebar-nav ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.settings-sidebar-nav ul li {
+  margin-bottom: 0.5rem;
+}
+
+.settings-sidebar-nav {
+  flex: 1;
+  position: sticky;
+  top: var(--header-height);
+  padding: 1rem 0;
+  overflow-y: scroll;
+  height: calc(100vh - var(--header-height));
+  border-right: 3px solid var(--tertiary-background);
+}
+
+.settings-sidebar-nav .sidebar-nav-section-heading {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding-left: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.settings-sidebar-nav .sidebar-nav-anchor-btn {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 0 1rem 0rem 2rem;
+}
+
+.settings-sidebar-nav .sidebar-nav-section-heading.active,
+.settings-sidebar-nav .sidebar-nav-anchor-btn.active {
+  box-shadow: inset 3px 0 0 0 var(--highlight-color);
+  background-color: var(--tertiary-background);
+}
+
+@media (max-width: 980px) {
+  .settings-sidebar-nav {
+    display: none;
+  }
+
+  .settings-container {
+    display: block;
+  }
+}
+
+.settings-user-token-heading,
+.settings-danger-zone-heading,
+.settings-exam-token-heading {
+  color: inherit;
+  font-size: inherit;
+  margin: 0;
+  text-align: center;
+}

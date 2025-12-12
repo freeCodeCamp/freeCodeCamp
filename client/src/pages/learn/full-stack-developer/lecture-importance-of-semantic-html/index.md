@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Importance of Semantic HTML
 
-In these lecture videos, you will learn about semantic HTML and the importance of using it.
+In these lessons, you will learn about semantic HTML and the importance of using it.

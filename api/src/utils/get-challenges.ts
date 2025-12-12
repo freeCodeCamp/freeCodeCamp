@@ -7,7 +7,7 @@ import { readFileSync } from 'fs';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'path';
 
-const CURRICULUM_PATH = '../../../shared/config/curriculum.json';
+const CURRICULUM_PATH = '../../../shared-dist/config/curriculum.json';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 // Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
 const curriculum = JSON.parse(
@@ -21,6 +21,7 @@ interface Block {
     challengeType: number;
     url?: string;
     msTrophyId?: string;
+    saveSubmissionToDB?: boolean;
   }[];
 }
 
@@ -51,3 +52,13 @@ export function getChallenges(): Block['challenges'] {
       return [...acc, ...challengesForBlock.flat()];
     }, []);
 }
+
+export const challenges = getChallenges();
+
+export const savableChallenges = challenges.reduce((acc, curr) => {
+  if (curr.saveSubmissionToDB) {
+    acc.add(curr.id);
+  }
+
+  return acc;
+}, new Set<string>());

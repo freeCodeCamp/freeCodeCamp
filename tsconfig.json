@@ -1,10 +1,8 @@
 {
   "include": [
+    "*.ts",
     "curriculum/*.test.ts",
-    "e2e/**/*.ts",
-    "tools/challenge-auditor/index.ts",
     "tools/challenge-editor/**/*",
-    "tools/challenge-helper-scripts/**/*.ts",
     "tools/scripts/**/*.ts",
     "tools/daily-challenges/**/*.ts"
   ],

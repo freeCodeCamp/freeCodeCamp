@@ -118,11 +118,10 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
-    "start": "Start",
-    "go-to-today": "Go to Today's Challenge",
-    "go-to-today-long": "Go to Today's Coding Challenge",
-    "go-to-archive": "Go to Archive",
-    "go-to-archive-long": "Go to Daily Coding Challenge Archive"
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
+    "go-to-dcc-today": "Go to Today's Challenge",
+    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
   "daily-coding-challenges": {
     "title": "Daily Coding Challenges",
@@ -214,6 +213,8 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
+    "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
       {
@@ -280,7 +281,7 @@
     "disabled": "Uidhinishaji wako utafichwa ukiwekwa kuwa wa faragha.",
     "private-name": "Jina lako halitaonekana kwenye vyeti vyako ikiwa hii itawekwa kuwa ya faragha.",
     "claim-legacy": "Ukishajishindia vyeti vifuatavyo vya freeCodeCamp, utaweza kudai {{cert}}:",
-    "for": "Mipangilio ya Akaunti ya {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Hii inaongeza sauti ya kupendeza ya gitaa la akustika kwenye tovuti. Utapata maoni ya muziki unapoandika kwenye kihariri, unapokamilisha changamoto, unapopata cheti na zaidi.",
     "sound-volume": "Sauti ya Campfire:",
     "scrollbar-width": "Upana wa Upau wa kusogeza wa Kihariri",
@@ -314,7 +315,7 @@
       "results-for": "Results for {{projectTitle}}",
       "my-profile": "Wasifu wangu",
       "my-name": "Jina langu",
-      "my-location": "Eneo langu",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Kunihusu",
       "my-points": "Pointi zangu",
       "my-heatmap": "Ramani yangu",
@@ -327,12 +328,13 @@
       "keyboard-shortcuts": "Wezesha Njia za Mkato za Kibodi"
     },
     "headings": {
+      "account": "Account",
       "certs": "Vyeti",
       "legacy-certs": "Vyeti vya Legacy",
       "honesty": "Sera ya Uaminifu ya Kiakademia",
       "internet": "Uwepo Wako wa Mtandao",
       "portfolio": "Mipangilio ya Wasifu",
-      "privacy": "Mipangilio ya Faragha",
+      "privacy": "Privacy",
       "personal-info": "Taarifa za Kibinafsi"
     },
     "danger": {
@@ -361,7 +363,7 @@
     },
     "email": {
       "missing": "Huna barua pepe inayohusishwa na akaunti hii.",
-      "heading": "Mipangilio ya Barua pepe",
+      "heading": "Email",
       "not-verified": "Barua pepe yako haijathibitishwa.",
       "check": "Tafadhali angalia barua pepe yako, au <0>omba barua pepe mpya ya uthibitishaji hapa</0>.",
       "current": "Barua pepe ya Sasa",
@@ -380,12 +382,23 @@
     }
   },
   "exam": {
+    "attempts": "Attempts",
+    "no-attempts-yet": "No attempts yet",
+    "date-taken": "Date Taken",
+    "score": "Score",
+    "status": "Status",
+    "pending": "Pending",
+    "passed": "Passed",
+    "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "Unahitaji kubadilisha mpangilio wako wa faragha ili portfolio yako ionekane na wengine. Hili ni onyesho la kukagua jinsi wasifu yako itakavyoonekana ikifanywa kwa umma.",
@@ -485,7 +498,7 @@
     "download-solution": "Pakua suluhisho langu",
     "download-results": "Pakua matokeo yangu",
     "percent-complete": "Imekamilika {{percent}}%",
-    "project-complete": "Imekamilisha miradi ya uthibitishaji ya {{completedChallengesInBlock}} kati ya {{totalChallengesInBlock}}}",
+    "project-complete": "Completed",
     "tried-rsa": "Ikiwa tayari umejaribu mbinu ya <0>Soma-Tafuta-Uliza</0>, basi unaweza kuomba usaidizi kwenye jukwaa la freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
@@ -516,7 +529,9 @@
       "instructions": "Maagizo",
       "notes": "Vidokezo",
       "preview": "Onyesho",
-      "editor": "Kihariri"
+      "terminal": "Terminal",
+      "editor": "Kihariri",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Kubonyeza tab kutaingiza herufi ya tab",
@@ -527,6 +542,26 @@
     "project-preview-title": "Hapa kuna muonyesho wa kile utakachounda",
     "demo-project-title": "Here's an example of a project that meets the requirements",
     "github-required": "<0>Unda akaunti ya GitHub</0> ikiwa huna akaunti. Utaihitaji unapounda mashine ya seva ya Linux. Mchakato huu unaweza kuchukua dakika chache.",
+    "codespaces": {
+      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
+      "step-1": "<0>Create an GitHub account</0> if you don't have one",
+      "step-2": "Click the start button below",
+      "step-3": "On that page, click the create button",
+      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
+      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
+      "step-6": "Going to the <0>View</0> menu,",
+      "step-7": "Clicking on the <0>Command Palette</0> option,",
+      "step-8": "and running the <0>CodeRoad: Start</0> command",
+      "step-9": "Follow the instructions in CodeRoad to complete the course",
+      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
+      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
+      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
+      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
+      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "In the <0>Value</0> field, paste your token",
+      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
+      "summary": "Codespaces Setup"
+    },
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
@@ -543,7 +578,8 @@
       "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
       "sub-step-3": "Navigate to your <0>Ona secrets page</0>",
       "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Secret</0> field, paste your token"
+      "sub-step-5": "In the <0>Secret</0> field, paste your token",
+      "summary": "Ona Setup"
     },
     "local": {
       "intro": "This course runs in a virtual Linux machine on your computer. To run the course, you first need to download each of the following if you don't already have them:",
@@ -565,7 +601,8 @@
       "step-7": "Copy the course URL below, paste it in the URL input, and click \"Load\".",
       "copy-url": "Copy Course URL",
       "step-8": "Click \"Start\" to begin.",
-      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass."
+      "step-9": "Follow the instructions in CodeRoad to complete the course. Note: You may need to restart the terminal once for terminal settings to take effect and the tests to pass.",
+      "summary": "Local Setup"
     },
     "step-1": "Hatua ya 1: Kamilisha mradi",
     "step-2": "Hatua ya 2: Wasilisha msimbo wako",
@@ -645,15 +682,20 @@
       "invalid-transcript": "Your transcript link is not correct, it should have the following form: <1>https://learn.microsoft.com/LOCALE/users/USERNAME/transcript/ID</1> - check the UPPERCASE items in your link are correct."
     },
     "block-type": {
-      "lecture": "Lecture",
+      "lecture": "Theory",
       "workshop": "Workshop",
       "lab": "Lab",
       "review": "Review",
       "quiz": "Quiz",
+      "cert-project": "Certification Project",
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
       "practice": "Practice"
+    },
+    "archive": {
+      "title": "Archived Coursework",
+      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
     }
   },
   "donate": {
@@ -853,12 +895,14 @@
     "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "Kombe la dhahabu",
@@ -886,7 +930,7 @@
     "linkedin": "Kiungo cha LinkedIn cha {{username}}",
     "github": "Kiungo cha GitHub cha {{username}}",
     "website": "Kiungo cha tovuti cha {{username}}",
-    "twitter": "Kiungo cha Twitter cha {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Nenda kwenye ukurasa wa kwanza",
@@ -919,7 +963,10 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -966,6 +1013,7 @@
     "not-eligible": "Mtumiaji huyu hastahiki uthibitishaji wa freeCodeCamp.org kwa wakati huu.",
     "profile-private": "{{username}} amechagua kufanya portfolio yake kuwa wa faragha. Watahitaji kuweka portfolio yao hadharani ili wengine waweze kutazama uthibitishaji wao.",
     "certs-private": "{{username}} amechagua kufanya vyeti vyao kuwa vya faragha. Watahitaji kuweka vyeti vyao hadharani ili wengine waweze kuvitazama.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} bado hajakubali Ahadi yetu ya Uaminifu ya Kiakademia.",
     "user-not-certified": "Inaonekana kama mtumiaji {{username}} hajaidhinishwa {{cert}}",
     "invalid-challenge": "Hiyo haionekani kuwa uwasilishaji halali wa changamoto",
@@ -1071,6 +1119,7 @@
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
       "solution": "Solution",
       "no-solution": "hitilafu ya kuonyesha suluhisho, tuma barua pepe kwa support@freeCodeCamp.org ili kupata usaidizi.",
+      "no-solution-to-display": "No solution to display",
       "source": "Source",
       "footnote": "Iwapo unashuku kuwa yoyote ya miradi hii inakiuka <2>sera ya uaminifu ya kitaaluma</2>, tafadhali <5>ripoti hili kwa timu yetu</5>.",
       "title": {
@@ -1151,20 +1200,20 @@
       }
     },
     "title": {
-      "responsive-web-design": "Responsive Web Design",
-      "responsive-web-design-cert": "Responsive Web Design Certification",
-      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
-      "front-end-development-libraries": "Front End Development Libraries",
-      "front-end-development-libraries-cert": "Front End Development Libraries Certification",
-      "data-visualization": "Data Visualization",
-      "data-visualization-cert": "Data Visualization Certification",
-      "relational-database-v8": "Relational Database",
-      "relational-database-v8-cert": "Relational Database Certification",
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-cert": "Back End Development and APIs Certification",
+      "responsive-web-design": "Legacy Responsive Web Design V8",
+      "responsive-web-design-cert": "Legacy Responsive Web Design V8 Certification",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures V7",
+      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
+      "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
+      "front-end-development-libraries": "Front End Development Libraries V8",
+      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "data-visualization": "Data Visualization V8",
+      "data-visualization-cert": "Data Visualization V8 Certification",
+      "relational-database-v8": "Relational Database V8",
+      "relational-database-v8-cert": "Relational Database V8 Certification",
+      "back-end-development-and-apis": "Back End Development and APIs V8",
+      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
       "quality-assurance-v7": "Quality Assurance",
       "quality-assurance-v7-cert": "Quality Assurance Certification",
       "scientific-computing-with-python-v7": "Scientific Computing with Python",
@@ -1180,9 +1229,21 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1247,12 +1308,18 @@
   "exam-token": {
     "exam-token": "Exam Token",
     "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
-    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
-    "error": "There was an error generating your token, please try again in a moment.",
     "your-exam-token": "Your Exam Token is: {{token}}",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Njia za mkato za kibodi",
@@ -1305,6 +1372,26 @@
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
     }
+  },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

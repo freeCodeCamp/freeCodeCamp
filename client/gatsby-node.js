@@ -5,6 +5,7 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
+const { SuperBlocks } = require('../shared-dist/config/curriculum');
 const env = require('./config/env.json');
 const {
   createChallengePages,
@@ -73,7 +74,7 @@ exports.createPages = async function createPages({
             id
             challenge {
               block
-              blockType
+              blockLabel
               blockLayout
               certification
               challengeType
@@ -102,6 +103,7 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
+              saveSubmissionToDB
               solutions {
                 contents
                 ext
@@ -182,15 +184,8 @@ exports.createPages = async function createPages({
     )
   );
 
-  const superBlocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { superBlock }
-        }
-      }) => superBlock
-    )
-  );
+  // Includes upcoming superBlocks
+  const allSuperBlocks = Object.values(SuperBlocks);
 
   // Create intro pages
   // TODO: Remove allMarkdownRemark (populate from elsewhere)
@@ -210,7 +205,7 @@ exports.createPages = async function createPages({
       if (!blocks.includes(frontmatter.block)) {
         return;
       }
-    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
       return;
     }
 
@@ -261,7 +256,17 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         process: require.resolve('process/browser')
       }
     },
-    plugins: newPlugins
+    plugins: newPlugins,
+    ignoreWarnings: [
+      warning => {
+        if (warning instanceof Error) {
+          if (warning.message.includes('mini-css-extract-plugin')) {
+            return true;
+          }
+        }
+        return false;
+      }
+    ]
   });
 };
 
@@ -295,22 +300,58 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
-      blockType: String
-      blockLayout: String
-      challengeFiles: [FileContents]
-      chapter: String
-      explanation: String
-      hooks: Hooks
-      notes: String
-      url: String
       assignments: [String]
-      prerequisites: [PrerequisiteChallenge]
+      bilibiliIds: BilibiliIds
+      block: String
+      blockId: String
+      blockLayout: String
+      blockLabel: String
+      certification: String
+      challengeFiles: [FileContents]
+      challengeOrder: Int
+      challengeType: Int
+      chapter: String
+      dashedName: String
+      demoType: String
+      description: String
+      disableLoopProtectPreview: Boolean
+      disableLoopProtectTests: Boolean
+      explanation: String
+      fillInTheBlank: FillInTheBlank
+      forumTopicId: Int
+      hasEditableBoundaries: Boolean
+      helpCategory: String
+      hooks: Hooks
+      id: String
+      instructions: String
+      isLastChallengeInBlock: Boolean
+      isPrivate: Boolean
       module: String
       msTrophyId: String
-      fillInTheBlank: FillInTheBlank
-      scene: Scene
-      transcript: String
+      nodules: [Nodule]
+      notes: String
+      order: Int
+      prerequisites: [PrerequisiteChallenge]
+      questions: [Question]
       quizzes: [Quiz]
+      required: [RequiredResource]
+      saveSubmissionToDB: Boolean
+      scene: Scene
+      solutions: [[FileContents]]
+      suborder: Int
+      superBlock: String
+      superOrder: Int
+      template: String
+      tests: [Test]
+      fields: ChallengeFields
+      title: String
+      transcript: String
+      translationPending: Boolean
+      url: String
+      usesMultifileEditor: Boolean
+      videoId: String
+      videoLocaleIds: VideoLocaleIds
+      videoUrl: String
     }
     type FileContents {
       fileKey: String
@@ -320,14 +361,58 @@ exports.createSchemaCustomization = ({ actions }) => {
       head: String
       tail: String
       editableRegionBoundaries: [Int]
+      path: String
+      error: String
+      seed: String
+      id: String
+      history: [String]
     }
     type PrerequisiteChallenge {
       id: String
       title: String
     }
+    type VideoLocaleIds {
+      espanol: String
+      italian: String
+      portuguese: String
+    }
+    type BilibiliIds {
+      aid: Int
+      bvid: String
+      cid: Int
+    }
+    type Question {
+      text: String
+      answers: [Answer]
+      solution: Int
+    }
+    type Answer {
+      answer: String
+      feedback: String
+      audioId: String
+    }
+    type RequiredResource {
+      link: String
+      raw: Boolean
+      src: String
+      crossDomain: Boolean
+    }
+    type Hooks {
+      beforeAll: String
+      beforeEach: String
+      afterAll: String
+      afterEach: String
+    }
+    type Test {
+      id: String
+      text: String
+      testString: String
+      title: String
+    }
     type FillInTheBlank {
       sentence: String
       blanks: [Blank]
+      inputType: String
     }
     type Blank {
       answer: String
@@ -385,6 +470,13 @@ exports.createSchemaCustomization = ({ actions }) => {
       afterEach: String
       beforeAll: String
       afterAll: String
+    }
+    type ChallengeFields {
+      slug: String
+    }
+    type Nodule {
+      type: String
+      data: JSON
     }
   `;
   createTypes(typeDefs);

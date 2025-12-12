@@ -6,4 +6,4 @@ superBlock: full-stack-developer
 
 ## Introduction to Working with Data Fetching and Memoization in React
 
-Learn about Working with Data Fetching and Memoization in React in these lectures.
+Learn about Working with Data Fetching and Memoization in React in these lessons.
