@@ -57,6 +57,7 @@
     "@growthbook/growthbook-react": "1.6.0",
     "@headlessui/react": "1.7.19",
     "@loadable/component": "5.16.3",
+    "@monaco-editor/react": "4.7.0",
     "@redux-devtools/extension": "3.3.0",
     "@redux-saga/core": "^1.2.2",
     "@reduxjs/toolkit": "2.8.2",
