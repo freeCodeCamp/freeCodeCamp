@@ -27,6 +27,7 @@ const nonArchivedSuperBlocks = [
   intro[SuperBlocks.FullStackDeveloperV9].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
+  intro[SuperBlocks.A1Spanish].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,
