@@ -5,8 +5,10 @@
   "helpCategory": "Backend Development",
   "blockLayout": "link",
   "challengeOrder": [
-    { "id": "69247cd74caa633ccd7e3351", "title": "Node.js Core Modules Review" }
+    {
+      "id": "69247cd74caa633ccd7e3351",
+      "title": "Node.js Core Modules Review"
+    }
   ],
-  "blockLabel": "review",
-  "usesMultifileEditor": true
+  "blockLabel": "review"
 }
