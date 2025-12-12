@@ -28,7 +28,15 @@ export const isCertMap = Type.Object({
   isRelationalDatabaseCertV8: Type.Boolean(),
   isRelationalDatabaseCertV9: Type.Boolean(),
   isCollegeAlgebraPyCertV8: Type.Boolean(),
-  isFoundationalCSharpCertV8: Type.Boolean()
+  isFoundationalCSharpCertV8: Type.Boolean(),
+  isJsAlgoDataStructCertV8: Type.Boolean(),
+  isA1ChineseCert: Type.Boolean(),
+  isA2ChineseCert: Type.Boolean(),
+  isA2SpanishCert: Type.Boolean(),
+  isB1EnglishCert: Type.Boolean(),
+  isBackEndDevApisCertV9: Type.Boolean(),
+  isFullStackDeveloperCertV9: Type.Boolean(),
+  isFrontEndLibsCertV9: Type.Boolean()
 });
 
 export const file = Type.Object({
