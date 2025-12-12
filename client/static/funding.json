@@ -23,9 +23,7 @@
         "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "spdx:BSD-3-Clause"
-      ],
+      "licenses": ["spdx:BSD-3-Clause"],
       "tags": [
         "education",
         "programming",
@@ -50,9 +48,7 @@
         "url": "https://github.com/freeCodeCamp/freeCodeCamp",
         "wellKnown": "https://github.com/freeCodeCamp/freeCodeCamp/raw/refs/heads/main/.github/.well-known/funding-manifest-urls"
       },
-      "licenses": [
-        "spdx:BSD-3-Clause"
-      ],
+      "licenses": ["spdx:BSD-3-Clause"],
       "tags": [
         "education",
         "web-platform",
@@ -88,10 +84,7 @@
         "amount": 5,
         "currency": "USD",
         "frequency": "monthly",
-        "channels": [
-          "donate-page",
-          "github-sponsors"
-        ]
+        "channels": ["donate-page", "github-sponsors"]
       },
       {
         "guid": "one-time-donations",
@@ -101,9 +94,7 @@
         "amount": 100,
         "currency": "USD",
         "frequency": "one-time",
-        "channels": [
-          "donate-page"
-        ]
+        "channels": ["donate-page"]
       }
     ],
     "history": [

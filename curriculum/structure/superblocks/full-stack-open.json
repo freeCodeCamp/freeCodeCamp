@@ -4,8 +4,8 @@
       "dashedName": "part-0",
       "modules": [
         {
-          "dashedName": "basic-html",
-          "blocks": ["cat-blog-page"]
+          "dashedName": "fundamentals-of-web-apps",
+          "blocks": ["fso-fundamentals-web-apps"]
         }
       ]
     },
