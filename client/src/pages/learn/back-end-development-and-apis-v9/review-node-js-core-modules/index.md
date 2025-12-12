@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Node.js Core Modules Review
 block: review-node-js-core-modules
-superBlock: full-stack-developer
+superBlock: back-end-development-and-apis-v9
 ---
 
 ## Introduction to the Node.js Core Modules Review
