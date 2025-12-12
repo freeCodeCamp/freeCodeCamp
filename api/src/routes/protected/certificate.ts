@@ -5,6 +5,7 @@ import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import { challenges, getChallenges } from '../../utils/get-challenges.js';
 import {
   Certification,
+  type CertificationFlags,
   certSlugTypeMap,
   certToIdMap,
   certToTitleMap,
@@ -121,45 +122,26 @@ export function createCertLookup(
   return certLookup;
 }
 
-interface CertI {
-  isA2EnglishCert?: boolean;
-  isApisMicroservicesCert?: boolean;
-  isBackEndCert?: boolean;
-  isCollegeAlgebraPyCertV8?: boolean;
-  isDataAnalysisPyCertV7?: boolean;
-  isDataVisCert?: boolean;
-  isFrontEndCert?: boolean;
-  isFrontEndLibsCert?: boolean;
-  isFoundationalCSharpCertV8?: boolean;
-  isFullStackCert?: boolean;
-  isInfosecCertV7?: boolean;
-  isInfosecQaCert?: boolean;
-  isJavascriptCertV9?: boolean;
-  isJsAlgoDataStructCert?: boolean;
-  isJsAlgoDataStructCertV8?: boolean;
-  isMachineLearningPyCertV7?: boolean;
-  isPythonCertV9?: boolean;
-  isQaCertV7?: boolean;
-  isRelationalDatabaseCertV8?: boolean;
-  isRelationalDatabaseCertV9?: boolean;
-  isRespWebDesignCert?: boolean;
-  isRespWebDesignCertV9?: boolean;
-  isSciCompPyCertV7?: boolean;
-  is2018DataVisCert?: boolean;
-}
-
-function getUserIsCertMap(user: CertI) {
+function getUserIsCertMap(user: Partial<CertificationFlags>) {
   const {
+    is2018DataVisCert = false,
+    isA1ChineseCert = false,
+    isA2ChineseCert = false,
     isA2EnglishCert = false,
+    isA2SpanishCert = false,
     isApisMicroservicesCert = false,
+    isB1EnglishCert = false,
     isBackEndCert = false,
+    isBackEndDevApisCertV9 = false,
     isCollegeAlgebraPyCertV8 = false,
     isDataAnalysisPyCertV7 = false,
     isDataVisCert = false,
+    isFoundationalCSharpCertV8 = false,
     isFrontEndCert = false,
     isFrontEndLibsCert = false,
-    isFoundationalCSharpCertV8 = false,
+    isFrontEndLibsCertV9 = false,
     isFullStackCert = false,
+    isFullStackDeveloperCertV9 = false,
     isInfosecCertV7 = false,
     isInfosecQaCert = false,
     isJavascriptCertV9 = false,
@@ -172,21 +154,28 @@ function getUserIsCertMap(user: CertI) {
     isRelationalDatabaseCertV9 = false,
     isRespWebDesignCert = false,
     isRespWebDesignCertV9 = false,
-    isSciCompPyCertV7 = false,
-    is2018DataVisCert = false
+    isSciCompPyCertV7 = false
   } = user;
 
   return {
+    is2018DataVisCert,
+    isA1ChineseCert,
+    isA2ChineseCert,
     isA2EnglishCert,
+    isA2SpanishCert,
     isApisMicroservicesCert,
+    isB1EnglishCert,
     isBackEndCert,
+    isBackEndDevApisCertV9,
     isCollegeAlgebraPyCertV8,
     isDataAnalysisPyCertV7,
     isDataVisCert,
+    isFoundationalCSharpCertV8,
     isFrontEndCert,
     isFrontEndLibsCert,
-    isFoundationalCSharpCertV8,
+    isFrontEndLibsCertV9,
     isFullStackCert,
+    isFullStackDeveloperCertV9,
     isInfosecCertV7,
     isInfosecQaCert,
     isJavascriptCertV9,
@@ -199,8 +188,7 @@ function getUserIsCertMap(user: CertI) {
     isRelationalDatabaseCertV9,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
-    isSciCompPyCertV7,
-    is2018DataVisCert
+    isSciCompPyCertV7
   };
 }
 
@@ -346,16 +334,23 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           username: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
+          isA1ChineseCert: true,
+          isA2ChineseCert: true,
           isA2EnglishCert: true,
+          isA2SpanishCert: true,
           isApisMicroservicesCert: true,
+          isB1EnglishCert: true,
           isBackEndCert: true,
+          isBackEndDevApisCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isDataAnalysisPyCertV7: true,
           isDataVisCert: true,
           isFoundationalCSharpCertV8: true,
           isFrontEndCert: true,
           isFrontEndLibsCert: true,
+          isFrontEndLibsCertV9: true,
           isFullStackCert: true,
+          isFullStackDeveloperCertV9: true,
           isInfosecCertV7: true,
           isInfosecQaCert: true,
           isJavascriptCertV9: true,

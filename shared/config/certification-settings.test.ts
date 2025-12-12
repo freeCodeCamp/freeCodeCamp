@@ -35,7 +35,7 @@ describe('certToIdMap', () => {
 });
 
 describe('certSlugTypeMap', () => {
-  it.todo('should contain a value for all certifications', () => {
+  it('should contain a value for all certifications', () => {
     const allCertifications = Object.values(Certification).sort();
     const certSlugTypeMapKeys = Object.keys(certSlugTypeMap).sort();
 
