@@ -291,9 +291,9 @@ export function updatePreview(
   buildData: BuildChallengeData,
   document: Document,
   proxyLogger: ProxyLogger
-): Promise<void> {
+): Promise<boolean> {
   if (challengeHasPreview(buildData)) {
-    return new Promise<void>(resolve =>
+    return new Promise<boolean>(resolve =>
       createMainPreviewFramer(
         document,
         proxyLogger,
