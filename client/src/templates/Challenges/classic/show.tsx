@@ -463,6 +463,11 @@ function ShowClassic({
     );
   };
 
+  const usesTerminal =
+    challengeFiles == null
+      ? false
+      : challengeFiles.some(file => file.ext == 'py');
+
   return (
     <Hotkeys
       challengeType={challengeType}
@@ -505,6 +510,7 @@ function ShowClassic({
             }
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
+            usesTerminal={usesTerminal}
           />
         )}
         {!isMobile && (
