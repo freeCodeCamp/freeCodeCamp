@@ -7,7 +7,7 @@ export function formatSecondsToTime(s: number) {
   const minutes = Math.floor(s / minuteInSeconds);
   s -= minutes * minuteInSeconds;
 
-  const mm = minutes < 10 && h >= 1 ? `0${minutes}` : minutes;
+  const mm = minutes < 10 ? `0${minutes}` : `${minutes}`;
   const seconds = s % 60;
   const ss = seconds < 10 ? `0${seconds}` : seconds;
 
