@@ -1,4 +1,5 @@
-import { navigate } from 'gatsby';
+import { withPrefix } from 'gatsby';
+import { navigate } from '@gatsbyjs/reach-router';
 import { call, put, take, takeEvery } from 'redux-saga/effects';
 
 import { createFlashMessage } from '../../components/Flash/redux';
@@ -17,9 +18,13 @@ function* deleteAccountSaga() {
         message: FlashMessages.AccountDeleted
       })
     );
+    // navigate before signing out, since /settings will attempt to sign users
+    // back in. Using reach-router's navigate because gatsby's resolves after
+    // the call. This would allow resetUserData to take place while the user is
+    // still on /settings.
+    yield call(navigate, withPrefix('/learn'));
     // remove current user information from application state
     yield put(resetUserData());
-    yield call(navigate, '/learn');
   } catch (e) {
     yield put(deleteAccountError(e));
   }
