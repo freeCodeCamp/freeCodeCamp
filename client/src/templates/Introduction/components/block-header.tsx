@@ -17,6 +17,7 @@ interface BlockHeaderProps {
   courseCompletionStatus: string;
   completedCount: number;
   handleClick: () => void;
+  handleHover?: () => void;
   isCompleted: boolean;
   isExpanded: boolean;
   percentageCompleted: number;
@@ -32,6 +33,7 @@ function BlockHeader({
   completedCount,
   courseCompletionStatus,
   handleClick,
+  handleHover,
   isCompleted,
   isExpanded,
   percentageCompleted,
@@ -68,7 +70,12 @@ function BlockHeader({
     <>
       <h3 className='block-grid-title'>
         {accordion && blockUrl ? (
-          <Link className='block-header' to={blockUrl}>
+          <Link
+            className='block-header'
+            to={blockUrl}
+            onMouseOver={handleHover}
+            onFocus={handleHover}
+          >
             <InnerBlockHeader />
           </Link>
         ) : (
@@ -77,6 +84,8 @@ function BlockHeader({
             aria-controls={`${blockDashed}-panel`}
             className='block-header'
             onClick={handleClick}
+            onMouseOver={handleHover}
+            onFocus={handleHover}
           >
             <InnerBlockHeader />
           </Button>

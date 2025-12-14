@@ -209,8 +209,12 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
     // if the URL includes a hash
     if (location.hash) {
-      const dashedBlock = location.hash.replace('#', '').replace('/', '');
-      return dashedBlock;
+      const dashed = location.hash.replace('#', '').replace('/', '');
+      const blocksSet = new Set(superBlockChallenges.map(c => c.block));
+      if (blocksSet.has(dashed)) return dashed;
+      const challenge = superBlockChallenges.find(c => c.dashedName === dashed);
+      if (challenge) return challenge.block;
+      return dashed;
     }
 
     if (isSignedIn) {

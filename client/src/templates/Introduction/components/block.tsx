@@ -423,8 +423,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -433,6 +431,7 @@ export class Block extends Component<BlockProps> {
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
+            handleHover={this.handleBlockHover}
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
@@ -477,8 +476,6 @@ export class Block extends Component<BlockProps> {
         </Element>
         <div
           className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
         >
           <BlockHeader
             blockDashed={block}
@@ -487,6 +484,7 @@ export class Block extends Component<BlockProps> {
             completedCount={completedCount}
             courseCompletionStatus={courseCompletionStatus()}
             handleClick={this.handleBlockClick}
+            handleHover={this.handleBlockHover}
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
@@ -539,6 +537,7 @@ export class Block extends Component<BlockProps> {
           completedCount={completedCount}
           courseCompletionStatus={courseCompletionStatus()}
           handleClick={this.handleBlockClick}
+          handleHover={this.handleBlockHover}
           isCompleted={isBlockCompleted}
           isExpanded={isExpanded}
           percentageCompleted={percentageCompleted}

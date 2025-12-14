@@ -7,6 +7,7 @@ import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import { Link } from '../../../components/helpers';
 import { ButtonLink } from '../../../components/helpers/button-link';
+import { Element } from 'react-scroll';
 
 interface ChallengeInfo {
   isCompleted: boolean;
@@ -37,8 +38,17 @@ interface IsProjectBlockProps {
 const CheckMark = ({ isCompleted }: { isCompleted: boolean }) =>
   isCompleted ? <GreenPass /> : <GreenNotCompleted />;
 
+const handleChallengeHover = (dashedName: string) => {
+  if (!dashedName) return;
+  window.history.replaceState(null, '', `#${dashedName}`);
+};
+
 const ListChallenge = ({ challenge }: { challenge: ChallengeInfo }) => (
-  <Link to={challenge.fields.slug}>
+  <Link
+    to={challenge.fields.slug}
+    onMouseOver={() => handleChallengeHover(challenge.dashedName)}
+    onFocus={() => handleChallengeHover(challenge.dashedName)}
+  >
     <span>
       <CheckMark isCompleted={challenge.isCompleted} />
     </span>
@@ -59,13 +69,14 @@ export function ChallengesList({ challenges }: ChallengesProps): JSX.Element {
   return (
     <ul className={`map-challenges-ul`}>
       {challenges.map(challenge => (
-        <li
-          className={'map-challenge-title map-challenge-wrap'}
-          id={challenge.dashedName}
+        <Element
+          name={challenge.dashedName}
           key={'map-challenge' + challenge.fields.slug}
         >
-          <ListChallenge challenge={challenge} />
-        </li>
+          <li className={'map-challenge-title map-challenge-wrap'}>
+            <ListChallenge challenge={challenge} />
+          </li>
+        </Element>
       ))}
     </ul>
   );
