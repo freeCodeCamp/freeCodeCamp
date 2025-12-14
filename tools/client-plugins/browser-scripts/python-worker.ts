@@ -67,6 +67,17 @@ async function setupPyodide() {
     }
   );
 
+  try {
+    await pyodide.loadPackage('micropip');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+    const micropip = pyodide.pyimport('micropip');
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-member-access
+    await micropip.install('memory-graph');
+    console.log('memory_graph installed');
+  } catch (e) {
+    console.warn('Failed to install memory-graph:', e);
+  }
+
   ignoreRunMessages = true;
   postMessage({ type: 'stopped' });
 }

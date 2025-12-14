@@ -1,0 +1,14 @@
+{
+    "name": "Demo Memory Graph",
+    "blockLabel": "Demo",
+    "blockLayout": "link",
+    "isUpcomingChange": false,
+    "dashedName": "demo-memory-graph",
+    "challengeOrder": [
+        {
+            "id": "67f41242431cbf3db8ca79c7",
+            "title": "Python References and Mutability"
+        }
+    ],
+    "helpCategory": "Python"
+}
