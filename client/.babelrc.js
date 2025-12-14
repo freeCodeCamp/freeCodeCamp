@@ -40,8 +40,11 @@ const config = {
       {
         languages: [
           'bash',
+          'c',
           'clike',
+          'cpp',
           'css',
+          'csharp',
           'html',
           'javascript',
           'json',

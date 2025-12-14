@@ -315,6 +315,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  saveSubmissionToDB: Joi.bool(),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()

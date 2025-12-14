@@ -49,7 +49,8 @@ export const defaultDonationFormState = {
   }
 };
 
-const initialState = {
+// exported for testing purposes.
+export const initialState = {
   isRandomCompletionThreshold: false,
   donatableSectionRecentlyCompleted: null,
   currentChallengeId: store.get(CURRENT_CHALLENGE_KEY),

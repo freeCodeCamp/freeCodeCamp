@@ -21,6 +21,7 @@ interface Block {
     challengeType: number;
     url?: string;
     msTrophyId?: string;
+    saveSubmissionToDB?: boolean;
   }[];
 }
 
@@ -51,3 +52,13 @@ export function getChallenges(): Block['challenges'] {
       return [...acc, ...challengesForBlock.flat()];
     }, []);
 }
+
+export const challenges = getChallenges();
+
+export const savableChallenges = challenges.reduce((acc, curr) => {
+  if (curr.saveSubmissionToDB) {
+    acc.add(curr.id);
+  }
+
+  return acc;
+}, new Set<string>());
