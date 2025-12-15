@@ -22,7 +22,11 @@ import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
 } from '../../utils/error-formatting.js';
-import { challenges, savableChallenges } from '../../utils/get-challenges.js';
+import {
+  challenges,
+  savableChallenges,
+  isExamId
+} from '../../utils/get-challenges.js';
 import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
@@ -36,7 +40,7 @@ import {
   decodeFiles,
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers.js';
-import { UpdateReqType } from '../../utils/index.js';
+import { UpdateReplyType, UpdateReqType } from '../../utils/index.js';
 import {
   normalizeChallengeType,
   normalizeDate
@@ -91,6 +95,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       //       Determine `challengeType` by `id`
       const { id: projectId, challengeType, solution, githubLink } = req.body;
       const userId = req.user?.id;
+
+      if (isExamId(req.body.id)) {
+        logger.warn('User attempted to submit an exam');
+        void reply.code(403);
+        return reply.send({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+      }
 
       // If `backEndProject`:
       // - `solution` needs to exist, but does not have to be valid URL
@@ -183,6 +196,15 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         `User submitted a backend challenge`
       );
 
+      if (isExamId(req.body.id)) {
+        logger.warn('User attempted to submit an exam');
+        void reply.code(403);
+        return reply.send({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+      }
+
       const user = await fastify.prisma.user.findUniqueOrThrow({
         where: { id: req.user?.id },
 
@@ -240,6 +262,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       const { id, files, challengeType } = req.body;
+
+      if (isExamId(id)) {
+        logger.warn('User attempted to submit an exam');
+        void reply.code(403);
+        return reply.send({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+      }
+
       return await postModernChallengeCompleted(fastify, {
         id,
         files,
@@ -276,6 +308,16 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
       );
 
       const { id, files: encodedFiles, challengeType } = req.body;
+
+      if (isExamId(id)) {
+        logger.warn('User attempted to submit an exam');
+        void reply.code(403);
+        return reply.send({
+          type: 'error',
+          message: 'Exam submissions are not allowed on this endpoint.'
+        });
+      }
+
       const files = encodedFiles ? decodeFiles(encodedFiles) : undefined;
       return await postModernChallengeCompleted(fastify, {
         id,
@@ -597,6 +639,14 @@ export const challengeRoutes: FastifyPluginCallbackTypebox = (
         const userId = req.user?.id;
         const { userCompletedExam, id, challengeType } = req.body;
 
+        if (isExamId(id)) {
+          logger.warn('User attempted to submit an exam');
+          void reply.code(403);
+          return reply.send({
+            error: 'Exam submissions are not allowed on this endpoint.'
+          });
+        }
+
         const { completedChallenges, completedExams, progressTimestamps } =
           await fastify.prisma.user.findUniqueOrThrow({
             where: { id: userId },
@@ -885,7 +935,7 @@ export const challengeTokenRoutes: FastifyPluginCallbackTypebox = (
 async function postCoderoadChallengeCompleted(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.coderoadChallengeCompleted>,
-  reply: FastifyReply
+  reply: UpdateReplyType<typeof schemas.coderoadChallengeCompleted>
 ) {
   const logger = this.log.child({ req, res: reply });
   logger.info({ userId: req.user?.id }, 'User submitted a coderoad challenge');
@@ -1009,12 +1059,21 @@ async function postCoderoadChallengeCompleted(
 async function postDailyCodingChallengeCompleted(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.dailyCodingChallengeCompleted>,
-  reply: FastifyReply
+  reply: UpdateReplyType<typeof schemas.dailyCodingChallengeCompleted>
 ) {
   const logger = this.log.child({ req });
   logger.info(`User ${req.user?.id} submitted a daily coding challenge`);
 
   const { id, language } = req.body;
+
+  if (isExamId(id)) {
+    logger.warn('User attempted to submit an exam');
+    void reply.code(403);
+    return reply.send({
+      type: 'error',
+      message: 'Exam submissions are not allowed on this endpoint.'
+    });
+  }
 
   const user = await this.prisma.user.findUniqueOrThrow({
     where: { id: req.user?.id },
