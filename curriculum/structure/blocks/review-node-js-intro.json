@@ -7,6 +7,5 @@
   "challengeOrder": [
     { "id": "69008f1895af88fc335cb0b6", "title": "NodeJs Intro Review" }
   ],
-  "blockLabel": "review",
-  "usesMultifileEditor": true
+  "blockLabel": "review"
 }
