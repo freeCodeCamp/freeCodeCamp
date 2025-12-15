@@ -681,23 +681,25 @@ async function postExamAttemptHandler(
   );
 
   if (maybeValidExamAttempt.hasError) {
-    logger.warn(
-      { validExamAttemptError: maybeValidExamAttempt.error },
-      'Invalid exam attempt.'
-    );
-    // As attempt is invalid, create moderation record to investigate
-    await this.prisma.examEnvironmentExamModeration.create({
-      data: {
-        examAttemptId: latestAttempt.id,
-        status: ExamEnvironmentExamModerationStatus.Pending
-      }
-    });
-
-    void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
         ? maybeValidExamAttempt.error.message
         : 'Unknown attempt validation error';
+    logger.warn({ validExamAttemptError: message }, 'Invalid exam attempt.');
+    // As attempt is invalid, create moderation record to investigate or update existing record
+    await this.prisma.examEnvironmentExamModeration.upsert({
+      where: { examAttemptId: latestAttempt.id },
+      create: {
+        examAttemptId: latestAttempt.id,
+        status: ExamEnvironmentExamModerationStatus.Pending,
+        feedback: message
+      },
+      update: {
+        feedback: message
+      }
+    });
+
+    void reply.code(400);
     return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
 
