@@ -883,13 +883,6 @@
       "comingSoon": true,
       "modules": [
         {
-          "dashedName": "introduction-to-nodejs",
-          "comingSoon": true,
-          "blocks": [
-            "lecture-working-with-nodejs-and-event-driven-architecture"
-          ]
-        },
-        {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
           "blocks": []

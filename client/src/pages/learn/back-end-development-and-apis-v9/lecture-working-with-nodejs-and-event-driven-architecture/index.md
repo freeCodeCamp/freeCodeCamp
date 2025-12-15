@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Working with NodeJS and event driven architecture
 block: lecture-working-with-nodejs-and-event-driven-architecture
-superBlock: full-stack-developer
+superBlock: back-end-development-and-apis-v9
 ---
 
 ## Introduction to the Working with NodeJS and event driven architecture
