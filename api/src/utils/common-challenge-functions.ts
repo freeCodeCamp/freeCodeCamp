@@ -194,10 +194,7 @@ export async function updateUserChallengeData(
       ? [...progressTimestamps, newProgressTimeStamp]
       : progressTimestamps;
 
-  if (
-    multifileCertProjectIds.includes(challengeId) ||
-    multifilePythonCertProjectIds.includes(challengeId)
-  ) {
+  if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
       id: challengeId,
       lastSavedDate: newProgressTimeStamp,
