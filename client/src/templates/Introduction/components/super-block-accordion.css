@@ -350,3 +350,10 @@ button .block-header-button-text {
     margin-top: -10px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .super-block-accordion .block-label {
+    margin-inline-start: auto;
+    margin-inline-end: 10px;
+  }
+}
