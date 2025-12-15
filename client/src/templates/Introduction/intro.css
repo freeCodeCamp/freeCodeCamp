@@ -396,11 +396,6 @@ a.map-grid-item.challenge-completed {
   .map-challenge-title {
     font-size: 1rem;
   }
-
-  .block-label {
-    margin-inline-start: auto;
-    margin-inline-end: 10px;
-  }
 }
 
 @media screen and (max-width: 767px) {
