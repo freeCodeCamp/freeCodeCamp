@@ -66,10 +66,18 @@ export const savableChallenges = challenges.reduce((acc, curr) => {
   return acc;
 }, new Set<string>());
 
-export const examChallenges = challenges.reduce((acc, curr) => {
+const examChallenges = challenges.reduce((acc, curr) => {
   if (curr.isExam) {
     acc.add(curr.id);
   }
 
   return acc;
 }, new Set<string>());
+
+/**
+ *  Checks if a challenge id is an exam challenge.
+ *
+ * @param id The challenge id to check.
+ * @returns A boolean indicating if the challenge id is an exam challenge.
+ */
+export const isExamId = (id: string): boolean => examChallenges.has(id);

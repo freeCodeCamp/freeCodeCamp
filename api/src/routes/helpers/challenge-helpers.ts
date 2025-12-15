@@ -1,5 +1,3 @@
-import { examChallenges } from '../../utils/get-challenges.js';
-
 /**
  * Confirm that a user can submit a CodeRoad project.
  *
@@ -174,14 +172,4 @@ export function decodeBase64(str: string): string {
  */
 export function encodeBase64(str: string): string {
   return Buffer.from(str, 'utf8').toString('base64');
-}
-
-/**
- *  Checks if a challenge id is an exam challenge.
- *
- * @param challengeId The challenge id to check.
- * @returns Boolean indicating if the challenge id is an exam challenge.
- */
-export function isExamId(challengeId: string): boolean {
-  return examChallenges.has(challengeId);
 }

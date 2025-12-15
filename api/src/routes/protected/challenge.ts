@@ -22,7 +22,11 @@ import {
   formatCoderoadChallengeCompletedValidation,
   formatProjectCompletedValidation
 } from '../../utils/error-formatting.js';
-import { challenges, savableChallenges } from '../../utils/get-challenges.js';
+import {
+  challenges,
+  savableChallenges,
+  isExamId
+} from '../../utils/get-challenges.js';
 import { ProgressTimestamp, getPoints } from '../../utils/progress.js';
 import {
   validateExamFromDbSchema,
@@ -34,7 +38,6 @@ import { generateRandomExam, createExamResults } from '../../utils/exam.js';
 import {
   canSubmitCodeRoadCertProject,
   decodeFiles,
-  isExamId,
   verifyTrophyWithMicrosoft
 } from '../helpers/challenge-helpers.js';
 import { UpdateReplyType, UpdateReqType } from '../../utils/index.js';
