@@ -27,3 +27,39 @@
   color: var(--gray-90) !important;
   border-color: var(--gray-90) !important;
 }
+
+.interactive-layout {
+  display: flex;
+  flex-direction: row; /* Default for desktop: side-by-side */
+  height: 450px;
+}
+
+.interactive-editor-column {
+  flex: 1.5 !important;
+  height: 100% !important;
+}
+
+.interactive-preview-column {
+  flex: 1 !important;
+  height: 100% !important;
+}
+
+.sp-preview {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .interactive-layout {
+    flex-direction: column;
+    height: auto !important; /* Allow the height to expand as content stacks */
+  }
+
+  .interactive-editor-column,
+  .interactive-preview-column {
+    width: 100%;
+    /* Override desktop flex value */
+    flex: 0 0 auto !important;
+    /* Set a reasonable mobile height for the editor */
+    height: 400px !important;
+  }
+}
