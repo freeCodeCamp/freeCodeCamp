@@ -1,34 +1,31 @@
 ---
-id: 63c9eb09bcfaa72e3da820a1
-title: Step 91
+id: 63c9f24afbc9cf324dcaa9a4
+title: Step 95
 challengeType: 0
-dashedName: step-91
+dashedName: step-95
 ---
 
 # --description--
 
-If you click on your `Calculate Budget` button, you'll see that nothing happens. You still need to mount the event listener.
+It is time for another loop. Create a `for...of` loop with a variable called `container` to iterate through the `inputContainers` array.
 
-Add an event listener to your `budgetForm` element. The event type should be `submit`, and the callback function should be `calculateBudget`.
+Inside the loop, set the `innerHTML` property of the `container` to an empty string. This will clear all of the contents of that input container.
 
 # --hints--
 
-You should use the `.addEventListener()` method of your `budgetForm` element.
+Your `for...of` loop should iterate through the `inputContainers` array. The loop's variable name should be `container`.
 
 ```js
-assert.match(code, /budgetForm\.addEventListener\(/);
+const clearForm = code.split("function clearForm()")[1];
+assert.match(clearForm, /for\s*\(\s*(const|let|var)\s+container\s+of\s+inputContainers\s*\)/);
 ```
 
-You should pass `submit` as the first argument to `.addEventListener()`.
+Your `for...of` loop should set the `innerHTML` property of `container` to an empty string.
 
 ```js
-assert.match(code, /budgetForm\.addEventListener\(\s*('|")submit\1\s*/);
-```
-
-You should pass `calculateBudget` as the second argument to `.addEventListener()`.
-
-```js
-assert.match(code, /budgetForm\.addEventListener\(\s*('|")submit\1\s*,\s*calculateBudget\s*/);
+const clearForm = code.split("function clearForm()")[1];
+const forOfLoop = clearForm.split("for")[1];
+assert.match(forOfLoop, /container\s*\.\s*innerHTML\s*=\s*(`|'|")\1\s*/);
 ```
 
 # --seed--
@@ -345,8 +342,14 @@ function getTotalFromInputs(list) {
   return total;
 }
 
-addEntryButton.addEventListener("click", addEntry);
+--fcc-editable-region--
+function clearForm() {
+  const inputContainers = Array.from(document.querySelectorAll('.input-container'));
+
+
+}
 --fcc-editable-region--
 
---fcc-editable-region--
+addEntryButton.addEventListener("click", addEntry);
+budgetForm.addEventListener("submit", calculateBudget);
 ```
