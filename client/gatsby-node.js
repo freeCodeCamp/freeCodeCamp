@@ -103,6 +103,7 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
+              saveSubmissionToDB
               solutions {
                 contents
                 ext
@@ -323,9 +324,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       hooks: Hooks
       id: String
       instructions: String
-      isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
+      lang: String
       module: String
       msTrophyId: String
       nodules: [Nodule]
@@ -335,6 +336,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       questions: [Question]
       quizzes: [Quiz]
       required: [RequiredResource]
+      saveSubmissionToDB: Boolean
       scene: Scene
       solutions: [[FileContents]]
       suborder: Int
@@ -342,6 +344,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       superOrder: Int
       template: String
       tests: [Test]
+      fields: ChallengeFields
       title: String
       transcript: String
       translationPending: Boolean
@@ -387,6 +390,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Answer {
       answer: String
       feedback: String
+      audioId: String
     }
     type RequiredResource {
       link: String
@@ -409,6 +413,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type FillInTheBlank {
       sentence: String
       blanks: [Blank]
+      inputType: String
     }
     type Blank {
       answer: String
@@ -467,7 +472,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeAll: String
       afterAll: String
     }
-
+    type ChallengeFields {
+      slug: String
+    }
     type Nodule {
       type: String
       data: JSON

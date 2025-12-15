@@ -18,7 +18,9 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
-    "build": "tsx --tsconfig ../tsconfig.json ../tools/scripts/build/build-curriculum",
+    "audit-challenges": "pnpm -w run compile:ts && tsx ./src/challenge-auditor/index.ts",
+    "build": "tsx ./src/generate/build-curriculum",
+    "compile": "tsc --build --clean && tsc --build",
     "create-empty-steps": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",
     "create-this-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/create-this-challenge",
@@ -31,7 +33,8 @@
     "delete-step": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-step",
     "delete-challenge": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-challenge",
     "delete-task": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/delete-task",
-    "lint": "tsx --tsconfig ../tsconfig.json src/lint-localized",
+    "lint": "eslint --max-warnings 0",
+    "lint-challenges": "tsx --tsconfig ../tsconfig.json src/lint-localized",
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
@@ -41,12 +44,15 @@
   "devDependencies": {
     "@babel/core": "7.23.7",
     "@babel/register": "7.23.7",
+    "@freecodecamp/eslint-config": "workspace:*",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/debug": "^4.1.12",
     "@types/js-yaml": "4.0.5",
     "@types/polka": "^0.5.7",
     "@types/string-similarity": "^4.0.2",
+    "@typescript/vfs-1.6.1": "npm:@typescript/vfs@1.6.1",
     "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
     "glob": "8.1.0",
     "joi": "17.12.2",
     "joi-objectid": "3.0.1",
@@ -58,9 +64,9 @@
     "ora": "5.4.1",
     "polka": "^0.5.2",
     "puppeteer": "22.12.1",
-    "readdirp": "3.6.0",
     "sirv": "^3.0.2",
     "string-similarity": "4.0.4",
+    "typescript-5.9.2": "npm:typescript@5.9.2",
     "vitest": "^3.2.4"
   }
 }

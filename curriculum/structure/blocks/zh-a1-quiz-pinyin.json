@@ -2,8 +2,8 @@
   "name": "The Pinyin Quiz",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-quiz-pinyin",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "link",
   "challengeOrder": [
     {
       "id": "68fa3f7908e4fcf3f81d1be0",

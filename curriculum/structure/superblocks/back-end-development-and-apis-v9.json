@@ -5,6 +5,11 @@
       "comingSoon": true,
       "modules": [
         {
+          "dashedName": "introduction-to-nodejs",
+          "comingSoon": true,
+          "blocks": ["quiz-node-js-intro"]
+        },
+        {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
           "blocks": []
@@ -60,6 +65,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "back-end-development-and-apis-certification-exam",
           "blocks": ["exam-back-end-development-and-apis-certification"]
         }

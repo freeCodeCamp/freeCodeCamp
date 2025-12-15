@@ -4,27 +4,34 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 const certs = [
   {
-    name: 'Responsive Web Design',
+    name: 'Foundational C# with Microsoft',
+    url: '/certification/certifieduser/foundational-c-sharp-with-microsoft'
+  }
+];
+
+const legacyCerts = [
+  {
+    name: 'Legacy Responsive Web Design V8',
     url: '/certification/certifieduser/responsive-web-design'
   },
   {
-    name: 'JavaScript Algorithms and Data Structures',
+    name: 'Legacy JavaScript Algorithms and Data Structures V8',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
-    name: 'Front End Development Libraries',
+    name: 'Front End Development Libraries V8',
     url: '/certification/certifieduser/front-end-development-libraries'
   },
   {
-    name: 'Data Visualization',
+    name: 'Data Visualization V8',
     url: '/certification/certifieduser/data-visualization'
   },
   {
-    name: 'Relational Database',
+    name: 'Relational Database V8',
     url: '/certification/certifieduser/relational-database-v8'
   },
   {
-    name: 'Back End Development and APIs',
+    name: 'Back End Development and APIs V8',
     url: '/certification/certifieduser/back-end-development-and-apis'
   },
   {
@@ -52,18 +59,11 @@ const certs = [
     url: '/certification/certifieduser/college-algebra-with-python-v8'
   },
   {
-    name: 'Foundational C# with Microsoft',
-    url: '/certification/certifieduser/foundational-c-sharp-with-microsoft'
-  }
-];
-
-const legacyCerts = [
-  {
     name: 'Legacy Front End',
     url: '/certification/certifieduser/legacy-front-end'
   },
   {
-    name: 'Legacy JavaScript Algorithms and Data Structures',
+    name: 'Legacy JavaScript Algorithms and Data Structures V7',
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
   },
   {
@@ -78,7 +78,10 @@ const legacyCerts = [
     name: 'Legacy Information Security and Quality Assurance',
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
-  { name: 'Legacy Full Stack', url: '/certification/certifieduser/full-stack' }
+  {
+    name: 'Legacy Full Stack',
+    url: '/certification/certifieduser/full-stack'
+  }
 ];
 
 test.describe('Profile component', () => {
