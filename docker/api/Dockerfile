@@ -58,6 +58,6 @@ COPY --from=builder --chown=node:node /home/node/build/packages/shared/ packages
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
-COPY --from=deps --chown=node:node /home/node/build/packages/shared/node_modules/ packages/shared/node_modules/
+# packages/shared has no prod dependencies, so no need to copy them
 
 CMD ["node", "api/src/server.js"]
