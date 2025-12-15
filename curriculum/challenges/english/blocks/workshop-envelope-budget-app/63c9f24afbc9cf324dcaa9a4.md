@@ -1,8 +1,8 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Step 95
+title: Step 94
 challengeType: 0
-dashedName: step-95
+dashedName: step-94
 ---
 
 # --description--
@@ -268,6 +268,7 @@ function isInvalidInput(str) {
 }
 
 function addEntry() {
+  const category = entryDropdown.value;
   const targetInputContainer = document.querySelector(`#${category} .input-container`);
   const entryNumber = targetInputContainer.querySelectorAll('input[type="text"]').length + 1;
   const HTMLString = `
