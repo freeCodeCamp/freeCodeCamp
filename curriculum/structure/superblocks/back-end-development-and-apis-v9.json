@@ -5,7 +5,7 @@
       "comingSoon": true,
       "modules": [
         {
-          "dashedName": "nodejs-core-libraries",
+          "dashedName": "nodejs-core-modules",
           "comingSoon": true,
           "blocks": []
         },
