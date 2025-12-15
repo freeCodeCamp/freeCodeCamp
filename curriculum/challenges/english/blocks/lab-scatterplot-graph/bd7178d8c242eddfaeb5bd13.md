@@ -1072,8 +1072,6 @@ div.tooltip {
 ```
 
 ```js
-var projectName = 'scatter-plot';
-
 // coded by @paycoguy
 
 var url =
