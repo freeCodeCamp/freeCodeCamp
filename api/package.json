@@ -12,6 +12,7 @@
     "@fastify/swagger": "9.6.1",
     "@fastify/swagger-ui": "5.2.4",
     "@fastify/type-provider-typebox": "6.1.0",
+    "@freecodecamp/shared": "workspace:*",
     "@growthbook/growthbook": "1.6.2",
     "@prisma/client": "6.16.2",
     "@sentry/node": "9.47.1",
