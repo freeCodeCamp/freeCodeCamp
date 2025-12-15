@@ -8784,6 +8784,10 @@
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
         "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
       }
     }
   },
