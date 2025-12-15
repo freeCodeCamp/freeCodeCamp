@@ -13,10 +13,7 @@ import {
   BilibiliIds
 } from '../../../redux/prop-types';
 import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '@freecodecamp/shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { Block } from './block';
 
 vi.mock('@freecodecamp/shared/utils/is-audited', () => ({

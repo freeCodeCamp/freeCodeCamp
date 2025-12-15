@@ -144,10 +144,7 @@ vi.mock('../../components/helpers', () => ({
   )
 }));
 
-import {
-  BlockLabel,
-  BlockLayouts
-} from '@freecodecamp/shared/config/blocks';
+import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import SuperBlockIntroductionPage from './super-block-intro';
 
