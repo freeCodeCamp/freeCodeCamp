@@ -38,13 +38,14 @@ WORKDIR /home/node/build
 COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node package.json .
 COPY --chown=node:node api/ api/
+COPY --chown=node:node packages/shared/ packages/shared/
 RUN npm i -g pnpm@10
 
 # Weirdly this config does not seem necessary for the new api (the same number
 # of deps are installed in both cases), but I'm including it just for
 # consistency.
 RUN pnpm config set dedupe-peer-dependents false
-RUN pnpm install --prod --ignore-scripts -F=api --frozen-lockfile
+RUN pnpm install --prod --ignore-scripts -F=api -F=packages/shared --frozen-lockfile
 RUN cd api && npx prisma@$(jq -r '.devDependencies.prisma' < package.json) generate
 
 FROM node:22-bookworm
@@ -53,8 +54,10 @@ WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
 COPY --from=builder --chown=node:node /home/node/build/curriculum/generated/curriculum.json curriculum/generated/
+COPY --from=builder --chown=node:node /home/node/build/packages/shared/ packages/shared/
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
+COPY --from=deps --chown=node:node /home/node/build/packages/shared/node_modules/ packages/shared/node_modules/
 
 CMD ["node", "api/src/server.js"]

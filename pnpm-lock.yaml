@@ -119,6 +119,9 @@ importers:
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
         version: 6.1.0(typebox@1.0.43)
+      '@freecodecamp/shared':
+        specifier: workspace:*
+        version: link:../packages/shared
       '@growthbook/growthbook':
         specifier: 1.3.1
         version: 1.3.1
@@ -198,9 +201,6 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
-      '@freecodecamp/shared':
-        specifier: workspace:*
-        version: link:../packages/shared
       '@total-typescript/ts-reset':
         specifier: 0.5.1
         version: 0.5.1
