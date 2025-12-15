@@ -9,10 +9,7 @@ import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types'
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '@freecodecamp/shared/config/chapters';
 import { Link } from '../../../components/helpers';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '@freecodecamp/shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { FsdChapters } from '@freecodecamp/shared/config/chapters';
 import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';

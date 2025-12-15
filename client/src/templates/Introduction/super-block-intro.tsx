@@ -35,10 +35,7 @@ import type {
 } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
 import { superBlockToCertMap } from '@freecodecamp/shared/config/certification-settings';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '@freecodecamp/shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import LegacyLinks from './components/legacy-links';
 import HelpTranslate from './components/help-translate';
 import SuperBlockIntro from './components/super-block-intro';

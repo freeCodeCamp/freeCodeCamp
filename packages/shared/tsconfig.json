@@ -4,6 +4,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "composite": true,
-    "noEmit": false,
+    "noEmit": false
   }
 }
