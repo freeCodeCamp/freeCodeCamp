@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Debug a Donation Form
 block: lab-debug-donation-form
-superBlock: full-stack-developer
+superBlock: responsive-web-design-v9
 ---
 
 ## Introduction to the Debug a Donation Form
