@@ -1,7 +1,7 @@
 ---
 title: Introduction to the NodeJS Intro Quiz
 block: quiz-node-js-intro
-superBlock: full-stack-developer
+superBlock: back-end-development-and-apis-v9
 ---
 
 ## Introduction to the NodeJS Intro Quiz
