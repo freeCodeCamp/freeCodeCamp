@@ -901,7 +901,13 @@ describe('challengeRoutes', () => {
             alreadyCompleted: false,
             points: 1,
             completedDate,
-            savedChallenges: []
+            savedChallenges: [
+              {
+                files: jsFiles,
+                id: JsProjectId,
+                lastSavedDate: expect.any(Number)
+              }
+            ]
           });
           expect(response.statusCode).toBe(200);
         });
@@ -1089,7 +1095,13 @@ describe('challengeRoutes', () => {
           alreadyCompleted: false,
           points: 1,
           completedDate,
-          savedChallenges: []
+          savedChallenges: [
+            {
+              files: jsFiles,
+              id: JsProjectId,
+              lastSavedDate: expect.any(Number)
+            }
+          ]
         });
         expect(response.statusCode).toBe(200);
       });

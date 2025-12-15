@@ -21,9 +21,7 @@ const fullStackCertificateIds = [
  * @param certSlug - The certification slug to check.
  * @returns True if the certification slug is known, otherwise false.
  */
-export function isKnownCertSlug(
-  certSlug: string
-): certSlug is keyof typeof certSlugTypeMap {
+export function isKnownCertSlug(certSlug: string): certSlug is Certification {
   return certSlug in certSlugTypeMap;
 }
 

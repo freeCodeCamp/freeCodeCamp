@@ -103,6 +103,7 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
+              saveSubmissionToDB
               solutions {
                 contents
                 ext
@@ -326,6 +327,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       instructions: String
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
+      lang: String
       module: String
       msTrophyId: String
       nodules: [Nodule]
@@ -335,6 +337,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       questions: [Question]
       quizzes: [Quiz]
       required: [RequiredResource]
+      saveSubmissionToDB: Boolean
       scene: Scene
       solutions: [[FileContents]]
       suborder: Int

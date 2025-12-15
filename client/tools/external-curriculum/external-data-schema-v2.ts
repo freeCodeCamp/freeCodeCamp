@@ -20,6 +20,8 @@ const blockSchema = Joi.object().keys({
         'Backend Development',
         'C-Sharp',
         'English',
+        'Chinese Curriculum',
+        'Spanish Curriculum',
         'Odin',
         'Euler',
         'Rosetta'

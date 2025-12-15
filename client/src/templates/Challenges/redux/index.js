@@ -25,7 +25,8 @@ const initialState = {
     isLastChallengeInBlock: false,
     nextChallengePath: '/',
     prevChallengePath: '/',
-    challengeType: -1
+    challengeType: -1,
+    saveSubmissionToDB: false
   },
   challengeTests: [],
   consoleOut: [],

@@ -14,10 +14,7 @@ import {
   takeLatest
 } from 'redux-saga/effects';
 
-import {
-  canSaveToDB,
-  challengeTypes
-} from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -77,11 +74,13 @@ const LOGS_TO_IGNORE = [
 
 // when 'run tests' is clicked, do this first
 function* executeCancellableChallengeSaga(payload) {
-  const { challengeType, id } = yield select(challengeMetaSelector);
+  const { challengeType, id, saveSubmissionToDB } = yield select(
+    challengeMetaSelector
+  );
   const { challengeFiles } = yield select(challengeDataSelector);
 
   // if canSaveToDB, see if body/code size is submittable
-  if (canSaveToDB(challengeType)) {
+  if (saveSubmissionToDB) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 

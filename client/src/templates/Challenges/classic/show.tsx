@@ -213,7 +213,8 @@ function ShowClassic({
         videoUrl,
         translationPending,
         instructionsInEditor,
-        includesBlockInTimeline
+        includesBlockInTimeline,
+        saveSubmissionToDB
       }
     }
   },
@@ -554,7 +555,10 @@ function ShowClassic({
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} challengeTitle={title} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
@@ -617,6 +621,7 @@ export const query = graphql`
           editableRegionBoundaries
           history
         }
+        saveSubmissionToDB
         tests {
           text
           testString

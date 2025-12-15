@@ -154,6 +154,7 @@ export type Challenge = {
   missing?: boolean;
   challengeFiles?: ChallengeFile[];
   solutions?: ChallengeFile[][];
+  lang?: string;
 };
 
 export interface BlockStructure {
