@@ -885,7 +885,7 @@
         {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
-          "blocks": ["quiz-node-js-core-modules"]
+          "blocks": []
         },
         {
           "dashedName": "node-package-manager",
