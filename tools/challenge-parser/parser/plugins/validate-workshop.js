@@ -1,21 +1,26 @@
 const { findAll } = require('./utils/find-all');
 const { isMarker } = require('./utils/get-section');
+const visit = require('unist-util-visit');
 
 const FCC_EDITABLE_REGION = '--fcc-editable-region--';
 const SOLUTIONS_HEADER = '--solutions--';
 
-const isEditableMarker = node => {
-  if (node.children && node.children[0]) {
-    const child = node.children[0];
-    return child.type === 'text' && child.value === FCC_EDITABLE_REGION;
-  }
-  return false;
-};
+function findEditableRegionMarkersInAST(tree) {
+  const markers = [];
+
+  visit(tree, 'text', node => {
+    if (node.value && node.value.trim() === FCC_EDITABLE_REGION) {
+      markers.push(node);
+    }
+  });
+
+  return markers;
+}
 
 function validateWorkshop() {
   return function transformer(tree) {
     const allMarkers = findAll(tree, isMarker);
-    const allEditableMarkers = findAll(tree, isEditableMarker);
+    const allEditableMarkers = findEditableRegionMarkersInAST(tree);
     const isWorkshop = allEditableMarkers.length > 0;
 
     // Quick heuristic: only run when editable-region marker exists
@@ -33,16 +38,17 @@ function validateWorkshop() {
     // 2) Ensure solutions header only in last step.
     for (let i = 0; i < allMarkers.length; i++) {
       const markerText = allMarkers[i].children[0].value;
+
       if (markerText === SOLUTIONS_HEADER && i !== allMarkers.length - 1) {
         throw new Error(
-          `Validation error: “${SOLUTIONS_HEADER}” header appears before the last step. The “${SOLUTIONS_HEADER}” header must only appear in the final step.`
+          `Validation error: "${SOLUTIONS_HEADER}" header appears before the last step. The "${SOLUTIONS_HEADER}" header must only appear in the final step.`
         );
       } else if (
         markerText !== SOLUTIONS_HEADER &&
         i === allMarkers.length - 1
       ) {
         throw new Error(
-          `Validation error: Expected the final step to be the “${SOLUTIONS_HEADER}” section, but found “${markerText}” instead.`
+          `Validation error: Expected the final step to be the "${SOLUTIONS_HEADER}" section, but found "${markerText}" instead.`
         );
       }
     }

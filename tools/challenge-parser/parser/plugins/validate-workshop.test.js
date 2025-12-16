@@ -1,9 +1,10 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
 import unified from 'unified';
 import remark from 'remark-parse';
 import frontmatter from 'remark-frontmatter';
 import addFrontmatter from './add-frontmatter';
 import validateWorkshop from './validate-workshop';
+import parseFixture from '../__fixtures__/parse-fixture';
 
 const processor = unified()
   .use(remark)
@@ -12,52 +13,6 @@ const processor = unified()
   .use(validateWorkshop);
 
 // Files for testing. Defined at the start to keep the tests formatting cleaner.
-const nonWorkshopFile = `---
-id: workshop-test
-title: Workshop Test
----
-# --scene--
-## Step 1
-Some instructions for step 1.
-
-# --description--
-## Step 2
-Some content for step 2.
-
----
-`;
-
-const validFile = `---
-id: workshop-test
-title: Workshop Test
----
-
-# Step 1
---fcc-editable-region--
-Some instructions for step 1.
-
----
-# Step 2
-Some content for step 2.
---fcc-editable-region--
-
----
-# --solutions--
-Here are the solutions.
-`;
-
-const fileWithOne = `---
-id: workshop-one-marker
-title: One marker
----
-
-# Step 1
---fcc-editable-region--
-
----
-# --solutions--
-Solution text
-`;
 
 const fileWithThree = `---
 id: workshop-three-markers
@@ -99,21 +54,50 @@ Some final content.
 `;
 
 describe('validate-workshop plugin', () => {
+  let simpleAST,
+    withErmsOnOneLineAST,
+    withEditableMarkersAST,
+    withOneEditableMarkerAST;
+
+  const plugin = validateWorkshop();
+
+  let file = { data: {} };
+
+  beforeAll(async () => {
+    simpleAST = await parseFixture('simple.md');
+    withErmsOnOneLineAST = await parseFixture(
+      'with-editable-markers-on-one-line.md'
+    );
+    withEditableMarkersAST = await parseFixture('with-editable-markers.md');
+    withOneEditableMarkerAST = await parseFixture(
+      'with-one-editable-marker.md'
+    );
+  });
+
+  beforeEach(() => {
+    file = { data: {} };
+  });
+
+  it('returns a function', () => {
+    expect(typeof plugin).toEqual('function');
+  });
+
   it('passes for a files without any editable section', () => {
     expect(() => {
-      processor.runSync(processor.parse(nonWorkshopFile));
+      plugin(simpleAST, file);
     }).not.toThrow();
   });
 
   it('passes for a workshop with exactly two editable regions and "--solutions--" only in final step', () => {
     expect(() => {
-      processor.runSync(processor.parse(validFile));
+      plugin(withErmsOnOneLineAST);
+      plugin(withEditableMarkersAST);
     }).not.toThrow();
   });
 
   it('throws when the number of --fcc-editable-region-- markers is not exactly two', () => {
     expect(() => {
-      processor.runSync(processor.parse(fileWithOne));
+      plugin(withOneEditableMarkerAST);
     }).toThrow(
       'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 1.'
     );
@@ -129,7 +113,7 @@ describe('validate-workshop plugin', () => {
     expect(() => {
       processor.runSync(processor.parse(solutionInTheMiddleFile));
     }).toThrow(
-      'Validation error: “--solutions--” header appears before the last step. The “--solutions--” header must only appear in the final step.'
+      /Validation error: "--solutions--" header appears before the last step/
     );
   });
 });
