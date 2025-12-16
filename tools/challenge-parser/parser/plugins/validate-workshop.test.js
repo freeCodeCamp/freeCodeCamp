@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
 import validateWorkshop from './validate-workshop';
 import parseFixture from '../__fixtures__/parse-fixture';
 
@@ -8,11 +8,12 @@ describe('validate-workshop plugin', () => {
     withEditableMarkersAST,
     workshopOneMarkerAST,
     workshopThreeMarkersAST,
-    workshopSolutionsInMiddleAST;
+    workshopSolutionsInMiddleAST,
+    workshopNoSolutionsAST,
+    workshopMultipleSolutionsAST,
+    workshopValidTwoMarkersAST;
 
   const plugin = validateWorkshop();
-
-  let file = { data: {} };
 
   beforeAll(async () => {
     simpleAST = await parseFixture('simple.md');
@@ -25,10 +26,13 @@ describe('validate-workshop plugin', () => {
     workshopSolutionsInMiddleAST = await parseFixture(
       'workshop-solutions-in-middle.md'
     );
-  });
-
-  beforeEach(() => {
-    file = { data: {} };
+    workshopNoSolutionsAST = await parseFixture('workshop-no-solutions.md');
+    workshopMultipleSolutionsAST = await parseFixture(
+      'workshop-multiple-solutions.md'
+    );
+    workshopValidTwoMarkersAST = await parseFixture(
+      'workshop-valid-two-markers.md'
+    );
   });
 
   it('returns a function', () => {
@@ -37,7 +41,7 @@ describe('validate-workshop plugin', () => {
 
   it('passes for a files without any editable section', () => {
     expect(() => {
-      plugin(simpleAST, file);
+      plugin(simpleAST);
     }).not.toThrow();
   });
 
@@ -45,18 +49,19 @@ describe('validate-workshop plugin', () => {
     expect(() => {
       plugin(withErmsOnOneLineAST);
       plugin(withEditableMarkersAST);
+      plugin(workshopValidTwoMarkersAST);
     }).not.toThrow();
   });
 
   it('throws when the number of --fcc-editable-region-- markers is not exactly two', () => {
     expect(() => {
-      plugin(workshopOneMarkerAST, file);
+      plugin(workshopOneMarkerAST);
     }).toThrow(
       'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 1.'
     );
 
     expect(() => {
-      plugin(workshopThreeMarkersAST, file);
+      plugin(workshopThreeMarkersAST);
     }).toThrow(
       'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 3.'
     );
@@ -64,7 +69,23 @@ describe('validate-workshop plugin', () => {
 
   it('throws when a --solutions-- header appears before the last step', () => {
     expect(() => {
-      plugin(workshopSolutionsInMiddleAST, file);
+      plugin(workshopSolutionsInMiddleAST);
+    }).toThrow(
+      'Validation error: "--solutions--" header appears before the last step.'
+    );
+  });
+
+  it('throws when the final step is not a --solutions-- section', () => {
+    expect(() => {
+      plugin(workshopNoSolutionsAST);
+    }).toThrow(
+      'Validation error: Expected the final step to be the "--solutions--" section, but found "--scene--" instead.'
+    );
+  });
+
+  it('throws when there are multiple --solutions-- headers', () => {
+    expect(() => {
+      plugin(workshopMultipleSolutionsAST);
     }).toThrow(
       'Validation error: "--solutions--" header appears before the last step.'
     );
