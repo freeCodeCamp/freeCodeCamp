@@ -473,7 +473,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout instructionsInEditor={instructionsInEditor}>
+      <LearnLayout>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout

@@ -137,6 +137,12 @@ export const completedDailyCodingChallengesIdsSelector = createSelector(
   completedChallenges => completedChallenges.map(node => node.id)
 );
 
+export const instructionsInEditorSelector = state =>
+  Boolean(state?.challenge?.challengeMeta?.instructionsInEditor);
+
+export const includesBlockInTimelineSelector = state =>
+  Boolean(state?.challenge?.challengeMeta?.includesBlockInTimeline);
+
 export const completionStateSelector = createSelector(
   [
     allChallengesInfoSelector,
