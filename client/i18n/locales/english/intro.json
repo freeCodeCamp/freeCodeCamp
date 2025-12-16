@@ -8944,9 +8944,9 @@
         "title": "Special Spelling Rules",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": { 
+      "zh-a1-practice-pinyin": {
         "title": "Pinyin Practice",
-         "intro": ["", ""]
+        "intro": ["", ""]
       }
     }
   },
