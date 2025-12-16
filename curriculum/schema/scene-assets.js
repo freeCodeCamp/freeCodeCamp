@@ -301,12 +301,17 @@ const availableAudios = [
   'ES_A1_vowels_aiu.mp3',
   'ES_A1_vowels_oiu.mp3',
   'ES_A1_vowels_uae.mp3',
-  'ZH_A1_1.1.mp3',
-  'ZH_A1_1.2.mp3',
-  'ZH_A1_1.3.mp3',
-  'ZH_A1_1.4.mp3',
-  'ZH_A1_warmup_vocabulary.mp3',
-  'ZH_A1_welcome_hello_world.mp3'
+  'ZH_A1_greeting_and_introduction_wanghua.mp3',
+  'ZH_A1_greeting_and_introduction_liuming.mp3',
+  'ZH_A1_greeting_and_introduction_chenna.mp3',
+  'ZH_A1_greeting_and_introduction_dialogue.mp3',
+  'ZH_A1_greeting_and_introduction_warm_up.mp3',
+  'ZH_A1_chinese_fundamentals_hello_world.mp3',
+  'ZH_A1_pinyin_single_finals.mp3',
+  'ZH_A1_pinyin_initials.mp3',
+  'ZH_A1_pinyin_compound_finals.mp3',
+  'ZH_A1_pinyin_nasal_finals.mp3',
+  'ZH_A1_pinyin_special_spelling_rules.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];
