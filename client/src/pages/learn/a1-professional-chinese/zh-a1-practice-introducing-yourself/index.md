@@ -1,6 +1,6 @@
 ---
 title: Introduction to the ​Building Your Self-Introduction
-block: zh-a1-practice-building-your-self-introduction
+block: zh-a1-practice-introducing-yourself
 superBlock: a1-professional-chinese
 ---
 

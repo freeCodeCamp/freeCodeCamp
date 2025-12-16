@@ -33,8 +33,8 @@
           "dashedName": "zh-a1-module-greetings-and-basic-introductions",
           "blocks": [
             "zh-a1-warm-up-greeting-new-colleagues",
-            "zh-a1-learn-understanding-the-greetings-and-introductions",
-            "zh-a1-practice-building-your-self-introduction",
+            "zh-a1-learn-understanding-greetings-and-introductions",
+            "zh-a1-practice-introducing-yourself",
             "zh-a1-review-greetings-and-introductions",
             "zh-a1-quiz-greetings-and-introductions"
           ]
@@ -43,7 +43,7 @@
           "dashedName": "zh-a1-module-asking-and-giving-basic-information",
           "blocks": [
             "zh-a1-warm-up-meeting-new-teammates",
-            "zh-a1-learn-understanding-the-questions-and-answers",
+            "zh-a1-learn-understanding-questions-and-answers",
             "zh-a1-practice-exchanging-basic-information",
             "zh-a1-review-introduction-questions",
             "zh-a1-quiz-introduction-questions"
@@ -58,7 +58,7 @@
           "dashedName": "zh-a1-module-introducing-others",
           "blocks": [
             "zh-a1-warm-up-introducing-others-basics",
-            "zh-a1-learn-the-team",
+            "zh-a1-learn-meeting-the-team",
             "zh-a1-learn-a-new-colleague",
             "zh-a1-learn-my-family",
             "zh-a1-practice-introducing-others",

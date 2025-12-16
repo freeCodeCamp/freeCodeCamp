@@ -1,6 +1,6 @@
 ---
 title: Introduction to the The Team
-block: zh-a1-learn-the-team
+block: zh-a1-learn-meeting-the-team
 superBlock: a1-professional-chinese
 ---
 
