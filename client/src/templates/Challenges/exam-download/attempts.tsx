@@ -58,6 +58,7 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       case 'InProgress':
         return t('exam.in-progress');
       case 'PendingModeration':
+      case 'AwaitingChallenges':
         return t('exam.pending');
       case 'Expired':
         return t('exam.pending');
@@ -75,6 +76,7 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       case 'InProgress':
         return t('exam.in-progress');
       case 'PendingModeration':
+      case 'AwaitingChallenges':
         return t('exam.pending');
       case 'Expired':
         return t('exam.pending');
