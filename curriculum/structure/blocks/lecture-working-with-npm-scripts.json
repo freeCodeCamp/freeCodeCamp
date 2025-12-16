@@ -1,0 +1,23 @@
+{
+  "name": "Working with npm Scripts",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-npm-scripts",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "692ab9f91d74951aeba05c00", "title": "What Are npm Scripts?" },
+    {
+      "id": "692aba0978ca391f10455b4a",
+      "title": "How Can You Publish a Package to the npm Registry?"
+    },
+    {
+      "id": "692aba0a78ca391f10455b4b",
+      "title": "How Do Imports and Exports Work with CommonJS Modules?"
+    },
+    {
+      "id": "692aba0a78ca391f10455b4c",
+      "title": "How Do Imports and Exports Work with ES Modules?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

@@ -10,10 +10,7 @@ import {
 import store from 'store';
 import { navigate } from 'gatsby';
 
-import {
-  certTypeIdMap,
-  certTypes
-} from '../../../../shared-dist/config/certification-settings';
+import { Certification } from '../../../../shared-dist/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import {
@@ -191,7 +188,7 @@ function* verifyCertificationSaga({ payload }) {
 
   // (20/06/2022) Full Stack client-side validation is already done here:
   // https://github.com/freeCodeCamp/freeCodeCamp/blob/main/client/src/components/settings/certification.js#L309
-  if (currentCert?.id !== certTypeIdMap[certTypes.fullStack]) {
+  if (currentCert?.certSlug !== Certification.LegacyFullStack) {
     const flash = {
       type: 'info',
       message: 'flash.incomplete-steps',

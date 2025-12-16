@@ -7,7 +7,10 @@
         {
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": ["review-node-js-intro"]
+          "blocks": [
+            "review-node-js-intro",
+            "quiz-node-js-intro"
+          ]
         },
         {
           "dashedName": "nodejs-core-libraries",
@@ -17,7 +20,7 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-working-with-npm-scripts"]
         },
         {
           "dashedName": "http-and-the-web-standards-model",

@@ -148,8 +148,9 @@ interface CodespacesContinueAlertProps {
 }
 
 function CodespacesContinueAlert({ title }: CodespacesContinueAlertProps) {
+  const { t } = useTranslation();
   return (
-    <Callout variant='info'>
+    <Callout variant='note' label={t('misc.note')}>
       <Trans values={{ title }} i18nKey='learn.codespaces.continue-project'>
         <a
           href='https://github.com/freeCodeCamp/rdb-alpha'
@@ -183,7 +184,7 @@ function CodespacesLogoutAlert({
   const { t } = useTranslation();
 
   return (
-    <Callout variant='danger'>
+    <Callout variant='caution' label={t('misc.caution')}>
       {t('learn.codespaces.logout-warning', { course })}
     </Callout>
   );
