@@ -1,63 +1,14 @@
 import { describe, it, expect, beforeAll, beforeEach } from 'vitest';
-import unified from 'unified';
-import remark from 'remark-parse';
-import frontmatter from 'remark-frontmatter';
-import addFrontmatter from './add-frontmatter';
 import validateWorkshop from './validate-workshop';
 import parseFixture from '../__fixtures__/parse-fixture';
-
-const processor = unified()
-  .use(remark)
-  .use(frontmatter, ['yaml'])
-  .use(addFrontmatter)
-  .use(validateWorkshop);
-
-// Files for testing. Defined at the start to keep the tests formatting cleaner.
-
-const fileWithThree = `---
-id: workshop-three-markers
-title: Three markers
----
-
-# Step 1
---fcc-editable-region--
-
----
-# Step 2
---fcc-editable-region--
-
----
-# Final Step
---fcc-editable-region--
-
-# --solutions--
-Solution text
-`;
-
-const solutionInTheMiddleFile = `---
-id: workshop-bad-solutions
-title: Solutions in middle
----
-
-# Step 1
---fcc-editable-region--
-
---fcc-editable-region--
-
----
-# --solutions--
-This solutions section is in the middle — invalid.
-
----
-# --scene--
-Some final content.
-`;
 
 describe('validate-workshop plugin', () => {
   let simpleAST,
     withErmsOnOneLineAST,
     withEditableMarkersAST,
-    withOneEditableMarkerAST;
+    workshopOneMarkerAST,
+    workshopThreeMarkersAST,
+    workshopSolutionsInMiddleAST;
 
   const plugin = validateWorkshop();
 
@@ -69,8 +20,10 @@ describe('validate-workshop plugin', () => {
       'with-editable-markers-on-one-line.md'
     );
     withEditableMarkersAST = await parseFixture('with-editable-markers.md');
-    withOneEditableMarkerAST = await parseFixture(
-      'with-one-editable-marker.md'
+    workshopOneMarkerAST = await parseFixture('workshop-one-marker.md');
+    workshopThreeMarkersAST = await parseFixture('workshop-three-markers.md');
+    workshopSolutionsInMiddleAST = await parseFixture(
+      'workshop-solutions-in-middle.md'
     );
   });
 
@@ -97,13 +50,13 @@ describe('validate-workshop plugin', () => {
 
   it('throws when the number of --fcc-editable-region-- markers is not exactly two', () => {
     expect(() => {
-      plugin(withOneEditableMarkerAST);
+      plugin(workshopOneMarkerAST, file);
     }).toThrow(
       'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 1.'
     );
 
     expect(() => {
-      processor.runSync(processor.parse(fileWithThree));
+      plugin(workshopThreeMarkersAST, file);
     }).toThrow(
       'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 3.'
     );
@@ -111,9 +64,9 @@ describe('validate-workshop plugin', () => {
 
   it('throws when a --solutions-- header appears before the last step', () => {
     expect(() => {
-      processor.runSync(processor.parse(solutionInTheMiddleFile));
+      plugin(workshopSolutionsInMiddleAST, file);
     }).toThrow(
-      /Validation error: "--solutions--" header appears before the last step/
+      'Validation error: "--solutions--" header appears before the last step.'
     );
   });
 });
