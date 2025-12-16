@@ -148,7 +148,9 @@ test.describe('Delete Modal component', () => {
 
     await expect(page).toHaveURL(allowTrailingSlash('/learn'));
     await alertToBeVisible(page, translations.flash['account-deleted']);
-    // The user is signed out after their account is deleted
-    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
+    // The user is signed out after their account is deleted. Don't check the
+    // number of occurrences of the 'Sign in' link as it may vary depending on AB
+    // tests and Gatsby develop mode flakiness.
+    await expect(page.getByRole('link', { name: 'Sign in' })).toBeVisible();
   });
 });
