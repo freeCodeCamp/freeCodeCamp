@@ -6,6 +6,8 @@ const blockSchema = Joi.object({}).keys({
   challenges: Joi.object({})
     .keys({
       name: Joi.string().required(),
+      includesBlockInTimeline: Joi.bool().optional(),
+      instructionsInEditor: Joi.bool().optional(),
       isUpcomingChange: Joi.bool().required(),
       usesMultifileEditor: Joi.bool().optional(),
       dashedName: Joi.string().required(),
