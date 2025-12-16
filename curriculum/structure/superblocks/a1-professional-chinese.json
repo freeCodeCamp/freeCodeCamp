@@ -19,13 +19,14 @@
             "zh-a1-learn-initials",
             "zh-a1-learn-compound-finals",
             "zh-a1-learn-nasal-finals",
+            "zh-a1-learn-special-spelling-rules",
             "zh-a1-practice-pinyin"
           ]
         }
       ]
     },
     {
-      "dashedName": "zh-a1-chapter-greeting-and-self-introduction",
+      "dashedName": "zh-a1-chapter-greetings-and-introductions",
       "modules": [
         {
           "dashedName": "zh-a1-module-greetings-and-basic-introductions",
