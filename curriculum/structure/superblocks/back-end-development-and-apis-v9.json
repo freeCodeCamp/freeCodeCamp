@@ -8,7 +8,8 @@
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
           "blocks": [
-            "lecture-working-with-nodejs-and-event-driven-architecture"
+            "lecture-working-with-nodejs-and-event-driven-architecture",
+            "quiz-node-js-intro"
           ]
         },
         {
@@ -19,7 +20,7 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-working-with-npm-scripts"]
         },
         {
           "dashedName": "http-and-the-web-standards-model",

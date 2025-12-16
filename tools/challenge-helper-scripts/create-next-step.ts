@@ -1,4 +1,4 @@
-import { getLastStep } from './helpers/get-last-step-file-number';
-import { insertStep } from './commands';
+import { getLastStep } from './helpers/get-last-step-file-number.js';
+import { insertStep } from './commands.js';
 
 void insertStep(getLastStep().stepNum + 1);

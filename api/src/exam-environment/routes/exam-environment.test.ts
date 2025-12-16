@@ -32,7 +32,6 @@ vi.mock('../../utils/env', async importOriginal => {
   const actual = await importOriginal<typeof import('../../utils/env.js')>();
   return {
     ...actual,
-    FCC_ENABLE_EXAM_ENVIRONMENT: 'true',
     DEPLOYMENT_ENV: 'production'
   };
 });
@@ -591,6 +590,7 @@ describe('/exam-environment/', () => {
           userId: defaultUserId,
           examId: mock.examId,
           generatedExamId: generatedExam!.id,
+          examModerationId: null,
           questionSets: [],
           // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
           startTime: expect.any(Date),

@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-jsdoc */
 import { Static } from '@fastify/type-provider-typebox';
 import {
   ExamEnvironmentConfig,
@@ -254,6 +255,7 @@ export const generatedExam: ExamEnvironmentGeneratedExam = {
 export const examAttempt: ExamEnvironmentExamAttempt = {
   examId,
   generatedExamId: generatedExam.id,
+  examModerationId: null,
   id: oid(),
   questionSets: [
     {

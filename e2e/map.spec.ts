@@ -36,11 +36,15 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'a2-english-for-developers',
-    name: 'A2 English for Developers Certification'
+    name: 'A2 English for Developers Certification (Beta)'
   },
   {
     slug: 'b1-english-for-developers',
     name: 'B1 English for Developers Certification (Beta)'
+  },
+  {
+    slug: 'a1-professional-spanish',
+    name: 'A1 Professional Spanish Certification (Beta)'
   },
   {
     slug: 'foundational-c-sharp-with-microsoft',
@@ -64,7 +68,7 @@ test.describe('Map Component', () => {
       page.getByText(translations.landing['interview-prep-heading'])
     ).toBeVisible();
     const curriculumBtns = page.getByTestId('curriculum-map-button');
-    await expect(curriculumBtns).toHaveCount(14);
+    await expect(curriculumBtns).toHaveCount(15);
 
     for (const { name, slug } of LANDING_PAGE_LINKS) {
       const superblockLink = page.getByRole('link', {

@@ -8,7 +8,12 @@ describe('add-video-question plugin', () => {
     multipleQuestionAST,
     videoOutOfOrderAST,
     videoWithAudioAST,
-    chineseVideoAST;
+    chineseVideoAST,
+    enUsVideoAST,
+    esVideoAST,
+    videoWithSolutionAboveNumberOfAnswersAST,
+    videoWithFeedbackTwiceInARow,
+    videoWithCorrectAnswerWithFeedback;
   const plugin = addVideoQuestion();
   let file = { data: {} };
 
@@ -22,7 +27,18 @@ describe('add-video-question plugin', () => {
       'with-video-question-out-of-order.md'
     );
     videoWithAudioAST = await parseFixture('with-video-question-audio.md');
+    videoWithSolutionAboveNumberOfAnswersAST = await parseFixture(
+      'with-video-question-solution-above-number-of-answers.md'
+    );
+    videoWithFeedbackTwiceInARow = await parseFixture(
+      'with-video-question-feedback-twice-in-a-row.md'
+    );
+    videoWithCorrectAnswerWithFeedback = await parseFixture(
+      'with-video-question-correct-answer-with-feedback.md'
+    );
     chineseVideoAST = await parseFixture('with-chinese-mcq.md');
+    enUsVideoAST = await parseFixture('with-en-us-mcq.md');
+    esVideoAST = await parseFixture('with-es-mcq.md');
   });
 
   beforeEach(() => {
@@ -104,7 +120,30 @@ describe('add-video-question plugin', () => {
   // 'The md is missing "x"', so it's obvious how to fix things.
   it('should throw if the subheadings are outside the question heading', () => {
     expect.assertions(1);
-    expect(() => plugin(videoOutOfOrderAST)).toThrow();
+    expect(() => plugin(videoOutOfOrderAST, file)).toThrow(
+      'question text is missing in questions section'
+    );
+  });
+
+  it('should throw if solution is higher than the number of answers', () => {
+    expect.assertions(1);
+    expect(() =>
+      plugin(videoWithSolutionAboveNumberOfAnswersAST, file)
+    ).toThrow('solution must be within range of number of answers: 1-3');
+  });
+
+  it('should throw if answer has more than one feedback section', () => {
+    expect.assertions(1);
+    expect(() => plugin(videoWithFeedbackTwiceInARow, file)).toThrow(
+      'answer 2 has multiple feedback sections'
+    );
+  });
+
+  it('should throw if correct answer has feedback section', () => {
+    expect.assertions(1);
+    expect(() => plugin(videoWithCorrectAnswerWithFeedback, file)).toThrow(
+      'answer selected as solution cannot have feedback section'
+    );
   });
 
   it('should NOT throw if there is no question', () => {
@@ -174,6 +213,56 @@ describe('add-video-question plugin', () => {
     const answer4 = question.answers[3];
     expect(answer4.answer).toContain(
       '<ruby>问<rp>(</rp><rt>wèn</rt><rp>)</rp></ruby>'
+    );
+  });
+
+  it('should render inline code as spans in question text, answers, and feedback for en-US', async () => {
+    const enUsFile = { data: { lang: 'en-US' } };
+
+    plugin(enUsVideoAST, enUsFile);
+
+    const question = enUsFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <span class="highlighted-text">highlighted text</span>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toBe(
+      '<p><span class="highlighted-text">correct answer</span></p>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toBe(
+      '<p><span class="highlighted-text">wrong answer</span></p>'
+    );
+    expect(answer2.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">highlighted text</span>.</p>'
+    );
+  });
+
+  it('should render inline code as spans in question text, answers, and feedback for es', async () => {
+    const esFile = { data: { lang: 'es' } };
+
+    plugin(esVideoAST, esFile);
+
+    const question = esFile.data.questions[0];
+
+    expect(question.text).toBe(
+      '<p>Question text containing <span class="highlighted-text">texto resaltado</span>.</p>'
+    );
+
+    const answer1 = question.answers[0];
+    expect(answer1.answer).toBe(
+      '<p><span class="highlighted-text">correct answer</span></p>'
+    );
+
+    const answer2 = question.answers[1];
+    expect(answer2.answer).toBe(
+      '<p><span class="highlighted-text">wrong answer</span></p>'
+    );
+    expect(answer2.feedback).toBe(
+      '<p>Feedback text containing <span class="highlighted-text">texto resaltado</span>.</p>'
     );
   });
 });

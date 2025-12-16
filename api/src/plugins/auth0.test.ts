@@ -342,6 +342,23 @@ describe('auth0 plugin', () => {
       );
     });
 
+    test('should redirect to learn if the user has signed in from the landing page', async () => {
+      mockAuthSuccess();
+
+      const returnTo = 'https://www.freecodecamp.org/';
+      const res = await fastify.inject({
+        method: 'GET',
+        url: '/auth/auth0/callback?state=valid',
+        cookies: {
+          'login-returnto': sign(returnTo)
+        }
+      });
+
+      expect(res.headers.location).toEqual(
+        expect.stringContaining('https://www.freecodecamp.org/learn?')
+      );
+    });
+
     test('should redirect home if the login-returnto cookie is invalid', async () => {
       mockAuthSuccess();
       const returnTo = 'https://www.evilcodecamp.org/espanol/learn';
