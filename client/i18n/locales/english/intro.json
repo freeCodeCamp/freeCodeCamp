@@ -8943,6 +8943,10 @@
       "zh-a1-learn-special-spelling-rules": {
         "title": "Special Spelling Rules",
         "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": { 
+        "title": "Pinyin Practice",
+         "intro": ["", ""]
       }
     }
   },
