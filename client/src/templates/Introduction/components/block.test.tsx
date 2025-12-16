@@ -43,8 +43,6 @@ const defaultProps = {
       forumTopicId: 12345,
       guideUrl: 'https://mockurl.com',
       head: ['mockHead'],
-      includesBlockInTimeline: false,
-      instructionsInEditor: false,
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',
