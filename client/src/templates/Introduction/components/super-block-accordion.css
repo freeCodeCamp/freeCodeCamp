@@ -356,4 +356,8 @@ button .block-header-button-text {
     margin-inline-start: auto;
     margin-inline-end: 10px;
   }
+  
+  .super-block-accordion .block-header:has(.block-label-cert-project) {
+    padding-inline-end: 0;
+  }
 }
