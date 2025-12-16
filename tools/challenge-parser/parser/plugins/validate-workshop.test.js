@@ -105,7 +105,7 @@ describe('validate-workshop plugin', () => {
     }).not.toThrow();
   });
 
-  it('passes for a workshop with exactly two editable regions and Solutions only in final step', () => {
+  it('passes for a workshop with exactly two editable regions and "--solutions--" only in final step', () => {
     expect(() => {
       processor.runSync(processor.parse(validFile));
     }).not.toThrow();
@@ -115,21 +115,21 @@ describe('validate-workshop plugin', () => {
     expect(() => {
       processor.runSync(processor.parse(fileWithOne));
     }).toThrow(
-      'Validation error: expected exactly 2 occurrences of --fcc-editable-region-- but found 1.'
+      'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 1.'
     );
 
     expect(() => {
       processor.runSync(processor.parse(fileWithThree));
     }).toThrow(
-      'Validation error: expected exactly 2 occurrences of --fcc-editable-region-- but found 3.'
+      'Validation error: expected exactly 2 occurrences of "--fcc-editable-region--" but found 3.'
     );
   });
 
-  it('throws when a Solutions header appears before the last step', () => {
+  it('throws when a --solutions-- header appears before the last step', () => {
     expect(() => {
       processor.runSync(processor.parse(solutionInTheMiddleFile));
     }).toThrow(
-      'Validation error: "Solutions" header appears before the last step. The Solutions header must only appear in the final step.'
+      'Validation error: “--solutions--” header appears before the last step. The “--solutions--” header must only appear in the final step.'
     );
   });
 });

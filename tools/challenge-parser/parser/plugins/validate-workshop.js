@@ -26,7 +26,7 @@ function validateWorkshop() {
     // 1) Count --fcc-editable-region-- occurrences
     if (allEditableMarkers.length !== 2) {
       throw new Error(
-        `Validation error: expected exactly 2 occurrences of --fcc-editable-region-- but found ${allEditableMarkers.length}.`
+        `Validation error: expected exactly 2 occurrences of "${FCC_EDITABLE_REGION}" but found ${allEditableMarkers.length}.`
       );
     }
 
@@ -35,14 +35,14 @@ function validateWorkshop() {
       const markerText = allMarkers[i].children[0].value;
       if (markerText === SOLUTIONS_HEADER && i !== allMarkers.length - 1) {
         throw new Error(
-          `Validation error: "Solutions" header appears before the last step. The Solutions header must only appear in the final step.`
+          `Validation error: “${SOLUTIONS_HEADER}” header appears before the last step. The “${SOLUTIONS_HEADER}” header must only appear in the final step.`
         );
       } else if (
         markerText !== SOLUTIONS_HEADER &&
         i === allMarkers.length - 1
       ) {
         throw new Error(
-          `Validation error: Last step must be the "Solutions" header. Found "${markerText}" instead.`
+          `Validation error: Expected the final step to be the “${SOLUTIONS_HEADER}” section, but found “${markerText}” instead.`
         );
       }
     }
