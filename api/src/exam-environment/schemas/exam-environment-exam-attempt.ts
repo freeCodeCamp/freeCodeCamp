@@ -36,7 +36,9 @@ export enum ExamAttemptStatus {
   // Attempt has been approved
   Approved = 'Approved',
   // Attempt has been denied
-  Denied = 'Denied'
+  Denied = 'Denied',
+  /// Attmept has been approved, but challenges have not been awarded to `user.completedChallenges`
+  AwaitingChallenges = 'AwaitingChallenges'
 }
 
 const examEnvAttempt = Type.Object({
