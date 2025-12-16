@@ -7467,6 +7467,12 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
+        ]
+      },
       "exam-back-end-development-and-apis-certification": {
         "title": "Back End Development and APIs Certification Exam",
         "intro": [
