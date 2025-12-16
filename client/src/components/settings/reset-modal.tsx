@@ -11,7 +11,7 @@ import {
 
 type ResetModalProps = {
   onHide: () => void;
-  reset: () => void;
+  reset: (x?: never) => void;
   show: boolean;
 };
 
@@ -71,7 +71,7 @@ function ResetModal(props: ResetModalProps): JSX.Element {
           size='large'
           variant='danger'
           disabled={verifyText !== t('settings.danger.verify-reset-text')}
-          onClick={props.reset}
+          onClick={() => props.reset()}
           type='button'
         >
           {t('settings.danger.reset-confirm')}
