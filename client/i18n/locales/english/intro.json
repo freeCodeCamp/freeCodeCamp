@@ -6725,6 +6725,10 @@
           "In these lessons, you will learn about variables and data types in Python."
         ]
       },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
@@ -8939,10 +8943,7 @@
         "title": "Meeting New Teammates",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
-        "intro": ["", ""]
-      }
+      "zh-a1-practice-pinyin": { "title": "Pinyin Practice", "intro": ["", ""] }
     }
   },
   "basic-html": {

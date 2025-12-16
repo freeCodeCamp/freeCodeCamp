@@ -8,6 +8,7 @@
           "blocks": [
             "lecture-introduction-to-python",
             "lecture-understanding-variables-and-data-types",
+            "lecture-introduction-to-python-strings",
             "workshop-caesar-cipher",
             "lab-rpg-character",
             "review-python-basics",
