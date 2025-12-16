@@ -2378,10 +2378,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -4179,10 +4176,7 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": {
-        "title": "258",
-        "intro": []
-      },
+      "kagw": { "title": "258", "intro": [] },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -4455,26 +4449,11 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
-      "trvf": {
-        "title": "293",
-        "intro": []
-      },
-      "kwmg": {
-        "title": "294",
-        "intro": []
-      },
-      "nodx": {
-        "title": "295",
-        "intro": []
-      },
-      "erfj": {
-        "title": "296",
-        "intro": []
-      },
-      "muyw": {
-        "title": "297",
-        "intro": []
-      },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -4492,14 +4471,8 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": {
-        "title": "301",
-        "intro": []
-      },
-      "vtpz": {
-        "title": "302",
-        "intro": []
-      },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -7601,14 +7574,8 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": {
-        "title": "Meet Luna",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-meet-mateo": {
-        "title": "Meet Mateo",
-        "intro": ["", ""]
-      },
+      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
+      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -8096,10 +8063,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -8836,10 +8800,7 @@
         "title": "Single Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": {
-        "title": "Initials",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -8852,12 +8813,12 @@
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Building Your Self-Introduction",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8868,8 +8829,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8888,18 +8849,15 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": {
-        "title": "My Family",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -8976,10 +8934,7 @@
         "title": "Meeting New Teammates",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
-        "intro": ["", ""]
-      }
+      "zh-a1-practice-pinyin": { "title": "Pinyin Practice", "intro": ["", ""] }
     }
   },
   "basic-html": {
@@ -9066,9 +9021,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -9081,9 +9034,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
