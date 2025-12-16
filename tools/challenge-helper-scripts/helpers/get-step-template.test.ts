@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import ObjectID from 'bson-objectid';
-import { getStepTemplate } from './get-step-template';
+import { ObjectId } from 'bson';
+import { getStepTemplate } from './get-step-template.js';
 
 const props = {
-  challengeId: new ObjectID('60d4ebe4801158d1abe1b18f'),
+  challengeId: new ObjectId('60d4ebe4801158d1abe1b18f'),
   challengeSeeds: [
     {
       contents: '',

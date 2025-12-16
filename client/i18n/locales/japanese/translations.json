@@ -281,7 +281,7 @@
     "disabled": "非公開に設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
     "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、{{cert}}を受け取ることができます。",
-    "for": "{{username}} さんのアカウント設定",
+    "for": "Settings for {{username}}",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
@@ -315,7 +315,7 @@
       "results-for": "「{{projectTitle}}」の結果",
       "my-profile": "プロフィール",
       "my-name": "名前",
-      "my-location": "場所",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "自己紹介",
       "my-points": "ポイント",
       "my-heatmap": "ヒートマップ",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "キーボードショートカットを有効にする"
     },
     "headings": {
+      "account": "Account",
       "certs": "認定証",
       "legacy-certs": "レガシー認定証",
       "honesty": "学問的誠実性ポリシー",
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
-      "privacy": "プライバシー設定",
+      "privacy": "Privacy",
       "personal-info": "ユーザー情報"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "このアカウントに関連付けられているメールアドレスがありません。",
-      "heading": "Eメール設定",
+      "heading": "Email",
       "not-verified": "メールアドレスが確認されていません。",
       "check": "メールを確認するか、<0>こちらから新しい確認メールをリクエストしてください</0>。",
       "current": "現在のメールアドレス",
@@ -929,7 +930,7 @@
     "linkedin": "{{username}} さんの LinkedIn へのリンク",
     "github": "{{username}} さんの GitHub へのリンク",
     "website": "{{username}} さんのウェブサイトへのリンク",
-    "twitter": "{{username}} さんの Twitter へのリンク",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "最初のページへ移動",
@@ -963,7 +964,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
     "not-available": "Not available",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1226,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "Microsoft 連携・基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "Microsoft 連携・基礎 C# 認定証",
       "a2-english-for-developers": "開発者のための A2 レベル英語",
-      "a2-english-for-developers-cert": "開発者のための A2 レベル英語認定証",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
       "responsive-web-design-v9": "Responsive Web Design",

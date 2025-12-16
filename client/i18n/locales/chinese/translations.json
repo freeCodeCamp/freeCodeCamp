@@ -281,7 +281,7 @@
     "disabled": "如果设置为仅自己可见，其他人将无法访问你的认证。",
     "private-name": "如果你将名字设置为私密，你的认证将不会显示你的名字。",
     "claim-legacy": "当你获得下列 freeCodeCamp 认证之后，你可以申请 {{cert}}:",
-    "for": "{{username}} 账户设置",
+    "for": "Settings for {{username}}",
     "sound-mode": "为整个网站添加令人愉快的吉他原声音乐。在编辑器输入、完成挑战、申请认证等时刻，你将获得音乐反馈。",
     "sound-volume": "营火音效音量",
     "scrollbar-width": "编辑器滚动条宽度",
@@ -315,7 +315,7 @@
       "results-for": "{{projectTitle}} 的结果",
       "my-profile": "我的个人资料",
       "my-name": "我的姓名",
-      "my-location": "我的位置",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "我的介绍",
       "my-points": "我的分数",
       "my-heatmap": "我的热图",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "启用键盘快捷键"
     },
     "headings": {
+      "account": "Account",
       "certs": "认证",
       "legacy-certs": "旧版认证",
       "honesty": "学术诚信条例",
       "internet": "你在各平台的账户",
       "portfolio": "作品集设置",
-      "privacy": "隐私设置",
+      "privacy": "Privacy",
       "personal-info": "个人信息"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "你的账户未绑定邮箱。",
-      "heading": "邮件设置",
+      "heading": "Email",
       "not-verified": "你的邮箱已验证。",
       "check": "请查看你的邮件，或<0>在此处请求新的验证邮件</0>。",
       "current": "当前邮箱",
@@ -929,7 +930,7 @@
     "linkedin": "链接到 {{username}} 的 LinkedIn",
     "github": "链接到 {{username}} 的 GitHub",
     "website": "链接到 {{username}} 的网站",
-    "twitter": "链接到 {{username}} 的 Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "访问下个月",
     "previous-month": "访问上个月",
     "first-page": "访问第一页",
@@ -963,7 +964,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} 编辑器内容。无障碍模式被设置为 “on”。按 Ctrl+E 关闭或者按 Alt+F1 查看更多选项。",
     "terminal-output": "终端输出",
     "not-available": "不可用",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "我们无法从你所选的供应商处获取该电子邮件。请尝试其他供应商，或者使用“继续使用电子邮件”选项。",
@@ -1226,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "微软基础 C#",
       "foundational-c-sharp-with-microsoft-cert": "微软基础 C# 认证",
       "a2-english-for-developers": "开发者 A2 英语",
-      "a2-english-for-developers-cert": "开发者 A2 英语认证",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "开发者 B1 英语",
       "b1-english-for-developers-cert": "开发者 B1 英语认证",
       "responsive-web-design-v9": "Responsive Web Design",

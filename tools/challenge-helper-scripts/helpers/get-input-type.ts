@@ -1,6 +1,6 @@
 import { prompt } from 'inquirer';
-import { ChallengeLang } from '../../../shared/config/curriculum';
-import { challengeTypes } from '../../../shared/config/challenge-types';
+import { ChallengeLang } from '../../../shared-dist/config/curriculum.js';
+import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
 
 export const getInputType = async (
   challengeType: string,

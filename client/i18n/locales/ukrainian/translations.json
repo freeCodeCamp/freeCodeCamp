@@ -281,7 +281,7 @@
     "disabled": "Ваші сертифікації будуть відключені, коли ввімкнено режим приватного перегляду.",
     "private-name": "Ваше ім’я не буде показуватися на сертифікаціях, якщо ввімкнено режим приватного перегляду.",
     "claim-legacy": "Як тільки ви виконаєте завдання наступних сертифікацій freeCodeCamp, ви зможете отримати {{cert}}:",
-    "for": "Налаштування облікового запису для {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Це додає приємне звучання акустичної гітари на всьому вебсайті. Ви почуєте музичний супровід, коли будете писати у редакторі, при завершенні випробувань, при затвердженні сертифікацій та інше.",
     "sound-volume": "Гучність багаття:",
     "scrollbar-width": "Ширина смуги прокрутки редактора",
@@ -315,7 +315,7 @@
       "results-for": "Результати для {{projectTitle}}",
       "my-profile": "Мій профіль",
       "my-name": "Моє ім'я",
-      "my-location": "Моє місцеперебування",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Моя біографія",
       "my-points": "Мої бали",
       "my-heatmap": "Моя теплокарта",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Дозволити клавіатурні скорочення"
     },
     "headings": {
+      "account": "Account",
       "certs": "Сертифікації",
       "legacy-certs": "Застарілі сертифікації",
       "honesty": "Політика академічної доброчесності",
       "internet": "Присутність в інтернеті",
       "portfolio": "Налаштування портфоліо",
-      "privacy": "Налаштування конфіденційності",
+      "privacy": "Privacy",
       "personal-info": "Особиста інформація"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "У вас немає електронної пошти, пов’язаної з цим обліковим записом.",
-      "heading": "Налаштування електронної пошти",
+      "heading": "Email",
       "not-verified": "Вашу електронну пошту не підтверджено.",
       "check": "Будь ласка, перевірте свою електронну пошту, або <0>надішліть запит на новий лист для підтвердження</0>.",
       "current": "Поточна адреса електронної пошти",
@@ -929,7 +930,7 @@
     "linkedin": "Посилання на сторінку LinkedIn {{username}}",
     "github": "Посилання на сторінку GitHub {{username}}",
     "website": "Посилання на вебсайт {{username}}",
-    "twitter": "Посилання на сторінку Twitter {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Наступний місяць",
     "previous-month": "Попередній місяць",
     "first-page": "Перейти на першу сторінку",
@@ -963,7 +964,9 @@
     "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
     "terminal-output": "Вивід терміналу",
     "not-available": "Недоступно",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
@@ -1226,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
-      "a2-english-for-developers-cert": "Сертифікація «Англійська мова A2 для розробників»",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "responsive-web-design-v9": "Responsive Web Design",

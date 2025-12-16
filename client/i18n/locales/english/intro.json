@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -4507,7 +4507,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -5089,13 +5089,9 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Markdown to HTML Converter",
-      "- Build a Drum Machine",
-      "- Build a Voting System",
-      "- Build a Bank Account Management Program",
-      "- Build a Weather App",
-      "Pass the exam to earn your JavaScript Certification."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -6666,7 +6662,6 @@
   },
   "python-v9": {
     "title": "Python Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -7142,7 +7137,6 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7484,6 +7478,10 @@
       }
     },
     "blocks": {
+      "quiz-node-js-intro": {
+        "title": "NodeJS Intro Quiz",
+        "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
@@ -7528,8 +7526,14 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "- A Warm-up section for quick review.",
+      "- Learn sections with new vocabulary and grammar.",
+      "- Practice sections to check your comprehension and writing skills.",
+      "- A Review section with key grammar and vocabulary."
+    ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
       "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
@@ -7546,39 +7550,17 @@
       "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
-      "es-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-letters-sounds-and-first-numbers": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-greetings-and-farewells": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-introducing-yourself": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-first-questions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-numbers-10-to-29": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "es-a1-module-sharing-your-personal-details": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
-        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+        "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Greetings During the Day",
@@ -7734,17 +7716,14 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Survey Form",
-      "- Build a Page of Playing Cards",
-      "- Build a Book Inventory App",
-      "- Build a Technical Documentation Page",
-      "- Build a Product Landing Page",
-      "Pass the exam to earn your Responsive Web Design Certification."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
@@ -8307,6 +8286,13 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -8791,8 +8777,12 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
+      "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
+      "Each chapter includes hundreds of interactive tasks designed to help you take your first steps in learning Chinese with confidence."
+    ],
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
@@ -8882,7 +8872,7 @@
         "intro": ["", ""]
       },
       "zh-a1-practice-building-your-self-introduction": {
-        "title": "Greetings and Introductions Quiz",
+        "title": "Building Your Self-Introduction",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8999,6 +8989,10 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
         "intro": ["", ""]
       }
     }

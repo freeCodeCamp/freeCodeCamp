@@ -1380,7 +1380,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "在開發者英語課程中，你將學習英語交流的基本要素。課程遵循歐洲共同語言參考標準（CEFR）的 A2 級，側重於對開發者有用的詞彙。",
       "課程的前半部分將幫助你熟悉英語語法和用法。你將通過大量的實踐練習學習自我介紹、聊天和討論工作等基礎知識。",
@@ -4493,7 +4493,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -5075,13 +5075,9 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Markdown to HTML Converter",
-      "- Build a Drum Machine",
-      "- Build a Voting System",
-      "- Build a Bank Account Management Program",
-      "- Build a Weather App",
-      "Pass the exam to earn your JavaScript Certification."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -6652,7 +6648,6 @@
   },
   "python-v9": {
     "title": "Python Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -7128,7 +7123,6 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7514,8 +7508,14 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "- A Warm-up section for quick review.",
+      "- Learn sections with new vocabulary and grammar.",
+      "- Practice sections to check your comprehension and writing skills.",
+      "- A Review section with key grammar and vocabulary."
+    ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
       "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
@@ -7720,17 +7720,14 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Survey Form",
-      "- Build a Page of Playing Cards",
-      "- Build a Book Inventory App",
-      "- Build a Technical Documentation Page",
-      "- Build a Product Landing Page",
-      "Pass the exam to earn your Responsive Web Design Certification."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
