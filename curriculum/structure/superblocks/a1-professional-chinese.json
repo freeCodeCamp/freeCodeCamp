@@ -5,7 +5,9 @@
       "modules": [
         {
           "dashedName": "zh-a1-module-introduction-and-certification-overview",
-          "blocks": ["zh-a1-learn-certification-introduction"]
+          "blocks": [
+            "zh-a1-learn-certification-introduction"
+          ]
         }
       ]
     },
