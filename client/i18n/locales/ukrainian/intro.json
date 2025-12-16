@@ -1386,7 +1386,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "У цьому курсі з вивчення англійської мови для розробників ви опануєте основи англійської комунікації. Курс створено відповідно до загальноєвропейських рекомендацій з мовної освіти рівня A2 (CEFR). Ми зосередилися на словниковому запасі, що є особливо корисним для розробників.",
       "Перша частина допоможе освоїти граматику та використання англійської мови. Ви виконаєте багато практичних вправ, дізнавшись основи (наприклад, представлення себе, проведення коротких розмов і обговорення роботи).",
@@ -4497,7 +4497,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Створіть RPG-персонажа",
+        "title": "Build an RPG Character",
         "intro": [
           "У цій лабораторній роботі ви попрактикуєтеся в основах Python, створивши RPG-персонажа."
         ]
@@ -5075,13 +5075,9 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Markdown to HTML Converter",
-      "- Build a Drum Machine",
-      "- Build a Voting System",
-      "- Build a Bank Account Management Program",
-      "- Build a Weather App",
-      "Pass the exam to earn your JavaScript Certification."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -5270,6 +5266,12 @@
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
           "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+        ]
+      },
+      "workshop-logic-checker-app": {
+        "title": "Build a Logic Checker App",
+        "intro": [
+          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
@@ -6328,19 +6330,19 @@
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Coming Fall 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification."
         ]
@@ -6646,7 +6648,6 @@
   },
   "python-v9": {
     "title": "Python Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of Python programming.",
       "To earn your Python Certification:",
@@ -7122,7 +7123,6 @@
   },
   "relational-databases-v9": {
     "title": "Relational Databases Certification",
-    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the fundamentals of relational databases.",
       "To earn your Relational Databases Certification:",
@@ -7469,22 +7469,21 @@
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
+        ]
       }
     }
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - you're progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
       "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the following certifications:",
-      "- Responsive Web Design Certification",
-      "- JavaScript Certification",
-      "- Front End Development Libraries Certification",
-      "- Python Certification",
-      "- Relational Databases Certification",
-      "- Back End Development and APIs Certification",
-      "Pass the exam to earn your Full Stack Developer Certification."
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
@@ -7496,7 +7495,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "This will be a 90 question exam testing what you have learned throughout this certification."
+          "This exam will test what you have learned throughout the previous six certifications."
         ]
       }
     },
@@ -7509,26 +7508,35 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "- A Warm-up section for quick review.",
+      "- Learn sections with new vocabulary and grammar.",
+      "- Practice sections to check your comprehension and writing skills.",
+      "- A Review section with key grammar and vocabulary."
+    ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-the-spanish-alphabet": "The Spanish Alphabet",
-      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-and-special-characters": "The Alphabet and Special Characters",
+      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
-      "es-a1-module-first-questions": "First Questions"
+      "es-a1-module-first-questions": "First Questions",
+      "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
       "es-a1-module-introduction-and-certification-overview": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
-      "es-a1-module-alphabet-and-special-characters": {
+      "es-a1-module-letters-sounds-and-first-numbers": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
@@ -7541,6 +7549,14 @@
         "intro": ["PLACEHOLDER: Write the module intro here."]
       },
       "es-a1-module-first-questions": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-numbers-10-to-29": {
+        "note": "Coming Winter 2025",
+        "intro": ["PLACEHOLDER: Write the module intro here."]
+      },
+      "es-a1-module-sharing-your-personal-details": {
         "note": "Coming Winter 2025",
         "intro": ["PLACEHOLDER: Write the module intro here."]
       }
@@ -7578,8 +7594,8 @@
         "title": "Punctuation",
         "intro": ["", ""]
       },
-      "es-a1-quiz-the-alphabet": {
-        "title": "The Spanish Alphabet Quiz",
+      "es-a1-quiz-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7638,12 +7654,64 @@
         "title": "Consonants and Special Characters",
         "intro": ["", ""]
       },
-      "es-a1-review-the-alphabet": {
-        "title": "The Spanish Alphabet Review",
+      "es-a1-review-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Review",
         "intro": ["", ""]
       },
       "es-a1-practice-the-alphabet": {
         "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-remember-first-numbers": {
+        "title": "Remember First Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-10-to-29": {
+        "title": "Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-numbers-10-to-29": {
+        "title": "Using Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-review-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-getting-ready-to-share-personal-details": {
+        "title": "Getting Ready to Share Personal Details",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-basic-personal-information": {
+        "title": "Basic Personal Information",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-contact-information-and-spelling": {
+        "title": "Contact Information and Spelling",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-personal-details-in-action": {
+        "title": "Personal Details in Action",
+        "intro": ["", ""]
+      },
+      "es-a1-review-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
         "intro": ["", ""]
       }
     }
@@ -7652,17 +7720,14 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Survey Form",
-      "- Build a Page of Playing Cards",
-      "- Build a Book Inventory App",
-      "- Build a Technical Documentation Page",
-      "- Build a Product Landing Page",
-      "Pass the exam to earn your Responsive Web Design Certification."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
@@ -9021,6 +9086,7 @@
   "misc-text": {
     "browse-other": "Перегляньте інші безоплатні сертифікації",
     "courses": "Курси",
+    "requirements": "Requirements",
     "steps": "Кроки",
     "expand": "Розгорнути курс",
     "collapse": "Згорнути курс",

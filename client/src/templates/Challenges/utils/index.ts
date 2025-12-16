@@ -53,7 +53,11 @@ export function enhancePrismAccessibility(
     pug: 'pug',
     ts: 'TypeScript',
     typescript: 'TypeScript',
-    tsx: 'TSX'
+    tsx: 'TSX',
+    csharp: 'C#',
+    clike: 'CLike',
+    c: 'C',
+    cpp: 'C++'
   };
   const parent = prismEnv?.element?.parentElement;
   if (

@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { describe, it, expect, vi } from 'vitest';
-import { getBlockStructure } from '../../../curriculum/src/file-handler';
-import { getMetaData } from './project-metadata';
+import { getBlockStructure } from '../../../curriculum/src/file-handler.js';
+import { getMetaData } from './project-metadata.js';
 
 vi.mock('../../../curriculum/src/file-handler');
 

@@ -13,7 +13,7 @@ const { MONGOHQ_URL } = process.env;
 
 // Number challenges in the dev-playground blocks
 // Update this if the number of challenges changes
-const EXPECTED_CHALLENGE_COUNT = 109;
+const EXPECTED_CHALLENGE_COUNT = 143;
 
 // Date to set for the first challenge, second challenge will be one day later, etc...
 // **DO NOT CHANGE THIS AFTER RELEASE (if seeding production - okay for local dev)**
