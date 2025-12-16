@@ -159,8 +159,8 @@ export function addMetaToChallenge(
   challenge.block = meta.dashedName;
   challenge.blockLabel = meta.blockLabel;
   challenge.blockLayout = meta.blockLayout;
-  challenge.instructionsInEditor = meta.instructionsInEditor ?? false;
-  challenge.includesBlockInTimeline = meta.includesBlockInTimeline ?? false;
+  challenge.instructionsInEditor = meta.instructionsInEditor;
+  challenge.includesBlockInTimeline = meta.includesBlockInTimeline;
   challenge.order = meta.order;
 
   // Ensure required properties exist
@@ -234,7 +234,7 @@ export function challengeFilesToPolys(files: ChallengeFile[]) {
  * @param {object} challenge - The challenge object to fix
  * @returns {object} The challenge object with fixed properties
  */
-export function fixChallengeProperties(challenge: Partial<Challenge>) {
+export function fixChallengeProperties(challenge: Challenge) {
   const fixedChallenge = {
     ...challenge
   };
@@ -258,7 +258,7 @@ export function fixChallengeProperties(challenge: Partial<Challenge>) {
  * @param {object} meta - The meta information object
  * @returns {object} The finalized challenge object
  */
-export function finalizeChallenge(challenge: Partial<Challenge>, meta: Meta) {
+export function finalizeChallenge(challenge: Challenge, meta: Meta) {
   return addMetaToChallenge(fixChallengeProperties(challenge), meta);
 }
 export class BlockCreator {

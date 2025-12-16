@@ -32,8 +32,7 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  instructionsInEditor: boolean;
-  includesBlockInTimeline: boolean;
+  instructionsInEditor?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -109,8 +108,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
-    instructionsInEditor,
-    includesBlockInTimeline
+    instructionsInEditor
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -243,12 +241,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   }, []);
 
-  const projectBasedChallenge = instructionsInEditor;
-
-  const instructionsAreInEditor = instructionsInEditor;
-
   const areInstructionsDisplayable =
-    !instructionsAreInEditor || showIndependentLowerJaw;
+    !instructionsInEditor || showIndependentLowerJaw;
 
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
@@ -258,10 +252,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.pyLab ||
     challengeType === challengeTypes.dailyChallengeJs ||
     challengeType === challengeTypes.dailyChallengePy;
-  const isProjectStyle = projectBasedChallenge || isMultifileProject;
+  const isProjectStyle = instructionsInEditor || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = includesBlockInTimeline ? showNotes && !!notes : false;
+  const displayNotes = showNotes && !!notes;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
 
@@ -294,7 +288,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
           challengeType={challengeType}
-          includesBlockInTimeline={includesBlockInTimeline}
           data-playwright-test-label='action-row'
         />
       )}

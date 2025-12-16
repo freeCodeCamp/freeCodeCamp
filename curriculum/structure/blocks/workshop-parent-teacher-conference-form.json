@@ -4,6 +4,10 @@
   "dashedName": "workshop-parent-teacher-conference-form",
   "helpCategory": "HTML-CSS",
   "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "instructionsInEditor": true,
+  "includesBlockInTimeline": true,
   "challengeOrder": [
     { "id": "68e707257ea91c2e12d489fb", "title": "Step 1" },
     { "id": "68e7e729f6d14f69a23786ef", "title": "Step 2" },
@@ -42,8 +46,5 @@
     { "id": "68eb3a06c6adde47584e2721", "title": "Step 35" },
     { "id": "68eb3acbc5d86e4d53b58d91", "title": "Step 36" },
     { "id": "68eb3bdd830d4e552f0bb24a", "title": "Step 37" }
-  ],
-  "blockLabel": "workshop",
-  "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  ]
 }

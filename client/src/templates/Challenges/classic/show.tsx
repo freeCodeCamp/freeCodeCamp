@@ -213,7 +213,6 @@ function ShowClassic({
         videoUrl,
         translationPending,
         instructionsInEditor,
-        includesBlockInTimeline,
         saveSubmissionToDB
       }
     }
@@ -482,7 +481,6 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             instructionsInEditor={instructionsInEditor}
-            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -518,7 +516,6 @@ function ShowClassic({
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
             instructionsInEditor={instructionsInEditor}
-            includesBlockInTimeline={includesBlockInTimeline}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -596,7 +593,6 @@ export const query = graphql`
         translationPending
         forumTopicId
         instructionsInEditor
-        includesBlockInTimeline
         hooks {
           beforeAll
           beforeEach

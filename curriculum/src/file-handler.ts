@@ -128,8 +128,8 @@ export type Challenge = {
   id: string;
   title: string;
   // infer other properties:
-  includesBlockInTimeline: boolean;
-  instructionsInEditor: boolean;
+  includesBlockInTimeline?: boolean;
+  instructionsInEditor?: boolean;
   description?: string;
   instructions?: string;
   questions?: string[];
@@ -159,8 +159,8 @@ export type Challenge = {
 
 export interface BlockStructure {
   name: string;
-  includesBlockInTimeline: boolean;
-  instructionsInEditor: boolean;
+  includesBlockInTimeline?: boolean;
+  instructionsInEditor?: boolean;
   required?: string[];
   template?: string;
   helpCategory?: string;

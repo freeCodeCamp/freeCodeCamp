@@ -23,8 +23,6 @@ interface ClassicLayoutProps {
   showPreviewPortal: boolean;
   challengeType: number;
   togglePane: (pane: string) => void;
-  // UI: new metadata
-  includesBlockInTimeline?: boolean;
   hasInteractiveEditor?: never;
 }
 

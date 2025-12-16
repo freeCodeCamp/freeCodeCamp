@@ -197,7 +197,7 @@
   flex-direction: column;
 }
 
-#mobile-layout.has-editable-boundaries .tab-content[data-state='active'] {
+#mobile-layout.instructions-in-editor .tab-content[data-state='active'] {
   padding-block-end: 0px;
 }
 

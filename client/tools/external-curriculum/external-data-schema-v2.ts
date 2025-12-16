@@ -10,8 +10,6 @@ const blockSchema = Joi.object().keys({
       name: Joi.string().required(),
       isUpcomingChange: Joi.bool().required(),
       usesMultifileEditor: Joi.bool().optional(),
-      includesBlockInTimeline: Joi.bool().required(),
-      instructionsInEditor: Joi.bool().required(),
       dashedName: Joi.string().required(),
       helpCategory: Joi.valid(
         'JavaScript',

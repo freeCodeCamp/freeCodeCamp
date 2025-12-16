@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
-import { connect, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
 import { tryToShowDonationModal } from '../../redux/actions';
-import {
-  userFetchStateSelector,
-  instructionsInEditorSelector
-} from '../../redux/selectors';
+import { userFetchStateSelector } from '../../redux/selectors';
 import DonateModal from '../Donation/donation-modal';
 
 import './prism.css';
@@ -43,8 +40,6 @@ function LearnLayout({
   tryToShowDonationModal,
   children
 }: LearnLayoutProps): JSX.Element {
-  const instructionsInEditor = useSelector(instructionsInEditorSelector);
-
   useEffect(() => {
     tryToShowDonationModal();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -68,15 +63,7 @@ function LearnLayout({
       <Helmet>
         <meta content='noindex' name='robots' />
       </Helmet>
-      <main
-        id='learn-app-wrapper'
-        // for avoiding booleans trust issues
-        {...(instructionsInEditor === true && {
-          'data-has-editable-boundaries': true
-        })}
-      >
-        {children}
-      </main>
+      <main id='learn-app-wrapper'>{children}</main>
       <DonateModal />
     </>
   );

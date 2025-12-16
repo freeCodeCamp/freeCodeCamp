@@ -261,7 +261,6 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
               id
               superBlock
               title
-              instructionsInEditor
               includesBlockInTimeline
             }
           }
@@ -298,10 +297,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       }
     }) => {
       const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-      const includeBlockFlag = includesBlockInTimeline;
 
       const shouldAppendBlockNameToTitle =
-        includeBlockFlag || superBlock === SuperBlocks.A2English;
+        includesBlockInTimeline || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {
         challengeTitle: `${
           shouldAppendBlockNameToTitle ? blockNameTitle + ' - ' : ''
