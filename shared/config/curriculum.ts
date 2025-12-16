@@ -82,6 +82,7 @@ export const superBlockToSpeechLang: Partial<
 export enum SuperBlockStage {
   Core,
   English,
+  Spanish,
   Professional,
   Extra,
   Legacy,
@@ -93,6 +94,7 @@ export enum SuperBlockStage {
 const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.English,
+  SuperBlockStage.Spanish,
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
@@ -126,6 +128,7 @@ export const superBlockStages: StageMap = {
     SuperBlocks.FullStackDeveloperV9
   ],
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
+  [SuperBlockStage.Spanish]: [SuperBlocks.A1Spanish],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
@@ -153,7 +156,6 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.FullStackOpen,
-    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
@@ -179,34 +181,7 @@ type NotAuditedSuperBlocks = {
 // when adding a new language, add all (not audited) superblocks to the object
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.English]: [],
-  [Languages.Espanol]: [
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.FullStackDeveloperV9
-  ],
+  [Languages.Espanol]: [],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,

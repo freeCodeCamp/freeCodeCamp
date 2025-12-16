@@ -5,8 +5,8 @@ import { createSelector } from 'reselect';
 import { Button } from '@freecodecamp/ui';
 
 import {
-  certSlugTypeMap,
-  superBlockCertTypeMap
+  type Certification,
+  superBlockToCertMap
 } from '../../../../../shared-dist/config/certification-settings';
 import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 
@@ -55,7 +55,6 @@ const CertChallenge = ({
   user
 }: CertChallengeProps): JSX.Element => {
   const { t } = useTranslation();
-  const [isCertified, setIsCertified] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
 
   const { currentCerts, legacyCerts } = getCertifications(user);
@@ -73,22 +72,13 @@ const CertChallenge = ({
     }
   }, [fetchState]);
 
-  const certSlugTypeMapTyped: { [key: string]: string } = certSlugTypeMap;
-  const superBlockCertTypeMapTyped: { [key: string]: string } =
-    superBlockCertTypeMap;
+  const allCerts = [...currentCerts, ...legacyCerts];
 
-  useEffect(() => {
-    const allCerts = [...currentCerts, ...legacyCerts];
-
-    setIsCertified(
-      allCerts.find(
-        (cert: { certSlug: string }) =>
-          certSlugTypeMapTyped[cert.certSlug] ===
-          superBlockCertTypeMapTyped[superBlock]
-      )?.show ?? false
-    );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentCerts, legacyCerts]);
+  const isCertified =
+    allCerts.find(
+      (cert: { certSlug: Certification }) =>
+        cert.certSlug === superBlockToCertMap[superBlock]
+    )?.show ?? false;
 
   const certLocation = `/certification/${username}/${certSlug}`;
 

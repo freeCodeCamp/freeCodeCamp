@@ -87,7 +87,7 @@
       ]
     },
     {
-      "dashedName": "css",
+      "dashedName": "computers",
       "modules": [
         {
           "dashedName": "computer-basics",
@@ -98,7 +98,12 @@
             "review-computer-basics",
             "quiz-computer-basics"
           ]
-        },
+        }
+      ]
+    },
+    {
+      "dashedName": "css",
+      "modules": [
         {
           "dashedName": "basic-css",
           "blocks": [
@@ -140,6 +145,7 @@
           "blocks": [
             "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
             "workshop-greeting-card",
+            "workshop-parent-teacher-conference-form",
             "lab-job-application-form",
             "review-css-pseudo-classes",
             "quiz-css-pseudo-classes"
