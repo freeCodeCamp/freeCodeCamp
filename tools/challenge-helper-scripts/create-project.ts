@@ -191,11 +191,6 @@ async function createMetaJson(
     newMeta = getBaseMeta('FullStack');
     newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
-    // if (blockLabel === BlockLabel.workshop) {
-    //   // newMeta.hasEditableBoundaries = true;
-    //   newMeta.instructionsInEditor = true;
-    //   newMeta.includesBlockInTimeline = true;
-    // }
   } else {
     newMeta = getBaseMeta('Step');
     newMeta.order = order;
@@ -323,14 +318,14 @@ void getAllBlocks()
         message:
           'Should instructions appear inside the editor? (If yes, instructions will render inside the editor pane)',
         type: 'confirm',
-        default: false
+        default: true
       },
       {
         name: 'includesBlockInTimeline',
         message:
           'Should the block name be included in challenge titles in the timeline? (e.g. "Block - Step 1")',
         type: 'confirm',
-        default: false
+        default: true
       },
       {
         name: 'questionCount',
