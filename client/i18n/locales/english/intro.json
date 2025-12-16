@@ -6596,6 +6596,12 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6636,10 +6642,6 @@
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification"
         ]
-      },
-      "lab-scatterplot-graph": {
-        "title": "Build a Scatterplot Graph",
-        "intro": ["Build a Scatterplot Graph", ""]
       }
     }
   },
@@ -8859,8 +8861,8 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
