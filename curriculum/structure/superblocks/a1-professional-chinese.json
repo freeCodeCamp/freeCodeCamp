@@ -5,9 +5,7 @@
       "modules": [
         {
           "dashedName": "zh-a1-module-introduction-and-certification-overview",
-          "blocks": [
-            "zh-a1-learn-certification-introduction"
-          ]
+          "blocks": ["zh-a1-learn-certification-introduction"]
         }
       ]
     },
@@ -20,7 +18,8 @@
             "zh-a1-learn-single-finals",
             "zh-a1-learn-initials",
             "zh-a1-learn-compound-finals",
-            "zh-a1-learn-nasal-finals"
+            "zh-a1-learn-nasal-finals",
+            "zh-a1-practice-pinyin"
           ]
         }
       ]
