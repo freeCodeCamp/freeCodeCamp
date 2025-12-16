@@ -6657,6 +6657,10 @@
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification"
         ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": ["Build a Motorcycle Shop", ""]
       }
     }
   },
