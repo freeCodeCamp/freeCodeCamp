@@ -151,6 +151,8 @@ test.describe('Delete Modal component', () => {
     // The user is signed out after their account is deleted. Don't check the
     // number of occurrences of the 'Sign in' link as it may vary depending on AB
     // tests and Gatsby develop mode flakiness.
-    await expect(page.getByRole('link', { name: 'Sign in' })).toBeVisible();
+    await expect(
+      page.getByRole('link', { name: 'Sign in' }).first()
+    ).toBeVisible();
   });
 });
