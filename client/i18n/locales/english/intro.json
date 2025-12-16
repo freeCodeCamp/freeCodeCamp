@@ -7462,6 +7462,7 @@
         "intro": [
           "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
         ]
+      },
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
