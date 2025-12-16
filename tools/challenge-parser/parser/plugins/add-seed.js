@@ -6,7 +6,7 @@ const { getFileVisitor } = require('./utils/get-file-visitor');
 
 const editableRegionMarker = '--fcc-editable-region--';
 
-function findEditableRegionMarkers(challengeFile) {
+function findRegionMarkers(challengeFile) {
   const lines = challengeFile.contents.split('\n');
   const editableLines = lines
     .map((line, id) => (line.trim() === editableRegionMarker ? id : -1))
@@ -63,7 +63,7 @@ function addSeeds() {
     // process region markers - remove them from content and add them to data
     const challengeFiles = Object.values(seeds).map(data => {
       const seed = { ...data };
-      const editRegionMarkers = findEditableRegionMarkers(seed);
+      const editRegionMarkers = findRegionMarkers(seed);
       if (editRegionMarkers) {
         seed.contents = removeLines(seed.contents, editRegionMarkers);
 
@@ -113,4 +113,3 @@ function validateEditableMarkers({ value, position }) {
 
 module.exports = addSeeds;
 module.exports.editableRegionMarker = editableRegionMarker;
-module.exports.findEditableRegionMarkers = findEditableRegionMarkers;
