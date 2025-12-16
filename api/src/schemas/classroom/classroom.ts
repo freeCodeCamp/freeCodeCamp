@@ -5,7 +5,6 @@ export const classroomGetUserIdSchema = {
   }),
   response: {
     200: Type.Object({ userId: Type.String() }),
-    400: Type.Object({ error: Type.String() }),
     404: Type.Object({ error: Type.String() }),
     500: Type.Object({ error: Type.String() })
   }
