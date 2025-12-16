@@ -7,6 +7,7 @@
           "dashedName": "python-basics",
           "blocks": [
             "lecture-introduction-to-python",
+            "lecture-understanding-variables-and-data-types",
             "workshop-caesar-cipher",
             "lab-rpg-character",
             "review-python-basics",
