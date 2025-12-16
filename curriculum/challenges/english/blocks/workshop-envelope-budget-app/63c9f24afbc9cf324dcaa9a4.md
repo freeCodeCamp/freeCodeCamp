@@ -1,31 +1,54 @@
 ---
 id: 63c9f24afbc9cf324dcaa9a4
-title: Step 94
+title: Step 95
 challengeType: 0
-dashedName: step-94
+dashedName: step-95
 ---
 
 # --description--
 
-It is time for another loop. Create a `for...of` loop with a variable called `container` to iterate through the `inputContainers` array.
-
-Inside the loop, set the `innerHTML` property of the `container` to an empty string. This will clear all of the contents of that input container.
+After your loop completes, you need to clear the `incomeInput` and `rentInput` fields. Set the `value` property of `incomeInput` and `rentInput` to an empty string.
 
 # --hints--
 
-Your `for...of` loop should iterate through the `inputContainers` array. The loop's variable name should be `container`.
+Your `clearForm` function should access the `value` property of the `incomeInput` element.
 
 ```js
-const clearForm = code.split("function clearForm()")[1];
-assert.match(clearForm, /for\s*\(\s*(const|let|var)\s+container\s+of\s+inputContainers\s*\)/);
+assert.match(clearForm.toString(), /incomeInput\.value/);
 ```
 
-Your `for...of` loop should set the `innerHTML` property of `container` to an empty string.
+Your `clearForm` function should set the `value` property of the `incomeInput` element to an empty string.
+
+```js
+assert.match(clearForm.toString(), /incomeInput\.value\s*=\s*('|"|`)\1/);
+```
+
+You should modify the `incomeInput` after your `for` loop.
 
 ```js
 const clearForm = code.split("function clearForm()")[1];
-const forOfLoop = clearForm.split("for")[1];
-assert.match(forOfLoop, /container\s*\.\s*innerHTML\s*=\s*(`|'|")\1\s*/);
+const afterLoop = clearForm.split("}")[1];
+assert.match(afterLoop, /incomeInput\.value/);
+```
+
+Your `clearForm` function should access the `value` property of the `rentInput` element.
+
+```js
+assert.match(clearForm.toString(), /rentInput\.value/);
+```
+
+Your `clearForm` function should set the `value` property of the `rentInput` element to an empty string.
+
+```js
+assert.match(clearForm.toString(), /rentInput\.value\s*=\s*('|"|`)\1/);
+```
+
+You should modify the `rentInput` after your `for` loop.
+
+```js
+const clearForm = code.split("function clearForm()")[1];
+const afterLoop = clearForm.split("}")[1];
+assert.match(afterLoop, /rentInput\.value/);
 ```
 
 # --seed--
@@ -347,6 +370,9 @@ function getTotalFromInputs(list) {
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
+    for (const container of inputContainers) {
+    container.innerHTML = '';
+  }
 
 }
 --fcc-editable-region--
