@@ -251,6 +251,14 @@ export type CertificationFlags = {
   [key in UserCertFlag]: boolean;
 };
 
+export function isCertified(
+  user: Partial<CertificationFlags>,
+  cert: Certification
+): boolean {
+  const certFlag = certSlugTypeMap[cert];
+  return Boolean(user[certFlag]);
+}
+
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
   // Legacy certifications
