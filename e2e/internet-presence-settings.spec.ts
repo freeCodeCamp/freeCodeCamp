@@ -60,8 +60,8 @@ test.describe('Your Internet Presence', () => {
     },
     {
       name: 'twitter',
-      url: 'https://twitter.com/certified-user',
-      label: 'Twitter',
+      url: 'https://x.com/certified-user',
+      label: 'X',
       checkTestId: settingsPageElement.twitterCheckmark
     },
     {

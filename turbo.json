@@ -2,8 +2,35 @@
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
     "lint": {
-      "dependsOn": ["^lint"]
+      "dependsOn": ["@freecodecamp/shared#compile"]
     },
-    "//#lint": {}
+    "@freecodecamp/client#lint": {
+      "dependsOn": [
+        "@freecodecamp/curriculum#compile",
+        "create:env",
+        "build:scripts"
+      ]
+    },
+    "@freecodecamp/gatsby-source-challenges#lint": {
+      "dependsOn": ["@freecodecamp/curriculum#compile"]
+    },
+    "@freecodecamp/scripts-lint#lint": {
+      "dependsOn": ["@freecodecamp/client#create:trending"],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        "$TURBO_ROOT$/client/i18n/locales/english/*"
+      ]
+    },
+    "//#lint-root": {
+      "dependsOn": [
+        "@freecodecamp/shared#compile",
+        "@freecodecamp/curriculum#build"
+      ]
+    },
+    "compile": {},
+    "create:trending": { "cache": false },
+    "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
+    "build": { "dependsOn": ["compile"] },
+    "build:scripts": {}
   }
 }
