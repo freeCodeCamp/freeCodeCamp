@@ -11,7 +11,7 @@ export const classroomGetUserIdSchema = {
 };
 export const classroomGetUserDataSchema = {
   body: Type.Object({
-    userIds: Type.Array(Type.String(), { maxItems: 50 })
+    userIds: Type.Array(Type.String())
   }),
   response: {
     200: Type.Object({

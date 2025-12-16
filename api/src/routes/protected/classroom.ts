@@ -57,6 +57,7 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
       const { userIds = [] } = request.body;
 
       // Limit number of users per request for performance
+      // Send custom error message if this is exceeded
       if (userIds.length > 50) {
         return reply.code(400).send({
           error: 'Too many users requested. Maximum 50 allowed.'
