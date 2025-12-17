@@ -47,7 +47,6 @@ export const createStore = (preloadedState = {}) => {
     preloadedState
   });
   sagaMiddleware.run(rootSaga);
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
   epicMiddleware.run(rootEpic);
 
   if (module.hot) {
