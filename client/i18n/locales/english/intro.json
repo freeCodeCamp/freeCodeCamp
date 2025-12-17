@@ -1846,7 +1846,7 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Introduction to Node.js",
+
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -7390,7 +7390,8 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
@@ -7405,10 +7406,16 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
+      "introduction-to-nodejs": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
@@ -7485,6 +7492,12 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Working with NodeJS and event driven architecture",
+        "intro": [
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
@@ -7493,6 +7506,12 @@
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -8771,7 +8790,7 @@
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
@@ -8837,18 +8856,16 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
-      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Building Your Self-Introduction",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8859,8 +8876,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8879,7 +8896,10 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": { "title": "The Team", "intro": ["", ""] },
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
+        "intro": ["", ""]
+      },
       "zh-a1-learn-a-new-colleague": {
         "title": "A New Colleague",
         "intro": ["", ""]
@@ -8961,7 +8981,14 @@
         "title": "Meeting New Teammates",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": { "title": "Pinyin Practice", "intro": ["", ""] }
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
+        "intro": ["", ""]
+      }
     }
   },
   "basic-html": {
