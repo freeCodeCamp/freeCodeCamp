@@ -6,18 +6,17 @@
  * filename. Change the `challengeId` at the bottom to use the dashed name if
  * you want that.
  */
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { createChallengeFile } from './utils';
-import { getProjectPath } from './helpers/get-project-info';
-import { getBlock, type Meta } from './helpers/project-metadata';
+} from '../../curriculum/src/file-handler.js';
+import { createChallengeFile } from './utils.js';
+import { getProjectPath } from './helpers/get-project-info.js';
+import { getBlock, type Meta } from './helpers/project-metadata.js';
 
-// eslint-disable-next-line @typescript-eslint/no-base-to-string
-const challengeId = new ObjectID().toString();
+const challengeId = new ObjectId().toString();
 
 /***** Only change code below this line *****/
 

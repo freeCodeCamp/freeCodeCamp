@@ -212,7 +212,8 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        saveSubmissionToDB
       }
     }
   },
@@ -467,7 +468,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -547,7 +548,10 @@ function ShowClassic({
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} challengeTitle={title} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
@@ -609,6 +613,7 @@ export const query = graphql`
           editableRegionBoundaries
           history
         }
+        saveSubmissionToDB
         tests {
           text
           testString
