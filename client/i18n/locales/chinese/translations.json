@@ -207,6 +207,7 @@
     "certification-heading": "获得以下免费认证：",
     "core-certs-heading": "推荐课程（测试版）：",
     "learn-english-heading": "学习面向开发者的英语课程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "专业认证：",
     "interview-prep-heading": "为开发人员面试求职做好准备：",
     "legacy-curriculum-heading": "我们已存档的课程：",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "即将到来",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已离线，学习进度可能不会被保存",
     "server-offline": "无法连接到服务器，你的进度可能无法保存。如果仍然出现此消息，请联系 <0>support</0>。",
     "unsubscribed": "你已成功取消订阅",
@@ -1081,7 +1084,8 @@
       "err-3": "尝试保存你的调研问卷时发生错误。",
       "success": "谢谢，你的调研问卷已提交。"
     },
-    "classroom-mode-updated": "我们已更新你的课堂模式设置"
+    "classroom-mode-updated": "我们已更新你的课堂模式设置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符数最多为 288 个，你还可以输入 {{charsLeft}} 个字符",

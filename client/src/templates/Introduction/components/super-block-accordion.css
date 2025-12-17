@@ -350,3 +350,13 @@ button .block-header-button-text {
     margin-top: -10px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  .super-block-accordion .block-label {
+    margin-inline-start: auto;
+    margin-inline-end: 10px;
+  }
+  .super-block-accordion .block-header:has(.block-label-cert-project) {
+    padding-inline-end: 0;
+  }
+}
