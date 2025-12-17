@@ -311,7 +311,8 @@ const availableAudios = [
   'ZH_A1_pinyin_initials.mp3',
   'ZH_A1_pinyin_compound_finals.mp3',
   'ZH_A1_pinyin_nasal_finals.mp3',
-  'ZH_A1_pinyin_special_spelling_rules.mp3'
+  'ZH_A1_pinyin_special_spelling_rules.mp3',
+  'ZH_A1_pinyin_practice.mp3'
 ];
 
 const availableAlignments = ['left', 'center', 'right'];
