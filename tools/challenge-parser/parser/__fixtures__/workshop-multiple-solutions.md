@@ -27,8 +27,6 @@ Content in editable region.
 
 --fcc-editable-region--
 
----
-
 # --solutions--
 
 ```html
@@ -42,8 +40,6 @@ Content in editable region.
   </body>
 </html>
 ```
-
----
 
 # --solutions--
 

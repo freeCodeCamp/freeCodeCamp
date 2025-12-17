@@ -23,8 +23,6 @@ In this step, you'll add a div element with the class "container" inside the bod
 
 --fcc-editable-region--
 
----
-
 # --solutions--
 
 ```html

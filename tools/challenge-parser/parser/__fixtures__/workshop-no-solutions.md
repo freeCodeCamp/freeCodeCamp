@@ -27,8 +27,6 @@ Content in editable region.
 
 --fcc-editable-region--
 
----
-
 # --scene--
 
 This challenge intentionally has no solutions section to test error handling.

@@ -38,8 +38,6 @@ Content in editable region.
 
 --fcc-editable-region--
 
----
-
 # --solutions--
 
 ```html
