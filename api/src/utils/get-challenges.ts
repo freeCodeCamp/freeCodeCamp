@@ -14,15 +14,18 @@ const curriculum = JSON.parse(
   readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')
 ) as Curriculum;
 
+interface Challenge {
+  id: string;
+  tests?: { id?: string }[];
+  challengeType: number;
+  url?: string;
+  msTrophyId?: string;
+  saveSubmissionToDB?: boolean;
+  isExam?: boolean;
+}
+
 interface Block {
-  challenges: {
-    id: string;
-    tests?: { id?: string }[];
-    challengeType: number;
-    url?: string;
-    msTrophyId?: string;
-    saveSubmissionToDB?: boolean;
-  }[];
+  challenges: Challenge[];
 }
 
 type SuperBlock = {
@@ -35,12 +38,12 @@ type Curriculum = Record<string, SuperBlock>;
  * Get all challenges including all certifications as "challenges" (ids and tests).
  * @returns The whole curricula reduced to an array.
  */
-export function getChallenges(): Block['challenges'] {
+export function getChallenges(): Challenge[] {
   const curricula = Object.values(curriculum);
 
   return curricula
     .map(v => v.blocks)
-    .reduce((acc: Block['challenges'], superBlock) => {
+    .reduce((acc: Challenge[], superBlock) => {
       const blockKeys = Object.keys(superBlock);
       const challengesForBlock = blockKeys.map(k => {
         const block = superBlock[k];
@@ -62,3 +65,19 @@ export const savableChallenges = challenges.reduce((acc, curr) => {
 
   return acc;
 }, new Set<string>());
+
+const examChallenges = challenges.reduce((acc, curr) => {
+  if (curr.isExam) {
+    acc.add(curr.id);
+  }
+
+  return acc;
+}, new Set<string>());
+
+/**
+ *  Checks if a challenge id is an exam challenge.
+ *
+ * @param id The challenge id to check.
+ * @returns A boolean indicating if the challenge id is an exam challenge.
+ */
+export const isExamId = (id: string): boolean => examChallenges.has(id);
