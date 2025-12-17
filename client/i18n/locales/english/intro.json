@@ -6729,6 +6729,12 @@
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
       },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
