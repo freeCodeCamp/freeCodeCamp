@@ -6,4 +6,4 @@ superBlock: python-v9
 
 ## Introduction to the Understanding Functions and Scope
 
-"In these lessons, you will learn about functions and scope in Python."
+In these lessons, you will learn about functions and scope in Python.
