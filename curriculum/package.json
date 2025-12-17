@@ -38,7 +38,7 @@
     "reorder-tasks": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/reorder-tasks",
     "update-challenge-order": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-challenge-order",
     "update-step-titles": "CALLING_DIR=$INIT_CWD tsx --tsconfig ../tsconfig.json ../tools/challenge-helper-scripts/update-step-titles",
-    "test": "pnpm test-gen && vitest run",
+    "test": "NODE_OPTIONS='--max-old-space-size=7168' pnpm test-gen && vitest run",
     "test:watch": "pnpm test-gen && vitest",
     "test-gen": "tsx ./src/test/utils/generate-block-tests.ts",
     "test-tooling": "pnpm test --project @freecodecamp/curriculum",
