@@ -83,6 +83,8 @@
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
+  /* Ensure the right group pins to the end even when no left/middle items exist */
+  margin-inline-start: auto;
 }
 
 .monaco-editor-tabs button + button {
@@ -195,9 +197,7 @@
   flex-direction: column;
 }
 
-#learn-app-wrapper[data-has-editable-boundaries='true']
-  #mobile-layout
-  .tab-content[data-state='active'] {
+#mobile-layout.has-editable-boundaries .tab-content[data-state='active'] {
   padding-block-end: 0px;
 }
 

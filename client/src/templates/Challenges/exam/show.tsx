@@ -496,7 +496,7 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Callout variant='info'>
+                <Callout variant='note' label={t('misc.note')}>
                   <p>{t('learn.exam.qualified')}</p>
                 </Callout>
               ) : !prerequisitesComplete ? (

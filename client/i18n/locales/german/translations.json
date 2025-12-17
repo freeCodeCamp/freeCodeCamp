@@ -281,7 +281,7 @@
     "disabled": "Deine Zertifizierungen werden deaktiviert, wenn sie auf privat gesetzt sind.",
     "private-name": "Dein Name erscheint nicht auf Deinen Zertifizierungen, wenn dieser auf privat eingestellt ist.",
     "claim-legacy": "Sobald du die folgenden freeCodeCamp Zertifizierungen erworben hast, kannst du das {{cert}} beanspruchen:",
-    "for": "Kontoeinstellungen für {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Das sorgt für den angenehmen Klang der Akustikgitarre auf der gesamten Website. Du bekommst musikalisches Feedback, wenn du im Editor tippst, Aufgaben löst, Zertifizierungen beantragst und vieles mehr.",
     "sound-volume": "Lautstärke Lagerfeuer-Modus:",
     "scrollbar-width": "Editor Scrollbar Width",
@@ -328,12 +328,13 @@
       "keyboard-shortcuts": "Tastaturkurzbefehle aktivieren"
     },
     "headings": {
+      "account": "Account",
       "certs": "Zertifikate",
       "legacy-certs": "Alte Zertifikate",
       "honesty": "Akademischer Ehrlichkeitskodex",
       "internet": "Dein Internetauftritt",
       "portfolio": "Portfolio-Einstellungen",
-      "privacy": "Privatsphäre-Einstellungen",
+      "privacy": "Privacy",
       "personal-info": "Personal Information"
     },
     "danger": {
@@ -362,7 +363,7 @@
     },
     "email": {
       "missing": "Du hast keine E-Mail mit diesem Konto verbunden.",
-      "heading": "E-Mail-Einstellungen",
+      "heading": "Email",
       "not-verified": "Deine E-Mail wurde noch nicht verifiziert.",
       "check": "Bitte überprüfe deine E-Mail, oder <0>fordere eine neue Bestätigungs-E-Mail an</0>.",
       "current": "Aktuelle E-Mail",
@@ -929,7 +930,7 @@
     "linkedin": "Link zu {{username}}'s LinkedIn-Account",
     "github": "Link zu {{username}}'s GitHub-Account",
     "website": "Link zu {{username}}'s Website",
-    "twitter": "Link zu {{username}}'s Twitter-Account",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Zur ersten Seite gehen",
@@ -964,7 +965,8 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
-    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1227,7 +1229,7 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "responsive-web-design-v9": "Responsive Web Design",
