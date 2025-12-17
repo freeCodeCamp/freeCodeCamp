@@ -18,6 +18,7 @@ const initialState = {
   visibleEditors: {},
   challengeFiles: [],
   challengeMeta: {
+    allowAnimations: false,
     superBlock: '',
     block: '',
     blockHashSlug: '/',

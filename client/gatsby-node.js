@@ -300,6 +300,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       challenge: Challenge
     }
     type Challenge {
+      allowAnimations: Boolean
       assignments: [String]
       bilibiliIds: BilibiliIds
       block: String
