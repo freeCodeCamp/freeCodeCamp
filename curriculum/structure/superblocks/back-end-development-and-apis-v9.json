@@ -7,10 +7,7 @@
         {
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": [
-            "review-node-js-intro",
-            "quiz-node-js-intro"
-          ]
+          "blocks": ["review-node-js-intro", "quiz-node-js-intro"]
         },
         {
           "dashedName": "nodejs-core-libraries",
