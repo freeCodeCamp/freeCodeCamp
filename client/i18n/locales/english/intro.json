@@ -6741,6 +6741,12 @@
           "In these lessons, you will learn about booleans and conditionals in Python."
         ]
       },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
+        ]
+      },
       "workshop-caesar-cipher": {
         "title": "Build a Caesar Cipher",
         "intro": [
