@@ -1846,7 +1846,7 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Introduction to Node.js",
+
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -7362,6 +7362,7 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
+      "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -7377,6 +7378,12 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
+      "introduction-to-nodejs": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
       "nodejs-core-modules": {
         "note": "Coming Late 2026",
         "intro": [
