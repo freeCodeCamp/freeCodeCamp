@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Set of Colorful Boxes
 block: workshop-colorful-boxes
-superBlock: full-stack-developer
+superBlock: responsive-web-design-v9
 ---
 
 ## Introduction to the Design a Set of Colorful Boxes
