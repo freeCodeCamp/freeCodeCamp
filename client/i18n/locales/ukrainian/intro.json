@@ -1710,6 +1710,12 @@
         "intro": [
           "У цьому курсі ви навчитесь використовувати поширені фразові дієслова та ідіоми, щоб звучати природніше й впевненіше на роботі. Ви будете використовувати різні вирази, щоб висловлювати думки, робити пропозиції, організовувати зустрічі та обговорювати завдання в щоденних робочих розмовах."
         ]
+      },
+      "en-b1-certification-exam": {
+        "title": "B1 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the B1 English for Developers Certification."
+        ]
       }
     }
   },
@@ -7464,10 +7470,20 @@
       }
     },
     "blocks": {
+      "quiz-node-js-intro": {
+        "title": "NodeJS Intro Quiz",
+        "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7532,39 +7548,17 @@
       "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
-      "es-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-letters-sounds-and-first-numbers": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-greetings-and-farewells": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-introducing-yourself": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-first-questions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-numbers-10-to-29": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "es-a1-module-sharing-your-personal-details": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
-        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+        "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Greetings During the Day",
@@ -8283,6 +8277,13 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -8767,12 +8768,16 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
+      "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
+      "Each chapter includes hundreds of interactive tasks designed to help you take your first steps in learning Chinese with confidence."
+    ],
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
@@ -8841,24 +8846,16 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Greetings and Introductions Quiz",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8869,8 +8866,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8889,8 +8886,8 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
@@ -8975,6 +8972,14 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
         "intro": ["", ""]
       }
     }
