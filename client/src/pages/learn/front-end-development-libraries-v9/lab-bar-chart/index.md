@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Bar Chart
 block: lab-bar-chart
-superBlock: full-stack-developer
+superBlock: front-end-development-libraries-v9
 ---
 
 ## Introduction to the Build a Bar Chart
