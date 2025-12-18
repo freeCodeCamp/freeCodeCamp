@@ -83,26 +83,24 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
       portal: t('aria.open-preview-in-new-window')
     };
 
-    // preview open in main window
-    if (showPreviewPane && !showPreviewPortal && !usesTerminal) {
-      previewBtnsSrText.pane = t('aria.hide-preview');
-      previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
-
-      // preview open in external window
-    } else if (showPreviewPortal && !showPreviewPane && !usesTerminal) {
-      previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-preview-window');
-    }
-
-    // terminal open in main window
-    if (showPreviewPane && !showPreviewPortal && usesTerminal) {
-      previewBtnsSrText.pane = t('aria.hide-terminal');
-      previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
-
-      // terminal open in external window
-    } else if (showPreviewPortal && !showPreviewPane && usesTerminal) {
-      previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
-      previewBtnsSrText.portal = t('aria.close-external-terminal-window');
+    // open in main window
+    if (showPreviewPane && !showPreviewPortal) {
+      if (usesTerminal) {
+        previewBtnsSrText.pane = t('aria.hide-terminal');
+        previewBtnsSrText.portal = t('aria.move-terminal-to-new-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.hide-preview');
+        previewBtnsSrText.portal = t('aria.move-preview-to-new-window');
+      }
+      // open in external window
+    } else if (showPreviewPortal && !showPreviewPane) {
+      if (usesTerminal) {
+        previewBtnsSrText.pane = t('aria.move-terminal-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-terminal-window');
+      } else {
+        previewBtnsSrText.pane = t('aria.move-preview-to-main-window');
+        previewBtnsSrText.portal = t('aria.close-external-preview-window');
+      }
     }
 
     return previewBtnsSrText;

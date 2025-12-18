@@ -31,7 +31,9 @@ test.describe('Desktop view', () => {
     test('Preview button is visible during HTML/CSS/JS challenges', async ({
       page
     }) => {
-      const previewPaneButton = page.getByTestId('preview-pane-button');
+      const previewPaneButton = page.getByRole('button', {
+        name: translations.learn['editor-tabs']['preview']
+      });
       const previewPortalButton = page.getByRole('button', {
         name: translations.aria['move-preview-to-new-window']
       });
@@ -47,10 +49,10 @@ test.describe('Desktop view', () => {
     test('Terminal button is visible during Python challenges', async ({
       page
     }) => {
-      await page.goto(
-        '/learn/python-v9/workshop-caesar-cipher/step-1'
-      );
-      const terminalPaneButton = page.getByTestId('preview-pane-button');
+      await page.goto('/learn/python-v9/workshop-caesar-cipher/step-1');
+      const terminalPaneButton = page.getByRole('button', {
+        name: translations.learn['editor-tabs']['preview']
+      });
       const terminalPortalButton = page.getByRole('button', {
         name: translations.aria['move-terminal-to-new-window']
       });
