@@ -5,11 +5,7 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
-import {
-  SuperBlocks,
-  SuperBlockStage,
-  superBlockStages
-} from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -231,22 +227,17 @@ export function addSuperblockStructure(
   log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
   const superblockStructures = superBlockFilenames.map(filename => {
-    const superblockName =
+    const superBlockName =
       superBlockNames[filename as keyof typeof superBlockNames];
-    if (!superblockName) {
+    if (!superBlockName) {
       throw new Error(`Superblock name not found for ${filename}`);
     }
 
-    // Skip duplicate validation for Upcoming and Catalog superblocks
-    const isUpcomingOrCatalog =
-      superBlockStages[SuperBlockStage.Upcoming].includes(superblockName) ||
-      superBlockStages[SuperBlockStage.Catalog].includes(superblockName);
-
     return {
-      name: superblockName,
+      name: superBlockName,
       blocks: transformSuperBlock(getSuperblockStructure(filename), {
         showComingSoon,
-        skipDuplicateCheck: isUpcomingOrCatalog
+        superBlockName
       })
     };
   });
