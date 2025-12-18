@@ -1365,7 +1365,7 @@ function _getSurroundingTicks(value, ticks, normalTickOrder) {
 }
 
 function triggerMouseEvent(area, mouseEvent) {
-  var event;
+  let event;
   if (document.createEvent) {
     // Internet Explorer.
     event = document.createEvent('MouseEvent');
@@ -1782,23 +1782,23 @@ const projectName = 'bar-chart';
 
 // coded by @Christian-Paul
 
-var width = 800,
+let width = 800,
   height = 400,
   barWidth = width / 275;
 
-var tooltip = d3
+let tooltip = d3
   .select('.visHolder')
   .append('div')
   .attr('id', 'tooltip')
   .style('opacity', 0);
 
-var overlay = d3
+let overlay = d3
   .select('.visHolder')
   .append('div')
   .attr('class', 'overlay')
   .style('opacity', 0);
 
-var svgContainer = d3
+let svgContainer = d3
   .select('.visHolder')
   .append('svg')
   .attr('width', width + 100)
@@ -1822,9 +1822,9 @@ d3.json(
       .text('More Information: http://www.bea.gov/national/pdf/nipaguid.pdf')
       .attr('class', 'info');
 
-    var years = data.data.map(function (item) {
-      var quarter;
-      var temp = item[0].substring(5, 7);
+    let years = data.data.map(function (item) {
+      let quarter;
+      let temp = item[0].substring(5, 7);
 
       if (temp === '01') {
         quarter = 'Q1';
@@ -1839,18 +1839,18 @@ d3.json(
       return item[0].substring(0, 4) + ' ' + quarter;
     });
 
-    var yearsDate = data.data.map(function (item) {
+    let yearsDate = data.data.map(function (item) {
       return new Date(item[0]);
     });
 
-    var xMax = new Date(d3.max(yearsDate));
+    let xMax = new Date(d3.max(yearsDate));
     xMax.setMonth(xMax.getMonth() + 3);
-    var xScale = d3
+    let xScale = d3
       .scaleTime()
       .domain([d3.min(yearsDate), xMax])
       .range([0, width]);
 
-    var xAxis = d3.axisBottom().scale(xScale);
+    let xAxis = d3.axisBottom().scale(xScale);
 
     svgContainer
       .append('g')
@@ -1858,23 +1858,23 @@ d3.json(
       .attr('id', 'x-axis')
       .attr('transform', 'translate(60, 400)');
 
-    var GDP = data.data.map(function (item) {
+    let GDP = data.data.map(function (item) {
       return item[1];
     });
 
-    var scaledGDP = [];
+    let scaledGDP = [];
 
-    var gdpMax = d3.max(GDP);
+    let gdpMax = d3.max(GDP);
 
-    var linearScale = d3.scaleLinear().domain([0, gdpMax]).range([0, height]);
+    let linearScale = d3.scaleLinear().domain([0, gdpMax]).range([0, height]);
 
     scaledGDP = GDP.map(function (item) {
       return linearScale(item);
     });
 
-    var yAxisScale = d3.scaleLinear().domain([0, gdpMax]).range([height, 0]);
+    let yAxisScale = d3.scaleLinear().domain([0, gdpMax]).range([height, 0]);
 
-    var yAxis = d3.axisLeft(yAxisScale);
+    let yAxis = d3.axisLeft(yAxisScale);
 
     svgContainer
       .append('g')
@@ -1910,7 +1910,7 @@ d3.json(
       .on('mouseover', function (event, d) {
         // d or datum is the height of the
         // current rect
-        var i = this.getAttribute('index');
+        let i = this.getAttribute('index');
 
         overlay
           .transition()
