@@ -14,7 +14,8 @@
       "dependsOn": [
         "@freecodecamp/curriculum#compile",
         "create:env",
-        "@freecodecamp/curriculum#build"
+        "@freecodecamp/curriculum#build",
+        "build:scripts"
       ]
     },
     "@freecodecamp/gatsby-source-challenges#lint": {
