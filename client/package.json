@@ -24,7 +24,7 @@
     "build:scripts": "pnpm run -F=browser-scripts build",
     "build:external-curriculum": "tsx ./tools/external-curriculum/build",
     "clean": "gatsby clean",
-    "common-setup": "pnpm -w run compile:ts && pnpm run create:env && pnpm run create:trending && pnpm run create:search-placeholder",
+    "common-setup": "pnpm -w turbo compile && pnpm run create:env && pnpm run create:trending && pnpm run create:search-placeholder",
     "create:env": "DEBUG=fcc:* tsx ./tools/create-env.ts",
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
@@ -139,6 +139,7 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/shared": "workspace:*",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "^8.0.1",

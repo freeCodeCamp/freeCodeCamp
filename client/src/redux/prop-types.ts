@@ -2,11 +2,11 @@ import { HandlerProps } from 'react-reflex';
 import type {
   ChallengeLang,
   SuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { CertificationFlags } from '../../../shared-dist/config/certification-settings';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
+} from '@freecodecamp/shared/config/curriculum';
+import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
