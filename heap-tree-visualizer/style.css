@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f6f8;
+}
+
+.controls {
+  margin: 20px;
+}
+
+input {
+  padding: 8px;
+  width: 160px;
+}
+
+button {
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+circle {
+  fill: #4caf50;
+}
+
+text {
+  fill: white;
+  font-size: 14px;
+  font-weight: bold;
+  text-anchor: middle;
+  dominant-baseline: middle;
+}
+
+line {
+  stroke: #555;
+  stroke-width: 2;
+}
