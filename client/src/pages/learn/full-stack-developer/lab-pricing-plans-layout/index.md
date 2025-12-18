@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Design a Pricing Plans Layout Page
 block: lab-pricing-plans-layout
-superBlock: full-stack-developer
+superBlock: responsive-web-design-v9
 ---
 
 ## Introduction to the Design a Pricing Plans Layout Page
