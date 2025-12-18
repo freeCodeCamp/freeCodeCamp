@@ -258,10 +258,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
-  const usesTerminal =
-    challengeFiles == null
-      ? false
-      : challengeFiles.some(file => file.ext == 'py');
 
   const {
     codePane,

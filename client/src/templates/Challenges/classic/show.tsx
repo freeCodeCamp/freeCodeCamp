@@ -463,9 +463,10 @@ function ShowClassic({
   };
 
   const usesTerminal =
-    challengeFiles == null
-      ? false
-      : challengeFiles.some(file => file.ext == 'py');
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
 
   return (
     <Hotkeys
