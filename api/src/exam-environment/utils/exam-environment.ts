@@ -12,8 +12,7 @@ import {
   ExamEnvironmentMultipleChoiceQuestion,
   ExamEnvironmentMultipleChoiceQuestionAttempt,
   ExamEnvironmentQuestionSet,
-  ExamEnvironmentQuestionSetAttempt,
-  user
+  ExamEnvironmentQuestionSetAttempt
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
@@ -23,13 +22,18 @@ import { mapErr } from '../../utils/index.js';
 import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
 import { ERRORS } from './errors.js';
 
+interface PartialUser {
+  completedChallenges: { id: string }[];
+  isHonest: boolean;
+}
+
 /**
  * Checks if all exam prerequisites have been met by the user:
  * - completed challenges linked to exam
  * - user is required to have accepted the academic honesty policy
  */
 export function checkPrerequisites(
-  user: user,
+  user: PartialUser,
   prerequisites: ExamEnvironmentExam['prerequisites']
 ) {
   return (
