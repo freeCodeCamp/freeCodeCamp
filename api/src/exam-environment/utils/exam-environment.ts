@@ -24,7 +24,7 @@ import { ERRORS } from './errors.js';
 
 interface PartialUser {
   completedChallenges: { id: string }[];
-  isHonest: boolean;
+  isHonest: boolean | null;
 }
 
 /**
