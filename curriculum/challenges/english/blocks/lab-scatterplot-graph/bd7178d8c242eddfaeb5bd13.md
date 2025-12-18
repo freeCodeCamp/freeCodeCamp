@@ -599,7 +599,7 @@ function _getSurroundingTicks(value, ticks, normalTickOrder) {
 }
 
 function triggerMouseEvent(area, mouseEvent) {
-  var event;
+  let event;
   if (document.createEvent) {
     // Internet Explorer.
     event = document.createEvent('MouseEvent');
@@ -685,8 +685,8 @@ Each dot should have the properties `data-xvalue` and `data-yvalue` containing t
 const dots = document.getElementsByClassName('dot');
 assert.isNotEmpty(dots);
 
-for (var i = 0; i < dots.length; i++) {
-  var dot = dots[i];
+for (let i = 0; i < dots.length; i++) {
+  let dot = dots[i];
   assert.isNotNull(
     dot.getAttribute('data-xvalue'),
     'Could not find property "data-xvalue" in dot'
@@ -716,7 +716,7 @@ const dots = [].slice.call(dotsCollection);
 assert.isNotEmpty(dots);
 
 dots.forEach((dot) => {
-  var xYear = new Date(dot.getAttribute('data-xvalue'));
+  let xYear = new Date(dot.getAttribute('data-xvalue'));
   assert.isAtLeast(
     xYear.getFullYear(),
     MIN_YEAR,
@@ -728,7 +728,7 @@ dots.forEach((dot) => {
     'The data-xvalue of a dot is above the range of the actual data'
   );
 
-  var yDate = new Date(dot.getAttribute('data-yvalue'));
+  let yDate = new Date(dot.getAttribute('data-yvalue'));
   assert.isAtLeast(
     yDate.getMinutes(),
     MIN_MINUTES,
@@ -867,10 +867,10 @@ const MIN_TIME = new Date(0, 0, 0, 0, MIN_MINUTES, 0, 0);
 const MAX_TIME = new Date(0, 0, 0, 0, MAX_MINUTES, 0, 0);
 
 yAxisTickLabels.forEach((label) => {
-  var timeArr = label.textContent.split(':');
-  var mins = timeArr[0];
-  var secs = timeArr[1];
-  var date = new Date(0, 0, 0, 0, mins, secs, 0);
+  let timeArr = label.textContent.split(':');
+  let mins = timeArr[0];
+  let secs = timeArr[1];
+  let date = new Date(0, 0, 0, 0, mins, secs, 0);
   assert.isAtLeast(
     date,
     MIN_TIME,
@@ -889,7 +889,7 @@ You can see a legend containing descriptive text that has `id="legend"`.
 ```js
 assert.isNotNull(document.getElementById('legend'));
 
-var legendText;
+let legendText;
 if (document.querySelector('#legend text') !== null) {
   legendText = document.querySelector('#legend text').innerHTML;
 } else {
@@ -1072,11 +1072,9 @@ div.tooltip {
 ```
 
 ```js
-// coded by @paycoguy
-
-var url =
+let url =
   'https://cdn.freecodecamp.org/curriculum/labs/data/scatterplot/cyclist-data.json';
-var margin = {
+let margin = {
     top: 100,
     right: 20,
     bottom: 30,
@@ -1085,26 +1083,26 @@ var margin = {
   width = 920 - margin.left - margin.right,
   height = 630 - margin.top - margin.bottom;
 
-var x = d3.scaleLinear().range([0, width]);
+let x = d3.scaleLinear().range([0, width]);
 
-var y = d3.scaleTime().range([0, height]);
+let y = d3.scaleTime().range([0, height]);
 
-var color = d3.scaleOrdinal(d3.schemeCategory10);
+let color = d3.scaleOrdinal(d3.schemeCategory10);
 
-var timeFormat = d3.timeFormat('%M:%S');
-var xAxis = d3.axisBottom(x).tickFormat(d3.format('d'));
+let timeFormat = d3.timeFormat('%M:%S');
+let xAxis = d3.axisBottom(x).tickFormat(d3.format('d'));
 
-var yAxis = d3.axisLeft(y).tickFormat(timeFormat);
+let yAxis = d3.axisLeft(y).tickFormat(timeFormat);
 
 // Define the div for the tooltip
-var div = d3
+let div = d3
   .select('body')
   .append('div')
   .attr('class', 'tooltip')
   .attr('id', 'tooltip')
   .style('opacity', 0);
 
-var svg = d3
+let svg = d3
   .select('body')
   .append('svg')
   .attr('width', width + margin.left + margin.right)
@@ -1117,7 +1115,7 @@ d3.json(url)
   .then(data => {
     data.forEach(function (d) {
       d.Place = +d.Place;
-      var parsedTime = d.Time.split(':');
+      let parsedTime = d.Time.split(':');
       d.Time = new Date(1970, 0, 1, 0, parsedTime[0], parsedTime[1]);
     });
 
@@ -1232,9 +1230,9 @@ d3.json(url)
       .style('font-size', '20px')
       .text("35 Fastest times up Alpe d'Huez");
 
-    var legendContainer = svg.append('g').attr('id', 'legend');
+    let legendContainer = svg.append('g').attr('id', 'legend');
 
-    var legend = legendContainer
+    let legend = legendContainer
       .selectAll('#legend')
       .data(color.domain())
       .enter()
