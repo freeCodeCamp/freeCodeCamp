@@ -1,6 +1,5 @@
 {
   "include": [
-    "*.ts",
     "curriculum/*.test.ts",
     "tools/challenge-editor/**/*",
     "tools/scripts/**/*.ts",
