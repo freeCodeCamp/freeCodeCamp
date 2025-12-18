@@ -7,7 +7,11 @@
         {
           "dashedName": "introduction-to-nodejs",
           "comingSoon": true,
-          "blocks": ["lecture-working-with-nodejs-and-event-driven-architecture", "review-node-js-intro", "quiz-node-js-intro"]
+          "blocks": [
+            "lecture-working-with-nodejs-and-event-driven-architecture",
+            "review-node-js-intro",
+            "quiz-node-js-intro"
+          ]
         },
         {
           "dashedName": "nodejs-core-modules",
