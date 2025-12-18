@@ -25,13 +25,6 @@ import {
 } from './speaking-modal-helpers';
 import './speaking-modal.css';
 
-// Helper function to strip HTML tags from a string
-const stripHtmlTags = (str: string): string => {
-  const div = document.createElement('div');
-  div.innerHTML = str;
-  return div.textContent || div.innerText || '';
-};
-
 interface ExactMatchFeedbackProps {
   sentence: string;
   feedback: string;
@@ -220,8 +213,7 @@ const SpeakingModal = ({
     if (previouslyListening && !listening && hasStartedRecording) {
       // Speech recognition just stopped and we had started a recording session
       if (transcript && transcript.trim()) {
-        const cleanSentence = stripHtmlTags(sentence);
-        const result = compareTexts(cleanSentence, transcript);
+        const result = compareTexts(sentence, transcript);
 
         setComparisonResult(result);
 
@@ -330,7 +322,7 @@ const SpeakingModal = ({
 
         <div className='speaking-modal-sentence-container'>
           <p id='speaking-sentence' className='speaking-modal-sentence'>
-            {stripHtmlTags(sentence)}
+            {sentence}
           </p>
           <Button
             size='medium'
@@ -377,14 +369,11 @@ const SpeakingModal = ({
           aria-atomic='true'
         >
           {comparisonResult?.status === 'correct' ? (
-            <ExactMatchFeedback
-              sentence={stripHtmlTags(sentence)}
-              feedback={feedback}
-            />
+            <ExactMatchFeedback sentence={sentence} feedback={feedback} />
           ) : comparisonResult?.comparison ? (
             <PartialMatchFeedback
               comparisonResult={comparisonResult}
-              sentence={stripHtmlTags(sentence)}
+              sentence={sentence}
               feedback={feedback}
             />
           ) : (

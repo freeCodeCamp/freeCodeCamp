@@ -1,5 +1,9 @@
 import { describe, it, expect } from 'vitest';
-import { normalizeText, compareTexts } from './speaking-modal-helpers';
+import {
+  normalizeText,
+  compareTexts,
+  stripHtmlTags
+} from './speaking-modal-helpers';
 
 describe('speaking-modal-helpers', () => {
   describe('normalizeText', () => {
@@ -229,6 +233,71 @@ describe('speaking-modal-helpers', () => {
           status: 'correct'
         });
       });
+    });
+  });
+
+  describe('stripHtmlTags', () => {
+    it('should remove code tags', () => {
+      expect(stripHtmlTags('<code>hello</code>')).toBe('hello');
+    });
+
+    it('should remove span tags', () => {
+      expect(stripHtmlTags('<span>world</span>')).toBe('world');
+    });
+
+    it('should remove span tags with class attributes', () => {
+      expect(stripHtmlTags('<span class="token">Nǐ hǎo</span>')).toBe('Nǐ hǎo');
+    });
+
+    it('should remove multiple tags', () => {
+      expect(stripHtmlTags('<p>Hello <span>world</span></p>')).toBe(
+        'Hello world'
+      );
+    });
+
+    it('should handle nested tags', () => {
+      expect(stripHtmlTags('<p><span class="highlight">text</span></p>')).toBe(
+        'text'
+      );
+    });
+
+    it('should handle text without tags', () => {
+      expect(stripHtmlTags('plain text')).toBe('plain text');
+    });
+
+    it('should handle empty string', () => {
+      expect(stripHtmlTags('')).toBe('');
+    });
+
+    it('should remove tags but preserve spacing', () => {
+      expect(stripHtmlTags('Hello <code>world</code> today')).toBe(
+        'Hello world today'
+      );
+    });
+
+    it('should handle Chinese characters with pinyin', () => {
+      expect(stripHtmlTags('<span>shǎo</span>')).toBe('shǎo');
+      expect(stripHtmlTags('<code>shào</code>')).toBe('shào');
+    });
+
+    it('should handle multiple span tags in sequence', () => {
+      expect(
+        stripHtmlTags(
+          '<span class="token">Nǐ</span> <span class="token">hǎo</span>'
+        )
+      ).toBe('Nǐ hǎo');
+    });
+
+    it('should remove paragraph tags', () => {
+      expect(stripHtmlTags('<p>Text content</p>')).toBe('Text content');
+    });
+
+    it('should handle tags with multiple attributes', () => {
+      expect(
+        stripHtmlTags(
+          '<span class="token" id="test" data-value="123">text</span>'
+        )
+      ).toBe('text');
     });
   });
 });
