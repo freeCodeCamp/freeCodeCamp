@@ -132,7 +132,6 @@
       "nodemon",
       "prisma",
       "puppeteer",
-      "sharp",
       "unrs-resolver"
     ]
   }

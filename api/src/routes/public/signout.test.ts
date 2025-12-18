@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 import { devLogin, setupServer, superRequest } from '../../../vitest.utils.js';
-import { HOME_LOCATION } from '../../utils/env.js';
 
 describe('GET /signout', () => {
   setupServer();
@@ -29,12 +28,9 @@ describe('GET /signout', () => {
     expect(setCookie).toHaveLength(3);
   });
 
-  it('should redirect to / on the client by default', async () => {
+  it('should respond with an empty object', async () => {
     const res = await superRequest('/signout', { method: 'GET' });
-
-    // TODO: separate the validation and normalization logic.
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    expect(res.headers.location).toBe(`${HOME_LOCATION}/`);
-    expect(res.status).toBe(302);
+    expect(res.body).toEqual({});
+    expect(res.status).toBe(200);
   });
 });

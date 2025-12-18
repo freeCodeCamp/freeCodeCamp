@@ -38,11 +38,6 @@ test.describe('The update-email page when the user is signed in', () => {
     );
     await expect(submitButton).toBeVisible();
     await expect(submitButton).toHaveAttribute('type', 'submit');
-
-    const signOutButton = page.getByRole('link', { name: 'Sign out' });
-
-    await expect(signOutButton).toBeVisible();
-    await expect(signOutButton).toHaveAttribute('href', '/signout');
   });
 
   test('should enable the submit button if the email input is valid', async ({

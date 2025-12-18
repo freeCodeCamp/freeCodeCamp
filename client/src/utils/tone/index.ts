@@ -89,7 +89,8 @@ const toneUrls = {
   [FlashMessages.UserTokenGenerateError]: TRY_AGAIN,
   [FlashMessages.WrongName]: TRY_AGAIN,
   [FlashMessages.WrongUpdating]: TRY_AGAIN,
-  [FlashMessages.WentWrong]: TRY_AGAIN
+  [FlashMessages.WentWrong]: TRY_AGAIN,
+  [FlashMessages.UserFetchError]: TRY_AGAIN
 } as const;
 
 type ToneStates = keyof typeof toneUrls;

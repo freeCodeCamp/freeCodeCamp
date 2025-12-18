@@ -207,6 +207,7 @@
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -930,7 +933,7 @@
     "linkedin": "鏈接到 {{username}} 的 LinkedIn",
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
-    "twitter": "鏈接到 {{username}} 的 Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -1081,7 +1084,8 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -1229,7 +1233,7 @@
       "foundational-c-sharp-with-microsoft": "微軟基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "a2-english-for-developers": "開發者 A2 英語",
-      "a2-english-for-developers-cert": "開發者 A2 英語認證",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開發者 B1 英語",
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "responsive-web-design-v9": "Responsive Web Design",

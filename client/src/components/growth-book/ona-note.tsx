@@ -16,7 +16,7 @@ export function OnaNote({ superBlock }: OnaNoteProps): JSX.Element | null {
   const { t } = useTranslation();
 
   return onaNoteFeature.superblocks.includes(superBlock) ? (
-    <Callout variant='info'>
+    <Callout variant='note' label={t('misc.note')}>
       <p>
         <Link
           external={true}

@@ -100,7 +100,8 @@ exports.createChallengePages = function (
       template,
       challengeType,
       id,
-      isLastChallengeInBlock
+      isLastChallengeInBlock,
+      saveSubmissionToDB
     } = node.challenge;
 
     createPage({
@@ -123,7 +124,8 @@ exports.createChallengePages = function (
           isLastChallengeInBlock: isLastChallengeInBlock,
           nextChallengePath: idToNextPathCurrentCurriculum[node.id],
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
-          id
+          id,
+          saveSubmissionToDB
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,

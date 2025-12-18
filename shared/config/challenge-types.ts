@@ -170,10 +170,6 @@ export const submitTypes = {
   [review]: 'tests'
 };
 
-export const canSaveToDB = (challengeType: number): boolean =>
-  challengeType === challengeTypes.multifileCertProject ||
-  challengeType === challengeTypes.multifilePythonCertProject;
-
 const dailyCodingChallengeTypes = [
   challengeTypes.dailyChallengeJs,
   challengeTypes.dailyChallengePy

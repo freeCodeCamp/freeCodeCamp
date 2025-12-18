@@ -24,3 +24,8 @@ export const msTrophyVerified = {
   type: 'success',
   message: FlashMessages.MsTrophyVerified
 };
+
+export const UserFetchErrorMessage = {
+  type: 'danger',
+  message: FlashMessages.UserFetchError
+};

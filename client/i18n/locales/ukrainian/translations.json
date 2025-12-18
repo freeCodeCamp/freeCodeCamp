@@ -207,6 +207,7 @@
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
     "core-certs-heading": "Рекомендована програма (бета-версія):",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Архівовані курси:",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Зовсім скоро",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Схоже, що ви не підключені до мережі, тому не зможете зберегти свій прогрес",
     "server-offline": "Сервер не відповідає, ваш прогрес може не зберегтись. Будь ласка, зв’яжіться з <0>підтримкою</0>, якщо помилка не зникне",
     "unsubscribed": "Підписку успішно скасовано",
@@ -930,7 +933,7 @@
     "linkedin": "Посилання на сторінку LinkedIn {{username}}",
     "github": "Посилання на сторінку GitHub {{username}}",
     "website": "Посилання на вебсайт {{username}}",
-    "twitter": "Посилання на сторінку Twitter {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Наступний місяць",
     "previous-month": "Попередній місяць",
     "first-page": "Перейти на першу сторінку",
@@ -1081,7 +1084,8 @@
       "err-3": "Під час спроби зберегти відповіді виникла помилка.",
       "success": "Дякуємо. Ваші відповіді надіслано."
     },
-    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -1229,7 +1233,7 @@
       "foundational-c-sharp-with-microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
-      "a2-english-for-developers-cert": "Сертифікація «Англійська мова A2 для розробників»",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "responsive-web-design-v9": "Responsive Web Design",

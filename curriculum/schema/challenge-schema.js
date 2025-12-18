@@ -164,6 +164,7 @@ const schema = Joi.object().keys({
     otherwise: Joi.optional()
   }),
   certification: Joi.string().regex(slugWithSlashRE),
+  isExam: Joi.boolean(),
   challengeType: Joi.number().min(0).max(31).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
@@ -315,6 +316,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  saveSubmissionToDB: Joi.bool(),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()

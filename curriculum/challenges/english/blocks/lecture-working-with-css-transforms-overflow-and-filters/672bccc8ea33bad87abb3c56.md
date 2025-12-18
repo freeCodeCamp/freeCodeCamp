@@ -7,15 +7,7 @@ dashedName: what-is-the-difference-between-content-box-and-border-box
 
 # --interactive--
 
-The `box-sizing` property can be set to either `content-box` or `border-box` to control how the width and height of elements are calculated. Here you can see the `box-sizing` property and the two possible values: 
-
-```css
-box-sizing: content-box;
-```
-
-```css
-box-sizing: border-box;
-```
+The `box-sizing` property can be set to either `content-box` or `border-box` to control how the width and height of elements are calculated.
 
 This property can be set on the universal selector (`*`) to apply to all the elements in the document:
 
@@ -27,13 +19,16 @@ This property can be set on the universal selector (`*`) to apply to all the ele
 
 The value of the `box-sizing` property is `content-box` by default, but you can choose `border-box` if you need to. We will explore `content-box` first and then we will go into `border-box`.
 
-To understand how this models work, you need to be familiar with the four core concepts from the CSS box model. Let's review them quickly. The content area is the space occupied by the element's content. The padding is the space between the content area and the border. The border is the outline that surrounds the content area and the padding. The margin is the space outside the border that separates the element from other elements.
+To understand how the models work, you need to be familiar with the four core concepts from the CSS box model. Let's review them quickly.
 
-In the `content-box` model, the width and height that you set for an element determines the dimensions of the content area but they don't include the padding, border or margin. You should use `content-box` when you need to have precise control over the dimensions of the content area. So, when you set the width and height of an element with `width` and `height` properties, you are only setting the dimensions of the content area. `width` is the width of the content, `height` is the height of the content. 
+- The content area is the space occupied by the element's content.
+- The padding is the space between the content area and the border.
+- The border is the outline that surrounds the content area and the padding.
+- The margin is the space outside the border that separates the element from other elements.
 
-To find the total width of the element, what you will really see on the screen, you will still need to add the left and right padding, and the left and right borders. So, the total width equals the total width plus the padding left, plus padding right, plus border left, plus border right. 
+In the `content-box` model, the width and height that you set for an element determine the dimensions of the content area, but they don't include the padding, border, or margin. Use `content-box` when you need precise control over the content area. When you set `width` and `height`, you're only setting the size of the content itself.
 
-Likewise, the total height of an element can be found by adding the content height, the top and bottom border padding, and the top and bottom borders. So, the total height equals the content height plus padding top, plus padding bottom, plus border top, plus border bottom. 
+To find the total width of the element, you will need to add the left and right padding, and the left and right borders. Likewise, the total height of an element can be found by adding the content height, the top and bottom padding, and the top and bottom borders.
 
 For example, here we have a CSS type selector for all the `div` elements. 
 
@@ -55,37 +50,13 @@ div {
 
 :::
 
-In this case, if `content-box` is used the content area will have a width of 300 pixels and a height of 200 pixels. However, the total width, what you will see on the screen, will be the result of adding the width of the content area, which is 300 pixels, plus the padding on both sides (40 pixels), and the borders on both sides (8 pixels). 
+In this case, if `content-box` is used the content area will be 300px by 200px. The total rendered size includes padding and borders — for example, total width = 300px (content) + 40px (padding) + 8px (borders) = 348px; the total height is calculated in the same way.
 
-Likewise, the total height will be the result of adding the height of the content area (200 pixels), plus the top and bottom padding (40 pixels), plus the top and bottom borders (8 pixels).
+Great! Now let's explore `border-box`. It's different because the width and height you set include the element's content, padding, and border (but not its margin). Use `border-box` when you want the element's total size to stay fixed even if padding or borders change — that's often helpful in responsive layouts.
 
-Great! Now let's explore `border-box`. They are a bit different, with `border-box` the width and height of an element include the content area, the padding, and the border, but they don't include the margin. You should use `border-box` when you need to keep a fixed element size regardless of changes in padding or borders. It's also helpful for responsive web design since the content area will adjust automatically to fit the dimensions.
+With `border-box`, padding and borders are included inside the element's specified size. The `width` and `height` you set become the element's total dimensions: content + padding + border; margins remain excluded.
 
-The padding and border are inside the box, so when you set the `width` and `height` properties of an element, you're really setting the width and height of the inner part of the box. Here's our `div` example with the same properties and values that we had before: 
-
-:::interactive_editor
-
-```html
-<link rel="stylesheet" href="styles.css">
-<div></div>
-```
-
-```css
-div {
-  width: 300px;
-  height: 200px;
-  padding: 20px;
-  border: 4px solid black;
-}
-```
-
-:::
-
-With `border-box` the value of the `width` property will be the result of adding the width of the content area, the left and right padding, and the left and right border. So, the width equals the width of the content, plus the left padding, plus the right padding, plus the left border, plus the right border.
-
-Likewise, the value of the `height` property is the result of adding the height of the content area, the top and bottom padding, and the top and bottom border. Height equals the height of the content, plus top padding, plus bottom padding, plus top border, plus bottom border. The margin is not included in the width or height.
-
-If you check the size of the `div` in the browser using the `content-box` and `border-box` you will notice that there's a very important difference. Here are two `div` elements each with the same dimensions but different `box-sizing` values:
+In the following example, there are two `div` elements with the same dimensions but different `box-sizing` values. Notice how this results in different total sizes when viewed in the browser:
 
 :::interactive_editor
 
@@ -118,7 +89,7 @@ If you check the size of the `div` in the browser using the `content-box` and `b
 
 :::
 
-You can see that they both have the same `width`, `height`, `padding`, `border` and `margin`. The only differences are the colors and the value of the `box-sizing` property. This small difference has a very important impact on the final dimensions. 
+You can see that they both have the same `width`, `height`, `padding`, `border` and `margin`. The only differences are in the colors and the value of the `box-sizing` property. This small difference has a very important impact on the final dimensions. 
 
 Choosing between `content-box` and `border-box` really depends on the specific needs of your project. While `border-box` is becoming increasingly popular for its simplicity and flexibility, understanding both models is important for implementing effective CSS layouts.
 

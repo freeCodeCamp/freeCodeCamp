@@ -22,7 +22,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
       <>
         <CodeAllyDown />
         {clientLocale != 'english' && (
-          <Callout variant='info'>
+          <Callout variant='note' label={t('misc.note')}>
             <p>{t('intro:misc-text.english-only')}</p>
           </Callout>
         )}
@@ -30,7 +30,7 @@ function LegacyLinks({ superBlock }: LegacyLinksProps): JSX.Element {
     );
   } else if (isExamCert(superBlock) && clientLocale != 'english') {
     return (
-      <Callout variant='info'>
+      <Callout variant='note' label={t('misc.note')}>
         <p>{t('intro:misc-text.exam-english-only')}</p>
       </Callout>
     );

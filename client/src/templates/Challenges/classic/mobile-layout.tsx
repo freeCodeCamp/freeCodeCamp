@@ -213,6 +213,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           id='mobile-layout'
+          className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}

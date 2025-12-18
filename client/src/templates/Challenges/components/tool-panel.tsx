@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 import { openModal, executeChallenge } from '../redux/actions';
 import { challengeMetaSelector } from '../redux/selectors';
 import { saveChallenge } from '../../../redux/actions';
@@ -18,11 +17,8 @@ import './tool-panel.css';
 const mapStateToProps = createSelector(
   challengeMetaSelector,
   isSignedInSelector,
-  (
-    { challengeType }: { challengeId: string; challengeType: number },
-    isSignedIn
-  ) => ({
-    challengeType,
+  ({ saveSubmissionToDB }: { saveSubmissionToDB?: boolean }, isSignedIn) => ({
+    saveSubmissionToDB,
     isSignedIn
   })
 );
@@ -39,7 +35,7 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   );
 
 interface ToolPanelProps {
-  challengeType: number;
+  saveSubmissionToDB?: boolean;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
   saveChallenge: () => void;
   isMobile?: boolean;
@@ -52,7 +48,7 @@ interface ToolPanelProps {
 }
 
 function ToolPanel({
-  challengeType,
+  saveSubmissionToDB,
   executeChallenge,
   saveChallenge,
   isMobile,
@@ -76,7 +72,7 @@ function ToolPanel({
       <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
-      {isSignedIn && canSaveToDB(challengeType) && (
+      {isSignedIn && saveSubmissionToDB && (
         <>
           <Spacer size='xxs' />
           <Button block={true} variant='primary' onClick={saveChallenge}>
@@ -87,15 +83,15 @@ function ToolPanel({
       <Spacer size='xxs' />
       <Button block={true} variant='primary' onClick={openResetModal}>
         {isMobile
-          ? t(canSaveToDB(challengeType) ? 'buttons.revert' : 'buttons.reset')
+          ? t(saveSubmissionToDB ? 'buttons.revert' : 'buttons.reset')
           : t(
-              canSaveToDB(challengeType)
+              saveSubmissionToDB
                 ? 'buttons.revert-to-saved-code'
                 : 'buttons.reset-lesson'
             )}
       </Button>
       <Spacer size='xxs' />
-      <Dropdown dropup>
+      <Dropdown block={true} dropup>
         <Dropdown.Toggle
           id={'get-help-dropdown'}
           data-playwright-test-label='get-help-dropdown'

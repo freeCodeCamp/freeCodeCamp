@@ -34,10 +34,10 @@ export enum Certification {
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   A2English = 'a2-english-for-developers',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
-  B1English = 'b1-english-for-developers-v8',
-  A2Spanish = 'a2-professional-spanish-v8',
-  A2Chinese = 'a2-professional-chinese-v8',
-  A1Chinese = 'a1-professional-chinese-v8',
+  B1English = 'b1-english-for-developers',
+  A2Spanish = 'a2-professional-spanish',
+  A2Chinese = 'a2-professional-chinese',
+  A1Chinese = 'a1-professional-chinese',
   // Legacy certifications
   LegacyFrontEnd = 'legacy-front-end',
   JsAlgoDataStruct = 'javascript-algorithms-and-data-structures',
@@ -175,7 +175,40 @@ export const completionHours: Record<Certification, number> = {
   [Certification.A1Chinese]: 300
 };
 
-export const certSlugTypeMap = {
+type UserCertFlag =
+  | 'isFrontEndCert'
+  | 'isJsAlgoDataStructCert'
+  | 'isBackEndCert'
+  | 'isDataVisCert'
+  | 'isInfosecQaCert'
+  | 'isFullStackCert'
+  | 'isRespWebDesignCert'
+  | 'isJsAlgoDataStructCertV8'
+  | 'isFrontEndLibsCert'
+  | 'is2018DataVisCert'
+  | 'isApisMicroservicesCert'
+  | 'isQaCertV7'
+  | 'isInfosecCertV7'
+  | 'isSciCompPyCertV7'
+  | 'isDataAnalysisPyCertV7'
+  | 'isMachineLearningPyCertV7'
+  | 'isRelationalDatabaseCertV8'
+  | 'isCollegeAlgebraPyCertV8'
+  | 'isFoundationalCSharpCertV8'
+  | 'isA2EnglishCert'
+  | 'isRespWebDesignCertV9'
+  | 'isJavascriptCertV9'
+  | 'isFrontEndLibsCertV9'
+  | 'isPythonCertV9'
+  | 'isRelationalDatabaseCertV9'
+  | 'isBackEndDevApisCertV9'
+  | 'isFullStackDeveloperCertV9'
+  | 'isB1EnglishCert'
+  | 'isA2SpanishCert'
+  | 'isA2ChineseCert'
+  | 'isA1ChineseCert';
+
+export const certSlugTypeMap: Record<Certification, UserCertFlag> = {
   // legacy
   [Certification.LegacyFrontEnd]: 'isFrontEndCert',
   [Certification.JsAlgoDataStruct]: 'isJsAlgoDataStructCert',
@@ -202,9 +235,29 @@ export const certSlugTypeMap = {
   [Certification.PythonV9]: 'isPythonCertV9',
   [Certification.RelationalDbV9]: 'isRelationalDatabaseCertV9',
   [Certification.RespWebDesignV9]: 'isRespWebDesignCertV9',
-  [Certification.JsV9]: 'isJavascriptCertV9'
+  [Certification.JsV9]: 'isJavascriptCertV9',
+
   // upcoming
-} as const;
+  [Certification.FrontEndDevLibsV9]: 'isFrontEndLibsCertV9',
+  [Certification.BackEndDevApisV9]: 'isBackEndDevApisCertV9',
+  [Certification.FullStackDeveloperV9]: 'isFullStackDeveloperCertV9',
+  [Certification.B1English]: 'isB1EnglishCert',
+  [Certification.A2Spanish]: 'isA2SpanishCert',
+  [Certification.A2Chinese]: 'isA2ChineseCert',
+  [Certification.A1Chinese]: 'isA1ChineseCert'
+};
+
+export type CertificationFlags = {
+  [key in UserCertFlag]: boolean;
+};
+
+export function isCertified(
+  user: Partial<CertificationFlags>,
+  cert: Certification
+): boolean {
+  const certFlag = certSlugTypeMap[cert];
+  return Boolean(user[certFlag]);
+}
 
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {

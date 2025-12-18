@@ -65,5 +65,5 @@ export const getBlocks = async (sup: string): Promise<BlockLocation> => {
     );
   }
 
-  return { blocks: blocks, currentSuperBlock: introData[sup].title };
+  return { blocks: blocks, currentSuperBlock: introData[sup]?.title };
 };

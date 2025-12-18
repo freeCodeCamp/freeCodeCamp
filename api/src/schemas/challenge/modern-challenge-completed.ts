@@ -30,6 +30,12 @@ export const modernChallengeCompleted = {
         'That does not appear to be a valid challenge submission.'
       )
     }),
+    403: Type.Object({
+      type: Type.Literal('error'),
+      message: Type.Literal(
+        'Exam submissions are not allowed on this endpoint.'
+      )
+    }),
     default: genericError
   }
 };

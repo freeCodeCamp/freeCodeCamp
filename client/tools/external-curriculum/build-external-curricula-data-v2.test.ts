@@ -269,6 +269,7 @@ describe('external curriculum data build', () => {
     const superBlockStageStringMap: Record<string, SuperBlockStage> = {
       core: SuperBlockStage.Core,
       english: SuperBlockStage.English,
+      spanish: SuperBlockStage.Spanish,
       professional: SuperBlockStage.Professional,
       extra: SuperBlockStage.Extra,
       legacy: SuperBlockStage.Legacy,

@@ -224,6 +224,7 @@ export const build = async (
 
   void fastify.register(function (fastify, _opts, done) {
     fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+    fastify.addHook('onRequest', fastify.send401IfNoUser);
 
     void fastify.register(examEnvironmentValidatedTokenRoutes);
     done();

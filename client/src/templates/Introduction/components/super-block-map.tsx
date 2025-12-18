@@ -10,7 +10,6 @@ import {
 import type { CertTitle } from '../../../../config/cert-and-project-map';
 import type {
   ChapterBasedSuperBlockStructure,
-  ClaimedCertifications,
   User
 } from '../../../redux/prop-types';
 import type {
@@ -146,11 +145,7 @@ export const SuperBlockMap = ({
         const requirementLink = `/learn/${requirement}/`;
 
         const certSlug = superBlockToCertMap[requirement];
-        const certFlagLookup = certSlugTypeMap as Record<
-          string,
-          keyof ClaimedCertifications
-        >;
-        const certFlagKey = certSlug ? certFlagLookup[certSlug] : undefined;
+        const certFlagKey = certSlug ? certSlugTypeMap[certSlug] : undefined;
         const isRequirementComplete = Boolean(
           certFlagKey && user?.[certFlagKey]
         );

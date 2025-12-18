@@ -239,7 +239,7 @@ function DailyCodingChallengeCalendar({
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Callout variant='info'>
+            <Callout variant='note' label={t('misc.note')}>
               {t('daily-coding-challenges.release-note')}
             </Callout>
 

@@ -16,7 +16,6 @@ import {
   msTrophyVerified
 } from '../../../utils/error-messages';
 import {
-  canSaveToDB,
   challengeTypes,
   getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage,
@@ -119,7 +118,8 @@ function submitModern(type, state) {
     }
 
     if (type === actionTypes.submitChallenge) {
-      const { id, block, challengeType } = challengeMetaSelector(state);
+      const { id, challengeType, saveSubmissionToDB } =
+        challengeMetaSelector(state);
 
       let update;
 
@@ -140,10 +140,7 @@ function submitModern(type, state) {
         const challengeFiles = challengeFilesSelector(state);
 
         let body;
-        if (
-          block === 'javascript-algorithms-and-data-structures-projects' ||
-          canSaveToDB(challengeType)
-        ) {
+        if (saveSubmissionToDB) {
           body = standardizeRequestBody({ id, challengeType, challengeFiles });
         } else {
           body = {

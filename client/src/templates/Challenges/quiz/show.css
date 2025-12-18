@@ -21,3 +21,7 @@
   font-size: 1rem;
   margin: 0 0 1.2rem;
 }
+
+.quiz-answer-label:has(ruby) {
+  line-height: 1.7rem;
+}

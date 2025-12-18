@@ -8,12 +8,11 @@ import { Button, Modal } from '@freecodecamp/ui';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 
 interface ResetModalProps {
   close: () => void;
   isOpen: boolean;
-  challengeType: number;
+  saveSubmissionToDB?: boolean;
   reset: () => void;
   challengeTitle: string;
 }
@@ -41,7 +40,7 @@ function withActions(...fns: Array<() => void>) {
 function ResetModal({
   reset,
   close,
-  challengeType,
+  saveSubmissionToDB,
   isOpen,
   challengeTitle
 }: ResetModalProps): JSX.Element {
@@ -56,7 +55,7 @@ function ResetModal({
       </Modal.Header>
       <Modal.Body alignment='center'>
         <p>
-          {canSaveToDB(challengeType)
+          {saveSubmissionToDB
             ? t('learn.revert-warn')
             : t('learn.reset-warn', {
                 title: challengeTitle
@@ -73,7 +72,7 @@ function ResetModal({
           variant='danger'
           onClick={withActions(reset, close)}
         >
-          {canSaveToDB(challengeType)
+          {saveSubmissionToDB
             ? t('buttons.revert-to-saved-code')
             : t('buttons.reset-lesson')}
         </Button>

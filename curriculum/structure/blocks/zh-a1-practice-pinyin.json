@@ -1,0 +1,11 @@
+{
+  "name": "Pinyin Practice",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-practice-pinyin",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6940554db3c6d9578a853ecf", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

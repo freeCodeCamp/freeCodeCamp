@@ -13,7 +13,7 @@ This behavior occurs when the vertical margins of adjacent elements overlap, res
 
 Understanding margin collapsing is important for precise control over spacing and layout in web design. So, let's get into how margin collapsing works and explore some common scenarios where it occurs.
 
-In CSS when two vertical margins come into contact with each other they'll collapse, this means that instead of adding together the larger margin wins and determines the space between the elements. This behavior applies only to vertical margins top and bottom and not horizontal margins, not the left and right. So, here's an example to illustrate this concept:
+In CSS when two vertical margins come into contact with each other they'll collapse, this means that instead of adding together, the larger margin wins and determines the space between the elements. This behavior applies only to vertical margins (top and bottom) and not to horizontal margins (left and right). So, here's an example to illustrate this concept:
 
 :::interactive_editor
 
@@ -37,7 +37,7 @@ In CSS when two vertical margins come into contact with each other they'll colla
 
 In this example, you might expect the total space between `.box1` and `.box2` to be 50 pixels (20 pixels plus 30 pixels). However, due to margin collapsing the actual space will be 30 pixels, which is the larger of the two margins.
 
-As we saw in the previous examples, margins of the adjacent sibling elements will collapse. This is the most straight forward case of margin collapsing. Let's explore more cases where margin collapsing can occur. 
+As we saw in the previous example, margins of the adjacent sibling elements will collapse. This is the most straight forward case of margin collapsing. Let's explore more cases where margin collapsing can occur. 
 
 Margins can also collapse between a parent element and its first or last child. If there's no border, padding, inline content, or clearance to separate the parent's margin from the child's, they will collapse.
 
@@ -62,7 +62,7 @@ Margins can also collapse between a parent element and its first or last child. 
 
 :::
 
-In this case you might expect the child to be 70 pixels from the top (40 pixels plus 30 pixels). However, the margins collapse and the larger margin 40 pixels is used.
+In this case, you might expect the child to be 70 pixels from the top (40 pixels plus 30 pixels). However, the margins collapse and the larger margin of 40 pixels is used.
 
 If an element has no content, padding, or border, its top and bottom margins can collapse into a single margin. 
 
@@ -88,7 +88,7 @@ If an element has no content, padding, or border, its top and bottom margins can
 
 In this example, the `empty-block`'s top and bottom margins collapse into a single 20 pixels margin, the larger of the two.
 
-Here's another example of preventing collapse using padding: 
+Here's an example of preventing collapse using padding: 
 
 :::interactive_editor
 
@@ -112,9 +112,9 @@ Here's another example of preventing collapse using padding:
 
 :::
 
-In this case the one pixel padding on the parent prevents the margin from collapsing resulting in a total space of 71 pixels from the top of the parent to the top of the child content.
+In this case, the one pixel padding on the parent prevents the margin from collapsing resulting in a total space of 71 pixels from the top of the parent to the top of the child content.
 
-Understanding margin collapsing is important for precise control over layout and spacing in CSS. While it can sometimes lead to unexpected results, it's a feature designed to create more aesthetic and consistent spacing in documents. By knowing when margin collapsing occurs and how to prevent it when necessary, you can create more predictable and maintainable layouts in your web designs.
+Understanding margin collapsing is important for precise control over layout and spacing in CSS. While it can sometimes lead to unexpected results, it's a feature designed to create more aesthetically pleasing and consistent spacing in documents. By knowing when margin collapsing occurs and how to prevent it when necessary, you can create more predictable and maintainable layouts in your web designs.
 
 # --questions--
 
