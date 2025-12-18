@@ -181,12 +181,14 @@ export const runTestsInTestFrame = async function (
 };
 
 export const prepTestRunner = async ({
+  allowAnimations,
   sources,
   loadEnzyme,
   build,
   hooks,
   type
 }: {
+  allowAnimations?: boolean;
   sources: Source;
   loadEnzyme?: boolean;
   build: string;
@@ -196,6 +198,7 @@ export const prepTestRunner = async ({
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await loadTestRunner(document);
   await window?.FCCTestRunner.createTestRunner({
+    allowAnimations,
     type,
     code: sources,
     source,

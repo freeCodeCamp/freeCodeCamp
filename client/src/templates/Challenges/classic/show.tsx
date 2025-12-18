@@ -196,6 +196,7 @@ function ShowClassic({
   data: {
     challengeNode: {
       challenge: {
+        allowAnimations,
         challengeFiles: seedChallengeFiles,
         block,
         demoType,
@@ -396,6 +397,7 @@ function ShowClassic({
 
     updateChallengeMeta({
       ...challengeMeta,
+      allowAnimations,
       title,
       challengeType,
       helpCategory,
@@ -579,6 +581,7 @@ export const query = graphql`
   query ClassicChallenge($id: String!) {
     challengeNode(id: { eq: $id }) {
       challenge {
+        allowAnimations
         block
         demoType
         title
