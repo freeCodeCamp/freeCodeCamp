@@ -207,6 +207,7 @@
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
     "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
@@ -1081,7 +1084,8 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
