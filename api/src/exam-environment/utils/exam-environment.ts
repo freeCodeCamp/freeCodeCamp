@@ -1,3 +1,4 @@
+/* eslint-disable jsdoc/require-description-complete-sentence */
 // TODO: enable this, since strings don't make good errors.
 /* eslint-disable @typescript-eslint/only-throw-error */
 import {
@@ -11,7 +12,8 @@ import {
   ExamEnvironmentMultipleChoiceQuestion,
   ExamEnvironmentMultipleChoiceQuestionAttempt,
   ExamEnvironmentQuestionSet,
-  ExamEnvironmentQuestionSetAttempt
+  ExamEnvironmentQuestionSetAttempt,
+  user
 } from '@prisma/client';
 import type { FastifyBaseLogger, FastifyInstance } from 'fastify';
 import { type Static } from '@fastify/type-provider-typebox';
@@ -21,21 +23,18 @@ import { mapErr } from '../../utils/index.js';
 import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
 import { ERRORS } from './errors.js';
 
-interface CompletedChallengeId {
-  completedChallenges: {
-    id: string;
-  }[];
-}
-
 /**
- * Checks if all exam prerequisites have been met by the user.
+ * Checks if all exam prerequisites have been met by the user:
+ * - completed challenges linked to exam
+ * - user is required to have accepted the academic honesty policy
  */
 export function checkPrerequisites(
-  user: CompletedChallengeId,
+  user: user,
   prerequisites: ExamEnvironmentExam['prerequisites']
 ) {
-  return prerequisites.every(p =>
-    user.completedChallenges.some(c => c.id === p)
+  return (
+    user.isHonest &&
+    prerequisites.every(p => user.completedChallenges.some(c => c.id === p))
   );
 }
 
