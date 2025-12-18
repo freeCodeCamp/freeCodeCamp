@@ -210,7 +210,7 @@ describe('certificate routes', () => {
       });
 
       // Note: Email does not actually send (work) in development, but status should still be 200.
-      test('should send the certified email, if all current certifications are met', async () => {
+      test('should send the certified email when full stack developer v9 is claimed', async () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
@@ -227,18 +227,12 @@ describe('certificate routes', () => {
             isCollegeAlgebraPyCertV8: true,
             isDataAnalysisPyCertV7: true,
             isFoundationalCSharpCertV8: true,
-            isFrontEndLibsCert: true,
-            isInfosecCertV7: true,
-            isJavascriptCertV9: true,
-            isJsAlgoDataStructCertV8: true,
-            isMachineLearningPyCertV7: true,
-            isPythonCertV9: true,
-            isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
             isRelationalDatabaseCertV9: true,
             isRespWebDesignCert: false,
             isRespWebDesignCertV9: true,
-            isSciCompPyCertV7: true
+            isSciCompPyCertV7: true,
+            isFullStackDeveloperCertV9: true
           }
         });
 
