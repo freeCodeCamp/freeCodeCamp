@@ -1,10 +1,15 @@
 {
   "name": "Build a Smart Pantry Restocker",
-  "isUpcomingChange": true,
   "dashedName": "lab-smart-pantry-restocker",
-  "helpCategory": "JavaScript",
-  "blockLayout": "link",
-  "challengeOrder": [{ "id": "69432dffbce99707bc08664e", "title": "Step 1" }],
   "blockType": "lab",
-  "usesMultifileEditor": true
+  "blockLayout": "link",
+  "helpCategory": "JavaScript",
+  "isUpcomingChange": true,
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "69432dffbce99707bc08664e",
+      "title": "Step 1"
+    }
+  ]
 }
