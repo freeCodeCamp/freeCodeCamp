@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 import { liveCerts } from '../../config/cert-and-project-map';
 import {
-  certTypeIdMap,
-  certTypeTitleMap
+  certSlugTypeMap,
+  certToTitleMap
 } from '../../../shared-dist/config/certification-settings.js';
 
 import { randomBetween } from '../utils/random-between';
@@ -231,17 +231,9 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
     ({ id }) => id
   );
 
-  const isClaimedById = Object.entries(certTypeIdMap).reduce(
-    (acc, [userFlag, certId]) => {
-      acc[certId] = Boolean(user[userFlag]);
-      return acc;
-    },
-    {}
-  );
-  // Invert certTypeIdMap ({[userFlag]: certId}  => {[certId]: userFlag}) to get certType from id
-  const invertedCertTypeIdMap = Object.entries(certTypeIdMap).reduce(
-    (acc, [userFlag, certId]) => {
-      acc[certId] = userFlag;
+  const isClaimedByCert = Object.entries(certSlugTypeMap).reduce(
+    (acc, [cert, userFlag]) => {
+      acc[cert] = Boolean(user[userFlag]);
       return acc;
     },
     {}
@@ -249,17 +241,16 @@ export const claimableCertsSelector = createSelector([userSelector], user => {
 
   const claimable = [];
 
-  for (const { id, projects } of liveCerts) {
+  for (const { projects, certSlug } of liveCerts) {
     if (!projects) continue;
-    if (isClaimedById[id]) continue;
+    if (isClaimedByCert[certSlug]) continue;
 
     const projectIds = projects.map(p => p.id);
     const allProjectsComplete = projectIds.every(id =>
       completedChallengeIds.includes(id)
     );
 
-    const certType = invertedCertTypeIdMap[id];
-    const certTitle = certTypeTitleMap[certType];
+    const certTitle = certToTitleMap[certSlug];
     if (allProjectsComplete) {
       claimable.push({
         certTitle

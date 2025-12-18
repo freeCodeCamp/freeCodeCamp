@@ -93,10 +93,10 @@
     {
       "chapterType": "exam",
       "dashedName": "relational-databases-certification-exam",
-      "comingSoon": true,
+      "comingSoon": false,
       "modules": [
         {
-          "comingSoon": true,
+          "comingSoon": false,
           "dashedName": "relational-databases-certification-exam",
           "blocks": ["exam-relational-databases-certification"]
         }

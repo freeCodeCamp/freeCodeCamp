@@ -207,12 +207,14 @@
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -280,7 +282,7 @@
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
-    "for": "Impostazioni Account per {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
     "scrollbar-width": "Larghezza barra di scorrimento editor",
@@ -314,7 +316,7 @@
       "results-for": "Risultati per {{projectTitle}}",
       "my-profile": "Il mio profilo",
       "my-name": "Il mio nome",
-      "my-location": "La mia posizione",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Le mie informazioni",
       "my-points": "I miei punti",
       "my-heatmap": "La mia mappa del calore",
@@ -327,12 +329,13 @@
       "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certificazioni",
       "legacy-certs": "Vecchie certificazioni",
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
-      "privacy": "Impostazioni Privacy",
+      "privacy": "Privacy",
       "personal-info": "Informazioni personali"
     },
     "danger": {
@@ -361,7 +364,7 @@
     },
     "email": {
       "missing": "Non hai un'email associata a questo account.",
-      "heading": "Impostazioni email",
+      "heading": "Email",
       "not-verified": "La tua email non è stata verificata.",
       "check": "Per favore controlla la tua email, o <0>richiedi una nuova email di verifica qui</0>.",
       "current": "Email Attuale",
@@ -496,7 +499,7 @@
     "download-solution": "Scarica la mia soluzione",
     "download-results": "Scarica i miei risultati",
     "percent-complete": "{{percent}}% completato",
-    "project-complete": "Completati {{completedChallengesInBlock}} di {{totalChallengesInBlock}} progetti di certificazione",
+    "project-complete": "Completed",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
@@ -867,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
     "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
@@ -893,6 +898,7 @@
     "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
@@ -927,7 +933,7 @@
     "linkedin": "Link al LinkedIn di {{username}}",
     "github": "Link al GitHub di {{username}}",
     "website": "Link al sito web di {{username}}",
-    "twitter": "Link al Twitter di {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Va alla prima pagina",
@@ -961,7 +967,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
     "not-available": "Not available",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -1076,7 +1084,8 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
@@ -1224,9 +1233,21 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1294,13 +1315,15 @@
     "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
     "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
+    "your-exam-token": "Your Exam Token is: {{token}}",
     "error": "There was an error generating your token, please try again in a moment.",
     "no-token": "It looks like you don't have a valid exam token.",
     "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Scorciatoie da tastiera",
