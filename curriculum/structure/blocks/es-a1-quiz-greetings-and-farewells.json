@@ -1,10 +1,10 @@
 {
   "name": "Greetings and Farewells Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-quiz-greetings-and-farewells",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "link",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "challengeOrder": [
     {
       "id": "68c8510f4a9c00ca2a67160c",

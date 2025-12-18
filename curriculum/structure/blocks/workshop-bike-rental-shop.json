@@ -1,6 +1,6 @@
 {
   "name": "Build a Bike Rental Shop",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": false,

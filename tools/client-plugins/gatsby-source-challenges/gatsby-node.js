@@ -1,6 +1,10 @@
-const path = require('path');
 const chokidar = require('chokidar');
-const { getSuperblockStructure } = require('../../../curriculum/file-handler');
+const {
+  getSuperblockStructure
+} = require('../../../curriculum/dist/file-handler');
+const {
+  superBlockToFilename
+} = require('../../../curriculum/dist/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -32,7 +36,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
     persistent: true,
-    usePolling: true,
     cwd: curriculumPath
   });
 
@@ -91,21 +94,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function createSuperBlockStructureNodes() {
-    const buildCurriculumPath = path.resolve(
-      curriculumPath,
-      '..',
-      '..',
-      'build-curriculum'
-    );
-    const buildCurriculum = require(buildCurriculumPath);
-    const superBlockToFilename = buildCurriculum.superBlockToFilename;
-
-    if (!superBlockToFilename) {
-      reporter.panic(
-        'superBlockToFilename is missing from build-curriculum. This map is required.'
-      );
-    }
-
     Object.keys(superBlockToFilename).forEach(superBlock => {
       const filename = superBlockToFilename[superBlock] || superBlock;
       try {

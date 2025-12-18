@@ -1,6 +1,6 @@
 {
   "name": "JavaScript Maps and Sets Review",
-  "blockType": "review",
+  "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "review-javascript-maps-and-sets",

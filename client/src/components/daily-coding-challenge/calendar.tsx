@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Button, Callout, Col, Spacer } from '@freecodecamp/ui';
+import { Button, Callout, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import {
   completedDailyCodingChallengesSelector,
   isSignedInSelector
 } from '../../redux/selectors';
-import { CompletedDailyCodingChallenge } from '../../redux/prop-types';
+import {
+  CompletedDailyCodingChallenge,
+  DailyCodingChallengeLanguages
+} from '../../redux/prop-types';
 import { Loader } from '../helpers';
 import envData from '../../../config/env.json';
 import Login from '../Header/components/login';
@@ -40,9 +43,9 @@ interface AllDailyChallengeFromDb {
 interface DailyChallengeMap {
   id: string;
   date: string;
-  isCompleted: boolean;
   challengeNumber: number;
   title: string;
+  completedLanguages: DailyCodingChallengeLanguages[];
 }
 
 type DailyChallengesMap = Map<string, DailyChallengeMap>;
@@ -85,16 +88,20 @@ const getMonthInfo = (
     });
 
     const challengeData = dailyChallengesMap.get(formattedDate);
-    const isCompleted = challengeData?.isCompleted || false;
+    const completedLanguages = challengeData?.completedLanguages || [];
+    const title = challengeData?.title || '';
     const isAvailable = challengeData !== undefined;
+    const challengeNumber = challengeData?.challengeNumber;
 
     days.push(
       <CalendarDay
         key={`day-${day}`}
         date={formattedDate}
         dayNumber={day}
-        isCompleted={isCompleted}
+        challengeNumber={challengeNumber}
+        title={title}
         isAvailable={isAvailable}
+        completedLanguages={completedLanguages}
       />
     );
   }
@@ -117,10 +124,6 @@ function DailyCodingChallengeCalendar({
   const { t } = useTranslation();
 
   const todayUsCentral = getTodayUsCentral();
-
-  const completedDailyCodingChallengeIds = completedDailyCodingChallenges.map(
-    c => c.id
-  );
 
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -145,7 +148,9 @@ function DailyCodingChallengeCalendar({
           newDailyChallengesMap.set(date, {
             ...c,
             date,
-            isCompleted: completedDailyCodingChallengeIds.includes(c.id)
+            completedLanguages:
+              completedDailyCodingChallenges.find(ch => ch.id === c.id)
+                ?.languages ?? []
           });
         });
 
@@ -231,18 +236,22 @@ function DailyCodingChallengeCalendar({
 
   return (
     <>
-      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <Callout variant='info'>
-          {t('daily-coding-challenges.release-note')}
-        </Callout>
+      <Container>
+        <Row>
+          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+            <Callout variant='note' label={t('misc.note')}>
+              {t('daily-coding-challenges.release-note')}
+            </Callout>
 
-        <Button
-          block={true}
-          href={`/learn/daily-coding-challenge/${todayUsCentral}`}
-        >
-          {t('buttons.go-to-dcc-today')}
-        </Button>
-      </Col>
+            <Button
+              block={true}
+              href={`/learn/daily-coding-challenge/${todayUsCentral}`}
+            >
+              {t('buttons.go-to-dcc-today')}
+            </Button>
+          </Col>
+        </Row>
+      </Container>
 
       <Spacer size='l' />
 

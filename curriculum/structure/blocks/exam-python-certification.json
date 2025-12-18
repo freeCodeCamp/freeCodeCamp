@@ -1,8 +1,8 @@
 {
   "name": "Python Certification Exam",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "exam-python-certification",
   "helpCategory": "Python",
   "challengeOrder": [

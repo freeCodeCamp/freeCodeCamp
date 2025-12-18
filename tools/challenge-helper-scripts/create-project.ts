@@ -1,33 +1,34 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
-import { BlockLayouts, BlockTypes } from '../../shared/config/blocks';
+} from '../../shared-dist/config/curriculum.js';
+import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/file-handler';
-import { superBlockToFilename } from '../../curriculum/build-curriculum';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
 import {
   createQuizFile,
   createStepFile,
   validateBlockName,
   getAllBlocks
-} from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
+import { IntroJson, parseJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
-} from './helpers/create-project';
+} from './helpers/create-project.js';
+import { withTrace } from './helpers/utils.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -40,22 +41,11 @@ const helpCategories = [
   'Rosetta'
 ] as const;
 
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
-
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
   block: string;
   helpCategory: string;
-  blockType?: string;
+  blockLabel?: string;
   blockLayout?: string;
   questionCount?: number;
   order?: number;
@@ -87,7 +77,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
     }
     void updateChapterModuleSuperblockStructure(
       projectArgs.block,
-      { order: position, chapter, module },
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
       superblockFilename
     );
   } else {
@@ -107,7 +98,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
     projectArgs.title
   );
 
-  if (projectArgs.blockType === BlockTypes.quiz) {
+  if (projectArgs.blockLabel === BlockLabel.quiz) {
     if (projectArgs.questionCount == null) {
       throw new Error(
         'Property `questionCount` is null when creating new Quiz Challenge'
@@ -134,7 +125,7 @@ async function createProject(projectArgs: CreateProjectArgs) {
       projectArgs.helpCategory,
       challengeId,
       projectArgs.order,
-      projectArgs.blockType,
+      projectArgs.blockLabel,
       projectArgs.blockLayout
     );
     // TODO: remove once we stop relying on markdown in the client.
@@ -142,9 +133,11 @@ async function createProject(projectArgs: CreateProjectArgs) {
 
   if (
     (chapterBasedSuperBlocks.includes(projectArgs.superBlock) &&
-      projectArgs.blockType) == null
+      projectArgs.blockLabel) == null
   ) {
-    throw new Error('Missing argument: blockType when updating intro markdown');
+    throw new Error(
+      'Missing argument: blockLabel when updating intro markdown'
+    );
   }
 
   void createIntroMD(
@@ -180,17 +173,17 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
+  challengeId: ObjectId,
   order?: number,
-  blockType?: string,
+  blockLabel?: string,
   blockLayout?: string
 ) {
   let newMeta;
   if (chapterBasedSuperBlocks.includes(superBlock)) {
     newMeta = getBaseMeta('FullStack');
-    newMeta.blockType = blockType;
+    newMeta.blockLabel = blockLabel;
     newMeta.blockLayout = blockLayout;
-    if (blockType === BlockTypes.workshop) {
+    if (blockLabel === BlockLabel.workshop) {
       newMeta.hasEditableBoundaries = true;
     }
   } else {
@@ -200,20 +193,13 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(block: string): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
+async function createFirstChallenge(block: string): Promise<ObjectId> {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = [
@@ -225,7 +211,7 @@ async function createFirstChallenge(block: string): Promise<ObjectID> {
   ];
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
@@ -237,39 +223,12 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number
-): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
-  });
-}
-
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
-}
-
-// fs Promise functions return errors, but no stack trace.  This adds back in
-// the stack trace.
-function withTrace<Args extends unknown[], Result>(
-  fn: (...x: Args) => Promise<Result>,
-  ...args: Args
-): Promise<Result> {
-  return fn(...args).catch((reason: Error) => {
-    throw Error(reason.message);
   });
 }
 
@@ -328,11 +287,11 @@ void getAllBlocks()
         choices: helpCategories
       },
       {
-        name: 'blockType',
-        message: 'Choose a block type',
-        default: BlockTypes.lab,
+        name: 'blockLabel',
+        message: 'Choose a block label',
+        default: BlockLabel.lab,
         type: 'list',
-        choices: Object.values(BlockTypes),
+        choices: Object.values(BlockLabel),
         when: (answers: CreateProjectArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock)
       },
@@ -340,8 +299,8 @@ void getAllBlocks()
         name: 'blockLayout',
         message: 'Choose a block layout',
 
-        default: (answers: { blockType: BlockTypes }) =>
-          answers.blockType == BlockTypes.quiz
+        default: (answers: { blockLabel: BlockLabel }) =>
+          answers.blockLabel == BlockLabel.quiz
             ? BlockLayouts.Link
             : BlockLayouts.ChallengeList,
         type: 'list',
@@ -356,7 +315,7 @@ void getAllBlocks()
         type: 'list',
         choices: [10, 20],
         when: (answers: CreateProjectArgs) =>
-          answers.blockType === BlockTypes.quiz
+          answers.blockLabel === BlockLabel.quiz
       },
       {
         name: 'chapter',
@@ -421,7 +380,7 @@ void getAllBlocks()
         block,
         title,
         helpCategory,
-        blockType,
+        blockLabel,
         blockLayout,
         questionCount,
         chapter,
@@ -433,7 +392,7 @@ void getAllBlocks()
           superBlock,
           block,
           helpCategory,
-          blockType,
+          blockLabel,
           blockLayout,
           questionCount,
           title,

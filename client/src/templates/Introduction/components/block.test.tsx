@@ -15,7 +15,7 @@ import {
 import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
 import {
   BlockLayouts,
-  BlockTypes
+  BlockLabel
 } from '../../../../../shared-dist/config/blocks';
 import { Block } from './block';
 
@@ -27,11 +27,11 @@ vi.mock('../../../utils/get-words');
 
 const defaultProps = {
   block: 'test-block',
-  blockType: null,
+  blockLabel: null,
   challenges: [
     {
       block: 'testblock',
-      blockType: BlockTypes.lab,
+      blockLabel: BlockLabel.lab,
       blockLayout: BlockLayouts.ChallengeGrid,
       certification: 'mockCertification',
       challengeOrder: 1,
@@ -47,7 +47,6 @@ const defaultProps = {
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',
-      isComingSoon: false,
       internal: {
         content: 'mockContent',
         contentDigest: 'mockContentDigest',

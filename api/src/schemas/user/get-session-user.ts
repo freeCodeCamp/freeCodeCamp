@@ -1,9 +1,8 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { DailyCodingChallengeLanguage } from '@prisma/client';
 import { examResults, profileUI, savedChallenge } from '../types.js';
 
-const languages = Object.values(DailyCodingChallengeLanguage).map(k =>
-  Type.Literal(k)
+const languages = Type.Array(
+  Type.Union([Type.Literal('javascript'), Type.Literal('python')])
 );
 
 export const getSessionUser = {
@@ -58,7 +57,7 @@ export const getSessionUser = {
             Type.Object({
               id: Type.String(),
               completedDate: Type.Number(),
-              languages: Type.Array(Type.Union(languages))
+              languages
             })
           ),
           currentChallengeId: Type.String(),
@@ -87,11 +86,20 @@ export const getSessionUser = {
           isJsAlgoDataStructCert: Type.Boolean(),
           isJsAlgoDataStructCertV8: Type.Boolean(),
           isMachineLearningPyCertV7: Type.Boolean(),
+          isPythonCertV9: Type.Boolean(),
           isQaCertV7: Type.Boolean(),
           isRelationalDatabaseCertV8: Type.Boolean(),
+          isRelationalDatabaseCertV9: Type.Boolean(),
           isRespWebDesignCert: Type.Boolean(),
           isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
+          isFrontEndLibsCertV9: Type.Boolean(),
+          isBackEndDevApisCertV9: Type.Boolean(),
+          isFullStackDeveloperCertV9: Type.Boolean(),
+          isB1EnglishCert: Type.Boolean(),
+          isA2SpanishCert: Type.Boolean(),
+          isA2ChineseCert: Type.Boolean(),
+          isA1ChineseCert: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
           location: Type.String(),

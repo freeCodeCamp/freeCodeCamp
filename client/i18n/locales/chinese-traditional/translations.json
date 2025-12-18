@@ -118,6 +118,8 @@
     "share-on-threads": "分享到 Threads",
     "play-scene": "按播放鍵",
     "download-latest-version": "下載最新版本",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -205,12 +207,14 @@
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
     "catalog-heading": "探索我們的目錄：",
+    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常見問題：",
     "faqs": [
@@ -278,7 +282,7 @@
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將名字設置爲私密，你的認證將不會顯示你的名字。",
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
-    "for": "{{username}} 賬戶設置",
+    "for": "Settings for {{username}}",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
     "scrollbar-width": "編輯器滾動條寬度",
@@ -312,7 +316,7 @@
       "results-for": "{{projectTitle}} 的結果",
       "my-profile": "我的個人資料",
       "my-name": "我的姓名",
-      "my-location": "我的位置",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "我的介紹",
       "my-points": "我的分數",
       "my-heatmap": "我的熱圖",
@@ -325,12 +329,13 @@
       "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
+      "account": "Account",
       "certs": "認證",
       "legacy-certs": "舊版認證",
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬戶",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置",
+      "privacy": "Privacy",
       "personal-info": "個人信息"
     },
     "danger": {
@@ -359,7 +364,7 @@
     },
     "email": {
       "missing": "你的賬戶未綁定郵箱。",
-      "heading": "郵件設置",
+      "heading": "Email",
       "not-verified": "你的郵箱已驗證。",
       "check": "請查看你的郵件，或<0>在此處請求新的驗證郵件</0>。",
       "current": "當前郵箱",
@@ -386,12 +391,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "下載 freeCodeCamp 考試環境應用程序",
     "explanation": "要獲得認證，你必須參加考試以檢驗對所學知識的掌握程度。參加考試完全免費。",
     "version": "我們的應用程序的最新版本是：{{version}}。",
     "download-details": "手動下載此應用",
     "unable-to-detect-os": "我們無法檢測到你的操作系統。請手動下載下面的應用程序。",
-    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊："
+    "download-trouble": "如果在下載正確版本時遇到問題，請隨時聯繫支持團隊：",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "你需要更改你的隱私設置，才能讓他人看到你的作品集。這是你的作品集公開時候的預覽。",
@@ -491,7 +499,7 @@
     "download-solution": "下載我的解決方案",
     "download-results": "下載我的結果",
     "percent-complete": "完成 {{percent}}%",
-    "project-complete": "已完成 {{totalChallengesInBlock}} 認證項目中的 {{completedChallengesInBlock}}",
+    "project-complete": "Completed",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
     "read-search-ask-checkbox": "我已經嘗試了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已經<0>在論壇上搜索了類似的問題和相應的答案</0>",
@@ -522,7 +530,9 @@
       "instructions": "說明",
       "notes": "注意",
       "preview": "預覽",
-      "editor": "編輯器"
+      "terminal": "Terminal",
+      "editor": "編輯器",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "按下選項卡將插入選項卡字符",
@@ -678,6 +688,7 @@
       "lab": "實驗室",
       "review": "複習",
       "quiz": "測驗",
+      "cert-project": "Certification Project",
       "exam": "考試",
       "warm-up": "Warm-up",
       "learn": "Learn",
@@ -859,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -885,12 +898,14 @@
     "navigation-warning": "如果你離開這個頁面，你將丟失你的進度。你確定嗎？",
     "fsd-b-description": "這個全面的課程使你準備好成爲一名認證全棧開發者。你將會學習用 HTML、CSS、JavaScript、React、TypeScript、Node.js、Python 以及其他技術構建完整的 Web 應用。",
     "fsd-b-cta": "開始學習",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "10 萬+ 學生",
     "fsd-b-benefit-1-description": "和 10 萬+ 學員一起學習這個認證。",
     "fsd-b-benefit-2-title": "專業認證",
     "fsd-b-benefit-2-description": "通過一個官方的可驗證的認證證明你的技能。",
     "fsd-b-benefit-3-title": "500+ 練習",
-    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。"
+    "fsd-b-benefit-3-description": "通過大量實踐鞏固你的知識。",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "金獎盃",
@@ -918,7 +933,7 @@
     "linkedin": "鏈接到 {{username}} 的 LinkedIn",
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
-    "twitter": "鏈接到 {{username}} 的 Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -951,7 +966,10 @@
     "editor-a11y-on-macos": "{{editorName}} 編輯器模式。無障礙模式被設置爲 “on”。按 Command+E 關閉或按 Option+F1 查看更多選項。",
     "editor-a11y-on-non-macos": "{{editorName}} 編輯器內容。無障礙模式被設置爲 “on”。按 Ctrl+E 關閉或者按 Alt+F1 查看更多選項。",
     "terminal-output": "終端輸出",
-    "not-available": "不可用"
+    "not-available": "不可用",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
@@ -998,6 +1016,7 @@
     "not-eligible": "這個用戶目前不符合 freeCodeCamp.org 認證的條件。",
     "profile-private": "{{username}} 已選擇將他們的個人資料設爲私密。他們需要公開他們的個人資料，以便其他人能夠查看他們的認證。",
     "certs-private": "{{username}} 已將其作品集設置爲僅自己可見。用戶需要將認證設置爲公開，其他人才能查看該用戶的認證。",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} 未接受我們的《學術誠信條例》。",
     "user-not-certified": "用戶 {{username}} 似乎未獲得 {{cert}} 認證",
     "invalid-challenge": "這似乎不是一個有效的提交",
@@ -1065,7 +1084,8 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -1184,20 +1204,20 @@
       }
     },
     "title": {
-      "responsive-web-design": "響應式 Web 設計",
-      "responsive-web-design-cert": "響應式 Web 設計認證",
-      "javascript-algorithms-and-data-structures": "舊版 JavaScript 算法和數據結構",
-      "javascript-algorithms-and-data-structures-cert": "舊版 JavaScript 算法和數據結構認證",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript 算法和數據結構",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript 算法和數據結構認證",
-      "front-end-development-libraries": "前端開發庫",
-      "front-end-development-libraries-cert": "前端開發庫認證",
-      "data-visualization": "數據可視化",
-      "data-visualization-cert": "數據可視化認證",
-      "relational-database-v8": "關係數據庫",
-      "relational-database-v8-cert": "關係數據庫認證",
-      "back-end-development-and-apis": "後端開發和 APIs",
-      "back-end-development-and-apis-cert": "後端開發和 APIs 認證",
+      "responsive-web-design": "Legacy Responsive Web Design V8",
+      "responsive-web-design-cert": "Legacy Responsive Web Design V8 Certification",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures V7",
+      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
+      "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
+      "front-end-development-libraries": "Front End Development Libraries V8",
+      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "data-visualization": "Data Visualization V8",
+      "data-visualization-cert": "Data Visualization V8 Certification",
+      "relational-database-v8": "Relational Database V8",
+      "relational-database-v8-cert": "Relational Database V8 Certification",
+      "back-end-development-and-apis": "Back End Development and APIs V8",
+      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
       "quality-assurance-v7": "質量保證",
       "quality-assurance-v7-cert": "質量保證認證",
       "scientific-computing-with-python-v7": "Python 科學計算",
@@ -1213,9 +1233,21 @@
       "foundational-c-sharp-with-microsoft": "微軟基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "a2-english-for-developers": "開發者 A2 英語",
-      "a2-english-for-developers-cert": "開發者 A2 英語認證",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開發者 B1 英語",
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "全棧開發者",
       "full-stack-developer-v9-cert": "全棧開發者認證",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1280,12 +1312,18 @@
   "exam-token": {
     "exam-token": "考試令牌",
     "note": "你的考試令牌是一個密鑰，允許你訪問考試。請勿與任何人分享此令牌。",
-    "invalidation": "如果你生成新的令牌，舊的令牌將失效。",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "生成考試令牌",
+    "your-exam-token": "Your Exam Token is: {{token}}",
     "error": "生成令牌時出錯，請稍後再試。",
-    "your-exam-token": "你的考試令牌是：{{token}}",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "令牌已複製到剪貼板",
-    "copy-error": "複製令牌到剪貼板時出錯"
+    "copy-error": "複製令牌到剪貼板時出錯",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",
@@ -1338,6 +1376,26 @@
       "exit": "退出調研",
       "two-questions": "恭喜你已經走到了這一步。在你開始考試之前，請回答這兩個簡短的調研問題。"
     }
+  },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

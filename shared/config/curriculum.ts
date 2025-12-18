@@ -40,7 +40,8 @@ export enum SuperBlocks {
   FrontEndDevLibsV9 = 'front-end-development-libraries-v9',
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
-  BackEndDevApisV9 = 'back-end-development-and-apis-v9'
+  BackEndDevApisV9 = 'back-end-development-and-apis-v9',
+  FullStackDeveloperV9 = 'full-stack-developer-v9'
 }
 
 export const languageSuperBlocks = [
@@ -51,6 +52,24 @@ export const languageSuperBlocks = [
   SuperBlocks.A1Chinese,
   SuperBlocks.A2Chinese
 ];
+
+export enum ChallengeLang {
+  English = 'en-US',
+  Spanish = 'es',
+  Chinese = 'zh-CN'
+}
+
+// Mapping from superblock to a speech recognition language (BCP-47)
+export const superBlockToSpeechLang: Partial<
+  Record<SuperBlocks, ChallengeLang>
+> = {
+  [SuperBlocks.A1Chinese]: ChallengeLang.Chinese,
+  [SuperBlocks.A2Chinese]: ChallengeLang.Chinese,
+  [SuperBlocks.A2English]: ChallengeLang.English,
+  [SuperBlocks.B1English]: ChallengeLang.English,
+  [SuperBlocks.A1Spanish]: ChallengeLang.Spanish,
+  [SuperBlocks.A2Spanish]: ChallengeLang.Spanish
+};
 
 /*
  * SuperBlockStages.Upcoming = SHOW_UPCOMING_CHANGES === 'true'
@@ -63,6 +82,7 @@ export const languageSuperBlocks = [
 export enum SuperBlockStage {
   Core,
   English,
+  Spanish,
   Professional,
   Extra,
   Legacy,
@@ -74,6 +94,7 @@ export enum SuperBlockStage {
 const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.English,
+  SuperBlockStage.Spanish,
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
@@ -97,8 +118,17 @@ export type StageMap = {
 
 // Groups of superblocks in learn map. This should include all superblocks.
 export const superBlockStages: StageMap = {
-  [SuperBlockStage.Core]: [SuperBlocks.FullStackDeveloper],
+  [SuperBlockStage.Core]: [
+    SuperBlocks.RespWebDesignV9,
+    SuperBlocks.JsV9,
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.PythonV9,
+    SuperBlocks.RelationalDbV9,
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
+  ],
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
+  [SuperBlockStage.Spanish]: [SuperBlocks.A1Spanish],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
@@ -126,17 +156,11 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Next]: [],
   [SuperBlockStage.Upcoming]: [
     SuperBlocks.FullStackOpen,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9,
-    SuperBlocks.A1Spanish,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
-    SuperBlocks.DevPlayground
+    SuperBlocks.DevPlayground,
+    SuperBlocks.FullStackDeveloper
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
@@ -157,33 +181,7 @@ type NotAuditedSuperBlocks = {
 // when adding a new language, add all (not audited) superblocks to the object
 export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
   [Languages.English]: [],
-  [Languages.Espanol]: [
-    SuperBlocks.InfoSec,
-    SuperBlocks.MachineLearningPy,
-    SuperBlocks.CollegeAlgebraPy,
-    SuperBlocks.FoundationalCSharp,
-    SuperBlocks.CodingInterviewPrep,
-    SuperBlocks.ProjectEuler,
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.TheOdinProject,
-    SuperBlocks.FullStackDeveloper,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
-  ],
+  [Languages.Espanol]: [],
   [Languages.Chinese]: [
     SuperBlocks.CodingInterviewPrep,
     SuperBlocks.ProjectEuler,
@@ -204,7 +202,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.ChineseTraditional]: [
     SuperBlocks.CodingInterviewPrep,
@@ -226,7 +225,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Italian]: [
     SuperBlocks.FoundationalCSharp,
@@ -248,28 +248,10 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
-  [Languages.Portuguese]: [
-    SuperBlocks.JsAlgoDataStructNew,
-    SuperBlocks.FullStackDeveloper,
-    SuperBlocks.A2English,
-    SuperBlocks.B1English,
-    SuperBlocks.A1Spanish,
-    SuperBlocks.A2Spanish,
-    SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
-    SuperBlocks.PythonForEverybody,
-    SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml,
-    SuperBlocks.DevPlayground,
-    SuperBlocks.RespWebDesignV9,
-    SuperBlocks.JsV9,
-    SuperBlocks.FrontEndDevLibsV9,
-    SuperBlocks.PythonV9,
-    SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
-  ],
+  [Languages.Portuguese]: [],
   [Languages.Ukrainian]: [
     SuperBlocks.JsAlgoDataStructNew,
     SuperBlocks.FullStackDeveloper,
@@ -287,7 +269,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Japanese]: [
     SuperBlocks.JsAlgoDataStructNew,
@@ -307,7 +290,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.German]: [
     SuperBlocks.RelationalDb,
@@ -336,7 +320,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Swahili]: [
     SuperBlocks.DataVis,
@@ -372,7 +357,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ],
   [Languages.Korean]: [
     SuperBlocks.RespWebDesignNew,
@@ -409,7 +395,8 @@ export const notAuditedSuperBlocks: NotAuditedSuperBlocks = {
     SuperBlocks.FrontEndDevLibsV9,
     SuperBlocks.PythonV9,
     SuperBlocks.RelationalDbV9,
-    SuperBlocks.BackEndDevApisV9
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ]
 };
 
@@ -424,9 +411,16 @@ export const chapterBasedSuperBlocks = [
   SuperBlocks.FrontEndDevLibsV9,
   SuperBlocks.PythonV9,
   SuperBlocks.RelationalDbV9,
-  SuperBlocks.BackEndDevApisV9
+  SuperBlocks.BackEndDevApisV9,
+  SuperBlocks.FullStackDeveloperV9,
+  SuperBlocks.A1Chinese
 ];
 Object.freeze(chapterBasedSuperBlocks);
+
+export const certificationCollectionSuperBlocks = [
+  SuperBlocks.FullStackDeveloperV9
+];
+Object.freeze(certificationCollectionSuperBlocks);
 
 type Config = {
   showUpcomingChanges: boolean;

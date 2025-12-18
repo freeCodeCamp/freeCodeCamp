@@ -41,7 +41,7 @@ export function SolutionDisplayWidget({
     </Button>
   );
   const ShowProjectAndGithubLinkForCertification = (
-    <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+    <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
       <Dropdown.Toggle>
         {viewText}{' '}
         <span className='sr-only'>
@@ -106,7 +106,7 @@ export function SolutionDisplayWidget({
   );
   const ShowMultifileProjectSolution = (
     <div>
-      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+      <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>
@@ -127,7 +127,7 @@ export function SolutionDisplayWidget({
 
   const ShowProjectAndGithubLinks = (
     <div>
-      <Dropdown id={`dropdown-for-${id}-${randomIdSuffix}`}>
+      <Dropdown block={true} id={`dropdown-for-${id}-${randomIdSuffix}`}>
         <Dropdown.Toggle>
           {viewText}{' '}
           <span className='sr-only'>

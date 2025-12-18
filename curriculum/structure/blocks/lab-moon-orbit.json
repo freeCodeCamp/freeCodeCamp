@@ -1,6 +1,6 @@
 {
   "name": "Build a Moon Orbit",
-  "blockType": "lab",
+  "blockLabel": "lab",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,

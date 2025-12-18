@@ -4,9 +4,10 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
+import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
 import EditorTabs from './editor-tabs';
 
-interface ActionRowProps {
+interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
   hasNotes: boolean;
   hasPreview: boolean;
@@ -20,24 +21,60 @@ interface ActionRowProps {
   showInstructions: boolean;
   showPreviewPane: boolean;
   showPreviewPortal: boolean;
+  challengeType: number;
   togglePane: (pane: string) => void;
+  hasInteractiveEditor?: never;
 }
 
-const ActionRow = ({
-  hasPreview,
-  hasNotes,
-  togglePane,
-  showNotes,
-  showPreviewPane,
-  showPreviewPortal,
-  showConsole,
-  showInstructions,
-  areInstructionsDisplayable,
-  isDailyCodingChallenge,
-  dailyCodingChallengeLanguage,
-  setDailyCodingChallengeLanguage
-}: ActionRowProps): JSX.Element => {
+interface InteractiveEditorProps {
+  hasInteractiveEditor: true;
+  showInteractiveEditor: boolean;
+  toggleInteractiveEditor: () => void;
+}
+
+type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
+
+const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+
+  if (props.hasInteractiveEditor) {
+    const { toggleInteractiveEditor, showInteractiveEditor } = props;
+
+    return (
+      <div className='action-row'>
+        <div className='tabs-row'>
+          <div className='tabs-row-right'>
+            <button
+              aria-expanded={!!showInteractiveEditor}
+              aria-describedby='interactive-editor-desc'
+              onClick={toggleInteractiveEditor}
+            >
+              {t('learn.editor-tabs.interactive-editor')}
+            </button>
+            <span id='interactive-editor-desc' className='sr-only'>
+              {t('aria.interactive-editor-desc')}
+            </span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  const {
+    togglePane,
+    hasPreview,
+    hasNotes,
+    areInstructionsDisplayable,
+    showConsole,
+    showNotes,
+    showInstructions,
+    showPreviewPane,
+    showPreviewPortal,
+    isDailyCodingChallenge,
+    dailyCodingChallengeLanguage,
+    setDailyCodingChallengeLanguage,
+    challengeType
+  } = props;
 
   // sets screen reader text for the two preview buttons
   function getPreviewBtnsSrText() {
@@ -61,6 +98,16 @@ const ActionRow = ({
     return previewBtnsSrText;
   }
 
+  const isPythonChallenge =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
+  const previewButtonText = isPythonChallenge
+    ? t('learn.editor-tabs.terminal')
+    : t('learn.editor-tabs.preview');
+
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
     setDailyCodingChallengeLanguage(language);
@@ -83,26 +130,24 @@ const ActionRow = ({
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
         {/* middle - only used with daily coding challenges for now */}
-        <div className='tabs-row-middle'>
-          {isDailyCodingChallenge && (
-            <>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
-                disabled={dailyCodingChallengeLanguage === 'javascript'}
-                onClick={() => handleLanguageChange('javascript')}
-              >
-                JavaScript
-              </button>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'python'}
-                disabled={dailyCodingChallengeLanguage === 'python'}
-                onClick={() => handleLanguageChange('python')}
-              >
-                Python
-              </button>
-            </>
-          )}
-        </div>
+        {isDailyCodingChallenge && (
+          <div className='tabs-row-middle'>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+              disabled={dailyCodingChallengeLanguage === 'javascript'}
+              onClick={() => handleLanguageChange('javascript')}
+            >
+              JavaScript
+            </button>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'python'}
+              disabled={dailyCodingChallengeLanguage === 'python'}
+              onClick={() => handleLanguageChange('python')}
+            >
+              Python
+            </button>
+          </div>
+        )}
         {/* right */}
         <div className='tabs-row-right panel-display-tabs'>
           <button
@@ -127,7 +172,7 @@ const ActionRow = ({
                 onClick={() => togglePane('showPreviewPane')}
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
-                <span aria-hidden='true'>{t('learn.editor-tabs.preview')}</span>
+                <span aria-hidden='true'>{previewButtonText}</span>
               </button>
               <button
                 aria-expanded={!!showPreviewPortal}

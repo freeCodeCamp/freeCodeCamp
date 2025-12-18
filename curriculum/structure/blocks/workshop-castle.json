@@ -1,6 +1,6 @@
 {
   "name": "Build a Castle",
-  "blockType": "workshop",
+  "blockLabel": "workshop",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": false,

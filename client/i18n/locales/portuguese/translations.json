@@ -118,8 +118,10 @@
     "share-on-threads": "Compartilhe no Threads",
     "play-scene": "Aperte para começar",
     "download-latest-version": "Baixe a versão mais recente",
-    "go-to-dcc-today": "Go to Today's Challenge",
-    "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
+    "more-ways-to-sign-in": "Mais maneiras de fazer login",
+    "sign-in-with-google": "Faça login com o Google",
+    "go-to-dcc-today": "Vá para o desafio diário",
+    "go-to-dcc-archive": "Vá para o arquivo do desafio de código diário"
   },
   "daily-coding-challenges": {
     "title": "Desafios de código diário",
@@ -205,12 +207,14 @@
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Currículo recomendado (ainda em beta):",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Certificações profissionais:",
     "interview-prep-heading": "Prepare-se para desenvolvedor em sua procura por emprego:",
     "legacy-curriculum-heading": "Nosso curso arquivado:",
     "next-heading": "Experimente nosso currículo beta:",
     "upcoming-heading": "Próximo currículo:",
     "catalog-heading": "Explore nosso catálogo:",
+    "fsd-restructure-note": "Se você estava trabalhando anteriormente em nosso currículo de Desenvolvedor Full Stack Certificado, não se preocupe - o progresso foi salvo. Dividimos em certificações menores que você pode alcançar ao longo de sua jornada.",
     "archive-link": "Procurando por um curso mais antigo? Confira <0>nossa página de arquivos</0>.",
     "faq": "Perguntas frequentes:",
     "faqs": [
@@ -278,7 +282,7 @@
     "disabled": "Suas certificações serão desabilitadas ao configurar como privado.",
     "private-name": "Seu nome não aparecerá nas certificações, se isto estiver definido como privado.",
     "claim-legacy": "Após receber os seguintes certificados do freeCodeCamp, você poderá reivindicar o(s) {{cert}}:",
-    "for": "Configurações de conta para {{username}}",
+    "for": "Configurações para {{username}}",
     "sound-mode": "Adiciona o som agradável de uma guitarra acústica em todo o site. Você receberá feedback musical ao digitar no editor, completar desafios, solicitar certificações e muito mais.",
     "sound-volume": "Volume do modo fogueira:",
     "scrollbar-width": "Largura da barra de rolagem do editor",
@@ -312,7 +316,7 @@
       "results-for": "Resultados para {{projectTitle}}",
       "my-profile": "Meu perfil",
       "my-name": "Meu nome",
-      "my-location": "Minha localização",
+      "my-location": "Meu local declarado (o freeCodeCamp não rastreia a sua localização atual)",
       "my-about": "Sobre mim",
       "my-points": "Meus pontos",
       "my-heatmap": "Meu progresso",
@@ -325,12 +329,13 @@
       "keyboard-shortcuts": "Habilitar teclas de atalho"
     },
     "headings": {
+      "account": "Conta",
       "certs": "Certificações",
       "legacy-certs": "Certificações legadas",
       "honesty": "Política de honestidade acadêmica",
       "internet": "Sua presença na internet",
       "portfolio": "Configurações do portfólio",
-      "privacy": "Configurações de privacidade",
+      "privacy": "Privacidade",
       "personal-info": "Informações pessoais"
     },
     "danger": {
@@ -359,7 +364,7 @@
     },
     "email": {
       "missing": "Você não tem um e-mail associado a esta conta.",
-      "heading": "Configurações de e-mail",
+      "heading": "E-mail",
       "not-verified": "O seu e-mail não foi verificado.",
       "check": "Verifique seu e-mail ou <0>solicite um novo e-mail de verificação aqui</0>.",
       "current": "E-mail atual",
@@ -386,12 +391,15 @@
     "pending": "Pendente",
     "passed": "Aprovado",
     "failed": "Falhou",
+    "in-progress": "Em andamento",
+    "denied": "Necessário refazer o teste",
     "download-header": "Faça o download do aplicativo de exame gratuito do freeCodeCamp",
     "explanation": "Para obter uma certificação, você deve fazer um exame para testar sua compreensão do material que você aprendeu. Fazer o exame é absolutamente gratuito.",
     "version": "A versão mais recente do nosso aplicativo é: {{version}}.",
     "download-details": "Faça o download manual do aplicativo",
     "unable-to-detect-os": "Não foi possível detectar seu sistema operacional. Por favor, faça o download manual do aplicativo abaixo.",
-    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:"
+    "download-trouble": "Se você tiver problemas para fazer o download da versão correta, entre em contato com o suporte:",
+    "open-exam-application": "Abrir Aplicativo do Ambiente de Exame"
   },
   "profile": {
     "you-change-privacy": "Você precisa alterar sua configuração de privacidade para que seu portfólio seja visto por outros. Esta é uma prévia de como será seu portfólio quando se tornar público.",
@@ -491,7 +499,7 @@
     "download-solution": "Baixar minha solução",
     "download-results": "Baixar meus resultados",
     "percent-complete": "{{percent}}% completo",
-    "project-complete": "Concluídos {{completedChallengesInBlock}} de {{totalChallengesInBlock}} projetos de certificação",
+    "project-complete": "Concluído",
     "tried-rsa": "Se você já tentou usar o método de <0>ler, pesquisar e perguntar</0>, então pode pedir ajuda no fórum freeCodeCamp.",
     "read-search-ask-checkbox": "Eu tentei o método <0>Read-Search-Ask</0>",
     "similar-questions-checkbox": "Eu pesquisei por <0>perguntas semelhantes que já foram respondidas no fórum</0>",
@@ -522,7 +530,9 @@
       "instructions": "Instruções",
       "notes": "Observações",
       "preview": "Pré-visualizar",
-      "editor": "Editor"
+      "terminal": "Terminal",
+      "editor": "Editor",
+      "interactive-editor": "Editor Interativo"
     },
     "editor-alerts": {
       "tab-trapped": "Ao apertar a tecla tab, agora, você vai inserir o caractere de tabulação",
@@ -534,24 +544,24 @@
     "demo-project-title": "Aqui está o exemplo de um projeto que atende aos requisitos",
     "github-required": "<0>Crie uma conta no GitHub</0> se você já não tiver uma. Você vai precisar dela ao criar a máquina virtual do servidor Linux. Esse processo pode demorar alguns minutos.",
     "codespaces": {
-      "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
-      "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
-      "step-3": "On that page, click the create button",
-      "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
-      "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
-      "step-6": "Going to the <0>View</0> menu,",
-      "step-7": "Clicking on the <0>Command Palette</0> option,",
-      "step-8": "and running the <0>CodeRoad: Start</0> command",
-      "step-9": "Follow the instructions in CodeRoad to complete the course",
-      "continue-project": "Clicking the button below will start a new project. If you have previously started the {{title}} course, go to the <0>repository page</0> to re-open a previous workspace.",
-      "learn-more": "Learn more about <0>Codespace workspaces</0>.",
-      "logout-warning": "If you log out of freeCodeCamp before you complete the entire {{course}} course, your progress will not be saved to your freeCodeCamp account.",
-      "sub-step-3": "Navigate to your <0>Codespaces secrets page</0>",
-      "sub-step-4": "Create a new secret named <0>CODEROAD_WEBHOOK_TOKEN</0>",
-      "sub-step-5": "In the <0>Value</0> field, paste your token",
-      "sub-step-6": "In the <0>Repository access</0> field, select the <1>freeCodeCamp/rdb-alpha</1> repository",
-      "summary": "Codespaces Setup"
+      "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
+      "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
+      "step-2": "Clique no botão de iniciar abaixo",
+      "step-3": "Naquela página, clique no botão criar",
+      "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
+      "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
+      "step-6": "A partir do menu <0>Exibir</0>,",
+      "step-7": "Clicando na opção <0>Paleta de comando</0>,",
+      "step-8": "e executando o comando <0>CodeRoad: Start</0>",
+      "step-9": "Siga as instruções no CodeRoad para concluir o curso",
+      "continue-project": "Clicar no botão abaixo iniciará um novo projeto. Se você já iniciou o curso {{title}}, vá para a <0>página do repositório</0> para reabrir um espaço de trabalho anterior.",
+      "learn-more": "Saiba mais sobre <0>Espaços de trabalho Codespace</0>.",
+      "logout-warning": "Se você sair do freeCodeCamp antes de completar todo o curso {{course}}, seu progresso não será salvo na sua conta do freeCodeCamp.",
+      "sub-step-3": "Navegue para a sua <0>Página de segredos do Codespaces</0>",
+      "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
+      "sub-step-5": "No campo <0>Valor</0>, cole seu token",
+      "sub-step-6": "No campo <0>Acesso ao Repositório</0>, selecione o repositório <1>freeCodeCamp/rdb-alpha</1>",
+      "summary": "Configuração do Codespaces"
     },
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
@@ -570,7 +580,7 @@
       "sub-step-3": "Navegue para a sua <0>Página de segredos do Ona</0>",
       "sub-step-4": "Crie um novo segredo chamado <0>CODEROAD_WEBHOOK_TOKEN</0>",
       "sub-step-5": "No campo <0>Secret</0>, cole seu token",
-      "summary": "Ona Setup"
+      "summary": "Configuração do Ona"
     },
     "local": {
       "intro": "Este curso é executado em uma máquina virtual Linux no seu computador. Para executar o curso, você primeiro precisa baixar cada um se você ainda não os possui:",
@@ -593,7 +603,7 @@
       "copy-url": "Copiar URL do curso",
       "step-8": "Clique em \"Start\" para começar",
       "step-9": "Siga as instruções no CodeRoad para completar o curso. Nota: Pode ser necessário reiniciar o terminal uma vez para que as configurações tenham efeito e os testes terminem.",
-      "summary": "Local Setup"
+      "summary": "Configuração Local"
     },
     "step-1": "Etapa 1: Conclua o projeto",
     "step-2": "Etapa 2: Envie seu código",
@@ -678,6 +688,7 @@
       "lab": "Laboratório",
       "review": "Revisão",
       "quiz": "Questionário",
+      "cert-project": "Projeto de certificação",
       "exam": "Teste",
       "warm-up": "Aquecimento",
       "learn": "Aprender",
@@ -859,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Em breve",
+    "note": "Observação",
+    "caution": "Cuidado",
     "offline": "Você parece estar off-line, seu progresso pode não ser salvo",
     "server-offline": "O servidor não pôde ser alcançado e seu progresso pode não ser salvo. Entre em contato com <0>suporte</0> se esta mensagem persistir",
     "unsubscribed": "Sua assinatura foi cancelada com sucesso",
@@ -885,12 +898,14 @@
     "navigation-warning": "Se sair desta página, perderá o seu progresso. Tem certeza?",
     "fsd-b-description": "Este abrangente curso prepara você para se tornar um Desenvolvedor Full Stack Certificado. Você aprenderá a construir aplicações web completas usando HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, e mais.",
     "fsd-b-cta": "Comece a aprender",
+    "continue-learning": "Continuar aprendendo",
     "fsd-b-benefit-1-title": "Mais de 100 mil alunos",
     "fsd-b-benefit-1-description": "Junte-se a mais de 100 mil alunos que estão fazendo esta certificação.",
     "fsd-b-benefit-2-title": "Certificação Profissional",
     "fsd-b-benefit-2-description": "Prove suas habilidades com uma certificação oficial e verificável.",
     "fsd-b-benefit-3-title": "Mais de 500 exercícios",
-    "fsd-b-benefit-3-description": "Solifique o seu conhecimento com muita prática."
+    "fsd-b-benefit-3-description": "Solifique o seu conhecimento com muita prática.",
+    "or": "OU"
   },
   "icons": {
     "gold-cup": "Taça de ouro",
@@ -918,7 +933,7 @@
     "linkedin": "Link para o LinkedIn de {{username}}",
     "github": "Link para o GitHub de {{username}}",
     "website": "Link para o site de {{username}}",
-    "twitter": "Link para o Twitter de {{username}}",
+    "twitter": "Link para o X de {{username}}",
     "next-month": "Ir ao próximo mês",
     "previous-month": "Ir ao mês anterior",
     "first-page": "Ir para a primeira página",
@@ -951,7 +966,10 @@
     "editor-a11y-on-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Command+E para desativar ou pressione Option+F1 para mais opções.",
     "editor-a11y-on-non-macos": "{{editorName}} conteúdo do editor. Modo de acessibilidade definido como 'ligado'. Pressione Ctrl+E para desativar ou pressione Alt+F1 para mais opções.",
     "terminal-output": "Saída do terminal",
-    "not-available": "Não disponível"
+    "not-available": "Não disponível",
+    "interactive-editor-desc": "Transforme exemplos de código estático em editores interativos. Isso permite que você edite e execute o código diretamente na página.",
+    "pinyin-to-hanzi-input-desc": "Esta tarefa usa entradas de Pinyin para Hanzi. Digite o pinyin com os números do tonalidade (de 1 a 5). Quando você inserir uma sílaba correta, ela se tornará um caractere chinês. Se você pressionar backspace após um caractere chinês, mudará de volta para pinyin e removerá a última coisa que você digitou: se for um número de tonalidade, a tonalidade será removida; se for uma letra, ela será removida.",
+    "pinyin-tone-input-desc": "Esta tarefa usa entradas de tonalidade do Pinyin. Digite o pinyin com números de tonalidade (de 1 a 5). Quando você inserir um número, ele será convertido em uma marca tonal. Se você pressionar backspace, a última coisa que digitou será removida: se for uma tonalidade de número, ela será removida; se for uma letra, a letra será removida."
   },
   "flash": {
     "no-email-in-userinfo": "Não foi possível recuperar um e-mail do provedor escolhido. Por favor, tente outro provedor ou use a opção 'Continuar com o Email'.",
@@ -998,6 +1016,7 @@
     "not-eligible": "Este usuário não é elegível para certificações do freeCodeCamp.org no momento.",
     "profile-private": "{{username}} escolheu tornar seu perfil privado. Ele/ela terá que tornar seu perfil público para que outros possam ver a sua certificação.",
     "certs-private": "{{username}} escolheu deixar suas certificações privadas. Ele/ela terá que tornar suas certificações públicas para que outros possam vê-las.",
+    "certs-claimable": "Agora você pode solicitar o certificado {{certName}}! Visite a sua página de configurações para solicitá-lo.",
     "not-honest": "{{username}} ainda não concordou com nosso compromisso com a honestidade acadêmica.",
     "user-not-certified": "Parece que o usuário {{username}} não possui o certificado {{cert}}",
     "invalid-challenge": "Este não parece ser um envio de desafio válido",
@@ -1065,7 +1084,8 @@
       "err-3": "Algo deu errado ao tentar salvar sua pesquisa.",
       "success": "Obrigado. Sua pesquisa foi enviada."
     },
-    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula"
+    "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
@@ -1103,7 +1123,7 @@
       "heading": "Como parte da certificação, {{user}} concluiu os seguintes projetos e passou em todos os testes:",
       "solution": "Solução",
       "no-solution": "erro exibindo a solução, envie um e-mail para support@freeCodeCamp.org para obter ajuda.",
-      "no-solution-to-display": "No solution to display",
+      "no-solution-to-display": "Nenhuma solução a exibir",
       "source": "Fonte",
       "footnote": "Se você suspeitar que algum destes projetos viola a <2>política de honestidade acadêmica</2>, <5>reporte isto à nossa equipe</5>.",
       "title": {
@@ -1184,20 +1204,20 @@
       }
     },
     "title": {
-      "responsive-web-design": "Design responsivo para a web",
-      "responsive-web-design-cert": "Certificação de design responsivo para a web",
-      "javascript-algorithms-and-data-structures": "Algoritmos em JavaScript e Estrutura de Dados edição antiga",
-      "javascript-algorithms-and-data-structures-cert": "Cerificação Algoritmos em JavaScript e Estrutura de Dados edição antiga",
-      "javascript-algorithms-and-data-structures-v8": "Algoritmos em JavaScript e Estruturas de Dados",
-      "javascript-algorithms-and-data-structures-v8-cert": "Certificação de algoritmos em JavaScript e estruturas de dados",
-      "front-end-development-libraries": "Bibliotecas de desenvolvimento front-end",
-      "front-end-development-libraries-cert": "Certificação de bibliotecas de desenvolvimento front-end",
-      "data-visualization": "Visualização de dados",
-      "data-visualization-cert": "Certificação de visualização de dados",
-      "relational-database-v8": "Bancos de dados relacionais",
-      "relational-database-v8-cert": "Certificação de bancos de dados relacionais",
-      "back-end-development-and-apis": "Desenvolvimento back-end e APIs",
-      "back-end-development-and-apis-cert": "Certificação de desenvolvimento back-end e APIs",
+      "responsive-web-design": "Design responsivo para a web legado V8",
+      "responsive-web-design-cert": "Certificação Design responsivo para a web legado V8",
+      "javascript-algorithms-and-data-structures": "Algoritmos em JavaScript e Estrutura de Dados edição antiga V7",
+      "javascript-algorithms-and-data-structures-cert": "Cerificação Algoritmos em JavaScript e Estrutura de Dados edição antiga V7",
+      "javascript-algorithms-and-data-structures-v8": "Algoritmos em JavaScript e Estrutura de Dados edição antiga V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Cerificação Algoritmos em JavaScript e Estrutura de Dados edição antiga V8",
+      "front-end-development-libraries": "Bibliotecas de Desenvolvimento Front-End V8",
+      "front-end-development-libraries-cert": "Certificação de Bibliotecas de Desenvolvimento Front-End V8",
+      "data-visualization": "Visualização de dados V8",
+      "data-visualization-cert": "Certificação de visualização de dados V8",
+      "relational-database-v8": "Banco de dados Relacionais V8",
+      "relational-database-v8-cert": "Certificação de Banco de dados Relacionais V8",
+      "back-end-development-and-apis": "Desenvolvimento Back-End e APIs V8",
+      "back-end-development-and-apis-cert": "Certificação de Desenvolvimento Back-End e APIs V8",
       "quality-assurance-v7": "Garantia de qualidade",
       "quality-assurance-v7-cert": "Certificação de garantia de qualidade",
       "scientific-computing-with-python-v7": "Computação científica com Python",
@@ -1213,9 +1233,21 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
-      "a2-english-for-developers-cert": "Certificação A2 Inglês para Desenvolvedores",
+      "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
       "b1-english-for-developers-cert": "Certificação B1 Inglês para Desenvolvedores",
+      "responsive-web-design-v9": "Design responsivo para a web",
+      "responsive-web-design-v9-cert": "Certificação de Design responsivo para a web",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "Certificação JavaScript",
+      "front-end-development-libraries-v9": "Bibliotecas de Desenvolvimento Front-End",
+      "front-end-development-libraries-v9-cert": "Certificação de Bibliotecas de Desenvolvimento Front-End",
+      "python-v9": "Python",
+      "python-v9-cert": "Certificação em Python",
+      "relational-databases-v9": "Banco de dados Relacionais",
+      "relational-databases-v9-cert": "Certificação de Banco de dados Relacionais",
+      "back-end-development-and-apis-v9": "Desenvolvimento Back-End e APIs",
+      "back-end-development-and-apis-v9-cert": "Certificação de Desenvolvimento Back-End e APIs",
       "full-stack-developer-v9": "Desenvolvimento Full Stack",
       "full-stack-developer-v9-cert": "Certificação de desenvolvimento Full Stack",
       "a1-professional-spanish": "Espanhol Profissional A1",
@@ -1280,12 +1312,18 @@
   "exam-token": {
     "exam-token": "Token de exame",
     "note": "O token de exame é uma chave secreta que permite que você acesse os exames. Não compartilhe esse token com ninguém.",
-    "invalidation": "Se você gerar um novo token, seu token antigo será invalidado.",
+    "invalidation-1": "Parece que você tem um token de exame válido. Se você gerar um novo, seu token existente será invalidado.",
+    "invalidation-2": "Se você gerar um novo token, seu token existente será invalidado.",
     "generate-exam-token": "Gerar token de exame",
-    "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
     "your-exam-token": "Seu token de exame é: {{token}}",
+    "error": "Houve um erro ao gerar seu token. Tente novamente daqui a pouco.",
+    "no-token": "Parece que você não tem um token de exame válido.",
+    "copy": "Copiar Token de Exame",
     "copied": "Token copiado para a área de transferência",
-    "copy-error": "Erro ao copiar o token para a área de transferência"
+    "copy-error": "Erro ao copiar o token para a área de transferência",
+    "token-usage": "Seu token de autorização do ambiente de exame é usado para fazer login no aplicativo de desktop.",
+    "generated": "Um novo token de autorização do ambiente de exame foi gerado para sua conta.",
+    "non-staff-testing": "Somente funcionários do freeCodeCamp estão autorizados a gerar tokens de exame em ambientes não-produtivos neste momento."
   },
   "shortcuts": {
     "title": "Atalhos do teclado",
@@ -1338,6 +1376,26 @@
       "exit": "Saia da pesquisa",
       "two-questions": "Parabéns por chegar até aqui. Antes de começar o teste, responda a estas duas breves perguntas de pesquisa."
     }
+  },
+  "speaking-modal": {
+    "heading": "Prática de fala",
+    "repeat-sentence": "Repita em voz alta esta frase:",
+    "play": "Tocar a música",
+    "playing": "Tocando...",
+    "record": "Gravar",
+    "stop": "Parar",
+    "incorrect-words": "Palavras incorretas: {{words}}.",
+    "misplaced-words": "Palavras fora de lugar: {{words}}.",
+    "correct-congratulations": "Isso está correto! Parabéns!",
+    "very-good": "Muito bem!",
+    "try-again": "Tente novamente.",
+    "no-audio-available": "Nenhum arquivo de áudio disponível.",
+    "no-speech-detected": "Gravando parou. Nenhuma fala detectada.",
+    "speech-recognition-not-supported": "Reconhecimento de fala não suportado neste navegador.",
+    "recording-speak-now": "Gravando. Fale agora.",
+    "recording-stopped-processing": "Gravando parado. Processando...",
+    "microphone-access-error": "Erro: Não foi possível acessar o microfone.",
+    "speaking-button": "Praticar fala"
   },
   "curriculum": {
     "catalog": {

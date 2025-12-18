@@ -1,13 +1,13 @@
 {
   "name": "CSS Backgrounds and Borders Quiz",
-  "blockType": "quiz",
+  "blockLabel": "quiz",
   "blockLayout": "link",
   "isUpcomingChange": false,
   "dashedName": "quiz-css-backgrounds-and-borders",
   "challengeOrder": [
     {
       "id": "66ed8fd7f45ce3ece4053eb0",
-      "title": "CSS Backgrounds and Borders Quiz"
+      "title": "Lists, Links, Backgrounds and Borders Quiz"
     }
   ],
   "helpCategory": "HTML-CSS"

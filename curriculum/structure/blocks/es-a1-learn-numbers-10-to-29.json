@@ -1,0 +1,29 @@
+{
+  "name": "Numbers 10 to 29",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-learn-numbers-10-to-29",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "692322e4deeb92161eddbcb9", "title": "Task 1" },
+    { "id": "692325cde805a91e7d973d6f", "title": "Task 2" },
+    { "id": "692327940e4aa020e97c3151", "title": "Task 3" },
+    { "id": "692328943fc4ec22f3f644ca", "title": "Task 4" },
+    { "id": "692329f211c3d9256f1c8372", "title": "Task 5" },
+    { "id": "69232bde8391ec28781fdd2d", "title": "Task 6" },
+    { "id": "69232d3d4d711b2a56359d5e", "title": "Task 7" },
+    { "id": "69232e147dc8972bd5bb92a9", "title": "Task 8" },
+    { "id": "69232f2b8ee0472da4c63f76", "title": "Task 9" },
+    { "id": "692330428792892f803d82f2", "title": "Task 10" },
+    { "id": "69233f5099a684375a1cbd4b", "title": "Task 11" },
+    { "id": "69234011db1dd3390bbe798d", "title": "Task 12" },
+    { "id": "692344d67fb48a3d632f0996", "title": "Task 13" },
+    { "id": "6923459968193c3f07a8f44b", "title": "Task 14" },
+    { "id": "6923467f09211340886b82b7", "title": "Task 15" },
+    { "id": "6923485ec3611f43d1c4d3e2", "title": "Task 16" },
+    { "id": "692349d239ccd645a6147f68", "title": "Task 17" },
+    { "id": "69234b22f3779e47a34c71ff", "title": "Task 18" },
+    { "id": "69234cd75f9b2d49ab187b43", "title": "Task 19" }
+  ],
+  "blockLabel": "learn"
+}

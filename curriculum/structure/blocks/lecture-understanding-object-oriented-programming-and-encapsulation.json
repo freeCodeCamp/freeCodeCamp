@@ -1,8 +1,8 @@
 {
   "name": "Understanding Object Oriented Programming and Encapsulation",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation",
-  "blockType": "lecture",
+  "blockLabel": "lecture",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {

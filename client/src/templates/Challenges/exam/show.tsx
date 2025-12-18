@@ -149,7 +149,6 @@ function ShowExam(props: ShowExamProps) {
           block,
           dashedName,
           description,
-          fields: { blockName },
           instructions,
           prerequisites,
           superBlock,
@@ -186,12 +185,7 @@ function ShowExam(props: ShowExamProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: {
-            fields: { tests },
-            challengeType,
-            helpCategory,
-            title
-          }
+          challenge: { tests, challengeType, helpCategory, title }
         }
       },
       pageContext: { challengeMeta },
@@ -502,7 +496,7 @@ function ShowExam(props: ShowExamProps) {
               <Spacer size='m' />
 
               {qualifiedForExam ? (
-                <Callout variant='info'>
+                <Callout variant='note' label={t('misc.note')}>
                   <p>{t('learn.exam.qualified')}</p>
                 </Callout>
               ) : !prerequisitesComplete ? (
@@ -530,7 +524,7 @@ function ShowExam(props: ShowExamProps) {
             <CompletionModal />
             <HelpModal
               challengeTitle={title}
-              challengeBlock={blockName}
+              challengeBlock={block}
               superBlock={superBlock}
             />
           </Row>
@@ -558,11 +552,6 @@ export const query = graphql`
         description
         fields {
           blockHashSlug
-          blockName
-          tests {
-            text
-            testString
-          }
         }
         helpCategory
         id
@@ -572,6 +561,10 @@ export const query = graphql`
           title
         }
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
       }

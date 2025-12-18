@@ -10,7 +10,7 @@ import {
 } from '@freecodecamp/ui';
 
 type DeleteModalProps = {
-  delete: () => void;
+  delete: (x?: never) => void;
   onHide: () => void;
   show: boolean;
 };
@@ -72,7 +72,7 @@ function DeleteModal(props: DeleteModalProps): JSX.Element {
           block={true}
           size='large'
           variant='danger'
-          onClick={props.delete}
+          onClick={() => props.delete()}
           disabled={verifyText !== t('settings.danger.verify-delete-text')}
           type='button'
         >

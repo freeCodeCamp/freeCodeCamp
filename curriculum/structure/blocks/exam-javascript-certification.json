@@ -1,9 +1,9 @@
 {
   "name": "JavaScript Certification Exam",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "exam-javascript-certification",
   "helpCategory": "JavaScript",
-  "blockType": "exam",
+  "blockLabel": "exam",
   "blockLayout": "link",
   "challengeOrder": [
     {
