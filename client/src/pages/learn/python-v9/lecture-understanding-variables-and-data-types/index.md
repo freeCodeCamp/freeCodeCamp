@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Understanding Variables and Data Types
 block: lecture-understanding-variables-and-data-types
-superBlock: full-stack-developer
+superBlock: python-v9
 ---
 
 ## Introduction to the Understanding Variables and Data Types

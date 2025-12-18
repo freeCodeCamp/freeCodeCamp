@@ -49,7 +49,7 @@ if condition:
     
 * `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
 
-* The body of the `if` statement constitutes a *code block*, which is a group of statements that belong together. In Python, the level of indentation is what defines a code block.
+* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. In Python, the level of indentation is what defines a code block.
     
 In the example above, the body of the `if` statement contains a `pass` statement. When a `pass` statement is executed, nothing happens. This is a special keyword that can be used as a placeholder for future code and it is useful when empty code blocks are not allowed.
 
@@ -73,7 +73,7 @@ if age >= 18:
 print('You are an adult') # IndentationError: expected an indented block after 'if' statement on line 3
 ```
 
-Though you can use either two or four spaces to determine each level of indentation, the Python style guide recommends using four spaces.
+Though you can use any number spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
 
 Blocks are also found in loops and functions, which you'll learn about in future lessons.
 
