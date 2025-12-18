@@ -4,7 +4,7 @@ const url =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam/foundational-c-sharp-with-microsoft-certification-exam';
 test.describe('Exam Survey', () => {
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     execSync('node tools/scripts/seed/seed-surveys.js delete-only');
   });
 
