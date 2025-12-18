@@ -1724,6 +1724,12 @@
         "intro": [
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
+      },
+      "en-b1-certification-exam": {
+        "title": "B1 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the B1 English for Developers Certification."
+        ]
       }
     }
   },
@@ -1861,163 +1867,163 @@
       "data-visualization": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
+          "En este módulo, serás introducido a la visualización de datos y aprenderás cómo trabajar con la librería D3."
         ]
       },
       "typescript-fundamentals": {
         "note": "Próximamente en otoño de 2025",
         "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica trabajando con genéricos, ajuste de tipos, TSX, y más. Luego, pondrás a prueba tus conocimientos sobre los fundamentos de TypeScript con un breve cuestionario."
         ]
       },
       "python-classes-and-objects": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás cómo trabajar con clases, métodos, atributos y propiedades. Luego, construirás talleres y laboratorios para practicar estos conceptos y tomar un breve cuestionario para probar tus conocimientos."
         ]
       },
       "python-object-oriented-programming": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre conceptos de programación orientada a objetos como encapsulación, herencia, polimorfismo, y más. Construirás talleres y laboratorios para practicar estos conceptos y tomar un breve cuestionario para probar tus conocimientos."
         ]
       },
       "python-linear-data-structures": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre estructuras de datos incluyendo pilas, colas, listas enlazadas, y más. Construirás un taller y un laboratorio para practicar estos conceptos y tomar un breve cuestionario para probar tus conocimientos."
         ]
       },
       "python-algorithms": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre algoritmos comunes incluyendo búsqueda binaria, mezcla y ordenación, ordenación por selección, y más. Construirás talleres y laboratorios para practicar estos conceptos y tomar un breve cuestionario para probar tus conocimientos."
         ]
       },
       "python-graphs-and-trees": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre gráficos en ciencias de la computación así como listas de adyacencia, árboles, tries, y más. Construirás talleres y laboratorios para practicar estos conceptos y tomar un breve cuestionario para probar tus conocimientos."
         ]
       },
       "python-dynamic-programming": {
         "note": "Próximamente en invierno de 2025",
         "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre programación dinámica y practicarás estos conceptos construyendo un laboratorio de secuencia de Fibonacci. Luego tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "bash-fundamentals": {
         "note": "Próximamente en invierno de 2025",
         "intro": [
-          "In this module, you will learn about  the command line and common Bash commands. Then you will practice your skills with a workshop and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre la línea de comandos y comandos comunes de Bash. Luego practicarás tus habilidades con un taller y tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "sql-and-postgresql": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn how to work with relational databases which store data as collections in tables. Some of the concepts you will learn about include inserting and viewing table data, primary and foreign keys in SQL, and more. Then you will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás a trabajar con bases de datos relacionales que almacenan datos como colecciones en tablas. Algunos de los conceptos que aprenderás incluyen insertar y ver datos de tablas, claves primarias y externas en SQL, y más. Luego construirás un taller y un laboratorio para practicar estos conceptos y tomar un breve cuestionario para poner a prueba tus conocimientos."
         ]
       },
       "bash-scripting": {
         "note": "Próximamente en invierno de 2025",
         "intro": [
-          "In this module, you will learn about bash scripting and practice those skills by building five programs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+          "En este módulo, aprenderás sobre scripting en bash y practicarás esas habilidades construyendo cinco programas. Luego podrás probar tus conocimientos de estos conceptos tomando un breve cuestionario."
         ]
       },
       "sql-and-bash": {
         "note": "Próximamente en invierno de 2025",
         "intro": [
-          "In this module, you will learn about normalization, SQL injection, and the N+1 problem. Then you will get to practice working with SQL and Bash by building several workshops and labs. Then you will be able to test your knowledge of these concepts by taking a short quiz."
+          "En este módulo, aprenderás sobre normalización, inyección SQL, y el problema N+1. Luego podrás practicar trabajando con SQL y Bash construyendo varios talleres y laboratorios. Podrás probar tus conocimientos de estos conceptos tomando un breve cuestionario."
         ]
       },
       "git": {
         "note": "Próximamente en invierno de 2025",
         "intro": [
-          "In this module, you will learn how to use Git, Nano, and GitHub. Then you will get to practice working with Git by building several workshops and labs. You will be able to test your knowledge of these concepts by taking a short quiz."
+          "En este módulo, aprenderás cómo usar Git, Nano, y GitHub. Luego podrás practicar trabajando con Git construyendo varios talleres y laboratorios. Podrás probar tus conocimientos de estos conceptos tomando un breve cuestionario."
         ]
       },
       "introduction-to-nodejs": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will be introduced to Node.js, which is a JavaScript runtime environment that allows you to build backend applications using JavaScript. You will get to practice fundamental concepts by building a small workshop and test your knowledge with a short quiz."
+          "En este módulo, serás introducido a Node.js, que es un entorno de ejecución JavaScript que te permite construir aplicaciones backend usando JavaScript. Podrás practicar conceptos fundamentales construyendo un pequeño taller y probar tus conocimientos con un breve cuestionario."
         ]
       },
       "nodejs-core-libraries": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "En este módulo, aprenderás sobre bibliotecas core comunes de Node.js incluyendo fs, os, path y más. Luego podrás practicar lo que has aprendido a través de talleres y laboratorios y probar tus conocimientos a través de un breve cuestionario."
         ]
       },
       "node-package-manager": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
+          "En este módulo, serás introducido al Node Package Manager, que los desarrolladores usan para gestionar dependencias y scripts de proyectos. Luego podrás practicar lo que has aprendido a través de talleres y laboratorios y probar tus conocimientos con un breve cuestionario."
         ]
       },
       "http-and-the-web-standards-model": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre HTTP (Protocolo de Transferencia de Hipertexto) y otros conceptos importantes incluyendo el modelo de request-response, códigos de respuesta comunes, DNS, TCP/IP, y más. Luego podrás practicar lo que has aprendido a través de un taller para construir tu propio servidor web y probar tus conocimientos con un breve cuestionario."
         ]
       },
       "rest-api-and-web-services": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre la API REST (Interfaz de Programación de Aplicaciones de Transferencia de Estado Representacional) y cómo funcionan los microservicios. Luego tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "introduction-to-express": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+          "En este módulo, serás introducido a Express.js, que es un framework usado para construir APIs RESTful. Luego practicarás tus habilidades a través de talleres y laboratorios y probarás tus conocimientos con un breve cuestionario."
         ]
       },
       "express-middleware": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre middleware en Express.js, que se utiliza para manejar requests y responses entre el cliente y el servidor. Luego practicarás tus habilidades a través de un taller y laboratorio y probarás tus conocimientos con un breve cuestionario."
         ]
       },
       "error-handling-in-express": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre cómo funcionan el manejo de errores, la depuración y las comprobaciones de salud en Express.js. Luego practicarás lo que has aprendido en un laboratorio y probarás tus conocimientos con un breve cuestionario."
         ]
       },
       "websockets": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "En este módulo, serás introducido a los websockets, que es un protocolo utilizado para la comunicación en tiempo real con el cliente y el servidor. Luego practicarás lo que has aprendido en laboratorios y talleres y probarás tus conocimientos con un breve cuestionario."
         ]
       },
       "node-and-sql": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
+          "En este módulo, practicarás la construcción de aplicaciones con Node y SQL. Luego tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "security-and-privacy": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre las diferencias entre seguridad y privacidad, así como otros conceptos incluyendo CSPs, Políticas de Permisos, PII, trabajando con CORS, y más. Luego tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "authentication": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre cómo funciona la autenticación en aplicaciones web junto con otros conceptos importantes, incluyendo JWTs, CSRFs, Passport, Helmet, criptografía y encriptación, y más. Luego practicarás lo que has aprendido en laboratorios y talleres y probarás tus conocimientos con un breve cuestionario."
         ]
       },
       "tooling-and-deployment": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre herramientas comunes utilizadas en la industria para implementar tus aplicaciones full stack. Luego tomarás un breve cuestionario para probar tus conocimientos."
         ]
       },
       "how-to-get-a-developer-job": {
         "note": "Próximamente a finales de 2026",
         "intro": [
-          "In this module, Quincy Larson (Founder and teacher of freeCodeCamp) will talk about strategies you can use to prepare for getting a developer job. Quincy will cover key subjects including résumés, portfolios, researching the market, preparing for technical interviews, and more."
+          "En este módulo, Quincy Larson (Fundador y profesor de freeCodeCamp) hablará sobre estrategias que puedes utilizar para prepararte para conseguir un trabajo de desarrollador. Quincy cubrirá temas clave incluyen currículums, portafolios, investigar el mercado, prepararse para entrevistas técnicas, y más."
         ]
       },
       "capstone-project": {
@@ -4741,7 +4747,7 @@
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
-          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+          "En este laboratorio, utilizarás el módulo <code>abc</code> para crear una interfaz de jugador."
         ]
       },
       "review-object-oriented-programming": {
@@ -6396,13 +6402,13 @@
       "data-visualization": {
         "note": "Coming 2026",
         "intro": [
-          "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
+          "En este módulo, serás introducido a la visualización de datos y aprenderás a trabajar con la biblioteca D3."
         ]
       },
       "typescript-fundamentals": {
         "note": "Coming 2026",
         "intro": [
-          "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
+          "En este módulo, serás introducido a TypeScript, que es un superconjunto de JavaScript que te permite agregar tipado estático a tu código JavaScript. Construirás varios talleres y laboratorios que te darán práctica en trabajar con genéricos, estrechamiento de tipos, TSX, y más. Luego pondrás a prueba tus conocimientos de los fundamentos de TypeScript con un breve cuestionario."
         ]
       },
       "front-end-development-libraries-certification-exam": {
@@ -6745,37 +6751,37 @@
       "python-classes-and-objects": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás a trabajar con clases, métodos, atributos y propiedades. Luego, desarrollarás talleres y laboratorios para practicar estos conceptos y realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-object-oriented-programming": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre conceptos de programación orientada a objetos como encapsulación, herencia, polimorfismo y más. Desarrollarás talleres y laboratorios para practicar estos conceptos y realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-linear-data-structures": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre estructuras de datos, incluyendo pilas, colas, listas enlazadas y más. Desarrollarás un taller y un laboratorio para practicar estos conceptos y realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-algorithms": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre algoritmos comunes como la búsqueda binaria, orden por mezcla, ordenación por selección y más. Desarrollarás talleres y laboratorios para practicar estos conceptos y realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-graphs-and-trees": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre grafos en ciencias de la computación, así como listas de adyacencia, árboles, intentos y más. Desarrollarás talleres y laboratorios para practicar estos conceptos y realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-dynamic-programming": {
         "note": "Coming Winter 2025",
         "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre programación dinámica y practicarás estos conceptos creando un laboratorio de secuencia de Fibonacci. Luego, realizarás un breve cuestionario para evaluar tus conocimientos."
         ]
       },
       "python-certification-exam": {
@@ -6993,7 +6999,7 @@
       "lab-player-interface": {
         "title": "Build a Player Interface",
         "intro": [
-          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+          "En este laboratorio, utilizarás el módulo <code>abc</code> para crear una interfaz de jugador."
         ]
       },
       "review-object-oriented-programming": {
@@ -7451,73 +7457,73 @@
       "nodejs-core-libraries": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "En este módulo, aprenderás sobre librerías core comunes de Node.js incluyendo fs, os, path y más. Luego, practicarás lo que has aprendido a través de talleres y laboratorios y pondrás a prueba tus conocimientos a través de un breve cuestionario."
         ]
       },
       "node-package-manager": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will be introduced to the Node Package Manager, which developers use to manage project dependencies and scripts. Then you will get to practice what you have learned through workshops and labs and test your knowledge with a short quiz."
+          "En este módulo, se te presentará el Gestor de Paquetes de Node, que los desarrolladores utilizan para gestionar dependencias de proyectos y scripts. Luego, practicarás lo que has aprendido a través de talleres y laboratorios y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "http-and-the-web-standards-model": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about HTTP (Hypertext Transfer Protocol) and other important concepts including the request-response model, common response codes, DNS, TCP/IP, and more. Then you will get to practice what you have learned through a build your own web server workshop and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre HTTP (Protocolo de Transferencia de Hipertexto) y otros conceptos importantes incluyendo el modelo de solicitud-respuesta, códigos de respuesta comunes, DNS, TCP/IP y más. Luego, practicarás lo que has aprendido a través de un taller de construir tu propio servidor web y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "rest-api-and-web-services": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about the REST API (Representational State Transfer Application Programming Interface) and how microservices work. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre la API REST (Interface de Programación de Aplicaciones de Transferencia de Estado Representacional) y cómo funcionan los microservicios. Luego, realizarás un breve cuestionario para poner a prueba tus conocimientos."
         ]
       },
       "introduction-to-express": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will be introduced to Express.js, which is a framework used to build RESTful APIs. Then you will practice your skills through workshops and labs and test your knowledge with a short quiz."
+          "En este módulo, se te presentará Express.js, que es un marco utilizado para construir APIs RESTful. Después practicarás tus habilidades a través de talleres y laboratorios y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "express-middleware": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about middleware in Express.js, which is used to handle requests and responses between the client and server. You will then practice your skills through a workshop and lab and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre middleware en Express.js, que se usa para manejar solicitudes y respuestas entre el cliente y el servidor. Luego practicarás tus habilidades a través de un taller y laboratorio y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "error-handling-in-express": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about how error handling, debugging, and health checks work in Express.js. You will then practice what you have learned in a lab and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre cómo funciona el manejo de errores, la depuración y las comprobaciones de salud en Express.js. Después practicarás lo que has aprendido en un laboratorio y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "websockets": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will be introduced to websockets, which is a protocol used for real time communication with the client and server. You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "En este módulo, se te presentará a WebSockets, que es un protocolo utilizado para la comunicación en tiempo real con el cliente y el servidor. Luego practicarás lo que has aprendido en laboratorios y talleres y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "node-and-sql": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will practice building applications with Node and SQL. Then you will take a short quiz to test your knowledge."
+          "En este módulo, practicarás la construcción de aplicaciones con Node y SQL. Luego realizarás un breve cuestionario para poner a prueba tus conocimientos."
         ]
       },
       "security-and-privacy": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about the differences between security and privacy as well as other concepts including  CSPs, Permissions-Policies, PII, working with CORS, and more. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre las diferencias entre seguridad y privacidad, así como otros conceptos incluyendo CSPs, Políticas de Permisos, PII, trabajar con CORS y más. Luego realizarás un breve cuestionario para poner a prueba tus conocimientos."
         ]
       },
       "authentication": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about how authentication works in web applications along with other important concepts including JWTs, CSRFs, Passport, Helmet, cryptography and encryption, and more.  You will then practice what you have learned in labs and workshops and test your knowledge with a short quiz."
+          "En este módulo, aprenderás sobre cómo funciona la autenticación en aplicaciones web junto con otros conceptos importantes incluyendo JWTs, CSRFs, Passport, Helmet, criptografía y cifrado, y más. Luego practicarás lo que has aprendido en laboratorios y talleres y pondrás a prueba tus conocimientos con un breve cuestionario."
         ]
       },
       "tooling-and-deployment": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "En este módulo, aprenderás sobre herramientas comunes utilizadas en la industria para implementar tus aplicaciones full stack. Luego realizarás un breve cuestionario para poner a prueba tus conocimientos."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
@@ -7528,10 +7534,20 @@
       }
     },
     "blocks": {
+      "quiz-node-js-intro": {
+        "title": "NodeJS Intro Quiz",
+        "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7574,7 +7590,7 @@
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
     "intro": [
-      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "Este curso te enseña los fundamentos de español en el nivel A1 del Marco Común Europeo de Referencia (MCER), con lecciones enfocadas en entornos profesionales. Cada módulo está dividido en secciones:",
       "- A Warm-up section for quick review.",
       "- Learn sections with new vocabulary and grammar.",
       "- Practice sections to check your comprehension and writing skills.",
@@ -7596,39 +7612,17 @@
       "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
-      "es-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-letters-sounds-and-first-numbers": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-greetings-and-farewells": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-introducing-yourself": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-first-questions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-numbers-10-to-29": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "es-a1-module-sharing-your-personal-details": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "En este módulo, practicarás la comprensión de conversaciones cortas que solicitan datos personales como nombre, información de contacto, nacionalidad y edad."
+        ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
-        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+        "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Greetings During the Day",
@@ -8347,6 +8341,13 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -8799,7 +8800,7 @@
       "talk-about-who-you-are-by-using-key-verbs": {
         "title": "Talk About Who You Are by Using Key Verbs",
         "intro": [
-          "Learn how to introduce yourself in Spanish in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+          "Aprende a presentarte en español de una manera simple y profesional. En este módulo aprenderás a decir quién eres, de dónde eres, qué haces, cómo te sientes y qué te gusta o no te gusta."
         ]
       },
       "get-to-know-others-by-asking-simple-questions": {
@@ -8818,7 +8819,7 @@
       "talk-about-what-you-do-by-using-key-verbs": {
         "title": "Talk About What You Do by Using Key Verbs",
         "intro": [
-          "Learn how to introduce yourself in Chinese in a simple and professional way. In this module you'll learn how to say who you are, where you are from, what you do, how you feel, and what you like or don't like."
+          "Aprende a presentarte en chino de una manera simple y profesional. En este módulo aprenderás a decir quién eres, de dónde eres, qué haces, cómo te sientes y qué te gusta o no te gusta."
         ]
       },
       "get-to-know-colleagues-by-asking-simple-questions": {
@@ -8831,12 +8832,16 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
+      "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
+      "Each chapter includes hundreds of interactive tasks designed to help you take your first steps in learning Chinese with confidence."
+    ],
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
@@ -8905,24 +8910,16 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Greetings and Introductions Quiz",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8933,8 +8930,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8953,8 +8950,8 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
@@ -9039,6 +9036,14 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
         "intro": ["", ""]
       }
     }
