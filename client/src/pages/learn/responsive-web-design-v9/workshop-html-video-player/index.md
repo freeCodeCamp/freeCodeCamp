@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build an HTML Video Player
 block: workshop-html-video-player
-superBlock: full-stack-developer
+superBlock: responsive-web-design-v9
 ---
 
 ## Introduction to the Build an HTML Video Player
