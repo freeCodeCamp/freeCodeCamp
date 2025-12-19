@@ -6669,48 +6669,6 @@
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your Python Certification."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
@@ -7167,14 +7125,6 @@
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
-    },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Relational Databases Certification."
-        ]
-      }
     },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
