@@ -7,8 +7,7 @@ dashedName: step-3
 
 # --description--
 
-The `path` element needs its shape defined. That is where the `d` attribute comes in. It is used to
-create a series of command letters and numbers that draw a shape. 
+The `path` element needs its shape defined. That is where the `d` attribute comes in. It is used to create a series of command letters and numbers that draw a shape. 
 
 These letters represent commands like move to, draw line, and close, while the numbers represent coordinates.  
 

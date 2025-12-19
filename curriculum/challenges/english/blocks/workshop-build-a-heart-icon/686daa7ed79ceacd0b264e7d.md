@@ -7,8 +7,7 @@ dashedName: step-2
 
 # --description--
 
-Before you begin coloring the image in, you should nest one `path` element inside your `svg`
-element to give the image shape.
+You should nest one `path` element inside your `svg` element to give the image shape.
 
 Create a `path` element.
 
