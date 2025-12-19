@@ -1846,7 +1846,6 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -8828,8 +8827,8 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Single Finals",
+      "zh-a1-learn-simple-finals": {
+        "title": "Simple Finals",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
@@ -8970,10 +8969,7 @@
         "title": "Special Spelling Rules",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
-        "intro": ["", ""]
-      }
+      "zh-a1-practice-pinyin": { "title": "Pinyin Practice", "intro": ["", ""] }
     }
   },
   "basic-html": {

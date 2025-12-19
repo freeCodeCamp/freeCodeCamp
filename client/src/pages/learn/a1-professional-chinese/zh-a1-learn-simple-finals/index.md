@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Simple Finals
-block: zh-a1-learn-single-finals
+block: zh-a1-learn-simple-finals
 superBlock: a1-professional-chinese
 ---
 
