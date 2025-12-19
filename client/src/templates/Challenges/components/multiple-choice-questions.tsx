@@ -47,7 +47,7 @@ function MultipleChoiceQuestions({
     answerIndex: number,
     questionIndex: number
   ) => {
-    setModalText(stripHtmlTags(removeParagraphTags(answer)));
+    setModalText(stripHtmlTags(answer));
     setModalAnswerIndex(answerIndex);
     setModalQuestionIndex(questionIndex);
     openSpeakingModal();

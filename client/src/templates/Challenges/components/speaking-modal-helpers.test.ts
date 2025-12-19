@@ -237,25 +237,19 @@ describe('speaking-modal-helpers', () => {
   });
 
   describe('stripHtmlTags', () => {
-    it('should remove code tags', () => {
+    it('should remove HTML tags and attributes', () => {
       expect(stripHtmlTags('<code>hello</code>')).toBe('hello');
-    });
-
-    it('should remove span tags', () => {
       expect(stripHtmlTags('<span>world</span>')).toBe('world');
-    });
-
-    it('should remove span tags with class attributes', () => {
-      expect(stripHtmlTags('<span class="token">Nǐ hǎo</span>')).toBe('Nǐ hǎo');
-    });
-
-    it('should remove multiple tags', () => {
-      expect(stripHtmlTags('<p>Hello <span>world</span></p>')).toBe(
-        'Hello world'
-      );
+      expect(stripHtmlTags('<p>Text content</p>')).toBe('Text content');
+      expect(
+        stripHtmlTags('<span id="text" class="highlighted-text">Nǐ hǎo</span>')
+      ).toBe('Nǐ hǎo');
     });
 
     it('should handle nested tags', () => {
+      expect(stripHtmlTags('<p>Hello <span>world</span></p>')).toBe(
+        'Hello world'
+      );
       expect(stripHtmlTags('<p><span class="highlight">text</span></p>')).toBe(
         'text'
       );
@@ -273,31 +267,6 @@ describe('speaking-modal-helpers', () => {
       expect(stripHtmlTags('Hello <code>world</code> today')).toBe(
         'Hello world today'
       );
-    });
-
-    it('should handle Chinese characters with pinyin', () => {
-      expect(stripHtmlTags('<span>shǎo</span>')).toBe('shǎo');
-      expect(stripHtmlTags('<code>shào</code>')).toBe('shào');
-    });
-
-    it('should handle multiple span tags in sequence', () => {
-      expect(
-        stripHtmlTags(
-          '<span class="token">Nǐ</span> <span class="token">hǎo</span>'
-        )
-      ).toBe('Nǐ hǎo');
-    });
-
-    it('should remove paragraph tags', () => {
-      expect(stripHtmlTags('<p>Text content</p>')).toBe('Text content');
-    });
-
-    it('should handle tags with multiple attributes', () => {
-      expect(
-        stripHtmlTags(
-          '<span class="token" id="test" data-value="123">text</span>'
-        )
-      ).toBe('text');
     });
   });
 });
