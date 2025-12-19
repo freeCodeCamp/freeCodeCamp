@@ -9,6 +9,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-working-with-nodejs-and-event-driven-architecture",
+            "review-node-js-intro",
             "quiz-node-js-intro"
           ]
         },
