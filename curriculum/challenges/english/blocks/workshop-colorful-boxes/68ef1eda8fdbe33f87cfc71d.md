@@ -1,8 +1,8 @@
 ---
 id: 68ef1eda8fdbe33f87cfc71d
-title: Step 31
+title: Step 30
 challengeType: 0
-dashedName: step-31
+dashedName: step-30
 ---
 
 # --description--
@@ -90,7 +90,6 @@ h1 {
   border: 1px solid #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   margin: 10px;
   font-weight: bold;
