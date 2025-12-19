@@ -1724,6 +1724,12 @@
         "intro": [
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
+      },
+      "en-b1-certification-exam": {
+        "title": "B1 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the B1 English for Developers Certification."
+        ]
       }
     }
   },
@@ -1840,7 +1846,7 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Introduction to Node.js",
+
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -2372,10 +2378,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -4173,10 +4176,7 @@
           "Open up this page to review all of the concepts taught including variables, strings, booleans, functions, objects, arrays, debugging, working with the DOM and more."
         ]
       },
-      "kagw": {
-        "title": "258",
-        "intro": []
-      },
+      "kagw": { "title": "258", "intro": [] },
       "lecture-introduction-to-javascript-libraries-and-frameworks": {
         "title": "Introduction to JavaScript Libraries and Frameworks",
         "intro": [
@@ -4449,26 +4449,11 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
-      "trvf": {
-        "title": "293",
-        "intro": []
-      },
-      "kwmg": {
-        "title": "294",
-        "intro": []
-      },
-      "nodx": {
-        "title": "295",
-        "intro": []
-      },
-      "erfj": {
-        "title": "296",
-        "intro": []
-      },
-      "muyw": {
-        "title": "297",
-        "intro": []
-      },
+      "trvf": { "title": "293", "intro": [] },
+      "kwmg": { "title": "294", "intro": [] },
+      "nodx": { "title": "295", "intro": [] },
+      "erfj": { "title": "296", "intro": [] },
+      "muyw": { "title": "297", "intro": [] },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
@@ -4486,14 +4471,8 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
-      "rdzk": {
-        "title": "301",
-        "intro": []
-      },
-      "vtpz": {
-        "title": "302",
-        "intro": []
-      },
+      "rdzk": { "title": "301", "intro": [] },
+      "vtpz": { "title": "302", "intro": [] },
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
@@ -7383,7 +7362,8 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
@@ -7398,10 +7378,16 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
+      "introduction-to-nodejs": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
@@ -7478,6 +7464,18 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Working with NodeJS and event driven architecture",
+        "intro": [
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
@@ -7486,6 +7484,12 @@
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7595,14 +7599,8 @@
         "title": "Introducing Yourself Basics",
         "intro": ["", ""]
       },
-      "es-a1-learn-meet-luna": {
-        "title": "Meet Luna",
-        "intro": ["", ""]
-      },
-      "es-a1-learn-meet-mateo": {
-        "title": "Meet Mateo",
-        "intro": ["", ""]
-      },
+      "es-a1-learn-meet-luna": { "title": "Meet Luna", "intro": ["", ""] },
+      "es-a1-learn-meet-mateo": { "title": "Meet Mateo", "intro": ["", ""] },
       "es-a1-learn-meet-julieta": {
         "title": "Meet Julieta",
         "intro": ["", ""]
@@ -8100,10 +8098,7 @@
           "Open up this page to review concepts around the basics of HTML elements, semantic HTML, tables, forms and accessibility."
         ]
       },
-      "qpra": {
-        "title": "30",
-        "intro": []
-      },
+      "qpra": { "title": "30", "intro": [] },
       "lecture-understanding-computer-internet-and-tooling-basics": {
         "title": "Understanding Computer, Internet, and Tooling Basics",
         "intro": [
@@ -8783,7 +8778,7 @@
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
@@ -8840,10 +8835,7 @@
         "title": "Single Finals",
         "intro": ["", ""]
       },
-      "zh-a1-learn-initials": {
-        "title": "Initials",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
       "zh-a1-learn-compound-finals": {
         "title": "Compound Finals",
         "intro": ["", ""]
@@ -8852,18 +8844,16 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": { "title": "Pinyin Review", "intro": ["", ""] },
-      "zh-a1-quiz-pinyin": { "title": "Pinyin Quiz", "intro": ["", ""] },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Building Your Self-Introduction",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8874,8 +8864,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8894,18 +8884,15 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
         "title": "A New Colleague",
         "intro": ["", ""]
       },
-      "zh-a1-learn-my-family": {
-        "title": "My Family",
-        "intro": ["", ""]
-      },
+      "zh-a1-learn-my-family": { "title": "My Family", "intro": ["", ""] },
       "zh-a1-practice-introducing-others": {
         "title": "Introducing Others Practice",
         "intro": ["", ""]
@@ -8980,6 +8967,10 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
         "intro": ["", ""]
       },
       "zh-a1-practice-pinyin": {
@@ -9072,9 +9063,7 @@
       "part-12": "Containers",
       "part-13": "Using Relational Databases"
     },
-    "modules": {
-      "basic-html": "Basic HTML"
-    },
+    "modules": { "basic-html": "Basic HTML" },
     "module-intros": {
       "basic-html": {
         "title": "Basic HTML",
@@ -9087,9 +9076,7 @@
   "daily-coding-challenge": {
     "title": "Daily Coding Challenge",
     "blocks": {
-      "daily-coding-challenge": {
-        "title": "Daily Coding Challenge"
-      }
+      "daily-coding-challenge": { "title": "Daily Coding Challenge" }
     }
   },
   "misc-text": {
