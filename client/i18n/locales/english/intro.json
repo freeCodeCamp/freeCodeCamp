@@ -6715,7 +6715,35 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
