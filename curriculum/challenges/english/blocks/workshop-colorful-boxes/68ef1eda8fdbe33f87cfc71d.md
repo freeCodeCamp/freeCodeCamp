@@ -13,10 +13,10 @@ The second value represents `flex-shrink`. This property controls how much the f
 
 # --hints--
 
-Your class `box` should have a property `flex` with a value of `0 0 400px`.
+Your class `box` should have a property `flex` with a value of `0 0 100px`.
 
 ```js
-assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('flex'), '0 0 400px');
+assert.equal(new __helpers.CSSHelp(document).getStyle('.box')?.getPropVal('flex'), '0 0 100px');
 ```
 
 # --seed--
@@ -84,7 +84,7 @@ h1 {
 }
 
 .box {
-  flex: 0 1 400px;
+  flex: 0 1 100px;
   max-height: 120px;
   color: #000;
   border: 1px solid #000;
