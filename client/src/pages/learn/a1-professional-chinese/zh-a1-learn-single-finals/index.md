@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Single Finals
+title: Introduction to the Simple Finals
 block: zh-a1-learn-single-finals
 superBlock: a1-professional-chinese
 ---
 
-## Introduction to the Single Finals
+## Introduction to the Simple Finals
 
-This page is for the Single Finals
+This page is for the Simple Finals
