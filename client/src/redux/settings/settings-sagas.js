@@ -10,7 +10,7 @@ import {
 import store from 'store';
 import { navigate } from 'gatsby';
 
-import { Certification } from '../../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { createFlashMessage } from '../../components/Flash/redux';
 import { liveCerts } from '../../../config/cert-and-project-map';
 import {

@@ -3,7 +3,7 @@ import {
   A1SpanishChapters,
   FsdChapters,
   A1ChineseChapters
-} from '../../../shared-dist/config/chapters';
+} from '@freecodecamp/shared/config/chapters';
 import DatabaseIcon from './icons/database';
 import JavaScriptIcon from './icons/javascript';
 import ReactIcon from './icons/react';

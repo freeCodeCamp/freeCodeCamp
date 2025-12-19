@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer } from '@freecodecamp/ui';
 import { ButtonLink } from '../components/helpers';
-import { catalog } from '../../../shared-dist/config/catalog';
+import { catalog } from '@freecodecamp/shared/config/catalog';
 import { showUpcomingChanges } from '../../config/env.json';
 import FourOhFour from '../components/FourOhFour';
 
