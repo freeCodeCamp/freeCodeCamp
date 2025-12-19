@@ -52,29 +52,30 @@ assert.match(addEntry?.toString(), /\(\s*\)/);
         <form id="budget-form">
           <label for="income">Total Monthly Income</label>
           <input 
-          type="number" 
-          min="0" 
-          id="income" 
-          placeholder="e.g. 2000" 
-          required 
+            type="number" 
+            min="0" 
+            id="income" 
+            placeholder="e.g. 2000" 
+            required 
           />
+
           <fieldset id="rent">
             <legend>Rent</legend>
             <label for="rent-amount">Amount</label>
             <input type="number" min="0" id="rent-amount" placeholder="e.g. 1000" />
-        </fieldset>
-        <fieldset id="food">
-          <legend>Food</legend>
-          <div class="input-container"></div>
-        </fieldset>
-        <fieldset id="utilities">
-          <legend>Utilities</legend>
-          <div class="input-container"></div>
-        </fieldset>
-        <fieldset id="entertainment">
-          <legend>Entertainment</legend>
-          <div class="input-container"></div>
-        </fieldset>
+          </fieldset>
+          <fieldset id="food">
+            <legend>Food</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="utilities">
+            <legend>Utilities</legend>
+            <div class="input-container"></div>
+          </fieldset>
+          <fieldset id="entertainment">
+            <legend>Entertainment</legend>
+            <div class="input-container"></div>
+          </fieldset>
           <div class="controls">
             <span>
               <label for="entry-dropdown">Add expense to:</label>
