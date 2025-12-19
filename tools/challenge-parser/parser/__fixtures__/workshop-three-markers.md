@@ -3,11 +3,13 @@ id: workshop-three-markers
 title: Three markers
 ---
 
+# --description--
+
+Create a form with an input field and a submit button.
+
 # --seed--
 
 ## --seed-contents--
-
-Create a form with an input field and a submit button.
 
 ```html
 <!DOCTYPE html>
@@ -16,23 +18,16 @@ Create a form with an input field and a submit button.
     <title>Workshop Challenge</title>
   </head>
   <body>
+--fcc-editable-region--
     <form>
+--fcc-editable-region--
       <input type="text" placeholder="Enter your name">
+--fcc-editable-region--
       <button type="submit">Submit</button>
     </form>
   </body>
 </html>
 ```
-
---fcc-editable-region--
-
-Some content here.
-
---fcc-editable-region--
-
-More content.
-
---fcc-editable-region--
 
 # --solutions--
 

@@ -3,11 +3,13 @@ id: workshop-bad-solutions
 title: Solutions in middle
 ---
 
+# --description--
+
+Add an image element with the src "https://example.com/image.jpg" and alt text "Example image".
+
 # --seed--
 
 ## --seed-contents--
-
-Add an image element with the src "https://example.com/image.jpg" and alt text "Example image".
 
 ```html
 <!DOCTYPE html>
@@ -16,16 +18,12 @@ Add an image element with the src "https://example.com/image.jpg" and alt text "
     <title>Workshop Challenge</title>
   </head>
   <body>
-    <img src="https://example.com/image.jpg" alt="Example image">
+--fcc-editable-region--
+    
+--fcc-editable-region--
   </body>
 </html>
 ```
-
---fcc-editable-region--
-
-Content in editable region.
-
---fcc-editable-region--
 
 # --solutions--
 

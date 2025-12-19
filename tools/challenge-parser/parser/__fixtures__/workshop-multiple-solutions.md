@@ -3,11 +3,13 @@ id: workshop-multiple-solutions
 title: Multiple solutions sections
 ---
 
+# --description--
+
+Add a paragraph element with the text "Hello World" inside the body element.
+
 # --seed--
 
 ## --seed-contents--
-
-Add a paragraph element with the text "Hello World" inside the body element.
 
 ```html
 <!DOCTYPE html>
@@ -16,16 +18,13 @@ Add a paragraph element with the text "Hello World" inside the body element.
     <title>Workshop Challenge</title>
   </head>
   <body>
+--fcc-editable-region--
     <p>Hello World</p>
+    
+--fcc-editable-region--
   </body>
 </html>
 ```
-
---fcc-editable-region--
-
-Content in editable region.
-
---fcc-editable-region--
 
 # --solutions--
 

@@ -8,9 +8,22 @@ const SOLUTIONS_HEADER = '--solutions--';
 function findEditableRegionMarkersInAST(tree) {
   const markers = [];
 
+  // Look for standalone text nodes
   visit(tree, 'text', node => {
     if (node.value && node.value.trim() === FCC_EDITABLE_REGION) {
       markers.push(node);
+    }
+  });
+
+  // Also look inside code blocks
+  visit(tree, 'code', node => {
+    if (node.value && node.value.includes(FCC_EDITABLE_REGION)) {
+      const lines = node.value.split('\n');
+      lines.forEach(line => {
+        if (line.trim() === FCC_EDITABLE_REGION) {
+          markers.push({ value: line.trim() });
+        }
+      });
     }
   });
 

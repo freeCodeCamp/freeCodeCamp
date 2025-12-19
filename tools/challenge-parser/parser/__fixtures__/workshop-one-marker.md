@@ -3,11 +3,13 @@ id: workshop-one-marker
 title: One marker
 ---
 
+# --description--
+
+In this step, you'll add a div element with the class "container" inside the body element.
+
 # --seed--
 
 ## --seed-contents--
-
-In this step, you'll add a div element with the class "container" inside the body element.
 
 ```html
 <!DOCTYPE html>
@@ -16,12 +18,11 @@ In this step, you'll add a div element with the class "container" inside the bod
     <title>Workshop Challenge</title>
   </head>
   <body>
+--fcc-editable-region--
     <div class="container"></div>
   </body>
 </html>
 ```
-
---fcc-editable-region--
 
 # --solutions--
 

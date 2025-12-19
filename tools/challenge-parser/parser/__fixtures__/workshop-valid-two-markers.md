@@ -3,11 +3,13 @@ id: workshop-valid-two-markers
 title: Valid two markers
 ---
 
+# --description--
+
+Add a navigation element with an unordered list containing three list items with the text "Home", "About", and "Contact".
+
 # --seed--
 
 ## --seed-contents--
-
-Add a navigation element with an unordered list containing three list items with the text "Home", "About", and "Contact".
 
 ```html
 <!DOCTYPE html>
@@ -17,6 +19,7 @@ Add a navigation element with an unordered list containing three list items with
   </head>
   <body>
     <header>
+--fcc-editable-region--
       <nav>
         <ul>
           <li>Home</li>
@@ -24,6 +27,7 @@ Add a navigation element with an unordered list containing three list items with
           <li>Contact</li>
         </ul>
       </nav>
+--fcc-editable-region--
     </header>
     <main>
       <h1>Welcome to our website</h1>
@@ -31,12 +35,6 @@ Add a navigation element with an unordered list containing three list items with
   </body>
 </html>
 ```
-
---fcc-editable-region--
-
-Content in editable region.
-
---fcc-editable-region--
 
 # --solutions--
 
