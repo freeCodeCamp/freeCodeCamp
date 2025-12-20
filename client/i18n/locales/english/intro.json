@@ -6715,7 +6715,35 @@
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -7471,6 +7499,12 @@
         "title": "Working with NodeJS and event driven architecture",
         "intro": [
           "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
         ]
       },
       "quiz-node-js-intro": {
@@ -8407,6 +8441,13 @@
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
+      "lab-pricing-plans-layout": {
+        "title": "Design a Pricing Plans Layout Page",
+        "intro": [
+          "In this lab, you'll use flexbox to create a common three-card tier layout.",
+          "You'll practice aligning elements using flexbox properties like <code>flex</code>, <code>flex-grow</code>, <code>order</code>, and more."
+        ]
+      },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
@@ -8818,8 +8859,8 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Single Finals",
+      "zh-a1-learn-simple-finals": {
+        "title": "Simple Finals",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": { "title": "Initials", "intro": ["", ""] },
