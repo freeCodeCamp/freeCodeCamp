@@ -1,0 +1,15 @@
+{
+  "name": "Build a Card Counting Assistant",
+  "isUpcomingChange": false,
+  "dashedName": "lab-counting-cards",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "68a23004e96a105df3a21fc4",
+      "title": "Build a Card Counting Assistant"
+    }
+  ],
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "usesMultifileEditor": true
+}

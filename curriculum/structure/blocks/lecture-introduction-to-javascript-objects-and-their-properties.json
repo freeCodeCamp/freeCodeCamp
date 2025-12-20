@@ -1,0 +1,38 @@
+{
+  "name": "Introduction to JavaScript Objects and Their Properties",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-javascript-objects-and-their-properties",
+  "challengeOrder": [
+    {
+      "id": "67329f737126b75bcb949e13",
+      "title": "What Is an Object in JavaScript, and How Can You Access Properties from an Object?"
+    },
+    {
+      "id": "6732b721eb98f224868b44a6",
+      "title": "How Can You Remove Properties from an Object?"
+    },
+    {
+      "id": "6732b72961f94324bd6390de",
+      "title": "How to Check If an Object Has a Property?"
+    },
+    {
+      "id": "6732b73509f71f24ef05e86e",
+      "title": "How Do You Work with Accessing Properties from Nested Objects and Arrays in Objects?"
+    },
+    {
+      "id": "6732b73d25cc01251b778043",
+      "title": "What Is the Difference Between Primitive and Non-Primitive Data Types?"
+    },
+    {
+      "id": "6732b749b8aad125523dcda5",
+      "title": "What Is the Difference Between Functions and Object Methods?"
+    },
+    {
+      "id": "6732b758194c97257d23fc72",
+      "title": "What Is the Object() Constructor, and When Should You Use It?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

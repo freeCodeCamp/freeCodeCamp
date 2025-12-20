@@ -1,0 +1,11 @@
+{
+  "name": "CSS Animations Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-animations",
+  "challengeOrder": [
+    { "id": "671a999cc77b7f9bceb4caeb", "title": "CSS Animations Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

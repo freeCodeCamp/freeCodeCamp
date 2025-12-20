@@ -1,0 +1,12 @@
+{
+  "name": "Design a Contact Form",
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-contact-form",
+  "challengeOrder": [
+    { "id": "66f26c32ec6f90df01a44f60", "title": "Design a Contact Form" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

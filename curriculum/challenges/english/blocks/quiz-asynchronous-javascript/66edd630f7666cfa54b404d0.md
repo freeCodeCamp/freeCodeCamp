@@ -1,0 +1,499 @@
+---
+id: 66edd630f7666cfa54b404d0
+title: Asynchronous JavaScript Quiz
+challengeType: 8
+dashedName: quiz-asynchronous-javascript
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is asynchronous programming?
+
+#### --distractors--
+
+A method for executing code sequentially.
+
+---
+
+A technique to handle errors in your code.
+
+---
+
+A way to make network requests, typically to retrieve or send data to the server. 
+
+#### --answer--
+
+A method to execute code concurrently without blocking the main thread.
+
+### --question--
+
+#### --text--
+
+What is a thread?
+
+#### --distractors--
+
+A function used to retrieve data from the server. 
+
+---
+
+A program that executes JavaScript code in a web browser.
+
+---
+
+A special type of function that is passed as an argument to another function.
+
+#### --answer--
+
+A sequence of instructions that can be executed independently of the main program flow.
+
+### --question--
+
+#### --text--
+
+What is the purpose of the Fetch API in JavaScript?
+
+#### --distractors--
+
+To manage asynchronous callbacks.
+
+---
+
+To create and manage cookies.
+
+---
+
+To render dynamic HTML content.
+
+#### --answer--
+
+To make network requests to servers.
+
+### --question--
+
+#### --text--
+
+Which `HTTP` method is used to send data to a server for processing?
+
+#### --distractors--
+
+`GET`
+
+---
+
+`DELETE`
+
+---
+
+`HEAD`
+
+#### --answer--
+
+`POST`
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to fetch data from an API?
+
+#### --distractors--
+
+```js
+fetch('https://api.example.com/data')
+  .accept(response => response.json())
+  .accept(data => console.log(data))
+```
+
+---
+
+```js
+fetch('https://api.example.com/data')
+  .allow(response => response.json())
+  .allow(data => console.log(data))
+```
+
+---
+
+```js
+fetch('https://api.example.com/data')
+  .send(response => response.json())
+  .send(data => console.log(data))
+```
+
+#### --answer--
+
+```js
+fetch('https://api.example.com/data')
+  .then(response => response.json())
+  .then(data => console.log(data))
+```
+
+### --question--
+
+#### --text--
+
+What is a promise in JavaScript?
+
+#### --distractors--
+
+A way to synchronize multiple operations when working with the Fetch API.
+
+---
+
+A special type of callback function that you must use in all higher order functions.
+
+---
+
+A technique used to handle errors when you work with the Fetch API.
+
+#### --answer--
+
+An object that represents the eventual completion (or failure) of an asynchronous operation.
+
+### --question--
+
+#### --text--
+
+What does promise chaining allow you to do?
+
+#### --distractors--
+
+Allows you to execute multiple synchronous operations in parallel.
+
+---
+
+Allows you to handle synchronous operations more efficiently.
+
+---
+
+Allows you to retry failed operations automatically.
+
+#### --answer--
+
+Allows you to perform a sequence of asynchronous operations one after the other.
+
+### --question--
+
+#### --text--
+
+Which method is used to handle a successful completion of a promise?
+
+#### --distractors--
+
+`.finally()`
+
+---
+
+`.catch()`
+
+---
+
+`.error()`
+
+#### --answer--
+
+`.then()`
+
+### --question--
+
+#### --text--
+
+Which method is used to handle errors in a promise chain?
+
+#### --distractors--
+
+`.finally()`
+
+---
+
+`.then()`
+
+---
+
+`.error()`
+
+#### --answer--
+
+`.catch()`
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT a valid HTTP method?
+
+#### --distractors--
+
+`PUT`
+
+---
+
+`GET`
+
+---
+
+`POST`
+
+#### --answer--
+
+`SEND`
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct syntax for creating an async function?
+
+#### --distractors--
+
+`function myFunction() {}`
+
+---
+
+`function async myFunction() {}`
+
+---
+
+`async {} => ()`
+
+#### --answer--
+
+`async function myFunction() {}`
+
+### --question--
+
+#### --text--
+
+What does the `await` keyword do in an async function?
+
+#### --distractors--
+
+It creates a new promise.
+
+---
+
+It executes code immediately without waiting and returns an object.
+
+---
+
+It logs the result of the promise and returns `null`.
+
+#### --answer--
+
+It pauses the execution of the function until the promise is resolved.
+
+### --question--
+
+#### --text--
+
+Which of the following APIs is used to provide a way for websites to request the user's location?
+
+#### --distractors--
+
+Locator API
+
+---
+
+Geo API
+
+---
+
+Locate API
+
+#### --answer--
+
+Geolocation API
+
+### --question--
+
+#### --text--
+
+Which of the following attributes downloads the script asynchronously but waits for the HTML document to be fully parsed before running the script?
+
+#### --distractors--
+
+`asyncDefer`
+
+---
+
+`deferred`
+
+---
+
+`deferring`
+
+#### --answer--
+
+`defer`
+
+### --question--
+
+#### --text--
+
+What will the following code return? 
+
+```js
+fetch('https://api.example.com/data')
+```
+
+#### --distractors--
+
+An error saying that the data is corrupted.
+
+---
+
+An error saying that the data cannot be fetched.
+
+---
+
+Nothing will be returned and JavaScript will move to the next function in the script.
+
+#### --answer--
+
+A `Promise` that resolves to a `Response` object.
+
+### --question--
+
+#### --text--
+
+What is the default HTTP method for the Fetch API?
+
+#### --distractors--
+
+`POST`
+
+---
+
+`PUT`
+
+---
+
+`DELETE`
+
+#### --answer--
+
+`GET`
+
+### --question--
+
+#### --text--
+
+Which of the following methods is used to delete resources on the server?
+
+#### --distractors--
+
+`REMOVING`
+
+---
+
+`REMOVE`
+
+---
+
+`DELETING`
+
+#### --answer--
+
+`DELETE`
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to create a promise?
+
+#### --distractors--
+
+```js
+const promise = get Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Data received successfully');
+  }, 2000);
+});
+```
+
+---
+
+```js
+const promise = set Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Data received successfully');
+  }, 2000);
+});
+```
+
+---
+
+```js
+const promise = put Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Data received successfully');
+  }, 2000);
+});
+```
+
+#### --answer--
+
+```js
+const promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Data received successfully');
+  }, 2000);
+});
+```
+
+### --question--
+
+#### --text--
+
+Which of the following attributes tells the browser to download the script file asynchronously while continuing to parse the HTML document?
+
+#### --distractors--
+
+`resolve`
+
+---
+
+`catch`
+
+---
+
+`put`
+
+#### --answer--
+
+`async`
+
+### --question--
+
+#### --text--
+
+Which method of the Geolocation API is used to get the current position of a device?
+
+#### --distractors--
+
+`getLocation()`
+
+---
+
+`getPosition()`
+
+---
+
+`getLatLong()`
+
+#### --answer--
+
+`getCurrentPosition()`
+

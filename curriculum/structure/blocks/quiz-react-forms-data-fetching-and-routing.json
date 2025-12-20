@@ -1,0 +1,14 @@
+{
+  "name": "React Forms, Data Fetching and Routing Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-react-forms-data-fetching-and-routing",
+  "challengeOrder": [
+    {
+      "id": "66f1ad049d7a6ac0886cc2ba",
+      "title": "React Forms, Data Fetching and Routing Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

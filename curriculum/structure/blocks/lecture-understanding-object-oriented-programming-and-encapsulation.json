@@ -1,0 +1,18 @@
+{
+  "name": "Understanding Object Oriented Programming and Encapsulation",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-object-oriented-programming-and-encapsulation",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420be9af9d89620af7944a",
+      "title": "What is Object-Oriented Programming, and How Does Encapsulation Work?"
+    },
+    {
+      "id": "68c128cbd77e4ba9ed671937",
+      "title": "What are Getters and Setters"
+    }
+  ],
+  "helpCategory": "Python"
+}

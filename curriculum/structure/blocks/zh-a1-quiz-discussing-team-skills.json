@@ -1,0 +1,14 @@
+{
+  "name": "Discussing Team Skills Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-quiz-discussing-team-skills",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68fa3be75fd89ce730060f0f",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "quiz"
+}

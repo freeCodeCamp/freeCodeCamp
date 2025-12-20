@@ -1,0 +1,12 @@
+{
+  "name": "Build a Record Collection",
+  "isUpcomingChange": false,
+  "dashedName": "lab-record-collection",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "56533eb9ac21ba0edf2244cf", "title": "Build a Record Collection" }
+  ],
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

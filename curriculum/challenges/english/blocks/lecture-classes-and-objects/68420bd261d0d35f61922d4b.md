@@ -1,0 +1,220 @@
+---
+id: 68420bd261d0d35f61922d4b
+title: How Do Classes Work and How Do They Differ From Objects?
+challengeType: 19
+dashedName: how-do-classes-work-and-how-do-they-differ-from-objects
+---
+
+# --description--
+
+In Python, classes and objects work hand in hand to organize and manage data. You build a class to define shared behavior, then create objects that use those behaviors.
+
+In other words, a class is like a blueprint or template you use to create objects with.
+
+Let's look at what classes are, and how to use them to create objects.
+
+To create a class, you use the `class` keyword followed by the name of the class and a colon. Then within the class, you can add an initializer, along with any attributes and methods.
+
+Attributes are like variables within a class, and are used to store data. Methods are functions defined within a class, and are the actions objects created with a class can perform.
+
+Here's the basic syntax of a class:
+
+```python
+class ClassName:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def sample_method(self):               
+        print(self.name.upper())
+```
+
+* `class ClassName` is made up of the `class` keyword to create a class, followed by the name of the class, here called `ClassName`. It is common in Python to use the **PascalCase** convention when naming classes.
+    
+* `def __init__(self, name, age)` is the special method automatically called when a new object is created. It initializes the attributes of the objects that will be created with the class.
+    
+    In addition to that, the first parameter of `__init__` is always a reference to the specific object being created or used. By convention, this parameter is named `self`, but technically, you can use any name. `self` lets you access the object's own attributes and methods.
+    
+* `self.name = name` and `self.age = age` are the attributes the objects will have.
+    
+* `def sample_method(self):` is the method each object created can call.
+    
+* `print(self.name.upper())` is what the `sample_method` method will do, in this case, it prints the name in uppercase.
+    
+
+If that all sounds like a lot, don't worry. Let's take a look at a similar example of a `Dog` class, and how you can create objects from that:
+
+```python
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name.upper()} says woof woof!")
+```
+
+With this `Dog` class, you can create an object. Here's the basic syntax for creating objects from a class:
+
+```python
+object_1 = ClassName(attribute_1, attribute_2)
+object_2 = ClassName(attribute_1, attribute_2)
+```
+
+You can also call any of the methods defined in the class from each object:
+
+```python
+object_1.method_name()
+object_2.method_name()
+```
+
+Now let's create two dogs by using the `Dog` class as the blueprint:
+
+```python
+class Dog:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def bark(self):
+        print(f"{self.name.upper()} says woof woof! I'm {self.age} years old!")
+
+dog_1 = Dog("Jack", 3)
+dog_2 = Dog("Thatcher", 5)
+
+# Call the bark method
+dog_1.bark()  # JACK says woof woof! I'm 3 years old!
+dog_2.bark()  # THATCHER says woof woof! I'm 5 years old!
+```
+
+As you can see, we create two dog objects using the `Dog` class. When initializing `dog_1`, the string `Jack` and the number `3` are passed, which sets the `name` and `age` attributes for that instance. And `dog_2` is initialized with the string `Thatcher` and number `5` as its `name` and `age`, respectively.
+
+Then when you call the `.bark()` method on `dog_1` and `dog_2`, you can see how both outputs differ, and use the unique `name` and `age` attributes you passed in when creating each object.
+
+In summary, the difference between a class and an object is that a class is the template or the blueprint, and an object is what is created using that template.
+
+Also, a class defines what data and behavior the object should have, and an object holds the actual data and uses that behavior. You write a class once, and you can make many objects from it, each with different data.
+
+
+# --questions--
+
+## --text--
+
+What is the output of this code?
+
+```python
+class Dog:  
+    def __init__(self, name):  
+        self.name = name
+
+    def bark(self):  
+        print(f"{self.name} says Woof!")  
+
+my_dog = Dog("Rex")
+print(my_dog.name)
+```
+
+## --answers--
+
+`Rex says Woof!`
+
+### --feedback--
+
+Look at what is being printed: is it calling a method or accessing an attribute?
+
+---
+
+`name`
+
+### --feedback--
+
+Look at what is being printed: is it calling a method or accessing an attribute?
+
+---
+
+`Rex`
+
+---
+
+Error
+
+### --feedback--
+
+Look at what is being printed: is it calling a method or accessing an attribute?
+
+## --video-solution--
+
+3
+
+## --text--
+
+What is the special method that gets automatically called when a new object is created?
+
+## --answers--
+
+`__create_object__`
+
+### --feedback--
+
+Think about what initializes the attributes an object will have.
+
+---
+
+`__init__`
+
+---
+
+`__new__`
+
+### --feedback--
+
+Think about what initializes the attributes an object will have.
+
+---
+
+`__setup__`
+
+### --feedback--
+
+Think about what initializes the attributes an object will have.
+
+## --video-solution--
+
+2
+
+## --text--
+
+What is the blueprint or template for creating objects?
+
+## --answers--
+
+A variable
+
+### --feedback--
+
+Think about what defines the structure and behavior of objects created from it.
+
+---
+
+A function
+
+### --feedback--
+
+Think about what defines the structure and behavior of objects created from it.
+
+---
+
+A class
+
+---
+
+A loop
+
+### --feedback--
+
+Think about what defines the structure and behavior of objects created from it.
+
+## --video-solution--
+
+3
+

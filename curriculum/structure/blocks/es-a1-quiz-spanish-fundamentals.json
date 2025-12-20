@@ -1,0 +1,14 @@
+{
+  "name": "Spanish Fundamentals Quiz",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-quiz-spanish-fundamentals",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68d2a8fa725f6db0b7215411",
+      "title": "Spanish Fundamentals Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

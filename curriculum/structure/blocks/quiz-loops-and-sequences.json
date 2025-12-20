@@ -1,0 +1,11 @@
+{
+  "name": "Loops and Sequences Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-loops-and-sequences",
+  "challengeOrder": [
+    { "id": "67f41268a129e63f8e071736", "title": "Loops and Sequences Quiz" }
+  ],
+  "helpCategory": "Python"
+}

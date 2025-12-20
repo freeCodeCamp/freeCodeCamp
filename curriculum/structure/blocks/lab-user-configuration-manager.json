@@ -1,0 +1,14 @@
+{
+  "name": "Build a User Configuration Manager",
+  "isUpcomingChange": false,
+  "dashedName": "lab-user-configuration-manager",
+  "challengeOrder": [
+    {
+      "id": "684aaf9ec670c68d20efd0d0",
+      "title": "Build a User Configuration Manager"
+    }
+  ],
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python"
+}

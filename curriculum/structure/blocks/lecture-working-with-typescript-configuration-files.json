@@ -1,0 +1,14 @@
+{
+  "name": "Working with TypeScript Configuration Files",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-typescript-configuration-files",
+  "challengeOrder": [
+    {
+      "id": "67d301cc87b84eaa42bdcdbe",
+      "title": "What Is a tsconfig File, and Why Is It Important to Include in Your TypeScript Projects?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

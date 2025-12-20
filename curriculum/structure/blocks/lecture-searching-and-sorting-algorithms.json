@@ -1,0 +1,18 @@
+{
+  "name": "Searching and Sorting Algorithms",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-searching-and-sorting-algorithms",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420c70e4bfe26d52b780dc",
+      "title": "What Is Binary Search and How Does It Differ From Linear Search?"
+    },
+    {
+      "id": "68910fc037a90c285107af04",
+      "title": "What Is Divide and Conquer, and How Does Merge Sort Work?"
+    }
+  ],
+  "helpCategory": "Python"
+}

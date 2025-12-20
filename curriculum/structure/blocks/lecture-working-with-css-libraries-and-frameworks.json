@@ -1,0 +1,18 @@
+{
+  "name": "Working with CSS Libraries and Frameworks",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-css-libraries-and-frameworks",
+  "challengeOrder": [
+    {
+      "id": "67d1d74780981f521b8ac090",
+      "title": "What Is a CSS Framework, and What Are Some Advantages and Disadvantages of Using It?"
+    },
+    {
+      "id": "67d2fe63c8b0049ad7481021",
+      "title": "What Is the Value of Using a CSS Preprocessor, and What Are Some Disadvantages?"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

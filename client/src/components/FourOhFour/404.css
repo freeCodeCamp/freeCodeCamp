@@ -1,0 +1,41 @@
+.notfound-page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.notfound-page-wrapper img {
+  width: 380px;
+  margin-bottom: 1rem;
+}
+
+.quote-wrapper {
+  background-color: var(--tertiary-background);
+  padding-inline: 42px 20px;
+  padding-block: 20px;
+  border-width: 0;
+  position: relative;
+  max-width: 980px;
+}
+
+.quote-wrapper .quote {
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 0.6em;
+  text-align: left;
+}
+
+.quote-wrapper .quote::before {
+  content: open-quote;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.quote-wrapper .author {
+  text-align: right;
+  margin: 0;
+}

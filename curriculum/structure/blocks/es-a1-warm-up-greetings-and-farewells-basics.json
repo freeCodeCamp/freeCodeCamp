@@ -1,0 +1,22 @@
+{
+  "name": "Greetings and Farewells Basics",
+  "dashedName": "es-a1-warm-up-greetings-and-farewells-basics",
+  "isUpcomingChange": false,
+  "blockLabel": "warm-up",
+  "blockLayout": "challenge-grid",
+  "helpCategory": "Spanish Curriculum",
+  "challengeOrder": [
+    { "id": "68bb001c22f3bcbd1fdf38fa", "title": "Task 1" },
+    { "id": "68c582b401546d5359f54658", "title": "Task 2" },
+    { "id": "68c586973237a2ae8b8a9dcb", "title": "Task 3" },
+    { "id": "68c5877f0c90f5b8cad8e2dd", "title": "Task 4" },
+    { "id": "68c5893734d89dcb8e5b7a34", "title": "Task 5" },
+    { "id": "68c58a750c57dadd0f6a3f3b", "title": "Task 6" },
+    { "id": "68c58aa8c9d2a2dfea45deb7", "title": "Task 7" },
+    { "id": "68c58ac706597fe1f643837d", "title": "Task 8" },
+    { "id": "68c58b01490a81e467b6f8d8", "title": "Task 9" },
+    { "id": "68c58b24ac7964e7776fea16", "title": "Task 10" },
+    { "id": "68c58b51686f9aea14946c1c", "title": "Task 11" },
+    { "id": "68c58b85c5a2e0ed307f24d4", "title": "Task 12" }
+  ]
+}

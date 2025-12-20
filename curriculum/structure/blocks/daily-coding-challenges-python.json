@@ -1,0 +1,650 @@
+{
+  "name": "Daily Coding Challenges Python",
+  "isUpcomingChange": true,
+  "dashedName": "daily-coding-challenges-python",
+  "usesMultifileEditor": true,
+  "helpCategory": "Python",
+  "blockLayout": "legacy-challenge-list",
+  "challengeOrder": [
+    {
+      "id": "6814d8e1516e86b171929de4",
+      "title": "Challenge 1: Vowel Balance"
+    },
+    {
+      "id": "681cb05adab50c87ddb2e513",
+      "title": "Challenge 2: Base Check"
+    },
+    {
+      "id": "681cb1a2dab50c87ddb2e514",
+      "title": "Challenge 3: Fibonacci Sequence"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e515",
+      "title": "Challenge 4: S  P  A  C  E  J  A  M"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e516",
+      "title": "Challenge 5: Jbelmud Text"
+    },
+    {
+      "id": "681cb1afdab50c87ddb2e517",
+      "title": "Challenge 6: Anagram Checker"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e518",
+      "title": "Challenge 7: Targeted Sum"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e519",
+      "title": "Challenge 8: Factorializer"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51a",
+      "title": "Challenge 9: Sum of Squares"
+    },
+    {
+      "id": "681cb1b0dab50c87ddb2e51b",
+      "title": "Challenge 10: 3 Strikes"
+    },
+    {
+      "id": "68216eb60f957572e7c340c4",
+      "title": "Challenge 11: Mile Pace"
+    },
+    {
+      "id": "68216ef80f957572e7c340c5",
+      "title": "Challenge 12: Message Decoder"
+    },
+    {
+      "id": "6821ebc9237de8297eaee78f",
+      "title": "Challenge 13: Unnatural Prime"
+    },
+    {
+      "id": "6821ebce237de8297eaee790",
+      "title": "Challenge 14: Character Battle"
+    },
+    {
+      "id": "6821ebd4237de8297eaee791",
+      "title": "Challenge 15: camelCase"
+    },
+    {
+      "id": "6821ebda237de8297eaee792",
+      "title": "Challenge 16: Reverse Parenthesis"
+    },
+    {
+      "id": "6821ebdf237de8297eaee793",
+      "title": "Challenge 17: Unorder of Operations"
+    },
+    {
+      "id": "6821ebe4237de8297eaee794",
+      "title": "Challenge 18: Second Best"
+    },
+    {
+      "id": "6821ebea237de8297eaee795",
+      "title": "Challenge 19: Candlelight"
+    },
+    {
+      "id": "6821ebee237de8297eaee796",
+      "title": "Challenge 20: Array Duplicates"
+    },
+    {
+      "id": "6821ebf3237de8297eaee797",
+      "title": "Challenge 21: Hex Generator"
+    },
+    {
+      "id": "6821ebf8237de8297eaee798",
+      "title": "Challenge 22: Tribonacci Sequence"
+    },
+    {
+      "id": "6821ebfd237de8297eaee799",
+      "title": "Challenge 23: RGB to Hex"
+    },
+    {
+      "id": "6821ec02237de8297eaee79a",
+      "title": "Challenge 24: Pangram"
+    },
+    {
+      "id": "68adce01c0e1144d0a902956",
+      "title": "Challenge 25: Vowel Repeater"
+    },
+    {
+      "id": "68adce01c0e1144d0a902958",
+      "title": "Challenge 26: IPv4 Validator"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295a",
+      "title": "Challenge 27: Matrix Rotate"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295c",
+      "title": "Challenge 28: Roman Numeral Parser"
+    },
+    {
+      "id": "68adce01c0e1144d0a90295e",
+      "title": "Challenge 29: Acronym Builder"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa547",
+      "title": "Challenge 30: Unique Characters"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa549",
+      "title": "Challenge 31: Array Diff"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54b",
+      "title": "Challenge 32: Reverse Sentence"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54d",
+      "title": "Challenge 33: Screen Time"
+    },
+    {
+      "id": "68af0687ef34c76c28ffa54f",
+      "title": "Challenge 34: Missing Numbers"
+    },
+    {
+      "id": "68b06e589bf227324381476f",
+      "title": "Challenge 35: Word Frequency"
+    },
+    {
+      "id": "68b06e589bf2273243814771",
+      "title": "Challenge 36: Thermostat Adjuster"
+    },
+    {
+      "id": "68b06e589bf2273243814773",
+      "title": "Challenge 37: Sentence Capitalizer"
+    },
+    {
+      "id": "68b06e589bf2273243814775",
+      "title": "Challenge 38: Slug Generator"
+    },
+    {
+      "id": "68b06e589bf2273243814777",
+      "title": "Challenge 39: Fill The Tank"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a02",
+      "title": "Challenge 40: Photo Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a04",
+      "title": "Challenge 41: File Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a06",
+      "title": "Challenge 42: Video Storage"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a08",
+      "title": "Challenge 43: Digits vs Letters"
+    },
+    {
+      "id": "68b1f72371a5ac895ac70a0a",
+      "title": "Challenge 44: String Mirror"
+    },
+    {
+      "id": "68b7687dded630607aceccab",
+      "title": "Challenge 45: Perfect Square"
+    },
+    {
+      "id": "68b7687dded630607aceccad",
+      "title": "Challenge 46: 2nd Largest"
+    },
+    {
+      "id": "68b7687dded630607aceccaf",
+      "title": "Challenge 47: Caught Speeding"
+    },
+    {
+      "id": "68b7687dded630607aceccb1",
+      "title": "Challenge 48: Spam Detector"
+    },
+    {
+      "id": "68b7687dded630607aceccb3",
+      "title": "Challenge 49: CSV Header Parser"
+    },
+    {
+      "id": "68b7cadffed0e75a517da66f",
+      "title": "Challenge 50: Longest Word"
+    },
+    {
+      "id": "68b7cadffed0e75a517da671",
+      "title": "Challenge 51: Phone Number Formatter"
+    },
+    {
+      "id": "68b7cadffed0e75a517da673",
+      "title": "Challenge 52: Binary to Decimal"
+    },
+    {
+      "id": "68b7cadffed0e75a517da675",
+      "title": "Challenge 53: Decimal to Binary"
+    },
+    {
+      "id": "68b7cadffed0e75a517da677",
+      "title": "Challenge 54: P@ssw0rd Str3ngth!"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d2",
+      "title": "Challenge 55: Space Week Day 1: Stellar Classification"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d3",
+      "title": "Challenge 56: Space Week Day 2: Exoplanet Search"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d4",
+      "title": "Challenge 57: Space Week Day 3: Phone Home"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d5",
+      "title": "Challenge 58: Space Week Day 4: Landing Spot"
+    },
+    {
+      "id": "68c1a929005bf54d342aa8d6",
+      "title": "Challenge 59: Space Week Day 5: Goldilocks Zone"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e24",
+      "title": "Challenge 60: Space Week Day 6: Moon Phase"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e25",
+      "title": "Challenge 61: Space Week Day 7: Launch Fuel"
+    },
+    {
+      "id": "68c497f3aaefc9fd9f1b0e26",
+      "title": "Challenge 62: Hex to Decimal"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da001",
+      "title": "Challenge 63: Battle of Words"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da002",
+      "title": "Challenge 64: 24 to 12"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da003",
+      "title": "Challenge 65: String Count"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da004",
+      "title": "Challenge 66: HTML Tag Stripper"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da005",
+      "title": "Challenge 67: Email Validator"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da006",
+      "title": "Challenge 68: Credit Card Masker"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da007",
+      "title": "Challenge 69: Missing Socks"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da008",
+      "title": "Challenge 70: HTML Attribute Extractor"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da009",
+      "title": "Challenge 71: Tip Calculator"
+    },
+    {
+      "id": "68cae5b538ff798bbd4da00a",
+      "title": "Challenge 72: Thermostat Adjuster 2"
+    },
+    {
+      "id": "68d2ba1468508398389487ce",
+      "title": "Challenge 73: Speak Wisely, You Must"
+    },
+    {
+      "id": "68d2ba1468508398389487cf",
+      "title": "Challenge 74: Favorite Songs"
+    },
+    {
+      "id": "68d2ba1468508398389487d0",
+      "title": "Challenge 75: Hidden Treasure"
+    },
+    {
+      "id": "68d30845cc08266018fc46bc",
+      "title": "Challenge 76: Complementary DNA"
+    },
+    {
+      "id": "68d30845cc08266018fc46bd",
+      "title": "Challenge 77: Duration Formatter"
+    },
+    {
+      "id": "68d30845cc08266018fc46be",
+      "title": "Challenge 78: Integer Sequence"
+    },
+    {
+      "id": "68d30fc57588d97fd3027b30",
+      "title": "Challenge 79: Navigator"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd62",
+      "title": "Challenge 80: Email Sorter"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd63",
+      "title": "Challenge 81: Nth Prime"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd64",
+      "title": "Challenge 82: SpOoKy~CaSe"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd65",
+      "title": "Challenge 83: Signature Validation"
+    },
+    {
+      "id": "68e39ed6106dac2f0a98fd66",
+      "title": "Challenge 84: Infected"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a4",
+      "title": "Challenge 85: Word Counter"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a5",
+      "title": "Challenge 86: Image Search"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a6",
+      "title": "Challenge 87: Matrix Builder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a7",
+      "title": "Challenge 88: Weekday Finder"
+    },
+    {
+      "id": "68ee9e3066cfd4eb2328e8a8",
+      "title": "Challenge 89: Counting Cards"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c7c",
+      "title": "Challenge 90: Character Limit"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c7d",
+      "title": "Challenge 91: Word Search"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c7e",
+      "title": "Challenge 92: Extension Extractor"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c7f",
+      "title": "Challenge 93: Vowels and Consonants"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c80",
+      "title": "Challenge 94: Email Signature Generator"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c81",
+      "title": "Challenge 95: Array Shift"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c82",
+      "title": "Challenge 96: Is It the Weekend?"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c83",
+      "title": "Challenge 97: GCD"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c84",
+      "title": "Challenge 98: Rectangle Count"
+    },
+    {
+      "id": "68f6587287ad1f4ad39b0c85",
+      "title": "Challenge 99: Fingerprint Test"
+    },
+    {
+      "id": "68ffb91507a5b645769328c3",
+      "title": "Challenge 100: 100 Characters"
+    },
+    {
+      "id": "68ffb91507a5b645769328c4",
+      "title": "Challenge 101: Markdown Heading Converter"
+    },
+    {
+      "id": "68ffb91507a5b645769328c5",
+      "title": "Challenge 102: Longest Word"
+    },
+    {
+      "id": "68ffb91507a5b645769328c6",
+      "title": "Challenge 103: LCM"
+    },
+    {
+      "id": "68ffb91507a5b645769328c7",
+      "title": "Challenge 104: Recipe Scaler"
+    },
+    {
+      "id": "68ffb91507a5b645769328c8",
+      "title": "Challenge 105: Character Count"
+    },
+    {
+      "id": "68ffb91507a5b645769328c9",
+      "title": "Challenge 106: Message Validator"
+    },
+    {
+      "id": "68ffb91507a5b645769328ca",
+      "title": "Challenge 107: FizzBuzz"
+    },
+    {
+      "id": "68ffb91507a5b645769328cb",
+      "title": "Challenge 108: BuzzFizz"
+    },
+    {
+      "id": "68ffb91507a5b645769328cc",
+      "title": "Challenge 109: What's My Age Again?"
+    },
+    {
+      "id": "69162d64f96574d9bb629efb",
+      "title": "Challenge 110: Word Guesser"
+    },
+    {
+      "id": "69162d64f96574d9bb629efc",
+      "title": "Challenge 111: Ball Trajectory"
+    },
+    {
+      "id": "69162d64f96574d9bb629efd",
+      "title": "Challenge 112: AI Detector"
+    },
+    {
+      "id": "69162d64f96574d9bb629efe",
+      "title": "Challenge 113: Miles to Kilometers"
+    },
+    {
+      "id": "69162d64f96574d9bb629eff",
+      "title": "Challenge 114: Camel to Snake"
+    },
+    {
+      "id": "69162d64f96574d9bb629f00",
+      "title": "Challenge 115: Markdown Ordered List Item Converter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f01",
+      "title": "Challenge 116: Permutation Count"
+    },
+    {
+      "id": "69162d64f96574d9bb629f02",
+      "title": "Challenge 117: Symmetric Difference"
+    },
+    {
+      "id": "69162d64f96574d9bb629f03",
+      "title": "Challenge 118: Date Formatter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f04",
+      "title": "Challenge 119: String Compression"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b480",
+      "title": "Challenge 120: Pounds to Kilograms"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b481",
+      "title": "Challenge 121: Most Frequent"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b482",
+      "title": "Challenge 122: Markdown Bold Parser"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b483",
+      "title": "Challenge 123: Roman Numeral Builder"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b484",
+      "title": "Challenge 124: Inventory Update"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b485",
+      "title": "Challenge 125: Game of Life"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b486",
+      "title": "Challenge 126: Capitalize It"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b487",
+      "title": "Challenge 127: Speed Check"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b488",
+      "title": "Challenge 128: Consonant Count"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b489",
+      "title": "Challenge 129: Markdown Blockquote Parser"
+    },
+    {
+      "id": "691b5597f0f3e85a588a5c94",
+      "title": "Challenge 130: Checkerboard"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5eca",
+      "title": "Challenge 131: Pairwise"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecb",
+      "title": "Challenge 132: Purge Most Frequent"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecc",
+      "title": "Challenge 133: Daylight Hours"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecd",
+      "title": "Challenge 134: Traveling Shopper"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ece",
+      "title": "Challenge 135: Re: Fwd: Fw: Count"
+    },
+    {
+      "id": "6925e2068081f40f549ced1a",
+      "title": "Challenge 136: Markdown Image Parser"
+    },
+    {
+      "id": "6925e2068081f40f549ced1b",
+      "title": "Challenge 137: Snowflake Generator"
+    },
+    {
+      "id": "6925e2068081f40f549ced1c",
+      "title": "Challenge 138: Sum of Divisors"
+    },
+    {
+      "id": "6925e2068081f40f549ced1d",
+      "title": "Challenge 139: Rock, Paper, Scissors"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c3",
+      "title": "Challenge 140: SCREAMING_SNAKE_CASE"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c4",
+      "title": "Challenge 141: Takeoff Fuel"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c5",
+      "title": "Challenge 142: Sum the String"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c6",
+      "title": "Challenge 143: Markdown Italic Parser"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad5",
+      "title": "Challenge 144: Resolution Streak"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad6",
+      "title": "Challenge 145: Nth Fibonacci Number"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad7",
+      "title": "Challenge 146: Left-Handed Seat at the Table"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad8",
+      "title": "Challenge 147: Leap Year Calculator"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad9",
+      "title": "Challenge 148: Tire Pressure"
+    },
+    {
+      "id": "69306364df283fcaff2e1ada",
+      "title": "Challenge 149: vOwElcAsE"
+    },
+    {
+      "id": "69373793f5a867f769cde135",
+      "title": "Challenge 150: Markdown Unordered List Parser"
+    },
+    {
+      "id": "69373793f5a867f769cde136",
+      "title": "Challenge 151: Sorted Array?"
+    },
+    {
+      "id": "69373793f5a867f769cde137",
+      "title": "Challenge 152: Circular Prime"
+    },
+    {
+      "id": "69373793f5a867f769cde138",
+      "title": "Challenge 153: Tic-Tac-Toe"
+    },
+    {
+      "id": "69373793f5a867f769cde139",
+      "title": "Challenge 154: Par for the Hole"
+    },
+    {
+      "id": "69373793f5a867f769cde13a",
+      "title": "Challenge 155: Plant the Crop"
+    },
+    {
+      "id": "6939b873185d8e00d453563b",
+      "title": "Challenge 156: Odd or Even?"
+    },
+    {
+      "id": "6939b873185d8e00d453563c",
+      "title": "Challenge 157: Markdown Link Parser"
+    },
+    {
+      "id": "6939b873185d8e00d453563d",
+      "title": "Challenge 158: Array Swap"
+    },
+    {
+      "id": "6939b873185d8e00d453563e",
+      "title": "Challenge 159: Integer Hypotenuse"
+    },
+    {
+      "id": "6939b873185d8e00d453563f",
+      "title": "Challenge 160: Knight Moves"
+    }
+  ]
+}

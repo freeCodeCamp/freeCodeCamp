@@ -1,0 +1,14 @@
+{
+  "name": "Survey Form",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-survey-form-project",
+  "usesMultifileEditor": true,
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "587d78af367417b2b2512b03",
+      "title": "Build a Survey Form"
+    }
+  ],
+  "blockLayout": "legacy-link"
+}

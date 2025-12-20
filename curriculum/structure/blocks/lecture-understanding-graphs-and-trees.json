@@ -1,0 +1,30 @@
+{
+  "name": "Understanding Graphs and Trees",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-graphs-and-trees",
+  "challengeOrder": [
+    {
+      "id": "68420c5ac17cf26ab2a4ca3c",
+      "title": "What Are Graphs in Computer Science?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca08",
+      "title": "How Do Depth First and Breadth First Search Work?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca09",
+      "title": "How Do Matrices and Adjacency Lists Work?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca0a",
+      "title": "What Are Trees and Tries and How Do They Work?"
+    },
+    {
+      "id": "68baa5e4f0e07f079245ca0b",
+      "title": "How Do Priority Queues and Heaps Work?"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list"
+}
