@@ -145,6 +145,7 @@
           "blocks": [
             "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css",
             "workshop-greeting-card",
+            "workshop-parent-teacher-conference-form",
             "lab-job-application-form",
             "review-css-pseudo-classes",
             "quiz-css-pseudo-classes"
@@ -187,6 +188,7 @@
           "blocks": [
             "lecture-working-with-css-flexbox",
             "workshop-flexbox-photo-gallery",
+            "lab-pricing-plans-layout",
             "review-css-flexbox",
             "quiz-css-flexbox"
           ]

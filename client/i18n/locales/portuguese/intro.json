@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers Certification (Beta)",
+    "title": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
     "intro": [
       "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
       "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
@@ -1721,6 +1721,12 @@
         "title": "Aprenda expressões verbais e expressões idiomáticas comuns",
         "intro": [
           "Neste curso, você aprenderá a usar verbos frasais e expressões idiomáticas comuns para soar mais natural e confiante no trabalho. Você praticará usar expressões para dar opiniões, fazer sugestões, organizar reuniões e falar sobre tarefas em conversas profissionais do dia a dia."
+        ]
+      },
+      "en-b1-certification-exam": {
+        "title": "B1 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the B1 English for Developers Certification."
         ]
       }
     }
@@ -5145,9 +5151,9 @@
     "title": "Certificação JavaScript",
     "intro": [
       "Este curso ensina conceitos fundamentais de programação JavaScript, como trabalhar com variáveis, funções, objetos, arrays e controle de fluxo. Você também aprenderá a manipular o DOM, lidar com eventos, e aplicar técnicas como programação funcional, assíncrona e práticas recomendadas de acessibilidade.",
-      "To earn your JavaScript Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the JavaScript Certification exam."
+      "Para conquistar sua Certificação em JavaScript:",
+      "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
+      "- Passe no exame de Certificação em JavaScript."
     ],
     "chapters": {
       "javascript": "JavaScript",
@@ -7576,10 +7582,20 @@
       }
     },
     "blocks": {
+      "quiz-node-js-intro": {
+        "title": "NodeJS Intro Quiz",
+        "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Compreendendo o Modelo de Requisição-Resposta HTTP",
         "intro": [
           "Aprenda os fundamentos de como a comunicação web funciona através do modelo de requisição-resposta HTTP, explore diferentes tipos de ativos e respostas web e entenda como os formulários lidam com o envio de dados usando vários métodos HTTP."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -7622,13 +7638,13 @@
   },
   "a1-professional-spanish": {
     "title": "Certificação de Espanhol Profissional A1 (Beta)",
-    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "note": "Esta certificação encontra-se atualmente em desenvolvimento ativo. No momento, estamos publicando os três primeiros capítulos, e futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
     "intro": [
-      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
-      "- A Warm-up section for quick review.",
-      "- Learn sections with new vocabulary and grammar.",
-      "- Practice sections to check your comprehension and writing skills.",
-      "- A Review section with key grammar and vocabulary."
+      "Este curso ensina os fundamentos do espanhol ao nível A1 do Quadro Comum de Referência (CEFR), com lições focadas em configurações profissionais. Cada módulo é dividido em seções:",
+      "- Uma seção de Aquecimento para uma revisão rápida.",
+      "- Seções de aprendizagem com o novo vocabulário e gramática.",
+      "- Seções práticas para verificar sua compreensão e habilidades de escrita.",
+      "- Uma seção de revisão com gramática chave e vocabulário."
     ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao A1 Espanhol Profissional",
@@ -7646,39 +7662,17 @@
       "es-a1-module-sharing-your-personal-details": "Compartilhando Seus Detalhes Pessoais"
     },
     "module-intros": {
-      "es-a1-module-introduction-and-certification-overview": {
-        "note": "Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
-      "es-a1-module-letters-sounds-and-first-numbers": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
-      },
-      "es-a1-module-greetings-and-farewells": {
-        "note": "Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
-      "es-a1-module-introducing-yourself": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
-      },
-      "es-a1-module-first-questions": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
-      },
-      "es-a1-module-numbers-10-to-29": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
-      },
       "es-a1-module-sharing-your-personal-details": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["MARCADOR DE LUGAR: Escreva a introdução do módulo aqui."]
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de conversas curtas que pedem dados pessoais, como nome, informações de contato, nacionalidade e idade."
+        ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Noções Básicas de Saudações e Despedidas",
-        "intro": ["Aprenda o básico sobre saudações e despedidas em espanhol."]
+        "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Saudações Durante o Dia",
@@ -7834,9 +7828,9 @@
     "title": "Certificação de Design Responsivo para a Web",
     "intro": [
       "Este curso ensina os fundamentos de HTML e CSS, incluindo design de layout moderno, design, acessibilidade e desenvolvimento web responsivo. Você criará projetos práticos e adquirirá as habilidades necessárias para criar páginas da web profissionais e fáceis de usar.",
-      "To earn your Responsive Web Design Certification:",
-      "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Responsive Web Design Certification exam."
+      "Para conquistar sua Certificação de Design Responsivo para a Web:",
+      "- Complete os cinco projetos obrigatórios para se qualificar para o exame de certificação.",
+      "- Passe no exame de Certificação de Design Responsivo para a Web."
     ],
     "chapters": {
       "html": "HTML",
@@ -8397,6 +8391,13 @@
           "Neste workshop, você terá a chance de praticar o que aprendeu desenhando um cartão de saudação."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Criar um formulário de conferência de professores e pais",
+        "intro": [
+          "Neste workshop, você praticará como estilizar botões de opção com diferentes tipos de pseudo-seletores, construindo um formulário de conferência de pais e professores.",
+          "Você praticará conceitos incluindo o seletor de pseudo-elemento <code>::before</code>, a propriedade <code>transform</code> e mais."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Crie um Formulário de Aplicação para Trabalho",
         "intro": [
@@ -8897,12 +8898,16 @@
   },
   "a1-professional-chinese": {
     "title": "Certificação Profissional de Chinês A1 (Beta)",
-    "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível no momento, em breve haverá. Enquanto isso, você pode explorar os cursos que criamos abaixo.",
-    "intro": ["Introdução de Espaço Reservado"],
+    "note": "Esta certificação encontra-se em desenvolvimento ativo. No momento, estamos publicando os capítulos introdutórios. Futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
+    "intro": [
+      "Neste currículo de Chinês Profissional A1, você aprenderá o essencial da comunicação em chinês. Ele seguirá o nível A1 do Quadro Europeu Comum de Referência (CEFR). Nosso foco será o vocabulário que é particularmente útil para ambientes profissionais.",
+      "O currículo é dividido em vários módulos que incluem páginas de aquecimento, aprendizado, prática, revisão e questionários para garantir que você realmente entenda o material antes de passar para o próximo módulo.",
+      "Cada capítulo inclui centenas de tarefas interativas projetadas para ajudá-lo a dar seus primeiros passos no aprendizado de chinês com confiança."
+    ],
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao A1 Chinês Profissional",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Saudação e Apresentação Pessoal",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Apresentando Colegas e Família",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressando o que você pode e não pode fazer"
     },
@@ -8971,24 +8976,16 @@
         "title": "Finais Nasais",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Revisão de Pinyin",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Questionário de Pinyin",
-        "intro": ["", ""]
-      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Saudando Novos Colegas",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Compreendendo as Saudações e Apresentações",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Questionário sobre Saudações e Apresentações",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8999,8 +8996,8 @@
         "title": "Questionário sobre Saudações e Apresentações",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Compreensão das Perguntas e Respostas",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -9019,8 +9016,8 @@
         "title": "Noções Básicas de Introdução de Outros",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "A Equipe",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
@@ -9109,6 +9106,14 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Conhecendo Novos Membros da Equipe",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
         "intro": ["", ""]
       }
     }

@@ -146,7 +146,8 @@ describe('external curriculum data build', () => {
           stage !== SuperBlockStage.Next &&
           stage !== SuperBlockStage.Upcoming &&
           stage !== SuperBlockStage.Catalog &&
-          stage !== SuperBlockStage.Core
+          stage !== SuperBlockStage.Core &&
+          stage !== SuperBlockStage.Spanish
         );
       })
       .flatMap(([, superBlocks]) => superBlocks);

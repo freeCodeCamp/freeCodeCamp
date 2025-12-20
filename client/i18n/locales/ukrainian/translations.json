@@ -207,6 +207,7 @@
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
     "core-certs-heading": "Рекомендована програма (бета-версія):",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Архівовані курси:",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Зовсім скоро",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Схоже, що ви не підключені до мережі, тому не зможете зберегти свій прогрес",
     "server-offline": "Сервер не відповідає, ваш прогрес може не зберегтись. Будь ласка, зв’яжіться з <0>підтримкою</0>, якщо помилка не зникне",
     "unsubscribed": "Підписку успішно скасовано",
@@ -1081,7 +1084,8 @@
       "err-3": "Під час спроби зберегти відповіді виникла помилка.",
       "success": "Дякуємо. Ваші відповіді надіслано."
     },
-    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",

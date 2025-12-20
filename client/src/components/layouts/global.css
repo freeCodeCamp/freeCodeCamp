@@ -39,8 +39,17 @@ blockquote .small:before {
   content: '\2014 \00A0';
 }
 
+p:has(ruby),
+li:has(> ruby) {
+  padding: 0.5rem 0;
+}
+
+ruby {
+  font-size: 1.3rem;
+}
+
 rt {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 #___gatsby {
@@ -469,6 +478,19 @@ form {
 input:focus {
   border-color: var(--tertiary-color);
 }
+
+/*
+ * Text within backticks in en-US, es, and zh-CN challenge files
+ * is parsed into spans with this class.
+ */
+.highlighted-text {
+  padding: 1px 4px;
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  border: 1px solid var(--gray-45);
+  font-size: 90%;
+}
+
 code {
   padding: 1px 4px;
   background-color: var(--tertiary-background);

@@ -31,6 +31,7 @@ const linkSpacingStyle = {
 const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Core]: 'landing.core-certs-heading',
   [SuperBlockStage.English]: 'landing.learn-english-heading',
+  [SuperBlockStage.Spanish]: 'landing.learn-spanish-heading',
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',

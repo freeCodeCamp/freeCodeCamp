@@ -207,6 +207,7 @@
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
     "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
     "professional-certs-heading": "Certificaciones profesionales:",
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Nuestros cursos archivados:",
@@ -869,6 +870,8 @@
   },
   "misc": {
     "coming-soon": "Muy pronto",
+    "note": "Nota",
+    "caution": "Precaución",
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
     "server-offline": "No se pudo acceder al servidor y es posible que tu progreso no se guarde. Ponte en contacto con <0>soporte</0> si este mensaje persiste",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
@@ -930,7 +933,7 @@
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
     "website": "Enlace al GitHub de {{username}}",
-    "twitter": "Link to {{username}}'s X",
+    "twitter": "Enlace al X de {{username}}",
     "next-month": "Ir al siguiente mes",
     "previous-month": "Ir al mes anterior",
     "first-page": "Ir a la primera pagina",
@@ -1081,7 +1084,8 @@
       "err-3": "Algo salió mal al intentar guardar tu encuesta.",
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
-    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase"
+    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -1229,7 +1233,7 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# con Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Fundamentos de C# con certificación de Microsoft",
       "a2-english-for-developers": "Inglés A2 para Desarrolladores",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
+      "a2-english-for-developers-cert": "Exámen de certificación (Beta) A2 de inglês para desarrolladores",
       "b1-english-for-developers": "B1 Inglés para Desarrolladores",
       "b1-english-for-developers-cert": "Certificación de inglés B1 para Desarrolladores",
       "responsive-web-design-v9": "Diseño web responsivo",
