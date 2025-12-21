@@ -1,0 +1,11 @@
+{
+  "name": "Web Performance Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-web-performance",
+  "challengeOrder": [
+    { "id": "6724e18296fa40173cc2437c", "title": "Web Performance Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

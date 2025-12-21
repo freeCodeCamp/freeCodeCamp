@@ -1,0 +1,11 @@
+{
+  "name": "CSS Grid Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css-grid",
+  "challengeOrder": [
+    { "id": "671a99394bedfb9a5bc687c4", "title": "CSS Grid Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

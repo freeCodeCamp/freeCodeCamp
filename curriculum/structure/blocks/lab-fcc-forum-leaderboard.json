@@ -1,0 +1,15 @@
+{
+  "name": "Build an fCC Forum Leaderboard",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "dashedName": "lab-fcc-forum-leaderboard",
+  "challengeOrder": [
+    {
+      "id": "673c91f0b934834bc4a3ecc2",
+      "title": "Build an fCC Forum Leaderboard"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

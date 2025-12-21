@@ -1,0 +1,524 @@
+---
+id: 66edcd49e73385dd4df54ac7
+title: JavaScript Loops Quiz
+challengeType: 8
+dashedName: quiz-javascript-loops
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of the following best describes iteration?
+
+#### --distractors--
+
+It is the process of writing code repeatedly until it works correctly.
+
+---
+
+It is a technique for storing data in consecutive memory locations.
+
+---
+
+It is the process of sending signals between components to establish a connection.
+
+#### --answer--
+
+It is the process of repeating a set of instructions multiple times.
+
+### --question--
+
+#### --text--
+
+What technique is used for iterations in programming?
+
+#### --distractors--
+
+Recursion
+
+---
+
+Conditionals
+
+---
+
+Compilation
+
+#### --answer--
+
+Looping
+
+### --question--
+
+#### --text--
+
+Which of the following is an iterable object?
+
+#### --distractors--
+
+Undefined
+
+---
+
+Number
+
+---
+
+Boolean
+
+#### --answer--
+
+String
+
+### --question--
+
+#### --text--
+
+Which of the following is not a type of loop supported in JavaScript?
+
+#### --distractors--
+
+`for` loop.
+
+---
+
+`while` loop.
+
+---
+
+`for...in` loop.
+
+#### --answer--
+
+`if...else` loop.
+
+### --question--
+
+#### --text--
+
+What is the correct order of the `for` loop declaration?
+
+#### --distractors--
+
+```javascript
+for (condition; increment/decrement; initialization) {
+  statement;
+}
+```
+
+---
+
+```javascript
+for (increment/decrement; condition; initialization) {
+  statement;
+}
+```
+
+---
+
+```javascript
+for (initialization; increment/decrement; condition) {
+  statement;
+}
+```
+
+#### --answer--
+
+```javascript
+for (initialization; condition; increment/decrement) {
+  statement;
+}
+```
+
+### --question--
+
+#### --text--
+
+Which loop executes the code block once, before checking if the condition is true, and will continue working as long as the condition remains true?
+
+#### --distractors--
+
+`while` loop.
+
+---
+
+`for...of` loop.
+
+---
+
+`for...in` loop.
+
+#### --answer--
+
+`do...while` loop.
+
+### --question--
+
+#### --text--
+
+Which of the following will loop over the values of an iterable object?
+
+#### --distractors--
+
+`for...in` loop.
+
+---
+
+`for` loop.
+
+---
+
+`do...while` loop.
+
+#### --answer--
+
+`for...of` loop.
+
+### --question--
+
+#### --text--
+
+Which of the following best defines an infinite loop?
+
+#### --distractors--
+
+A loop that runs until the condition becomes false.
+
+---
+
+A loop that runs once and then is terminated.
+
+---
+
+A loop that automatically stops after a fixed number of iterations.
+
+#### --answer--
+
+A loop whose termination condition is never met or is absent.
+
+### --question--
+
+#### --text--
+
+How many times will the following loop run?  
+
+```js
+for (let i = 2; i < 10; i+=2) {  
+  console.log(i);  
+}
+```
+
+#### --distractors--
+
+5
+
+---
+
+9
+
+---
+
+10
+
+#### --answer--
+
+4
+
+### --question--
+
+#### --text--
+
+Which loop is the best for iterating objects?
+
+#### --distractors--
+
+`for...of` loop.
+
+---
+
+`do...while` loop.
+
+---
+
+`for` loop.
+
+#### --answer--
+
+`for...in` loop.
+
+### --question--
+
+#### --text--
+
+What is the difference between the `for...in` loop and the `for...of` loop?
+
+#### --distractors--
+
+`for...in` loop iterates over property values, while the `for...of` loop iterates over property names (keys).
+
+---
+
+`for...in` loops create new properties, while `for...of` loops modify existing properties.
+
+---
+
+`for...in` loops can only be used with strings, while the `for...of` loops can be used with both strings and numbers.
+
+#### --answer--
+
+`for...in` loop iterates over property names (keys), while the `for...of` loop iterates over property values.
+
+### --question--
+
+#### --text--
+
+Which of these would cause an infinite loop?
+
+#### --distractors--
+
+Initialization of variable.
+
+---
+
+A loop condition that eventually gives false.
+
+---
+
+Increment/decrement logic.
+
+#### --answer--
+
+A loop condition that always returns true.
+
+### --question--
+
+#### --text--
+
+What statement can be used to break out of a loop completely?
+
+#### --distractors--
+
+The `continue` statement.
+
+---
+
+The `label` statement.
+
+---
+
+The `skip` statement.
+
+#### --answer--
+
+The `break` statement.
+
+### --question--
+
+#### --text--
+
+Which statement can be used to skip the current iteration and move to the next iteration?
+
+#### --distractors--
+
+The `break` statement.
+
+---
+
+The `label` statement.
+
+---
+
+The `return` statement.
+
+#### --answer--
+
+The `continue` statement.
+
+### --question--
+
+#### --text--
+
+What is printed to the console with the following code?
+
+```js
+for (let i = 0; i < 25; i += 2) {
+  if (i % 5 === 0) {
+    continue;
+  }
+  if (i % 13 === 0) {
+    break;
+  }
+  console.log(i);
+}
+```
+
+#### --distractors--
+
+`0`, `2`, `4`, `6`, `8`, `12`, `14`, `16`, `18`, `22`, `24`
+
+---
+
+`0`, `2`, `4`, `6`, `8`, `12`
+
+---
+
+`2`, `4`, `6`, `8`, `12`
+
+#### --answer--
+
+`2`, `4`, `6`, `8`, `12`, `14`, `16`, `18`, `22`, `24`
+
+### --question--
+
+#### --text--
+
+What would the following code print to the console??
+
+```javascript
+for (let i = 1; i < 6; i++) {
+  if (i === 4) break;
+  console.log(i);
+}
+```
+
+#### --distractors--
+
+`1`, `2`, `3`, `4`, `5`, `6`
+
+---
+
+`1`, `2`, `3`, `4`, `5`
+
+---
+
+`1`, `2`, `3`, `4`
+
+#### --answer--
+
+`1`, `2`, `3`
+
+### --question--
+
+#### --text--
+
+What will be printed to the console with the code below?
+
+```javascript
+const shoppingList = { tomatoes: 4, apples: 10 };
+for (const item in shoppingList) {
+  console.log(item);
+}
+```
+
+#### --distractors--
+
+`tomatoes - 4`, `apples - 10`
+
+---
+
+`4`, `10`
+
+---
+
+`tomatoes:4`, `apples:10`
+
+#### --answer--
+
+`tomatoes`, `apples`
+
+### --question--
+
+#### --text--
+
+What will be the console output of the code below?
+
+```javascript
+for (let i = 2; i <= 13; i++) {
+  if (i % 2 === 0) continue;
+  console.log(i);
+}
+```
+
+#### --distractors--
+
+`2`, `4`, `6`, `8`, `10`, `12`
+
+---
+
+`1`, `3`, `5`, `7`, `9`, `11`, `13`
+
+---
+
+`1`, `3`, `5`, `7`, `9`, `11`
+
+#### --answer--
+
+`3`, `5`, `7`, `9`, `11`, `13`
+
+### --question--
+
+#### --text--
+
+What would be printed to the console with the code below?
+
+```javascript
+const fruits = ["Mango", "Pineapple", "Oranges"];
+for (const fruit of fruits) {
+  console.log(fruit);
+}
+```
+
+#### --distractors--
+
+`0`, `1`, `2`
+
+---
+
+`Pineapple`, `Oranges`, `Mango`
+
+---
+
+`Oranges`, `Pineapple`, `Mango`
+
+#### --answer--
+
+`Mango`, `Pineapple`, `Oranges`
+
+### --question--
+
+#### --text--
+
+How many times will the code below output the string `in the loop`?
+
+```javascript
+let x = 0
+while (x < 5) {
+  console.log("in the loop");
+}
+```
+
+#### --distractors--
+
+3 times
+
+---
+
+4 times
+
+---
+
+5 times
+
+#### --answer--
+
+Infinite times
+

@@ -1,0 +1,64 @@
+{
+  "name": "Build a Musical Instrument Inventory",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-musical-instrument-inventory",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "6894c1b715b8d18a18ef3203",
+      "title": "Step 1"
+    },
+    {
+      "id": "6895dffc64e97df0e62e9ef9",
+      "title": "Step 2"
+    },
+    {
+      "id": "6895e0452b3370f26f365a46",
+      "title": "Step 3"
+    },
+    {
+      "id": "6895e0bdb0348bf46952ab67",
+      "title": "Step 4"
+    },
+    {
+      "id": "6895e197180c9af6988e1e19",
+      "title": "Step 5"
+    },
+    {
+      "id": "6895e235935106f88281b648",
+      "title": "Step 6"
+    },
+    {
+      "id": "6895e2becb7890fad818ad4d",
+      "title": "Step 7"
+    },
+    {
+      "id": "6895e356fd877efd6e3657ee",
+      "title": "Step 8"
+    },
+    {
+      "id": "6895e3f91c069e0068a42582",
+      "title": "Step 9"
+    },
+    {
+      "id": "6895e4940e39950288e406c2",
+      "title": "Step 10"
+    },
+    {
+      "id": "6895e4e023e07603bcef46f9",
+      "title": "Step 11"
+    },
+    {
+      "id": "6895e5337b1914050b0af7bd",
+      "title": "Step 12"
+    },
+    {
+      "id": "6895e572df8596062234f571",
+      "title": "Step 13"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop"
+}

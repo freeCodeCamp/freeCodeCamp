@@ -1,0 +1,117 @@
+{
+  "chapters": [
+    {
+      "dashedName": "front-end-development-libraries",
+      "modules": [
+        {
+          "dashedName": "react-fundamentals",
+          "blocks": [
+            "lecture-introduction-to-javascript-libraries-and-frameworks",
+            "workshop-reusable-mega-navbar",
+            "lab-reusable-footer",
+            "lecture-working-with-data-in-react",
+            "workshop-reusable-profile-card-component",
+            "lab-mood-board",
+            "review-react-basics",
+            "quiz-react-basics"
+          ]
+        },
+        {
+          "dashedName": "react-state-hooks-and-routing",
+          "blocks": [
+            "lecture-working-with-state-and-responding-to-events-in-react",
+            "workshop-toggle-text-app",
+            "lab-color-picker",
+            "lecture-understanding-effects-and-referencing-values-in-react",
+            "workshop-fruit-search-app",
+            "lab-one-time-password-generator",
+            "review-react-state-and-hooks",
+            "quiz-react-state-and-hooks",
+            "lecture-working-with-forms-in-react",
+            "workshop-superhero-application-form",
+            "lab-event-rsvp",
+            "lecture-working-with-data-fetching-and-memoization-in-react",
+            "workshop-shopping-list-app",
+            "lecture-routing-react-frameworks-and-dependency-management-tools",
+            "lecture-react-strategies-and-debugging",
+            "review-react-forms-data-fetching-and-routing",
+            "quiz-react-forms-data-fetching-and-routing"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-currency-converter",
+          "blocks": ["lab-currency-converter"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-tic-tac-toe",
+          "blocks": ["lab-tic-tac-toe"]
+        },
+        {
+          "dashedName": "performance",
+          "blocks": [
+            "lecture-understanding-performance-in-web-applications",
+            "review-web-performance",
+            "quiz-web-performance"
+          ]
+        },
+        {
+          "dashedName": "testing",
+          "blocks": [
+            "lecture-understanding-the-different-types-of-testing",
+            "review-testing",
+            "quiz-testing"
+          ]
+        },
+        {
+          "dashedName": "css-libraries-and-frameworks",
+          "blocks": [
+            "lecture-working-with-css-libraries-and-frameworks",
+            "workshop-error-message-component",
+            "workshop-tailwind-cta-component",
+            "workshop-tailwind-pricing-component",
+            "lab-music-shopping-cart-page",
+            "lab-photography-exhibit",
+            "review-css-libraries-and-frameworks",
+            "quiz-css-libraries-and-frameworks"
+          ]
+        },
+        {
+          "dashedName": "data-visualization",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "typescript-fundamentals",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-typescript",
+            "lecture-working-with-generics-and-type-narrowing",
+            "lecture-working-with-typescript-configuration-files",
+            "review-typescript",
+            "quiz-typescript"
+          ]
+        },
+        {
+          "moduleType": "review",
+          "comingSoon": true,
+          "dashedName": "review-front-end-libraries",
+          "blocks": ["review-front-end-libraries"]
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "front-end-development-libraries-certification-exam",
+      "comingSoon": true,
+      "modules": [
+        {
+          "comingSoon": true,
+          "dashedName": "front-end-development-libraries-certification-exam",
+          "blocks": ["exam-front-end-development-libraries-certification"]
+        }
+      ]
+    }
+  ]
+}

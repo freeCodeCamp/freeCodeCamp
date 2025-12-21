@@ -1,0 +1,14 @@
+{
+  "name": "Team Skills Basics",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-warm-up-team-skills-basics",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3b9ac286ffe352bafe7d",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "warm-up"
+}

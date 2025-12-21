@@ -1,0 +1,14 @@
+{
+  "name": "Build a Salon Appointment Scheduler",
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "lab-salon-appointment-scheduler",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "5f87ac112ae598023a42df1a",
+      "title": "Build a Salon Appointment Scheduler"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+---
+id: 688141a8be6e6be03af945ea
+title: Step 6
+challengeType: 0
+dashedName: step-6
+---
+
+# --description--
+
+When a user edits the note, you want to keep track of the edited version. 
+
+Use `let` to create a variable called `currentContent` and assign it an empty string.
+
+*NOTE*: In a real world application you would normally save your notes in a database. Or you could even save them in local storage. However, working with databases and local storage is beyond the scope of this workshop and those concepts will be taught later on. 
+
+# --hints--
+
+You should use `let` to create the `currentContent` variable.
+
+```js
+assert.match(code, /let\s+currentContent/);
+```
+
+Your `currentContent` variable should be a string.
+
+```js
+assert.isString(currentContent);
+```
+
+Your `currentContent` variable should be initialized with an empty string.
+
+```js
+assert.equal(currentContent, "");
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Note taking app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <p class="helper-text">Click or tap on the card to edit your note.</p>
+
+    <div id="note" class="note" contenteditable="true" aria-label="Note editor">
+      Many languages have words that carry meanings so specific or culturally rooted that they can't be neatly translated into English. 
+        
+      One example is the Japanese word "tsundoku", which refers to the habit of acquiring books and letting them pile up unread, something many book lovers can relate to. Another is the Portuguese word "saudade", describing a deep, bittersweet longing for something or someone that is absent. Meanwhile, the French word "Dépaysement" captures the disorienting yet exciting feeling of being in a new place, far from home.
+        
+      These unique words remind us that language is more than vocabulary: it's a window into the values, habits, and emotions of the cultures that create it.
+    </div>
+
+    <div id="status" aria-live="polite"></div>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  max-width: 700px;
+  background-color: #f5f5f5;
+}
+
+.note {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.5;
+  min-height: 250px;
+  font-size: 16px;
+  /* This is needed to preserve line breaks in the div */
+  white-space: pre-wrap;
+}
+
+.note[contenteditable="true"] {
+  caret-color: black;
+}
+
+.note:hover {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.helper-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5em;
+  user-select: none;
+  font-style: italic;
+}
+
+#status {
+  color: #00471b;
+  padding: 0 1em;
+}
+```
+
+```js
+const noteEl = document.getElementById("note");
+const statusEl = document.getElementById("status");
+
+--fcc-editable-region--
+
+--fcc-editable-region--
+```

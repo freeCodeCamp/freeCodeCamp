@@ -1,0 +1,18 @@
+{
+  "name": "Understanding How HTML Affects SEO",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-how-html-affects-seo",
+  "helpCategory": "HTML-CSS",
+  "challengeOrder": [
+    {
+      "id": "67083952f800051a8a21fcfd",
+      "title": "What Is the Role of the Meta Description, and How Does It Affect SEO?"
+    },
+    {
+      "id": "6708396caa00e11b597b3365",
+      "title": "What Is the Role of Open Graph Tags, and How Do They Affect SEO?"
+    }
+  ]
+}

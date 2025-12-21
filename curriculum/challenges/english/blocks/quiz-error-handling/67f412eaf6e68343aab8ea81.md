@@ -1,0 +1,241 @@
+---
+id: 67f412eaf6e68343aab8ea81
+title: Error Handling Quiz
+challengeType: 8
+dashedName: quiz-error-handling
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 9 of the 10 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What will be the output of this code?
+
+  ```py
+try:
+    print(22 / 0)
+except ZeroDivisionError:
+    print("You can't divide by zero!")
+  ```
+
+#### --distractors--
+
+`22`
+
+---
+
+`10`
+
+---
+
+`0`
+
+#### --answer--
+
+`You can't divide by zero!`
+
+### --question--
+
+#### --text--
+
+Which module of the Python standard library lets you debug your code in an interactive way?
+
+#### --distractors--
+
+ABC
+
+---
+
+numpy
+
+---
+
+debugpy
+
+#### --answer--
+
+pdb
+
+### --question--
+
+#### --text--
+
+Which exception does Python raise when you try to use a method or attribute that does not exist for that type?
+
+#### --distractors--
+
+`SyntaxError`
+
+---
+
+`AttributeBug`
+
+---
+
+`SyntaxBug`
+
+#### --answer--
+
+`AttributeError`
+
+### --question--
+
+#### --text--
+
+Which Python statement can you insert around various points in your code so you can see the values of variables while debugging?
+
+#### --distractors--
+
+`len()`
+
+---
+
+`console()`
+
+---
+
+`log()`
+
+#### --answer--
+
+`print()`
+
+### --question--
+
+#### --text--
+
+Which statement lets you manually raise an exception? 
+
+#### --distractors--
+
+`if`
+
+---
+
+`throw`
+
+---
+
+`from`
+
+#### --answer--
+
+`raise`
+
+### --question--
+
+#### --text--
+
+Which error will the code `print("Hello world"` raise in your Python code?
+
+#### --distractors--
+
+It would not raise any error.
+
+---
+
+`ValueError`
+
+---
+
+`NameError`
+
+#### --answer--
+
+`SyntaxError`
+
+### --question--
+
+#### --text--
+
+What does `try...except` let you do in Python?
+
+#### --distractors--
+
+It provides a way to test your code interactively.
+
+---
+
+It lets you write mathematical expressions.
+
+---
+
+It speeds up testing.
+
+#### --answer--
+
+It lets you execute a block of code that might raise an exception.
+
+### --question--
+
+#### --text--
+
+Which object lets you access the exception itself for better debugging and direct printing of the error message?
+
+#### --distractors--
+
+Debugger Object
+
+---
+
+Traceback Object
+
+---
+
+BugFinder Object
+
+#### --answer--
+
+Exception Object
+
+### --question--
+
+#### --text--
+
+Which of the following optional clauses can be added to a `try...except` statement?
+
+#### --distractors--
+
+`if` and `else`
+
+---
+
+`elif` and `if`
+
+---
+
+`else` and `elif`
+
+#### --answer--
+
+`else` and `finally`
+
+### --question--
+
+#### --text--
+
+Which block of a `try` statement runs whether an error occurs or not?
+
+#### --distractors--
+
+`else`
+
+---
+
+`except`
+
+---
+
+`try`
+
+#### --answer--
+
+`finally`

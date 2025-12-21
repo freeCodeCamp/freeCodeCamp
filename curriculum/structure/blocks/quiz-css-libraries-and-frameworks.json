@@ -1,0 +1,14 @@
+{
+  "name": "CSS Libraries and Frameworks Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-css-libraries-and-frameworks",
+  "challengeOrder": [
+    {
+      "id": "66f1aeb60b11aec5abe83c2e",
+      "title": "CSS Libraries and Frameworks Quiz"
+    }
+  ],
+  "helpCategory": "HTML-CSS"
+}

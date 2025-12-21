@@ -1,0 +1,11 @@
+{
+  "name": "Python Basics Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-python-basics",
+  "challengeOrder": [
+    { "id": "67f41242431cbf3db8ca79c7", "title": "Python Basics Quiz" }
+  ],
+  "helpCategory": "Python"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Implement a Matching Object Filter",
+  "isUpcomingChange": false,
+  "dashedName": "lab-matching-object-filter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [
+    {
+      "id": "a8e512fbe388ac2f9198f0fa",
+      "title": "Implement a Matching Object Filter"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Working with NodeJS and event driven architecture",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-nodejs-and-event-driven-architecture",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68ff6d2f232c60f0fa68ef86",
+      "title": "What is Node and What are Some Differences Between the Browser and Node Runtime Environment?"
+    },
+    {
+      "id": "68ff6d372ad364f285f0522e",
+      "title": "What are the Advantages and Disadvantages to Using Node on the Backend?"
+    },
+    {
+      "id": "68ff6d39d7ed9ef36ff281f3",
+      "title": "How can you Install Node on your Computer?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

@@ -1,0 +1,27 @@
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: var(--z-index-site-header);
+}
+
+.skip-to-content-button {
+  position: absolute;
+  top: calc(var(--header-height) + 10px);
+  font-weight: 600;
+  padding-block: 1em;
+  padding-inline: 1.5em;
+  left: -1000px;
+}
+
+@media screen and (min-width: 980px) {
+  .skip-to-content-button:focus {
+    left: 15px;
+  }
+}
+
+@media screen and (max-width: 979px) {
+  .skip-to-content-button:focus {
+    left: 5px;
+  }
+}

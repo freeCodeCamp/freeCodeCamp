@@ -1,0 +1,12 @@
+{
+  "name": "Implement a Falsy Remover",
+  "isUpcomingChange": false,
+  "dashedName": "lab-falsy-remover",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "adf08ec01beb4f99fc7a68f2", "title": "Implement a Falsy Remover" }
+  ],
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}
