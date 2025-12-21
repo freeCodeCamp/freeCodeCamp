@@ -42,17 +42,18 @@ In Python, the most basic conditional is the `if` statement. Here's the basic sy
 
 ```python
 if condition:
-    # Code to execute if condition is True
+    pass # Code to execute if condition is True
 ```
 
 * `if` statements start with the `if` keyword.
     
 * `condition` is an expression that evaluates to `True` or `False`, followed by a colon (`:`).
 
-* The indentation specifies the block of code within the body of the `if` statement.
+* The body of the `if` statement constitutes a <dfn>code block</dfn>, which is a group of statements that belong together. In Python, the level of indentation is what defines a code block.
     
+In the example above, the body of the `if` statement contains a `pass` statement. When a `pass` statement is executed, nothing happens. This is a special keyword that can be used as a placeholder for future code and it is useful when empty code blocks are not allowed.
 
-And here's an example:
+The code within the body of the `if` statement runs only when the condition evaluates to `True`. For example:
 
 ```python
 age = 18
@@ -61,7 +62,22 @@ if age >= 18:
     print('You are an adult') # You are an adult
 ```
 
-But if `age` is anything less than `18`, nothing is printed in the terminal:
+Notice the indentation before `print('You are an adult')`. While other programming languages use characters like curly braces to define code blocks, and just use indentation for readability, in Python, code blocks are determined by indentation.
+
+The following code would raise an `IndentationError`, which is Python's way to signal that indentation is required at a certain point of the code:
+
+```py
+age = 18
+
+if age >= 18:
+print('You are an adult') # IndentationError: expected an indented block after 'if' statement on line 3
+```
+
+Though you can use any number spaces (as long as you are consistent) to determine each level of indentation, the Python style guide recommends using four spaces.
+
+Blocks are also found in loops and functions, which you'll learn about in future lessons.
+
+Going back to our example, if `age` is anything less than `18`, nothing is printed in the terminal:
 
 ```python
 age = 12
@@ -74,9 +90,9 @@ But what if you also want to print something if `age` is less than `18`? That's 
 
 ```python
 if condition:
-   # Code to execute if condition is True
+   pass # Code to execute if condition is True
 else:
-   # Code to execute if condition is False
+   pass # Code to execute if condition is False
 ```
 
 For example:
@@ -96,11 +112,11 @@ Here's the syntax:
 
 ```python
 if condition:
-   # Code to execute if condition is True
+   pass # Code to execute if condition is True
 elif condition2:
-   # Code to execute if condition2 is True
+   pass # Code to execute if condition2 is True
 else:
-   # Code to execute if all conditions are False
+   pass # Code to execute if all conditions are False
 ```
 
 For example:

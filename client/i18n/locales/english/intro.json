@@ -6669,53 +6669,39 @@
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your Python Certification."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -6725,7 +6711,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -7139,14 +7125,6 @@
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
-    },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Relational Databases Certification."
-        ]
-      }
     },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
