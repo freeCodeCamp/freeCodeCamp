@@ -1,5 +1,0 @@
-```css
-div {
-  background: red
-}
-```
