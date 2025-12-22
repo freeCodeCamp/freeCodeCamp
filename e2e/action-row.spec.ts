@@ -90,9 +90,7 @@ test.describe('Desktop view', () => {
     test('Preview Buttons should not appear when preview is disabled', async ({
       page
     }) => {
-      await page.goto(
-        '/learn/javascript-v9/workshop-greeting-bot/step-1'
-      );
+      await page.goto('/learn/javascript-v9/workshop-greeting-bot/step-1');
       const previewButton = page.getByTestId('preview-pane-button');
       await expect(previewButton).toHaveCount(0);
     });
