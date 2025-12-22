@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-2'
+    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-2'
   );
 });
 
@@ -18,7 +18,7 @@ test.describe('Challenge Breadcrumb Tests', () => {
       await expect(superBlockLink).toBeVisible();
       await expect(superBlockLink).toHaveAttribute(
         'href',
-        '/learn/2022/responsive-web-design'
+        '/learn/responsive-web-design-v9'
       );
 
       const block = page.getByTestId(testId).getByRole('listitem').last();
@@ -30,7 +30,7 @@ test.describe('Challenge Breadcrumb Tests', () => {
       await expect(blockLink).toBeVisible();
       await expect(blockLink).toHaveAttribute(
         'href',
-        '/learn/2022/responsive-web-design/#learn-html-by-building-a-cat-photo-app'
+        '/learn/responsive-web-design-v9/#workshop-cat-photo-app'
       );
     };
 
