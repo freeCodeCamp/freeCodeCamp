@@ -113,9 +113,6 @@ body {
 h1 {
   font-size: 20px;
 }
---fcc-editable-region--
-
---fcc-editable-region--
 
 a {
   color: green;
