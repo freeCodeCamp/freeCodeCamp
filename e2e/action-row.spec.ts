@@ -9,7 +9,7 @@ test.describe('Desktop view', () => {
   test.describe('Pages with previews', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+        '/learn/responsive-web-design-v9/lab-survey-form/build-a-survey-form'
       );
     });
 
