@@ -58,4 +58,43 @@ describe('<ChallengeTranscript />', () => {
     expect(setSpy).not.toHaveBeenCalled();
     setSpy.mockRestore();
   });
+
+  it('should render the transcript as a table when isDialogue is true', () => {
+    store.set('fcc-transcript-expanded', true);
+
+    render(
+      <ChallengeTranscript
+        {...baseProps}
+        transcript={'Hello\nWorld'}
+        shouldPersistExpanded={true}
+        isDialogue={true}
+      />
+    );
+    const table = screen.getByRole('table');
+    expect(table).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'Hello' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'World' })).toBeVisible();
+  });
+
+  it('should render the transcript with PrismFormatted when isDialogue is false', () => {
+    store.set('fcc-transcript-expanded', true);
+
+    render(
+      <ChallengeTranscript
+        {...baseProps}
+        transcript='<pre><code class="language-js">console.log("hi")</code></pre>'
+        shouldPersistExpanded={true}
+        isDialogue={false}
+      />
+    );
+
+    const preElement = screen.getByRole('region');
+    expect(preElement).toBeVisible();
+    expect(preElement.tagName).toBe('PRE');
+
+    // eslint-disable-next-line testing-library/no-node-access
+    const codeElement = preElement.querySelector('code');
+    expect(codeElement).toBeInTheDocument();
+    expect(preElement).toHaveTextContent('console.log("hi")');
+  });
 });
