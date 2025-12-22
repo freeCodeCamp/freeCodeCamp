@@ -15,7 +15,7 @@ interface ChallengeTranscriptProps {
 function ChallengeTranscript({
   transcript,
   shouldPersistExpanded,
-  isDialogue = true
+  isDialogue = false
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 

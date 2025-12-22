@@ -60,9 +60,11 @@ describe('<ChallengeTranscript />', () => {
   });
 
   describe('isDialogue prop', () => {
-    it('renders a table when isDialogue is true (default)', () => {
+    it('renders PrismFormatted when isDialogue is false (default)', () => {
       render(<ChallengeTranscript {...baseProps} />);
-      expect(screen.getByRole('table')).toBeInTheDocument();
+      expect(screen.queryByRole('table')).not.toBeInTheDocument();
+      // PrismFormatted renders the transcript text, verify it's still visible
+      expect(screen.getByText('Sample transcript text')).toBeInTheDocument();
     });
 
     it('renders a table when isDialogue is explicitly true', () => {
@@ -70,7 +72,7 @@ describe('<ChallengeTranscript />', () => {
       expect(screen.getByRole('table')).toBeInTheDocument();
     });
 
-    it('renders PrismFormatted when isDialogue is false', () => {
+    it('renders PrismFormatted when isDialogue is explicitly false', () => {
       render(<ChallengeTranscript {...baseProps} isDialogue={false} />);
       expect(screen.queryByRole('table')).not.toBeInTheDocument();
       // PrismFormatted renders the transcript text, verify it's still visible
