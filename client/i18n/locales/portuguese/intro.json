@@ -1724,9 +1724,9 @@
         ]
       },
       "en-b1-certification-exam": {
-        "title": "B1 English for Developers Certification Exam",
+        "title": "Exame de Certificação de Inglês B1 para Desenvolvedores",
         "intro": [
-          "This exam is required to claim the B1 English for Developers Certification."
+          "Este exame é necessário para reivindicar a Certificação B1 em Inglês para Desenvolvedores."
         ]
       }
     }
@@ -1844,7 +1844,6 @@
       "git": "Git",
       "review-relational-databases": "Revisão de Bancos de Dados Relacionais",
       "exam-relational-databases": "Exame de Bancos de Dados Relacionais",
-      "introduction-to-nodejs": "Introdução a Node.js",
       "nodejs-core-libraries": "Bibliotecas Principais do Node.js",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP e o Modelo de Padrões Web",
@@ -6781,53 +6780,39 @@
       "review-python": "Revisão de Python",
       "python-certification-exam": "Exame de Certificação em Python"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá a trabalhar com classes, métodos, atributos e propriedades. Em seguida, você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá sobre conceitos de programação orientada a objetos, como encapsulamento, herança, polimorfismo e mais. Você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá sobre estruturas de dados, incluindo pilhas, filas, listas vinculadas, e mais. Você criará um workshop e laboratório para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você aprender sobre algoritmos comuns, incluindo busca binária, merge sort, selection sort, e mais. Você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você aprenderá sobre gráficos na ciência da computação, bem como listas de adjacência, árvores, tries, e mais. Você realizará workshops e laboratórios para praticar esses conceitos e fará um breve questionário para testar seu conhecimento."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Neste módulo, você vai aprender sobre programação dinâmica e praticar estes conceitos construindo um laboratório de sequência de Fibonacci. Em seguida, você fará um curto questionário para testar seu conhecimento."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["Passe neste exame para conquistar a Certificação em Python."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introdução ao Python",
         "intro": [
-          "Nestes ensinamentos, você aprenderá os fundamentos do Python. Você aprenderá sobre variáveis, tipos de dados, operadores, controle de fluxo, funções, e mais."
+          "Nestas aulas, você aprenderá o que é Python e como configurar seu ambiente de desenvolvimento."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Entendendo variáveis e tipos de dados",
+        "intro": [
+          "Nestas aulas, você aprenderá sobre variáveis e tipos de dados em Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introdução a strings",
+        "intro": ["Nestas aulas, você aprenderá sobre strings em Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Números e operações matemáticas",
+        "intro": [
+          "Nestas aulas, você aprenderá sobre números e operações matemáticas em Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleanos e condicionais",
+        "intro": [
+          "Nestas aulas, você aprenderá sobre booleanos e condicionais em Python."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Entendendo funções e escopo",
+        "intro": [
+          "Nestas aulas, você aprenderá sobre funções e escopo em Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -7256,14 +7241,6 @@
       "lab-number-guessing-game": "Crie um Jogo de Adivinhação de Números",
       "relational-databases-certification-exam": "Exame de Certificação de Bancos de Dados Relacionais"
     },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": [
-          "Passe neste exame para conquistar a sua Certificação em Bancos de Dados Relacionais."
-        ]
-      }
-    },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
         "title": "Trabalhando com Editores de Código e IDEs",
@@ -7487,7 +7464,8 @@
       "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "modules": {
-      "nodejs-core-libraries": "Bibliotecas Centrais do Node.js",
+      "introduction-to-nodejs": "Introdução a Node.js",
+      "nodejs-core-modules": "Módulos principais do Node.js",
       "node-package-manager": "Gerenciador de Pacotes Node",
       "http-and-the-web-standards-model": "HTTP e o Modelo de Padrões da Web",
       "rest-api-and-web-services": "API REST e Serviços Web",
@@ -7502,10 +7480,16 @@
       "back-end-development-and-apis-certification-exam": "Exame de Certificação de Desenvolvimento Back-End e APIs"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
-        "note": "Próximo Lançamento: Final de 2026",
+      "introduction-to-nodejs": {
+        "note": "Disponível no final de 2026",
         "intro": [
-          "Neste módulo, você aprenderá sobre bibliotecas principais do Node.js comuns, incluindo fs, os, path e mais. Em seguida, você praticará o que aprendeu através de workshops e laboratórios e testará seus conhecimentos através de um breve questionário."
+          "Neste módulo, você aprenderá o básico sobre como trabalhar com o Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Disponível no final de 2026",
+        "intro": [
+          "Neste módulo, você aprenderá sobre os módulos principais do Node.js comuns, incluindo fs, os, path e mais. Em seguida, você praticará o que aprendeu através de workshops e laboratórios e testará seus conhecimentos através de um breve questionário."
         ]
       },
       "node-package-manager": {
@@ -7582,9 +7566,21 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Trabalhando com o NodeJS e com a arquitetura orientada a eventos",
+        "intro": [
+          "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no seu computador e as vantagens e desvantagens de usar o Node.js no backend."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "Revisão introdutória de NodeJS",
+        "intro": [
+          "Revise o básico do NodeJS para se preparar para o próximo questionário."
+        ]
+      },
       "quiz-node-js-intro": {
-        "title": "NodeJS Intro Quiz",
-        "intro": ["Test what you have learned about NodeJS in this quiz."]
+        "title": "Questionário introdutório de NodeJS",
+        "intro": ["Teste o que você aprendeu sobre NodeJS neste questionário."]
       },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Compreendendo o Modelo de Requisição-Resposta HTTP",
@@ -7593,9 +7589,9 @@
         ]
       },
       "lecture-working-with-npm-scripts": {
-        "title": "Working with npm Scripts",
+        "title": "Trabalhando com scripts do npm",
         "intro": [
-          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
+          "Aprenda sobre scripts do npm, publicando pacotes no registro do npm e trabalhando com os módulos CommonJS e ES. Essas lições cobrem ferramentas essenciais de desenvolvimento de Node.js e os sistemas de módulos."
         ]
       },
       "exam-back-end-development-and-apis-certification": {
@@ -8537,6 +8533,13 @@
           "Neste workshop, você usará Flexbox para criar uma página da galeria de fotos responsiva."
         ]
       },
+      "lab-pricing-plans-layout": {
+        "title": "Crie uma página de layout de planos de preços",
+        "intro": [
+          "Neste laboratório, você usará o flexbox para criar um layout de camada comum com três cards.",
+          "Você praticará o alinhamento de elementos usando propriedades do flexbox, como <code>flex</code>, <code>flex-grow</code>, <code>order</code> e mais."
+        ]
+      },
       "lab-page-of-playing-cards": {
         "title": "Crie uma Página de Cartas de Baralho",
         "intro": [
@@ -8907,7 +8910,7 @@
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao A1 Chinês Profissional",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
+      "zh-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
       "zh-a1-chapter-introducing-colleagues-and-family": "Apresentando Colegas e Família",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressando o que você pode e não pode fazer"
     },
@@ -8922,37 +8925,29 @@
       "zh-a1-module-discussing-team-skills": "Discutindo Habilidades da Equipe"
     },
     "module-intros": {
-      "zh-a1-module-introduction-and-certification-overview": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
-      "zh-a1-module-initials-and-finals": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
-      "zh-a1-module-greetings-and-basic-introductions": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
-      "zh-a1-module-asking-and-giving-basic-information": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
-      },
       "zh-a1-module-introducing-others": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de monólogos curtos que introduzem informações sobre outras pessoas, como nome, função, nacionalidade e idade."
+        ]
       },
       "zh-a1-module-getting-to-know-the-team": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de uma curta conversa que pergunta e responde a perguntas simples sobre colegas."
+        ]
       },
       "zh-a1-module-talking-about-personal-skills": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de monólogos curtos sobre o que as pessoas podem e não podem fazer, como idiomas e habilidades de trabalho."
+        ]
       },
       "zh-a1-module-discussing-team-skills": {
-        "note": "Disponível no Inverno de 2025",
-        "intro": ["PLACEHOLDER: Escreva a introdução do módulo aqui."]
+        "note": "Próximo Lançamento: 2026",
+        "intro": [
+          "Neste módulo, você praticará a compreensão de uma conversa curta sobre quem pode fazer quais tarefas em uma equipe e como um projeto começa."
+        ]
       }
     },
     "blocks": {
@@ -8960,8 +8955,8 @@
         "title": "Introdução à Certificação",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Finais Simples",
+      "zh-a1-learn-simple-finals": {
+        "title": "Finais simples",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": {
@@ -8981,11 +8976,11 @@
         "intro": ["", ""]
       },
       "zh-a1-learn-understanding-greetings-and-introductions": {
-        "title": "Understanding Greetings and Introductions",
+        "title": "Compreendendo as Saudações e Apresentações",
         "intro": ["", ""]
       },
       "zh-a1-practice-introducing-yourself": {
-        "title": "​Introducing Yourself",
+        "title": "​Apresentando-se",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8997,7 +8992,7 @@
         "intro": ["", ""]
       },
       "zh-a1-learn-understanding-questions-and-answers": {
-        "title": "Understanding Questions and Answers",
+        "title": "Entendendo Perguntas e Respostas",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -9017,7 +9012,7 @@
         "intro": ["", ""]
       },
       "zh-a1-learn-meeting-the-team": {
-        "title": "Meeting the Team",
+        "title": "Encontrando a equipe",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
@@ -9109,11 +9104,11 @@
         "intro": ["", ""]
       },
       "zh-a1-learn-special-spelling-rules": {
-        "title": "Special Spelling Rules",
+        "title": "Regras especiais de ortografia",
         "intro": ["", ""]
       },
       "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
+        "title": "Prática de Pinyin",
         "intro": ["", ""]
       }
     }
