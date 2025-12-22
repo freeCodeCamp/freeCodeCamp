@@ -91,7 +91,7 @@ test.describe('Desktop view', () => {
       page
     }) => {
       await page.goto(
-        '/learn/javascript-algorithms-and-data-structures-v8/learn-introductory-javascript-by-building-a-pyramid-generator/step-1'
+        '/learn/javascript-v9/workshop-greeting-bot/step-1'
       );
       const previewButton = page.getByTestId('preview-pane-button');
       await expect(previewButton).toHaveCount(0);
@@ -104,7 +104,7 @@ test.describe('Mobile view', () => {
 
   test('Action row is hidden', async ({ page }) => {
     await page.goto(
-      '/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form'
+      '/learn/responsive-web-design-v9/lab-survey-form/build-a-survey-form'
     );
     const actionRow = page.getByTestId('action-row');
     await expect(actionRow).toBeHidden();
