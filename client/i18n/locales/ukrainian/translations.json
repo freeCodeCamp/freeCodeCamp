@@ -208,6 +208,7 @@
     "core-certs-heading": "Рекомендована програма (бета-версія):",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
     "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Архівовані курси:",
@@ -1115,6 +1116,7 @@
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат засвідчує, що</0> <1>{{user}}</1> <2>успішно закінчив(-ла) сертифікацію</2> <3>«{{title}}»</3> <4>{{time}},</4> <5>виконавши приблизно {{completionTime}} год навчання</5>",
     "fulltextNoHours": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Підпис Квінсі Ларсона",
     "julia-liuson-signature": "Підпис Джулії Люсон",
     "project": {

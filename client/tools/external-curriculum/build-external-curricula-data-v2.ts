@@ -93,6 +93,7 @@ enum SuperBlockStage {
   Core = 'core',
   English = 'english',
   Spanish = 'spanish',
+  Chinese = 'chinese',
   Professional = 'professional',
   Extra = 'extra',
   Legacy = 'legacy'
@@ -172,6 +173,14 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
       dashedName: SuperBlocks.A1Spanish,
       public: false,
       title: intros[SuperBlocks.A1Spanish].title
+    }
+  ],
+
+  [SuperBlockStage.Chinese]: [
+    {
+      dashedName: SuperBlocks.A1Chinese,
+      public: false,
+      title: intros[SuperBlocks.A1Chinese].title
     }
   ],
 

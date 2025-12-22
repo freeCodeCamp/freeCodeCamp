@@ -208,6 +208,7 @@
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -1115,6 +1116,7 @@
     "issued": "発行日",
     "fulltext": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4> <5>(約 {{completionTime}} 時間相当)</5>",
     "fulltextNoHours": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson の署名",
     "julia-liuson-signature": "Julia Liuson の署名",
     "project": {

@@ -279,7 +279,12 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
               {instructions && (
                 <>
