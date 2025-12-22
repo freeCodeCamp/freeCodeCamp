@@ -13,7 +13,7 @@ test.describe('Challenge Breadcrumb Tests', () => {
       await expect(superBlock).toBeVisible();
 
       const superBlockLink = superBlock.getByRole('link', {
-        name: 'Responsive Web Design'
+        name: 'Responsive Web Design Certification'
       });
       await expect(superBlockLink).toBeVisible();
       await expect(superBlockLink).toHaveAttribute(
@@ -25,7 +25,7 @@ test.describe('Challenge Breadcrumb Tests', () => {
       await expect(superBlock).toBeVisible();
 
       const blockLink = block.getByRole('link', {
-        name: 'Learn HTML by Building a Cat Photo App'
+        name: 'Build a Cat Photo App'
       });
       await expect(blockLink).toBeVisible();
       await expect(blockLink).toHaveAttribute(

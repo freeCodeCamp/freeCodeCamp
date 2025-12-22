@@ -9,7 +9,7 @@ test.describe('Desktop view', () => {
   test.describe('Pages with previews', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto(
-        '/learn/responsive-web-design-v9/lab-survey-form/build-a-survey-form'
+        '/learn/responsive-web-design-v9/lab-event-flyer-page/build-an-event-flyer-page'
       );
     });
 
@@ -42,7 +42,7 @@ test.describe('Desktop view', () => {
       }
 
       const instructionsPanelTitle = page.getByRole('heading', {
-        name: 'Build a Survey Form'
+        name: 'Build an Event Flyer Page'
       });
       await expect(instructionsPanelTitle).toBeHidden();
     });
