@@ -59,24 +59,42 @@ describe('<ChallengeTranscript />', () => {
     setSpy.mockRestore();
   });
 
-  describe('isDialogue prop', () => {
-    it('renders PrismFormatted when isDialogue is false (default)', () => {
-      render(<ChallengeTranscript {...baseProps} />);
-      expect(screen.queryByRole('table')).not.toBeInTheDocument();
-      // PrismFormatted renders the transcript text, verify it's still visible
-      expect(screen.getByText('Sample transcript text')).toBeInTheDocument();
-    });
+  it('should render the transcript as a table when isDialogue is true', () => {
+    store.set('fcc-transcript-expanded', true);
 
-    it('renders a table when isDialogue is explicitly true', () => {
-      render(<ChallengeTranscript {...baseProps} isDialogue={true} />);
-      expect(screen.getByRole('table')).toBeInTheDocument();
-    });
+    render(
+      <ChallengeTranscript
+        {...baseProps}
+        transcript={'Hello\nWorld'}
+        shouldPersistExpanded={true}
+        isDialogue={true}
+      />
+    );
+    const table = screen.getByRole('table');
+    expect(table).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'Hello' })).toBeVisible();
+    expect(screen.getByRole('cell', { name: 'World' })).toBeVisible();
+  });
 
-    it('renders PrismFormatted when isDialogue is explicitly false', () => {
-      render(<ChallengeTranscript {...baseProps} isDialogue={false} />);
-      expect(screen.queryByRole('table')).not.toBeInTheDocument();
-      // PrismFormatted renders the transcript text, verify it's still visible
-      expect(screen.getByText('Sample transcript text')).toBeInTheDocument();
-    });
+  it('should render the transcript with PrismFormatted when isDialogue is false', () => {
+    store.set('fcc-transcript-expanded', true);
+
+    render(
+      <ChallengeTranscript
+        {...baseProps}
+        transcript='<pre><code class="language-js">console.log("hi")</code></pre>'
+        shouldPersistExpanded={true}
+        isDialogue={false}
+      />
+    );
+
+    const preElement = screen.getByRole('region');
+    expect(preElement).toBeVisible();
+    expect(preElement.tagName).toBe('PRE');
+
+    // eslint-disable-next-line testing-library/no-node-access
+    const codeElement = preElement.querySelector('code');
+    expect(codeElement).toBeInTheDocument();
+    expect(preElement).toHaveTextContent('console.log("hi")');
   });
 });
