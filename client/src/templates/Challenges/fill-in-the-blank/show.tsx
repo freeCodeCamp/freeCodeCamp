@@ -38,7 +38,6 @@ import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
-import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 // Redux Setup
 const mapStateToProps = createSelector(
@@ -219,7 +218,7 @@ const ShowFillInTheBlank = ({
   };
 
   const handleSubmit = () => {
-    if (lang === ChallengeLang.Chinese) {
+    if ((lang as string) === 'zh-CN') {
       handleSubmitChinese();
     } else {
       handleSubmitNonChinese();
@@ -279,7 +278,12 @@ const ShowFillInTheBlank = ({
             {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
             <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && <ChallengeTranscript transcript={transcript} />}
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
               {instructions && (
                 <>

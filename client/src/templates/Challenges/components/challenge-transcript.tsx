@@ -3,16 +3,19 @@ import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import store from 'store';
 
+import PrismFormatted from './prism-formatted';
 import './challenge-transcript.css';
 
 interface ChallengeTranscriptProps {
   transcript: string;
   shouldPersistExpanded?: boolean;
+  isDialogue?: boolean;
 }
 
 function ChallengeTranscript({
   transcript,
-  shouldPersistExpanded
+  shouldPersistExpanded,
+  isDialogue = true
 }: ChallengeTranscriptProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -42,20 +45,24 @@ function ChallengeTranscript({
           {t('learn.transcript')}
         </summary>
         <Spacer size='m' />
-        <table className='transcript-table'>
-          <tbody>
-            {transcript
-              .split('\n')
-              .filter(line => line.trim() !== '')
-              .map((line, idx) => {
-                return (
-                  <tr key={idx}>
-                    <td dangerouslySetInnerHTML={{ __html: line }} />
-                  </tr>
-                );
-              })}
-          </tbody>
-        </table>
+        {isDialogue ? (
+          <table className='transcript-table'>
+            <tbody>
+              {transcript
+                .split('\n')
+                .filter(line => line.trim() !== '')
+                .map((line, idx) => {
+                  return (
+                    <tr key={idx}>
+                      <td dangerouslySetInnerHTML={{ __html: line }} />
+                    </tr>
+                  );
+                })}
+            </tbody>
+          </table>
+        ) : (
+          <PrismFormatted className='line-numbers' text={transcript} />
+        )}
       </details>
       <Spacer size='m' />
     </>
