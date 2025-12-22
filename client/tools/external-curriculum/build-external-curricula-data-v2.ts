@@ -119,23 +119,23 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.RespWebDesignV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.RespWebDesignV9].title
     },
     {
       dashedName: SuperBlocks.JsV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.JsV9].title
+    },
+    {
+      dashedName: SuperBlocks.PythonV9,
+      public: true,
+      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.FrontEndDevLibsV9,
       public: false,
       title: intros[SuperBlocks.FrontEndDevLibsV9].title
-    },
-    {
-      dashedName: SuperBlocks.PythonV9,
-      public: false,
-      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.RelationalDbV9,
@@ -258,16 +258,6 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
       dashedName: SuperBlocks.CollegeAlgebraPy,
       public: true,
       title: intros[SuperBlocks.CollegeAlgebraPy].title
-    },
-    {
-      dashedName: SuperBlocks.RespWebDesign,
-      public: true,
-      title: intros[SuperBlocks.RespWebDesign].title
-    },
-    {
-      dashedName: SuperBlocks.JsAlgoDataStruct,
-      public: false,
-      title: intros[SuperBlocks.JsAlgoDataStruct].title
     },
     {
       dashedName: SuperBlocks.PythonForEverybody,
