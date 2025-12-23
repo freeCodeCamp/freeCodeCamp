@@ -1,16 +1,13 @@
 ---
-id: 68eaeaf8b317a4294f170f40
-title: Step 1
+id: 694afa3fcd55df0cbc49a3cf
+title: Step 2
 challengeType: 0
-dashedName: step-1
-demoType: onLoad
+dashedName: step-2
 ---
 
 # --description--
 
-In this workshop you will practice working with CSS flexbox by designing a set of colored boxes.
-
-To begin, link your `styles.css` file to the HTML document.
+Now link your `styles.css` file to the HTML document.
 
 # --hints--
 
