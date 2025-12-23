@@ -6,7 +6,8 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addFrontmatter from './add-frontmatter';
 import validateSections, {
   VALID_MARKERS,
-  NON_HEADING_MARKERS
+  NON_HEADING_MARKERS,
+  SOLUTIONS_HEADER
 } from './validate-sections';
 
 const processor = unified()
@@ -59,8 +60,11 @@ describe('validate-sections plugin', () => {
       'title: Test',
       '---',
       '',
-      ...VALID_MARKERS.map(marker => `${marker}\nDummy content.`),
-      ...NON_HEADING_MARKERS.map(marker => `${marker}\nDummy content.`)
+      ...VALID_MARKERS.filter(marker => !marker.includes(SOLUTIONS_HEADER)).map(
+        marker => `${marker}\nDummy content.`
+      ),
+      ...NON_HEADING_MARKERS.map(marker => `${marker}\nDummy content.`),
+      `${SOLUTIONS_HEADER}\nDummy content.`
     ].join('\n');
 
     expect(() => {

@@ -120,20 +120,18 @@ function validateSections() {
         }
       }
 
-      // TODO: Ask reviewers if we need this if condition?
-      if (isWorkshop) {
-        if (markerValue === SOLUTIONS_HEADER && i !== allMarkers.length - 1) {
-          errors.push(
-            `Validation error: "${SOLUTIONS_HEADER}" header appears before the last step. The "${SOLUTIONS_HEADER}" header must only appear in the final step.`
-          );
-        } else if (
-          markerValue !== SOLUTIONS_HEADER &&
-          i === allMarkers.length - 1
-        ) {
-          errors.push(
-            `Validation error: Expected the final step to be the "${SOLUTIONS_HEADER}" section, but found "${markerValue}" instead.`
-          );
-        }
+      if (markerValue === SOLUTIONS_HEADER && i !== allMarkers.length - 1) {
+        errors.push(
+          `Validation error: "${SOLUTIONS_HEADER}" header appears before the last step. The "${SOLUTIONS_HEADER}" header must only appear in the final step.`
+        );
+      } else if (
+        isWorkshop &&
+        markerValue !== SOLUTIONS_HEADER &&
+        i === allMarkers.length - 1
+      ) {
+        errors.push(
+          `Validation error: Expected the final step to be the "${SOLUTIONS_HEADER}" section, but found "${markerValue}" instead.`
+        );
       }
     }
 
@@ -182,3 +180,4 @@ function validateSections() {
 module.exports = validateSections;
 module.exports.VALID_MARKERS = VALID_MARKERS;
 module.exports.NON_HEADING_MARKERS = NON_HEADING_MARKERS;
+module.exports.SOLUTIONS_HEADER = SOLUTIONS_HEADER;
