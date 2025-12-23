@@ -8,6 +8,7 @@ import DropDown from '../../../assets/icons/dropdown';
 import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
 import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import { Link } from '../../../components/helpers';
 import {
   BlockLayouts,
   BlockLabel
@@ -17,6 +18,7 @@ import { type Module } from '../../../../../shared-dist/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
+import { default as BlockLabelComponent } from './block-label';
 
 import './super-block-accordion.css';
 
@@ -30,6 +32,8 @@ interface ChapterProps {
   totalSteps: number;
   completedSteps: number;
   superBlock: SuperBlocks;
+  isLinkChapter?: boolean;
+  examSlug?: string;
 }
 
 interface ModuleProps {
@@ -39,6 +43,7 @@ interface ModuleProps {
   totalSteps: number;
   completedSteps: number;
   superBlock: SuperBlocks;
+  comingSoon: boolean;
 }
 
 interface Challenge {
@@ -51,6 +56,25 @@ interface Challenge {
   challengeType: number;
   blockLayout: BlockLayouts;
   superBlock: SuperBlocks;
+}
+
+interface PopulatedBlock {
+  name: string;
+  blockLabel: BlockLabel | null;
+  challenges: Challenge[];
+}
+
+interface PopulatedModule {
+  name: string;
+  comingSoon?: boolean;
+  moduleType?: Module['moduleType'];
+  blocks: PopulatedBlock[];
+}
+
+interface PopulatedChapter {
+  name: string;
+  comingSoon?: boolean;
+  modules: PopulatedModule[];
 }
 
 interface SuperBlockAccordionProps {
@@ -68,10 +92,53 @@ const Chapter = ({
   comingSoon,
   totalSteps,
   completedSteps,
-  superBlock
+  superBlock,
+  isLinkChapter,
+  examSlug
 }: ChapterProps) => {
   const { t } = useTranslation();
-  const isComplete = completedSteps === totalSteps;
+  const isComplete = completedSteps === totalSteps && totalSteps > 0;
+  const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
+
+  const chapterButtonContent = (
+    <>
+      <div className='chapter-button-left'>
+        <span className='checkmark-wrap chapter-checkmark-wrap'>
+          <CheckMark isCompleted={isComplete} />
+        </span>
+        <ChapterIcon className='map-icon' chapter={dashedName as FsdChapters} />
+        {chapterLabel}
+        {isLinkChapter && examSlug && (
+          <BlockLabelComponent blockLabel={BlockLabel.exam} />
+        )}
+      </div>
+      <div className='chapter-button-right'>
+        {!comingSoon && !isLinkChapter && (
+          <span className='chapter-steps'>
+            {t('learn.steps-completed', {
+              totalSteps,
+              completedSteps
+            })}
+          </span>
+        )}
+        <span className='dropdown-wrap'>{!isLinkChapter && <DropDown />}</span>
+      </div>
+    </>
+  );
+
+  if (isLinkChapter && examSlug) {
+    return (
+      <li className='chapter'>
+        <Link
+          className='chapter-button'
+          data-playwright-test-label='chapter-button'
+          to={examSlug}
+        >
+          {chapterButtonContent}
+        </Link>
+      </li>
+    );
+  }
 
   return (
     <Disclosure as='li' className='chapter' defaultOpen={isExpanded}>
@@ -79,35 +146,13 @@ const Chapter = ({
         className='chapter-button'
         data-playwright-test-label='chapter-button'
       >
-        <div className='chapter-button-left'>
-          <ChapterIcon
-            className='map-icon'
-            chapter={dashedName as FsdChapters}
-          />
-          {t(`intro:${superBlock}.chapters.${dashedName}`)}
-        </div>
-        <div className='chapter-button-right'>
-          {!comingSoon && (
-            <>
-              <span className='chapter-steps'>
-                {t('learn.steps-completed', {
-                  totalSteps,
-                  completedSteps
-                })}
-              </span>
-              <span className='checkmark-wrap chapter-checkmark-wrap'>
-                <CheckMark isCompleted={isComplete} />
-              </span>
-            </>
-          )}
-          <span className='dropdown-wrap'>
-            <DropDown />
-          </span>
-        </div>
+        {chapterButtonContent}
       </Disclosure.Button>
-      <Disclosure.Panel as='ul' className='chapter-panel'>
-        {children}
-      </Disclosure.Panel>
+      {!isLinkChapter && !examSlug && (
+        <Disclosure.Panel as='ul' className='chapter-panel'>
+          {children}
+        </Disclosure.Panel>
+      )}
     </Disclosure>
   );
 };
@@ -118,10 +163,19 @@ const Module = ({
   isExpanded,
   totalSteps,
   completedSteps,
-  superBlock
+  superBlock,
+  comingSoon
 }: ModuleProps) => {
   const { t } = useTranslation();
-  const isComplete = completedSteps === totalSteps;
+  const isComplete = totalSteps === 0 ? false : completedSteps === totalSteps;
+  const { note, intro } = t(`intro:${superBlock}.module-intros.${dashedName}`, {
+    returnObjects: true
+  }) as {
+    note: string;
+    intro: string[];
+  };
+
+  const showModuleContent = !(comingSoon && !showUpcomingChanges);
 
   return (
     <Disclosure as='li' defaultOpen={isExpanded}>
@@ -130,44 +184,66 @@ const Module = ({
           <span className='dropdown-wrap'>
             <DropDown />
           </span>
-          {t(`intro:${superBlock}.modules.${dashedName}`)}
-        </div>
-        <div className='module-button-right'>
-          <span className='module-steps'>
-            {t('learn.steps-completed', {
-              totalSteps,
-              completedSteps
-            })}
-          </span>
           <span className='checkmark-wrap'>
             <CheckMark isCompleted={isComplete} />
           </span>
+          {t(`intro:${superBlock}.modules.${dashedName}`)}
+        </div>
+        <div className='module-button-right' data-testid='module-button-right'>
+          {!comingSoon && !!totalSteps && (
+            <span className='module-steps'>
+              {t('learn.steps-completed', {
+                totalSteps,
+                completedSteps
+              })}
+            </span>
+          )}
         </div>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
-        {children}
+        {comingSoon && (
+          <div className='module-intro'>
+            {note && (
+              <p>
+                <b>{note}</b>
+              </p>
+            )}
+            {intro?.length && intro.map(ntro => <p key={ntro}>{ntro}</p>)}
+          </div>
+        )}
+        {showModuleContent && children}
       </Disclosure.Panel>
     </Disclosure>
   );
 };
 
-const LinkBlock = ({
+const LinkModule = ({
   superBlock,
-  challenges
+  challenges,
+  accordion,
+  moduleType
 }: {
   superBlock: SuperBlocks;
   challenges?: Challenge[];
-}) =>
-  challenges?.length ? (
+  accordion: boolean;
+  moduleType?: Module['moduleType'];
+}) => {
+  if (!challenges?.length) return null;
+
+  const label = moduleType ?? challenges[0].blockLabel;
+
+  return (
     <li className='link-block'>
       <Block
         block={challenges[0].block}
-        blockLabel={challenges[0].blockLabel}
+        blockLabel={label}
         challenges={challenges}
         superBlock={superBlock}
+        accordion={accordion}
       />
     </li>
-  ) : null;
+  );
+};
 
 export const SuperBlockAccordion = ({
   challenges,
@@ -185,7 +261,12 @@ export const SuperBlockAccordion = ({
   const isLinkModule = (name: string) => {
     const module = modules.find(module => module.dashedName === name);
 
-    return module?.moduleType === 'review' || module?.moduleType === 'exam';
+    return (
+      module?.moduleType === BlockLabel.review ||
+      module?.moduleType === BlockLabel.exam ||
+      module?.moduleType === BlockLabel.quiz ||
+      module?.moduleType === BlockLabel.certProject
+    );
   };
 
   const getBlockToChapterMap = () => {
@@ -214,11 +295,8 @@ export const SuperBlockAccordion = ({
 
   const blockToChapterMap = getBlockToChapterMap();
   const blockToModuleMap = getBlockToModuleMap();
-
-  const { t } = useTranslation();
-  const { allChapters } = useMemo(() => {
-    const chapters = superBlockStructure.chapters;
-    const populateBlocks = (blocks: string[]) =>
+  const allChapters = useMemo<PopulatedChapter[]>(() => {
+    const populateBlocks = (blocks: string[]): PopulatedBlock[] =>
       blocks.map(block => {
         const blockChallenges = challenges.filter(
           ({ block: blockName }) => blockName === block
@@ -231,7 +309,7 @@ export const SuperBlockAccordion = ({
         };
       });
 
-    const allChapters = chapters.map(chapter => ({
+    return superBlockStructure.chapters.map((chapter: Chapter) => ({
       name: chapter.dashedName,
       comingSoon: chapter.comingSoon,
       modules: chapter.modules.map((module: Module) => ({
@@ -241,13 +319,12 @@ export const SuperBlockAccordion = ({
         blocks: populateBlocks(module.blocks)
       }))
     }));
-
-    return { allChapters };
   }, [challenges, superBlockStructure.chapters]);
 
   // Expand the outer layers in order to reveal the chosen block.
   const expandedChapter = blockToChapterMap.get(chosenBlock);
   const expandedModule = blockToModuleMap.get(chosenBlock);
+  const accordion = true;
 
   return (
     <ul className='super-block-accordion'>
@@ -261,9 +338,24 @@ export const SuperBlockAccordion = ({
         });
 
         const chapterStepIdsSet = new Set(chapterStepIds);
+
         const completedStepsInChapter = new Set(
           completedChallengeIds.filter(id => chapterStepIdsSet.has(id))
         ).size;
+
+        const [firstChapterModule] = chapter.modules;
+
+        const [firstModuleBlock] = firstChapterModule?.blocks ?? [];
+
+        const isLinkChapter =
+          chapter.modules.length === 1 &&
+          firstChapterModule?.blocks.length === 1 &&
+          firstModuleBlock?.blockLabel === BlockLabel.exam &&
+          firstModuleBlock.challenges.length === 1;
+
+        const examSlug = isLinkChapter
+          ? firstModuleBlock?.challenges[0]?.fields.slug
+          : undefined;
 
         return (
           <Chapter
@@ -276,60 +368,24 @@ export const SuperBlockAccordion = ({
             totalSteps={chapterStepIds.length}
             completedSteps={completedStepsInChapter}
             superBlock={superBlock}
+            isLinkChapter={isLinkChapter}
+            examSlug={examSlug}
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (
-                  module.moduleType === 'review' ||
-                  module.moduleType === 'exam'
-                ) {
+                if (module.moduleType === BlockLabel.review) {
                   return null;
                 }
-
-                const { note, intro } = t(
-                  `intro:${superBlock}.module-intros.${module.name}`,
-                  { returnObjects: true }
-                ) as {
-                  note: string;
-                  intro: string[];
-                };
-
-                return (
-                  <Disclosure
-                    key={module.name}
-                    as='li'
-                    defaultOpen={expandedModule === module.name}
-                  >
-                    <Disclosure.Button className='module-button'>
-                      <div className='module-button-left'>
-                        <span className='dropdown-wrap'>
-                          <DropDown />
-                        </span>
-                        {t(`intro:${superBlock}.modules.${module.name}`)}
-                      </div>
-                    </Disclosure.Button>
-                    <Disclosure.Panel as='ul' className='module-panel'>
-                      <div className='module-intro'>
-                        {note && (
-                          <p>
-                            <b>{note}</b>
-                          </p>
-                        )}
-                        {intro &&
-                          intro.length > 0 &&
-                          intro.map(ntro => <p key={ntro}>{ntro}</p>)}
-                      </div>
-                    </Disclosure.Panel>
-                  </Disclosure>
-                );
               }
 
               if (isLinkModule(module.name)) {
                 return (
-                  <LinkBlock
+                  <LinkModule
                     key={module.name}
                     superBlock={superBlock}
+                    moduleType={module.moduleType}
                     challenges={module.blocks[0]?.challenges}
+                    accordion={accordion}
                   />
                 );
               }
@@ -352,6 +408,7 @@ export const SuperBlockAccordion = ({
                   totalSteps={moduleStepIds.length}
                   completedSteps={completedStepsInModule}
                   superBlock={superBlock}
+                  comingSoon={!!module.comingSoon}
                 >
                   {module.blocks.map(block => (
                     // maybe TODO: allow blocks to be "coming soon"
@@ -361,6 +418,7 @@ export const SuperBlockAccordion = ({
                         blockLabel={block.blockLabel}
                         challenges={block.challenges}
                         superBlock={superBlock}
+                        accordion={accordion}
                       />
                     </li>
                   ))}

@@ -1,0 +1,14 @@
+{
+  "name": "Who Can Do What on the Team",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-who-can-do-what-on-the-team",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3bb1f40340e44448fe93",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}

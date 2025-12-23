@@ -32,13 +32,13 @@ const collegeAlgebraPyBase = '/learn/college-algebra-with-python';
 const takeHomeBase = '/learn/coding-interview-prep/take-home-projects';
 const foundationalCSharpBase =
   '/learn/foundational-c-sharp-with-microsoft/foundational-c-sharp-with-microsoft-certification-exam';
-const fullStackDeveloperBase = '/learn/full-stack-developer';
 const respWebV9Base = '/learn/responsive-web-design-v9';
 const jsV9Base = '/learn/javascript-v9';
 const frontEndDevLibsV9Base = '/learn/front-end-development-libraries-v9';
 const pythonV9Base = '/learn/python-v9';
 const relationalDbV9Base = '/learn/relational-databases-v9';
 const backEndDevApisV9Base = '/learn/back-end-development-and-apis-v9';
+const fullStackDeveloperV9Base = '/learn/full-stack-developer-v9';
 const a2EnglishBase = '/learn/a2-english-for-developers';
 const b1EnglishBase = '/learn/b1-english-for-developers';
 const a2SpanishBase = '/learn/a2-professional-spanish';
@@ -807,19 +807,6 @@ const allStandardCerts = [
   },
   // Upcoming Certifications
   {
-    id: '64514fda6c245de4d11eb7bb',
-    title: 'Certified Full Stack Developer',
-    certSlug: Certification.FullStackDeveloper,
-    projects: [
-      {
-        id: '645147516c245de4d11eb7ba',
-        title: 'Certified Full Stack Developer Exam',
-        link: `${fullStackDeveloperBase}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
-        certSlug: Certification.FullStackDeveloper
-      }
-    ]
-  },
-  {
     id: '68db314d3c11a8bff07c7535',
     title: 'Responsive Web Design',
     certSlug: Certification.RespWebDesignV9,
@@ -898,6 +885,19 @@ const allStandardCerts = [
     ]
   },
   {
+    id: '64514fda6c245de4d11eb7bb',
+    title: 'Certified Full Stack Developer',
+    certSlug: Certification.FullStackDeveloperV9,
+    projects: [
+      {
+        id: '645147516c245de4d11eb7ba',
+        title: 'Certified Full Stack Developer Exam',
+        link: `${fullStackDeveloperV9Base}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
+        certSlug: Certification.FullStackDeveloperV9
+      }
+    ]
+  },
+  {
     id: '651dd7e01d697d0aab7833b7',
     title: 'A2 English for Developers',
     certSlug: Certification.A2English,
@@ -905,7 +905,7 @@ const allStandardCerts = [
       {
         id: '6721db5d9f0c116e6a0fe25a',
         title: 'A2 English for Developers Certification Exam',
-        link: `${a2EnglishBase}/a2-english-for-developers-certification-exam/a2-english-for-developers-certification-exam`,
+        link: `${a2EnglishBase}/en-a2-certification-exam/en-a2-certification-exam`,
         certSlug: Certification.A2English
       }
     ]
@@ -916,9 +916,9 @@ const allStandardCerts = [
     certSlug: Certification.B1English,
     projects: [
       {
-        id: '66607e5b317411dd5e8aae22',
-        title: "Dialogue 1: I'm Tom",
-        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        id: '694106b87224ea1c1a9d3201',
+        title: 'B1 English for Developers Certification Exam',
+        link: `${b1EnglishBase}/en-b1-certification-exam/en-b1-certification-exam`,
         certSlug: Certification.B1English
       }
     ]

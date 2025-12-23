@@ -31,7 +31,8 @@ import { DEPLOYMENT_ENV, JWT_SECRET } from '../../utils/env.js';
 import {
   getExamAttemptHandler,
   getExamAttemptsByExamIdHandler,
-  getExamAttemptsHandler
+  getExamAttemptsHandler,
+  getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
 
@@ -565,11 +566,17 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     },
     getExamAttemptsByExamIdHandler
   );
+  fastify.get(
+    '/user/exam-environment/exams',
+    {
+      schema: examEnvironmentSchemas.examEnvironmentExams
+    },
+    getExams
+  );
 
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -694,11 +701,20 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isJsAlgoDataStructCert: true,
             isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
+            isFrontEndLibsCertV9: true,
+            isBackEndDevApisCertV9: true,
+            isFullStackDeveloperCertV9: true,
+            isB1EnglishCert: true,
+            isA2SpanishCert: true,
+            isA2ChineseCert: true,
+            isA1ChineseCert: true,
             keyboardShortcuts: true,
             linkedin: true,
             location: true,

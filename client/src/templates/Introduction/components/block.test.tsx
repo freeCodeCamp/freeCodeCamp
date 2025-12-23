@@ -47,7 +47,6 @@ const defaultProps = {
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',
-      isComingSoon: false,
       internal: {
         content: 'mockContent',
         contentDigest: 'mockContentDigest',

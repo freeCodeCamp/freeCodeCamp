@@ -5,6 +5,7 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
+const { SuperBlocks } = require('../shared-dist/config/curriculum');
 const env = require('./config/env.json');
 const {
   createChallengePages,
@@ -102,6 +103,7 @@ exports.createPages = async function createPages({
                 history
                 fileKey
               }
+              saveSubmissionToDB
               solutions {
                 contents
                 ext
@@ -182,15 +184,8 @@ exports.createPages = async function createPages({
     )
   );
 
-  const superBlocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { superBlock }
-        }
-      }) => superBlock
-    )
-  );
+  // Includes upcoming superBlocks
+  const allSuperBlocks = Object.values(SuperBlocks);
 
   // Create intro pages
   // TODO: Remove allMarkdownRemark (populate from elsewhere)
@@ -210,7 +205,7 @@ exports.createPages = async function createPages({
       if (!blocks.includes(frontmatter.block)) {
         return;
       }
-    } else if (!superBlocks.includes(frontmatter.superBlock)) {
+    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
       return;
     }
 
@@ -329,9 +324,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       hooks: Hooks
       id: String
       instructions: String
-      isComingSoon: Boolean
       isLastChallengeInBlock: Boolean
       isPrivate: Boolean
+      lang: String
       module: String
       msTrophyId: String
       nodules: [Nodule]
@@ -341,6 +336,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       questions: [Question]
       quizzes: [Quiz]
       required: [RequiredResource]
+      saveSubmissionToDB: Boolean
       scene: Scene
       solutions: [[FileContents]]
       suborder: Int
@@ -348,6 +344,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       superOrder: Int
       template: String
       tests: [Test]
+      fields: ChallengeFields
       title: String
       transcript: String
       translationPending: Boolean
@@ -393,6 +390,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type Answer {
       answer: String
       feedback: String
+      audioId: String
     }
     type RequiredResource {
       link: String
@@ -415,6 +413,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type FillInTheBlank {
       sentence: String
       blanks: [Blank]
+      inputType: String
     }
     type Blank {
       answer: String
@@ -473,7 +472,9 @@ exports.createSchemaCustomization = ({ actions }) => {
       beforeAll: String
       afterAll: String
     }
-
+    type ChallengeFields {
+      slug: String
+    }
     type Nodule {
       type: String
       data: JSON

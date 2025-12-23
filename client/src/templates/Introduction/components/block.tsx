@@ -31,7 +31,6 @@ import {
   ChallengesWithDialogues
 } from './challenges';
 import BlockLabel from './block-label';
-import BlockIntros from './block-intros';
 import BlockHeader from './block-header';
 
 import '../intro.css';
@@ -74,6 +73,7 @@ interface BlockProps {
   superBlock: SuperBlocks;
   t: TFunction;
   toggleBlock: typeof toggleBlock;
+  accordion?: boolean;
 }
 
 export class Block extends Component<BlockProps> {
@@ -82,7 +82,7 @@ export class Block extends Component<BlockProps> {
     super(props);
 
     this.handleBlockClick = this.handleBlockClick.bind(this);
-    this.handleBlockHover = this.handleBlockHover.bind(this);
+    this.handleChallengeClick = this.handleChallengeClick.bind(this);
   }
 
   handleBlockClick = (): void => {
@@ -91,13 +91,8 @@ export class Block extends Component<BlockProps> {
     toggleBlock(block);
   };
 
-  /*
-   * This function handles the block hover event.
-   * It also updates the URL hash to reflect the current block.
-   */
-  handleBlockHover = (): void => {
+  handleChallengeClick = (): void => {
     const { block } = this.props;
-    // Convert block to dashed format
     const dashedBlock = block
       .toLowerCase()
       .replace(/\s+/g, '-')
@@ -113,7 +108,8 @@ export class Block extends Component<BlockProps> {
       challenges,
       isExpanded,
       superBlock,
-      t
+      t,
+      accordion = false
     } = this.props;
 
     let completedCount = 0;
@@ -180,11 +176,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeListBlock = (
       <Element name={block}>
-        <div
-          className={`block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block ${isExpanded ? 'open' : ''}`}>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -199,7 +191,6 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <BlockIntros intros={blockIntroArr} />
           <button
             aria-expanded={isExpanded}
             className='map-title'
@@ -224,7 +215,12 @@ export class Block extends Component<BlockProps> {
               </span>
             </div>
           </button>
-          {isExpanded && <ChallengesList challenges={extendedChallenges} />}
+          {isExpanded && (
+            <ChallengesList
+              challenges={extendedChallenges}
+              onChallengeClick={this.handleChallengeClick}
+            />
+          )}
         </div>
       </Element>
     );
@@ -236,11 +232,7 @@ export class Block extends Component<BlockProps> {
      */
     const ProjectListBlock = (
       <Element name={block}>
-        <div
-          className='block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block'>
           <div className='block-header'>
             <h3 className='big-block-title'>{blockTitle}</h3>
             {blockLabel && <BlockLabel blockLabel={blockLabel} />}
@@ -255,8 +247,10 @@ export class Block extends Component<BlockProps> {
               </div>
             )}
           </div>
-          <BlockIntros intros={blockIntroArr} />
-          <ChallengesList challenges={extendedChallenges} />
+          <ChallengesList
+            challenges={extendedChallenges}
+            onChallengeClick={this.handleChallengeClick}
+          />
         </div>
       </Element>
     );
@@ -268,11 +262,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyChallengeGridBlock = (
       <Element name={block}>
-        <div
-          className={`block block-grid ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className={`block block-grid ${isExpanded ? 'open' : ''}`}>
           <BlockHeader
             blockDashed={block}
             blockTitle={blockTitle}
@@ -283,6 +273,8 @@ export class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={!accordion ? blockIntroArr : undefined}
           />
 
           {isExpanded && (
@@ -299,11 +291,12 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
                 <GridMapChallenges
+                  jumpLink={!accordion}
                   challenges={extendedChallenges}
                   isProjectBlock={isProjectBlock}
                   blockTitle={blockTitle}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -330,6 +323,8 @@ export class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={!accordion ? blockIntroArr : undefined}
           />
 
           {isExpanded && (
@@ -346,10 +341,11 @@ export class Block extends Component<BlockProps> {
               )}
 
               <div id={`${block}-panel`}>
-                <BlockIntros intros={blockIntroArr} />
                 <ChallengesWithDialogues
                   challenges={extendedChallenges}
                   blockTitle={blockTitle}
+                  jumpLink={!accordion}
+                  onChallengeClick={this.handleChallengeClick}
                 />
               </div>
             </>
@@ -365,11 +361,7 @@ export class Block extends Component<BlockProps> {
      */
     const LegacyLinkBlock = (
       <Element name={block}>
-        <div
-          className='block block-grid grid-project-block'
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
-        >
+        <div className='block block-grid grid-project-block'>
           <div className='tags-wrapper'>
             <span className='cert-tag' aria-hidden='true'>
               {t('misc.certification-project')}
@@ -391,9 +383,7 @@ export class Block extends Component<BlockProps> {
             <h3 className='block-grid-title'>
               <Link
                 className='block-header'
-                onClick={() => {
-                  this.handleBlockClick();
-                }}
+                onClick={this.handleChallengeClick}
                 to={link}
               >
                 <CheckMark isCompleted={isBlockCompleted} />
@@ -406,7 +396,6 @@ export class Block extends Component<BlockProps> {
               </Link>
             </h3>
           </div>
-          <BlockIntros intros={blockIntroArr} />
         </div>
       </Element>
     );
@@ -414,15 +403,13 @@ export class Block extends Component<BlockProps> {
     /**
      * AccordionBlock is used as the block layout in new accordion style superblocks.
      */
-    const AccordionBlock = (
+    const AccordionBlock = accordion ? (
       <>
         <Element name={block}>
           <span className='hide-scrollable-anchor'></span>
         </Element>
         <div
-          className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
-          onMouseOver={this.handleBlockHover}
-          onFocus={this.handleBlockHover}
+          className={`block block-grid block-grid-no-border challenge-grid-block ${isExpanded ? 'open' : ''}`}
         >
           <BlockHeader
             blockDashed={block}
@@ -434,7 +421,7 @@ export class Block extends Component<BlockProps> {
             isCompleted={isBlockCompleted}
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
-            blockIntroArr={blockIntroArr}
+            accordion={accordion}
           />
 
           {isExpanded && (
@@ -458,9 +445,71 @@ export class Block extends Component<BlockProps> {
                     challenges={extendedChallenges}
                     blockTitle={blockTitle}
                     isProjectBlock={isProjectBlock}
+                    jumpLink={false}
+                    onChallengeClick={this.handleChallengeClick}
                   />
                 ) : (
-                  <ChallengesList challenges={extendedChallenges} />
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleChallengeClick}
+                  />
+                )}
+              </div>
+            </div>
+          )}
+        </div>
+      </>
+    ) : (
+      <>
+        <Element name={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </Element>
+        <div
+          className={`block block-grid challenge-grid-block ${isExpanded ? 'open' : ''}`}
+        >
+          <BlockHeader
+            blockDashed={block}
+            blockTitle={blockTitle}
+            blockLabel={blockLabel}
+            completedCount={completedCount}
+            courseCompletionStatus={courseCompletionStatus()}
+            handleClick={this.handleBlockClick}
+            isCompleted={isBlockCompleted}
+            isExpanded={isExpanded}
+            percentageCompleted={percentageCompleted}
+            accordion={accordion}
+            blockIntroArr={blockIntroArr}
+          />
+
+          {isExpanded && (
+            <div className='accordion-block-expanded'>
+              {!isAudited && (
+                <div className='tags-wrapper'>
+                  <Link
+                    className='cert-tag'
+                    to={t('links:help-translate-link-url')}
+                  >
+                    {t('misc.translation-pending')}
+                  </Link>
+                </div>
+              )}
+              <div
+                id={`${block}-panel`}
+                className={isGridBlock ? 'challenge-grid-block-panel' : ''}
+              >
+                {isGridBlock ? (
+                  <GridMapChallenges
+                    jumpLink={true}
+                    challenges={extendedChallenges}
+                    blockTitle={blockTitle}
+                    isProjectBlock={isProjectBlock}
+                    onChallengeClick={this.handleChallengeClick}
+                  />
+                ) : (
+                  <ChallengesList
+                    challenges={extendedChallenges}
+                    onChallengeClick={this.handleChallengeClick}
+                  />
                 )}
               </div>
             </div>
@@ -469,10 +518,32 @@ export class Block extends Component<BlockProps> {
       </>
     );
 
+    const LinkBlock = (
+      <>
+        <Element name={block}>
+          <span className='hide-scrollable-anchor'></span>
+        </Element>
+        <BlockHeader
+          blockDashed={block}
+          blockTitle={blockTitle}
+          blockLabel={blockLabel}
+          completedCount={completedCount}
+          courseCompletionStatus={courseCompletionStatus()}
+          handleClick={this.handleBlockClick}
+          onLinkClick={this.handleChallengeClick}
+          isCompleted={isBlockCompleted}
+          isExpanded={isExpanded}
+          percentageCompleted={percentageCompleted}
+          accordion={accordion}
+          blockUrl={challenges?.[0]?.fields?.slug ?? ''}
+        />
+      </>
+    );
+
     const layoutToComponent = {
       [BlockLayouts.ChallengeGrid]: AccordionBlock,
       [BlockLayouts.ChallengeList]: AccordionBlock,
-      [BlockLayouts.Link]: AccordionBlock,
+      [BlockLayouts.Link]: accordion ? LinkBlock : AccordionBlock,
       [BlockLayouts.ProjectList]: ProjectListBlock,
       [BlockLayouts.LegacyLink]: LegacyLinkBlock,
       [BlockLayouts.LegacyChallengeList]: LegacyChallengeListBlock,

@@ -118,6 +118,8 @@
     "share-on-threads": "Share on Threads",
     "play-scene": "Press Play",
     "download-latest-version": "Download the Latest Version",
+    "more-ways-to-sign-in": "More ways to sign in",
+    "sign-in-with-google": "Sign in with Google",
     "go-to-dcc-today": "Go to Today's Challenge",
     "go-to-dcc-archive": "Go to Daily Coding Challenge Archive"
   },
@@ -205,12 +207,15 @@
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Preparati per la ricerca di colloqui di lavoro da sviluppatore:",
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
+    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -278,7 +283,7 @@
     "disabled": "Le tue certificazioni saranno disabilitate, se impostato su privato.",
     "private-name": "Il tuo nome non apparirà sulle certificazioni, se impostato su privato.",
     "claim-legacy": "Una volta che avrai ottenuto le seguenti certificazioni gratuite di freeCodeCamp, sarai in grado di richiedere la {{cert}}:",
-    "for": "Impostazioni Account per {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Questo aggiunge i piacevoli suoni di una chitarra acustica nel sito. Suonerà mentre scrivi nell'editor, completi sfide, ottieni certificazioni, e altro.",
     "sound-volume": "Volume Campfire:",
     "scrollbar-width": "Larghezza barra di scorrimento editor",
@@ -312,7 +317,7 @@
       "results-for": "Risultati per {{projectTitle}}",
       "my-profile": "Il mio profilo",
       "my-name": "Il mio nome",
-      "my-location": "La mia posizione",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Le mie informazioni",
       "my-points": "I miei punti",
       "my-heatmap": "La mia mappa del calore",
@@ -325,12 +330,13 @@
       "keyboard-shortcuts": "Abilita le scorciatoie da tastiera"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certificazioni",
       "legacy-certs": "Vecchie certificazioni",
       "honesty": "Politica di Onestà Accademica",
       "internet": "La Tua presenza su Internet",
       "portfolio": "Impostazioni Portfolio",
-      "privacy": "Impostazioni Privacy",
+      "privacy": "Privacy",
       "personal-info": "Informazioni personali"
     },
     "danger": {
@@ -359,7 +365,7 @@
     },
     "email": {
       "missing": "Non hai un'email associata a questo account.",
-      "heading": "Impostazioni email",
+      "heading": "Email",
       "not-verified": "La tua email non è stata verificata.",
       "check": "Per favore controlla la tua email, o <0>richiedi una nuova email di verifica qui</0>.",
       "current": "Email Attuale",
@@ -386,12 +392,15 @@
     "pending": "Pending",
     "passed": "Passed",
     "failed": "Failed",
+    "in-progress": "In Progress",
+    "denied": "Retake Required",
     "download-header": "Download the freeCodeCamp Exam Environment App",
     "explanation": "To earn a certification, you must take an exam to test your understanding of the material you have learned. Taking the exam is absolutely free of charge.",
     "version": "The latest version of our app is: {{version}}.",
     "download-details": "Manually download the app",
     "unable-to-detect-os": "We were unable to detect your operating system. Please manually download the app below.",
-    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:"
+    "download-trouble": "If you have trouble downloading the correct version, do not hesitate to contact support:",
+    "open-exam-application": "Open Exam Environment Application"
   },
   "profile": {
     "you-change-privacy": "Se desideri rendere visibile il tuo portfolio a tutti dovrai prima modificare le tue impostazioni sulla privacy. Questa è un'anteprima di come il tuo portfolio apparirà quando sarà reso pubblico.",
@@ -491,7 +500,7 @@
     "download-solution": "Scarica la mia soluzione",
     "download-results": "Scarica i miei risultati",
     "percent-complete": "{{percent}}% completato",
-    "project-complete": "Completati {{completedChallengesInBlock}} di {{totalChallengesInBlock}} progetti di certificazione",
+    "project-complete": "Completed",
     "tried-rsa": "Se hai già provato il metodo <0>Leggi-Cerca-Chiedi</0>, allora puoi chiedere aiuto sul forum freeCodeCamp.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "Ho cercato <0>domande simili che hanno già ricevuto risposta sul forum</0>",
@@ -522,7 +531,9 @@
       "instructions": "Istruzioni",
       "notes": "Note",
       "preview": "Anteprima",
-      "editor": "Editor"
+      "terminal": "Terminal",
+      "editor": "Editor",
+      "interactive-editor": "Interactive Editor"
     },
     "editor-alerts": {
       "tab-trapped": "Premendo tab ora potrai inserire il carattere tab",
@@ -678,6 +689,7 @@
       "lab": "Lab",
       "review": "Review",
       "quiz": "Quiz",
+      "cert-project": "Certification Project",
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
@@ -859,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Sembra che tu sia offline, i tuoi progressi potrebbero non essere salvati",
     "server-offline": "Il server non può essere raggiunto e i tuoi progressi potrebbero non essere salvati. Contatta il <0>supporto</0> se questo messaggio persiste",
     "unsubscribed": "Hai annullato correttamente l'iscrizione",
@@ -885,12 +899,14 @@
     "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
     "fsd-b-benefit-2-description": "Prove your skills with an official, verifiable certification.",
     "fsd-b-benefit-3-title": "500+ Exercises",
-    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice."
+    "fsd-b-benefit-3-description": "Solidify your knowledge with plenty of practice.",
+    "or": "OR"
   },
   "icons": {
     "gold-cup": "Coppa d'Oro",
@@ -918,7 +934,7 @@
     "linkedin": "Link al LinkedIn di {{username}}",
     "github": "Link al GitHub di {{username}}",
     "website": "Link al sito web di {{username}}",
-    "twitter": "Link al Twitter di {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Va alla prima pagina",
@@ -951,7 +967,10 @@
     "editor-a11y-on-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Command+E to disable or press Option+F1 for more options.",
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
-    "not-available": "Not available"
+    "not-available": "Not available",
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -998,6 +1017,7 @@
     "not-eligible": "Questo utente non è idoneo per le certificazioni freeCodeCamp.org al momento.",
     "profile-private": "{{username}} ha scelto di rendere il proprio profilo privato. Dovrà rendere il proprio profilo pubblico per rendere la propria certificazione visibile agli altri.",
     "certs-private": "{{username}} ha scelto di rendere privato il suo portfolio. Dovrà renderlo pubblico affinché altri possano vedere la sua certificazione.",
+    "certs-claimable": "You can now claim the {{certName}} certification! Visit your settings page to claim your certification.",
     "not-honest": "{{username}} non ha ancora accettato il nostro Impegno di Onestà Accademica.",
     "user-not-certified": "Sembra che l'utente {{username}} non sia certificato {{cert}}",
     "invalid-challenge": "Questa non sembra essere un invio valido per la sfida",
@@ -1065,7 +1085,8 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
@@ -1095,6 +1116,7 @@
     "issued": "Emesso",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
@@ -1184,20 +1206,20 @@
       }
     },
     "title": {
-      "responsive-web-design": "Responsive Web Design",
-      "responsive-web-design-cert": "Responsive Web Design Certification",
-      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures Certification",
-      "javascript-algorithms-and-data-structures-v8": "JavaScript Algorithms and Data Structures",
-      "javascript-algorithms-and-data-structures-v8-cert": "JavaScript Algorithms and Data Structures Certification",
-      "front-end-development-libraries": "Front End Development Libraries",
-      "front-end-development-libraries-cert": "Front End Development Libraries Certification",
-      "data-visualization": "Data Visualization",
-      "data-visualization-cert": "Data Visualization Certification",
-      "relational-database-v8": "Relational Database",
-      "relational-database-v8-cert": "Relational Database Certification",
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-cert": "Back End Development and APIs Certification",
+      "responsive-web-design": "Legacy Responsive Web Design V8",
+      "responsive-web-design-cert": "Legacy Responsive Web Design V8 Certification",
+      "javascript-algorithms-and-data-structures": "Legacy JavaScript Algorithms and Data Structures V7",
+      "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
+      "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
+      "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
+      "front-end-development-libraries": "Front End Development Libraries V8",
+      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "data-visualization": "Data Visualization V8",
+      "data-visualization-cert": "Data Visualization V8 Certification",
+      "relational-database-v8": "Relational Database V8",
+      "relational-database-v8-cert": "Relational Database V8 Certification",
+      "back-end-development-and-apis": "Back End Development and APIs V8",
+      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
       "quality-assurance-v7": "Quality Assurance",
       "quality-assurance-v7-cert": "Quality Assurance Certification",
       "scientific-computing-with-python-v7": "Scientific Computing with Python",
@@ -1213,9 +1235,21 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1280,12 +1314,18 @@
   "exam-token": {
     "exam-token": "Exam Token",
     "note": "Your exam token is a secret key that allows you to access exams. Do not share this token with anyone.",
-    "invalidation": "If you generate a new token, your old token will be invalidated.",
+    "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
+    "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
-    "error": "There was an error generating your token, please try again in a moment.",
     "your-exam-token": "Your Exam Token is: {{token}}",
+    "error": "There was an error generating your token, please try again in a moment.",
+    "no-token": "It looks like you don't have a valid exam token.",
+    "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
-    "copy-error": "Error copying token to clipboard"
+    "copy-error": "Error copying token to clipboard",
+    "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Scorciatoie da tastiera",
@@ -1338,6 +1378,26 @@
       "exit": "Exit the survey",
       "two-questions": "Congratulazioni per essere arrivato fin qui. Prima di iniziare l'esame, per favore rispondi a queste due brevi domande."
     }
+  },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

@@ -14,11 +14,11 @@ env:
 jobs:
   i18n-upload-client-ui-files:
     name: Client
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
 
       - name: Generate Crowdin Config
         uses: freecodecamp/crowdin-action@main

@@ -1,6 +1,5 @@
 // TODO: enable this, since strings don't make good errors.
 /* eslint-disable @typescript-eslint/only-throw-error */
-/* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentConfig,
@@ -19,6 +18,7 @@ import { type Static } from '@fastify/type-provider-typebox';
 import { omit } from 'lodash-es';
 import * as schemas from '../schemas/index.js';
 import { mapErr } from '../../utils/index.js';
+import { ExamAttemptStatus } from '../schemas/exam-environment-exam-attempt.js';
 import { ERRORS } from './errors.js';
 
 interface CompletedChallengeId {
@@ -64,21 +64,35 @@ export function constructUserExam(
   // Map generated exam to user exam (a.k.a. public exam information for user)
   const userQuestionSets = generatedExam.questionSets.map(gqs => {
     // Get matching question from `exam`, but remove `is_correct` from `exam.questions[].answers[]`
-    const examQuestionSet = exam.questionSets.find(eqs => eqs.id === gqs.id)!;
+    const examQuestionSet = exam.questionSets.find(eqs => eqs.id === gqs.id);
+    if (!examQuestionSet) {
+      throw new Error(
+        `Unreachable. Generated question set id ${gqs.id} not found in exam ${exam.id}.`
+      );
+    }
 
     const { questions } = examQuestionSet;
 
     const userQuestions = gqs.questions.map(gq => {
-      const examQuestion = questions.find(eq => eq.id === gq.id)!;
+      const examQuestion = questions.find(eq => eq.id === gq.id);
+      if (!examQuestion) {
+        throw new Error(
+          `Unreachable. Generated question id ${gq.id} not found in exam question set ${examQuestionSet.id}.`
+        );
+      }
 
       // Remove `isCorrect` from question answers
       const answers = gq.answers.map(generatedAnswerId => {
         const examAnswer = examQuestion.answers.find(
           ea => ea.id === generatedAnswerId
-        )!;
+        );
+        if (!examAnswer) {
+          throw new Error(
+            `Unreachable. Generated answer id ${generatedAnswerId} not found in exam question ${examQuestion.id}.`
+          );
+        }
 
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars
-        const { isCorrect, ...answer } = examAnswer;
+        const { isCorrect: _, ...answer } = examAnswer;
         return answer;
       });
 
@@ -827,7 +841,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.InProgress
       },
       error: null
     };
@@ -854,19 +869,15 @@ export async function constructEnvExamAttempt(
 
   const moderation = maybeMod.data;
 
+  // Attempt has expired, but moderation record does not exist
   if (moderation === null) {
-    const error = {
-      data: { examAttemptId: attempt.id },
-      message:
-        'Unreachable. ExamModeration record should exist for expired attempt'
-    };
-    logger.error(error.data, error.message);
-    fastify.Sentry.captureException(error);
     return {
-      error: {
-        code: 500,
-        data: ERRORS.FCC_ERR_EXAM_ENVIRONMENT(error.message)
-      }
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null,
+        status: ExamAttemptStatus.Expired
+      },
+      error: null
     };
   }
 
@@ -875,7 +886,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.PendingModeration
       },
       error: null
     };
@@ -887,7 +899,8 @@ export async function constructEnvExamAttempt(
     return {
       examEnvironmentExamAttempt: {
         ...omitAttemptReferenceIds(attempt),
-        result: null
+        result: null,
+        status: ExamAttemptStatus.Denied
       },
       error: null
     };
@@ -941,7 +954,8 @@ export async function constructEnvExamAttempt(
 
   const examEnvironmentExamAttempt = {
     ...omitAttemptReferenceIds(attempt),
-    result
+    result,
+    status: ExamAttemptStatus.Approved
   };
   return { error: null, examEnvironmentExamAttempt };
 }
