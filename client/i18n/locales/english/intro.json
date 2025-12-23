@@ -6291,6 +6291,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-countdown": {
+        "title": "Build a Countdown",
+        "intro": ["Build a Countdown", ""]
       }
     }
   },
