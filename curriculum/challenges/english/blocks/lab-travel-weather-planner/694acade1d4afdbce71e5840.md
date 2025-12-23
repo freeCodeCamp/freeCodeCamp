@@ -1,10 +1,8 @@
 ---
 id: 694acade1d4afdbce71e5840
-title: Step 1
-challengeType: 0
-dashedName: step-1
-# demoType can either be 'onClick' or 'onLoad'. If the project or lab doesn't have a preview, delete the property
-demoType: onClick
+title: Build a Travel Weather Planner
+challengeType: 27
+dashedName: build-a-travel-weather-planner
 ---
 
 # --description--
