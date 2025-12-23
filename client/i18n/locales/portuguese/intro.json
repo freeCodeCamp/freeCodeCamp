@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
+    "title": "Certificação A2 de Inglês para Desenvolvedores (Beta)",
     "intro": [
       "Neste currículo de inglês para desenvolvedores, você aprenderá o essencial da comunicação em inglês. O currículo seguirá o nível A2 do Quadro de Referência Comum Europeu (CEFR). Nosso foco é no vocabulário, particularmente útil para desenvolvedores.",
       "A primeira metade do currículo ajudará você a se sentir confortável com a gramática e o uso do inglês. Isso dará a você diversas oportunidades de praticar. Você aprenderá o básico como se apresentar, ter conversas mais simples e discutir seu trabalho.",
@@ -1724,7 +1724,7 @@
         ]
       },
       "en-b1-certification-exam": {
-        "title": "Exame de Certificação de Inglês B1 para Desenvolvedores",
+        "title": "Exame de Certificação B1 de Inglês para Desenvolvedores",
         "intro": [
           "Este exame é necessário para reivindicar a Certificação B1 em Inglês para Desenvolvedores."
         ]
@@ -7442,6 +7442,12 @@
           "Revise os conceitos de bancos de dados relacionais para se preparar para o exame."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "Questionário sobre os módulos principais do NodeJS",
+        "intro": [
+          "Teste o que você aprendeu sobre os módulos principais do Node.js com este questionário."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Exame de Certificação de Bancos de Dados Relacionais",
         "intro": [
@@ -7643,7 +7649,7 @@
       "- Uma seção de revisão com gramática chave e vocabulário."
     ],
     "chapters": {
-      "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao A1 Espanhol Profissional",
+      "es-a1-chapter-welcome-to-a1-professional-spanish": "Bem-vindo ao Espanhol Profissional A1",
       "es-a1-chapter-spanish-fundamentals": "Fundamentos do Espanhol",
       "es-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
       "es-a1-chapter-basic-personal-details": "Detalhes Básicos Pessoais"
@@ -8862,7 +8868,7 @@
     }
   },
   "a2-professional-spanish": {
-    "title": "Certificação Profissional de Espanhol A2 (Beta)",
+    "title": "Certificação de Espanhol Profissional A2 (Beta)",
     "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível para esta seção no momento, uma estará disponível em breve. Enquanto isso, sinta-se à vontade para explorar os cursos que criamos abaixo.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
@@ -8881,7 +8887,7 @@
     }
   },
   "a2-professional-chinese": {
-    "title": "Certificação Profissional de Chinês A2 (Beta)",
+    "title": "Certificação de Chinês Profissional A2 (Beta)",
     "note": "Esta certificação está atualmente em desenvolvimento ativo. Embora não haja uma certificação disponível nesta seção no momento, haverá uma disponível em breve. Enquanto isso, você está convidado a explorar os cursos que criamos abaixo.",
     "intro": ["Introdução ao Modelo"],
     "blocks": {
@@ -8900,7 +8906,7 @@
     }
   },
   "a1-professional-chinese": {
-    "title": "Certificação Profissional de Chinês A1 (Beta)",
+    "title": "Certificação de Chinês Profissional A1 (Beta)",
     "note": "Esta certificação encontra-se em desenvolvimento ativo. No momento, estamos publicando os capítulos introdutórios. Futuros capítulos serão lançados à medida que forem desenvolvidos pela nossa equipe de design instrucional. Assim que todos os capítulos estiverem disponíveis, publicaremos o exame de certificação.",
     "intro": [
       "Neste currículo de Chinês Profissional A1, você aprenderá o essencial da comunicação em chinês. Ele seguirá o nível A1 do Quadro Europeu Comum de Referência (CEFR). Nosso foco será o vocabulário que é particularmente útil para ambientes profissionais.",
@@ -8908,7 +8914,7 @@
       "Cada capítulo inclui centenas de tarefas interativas projetadas para ajudá-lo a dar seus primeiros passos no aprendizado de chinês com confiança."
     ],
     "chapters": {
-      "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao A1 Chinês Profissional",
+      "zh-a1-chapter-welcome-to-a1-professional-chinese": "Bem-vindo ao Chinês Profissional A1",
       "zh-a1-chapter-pinyin": "Pinyin",
       "zh-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
       "zh-a1-chapter-introducing-colleagues-and-family": "Apresentando Colegas e Família",

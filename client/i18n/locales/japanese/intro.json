@@ -7344,6 +7344,12 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Relational Databases Certification Exam",
         "intro": [

@@ -7442,6 +7442,12 @@
           "Revisa los conceptos de bases de datos relacionales para prepararte para el examen."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "Cuestionário sobre los módulos principales de NodeJS",
+        "intro": [
+          "Pon a prueba tus conocimientos sobre los módulos principales de Node.js con este cuestionario."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Examen de Certificación en Bases de Datos Relacionales",
         "intro": [
