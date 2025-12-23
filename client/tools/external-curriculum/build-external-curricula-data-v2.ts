@@ -260,6 +260,16 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
       title: intros[SuperBlocks.CollegeAlgebraPy].title
     },
     {
+      dashedName: SuperBlocks.RespWebDesign,
+      public: true,
+      title: intros[SuperBlocks.RespWebDesign].title
+    },
+    {
+      dashedName: SuperBlocks.JsAlgoDataStruct,
+      public: false,
+      title: intros[SuperBlocks.JsAlgoDataStruct].title
+    },
+    {
       dashedName: SuperBlocks.PythonForEverybody,
       public: true,
       title: intros[SuperBlocks.PythonForEverybody].title
