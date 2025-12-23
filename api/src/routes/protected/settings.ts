@@ -523,22 +523,42 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const pictureIsValid = isValidPictureUrl(req.body.picture);
-      if (!pictureIsValid) {
-        logger.warn(`Invalid picture URL: ${req.body.picture}`);
-        void reply.code(400);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      
+      // Only validate picture if it's being changed
+      if (req.body.picture !== undefined) {
+        const currentUser = await fastify.prisma.user.findUnique({
+          where: { id: req.user?.id },
+          select: { picture: true }
+        });
+        
+        // Only validate if the picture is actually different
+        if (req.body.picture !== currentUser?.picture) {
+          const pictureIsValid = isValidPictureUrl(req.body.picture);
+          if (!pictureIsValid) {
+            logger.warn(`Invalid picture URL: ${req.body.picture}`);
+            void reply.code(400);
+            return { message: 'flash.wrong-updating', type: 'danger' } as const;
+          }
+        }
       }
 
       try {
+        // Build update data object, only including fields that are provided
+        const updateData: {
+          about?: string;
+          name?: string;
+          location?: string;
+          picture?: string;
+        } = {};
+        
+        if (req.body.about !== undefined) updateData.about = req.body.about;
+        if (req.body.name !== undefined) updateData.name = req.body.name;
+        if (req.body.location !== undefined) updateData.location = req.body.location;
+        if (req.body.picture !== undefined) updateData.picture = req.body.picture;
+
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
-          data: {
-            about: req.body.about,
-            name: req.body.name,
-            location: req.body.location,
-            picture: req.body.picture
-          }
+          data: updateData
         });
 
         return {
