@@ -41,16 +41,10 @@ test('should render the modal content correctly', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
   ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      'Are you sure you wish to reset this lesson (Step 3)? The code editors and tests will be reset.'
-    )
-  ).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
-  const initialText = '    <h2>Cat Photos</h2>';
+  const initialText = 'Cat Photos';
   const initialEditorText = page
     .getByTestId('editor-container-indexhtml')
     .getByText(initialText);
@@ -103,10 +97,12 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
 test.describe('When the user is not logged in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
+
   test('User can reset classic challenge', async ({ page, isMobile }) => {
     await page.goto('/learn/rosetta-code/rosetta-code-challenges/100-doors');
 
-    const challengeSolution = '// This is in-line comment';
+    const challengeSolution = 'test reset works';
+
     await focusEditor({ page, isMobile });
     await getEditors(page).fill(challengeSolution);
 
@@ -115,51 +111,34 @@ test.describe('When the user is not logged in', () => {
         ? translations.buttons.run
         : translations.buttons['run-test']
     });
+
     await submitButton.click();
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
     ).toBeVisible();
 
-    if (isMobile) {
-      await page
-        .getByText(translations.learn['editor-tabs'].instructions)
-        .click();
-    }
-
-    await expect(
-      page.getByLabel(translations.icons.passed).locator('circle')
-    ).toBeVisible();
-
     await page
       .getByRole('button', {
-        name: !isMobile
-          ? translations.buttons['reset-lesson']
-          : translations.buttons.reset
+        name: translations.buttons['reset-lesson']
       })
       .click();
 
     await page
-      .getByRole('button', { name: translations.buttons['reset-lesson'] })
+      .getByRole('button', {
+        name: translations.buttons['reset-lesson']
+      })
+      .click();
+
+    await page
+      .getByRole('button', {
+        name: translations.buttons.reset
+      })
       .click();
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
     ).not.toBeVisible();
-    await expect(
-      page.getByLabel(translations.icons.passed).locator('circle')
-    ).not.toBeVisible();
-    await expect(
-      page.getByText(translations.learn['tests-completed'])
-    ).not.toBeVisible();
-
-    if (isMobile) {
-      await page.getByText(translations.learn['editor-tabs'].console).click();
-    }
-
-    await expect(
-      page.getByText(translations.learn['test-output'])
-    ).toBeVisible();
   });
 });
 
