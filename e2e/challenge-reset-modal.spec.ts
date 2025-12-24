@@ -130,7 +130,11 @@ test.describe('When the user is not logged in', () => {
       })
       .click();
 
-    await page
+    const resetDialog = page.getByRole('dialog', {
+      name: translations.learn.reset
+    });
+
+    await resetDialog
       .getByRole('button', {
         name: translations.buttons.reset
       })
