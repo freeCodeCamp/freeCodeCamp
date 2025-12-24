@@ -7828,7 +7828,7 @@
         ]
       },
       "workshop-html-video-player": {
-        "title": "Build a HTML Video Player",
+        "title": "Build an HTML Video Player",
         "intro": [
           "In this workshop, you'll use HTML to create a basic video player.",
           "This project will cover the <code>video</code> element, the video player setup, and more."
