@@ -13,13 +13,20 @@ step 1 instructions
 
 Test 1
 
-```js
-
+```py
+print(test)
 ```
+
+# --seed--
 
 ## --seed-contents--
+
 ```py
+print(test)
 ```
+
 # --solutions--
+
 ```py
+print(test)
 ```
