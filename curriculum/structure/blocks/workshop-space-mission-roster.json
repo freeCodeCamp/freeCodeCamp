@@ -1,0 +1,11 @@
+{
+  "name": "Build a Space Mission Roster",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-space-mission-roster",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "694c40d86fe6a78d20b6559c", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
