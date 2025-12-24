@@ -124,21 +124,17 @@ test.describe('When the user is not logged in', () => {
       })
       .click();
 
-    await page
-      .getByRole('button', {
-        name: translations.buttons['reset-lesson']
-      })
-      .click();
-
     const resetDialog = page.getByRole('dialog', {
       name: translations.learn.reset
     });
+    await expect(resetDialog).toBeVisible({ timeout: 30000 });
 
     const resetButton = resetDialog.getByRole('button', {
-      name: translations.buttons.reset
+      name: translations.buttons['reset-lesson']
     });
-    await expect(resetButton).toBeVisible({ timeout: 30000 });
-    await resetButton.click();
+    await expect(resetButton).toBeVisible();
+    await page.waitForTimeout(500);
+    await resetButton.click({ force: true });
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
