@@ -54,6 +54,9 @@ assert.match(linkHrefValue, /^(\.\/)?styles\.css$/);
   </head>
 --fcc-editable-region--  
   <body>
+    <header>
+      <h1>Colored Boxes Layout</h1>
+    </header>
   </body>
 </html>
 ```
