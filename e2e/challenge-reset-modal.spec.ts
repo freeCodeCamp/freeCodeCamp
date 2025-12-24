@@ -134,11 +134,11 @@ test.describe('When the user is not logged in', () => {
       name: translations.learn.reset
     });
 
-    await resetDialog
-      .getByRole('button', {
-        name: translations.buttons.reset
-      })
-      .click();
+    const resetButton = resetDialog.getByRole('button', {
+      name: translations.buttons.reset
+    });
+    await expect(resetButton).toBeVisible({ timeout: 30000 });
+    await resetButton.click();
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
