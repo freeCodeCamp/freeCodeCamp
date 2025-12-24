@@ -1,0 +1,15 @@
+{
+  "name": "Build a JavaScript Trivia Bot",
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-javascript-trivia-bot",
+  "challengeOrder": [
+    {
+      "id": "66ed41f912d0bb1dc62da5dd",
+      "title": "Build a JavaScript Trivia Bot"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

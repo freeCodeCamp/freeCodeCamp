@@ -1,0 +1,166 @@
+{
+  "chapters": [
+    {
+      "dashedName": "python",
+      "modules": [
+        {
+          "dashedName": "python-basics",
+          "blocks": [
+            "lecture-introduction-to-python",
+            "lecture-understanding-variables-and-data-types",
+            "lecture-introduction-to-python-strings",
+            "lecture-numbers-and-mathematical-operations",
+            "lecture-booleans-and-conditionals",
+            "lecture-understanding-functions-and-scope",
+            "workshop-caesar-cipher",
+            "lab-rpg-character",
+            "review-python-basics",
+            "quiz-python-basics"
+          ]
+        },
+        {
+          "dashedName": "python-loops-and-sequences",
+          "blocks": [
+            "lecture-working-with-loops-and-sequences",
+            "workshop-pin-extractor",
+            "lab-number-pattern-generator",
+            "review-loops-and-sequences",
+            "quiz-loops-and-sequences"
+          ]
+        },
+        {
+          "dashedName": "python-dictionaries-and-sets",
+          "blocks": [
+            "lecture-working-with-dictionaries-and-sets",
+            "lecture-working-with-modules",
+            "workshop-medical-data-validator",
+            "review-dictionaries-and-sets",
+            "quiz-dictionaries-and-sets"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-user-configuration-manager",
+          "blocks": ["lab-user-configuration-manager"]
+        },
+        {
+          "dashedName": "python-error-handling",
+          "blocks": [
+            "lecture-understanding-error-handling",
+            "lab-isbn-validator",
+            "review-error-handling",
+            "quiz-error-handling"
+          ]
+        },
+        {
+          "dashedName": "python-classes-and-objects",
+          "blocks": [
+            "lecture-classes-and-objects",
+            "workshop-musical-instrument-inventory",
+            "lab-planet-class",
+            "workshop-email-simulator",
+            "review-classes-and-objects",
+            "quiz-classes-and-objects"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-budget-app",
+          "blocks": ["lab-budget-app"]
+        },
+        {
+          "dashedName": "python-object-oriented-programming",
+          "blocks": [
+            "lecture-understanding-object-oriented-programming-and-encapsulation",
+            "workshop-salary-tracker",
+            "lab-game-character-stats",
+            "lecture-understanding-inheritance-and-polymorphism",
+            "workshop-media-catalogue",
+            "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
+            "lab-player-interface",
+            "review-object-oriented-programming",
+            "quiz-object-oriented-programming"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-polygon-area-calculator",
+          "blocks": ["lab-polygon-area-calculator"]
+        },
+        {
+          "dashedName": "python-linear-data-structures",
+          "blocks": [
+            "lecture-working-with-common-data-structures",
+            "workshop-linked-list-class",
+            "review-data-structures",
+            "quiz-data-structures"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-hash-table",
+          "blocks": ["lab-hash-table"]
+        },
+        {
+          "dashedName": "python-algorithms",
+          "blocks": [
+            "lecture-searching-and-sorting-algorithms",
+            "workshop-binary-search",
+            "lab-bisection-method",
+            "workshop-merge-sort",
+            "lab-quicksort",
+            "lab-selection-sort",
+            "lab-luhn-algorithm",
+            "review-searching-and-sorting-algorithms",
+            "quiz-searching-and-sorting-algorithms"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-tower-of-hanoi",
+          "blocks": ["lab-tower-of-hanoi"]
+        },
+        {
+          "dashedName": "python-graphs-and-trees",
+          "blocks": [
+            "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
+            "lab-adjacency-list-to-matrix-converter",
+            "workshop-breadth-first-search",
+            "lab-depth-first-search",
+            "lab-n-queens-problem",
+            "review-graphs-and-trees",
+            "quiz-graphs-and-trees"
+          ]
+        },
+        {
+          "dashedName": "python-dynamic-programming",
+          "blocks": [
+            "lecture-understanding-dynamic-programming",
+            "lab-nth-fibonacci-number",
+            "review-dynamic-programming",
+            "quiz-dynamic-programming"
+          ]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-python",
+          "blocks": ["review-python"]
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "python-certification-exam",
+      "comingSoon": false,
+      "modules": [
+        {
+          "comingSoon": false,
+          "dashedName": "python-certification-exam",
+          "blocks": ["exam-python-certification"]
+        }
+      ]
+    }
+  ]
+}

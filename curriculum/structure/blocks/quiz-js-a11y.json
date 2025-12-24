@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript and Accessibility Quiz",
+  "isUpcomingChange": false,
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "dashedName": "quiz-js-a11y",
+  "challengeOrder": [
+    {
+      "id": "68376949899fcbad3c9cac23",
+      "title": "JavaScript and Accessibility Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

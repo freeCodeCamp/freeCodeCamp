@@ -1,0 +1,21 @@
+{
+  "name": "Debug a Coding Journey Blog Page",
+  "dashedName": "workshop-debug-coding-journey-blog-page",
+  "helpCategory": "HTML-CSS",
+  "blockLabel": "workshop",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68c2fb153760d075321c5da3", "title": "Step 1" },
+    { "id": "68c3144fc395d681180cde15", "title": "Step 2" },
+    { "id": "68c31763232a4582366eb6fd", "title": "Step 3" },
+    { "id": "68c318d9c3b3f382f93d1fd1", "title": "Step 4" },
+    { "id": "68c31a762717d583d90ad31e", "title": "Step 5" },
+    { "id": "68c31c946d73bf84b108c6fc", "title": "Step 6" },
+    { "id": "68c31dd917c3ae855e8728c7", "title": "Step 7" },
+    { "id": "68c31f3a5de8bf861f616dc8", "title": "Step 8" },
+    { "id": "68c3215e6826ca00a2d892fc", "title": "Step 9" }
+  ],
+  "isUpcomingChange": false,
+  "hasEditableBoundaries": true,
+  "usesMultifileEditor": true
+}

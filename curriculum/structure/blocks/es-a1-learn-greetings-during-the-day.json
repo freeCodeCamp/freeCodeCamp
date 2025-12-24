@@ -1,0 +1,31 @@
+{
+  "name": "Greetings During the Day",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-learn-greetings-during-the-day",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "blockLabel": "learn",
+  "challengeOrder": [
+    { "id": "68c488abd71a3e27190965e0", "title": "Task 1" },
+    { "id": "68c84d44d91406c37b3ad73f", "title": "Task 2" },
+    { "id": "68c88a1c3f01ed15c7ca6c83", "title": "Task 3" },
+    { "id": "68c8902d3560395c800ddff5", "title": "Task 4" },
+    { "id": "68c8913e317c32689cfaf3c4", "title": "Task 5" },
+    { "id": "68c8924a2a6a5773c6d1a06d", "title": "Task 6" },
+    { "id": "68c892f78e9dd27b55a0dc18", "title": "Task 7" },
+    { "id": "68c893dd7bbd1e85869d0e5b", "title": "Task 8" },
+    { "id": "68c896d45893e91d602f0373", "title": "Task 9" },
+    { "id": "68c8974b9d5ddd2334b965c0", "title": "Task 10" },
+    { "id": "68c897a539d3dd283ffa3713", "title": "Task 11" },
+    { "id": "68c897fe7948d82ccadf1f3b", "title": "Task 12" },
+    { "id": "68c8989990f68b3450a32db9", "title": "Task 13" },
+    { "id": "68c8992767e7eb3ae4b4e5fe", "title": "Task 14" },
+    { "id": "68c89979e06c663f1b4fff0d", "title": "Task 15" },
+    { "id": "68c89b3cd3083152e0f23eb0", "title": "Task 16" },
+    { "id": "68c89c988b6c9f6207ad9cac", "title": "Task 17" },
+    { "id": "68c89cd5229c18653d7d66be", "title": "Task 18" },
+    { "id": "68c89d073ef3c56824a1c783", "title": "Task 19" },
+    { "id": "68de9ae56303f3834466ce1c", "title": "Task 20" },
+    { "id": "68c89d77ea2edc6d84388cb7", "title": "Task 21" }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "name": "TypeScript Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-typescript",
+  "challengeOrder": [
+    { "id": "66f1ae758b77cfc3e4da6151", "title": "TypeScript Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

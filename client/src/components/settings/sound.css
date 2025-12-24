@@ -1,0 +1,39 @@
+.soundbar {
+  margin: 1em 0 2em;
+  width: 100%;
+  height: 25px;
+  background: var(--quaternary-background);
+}
+
+input[type='range'] {
+  appearance: none;
+  overflow: hidden;
+  border: 2px solid var(--secondary-color);
+}
+
+/* Special styling for WebKit/Blink */
+input[type='range']::-webkit-slider-thumb {
+  box-shadow: -2000px 0 0 2000px var(--gray-45);
+  -webkit-appearance: none;
+  border: 2px solid var(--primary-color);
+  height: 25px;
+  width: 16px;
+  background: var(--primary-background);
+  cursor: pointer;
+}
+
+/* All the same stuff for Firefox */
+input[type='range']::-moz-range-thumb {
+  box-shadow: -2000px 0 0 2000px var(--gray-45);
+  border: 2px solid var(--primary-color);
+  border-radius: 0;
+  height: 25px;
+  width: 16px;
+  background: var(--primary-background);
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-progress {
+  background: var(--gray-90);
+  height: 25px;
+}

@@ -1,0 +1,56 @@
+# -------------------------------------------------
+# CODEOWNERS - For automated review request for
+# high impact files.
+#
+# Important: The order in this file cascades.
+#
+# https://help.github.com/articles/about-codeowners
+# -------------------------------------------------
+
+# -------------------------------------------------
+# All files are owned by dev team
+# -------------------------------------------------
+
+* @freecodecamp/dev-team
+
+# --- Owned by none (negate rule above) ---
+
+*.md
+package.json
+pnpm-lock.yaml
+
+# -------------------------------------------------
+# All files in the root are owned by dev team
+# -------------------------------------------------
+
+/* @freecodecamp/dev-team
+
+# --- Owned by none (negate rule above) ---
+
+/package.json
+/pnpm-lock.yaml
+
+# -------------------------------------------------
+# Files that need attention from Curriculum team
+# -------------------------------------------------
+
+/curriculum/challenges/english/* @freecodecamp/curriculum
+/curriculum/challenges/structure/* @freecodecamp/dev-team @freecodecamp/curriculum
+/client/i18n/locales/english/* @freecodecamp/dev-team @freecodecamp/curriculum
+/client/src/pages/learn/* @freecodecamp/dev-team @freecodecamp/curriculum
+
+# -------------------------------------------------
+# Files that need attention from i18n & dev team
+# -------------------------------------------------
+
+# i18n Quotes
+**/motivation.json @freeCodeCamp/dev-team @freeCodeCamp/i18n
+
+
+# -------------------------------------------------
+# Files that need attention from the mobile team
+# -------------------------------------------------
+
+/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/tools/external-curriculum/* @freeCodeCamp/dev-team @freeCodeCamp/mobile

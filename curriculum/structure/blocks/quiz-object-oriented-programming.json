@@ -1,0 +1,14 @@
+{
+  "name": "Object Oriented Programming Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-object-oriented-programming",
+  "challengeOrder": [
+    {
+      "id": "67f4131db7777346b1b3dc6f",
+      "title": "Object Oriented Programming Quiz"
+    }
+  ],
+  "helpCategory": "Python"
+}

@@ -1,0 +1,459 @@
+---
+id: 66edd3b3096349f06cf688bb
+title: JavaScript Audio and Video Quiz
+challengeType: 8
+dashedName: quiz-javascript-audio-and-video
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `Audio()` constructor in JavaScript?
+
+#### --distractors--
+
+Create a new audio file.
+
+---
+
+Play an existing audio file.
+
+---
+
+Modify audio files.
+
+#### --answer--
+
+Create a new `audio` element.
+
+### --question--
+
+#### --text--
+
+Which method is used to begin playback of an `audio` or `video` element?
+
+#### --distractors--
+
+`start()`
+
+---
+
+`begin()`
+
+---
+
+`resume()`
+
+#### --answer--
+
+`play()`
+
+### --question--
+
+#### --text--
+
+What is the difference between `pause()` and `play()` methods for media elements?
+
+#### --distractors--
+
+`pause()` returns a Promise while `play()` does not.
+
+---
+
+`pause()` cannot be resumed while `play()` can start from any position.
+
+---
+
+`pause()` automatically resets to the beginning while `play()` starts from where the audio was paused.
+
+#### --answer--
+
+`pause()` stops playback but maintains the current position while `play()` starts playback.
+
+### --question--
+
+#### --text--
+
+Which audio format has the widest browser support?
+
+#### --distractors--
+
+`FLAC`
+
+---
+
+`OGG`
+
+---
+
+`WAV`
+
+#### --answer--
+
+`MP3`
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `source` element within an `audio` or `video` element?
+
+#### --distractors--
+
+Specify the volume of the media.
+
+---
+
+Add subtitles to the media.
+
+---
+
+Link to an external audio processor.
+
+#### --answer--
+
+Specify multiple media sources for different formats.
+
+### --question--
+
+#### --text--
+
+What are the two possible MIME types an MP4 format can have?
+
+#### --distractors--
+
+`mp4/audio` and `mp4/video`
+
+---
+
+`audio/mpeg4` and `video/mpeg4`
+
+---
+
+`mp4/mpeg` and `mp4/stream`
+
+#### --answer--
+
+`audio/mp4` and `video/mp4`
+
+### --question--
+
+#### --text--
+
+What does a codec do in the context of audio and video?
+
+#### --distractors--
+
+Increases the volume of the media.
+
+---
+
+Changes the file format of the media.
+
+---
+
+Encrypts the media for secure transmission.
+
+#### --answer--
+
+Converts media between analogue and digital formats.
+
+### --question--
+
+#### --text--
+
+Which API provides a way to create, process, and analyze audio in web applications?
+
+#### --distractors--
+
+Audio Processing API.
+
+---
+
+Sound Manipulation API.
+
+---
+
+Media Stream API.
+
+#### --answer--
+
+Web Audio API.
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `getUserMedia()` method?
+
+#### --distractors--
+
+Authenticate users with a media service.
+
+---
+
+Retrieve user preferences for media playback.
+
+---
+
+Download media files to the user's device.
+
+#### --answer--
+
+Access the user's camera and/or microphone.
+
+### --question--
+
+#### --text--
+
+Which property of the `HTMLMediaElement` interface represents the current playback time?
+
+#### --distractors--
+
+`time`
+
+---
+
+`playbackPosition`
+
+---
+
+`currentPosition`
+
+#### --answer--
+
+`currentTime`
+
+### --question--
+
+#### --text--
+
+What does the following code snippet do?
+
+```javascript
+const audio = new Audio('song.mp3');
+audio.loop = true;
+```
+
+#### --distractors--
+
+Plays the audio file once.
+
+---
+
+Increases the volume of the audio.
+
+---
+
+Pauses the audio after one loop.
+
+#### --answer--
+
+Sets the audio to repeat indefinitely.
+
+### --question--
+
+#### --text--
+
+What is the full meaning of MIME?
+
+#### --distractors--
+
+Multiple Internet Message Extensions
+
+---
+
+Mail Internet Multimedia Extensions
+
+---
+
+Multimedia Internet Mail Extensions
+
+#### --answer--
+
+Multipurpose Internet Mail Extensions
+
+### --question--
+
+#### --text--
+
+What does the `canPlayType()` method help you do? 
+
+#### --distractors--
+
+Check if audio is currently playing in the browser in a specific format.
+
+---
+
+Verify if a media file exists in the browser's cache and accessible for playback.
+
+---
+
+Test if an audio element has controls enabled and whether the user has appropriate permissions to interact with it.
+
+#### --answer--
+
+Determine if a browser is likely to be able to play your specific audio format.
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT a valid event of the `HTMLMediaElement` API?
+
+#### --distractors--
+
+`waiting`
+
+---
+
+`canplay`
+
+---
+
+`ended`
+
+#### --answer--
+
+`stopped`
+
+### --question--
+
+#### --text--
+
+What `HTMLMediaElement` event fires when playback is paused due to data buffering?
+
+#### --distractors--
+
+`stopped`
+
+---
+
+`pause`
+
+---
+
+`buffering`
+
+#### --answer--
+
+`waiting`
+
+### --question--
+
+#### --text--
+
+Which Web Audio API interface is used to represent an audio-processing graph?
+
+#### --distractors--
+
+`AudioNode`
+
+---
+
+`AudioBuffer`
+
+---
+
+`AudioListener`
+
+#### --answer--
+
+`AudioContext`
+
+### --question--
+
+#### --text--
+
+What is the purpose of the Media Source Extensions API?
+
+#### --distractors--
+
+Add visual effects to video.
+
+---
+
+Convert between different media formats.
+
+---
+
+Enable JavaScript to synchronize multiple audio tracks.
+
+#### --answer--
+
+It lets you directly pass a user's webcam feed to a video element
+
+### --question--
+
+#### --text--
+
+When is the `ended` event fired?
+
+#### --distractors--
+
+When the media source is changed.
+
+---
+
+When the `pause()` method is called.
+
+---
+
+When the media is manually stopped.
+
+#### --answer--
+
+When the end of the media has been reached.
+
+### --question--
+
+#### --text--
+
+How is the Screen Capture API exposed?
+
+#### --distractors--
+
+Through the `window.screenCapture` interface
+
+---
+
+By using the `navigator.capture` property
+
+---
+
+By using the `captureScreen()` method
+
+#### --answer--
+
+By calling the `getDisplayMedia()` method.
+
+### --question--
+
+#### --text--
+
+What is the WMV format associated with?
+
+#### --distractors--
+
+Wide Media Video
+
+---
+
+World Media Video
+
+---
+
+Web Media Player
+
+#### --answer--
+
+Windows Media Player

@@ -1,0 +1,11 @@
+{
+  "name": "CSS Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-css",
+  "challengeOrder": [
+    { "id": "671a9a0a140c2b9d6a75629f", "title": "CSS Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

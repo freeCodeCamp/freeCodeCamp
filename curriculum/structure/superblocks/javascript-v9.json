@@ -1,0 +1,339 @@
+{
+  "chapters": [
+    {
+      "dashedName": "javascript",
+      "modules": [
+        {
+          "dashedName": "javascript-variables-and-strings",
+          "blocks": [
+            "lecture-introduction-to-javascript",
+            "lecture-introduction-to-strings",
+            "lecture-understanding-code-clarity",
+            "workshop-greeting-bot",
+            "lab-javascript-trivia-bot",
+            "lab-sentence-maker",
+            "lecture-working-with-data-types",
+            "review-javascript-variables-and-data-types",
+            "quiz-javascript-variables-and-data-types",
+            "lecture-working-with-strings-in-javascript",
+            "workshop-teacher-chatbot",
+            "lecture-working-with-string-character-methods",
+            "lecture-working-with-string-search-and-slice-methods",
+            "workshop-string-inspector",
+            "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
+            "lecture-working-with-string-modification-methods",
+            "workshop-string-transformer",
+            "review-javascript-strings",
+            "quiz-javascript-strings"
+          ]
+        },
+        {
+          "dashedName": "javascript-booleans-and-numbers",
+          "blocks": [
+            "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
+            "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
+            "lecture-working-with-comparison-and-boolean-operators",
+            "workshop-logic-checker-app",
+            "lecture-working-with-unary-and-bitwise-operators",
+            "lecture-working-with-conditional-logic-and-math-methods",
+            "workshop-mathbot",
+            "lab-fortune-teller",
+            "lecture-working-with-numbers-and-common-number-methods",
+            "review-javascript-math",
+            "quiz-javascript-math",
+            "lecture-understanding-comparisons-and-conditionals",
+            "review-javascript-comparisons-and-conditionals",
+            "quiz-javascript-comparisons-and-conditionals"
+          ]
+        },
+        {
+          "dashedName": "javascript-functions",
+          "blocks": [
+            "lecture-working-with-functions",
+            "workshop-calculator",
+            "lab-boolean-check",
+            "lab-email-masker",
+            "workshop-loan-qualification-checker",
+            "lab-celsius-to-fahrenheit-converter",
+            "lab-counting-cards",
+            "lab-leap-year-calculator",
+            "lab-truncate-string",
+            "lab-string-ending-checker",
+            "review-javascript-functions",
+            "quiz-javascript-functions"
+          ]
+        },
+        {
+          "dashedName": "javascript-arrays",
+          "blocks": [
+            "lecture-working-with-arrays",
+            "workshop-shopping-list",
+            "lab-lunch-picker-program",
+            "lab-golf-score-translator",
+            "lecture-working-with-common-array-methods",
+            "review-javascript-arrays",
+            "quiz-javascript-arrays"
+          ]
+        },
+        {
+          "dashedName": "javascript-objects",
+          "blocks": [
+            "lecture-introduction-to-javascript-objects-and-their-properties",
+            "lecture-working-with-json",
+            "lecture-working-with-optional-chaining-and-object-destructuring",
+            "workshop-recipe-tracker",
+            "lab-quiz-game",
+            "lab-record-collection",
+            "review-javascript-objects",
+            "quiz-javascript-objects"
+          ]
+        },
+        {
+          "dashedName": "javascript-loops",
+          "blocks": [
+            "lecture-working-with-loops",
+            "workshop-sentence-analyzer",
+            "lab-longest-word-in-a-string",
+            "lab-factorial-calculator",
+            "lab-mutations",
+            "lab-chunky-monkey",
+            "lab-profile-lookup",
+            "lab-repeat-a-string",
+            "lab-missing-letter-detector",
+            "review-javascript-loops",
+            "quiz-javascript-loops"
+          ]
+        },
+        {
+          "dashedName": "review-javascript-fundamentals",
+          "blocks": [
+            "lecture-working-with-types-and-objects",
+            "lecture-working-with-arrays-variables-and-naming-practices",
+            "lecture-working-with-code-quality-and-execution-concepts",
+            "lab-reverse-a-string",
+            "lab-largest-number-finder",
+            "lab-first-element-finder",
+            "lab-slice-and-splice",
+            "lab-pyramid-generator",
+            "lab-gradebook-app",
+            "lecture-the-var-keyword-and-hoisting",
+            "lab-title-case-converter",
+            "lab-falsy-remover",
+            "lab-inventory-management-program",
+            "lecture-understanding-modules-imports-and-exports",
+            "lecture-working-with-the-arguments-object-and-rest-parameters",
+            "lab-unique-sorted-union",
+            "lab-password-generator",
+            "lab-sum-all-numbers-algorithm",
+            "lab-dna-pair-generator",
+            "lab-html-entitiy-converter",
+            "lab-odd-fibonacci-sum-calculator",
+            "lab-element-skipper",
+            "review-javascript-fundamentals",
+            "quiz-javascript-fundamentals"
+          ]
+        },
+        {
+          "dashedName": "higher-order-functions-and-callbacks",
+          "blocks": [
+            "lecture-working-with-higher-order-functions-and-callbacks",
+            "workshop-library-manager",
+            "lab-book-organizer",
+            "lab-sorted-index-finder",
+            "lab-symmetric-difference",
+            "lab-value-remover-function",
+            "lab-matching-object-filter",
+            "lab-prime-number-sum-calculator",
+            "lab-range-based-lcm-calculator",
+            "lab-deep-flattening-tool",
+            "lab-all-true-property-validator",
+            "review-javascript-higher-order-functions",
+            "quiz-javascript-higher-order-functions"
+          ]
+        },
+        {
+          "dashedName": "dom-manipulation-and-events",
+          "blocks": [
+            "lecture-working-with-the-dom-click-events-and-web-apis",
+            "workshop-storytelling-app",
+            "workshop-emoji-reactor",
+            "lab-favorite-icon-toggler",
+            "lecture-understanding-the-event-object-and-event-delegation",
+            "workshop-music-instrument-filter",
+            "lab-real-time-counter",
+            "lab-lightbox-viewer",
+            "workshop-rps-game",
+            "lab-football-team-cards",
+            "review-dom-manipulation-and-click-events-with-javascript",
+            "quiz-dom-manipulation-and-click-event-with-javascript"
+          ]
+        },
+        {
+          "dashedName": "js-a11y",
+          "blocks": [
+            "lecture-understanding-aria-expanded-aria-live-and-common-aria-states",
+            "workshop-planets-tablist",
+            "workshop-note-taking-app",
+            "lab-theme-switcher",
+            "review-js-a11y",
+            "quiz-js-a11y"
+          ]
+        },
+        {
+          "dashedName": "debugging-javascript",
+          "blocks": [
+            "lecture-debugging-techniques",
+            "lab-random-background-color-changer",
+            "review-debugging-javascript",
+            "quiz-debugging-javascript"
+          ]
+        },
+        {
+          "dashedName": "basic-regex",
+          "blocks": [
+            "lecture-working-with-regular-expressions",
+            "workshop-spam-filter",
+            "lab-palindrome-checker",
+            "lab-regex-sandbox",
+            "lab-spinal-case-converter",
+            "lab-pig-latin",
+            "lab-smart-word-replacement",
+            "review-javascript-regular-expressions",
+            "quiz-javascript-regular-expressions"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-markdown-to-html-converter",
+          "blocks": ["lab-markdown-to-html-converter"]
+        },
+        {
+          "dashedName": "form-validation",
+          "blocks": [
+            "lecture-understanding-form-validation",
+            "workshop-calorie-counter",
+            "lab-customer-complaint-form",
+            "review-form-validation-with-javascript",
+            "quiz-form-validation-with-javascript"
+          ]
+        },
+        {
+          "dashedName": "javascript-dates",
+          "blocks": [
+            "lecture-working-with-dates",
+            "lab-date-conversion",
+            "review-javascript-dates",
+            "quiz-javascript-dates"
+          ]
+        },
+        {
+          "dashedName": "audio-and-video-events",
+          "blocks": [
+            "lecture-working-with-audio-and-video",
+            "workshop-music-player",
+            "review-javascript-audio-and-video",
+            "quiz-javascript-audio-and-video"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-drum-machine",
+          "blocks": ["lab-drum-machine"]
+        },
+        {
+          "dashedName": "maps-and-sets",
+          "blocks": [
+            "lecture-working-with-maps-and-sets",
+            "workshop-plant-nursery-catalog",
+            "review-javascript-maps-and-sets",
+            "quiz-javascript-maps-and-sets"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-voting-system",
+          "blocks": ["lab-voting-system"]
+        },
+        {
+          "dashedName": "localstorage-and-crud-operations",
+          "blocks": [
+            "lecture-working-with-client-side-storage-and-crud-operations",
+            "workshop-todo-app",
+            "lab-bookmark-manager-app",
+            "review-local-storage-and-crud",
+            "quiz-local-storage-and-crud"
+          ]
+        },
+        {
+          "dashedName": "classes-and-the-this-keyword",
+          "blocks": [
+            "lecture-understanding-how-to-work-with-classes-in-javascript",
+            "workshop-shopping-cart",
+            "lab-project-idea-board",
+            "review-javascript-classes",
+            "quiz-javascript-classes"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-bank-account-manager",
+          "blocks": ["lab-bank-account-manager"]
+        },
+        {
+          "dashedName": "recursion",
+          "blocks": [
+            "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-decimal-to-binary-converter",
+            "lab-permutation-generator",
+            "review-recursion",
+            "quiz-recursion"
+          ]
+        },
+        {
+          "dashedName": "functional-programming",
+          "blocks": [
+            "lecture-understanding-functional-programming",
+            "workshop-recipe-ingredient-converter",
+            "lab-optional-arguments-sum-function",
+            "lab-sorting-visualizer",
+            "review-javascript-functional-programming",
+            "quiz-javascript-functional-programming"
+          ]
+        },
+        {
+          "dashedName": "asynchronous-javascript",
+          "blocks": [
+            "lecture-understanding-asynchronous-programming",
+            "workshop-fcc-authors-page",
+            "lab-fcc-forum-leaderboard",
+            "review-asynchronous-javascript",
+            "quiz-asynchronous-javascript"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-weather-app",
+          "blocks": ["lab-weather-app"]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-javascript",
+          "blocks": ["review-javascript"]
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "javascript-certification-exam",
+      "modules": [
+        {
+          "dashedName": "javascript-certification-exam",
+          "blocks": ["exam-javascript-certification"]
+        }
+      ]
+    }
+  ]
+}

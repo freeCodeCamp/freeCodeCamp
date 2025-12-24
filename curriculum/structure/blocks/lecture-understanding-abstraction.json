@@ -1,0 +1,14 @@
+{
+  "name": "Understanding Abstraction",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-abstraction",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68c3bc80f67363a31791fe1c",
+      "title": "What Is Abstraction and How Does It Help Keep Complex Systems Organized?"
+    }
+  ],
+  "helpCategory": "Python"
+}

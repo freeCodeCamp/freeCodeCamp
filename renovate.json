@@ -1,0 +1,4 @@
+{
+  "extends": ["github>freecodecamp/renovate-config"],
+  "enabledManagers": ["github-actions", "dockerfile"]
+}

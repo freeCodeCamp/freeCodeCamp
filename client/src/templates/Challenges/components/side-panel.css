@@ -1,0 +1,31 @@
+.MathJax,
+.MathJax_SVG,
+.MathJax_Display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.instructions-panel {
+  position: relative;
+  padding: 0 10px;
+  overflow-y: scroll;
+  height: 100%;
+  width: 100%;
+}
+
+#mobile-layout-pane-instructions > .instructions-panel {
+  height: auto;
+  overflow-y: none;
+}
+
+.example-app-link {
+  text-decoration: underline;
+}
+
+.example-app-link:hover,
+.example-app-link:active,
+.example-app-link:focus {
+  text-decoration: none;
+  background-color: var(--tertiary-background);
+}

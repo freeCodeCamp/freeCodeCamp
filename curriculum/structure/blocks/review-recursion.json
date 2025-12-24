@@ -1,0 +1,11 @@
+{
+  "name": "Recursion Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-recursion",
+  "challengeOrder": [
+    { "id": "6723d1f0568292cd394d6fb6", "title": "Recursion Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

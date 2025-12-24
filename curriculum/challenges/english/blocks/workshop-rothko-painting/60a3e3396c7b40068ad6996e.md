@@ -1,0 +1,43 @@
+---
+id: 60a3e3396c7b40068ad6996e
+title: Step 4
+challengeType: 0
+dashedName: step-4
+---
+
+# --description--
+
+Margin is the area outside of the box, and can be used to control the space between other boxes or elements.
+
+Here the bottom element has a larger top margin, pushing it further down the page.
+
+Now that you quickly reviewed the CSS box model, it's time to get started on the Rothko painting.
+
+Remove the `img` element.
+
+# --hints--
+
+You should not have an `img` element in your code.
+
+```js
+assert(document.querySelector('img') === null);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Rothko Painting</title>
+  </head>
+  <body>
+--fcc-editable-region--
+    <img src="https://cdn.freecodecamp.org/curriculum/css-box-model/diagram-3.png">
+--fcc-editable-region--
+  </body>
+</html>
+```

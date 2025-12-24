@@ -1,0 +1,139 @@
+.toggle-setting-container {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggle-description {
+  max-width: 50%;
+}
+
+.toggle-description > p:first-child {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.toggle-description > p:not(:first-child) {
+  font-style: italic;
+  font-size: 0.8rem;
+}
+
+.toggle-button-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content;
+  gap: 3px;
+}
+
+.toggle-button-group button {
+  padding: 5px 1.5rem;
+  border: 3px solid var(--secondary-color);
+  white-space: nowrap;
+  display: grid;
+  align-items: baseline;
+  justify-content: center;
+  min-width: 6rem;
+}
+
+.toggle-button-group button[aria-pressed='true'] {
+  background-color: var(--secondary-color);
+  color: var(--secondary-background);
+}
+
+.toggle-button-group button > span {
+  position: relative;
+  display: flex;
+}
+
+.toggle-button-group button > span > svg {
+  position: absolute;
+  right: -1.5rem;
+  margin-top: 0.1rem;
+}
+
+.toggle-button-group button:first-of-type > span > svg,
+[dir='rtl'] .toggle-button-group button > span > svg {
+  right: unset;
+  left: -1.25rem;
+}
+
+[dir='rtl'] .toggle-button-group button:first-of-type > span > svg {
+  left: unset;
+  right: -1.5rem;
+}
+
+.toggle-button-group button[aria-pressed='true']:hover {
+  cursor: default;
+}
+
+.toggle-radio-group label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.toggle-radio-group label + label {
+  margin-inline-start: 2rem;
+}
+
+.toggle-radio-group label.not-checked {
+  cursor: pointer;
+}
+
+.toggle-radio-group input {
+  position: absolute;
+  left: -9999px;
+}
+
+.custom-circle {
+  margin-inline-end: 8px;
+  position: relative;
+  display: inline-block;
+  min-width: calc(0.889em + 4px);
+  min-height: calc(0.889em + 4px);
+  max-width: calc(0.889em + 4px);
+  max-height: calc(0.889em + 4px);
+  border-radius: 50%;
+  background-color: var(--secondary-background);
+  border: 2px solid var(--primary-color);
+}
+
+.toggle-radio-group input:focus-visible + .custom-circle {
+  outline: 3px solid var(--focus-outline-color);
+}
+
+.toggle-radio-group input:checked + .custom-circle:after {
+  content: '';
+  width: 0.556rem;
+  height: 0.556rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.toggle-radio-group span {
+  font-weight: 500;
+}
+
+/* checkIconStyle css */
+.checkIcon {
+  height: 1rem;
+  width: 1.25rem;
+}
+
+@media (max-width: 35rem) {
+  .toggle-setting-container {
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  .toggle-description {
+    max-width: none;
+  }
+
+  .toggle-description > p:not(:first-child) {
+    margin-bottom: 0.5rem;
+  }
+}

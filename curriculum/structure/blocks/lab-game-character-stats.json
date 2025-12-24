@@ -1,0 +1,15 @@
+{
+  "name": "Build a Game Character Stats Tracker",
+  "isUpcomingChange": false,
+  "dashedName": "lab-game-character-stats",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68cabc534d2e741f33a3fe1d",
+      "title": "Build a Game Character Stats Tracker"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

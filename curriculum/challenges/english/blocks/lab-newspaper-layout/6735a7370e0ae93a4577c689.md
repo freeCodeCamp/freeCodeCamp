@@ -1,0 +1,422 @@
+---
+id: 6735a7370e0ae93a4577c689
+title: Design a Newspaper Layout
+challengeType: 25
+dashedName: design-a-newspaper-layout
+demoType: onClick
+---
+
+# --description--
+
+In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns.
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab. 
+
+**User Stories:**
+
+1. Your page should contain a `main` element with the class `newspaper-layout`.
+1. The `.newspaper-layout` should include a `header` with the class `title` containing an `h1` to display the newspaper's name.
+1. The `.newspaper-layout` should include an `article` with the class `feature-article` for the main news article.
+1. The `.feature-article` should include an `h2` element for the article title followed by a `p` element for the article content.
+1. You should add three more `article` elements for smaller articles, with classes `small-article1`, `small-article2`, and `small-article3`.
+1. Each of the smaller articles should include an `h3` element for the article title followed by a `p` element for the article content.
+1. The `.newspaper-layout` should include an `article` element with the class `secondary-article` for an additional news section.
+1. The `.secondary-article` should include an `h2` element for the article title followed by a `p` element for the article content.
+1. The `.newspaper-layout` should include a `figure` with the class `cover-image` to display an image that represents the newspaper's content.
+1. The elements with the classes `title`, `feature-article`, `secondary-article`, `cover-image`, `small-article1`, `small-article2`, and `small-article3` should have a `grid-area` property set to the same class name.
+1. Your `.newspaper-layout` should use CSS Grid with a `grid-template-areas` property to define the arrangement of sections:
+   - The `.title` should span across the top row.
+   - The `.feature-article` should span two columns in the second row, with the `.cover-image` in the third column.
+   - The `.secondary-article` should span two columns in the third row, with the `.cover-image` in the third column.
+   - The three small articles should appear in the fourth row.
+1. The `.newspaper-layout` should have a `grid-template-columns` property that divides the space into three equal columns.
+1. You should set the `.newspaper-layout`'s `grid-template-rows` property to `auto` for the first row and divide the remaining space into equal parts for the other rows.
+1. You should add a gap between grid items.
+1. Ensure that the image inside `.cover-image` fits within the designated space by setting its `max-width` to `100%`.
+
+**Note:** Be sure to link your stylesheet in your HTML and apply your CSS.
+
+# --hints--
+
+You should have a `main` element.
+
+```js
+assert.exists(document.querySelector('main'));
+```
+
+Your `main` element should have a `class` of `newspaper-layout`.
+
+```js
+assert.exists(document.querySelector('main.newspaper-layout'));
+```
+
+You should have a `header` element with the `class` of `title` within your `.newspaper-layout` element.
+
+```js
+const header = document.querySelector(".newspaper-layout > header");
+assert.exists(header);
+assert(header.classList.contains("title"));
+```
+
+Your `header` element should contain an `h1` element.
+
+```js
+const h1 = document.querySelector("header h1");
+assert.exists(h1);
+```
+
+Your `.title` element should contain some text.
+
+```js
+assert.isAbove(document.querySelector(".title").innerText.length, 0);
+```
+
+You should have an `article` element for each article with classes `feature-article`, `small-article1`, `small-article2`, `small-article3`, and `secondary-article`, respectively.
+
+```js
+const featureArticle = document.querySelector('article.feature-article');
+const smallArticle1 = document.querySelector('article.small-article1');
+const smallArticle2 = document.querySelector('article.small-article2');
+const smallArticle3 = document.querySelector('article.small-article3');
+const secondaryArticle = document.querySelector('article.secondary-article');
+
+assert.exists(featureArticle);
+assert.exists(smallArticle1);
+assert.exists(smallArticle2);
+assert.exists(smallArticle3);
+assert.exists(secondaryArticle);
+```
+
+The `.feature-article` should include an `h2` element followed by a `p` element.
+
+```js
+const h2 = document.querySelector(".feature-article h2");
+const p = document.querySelector(".feature-article h2 + p");
+assert.exists(h2);
+assert.exists(p);
+```
+
+`.small-article1`, `.small-article2`, and `.small-article3` should include an `h3` element followed by a `p` element.
+
+```js
+for (let i = 1; i < 4; i++) {
+    let h3 = document.querySelector(`.small-article${i} h3`);
+    let p = document.querySelector(`.small-article${i} h3 + p`);
+    assert.exists(h3);
+    assert.exists(p);
+}
+```
+
+The `.secondary-article` should include an `h2` element followed by a `p` element.
+
+```js
+const h2 = document.querySelector(".secondary-article h2");
+const p = document.querySelector(".secondary-article h2 + p");
+assert.exists(h2);
+assert.exists(p);
+```
+
+You should have a `figure` element with the class of `cover-image` within your `.newspaper-layout`.
+
+```js
+assert.exists(document.querySelector(".newspaper-layout figure.cover-image"));
+```
+
+Your `.cover-image` should contain an `img` element.
+
+```js
+assert.exists(document.querySelector(".cover-image img"));
+```
+
+The `display` property of the `.newspaper-layout` element should be set to `grid`.
+
+```js
+assert.equal(getComputedStyle(document.querySelector('.newspaper-layout')).display, 'grid');
+```
+
+Your `.newspaper-layout` element should have a `grid-template-areas` property with `title` spanning all three columns of the first row.
+
+```js
+const newspaperLayout = getComputedStyle(document.querySelector('.newspaper-layout'));
+assert.match(newspaperLayout.gridTemplateAreas, /^("|')title title title\1/);
+```
+
+The second row of the grid template should contain a `feature-article` spanning two columns and a `cover-image`.
+
+```js
+const newspaperLayout = getComputedStyle(document.querySelector('.newspaper-layout'));
+const rowRegex = /("|')(.+?)\1/;
+const fromSecondRow = newspaperLayout.gridTemplateAreas.replace(rowRegex, "").trimStart();
+assert.match(fromSecondRow, /^("|')feature-article feature-article cover-image\1/);
+```
+
+The third row of the grid template should contain a `secondary-article` spanning two columns and a `cover-image`.
+
+```js
+const newspaperLayout = getComputedStyle(document.querySelector('.newspaper-layout'));
+const rowRegex = /("|')(.+?)\1/;
+const fromThirdRow = newspaperLayout.gridTemplateAreas.replace(rowRegex, "").replace(rowRegex, "").trimStart();
+assert.match(fromThirdRow, /^("|')secondary-article secondary-article cover-image\1/);
+```
+
+The fourth row of the grid template should contain `small-article1`, `small-article2`, and `small-article3`.
+
+```js
+const newspaperLayout = getComputedStyle(document.querySelector('.newspaper-layout'));
+const rowRegex = /("|')(.+?)\1/;
+const fromFourthRow = newspaperLayout.gridTemplateAreas.replace(rowRegex, "").replace(rowRegex, "").replace(rowRegex, "").trimStart();
+assert.match(fromFourthRow, /^("|')small-article1 small-article2 small-article3\1$/);
+```
+
+Your `.newspaper-layout` selector should use the `grid-template-columns` property to divide the space into three equal parts. Remember you can use either the `repeat` function or manually define each fractional unit.
+
+```js
+assert.oneOf(
+    new __helpers.CSSHelp(document).getStyle('.newspaper-layout')?.gridTemplateColumns,
+    ['1fr 1fr 1fr', 'repeat(3, 1fr)'] 
+);
+```
+
+Your `.newspaper-layout` selector should have a `grid-template-rows` property set to `auto 1fr 1fr 1fr`.
+
+```js
+assert.oneOf(new __helpers.CSSHelp(document).getStyle('.newspaper-layout')?.gridTemplateRows, ['auto 1fr 1fr 1fr', 'auto repeat(3, 1fr)']);
+```
+
+You should add a gap between grid items.
+
+```js
+assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.newspaper-layout')?.gap);
+```
+
+`.title` should have a `grid-area` of `title`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.title')?.gridArea, 'title');
+```
+
+`.feature-article` should have a `grid-area` of `feature-article`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.feature-article')?.gridArea, 'feature-article');
+```
+
+`.cover-image` should have a `grid-area` of `cover-image`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.cover-image')?.gridArea, 'cover-image');
+```
+
+`.secondary-article` should have a `grid-area` of `secondary-article`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.secondary-article')?.gridArea, 'secondary-article');
+```
+
+`.small-article1` should have a `grid-area` of `small-article1`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.small-article1')?.gridArea, 'small-article1');
+```
+
+`.small-article2` should have a `grid-area` of `small-article2`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.small-article2')?.gridArea, 'small-article2');
+```
+
+`.small-article3` should have a `grid-area` of `small-article3`.
+
+```js
+assert.equal(new __helpers.CSSHelp(document).getStyle('.small-article3')?.gridArea, 'small-article3');
+```
+
+The `img` inside `.cover-image` should have a `max-width` of `100%`.
+
+```js
+const coverImage = document.querySelector(".cover-image");
+const img = document.querySelector(".cover-image img");
+assert.equal(getComputedStyle(img).maxWidth, "100%");
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<title>Newspaper Layout</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+```
+
+```css
+
+```
+
+# --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newspaper Layout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <main class="newspaper-layout">
+        <header class="title">
+            <h1>The Daily Local News</h1>
+        </header>
+
+        <article class="feature-article">
+            <h2>Breaking News: Volcano Eruption Disrupts Tourism</h2>
+            <p>Recently, a volcano erupted in a popular tourist destination. The eruption has caused widespread panic
+                and has disrupted tourism in the area. The volcano has been spewing lava and ash for several days now,
+                and authorities are urging residents and tourists to evacuate the area immediately. The eruption has
+                also caused a number of flights to be cancelled, leaving many tourists stranded. The situation is still
+                developing, and authorities are working to contain the eruption and ensure the safety of everyone in the
+                area.</p>
+        </article>
+
+        <article class="small-article1">
+            <h3>Sports: Local Team Wins Championship</h3>
+            <p>Hockey fans are celebrating today as the local team has won the championship. The team, which has been on
+                a winning streak all season, clinched the title in a thrilling final match. Fans took to the streets to
+                celebrate the victory, waving flags and chanting the team's name.</p>
+        </article>
+
+        <article class="small-article2">
+            <h3>Health: Tips for a Balanced Diet</h3>
+            <p>A diet high in calories, sugar, and unhealthy fats can lead to a variety of health problems, including
+                obesity, diabetes, and heart disease. To maintain a healthy weight and reduce your risk of chronic
+                diseases, it's important to eat a balanced diet that includes a variety of nutrient-rich foods. Here are
+                some tips for eating a balanced diet:</p>
+        </article>
+
+        <article class="small-article3">
+            <h3>Travel: Top 10 Destinations for 2025</h3>
+            <p>Traveling is one of the best ways to experience new cultures, meet new people, and see the world. If
+                you're looking for inspiration for your next trip, here are the top 10 destinations for 2025:</p>
+        </article>
+
+        <article class="secondary-article">
+            <h2>Technology: The Rise of AI</h2>
+            <p>Artificial intelligence (AI) is changing the way we live and work. From self-driving cars to virtual
+                assistants, AI is revolutionizing the world around us. But what exactly is AI, and how does it work? In
+                this article, we'll explore the rise of AI and its impact on society.</p>
+        </article>
+
+        <figure class="cover-image">
+            <img src="https://cdn.freecodecamp.org/curriculum/labs/volcano.jpg" alt="Cover Image">
+        </figure>
+    </main>
+</body>
+
+</html>
+```
+
+```css
+body {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.newspaper-layout {
+    display: grid;
+    grid-template-areas:
+        "title title title"
+        "feature-article feature-article cover-image"
+        "secondary-article secondary-article cover-image"
+        "small-article1 small-article2 small-article3";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr 1fr;
+    gap: 15px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    text-align: justify;
+}
+
+.title {
+    grid-area: title;
+    background-color: #1B1B32;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+.title h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin: 0;
+}
+
+.feature-article,
+.secondary-article {
+    background-color: #f9f9f9;
+    padding: 15px;
+    font-size: 1rem;
+}
+
+.feature-article {
+    grid-area: feature-article;
+}
+
+.secondary-article {
+    grid-area: secondary-article;
+}
+
+.small-article1,
+.small-article2,
+.small-article3 {
+    background-color: #e9e9e9;
+    padding: 15px;
+    font-size: 0.9rem;
+}
+
+.small-article1 {
+    grid-area: small-article1;
+}
+
+.small-article2 {
+    grid-area: small-article2;
+}
+
+.small-article3 {
+    grid-area: small-article3;
+}
+
+.cover-image {
+    grid-area: cover-image;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    padding: 15px;
+    margin: 0;
+}
+
+.cover-image img {
+    max-width: 100%;
+    height: 350px;
+    width: 350px;
+    border-radius: 5px;
+}
+```

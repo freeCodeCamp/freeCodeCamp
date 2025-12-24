@@ -1,0 +1,148 @@
+{
+  "aa-test": {
+    "defaultValue": false
+  },
+  "aa-test-in-component": {
+    "defaultValue": false
+  },
+  "rdb-codespaces-instructions": {
+    "defaultValue": true
+  },
+  "rdb-local-instructions": {
+    "defaultValue": true
+  },
+  "rdb-ona-instructions": {
+    "defaultValue": true
+  },
+  "landing-top-skill-focused": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "landing-top-skill-focused",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "landing-top-skill-focused",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "tests the conversion rate of the new design comparing to the old one"
+      }
+    ]
+  },
+  "replace-20-with-25": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "replace-20-with-25",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "replace-20-with-25",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "stg replace 20 with 25"
+      }
+    ]
+  },
+  "show-modal-randomly": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "show-modal-randomly",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "show-modal-randomly",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "stg show modal randomly"
+      }
+    ]
+  },
+  "landing-two-button-cta": {
+    "defaultValue": false,
+    "rules": [
+      {
+        "coverage": 1,
+        "hashAttribute": "id",
+        "seed": "landing-two-button-cta",
+        "hashVersion": 2,
+        "variations": [
+          false,
+          true
+        ],
+        "weights": [
+          0.5,
+          0.5
+        ],
+        "key": "landing-two-button-cta",
+        "meta": [
+          {
+            "key": "0",
+            "name": "Control"
+          },
+          {
+            "key": "1",
+            "name": "Variation 1"
+          }
+        ],
+        "phase": "0",
+        "name": "prod-landing-two-button-cta"
+      }
+    ]
+  },
+  "disabled_blocks": {
+    "defaultValue": []
+  }
+}
