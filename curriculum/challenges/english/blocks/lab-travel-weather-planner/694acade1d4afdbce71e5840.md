@@ -17,12 +17,9 @@ Test 1
 
 ```
 
-# --seed--
-
 ## --seed-contents--
-
-```html
---fcc-editable-region--
-
---fcc-editable-region--
+```py
+```
+# --solutions--
+```py
 ```
