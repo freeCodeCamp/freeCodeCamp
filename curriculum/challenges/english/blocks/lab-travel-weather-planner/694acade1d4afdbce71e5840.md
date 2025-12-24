@@ -27,22 +27,17 @@ dashedName: build-a-travel-weather-planner
 6. If the distance is **greater than 6 miles**:
    * You should print `True` if the person has a car **or** has a ride-share app.
    * Otherwise, you should print `False`.
-7. You should use `if`, `elif`, and `else` statements to evaluate the distance categories in ascending order.
 
 # --hints--
 
-Test 1
-
-```py
-print(test)
-```
+You should use `if`, `elif`, and `else` statements to evaluate the distance categories in ascending order.
 
 # --seed--
 
 ## --seed-contents--
 
 ```py
-print(test)
+print("Hello world")
 ```
 
 # --solutions--
