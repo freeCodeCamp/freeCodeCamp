@@ -14,6 +14,7 @@ import { generateReportEmail } from '../../utils/email-templates.js';
 import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
+  normalizeExperience,
   normalizeFlags,
   normalizeProfileUI,
   normalizeSurveys,
@@ -722,6 +723,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             partiallyCompletedChallenges: true,
             picture: true,
             portfolio: true,
+            experience: true,
             profileUI: true,
             progressTimestamps: true,
             savedChallenges: true,
@@ -818,6 +820,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
+              experience: normalizeExperience(publicUser.experience),
               msUsername: msUsername?.msUsername
             }
           },
