@@ -6724,6 +6724,12 @@
           "In these lessons, you will learn about variables and data types in Python."
         ]
       },
+      "workshop-report-card-printer": {
+        "title": "Build a Report Card Printer",
+        "intro": [
+          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+        ]
+      },
       "lecture-introduction-to-python-strings": {
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
@@ -7138,10 +7144,6 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
-      },
-      "workshop-report-card-printer": {
-        "title": "Build a Report Card Printer",
-        "intro": ["Build a Report Card Printer", ""]
       }
     }
   },

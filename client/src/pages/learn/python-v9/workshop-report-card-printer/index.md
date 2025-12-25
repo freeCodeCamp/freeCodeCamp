@@ -6,4 +6,4 @@ superBlock: python-v9
 
 ## Introduction to the Build a Report Card Printer
 
-This page is for the Build a Report Card Printerz
+This page is for the Build a Report Card Printer
