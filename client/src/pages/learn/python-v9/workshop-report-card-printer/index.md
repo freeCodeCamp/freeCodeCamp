@@ -6,4 +6,4 @@ superBlock: python-v9
 
 ## Introduction to the Build a Report Card Printer
 
-In this workshop, you will be working with `type()` and `isinstance()` functions to check the data types of a few variables.
+In this workshop, you will be declaring a few variables, and work with `type()` and `isinstance()` functions to check the data type of those variables.
