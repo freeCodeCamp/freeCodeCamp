@@ -1846,7 +1846,6 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -6292,6 +6291,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-create-count-up": {
+        "title": "workshop-create-count-up",
+        "intro": ["workshop-create-count-up", ""]
       }
     }
   },
@@ -8963,10 +8966,7 @@
         "title": "Special Spelling Rules",
         "intro": ["", ""]
       },
-      "zh-a1-practice-pinyin": {
-        "title": "Pinyin Practice",
-        "intro": ["", ""]
-      }
+      "zh-a1-practice-pinyin": { "title": "Pinyin Practice", "intro": ["", ""] }
     }
   },
   "basic-html": {
