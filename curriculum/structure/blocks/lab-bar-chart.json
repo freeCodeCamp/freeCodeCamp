@@ -1,0 +1,12 @@
+{
+  "name": "Build a Bar Chart",
+  "isUpcomingChange": true,
+  "dashedName": "lab-bar-chart",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "bd7168d8c242eddfaeb5bd13", "title": "Build a Bar Chart" }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
