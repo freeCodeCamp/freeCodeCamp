@@ -1,9 +1,13 @@
+import path from 'node:path';
 import { ESLint } from 'eslint';
 
 export const createLintStagedConfig = cwd => {
   // cwd has to be passed to ESLint or it defaults to process.cwd(), i.e. the root
-  // of the monorepo.
-  const cli = new ESLint({ cwd });
+  // of the monorepo. ESLint 9.x requires an absolute path.
+  const cwdString = typeof cwd === 'string' ? cwd : undefined;
+  const absoluteCwd =
+    cwdString && path.isAbsolute(cwdString) ? cwdString : process.cwd();
+  const cli = new ESLint({ cwd: absoluteCwd });
   return {
     '*.(mjs|js|ts|tsx)': async files => {
       const ignoredIds = await Promise.all(
