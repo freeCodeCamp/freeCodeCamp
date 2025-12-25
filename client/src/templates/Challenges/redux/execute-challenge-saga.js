@@ -49,7 +49,8 @@ import {
   openModal,
   updateConsole,
   updateLogs,
-  updateTests
+  updateTests,
+  setIsIframeLoaded
 } from './actions';
 import {
   challengeDataSelector,
@@ -300,7 +301,13 @@ export function* previewChallengeSaga(action) {
         ) {
           yield updatePython(challengeData);
         } else {
-          yield call(updatePreview, buildData, finalDocument, proxyLogger);
+          const result = yield call(
+            updatePreview,
+            buildData,
+            finalDocument,
+            proxyLogger
+          );
+          yield put(setIsIframeLoaded(result));
         }
       } else if (isJavaScriptChallenge(challengeData)) {
         const runUserCode = yield call(getTestRunner, buildData);
