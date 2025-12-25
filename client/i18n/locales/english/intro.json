@@ -5060,6 +5060,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "workshop-shape-manager": {
+        "title": "Build a Shape Manager",
+        "intro": ["Build a Shape Manager", ""]
       }
     }
   },
