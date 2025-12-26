@@ -7096,6 +7096,13 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
+      },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will learn the fundamentals of string manipulation in Python by building an employee profile generator.",
+          "You will practice combining strings, converting data types, using f-strings for formatting, and extracting information with slicing."
+        ]
       }
     }
   },
