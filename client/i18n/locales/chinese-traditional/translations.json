@@ -207,6 +207,8 @@
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
@@ -281,7 +283,7 @@
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將名字設置爲私密，你的認證將不會顯示你的名字。",
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
-    "for": "{{username}} 賬戶設置",
+    "for": "Settings for {{username}}",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
     "scrollbar-width": "編輯器滾動條寬度",
@@ -315,7 +317,7 @@
       "results-for": "{{projectTitle}} 的結果",
       "my-profile": "我的個人資料",
       "my-name": "我的姓名",
-      "my-location": "我的位置",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "我的介紹",
       "my-points": "我的分數",
       "my-heatmap": "我的熱圖",
@@ -328,12 +330,13 @@
       "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
+      "account": "Account",
       "certs": "認證",
       "legacy-certs": "舊版認證",
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬戶",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置",
+      "privacy": "Privacy",
       "personal-info": "個人信息"
     },
     "danger": {
@@ -362,7 +365,7 @@
     },
     "email": {
       "missing": "你的賬戶未綁定郵箱。",
-      "heading": "郵件設置",
+      "heading": "Email",
       "not-verified": "你的郵箱已驗證。",
       "check": "請查看你的郵件，或<0>在此處請求新的驗證郵件</0>。",
       "current": "當前郵箱",
@@ -497,7 +500,7 @@
     "download-solution": "下載我的解決方案",
     "download-results": "下載我的結果",
     "percent-complete": "完成 {{percent}}%",
-    "project-complete": "已完成 {{totalChallengesInBlock}} 認證項目中的 {{completedChallengesInBlock}}",
+    "project-complete": "Completed",
     "tried-rsa": "如果你已經嘗試了 <0>Read-Search-Ask（閱讀-搜索-提問）</0>方法，那麼你可以在 freeCodeCamp 論壇請求幫助。",
     "read-search-ask-checkbox": "我已經嘗試了 <0>Read-Search-Ask</0> 方法",
     "similar-questions-checkbox": "我已經<0>在論壇上搜索了類似的問題和相應的答案</0>",
@@ -868,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -894,6 +899,7 @@
     "navigation-warning": "如果你離開這個頁面，你將丟失你的進度。你確定嗎？",
     "fsd-b-description": "這個全面的課程使你準備好成爲一名認證全棧開發者。你將會學習用 HTML、CSS、JavaScript、React、TypeScript、Node.js、Python 以及其他技術構建完整的 Web 應用。",
     "fsd-b-cta": "開始學習",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "10 萬+ 學生",
     "fsd-b-benefit-1-description": "和 10 萬+ 學員一起學習這個認證。",
     "fsd-b-benefit-2-title": "專業認證",
@@ -928,7 +934,7 @@
     "linkedin": "鏈接到 {{username}} 的 LinkedIn",
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
-    "twitter": "鏈接到 {{username}} 的 Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -962,7 +968,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} 編輯器內容。無障礙模式被設置爲 “on”。按 Ctrl+E 關閉或者按 Alt+F1 查看更多選項。",
     "terminal-output": "終端輸出",
     "not-available": "不可用",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
@@ -1077,7 +1085,8 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -1107,6 +1116,7 @@
     "issued": "發佈日期",
     "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>，<5>約 {{completionTime}} 課時</5>",
     "fulltextNoHours": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson 的簽名",
     "julia-liuson-signature": "Julia Liuson 的簽名",
     "project": {
@@ -1225,7 +1235,7 @@
       "foundational-c-sharp-with-microsoft": "微軟基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "a2-english-for-developers": "開發者 A2 英語",
-      "a2-english-for-developers-cert": "開發者 A2 英語認證",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開發者 B1 英語",
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "responsive-web-design-v9": "Responsive Web Design",
@@ -1314,7 +1324,8 @@
     "copied": "令牌已複製到剪貼板",
     "copy-error": "複製令牌到剪貼板時出錯",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "鍵盤快捷鍵",

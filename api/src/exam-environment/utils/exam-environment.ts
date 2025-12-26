@@ -1,6 +1,5 @@
 // TODO: enable this, since strings don't make good errors.
 /* eslint-disable @typescript-eslint/only-throw-error */
-/* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import {
   ExamEnvironmentAnswer,
   ExamEnvironmentConfig,

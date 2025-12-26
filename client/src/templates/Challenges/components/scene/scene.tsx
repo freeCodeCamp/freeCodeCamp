@@ -393,7 +393,10 @@ export function Scene({
                 }`}
               >
                 <div className='scene-dialogue-label'>{dialogue.label}</div>
-                <div className='scene-dialogue-text'>{dialogue.text}</div>
+                <div
+                  className='scene-dialogue-text'
+                  dangerouslySetInnerHTML={{ __html: dialogue.text }}
+                />
               </div>
             )}
           </>
@@ -434,7 +437,7 @@ export function Scene({
           </button>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} />
+      <ChallengeTranscript transcript={transcriptText} isDialogue={true} />
       <Spacer size='m' />
     </Col>
   );

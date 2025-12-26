@@ -207,6 +207,8 @@
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
     "core-certs-heading": "Рекомендована програма (бета-версія):",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Архівовані курси:",
@@ -281,7 +283,7 @@
     "disabled": "Ваші сертифікації будуть відключені, коли ввімкнено режим приватного перегляду.",
     "private-name": "Ваше ім’я не буде показуватися на сертифікаціях, якщо ввімкнено режим приватного перегляду.",
     "claim-legacy": "Як тільки ви виконаєте завдання наступних сертифікацій freeCodeCamp, ви зможете отримати {{cert}}:",
-    "for": "Налаштування облікового запису для {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Це додає приємне звучання акустичної гітари на всьому вебсайті. Ви почуєте музичний супровід, коли будете писати у редакторі, при завершенні випробувань, при затвердженні сертифікацій та інше.",
     "sound-volume": "Гучність багаття:",
     "scrollbar-width": "Ширина смуги прокрутки редактора",
@@ -315,7 +317,7 @@
       "results-for": "Результати для {{projectTitle}}",
       "my-profile": "Мій профіль",
       "my-name": "Моє ім'я",
-      "my-location": "Моє місцеперебування",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "Моя біографія",
       "my-points": "Мої бали",
       "my-heatmap": "Моя теплокарта",
@@ -328,12 +330,13 @@
       "keyboard-shortcuts": "Дозволити клавіатурні скорочення"
     },
     "headings": {
+      "account": "Account",
       "certs": "Сертифікації",
       "legacy-certs": "Застарілі сертифікації",
       "honesty": "Політика академічної доброчесності",
       "internet": "Присутність в інтернеті",
       "portfolio": "Налаштування портфоліо",
-      "privacy": "Налаштування конфіденційності",
+      "privacy": "Privacy",
       "personal-info": "Особиста інформація"
     },
     "danger": {
@@ -362,7 +365,7 @@
     },
     "email": {
       "missing": "У вас немає електронної пошти, пов’язаної з цим обліковим записом.",
-      "heading": "Налаштування електронної пошти",
+      "heading": "Email",
       "not-verified": "Вашу електронну пошту не підтверджено.",
       "check": "Будь ласка, перевірте свою електронну пошту, або <0>надішліть запит на новий лист для підтвердження</0>.",
       "current": "Поточна адреса електронної пошти",
@@ -497,7 +500,7 @@
     "download-solution": "Завантажити розв’язок",
     "download-results": "Завантажити результати",
     "percent-complete": "виконано {{percent}}%",
-    "project-complete": "Завершено {{completedChallengesInBlock}} із {{totalChallengesInBlock}} сертифікаційних проєктів",
+    "project-complete": "Completed",
     "tried-rsa": "Якщо ви вже спробували метод <0>читати-шукати-питати</0>, то ви можете звернутися за допомогою на форум freeCodeCamp.",
     "read-search-ask-checkbox": "Я спробував(-ла) метод <0>читати-шукати-питати</0>",
     "similar-questions-checkbox": "Я шукав(-ла) <0>схожі запитання на форумі, на які вже є відповідь</0>",
@@ -868,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "Зовсім скоро",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Схоже, що ви не підключені до мережі, тому не зможете зберегти свій прогрес",
     "server-offline": "Сервер не відповідає, ваш прогрес може не зберегтись. Будь ласка, зв’яжіться з <0>підтримкою</0>, якщо помилка не зникне",
     "unsubscribed": "Підписку успішно скасовано",
@@ -894,6 +899,7 @@
     "navigation-warning": "Ви втратите прогрес, якщо залишите цю сторінку. Ви впевнені?",
     "fsd-b-description": "Завдяки комплексному курсу ви станете сертифікованим full stack розробником. Ви навчитесь повністю створювати застосунки за допомогою HTML, CSS, JavaScript, React, TypeScript, Node.js, Python і багато іншого.",
     "fsd-b-cta": "Розпочати навчання",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100,000+ учнів",
     "fsd-b-benefit-1-description": "Станьте одним з учнів, які отримують сертифікацію.",
     "fsd-b-benefit-2-title": "Професійний сертифікат",
@@ -928,7 +934,7 @@
     "linkedin": "Посилання на сторінку LinkedIn {{username}}",
     "github": "Посилання на сторінку GitHub {{username}}",
     "website": "Посилання на вебсайт {{username}}",
-    "twitter": "Посилання на сторінку Twitter {{username}}",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Наступний місяць",
     "previous-month": "Попередній місяць",
     "first-page": "Перейти на першу сторінку",
@@ -962,7 +968,9 @@
     "editor-a11y-on-non-macos": "Вміст редактора {{editorName}}. Ввімкнено режим доступності. Натисніть Ctrl+E, щоб вимкнути його, або Alt+F1, щоб переглянути більше функцій.",
     "terminal-output": "Вивід терміналу",
     "not-available": "Недоступно",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "Не вдалось отримати електронну пошту від вказаного провайдера. Спробуйте іншого провайдера або виберіть опцію «Continue with Email».",
@@ -1077,7 +1085,8 @@
       "err-3": "Під час спроби зберегти відповіді виникла помилка.",
       "success": "Дякуємо. Ваші відповіді надіслано."
     },
-    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -1107,6 +1116,7 @@
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат засвідчує, що</0> <1>{{user}}</1> <2>успішно закінчив(-ла) сертифікацію</2> <3>«{{title}}»</3> <4>{{time}},</4> <5>виконавши приблизно {{completionTime}} год навчання</5>",
     "fulltextNoHours": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Підпис Квінсі Ларсона",
     "julia-liuson-signature": "Підпис Джулії Люсон",
     "project": {
@@ -1225,7 +1235,7 @@
       "foundational-c-sharp-with-microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
-      "a2-english-for-developers-cert": "Сертифікація «Англійська мова A2 для розробників»",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
       "b1-english-for-developers-cert": "Сертифікація «Англійська мова B1 для розробників»",
       "responsive-web-design-v9": "Responsive Web Design",
@@ -1314,7 +1324,8 @@
     "copied": "Токен скопійовано до буфера обміну",
     "copy-error": "Невдале копіювання токену",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Гарячі клавіші",

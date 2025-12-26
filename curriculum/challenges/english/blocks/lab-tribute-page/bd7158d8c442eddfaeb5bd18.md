@@ -4,6 +4,7 @@ title: Build a Tribute Page
 challengeType: 25
 demoType: onClick
 dashedName: build-a-tribute-page
+saveSubmissionToDB: true
 ---
 
 # --description--

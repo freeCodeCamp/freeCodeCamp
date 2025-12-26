@@ -163,8 +163,6 @@ const SpeakingModal = ({
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
 
-  console.log('Speech recognition transcript:', transcript);
-
   const handleAudioEnded = useCallback(() => {
     setIsPlaying(false);
   }, []);
