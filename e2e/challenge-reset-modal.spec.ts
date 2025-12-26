@@ -32,7 +32,7 @@ test('should render the modal content correctly', async ({ page }) => {
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
+  await page.getByTestId('independentLowerJaw-reset-button').click();
 
   await expectToRenderResetModal(page);
 
@@ -84,12 +84,8 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
     })
     .click();
 
-  await expect(
-    page.getByText(translations.learn['sorry-keep-trying'])
-  ).toBeVisible();
-
   // Reset the challenge
-  await page.getByTestId('lowerJaw-reset-button').click();
+  await page.getByTestId('independentLowerJaw-reset-button').click();
   await page
     .getByRole('button', { name: translations.buttons['reset-lesson'] })
     .click();
@@ -170,7 +166,7 @@ test('should close when the user clicks the close button', async ({ page }) => {
     '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
   );
 
-  await page.getByRole('button', { name: translations.buttons.reset }).click();
+  await page.getByTestId('independentLowerJaw-reset-button').click();
 
   await expect(
     page.getByRole('dialog', { name: translations.learn.reset })

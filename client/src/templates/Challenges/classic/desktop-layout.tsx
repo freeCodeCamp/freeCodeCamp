@@ -314,9 +314,14 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           name='editorPane'
           {...resizeProps}
           data-playwright-test-label='editor-pane'
+          className='editor-pane'
         >
           {!isEmpty(challengeFiles) && (
-            <ReflexContainer key='codePane' orientation='horizontal'>
+            <ReflexContainer
+              key='codePane'
+              orientation='horizontal'
+              className='editor-pane-code'
+            >
               <ReflexElement
                 name='codePane'
                 {...(displayEditorConsole && { flex: codePane.flex })}

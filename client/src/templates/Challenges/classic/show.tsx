@@ -314,13 +314,9 @@ function ShowClassic({
 
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
-  const isIndependentLowerJawEnabled = useFeature('independent-lower-jaw').on;
 
-  // Independent lower jaw is only enabled for the urriculum outline workshop
-  const showIndependentLowerJaw =
-    block === 'workshop-curriculum-outline' &&
-    isIndependentLowerJawEnabled &&
-    !isMobile;
+  // Independent lower jaw is only enabled for desktop workshops.
+  const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
