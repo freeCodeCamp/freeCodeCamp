@@ -991,6 +991,139 @@ Happy coding!
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
       });
+
+      test('PUT allows updating location/about when picture is unchanged (even without extension)', async () => {
+        // Simulate a user who already has a GitHub avatar URL saved (e.g., from before strict validation)
+        const githubAvatarUrl =
+          'https://avatars0.githubusercontent.com/u/34585031?v=4';
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            picture: githubAvatarUrl,
+            about: 'Initial about',
+            name: 'Test User',
+            location: 'Initial Location'
+          }
+        });
+
+        // Now update only location and about, keeping the same picture (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Updated about text',
+          name: 'Test User',
+          location: 'New Location',
+          picture: githubAvatarUrl // Same URL, no extension - should skip validation
+        });
+
+        expect(updateResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(updateResponse.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual('Updated about text');
+        expect(user?.location).toEqual('New Location');
+        expect(user?.picture).toEqual(githubAvatarUrl);
+      });
+
+      test('PUT allows updating only location when picture is unchanged', async () => {
+        // Set initial picture with extension
+        const validPictureUrl = 'https://example.com/avatar.png';
+        await superPut('/update-my-about').send({
+          about: 'Initial about',
+          name: 'Test User',
+          location: 'Old Location',
+          picture: validPictureUrl
+        });
+
+        // Update only location, keeping same picture
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Initial about',
+          name: 'Test User',
+          location: 'New City',
+          picture: validPictureUrl
+        });
+
+        expect(updateResponse.statusCode).toEqual(200);
+        expect(updateResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.location).toEqual('New City');
+        expect(user?.picture).toEqual(validPictureUrl);
+      });
+
+      test('PUT allows updating only about when picture is unchanged', async () => {
+        // Set initial picture with extension
+        const validPictureUrl = 'https://example.com/avatar.jpg';
+        await superPut('/update-my-about').send({
+          about: 'Old about',
+          name: 'Test User',
+          location: 'Some Location',
+          picture: validPictureUrl
+        });
+
+        // Update only about, keeping same picture
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'New about text here',
+          name: 'Test User',
+          location: 'Some Location',
+          picture: validPictureUrl
+        });
+
+        expect(updateResponse.statusCode).toEqual(200);
+        expect(updateResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual('New about text here');
+        expect(user?.picture).toEqual(validPictureUrl);
+      });
+
+      test('PUT still validates picture when it is actually changed', async () => {
+        // Set initial valid picture
+        const validPictureUrl = 'https://example.com/avatar.png';
+        await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: validPictureUrl
+        });
+
+        // Try to change picture to invalid URL (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: 'https://example.com/new-avatar' // Changed but invalid
+        });
+
+        expect(updateResponse.statusCode).toEqual(400);
+        expect(updateResponse.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+
+        // Verify picture wasn't updated
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.picture).toEqual(validPictureUrl);
+      });
     });
 
     describe('/update-my-honesty', () => {
