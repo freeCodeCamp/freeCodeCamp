@@ -6,7 +6,8 @@
   "dashedName": "workshop-shortest-path-algorithm",
   "helpCategory": "Python",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "challengeOrder": [
     { "id": "6853e58d52ec64349a5760ca", "title": "Step 1" },
     { "id": "686251fb49ebc489ba60ccb5", "title": "Step 2" },

@@ -2,7 +2,8 @@
   "name": "Learn Basic OOP by Building a Shopping Cart",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-basic-oop-by-building-a-shopping-cart",
   "helpCategory": "JavaScript",
   "challengeOrder": [

@@ -4,7 +4,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-final-exams-table",
   "challengeOrder": [
     { "id": "66a9b48a211a73155621d0df", "title": "Step 1" },

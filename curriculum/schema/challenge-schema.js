@@ -204,7 +204,8 @@ const schema = Joi.object().keys({
       })
     })
   ),
-  hasEditableBoundaries: Joi.boolean(),
+  instructionsInEditor: Joi.boolean(),
+  includesBlockInTimeline: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
     'HTML-CSS',
