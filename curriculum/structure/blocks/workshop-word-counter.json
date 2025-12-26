@@ -1,6 +1,6 @@
 {
   "name": "Build a Word Counter",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-word-counter",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
