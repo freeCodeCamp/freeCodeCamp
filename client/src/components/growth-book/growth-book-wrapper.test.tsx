@@ -74,16 +74,31 @@ export function setInitImpl(
   currentInitImpl = impl;
 }
 
-vi.mock('@growthbook/growthbook-react', () => ({
-  GrowthBook: vi.fn().mockImplementation(() => ({
-    init: () => mockInit(),
-    setPayload: (arg: Record<string, unknown>) => mockSetPayload(arg),
-    setAttributes: (arg: Record<string, unknown>) => mockSetAttributes(arg)
-  })),
-  GrowthBookProvider: ({ children }: { children: React.ReactNode }) => (
+vi.mock('@growthbook/growthbook-react', () => {
+  interface GrowthBookLike {
+    init: () => Promise<unknown>;
+    setPayload: (arg: Record<string, unknown>) => Promise<void>;
+    setAttributes: (arg: Record<string, unknown>) => Promise<void>;
+  }
+
+  const GrowthBook = vi.fn().mockImplementation(function (
+    this: GrowthBookLike
+  ) {
+    this.init = vi.fn(() => mockInit());
+    this.setPayload = vi.fn((arg: Record<string, unknown>) =>
+      mockSetPayload(arg)
+    );
+    this.setAttributes = vi.fn((arg: Record<string, unknown>) =>
+      mockSetAttributes(arg)
+    );
+  });
+
+  const GrowthBookProvider = ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
-  )
-}));
+  );
+
+  return { GrowthBook, GrowthBookProvider };
+});
 
 function renderWrapper(initOptions: { complete: boolean }) {
   return render(
