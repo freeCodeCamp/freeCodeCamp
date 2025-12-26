@@ -4,7 +4,17 @@
   "dashedName": "workshop-movie-ticket-booking-calculator",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "694a9ff65d4472dd451d8255", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "694a9ff65d4472dd451d8255", "title": "Step 1" },
+    { "id": "694cc1b515976889afd4cded", "title": "Step 2" },
+    { "id": "694e1f136c804e291f4419f7", "title": "Step 3" },
+    { "id": "694e1f36e897bf744e50eb77", "title": "Step 4" },
+    { "id": "694e1f3a14bf233d943fa593", "title": "Step 5" },
+    { "id": "694e1f3ff5e5c2f21b066b74", "title": "Step 6" },
+    { "id": "694e1f432de388d2ab59b18b", "title": "Step 7" },
+    { "id": "694e1f47ca2ea6a4607db8d7", "title": "Step 8" },
+    { "id": "694e1f49000c075725b3b4a7", "title": "Step 9" }
+  ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
