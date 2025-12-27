@@ -7,8 +7,6 @@ dashedName: step-4
 
 # --description--
 
-You have finished implementing the `printCharacters` function.
-
 To see how the loop inside `printCharacters` behaves, call it with the argument `"hello"`.
 
 # --hints--
