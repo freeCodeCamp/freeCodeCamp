@@ -6291,6 +6291,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "workshop-create-count-up": {
+        "title": "workshop-create-count-up",
+        "intro": ["workshop-create-count-up", ""]
       }
     }
   },
