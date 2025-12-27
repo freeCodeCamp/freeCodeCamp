@@ -1,0 +1,10 @@
+{
+  "name": "Build a Countdown",
+  "isUpcomingChange": true,
+  "dashedName": "lab-countdown",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [{ "id": "5cd9a70215d3c4e65518328f", "title": "Step 1" }],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
