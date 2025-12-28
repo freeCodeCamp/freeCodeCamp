@@ -6,4 +6,4 @@ superBlock: javascript-v9
 
 ## Introduction to the Build a Countdown
 
-This page is for the Build a Countdown
+For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1.

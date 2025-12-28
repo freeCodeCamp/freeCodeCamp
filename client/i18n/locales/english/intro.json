@@ -6294,7 +6294,9 @@
       },
       "lab-countdown": {
         "title": "Build a Countdown",
-        "intro": ["Build a Countdown", ""]
+        "intro": [
+          "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
+        ]
       }
     }
   },
