@@ -4,7 +4,9 @@
   "dashedName": "lab-countdown",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "5cd9a70215d3c4e65518328f", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "5cd9a70215d3c4e65518328f", "title": "Build a Countdown" }
+  ],
   "blockLabel": "lab",
   "usesMultifileEditor": true
 }
