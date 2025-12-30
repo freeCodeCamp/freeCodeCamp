@@ -53,7 +53,7 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
-  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
+  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi' | 'spanish';
 };
 
 export type Fields = {

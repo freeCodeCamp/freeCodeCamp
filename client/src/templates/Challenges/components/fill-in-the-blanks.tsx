@@ -8,6 +8,8 @@ import { FillInTheBlank } from '../../../redux/prop-types';
 import ChallengeHeading from './challenge-heading';
 import PinyinToHanziInput from './pinyin-to-hanzi-input';
 import PinyinToneInput from './pinyin-tone-input';
+import SpanishInput from './spanish-input';
+import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 type FillInTheBlankProps = {
   fillInTheBlank: FillInTheBlank;
@@ -16,6 +18,7 @@ type FillInTheBlankProps = {
   feedback: string | null;
   showWrong: boolean;
   handleInputChange: (inputIndex: number, value: string) => void;
+  lang?: ChallengeLang;
 };
 
 const AnswerText = ({ answer }: { answer: string }) => {
@@ -42,7 +45,7 @@ type BlankInputProps = {
   className: string;
   onChange: (index: number, value: string) => void;
   ariaLabel: string;
-  inputType?: 'pinyin-to-hanzi' | 'pinyin-tone';
+  inputType?: 'pinyin-to-hanzi' | 'pinyin-tone' | 'spanish';
 };
 
 const BlankInput = ({
@@ -85,9 +88,20 @@ const BlankInput = ({
         ariaLabel={ariaLabel}
       />
     );
+  } else if (inputType === 'spanish' && typeof parsedAnswer === 'string') {
+    return (
+      <SpanishInput
+        index={blankIndex}
+        isCorrect={isCorrect}
+        onChange={onChange}
+        className={className}
+        maxLength={answerLength + 3}
+        size={answerLength}
+        ariaLabel={ariaLabel}
+      />
+    );
   }
 
-  // Default text input
   return (
     <input
       type='text'
@@ -108,7 +122,8 @@ function FillInTheBlanks({
   showFeedback,
   feedback,
   showWrong,
-  handleInputChange
+  handleInputChange,
+  lang
 }: FillInTheBlankProps): JSX.Element {
   const { t } = useTranslation();
 
@@ -125,12 +140,17 @@ function FillInTheBlanks({
   const paragraphs = parseBlanks(sentence);
   const blankAnswers = blanks.map(b => b.answer);
 
+  const effectiveInputType =
+    inputType || (lang === ChallengeLang.Spanish ? 'spanish' : undefined);
+
   const ariaInputDescription =
-    inputType === 'pinyin-to-hanzi'
+    effectiveInputType === 'pinyin-to-hanzi'
       ? t('aria.pinyin-to-hanzi-input-desc')
-      : inputType === 'pinyin-tone'
+      : effectiveInputType === 'pinyin-tone'
         ? t('aria.pinyin-tone-input-desc')
-        : '';
+        : effectiveInputType === 'spanish'
+          ? t('aria.spanish-input-desc')
+          : '';
 
   return (
     <>
@@ -175,7 +195,7 @@ function FillInTheBlanks({
                   className={getInputClass(value)}
                   onChange={handleInputChange}
                   ariaLabel={t('learn.fill-in-the-blank.blank')}
-                  inputType={inputType}
+                  inputType={effectiveInputType}
                 />
               );
             })}

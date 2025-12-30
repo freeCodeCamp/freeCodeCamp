@@ -303,6 +303,7 @@ const ShowFillInTheBlank = ({
                   feedback={feedback}
                   showWrong={showWrong}
                   handleInputChange={handleInputChange}
+                  lang={lang}
                 />
               </ObserveKeys>
 
