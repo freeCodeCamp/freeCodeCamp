@@ -127,6 +127,7 @@ describe('certificate routes', () => {
           isCertMap: {
             is2018DataVisCert: false,
             isA2EnglishCert: false,
+            isB1EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
