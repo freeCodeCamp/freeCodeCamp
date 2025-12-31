@@ -6593,7 +6593,7 @@
         ]
       },
       "workshop-fortune-teller-app": {
-        "title": "Build a Fortune Telling App ",
+        "title": "Build a Fortune Telling App",
         "intro": [
           "In this workshop, you will continue to practice working with TypeScript fundamentals by building a fortune telling app."
         ]
