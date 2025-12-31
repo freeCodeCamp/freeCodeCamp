@@ -6660,7 +6660,9 @@
       },
       "lab-motorcycle-shop": {
         "title": "Build a Motorcycle Shop",
-        "intro": ["Build a Motorcycle Shop", ""]
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
       }
     }
   },
