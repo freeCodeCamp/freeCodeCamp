@@ -1,6 +1,6 @@
 {
   "name": "Build a Countdown",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-countdown",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
