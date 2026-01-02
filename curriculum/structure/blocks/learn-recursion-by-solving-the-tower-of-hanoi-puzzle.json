@@ -2,7 +2,8 @@
   "name": "Learn Recursion by Solving the Tower of Hanoi Puzzle",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-recursion-by-solving-the-tower-of-hanoi-puzzle",
   "challengeOrder": [
     {

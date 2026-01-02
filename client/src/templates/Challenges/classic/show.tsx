@@ -205,7 +205,6 @@ function ShowClassic({
         hooks,
         tests,
         challengeType,
-        hasEditableBoundaries = false,
         superBlock,
         helpCategory,
         forumTopicId,
@@ -213,6 +212,7 @@ function ShowClassic({
         notes,
         videoUrl,
         translationPending,
+        instructionsInEditor,
         saveSubmissionToDB
       }
     }
@@ -480,7 +480,7 @@ function ShowClassic({
               isMobileLayout: true,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: null,
@@ -515,7 +515,7 @@ function ShowClassic({
               isMobileLayout: false,
               isUsingKeyboardInTablist: usingKeyboardInTablist
             })}
-            hasEditableBoundaries={hasEditableBoundaries}
+            instructionsInEditor={instructionsInEditor}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
               toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
@@ -584,7 +584,6 @@ export const query = graphql`
         title
         description
         id
-        hasEditableBoundaries
         instructions
         notes
         challengeType
@@ -593,6 +592,7 @@ export const query = graphql`
         superBlock
         translationPending
         forumTopicId
+        instructionsInEditor
         hooks {
           beforeAll
           beforeEach

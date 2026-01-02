@@ -3,7 +3,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-recipe-tracker",
   "challengeOrder": [
     { "id": "66fbcdfed6848e48947dbbc9", "title": "Step 1" },

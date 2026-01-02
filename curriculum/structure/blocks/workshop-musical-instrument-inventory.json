@@ -58,7 +58,8 @@
     }
   ],
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "blockLayout": "challenge-grid",
   "blockLabel": "workshop"
 }
