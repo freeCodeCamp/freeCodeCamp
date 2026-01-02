@@ -41,7 +41,7 @@ test.describe('when reloading the page', () => {
     await page.keyboard.press('Enter');
 
     await expect(
-      page.getByText(translations.learn.congratulations)
+      page.getByText(translations.learn['congratulations-code-passes'])
     ).toBeVisible();
   });
 });
