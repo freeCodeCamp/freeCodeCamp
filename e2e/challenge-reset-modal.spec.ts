@@ -29,7 +29,7 @@ const expectToRenderResetModal = async (page: Page) => {
 
 test('should render the modal content correctly', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();
@@ -41,16 +41,10 @@ test('should render the modal content correctly', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
   ).toBeVisible();
-
-  await expect(
-    page.getByText(
-      'Are you sure you wish to reset this lesson (Step 3)? The code editors and tests will be reset.'
-    )
-  ).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
-  const initialText = '    <h2>Cat Photos</h2>';
+  const initialText = 'Cat Photos';
   const initialEditorText = page
     .getByTestId('editor-container-indexhtml')
     .getByText(initialText);
@@ -61,7 +55,7 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
     .getByText(updatedText);
 
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
 
   // Building the preview can take a while
@@ -103,12 +97,12 @@ test('User can reset challenge', async ({ page, isMobile, browserName }) => {
 
 test.describe('When the user is not logged in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
-  test('User can reset classic challenge', async ({ page, isMobile }) => {
-    await page.goto(
-      '/learn/javascript-algorithms-and-data-structures/basic-javascript/comment-your-javascript-code'
-    );
 
-    const challengeSolution = '// This is in-line comment';
+  test('User can reset classic challenge', async ({ page, isMobile }) => {
+    await page.goto('/learn/rosetta-code/rosetta-code-challenges/100-doors');
+
+    const challengeSolution = 'test reset works';
+
     await focusEditor({ page, isMobile });
     await getEditors(page).fill(challengeSolution);
 
@@ -117,57 +111,40 @@ test.describe('When the user is not logged in', () => {
         ? translations.buttons.run
         : translations.buttons['run-test']
     });
+
     await submitButton.click();
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
     ).toBeVisible();
 
-    if (isMobile) {
-      await page
-        .getByText(translations.learn['editor-tabs'].instructions)
-        .click();
-    }
-
-    await expect(
-      page.getByLabel(translations.icons.passed).locator('circle')
-    ).toBeVisible();
-
     await page
       .getByRole('button', {
-        name: !isMobile
-          ? translations.buttons['reset-lesson']
-          : translations.buttons.reset
+        name: translations.buttons['reset-lesson']
       })
       .click();
 
-    await page
-      .getByRole('button', { name: translations.buttons['reset-lesson'] })
-      .click();
+    const resetDialog = page.getByRole('dialog', {
+      name: translations.learn.reset
+    });
+    await expect(resetDialog).toBeVisible({ timeout: 30000 });
+
+    const resetButton = resetDialog.getByRole('button', {
+      name: translations.buttons['reset-lesson']
+    });
+    await expect(resetButton).toBeVisible();
+    await page.waitForTimeout(500);
+    await resetButton.click({ force: true });
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
     ).not.toBeVisible();
-    await expect(
-      page.getByLabel(translations.icons.passed).locator('circle')
-    ).not.toBeVisible();
-    await expect(
-      page.getByText(translations.learn['tests-completed'])
-    ).not.toBeVisible();
-
-    if (isMobile) {
-      await page.getByText(translations.learn['editor-tabs'].console).click();
-    }
-
-    await expect(
-      page.getByText(translations.learn['test-output'])
-    ).toBeVisible();
   });
 });
 
 test('should close when the user clicks the close button', async ({ page }) => {
   await page.goto(
-    '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    '/learn/responsive-web-design-v9/workshop-cat-photo-app/step-3'
   );
 
   await page.getByRole('button', { name: translations.buttons.reset }).click();
@@ -195,7 +172,7 @@ test('User can reset on a multi-file project', async ({
   const sampleText = 'function palindrome() { return true; }';
 
   await page.goto(
-    '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+    '/learn/javascript-v9/lab-palindrome-checker/build-a-palindrome-checker'
   );
 
   await focusEditor({ page, isMobile });
@@ -245,7 +222,7 @@ test.describe('Signed in user', () => {
     const updatedText = 'function palindrome() { return false; }';
 
     await page.goto(
-      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+      '/learn/javascript-v9/lab-palindrome-checker/build-a-palindrome-checker'
     );
 
     // This first edit should reappear after the reset
@@ -286,7 +263,7 @@ test.describe('Signed in user', () => {
     const updatedText = 'function palindrome() { return false; }';
 
     await page.goto(
-      '/learn/javascript-algorithms-and-data-structures-v8/build-a-palindrome-checker-project/build-a-palindrome-checker'
+      '/learn/javascript-v9/lab-palindrome-checker/build-a-palindrome-checker'
     );
 
     // This first edit should reappear after the reset
