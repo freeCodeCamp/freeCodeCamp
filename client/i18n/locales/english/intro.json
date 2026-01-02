@@ -6595,6 +6595,12 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lab-scatterplot-graph": {
+        "title": "Build a Scatterplot Graph",
+        "intro": [
+          "In this lab you will create a d3 scatterplot graph using a provided dataset."
+        ]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
