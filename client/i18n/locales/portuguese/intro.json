@@ -7578,6 +7578,12 @@
           "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no seu computador e as vantagens e desvantagens de usar o Node.js no backend."
         ]
       },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
       "review-node-js-intro": {
         "title": "Revisão introdutória de NodeJS",
         "intro": [
