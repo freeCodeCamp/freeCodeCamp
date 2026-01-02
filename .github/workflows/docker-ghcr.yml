@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
@@ -36,7 +36,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Docker layers
-        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830 # v4.3.0
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-buildx-${{ matrix.images }}-${{ github.sha }}
