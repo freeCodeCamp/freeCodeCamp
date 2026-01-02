@@ -6630,6 +6630,12 @@
           "Review the Front End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "For this lab, you will use TypeScript and React to build a digital pet game."
+        ]
+      },
       "exam-front-end-development-libraries-certification": {
         "title": "Front End Development Libraries Certification Exam",
         "intro": [
