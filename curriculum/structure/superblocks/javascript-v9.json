@@ -286,9 +286,9 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "lab-countdown",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
-            "lab-countdown",
             "review-recursion",
             "quiz-recursion"
           ]

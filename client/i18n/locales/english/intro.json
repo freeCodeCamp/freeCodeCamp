@@ -6187,6 +6187,12 @@
           "In this lecture, you will learn about recursion and the call stack."
         ]
       },
+      "lab-countdown": {
+        "title": "Build a Countdown",
+        "intro": [
+          "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
+        ]
+      },
       "workshop-decimal-to-binary-converter": {
         "title": "Build a Decimal to Binary Converter",
         "intro": [
@@ -6291,12 +6297,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lab-countdown": {
-        "title": "Build a Countdown",
-        "intro": [
-          "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
-        ]
       }
     }
   },
