@@ -29,12 +29,20 @@ dashedName: build-a-travel-weather-planner
    * Otherwise, you should print `False`.
 7. You should use `if`, `elif`, and `else` statements to evaluate the distance categories in ascending order.
 
+# --hints--
+
+placeholder
+
+```js
+
+```
+
 # --seed--
 
 ## --seed-contents--
 
 ```py
-print("Hello world")
+
 ```
 
 # --solutions--
