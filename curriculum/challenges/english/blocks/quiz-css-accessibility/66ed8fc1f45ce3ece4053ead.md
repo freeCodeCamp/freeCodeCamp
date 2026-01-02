@@ -61,7 +61,7 @@ WebAIM's Color Contrast Checker
 
 #### --text--
 
-Which of the following tools allows you to pick background and foreground colors from a live webpage and check for their contrast ratio?
+Which of the following tools allows you to pick background and foreground colors from content displayed on your screen and check for their contrast ratio?
 
 #### --distractors--
 
