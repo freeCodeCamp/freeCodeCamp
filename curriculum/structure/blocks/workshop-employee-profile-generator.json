@@ -1,0 +1,21 @@
+{
+  "name": "Build an Employee Profile Generator",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-employee-profile-generator",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "694bf3af05d10fd89dab05cc", "title": "Step 1" },
+    { "id": "694bf6ea530e19a9c48c59f0", "title": "Step 2" },
+    { "id": "694bf6eb530e19a9c48c59f1", "title": "Step 3" },
+    { "id": "694bf6eb530e19a9c48c59f2", "title": "Step 4" },
+    { "id": "694bf6eb530e19a9c48c59f3", "title": "Step 5" },
+    { "id": "694bf6eb530e19a9c48c59f4", "title": "Step 6" },
+    { "id": "694bf6eb530e19a9c48c59f5", "title": "Step 7" },
+    { "id": "694bf6eb530e19a9c48c59f6", "title": "Step 8" },
+    { "id": "694bf6eb530e19a9c48c59f7", "title": "Step 9" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

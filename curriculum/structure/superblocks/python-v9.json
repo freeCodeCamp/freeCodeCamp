@@ -6,6 +6,7 @@
         {
           "dashedName": "python-basics",
           "blocks": [
+            "workshop-employee-profile-generator",
             "lecture-introduction-to-python",
             "lecture-understanding-variables-and-data-types",
             "lecture-introduction-to-python-strings",
