@@ -13,6 +13,10 @@
   color: var(--secondary-color);
 }
 
+.override-palette .sk-spinner {
+  color: var(--gray-85);
+}
+
 .fcc-loader.full-screen-wrapper {
   height: calc(100vh - var(--header-height, 0px));
 }
