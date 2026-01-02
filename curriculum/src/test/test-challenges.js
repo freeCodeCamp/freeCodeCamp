@@ -175,7 +175,7 @@ async function populateTestsForLang({ lang, challenges, meta }) {
           describe(`ID: ${challenge.id}`, function () {
             // Note: the title in meta.json are purely for human readability and
             // do not include translations, so we do not validate against them.
-            it(`Matches an ID ${challenge.block}.json`, function () {
+            it(`Matches an ID in ${challenge.block}.json`, function () {
               const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
                 ({ id }) => id === challenge.id
               );
