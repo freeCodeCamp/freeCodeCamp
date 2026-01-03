@@ -39,7 +39,7 @@ To make the page content accessible and readable.
 
 #### --text--
 
-Which of the following tools allows you to enter background and foreground colors and check their contrast ratio?
+Which of the following tools is a desktop application (Windows/Mac) that allows you to sample foreground and background colors from your screen and check their contrast ratio?
 
 #### --distractors--
 
