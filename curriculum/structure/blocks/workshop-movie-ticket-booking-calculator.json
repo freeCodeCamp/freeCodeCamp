@@ -1,6 +1,6 @@
 {
   "name": "Build a Movie Ticket Booking Calculator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-movie-ticket-booking-calculator",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
