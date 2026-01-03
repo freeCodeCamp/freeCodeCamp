@@ -271,6 +271,12 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
   const editorPaneFlex =
     !displayPreviewConsole && !displayPreviewPane ? 1 : editorPane.flex;
 
+  const usesTerminal =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+
   return (
     <div className='desktop-layout' data-playwright-test-label='desktop-layout'>
       {isProjectStyle && (
@@ -287,7 +293,7 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           showPreviewPane={showPreviewPane}
           showPreviewPortal={showPreviewPortal}
           togglePane={togglePane}
-          challengeType={challengeType}
+          usesTerminal={usesTerminal}
           data-playwright-test-label='action-row'
         />
       )}
