@@ -4,7 +4,8 @@ import * as schemas from '../schemas/index.js';
 import {
   getNowUsCentral,
   getUtcMidnight,
-  dateStringToUtcMidnight
+  dateStringToUtcMidnight,
+  sendServerError
 } from '../utils/helpers.js';
 
 /**
@@ -16,6 +17,8 @@ import {
  * @param _options Options passed to the plugin via `fastify.register(plugin, options)`.
  * @param done Callback to signal that the logic has completed.
  */
+
+
 export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
   fastify,
   _options,
@@ -66,9 +69,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         logger.error(error, 'Failed to get daily coding challenge.');
-        await reply
-          .status(500)
-          .send({ type: 'error', message: 'Internal server error.' });
+        return sendServerError(reply);
       }
     }
   );
@@ -105,11 +106,9 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         });
       } catch (error) {
         logger.error(error, "Failed to get today's daily coding challenge.");
-        await reply
-          .status(500)
-          .send({ type: 'error', message: 'Internal server error.' });
-      }
+        return sendServerError(reply);
     }
+  }
   );
 
   fastify.get(
@@ -179,9 +178,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send(response);
       } catch (error) {
         logger.error(error, 'Failed to get monthly daily coding challenges.');
-        await reply
-          .status(500)
-          .send({ type: 'error', message: 'Internal server error.' });
+        return sendServerError(reply);
       }
     }
   );
@@ -232,9 +229,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send(response);
       } catch (error) {
         logger.error(error, 'Failed to get all daily coding challenges.');
-        await reply
-          .status(500)
-          .send({ type: 'error', message: 'Internal server error.' });
+        return sendServerError(reply);
       }
     }
   );
@@ -269,9 +264,7 @@ export const dailyCodingChallengeRoutes: FastifyPluginCallbackTypebox = (
         return reply.send({ date: newestChallenge.date.toISOString() });
       } catch (error) {
         logger.error(error, 'Failed to get newest daily coding challenge.');
-        await reply
-          .status(500)
-          .send({ type: 'error', message: 'Internal server error.' });
+        return sendServerError(reply);
       }
     }
   );

@@ -1,4 +1,5 @@
 import { getTimezoneOffset } from 'date-fns-tz';
+import { FastifyReply } from 'fastify';
 
 /**
  * @returns Now US Central time.
@@ -37,4 +38,26 @@ export function dateStringToUtcMidnight(dateStr: string): Date | null {
   ];
 
   return new Date(Date.UTC(year, month - 1, day));
+}
+
+/**
+ * Sends a standardized server error response.
+ *
+ * @param reply The Fastify reply instance.
+ * @param replyStatus HTTP status code to send (default is 500).
+ * @param message Error message to return.
+ * @param type Error type identifier.
+ * @returns The Fastify reply instance.
+ */
+
+export function sendServerError(
+  reply: FastifyReply,
+  replyStatus = 500,
+  message = 'Internal server error.',
+  type = 'error'
+) {
+  return reply.status(replyStatus).send({
+    type,
+    message
+  });
 }
