@@ -39,7 +39,7 @@ To make the page content accessible and readable.
 
 #### --text--
 
-Which of the following tools allows you to enter background and foreground colors and check their contrast ratio?
+Which of the following tools allows you to pick background and foreground colors from a live webpage and check for their contrast ratio?
 
 #### --distractors--
 
@@ -61,7 +61,7 @@ WebAIM's Color Contrast Checker
 
 #### --text--
 
-Which of the following tools allows you to pick background and foreground colors from a live webpage and check for their contrast ratio?
+Which of the following tools allows you to pick background and foreground colors from a desktop application and check for their contrast ratio?
 
 #### --distractors--
 
