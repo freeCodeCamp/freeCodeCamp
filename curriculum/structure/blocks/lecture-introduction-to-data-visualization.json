@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-introduction-to-data-visualization",
   "helpCategory": "JavaScript",
-  "blockLayout": "challenge-grid",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "695b906494aa8d03c39ec2db",
