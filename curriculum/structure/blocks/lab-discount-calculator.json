@@ -1,0 +1,11 @@
+{
+  "name": "Apply Discount to a Price",
+  "isUpcomingChange": false,
+  "dashedName": "lab-discount-calculator",
+  "challengeOrder": [
+    { "id": "695774002591bbc5f8cf3e53", "title": "Apply Discount to a Price" }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}
