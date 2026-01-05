@@ -7486,6 +7486,10 @@
         "intro": [
           "Pass this exam to earn your Back End Development and APIs Certification"
         ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": ["Introduction to npm", ""]
       }
     }
   },
