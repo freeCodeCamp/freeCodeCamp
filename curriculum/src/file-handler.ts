@@ -7,7 +7,10 @@ import debug from 'debug';
 
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import type { BlockLabel } from '@freecodecamp/shared/config/blocks';
-import type { SuperBlocks, ChallengeLang } from '@freecodecamp/shared/config/curriculum';
+import type {
+  SuperBlocks,
+  ChallengeLang
+} from '@freecodecamp/shared/config/curriculum';
 import type { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 const log = debug('fcc:file-handler');
