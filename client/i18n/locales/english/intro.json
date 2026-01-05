@@ -6635,6 +6635,10 @@
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification"
         ]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": ["Introduction to Data Visualization", ""]
       }
     }
   },
