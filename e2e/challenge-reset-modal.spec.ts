@@ -6,6 +6,21 @@ import translations from '../client/i18n/locales/english/translations.json';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { alertToBeVisible } from './utils/alerts';
 
+interface ChallengeTest {
+  text: string;
+  testString: string;
+}
+
+interface PageData {
+  result: {
+    data: {
+      challengeNode: {
+        challenge: { tests: ChallengeTest[] };
+      };
+    };
+  };
+}
+
 const expectToRenderResetModal = async (page: Page) => {
   await expect(
     page.getByRole('dialog', { name: translations.learn.reset })
@@ -41,10 +56,16 @@ test('should render the modal content correctly', async ({ page }) => {
       name: translations.buttons['reset-lesson']
     })
   ).toBeVisible();
+
+  await expect(
+    page.getByText(
+      'Are you sure you wish to reset this lesson (Step 3)? The code editors and tests will be reset.'
+    )
+  ).toBeVisible();
 });
 
 test('User can reset challenge', async ({ page, isMobile, browserName }) => {
-  const initialText = 'Cat Photos';
+  const initialText = '    <h2>Cat Photos</h2>';
   const initialEditorText = page
     .getByTestId('editor-container-indexhtml')
     .getByText(initialText);
@@ -99,10 +120,34 @@ test.describe('When the user is not logged in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test('User can reset classic challenge', async ({ page, isMobile }) => {
-    await page.goto('/learn/rosetta-code/rosetta-code-challenges/100-doors');
+    const challengePath =
+      '/learn/rosetta-code/rosetta-code-challenges/100-doors';
 
-    const challengeSolution = 'test reset works';
+    // Intercept Gatsby page-data and inject a mock test that always passes
+    await page.route(
+      `**/page-data${challengePath}/page-data.json`,
+      async route => {
+        const response = await route.fetch();
+        const body = await response.text();
 
+        const pageData = JSON.parse(body) as PageData;
+        pageData.result.data.challengeNode.challenge.tests = [
+          {
+            text: 'Mock test',
+            testString: 'assert(true)'
+          }
+        ];
+
+        await route.fulfill({
+          contentType: 'application/json',
+          body: JSON.stringify(pageData)
+        });
+      }
+    );
+
+    await page.goto(challengePath);
+
+    const challengeSolution = 'test code';
     await focusEditor({ page, isMobile });
     await getEditors(page).fill(challengeSolution);
 
@@ -118,27 +163,45 @@ test.describe('When the user is not logged in', () => {
       page.locator('.view-lines').getByText(challengeSolution)
     ).toBeVisible();
 
+    // Completion dialog shows up
+    await expect(
+      page.getByText(translations.buttons['go-to-next'])
+    ).toBeVisible();
+
+    // Close the dialog
+    await page
+      .getByRole('button', { name: translations.buttons.close })
+      .click();
+
     await page
       .getByRole('button', {
-        name: translations.buttons['reset-lesson']
+        name: !isMobile
+          ? translations.buttons['reset-lesson']
+          : translations.buttons.reset
       })
       .click();
 
-    const resetDialog = page.getByRole('dialog', {
-      name: translations.learn.reset
-    });
-    await expect(resetDialog).toBeVisible({ timeout: 30000 });
-
-    const resetButton = resetDialog.getByRole('button', {
-      name: translations.buttons['reset-lesson']
-    });
-    await expect(resetButton).toBeVisible();
-    await page.waitForTimeout(500);
-    await resetButton.click({ force: true });
+    await page
+      .getByRole('button', { name: translations.buttons['reset-lesson'] })
+      .click();
 
     await expect(
       page.locator('.view-lines').getByText(challengeSolution)
     ).not.toBeVisible();
+    await expect(
+      page.getByText(translations.buttons['go-to-next'])
+    ).not.toBeVisible();
+    await expect(
+      page.getByText(translations.learn['tests-completed'])
+    ).not.toBeVisible();
+
+    if (isMobile) {
+      await page.getByText(translations.learn['editor-tabs'].console).click();
+    }
+
+    await expect(
+      page.getByText(translations.learn['test-output'])
+    ).toBeVisible();
   });
 });
 
