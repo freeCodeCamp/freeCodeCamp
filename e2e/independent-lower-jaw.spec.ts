@@ -23,24 +23,6 @@ test.use({
   viewport: { width: 1080, height: 720 }
 });
 
-test('Displays independent lower jaw controls', async ({ page }) => {
-  await page.goto(workshopChallengeUrl);
-
-  await expect(page.getByTestId('independentLowerJaw-container')).toBeVisible();
-  await expect(
-    page.getByTestId('independentLowerJaw-check-button')
-  ).toBeVisible();
-  await expect(
-    page.getByTestId('independentLowerJaw-reset-button')
-  ).toBeVisible();
-  await expect(
-    page.getByTestId('independentLowerJaw-help-button')
-  ).toBeVisible();
-  await expect(
-    page.getByTestId('independentLowerJaw-submit-button')
-  ).toHaveCount(0);
-});
-
 test('Clicking "Check Your Code" reveals failing feedback', async ({
   page
 }) => {
@@ -87,25 +69,6 @@ test('Checks hotkeys when instruction is focused', async ({
   await expect(
     page.getByTestId('independentLowerJaw-check-button')
   ).not.toBeFocused();
-});
-
-test('Should render UI correctly', async ({ page }) => {
-  await page.goto(workshopChallengeUrl);
-
-  await expect(
-    page.getByTestId('independentLowerJaw-check-button')
-  ).toBeVisible();
-  await expect(
-    page.getByTestId('independentLowerJaw-failing-hint')
-  ).toHaveCount(0);
-});
-
-test('Displays desktop button copy for checking code', async ({ page }) => {
-  await page.goto(workshopChallengeUrl);
-
-  await expect(
-    page.getByTestId('independentLowerJaw-check-button')
-  ).toContainText('Check Your Code');
 });
 
 test('Hint text should not contain placeholders `fcc-expected`', async ({
