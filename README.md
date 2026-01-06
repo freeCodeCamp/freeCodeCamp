@@ -39,6 +39,8 @@ Our community also has:
 - A [technical publication](https://www.freecodecamp.org/news) with thousands of programming tutorials and articles about mathematics and computer science.
 - A [Discord server](https://discord.gg/Z7Fm39aNtZ) where you can hang out and talk with developers and people who are learning to code.
 
+If you get stuck while learning or contributing, the community forum and Discord server are the best places to ask questions and get guidance from experienced developers.
+
 > #### [Join the community here](https://www.freecodecamp.org/signin).
 
 ### Reporting Bugs and Issues
@@ -56,6 +58,8 @@ We appreciate responsible disclosure of vulnerabilities that might impact the in
 ### Contributing
 
 The freeCodeCamp.org community is possible thanks to thousands of kind volunteers like you. We welcome all contributions to the community and are excited to welcome you aboard.
+
+If you are new to open source, we recommend starting with documentation updates or small fixes. These are a great way to become familiar with the codebase and contribution workflow before taking on larger tasks.
 
 > #### [Please follow these steps to contribute](https://contribute.freecodecamp.org).
 
