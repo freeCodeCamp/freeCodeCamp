@@ -207,6 +207,8 @@
     "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -869,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "近日公開",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "オフラインのようです。進捗が保存されない可能性があります。",
     "server-offline": "サーバーに接続できませんでした。進捗状況が保存されなかった可能性があります。このメッセージが引き続き表示される場合は<0>サポート</0>までご連絡ください。",
     "unsubscribed": "購読解除が完了しました",
@@ -1081,7 +1085,8 @@
       "err-3": "アンケートの保存中に問題が発生しました。",
       "success": "アンケートを送信しました。ご協力ありがとうございました。"
     },
-    "classroom-mode-updated": "クラスルームモード設定を更新しました。"
+    "classroom-mode-updated": "クラスルームモード設定を更新しました。",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
@@ -1111,6 +1116,7 @@
     "issued": "発行日",
     "fulltext": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4> <5>(約 {{completionTime}} 時間相当)</5>",
     "fulltextNoHours": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson の署名",
     "julia-liuson-signature": "Julia Liuson の署名",
     "project": {

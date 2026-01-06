@@ -1,8 +1,8 @@
 ---
 id: 68ec6e8d0caee3afaaf142ef
-title: Step 5
+title: Step 8
 challengeType: 0
-dashedName: step-5
+dashedName: step-8
 ---
 
 # --description--
@@ -36,11 +36,22 @@ assert.exists(document.querySelector('.card-container div.card'));
 ## --seed-contents--
 
 ```html
---fcc-editable-region--
-<h1>XYZ Bookstore</h1>
-<p>Browse our collection of amazing books!</p>
-<div class="card-container">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>XYZ Bookstore Page</title>
+</head>
 
-</div>
+<body>
+  <h1>XYZ Bookstore</h1>
+  <p>Browse our collection of amazing books!</p>
+ --fcc-editable-region--
+  <div class="card-container">
+
+  </div>
 --fcc-editable-region--
+</body>
+
+</html>
 ```

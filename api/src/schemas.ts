@@ -49,3 +49,4 @@ export {
   getUserExamEnvironmentToken
 } from './schemas/user/exam-environment-token.js';
 export { sentryPostEvent } from './schemas/sentry/event.js';
+export { signout } from './schemas/signout/signout.js';

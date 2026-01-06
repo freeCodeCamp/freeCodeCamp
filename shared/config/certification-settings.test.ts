@@ -4,7 +4,8 @@ import {
   linkedInCredentialIds,
   certToTitleMap,
   certToIdMap,
-  certSlugTypeMap
+  certSlugTypeMap,
+  isCertified
 } from './certification-settings';
 
 describe('linkedInCredentialIds', () => {
@@ -47,5 +48,34 @@ describe('certSlugTypeMap', () => {
     const uniqueTypes = Array.from(new Set(types)).sort();
 
     expect(uniqueTypes).toEqual(types);
+  });
+});
+
+describe('isCertified', () => {
+  it('should return true if a user has the specified certification', () => {
+    const cert = Certification.RespWebDesignV9;
+    const user = {
+      isRespWebDesignCertV9: true
+    };
+
+    expect(isCertified(user, cert)).toBe(true);
+  });
+
+  it('should return false if a user does not have the specified certification', () => {
+    const cert = Certification.JsAlgoDataStruct;
+    const user = {
+      isRespWebDesignCertV9: true
+    };
+
+    expect(isCertified(user, cert)).toBe(false);
+  });
+
+  it('should return false if the certification does not exist', () => {
+    const cert = 'NonExistentCert' as Certification;
+    const user = {
+      isRespWebDesignCertV9: true
+    };
+
+    expect(isCertified(user, cert)).toBe(false);
   });
 });

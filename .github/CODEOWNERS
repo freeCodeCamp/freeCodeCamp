@@ -34,9 +34,10 @@ pnpm-lock.yaml
 # Files that need attention from Curriculum team
 # -------------------------------------------------
 
-/curriculum/challenges/_meta/* @freecodecamp/curriculum
 /curriculum/challenges/english/* @freecodecamp/curriculum
-/client/i18n/locales/english/* @freecodecamp/curriculum
+/curriculum/challenges/structure/* @freecodecamp/dev-team @freecodecamp/curriculum
+/client/i18n/locales/english/* @freecodecamp/dev-team @freecodecamp/curriculum
+/client/src/pages/learn/* @freecodecamp/dev-team @freecodecamp/curriculum
 
 # -------------------------------------------------
 # Files that need attention from i18n & dev team
@@ -52,3 +53,4 @@ pnpm-lock.yaml
 
 /curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
 /client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/tools/external-curriculum/* @freeCodeCamp/dev-team @freeCodeCamp/mobile
