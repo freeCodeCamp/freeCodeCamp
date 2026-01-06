@@ -6,4 +6,4 @@ superBlock: front-end-development-libraries-v9
 
 ## Introduction to the Introduction to Data Visualization
 
-This page is for the Introduction to Data Visualization
+In these lessons, you will learn about basic data visualization concepts.
