@@ -7492,6 +7492,12 @@
         "intro": [
           "Pass this exam to earn your Back End Development and APIs Certification"
         ]
+      },
+      "lecture-working-with-node-core-modules": {
+        "title": "Working with Node Core Modules",
+        "intro": [
+          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
       }
     }
   },
