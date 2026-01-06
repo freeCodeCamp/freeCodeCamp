@@ -6701,7 +6701,7 @@
       "workshop-movie-ticket-booking-calculator": {
         "title": "Build a Movie Ticket Booking Calculator",
         "intro": [
-          "In this workshop, you will practice how to use Booleans and Conditional statements in Python by building a Movie ticket booking calculator."
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket nooking calculator."
         ]
       },
       "lecture-understanding-functions-and-scope": {
