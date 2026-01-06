@@ -76,7 +76,7 @@ test.describe('Mobile help-button tests for a page with a reset and help button'
 });
 
 test.describe('Desktop help-button tests for a page with a reset and help button', () => {
-  test('should be present after the user checks their code three times', async ({
+  test('should always be shown', async ({
     page
   }) => {
     await page.goto(
