@@ -6659,7 +6659,6 @@
       "python-classes-and-objects": "Classes and Objects",
       "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
-      "lab-discount-calculator": "Build a Discount Calculator",
       "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
       "lab-hash-table": "Build a Hash Table",
@@ -6898,7 +6897,7 @@
       "lab-discount-calculator": {
         "title": "Build a Discount Calculator",
         "intro": [
-          "In this lab, you will practice basic Python by building a calculator to apply discount to a price."
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
         ]
       },
       "lecture-understanding-abstraction": {
