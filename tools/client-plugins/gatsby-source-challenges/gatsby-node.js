@@ -9,6 +9,12 @@ const {
 const { createChallengeNode } = require('./create-challenge-nodes');
 const { createChallengePages } = require('../../../client/utils/gatsby');
 
+// createPagesStatefully only runs once, but we need the following when
+// updating challenges, so they have to be stored in memory.
+let allChallengeNodes;
+let idToNextPathCurrentCurriculum;
+let idToPrevPathCurrentCurriculum;
+
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
@@ -194,7 +200,7 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
     }
   `);
 
-  const allChallengeNodes = result.data.allChallengeNode.edges.map(
+  allChallengeNodes = result.data.allChallengeNode.edges.map(
     ({ node }) => node
   );
 
@@ -214,17 +220,15 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
       return map;
     }, {});
 
-  const idToNextPathCurrentCurriculum =
-    createIdToNextPathMap(allChallengeNodes);
+  idToNextPathCurrentCurriculum = createIdToNextPathMap(allChallengeNodes);
 
-  const idToPrevPathCurrentCurriculum =
-    createIdToPrevPathMap(allChallengeNodes);
+  idToPrevPathCurrentCurriculum = createIdToPrevPathMap(allChallengeNodes);
+
+  const nodeToPage = createChallengePages(actions.createPage, {
+    idToNextPathCurrentCurriculum,
+    idToPrevPathCurrentCurriculum
+  });
 
   // Create challenge pages.
-  result.data.allChallengeNode.edges.forEach(
-    createChallengePages(actions.createPage, {
-      idToNextPathCurrentCurriculum,
-      idToPrevPathCurrentCurriculum
-    })
-  );
+  allChallengeNodes.forEach(nodeToPage);
 };
