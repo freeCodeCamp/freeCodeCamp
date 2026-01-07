@@ -81,6 +81,8 @@ function getTemplateComponent(challengeType) {
   return views[viewTypes[challengeType]];
 }
 
+exports.getTemplateComponent = getTemplateComponent;
+
 exports.createChallengePages = function (
   createPage,
   { idToNextPathCurrentCurriculum, idToPrevPathCurrentCurriculum }

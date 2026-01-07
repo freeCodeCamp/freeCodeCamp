@@ -14,6 +14,7 @@ const { createChallengePages } = require('../../../client/utils/gatsby');
 let allChallengeNodes;
 let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
+let createdNodes = [];
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
@@ -53,9 +54,15 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         reporter.info(
           `Challenge file ${action}: ${filePath}, ${actionText} challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
         );
-        challenges.forEach(challenge =>
-          createVisibleChallenge(challenge, { isReloading: true })
-        );
+
+        challenges.forEach(challenge => {
+          const newNode = reportNodeCreationToGatsby(challenge, {
+            isReloading: true
+          });
+          if (action === 'added') {
+            createdNodes.push(newNode);
+          }
+        });
       })
       .catch(e =>
         reporter.error(
@@ -81,7 +88,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       .then(challenges => Promise.all(challenges))
       .then(challenges => {
         // create challenge nodes
-        challenges.forEach(challenge => createVisibleChallenge(challenge));
+        challenges.forEach(challenge => reportNodeCreationToGatsby(challenge));
         // create superblock structure nodes
         createSuperBlockStructureNodes();
         return Promise.resolve();
@@ -96,8 +103,11 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       });
   }
 
-  function createVisibleChallenge(challenge, options) {
-    createNode(createChallengeNode(challenge, reporter, options));
+  function reportNodeCreationToGatsby(challenge, options) {
+    const challengeNode = createChallengeNode(challenge, reporter, options);
+
+    createNode(challengeNode);
+    return challengeNode;
   }
 
   function createSuperBlockStructureNodes() {
@@ -231,4 +241,18 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 
   // Create challenge pages.
   allChallengeNodes.forEach(nodeToPage);
+};
+
+exports.createPages = function ({ actions }) {
+  // actions.createPage has to be called in the createPages hook
+  for (const node of createdNodes) {
+    const nodeToPage = createChallengePages(actions.createPage, {
+      idToNextPathCurrentCurriculum,
+      idToPrevPathCurrentCurriculum
+    });
+
+    nodeToPage(node, 0, allChallengeNodes);
+  }
+
+  createdNodes = [];
 };
