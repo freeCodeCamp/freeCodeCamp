@@ -254,5 +254,6 @@ exports.createPages = function ({ actions }) {
     nodeToPage(node, 0, allChallengeNodes);
   }
 
-  createdNodes = [];
+  // It's important NOT to clear the createdNodes, since Gatsby deletes any
+  // pages that are not recreated each time createPages is called.
 };
