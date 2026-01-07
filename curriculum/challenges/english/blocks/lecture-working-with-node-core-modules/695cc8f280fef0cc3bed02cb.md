@@ -15,7 +15,7 @@ The current process is exposed globally through the `process` module, so you don
 
 The `process` module exposes properties and methods for you to get certain information about the current execution context.
 
-`process.env` gets you information about the current environment Node is running on. This always returns a giant object with many parameters, so here’s how you can access some of the most important information directly:
+`process.env` gets you information about the current environment Node is running on. This always returns a giant object with many parameters, so here's how you can access some of the most important information directly:
 
 ```js
 // Gets all environment variables available to the current Node.js process
@@ -58,7 +58,7 @@ The `cwd()` method shows the current working directory:
 console.log(process.cwd());
 ```
 
-Process events are a core feature of Node.js that let your app respond to key moments in its lifecycle, like when it’s about to exit, encounters an error, or receives a system signal.
+Process events are a core feature of Node.js that let your app respond to key moments in its lifecycle, like when it's about to exit, encounters an error, or receives a system signal.
 
 The `exit` event, for example, runs right before the Node.js process finishes:
 
@@ -143,7 +143,7 @@ How do you use the process module?
 
 ## --answers--
 
-By calling it directly since it’s a global object.
+By calling it directly since it's a global object.
 
 ---
 

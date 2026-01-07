@@ -144,7 +144,7 @@ Focus on which one deals with directories and which one deals with file extensio
 
 ---
 
-`dirname()` returns the directory name of a path, while `extname()` returns the file’s extension.
+`dirname()` returns the directory name of a path, while `extname()` returns the file's extension.
 
 ---
 
