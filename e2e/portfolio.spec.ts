@@ -5,11 +5,11 @@ import translations from '../client/i18n/locales/english/translations.json';
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Add Portfolio Item', () => {
