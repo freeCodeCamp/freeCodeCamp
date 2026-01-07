@@ -3,7 +3,7 @@
   "isUpcomingChange": true,
   "dashedName": "lecture-introduction-to-npm",
   "helpCategory": "Backend Development",
-  "blockLayout": "challenge-grid",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     { "id": "695b93b7d61d4520790c3903", "title": "What Is npm?" },
     {
