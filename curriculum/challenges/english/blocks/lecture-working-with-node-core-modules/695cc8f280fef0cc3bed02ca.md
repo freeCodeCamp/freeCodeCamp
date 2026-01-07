@@ -1,6 +1,6 @@
 ---
 id: 695cc8f280fef0cc3bed02ca
-title: What is the Path Module and How Does it Work?
+title: What Is the Path Module and How Does It Work?
 challengeType: 19
 dashedName: what-is-the-path-module-and-how-does-it-work
 ---

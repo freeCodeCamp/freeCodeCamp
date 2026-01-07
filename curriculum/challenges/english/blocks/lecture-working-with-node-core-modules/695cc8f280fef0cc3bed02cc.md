@@ -1,6 +1,6 @@
 ---
 id: 695cc8f280fef0cc3bed02cc
-title: What is the Stream Module and How Does it Work?
+title: What Is the Stream Module and How Does It Work?
 challengeType: 19
 dashedName: what-is-the-stream-module-and-how-does-it-work
 ---
