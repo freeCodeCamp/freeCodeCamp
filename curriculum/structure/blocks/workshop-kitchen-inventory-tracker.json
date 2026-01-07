@@ -1,6 +1,6 @@
 {
   "name": "Build a Kitchen Inventory Tracker",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-kitchen-inventory-tracker",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
