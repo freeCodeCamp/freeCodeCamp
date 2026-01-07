@@ -172,7 +172,7 @@ Think about how Node.js handles reading, writing, and transforming data.
 
 ---
 
-Readable, Writable, Duplex, and Transform streams.
+Readable, Editable, Duplex, and Transform streams.
 
 ### --feedback--
 
