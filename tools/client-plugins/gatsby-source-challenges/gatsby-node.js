@@ -14,7 +14,7 @@ const { createChallengePages } = require('../../../client/utils/gatsby');
 let allChallengeNodes;
 let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
-let createdNodes = [];
+const updatedFileNodes = new Map();
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
@@ -60,7 +60,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
             isReloading: true
           });
           if (action === 'added') {
-            createdNodes.push(newNode);
+            updatedFileNodes.set(filePath, newNode);
           }
         });
       })
@@ -245,7 +245,7 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 
 exports.createPages = function ({ actions }) {
   // actions.createPage has to be called in the createPages hook
-  for (const node of createdNodes) {
+  for (const node of updatedFileNodes.values()) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
       idToPrevPathCurrentCurriculum
