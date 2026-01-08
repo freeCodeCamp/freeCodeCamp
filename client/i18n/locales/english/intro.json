@@ -1618,6 +1618,10 @@
           "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
         ]
       },
+      "en-a2-quiz-share-progress-accomplishments": {
+        "title": "Sharing Progress and Achievements Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
         "intro": [
