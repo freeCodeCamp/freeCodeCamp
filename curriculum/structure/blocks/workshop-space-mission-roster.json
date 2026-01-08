@@ -1,6 +1,6 @@
 {
   "name": "Build a Space Mission Roster",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-space-mission-roster",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
