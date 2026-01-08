@@ -1578,6 +1578,10 @@
           "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
         ]
       },
+      "en-a2-quiz-ask-for-code-clarification": {
+        "title": "Asking for Code Clarification Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-document-code-for-a-project": {
         "title": "Learn How to Document Code for a Project",
         "intro": [
