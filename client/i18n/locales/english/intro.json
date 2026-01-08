@@ -1588,6 +1588,10 @@
           "This course will show you expressions related to what to do when documenting code."
         ]
       },
+      "en-a2-quiz-document-code-project": {
+        "title": "Documenting Code Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Learn How to Read and Understand Code Documentation",
         "intro": [
