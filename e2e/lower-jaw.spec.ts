@@ -2,6 +2,12 @@ import { test, expect } from '@playwright/test';
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { signout } from './utils/logout';
 
+// Test the lower jaw on mobile viewport only
+test.use({
+  viewport: { width: 393, height: 851 },
+  isMobile: true
+});
+
 test('Check the initial states of submit button and "check your code" button', async ({
   page
 }) => {
@@ -97,7 +103,7 @@ test('Focuses on the submit button after tests passed', async ({
     name: 'Submit and go to next challenge'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page, browserName, isMobile });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
@@ -123,7 +129,7 @@ test('Prompts unauthenticated user to sign in to save progress', async ({
     name: 'Sign in to save your progress'
   });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page, browserName, isMobile });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
@@ -185,9 +191,8 @@ test('should display the text of submit and go to next challenge button accordin
   );
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
-
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page, browserName, isMobile });
 
   await editor.fill(
     '<h2>Cat Photos</h2>\n<p>Everyone loves cute cats online!</p>'
@@ -228,7 +233,7 @@ test('Hint text should not contain placeholders `fcc-expected`', async ({
   const editor = getEditors(page);
   const checkButton = page.getByRole('button', { name: 'Check Your Code' });
   await focusEditor({ page, isMobile });
-  await clearEditor({ page, browserName });
+  await clearEditor({ page, browserName, isMobile });
 
   await editor.fill(
     'body{background:linear-gradient(45deg, rgb(118, 201, 255), rgb(247, 255, 222));margin:0;padding:0;width:5%;height:100vh}'
