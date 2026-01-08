@@ -1,8 +1,8 @@
 ---
 id: 691bbc97064dadb6ea5cd7dd
-title: Step 43
+title: Step 44
 challengeType: 0
-dashedName: step-43
+dashedName: step-44
 ---
 
 # --description--
@@ -512,7 +512,7 @@ class FlashCardController {
       entryForm: document.querySelector<HTMLFormElement>(".entry-form")!,
       deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn")!,
     };
-
+   this.initializeEventListeners();
   }
   private initializeEventListeners(): void {
     this.elements.flipBtn.addEventListener("click", () => this.flipCard());
