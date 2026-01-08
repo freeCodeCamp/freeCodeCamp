@@ -1528,6 +1528,10 @@
           "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
         ]
       },
+      "en-a2-quiz-basic-programming-vocabulary": {
+        "title": "Basic Programming Vocabulary Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Learn How to Use Code-related Concepts and Terms",
         "intro": [
