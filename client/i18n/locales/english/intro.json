@@ -1628,6 +1628,10 @@
           "This course will show you how to speak about the most recent advancements in your projects and about your plans."
         ]
       },
+      "en-a2-quiz-task-project-updates-plans": {
+        "title": "Task and Project Updates Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Learn How to Express Agreement or Disagreement",
         "intro": [
