@@ -62,6 +62,14 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
           if (action === 'added') {
             updatedFileNodes.set(filePath, newNode);
           }
+          if (action === 'changed') {
+            const existingFileNode = updatedFileNodes.get(filePath);
+            // If a file has been created since boot and then changed, the store
+            // has to be updated or the page won't reflect the latest changes.
+            if (existingFileNode) {
+              updatedFileNodes.set(filePath, newNode);
+            }
+          }
         });
       })
       .catch(e =>
