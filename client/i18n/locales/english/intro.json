@@ -6630,7 +6630,7 @@
       "workshop-flashcard-quiz-app": {
         "title": "Build a Flashcard Quiz App",
         "intro": [
-          "In this workshop, you will practice using Typescript and React by building a flashcard quiz app"
+          "In this workshop, you will practice using TypeScript by building a flashcard quiz app."
         ]
       },
       "lecture-working-with-generics-and-type-narrowing": {
