@@ -293,9 +293,7 @@ void getAllBlocks()
         message: 'Choose a block label',
         default: BlockLabel.learn,
         type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
+        choices: Object.values(BlockLabel)
       },
       {
         name: 'block',
