@@ -14,7 +14,7 @@ test.describe('Challenge Title Component (signed out)', () => {
     await expect(page.getByLabel('Passed')).not.toBeVisible();
 
     await expect(
-      page.getByRole('heading', { name: 'What Role Does HTML Play on the Web ?' })
+      page.getByRole('heading', { name: 'What Role Does HTML Play on the Web?' })
     ).toBeVisible();
   });
 
@@ -78,7 +78,7 @@ test.describe('Challenge Title Component (signed out)', () => {
     page
   }) => {
     const visibleEnglishTitle = await page
-      .getByRole('heading', { name: 'What Role Does HTML Play on the Web ?' })
+      .getByRole('heading', { name: 'What Role Does HTML Play on the Web?' })
       .isVisible();
 
     if (process.env.CURRICULUM_LOCALE != 'english' && visibleEnglishTitle) {
@@ -98,7 +98,7 @@ test.describe('Challenge Title Component (signed in)', () => {
     page
   }) => {
     await expect(
-      page.getByRole('heading', { name: 'What Role Does HTML Play on the Web ?' })
+      page.getByRole('heading', { name: 'What Role Does HTML Play on the Web?' })
     ).toBeVisible();
 
     // Set `force: true` to bypass Playwright's check
