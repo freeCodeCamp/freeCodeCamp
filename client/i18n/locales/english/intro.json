@@ -1598,6 +1598,10 @@
           "This course will present more expressions related to code documentation and bring tips on how to understand it."
         ]
       },
+      "en-a2-quiz-read-understand-code-documentation": {
+        "title": "Understanding Code Documentation Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-analyze-code-documentation": {
         "title": "Learn How to Analyze Code Documentation",
         "intro": [
