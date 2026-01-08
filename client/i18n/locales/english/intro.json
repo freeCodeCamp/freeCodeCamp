@@ -7489,7 +7489,9 @@
       },
       "lecture-introduction-to-npm": {
         "title": "Introduction to npm",
-        "intro": ["Introduction to npm", ""]
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
+        ]
       }
     }
   },
