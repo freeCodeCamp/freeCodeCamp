@@ -2,8 +2,8 @@
   "name": "Asking about the Team",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-learn-asking-about-the-team",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     {
       "id": "68fa39a67ba382d80d68aaf4",

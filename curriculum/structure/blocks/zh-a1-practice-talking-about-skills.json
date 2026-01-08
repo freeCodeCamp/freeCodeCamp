@@ -2,8 +2,8 @@
   "name": "Talking about Skills",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-practice-talking-about-skills",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     {
       "id": "68fa3bc5b64441e51cb8b54b",

@@ -1,0 +1,239 @@
+---
+id: 69021889ec24994b6ad3d463
+title: Greetings and Introductions Quiz
+challengeType: 8
+dashedName: quiz-greetings-and-introductions
+lang: zh-CN
+---
+
+# --description--
+
+This quiz checks your understanding of greetings and basic introductions in Chinese. 
+
+To pass the quiz, you must correctly answer **at least 9 of the 10** questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+When greeting a group of people, which word or phrase should you use?
+
+#### --distractors--
+
+`我是 (wǒ shì)`
+
+---
+
+`您好 (nín hǎo)`
+
+---
+
+`你好 (nǐ hǎo)`
+
+#### --answer--
+
+`你们好 (nǐ men hǎo)`
+
+### --question--
+
+#### --text--
+
+Which word or phrase should you use to greet someone politely or respectfully?
+
+#### --distractors--
+
+`开发者 (kāi fā zhě)`
+
+---
+
+`你好 (nǐ hǎo)`
+
+---
+
+`你们好 (nǐ men hǎo)`
+
+#### --answer--
+
+`您好 (nín hǎo)`
+
+### --question--
+
+#### --text--
+
+Which sentence means "I'm Chinese"?
+
+#### --distractors--
+
+`我是新加坡人 (wǒ shì xīn jiā pō rén)。`
+
+---
+
+`我是王华 (wǒ shì wáng huá)。`
+
+---
+
+`我是开发人 (wǒ shì kāi fā rén)。`
+
+#### --answer--
+
+`我是中国人 (wǒ shì zhōng guó rén)。`
+
+### --question--
+
+#### --text--
+
+Which sentence means "I'm a developer"?
+
+#### --distractors--
+
+`我是设计者 (wǒ shì shè jì zhě)。`
+
+---
+
+`我是分析师 (wǒ shì fēn xī shī)。`
+
+---
+
+`我是数据师 (wǒ shì shù jù shī)。`
+
+#### --answer--
+
+`我是开发者 (wǒ shì kāi fā zhě)。`
+
+### --question--
+
+#### --text--
+
+If you know that `巴西 (bā xī)` means Brazil in Chinese, how do you say your nationality as "I'm Brazilian"?
+
+#### --distractors--
+
+`我是人巴西 (wǒ shì rén bā xī)。`
+
+---
+
+`你好 (nǐ hǎo)，我是巴西 (wǒ shì bā xī)。`
+
+---
+
+`我是巴西的 (wǒ shì bā xī de)。`
+
+#### --answer--
+
+`我是巴西人 (wǒ shì bā xī rén)。`
+
+### --question--
+
+#### --text--
+
+Rearrange the words to make a correct sentence: `是 (shì)`, `我 (wǒ)`, `设 (shè)`, `计 (jì)`, `师 (shī)`.
+
+#### --distractors--
+
+`我设计是师 (wǒ shè jì shì shī)。`
+
+---
+
+`设计师我是 (shè jì shī wǒ shì)。`
+
+---
+
+`是我设计师 (shì wǒ shè jì shī)。`
+
+#### --answer--
+
+`我是设计师 (wǒ shì shè jì shī)。`
+
+### --question--
+
+#### --text--
+
+What is the correct way to say "I'm a data analyst" in Chinese?
+
+#### --distractors--
+
+`我是分析师 (wǒ shì fēn xī shī)。`
+
+---
+
+`我是数据师 (wǒ shì shù jù shī)。`
+
+---
+
+`我是开发者 (wǒ shì kāi fā zhě)。`
+
+#### --answer--
+
+`我是数据分析师 (wǒ shì shù jù fēn xī shī)。`
+
+### --question--
+
+#### --text--
+
+You are a developer from Singapore. How can you say this in Chinese?
+
+#### --distractors--
+
+`我是新加坡人 (wǒ shì xīn jiā pō rén)，我是数据分析师 (wǒ shì shù jù fēn xī shī)。`
+
+---
+
+`我是新加坡人 (wǒ shì xīn jiā pō rén)，我是设计师 (wǒ shì shè jì shī)。`
+
+---
+
+`我是加拿大人 (wǒ shì jiā ná dà rén)，我是开发者 (wǒ shì kāi fā zhě)。`
+
+#### --answer--
+
+`我是新加坡人 (wǒ shì xīn jiā pō rén)，我是开发者 (wǒ shì kāi fā zhě)。`
+
+### --question--
+
+#### --text--
+
+True or false: both `你好 (nǐ hǎo)` and `您好 (nín hǎo)` can be used when greeting your colleague.
+
+#### --distractors--
+
+False
+
+---
+
+You can only use `你好 (nǐ hǎo)` to greet colleagues, as you don't need to respect them.
+
+---
+
+You can only use `您好 (nín hǎo)` to greet colleagues, as you need to respect them.
+
+#### --answer--
+
+True
+
+### --question--
+
+#### --text--
+
+Which pair is correct?
+
+#### --distractors--
+
+`我是 (wǒ shì)` / Hello
+
+---
+
+`开发者 (kāi fā zhě)` / designer
+
+---
+
+`新加坡人 (xīn jiā pō rén)` / Canadian
+
+#### --answer--
+
+`我是 (wǒ shì)` / I am

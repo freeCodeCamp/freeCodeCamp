@@ -36,7 +36,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
     persistent: true,
-    usePolling: true,
     cwd: curriculumPath
   });
 

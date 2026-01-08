@@ -1,6 +1,6 @@
 var glob = require('glob');
 const lint = require('../../tools/scripts/lint');
-const { testedLang } = require('./utils');
+const { testedLang } = require('./config');
 
 glob(`challenges/${testedLang()}/**/*.md`, (err, files) => {
   if (!files.length) throw Error('No files found');

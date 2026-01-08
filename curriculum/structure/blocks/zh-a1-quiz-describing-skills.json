@@ -2,8 +2,8 @@
   "name": "Describing Skills Quiz",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-quiz-describing-skills",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "link",
   "challengeOrder": [
     {
       "id": "68fa3b88b437a9e2a365106a",

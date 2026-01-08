@@ -1,12 +1,15 @@
 import { dirname, resolve } from 'node:path';
 import assert from 'node:assert';
 import { existsSync, readFileSync } from 'node:fs';
-import { writeFile } from 'node:fs/promises';
+import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
 import type { Chapter } from '../../shared-dist/config/chapters.js';
-import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import type {
+  SuperBlocks,
+  ChallengeLang
+} from '../../shared-dist/config/curriculum.js';
 import type { Certification } from '../../shared-dist/config/certification-settings.js';
 
 const log = debug('fcc:file-handler');
@@ -153,6 +156,7 @@ export type Challenge = {
   missing?: boolean;
   challengeFiles?: ChallengeFile[];
   solutions?: ChallengeFile[][];
+  lang?: ChallengeLang;
 };
 
 export interface BlockStructure {
@@ -171,6 +175,16 @@ export interface BlockStructure {
   isUpcomingChange?: boolean;
   chapter?: string;
   module?: string;
+}
+
+export async function createBlockFolder(block: string) {
+  const { blockContentDir } = getContentConfig('english') as {
+    blockContentDir: string;
+  };
+
+  const newBlockDir = resolve(blockContentDir, block);
+  await mkdir(newBlockDir, { recursive: true });
+  return newBlockDir + '/';
 }
 
 export function getBlockStructure(block: string) {

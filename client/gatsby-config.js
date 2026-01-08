@@ -101,18 +101,6 @@ module.exports = {
         }
       }
     },
-    {
-      resolve: 'gatsby-plugin-manifest',
-      options: {
-        name: 'freeCodeCamp',
-        short_name: 'fCC',
-        start_url: '/',
-        theme_color: '#0a0a23',
-        background_color: '#fff',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/square_puck.png'
-      }
-    },
     'gatsby-plugin-remove-serviceworker'
   ]
 };

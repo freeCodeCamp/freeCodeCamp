@@ -1,0 +1,19 @@
+{
+  "name": "Vowels",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-learn-vowels",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e6f57272e3a55b84653033", "title": "Task 1" },
+    { "id": "68e6f7070ff3315e22638f7a", "title": "Task 2" },
+    { "id": "68e6fa5e79210663511af8e8", "title": "Task 3" },
+    { "id": "68e6fb109cd658656e70b535", "title": "Task 4" },
+    { "id": "68e6fb98b9549d66fe846579", "title": "Task 5" },
+    { "id": "68e6fbefe999d06833f54c47", "title": "Task 6" },
+    { "id": "68e6ffbf8c385a6d5f7f87e7", "title": "Task 7" },
+    { "id": "68e7058a10380e7bf750c58a", "title": "Task 8" },
+    { "id": "68e7064f26de457d959ce43a", "title": "Task 9" }
+  ],
+  "blockLabel": "learn"
+}

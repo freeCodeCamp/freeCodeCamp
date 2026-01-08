@@ -2,7 +2,10 @@ import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { currentCertifications } from '../shared/config/certification-settings';
+import {
+  currentCertifications,
+  legacyCertifications as legacyCerts
+} from '../shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
@@ -23,6 +26,10 @@ const settingsObject = {
 };
 
 const certifications = [
+  translations.certification.title['foundational-c-sharp-with-microsoft']
+];
+
+const legacyCertifications = [
   translations.certification.title['responsive-web-design'],
   translations.certification.title[
     'javascript-algorithms-and-data-structures-v8'
@@ -37,10 +44,6 @@ const certifications = [
   translations.certification.title['information-security-v7'],
   translations.certification.title['machine-learning-with-python-v7'],
   translations.certification.title['college-algebra-with-python-v8'],
-  translations.certification.title['foundational-c-sharp-with-microsoft']
-];
-
-const legacyCertifications = [
   translations.certification.title['legacy-front-end'],
   translations.certification.title['legacy-back-end'],
   translations.certification.title['legacy-data-visualization'],
@@ -49,7 +52,7 @@ const legacyCertifications = [
 
 test.describe('Settings - Certified User', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
@@ -229,7 +232,7 @@ test.describe('Settings - Certified User', () => {
     }
 
     // Danger Zone
-    await expect(page.getByText('Danger Zone')).toBeVisible();
+    await expect(page.getByRole('main').getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
         'Please be careful. Changes in this section are permanent.'
@@ -254,13 +257,13 @@ test.describe('Settings - Certified User', () => {
 test.describe('Settings - Certified User without Full Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
@@ -294,12 +297,12 @@ test.describe('Settings - New User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
@@ -310,7 +313,7 @@ test.describe('Settings - New User', () => {
     });
 
     const claimRwdCertButton = page.getByRole('button', {
-      name: 'Claim Certification Responsive Web Design'
+      name: 'Claim Certification Legacy Responsive Web Design V8'
     });
 
     // Buttons for normal certs are enabled
@@ -327,7 +330,8 @@ test.describe('Setting - Hash Navigation', () => {
   test('should scroll to certification sections when navigating with hash', async ({
     page
   }) => {
-    for (const certSlug of currentCertifications) {
+    const allCerts = [...currentCertifications, ...legacyCerts];
+    for (const certSlug of allCerts) {
       await page.goto(`/settings#cert-${certSlug}`);
 
       // Wait for scroll animation

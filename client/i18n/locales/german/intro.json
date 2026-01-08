@@ -60,7 +60,7 @@
     }
   },
   "2022/responsive-web-design": {
-    "title": "Responsive Web Design",
+    "title": "Legacy Responsive Web Design V8",
     "intro": [
       "In dieser Zertifizierung für responsives Webdesign lernst du die Sprachen, die Entwickler/innen zum Erstellen von Webseiten verwenden: HTML (Hypertext Markup Language) für den Inhalt und CSS (Cascading Style Sheets) für das Design.",
       "Zunächst baust du eine Katzenfoto-App, um die Grundlagen von HTML und CSS zu erlernen. Später lernst du moderne Techniken wie CSS-Variablen, indem du einen Pinguin baust, und bewährte Praktiken für Barrierefreiheit, indem du eine Quiz-Site erstellst.",
@@ -155,7 +155,7 @@
         "title": "Erlerne responsives Webdesign, indem du ein Klavier erstellst",
         "intro": [
           "Responsives Design beschreibt, wie deine Webseite auf unterschiedlich großen Bildschirmen aussehen soll.",
-          "In this course, you'll use CSS and responsive design to code a piano. You'll also learn more about media queries and pseudo selectors."
+          "In diesem Kurs wirst du CSS und responsives Design verwenden, um ein Klavier zu programmieren. Außerdem erfährst du mehr über Media-Queries und Pseudoselektoren."
         ]
       },
       "learn-css-flexbox-by-building-a-photo-gallery": {
@@ -194,7 +194,7 @@
         ]
       },
       "learn-more-about-css-pseudo-selectors-by-building-a-balance-sheet": {
-        "title": "Learn More About CSS Pseudo Selectors by Building A Balance Sheet",
+        "title": "Erfahre mehr über CSS Pseudo-Selektoren, durch das Erstellen eines Bilanzblattes",
         "intro": [
           "Du kannst CSS-Pseudoselektoren verwenden, um bestimmte HTML-Elemente zu ändern.",
           "In diesem Kurs erstellst du eine Bilanz mit Pseudoselektoren. Du lernst, wie du den Stil eines Elements änderst, wenn du mit der Maus darüber fährst, und wie du andere Ereignisse auf deiner Webseite auslösen kannst."
@@ -208,16 +208,16 @@
         ]
       },
       "learn-intermediate-css-by-building-a-cat-painting": {
-        "title": "Learn Intermediate CSS by Building a Cat Painting",
+        "title": "Lerne Fortgeschrittenes CSS durch die Erstellung eines Katzen-Gemäldes",
         "intro": [
-          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts",
-          "In this course, you will build a cat painting. You'll learn about how to work with absolute positioning, the z-index property, and the transform property."
+          "Das Beherrschen der Positionierung in CSS ist für die Erstellung visuell ansprechender Responsive-Web-Layouts essenziell",
+          "In diesem Kurs wirst Du ein Katzengemälde erstellen und lernen, wie Du mit absoluter Positionierung, der z-Index-Eigenschaft und der Transformationseigenschaft arbeiten."
         ]
       }
     }
   },
   "javascript-algorithms-and-data-structures": {
-    "title": "Legacy JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures V7",
     "intro": [
       "Während HTML und CSS den Inhalt und das Styling einer Seite festlegen, wird JavaScript verwendet, um sie interaktiv zu gestalten. In der Zertifizierung \"JavaScript Algorithmen und Datenstrukturen\" lernst du die Grundlagen von JavaScript inklusive Variablen, Arrays, Objekten, Schleifen und Funktionen kennen.",
       "Sobald du die Grundlagen beherrschst, wendest du dieses Wissen an, indem du Algorithmen erstellst, um Strings zu manipulieren, Zahlen zu faktorisieren und sogar die Umlaufbahn der Internationalen Raumstation zu berechnen.",
@@ -300,9 +300,9 @@
     }
   },
   "javascript-algorithms-and-data-structures-v8": {
-    "title": "JavaScript Algorithms and Data Structures",
+    "title": "Legacy JavaScript Algorithms and Data Structures V8",
     "intro": [
-      "Developers use HTML and CSS to control the content and styling of a page. And they use JavaScript to make that page interactive.",
+      "Entwickler verwenden HTML und CSS um den Inhalt und das Styling einer Seite zu kontrollieren. Und sie verwenden JavaScript, um diese Seite interaktiv zu gestalten.",
       "In this JavaScript Algorithm and Data Structures Certification, you'll learn the JavaScript fundamentals like variables, arrays, objects, loops, functions, the DOM and more.",
       "You'll also learn about Object Oriented Programming (OOP), Functional Programming, algorithmic thinking, how to work with local storage, and how to fetch data using an API."
     ],
@@ -311,7 +311,7 @@
       "build-an-rpg-creature-search-app-project": {
         "title": "Build an RPG Creature Search App Project",
         "intro": [
-          "This is one of the required projects to earn your certification.",
+          "Dies ist eines der Projekte, die für den Erhalt der Zertifizierung erforderlich sind.",
           "For this project, you will build an RPG creature search app."
         ]
       },
@@ -490,7 +490,7 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front-End-Entwicklungsbibliotheken",
+    "title": "Front End Development Libraries V8",
     "intro": [
       "Jetzt, wo du mit HTML, CSS und JavaScript vertraut bist, kannst du deine Fähigkeiten verbessern, indem du einige der beliebtesten Front-End-Bibliotheken der Branche lernst.",
       "In der Zertifizierung für Front-End-Entwicklungsbibliotheken lernst du, wie du deine Seite mit Bootstrap schnell gestalten kannst. Du lernst auch, wie du Logik zu deinen CSS-Styles hinzufügen und sie mit Sass erweitern kannst.",
@@ -553,7 +553,7 @@
     }
   },
   "data-visualization": {
-    "title": "Datenvisualisierung",
+    "title": "Data Visualization V8",
     "intro": [
       "Daten sind überall um uns herum, aber ohne Form und Kontext bedeuten sie nicht viel.",
       "In der Datenvisualisierung-Zertifizierung erstellst du Diagramme, Grafiken und Karten, um verschiedene Arten von Daten mit der D3.js Bibliothek zu präsentieren.",
@@ -588,7 +588,7 @@
     }
   },
   "relational-database": {
-    "title": "Relational Database",
+    "title": "Relational Database V8",
     "intro": [
       "In diesen Kursen verwendest du echte Entwickler-Tools und Software wie VS Code, PostgreSQL und die Linux/Unix-Kommandozeile, um interaktive Tutorials zu absolvieren und Projekte zu erstellen.",
       "Diese Kurse beginnen mit den grundlegenden Bash-Befehlen. Über das Terminal lernst du alles von der Navigation und dem Umgang mit dem Dateisystem über das Skripting in der Bash bis hin zur fortgeschrittenen Nutzung.",
@@ -696,7 +696,7 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back-End Entwicklung und APIs",
+    "title": "Back End Development and APIs V8",
     "intro": [
       "Bis zu diesem Punkt hast du JavaScript nur im Front-End verwendet, um einer Seite Interaktivität hinzuzufügen, Aufgaben mit Algorithmen zu lösen oder eine SPA zu bauen. Aber JavaScript kann auch im Back-End, also auf dem Server, verwendet werden, um ganze Webanwendungen zu erstellen.",
       "Heutzutage ist eine der beliebtesten Arten, Anwendungen zu erstellen, Microservices. Das sind kleine, modulare Anwendungen, die zusammenarbeiten und ein größeres Ganzes bilden.",
@@ -1394,7 +1394,7 @@
     }
   },
   "a2-english-for-developers": {
-    "title": "A2 English for Developers (Beta) Certification",
+    "title": "A2 English for Developers Certification (Beta)",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the A2 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "The first half of the curriculum will help you get comfortable with English grammar and usage. It will give you tons of hands-on practice. You'll learn basics like introducing yourself, making small talk, and discussing your work.",
@@ -1573,7 +1573,7 @@
     }
   },
   "b1-english-for-developers": {
-    "title": "B1 English for Developers (Beta) Certification",
+    "title": "B1 English for Developers Certification (Beta)",
     "intro": [
       "In this English for Developers Curriculum, you'll learn the essentials of English communication. This will follow the B1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for developers.",
       "It will help you strengthen your foundational skills while introducing more complex grammar and usage. You'll learn how to describe places and things, share past experiences, and confidently use tenses like Present Perfect and Future. Practical communication strategies are included as well, such as managing conversations, expressing opinions, and building agreement or disagreement in discussions.",
@@ -1724,6 +1724,12 @@
         "intro": [
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
+      },
+      "en-b1-certification-exam": {
+        "title": "B1 English for Developers Certification Exam",
+        "intro": [
+          "This exam is required to claim the B1 English for Developers Certification."
+        ]
       }
     }
   },
@@ -1840,7 +1846,6 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -2087,6 +2092,12 @@
           "In these lessons, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -2173,10 +2184,22 @@
           "In these lessons, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
           "In this lesson, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -2300,6 +2323,12 @@
           "In these lessons, you will learn about working with ARIA roles."
         ]
       },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
       "lecture-accessible-media-elements": {
         "title": "Working with Accessible Media Elements",
         "intro": [
@@ -2410,14 +2439,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -2594,6 +2623,12 @@
         "title": "Design a Contact Form",
         "intro": [
           "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
         ]
       },
       "lab-feature-selection": {
@@ -3048,10 +3083,22 @@
           "In this lesson you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
           "In this lesson you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including the <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code> methods."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -3083,10 +3130,24 @@
           "In these lessons you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the application functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lessons you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
+        ]
+      },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an application that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the application works as intended."
         ]
       },
       "lecture-working-with-comparison-and-boolean-operators": {
@@ -4451,7 +4512,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -4610,9 +4671,11 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
-      "lab-placeholder-oop-1": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
       },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
@@ -4636,9 +4699,11 @@
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
       },
-      "workshop-placeholder-oop-3": {
-        "title": "Placeholder - Waiting for title",
-        "intro": [""]
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
       },
       "lab-player-interface": {
         "title": "Build a Player Interface",
@@ -4760,8 +4825,10 @@
         ]
       },
       "workshop-shortest-path-algorithm": {
-        "title": "Build a Shortest Path Algorithm",
-        "intro": [""]
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement the shortest path algorithm to find the shortest path between two nodes in a graph."
+        ]
       },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
@@ -5027,16 +5094,13 @@
     "title": "JavaScript Certification",
     "intro": [
       "This course teaches you core JavaScript programming concepts such as working with variables, functions, objects, arrays, and control flow. You'll also learn how to manipulate the DOM, handle events, and apply techniques like asynchronous programming, functional programming, and accessibility best practices.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Markdown to HTML Converter",
-      "- Build a Drum Machine",
-      "- Build a Voting System",
-      "- Build a Bank Account Management Program",
-      "- Build a Weather App",
-      "Pass the exam to earn your JavaScript Certification."
+      "To earn your JavaScript Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the JavaScript Certification exam."
     ],
     "chapters": {
-      "javascript": "JavaScript"
+      "javascript": "JavaScript",
+      "javascript-certification-exam": "JavaScript Certification Exam"
     },
     "modules": {
       "javascript-variables-and-strings": "Variables and Strings",
@@ -5150,10 +5214,22 @@
           "In this lecture you will learn how to search for substrings using the <code>includes()</code> method and how to extract portions of strings using the <code>slice()</code> method."
         ]
       },
+      "workshop-string-inspector": {
+        "title": "Build a String Inspector",
+        "intro": [
+          "In this workshop, you will practice working with the <code>includes()</code> and <code>slice()</code> methods by building a string inspector."
+        ]
+      },
       "lecture-working-with-string-formatting-methods": {
         "title": "Working with String Formatting Methods",
         "intro": [
           "In this lecture you will learn how to format strings by changing their case using <code>toUpperCase()</code> and <code>toLowerCase()</code> methods, and how to remove whitespace using <code>trim()</code>, <code>trimStart()</code>, and <code>trimEnd()</code> methods."
+        ]
+      },
+      "workshop-string-formatter": {
+        "title": "Build a String Formatter",
+        "intro": [
+          "In this workshop, you will practice working with various string methods including <code>trim()</code>, <code>toUpperCase()</code> and <code>toLowerCase()</code>."
         ]
       },
       "lecture-working-with-string-modification-methods": {
@@ -5185,16 +5261,36 @@
           "In these lectures you will learn about the number type, arithmetic operators, and using them with numbers and strings."
         ]
       },
+      "lab-debug-type-coercion-errors": {
+        "title": "Debug Type Coercion Errors in a Buggy App",
+        "intro": [
+          "In this lab, you will be working with a buggy app that contains several type coercion errors.",
+          "Your task is to identify and fix these errors to ensure the app functions correctly."
+        ]
+      },
       "lecture-working-with-operator-behavior": {
         "title": "Working with Operator Behavior",
         "intro": [
           "In these lectures you will learn about operator precedence, the increment and decrement operators, and compound assignment operators."
         ]
       },
+      "lab-debug-increment-and-decrement-operator-errors": {
+        "title": "Debug Increment and Decrement Operator Errors in a Buggy App",
+        "intro": [
+          "In this lab, you'll debug an app that has several errors related to the increment and decrement operators.",
+          "Your task is to identify and fix the errors so that the app works as intended."
+        ]
+      },
       "lecture-working-with-comparison-and-boolean-operators": {
         "title": "Working with Comparison and Boolean Operators",
         "intro": [
           "In these lectures you will learn about booleans, and equality and inequality operators, and other comparison operators."
+        ]
+      },
+      "workshop-logic-checker-app": {
+        "title": "Build a Logic Checker App",
+        "intro": [
+          "In this workshop, you'll practice working with conditional statements and comparison operators by building a logic checker app."
         ]
       },
       "lecture-working-with-unary-and-bitwise-operators": {
@@ -6200,7 +6296,7 @@
           "You'll practice how to fetch data from the API, store and display it on your app."
         ]
       },
-      "review-asynchronous-javascrip": {
+      "review-asynchronous-javascript": {
         "title": "Asynchronous JavaScript Review",
         "intro": [
           "Review asynchronous JavaScript concepts to prepare for the upcoming quiz."
@@ -6227,6 +6323,7 @@
   },
   "front-end-development-libraries-v9": {
     "title": "Front End Development Libraries Certification",
+    "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
       "To earn your Front End Development Libraries Certification:",
@@ -6234,11 +6331,14 @@
       "- Pass the Front End Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries"
+      "front-end-development-libraries": "Front End Development Libraries",
+      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
       "react-state-hooks-and-routing": "React State, Hooks, and Routing",
+      "lab-currency-converter": "Build a Currency Converter",
+      "lab-tic-tac-toe": "Build a Tic-Tac-Toe Game",
       "performance": "Performance",
       "testing": "Testing",
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
@@ -6249,19 +6349,19 @@
     },
     "module-intros": {
       "data-visualization": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to data visualization and learn how to work with the D3 library."
         ]
       },
       "typescript-fundamentals": {
-        "note": "Coming Fall 2025",
+        "note": "Coming 2026",
         "intro": [
           "In this module, you will be introduced to TypeScript, which is a superset of JavaScript that allows you to add static typing to your JavaScript code. You will build several workshops and labs that will give you practice in working with generics, type narrowing, TSX, and more. Then you will test your knowledge of TypeScript fundamentals with a short quiz."
         ]
       },
       "front-end-development-libraries-certification-exam": {
-        "note": "Coming Winter 2025",
+        "note": "Coming 2026",
         "intro": [
           "Pass this exam to earn your Front End Development Libraries Certification."
         ]
@@ -6574,69 +6674,61 @@
       "- Pass the Python Certification exam."
     ],
     "chapters": {
-      "python": "Python"
+      "python": "Python",
+      "python-certification-exam": "Python Certification Exam"
     },
     "modules": {
       "python-basics": "Python Basics",
       "python-loops-and-sequences": "Loops and Sequences",
       "python-dictionaries-and-sets": "Dictionaries and Sets",
+      "lab-user-configuration-manager": "Build a User Configuration Manager",
       "python-error-handling": "Error Handling",
       "python-classes-and-objects": "Classes and Objects",
+      "lab-budget-app": "Build a Budget App",
       "python-object-oriented-programming": "Object-Oriented Programming (OOP)",
+      "lab-polygon-area-calculator": "Build a Polygon Area Calculator",
       "python-linear-data-structures": "Linear Data Structures",
+      "lab-hash-table": "Build a Hash Table",
       "python-algorithms": "Algorithms",
+      "lab-tower-of-hanoi": "Implement the Tower of Hanoi Algorithm",
       "python-graphs-and-trees": "Graphs and Trees",
       "python-dynamic-programming": "Dynamic Programming",
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your Python Certification."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -6646,7 +6738,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -6762,6 +6854,12 @@
           "In this workshop, you will learn about classes, objects, and methods in Python by building a simple musical instrument inventory."
         ]
       },
+      "lab-planet-class": {
+        "title": "Build a Planet Class",
+        "intro": [
+          "In this lab you will create a class that represents a planet."
+        ]
+      },
       "workshop-email-simulator": {
         "title": "Build an Email Simulator",
         "intro": [
@@ -6799,6 +6897,12 @@
           "In this workshop, you'll practice encapsulation, properties, and other OOP concepts by building a salary tracking system for employees."
         ]
       },
+      "lab-game-character-stats": {
+        "title": "Build a Game Character Stats Tracker",
+        "intro": [
+          "In this lab, you will build a game character with different stats using object-oriented programming."
+        ]
+      },
       "lecture-understanding-inheritance-and-polymorphism": {
         "title": "Understanding Inheritance and Polymorphism",
         "intro": [
@@ -6820,6 +6924,18 @@
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
+      },
+      "workshop-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this workshop you will build a flexible discount pricing calculator through abstract base classes, allowing multiple discount algorithms to be applied interchangeably without modifying the core logic."
+        ]
+      },
+      "lab-player-interface": {
+        "title": "Build a Player Interface",
+        "intro": [
+          "In this lab, you'll use the <code>abc</code> module to build a player interface."
+        ]
       },
       "review-object-oriented-programming": {
         "title": "Object Oriented Programming Review",
@@ -6934,6 +7050,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "workshop-shortest-path-algorithm": {
+        "title": "Implement the Shortest Path Algorithm",
+        "intro": [
+          "In this workshop you will implement an algorithm to find the shortest path between two nodes in a graph."
+        ]
+      },
       "lab-adjacency-list-to-matrix-converter": {
         "title": "Build an Adjacency List to Matrix Converter",
         "intro": [
@@ -7013,7 +7135,8 @@
       "- Pass the Relational Databases Certification exam."
     ],
     "chapters": {
-      "relational-databases": "Relational Databases"
+      "relational-databases": "Relational Databases",
+      "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
     "modules": {
       "code-editors": "Code Editors",
@@ -7029,14 +7152,6 @@
       "lab-periodic-table-database": "Build a Periodic Table Database",
       "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
-    },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Relational Databases Certification."
-        ]
-      }
     },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
@@ -7229,6 +7344,12 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Relational Databases Certification Exam",
         "intro": [
@@ -7239,6 +7360,7 @@
   },
   "back-end-development-and-apis-v9": {
     "title": "Back End Development and APIs Certification",
+    "note": "This certification is currently in development and will be available soon.",
     "intro": [
       "This course teaches you the fundamentals of back end development and APIs.",
       "To earn your Back End Development and APIs Certification:",
@@ -7246,10 +7368,12 @@
       "- Pass the Back End Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs"
+      "back-end-development-and-apis": "Back End Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
@@ -7264,10 +7388,16 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
+      "introduction-to-nodejs": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
@@ -7344,21 +7474,54 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Working with NodeJS and event driven architecture",
+        "intro": [
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
+      "quiz-node-js-intro": {
+        "title": "NodeJS Intro Quiz",
+        "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-working-with-npm-scripts": {
+        "title": "Working with npm Scripts",
+        "intro": [
+          "Learn about npm scripts, publishing packages to the npm registry, and working with CommonJS and ES modules. These lessons cover essential Node.js development tools and module systems."
+        ]
+      },
+      "exam-back-end-development-and-apis-certification": {
+        "title": "Back End Development and APIs Certification Exam",
+        "intro": [
+          "Pass this exam to earn your Back End Development and APIs Certification"
         ]
       }
     }
   },
   "full-stack-developer-v9": {
     "title": "Certified Full Stack Developer Curriculum",
+    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This course provides a comprehensive pathway to becoming a Certified Full Stack Developer, covering all the essential technologies required to build modern, scalable web applications from start to finish.",
-      "Through a blend of interactive lessons, coding exercises, and real-world projects, you will master both frontend and backend development. You'll work with HTML, CSS, and JavaScript to build responsive user interfaces, explore React and TypeScript for advanced web applications, and learn to manage data with relational databases - and on the backend, you'll use Git, Npm, Node.js, and Python to create powerful server-side solutions.",
-      "By the end of this course, you'll have the practical skills and experience to confidently develop complete web applications, preparing you for a successful career as a Full Stack Developer.",
-      "This certification will take you a substantial amount of time and effort to complete. If you start now, you may be ready to start the remaining material and final exam when we launch it in the coming months."
+      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
     ],
     "chapters": {
       "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
@@ -7370,7 +7533,7 @@
       "certified-full-stack-developer-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "This will be a 90 question exam testing what you have learned throughout this certification."
+          "This exam will test what you have learned throughout the previous six certifications."
         ]
       }
     },
@@ -7383,46 +7546,41 @@
   },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "This course teaches you the fundamentals of Spanish at the A1 level of the Common European Framework of Reference (CEFR), with lessons focused on professional settings. Each module is broken down into sections:",
+      "- A Warm-up section for quick review.",
+      "- Learn sections with new vocabulary and grammar.",
+      "- Practice sections to check your comprehension and writing skills.",
+      "- A Review section with key grammar and vocabulary."
+    ],
     "chapters": {
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
-      "es-a1-chapter-letters-and-sounds": "Letters and Sounds",
-      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions"
+      "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
+      "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
-      "es-a1-module-alphabet-accents-and-punctuation": "Alphabet, Accents, and Punctuation",
+      "es-a1-module-letters-sounds-and-first-numbers": "Letters, Sounds and First Numbers",
       "es-a1-module-greetings-and-farewells": "Greetings and Farewells",
       "es-a1-module-introducing-yourself": "Introducing Yourself",
-      "es-a1-module-first-questions": "First Questions"
+      "es-a1-module-first-questions": "First Questions",
+      "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
     },
     "module-intros": {
-      "es-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-alphabet-accents-and-punctuation": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-greetings-and-farewells": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-introducing-yourself": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "es-a1-module-first-questions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+      "es-a1-module-sharing-your-personal-details": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
       }
     },
     "blocks": {
       "es-a1-warm-up-greetings-and-farewells-basics": {
         "title": "Greetings and Farewells Basics",
-        "intro": ["Learn the basics of greetings and farewells in Spanish."]
+        "intro": ["", ""]
       },
       "es-a1-learn-greetings-during-the-day": {
         "title": "Greetings During the Day",
@@ -7452,8 +7610,8 @@
         "title": "Punctuation",
         "intro": ["", ""]
       },
-      "es-a1-quiz-alphabet-accent-and-punctuation-quiz": {
-        "title": "Alphabet, Accent and Punctuation Quiz",
+      "es-a1-quiz-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Quiz",
         "intro": ["", ""]
       },
       "es-a1-warm-up-introducing-yourself-basics": {
@@ -7503,6 +7661,74 @@
       "es-a1-quiz-first-questions": {
         "title": "First Questions Quiz",
         "intro": ["", ""]
+      },
+      "es-a1-learn-vowels": {
+        "title": "Vowels",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-consonants-and-special-characters": {
+        "title": "Consonants and Special Characters",
+        "intro": ["", ""]
+      },
+      "es-a1-review-spanish-fundamentals": {
+        "title": "Spanish Fundamentals Review",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-alphabet": {
+        "title": "The Spanish Alphabet Practice",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-remember-first-numbers": {
+        "title": "Remember First Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-10-to-29": {
+        "title": "Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-numbers-10-to-29": {
+        "title": "Using Numbers 10 to 29",
+        "intro": ["", ""]
+      },
+      "es-a1-review-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-10-to-29": {
+        "title": "Numbers 10 to 29 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-getting-ready-to-share-personal-details": {
+        "title": "Getting Ready to Share Personal Details",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-basic-personal-information": {
+        "title": "Basic Personal Information",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-contact-information-and-spelling": {
+        "title": "Contact Information and Spelling",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-personal-details-in-action": {
+        "title": "Personal Details in Action",
+        "intro": ["", ""]
+      },
+      "es-a1-review-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-sharing-your-personal-details": {
+        "title": "Sharing Your Personal Details Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-the-first-ten-numbers": {
+        "title": "The First Ten Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-the-first-ten-numbers": {
+        "title": "The First Ten Numbers Practice",
+        "intro": ["", ""]
       }
     }
   },
@@ -7510,17 +7736,14 @@
     "title": "Responsive Web Design Certification",
     "intro": [
       "This course teaches the fundamentals of HTML and CSS, including modern layout, design, accessibility, and responsive web development. You'll build practical projects and gain the skills to create professional, user-friendly webpages.",
-      "To qualify for the exam, you must complete the following projects:",
-      "- Build a Survey Form",
-      "- Build a Page of Playing Cards",
-      "- Build a Book Inventory App",
-      "- Build a Technical Documentation Page",
-      "- Build a Product Landing Page",
-      "Pass the exam to earn your Responsive Web Design Certification."
+      "To earn your Responsive Web Design Certification:",
+      "- Complete the five required projects to qualify for the certification exam.",
+      "- Pass the Responsive Web Design Certification exam."
     ],
     "chapters": {
       "html": "HTML",
       "css": "CSS",
+      "computers": "Computers",
       "responsive-web-design-certification-exam": "Responsive Web Design Certification Exam"
     },
     "modules": {
@@ -7608,6 +7831,12 @@
           "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
         ]
       },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
       "lecture-understanding-how-html-affects-seo": {
         "title": "Understanding How HTML Affects SEO",
         "intro": [
@@ -7624,6 +7853,13 @@
         "title": "Working with Audio and Video Elements",
         "intro": [
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
         ]
       },
       "lab-html-audio-and-video-player": {
@@ -7694,10 +7930,22 @@
           "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
         ]
       },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
       "lecture-working-with-text-and-time-semantic-elements": {
         "title": "Working with Text and Time Semantic Elements ",
         "intro": [
           "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
         ]
       },
       "lecture-working-with-specialized-semantic-elements": {
@@ -7815,10 +8063,22 @@
           "In this workshop, you will build an accessible tech conference schedule table."
         ]
       },
+      "lab-debug-donation-form": {
+        "title": "Debug a Donation Form",
+        "intro": [
+          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
+        ]
+      },
       "lecture-introduction-to-aria": {
         "title": "Introduction to ARIA",
         "intro": [
           "In these lectures, you will learn about working with ARIA roles."
+        ]
+      },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
         ]
       },
       "lecture-accessible-media-elements": {
@@ -7931,14 +8191,14 @@
         ]
       },
       "review-basic-css": {
-        "title": "Basic CSS Review",
+        "title": "CSS Fundamentals Review",
         "intro": [
           "Before you are quizzed on basic CSS concepts, you first need to review.",
           "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
         ]
       },
       "quiz-basic-css": {
-        "title": "Basic CSS Quiz",
+        "title": "CSS Fundamentals Quiz",
         "intro": [
           "Test what you've learned in this quiz of basic CSS knowledge."
         ]
@@ -8052,6 +8312,13 @@
           "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
         ]
       },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+        ]
+      },
       "lab-job-application-form": {
         "title": "Build a Job Application Form",
         "intro": [
@@ -8117,6 +8384,12 @@
           "In this lab, you'll design a contact form in HTML and style it using CSS."
         ]
       },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+        ]
+      },
       "lab-feature-selection": {
         "title": "Design a Feature Selection Page",
         "intro": [
@@ -8179,6 +8452,13 @@
         "title": "Build a Flexbox Photo Gallery",
         "intro": [
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
+      "lab-pricing-plans-layout": {
+        "title": "Design a Pricing Plans Layout Page",
+        "intro": [
+          "In this lab, you'll use flexbox to create a common three-card tier layout.",
+          "You'll practice aligning elements using flexbox properties like <code>flex</code>, <code>flex-grow</code>, <code>order</code>, and more."
         ]
       },
       "lab-page-of-playing-cards": {
@@ -8530,12 +8810,16 @@
   },
   "a1-professional-chinese": {
     "title": "A1 Professional Chinese Certification (Beta)",
-    "note": "This certification is currently in active development. While there isn't a claimable certification available for this section at the moment, one will be available soon. In the meantime, you're welcome to explore the courses we have created below.",
-    "intro": ["Placeholder intro"],
+    "note": "This certification is in active development. We are currently publishing the introductory chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
+    "intro": [
+      "In this A1 Professional Chinese Curriculum, you'll learn the building blocks of the Chinese language. This will follow the A1 level of the Common European Framework of Reference (CEFR). And we've focused on vocabulary that is particularly useful for professional settings.",
+      "The curriculum is broken down into several modules that include warm-up, learning, practice, review pages, and quizzes to make sure that you truly understand the material before moving on to the next module.",
+      "Each chapter includes hundreds of interactive tasks designed to help you take your first steps in learning Chinese with confidence."
+    ],
     "chapters": {
       "zh-a1-chapter-welcome-to-a1-professional-chinese": "Welcome to A1 Professional Chinese",
       "zh-a1-chapter-pinyin": "Pinyin",
-      "zh-a1-chapter-greeting-and-self-introduction": "Greeting and Self-introduction",
+      "zh-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
       "zh-a1-chapter-introducing-colleagues-and-family": "Introducing Colleagues and Family",
       "zh-a1-chapter-expressing-what-you-can-and-cant-do": "Expressing What You Can and Can't Do"
     },
@@ -8550,37 +8834,29 @@
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
     },
     "module-intros": {
-      "zh-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-initials-and-finals": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-greetings-and-basic-introductions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-asking-and-giving-basic-information": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "zh-a1-module-introducing-others": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues that introduce information about other people, such as name, role, nationality, and age."
+        ]
       },
       "zh-a1-module-getting-to-know-the-team": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
       },
       "zh-a1-module-talking-about-personal-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues about what people can and cannot do, such as languages and work skills."
+        ]
       },
       "zh-a1-module-discussing-team-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation about who can do which tasks on a team and how a project starts."
+        ]
       }
     },
     "blocks": {
@@ -8588,8 +8864,8 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Single Finals",
+      "zh-a1-learn-simple-finals": {
+        "title": "Simple Finals",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": {
@@ -8604,24 +8880,16 @@
         "title": "Nasal Finals",
         "intro": ["", ""]
       },
-      "zh-a1-review-pinyin": {
-        "title": "Pinyin Review",
-        "intro": ["", ""]
-      },
-      "zh-a1-quiz-pinyin": {
-        "title": "Pinyin Quiz",
-        "intro": ["", ""]
-      },
       "zh-a1-warm-up-greeting-new-colleagues": {
         "title": "Greeting New Colleagues",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-greetings-and-introductions": {
-        "title": "Understanding the Greetings and Introductions",
+      "zh-a1-learn-understanding-greetings-and-introductions": {
+        "title": "Understanding Greetings and Introductions",
         "intro": ["", ""]
       },
-      "zh-a1-practice-building-your-self-introduction": {
-        "title": "Greetings and Introductions Quiz",
+      "zh-a1-practice-introducing-yourself": {
+        "title": "​Introducing Yourself",
         "intro": ["", ""]
       },
       "zh-a1-review-greetings-and-introductions": {
@@ -8632,8 +8900,8 @@
         "title": "Greetings and Introductions Quiz",
         "intro": ["", ""]
       },
-      "zh-a1-learn-understanding-the-questions-and-answers": {
-        "title": "Understanding the Questions and Answers",
+      "zh-a1-learn-understanding-questions-and-answers": {
+        "title": "Understanding Questions and Answers",
         "intro": ["", ""]
       },
       "zh-a1-practice-exchanging-basic-information": {
@@ -8652,8 +8920,8 @@
         "title": "Introducing Others Basics",
         "intro": ["", ""]
       },
-      "zh-a1-learn-the-team": {
-        "title": "The Team",
+      "zh-a1-learn-meeting-the-team": {
+        "title": "Meeting the Team",
         "intro": ["", ""]
       },
       "zh-a1-learn-a-new-colleague": {
@@ -8738,6 +9006,14 @@
       },
       "zh-a1-warm-up-meeting-new-teammates": {
         "title": "Meeting New Teammates",
+        "intro": ["", ""]
+      },
+      "zh-a1-learn-special-spelling-rules": {
+        "title": "Special Spelling Rules",
+        "intro": ["", ""]
+      },
+      "zh-a1-practice-pinyin": {
+        "title": "Pinyin Practice",
         "intro": ["", ""]
       }
     }
@@ -8849,6 +9125,7 @@
   "misc-text": {
     "browse-other": "Browse our other free certifications",
     "courses": "Kurse",
+    "requirements": "Requirements",
     "steps": "Schritte",
     "expand": "Kurs erweitern",
     "collapse": "Kurs einklappen",

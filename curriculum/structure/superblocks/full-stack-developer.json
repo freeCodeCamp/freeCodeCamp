@@ -14,6 +14,7 @@
             "workshop-cat-photo-app",
             "lab-recipe-page",
             "lecture-html-fundamentals",
+            "workshop-bookstore-page",
             "lecture-understanding-how-html-affects-seo",
             "lab-travel-agency-page",
             "lecture-working-with-audio-and-video-elements",
@@ -33,6 +34,7 @@
           "blocks": [
             "lecture-importance-of-semantic-html",
             "lecture-understanding-nuanced-semantic-elements",
+            "workshop-major-browsers-list",
             "lecture-working-with-text-and-time-semantic-elements",
             "workshop-quincys-job-tips",
             "lecture-working-with-specialized-semantic-elements",
@@ -297,6 +299,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
             "review-javascript-strings",
@@ -307,7 +310,9 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
@@ -404,7 +409,6 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
-            "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -554,6 +558,7 @@
           "blocks": [
             "lecture-understanding-functional-programming",
             "workshop-recipe-ingredient-converter",
+            "lab-optional-arguments-sum-function",
             "lab-sorting-visualizer",
             "review-javascript-functional-programming",
             "quiz-javascript-functional-programming"
@@ -720,7 +725,7 @@
         },
         {
           "dashedName": "python-classes-and-objects",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-classes-and-objects",
             "workshop-musical-instrument-inventory",
@@ -733,7 +738,7 @@
         },
         {
           "dashedName": "python-object-oriented-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-object-oriented-programming-and-encapsulation",
             "workshop-salary-tracker",
@@ -742,6 +747,7 @@
             "workshop-media-catalogue",
             "lab-polygon-area-calculator",
             "lecture-understanding-abstraction",
+            "workshop-discount-calculator",
             "lab-player-interface",
             "review-object-oriented-programming",
             "quiz-object-oriented-programming"
@@ -749,7 +755,7 @@
         },
         {
           "dashedName": "python-linear-data-structures",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-working-with-common-data-structures",
             "workshop-linked-list-class",
@@ -760,7 +766,7 @@
         },
         {
           "dashedName": "python-algorithms",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-searching-and-sorting-algorithms",
             "workshop-binary-search",
@@ -776,9 +782,10 @@
         },
         {
           "dashedName": "python-graphs-and-trees",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-graphs-and-trees",
+            "workshop-shortest-path-algorithm",
             "lab-adjacency-list-to-matrix-converter",
             "workshop-breadth-first-search",
             "lab-depth-first-search",
@@ -789,7 +796,7 @@
         },
         {
           "dashedName": "python-dynamic-programming",
-          "comingSoon": true,
+          "comingSoon": false,
           "blocks": [
             "lecture-understanding-dynamic-programming",
             "lab-nth-fibonacci-number",
@@ -798,7 +805,7 @@
           ]
         },
         {
-          "comingSoon": true,
+          "comingSoon": false,
           "moduleType": "review",
           "dashedName": "review-python",
           "blocks": ["review-python"]

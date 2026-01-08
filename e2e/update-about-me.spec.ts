@@ -4,7 +4,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
   execSync(
-    'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+    'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
   );
 
   await page.goto('/certifieduser');
@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test('Should allow empty string in any field in about settings', async ({

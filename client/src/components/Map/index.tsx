@@ -31,6 +31,8 @@ const linkSpacingStyle = {
 const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Core]: 'landing.core-certs-heading',
   [SuperBlockStage.English]: 'landing.learn-english-heading',
+  [SuperBlockStage.Spanish]: 'landing.learn-spanish-heading',
+  [SuperBlockStage.Chinese]: 'landing.learn-chinese-heading',
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
@@ -113,6 +115,9 @@ function Map({ forLanding = false }: MapProps) {
               <h2 className={forLanding ? 'big-heading' : ''}>
                 {t(superBlockHeadings[stage])}
               </h2>
+              {stage === SuperBlockStage.Core && (
+                <p>{t('landing.fsd-restructure-note')}</p>
+              )}
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi

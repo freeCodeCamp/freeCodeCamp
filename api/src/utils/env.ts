@@ -192,9 +192,6 @@ export const FCC_API_LOG_TRANSPORT = _FCC_API_LOG_TRANSPORT;
 export const FCC_ENABLE_SHADOW_CAPTURE = undefinedOrBool(
   process.env.FCC_ENABLE_SHADOW_CAPTURE
 );
-export const FCC_ENABLE_EXAM_ENVIRONMENT = undefinedOrBool(
-  process.env.FCC_ENABLE_EXAM_ENVIRONMENT
-);
 export const FCC_ENABLE_SENTRY_ROUTES = undefinedOrBool(
   process.env.FCC_ENABLE_SENTRY_ROUTES
 );

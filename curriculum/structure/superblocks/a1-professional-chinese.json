@@ -15,25 +15,25 @@
         {
           "dashedName": "zh-a1-module-initials-and-finals",
           "blocks": [
-            "zh-a1-learn-single-finals",
+            "zh-a1-learn-simple-finals",
             "zh-a1-learn-initials",
             "zh-a1-learn-compound-finals",
             "zh-a1-learn-nasal-finals",
-            "zh-a1-review-pinyin",
-            "zh-a1-quiz-pinyin"
+            "zh-a1-learn-special-spelling-rules",
+            "zh-a1-practice-pinyin"
           ]
         }
       ]
     },
     {
-      "dashedName": "zh-a1-chapter-greeting-and-self-introduction",
+      "dashedName": "zh-a1-chapter-greetings-and-introductions",
       "modules": [
         {
           "dashedName": "zh-a1-module-greetings-and-basic-introductions",
           "blocks": [
             "zh-a1-warm-up-greeting-new-colleagues",
-            "zh-a1-learn-understanding-the-greetings-and-introductions",
-            "zh-a1-practice-building-your-self-introduction",
+            "zh-a1-learn-understanding-greetings-and-introductions",
+            "zh-a1-practice-introducing-yourself",
             "zh-a1-review-greetings-and-introductions",
             "zh-a1-quiz-greetings-and-introductions"
           ]
@@ -42,7 +42,7 @@
           "dashedName": "zh-a1-module-asking-and-giving-basic-information",
           "blocks": [
             "zh-a1-warm-up-meeting-new-teammates",
-            "zh-a1-learn-understanding-the-questions-and-answers",
+            "zh-a1-learn-understanding-questions-and-answers",
             "zh-a1-practice-exchanging-basic-information",
             "zh-a1-review-introduction-questions",
             "zh-a1-quiz-introduction-questions"
@@ -52,12 +52,14 @@
     },
     {
       "dashedName": "zh-a1-chapter-introducing-colleagues-and-family",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "zh-a1-module-introducing-others",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-introducing-others-basics",
-            "zh-a1-learn-the-team",
+            "zh-a1-learn-meeting-the-team",
             "zh-a1-learn-a-new-colleague",
             "zh-a1-learn-my-family",
             "zh-a1-practice-introducing-others",
@@ -67,6 +69,7 @@
         },
         {
           "dashedName": "zh-a1-module-getting-to-know-the-team",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-knowing-the-team-basics",
             "zh-a1-learn-asking-about-the-team",
@@ -79,9 +82,11 @@
     },
     {
       "dashedName": "zh-a1-chapter-expressing-what-you-can-and-cant-do",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "zh-a1-module-talking-about-personal-skills",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-personal-skills-basics",
             "zh-a1-learn-can-or-cannot",
@@ -92,6 +97,7 @@
         },
         {
           "dashedName": "zh-a1-module-discussing-team-skills",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-team-skills-basics",
             "zh-a1-learn-who-can-do-what-on-the-team",
