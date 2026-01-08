@@ -76,9 +76,7 @@ test.describe('Mobile help-button tests for a page with a reset and help button'
 });
 
 test.describe('Desktop help-button tests for a page with a reset and help button', () => {
-  test('should always be shown', async ({
-    page
-  }) => {
+  test('should always be shown', async ({ page }) => {
     await page.goto(
       'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
     );
