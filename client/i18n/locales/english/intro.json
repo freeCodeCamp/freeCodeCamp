@@ -1518,6 +1518,10 @@
           "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
         ]
       },
+      "en-a2-quiz-clarify-information-interactions": {
+        "title": "Clarifying Information Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Learn How to Use Basic Programming Vocabulary in Conversations",
         "intro": [
