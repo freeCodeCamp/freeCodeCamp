@@ -1538,6 +1538,10 @@
           "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
         ]
       },
+      "en-a2-quiz-code-related-concepts-terms": {
+        "title": "Code Concepts and Terms Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Learn How to Discuss Tech Trends and Updates",
         "intro": [
