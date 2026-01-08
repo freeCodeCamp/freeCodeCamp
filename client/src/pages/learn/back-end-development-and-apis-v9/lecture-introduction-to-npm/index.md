@@ -6,4 +6,4 @@ superBlock: back-end-development-and-apis-v9
 
 ## Introduction to the Introduction to npm
 
-This page is for the Introduction to npm
+In these lessons, you will learn about npm, and how it can help you manage your project's dependencies.
