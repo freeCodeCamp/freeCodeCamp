@@ -1658,6 +1658,10 @@
           "This course will show you how to ask for assistance from a coworker when you need it."
         ]
       },
+      "en-a2-quiz-request-receive-guidance": {
+        "title": "Requesting and Receiving Guidance Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Learn How to Provide Explanations When Helping Others",
         "intro": [
