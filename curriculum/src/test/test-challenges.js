@@ -175,13 +175,13 @@ async function populateTestsForLang({ lang, challenges, meta }) {
           describe(`ID: ${challenge.id}`, function () {
             // Note: the title in meta.json are purely for human readability and
             // do not include translations, so we do not validate against them.
-            it('Matches an ID in meta.json', function () {
+            it(`Matches an ID in ${challenge.block}.json`, function () {
               const index = meta[dashedBlockName]?.challengeOrder?.findIndex(
                 ({ id }) => id === challenge.id
               );
               expect(
                 index,
-                `Cannot find ID "${challenge.id}" in meta.json file for block "${dashedBlockName}"`
+                `Cannot find ID "${challenge.id}" in ${challenge.block}.json file for block "${dashedBlockName}"`
               ).toBeGreaterThanOrEqual(0);
             });
 

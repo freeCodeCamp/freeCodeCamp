@@ -16,7 +16,7 @@ const originalEmail = 'foo@bar.com';
 const newEmail = 'foo-update@bar.com';
 
 test.beforeEach(async ({ page }) => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   await page.goto('/settings');
 });
 
