@@ -1668,6 +1668,10 @@
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
       },
+      "en-a2-quiz-provide-explanations-helping-others": {
+        "title": "Explaining Things to Others Quiz",
+        "intro": ["", ""]
+      },
       "en-a2-certification-exam": {
         "title": "A2 English for Developers Certification Exam",
         "intro": [
