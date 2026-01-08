@@ -337,6 +337,7 @@ const sessionUserData = {
 const baseProgressData = {
   currentChallengeId: '',
   isA2EnglishCert: false,
+  isB1EnglishCert: false,
   isRespWebDesignCert: false,
   is2018DataVisCert: false,
   isFrontEndLibsCert: false,

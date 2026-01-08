@@ -1,6 +1,9 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Editor scrollbar width', () => {
+test.describe('Editor scrollbar width on mobile', () => {
+  test.use({
+    viewport: { width: 393, height: 851 }
+  });
   test.beforeEach(async ({ page }) => {
     await page.goto('/settings');
   });

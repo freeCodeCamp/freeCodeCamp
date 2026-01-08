@@ -7578,6 +7578,12 @@
           "Aprenda sobre as bibliotecas principais do Node.js, como instalar o Node.js no seu computador e as vantagens e desvantagens de usar o Node.js no backend."
         ]
       },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
       "review-node-js-intro": {
         "title": "Revisão introdutória de NodeJS",
         "intro": [
@@ -7949,6 +7955,13 @@
           "Nestes cursos, você aprenderá como trabalhar com os elementos <code>audio</code> e <code>video</code>."
         ]
       },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
+        ]
+      },
       "lab-html-audio-and-video-player": {
         "title": "Crie um Tocador de Áudio e Vídeo HTML",
         "intro": [
@@ -8148,6 +8161,12 @@
         "title": "Crie uma Tabela de Horários de Conferência de Tecnologia",
         "intro": [
           "Neste workshop, você criará uma tabela de horários de conferência de tecnologia acessível."
+        ]
+      },
+      "lab-debug-donation-form": {
+        "title": "Debug a Donation Form",
+        "intro": [
+          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
         ]
       },
       "lecture-introduction-to-aria": {

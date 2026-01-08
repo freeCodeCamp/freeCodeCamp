@@ -6,13 +6,13 @@ import { defineConfig, devices } from '@playwright/test';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-const envPath = path.resolve(__dirname, '.env');
+const envPath = path.resolve(__dirname, '..', '.env');
 dotenvConfig({ path: envPath });
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: 'e2e',
+  testDir: '.',
   /* Run tests in files in parallel */
   fullyParallel: false,
   /* Fail the build on CI if you accidentally left test.only in the source code. */

@@ -151,7 +151,7 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: npx playwright test third-party-donation.spec.ts --project=${{ matrix.browsers }}
+        run: pnpm run playwright:run third-party-donation.spec.ts --project=${{ matrix.browsers }}
 
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         if: ${{ !cancelled() }}

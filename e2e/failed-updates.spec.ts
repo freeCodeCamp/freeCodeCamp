@@ -21,11 +21,11 @@ function getCompletedIds(completedChallenges: { id: string }[]): string[] {
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('failed update flushing', () => {

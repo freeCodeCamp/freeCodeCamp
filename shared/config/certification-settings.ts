@@ -55,6 +55,7 @@ export function isCertification(x: string): x is Certification {
 // live and not legacy.
 export const currentCertifications = [
   Certification.A2English,
+  Certification.B1English,
   Certification.FoundationalCSharp,
   Certification.JsV9,
   Certification.PythonV9,
@@ -96,7 +97,6 @@ export const upcomingCertifications = [
   Certification.FrontEndDevLibsV9,
   Certification.BackEndDevApisV9,
   Certification.FullStackDeveloperV9,
-  Certification.B1English,
   Certification.A2Spanish,
   Certification.A2Chinese,
   Certification.A1Chinese
