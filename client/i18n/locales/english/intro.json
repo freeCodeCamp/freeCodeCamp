@@ -1568,6 +1568,10 @@
           "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
         ]
       },
+      "en-a2-quiz-share-progress-weekly-meeting": {
+        "title": "Weekly Meeting Progress Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Learn How to Ask for Clarification on Code Understanding",
         "intro": [
