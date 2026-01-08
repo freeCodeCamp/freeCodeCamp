@@ -1608,6 +1608,10 @@
           "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
         ]
       },
+      "en-a2-quiz-analyze-code-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Learn How to Share Progress and Accomplishments",
         "intro": [
