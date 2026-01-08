@@ -1667,6 +1667,10 @@
           "This course will show you how to express your ideas and feeling towards topics in a discussion."
         ]
       },
+      "en-b1-quiz-share-opinions": {
+        "title": "Sharing Opinions Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
         "intro": [
