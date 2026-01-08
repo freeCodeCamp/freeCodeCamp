@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'AIX' | 'OTHER' | 'LOADING';
+type UserOS = 'MAC' | 'WIN' | 'LINUX' | 'OTHER' | 'LOADING';
 
-type UserOSState = {
+export type UserOSState = {
   os: UserOS;
   architecture: string;
 };
@@ -46,12 +46,12 @@ const getArchitecture = async (): Promise<string> => {
   return 'Unknown';
 };
 
-export const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
+const detectOsInUserAgent = (userAgent: string | undefined): UserOS => {
   const osMatch = userAgent?.match(/(Win|Mac|Linux)/);
   return osMatch ? (osMatch[1].toUpperCase() as UserOS) : 'OTHER';
 };
 
-export const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
+const detectOS = (): UserOS => detectOsInUserAgent(navigator?.userAgent);
 
 const useDetectOS = () => {
   const [userOS, setUserOS] = useState<UserOSState>({
