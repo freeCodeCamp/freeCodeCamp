@@ -1695,11 +1695,19 @@
           "This course will show you ways of talking about places and events conversationally."
         ]
       },
+      "en-b1-quiz-describe-places-events": {
+        "title": "Describing Places and Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Learn How to Talk About Past Experiences",
         "intro": [
           "In this course, you will learn how to share experiences that you had in the past."
         ]
+      },
+      "en-b1-quiz-past-experiences": {
+        "title": "Talking About Past Experiences Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Learn How to Talk About Past Activities",
@@ -1707,11 +1715,19 @@
           "In this course, you will learn how talk about things that you did."
         ]
       },
+      "en-b1-quiz-past-activities": {
+        "title": "Talking About Past Activities Quiz",
+        "intro": ["", ""]
+      },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Learn Present Perfect while Talking About Accessibility",
         "intro": [
           "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
         ]
+      },
+      "en-b1-quiz-present-perfect-accessibility": {
+        "title": "Present Perfect and Accessibility Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-plan-future-events": {
         "title": "Learn How to Plan Future Events",
@@ -1719,11 +1735,19 @@
           "In this course, you will learn to use the different forms of the future to plan for upcoming events."
         ]
       },
+      "en-b1-quiz-plan-future-events": {
+        "title": "Planning Future Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-future-continuous-while-describing-actions": {
         "title": "Learn Future Continuous while Describing Actions",
         "intro": [
           "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
         ]
+      },
+      "en-b1-quiz-future-continuous-actions": {
+        "title": "Future Continuous Actions Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-conditionals": {
         "title": "Learn How to Use Conditionals",
@@ -1731,11 +1755,19 @@
           "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
         ]
       },
+      "en-b1-quiz-conditionals": {
+        "title": "Using Conditionals Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
         "intro": [
           "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
         ]
+      },
+      "en-b1-quiz-share-feedback": {
+        "title": "Sharing Feedback Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Learn How to Share Your Opinion",
@@ -1743,11 +1775,19 @@
           "This course will show you how to express your ideas and feeling towards topics in a discussion."
         ]
       },
+      "en-b1-quiz-share-opinions": {
+        "title": "Sharing Opinions Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
         "intro": [
           "In this course, you will learn to express agreement in different professional settings."
         ]
+      },
+      "en-b1-quiz-express-agreement": {
+        "title": "Expressing Agreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-disagreement": {
         "title": "Learn How to Express Disagreement",
@@ -1755,11 +1795,19 @@
           "In this course, you will learn to express disagreement in different professional settings."
         ]
       },
+      "en-b1-quiz-express-disagreement": {
+        "title": "Expressing Disagreement Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
         "intro": [
           "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
         ]
+      },
+      "en-b1-quiz-express-concerns": {
+        "title": "Expressing Concerns Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
@@ -1767,11 +1815,19 @@
           "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
         ]
       },
+      "en-b1-quiz-decisions-comparisons": {
+        "title": "Making Decisions with Comparisons Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
         "intro": [
           "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
         ]
+      },
+      "en-b1-quiz-modal-verbs": {
+        "title": "Using Modal Verbs Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
@@ -1779,11 +1835,19 @@
           "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
         ]
       },
+      "en-b1-quiz-manage-conversations": {
+        "title": "Managing Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
         "intro": [
           "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
         ]
+      },
+      "en-b1-quiz-clarify-misunderstandings": {
+        "title": "Clarifying Misunderstandings Quiz",
+        "intro": ["", ""]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
@@ -1791,11 +1855,19 @@
           "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
         ]
       },
+      "en-b1-quiz-speculation-requests": {
+        "title": "Speculation and Requests Quiz",
+        "intro": ["", ""]
+      },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
         "intro": [
           "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
         ]
+      },
+      "en-b1-quiz-adverbial-phrases": {
+        "title": "Adverbial Phrases Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
@@ -1803,11 +1875,19 @@
           "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
         ]
       },
+      "en-b1-quiz-adjectives-conversations": {
+        "title": "Using Adjectives in Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
         "intro": [
           "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
         ]
+      },
+      "en-b1-quiz-determiners-articles": {
+        "title": "Determiners and Articles Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
@@ -1815,11 +1895,19 @@
           "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
         ]
       },
+      "en-b1-quiz-reported-speech": {
+        "title": "Using Reported Speech Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
         "intro": [
           "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
         ]
+      },
+      "en-b1-quiz-prepositions-context": {
+        "title": "Using Prepositions by Context Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
@@ -1827,11 +1915,19 @@
           "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
         ]
       },
+      "en-b1-quiz-numbers-at-work": {
+        "title": "Talking About Numbers at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
         "intro": [
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
+      },
+      "en-b1-quiz-phrasal-verbs-idioms": {
+        "title": "Phrasal Verbs and Idioms Quiz",
+        "intro": ["", ""]
       },
       "en-b1-certification-exam": {
         "title": "B1 English for Developers Certification Exam",
