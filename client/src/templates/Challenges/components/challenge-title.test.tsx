@@ -5,9 +5,10 @@ import { describe, it, expect } from 'vitest';
 import ChallengeTitle from './challenge-title';
 
 const baseProps = {
-  children: 'title text',
+  children: 'What is HTML?',
   isCompleted: true,
-  translationPending: false
+  translationPending: false,
+  link: 'learn/responsive-web-design-v9/lecture-understanding-html-attributes/what-is-html'
 };
 
 describe('<ChallengeTitle/>', () => {
