@@ -1,6 +1,6 @@
 {
-  "name": "workshop-create-count-up",
-  "isUpcomingChange": true,
+  "name": "Build a Countup",
+  "isUpcomingChange": false,
   "dashedName": "workshop-create-count-up",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
