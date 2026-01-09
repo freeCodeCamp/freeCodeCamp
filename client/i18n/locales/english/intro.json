@@ -6293,8 +6293,8 @@
         "intro": ["Pass this exam to earn your JavaScript Certification."]
       },
       "workshop-create-count-up": {
-        "title": "workshop-create-count-up",
-        "intro": ["workshop-create-count-up", ""]
+        "title": "Build a Countup",
+        "intro": ["In this workshop you will build a countup application."]
       }
     }
   },
