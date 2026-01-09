@@ -1817,6 +1817,10 @@
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
       },
+      "en-b1-quiz-phrasal-verbs-idioms": {
+        "title": "Phrasal Verbs and Idioms Quiz",
+        "intro": ["", ""]
+      },
       "en-b1-certification-exam": {
         "title": "B1 English for Developers Certification Exam",
         "intro": [
