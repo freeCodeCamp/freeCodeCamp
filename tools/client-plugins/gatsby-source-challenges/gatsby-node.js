@@ -7,13 +7,17 @@ const {
 } = require('../../../curriculum/dist/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
-const { createChallengePages } = require('../../../client/utils/gatsby');
+const {
+  createChallengePages,
+  getTemplateComponent
+} = require('../../../client/utils/gatsby');
 
 // createPagesStatefully only runs once, but we need the following when
 // updating challenges, so they have to be stored in memory.
 let allChallengeNodes;
 let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
+const statefullyCreatedNodes = new Map();
 const createdFileNodes = new Map();
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
@@ -39,7 +43,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     a path to a curriculum directory
     `);
   }
-  const { createNode, deleteNode } = actions;
+  const { createNode, deleteNode, deletePage } = actions;
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
@@ -47,12 +51,30 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  function cleanUpOldNodes(filePath) {
+  function cleanupCreatedNodes(filePath) {
     createdFileNodes.get(filePath)?.forEach(node => deleteNode(node));
   }
 
+  function deletePages(filePath) {
+    const nodesToDelete = statefullyCreatedNodes.get(filePath) || [];
+    nodesToDelete.forEach(node => {
+      deleteNode(node);
+      deletePage({
+        path: node.challenge.fields.slug,
+        component: getTemplateComponent(node.challenge.challengeType)
+      });
+    });
+    statefullyCreatedNodes.delete(filePath);
+  }
+
   function handleChallengeUpdate(filePath, action = 'changed') {
-    cleanUpOldNodes(filePath, actions.deleteNode);
+    cleanupCreatedNodes(filePath);
+
+    if (action === 'deleted') {
+      // We have to return before calling onSourceChange, since the file is
+      // gone.
+      return deletePages(filePath);
+    }
 
     return onSourceChange(filePath)
       .then(challenges => {
@@ -98,12 +120,25 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     handleChallengeUpdate(filePath, 'added');
   });
 
+  watcher.on('unlink', filePath => {
+    if (!/\.md?$/.test(filePath)) return;
+    handleChallengeUpdate(filePath, 'deleted');
+  });
+
   function sourceAndCreateNodes() {
     return source()
       .then(challenges => Promise.all(challenges))
       .then(challenges => {
         // create challenge nodes
-        challenges.forEach(challenge => reportNodeCreationToGatsby(challenge));
+        challenges.forEach(challenge => {
+          const newNode = reportNodeCreationToGatsby(challenge);
+          const existingNodes =
+            statefullyCreatedNodes.get(challenge.sourceLocation) || [];
+          statefullyCreatedNodes.set(challenge.sourceLocation, [
+            ...existingNodes,
+            newNode
+          ]);
+        });
         // create superblock structure nodes
         createSuperBlockStructureNodes();
         return Promise.resolve();
