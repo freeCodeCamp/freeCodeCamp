@@ -14,7 +14,7 @@ const { createChallengePages } = require('../../../client/utils/gatsby');
 let allChallengeNodes;
 let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
-const updatedFileNodes = new Map();
+const createdFileNodes = new Map();
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
@@ -60,14 +60,14 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
             isReloading: true
           });
           if (action === 'added') {
-            updatedFileNodes.set(filePath, newNode);
+            createdFileNodes.set(filePath, newNode);
           }
           if (action === 'changed') {
-            const existingFileNode = updatedFileNodes.get(filePath);
+            const existingFileNode = createdFileNodes.get(filePath);
             // If a file has been created since boot and then changed, the store
             // has to be updated or the page won't reflect the latest changes.
             if (existingFileNode) {
-              updatedFileNodes.set(filePath, newNode);
+              createdFileNodes.set(filePath, newNode);
             }
           }
         });
@@ -253,7 +253,7 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 
 exports.createPages = function ({ actions }) {
   // actions.createPage has to be called in the createPages hook
-  for (const node of updatedFileNodes.values()) {
+  for (const node of createdFileNodes.values()) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
       idToPrevPathCurrentCurriculum
