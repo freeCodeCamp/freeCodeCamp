@@ -170,7 +170,7 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Spanish]: [
     {
       dashedName: SuperBlocks.A1Spanish,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.A1Spanish].title
     }
   ],
