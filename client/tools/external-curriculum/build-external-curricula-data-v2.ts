@@ -17,7 +17,8 @@ import {
 import {
   characterAssets,
   sounds,
-  backgrounds
+  backgrounds,
+  domain
 } from '../../src/templates/Challenges/components/scene/scene-assets.js';
 
 export type CurriculumIntros =
@@ -438,7 +439,7 @@ export function buildExtCurriculumDataV2(
 
   function getSceneAssets() {
     const sceneAssets = {
-      cdn: sounds.replace('/sounds', ''),
+      domain,
       backgrounds,
       sounds,
       availableBackgrounds,
