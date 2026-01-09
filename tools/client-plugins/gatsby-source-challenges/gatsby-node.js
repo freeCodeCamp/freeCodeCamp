@@ -39,7 +39,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     a path to a curriculum directory
     `);
   }
-  const { createNode } = actions;
+  const { createNode, deleteNode } = actions;
   const watcher = chokidar.watch(curriculumPath, {
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
@@ -47,7 +47,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
+  function cleanUpOldNodes(filePath) {
+    createdFileNodes.get(filePath)?.forEach(node => deleteNode(node));
+  }
+
   function handleChallengeUpdate(filePath, action = 'changed') {
+    cleanUpOldNodes(filePath, actions.deleteNode);
+
     return onSourceChange(filePath)
       .then(challenges => {
         const actionText = action === 'added' ? 'creating' : 'replacing';
