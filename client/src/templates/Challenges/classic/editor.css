@@ -19,7 +19,7 @@
 
 @media (max-width: 768px) {
   .monaco-scrollable-element {
-    overflow: auto !important;          /* override fully */
+    overflow: auto !important; /* override fully */
     -webkit-overflow-scrolling: touch;
   }
 
