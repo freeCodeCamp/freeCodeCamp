@@ -58,7 +58,7 @@ type ChallengeNode = {
     fields: { slug: string };
     id: string;
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     challengeType: number;
     title: string;
     order: number;
