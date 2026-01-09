@@ -55,22 +55,23 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
           `Challenge file ${action}: ${filePath}, ${actionText} challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
         );
 
-        challenges.forEach(challenge => {
-          const newNode = reportNodeCreationToGatsby(challenge, {
+        const challengeNodes = challenges.map(challenge =>
+          reportNodeCreationToGatsby(challenge, {
             isReloading: true
-          });
-          if (action === 'added') {
-            createdFileNodes.set(filePath, newNode);
+          })
+        );
+
+        if (action === 'added') {
+          createdFileNodes.set(filePath, challengeNodes);
+        }
+        if (action === 'changed') {
+          const existingFileNode = createdFileNodes.get(filePath);
+          // If a file has been created since boot and then changed, the store
+          // has to be updated or the page won't reflect the latest changes.
+          if (existingFileNode) {
+            createdFileNodes.set(filePath, challengeNodes);
           }
-          if (action === 'changed') {
-            const existingFileNode = createdFileNodes.get(filePath);
-            // If a file has been created since boot and then changed, the store
-            // has to be updated or the page won't reflect the latest changes.
-            if (existingFileNode) {
-              createdFileNodes.set(filePath, newNode);
-            }
-          }
-        });
+        }
       })
       .catch(e =>
         reporter.error(
@@ -253,7 +254,8 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 
 exports.createPages = function ({ actions }) {
   // actions.createPage has to be called in the createPages hook
-  for (const node of createdFileNodes.values()) {
+  const nodes = [...createdFileNodes.values()].flat();
+  for (const node of nodes) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
       idToPrevPathCurrentCurriculum
