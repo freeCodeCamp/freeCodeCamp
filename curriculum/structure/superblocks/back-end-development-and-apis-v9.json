@@ -16,7 +16,7 @@
         {
           "dashedName": "nodejs-core-modules",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["review-node-js-core-modules", "quiz-node-js-core-modules"]
         },
         {
           "dashedName": "node-package-manager",

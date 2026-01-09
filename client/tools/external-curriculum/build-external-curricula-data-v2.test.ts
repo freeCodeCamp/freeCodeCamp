@@ -270,6 +270,7 @@ describe('external curriculum data build', () => {
       core: SuperBlockStage.Core,
       english: SuperBlockStage.English,
       spanish: SuperBlockStage.Spanish,
+      chinese: SuperBlockStage.Chinese,
       professional: SuperBlockStage.Professional,
       extra: SuperBlockStage.Extra,
       legacy: SuperBlockStage.Legacy,
