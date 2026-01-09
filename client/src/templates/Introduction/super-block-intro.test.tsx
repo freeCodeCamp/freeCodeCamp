@@ -156,7 +156,7 @@ type ChallengeNode = {
     id: string;
     fields: { slug: string; blockName: string };
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     challengeType: number;
     title: string;
     order: number;

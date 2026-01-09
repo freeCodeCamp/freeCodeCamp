@@ -3,12 +3,13 @@ import {
   getBlockStructure,
   writeBlockStructure
 } from '../../../curriculum/src/file-handler.js';
+import type { BlockLabel } from '../../../shared-dist/config/blocks.js';
 import { getProjectPath } from './get-project-info.js';
 
 export type Meta = {
   name: string;
   blockLayout: string;
-  blockLabel: string;
+  blockLabel?: BlockLabel;
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;

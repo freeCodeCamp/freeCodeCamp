@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
 import type { Chapter } from '../../shared-dist/config/chapters.js';
+import type { BlockLabel } from '../../shared-dist/config/blocks.js';
 import type {
   SuperBlocks,
   ChallengeLang
@@ -169,7 +170,7 @@ export interface BlockStructure {
   disableLoopProtectTests?: boolean;
   disableLoopProtectPreview?: boolean;
   blockLayout: string;
-  blockLabel: string;
+  blockLabel?: BlockLabel;
   challengeOrder: Challenge[];
   dashedName: string;
   isUpcomingChange?: boolean;

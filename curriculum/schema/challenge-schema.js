@@ -145,7 +145,7 @@ const schema = Joi.object().keys({
       'learn',
       'practice'
     ).required(),
-    otherwise: Joi.valid(null)
+    otherwise: Joi.optional()
   }),
   blockLayout: Joi.valid(
     'challenge-list',
