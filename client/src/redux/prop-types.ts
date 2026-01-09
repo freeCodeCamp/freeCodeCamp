@@ -207,7 +207,7 @@ type InteractiveEditorNodule = {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;

@@ -32,7 +32,7 @@ import './super-block-accordion.css';
 
 type Challenge = {
   block: string;
-  blockLabel: BlockLabel;
+  blockLabel?: BlockLabel;
   blockLayout: BlockLayouts;
   challengeType: number;
   dashedName: string;
