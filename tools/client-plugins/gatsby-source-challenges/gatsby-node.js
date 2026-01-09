@@ -56,15 +56,22 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function deletePages(filePath) {
-    const nodesToDelete = statefullyCreatedNodes.get(filePath) || [];
-    nodesToDelete.forEach(node => {
+    const statefulNodes = statefullyCreatedNodes.get(filePath) || [];
+    statefulNodes.forEach(node => {
       deleteNode(node);
       deletePage({
         path: node.challenge.fields.slug,
         component: getTemplateComponent(node.challenge.challengeType)
       });
     });
+
+    const createdNodes = createdFileNodes.get(filePath) || [];
+    createdNodes.forEach(node => {
+      deleteNode(node);
+    });
+
     statefullyCreatedNodes.delete(filePath);
+    createdFileNodes.delete(filePath);
   }
 
   function handleChallengeUpdate(filePath, action = 'changed') {
