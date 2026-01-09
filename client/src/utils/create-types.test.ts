@@ -6,11 +6,13 @@ describe('Create types utility (createTypes)', () => {
     const types = ['lorem', 'ipsum'];
     const ns = 'namespace';
 
-    expect(createTypes(types, ns)).toEqual({
-      lorem: 'namespace.lorem',
-      ipsum: 'namespace.ipsum'
-    });
-  });
+const expectedTypes = {
+  lorem: 'namespace.lorem',
+  ipsum: 'namespace.ipsum'
+};
+
+expect(createTypes(types, ns)).toEqual(expectedTypes);
+
 });
 
 describe('Create async types utility (createAsyncTypes)', () => {
