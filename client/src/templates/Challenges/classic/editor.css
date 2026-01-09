@@ -17,6 +17,17 @@
   contain: none !important;
 }
 
+@media (max-width: 768px) {
+  .monaco-scrollable-element {
+    overflow: auto !important;          /* override fully */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .monaco-editor-background {
+    overflow: auto !important;
+  }
+}
+
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
