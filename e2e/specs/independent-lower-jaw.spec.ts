@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { clearEditor, focusEditor, getEditors } from './utils/editor';
+import { clearEditor, focusEditor, getEditors } from '../utils/editor';
 
 const workshopChallengeUrl =
   '/learn/responsive-web-design-v9/workshop-cafe-menu/step-2';
