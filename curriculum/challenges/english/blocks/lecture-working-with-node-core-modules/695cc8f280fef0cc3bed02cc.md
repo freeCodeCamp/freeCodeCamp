@@ -256,7 +256,7 @@ Think about the writable stream events that signal completion and failure.
 
 ---
 
-`done` and `fail`
+`done` and `fail`.
 
 ### --feedback--
 

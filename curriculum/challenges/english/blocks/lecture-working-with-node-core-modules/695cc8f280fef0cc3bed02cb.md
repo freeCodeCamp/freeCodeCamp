@@ -37,7 +37,7 @@ console.log(process.env.PWD); // /Users/johndoe/projects/myapp
 console.log(process.env.USER); // johndoe
 ```
 
-`process.args` lets you read command-line arguments:
+`process.argv` lets you read command-line arguments:
 
 ```js
 console.log(process.argv);

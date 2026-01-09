@@ -19,7 +19,7 @@ Let's look at some of the methods the `path` module provides and how they work.
 
 First, you should be aware of the Node.js global variables `__filename` and `__dirname`, AKA "common JS" variables. You don't need the `path` module to access them, which is why they are called global variables.
 
-`__filename `is the absolute path of the current file and `__dirname` is the absolute path of the directory containing the current file.
+`__filename` is the absolute path of the current file and `__dirname` is the absolute path of the directory containing the current file.
 
 For example, I have a `script.js` file I'm currently working with. Here's what the two methods return:
 
@@ -33,7 +33,7 @@ console.log(__dirname);
 
 You should also be aware of relative and absolute paths.
 
-A relative path points to a file or folder based on your current working directory. For example, .`/assets/src/text-files`.
+A relative path points to a file or folder based on your current working directory. For example, `./assets/src/text-files`.
 
 An absolute path, on the other hand, gives the complete address of a file or folder from the root of your system, such as `/Users/johndoe/projects/app/assets/src/text-files.`
 
@@ -46,7 +46,7 @@ console.log(path.basename(__filename)); // script.js
 `dirname()` returns the directory name of a path:
 
 ```js
-console.log(path.basename(__dirname)); // node-path
+console.log(path.dirname(__dirname)); // node-path
 ```
 
 `extname()` returns the extension of the current file:
@@ -160,7 +160,7 @@ Focus on which one deals with directories and which one deals with file extensio
 
 ## --text--
 
-Which `path` method build a complete file path from an object containing directory, name, and extension properties?
+Which `path` method builds a complete file path from an object containing directory, name, and extension properties?
 
 ## --answers--
 
