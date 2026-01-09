@@ -133,7 +133,13 @@ const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
-    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    is: [
+      ...chapterBasedSuperBlocks,
+      ...catalogSuperBlocks,
+      // This is temporary in order to allow A2 and B1 English to have block label.
+      // This won't be needed once we convert those super blocks to chapter-based.
+      ...languageSuperBlocks
+    ],
     then: Joi.valid(
       'workshop',
       'lab',
