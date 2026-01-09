@@ -31,7 +31,7 @@ freeCodeCamp.org offers several free developer certifications that make up the [
 - [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
 - [Backend developer and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
 
-freeCodeCamp.org also offers language certifications designed around internationally recognized proficiency levels:
+freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
 
 - [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
 - [B1 English for Developers(Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
