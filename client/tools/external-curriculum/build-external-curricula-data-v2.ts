@@ -10,6 +10,15 @@ import {
 import type { Chapter } from '../../../shared-dist/config/chapters';
 import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
 import { patchBlock } from './patches';
+import {
+  availableBackgrounds,
+  availableAudios
+} from '../../../curriculum/schema/scene-assets.js';
+import {
+  characterAssets,
+  sounds,
+  backgrounds
+} from '../../src/templates/Challenges/components/scene/scene-assets.js';
 
 export type CurriculumIntros =
   | BlockBasedCurriculumIntros
@@ -304,6 +313,7 @@ export function buildExtCurriculumDataV2(
 
   parseCurriculumData();
   getSubmitTypes();
+  getSceneAssets();
 
   function parseCurriculumData() {
     const superBlockKeys = Object.values(SuperBlocks).filter(x =>
@@ -423,6 +433,22 @@ export function buildExtCurriculumDataV2(
     writeFileSync(
       `${dataPath}/${ver}/submit-types.json`,
       JSON.stringify(submitTypes, null, 2)
+    );
+  }
+
+  function getSceneAssets() {
+    const sceneAssets = {
+      cdn: sounds.replace('/sounds', ''),
+      backgrounds,
+      sounds,
+      availableBackgrounds,
+      availableAudios,
+      characterAssets
+    };
+
+    writeFileSync(
+      `${dataPath}/${ver}/scene-assets.json`,
+      JSON.stringify(sceneAssets, null, 2)
     );
   }
 }
