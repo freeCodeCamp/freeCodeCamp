@@ -8,7 +8,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum is completely free, self-paced, and includes thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -70,4 +70,4 @@ Copyright © 2025 freeCodeCamp.org
 The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org
+- The learning resources in the [`/curriculum`](/curriculum) directory, including all subdirectories, are copyright © 2025 freeCodeCamp.org.
