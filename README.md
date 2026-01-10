@@ -8,7 +8,7 @@
 
 [freeCodeCamp.org](https://www.freecodecamp.org) is a friendly community where you can learn to code for free. It is run by a [donor-supported 501(c)(3) charity](https://www.freecodecamp.org/donate) to help millions of busy adults transition into tech. Our community has already helped more than 100,000 people get their first developer job.
 
-Our full-stack web development and machine learning curriculum is completely free and self-paced. We have thousands of interactive coding challenges to help you expand your skills.
+Our full-stack web development and machine learning curriculum is completely free, self-paced and includes thousands of interactive coding challenges to help you expand your skills.
 
 ## Table of Contents
 
@@ -22,9 +22,9 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects to qualify for the exam.
 
-Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
+Once you pass the exam, you can claim the certification, which you will always retain and can link to from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
 
 The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
 
@@ -70,4 +70,4 @@ Copyright © 2025 freeCodeCamp.org
 The content of this repository is bound by the following licenses:
 
 - The computer software is licensed under the [BSD-3-Clause](LICENSE.md) license.
-- The learning resources in the [`/curriculum`](/curriculum) directory including their subdirectories therein are copyright © 2025 freeCodeCamp.org
+- The learning resources in the [`/curriculum`](/curriculum) directory, including all subdirectories, are copyright © 2025 freeCodeCamp.org.
