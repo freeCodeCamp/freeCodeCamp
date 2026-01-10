@@ -13,16 +13,20 @@ function findRegionMarkers(challengeFile) {
     .filter(id => id >= 0);
 
   if (editableLines.length > 2) {
-    throw Error('Editable region has too many markers: ' + editableLines);
+    throw Error('Editable region has too many markers. Only two are allowed.');
   }
 
   if (editableLines.length === 0) {
     return null;
-  } else if (editableLines.length === 1) {
-    throw Error(`Editable region not closed`);
-  } else {
-    return editableLines;
   }
+
+  if (editableLines.length === 1) {
+    throw Error(
+      'Editable region not closed. You must add a second --fcc-editable-region-- marker.'
+    );
+  }
+
+  return editableLines;
 }
 
 function removeLines(contents, toRemove) {
@@ -67,9 +71,12 @@ function addSeeds() {
       if (editRegionMarkers) {
         seed.contents = removeLines(seed.contents, editRegionMarkers);
 
-        if (editRegionMarkers[1] <= editRegionMarkers[0]) {
-          throw Error('Editable region must be non zero');
+        if (editRegionMarkers[1] - editRegionMarkers[0] <= 1) {
+          throw Error(
+            'Editable region must contain at least one editable line.'
+          );
         }
+
         seed.editableRegionBoundaries = editRegionMarkers;
       } else {
         seed.editableRegionBoundaries = [];
