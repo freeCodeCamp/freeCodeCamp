@@ -71,10 +71,8 @@ function addSeeds() {
       if (editRegionMarkers) {
         seed.contents = removeLines(seed.contents, editRegionMarkers);
 
-        if (editRegionMarkers[1] - editRegionMarkers[0] <= 1) {
-          throw Error(
-            'Editable region must contain at least one editable line.'
-          );
+        if (editRegionMarkers[1] <= editRegionMarkers[0]) {
+          throw Error('Editable region must be non zero');
         }
 
         seed.editableRegionBoundaries = editRegionMarkers;
