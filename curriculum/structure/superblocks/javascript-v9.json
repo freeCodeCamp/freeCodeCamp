@@ -287,8 +287,8 @@
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
             "lab-countdown",
-            "workshop-decimal-to-binary-converter",
             "lab-range-of-numbers",
+            "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
             "review-recursion",
             "quiz-recursion"
