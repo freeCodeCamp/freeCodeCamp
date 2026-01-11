@@ -13,7 +13,10 @@ function findRegionMarkers(challengeFile) {
     .filter(id => id >= 0);
 
   if (editableLines.length > 2) {
-    throw Error('Editable region has too many markers. Only two are allowed.');
+    throw Error(
+      'Editable region has too many markers. Only two are allowed: ' +
+        editableLines.join(', ')
+    );
   }
 
   if (editableLines.length === 0) {
