@@ -523,14 +523,14 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      
+
       // No need to validate if picture is being deleted.
       if (req.body.picture) {
         const currentUser = await fastify.prisma.user.findUnique({
           where: { id: req.user?.id },
           select: { picture: true }
         });
-        
+
         // Only validate if the picture is actually different
         if (req.body.picture !== currentUser?.picture) {
           if (!isValidPictureUrl(req.body.picture)) {
