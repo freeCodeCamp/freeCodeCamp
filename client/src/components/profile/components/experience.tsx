@@ -126,13 +126,13 @@ const ExperienceSettings = (props: ExperienceProps) => {
     if (charsLeft < 0) {
       return {
         state: 'error',
-        message: t('validation.max-characters', { charsLeft: 0 })
+        message: t('validation.max-characters-500', { charsLeft: 0 })
       };
     }
     if (charsLeft < 41 && charsLeft > 0) {
       return {
         state: 'warning',
-        message: t('validation.max-characters', { charsLeft })
+        message: t('validation.max-characters-500', { charsLeft })
       };
     }
     if (charsLeft === 500) {
@@ -143,35 +143,35 @@ const ExperienceSettings = (props: ExperienceProps) => {
 
   const getTitleValidation = (title: string): ExperienceValidation => {
     if (!title) {
-      return { state: 'error', message: 'Title is required' };
+      return { state: 'error', message: t('validation.title-required') };
     }
     const len = title.length;
     if (len < 2) {
-      return { state: 'error', message: 'Title is too short' };
+      return { state: 'error', message: t('validation.title-short') };
     }
     if (len > 144) {
-      return { state: 'error', message: 'Title is too long' };
+      return { state: 'error', message: t('validation.title-long') };
     }
     return { state: 'success', message: '' };
   };
 
   const getCompanyValidation = (company: string): ExperienceValidation => {
     if (!company) {
-      return { state: 'error', message: 'Company is required' };
+      return { state: 'error', message: t('validation.company-required') };
     }
     const len = company.length;
     if (len < 2) {
-      return { state: 'error', message: 'Company name is too short' };
+      return { state: 'error', message: t('validation.company-short') };
     }
     if (len > 144) {
-      return { state: 'error', message: 'Company name is too long' };
+      return { state: 'error', message: t('validation.company-long') };
     }
     return { state: 'success', message: '' };
   };
 
   const getStartDateValidation = (startDate: string): ExperienceValidation => {
     if (!startDate) {
-      return { state: 'error', message: 'Start date is required' };
+      return { state: 'error', message: t('validation.start-date-required') };
     }
     return { state: 'success', message: '' };
   };

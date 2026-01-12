@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
+import { parse, format, isValid } from 'date-fns';
 import type { ExperienceData } from '../../../redux/prop-types';
-import { FullWidthRow } from '../../helpers';
+import { FullWidthRow, interleave } from '../../helpers';
 
 interface ExperienceDisplayProps {
   experience: ExperienceData[];
@@ -10,9 +11,9 @@ interface ExperienceDisplayProps {
 
 const formatDate = (dateString: string): string => {
   if (!dateString) return '';
-  const [year, month] = dateString.split('-');
-  const date = new Date(parseInt(year), parseInt(month) - 1);
-  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' });
+  const parsedDate = parse(dateString, 'yyyy-MM', new Date());
+  if (!isValid(parsedDate)) return '';
+  return format(parsedDate, 'MMM yyyy');
 };
 
 export const ExperienceDisplay = ({
@@ -24,40 +25,41 @@ export const ExperienceDisplay = ({
     return null;
   }
 
+  const experienceItems = experience.map(exp => (
+    <div key={exp.id} className='experience-item'>
+      <h3>{exp.title}</h3>
+      <h4 style={{ fontWeight: 'normal', marginTop: '0.5rem' }}>
+        {exp.company}
+        {exp.location && ` • ${exp.location}`}
+      </h4>
+      <p
+        style={{
+          color: '#858591',
+          fontSize: '0.9rem',
+          marginTop: '0.25rem'
+        }}
+      >
+        {formatDate(exp.startDate)}
+        {' - '}
+        {exp.endDate
+          ? formatDate(exp.endDate)
+          : t('profile.experience.present')}
+      </p>
+      {exp.description && (
+        <p style={{ marginTop: '0.75rem', whiteSpace: 'pre-wrap' }}>
+          {exp.description}
+        </p>
+      )}
+    </div>
+  ));
+
   return (
     <FullWidthRow>
       <section className='card'>
         <h2>{t('profile.experience.heading')}</h2>
         <Spacer size='s' />
-        {experience.map((exp, index) => (
-          <React.Fragment key={exp.id}>
-            <div className='experience-item'>
-              <h3>{exp.title}</h3>
-              <h4 style={{ fontWeight: 'normal', marginTop: '0.5rem' }}>
-                {exp.company}
-                {exp.location && ` • ${exp.location}`}
-              </h4>
-              <p
-                style={{
-                  color: '#858591',
-                  fontSize: '0.9rem',
-                  marginTop: '0.25rem'
-                }}
-              >
-                {formatDate(exp.startDate)}
-                {' - '}
-                {exp.endDate
-                  ? formatDate(exp.endDate)
-                  : t('profile.experience.present')}
-              </p>
-              {exp.description && (
-                <p style={{ marginTop: '0.75rem', whiteSpace: 'pre-wrap' }}>
-                  {exp.description}
-                </p>
-              )}
-            </div>
-            {index < experience.length - 1 && <hr />}
-          </React.Fragment>
+        {interleave(experienceItems, index => (
+          <hr key={`separator-${index}`} />
         ))}
         <Spacer size='m' />
       </section>
