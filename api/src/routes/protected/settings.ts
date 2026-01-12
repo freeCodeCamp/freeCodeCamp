@@ -543,19 +543,6 @@ ${isLinkSentWithinLimitTTL}`
       }
 
       try {
-        // Build update data object, only including fields that are provided
-        const updateData: {
-          about?: string;
-          name?: string;
-          location?: string;
-          picture?: string;
-        } = {};
-        
-        if (req.body.about !== undefined) updateData.about = req.body.about;
-        if (req.body.name !== undefined) updateData.name = req.body.name;
-        if (req.body.location !== undefined) updateData.location = req.body.location;
-        if (req.body.picture !== undefined) updateData.picture = req.body.picture;
-
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
           data: updateData
