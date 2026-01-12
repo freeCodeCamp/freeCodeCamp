@@ -276,6 +276,10 @@ const Editor = (props: EditorProps): JSX.Element => {
     debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
   );
 
+  const autoSaveDebounceRef = useRef(
+    debounce(() => props.saveEditorContent(), 2000)
+  );
+
   const player = useRef<{
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     sampler: any;
@@ -685,6 +689,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
+    editor.onDidBlurEditorWidget(() => {
+      const currentContent = editor.getValue();
+      if (currentContent && currentContent.trim().length > 0) {
+        autoSaveDebounceRef.current.cancel();
+        props.saveEditorContent();
+      }
+    });
 
     // update scrollbar arrows
     setScrollbarArrowStyles(getScrollbarWidth());
@@ -946,6 +957,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       });
     }
     updateFile({ fileKey, contents, editableRegionBoundaries });
+    autoSaveDebounceRef.current();
   };
 
   function createBreadcrumb(): HTMLElement {
@@ -1326,6 +1338,24 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }, [props.dimensions]);
 
+  const { saveEditorContent } = props;
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      const currentContent = editorRef.current?.getValue();
+      if (currentContent && currentContent.trim().length > 0) {
+        autoSaveDebounceRef.current.cancel();
+        saveEditorContent();
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [editorRef, saveEditorContent]);
+
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;
     editor?.changeViewZones(changeAccessor => {
@@ -1369,6 +1399,13 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
           editorWillUnmount={(editor, monaco) => {
+            // Save before unmounting
+            const currentContent = editor.getModel()?.getValue();
+            if (currentContent && currentContent.trim().length > 0) {
+              autoSaveDebounceRef.current.cancel();
+              props.saveEditorContent();
+            }
+
             const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
             const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
             // Any model we've created has to be manually disposed of to prevent
