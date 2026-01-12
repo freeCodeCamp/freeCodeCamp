@@ -84,11 +84,11 @@ export const profileUI = Type.Object({
 });
 
 export const experience = Type.Object({
-  id: Type.Optional(Type.String()),
-  title: Type.Optional(Type.String()),
-  company: Type.Optional(Type.String()),
+  id: Type.String(),
+  title: Type.String(),
+  company: Type.String(),
   location: Type.Optional(Type.String()),
-  startDate: Type.Optional(Type.String()),
+  startDate: Type.String(),
   endDate: Type.Optional(Type.String()),
-  description: Type.Optional(Type.String())
+  description: Type.String()
 });

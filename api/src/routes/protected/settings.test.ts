@@ -1109,8 +1109,13 @@ Happy coding!
         const payload = {
           experience: [
             {
-              // only title provided
-              title: 'Developer'
+              id: '',
+              title: 'Developer',
+              company: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
             }
           ]
         } as const;
@@ -1123,48 +1128,25 @@ Happy coding!
           select: { experience: true }
         });
 
-        expect(user?.experience).toEqual([
-          {
-            id: '',
-            title: 'Developer',
-            company: '',
-            location: '',
-            startDate: '',
-            endDate: '',
-            description: ''
-          }
-        ]);
+        expect(user?.experience).toEqual(payload.experience);
       });
 
-      test('ignores extraneous keys on entries', async () => {
+      test('rejects extraneous keys on entries', async () => {
         const res = await superPut('/update-my-experience').send({
           experience: [
             {
               id: 'x',
               title: 'Dev',
               company: 'Co',
+              startDate: '',
+              description: '',
               foo: 'bar'
             } as unknown as Record<string, unknown>
           ]
         });
 
-        expect(res.statusCode).toBe(200);
-        const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: developerUserEmail },
-          select: { experience: true }
-        });
-
-        expect(user?.experience?.[0]).toEqual({
-          id: 'x',
-          title: 'Dev',
-          company: 'Co',
-          location: '',
-          startDate: '',
-          endDate: '',
-          description: ''
-        });
-        // @ts-expect-error ensure extra key is not present after save
-        expect(user?.experience?.[0]?.foo).toBeUndefined();
+        expect(res.body).toEqual(updateErrorResponse);
+        expect(res.statusCode).toBe(400);
       });
 
       test('returns 400 when experience is not an array', async () => {
@@ -1215,7 +1197,8 @@ Happy coding!
               id: 'cur',
               title: 'Engineer',
               company: 'Now Co',
-              startDate: '2023-01'
+              startDate: '2023-01',
+              description: ''
               // endDate omitted
             }
           ]
@@ -1230,9 +1213,9 @@ Happy coding!
           id: 'cur',
           title: 'Engineer',
           company: 'Now Co',
-          location: '',
+          location: null,
           startDate: '2023-01',
-          endDate: '',
+          endDate: null,
           description: ''
         });
       });
@@ -1242,6 +1225,7 @@ Happy coding!
         const response = await superPut('/update-my-experience').send({
           experience: [
             {
+              id: '',
               title: 'Writer',
               company: 'Docs Inc',
               startDate: '2020-01',

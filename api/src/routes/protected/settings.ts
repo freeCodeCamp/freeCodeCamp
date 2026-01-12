@@ -716,6 +716,7 @@ ${isLinkSentWithinLimitTTL}`
       const logger = fastify.log.child({ req, res: reply });
       try {
         const { experience } = req.body;
+
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
           data: {
