@@ -1,9 +1,9 @@
 {
   "name": "The Spanish Alphabet Practice",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-practice-the-alphabet",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68fa88e167c0503ec7cd58e6", "title": "Task 1" },
     { "id": "68fa8b4ecf2cf649ff55f7fd", "title": "Task 2" },

@@ -16,7 +16,7 @@ test.describe('Public profile certifications', () => {
 
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
-    ).toHaveCount(19);
+    ).toHaveCount(25);
   });
 
   test('Should show claimed certifications if the username includes uppercase characters', async ({
@@ -48,10 +48,10 @@ test.describe('Public profile certifications', () => {
     await page.waitForURL('/certifiedboozer');
     await expect(
       page.getByRole('link', { name: /View.+Certification/ })
-    ).toHaveCount(19);
+    ).toHaveCount(25);
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 });

@@ -28,7 +28,7 @@ function LandingTop(): JSX.Element {
       fluid={true}
       className='landing-top lading-top-c gradient-container'
     >
-      <Container>
+      <Container fluid={true}>
         <Row className='landing-top-two-column' data-test-label='landing-top'>
           <Spacer size='m' />
           <Col className='landing-top-left'>

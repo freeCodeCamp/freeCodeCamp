@@ -1,6 +1,6 @@
 {
   "name": "Build a Game Character Stats Tracker",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-game-character-stats",
   "helpCategory": "Python",
   "blockLayout": "link",

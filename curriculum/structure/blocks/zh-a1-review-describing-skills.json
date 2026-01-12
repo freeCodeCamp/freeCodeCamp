@@ -2,8 +2,8 @@
   "name": "Describing Skills Review",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-review-describing-skills",
-  "helpCategory": "English",
-  "blockLayout": "link",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "68fa3b75398eb8e18f07518e",

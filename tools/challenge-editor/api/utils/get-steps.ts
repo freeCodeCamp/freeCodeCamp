@@ -76,6 +76,6 @@ export const getSteps = async (
   return {
     steps: steps,
     currentBlock: blockMetaData.name,
-    currentSuperBlock: introData[sup].title
+    currentSuperBlock: introData[sup]?.title
   };
 };

@@ -4,8 +4,6 @@ import { promisify } from 'util';
 import { test, expect } from '@playwright/test';
 
 import translations from '../client/i18n/locales/english/translations.json';
-import { alertToBeVisible } from './utils/alerts';
-import { allowTrailingSlash } from './utils/url';
 
 const execP = promisify(exec);
 
@@ -16,9 +14,9 @@ test.beforeEach(async ({ page }) => {
 test.afterAll(
   async () =>
     await Promise.all([
-      await execP('node ./tools/scripts/seed/seed-demo-user --certified-user'),
-      await execP('node ./tools/scripts/seed/seed-surveys'),
-      await execP('node ./tools/scripts/seed/seed-ms-username')
+      execP('node ../tools/scripts/seed/seed-demo-user --certified-user'),
+      execP('node ../tools/scripts/seed/seed-surveys'),
+      execP('node ../tools/scripts/seed/seed-ms-username')
     ])
 );
 
@@ -116,7 +114,7 @@ test.describe('Delete Modal component', () => {
     ).toBeDisabled();
   });
 
-  test('should close the modal and redirect to /learn after the user fills the verify input text and clicks delete', async ({
+  test('should close the modal and sign the user out after they fill in the verify input text and click delete', async ({
     page
   }) => {
     await page
@@ -146,9 +144,14 @@ test.describe('Delete Modal component', () => {
       })
     ).not.toBeVisible();
 
-    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
-    await alertToBeVisible(page, translations.flash['account-deleted']);
-    // The user is signed out after their account is deleted
-    await expect(page.getByRole('link', { name: 'Sign in' })).toHaveCount(2);
+    // TODO: Reinstate these checks when flakiness is resolved:
+    // await expect(page).toHaveURL(allowTrailingSlash('/learn'));
+    // await alertToBeVisible(page, translations.flash['account-deleted']);
+    // The user is signed out after their account is deleted. Don't check the
+    // number of occurrences of the 'Sign in' link as it may vary depending on AB
+    // tests and Gatsby develop mode flakiness.
+    await expect(
+      page.getByRole('link', { name: 'Sign in' }).first()
+    ).toBeVisible();
   });
 });

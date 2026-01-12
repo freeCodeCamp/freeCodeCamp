@@ -227,6 +227,7 @@ module.exports.fullyCertifiedUser = {
   currentChallengeId: '',
   isHonest: true,
   isA2EnglishCert: true,
+  isB1EnglishCert: true,
   isFrontEndCert: true,
   isDataVisCert: true,
   isBackEndCert: true,
@@ -240,6 +241,7 @@ module.exports.fullyCertifiedUser = {
   isJsAlgoDataStructCertV8: true,
   isApisMicroservicesCert: true,
   isInfosecQaCert: true,
+  isPythonCertV9: true,
   isQaCertV7: true,
   isInfosecCertV7: true,
   is2018FullStackCert: true,
@@ -247,6 +249,7 @@ module.exports.fullyCertifiedUser = {
   isDataAnalysisPyCertV7: true,
   isMachineLearningPyCertV7: true,
   isRelationalDatabaseCertV8: true,
+  isRelationalDatabaseCertV9: true,
   isCollegeAlgebraPyCertV8: true,
   isFoundationalCSharpCertV8: true,
   completedChallenges: [

@@ -1,35 +1,36 @@
 import fs from 'fs/promises';
-import { existsSync } from 'fs';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
+} from '../../shared-dist/config/curriculum.js';
 
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
 import {
   getContentConfig,
   writeBlockStructure,
+  createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from '../../curriculum/src/file-handler.js';
+import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
   getAllBlocks,
   validateBlockName
-} from './utils';
+} from './utils.js';
 import {
   updateSimpleSuperblockStructure,
   updateChapterModuleSuperblockStructure
-} from './helpers/create-project';
+} from './helpers/create-project.js';
+import { getLangFromSuperBlock } from './helpers/get-lang-from-superblock.js';
 
 const helpCategories = [
   'English',
@@ -78,13 +79,23 @@ async function createLanguageBlock(
   }
   await updateIntroJson(superBlock, block, title);
 
-  let challengeId: ObjectID;
+  const challengeLang = getLangFromSuperBlock(superBlock);
+  let challengeId: ObjectId;
 
   if (blockLabel === BlockLabel.quiz) {
-    challengeId = await createQuizChallenge(block, title, questionCount!);
+    challengeId = await createQuizChallenge(
+      block,
+      title,
+      questionCount!,
+      challengeLang
+    );
     blockLayout = BlockLayouts.Link;
   } else {
-    challengeId = await createDialogueChallenge(superBlock, block);
+    challengeId = await createDialogueChallenge(
+      superBlock,
+      block,
+      challengeLang
+    );
   }
 
   await createMetaJson(
@@ -146,7 +157,7 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
+  challengeId: ObjectId,
   blockLabel?: BlockLabel,
   blockLayout?: string
 ) {
@@ -167,7 +178,6 @@ async function createMetaJson(
 
   newMeta.challengeOrder = [
     {
-      // eslint-disable-next-line @typescript-eslint/no-base-to-string
       id: challengeId.toString(),
       title: challengeTitle
     }
@@ -178,8 +188,9 @@ async function createMetaJson(
 
 async function createDialogueChallenge(
   superBlock: SuperBlocks,
-  block: string
-): Promise<ObjectID> {
+  block: string,
+  challengeLang: string
+): Promise<ObjectId> {
   const { blockContentDir } = getContentConfig('english') as {
     blockContentDir: string;
   };
@@ -188,27 +199,23 @@ async function createDialogueChallenge(
   await fs.mkdir(newChallengeDir, { recursive: true });
 
   return createDialogueFile({
-    projectPath: newChallengeDir + '/'
+    projectPath: newChallengeDir + '/',
+    challengeLang: challengeLang
   });
 }
 
 async function createQuizChallenge(
   block: string,
   title: string,
-  questionCount: number
-): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+  questionCount: number,
+  challengeLang: string
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
-    questionCount: questionCount
+    questionCount: questionCount,
+    challengeLang
   });
 }
 
@@ -286,9 +293,7 @@ void getAllBlocks()
         message: 'Choose a block label',
         default: BlockLabel.learn,
         type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
+        choices: Object.values(BlockLabel)
       },
       {
         name: 'block',

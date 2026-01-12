@@ -2,8 +2,8 @@
   "name": "Introducing Others Review",
   "isUpcomingChange": true,
   "dashedName": "zh-a1-review-introducing-others",
-  "helpCategory": "English",
-  "blockLayout": "link",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     {
       "id": "68fa393a2a3cd1d42a7b8131",

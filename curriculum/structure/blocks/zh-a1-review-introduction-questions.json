@@ -1,14 +1,12 @@
 {
   "name": "Introduction Questions Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-review-introduction-questions",
-  "helpCategory": "English",
-  "blockLayout": "link",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
-    {
-      "id": "68fa376a7ec0adc64d68519a",
-      "title": "Dialogue 1: I'm Tom"
-    }
+    { "id": "69183626c350253a6a4a05e1", "title": "Glossary" },
+    { "id": "6918362cb49e2a3adf102413", "title": "Grammar Highlights" }
   ],
   "blockLabel": "review"
 }

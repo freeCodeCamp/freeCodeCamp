@@ -1,14 +1,12 @@
 {
   "name": "Greetings and Introductions Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-review-greetings-and-introductions",
-  "helpCategory": "English",
-  "blockLayout": "link",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
-    {
-      "id": "68fa3feda781cdf645e7d9a0",
-      "title": "Dialogue 1: I'm Tom"
-    }
+    { "id": "69021904538f084f5772a1d6", "title": "Glossary" },
+    { "id": "69021947fa86ab50f9d3e287", "title": "Grammar Highlights" }
   ],
   "blockLabel": "review"
 }

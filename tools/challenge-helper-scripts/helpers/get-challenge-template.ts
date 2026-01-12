@@ -1,29 +1,43 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 const sanitizeTitle = (title: string) => {
   return title.includes(':') || title.includes("'") ? `"${title}"` : title;
 };
 
 interface ChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   title: string;
   dashedName: string;
   challengeType: string;
   questionCount?: number;
+  challengeLang?: string;
+  inputType?: string;
 }
 
 const buildFrontMatter = ({
   challengeId,
   title,
   dashedName,
-  challengeType
-}: ChallengeOptions) => `---
+  challengeType,
+  challengeLang,
+  inputType
+}: ChallengeOptions) => {
+  const langString = challengeLang
+    ? `
+lang: ${challengeLang}`
+    : '';
+  const inputTypeString = inputType
+    ? `
+inputType: ${inputType}`
+    : '';
+
+  return `---
 id: ${challengeId.toString()}
 title: ${sanitizeTitle(title)}
 challengeType: ${challengeType}
-dashedName: ${dashedName}
+dashedName: ${dashedName}${langString}${inputTypeString}
 ---`;
+};
 
 const buildFrontMatterWithVideo = ({
   challengeId,
@@ -197,7 +211,25 @@ Answer 3
 
 const getMultipleChoiceChallengeTemplate = (
   options: ChallengeOptions
-): string => `${buildFrontMatter(options)}
+): string => {
+  const correctAnswerIndex = Math.floor(Math.random() * 4) + 1;
+  const feedback = (index: number) =>
+    index === correctAnswerIndex
+      ? ''
+      : `
+### --feedback--
+
+Include feedback for answer ${index} here.
+`;
+
+  const answers = [1, 2, 3, 4]
+    .map(
+      index => `Answer ${index}
+${feedback(index)}`
+    )
+    .join('\n---\n\n');
+
+  return `${buildFrontMatter(options)}
 
 # --description--
 
@@ -211,40 +243,12 @@ ${options.title} question?
 
 ## --answers--
 
-Answer 1
-
-### --feedback--
-
-Include feedback for answer 1 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 2
-
-### --feedback--
-
-Include feedback for answer 2 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 3
-
-### --feedback--
-
-Include feedback for answer 3 here, but remove these last four lines if this is the correct answer.
-
----
-
-Answer 4
-
-### --feedback--
-
-Include feedback for answer 4 here, but remove these last four lines if this is the correct answer.
-
+${answers}
 ## --video-solution--
 
-1
+${correctAnswerIndex}
 `;
+};
 
 const getFillInTheBlankChallengeTemplate = (
   options: ChallengeOptions
@@ -344,7 +348,7 @@ Do the assignment.
 `;
 
 interface DailyCodingChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeNumber: number;
 }
 

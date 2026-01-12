@@ -19,7 +19,7 @@ const {
 const {
   transformSuperBlock
 } = require('../../curriculum/dist/build-superblock.js');
-const { getSuperOrder } = require('../../curriculum/dist/utils.js');
+const { getSuperOrder } = require('../../curriculum/dist/super-order.js');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 

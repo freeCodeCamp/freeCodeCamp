@@ -14,7 +14,6 @@ import { generateReportEmail } from '../../utils/email-templates.js';
 import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
-  normalizeExperience,
   normalizeFlags,
   normalizeProfileUI,
   normalizeSurveys,
@@ -578,7 +577,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -703,11 +701,20 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isJsAlgoDataStructCert: true,
             isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
+            isFrontEndLibsCertV9: true,
+            isBackEndDevApisCertV9: true,
+            isFullStackDeveloperCertV9: true,
+            isB1EnglishCert: true,
+            isA2SpanishCert: true,
+            isA2ChineseCert: true,
+            isA1ChineseCert: true,
             keyboardShortcuts: true,
             linkedin: true,
             location: true,
@@ -775,6 +782,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           location,
           name,
           theme,
+          experience,
           ...publicUser
         } = rest;
 

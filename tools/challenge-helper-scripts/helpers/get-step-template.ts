@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-base-to-string */
-import ObjectID from 'bson-objectid';
-import { insertErms } from './insert-erms';
+import { ObjectId } from 'bson';
+import { insertErms } from './insert-erms.js';
 
 // Builds a block
 function getCodeBlock(label: string, content?: string) {
@@ -21,11 +20,12 @@ ${content}`
 }
 
 type StepOptions = {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeSeeds: ChallengeSeed[];
   stepNum: number;
   challengeType?: number;
   isFirstChallenge?: boolean;
+  challengeLang?: string;
 };
 
 export interface ChallengeSeed {
@@ -42,7 +42,8 @@ function getStepTemplate({
   challengeSeeds,
   stepNum,
   challengeType,
-  isFirstChallenge = false
+  isFirstChallenge = false,
+  challengeLang
 }: StepOptions): string {
   const seedTexts = challengeSeeds
     .map(({ contents, ext, editableRegionBoundaries }) => {
@@ -75,12 +76,17 @@ function getStepTemplate({
 demoType: onClick`
     : '';
 
+  const langString = challengeLang
+    ? `
+lang: ${challengeLang}`
+    : '';
+
   return (
     `---
 id: ${challengeId.toString()}
 title: Step ${stepNum}
 challengeType: ${challengeType ?? 'placeholder'}
-dashedName: step-${stepNum}${demoString}
+dashedName: step-${stepNum}${langString}${demoString}
 ---
 
 # --description--

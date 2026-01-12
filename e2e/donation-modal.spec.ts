@@ -205,11 +205,11 @@ test.describe('Donation modal appearance logic - New user', () => {
   });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
@@ -278,7 +278,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(() =>
-    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+    execSync(
+      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
+    )
   );
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
@@ -318,7 +320,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     page
   }) => {
     await page.goto(
-      '/learn/full-stack-developer/review-basic-html/basic-html-review'
+      '/learn/responsive-web-design-v9/review-basic-html/basic-html-review'
     );
 
     await page.getByRole('checkbox', { name: /Review/ }).click();
@@ -334,7 +336,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
   test('should not appear if FSD review module is completed', async ({
     page
   }) => {
-    await page.goto('/learn/full-stack-developer/review-html/review-html');
+    await page.goto('/learn/responsive-web-design-v9/review-html/review-html');
     await page.getByRole('checkbox', { name: /Review/ }).click();
     await page.getByRole('button', { name: 'Submit', exact: true }).click();
     await page.getByRole('button', { name: /Submit and go/ }).click();
@@ -349,7 +351,9 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
 test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(() =>
-    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+    execSync(
+      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
+    )
   );
 
   test('should appear if the user has just completed a new module', async ({
@@ -361,7 +365,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new m
     // This lecture is not added to the seed data, so it is not completed.
     // By completing this lecture, we claim both the block and its module.
     await page.goto(
-      '/learn/full-stack-developer/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
+      '/learn/relational-databases-v9/lecture-working-with-code-editors-and-ides/what-are-some-good-vs-code-extensions-you-can-use-in-your-editor'
     );
 
     // Wait for the page content to render
@@ -442,12 +446,12 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 test.describe('Donation modal appearance logic - Donor user', () => {
   test.beforeAll(() => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
     );
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear', async ({

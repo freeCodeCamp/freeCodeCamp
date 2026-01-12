@@ -89,3 +89,7 @@
   background-image: linear-gradient(to right, #31708f, #198eee);
   box-shadow: none;
 }
+
+.annual-donation-alert p {
+  margin-bottom: 0;
+}

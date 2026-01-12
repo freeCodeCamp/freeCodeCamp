@@ -40,7 +40,9 @@ interface MessageProps {
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
     <FullWidthRow>
-      <Callout variant='info'>{t('profile.you-change-privacy')}</Callout>
+      <Callout variant='note' label={t('misc.note')}>
+        {t('profile.you-change-privacy')}
+      </Callout>
       <Spacer size='xl' />
     </FullWidthRow>
   );
@@ -73,7 +75,7 @@ const VisitorMessage = ({
 }: Omit<MessageProps, 'isSessionUser'>) => {
   return (
     <FullWidthRow>
-      <Callout variant='info'>
+      <Callout variant='note' label={t('misc.note')}>
         {t('profile.username-change-privacy', { username })}
       </Callout>
       <Spacer size='m' />

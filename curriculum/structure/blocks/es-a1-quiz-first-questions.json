@@ -1,8 +1,8 @@
 {
   "name": "First Questions Quiz",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-quiz-first-questions",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "link",
   "challengeOrder": [
     { "id": "68dc75ee867ccc79d18df2ef", "title": "First Questions Quiz" }
