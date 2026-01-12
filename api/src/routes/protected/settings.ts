@@ -533,8 +533,7 @@ ${isLinkSentWithinLimitTTL}`
         
         // Only validate if the picture is actually different
         if (req.body.picture !== currentUser?.picture) {
-          const pictureIsValid = isValidPictureUrl(req.body.picture);
-          if (!pictureIsValid) {
+          if (!isValidPictureUrl(req.body.picture)) {
             logger.warn(`Invalid picture URL: ${req.body.picture}`);
             void reply.code(400);
             return { message: 'flash.wrong-updating', type: 'danger' } as const;
