@@ -1,5 +1,3 @@
-import React from 'react';
-
 /**
  * Interleaves an array of items with a separator element between each item.
  * @param items - The array of items to interleave
@@ -8,7 +6,7 @@ import React from 'react';
  */
 export function interleave<T>(
   items: T[],
-  separator: (index: number) => React.ReactNode
+  separator: (index: number) => T
 ): React.ReactNode[] {
   const result: React.ReactNode[] = [];
   items.forEach((item, index) => {

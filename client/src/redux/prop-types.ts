@@ -423,7 +423,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
-  experience: ExperienceData[];
+  experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;

@@ -334,6 +334,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             <FormControl
               componentClass='textarea'
               onChange={createOnChangeHandler(id, 'description')}
+              required
               value={description}
               name='experience-description'
               id={`${id}-description-input`}
@@ -392,7 +393,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
         </Button>
       </FullWidthRow>
       <Spacer size='l' />
-      {experience.length ? experience.map(renderExperience) : null}
+      {experience.map(renderExperience)}
     </section>
   );
 };

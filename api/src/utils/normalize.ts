@@ -218,50 +218,6 @@ export const normalizeSurveys = (
   });
 };
 
-type NormalizedExperience = {
-  id?: string;
-  title?: string;
-  company?: string;
-  location?: string;
-  startDate?: string;
-  endDate?: string;
-  description?: string;
-};
-
-/**
- * Convert experience array from database format (with nulls) to API format (with undefined).
- *
- * @param experience The experience array from the database.
- * @returns The experience array with null values converted to undefined.
- */
-export const normalizeExperience = (
-  experience:
-    | {
-        id: string;
-        title: string;
-        company: string;
-        location: string | null;
-        startDate: string;
-        endDate: string | null;
-        description: string;
-      }[]
-    | null
-): NormalizedExperience[] | undefined => {
-  if (!experience) return undefined;
-
-  return experience.map(exp => {
-    const normalized: NormalizedExperience = {};
-    if (exp.id) normalized.id = exp.id;
-    if (exp.title) normalized.title = exp.title;
-    if (exp.company) normalized.company = exp.company;
-    if (exp.location) normalized.location = exp.location;
-    if (exp.startDate) normalized.startDate = exp.startDate;
-    if (exp.endDate) normalized.endDate = exp.endDate;
-    if (exp.description) normalized.description = exp.description;
-    return normalized;
-  });
-};
-
 /**
  * Replace null flags with false.
  * @param flags Object with nullable boolean flags.

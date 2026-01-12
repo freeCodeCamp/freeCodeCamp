@@ -715,25 +715,7 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
       try {
-        const experience = req.body.experience.map(
-          ({
-            id,
-            title,
-            company,
-            location,
-            startDate,
-            endDate,
-            description
-          }) => ({
-            id: id ? id : '',
-            title: title ? title : '',
-            company: company ? company : '',
-            location: location ? location : '',
-            startDate: startDate ? startDate : '',
-            endDate: endDate ? endDate : '',
-            description: description ? description : ''
-          })
-        );
+        const { experience } = req.body;
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
           data: {
