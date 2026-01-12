@@ -545,7 +545,12 @@ ${isLinkSentWithinLimitTTL}`
       try {
         await fastify.prisma.user.update({
           where: { id: req.user?.id },
-          data: updateData
+          data: {
+            about: req.body.about,
+            name: req.body.name,
+            location: req.body.location,
+            picture: req.body.picture
+          }
         });
 
         return {
