@@ -7691,6 +7691,12 @@
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
         ]
       },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
+        ]
+      },
       "lecture-working-with-npm-scripts": {
         "title": "Working with npm Scripts",
         "intro": [
