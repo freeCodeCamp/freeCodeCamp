@@ -16,7 +16,7 @@ import { connect } from 'react-redux';
 import { ExperienceData } from '../../../redux/prop-types';
 import { updateMyExperience } from '../../../redux/settings/actions';
 
-import { FullWidthRow } from '../../helpers';
+import { FullWidthRow, interleave } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 
@@ -203,11 +203,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     };
   };
 
-  const renderExperience = (
-    experienceItem: ExperienceData,
-    index: number,
-    arr: ExperienceData[]
-  ) => {
+  const renderExperience = (experienceItem: ExperienceData) => {
     const { id, title, company, location, startDate, endDate, description } =
       experienceItem;
     const {
@@ -364,13 +360,6 @@ const ExperienceSettings = (props: ExperienceProps) => {
             {t('profile.experience.remove')}
           </Button>
         </form>
-        {index + 1 !== arr.length && (
-          <>
-            <Spacer size='m' />
-            <hr />
-            <Spacer size='m' />
-          </>
-        )}
       </FullWidthRow>
     );
   };
@@ -393,7 +382,13 @@ const ExperienceSettings = (props: ExperienceProps) => {
         </Button>
       </FullWidthRow>
       <Spacer size='l' />
-      {experience.map(renderExperience)}
+      {interleave(experience.map(renderExperience), () => (
+        <>
+          <Spacer size='m' />
+          <hr />
+          <Spacer size='m' />
+        </>
+      ))}
     </section>
   );
 };

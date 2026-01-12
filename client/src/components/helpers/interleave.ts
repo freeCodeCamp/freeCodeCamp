@@ -7,8 +7,8 @@
 export function interleave<T>(
   items: T[],
   separator: (index: number) => T
-): React.ReactNode[] {
-  const result: React.ReactNode[] = [];
+): T[] {
+  const result: T[] = [];
   items.forEach((item, index) => {
     result.push(item);
     if (index < items.length - 1) {
