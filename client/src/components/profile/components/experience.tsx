@@ -87,13 +87,30 @@ const ExperienceSettings = (props: ExperienceProps) => {
       });
     };
 
-  const updateItem = (id: string, updatedExperience?: ExperienceData[]) => {
+  const updateItem = (
+    id: string,
+    updatedExperience?: ExperienceData[],
+    closeModal = false
+  ) => {
     if (unsavedItemId === id) {
       setUnsavedItemId(null);
     }
     const experienceToUpdate = updatedExperience || experience;
-    updateMyExperience({ experience: experienceToUpdate });
-    setIsEditing(false);
+    const currentlySaved = props.experience;
+    const itemToUpdate = experienceToUpdate.find(item => item.id === id);
+
+    if (itemToUpdate && isItemValid(itemToUpdate)) {
+      const itemIndex = currentlySaved.findIndex(item => item.id === id);
+      const updatedSaved =
+        itemIndex >= 0
+          ? currentlySaved.map(item => (item.id === id ? itemToUpdate : item))
+          : [itemToUpdate, ...currentlySaved];
+      updateMyExperience({ experience: updatedSaved });
+    }
+
+    if (closeModal) {
+      setIsEditing(false);
+    }
   };
 
   const handleAdd = () => {
@@ -105,8 +122,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
   const handleRemoveItem = (id: string) => {
     const newExperience = experience.filter(exp => exp.id !== id);
     setExperience(newExperience);
-    updateItem(id, newExperience);
-    setIsEditing(false);
+    updateItem(id, newExperience, true);
   };
 
   const isFormPristine = (id: string) => {
@@ -176,6 +192,16 @@ const ExperienceSettings = (props: ExperienceProps) => {
     return { state: 'success', message: '' };
   };
 
+  const isItemValid = (experienceItem: ExperienceData): boolean => {
+    const { title, company, startDate, description } = experienceItem;
+    return (
+      getTitleValidation(title).state !== 'error' &&
+      getCompanyValidation(company).state !== 'error' &&
+      getStartDateValidation(startDate).state !== 'error' &&
+      getDescriptionValidation(description).state !== 'error'
+    );
+  };
+
   const formCorrect = (experienceItem: ExperienceData) => {
     const { id, title, company, startDate, description } = experienceItem;
     const { state: titleState, message: titleMessage } =
@@ -187,12 +213,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     const { state: descriptionState, message: descriptionMessage } =
       getDescriptionValidation(description);
     const pristine = isFormPristine(id);
-    const isButtonDisabled = [
-      titleState,
-      companyState,
-      startDateState,
-      descriptionState
-    ].some(state => state === 'error');
+    const isButtonDisabled = !isItemValid(experienceItem);
     return {
       isButtonDisabled,
       title: { titleState, titleMessage },
@@ -342,10 +363,10 @@ const ExperienceSettings = (props: ExperienceProps) => {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={isButtonDisabled}
+            disabled={isButtonDisabled || pristine}
             bgSize='large'
             data-playwright-test-label='save-experience'
-            {...(isButtonDisabled && { tabIndex: -1 })}
+            {...((isButtonDisabled || pristine) && { tabIndex: -1 })}
           >
             {t('profile.experience.save')}
           </BlockSaveButton>
