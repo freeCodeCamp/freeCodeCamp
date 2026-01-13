@@ -52,7 +52,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(Date.now());
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -134,15 +134,26 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     setDailyCodingChallengeLanguage(language);
   };
 
-  const formatTimeAgo = (timestamp: number | null): string => {
-    if (!timestamp) return 'just now';
+  const formatTimeAgo = (): JSX.Element | null => {
+    if (!lastSavedTime) return null;
 
-    const seconds = Math.floor((currentTime - timestamp) / 1000);
+    const seconds = Math.floor((currentTime - lastSavedTime) / 1000);
 
-    if (seconds < 10) return 'just now';
-    if (seconds < 60) return `${seconds}s ago`;
-    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
-    return `${Math.floor(seconds / 3600)}h ago`;
+    const timeAgo =
+      seconds < 5
+        ? 'just now'
+        : seconds < 60
+          ? `${seconds}s ago`
+          : seconds < 3600
+            ? `${Math.floor(seconds / 60)}m ago`
+            : `${Math.floor(seconds / 3600)}h ago`;
+
+    return (
+      <span className='save-status' aria-live='off'>
+        <FontAwesomeIcon icon={faCheck} aria-hidden='true' focusable='false' />
+        {t('learn.editor-tabs.saved', { timeAgo })}
+      </span>
+    );
   };
 
   return (
@@ -182,6 +193,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
         )}
         {/* right */}
         <div className='tabs-row-right panel-display-tabs'>
+          {formatTimeAgo()}
           <button
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}
@@ -202,6 +214,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 data-playwright-test-label='preview-pane-button'
                 aria-expanded={!!showPreviewPane}
                 onClick={() => togglePane('showPreviewPane')}
+                className='preview-pane'
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
                 <span aria-hidden='true'>{previewButtonText}</span>
@@ -216,7 +229,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
             </>
           )}
           <button
-            className='download-code'
             onClick={downloadChallenge}
             aria-label={t('learn.editor-tabs.download-code')}
           >
@@ -226,16 +238,6 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               focusable='false'
             />
           </button>
-          <span className='save-status' aria-live='off'>
-            <FontAwesomeIcon
-              icon={faCheck}
-              aria-hidden='true'
-              focusable='false'
-            />
-            {t('learn.editor-tabs.saved', {
-              timeAgo: formatTimeAgo(lastSavedTime)
-            })}
-          </span>
         </div>
       </div>
     </div>

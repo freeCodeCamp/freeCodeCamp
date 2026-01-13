@@ -282,6 +282,10 @@ export const reducer = handleActions(
       ...state,
       canFocusEditor: payload
     }),
+    [actionTypes.challengeMounted]: state => ({
+      ...state,
+      lastSavedTime: null
+    }),
     [actionTypes.setLastSavedTime]: (state, { payload }) => ({
       ...state,
       lastSavedTime: payload
