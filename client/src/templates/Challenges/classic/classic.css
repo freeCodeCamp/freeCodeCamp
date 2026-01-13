@@ -116,24 +116,12 @@
   margin-inline-end: auto;
 }
 
-.panel-display-tabs button:first-child {
-  margin: 0 10px 0 0;
-}
-
 .panel-display-tabs button:last-child {
   margin: 0;
 }
 
-.panel-display-tabs button:last-of-type {
-  border-inline-start-width: 1px;
-}
-
 .panel-display-tabs button:last-of-type:first-of-type {
   border-inline-start-width: 3px;
-}
-
-.panel-display-tabs button:nth-last-child(2) {
-  border-inline-end-width: 1px;
 }
 
 .interactive-editor-tab {
@@ -320,30 +308,6 @@
 
   #mobile-layout .monaco-editor-tabs {
     padding: 5px;
-  }
-
-  #mobile-layout .save-status {
-    font-size: 12px;
-    padding: 4px 8px;
-    margin-right: 8px;
-  }
-
-  @media screen and (max-width: 480px) {
-    #mobile-layout .save-status {
-      font-size: 11px;
-      padding: 2px 6px;
-      gap: 4px;
-    }
-  }
-
-  @media screen and (max-width: 360px) {
-    #mobile-layout .save-status {
-      font-size: 0;
-    }
-
-    #mobile-layout .save-status svg {
-      font-size: 14px;
-    }
   }
 
   .monaco-editor-tabs button {

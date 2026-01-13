@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { lastSavedTimeSelector } from '../redux/selectors';
-import { faCheck, faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCheck,
+  faDownload,
+  faWindowRestore
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -9,6 +13,7 @@ import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import EditorTabs from './editor-tabs';
+import { useDownloadChallenge } from '../hooks';
 
 interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
@@ -40,6 +45,7 @@ type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
 
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+  const { downloadChallenge } = useDownloadChallenge();
 
   const [currentTime, setCurrentTime] = useState<number>(Date.now());
 
@@ -209,8 +215,23 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               </button>
             </>
           )}
-          <span className='save-status' aria-live='polite'>
-            <FontAwesomeIcon icon={faCheck} />
+          <button
+            className='download-code'
+            onClick={downloadChallenge}
+            aria-label={t('learn.editor-tabs.download-code')}
+          >
+            <FontAwesomeIcon
+              icon={faDownload}
+              aria-hidden='true'
+              focusable='false'
+            />
+          </button>
+          <span className='save-status' aria-live='off'>
+            <FontAwesomeIcon
+              icon={faCheck}
+              aria-hidden='true'
+              focusable='false'
+            />
             {t('learn.editor-tabs.saved', {
               timeAgo: formatTimeAgo(lastSavedTime)
             })}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { combineFileData } from '../utils/download-helpers';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -69,13 +70,6 @@ interface CompletionModalsProps extends StateProps {
 interface CompletionModalState {
   downloadURL: null | string;
 }
-
-interface DownloadableChallengeFile {
-  name: string;
-  ext: string;
-  contents: string;
-}
-
 class CompletionModal extends Component<
   CompletionModalsProps,
   CompletionModalState
@@ -237,18 +231,3 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(CompletionModal));
-
-export function combineFileData(challengeFiles: DownloadableChallengeFile[]) {
-  return challengeFiles.reduce<string>(function (
-    allFiles: string,
-    currentFile: DownloadableChallengeFile
-  ) {
-    const beforeText = `** start of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    const afterText = `\n\n** end of ${currentFile.name + '.' + currentFile.ext} **\n\n`;
-    allFiles +=
-      challengeFiles.length > 0
-        ? `${beforeText}${currentFile.contents}${afterText}`
-        : currentFile.contents;
-    return allFiles;
-  }, '');
-}

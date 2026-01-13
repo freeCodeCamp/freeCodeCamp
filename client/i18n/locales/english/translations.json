@@ -552,7 +552,8 @@
       "terminal": "Terminal",
       "editor": "Editor",
       "interactive-editor": "Interactive Editor",
-      "saved": "Saved {{timeAgo}}"
+      "saved": "Saved {{timeAgo}}",
+      "download-code": "Download Code"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
