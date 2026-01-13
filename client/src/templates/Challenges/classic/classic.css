@@ -114,11 +114,6 @@
   margin-inline-end: auto;
 }
 
-.panel-display-tabs button:first-child,
-.tabs-row > button:first-child {
-  margin: 0 10px 0 0;
-}
-
 .panel-display-tabs button:last-of-type:first-of-type {
   border-inline-start-width: 3px;
 }
