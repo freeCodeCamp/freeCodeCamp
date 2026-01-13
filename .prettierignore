@@ -21,5 +21,3 @@ shared/utils/validate.js
 shared/utils/validate.test.js
 shared-dist
 dist
-node_modules
-.pnpm-store
