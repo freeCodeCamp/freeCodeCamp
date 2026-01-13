@@ -17,8 +17,8 @@ const {
 let allChallengeNodes;
 let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
-const statefullyCreatedNodes = new Map();
-const createdFileNodes = new Map();
+const filepathToStatefullyCreatedNodes = new Map();
+const filePathToCreatedNodes = new Map();
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
@@ -52,11 +52,11 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   });
 
   function cleanupCreatedNodes(filePath) {
-    createdFileNodes.get(filePath)?.forEach(node => deleteNode(node));
+    filePathToCreatedNodes.get(filePath)?.forEach(node => deleteNode(node));
   }
 
   function deletePages(filePath) {
-    const statefulNodes = statefullyCreatedNodes.get(filePath) || [];
+    const statefulNodes = filepathToStatefullyCreatedNodes.get(filePath) || [];
     statefulNodes.forEach(node => {
       deleteNode(node);
       deletePage({
@@ -65,13 +65,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
       });
     });
 
-    const createdNodes = createdFileNodes.get(filePath) || [];
+    const createdNodes = filePathToCreatedNodes.get(filePath) || [];
     createdNodes.forEach(node => {
       deleteNode(node);
     });
 
-    statefullyCreatedNodes.delete(filePath);
-    createdFileNodes.delete(filePath);
+    filepathToStatefullyCreatedNodes.delete(filePath);
+    filePathToCreatedNodes.delete(filePath);
   }
 
   function handleChallengeUpdate(filePath, action = 'changed') {
@@ -97,14 +97,14 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         );
 
         if (action === 'added') {
-          createdFileNodes.set(filePath, challengeNodes);
+          filePathToCreatedNodes.set(filePath, challengeNodes);
         }
         if (action === 'changed') {
-          const existingFileNode = createdFileNodes.get(filePath);
+          const existingFileNode = filePathToCreatedNodes.get(filePath);
           // If a file has been created since boot and then changed, the store
           // has to be updated or the page won't reflect the latest changes.
           if (existingFileNode) {
-            createdFileNodes.set(filePath, challengeNodes);
+            filePathToCreatedNodes.set(filePath, challengeNodes);
           }
         }
       })
@@ -140,8 +140,9 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         challenges.forEach(challenge => {
           const newNode = reportNodeCreationToGatsby(challenge);
           const existingNodes =
-            statefullyCreatedNodes.get(challenge.sourceLocation) || [];
-          statefullyCreatedNodes.set(challenge.sourceLocation, [
+            filepathToStatefullyCreatedNodes.get(challenge.sourceLocation) ||
+            [];
+          filepathToStatefullyCreatedNodes.set(challenge.sourceLocation, [
             ...existingNodes,
             newNode
           ]);
@@ -302,7 +303,7 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
 
 exports.createPages = function ({ actions }) {
   // actions.createPage has to be called in the createPages hook
-  const nodes = [...createdFileNodes.values()].flat();
+  const nodes = [...filePathToCreatedNodes.values()].flat();
   for (const node of nodes) {
     const nodeToPage = createChallengePages(actions.createPage, {
       idToNextPathCurrentCurriculum,
