@@ -1,4 +1,10 @@
 {
-  "extends": ["github>freecodecamp/renovate-config"],
-  "includePaths": ["**/Dockerfile", "**/.github/workflows/*.yml", "**/api/"]
+  "extends": [
+    "github>freecodecamp/renovate-config"
+  ],
+  "includePaths": [
+    "**/Dockerfile",
+    "**/.github/workflows/*.yml",
+    "**/api/**"
+  ]
 }
