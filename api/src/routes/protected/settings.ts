@@ -526,13 +526,7 @@ ${isLinkSentWithinLimitTTL}`
 
       // No need to validate if picture is being deleted.
       if (req.body.picture) {
-        const currentUser = await fastify.prisma.user.findUnique({
-          where: { id: req.user?.id },
-          select: { picture: true }
-        });
-
-        // Only validate if the picture is actually different
-        if (req.body.picture !== currentUser?.picture) {
+        if (req.body.picture !== req.user!.picture) {
           if (!isValidPictureUrl(req.body.picture)) {
             logger.warn(`Invalid picture URL: ${req.body.picture}`);
             void reply.code(400);
