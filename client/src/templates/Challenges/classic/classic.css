@@ -78,13 +78,15 @@
   display: flex;
   justify-content: center;
   gap: 3px;
+  /* these three center the middle items on the page */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
-  /* Ensure the right group pins to the end even when no left/middle items exist */
-  margin-inline-start: auto;
   gap: 8px;
 
   & .save-status {
@@ -114,8 +116,17 @@
   margin-inline-end: auto;
 }
 
+.panel-display-tabs button:last-child {
+  margin: 0;
+}
+
 .panel-display-tabs button:last-of-type:first-of-type {
   border-inline-start-width: 3px;
+}
+
+.interactive-editor-tab {
+  /* Ensure the right group pins to the end even when no left/middle items exist */
+  margin-left: auto;
 }
 
 .restart-step-tab {

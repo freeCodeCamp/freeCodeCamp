@@ -294,6 +294,26 @@
           ]
         },
         {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "algorithms",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "graphs-and-trees",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
+          "dashedName": "dynamic-programming",
+          "comingSoon": true,
+          "blocks": []
+        },
+        {
           "dashedName": "functional-programming",
           "blocks": [
             "lecture-understanding-functional-programming",

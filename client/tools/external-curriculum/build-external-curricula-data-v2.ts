@@ -130,23 +130,23 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.RespWebDesignV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.RespWebDesignV9].title
     },
     {
       dashedName: SuperBlocks.JsV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.JsV9].title
+    },
+    {
+      dashedName: SuperBlocks.PythonV9,
+      public: true,
+      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.FrontEndDevLibsV9,
       public: false,
       title: intros[SuperBlocks.FrontEndDevLibsV9].title
-    },
-    {
-      dashedName: SuperBlocks.PythonV9,
-      public: false,
-      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.RelationalDbV9,
@@ -181,7 +181,7 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Spanish]: [
     {
       dashedName: SuperBlocks.A1Spanish,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.A1Spanish].title
     }
   ],
