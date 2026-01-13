@@ -36,6 +36,7 @@ export const disableBuildOnError = createAction(
 );
 export const noStoredCodeFound = createAction(actionTypes.noStoredCodeFound);
 export const saveEditorContent = createAction(actionTypes.saveEditorContent);
+export const setLastSavedTime = createAction(actionTypes.setLastSavedTime);
 export const setIsAdvancing = createAction(actionTypes.setIsAdvancing);
 export const setChapterSlug = createAction(actionTypes.setChapterSlug);
 export const setUserCompletedExam = createAction(

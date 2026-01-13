@@ -1,6 +1,9 @@
-import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { lastSavedTimeSelector } from '../redux/selectors';
+import { faCheck, faWindowRestore } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
@@ -24,6 +27,7 @@ interface ClassicLayoutProps {
   challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
+  lastSavedTime: number | null;
 }
 
 interface InteractiveEditorProps {
@@ -36,6 +40,16 @@ type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
 
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+
+  const [currentTime, setCurrentTime] = useState<number>(Date.now());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   if (props.hasInteractiveEditor) {
     const { toggleInteractiveEditor, showInteractiveEditor } = props;
@@ -73,7 +87,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
-    challengeType
+    challengeType,
+    lastSavedTime
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -111,6 +126,17 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
   const handleLanguageChange = (language: DailyCodingChallengeLanguages) => {
     store.set('dailyCodingChallengeLanguage', language);
     setDailyCodingChallengeLanguage(language);
+  };
+
+  const formatTimeAgo = (timestamp: number | null): string => {
+    if (!timestamp) return 'just now';
+
+    const seconds = Math.floor((currentTime - timestamp) / 1000);
+
+    if (seconds < 10) return 'just now';
+    if (seconds < 60) return `${seconds}s ago`;
+    if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+    return `${Math.floor(seconds / 3600)}h ago`;
   };
 
   return (
@@ -183,6 +209,12 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               </button>
             </>
           )}
+          <span className='save-status' aria-live='polite'>
+            <FontAwesomeIcon icon={faCheck} />
+            {t('learn.editor-tabs.saved', {
+              timeAgo: formatTimeAgo(lastSavedTime)
+            })}
+          </span>
         </div>
       </div>
     </div>
@@ -190,5 +222,11 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
 };
 
 ActionRow.displayName = 'ActionRow';
+const mapStateToProps = createSelector(
+  lastSavedTimeSelector,
+  (lastSavedTime: number | null) => ({
+    lastSavedTime
+  })
+);
 
-export default ActionRow;
+export default connect(mapStateToProps)(ActionRow);
