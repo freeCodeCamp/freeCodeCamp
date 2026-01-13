@@ -85,6 +85,7 @@
   justify-content: flex-end;
   /* Ensure the right group pins to the end even when no left/middle items exist */
   margin-inline-start: auto;
+  gap: 8px;
 
   & .save-status {
     display: flex;
@@ -99,8 +100,8 @@
     }
   }
 
-  & .download-code {
-    margin-left: 8px;
+  & .preview-pane {
+    margin-right: -8px;
   }
 }
 
