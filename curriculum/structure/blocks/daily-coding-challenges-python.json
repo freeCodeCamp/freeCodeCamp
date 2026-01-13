@@ -645,6 +645,26 @@
     {
       "id": "6939b873185d8e00d453563f",
       "title": "Challenge 160: Knight Moves"
+    },
+    {
+      "id": "694596b0585c11170ac7c7f9",
+      "title": "Challenge 161: Free Shipping"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fa",
+      "title": "Challenge 162: Energy Consumption"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fb",
+      "title": "Challenge 163: Consonant Case"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fc",
+      "title": "Challenge 164: Markdown Inline Code Parser"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fd",
+      "title": "Challenge 165: Class Average"
     }
   ]
 }
