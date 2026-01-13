@@ -13,7 +13,7 @@ import {
   getDailyCodingChallengeLanguage
 } from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes } from './action-types';
-import { noStoredCodeFound, updateFile } from './actions';
+import { noStoredCodeFound, updateFile, setLastSavedTime } from './actions';
 import { challengeFilesSelector, challengeMetaSelector } from './selectors';
 
 const legacyPrefixes = [
@@ -127,7 +127,8 @@ function saveCodeEpic(action$, state$) {
           message: error
             ? FlashMessages.LocalCodeSaveError
             : FlashMessages.LocalCodeSaved
-        })
+        }),
+        ...(!error ? [setLastSavedTime(Date.now())] : [])
       )
     )
   );

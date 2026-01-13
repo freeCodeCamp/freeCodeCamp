@@ -87,6 +87,24 @@
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
+
+  & .save-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray-45);
+    font-size: 14px;
+    padding: 6px;
+
+    & svg {
+      color: var(--primary-color);
+    }
+  }
+
+  & .preview-pane {
+    margin-right: -8px;
+  }
 }
 
 .monaco-editor-tabs button + button {
@@ -302,6 +320,30 @@
 
   #mobile-layout .monaco-editor-tabs {
     padding: 5px;
+  }
+
+  #mobile-layout .save-status {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 480px) {
+    #mobile-layout .save-status {
+      font-size: 11px;
+      padding: 2px 6px;
+      gap: 4px;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    #mobile-layout .save-status {
+      font-size: 0;
+    }
+
+    #mobile-layout .save-status svg {
+      font-size: 14px;
+    }
   }
 
   .monaco-editor-tabs button {
