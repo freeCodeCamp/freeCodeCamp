@@ -80,7 +80,7 @@
         {
           "dashedName": "data-visualization",
           "comingSoon": true,
-          "blocks": ["lab-bar-chart"]
+          "blocks": ["lecture-introduction-to-data-visualization","lab-bar-chart"]
         },
         {
           "dashedName": "typescript-fundamentals",

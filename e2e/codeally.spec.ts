@@ -5,7 +5,7 @@ test.describe('Before completing the project', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --set-true isDonating');
+    execSync('node ../tools/scripts/seed/seed-demo-user --set-true isDonating');
   });
 
   test('should not allow you to submit a URL', async ({ page }) => {
@@ -24,7 +24,7 @@ test.describe('Before completing the project', () => {
 
 test.describe('After completing the project', () => {
   test.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should allow you to submit a URL', async ({ page }) => {

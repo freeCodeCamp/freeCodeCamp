@@ -389,6 +389,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
+  const isLanguageCert = [
+    Certification.A1Chinese,
+    Certification.A2Chinese,
+    Certification.A2English,
+    Certification.A2Spanish,
+    Certification.B1English
+  ].includes(certSlug);
+
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? (
@@ -441,7 +449,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 i18nKey={
                   isMicrosoftCert
                     ? 'certification.fulltextNoHours'
-                    : 'certification.fulltext'
+                    : isLanguageCert
+                      ? 'certification.fulltextLanguageExam'
+                      : 'certification.fulltext'
                 }
                 title={t(`certification.title.${certSlug}`, certTitle)}
               >

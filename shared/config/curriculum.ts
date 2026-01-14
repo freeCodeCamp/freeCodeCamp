@@ -83,6 +83,7 @@ export enum SuperBlockStage {
   Core,
   English,
   Spanish,
+  Chinese,
   Professional,
   Extra,
   Legacy,
@@ -95,6 +96,7 @@ const defaultStageOrder = [
   SuperBlockStage.Core,
   SuperBlockStage.English,
   SuperBlockStage.Spanish,
+  SuperBlockStage.Chinese,
   SuperBlockStage.Extra,
   SuperBlockStage.Legacy,
   SuperBlockStage.Professional,
@@ -129,6 +131,7 @@ export const superBlockStages: StageMap = {
   ],
   [SuperBlockStage.English]: [SuperBlocks.A2English, SuperBlocks.B1English],
   [SuperBlockStage.Spanish]: [SuperBlocks.A1Spanish],
+  [SuperBlockStage.Chinese]: [SuperBlocks.A1Chinese],
   [SuperBlockStage.Professional]: [SuperBlocks.FoundationalCSharp],
   [SuperBlockStage.Extra]: [
     SuperBlocks.TheOdinProject,
@@ -158,7 +161,6 @@ export const superBlockStages: StageMap = {
     SuperBlocks.FullStackOpen,
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
-    SuperBlocks.A1Chinese,
     SuperBlocks.DevPlayground,
     SuperBlocks.FullStackDeveloper
   ],
