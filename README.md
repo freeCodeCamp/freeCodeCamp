@@ -12,8 +12,6 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
-- [freeCodeCamp.org's open-source codebase and curriculum](#freecodecamporgs-open-source-codebase-and-curriculum)
-- [Table of Contents](#table-of-contents)
   - [Certifications](#certifications)
   - [The Learning Platform](#the-learning-platform)
   - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
