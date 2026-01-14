@@ -102,7 +102,7 @@ export interface EditorProps {
   openResetModal: () => void;
   resizeProps: ResizeProps;
   saveChallenge: () => void;
-  saveEditorContent: () => void;
+  saveEditorContent: (payload?: { isSilent?: boolean }) => void;
   saveSubmissionToDB?: boolean;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -277,7 +277,7 @@ const Editor = (props: EditorProps): JSX.Element => {
   );
 
   const autoSaveDebounceRef = useRef(
-    debounce(() => props.saveEditorContent(), 2000)
+    debounce(() => props.saveEditorContent({ isSilent: true }), 2000)
   );
 
   const player = useRef<{
@@ -620,12 +620,13 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
-        props.saveSubmissionToDB && props.isSignedIn
-          ? // save to database
-            props.saveChallenge
-          : // save to local storage
-            props.saveEditorContent
+      run: () => {
+        if (props.saveSubmissionToDB && props.isSignedIn) {
+          props.saveChallenge();
+        } else {
+          props.saveEditorContent(); // Shows flash message for Ctrl+S
+        }
+      }
     });
     editor.addAction({
       id: 'toggle-accessibility',
@@ -693,7 +694,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       const currentContent = editor.getValue();
       if (currentContent && currentContent.trim().length > 0) {
         autoSaveDebounceRef.current.cancel();
-        props.saveEditorContent();
+        props.saveEditorContent({ isSilent: true });
       }
     });
 
@@ -1403,7 +1404,7 @@ const Editor = (props: EditorProps): JSX.Element => {
             const currentContent = editor.getModel()?.getValue();
             if (currentContent && currentContent.trim().length > 0) {
               autoSaveDebounceRef.current.cancel();
-              props.saveEditorContent();
+              props.saveEditorContent({ isSilent: true });
             }
 
             const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
