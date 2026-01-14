@@ -665,6 +665,26 @@
     {
       "id": "694596b0585c11170ac7c7fd",
       "title": "Challenge 165: Class Average"
+    },
+    {
+      "id": "696655d24b614176d4c9b789",
+      "title": "Challenge 166: Hex Validator"
+    },
+    {
+      "id": "696655d24b614176d4c9b78a",
+      "title": "Challenge 167: Bingo! Letter"
+    },
+    {
+      "id": "696655d24b614176d4c9b78b",
+      "title": "Challenge 168: Scaled Image"
+    },
+    {
+      "id": "696655d24b614176d4c9b78c",
+      "title": "Challenge 169: FizzBuzz Mini"
+    },
+    {
+      "id": "696655d24b614176d4c9b78d",
+      "title": "Challenge 170: Odd or Even Day?"
     }
   ]
 }
