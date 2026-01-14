@@ -289,7 +289,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
           togglePane={togglePane}
           challengeType={challengeType}
           data-playwright-test-label='action-row'
-          lastSavedTime={null}
         />
       )}
       <ReflexContainer
