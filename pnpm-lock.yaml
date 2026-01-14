@@ -99,8 +99,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       '@fastify/cookie':
-        specifier: 11.0.1
-        version: 11.0.1
+        specifier: 11.0.2
+        version: 11.0.2
       '@fastify/csrf-protection':
         specifier: 7.1.0
         version: 7.1.0
@@ -3196,8 +3196,8 @@ packages:
   '@fastify/ajv-compiler@4.0.2':
     resolution: {integrity: sha512-Rkiu/8wIjpsf46Rr+Fitd3HRP+VsxUFDDeag0hs9L0ksfnwx2g7SPQQTFL0E8Qv+rfXzQOxBJnjUB9ITUDjfWQ==}
 
-  '@fastify/cookie@11.0.1':
-    resolution: {integrity: sha512-n1Ooz4bgQ5LcOlJQboWPfsMNxIrGV0SgU85UkctdpTlCQE0mtA3rlspOPUdqk9ubiiZn053ucnia4DjTquI4/g==}
+  '@fastify/cookie@11.0.2':
+    resolution: {integrity: sha512-GWdwdGlgJxyvNv+QcKiGNevSspMQXncjMZ1J8IvuDQk0jvkzgWWZFNC2En3s+nHndZBGV8IbLwOI/sxCZw/mzA==}
 
   '@fastify/csrf-protection@7.1.0':
     resolution: {integrity: sha512-I2TDd4SRRYQivKCMHdB/8py+CPO9DT0e63lh4DO8MDCJh8NROq8HD/iO0IjYtwhsD3bZhr0cBXsFdfPvyTmzNw==}
@@ -17603,7 +17603,7 @@ snapshots:
       ajv-formats: 3.0.1(ajv@8.17.1)
       fast-uri: 3.0.6
 
-  '@fastify/cookie@11.0.1':
+  '@fastify/cookie@11.0.2':
     dependencies:
       cookie: 1.0.2
       fastify-plugin: 5.0.1
@@ -17628,7 +17628,7 @@ snapshots:
 
   '@fastify/oauth2@8.1.2':
     dependencies:
-      '@fastify/cookie': 11.0.1
+      '@fastify/cookie': 11.0.2
       fastify-plugin: 5.0.1
       simple-oauth2: 5.1.0
     transitivePeerDependencies:

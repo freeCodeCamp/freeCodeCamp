@@ -838,11 +838,14 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 
-      // TODO(Post-MVP): should this fail if it's not the currently signed in
-      // user?
       const targetUser = await fastify.prisma.user.findUnique({
         where: { id: authToken.userId }
       });
+
+      if (targetUser?.id !== req.user?.id) {
+        logger.warn('Target user does not match signed in user');
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
 
       if (targetUser?.newEmail !== email) {
         return reply.redirectWithMessage(origin, redirectMessage);
