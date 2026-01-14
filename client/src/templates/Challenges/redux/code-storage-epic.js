@@ -120,17 +120,30 @@ function saveCodeEpic(action$, state$) {
       }
     }),
     ofType(actionTypes.saveEditorContent),
-    switchMap(({ error }) =>
-      of(
-        createFlashMessage({
-          type: error ? 'warning' : 'success',
-          message: error
-            ? FlashMessages.LocalCodeSaveError
-            : FlashMessages.LocalCodeSaved
-        }),
-        ...(!error ? [setLastSavedTime(Date.now())] : [])
-      )
-    )
+    switchMap(action => {
+      const actions = [];
+
+      // Show flash message unless explicitly silenced
+      if (
+        action.type === actionTypes.executeChallenge ||
+        !action.payload?.isSilent
+      ) {
+        actions.push(
+          createFlashMessage({
+            type: action.error ? 'warning' : 'success',
+            message: action.error
+              ? FlashMessages.LocalCodeSaveError
+              : FlashMessages.LocalCodeSaved
+          })
+        );
+      }
+
+      if (!action.error) {
+        actions.push(setLastSavedTime(Date.now()));
+      }
+
+      return of(...actions);
+    })
   );
 }
 
