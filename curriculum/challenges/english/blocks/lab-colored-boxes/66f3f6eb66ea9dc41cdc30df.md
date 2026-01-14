@@ -24,6 +24,7 @@ In this lab, you'll practice using CSS colors by designing boxes.
 8. The `.color3` element should have a `background-color` that uses a predefined (word) color value.
 9. The `.color4` element should have a `background-color` that uses a HSL color value.
 10. The `.color5` element should have a `background-color` set.
+11. You should not use flexbox to lay out the `.color-grid` element.
 
 **Note:** Be sure to link your stylesheet in your HTML and apply your CSS.
 
@@ -113,6 +114,16 @@ The `.color5` element should have a background color set.
 
 ```js
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
+```
+
+The .color-grid element should not use flexbox for layout.
+
+```js
+const colorGridDisplay = getComputedStyle(
+  document.querySelector('.color-grid')
+).display;
+
+assert.notStrictEqual(colorGridDisplay, 'flex');
 ```
 
 # --seed--
