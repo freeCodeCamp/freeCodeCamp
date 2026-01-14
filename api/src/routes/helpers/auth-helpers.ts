@@ -26,11 +26,6 @@ export const findOrCreateUser = async (
     );
   }
 
-  console.log(
-    "Fastify.gb.isOn('drip-campaign'):",
-    fastify.gb.isOn('drip-campaign')
-  );
-
   if (existingUser[0]) {
     return existingUser[0];
   }

@@ -45,7 +45,6 @@ describe('findOrCreateUser', () => {
   afterEach(async () => {
     await fastify.prisma.user.deleteMany({ where: { email } });
     await fastify.prisma.dripCampaign.deleteMany({ where: { email } });
-    await fastify.close();
     vi.clearAllMocks();
   });
 
