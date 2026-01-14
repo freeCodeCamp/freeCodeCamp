@@ -207,6 +207,8 @@
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
@@ -869,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -1081,7 +1085,8 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
@@ -1111,6 +1116,7 @@
     "issued": "發佈日期",
     "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>，<5>約 {{completionTime}} 課時</5>",
     "fulltextNoHours": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson 的簽名",
     "julia-liuson-signature": "Julia Liuson 的簽名",
     "project": {

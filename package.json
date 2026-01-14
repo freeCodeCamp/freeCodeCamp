@@ -52,7 +52,6 @@
     "knip:all": "npx -y knip@5 ",
     "lint-root": "pnpm npm-run-all lint:*",
     "lint": "turbo lint && turbo lint-root",
-    "lint:eslint": "eslint --max-warnings 0",
     "lint:challenges": "cd ./curriculum && pnpm run lint-challenges",
     "lint:ts": "tsc && tsc -p shared && tsc -p api && tsc -p client && tsc -p curriculum && tsc -p e2e && tsc -p tools/challenge-helper-scripts",
     "lint:prettier": "prettier --list-different .",
@@ -75,13 +74,13 @@
     "test:tools:challenge-helper-scripts": "cd ./tools/challenge-helper-scripts && pnpm test run",
     "test:tools:scripts-lint": "cd ./tools/scripts/lint && pnpm test run",
     "test:tools:challenge-parser": "cd ./tools/challenge-parser && pnpm test run",
-    "test:curriculum:content": "cd ./curriculum && pnpm test run",
-    "test:curriculum:tooling": "cd ./curriculum && pnpm vitest run",
+    "test:curriculum:content": "cd ./curriculum && pnpm test-content",
+    "test:curriculum:tooling": "cd ./curriculum && pnpm test-tooling",
     "test:shared": "cd ./shared && pnpm vitest run",
     "test:client": "cd ./client && pnpm test run",
     "prepare": "husky",
-    "playwright:run": "playwright test",
-    "playwright:watch": "playwright test --ui-port=0"
+    "playwright:run": "pnpm -F e2e run playwright:run",
+    "playwright:watch": "pnpm -F e2e run playwright:watch"
   },
   "dependencies": {
     "dotenv": "16.4.5",

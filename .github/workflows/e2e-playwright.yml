@@ -30,7 +30,7 @@ jobs:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -132,7 +132,7 @@ jobs:
           rm api-artifact/api-artifact.tar
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -168,7 +168,7 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
+        run: pnpm run playwright:run --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
 
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         if: ${{ !cancelled() }}

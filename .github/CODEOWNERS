@@ -35,7 +35,7 @@ pnpm-lock.yaml
 # -------------------------------------------------
 
 /curriculum/challenges/english/* @freecodecamp/curriculum
-/curriculum/challenges/structure/* @freecodecamp/dev-team @freecodecamp/curriculum
+/curriculum/structure/* @freecodecamp/dev-team @freecodecamp/curriculum
 /client/i18n/locales/english/* @freecodecamp/dev-team @freecodecamp/curriculum
 /client/src/pages/learn/* @freecodecamp/dev-team @freecodecamp/curriculum
 

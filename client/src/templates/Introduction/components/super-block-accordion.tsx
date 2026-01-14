@@ -49,7 +49,7 @@ interface ModuleProps {
 interface Challenge {
   id: string;
   block: string;
-  blockLabel: BlockLabel;
+  blockLabel?: BlockLabel;
   title: string;
   fields: { slug: string };
   dashedName: string;
@@ -236,7 +236,7 @@ const LinkModule = ({
     <li className='link-block'>
       <Block
         block={challenges[0].block}
-        blockLabel={label}
+        blockLabel={label || null}
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}

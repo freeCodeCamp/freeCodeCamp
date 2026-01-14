@@ -207,6 +207,8 @@
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
     "core-certs-heading": "Рекомендована програма (бета-версія):",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Професійні сертифікації:",
     "interview-prep-heading": "Підготуйтесь до посади розробника:",
     "legacy-curriculum-heading": "Архівовані курси:",
@@ -869,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "Зовсім скоро",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Схоже, що ви не підключені до мережі, тому не зможете зберегти свій прогрес",
     "server-offline": "Сервер не відповідає, ваш прогрес може не зберегтись. Будь ласка, зв’яжіться з <0>підтримкою</0>, якщо помилка не зникне",
     "unsubscribed": "Підписку успішно скасовано",
@@ -1081,7 +1085,8 @@
       "err-3": "Під час спроби зберегти відповіді виникла помилка.",
       "success": "Дякуємо. Ваші відповіді надіслано."
     },
-    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено"
+    "classroom-mode-updated": "Ваші налаштування режиму класу оновлено",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
@@ -1111,6 +1116,7 @@
     "issued": "Виданий",
     "fulltext": "<0>Цей сертифікат засвідчує, що</0> <1>{{user}}</1> <2>успішно закінчив(-ла) сертифікацію</2> <3>«{{title}}»</3> <4>{{time}},</4> <5>виконавши приблизно {{completionTime}} год навчання</5>",
     "fulltextNoHours": "<0>Цей сертифікат підтверджує, що</0> <1>{{user}}</1> <2>успішно завершив(-ла) сертифікацію</2> <3>{{title}}</3> <4>{{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Підпис Квінсі Ларсона",
     "julia-liuson-signature": "Підпис Джулії Люсон",
     "project": {

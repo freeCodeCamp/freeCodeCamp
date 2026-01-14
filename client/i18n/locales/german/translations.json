@@ -207,6 +207,8 @@
     "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -869,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Du scheinst offline zu sein, dein Fortschritt wird möglicherweise nicht gespeichert",
     "server-offline": "Der Server konnte nicht erreicht werden und dein Fortschritt wird möglicherweise nicht gespeichert. Bitte wende dich an den <0>Support</0>, wenn diese Meldung weiterhin erscheint",
     "unsubscribed": "Du wurdest erfolgreich abgemeldet",
@@ -1081,7 +1085,8 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Es gibt eine maximale Grenze von 288 Zeichen, du hast noch {{charsLeft}} übrig",
@@ -1111,6 +1116,7 @@
     "issued": "Ausgestellt",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {

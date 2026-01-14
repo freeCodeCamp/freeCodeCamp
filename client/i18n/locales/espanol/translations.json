@@ -131,7 +131,7 @@
   },
   "weekdays": {
     "short": {
-      "sunday": "Sab",
+      "sunday": "Dom",
       "monday": "Lun",
       "tuesday": "Mar",
       "wednesday": "Mier",
@@ -140,7 +140,7 @@
       "saturday": "Sab"
     },
     "long": {
-      "sunday": "Dom",
+      "sunday": "Domingo",
       "monday": "Lunes",
       "tuesday": "Martes",
       "wednesday": "Miércoles",
@@ -207,6 +207,8 @@
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
     "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
+    "learn-spanish-heading": "Aprende Español profesional A1:",
+    "learn-chinese-heading": "Aprende Chino Professional:",
     "professional-certs-heading": "Certificaciones profesionales:",
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Nuestros cursos archivados:",
@@ -484,7 +486,7 @@
     "ms-link": "Link de Microsoft",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
-    "congratulations-code-passes": "Felicidades!!! Tu código pasa",
+    "congratulations-code-passes": "Felicidades. Tu código pasa.",
     "i-completed": "He completado este desafío",
     "example-code": "Código de ejemplo",
     "test-output": "El resultado de tu prueba irá aquí",
@@ -836,7 +838,7 @@
     "help-millions-learn": "Ayuda a millones de personas a aprender",
     "reach-goals-faster": "Alcanza tus metas más rápido",
     "remove-distractions": "Eliminar distracciones",
-    "remove-interruptions": "Remover interrupciones",
+    "remove-interruptions": "Remueve interrupciones",
     "acquire-skills-faster": "Adquiera habilidades más rápido",
     "animation-description": "Este es un anuncio animado de 20 segundos para animar a los campistas a convertirse en seguidores de freeCodeCamp. La animación comienza con un oso de téd que se convierte en un soporte. Como resultado, desaparecen los pop-ups de distracción y el oso llega a completar todas sus metas. Luego, se gradua y se convierte en un superhéroe educativo que ayuda a la gente de todo el mundo.",
     "animation-countdown": "Esta animación se detendrá después de {{secondesRemaining}} segundos."
@@ -869,6 +871,8 @@
   },
   "misc": {
     "coming-soon": "Muy pronto",
+    "note": "Nota",
+    "caution": "Precaución",
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
     "server-offline": "No se pudo acceder al servidor y es posible que tu progreso no se guarde. Ponte en contacto con <0>soporte</0> si este mensaje persiste",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
@@ -930,7 +934,7 @@
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
     "website": "Enlace al GitHub de {{username}}",
-    "twitter": "Link to {{username}}'s X",
+    "twitter": "Enlace al X de {{username}}",
     "next-month": "Ir al siguiente mes",
     "previous-month": "Ir al mes anterior",
     "first-page": "Ir a la primera pagina",
@@ -1081,7 +1085,8 @@
       "err-3": "Algo salió mal al intentar guardar tu encuesta.",
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
-    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase"
+    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
+    "user-fetch-error": "No se puede recuperar su información de usuario. Puede seguir utilizando el sitio, pero es posible que su progreso no sea guardado."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
@@ -1111,6 +1116,7 @@
     "issued": "Emitido",
     "fulltext": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha completado exitosamente la</2> <3>{{title}}</3> <4>Certificación de Desarrollador en {{time}}</4> <5>que representa aproximadamente {{completionTime}} horas de trabajo en el curso</5>",
     "fulltextNoHours": "<0>La presente certifica que </0> <1>{{user}}</1> <2>completó con éxito la</2> <3>{{title}}</3> <4>Certificación de desarrollador/a en {{time}}</4>",
+    "fulltextLanguageExam": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha pasado exitosamente el examen </2> <3>{{title}}</3> <4>en {{time}}</4> <5>demostrando competencia en las partes de gramática, audición y lectura de los estándares del CEFR para este nivel, basado en el contenido cubierto en el currículo.</5>",
     "quincy-larson-signature": "La firma de Quincy Larson",
     "julia-liuson-signature": "La firma de Julia Liuson",
     "project": {
@@ -1229,7 +1235,7 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# con Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Fundamentos de C# con certificación de Microsoft",
       "a2-english-for-developers": "Inglés A2 para Desarrolladores",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
+      "a2-english-for-developers-cert": "Exámen de certificación (Beta) A2 de inglês para desarrolladores",
       "b1-english-for-developers": "B1 Inglés para Desarrolladores",
       "b1-english-for-developers-cert": "Certificación de inglés B1 para Desarrolladores",
       "responsive-web-design-v9": "Diseño web responsivo",

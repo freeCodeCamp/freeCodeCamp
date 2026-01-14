@@ -80,7 +80,7 @@
         {
           "dashedName": "data-visualization",
           "comingSoon": true,
-          "blocks": ["lab-scatterplot-graph"]
+          "blocks": ["lecture-introduction-to-data-visualization", "lab-scatterplot-graph"]
         },
         {
           "dashedName": "typescript-fundamentals",
