@@ -5,6 +5,7 @@ on:
     branches:
       - 'main'
       - 'prod-**'
+      - 'renovate/**'
   pull_request:
     branches:
       - 'main'
