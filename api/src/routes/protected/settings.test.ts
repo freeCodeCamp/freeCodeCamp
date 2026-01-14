@@ -25,6 +25,7 @@ import {
   getWaitMessage,
   validateSocialUrl
 } from './settings.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const baseProfileUI = {
   isLocked: false,
@@ -109,15 +110,28 @@ describe('settingRoutes', () => {
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGY';
       const tokenWithMissingUser =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGH';
+      const tokenWithDifferentUser =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGI';
       const expiredToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
 
-      const tokens = [validToken, tokenWithMissingUser, expiredToken];
+      const tokens = [
+        validToken,
+        tokenWithMissingUser,
+        expiredToken,
+        tokenWithDifferentUser
+      ];
       const newEmail = 'anything@goes.com';
+      const otherUserEmail = 'another@user.com';
       const encodedEmail = Buffer.from(newEmail).toString('base64');
       const notEmail = Buffer.from('foobar.com').toString('base64');
 
       beforeEach(async () => {
+        const otherUser = await findOrCreateUser(
+          fastifyTestInstance,
+          otherUserEmail
+        );
+
         await fastifyTestInstance.prisma.authToken.create({
           data: {
             created: new Date(),
@@ -134,6 +148,15 @@ describe('settingRoutes', () => {
             ttl: 1000,
             // Random ObjectId
             userId: '6650ac23ccc46c0349a86dee'
+          }
+        });
+
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(),
+            id: tokenWithDifferentUser,
+            ttl: 1000,
+            userId: otherUser.id
           }
         });
 
@@ -157,6 +180,17 @@ describe('settingRoutes', () => {
             emailAuthLinkTTL: new Date()
           }
         });
+
+        // Simulate another user changing their email. This user is signed out.
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: otherUser.id },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date(),
+            emailAuthLinkTTL: new Date()
+          }
+        });
       });
 
       afterEach(async () => {
@@ -166,6 +200,9 @@ describe('settingRoutes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: { newEmail: null, email: defaultUserEmail, emailVerified: true }
+        });
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: { email: otherUserEmail }
         });
       });
 
@@ -215,6 +252,20 @@ describe('settingRoutes', () => {
       test('should reject requests when the auth token exists, but the user does not', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
+        );
+
+        expect(res.headers.location).toBe(
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(302);
+      });
+
+      test('should reject requests when the target user does not match the signed in user', async () => {
+        // The signed in user is the default (foo@bar.com), but the token is for
+        // a different user (another@user.com).
+
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${tokenWithDifferentUser}`
         );
 
         expect(res.headers.location).toBe(
