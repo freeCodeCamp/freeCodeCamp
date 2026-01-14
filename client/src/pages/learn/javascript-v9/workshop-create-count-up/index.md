@@ -1,9 +1,9 @@
 ---
-title: Introduction to the workshop-create-count-up
-block: workshop-create-count-up
+title: Introduction to Create a Countup Workshop
+block: workshop-countup
 superBlock: javascript-v9
 ---
 
-## Introduction to the workshop-create-count-up
+## Introduction to the Create a Countup Workshop
 
-This page is for the workshop-create-count-up
+In this workshop you will build a countdown function that returns an array of numbers counting up from 1 to a given number.

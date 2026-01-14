@@ -286,7 +286,7 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
-            "workshop-create-count-up",
+            "workshop-countup",
             "lab-countdown",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
