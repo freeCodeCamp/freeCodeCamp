@@ -78,11 +78,38 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     filePathToCreatedNodes.delete(filePath);
   }
 
+  function tryToDeletePages(filePath) {
+    const oldCreatedNodeIds = (filePathToCreatedNodes.get(filePath) ?? []).map(
+      node => node.id
+    );
+
+    const oldStatefullyCreatedNodeIds = (
+      filepathToStatefullyCreatedNodes.get(filePath) ?? []
+    ).map(node => node.id);
+
+    const oldNodeIds = [...oldCreatedNodeIds, ...oldStatefullyCreatedNodeIds];
+
+    const overwrittenFiles = new Set(
+      oldNodeIds.map(id => idToOverwrittenFile.get(id))
+    );
+
+    if (overwrittenFiles.has(filePath)) {
+      // since this has already been overwritten, it doesn't need
+      // deleting, but there's no longer any need to track that it was
+      // overwritten.
+      oldNodeIds.forEach(id => {
+        idToOverwrittenFile.delete(id);
+      });
+    } else {
+      deletePages(filePath);
+    }
+  }
+
   function handleChallengeUpdate(filePath, action = 'changed') {
     if (action === 'deleted') {
       // We have to return before calling onSourceChange, since the file is
       // gone.
-      return deletePages(filePath);
+      tryToDeletePages(filePath);
     }
 
     return onSourceChange(filePath)
@@ -93,24 +120,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         );
 
         if (action === 'changed') {
-          const oldNodeIds = filePathToCreatedNodes
-            .get(filePath)
-            .map(node => node.id);
-
-          const overwrittenFiles = new Set(
-            oldNodeIds.map(id => idToOverwrittenFile.get(id))
-          );
-
-          if (overwrittenFiles.has(filePath)) {
-            // since this has already been overwritten, it doesn't need
-            // deleting, but there's no longer any need to track that it was
-            // overwritten.
-            oldNodeIds.forEach(id => {
-              idToOverwrittenFile.delete(id);
-            });
-          } else {
-            deletePages(filePath);
-          }
+          tryToDeletePages(filePath);
         }
 
         const challengeNodes = challenges.map(challenge =>
