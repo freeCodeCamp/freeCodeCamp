@@ -523,11 +523,16 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const pictureIsValid = isValidPictureUrl(req.body.picture);
-      if (!pictureIsValid) {
-        logger.warn(`Invalid picture URL: ${req.body.picture}`);
-        void reply.code(400);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+
+      // No need to validate if picture is being deleted.
+      if (req.body.picture) {
+        if (req.body.picture !== req.user!.picture) {
+          if (!isValidPictureUrl(req.body.picture)) {
+            logger.warn(`Invalid picture URL: ${req.body.picture}`);
+            void reply.code(400);
+            return { message: 'flash.wrong-updating', type: 'danger' } as const;
+          }
+        }
       }
 
       try {
