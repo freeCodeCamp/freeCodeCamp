@@ -1,4 +1,5 @@
 const chokidar = require('chokidar');
+
 const {
   getSuperblockStructure
 } = require('../../../curriculum/dist/file-handler');
@@ -19,6 +20,11 @@ let idToNextPathCurrentCurriculum;
 let idToPrevPathCurrentCurriculum;
 const filepathToStatefullyCreatedNodes = new Map();
 const filePathToCreatedNodes = new Map();
+// reverse lookup, to detect if an updated file has "overwritten" another file
+// (i.e. the updated file now has the same node id as another file).
+const idToFilepath = new Map();
+// recently overwritten files
+const idToOverwrittenFile = new Map();
 
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
@@ -51,10 +57,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     cwd: curriculumPath
   });
 
-  function cleanupCreatedNodes(filePath) {
-    filePathToCreatedNodes.get(filePath)?.forEach(node => deleteNode(node));
-  }
-
   function deletePages(filePath) {
     const statefulNodes = filepathToStatefullyCreatedNodes.get(filePath) || [];
     statefulNodes.forEach(node => {
@@ -63,11 +65,13 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
         path: node.challenge.fields.slug,
         component: getTemplateComponent(node.challenge.challengeType)
       });
+      idToFilepath.delete(node.id);
     });
 
     const createdNodes = filePathToCreatedNodes.get(filePath) || [];
     createdNodes.forEach(node => {
       deleteNode(node);
+      idToFilepath.delete(node.id);
     });
 
     filepathToStatefullyCreatedNodes.delete(filePath);
@@ -75,8 +79,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
   }
 
   function handleChallengeUpdate(filePath, action = 'changed') {
-    cleanupCreatedNodes(filePath);
-
     if (action === 'deleted') {
       // We have to return before calling onSourceChange, since the file is
       // gone.
@@ -90,23 +92,48 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
           `Challenge file ${action}: ${filePath}, ${actionText} challengeNodes with ids ${challenges.map(({ id }) => id).join(', ')}`
         );
 
+        if (action === 'changed') {
+          const oldNodeIds = filePathToCreatedNodes
+            .get(filePath)
+            .map(node => node.id);
+
+          const overwrittenFiles = new Set(
+            oldNodeIds.map(id => idToOverwrittenFile.get(id))
+          );
+
+          if (overwrittenFiles.has(filePath)) {
+            // since this has already been overwritten, it doesn't need
+            // deleting, but there's no longer any need to track that it was
+            // overwritten.
+            oldNodeIds.forEach(id => {
+              idToOverwrittenFile.delete(id);
+            });
+          } else {
+            deletePages(filePath);
+          }
+        }
+
         const challengeNodes = challenges.map(challenge =>
           reportNodeCreationToGatsby(challenge, {
             isReloading: true
           })
         );
 
-        if (action === 'added') {
-          filePathToCreatedNodes.set(filePath, challengeNodes);
-        }
-        if (action === 'changed') {
-          const existingFileNode = filePathToCreatedNodes.get(filePath);
-          // If a file has been created since boot and then changed, the store
-          // has to be updated or the page won't reflect the latest changes.
-          if (existingFileNode) {
-            filePathToCreatedNodes.set(filePath, challengeNodes);
+        // Track if file has been overwritten.
+        challengeNodes.forEach(({ id }) => {
+          const maybeFilepath = idToFilepath.get(id);
+          if (maybeFilepath) {
+            idToOverwrittenFile.set(id, maybeFilepath);
           }
-        }
+        });
+
+        challengeNodes.forEach(node => {
+          idToFilepath.set(node.id, filePath);
+        });
+
+        // we always need to track the created nodes to ensure the pages get
+        // recreated.
+        filePathToCreatedNodes.set(filePath, challengeNodes);
       })
       .catch(e =>
         reporter.error(
@@ -146,6 +173,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
             ...existingNodes,
             newNode
           ]);
+          idToFilepath.set(newNode.id, challenge.sourceLocation);
         });
         // create superblock structure nodes
         createSuperBlockStructureNodes();
