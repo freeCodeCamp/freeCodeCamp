@@ -115,14 +115,14 @@ The `.color5` element should have a background color set.
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
 ```
 
-You should not use `display: flex` for this lab.
+The .color-grid element should not use flexbox for layout.
 
 ```js
-assert.notMatch(
-  code,
-  /display\s*:\s*flex/i,
-  "You should not use display: flex for this lab"
-);
+const colorGridDisplay = getComputedStyle(
+  document.querySelector('.color-grid')
+).display;
+
+assert.notStrictEqual(colorGridDisplay, 'flex');
 ```
 
 # --seed--
