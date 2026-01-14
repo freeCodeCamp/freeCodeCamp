@@ -109,7 +109,7 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     if (action === 'deleted') {
       // We have to return before calling onSourceChange, since the file is
       // gone.
-      tryToDeletePages(filePath);
+      return tryToDeletePages(filePath);
     }
 
     return onSourceChange(filePath)
