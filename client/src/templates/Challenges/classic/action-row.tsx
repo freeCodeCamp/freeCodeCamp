@@ -32,7 +32,6 @@ interface ClassicLayoutProps {
   challengeType: number;
   togglePane: (pane: string) => void;
   hasInteractiveEditor?: never;
-  lastSavedTime: number | null;
 }
 
 interface InteractiveEditorProps {
@@ -41,7 +40,12 @@ interface InteractiveEditorProps {
   toggleInteractiveEditor: () => void;
 }
 
-type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
+interface ReduxProps {
+  lastSavedTime: number | null;
+}
+
+type ActionRowProps = (ClassicLayoutProps | InteractiveEditorProps) &
+  ReduxProps;
 
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
