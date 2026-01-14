@@ -5386,11 +5386,41 @@
       "classes-and-the-this-keyword": "Clases",
       "lab-bank-account-manager": "Desarrollar un Programa de Gestión de Cuentas Bancarias",
       "recursion": "Recursión",
+      "data-structures": "Data Structures",
+      "algorithms": "Algorithms",
+      "graphs-and-trees": "Graphs and Trees",
+      "dynamic-programming": "Dynamic Programming",
       "functional-programming": "Programación funcional",
       "asynchronous-javascript": "JavaScript asincrónico",
       "lab-weather-app": "Desarrolla una aplicación del tiempo",
       "review-javascript": "Revisión de JavaScript",
       "javascript-certification-exam": "Examen de certificación de JavaScript"
+    },
+    "module-intros": {
+      "data-structures": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about linked lists, stacks, queues and more."
+        ]
+      },
+      "algorithms": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+        ]
+      },
+      "graphs-and-trees": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about graphs, trees and tries."
+        ]
+      },
+      "dynamic-programming": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn how dynamic programming works."
+        ]
+      }
     },
     "blocks": {
       "lecture-introduction-to-javascript": {
@@ -7816,6 +7846,12 @@
         "title": "Entendiendo el Modelo de Solicitud-Respuesta HTTP",
         "intro": [
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
         ]
       },
       "lecture-working-with-npm-scripts": {
