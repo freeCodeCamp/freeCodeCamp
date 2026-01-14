@@ -29,7 +29,10 @@
         {
           "dashedName": "http-and-the-web-standards-model",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-the-http-request-response-model"]
+          "blocks": [
+            "lecture-understanding-how-http-dns-tcpip-works",
+            "lecture-understanding-the-http-request-response-model"
+          ]
         },
         {
           "dashedName": "rest-api-and-web-services",
