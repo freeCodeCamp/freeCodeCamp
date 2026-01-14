@@ -91,6 +91,7 @@
           "blocks": [
             "lecture-introduction-to-typescript",
             "lecture-understanding-type-composition",
+            "workshop-shape-manager",
             "lecture-working-with-generics-and-type-narrowing",
             "lecture-working-with-typescript-configuration-files",
             "review-typescript",
