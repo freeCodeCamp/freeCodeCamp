@@ -12,13 +12,14 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ## Table of Contents
 
-- [Certifications](#certifications)
-- [The Learning Platform](#the-learning-platform)
-- [Reporting Bugs and Issues](#reporting-bugs-and-issues)
-- [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
-- [Contributing](#contributing)
-- [Platform, Build and Deployment Status](#platform-build-and-deployment-status)
-- [License](#license)
+- [freeCodeCamp.org's open-source codebase and curriculum](#freecodecamporgs-open-source-codebase-and-curriculum)
+- [Table of Contents](#table-of-contents)
+  - [Certifications](#certifications)
+  - [The Learning Platform](#the-learning-platform)
+  - [Reporting Bugs and Issues](#reporting-bugs-and-issues)
+  - [Reporting Security Issues and Responsible Disclosure](#reporting-security-issues-and-responsible-disclosure)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ### Certifications
 
@@ -48,7 +49,7 @@ The one exception to this is if we discover violations of our [Academic Honesty 
 
 In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
 
-A free, professional free Foundational C# with Microsoft Certification is also available.
+A free, professional Foundational C# with Microsoft Certification is also available.
 
 ### The Learning Platform
 
