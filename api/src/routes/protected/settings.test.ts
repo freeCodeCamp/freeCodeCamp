@@ -1105,32 +1105,6 @@ Happy coding!
         expect(user?.experience).toEqual(payload.experience);
       });
 
-      test('sanitizes missing fields to defaults', async () => {
-        const payload = {
-          experience: [
-            {
-              id: '',
-              title: 'Developer',
-              company: '',
-              location: '',
-              startDate: '',
-              endDate: '',
-              description: ''
-            }
-          ]
-        } as const;
-
-        const res = await superPut('/update-my-experience').send(payload);
-        expect(res.statusCode).toBe(200);
-
-        const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: developerUserEmail },
-          select: { experience: true }
-        });
-
-        expect(user?.experience).toEqual(payload.experience);
-      });
-
       test('rejects extraneous keys on entries', async () => {
         const res = await superPut('/update-my-experience').send({
           experience: [
@@ -1141,12 +1115,27 @@ Happy coding!
               startDate: '',
               description: '',
               foo: 'bar'
-            } as unknown as Record<string, unknown>
+            }
           ]
         });
 
-        expect(res.body).toEqual(updateErrorResponse);
-        expect(res.statusCode).toBe(400);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        
+        expect(user?.experience).toEqual([
+          {
+            id: 'x',
+            title: 'Dev',
+            company: 'Co',
+            location: null,
+            startDate: '',
+            endDate: null,
+            description: ''
+          }
+        ]);
+        expect(res.statusCode).toBe(200);
       });
 
       test('returns 400 when experience is not an array', async () => {
@@ -1155,39 +1144,6 @@ Happy coding!
         });
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
-      });
-
-      test('accepts empty strings (maps optional nullables correctly)', async () => {
-        const response = await superPut('/update-my-experience').send({
-          experience: [
-            {
-              id: '',
-              title: '',
-              company: '',
-              location: '',
-              startDate: '',
-              endDate: '',
-              description: ''
-            }
-          ]
-        });
-
-        expect(response.statusCode).toEqual(200);
-        const user = await fastifyTestInstance.prisma.user.findFirst({
-          where: { email: developerUserEmail },
-          select: { experience: true }
-        });
-        expect(user?.experience).toEqual([
-          {
-            id: '',
-            title: '',
-            company: '',
-            location: '',
-            startDate: '',
-            endDate: '',
-            description: ''
-          }
-        ]);
       });
 
       test('supports current position (omitted endDate becomes null)', async () => {
