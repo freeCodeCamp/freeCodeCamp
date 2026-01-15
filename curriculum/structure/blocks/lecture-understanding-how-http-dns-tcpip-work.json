@@ -1,7 +1,7 @@
 {
   "name": "Understanding how HTTP, DNS and TCP/IP work",
   "isUpcomingChange": true,
-  "dashedName": "lecture-understanding-how-http-dns-tcpip-works",
+  "dashedName": "lecture-understanding-how-http-dns-tcpip-work",
   "helpCategory": "Backend Development",
   "blockLayout": "challenge-list",
   "challengeOrder": [

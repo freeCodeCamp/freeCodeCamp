@@ -1,6 +1,6 @@
 ---
 title: Introduction to the Understanding how HTTP, DNS and TCP/IP work
-block: lecture-understanding-how-http-dns-tcpip-works
+block: lecture-understanding-how-http-dns-tcpip-work
 superBlock: back-end-development-and-apis
 ---
 
