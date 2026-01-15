@@ -88,6 +88,7 @@
           "blocks": [
             "lecture-introduction-to-typescript",
             "lecture-working-with-generics-and-type-narrowing",
+            "lab-product-showcase",
             "lecture-working-with-typescript-configuration-files",
             "review-typescript",
             "quiz-typescript"
