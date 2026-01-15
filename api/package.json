@@ -26,7 +26,7 @@
     "joi": "17.12.2",
     "jsonwebtoken": "9.0.2",
     "lodash": "4.17.21",
-    "lodash-es": "4.17.21",
+    "lodash-es": "4.17.22",
     "mongodb": "6.10.0",
     "nanoid": "3",
     "no-profanity": "1.5.1",
