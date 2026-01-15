@@ -1,4 +1,4 @@
-import { findIndex, find, isEqual } from 'lodash-es';
+import { find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
