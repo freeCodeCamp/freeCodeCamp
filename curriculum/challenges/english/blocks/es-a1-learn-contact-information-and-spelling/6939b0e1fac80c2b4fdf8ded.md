@@ -1,8 +1,8 @@
 ---
 id: 6939b0e1fac80c2b4fdf8ded
-title: Task 14
+title: Task 13
 challengeType: 22
-dashedName: task-14
+dashedName: task-13
 lang: es
 ---
 
@@ -44,12 +44,11 @@ This letter comes after the "s" in "Basti."
 
 ### --feedback--
 
-This is the final letter in "Basti" — listen for the vowel sound at the end.
+This is the final letter in "Basti". Listen for the vowel sound at the end.
 
 # --explanation--
 
 Basti spells his nickname as `b-a-s-t-i`.
-
 
 # --scene--
 

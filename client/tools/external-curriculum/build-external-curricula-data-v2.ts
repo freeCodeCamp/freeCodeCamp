@@ -92,6 +92,7 @@ interface GeneratedBlock {
 enum SuperBlockStage {
   Core = 'core',
   English = 'english',
+  Spanish = 'spanish',
   Professional = 'professional',
   Extra = 'extra',
   Legacy = 'legacy'
@@ -163,6 +164,14 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
       dashedName: SuperBlocks.B1English,
       public: true,
       title: intros[SuperBlocks.B1English].title
+    }
+  ],
+
+  [SuperBlockStage.Spanish]: [
+    {
+      dashedName: SuperBlocks.A1Spanish,
+      public: false,
+      title: intros[SuperBlocks.A1Spanish].title
     }
   ],
 

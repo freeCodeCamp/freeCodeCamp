@@ -5,6 +5,11 @@
       "comingSoon": true,
       "modules": [
         {
+          "dashedName": "introduction-to-nodejs",
+          "comingSoon": true,
+          "blocks": ["quiz-node-js-intro"]
+        },
+        {
           "dashedName": "nodejs-core-libraries",
           "comingSoon": true,
           "blocks": []
@@ -12,7 +17,7 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-working-with-npm-scripts"]
         },
         {
           "dashedName": "http-and-the-web-standards-model",

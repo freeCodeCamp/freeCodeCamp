@@ -1,8 +1,8 @@
 ---
 id: 693aebb31ed98f7aea7d1a5d
-title: Task 20
+title: Task 19
 challengeType: 19
-dashedName: task-20
+dashedName: task-19
 lang: es
 ---
 
@@ -20,15 +20,15 @@ Listen to the audio and answer the question below. There's just one correct answ
 
 ## --text--
 
-Which of the following phone digits is Basti's phone number?
+Which of the following is Basti's phone number?
 
 ## --answers--
 
-502 4489 2201
++502 4489 2201
 
 ---
 
-502 4489 2102
++502 4489 2102
 
 ### --feedback--
 
@@ -36,7 +36,7 @@ The final digits are not what Basti says.
 
 ---
 
-520 4489 2201
++520 4489 2201
 
 ### --feedback--
 
@@ -44,7 +44,7 @@ The country code Basti says is not 520.
 
 ---
 
-502 4498 2201
++502 4498 2201
 
 ### --feedback--
 
