@@ -36,11 +36,6 @@ export const findOrCreateUser = async (
     select: { id: true, acceptedPrivacyTerms: true }
   });
 
-  console.log(
-    "Fastify.gb.isOn('drip-campaign'):",
-    fastify.gb.isOn('drip-campaign')
-  );
-
   // Create drip campaign record if feature flag is enabled
   if (fastify.gb.isOn('drip-campaign')) {
     try {
