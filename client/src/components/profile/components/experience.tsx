@@ -77,13 +77,9 @@ const ExperienceSettings = (props: ExperienceProps) => {
       e.preventDefault();
       const userInput = e.target.value.slice();
       setExperience(prevExperience => {
-        const mutableExperience = [...prevExperience];
-        const index = findIndex(prevExperience, exp => exp.id === id);
-        mutableExperience[index] = {
-          ...mutableExperience[index],
-          [key]: userInput
-        };
-        return mutableExperience;
+        return prevExperience.map(exp =>
+          exp.id === id ? { ...exp, [key]: userInput } : exp
+        );
       });
     };
 
