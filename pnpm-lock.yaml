@@ -189,8 +189,8 @@ importers:
         specifier: 1.0.76
         version: 1.0.76
       validator:
-        specifier: 13.15.15
-        version: 13.15.15
+        specifier: 13.15.26
+        version: 13.15.26
     devDependencies:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
@@ -211,8 +211,8 @@ importers:
         specifier: 2.0.16
         version: 2.0.16
       '@types/validator':
-        specifier: 13.11.2
-        version: 13.11.2
+        specifier: 13.15.10
+        version: 13.15.10
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -5268,6 +5268,9 @@ packages:
 
   '@types/validator@13.11.2':
     resolution: {integrity: sha512-nIKVVQKT6kGKysnNt+xLobr+pFJNssJRi2s034wgWeFBUx01fI8BeHTW2TcRp7VcFu9QCYG8IlChTuovcm0oKQ==}
+
+  '@types/validator@13.15.10':
+    resolution: {integrity: sha512-T8L6i7wCuyoK8A/ZeLYt1+q0ty3Zb9+qbSSvrIVitzT3YjZqkTZ40IbRsPanlB4h1QB3JVL1SYCdR6ngtFYcuA==}
 
   '@types/vfile-message@2.0.0':
     resolution: {integrity: sha512-GpTIuDpb9u4zIO165fUy9+fXcULdD8HFRNli04GehoMVbeNq7D6OBnqSmg3lxZnC+UvgUhEWKxdKiwYUkGltIw==}
@@ -13748,8 +13751,8 @@ packages:
     resolution: {integrity: sha512-Ii+sehpSfZy+At5nPdnyMhx78fEoPDkR2XW/zimHEL3MyGJQOCQ7WeP20jPYRz7ZCpcKLB21NxuXHF3bxjStBQ==}
     engines: {node: '>= 0.10'}
 
-  validator@13.15.15:
-    resolution: {integrity: sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A==}
+  validator@13.15.26:
+    resolution: {integrity: sha512-spH26xU080ydGggxRyR1Yhcbgx+j3y5jbNXk/8L+iRvdIEQ4uTRH2Sgf2dokud6Q4oAtsbNvJ1Ft+9xmm6IZcA==}
     engines: {node: '>= 0.10'}
 
   value-or-promise@1.0.6:
@@ -20116,6 +20119,8 @@ snapshots:
   '@types/unist@3.0.0': {}
 
   '@types/validator@13.11.2': {}
+
+  '@types/validator@13.15.10': {}
 
   '@types/vfile-message@2.0.0':
     dependencies:
@@ -30987,7 +30992,7 @@ snapshots:
 
   validator@13.11.0: {}
 
-  validator@13.15.15: {}
+  validator@13.15.26: {}
 
   value-or-promise@1.0.6: {}
 

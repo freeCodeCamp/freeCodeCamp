@@ -36,7 +36,7 @@
     "query-string": "7.1.3",
     "stripe": "16.0.0",
     "typebox": "1.0.76",
-    "validator": "13.15.15"
+    "validator": "13.15.26"
   },
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "devDependencies": {
@@ -46,7 +46,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/nodemailer": "6.4.14",
     "@types/supertest": "2.0.16",
-    "@types/validator": "13.11.2",
+    "@types/validator": "13.15.10",
     "@vitest/ui": "^3.2.4",
     "dotenv-cli": "7.3.0",
     "eslint": "^9.39.1",
