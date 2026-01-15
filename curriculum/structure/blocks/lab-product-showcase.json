@@ -1,0 +1,10 @@
+{
+  "name": "Build a Product Showcase",
+  "isUpcomingChange": true,
+  "dashedName": "lab-product-showcase",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [{ "id": "696920c0c98a1ed58eb86293", "title": "Step 1" }],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
