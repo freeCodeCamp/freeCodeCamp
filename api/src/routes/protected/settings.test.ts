@@ -1123,7 +1123,7 @@ Happy coding!
           where: { email: developerUserEmail },
           select: { experience: true }
         });
-        
+
         expect(user?.experience).toEqual([
           {
             id: 'x',
