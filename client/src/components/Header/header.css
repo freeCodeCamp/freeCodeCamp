@@ -25,3 +25,13 @@
     left: 5px;
   }
 }
+@media (max-width: 768px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
