@@ -13,7 +13,7 @@
     "@fastify/swagger-ui": "5.2.4",
     "@fastify/type-provider-typebox": "6.1.0",
     "@growthbook/growthbook": "1.6.2",
-    "@prisma/client": "6.16.2",
+    "@prisma/client": "6.19.1",
     "@sentry/node": "9.47.1",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
@@ -52,7 +52,7 @@
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.11.0",
     "msw": "^2.7.0",
-    "prisma": "6.16.2",
+    "prisma": "6.19.1",
     "supertest": "6.3.3",
     "tsx": "4.21.0",
     "vitest": "^3.2.4"
