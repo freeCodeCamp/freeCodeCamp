@@ -177,7 +177,11 @@ const schema = Joi.object().keys({
       challengeTypes.fillInTheBlank
     ],
     then: Joi.string().allow(''),
-    otherwise: Joi.string().required()
+    otherwise: Joi.when('challengeType', {
+      is: challengeTypes.review,
+      then: Joi.string().allow(''),
+      otherwise: Joi.string().required()
+    })
   }),
   disableLoopProtectTests: Joi.boolean().required(),
   disableLoopProtectPreview: Joi.boolean().required(),
@@ -187,23 +191,72 @@ const schema = Joi.object().keys({
   }),
   challengeFiles: Joi.array().items(fileJoi),
   // TODO: Consider renaming to something else. Stuff show.tsx knows how to render in order
-  nodules: Joi.array().items(
-    Joi.object().keys({
-      type: Joi.valid('paragraph', 'interactiveEditor').required(),
-      data: Joi.when('type', {
-        is: ['interactiveEditor'],
-        then: Joi.array().items(
+  nodules: Joi.when('challengeType', {
+    is: challengeTypes.review,
+    then: Joi.when('description', {
+      is: '',
+      then: Joi.array()
+        .items(
           Joi.object().keys({
-            ext: Joi.string().required(),
-            name: Joi.string().required(),
-            contents: Joi.string().required(),
-            contentsHtml: Joi.string().required()
+            type: Joi.valid('paragraph', 'interactiveEditor').required(),
+            data: Joi.when('type', {
+              is: ['interactiveEditor'],
+              then: Joi.array().items(
+                Joi.object().keys({
+                  ext: Joi.string().required(),
+                  name: Joi.string().required(),
+                  contents: Joi.string().required(),
+                  contentsHtml: Joi.string().required()
+                })
+              ),
+              otherwise: Joi.string().required()
+            })
           })
-        ),
-        otherwise: Joi.string().required()
+        )
+        .min(1)
+        .required()
+        .messages({
+          'array.min':
+            'Review challenges must have interactive content (--interactive--) when description is empty',
+          'any.required':
+            'Review challenges must have interactive content (--interactive--) when description is empty'
+        }),
+      otherwise: Joi.array().items(
+        Joi.object().keys({
+          type: Joi.valid('paragraph', 'interactiveEditor').required(),
+          data: Joi.when('type', {
+            is: ['interactiveEditor'],
+            then: Joi.array().items(
+              Joi.object().keys({
+                ext: Joi.string().required(),
+                name: Joi.string().required(),
+                contents: Joi.string().required(),
+                contentsHtml: Joi.string().required()
+              })
+            ),
+            otherwise: Joi.string().required()
+          })
+        })
+      )
+    }),
+    otherwise: Joi.array().items(
+      Joi.object().keys({
+        type: Joi.valid('paragraph', 'interactiveEditor').required(),
+        data: Joi.when('type', {
+          is: ['interactiveEditor'],
+          then: Joi.array().items(
+            Joi.object().keys({
+              ext: Joi.string().required(),
+              name: Joi.string().required(),
+              contents: Joi.string().required(),
+              contentsHtml: Joi.string().required()
+            })
+          ),
+          otherwise: Joi.string().required()
+        })
       })
-    })
-  ),
+    )
+  }),
   hasEditableBoundaries: Joi.boolean(),
   helpCategory: Joi.valid(
     'JavaScript',
