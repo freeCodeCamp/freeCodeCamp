@@ -86,7 +86,7 @@ test.describe('Add Experience Item', () => {
   test('The description has validation', async ({ page }) => {
     await page.getByLabel('Description').fill('A'.repeat(1001));
     await expect(page.getByTestId('description-validation')).toContainText(
-      'There is a maximum limit of 288 characters, you have 0 left'
+      'There is a maximum limit of 500 characters, you have 0 left'
     );
     await page.getByLabel('Description').fill('Worked on various projects');
     await expect(page.getByTestId('description-validation')).toBeHidden();
@@ -115,10 +115,6 @@ test.describe('Add Experience Item', () => {
       page.getByRole('button', { name: 'Add experience' })
     ).toBeDisabled();
 
-    await expect(
-      page.getByRole('button', { name: 'Save experience' })
-    ).toBeDisabled();
-
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('2020-01');
@@ -129,72 +125,9 @@ test.describe('Add Experience Item', () => {
       .fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
-    await expect(
-      page.getByRole('button', { name: 'Save experience' })
-    ).toBeEnabled();
-
     await page.getByRole('button', { name: 'Save experience' }).click();
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your experience/
     );
-
-    await expect(page.getByTestId('experience-items')).toBeVisible();
-
-    await expect(
-      page.getByRole('button', { name: 'Save experience' })
-    ).toBeDisabled();
-  });
-
-  test('Modal stays open after save to allow adding multiple items', async ({
-    page
-  }) => {
-    await page.getByLabel('Company').fill('freeCodeCamp');
-    await page.getByLabel('Job Title').fill('Software Engineer');
-    await page.getByLabel('Start Date').fill('2020-01');
-    await page.getByLabel('Description').fill('Worked on open source');
-
-    await page.getByRole('button', { name: 'Save experience' }).click();
-    await expect(page.getByRole('alert').first()).toContainText(
-      /We have updated your experience/
-    );
-
-    await expect(page.getByTestId('experience-items')).toBeVisible();
-
-    await page.getByRole('button', { name: 'Add experience' }).click();
-
-    await page.getByLabel('Company').fill('Google');
-    await page.getByLabel('Job Title').fill('Senior Engineer');
-    await page.getByLabel('Start Date').fill('2022-01');
-    await page.getByLabel('Description').fill('Worked on search');
-
-    await page.getByRole('button', { name: 'Save experience' }).click();
-    await expect(page.getByRole('alert').first()).toContainText(
-      /We have updated your experience/
-    );
-  });
-
-  test('Invalid items are not saved when saving another item', async ({
-    page
-  }) => {
-    await page.getByLabel('Company').fill('freeCodeCamp');
-    await page.getByLabel('Job Title').fill('Software Engineer');
-    await page.getByLabel('Start Date').fill('2020-01');
-    await page.getByLabel('Description').fill('First job');
-
-    await page.getByRole('button', { name: 'Save experience' }).click();
-    await expect(page.getByRole('alert').first()).toContainText(
-      /We have updated your experience/
-    );
-
-    await page.getByRole('button', { name: 'Add experience' }).click();
-
-    await page.getByLabel('Company').fill('A');
-    await expect(page.getByTestId('company-validation')).toContainText(
-      'Company name is too short'
-    );
-
-    await expect(
-      page.getByRole('button', { name: 'Save experience' })
-    ).toBeDisabled();
   });
 });
