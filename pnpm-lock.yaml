@@ -183,8 +183,8 @@ importers:
         specifier: 7.1.3
         version: 7.1.3
       stripe:
-        specifier: 16.0.0
-        version: 16.0.0
+        specifier: 16.12.0
+        version: 16.12.0
       typebox:
         specifier: 1.0.76
         version: 1.0.76
@@ -13048,8 +13048,8 @@ packages:
   strip-literal@3.0.0:
     resolution: {integrity: sha512-TcccoMhJOM3OebGhSBEmp3UZ2SfDMZUEBdRA/9ynfLi8yYajyWX3JiXArcJt4Umh4vISpspkQIY8ZZoCqjbviA==}
 
-  stripe@16.0.0:
-    resolution: {integrity: sha512-HNPTzXrSompUxeGqDpbNmPvH/UEzziIxGWvTDTZwIBLlL6CFqR+3YLpV+g4HXOsPKbQRguauptQwVWO7Y/yEGg==}
+  stripe@16.12.0:
+    resolution: {integrity: sha512-H7eFVLDxeTNNSn4JTRfL2//LzCbDrMSZ+2q1c7CanVWgK2qIW5TwS+0V7N9KcKZZNpYh/uCqK0PyZh/2UsaAtQ==}
     engines: {node: '>=12.*'}
 
   strnum@1.0.5:
@@ -20194,13 +20194,13 @@ snapshots:
   '@types/body-parser@1.19.3':
     dependencies:
       '@types/connect': 3.4.36
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/cacheable-request@6.0.3':
     dependencies:
       '@types/http-cache-semantics': 4.0.2
       '@types/keyv': 3.1.4
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
       '@types/responselike': 1.0.1
 
   '@types/canvas-confetti@1.9.0': {}
@@ -20226,7 +20226,7 @@ snapshots:
 
   '@types/connect@3.4.36':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/connect@3.4.38':
     dependencies:
@@ -20290,7 +20290,7 @@ snapshots:
 
   '@types/express-serve-static-core@4.17.37':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
       '@types/qs': 6.9.8
       '@types/range-parser': 1.2.5
       '@types/send': 0.17.2
@@ -20311,7 +20311,7 @@ snapshots:
   '@types/glob@5.0.38':
     dependencies:
       '@types/minimatch': 5.1.2
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/glob@7.2.0':
     dependencies:
@@ -20342,7 +20342,7 @@ snapshots:
 
   '@types/http-proxy@1.17.12':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/inquirer@8.2.11':
     dependencies:
@@ -20389,7 +20389,7 @@ snapshots:
 
   '@types/keyv@3.1.4':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/loadable__component@5.13.8':
     dependencies:
@@ -20413,7 +20413,7 @@ snapshots:
 
   '@types/mkdirp@0.5.2':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/ms@0.7.32': {}
 
@@ -20546,12 +20546,12 @@ snapshots:
 
   '@types/responselike@1.0.1':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/rimraf@2.0.5':
     dependencies:
       '@types/glob': 8.1.0
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/sanitize-html@2.16.0':
     dependencies:
@@ -20562,13 +20562,13 @@ snapshots:
   '@types/send@0.17.2':
     dependencies:
       '@types/mime': 1.3.3
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/serve-static@1.15.3':
     dependencies:
       '@types/http-errors': 2.0.2
       '@types/mime': 3.0.2
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/shimmer@1.2.0': {}
 
@@ -20607,7 +20607,7 @@ snapshots:
 
   '@types/through@0.0.33':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
 
   '@types/tmp@0.0.33': {}
 
@@ -20627,7 +20627,7 @@ snapshots:
 
   '@types/vfile@3.0.2':
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
       '@types/unist': 3.0.0
       '@types/vfile-message': 2.0.0
 
@@ -24536,7 +24536,7 @@ snapshots:
       dezalgo: 1.0.4
       hexoid: 1.0.0
       once: 1.4.0
-      qs: 6.11.2
+      qs: 6.14.0
 
   forwarded-parse@2.1.2: {}
 
@@ -26319,13 +26319,13 @@ snapshots:
 
   jest-worker@26.6.2:
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
       merge-stream: 2.0.0
       supports-color: 7.2.0
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 22.19.3
+      '@types/node': 24.10.4
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -30565,10 +30565,10 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  stripe@16.0.0:
+  stripe@16.12.0:
     dependencies:
-      '@types/node': 22.19.3
-      qs: 6.11.2
+      '@types/node': 24.10.4
+      qs: 6.14.0
 
   strnum@1.0.5:
     optional: true
