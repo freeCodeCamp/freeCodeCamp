@@ -126,6 +126,7 @@ test.describe('Add Experience Item', () => {
     await page.getByLabel('Description').fill('Worked on various projects');
 
     await page.getByRole('button', { name: 'Save experience' }).click();
+    await page.getByRole('button', { name: 'Close' }).click();
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your experience/
     );
