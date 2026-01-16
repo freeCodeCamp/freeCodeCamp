@@ -20,7 +20,7 @@
     "date-fns": "4.1.0",
     "date-fns-tz": "3.2.0",
     "dotenv": "16.6.1",
-    "fast-uri": "2.3.0",
+    "fast-uri": "2.4.0",
     "fastify": "5.2.0",
     "fastify-plugin": "5.0.1",
     "joi": "17.12.2",
