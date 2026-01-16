@@ -150,8 +150,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       joi:
-        specifier: 17.12.2
-        version: 17.12.2
+        specifier: 17.13.3
+        version: 17.13.3
       jsonwebtoken:
         specifier: 9.0.2
         version: 9.0.2
@@ -24614,7 +24614,7 @@ snapshots:
       gatsby-telemetry: 2.15.0
       hosted-git-info: 3.0.8
       is-valid-path: 0.1.1
-      joi: 17.12.2
+      joi: 17.13.3
       lodash: 4.17.21
       meant: 1.0.3
       node-fetch: 2.7.0
@@ -24767,7 +24767,7 @@ snapshots:
       fastq: 1.17.1
       gatsby: 3.15.0(@types/node@24.10.4)(babel-eslint@10.1.0(eslint@9.39.2(jiti@2.6.1)))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)
       graphql: 15.8.0
-      joi: 17.12.2
+      joi: 17.13.3
 
   gatsby-plugin-webpack-bundle-analyser-v2@1.1.32(gatsby@3.15.0(@types/node@24.10.4)(babel-eslint@10.1.0(eslint@9.39.2(jiti@2.6.1)))(react-dom@17.0.2(react@17.0.2))(react@17.0.2)(typescript@5.2.2)):
     dependencies:
@@ -25014,7 +25014,7 @@ snapshots:
       invariant: 2.2.4
       is-relative: 1.0.0
       is-relative-url: 3.0.0
-      joi: 17.12.2
+      joi: 17.13.3
       json-loader: 0.5.7
       latest-version: 5.1.0
       lodash: 4.17.21
@@ -30126,7 +30126,7 @@ snapshots:
       '@hapi/hoek': 11.0.4
       '@hapi/wreck': 18.1.0
       debug: 4.3.4(supports-color@8.1.1)
-      joi: 17.12.2
+      joi: 17.13.3
     transitivePeerDependencies:
       - supports-color
 
