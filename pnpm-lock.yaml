@@ -183,8 +183,8 @@ importers:
         specifier: 7.1.3
         version: 7.1.3
       stripe:
-        specifier: 16.0.0
-        version: 16.0.0
+        specifier: 16.12.0
+        version: 16.12.0
       typebox:
         specifier: 1.0.76
         version: 1.0.76
@@ -13048,8 +13048,8 @@ packages:
   strip-literal@3.0.0:
     resolution: {integrity: sha512-TcccoMhJOM3OebGhSBEmp3UZ2SfDMZUEBdRA/9ynfLi8yYajyWX3JiXArcJt4Umh4vISpspkQIY8ZZoCqjbviA==}
 
-  stripe@16.0.0:
-    resolution: {integrity: sha512-HNPTzXrSompUxeGqDpbNmPvH/UEzziIxGWvTDTZwIBLlL6CFqR+3YLpV+g4HXOsPKbQRguauptQwVWO7Y/yEGg==}
+  stripe@16.12.0:
+    resolution: {integrity: sha512-H7eFVLDxeTNNSn4JTRfL2//LzCbDrMSZ+2q1c7CanVWgK2qIW5TwS+0V7N9KcKZZNpYh/uCqK0PyZh/2UsaAtQ==}
     engines: {node: '>=12.*'}
 
   strnum@1.0.5:
@@ -24539,7 +24539,7 @@ snapshots:
       dezalgo: 1.0.4
       hexoid: 1.0.0
       once: 1.4.0
-      qs: 6.11.2
+      qs: 6.14.0
 
   forwarded-parse@2.1.2: {}
 
@@ -30565,10 +30565,10 @@ snapshots:
     dependencies:
       js-tokens: 9.0.1
 
-  stripe@16.0.0:
+  stripe@16.12.0:
     dependencies:
-      '@types/node': 22.19.3
-      qs: 6.11.2
+      '@types/node': 24.10.4
+      qs: 6.14.0
 
   strnum@1.0.5:
     optional: true
