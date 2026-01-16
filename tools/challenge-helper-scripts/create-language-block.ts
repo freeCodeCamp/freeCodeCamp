@@ -56,6 +56,8 @@ interface CreateBlockArgs {
   title?: string;
   chapter?: string;
   module?: string;
+  newChapterName?: string;
+  newModuleName?: string;
   position?: number;
   blockLabel?: BlockLabel;
   blockLayout?: string;
@@ -387,16 +389,39 @@ void getAllBlocks()
               modules: { dashedName: string; blocks: string[] }[];
             }[];
           };
-          return structure.chapters.map(chapter => chapter.dashedName);
+          return [
+            ...structure.chapters.map(chapter => chapter.dashedName),
+            '-- Create new chapter --'
+          ];
         },
         when: (answers: CreateBlockArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock)
+      },
+      {
+        name: 'newChapterName',
+        message: 'Enter the dashed name for the new chapter (in kebab-case):',
+        validate: (name: string) => {
+          if (!name || name.trim() === '') {
+            return 'Chapter name cannot be empty.';
+          }
+          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
+            return 'Chapter name must be in kebab-case (e.g., "chapter-one").';
+          }
+          return true;
+        },
+        filter: (name: string) => name.toLowerCase().trim(),
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock) &&
+          answers.chapter === '-- Create new chapter --'
       },
       {
         name: 'module',
         message: 'What module should this language block go in?',
         type: 'list',
         choices: (answers: CreateBlockArgs) => {
+          if (answers.chapter === '-- Create new chapter --') {
+            return ['-- Create new module --'];
+          }
           const superblockFilename = (
             superBlockToFilename as Record<SuperBlocks, string>
           )[answers.superBlock];
@@ -406,14 +431,31 @@ void getAllBlocks()
               modules: { dashedName: string; blocks: string[] }[];
             }[];
           };
-          return (
+          const existingModules =
             structure.chapters
               .find(chapter => chapter.dashedName === answers.chapter)
-              ?.modules.map(module => module.dashedName) ?? []
-          );
+              ?.modules.map(module => module.dashedName) ?? [];
+          return [...existingModules, '-- Create new module --'];
         },
         when: (answers: CreateBlockArgs) =>
           chapterBasedSuperBlocks.includes(answers.superBlock)
+      },
+      {
+        name: 'newModuleName',
+        message: 'Enter the dashed name for the new module (in kebab-case):',
+        validate: (name: string) => {
+          if (!name || name.trim() === '') {
+            return 'Module name cannot be empty.';
+          }
+          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
+            return 'Module name must be in kebab-case (e.g., "module-one").';
+          }
+          return true;
+        },
+        filter: (name: string) => name.toLowerCase().trim(),
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock) &&
+          answers.module === '-- Create new module --'
       },
       {
         name: 'position',
@@ -440,23 +482,31 @@ void getAllBlocks()
       title,
       chapter,
       module,
+      newChapterName,
+      newModuleName,
       position,
       blockLabel,
       blockLayout,
       questionCount
-    }: CreateBlockArgs) =>
+    }: CreateBlockArgs) => {
+      const resolvedChapter =
+        chapter === '-- Create new chapter --' ? newChapterName : chapter;
+      const resolvedModule =
+        module === '-- Create new module --' ? newModuleName : module;
+
       await createLanguageBlock(
         superBlock,
         block,
         helpCategory,
         title,
-        chapter,
-        module,
+        resolvedChapter,
+        resolvedModule,
         position,
         blockLabel,
         blockLayout,
         questionCount
-      )
+      );
+    }
   )
   .then(() =>
     console.log(
