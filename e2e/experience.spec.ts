@@ -4,11 +4,11 @@ import { test, expect } from '@playwright/test';
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Add Experience Item', () => {
@@ -25,10 +25,9 @@ test.describe('Add Experience Item', () => {
 
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
-    // Will check if the experience button is hydrated correctly with different intervals.
     await expect(async () => {
       const addExperienceItemButton = page.getByRole('button', {
-        name: 'Add Experience'
+        name: 'Add experience'
       });
       await addExperienceItemButton.click();
 
@@ -113,7 +112,11 @@ test.describe('Add Experience Item', () => {
 
   test('It should be possible to add an experience item', async ({ page }) => {
     await expect(
-      page.getByRole('button', { name: 'Add Experience' })
+      page.getByRole('button', { name: 'Add experience' })
+    ).toBeDisabled();
+
+    await expect(
+      page.getByRole('button', { name: 'Save experience' })
     ).toBeDisabled();
 
     await page.getByLabel('Company').fill('freeCodeCamp');
@@ -126,9 +129,72 @@ test.describe('Add Experience Item', () => {
       .fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
-    await page.getByRole('button', { name: 'Save Experience' }).click();
+    await expect(
+      page.getByRole('button', { name: 'Save experience' })
+    ).toBeEnabled();
+
+    await page.getByRole('button', { name: 'Save experience' }).click();
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your experience/
     );
+
+    await expect(page.getByTestId('experience-items')).toBeVisible();
+
+    await expect(
+      page.getByRole('button', { name: 'Save experience' })
+    ).toBeDisabled();
+  });
+
+  test('Modal stays open after save to allow adding multiple items', async ({
+    page
+  }) => {
+    await page.getByLabel('Company').fill('freeCodeCamp');
+    await page.getByLabel('Job Title').fill('Software Engineer');
+    await page.getByLabel('Start Date').fill('2020-01');
+    await page.getByLabel('Description').fill('Worked on open source');
+
+    await page.getByRole('button', { name: 'Save experience' }).click();
+    await expect(page.getByRole('alert').first()).toContainText(
+      /We have updated your experience/
+    );
+
+    await expect(page.getByTestId('experience-items')).toBeVisible();
+
+    await page.getByRole('button', { name: 'Add experience' }).click();
+
+    await page.getByLabel('Company').fill('Google');
+    await page.getByLabel('Job Title').fill('Senior Engineer');
+    await page.getByLabel('Start Date').fill('2022-01');
+    await page.getByLabel('Description').fill('Worked on search');
+
+    await page.getByRole('button', { name: 'Save experience' }).click();
+    await expect(page.getByRole('alert').first()).toContainText(
+      /We have updated your experience/
+    );
+  });
+
+  test('Invalid items are not saved when saving another item', async ({
+    page
+  }) => {
+    await page.getByLabel('Company').fill('freeCodeCamp');
+    await page.getByLabel('Job Title').fill('Software Engineer');
+    await page.getByLabel('Start Date').fill('2020-01');
+    await page.getByLabel('Description').fill('First job');
+
+    await page.getByRole('button', { name: 'Save experience' }).click();
+    await expect(page.getByRole('alert').first()).toContainText(
+      /We have updated your experience/
+    );
+
+    await page.getByRole('button', { name: 'Add experience' }).click();
+
+    await page.getByLabel('Company').fill('A');
+    await expect(page.getByTestId('company-validation')).toContainText(
+      'Company name is too short'
+    );
+
+    await expect(
+      page.getByRole('button', { name: 'Save experience' })
+    ).toBeDisabled();
   });
 });
