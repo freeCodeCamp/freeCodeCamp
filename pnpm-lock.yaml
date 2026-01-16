@@ -141,14 +141,14 @@ importers:
         specifier: 16.6.1
         version: 16.6.1
       fast-uri:
-        specifier: 2.3.0
-        version: 2.3.0
+        specifier: 2.4.0
+        version: 2.4.0
       fastify:
         specifier: 5.2.0
         version: 5.2.0
       fastify-plugin:
-        specifier: 5.0.1
-        version: 5.0.1
+        specifier: 5.1.0
+        version: 5.1.0
       joi:
         specifier: 17.12.2
         version: 17.12.2
@@ -8129,8 +8129,8 @@ packages:
   fast-safe-stringify@2.1.1:
     resolution: {integrity: sha512-W+KJc2dmILlPplD/H4K9l9LcAHAfPtP6BY84uVLXQ6Evcz9Lcg33Y2z1IVblT6xdY54PXYVHEv+0Wpq8Io6zkA==}
 
-  fast-uri@2.3.0:
-    resolution: {integrity: sha512-eel5UKGn369gGEWOqBShmFJWfq/xSJvsgDzgLYC845GneayWvXBf0lJCBn5qTABfewy1ZDPoaR5OZCP+kssfuw==}
+  fast-uri@2.4.0:
+    resolution: {integrity: sha512-ypuAmmMKInk5q7XcepxlnUWDLWv4GFtaJqAzWKqn62IpQ3pejtr5dTVbt3vwqVaMKmkNR55sTT+CqUKIaT21BA==}
 
   fast-uri@3.0.6:
     resolution: {integrity: sha512-Atfo14OibSv5wAp4VWNsFYE1AchQRTv9cBGWET4pZWHzYshFSS9NQI6I57rdKn9croWVMbYFbLhJ+yJvmZIIHw==}
@@ -8150,8 +8150,8 @@ packages:
     resolution: {integrity: sha512-eRnCtTTtGZFpQCwhJiUOuxPQWRXVKYDn0b2PeHfXL6/Zi53SLAzAHfVhVWK2AryC/WH05kGfxhFIPvTF0SXQzg==}
     engines: {node: '>= 4.9.1'}
 
-  fastify-plugin@5.0.1:
-    resolution: {integrity: sha512-HCxs+YnRaWzCl+cWRYFnHmeRFyR5GVnJTAaCJQiYzQSDwK9MgJdyAsuL3nh0EWRCYMgQ5MeziymvmAhUHYHDUQ==}
+  fastify-plugin@5.1.0:
+    resolution: {integrity: sha512-FAIDA8eovSt5qcDgcBvDuX/v0Cjz0ohGhENZ/wpc3y+oZCY2afZ9Baqql3g/lC+OHRnciQol4ww7tuthOb9idw==}
 
   fastify@5.2.0:
     resolution: {integrity: sha512-3s+Qt5S14Eq5dCpnE0FxTp3z4xKChI83ZnMv+k0FwX+VUoZrgCFoLAxpfdi/vT4y6Mk+g7aAMt9pgXDoZmkefQ==}
@@ -18054,7 +18054,7 @@ snapshots:
   '@fastify/accepts@5.0.4':
     dependencies:
       accepts: 1.3.8
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
 
   '@fastify/ajv-compiler@4.0.2':
     dependencies:
@@ -18065,13 +18065,13 @@ snapshots:
   '@fastify/cookie@11.0.2':
     dependencies:
       cookie: 1.0.2
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
 
   '@fastify/csrf-protection@7.1.0':
     dependencies:
       '@fastify/csrf': 8.0.1
       '@fastify/error': 4.0.0
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
 
   '@fastify/csrf@8.0.1': {}
 
@@ -18088,7 +18088,7 @@ snapshots:
   '@fastify/oauth2@8.1.2':
     dependencies:
       '@fastify/cookie': 11.0.2
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
       simple-oauth2: 5.1.0
     transitivePeerDependencies:
       - supports-color
@@ -18106,21 +18106,21 @@ snapshots:
       '@fastify/accept-negotiator': 2.0.1
       '@fastify/send': 4.0.0
       content-disposition: 1.0.1
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
       fastq: 1.17.1
       glob: 13.0.0
 
   '@fastify/swagger-ui@5.2.4':
     dependencies:
       '@fastify/static': 9.0.0
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
       openapi-types: 12.1.3
       rfdc: 1.4.1
       yaml: 2.8.1
 
   '@fastify/swagger@9.6.1':
     dependencies:
-      fastify-plugin: 5.0.1
+      fastify-plugin: 5.1.0
       json-schema-resolver: 3.0.0
       openapi-types: 12.1.3
       rfdc: 1.4.1
@@ -24237,7 +24237,7 @@ snapshots:
 
   fast-safe-stringify@2.1.1: {}
 
-  fast-uri@2.3.0: {}
+  fast-uri@2.4.0: {}
 
   fast-uri@3.0.6: {}
 
@@ -24256,7 +24256,7 @@ snapshots:
 
   fastest-levenshtein@1.0.16: {}
 
-  fastify-plugin@5.0.1: {}
+  fastify-plugin@5.1.0: {}
 
   fastify@5.2.0:
     dependencies:
