@@ -45,6 +45,8 @@ type BlockInfo = {
 
 type SuperBlockInfo = {
   blocks: Record<string, BlockInfo>;
+  chapters?: Record<string, string>;
+  modules?: Record<string, string>;
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
@@ -57,7 +59,9 @@ interface CreateBlockArgs {
   chapter?: string;
   module?: string;
   newChapterName?: string;
+  newChapterTitle?: string;
   newModuleName?: string;
+  newModuleTitle?: string;
   position?: number;
   blockLabel?: BlockLabel;
   blockLayout?: string;
@@ -71,6 +75,8 @@ async function createLanguageBlock(
   title?: string,
   chapter?: string,
   module?: string,
+  chapterTitle?: string,
+  moduleTitle?: string,
   position?: number,
   blockLabel?: BlockLabel,
   blockLayout?: string,
@@ -79,7 +85,15 @@ async function createLanguageBlock(
   if (!title) {
     title = block;
   }
-  await updateIntroJson(superBlock, block, title);
+  await updateIntroJson({
+    superBlock,
+    block,
+    title,
+    chapter,
+    module,
+    chapterTitle,
+    moduleTitle
+  });
 
   const challengeLang = getLangFromSuperBlock(superBlock);
   let challengeId: ObjectId;
@@ -134,20 +148,52 @@ async function createLanguageBlock(
   await createIntroMD(superBlock, block, title);
 }
 
-async function updateIntroJson(
-  superBlock: SuperBlocks,
-  block: string,
-  title: string
-) {
+async function updateIntroJson({
+  superBlock,
+  block,
+  title,
+  chapter,
+  module,
+  chapterTitle,
+  moduleTitle
+}: {
+  superBlock: SuperBlocks;
+  block: string;
+  title: string;
+  chapter?: string;
+  module?: string;
+  chapterTitle?: string;
+  moduleTitle?: string;
+}) {
   const introJsonPath = path.resolve(
     __dirname,
     '../../client/i18n/locales/english/intro.json'
   );
   const newIntro = await parseJson<IntroJson>(introJsonPath);
+
   newIntro[superBlock].blocks[block] = {
     title,
     intro: ['', '']
   };
+
+  if (chapter && chapterTitle) {
+    if (!newIntro[superBlock].chapters) {
+      newIntro[superBlock].chapters = {};
+    }
+    if (!newIntro[superBlock].chapters[chapter]) {
+      newIntro[superBlock].chapters[chapter] = chapterTitle;
+    }
+  }
+
+  if (module && moduleTitle) {
+    if (!newIntro[superBlock].modules) {
+      newIntro[superBlock].modules = {};
+    }
+    if (!newIntro[superBlock].modules[module]) {
+      newIntro[superBlock].modules[module] = moduleTitle;
+    }
+  }
+
   void withTrace(
     fs.writeFile,
     introJsonPath,
@@ -415,6 +461,21 @@ void getAllBlocks()
           answers.chapter === '-- Create new chapter --'
       },
       {
+        name: 'newChapterTitle',
+        message: 'Enter the title for the new chapter:',
+        default: ({ newChapterName }: { newChapterName: string }) =>
+          newChapterName,
+        validate: (title: string) => {
+          if (!title || title.trim() === '') {
+            return 'Chapter title cannot be empty.';
+          }
+          return true;
+        },
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock) &&
+          answers.chapter === '-- Create new chapter --'
+      },
+      {
         name: 'module',
         message: 'What module should this language block go in?',
         type: 'list',
@@ -458,6 +519,21 @@ void getAllBlocks()
           answers.module === '-- Create new module --'
       },
       {
+        name: 'newModuleTitle',
+        message: 'Enter the title for the new module:',
+        default: ({ newModuleName }: { newModuleName: string }) =>
+          newModuleName,
+        validate: (title: string) => {
+          if (!title || title.trim() === '') {
+            return 'Module title cannot be empty.';
+          }
+          return true;
+        },
+        when: (answers: CreateBlockArgs) =>
+          chapterBasedSuperBlocks.includes(answers.superBlock) &&
+          answers.module === '-- Create new module --'
+      },
+      {
         name: 'position',
         message: 'At which position does this appear in the module?',
         default: 1,
@@ -483,7 +559,9 @@ void getAllBlocks()
       chapter,
       module,
       newChapterName,
+      newChapterTitle,
       newModuleName,
+      newModuleTitle,
       position,
       blockLabel,
       blockLayout,
@@ -494,6 +572,13 @@ void getAllBlocks()
       const resolvedModule =
         module === '-- Create new module --' ? newModuleName : module;
 
+      // Only pass chapter title if we're creating a new chapter
+      const chapterTitle =
+        chapter === '-- Create new chapter --' ? newChapterTitle : undefined;
+      // Only pass module title if we're creating a new module
+      const moduleTitle =
+        module === '-- Create new module --' ? newModuleTitle : undefined;
+
       await createLanguageBlock(
         superBlock,
         block,
@@ -501,6 +586,8 @@ void getAllBlocks()
         title,
         resolvedChapter,
         resolvedModule,
+        chapterTitle,
+        moduleTitle,
         position,
         blockLabel,
         blockLayout,
