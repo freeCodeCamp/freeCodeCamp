@@ -177,8 +177,8 @@ importers:
         specifier: 9.14.0
         version: 9.14.0
       pino-pretty:
-        specifier: 10.2.3
-        version: 10.2.3
+        specifier: 10.3.1
+        version: 10.3.1
       query-string:
         specifier: 7.1.3
         version: 7.1.3
@@ -8896,8 +8896,8 @@ packages:
   headers-polyfill@4.0.3:
     resolution: {integrity: sha512-IScLbePpkvO846sIwOtOTDjutRMWdXdJmXdMvk6gCBHxFO8d+QKOQedyZSxFTTFYRSmlgSTDtXqqq4pcenBXLQ==}
 
-  help-me@4.2.0:
-    resolution: {integrity: sha512-TAOnTB8Tz5Dw8penUuzHVrKNKlCIbwwbHnXraNJxPwf8LRtE2HlM84RYuezMFcwOJmoYOCWVDyJ8TQGxn9PgxA==}
+  help-me@5.0.0:
+    resolution: {integrity: sha512-7xgomUX6ADmcYzFik0HzAxh/73YlKR9bmFzf51CZwR+b6YtzU2m0u49hQCqV6SvlqIqsaxovfwdvbnsw3b/zpg==}
 
   hexoid@1.0.0:
     resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
@@ -11285,8 +11285,8 @@ packages:
   pino-abstract-transport@2.0.0:
     resolution: {integrity: sha512-F63x5tizV6WCh4R6RHyi2Ml+M70DNRXt/+HANowMflpgGFMAym/VKm6G7ZOQRjqN7XbGxK1Lg9t6ZrtzOaivMw==}
 
-  pino-pretty@10.2.3:
-    resolution: {integrity: sha512-4jfIUc8TC1GPUfDyMSlW1STeORqkoxec71yhxIpLDQapUu8WOuoz2TTCoidrIssyz78LZC69whBMPIKCMbi3cw==}
+  pino-pretty@10.3.1:
+    resolution: {integrity: sha512-az8JbIYeN/1iLj2t0jR9DV48/LQ3RC6hZPpapKPkb84Q+yTidMCpgWxIT3N0flnBDilyBQ1luWNpOeJptjdp/g==}
     hasBin: true
 
   pino-std-serializers@7.0.0:
@@ -25568,10 +25568,7 @@ snapshots:
 
   headers-polyfill@4.0.3: {}
 
-  help-me@4.2.0:
-    dependencies:
-      glob: 8.1.0
-      readable-stream: 3.6.2
+  help-me@5.0.0: {}
 
   hexoid@1.0.0: {}
 
@@ -28430,13 +28427,13 @@ snapshots:
     dependencies:
       split2: 4.2.0
 
-  pino-pretty@10.2.3:
+  pino-pretty@10.3.1:
     dependencies:
       colorette: 2.0.20
       dateformat: 4.6.3
       fast-copy: 3.0.1
       fast-safe-stringify: 2.1.1
-      help-me: 4.2.0
+      help-me: 5.0.0
       joycon: 3.1.1
       minimist: 1.2.8
       on-exit-leak-free: 2.1.0
