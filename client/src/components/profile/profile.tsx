@@ -63,7 +63,7 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
         <Spacer size='m' />
         <Portfolio portfolio={portfolio} setIsEditing={setIsEditing} />
         <Spacer size='m' />
-        <Experience experience={experience || []} setIsEditing={setIsEditing} />
+        <Experience experience={experience || []} />
       </Modal.Body>
     </Modal>
   );

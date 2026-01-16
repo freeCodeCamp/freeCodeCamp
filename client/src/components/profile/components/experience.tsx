@@ -1,4 +1,4 @@
-import { find, isEqual } from 'lodash-es';
+import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -24,7 +24,6 @@ type ExperienceProps = {
   experience: ExperienceData[];
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
-  setIsEditing: (isEditing: boolean) => void;
 };
 
 interface ExperienceValidation {
@@ -48,19 +47,13 @@ function createEmptyExperienceItem(): ExperienceData {
   };
 }
 
-function createFindById(id: string) {
-  return (exp: ExperienceData) => exp.id === id;
-}
+const byId = (id: string) => (exp: ExperienceData) => exp.id === id;
+const notById = (id: string) => (exp: ExperienceData) => exp.id !== id;
 
 const ExperienceSettings = (props: ExperienceProps) => {
-  const {
-    t,
-    experience: initialExperience = [],
-    updateMyExperience,
-    setIsEditing
-  } = props;
+  const { t, experience: initialExperience = [], updateMyExperience } = props;
   const [experience, setExperience] = useState(initialExperience);
-  const [unsavedItemId, setUnsavedItemId] = useState<string | null>(null);
+  const [newItemId, setNewItemId] = useState<string | null>(null);
 
   const createOnChangeHandler =
     (
@@ -78,55 +71,48 @@ const ExperienceSettings = (props: ExperienceProps) => {
       const userInput = e.target.value.slice();
       setExperience(prevExperience => {
         return prevExperience.map(exp =>
-          exp.id === id ? { ...exp, [key]: userInput } : exp
+          byId(id)(exp) ? { ...exp, [key]: userInput } : exp
         );
       });
     };
 
-  const updateItem = (
-    id: string,
-    updatedExperience?: ExperienceData[],
-    closeModal = false
-  ) => {
-    if (unsavedItemId === id) {
-      setUnsavedItemId(null);
+  const saveItem = (id: string) => {
+    if (newItemId === id) {
+      setNewItemId(null);
     }
-    const experienceToUpdate = updatedExperience || experience;
-    const currentlySaved = props.experience;
-    const itemToUpdate = experienceToUpdate.find(item => item.id === id);
+    const itemToSave = experience.find(byId(id));
 
-    if (itemToUpdate && isItemValid(itemToUpdate)) {
-      const itemIndex = currentlySaved.findIndex(item => item.id === id);
-      const updatedSaved =
+    if (itemToSave && isItemValid(itemToSave)) {
+      const itemIndex = props.experience.findIndex(byId(id));
+      const updatedExperience =
         itemIndex >= 0
-          ? currentlySaved.map(item => (item.id === id ? itemToUpdate : item))
-          : [itemToUpdate, ...currentlySaved];
-      updateMyExperience({ experience: updatedSaved });
-    }
-
-    if (closeModal) {
-      setIsEditing(false);
+          ? props.experience.map(item => (byId(id)(item) ? itemToSave : item))
+          : [itemToSave, ...props.experience];
+      updateMyExperience({ experience: updatedExperience });
     }
   };
 
   const handleAdd = () => {
     const item = createEmptyExperienceItem();
     setExperience(prev => [item, ...prev]);
-    setUnsavedItemId(item.id);
+    setNewItemId(item.id);
   };
 
   const handleRemoveItem = (id: string) => {
-    const newExperience = experience.filter(exp => exp.id !== id);
-    setExperience(newExperience);
-    updateItem(id, newExperience, true);
+    setExperience(experience.filter(notById(id)));
+    if (newItemId === id) {
+      setNewItemId(null);
+    }
+    const filteredExperience = props.experience.filter(notById(id));
+    updateMyExperience({ experience: filteredExperience });
   };
 
   const isFormPristine = (id: string) => {
-    const original = find(props.experience, createFindById(id));
+    const original = props.experience.find(byId(id));
     if (!original) {
       return false;
     }
-    const edited = find(experience, createFindById(id));
+    const edited = experience.find(byId(id));
     return isEqual(original, edited);
   };
 
@@ -153,33 +139,27 @@ const ExperienceSettings = (props: ExperienceProps) => {
     return { state: 'success', message: '' };
   };
 
-  const getTitleValidation = (title: string): ExperienceValidation => {
-    if (!title) {
-      return { state: 'error', message: t('validation.title-required') };
+  const getTextValidation = (
+    value: string,
+    field: 'title' | 'company'
+  ): ExperienceValidation => {
+    if (!value) {
+      return { state: 'error', message: t(`validation.${field}-required`) };
     }
-    const len = title.length;
+    const len = value.length;
     if (len < 2) {
-      return { state: 'error', message: t('validation.title-short') };
+      return { state: 'error', message: t(`validation.${field}-short`) };
     }
     if (len > 144) {
-      return { state: 'error', message: t('validation.title-long') };
+      return { state: 'error', message: t(`validation.${field}-long`) };
     }
     return { state: 'success', message: '' };
   };
 
-  const getCompanyValidation = (company: string): ExperienceValidation => {
-    if (!company) {
-      return { state: 'error', message: t('validation.company-required') };
-    }
-    const len = company.length;
-    if (len < 2) {
-      return { state: 'error', message: t('validation.company-short') };
-    }
-    if (len > 144) {
-      return { state: 'error', message: t('validation.company-long') };
-    }
-    return { state: 'success', message: '' };
-  };
+  const getTitleValidation = (title: string) =>
+    getTextValidation(title, 'title');
+  const getCompanyValidation = (company: string) =>
+    getTextValidation(company, 'company');
 
   const getStartDateValidation = (startDate: string): ExperienceValidation => {
     if (!startDate) {
@@ -198,7 +178,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     );
   };
 
-  const formCorrect = (experienceItem: ExperienceData) => {
+  const getFormValidation = (experienceItem: ExperienceData) => {
     const { id, title, company, startDate, description } = experienceItem;
     const { state: titleState, message: titleMessage } =
       getTitleValidation(title);
@@ -215,7 +195,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
       title: { titleState, titleMessage },
       company: { companyState, companyMessage },
       startDate: { startDateState, startDateMessage },
-      desc: { descriptionState, descriptionMessage },
+      description: { descriptionState, descriptionMessage },
       pristine
     };
   };
@@ -228,13 +208,13 @@ const ExperienceSettings = (props: ExperienceProps) => {
       title: { titleState, titleMessage },
       company: { companyState, companyMessage },
       startDate: { startDateState, startDateMessage },
-      desc: { descriptionState, descriptionMessage },
+      description: { descriptionState, descriptionMessage },
       pristine
-    } = formCorrect(experienceItem);
+    } = getFormValidation(experienceItem);
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
       if (isButtonDisabled) return null;
-      return updateItem(id);
+      return saveItem(id);
     };
     return (
       <FullWidthRow key={id}>
@@ -342,7 +322,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
             validationState={pristine ? null : descriptionState}
           >
             <ControlLabel htmlFor={`${id}-description-input`}>
-              {t('profile.experience.description')}
+              {t('profile.experience.description')} *
             </ControlLabel>
             <FormControl
               componentClass='textarea'
@@ -391,7 +371,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
           block
           size='large'
           variant='primary'
-          disabled={unsavedItemId !== null}
+          disabled={newItemId !== null}
           onClick={handleAdd}
           type='button'
         >
