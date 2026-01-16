@@ -117,8 +117,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(typebox@1.0.76)
       '@growthbook/growthbook':
-        specifier: 1.3.1
-        version: 1.3.1
+        specifier: 1.6.2
+        version: 1.6.2
       '@prisma/client':
         specifier: 6.16.2
         version: 6.16.2(prisma@6.16.2(typescript@5.9.3))(typescript@5.9.3)
@@ -3474,12 +3474,8 @@ packages:
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0
 
-  '@growthbook/growthbook@1.3.1':
-    resolution: {integrity: sha512-ewtwq6+86rRKwcYUXEmBVR1JuiEIYZhxow/Z52qyAxJwEHdXmpS4Yk8sVeVD9bphCwE2r0zuifxFkBxmnIL4Mg==}
-    engines: {node: '>=10'}
-
-  '@growthbook/growthbook@1.6.0':
-    resolution: {integrity: sha512-0aMB8j1lVLob4uXpFpTmylMEzlMsaaeFZiXgtaveCQwF+vwdKZG+aCOX/XQyLEvdsU1x3M4s/kZSiFM1lRMgQw==}
+  '@growthbook/growthbook@1.6.2':
+    resolution: {integrity: sha512-x3sK6Lff4BVusIzcdBeHZqA3B4kLs3kM/pJ7vvLTJwb6N/+Yn99EF1yc0XU6cfDVqFq6uFkvIFhMwDWUaKD73g==}
     engines: {node: '>=10'}
 
   '@hapi/address@2.1.4':
@@ -18382,14 +18378,10 @@ snapshots:
 
   '@growthbook/growthbook-react@1.6.0(react@17.0.2)':
     dependencies:
-      '@growthbook/growthbook': 1.6.0
+      '@growthbook/growthbook': 1.6.2
       react: 17.0.2
 
-  '@growthbook/growthbook@1.3.1':
-    dependencies:
-      dom-mutator: 0.6.0
-
-  '@growthbook/growthbook@1.6.0':
+  '@growthbook/growthbook@1.6.2':
     dependencies:
       dom-mutator: 0.6.0
 
