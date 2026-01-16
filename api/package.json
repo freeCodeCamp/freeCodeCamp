@@ -14,7 +14,7 @@
     "@fastify/type-provider-typebox": "6.1.0",
     "@growthbook/growthbook": "1.3.1",
     "@prisma/client": "6.16.2",
-    "@sentry/node": "9.1.0",
+    "@sentry/node": "9.47.1",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
     "date-fns": "4.1.0",
