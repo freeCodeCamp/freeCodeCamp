@@ -1,0 +1,10 @@
+{
+  "name": "Build a Device Loan Ledger App",
+  "isUpcomingChange": true,
+  "dashedName": "lab-device-loan-ledger",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [{ "id": "6969bbed2f4f693f1572a23d", "title": "Step 1" }],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

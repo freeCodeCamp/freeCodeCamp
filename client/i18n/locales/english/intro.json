@@ -5264,6 +5264,10 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+      },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger App",
+        "intro": ["Build a Device Loan Ledger App", ""]
       }
     }
   },
