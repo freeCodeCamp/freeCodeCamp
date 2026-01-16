@@ -22,7 +22,7 @@
     "dotenv": "16.6.1",
     "fast-uri": "2.4.0",
     "fastify": "5.2.0",
-    "fastify-plugin": "5.0.1",
+    "fastify-plugin": "5.1.0",
     "joi": "17.12.2",
     "jsonwebtoken": "9.0.2",
     "lodash": "4.17.21",
