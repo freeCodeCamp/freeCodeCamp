@@ -535,7 +535,7 @@ void getAllBlocks()
       },
       {
         name: 'position',
-        message: 'At which position does this appear in the module?',
+        message: 'At which position does this new block appear in the module?',
         default: 1,
         validate: (position: string) => {
           return parseInt(position, 10) > 0
