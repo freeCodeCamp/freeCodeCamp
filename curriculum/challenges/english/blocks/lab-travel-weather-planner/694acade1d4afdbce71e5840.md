@@ -11,10 +11,10 @@ dashedName: build-a-travel-weather-planner
 
 1. You should create the following variables:
    * `distance_mi` (a number representing the distance to travel in miles)
-   * `is_raining` (a boolean  representing if the user is currently experiencing rainy weather)
-   * `has_bike` (a boolean representing if the user is has a bicycle)
-   * `has_car` (a boolean  if the user is has a car)
-   * `has_ride_share_app` (a boolean  if the user is has an app that allows them to request a ride)
+   * `is_raining` (a boolean representing if the user is currently experiencing rainy weather)
+   * `has_bike` (a boolean representing if the user has a bicycle)
+   * `has_car` (a boolean representing if the user is has a car)
+   * `has_ride_share_app` (a boolean representing if the user is has an app that allows them to request a ride)
 2. You should use conditional statements to determine whether commuting is possible based on the values of these variables.
 3. If `distance_mi` is a falsy value:
    * You should print `False`.
