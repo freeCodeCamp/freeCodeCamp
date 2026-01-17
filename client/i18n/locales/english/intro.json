@@ -6698,6 +6698,12 @@
           "In these lessons, you will learn about booleans and conditionals in Python."
         ]
       },
+      "lab-travel-weather-planner": {
+        "title": "Build a Travel Weather Planner",
+        "intro": [
+          "In this lab, you will build a travel weather planner using conditionals"
+        ]
+      },
       "lecture-understanding-functions-and-scope": {
         "title": "Understanding Functions and Scope",
         "intro": [
@@ -7096,10 +7102,6 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
-      },
-      "lab-travel-weather-planner": {
-        "title": "Build a Travel Weather Planner",
-        "intro": ["Build a Travel Weather Planner", ""]
       }
     }
   },
