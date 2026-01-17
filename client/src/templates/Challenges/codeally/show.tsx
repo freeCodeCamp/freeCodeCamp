@@ -136,6 +136,7 @@ function ShowCodeAlly({
     challengeNode: {
       challenge: {
         block,
+        blockLabel,
         challengeType,
         tests,
         description,
@@ -174,6 +175,7 @@ function ShowCodeAlly({
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -385,6 +387,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        blockLabel
         challengeType
         description
         helpCategory

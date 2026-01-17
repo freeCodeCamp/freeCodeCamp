@@ -288,6 +288,7 @@ export type PageContext = {
 
 export type DailyCodingChallengeNode = {
   challenge: {
+    blockLabel?: BlockLabel;
     date: string;
     id: string;
     challengeNumber: number;
@@ -502,6 +503,7 @@ export interface ChallengeData extends CompletedChallenge {
 
 export type ChallengeMeta = {
   block: string;
+  blockLabel?: BlockLabel;
   id: string;
   isFirstStep: boolean;
   superBlock: SuperBlocks | 'daily-coding-challenge';
