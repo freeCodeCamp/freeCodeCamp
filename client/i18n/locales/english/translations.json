@@ -531,9 +531,9 @@
       "instructions": "Instructions",
       "notes": "Notes",
       "preview": "Preview",
-      "terminal": "Terminal",
       "editor": "Editor",
-      "interactive-editor": "Interactive Editor"
+      "interactive-editor": "Interactive Editor",
+      "terminal": "Terminal"
     },
     "editor-alerts": {
       "tab-trapped": "Pressing tab will now insert the tab character",
@@ -969,6 +969,10 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "hide-terminal": "Hide the terminal",
+    "move-terminal-to-new-window": "Move the terminal to a new window and focus it",
+    "move-terminal-to-main-window": "Move the terminal to this window and close the external terminal window",
+    "close-external-terminal-window": "Close the external terminal window",
     "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
     "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
