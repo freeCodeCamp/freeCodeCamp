@@ -5,7 +5,26 @@
   "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "691a4dfe73dde4813c095839", "title": "Dialogue 1: I'm Tom" }
+    { "id": "69370c527b6499fbfde5466f", "title": "Task 1" },
+    { "id": "693711b29fa7cfde98e28e51", "title": "Task 2" },
+    { "id": "69371910116a327d86083026", "title": "Task 3" },
+    { "id": "69371c1a0156ec8bbe6f8141", "title": "Task 4" },
+    { "id": "69371f9403d48063dfab1271", "title": "Task 5" },
+    { "id": "693720fb55812cf89f0f85ce", "title": "Task 6" },
+    { "id": "693723c1111f7943f5cea1e1", "title": "Task 7" },
+    { "id": "693724b5fccd2c8741442cdf", "title": "Task 8" },
+    { "id": "69399bbb6d7a7bfeedaddd96", "title": "Task 9" },
+    { "id": "6939a98f077512ef09c9dcff", "title": "Task 10" },
+    { "id": "6939aba64ef7835b338fd665", "title": "Task 11" },
+    { "id": "6939ae072b293d5fd47980a2", "title": "Task 12" },
+    { "id": "6939b0e1fac80c2b4fdf8ded", "title": "Task 13" },
+    { "id": "6939bd5fada54c9b942385df", "title": "Task 14" },
+    { "id": "693a48b1cf0c8a53f24b49c8", "title": "Task 15" },
+    { "id": "693a5b879c8089c10050ab0d", "title": "Task 16" },
+    { "id": "693ae616f35528a63ac557f5", "title": "Task 17" },
+    { "id": "693ae9b9770ede7468612b3e", "title": "Task 18" },
+    { "id": "693aebb31ed98f7aea7d1a5d", "title": "Task 19" },
+    { "id": "693aeeed1538037add57bf4c", "title": "Task 20" }
   ],
   "blockLabel": "learn"
 }
