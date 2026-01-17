@@ -58,7 +58,8 @@ const initialState = {
   successMessage: 'Happy Coding!',
   isAdvancing: false,
   chapterSlug: '',
-  isSubmitting: false
+  isSubmitting: false,
+  lastSavedTime: null
 };
 
 export const epics = [completionEpic, createQuestionEpic, codeStorageEpic];
@@ -280,6 +281,14 @@ export const reducer = handleActions(
     [actionTypes.setEditorFocusability]: (state, { payload }) => ({
       ...state,
       canFocusEditor: payload
+    }),
+    [actionTypes.challengeMounted]: state => ({
+      ...state,
+      lastSavedTime: null
+    }),
+    [actionTypes.setLastSavedTime]: (state, { payload }) => ({
+      ...state,
+      lastSavedTime: payload
     }),
     [actionTypes.toggleVisibleEditor]: (state, { payload }) => {
       return {
