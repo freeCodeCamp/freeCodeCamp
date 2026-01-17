@@ -154,15 +154,32 @@ export const completedPercentageSelector = createSelector(
         id
       );
       return completedPercentage;
-    } else return 0;
+    }
+    return 0;
   }
 );
 
 export const isBlockNewlyCompletedSelector = state => {
   const completedPercentage = completedPercentageSelector(state);
   const completedChallengesIds = completedChallengesIdsSelector(state);
-  const { id } = challengeMetaSelector(state);
-  return completedPercentage === 100 && !completedChallengesIds.includes(id);
+  const { id, isLastChallengeInBlock } = challengeMetaSelector(state);
+  const currentBlockIds = currentBlockIdsSelector(state);
+
+  if (!isLastChallengeInBlock || completedPercentage !== 100) {
+    return false;
+  }
+
+  if (completedChallengesIds.includes(id)) {
+    return false;
+  }
+
+  const otherChallenges = currentBlockIds.filter(blockId => blockId !== id);
+  const allOthersCompleted = otherChallenges.every(blockId =>
+    completedChallengesIds.includes(blockId)
+  );
+
+  // Don't show confetti if the block was already effectively complete
+  return !allOthersCompleted;
 };
 
 export const isModuleNewlyCompletedSelector = state => {
