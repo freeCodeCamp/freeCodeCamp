@@ -1,0 +1,15 @@
+{
+  "name": "Build a Range of Numbers Generator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-range-of-numbers",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "5cc0bd7a49b71cb96132e54c",
+      "title": "Build a Range of Numbers Generator"
+    }
+  ],
+  "blockLabel": "lab",
+  "blockLayout": "link",
+  "usesMultifileEditor": true
+}
