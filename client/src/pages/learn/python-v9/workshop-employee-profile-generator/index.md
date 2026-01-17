@@ -11,6 +11,7 @@ In this workshop, you will learn the fundamentals of string manipulation in Pyth
 You will start by combining simple strings and move on to more advanced techniques used in real-world data processing.
 
 You will learn how to:
+
 - Combine strings using **Concatenation** (`+`).
 - Append text to variables using **Augmented Assignment** (`+=`).
 - Handle incompatible data types using **Type Conversion** (`str()`).
