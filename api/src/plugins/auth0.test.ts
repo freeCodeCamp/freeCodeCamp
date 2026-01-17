@@ -10,6 +10,7 @@ import {
   MockInstance
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
+import { GrowthBook } from '@growthbook/growthbook';
 
 import { createUserInput } from '../utils/create-user.js';
 import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env.js';
@@ -40,6 +41,10 @@ describe('auth0 plugin', () => {
     await fastify.register(bouncer);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
+    // Mock the GrowthBook plugin
+    fastify.decorate('gb', {
+      isOn: () => false
+    } as Partial<GrowthBook> as GrowthBook);
   });
 
   describe('GET /signin/google', () => {
