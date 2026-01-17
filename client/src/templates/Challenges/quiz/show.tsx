@@ -99,6 +99,7 @@ const ShowQuiz = ({
         helpCategory,
         superBlock,
         block,
+        blockLabel,
         tests,
         translationPending,
         quizzes
@@ -217,6 +218,7 @@ const ShowQuiz = ({
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -395,6 +397,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        blockLabel
         fields {
           blockHashSlug
           slug
