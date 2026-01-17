@@ -23,7 +23,8 @@ In this lab, you'll practice using CSS colors by designing boxes.
 7. The `.color2` element should have a `background-color` that uses an RGB color value.
 8. The `.color3` element should have a `background-color` that uses a predefined (word) color value.
 9. The `.color4` element should have a `background-color` that uses a HSL color value.
-10. The `.color5` element should have a `background-color` set.
+10. The `.color5` element should have a background color set.
+11. You should not use `display: flex` in this lab.
 
 **Note:** Be sure to link your stylesheet in your HTML and apply your CSS.
 
@@ -115,6 +116,21 @@ The `.color5` element should have a background color set.
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
 ```
 
+You should not use `display: flex` in this lab.
+
+```js
+const testRoot = document.querySelector('.color-grid').parentElement;
+const elements = [testRoot, ...testRoot.querySelectorAll('*')];
+
+elements.forEach(el => {
+  assert.notMatch(
+    getComputedStyle(el).display,
+    /flex/,
+    'You should not use display: flex in this lab.'
+  );
+});
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -164,15 +180,13 @@ assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVa
 ```css
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
 }
 
 h1 {
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -182,12 +196,10 @@ h1 {
     gap: 10px;
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .color-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
     border-radius: 8px;
     text-align: center;
