@@ -42,7 +42,10 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
   );
 
   const lastDay = last(days);
-  const streakExpired = !lastDay || !isEqual(lastDay, startOfDay(Date.now()));
+  // Streak expires if more than 1 day has passed since the last activity
+  // This gives users a grace period of one full day after their last activity
+  const today = startOfDay(Date.now());
+  const streakExpired = !lastDay || addDays(lastDay, 1) < today;
 
   return { longestStreak, currentStreak: streakExpired ? 0 : currentStreak };
 };
