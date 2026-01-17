@@ -115,7 +115,7 @@ The `.color5` element should have a background color set.
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
 ```
 
-The .color-grid element should not use flexbox for layout.
+The `.color-grid` element should not use flexbox for the layout.
 
 ```js
 const colorGridDisplay = getComputedStyle(
