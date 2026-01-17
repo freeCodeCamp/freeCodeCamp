@@ -18,8 +18,7 @@ import { API_LOCATION } from '../../utils/handle-request';
 export const superBlockNameMap: { [key: string]: string } = {
   'responsive-web-design-22': '2022/responsive-web-design',
   'javascript-algorithms-and-data-structures-22':
-    'javascript-algorithms-and-data-structures-v8',
-  'front-end-development': 'full-stack-developer'
+    'javascript-algorithms-and-data-structures-v8'
 };
 
 const Editor = () => {

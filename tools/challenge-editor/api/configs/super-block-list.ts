@@ -89,7 +89,7 @@ export const superBlockList = [
   },
   {
     name: 'Certified Full Stack Developer',
-    path: 'full-stack-developer'
+    path: 'full-stack-developer-v9'
   },
   {
     name: 'A1 Professional Spanish (Beta)',
