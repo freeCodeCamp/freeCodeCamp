@@ -34,7 +34,11 @@ import type {
   ChapterBasedSuperBlockStructure
 } from '../../redux/prop-types';
 import { CertTitle, liveCerts } from '../../../config/cert-and-project-map';
-import { superBlockToCertMap } from '../../../../shared-dist/config/certification-settings';
+import {
+  completionHours,
+  superBlockCertTypeMap,
+  superBlockToCertMap
+} from '../../../../shared-dist/config/certification-settings';
 import {
   BlockLayouts,
   BlockLabel
@@ -138,7 +142,7 @@ const handleHashChange = () => {
 };
 
 const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   useEffect(() => {
     initializeExpandedState();
     props.tryToShowDonationModal();
@@ -284,10 +288,35 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     return nextChallenge()?.fields.slug || null;
   }, [completedChallenges, superBlockChallenges, hasNotstarted]);
 
+  const certSlug = (
+    superBlockCertTypeMap as Record<string, keyof typeof completionHours>
+  )[superBlock];
+  const completionTime = certSlug ? completionHours[certSlug] : 300;
+  const timeRequired = `P${completionTime}H`;
+  const language = i18n.language; // TODO: handle the courses that _teach_ other languages
+  // TODO: check they are BCP 47 language codes
+  // TODO: tests
+
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: i18nTitle,
+    description: 'TODO',
+    provider: {
+      '@type': 'Organization',
+      name: 'freeCodeCamp',
+      sameAs: 'https://www.freecodecamp.org'
+    },
+    educationalLevel: 'Beginner',
+    inLanguage: language,
+    timeRequired
+  };
+
   return (
     <>
       <Helmet>
         <title>{i18nTitle} | freeCodeCamp.org</title>
+        <script type='application/ld+json'>{JSON.stringify(data)}</script>
       </Helmet>
       <Container>
         <main>
