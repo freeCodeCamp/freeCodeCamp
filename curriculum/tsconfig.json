@@ -1,5 +1,4 @@
 {
-  "references": [{ "path": "../shared/tsconfig.json" }],
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",

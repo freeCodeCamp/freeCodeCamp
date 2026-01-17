@@ -3,7 +3,7 @@ import { liveCerts } from '../../config/cert-and-project-map';
 import {
   certSlugTypeMap,
   certToTitleMap
-} from '../../../shared-dist/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 
 import { randomBetween } from '../utils/random-between';
 import { getSessionChallengeData } from '../utils/session-storage';

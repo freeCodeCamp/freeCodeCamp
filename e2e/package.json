@@ -11,6 +11,7 @@
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/shared": "workspace:*",
     "eslint": "^9.39.1"
   }
 }

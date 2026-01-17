@@ -155,7 +155,7 @@ jobs:
       - name: Install and Build
         run: |
           pnpm install
-          pnpm compile:ts
+          pnpm turbo compile
           pnpm run build:curriculum
 
       - name: Start apps

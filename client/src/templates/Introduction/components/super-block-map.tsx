@@ -6,7 +6,7 @@ import {
   certificationCollectionSuperBlocks,
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import type { CertTitle } from '../../../../config/cert-and-project-map';
 import type {
   ChapterBasedSuperBlockStructure,
@@ -15,14 +15,14 @@ import type {
 import type {
   BlockLabel,
   BlockLayouts
-} from '../../../../../shared-dist/config/blocks';
+} from '@freecodecamp/shared/config/blocks';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import {
   certSlugTypeMap,
   certificationRequirements,
   superBlockToCertMap
-} from '../../../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import CheckMark from './check-mark';
 
 import Block from './block';

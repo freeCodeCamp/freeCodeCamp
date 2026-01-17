@@ -3,18 +3,15 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
-import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import { type Chapter } from '@freecodecamp/shared/config/chapters';
 import { Link } from '../../../components/helpers';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '../../../../../shared-dist/config/blocks';
-import { FsdChapters } from '../../../../../shared-dist/config/chapters';
-import { type Module } from '../../../../../shared-dist/config/modules';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { FsdChapters } from '@freecodecamp/shared/config/chapters';
+import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
