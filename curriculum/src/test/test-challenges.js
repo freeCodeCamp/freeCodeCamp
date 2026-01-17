@@ -390,6 +390,7 @@ async function createTestRunner(
   if (!page) throw new Error('Browser page is not ready yet');
 
   const evaluator = await getContextEvaluator({
+    allowAnimations: challenge.allowAnimations,
     // passing in challengeId so it's easier to debug timeouts
     challengeId: challenge.id,
     build,
@@ -460,6 +461,7 @@ async function getContextEvaluator(config) {
 }
 
 async function _initializeTestRunner({
+  allowAnimations,
   build,
   sources,
   type,
@@ -468,8 +470,9 @@ async function _initializeTestRunner({
 }) {
   const source = type === 'dom' ? prefixDoctype({ build, sources }) : build;
   await page.evaluate(
-    async (sources, source, type, hooks, loadEnzyme) => {
+    async (allowAnimations, sources, source, type, hooks, loadEnzyme) => {
       await window.FCCTestRunner.createTestRunner({
+        allowAnimations,
         source,
         type,
         code: sources,
@@ -477,6 +480,7 @@ async function _initializeTestRunner({
         loadEnzyme
       });
     },
+    allowAnimations,
     sources,
     source,
     type,
@@ -486,6 +490,7 @@ async function _initializeTestRunner({
 }
 
 async function initializeTestRunner({
+  allowAnimations,
   build,
   sources,
   type,
@@ -499,7 +504,14 @@ async function initializeTestRunner({
   );
 
   try {
-    await _initializeTestRunner({ build, sources, type, hooks, loadEnzyme });
+    await _initializeTestRunner({
+      allowAnimations,
+      build,
+      sources,
+      type,
+      hooks,
+      loadEnzyme
+    });
   } catch (e) {
     // It's not clear why, but sometimes the iframe load times out. It seems to
     // be an issue with Puppeteer, so we give it one more try to reduce test
@@ -507,7 +519,14 @@ async function initializeTestRunner({
     if (e.message.includes('Timed out waiting for the test frame to load')) {
       console.warn('Test frame load timed out. Retrying...');
       page = await createAndVisitNewPage();
-      await _initializeTestRunner({ build, sources, type, hooks, loadEnzyme });
+      await _initializeTestRunner({
+        allowAnimations,
+        build,
+        sources,
+        type,
+        hooks,
+        loadEnzyme
+      });
     } else {
       throw e;
     }
