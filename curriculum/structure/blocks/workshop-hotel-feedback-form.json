@@ -4,7 +4,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-hotel-feedback-form",
   "challengeOrder": [
     { "id": "66a83601cd819e37f0dccd14", "title": "Step 1" },

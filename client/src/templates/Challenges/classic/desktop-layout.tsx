@@ -32,7 +32,7 @@ interface DesktopLayoutProps {
   challengeFiles: ChallengeFiles;
   challengeType: number;
   editor: ReactElement | null;
-  hasEditableBoundaries?: boolean;
+  instructionsInEditor?: boolean;
   hasPreview: boolean;
   instructions: ReactElement;
   isAdvancing: boolean;
@@ -107,7 +107,8 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     showIndependentLowerJaw,
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
-    setDailyCodingChallengeLanguage
+    setDailyCodingChallengeLanguage,
+    instructionsInEditor
   } = props;
 
   const initialShowState = (key: string, defaultValue: boolean): boolean => {
@@ -228,7 +229,6 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     notes,
     onPreviewResize,
     preview,
-    hasEditableBoundaries,
     windowTitle
   } = props;
 
@@ -241,9 +241,9 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     }
   }, []);
 
-  const projectBasedChallenge = hasEditableBoundaries;
   const areInstructionsDisplayable =
-    !projectBasedChallenge || showIndependentLowerJaw;
+    !instructionsInEditor || showIndependentLowerJaw;
+
   const isMultifileProject =
     challengeType === challengeTypes.multifileCertProject ||
     challengeType === challengeTypes.multifilePythonCertProject ||
@@ -252,10 +252,10 @@ const DesktopLayout = (props: DesktopLayoutProps): JSX.Element => {
     challengeType === challengeTypes.pyLab ||
     challengeType === challengeTypes.dailyChallengeJs ||
     challengeType === challengeTypes.dailyChallengePy;
-  const isProjectStyle = projectBasedChallenge || isMultifileProject;
+  const isProjectStyle = instructionsInEditor || isMultifileProject;
   const displayPreviewPane = hasPreview && showPreviewPane;
   const displayPreviewPortal = hasPreview && showPreviewPortal;
-  const displayNotes = projectBasedChallenge ? showNotes && !!notes : false;
+  const displayNotes = showNotes && !!notes;
   const displayEditorConsole = !isProjectStyle;
   const displayPreviewConsole = !displayEditorConsole && showConsole;
 

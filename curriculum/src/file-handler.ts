@@ -132,13 +132,14 @@ export type Challenge = {
   id: string;
   title: string;
   // infer other properties:
+  includesBlockInTimeline?: boolean;
+  instructionsInEditor?: boolean;
   description?: string;
   instructions?: string;
   questions?: string[];
   block?: string;
   blockLabel?: string;
   blockLayout?: string;
-  hasEditableBoundaries?: boolean;
   order?: number;
   superBlock?: SuperBlocks;
   superOrder?: number;
@@ -162,7 +163,8 @@ export type Challenge = {
 
 export interface BlockStructure {
   name: string;
-  hasEditableBoundaries?: boolean;
+  includesBlockInTimeline?: boolean;
+  instructionsInEditor?: boolean;
   required?: string[];
   template?: string;
   helpCategory?: string;

@@ -56,7 +56,6 @@ function formatChallengeData({
     instructions: '',
     demoType: null,
     hooks: undefined,
-    hasEditableBoundaries: false,
     forumTopicId: undefined,
     notes: '',
     videoUrl: undefined,

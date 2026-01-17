@@ -4,7 +4,8 @@
   "blockLayout": "link",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": false,
+  "includesBlockInTimeline": false,
+  "instructionsInEditor": false,
   "dashedName": "lab-moon-orbit",
   "challengeOrder": [
     { "id": "66a37f37ef5823a313de8c26", "title": "Build a Moon Orbit" }

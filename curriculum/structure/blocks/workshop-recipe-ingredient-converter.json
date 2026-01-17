@@ -3,7 +3,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-recipe-ingredient-converter",
   "challengeOrder": [
     {

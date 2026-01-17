@@ -22,5 +22,6 @@
     { "id": "68c353c4b114aa428c01f260", "title": "Step 14" }
   ],
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true
 }

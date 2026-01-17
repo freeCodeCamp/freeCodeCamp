@@ -4,7 +4,8 @@
   "blockLayout": "challenge-grid",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-cafe-menu",
   "challengeOrder": [
     { "id": "5f33294a6af5e9188dbdb8f3", "title": "Step 1" },

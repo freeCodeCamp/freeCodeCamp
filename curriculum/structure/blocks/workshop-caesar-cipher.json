@@ -2,7 +2,8 @@
   "name": "Build a Caesar Cipher",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-caesar-cipher",
   "challengeOrder": [
     {

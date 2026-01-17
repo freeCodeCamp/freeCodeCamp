@@ -13,7 +13,7 @@ export type Meta = {
   isUpcomingChange: boolean;
   dashedName: string;
   helpCategory: string;
-  time: string;
+  time?: string; // to avoid the typescript error about the converting BlockStructure to Meta
   template: string;
   required: string[];
   challengeOrder: { id: string; title: string }[];
