@@ -1,0 +1,33 @@
+.share-icon-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.share-icon-button {
+  align-items: center;
+  background-color: var(--background-secondary, var(--secondary-background));
+  border: 1px solid var(--background-quaternary, var(--quaternary-background));
+  border-radius: 4px;
+  color: var(--foreground-primary, var(--primary-color));
+  display: inline-flex;
+  height: 32px;
+  justify-content: center;
+  line-height: 1;
+  text-decoration: none;
+  width: 32px;
+}
+
+.share-icon-buttons .share-icon-button svg {
+  height: 1rem;
+  margin: 0;
+  width: auto;
+}
+
+.share-icon-button:hover,
+.share-icon-button:focus {
+  background-color: var(--background-tertiary, var(--tertiary-background));
+  color: var(--foreground-secondary, var(--tertiary-color));
+  text-decoration: none;
+}

@@ -247,10 +247,6 @@ li > button.nav-link-signout:not([aria-disabled='true']):is(:hover, :focus) {
   padding: 0 4px;
 }
 
-.share-button-nav {
-  text-decoration: none;
-}
-
 @media (min-width: 601px) {
   .exposed-button-nav {
     padding-inline: 12px;

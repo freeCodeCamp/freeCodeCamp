@@ -12,24 +12,24 @@ import Help from '../../../assets/icons/help';
 import Reset from '../../../assets/icons/reset';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 import { apiLocation } from '../../../../config/env.json';
+import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { ChallengeMeta } from '../../../redux/prop-types';
-import { Share } from '../../../components/share';
-import { ShareProps } from '../../../components/share/types';
 import Progress from '../../../components/Progress';
 import Quote from '../../../assets/icons/quote';
+import ShareIconButtons from '../../../components/share/share-icon-buttons';
 import {
   challengeMetaSelector,
-  completedPercentageSelector
+  completedPercentageSelector,
+  currentBlockIdsSelector
 } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
 
-interface LowerJawPanelProps extends ShareProps {
+interface LowerJawPanelProps {
   resetButtonText: string;
   helpButtonText: string;
   resetButtonEvent: () => void;
   helpButtonEvent: () => void;
   hideHelpButton: boolean;
-  showShareButton: boolean;
 }
 
 interface LowerJawTipsProps {
@@ -49,6 +49,8 @@ interface LowerJawStatusProps {
 interface LowerJawProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
+  completedChallengeIds: string[];
+  currentBlockIds: string[];
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -64,9 +66,18 @@ interface LowerJawProps {
 const mapStateToProps = createSelector(
   challengeMetaSelector,
   completedPercentageSelector,
-  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
+  completedChallengesIdsSelector,
+  currentBlockIdsSelector,
+  (
+    challengeMeta: ChallengeMeta,
+    completedPercent: number,
+    completedChallengeIds: string[],
+    currentBlockIds: string[]
+  ) => ({
     challengeMeta,
-    completedPercent
+    completedPercent,
+    completedChallengeIds,
+    currentBlockIds
   })
 );
 
@@ -87,21 +98,12 @@ const LowerButtonsPanel = ({
   helpButtonText,
   resetButtonEvent,
   hideHelpButton,
-  helpButtonEvent,
-  showShareButton,
-  superBlock,
-  block
+  helpButtonEvent
 }: LowerJawPanelProps) => {
   return (
     <>
       <hr />
       <div className='utility-bar'>
-        {showShareButton && (
-          <div className='utility-bar-top'>
-            <Share superBlock={superBlock} block={block} />
-          </div>
-        )}
-
         <div className='utility-bar-bottom'>
           <Button
             data-playwright-test-label='lowerJaw-reset-button'
@@ -183,11 +185,13 @@ const LowerJawStatus = ({
   );
 };
 
-const isBlockCompleted = 100;
+const completedPercentTotal = 100;
 
 const LowerJaw = ({
-  challengeMeta: { superBlock, block },
+  challengeMeta,
   completedPercent,
+  completedChallengeIds,
+  currentBlockIds,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -199,6 +203,7 @@ const LowerJaw = ({
   isSignedIn,
   updateContainer
 }: LowerJawProps): JSX.Element => {
+  const { superBlock, block } = challengeMeta;
   const [shownHint, setShownHint] = useState(hint);
   const [quote, setQuote] = useState(randomCompliment());
   const [runningTests, setRunningTests] = useState(false);
@@ -222,8 +227,20 @@ const LowerJaw = ({
     );
   };
 
+  const isLastChallengeInBlock = Boolean(challengeMeta.isLastChallengeInBlock);
+  const hasBlockIds = currentBlockIds.length > 0;
+  const isBlockCompletedByIds =
+    hasBlockIds &&
+    currentBlockIds.every(challengeId =>
+      completedChallengeIds.includes(challengeId)
+    );
+  const hasCompletedPercent = Number.isFinite(completedPercent);
+  const isBlockCompleted =
+    !hasBlockIds ||
+    isBlockCompletedByIds ||
+    (hasCompletedPercent && completedPercent === completedPercentTotal);
   const showShareButton =
-    challengeIsCompleted && completedPercent === isBlockCompleted;
+    challengeIsCompleted && isLastChallengeInBlock && isBlockCompleted;
 
   // Attempts should only be zero when the step is reset, so we should reset
   // the state here.
@@ -377,6 +394,9 @@ const LowerJaw = ({
                 <span className='sr-only'>, {t('aria.submit')}</span>
               )}
             </LowerJawStatus>
+            {showShareButton && (
+              <ShareIconButtons superBlock={superBlock} block={block} />
+            )}
             <LowerJawQuote quote={quote} />
             <span className='sr-only'>
               {t('learn.percent-complete', { percent: completedPercent })}
@@ -409,9 +429,6 @@ const LowerJaw = ({
           isAttemptsLargerThanTest && !challengeIsCompleted
         )}
         helpButtonEvent={openHelpModal}
-        showShareButton={showShareButton}
-        superBlock={superBlock}
-        block={block}
       />
     </div>
   );
