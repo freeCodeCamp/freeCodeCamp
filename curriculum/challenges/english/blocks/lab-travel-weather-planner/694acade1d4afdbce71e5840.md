@@ -58,33 +58,6 @@ assert required.issubset(assigned_names)
 `) })
 ```
 
-Each variable should be assigned a value.
-
-```js
-({ test: () => runPython(`
-import ast
-
-tree = ast.parse(_code)
-
-assignments = {
-    node.targets[0].id: node.value
-    for node in ast.walk(tree)
-    if isinstance(node, ast.Assign)
-    and isinstance(node.targets[0], ast.Name)
-}
-
-for name in [
-    "distance_mi",
-    "is_raining",
-    "has_bike",
-    "has_car",
-    "has_ride_share_app"
-]:
-    assert name in assignments
-    assert assignments[name] is not None
-`) })
-```
-
 You should use at least one `if` statement.
 
 ```js
