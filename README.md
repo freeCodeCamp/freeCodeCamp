@@ -36,8 +36,8 @@ Each of these certifications involves completing interactive lessons, workshops,
 freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
 
 - [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
-- [B1 English for Developers(Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
-- [A1 Professional Spanish(Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
+- [B1 English for Developers (Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
+- [A1 Professional Spanish (Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
 - [A1 Professional Chinese (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
 
 Each of these certifications is organized into modules, with sections for warm-ups, lessons, practice exercises, review pages, and quizzes to ensure you fully grasp the material before progressing to the next module. You'll need to complete all of the quizzes in order to qualify for the exam at the end of the certification.
