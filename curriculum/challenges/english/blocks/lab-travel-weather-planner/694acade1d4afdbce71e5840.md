@@ -31,10 +31,121 @@ dashedName: build-a-travel-weather-planner
 
 # --hints--
 
-placeholder
+You should define the variables `distance_mi`, `is_raining`, `has_bike`, `has_car`, and `has_ride_share_app`.
 
 ```js
+({ test: () => runPython(`
+import ast
 
+tree = ast.parse(_code)
+
+assigned_names = {
+    node.targets[0].id
+    for node in ast.walk(tree)
+    if isinstance(node, ast.Assign)
+    and isinstance(node.targets[0], ast.Name)
+}
+
+required = {
+    "distance_mi",
+    "is_raining",
+    "has_bike",
+    "has_car",
+    "has_ride_share_app"
+}
+
+assert required.issubset(assigned_names)
+`) })
+```
+
+Each variable should be assigned a value.
+
+```js
+({ test: () => runPython(`
+import ast
+
+tree = ast.parse(_code)
+
+assignments = {
+    node.targets[0].id: node.value
+    for node in ast.walk(tree)
+    if isinstance(node, ast.Assign)
+    and isinstance(node.targets[0], ast.Name)
+}
+
+for name in [
+    "distance_mi",
+    "is_raining",
+    "has_bike",
+    "has_car",
+    "has_ride_share_app"
+]:
+    assert name in assignments
+    assert assignments[name] is not None
+`) })
+```
+
+You should use at least one `if` statement.
+
+```js
+({ test: () => runPython(`
+import ast
+
+tree = ast.parse(_code)
+ifs = [node for node in ast.walk(tree) if isinstance(node, ast.If)]
+assert len(ifs) >= 1
+`) })
+```
+
+You should use at least one `elif` branch in your program.
+
+```js
+({ test: () => runPython(`
+import ast
+
+tree = ast.parse(_code)
+elifs = []
+
+for node in ast.walk(tree):
+    if isinstance(node, ast.If) and node.orelse:
+        if isinstance(node.orelse[0], ast.If):
+            elifs.append(node)
+
+assert len(elifs) >= 1
+`) })
+```
+
+You should use at least one boolean operator (`and`, `or`, or `not`) in a condition.
+
+```js
+({ test: () => runPython(`
+import ast
+
+tree = ast.parse(_code)
+
+bool_ops = [
+    node for node in ast.walk(tree)
+    if isinstance(node, (ast.BoolOp, ast.UnaryOp))
+]
+
+assert len(bool_ops) >= 1
+`) })
+```
+
+You should use the ```print()``` function to display the result.
+
+```js
+({ test: () => runPython(`
+import ast
+
+tree = ast.parse(_code)
+calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call)]
+
+assert any(
+    isinstance(call.func, ast.Name) and call.func.id == "print"
+    for call in calls
+)
+`) })
 ```
 
 # --seed--
