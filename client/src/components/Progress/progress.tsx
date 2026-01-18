@@ -179,7 +179,9 @@ const useGetAllChallengeData = () => {
         nodes {
           challenge {
             block
+            blockLabel
             id
+            superBlock
           }
         }
       }

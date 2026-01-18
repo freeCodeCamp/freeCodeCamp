@@ -502,8 +502,10 @@ export interface ChallengeData extends CompletedChallenge {
 
 export type ChallengeMeta = {
   block: string;
+  blockLabel?: BlockLabel;
   id: string;
   isFirstStep: boolean;
+  isLastChallengeInBlock?: boolean;
   superBlock: SuperBlocks | 'daily-coding-challenge';
   title?: string;
   challengeType?: number;

@@ -10,6 +10,7 @@ import MenuButton from './menu-button';
 import NavLinks from './nav-links';
 import AuthOrProfile from './auth-or-profile';
 import LanguageList from './language-list';
+import WorkshopShareButton from './workshop-share-button';
 
 import './universal-nav.css';
 
@@ -79,6 +80,7 @@ const UniversalNav = ({
           </div>
         ) : (
           <>
+            <WorkshopShareButton pathname={pathname} />
             <LanguageList />
             <MenuButton
               displayMenu={displayMenu}
