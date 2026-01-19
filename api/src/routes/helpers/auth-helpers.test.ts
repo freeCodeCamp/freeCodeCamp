@@ -14,6 +14,11 @@ import { createUserInput } from '../../utils/create-user.js';
 import { checkCanConnectToDb } from '../../../vitest.utils.js';
 import { findOrCreateUser } from './auth-helpers.js';
 import { assignVariantBucket } from '../../utils/drip-campaign.js';
+import growthBook from '../../plugins/growth-book.js';
+import {
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
+} from '../../utils/env.js';
 
 const captureException = vi.fn();
 
@@ -23,10 +28,10 @@ async function setupServer() {
   await checkCanConnectToDb(fastify.prisma);
   // @ts-expect-error we're mocking the Sentry plugin
   fastify.Sentry = { captureException };
-    await fastify.register(growthBook, {
-      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
-      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
-    });
+  await fastify.register(growthBook, {
+    apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+    clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+  });
   return fastify;
 }
 
@@ -83,7 +88,7 @@ describe('findOrCreateUser', () => {
 
   describe('drip campaign logic', () => {
     test('should create a drip campaign record when a new user is created and feature flag is enabled', async () => {
-  vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
+      vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       const user = await findOrCreateUser(fastify, email);
 

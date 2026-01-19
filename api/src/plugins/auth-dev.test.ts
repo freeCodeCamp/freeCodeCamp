@@ -9,11 +9,16 @@ import {
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils.js';
-import { HOME_LOCATION } from '../utils/env.js';
+import {
+  HOME_LOCATION,
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
+} from '../utils/env.js';
 import { devAuth } from '../plugins/auth-dev.js';
 import prismaPlugin from '../db/prisma.js';
 import auth from './auth.js';
 import cookies from './cookies.js';
+import growthBook from './growth-book.js';
 
 import { newUser } from './__fixtures__/user.js';
 
