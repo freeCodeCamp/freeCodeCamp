@@ -25,7 +25,8 @@
     "create-quiz": "tsx create-quiz",
     "rename-block": "tsx rename-block",
     "lint": "eslint --max-warnings 0",
-    "test": "vitest"
+    "test": "vitest",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
@@ -40,7 +41,7 @@
     "gray-matter": "4.0.3",
     "inquirer": "8.2.6",
     "prettier": "3.2.5",
-    "typescript": "5.2.2",
+    "typescript": "5.9.3",
     "vitest": "^3.2.4"
   }
 }

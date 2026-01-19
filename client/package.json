@@ -35,7 +35,8 @@
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
-    "test": "vitest"
+    "test": "vitest",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",
@@ -129,7 +130,7 @@
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
     "tone": "14.7.77",
-    "typescript": "5.2.2",
+    "typescript": "5.9.3",
     "util": "0.12.5",
     "uuid": "8.3.2",
     "validator": "13.11.0",
