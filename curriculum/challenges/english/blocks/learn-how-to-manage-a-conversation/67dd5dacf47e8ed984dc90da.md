@@ -3,6 +3,7 @@ id: 67dd5dacf47e8ed984dc90da
 title: Task 17
 challengeType: 19
 dashedName: task-17
+showSpeakingButton: true
 lang: en-US
 ---
 
@@ -24,9 +25,17 @@ How could Alice answer briefly that there is no decision concerning the deadline
 
 `Not yet.`
 
+### --audio-id--
+
+EN6acf22f8
+
 ---
 
 `We're still looking for it.`
+
+### --audio-id--
+
+EN391abad4
 
 ### --feedback--
 
