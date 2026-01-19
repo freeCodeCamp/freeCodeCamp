@@ -7,7 +7,6 @@ import {
   afterAll
 } from 'vitest';
 import Fastify, { FastifyInstance } from 'fastify';
-import { GrowthBook } from '@growthbook/growthbook';
 
 import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils.js';
 import { HOME_LOCATION } from '../utils/env.js';
@@ -29,10 +28,10 @@ describe('dev login', () => {
     await fastify.register(devAuth);
     await fastify.register(prismaPlugin);
     await checkCanConnectToDb(fastify.prisma);
-    // Mock the GrowthBook plugin
-    fastify.decorate('gb', {
-      isOn: () => false
-    } as Partial<GrowthBook> as GrowthBook);
+    await fastify.register(growthBook, {
+      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+    });
   });
 
   beforeEach(async () => {

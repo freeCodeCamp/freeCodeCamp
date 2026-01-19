@@ -23,10 +23,10 @@ async function setupServer() {
   await checkCanConnectToDb(fastify.prisma);
   // @ts-expect-error we're mocking the Sentry plugin
   fastify.Sentry = { captureException };
-  // @ts-expect-error we're mocking the gb (growthbook) plugin
-  fastify.gb = {
-    isOn: vi.fn(() => true)
-  };
+    await fastify.register(growthBook, {
+      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+    });
   return fastify;
 }
 
@@ -45,6 +45,7 @@ describe('findOrCreateUser', () => {
   afterEach(async () => {
     await fastify.prisma.user.deleteMany({ where: { email } });
     await fastify.prisma.dripCampaign.deleteMany({ where: { email } });
+    await fastify.close();
     vi.clearAllMocks();
   });
 
@@ -82,7 +83,7 @@ describe('findOrCreateUser', () => {
 
   describe('drip campaign logic', () => {
     test('should create a drip campaign record when a new user is created and feature flag is enabled', async () => {
-      fastify.gb.isOn = vi.fn(() => true);
+  vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       const user = await findOrCreateUser(fastify, email);
 
@@ -97,7 +98,7 @@ describe('findOrCreateUser', () => {
     });
 
     test('should assign a consistent variant based on userId', async () => {
-      fastify.gb.isOn = vi.fn(() => true);
+      vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       const user = await findOrCreateUser(fastify, email);
       const expectedVariant = assignVariantBucket(user.id);
@@ -110,7 +111,7 @@ describe('findOrCreateUser', () => {
     });
 
     test('should not create a drip campaign record when feature flag is disabled', async () => {
-      fastify.gb.isOn = vi.fn(() => false);
+      vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => false);
 
       const user = await findOrCreateUser(fastify, email);
 
@@ -122,7 +123,7 @@ describe('findOrCreateUser', () => {
     });
 
     test('should not prevent user creation if drip campaign record creation fails', async () => {
-      fastify.gb.isOn = vi.fn(() => true);
+      vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       // Mock dripCampaign.create to throw an error
       const createSpy = vi
@@ -146,7 +147,7 @@ describe('findOrCreateUser', () => {
     });
 
     test('should not create drip campaign for existing users', async () => {
-      fastify.gb.isOn = vi.fn(() => true);
+      vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       // Create user first
       await fastify.prisma.user.create({ data: createUserInput(email) });
