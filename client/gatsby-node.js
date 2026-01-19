@@ -5,7 +5,7 @@ const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
-const { SuperBlocks } = require('../shared-dist/config/curriculum');
+const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
 const {
   createChallengePages,

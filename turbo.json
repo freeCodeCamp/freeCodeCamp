@@ -1,9 +1,7 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
-    "lint": {
-      "dependsOn": ["@freecodecamp/shared#compile"]
-    },
+    "lint": { "dependsOn": ["compile"] },
     "@freecodecamp/client#lint": {
       "dependsOn": [
         "@freecodecamp/curriculum#compile",
@@ -27,7 +25,7 @@
         "@freecodecamp/curriculum#build"
       ]
     },
-    "compile": {},
+    "compile": { "dependsOn": ["^compile"] },
     "create:trending": { "cache": false },
     "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] },

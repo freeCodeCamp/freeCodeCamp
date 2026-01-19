@@ -1,7 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
 
-import { chapterBasedSuperBlocks } from '../../../../shared/config/curriculum';
+import { chapterBasedSuperBlocks } from '../../../../packages/shared/src/config/curriculum';
 import {
   SUPERBLOCK_META_DIR,
   BLOCK_META_DIR,
