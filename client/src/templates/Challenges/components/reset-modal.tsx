@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -45,9 +45,13 @@ function ResetModal({
   challengeTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
-  if (isOpen) {
-    callGA({ event: 'pageview', pagePath: '/reset-modal' });
-  }
+
+  useEffect(() => {
+    if (isOpen) {
+      callGA({ event: 'pageview', pagePath: '/reset-modal' });
+    }
+  }, [isOpen]);
+
   return (
     <Modal onClose={close} open={isOpen} variant='danger'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>

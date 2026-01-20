@@ -205,11 +205,11 @@ test.describe('Donation modal appearance logic - New user', () => {
   });
 
   test.beforeEach(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear if the user has less than 10 completed challenges in total and has just completed 3 challenges', async ({
@@ -278,7 +278,9 @@ test.describe('Donation modal appearance logic - New user', () => {
 test.describe('Donation modal appearance logic - Certified user claiming a new block', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(() =>
-    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+    execSync(
+      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
+    )
   );
 
   test('should appear if the user has just completed a new block, and should not appear if the user re-submits the projects of the block', async ({
@@ -349,7 +351,9 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
 test.describe('Donation modal appearance logic - Certified user claiming a new module', () => {
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
   test.beforeEach(() =>
-    execSync('node ./tools/scripts/seed/seed-demo-user --almost-certified-user')
+    execSync(
+      'node ../tools/scripts/seed/seed-demo-user --almost-certified-user'
+    )
   );
 
   test('should appear if the user has just completed a new module', async ({
@@ -442,12 +446,12 @@ test.describe('Donation modal appearance logic - Certified user', () => {
 test.describe('Donation modal appearance logic - Donor user', () => {
   test.beforeAll(() => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-true isDonating'
     );
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not appear', async ({

@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { getLangCode } from '../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -33,13 +33,13 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../shared-dist/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   Certification,
   CertSlug,
   linkedInCredentialIds
-} from '../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
@@ -389,6 +389,14 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
 
   const isMicrosoftCert = certSlug === Certification.FoundationalCSharp;
 
+  const isLanguageCert = [
+    Certification.A1Chinese,
+    Certification.A2Chinese,
+    Certification.A2English,
+    Certification.A2Spanish,
+    Certification.B1English
+  ].includes(certSlug);
+
   return (
     <Container className='certificate-outer-wrapper'>
       {isDonationDisplayed && !isDonationClosed ? (
@@ -441,7 +449,9 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                 i18nKey={
                   isMicrosoftCert
                     ? 'certification.fulltextNoHours'
-                    : 'certification.fulltext'
+                    : isLanguageCert
+                      ? 'certification.fulltextLanguageExam'
+                      : 'certification.fulltext'
                 }
                 title={t(`certification.title.${certSlug}`, certTitle)}
               >

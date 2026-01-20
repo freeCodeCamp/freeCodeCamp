@@ -221,6 +221,7 @@ module.exports.fullyCertifiedUser = {
   currentChallengeId: '',
   isHonest: true,
   isA2EnglishCert: true,
+  isB1EnglishCert: true,
   isFrontEndCert: true,
   isDataVisCert: true,
   isBackEndCert: true,

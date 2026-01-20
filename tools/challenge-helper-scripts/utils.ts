@@ -4,7 +4,7 @@ import { ObjectId } from 'bson';
 import matter from 'gray-matter';
 import { uniq } from 'lodash';
 
-import { challengeTypes } from '../../shared-dist/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { parseCurriculumStructure } from '../../curriculum/src/build-curriculum.js';
 import { parseMDSync } from '../challenge-parser/parser/index.js';
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';

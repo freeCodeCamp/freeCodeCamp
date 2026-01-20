@@ -5,7 +5,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 import {
   currentCertifications,
   legacyCertifications as legacyCerts
-} from '../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
@@ -52,7 +52,7 @@ const legacyCertifications = [
 
 test.describe('Settings - Certified User', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
@@ -257,13 +257,13 @@ test.describe('Settings - Certified User', () => {
 test.describe('Settings - Certified User without Full Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
@@ -297,12 +297,12 @@ test.describe('Settings - New User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({

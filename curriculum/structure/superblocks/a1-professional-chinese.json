@@ -52,9 +52,11 @@
     },
     {
       "dashedName": "zh-a1-chapter-introducing-colleagues-and-family",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "zh-a1-module-introducing-others",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-introducing-others-basics",
             "zh-a1-learn-meeting-the-team",
@@ -67,6 +69,7 @@
         },
         {
           "dashedName": "zh-a1-module-getting-to-know-the-team",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-knowing-the-team-basics",
             "zh-a1-learn-asking-about-the-team",
@@ -79,9 +82,11 @@
     },
     {
       "dashedName": "zh-a1-chapter-expressing-what-you-can-and-cant-do",
+      "comingSoon": true,
       "modules": [
         {
           "dashedName": "zh-a1-module-talking-about-personal-skills",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-personal-skills-basics",
             "zh-a1-learn-can-or-cannot",
@@ -92,6 +97,7 @@
         },
         {
           "dashedName": "zh-a1-module-discussing-team-skills",
+          "comingSoon": true,
           "blocks": [
             "zh-a1-warm-up-team-skills-basics",
             "zh-a1-learn-who-can-do-what-on-the-team",
