@@ -39,6 +39,6 @@
     "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] },
     "build:scripts": {},
-    "test": {}
+    "test": { "dependsOn": ["compile"] }
   }
 }
