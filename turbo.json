@@ -38,6 +38,7 @@
     "create:trending": { "cache": false },
     "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] },
-    "build:scripts": {}
+    "build:scripts": {},
+    "test": {}
   }
 }
