@@ -13,7 +13,7 @@ import 'react-calendar-heatmap/dist/styles.css';
 import './heatmap.css';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import { User } from '../../../redux/prop-types';
 import FullWidthRow from '../../helpers/full-width-row';
 
