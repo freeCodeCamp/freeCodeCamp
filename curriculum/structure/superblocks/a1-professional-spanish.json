@@ -96,6 +96,7 @@
       "modules": [
         {
           "dashedName": "es-a1-module-numbers-30-to-100",
+          "comingSoon": true,
           "blocks": [
             "es-a1-learn-numbers-30-to-60",
             "es-a1-learn-numbers-61-to-100",
