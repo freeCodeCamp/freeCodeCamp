@@ -116,6 +116,19 @@
             "es-a1-review-talking-about-a-company",
             "es-a1-quiz-describing-a-company"
           ]
+        },
+        {
+          "dashedName": "es-a1-module-describing-people-at-work",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-describing-people-at-work-basics",
+            "es-a1-learn-mini-biographies",
+            "es-a1-practice-asking-about-mini-biographies",
+            "es-a1-learn-short-workplace-profile",
+            "es-a1-practice-asking-about-short-workplace-profiles",
+            "es-a1-review-describing-people-at-work",
+            "es-a1-quiz-describing-people-at-work"
+          ]
         }
       ]
     }
