@@ -46,6 +46,7 @@
     "@freecodecamp/client#test": {
       "dependsOn": [
         "compile",
+        "create:env",
         "@freecodecamp/curriculum#build",
         "build:scripts"
       ]
