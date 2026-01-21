@@ -32,8 +32,52 @@ interface ExperienceValidation {
   message: string;
 }
 
+interface ValidationResult {
+  state: FormGroupProps['validationState'];
+  messageKey: string;
+}
+
 const mapDispatchToProps = {
   updateMyExperience
+};
+
+export const validateDate = ({
+  date,
+  isRequired,
+  fieldName
+}: {
+  date: string;
+  isRequired: boolean;
+  fieldName: 'start-date' | 'end-date';
+}): ValidationResult => {
+  // Check if date is required and empty
+  if (isRequired && !date) {
+    return { state: 'error', messageKey: `validation.${fieldName}-required` };
+  }
+
+  // Allow empty for optional dates
+  if (!date) {
+    return { state: 'success', messageKey: '' };
+  }
+
+  // Check if date matches MM/YYYY format
+  const dateRegex = /^\d{2}\/\d{4}$/;
+  if (!dateRegex.test(date)) {
+    return {
+      state: 'error',
+      messageKey: 'profile.experience.date-format-error'
+    };
+  }
+
+  const parsedDate = parse(date, 'MM/yyyy', new Date());
+  // Check if the parsed date is valid (e.g., not an invalid month like 13)
+  if (!isValid(parsedDate)) {
+    return {
+      state: 'error',
+      messageKey: 'profile.experience.date-invalid'
+    };
+  }
+  return { state: 'success', messageKey: '' };
 };
 
 function createEmptyExperienceItem(): ExperienceData {
@@ -162,46 +206,29 @@ const ExperienceSettings = (props: ExperienceProps) => {
   const getCompanyValidation = (company: string) =>
     getTextValidation(company, 'company');
 
-  const validateDate = (
-    date: string,
-    isRequired: boolean,
-    fieldName: 'start-date' | 'end-date'
-  ): ExperienceValidation => {
-    // Check if date is required and empty
-    if (isRequired && !date) {
-      return { state: 'error', message: t(`validation.${fieldName}-required`) };
-    }
-
-    // Allow empty for optional dates
-    if (!date) {
-      return { state: 'success', message: '' };
-    }
-
-    // Check if date matches MM/YYYY format
-    const dateRegex = /^\d{2}\/\d{4}$/;
-    if (!dateRegex.test(date)) {
-      return {
-        state: 'error',
-        message: t('profile.experience.date-format-error')
-      };
-    }
-
-    const parsedDate = parse(date, 'MM/yyyy', new Date());
-    // Check if the parsed date is valid (e.g., not an invalid month like 13)
-    if (!isValid(parsedDate)) {
-      return {
-        state: 'error',
-        message: t('profile.experience.date-invalid')
-      };
-    }
-    return { state: 'success', message: '' };
+  const getStartDateValidation = (startDate: string): ExperienceValidation => {
+    const result = validateDate({
+      date: startDate,
+      isRequired: true,
+      fieldName: 'start-date'
+    });
+    return {
+      state: result.state,
+      message: result.messageKey ? t(result.messageKey) : ''
+    };
   };
 
-  const getStartDateValidation = (startDate: string): ExperienceValidation =>
-    validateDate(startDate, true, 'start-date');
-
-  const getEndDateValidation = (endDate: string): ExperienceValidation =>
-    validateDate(endDate, false, 'end-date');
+  const getEndDateValidation = (endDate: string): ExperienceValidation => {
+    const result = validateDate({
+      date: endDate,
+      isRequired: false,
+      fieldName: 'end-date'
+    });
+    return {
+      state: result.state,
+      message: result.messageKey ? t(result.messageKey) : ''
+    };
+  };
 
   const isItemValid = (experienceItem: ExperienceData): boolean => {
     const { title, company, startDate, endDate, description } = experienceItem;
@@ -259,11 +286,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
     };
     return (
       <FullWidthRow key={id}>
-        <form
-          onSubmit={e => handleSubmit(e, id)}
-          id='experience-items'
-          data-playwright-test-label='experience-items'
-        >
+        <form onSubmit={e => handleSubmit(e, id)}>
           <FormGroup
             controlId={`${id}-title`}
             validationState={
@@ -284,12 +307,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
               aria-describedby={titleMessage ? `${id}-title-error` : undefined}
             />
             {titleMessage ? (
-              <HelpBlock
-                id={`${id}-title-error`}
-                data-playwright-test-label='title-validation'
-              >
-                {titleMessage}
-              </HelpBlock>
+              <HelpBlock id={`${id}-title-error`}>{titleMessage}</HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
@@ -314,12 +332,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
               }
             />
             {companyMessage ? (
-              <HelpBlock
-                id={`${id}-company-error`}
-                data-playwright-test-label='company-validation'
-              >
-                {companyMessage}
-              </HelpBlock>
+              <HelpBlock id={`${id}-company-error`}>{companyMessage}</HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup controlId={`${id}-location`}>
@@ -357,10 +370,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
               }
             />
             {startDateMessage ? (
-              <HelpBlock
-                id={`${id}-startDate-error`}
-                data-playwright-test-label='startDate-validation'
-              >
+              <HelpBlock id={`${id}-startDate-error`}>
                 {startDateMessage}
               </HelpBlock>
             ) : null}
@@ -386,12 +396,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
               }
             />
             {endDateMessage ? (
-              <HelpBlock
-                id={`${id}-endDate-error`}
-                data-playwright-test-label='endDate-validation'
-              >
-                {endDateMessage}
-              </HelpBlock>
+              <HelpBlock id={`${id}-endDate-error`}>{endDateMessage}</HelpBlock>
             ) : null}
           </FormGroup>
           <FormGroup
@@ -414,10 +419,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
               }
             />
             {descriptionMessage ? (
-              <HelpBlock
-                id={`${id}-description-error`}
-                data-playwright-test-label='description-validation'
-              >
+              <HelpBlock id={`${id}-description-error`}>
                 {descriptionMessage}
               </HelpBlock>
             ) : null}
@@ -425,7 +427,6 @@ const ExperienceSettings = (props: ExperienceProps) => {
           <BlockSaveButton
             disabled={isButtonDisabled || pristine}
             bgSize='large'
-            data-playwright-test-label='save-experience'
             {...((isButtonDisabled || pristine) && { tabIndex: -1 })}
           >
             {t('profile.experience.save')}
