@@ -206,6 +206,7 @@ type InteractiveEditorNodule = {
 
 export type ChallengeNode = {
   challenge: {
+    allowAnimations?: boolean;
     block: string;
     blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
@@ -288,6 +289,7 @@ export type PageContext = {
 
 export type DailyCodingChallengeNode = {
   challenge: {
+    allowAnimations?: boolean;
     date: string;
     id: string;
     challengeNumber: number;
@@ -501,6 +503,7 @@ export interface ChallengeData extends CompletedChallenge {
 }
 
 export type ChallengeMeta = {
+  allowAnimations?: boolean;
   block: string;
   id: string;
   isFirstStep: boolean;

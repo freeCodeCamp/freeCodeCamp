@@ -130,7 +130,11 @@ export function* executeChallengeSaga({ payload }) {
       disableLoopProtectPreview: challengeMeta.disableLoopProtectPreview,
       usesTestRunner: true
     });
-    const testRunner = yield call(getTestRunner, { ...buildData, hooks });
+    const testRunner = yield call(getTestRunner, {
+      ...buildData,
+      hooks,
+      allowAnimations: challengeMeta.allowAnimations
+    });
     const testResults = yield executeTests(testRunner, tests);
     yield put(updateTests(testResults));
 

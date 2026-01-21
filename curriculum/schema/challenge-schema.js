@@ -132,6 +132,7 @@ const quizJoi = Joi.object().keys({
 });
 
 const schema = Joi.object().keys({
+  allowAnimations: Joi.boolean(),
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
