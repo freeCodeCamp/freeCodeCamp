@@ -1,0 +1,11 @@
+{
+  "name": "Build a Resume Builder",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-resume-builder",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "challengeOrder": [{ "id": "696f899a9133fe61cd7b8d5a", "title": "Step 1" }]
+}
