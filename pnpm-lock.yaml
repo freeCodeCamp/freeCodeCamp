@@ -118,7 +118,7 @@ importers:
         version: 5.2.4
       '@fastify/type-provider-typebox':
         specifier: 6.1.0
-        version: 6.1.0(typebox@1.0.77)
+        version: 6.1.0(typebox@1.0.78)
       '@freecodecamp/shared':
         specifier: workspace:*
         version: link:../packages/shared
@@ -192,8 +192,8 @@ importers:
         specifier: 16.12.0
         version: 16.12.0
       typebox:
-        specifier: 1.0.77
-        version: 1.0.77
+        specifier: 1.0.78
+        version: 1.0.78
       validator:
         specifier: 13.15.26
         version: 13.15.26
@@ -1528,10 +1528,6 @@ packages:
   '@aws-sdk/types@3.521.0':
     resolution: {integrity: sha512-H9I3Lut0F9d+kTibrhnTRqDRzhxf/vrDu12FUdTXVZEvVAQ7w9yrVHAZx8j2e8GWegetsQsNitO3KMrj4dA4pw==}
     engines: {node: '>=14.0.0'}
-
-  '@aws-sdk/types@3.965.0':
-    resolution: {integrity: sha512-jvodoJdMavvg8faN7co58vVJRO5MVep4JFPRzUNCzpJ98BDqWDk/ad045aMJcmxkLzYLS2UAnUmqjJ/tUPNlzQ==}
-    engines: {node: '>=18.0.0'}
 
   '@aws-sdk/types@3.968.0':
     resolution: {integrity: sha512-Wuumj/1cuiuXTMdHmvH88zbEl+5Pw++fOFQuMCF4yP0R+9k1lwX8rVst+oy99xaxtdluJZXrsccoZoA67ST1Ow==}
@@ -13880,8 +13876,8 @@ packages:
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
-  typebox@1.0.77:
-    resolution: {integrity: sha512-4PgDeVyUcdf1tZyDUr6Nqx0f4WR9pusFhjyDyuTWS7tQTd94Yx0zAUevvbRSn8dC8UG1eWhTTobDEuRk7pxclw==}
+  typebox@1.0.78:
+    resolution: {integrity: sha512-xOPmaDSBCMa6vCHFguteJuOcq73HY2aKexdVUi+zE82dCcCp3FMKaM/SfT4fcNNgskLmjauuU8wr0/1fWNN1Og==}
 
   typed-array-buffer@1.0.3:
     resolution: {integrity: sha512-nAYYwfY3qnzX30IkA6AQZjVbtK6duGontcQm1WSG1MD94YLqK0515GNApXkoxKOWMusVssAHWLh9SeaoefYFGw==}
@@ -15008,7 +15004,7 @@ snapshots:
       '@aws-crypto/sha256-js': 3.0.0
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.965.0
+      '@aws-sdk/types': 3.968.0
       '@aws-sdk/util-locate-window': 3.965.2
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
@@ -15027,7 +15023,7 @@ snapshots:
   '@aws-crypto/sha256-js@3.0.0':
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.965.0
+      '@aws-sdk/types': 3.968.0
       tslib: 1.14.1
     optional: true
 
@@ -15048,7 +15044,7 @@ snapshots:
 
   '@aws-crypto/util@3.0.0':
     dependencies:
-      '@aws-sdk/types': 3.965.0
+      '@aws-sdk/types': 3.968.0
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
     optional: true
@@ -15736,12 +15732,6 @@ snapshots:
   '@aws-sdk/types@3.521.0':
     dependencies:
       '@smithy/types': 2.12.0
-      tslib: 2.8.1
-    optional: true
-
-  '@aws-sdk/types@3.965.0':
-    dependencies:
-      '@smithy/types': 4.12.0
       tslib: 2.8.1
     optional: true
 
@@ -18516,9 +18506,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@fastify/type-provider-typebox@6.1.0(typebox@1.0.77)':
+  '@fastify/type-provider-typebox@6.1.0(typebox@1.0.78)':
     dependencies:
-      typebox: 1.0.77
+      typebox: 1.0.78
 
   '@fortawesome/fontawesome-common-types@6.7.1': {}
 
@@ -31603,7 +31593,7 @@ snapshots:
 
   type@2.7.2: {}
 
-  typebox@1.0.77: {}
+  typebox@1.0.78: {}
 
   typed-array-buffer@1.0.3:
     dependencies:
