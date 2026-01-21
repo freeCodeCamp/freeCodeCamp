@@ -1,4 +1,4 @@
-const { writeFileSync } = require('fs');
+const { mkdirSync, writeFileSync } = require('fs');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
@@ -8,11 +8,7 @@ const {
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
-  const staticPath = path.join(__dirname, '../../../client/static/js');
-  const configPath = path.join(
-    __dirname,
-    '../../../client/config/browser-scripts/'
-  );
+
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
@@ -23,19 +19,20 @@ module.exports = (env = {}) => {
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
-      publicPath: '/js/',
       filename: chunkData => {
         // construct and output the filename here, so the client can use the
         // json to find the file.
         const filename = `${chunkData.chunk.name}-${chunkData.chunk.contentHash.javascript}`;
+        mkdirSync('dist/config', { recursive: true });
         writeFileSync(
-          path.join(configPath, `${chunkData.chunk.name}.json`),
+          path.join('dist/config', `${chunkData.chunk.name}.json`),
           `{"filename": "${filename}"}`
         );
         return filename + '.js';
       },
       chunkFilename: '[name]-[contenthash].js',
-      path: staticPath
+      path: path.resolve(__dirname, 'dist/artifacts'),
+      clean: true
     },
     stats: {
       // Display bailout reasons

@@ -8,6 +8,9 @@
     "node": ">=24",
     "pnpm": ">=10"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
