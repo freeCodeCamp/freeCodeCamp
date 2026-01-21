@@ -1,7 +1,10 @@
 import React from 'react';
-import MonacoEditor, { monaco } from 'react-monaco-editor';
+import Loadable from '@loadable/component';
+import type { EditorWillMount, monaco } from 'react-monaco-editor';
 import { useActiveCode, useSandpack } from '@codesandbox/sandpack-react';
 import './custom-monaco-editor.css';
+
+const MonacoEditor = Loadable(() => import('react-monaco-editor'));
 
 const CustomMonacoEditor = () => {
   const { code, updateCode } = useActiveCode();
@@ -65,7 +68,7 @@ const CustomMonacoEditor = () => {
     }
   };
 
-  const handleEditor = (monaco: typeof import('monaco-editor')) => {
+  const handleEditor: EditorWillMount = monaco => {
     monaco.editor.defineTheme('fcc-dark', FCC_DARK_CUSTOM);
   };
 
