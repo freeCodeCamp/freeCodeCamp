@@ -281,9 +281,13 @@ const ExperienceSettings = (props: ExperienceProps) => {
               value={title}
               name='experience-title'
               id={`${id}-title-input`}
+              aria-describedby={titleMessage ? `${id}-title-error` : undefined}
             />
             {titleMessage ? (
-              <HelpBlock data-playwright-test-label='title-validation'>
+              <HelpBlock
+                id={`${id}-title-error`}
+                data-playwright-test-label='title-validation'
+              >
                 {titleMessage}
               </HelpBlock>
             ) : null}
@@ -305,9 +309,15 @@ const ExperienceSettings = (props: ExperienceProps) => {
               value={company}
               name='experience-company'
               id={`${id}-company-input`}
+              aria-describedby={
+                companyMessage ? `${id}-company-error` : undefined
+              }
             />
             {companyMessage ? (
-              <HelpBlock data-playwright-test-label='company-validation'>
+              <HelpBlock
+                id={`${id}-company-error`}
+                data-playwright-test-label='company-validation'
+              >
                 {companyMessage}
               </HelpBlock>
             ) : null}
@@ -342,6 +352,9 @@ const ExperienceSettings = (props: ExperienceProps) => {
               name='experience-startDate'
               id={`${id}-startDate-input`}
               placeholder='MM/YYYY'
+              aria-describedby={
+                startDateMessage ? `${id}-startDate-error` : undefined
+              }
             />
             {startDateMessage ? (
               <HelpBlock
@@ -368,6 +381,9 @@ const ExperienceSettings = (props: ExperienceProps) => {
               value={endDate || ''}
               name='experience-endDate'
               id={`${id}-endDate-input`}
+              aria-describedby={
+                endDateMessage ? `${id}-endDate-error` : undefined
+              }
             />
             {endDateMessage ? (
               <HelpBlock
@@ -393,9 +409,15 @@ const ExperienceSettings = (props: ExperienceProps) => {
               value={description}
               name='experience-description'
               id={`${id}-description-input`}
+              aria-describedby={
+                descriptionMessage ? `${id}-description-error` : undefined
+              }
             />
             {descriptionMessage ? (
-              <HelpBlock data-playwright-test-label='description-validation'>
+              <HelpBlock
+                id={`${id}-description-error`}
+                data-playwright-test-label='description-validation'
+              >
                 {descriptionMessage}
               </HelpBlock>
             ) : null}
