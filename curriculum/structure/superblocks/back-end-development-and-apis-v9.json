@@ -21,7 +21,10 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": ["lecture-working-with-npm-scripts"]
+          "blocks": [
+            "lecture-introduction-to-npm",
+            "lecture-working-with-npm-scripts"
+          ]
         },
         {
           "dashedName": "http-and-the-web-standards-model",
@@ -48,26 +51,14 @@
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "websockets",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "node-and-sql",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "websockets", "comingSoon": true, "blocks": [] },
+        { "dashedName": "node-and-sql", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "security-and-privacy",
           "comingSoon": true,
           "blocks": []
         },
-        {
-          "dashedName": "authentication",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "authentication", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "tooling-and-deployment",
           "comingSoon": true,

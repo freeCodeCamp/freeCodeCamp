@@ -1410,11 +1410,19 @@
           "En este primer curso, aprenderá expresiones comunes para situaciones que puede encontrar en su primer día de trabajo. Aprenderá sobre presentaciones, cómo conocer gente, cómo pedir recomendaciones para el almuerzo, y cómo obtener una tarjeta de acceso de seguridad."
         ]
       },
+      "en-a2-quiz-greetings-first-day-office": {
+        "title": "First Day at The Office Greetings Quiz",
+        "intro": ["", ""]
+      },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Aprenda las presentaciones en una reunión de equipo en línea",
         "intro": [
           "En este curso, aprenderá a como dar una presentación personal. También aprenderá a como expresar el estado de tu profesión, y a compartir sus metas en reuniones grupales."
         ]
+      },
+      "en-a2-quiz-introductions-online-team-meeting": {
+        "title": "Online Team Introductions Quiz",
+        "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Aprenda a iniciar conversaciones en la sala de descanso",
@@ -1422,11 +1430,19 @@
           "En este curso, aprenderá cómo iniciar una conversación en entornos informales. También aprenderá a hablar acerca de sus pasatiempos y rasgos de personalidad. Incluso aprenderás a como preguntar sobre lugares alrededor de la ciudad."
         ]
       },
+      "en-a2-quiz-conversation-starters-break-room": {
+        "title": "Break Room Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Aprenda a hablar sobre una jornada laboral típica y sus tareas",
         "intro": [
           "En este curso, aprenderás cómo hablar sobre tu día en el trabajo y las tareas que realizas en tu lugar de trabajo y cómo compartirlas con otros. Se centra principalmente en las estructuras utilizadas para describir tus actividades y vocabulario relacionado con las tareas."
         ]
+      },
+      "en-a2-quiz-talk-about-typical-workday-tasks": {
+        "title": "Talking About Your Workday Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Aprenda a hablar sobre su rutina matutina o vespertina",
@@ -1434,11 +1450,19 @@
           "En este curso, aprenderás a como hablar acerca de los detalles de tu rutina y como compartirlos con alguien más. Se centra principalmente en las estructuras utilizadas para declarar acciones turinarias y vocabulario relacionado."
         ]
       },
+      "en-a2-quiz-discuss-morning-evening-routine": {
+        "title": "Daily Routines at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-describe-your-current-project": {
         "title": "Aprenda a describir su proyecto actual",
         "intro": [
           "En este curso, aprenderás a como habalr sobre los proyectos en los que estás involucrado y como informar a otros lo que estás haciendo en estos proyectos. Principalmente se centra en las estructuras utilizadas para informar y en vocabulario relacionado."
         ]
+      },
+      "en-a2-quiz-describe-current-project": {
+        "title": "Describing Your Current Project Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Aprenda a preguntar y compartir sobre antecedentes educativos y profesionales",
@@ -1446,11 +1470,19 @@
           "En este curso, aprenderá a preguntar sobre los antecedentes educativos y profesionales de otra persona y también aprenderá a compartir información sobre sus antecedentes."
         ]
       },
+      "en-a2-quiz-educational-professional-background": {
+        "title": "Educational and Professional Background Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Aprenda a hablar sobre pasatiempos e intereses",
         "intro": [
           "En este curso, aprenderá sobre diversas maneras de hablar acerca de pasatiempos y las cosas que le interesan. También aprenderá cómo preguntar a otras personas sobre sus pasatiempos e invitarles a ellos a unirse a los suyos."
         ]
+      },
+      "en-a2-quiz-talk-about-hobbies-interests": {
+        "title": "Talking About Hobbies and Interests Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
         "title": "Aprende a hablar sobre roles y responsabilidades",
@@ -1458,11 +1490,19 @@
           "En este curso, hablaremos sobre los roles de las personas y sus responsabilidades en una compañía y fuera de ella. Aprenderás a preguntar sobre estos roles y responsabilidades y cómo compartir información sobre tí relacionada con este tema."
         ]
       },
+      "en-a2-quiz-discuss-roles-responsibilities": {
+        "title": "Roles and Responsibilities Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Aprenda a tener una conversación sobre preferencias y motivaciones",
         "intro": [
           "En este curso aprenderás cómo preguntar qué motiva a las personas en su vida personal y profesional, responder preguntas relacionadas con tus motivaciones y discutir acerca de las preferencias de las personas."
         ]
+      },
+      "en-a2-quiz-preferences-motivations": {
+        "title": "Preferences and Motivations Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Aprenda a discutir las tendencias populares en tecnología",
@@ -1470,11 +1510,19 @@
           "En este curso aprenderás cómo discutir sobre temas que todo el mundo está hablando en tecnología actualmente."
         ]
       },
+      "en-a2-quiz-popular-technology-trends": {
+        "title": "Technology Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Aprenda a aclarar información en diferentes interacciones",
         "intro": [
           "En este curso, aprenderás cómo verificar si tu información es correcta y cómo pedir aclaraciones cuando algo no te queda claro."
         ]
+      },
+      "en-a2-quiz-clarify-information-interactions": {
+        "title": "Clarifying Information Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Aprenda a utilizar el vocabulario básico de programación en conversaciones",
@@ -1482,11 +1530,19 @@
           "Este curso presentará el vocabulario básico relacionado con la programación. Aprenderás a formular preguntas relacionadas con conceptos básicos de programación."
         ]
       },
+      "en-a2-quiz-basic-programming-vocabulary": {
+        "title": "Basic Programming Vocabulary Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Aprenda a utilizar conceptos y términos relacionados con el código",
         "intro": [
           "En este curso, se le presentarán términos relacionados con la codificación y aprenderá a utilizarlos en una conversación."
         ]
+      },
+      "en-a2-quiz-code-related-concepts-terms": {
+        "title": "Code Concepts and Terms Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Aprende a Como Discutir las Tendencias y Actualizaciones Tecnológicas",
@@ -1494,11 +1550,19 @@
           "En este curso, conocerás algunas tendencias recientes en el mundo de la tecnología y aprenderás a hablar de ellas en inglés."
         ]
       },
+      "en-a2-quiz-tech-trends-updates": {
+        "title": "Tech Updates and Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Aprenda a Como Ayudar un Compañero de Trabajo a Solucionar Problemas en GitHub",
         "intro": [
           "En este curso, aprenderás expresiones relacionadas con la forma de pedir ayuda a un compañero de trabajo, así como la forma de ofrecerle ayuda."
         ]
+      },
+      "en-a2-quiz-help-coworker-github-troubleshooting": {
+        "title": "Helping a Coworker on GitHub Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Aprende a Cómo Compartir Tu Progreso en Reuniones de Pie Semanales",
@@ -1506,11 +1570,19 @@
           "Este curso te enseñará a hablar de tus proyectos en términos de lo que ya has hecho y de lo que estás haciendo actualmente en ellos."
         ]
       },
+      "en-a2-quiz-share-progress-weekly-meeting": {
+        "title": "Weekly Meeting Progress Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Aprende a Como Preguntar por Aclaración sobre la Comprensión del Código",
         "intro": [
           "En este curso, verás cómo puedes hacer preguntas para aclarar cosas que no te quedan muy claras en un código."
         ]
+      },
+      "en-a2-quiz-ask-for-code-clarification": {
+        "title": "Asking for Code Clarification Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Aprende a Como Documentar Código para un Proyecto",
@@ -1518,11 +1590,19 @@
           "Este curso te mostrará expresiones relacionadas con lo que hay que hacer al documentar código."
         ]
       },
+      "en-a2-quiz-document-code-project": {
+        "title": "Documenting Code Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Aprende a Como Leer y Entender Documentación del Código",
         "intro": [
           "Este curso presentará más expresiones relacionadas con la documentación del código y aportará consejos sobre cómo entenderla."
         ]
+      },
+      "en-a2-quiz-read-understand-code-documentation": {
+        "title": "Understanding Code Documentation Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Aprende a Como Analizar Documentación del Código",
@@ -1530,11 +1610,19 @@
           "En este curso, verás algunas ideas que te ayudarán a abordar la documentación y analizarla en términos sencillos."
         ]
       },
+      "en-a2-quiz-analyze-code-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Aprende a Como Compartir el Progreso y los Logros",
         "intro": [
           "En este curso aprenderás a compartir tus progresos con tus compañeros de trabajo y a contar los éxitos que has tenido en tus proyectos."
         ]
+      },
+      "en-a2-quiz-share-progress-accomplishments": {
+        "title": "Sharing Progress and Achievements Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Aprende cómo hablar sobre actualizaciones y planes para tareas y proyectos",
@@ -1542,11 +1630,19 @@
           "Este curso te enseñará a hablar de los avances más recientes en tus proyectos y de tus planes."
         ]
       },
+      "en-a2-quiz-task-project-updates-plans": {
+        "title": "Task and Project Updates Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Aprende a Como Expresar Acuerdo y Desacuerdo",
         "intro": [
           "Este curso te enseñará a decir que estás de acuerdo con lo que dice otra persona y a decirle educadamente que no lo está."
         ]
+      },
+      "en-a2-quiz-express-agreement-disagreement": {
+        "title": "Expressing Agreement and Disagreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Aprende a Como Ofrecer Soporte Técnico y Orientación",
@@ -1554,17 +1650,29 @@
           "En este curso, verás formas de ofrecer ayuda en términos de detalles técnicos a otra persona."
         ]
       },
+      "en-a2-quiz-offer-technical-support-guidance": {
+        "title": "Offering Technical Support Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Aprende a Como Responder y Recibir Orientación",
         "intro": [
           "Este curso te enseñará a pedir ayuda a un compañero de trabajo cuando la necesites."
         ]
       },
+      "en-a2-quiz-request-receive-guidance": {
+        "title": "Requesting and Receiving Guidance Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Aprende a Cómo Proporcionar Explicaciones Cuando Ayudas a Otros",
         "intro": [
           "Este curso te proporcionará formas de explicar las cosas a otras personas mientras las asistes."
         ]
+      },
+      "en-a2-quiz-provide-explanations-helping-others": {
+        "title": "Explaining Things to Others Quiz",
+        "intro": ["", ""]
       },
       "en-a2-certification-exam": {
         "title": "Exámen de certificación de inglés para desarrolladores A2",
@@ -1589,15 +1697,27 @@
           "Este curso le mostrará formas de hablar sobre lugares y eventos de manera conversacional."
         ]
       },
+      "en-b1-quiz-describe-places-events": {
+        "title": "Describing Places and Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Aprende a hablar de experiencias pasadas",
         "intro": [
           "En este curso aprenderás a compartir experiencias que tuviste en el pasado."
         ]
       },
+      "en-b1-quiz-past-experiences": {
+        "title": "Talking About Past Experiences Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-activities": {
         "title": "Aprende a hablar de actividades pasadas",
         "intro": ["En este curso aprenderás a hablar sobre cosas que hiciste."]
+      },
+      "en-b1-quiz-past-activities": {
+        "title": "Talking About Past Activities Quiz",
+        "intro": ["", ""]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Aprende el presente perfecto hablando de accesibilidad",
@@ -1605,11 +1725,19 @@
           "En este curso aprenderás a utilizar la estructura presente perfecto y aprenderás un poco más sobre accesibilidad."
         ]
       },
+      "en-b1-quiz-present-perfect-accessibility": {
+        "title": "Present Perfect and Accessibility Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-plan-future-events": {
         "title": "Aprende a planificar eventos futuros",
         "intro": [
           "En este curso aprenderás a utilizar las diferentes formas del futuro para planificar los próximos eventos."
         ]
+      },
+      "en-b1-quiz-plan-future-events": {
+        "title": "Planning Future Events Quiz",
+        "intro": ["", ""]
       },
       "learn-future-continuous-while-describing-actions": {
         "title": "Aprende el futuro continuo describiendo acciones",
@@ -1617,11 +1745,19 @@
           "En este curso aprenderás a utilizar el tiempo futuro continuo y cómo describir acciones a realizar."
         ]
       },
+      "en-b1-quiz-future-continuous-actions": {
+        "title": "Future Continuous Actions Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-conditionals": {
         "title": "Aprende a utilizar los condicionales",
         "intro": [
           "En este curso, aprenderás a usar los condicionales para describir resultados hipotéticos dependiendo si ciertas condiciones se cumplen."
         ]
+      },
+      "en-b1-quiz-conditionals": {
+        "title": "Using Conditionals Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-feedback": {
         "title": "Aprende a compartir opiniones",
@@ -1629,11 +1765,19 @@
           "En este curso, aprenderás formas de expresar tu opinión sobre el trabajo de otras personas, resaltando tanto sus fortalezas como sus puntos a mejorar."
         ]
       },
+      "en-b1-quiz-share-feedback": {
+        "title": "Sharing Feedback Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-your-opinion": {
         "title": "Aprende a compartir tu opinión",
         "intro": [
           "Este curso le mostrará como puede expresar sus ideas y sentimientos hacía temas una discusión."
         ]
+      },
+      "en-b1-quiz-share-opinions": {
+        "title": "Sharing Opinions Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-agreement": {
         "title": "Aprende a expresar tu acuerdo",
@@ -1641,11 +1785,19 @@
           "En este curso aprenderás a expresar tu acuerdo en diferentes entornos profesionales."
         ]
       },
+      "en-b1-quiz-express-agreement": {
+        "title": "Expressing Agreement Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-disagreement": {
         "title": "Aprende a expresar desacuerdos",
         "intro": [
           "En este curso aprenderás a expresar desacuerdo en distintos ámbitos profesionales."
         ]
+      },
+      "en-b1-quiz-express-disagreement": {
+        "title": "Expressing Disagreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-concerns": {
         "title": "Aprende a expresar tus preocupaciones",
@@ -1653,11 +1805,19 @@
           "En este curso, aprenderás a informar a otras personas de que estás preocupado por cosas que puedan pasar a tus proyectos y tareas."
         ]
       },
+      "en-b1-quiz-express-concerns": {
+        "title": "Expressing Concerns Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Aprende a expresar decisiones basadas en comparaciones",
         "intro": [
           "En este curso aprenderás a comparar cosas como herramientas o empresas usando palabras como mejor, más rápido y mejor. También practicarás teniendo conversaciones amistosas para dar opiniones y tomar decisiones"
         ]
+      },
+      "en-b1-quiz-decisions-comparisons": {
+        "title": "Making Decisions with Comparisons Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Aprende a utilizar los verbos modales",
@@ -1665,11 +1825,19 @@
           "En este curso, aprenderás a hablar de normas, describir las cosas que son necesarias y lo que podría pasar si no lo fueran. También practicarás preguntando y respondiendo preguntas claramente, y añadiendo detalles útiles a tus ideas."
         ]
       },
+      "en-b1-quiz-modal-verbs": {
+        "title": "Using Modal Verbs Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-manage-a-conversation": {
         "title": "Aprende a gestionar una conversación",
         "intro": [
           "En este curso, aprenderás cómo manejar conversaciones en el trabajo - tales como continuar una charla después de un descanso, cambiar temas educadamente, o interrumpir cuando sea necesario. También practicarás usando expresiones útiles para mantener una conversación clara, amistosa y organizada."
         ]
+      },
+      "en-b1-quiz-manage-conversations": {
+        "title": "Managing Conversations Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Aprende a aclarar malentendidos",
@@ -1677,11 +1845,19 @@
           "En este curso, aprenderás a pedir y dar explicaciones cuando algo no esté claro, usando preguntas educadas y respuestas útiles. También practicarás adivinar el significado de palabras nuevas, describir problemas y aclarar malentendidos de forma amable y profesional."
         ]
       },
+      "en-b1-quiz-clarify-misunderstandings": {
+        "title": "Clarifying Misunderstandings Quiz",
+        "intro": ["", ""]
+      },
       "learn-about-speculation-and-requests": {
         "title": "Conoce sobre la especulación y las peticiones",
         "intro": [
           "En este curso, aprenderás a hablar sobre situaciones que deberían o podrían haber ocurrido en el pasado, y a dar sugerencias o hacer peticiones educadas. También practicarás el uso de expresiones para adivinar qué pudo haber causado un problema y cómo colaborar para resolverlo de forma clara y respetuosa."
         ]
+      },
+      "en-b1-quiz-speculation-requests": {
+        "title": "Speculation and Requests Quiz",
+        "intro": ["", ""]
       },
       "learn-about-adverbial-phrases": {
         "title": "Aprende sobre las frases adverbiales",
@@ -1689,11 +1865,19 @@
           ".En este curso, aprenderás a cómo usar frases que dán más información acerca de cuándo, dónde, cuán a menudo, o cuánto algo pasa. También, practicarás el uso de estas frases para describir tareas, hablar acerca de planes, y explicar resultados de tu día a día, más claramente."
         ]
       },
+      "en-b1-quiz-adverbial-phrases": {
+        "title": "Adverbial Phrases Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Aprende a utilizar adjetivos en las conversaciones",
         "intro": [
           "En este curso, aprenderás a usar adjetivos para describir cosas con claridad, comparar opciones y destacar detalles importantes en conversaciones profesionales. También practicarás cómo hacer que tus ideas sean más sólidas y persuasivas."
         ]
+      },
+      "en-b1-quiz-adjectives-conversations": {
+        "title": "Using Adjectives in Conversations Quiz",
+        "intro": ["", ""]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Aprende los determinantes y el uso avanzado de los artículos",
@@ -1701,11 +1885,19 @@
           "En este curso, aprenderás a usar determinantes para dar información clara sobre cantidad, elección y distribución. También practicarás el uso de artículos de formas más avanzadas, especialmente en conversaciones profesionales sobre planificación, tareas y recursos."
         ]
       },
+      "en-b1-quiz-determiners-articles": {
+        "title": "Determiners and Articles Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-reported-speech": {
         "title": "Aprende a utilizar el discurso relatado",
         "intro": [
           "En este curso, aprenderás a reportar lo que alguien más dijo de manera clara y natural. También practicarás el uso correcto de los tiempos verbales y estructuras de oraciones para compartir retroalimentación, explicar situaciones y hablar sobre eventos pasados en conversaciones profesionales."
         ]
+      },
+      "en-b1-quiz-reported-speech": {
+        "title": "Using Reported Speech Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Aprende a utilizar las preposiciones según el contexto",
@@ -1713,17 +1905,29 @@
           "En este curso, vas a aprender a usar preposiciones para describir tiempo, lugar y dirección de forma clara en las situaciones laborales del día a día. También vas a practicar hablando sobre horarios, dando direcciones y explicando dónde se encuentran las personas o las cosas usando un lenguaje natural y preciso."
         ]
       },
+      "en-b1-quiz-prepositions-context": {
+        "title": "Using Prepositions by Context Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Aprende a hablar de números con un compañero de trabajo",
         "intro": [
           "En este curso, aprenderás a usar números para hablar sobre tareas, horarios, presupuestos y recursos en el lugar de trabajo. Practicarás el uso de números cardinales y ordinales, porcentajes y fracciones para organizar el trabajo, explicar el progreso y compartir inventarios o actualizaciones financieras con claridad con tu equipo."
         ]
       },
+      "en-b1-quiz-numbers-at-work": {
+        "title": "Talking About Numbers at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Aprende verbos frasales y modismos comunes",
         "intro": [
           "En este curso, aprenderás a usar verbos compuestos e idiomáticos comunes para sonar más natural y seguro en el trabajo. Practicarás el uso de expresiones para dar opiniones, hacer sugerencias, organizar reuniones y hablar sobre tareas en conversaciones profesionales diarias."
         ]
+      },
+      "en-b1-quiz-phrasal-verbs-idioms": {
+        "title": "Phrasal Verbs and Idioms Quiz",
+        "intro": ["", ""]
       },
       "en-b1-certification-exam": {
         "title": "Examen de Certificación de Inglés para Desarrolladores B1",
@@ -5182,11 +5386,41 @@
       "classes-and-the-this-keyword": "Clases",
       "lab-bank-account-manager": "Desarrollar un Programa de Gestión de Cuentas Bancarias",
       "recursion": "Recursión",
+      "data-structures": "Data Structures",
+      "algorithms": "Algorithms",
+      "graphs-and-trees": "Graphs and Trees",
+      "dynamic-programming": "Dynamic Programming",
       "functional-programming": "Programación funcional",
       "asynchronous-javascript": "JavaScript asincrónico",
       "lab-weather-app": "Desarrolla una aplicación del tiempo",
       "review-javascript": "Revisión de JavaScript",
       "javascript-certification-exam": "Examen de certificación de JavaScript"
+    },
+    "module-intros": {
+      "data-structures": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about linked lists, stacks, queues and more."
+        ]
+      },
+      "algorithms": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+        ]
+      },
+      "graphs-and-trees": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about graphs, trees and tries."
+        ]
+      },
+      "dynamic-programming": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn how dynamic programming works."
+        ]
+      }
     },
     "blocks": {
       "lecture-introduction-to-javascript": {
@@ -6284,6 +6518,12 @@
           "En esta conferencia, aprenderás sobre la recursión y la pila de llamadas."
         ]
       },
+      "lab-countdown": {
+        "title": "Construye una cuenta regresiva",
+        "intro": [
+          "Para este laboratorio, se construirá una función de cuenta regresiva que devuelve un array de números contando de un número dado hasta 1."
+        ]
+      },
       "workshop-decimal-to-binary-converter": {
         "title": "Construir un Convertidor de Decimal a Binario",
         "intro": [
@@ -6700,6 +6940,12 @@
         "title": "Cuestionario de librerías y marcos CSS",
         "intro": [
           "Pon a prueba lo que has aprendido sobre librerías y marcos CSS con este cuestionario."
+        ]
+      },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introducción a la visualización de datos",
+        "intro": [
+          "En estas lecciones, aprenderás sobre los conceptos básicos de visualización de datos."
         ]
       },
       "lecture-introduction-to-typescript": {
@@ -7579,9 +7825,9 @@
         ]
       },
       "review-node-js-core-modules": {
-        "title": "Node JS Core Modules Review",
+        "title": "Revisión de los módulos principales de Node JS",
         "intro": [
-          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+          "Revisa los conceptos de los módulos principales de Node JS para prepararte para el próximo cuestionario."
         ]
       },
       "review-node-js-intro": {
@@ -7600,6 +7846,12 @@
         "title": "Entendiendo el Modelo de Solicitud-Respuesta HTTP",
         "intro": [
           "Aprende los fundamentos de cómo funciona la comunicación web a través del modelo de solicitud-respuesta HTTP, explora diferentes tipos de recursos web y respuestas, y comprende cómo los formularios manejan el envío de datos utilizando varios métodos HTTP."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
         ]
       },
       "lecture-working-with-npm-scripts": {
@@ -7958,10 +8210,10 @@
         ]
       },
       "workshop-html-video-player": {
-        "title": "Build an HTML Video Player",
+        "title": "Construye un Reproductor de Video HTML",
         "intro": [
-          "In this workshop, you'll use HTML to create a basic video player.",
-          "This project will cover the <code>video</code> element, the video player setup, and more."
+          "En este taller, usarás HTML para crear un reproductor de vídeo básico.",
+          "Este proyecto cubrirá el elemento <code>video</code>, la configuración del reproductor de vídeo y más."
         ]
       },
       "lab-html-audio-and-video-player": {
@@ -8166,9 +8418,9 @@
         ]
       },
       "lab-debug-donation-form": {
-        "title": "Debug a Donation Form",
+        "title": "Depura un formulario de donación",
         "intro": [
-          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
+          "En este laboratorio depurarás un formulario de donación corrigiendo errores de sintaxis HTML y mejorando la accesibilidad."
         ]
       },
       "lecture-introduction-to-aria": {

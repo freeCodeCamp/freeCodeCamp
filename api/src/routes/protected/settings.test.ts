@@ -25,6 +25,7 @@ import {
   getWaitMessage,
   validateSocialUrl
 } from './settings.js';
+import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const baseProfileUI = {
   isLocked: false,
@@ -110,15 +111,28 @@ describe('settingRoutes', () => {
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGY';
       const tokenWithMissingUser =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGH';
+      const tokenWithDifferentUser =
+        '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGI';
       const expiredToken =
         '4kZFEVHChxzY7kX1XSzB4uhh8fcUwcqAGWV9hv25hsI6nviVlwzXCv2YE9lENYGE';
 
-      const tokens = [validToken, tokenWithMissingUser, expiredToken];
+      const tokens = [
+        validToken,
+        tokenWithMissingUser,
+        expiredToken,
+        tokenWithDifferentUser
+      ];
       const newEmail = 'anything@goes.com';
+      const otherUserEmail = 'another@user.com';
       const encodedEmail = Buffer.from(newEmail).toString('base64');
       const notEmail = Buffer.from('foobar.com').toString('base64');
 
       beforeEach(async () => {
+        const otherUser = await findOrCreateUser(
+          fastifyTestInstance,
+          otherUserEmail
+        );
+
         await fastifyTestInstance.prisma.authToken.create({
           data: {
             created: new Date(),
@@ -135,6 +149,15 @@ describe('settingRoutes', () => {
             ttl: 1000,
             // Random ObjectId
             userId: '6650ac23ccc46c0349a86dee'
+          }
+        });
+
+        await fastifyTestInstance.prisma.authToken.create({
+          data: {
+            created: new Date(),
+            id: tokenWithDifferentUser,
+            ttl: 1000,
+            userId: otherUser.id
           }
         });
 
@@ -158,6 +181,17 @@ describe('settingRoutes', () => {
             emailAuthLinkTTL: new Date()
           }
         });
+
+        // Simulate another user changing their email. This user is signed out.
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: otherUser.id },
+          data: {
+            newEmail,
+            emailVerified: false,
+            emailVerifyTTL: new Date(),
+            emailAuthLinkTTL: new Date()
+          }
+        });
       });
 
       afterEach(async () => {
@@ -167,6 +201,9 @@ describe('settingRoutes', () => {
         await fastifyTestInstance.prisma.user.update({
           where: { id: defaultUserId },
           data: { newEmail: null, email: defaultUserEmail, emailVerified: true }
+        });
+        await fastifyTestInstance.prisma.user.deleteMany({
+          where: { email: otherUserEmail }
         });
       });
 
@@ -216,6 +253,20 @@ describe('settingRoutes', () => {
       test('should reject requests when the auth token exists, but the user does not', async () => {
         const res = await superGet(
           `/confirm-email?email=${encodedEmail}&token=${validButMissingToken}`
+        );
+
+        expect(res.headers.location).toBe(
+          `${HOME_LOCATION}?` + formatMessage(defaultErrorMessage)
+        );
+        expect(res.status).toBe(302);
+      });
+
+      test('should reject requests when the target user does not match the signed in user', async () => {
+        // The signed in user is the default (foo@bar.com), but the token is for
+        // a different user (another@user.com).
+
+        const res = await superGet(
+          `/confirm-email?email=${encodedEmail}&token=${tokenWithDifferentUser}`
         );
 
         expect(res.headers.location).toBe(
@@ -991,6 +1042,75 @@ Happy coding!
 
         expect(response.body).toEqual(updateErrorResponse);
         expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT allows updating location/about when picture is unchanged (even without extension)', async () => {
+        // Simulate a user who already has a GitHub avatar URL saved (e.g., from before strict validation)
+        const githubAvatarUrl =
+          'https://avatars0.githubusercontent.com/u/34585031?v=4';
+        await fastifyTestInstance.prisma.user.update({
+          where: { id: defaultUserId },
+          data: {
+            picture: githubAvatarUrl,
+            about: 'Initial about',
+            name: 'Test User',
+            location: 'Initial Location'
+          }
+        });
+
+        // Now update only location and about, keeping the same picture (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Updated about text',
+          name: 'Test User',
+          location: 'New Location',
+          picture: githubAvatarUrl // Same URL, no extension - should skip validation
+        });
+
+        expect(updateResponse.body).toEqual({
+          message: 'flash.updated-about-me',
+          type: 'success'
+        });
+        expect(updateResponse.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.about).toEqual('Updated about text');
+        expect(user?.location).toEqual('New Location');
+        expect(user?.picture).toEqual(githubAvatarUrl);
+      });
+
+      test('PUT still validates picture when it is actually changed', async () => {
+        // Set initial valid picture
+        const validPictureUrl = 'https://example.com/avatar.png';
+        await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: validPictureUrl
+        });
+
+        // Try to change picture to invalid URL (no extension)
+        const updateResponse = await superPut('/update-my-about').send({
+          about: 'Initial',
+          name: 'Test',
+          location: 'Location',
+          picture: 'https://example.com/new-avatar' // Changed but invalid
+        });
+
+        expect(updateResponse.statusCode).toEqual(400);
+        expect(updateResponse.body).toEqual({
+          message: 'flash.wrong-updating',
+          type: 'danger'
+        });
+
+        // Verify picture wasn't updated
+        const user = await fastifyTestInstance?.prisma.user.findFirst({
+          where: { email: 'foo@bar.com' }
+        });
+
+        expect(user?.picture).toEqual(validPictureUrl);
       });
     });
 

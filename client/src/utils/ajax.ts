@@ -13,7 +13,7 @@ import type {
   SurveyResults,
   User
 } from '../redux/prop-types';
-import { DonationDuration } from '../../../shared-dist/config/donation-settings';
+import { DonationDuration } from '@freecodecamp/shared/config/donation-settings';
 
 const { apiLocation } = envData;
 

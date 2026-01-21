@@ -1,9 +1,9 @@
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
-import type { FastifyInstance } from 'fastify';
+import type { FastifyError, FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate.js';
+import { isValidUsername } from '@freecodecamp/shared/utils/validate';
 import * as schemas from '../../schemas.js';
 import { createAuthToken, isExpired } from '../../utils/tokens.js';
 import { API_LOCATION } from '../../utils/env.js';
@@ -134,7 +134,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  fastify.setErrorHandler((error, request, reply) => {
+  fastify.setErrorHandler((error: FastifyError, request, reply) => {
     const logger = fastify.log.child({ req: request });
     if (error.validation) {
       logger.warn({ validationError: error.validation });
@@ -524,11 +524,16 @@ ${isLinkSentWithinLimitTTL}`
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
-      const pictureIsValid = isValidPictureUrl(req.body.picture);
-      if (!pictureIsValid) {
-        logger.warn(`Invalid picture URL: ${req.body.picture}`);
-        void reply.code(400);
-        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+
+      // No need to validate if picture is being deleted.
+      if (req.body.picture) {
+        if (req.body.picture !== req.user!.picture) {
+          if (!isValidPictureUrl(req.body.picture)) {
+            logger.warn(`Invalid picture URL: ${req.body.picture}`);
+            void reply.code(400);
+            return { message: 'flash.wrong-updating', type: 'danger' } as const;
+          }
+        }
       }
 
       try {
@@ -864,11 +869,14 @@ export const settingRedirectRoutes: FastifyPluginCallbackTypebox = (
         return reply.redirectWithMessage(origin, expirationMessage);
       }
 
-      // TODO(Post-MVP): should this fail if it's not the currently signed in
-      // user?
       const targetUser = await fastify.prisma.user.findUnique({
         where: { id: authToken.userId }
       });
+
+      if (targetUser?.id !== req.user?.id) {
+        logger.warn('Target user does not match signed in user');
+        return reply.redirectWithMessage(origin, redirectMessage);
+      }
 
       if (targetUser?.newEmail !== email) {
         return reply.redirectWithMessage(origin, redirectMessage);

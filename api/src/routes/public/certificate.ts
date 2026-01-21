@@ -8,7 +8,7 @@ import {
   certToIdMap,
   completionHours,
   oldDataVizId
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
