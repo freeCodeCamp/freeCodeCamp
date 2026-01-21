@@ -4,6 +4,7 @@ import { Spacer } from '@freecodecamp/ui';
 import { parse, format, isValid } from 'date-fns';
 import type { ExperienceData } from '../../../redux/prop-types';
 import { FullWidthRow, interleave } from '../../helpers';
+import './experience-display.css';
 
 interface ExperienceDisplayProps {
   experience: ExperienceData[];
@@ -28,17 +29,11 @@ export const ExperienceDisplay = ({
   const experienceItems = experience.map(exp => (
     <div key={exp.id} className='experience-item'>
       <h3>{exp.title}</h3>
-      <h4 style={{ fontWeight: 'normal', marginTop: '0.5rem' }}>
+      <h4 className='experience-company'>
         {exp.company}
         {exp.location && ` • ${exp.location}`}
       </h4>
-      <p
-        style={{
-          color: '#858591',
-          fontSize: '0.9rem',
-          marginTop: '0.25rem'
-        }}
-      >
+      <p className='experience-date'>
         {formatDate(exp.startDate)}
         {' - '}
         {exp.endDate
@@ -46,9 +41,7 @@ export const ExperienceDisplay = ({
           : t('profile.experience.present')}
       </p>
       {exp.description && (
-        <p style={{ marginTop: '0.75rem', whiteSpace: 'pre-wrap' }}>
-          {exp.description}
-        </p>
+        <p className='experience-description'>{exp.description}</p>
       )}
     </div>
   ));
