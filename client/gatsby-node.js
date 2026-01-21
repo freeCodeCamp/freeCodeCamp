@@ -319,7 +319,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       explanation: String
       fillInTheBlank: FillInTheBlank
       forumTopicId: Int
-      hasEditableBoundaries: Boolean
+      includesBlockInTimeline: Boolean
+      instructionsInEditor: Boolean
       helpCategory: String
       hooks: Hooks
       id: String

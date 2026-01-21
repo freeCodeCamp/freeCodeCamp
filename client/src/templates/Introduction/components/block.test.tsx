@@ -40,7 +40,6 @@ const defaultProps = {
       forumTopicId: 12345,
       guideUrl: 'https://mockurl.com',
       head: ['mockHead'],
-      hasEditableBoundaries: false,
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',

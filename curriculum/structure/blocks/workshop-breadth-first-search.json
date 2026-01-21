@@ -4,7 +4,8 @@
   "dashedName": "workshop-breadth-first-search",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "challengeOrder": [
     { "id": "68da604b8b6012a33e2344fb", "title": "Step 1" },
     { "id": "68da6138d70960c197ec5eec", "title": "Step 2" },

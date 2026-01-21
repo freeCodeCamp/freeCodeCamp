@@ -23,7 +23,7 @@ import EditorTabs from './editor-tabs';
 
 interface MobileLayoutProps {
   editor: JSX.Element | null;
-  hasEditableBoundaries: boolean;
+  instructionsInEditor?: boolean;
   hasPreview: boolean;
   instructions: JSX.Element;
   notes: string;
@@ -84,7 +84,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   #toolPanelGroup!: HTMLElement;
 
   state: MobileLayoutState = {
-    currentTab: this.props.hasEditableBoundaries
+    currentTab: this.props.instructionsInEditor
       ? tabs.editor
       : tabs.instructions
   };
@@ -148,7 +148,6 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
   render(): JSX.Element {
     const { currentTab } = this.state;
     const {
-      hasEditableBoundaries,
       instructions,
       editor,
       testOutput,
@@ -164,7 +163,8 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       setShowPreviewPortal,
       portalWindow,
       windowTitle,
-      usesMultifileEditor
+      usesMultifileEditor,
+      instructionsInEditor
     } = this.props;
 
     const displayPreviewPane = hasPreview && showPreviewPane;
@@ -213,7 +213,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
       <>
         <Tabs
           id='mobile-layout'
-          className={hasEditableBoundaries ? 'has-editable-boundaries' : ''}
+          className={instructionsInEditor ? 'instructions-in-editor' : ''}
           onKeyDown={this.handleKeyDown}
           onMouseDown={this.handleClick}
           onTouchStart={this.handleClick}
@@ -222,7 +222,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
           {...(hasPreview && { 'data-haspreview': 'true' })}
         >
           <TabsList className='nav-lists'>
-            {!hasEditableBoundaries && (
+            {!instructionsInEditor && (
               <TabsTrigger value={tabs.instructions}>
                 {i18next.t('learn.editor-tabs.instructions')}
               </TabsTrigger>
@@ -253,7 +253,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
             {usesMultifileEditor && <EditorTabs />}
             {editor}
           </TabsContent>
-          {!hasEditableBoundaries && (
+          {!instructionsInEditor && (
             <TabsContent
               tabIndex={-1}
               className='tab-content'
@@ -307,7 +307,7 @@ class MobileLayout extends Component<MobileLayoutProps, MobileLayoutState> {
               )}
             </TabsContent>
           )}
-          {!hasEditableBoundaries && toolPanel}
+          {!instructionsInEditor && toolPanel}
           {hasPreview && this.state.currentTab !== 'preview' && (
             <div className='portal-button-wrap'>
               <button

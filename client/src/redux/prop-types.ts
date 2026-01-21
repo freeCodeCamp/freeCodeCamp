@@ -222,7 +222,6 @@ export type ChallengeNode = {
     fillInTheBlank: FillInTheBlank;
     forumTopicId: number;
     head: string[];
-    hasEditableBoundaries: boolean;
     helpCategory: string;
     hooks?: Hooks;
     id: string;
@@ -263,6 +262,8 @@ export type ChallengeNode = {
     translationPending: boolean;
     url: string;
     usesMultifileEditor: boolean;
+    instructionsInEditor?: boolean;
+    includesBlockInTimeline?: boolean;
     videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
@@ -306,11 +307,12 @@ export type DailyCodingChallengeNode = {
     instructions: string;
     demoType: null;
     hooks?: { beforeAll: string };
-    hasEditableBoundaries?: false;
     forumTopicId?: number;
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    instructionsInEditor?: boolean;
+    includesBlockInTimeline?: boolean;
     saveSubmissionToDB?: boolean;
   };
 };

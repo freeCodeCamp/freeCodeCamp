@@ -59,5 +59,6 @@
     { "id": "68540aa7dfd449ad074c285c", "title": "Step 51" }
   ],
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true
 }

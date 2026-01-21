@@ -2,7 +2,8 @@
   "name": "Learn CSS Colors by Building a Set of Colored Markers",
   "isUpcomingChange": false,
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "learn-css-colors-by-building-a-set-of-colored-markers",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [

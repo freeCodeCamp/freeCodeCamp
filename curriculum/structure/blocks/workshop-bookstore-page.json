@@ -27,5 +27,6 @@
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true
 }

@@ -4,7 +4,8 @@
   "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
   "usesMultifileEditor": true,
-  "hasEditableBoundaries": true,
+  "includesBlockInTimeline": true,
+  "instructionsInEditor": true,
   "dashedName": "workshop-error-message-component",
   "helpCategory": "HTML-CSS",
   "challengeOrder": [
