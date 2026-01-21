@@ -5,7 +5,7 @@ challengeType: 31
 dashedName: review-dom-manipulation-and-click-events-with-javascript
 ---
 
-# --description--
+# --interactive--
 
 ## Working with the DOM and Web APIs
 
@@ -57,16 +57,21 @@ const ingredients = document.querySelectorAll('ul.ingredients li');
 
 - **`innerHTML` Property**: This is a property of the `Element` that is used to set or update parts of the HTML markup.
 
+:::interactive_editor
+
 ```html
 <div id="container">
   <!-- Add new elements here -->
 </div>
+<script src="./index.js"></script>
 ```
 
 ```js
 const container = document.getElementById("container");
 container.innerHTML = '<ul><li>Cheese</li><li>Tomato</li></ul>';
 ```
+
+:::
 
 - **`createElement` Method**: This is used to create an HTML element. 
 
@@ -76,11 +81,14 @@ const img = document.createElement("img");
 
 - **`innerText`**: This represents the visible text content of the HTML element and its descendants. 
 
+:::interactive_editor
+
 ```html
 <div id="container">
   <p>Hello, World!</p>
   <p>I'm learning JavaScript</p>
 </div>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -88,13 +96,18 @@ const container = document.getElementById("container");
 console.log(container.innerText);
 ```
 
+:::
+
 - **`textContent`**: This returns the plain text content of an element, including all the text within its descendants.
+
+:::interactive_editor
 
 ```html
 <div id="container">
   <p>Hello, World!</p>
   <p>I'm learning JavaScript</p>
 </div>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -102,15 +115,20 @@ const container = document.getElementById("container");
 console.log(container.textContent);
 ```
 
+:::
+
 ## Working with the `appendChild()` and `removeChild()` Methods
 
 - **`appendChild()` Method**: This method is used to add a node to the end of the list of children of a specified parent node.
+
+:::interactive_editor
 
 ```html
 <ul id="desserts">
   <li>Cake</li>
   <li>Pie</li>
 </ul>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -121,7 +139,11 @@ listItem.textContent = "Cookies";
 dessertsList.appendChild(listItem);
 ```
 
+:::
+
 - **`removeChild()` Method**: This method is used to remove a node from the DOM.
+
+:::interactive_editor
 
 ```html
 <section id="example-section">
@@ -129,6 +151,7 @@ dessertsList.appendChild(listItem);
   <p>first paragraph</p>
   <p>second paragraph</p>
 </section>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -137,6 +160,8 @@ const lastParagraph = document.querySelector("#example-section p:last-of-type");
 
 sectionEl.removeChild(lastParagraph);
 ```
+
+:::
 
 ## Work with the `setAttribute()` Method
 
@@ -196,6 +221,8 @@ para.addEventListener("mouseover", () => {
 
 - **Definition**: The change event is a special event which is fired when the user modifies the value of certain input elements. Examples would include when a checkbox or a radio button is ticked. Or when the user makes a selection from something like a date picker or dropdown menu.
 
+:::interactive_editor
+
 ```html
 <label>
   Choose a programming language:
@@ -208,6 +235,7 @@ para.addEventListener("mouseover", () => {
 </label>
 
 <p class="result"></p>
+<script src="./index.js"></script>
 ```
 
 ```js 
@@ -218,6 +246,8 @@ selectEl.addEventListener("change", (e) => {
   result.textContent = `You enjoy programming in ${e.target.value}.`;
 });
 ```
+
+:::
 
 ## Event Bubbling
 
@@ -345,11 +375,14 @@ ctx.fillRect(1, 1, 150, 100);
 - **Modal and Dialog Definitions**: Dialogs let you display important information or actions to users. With the HTML built-in dialog element, you can easily create these dialogs (both modal and non-modal dialogs) in your web apps. A modal dialog is a type of dialog that forces the user to interact with it before they can access the rest of the application or webpage. In contrast, a non-modal dialog allows the user to continue interacting with other parts of the page or application even when the dialog is open. It doesn't prevent access to the rest of the content.
 - **`showModal()` Method**: This method is used to open a modal.
 
+:::interactive_editor
+
 ```html
 <dialog id="my-modal">
    <p>This is a modal dialog.</p>
 </dialog>
 <button id="open-modal">Open Modal Dialog</button>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -361,7 +394,11 @@ openButton.addEventListener('click', () => {
 });
 ```
 
+:::
+
 - **`close()` Method**: This method is used to close the modal.
+
+:::interactive_editor
 
 ```html
 <dialog id="my-modal">
@@ -369,6 +406,7 @@ openButton.addEventListener('click', () => {
    <button id="close-modal">Close Modal</button>
 </dialog>
 <button id="open-modal">Open Modal Dialog</button>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -384,6 +422,8 @@ closeButton.addEventListener('click', () => {
   dialog.close();
 });
 ```
+
+:::
 
 # --assignment--
 
