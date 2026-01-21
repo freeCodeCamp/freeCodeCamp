@@ -12,7 +12,7 @@ interface ExperienceDisplayProps {
 
 const formatDate = (dateString: string): string => {
   if (!dateString) return '';
-  const parsedDate = parse(dateString, 'yyyy-MM', new Date());
+  const parsedDate = parse(dateString, 'MM/yyyy', new Date());
   if (!isValid(parsedDate)) return '';
   return format(parsedDate, 'MMM yyyy');
 };

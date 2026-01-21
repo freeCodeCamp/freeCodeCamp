@@ -450,7 +450,9 @@
       "end-date": "End date",
       "end-date-helper": "Leave blank if current position",
       "description": "Description",
-      "present": "Present"
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
     }
   },
   "footer": {

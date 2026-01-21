@@ -2,6 +2,7 @@ import { isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
+import { isValid, parse } from 'date-fns';
 import {
   FormGroup,
   FormControl,
@@ -161,31 +162,69 @@ const ExperienceSettings = (props: ExperienceProps) => {
   const getCompanyValidation = (company: string) =>
     getTextValidation(company, 'company');
 
-  const getStartDateValidation = (startDate: string): ExperienceValidation => {
-    if (!startDate) {
-      return { state: 'error', message: t('validation.start-date-required') };
+  const validateDate = (
+    date: string,
+    isRequired: boolean,
+    fieldName: 'start-date' | 'end-date'
+  ): ExperienceValidation => {
+    // Check if date is required and empty
+    if (isRequired && !date) {
+      return { state: 'error', message: t(`validation.${fieldName}-required`) };
+    }
+
+    // Allow empty for optional dates
+    if (!date) {
+      return { state: 'success', message: '' };
+    }
+
+    // Check if date matches MM/YYYY format
+    const dateRegex = /^\d{2}\/\d{4}$/;
+    if (!dateRegex.test(date)) {
+      return {
+        state: 'error',
+        message: t('profile.experience.date-format-error')
+      };
+    }
+
+    const parsedDate = parse(date, 'MM/yyyy', new Date());
+    // Check if the parsed date is valid (e.g., not an invalid month like 13)
+    if (!isValid(parsedDate)) {
+      return {
+        state: 'error',
+        message: t('profile.experience.date-invalid')
+      };
     }
     return { state: 'success', message: '' };
   };
 
+  const getStartDateValidation = (startDate: string): ExperienceValidation =>
+    validateDate(startDate, true, 'start-date');
+
+  const getEndDateValidation = (endDate: string): ExperienceValidation =>
+    validateDate(endDate, false, 'end-date');
+
   const isItemValid = (experienceItem: ExperienceData): boolean => {
-    const { title, company, startDate, description } = experienceItem;
+    const { title, company, startDate, endDate, description } = experienceItem;
     return (
       getTitleValidation(title).state !== 'error' &&
       getCompanyValidation(company).state !== 'error' &&
       getStartDateValidation(startDate).state !== 'error' &&
+      getEndDateValidation(endDate || '').state !== 'error' &&
       getDescriptionValidation(description).state !== 'error'
     );
   };
 
   const getFormValidation = (experienceItem: ExperienceData) => {
-    const { id, title, company, startDate, description } = experienceItem;
+    const { id, title, company, startDate, endDate, description } =
+      experienceItem;
     const { state: titleState, message: titleMessage } =
       getTitleValidation(title);
     const { state: companyState, message: companyMessage } =
       getCompanyValidation(company);
     const { state: startDateState, message: startDateMessage } =
       getStartDateValidation(startDate);
+    const { state: endDateState, message: endDateMessage } =
+      getEndDateValidation(endDate || '');
     const { state: descriptionState, message: descriptionMessage } =
       getDescriptionValidation(description);
     const pristine = isFormPristine(id);
@@ -195,6 +234,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
       title: { titleState, titleMessage },
       company: { companyState, companyMessage },
       startDate: { startDateState, startDateMessage },
+      endDate: { endDateState, endDateMessage },
       description: { descriptionState, descriptionMessage },
       pristine
     };
@@ -208,6 +248,7 @@ const ExperienceSettings = (props: ExperienceProps) => {
       title: { titleState, titleMessage },
       company: { companyState, companyMessage },
       startDate: { startDateState, startDateMessage },
+      endDate: { endDateState, endDateMessage },
       description: { descriptionState, descriptionMessage },
       pristine
     } = getFormValidation(experienceItem);
@@ -296,29 +337,46 @@ const ExperienceSettings = (props: ExperienceProps) => {
             <FormControl
               onChange={createOnChangeHandler(id, 'startDate')}
               required
-              type='month'
+              type='text'
               value={startDate}
               name='experience-startDate'
               id={`${id}-startDate-input`}
+              placeholder='MM/YYYY'
             />
             {startDateMessage ? (
-              <HelpBlock data-playwright-test-label='startDate-validation'>
+              <HelpBlock
+                id={`${id}-startDate-error`}
+                data-playwright-test-label='startDate-validation'
+              >
                 {startDateMessage}
               </HelpBlock>
             ) : null}
           </FormGroup>
-          <FormGroup controlId={`${id}-endDate`}>
+          <FormGroup
+            controlId={`${id}-endDate`}
+            validationState={
+              pristine || (!pristine && !endDate) ? null : endDateState
+            }
+          >
             <ControlLabel htmlFor={`${id}-endDate-input`}>
               {t('profile.experience.end-date')} (
               {t('profile.experience.end-date-helper')})
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'endDate')}
-              type='month'
+              type='text'
               value={endDate || ''}
               name='experience-endDate'
               id={`${id}-endDate-input`}
             />
+            {endDateMessage ? (
+              <HelpBlock
+                id={`${id}-endDate-error`}
+                data-playwright-test-label='endDate-validation'
+              >
+                {endDateMessage}
+              </HelpBlock>
+            ) : null}
           </FormGroup>
           <FormGroup
             controlId={`${id}-description`}
