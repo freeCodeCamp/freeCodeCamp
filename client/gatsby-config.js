@@ -106,7 +106,7 @@ module.exports = {
       resolve: 'gatsby-plugin-schema-snapshot',
       options: {
         path: 'schema.gql',
-        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === "true"
       }
     }
   ]
