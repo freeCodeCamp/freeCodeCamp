@@ -1,0 +1,11 @@
+{
+  "name": "Planning Future Events Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-plan-future-events",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696043687613cbc3f7df2413", "title": "Planning Future Events Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

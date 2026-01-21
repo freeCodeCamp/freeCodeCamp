@@ -1,0 +1,11 @@
+{
+  "name": "Managing Conversations Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-manage-conversations",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696045ebf630af8367de0154", "title": "Managing Conversations Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

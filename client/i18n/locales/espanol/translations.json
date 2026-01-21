@@ -131,7 +131,7 @@
   },
   "weekdays": {
     "short": {
-      "sunday": "Sab",
+      "sunday": "Dom",
       "monday": "Lun",
       "tuesday": "Mar",
       "wednesday": "Mier",
@@ -140,7 +140,7 @@
       "saturday": "Sab"
     },
     "long": {
-      "sunday": "Dom",
+      "sunday": "Domingo",
       "monday": "Lunes",
       "tuesday": "Martes",
       "wednesday": "Miércoles",
