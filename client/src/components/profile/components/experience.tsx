@@ -230,7 +230,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-title-input`}>
-              {t('profile.experience.job-title')} *
+              {t('profile.experience.job-title')}{' '}
+              <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'title')}
@@ -253,7 +254,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-company-input`}>
-              {t('profile.experience.company')} *
+              {t('profile.experience.company')}{' '}
+              <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'company')}
@@ -288,7 +290,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
             }
           >
             <ControlLabel htmlFor={`${id}-startDate-input`}>
-              {t('profile.experience.start-date')} *
+              {t('profile.experience.start-date')}{' '}
+              <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
               onChange={createOnChangeHandler(id, 'startDate')}
@@ -322,7 +325,8 @@ const ExperienceSettings = (props: ExperienceProps) => {
             validationState={pristine ? null : descriptionState}
           >
             <ControlLabel htmlFor={`${id}-description-input`}>
-              {t('profile.experience.description')} *
+              {t('profile.experience.description')}{' '}
+              <span aria-hidden='true'>*</span>
             </ControlLabel>
             <FormControl
               componentClass='textarea'
