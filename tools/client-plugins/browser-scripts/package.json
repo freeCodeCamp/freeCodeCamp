@@ -11,6 +11,9 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    "./test-runner": "./test-runner.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"

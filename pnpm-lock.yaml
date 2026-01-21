@@ -710,6 +710,9 @@ importers:
       '@babel/register':
         specifier: 7.23.7
         version: 7.23.7(@babel/core@7.23.7)
+      '@freecodecamp/browser-scripts':
+        specifier: workspace:*
+        version: link:../tools/client-plugins/browser-scripts
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
