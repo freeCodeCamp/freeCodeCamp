@@ -3,7 +3,7 @@ import type { FastifyError, FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate.js';
+import { isValidUsername } from '@freecodecamp/shared/utils/validate';
 import * as schemas from '../../schemas.js';
 import { createAuthToken, isExpired } from '../../utils/tokens.js';
 import { API_LOCATION } from '../../utils/env.js';

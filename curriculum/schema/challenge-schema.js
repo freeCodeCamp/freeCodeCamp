@@ -1,13 +1,15 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../shared-dist/config/challenge-types');
+const {
+  challengeTypes
+} = require('@freecodecamp/shared/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('../../shared-dist/config/curriculum');
+} = require('@freecodecamp/shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,

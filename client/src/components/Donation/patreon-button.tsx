@@ -3,7 +3,7 @@ import {
   DonationAmount,
   donationUrls,
   PaymentProvider
-} from '../../../../shared-dist/config/donation-settings';
+} from '@freecodecamp/shared/config/donation-settings';
 import envData from '../../../config/env.json';
 import PatreonLogo from '../../assets/images/components/patreon-logo';
 import { PostPayment } from './types';
