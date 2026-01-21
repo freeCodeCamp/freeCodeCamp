@@ -6,4 +6,4 @@ superBlock: python-v9
 
 ## Introduction to the Build a Discount Calculator
 
-In this lab, you will practice basic python by building a calculator to apply discount to a price.
+In this lab, you will practice basic Python by building a calculator to apply discount to a price.
