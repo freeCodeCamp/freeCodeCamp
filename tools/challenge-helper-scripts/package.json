@@ -25,7 +25,9 @@
     "create-quiz": "tsx create-quiz",
     "rename-block": "tsx rename-block",
     "lint": "eslint --max-warnings 0",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {

@@ -20,7 +20,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --max-warnings 0",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
