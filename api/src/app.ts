@@ -186,6 +186,7 @@ export const build = async (
 
       await fastify.register(protectedRoutes.challengeRoutes);
       await fastify.register(protectedRoutes.donateRoutes);
+      await fastify.register(protectedRoutes.socratesRoutes);
       await fastify.register(protectedRoutes.protectedCertificateRoutes);
       await fastify.register(protectedRoutes.settingRoutes);
       await fastify.register(protectedRoutes.userRoutes);
