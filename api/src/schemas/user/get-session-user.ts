@@ -1,5 +1,10 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, profileUI, savedChallenge } from '../types.js';
+import {
+  examResults,
+  profileUI,
+  savedChallenge,
+  experience
+} from '../types.js';
 
 const languages = Type.Array(
   Type.Union([Type.Literal('javascript'), Type.Literal('python')])
@@ -118,6 +123,7 @@ export const getSessionUser = {
               url: Type.String()
             })
           ),
+          experience: Type.Optional(Type.Array(experience)),
           profileUI: Type.Optional(profileUI),
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),

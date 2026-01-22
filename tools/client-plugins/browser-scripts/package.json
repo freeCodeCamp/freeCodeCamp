@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=18",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -19,9 +19,8 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --max-warnings 0",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "compile": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
   },
   "type": "module",
   "keywords": [],
