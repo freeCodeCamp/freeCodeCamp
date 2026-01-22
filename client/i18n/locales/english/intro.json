@@ -6451,6 +6451,13 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "lecture-introduction-to-common-searching-and-sorting-algorithms": {
+        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
