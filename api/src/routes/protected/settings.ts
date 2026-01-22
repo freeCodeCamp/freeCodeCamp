@@ -616,6 +616,34 @@ ${isLinkSentWithinLimitTTL}`
   );
 
   fastify.put(
+    '/update-socrates',
+    {
+      schema: schemas.updateSocrates
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      try {
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            aiAssistant: req.body.aiAssistant
+          }
+        });
+
+        return {
+          message: 'flash.socrates-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        logger.error(err);
+        fastify.Sentry.captureException(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
     '/update-my-honesty',
     {
       schema: schemas.updateMyHonesty

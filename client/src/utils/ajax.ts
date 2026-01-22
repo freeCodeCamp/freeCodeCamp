@@ -106,7 +106,7 @@ type SavedChallengeFromApi = {
   files: Array<Omit<SavedChallengeFile, 'fileKey'> & { key: string }>;
 } & Omit<SavedChallenge, 'challengeFiles'>;
 
-type ApiUser = Omit<User, 'completedChallenges' & 'savedChallenges'> & {
+type ApiUser = Omit<User, 'completedChallenges' | 'savedChallenges'> & {
   completedChallenges?: CompleteChallengeFromApi[];
   savedChallenges?: SavedChallengeFromApi[];
 };
@@ -259,6 +259,14 @@ interface Donation {
   customerId: string;
   startDate: Date;
 }
+
+interface getSocratesHint {
+  userId: string;
+  userInput: string;
+  seed: string;
+  description: string;
+  hints: Array<{ text: string; failed?: boolean }>;
+}
 // TODO: Verify if the body has and needs this Donation type. The api seems to
 // just need the body to exist, but doesn't seem to use the properties.
 export function addDonation(body: Donation): Promise<ResponseWithData<void>> {
@@ -285,6 +293,11 @@ export function generateExamToken(): Promise<
   ResponseWithData<ExamTokenResponse>
 > {
   return post('/user/exam-environment/token', {});
+}
+export function getSocratesHint(
+  body: getSocratesHint
+): Promise<ResponseWithData<void>> {
+  return put('/socrates/get-hint', body);
 }
 
 type PaymentIntentResponse = Promise<
@@ -401,6 +414,12 @@ export function putUpdateMyQuincyEmail(update: {
   sendQuincyEmail: boolean;
 }): Promise<ResponseWithData<void>> {
   return put('/update-my-quincy-email', update);
+}
+
+export function putUpdateMySocrates(update: {
+  aiAssistant: boolean;
+}): Promise<ResponseWithData<void>> {
+  return put('/update-socrates', update);
 }
 
 export function putUpdateMyPortfolio(

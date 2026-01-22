@@ -13,6 +13,7 @@ export const actionTypes = createTypes(
     ...createAsyncTypes('updateMyKeyboardShortcuts'),
     ...createAsyncTypes('updateMyHonesty'),
     ...createAsyncTypes('updateMyQuincyEmail'),
+    ...createAsyncTypes('updateMySocrates'),
     ...createAsyncTypes('updateMyPortfolio'),
     ...createAsyncTypes('submitProfileUI'),
     ...createAsyncTypes('verifyCert'),

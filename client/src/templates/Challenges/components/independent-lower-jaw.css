@@ -8,18 +8,34 @@
 .independent-lower-jaw .hint-container {
   background-color: var(--background-quaternary);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   padding: 12px;
   position: absolute;
   bottom: 100%;
-  width: 95%;
+  width: 97%;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 12px;
   border: 1px solid var(--background-secondary);
   opacity: 0;
   animation: jaw-hint-fade-in 0.3s ease forwards;
+}
+
+.independent-lower-jaw .hint-container .hint-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.independent-lower-jaw .hint-container .hint-header svg {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.independent-lower-jaw .hint-container .hint-body p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes jaw-hint-fade-in {
@@ -51,9 +67,7 @@
 }
 
 .independent-lower-jaw .hint-container button {
-  height: 30px;
   font-size: 1.5rem;
-  min-width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,6 +100,7 @@
   font-size: 1rem;
   text-align: center;
   position: absolute;
+  width: max-content;
   top: -60px;
   z-index: 1;
 }
@@ -96,6 +111,8 @@
   opacity: 1;
   transition: opacity 0.5s ease 1s;
 }
+
+/* .independent-lower-jaw  */
 
 .tooltiptext::after {
   content: '';
@@ -118,4 +135,49 @@
 
 .independent-lower-jaw .tooltip .tooltiptext.left-tooltip {
   left: 0;
+}
+.socrates-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.skeleton-line {
+  height: 16px;
+  border-radius: 2px;
+}
+
+.skeleton-line-1 {
+  background-color: var(--tertiary-background);
+  width: 100%;
+  animation: pulse-1 1.5s ease-in-out infinite;
+}
+
+.skeleton-line-2 {
+  background-color: var(--tertiary-background);
+  width: 85%;
+  animation: pulse-2 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-1 {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-2 {
+  0% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
 }

@@ -30,6 +30,7 @@ export { updateMyPortfolio } from './schemas/settings/update-my-portfolio.js';
 export { updateMyPrivacyTerms } from './schemas/settings/update-my-privacy-terms.js';
 export { updateMyProfileUI } from './schemas/settings/update-my-profile-ui.js';
 export { updateMyQuincyEmail } from './schemas/settings/update-my-quincy-email.js';
+export { updateSocrates } from './schemas/settings/update-socrates.js';
 export { updateMySocials } from './schemas/settings/update-my-socials.js';
 export { updateMyTheme } from './schemas/settings/update-my-theme.js';
 export { updateMyUsername } from './schemas/settings/update-my-username.js';
@@ -38,6 +39,7 @@ export {
   deleteMyAccount,
   deleteUser
 } from './schemas/user/delete-my-account.js';
+export { askSocrates } from './schemas/socrates/ask-socrates.js';
 export { deleteUserToken } from './schemas/user/delete-user-token.js';
 export { getSessionUser } from './schemas/user/get-session-user.js';
 export { postMsUsername } from './schemas/user/post-ms-username.js';
