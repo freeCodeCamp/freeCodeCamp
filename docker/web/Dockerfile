@@ -1,4 +1,4 @@
-FROM node:22-bookworm AS builder
+FROM node:24-bookworm AS builder
 # global installs need root permissions, so have to happen before we switch to
 # the node user
 RUN npm i -g pnpm@10
@@ -36,7 +36,7 @@ ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 RUN pnpm install --frozen-lockfile
 RUN pnpm build:client
 
-FROM node:22-alpine
+FROM node:24-alpine
 RUN npm i -g serve@13 pm2@4
 USER node
 WORKDIR /home/node/client
