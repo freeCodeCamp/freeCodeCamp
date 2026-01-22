@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { escape, isEmpty } from 'lodash-es';
+import { escape as escapeHtml, isEmpty } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
   call,
@@ -59,8 +59,10 @@ import {
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  currentBlockIdsSelector
 } from './selectors';
+import { completedChallengesIdsSelector } from '../../../redux/selectors';
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
@@ -139,7 +141,24 @@ export function* executeChallengeSaga({ payload }) {
     if (challengeComplete) {
       playTone('tests-completed');
       if (isBlockCompleted) {
-        fireConfetti();
+        const completedChallengesIds = yield select(
+          completedChallengesIdsSelector
+        );
+        const currentBlockIds = yield select(currentBlockIdsSelector);
+
+        if (challengeMeta.isLastChallengeInBlock) {
+          const otherChallenges = currentBlockIds.filter(
+            blockId => blockId !== challengeMeta.id
+          );
+          const allOthersCompleted = otherChallenges.every(blockId =>
+            completedChallengesIds.includes(blockId)
+          );
+
+          // Don't show confetti if the block was already effectively complete
+          if (!allOthersCompleted) {
+            fireConfetti();
+          }
+        }
       }
     } else {
       playTone('tests-failed');
@@ -170,7 +189,7 @@ function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
   yield takeEvery(channel, function* (args) {
-    yield put(updateConsole(escape(args)));
+    yield put(updateConsole(escapeHtml(args)));
   });
 }
 
@@ -217,7 +236,7 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else {
         const { message, stack } = err;
-        newTest.err = message + '\n' + stack;
+        newTest.err = `${message}\n${stack}`;
         newTest.stack = stack;
       }
 
@@ -325,7 +344,7 @@ export function* previewChallengeSaga(action) {
     // If the preview fails, the most useful thing to do is to show the learner
     // what the error is. As such, we replace whatever is in the console with
     // the error message.
-    yield put(initConsole(escape(err)));
+    yield put(initConsole(escapeHtml(err)));
   }
 }
 
