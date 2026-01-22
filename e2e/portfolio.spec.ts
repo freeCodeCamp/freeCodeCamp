@@ -122,6 +122,14 @@ test.describe('Add Portfolio Item', () => {
     await expect(page.getByTestId('portfolio-items')).toBeHidden();
   });
 
+  test('The save button should be disabled when the form is pristine', async ({
+    page
+  }) => {
+    await expect(
+      page.getByRole('button', { name: 'Save this portfolio item' })
+    ).toBeDisabled();
+  });
+
   test('It should be possible to add a portfolio item', async ({ page }) => {
     await expect(
       page.getByRole('button', { name: 'Add a new portfolio Item' })
@@ -146,6 +154,27 @@ test.describe('Add Portfolio Item', () => {
     await expect(page.getByRole('alert').first()).toContainText(
       /We have updated your portfolio/
     );
+  });
+
+  test('The edit modal should stay open after saving a portfolio item', async ({
+    page
+  }) => {
+    await page
+      .getByLabel(translations.settings.labels.title)
+      .fill('My portfolio');
+    await page
+      .getByLabel(translations.settings.labels.url)
+      .fill('https://my-portfolio.com');
+
+    await page
+      .getByRole('button', { name: 'Save this portfolio item' })
+      .click();
+    await expect(page.getByRole('alert').first()).toContainText(
+      /We have updated your portfolio/
+    );
+
+    // Modal should still be open and portfolio form should be visible
+    await expect(page.getByTestId('portfolio-items')).toBeVisible();
   });
 
   // TODO: Add test for viewing portfolio item
