@@ -1,10 +1,10 @@
-const { mkdirSync, writeFileSync } = require('fs');
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const {
   version: helperVersion
 } = require('@freecodecamp/curriculum-helpers/package.json');
+const { version } = require('./package.json');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
@@ -19,19 +19,8 @@ module.exports = (env = {}) => {
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
-      filename: chunkData => {
-        // construct and output the filename here, so the client can use the
-        // json to find the file.
-        const filename = `${chunkData.chunk.name}-${chunkData.chunk.contentHash.javascript}`;
-        mkdirSync('dist/config', { recursive: true });
-        writeFileSync(
-          path.join('dist/config', `${chunkData.chunk.name}.json`),
-          `{"filename": "${filename}"}`
-        );
-        return filename + '.js';
-      },
       chunkFilename: '[name]-[contenthash].js',
-      path: path.resolve(__dirname, 'dist/artifacts'),
+      path: path.resolve(__dirname, `dist/artifacts/workers/${version}`),
       clean: true
     },
     stats: {
@@ -71,7 +60,7 @@ module.exports = (env = {}) => {
           './node_modules/xterm/css/xterm.css',
           {
             from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-            to: `test-runner/${helperVersion}/`
+            to: `../../test-runner/${helperVersion}/`
           }
         ]
       }),

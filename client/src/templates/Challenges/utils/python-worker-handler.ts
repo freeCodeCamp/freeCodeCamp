@@ -1,7 +1,5 @@
 // TODO: This might be cleaner as a class.
-import pythonWorkerData from '../../../../config/browser-scripts/python-worker.json';
-
-const pythonWorkerSrc = `/js/${pythonWorkerData.filename}.js`;
+const pythonWorkerSrc = `/js/workers/1.0.0/python-worker.js`;
 
 let worker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;

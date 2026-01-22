@@ -20,7 +20,7 @@ if (!ctx.crypto) {
   };
 }
 
-ctx.importScripts('/js/sass.sync.js');
+ctx.importScripts('/js/workers/1.0.0/sass.sync.js');
 
 ctx.onmessage = e => {
   const data: unknown = e.data;

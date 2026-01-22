@@ -1,7 +1,6 @@
-import typeScriptWorkerData from '../../../../config/browser-scripts/typescript-worker.json';
 import { awaitResponse } from './awaitable-messenger';
 
-const typeScriptWorkerSrc = `/js/${typeScriptWorkerData.filename}.js`;
+const typeScriptWorkerSrc = `/js/workers/1.0.0/typescript-worker.js`;
 
 let worker: Worker | null = null;
 
