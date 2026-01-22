@@ -1,5 +1,5 @@
 export function getProjectPath(): string {
-  return (process.env.CALLING_DIR || process.cwd()) + '/';
+  return (process.env.INIT_CWD || process.cwd()) + '/';
 }
 
 export function getProjectName(): string {
