@@ -74,10 +74,10 @@ test.describe('Add Experience Item', () => {
   });
 
   test('The end date has validation', async ({ page }) => {
-    await page.getByLabel('End Date').fill('13/2023');
+    await page.getByLabel('End Date', { exact: false }).fill('13/2023');
     await expect(page.getByText('Please enter a valid date.')).toBeVisible();
 
-    await page.getByLabel('End Date').fill('01/2023');
+    await page.getByLabel('End Date', { exact: false }).fill('01/2023');
     await expect(page.getByText('Please enter a valid date.')).toBeHidden();
   });
 
@@ -101,8 +101,8 @@ test.describe('Add Experience Item', () => {
   }) => {
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
-    await page.getByLabel('Start Date').fill('2020-01');
-    await page.getByLabel('End Date').fill('2021-01');
+    await page.getByLabel('Start Date').fill('01/2020');
+    await page.getByLabel('End Date', { exact: false }).fill('01/2021');
     await page.getByLabel('Location').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
@@ -122,8 +122,8 @@ test.describe('Add Experience Item', () => {
 
     await page.getByLabel('Company').fill('freeCodeCamp');
     await page.getByLabel('Job Title').fill('Software Engineer');
-    await page.getByLabel('Start Date').fill('2020-01');
-    await page.getByLabel('End Date').fill('2021-01');
+    await page.getByLabel('Start Date').fill('01/2020');
+    await page.getByLabel('End Date', { exact: false }).fill('01/2021');
     await page.getByLabel('Location').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
