@@ -13,7 +13,7 @@ import type {
   SurveyResults,
   User
 } from '../redux/prop-types';
-import { DonationDuration } from '../../../shared-dist/config/donation-settings';
+import { DonationDuration } from '@freecodecamp/shared/config/donation-settings';
 
 const { apiLocation } = envData;
 
@@ -407,6 +407,12 @@ export function putUpdateMyPortfolio(
   update: Record<string, string>
 ): Promise<ResponseWithData<void>> {
   return put('/update-my-portfolio', update);
+}
+
+export function putUpdateMyExperience(
+  update: Record<string, string>
+): Promise<ResponseWithData<void>> {
+  return put('/update-my-experience', update);
 }
 
 export function putUserUpdateEmail(
