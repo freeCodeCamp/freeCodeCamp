@@ -14,7 +14,6 @@
     "start": "PORT=3300 vite",
     "build": "tsc && vite build",
     "lint": "eslint --max-warnings 0",
-    "test": "echo \"no tests here yet\"",
     "type-check": "tsc --noEmit",
     "postinstall": "shx cp ./sample.env ./.env"
   },

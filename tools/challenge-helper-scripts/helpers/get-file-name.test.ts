@@ -43,20 +43,20 @@ describe('getFileName helper', () => {
 
   it('should return the file name if found', async () => {
     expect.assertions(1);
-    process.env.CALLING_DIR = projectPath;
+    process.env.INIT_CWD = projectPath;
     const fileName = await getFileName('a');
     expect(fileName).toEqual('this-is-a-challenge.md');
   });
 
   it('should return null if not found', async () => {
     expect.assertions(1);
-    process.env.CALLING_DIR = projectPath;
+    process.env.INIT_CWD = projectPath;
     const fileName = await getFileName('d');
     expect(fileName).toBeNull();
   });
 
   afterEach(() => {
-    delete process.env.CALLING_DIR;
+    delete process.env.INIT_CWD;
     try {
       fs.rmSync(basePath, { recursive: true });
     } catch (err) {
