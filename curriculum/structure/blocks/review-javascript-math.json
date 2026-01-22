@@ -1,0 +1,11 @@
+{
+  "name": "JavaScript Math Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-javascript-math",
+  "challengeOrder": [
+    { "id": "6723c463e51a2d9b747d7529", "title": "JavaScript Math Review" }
+  ],
+  "helpCategory": "JavaScript"
+}

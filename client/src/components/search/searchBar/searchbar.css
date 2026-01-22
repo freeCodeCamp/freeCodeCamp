@@ -1,0 +1,170 @@
+.fcc_searchBar {
+  border-bottom: 0.0625rem solid var(--gray-45);
+  height: var(--header-sub-element-height);
+  padding: 6px 15px;
+  width: 100%;
+}
+
+@media (min-width: 980px) {
+  .fcc_searchBar {
+    border: 0;
+    height: auto;
+    max-width: 500px;
+    padding: 0;
+  }
+}
+
+.fcc_searchBar strong,
+.fcc_searchBar a:hover {
+  color: var(--gray-00);
+}
+
+.fcc_search_wrapper {
+  position: relative;
+}
+
+.ais-SearchBox-loadingIndicator {
+  display: none;
+}
+
+.fcc_searchBar .ais-SearchBox-form {
+  align-content: center;
+  background-color: var(--gray-75);
+  display: grid;
+  gap: 0.25em;
+  grid-template-areas: 'submit input reset';
+  grid-template-columns: 26px auto 36px;
+  margin-bottom: 0;
+}
+
+.ais-SearchBox-input {
+  grid-area: input;
+  padding-block: 0;
+  padding-inline-start: 5px;
+  font-size: 18px;
+  display: inline-block;
+  height: var(--header-element-size);
+}
+
+.ais-SearchBox-submit,
+.ais-SearchBox-reset {
+  height: var(--header-element-size);
+  width: 26px;
+  background-color: var(--gray-75);
+}
+
+.ais-SearchBox-submit {
+  grid-area: submit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ais-SearchBox-reset {
+  grid-area: reset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ais-SearchBox-form button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+:is(.ais-SearchBox-form button:hover)
+  :is(.ais-SearchBox-submitIcon, .ais-SearchBox-resetIcon)
+  path {
+  fill: var(--gray-00);
+}
+
+.fcc_searchBar .ais-SearchBox-input,
+.fcc_searchBar .ais-Hits {
+  z-index: 100;
+  background-color: var(--gray-75);
+  color: var(--gray-00);
+}
+
+/* hits */
+.fcc_searchBar .ais-Highlight-highlighted {
+  background-color: transparent;
+  font-style: normal;
+  color: white;
+  font-weight: bold;
+}
+
+.ais-Highlight-nonHighlighted {
+  font-weight: 300;
+}
+
+.fcc_hits_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.fcc_suggestion_item {
+  display: block;
+  padding: 5px;
+  color: var(--gray-00) !important;
+  text-decoration: none;
+}
+
+.fcc_suggestion_item [class^='ais-'] {
+  font-size: 17px;
+}
+
+.fcc_suggestion_item:hover {
+  cursor: pointer;
+}
+
+.no-hits-footer.fcc_suggestion_item:hover {
+  cursor: default;
+}
+
+.ais-Hits-item {
+  background-color: var(--gray-75);
+}
+
+.ais-Hits-item:not(:has(.no-hits-footer.fcc_suggestion_item)):hover {
+  background-color: var(--blue-dark);
+}
+
+/* Hit selected with arrow keys or mouse */
+.selected {
+  background-color: var(--blue-dark);
+}
+
+/* Override for rule in global.css to prevent
+multiple highlighted hits with the mouse
+and arrow keys */
+.fcc_suggestion_item:focus,
+.fcc_suggestion_item:hover {
+  background-color: transparent;
+}
+
+/* Dropdown footer */
+.fcc_suggestion_footer {
+  padding: 6.5px 8px 8px;
+}
+
+.fcc_suggestion_footer span[class='ais-Highlight-nonHighlighted'] {
+  font-weight: bold;
+}
+
+.no-hits-footer {
+  border-top: 0px;
+  font-weight: 300;
+}
+
+@media (min-width: 980px) {
+  .ais-SearchBox-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .fcc_searchBar .ais-Hits {
+    top: auto;
+    width: 100%;
+    max-width: 100%;
+    left: 0px;
+  }
+}

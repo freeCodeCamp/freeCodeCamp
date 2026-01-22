@@ -1,0 +1,14 @@
+{
+  "name": "Understanding Dynamic Programming",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-dynamic-programming",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68420c7fb5b9e36eefb9e98f",
+      "title": "What Is Dynamic Programming and What Are Some Common Algorithms?"
+    }
+  ],
+  "helpCategory": "Python"
+}

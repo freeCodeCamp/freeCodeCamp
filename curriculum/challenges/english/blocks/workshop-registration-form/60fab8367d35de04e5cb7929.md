@@ -1,0 +1,96 @@
+---
+id: 60fab8367d35de04e5cb7929
+title: Step 27
+challengeType: 0
+dashedName: step-27
+---
+
+# --description--
+
+Add an anchor element with the text `Read our terms and conditions` before the newly added `label`. Set the `href` to:
+
+```md
+https://www.freecodecamp.org/news/terms-of-service/
+```
+
+Then add the text `I accept the terms and conditions` immediately after the input element in the label.
+
+# --hints--
+
+You should have an `a` element right before the `label` with the text `Read our terms and conditions`.
+
+```js
+assert.match(document.querySelector('fieldset:nth-child(3) + a')?.innerText.trim().replaceAll(/\s+/g, ' '), /Read our terms and conditions\.?/i);
+```
+
+The `a` element should have an `href` of `https://www.freecodecamp.org/news/terms-of-service/`.
+
+```js
+assert.match(document.querySelector('fieldset:nth-child(3) + a')?.href, /https:\/\/www\.freecodecamp\.org\/news\/terms-of-service\/?/);
+```
+
+You should have an `input` element inside the `label`.
+
+```js
+assert.exists(document.querySelector('fieldset:nth-child(3) + a + label > input'));
+```
+
+Inside the `label`, immediately after the `input` element you should have the text `I accept the terms and conditions`.
+
+```js
+assert.include(document.querySelector('fieldset:nth-child(3) + a + label')?.textContent.trim().replaceAll(/\s+/g, ' '), 'I accept the terms and conditions');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="post" action='https://register-demo.freecodecamp.org'>
+      <fieldset>
+        <label for="first-name">Enter Your First Name: <input id="first-name" type="text" required /></label>
+        <label for="last-name">Enter Your Last Name: <input id="last-name" type="text" required /></label>
+        <label for="email">Enter Your Email: <input id="email" type="email" required /></label>
+        <label for="new-password">Create a New Password: <input id="new-password" type="password" pattern="[a-z0-5]{8,}" required /></label>
+      </fieldset>
+      <fieldset>
+        <legend>Account type (required)</legend>
+        <label for="personal-account"><input id="personal-account" type="radio" name="account-type" value="personal" checked /> Personal</label>
+        <label for="business-account"><input id="business-account" type="radio" name="account-type" value="business" /> Business</label>
+      </fieldset>
+      <fieldset></fieldset>
+--fcc-editable-region--
+      <label for="terms-and-conditions"><input id="terms-and-conditions" type="checkbox" required /></label>
+--fcc-editable-region--
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+```
+
+```css
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-color: #1b1b32;
+  color: #f5f6f7;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+}
+
+```
+

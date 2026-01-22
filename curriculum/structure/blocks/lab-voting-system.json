@@ -1,0 +1,12 @@
+{
+  "name": "Build a Voting System",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-voting-system",
+  "challengeOrder": [
+    { "id": "673b567e3ba535dda140d278", "title": "Build a Voting System" }
+  ],
+  "helpCategory": "JavaScript",
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

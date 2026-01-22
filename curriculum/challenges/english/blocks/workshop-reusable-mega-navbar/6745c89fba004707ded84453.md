@@ -1,0 +1,175 @@
+---
+id: 6745c89fba004707ded84453
+title: Step 5
+challengeType: 0
+dashedName: step-5
+---
+
+# --description--
+
+Create an anchor element inside the first `li` element. Give the `a` element an `href` attribute of `#` and the text `Dashboard`.
+
+# --hints--
+
+You should create an `a` element inside the first list item.
+
+```js
+assert.exists(document.querySelector('li a'));
+```
+
+Your `a` element should have its `href` attribute set to `#`.
+
+```js
+assert.equal(document.querySelector('a')?.getAttribute('href'), '#');
+```
+
+Your `a` element should have the text `Dashboard`.
+
+```js
+assert.equal(document.querySelector('a')?.textContent, 'Dashboard');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Reusable Navbar</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.3.1/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.3.1/umd/react-dom.development.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.26.3/babel.min.js"></script>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      src="index.jsx"
+    ></script>
+     <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      data-plugins="transform-modules-umd"
+      type="text/babel"
+      data-presets="react"
+      data-type="module"
+    >
+      import { Navbar } from './index.jsx';
+      ReactDOM.createRoot(document.getElementById('root')).render(
+        <Navbar />
+      );
+    </script>
+  </body>
+</html>
+```
+
+```css
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: #fff;
+  --light-grey: #e1e0e0;
+  --dark-purple: #7c0e7c;
+  --black: #000;
+}
+
+body {
+  background-color: var(--light-grey);
+}
+
+.navbar {
+  background-color: var(--white);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navbar ul li {
+  list-style: none;
+  border-radius: 4px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--black);
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+button {
+  background: transparent;
+  border: none;
+  font-family: 'Times New Roman', Times, serif;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.navbar ul .nav-item a:hover {
+  background-color: var(--dark-purple);
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--dark-purple);
+  color: var(--white);
+}
+
+.navbar ul .nav-item .sub-menu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 5%;
+  transition: opacity 0.5s ease;
+  display: block;
+  background-color: var(--white);
+}
+
+@media (min-width: 768px) {
+  .navbar ul .nav-item .sub-menu {
+    right: 15%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar ul .nav-item .sub-menu {
+    right: 13%;
+  }
+}
+
+.navbar ul .nav-item:hover .sub-menu,
+.navbar ul .nav-item:focus-within .sub-menu {
+  visibility: visible;
+  opacity: 1;
+}
+```
+
+```jsx
+export const Navbar = () => {
+  return (
+    <nav className="navbar">
+      <ul>
+--fcc-editable-region--
+        <li className="nav-item">
+          
+        </li>
+--fcc-editable-region--
+        <li className="nav-item"></li>
+        <li className="nav-item"></li>
+      </ul>
+    </nav>
+  )
+}
+```

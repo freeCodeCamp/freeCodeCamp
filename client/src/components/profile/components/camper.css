@@ -1,0 +1,118 @@
+.username,
+.name,
+.bio,
+.location {
+  overflow-wrap: break-word;
+}
+
+.avatar-camper {
+  display: flex;
+  position: absolute;
+  top: -160px;
+}
+
+.header {
+  font-size: 26px;
+}
+
+.avatar-camper .avatar {
+  height: 180px;
+  width: 180px;
+  object-fit: cover;
+}
+
+.avatar-camper div {
+  height: 200px;
+}
+
+.avatar-camper .avatar-container {
+  border-width: 10px;
+}
+
+.supporter svg {
+  height: 1.2em;
+  width: auto;
+  margin: 0 0.2em -0.3em;
+}
+
+.profile-meta-container {
+  display: flex;
+  flex-direction: row;
+  color: var(--quaternary-color);
+}
+
+.profile-edit-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 2em;
+}
+
+.profile-edit-container h1 {
+  margin: 0;
+}
+
+.profile-edit-container button {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+}
+
+.profile-meta-container div {
+  margin-inline-end: 12px;
+}
+
+.profile-meta-container svg {
+  margin-inline-end: 4px;
+}
+
+.social-icons-row {
+  margin-top: 1em;
+}
+
+.social-icons-row a {
+  display: inline-block;
+  margin-inline-end: 12px;
+  color: var(--quaternary-color);
+}
+
+.badge-card-container {
+  display: grid;
+  margin-top: 1.5rem;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: top;
+}
+
+.badge-card {
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  max-width: 300px;
+  font-size: 20px;
+}
+
+.badge-card svg {
+  height: 100px;
+  width: 100px;
+}
+
+.badge-card p {
+  color: var(--quaternary-color);
+}
+
+.badge-card-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.camper-badge {
+  margin-right: 1em;
+}
+@media (max-width: 768px) {
+  .badge-card-container {
+    grid-template-columns: 1fr;
+  }
+}

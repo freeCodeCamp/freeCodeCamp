@@ -1,0 +1,11 @@
+{
+  "name": "Computer Basics Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-computer-basics",
+  "challengeOrder": [
+    { "id": "66ed8fb9f45ce3ece4053eac", "title": "Computer Basics Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

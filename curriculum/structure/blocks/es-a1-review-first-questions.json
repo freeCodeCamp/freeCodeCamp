@@ -1,0 +1,12 @@
+{
+  "name": "First Questions Review",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-review-first-questions",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "6910a23b05a7eb4386e6e730", "title": "Task 1" },
+    { "id": "6910a2da60b9e944f13240a0", "title": "Task 2" }
+  ],
+  "blockLabel": "review"
+}

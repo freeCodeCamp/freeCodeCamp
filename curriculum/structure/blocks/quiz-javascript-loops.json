@@ -1,0 +1,11 @@
+{
+  "name": "JavaScript Loops Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-loops",
+  "challengeOrder": [
+    { "id": "66edcd49e73385dd4df54ac7", "title": "JavaScript Loops Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

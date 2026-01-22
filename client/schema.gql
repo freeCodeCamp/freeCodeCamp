@@ -1,0 +1,467 @@
+### Type definitions saved at 2026-01-20T15:53:20.990Z ###
+
+type File implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+  blksize: Int
+  blocks: Int
+}
+
+type Directory implements Node @dontInfer {
+  sourceInstanceName: String!
+  absolutePath: String!
+  relativePath: String!
+  extension: String!
+  size: Int!
+  prettySize: String!
+  modifiedTime: Date! @dateformat
+  accessTime: Date! @dateformat
+  changeTime: Date! @dateformat
+  birthTime: Date! @dateformat
+  root: String!
+  dir: String!
+  base: String!
+  ext: String!
+  name: String!
+  relativeDirectory: String!
+  dev: Int!
+  mode: Int!
+  nlink: Int!
+  uid: Int!
+  gid: Int!
+  rdev: Int!
+  ino: Float!
+  atimeMs: Float!
+  mtimeMs: Float!
+  ctimeMs: Float!
+  atime: Date! @dateformat
+  mtime: Date! @dateformat
+  ctime: Date! @dateformat
+  birthtime: Date @deprecated(reason: "Use `birthTime` instead")
+  birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
+  blksize: Int
+  blocks: Int
+}
+
+type Site implements Node @dontInfer {
+  buildTime: Date @dateformat
+  siteMetadata: SiteSiteMetadata
+  port: Int
+  host: String
+  flags: SiteFlags
+  pathPrefix: String
+  polyfill: Boolean
+}
+
+type SiteSiteMetadata {
+  title: String
+  description: String
+  siteUrl: String
+}
+
+type SiteFlags {
+  DEV_SSR: Boolean
+}
+
+type SiteFunction implements Node @dontInfer {
+  functionRoute: String!
+  pluginName: String!
+  originalAbsoluteFilePath: String!
+  originalRelativeFilePath: String!
+  relativeCompiledFilePath: String!
+  absoluteCompiledFilePath: String!
+  matchPath: String
+}
+
+type SitePage implements Node @dontInfer {
+  path: String!
+  component: String!
+  internalComponentName: String!
+  componentChunkName: String!
+  matchPath: String
+}
+
+type SitePlugin implements Node @dontInfer {
+  resolve: String
+  name: String
+  version: String
+  nodeAPIs: [String]
+  browserAPIs: [String]
+  ssrAPIs: [String]
+  pluginFilepath: String
+  pluginOptions: SitePluginPluginOptions
+  packageJson: SitePluginPackageJson
+}
+
+type SitePluginPluginOptions {
+  analyzerMode: String
+  postcssOptions: SitePluginPluginOptionsPostcssOptions
+  prefixes: [String]
+  name: String
+  curriculumPath: String
+  path: String
+  jsFrontmatterEngine: Boolean
+  identity: String
+  pathCheck: Boolean
+  allExtensions: Boolean
+  isTSX: Boolean
+  jsxPragma: String
+}
+
+type SitePluginPluginOptionsPostcssOptions {
+  config: String
+}
+
+type SitePluginPackageJson {
+  name: String
+  description: String
+  version: String
+  main: String
+  author: String
+  license: String
+  dependencies: [SitePluginPackageJsonDependencies]
+  devDependencies: [SitePluginPackageJsonDevDependencies]
+  peerDependencies: [SitePluginPackageJsonPeerDependencies]
+  keywords: [String]
+}
+
+type SitePluginPackageJsonDependencies {
+  name: String
+  version: String
+}
+
+type SitePluginPackageJsonDevDependencies {
+  name: String
+  version: String
+}
+
+type SitePluginPackageJsonPeerDependencies {
+  name: String
+  version: String
+}
+
+type SiteBuildMetadata implements Node @dontInfer {
+  buildTime: Date @dateformat
+}
+
+type MarkdownHeading {
+  id: String
+  value: String
+  depth: Int
+}
+
+enum MarkdownHeadingLevels {
+  h1
+  h2
+  h3
+  h4
+  h5
+  h6
+}
+
+enum MarkdownExcerptFormats {
+  PLAIN
+  HTML
+  MARKDOWN
+}
+
+type MarkdownWordCount {
+  paragraphs: Int
+  sentences: Int
+  words: Int
+}
+
+type MarkdownRemark implements Node
+  @childOf(mimeTypes: ["text/markdown", "text/x-markdown"], types: ["File"])
+  @dontInfer {
+  frontmatter: MarkdownRemarkFrontmatter
+  excerpt: String
+  rawMarkdownBody: String
+  fileAbsolutePath: String
+  fields: MarkdownRemarkFields
+}
+
+type MarkdownRemarkFrontmatter {
+  title: String
+  superBlock: String
+  certification: String
+  block: String
+}
+
+type MarkdownRemarkFields {
+  nodeIdentity: String
+  slug: String
+}
+
+type ChallengeNode implements Node @dontInfer {
+  challenge: Challenge
+  sourceInstanceName: String
+}
+
+type Challenge {
+  assignments: [String]
+  bilibiliIds: BilibiliIds
+  block: String
+  blockId: String
+  blockLayout: String
+  blockLabel: String
+  certification: String
+  challengeFiles: [FileContents]
+  challengeOrder: Int
+  challengeType: Int
+  chapter: String
+  dashedName: String
+  demoType: String
+  description: String
+  disableLoopProtectPreview: Boolean
+  disableLoopProtectTests: Boolean
+  explanation: String
+  fillInTheBlank: FillInTheBlank
+  forumTopicId: Int
+  hasEditableBoundaries: Boolean
+  helpCategory: String
+  hooks: Hooks
+  id: String
+  instructions: String
+  isLastChallengeInBlock: Boolean
+  isPrivate: Boolean
+  lang: String
+  module: String
+  msTrophyId: String
+  nodules: [Nodule]
+  notes: String
+  order: Int
+  prerequisites: [PrerequisiteChallenge]
+  questions: [Question]
+  quizzes: [Quiz]
+  required: [RequiredResource]
+  saveSubmissionToDB: Boolean
+  scene: Scene
+  solutions: [[FileContents]]
+  suborder: Int
+  superBlock: String
+  superOrder: Int
+  template: String
+  tests: [Test]
+  fields: ChallengeFields
+  title: String
+  transcript: String
+  translationPending: Boolean
+  url: String
+  usesMultifileEditor: Boolean
+  videoId: String
+  videoLocaleIds: VideoLocaleIds
+  videoUrl: String
+  isExam: Boolean
+  showSpeakingButton: Boolean
+  inputType: String
+}
+
+type BilibiliIds {
+  aid: Int
+  bvid: String
+  cid: Int
+}
+
+type FileContents {
+  fileKey: String
+  ext: String
+  name: String
+  contents: String
+  head: String
+  tail: String
+  editableRegionBoundaries: [Int]
+  path: String
+  error: String
+  seed: String
+  id: String
+  history: [String]
+}
+
+type FillInTheBlank {
+  sentence: String
+  blanks: [Blank]
+  inputType: String
+}
+
+type Blank {
+  answer: String
+  feedback: String
+}
+
+type Hooks {
+  beforeAll: String
+  beforeEach: String
+  afterAll: String
+  afterEach: String
+}
+
+type Nodule {
+  type: String
+  data: JSON
+}
+
+type PrerequisiteChallenge {
+  id: String
+  title: String
+}
+
+type Question {
+  text: String
+  answers: [Answer]
+  solution: Int
+}
+
+type Answer {
+  answer: String
+  feedback: String
+  audioId: String
+}
+
+type Quiz {
+  questions: [QuizQuestion]
+}
+
+type QuizQuestion {
+  text: String
+  distractors: [String]
+  answer: String
+}
+
+type RequiredResource {
+  link: String
+  raw: Boolean
+  src: String
+  crossDomain: Boolean
+}
+
+type Scene {
+  setup: SceneSetup
+  commands: [SceneCommands]
+}
+
+type SceneSetup {
+  background: String
+  characters: [SetupCharacter]
+  audio: SetupAudio
+  alwaysShowDialogue: Boolean
+}
+
+type SetupCharacter {
+  character: String
+  position: CharacterPosition
+  opacity: Float
+}
+
+type CharacterPosition {
+  x: Float
+  y: Float
+  z: Float
+}
+
+type SetupAudio {
+  filename: String
+  startTime: Float
+  startTimestamp: Float
+  finishTimestamp: Float
+}
+
+type SceneCommands {
+  background: String
+  character: String
+  position: CharacterPosition
+  opacity: Float
+  startTime: Float
+  finishTime: Float
+  dialogue: Dialogue
+}
+
+type Dialogue {
+  text: String
+  align: String
+}
+
+type Test {
+  id: String
+  text: String
+  testString: String
+  title: String
+}
+
+type ChallengeFields {
+  slug: String
+  blockHashSlug: String
+}
+
+type VideoLocaleIds {
+  espanol: String
+  italian: String
+  portuguese: String
+}
+
+type SuperBlockStructure implements Node @dontInfer {
+  blocks: [String]
+  superBlock: String
+  chapters: [SuperBlockStructureChapters]
+}
+
+type SuperBlockStructureChapters {
+  dashedName: String
+  modules: [SuperBlockStructureChaptersModules]
+  chapterType: String
+  comingSoon: Boolean
+}
+
+type SuperBlockStructureChaptersModules {
+  dashedName: String
+  blocks: [String]
+  moduleType: String
+  comingSoon: Boolean
+}
+
+type CertificateNode implements Node @dontInfer {
+  sourceInstanceName: String
+  challenge: CertificateNodeChallenge
+}
+
+type CertificateNodeChallenge {
+  id: String
+  title: String
+  certification: String
+  challengeType: Int
+  tests: [CertificateNodeChallengeTests]
+}
+
+type CertificateNodeChallengeTests {
+  id: String
+  title: String
+}

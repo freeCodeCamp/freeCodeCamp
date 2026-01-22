@@ -1,0 +1,20 @@
+{
+  "name": "Greetings and Farewells Practice",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-practice-greetings-and-farewells",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "blockLabel": "practice",
+  "challengeOrder": [
+    { "id": "68c850c5eb642cc96ed86544", "title": "Task 1" },
+    { "id": "68de9f4c14f4d1335059da98", "title": "Task 2" },
+    { "id": "68c9881715d314368f261622", "title": "Task 3" },
+    { "id": "68dea19554185d4bf24dfeea", "title": "Task 4" },
+    { "id": "68c98887b9a4783bf6788700", "title": "Task 5" },
+    { "id": "68dea2ed35dc385b0287da3d", "title": "Task 6" },
+    { "id": "68c988e2a77664404ccea3e1", "title": "Task 7" },
+    { "id": "68c98a694e038945907506b2", "title": "Task 8" },
+    { "id": "68c98ca32c262266f70e198c", "title": "Task 9" },
+    { "id": "68c98ad382b60c54f0d4d6bf", "title": "Task 10" }
+  ]
+}

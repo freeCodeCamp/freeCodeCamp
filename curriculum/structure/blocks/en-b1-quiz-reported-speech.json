@@ -1,0 +1,11 @@
+{
+  "name": "Using Reported Speech Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-reported-speech",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6960474c35aa1ff8c15297b8", "title": "Using Reported Speech Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

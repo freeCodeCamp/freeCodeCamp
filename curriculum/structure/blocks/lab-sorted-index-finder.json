@@ -1,0 +1,15 @@
+{
+  "name": "Implement a Sorted Index Finder",
+  "isUpcomingChange": false,
+  "dashedName": "lab-sorted-index-finder",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "68a47dcdbce12193caf77012",
+      "title": "Implement a Sorted Index Finder"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

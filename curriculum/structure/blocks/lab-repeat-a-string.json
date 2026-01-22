@@ -1,0 +1,15 @@
+{
+  "name": "Build a String Repeating Function",
+  "isUpcomingChange": false,
+  "dashedName": "lab-repeat-a-string",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "afcc8d540bea9ea2669306b6",
+      "title": "Build a String Repeating Function"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

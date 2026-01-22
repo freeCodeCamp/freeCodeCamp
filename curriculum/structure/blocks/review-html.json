@@ -1,0 +1,11 @@
+{
+  "name": "HTML Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-html",
+  "challengeOrder": [
+    { "id": "671a883163d5ab5d47145880", "title": "HTML Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

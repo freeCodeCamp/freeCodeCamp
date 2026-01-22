@@ -1,0 +1,14 @@
+{
+  "name": "Can or Can't",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-can-or-cannot",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3a57f58732ddf862ed2b",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "learn"
+}

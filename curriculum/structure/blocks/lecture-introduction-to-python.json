@@ -1,0 +1,18 @@
+{
+  "name": "Introduction to Python",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-python",
+  "challengeOrder": [
+    {
+      "id": "67fe81c9c6fd3714343a45ad",
+      "title": "What Is Python and What Are Some Common Uses in the Industry?"
+    },
+    {
+      "id": "67fe8567f141d632afaeb71b",
+      "title": "How Do You Install, Configure and Use Python in Your Local Environment?"
+    }
+  ],
+  "helpCategory": "Python"
+}

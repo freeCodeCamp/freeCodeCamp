@@ -1,0 +1,65 @@
+import React from 'react';
+import { withPrefix } from 'gatsby';
+
+export const webmanifestComponents: JSX.Element[] = [
+  <link
+    rel='icon'
+    href={withPrefix('/favicon-32x32.png')}
+    type='image/png'
+    key='favicon-32x32'
+  />,
+  <link
+    rel='manifest'
+    href={withPrefix('/manifest.webmanifest')}
+    crossOrigin='anonymous'
+    key='web-manifest'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='48x48'
+    href={withPrefix('/icons/icon-48x48.png')}
+    key='apple-touch-icon-48x48'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='72x72'
+    href={withPrefix('/icons/icon-72x72.png')}
+    key='apple-touch-icon-72x72'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='96x96'
+    href={withPrefix('/icons/icon-96x96.png')}
+    key='apple-touch-icon-96x96'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='144x144'
+    href={withPrefix('/icons/icon-144x144.png')}
+    key='apple-touch-icon-144x144'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='192x192'
+    href={withPrefix('/icons/icon-192x192.png')}
+    key='apple-touch-icon-192x192'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='256x256'
+    href={withPrefix('/icons/icon-256x256.png')}
+    key='apple-touch-icon-256x256'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='384x384'
+    href={withPrefix('/icons/icon-384x384.png')}
+    key='apple-touch-icon-384x384'
+  />,
+  <link
+    rel='apple-touch-icon'
+    sizes='512x512'
+    href={withPrefix('/icons/icon-512x512.png')}
+    key='apple-touch-icon-512x512'
+  />
+];

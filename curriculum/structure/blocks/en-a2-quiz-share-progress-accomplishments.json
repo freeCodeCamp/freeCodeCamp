@@ -1,0 +1,14 @@
+{
+  "name": "Sharing Progress and Achievements Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-share-progress-accomplishments",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6960370ede2b87e92f532735",
+      "title": "Sharing Progress and Achievements Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

@@ -1,0 +1,64 @@
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Block, BlocksWithSuperBlock } from '../../../interfaces/block';
+import { API_LOCATION } from '../../utils/handle-request';
+
+const SuperBlock = () => {
+  const [error, setError] = useState<Error | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [items, setItems] = useState([] as Block[]);
+  const [superBlockName, setSuperBlockName] = useState('');
+  const params = useParams() as { superblock: string; block: string };
+
+  useEffect(() => {
+    fetchData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const fetchData = () => {
+    setLoading(true);
+    fetch(`${API_LOCATION}/${params.superblock}`)
+      .then(res => res.json() as Promise<BlocksWithSuperBlock>)
+      .then(
+        blockData => {
+          setLoading(false);
+          setItems(blockData.blocks);
+          setSuperBlockName(blockData.currentSuperBlock);
+        },
+        (error: Error) => {
+          setLoading(false);
+          setError(error);
+        }
+      );
+  };
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+  return (
+    <div>
+      <h1>{superBlockName}</h1>
+      <ul>
+        {items.map(block => (
+          <li key={block.name}>
+            <Link to={`/${params.superblock}/${block.path}`}>{block.name}</Link>
+          </li>
+        ))}
+      </ul>
+      <p>
+        <Link to={'/'}>Return to Superblocks</Link>
+      </p>
+      <hr />
+      <h2>Create New Project</h2>
+      <p>
+        Want to create a new project? Open your terminal and run{' '}
+        <code>pnpm run create-new-project</code>
+      </p>
+    </div>
+  );
+};
+
+export default SuperBlock;

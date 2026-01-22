@@ -1,0 +1,14 @@
+{
+  "name": "Local Storage and CRUD Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-local-storage-and-crud",
+  "challengeOrder": [
+    {
+      "id": "6723d0ac516099c902394e8b",
+      "title": "Local Storage and CRUD Review"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

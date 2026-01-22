@@ -1,0 +1,12 @@
+{
+  "name": "Build a Planet Class",
+  "isUpcomingChange": false,
+  "dashedName": "lab-planet-class",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "68e76b1ce8216249d04df670", "title": "Build a Planet Class" }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

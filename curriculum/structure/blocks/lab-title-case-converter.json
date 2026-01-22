@@ -1,0 +1,15 @@
+{
+  "name": "Build a Title Case Converter",
+  "isUpcomingChange": false,
+  "dashedName": "lab-title-case-converter",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "challengeOrder": [
+    {
+      "id": "ab6137d4e35944e21037b769",
+      "title": "Build a Title Case Converter"
+    }
+  ],
+  "usesMultifileEditor": true
+}

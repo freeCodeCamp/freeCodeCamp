@@ -1,0 +1,124 @@
+import { Type } from '@fastify/type-provider-typebox';
+import { profileUI, examResults } from '../types.js';
+
+export const getPublicProfile = {
+  querystring: Type.Object({
+    username: Type.String({ minLength: 1 })
+  }),
+  response: {
+    200: Type.Object({
+      entities: Type.Object({
+        user: Type.Record(
+          Type.String(),
+          Type.Union([
+            Type.Object({
+              isLocked: Type.Boolean(),
+              profileUI,
+              username: Type.String()
+            }),
+            Type.Object({
+              about: Type.String(),
+              calendar: Type.Record(Type.Number(), Type.Literal(1)),
+              completedChallenges: Type.Array(
+                Type.Object({
+                  id: Type.String(),
+                  completedDate: Type.Number(),
+                  solution: Type.Optional(Type.String()),
+                  githubLink: Type.Optional(Type.String()),
+                  challengeType: Type.Optional(Type.Number()),
+                  files: Type.Array(
+                    Type.Object({
+                      contents: Type.String(),
+                      key: Type.String(),
+                      ext: Type.String(),
+                      name: Type.String(),
+                      path: Type.Optional(Type.String())
+                    })
+                  ),
+                  isManuallyApproved: Type.Optional(Type.Boolean()),
+                  examResults: Type.Optional(examResults)
+                })
+              ),
+              completedExams: Type.Array(
+                Type.Object({
+                  id: Type.String(),
+                  completedDate: Type.Number(),
+                  challengeType: Type.Optional(Type.Number()),
+                  examResults
+                })
+              ),
+              // TODO(Post-MVP): return completedSurveys? Presumably not, since why
+              // would this need to be public.
+              githubProfile: Type.Optional(Type.String()),
+              is2018DataVisCert: Type.Boolean(),
+              is2018FullStackCert: Type.Boolean(),
+              isA2EnglishCert: Type.Boolean(),
+              isB1EnglishCert: Type.Boolean(),
+              isApisMicroservicesCert: Type.Boolean(),
+              isBackEndCert: Type.Boolean(),
+              isCheater: Type.Boolean(),
+              isCollegeAlgebraPyCertV8: Type.Boolean(),
+              isDataAnalysisPyCertV7: Type.Boolean(),
+              isDataVisCert: Type.Boolean(),
+              // TODO(Post-MVP): isDonating should be boolean.
+              isDonating: Type.Union([Type.Boolean(), Type.Null()]),
+              isFoundationalCSharpCertV8: Type.Boolean(),
+              isFrontEndCert: Type.Boolean(),
+              isFrontEndLibsCert: Type.Boolean(),
+              isFullStackCert: Type.Boolean(),
+              isJavascriptCertV9: Type.Boolean(),
+              isHonest: Type.Boolean(),
+              isInfosecCertV7: Type.Boolean(),
+              isInfosecQaCert: Type.Boolean(),
+              isJsAlgoDataStructCert: Type.Boolean(),
+              isJsAlgoDataStructCertV8: Type.Boolean(),
+              isMachineLearningPyCertV7: Type.Boolean(),
+              isPythonCertV9: Type.Boolean(),
+              isQaCertV7: Type.Boolean(),
+              isRelationalDatabaseCertV8: Type.Boolean(),
+              isRelationalDatabaseCertV9: Type.Boolean(),
+              isRespWebDesignCert: Type.Boolean(),
+              isRespWebDesignCertV9: Type.Boolean(),
+              isSciCompPyCertV7: Type.Boolean(),
+              linkedin: Type.Optional(Type.String()),
+              location: Type.String(),
+              name: Type.String(),
+              picture: Type.String(),
+              // TODO(Post-MVP): points should be a number
+              points: Type.Union([Type.Number(), Type.Null()]),
+              portfolio: Type.Array(
+                Type.Object({
+                  description: Type.String(),
+                  id: Type.String(),
+                  image: Type.String(),
+                  title: Type.String(),
+                  url: Type.String()
+                })
+              ),
+              profileUI,
+              twitter: Type.Optional(Type.String()),
+              bluesky: Type.Optional(Type.String()),
+              website: Type.Optional(Type.String()),
+              yearsTopContributor: Type.Array(Type.String()), // TODO(Post-MVP): convert to number?
+              joinDate: Type.String(),
+              username: Type.String(),
+              usernameDisplay: Type.String(),
+              msUsername: Type.Optional(Type.String())
+            })
+          ])
+        )
+      }),
+      result: Type.String()
+    }),
+    // We can't simply have Type.Object({}), even though that's correct, because
+    // TypeScript will then accept all responses (since every object can be
+    // assigned to {})
+    400: Type.Union([
+      Type.Object({ entities: Type.Optional(Type.Never()) }),
+      Type.Literal(
+        'This endpoint is no longer available outside of the freeCodeCamp ecosystem'
+      )
+    ]),
+    404: Type.Object({ entities: Type.Optional(Type.Never()) })
+  }
+};

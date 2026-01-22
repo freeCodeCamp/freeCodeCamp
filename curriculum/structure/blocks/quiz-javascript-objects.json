@@ -1,0 +1,11 @@
+{
+  "name": "JavaScript Objects Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-objects",
+  "challengeOrder": [
+    { "id": "66edcd0ecb4b25dc64a34804", "title": "JavaScript Objects Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

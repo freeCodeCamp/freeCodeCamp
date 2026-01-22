@@ -1,0 +1,11 @@
+{
+  "name": "Computer Basics Review",
+  "blockLabel": "review",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "review-computer-basics",
+  "challengeOrder": [
+    { "id": "671a87e6dcef5b5bd765e5ed", "title": "Computer Basics Review" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

@@ -1,0 +1,154 @@
+{
+  "chapters": [
+    {
+      "dashedName": "part-0",
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-1",
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-2",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-3",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-4",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-5",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-6",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-7",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-8",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-9",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-10",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-11",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-12",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    },
+    {
+      "dashedName": "part-13",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "basic-html",
+          "comingSoon": true,
+          "blocks": ["cat-blog-page"]
+        }
+      ]
+    }
+  ]
+}

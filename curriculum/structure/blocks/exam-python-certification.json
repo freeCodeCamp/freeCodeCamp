@@ -1,0 +1,14 @@
+{
+  "name": "Python Certification Exam",
+  "blockLabel": "exam",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "exam-python-certification",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "68e6bf0320effa1586e79858",
+      "title": "Python Certification Exam"
+    }
+  ]
+}

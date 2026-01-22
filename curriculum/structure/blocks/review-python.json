@@ -1,0 +1,11 @@
+{
+  "name": "Python Review",
+  "isUpcomingChange": false,
+  "dashedName": "review-python",
+  "challengeOrder": [
+    { "id": "67f39e391c9b373069def02c", "title": "Python Review" }
+  ],
+  "helpCategory": "Python",
+  "blockLabel": "review",
+  "blockLayout": "link"
+}

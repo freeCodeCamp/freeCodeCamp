@@ -1,0 +1,15 @@
+{
+  "name": "Implement the Bisection Method",
+  "isUpcomingChange": false,
+  "dashedName": "lab-bisection-method",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "686ccc2c8b967e17ab18d593",
+      "title": "Implement the Bisection Method"
+    }
+  ],
+  "usesMultifileEditor": true
+}

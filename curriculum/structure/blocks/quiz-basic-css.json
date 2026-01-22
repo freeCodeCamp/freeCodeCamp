@@ -1,0 +1,11 @@
+{
+  "name": "CSS Fundamentals Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-basic-css",
+  "challengeOrder": [
+    { "id": "66ed8fa2f45ce3ece4053eab", "title": "CSS Fundamentals Quiz" }
+  ],
+  "helpCategory": "HTML-CSS"
+}

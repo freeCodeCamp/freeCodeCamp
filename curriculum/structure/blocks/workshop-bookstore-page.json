@@ -1,0 +1,31 @@
+{
+  "name": "Build a Bookstore Page",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-bookstore-page",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69134b6cb43aa5f254950a10", "title": "Step 1" },
+    { "id": "691f85085787a8c4ca589fbb", "title": "Step 2" },
+    { "id": "69134d14150d51f8066a3246", "title": "Step 3" },
+    { "id": "68e97fe79367ad7b5dd6c9cd", "title": "Step 4" },
+    { "id": "68ebdbacdd3fa474132cc975", "title": "Step 5" },
+    { "id": "68ec6cd5b7e8f5a8f7319e32", "title": "Step 6" },
+    { "id": "68ec6d9a315221aa31e54816", "title": "Step 7" },
+    { "id": "68ec6e8d0caee3afaaf142ef", "title": "Step 8" },
+    { "id": "68ec9332a9b5b2b32487bd00", "title": "Step 9" },
+    { "id": "68ec98b38d83a3c28dd30efe", "title": "Step 10" },
+    { "id": "68ec99e478211dc578699944", "title": "Step 11" },
+    { "id": "68eca11e99e3c5c894ca9d69", "title": "Step 12" },
+    { "id": "68eca2a795b333ca5fee30a8", "title": "Step 13" },
+    { "id": "68eca3cfeebef2cd8cc5f814", "title": "Step 14" },
+    { "id": "68eca4c4b0f952cf09fabe09", "title": "Step 15" },
+    { "id": "68eca5412b5dd9d06b3d6404", "title": "Step 16" },
+    { "id": "68eca5c0065c82d256d29ca3", "title": "Step 17" },
+    { "id": "68eca6364c5616d393389a30", "title": "Step 18" },
+    { "id": "68eca6e5a6759ed4ea0034dc", "title": "Step 19" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

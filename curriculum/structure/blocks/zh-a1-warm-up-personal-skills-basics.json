@@ -1,0 +1,14 @@
+{
+  "name": "Personal Skills Basics",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-warm-up-personal-skills-basics",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "68fa3a2fabea21dd36b1d501",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "warm-up"
+}

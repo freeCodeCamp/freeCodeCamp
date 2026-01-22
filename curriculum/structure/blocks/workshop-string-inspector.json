@@ -1,0 +1,24 @@
+{
+  "name": "Build a String Inspector",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-string-inspector",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "68e51d8f163d3f8b70f9c4e5", "title": "Step 1" },
+    { "id": "68ef6e42fa6e8a9a18a401fa", "title": "Step 2" },
+    { "id": "68e6172875008fea742a63c9", "title": "Step 3" },
+    { "id": "68e6172975008fea742a63ca", "title": "Step 4" },
+    { "id": "68e6172975008fea742a63cb", "title": "Step 5" },
+    { "id": "68e6172975008fea742a63cc", "title": "Step 6" },
+    { "id": "68e6172975008fea742a63cd", "title": "Step 7" },
+    { "id": "68e6172975008fea742a63ce", "title": "Step 8" },
+    { "id": "68e6172975008fea742a63cf", "title": "Step 9" },
+    { "id": "68e6172975008fea742a63d0", "title": "Step 10" },
+    { "id": "68e6172975008fea742a63d1", "title": "Step 11" },
+    { "id": "68e6172975008fea742a63d2", "title": "Step 12" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

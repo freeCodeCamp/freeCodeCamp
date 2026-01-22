@@ -1,0 +1,14 @@
+{
+  "name": "Determiners and Articles Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-determiners-articles",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69604712c9b07a9222096400",
+      "title": "Determiners and Articles Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

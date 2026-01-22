@@ -1,0 +1,466 @@
+---
+id: 66edd3711bb9f7efa73aef91
+title: JavaScript Dates Quiz
+challengeType: 8
+dashedName: quiz-javascript-dates
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the JavaScript `Date` object used for?
+
+#### --distractors--
+
+Work with just dates only.
+
+---
+
+Work with just time only.
+
+---
+
+Work with just leap years.
+
+#### --answer--
+
+Work with both dates and time.
+
+### --question--
+
+#### --text--
+
+Which code creates a new `Date` object instance?
+
+#### --distractors--
+
+`Date.new()`
+
+---
+
+`Date.fetch()`
+
+---
+
+`new.Date()`
+
+#### --answer--
+
+`new Date()`
+
+### --question--
+
+#### --text--
+
+How does `Date.now()` work?
+
+#### --distractors--
+
+It returns the current time in nanoseconds since July 4, 1776.
+
+---
+
+It returns the previous time in milliseconds since January 1, 1974.
+
+---
+
+It returns the current date in minutes since January 1, 1970.
+
+#### --answer--
+
+It returns the current time in milliseconds since January 1, 1970.
+
+### --question--
+
+#### --text--
+
+Which method returns the current year?
+
+#### --distractors--
+
+`getNewYear()`
+
+---
+
+`getLastYear()`
+
+---
+
+`getLeapYear()`
+
+#### --answer--
+
+`getFullYear()`
+
+### --question--
+
+#### --text--
+
+Which method returns the current month, as a zero-indexed integer?
+
+#### --distractors--
+
+`getCalendar()`
+
+---
+
+`fetchMonth()`
+
+---
+
+`get.Month()`
+
+#### --answer--
+
+`getMonth()`
+
+### --question--
+
+#### --text--
+
+Which method formats a date as a string?
+
+#### --distractors--
+
+`getMonth()`
+
+---
+
+`formatDate()`
+
+---
+
+`toStingy()`
+
+#### --answer--
+
+`toString()`
+
+### --question--
+
+#### --text--
+
+What would the result of `console.log(new Date().getFullYear());` be, if it is June 12th 2022?
+
+#### --distractors--
+
+`"June 12th 2022"`
+
+---
+
+`"2023"`
+
+---
+
+`"06/12/2022"`
+
+#### --answer--
+
+`"2022"`
+
+### --question--
+
+#### --text--
+
+What does `fr-FR` in `date.toLocaleDateString("fr-FR")` represent?
+
+#### --distractors--
+
+A French-Canadian locale.
+
+---
+
+A French-Italian locale.
+
+---
+
+A French-Finnish locale.
+
+#### --answer--
+
+A French locale.
+
+### --question--
+
+#### --text--
+
+If the time in your locale is formatted as `HH:MM:SS AM/PM`, which line of code would correctly display the current time?
+
+#### --distractors--
+
+`console.log(new Date().toLocaleDateString());`
+
+---
+
+`console.log(new Date().toString());`
+
+---
+
+`console.log(new Date().toCityDateString());`
+
+#### --answer--
+
+`console.log(new Date().toLocaleTimeString());`
+
+### --question--
+
+#### --text--
+
+In which format does the `toISOString()` method return a date?
+
+#### --distractors--
+
+A USA-863 string format.
+
+---
+
+An MP3 string format.
+
+---
+
+A UTC string format.
+
+#### --answer--
+
+An ISO-8601 string format.
+
+### --question--
+
+#### --text--
+
+What should an ISO-8601 date format look like?
+
+#### --distractors--
+
+DD-MM-YYYY
+
+---
+
+DD-MM-YYTHH
+
+---
+
+YYYY-MM-DDTHH:mm:ssZ
+
+#### --answer--
+
+YYYY-MM-DDTHH:mm:ss.sssZ
+
+### --question--
+
+#### --text--
+
+What is the corresponding month for `console.log(new Date(2003, 6, 27).getMonth());`?
+
+#### --distractors--
+
+June
+
+---
+
+April
+
+---
+
+January
+
+#### --answer--
+
+July
+
+### --question--
+
+#### --text--
+
+How would you format a date to a locale-specific string or a more readable format?
+
+#### --distractors--
+
+`.toLocaleDate()`
+
+---
+
+`.toLocaleString()`
+
+---
+
+`.toLocaleTimeString()`
+
+#### --answer--
+
+`.toLocaleDateString()`
+
+### --question--
+
+#### --text--
+
+What is the default locale used by the `toLocaleDateString()` method if no `locales` parameter is provided?
+
+#### --distractors--
+
+English (Great Britain).  
+
+---
+
+The locale closest to United States.
+
+---
+
+French (France).
+
+#### --answer--
+
+The user's system locale.
+
+### --question--
+
+#### --text--
+
+What gets assigned to `now` in the code below?
+
+```js
+const now = new Date();
+```
+
+#### --distractors--
+
+The current time in milliseconds since January 1, 1990.
+
+---
+
+The current date in milliseconds minus the Unix epoch.
+
+---
+
+The current time in nanoseconds since January 1, 1990.
+
+#### --answer--
+
+The current date and time based on your computer system's clock.
+
+### --question--
+
+#### --text--
+
+What is the output of `console.log(new Date(2003, 6, 27).getFullYear());`?
+
+#### --distractors--
+
+`"27/6/2003"`
+
+---
+
+`27`
+
+---
+
+`6`
+
+#### --answer--
+
+`2003`
+
+### --question--
+
+#### --text--
+
+What does `getDate` return when the date is invalid?
+
+#### --distractors--
+
+`0`
+
+---
+
+`null`
+
+---
+
+`undefined`
+
+#### --answer--
+
+`NaN`
+
+### --question--
+
+#### --text--
+
+If we are in the month of October, what will `console.log(new Date().getMonth());` output?
+
+#### --distractors--
+
+`1`
+
+---
+
+`3`
+
+---
+
+`10`
+
+#### --answer--
+
+`9`
+
+### --question--
+
+#### --text--
+
+Which option will output `2021` for the following object?
+
+```js
+const d = new Date("2021-12-25");
+```
+
+#### --distractors--
+
+`console.log(d.getTime())`
+
+---
+
+`console.log(d.toUTCString())`
+
+---
+
+`console.log(d.getDate())`
+
+#### --answer--
+
+`console.log(d.getFullYear())`
+
+### --question--
+
+#### --text--
+
+Which option will output `"2021-12-25T00:00:00.000Z"` for the following object?
+
+```js
+const d = new Date("2021-12-25");
+```
+
+#### --distractors--
+
+`console.log(d.getFullYear())`
+
+---
+
+`console.log(d.toUTCString())`
+
+---
+
+`console.log(d.getTime())`
+
+#### --answer--
+
+`console.log(d.toISOString())`

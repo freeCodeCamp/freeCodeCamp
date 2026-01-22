@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["WebWorker", "DOM"],
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "paths": {
+      "pyodide/ffi": ["./node_modules/pyodide/ffi.d.ts"] // Remove after updating pyodide (later versions correctly export ffi)
+    }
+  }
+}

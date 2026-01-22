@@ -1,0 +1,55 @@
+.speaking-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0;
+}
+
+.speaking-modal-sentence-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  gap: 2rem;
+  background-color: var(--background-primary);
+  border: 2px solid var(--background-tertiary);
+  padding: 0.5rem 1rem;
+}
+
+.speaking-modal-sentence {
+  margin: 0;
+}
+
+.speaking-modal-record-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.speaking-modal-record-icon {
+  margin-inline-end: 0.5rem;
+}
+
+.speaking-modal-feedback {
+  margin-top: 2rem;
+}
+
+.speaking-modal-correct-text {
+  color: var(--background-success);
+}
+
+.speaking-modal-feedback-message {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.speaking-modal-comparison-word-correct {
+  color: var(--background-success);
+  margin-inline-start: 4px;
+}
+
+.speaking-modal-comparison-word-incorrect {
+  color: var(--background-danger);
+  margin-inline-start: 4px;
+}

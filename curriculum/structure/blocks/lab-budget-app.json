@@ -1,0 +1,15 @@
+{
+  "name": "Build a Budget App",
+  "isUpcomingChange": false,
+  "usesMultifileEditor": true,
+  "dashedName": "lab-budget-app",
+  "challengeOrder": [
+    {
+      "id": "5e44413e903586ffb414c94e",
+      "title": "Build a Budget App"
+    }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

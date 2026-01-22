@@ -1,0 +1,18 @@
+{
+  "name": "Working with Generics and Type Narrowing",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-generics-and-type-narrowing",
+  "challengeOrder": [
+    {
+      "id": "67d30191adb999a9909109ef",
+      "title": "What Are Generics, and How Do They Work?"
+    },
+    {
+      "id": "67d301a5f536d1a9e5df1a8c",
+      "title": "What Is Type Narrowing, and How Does It Work?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

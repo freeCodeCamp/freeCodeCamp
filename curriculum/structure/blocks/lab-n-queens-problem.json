@@ -1,0 +1,15 @@
+{
+  "name": "Implement the N-Queens Algorithm",
+  "isUpcomingChange": false,
+  "dashedName": "lab-n-queens-problem",
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "68dbc6b7e8f794a2ae69bc74",
+      "title": "Implement the N-Queens Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

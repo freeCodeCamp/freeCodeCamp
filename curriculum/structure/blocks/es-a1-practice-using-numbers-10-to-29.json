@@ -1,0 +1,24 @@
+{
+  "name": "Using Numbers 10 to 29",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-practice-using-numbers-10-to-29",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "692362e117d7be7f2ec621b7", "title": "Task 1" },
+    { "id": "6923631d11905882a334aa74", "title": "Task 2" },
+    { "id": "6923637a1f3d1c86a3553d13", "title": "Task 3" },
+    { "id": "692363900df4e987cec7256f", "title": "Task 4" },
+    { "id": "692363aa62c77f88dd893665", "title": "Task 5" },
+    { "id": "692363c1d961238aa36119b8", "title": "Task 6" },
+    { "id": "692363e31962218bac518017", "title": "Task 7" },
+    { "id": "692363f3c762f78cea3c19e1", "title": "Task 8" },
+    { "id": "692364152d35bb8df0c73274", "title": "Task 9" },
+    { "id": "6923642b185cf68eed95dc46", "title": "Task 10" },
+    { "id": "6923644f41365a8fe354d904", "title": "Task 11" },
+    { "id": "6923646cdc997590ee04f838", "title": "Task 12" },
+    { "id": "69236486a1645591e27d2187", "title": "Task 13" },
+    { "id": "6923649e6fcd8092d13ebcf0", "title": "Task 14" }
+  ],
+  "blockLabel": "practice"
+}

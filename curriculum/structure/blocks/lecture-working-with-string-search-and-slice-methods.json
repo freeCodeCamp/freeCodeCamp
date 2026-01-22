@@ -1,0 +1,18 @@
+{
+  "name": "Working with String Search and Slice Methods",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-string-search-and-slice-methods",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "67326c0d7bef01c539120766",
+      "title": "How Can You Test if a String Contains a Substring?"
+    },
+    {
+      "id": "67326c15b3b2f0c5827927cc",
+      "title": "How Can You Extract a Substring from a String?"
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+.scene-wrapper {
+  overflow: hidden;
+  position: relative;
+  color: var(--gray-00);
+}
+
+.scene-dialogue-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 5px calc(5px + 3.5vw);
+  font-size: calc(0.25vw + 0.75rem);
+  min-height: calc(35px + 1vw + 2rem);
+  flex: 0 0 80%;
+  background: var(--primary-background-translucent);
+  color: var(--primary-color);
+}
+
+.scene-dialogue-label {
+  color: var(--highlight-color);
+  font-weight: bold;
+}
+
+.scene-dialogue-align-left {
+  text-align: left;
+}
+
+.scene-dialogue-align-right {
+  text-align: right;
+}
+
+.scene-dialogue-align-center {
+  text-align: center;
+}
+
+.scene-dialogue-text {
+  font-size: calc(0.25vw + 1rem);
+  padding: 0 10px;
+}
+
+.scene-controls {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  background: var(--primary-background);
+  padding: 0 10px;
+  min-height: 60px;
+  max-height: 60px;
+}
+
+.scene-btn,
+.scene-btn:hover,
+.scene-btn:focus,
+.scene-btn:active {
+  color: var(--tertiary-color);
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  scale: 0.75;
+}
+
+.scene-play-btn {
+  background: rgba(0, 0, 0, 0);
+}
+
+.scene-a11y-btn svg {
+  width: 60px;
+  height: 60px;
+}

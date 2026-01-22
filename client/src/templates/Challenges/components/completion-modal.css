@@ -1,0 +1,103 @@
+.completion-success-icon {
+  width: 200px;
+  height: 200px;
+  transform: scale(1.5);
+  opacity: 0;
+  animation: success-icon-animation 150ms linear 100ms forwards;
+}
+
+@keyframes success-icon-animation {
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.completion-block-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+.completion-block-name {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.completion-block-meta {
+  color: var(--quaternary-color);
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+.completion-block-details .completion-block-name {
+  font-size: 1.2rem;
+}
+
+.completion-block-details .completion-block-meta {
+  font-size: 1rem;
+}
+
+.progress-bar-wrap {
+  width: 100%;
+  position: relative;
+}
+
+.progress-bar-background {
+  width: 100%;
+  height: 10px;
+  color: var(--primary-color);
+  background-color: var(--quaternary-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.progress-bar-percent {
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+  background-color: var(--primary-color);
+  transition: width 0ms linear;
+}
+
+/* The maximum width of login button is 500px, which is set in global.css.
+   An override is needed as 500px is not enough to allow the button to span the modal width. */
+.completion-modal-login-btn .signup-btn {
+  max-width: 100%;
+}
+
+.completion-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media screen and (max-width: 991px) {
+  .progress-bar-wrap,
+  .progress-bar-background {
+    height: 10px;
+  }
+
+  .completion-success-icon {
+    width: 160px;
+    height: 160px;
+  }
+
+  .completion-message {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .completion-block-name {
+    font-size: 1rem;
+  }
+}

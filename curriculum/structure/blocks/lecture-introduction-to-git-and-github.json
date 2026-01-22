@@ -1,0 +1,46 @@
+{
+  "name": "Introduction to Git and GitHub",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-git-and-github",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "68828e965f70137025ec5031",
+      "title": "What Is Version Control, and Why Are These Systems Necessary?"
+    },
+    {
+      "id": "688290189fecfe7206d22833",
+      "title": "What Is the Purpose of Sites Like GitHub and GitLab, and What Are Some Benefits of Using Them?"
+    },
+    {
+      "id": "6882902bc844b1723da7eb13",
+      "title": "How Do You Install and Set Up Git?"
+    },
+    {
+      "id": "68829061f03543726ea6f318",
+      "title": "What Is a Repository, and How Do You Create One?"
+    },
+    {
+      "id": "6882904fd7063f7258c0aef3",
+      "title": "How Do You Handle Security Requirements Like SSH and GPG Keys?"
+    },
+    {
+      "id": "68829079ab2abe728a822cc1",
+      "title": "How Do You Push a Local Repository to GitHub?"
+    },
+    {
+      "id": "688290b7f7f46f72d3d4e73d",
+      "title": "How Do You Contribute to Other People's Repositories?"
+    },
+    {
+      "id": "688290c998562972e953d34d",
+      "title": "How Do You Create a New Branch for Your Repository?"
+    },
+    {
+      "id": "688290da3736c273009129d0",
+      "title": "What Is a Pull Request, and How Do You Create One?"
+    }
+  ]
+}

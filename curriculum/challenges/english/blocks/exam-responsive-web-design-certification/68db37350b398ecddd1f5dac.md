@@ -1,0 +1,19 @@
+---
+id: 68db37350b398ecddd1f5dac
+title: Responsive Web Design Certification Exam
+challengeType: 30
+isExam: true
+dashedName: exam-responsive-web-design-certification
+---
+
+# --description--
+
+Start your exam in the exam environment app.
+
+# --instructions--
+
+# --hints--
+
+# --seed--
+
+# --solutions--

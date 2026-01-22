@@ -1,0 +1,22 @@
+{
+  "name": "Understanding Inheritance and Polymorphism",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-inheritance-and-polymorphism",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68c3ba8940e4df8afa83a723",
+      "title": "What Is Inheritance and How Does It Promote Code Reuse?"
+    },
+    {
+      "id": "68c3bc4ddb7b469fb7d17c28",
+      "title": "What Is Polymorphism and How Does It Promote Code Reuse?"
+    },
+    {
+      "id": "68ca71c3f0ee7ece4ea1e286",
+      "title": "What is Name Mangling and How Does it Work"
+    }
+  ],
+  "helpCategory": "Python"
+}

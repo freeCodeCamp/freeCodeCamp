@@ -1,0 +1,42 @@
+---
+id: 6895e3f91c069e0068a42582
+title: Step 9
+challengeType: 20
+dashedName: step-9
+---
+
+# --description--
+
+Inside your `play` method, use `print()` to display a message about playing the instrument.
+
+Use an f-string to include the instrument's name in the message: `The [instrument name] is fun to play!`. The `[instrument name]` should be replaced with the actual name of the instrument.
+
+# --hints--
+
+Your `play` method should use an f-string to display the message `The [instrument name] is fun to play!`. Use `self.name` to access the instrument name.
+
+```js
+({
+  test: () => assert(runPython(`_Node(_code).find_class("MusicalInstrument").find_function("play").has_call('print(f"The {self.name} is fun to play!")')`))
+});
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+--fcc-editable-region--
+class MusicalInstrument:
+    def __init__(self, name, instrument_type):
+        self.name = name
+        self.instrument_type = instrument_type
+
+    def play(self):
+        pass
+--fcc-editable-region--
+
+instrument_1 = MusicalInstrument('Oboe', 'woodwind')
+instrument_2 = MusicalInstrument('Trumpet', 'brass')
+
+```

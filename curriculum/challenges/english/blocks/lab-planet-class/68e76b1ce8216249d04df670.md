@@ -1,0 +1,340 @@
+---
+id: 68e76b1ce8216249d04df670
+title: Build a Planet Class
+challengeType: 27
+dashedName: build-a-planet-class
+---
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1. You should create a class named `Planet`.
+1. The `Planet` class should have an `__init__` method that:
+   - Has four parameters: `self`, `name`, `planet_type`, and `star`.
+   - Raises a `TypeError` with the message `name, planet type, and star must be strings` if any of the arguments passed in is not a string type.
+   - Raises a `ValueError` with the message `name, planet_type, and star must be non-empty strings` if any of the arguments passed in is an empty string.
+   - Assigns the values passed in to the instance attributes `name`, `planet_type`, and `star`.
+1. The `Planet` class should have an `orbit` method that returns a string in the format `{name} is orbiting around {star}...`.
+1. The `Planet` class should have a `__str__` method that returns a string in the format `Planet: {name} | Type: {planet_type} | Star: {star}`.
+1. You should create three instances of the `Planet` class named `planet_1`, `planet_2`, and `planet_3`.
+1. You should print each planet object to see the `__str__` method output.
+1. You should call the `orbit` method on each planet object and print the result.
+
+# --hints--
+
+You should create a class named `Planet`.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).has_class('Planet')
+`
+    )
+})
+```
+
+The `Planet` class should have an `__init__` method.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).find_class('Planet').has_function('__init__')
+
+`
+    )
+})
+```
+
+The `__init__` method should have four parameters: `self`, `name`, `planet_type`, and `star`, in this order.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).find_class('Planet').find_function('__init__').has_args('self, name, planet_type, star')
+
+`
+    )
+})
+```
+
+The `__init__` method should raise a `TypeError` with the message `name, planet type, and star must be strings` if the first argument passed in is not a string type.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet(8, "planet", "sun")
+except TypeError as e:
+  assert str(e) == "name, planet type, and star must be strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+The `__init__` method should raise a `TypeError` with the message `name, planet type, and star must be strings` if the second argument passed in is not a string type.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet("Name", [], "sun")
+except TypeError as e:
+  assert str(e) == "name, planet type, and star must be strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+The `__init__` method should raise a `TypeError` with the message `name, planet type, and star must be strings` if the third argument passed in is not a string type.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet("Name", "planet", 0)
+except TypeError as e:
+  assert str(e) == "name, planet type, and star must be strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+The `__init__` method should raise a `ValueError` with the message `name, planet_type, and star must be non-empty strings` if the first argument passed in is an empty string.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet("", "planet", "sun")
+except ValueError as e:
+  assert str(e) == "name, planet_type, and star must be non-empty strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+The `__init__` method should raise a `ValueError` with the message `name, planet_type, and star must be non-empty strings` if the second argument passed in is an empty string.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet("Name", "", "sun")
+except ValueError as e:
+  assert str(e) == "name, planet_type, and star must be non-empty strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+The `__init__` method should raise a `ValueError` with the message `name, planet_type, and star must be non-empty strings` if the third argument passed in is an empty string.
+
+```js
+({
+    test: () => runPython(
+`
+try:
+  planet = Planet("Name", "planet", "")
+except ValueError as e:
+  assert str(e) == "name, planet_type, and star must be non-empty strings"
+else:
+  assert False, "Expected to raise error..."
+`
+    )
+})
+```
+
+You should assign `name` to `self.name` in the `__init__` method.
+
+```js
+({
+    test: () => runPython(
+`
+init = _Node(_code).find_class('Planet').find_function('__init__')
+assert init.find_variable('self.name').is_equivalent('self.name = name')
+`
+    )
+})
+```
+
+You should assign `planet_type` to `self.planet_type` in the `__init__` method.
+
+```js
+({
+    test: () => runPython(
+`
+init = _Node(_code).find_class('Planet').find_function('__init__')
+assert init.find_variable('self.planet_type').is_equivalent('self.planet_type = planet_type')
+`
+    )
+})
+```
+
+You should assign `star` to `self.star` in the `__init__` method.
+
+```js
+({
+    test: () => runPython(
+`
+init = _Node(_code).find_class('Planet').find_function('__init__')
+assert init.find_variable('self.star').is_equivalent('self.star = star')
+`
+    )
+})
+```
+
+The `Planet` class should have an `orbit` method.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).find_class('Planet').has_function('orbit')
+`
+    )
+})
+```
+
+The `orbit` method should return a string in the format `{name} is orbiting around {star}...`.
+
+```js
+({
+    test: () => runPython(
+`
+pl = Planet('planetino', 'type', 'star')
+assert pl.orbit() == 'planetino is orbiting around star...'
+`
+    )
+})
+```
+
+The `Planet` class should have a `__str__` method.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).find_class('Planet').has_function('__str__')
+`
+    )
+})
+```
+
+The `__str__` method should return a string in the format `Planet: {name} | Type: {planet_type} | Star: {star}`.
+
+```js
+({
+    test: () => runPython(
+`
+assert str(Planet("abcd", "bcdea", "jhkl")) == "Planet: abcd | Type: bcdea | Star: jhkl"
+`
+    )
+})
+```
+
+You should create three instances of the `Planet` class named `planet_1`, `planet_2`, and `planet_3`.
+
+```js
+({
+    test: () => runPython(
+`
+assert isinstance(planet_1, Planet)
+assert isinstance(planet_2, Planet)
+assert isinstance(planet_3, Planet)
+`
+    )
+})
+```
+
+You should print each planet object to see the `__str__` method output.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).has_call('print(planet_1)')
+assert _Node(_code).has_call('print(planet_2)')
+assert _Node(_code).has_call('print(planet_3)')
+`
+    )
+})
+```
+
+You should call the `orbit` method on each planet object and print the result.
+
+```js
+({
+    test: () => runPython(
+`
+assert _Node(_code).has_call('print(planet_1.orbit())')
+assert _Node(_code).has_call('print(planet_2.orbit())')
+assert _Node(_code).has_call('print(planet_3.orbit())')
+`
+    )
+})
+```
+
+# --seed--
+
+## --seed-contents--
+
+```py
+
+```
+
+# --solutions--
+
+```py
+class Planet:
+    def __init__(self, name, planet_type, star):
+        args = (name, planet_type, star)
+        if not all(isinstance(arg, str) for arg in args):
+            raise TypeError("name, planet type, and star must be strings")
+        if not all(args):
+            raise ValueError('name, planet_type, and star must be non-empty strings')
+        self.name = name
+        self.planet_type = planet_type
+        self.star = star   # The star the planet orbits
+
+    def orbit(self):
+        return f'{self.name} is orbiting around {self.star}...'
+
+    def __str__(self):
+        return f'Planet: {self.name} | Type: {self.planet_type} | Star: {self.star}'
+
+
+# Test the Planet class
+planet_1 = Planet('Earth', 'terrestrial', 'Sun')
+planet_2 = Planet('Jupiter', 'gas giant', 'Sun')
+planet_3 = Planet('Kepler-452b', 'super-Earth', 'Kepler-452')
+
+print(planet_1.orbit()) # Earth is orbiting around Sun...
+print(planet_1) # Planet: Earth | Type: terrestrial | Star: Sun
+
+print(planet_2.orbit()) # Jupiter is orbiting around Sun...
+print(planet_2) # Planet: Jupiter | Type: gas giant | Star: Sun
+
+print(planet_3.orbit()) # Kepler-452b is orbiting around Kepler-452...
+print(planet_3) # Planet: Kepler-452b | Type: super-Earth | Star: Kepler-452
+```

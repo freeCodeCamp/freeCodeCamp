@@ -1,0 +1,15 @@
+{
+  "name": "Implement an HTML Entity Converter",
+  "isUpcomingChange": false,
+  "dashedName": "lab-html-entitiy-converter",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    {
+      "id": "a6b0bb188d873cb2c8729495",
+      "title": "Implement an HTML Entity Converter"
+    }
+  ],
+  "usesMultifileEditor": true,
+  "blockLabel": "lab",
+  "blockLayout": "link"
+}

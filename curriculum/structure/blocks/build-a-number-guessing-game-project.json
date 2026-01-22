@@ -1,0 +1,13 @@
+{
+  "name": "Number Guessing Game",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-number-guessing-game-project",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "602da04c22201c65d2a019f4",
+      "title": "Build a Number Guessing Game"
+    }
+  ],
+  "blockLayout": "project-list"
+}

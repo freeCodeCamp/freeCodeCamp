@@ -1,0 +1,11 @@
+{
+  "name": "JavaScript Arrays Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-arrays",
+  "challengeOrder": [
+    { "id": "66edcccbba6dacdb65a59067", "title": "JavaScript Arrays Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

@@ -1,0 +1,1064 @@
+---
+id: 66ed902df45ce3ece4053ebc
+title: HTML Tables and Forms Quiz
+challengeType: 8
+dashedName: quiz-html-tables-and-forms
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+Which of the following attributes is used to specify the URL where the form data should be sent?
+
+#### --distractors--
+
+`capture`
+
+---
+
+`accept`
+
+---
+
+`lang`
+
+#### --answer--
+
+`action`
+
+### --question--
+
+#### --text--
+
+Which two elements are used to specify a row and a row header in a table?
+
+#### --distractors--
+
+The `r` element is used for rows and the `thead` element is used for the header.
+
+---
+
+The `row` element is used for rows and the `th` element is used for the header.
+
+---
+
+The `tr` element is used for rows and the `head` element is used for the header.
+
+#### --answer--
+
+The `tr` element is used for rows and the `th` element is used for the header.
+
+### --question--
+
+#### --text--
+
+What is the `td` element used for?
+
+#### --distractors--
+
+It is used to define a table data type.
+
+---
+
+It is used to merge two columns.
+
+---
+
+It is used to merge two rows.
+
+#### --answer--
+
+It is used to define a table cell.
+
+### --question--
+
+#### --text--
+
+What is the function of the `colspan` attribute?
+
+#### --distractors--
+
+It defines the length of a column in a table.
+
+---
+
+It removes the breakline between text in a column.
+
+---
+
+It's used to define the number of columns.
+
+#### --answer--
+
+It defines the number of columns a table cell should span.
+
+### --question--
+
+#### --text--
+
+What is the role of the `placeholder` attribute?
+
+#### --distractors--
+
+It's used to send data to the server when the form is submitted.
+
+---
+
+It's used to associate a `label` element with an `input` element.
+
+---
+
+It's used to specify that an input field is read-only to the user.
+
+#### --answer--
+
+It's used to provide a hint for an input field.
+
+### --question--
+
+#### --text--
+
+What is the purpose of the `thead` element?
+
+#### --distractors--
+
+It's used to group the body content in an HTML table.
+
+---
+
+It's used to group the description of an HTML table.
+
+---
+
+It's used to group the footer content in an HTML table.
+
+#### --answer--
+
+It's used to group the header content in an HTML table.
+
+### --question--
+
+#### --text--
+
+Which of the following is an example of explicit form association between labels and inputs?
+
+#### --distractors--
+
+```html
+<label connect="age">Age:</label>
+
+<input type="number" id="age" name="age">
+```
+
+---
+
+```html
+<label associate="age">Age:</label>
+
+<input type="number" id="age" name="age">
+```
+
+---
+
+```html
+<label explicit="age">Age:</label>
+
+<input type="number" id="age" name="age">
+```
+
+#### --answer--
+
+```html
+<label for="age">Age:</label>
+
+<input type="number" id="age" name="age">
+```
+
+### --question--
+
+#### --text--
+
+What is an HTML validator used for?
+
+#### --distractors--
+
+A validator is a tool that automatically formats your HTML code.
+
+---
+
+A validator is a tool that applies styles to your HTML.
+
+---
+
+A validator is a tool that makes your HTML code run faster.
+
+#### --answer--
+
+A validator is a tool that checks the syntax of HTML code to ensure it is valid.
+
+### --question--
+
+#### --text--
+
+Which element is used to define a cell in a table?
+
+#### --distractors--
+
+`th`
+
+---
+
+`tc`
+
+---
+
+`tcol`
+
+#### --answer--
+
+`td`
+
+### --question--
+
+#### --text--
+
+Which of the following is a tool that allows you to inspect and modify the HTML structure of a web page?
+
+#### --distractors--
+
+DOM removal.
+
+---
+
+DOM tester.
+
+---
+
+DOM validation.
+
+#### --answer--
+
+DOM inspector.
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to group related input fields?
+
+#### --distractors--
+
+```html
+<form>
+  <fieldset>
+    <caption>User information</caption>
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" />
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" />
+  </fieldset>
+</form>
+```
+
+---
+
+```html
+<form>
+  <span>
+    <p>User information</p>
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" />
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" />
+  </span>
+</form>
+```
+
+---
+
+```html
+<form>
+  <fieldset>
+    <title>User information</title>
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" />
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" />
+  </fieldset>
+</form>
+```
+
+#### --answer--
+
+```html
+<form>
+  <fieldset>
+    <legend>User information</legend>
+
+    <label for="name">Name: </label>
+    <input type="text" id="name" />
+
+    <label for="email">Email: </label>
+    <input type="email" id="email" />
+  </fieldset>
+</form>
+```
+
+### --question--
+
+#### --text--
+
+Which of the following is used to specify that an input field is read-only?
+
+#### --distractors--
+
+`readInputOnly`
+
+---
+
+`read-only`
+
+---
+
+`only-read`
+
+#### --answer--
+
+`readonly`
+
+### --question--
+
+#### --text--
+
+Which attribute specifies that an input must be filled out before submitting the form?
+
+#### --distractors--
+
+`necessary`
+
+---
+
+`obligatory`
+
+---
+
+`essential`
+
+#### --answer--
+
+`required`
+
+### --question--
+
+#### --text--
+
+What are Devtools used for?
+
+#### --distractors--
+
+These tools are built directly into the browser and they are used to spot any linting issues in your code.
+
+---
+
+These tools are built directly into the browser and are used to automatically format your code.
+
+---
+
+These tools are built directly into the browser and are used to help you ensure 100% test coverage for your code.
+
+#### --answer--
+
+These tools are built directly into the browser and are used to help you debug, profile, and analyze web pages.
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to disable an input?
+
+#### --distractors--
+
+```html
+<input type="checkbox" disabling />
+```
+
+---
+
+```html
+<input type="checkbox" inputDisabled />
+```
+
+---
+
+```html
+<input type="checkbox" disabledInput />
+```
+
+#### --answer--
+
+```html
+<input type="checkbox" disabled />
+```
+
+### --question--
+
+#### --text--
+
+Which of the following is a valid value for the `type` attribute?
+
+#### --distractors--
+
+```html
+<input type="time" />
+```
+
+---
+
+```html
+<input type="action" />
+```
+
+---
+
+```html
+<input type="capture" />
+```
+
+#### --answer--
+
+```html
+<input type="email" />
+```
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct use of the `size` attribute?
+
+#### --distractors--
+
+```html
+<input id="fullName" type="text" size=".001" />
+```
+
+---
+
+```html
+<input id="fullName" type="text" size="large" />
+```
+
+---
+
+```html
+<input id="fullName" type="text" size="10vh" />
+```
+
+#### --answer--
+
+```html
+<input id="fullName" type="text" size="10" />
+```
+
+### --question--
+
+#### --text--
+
+Which of the following attributes are used to specify the minimum and maximum number of characters required in an input field?
+
+#### --distractors--
+
+`minlen` and `maxlen`
+
+---
+
+`min` and `max`
+
+---
+
+`minimumLen` and `maximumLen`
+
+#### --answer--
+
+`minlength` and `maxlength`
+
+### --question--
+
+#### --text--
+
+Which of the following button examples does **NOT** use a correct value for the `type` attribute?
+
+#### --distractors--
+
+```html
+<button type="submit">Submit</button>
+```
+
+---
+
+```html
+<button type="button">Example Button</button>
+```
+
+---
+
+```html
+<button type="reset">Reset</button>
+```
+
+#### --answer--
+
+```html
+<button type="btn">Example Btn</button>
+```
+
+### --question--
+
+#### --text--
+
+Which of the following attributes is used to specify the value for a button?
+
+#### --distractors--
+
+`buttonValue`
+
+---
+
+`val`
+
+---
+
+`btnVal`
+
+#### --answer--
+
+`value`
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the role of the `action` attribute inside of the opening `form` tag?
+
+#### --distractors--
+
+It is used to specify that an input field is read-only.
+
+---
+
+It is used to define the number of characters that should be visible as the user types into the input.
+
+---
+
+It is used to show a hint to the user to show them what to enter in the input field.
+
+#### --answer--
+
+It is used to specify the URL where the form data should be sent.
+
+### --question--
+
+#### --text--
+
+Which of the following attributes is used to specify the HTTP method to use when sending the form data?
+
+#### --distractors--
+
+`set`
+
+---
+
+`type`
+
+---
+
+`http`
+
+#### --answer--
+
+`method`
+
+### --question--
+
+#### --text--
+
+Which of the following is a common method used when working with forms?
+
+#### --distractors--
+
+`PUSH`
+
+---
+
+`SET`
+
+---
+
+`PULL`
+
+#### --answer--
+
+`GET`
+
+### --question--
+
+#### --text--
+
+Which of the following is NOT a valid value for the `type` attribute?
+
+#### --distractors--
+
+`number`
+
+---
+
+`email`
+
+---
+
+`text`
+
+#### --answer--
+
+`http`
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to create a button in a form?
+
+#### --distractors--
+
+```html
+<form>
+  <input get="button" value="Show Alert" />
+</form>
+```
+
+---
+
+```html
+<form>
+  <input btn="button" value="Show Alert" />
+</form>
+```
+
+---
+
+```html
+<form>
+  <input set="button" value="Show Alert" />
+</form>
+```
+
+#### --answer--
+
+```html
+<form>
+  <input type="button" value="Show Alert" />
+</form>
+```
+
+### --question--
+
+#### --text--
+
+What is implicit form association?
+
+#### --distractors--
+
+This is where inputs can be associated with labels by using the `action` and `for` attributes on the `label` element.
+
+---
+
+This is where inputs can be associated with labels by using the `required` and `for` attributes on the `label` element.
+
+---
+
+This is where inputs can be associated with labels by using the `for` attribute on the `label` element.
+
+#### --answer--
+
+This is where inputs can be associated with labels by wrapping the input field inside the `label` element.
+
+### --question--
+
+#### --text--
+
+What is the role of the `fieldset` element?
+
+#### --distractors--
+
+It is used to group the header content in an HTML table.
+
+---
+
+It is used to create a label for an input field.
+
+---
+
+It is used to add a caption to describe the group of inputs.
+
+#### --answer--
+
+It is used to group related inputs together.
+
+### --question--
+
+#### --text--
+
+Which of the following is used to create a checkbox in a form?
+
+#### --distractors--
+
+```html
+  <input check="type" id="location" name="location" value="location" />
+```
+
+---
+
+```html
+  <input type="check" id="location" name="location" value="location" />
+```
+
+---
+
+```html
+  <input checkbox="type" id="location" name="location" value="location" />
+```
+
+#### --answer--
+
+```html
+  <input type="checkbox" id="location" name="location" value="location" />
+```
+
+### --question--
+
+#### --text--
+
+Which of the following elements is used to add a title for an HTML table?
+
+#### --distractors--
+
+`titles`
+
+---
+
+`title`
+
+---
+
+`captions`
+
+#### --answer--
+
+`caption`
+
+### --question--
+
+#### --text--
+
+What is the role of the `legend` element?
+
+#### --distractors--
+
+It is used to group the body content in an HTML table.
+
+---
+
+It is used to add a caption to describe the cells for a table.
+
+---
+
+It is used to group related inputs together.
+
+#### --answer--
+
+It is used to add a caption to describe the group of inputs.
+
+### --question--
+
+#### --text--
+
+Which of the following elements is used to group the header content in an HTML table?
+
+#### --distractors--
+
+`header`
+
+---
+
+`head`
+
+---
+
+`theader`
+
+#### --answer--
+
+`thead`
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to add rows and data cells to a table?
+
+#### --distractors--
+
+```html
+<table>
+  <tr>
+    <data>Davis</data>
+    <data>Alex</data>
+    <data>54</data>
+  </tr>
+</table>
+```
+
+---
+
+```html
+<table>
+  <tr>
+    <cell>Davis</cell>
+    <cell>Alex</cell>
+    <cell>54</cell>
+  </tr>
+</table>
+```
+
+---
+
+```html
+<table>
+  <row>
+    <td>Davis</td>
+    <td>Alex</td>
+    <td>54</td>
+  </row>
+</table>
+```
+
+#### --answer--
+
+```html
+<table>
+  <tr>
+    <td>Davis</td>
+    <td>Alex</td>
+    <td>54</td>
+  </tr>
+</table>
+```
+
+### --question--
+
+#### --text--
+
+What is the DOM inspector?
+
+#### --distractors--
+
+A tool that is used to remove all elements from the DOM.
+
+---
+
+A set of tools built directly into the browser that helps you debug, profile, and analyze web pages.
+
+---
+
+A tool that checks the syntax of HTML code to ensure it is valid.
+
+#### --answer--
+
+A tool that allows you to inspect and modify the HTML structure of a web page.
+
+### --question--
+
+#### --text--
+
+Which of the following is a tool that checks the syntax of HTML code to ensure it is valid?
+
+#### --distractors--
+
+HTML validate
+
+---
+
+HTML isValid
+
+---
+
+HTML valid
+
+#### --answer--
+
+HTML validator
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to specify the number of columns for data cell in a table?
+
+#### --distractors--
+
+```html
+<td columns="2">Average Grade</td>
+```
+
+---
+
+```html
+<td col="2">Average Grade</td>
+```
+
+---
+
+```html
+<td column="2">Average Grade</td>
+```
+
+#### --answer--
+
+```html
+<td colspan="2">Average Grade</td>
+```
+
+### --question--
+
+#### --text--
+
+What is a focused state for an input field?
+
+#### --distractors--
+
+This is the state of an input field when the focus is removed by the user.
+
+---
+
+This is the state of an input field when it is set to readonly by the user.
+
+---
+
+This is the state of an input field when it is disabled by the user.
+
+#### --answer--
+
+This is the state of an input field when it is selected by the user.
+
+### --question--
+
+#### --text--
+
+Which of the following is the correct way to create a radio button?
+
+#### --distractors--
+
+```html
+<input id="no-option" select="radio" name="hotel-stay" />
+```
+
+---
+
+```html
+<input id="no-option" radio="type" name="hotel-stay" />
+```
+
+---
+
+```html
+<input id="no-option" type="radio-btn" name="hotel-stay" />
+```
+
+#### --answer--
+
+```html
+<input id="no-option" type="radio" name="hotel-stay" />
+```
+
+### --question--
+
+#### --text--
+
+What is the role of the `for` attribute? 
+
+#### --distractors--
+
+It is used to show a hint to the user.
+
+---
+
+It is used to specify the value of the input
+
+---
+
+It is used to create a label for an input field.
+
+#### --answer--
+
+It is used to specify which input field the label is for.
+
+### --question--
+
+#### --text--
+
+Which of the following attributes is used to define the number of characters that should be visible as the user types into the input?
+
+#### --distractors--
+
+`setsize`
+
+---
+
+`sizing`
+
+---
+
+`sizes`
+
+#### --answer--
+
+`size`
+
+### --question--
+
+#### --text--
+
+Which of the following attributes is used to show a hint to the user to show them what to enter in the input field?
+
+#### --distractors--
+
+`showhint`
+
+---
+
+`hint`
+
+---
+
+`clue`
+
+#### --answer--
+
+`placeholder`

@@ -1,0 +1,11 @@
+{
+  "name": "Working With Nano",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-working-with-nano",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    { "id": "688170ebc58d8d3b1ae493a2", "title": "What Is Nano?" }
+  ]
+}

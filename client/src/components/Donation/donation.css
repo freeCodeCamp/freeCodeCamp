@@ -1,0 +1,1000 @@
+.donation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 500px) {
+  .donation-form {
+    width: 100%;
+  }
+}
+
+.donation-elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: solid 1px var(--gray-45);
+  background: var(--gray-0);
+}
+.donation-elements div:nth-child(1) {
+  flex: 1;
+  border-radius: 5px 5px 0 0;
+  border: none;
+}
+
+.donation-elements div:nth-child(2) {
+  flex: 1;
+  border-color: var(--gray-45);
+  border-radius: 0 0 5px 5px;
+  border-right: none;
+  border-left: none;
+  border-bottom: none;
+}
+.donation-elements.failed-submission {
+  border: solid 3px #eb1c26;
+}
+
+@media (min-width: 380px) {
+  .donation-elements {
+    flex-direction: row;
+  }
+  .donation-elements div:nth-child(1) {
+    flex: 4 4 80%;
+    border-radius: 5px 0 0 5px;
+    border: none;
+  }
+  .donation-elements div:nth-child(2) {
+    flex: 1 1 100px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid var(--gray-45);
+    border-right: none;
+    border-top: none;
+    border-bottom: none;
+  }
+}
+
+.donation-completion,
+.donation-completion-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.donation-completion-loading {
+  min-height: 154px;
+}
+
+.donation-completion-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.donation-completion-body .complete-button {
+  border-color: var(--green70);
+}
+
+.donation-email-container label {
+  display: flex;
+  flex-direction: column;
+}
+
+.donation-email-container input {
+  font-weight: normal;
+}
+
+.paypal-buttons-container {
+  min-height: auto;
+  margin-bottom: 8px;
+}
+
+.donate-input-element {
+  height: 40px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+}
+
+.donation-form .form-control::placeholder {
+  color: #707070;
+}
+
+.donation-form .form-control:focus {
+  border-color: #66afe9;
+  outline-color: transparent;
+  box-shadow:
+    inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.donation-form .email--invalid.form-control:focus,
+.donation-form .email--invalid,
+.donation-form {
+  border-color: #eb1c26;
+  color: #eb1c26;
+}
+
+.wallet {
+  word-break: break-all;
+}
+
+.alert p {
+  color: inherit;
+}
+
+.donate-tabs > .nav-pills {
+  display: flex;
+  align-content: space-between;
+}
+
+.donate-tabs > .nav-pills > li {
+  width: 100%;
+  text-align: center;
+}
+
+.donate-tabs > .nav-pills > li > a {
+  text-transform: capitalize;
+  text-decoration: none;
+  border: 3px solid var(--yellow-light);
+  border-radius: 0;
+  color: var(--gray-85);
+  margin: 0 1px;
+}
+
+.donate-tabs > .nav-pills > li > a:hover,
+.donate-tabs > .nav-pills > li > a:focus {
+  background-color: #ffe18f;
+  cursor: pointer;
+}
+
+.donate-tabs > .nav-pills > li.active > a,
+.donate-tabs > .nav-pills > li.active > a:hover,
+.donate-tabs > .nav-pills > li.active > a:focus {
+  color: var(--gray-85);
+  background-color: var(--yellow-light);
+  border: 3px solid var(--yellow-light);
+  text-decoration: none;
+  border-radius: 0;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.amount-values {
+  display: flex;
+  align-content: space-between;
+}
+
+.amount-value {
+  width: 100%;
+}
+
+.amount-values > label {
+  margin: 0 2px;
+  color: var(--gray-85);
+  border: 3px solid var(--yellow-light);
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.amount-values.btn-group .btn + .btn {
+  margin: 0 2px;
+}
+
+.amount-values > label:hover,
+.amount-values > label:focus,
+.amount-values > label:active:hover {
+  background-color: #ffe18f;
+  cursor: pointer;
+  color: var(--gray-85);
+  border-color: var(--yellow-light);
+}
+
+.amount-values > label:focus,
+.amount-values > label:active:hover {
+  outline-style: auto;
+  outline-width: 5px;
+  outline-offset: -2px;
+}
+
+.amount-values > label.active,
+.amount-values > label.active:hover,
+.amount-values > label.active:focus {
+  color: var(--gray-85);
+  background-color: var(--yellow-light);
+  border: 3px solid var(--yellow-light);
+  border-radius: 0;
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+@media (max-width: 500px) {
+  .amount-values {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .amount-values > label {
+    width: 31.3%;
+    margin-bottom: 3px;
+  }
+  .amount-values.btn-group > .btn:first-child {
+    margin-inline-start: 2px;
+    margin-bottom: 3px;
+  }
+  .amount-values.btn-group .btn + .btn {
+    /* margin: 0 2px; */
+    margin-bottom: 3px;
+  }
+}
+
+li.disabled {
+  cursor: not-allowed;
+}
+
+li.disabled > a {
+  border: 3px solid var(--gray-15) !important;
+  color: var(--gray-15) !important;
+}
+
+@media (max-width: 400px) {
+  .donate-tabs > .nav-pills > li > a {
+    font-size: 0.8rem;
+    padding: 10px 5px;
+  }
+}
+
+.donation-icon {
+  height: 150px;
+  width: auto;
+}
+
+.no-delay-fade-in {
+  opacity: 0;
+  pointer-events: none;
+  animation: opacity-animation 1s linear 100ms forwards;
+}
+
+@keyframes opacity-animation {
+  0% {
+    pointer-events: none;
+    opacity: 0;
+  }
+  100% {
+    pointer-events: auto;
+    opacity: 1;
+  }
+}
+
+.donation-modal h2 {
+  font-weight: 600 !important;
+  font-size: 1.2rem;
+}
+
+.donation-modal b {
+  width: 100%;
+  display: inline-block;
+}
+
+.donation-modal p {
+  font-size: 0.9rem;
+}
+
+.donation-modal ul {
+  padding: 0;
+}
+
+.donation-modal li {
+  list-style-type: none;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+.donation-modal li svg {
+  margin: 0 5px;
+}
+
+.donation-label-modal {
+  font-weight: normal;
+  text-align: center;
+}
+
+.edit-amount-confirmation {
+  margin: 0 auto;
+  max-width: 350px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  & > * {
+    flex: 0 0 max-content;
+  }
+}
+
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.close-button {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  padding: 0 10px;
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+}
+.close-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+@media (max-width: 500px) {
+  h1 {
+    font-size: 1.3rem;
+  }
+}
+
+.donation-tier-selection [role='tablist'] button {
+  background-color: transparent;
+}
+.donation-tier-selection
+  [role='tablist']
+  button:hover:not([data-state='active']) {
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+.donation-tier-selection [role='tablist'] button[data-state='active'] {
+  background-color: var(--quaternary-color);
+}
+
+.donation-icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.form-payments-wrapper {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 15px;
+}
+
+.form-payment-methods {
+  height: 20px;
+  width: 200px;
+}
+
+.paypal-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.paypal-button svg {
+  margin-top: 5px;
+  height: 22px;
+}
+
+@media screen and (min-width: 355px) {
+  .form-payment-methods {
+    height: 30px;
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .form-payments-wrapper {
+    justify-content: flex-end;
+    margin-top: 0;
+    height: 39px;
+  }
+  .donation-icon-container {
+    margin: 40px;
+  }
+
+  .donation-modal h2 {
+    font-weight: 700 !important;
+    font-size: 1.5rem;
+  }
+}
+
+.paypal-button-onetime {
+  border: 1px solid #ffc439;
+  padding: 2px;
+  border-radius: 5px;
+  content: ' ';
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #ffc439;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIgogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDU2Ni45MyAxMzcuMzUiPgogIDxkZWZzPgogICAgPHN0eWxlPi5jbHMtMXtmaWxsOiMwMDllZTM7fS5jbHMtMSwuY2xzLTIsLmNscy0ze2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTJ7ZmlsbDojMTEzOTg0O30uY2xzLTN7ZmlsbDojMTcyYzcwO308L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOTIuOTUsMzg2Ljg3aDM4Ljc0YzIwLjgsMCwyOC42MywxMC41MywyNy40MiwyNi0yLDI1LjU0LTE3LjQ0LDM5LjY3LTM3LjkyLDM5LjY3SDIxMC44NWMtMi44MSwwLTQuNywxLjg2LTUuNDYsNi45TDIwMSw0ODguNzRjLTAuMjksMS45LTEuMjksMy0yLjc5LDMuMTVIMTczLjg3Yy0yLjI5LDAtMy4xLTEuNzUtMi41LTUuNTRsMTQuODQtOTMuOTNDMTg2Ljc5LDM4OC42NiwxODguODUsMzg2Ljg3LDE5Mi45NSwzODYuODdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQzLjQ4IC0zNTQuNTQpIi8+CiAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMzYxLjE0LDM4NS4xM2MxMy4wNywwLDI1LjEzLDcuMDksMjMuNDgsMjQuNzYtMiwyMS0xMy4yNSwzMi42Mi0zMSwzMi42N0gzMzguMTFjLTIuMjMsMC0zLjMxLDEuODItMy44OSw1LjU1bC0zLDE5LjA3Yy0wLjQ1LDIuODgtMS45Myw0LjMtNC4xMSw0LjNIMzEyLjY4Yy0yLjMsMC0zLjEtMS40Ny0yLjU5LTQuNzZMMzIyLDM5MC4yOWMwLjU5LTMuNzYsMi01LjE2LDQuNTctNS4xNmgzNC41NFptLTIzLjUsNDAuOTJoMTEuNzVjNy4zNS0uMjgsMTIuMjMtNS4zNywxMi43Mi0xNC41NSwwLjMtNS42Ny0zLjUzLTkuNzMtOS42Mi05LjdsLTExLjA2LjA1LTMuNzksMjQuMmgwWm04Ni4yMSwzOS41OGMxLjMyLTEuMiwyLjY2LTEuODIsMi40Ny0uMzRsLTAuNDcsMy41NGMtMC4yNCwxLjg1LjQ5LDIuODMsMi4yMSwyLjgzaDEyLjgyYzIuMTYsMCwzLjIxLS44NywzLjc0LTQuMjFsNy45LTQ5LjU4YzAuNC0yLjQ5LS4yMS0zLjcxLTIuMS0zLjcxSDQzNi4zMmMtMS4yNywwLTEuODkuNzEtMi4yMiwyLjY1bC0wLjUyLDMuMDVjLTAuMjcsMS41OS0xLDEuODctMS42OC4yNy0yLjM5LTUuNjYtOC40OS04LjItMTctOC0xOS43Ny40MS0zMy4xLDE1LjQyLTM0LjUzLDM0LjY2LTEuMSwxNC44OCw5LjU2LDI2LjU3LDIzLjYyLDI2LjU3LDEwLjIsMCwxNC43Ni0zLDE5LjktNy43aDBaTTQxMy4xMSw0NThjLTguNTEsMC0xNC40NC02Ljc5LTEzLjIxLTE1LjExczkuMTktMTUuMTEsMTcuNy0xNS4xMSwxNC40NCw2Ljc5LDEzLjIxLDE1LjExUzQyMS42Myw0NTgsNDEzLjExLDQ1OGgwWm02NC41LTQ0aC0xM2MtMi42OCwwLTMuNzcsMi0yLjkyLDQuNDZsMTYuMTQsNDcuMjZMNDYyLDQ4OC4yMWMtMS4zMywxLjg4LS4zLDMuNTksMS41NywzLjU5aDE0LjYxYTQuNDcsNC40NywwLDAsMCw0LjM0LTIuMTNsNDkuNjQtNzEuMmMxLjUzLTIuMTkuODEtNC40OS0xLjctNC40OUg1MTYuNjNjLTIuMzcsMC0zLjMyLjk0LTQuNjgsMi45MWwtMjAuNywzMEw0ODIsNDE2LjgyQzQ4MS40Niw0MTUsNDgwLjExLDQxNCw0NzcuNjIsNDE0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0My40OCAtMzU0LjU0KSIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU4My44LDM4NS4xM2MxMy4wNywwLDI1LjEzLDcuMDksMjMuNDgsMjQuNzYtMiwyMS0xMy4yNSwzMi42Mi0zMSwzMi42N0g1NjAuNzhjLTIuMjMsMC0zLjMxLDEuODItMy44OSw1LjU1bC0zLDE5LjA3Yy0wLjQ1LDIuODgtMS45Myw0LjMtNC4xMSw0LjNINTM1LjM1Yy0yLjMsMC0zLjEtMS40Ny0yLjU5LTQuNzZsMTEuOTMtNzYuNDVjMC41OS0zLjc2LDItNS4xNiw0LjU3LTUuMTZINTgzLjhabS0yMy41LDQwLjkyaDExLjc1YzcuMzUtLjI4LDEyLjIzLTUuMzcsMTIuNzItMTQuNTUsMC4zLTUuNjctMy41My05LjczLTkuNjItOS43bC0xMS4wNi4wNS0zLjc5LDI0LjJoMFptODYuMjEsMzkuNThjMS4zMi0xLjIsMi42Ni0xLjgyLDIuNDctLjM0bC0wLjQ3LDMuNTRjLTAuMjQsMS44NS40OSwyLjgzLDIuMjEsMi44M2gxMi44MmMyLjE2LDAsMy4yMS0uODcsMy43NC00LjIxbDcuOS00OS41OGMwLjQtMi40OS0uMjEtMy43MS0yLjEtMy43MUg2NTljLTEuMjcsMC0xLjg5LjcxLTIuMjIsMi42NWwtMC41MiwzLjA1Yy0wLjI3LDEuNTktMSwxLjg3LTEuNjguMjctMi4zOS01LjY2LTguNDktOC4yLTE3LTgtMTkuNzcuNDEtMzMuMSwxNS40Mi0zNC41MywzNC42Ni0xLjEsMTQuODgsOS41NiwyNi41NywyMy42MiwyNi41NywxMC4yLDAsMTQuNzYtMywxOS45LTcuN2gwWk02MzUuNzgsNDU4Yy04LjUxLDAtMTQuNDQtNi43OS0xMy4yMS0xNS4xMXM5LjE5LTE1LjExLDE3LjctMTUuMTEsMTQuNDQsNi43OSwxMy4yMSwxNS4xMVM2NDQuMjksNDU4LDYzNS43OCw0NThoMFptNTkuMTMsMTMuNzRoLTE0LjhhMS43NSwxLjc1LDAsMCwxLTEuODEtMmwxMy04Mi4zNmEyLjU1LDIuNTUsMCwwLDEsMi40Ni0yaDE0LjhhMS43NSwxLjc1LDAsMCwxLDEuODEsMmwtMTMsODIuMzZBMi41NSwyLjU1LDAsMCwxLDY5NC45MSw0NzEuNzZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQzLjQ4IC0zNTQuNTQpIi8+CiAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTY4LjcyLDM1NC41NGgzOC43OGMxMC45MiwwLDIzLjg4LjM1LDMyLjU0LDgsNS43OSw1LjExLDguODMsMTMuMjQsOC4xMywyMi0yLjM4LDI5LjYxLTIwLjA5LDQ2LjItNDMuODUsNDYuMkgxODUuMmMtMy4yNiwwLTUuNDEsMi4xNi02LjMzLDhsLTUuMzQsMzRjLTAuMzUsMi4yLTEuMywzLjUtMywzLjY2SDE0Ni42Yy0yLjY1LDAtMy41OS0yLTIuOS02LjQyTDE2MC45LDM2MUMxNjEuNTksMzU2LjYyLDE2NCwzNTQuNTQsMTY4LjcyLDM1NC41NFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDMuNDggLTM1NC41NCkiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNzkuNDMsNDM1LjI5bDYuNzctNDIuODdjMC41OS0zLjc2LDIuNjUtNS41Niw2Ljc1LTUuNTZoMzguNzRjNi40MSwwLDExLjYsMSwxNS42NiwyLjg1LTMuODksMjYuMzYtMjAuOTQsNDEtNDMuMjYsNDFIMTg1QzE4Mi40NCw0MzAuNzIsMTgwLjU2LDQzMiwxNzkuNDMsNDM1LjI5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0My40OCAtMzU0LjU0KSIvPgo8L3N2Zz4=');
+  background-size: 84px;
+  height: 42px;
+}
+
+.paypal-button-onetime:hover,
+.paypal-button-onetime:active,
+.paypal-button-onetime:active:hover {
+  border: 1px solid #ffc439;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #ffc439;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIgogIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDU2Ni45MyAxMzcuMzUiPgogIDxkZWZzPgogICAgPHN0eWxlPi5jbHMtMXtmaWxsOiMwMDllZTM7fS5jbHMtMSwuY2xzLTIsLmNscy0ze2ZpbGwtcnVsZTpldmVub2RkO30uY2xzLTJ7ZmlsbDojMTEzOTg0O30uY2xzLTN7ZmlsbDojMTcyYzcwO308L3N0eWxlPgogIDwvZGVmcz4KICA8cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Ik0xOTIuOTUsMzg2Ljg3aDM4Ljc0YzIwLjgsMCwyOC42MywxMC41MywyNy40MiwyNi0yLDI1LjU0LTE3LjQ0LDM5LjY3LTM3LjkyLDM5LjY3SDIxMC44NWMtMi44MSwwLTQuNywxLjg2LTUuNDYsNi45TDIwMSw0ODguNzRjLTAuMjksMS45LTEuMjksMy0yLjc5LDMuMTVIMTczLjg3Yy0yLjI5LDAtMy4xLTEuNzUtMi41LTUuNTRsMTQuODQtOTMuOTNDMTg2Ljc5LDM4OC42NiwxODguODUsMzg2Ljg3LDE5Mi45NSwzODYuODdaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQzLjQ4IC0zNTQuNTQpIi8+CiAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMzYxLjE0LDM4NS4xM2MxMy4wNywwLDI1LjEzLDcuMDksMjMuNDgsMjQuNzYtMiwyMS0xMy4yNSwzMi42Mi0zMSwzMi42N0gzMzguMTFjLTIuMjMsMC0zLjMxLDEuODItMy44OSw1LjU1bC0zLDE5LjA3Yy0wLjQ1LDIuODgtMS45Myw0LjMtNC4xMSw0LjNIMzEyLjY4Yy0yLjMsMC0zLjEtMS40Ny0yLjU5LTQuNzZMMzIyLDM5MC4yOWMwLjU5LTMuNzYsMi01LjE2LDQuNTctNS4xNmgzNC41NFptLTIzLjUsNDAuOTJoMTEuNzVjNy4zNS0uMjgsMTIuMjMtNS4zNywxMi43Mi0xNC41NSwwLjMtNS42Ny0zLjUzLTkuNzMtOS42Mi05LjdsLTExLjA2LjA1LTMuNzksMjQuMmgwWm04Ni4yMSwzOS41OGMxLjMyLTEuMiwyLjY2LTEuODIsMi40Ny0uMzRsLTAuNDcsMy41NGMtMC4yNCwxLjg1LjQ5LDIuODMsMi4yMSwyLjgzaDEyLjgyYzIuMTYsMCwzLjIxLS44NywzLjc0LTQuMjFsNy45LTQ5LjU4YzAuNC0yLjQ5LS4yMS0zLjcxLTIuMS0zLjcxSDQzNi4zMmMtMS4yNywwLTEuODkuNzEtMi4yMiwyLjY1bC0wLjUyLDMuMDVjLTAuMjcsMS41OS0xLDEuODctMS42OC4yNy0yLjM5LTUuNjYtOC40OS04LjItMTctOC0xOS43Ny40MS0zMy4xLDE1LjQyLTM0LjUzLDM0LjY2LTEuMSwxNC44OCw5LjU2LDI2LjU3LDIzLjYyLDI2LjU3LDEwLjIsMCwxNC43Ni0zLDE5LjktNy43aDBaTTQxMy4xMSw0NThjLTguNTEsMC0xNC40NC02Ljc5LTEzLjIxLTE1LjExczkuMTktMTUuMTEsMTcuNy0xNS4xMSwxNC40NCw2Ljc5LDEzLjIxLDE1LjExUzQyMS42Myw0NTgsNDEzLjExLDQ1OGgwWm02NC41LTQ0aC0xM2MtMi42OCwwLTMuNzcsMi0yLjkyLDQuNDZsMTYuMTQsNDcuMjZMNDYyLDQ4OC4yMWMtMS4zMywxLjg4LS4zLDMuNTksMS41NywzLjU5aDE0LjYxYTQuNDcsNC40NywwLDAsMCw0LjM0LTIuMTNsNDkuNjQtNzEuMmMxLjUzLTIuMTkuODEtNC40OS0xLjctNC40OUg1MTYuNjNjLTIuMzcsMC0zLjMyLjk0LTQuNjgsMi45MWwtMjAuNywzMEw0ODIsNDE2LjgyQzQ4MS40Niw0MTUsNDgwLjExLDQxNCw0NzcuNjIsNDE0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0My40OCAtMzU0LjU0KSIvPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTU4My44LDM4NS4xM2MxMy4wNywwLDI1LjEzLDcuMDksMjMuNDgsMjQuNzYtMiwyMS0xMy4yNSwzMi42Mi0zMSwzMi42N0g1NjAuNzhjLTIuMjMsMC0zLjMxLDEuODItMy44OSw1LjU1bC0zLDE5LjA3Yy0wLjQ1LDIuODgtMS45Myw0LjMtNC4xMSw0LjNINTM1LjM1Yy0yLjMsMC0zLjEtMS40Ny0yLjU5LTQuNzZsMTEuOTMtNzYuNDVjMC41OS0zLjc2LDItNS4xNiw0LjU3LTUuMTZINTgzLjhabS0yMy41LDQwLjkyaDExLjc1YzcuMzUtLjI4LDEyLjIzLTUuMzcsMTIuNzItMTQuNTUsMC4zLTUuNjctMy41My05LjczLTkuNjItOS43bC0xMS4wNi4wNS0zLjc5LDI0LjJoMFptODYuMjEsMzkuNThjMS4zMi0xLjIsMi42Ni0xLjgyLDIuNDctLjM0bC0wLjQ3LDMuNTRjLTAuMjQsMS44NS40OSwyLjgzLDIuMjEsMi44M2gxMi44MmMyLjE2LDAsMy4yMS0uODcsMy43NC00LjIxbDcuOS00OS41OGMwLjQtMi40OS0uMjEtMy43MS0yLjEtMy43MUg2NTljLTEuMjcsMC0xLjg5LjcxLTIuMjIsMi42NWwtMC41MiwzLjA1Yy0wLjI3LDEuNTktMSwxLjg3LTEuNjguMjctMi4zOS01LjY2LTguNDktOC4yLTE3LTgtMTkuNzcuNDEtMzMuMSwxNS40Mi0zNC41MywzNC42Ni0xLjEsMTQuODgsOS41NiwyNi41NywyMy42MiwyNi41NywxMC4yLDAsMTQuNzYtMywxOS45LTcuN2gwWk02MzUuNzgsNDU4Yy04LjUxLDAtMTQuNDQtNi43OS0xMy4yMS0xNS4xMXM5LjE5LTE1LjExLDE3LjctMTUuMTEsMTQuNDQsNi43OSwxMy4yMSwxNS4xMVM2NDQuMjksNDU4LDYzNS43OCw0NThoMFptNTkuMTMsMTMuNzRoLTE0LjhhMS43NSwxLjc1LDAsMCwxLTEuODEtMmwxMy04Mi4zNmEyLjU1LDIuNTUsMCwwLDEsMi40Ni0yaDE0LjhhMS43NSwxLjc1LDAsMCwxLDEuODEsMmwtMTMsODIuMzZBMi41NSwyLjU1LDAsMCwxLDY5NC45MSw0NzEuNzZaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQzLjQ4IC0zNTQuNTQpIi8+CiAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTY4LjcyLDM1NC41NGgzOC43OGMxMC45MiwwLDIzLjg4LjM1LDMyLjU0LDgsNS43OSw1LjExLDguODMsMTMuMjQsOC4xMywyMi0yLjM4LDI5LjYxLTIwLjA5LDQ2LjItNDMuODUsNDYuMkgxODUuMmMtMy4yNiwwLTUuNDEsMi4xNi02LjMzLDhsLTUuMzQsMzRjLTAuMzUsMi4yLTEuMywzLjUtMywzLjY2SDE0Ni42Yy0yLjY1LDAtMy41OS0yLTIuOS02LjQyTDE2MC45LDM2MUMxNjEuNTksMzU2LjYyLDE2NCwzNTQuNTQsMTY4LjcyLDM1NC41NFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDMuNDggLTM1NC41NCkiLz4KICA8cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Ik0xNzkuNDMsNDM1LjI5bDYuNzctNDIuODdjMC41OS0zLjc2LDIuNjUtNS41Niw2Ljc1LTUuNTZoMzguNzRjNi40MSwwLDExLjYsMSwxNS42NiwyLjg1LTMuODksMjYuMzYtMjAuOTQsNDEtNDMuMjYsNDFIMTg1QzE4Mi40NCw0MzAuNzIsMTgwLjU2LDQzMiwxNzkuNDMsNDM1LjI5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTE0My40OCAtMzU0LjU0KSIvPgo8L3N2Zz4=');
+  background-size: 84px;
+  filter: brightness(0.95);
+}
+
+.apple-pay-logo,
+.google-pay-logo,
+.accepted-cards {
+  height: 30px;
+  width: auto;
+  padding: 0 10px;
+}
+
+.accepted-cards {
+  height: 20px;
+  align-self: center;
+}
+
+button.confirm-donation-btn {
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  border-radius: 5px;
+  background-color: var(--yellow-light);
+  color: black;
+  font-weight: bold;
+  width: 100%;
+  min-height: 42px;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+button.confirm-donation-btn:hover {
+  color: black;
+  background-color: #f2ba38;
+  border-color: #f2ba38;
+}
+button.confirm-donation-btn:disabled {
+  cursor: not-allowed;
+  background-color: var(--quaternary-background);
+  border-color: var(--quaternary-color);
+  color: var(--quaternary-color);
+  opacity: 0.65;
+}
+
+a.patreon-button {
+  border-radius: 5px;
+  background-color: #ff424d;
+  min-height: 42px;
+  border: none;
+  display: grid;
+  place-items: center;
+}
+a.patreon-button svg {
+  max-height: 12px;
+  fill: white;
+}
+a.patreon-button:active,
+a.patreon-button:active:focus,
+a.patreon-button:hover {
+  background-color: #e13d47;
+}
+
+.dark-palette a.patreon-button {
+  background-color: white;
+}
+
+.dark-palette a.patreon-button svg {
+  fill: #ff424d;
+}
+.dark-palette a.patreon-button:active,
+.dark-palette a.patreon-button:active:focus,
+.dark-palette a.patreon-button:hover {
+  background-color: #efefef;
+}
+
+.hide {
+  display: none;
+}
+
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.edit-amount-button {
+  font-weight: normal;
+  background-color: transparent;
+  border: 0;
+  text-decoration-line: underline;
+  /* This is required in order to improve text readability in Arabic */
+  text-underline-position: under;
+  padding: 0;
+}
+
+.edit-amount-button:hover {
+  text-decoration-line: none;
+  background-color: var(--quaternary-background);
+  color: var(--quaternary-color);
+}
+
+.donate-btn-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.donate-btn-group > * {
+  width: 100%;
+}
+
+.wallets-form {
+  margin-bottom: 12px;
+}
+
+.form-status {
+  min-height: 35px;
+  padding: 5px 0;
+}
+
+.form-status p {
+  font-size: 16px;
+  color: #eb1c26;
+  text-align: left;
+  margin: 0;
+  font-weight: bold;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-size: 0.9em;
+  margin: 20px 0;
+  color: var(--quaternary-color);
+}
+
+.separator::before,
+.separator::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid var(--quaternary-background);
+}
+
+.separator:not(:empty)::before {
+  margin-inline-end: 0.25em;
+}
+
+.separator:not(:empty)::after {
+  margin-inline-start: 0.25em;
+}
+
+.faq-item h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.faq-item div {
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.faq-item blockquote {
+  font-size: 1em;
+  border-left-color: var(--quaternary-background);
+}
+
+.security-legend {
+  padding: 10px;
+  border: 2px solid var(--quaternary-background);
+  border-radius: 4px;
+}
+
+.security-legend > legend {
+  width: fit-content;
+  font-size: 0.9em;
+  color: var(--quaternary-color);
+  border: none;
+  margin-bottom: 0;
+  padding: 0 4px;
+  left: 0;
+  margin-inline-start: -2px;
+}
+
+.confirm-donation-btn svg.svg-inline--fa.fa-lock {
+  margin-bottom: 2px;
+}
+
+/*
+ * We currently cannot reuse the Button component from `ui-components`
+ * and are using the native `<button>` with custom CSS.
+ * This implementation is temporary until we can find a solution for this button use case.
+ * Ref: https://github.com/freeCodeCamp/freeCodeCamp/issues/52349
+ */
+.try-again-button {
+  background-color: var(--blue05);
+  color: var(--blue70);
+  border-radius: 0;
+  border: 3px solid var(--blue70);
+  padding: 6px 12px;
+}
+.try-again-button:focus,
+.try-again-button:hover,
+.try-again-button:active {
+  color: var(--blue05);
+  background-color: var(--blue70);
+  border-color: var(--blue70);
+}
+
+/* donation page */
+.donate-supporter-page-section h1 {
+  font-size: 2.5rem;
+}
+
+.donate-supporter-page-section .donation-section > div {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.donate-supporter-page-section .donation-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 60vh;
+}
+
+.donate-supporter-page-section .paypal-buttons-container {
+  margin-bottom: 0;
+}
+
+.dark-palette .gradient-container {
+  position: relative;
+  background: linear-gradient(
+      -10deg,
+      rgb(7 40 94) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(127 30 52) 100%
+    ),
+    radial-gradient(circle, rgb(112 0 48) 0%, rgb(0 63 136) 100%);
+}
+
+.light-palette .gradient-container {
+  position: relative;
+  background: linear-gradient(
+      -10deg,
+      rgb(223 243 255) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 202, 225, 1) 0%,
+      rgba(218, 234, 252, 1) 100%
+    );
+}
+
+.light-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(0, 51, 133) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(150, 15, 46) 100%
+    ),
+    radial-gradient(circle, rgb(157, 1, 69) 0%, rgb(0, 89, 189) 100%);
+  color: transparent;
+  background-clip: text;
+}
+
+.dark-palette .gradient-foreground {
+  background-image: linear-gradient(
+      -10deg,
+      rgb(223 243 255) 35%,
+      rgba(237, 202, 216, 0) 75%,
+      rgb(255 215 224) 100%
+    ),
+    radial-gradient(circle, rgb(255 139 189) 0%, rgb(187 219 255) 100%);
+  color: transparent;
+  background-clip: text;
+}
+
+.supporters-background {
+  background-repeat: repeat;
+}
+.dark-palette .supporters-background {
+  background-image: url("data:image/svg+xml,%3Csvg width='248' height='307' viewBox='0 0 248 307' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M125 154V193.7L147.317 206.756L171 193.7V154H125ZM135.343 163.479C135.342 163.278 135.203 163.079 135.063 162.94C134.862 162.801 134.654 162.732 134.453 162.733C133.836 162.734 132.932 163.373 131.847 164.602C128.833 168.041 127.293 171.372 127.355 176.284C127.423 181.194 128.626 184.796 131.287 188.059C132.654 189.78 133.701 190.664 134.449 190.663C134.65 190.663 134.928 190.523 135.058 190.383C135.197 190.182 135.335 189.974 135.335 189.773C135.334 189.364 135.054 188.886 134.375 188.279C131.142 185.2 129.478 181.226 129.466 176.279C129.456 171.807 131.037 168.1 134.181 165.072C134.935 164.298 135.343 163.827 135.343 163.479ZM151.577 177.164C151.27 177.086 151.37 176.642 151.535 175.907C152.005 173.812 153.006 169.354 146.627 164.277C146.627 164.277 147.758 167.869 142.058 175.884C136.656 183.474 143.763 188.158 144.528 188.631C144.57 188.658 144.594 188.671 144.594 188.671C144.594 188.671 144.571 188.657 144.528 188.631C144.038 188.314 141.08 186.034 145.222 179.273C145.465 178.871 145.731 178.48 146.019 178.056C146.686 177.076 147.474 175.917 148.386 174.024C148.386 174.024 149.543 175.657 148.939 179.198C148.14 183.933 151.822 183.279 152.733 183.118C152.851 183.097 152.923 183.084 152.931 183.093C154.584 185.039 151.648 188.434 151.362 188.661C151.347 188.671 151.343 188.674 151.349 188.671C151.353 188.669 151.357 188.665 151.362 188.661L151.364 188.66C151.791 188.376 159.911 182.969 153.762 174.978C153.64 175.101 153.507 175.351 153.353 175.64C152.958 176.382 152.426 177.382 151.577 177.164ZM160.773 163.476C160.773 163.275 160.912 163.075 161.052 162.936C161.253 162.798 161.461 162.729 161.662 162.729C162.279 162.731 163.183 163.369 164.268 164.598C167.282 168.037 168.822 171.368 168.76 176.28C168.692 181.19 167.489 184.793 164.828 188.055C163.461 189.776 162.414 190.661 161.666 190.659C161.465 190.658 161.187 190.519 161.057 190.38C160.918 190.179 160.78 189.97 160.78 189.77C160.781 189.361 161.061 188.883 161.741 188.275C164.973 185.196 166.637 181.223 166.649 176.276C166.659 171.804 165.078 168.096 161.934 165.069C161.18 164.294 160.772 163.823 160.773 163.476Z' fill='%23FEB13E' fill-opacity='0.1'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 1V40.6997L22.3168 53.7558L46 40.6997V1H0ZM10.3425 10.4794C10.3419 10.2784 10.2026 10.0786 10.0633 9.93991C9.86238 9.80119 9.65373 9.73242 9.45338 9.73301C8.83631 9.7342 7.93176 10.3727 6.84701 11.6016C3.83281 15.0406 2.29282 18.3718 2.35506 23.284C2.42263 28.1938 3.62594 31.7964 6.28744 35.0588C7.65435 36.7798 8.70116 37.6643 9.44923 37.6625C9.64958 37.6625 9.92759 37.5226 10.058 37.3833C10.1967 37.1823 10.3348 36.9736 10.3348 36.7733C10.3336 36.3642 10.0544 35.8864 9.37454 35.2787C6.14162 32.1996 4.47833 28.2264 4.46648 23.2792C4.45581 18.8075 6.03729 15.0999 9.1813 12.0723C9.93529 11.2981 10.3431 10.8268 10.3425 10.4794ZM26.5768 24.1643C26.2701 24.0859 26.3698 23.6417 26.5348 22.9069C27.0051 20.8118 28.006 16.3539 21.6273 11.2767C21.6273 11.2767 22.7577 14.8686 17.0577 22.8843C11.6557 30.4742 18.7628 35.1577 19.5279 35.6309C19.5697 35.6578 19.5935 35.6705 19.5935 35.6705C19.5935 35.6705 19.5706 35.6572 19.5279 35.6309C19.038 35.3145 16.0798 33.0339 20.2218 26.273C20.4649 25.8708 20.7306 25.4802 21.0191 25.056C21.6856 24.0761 22.4739 22.9172 23.386 21.024C23.386 21.024 24.5431 22.6573 23.939 26.1983C23.1397 30.9329 26.822 30.2793 27.7326 30.1177C27.8511 30.0967 27.9227 30.084 27.9313 30.0926C29.5844 32.0392 26.6478 35.4336 26.3624 35.6611C26.3474 35.6711 26.3427 35.6743 26.3492 35.6705C26.3526 35.6685 26.357 35.6654 26.3624 35.6611L26.3637 35.6602C26.7912 35.3756 34.9112 29.9691 28.7623 21.9785C28.6397 22.1011 28.5067 22.351 28.3528 22.6403C27.9583 23.3816 27.4261 24.3817 26.5768 24.1643ZM35.7725 10.4757C35.7731 10.2747 35.9124 10.075 36.0517 9.93623C36.2527 9.79751 36.4613 9.72874 36.6617 9.72933C37.2787 9.73052 38.1833 10.369 39.2681 11.5979C42.2822 15.037 43.8222 18.3681 43.76 23.2803C43.6924 28.1901 42.4891 31.7928 39.8276 35.0551C38.4607 36.7761 37.4139 37.6606 36.6658 37.6588C36.4655 37.6582 36.1875 37.5189 36.0571 37.3796C35.9184 37.1786 35.7802 36.97 35.7802 36.7696C35.7814 36.3605 36.0606 35.8827 36.7405 35.2751C39.9734 32.1959 41.6367 28.2227 41.6486 23.2755C41.6592 18.8038 40.0778 15.0956 36.9338 12.0686C36.1798 11.2944 35.7719 10.8231 35.7725 10.4757Z' fill='%23FEB13E' fill-opacity='0.1'/%3E%3C/svg%3E%0A");
+}
+
+.light-palette .supporters-background {
+  background-image: url("data:image/svg+xml,%3Csvg width='248' height='307' viewBox='0 0 248 307' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M125 154V193.7L147.317 206.756L171 193.7V154H125ZM135.343 163.479C135.342 163.278 135.203 163.079 135.063 162.94C134.862 162.801 134.654 162.732 134.453 162.733C133.836 162.734 132.932 163.373 131.847 164.602C128.833 168.041 127.293 171.372 127.355 176.284C127.423 181.194 128.626 184.796 131.287 188.059C132.654 189.78 133.701 190.664 134.449 190.663C134.65 190.663 134.928 190.523 135.058 190.383C135.197 190.182 135.335 189.974 135.335 189.773C135.334 189.364 135.054 188.886 134.375 188.279C131.142 185.2 129.478 181.226 129.466 176.279C129.456 171.807 131.037 168.1 134.181 165.072C134.935 164.298 135.343 163.827 135.343 163.479ZM151.577 177.164C151.27 177.086 151.37 176.642 151.535 175.907C152.005 173.812 153.006 169.354 146.627 164.277C146.627 164.277 147.758 167.869 142.058 175.884C136.656 183.474 143.763 188.158 144.528 188.631C144.57 188.658 144.594 188.671 144.594 188.671C144.594 188.671 144.571 188.657 144.528 188.631C144.038 188.314 141.08 186.034 145.222 179.273C145.465 178.871 145.731 178.48 146.019 178.056C146.686 177.076 147.474 175.917 148.386 174.024C148.386 174.024 149.543 175.657 148.939 179.198C148.14 183.933 151.822 183.279 152.733 183.118C152.851 183.097 152.923 183.084 152.931 183.093C154.584 185.039 151.648 188.434 151.362 188.661C151.347 188.671 151.343 188.674 151.349 188.671C151.353 188.669 151.357 188.665 151.362 188.661L151.364 188.66C151.791 188.376 159.911 182.969 153.762 174.978C153.64 175.101 153.507 175.351 153.353 175.64C152.958 176.382 152.426 177.382 151.577 177.164ZM160.773 163.476C160.773 163.275 160.912 163.075 161.052 162.936C161.253 162.798 161.461 162.729 161.662 162.729C162.279 162.731 163.183 163.369 164.268 164.598C167.282 168.037 168.822 171.368 168.76 176.28C168.692 181.19 167.489 184.793 164.828 188.055C163.461 189.776 162.414 190.661 161.666 190.659C161.465 190.658 161.187 190.519 161.057 190.38C160.918 190.179 160.78 189.97 160.78 189.77C160.781 189.361 161.061 188.883 161.741 188.275C164.973 185.196 166.637 181.223 166.649 176.276C166.659 171.804 165.078 168.096 161.934 165.069C161.18 164.294 160.772 163.823 160.773 163.476Z' fill='%23FEB13E' fill-opacity='0.2'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 1V40.6997L22.3168 53.7558L46 40.6997V1H0ZM10.3425 10.4794C10.3419 10.2784 10.2026 10.0786 10.0633 9.93991C9.86238 9.80119 9.65373 9.73242 9.45338 9.73301C8.83631 9.7342 7.93176 10.3727 6.84701 11.6016C3.83281 15.0406 2.29282 18.3718 2.35506 23.284C2.42263 28.1938 3.62594 31.7964 6.28744 35.0588C7.65435 36.7798 8.70116 37.6643 9.44923 37.6625C9.64958 37.6625 9.92759 37.5226 10.058 37.3833C10.1967 37.1823 10.3348 36.9736 10.3348 36.7733C10.3336 36.3642 10.0544 35.8864 9.37454 35.2787C6.14162 32.1996 4.47833 28.2264 4.46648 23.2792C4.45581 18.8075 6.03729 15.0999 9.1813 12.0723C9.93529 11.2981 10.3431 10.8268 10.3425 10.4794ZM26.5768 24.1643C26.2701 24.0859 26.3698 23.6417 26.5348 22.9069C27.0051 20.8118 28.006 16.3539 21.6273 11.2767C21.6273 11.2767 22.7577 14.8686 17.0577 22.8843C11.6557 30.4742 18.7628 35.1577 19.5279 35.6309C19.5697 35.6578 19.5935 35.6705 19.5935 35.6705C19.5935 35.6705 19.5706 35.6572 19.5279 35.6309C19.038 35.3145 16.0798 33.0339 20.2218 26.273C20.4649 25.8708 20.7306 25.4802 21.0191 25.056C21.6856 24.0761 22.4739 22.9172 23.386 21.024C23.386 21.024 24.5431 22.6573 23.939 26.1983C23.1397 30.9329 26.822 30.2793 27.7326 30.1177C27.8511 30.0967 27.9227 30.084 27.9313 30.0926C29.5844 32.0392 26.6478 35.4336 26.3624 35.6611C26.3474 35.6711 26.3427 35.6743 26.3492 35.6705C26.3526 35.6685 26.357 35.6654 26.3624 35.6611L26.3637 35.6602C26.7912 35.3756 34.9112 29.9691 28.7623 21.9785C28.6397 22.1011 28.5067 22.351 28.3528 22.6403C27.9583 23.3816 27.4261 24.3817 26.5768 24.1643ZM35.7725 10.4757C35.7731 10.2747 35.9124 10.075 36.0517 9.93623C36.2527 9.79751 36.4613 9.72874 36.6617 9.72933C37.2787 9.73052 38.1833 10.369 39.2681 11.5979C42.2822 15.037 43.8222 18.3681 43.76 23.2803C43.6924 28.1901 42.4891 31.7928 39.8276 35.0551C38.4607 36.7761 37.4139 37.6606 36.6658 37.6588C36.4655 37.6582 36.1875 37.5189 36.0571 37.3796C35.9184 37.1786 35.7802 36.97 35.7802 36.7696C35.7814 36.3605 36.0606 35.8827 36.7405 35.2751C39.9734 32.1959 41.6367 28.2227 41.6486 23.2755C41.6592 18.8038 40.0778 15.0956 36.9338 12.0686C36.1798 11.2944 35.7719 10.8231 35.7725 10.4757Z' fill='%23FEB13E' fill-opacity='0.2'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (min-width: 991px) {
+  .donate-supporter-page-section .form-payment-methods {
+    height: 22px;
+    width: 220px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .donate-supporter-page-section .form-payment-methods {
+    height: 25px;
+    width: 250px;
+  }
+  .donate-supporter-page-section .donation-section {
+    flex-direction: row;
+  }
+}
+
+.supporter-badge-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .supporter-badge-container {
+    justify-content: left;
+  }
+}
+.supporter-badge-container svg {
+  height: 6em;
+  width: auto;
+}
+
+#supporter-bear {
+  height: 250px;
+}
+
+.donation-animation-container,
+.donation-animation-bullet-points {
+  position: relative;
+  width: 100%;
+}
+
+.donation-animation-bullet-points p {
+  position: absolute;
+  color: white;
+  text-align: center;
+  width: 100%;
+  font-size: 200%;
+  padding: 0 20px;
+}
+
+.donation-animation-bullet-1 {
+  animation-name: animation-bullet-1;
+}
+
+.donation-animation-bullet-2 {
+  animation-name: animation-bullet-2;
+}
+
+.donation-animation-bullet-3 {
+  animation-name: animation-bullet-3;
+}
+
+.donation-animation-bullet-4 {
+  animation-name: animation-bullet-4;
+}
+
+.donation-animation-bullet-1,
+.donation-animation-bullet-2,
+.donation-animation-bullet-3,
+.donation-animation-bullet-4 {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  margin-top: 40px;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1 {
+  1% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  2.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  19.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  21% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-2 {
+  21% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  22.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  38.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  40% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3 {
+  40% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  41.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  64% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  65.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4 {
+  65.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  67% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  96% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  97.5% {
+    opacity: 0;
+  }
+}
+
+/* AB testing */
+p.donation-animation-bullet-1-b {
+  animation-name: animation-bullet-1-b;
+  margin-top: 450px;
+  font-size: 2.5rem;
+}
+
+.donation-animation-bullet-2-b {
+  animation-name: animation-bullet-2-b;
+}
+
+.donation-animation-bullet-3-b {
+  animation-name: animation-bullet-3-b;
+}
+
+.donation-animation-bullet-4-b {
+  animation-name: animation-bullet-4-b;
+}
+
+.donation-animation-bullet-1-b,
+.donation-animation-bullet-2-b,
+.donation-animation-bullet-3-b,
+.donation-animation-bullet-4-b {
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-timing-function: normal;
+}
+
+@keyframes animation-bullet-1-b {
+  1% {
+    opacity: 0;
+  }
+  2.5% {
+    opacity: 1;
+  }
+  15% {
+    opacity: 1;
+  }
+  15.5% {
+    opacity: 0;
+  }
+}
+
+@keyframes animation-bullet-2-b {
+  15.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  16% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  33.5% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  34% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-3-b {
+  34.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  35% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  60.5% {
+    opacity: 0;
+    margin-top: 120px;
+  }
+}
+
+@keyframes animation-bullet-4-b {
+  60.5% {
+    opacity: 0;
+    margin-top: 40px;
+  }
+  61% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85% {
+    opacity: 1;
+    margin-top: 80px;
+  }
+  85.5% {
+    opacity: 0;
+  }
+}
+/* END AB testing */
+
+.tester-text {
+  margin-top: 80px;
+}
+
+@media (max-width: 768px) {
+  .donation-animation-bullet-points p {
+    font-size: 150%;
+  }
+  #donation-animation {
+    object-fit: cover;
+    min-height: 600px;
+    width: 100%;
+  }
+}

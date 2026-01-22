@@ -1,0 +1,35 @@
+import { TestScheduler } from 'rxjs/testing';
+import { describe, it, expect } from 'vitest';
+import completionEpic from './completion-epic';
+import { submitChallenge, submitChallengeComplete } from './actions';
+
+describe('completionEpic', () => {
+  describe('signed out user', () => {
+    const testScheduler = new TestScheduler((actual, expected) => {
+      it('should dispatch submitChallengeComplete', () => {
+        expect(actual).toEqual(expect.arrayContaining(expected));
+      });
+    });
+
+    testScheduler.run(({ hot, expectObservable }) => {
+      const action$ = hot('a', {
+        a: submitChallenge()
+      });
+      const state$ = {
+        value: {
+          challenge: { challengeMeta: { challengeType: 0 } },
+          app: {
+            user: { username: 'test' },
+            allChallengesInfo: { challengeNodes: [], certificateNodes: [] }
+          }
+        }
+      };
+
+      const output$ = completionEpic(action$, state$);
+
+      expectObservable(output$).toBe('a', {
+        a: submitChallengeComplete()
+      });
+    });
+  });
+});

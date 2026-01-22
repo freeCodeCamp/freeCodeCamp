@@ -1,0 +1,233 @@
+---
+id: 68de40f53fcaf106f51cc20f
+title: Build an HTML Audio and Video Player
+challengeType: 25
+dashedName: build-an-html-audio-and-video-player
+demoType: onClick
+---
+
+# --description--
+
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
+
+**User Stories:**
+
+1. You should have an `h1` element for the main title of the page.
+2. You should have two `section` elements.
+3. Inside the first `section` element, you should have an `h2` element for the title of the video playing.
+4. Below the `h2` element, you should have a `video` element with `controls` and `width` attributes. The `width` attribute should be set to `640`.
+5. Inside the `video` element, you should have a `source` element with a `src` attribute pointing to a video file and a `type` attribute.
+   - You can use `https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4`.
+6. Inside the second `section` element, you should have an `h2` element for the title of the song playing.
+7. Below the `h2` element, you should have an `audio` element with the `controls` and `loop` attributes, and a `src` attribute that points to an audio file.
+   - You can use `https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3`.
+   - Or `https://cdn.freecodecamp.org/curriculum/js-music-player/we-are-going-to-make-it.mp3`.
+
+# --hints--
+
+You should have an `h1` element for the main title of the page.
+
+```js
+const h1 = document.querySelector('h1');
+assert.exists(h1);
+```
+
+Your `h1` should not be empty.
+
+```js
+const h1 = document.querySelector('h1');
+assert.isNotEmpty(h1.textContent.trim());
+```
+
+You should have only one `h1` element
+
+```js
+assert.lengthOf(document.querySelectorAll('h1'), 1);
+```
+
+You should have two `section` elements.
+
+```js
+assert.lengthOf(document.querySelectorAll('section'), 2);
+
+```
+
+Inside the first `section` element, you should have an `h2` element for the title of the video playing.
+
+```js
+const section = document.querySelector('section');
+const h2 = section?.querySelector('h2');
+assert.exists(h2);
+```
+
+Below the `h2` element, you should have a `video` element.
+
+```js
+const section = document.querySelector('section');
+const video = section?.querySelector('h2 + video');
+assert.exists(video);
+```
+
+The `video` element should have a `controls` attribute.
+
+```js
+const section = document.querySelector('section');
+const video = section?.querySelector('h2 + video');
+const controlsAttr = video.controls;
+assert.isTrue(controlsAttr);
+```
+
+The `video` element should have a `width` attribute set to `640`.
+
+```js
+const section = document.querySelector('section');
+const video = section?.querySelector('h2 + video');
+const widthAttr = video.getAttribute('width');
+assert.equal(widthAttr, '640');
+```
+
+Inside the `video` element, you should have a `source` element.
+
+```js
+const section = document.querySelector('section');
+const source = section?.querySelector('h2 + video > source');
+assert.exists(source);
+```
+
+The `source` element should have a `src` attribute pointing to a video file.
+
+```js
+const section = document.querySelector('section');
+const source = section?.querySelector('h2 + video > source');
+const srcAttr = source.getAttribute('src');
+assert.match(srcAttr, /\.(mp4|webm|ogg|avi|mov)$/i);
+```
+
+The `source` element should have a `type` attribute
+
+```js
+const section = document.querySelector('section');
+const source = section?.querySelector('h2 + video > source');
+const typeAttr = source.getAttribute('type');
+assert.isNotEmpty(typeAttr);
+```
+
+The `type` attribute should match the media type of the file extension of the `src` attribute.
+
+```js
+const section = document.querySelector('section');
+const source = section?.querySelector('h2 + video > source');
+const typeAttr = source.getAttribute('type');
+const srcAttr = source.getAttribute('src');
+const srcFileExt = srcAttr.match(/[^\.]+$/g)[0];
+const fileExtToMediaTypes = {
+  mp4: ['video/mp4'],
+  webm: ['video/webm'],
+  ogg: ['video/ogg'],
+  avi: ['video/avi', 'video/vnd.avi', 'video/msvideo', 'video/x-msvideo'],
+  mov: ['video/quicktime']
+};
+const srcMediaTypes = fileExtToMediaTypes[srcFileExt];
+assert.oneOf(typeAttr, srcMediaTypes);
+```
+
+Inside the second `section` element, you should have an `h2` element for the title of the song playing.
+
+```js
+const section = document.querySelector('section:nth-of-type(2)');
+const h2 = section?.querySelector('h2');
+assert.exists(h2);
+```
+
+All your `h2` elements should contain some text.
+
+```js
+const h2s = document.querySelectorAll('h2');
+assert.isNotEmpty(h2s);
+h2s.forEach((h2) => assert.isNotEmpty(h2.textContent.trim()));
+```
+
+Below the `h2` element, you should have an `audio` element.
+
+```js
+const section = document.querySelector('section:nth-of-type(2)');
+const audio = section?.querySelector('h2 + audio');
+assert.exists(audio);
+```
+
+The `audio` element should have a `controls` attribute.
+
+```js
+const section = document.querySelector('section:nth-of-type(2)');
+const audio = section?.querySelector('h2 + audio');
+const controlsAttr = audio.controls;
+assert.isTrue(controlsAttr);
+```
+
+The `audio` element should have a `loop` attribute.
+
+```js
+const section = document.querySelector('section:nth-of-type(2)');
+const audio = section?.querySelector('h2 + audio');
+const loopAttr = audio.loop;
+assert.isTrue(loopAttr);
+```
+
+The `audio` element should have a `src` attribute pointing to an audio file.
+
+```js
+const section = document.querySelector('section:nth-of-type(2)');
+const audio = section?.querySelector('h2 + audio');
+const srcAttr = audio.getAttribute('src');
+assert.match(srcAttr, /\.(mp3|wav|ogg|aac|flac)$/i);
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Audio and Video Lab</title>
+</head>
+<body>
+
+</body>
+</html>
+```
+
+# --solutions--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Audio and Video Lab</title>
+</head>
+<body>
+  <main>
+    <h1>HTML Audio and Video Lab</h1>
+
+    <section>
+      <h2>What is the map method and how does it work?</h2>
+      <video controls width="640">
+        <source src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4" type="video/mp4" />
+      </video>
+    </section>
+
+    <section>
+      <h2>Sailing Away</h2>
+      <audio src="https://cdn.freecodecamp.org/curriculum/js-music-player/sailing-away.mp3" controls loop>
+      </audio>
+    </section>
+
+  </main>
+</body>
+</html>
+```

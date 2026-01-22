@@ -1,0 +1,33 @@
+{
+  "name": "Understanding the Greetings and Introductions",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-learn-understanding-greetings-and-introductions",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69169754709e03030c3455e0", "title": "Task 1" },
+    { "id": "68ee3d533f5542daa3c0cf6a", "title": "Task 2" },
+    { "id": "68ef88102807cb08f733588d", "title": "Task 3" },
+    { "id": "68ef8ef35b26ef1fd797d55f", "title": "Task 4" },
+    { "id": "68f45290ace3c0137aa128bf", "title": "Task 5" },
+    { "id": "6929a81b3a6e1b71d61018ca", "title": "Task 6" },
+    { "id": "68f4567ed82648232768c87d", "title": "Task 7" },
+    { "id": "68f458975a50cf2d567299b2", "title": "Task 8" },
+    { "id": "6929acce4fc06b7554c10a1e", "title": "Task 9" },
+    { "id": "69169a1380077105a08089a9", "title": "Task 10" },
+    { "id": "68f4a1d24458555d6ed8819d", "title": "Task 11" },
+    { "id": "68f4a4ff93ab3b6a2b256f44", "title": "Task 12" },
+    { "id": "68f4a7614036fb73f2dbb99c", "title": "Task 13" },
+    { "id": "68f4a852cc3918789685811a", "title": "Task 14" },
+    { "id": "6929aee7c53c517844d45ab6", "title": "Task 15" },
+    { "id": "69169c1a1cc7070945244238", "title": "Task 16" },
+    { "id": "68f4ad7a5b94218e31660a27", "title": "Task 17" },
+    { "id": "68f4edae6a52799a7a2877a0", "title": "Task 18" },
+    { "id": "6929b1a87c66927c3fdbb1de", "title": "Task 19" },
+    { "id": "68f4f3777e5891af0432a911", "title": "Task 20" },
+    { "id": "68f4f4b8667caeb4fa9bf23e", "title": "Task 21" },
+    { "id": "6929b43bc9d6c580f1db8050", "title": "Task 22" },
+    { "id": "6929b5e6f0fee5836950fbb9", "title": "Task 23" }
+  ],
+  "blockLabel": "learn"
+}

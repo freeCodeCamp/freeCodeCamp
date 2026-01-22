@@ -1,0 +1,102 @@
+---
+id: 68813f8b1b11bbdda98c6214
+title: Step 2
+challengeType: 0
+dashedName: step-2
+---
+
+# --description--
+
+Since a `div` element is being used for the note, screen readers will not understand its purpose. You can fix that by adding an `aria-label` attribute. This will help with accessibility and provide meaning for this `div` element. 
+
+In your opening `div` tag, add an `aria-label` attribute and set its value to `"Note editor"`.
+
+# --hints--
+
+Your opening `div` tag should have the `aria-label` attribute.
+
+```js
+assert.isTrue(document.getElementById("note").hasAttribute("aria-label"));
+```
+
+Your opening `div` tag should have the `aria-label` attribute set to `"Note editor"`.
+
+```js
+assert.equal(document.getElementById("note").getAttribute("aria-label"), "Note editor");
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Note taking app</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <p class="helper-text">Click or tap on the card to edit your note.</p>
+
+    --fcc-editable-region--
+    <div id="note" class="note" contenteditable="true">
+    --fcc-editable-region--
+      Many languages have words that carry meanings so specific or culturally rooted that they can't be neatly translated into English. 
+        
+      One example is the Japanese word "tsundoku", which refers to the habit of acquiring books and letting them pile up unread, something many book lovers can relate to. Another is the Portuguese word "saudade", describing a deep, bittersweet longing for something or someone that is absent. Meanwhile, the French word "Dépaysement" captures the disorienting yet exciting feeling of being in a new place, far from home.
+        
+      These unique words remind us that language is more than vocabulary: it's a window into the values, habits, and emotions of the cultures that create it.
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+```
+
+```css
+body {
+  font-family: Arial, sans-serif;
+  margin: 2em;
+  max-width: 700px;
+  background-color: #f5f5f5;
+}
+
+.note {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 1.5em;
+  margin-bottom: 1em;
+  line-height: 1.5;
+  min-height: 250px;
+  font-size: 16px;
+  /* This is needed to preserve line breaks in the div */
+  white-space: pre-wrap;
+}
+
+.note[contenteditable="true"] {
+  caret-color: black;
+}
+
+.note:hover {
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.helper-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 0.5em;
+  user-select: none;
+  font-style: italic;
+}
+
+#status {
+  color: #00471b;
+  padding: 0 1em;
+}
+```

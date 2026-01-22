@@ -1,0 +1,18 @@
+{
+  "name": "Introduction to TypeScript",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-typescript",
+  "challengeOrder": [
+    {
+      "id": "67d1d96532bc095aee051657",
+      "title": "What Is TypeScript, and Why Is It Used in the Industry?"
+    },
+    {
+      "id": "67d3018062fe6ba92b7d8299",
+      "title": "How Do the Different Types Work in TypeScript?"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

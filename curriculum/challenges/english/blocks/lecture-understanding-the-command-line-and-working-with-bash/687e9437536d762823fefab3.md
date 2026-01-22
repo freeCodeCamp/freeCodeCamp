@@ -1,0 +1,138 @@
+---
+id: 687e9437536d762823fefab3
+title: What Are Some Shortcuts You Can Use in the Command Line to Speed Up Productivity?
+challengeType: 19
+dashedName: what-are-some-shortcuts-you-can-use-in-the-command-line-to-speed-up-productivity
+---
+
+# --description--
+
+Let's learn about command line shortcuts you can use to speed up productivity.
+
+Terminal and command line shortcuts can help you streamline your workflows and maximize your productivity. For Linux and macOS, which can both trace their roots to Unix, many of these shortcuts will be the same. But for Windows, there will be some differences.
+
+The first shortcut is the up arrow key. Pressing this key will allow you to cycle backwards through your command history, one command at a time. The down arrow key, then, can be used to cycle forwards through your command history. These two keys allow you to quickly cycle through the commands you have previously run to find one you need to run again.
+
+Many shells will also offer an auto-complete feature, proposing commands based on what you have started to type. The tab key can be used to fill in the rest of the suggestion, quickly populating your command line with the full syntax. How these suggestions are generated will vary from shell to shell. For example, in zsh these suggestions are based on your most recent command history. But in PowerShell, they are based on commands, variables, and arguments that are available (with less weight on how recently they were used).
+
+Sometimes a command may result in a lot of output on your terminal. This extra noise can get in the way, or become disruptive to your workflow. In *nix based terminals found on Linux and macOS devices, you can press Control + L to clear the entire screen and start with a fresh clean prompt. In PowerShell, you would need to run the `cls` command (which you can bind to a key combination like Control + L).
+
+If you need to interrupt a command to stop its execution, you can use Control + C to kill the process. This will terminate the command and create a new prompt, allowing you to continue with whatever else you may need to work on. For PowerShell users, Control + C is also used to copy text - and will only work to terminate a process when the context is not ambiguous (such as when there is no text selected to copy).
+
+The next couple of shortcuts are only available in *nix based terminals, and do not have a PowerShell alternative.
+
+There may be times when you need to multitask, allowing a process or command to run in the background while you work on another. Pressing Control + Z places the current process in a background task and returns you to the command line, where you can continue your work. When you need to shift focus back to the background task, you can use `fg` to restore it.
+
+And finally, there may be commands you need to run twice in a row. You can press the up arrow key to cycle backwards to the previously run command, but you can also type two exclamation points (`!!`) into the command line and hit enter - this will automatically run the last executed command.
+
+Many terminals offer even more shortcuts, and I encourage you to read the documentation for your particular setup to find the shortcuts that work best for you. But these basic universal shortcuts should serve as a great starting point for maximizing your productivity and becoming a terminal wizard.
+
+# --questions--
+
+## --text--
+
+Which key combination is used to clear the screen in *nix based terminals?
+
+## --answers--
+
+Control + C
+
+### --feedback--
+
+Think about which shortcut creates a fresh, clean prompt.
+
+---
+
+Control + L
+
+---
+
+Control + Z
+
+### --feedback--
+
+Think about which shortcut creates a fresh, clean prompt.
+
+---
+
+The tab key
+
+### --feedback--
+
+Think about which shortcut creates a fresh, clean prompt.
+
+## --video-solution--
+
+2
+
+## --text--
+
+What happens when you press Control + Z in a *nix based terminal?
+
+## --answers--
+
+It terminates the current process.
+
+### --feedback--
+
+This shortcut allows you to multitask while a process runs.
+
+---
+
+It places the current process in the background.
+
+---
+
+It clears the screen.
+
+### --feedback--
+
+This shortcut allows you to multitask while a process runs.
+
+---
+
+It cycles through command history.
+
+### --feedback--
+
+This shortcut allows you to multitask while a process runs.
+
+## --video-solution--
+
+2
+
+## --text--
+
+Which of the following can be used to quickly run the last executed command in a *nix based terminal?
+
+## --answers--
+
+Control + L
+
+### --feedback--
+
+This involves typing a specific character twice.
+
+---
+
+The tab key
+
+### --feedback--
+
+This involves typing a specific character twice.
+
+---
+
+`!!`
+
+---
+
+Control + C
+
+### --feedback--
+
+This involves typing a specific character twice.
+
+## --video-solution--
+
+3

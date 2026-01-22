@@ -1,0 +1,18 @@
+.button-fit {
+  width: 30px;
+  height: fit-content;
+  padding: 0 !important;
+}
+
+.card {
+  margin: 0;
+  padding: 1em;
+  box-shadow: none;
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  margin-bottom: 1em;
+}
+
+.card-header {
+  position: relative;
+}

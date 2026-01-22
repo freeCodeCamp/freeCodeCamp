@@ -1,0 +1,1071 @@
+---
+id: 66ed8fe7f45ce3ece4053eb2
+title: CSS Flexbox Quiz
+challengeType: 8
+dashedName: quiz-css-flexbox
+---
+
+# --description--
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+# --quizzes--
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is flexbox?
+
+#### --distractors--
+
+A two-dimensional model for layout.
+
+---
+
+A three-dimensional model for layout.
+
+---
+
+A multi-dimensional model for layout.
+
+#### --answer--
+
+A one-dimensional model for layout.
+
+### --question--
+
+#### --text--
+
+What CSS property is set to enable the flexbox layout for the `div` element?
+
+#### --distractors--
+
+```css
+div {
+  flex: 1;
+}
+```
+
+---
+
+```css
+div {
+  flex-direction: row;
+}
+```
+
+---
+
+```css
+div {
+  flex-wrap: wrap;
+}
+```
+
+#### --answer--
+
+```css
+div {
+  display: flex;
+}
+```
+
+### --question--
+
+#### --text--
+
+Which CSS property lets flex items wrap onto a new row when the current row is full?
+
+#### --distractors--
+
+`flex-direction`
+
+---
+
+`justify-content`
+
+---
+
+`align-items`
+
+#### --answer--
+
+`flex-wrap`
+
+### --question--
+
+#### --text--
+
+What does the flexbox property `justify-content` control?
+
+#### --distractors--
+
+It controls the direction of the child elements of the flexbox container.
+
+---
+
+It controls the text style of the child elements of the flexbox container.
+
+---
+
+It controls the alignment of the child elements within the flexbox container.
+
+#### --answer--
+
+It controls the distribution of the child elements on the main axis.
+
+### --question--
+
+#### --text--
+
+What property controls the direction of the elements within the flexbox container?
+
+#### --distractors--
+
+`flex-wrap`
+
+---
+
+`flex`
+
+---
+
+`justify-content`
+
+#### --answer--
+
+`flex-direction`
+
+### --question--
+
+#### --text--
+
+Which CSS properties can be used to make flex items flow from left to right, and have the new flex item appear on top of the previous one if the width of the current row is exceeded?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap-reverse;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+```
+
+### --question--
+
+#### --text--
+
+What property controls the positioning of the elements on the cross axis?
+
+#### --distractors--
+
+`flex-wrap`
+
+---
+
+`flex-direction`
+
+---
+
+`justify-content`
+
+#### --answer--
+
+`align-items`
+
+### --question--
+
+#### --text--
+
+Which is not a value for `justify-content`?
+
+#### --distractors--
+
+`flex-start`
+
+---
+
+`center`
+
+---
+
+`space-between`
+
+#### --answer--
+
+`row`
+
+### --question--
+
+#### --text--
+
+What CSS properties would you use to center an element within a flex container horizontally, and vertically?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  align-items: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  align-content: center;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+### --question--
+
+#### --text--
+
+What value of `flex-direction` makes the flex items go from right to left?  
+
+#### --distractors--
+
+`column-reverse`
+
+---
+
+`column`
+
+---
+
+`row`
+
+#### --answer--
+
+`row-reverse`
+
+### --question--
+
+#### --text--
+
+What is not a value of the `flex-wrap` property?
+
+#### --distractors--
+
+`nowrap`
+
+---
+
+`wrap`
+
+---
+
+`wrap-reverse`
+
+#### --answer--
+
+`row`
+
+### --question--
+
+#### --text--
+
+What does the `stretch` value in `align-items` do?
+
+#### --distractors--
+
+Items are packed directly against each other toward the start edge of the container.
+
+---
+
+Items are aligned such that their flex container baselines align.
+
+---
+
+Items are packed directly against each other toward the end edge of the container.
+
+#### --answer--
+
+Auto-size items to be equally large to fill the container.
+
+### --question--
+
+#### --text--
+
+Which `justify-content` value places the first item at the start, the last item at the end, and evenly spaces the other items between them along the main axis?
+
+#### --distractors--
+
+`space-evenly`
+
+---
+
+`space-around`
+
+---
+
+`center`
+
+#### --answer--
+
+`space-between`
+
+### --question--
+
+#### --text--
+
+Which `justify-content` value spaces items so that the gaps between every pair of adjacent items and the container’s edges are all equal?
+
+#### --distractors--
+
+`space-between`
+
+---
+
+`space-around`
+
+---
+
+`center`
+
+#### --answer--
+
+`space-evenly`
+
+### --question--
+
+#### --text--
+
+Which `justify-content` value spaces items equally along the main axis while leaving half that amount of space at the container’s edges?
+
+#### --distractors--
+
+`space-evenly`
+
+---
+
+`center`
+
+---
+
+`space-between`
+
+#### --answer--
+
+`space-around`
+
+### --question--
+
+#### --text--
+
+Which of the following results in the items being aligned at the start of the cross axis?
+
+#### --distractors--
+
+`align-items: flex-starts;`
+
+---
+
+`align-items: baseline;`
+
+---
+
+`align-items: first-baseline;`
+
+#### --answer--
+
+`align-items: flex-start;`
+
+### --question--
+
+#### --text--
+
+Which of the following results in the items being aligned at the end of the cross axis?
+
+#### --distractors--
+
+`align-items: flex-ends;`
+
+---
+
+`align-items: end;`
+
+---
+
+`align-items: flex-ending;`
+
+#### --answer--
+
+`align-items: flex-end;`
+
+### --question--
+
+#### --text--
+
+Which value for `flex-direction` will make it so items are aligned along the main axis from left to right?
+
+#### --distractors--
+
+`column`
+
+---
+
+`column-reverse`
+
+---
+
+`row-reverse`
+
+#### --answer--
+
+`row`
+
+### --question--
+
+#### --text--
+
+Which value for `flex-direction` will make it so items are aligned along the cross axis from top to bottom?
+
+#### --distractors--
+
+`row`
+
+---
+
+`column-reverse`
+
+---
+
+`row-reverse`
+
+#### --answer--
+
+`column`
+
+### --question--
+
+#### --text--
+
+Which of the following use case is not suitable for flexbox?
+
+#### --distractors--
+
+Centering an item in a container.
+
+---
+
+Vertical alignment of items in a row.
+
+---
+
+Dynamically adjusting distribution and alignment of items for different viewports.
+
+#### --answer--
+
+Fixed sizing and space between items like a grid.
+
+## --quiz--
+
+### --question--
+
+#### --text--
+
+What is the purpose of a one-dimensional layout model like Flexbox?
+
+#### --distractors--
+
+To handle layout in two dimensions, both rows and columns at the same time.
+
+---
+
+To control the stacking order of positioned elements using `z-index`.
+
+---
+
+To create 3D transforms and complex animations on page elements.
+
+#### --answer--
+
+To lay out items along a single line or axis, either as a row or as a column.
+
+### --question--
+
+#### --text--
+
+Which CSS property will align all the flex items to the right side of the `.container` element?
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+}
+```
+
+#### --distractors--
+
+`justify-content: flex-start;`
+
+---
+
+`justify-content: space-between;`
+
+---
+
+`align-items: flex-end;`
+
+#### --answer--
+
+`justify-content: flex-end;`
+
+### --question--
+
+#### --text--
+
+What are the two axes that define the direction of item layout in the Flex Model?
+
+#### --distractors--
+
+The horizontal axis and the vertical axis.
+
+---
+
+The x-axis and the y-axis.
+
+---
+
+The primary axis and the secondary axis.
+
+#### --answer--
+
+The main axis and the cross axis.
+
+### --question--
+
+#### --text--
+
+Which of the following CSS rules will arrange items in a vertical column and also center them horizontally within their container?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+```
+
+### --question--
+
+#### --text--
+
+What is the main purpose of the `flex-wrap` property?
+
+#### --distractors--
+
+It sets the direction that flex items are placed in the flex container.
+
+---
+
+It aligns flex items along the main axis of the container.
+
+---
+
+It aligns flex items along the cross axis of the container.
+
+#### --answer--
+
+It determines if flex items should wrap onto new lines to fit available space.
+
+### --question--
+
+#### --text--
+
+What is the default behavior of the `flex-wrap: nowrap;` declaration?
+
+#### --distractors--
+
+It forces flex items to wrap onto a new line if they are too wide for the container.
+
+---
+
+It wraps items onto a new line, but in the reverse order.
+
+---
+
+It prevents the flex container from being larger than its parent element.
+
+#### --answer--
+
+It forces flex items to remain on a single line, even if they overflow the container.
+
+### --question--
+
+#### --text--
+
+Which CSS property is a shorthand for setting both the `flex-direction` and `flex-wrap` properties at once?
+
+#### --distractors--
+
+`flex-box`
+
+---
+
+`flex-align`
+
+---
+
+`flex-container`
+
+#### --answer--
+
+`flex-flow`
+
+### --question--
+
+#### --text--
+
+What is the effect of setting `flex-direction: column-reverse;` on a flex container?
+
+#### --distractors--
+
+It arranges items horizontally from right to left.
+
+---
+
+It reverses the items in a row, but keeps them on a single line.
+
+---
+
+It arranges items vertically from top to bottom.
+
+#### --answer--
+
+It arranges items vertically in a reverse order from bottom to top.
+
+### --question--
+
+#### --text--
+
+Which CSS snippet correctly arranges flex items in a vertical column and allows them to wrap onto a new column if they overflow the container's height?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  flex-flow: column wrap;
+}
+```
+
+### --question--
+
+#### --text--
+
+Which `justify-content` value aligns all flex items to the end of the container's main axis?
+
+#### --distractors--
+
+`justify-content: end;`
+
+---
+
+`justify-content: center;`
+
+---
+
+`justify-content: flex-start;`
+
+#### --answer--
+
+`justify-content: flex-end;`
+
+### --question--
+
+#### --text--
+
+What is the effect of the following CSS rule on flex items?
+
+```css
+.container {
+  flex-flow: row nowrap;
+}
+```
+
+#### --distractors--
+
+Items are arranged in a column and will wrap to a new column.
+
+---
+
+Items are arranged in a row and will wrap to a new row.
+
+---
+
+Items are arranged in a column and will overflow if they don't fit.
+
+#### --answer--
+
+Items are arranged in a row and will overflow the container if they don't fit.
+
+### --question--
+
+#### --text--
+
+How does `justify-content: space-evenly;` align flex items?
+
+```css
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+```
+
+#### --distractors--
+
+Items are evenly spaced, with no space at the start or end.
+
+---
+
+Items are packed together in the center of the container.
+
+---
+
+Items are pushed to the right side of the container, with equal spacing between them.
+
+#### --answer--
+
+Items have equal space between them and at both ends of the container.
+
+### --question--
+
+#### --text--
+
+Which property would you use to vertically center items when `flex-direction: row;` is set?
+
+#### --distractors--
+
+`justify-content: center;`
+
+---
+
+`vertical-align: middle;`
+
+---
+
+`text-align: center;`
+
+#### --answer--
+
+`align-items: center;`
+
+### --question--
+
+#### --text--
+
+What does the `flex-start` value for the `justify-content` property do?
+
+#### --distractors--
+
+It aligns items to the start of the cross axis.
+
+---
+
+It stretches items to fill the container's main axis.
+
+---
+
+It centers all the items along the main axis.
+
+#### --answer--
+
+It aligns items to the beginning of the container's main axis.
+
+### --question--
+
+#### --text--
+
+How would you set up a flex container to arrange its items from right-to-left on a single line, and also position them at the top of the container?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-start;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: flex-start;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+```
+
+### --question--
+
+#### --text--
+
+Which of the following is a valid declaration for the `flex-flow` property?
+
+#### --distractors--
+
+`flex-flow: center wrap;`
+
+---
+
+`flex-flow: row space-between;`
+
+---
+
+`flex-flow: column reverse;`
+
+#### --answer--
+
+`flex-flow: column wrap-reverse;`
+
+### --question--
+
+#### --text--
+
+Which of the following CSS rules will result in flex items being centered horizontally and stretched vertically to fill the height of the container?
+
+#### --distractors--
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+}
+```
+
+---
+
+```css
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+```
+
+#### --answer--
+
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+```
+
+### --question--
+
+#### --text--
+
+What effect does `align-items: stretch;` have when `flex-direction` is set to `column`?
+
+#### --distractors--
+
+It stretches items vertically to fill the container's height.
+
+---
+
+It has no effect when the direction is `column`.
+
+---
+
+It stretches items vertically to match the tallest item.
+
+#### --answer--
+
+It stretches items horizontally to fill the container's width.
+
+### --question--
+
+#### --text--
+
+If you want to reverse the order of items in a horizontal row, which declaration should you use?
+
+#### --distractors--
+
+`flex-direction: column-reverse;`
+
+---
+
+`flex-wrap: wrap-reverse;`
+
+---
+
+`flex-direction: reverse-row;`
+
+#### --answer--
+
+`flex-direction: row-reverse;`
+
+### --question--
+
+#### --text--
+
+Which value of `align-items` will position items at the top of a container whose `flex-direction` is `row`?
+
+#### --distractors--
+
+`align-items: top;`
+
+---
+
+`justify-content: flex-start;`
+
+---
+
+`align-items: stretch;`
+
+#### --answer--
+
+`align-items: flex-start;`

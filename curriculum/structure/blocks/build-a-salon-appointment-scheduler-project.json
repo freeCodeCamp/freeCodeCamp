@@ -1,0 +1,13 @@
+{
+  "name": "Salon Appointment Scheduler",
+  "isUpcomingChange": false,
+  "dashedName": "build-a-salon-appointment-scheduler-project",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "5f87ac112ae598023a42df1a",
+      "title": "Build a Salon Appointment Scheduler"
+    }
+  ],
+  "blockLayout": "project-list"
+}

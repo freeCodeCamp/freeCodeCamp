@@ -1,0 +1,11 @@
+{
+  "name": "Testing Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-testing",
+  "challengeOrder": [
+    { "id": "66f1aeffc5774ac692112a7e", "title": "Testing Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

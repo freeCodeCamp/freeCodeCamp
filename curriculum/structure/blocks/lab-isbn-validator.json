@@ -1,0 +1,11 @@
+{
+  "name": "Debug an ISBN Validator",
+  "isUpcomingChange": false,
+  "dashedName": "lab-isbn-validator",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    { "id": "686b9720ee1d032bd77a480a", "title": "Debug an ISBN Validator" }
+  ],
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

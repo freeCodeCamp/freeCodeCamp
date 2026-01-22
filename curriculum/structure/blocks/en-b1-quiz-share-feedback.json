@@ -1,0 +1,11 @@
+{
+  "name": "Sharing Feedback Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-share-feedback",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6960442c33cde51b9c78d980", "title": "Sharing Feedback Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

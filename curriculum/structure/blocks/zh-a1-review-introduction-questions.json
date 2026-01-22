@@ -1,0 +1,12 @@
+{
+  "name": "Introduction Questions Review",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-review-introduction-questions",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "69183626c350253a6a4a05e1", "title": "Glossary" },
+    { "id": "6918362cb49e2a3adf102413", "title": "Grammar Highlights" }
+  ],
+  "blockLabel": "review"
+}

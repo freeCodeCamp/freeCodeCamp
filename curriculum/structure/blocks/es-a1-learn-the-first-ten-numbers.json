@@ -1,0 +1,21 @@
+{
+  "name": "The First Ten Numbers",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-learn-the-first-ten-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691dd85d8f84be17adbac86e", "title": "Task 1" },
+    { "id": "691de4643cfa17239f3f63dc", "title": "Task 2" },
+    { "id": "691e0644af6d3a35040b3cfd", "title": "Task 3" },
+    { "id": "691e087cf197283819e6a63d", "title": "Task 4" },
+    { "id": "691e0ac57367e53acf30751f", "title": "Task 5" },
+    { "id": "691e0c17d551d93dba095daa", "title": "Task 6" },
+    { "id": "691e0d81718641411ba24e0c", "title": "Task 7" },
+    { "id": "691e1152c55f46443b285022", "title": "Task 8" },
+    { "id": "691e13e13f0d4946618340fd", "title": "Task 9" },
+    { "id": "691e15ba76672548922802b2", "title": "Task 10" },
+    { "id": "691e16648483544a25ffc6c6", "title": "Task 11" }
+  ],
+  "blockLabel": "learn"
+}

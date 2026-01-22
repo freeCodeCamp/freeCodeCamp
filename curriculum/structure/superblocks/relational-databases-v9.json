@@ -1,0 +1,106 @@
+{
+  "chapters": [
+    {
+      "dashedName": "relational-databases",
+      "modules": [
+        {
+          "dashedName": "code-editors",
+          "blocks": ["lecture-working-with-code-editors-and-ides"]
+        },
+        {
+          "dashedName": "bash-fundamentals",
+          "blocks": [
+            "lecture-understanding-the-command-line-and-working-with-bash",
+            "workshop-bash-boilerplate",
+            "review-bash-commands",
+            "quiz-bash-commands"
+          ]
+        },
+        {
+          "dashedName": "sql-and-postgresql",
+          "blocks": [
+            "lecture-working-with-relational-databases",
+            "workshop-database-of-video-game-characters",
+            "review-sql-and-postgresql",
+            "quiz-sql-and-postgresql"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-celestial-bodies-database",
+          "blocks": ["lab-celestial-bodies-database"]
+        },
+        {
+          "dashedName": "bash-scripting",
+          "blocks": [
+            "lecture-understanding-bash-scripting",
+            "workshop-bash-five-programs",
+            "review-bash-scripting",
+            "quiz-bash-scripting"
+          ]
+        },
+        {
+          "dashedName": "sql-and-bash",
+          "blocks": [
+            "lecture-working-with-sql",
+            "workshop-sql-student-database-part-1",
+            "workshop-sql-student-database-part-2",
+            "workshop-kitty-ipsum-translator",
+            "workshop-bike-rental-shop",
+            "review-bash-and-sql",
+            "quiz-bash-and-sql"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-world-cup-database",
+          "blocks": ["lab-world-cup-database"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-salon-appointment-scheduler",
+          "blocks": ["lab-salon-appointment-scheduler"]
+        },
+        {
+          "dashedName": "git",
+          "blocks": [
+            "lecture-working-with-nano",
+            "workshop-castle",
+            "lecture-introduction-to-git-and-github",
+            "lecture-working-with-code-reviews-branching-deployment-and-ci-cd",
+            "workshop-sql-reference-object",
+            "review-git",
+            "quiz-git"
+          ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-periodic-table-database",
+          "blocks": ["lab-periodic-table-database"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-number-guessing-game",
+          "blocks": ["lab-number-guessing-game"]
+        },
+        {
+          "moduleType": "review",
+          "dashedName": "review-relational-databases",
+          "blocks": ["review-relational-databases"]
+        }
+      ]
+    },
+    {
+      "chapterType": "exam",
+      "dashedName": "relational-databases-certification-exam",
+      "comingSoon": false,
+      "modules": [
+        {
+          "comingSoon": false,
+          "dashedName": "relational-databases-certification-exam",
+          "blocks": ["exam-relational-databases-certification"]
+        }
+      ]
+    }
+  ]
+}

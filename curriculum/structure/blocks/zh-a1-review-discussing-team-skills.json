@@ -1,0 +1,14 @@
+{
+  "name": "Discussing Team Skills Review",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-review-discussing-team-skills",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "68fa3bd62340efe637189b4d",
+      "title": "Dialogue 1: I'm Tom"
+    }
+  ],
+  "blockLabel": "review"
+}

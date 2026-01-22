@@ -1,0 +1,11 @@
+{
+  "name": "Web Performance Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-web-performance",
+  "challengeOrder": [
+    { "id": "66f1adcf97e3e4c1bd89ebf5", "title": "Web Performance Quiz" }
+  ],
+  "helpCategory": "JavaScript"
+}

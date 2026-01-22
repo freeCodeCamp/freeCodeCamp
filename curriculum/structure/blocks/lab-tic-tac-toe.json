@@ -1,0 +1,15 @@
+{
+  "name": "Build a Tic-Tac-Toe Game",
+  "usesMultifileEditor": true,
+  "dashedName": "lab-tic-tac-toe",
+  "challengeOrder": [
+    {
+      "id": "67e3a6b7f60b4085588189e6",
+      "title": "Build a Tic-Tac-Toe Game"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "isUpcomingChange": false,
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

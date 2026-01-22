@@ -1,0 +1,94 @@
+{
+  "chapters": [
+    {
+      "dashedName": "es-a1-chapter-welcome-to-a1-professional-spanish",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-introduction-and-certification-overview",
+          "blocks": ["es-a1-learn-certification-introduction"]
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-spanish-fundamentals",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-letters-sounds-and-first-numbers",
+          "blocks": [
+            "es-a1-learn-vowels",
+            "es-a1-learn-consonants-and-special-characters",
+            "es-a1-practice-the-alphabet",
+            "es-a1-learn-the-first-ten-numbers",
+            "es-a1-practice-the-first-ten-numbers",
+            "es-a1-review-spanish-fundamentals",
+            "es-a1-quiz-spanish-fundamentals"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-greetings-and-introductions",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-greetings-and-farewells",
+          "blocks": [
+            "es-a1-warm-up-greetings-and-farewells-basics",
+            "es-a1-learn-greetings-during-the-day",
+            "es-a1-practice-greetings-and-farewells",
+            "es-a1-review-greetings-and-farewells",
+            "es-a1-quiz-greetings-and-farewells"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-introducing-yourself",
+          "blocks": [
+            "es-a1-warm-up-introducing-yourself-basics",
+            "es-a1-learn-meet-luna",
+            "es-a1-learn-meet-mateo",
+            "es-a1-learn-meet-julieta",
+            "es-a1-practice-introducing-yourself",
+            "es-a1-review-introducing-yourself",
+            "es-a1-quiz-introducing-yourself"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-first-questions",
+          "blocks": [
+            "es-a1-warm-up-first-questions-basics",
+            "es-a1-learn-meet-angela-and-basti",
+            "es-a1-practice-first-questions",
+            "es-a1-review-first-questions",
+            "es-a1-quiz-first-questions"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-basic-personal-details",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-numbers-10-to-29",
+          "blocks": [
+            "es-a1-warm-up-remember-first-numbers",
+            "es-a1-learn-numbers-10-to-29",
+            "es-a1-practice-using-numbers-10-to-29",
+            "es-a1-review-numbers-10-to-29",
+            "es-a1-quiz-numbers-10-to-29"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-sharing-your-personal-details",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-getting-ready-to-share-personal-details",
+            "es-a1-learn-basic-personal-information",
+            "es-a1-learn-contact-information-and-spelling",
+            "es-a1-practice-personal-details-in-action",
+            "es-a1-review-sharing-your-personal-details",
+            "es-a1-quiz-sharing-your-personal-details"
+          ]
+        }
+      ]
+    }
+  ]
+}

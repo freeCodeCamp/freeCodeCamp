@@ -1,0 +1,18 @@
+{
+  "name": "Remember First Numbers",
+  "isUpcomingChange": false,
+  "dashedName": "es-a1-warm-up-remember-first-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6920da549e860c1d800bab97", "title": "Task 1" },
+    { "id": "6920df47b620d52875b2a2ce", "title": "Task 2" },
+    { "id": "6920e175fda5182b5334c13a", "title": "Task 3" },
+    { "id": "6920e2f27a1bb92fdc6ac723", "title": "Task 4" },
+    { "id": "6920e3d96a1fb331b9814b50", "title": "Task 5" },
+    { "id": "6920eae3dcd46f365f1339ac", "title": "Task 6" },
+    { "id": "6920eb407185eb388689e344", "title": "Task 7" },
+    { "id": "6920eb822daa1a39a56453ce", "title": "Task 8" }
+  ],
+  "blockLabel": "warm-up"
+}

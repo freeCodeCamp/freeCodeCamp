@@ -1,0 +1,14 @@
+{
+  "name": "JavaScript Functional Programming Quiz",
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "isUpcomingChange": false,
+  "dashedName": "quiz-javascript-functional-programming",
+  "challengeOrder": [
+    {
+      "id": "66edd4f31ff19bf5573bf64b",
+      "title": "JavaScript Functional Programming Quiz"
+    }
+  ],
+  "helpCategory": "JavaScript"
+}

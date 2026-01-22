@@ -1,0 +1,11 @@
+{
+  "name": "Selection Sort Lab",
+  "isUpcomingChange": false,
+  "dashedName": "lab-selection-sort",
+  "challengeOrder": [
+    { "id": "680b3ef395479b0e449ecb6e", "title": "Build a Selection Sort" }
+  ],
+  "helpCategory": "Python",
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}

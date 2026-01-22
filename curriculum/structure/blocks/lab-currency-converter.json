@@ -1,0 +1,15 @@
+{
+  "name": "Build a Currency Converter",
+  "usesMultifileEditor": true,
+  "dashedName": "lab-currency-converter",
+  "challengeOrder": [
+    {
+      "id": "67eaa957114d373deb3a9149",
+      "title": "Build an Currency Converter"
+    }
+  ],
+  "helpCategory": "JavaScript",
+  "isUpcomingChange": false,
+  "blockLayout": "link",
+  "blockLabel": "lab"
+}
