@@ -220,15 +220,15 @@ const PortfolioSettings = (props: PortfolioProps) => {
       desc: { descriptionState, descriptionMessage },
       pristine
     } = formCorrect(portfolioItem);
+    const imageIsInvalid = imageValidation.state === 'error';
+    const saveDisabled = isButtonDisabled || pristine || imageIsInvalid;
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      if (isButtonDisabled || pristine) return null;
+      if (saveDisabled) return null;
       return saveItem(id);
     };
     const combineImageStatus =
-      imageState === 'success' && imageValidation.state === 'success'
-        ? null
-        : 'error';
+      imageState === 'success' && !imageIsInvalid ? null : 'error';
     const combineImageMessage = imageMessage || imageValidation.message;
     return (
       <FullWidthRow key={id}>
@@ -322,10 +322,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={isButtonDisabled || pristine}
+            disabled={saveDisabled}
             bgSize='large'
             data-playwright-test-label='save-portfolio'
-            {...((isButtonDisabled || pristine) && { tabIndex: -1 })}
+            {...(saveDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
