@@ -8,11 +8,11 @@ import {
   availableLangs,
   LangNames,
   LangCodes
-} from '../../shared-dist/config/i18n';
+} from '@freecodecamp/shared/config/i18n';
 import {
   catalogSuperBlocks,
   SuperBlocks
-} from '../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {

@@ -1,5 +1,5 @@
 import { describe, test, expect, vi } from 'vitest';
-import { isPoly } from '../../shared-dist/utils/polyvinyl.js';
+import { isPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import {
   validateChallenges,
   buildBlock,

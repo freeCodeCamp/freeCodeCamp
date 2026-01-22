@@ -3,7 +3,8 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
+
 import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
