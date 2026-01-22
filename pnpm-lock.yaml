@@ -550,6 +550,9 @@ importers:
       '@babel/plugin-syntax-dynamic-import':
         specifier: 7.8.3
         version: 7.8.3(@babel/core@7.28.5)
+      '@freecodecamp/browser-scripts':
+        specifier: workspace:*
+        version: link:../tools/client-plugins/browser-scripts
       '@freecodecamp/curriculum':
         specifier: workspace:*
         version: link:../curriculum

@@ -1,5 +1,7 @@
+import { version } from '@freecodecamp/browser-scripts/package.json';
+
 // TODO: This might be cleaner as a class.
-const pythonWorkerSrc = `/js/workers/1.0.0/python-worker.js`;
+const pythonWorkerSrc = `/js/workers/${version}/python-worker.js`;
 
 let worker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;

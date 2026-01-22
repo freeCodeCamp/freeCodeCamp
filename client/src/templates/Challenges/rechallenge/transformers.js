@@ -15,6 +15,8 @@ import {
   compileHeadTail,
   createSource
 } from '@freecodecamp/shared/utils/polyvinyl';
+import { version } from '@freecodecamp/browser-scripts/package.json';
+
 import { WorkerExecutor } from '../utils/worker-executor';
 import {
   compileTypeScriptCode,
@@ -206,7 +208,9 @@ function getBabelOptions(
   return presets;
 }
 
-const sassWorkerExecutor = new WorkerExecutor('workers/1.0.0/sass-compile');
+const sassWorkerExecutor = new WorkerExecutor(
+  `workers/${version}/sass-compile`
+);
 async function transformSASS(documentElement) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.

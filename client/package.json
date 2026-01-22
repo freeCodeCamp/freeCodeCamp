@@ -144,6 +144,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
     "@freecodecamp/curriculum": "workspace:*",
+    "@freecodecamp/browser-scripts": "workspace:*",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "^8.0.1",

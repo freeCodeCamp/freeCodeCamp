@@ -12,7 +12,8 @@
     "dist"
   ],
   "exports": {
-    "./test-runner": "./test-runner.ts"
+    "./test-runner": "./test-runner.ts",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
