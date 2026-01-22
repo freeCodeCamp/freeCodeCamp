@@ -154,7 +154,6 @@ export function* executeChallengeSaga({ payload }) {
             completedChallengesIds.includes(blockId)
           );
 
-          // Don't show confetti if the block was already effectively complete
           if (!allOthersCompleted) {
             fireConfetti();
           }
