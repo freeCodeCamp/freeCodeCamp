@@ -1,0 +1,21 @@
+{
+  "name": "Build a Report Card Printer",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-report-card-printer",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69461e4f98594012939bc1c6", "title": "Step 1" },
+    { "id": "6947a0c2b6de035dd8d3eea1", "title": "Step 2" },
+    { "id": "694648abde178bb8202d9511", "title": "Step 3" },
+    { "id": "694648acde178bb8202d9512", "title": "Step 4" },
+    { "id": "6947a3e516bb8a4a681274a7", "title": "Step 5" },
+    { "id": "694648acde178bb8202d9513", "title": "Step 6" },
+    { "id": "694648acde178bb8202d9514", "title": "Step 7" },
+    { "id": "694648acde178bb8202d9515", "title": "Step 8" },
+    { "id": "694648acde178bb8202d9516", "title": "Step 9" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

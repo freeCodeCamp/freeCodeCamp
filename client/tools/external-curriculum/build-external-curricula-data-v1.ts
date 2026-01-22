@@ -1,8 +1,8 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
-import { submitTypes } from '../../../shared-dist/config/challenge-types';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { submitTypes } from '@freecodecamp/shared/config/challenge-types';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { patchBlock } from './patches';
 
 export type CurriculumIntros = {

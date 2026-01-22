@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { chapterBasedSuperBlocks } from '../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const blockSchema = Joi.object({}).keys({
   desc: Joi.array().min(1),
