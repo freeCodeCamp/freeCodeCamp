@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   completedChallengesSelector,
   allChallengesInfoSelector,

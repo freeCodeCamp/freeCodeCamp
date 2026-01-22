@@ -22,7 +22,7 @@ import {
   updateSuperBlockStructures,
   superBlockStructuresSelector
 } from '../../templates/Introduction/redux';
-import { getIsDailyCodingChallenge } from '../../../../shared-dist/config/challenge-types';
+import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import {
   isValidDateString,
   formatDisplayDate
