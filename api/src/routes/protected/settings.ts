@@ -3,7 +3,7 @@ import type { FastifyError, FastifyInstance } from 'fastify';
 import { differenceInMinutes } from 'date-fns';
 import validator from 'validator';
 
-import { isValidUsername } from '../../../../shared/utils/validate.js';
+import { isValidUsername } from '@freecodecamp/shared/utils/validate';
 import * as schemas from '../../schemas.js';
 import { createAuthToken, isExpired } from '../../utils/tokens.js';
 import { API_LOCATION } from '../../utils/env.js';
@@ -166,6 +166,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               showName: req.body.profileUI.showName,
               showPoints: req.body.profileUI.showPoints,
               showPortfolio: req.body.profileUI.showPortfolio,
+              showExperience: req.body.profileUI.showExperience,
               showTimeLine: req.body.profileUI.showTimeLine
             }
           }
@@ -700,6 +701,36 @@ ${isLinkSentWithinLimitTTL}`
 
         return {
           message: 'flash.portfolio-item-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        logger.error(err);
+        fastify.Sentry.captureException(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-experience',
+    {
+      schema: schemas.updateMyExperience
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      try {
+        const { experience } = req.body;
+
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            experience
+          }
+        });
+
+        return {
+          message: 'flash.experience-updated',
           type: 'success'
         } as const;
       } catch (err) {
