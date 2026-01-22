@@ -10,9 +10,11 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import ShortcutsModal from '../components/shortcuts-modal';
+
+import { ChallengeLang } from '@freecodecamp/shared/config/curriculum';
 
 // Local Utilities
+import ShortcutsModal from '../components/shortcuts-modal';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import Hotkeys from '../components/hotkeys';
@@ -38,7 +40,6 @@ import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
-import { ChallengeLang } from '../../../../../shared-dist/config/curriculum';
 
 // Redux Setup
 const mapStateToProps = createSelector(

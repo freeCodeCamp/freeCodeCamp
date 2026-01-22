@@ -75,11 +75,18 @@ export function setInitImpl(
 }
 
 vi.mock('@growthbook/growthbook-react', () => ({
-  GrowthBook: vi.fn().mockImplementation(() => ({
-    init: () => mockInit(),
-    setPayload: (arg: Record<string, unknown>) => mockSetPayload(arg),
-    setAttributes: (arg: Record<string, unknown>) => mockSetAttributes(arg)
-  })),
+  GrowthBook: class {
+    init() {
+      return mockInit();
+    }
+    setPayload(arg: Record<string, unknown>) {
+      return mockSetPayload(arg);
+    }
+    setAttributes(arg: Record<string, unknown>) {
+      return mockSetAttributes(arg);
+    }
+  },
+
   GrowthBookProvider: ({ children }: { children: React.ReactNode }) => (
     <div>{children}</div>
   )
