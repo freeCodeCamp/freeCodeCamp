@@ -17,7 +17,7 @@ import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import useDetectOS from '../utils/use-detect-os';
+import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
 import {
   ChallengeNode,
   CompletedChallenge,
@@ -78,6 +78,79 @@ interface ShowExamDownloadProps {
   user: User | null;
 }
 
+function normalizeArch(name: string): string {
+  const archMatch = name.match(
+    /(aarch64|arm|arm64|amd64|x86_64|x64|x86|i386|i686)/i
+  );
+
+  const token = archMatch?.[0];
+
+  if (!token) return '';
+  const t = token.toLowerCase();
+  if (/aarch64|arm64|arm/i.test(t)) return 'arm';
+  if (/x86_64|x64|amd64/i.test(t)) return 'x64';
+  if (/x86|i386|i686/i.test(t)) return 'x86';
+  return t;
+}
+
+export function handleDownloadLink(
+  { os, architecture }: UserOSState,
+  downloadLinks: string[]
+) {
+  const items = downloadLinks.map(link => {
+    const urlEnd = link.split('/').pop() ?? '';
+    const name = urlEnd;
+    let ext = '';
+    if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
+    else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
+    else if (name.endsWith('.AppImage')) ext = '.AppImage';
+    else if (name.endsWith('.dmg')) ext = '.dmg';
+    else if (name.endsWith('.exe')) ext = '.exe';
+    else {
+      const m = name.match(/(\.[^./]+)$/);
+      ext = m ? m[0] : '';
+    }
+
+    return { link, name, ext, arch: normalizeArch(name) };
+  });
+
+  const detectedArch = normalizeArch(architecture || '');
+
+  function pickByExts(exts: string[], preferArch?: string) {
+    // prefer both ext + arch
+    for (const ext of exts) {
+      const found = items.find(it => it.ext === ext && it.arch === preferArch);
+      if (found) return found.link;
+    }
+    // then any with ext and unspecified arch
+    const withExt = items.find(
+      it => exts.includes(it.ext) && (!preferArch || it.arch === '')
+    );
+    if (withExt) return withExt.link;
+    // then any with ext
+    const anyExt = items.find(it => exts.includes(it.ext));
+    return anyExt ? anyExt.link : '';
+  }
+
+  if (os === 'WIN') {
+    return pickByExts(['.exe'], detectedArch) || '';
+  }
+
+  if (os === 'MAC') {
+    // prefer .dmg files
+    return pickByExts(['.dmg'], detectedArch) || '';
+  }
+
+  if (os === 'LINUX') {
+    // prefer AppImage, then .app.tar.gz, then .tar.gz
+    return (
+      pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
+    );
+  }
+
+  return '';
+}
+
 function ShowExamDownload({
   data: {
     challengeNode: {
@@ -102,81 +175,9 @@ function ShowExamDownload({
     skip: !isSignedIn
   });
 
-  const os = useDetectOS();
+  const userOSState = useDetectOS();
 
   const { t } = useTranslation();
-
-  function handleDownloadLink(downloadLinks: string[]) {
-    // Filter out signature and metadata files first
-    const filtered = downloadLinks.filter(link => !/\.(sig|json)$/i.test(link));
-
-    function normalizeArch(token: string): string {
-      if (!token) return '';
-      const t = token.toLowerCase();
-      if (/aarch64|arm64|arm/i.test(t)) return 'arm';
-      if (/x86_64|x64|amd64/i.test(t)) return 'x64';
-      if (/x86|i386|i686/i.test(t)) return 'x86';
-      return t;
-    }
-
-    const items = filtered.map(link => {
-      const urlEnd = link.split('/').pop() ?? '';
-      const name = urlEnd;
-      let ext = '';
-      if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
-      else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
-      else if (name.endsWith('.AppImage')) ext = '.AppImage';
-      else if (name.endsWith('.dmg')) ext = '.dmg';
-      else if (name.endsWith('.exe')) ext = '.exe';
-      else {
-        const m = name.match(/(\.[^./]+)$/);
-        ext = m ? m[0] : '';
-      }
-
-      const archMatch = name.match(
-        /(aarch64|arm64|amd64|x86_64|x64|x86|i386)/i
-      );
-      const archToken = archMatch ? normalizeArch(archMatch[0]) : '';
-
-      return { link, name, ext, arch: archToken };
-    });
-
-    const detectedArch = normalizeArch(os.architecture || '');
-
-    function pickByExts(exts: string[], preferArch?: string) {
-      // prefer both ext + arch
-      let found = items.find(
-        it => exts.includes(it.ext) && it.arch === preferArch
-      );
-      if (found) return found.link;
-      // then any with ext and unspecified arch
-      found = items.find(
-        it => exts.includes(it.ext) && (!preferArch || it.arch === '')
-      );
-      if (found) return found.link;
-      // then any with ext
-      found = items.find(it => exts.includes(it.ext));
-      return found ? found.link : '';
-    }
-
-    if (os.os === 'WIN') {
-      return pickByExts(['.exe'], detectedArch) || '';
-    }
-
-    if (os.os === 'MAC') {
-      // prefer .dmg files
-      return pickByExts(['.dmg'], detectedArch) || '';
-    }
-
-    if (os.os === 'LINUX') {
-      // prefer AppImage, then .app.tar.gz, then .tar.gz
-      return (
-        pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
-      );
-    }
-
-    return '';
-  }
 
   useEffect(() => {
     async function checkLatestVersion() {
@@ -218,18 +219,17 @@ function ShowExamDownload({
         const { tag_name, assets } = latest;
         setLatestVersion(tag_name);
         const urls = assets.map(link => link.browser_download_url);
-        setDownloadLink(handleDownloadLink(urls));
+        setDownloadLink(handleDownloadLink(userOSState, urls));
         setDownloadLinks(urls);
       } catch {
         setLatestVersion(null);
       }
     }
 
-    if (os.os) {
+    if (userOSState.os) {
       void checkLatestVersion();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os]);
+  }, [userOSState]);
 
   const examId = examIdsQuery.data?.at(0)?.examId;
   const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);

@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -21,10 +21,10 @@
   "scripts": {
     "prebuild": "pnpm run common-setup && pnpm run build:scripts --env production",
     "build": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby build --prefix-paths",
-    "build:scripts": "pnpm run -F=browser-scripts build",
+    "build:scripts": "pnpm run -F=browser-scripts compile",
     "build:external-curriculum": "tsx ./tools/external-curriculum/build",
     "clean": "gatsby clean",
-    "common-setup": "pnpm -w run compile:ts && pnpm run create:env && pnpm run create:trending && pnpm run create:search-placeholder",
+    "common-setup": "pnpm -w turbo compile && pnpm run create:env && pnpm run create:trending && pnpm run create:search-placeholder",
     "create:env": "DEBUG=fcc:* tsx ./tools/create-env.ts",
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
@@ -35,7 +35,10 @@
     "serve-ci": "serve -l 8000 -c serve.json public",
     "prestand-alone": "pnpm run prebuild",
     "stand-alone": "gatsby develop",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@babel/plugin-proposal-export-default-from": "7.23.3",
@@ -129,7 +132,7 @@
     "store": "2.0.12",
     "stream-browserify": "3.0.0",
     "tone": "14.7.77",
-    "typescript": "5.2.2",
+    "typescript": "5.9.3",
     "util": "0.12.5",
     "uuid": "8.3.2",
     "validator": "13.11.0",
@@ -139,6 +142,7 @@
   "devDependencies": {
     "@babel/plugin-syntax-dynamic-import": "7.8.3",
     "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/shared": "workspace:*",
     "@testing-library/jest-dom": "^6.8.0",
     "@testing-library/react": "12.1.5",
     "@testing-library/react-hooks": "^8.0.1",
@@ -165,13 +169,14 @@
     "@types/sanitize-html": "^2.8.0",
     "@types/store": "^2.0.2",
     "@types/validator": "^13.7.12",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.15",
     "autoprefixer": "10.4.17",
     "babel-plugin-macros": "3.1.0",
     "core-js": "2.6.12",
     "dotenv": "16.4.5",
     "eslint": "^9.39.1",
     "eslint-plugin-flowtype": "^8.0.3",
+    "gatsby-plugin-schema-snapshot": "2.15.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "i18next-fs-backend": "2.6.0",
     "joi": "17.12.2",
@@ -182,7 +187,7 @@
     "readdirp": "3.6.0",
     "redux-saga-test-plan": "4.0.6",
     "serve": "13.0.4",
-    "vitest": "^3.2.4",
+    "vitest": "^4.0.15",
     "webpack": "5.90.3"
   }
 }

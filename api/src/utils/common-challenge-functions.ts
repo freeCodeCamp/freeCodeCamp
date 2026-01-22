@@ -1,7 +1,7 @@
 import type { ExamResults, user, Prisma } from '@prisma/client';
 import { FastifyInstance } from 'fastify';
 import { omit, pick } from 'lodash-es';
-import { challengeTypes } from '../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import { challenges, savableChallenges } from './get-challenges.js';
 import { normalizeDate } from './normalize.js';
 
