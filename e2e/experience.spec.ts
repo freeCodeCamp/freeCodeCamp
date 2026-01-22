@@ -103,7 +103,8 @@ test.describe('Add Experience Item', () => {
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');
     await page.getByLabel('End Date', { exact: false }).fill('01/2021');
-    await page.getByLabel('Location').fill('Remote');
+    // Use locator to avoid conflict with About section's Location field
+    await page.locator('input[name="experience-location"]').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
     await page.getByRole('button', { name: 'Remove Experience' }).click();
@@ -124,7 +125,8 @@ test.describe('Add Experience Item', () => {
     await page.getByLabel('Job Title').fill('Software Engineer');
     await page.getByLabel('Start Date').fill('01/2020');
     await page.getByLabel('End Date', { exact: false }).fill('01/2021');
-    await page.getByLabel('Location').fill('Remote');
+    // Use locator to avoid conflict with About section's Location field
+    await page.locator('input[name="experience-location"]').fill('Remote');
     await page.getByLabel('Description').fill('Worked on various projects');
 
     await page.getByRole('button', { name: 'Save experience' }).click();
