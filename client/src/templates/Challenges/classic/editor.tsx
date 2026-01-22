@@ -1346,7 +1346,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       const currentContent = editorRef.current?.getValue();
       if (currentContent && currentContent.trim().length > 0) {
         autoSaveDebounceRef.current.cancel();
-        saveEditorContent();
+        saveEditorContent({ isSilent: true });
       }
     };
 
