@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -75,6 +75,6 @@
     "vitest": "^4.0.15"
   },
   "dependencies": {
-    "@types/node": "^24.10.4"
+    "@types/node": "^24.10.8"
   }
 }

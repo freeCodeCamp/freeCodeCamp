@@ -6,7 +6,7 @@
   "description": "Config and utils used in multiple workspaces",
   "private": false,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "scripts": {
