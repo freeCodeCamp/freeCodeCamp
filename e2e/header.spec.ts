@@ -1,7 +1,11 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
-import { availableLangs, hiddenLangs, LangNames } from '../shared/config/i18n';
+import {
+  availableLangs,
+  hiddenLangs,
+  LangNames
+} from '@freecodecamp/shared/config/i18n';
 import links from '../client/i18n/locales/english/links.json';
 
 const headerComponentElements = {

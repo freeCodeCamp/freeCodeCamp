@@ -288,6 +288,7 @@ const availableAudios = [
   'ES_A1_basic_personal_details_numbers_10_29.mp3',
   'ES_A1_basic_personal_details_numbers_mixed.mp3',
   'ES_A1_basti_personal_details.mp3',
+  'ES_A1_describing_company_and_people_numbers_practice.mp3',
   'ES_A1_esteban_personal_records_dialogue_with_angela.mp3',
   'ES_A1_describing_company_and_people_numbers_21_100.mp3',
   'ES_A1_julieta_personal_details.mp3',

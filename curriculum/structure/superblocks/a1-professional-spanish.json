@@ -89,6 +89,48 @@
           ]
         }
       ]
+    },
+    {
+      "dashedName": "es-a1-chapter-describing-company-and-people",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "es-a1-module-numbers-30-to-100",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-learn-numbers-30-to-60",
+            "es-a1-learn-numbers-61-to-100",
+            "es-a1-practice-using-the-first-100-numbers",
+            "es-a1-review-first-100-numbers",
+            "es-a1-quiz-numbers-30-to-100"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-describing-a-company",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-describing-a-company-basics",
+            "es-a1-learn-what-the-company-does",
+            "es-a1-learn-asking-about-a-company",
+            "es-a1-practice-company-profile",
+            "es-a1-review-talking-about-a-company",
+            "es-a1-quiz-describing-a-company"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-describing-people-at-work",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-describing-people-at-work-basics",
+            "es-a1-learn-mini-biographies",
+            "es-a1-practice-asking-about-mini-biographies",
+            "es-a1-learn-short-workplace-profile",
+            "es-a1-practice-asking-about-short-workplace-profiles",
+            "es-a1-review-describing-people-at-work",
+            "es-a1-quiz-describing-people-at-work"
+          ]
+        }
+      ]
     }
   ]
 }
