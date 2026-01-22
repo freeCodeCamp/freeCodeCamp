@@ -161,6 +161,7 @@ model user {
   savedChallenges                SavedChallenge[] // Undefined | SavedChallenge[]
   // Nullable tri-state: null (likely new user), true (subscribed), false (unsubscribed)
   sendQuincyEmail                Boolean?
+  socrates                       Boolean?
   theme                          String? // Undefined
   timezone                       String? // Undefined
   twitter                        String? // Null | Undefined

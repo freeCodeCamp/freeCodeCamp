@@ -65,6 +65,7 @@
     "command-enter": "⌘ + Enter",
     "ctrl-enter": "Ctrl + Enter",
     "reset": "Reset",
+    "ask-socrates": "Ask Socrates (beta)",
     "reset-step": "Reset This Step",
     "help": "Help",
     "get-help": "Get Help",
@@ -372,6 +373,10 @@
       "new": "New Email",
       "confirm": "Confirm New Email",
       "weekly": "Send me Quincy's weekly email"
+    },
+    "socrates": {
+      "p1": "Socrates",
+      "p2": "Offers tailored hints based on your input in workshops. You can turn this off at any time."
     },
     "honesty": {
       "p1": "Before you can claim a verified certification, you must accept our Academic Honesty Pledge, which reads:",
@@ -989,6 +994,7 @@
     "updated-themes": "We have updated your theme",
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
+    "socrates-updated": "We have updated your Socrates settings",
     "portfolio-item-updated": "We have updated your portfolio",
     "email-invalid": "Email format is invalid",
     "email-valid": "Your email has successfully been changed, happy coding!",

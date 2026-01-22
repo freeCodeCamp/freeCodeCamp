@@ -59,6 +59,13 @@ export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const executeChallengeComplete = createAction(
   actionTypes.executeChallengeComplete
 );
+
+export const askSocrates = createAction(actionTypes.askSocrates);
+export const askSocratesComplete = createAction(
+  actionTypes.askSocratesComplete
+);
+export const askSocratesError = createAction(actionTypes.askSocratesError);
+
 export const resetChallenge = createAction(actionTypes.resetChallenge);
 export const stopResetting = createAction(actionTypes.stopResetting);
 export const submitChallenge = createAction(actionTypes.submitChallenge);

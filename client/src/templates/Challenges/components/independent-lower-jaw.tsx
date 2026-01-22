@@ -3,29 +3,59 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLightbulb, faClose } from '@fortawesome/free-solid-svg-icons';
 import { Test } from '../../../redux/prop-types';
-import { challengeTestsSelector } from '../redux/selectors';
-import { isSignedInSelector } from '../../../redux/selectors';
+import {
+  challengeTestsSelector,
+  socratesHintStateSelector
+} from '../redux/selectors';
+import {
+  isSignedInSelector,
+  isSocratesOnSelector
+} from '../../../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import {
+  openModal,
+  submitChallenge,
+  executeChallenge,
+  askSocrates
+} from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 
 import './independent-lower-jaw.css';
 import Reset from '../../../assets/icons/reset';
+import Stars from '../../../assets/icons/stars';
+
+type SocratesHintState = {
+  hint: null | string;
+  isLoading: boolean;
+  error: null | string;
+};
 
 const mapStateToProps = createSelector(
   challengeTestsSelector,
   isSignedInSelector,
-  (tests: Test[], isSignedIn: boolean) => ({
+  socratesHintStateSelector,
+  isSocratesOnSelector,
+  (
+    tests: Test[],
+    isSignedIn: boolean,
+    socratesHintState: SocratesHintState,
+    hasSocratesAccess: boolean
+  ) => ({
     tests,
-    isSignedIn
+    isSignedIn,
+    socratesHintState,
+    hasSocratesAccess
   })
 );
 
 const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
+  askSocrates: () => askSocrates(),
   executeChallenge,
   submitChallenge
 };
@@ -34,22 +64,29 @@ interface IndependentLowerJawProps {
   openHelpModal: () => void;
   openResetModal: () => void;
   executeChallenge: () => void;
+  askSocrates: () => void;
   submitChallenge: () => void;
   tests: Test[];
   isSignedIn: boolean;
+  socratesHintState: SocratesHintState;
+  hasSocratesAccess: boolean;
 }
 export function IndependentLowerJaw({
   openHelpModal,
   openResetModal,
+  askSocrates,
   executeChallenge,
   submitChallenge,
   tests,
-  isSignedIn
+  isSignedIn,
+  socratesHintState,
+  hasSocratesAccess
 }: IndependentLowerJawProps): JSX.Element {
   const { t } = useTranslation();
   const firstFailedTest = tests.find(test => !!test.err);
   const hint = firstFailedTest?.message;
   const [showHint, setShowHint] = React.useState(false);
+  const [showSocratesResults, setShowSocratesResults] = React.useState(false);
   const [showSubmissionHint, setShowSubmissionHint] = React.useState(true);
   const signInLinkRef = React.useRef<HTMLAnchorElement>(null);
   const submitButtonRef = React.useRef<HTMLButtonElement>(null);
@@ -74,6 +111,7 @@ export function IndependentLowerJaw({
 
   const handleCheckButtonClick = () => {
     setWasCheckButtonClicked(true);
+    setShowSocratesResults(false);
     executeChallenge();
   };
 
@@ -81,6 +119,13 @@ export function IndependentLowerJaw({
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+
+  const askSocratesAttempt = () => {
+    setShowSocratesResults(true);
+    setShowHint(false);
+    if (socratesHintState.isLoading) return;
+    askSocrates();
+  };
 
   return (
     <div
@@ -93,14 +138,49 @@ export function IndependentLowerJaw({
           className='hint-container'
           data-playwright-test-label='independentLowerJaw-failing-hint'
         >
-          <div dangerouslySetInnerHTML={{ __html: hint }} />
-          <button
-            className={'tooltip'}
-            data-playwright-test-label='independentLowerJaw-hint-close-button'
-            onClick={() => setShowHint(false)}
-          >
-            ×<span className='tooltiptext'> {t('buttons.close')}</span>
-          </button>
+          <div className='hint-header'>
+            <FontAwesomeIcon icon={faLightbulb} />
+
+            <button
+              className={'tooltip'}
+              data-playwright-test-label='independentLowerJaw-hint-close-button'
+              onClick={() => setShowHint(false)}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          <div
+            className='hint-body'
+            dangerouslySetInnerHTML={{ __html: hint }}
+          />
+        </div>
+      )}
+      {showSocratesResults && (
+        <div className='hint-container'>
+          <div className='hint-header'>
+            <Stars />
+            <button
+              className={'tooltip'}
+              onClick={() => setShowSocratesResults(false)}
+            >
+              <FontAwesomeIcon icon={faClose} />
+              <span className='tooltiptext'> {t('buttons.close')}</span>
+            </button>
+          </div>
+          {socratesHintState.isLoading ? (
+            <div className='socrates-skeleton'>
+              <div className='skeleton-line skeleton-line-1' />
+              <div className='skeleton-line skeleton-line-2' />
+            </div>
+          ) : (
+            <div
+              className='hint-body'
+              dangerouslySetInnerHTML={{
+                __html: socratesHintState.hint || socratesHintState.error || ''
+              }}
+            />
+          )}
         </div>
       )}
       {isChallengeComplete && showSubmissionHint && (
@@ -167,9 +247,19 @@ export function IndependentLowerJaw({
           )}
         </div>
         <div className='action-row-right'>
+          {hasSocratesAccess && (
+            <button
+              type='button'
+              className='icon-button tooltip socrates-button'
+              onClick={askSocratesAttempt}
+            >
+              <Stars />
+              <span className='tooltiptext'>{t('buttons.ask-socrates')}</span>
+            </button>
+          )}
           <button
             type='button'
-            className='icon-botton tooltip'
+            className='icon-button tooltip'
             data-playwright-test-label='independentLowerJaw-reset-button'
             onClick={openResetModal}
           >
@@ -178,7 +268,7 @@ export function IndependentLowerJaw({
           </button>
           <button
             type='button'
-            className='icon-botton tooltip'
+            className='icon-button tooltip'
             data-playwright-test-label='independentLowerJaw-help-button'
             onClick={openHelpModal}
           >

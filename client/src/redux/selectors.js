@@ -27,6 +27,7 @@ export const isDonatingSelector = state => userSelector(state)?.isDonating;
 export const isOnlineSelector = state => state[MainApp].isOnline;
 export const isServerOnlineSelector = state => state[MainApp].isServerOnline;
 export const isSignedInSelector = state => !!userSelector(state);
+export const isSocratesOnSelector = state => userSelector(state)?.socrates;
 export const isDonationModalOpenSelector = state =>
   state[MainApp].showDonationModal;
 export const isSignoutModalOpenSelector = state =>

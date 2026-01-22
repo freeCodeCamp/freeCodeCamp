@@ -59,6 +59,8 @@ assert.ok(process.env.JWT_SECRET);
 assert.ok(process.env.STRIPE_SECRET_KEY);
 assert.ok(process.env.MONGOHQ_URL);
 assert.ok(process.env.COOKIE_SECRET);
+assert.ok(process.env.SOCRATES_API_KEY);
+assert.ok(process.env.SOCRATES_ENDPOINT);
 
 const LOG_LEVELS: LogLevel[] = [
   'fatal',
@@ -218,6 +220,8 @@ export const GROWTHBOOK_FASTIFY_API_HOST =
   process.env.GROWTHBOOK_FASTIFY_API_HOST;
 export const GROWTHBOOK_FASTIFY_CLIENT_KEY =
   process.env.GROWTHBOOK_FASTIFY_CLIENT_KEY;
+export const SOCRATES_API_KEY = process.env.SOCRATES_API_KEY;
+export const SOCRATES_ENDPOINT = process.env.SOCRATES_ENDPOINT;
 
 function undefinedOrBool(val: string | undefined): undefined | boolean {
   if (!val) {
