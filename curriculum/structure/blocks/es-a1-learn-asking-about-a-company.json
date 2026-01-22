@@ -1,0 +1,11 @@
+{
+  "name": "Asking About a Company",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-asking-about-a-company",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696ede6b2587659d67e280fe", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

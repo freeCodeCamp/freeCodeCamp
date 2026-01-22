@@ -1,0 +1,11 @@
+{
+  "name": "Describing a Company Basics",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-warm-up-describing-a-company-basics",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696edb498cb4867eacc08ac3", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "warm-up"
+}
