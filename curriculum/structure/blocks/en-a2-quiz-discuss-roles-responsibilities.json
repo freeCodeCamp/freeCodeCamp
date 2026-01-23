@@ -1,0 +1,14 @@
+{
+  "name": "Roles and Responsibilities Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-discuss-roles-responsibilities",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69602ef35073dd8509b9b163",
+      "title": "Roles and Responsibilities Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

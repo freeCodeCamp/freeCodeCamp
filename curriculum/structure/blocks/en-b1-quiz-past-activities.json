@@ -1,0 +1,14 @@
+{
+  "name": "Talking About Past Activities Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-past-activities",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696042e15a349be2f4a4579a",
+      "title": "Talking About Past Activities Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

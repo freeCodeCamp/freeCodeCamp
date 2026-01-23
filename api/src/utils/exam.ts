@@ -1,5 +1,5 @@
 import { Exam, Question } from '@prisma/client';
-import { shuffleArray } from './../../../shared/utils/shuffle-array.js';
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import { UserExam, GeneratedExam } from './exam-types.js';
 
 /**

@@ -1,0 +1,14 @@
+{
+  "name": "Asking for Code Clarification Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-ask-for-code-clarification",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696035aa15d649e4f9df2dd5",
+      "title": "Asking for Code Clarification Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}
