@@ -101,8 +101,7 @@ exports.createChallengePages = function (
       challengeType,
       id,
       isLastChallengeInBlock,
-      saveSubmissionToDB,
-      blockLabel
+      saveSubmissionToDB
     } = node.challenge;
 
     createPage({
@@ -115,7 +114,6 @@ exports.createChallengePages = function (
           certification,
           disableLoopProtectTests,
           disableLoopProtectPreview,
-          blockLabel,
           superBlock,
           chapter,
           module,

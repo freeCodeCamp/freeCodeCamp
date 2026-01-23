@@ -20,7 +20,6 @@ const initialState = {
   challengeMeta: {
     superBlock: '',
     block: '',
-    blockLabel: null,
     blockHashSlug: '/',
     id: '',
     isLastChallengeInBlock: false,

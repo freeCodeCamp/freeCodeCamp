@@ -24,28 +24,23 @@ export const threadsData = {
   developerDomainURL: 'https://developers.facebook.com'
 };
 
-export interface ShareUrls {
+interface ShareUrls {
   xUrl: string;
   blueSkyUrl: string;
   threadsURL: string;
 }
 
-interface ShareUrlInput {
-  superBlock: string;
-  block: string;
-  blockTitle: string;
-}
-
-export const buildShareUrls = ({
-  superBlock,
-  block,
-  blockTitle
-}: ShareUrlInput): ShareUrls => {
+export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
+  const { t } = useTranslation();
   const redirectFreeCodeCampLearnURL = `https://${freecodecampLearnDomainURL}/${superBlock}/${hastag}${block}`;
 
-  const tweetMessage = `I${space}have${space}completed${space}${blockTitle}${space}${hastag}freecodecamp`;
+  const i18nSupportedBlock = t(`intro:${superBlock}.blocks.${block}.title`);
+
+  const tweetMessage = `I${space}have${space}completed${space}${i18nSupportedBlock}${space}${hastag}freecodecamp`;
   const xRedirectURL = `https://${twitterData.domain}/${twitterData.action}?original_referer=${twitterData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
+
   const blueSkyRedirectURL = `https://${blueSkyData.domain}/${blueSkyData.action}?original_referer=${blueSkyData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
+
   const threadRedirectURL = `https://${threadsData.domain}/${threadsData.action}?original_referer=${threadsData.developerDomainURL}&text=${tweetMessage}${nextLine}&url=${redirectFreeCodeCampLearnURL}`;
 
   return {
@@ -53,11 +48,4 @@ export const buildShareUrls = ({
     blueSkyUrl: blueSkyRedirectURL,
     threadsURL: threadRedirectURL
   };
-};
-
-export const useShare = ({ superBlock, block }: ShareProps): ShareUrls => {
-  const { t } = useTranslation();
-  const blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
-
-  return buildShareUrls({ superBlock, block, blockTitle });
 };

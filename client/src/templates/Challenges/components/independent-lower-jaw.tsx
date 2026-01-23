@@ -18,7 +18,7 @@ import { apiLocation } from '../../../../config/env.json';
 import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
-import ShareIconButtons from '../../../components/share/share-icon-buttons';
+import { Share } from '../../../components/share';
 
 import './independent-lower-jaw.css';
 import Reset from '../../../assets/icons/reset';
@@ -157,7 +157,7 @@ export function IndependentLowerJaw({
           <div>
             <p>{t('learn.congratulations-code-passes')}</p>
             {showShareButton && (
-              <ShareIconButtons
+              <Share
                 superBlock={challengeMeta.superBlock}
                 block={challengeMeta.block}
               />
