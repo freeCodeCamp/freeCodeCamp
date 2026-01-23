@@ -715,7 +715,8 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "This content is no longer actively maintained, but remains available for reference. We recommend exploring <1>our current curriculum</1>."
+
     }
   },
   "donate": {
