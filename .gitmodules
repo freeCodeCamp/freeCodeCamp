@@ -4,4 +4,5 @@
   ignore = dirty
 [submodule "tools/challenge-editor"]
 	path = tools/challenge-editor
-	url = git@github.com:freeCodeCamp/challenge-editor.git
+	url = https://github.com/freeCodeCamp/challenge-editor.git
+  ignore = dirty
