@@ -22,11 +22,33 @@ Our full-stack web development and machine learning curriculum is completely fre
 
 ### Certifications
 
-freeCodeCamp.org offers several free developer certifications. Each of these certifications involves completing interactive lessons, workshops, labs and quizzes. Throughout the certification, you will need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+freeCodeCamp.org offers several free developer certifications that make up the [Fullstack Developer Curriculum](https://www.freecodecamp.org/learn/full-stack-developer-v9/):
+
+- [Responsive Web Design](https://www.freecodecamp.org/learn/responsive-web-design-v9/)
+- [JavaScript](https://www.freecodecamp.org/learn/javascript-v9/)
+- [Frontend Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
+- [Python](https://www.freecodecamp.org/learn/python-v9/)
+- [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
+- [Backend developer and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
+
+Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you'll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
+
+freeCodeCamp.org also offers free language certifications designed around internationally recognized proficiency levels:
+
+- [A2 English for Developers (Beta)](https://www.freecodecamp.org/learn/a2-english-for-developers/)
+- [B1 English for Developers(Beta)](https://www.freecodecamp.org/learn/b1-english-for-developers/)
+- [A1 Professional Spanish(Beta)](https://www.freecodecamp.org/learn/a1-professional-spanish/)
+- [A1 Professional Chinese (Beta)](https://www.freecodecamp.org/learn/a1-professional-chinese/)
+
+Each of these certifications is organized into modules, with sections for warm-ups, lessons, practice exercises, review pages, and quizzes to ensure you fully grasp the material before progressing to the next module. You'll need to complete all of the quizzes in order to qualify for the exam at the end of the certification.
 
 Once you've earned a certification, you will always have it. You will always be able to link to it from your LinkedIn or resume. And when your prospective employers or freelance clients click that link, they'll see a verified certification specific to you.
 
 The one exception to this is if we discover violations of our [Academic Honesty Policy](https://www.freecodecamp.org/news/academic-honesty-policy/). When we catch people unambiguously plagiarizing (submitting other people's code or projects as their own without citation), we do what all rigorous institutions of learning should do - we revoke their certifications and ban those people.
+
+In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
+
+A free, professional free Foundational C# with Microsoft Certification is also available.
 
 ### The Learning Platform
 
@@ -65,7 +87,7 @@ Recent Contributions:
 
 ### License
 
-Copyright © 2025 freeCodeCamp.org
+Copyright © 2014 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 

@@ -6,8 +6,8 @@ import lodash from 'lodash';
 import {
   challengeTypes,
   hasNoSolution
-} from '../../../shared/config/challenge-types';
-import { getLines } from '../../../shared/utils/get-lines';
+} from '@freecodecamp/shared/config/challenge-types';
+import { getLines } from '@freecodecamp/shared/utils/get-lines';
 import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
 
 import { getChallengesForLang } from '../get-challenges.js';
