@@ -4,16 +4,10 @@
     "lint": { "dependsOn": ["compile"] },
     "type-check": { "dependsOn": ["compile"] },
     "@freecodecamp/client#lint": {
-      "dependsOn": [
-        "compile",
-        "create:env"
-      ]
+      "dependsOn": ["compile", "create:env"]
     },
     "@freecodecamp/client#type-check": {
-      "dependsOn": [
-        "compile",
-        "create:env"
-      ]
+      "dependsOn": ["compile", "create:env"]
     },
     "@freecodecamp/scripts-lint#lint": {
       "dependsOn": ["@freecodecamp/client#create:trending"],
