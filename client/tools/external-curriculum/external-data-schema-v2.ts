@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import { chapterBasedSuperBlocks } from '../../../shared-dist/config/curriculum';
+import { chapterBasedSuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 
