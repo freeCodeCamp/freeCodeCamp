@@ -38,6 +38,16 @@
     "create:trending": { "cache": false },
     "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
     "build": { "dependsOn": ["compile"] },
-    "build:scripts": {}
+    "build:scripts": {},
+    "build:external-curriculum": {
+      "dependsOn": ["@freecodecamp/curriculum#build"]
+    },
+    "test": { "dependsOn": ["compile"] },
+    "@freecodecamp/api#test": {
+      "dependsOn": ["compile", "@freecodecamp/curriculum#build"]
+    },
+    "@freecodecamp/client#test": {
+      "dependsOn": ["compile", "create:env", "build:external-curriculum"]
+    }
   }
 }
