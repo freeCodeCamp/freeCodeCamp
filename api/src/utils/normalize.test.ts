@@ -50,7 +50,8 @@ describe('normalize', () => {
     showName: true,
     showPoints: true,
     showPortfolio: true,
-    showTimeLine: true
+    showTimeLine: true,
+    showExperience: true
   };
 
   const defaultProfileUI = {
@@ -63,7 +64,8 @@ describe('normalize', () => {
     showName: false,
     showPoints: false,
     showPortfolio: false,
-    showTimeLine: false
+    showTimeLine: false,
+    showExperience: false
   };
 
   describe('normalizeProfileUI', () => {
@@ -87,7 +89,8 @@ describe('normalize', () => {
         showName: null,
         showPoints: null,
         showPortfolio: null,
-        showTimeLine: null
+        showTimeLine: null,
+        showExperience: null
       };
       expect(normalizeProfileUI(input)).toEqual({
         isLocked: undefined,
@@ -99,7 +102,8 @@ describe('normalize', () => {
         showName: undefined,
         showPoints: undefined,
         showPortfolio: undefined,
-        showTimeLine: undefined
+        showTimeLine: undefined,
+        showExperience: undefined
       });
     });
   });
