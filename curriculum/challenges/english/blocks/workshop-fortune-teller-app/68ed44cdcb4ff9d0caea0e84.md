@@ -7,18 +7,17 @@ dashedName: step-22
 
 # --description--
 
-
-Since you’re calling the `fetchCardsData` method inside the constructor, you now need to define it inside the class. Create a private method named `fetchCardsData`. don't forget to make it asynchronous.
+Since you're calling the `fetchCardsData` method inside the constructor, you now need to define it inside the class. Create a private method named `fetchCardsData`. Don't forget to make it asynchronous.
 
 # --hints--
 
-You should have `private` method named `fetchCardsData`.
+You should have a `private` method named `fetchCardsData`.
 
 ```js
 assert.match(code, /private\s+async\s*fetchCardsData\s*\(/);
 ```
 
-Your fetchCardsData method should be `asynchronous`.
+Your `fetchCardsData` method should be `asynchronous`.
 
 ```js
 assert.match(code, /async\s+fetchCardsData\s*\(/);
@@ -29,7 +28,7 @@ assert.match(code, /async\s+fetchCardsData\s*\(/);
 ## --seed-contents--
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
