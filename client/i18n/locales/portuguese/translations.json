@@ -697,7 +697,7 @@
     },
     "archive": {
       "title": "Nossos cursos arquivados",
-      "content-not-updated": "<0>Aviso:</0> o conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <1>nosso currículo atual</1>."
+      "content-not-updated": "o conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <0>nosso currículo atual</0>."
     }
   },
   "donate": {
