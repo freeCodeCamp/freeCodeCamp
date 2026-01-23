@@ -21,25 +21,39 @@ dashedName: review-dom-manipulation-and-click-events-with-javascript
 
 - **`getElementById()` Method**: This method is used to get an object that represents the HTML element with the specified `id`. Remember that ids must be unique in every HTML document, so this method will only return one Element object.
 
+:::interactive_editor
+
 ```html
 <div id="container"></div>
+<script src="./index.js"></script>
 ```
 
 ```js
 const container = document.getElementById("container");
+console.log(container)
 ```
+
+:::
 
 - **`querySelector()` Method**: This method is used to get the first element in the HTML document that matches the CSS selector passed as an argument.
 
+:::interactive_editor
+
 ```html
 <section class="section"></section>
+<script src="./index.js"></script>
 ```
 
 ```js
 const section = document.querySelector(".section");
+console.log(section)
 ```
 
+:::
+
 - **`querySelectorAll()` Method**: You can use this method to get a list of all the DOM elements that match a specific CSS selector.
+
+:::interactive_editor
 
 ```html
 <ul class="ingredients">
@@ -47,11 +61,15 @@ const section = document.querySelector(".section");
   <li>Milk</li>
   <li>Eggs</li>
 </ul>
+<script src="./index.js"></script>
 ```
 
 ```js
 const ingredients = document.querySelectorAll('ul.ingredients li');
+console.log(ingredients)
 ```
+
+:::
 
 ## Working with the `innerText()`, `innerHTML()`, `createElement()` and `textContent()` Methods
 
@@ -167,14 +185,19 @@ sectionEl.removeChild(lastParagraph);
 
 - **Definition**: This method is used to set the attribute for a given element. If the attribute already exists, then the value is updated. Otherwise, a new attribute is added with a value.
 
+:::interactive_editor
+
 ```html
 <p id="para">I am a paragraph</p>
+<script src="./index.js"></script>
 ```
 
 ```js
 const para = document.getElementById("para");
 para.setAttribute("class", "my-class");
 ```
+
+:::
 
 ## Event Object
 
@@ -184,13 +207,30 @@ para.setAttribute("class", "my-class");
 
 - **`addEventListener` Method**: This method is used to listen for events. It takes two arguments: the event you want to listen for and a function that will be called when the event occurs. Some common examples of events would be click events, input events, and change events.
 
+:::interactive_editor
+
+```html
+<button id="btn">Click Me</button>
+<script src="./index.js"></script>
+```
+
 ```js
 const btn = document.getElementById("btn");
 
 btn.addEventListener("click", () => alert("You clicked the button"));
 ```
 
+:::
+
 - **`removeEventListener()` Method**: This method is used to remove an event listener that was previously added to an element using the `addEventListener()` method. This is useful when you want to stop listening for a particular event on an element.
+
+:::interactive_editor
+
+```html
+<p id="para">Hover over me to disable the button's click event</p>
+<button id="btn">Toggle Background Color</button>
+<script src="./index.js"></script>
+```
 
 ```js
 const bodyEl = document.querySelector("body");
@@ -211,11 +251,18 @@ para.addEventListener("mouseover", () => {
 });
 ```
 
+:::
+
 - **Inline Event Handlers**: Inline event handlers are special attributes on an HTML element that are used to execute JavaScript code when an event occurs. In modern JavaScript, inline event handlers are not considered best practice. It is preferred to use the `addEventListener` method instead.
+
+
+:::interactive_editor
 
 ```html
 <button onclick="alert('Hello World!')">Show alert</button>
 ```
+
+:::
 
 ## The Change Event
 
@@ -266,12 +313,51 @@ selectEl.addEventListener("change", (e) => {
 
 - **`Element.style` Property**: This property is a read-only property that represents the inline style of an element. You can use this property to get or set the style of an element.
 
+:::interactive_editor
+
+```html
+<p id="para">This paragraph will turn red.</p>
+<script src="./index.js"></script>
+```
+
 ```js
 const paraEl = document.getElementById("para");
 paraEl.style.color = "red";
 ```
 
+:::
+
 - **`Element.classList` Property**: This property is a read-only property that can be used to add, remove, or toggle classes on an element.
+
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="./styles.css"/>
+<p id="para" class="blue-background">This paragraph will have classes added and removed.</p>
+<div id="menu" class="menu">Menu Content</div>
+<button id="toggle-btn">Toggle Menu</button>
+<script src="./index.js"></script>
+```
+
+```css
+.highlight {
+  background-color: yellow;
+}
+
+.blue-background {
+  background-color: lightblue;
+}
+
+.menu {
+  display: none;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+.menu.show {
+  display: block;
+}
+```
 
 ```js
 // Example adding a class
@@ -288,10 +374,14 @@ const toggleBtn = document.getElementById("toggle-btn");
 toggleBtn.addEventListener("click", () => menu.classList.toggle("show"));
 ```
 
+:::
+
 
 ## Working with the `setTimeout()` and `setInterval()` Methods
 
 - **`setTimeout()` Method**: This method lets you delay an action for a specified time. 
+
+:::interactive_editor
 
 ```js
 setTimeout(() => {
@@ -299,7 +389,11 @@ setTimeout(() => {
 }, 3000);
 ```
 
+:::
+
 - **`setInterval()` Method**: This method keeps runs a piece of code repeatedly at a set interval. Since `setInterval()` keeps executing the provided function at the specified interval, you might want to stop it. For this, you have to use the `clearInterval()` method.
+
+:::interactive_editor
 
 ```js
 setInterval(() => {
@@ -315,6 +409,8 @@ setTimeout(() => {
  clearInterval(intervalID);
 }, 5000);
 ```
+
+:::
 
 ## The `requestAnimationFrame()` Method
 
@@ -334,6 +430,23 @@ function animate() {
 
 - **Definition**: The Web Animations API lets you create and control animations directly inside JavaScript. 
 
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="./styles.css"/>
+<div id="square"></div>
+<script src="./index.js"></script>
+```
+
+```css
+#square {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+
+```
+
 ```js
 const square = document.querySelector('#square');
 
@@ -348,12 +461,17 @@ const animation = square.animate(
 );
 ```
 
+:::
+
 ## The Canvas API
 
 - **Definition**: The Canvas API is a powerful tool that lets you manipulate graphics right inside your JavaScript file. To work with the Canvas API, you first need to provide a `canvas` element in HTML. This element acts as a drawing surface you can manipulate with the instance methods and properties of the interfaces in the Canvas API. This API has interfaces like `HTMLCanvasElement`, `CanvasRenderingContext2D`, `CanvasGradient`, `CanvasPattern`, and `TextMetrics` which contain methods and properties you can use to create graphics in your JavaScript file.
 
+:::interactive_editor
+
 ```html
 <canvas id="my-canvas" width="400" height="400"></canvas>
+<script src="./index.js"></script>
 ```
 
 ```js
@@ -369,6 +487,8 @@ ctx.fillStyle = 'crimson';
 // Draw a rectangle
 ctx.fillRect(1, 1, 150, 100);
 ```
+
+:::
 
 ## Opening and Closing Dialogs and Modals with JavaScript
 
