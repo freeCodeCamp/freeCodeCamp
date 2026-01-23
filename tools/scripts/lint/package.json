@@ -16,7 +16,9 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
     "lint": "eslint --max-warnings 0",
-    "test": "vitest"
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
