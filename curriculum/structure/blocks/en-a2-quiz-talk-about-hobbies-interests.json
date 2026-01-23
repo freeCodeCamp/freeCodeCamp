@@ -1,0 +1,14 @@
+{
+  "name": "Talking About Hobbies and Interests Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-talk-about-hobbies-interests",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69602e89c6d9b84c9ee2d8e2",
+      "title": "Talking About Hobbies and Interests Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

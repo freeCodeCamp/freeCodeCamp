@@ -1,0 +1,14 @@
+{
+  "name": "Using Adjectives in Conversations Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-adjectives-conversations",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696046d136d434970e25af3f",
+      "title": "Using Adjectives in Conversations Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

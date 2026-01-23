@@ -19,7 +19,7 @@ import {
 } from '@freecodecamp/ui';
 
 // Local Utilities
-import { shuffleArray } from '../../../../../shared-dist/utils/shuffle-array';
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
