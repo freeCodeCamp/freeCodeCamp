@@ -1,3 +1,4 @@
+.*/*
 **/.cache
 **/*fixtures*
 client/**/trending.json
