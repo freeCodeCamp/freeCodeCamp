@@ -1,0 +1,10 @@
+{
+  "name": "Implement Linked List Operations",
+  "isUpcomingChange": true,
+  "dashedName": "lab-linked-list-operations",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "blockLabel": "lab",
+  "usesMultifileEditor": true,
+  "challengeOrder": [{ "id": "69708d59833ceded7d00541f", "title": "Step 1" }]
+}

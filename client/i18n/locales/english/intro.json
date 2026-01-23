@@ -3990,6 +3990,12 @@
           "In this workshop, you'll practice working with data structures by building a linked list."
         ]
       },
+      "lab-linked-list-operations": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
       "lab-hash-table": {
         "title": "Build a Hash Table",
         "intro": [

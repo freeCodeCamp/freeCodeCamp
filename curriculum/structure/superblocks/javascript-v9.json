@@ -295,20 +295,13 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
         {
-          "dashedName": "algorithms",
+          "dashedName": "data-structures",
           "comingSoon": true,
-          "blocks": [
-            "lecture-introduction-to-common-searching-and-sorting-algorithms",
-            "lab-bubble-sort-algorithm"
-          ]
+          "blocks": ["lab-linked-list-operations"]
         },
-        {
-          "dashedName": "graphs-and-trees",
-          "comingSoon": true,
-          "blocks": ["lecture-understanding-graphs-and-trees-js"]
-        },
+        { "dashedName": "algorithms", "comingSoon": true, "blocks": [] },
+        { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
