@@ -8,6 +8,10 @@ test.beforeAll(() => {
   execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
+test.afterAll(() => {
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
+});
+
 test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
