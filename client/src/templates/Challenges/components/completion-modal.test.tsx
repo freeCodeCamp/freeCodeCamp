@@ -1,6 +1,6 @@
 import React from 'react';
 import { runSaga } from 'redux-saga';
-import { describe, test, it, expect, beforeEach, vi, Mock } from 'vitest';
+import { describe, test, it, expect, beforeEach, vi, type Mock } from 'vitest';
 import { render } from '../../../../utils/test-utils';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
@@ -12,14 +12,17 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   isBuildEnabledSelector,
-  isBlockNewlyCompletedSelector
+  isBlockNewlyCompletedSelector,
+  currentBlockIdsSelector
 } from '../redux/selectors';
+import { completedChallengesIdsSelector } from '../../../redux/selectors';
 import { buildChallenge, getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
 vi.mock('../../../components/Progress');
 vi.mock('../redux/selectors');
+vi.mock('../../../redux/selectors');
 vi.mock('../utils/build');
 vi.mock('../../../utils/get-words');
 const mockFireConfetti = fireConfetti as Mock;
@@ -29,6 +32,9 @@ const mockChallengeTestsSelector = challengeTestsSelector as Mock;
 const mockChallengeMetaSelector = challengeMetaSelector as Mock;
 const mockChallengeDataSelector = challengeDataSelector as Mock;
 const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
+const mockCurrentBlockIdsSelector = currentBlockIdsSelector as unknown as Mock;
+const mockCompletedChallengesIdsSelector =
+  completedChallengesIdsSelector as unknown as Mock;
 const mockBuildChallenge = buildChallenge as Mock;
 const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
@@ -44,10 +50,10 @@ mockChallengeDataSelector.mockReturnValue({
 mockBuildChallenge.mockReturnValue({ challengeType: 'mock_challenge_type' });
 mockGetTestRunner.mockReturnValue(mockTestRunner);
 
-const completedChallengesIds = ['1', '3', '5'],
-  currentBlockIds = ['1', '3', '5', '7'],
-  id = '7',
-  fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
+const completedChallengesIds = ['1', '3', '5'];
+const currentBlockIds = ['1', '3', '5', '7'];
+const id = '7';
+const fakeCompletedChallengesIds = ['1', '3', '5', '7', '8'];
 
 describe('<CompletionModal />', () => {
   describe('fireConfetti', () => {
@@ -56,16 +62,25 @@ describe('<CompletionModal />', () => {
     });
     test('should fire when block is completed', async () => {
       const payload = { showCompletionModal: true };
+      const challengeId = 'bd7158d8c442eddfaeb5bd18';
+      const blockIds = ['step1', 'step2', 'step3', challengeId];
       const store = createStore({
         challenge: {
           modal: { completion: true },
           challengeMeta: {
-            id: 'bd7158d8c442eddfaeb5bd18',
-            certification: 'responsive-web-design' // Make sure the certification matches
+            id: challengeId,
+            certification: 'responsive-web-design'
           }
         }
       });
       mockIsBlockNewlyCompletedSelector.mockReturnValue(true);
+      mockChallengeMetaSelector.mockReturnValue({
+        id: challengeId,
+        isLastChallengeInBlock: true,
+        challengeType: 'mock_challenge_type'
+      });
+      mockCurrentBlockIdsSelector.mockReturnValue(blockIds);
+      mockCompletedChallengesIdsSelector.mockReturnValue(['step1', 'step2']);
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
