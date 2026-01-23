@@ -5,21 +5,15 @@
     "type-check": { "dependsOn": ["compile"] },
     "@freecodecamp/client#lint": {
       "dependsOn": [
-        "@freecodecamp/curriculum#compile",
-        "create:env",
-        "build:scripts"
+        "compile",
+        "create:env"
       ]
     },
     "@freecodecamp/client#type-check": {
       "dependsOn": [
-        "@freecodecamp/curriculum#compile",
-        "create:env",
-        "@freecodecamp/curriculum#build",
-        "build:scripts"
+        "compile",
+        "create:env"
       ]
-    },
-    "@freecodecamp/gatsby-source-challenges#lint": {
-      "dependsOn": ["@freecodecamp/curriculum#compile"]
     },
     "@freecodecamp/scripts-lint#lint": {
       "dependsOn": ["@freecodecamp/client#create:trending"],
@@ -29,15 +23,15 @@
       ]
     },
     "//#lint-root": {
-      "dependsOn": [
-        "@freecodecamp/shared#compile",
-        "@freecodecamp/curriculum#build"
-      ]
+      "dependsOn": ["@freecodecamp/shared#compile"]
     },
-    "compile": { "dependsOn": ["^compile"] },
+    "compile": { "dependsOn": ["^compile"], "outputs": ["dist/**"] },
     "create:trending": { "cache": false },
-    "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
-    "build": { "dependsOn": ["compile"] },
+    "create:env": {
+      "dependsOn": ["@freecodecamp/curriculum#compile"],
+      "outputs": ["config/env.json"]
+    },
+    "build": { "dependsOn": ["compile"], "outputs": ["generated/**"] },
     "build:scripts": {},
     "build:external-curriculum": {
       "dependsOn": ["@freecodecamp/curriculum#build"]

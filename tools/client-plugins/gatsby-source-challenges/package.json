@@ -23,6 +23,7 @@
   "main": "gatsby-node.js",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/curriculum": "workspace:*",
     "chokidar": "3.6.0",
     "eslint": "^9.39.1"
   }
