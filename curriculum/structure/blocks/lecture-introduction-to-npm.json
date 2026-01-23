@@ -1,0 +1,36 @@
+{
+  "name": "Introduction to npm",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-npm",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "695b93b7d61d4520790c3903", "title": "What Is npm?" },
+    {
+      "id": "695b93cb572125a6fb19f399",
+      "title": "What Is a package.json File?"
+    },
+    {
+      "id": "695b93cb572125a6fb19f39a",
+      "title": "What Are Package Dependencies and What Are Some Considerations for Choosing an External Package?"
+    },
+    {
+      "id": "695b93cb572125a6fb19f39b",
+      "title": "What Is Semantic Versioning?"
+    },
+    {
+      "id": "695b93cb572125a6fb19f39c",
+      "title": "How Can You Install and Remove Dependencies?"
+    },
+    {
+      "id": "695b93cb572125a6fb19f39d",
+      "title": "How Can You Install Specific Versions and Manage Dependencies?"
+    },
+    {
+      "id": "695b93cb572125a6fb19f39e",
+      "title": "What Is the package-lock.json File?"
+    }
+  ],
+  "blockLabel": "lecture",
+  "usesMultifileEditor": true
+}
