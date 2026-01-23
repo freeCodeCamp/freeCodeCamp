@@ -227,8 +227,10 @@ btn.addEventListener("click", () => alert("You clicked the button"));
 :::interactive_editor
 
 ```html
-<p id="para">Hover over me to disable the button's click event</p>
-<button id="btn">Toggle Background Color</button>
+<body>
+  <p id="para">Hover over me to disable the button's click event</p>
+  <button id="btn">Toggle Background Color</button>
+</body>
 <script src="./index.js"></script>
 ```
 
