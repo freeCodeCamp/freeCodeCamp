@@ -1,0 +1,11 @@
+{
+  "name": "Company Profile",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-company-profile",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696edea7104e33298d10408c", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

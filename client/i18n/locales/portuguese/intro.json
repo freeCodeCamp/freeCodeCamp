@@ -7039,6 +7039,12 @@
           "Nestas aulas, você aprenderá sobre variáveis e tipos de dados em Python."
         ]
       },
+      "workshop-report-card-printer": {
+        "title": "Build a Report Card Printer",
+        "intro": [
+          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+        ]
+      },
       "lecture-introduction-to-python-strings": {
         "title": "Introdução a strings",
         "intro": ["Nestas aulas, você aprenderá sobre strings em Python."]

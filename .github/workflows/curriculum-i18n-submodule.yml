@@ -17,7 +17,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [22]
+        node-version: [24]
         # Exclude the languages that we currently run in the full CI suite.
         locale:
           - 'chinese'
@@ -67,4 +67,4 @@ jobs:
         env:
           CURRICULUM_LOCALE: ${{ matrix.locale }}
           CLIENT_LOCALE: ${{ matrix.locale }}
-        run: pnpm test:curriculum:content
+        run: pnpm -F=curriculum test-content

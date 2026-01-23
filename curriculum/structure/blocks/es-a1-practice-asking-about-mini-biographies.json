@@ -1,0 +1,11 @@
+{
+  "name": "Asking About Mini Biographies",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-asking-about-mini-biographies",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696ff9e313a43fa00c7538bf", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

@@ -299,6 +299,14 @@
           "blocks": ["lab-linked-list-operations"]
         },
         { "dashedName": "algorithms", "comingSoon": true, "blocks": [] },
+        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "algorithms",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-common-searching-and-sorting-algorithms"
+          ]
+        },
         { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "dynamic-programming",

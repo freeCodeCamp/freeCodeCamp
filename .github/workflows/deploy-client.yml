@@ -78,7 +78,7 @@ jobs:
         with:
           script: |
             // Constants
-            const NODE_VERSION = 22;
+            const NODE_VERSION = 24;
 
             // Input sanitization and validation
             const rawTargetLang = process.env.TARGET_LANG || 'all';
