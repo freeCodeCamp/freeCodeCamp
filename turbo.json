@@ -1,18 +1,13 @@
 {
   "$schema": "https://turborepo.com/schema.json",
   "tasks": {
-    "lint": {
-      "dependsOn": ["@freecodecamp/shared#compile"]
-    },
+    "lint": { "dependsOn": ["compile"] },
+    "type-check": { "dependsOn": ["compile"] },
     "@freecodecamp/client#lint": {
-      "dependsOn": [
-        "@freecodecamp/curriculum#compile",
-        "create:env",
-        "build:scripts"
-      ]
+      "dependsOn": ["compile", "create:env"]
     },
-    "@freecodecamp/gatsby-source-challenges#lint": {
-      "dependsOn": ["@freecodecamp/curriculum#compile"]
+    "@freecodecamp/client#type-check": {
+      "dependsOn": ["compile", "create:env"]
     },
     "@freecodecamp/scripts-lint#lint": {
       "dependsOn": ["@freecodecamp/client#create:trending"],
@@ -22,15 +17,25 @@
       ]
     },
     "//#lint-root": {
-      "dependsOn": [
-        "@freecodecamp/shared#compile",
-        "@freecodecamp/curriculum#build"
-      ]
+      "dependsOn": ["@freecodecamp/shared#compile"]
     },
-    "compile": {},
+    "compile": { "dependsOn": ["^compile"], "outputs": ["dist/**"] },
     "create:trending": { "cache": false },
-    "create:env": { "dependsOn": ["@freecodecamp/curriculum#compile"] },
-    "build": { "dependsOn": ["compile"] },
-    "build:scripts": {}
+    "create:env": {
+      "dependsOn": ["@freecodecamp/curriculum#compile"],
+      "outputs": ["config/env.json"]
+    },
+    "build": { "dependsOn": ["compile"], "outputs": ["generated/**"] },
+    "build:scripts": {},
+    "build:external-curriculum": {
+      "dependsOn": ["@freecodecamp/curriculum#build"]
+    },
+    "test": { "dependsOn": ["compile"] },
+    "@freecodecamp/api#test": {
+      "dependsOn": ["compile", "@freecodecamp/curriculum#build"]
+    },
+    "@freecodecamp/client#test": {
+      "dependsOn": ["compile", "create:env", "build:external-curriculum"]
+    }
   }
 }

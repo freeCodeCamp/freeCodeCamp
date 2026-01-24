@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { describe, it, expect, vi } from 'vitest';
 
-import { SuperBlocks } from '../../shared/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createCommentMap,
   addBlockStructure,
