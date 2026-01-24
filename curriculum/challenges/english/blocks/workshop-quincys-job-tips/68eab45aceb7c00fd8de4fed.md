@@ -83,7 +83,7 @@ assert.equal(blockquoteEl?.getAttribute('cite'), 'https://www.freecodecamp.org/n
       </section>
       <section>
 --fcc-editable-region--
-
+        
 --fcc-editable-region--
       </section>
       <section>
