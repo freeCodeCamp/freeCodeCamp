@@ -21,6 +21,8 @@ permissions:
 jobs:
   lint:
     name: Lint
+    # Skip PR runs for Renovate since push already triggered CI
+    if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
     runs-on: ubuntu-24.04
     strategy:
       matrix:
