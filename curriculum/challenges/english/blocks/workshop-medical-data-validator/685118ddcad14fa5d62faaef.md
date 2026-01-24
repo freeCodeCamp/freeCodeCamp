@@ -83,6 +83,7 @@ def find_invalid_records(
         'age': isinstance(age, int) and age >= 18,
 --fcc-editable-region--
         'gender': isinstance(gender, str) and gender.lower() in ('male', 'female')
+        
 --fcc-editable-region--
     }
     return constraints
