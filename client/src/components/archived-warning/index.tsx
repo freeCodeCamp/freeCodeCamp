@@ -10,9 +10,8 @@ const ArchivedWarning = () => {
   const { t } = useTranslation();
   return (
     <Callout variant='note' label={t('misc.note')}>
-      <p className='text-center archived-warning'>
+      <p className='archived-warning'>
         <Trans i18nKey='learn.archive.content-not-updated'>
-          <strong>placeholder</strong>
           <Link to={'/learn/full-stack-developer'}>placeholder</Link>
         </Trans>
       </p>

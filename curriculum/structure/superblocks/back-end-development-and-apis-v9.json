@@ -25,7 +25,10 @@
         {
           "dashedName": "node-package-manager",
           "comingSoon": true,
-          "blocks": ["lecture-working-with-npm-scripts"]
+          "blocks": [
+            "lecture-introduction-to-npm",
+            "lecture-working-with-npm-scripts"
+          ]
         },
         {
           "dashedName": "http-and-the-web-standards-model",
