@@ -5255,12 +5255,6 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
-      "lecture-understanding-how-http-dns-tcpip-work": {
-        "title": "Understanding how HTTP, DNS and TCP/IP work",
-        "intro": [
-          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
-        ]
-      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
@@ -7738,6 +7732,12 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {
