@@ -1,25 +1,37 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
-import { onPythonWorkerEvent, getPythonWorker } from './python-worker-handler';
 
 describe('python-worker-handler', () => {
     let mockWorker: any;
+    let WorkerSpy: any;
+    let onPythonWorkerEvent: any;
+    let getPythonWorker: any;
 
-    beforeEach(() => {
+    beforeEach(async () => {
+        vi.resetModules();
+
         mockWorker = {
             addEventListener: vi.fn(),
             removeEventListener: vi.fn(),
             postMessage: vi.fn(),
             terminate: vi.fn()
         };
-        global.Worker = vi.fn().mockReturnValue(mockWorker);
+        WorkerSpy = vi.fn();
+        global.Worker = class {
+            constructor(...args: any[]) {
+                WorkerSpy(...args);
+                return mockWorker;
+            }
+        } as any;
+
+        // Dynamic import to ensure fresh module state (resetting the singleton 'worker' variable)
+        const module = await import('./python-worker-handler');
+        onPythonWorkerEvent = module.onPythonWorkerEvent;
+        getPythonWorker = module.getPythonWorker;
     });
 
     afterEach(() => {
         vi.clearAllMocks();
-        // We intentionally don't reset the module state here easily because it's a singleton.
-        // Ideally we should have a reset function exported for testing, but for now we rely on
-        // verifying behavior.
     });
 
     it('should allow subscribing to worker events', () => {
@@ -29,11 +41,11 @@ describe('python-worker-handler', () => {
         // Verify worker is NOT initialized immediately (lazy subscription)
         // Actually, getPythonWorker() call was removed from onPythonWorkerEvent.
         // So global.Worker should NOT be called yet.
-        expect(global.Worker).not.toHaveBeenCalled();
+        expect(WorkerSpy).not.toHaveBeenCalled();
 
         // Now trigger worker creation
         getPythonWorker();
-        expect(global.Worker).toHaveBeenCalled();
+        expect(WorkerSpy).toHaveBeenCalled();
 
         // Simulate a message
         const messageHandler = (mockWorker.addEventListener as any).mock.calls.find(
@@ -42,20 +54,18 @@ describe('python-worker-handler', () => {
 
         expect(messageHandler).toBeDefined();
 
-        const event = {
-            data: {
-                type: 'print',
-                text: 'Hello World'
-            }
+        const payload = {
+            type: 'print',
+            text: 'Hello World'
         };
-        messageHandler({ data: event });
+        messageHandler({ data: payload });
 
-        expect(listener).toHaveBeenCalledWith(event.data);
+        expect(listener).toHaveBeenCalledWith(payload as any);
 
         unsubscribe();
 
         // Simulate another message
-        messageHandler({ data: event });
+        messageHandler({ data: payload });
         // Should not be called again
         expect(listener).toHaveBeenCalledTimes(1);
     });
@@ -72,10 +82,10 @@ describe('python-worker-handler', () => {
             (call: any[]) => call[0] === 'message'
         )[1];
 
-        const event = { data: { type: 'print', text: 'Test' } };
-        messageHandler({ data: event });
+        const payload = { type: 'print', text: 'Test' };
+        messageHandler({ data: payload });
 
-        expect(listenerA).toHaveBeenCalledWith(event.data);
-        expect(listenerB).toHaveBeenCalledWith(event.data);
+        expect(listenerA).toHaveBeenCalledWith(payload as any);
+        expect(listenerB).toHaveBeenCalledWith(payload as any);
     });
 });
