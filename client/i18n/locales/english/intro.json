@@ -7355,6 +7355,10 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
+      },
+      "workshop-math-operations": {
+        "title": "Build A Bill Splitter",
+        "intro": ["Build A Bill Splitter", ""]
       }
     }
   },

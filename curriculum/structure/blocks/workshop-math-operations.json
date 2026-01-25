@@ -1,0 +1,11 @@
+{
+  "name": "Build A Bill Splitter",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-math-operations",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "69757cc0faae0152c1418aad", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
