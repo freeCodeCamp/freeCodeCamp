@@ -177,6 +177,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -271,6 +272,7 @@ const publicUserData = {
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
   quizAttempts: testUserData.quizAttempts,
+  experience: [],
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
@@ -337,6 +339,7 @@ const sessionUserData = {
 const baseProgressData = {
   currentChallengeId: '',
   isA2EnglishCert: false,
+  isB1EnglishCert: false,
   isRespWebDesignCert: false,
   is2018DataVisCert: false,
   isFrontEndLibsCert: false,
@@ -1004,6 +1007,7 @@ describe('userRoutes', () => {
           completedDailyCodingChallenges: [],
           completedExams: [],
           completedSurveys: [],
+          experience: [],
           partiallyCompletedChallenges: [],
           portfolio: [],
           savedChallenges: [],

@@ -1,0 +1,14 @@
+{
+  "name": "Tech Updates and Trends Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-tech-trends-updates",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69603327a10266c239ab29b3",
+      "title": "Tech Updates and Trends Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}
