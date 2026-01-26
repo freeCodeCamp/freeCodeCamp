@@ -88,7 +88,7 @@ assert.notMatch(code, /\<img\s+.+\s+src\s*=\s*https:\/\/cdn\.freecodecamp\.org\/
         </ol>
         <figure>
 --fcc-editable-region--
-
+          
 --fcc-editable-region--
         </figure>
       </section>
