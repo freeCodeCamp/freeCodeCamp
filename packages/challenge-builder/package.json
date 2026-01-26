@@ -9,6 +9,12 @@
     "node": ">=24",
     "pnpm": ">=10"
   },
+  "exports": {
+    "./build": "./dist/build.js",
+    "./transformers": "./dist/transformers.js",
+    "./typescript-worker-handler": "./dist/typescript-worker-handler.js",
+    "./builders": "./dist/builders.js"
+  },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
@@ -28,8 +34,18 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
+    "@types/lodash-es": "4.17.12",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "@babel/preset-env": "7.23.7",
+    "@babel/preset-react": "7.28.5",
+    "@babel/standalone": "7.23.7",
+    "@freecodecamp/browser-scripts": "workspace:*",
+    "@freecodecamp/loop-protect": "3.0.0",
+    "@freecodecamp/shared": "workspace:*",
+    "lodash-es": "4.17.23"
   }
 }

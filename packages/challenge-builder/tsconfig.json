@@ -4,6 +4,8 @@
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
+    "module": "es2020",
+    "moduleResolution": "bundler",
     "outDir": "dist",
     "noEmit": false
   }
