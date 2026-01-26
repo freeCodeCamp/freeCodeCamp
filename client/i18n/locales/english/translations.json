@@ -453,6 +453,16 @@
       "present": "Present",
       "date-format-error": "Please enter the date in MM/YYYY format.",
       "date-invalid": "Please enter a valid date."
+    },
+    "completeness": {
+      "heading": "Profile {{percentage}}% complete",
+      "name": "Add your name",
+      "location": "Add your location",
+      "picture": "Upload a profile picture",
+      "about": "Write an about section",
+      "social": "Add a social link",
+      "portfolio": "Add a portfolio project",
+      "experience": "Add your experience"
     }
   },
   "footer": {

@@ -1,0 +1,92 @@
+.profile-completeness {
+  padding: 1em;
+  background: var(--primary-background);
+  border: 1px solid var(--quaternary-background);
+  margin-bottom: 1.5em;
+}
+
+.profile-completeness-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: var(--primary-color);
+  text-align: left;
+}
+
+.profile-completeness-header:hover {
+  background: none;
+  color: var(--primary-color);
+}
+
+.profile-completeness-bar-container {
+  flex: 1;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.profile-completeness-bar-fill {
+  height: 100%;
+  background-color: var(--blue-mid);
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.profile-completeness-text {
+  white-space: nowrap;
+  font-size: 0.875rem;
+}
+
+.profile-completeness-chevron {
+  display: inline-flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+.profile-completeness-chevron svg {
+  width: 15px;
+  height: 15px;
+}
+
+.profile-completeness-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+.profile-completeness-checklist {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.profile-completeness-checklist li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.completeness-checkbox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+}
+
+.completeness-item-complete {
+  color: var(--primary-color);
+  opacity: 0.7;
+}
+
+.completeness-item-incomplete {
+  color: var(--primary-color);
+}
