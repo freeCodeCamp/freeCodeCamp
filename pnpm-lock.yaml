@@ -95,9 +95,6 @@ importers:
 
   api:
     dependencies:
-      '@aws-sdk/client-ses':
-        specifier: 3.975.0
-        version: 3.975.0
       '@fastify/accepts':
         specifier: 5.0.4
         version: 5.0.4
@@ -20769,7 +20766,7 @@ snapshots:
 
   '@types/yoga-layout@1.9.2': {}
 
-  '@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
+  '@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)':
     dependencies:
       '@typescript-eslint/experimental-utils': 4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/parser': 4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
@@ -21106,7 +21103,7 @@ snapshots:
       sirv: 3.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.7(@types/node@24.10.9)(typescript@5.9.3))(terser@5.28.1)(tsx@4.19.1)(yaml@2.8.1)
+      vitest: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@24.10.9)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@16.7.0)(msw@2.12.7(@types/node@24.10.9)(typescript@5.9.3))(terser@5.28.1)(tsx@4.21.0)(yaml@2.8.1)
 
   '@vitest/utils@3.2.4':
     dependencies:
@@ -23692,7 +23689,7 @@ snapshots:
 
   eslint-config-react-app@6.0.0(@typescript-eslint/eslint-plugin@4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0)(typescript@5.9.3))(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(babel-eslint@10.1.0(eslint@9.39.2(jiti@2.6.1)))(eslint-plugin-flowtype@5.10.0(eslint@7.32.0))(eslint-plugin-import@2.31.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(eslint@7.32.0))(eslint-plugin-jsx-a11y@6.10.2(eslint@7.32.0))(eslint-plugin-react-hooks@4.6.0(eslint@7.32.0))(eslint-plugin-react@7.37.4(eslint@7.32.0))(eslint@7.32.0)(typescript@5.9.3):
     dependencies:
-      '@typescript-eslint/eslint-plugin': 4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/eslint-plugin': 4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/parser': 4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       babel-eslint: 10.1.0(eslint@9.39.2(jiti@2.6.1))
       confusing-browser-globals: 1.0.11
@@ -24984,7 +24981,7 @@ snapshots:
       '@nodelib/fs.walk': 1.2.8
       '@pmmmwh/react-refresh-webpack-plugin': 0.4.3(react-refresh@0.9.0)(webpack@5.90.3)
       '@types/http-proxy': 1.17.12
-      '@typescript-eslint/eslint-plugin': 4.33.0(@typescript-eslint/parser@4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+      '@typescript-eslint/eslint-plugin': 4.33.0(@typescript-eslint/parser@4.33.0(eslint@7.32.0)(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@typescript-eslint/parser': 4.33.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
       '@vercel/webpack-asset-relocator-loader': 1.7.3
       address: 1.1.2
