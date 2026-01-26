@@ -8,6 +8,13 @@
     "node": ">=24",
     "pnpm": ">=10"
   },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./test-runner": "./test-runner.ts",
+    "./package.json": "./package.json"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
