@@ -1,0 +1,14 @@
+{
+  "name": "Preferences and Motivations Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-preferences-motivations",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69602fb5a2ff00fdc5366974",
+      "title": "Preferences and Motivations Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

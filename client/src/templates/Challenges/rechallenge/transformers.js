@@ -9,20 +9,19 @@ import {
   stubTrue
 } from 'lodash-es';
 
-import sassData from '../../../../config/browser-scripts/sass-compile.json';
 import {
   transformContents,
   transformHeadTailAndContents,
   compileHeadTail,
   createSource
-} from '../../../../../shared-dist/utils/polyvinyl';
+} from '@freecodecamp/shared/utils/polyvinyl';
+import { version } from '@freecodecamp/browser-scripts/package.json';
+
 import { WorkerExecutor } from '../utils/worker-executor';
 import {
   compileTypeScriptCode,
   checkTSServiceIsReady
 } from '../utils/typescript-worker-handler';
-
-const { filename: sassCompile } = sassData;
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;
@@ -209,7 +208,9 @@ function getBabelOptions(
   return presets;
 }
 
-const sassWorkerExecutor = new WorkerExecutor(sassCompile);
+const sassWorkerExecutor = new WorkerExecutor(
+  `workers/${version}/sass-compile`
+);
 async function transformSASS(documentElement) {
   // we only teach scss syntax, not sass. Also the compiler does not seem to be
   // able to deal with sass.

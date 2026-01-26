@@ -40,7 +40,6 @@ _Node(_val).is_equivalent("isinstance(diagnosis, str) or diagnosis is None")
 ```py
 import re
 
-
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -76,19 +75,17 @@ medical_records = [
     }
 ]
 
-
 def find_invalid_records(
     patient_id, age, gender, diagnosis, medications, last_visit_id
 ):
-
---fcc-editable-region--
     constraints = {
         'patient_id': isinstance(patient_id, str) and re.fullmatch('p\d+', patient_id, re.IGNORECASE),
         'age': isinstance(age, int) and age >= 18,
-        'gender': isinstance(gender, str) and gender.lower() in ('male', 'female')
-
-    }
 --fcc-editable-region--
+        'gender': isinstance(gender, str) and gender.lower() in ('male', 'female')
+        
+--fcc-editable-region--
+    }
     return constraints
 
 def validate(data):

@@ -6,7 +6,7 @@ setup.describe('certifieduser', () => {
   setup.use({ storageState: { cookies: [], origins: [] } });
 
   setup.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user ');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user ');
   });
 
   setup('can sign in', async ({ request }) => {
@@ -25,11 +25,11 @@ setup.describe('developmentuser', () => {
   // We can only sign in as a single user (one with email: 'foo@bar.com'), so
   // changing users means changing the record with that email in the database.
   setup.beforeAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
   });
 
   setup.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   setup('can sign in', async ({ request }) => {

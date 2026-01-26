@@ -1,0 +1,11 @@
+{
+  "name": "Describing a Company Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-quiz-describing-a-company",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696edf13152f88ef815b80a4", "title": "Describing a Company Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

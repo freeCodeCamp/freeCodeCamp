@@ -1,0 +1,11 @@
+{
+  "name": "Using The First 100 Numbers",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-using-the-first-100-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696edcdd5d0b6b0c2274e578", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

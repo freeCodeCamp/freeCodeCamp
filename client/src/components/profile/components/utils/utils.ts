@@ -1,5 +1,5 @@
 import type { TFunction } from 'i18next';
-import { getLangCode } from '../../../../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import envData from '../../../../../config/env.json';
 const { clientLocale } = envData;
 
