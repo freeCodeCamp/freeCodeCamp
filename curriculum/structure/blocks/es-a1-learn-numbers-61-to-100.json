@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 61 to 100",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-numbers-61-to-100",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696edc9066552869bcb4ddbe", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

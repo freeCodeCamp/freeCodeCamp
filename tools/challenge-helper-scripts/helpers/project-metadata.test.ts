@@ -11,7 +11,7 @@ const block = 'block-name';
 describe('project-metadata helper', () => {
   describe('getMetaData helper', () => {
     it('should call getBlockStructure with the correct path', () => {
-      process.env.CALLING_DIR = join(commonPath, block);
+      process.env.INIT_CWD = join(commonPath, block);
       getMetaData();
       expect(getBlockStructure).toHaveBeenCalledWith(block);
     });

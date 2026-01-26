@@ -1,0 +1,11 @@
+{
+  "name": "Mini Biographies ",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-mini-biographies",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696ff91fc1eebae9720933e0", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}
