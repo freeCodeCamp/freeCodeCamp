@@ -1,0 +1,15 @@
+{
+  "name": "Build a Playlist Remix Engine",
+  "isUpcomingChange": false,
+  "dashedName": "lab-playlist-remix-engine",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6976db7ecfa770bf21307b20",
+      "title": "Build a Playlist Remix Engine"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

@@ -6531,6 +6531,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": ["Build a Playlist Remix Engine", ""]
       }
     }
   },

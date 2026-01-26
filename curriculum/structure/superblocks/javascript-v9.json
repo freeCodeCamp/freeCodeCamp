@@ -74,6 +74,7 @@
             "lab-lunch-picker-program",
             "lab-golf-score-translator",
             "lecture-working-with-common-array-methods",
+            "lab-playlist-remix-engine",
             "review-javascript-arrays",
             "quiz-javascript-arrays"
           ]
@@ -293,21 +294,9 @@
             "quiz-recursion"
           ]
         },
-        {
-          "dashedName": "data-structures",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "algorithms",
-          "comingSoon": true,
-          "blocks": []
-        },
-        {
-          "dashedName": "graphs-and-trees",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        { "dashedName": "algorithms", "comingSoon": true, "blocks": [] },
+        { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
