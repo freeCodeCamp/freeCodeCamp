@@ -1,0 +1,35 @@
+{
+  "name": "@freecodecamp/challenge-builder",
+  "version": "0.0.1",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "description": "Builds challenges for testing and rendering",
+  "private": false,
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit",
+    "compile": "tsc",
+    "lint": "eslint --max-warnings 0"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
+    "vitest": "^3.2.4"
+  }
+}
