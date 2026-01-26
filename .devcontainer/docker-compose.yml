@@ -3,7 +3,7 @@ services:
     depends_on:
       - db
       - setup
-    image: mcr.microsoft.com/devcontainers/typescript-node:24
+    image: mcr.microsoft.com/devcontainers/typescript-node:22
     volumes:
       - ../..:/workspaces:cached
     network_mode: service:db
