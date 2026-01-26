@@ -18,8 +18,10 @@ import addFormats from 'ajv-formats';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
-import { SESProvider } from './plugins/mail-providers/ses.js';
+import {
+  NodemailerProvider,
+  NodemailerConfig
+} from './plugins/mail-providers/nodemailer.js';
 import mailer from './plugins/mailer.js';
 import redirectWithMessage from './plugins/redirect-with-message.js';
 import security from './plugins/security.js';
@@ -42,7 +44,11 @@ import {
   FCC_ENABLE_SHADOW_CAPTURE,
   FCC_ENABLE_SENTRY_ROUTES,
   GROWTHBOOK_FASTIFY_API_HOST,
-  GROWTHBOOK_FASTIFY_CLIENT_KEY
+  GROWTHBOOK_FASTIFY_CLIENT_KEY,
+  MAILPIT_HOST,
+  SES_SMTP_HOST,
+  SES_SMTP_USERNAME,
+  SES_SMTP_PASSWORD
 } from './utils/env.js';
 import { isObjectID } from './utils/validation.js';
 import { getLogger } from './utils/logger.js';
@@ -130,8 +136,25 @@ export const build = async (
     clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
   });
 
-  const provider =
-    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
+  const mailConfig: NodemailerConfig =
+    EMAIL_PROVIDER === 'ses'
+      ? {
+          host: SES_SMTP_HOST,
+          port: 465,
+          secure: true,
+          auth: {
+            user: SES_SMTP_USERNAME ?? '',
+            pass: SES_SMTP_PASSWORD ?? ''
+          }
+        }
+      : {
+          host: MAILPIT_HOST,
+          port: 1025,
+          secure: false,
+          auth: { user: 'test', pass: 'test' },
+          tls: { rejectUnauthorized: false }
+        };
+  const provider = new NodemailerProvider(mailConfig);
   void fastify.register(mailer, { provider });
 
   // Swagger plugin

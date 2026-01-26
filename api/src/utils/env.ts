@@ -88,12 +88,18 @@ assert.ok(
 );
 
 if (process.env.FREECODECAMP_NODE_ENV !== 'development') {
-  assert.ok(process.env.SES_ID);
-  assert.ok(process.env.SES_SECRET);
+  assert.ok(
+    process.env.SES_SMTP_USERNAME,
+    'SES_SMTP_USERNAME is required in production.'
+  );
+  assert.ok(
+    process.env.SES_SMTP_PASSWORD,
+    'SES_SMTP_PASSWORD is required in production.'
+  );
   assert.notEqual(
-    process.env.SES_SECRET,
-    'ses_secret_from_aws',
-    'The SES secret should be changed from the default value.'
+    process.env.SES_SMTP_PASSWORD,
+    'ses_smtp_password_from_aws',
+    'The SES SMTP password should be changed from the default value.'
   );
   assert.ok(process.env.COOKIE_DOMAIN);
   assert.notEqual(process.env.COOKIE_SECRET, 'a_cookie_secret');
@@ -208,9 +214,10 @@ export const SENTRY_ENVIRONMENT =
 export const COOKIE_DOMAIN = process.env.COOKIE_DOMAIN;
 export const COOKIE_SECRET = process.env.COOKIE_SECRET;
 export const JWT_SECRET = process.env.JWT_SECRET;
-export const SES_ID = process.env.SES_ID;
-export const SES_SECRET = process.env.SES_SECRET;
-export const SES_REGION = process.env.SES_REGION || 'us-east-1';
+export const SES_SMTP_USERNAME = process.env.SES_SMTP_USERNAME;
+export const SES_SMTP_PASSWORD = process.env.SES_SMTP_PASSWORD;
+export const SES_SMTP_HOST =
+  process.env.SES_SMTP_HOST || 'email-smtp.us-east-1.amazonaws.com';
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';
 export const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
