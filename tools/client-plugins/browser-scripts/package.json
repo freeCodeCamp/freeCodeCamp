@@ -5,8 +5,15 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=18",
+    "node": ">=24",
     "pnpm": ">=10"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./test-runner": "./test-runner.ts",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",

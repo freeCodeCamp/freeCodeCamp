@@ -1,3 +1,4 @@
+.*/*
 **/.cache
 **/*fixtures*
 client/**/trending.json
@@ -19,4 +20,5 @@ shared/utils/get-lines.test.js
 shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
+tools/challenge-editor
 dist

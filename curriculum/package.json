@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -50,6 +50,7 @@
     "@babel/register": "7.23.7",
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
+    "@freecodecamp/browser-scripts": "workspace:*",
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/debug": "^4.1.12",
     "@types/js-yaml": "4.0.5",
@@ -75,6 +76,6 @@
     "vitest": "^4.0.15"
   },
   "dependencies": {
-    "@types/node": "^24.10.4"
+    "@types/node": "^24.10.8"
   }
 }
