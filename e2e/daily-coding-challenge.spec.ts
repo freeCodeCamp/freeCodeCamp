@@ -266,7 +266,7 @@ test.describe('Daily Coding Challenge Archive', () => {
 });
 
 test.describe('Daily code challenge solution can be downloaded', () => {
-  test('Downloaded solution files are named by challenge title', async ({
+  test('Downloaded solution files are named by challenge number', async ({
     page,
     isMobile
   }) => {
@@ -291,6 +291,6 @@ test.describe('Daily code challenge solution can be downloaded', () => {
     const suggestedFileName = download.suggestedFilename();
     await download.saveAs(suggestedFileName);
     expect(fs.existsSync(suggestedFileName)).toBeTruthy();
-    expect(suggestedFileName).toBe('Test title.txt');
+    expect(suggestedFileName).toBe('challenge-1.txt');
   });
 });

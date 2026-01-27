@@ -38,8 +38,13 @@ const mapStateToProps = createSelector(
     {
       dashedName,
       id,
-      title
-    }: { dashedName: string; id: string; title: string },
+      challengeNumber
+    }: {
+      dashedName: string;
+      id: string;
+      challengeNumber: number;
+      title: string;
+    },
     completedChallengesIds: string[],
     isOpen: boolean,
     isSignedIn: boolean,
@@ -49,7 +54,7 @@ const mapStateToProps = createSelector(
     challengeFiles,
     id,
     dashedName,
-    title,
+    challengeNumber,
     completedChallengesIds,
     isOpen,
     isSignedIn,
@@ -159,7 +164,7 @@ class CompletionModal extends Component<
       message,
       t,
       dashedName,
-      title,
+      challengeNumber,
       submitChallenge
     } = this.props;
 
@@ -225,7 +230,7 @@ class CompletionModal extends Component<
               block={true}
               size='large'
               variant='primary'
-              download={`${dashedName ? dashedName : title}.txt`}
+              download={`${dashedName || `challenge-${challengeNumber}`}.txt`}
               href={this.state.downloadURL}
             >
               {t('learn.download-solution')}
