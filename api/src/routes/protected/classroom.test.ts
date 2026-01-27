@@ -54,14 +54,14 @@ describe('classroom routes', () => {
         expect(invalidRes.status).toBe(400);
       });
 
-      test('returns 404 when no classroom account matches email', async () => {
+      test('returns 200 with empty userId when no classroom account matches email', async () => {
         // Default user is not a classroom account by default
         const res = await superPost(
           '/api/protected/classroom/get-user-id'
         ).send({ email: defaultUserEmail });
 
-        expect(res.status).toBe(404);
-        expect(res.body).toStrictEqual({ error: 'User not found' });
+        expect(res.status).toBe(200);
+        expect(res.body).toStrictEqual({ userId: '' });
       });
 
       test('returns 200 with userId for a classroom account', async () => {

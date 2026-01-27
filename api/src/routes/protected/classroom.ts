@@ -33,8 +33,10 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
           select: { id: true }
         });
 
+        // If we send a 404 error here, it will stop the entire classroom process from working.
+        // So instead, we indicate that the user was not found and continue.
         if (!user) {
-          return reply.code(404).send({ error: 'User not found' });
+          return reply.send({ userId: '' });
         }
 
         return reply.send({
