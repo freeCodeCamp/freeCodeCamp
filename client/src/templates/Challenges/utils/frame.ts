@@ -26,7 +26,7 @@ declare global {
 
 const utilsFormat: <T>(x: T) => string = format;
 
-export interface Source {
+interface Source {
   index: string;
   contents?: string;
   editableContents: string;
