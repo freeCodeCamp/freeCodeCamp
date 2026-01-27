@@ -106,6 +106,19 @@ export async function buildChallenge(
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
 
+export const prefixDoctype = ({
+  build,
+  sources
+}: {
+  build: string;
+  sources: Source;
+}) => {
+  // DOCTYPE should be the first thing written to the frame, so if the user code
+  // includes a DOCTYPE declaration, we need to find it and write it first.
+  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  return doctype + build;
+};
+
 export const runnerTypes: Record<
   (typeof challengeTypes)[keyof typeof challengeTypes],
   'javascript' | 'dom' | 'python'
