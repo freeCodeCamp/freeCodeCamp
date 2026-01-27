@@ -1,26 +1,21 @@
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import type { ChallengeFile } from '@freecodecamp/shared/utils/polyvinyl';
 
+import { concatHtml } from './builders.js';
 import {
   getTransformers,
   embedFilesInHtml,
   getPythonTransformers,
   getMultifileJSXTransformers
-} from '@freecodecamp/challenge-builder/transformers';
-import { concatHtml } from '@freecodecamp/challenge-builder/builders';
-import { runnerTypes } from '@freecodecamp/challenge-builder/build';
+} from './transformers.js';
 
-import {
-  runTestsInTestFrame,
-  createMainPreviewFramer,
-  createProjectPreviewFramer,
-  ProxyLogger,
-  Context,
-  Source,
-  prepTestRunner
-} from './frame';
+interface Source {
+  index: string;
+  contents?: string;
+  editableContents: string;
+}
 
-interface BuildChallengeData extends Context {
+interface BuildChallengeData {
   challengeType: number;
   challengeFiles?: ChallengeFile[];
   required: { src?: string }[];
@@ -99,21 +94,55 @@ export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
 
-export async function getTestRunner(buildData: BuildChallengeData) {
-  const { challengeType } = buildData;
-  // TODO: Fully type BuildChallengeData
-  const type =
-    runnerTypes[challengeType as unknown as keyof typeof runnerTypes];
-  if (!type) {
-    throw new Error(
-      `Cannot get test runner for challenge type ${challengeType}`
-    );
+export async function buildChallenge(
+  challengeData: BuildChallengeData,
+  options: BuildOptions
+) {
+  const { challengeType } = challengeData;
+  const build = buildFunctions[challengeType];
+  if (build) {
+    return build(challengeData, options);
   }
-  await prepTestRunner({ ...buildData, type });
-
-  return (testStrings: string[], testTimeout: number) =>
-    runTestsInTestFrame(testStrings, testTimeout, type);
+  throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
+
+export const runnerTypes: Record<
+  (typeof challengeTypes)[keyof typeof challengeTypes],
+  'javascript' | 'dom' | 'python'
+> = {
+  [challengeTypes.html]: 'dom',
+  [challengeTypes.js]: 'javascript',
+  [challengeTypes.backend]: 'dom',
+  [challengeTypes.zipline]: 'dom',
+  [challengeTypes.frontEndProject]: 'dom',
+  [challengeTypes.backEndProject]: 'dom',
+  [challengeTypes.pythonProject]: 'python',
+  [challengeTypes.jsProject]: 'javascript',
+  [challengeTypes.modern]: 'dom',
+  [challengeTypes.step]: 'dom',
+  [challengeTypes.quiz]: 'dom',
+  [challengeTypes.invalid]: 'dom',
+  [challengeTypes.video]: 'dom',
+  [challengeTypes.codeAllyPractice]: 'dom',
+  [challengeTypes.codeAllyCert]: 'dom',
+  [challengeTypes.multifileCertProject]: 'dom',
+  [challengeTypes.theOdinProject]: 'dom',
+  [challengeTypes.colab]: 'dom',
+  [challengeTypes.exam]: 'dom',
+  [challengeTypes.msTrophy]: 'dom',
+  [challengeTypes.multipleChoice]: 'dom',
+  [challengeTypes.python]: 'python',
+  [challengeTypes.dialogue]: 'dom',
+  [challengeTypes.fillInTheBlank]: 'dom',
+  [challengeTypes.multifilePythonCertProject]: 'python',
+  [challengeTypes.generic]: 'dom',
+  [challengeTypes.lab]: 'dom',
+  [challengeTypes.jsLab]: 'javascript',
+  [challengeTypes.pyLab]: 'python',
+  [challengeTypes.dailyChallengeJs]: 'javascript',
+  [challengeTypes.dailyChallengePy]: 'python',
+  [challengeTypes.review]: 'dom'
+};
 
 type BuildResult = {
   challengeType: number;
@@ -237,82 +266,4 @@ export async function buildPythonChallenge({
     build: sources?.contents,
     error
   };
-}
-
-export function updatePreview(
-  buildData: BuildChallengeData,
-  document: Document,
-  proxyLogger: ProxyLogger
-): Promise<void> {
-  if (challengeHasPreview(buildData)) {
-    return new Promise<void>(resolve =>
-      createMainPreviewFramer(
-        document,
-        proxyLogger,
-        getDocumentTitle(buildData),
-        resolve
-      )(buildData)
-    );
-  } else {
-    throw new Error(
-      `Cannot show preview for challenge type ${buildData.challengeType}`
-    );
-  }
-}
-
-function getDocumentTitle(buildData: BuildChallengeData) {
-  // Give iframe a title attribute for accessibility using the preview
-  // document's <title>.
-
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(buildData?.sources?.index, 'text/html');
-  const title = doc.querySelector('title');
-
-  return title?.innerText ?? 'challenge';
-}
-
-export function updateProjectPreview(
-  buildData: BuildChallengeData,
-  document: Document
-): void {
-  if (challengeHasPreview(buildData)) {
-    createProjectPreviewFramer(
-      document,
-      getDocumentTitle(buildData)
-    )(buildData);
-  } else {
-    throw new Error(
-      `Cannot show preview for challenge type ${buildData.challengeType}`
-    );
-  }
-}
-
-export function challengeHasPreview({
-  challengeType
-}: {
-  challengeType: number;
-}): boolean {
-  return (
-    challengeType === challengeTypes.html ||
-    challengeType === challengeTypes.modern ||
-    challengeType === challengeTypes.multifileCertProject ||
-    challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeType === challengeTypes.python ||
-    challengeType === challengeTypes.lab ||
-    challengeType === challengeTypes.pyLab ||
-    challengeType === challengeTypes.dailyChallengePy
-  );
-}
-
-export function isJavaScriptChallenge({
-  challengeType
-}: {
-  challengeType: number;
-}): boolean {
-  return (
-    challengeType === challengeTypes.js ||
-    challengeType === challengeTypes.jsProject ||
-    challengeType === challengeTypes.jsLab ||
-    challengeType === challengeTypes.dailyChallengeJs
-  );
 }

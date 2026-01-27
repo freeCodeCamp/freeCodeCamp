@@ -17,11 +17,11 @@ import {
 } from '@freecodecamp/shared/utils/polyvinyl';
 import { version } from '@freecodecamp/browser-scripts/package.json';
 
-import { WorkerExecutor } from '../utils/worker-executor';
+import { WorkerExecutor } from './worker-executor';
 import {
   compileTypeScriptCode,
   checkTSServiceIsReady
-} from '../utils/typescript-worker-handler';
+} from './typescript-worker-handler';
 
 const protectTimeout = 100;
 const testProtectTimeout = 1500;

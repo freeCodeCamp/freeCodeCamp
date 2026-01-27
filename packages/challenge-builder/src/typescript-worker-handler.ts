@@ -1,8 +1,8 @@
-import { version } from '@freecodecamp/browser-scripts/package.json';
+import browserScripts from '@freecodecamp/browser-scripts/package.json';
 
-import { awaitResponse } from './awaitable-messenger';
+import { awaitResponse } from './awaitable-messenger.js';
 
-const typeScriptWorkerSrc = `/js/workers/${version}/typescript-worker.js`;
+const typeScriptWorkerSrc = `/js/workers/${browserScripts.version}/typescript-worker.js`;
 
 let worker: Worker | null = null;
 
