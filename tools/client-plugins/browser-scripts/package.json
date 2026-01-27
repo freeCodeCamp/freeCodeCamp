@@ -12,6 +12,8 @@
     "dist"
   ],
   "exports": {
+    ".": "./index.d.ts",
+    "./ts-compiler": "./modules/typescript-compiler.ts",
     "./test-runner": "./test-runner.ts",
     "./package.json": "./package.json"
   },
