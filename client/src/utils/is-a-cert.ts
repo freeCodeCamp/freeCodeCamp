@@ -1,4 +1,4 @@
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 export function isRelationalDbCert(superBlock: string): boolean {
   return superBlock === String(SuperBlocks.RelationalDb);

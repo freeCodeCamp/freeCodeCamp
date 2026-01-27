@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
-const CURRICULUM_PATH = '../../../shared-dist/config/curriculum.json';
+const CURRICULUM_PATH = '../../../curriculum/generated/curriculum.json';
 // const __dirname = dirname(fileURLToPath(import.meta.url));
 // Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
 const curriculum = JSON.parse(

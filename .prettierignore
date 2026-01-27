@@ -1,3 +1,4 @@
+.*/*
 **/.cache
 **/*fixtures*
 client/**/trending.json
@@ -9,15 +10,15 @@ client/public
 curriculum/challenges/_meta/*/*
 curriculum/challenges/**/*
 curriculum/i18n-curriculum
+curriculum/generated
 docs/**/*.md
 /playwright
 pnpm-lock.yaml
 shared/config/*.js
-shared/config/curriculum.json
 shared/utils/get-lines.js
 shared/utils/get-lines.test.js
 shared/utils/is-audited.js
 shared/utils/validate.js
 shared/utils/validate.test.js
-shared-dist
+tools/challenge-editor
 dist

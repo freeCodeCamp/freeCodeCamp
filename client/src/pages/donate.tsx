@@ -22,7 +22,7 @@ import {
   userSelector,
   donationFormStateSelector
 } from '../redux/selectors';
-import { PaymentContext } from '../../../shared-dist/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import { DonateFormState } from '../redux/types';
 import callGA from '../analytics/call-ga';
 import type { User } from '../redux/prop-types';

@@ -1,0 +1,11 @@
+{
+  "name": "Describing People at Work",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-review-describing-people-at-work",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "696ffa64d9567679123b994b", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "review"
+}
