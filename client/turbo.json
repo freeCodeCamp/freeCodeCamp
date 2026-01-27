@@ -5,6 +5,13 @@
     "build": {
       "outputs": ["public/**"]
     },
-    "setup": { "outputs": ["config/env.json", "i18n/locales/*.json"] }
+    "setup": {
+      "outputs": [
+        "config/env.json",
+        "i18n/locales/*.json",
+        "static/curriculum-data/**",
+        "static/js/**"
+      ]
+    }
   }
 }

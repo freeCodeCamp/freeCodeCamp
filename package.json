@@ -21,9 +21,9 @@
   "scripts": {
     "audit-challenges": "cd curriculum && pnpm audit-challenges",
     "analyze-bundle": "webpack-bundle-analyzer",
-    "build": "npm-run-all -p build:*",
+    "build": "turbo build",
     "build:client": "turbo -F=@freecodecamp/client build",
-    "build:curriculum": "turbo -F=@freecodecamp/curriculum build && pnpm -F=client run build:external-curriculum",
+    "build:curriculum": "turbo -F=@freecodecamp/curriculum build",
     "build:api": "turbo -F=@freecodecamp/api build",
     "challenge-editor": "cd tools/challenge-editor && pnpm dev",
     "challenge-editor-setup": "git submodule update --init tools/challenge-editor && cd tools/challenge-editor && pnpm install",

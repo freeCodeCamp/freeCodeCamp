@@ -22,7 +22,7 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --frozen-lockfile --ignore-scripts
 RUN cd api && pnpm prisma generate
 
-# The api needs to source curriculum.json and build:curriculum relies on the
+# The api needs to source curriculum.json and the build process relies on the
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
