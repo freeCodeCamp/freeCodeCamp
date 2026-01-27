@@ -66,7 +66,7 @@ When reviewing pull requests, verify compliance with [freeCodeCamp's contributio
 Check that the title follows conventional commits format:
 `<type>([optional scope]): <description>`
 
-**Valid types:** `fix`, `feat`, `refactor`, `docs`, `chore`, `test`
+**Valid types:** `fix`, `feat`, `refactor`, `docs`, `test`
 
 **Common scopes:** `curriculum`, `client`, `api`, `i18n`, `a11y`, `tools`
 
