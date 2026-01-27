@@ -1,0 +1,26 @@
+{
+  "name": "Introduction to Strings",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-introduction-to-python-strings",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69413cbce2d6c74f61d3f7e5",
+      "title": "What Are Strings and What Is String Immutability?"
+    },
+    {
+      "id": "69414623940154f209922619",
+      "title": "What Are String Concatenation and String Interpolation?"
+    },
+    {
+      "id": "694147fe940154f20992261b",
+      "title": "What Is String Slicing and How Does It Work?"
+    },
+    {
+      "id": "6839b2ddd01ef657b6bf3b76",
+      "title": "What Are Some Common String Methods?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

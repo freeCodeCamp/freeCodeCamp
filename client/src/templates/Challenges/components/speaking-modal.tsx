@@ -17,7 +17,7 @@ import { isSpeakingModalOpenSelector } from '../redux/selectors';
 import {
   SuperBlocks,
   superBlockToSpeechLang
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   compareTexts,
   type ComparisonResult,
@@ -162,8 +162,6 @@ const SpeakingModal = ({
     resetTranscript,
     browserSupportsSpeechRecognition
   } = useSpeechRecognition();
-
-  console.log('Speech recognition transcript:', transcript);
 
   const handleAudioEnded = useCallback(() => {
     setIsPlaying(false);

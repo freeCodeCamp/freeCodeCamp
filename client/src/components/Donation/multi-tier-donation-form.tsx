@@ -18,7 +18,7 @@ import {
   defaultTierAmount,
   defaultTierAmountB,
   type DonationAmount
-} from '../../../../shared-dist/config/donation-settings'; // You can further extract these into separate components and import them
+} from '@freecodecamp/shared/config/donation-settings'; // You can further extract these into separate components and import them
 import callGA from '../../analytics/call-ga';
 import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';

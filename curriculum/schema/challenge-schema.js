@@ -1,13 +1,15 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../shared-dist/config/challenge-types');
+const {
+  challengeTypes
+} = require('@freecodecamp/shared/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('../../shared-dist/config/curriculum');
+} = require('@freecodecamp/shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -145,7 +147,7 @@ const schema = Joi.object().keys({
       'learn',
       'practice'
     ).required(),
-    otherwise: Joi.valid(null)
+    otherwise: Joi.optional()
   }),
   blockLayout: Joi.valid(
     'challenge-list',
@@ -164,6 +166,7 @@ const schema = Joi.object().keys({
     otherwise: Joi.optional()
   }),
   certification: Joi.string().regex(slugWithSlashRE),
+  isExam: Joi.boolean(),
   challengeType: Joi.number().min(0).max(31).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
@@ -173,7 +176,8 @@ const schema = Joi.object().keys({
       challengeTypes.step,
       challengeTypes.video,
       challengeTypes.multipleChoice,
-      challengeTypes.fillInTheBlank
+      challengeTypes.fillInTheBlank,
+      challengeTypes.review
     ],
     then: Joi.string().allow(''),
     otherwise: Joi.string().required()
@@ -315,6 +319,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  saveSubmissionToDB: Joi.bool(),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()

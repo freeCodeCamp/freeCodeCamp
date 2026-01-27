@@ -101,18 +101,13 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-remove-serviceworker',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-schema-snapshot',
       options: {
-        name: 'freeCodeCamp',
-        short_name: 'fCC',
-        start_url: '/',
-        theme_color: '#0a0a23',
-        background_color: '#fff',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/square_puck.png'
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
       }
-    },
-    'gatsby-plugin-remove-serviceworker'
+    }
   ]
 };

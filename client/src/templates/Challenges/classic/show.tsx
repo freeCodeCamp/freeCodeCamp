@@ -11,7 +11,7 @@ import { editor } from 'monaco-editor';
 import type { FitAddon } from 'xterm-addon-fit';
 
 import { useFeature } from '@growthbook/growthbook-react';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
 
@@ -212,7 +212,8 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
-        translationPending
+        translationPending,
+        saveSubmissionToDB
       }
     }
   },
@@ -313,13 +314,9 @@ function ShowClassic({
 
   // AB testing Pre-fetch in the Spanish locale
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
-  const isIndependentLowerJawEnabled = useFeature('independent-lower-jaw').on;
 
-  // Independent lower jaw is only enabled for the urriculum outline workshop
-  const showIndependentLowerJaw =
-    block === 'workshop-curriculum-outline' &&
-    isIndependentLowerJawEnabled &&
-    !isMobile;
+  // Independent lower jaw is only enabled for desktop workshops.
+  const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -471,7 +468,7 @@ function ShowClassic({
       usesMultifileEditor={usesMultifileEditor}
       editorRef={editorRef}
     >
-      <LearnLayout hasEditableBoundaries={hasEditableBoundaries}>
+      <LearnLayout>
         <Helmet title={windowTitle} />
         {isMobile && (
           <MobileLayout
@@ -551,7 +548,10 @@ function ShowClassic({
           superBlock={superBlock}
         />
         <VideoModal videoUrl={videoUrl} />
-        <ResetModal challengeType={challengeType} challengeTitle={title} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
         <ProjectPreviewModal
           challengeData={challengeData}
           closeText={t('buttons.start-coding')}
@@ -613,6 +613,7 @@ export const query = graphql`
           editableRegionBoundaries
           history
         }
+        saveSubmissionToDB
         tests {
           text
           testString

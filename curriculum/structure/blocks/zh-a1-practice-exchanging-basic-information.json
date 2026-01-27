@@ -1,14 +1,17 @@
 {
   "name": "Exchanging Basic Information",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-practice-exchanging-basic-information",
-  "helpCategory": "English",
+  "helpCategory": "Chinese Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    {
-      "id": "68fa373c2ced2cc4ff5739c4",
-      "title": "Dialogue 1: I'm Tom"
-    }
+    { "id": "6916dd268969c61abc6ce0aa", "title": "Task 1" },
+    { "id": "6916e7bcbaa6f71f810d2e04", "title": "Task 2" },
+    { "id": "6916e8ec8689c820a61a4c7a", "title": "Task 3" },
+    { "id": "691740419e56e024c83ad7c9", "title": "Task 4" },
+    { "id": "6917f60ef95a2b2e8abce9a1", "title": "Task 5" },
+    { "id": "69182b6e6aec013135878992", "title": "Task 6" },
+    { "id": "69182f75cc96e43363541510", "title": "Task 7" }
   ],
   "blockLabel": "practice"
 }

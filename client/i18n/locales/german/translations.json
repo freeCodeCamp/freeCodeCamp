@@ -207,6 +207,8 @@
     "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -281,7 +283,7 @@
     "disabled": "Deine Zertifizierungen werden deaktiviert, wenn sie auf privat gesetzt sind.",
     "private-name": "Dein Name erscheint nicht auf Deinen Zertifizierungen, wenn dieser auf privat eingestellt ist.",
     "claim-legacy": "Sobald du die folgenden freeCodeCamp Zertifizierungen erworben hast, kannst du das {{cert}} beanspruchen:",
-    "for": "Kontoeinstellungen für {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "Das sorgt für den angenehmen Klang der Akustikgitarre auf der gesamten Website. Du bekommst musikalisches Feedback, wenn du im Editor tippst, Aufgaben löst, Zertifizierungen beantragst und vieles mehr.",
     "sound-volume": "Lautstärke Lagerfeuer-Modus:",
     "scrollbar-width": "Editor Scrollbar Width",
@@ -321,6 +323,7 @@
       "my-heatmap": "Meine Heatmap (Punkte-Historie)",
       "my-certs": "Meine Zertifikate",
       "my-portfolio": "Mein Portfolio",
+      "my-experience": "My experience",
       "my-timeline": "Meine Zeitleiste",
       "my-donations": "Meine Spenden",
       "night-mode": "Nacht-Modus",
@@ -328,12 +331,13 @@
       "keyboard-shortcuts": "Tastaturkurzbefehle aktivieren"
     },
     "headings": {
+      "account": "Account",
       "certs": "Zertifikate",
       "legacy-certs": "Alte Zertifikate",
       "honesty": "Akademischer Ehrlichkeitskodex",
       "internet": "Dein Internetauftritt",
       "portfolio": "Portfolio-Einstellungen",
-      "privacy": "Privatsphäre-Einstellungen",
+      "privacy": "Privacy",
       "personal-info": "Personal Information"
     },
     "danger": {
@@ -362,7 +366,7 @@
     },
     "email": {
       "missing": "Du hast keine E-Mail mit diesem Konto verbunden.",
-      "heading": "E-Mail-Einstellungen",
+      "heading": "Email",
       "not-verified": "Deine E-Mail wurde noch nicht verifiziert.",
       "check": "Bitte überprüfe deine E-Mail, oder <0>fordere eine neue Bestätigungs-E-Mail an</0>.",
       "current": "Aktuelle E-Mail",
@@ -432,7 +436,24 @@
     "page-number": "{{pageNumber}} von {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -694,7 +715,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -868,6 +889,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Du scheinst offline zu sein, dein Fortschritt wird möglicherweise nicht gespeichert",
     "server-offline": "Der Server konnte nicht erreicht werden und dein Fortschritt wird möglicherweise nicht gespeichert. Bitte wende dich an den <0>Support</0>, wenn diese Meldung weiterhin erscheint",
     "unsubscribed": "Du wurdest erfolgreich abgemeldet",
@@ -929,7 +952,7 @@
     "linkedin": "Link zu {{username}}'s LinkedIn-Account",
     "github": "Link zu {{username}}'s GitHub-Account",
     "website": "Link zu {{username}}'s Website",
-    "twitter": "Link zu {{username}}'s Twitter-Account",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Zur ersten Seite gehen",
@@ -964,7 +987,8 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
-    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -984,6 +1008,7 @@
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
     "portfolio-item-updated": "We have updated your portfolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "E-Mail-Format ist ungültig",
     "email-valid": "Deine E-Mail wurde erfolgreich geändert. Viel Spaß beim Coding!",
     "bad-challengeId": "currentChallengeId ist keine gültige Challenge-ID",
@@ -1079,16 +1104,22 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Es gibt eine maximale Grenze von 288 Zeichen, du hast noch {{charsLeft}} übrig",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Diese E-Mail ist die gleiche wie deine aktuelle E-Mail",
     "invalid-email": "Wir konnten deine E-Mail nicht ordnungsgemäß überprüfen, bitte stelle sicher, dass sie korrekt ist",
     "email-mismatch": "Beide neuen E-Mail-Adressen müssen identisch sein",
     "title-required": "Ein Titel ist erforderlich",
     "title-short": "Titel ist zu kurz",
     "title-long": "Titel ist zu lang",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Wir konnten deine URL nicht ordnungsgemäß überprüfen, bitte stelle sicher, dass sie korrekt ist",
     "invalid-protocol": "URL muss mit http oder https beginnen",
     "url-not-image": "URL muss direkt mit einer Bilddatei verknüpft sein",
@@ -1109,6 +1140,7 @@
     "issued": "Ausgestellt",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
@@ -1227,7 +1259,7 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
       "responsive-web-design-v9": "Responsive Web Design",

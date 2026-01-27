@@ -11,14 +11,13 @@ import {
   Row,
   Col
 } from '@freecodecamp/ui';
-import { isEmpty } from 'lodash';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import useDetectOS from '../utils/use-detect-os';
+import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
 import {
   ChallengeNode,
   CompletedChallenge,
@@ -79,6 +78,79 @@ interface ShowExamDownloadProps {
   user: User | null;
 }
 
+function normalizeArch(name: string): string {
+  const archMatch = name.match(
+    /(aarch64|arm|arm64|amd64|x86_64|x64|x86|i386|i686)/i
+  );
+
+  const token = archMatch?.[0];
+
+  if (!token) return '';
+  const t = token.toLowerCase();
+  if (/aarch64|arm64|arm/i.test(t)) return 'arm';
+  if (/x86_64|x64|amd64/i.test(t)) return 'x64';
+  if (/x86|i386|i686/i.test(t)) return 'x86';
+  return t;
+}
+
+export function handleDownloadLink(
+  { os, architecture }: UserOSState,
+  downloadLinks: string[]
+) {
+  const items = downloadLinks.map(link => {
+    const urlEnd = link.split('/').pop() ?? '';
+    const name = urlEnd;
+    let ext = '';
+    if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
+    else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
+    else if (name.endsWith('.AppImage')) ext = '.AppImage';
+    else if (name.endsWith('.dmg')) ext = '.dmg';
+    else if (name.endsWith('.exe')) ext = '.exe';
+    else {
+      const m = name.match(/(\.[^./]+)$/);
+      ext = m ? m[0] : '';
+    }
+
+    return { link, name, ext, arch: normalizeArch(name) };
+  });
+
+  const detectedArch = normalizeArch(architecture || '');
+
+  function pickByExts(exts: string[], preferArch?: string) {
+    // prefer both ext + arch
+    for (const ext of exts) {
+      const found = items.find(it => it.ext === ext && it.arch === preferArch);
+      if (found) return found.link;
+    }
+    // then any with ext and unspecified arch
+    const withExt = items.find(
+      it => exts.includes(it.ext) && (!preferArch || it.arch === '')
+    );
+    if (withExt) return withExt.link;
+    // then any with ext
+    const anyExt = items.find(it => exts.includes(it.ext));
+    return anyExt ? anyExt.link : '';
+  }
+
+  if (os === 'WIN') {
+    return pickByExts(['.exe'], detectedArch) || '';
+  }
+
+  if (os === 'MAC') {
+    // prefer .dmg files
+    return pickByExts(['.dmg'], detectedArch) || '';
+  }
+
+  if (os === 'LINUX') {
+    // prefer AppImage, then .app.tar.gz, then .tar.gz
+    return (
+      pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
+    );
+  }
+
+  return '';
+}
+
 function ShowExamDownload({
   data: {
     challengeNode: {
@@ -103,59 +175,9 @@ function ShowExamDownload({
     skip: !isSignedIn
   });
 
-  const os = useDetectOS();
+  const userOSState = useDetectOS();
 
   const { t } = useTranslation();
-
-  function handleDownloadLink(downloadLinks: string[]) {
-    const win = downloadLinks.find(link => link.match(/\.exe/));
-    const macARM = downloadLinks.find(
-      link => link.match(/aarch64/) && link.match(/\.dmg/)
-    );
-    const macX64 = downloadLinks.find(
-      link => link.match(/x64/) && link.match(/\.dmg/)
-    );
-
-    const linuxARM = downloadLinks.find(
-      link => link.match(/aarch64/) && link.match(/tar\.gz/)
-    );
-
-    const linuxX64 = downloadLinks.find(
-      link => link.match(/amd64/) && link.match(/AppImage/)
-    );
-
-    if (os.os === 'WIN') {
-      if (isEmpty(win)) return '';
-
-      return win;
-    }
-
-    if (os.os === 'MAC') {
-      if (os.architecture.toLowerCase() === 'arm') {
-        if (isEmpty(macARM)) return '';
-
-        return macARM;
-      } else {
-        if (isEmpty(macX64)) return '';
-
-        return macX64;
-      }
-    }
-
-    if (os.os === 'LINUX') {
-      if (os.architecture.toLowerCase() === 'arm') {
-        if (isEmpty(linuxARM)) return '';
-
-        return linuxARM;
-      } else {
-        if (isEmpty(linuxX64)) return '';
-
-        return linuxX64;
-      }
-    }
-
-    return '';
-  }
 
   useEffect(() => {
     async function checkLatestVersion() {
@@ -197,18 +219,17 @@ function ShowExamDownload({
         const { tag_name, assets } = latest;
         setLatestVersion(tag_name);
         const urls = assets.map(link => link.browser_download_url);
-        setDownloadLink(handleDownloadLink(urls));
+        setDownloadLink(handleDownloadLink(userOSState, urls));
         setDownloadLinks(urls);
       } catch {
         setLatestVersion(null);
       }
     }
 
-    if (os.os) {
+    if (userOSState.os) {
       void checkLatestVersion();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os]);
+  }, [userOSState]);
 
   const examId = examIdsQuery.data?.at(0)?.examId;
   const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
@@ -255,7 +276,11 @@ function ShowExamDownload({
                   missingPrerequisites={missingPrerequisites}
                 />
               ) : (
-                <Callout className='exam-qualified' variant='info'>
+                <Callout
+                  className='exam-qualified'
+                  variant='note'
+                  label={t('misc.note')}
+                >
                   <p>{t('learn.exam.qualified')}</p>
                 </Callout>
               ))}
@@ -289,7 +314,7 @@ function ShowExamDownload({
               )}
             </div>
             <Spacer size='xs' />
-            <Dropdown dropup>
+            <Dropdown block={true} dropup>
               <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
               <Dropdown.Menu>
                 {downloadLinks
@@ -337,31 +362,22 @@ function getRecommendedOs({
   arch: string;
   ext: string;
 }): string {
-  switch (arch) {
-    case 'x64':
-      switch (ext) {
-        case '.dmg':
-          return 'x64 MacOS';
-        case '.AppImage':
-        case '.app.tar.gz':
-          return 'x64 Linux';
-        default:
-          return 'x64 Windows';
-      }
-    case 'aarch64':
-      switch (ext) {
-        case '.dmg':
-          return 'ARM MacOS';
-        case '.app.tar.gz':
-          return 'ARM Linux';
-        default:
-          return 'ARM Windows';
-      }
-    case 'amd64':
-      return 'x64 Linux';
-    default:
-      return '';
-  }
+  const osToExt = {
+    MacOS: ['.dmg', '.app', '.app.tar.gz'],
+    Linux: ['.deb', '.rpm', '.AppImage', '.tar.gz', '.AppImage.tar.gz'],
+    Windows: ['.exe', '.msi']
+  } as const;
+  const archToHuman: Record<string, string> = {
+    x64: '64-bit',
+    aarch64: 'ARM',
+    amd64: '64-bit',
+    i386: '32-bit',
+    x86: '32-bit'
+  };
+
+  const os = Object.entries(osToExt).find(([_, exts]) => exts.includes(ext));
+
+  return `${archToHuman[arch] ?? arch} ${os ? os[0] : ''}`;
 }
 
 function getLatest(releases: GitProps[]): GitProps {

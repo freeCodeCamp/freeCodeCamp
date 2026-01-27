@@ -1,9 +1,19 @@
 {
   "name": "Introducing Yourself Practice",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-practice-introducing-yourself",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc7500da504f7042474b20", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "68dc7500da504f7042474b20", "title": "Task 1" },
+    { "id": "691b4af06279a3ef600b7a75", "title": "Task 2" },
+    { "id": "691b4fcd528ad6fa5c9d92d8", "title": "Task 3" },
+    { "id": "691df21215990703b62b16f4", "title": "Task 4" },
+    { "id": "691df74516743f1713c969df", "title": "Task 5" },
+    { "id": "69388c66c337177e2c195146", "title": "Task 6" },
+    { "id": "69389800ad6b2ca59892ca90", "title": "Task 7" },
+    { "id": "6938994c3e24e1c766788029", "title": "Task 8" },
+    { "id": "691dfc4cae38c3202a069616", "title": "Task 9" }
+  ],
   "blockLabel": "practice"
 }

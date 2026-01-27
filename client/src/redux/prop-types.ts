@@ -1,11 +1,12 @@
 import { HandlerProps } from 'react-reflex';
-import {
+import type {
   ChallengeLang,
   SuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
+} from '@freecodecamp/shared/config/curriculum';
+import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -206,7 +207,7 @@ type InteractiveEditorNodule = {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
@@ -246,6 +247,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
+    saveSubmissionToDB?: boolean;
     scene: FullScene;
     solutions: {
       [T: string]: FileKeyChallenge;
@@ -309,6 +311,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    saveSubmissionToDB?: boolean;
   };
 };
 
@@ -422,6 +425,7 @@ export type User = {
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  isEmailVerified: boolean;
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
@@ -433,6 +437,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -445,7 +450,7 @@ export type User = {
   username: string;
   website: string;
   yearsTopContributor: string[];
-} & ClaimedCertifications;
+} & CertificationFlags;
 
 export type ProfileUI = {
   isLocked: boolean;
@@ -457,33 +462,8 @@ export type ProfileUI = {
   showName: boolean;
   showPoints: boolean;
   showPortfolio: boolean;
+  showExperience: boolean;
   showTimeLine: boolean;
-};
-
-export type ClaimedCertifications = {
-  is2018DataVisCert: boolean;
-  isA2EnglishCert: boolean;
-  isApisMicroservicesCert: boolean;
-  isBackEndCert: boolean;
-  isDataVisCert: boolean;
-  isEmailVerified: boolean;
-  isCollegeAlgebraPyCertV8: boolean;
-  isFoundationalCSharpCertV8: boolean;
-  isFrontEndCert: boolean;
-  isFrontEndLibsCert: boolean;
-  isFullStackCert: boolean;
-  isInfosecQaCert: boolean;
-  isJavascriptCertV9: boolean;
-  isQaCertV7: boolean;
-  isInfosecCertV7: boolean;
-  isJsAlgoDataStructCert: boolean;
-  isRelationalDatabaseCertV8: boolean;
-  isRespWebDesignCert: boolean;
-  isRespWebDesignCertV9: boolean;
-  isSciCompPyCertV7: boolean;
-  isDataAnalysisPyCertV7: boolean;
-  isMachineLearningPyCertV7: boolean;
-  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -532,6 +512,7 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
@@ -544,6 +525,16 @@ export type PortfolioProjectData = {
   title: string;
   url: string;
   image: string;
+  description: string;
+};
+
+export type ExperienceData = {
+  id: string;
+  title: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
   description: string;
 };
 

@@ -207,6 +207,8 @@
     "certification-heading": "獲得以下免費認證：",
     "core-certs-heading": "推薦課程（測試版）：",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
@@ -281,7 +283,7 @@
     "disabled": "如果設置爲僅自己可見，其他人將無法訪問你的認證。",
     "private-name": "如果你將名字設置爲私密，你的認證將不會顯示你的名字。",
     "claim-legacy": "當你獲得下列 freeCodeCamp 認證之後，你可以申請 {{cert}}:",
-    "for": "{{username}} 賬戶設置",
+    "for": "Settings for {{username}}",
     "sound-mode": "爲整個網站添加令人愉快的吉他原聲音樂。在編輯器輸入、完成挑戰、申請認證等時刻，你將獲得音樂反饋。",
     "sound-volume": "營火音效音量",
     "scrollbar-width": "編輯器滾動條寬度",
@@ -321,6 +323,7 @@
       "my-heatmap": "我的熱圖",
       "my-certs": "我的認證",
       "my-portfolio": "我的作品集",
+      "my-experience": "My experience",
       "my-timeline": "我的時間線",
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
@@ -328,12 +331,13 @@
       "keyboard-shortcuts": "啓用鍵盤快捷鍵"
     },
     "headings": {
+      "account": "Account",
       "certs": "認證",
       "legacy-certs": "舊版認證",
       "honesty": "學術誠信條例",
       "internet": "你在各平臺的賬戶",
       "portfolio": "作品集設置",
-      "privacy": "隱私設置",
+      "privacy": "Privacy",
       "personal-info": "個人信息"
     },
     "danger": {
@@ -362,7 +366,7 @@
     },
     "email": {
       "missing": "你的賬戶未綁定郵箱。",
-      "heading": "郵件設置",
+      "heading": "Email",
       "not-verified": "你的郵箱已驗證。",
       "check": "請查看你的郵件，或<0>在此處請求新的驗證郵件</0>。",
       "current": "當前郵箱",
@@ -432,7 +436,24 @@
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
     "edit-my-profile": "編輯我的個人資料",
     "add-bluesky": "將此認證分享到 BlueSky",
-    "add-threads": "將此認證分享到 Threads"
+    "add-threads": "將此認證分享到 Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
@@ -694,7 +715,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -868,6 +889,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -929,7 +952,7 @@
     "linkedin": "鏈接到 {{username}} 的 LinkedIn",
     "github": "鏈接到 {{username}} 的 GitHub",
     "website": "鏈接到 {{username}} 的網站",
-    "twitter": "鏈接到 {{username}} 的 Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "訪問下個月",
     "previous-month": "訪問上個月",
     "first-page": "訪問第一頁",
@@ -964,7 +987,8 @@
     "terminal-output": "終端輸出",
     "not-available": "不可用",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
-    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "我們無法從你所選的供應商處獲取該電子郵件。請嘗試其他供應商，或者使用“繼續使用電子郵件”選項。",
@@ -984,6 +1008,7 @@
     "keyboard-shortcut-updated": "我們已更新你的鍵盤快捷鍵設置",
     "subscribe-to-quincy-updated": "我們已更新你對 Quincy 的電子郵件的訂閱",
     "portfolio-item-updated": "我們已更新你的作品集",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "郵箱格式無效",
     "email-valid": "你的電子郵件已成功更改，編碼愉快！",
     "bad-challengeId": "currentChallengeId 是無效的挑戰 ID",
@@ -1079,16 +1104,22 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "這個郵箱和你當前郵箱一樣",
     "invalid-email": "我們無法驗證你的郵箱，請確保填寫正確",
     "email-mismatch": "兩個新郵箱必須相同",
     "title-required": "必須填寫標題",
     "title-short": "標題太長",
     "title-long": "標題太短",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "我們無法驗證你的 URL，請確保填寫正確",
     "invalid-protocol": "URL 必須以 http 或 https 開頭",
     "url-not-image": "URL 必須直接鏈接到圖片文件",
@@ -1109,6 +1140,7 @@
     "issued": "發佈日期",
     "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>，<5>約 {{completionTime}} 課時</5>",
     "fulltextNoHours": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson 的簽名",
     "julia-liuson-signature": "Julia Liuson 的簽名",
     "project": {
@@ -1227,7 +1259,7 @@
       "foundational-c-sharp-with-microsoft": "微軟基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "微軟基礎 C# 認證",
       "a2-english-for-developers": "開發者 A2 英語",
-      "a2-english-for-developers-cert": "開發者 A2 英語認證",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開發者 B1 英語",
       "b1-english-for-developers-cert": "開發者 B1 英語認證",
       "responsive-web-design-v9": "Responsive Web Design",

@@ -9,7 +9,7 @@ import {
   SuperBlocks,
   SuperBlockStage,
   superBlockStages
-} from '../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import {
   superblockSchemaValidator,
   availableSuperBlocksValidator
@@ -146,7 +146,9 @@ describe('external curriculum data build', () => {
           stage !== SuperBlockStage.Next &&
           stage !== SuperBlockStage.Upcoming &&
           stage !== SuperBlockStage.Catalog &&
-          stage !== SuperBlockStage.Core
+          stage !== SuperBlockStage.Core &&
+          stage !== SuperBlockStage.Spanish &&
+          stage !== SuperBlockStage.Chinese
         );
       })
       .flatMap(([, superBlocks]) => superBlocks);

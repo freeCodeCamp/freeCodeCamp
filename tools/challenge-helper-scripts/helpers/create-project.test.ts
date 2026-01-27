@@ -156,6 +156,7 @@ describe('updateChapterModuleSuperblockStructure', () => {
               },
               {
                 dashedName: 'module2c1',
+                comingSoon: true,
                 blocks: ['block2']
               }
             ]
@@ -189,6 +190,7 @@ describe('updateChapterModuleSuperblockStructure', () => {
         chapters: [
           {
             dashedName: 'chapter2',
+            comingSoon: true,
             modules: [
               {
                 dashedName: 'module1c2',

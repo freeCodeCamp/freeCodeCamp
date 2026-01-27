@@ -1,13 +1,15 @@
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import type { ChallengeFile } from '@freecodecamp/shared/utils/polyvinyl';
 
-import type { ChallengeFile } from '../../../redux/prop-types';
-import { concatHtml } from '../rechallenge/builders';
 import {
   getTransformers,
   embedFilesInHtml,
   getPythonTransformers,
   getMultifileJSXTransformers
-} from '../rechallenge/transformers';
+} from '@freecodecamp/challenge-builder/transformers';
+import { concatHtml } from '@freecodecamp/challenge-builder/builders';
+import { runnerTypes } from '@freecodecamp/challenge-builder/build';
+
 import {
   runTestsInTestFrame,
   createMainPreviewFramer,
@@ -96,56 +98,6 @@ export function canBuildChallenge(challengeData: BuildChallengeData): boolean {
   const { challengeType } = challengeData;
   return Object.prototype.hasOwnProperty.call(buildFunctions, challengeType);
 }
-
-export async function buildChallenge(
-  challengeData: BuildChallengeData,
-  options: BuildOptions
-) {
-  const { challengeType } = challengeData;
-  const build = buildFunctions[challengeType];
-  if (build) {
-    return build(challengeData, options);
-  }
-  throw new Error(`Cannot build challenge of type ${challengeType}`);
-}
-
-export const runnerTypes: Record<
-  (typeof challengeTypes)[keyof typeof challengeTypes],
-  'javascript' | 'dom' | 'python'
-> = {
-  [challengeTypes.html]: 'dom',
-  [challengeTypes.js]: 'javascript',
-  [challengeTypes.backend]: 'dom',
-  [challengeTypes.zipline]: 'dom',
-  [challengeTypes.frontEndProject]: 'dom',
-  [challengeTypes.backEndProject]: 'dom',
-  [challengeTypes.pythonProject]: 'python',
-  [challengeTypes.jsProject]: 'javascript',
-  [challengeTypes.modern]: 'dom',
-  [challengeTypes.step]: 'dom',
-  [challengeTypes.quiz]: 'dom',
-  [challengeTypes.invalid]: 'dom',
-  [challengeTypes.video]: 'dom',
-  [challengeTypes.codeAllyPractice]: 'dom',
-  [challengeTypes.codeAllyCert]: 'dom',
-  [challengeTypes.multifileCertProject]: 'dom',
-  [challengeTypes.theOdinProject]: 'dom',
-  [challengeTypes.colab]: 'dom',
-  [challengeTypes.exam]: 'dom',
-  [challengeTypes.msTrophy]: 'dom',
-  [challengeTypes.multipleChoice]: 'dom',
-  [challengeTypes.python]: 'python',
-  [challengeTypes.dialogue]: 'dom',
-  [challengeTypes.fillInTheBlank]: 'dom',
-  [challengeTypes.multifilePythonCertProject]: 'python',
-  [challengeTypes.generic]: 'dom',
-  [challengeTypes.lab]: 'dom',
-  [challengeTypes.jsLab]: 'javascript',
-  [challengeTypes.pyLab]: 'python',
-  [challengeTypes.dailyChallengeJs]: 'javascript',
-  [challengeTypes.dailyChallengePy]: 'python',
-  [challengeTypes.review]: 'dom'
-};
 
 export async function getTestRunner(buildData: BuildChallengeData) {
   const { challengeType } = buildData;

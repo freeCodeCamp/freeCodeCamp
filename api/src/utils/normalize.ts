@@ -35,7 +35,7 @@ export const normalizeTwitter = (
   try {
     new URL(handleOrUrl);
   } catch {
-    url = `https://twitter.com/${handleOrUrl.replace(/^@/, '')}`;
+    url = `https://x.com/${handleOrUrl.replace(/^@/, '')}`;
   }
   return url ?? handleOrUrl;
 };
@@ -137,7 +137,8 @@ export const normalizeProfileUI = (
         showName: false,
         showPoints: false,
         showPortfolio: false,
-        showTimeLine: false
+        showTimeLine: false,
+        showExperience: false
       };
 };
 

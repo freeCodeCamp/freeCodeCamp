@@ -1,8 +1,8 @@
 {
   "name": "Certification Introduction",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-learn-certification-introduction",
-  "helpCategory": "English",
+  "helpCategory": "Chinese Curriculum",
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
@@ -11,11 +11,11 @@
     },
     {
       "id": "691fd70b91fd33630effdf6e",
-      "title": "Pinyin-Tone Input"
+      "title": "Pinyin Tone Input"
     },
     {
       "id": "691f071bd6a0ee105c5f571e",
-      "title": "Pinyin-Hanzi Input"
+      "title": "Pinyin-to-Hanzi Input"
     },
     {
       "id": "691ecaaed19d057a2870c77b",

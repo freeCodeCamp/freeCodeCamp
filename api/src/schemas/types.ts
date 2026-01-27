@@ -15,6 +15,7 @@ export const isCertMap = Type.Object({
   is2018DataVisCert: Type.Boolean(),
   isApisMicroservicesCert: Type.Boolean(),
   isInfosecQaCert: Type.Boolean(),
+  isPythonCertV9: Type.Boolean(),
   isQaCertV7: Type.Boolean(),
   isInfosecCertV7: Type.Boolean(),
   isFrontEndCert: Type.Boolean(),
@@ -25,8 +26,17 @@ export const isCertMap = Type.Object({
   isDataAnalysisPyCertV7: Type.Boolean(),
   isMachineLearningPyCertV7: Type.Boolean(),
   isRelationalDatabaseCertV8: Type.Boolean(),
+  isRelationalDatabaseCertV9: Type.Boolean(),
   isCollegeAlgebraPyCertV8: Type.Boolean(),
-  isFoundationalCSharpCertV8: Type.Boolean()
+  isFoundationalCSharpCertV8: Type.Boolean(),
+  isJsAlgoDataStructCertV8: Type.Boolean(),
+  isA1ChineseCert: Type.Boolean(),
+  isA2ChineseCert: Type.Boolean(),
+  isA2SpanishCert: Type.Boolean(),
+  isB1EnglishCert: Type.Boolean(),
+  isBackEndDevApisCertV9: Type.Boolean(),
+  isFullStackDeveloperCertV9: Type.Boolean(),
+  isFrontEndLibsCertV9: Type.Boolean()
 });
 
 export const file = Type.Object({
@@ -69,5 +79,16 @@ export const profileUI = Type.Object({
   showName: Type.Optional(Type.Boolean()),
   showPoints: Type.Optional(Type.Boolean()),
   showPortfolio: Type.Optional(Type.Boolean()),
-  showTimeLine: Type.Optional(Type.Boolean())
+  showTimeLine: Type.Optional(Type.Boolean()),
+  showExperience: Type.Optional(Type.Boolean())
+});
+
+export const experience = Type.Object({
+  id: Type.String(),
+  title: Type.String(),
+  company: Type.String(),
+  location: Type.Optional(Type.String()),
+  startDate: Type.String(),
+  endDate: Type.Optional(Type.String()),
+  description: Type.String()
 });

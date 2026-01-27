@@ -207,6 +207,8 @@
     "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "就職活動・技術面接に備える:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -281,7 +283,7 @@
     "disabled": "非公開に設定されている場合、認定証は無効化されます。",
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
     "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、{{cert}}を受け取ることができます。",
-    "for": "{{username}} さんのアカウント設定",
+    "for": "Settings for {{username}}",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
@@ -321,6 +323,7 @@
       "my-heatmap": "ヒートマップ",
       "my-certs": "認定証",
       "my-portfolio": "ポートフォリオ",
+      "my-experience": "My experience",
       "my-timeline": "タイムライン",
       "my-donations": "寄付ステータス",
       "night-mode": "ナイトモード",
@@ -328,12 +331,13 @@
       "keyboard-shortcuts": "キーボードショートカットを有効にする"
     },
     "headings": {
+      "account": "Account",
       "certs": "認定証",
       "legacy-certs": "レガシー認定証",
       "honesty": "学問的誠実性ポリシー",
       "internet": "他サービスのリンク",
       "portfolio": "ポートフォリオ設定",
-      "privacy": "プライバシー設定",
+      "privacy": "Privacy",
       "personal-info": "ユーザー情報"
     },
     "danger": {
@@ -362,7 +366,7 @@
     },
     "email": {
       "missing": "このアカウントに関連付けられているメールアドレスがありません。",
-      "heading": "Eメール設定",
+      "heading": "Email",
       "not-verified": "メールアドレスが確認されていません。",
       "check": "メールを確認するか、<0>こちらから新しい確認メールをリクエストしてください</0>。",
       "current": "現在のメールアドレス",
@@ -432,7 +436,24 @@
     "page-number": "{{pageNumber}} / {{totalPages}}",
     "edit-my-profile": "プロフィールを編集",
     "add-bluesky": "この認定証を Bluesky で共有",
-    "add-threads": "この認定証を Threads で共有"
+    "add-threads": "この認定証を Threads で共有",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp は皆様からの寄付により支えられている非課税の 501(c)(3) 慈善団体です。(United States Federal Tax Identification Number: 82-0779546)",
@@ -694,7 +715,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -868,6 +889,8 @@
   },
   "misc": {
     "coming-soon": "近日公開",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "オフラインのようです。進捗が保存されない可能性があります。",
     "server-offline": "サーバーに接続できませんでした。進捗状況が保存されなかった可能性があります。このメッセージが引き続き表示される場合は<0>サポート</0>までご連絡ください。",
     "unsubscribed": "購読解除が完了しました",
@@ -929,7 +952,7 @@
     "linkedin": "{{username}} さんの LinkedIn へのリンク",
     "github": "{{username}} さんの GitHub へのリンク",
     "website": "{{username}} さんのウェブサイトへのリンク",
-    "twitter": "{{username}} さんの Twitter へのリンク",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "最初のページへ移動",
@@ -964,7 +987,8 @@
     "terminal-output": "Terminal output",
     "not-available": "Not available",
     "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
-    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -984,6 +1008,7 @@
     "keyboard-shortcut-updated": "キーボードショートカット設定を更新しました",
     "subscribe-to-quincy-updated": "Quincy からのメールの購読設定を更新しました",
     "portfolio-item-updated": "ポートフォリオを更新しました",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "メールアドレスの形式が無効です",
     "email-valid": "メールアドレスは無事に変更されました。コーディングを楽しみましょう！",
     "bad-challengeId": "currentChallengeId は有効なチャレンジ ID ではありません",
@@ -1079,16 +1104,22 @@
       "err-3": "アンケートの保存中に問題が発生しました。",
       "success": "アンケートを送信しました。ご協力ありがとうございました。"
     },
-    "classroom-mode-updated": "クラスルームモード設定を更新しました。"
+    "classroom-mode-updated": "クラスルームモード設定を更新しました。",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "上限は 288 文字です。残り {{charsLeft}} 文字です。",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "このメールアドレスは現在のメールアドレスと同じです",
     "invalid-email": "有効なメールアドレスであることを確認できませんでした。正しいメールアドレスかご確認ください。",
     "email-mismatch": "新しいメールアドレスは両方とも同じである必要があります",
     "title-required": "タイトルは必須です",
     "title-short": "タイトルが短すぎます",
     "title-long": "タイトルが長すぎます",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "有効な URL であることを確認できませんでした。正しい URL かご確認ください。",
     "invalid-protocol": "URL は http もしくは https から始まる必要があります",
     "url-not-image": "画像ファイルに直接リンクする URL を入力してください",
@@ -1109,6 +1140,7 @@
     "issued": "発行日",
     "fulltext": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4> <5>(約 {{completionTime}} 時間相当)</5>",
     "fulltextNoHours": "<0>{{time}}</0> <1>{{user}}</1> <2>が</2> <3>{{title}}</3> <4>開発者認定講座を修了したことを証明します。</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson の署名",
     "julia-liuson-signature": "Julia Liuson の署名",
     "project": {
@@ -1227,7 +1259,7 @@
       "foundational-c-sharp-with-microsoft": "Microsoft 連携・基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "Microsoft 連携・基礎 C# 認定証",
       "a2-english-for-developers": "開発者のための A2 レベル英語",
-      "a2-english-for-developers-cert": "開発者のための A2 レベル英語認定証",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
       "b1-english-for-developers-cert": "開発者のための B1 レベル英語認定証",
       "responsive-web-design-v9": "Responsive Web Design",

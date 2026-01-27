@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -23,7 +23,6 @@ import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector
 } from '../redux/selectors';
 import type { User } from '../redux/prop-types';
@@ -44,7 +43,6 @@ const { apiLocation } = envData;
 // TODO: update types for actions
 type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
@@ -61,17 +59,10 @@ type ShowSettingsProps = {
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector,
-  (
-    showLoading: boolean,
-    user: User | null,
-    isSignedIn,
-    userToken: string | null
-  ) => ({
+  (showLoading: boolean, user: User | null, userToken: string | null) => ({
     showLoading,
     user,
-    isSignedIn,
     userToken
   })
 );
@@ -94,7 +85,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
-    isSignedIn,
     toggleSoundMode,
     toggleKeyboardShortcuts,
     resetEditorLayout,
@@ -106,8 +96,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     verifyCert,
     userToken
   } = props;
-
-  const isSignedInRef = useRef(isSignedIn);
 
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
@@ -127,12 +115,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (showLoading || !user) {
-    return <Loader fullScreen={true} />;
-  }
+  useEffect(() => {
+    if (!user) navigate(`${apiLocation}/signin`);
+  }, [user, navigate]);
 
-  if (!isSignedInRef.current) {
-    navigate(`${apiLocation}/signin`);
+  if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -154,6 +141,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFullStackCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -161,6 +150,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
+    isFrontEndLibsCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isB1EnglishCert,
+    isA2SpanishCert,
+    isA2ChineseCert,
+    isA1ChineseCert,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -241,15 +237,23 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               isInfosecQaCert={isInfosecQaCert}
               isJsAlgoDataStructCert={isJsAlgoDataStructCert}
               isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isPythonCertV9={isPythonCertV9}
               isQaCertV7={isQaCertV7}
               isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
               isRespWebDesignCert={isRespWebDesignCert}
               isRespWebDesignCertV9={isRespWebDesignCertV9}
               isSciCompPyCertV7={isSciCompPyCertV7}
               isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+              isB1EnglishCert={isB1EnglishCert}
+              isA2SpanishCert={isA2SpanishCert}
+              isA2ChineseCert={isA2ChineseCert}
+              isA1ChineseCert={isA1ChineseCert}
               username={username}
               verifyCert={verifyCert}
-              isEmailVerified={isEmailVerified}
             />
             <Spacer size='m' />
           </ScrollElement>

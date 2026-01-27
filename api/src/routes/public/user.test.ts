@@ -127,6 +127,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -188,6 +189,7 @@ const publicUserData = {
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
   isA2EnglishCert: testUserData.isA2EnglishCert,
+  isB1EnglishCert: testUserData.isB1EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -206,8 +208,10 @@ const publicUserData = {
   isJsAlgoDataStructCert: testUserData.isJsAlgoDataStructCert,
   isJsAlgoDataStructCertV8: testUserData.isJsAlgoDataStructCertV8,
   isMachineLearningPyCertV7: testUserData.isMachineLearningPyCertV7,
+  isPythonCertV9: testUserData.isPythonCertV9,
   isQaCertV7: testUserData.isQaCertV7,
   isRelationalDatabaseCertV8: testUserData.isRelationalDatabaseCertV8,
+  isRelationalDatabaseCertV9: testUserData.isRelationalDatabaseCertV9,
   isRespWebDesignCert: testUserData.isRespWebDesignCert,
   isRespWebDesignCertV9: testUserData.isRespWebDesignCertV9,
   isSciCompPyCertV7: testUserData.isSciCompPyCertV7,
@@ -218,7 +222,7 @@ const publicUserData = {
   points: 2,
   portfolio: testUserData.portfolio,
   profileUI: testUserData.profileUI,
-  twitter: 'https://twitter.com/foobar',
+  twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
   username: testUserData.username,
   usernameDisplay: testUserData.usernameDisplay,
@@ -250,6 +254,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showExperience: false,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -482,6 +487,7 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -492,7 +498,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 
