@@ -1,7 +1,7 @@
 import { Type } from '@fastify/type-provider-typebox';
 export const classroomGetUserIdSchema = {
   body: Type.Object({
-    email: Type.String({ format: 'email', maxLength: 1024 })
+    email: Type.String({ maxLength: 1024 })
   }),
   response: {
     200: Type.Object({ userId: Type.String() }),

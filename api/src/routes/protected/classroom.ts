@@ -18,6 +18,8 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
   done
 ) => {
   // Endpoint to retrieve a user's ID from a user's email.
+  // If we send a 404 error here, it will stop the entire classroom process from working.
+  // Instead, we indicate that the user was not found through a null response and continue.
   fastify.post(
     '/api/protected/classroom/get-user-id',
     {
@@ -26,6 +28,12 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
     async (request, reply) => {
       const { email } = request.body;
 
+      // Basic email validation - return empty userId for invalid emails
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        return reply.send({ userId: '' });
+      }
+
       try {
         // Find the user by email
         const user = await fastify.prisma.user.findFirst({
@@ -33,8 +41,6 @@ export const classroomRoutes: FastifyPluginCallbackTypebox = (
           select: { id: true }
         });
 
-        // If we send a 404 error here, it will stop the entire classroom process from working.
-        // So instead, we indicate that the user was not found and continue.
         if (!user) {
           return reply.send({ userId: '' });
         }

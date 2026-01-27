@@ -41,17 +41,21 @@ describe('classroom routes', () => {
     });
 
     describe('POST /api/protected/classroom/get-user-id', () => {
-      test('returns 400 for missing or invalid email', async () => {
+      test('returns 400 for missing email', async () => {
         const missingRes = await superPost(
           '/api/protected/classroom/get-user-id'
         ).send({});
 
+        expect(missingRes.status).toBe(400);
+      });
+
+      test('returns 200 with empty userId for invalid email format', async () => {
         const invalidRes = await superPost(
           '/api/protected/classroom/get-user-id'
         ).send({ email: 'not-an-email' });
 
-        expect(missingRes.status).toBe(400);
-        expect(invalidRes.status).toBe(400);
+        expect(invalidRes.status).toBe(200);
+        expect(invalidRes.body).toStrictEqual({ userId: '' });
       });
 
       test('returns 200 with empty userId when no classroom account matches email', async () => {
