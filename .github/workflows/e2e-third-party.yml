@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - "prod-**"
+      - 'prod-**'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
@@ -21,7 +21,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          submodules: "recursive"
+          submodules: 'recursive'
 
       - name: Checkout client-config
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
@@ -68,7 +68,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
-          submodules: "recursive"
+          submodules: 'recursive'
 
       - name: Create Image
         run: |
@@ -135,8 +135,9 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
+      - name: Install
         run: pnpm install
+
       - name: Start apps
         run: |
           docker compose -f docker/docker-compose.yml -f docker/docker-compose.e2e.yml up -d

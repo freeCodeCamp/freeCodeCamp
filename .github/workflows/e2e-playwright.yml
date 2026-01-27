@@ -8,8 +8,8 @@ on:
   # TODO: refactor with a workflow_call
   pull_request:
     branches:
-      - "main"
-      - "temp-**" # Temporary branches allowed on Upstream
+      - 'main'
+      - 'temp-**' # Temporary branches allowed on Upstream
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.event.workflow_run.head_branch || github.ref }}
@@ -27,7 +27,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
-          submodules: "recursive"
+          submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
@@ -78,7 +78,7 @@ jobs:
       - name: Checkout Source Files
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
         with:
-          submodules: "recursive"
+          submodules: 'recursive'
 
       - name: Create Image
         run: |
