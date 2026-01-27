@@ -27,9 +27,7 @@ RUN cd api && pnpm prisma generate
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 
-RUN pnpm turbo compile
-RUN pnpm build:curriculum
-RUN pnpm -F=api build
+RUN pnpm turbo -F=@freecodecamp/api build
 
 FROM node:24-bookworm AS deps
 RUN apt-get update && apt-get install -y jq
