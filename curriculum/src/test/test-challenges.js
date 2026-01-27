@@ -8,7 +8,7 @@ import {
   hasNoSolution
 } from '@freecodecamp/shared/config/challenge-types';
 import { getLines } from '@freecodecamp/shared/utils/get-lines';
-import { prefixDoctype } from '../../../client/src/templates/Challenges/utils/frame';
+import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
 
 import { getChallengesForLang } from '../get-challenges.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';

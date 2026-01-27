@@ -70,7 +70,7 @@ function buildSourceMap(challengeFiles: ChallengeFile[]): Source | undefined {
   return source;
 }
 
-export const buildFunctions = {
+const buildFunctions = {
   [challengeTypes.js]: buildJSChallenge,
   [challengeTypes.jsProject]: buildJSChallenge,
   [challengeTypes.html]: buildDOMChallenge,
@@ -105,6 +105,19 @@ export async function buildChallenge(
   }
   throw new Error(`Cannot build challenge of type ${challengeType}`);
 }
+
+export const prefixDoctype = ({
+  build,
+  sources
+}: {
+  build: string;
+  sources: Source;
+}) => {
+  // DOCTYPE should be the first thing written to the frame, so if the user code
+  // includes a DOCTYPE declaration, we need to find it and write it first.
+  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
+  return doctype + build;
+};
 
 export const runnerTypes: Record<
   (typeof challengeTypes)[keyof typeof challengeTypes],
@@ -155,7 +168,7 @@ type BuildResult = {
 // TODO: All the buildXChallenge files have a similar structure, so make that
 // abstraction (function, class, whatever) and then create the various functions
 // out of it.
-export async function buildDOMChallenge(
+async function buildDOMChallenge(
   {
     challengeFiles,
     required = [],
@@ -205,7 +218,7 @@ export async function buildDOMChallenge(
   };
 }
 
-export async function buildJSChallenge(
+async function buildJSChallenge(
   {
     challengeFiles,
     challengeType
@@ -248,7 +261,7 @@ function buildBackendChallenge({ url, challengeType }: BuildChallengeData) {
   };
 }
 
-export async function buildPythonChallenge({
+async function buildPythonChallenge({
   challengeFiles,
   challengeType
 }: BuildChallengeData): Promise<BuildResult> {
