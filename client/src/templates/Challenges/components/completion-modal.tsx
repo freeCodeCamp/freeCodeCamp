@@ -43,7 +43,6 @@ const mapStateToProps = createSelector(
       dashedName: string;
       id: string;
       challengeNumber: number;
-      title: string;
     },
     completedChallengesIds: string[],
     isOpen: boolean,
