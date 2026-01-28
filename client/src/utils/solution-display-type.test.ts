@@ -1,6 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import {
   bothLinks,
+  examDownload,
+  examResults,
+  examResultsAndDownload,
   invalidGithubLink,
   legacySolution,
   multifilePythonSolution,
@@ -33,5 +36,16 @@ describe('getSolutionDisplayType', () => {
   });
   it('should handle solutions with both links', () => {
     expect(getSolutionDisplayType(bothLinks)).toBe('showProjectAndGithubLinks');
+  });
+  it('should handle exam results', () => {
+    expect(getSolutionDisplayType(examResults)).toBe('showExamResults');
+  });
+  it('should handle exam download type with no exam results', () => {
+    expect(getSolutionDisplayType(examDownload)).toBe('noSolutionToDisplay');
+  });
+  it('should prioritize exam results over exam download type', () => {
+    expect(getSolutionDisplayType(examResultsAndDownload)).toBe(
+      'showExamResults'
+    );
   });
 });
