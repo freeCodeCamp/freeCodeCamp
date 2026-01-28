@@ -26,9 +26,8 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
-    "audit-challenges": "pnpm -w turbo compile && tsx ./src/challenge-auditor/index.ts",
-    "build": "tsx ./src/generate/build-curriculum",
-    "compile": "tsc",
+    "audit-challenges": "pnpm turbo setup && tsx ./src/challenge-auditor/index.ts",
+    "build": "tsc && tsx ./src/generate/build-curriculum",
     "type-check": "tsc --noEmit",
     "create-empty-steps": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/create-empty-steps",
     "create-next-challenge": "tsx --tsconfig ../tools/challenge-helper-scripts/tsconfig.json ../tools/challenge-helper-scripts/create-next-challenge",

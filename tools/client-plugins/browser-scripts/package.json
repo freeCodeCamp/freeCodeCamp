@@ -29,7 +29,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --max-warnings 0",
-    "compile": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production"
   },
   "type": "module",
   "keywords": [],
