@@ -47,6 +47,7 @@ type SuperBlockInfo = {
   blocks: Record<string, BlockInfo>;
   chapters?: Record<string, string>;
   modules?: Record<string, string>;
+  'module-intros'?: Record<string, { intro: string[]; note: string }>;
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
@@ -191,6 +192,16 @@ async function updateIntroJson({
     }
     if (!newIntro[superBlock].modules[module]) {
       newIntro[superBlock].modules[module] = moduleTitle;
+    }
+
+    if (!newIntro[superBlock]['module-intros']) {
+      newIntro[superBlock]['module-intros'] = {};
+    }
+    if (!newIntro[superBlock]['module-intros'][module]) {
+      newIntro[superBlock]['module-intros'][module] = {
+        note: '',
+        intro: ['']
+      };
     }
   }
 
