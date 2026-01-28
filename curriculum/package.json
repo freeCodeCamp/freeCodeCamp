@@ -8,6 +8,10 @@
     "node": ">=24",
     "pnpm": ">=10"
   },
+  "exports": {
+    "./file-handler": "./dist/file-handler.js",
+    "./build-certification": "./dist/build-certification.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
