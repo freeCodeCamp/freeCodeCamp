@@ -15,6 +15,11 @@ import {
 } from 'redux-saga/effects';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
+  buildChallenge,
+  canBuildChallenge
+} from '@freecodecamp/challenge-builder/build';
+
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import {
@@ -25,8 +30,6 @@ import {
 } from '../../../utils/challenge-request-helpers';
 import { playTone } from '../../../utils/tone';
 import {
-  buildChallenge,
-  canBuildChallenge,
   challengeHasPreview,
   getTestRunner,
   isJavaScriptChallenge,
