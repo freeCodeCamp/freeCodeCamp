@@ -7068,6 +7068,12 @@
           "Nestas aulas, você aprenderá sobre booleanos e condicionais em Python."
         ]
       },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
       "lecture-understanding-functions-and-scope": {
         "title": "Entendendo funções e escopo",
         "intro": [
