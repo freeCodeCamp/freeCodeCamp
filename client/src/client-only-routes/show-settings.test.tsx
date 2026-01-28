@@ -8,6 +8,8 @@ import ShowSettings from './show-settings';
 import { createStore } from '../redux/create-store';
 import { initialState } from '../redux';
 
+const testUsername = 'testuser';
+
 vi.mock('../utils/get-words');
 
 const { apiLocation } = envData;
@@ -51,5 +53,32 @@ describe('<ShowSettings />', () => {
     );
     expect(spy).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalledWith(`${apiLocation}/signin`);
+  });
+
+  it('renders profile note with link to user profile', () => {
+    const store = createStore({
+      app: {
+        ...initialState,
+        user: {
+          sessionUser: {
+            username: testUsername,
+            email: 'test@example.com',
+            completedChallenges: []
+          }
+        },
+        userFetchState: { pending: false, complete: true, errored: false }
+      }
+    });
+
+    const { container } = render(
+      <Provider store={store}>
+        <ShowSettings />
+      </Provider>
+    );
+
+    // Trans component renders the interpolated link - find it by href
+    // eslint-disable-next-line testing-library/no-container, testing-library/no-node-access
+    const profileLink = container.querySelector(`a[href="/${testUsername}"]`);
+    expect(profileLink).toBeInTheDocument();
   });
 });
