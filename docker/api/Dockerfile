@@ -22,14 +22,12 @@ RUN pnpm config set dedupe-peer-dependents false
 RUN pnpm install --frozen-lockfile --ignore-scripts
 RUN cd api && pnpm prisma generate
 
-# The api needs to source curriculum.json and build:curriculum relies on the
+# The api needs to source curriculum.json and the build process relies on the
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
 
-RUN pnpm turbo compile
-RUN pnpm build:curriculum
-RUN pnpm -F=api build
+RUN pnpm turbo -F=@freecodecamp/api build
 
 FROM node:24-bookworm AS deps
 RUN apt-get update && apt-get install -y jq

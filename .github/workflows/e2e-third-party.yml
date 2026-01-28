@@ -135,11 +135,8 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm turbo compile
-          pnpm run build:curriculum
+      - name: Install
+        run: pnpm install
 
       - name: Start apps
         run: |
