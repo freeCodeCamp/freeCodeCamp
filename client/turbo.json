@@ -3,9 +3,11 @@
   "extends": ["//"],
   "tasks": {
     "build": {
+      "env": ["FCC_*"],
       "outputs": ["public/**"]
     },
     "setup": {
+      "env": ["FCC_*"],
       "outputs": [
         "config/env.json",
         "i18n/locales/*.json",
