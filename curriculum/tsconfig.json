@@ -3,6 +3,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
+    "declarationMap": true,
     "target": "es2022",
     "module": "nodenext",
     "strict": true,
