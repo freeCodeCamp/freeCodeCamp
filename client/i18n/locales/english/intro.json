@@ -6951,6 +6951,12 @@
           "In these lessons, you will learn about numbers and mathematical operations in Python."
         ]
       },
+      "workshop-math-operations": {
+        "title": "Build A Bill Splitter",
+        "intro": [
+          "In this workshop you will build a bill splitter to demonstrate your knowledge of numbers and mathematical operations in Python"
+        ]
+      },
       "lecture-booleans-and-conditionals": {
         "title": "Booleans and Conditionals",
         "intro": [
@@ -7361,10 +7367,6 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
-      },
-      "workshop-math-operations": {
-        "title": "Build A Bill Splitter",
-        "intro": ["Build A Bill Splitter", ""]
       }
     }
   },
