@@ -45,7 +45,6 @@ _var.is_equivalent(_first) or _var.is_equivalent(_second)
 ```py
 import re
 
-
 medical_records = [
     {
         'patient_id': 'P1001',
@@ -81,17 +80,14 @@ medical_records = [
     }
 ]
 
-
 def find_invalid_records(
     patient_id, age, gender, diagnosis, medications, last_visit_id
 ):
-
---fcc-editable-region--
     constraints = {
-        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id)
-    }
 --fcc-editable-region--
-
+        'patient_id': isinstance(patient_id, str) and re.search('p', patient_id)
+--fcc-editable-region--
+    }
     return constraints
 
 def validate(data):

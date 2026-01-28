@@ -6957,6 +6957,12 @@
           "In these lessons, you will learn about booleans and conditionals in Python."
         ]
       },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
       "lecture-understanding-functions-and-scope": {
         "title": "Understanding Functions and Scope",
         "intro": [
@@ -7736,6 +7742,12 @@
         "title": "Working with Node Core Modules",
         "intro": [
           "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {
