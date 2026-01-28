@@ -12,8 +12,8 @@ import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
   createStepFile,

@@ -5,7 +5,7 @@ import matter from 'gray-matter';
 import { uniq } from 'lodash';
 
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
-import { parseCurriculumStructure } from '../../curriculum/src/build-curriculum.js';
+import { parseCurriculumStructure } from '@freecodecamp/curriculum/build-curriculum';
 import { parseMDSync } from '../challenge-parser/parser/index.js';
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
 import { getProjectPath } from './helpers/get-project-info.js';

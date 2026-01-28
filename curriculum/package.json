@@ -8,6 +8,14 @@
     "node": ">=24",
     "pnpm": ">=10"
   },
+  "exports": {
+    "./build-certification": "./dist/build-certification.js",
+    "./build-curriculum": "./dist/build-curriculum.js",
+    "./build-superblock": "./dist/build-superblock.js",
+    "./file-handler": "./dist/file-handler.js",
+    "./get-challenges": "./dist/get-challenges.js",
+    "./super-order": "./dist/super-order.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/freeCodeCamp/freeCodeCamp.git"
