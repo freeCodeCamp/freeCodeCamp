@@ -91,8 +91,8 @@ export const replacePrivateData = (user: RawUser) => {
     name: showName ? user.name : '',
     points: showPoints ? user.points : null,
     portfolio: showPortfolio ? user.portfolio : [],
-    education: showEducation ? user.education : [],
-    experience: showExperience ? user.experience : []
+    education: showEducation ? user.education.map(e => removeNulls(e)) : [],
+    experience: showExperience ? user.experience.map(e => removeNulls(e)) : []
   };
 };
 
