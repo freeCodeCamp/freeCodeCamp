@@ -32,6 +32,7 @@ const baseProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showEducation: false,
   showExperience: false,
   showHeatMap: false,
   showLocation: false,
