@@ -104,6 +104,28 @@ describe('<TimeLine />', () => {
       'https://learn.microsoft.com/en-us/users/developmentuser/'
     );
   });
+
+  it('does not render MS Learn link when username is missing', () => {
+    const propsWithoutUsername = {
+      completedMap: [
+        {
+          id: '5e46f802ac417301a38fb92b',
+          solution:
+            'https://learn.microsoft.com/api/gamestatus/achievements/123',
+          completedDate: 1604311988825
+        }
+      ]
+    };
+
+    // @ts-expect-error
+    render(<TimeLine {...propsWithoutUsername} />, store);
+
+    expect(
+      screen.queryByRole('link', {
+        name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
+      })
+    ).toBeNull();
+  });
 });
 
 const contents = 'This is not JS';
