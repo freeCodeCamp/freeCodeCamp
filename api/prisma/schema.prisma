@@ -65,6 +65,17 @@ type Experience {
   description String
 }
 
+type Education {
+  id           String
+  school       String
+  degree       String
+  fieldOfStudy String?
+  location     String?
+  startDate    String?
+  endDate      String?
+  description  String?
+}
+
 type ProfileUI {
   isLocked       Boolean? // Undefined
   showAbout      Boolean? // Undefined
@@ -76,6 +87,7 @@ type ProfileUI {
   showPoints     Boolean? // Undefined
   showPortfolio  Boolean? // Undefined
   showExperience Boolean? // Undefined
+  showEducation  Boolean? // Undefined
   showTimeLine   Boolean? // Undefined
 }
 
@@ -164,6 +176,7 @@ model user {
   picture                        String?
   portfolio                      Portfolio[]
   experience                     Experience[]
+  education                      Education[]
   profileUI                      ProfileUI? // Undefined
   progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   /// A random number between 0 and 1.

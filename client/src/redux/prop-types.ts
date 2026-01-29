@@ -438,6 +438,7 @@ export type User = {
   points: number;
   portfolio: PortfolioProjectData[];
   experience?: ExperienceData[];
+  education?: EducationData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -463,6 +464,7 @@ export type ProfileUI = {
   showPoints: boolean;
   showPortfolio: boolean;
   showExperience: boolean;
+  showEducation: boolean;
   showTimeLine: boolean;
 };
 
@@ -536,6 +538,17 @@ export type ExperienceData = {
   startDate: string;
   endDate?: string;
   description: string;
+};
+
+export type EducationData = {
+  id: string;
+  school: string;
+  degree: string;
+  fieldOfStudy?: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
+  description?: string;
 };
 
 export type FileKeyChallenge = {
