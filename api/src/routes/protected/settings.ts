@@ -167,6 +167,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               showPoints: req.body.profileUI.showPoints,
               showPortfolio: req.body.profileUI.showPortfolio,
               showExperience: req.body.profileUI.showExperience,
+              showEducation: req.body.profileUI.showEducation,
               showTimeLine: req.body.profileUI.showTimeLine
             }
           }

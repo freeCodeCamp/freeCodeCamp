@@ -17,6 +17,7 @@ const unlockedProfile = {
   showPoints: true,
   showPortfolio: true,
   showExperience: true,
+  showEducation: true,
   showTimeLine: true
 };
 

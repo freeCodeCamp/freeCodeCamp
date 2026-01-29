@@ -88,6 +88,7 @@ export function createUserInput(email: string) {
       showAbout: false,
       showCerts: false,
       showDonation: false,
+      showEducation: false,
       showExperience: false,
       showHeatMap: false,
       showLocation: false,

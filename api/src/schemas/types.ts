@@ -93,3 +93,14 @@ export const experience = Type.Object({
   endDate: Type.Optional(Type.String()),
   description: Type.String()
 });
+
+export const education = Type.Object({
+  id: Type.String(),
+  school: Type.String(),
+  degree: Type.String(),
+  fieldOfStudy: Type.Optional(Type.String()),
+  location: Type.Optional(Type.String()),
+  startDate: Type.Optional(Type.String()),
+  endDate: Type.Optional(Type.String()),
+  description: Type.Optional(Type.String())
+});
