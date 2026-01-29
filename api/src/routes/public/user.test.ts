@@ -127,6 +127,7 @@ const lockedProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -188,6 +189,7 @@ const publicUserData = {
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
   isA2EnglishCert: testUserData.isA2EnglishCert,
+  isB1EnglishCert: testUserData.isB1EnglishCert,
   isApisMicroservicesCert: testUserData.isApisMicroservicesCert,
   isBackEndCert: testUserData.isBackEndCert,
   isCheater: testUserData.isCheater,
@@ -252,6 +254,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showExperience: false,
         showHeatMap: true,
         showLocation: true,
         showName: true,
@@ -484,6 +487,7 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
+      experience: [],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -494,7 +498,8 @@ describe('get-public-profile helpers', () => {
         showName: true,
         showPoints: true,
         showPortfolio: true,
-        showTimeLine: true
+        showTimeLine: true,
+        showExperience: true
       }
     };
 

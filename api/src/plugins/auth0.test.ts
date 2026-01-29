@@ -12,13 +12,19 @@ import {
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { createUserInput } from '../utils/create-user.js';
-import { AUTH0_DOMAIN, HOME_LOCATION } from '../utils/env.js';
+import {
+  AUTH0_DOMAIN,
+  HOME_LOCATION,
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
+} from '../utils/env.js';
 import prismaPlugin from '../db/prisma.js';
 import cookies, { sign, unsign } from './cookies.js';
 import { auth0Client } from './auth0.js';
 import redirectWithMessage, { formatMessage } from './redirect-with-message.js';
 import auth from './auth.js';
 import bouncer from './bouncer.js';
+import growthBook from './growth-book.js';
 import { newUser } from './__fixtures__/user.js';
 
 const COOKIE_DOMAIN = 'test.com';
@@ -40,6 +46,10 @@ describe('auth0 plugin', () => {
     await fastify.register(bouncer);
     await fastify.register(auth0Client);
     await fastify.register(prismaPlugin);
+    await fastify.register(growthBook, {
+      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+    });
   });
 
   describe('GET /signin/google', () => {

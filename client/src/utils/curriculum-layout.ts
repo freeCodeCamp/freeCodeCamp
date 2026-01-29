@@ -1,4 +1,4 @@
-import { challengeTypes } from '../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 // Show a single project in a certification layout
 

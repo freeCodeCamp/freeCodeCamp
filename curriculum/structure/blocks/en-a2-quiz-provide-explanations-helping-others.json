@@ -1,0 +1,14 @@
+{
+  "name": "Explaining Things to Others Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-provide-explanations-helping-others",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696038967cf5869566708d3d",
+      "title": "Explaining Things to Others Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

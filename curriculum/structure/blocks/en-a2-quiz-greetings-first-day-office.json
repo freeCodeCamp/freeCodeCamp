@@ -1,0 +1,14 @@
+{
+  "name": "First Day at The Office Greetings Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-greetings-first-day-office",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69601914119b98f0f0c530b8",
+      "title": "First Day at The Office Greetings Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

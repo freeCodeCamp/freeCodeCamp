@@ -8,7 +8,7 @@ import {
   vi
 } from 'vitest';
 
-import { Certification } from '../../../../shared/config/certification-settings.js';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import {
   defaultUserEmail,
   defaultUserId,
@@ -127,6 +127,7 @@ describe('certificate routes', () => {
           isCertMap: {
             is2018DataVisCert: false,
             isA2EnglishCert: false,
+            isB1EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
@@ -223,6 +224,7 @@ describe('certificate routes', () => {
             ],
             is2018DataVisCert: true,
             isA2EnglishCert: true,
+            isB1EnglishCert: true,
             isApisMicroservicesCert: true,
             isCollegeAlgebraPyCertV8: true,
             isDataAnalysisPyCertV7: true,

@@ -1,0 +1,14 @@
+{
+  "name": "Talking About Past Experiences Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-past-experiences",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6960415647143b144f20b94d",
+      "title": "Talking About Past Experiences Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

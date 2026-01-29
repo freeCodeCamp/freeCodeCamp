@@ -1394,11 +1394,19 @@
           "在第一节课程中，你将学习第一天上班可能遇到的情境中的常用表达方式。你将学习自我介绍、认识别人、询问午餐推荐以及从安保处领取门禁卡。"
         ]
       },
+      "en-a2-quiz-greetings-first-day-office": {
+        "title": "First Day at The Office Greetings Quiz",
+        "intro": ["", ""]
+      },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "学习在线上团队会议中自我介绍",
         "intro": [
           "在本课程中，你将学习如何进行个人介绍。你还将学习如何在小组会议中陈述自己的职业和分享自己的目标。"
         ]
+      },
+      "en-a2-quiz-introductions-online-team-meeting": {
+        "title": "Online Team Introductions Quiz",
+        "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "学习在休息室中的对话开场白",
@@ -1406,11 +1414,19 @@
           "在本课程中，你将学习如何在休闲场合开始对话。你还将学习如何谈论自己的爱好和个性特征。你甚至还将学习如何询问城市周边的情况。"
         ]
       },
+      "en-a2-quiz-conversation-starters-break-room": {
+        "title": "Break Room Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "学习如何谈论典型的工作日和任务",
         "intro": [
           "在本课程中，你将学习如何谈论你的工作日和你在工作场所执行的任务，以及如何与别人分享这些内容。课程主要关注用于描述你的活动的结构以及与任务相关的词汇。"
         ]
+      },
+      "en-a2-quiz-talk-about-typical-workday-tasks": {
+        "title": "Talking About Your Workday Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "学习如何讨论你的晨间或晚间例行活动",
@@ -1418,11 +1434,19 @@
           "在本课程中，你将学习如何谈论并与别人分享你的例行活动细节。课程的重点是用于谈论例行活动的结构和相关词汇。"
         ]
       },
+      "en-a2-quiz-discuss-morning-evening-routine": {
+        "title": "Daily Routines at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-describe-your-current-project": {
         "title": "学习如何描述你当前的项目",
         "intro": [
           "在本课程中，你将学习如何谈论自己参与的项目，以及如何告知别人自己在这些项目中的工作。课程的重点是用于告知别人的结构和相关词汇。"
         ]
+      },
+      "en-a2-quiz-describe-current-project": {
+        "title": "Describing Your Current Project Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "学习如何询问和分享教育和专业背景",
@@ -1430,11 +1454,19 @@
           "在本课程中，你将学习如何询问别人的教育和职业背景，并学习如何分享有关你的背景信息。"
         ]
       },
+      "en-a2-quiz-educational-professional-background": {
+        "title": "Educational and Professional Background Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "学习如何谈论兴趣与爱好",
         "intro": [
           "在本课程中，你将学习用不同的方式谈论自己的爱好和感兴趣的事物。你还将学习如何询问别人的爱好，以及如何邀请别人参加这些活动。"
         ]
+      },
+      "en-a2-quiz-talk-about-hobbies-interests": {
+        "title": "Talking About Hobbies and Interests Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
         "title": "Learn How to Discuss Roles and Responsibilities",
@@ -1442,11 +1474,19 @@
           "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
         ]
       },
+      "en-a2-quiz-discuss-roles-responsibilities": {
+        "title": "Roles and Responsibilities Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "学习如何就偏好和动机进行对话",
         "intro": [
           "In this course, you'll learn how to ask about what motivates people in their personal and professional lives, answer questions related to your motivations, and discuss about people's preferences."
         ]
+      },
+      "en-a2-quiz-preferences-motivations": {
+        "title": "Preferences and Motivations Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "学习如何讨论流行的技术趋势",
@@ -1454,11 +1494,19 @@
           "In this course, you'll learn how to discuss about things that everybody's talking about in technology these days."
         ]
       },
+      "en-a2-quiz-popular-technology-trends": {
+        "title": "Technology Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "学习如何在不同的互动中阐明信息",
         "intro": [
           "In this course, you'll learn how to check to see if the information you had is correct and how to ask for clarification when something is not clear to you."
         ]
+      },
+      "en-a2-quiz-clarify-information-interactions": {
+        "title": "Clarifying Information Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "学习如何在对话中使用基本编程词汇",
@@ -1466,11 +1514,19 @@
           "This course will present basic vocabulary related to programming. You'll learn how to ask questions related to basic programming concepts."
         ]
       },
+      "en-a2-quiz-basic-programming-vocabulary": {
+        "title": "Basic Programming Vocabulary Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "学习如何使用代码相关的概念和术语",
         "intro": [
           "In this course, you will be introduced to terms related to coding and learn how to use them in conversation."
         ]
+      },
+      "en-a2-quiz-code-related-concepts-terms": {
+        "title": "Code Concepts and Terms Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "学习如何谈论技术趋势和更新",
@@ -1478,11 +1534,19 @@
           "In this course, you will be introduced to some recent trends in the world of technology and learn how to discuss them in English."
         ]
       },
+      "en-a2-quiz-tech-trends-updates": {
+        "title": "Tech Updates and Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "学习如何在 GitHub 上帮助同事解决问题",
         "intro": [
           "In this course, you will learn expression related to how to ask for help from a coworker as well as how to offer them some assistance."
         ]
+      },
+      "en-a2-quiz-help-coworker-github-troubleshooting": {
+        "title": "Helping a Coworker on GitHub Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "学习如何在每周站立会议上分享你的进展",
@@ -1490,11 +1554,19 @@
           "This course will show you how to talk about your projects in terms of what you have already done and what you are currently doing in them."
         ]
       },
+      "en-a2-quiz-share-progress-weekly-meeting": {
+        "title": "Weekly Meeting Progress Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "学习如何要求澄清对代码的理解",
         "intro": [
           "In this course, you will see how you can ask questions to clarify things which are not very clear to you in a code."
         ]
+      },
+      "en-a2-quiz-ask-for-code-clarification": {
+        "title": "Asking for Code Clarification Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "学习如何为项目写代码文档",
@@ -1502,11 +1574,19 @@
           "This course will show you expressions related to what to do when documenting code."
         ]
       },
+      "en-a2-quiz-document-code-project": {
+        "title": "Documenting Code Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "学习如何阅读和理解代码文档",
         "intro": [
           "This course will present more expressions related to code documentation and bring tips on how to understand it."
         ]
+      },
+      "en-a2-quiz-read-understand-code-documentation": {
+        "title": "Understanding Code Documentation Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "学习如何分析代码文档",
@@ -1514,11 +1594,19 @@
           "In this course, you will see some ideas to help you to approach documentation and analyze it in simple terms."
         ]
       },
+      "en-a2-quiz-analyze-code-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "学习如何分享进度和成就",
         "intro": [
           "In this course, you will learn how to share your progress with coworkers and tell about what successes you've had in your projects."
         ]
+      },
+      "en-a2-quiz-share-progress-accomplishments": {
+        "title": "Sharing Progress and Achievements Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Learn How to Talk about Updates and Plans for Tasks and Projects",
@@ -1526,11 +1614,19 @@
           "This course will show you how to speak about the most recent advancements in your projects and about your plans."
         ]
       },
+      "en-a2-quiz-task-project-updates-plans": {
+        "title": "Task and Project Updates Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "学习如何表达同意或不同意",
         "intro": [
           "This course will introduce how to say that you agree with what another person says and to tell them politely that you do not agree with them."
         ]
+      },
+      "en-a2-quiz-express-agreement-disagreement": {
+        "title": "Expressing Agreement and Disagreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "学习如何提供技术支持和指导",
@@ -1538,17 +1634,29 @@
           "In this course, you will see ways of offering some help in terms of technical specifics to another person."
         ]
       },
+      "en-a2-quiz-offer-technical-support-guidance": {
+        "title": "Offering Technical Support Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-request-and-receive-guidance": {
         "title": "学习如何请求和接受指导",
         "intro": [
           "This course will show you how to ask for assistance from a coworker when you need it."
         ]
       },
+      "en-a2-quiz-request-receive-guidance": {
+        "title": "Requesting and Receiving Guidance Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "学习如何在帮助别人时提供解释",
         "intro": [
           "This course will provide you with ways to explain things to other people while assisting them."
         ]
+      },
+      "en-a2-quiz-provide-explanations-helping-others": {
+        "title": "Explaining Things to Others Quiz",
+        "intro": ["", ""]
       },
       "en-a2-certification-exam": {
         "title": "A2 English for Developers Certification Exam",
@@ -1573,11 +1681,19 @@
           "This course will show you ways of talking about places and events conversationally."
         ]
       },
+      "en-b1-quiz-describe-places-events": {
+        "title": "Describing Places and Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Learn How to Talk About Past Experiences",
         "intro": [
           "In this course, you will learn how to share experiences that you had in the past."
         ]
+      },
+      "en-b1-quiz-past-experiences": {
+        "title": "Talking About Past Experiences Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-activities": {
         "title": "Learn How to Talk About Past Activities",
@@ -1585,11 +1701,19 @@
           "In this course, you will learn how talk about things that you did."
         ]
       },
+      "en-b1-quiz-past-activities": {
+        "title": "Talking About Past Activities Quiz",
+        "intro": ["", ""]
+      },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Learn Present Perfect while Talking About Accessibility",
         "intro": [
           "In this course, you will learn to use the Present Perfect structure and learn a bit more about accessibility."
         ]
+      },
+      "en-b1-quiz-present-perfect-accessibility": {
+        "title": "Present Perfect and Accessibility Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-plan-future-events": {
         "title": "Learn How to Plan Future Events",
@@ -1597,11 +1721,19 @@
           "In this course, you will learn to use the different forms of the future to plan for upcoming events."
         ]
       },
+      "en-b1-quiz-plan-future-events": {
+        "title": "Planning Future Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-future-continuous-while-describing-actions": {
         "title": "Learn Future Continuous while Describing Actions",
         "intro": [
           "In this course, you will learn to use the Future Continuous tense, and how to describe actions to be performed."
         ]
+      },
+      "en-b1-quiz-future-continuous-actions": {
+        "title": "Future Continuous Actions Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-conditionals": {
         "title": "Learn How to Use Conditionals",
@@ -1609,11 +1741,19 @@
           "In this course, you will learn to use the conditional sentences to describe hypothetical outcomes depending on the fact that certain conditions are met."
         ]
       },
+      "en-b1-quiz-conditionals": {
+        "title": "Using Conditionals Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-feedback": {
         "title": "Learn How to Share Feedback",
         "intro": [
           "In this course, you will see ways of telling other people how you feel about their work, highlighting both their strengths and points for improvement."
         ]
+      },
+      "en-b1-quiz-share-feedback": {
+        "title": "Sharing Feedback Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-your-opinion": {
         "title": "Learn How to Share Your Opinion",
@@ -1621,11 +1761,19 @@
           "This course will show you how to express your ideas and feeling towards topics in a discussion."
         ]
       },
+      "en-b1-quiz-share-opinions": {
+        "title": "Sharing Opinions Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement": {
         "title": "Learn How to Express Agreement",
         "intro": [
           "In this course, you will learn to express agreement in different professional settings."
         ]
+      },
+      "en-b1-quiz-express-agreement": {
+        "title": "Expressing Agreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-disagreement": {
         "title": "Learn How to Express Disagreement",
@@ -1633,11 +1781,19 @@
           "In this course, you will learn to express disagreement in different professional settings."
         ]
       },
+      "en-b1-quiz-express-disagreement": {
+        "title": "Expressing Disagreement Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-concerns": {
         "title": "Learn How to Express Concerns",
         "intro": [
           "In this course, you will learn to inform other people that you are worried about things that might happen to your projects and tasks."
         ]
+      },
+      "en-b1-quiz-express-concerns": {
+        "title": "Expressing Concerns Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Learn How to Express Decisions Based on Comparisons",
@@ -1645,11 +1801,19 @@
           "In this course, you will learn how to compare things like tools or companies using words like better, faster, and the best. You will also practice having friendly conversations to give opinions and make decisions"
         ]
       },
+      "en-b1-quiz-decisions-comparisons": {
+        "title": "Making Decisions with Comparisons Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-modal-verbs": {
         "title": "Learn How to Use Modal Verbs",
         "intro": [
           "In this course, you will learn how to talk about rules, describe things that are necessary, and what could happen if they aren't. You'll also practice asking and answering questions clearly, and adding helpful details to your ideas."
         ]
+      },
+      "en-b1-quiz-modal-verbs": {
+        "title": "Using Modal Verbs Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-manage-a-conversation": {
         "title": "Learn How to Manage a Conversation",
@@ -1657,11 +1821,19 @@
           "In this course, you will learn how to manage conversations at work — like how to continue a talk after a break, change topics politely, or interrupt when needed. You'll also practice using useful expressions to keep the conversation clear, friendly, and organized."
         ]
       },
+      "en-b1-quiz-manage-conversations": {
+        "title": "Managing Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Learn How to Clarify Misunderstandings",
         "intro": [
           "In this course, you will learn how to ask for and give explanations when something is not clear, using polite questions and helpful responses. You'll also practice guessing the meaning of new words, describing problems, and clearing up misunderstandings in a friendly and professional way."
         ]
+      },
+      "en-b1-quiz-clarify-misunderstandings": {
+        "title": "Clarifying Misunderstandings Quiz",
+        "intro": ["", ""]
       },
       "learn-about-speculation-and-requests": {
         "title": "Learn About Speculation and Requests",
@@ -1669,11 +1841,19 @@
           "In this course, you will learn how to talk about things that should or could have happened in the past, and how to give suggestions or make polite requests. You'll also practice using expressions to guess what might have caused a problem and how to work together to solve it in a clear and respectful way."
         ]
       },
+      "en-b1-quiz-speculation-requests": {
+        "title": "Speculation and Requests Quiz",
+        "intro": ["", ""]
+      },
       "learn-about-adverbial-phrases": {
         "title": "Learn About Adverbial Phrases",
         "intro": [
           "In this course, you will learn how to use phrases that give more information about when, where, how often, or how much something happens. You'll also practice using these phrases to describe tasks, talk about plans, and explain results more clearly in your daily work."
         ]
+      },
+      "en-b1-quiz-adverbial-phrases": {
+        "title": "Adverbial Phrases Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Learn How to Use Adjectives in Conversations",
@@ -1681,11 +1861,19 @@
           "In this course, you will learn how to use adjectives to describe things clearly, compare options, and highlight important details in professional conversations. You'll also practice how to make your ideas stronger and more persuasive."
         ]
       },
+      "en-b1-quiz-adjectives-conversations": {
+        "title": "Using Adjectives in Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Learn Determiners and Advanced Use of Articles",
         "intro": [
           "In this course, you will learn how to use determiners to give clear information about quantity, choice, and distribution. You will also practice using articles in more advanced ways, especially in professional conversations about planning, tasks, and resources."
         ]
+      },
+      "en-b1-quiz-determiners-articles": {
+        "title": "Determiners and Articles Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-reported-speech": {
         "title": "Learn How to Use Reported Speech",
@@ -1693,11 +1881,19 @@
           "In this course, you will learn how to report what someone else said in a clear and natural way. You will also practice using the correct verb tenses and sentence structures to share feedback, explain situations, and talk about past events in professional conversations."
         ]
       },
+      "en-b1-quiz-reported-speech": {
+        "title": "Using Reported Speech Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Learn How to Use Prepositions According to Context",
         "intro": [
           "In this course, you will learn how to use prepositions to describe time, place, and direction clearly in everyday work situations. You will also practice talking about schedules, giving directions, and explaining where people or things are located using natural and accurate language."
         ]
+      },
+      "en-b1-quiz-prepositions-context": {
+        "title": "Using Prepositions by Context Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Learn How to Talk About Numbers with a Coworker",
@@ -1705,11 +1901,19 @@
           "In this course, you will learn how to use numbers to talk about tasks, schedules, budgets, and resources in the workplace. You will practice using cardinal and ordinal numbers, percentages, and fractions to organize work, explain progress, and share inventory or financial updates clearly with your team."
         ]
       },
+      "en-b1-quiz-numbers-at-work": {
+        "title": "Talking About Numbers at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Learn Common Phrasal Verbs and Idioms",
         "intro": [
           "In this course, you will learn how to use common phrasal verbs and idioms to sound more natural and confident at work. You will practice using expressions to give opinions, make suggestions, organize meetings, and talk about tasks in everyday professional conversations."
         ]
+      },
+      "en-b1-quiz-phrasal-verbs-idioms": {
+        "title": "Phrasal Verbs and Idioms Quiz",
+        "intro": ["", ""]
       },
       "en-b1-certification-exam": {
         "title": "B1 English for Developers Certification Exam",
@@ -1832,7 +2036,6 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Introduction to Node.js",
       "nodejs-core-libraries": "Node.js Core Libraries",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
@@ -5113,11 +5316,41 @@
       "classes-and-the-this-keyword": "Classes",
       "lab-bank-account-manager": "Build a Bank Account Management Program",
       "recursion": "Recursion",
+      "data-structures": "Data Structures",
+      "algorithms": "Algorithms",
+      "graphs-and-trees": "Graphs and Trees",
+      "dynamic-programming": "Dynamic Programming",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
       "lab-weather-app": "Build a Weather App",
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
+    },
+    "module-intros": {
+      "data-structures": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about linked lists, stacks, queues and more."
+        ]
+      },
+      "algorithms": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+        ]
+      },
+      "graphs-and-trees": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about graphs, trees and tries."
+        ]
+      },
+      "dynamic-programming": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn how dynamic programming works."
+        ]
+      }
     },
     "blocks": {
       "lecture-introduction-to-javascript": {
@@ -6201,6 +6434,12 @@
           "In this lecture, you will learn about recursion and the call stack."
         ]
       },
+      "lab-countdown": {
+        "title": "Build a Countdown",
+        "intro": [
+          "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
+        ]
+      },
       "workshop-decimal-to-binary-converter": {
         "title": "Build a Decimal to Binary Converter",
         "intro": [
@@ -6224,6 +6463,13 @@
       "quiz-recursion": {
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
+      },
+      "lecture-introduction-to-common-searching-and-sorting-algorithms": {
+        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
@@ -6609,6 +6855,12 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6683,53 +6935,51 @@
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your Python Certification."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "workshop-report-card-printer": {
+        "title": "Build a Report Card Printer",
+        "intro": [
+          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -6739,7 +6989,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -7154,14 +7404,6 @@
       "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Relational Databases Certification."
-        ]
-      }
-    },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
@@ -7353,6 +7595,12 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Relational Databases Certification Exam",
         "intro": [
@@ -7375,7 +7623,8 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
@@ -7390,10 +7639,16 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
+      "introduction-to-nodejs": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
@@ -7470,14 +7725,50 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Working with NodeJS and event driven architecture",
+        "intro": [
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
+      "lecture-working-with-node-core-modules": {
+        "title": "Working with Node Core Modules",
+        "intro": [
+          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
+        ]
       },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
         ]
       },
       "lecture-working-with-npm-scripts": {
@@ -7536,7 +7827,8 @@
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
       "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
-      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details",
+      "es-a1-chapter-describing-company-and-people": "Describing a Company and Its People"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
@@ -7545,13 +7837,34 @@
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions",
       "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
-      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details",
+      "es-a1-module-numbers-30-to-100": "Numbers 30 to 100",
+      "es-a1-module-describing-a-company": "Describing a Company",
+      "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
+      },
+      "es-a1-module-numbers-30-to-100": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
+        ]
+      },
+      "es-a1-module-describing-a-company": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
+        ]
+      },
+      "es-a1-module-describing-people-at-work": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
         ]
       }
     },
@@ -7707,6 +8020,78 @@
       "es-a1-practice-the-first-ten-numbers": {
         "title": "The First Ten Numbers Practice",
         "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-30-to-60": {
+        "title": "Numbers 30 to 60",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-a-company-basics": {
+        "title": "Describing a Company Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-61-to-100": {
+        "title": "Numbers 61 to 100",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-the-first-100-numbers": {
+        "title": "Using The First 100 Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-review-first-100-numbers": {
+        "title": "First 100 Numbers Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-30-to-100": {
+        "title": "Numbers 30 to 100 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-what-the-company-does": {
+        "title": "What the Company Does",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-asking-about-a-company": {
+        "title": "Asking about a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-company-profile": {
+        "title": "Company Profile",
+        "intro": ["", ""]
+      },
+      "es-a1-review-talking-about-a-company": {
+        "title": "Talking About a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-a-company": {
+        "title": "Describing a Company Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-people-at-work-basics": {
+        "title": "Describing People at Work Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-mini-biographies": {
+        "title": "Mini Biographies ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-mini-biographies": {
+        "title": "Asking About Mini Biographies",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-short-workplace-profile": {
+        "title": "Short Workplace Profile ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-short-workplace-profiles": {
+        "title": "Asking About Short Workplace Profiles",
+        "intro": ["", ""]
+      },
+      "es-a1-review-describing-people-at-work": {
+        "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-people-at-work": {
+        "title": "Describing People at Work",
+        "intro": ["", ""]
       }
     }
   },
@@ -7831,6 +8216,13 @@
         "title": "Working with Audio and Video Elements",
         "intro": [
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
         ]
       },
       "lab-html-audio-and-video-player": {
@@ -8032,6 +8424,12 @@
         "title": "Build a Tech Conference Schedule Table",
         "intro": [
           "In this workshop, you will build an accessible tech conference schedule table."
+        ]
+      },
+      "lab-debug-donation-form": {
+        "title": "Debug a Donation Form",
+        "intro": [
+          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
         ]
       },
       "lecture-introduction-to-aria": {
@@ -8419,6 +8817,13 @@
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
+      "lab-pricing-plans-layout": {
+        "title": "Design a Pricing Plans Layout Page",
+        "intro": [
+          "In this lab, you'll use flexbox to create a common three-card tier layout.",
+          "You'll practice aligning elements using flexbox properties like <code>flex</code>, <code>flex-grow</code>, <code>order</code>, and more."
+        ]
+      },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
@@ -8792,37 +9197,29 @@
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
     },
     "module-intros": {
-      "zh-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-initials-and-finals": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-greetings-and-basic-introductions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-asking-and-giving-basic-information": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "zh-a1-module-introducing-others": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues that introduce information about other people, such as name, role, nationality, and age."
+        ]
       },
       "zh-a1-module-getting-to-know-the-team": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
       },
       "zh-a1-module-talking-about-personal-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues about what people can and cannot do, such as languages and work skills."
+        ]
       },
       "zh-a1-module-discussing-team-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation about who can do which tasks on a team and how a project starts."
+        ]
       }
     },
     "blocks": {
@@ -8830,8 +9227,8 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Single Finals",
+      "zh-a1-learn-simple-finals": {
+        "title": "Simple Finals",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": {

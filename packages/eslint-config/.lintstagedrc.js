@@ -20,7 +20,7 @@ export const createLintStagedConfig = cwd => {
       return lintableFiles.length === 0
         ? prettierCommand
         : [
-            'eslint --max-warnings=0 --cache --fix ' + lintableFiles.join(' '),
+            'turbo lint -- --fix ' + lintableFiles.join(' '),
             ...prettierCommand
           ];
     },

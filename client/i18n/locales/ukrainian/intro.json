@@ -1400,11 +1400,19 @@
           "У цьому курсі ви навчитеся поширених висловів для ситуацій, з якими можете зіткнутись у перший робочий день. Ви дізнаєтесь про представлення, знайомство з іншими людьми, спілкування під час перерви та отримання картки доступу."
         ]
       },
+      "en-a2-quiz-greetings-first-day-office": {
+        "title": "First Day at The Office Greetings Quiz",
+        "intro": ["", ""]
+      },
       "learn-introductions-in-an-online-team-meeting": {
         "title": "Дізнайтесь про знайомство на онлайн-зустрічі",
         "intro": [
           "У цьому курсі ви навчитеся представляти себе, а також вказувати свою професію та ділитися цілями на групових зустрічах."
         ]
+      },
+      "en-a2-quiz-introductions-online-team-meeting": {
+        "title": "Online Team Introductions Quiz",
+        "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
         "title": "Дізнайтесь про початок розмови в кімнаті відпочинку",
@@ -1412,11 +1420,19 @@
           "У цьому курсі ви навчитеся розпочинати розмову в неформальних обставинах. Ви також дізнаєтеся, як говорити про свої хобі та особисті риси, і навіть навчитеся запитувати про місця у місті."
         ]
       },
+      "en-a2-quiz-conversation-starters-break-room": {
+        "title": "Break Room Conversations Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
         "title": "Дізнайтесь, як говорити про типовий робочий день та завдання",
         "intro": [
           "У цьому курсі ви навчитесь розповідати про свій робочий день і завдання, які виконуєте на роботі, а також як ділитися ними з іншими. Основний акцент зроблено на структурах, які використовують для опису діяльності, а також на словниковому запасі, пов’язаному з завданнями."
         ]
+      },
+      "en-a2-quiz-talk-about-typical-workday-tasks": {
+        "title": "Talking About Your Workday Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
         "title": "Дізнайтесь, як обговорювати ранкову або вечірню рутину",
@@ -1424,11 +1440,19 @@
           "У цьому курсі ви навчитесь розповідати про свою щоденну рутину та ділитися нею з іншими. Основний акцент зроблено на структурах, які використовують для опису рутини, а також на словниковому запасі, пов’язаному з щоденними завданнями."
         ]
       },
+      "en-a2-quiz-discuss-morning-evening-routine": {
+        "title": "Daily Routines at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-describe-your-current-project": {
         "title": "Дізнайтесь, як описувати поточний проєкт",
         "intro": [
           "У цьому курсі ви навчитесь розповідати про проєкти, в яких ви берете участь, та як інформувати інших про свою участь. Основний акцент зроблено на структурах, які використовують для інформування, а також на пов’язаному словниковому запасі."
         ]
+      },
+      "en-a2-quiz-describe-current-project": {
+        "title": "Describing Your Current Project Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
         "title": "Дізнайтесь, як запитувати та розповідати про освіту і досвід роботи",
@@ -1436,11 +1460,19 @@
           "У цьому курсі ви дізнаєтесь, як запитувати про освіту та досвід роботи іншої людини, а також навчитесь ділитися інформацією про власний досвід."
         ]
       },
+      "en-a2-quiz-educational-professional-background": {
+        "title": "Educational and Professional Background Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-hobbies-and-interests": {
         "title": "Дізнайтесь, як говорити про хобі та захоплення",
         "intro": [
           "У цьому курсі ви навчитесь говорити про хобі та речі, які вас цікавлять. Ви також дізнаєтесь, як запитувати про захоплення інших людей та як запропонувати їм скласти компанію."
         ]
+      },
+      "en-a2-quiz-talk-about-hobbies-interests": {
+        "title": "Talking About Hobbies and Interests Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
         "title": "Learn How to Discuss Roles and Responsibilities",
@@ -1448,11 +1480,19 @@
           "In this course, you'll discuss people's roles and responsibilities in a company and out of it. You'll discover how to ask about these roles and responsibilities and how to share information about you related to the topic."
         ]
       },
+      "en-a2-quiz-discuss-roles-responsibilities": {
+        "title": "Roles and Responsibilities Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
         "title": "Дізнайтесь, як говорити про вподобання та вмотивованість",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як запитувати про мотивацію в особистому і професійному житті, як відповідати на такі запитання та як обговорювати вподобання."
         ]
+      },
+      "en-a2-quiz-preferences-motivations": {
+        "title": "Preferences and Motivations Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
         "title": "Дізнайтесь, як обговорювати технологічні тренди",
@@ -1460,11 +1500,19 @@
           "У цьому курсі ви навчитеся обговорювати технології, про які зараз всі говорять."
         ]
       },
+      "en-a2-quiz-popular-technology-trends": {
+        "title": "Technology Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-clarify-information-in-different-interactions": {
         "title": "Дізнайтесь, як уточнити інформацію в різних ситуаціях",
         "intro": [
           "У цьому курсі ви навчитеся перевіряти інформацію та правильно просити уточнення, якщо щось не зрозуміло."
         ]
+      },
+      "en-a2-quiz-clarify-information-interactions": {
+        "title": "Clarifying Information Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
         "title": "Дізнайтесь, як використовувати базові слова з програмування",
@@ -1472,11 +1520,19 @@
           "Цей курс ознайомить вас з основною термінологією, пов’язаною з програмуванням. Ви навчитесь ставити запитання щодо основних понять програмування."
         ]
       },
+      "en-a2-quiz-basic-programming-vocabulary": {
+        "title": "Basic Programming Vocabulary Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-code-related-concepts-and-terms": {
         "title": "Дізнайтесь, як використовувати поняття та терміни з програмування",
         "intro": [
           "У цьому курсі ви ознайомитесь з термінами, пов’язаними з програмуванням, і навчитесь використовувати їх у розмові."
         ]
+      },
+      "en-a2-quiz-code-related-concepts-terms": {
+        "title": "Code Concepts and Terms Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
         "title": "Дізнайтесь, як обговорювати технологічні тренди та оновлення",
@@ -1484,11 +1540,19 @@
           "У цьому курсі ви ознайомитесь з деякими останніми трендами у світі технологій і навчитесь обговорювати їх англійською мовою."
         ]
       },
+      "en-a2-quiz-tech-trends-updates": {
+        "title": "Tech Updates and Trends Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
         "title": "Дізнайтесь, як допомогти колезі розв’язати проблему на GitHub",
         "intro": [
           "У цьому курсі ви вивчите вирази, пов’язані із проханням про допомогу у колеги, а також тим, як запропонувати свою допомогу."
         ]
+      },
+      "en-a2-quiz-help-coworker-github-troubleshooting": {
+        "title": "Helping a Coworker on GitHub Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
         "title": "Дізнайтесь, як ділитись своїм прогресом на щотижневій зустрічі",
@@ -1496,11 +1560,19 @@
           "Цей курс покаже, як говорити про свої проєкти в контексті того, що ви вже зробили та що виконуєте зараз."
         ]
       },
+      "en-a2-quiz-share-progress-weekly-meeting": {
+        "title": "Weekly Meeting Progress Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
         "title": "Дізнайтесь, як просити роз’яснення коду",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як ставити запитання, щоб уточнити те, що не зовсім зрозуміле у коді."
         ]
+      },
+      "en-a2-quiz-ask-for-code-clarification": {
+        "title": "Asking for Code Clarification Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
         "title": "Дізнайтесь, як документувати код проєкту",
@@ -1508,11 +1580,19 @@
           "Цей курс ознайомить вас з виразами, пов’язаними із документацією коду."
         ]
       },
+      "en-a2-quiz-document-code-project": {
+        "title": "Documenting Code Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-read-and-understand-code-documentation": {
         "title": "Дізнайтесь, як читати та розуміти документацію",
         "intro": [
           "У цьому курсі ще більше виразів, пов’язаних із документацією коду, а також декілька порад, як розуміти його."
         ]
+      },
+      "en-a2-quiz-read-understand-code-documentation": {
+        "title": "Understanding Code Documentation Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
         "title": "Дізнайтесь, як аналізувати документацію",
@@ -1520,11 +1600,19 @@
           "У цьому курсі ви дізнаєтесь, як правильно читати документацію та аналізувати її."
         ]
       },
+      "en-a2-quiz-analyze-code-documentation": {
+        "title": "Analyzing Code Documentation Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-progress-and-accomplishments": {
         "title": "Дізнайтесь, як ділитись прогресом та досягненнями",
         "intro": [
           "У цьому курсі ви навчитесь ділитись прогресом та досягненнями зі своїми колегами."
         ]
+      },
+      "en-a2-quiz-share-progress-accomplishments": {
+        "title": "Sharing Progress and Achievements Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
         "title": "Дізнайтесь, як говорити про оновлення та плани щодо завдань і проєктів",
@@ -1532,11 +1620,19 @@
           "У цьому курсі ви дізнаєтесь, як говорити про останні досягнення проєктів та про свої плани."
         ]
       },
+      "en-a2-quiz-task-project-updates-plans": {
+        "title": "Task and Project Updates Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-agreement-or-disagreement": {
         "title": "Дізнайтесь, як погоджуватись та не погоджуватись",
         "intro": [
           "Цей курс навчить, як погоджуватись та не погоджуватись з твердженнями інших."
         ]
+      },
+      "en-a2-quiz-express-agreement-disagreement": {
+        "title": "Expressing Agreement and Disagreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
         "title": "Дізнайтесь, як надавати технічну підтримку та супровід",
@@ -1544,17 +1640,29 @@
           "У цьому курсі ви дізнаєтесь, як пропонувати свою допомогу по технічних питаннях."
         ]
       },
+      "en-a2-quiz-offer-technical-support-guidance": {
+        "title": "Offering Technical Support Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-request-and-receive-guidance": {
         "title": "Дізнайтесь, як запитувати та отримувати супровід",
         "intro": [
           "Цей курс роз’яснить, як просити допомоги від колеги, коли це потрібно."
         ]
       },
+      "en-a2-quiz-request-receive-guidance": {
+        "title": "Requesting and Receiving Guidance Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-provide-explanations-when-helping-others": {
         "title": "Дізнайтесь, як надавати пояснення при допомозі іншим",
         "intro": [
           "Цей курс ознайомить з тим, як правильно надавати пояснення іншим людям."
         ]
+      },
+      "en-a2-quiz-provide-explanations-helping-others": {
+        "title": "Explaining Things to Others Quiz",
+        "intro": ["", ""]
       },
       "en-a2-certification-exam": {
         "title": "A2 English for Developers Certification Exam",
@@ -1577,13 +1685,25 @@
         "title": "Дізнайтесь, як описувати місця і події",
         "intro": ["У цьому курсі ви навчитеся говорити про місця та події."]
       },
+      "en-b1-quiz-describe-places-events": {
+        "title": "Describing Places and Events Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-experiences": {
         "title": "Дізнайтесь, як говорити про досвід",
         "intro": ["У цьому курсі ви навчитеся ділитись власним досвідом."]
       },
+      "en-b1-quiz-past-experiences": {
+        "title": "Talking About Past Experiences Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-past-activities": {
         "title": "Дізнайтесь, як говорити про дії з минулого",
         "intro": ["У цьому курсі ви навчитеся говорити про речі, які зробили."]
+      },
+      "en-b1-quiz-past-activities": {
+        "title": "Talking About Past Activities Quiz",
+        "intro": ["", ""]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
         "title": "Дізнайтесь про теперішній доконаний час, говорячи про доступність",
@@ -1591,11 +1711,19 @@
           "У цьому курсі ви навчитеся використовувати теперішній доконаний час і трішки дізнаєтесь про доступність."
         ]
       },
+      "en-b1-quiz-present-perfect-accessibility": {
+        "title": "Present Perfect and Accessibility Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-plan-future-events": {
         "title": "Дізнайтесь, як планувати майбутні події",
         "intro": [
           "У цьому курсі ви навчитеся використовувати майбутній час, щоб планувати різні події."
         ]
+      },
+      "en-b1-quiz-plan-future-events": {
+        "title": "Planning Future Events Quiz",
+        "intro": ["", ""]
       },
       "learn-future-continuous-while-describing-actions": {
         "title": "Дізнайтесь про майбутній тривалий час, описуючи дії",
@@ -1603,11 +1731,19 @@
           "У цьому курсі ви навчитеся використовувати майбутній тривалий час та описувати дії, які будуть виконані."
         ]
       },
+      "en-b1-quiz-future-continuous-actions": {
+        "title": "Future Continuous Actions Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-conditionals": {
         "title": "Дізнайтесь, як використовувати умовні речення",
         "intro": [
           "У цьому курсі ви навчитесь використовувати умовні речення, щоб описувати уявні ситуації, які залежать від певних умов."
         ]
+      },
+      "en-b1-quiz-conditionals": {
+        "title": "Using Conditionals Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-share-feedback": {
         "title": "Дізнайтесь, як ділитись фідбеком",
@@ -1615,11 +1751,19 @@
           "У цьому курсі ви дізнаєтесь, як ділитись зворотним зв’язком щодо роботи, підкреслюючи сильні сторони і моменти для покращення."
         ]
       },
+      "en-b1-quiz-share-feedback": {
+        "title": "Sharing Feedback Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-share-your-opinion": {
         "title": "Дізнайтесь, як ділитись своєю думкою",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як ділитись своїми ідеями і емоціями під час дискусії."
         ]
+      },
+      "en-b1-quiz-share-opinions": {
+        "title": "Sharing Opinions Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-agreement": {
         "title": "Дізнайтесь, як виражати згоду",
@@ -1627,11 +1771,19 @@
           "У цьому курсі ви навчитесь виражати згоду в будь-якій ситуації на роботі."
         ]
       },
+      "en-b1-quiz-express-agreement": {
+        "title": "Expressing Agreement Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-disagreement": {
         "title": "Дізнайтесь, як виражати незгоду",
         "intro": [
           "У цьому курсі ви навчитесь виражати незгоду в будь-якій ситуації на роботі."
         ]
+      },
+      "en-b1-quiz-express-disagreement": {
+        "title": "Expressing Disagreement Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-express-concerns": {
         "title": "Дізнайтесь, як виражати занепокоєння",
@@ -1639,11 +1791,19 @@
           "У цьому курсі ви навчитеся ділитись переживаннями щодо своїх проєктів і завдань."
         ]
       },
+      "en-b1-quiz-express-concerns": {
+        "title": "Expressing Concerns Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-express-decisions-based-on-comparisons": {
         "title": "Дізнайтесь, як виражати вибір на основі порівняння",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як порівнювати інструменти або компанії за допомогою таких слів, як better, faster та the best. Також ви практикуватимете дружні розмови, де висловлюють думку та приймають рішення."
         ]
+      },
+      "en-b1-quiz-decisions-comparisons": {
+        "title": "Making Decisions with Comparisons Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-modal-verbs": {
         "title": "Дізнайтесь, як використовувати модальні дієслова",
@@ -1651,11 +1811,19 @@
           "У цьому курсі ви навчитесь говорити про правила, а також описувати необхідні дії та можливий розвиток подій. Ви також попрактикуєтесь ставити запитання, чітко відповідати на них та надавати корисні деталі до своїх ідей."
         ]
       },
+      "en-b1-quiz-modal-verbs": {
+        "title": "Using Modal Verbs Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-manage-a-conversation": {
         "title": "Дізнайтесь, як керувати бесідою",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як керувати розмовою на роботі (наприклад, як продовжити розмову після перерви, ввічливо змінити тему або перервати за необхідності). Ви також попрактикуєте корисні вирази, які роблять розмову чіткою, дружньою та структурованою."
         ]
+      },
+      "en-b1-quiz-manage-conversations": {
+        "title": "Managing Conversations Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-clarify-misunderstandings": {
         "title": "Дізнайтесь, як уточнити непорозуміння",
@@ -1663,11 +1831,19 @@
           "У цьому курсі ви дізнаєтесь, як запитувати й давати пояснення, коли щось не зрозуміло, завдяки ввічливим запитанням та корисним відповідям. Ви також вгадуватимете значення нових слів, описуватимете проблеми та виправлятимете непорозуміння в дружній і професійній манері."
         ]
       },
+      "en-b1-quiz-clarify-misunderstandings": {
+        "title": "Clarifying Misunderstandings Quiz",
+        "intro": ["", ""]
+      },
       "learn-about-speculation-and-requests": {
         "title": "Дізнайтесь про припущення та запити",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як говорити про події, які мали або могли трапитися в минулому, а також як ділитись пропозиціями і робити ввічливі запити. Ви також будете використовувати вирази, які допомагають дізнатись причину проблеми і розв’язати її."
         ]
+      },
+      "en-b1-quiz-speculation-requests": {
+        "title": "Speculation and Requests Quiz",
+        "intro": ["", ""]
       },
       "learn-about-adverbial-phrases": {
         "title": "Дізнайтесь про прислівникові звороти",
@@ -1675,11 +1851,19 @@
           "У цьому курсі ви дізнаєтесь, як використовувати вирази, що дають більше інформації про те, коли, де, як часто або наскільки щось відбувається. Ви також будете використовувати ці вирази для опису завдань, обговорення планів та пояснення результатів у щоденній роботі."
         ]
       },
+      "en-b1-quiz-adverbial-phrases": {
+        "title": "Adverbial Phrases Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-adjectives-in-conversations": {
         "title": "Дізнайтесь, як використовувати прикметники",
         "intro": [
           "У цьому курсі ви навчитесь використовувати прикметники, щоб чітко описувати речі, порівнювати можливі варіанти та підкреслювати важливі деталі. Ви також дізнаєтесь, як зробити свої ідеї сильнішими та більш переконливими."
         ]
+      },
+      "en-b1-quiz-adjectives-conversations": {
+        "title": "Using Adjectives in Conversations Quiz",
+        "intro": ["", ""]
       },
       "learn-determiners-and-advanced-use-of-articles": {
         "title": "Дізнайтесь про означальні слова та поглиблене використання артиклів",
@@ -1687,11 +1871,19 @@
           "У цьому курсі ви навчитесь використовувати означальні слова, щоб ділитись чіткою інформацією про кількість, вибір і класифікацію. Ви також розглянете артиклі у складнішому контексті, особливо в професійних розмовах про планування, завдання та ресурси."
         ]
       },
+      "en-b1-quiz-determiners-articles": {
+        "title": "Determiners and Articles Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-use-reported-speech": {
         "title": "Дізнайтесь, як використовувати непряму мову",
         "intro": [
           "У цьому курсі ви навчитесь чітко звітувати про те, що сказав хтось інший. Ви також будете практикувати різні часи дієслів та структури речень для обміну зворотним зв’язком, пояснення ситуацій і обговорення минулих подій в професійних розмовах."
         ]
+      },
+      "en-b1-quiz-reported-speech": {
+        "title": "Using Reported Speech Quiz",
+        "intro": ["", ""]
       },
       "learn-how-to-use-prepositions-according-to-context": {
         "title": "Дізнайтесь, як використовувати прийменники відповідно до контексту",
@@ -1699,17 +1891,29 @@
           "У цьому курсі ви навчитесь використовувати прийменники, щоб чітко описувати час, місце та напрям у щоденних робочих ситуаціях. Ви також будете говорити про графіки, давати вказівки та пояснювати, де знаходяться люди чи речі."
         ]
       },
+      "en-b1-quiz-prepositions-context": {
+        "title": "Using Prepositions by Context Quiz",
+        "intro": ["", ""]
+      },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
         "title": "Дізнайтесь, як говорити про числа з колегою",
         "intro": [
           "У цьому курсі ви дізнаєтесь, як вживати числа, щоб говорити про завдання, графіки, бюджети та ресурси на робочому місці. Ви ознайомитесь з кількісними і порядковими числами, відсотками і дробами, щоб упорядковувати роботу, пояснювати прогрес й ділитись оновленнями щодо інвентаризації чи фінансування зі своєю командою."
         ]
       },
+      "en-b1-quiz-numbers-at-work": {
+        "title": "Talking About Numbers at Work Quiz",
+        "intro": ["", ""]
+      },
       "learn-common-phrasal-verbs-and-idioms": {
         "title": "Дізнайтесь про найпоширеніші фразові дієслова та ідіоми",
         "intro": [
           "У цьому курсі ви навчитесь використовувати поширені фразові дієслова та ідіоми, щоб звучати природніше й впевненіше на роботі. Ви будете використовувати різні вирази, щоб висловлювати думки, робити пропозиції, організовувати зустрічі та обговорювати завдання в щоденних робочих розмовах."
         ]
+      },
+      "en-b1-quiz-phrasal-verbs-idioms": {
+        "title": "Phrasal Verbs and Idioms Quiz",
+        "intro": ["", ""]
       },
       "en-b1-certification-exam": {
         "title": "B1 English for Developers Certification Exam",
@@ -1832,7 +2036,6 @@
       "git": "Git",
       "review-relational-databases": "Relational Databases Review",
       "exam-relational-databases": "Relational Databases Exam",
-      "introduction-to-nodejs": "Вступ до Node.js",
       "nodejs-core-libraries": "Основні бібліотеки Node.js",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP та модель вебстандартів",
@@ -5113,11 +5316,41 @@
       "classes-and-the-this-keyword": "Classes",
       "lab-bank-account-manager": "Build a Bank Account Management Program",
       "recursion": "Recursion",
+      "data-structures": "Data Structures",
+      "algorithms": "Algorithms",
+      "graphs-and-trees": "Graphs and Trees",
+      "dynamic-programming": "Dynamic Programming",
       "functional-programming": "Functional Programming",
       "asynchronous-javascript": "Asynchronous JavaScript",
       "lab-weather-app": "Build a Weather App",
       "review-javascript": "JavaScript Review",
       "javascript-certification-exam": "JavaScript Certification Exam"
+    },
+    "module-intros": {
+      "data-structures": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about linked lists, stacks, queues and more."
+        ]
+      },
+      "algorithms": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+        ]
+      },
+      "graphs-and-trees": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn about graphs, trees and tries."
+        ]
+      },
+      "dynamic-programming": {
+        "note": "Coming Spring 2026",
+        "intro": [
+          "In this module, you will learn how dynamic programming works."
+        ]
+      }
     },
     "blocks": {
       "lecture-introduction-to-javascript": {
@@ -6201,6 +6434,12 @@
           "In this lecture, you will learn about recursion and the call stack."
         ]
       },
+      "lab-countdown": {
+        "title": "Build a Countdown",
+        "intro": [
+          "For this lab, you will build a countdown function that returns an array of numbers counting down from given number to 1."
+        ]
+      },
       "workshop-decimal-to-binary-converter": {
         "title": "Build a Decimal to Binary Converter",
         "intro": [
@@ -6224,6 +6463,13 @@
       "quiz-recursion": {
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
+      },
+      "lecture-introduction-to-common-searching-and-sorting-algorithms": {
+        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
@@ -6609,6 +6855,12 @@
           "Test what you've learned about CSS Libraries and Frameworks with this quiz."
         ]
       },
+      "lecture-introduction-to-data-visualization": {
+        "title": "Introduction to Data Visualization",
+        "intro": [
+          "In these lessons, you will learn about basic data visualization concepts."
+        ]
+      },
       "lecture-introduction-to-typescript": {
         "title": "Introduction to TypeScript",
         "intro": [
@@ -6683,53 +6935,51 @@
       "review-python": "Python Review",
       "python-certification-exam": "Python Certification Exam"
     },
-    "module-intros": {
-      "python-classes-and-objects": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn how to work with classes, methods, attributes and properties. Then, you will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-object-oriented-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about Object-oriented programming concepts like encapsulation, inheritance, polymorphism, and more. You will build out workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-linear-data-structures": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about data structures including stacks, queues, linked lists, and more. You will build out a workshop and lab to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-algorithms": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about common algorithms including binary search, merge sort, selection sort, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-graphs-and-trees": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about graphs in computer science as well as adjacency lists, trees, tries, and more. You will build workshops and labs to practice these concepts and take a short quiz to test your knowledge."
-        ]
-      },
-      "python-dynamic-programming": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "In this module, you will learn about  dynamic programming and practice these concepts by building a fibonacci sequence lab. Then you will take a short quiz to test your knowledge."
-        ]
-      },
-      "python-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": ["Pass this exam to earn your Python Certification."]
-      }
-    },
     "blocks": {
       "lecture-introduction-to-python": {
         "title": "Introduction to Python",
         "intro": [
-          "In these lessons, you will learn the fundamentals of Python. You'll learn about variables, data types, operators, control flow, functions, and more."
+          "In these lessons, you will learn what Python is, how to set up your development environment."
+        ]
+      },
+      "lecture-understanding-variables-and-data-types": {
+        "title": "Understanding Variables and Data Types",
+        "intro": [
+          "In these lessons, you will learn about variables and data types in Python."
+        ]
+      },
+      "workshop-report-card-printer": {
+        "title": "Build a Report Card Printer",
+        "intro": [
+          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+        ]
+      },
+      "lecture-introduction-to-python-strings": {
+        "title": "Introduction to Strings",
+        "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "lecture-numbers-and-mathematical-operations": {
+        "title": "Numbers and Mathematical Operations",
+        "intro": [
+          "In these lessons, you will learn about numbers and mathematical operations in Python."
+        ]
+      },
+      "lecture-booleans-and-conditionals": {
+        "title": "Booleans and Conditionals",
+        "intro": [
+          "In these lessons, you will learn about booleans and conditionals in Python."
+        ]
+      },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
+      "lecture-understanding-functions-and-scope": {
+        "title": "Understanding Functions and Scope",
+        "intro": [
+          "In these lessons, you will learn about functions and scope in Python."
         ]
       },
       "workshop-caesar-cipher": {
@@ -6739,7 +6989,7 @@
         ]
       },
       "lab-rpg-character": {
-        "title": "Build an RPG character",
+        "title": "Build an RPG Character",
         "intro": [
           "In this lab you will practice basic python by building an RPG character."
         ]
@@ -7154,14 +7404,6 @@
       "lab-number-guessing-game": "Build a Number Guessing Game",
       "relational-databases-certification-exam": "Relational Databases Certification Exam"
     },
-    "module-intros": {
-      "relational-databases-certification-exam": {
-        "note": "Coming Winter 2025",
-        "intro": [
-          "Pass this exam to earn your Relational Databases Certification."
-        ]
-      }
-    },
     "blocks": {
       "lecture-working-with-code-editors-and-ides": {
         "title": "Working with Code Editors and IDEs",
@@ -7353,6 +7595,12 @@
           "Review relational databases concepts to prepare for the exam."
         ]
       },
+      "quiz-node-js-core-modules": {
+        "title": "NodeJS Core Modules Quiz",
+        "intro": [
+          "Test what you've learned about Node.js core modules with this quiz."
+        ]
+      },
       "exam-relational-databases-certification": {
         "title": "Relational Databases Certification Exam",
         "intro": [
@@ -7375,7 +7623,8 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "modules": {
-      "nodejs-core-libraries": "Node.js Core Libraries",
+      "introduction-to-nodejs": "Introduction to Node.js",
+      "nodejs-core-modules": "Node.js Core Modules",
       "node-package-manager": "Node Package Manager",
       "http-and-the-web-standards-model": "HTTP and the Web Standards Model",
       "rest-api-and-web-services": "REST API and Web Services",
@@ -7390,10 +7639,16 @@
       "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
     },
     "module-intros": {
-      "nodejs-core-libraries": {
+      "introduction-to-nodejs": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common Node.js core libraries including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
+          "In this module, you will learn the basics of working with Node.js."
+        ]
+      },
+      "nodejs-core-modules": {
+        "note": "Coming Late 2026",
+        "intro": [
+          "In this module, you will learn about common Node.js core modules including the fs, os, path and more. Then you will get to practice what you have learned through workshops and labs and test your knowledge through a short quiz."
         ]
       },
       "node-package-manager": {
@@ -7470,14 +7725,50 @@
       }
     },
     "blocks": {
+      "lecture-working-with-nodejs-and-event-driven-architecture": {
+        "title": "Working with NodeJS and event driven architecture",
+        "intro": [
+          "Learn about Node.js core libraries, how to install Node.js on your computer, and the advantages and disadvantages of using Node.js on the backend."
+        ]
+      },
+      "review-node-js-core-modules": {
+        "title": "Node JS Core Modules Review",
+        "intro": [
+          "Review Node JS Core Modules concepts to prepare for the upcoming quiz."
+        ]
+      },
+      "review-node-js-intro": {
+        "title": "NodeJS Intro Review",
+        "intro": [
+          "Review the basics of NodeJS to prepare for the upcoming quiz."
+        ]
+      },
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
+      "lecture-working-with-node-core-modules": {
+        "title": "Working with Node Core Modules",
+        "intro": [
+          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
+        ]
       },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",
         "intro": [
           "Learn the fundamentals of how web communication works through the HTTP request-response model, explore different types of web assets and responses, and understand how forms handle data submission using various HTTP methods."
+        ]
+      },
+      "lecture-introduction-to-npm": {
+        "title": "Introduction to npm",
+        "intro": [
+          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
         ]
       },
       "lecture-working-with-npm-scripts": {
@@ -7536,7 +7827,8 @@
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Welcome to A1 Professional Spanish",
       "es-a1-chapter-spanish-fundamentals": "Spanish Fundamentals",
       "es-a1-chapter-greetings-and-introductions": "Greetings and Introductions",
-      "es-a1-chapter-basic-personal-details": "Basic Personal Details"
+      "es-a1-chapter-basic-personal-details": "Basic Personal Details",
+      "es-a1-chapter-describing-company-and-people": "Describing a Company and Its People"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introduction and Certification Overview",
@@ -7545,13 +7837,34 @@
       "es-a1-module-introducing-yourself": "Introducing Yourself",
       "es-a1-module-first-questions": "First Questions",
       "es-a1-module-numbers-10-to-29": "Numbers 10 to 29",
-      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details"
+      "es-a1-module-sharing-your-personal-details": "Sharing Your Personal Details",
+      "es-a1-module-numbers-30-to-100": "Numbers 30 to 100",
+      "es-a1-module-describing-a-company": "Describing a Company",
+      "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
         "note": "Coming 2026",
         "intro": [
           "In this module, you will practice understanding short conversations that ask for personal details such as name, contact information, nationality, and age."
+        ]
+      },
+      "es-a1-module-numbers-30-to-100": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
+        ]
+      },
+      "es-a1-module-describing-a-company": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
+        ]
+      },
+      "es-a1-module-describing-people-at-work": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
         ]
       }
     },
@@ -7707,6 +8020,78 @@
       "es-a1-practice-the-first-ten-numbers": {
         "title": "The First Ten Numbers Practice",
         "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-30-to-60": {
+        "title": "Numbers 30 to 60",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-a-company-basics": {
+        "title": "Describing a Company Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-61-to-100": {
+        "title": "Numbers 61 to 100",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-the-first-100-numbers": {
+        "title": "Using The First 100 Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-review-first-100-numbers": {
+        "title": "First 100 Numbers Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-30-to-100": {
+        "title": "Numbers 30 to 100 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-what-the-company-does": {
+        "title": "What the Company Does",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-asking-about-a-company": {
+        "title": "Asking about a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-company-profile": {
+        "title": "Company Profile",
+        "intro": ["", ""]
+      },
+      "es-a1-review-talking-about-a-company": {
+        "title": "Talking About a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-a-company": {
+        "title": "Describing a Company Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-people-at-work-basics": {
+        "title": "Describing People at Work Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-mini-biographies": {
+        "title": "Mini Biographies ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-mini-biographies": {
+        "title": "Asking About Mini Biographies",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-short-workplace-profile": {
+        "title": "Short Workplace Profile ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-short-workplace-profiles": {
+        "title": "Asking About Short Workplace Profiles",
+        "intro": ["", ""]
+      },
+      "es-a1-review-describing-people-at-work": {
+        "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-people-at-work": {
+        "title": "Describing People at Work",
+        "intro": ["", ""]
       }
     }
   },
@@ -7831,6 +8216,13 @@
         "title": "Working with Audio and Video Elements",
         "intro": [
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
         ]
       },
       "lab-html-audio-and-video-player": {
@@ -8032,6 +8424,12 @@
         "title": "Build a Tech Conference Schedule Table",
         "intro": [
           "In this workshop, you will build an accessible tech conference schedule table."
+        ]
+      },
+      "lab-debug-donation-form": {
+        "title": "Debug a Donation Form",
+        "intro": [
+          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
         ]
       },
       "lecture-introduction-to-aria": {
@@ -8419,6 +8817,13 @@
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
+      "lab-pricing-plans-layout": {
+        "title": "Design a Pricing Plans Layout Page",
+        "intro": [
+          "In this lab, you'll use flexbox to create a common three-card tier layout.",
+          "You'll practice aligning elements using flexbox properties like <code>flex</code>, <code>flex-grow</code>, <code>order</code>, and more."
+        ]
+      },
       "lab-page-of-playing-cards": {
         "title": "Build a Page of Playing Cards",
         "intro": [
@@ -8792,37 +9197,29 @@
       "zh-a1-module-discussing-team-skills": "Discussing Team Skills"
     },
     "module-intros": {
-      "zh-a1-module-introduction-and-certification-overview": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-initials-and-finals": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-greetings-and-basic-introductions": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
-      "zh-a1-module-asking-and-giving-basic-information": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
-      },
       "zh-a1-module-introducing-others": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues that introduce information about other people, such as name, role, nationality, and age."
+        ]
       },
       "zh-a1-module-getting-to-know-the-team": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation that asks and answers simple questions about colleagues."
+        ]
       },
       "zh-a1-module-talking-about-personal-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding short monologues about what people can and cannot do, such as languages and work skills."
+        ]
       },
       "zh-a1-module-discussing-team-skills": {
-        "note": "Coming Winter 2025",
-        "intro": ["PLACEHOLDER: Write the module intro here."]
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will practice understanding a short conversation about who can do which tasks on a team and how a project starts."
+        ]
       }
     },
     "blocks": {
@@ -8830,8 +9227,8 @@
         "title": "Certification Introduction",
         "intro": ["", ""]
       },
-      "zh-a1-learn-single-finals": {
-        "title": "Single Finals",
+      "zh-a1-learn-simple-finals": {
+        "title": "Simple Finals",
         "intro": ["", ""]
       },
       "zh-a1-learn-initials": {

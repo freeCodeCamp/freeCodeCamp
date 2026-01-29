@@ -55,17 +55,28 @@ type Portfolio {
   url         String
 }
 
+type Experience {
+  id          String
+  title       String
+  company     String
+  location    String?
+  startDate   String
+  endDate     String?
+  description String
+}
+
 type ProfileUI {
-  isLocked      Boolean? // Undefined
-  showAbout     Boolean? // Undefined
-  showCerts     Boolean? // Undefined
-  showDonation  Boolean? // Undefined
-  showHeatMap   Boolean? // Undefined
-  showLocation  Boolean? // Undefined
-  showName      Boolean? // Undefined
-  showPoints    Boolean? // Undefined
-  showPortfolio Boolean? // Undefined
-  showTimeLine  Boolean? // Undefined
+  isLocked       Boolean? // Undefined
+  showAbout      Boolean? // Undefined
+  showCerts      Boolean? // Undefined
+  showDonation   Boolean? // Undefined
+  showHeatMap    Boolean? // Undefined
+  showLocation   Boolean? // Undefined
+  showName       Boolean? // Undefined
+  showPoints     Boolean? // Undefined
+  showPortfolio  Boolean? // Undefined
+  showExperience Boolean? // Undefined
+  showTimeLine   Boolean? // Undefined
 }
 
 type SavedChallengeFile {
@@ -152,6 +163,7 @@ model user {
   password                       String? // Undefined
   picture                        String?
   portfolio                      Portfolio[]
+  experience                     Experience[]
   profileUI                      ProfileUI? // Undefined
   progressTimestamps             Json? // ProgressTimestamp[] | Null[] | Int64[] | Double[] - TODO: NORMALIZE
   /// A random number between 0 and 1.
@@ -336,4 +348,17 @@ type DailyCodingChallengeApiLanguageTests {
 type DailyCodingChallengeApiLanguageChallengeFiles {
   contents String
   fileKey  String
+}
+
+// ----------------------
+
+model DripCampaign {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  userId       String   @db.ObjectId
+  creationDate DateTime @default(now()) @db.Date
+  email        String
+  variant      String
+
+  @@index([userId], map: "userId_1")
+  @@index([email], map: "email_1")
 }

@@ -1,11 +1,18 @@
 {
   "name": "Pinyin Practice",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "zh-a1-practice-pinyin",
   "helpCategory": "Chinese Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "6940554db3c6d9578a853ecf", "title": "Dialogue 1: I'm Tom" }
+    { "id": "69426c637200cb5f98ee2fdc", "title": "Task 1" },
+    { "id": "69428238612067fa962eb223", "title": "Task 2" },
+    { "id": "6942845aff741ee274efefda", "title": "Task 3" },
+    { "id": "694288477bfa5d2154e50661", "title": "Task 4" },
+    { "id": "694292d5daab1d341a5d7af8", "title": "Task 5" },
+    { "id": "6942945c5de260ab23081f99", "title": "Task 6" },
+    { "id": "694295229fb615d3ea6014d6", "title": "Task 7" },
+    { "id": "6942b3b6488b904284619fb5", "title": "Task 8" }
   ],
   "blockLabel": "practice"
 }

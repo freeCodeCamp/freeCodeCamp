@@ -1,0 +1,11 @@
+{
+  "name": "Using Modal Verbs Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-modal-verbs",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696045ab020bf0b70b5cb03d", "title": "Using Modal Verbs Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

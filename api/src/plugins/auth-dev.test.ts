@@ -9,11 +9,16 @@ import {
 import Fastify, { FastifyInstance } from 'fastify';
 
 import { checkCanConnectToDb, defaultUserEmail } from '../../vitest.utils.js';
-import { HOME_LOCATION } from '../utils/env.js';
+import {
+  HOME_LOCATION,
+  GROWTHBOOK_FASTIFY_API_HOST,
+  GROWTHBOOK_FASTIFY_CLIENT_KEY
+} from '../utils/env.js';
 import { devAuth } from '../plugins/auth-dev.js';
 import prismaPlugin from '../db/prisma.js';
 import auth from './auth.js';
 import cookies from './cookies.js';
+import growthBook from './growth-book.js';
 
 import { newUser } from './__fixtures__/user.js';
 
@@ -28,6 +33,10 @@ describe('dev login', () => {
     await fastify.register(devAuth);
     await fastify.register(prismaPlugin);
     await checkCanConnectToDb(fastify.prisma);
+    await fastify.register(growthBook, {
+      apiHost: GROWTHBOOK_FASTIFY_API_HOST,
+      clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
+    });
   });
 
   beforeEach(async () => {

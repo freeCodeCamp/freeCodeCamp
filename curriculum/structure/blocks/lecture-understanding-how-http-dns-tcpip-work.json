@@ -1,0 +1,26 @@
+{
+  "name": "Understanding how HTTP, DNS and TCP/IP work",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-how-http-dns-tcpip-work",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "69661c7d084c85542e76a597",
+      "title": "What is a server and how does it work on a higher level?"
+    },
+    {
+      "id": "69661d1a74e9aa63cb171957",
+      "title": "What is DNS and how does it work at a high level?"
+    },
+    {
+      "id": "69661d1d78d88af238dee253",
+      "title": "What are TCP/IP and HTTP and what is the basic syntax for HTTP?"
+    },
+    {
+      "id": "69661d2fc36411aa9e25ea64",
+      "title": "What are some common HTTP response codes?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

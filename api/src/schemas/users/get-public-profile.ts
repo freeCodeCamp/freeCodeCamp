@@ -53,6 +53,7 @@ export const getPublicProfile = {
               is2018DataVisCert: Type.Boolean(),
               is2018FullStackCert: Type.Boolean(),
               isA2EnglishCert: Type.Boolean(),
+              isB1EnglishCert: Type.Boolean(),
               isApisMicroservicesCert: Type.Boolean(),
               isBackEndCert: Type.Boolean(),
               isCheater: Type.Boolean(),

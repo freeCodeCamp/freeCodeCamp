@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect, Page } from '@playwright/test';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import translations from '../client/i18n/locales/english/translations.json';
 import tributePage from './fixtures/tribute-page.json';
 import curriculum from './fixtures/js-ads-projects.json';
@@ -74,11 +74,11 @@ const pasteContent = async (page: Page) => {
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
 test.beforeAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user');
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test.describe('Projects', () => {

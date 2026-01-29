@@ -33,7 +33,6 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XYZ Bookstore Page</title>
 </head>
 

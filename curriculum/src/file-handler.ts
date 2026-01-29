@@ -5,9 +5,13 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
-import type { Chapter } from '../../shared-dist/config/chapters.js';
-import type { SuperBlocks } from '../../shared-dist/config/curriculum.js';
-import type { Certification } from '../../shared-dist/config/certification-settings.js';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import type { BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type {
+  SuperBlocks,
+  ChallengeLang
+} from '@freecodecamp/shared/config/curriculum';
+import type { Certification } from '@freecodecamp/shared/config/certification-settings';
 
 const log = debug('fcc:file-handler');
 
@@ -153,7 +157,7 @@ export type Challenge = {
   missing?: boolean;
   challengeFiles?: ChallengeFile[];
   solutions?: ChallengeFile[][];
-  lang?: string;
+  lang?: ChallengeLang;
 };
 
 export interface BlockStructure {
@@ -166,7 +170,7 @@ export interface BlockStructure {
   disableLoopProtectTests?: boolean;
   disableLoopProtectPreview?: boolean;
   blockLayout: string;
-  blockLabel: string;
+  blockLabel?: BlockLabel;
   challengeOrder: Challenge[];
   dashedName: string;
   isUpcomingChange?: boolean;

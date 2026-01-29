@@ -64,7 +64,7 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
 const ajv = new Ajv({
   coerceTypes: 'array', // change data type of data to match type keyword
   useDefaults: true, // replace missing properties and items with the values from corresponding default keyword
-  removeAdditional: true, // remove additional properties
+  removeAdditional: 'all', // remove additional properties
   uriResolver,
   addUsedSchema: false,
   // Explicitly set allErrors to `false`.

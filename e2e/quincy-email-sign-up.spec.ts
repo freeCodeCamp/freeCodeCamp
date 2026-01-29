@@ -11,7 +11,7 @@ test.describe('Email sign-up page when user is not signed in', () => {
   test.use({ storageState: { cookies: [], origins: [] } });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/email-sign-up');
   });
 
@@ -71,7 +71,7 @@ test.describe('Email sign-up page when user is not signed in', () => {
 test.describe('Email sign-up page when user is signed in', () => {
   test.beforeEach(async ({ page }) => {
     // It's necessary to seed with a user that has not selected an email newsletter option.
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 
     await page.goto('/email-sign-up');
   });

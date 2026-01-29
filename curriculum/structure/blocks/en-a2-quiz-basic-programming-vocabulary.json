@@ -1,0 +1,14 @@
+{
+  "name": "Basic Programming Vocabulary Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-basic-programming-vocabulary",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696031494ea3c8653d81a092",
+      "title": "Basic Programming Vocabulary Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

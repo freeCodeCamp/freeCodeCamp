@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["es5", "dom", "ES2017"]
+    "lib": ["es5", "dom", "ES2017"],
+    "module": "node16",
+    "moduleResolution": "node16"
   },
   "extends": "../tsconfig-base.json"
 }

@@ -1,0 +1,11 @@
+{
+  "name": "Using Conditionals Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-conditionals",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "696043ed5bea9c7152b6e699", "title": "Using Conditionals Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

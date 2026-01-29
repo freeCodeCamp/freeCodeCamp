@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { AllChallengesInfo, ChallengeNode } from '../redux/prop-types';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   getCompletedPercentage,
   getCompletedChallengesInBlock,

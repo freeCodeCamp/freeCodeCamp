@@ -74,7 +74,18 @@ vi.useFakeTimers();
 
 describe('calculateStreaks', () => {
   beforeEach(() => vi.setSystemTime(new Date(2025, 0, 15)));
-  test('Should return 0 for the current streak if the user has not made progress today', () => {
+  test('Should maintain current streak if last activity was yesterday (grace period)', () => {
+    // Last activity on Jan 14, testing on Jan 15 (1 day grace period)
+    const { longestStreak, currentStreak } =
+      calculateStreaks(oldStreakCalendar);
+
+    expect(longestStreak).toBe(5);
+    expect(currentStreak).toBe(5);
+  });
+
+  test('Should reset current streak after grace period expires (2+ days without activity)', () => {
+    // Last activity on Jan 14, testing on Jan 16 (grace period expired)
+    vi.setSystemTime(new Date(2025, 0, 16));
     const { longestStreak, currentStreak } =
       calculateStreaks(oldStreakCalendar);
 

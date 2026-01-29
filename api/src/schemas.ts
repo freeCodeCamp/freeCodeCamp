@@ -24,6 +24,7 @@ export { updateMyAbout } from './schemas/settings/update-my-about.js';
 export { confirmEmail } from './schemas/settings/confirm-email.js';
 export { updateMyClassroomMode } from './schemas/settings/update-my-classroom-mode.js';
 export { updateMyEmail } from './schemas/settings/update-my-email.js';
+export { updateMyExperience } from './schemas/settings/update-my-experience.js';
 export { updateMyHonesty } from './schemas/settings/update-my-honesty.js';
 export { updateMyKeyboardShortcuts } from './schemas/settings/update-my-keyboard-shortcuts.js';
 export { updateMyPortfolio } from './schemas/settings/update-my-portfolio.js';

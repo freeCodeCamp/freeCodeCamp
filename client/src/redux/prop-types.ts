@@ -2,11 +2,11 @@ import { HandlerProps } from 'react-reflex';
 import type {
   ChallengeLang,
   SuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { CertificationFlags } from '../../../shared-dist/config/certification-settings';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
+} from '@freecodecamp/shared/config/curriculum';
+import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -207,7 +207,7 @@ type InteractiveEditorNodule = {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
@@ -437,6 +437,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -461,6 +462,7 @@ export type ProfileUI = {
   showName: boolean;
   showPoints: boolean;
   showPortfolio: boolean;
+  showExperience: boolean;
   showTimeLine: boolean;
 };
 
@@ -523,6 +525,16 @@ export type PortfolioProjectData = {
   title: string;
   url: string;
   image: string;
+  description: string;
+};
+
+export type ExperienceData = {
+  id: string;
+  title: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
   description: string;
 };
 

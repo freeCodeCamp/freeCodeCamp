@@ -2,13 +2,18 @@
   "name": "@freecodecamp/e2e",
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint --max-warnings 0"
+    "lint": "eslint --max-warnings 0",
+    "playwright:watch": "turbo setup && playwright test --ui-port=0",
+    "playwright:run": "turbo setup && playwright test",
+    "type-check": "tsc --noEmit"
   },
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "license": "BSD-3-Clause",
   "packageManager": "pnpm@10.20.0",
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
-    "eslint": "^9.39.1"
+    "@freecodecamp/shared": "workspace:*",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3"
   }
 }

@@ -207,7 +207,8 @@
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Currículo recomendado (ainda em beta):",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
-    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-spanish-heading": "Aprenda Espanhol Profissional:",
+    "learn-chinese-heading": "Aprenda chinês profissional:",
     "professional-certs-heading": "Certificações profissionais:",
     "interview-prep-heading": "Prepare-se para desenvolvedor em sua procura por emprego:",
     "legacy-curriculum-heading": "Nosso curso arquivado:",
@@ -322,6 +323,7 @@
       "my-heatmap": "Meu progresso",
       "my-certs": "Minhas certificações",
       "my-portfolio": "Meu portfólio",
+      "my-experience": "My experience",
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
@@ -434,7 +436,24 @@
     "page-number": "{{pageNumber}} de {{totalPages}}",
     "edit-my-profile": "Editar meu perfil",
     "add-bluesky": "Compartilhar esta certificação no BlueSky",
-    "add-threads": "Compartilhar esta certificação no Threads"
+    "add-threads": "Compartilhar esta certificação no Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "O freeCodeCamp é uma organização beneficente 501(c)(3), isenta de impostos e apoiada por doações (Número de identificação fiscal federal dos Estados Unidos: 82-0779546).",
@@ -696,7 +715,7 @@
     },
     "archive": {
       "title": "Nossos cursos arquivados",
-      "content-not-updated": "<0>Aviso:</0> o conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <1>nosso currículo atual</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -989,6 +1008,7 @@
     "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
     "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
     "portfolio-item-updated": "Atualizamos seu portfólio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Formato de e-mail inválido",
     "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
@@ -1085,16 +1105,21 @@
       "success": "Obrigado. Sua pesquisa foi enviada."
     },
     "classroom-mode-updated": "Atualizamos suas configurações do modo de sala de aula",
-    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
+    "user-fetch-error": "Não foi possível recuperar suas informações de usuário. Você ainda pode usar o site, mas seu progresso pode não ser salvo."
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Este e-mail é igual ao seu e-mail atual",
     "invalid-email": "Não foi possível validar seu e-mail, verifique se ele está correto",
     "email-mismatch": "Os dois novos endereços de e-mail devem ser iguais",
     "title-required": "O título é obrigatório",
     "title-short": "O título é muito curto",
     "title-long": "O título é muito longo",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Não foi possível validar seu URL corretamente. Certifique-se de que está correto",
     "invalid-protocol": "O URL deve começar com http ou https",
     "url-not-image": "O URL deve estar vinculado diretamente a um arquivo de imagem",
@@ -1115,6 +1140,7 @@
     "issued": "Emitido",
     "fulltext": "<0>Esta é a certificação de que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>do freeCodeCamp. org em {{time}},</4> <5>representando aproximadamente {{completionTime}} horas de curso.</5>",
     "fulltextNoHours": "<0>Certificamos que</0> <1>{{user}}</1> <2>completou com sucesso a certificação de desenvolvedor</2> <3>{{title}}</3> <4>em {{time}}</4>",
+    "fulltextLanguageExam": "<0>Certificamos que </0> <1>{{user}}</1> <2>passou no exame</2> <3>{{title}}</3> <4>em {{time}}</4> <5>demonstrando competência nas partes de gramática, escuta e leitura dos padrões CEFR para este nível com base no conteúdo tratado no currículo.</5>",
     "quincy-larson-signature": "Assinatura do Quincy Larson",
     "julia-liuson-signature": "Assinatura da Julia Liuson",
     "project": {
