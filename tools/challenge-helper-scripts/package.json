@@ -31,9 +31,10 @@
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@freecodecamp/curriculum": "workspace:*",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@total-typescript/ts-reset": "^0.6.1",
     "@freecodecamp/shared": "workspace:*",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
     "@vitest/ui": "^3.2.4",

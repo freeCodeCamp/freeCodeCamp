@@ -40,8 +40,8 @@ body {
 }
 ```
 
-- **`--property-name`**: This is the name of the custom property you're defining. Like all custom properties, it must start with two dashes. `--property-name` can be things like `<color>`, `<length>`, `<number>`, `<percentage>`, or more complex types.
-- **`syntax`**: This defines the type of the property. 
+- **`--property-name`**: This is the name of the custom property you're defining. Like all custom properties, it must start with two dashes.
+**`syntax`**: This defines the type of the property, which can be things like `<color>`, `<length>`, `<number>`, `<percentage>`, or more complex types.
 - **`inherits`**: This specifies whether the property should inherit its value from its parent element. 
 - **`initial-value`**: This sets the default value of the property.
 - **Gradient Example Using the `@property` Rule**: This example creates a gradient that smoothly animates when the element is hovered over.
