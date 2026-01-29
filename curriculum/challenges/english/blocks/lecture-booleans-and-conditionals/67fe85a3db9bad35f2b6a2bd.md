@@ -114,7 +114,7 @@ Here's the syntax:
 if condition:
    pass # Code to execute if condition is True
 elif condition2:
-   pass # Code to execute if condition2 is True
+   pass # Code to execute if condition1 is False and condition2 is True
 else:
    pass # Code to execute if all conditions are False
 ```
