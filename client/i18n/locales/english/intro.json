@@ -7361,6 +7361,13 @@
       "exam-python-certification": {
         "title": "Python Certification Exam",
         "intro": ["Pass this exam to earn your Python Certification"]
+      },
+      "workshop-kitchen-inventory-tracker": {
+        "title": "Build a Kitchen Inventory Tracker",
+        "intro": [
+          "In this workshop you will use functions to build an inventory tracker for a kitchen.",
+          "The tracker will manage and generate reports about the available ingredients in the kitchen."
+        ]
       }
     }
   },
