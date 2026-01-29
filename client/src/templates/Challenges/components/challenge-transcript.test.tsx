@@ -59,21 +59,35 @@ describe('<ChallengeTranscript />', () => {
     setSpy.mockRestore();
   });
 
-  it('should render the transcript as a table when isDialogue is true', () => {
+  it('should render the transcript as paragraphs when isDialogue is true', () => {
     store.set('fcc-transcript-expanded', true);
 
     render(
       <ChallengeTranscript
         {...baseProps}
-        transcript={'Hello\nWorld'}
+        transcript={'<p><b>Alice</b>: Hello</p><p><b>Bob</b>: World</p>'}
         shouldPersistExpanded={true}
         isDialogue={true}
       />
     );
-    const table = screen.getByRole('table');
-    expect(table).toBeVisible();
-    expect(screen.getByRole('cell', { name: 'Hello' })).toBeVisible();
-    expect(screen.getByRole('cell', { name: 'World' })).toBeVisible();
+
+    /* eslint-disable testing-library/no-node-access */
+    const aliceB = screen.getByText('Alice');
+    expect(aliceB).toBeVisible();
+    expect(aliceB.tagName).toBe('B');
+
+    const aliceP = aliceB.parentElement;
+    expect(aliceP?.tagName).toBe('P');
+    expect(aliceP?.textContent).toBe('Alice: Hello');
+
+    const bobB = screen.getByText('Bob');
+    expect(bobB).toBeVisible();
+    expect(bobB.tagName).toBe('B');
+
+    const bobP = bobB.parentElement;
+    expect(bobP?.tagName).toBe('P');
+    expect(bobP?.textContent).toBe('Bob: World');
+    /* eslint-enable testing-library/no-node-access */
   });
 
   it('should render the transcript with PrismFormatted when isDialogue is false', () => {
