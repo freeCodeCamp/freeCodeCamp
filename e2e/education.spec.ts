@@ -122,20 +122,11 @@ test.describe('Add Education Item', () => {
     );
   });
 
-  test('It should be possible to add an education item', async ({ page }) => {
-    await expect(
-      page.getByRole('button', { name: 'Add education' })
-    ).toBeDisabled();
-
-    await page.getByLabel('School').fill('freeCodeCamp University');
-    await page.getByLabel('Degree').fill('Bachelor of Science');
-    await page.getByLabel('Field of Study').fill('Computer Science');
-    await page.locator('input[name="education-startDate"]').fill('09/2018');
-    await page.locator('input[name="education-endDate"]').fill('05/2022');
-    await page.locator('input[name="education-location"]').fill('Online');
-    await page
-      .locator('textarea[name="education-description"]')
-      .fill('Studied computer science fundamentals');
+  test('It should be possible to add education with only required fields', async ({
+    page
+  }) => {
+    await page.getByLabel('School').fill('MIT');
+    await page.getByLabel('Degree').fill('PhD');
 
     await page.getByRole('button', { name: 'Save education' }).click();
     await page.getByRole('button', { name: 'Close' }).click();
@@ -144,11 +135,30 @@ test.describe('Add Education Item', () => {
     );
   });
 
-  test('It should be possible to add education with only required fields', async ({
-    page
-  }) => {
-    await page.getByLabel('School').fill('MIT');
-    await page.getByLabel('Degree').fill('PhD');
+  test('It should be possible to add an education item', async ({ page }) => {
+    await expect(
+      page.getByRole('button', { name: 'Add education' })
+    ).toBeDisabled();
+
+    await page.getByLabel('School').last().fill('freeCodeCamp University');
+    await page.getByLabel('Degree').last().fill('Bachelor of Science');
+    await page.getByLabel('Field of Study').last().fill('Computer Science');
+    await page
+      .locator('input[name="education-startDate"]')
+      .last()
+      .fill('09/2018');
+    await page
+      .locator('input[name="education-endDate"]')
+      .last()
+      .fill('05/2022');
+    await page
+      .locator('input[name="education-location"]')
+      .last()
+      .fill('Online');
+    await page
+      .locator('textarea[name="education-description"]')
+      .last()
+      .fill('Studied computer science fundamentals');
 
     await page.getByRole('button', { name: 'Save education' }).click();
     await page.getByRole('button', { name: 'Close' }).click();
