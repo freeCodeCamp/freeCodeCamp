@@ -164,10 +164,7 @@ const ShowProjectLinks = (props: ShowProjectLinksProps): JSX.Element => {
   const getCertHeading = (cert: Certification) => {
     if (cert === Certification.LegacyFullStack) {
       return 'certification.project.heading-legacy-full-stack';
-    } else if (
-      cert === Certification.FoundationalCSharp ||
-      currentCertifications.includes(cert)
-    ) {
+    } else if (currentCertifications.includes(cert)) {
       return 'certification.project.heading-exam';
     } else {
       return 'certification.project.heading';
