@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 20 to 99",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-numbers-20-to-99",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "697adbbec541e803216ddaa7", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

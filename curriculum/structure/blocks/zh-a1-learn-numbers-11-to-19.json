@@ -1,0 +1,11 @@
+{
+  "name": "Numbers 11 to 19 Practice",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-numbers-11-to-19",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "697adb710097fc432dec444c", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}
