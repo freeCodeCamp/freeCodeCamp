@@ -8,7 +8,11 @@ lang: en-US
 
 # --description--
 
-To pass the quiz, you must correctly answer at least 9 of the 10 questions below.
+This quiz checks your understanding of job interviews, education, and the `past simple` tense.
+
+To pass the quiz, you must correctly answer at least 18 of the 20 questions below.
+
+Read each question and choose the correct answer. There's only one correct answer for each question.
 
 # --quizzes--
 
@@ -18,219 +22,438 @@ To pass the quiz, you must correctly answer at least 9 of the 10 questions below
 
 #### --text--
 
-Placeholder question
+Which of the following is true about this sentence: `I studied computer science at college`?
 
 #### --distractors--
 
-Placeholder distractor 1
+The action is happening now.
 
 ---
 
-Placeholder distractor 2
+The action will happen soon.
 
 ---
 
-Placeholder distractor 3
+The action happens every day
 
 #### --answer--
 
-Placeholder answer
+The action happened in the past.
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which of the following is NOT an example of someone's `background`?
 
 #### --distractors--
 
-Placeholder distractor 1
+Their past job experience
 
 ---
 
-Placeholder distractor 2
+Their education history
 
 ---
 
-Placeholder distractor 3
+Their learned skills
 
 #### --answer--
 
-Placeholder answer
+Their favorite hobby
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is an `interview`?
 
 #### --distractors--
 
-Placeholder distractor 1
+A casual talk between coworkers
 
 ---
 
-Placeholder distractor 2
+A written test at school
 
 ---
 
-Placeholder distractor 3
+A team meeting at work
 
 #### --answer--
 
-Placeholder answer
+A formal meeting with questions
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the best answer to this question: `Can you tell me about your previous job position?`
 
 #### --distractors--
 
-Placeholder distractor 1
+`I was there for three years.`
 
 ---
 
-Placeholder distractor 2
+`I have a master's degree in computer science.`
 
 ---
 
-Placeholder distractor 3
+`I didn't study tech at a traditional university.`
 
 #### --answer--
 
-Placeholder answer
+`Sure, I was a programmer at Acme Tech.`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which sentence uses `to be` correctly in the past?
 
 #### --distractors--
 
-Placeholder distractor 1
+`Sophie were a designer.`
 
 ---
 
-Placeholder distractor 2
+`Alice and I was a team.`
 
 ---
 
-Placeholder distractor 3
+`Brian and Anna was in the meeting.`
 
 #### --answer--
 
-Placeholder answer
+`Tom was a developer.`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the correct question form of this sentence: `He was responsible for maintaining the database`?
 
 #### --distractors--
 
-Placeholder distractor 1
+`Did he was responsible for maintaining the database?`
 
 ---
 
-Placeholder distractor 2
+`He was responsible for maintaining the database?`
 
 ---
 
-Placeholder distractor 3
+`Did he responsible for maintaining the database?`
 
 #### --answer--
 
-Placeholder answer
+`Was he responsible for maintaining the database?`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+How would you ask about someone's educational background?
 
 #### --distractors--
 
-Placeholder distractor 1
+`Were there any specific projects?`
 
 ---
 
-Placeholder distractor 2
+`Could you tell me about your previous job responsibilities?`
 
 ---
 
-Placeholder distractor 3
+`What's your professional background in tech?`
 
 #### --answer--
 
-Placeholder answer
+`Were you educated in computer science?`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What does this question ask about: `Could you tell me about your previous roles and responsibilities?`
 
 #### --distractors--
 
-Placeholder distractor 1
+Your future career plans
 
 ---
 
-Placeholder distractor 2
+Your personal interests
 
 ---
 
-Placeholder distractor 3
+Your current daily tasks
 
 #### --answer--
 
-Placeholder answer
+Your past jobs and duties
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+Which phrase shows possession incorrectly?
 
 #### --distractors--
 
-Placeholder distractor 1
+`Anna's computer`
 
 ---
 
-Placeholder distractor 2
+`Designers' office`
 
 ---
 
-Placeholder distractor 3
+`James' project`
 
 #### --answer--
 
-Placeholder answer
-
+`Sophies idea`
 
 ### --question--
 
 #### --text--
 
-Placeholder question
+What is the correct negative form of this sentence: `He studied data science`?
 
 #### --distractors--
 
-Placeholder distractor 1
+`He didn't studied data science.`
 
 ---
 
-Placeholder distractor 2
+`He wasn't study data science.`
 
 ---
 
-Placeholder distractor 3
+`He not studied data science.`
 
 #### --answer--
 
-Placeholder answer
+`He didn't study data science.`
+
+### --question--
+
+#### --text--
+
+How do you say your main area of study?
+
+#### --distractors--
+
+`I majored at computer science.`
+
+---
+
+`I majored on computer science.`
+
+---
+
+`I majored with computer science.`
+
+#### --answer--
+
+`I majored in computer science.`
+
+### --question--
+
+#### --text--
+
+What is the correct question form of this sentence: `She worked with them for five years`?
+
+#### --distractors--
+
+`Was she worked with them for five years?`
+
+---
+
+`Did she worked with them for five years?`
+
+---
+
+`She worked with them for five years?`
+
+#### --answer--
+
+`Did she work with them for five years?`
+
+### --question--
+
+#### --text--
+
+How do you answer this question: `Did you work on any projects last year?`
+
+#### --distractors--
+
+`Yes, I didn't.` / `No, I did.`
+
+---
+
+`Yes, I was.` / `No, I wasn't.`
+
+---
+
+`Yes, I do.` / `No, I don't.`
+
+#### --answer--
+
+`Yes, I did.` / `No, I didn't.`
+
+### --question--
+
+#### --text--
+
+Which pair of irregular verbs is incorrect?
+
+#### --distractors--
+
+`get` → `got`
+
+---
+
+`meet` → `met`
+
+---
+
+`have` → `had`
+
+#### --answer--
+
+`take` → `taken`
+
+### --question--
+
+#### --text--
+
+What does `to wear too many hats` mean?
+
+#### --distractors--
+
+To dress very formally
+
+---
+
+To change jobs often
+
+---
+
+To manage one task
+
+#### --answer--
+
+To have many roles or duties
+
+### --question--
+
+#### --text--
+
+How do you describe learning without a teacher or school?
+
+#### --distractors--
+
+`Unconventional`
+
+---
+
+`Previous`
+
+---
+
+`Various`
+
+#### --answer--
+
+`Self-taught`
+
+### --question--
+
+#### --text--
+
+Which sentence uses `actual` or `actually` correctly?
+
+#### --distractors--
+
+`This is the actually problem.`
+
+---
+
+`The actual happened yesterday.`
+
+---
+
+`This is actual very important.`
+
+#### --answer--
+
+`Actually, I finished the task.`
+
+### --question--
+
+#### --text--
+
+Who is a `recruiter`?
+
+#### --distractors--
+
+A person who manages a team
+
+---
+
+A person who trains employees
+
+---
+
+A person who writes code
+
+#### --answer--
+
+A person who hires candidates
+
+### --question--
+
+#### --text--
+
+What do you call a person who works for a company?
+
+#### --distractors--
+
+`Employer`
+
+---
+
+`Manager`
+
+---
+
+`Client`
+
+#### --answer--
+
+`Employee`
+
+### --question--
+
+#### --text--
+
+Which tag question is correct?
+
+#### --distractors--
+
+`You studied web design, did you?`
+
+---
+
+`You studied web design, don't you?`
+
+---
+
+`You studied web design, aren't you?`
+
+#### --answer--
+
+`You studied web design, didn't you?`
