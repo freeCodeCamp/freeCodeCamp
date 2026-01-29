@@ -14,6 +14,7 @@ export const createResetProperties = () => ({
   completedChallenges: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   completedExams: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   currentChallengeId: '',
+  experience: [], // TODO(Post-MVP): Omit this from the document? (prisma will always return [])
   is2018DataVisCert: false,
   is2018FullStackCert: false,
   isA2EnglishCert: false,
