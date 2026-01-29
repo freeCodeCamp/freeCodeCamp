@@ -367,7 +367,6 @@ function getTotalFromInputs(list) {
   return total;
 }
 
---fcc-editable-region--
 function clearForm() {
   const inputContainers = Array.from(document.querySelectorAll('.input-container'));
 
@@ -375,8 +374,10 @@ function clearForm() {
     container.innerHTML = '';
   }
 
+  --fcc-editable-region--
+
+  --fcc-editable-region--
 }
---fcc-editable-region--
 
 addEntryButton.addEventListener("click", addEntry);
 budgetForm.addEventListener("submit", calculateBudget);
