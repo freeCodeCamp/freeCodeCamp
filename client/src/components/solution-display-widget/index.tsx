@@ -10,6 +10,7 @@ import { getSolutionDisplayType } from '../../utils/solution-display-type';
 interface Props {
   completedChallenge: CompletedChallenge;
   projectTitle: string;
+  username?: string;
   showUserCode: () => void;
   showProjectPreview?: () => void;
   showExamResults?: () => void;
@@ -19,12 +20,22 @@ interface Props {
 export function SolutionDisplayWidget({
   completedChallenge,
   projectTitle,
+  username,
   showUserCode,
   showProjectPreview,
   showExamResults,
   displayContext
 }: Props): JSX.Element | null {
   const { id, solution, githubLink } = completedChallenge;
+  const isMsLearnApiSolution =
+    typeof solution === 'string' &&
+    (solution.includes('learn.microsoft.com/api/gamestatus') ||
+      solution.includes('learn.microsoft.com/api/achievements/user'));
+
+  const viewUrl =
+    isMsLearnApiSolution && username
+      ? `https://learn.microsoft.com/users/${username}/`
+      : solution ?? undefined;
   const { t } = useTranslation();
   const viewText = t('buttons.view');
   const viewCode = t('buttons.view-code');
@@ -54,7 +65,7 @@ export function SolutionDisplayWidget({
           // This expression is only to resolve TypeScript error.
           // There won't be a case where the link has an invalid `href`
           // as this component is only rendered if `solution` is truthy.
-          href={solution ?? undefined}
+          href={viewUrl}
           rel='noopener noreferrer'
           target='_blank'
         >
@@ -81,7 +92,7 @@ export function SolutionDisplayWidget({
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={viewUrl}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -140,7 +151,7 @@ export function SolutionDisplayWidget({
             // This expression is only to resolve TypeScript error.
             // There won't be a case where the link has an invalid `href`
             // as this component is only rendered if `solution` is truthy.
-            href={solution ?? undefined}
+            href={viewUrl}
             rel='noopener noreferrer'
             target='_blank'
           >
@@ -169,7 +180,7 @@ export function SolutionDisplayWidget({
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={viewUrl}
       rel='noopener noreferrer'
       target='_blank'
     >
