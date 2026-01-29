@@ -80,7 +80,8 @@ export const profileUI = Type.Object({
   showPoints: Type.Boolean(),
   showPortfolio: Type.Boolean(),
   showTimeLine: Type.Boolean(),
-  showExperience: Type.Boolean()
+  showExperience: Type.Boolean(),
+  showEducation: Type.Boolean()
 });
 
 export const experience = Type.Object({

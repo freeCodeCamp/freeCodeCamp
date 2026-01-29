@@ -54,6 +54,7 @@ module.exports.blankUser = {
   completedChallenges: [],
   portfolio: [],
   experience: [],
+  education: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -68,6 +69,7 @@ module.exports.blankUser = {
     showPoints: false,
     showPortfolio: false,
     showExperience: false,
+    showEducation: false,
     showTimeLine: false
   },
   badges: {
@@ -118,6 +120,7 @@ module.exports.publicUser = {
   completedChallenges: [],
   portfolio: [],
   experience: [],
+  education: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -132,6 +135,7 @@ module.exports.publicUser = {
     showPoints: true,
     showPortfolio: true,
     showExperience: true,
+    showEducation: true,
     showTimeLine: true
   },
   badges: {
@@ -183,6 +187,7 @@ module.exports.demoUser = {
   completedChallenges: [],
   portfolio: [],
   experience: [],
+  education: [],
   yearsTopContributor: [],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -197,6 +202,7 @@ module.exports.demoUser = {
     showPoints: false,
     showPortfolio: false,
     showExperience: false,
+    showEducation: false,
     showTimeLine: false
   },
   badges: {
@@ -12317,6 +12323,7 @@ module.exports.fullyCertifiedUser = {
   ],
   portfolio: [],
   experience: [],
+  education: [],
   yearsTopContributor: ['2019'],
   rand: 0.6126749173148205,
   theme: 'default',
@@ -12332,6 +12339,7 @@ module.exports.fullyCertifiedUser = {
     showPoints: true,
     showPortfolio: true,
     showExperience: true,
+    showEducation: true,
     showTimeLine: true
   },
   badges: {

@@ -499,6 +499,8 @@ export const reducer = handleActions(
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.updateMyExperienceComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
+    [settingsTypes.updateMyEducationComplete]: (state, { payload }) =>
+      payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.resetMyEditorLayoutComplete]: (state, { payload }) =>
       payload ? spreadThePayloadOnUser(state, payload) : state,
     [settingsTypes.verifyCertComplete]: (state, { payload }) =>
