@@ -5,8 +5,17 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=18",
+    "node": ">=24",
     "pnpm": ">=10"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./index.d.ts",
+    "./ts-compiler": "./modules/typescript-compiler.ts",
+    "./test-runner": "./test-runner.ts",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
@@ -19,9 +28,8 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --max-warnings 0",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production"
   },
   "type": "module",
   "keywords": [],

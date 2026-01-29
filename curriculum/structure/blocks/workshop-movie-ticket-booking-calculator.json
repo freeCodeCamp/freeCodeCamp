@@ -1,0 +1,33 @@
+{
+  "name": "Build a Movie Ticket Booking Calculator",
+  "isUpcomingChange": false,
+  "dashedName": "workshop-movie-ticket-booking-calculator",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "694a9ff65d4472dd451d8255", "title": "Step 1" },
+    { "id": "694cc1b515976889afd4cded", "title": "Step 2" },
+    { "id": "6958dd85587e10c99162dd81", "title": "Step 3" },
+    { "id": "6958de0d773289a89515a6b8", "title": "Step 4" },
+    { "id": "696099abb6acc539b27055a1", "title": "Step 5" },
+    { "id": "696099c1ac72a4e585de1d5b", "title": "Step 6" },
+    { "id": "6958dfa0c74b237e1b56ce04", "title": "Step 7" },
+    { "id": "696cb889fc4fdeb337e52864", "title": "Step 8" },
+    { "id": "6958e0ecc121b0ae3dd9c5e0", "title": "Step 9" },
+    { "id": "6960a5165f7efe52a0c0aa39", "title": "Step 10" },
+    { "id": "6960a848aacf859f7bb15447", "title": "Step 11" },
+    { "id": "6958e1875e592b58e8852757", "title": "Step 12" },
+    { "id": "6958e2377cacbc46a7f7383a", "title": "Step 13" },
+    { "id": "6960b308bf41cc39c9b4b438", "title": "Step 14" },
+    { "id": "6960b6a6ea06e27dcc7eef37", "title": "Step 15" },
+    { "id": "6960b8632b9544d1f57295f4", "title": "Step 16" },
+    { "id": "6960ba6e6c95ed4ad896c6f2", "title": "Step 17" },
+    { "id": "6958e59845777391b86d7331", "title": "Step 18" },
+    { "id": "6970f09b547e10402abf2847", "title": "Step 19" },
+    { "id": "696cbb3985e23420cd45c58f", "title": "Step 20" },
+    { "id": "6958ea03cb1c4684c138754a", "title": "Step 21" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}

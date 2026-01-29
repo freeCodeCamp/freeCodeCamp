@@ -21,7 +21,7 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [24]
 
     steps:
       - name: Checkout
@@ -104,7 +104,7 @@ jobs:
       matrix:
         # Extend this to include firefox and webkit once chromium is working.
         browsers: [chromium]
-        node-version: [22]
+        node-version: [24]
 
     steps:
       - name: Set Action Environment Variables
@@ -152,11 +152,8 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm turbo compile
-          pnpm run build:curriculum
+      - name: Install
+        run: pnpm install
 
       - name: Start apps
         run: |

@@ -16,7 +16,7 @@ import {
   currentBlockIdsSelector
 } from '../redux/selectors';
 import { completedChallengesIdsSelector } from '../../../redux/selectors';
-import { buildChallenge, getTestRunner } from '../utils/build';
+import { getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
@@ -25,6 +25,7 @@ vi.mock('../redux/selectors');
 vi.mock('../../../redux/selectors');
 vi.mock('../utils/build');
 vi.mock('../../../utils/get-words');
+vi.mock('@freecodecamp/challenge-builder/build');
 const mockFireConfetti = fireConfetti as Mock;
 const mockTestRunner = vi.fn().mockReturnValue({ pass: true });
 const mockBuildEnabledSelector = isBuildEnabledSelector as Mock;
@@ -35,7 +36,6 @@ const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
 const mockCurrentBlockIdsSelector = currentBlockIdsSelector as unknown as Mock;
 const mockCompletedChallengesIdsSelector =
   completedChallengesIdsSelector as unknown as Mock;
-const mockBuildChallenge = buildChallenge as Mock;
 const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
 mockChallengeTestsSelector.mockReturnValue([
@@ -47,7 +47,6 @@ mockChallengeMetaSelector.mockReturnValue({
 mockChallengeDataSelector.mockReturnValue({
   challengeFiles: ['mock_challenge_files']
 });
-mockBuildChallenge.mockReturnValue({ challengeType: 'mock_challenge_type' });
 mockGetTestRunner.mockReturnValue(mockTestRunner);
 
 const completedChallengesIds = ['1', '3', '5'];
