@@ -1,9 +1,6 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-const {
-  version: helperVersion
-} = require('@freecodecamp/curriculum-helpers/package.json');
+
 const { version } = require('./package.json');
 
 module.exports = (env = {}) => {
@@ -20,8 +17,8 @@ module.exports = (env = {}) => {
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
       chunkFilename: '[name]-[contenthash].js',
-      path: path.resolve(__dirname, `dist/artifacts/workers/${version}`),
-      clean: true
+      path: path.resolve(__dirname, `dist/js/workers/${version}`),
+      clean: false // We handle cleaning in copy-scripts.ts
     },
     stats: {
       // Display bailout reasons
@@ -53,17 +50,6 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: [
-      new CopyWebpackPlugin({
-        patterns: [
-          './node_modules/sass.js/dist/sass.sync.js',
-          // TODO: copy this into the css folder, not the js folder
-          './node_modules/xterm/css/xterm.css',
-          {
-            from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-            to: `../../test-runner/${helperVersion}/`
-          }
-        ]
-      }),
       new webpack.ProvidePlugin({
         process: 'process/browser'
       }),

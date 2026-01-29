@@ -139,7 +139,7 @@ export const XtermTerminal = ({
 
   return (
     <div style={{ height: dimensions?.height }} ref={termContainerRef}>
-      <link rel='stylesheet' href='/js/xterm.css' />
+      <link rel='stylesheet' href='/css/xterm.css' />
     </div>
   );
 };
