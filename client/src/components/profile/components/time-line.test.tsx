@@ -14,7 +14,7 @@ const store = createStore();
 
 beforeEach(() => {
   // @ts-expect-error
-  useStaticQuery.mockImplementationOnce(() => ({
+  useStaticQuery.mockImplementation(() => ({
     allChallengeNode: {
       edges: [
         {
@@ -78,6 +78,31 @@ describe('<TimeLine />', () => {
     viewButtons.forEach(button => {
       expect(button).toBeInTheDocument();
     });
+  });
+
+  it('redirects MS Learn API solution to MS Learn profile when username is present', () => {
+    const propsWithMsLearnSolution = {
+      ...propsForOnlySolution,
+      completedMap: [
+        {
+          id: '5e46f802ac417301a38fb92b',
+          solution:
+            'https://learn.microsoft.com/api/gamestatus/achievements/123',
+          completedDate: 1604311988825
+        }
+      ]
+    };
+    // @ts-expect-error
+    render(<TimeLine {...propsWithMsLearnSolution} />, store);
+
+    const viewLink = screen.getByRole('link', {
+      name: 'buttons.view settings.labels.solution-for (aria.opens-new-window)'
+    });
+
+    expect(viewLink).toHaveAttribute(
+      'href',
+      'https://learn.microsoft.com/en-us/users/developmentuser/'
+    );
   });
 });
 

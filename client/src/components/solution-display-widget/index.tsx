@@ -29,13 +29,13 @@ export function SolutionDisplayWidget({
   const { id, solution, githubLink } = completedChallenge;
   const isMsLearnApiSolution =
     typeof solution === 'string' &&
-    (solution.includes('learn.microsoft.com/api/gamestatus') ||
-      solution.includes('learn.microsoft.com/api/achievements/user'));
+    solution.startsWith('https://learn.microsoft.com/api/');
 
-  const viewUrl =
-    isMsLearnApiSolution && username
-      ? `https://learn.microsoft.com/users/${username}/`
-      : solution ?? undefined;
+  const viewUrl = isMsLearnApiSolution
+    ? username
+      ? `https://learn.microsoft.com/en-us/users/${username}/`
+      : undefined
+    : solution ?? undefined;
   const { t } = useTranslation();
   const viewText = t('buttons.view');
   const viewCode = t('buttons.view-code');
