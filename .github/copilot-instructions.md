@@ -2,23 +2,36 @@
 
 ## Core Principles
 
-**BE EXTREMELY MINIMAL.** Only comment when there are actual issues to address.
+**CHECK REQUESTER AUTHORIZATION FIRST:**
 
-**NEVER generate:**
-- "Pull request overview" sections
-- "Changes:" sections listing what was changed
-- "Reviewed changes" sections
-- Tables listing files with descriptions of changes
-- Summaries of what the PR does (the diff shows this)
-- Statements about how many files were reviewed
-- Any explanatory text about obvious changes
+Before providing any review, verify if the person who requested the Copilot review is a member of the `@freecodecamp/staff` team.
 
-**ONLY provide:**
-- Specific, actionable feedback on actual problems
-- Brief comments (1-3 sentences per issue)
-- Silence when everything is correct
+- If the requester is NOT part of `@freecodecamp/staff`, respond with ONLY this message:
+  ```
+  Please use AI reviews in your local environment, and leave this feature to be used by fCC mods and Staff.
+  ```
+  Do not provide any other feedback or review comments.
 
-**Example of what NOT to do:**
+- If the requester IS part of `@freecodecamp/staff`, proceed with the review following the guidelines below.
+
+---
+
+**BE EXTREMELY MINIMAL.** Only provide actionable feedback.
+
+**Skip all non-essential content:**
+- Do not generate "Pull request overview" sections
+- Do not create "Changes:" lists describing what was changed  
+- Do not create "Reviewed changes" sections or tables
+- Do not list files with change descriptions
+- Do not count how many files were reviewed
+- Do not summarize what the PR does (visible in the diff)
+
+**Focus only on problems:**
+- Comment ONLY on actual issues that need fixing
+- Keep each comment 1-3 sentences
+- If everything is correct, provide no output
+
+**Bad example (from PR #65578):**
 ```
 ## Pull request overview
 This PR addresses issue #65331 by replacing em dash characters...
@@ -28,12 +41,12 @@ Copilot reviewed 4 out of 4 changed files...
 
 | File | Description |
 | ---- | ----------- |
-| file1.md | Updated em dash... |
+| file1.md | Updated em dash in seed content |
 ```
 
-**Example of what TO do:**
+**Good example (actionable feedback only):**
 ```
-The test on line 46 will fail: `innerText` returns rendered text `—`, not `&mdash;`.
+Line 46: Test will fail - `innerText` returns rendered `—`, not `&mdash;`.
 ```
 
 ---
