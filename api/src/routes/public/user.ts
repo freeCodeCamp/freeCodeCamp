@@ -51,7 +51,7 @@ type RawUser = {
   points: number;
   portfolio: Portfolio[];
   experience: NoNullProperties<Experience>[];
-  education: Education[];
+  education: NoNullProperties<Education>[];
   profileUI: ProfileUI;
 };
 
@@ -196,7 +196,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           points: getPoints(progressTimestamps),
           profileUI: normalizedProfileUI,
           experience: user.experience.map(removeNulls) ?? [],
-          education: user.education ?? []
+          education: user.education.map(removeNulls) ?? []
         });
 
         const returnedUser = {
