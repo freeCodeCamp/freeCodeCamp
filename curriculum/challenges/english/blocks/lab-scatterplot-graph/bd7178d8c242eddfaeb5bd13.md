@@ -26,8 +26,6 @@ The tests require axes to be generated using the D3 axis property, which automat
 1. The `.dot` elements' `data-yvalue` attributes should match the order of the provided data.
 1. Each `.dot` element should align with the corresponding value on the x-axis.
 1. Each `.dot` element should align with the corresponding value on the y-axis.
-1. You should be able to mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
-1. Your tooltip should have a `data-year` attribute that corresponds to the `data-xvalue` of the active area.
 1. You can see multiple tick labels on the y-axis with `%M:%S` time format.
 1. You can see multiple tick labels on the x-axis that show the year.
 1. The range of the x-axis labels are within the range of the actual x-axis data.
