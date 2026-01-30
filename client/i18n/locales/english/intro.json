@@ -6954,7 +6954,7 @@
       "workshop-math-operations": {
         "title": "Build A Bill Splitter",
         "intro": [
-          "In this workshop you will build a bill splitter to demonstrate your knowledge of numbers and mathematical operations in Python"
+          "In this workshop you will build a bill splitter to practice working with numbers and mathematical operations in Python"
         ]
       },
       "lecture-booleans-and-conditionals": {
