@@ -6434,6 +6434,13 @@
           "In this workshop, you'll build a decimal-to-binary converter using JavaScript. You'll practice the fundamental concepts of recursion, explore the call stack, and build out a visual representation of the recursion process through an animation."
         ]
       },
+      "lab-range-of-numbers": {
+        "title": "Build a Range of Numbers Generator",
+        "intro": [
+          "In this lab, you'll use recursion to generate an array of numbers within a specified range.",
+          "You'll practice recursive function calls, base cases, and building arrays through recursion."
+        ]
+      },
       "lab-permutation-generator": {
         "title": "Build a Permutation Generator",
         "intro": [
@@ -6450,6 +6457,13 @@
       "quiz-recursion": {
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
+      },
+      "lecture-introduction-to-common-searching-and-sorting-algorithms": {
+        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
@@ -6956,6 +6970,12 @@
           "In these lessons, you will learn about booleans and conditionals in Python."
         ]
       },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
       "lecture-understanding-functions-and-scope": {
         "title": "Understanding Functions and Scope",
         "intro": [
@@ -7150,6 +7170,12 @@
         "title": "Build a Polygon Area Calculator",
         "intro": [
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
+        ]
+      },
+      "lab-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
         ]
       },
       "lecture-understanding-abstraction": {
@@ -7726,6 +7752,18 @@
       "quiz-node-js-intro": {
         "title": "NodeJS Intro Quiz",
         "intro": ["Test what you have learned about NodeJS in this quiz."]
+      },
+      "lecture-working-with-node-core-modules": {
+        "title": "Working with Node Core Modules",
+        "intro": [
+          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
+        ]
       },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Understanding the HTTP Request-Response Model",

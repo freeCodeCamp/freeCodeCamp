@@ -74,6 +74,16 @@ const testUserData: Prisma.userCreateInput = {
       }
     }
   ],
+  experience: [
+    {
+      id: 'exp1',
+      title: 'Software Engineer',
+      company: 'Company A',
+      startDate: '2020-01-01',
+      endDate: '2021-01-01',
+      description: 'Worked on various projects.'
+    }
+  ],
   partiallyCompletedChallenges: [{ id: '123', completedDate: 123 }],
   completedExams: [],
   githubProfile: 'github.com/foobar',
@@ -185,6 +195,7 @@ const publicUserData = {
   ],
   completedExams: testUserData.completedExams,
   completedSurveys: [], // TODO: add surveys
+  experience: testUserData.experience,
   githubProfile: testUserData.githubProfile,
   is2018DataVisCert: testUserData.is2018DataVisCert,
   is2018FullStackCert: testUserData.is2018FullStackCert, // TODO: should this be returned? The client doesn't use it at the moment.
@@ -254,7 +265,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
-        showExperience: false,
+        showExperience: true,
         showHeatMap: true,
         showLocation: true,
         showName: true,
