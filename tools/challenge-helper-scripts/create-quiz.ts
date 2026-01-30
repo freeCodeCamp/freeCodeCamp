@@ -144,7 +144,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },
