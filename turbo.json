@@ -6,6 +6,7 @@
     "lint": { "dependsOn": ["setup"] },
     "setup": { "dependsOn": ["^build"] },
     "test": { "dependsOn": ["setup"] },
+    "test-content": { "dependsOn": ["setup"] },
     "type-check": { "dependsOn": ["setup"] },
     "//#lint-root": {
       "dependsOn": ["@freecodecamp/shared#build"]
