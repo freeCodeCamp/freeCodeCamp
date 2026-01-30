@@ -16,8 +16,8 @@ import {
   writeBlockStructure,
   createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import { createIntroMD } from './helpers/create-intro.js';
 import {
@@ -47,6 +47,7 @@ type SuperBlockInfo = {
   blocks: Record<string, BlockInfo>;
   chapters?: Record<string, string>;
   modules?: Record<string, string>;
+  'module-intros'?: Record<string, { intro: string[]; note: string }>;
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
@@ -191,6 +192,16 @@ async function updateIntroJson({
     }
     if (!newIntro[superBlock].modules[module]) {
       newIntro[superBlock].modules[module] = moduleTitle;
+    }
+
+    if (!newIntro[superBlock]['module-intros']) {
+      newIntro[superBlock]['module-intros'] = {};
+    }
+    if (!newIntro[superBlock]['module-intros'][module]) {
+      newIntro[superBlock]['module-intros'][module] = {
+        note: '',
+        intro: ['']
+      };
     }
   }
 

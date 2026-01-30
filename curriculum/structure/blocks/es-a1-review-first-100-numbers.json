@@ -1,0 +1,11 @@
+{
+  "name": "First 100 Numbers Review",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-review-first-100-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "696edd0b42dde80bb71271e4", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "review"
+}
