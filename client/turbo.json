@@ -6,6 +6,9 @@
       "env": ["FCC_*"],
       "outputs": ["public/**"]
     },
+    "develop": {
+      "env": ["FCC_*"]
+    },
     "setup": {
       "env": ["FCC_*"],
       "outputs": [
