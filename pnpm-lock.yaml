@@ -123,8 +123,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/shared
       '@growthbook/growthbook':
-        specifier: 1.6.2
-        version: 1.6.2
+        specifier: 1.6.3
+        version: 1.6.3
       '@prisma/client':
         specifier: 6.19.2
         version: 6.19.2(prisma@6.19.2(typescript@5.9.3))(typescript@5.9.3)
@@ -3385,8 +3385,8 @@ packages:
     peerDependencies:
       react: ^16.8.0-0 || ^17.0.0-0 || ^18.0.0-0 || ^19.0.0-0
 
-  '@growthbook/growthbook@1.6.2':
-    resolution: {integrity: sha512-x3sK6Lff4BVusIzcdBeHZqA3B4kLs3kM/pJ7vvLTJwb6N/+Yn99EF1yc0XU6cfDVqFq6uFkvIFhMwDWUaKD73g==}
+  '@growthbook/growthbook@1.6.3':
+    resolution: {integrity: sha512-9G8ERv4oW5klFwyJUYs5c+TkTNKUL7/DkgjjvR2dKavj9lGpHSQI6XHKzfZxC7BrnHsOiEGpdCWlNplKQ7iBcw==}
     engines: {node: '>=10'}
 
   '@hapi/address@2.1.4':
@@ -18477,10 +18477,10 @@ snapshots:
 
   '@growthbook/growthbook-react@1.6.0(react@17.0.2)':
     dependencies:
-      '@growthbook/growthbook': 1.6.2
+      '@growthbook/growthbook': 1.6.3
       react: 17.0.2
 
-  '@growthbook/growthbook@1.6.2':
+  '@growthbook/growthbook@1.6.3':
     dependencies:
       dom-mutator: 0.6.0
 
