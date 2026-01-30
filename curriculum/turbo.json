@@ -8,6 +8,9 @@
     },
     "test": {
       "env": ["FCC_*"]
+    },
+    "test-content": {
+      "env": ["FCC_*"]
     }
   }
 }
