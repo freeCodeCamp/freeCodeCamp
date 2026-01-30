@@ -1,6 +1,6 @@
 {
   "name": "Build a Device Loan Ledger App",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-device-loan-ledger",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-list",
