@@ -7159,6 +7159,12 @@
           "In this lab, you will use object-oriented programming to calculate the areas of different polygons like squares and rectangles."
         ]
       },
+      "lab-discount-calculator": {
+        "title": "Build a Discount Calculator",
+        "intro": [
+          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
+        ]
+      },
       "lecture-understanding-abstraction": {
         "title": "Understanding Abstraction",
         "intro": ["Learn about Understanding Abstraction in these lessons."]
