@@ -18,6 +18,79 @@ concurrency:
 permissions:
   contents: read
 
+# =============================================================================
+# PHASE 2 MIGRATION: Container-based CI
+# =============================================================================
+# Once devcontainer images are built and pushed to GHCR, replace this entire
+# workflow with the following to use container-based jobs for faster CI:
+#
+# permissions:
+#   contents: read
+#   packages: read
+#
+# jobs:
+#   lint:
+#     name: Lint
+#     if: github.event_name != 'pull_request' || github.event.pull_request.user.login != 'renovate[bot]'
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-lint: true
+#     secrets: inherit
+#
+#   build:
+#     name: Build
+#     needs: lint
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-build: true
+#     secrets: inherit
+#
+#   test:
+#     name: Test
+#     needs: build
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-test: true
+#     secrets: inherit
+#
+#   test-upcoming:
+#     name: Test (Upcoming)
+#     needs: build
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-test: true
+#       show-upcoming-changes: true
+#     secrets: inherit
+#
+#   test-localization-portuguese:
+#     name: Test (Portuguese)
+#     needs: build
+#     if: github.event.pull_request.user.login == 'camperbot' && github.head_ref == 'chore/update-i18n-curriculum-submodule'
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-test: true
+#       locale: portuguese
+#     secrets: inherit
+#
+#   test-localization-italian:
+#     name: Test (Italian)
+#     needs: build
+#     if: github.event.pull_request.user.login == 'camperbot' && github.head_ref == 'chore/update-i18n-curriculum-submodule'
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-test: true
+#       locale: italian
+#     secrets: inherit
+#
+#   install-check:
+#     name: Install Check
+#     if: github.ref == 'refs/heads/main'
+#     uses: ./.github/workflows/ci-reusable.yml
+#     with:
+#       run-install-check: true
+#     secrets: inherit
+# =============================================================================
+
 jobs:
   lint:
     name: Lint
