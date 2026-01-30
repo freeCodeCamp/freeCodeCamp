@@ -98,17 +98,6 @@ const testUserData: Prisma.userCreateInput = {
       url: 'https://www.freecodecamp.org'
     }
   ],
-  experience: [
-    {
-      id: 'exp123456789',
-      title: 'Software Engineer',
-      company: 'Tech Corp',
-      location: 'San Francisco, CA',
-      startDate: '01/2020',
-      endDate: '12/2023',
-      description: 'Worked on various projects'
-    }
-  ],
   savedChallenges: [
     {
       id: 'a6b0bb188d873cb2c8729495',
@@ -243,7 +232,6 @@ const publicUserData = {
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
-  experience: testUserData.experience,
   profileUI: testUserData.profileUI,
   twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',

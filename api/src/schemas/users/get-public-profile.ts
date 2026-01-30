@@ -96,7 +96,6 @@ export const getPublicProfile = {
                   url: Type.String()
                 })
               ),
-              experience: Type.Array(experience),
               profileUI,
               twitter: Type.Optional(Type.String()),
               bluesky: Type.Optional(Type.String()),
