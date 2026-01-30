@@ -70,15 +70,16 @@ const SEO: React.FC<SEOProps> = ({ title, children }) => {
   };
 
   Object.values(SuperBlocks).forEach((superBlock, index) => {
-    const superBlockIntroObj: {
-      title: string;
-      intro: string[];
-    } = t(`intro:${superBlock}`, { returnObjects: true }) as {
-      title: string;
-      intro: string[];
-    };
+    const superBlockIntroObj = t(`intro:${superBlock}`, {
+      returnObjects: true,
+      // Default ensures we always have an intro array even if a translation entry is missing
+      defaultValue: { title: superBlock, intro: [''] }
+    }) as { title?: string; intro?: string[] };
 
-    const { title: i18nTitle, intro: introText } = superBlockIntroObj;
+    const i18nTitle = superBlockIntroObj?.title ?? superBlock;
+    const introText = Array.isArray(superBlockIntroObj?.intro)
+      ? superBlockIntroObj.intro
+      : [''];
 
     structuredData.itemListElement.push({
       '@type': 'ListItem',

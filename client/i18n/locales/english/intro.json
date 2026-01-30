@@ -7788,6 +7788,70 @@
       }
     }
   },
+  "html-forms-and-tables": {
+    "title": "HTML Forms and Tables",
+    "summary": [
+      "Learn how to build accessible forms and data tables with semantic HTML."
+    ],
+    "intro": [
+      "Learn how to build accessible forms and data tables with semantic HTML.",
+      "Practice structuring inputs, labels, and tabular data so everyone can navigate and submit information confidently."
+    ],
+    "blocks": {
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lessons, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
+        ]
+      },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will build a Hotel Feedback Form.",
+          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+        ]
+      },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": [
+          "In these lessons, you will learn about HTML tables, how to create them, and when to use them."
+        ]
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+        ]
+      },
+      "lab-book-catalog-table": {
+        "title": "Build a Book Catalog Table",
+        "intro": [
+          "In this lab, you'll review HTML tables by building a book information table.",
+          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
+        ]
+      },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
+        ]
+      },
+      "review-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Review",
+        "intro": [
+          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
+        ]
+      },
+      "quiz-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+        ]
+      }
+    }
+  },
   "a1-professional-spanish": {
     "title": "A1 Professional Spanish Certification (Beta)",
     "note": "This certification is currently in active development. We are currently publishing the first three chapters, and future chapters will be released as they are developed by our instructional design team. Once all the chapters are available, we will release the certification exam.",
@@ -9339,17 +9403,144 @@
     ],
     "intro": ["Larger intro for the superblock page."],
     "blocks": {
-      "cat-photo-app": {
-        "title": "Build a Cat Photo App",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
         ]
       },
-      "recipe-page": {
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
+        ]
+      },
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
+        "intro": [
+          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
+        ]
+      },
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
+      },
+      "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
           "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      },
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
+        ]
+      },
+      "lab-travel-agency-page": {
+        "title": "Build a Travel Agency Page",
+        "intro": [
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+        ]
+      },
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
+        ]
+      },
+      "lab-html-audio-and-video-player": {
+        "title": "Build an HTML Audio and Video Player",
+        "intro": [
+          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "workshop-build-a-heart-icon": {
+        "title": "Build a Heart Icon",
+        "intro": [
+          "In this workshop, you will practice working with SVGs by building a heart icon"
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+        ]
+      },
+      "workshop-build-a-video-display-using-iframe": {
+        "title": "Build a Video Display Using iframe",
+        "intro": [
+          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
+        ]
+      },
+      "lab-video-compilation-page": {
+        "title": "Build a Video Compilation Page",
+        "intro": [
+          "In this lab, you'll create a video compilation web page. You'll practice working with the <code>iframe</code> element."
+        ]
+      },
+      "lecture-working-with-links": {
+        "title": "Working with Links",
+        "intro": [
+          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+        ]
+      },
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
+        ]
+      },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       }
     }
@@ -9361,16 +9552,66 @@
     ],
     "intro": ["Larger intro for the superblock page."],
     "blocks": {
-      "cat-blog-page": {
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+        ]
+      },
+      "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
-      "event-hub": {
+      "lab-event-hub": {
         "title": "Build an Event Hub",
         "intro": [
           "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
+        ]
+      },
+      "review-semantic-html": {
+        "title": "Semantic HTML Review",
+        "intro": [
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
+        ]
+      },
+      "quiz-semantic-html": {
+        "title": "Semantic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       }
     }

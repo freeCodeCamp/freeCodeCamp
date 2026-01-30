@@ -41,7 +41,8 @@ export enum SuperBlocks {
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
-  FullStackDeveloperV9 = 'full-stack-developer-v9'
+  FullStackDeveloperV9 = 'full-stack-developer-v9',
+  HtmlFormsAndTables = 'html-forms-and-tables'
 }
 
 export const languageSuperBlocks = [
@@ -166,14 +167,16 @@ export const superBlockStages: StageMap = {
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
-  [SuperBlockStage.Catalog]: [SuperBlocks.BasicHtml, SuperBlocks.SemanticHtml]
+  [SuperBlockStage.Catalog]: [
+    SuperBlocks.HtmlFormsAndTables,
+    SuperBlocks.BasicHtml,
+    SuperBlocks.SemanticHtml
+  ]
 };
 
 Object.freeze(superBlockStages);
 
 export const archivedSuperBlocks = superBlockStages[SuperBlockStage.Legacy];
-
-export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
 
 type NotAuditedSuperBlocks = {
   [key in Languages]: SuperBlocks[];

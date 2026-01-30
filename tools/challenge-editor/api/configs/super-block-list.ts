@@ -112,6 +112,10 @@ export const superBlockList = [
     path: 'semantic-html'
   },
   {
+    name: 'HTML Forms and Tables',
+    path: 'html-forms-and-tables'
+  },
+  {
     name: 'A1 Professional Chinese (Beta)',
     path: 'a1-professional-chinese'
   }

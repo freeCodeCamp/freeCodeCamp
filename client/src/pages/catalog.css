@@ -6,17 +6,24 @@
 }
 
 .catalog-item {
+  text-decoration: none;
   padding: 1rem;
   background-color: var(--primary-background);
   width: 400px;
-  min-height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: 1px solid var(--background-quaternary);
 }
 
 .catalog-item-bottom {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  color: var(--quaternary-color);
+  font-size: 0.6rem;
+}
+
+.catalog-item p {
+  margin-bottom: 0.9rem;
 }

@@ -13,7 +13,7 @@
 }
 
 .block-label {
-  align-self: center;
+  align-self: start;
   height: fit-content;
   padding: 1px 6px 2px;
   font-size: 0.85rem;

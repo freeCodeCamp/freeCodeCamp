@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer } from '@freecodecamp/ui';
-import { ButtonLink } from '../components/helpers';
+import { Link } from '../components/helpers';
 import { catalog } from '@freecodecamp/shared/config/catalog';
 import { showUpcomingChanges } from '../../config/env.json';
 import FourOhFour from '../components/FourOhFour';
@@ -19,7 +19,7 @@ const CatalogPage = () => {
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <section className='catalog-wrap'>
           {catalog.map(course => {
-            const { superBlock, level, hours } = course;
+            const { superBlock, level, hours, topic } = course;
 
             const { title, summary } = t(`intro:${superBlock}`, {
               returnObjects: true
@@ -29,10 +29,15 @@ const CatalogPage = () => {
             };
 
             return (
-              <div className='catalog-item' key={superBlock}>
+              <Link
+                to={`/learn/${superBlock}`}
+                key={superBlock}
+                className='catalog-item'
+              >
+                <div className='block-label block-label-workshop'>{topic}</div>
                 <div className='catalog-item-top'>
                   <h2>{title}</h2>
-                  <hr />
+
                   {summary.map((text, i) => (
                     <p key={i}>{text}</p>
                   ))}
@@ -42,11 +47,8 @@ const CatalogPage = () => {
                     {t(`curriculum.catalog.levels.${level}`)} &bull; {hours}{' '}
                     hours
                   </div>
-                  <ButtonLink href={`/learn/${superBlock}`}>
-                    {t('buttons.go-to-course')}
-                  </ButtonLink>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </section>

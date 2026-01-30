@@ -94,19 +94,26 @@ function SuperBlockIntro({
   const { t } = useTranslation();
   const superBlockIntroObj: {
     title: string;
-    intro: string[];
+    intro: string[] | string;
     note: string;
   } = t(`intro:${superBlock}`, { returnObjects: true }) as {
     title: string;
-    intro: string[];
+    intro: string[] | string;
     note: string;
   };
 
   const {
     title: i18nSuperBlock,
-    intro: superBlockIntroText,
+    intro: introRaw,
     note: superBlockNoteText
   } = superBlockIntroObj;
+
+  // Ensure intro is always an array
+  const superBlockIntroText = Array.isArray(introRaw)
+    ? introRaw
+    : typeof introRaw === 'string'
+      ? [introRaw]
+      : [''];
 
   const IntroTopDefault = ({ fsd }: { fsd: boolean }) => (
     <>

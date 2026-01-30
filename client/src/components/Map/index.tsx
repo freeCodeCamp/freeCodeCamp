@@ -94,7 +94,11 @@ function Map({ forLanding = false }: MapProps) {
         showUpcomingChanges
       })
         // remove legacy superblocks from main maps - shown in archive map only
-        .filter(stage => stage !== SuperBlockStage.Legacy)
+        .filter(
+          stage =>
+            stage !== SuperBlockStage.Legacy &&
+            stage !== SuperBlockStage.Catalog
+        )
         .map(stage => {
           const superblocks = superBlockStages[stage];
           if (superblocks.length === 0) {

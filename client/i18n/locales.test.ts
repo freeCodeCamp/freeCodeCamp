@@ -9,10 +9,7 @@ import {
   LangNames,
   LangCodes
 } from '@freecodecamp/shared/config/i18n';
-import {
-  catalogSuperBlocks,
-  SuperBlocks
-} from '@freecodecamp/shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {
@@ -90,9 +87,6 @@ describe('Intro file structure tests:', () => {
       expect(typeof typedIntro[superBlock].title).toBe('string');
 
       // catalog superblocks should have a summary
-      if (catalogSuperBlocks.includes(superBlock)) {
-        expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
-      }
 
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
       expect(typedIntro[superBlock].blocks).toBeInstanceOf(Object);
