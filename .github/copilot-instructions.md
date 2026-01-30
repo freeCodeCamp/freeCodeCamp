@@ -31,10 +31,10 @@ Before providing any review, verify if the person who requested the Copilot revi
 - Keep each comment 1-3 sentences
 - If everything is correct, provide no output
 
-**Bad example (from PR #65578):**
+**Bad example (from PR 65578):**
 ```
 ## Pull request overview
-This PR addresses issue #65331 by replacing em dash characters...
+This PR addresses issue 65331 by replacing em dash characters...
 
 ### Reviewed changes
 Copilot reviewed 4 out of 4 changed files...
