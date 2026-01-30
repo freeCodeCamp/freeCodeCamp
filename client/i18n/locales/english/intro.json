@@ -5264,10 +5264,6 @@
       "exam-certified-full-stack-developer": {
         "title": "Certified Full Stack Developer Exam",
         "intro": ["Pass this exam to become a Certified Full Stack Developer."]
-      },
-      "lab-device-loan-ledger": {
-        "title": "Build a Device Loan Ledger App",
-        "intro": ["Build a Device Loan Ledger App", ""]
       }
     }
   },
@@ -5709,6 +5705,10 @@
         "intro": [
           "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
         ]
+      },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger App",
+        "intro": ["Build a Device Loan Ledger App", ""]
       },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
