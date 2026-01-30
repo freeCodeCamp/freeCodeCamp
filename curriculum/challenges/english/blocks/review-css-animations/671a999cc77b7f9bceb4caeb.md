@@ -5,23 +5,40 @@ challengeType: 31
 dashedName: review-css-animations
 ---
 
-# --description--
+# --interactive--
 
 ## CSS Animation Basics
 
 - **Definition**: CSS animations allow you to create dynamic, visually engaging effects on web pages without the need for JavaScript or complex programming. They provide a way to smoothly transition elements between different styles over a specified duration.
 - **The `@keyframes` Rule**: This rule defines the stages and styles of the animation. It specifies what styles the element should have at various points during the animation.
 
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css">
+<div class="box">Slide</div>
+```
+
 ```css
+.box {
+  width: 120px;
+  padding: 10px;
+  background: #0077ff;
+  color: white;
+  animation: slide-in 1s ease-in-out;
+}
+
 @keyframes slide-in {
-  0% {
+  from {
     transform: translateX(-100%);
   }
-  100% {
+  to {
     transform: translateX(0);
   }
 }
 ```
+
+:::
 
 - **`animation` Property**: This is the shorthand property used to apply animations.
 - **`animation-name`**: This specifies the name for the `@keyframes` rule to use.
@@ -37,9 +54,21 @@ dashedName: review-css-animations
 
 - **The `prefers-reduced-motion` Media Query**: One of the primary accessibility concerns with animations is that they can cause discomfort or even physical harm to some users. People with vestibular disorders or motion sensitivity may experience dizziness, nausea, or headaches when exposed to certain types of movement on screen. The `prefers-reduced-motion` media query allows web developers to detect if the user has requested minimal animations or motion effects at the system level.
 
+:::interactive_editor
+
+```html
+<link rel="stylesheet" href="styles.css">
+<button class="animated-element">Hover me</button>
+```
+
 ```css
 .animated-element {
+  padding: 10px 16px;
   transition: transform 0.3s ease-in-out;
+}
+
+.animated-element:hover {
+  transform: translateX(20px);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -48,6 +77,8 @@ dashedName: review-css-animations
   }
 }
 ```
+
+:::
 
 # --assignment--
 
