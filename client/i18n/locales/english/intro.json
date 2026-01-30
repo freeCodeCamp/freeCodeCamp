@@ -145,12 +145,6 @@
           "In this course, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
         ]
       },
-      "learn-intermediate-css-by-building-a-picasso-painting": {
-        "title": "Learn Intermediate CSS by Building a Picasso Painting",
-        "intro": [
-          "In this course, you'll learn how to use some intermediate CSS techniques by coding your own Picasso painting webpage. You'll learn about SVG icons, CSS positioning, and review other CSS skills you've learned."
-        ]
-      },
       "learn-responsive-web-design-by-building-a-piano": {
         "title": "Learn Responsive Web Design by Building a Piano",
         "intro": [
@@ -3469,7 +3463,7 @@
         ]
       },
       "lab-truncate-string": {
-        "title": "Implement the Truncate String Algorithm",
+        "title": "Implement the Truncate a String Algorithm",
         "intro": [
           "In this lab, you will practice truncating a string at a certain length."
         ]
@@ -5026,7 +5020,7 @@
         ]
       },
       "lab-n-queens-problem": {
-        "title": "Implement the N-Queens Problem",
+        "title": "Implement the N-Queens Algorithm",
         "intro": [
           "In this lab, you will implement a solution for the N-Queens problem."
         ]
@@ -5612,7 +5606,7 @@
         ]
       },
       "lab-truncate-string": {
-        "title": "Implement the Truncate String Algorithm",
+        "title": "Implement the Truncate a String Algorithm",
         "intro": [
           "In this lab, you will practice truncating a string at a certain length."
         ]

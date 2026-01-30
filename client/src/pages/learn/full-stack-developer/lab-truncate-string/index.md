@@ -1,9 +1,9 @@
 ---
-title: Introduction to the Implement the Truncate String Algorithm
+title: Introduction to the Implement the Truncate a String Algorithm
 block: lab-truncate-string
 superBlock: full-stack-developer
 ---
 
-## Introduction to the Implement the Truncate String Algorithm
+## Introduction to the Implement the Truncate a String Algorithm
 
 In this lab, you will practice truncating a string to a certain length.
