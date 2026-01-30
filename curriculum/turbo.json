@@ -3,7 +3,14 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "outputs": ["dist/**", "generated/**"]
+      "outputs": ["dist/**", "generated/**"],
+      "env": ["FCC_*"]
+    },
+    "test": {
+      "env": ["FCC_*"]
+    },
+    "test-content": {
+      "env": ["FCC_*"]
     }
   }
 }

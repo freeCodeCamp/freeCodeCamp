@@ -50,7 +50,7 @@
     "test:watch": "pnpm test-gen && vitest",
     "test-gen": "tsx ./src/test/utils/generate-block-tests.ts",
     "test-tooling": "pnpm test --project @freecodecamp/curriculum",
-    "test-content": "pnpm test --project test"
+    "test-content": "pnpm test-gen && pnpm test --project test"
   },
   "devDependencies": {
     "@babel/core": "7.23.7",

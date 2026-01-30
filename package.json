@@ -65,6 +65,9 @@
     "serve:client-ci": "cd ./client && pnpm run serve-ci",
     "start": "turbo setup && npm-run-all -p develop:server serve:client",
     "test": "turbo test",
+    "test-client": "turbo -F=@freecodecamp/client test",
+    "test-api": "turbo -F=@freecodecamp/api test",
+    "test-curriculum-content": "turbo -F=@freecodecamp/curriculum test-content",
     "prepare": "husky",
     "playwright:run": "pnpm -F e2e run playwright:run",
     "playwright:watch": "pnpm -F e2e run playwright:watch"
