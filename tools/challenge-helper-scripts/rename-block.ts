@@ -14,7 +14,7 @@ import {
   writeSuperblockStructure,
   getContentConfig,
   getCurriculumStructure
-} from '../../curriculum/src/file-handler';
+} from '@freecodecamp/curriculum/file-handler';
 import matter from 'gray-matter';
 
 interface RenameBlockArgs {

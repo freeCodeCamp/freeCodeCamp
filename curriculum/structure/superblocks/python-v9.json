@@ -8,9 +8,11 @@
           "blocks": [
             "lecture-introduction-to-python",
             "lecture-understanding-variables-and-data-types",
+            "workshop-report-card-printer",
             "lecture-introduction-to-python-strings",
             "lecture-numbers-and-mathematical-operations",
             "lecture-booleans-and-conditionals",
+            "workshop-movie-ticket-booking-calculator",
             "lecture-understanding-functions-and-scope",
             "workshop-caesar-cipher",
             "lab-rpg-character",

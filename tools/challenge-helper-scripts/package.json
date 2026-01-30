@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -25,13 +25,16 @@
     "create-quiz": "tsx create-quiz",
     "rename-block": "tsx rename-block",
     "lint": "eslint --max-warnings 0",
-    "test": "vitest",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit"
   },
   "devDependencies": {
+    "@freecodecamp/curriculum": "workspace:*",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@total-typescript/ts-reset": "^0.6.1",
     "@freecodecamp/shared": "workspace:*",
+    "@total-typescript/ts-reset": "^0.6.1",
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
     "@vitest/ui": "^3.2.4",

@@ -101,6 +101,13 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: 'gatsby-plugin-schema-snapshot',
+      options: {
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
+      }
+    }
   ]
 };
