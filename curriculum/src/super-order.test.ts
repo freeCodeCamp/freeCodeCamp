@@ -21,8 +21,7 @@ const mockSuperBlocks = [
   SuperBlocks.ProjectEuler,
   SuperBlocks.RespWebDesign,
   SuperBlocks.JsAlgoDataStruct,
-  SuperBlocks.TheOdinProject,
-  SuperBlocks.FullStackDeveloper
+  SuperBlocks.TheOdinProject
 ];
 
 const fullSuperOrder = {
@@ -43,8 +42,7 @@ const fullSuperOrder = {
   [SuperBlocks.ProjectEuler]: 14,
   [SuperBlocks.RespWebDesign]: 15,
   [SuperBlocks.JsAlgoDataStruct]: 16,
-  [SuperBlocks.TheOdinProject]: 17,
-  [SuperBlocks.FullStackDeveloper]: 18
+  [SuperBlocks.TheOdinProject]: 17
 };
 
 describe('createSuperOrder', () => {
