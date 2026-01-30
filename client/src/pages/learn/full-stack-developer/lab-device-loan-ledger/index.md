@@ -1,7 +1,7 @@
 ---
 title: Introduction to the Build a Device Loan Ledger App
 block: lab-device-loan-ledger
-superBlock: full-stack-developer
+superBlock: javascript-v9
 ---
 
 ## Introduction to the Build a Device Loan Ledger App
