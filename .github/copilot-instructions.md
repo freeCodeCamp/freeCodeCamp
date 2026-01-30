@@ -1,8 +1,24 @@
 # GitHub Copilot Code Review Instructions
 
-## Focus Areas
+## Core Principles
 
-This document guides Copilot code review on two key areas:
+**BE EXTREMELY MINIMAL.** Only comment when there are actual issues to address.
+
+**DO NOT:**
+- Generate PR overviews, summaries, or change descriptions
+- Create tables listing files and their changes
+- Describe what changes were made (the diff already shows this)
+- Provide commentary on obvious or trivial changes
+- Repeat information visible in the diff
+
+**DO:**
+- Focus only on actionable feedback
+- Keep responses succinct (1-3 bullet points maximum)
+- Comment only when something is missing or incorrect
+
+---
+
+## Focus Areas
 
 1. **Test Coverage** - Ensuring adequate testing for code changes
 2. **Pull Request Guidelines** - Compliance with contribution standards
@@ -40,20 +56,15 @@ Do not comment if:
 
 ### Comment Style
 
-If tests are missing, provide a brief, actionable nudge:
+If tests are missing, provide ONE brief comment:
 
 ```
-Consider adding tests for the new/modified functionality in [specific file].
-For example:
-- Test case for [specific scenario]
-- Edge case handling for [specific condition]
+Missing tests for [specific file]. Consider:
+- [specific scenario]
+- [edge case]
 ```
 
-If test coverage is sufficient:
-
-```
-LGTM
-```
+If test coverage is sufficient, **DO NOT COMMENT**. No "LGTM" needed.
 
 ---
 
@@ -117,39 +128,39 @@ Flag if:
 
 ### Comment Style
 
-Keep feedback specific and reference the contribution guide:
+Keep feedback minimal (one line when possible):
 
 ```
-Please update your PR title to follow conventional commits format: `<type>(scope): description`
+Update PR title to format: `<type>(scope): description`
 See: https://contribute.freecodecamp.org/how-to-open-a-pull-request
 ```
 
 ```
-Please link the related issue using `Closes #XXXXX` format in the PR description.
+Link issue using: `Closes #XXXXX`
 ```
 
-If PR guidelines are followed:
-
-```
-LGTM
-```
+If PR guidelines are followed, **DO NOT COMMENT**. No "LGTM" needed.
 
 ---
 
 ## General Guidelines
 
-### Avoid
+**Maximum Response Length:** 3-5 bullet points total across all comments
 
-- Long explanations
-- Generic comments without specific pointers
-- Comments on non-functional changes
-- Repeating information already in the PR discussion
-- Commenting on the same issue multiple times
+### Strict Rules
+
+- NO summaries, overviews, or descriptions of changes
+- NO tables or file listings
+- NO "LGTM" or affirmative comments when everything is fine
+- Only comment when action is required
+- One issue per comment, formatted as a brief bullet point
 
 ### Prioritization
 
-When multiple issues exist, prioritize feedback in this order:
+When multiple issues exist, choose the TOP issue only:
 
 1. PR title/description compliance (most visible, easiest to fix)
 2. Missing test coverage for new functionality
 3. Outdated tests for modified functionality
+
+Comment on ONE issue at a time, not all issues simultaneously.
