@@ -4,12 +4,12 @@ import { prompt } from 'inquirer';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
-import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
 import { createIntroMD } from './helpers/create-intro.js';

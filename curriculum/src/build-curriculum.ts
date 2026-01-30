@@ -5,7 +5,7 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
-import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
   BlockCreator,

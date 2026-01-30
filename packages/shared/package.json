@@ -1,0 +1,99 @@
+{
+  "name": "@freecodecamp/shared",
+  "version": "0.0.1",
+  "author": "freeCodeCamp <team@freecodecamp.org>",
+  "license": "BSD-3-Clause",
+  "description": "Config and utils used in multiple workspaces",
+  "private": false,
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=10"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit",
+    "build": "tsdown --format cjs --format esm",
+    "lint": "eslint --max-warnings 0"
+  },
+  "type": "module",
+  "exports": {
+    "./config/blocks": {
+      "import": "./dist/config/blocks.mjs",
+      "require": "./dist/config/blocks.cjs"
+    },
+    "./config/catalog": {
+      "import": "./dist/config/catalog.mjs",
+      "require": "./dist/config/catalog.cjs"
+    },
+    "./config/certification-settings": {
+      "import": "./dist/config/certification-settings.mjs",
+      "require": "./dist/config/certification-settings.cjs"
+    },
+    "./config/challenge-types": {
+      "import": "./dist/config/challenge-types.mjs",
+      "require": "./dist/config/challenge-types.cjs"
+    },
+    "./config/chapters": {
+      "import": "./dist/config/chapters.mjs",
+      "require": "./dist/config/chapters.cjs"
+    },
+    "./config/constants": {
+      "import": "./dist/config/constants.mjs",
+      "require": "./dist/config/constants.cjs"
+    },
+    "./config/curriculum": {
+      "import": "./dist/config/curriculum.mjs",
+      "require": "./dist/config/curriculum.cjs"
+    },
+    "./config/donation-settings": {
+      "import": "./dist/config/donation-settings.mjs",
+      "require": "./dist/config/donation-settings.cjs"
+    },
+    "./config/i18n": {
+      "import": "./dist/config/i18n.mjs",
+      "require": "./dist/config/i18n.cjs"
+    },
+    "./config/modules": {
+      "import": "./dist/config/modules.mjs",
+      "require": "./dist/config/modules.cjs"
+    },
+    "./utils/get-lines": {
+      "import": "./dist/utils/get-lines.mjs",
+      "require": "./dist/utils/get-lines.cjs"
+    },
+    "./utils/is-audited": {
+      "import": "./dist/utils/is-audited.mjs",
+      "require": "./dist/utils/is-audited.cjs"
+    },
+    "./utils/polyvinyl": {
+      "import": "./dist/utils/polyvinyl.mjs",
+      "require": "./dist/utils/polyvinyl.cjs"
+    },
+    "./utils/shuffle-array": {
+      "import": "./dist/utils/shuffle-array.mjs",
+      "require": "./dist/utils/shuffle-array.cjs"
+    },
+    "./utils/validate": {
+      "import": "./dist/utils/validate.mjs",
+      "require": "./dist/utils/validate.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/freeCodeCamp/freeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
+  "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.39.1",
+    "tsdown": "^0.16.7",
+    "vitest": "^3.2.4"
+  }
+}

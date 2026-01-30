@@ -2,13 +2,13 @@ import { describe, it, expect, beforeEach, vi } from 'vitest';
 import {
   getSuperblockStructure,
   writeSuperblockStructure
-} from '../../../curriculum/src/file-handler.js';
+} from '@freecodecamp/curriculum/file-handler';
 import {
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
 } from './create-project.js';
 
-vi.mock('../../../curriculum/src/file-handler');
+vi.mock('@freecodecamp/curriculum/file-handler');
 
 const mockGetSuperblockStructure = vi.mocked(getSuperblockStructure);
 const mockWriteSuperblockStructure = vi.mocked(writeSuperblockStructure);
@@ -156,6 +156,7 @@ describe('updateChapterModuleSuperblockStructure', () => {
               },
               {
                 dashedName: 'module2c1',
+                comingSoon: true,
                 blocks: ['block2']
               }
             ]
@@ -189,6 +190,7 @@ describe('updateChapterModuleSuperblockStructure', () => {
         chapters: [
           {
             dashedName: 'chapter2',
+            comingSoon: true,
             modules: [
               {
                 dashedName: 'module1c2',

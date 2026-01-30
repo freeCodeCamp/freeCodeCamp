@@ -7,13 +7,13 @@ import { ObjectId } from 'bson';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared-dist/config/curriculum.js';
-import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
+} from '@freecodecamp/shared/config/curriculum';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
   createStepFile,
