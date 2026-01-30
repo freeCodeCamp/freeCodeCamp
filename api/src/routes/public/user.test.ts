@@ -98,6 +98,17 @@ const testUserData: Prisma.userCreateInput = {
       url: 'https://www.freecodecamp.org'
     }
   ],
+  experience: [
+    {
+      id: 'exp123456789',
+      title: 'Software Engineer',
+      company: 'Tech Corp',
+      location: 'San Francisco, CA',
+      startDate: '01/2020',
+      endDate: '12/2023',
+      description: 'Worked on various projects'
+    }
+  ],
   savedChallenges: [
     {
       id: 'a6b0bb188d873cb2c8729495',
@@ -232,6 +243,7 @@ const publicUserData = {
   picture: testUserData.picture,
   points: 2,
   portfolio: testUserData.portfolio,
+  experience: testUserData.experience,
   profileUI: testUserData.profileUI,
   twitter: 'https://x.com/foobar',
   bluesky: 'https://bsky.app/profile/foobar',
@@ -498,7 +510,17 @@ describe('get-public-profile helpers', () => {
           description: 'description'
         }
       ],
-      experience: [],
+      experience: [
+        {
+          id: 'exp1',
+          title: 'Developer',
+          company: 'Company',
+          location: 'Location',
+          startDate: '01/2020',
+          endDate: '12/2022',
+          description: 'Description'
+        }
+      ],
       profileUI: {
         isLocked: false,
         showAbout: true,
@@ -609,6 +631,16 @@ describe('get-public-profile helpers', () => {
       };
       expect(replacePrivateData(userWithoutPortfolio)).toMatchObject({
         portfolio: []
+      });
+    });
+
+    test('returns [] for experience if showExperience is not true', () => {
+      const userWithoutExperience = {
+        ...user,
+        profileUI: { ...user.profileUI, showExperience: false }
+      };
+      expect(replacePrivateData(userWithoutExperience)).toMatchObject({
+        experience: []
       });
     });
 
