@@ -4,17 +4,37 @@
 
 **BE EXTREMELY MINIMAL.** Only comment when there are actual issues to address.
 
-**DO NOT:**
-- Generate PR overviews, summaries, or change descriptions
-- Create tables listing files and their changes
-- Describe what changes were made (the diff already shows this)
-- Provide commentary on obvious or trivial changes
-- Repeat information visible in the diff
+**NEVER generate:**
+- "Pull request overview" sections
+- "Changes:" sections listing what was changed
+- "Reviewed changes" sections
+- Tables listing files with descriptions of changes
+- Summaries of what the PR does (the diff shows this)
+- Statements about how many files were reviewed
+- Any explanatory text about obvious changes
 
-**DO:**
-- Focus only on actionable feedback
-- Keep responses succinct (1-3 bullet points maximum)
-- Comment only when something is missing or incorrect
+**ONLY provide:**
+- Specific, actionable feedback on actual problems
+- Brief comments (1-3 sentences per issue)
+- Silence when everything is correct
+
+**Example of what NOT to do:**
+```
+## Pull request overview
+This PR addresses issue #65331 by replacing em dash characters...
+
+### Reviewed changes
+Copilot reviewed 4 out of 4 changed files...
+
+| File | Description |
+| ---- | ----------- |
+| file1.md | Updated em dash... |
+```
+
+**Example of what TO do:**
+```
+The test on line 46 will fail: `innerText` returns rendered text `—`, not `&mdash;`.
+```
 
 ---
 
@@ -145,7 +165,7 @@ If PR guidelines are followed, **DO NOT COMMENT**. No "LGTM" needed.
 
 ## General Guidelines
 
-**Maximum Response Length:** 3-5 bullet points total across all comments
+**Focus on Actionable Issues Only**
 
 ### Strict Rules
 
@@ -153,14 +173,15 @@ If PR guidelines are followed, **DO NOT COMMENT**. No "LGTM" needed.
 - NO tables or file listings
 - NO "LGTM" or affirmative comments when everything is fine
 - Only comment when action is required
-- One issue per comment, formatted as a brief bullet point
+- Keep each comment brief and actionable
 
 ### Prioritization
 
-When multiple issues exist, choose the TOP issue only:
+When multiple issues exist, address them in order of severity:
 
-1. PR title/description compliance (most visible, easiest to fix)
+1. Security vulnerabilities or critical bugs
 2. Missing test coverage for new functionality
 3. Outdated tests for modified functionality
+4. PR title/description compliance
 
-Comment on ONE issue at a time, not all issues simultaneously.
+Comment on all legitimate issues, but keep each comment concise.
