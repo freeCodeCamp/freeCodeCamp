@@ -6867,6 +6867,10 @@
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
         ]
       },
+      "workshop-bug-emoji-picker": {
+        "title": "Build a Bug Emoji Picker ",
+        "intro": ["Build a Bug Emoji Picker ", ""]
+      },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
         "intro": [

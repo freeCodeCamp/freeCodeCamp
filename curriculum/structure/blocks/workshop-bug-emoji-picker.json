@@ -1,0 +1,29 @@
+{
+  "name": "Build a Bug Emoji Picker ",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-bug-emoji-picker",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "690fe8b8e39ebd4a4d217d6b", "title": "Step 1" },
+    { "id": "690ffbe80b0429c0d448050c", "title": "Step 2" },
+    { "id": "6927b1bf0ec0410912d6f738", "title": "Step 3" },
+    { "id": "692fb0d9ee52ab2403d8bfe7", "title": "Step 4" },
+    { "id": "692fb24a233fc22e2923e3f2", "title": "Step 5" },
+    { "id": "692fb38f7a5889378e93655f", "title": "Step 6" },
+    { "id": "692fb4da06eeff4114b47433", "title": "Step 7" },
+    { "id": "692fb5ed756efe49f8531441", "title": "Step 8" },
+    { "id": "692fb7ad64801c563e8391b7", "title": "Step 9" },
+    { "id": "692fb81e768aab5a1a6a0381", "title": "Step 10" },
+    { "id": "692fb94bf8221362ce6f54c5", "title": "Step 11" },
+    { "id": "692fb9f4046f1d677f1f6e4e", "title": "Step 12" },
+    { "id": "692fbce895711f7c574c1e81", "title": "Step 13" },
+    { "id": "692fbdf423ea7685453dbbf9", "title": "Step 14" },
+    { "id": "692fbf63c8fe56907977f450", "title": "Step 15" },
+    { "id": "69386f3bce81c60f2b3feeb8", "title": "Step 16" },
+    { "id": "693874cf5bf4aa32aded7ce5", "title": "Step 17" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
