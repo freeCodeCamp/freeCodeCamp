@@ -1,0 +1,22 @@
+{
+  "name": "Setup & First Steps",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-setup-first-steps",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-intro-video",
+      "title": "Introduction - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-install-video",
+      "title": "Installing Python and PyCharm - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-hello-world-video",
+      "title": "Hello World Program - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

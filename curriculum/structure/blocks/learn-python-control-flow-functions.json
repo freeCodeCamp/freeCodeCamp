@@ -1,0 +1,26 @@
+{
+  "name": "Control Flow + Functions",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-control-flow-functions",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-functions-video",
+      "title": "Functions - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-return-statement-video",
+      "title": "Return Statement - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-if-statements-video",
+      "title": "If Statements - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-if-comparisons-video",
+      "title": "If Statements and Comparisons - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

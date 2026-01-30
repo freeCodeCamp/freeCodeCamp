@@ -204,7 +204,8 @@ export const superBlockNames = {
   'relational-databases-v9': SuperBlocks.RelationalDbV9,
   'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9,
   'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9,
-  'html-forms-and-tables': SuperBlocks.HtmlFormsAndTables
+  'html-forms-and-tables': SuperBlocks.HtmlFormsAndTables,
+  'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

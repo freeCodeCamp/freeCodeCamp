@@ -1,0 +1,30 @@
+{
+  "name": "Core Primitives: Variables, Types, Basic I/O",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-core-primitives",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-drawing-shape-video",
+      "title": "Drawing a Shape - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-variables-types-video",
+      "title": "Variables and Data Types - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-strings-video",
+      "title": "Working with Strings - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-numbers-video",
+      "title": "Working with Numbers - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-user-input-video",
+      "title": "Getting Input from Users - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

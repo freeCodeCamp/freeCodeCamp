@@ -118,5 +118,9 @@ export const superBlockList = [
   {
     name: 'A1 Professional Chinese (Beta)',
     path: 'a1-professional-chinese'
+  },
+  {
+    name: 'Learn Python for Beginners',
+    path: 'learn-python-for-beginners'
   }
 ];

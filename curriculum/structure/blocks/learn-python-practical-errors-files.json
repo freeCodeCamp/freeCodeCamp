@@ -1,0 +1,30 @@
+{
+  "name": "Practical Python: Errors, Files, Modules",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-practical-errors-files",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-comments-video",
+      "title": "Comments - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-try-except-video",
+      "title": "Try/Except - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-reading-files-video",
+      "title": "Reading Files - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-writing-files-video",
+      "title": "Writing to Files - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-modules-pip-video",
+      "title": "Modules and pip - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "name": "Small Projects: Using Basics",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-small-projects-basics",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-basic-calculator-video",
+      "title": "Building a Basic Calculator - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-mad-libs-video",
+      "title": "Mad Libs Game - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "Data Structures: Lists/Tuples/Dicts",
+  "blockLabel": "video",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-data-structures",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "learn-python-lists-video",
+      "title": "Lists - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-list-functions-video",
+      "title": "List Functions - Learn Python - Full Course for Beginners"
+    },
+    {
+      "id": "learn-python-tuples-video",
+      "title": "Tuples - Learn Python - Full Course for Beginners"
+    }
+  ]
+}

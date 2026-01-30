@@ -42,7 +42,8 @@ export enum SuperBlocks {
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
   FullStackDeveloperV9 = 'full-stack-developer-v9',
-  HtmlFormsAndTables = 'html-forms-and-tables'
+  HtmlFormsAndTables = 'html-forms-and-tables',
+  LearnPythonForBeginners = 'learn-python-for-beginners'
 }
 
 export const languageSuperBlocks = [
@@ -170,7 +171,8 @@ export const superBlockStages: StageMap = {
   [SuperBlockStage.Catalog]: [
     SuperBlocks.HtmlFormsAndTables,
     SuperBlocks.BasicHtml,
-    SuperBlocks.SemanticHtml
+    SuperBlocks.SemanticHtml,
+    SuperBlocks.LearnPythonForBeginners
   ]
 };
 

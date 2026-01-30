@@ -941,6 +941,67 @@
       }
     }
   },
+  "learn-python-for-beginners": {
+    "title": "Learn Python for Beginners",
+    "summary": [
+      "Learn the fundamentals of Python programming from the ground up. Start with basic concepts, progress through control flow and functions, and build projects to practice what you've learned. By the end, you'll understand object-oriented programming and have built a capstone project."
+    ],
+    "intro": [
+      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
+      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned. By the end, you'll understand object-oriented programming and have built a capstone project."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-python-setup-first-steps": {
+        "title": "Setup & First Steps",
+        "intro": [
+          "Get started with Python by installing the necessary tools and writing your first program. These videos will guide you through setting up your development environment and understanding the basics of running Python code."
+        ]
+      },
+      "learn-python-core-primitives": {
+        "title": "Core Primitives: Variables, Types, Basic I/O",
+        "intro": [
+          "Learn the fundamental building blocks of Python: variables, data types, and how to work with strings, numbers, and user input. These concepts form the foundation for all Python programs."
+        ]
+      },
+      "learn-python-small-projects-basics": {
+        "title": "Small Projects: Using Basics",
+        "intro": [
+          "Apply what you've learned by building small, practical projects like a calculator and a fun game. These projects help reinforce the basics in a hands-on way."
+        ]
+      },
+      "learn-python-data-structures": {
+        "title": "Data Structures: Lists/Tuples/Dicts",
+        "intro": [
+          "Master the essential data structures in Python: lists, tuples, and dictionaries. These structures allow you to organize and manipulate collections of data efficiently."
+        ]
+      },
+      "learn-python-control-flow-functions": {
+        "title": "Control Flow + Functions",
+        "intro": [
+          "Learn how to control the flow of your programs with if statements and comparisons. Discover how to write reusable code with functions and return statements."
+        ]
+      },
+      "learn-python-projects-loops": {
+        "title": "Projects + Iteration + Loops",
+        "intro": [
+          "Master loops and iteration to write more powerful programs. Build projects like a guessing game and a translator while learning for loops, while loops, and nested loops."
+        ]
+      },
+      "learn-python-practical-errors-files": {
+        "title": "Practical Python: Errors, Files, Modules",
+        "intro": [
+          "Learn how to handle errors gracefully, read and write files, and organize your code with modules and external packages. These practical skills are essential for real-world Python development."
+        ]
+      },
+      "learn-python-oop-capstone": {
+        "title": "OOP + Capstone Project",
+        "intro": [
+          "Learn object-oriented programming by creating classes and objects. Complete a capstone project that brings together everything you've learned: a multiple choice quiz application."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Information Security",
     "intro": [
