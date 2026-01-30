@@ -4,14 +4,16 @@
   margin-top: 1.5em;
 }
 
-#learn-app-wrapper .transcript-table {
-  display: table;
-  width: 100%;
-  border: 1px solid var(--gray-05);
-  border-collapse: collapse;
+.challenge-transcript .transcript-dialogue {
+  border: 1px solid var(--secondary-color);
 }
 
-#learn-app-wrapper .transcript-table td {
-  border: none;
+.challenge-transcript .transcript-dialogue p {
+  margin: 0;
+  padding: 6px 13px;
   text-align: start;
+}
+
+.challenge-transcript .transcript-dialogue p:nth-child(odd) {
+  background-color: var(--tertiary-background);
 }

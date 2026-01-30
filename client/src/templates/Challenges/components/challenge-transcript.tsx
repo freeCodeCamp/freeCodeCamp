@@ -36,7 +36,11 @@ function ChallengeTranscript({
 
   return (
     <>
-      <details data-testid='challenge-transcript' open={isOpen}>
+      <details
+        data-testid='challenge-transcript'
+        className='challenge-transcript'
+        open={isOpen}
+      >
         <summary
           onClick={toggleExpandedState}
           aria-expanded={isOpen}
@@ -46,20 +50,10 @@ function ChallengeTranscript({
         </summary>
         <Spacer size='m' />
         {isDialogue ? (
-          <table className='transcript-table'>
-            <tbody>
-              {transcript
-                .split('\n')
-                .filter(line => line.trim() !== '')
-                .map((line, idx) => {
-                  return (
-                    <tr key={idx}>
-                      <td dangerouslySetInnerHTML={{ __html: line }} />
-                    </tr>
-                  );
-                })}
-            </tbody>
-          </table>
+          <div
+            className='transcript-dialogue'
+            dangerouslySetInnerHTML={{ __html: transcript }}
+          />
         ) : (
           <PrismFormatted className='line-numbers' text={transcript} />
         )}

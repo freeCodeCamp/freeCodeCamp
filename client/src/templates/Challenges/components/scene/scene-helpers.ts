@@ -6,13 +6,11 @@ export const buildTranscript = (commands: SceneCommand[]): string => {
     if (command.character && command.dialogue && command.startTime) {
       transcriptText =
         transcriptText +
-        '\n' +
-        '<strong>' +
+        '<p><b>' +
         command.character +
-        '</strong>:' +
-        ' ' +
+        '</b>: ' +
         command.dialogue.text +
-        '\n';
+        '</p>';
     }
   });
 
