@@ -4,7 +4,6 @@ import { version } from '@freecodecamp/browser-scripts/package.json';
 const pythonWorkerSrc = `/js/workers/${version}/python-worker.js`;
 
 let worker: Worker | null = null;
-let listener: ((event: MessageEvent) => void) | null = null;
 type Code = {
   contents: string;
   editableContents: string;
@@ -13,65 +12,73 @@ type Code = {
 // worker is reset.
 let lastCodeMessage: Code | null = null;
 
-function getPythonWorker(): Worker {
-  if (!worker) {
-    worker = new Worker(pythonWorkerSrc);
-  }
-  return worker;
-}
-
-type PythonWorkerEvent = {
+export type PythonWorkerEvent = {
   data: {
     type:
-      | 'print'
-      | 'input'
-      | 'contentLoaded'
-      | 'reset'
-      | 'stopped'
-      | 'is-alive';
+    | 'print'
+    | 'input'
+    | 'contentLoaded'
+    | 'reset'
+    | 'stopped'
+    | 'is-alive'
+    | 'error';
     text?: string;
   };
 };
 
-/**
- * Registers a terminal to receive print and input messages from the python worker.
- * @param handlers
- * @param handlers.print - A function that handles print messages from the python worker
- * @param handlers.input - A function that handles input messages from the python worker
- * @param reset - A function that resets the terminal
- */
-export function registerTerminal(handlers: {
-  print: (text?: string) => void;
-  input: (text?: string) => void;
-  reset: () => void;
-}): void {
-  const pythonWorker = getPythonWorker();
-  if (listener) pythonWorker.removeEventListener('message', listener);
-  listener = (event: PythonWorkerEvent) => {
-    // TODO: refactor text -> value or msg.
-    const { type, text } = event.data;
+const listeners: ((event: PythonWorkerEvent['data']) => void)[] = [];
 
-    // TODO: this is a bit messy with the 'handlers' as well as the implicit
-    // handlers reacting to stopped and contentLoaded messages.
-    if (type === 'contentLoaded') return; // Ignore contentLoaded messages for now.
-    if (type === 'is-alive') {
-      clearTimeout(Number(text));
-      return;
-    }
-    // 'stopped' means the worker is ignoring 'run' messages.
-    if (type === 'stopped') {
-      clearTimeout(Number(text));
-      sendListenMessage();
-      // Generally, we get here if the learner changes their code while the
-      // worker is busy. In that case, we want to re-run the code on receipt of
-      // the 'stopped' message.
-      if (lastCodeMessage) runPythonCode(lastCodeMessage);
-    } else {
-      handlers[type](text);
+function handleMessage(event: PythonWorkerEvent) {
+  const { type, text } = event.data;
+
+  // Ignore contentLoaded messages for now.
+  if (type === 'contentLoaded') return;
+
+  if (type === 'is-alive') {
+    clearTimeout(Number(text));
+    return;
+  }
+
+  // 'stopped' means the worker is ignoring 'run' messages.
+  if (type === 'stopped') {
+    clearTimeout(Number(text));
+    sendListenMessage();
+    // Generally, we get here if the learner changes their code while the
+    // worker is busy. In that case, we want to re-run the code on receipt of
+    // the 'stopped' message.
+    if (lastCodeMessage) runPythonCode(lastCodeMessage);
+  } else {
+    // Dispatch to all listeners
+    listeners.forEach(listener => listener(event.data));
+  }
+}
+
+export function getPythonWorker(): Worker {
+  if (!worker) {
+    worker = new Worker(pythonWorkerSrc);
+    worker.addEventListener('message', handleMessage);
+  }
+  return worker;
+}
+
+/**
+ * Subscribes to events from the python worker.
+ * @param listener A function that handles messages from the worker
+ * @returns A function to unsubscribe
+ */
+export function onPythonWorkerEvent(
+  listener: (event: PythonWorkerEvent['data']) => void
+): () => void {
+  listeners.push(listener);
+
+  return () => {
+    const index = listeners.indexOf(listener);
+    if (index > -1) {
+      listeners.splice(index, 1);
     }
   };
-  pythonWorker.addEventListener('message', listener);
 }
+
 
 /**
  * Tries to cancel the currently running code and, if it cannot, terminate the worker.
@@ -80,7 +87,7 @@ export function interruptCodeExecution(): void {
   const resetId = setTimeout(() => {
     getPythonWorker().terminate();
     worker = new Worker(pythonWorkerSrc);
-    if (listener) getPythonWorker().addEventListener('message', listener);
+    getPythonWorker().addEventListener('message', handleMessage);
   }, 1000) as unknown as number; // This is running the browser, so setTimeout returns a number, but TS doesn't know that.
   navigator.serviceWorker.controller?.postMessage(
     JSON.stringify({
