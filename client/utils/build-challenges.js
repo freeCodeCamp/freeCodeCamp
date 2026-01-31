@@ -51,7 +51,6 @@ exports.replaceChallengeNodes = () => {
     const block = path.basename(parentDir);
     const filename = path.basename(filePath);
 
-    console.log(`Replacing challenge nodes for ${filePath}`);
     const meta = getBlockStructure(block);
     const superblocks = getSuperblocks(block);
 
