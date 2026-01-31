@@ -330,6 +330,9 @@
       "sound-mode": "Campfire Mode",
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
+    "tooltips": {
+      "username": "Your username must be longer than 3 characters,be lowercase, contain approved characters(a-z, 0-9, dashes, and underscores), and not be an HTTP status code"
+    },
     "headings": {
       "account": "Account",
       "certs": "Certifications",

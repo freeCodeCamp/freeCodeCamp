@@ -215,6 +215,7 @@ class UsernameSettings extends Component<UsernameProps, UsernameState> {
               name='username-settings'
               onChange={this.handleChange}
               value={formValue}
+              title={t('settings.tooltips.username')}
               id='username-settings'
             />
           </FormGroup>
