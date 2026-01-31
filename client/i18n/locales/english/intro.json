@@ -3232,6 +3232,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lecture-understanding-graphs-and-trees-js": {
+        "title": "Understanding Graphs and Trees",
+        "intro": ["Understanding Graphs and Trees", ""]
       }
     }
   },
