@@ -76,3 +76,4 @@ export const setEditorFocusability = createAction(
 export const toggleVisibleEditor = createAction(
   actionTypes.toggleVisibleEditor
 );
+export const setIsIframeLoaded = createAction(actionTypes.setIsIframeLoaded);
