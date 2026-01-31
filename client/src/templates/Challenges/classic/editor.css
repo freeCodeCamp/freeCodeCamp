@@ -17,6 +17,21 @@
   contain: none !important;
 }
 
+@media (max-width: 768px) {
+  .monaco-scrollable-element {
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .monaco-editor-background {
+    overflow: auto !important;
+  }
+
+  .monaco-editor {
+    touch-action: pan-y;
+  }
+}
+
 .vs .monaco-scrollable-element > .scrollbar > .slider {
   z-index: 11;
 }
