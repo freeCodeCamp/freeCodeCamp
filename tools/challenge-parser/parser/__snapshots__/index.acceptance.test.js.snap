@@ -197,14 +197,10 @@ h1 {
   font-size: 20px;
 }
 
-
 a {
   color: green;
 }",
-      "editableRegionBoundaries": [
-        7,
-        9,
-      ],
+      "editableRegionBoundaries": [],
       "ext": "css",
       "head": "",
       "id": "",
