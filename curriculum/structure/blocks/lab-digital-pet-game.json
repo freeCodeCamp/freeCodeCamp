@@ -1,0 +1,12 @@
+{
+  "name": "Build a Digital Pet Game",
+  "isUpcomingChange": true,
+  "dashedName": "lab-digital-pet-game",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "68c362b379059c388d3874f2", "title": "Build a Digital Pet Game" }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
