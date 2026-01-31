@@ -16,8 +16,11 @@ import {
   isBuildEnabledSelector,
   isBlockNewlyCompletedSelector
 } from '../redux/selectors';
+
 import { getTestRunner } from '../utils/build';
-import CompletionModal, { combineFileData } from './completion-modal';
+import CompletionModal from './completion-modal';
+import { combineFileData } from '../utils/download-helpers';
+
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
 vi.mock('../../../components/Progress');
@@ -156,18 +159,33 @@ describe('<CompletionModal />', () => {
     it('Should label each section appropriately', () => {
       const indexHtml = {
         name: 'index',
-        ext: 'html',
-        contents: 'some html elements'
+        ext: 'html' as const,
+        contents: 'some html elements',
+        head: '',
+        tail: '',
+        path: 'index.html',
+        history: ['index.html'],
+        fileKey: 'indexhtml'
       };
       const stylesCSS = {
         name: 'styles',
-        ext: 'css',
-        contents: 'some css styles'
+        ext: 'css' as const,
+        contents: 'some css styles',
+        head: '',
+        tail: '',
+        path: 'styles.css',
+        history: ['styles.css'],
+        fileKey: 'stylescss'
       };
       const scriptJS = {
         name: 'script',
-        ext: 'js',
-        contents: 'some javascript'
+        ext: 'js' as const,
+        contents: 'some javascript',
+        head: '',
+        tail: '',
+        path: 'script.js',
+        history: ['script.js'],
+        fileKey: 'scriptjs'
       };
       const result = combineFileData([indexHtml, stylesCSS, scriptJS]);
       expect(result).toContain('** start of index.html **');

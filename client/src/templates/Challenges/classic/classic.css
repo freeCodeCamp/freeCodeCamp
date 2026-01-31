@@ -87,6 +87,24 @@
 .tabs-row-right {
   display: flex;
   justify-content: flex-end;
+  gap: 8px;
+
+  & .save-status {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gray-45);
+    font-size: 14px;
+    padding: 6px;
+
+    & svg {
+      color: var(--primary-color);
+    }
+  }
+
+  & .preview-pane {
+    margin-right: -8px;
+  }
 }
 
 .monaco-editor-tabs button + button {
@@ -98,24 +116,12 @@
   margin-inline-end: auto;
 }
 
-.panel-display-tabs button:first-child {
-  margin: 0 10px 0 0;
-}
-
 .panel-display-tabs button:last-child {
   margin: 0;
 }
 
-.panel-display-tabs button:last-of-type {
-  border-inline-start-width: 1px;
-}
-
 .panel-display-tabs button:last-of-type:first-of-type {
   border-inline-start-width: 3px;
-}
-
-.panel-display-tabs button:nth-last-child(2) {
-  border-inline-end-width: 1px;
 }
 
 .interactive-editor-tab {

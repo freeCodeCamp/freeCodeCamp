@@ -25,6 +25,7 @@ export const actionTypes = createTypes(
     'disableBuildOnError',
     'noStoredCodeFound',
     'saveEditorContent',
+    'setLastSavedTime',
     'setShowPreviewPane',
     'setShowPreviewPortal',
     'closeModal',

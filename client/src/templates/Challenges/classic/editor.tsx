@@ -102,7 +102,7 @@ export interface EditorProps {
   openResetModal: () => void;
   resizeProps: ResizeProps;
   saveChallenge: () => void;
-  saveEditorContent: () => void;
+  saveEditorContent: (payload?: { isSilent?: boolean }) => void;
   saveSubmissionToDB?: boolean;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
@@ -274,6 +274,10 @@ const Editor = (props: EditorProps): JSX.Element => {
 
   const submitChallengeDebounceRef = useRef(
     debounce(props.submitChallenge, 1000, { leading: true, trailing: false })
+  );
+
+  const autoSaveDebounceRef = useRef(
+    debounce(() => props.saveEditorContent({ isSilent: true }), 2000)
   );
 
   const player = useRef<{
@@ -616,12 +620,13 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS,
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
-      run:
-        props.saveSubmissionToDB && props.isSignedIn
-          ? // save to database
-            props.saveChallenge
-          : // save to local storage
-            props.saveEditorContent
+      run: () => {
+        if (props.saveSubmissionToDB && props.isSignedIn) {
+          props.saveChallenge();
+        } else {
+          props.saveEditorContent(); // Shows flash message for Ctrl+S
+        }
+      }
     });
     editor.addAction({
       id: 'toggle-accessibility',
@@ -685,6 +690,13 @@ const Editor = (props: EditorProps): JSX.Element => {
       scrollGutterNode
     );
     editor.addContentWidget(scrollGutterWidget);
+    editor.onDidBlurEditorWidget(() => {
+      const currentContent = editor.getValue();
+      if (currentContent && currentContent.trim().length > 0) {
+        autoSaveDebounceRef.current.cancel();
+        props.saveEditorContent({ isSilent: true });
+      }
+    });
 
     // update scrollbar arrows
     setScrollbarArrowStyles(getScrollbarWidth());
@@ -946,6 +958,7 @@ const Editor = (props: EditorProps): JSX.Element => {
       });
     }
     updateFile({ fileKey, contents, editableRegionBoundaries });
+    autoSaveDebounceRef.current();
   };
 
   function createBreadcrumb(): HTMLElement {
@@ -1326,6 +1339,24 @@ const Editor = (props: EditorProps): JSX.Element => {
     }
   }, [props.dimensions]);
 
+  const { saveEditorContent } = props;
+
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      const currentContent = editorRef.current?.getValue();
+      if (currentContent && currentContent.trim().length > 0) {
+        autoSaveDebounceRef.current.cancel();
+        saveEditorContent({ isSilent: true });
+      }
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, [editorRef, saveEditorContent]);
+
   function updateDescriptionZone() {
     const editor = dataRef.current.editor;
     editor?.changeViewZones(changeAccessor => {
@@ -1369,6 +1400,13 @@ const Editor = (props: EditorProps): JSX.Element => {
           editorDidMount={editorDidMount}
           editorWillMount={editorWillMount}
           editorWillUnmount={(editor, monaco) => {
+            // Save before unmounting
+            const currentContent = editor.getModel()?.getValue();
+            if (currentContent && currentContent.trim().length > 0) {
+              autoSaveDebounceRef.current.cancel();
+              props.saveEditorContent({ isSilent: true });
+            }
+
             const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
             const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
             // Any model we've created has to be manually disposed of to prevent

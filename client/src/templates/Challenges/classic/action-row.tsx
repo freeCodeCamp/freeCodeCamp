@@ -1,11 +1,19 @@
-import { faWindowRestore } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { createSelector } from 'reselect';
+import { lastSavedTimeSelector } from '../redux/selectors';
+import {
+  faCheck,
+  faDownload,
+  faWindowRestore
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import EditorTabs from './editor-tabs';
+import { useDownloadChallenge } from '../hooks';
 
 interface ClassicLayoutProps {
   dailyCodingChallengeLanguage: DailyCodingChallengeLanguages;
@@ -32,10 +40,26 @@ interface InteractiveEditorProps {
   toggleInteractiveEditor: () => void;
 }
 
-type ActionRowProps = ClassicLayoutProps | InteractiveEditorProps;
+interface ReduxProps {
+  lastSavedTime: number | null;
+}
+
+type ActionRowProps = (ClassicLayoutProps | InteractiveEditorProps) &
+  ReduxProps;
 
 const ActionRow = (props: ActionRowProps): JSX.Element => {
   const { t } = useTranslation();
+  const { downloadChallenge } = useDownloadChallenge();
+
+  const [currentTime, setCurrentTime] = useState<number>(Date.now());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(Date.now());
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   if (props.hasInteractiveEditor) {
     const { toggleInteractiveEditor, showInteractiveEditor } = props;
@@ -73,7 +97,8 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     isDailyCodingChallenge,
     dailyCodingChallengeLanguage,
     setDailyCodingChallengeLanguage,
-    challengeType
+    challengeType,
+    lastSavedTime
   } = props;
 
   // sets screen reader text for the two preview buttons
@@ -113,6 +138,28 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     setDailyCodingChallengeLanguage(language);
   };
 
+  const formatTimeAgo = (): JSX.Element | null => {
+    if (!lastSavedTime) return null;
+
+    const seconds = Math.floor((currentTime - lastSavedTime) / 1000);
+
+    const timeAgo =
+      seconds < 5
+        ? 'just now'
+        : seconds < 60
+          ? `${seconds}s ago`
+          : seconds < 3600
+            ? `${Math.floor(seconds / 60)}m ago`
+            : `${Math.floor(seconds / 3600)}h ago`;
+
+    return (
+      <span className='save-status' aria-live='off'>
+        <FontAwesomeIcon icon={faCheck} aria-hidden='true' focusable='false' />
+        {t('learn.editor-tabs.saved', { timeAgo })}
+      </span>
+    );
+  };
+
   return (
     <div className='action-row' data-playwright-test-label='action-row'>
       <div className='tabs-row' data-playwright-test-label='tabs-row'>
@@ -150,6 +197,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
         )}
         {/* right */}
         <div className='tabs-row-right panel-display-tabs'>
+          {formatTimeAgo()}
           <button
             aria-expanded={!!showConsole}
             onClick={() => togglePane('showConsole')}
@@ -170,6 +218,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
                 data-playwright-test-label='preview-pane-button'
                 aria-expanded={!!showPreviewPane}
                 onClick={() => togglePane('showPreviewPane')}
+                className='preview-pane'
               >
                 <span className='sr-only'>{getPreviewBtnsSrText().pane}</span>
                 <span aria-hidden='true'>{previewButtonText}</span>
@@ -183,6 +232,16 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
               </button>
             </>
           )}
+          <button
+            onClick={downloadChallenge}
+            aria-label={t('learn.editor-tabs.download-code')}
+          >
+            <FontAwesomeIcon
+              icon={faDownload}
+              aria-hidden='true'
+              focusable='false'
+            />
+          </button>
         </div>
       </div>
     </div>
@@ -190,5 +249,11 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
 };
 
 ActionRow.displayName = 'ActionRow';
+const mapStateToProps = createSelector(
+  lastSavedTimeSelector,
+  (lastSavedTime: number | null) => ({
+    lastSavedTime
+  })
+);
 
-export default ActionRow;
+export default connect(mapStateToProps)(ActionRow);
