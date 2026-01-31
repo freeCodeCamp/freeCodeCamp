@@ -256,7 +256,7 @@ const defineMonacoThemes = (
   });
 };
 
-const initialData: EditorState = {
+const createInitialEditorState = (): EditorState => ({
   monaco: {},
   descriptionZone: {
     zoneId: '',
@@ -269,7 +269,7 @@ const initialData: EditorState = {
   editableRegion: {
     decorationId: ''
   }
-};
+});
 
 const Editor = (props: EditorProps): JSX.Element => {
   const { t } = useTranslation();
@@ -287,9 +287,12 @@ const Editor = (props: EditorProps): JSX.Element => {
   // only take effect during the next render, which is too late. We could use
   // plain objects here, but useRef is shared between instances, so avoids
   // unnecessary object creation.
+  // Each Editor instance (e.g. per file in MultifileEditor) must get its own
+  // nested state; a shallow copy would share refs across instances and cause
+  // "element was detached" and wrong-editor behavior.
   const monacoRef: MutableRefObject<typeof monacoEditor | null> =
     useRef<typeof monacoEditor>(null);
-  const dataRef = useRef<EditorState>({ ...initialData });
+  const dataRef = useRef<EditorState>(createInitialEditorState());
   const [lowerJawContainer, setLowerJawContainer] =
     React.useState<HTMLDivElement | null>(null);
 
