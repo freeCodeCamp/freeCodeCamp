@@ -120,6 +120,7 @@ function TimelineInner({
       <SolutionDisplayWidget
         completedChallenge={completedChallenge}
         projectTitle={projectTitle}
+        username={username}
         showUserCode={() => viewSolution(completedChallenge)}
         showProjectPreview={() => viewProject(completedChallenge)}
         showExamResults={() => viewExamResults(completedChallenge)}
