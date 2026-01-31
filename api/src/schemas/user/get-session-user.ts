@@ -124,7 +124,7 @@ export const getSessionUser = {
             })
           ),
           experience: Type.Optional(Type.Array(experience)),
-          profileUI: Type.Optional(profileUI),
+          profileUI,
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),
