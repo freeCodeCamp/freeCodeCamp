@@ -226,16 +226,17 @@ export function addSuperblockStructure(
   log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
   const superblockStructures = superBlockFilenames.map(filename => {
-    const superblockName =
+    const superBlockName =
       superBlockNames[filename as keyof typeof superBlockNames];
-    if (!superblockName) {
+    if (!superBlockName) {
       throw new Error(`Superblock name not found for ${filename}`);
     }
 
     return {
-      name: superblockName,
+      name: superBlockName,
       blocks: transformSuperBlock(getSuperblockStructure(filename), {
-        showComingSoon
+        showComingSoon,
+        superBlockName
       })
     };
   });
