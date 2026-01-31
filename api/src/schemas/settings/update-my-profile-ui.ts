@@ -13,6 +13,7 @@ export const updateMyProfileUI = {
       showPoints: Type.Boolean(),
       showPortfolio: Type.Boolean(),
       showExperience: Type.Boolean(),
+      showEducation: Type.Boolean(),
       showTimeLine: Type.Boolean()
     })
   }),

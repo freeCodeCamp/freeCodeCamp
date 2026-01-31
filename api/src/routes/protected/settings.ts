@@ -167,6 +167,7 @@ export const settingRoutes: FastifyPluginCallbackTypebox = (
               showPoints: req.body.profileUI.showPoints,
               showPortfolio: req.body.profileUI.showPortfolio,
               showExperience: req.body.profileUI.showExperience,
+              showEducation: req.body.profileUI.showEducation,
               showTimeLine: req.body.profileUI.showTimeLine
             }
           }
@@ -731,6 +732,36 @@ ${isLinkSentWithinLimitTTL}`
 
         return {
           message: 'flash.experience-updated',
+          type: 'success'
+        } as const;
+      } catch (err) {
+        logger.error(err);
+        fastify.Sentry.captureException(err);
+        void reply.code(500);
+        return { message: 'flash.wrong-updating', type: 'danger' } as const;
+      }
+    }
+  );
+
+  fastify.put(
+    '/update-my-education',
+    {
+      schema: schemas.updateMyEducation
+    },
+    async (req, reply) => {
+      const logger = fastify.log.child({ req, res: reply });
+      try {
+        const { education } = req.body;
+
+        await fastify.prisma.user.update({
+          where: { id: req.user?.id },
+          data: {
+            education
+          }
+        });
+
+        return {
+          message: 'flash.education-updated',
           type: 'success'
         } as const;
       } catch (err) {
