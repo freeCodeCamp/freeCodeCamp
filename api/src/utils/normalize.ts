@@ -124,9 +124,9 @@ export const normalizeChallengeType = (
  */
 export const normalizeProfileUI = (
   maybeProfileUI: ProfileUI | null
-): NoNullProperties<ProfileUI> => {
+): DefaultToFalse<ProfileUI> => {
   return maybeProfileUI
-    ? removeNulls(maybeProfileUI)
+    ? normalizeFlags(maybeProfileUI)
     : {
         isLocked: true,
         showAbout: false,
