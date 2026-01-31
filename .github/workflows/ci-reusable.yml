@@ -1,0 +1,152 @@
+name: CI - Reusable
+
+on:
+  workflow_call:
+    inputs:
+      run-lint:
+        type: boolean
+        default: false
+      run-build:
+        type: boolean
+        default: false
+      run-test:
+        type: boolean
+        default: false
+      run-install-check:
+        type: boolean
+        default: false
+      show-upcoming-changes:
+        type: boolean
+        default: false
+      locale:
+        type: string
+        default: 'english'
+
+permissions:
+  contents: read
+  packages: read
+
+jobs:
+  # Fast jobs using devcontainer image (pre-installed dependencies)
+  lint:
+    name: Lint
+    if: ${{ inputs.run-lint }}
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/freecodecamp/devcontainer:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Set Environment
+        run: cp sample.env .env
+
+      - name: Check formatting
+        run: pnpm prettier --check .
+
+      - name: Lint
+        run: pnpm lint
+
+  build:
+    name: Build
+    if: ${{ inputs.run-build }}
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/freecodecamp/devcontainer:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Set Environment
+        run: cp sample.env .env
+
+      - name: Build
+        run: pnpm run build
+
+  test:
+    name: Test
+    if: ${{ inputs.run-test }}
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/freecodecamp/devcontainer:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    services:
+      mongodb:
+        image: mongo:8.0
+        options: >-
+          --health-cmd "mongosh --eval 'db.adminCommand(\"ping\")'"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Set Environment
+        run: |
+          cp sample.env .env
+          echo "MONGOHQ_URL=mongodb://mongodb:27017/freecodecamp?directConnection=true" >> .env
+          ${{ inputs.show-upcoming-changes && 'echo "SHOW_UPCOMING_CHANGES=true" >> .env' || 'true' }}
+
+      - name: Initialize MongoDB Replica Set
+        run: |
+          mongosh --host mongodb:27017 --eval '
+            rs.initiate({
+              _id: "rs0",
+              members: [{ _id: 0, host: "mongodb:27017" }]
+            })
+          '
+
+      - name: Run Tests
+        env:
+          CURRICULUM_LOCALE: ${{ inputs.locale }}
+          CLIENT_LOCALE: ${{ inputs.locale }}
+        run: pnpm test
+
+  # Sanity check - fresh install on base image (no pre-installed deps)
+  install-check:
+    name: Install Check (Fresh)
+    if: ${{ inputs.run-install-check }}
+    runs-on: ubuntu-24.04
+    container:
+      image: ghcr.io/freecodecamp/base:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Check lockfile count
+        run: |
+          if [ $(find . -name 'package-lock.json' | grep -vc -e 'node_modules') -gt 0 ]; then
+            echo "Error: found package-lock files. Use pnpm."
+            exit 1
+          fi
+
+      - name: Fresh pnpm install
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify install succeeded
+        run: pnpm ls --depth 0

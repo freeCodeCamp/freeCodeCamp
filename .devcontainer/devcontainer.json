@@ -1,5 +1,5 @@
 {
-  "name": "freeCodeCampDC",
+  "name": "freeCodeCamp",
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
@@ -18,8 +18,16 @@
     "onAutoForward": "silent"
   },
   "onCreateCommand": "[ ! -f .env ] && cp sample.env .env || true",
-  "updateContentCommand": "pnpm install && pnpm seed",
+  "postStartCommand": "pnpm install",
   "postAttachCommand": {
-    "instructions": "bash -c 'echo \"\n\n\n Start a new terminal and run \\`pnpm run develop\\` when you are ready.\n\n\n\"'"
+    "instructions": "echo '\n\n  Ready! Run: pnpm run develop\n\n'"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ]
+    }
   }
 }
