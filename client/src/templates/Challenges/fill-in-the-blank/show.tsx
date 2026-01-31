@@ -88,6 +88,7 @@ const ShowFillInTheBlank = ({
         transcript,
         superBlock,
         block,
+        blockLabel,
         translationPending,
         challengeType,
         fillInTheBlank,
@@ -128,6 +129,7 @@ const ShowFillInTheBlank = ({
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -357,6 +359,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        blockLabel
         lang
         fields {
           slug
