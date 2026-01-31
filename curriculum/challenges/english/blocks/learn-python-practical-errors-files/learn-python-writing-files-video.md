@@ -1,5 +1,5 @@
 ---
-id: learn-python-writing-files-video
+id: bfab38e6a6c1165f7774514d
 title: Writing to Files - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: QR95sRxsehY

@@ -1,5 +1,5 @@
 ---
-id: learn-python-mad-libs-video
+id: 024ffa91a50a44335be33ee7
 title: Mad Libs Game - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: XRmMTKa-xlc

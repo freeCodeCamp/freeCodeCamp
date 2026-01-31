@@ -7,23 +7,23 @@
   "helpCategory": "Python",
   "challengeOrder": [
     {
-      "id": "learn-python-comments-video",
+      "id": "71ac60e6488b40e997219f15",
       "title": "Comments - Learn Python - Full Course for Beginners"
     },
     {
-      "id": "learn-python-try-except-video",
+      "id": "2a486e3e521b79b874fb5e9a",
       "title": "Try/Except - Learn Python - Full Course for Beginners"
     },
     {
-      "id": "learn-python-reading-files-video",
+      "id": "04e25c4fdc9ee0e71a844fd6",
       "title": "Reading Files - Learn Python - Full Course for Beginners"
     },
     {
-      "id": "learn-python-writing-files-video",
+      "id": "bfab38e6a6c1165f7774514d",
       "title": "Writing to Files - Learn Python - Full Course for Beginners"
     },
     {
-      "id": "learn-python-modules-pip-video",
+      "id": "2ccc34bd3f7bb4ae97a67ea3",
       "title": "Modules and pip - Learn Python - Full Course for Beginners"
     }
   ]

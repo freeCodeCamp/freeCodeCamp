@@ -1,5 +1,5 @@
 ---
-id: learn-python-reading-files-video
+id: 04e25c4fdc9ee0e71a844fd6
 title: Reading Files - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: enOW7u6LWyg

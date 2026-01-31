@@ -1,5 +1,5 @@
 ---
-id: learn-python-strings-video
+id: 0e2f4bd857b1edc70bfcd1f9
 title: Working with Strings - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: OrejgL7kP3M

@@ -1,5 +1,5 @@
 ---
-id: learn-python-drawing-shape-video
+id: 62baa9d28e8723f635a0093e
 title: Drawing a Shape - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: vcNZZSeyZkY

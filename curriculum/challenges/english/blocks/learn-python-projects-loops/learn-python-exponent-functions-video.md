@@ -1,5 +1,5 @@
 ---
-id: learn-python-exponent-functions-video
+id: a4cfb218d22efcfa7cc49d80
 title: Exponent Functions - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: KLDvy0wFFX4

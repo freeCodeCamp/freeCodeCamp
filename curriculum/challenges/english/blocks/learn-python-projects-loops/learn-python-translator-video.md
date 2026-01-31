@@ -1,5 +1,5 @@
 ---
-id: learn-python-translator-video
+id: 703bcd12c0edae7773eeec64
 title: Building a Translator - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: 3Sa5rwlKdGQ

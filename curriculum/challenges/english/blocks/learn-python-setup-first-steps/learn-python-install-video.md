@@ -1,5 +1,5 @@
 ---
-id: learn-python-install-video
+id: edeae16d4bf9505165740c75
 title: Installing Python and PyCharm - Learn Python - Full Course for Beginners
 challengeType: 11
 videoId: RgGQJDOms1M
