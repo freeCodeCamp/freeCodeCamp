@@ -7,6 +7,24 @@ import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 
+// Resolves the correct "view" URL for a completed challenge.
+// MS Learn API solutions redirect to the user's MS Learn profile.
+function getViewUrl(
+  solution: string | undefined | null,
+  username?: string
+): string | undefined {
+  if (
+    typeof solution === 'string' &&
+    solution.startsWith('https://learn.microsoft.com/api/')
+  ) {
+    return username
+      ? `https://learn.microsoft.com/en-us/users/${username}/`
+      : undefined;
+  }
+
+  return solution ?? undefined;
+}
+
 interface Props {
   completedChallenge: CompletedChallenge;
   projectTitle: string;
@@ -26,17 +44,18 @@ export function SolutionDisplayWidget({
   showExamResults,
   displayContext
 }: Props): JSX.Element | null {
+  const { t } = useTranslation();
   const { id, solution, githubLink } = completedChallenge;
+  const viewUrl = getViewUrl(solution, username);
+
   const isMsLearnApiSolution =
     typeof solution === 'string' &&
     solution.startsWith('https://learn.microsoft.com/api/');
 
-  const viewUrl = isMsLearnApiSolution
-    ? username
-      ? `https://learn.microsoft.com/en-us/users/${username}/`
-      : undefined
-    : solution ?? undefined;
-  const { t } = useTranslation();
+  if (isMsLearnApiSolution && !viewUrl) {
+    return null;
+  }
+
   const viewText = t('buttons.view');
   const viewCode = t('buttons.view-code');
   const viewProject = t('buttons.view-project');
@@ -62,8 +81,6 @@ export function SolutionDisplayWidget({
       <Dropdown.Menu>
         <MenuItem
           variant='primary'
-          // This expression is only to resolve TypeScript error.
-          // There won't be a case where the link has an invalid `href`
           // as this component is only rendered if `solution` is truthy.
           href={viewUrl}
           rel='noopener noreferrer'
@@ -89,8 +106,6 @@ export function SolutionDisplayWidget({
   const ShowProjectLinkForCertification = (
     <Button
       block={true}
-      // This expression is only to resolve TypeScript error.
-      // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
       href={viewUrl}
       rel='noopener noreferrer'
@@ -148,8 +163,6 @@ export function SolutionDisplayWidget({
         <Dropdown.Menu>
           <MenuItem
             variant='primary'
-            // This expression is only to resolve TypeScript error.
-            // There won't be a case where the link has an invalid `href`
             // as this component is only rendered if `solution` is truthy.
             href={viewUrl}
             rel='noopener noreferrer'
@@ -177,8 +190,6 @@ export function SolutionDisplayWidget({
     <Button
       block={true}
       variant='primary'
-      // This expression is only to resolve TypeScript error.
-      // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
       href={viewUrl}
       rel='noopener noreferrer'
