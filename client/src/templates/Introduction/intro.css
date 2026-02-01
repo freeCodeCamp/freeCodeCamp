@@ -15,6 +15,7 @@
 .block-label {
   align-self: start;
   height: fit-content;
+  width: fit-content;
   padding: 1px 6px 2px;
   font-size: 0.85rem;
   border: 1px solid;

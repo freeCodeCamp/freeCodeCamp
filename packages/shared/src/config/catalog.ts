@@ -48,7 +48,7 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.LearnPythonForBeginners,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 3,
     topic: Topic.Python
   }

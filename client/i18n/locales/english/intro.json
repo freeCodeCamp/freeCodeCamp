@@ -944,11 +944,11 @@
   "learn-python-for-beginners": {
     "title": "Learn Python for Beginners",
     "summary": [
-      "Learn the fundamentals of Python programming from the ground up. Start with basic concepts, progress through control flow and functions, and build projects to practice what you've learned. By the end, you'll understand object-oriented programming and have built a capstone project."
+      "Learn the fundamentals of Python programming from the ground up. Start with basic concepts, practice foundamental concepts and build small projects to reinforce your learning."
     ],
     "intro": [
       "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
-      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned. By the end, you'll understand object-oriented programming and have built a capstone project."
+      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
     ],
     "note": "",
     "blocks": {
