@@ -3238,6 +3238,13 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "Restore a Coherent Narrative from an Array of Story Fragments",
+          ""
+        ]
       }
     }
   },
