@@ -1,6 +1,6 @@
 ---
 id: 9afe5e8141b13e9f1d59d46e
-title: Building a Multiple Choice Quiz - Learn Python - Full Course for Beginners
+title: Building a Multiple Choice Quiz
 challengeType: 11
 videoId: GJMmSaB8RN0
 dashedName: building-a-multiple-choice-quiz-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: building-a-multiple-choice-quiz-learn-python-full-course-for-beginne
 
 # --description--
 
-Learn how to build a multiple choice quiz program that brings together all the concepts from the course.
+In this video, you will practice what you have learned about classes and objects by building a multiple choice quiz. 
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to import the `Question` class from the `Question` module?
 
 ## --answers--
 
-yes
+`Question import`
 
 ---
 
-no
+`from Question`
 
 ---
 
-probably
+`from Question import Question`
 
 ---
 
-a bit
+`import Question.py`
 
 ## --video-solution--
 
-1
+3

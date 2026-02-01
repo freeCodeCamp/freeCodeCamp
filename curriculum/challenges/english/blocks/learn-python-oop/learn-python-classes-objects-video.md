@@ -1,6 +1,6 @@
 ---
 id: a0339c4075344cbfc2cd939c
-title: Classes and Objects - Learn Python - Full Course for Beginners
+title: Classes and Objects
 challengeType: 11
 videoId: fR3dh5_MPJs
 dashedName: classes-and-objects-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: classes-and-objects-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to create classes and objects in Python to write object-oriented programs.
+In this video, you will learn how to create classes and objects in Python to write object-oriented programs.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What is the role of `def __init__(self):` inside of a class?
 
 ## --answers--
 
-yes
+It represents a function for calling the method.
 
 ---
 
-no
+It specifies the type of the class.
 
 ---
 
-probably
+It allows a class to inherit methods from another class.
 
 ---
 
-a bit
+It represents an initializer method.
 
 ## --video-solution--
 
-1
+4
