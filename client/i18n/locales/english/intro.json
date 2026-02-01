@@ -971,9 +971,9 @@
         ]
       },
       "learn-python-data-structures": {
-        "title": "Data Structures: Lists/Tuples/Dicts",
+        "title": "Data Structures: Lists and Tuples",
         "intro": [
-          "Master the essential data structures in Python: lists, tuples, and dictionaries. These structures allow you to organize and manipulate collections of data efficiently."
+          "In these videos, you will learn about lists, tuples and common operations."
         ]
       },
       "learn-python-control-flow-functions": {

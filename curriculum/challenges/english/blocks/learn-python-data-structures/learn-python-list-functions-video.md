@@ -1,6 +1,6 @@
 ---
 id: 24a45b3960b3aa68dff2cd9e
-title: List Functions - Learn Python - Full Course for Beginners
+title: List Functions
 challengeType: 11
 videoId: _5FQ5f3RW5U
 dashedName: list-functions-learn-python-full-course-for-beginners
@@ -8,30 +8,36 @@ dashedName: list-functions-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn useful list functions and methods like append(), remove(), sort(), and reverse() for manipulating lists.
+In this video, you will learn how to work with useful methods including the `append()`, `index()`, `clear()`, `sort()`, and `reverse()` methods.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What will be the output for the following code?
+
+```python
+friends = ["Kevin", "Karen", "Jim", "Oscar", "Toby"]
+
+print(friends.index("Oscar"))
+```
 
 ## --answers--
 
-yes
+4
 
 ---
 
-no
+1
 
 ---
 
-probably
+2
 
 ---
 
-a bit
+3
 
 ## --video-solution--
 
-1
+4

@@ -1,6 +1,6 @@
 ---
 id: 5ed596ba3306cf2c1a94bb92
-title: Tuples - Learn Python - Full Course for Beginners
+title: Tuples
 challengeType: 11
 videoId: g6fwjiEFG-Y
 dashedName: tuples-learn-python-full-course-for-beginners
@@ -8,30 +8,38 @@ dashedName: tuples-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn about tuples in Python, how they differ from lists, and how to use them effectively in your programs.
+In this video, you will learn about tuples in Python and how they differ from lists.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to create a tuple?
 
 ## --answers--
 
-yes
+```python
+coordinates = [4, 5]
+```
 
 ---
 
-no
+```python
+coordinates = (4, 5)
+```
 
 ---
 
-probably
+```python
+coordinates = <4, 5>
+```
 
 ---
 
-a bit
+```python
+coordinates = /4, 5/
+```
 
 ## --video-solution--
 
-1
+2

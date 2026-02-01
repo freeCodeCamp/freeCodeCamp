@@ -1,6 +1,6 @@
 ---
 id: 39a400e9163c5a0b33587e18
-title: Lists - Learn Python - Full Course for Beginners
+title: Lists
 challengeType: 11
 videoId: DtMPzGOHZ2M
 dashedName: lists-learn-python-full-course-for-beginners
@@ -8,30 +8,35 @@ dashedName: lists-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to create and work with lists in Python, including indexing, slicing, and basic list operations.
+In this video, you will learn about lists, list indexing, slicing, and basic list operations.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What will be the output for the following code?
+
+```python
+friends = ["Kevin", "Karen", "Jim"]
+print(friends[-1])
+```
 
 ## --answers--
 
-yes
+`"Kevin"`
 
 ---
 
-no
+`"Jim"`
 
 ---
 
-probably
+`"Karen"`
 
 ---
 
-a bit
+`Error`
 
 ## --video-solution--
 
-1
+2
