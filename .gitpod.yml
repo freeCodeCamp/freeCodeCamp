@@ -52,7 +52,6 @@ tasks:
       cp sample.env .env &&
       pnpm install &&
       gp sync-done pnpm-install &&
-      pnpm turbo compile &&
       pnpm run build:curriculum &&
       gp ports await 27017
     command: >

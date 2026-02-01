@@ -1,10 +1,10 @@
 const chokidar = require('chokidar');
 const {
   getSuperblockStructure
-} = require('@freecodecamp/curriculum/dist/file-handler');
+} = require('@freecodecamp/curriculum/file-handler');
 const {
   superBlockToFilename
-} = require('@freecodecamp/curriculum/dist/build-curriculum');
+} = require('@freecodecamp/curriculum/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
