@@ -8,23 +8,23 @@
   "challengeOrder": [
     {
       "id": "62baa9d28e8723f635a0093e",
-      "title": "Drawing a Shape - Learn Python - Full Course for Beginners"
+      "title": "Drawing a Shape"
     },
     {
       "id": "315017f4457c19d45c2be034",
-      "title": "Variables and Data Types - Learn Python - Full Course for Beginners"
+      "title": "Variables and Data Types"
     },
     {
       "id": "0e2f4bd857b1edc70bfcd1f9",
-      "title": "Working with Strings - Learn Python - Full Course for Beginners"
+      "title": "Working with Strings"
     },
     {
       "id": "8ad37ddb7a23050f71cc9cc9",
-      "title": "Working with Numbers - Learn Python - Full Course for Beginners"
+      "title": "Working with Numbers"
     },
     {
       "id": "155ca30775751b78a860a79b",
-      "title": "Getting Input from Users - Learn Python - Full Course for Beginners"
+      "title": "Getting Input from Users"
     }
   ]
 }

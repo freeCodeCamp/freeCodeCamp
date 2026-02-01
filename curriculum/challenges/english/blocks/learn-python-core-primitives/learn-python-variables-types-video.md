@@ -1,6 +1,6 @@
 ---
 id: 315017f4457c19d45c2be034
-title: Variables and Data Types - Learn Python - Full Course for Beginners
+title: Variables and Data Types
 challengeType: 11
 videoId: sIw317W39X0
 dashedName: variables-and-data-types-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: variables-and-data-types-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn about variables and the different data types available in Python including integers, floats, strings, and booleans.
+In this video, you will learn about the different data types in Python including integers, strings and booleans.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What is a boolean?
 
 ## --answers--
 
-yes
+It is a data type that represents an `undefined` value.
 
 ---
 
-no
+It is a data type that represents a sequence of characters.
 
 ---
 
-probably
+It is a data type that represents `True` or `False`.
 
 ---
 
-a bit
+It is a data type that represents a float.
 
 ## --video-solution--
 
-1
+3

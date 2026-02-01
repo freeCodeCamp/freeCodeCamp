@@ -1,6 +1,6 @@
 ---
 id: 155ca30775751b78a860a79b
-title: Getting Input from Users - Learn Python - Full Course for Beginners
+title: Getting Input from Users
 challengeType: 11
 videoId: C0L4cnqKqDw
 dashedName: getting-input-from-users-learn-python-full-course-for-beginners
@@ -8,29 +8,29 @@ dashedName: getting-input-from-users-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to get input from users using the input() function and handle different types of user input.
+In this video, you will learn how to get input from the user. 
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following built-in functions is used to get input from the user?
 
 ## --answers--
 
-yes
+`input()`
 
 ---
 
-no
+`os.stdin()`
 
 ---
 
-probably
+`stdin()`
 
 ---
 
-a bit
+`prompt()`
 
 ## --video-solution--
 

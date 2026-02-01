@@ -1,6 +1,6 @@
 ---
 id: 62baa9d28e8723f635a0093e
-title: Drawing a Shape - Learn Python - Full Course for Beginners
+title: Drawing a Shape
 challengeType: 11
 videoId: vcNZZSeyZkY
 dashedName: drawing-a-shape-learn-python-full-course-for-beginners
@@ -8,30 +8,47 @@ dashedName: drawing-a-shape-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to use Python to draw shapes using basic commands.
+In this video, you will learn how to print a basic shape to the console using `print` statements.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to print a triangle to the console?
 
 ## --answers--
 
-yes
+```python
+print("   /|  / |  /  | /___|")
+```
 
 ---
 
-no
+```python
+print(   /|)
+print(  / |)
+print( /  |)
+print(/___|)
+```
 
 ---
 
-probably
+```python
+print(" /|")
+print(" / |")
+print(" /  |")
+print("/___|")
+```
 
 ---
 
-a bit
+```python
+print("   /|")
+print("  / |")
+print(" /  |")
+print("/___|")
+```
 
 ## --video-solution--
 
-1
+4

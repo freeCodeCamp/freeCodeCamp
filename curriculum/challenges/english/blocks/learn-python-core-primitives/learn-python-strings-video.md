@@ -1,6 +1,6 @@
 ---
 id: 0e2f4bd857b1edc70bfcd1f9
-title: Working with Strings - Learn Python - Full Course for Beginners
+title: Working with Strings
 challengeType: 11
 videoId: OrejgL7kP3M
 dashedName: working-with-strings-learn-python-full-course-for-beginners
@@ -8,30 +8,42 @@ dashedName: working-with-strings-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to work with strings in Python, including string concatenation, indexing, and useful string methods.
+In this video, you will learn about string concatenation, indexing, and useful string methods.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to access the first character of a string?
 
 ## --answers--
 
-yes
+```python
+phrase = "Giraffe Academy"
+print(phrase[1])
+```
 
 ---
 
-no
+```python
+phrase = "Giraffe Academy"
+print(phrase[0])
+```
 
 ---
 
-probably
+```python
+phrase = "Giraffe Academy"
+print(phrase[-1])
+```
 
 ---
 
-a bit
+```python
+phrase = "Giraffe Academy"
+print(phrase[2])
+```
 
 ## --video-solution--
 
-1
+2

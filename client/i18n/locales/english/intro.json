@@ -961,7 +961,7 @@
       "learn-python-core-primitives": {
         "title": "Core Primitives: Variables, Types, Basic I/O",
         "intro": [
-          "Learn the fundamental building blocks of Python: variables, data types, and how to work with strings, numbers, and user input. These concepts form the foundation for all Python programs."
+          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
         ]
       },
       "learn-python-small-projects-basics": {
