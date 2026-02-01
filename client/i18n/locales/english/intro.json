@@ -3242,8 +3242,8 @@
       "lab-story-fragment-restoration": {
         "title": "Restore a Coherent Narrative from an Array of Story Fragments",
         "intro": [
-          "Restore a Coherent Narrative from an Array of Story Fragments",
-          ""
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
         ]
       }
     }

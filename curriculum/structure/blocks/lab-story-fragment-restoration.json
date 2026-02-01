@@ -1,10 +1,15 @@
 {
   "name": "Restore a Coherent Narrative from an Array of Story Fragments",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-story-fragment-restoration",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "697fc395f3d85f14b05cd9ca", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "697fc395f3d85f14b05cd9ca",
+      "title": "Restore a Coherent Narrative from an Array of Story Fragments"
+    }
+  ],
   "blockLabel": "lab",
   "usesMultifileEditor": true
 }
