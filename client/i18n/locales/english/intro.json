@@ -994,10 +994,10 @@
           "Learn how to handle errors gracefully, read and write files, and organize your code with modules and external packages. These practical skills are essential for real-world Python development."
         ]
       },
-      "learn-python-oop-capstone": {
-        "title": "OOP + Capstone Project",
+      "learn-python-oop": {
+        "title": "Object Oriented Programming",
         "intro": [
-          "Learn object-oriented programming by creating classes and objects. Complete a capstone project that brings together everything you've learned: a multiple choice quiz application."
+          "Learn object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
         ]
       }
     }

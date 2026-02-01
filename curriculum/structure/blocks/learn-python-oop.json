@@ -1,9 +1,9 @@
 {
-  "name": "OOP + Capstone Project",
+  "name": "Object Oriented Programming",
   "blockLabel": "video",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
-  "dashedName": "learn-python-oop-capstone",
+  "dashedName": "learn-python-oop",
   "helpCategory": "Python",
   "challengeOrder": [
     {
