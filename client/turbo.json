@@ -10,7 +10,13 @@
       "env": ["FCC_*"]
     },
     "setup": {
-      "env": ["FCC_*"],
+      "env": [
+        "FCC_*",
+        "CLIENT_LOCALE",
+        "CURRICULUM_LOCALE",
+        "DEPLOYMENT_ENV",
+        "FREECODECAMP_NODE_ENV"
+      ],
       "outputs": [
         "config/env.json",
         "i18n/locales/*.json",
