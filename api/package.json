@@ -45,7 +45,7 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@freecodecamp/shared": "workspace:*",
     "@total-typescript/ts-reset": "0.6.1",
-    "@types/jsonwebtoken": "9.0.5",
+    "@types/jsonwebtoken": "9.0.10",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.10.8",
     "@types/nodemailer": "6.4.21",
