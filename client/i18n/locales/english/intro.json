@@ -4469,6 +4469,10 @@
         "intro": [
           "Pass this exam to earn your Back End Development and APIs Certification"
         ]
+      },
+      "lecture-understanding-rest-api-and-web-services": {
+        "title": "Understanding the REST API and Web Services",
+        "intro": ["Understanding the REST API and Web Services", ""]
       }
     }
   },
