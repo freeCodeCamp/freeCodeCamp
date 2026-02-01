@@ -989,9 +989,9 @@
         ]
       },
       "learn-python-practical-errors-files": {
-        "title": "Practical Python: Errors, Files, Modules",
+        "title": "Practical Python: Errors, Files and Modules",
         "intro": [
-          "Learn how to handle errors gracefully, read and write files, and organize your code with modules and external packages. These practical skills are essential for real-world Python development."
+          "In these videos, you will learn how to handle errors gracefully, read and write to files, and organize your code with modules and external packages."
         ]
       },
       "learn-python-oop": {

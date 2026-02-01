@@ -1,6 +1,6 @@
 ---
 id: 71ac60e6488b40e997219f15
-title: Comments - Learn Python - Full Course for Beginners
+title: Comments
 challengeType: 11
 videoId: CY-CMJIt1z8
 dashedName: comments-learn-python-full-course-for-beginners
@@ -8,29 +8,29 @@ dashedName: comments-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to write comments in Python to document your code and make it more readable.
+In this video, you will learn how to write comments in Python to document your code and make it more readable.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is a single line comment in Python?
 
 ## --answers--
 
-yes
+`# This program is cool`
 
 ---
 
-no
+`> This program is cool`
 
 ---
 
-probably
+`''' This program is cool`
 
 ---
 
-a bit
+`// This program is cool`
 
 ## --video-solution--
 

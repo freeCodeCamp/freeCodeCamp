@@ -1,6 +1,6 @@
 ---
 id: 2ccc34bd3f7bb4ae97a67ea3
-title: Modules and pip - Learn Python - Full Course for Beginners
+title: Modules and pip
 challengeType: 11
 videoId: HJ-dHUXmpcg
 dashedName: modules-and-pip-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: modules-and-pip-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to use modules and pip to extend Python's functionality with external packages.
+In this video, you will learn how to use modules and pip to extend Python's functionality with external packages.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What is pip used for?
 
 ## --answers--
 
-yes
+It is used to sort python modules.
 
 ---
 
-no
+It is used to explain python modules.
 
 ---
 
-probably
+It is used to install python modules.
 
 ---
 
-a bit
+It is used to lint Python programs. 
 
 ## --video-solution--
 
-1
+3

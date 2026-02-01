@@ -1,6 +1,6 @@
 ---
 id: 2a486e3e521b79b874fb5e9a
-title: Try/Except - Learn Python - Full Course for Beginners
+title: Try/Except
 challengeType: 11
 videoId: 1tkhMom_SZw
 dashedName: try-except-learn-python-full-course-for-beginners
@@ -8,30 +8,38 @@ dashedName: try-except-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to handle exceptions using try/except blocks to make your programs more robust.
+In this video, you will learn how to handle exceptions using try/except blocks to make your programs more robust.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What will be the result for the following code if the user provides the string `"random"`?
+
+```python
+try:
+    number = int(input("Enter a number: "))
+    print(number)
+except:
+    print("Invalid Input")
+```
 
 ## --answers--
 
-yes
+Nothing will be output to the console.
 
 ---
 
-no
+The string `"random"` will be output to the console.
 
 ---
 
-probably
+The string `"Invalid Input"` will be output to the console.
 
 ---
 
-a bit
+The program will crash.
 
 ## --video-solution--
 
-1
+3
