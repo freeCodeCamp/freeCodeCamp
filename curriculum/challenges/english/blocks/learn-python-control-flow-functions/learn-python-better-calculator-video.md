@@ -1,6 +1,6 @@
 ---
 id: a9f9c5bf295034800d6c77ad
-title: Building a Better Calculator - Learn Python - Full Course for Beginners
+title: Building a Better Calculator
 challengeType: 11
 videoId: lOltMrA6kuY
 dashedName: building-a-better-calculator-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: building-a-better-calculator-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to build an improved calculator program with more features and better user experience.
+In this video, you will learn how to build an improved calculator program using if statements.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following built-in functions is used to convert a string to a float?
 
 ## --answers--
 
-yes
+`floats()`
 
 ---
 
-no
+`floating_point()`
 
 ---
 
-probably
+`float()`
 
 ---
 
-a bit
+`fl()`
 
 ## --video-solution--
 
-1
+3
