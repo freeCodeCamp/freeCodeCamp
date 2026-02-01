@@ -1,5 +1,5 @@
 {
-  "name": "Projects + Iteration + Loops",
+  "name": "Dictionaries and Loops",
   "blockLabel": "video",
   "blockLayout": "challenge-list",
   "isUpcomingChange": false,
@@ -8,31 +8,31 @@
   "challengeOrder": [
     {
       "id": "3625fbc38b9428ae98d98f23",
-      "title": "Dictionaries - Learn Python - Full Course for Beginners"
+      "title": "Dictionaries"
     },
     {
       "id": "474c23ec0df6e7af920e0526",
-      "title": "While Loop - Learn Python - Full Course for Beginners"
+      "title": "While Loop"
     },
     {
       "id": "d4876f74547b26d5c330423e",
-      "title": "Building a Guessing Game - Learn Python - Full Course for Beginners"
+      "title": "Building a Guessing Game"
     },
     {
       "id": "030401977064585ddd4c7746",
-      "title": "For Loops - Learn Python - Full Course for Beginners"
+      "title": "For Loops"
     },
     {
       "id": "a4cfb218d22efcfa7cc49d80",
-      "title": "Exponent Functions - Learn Python - Full Course for Beginners"
+      "title": "Exponent Functions"
     },
     {
       "id": "28119f9dc5f93e3ac5d7c58a",
-      "title": "2D Lists and Nested Loops - Learn Python - Full Course for Beginners"
+      "title": "2D Lists and Nested Loops"
     },
     {
       "id": "703bcd12c0edae7773eeec64",
-      "title": "Building a Translator - Learn Python - Full Course for Beginners"
+      "title": "Building a Translator"
     }
   ]
 }

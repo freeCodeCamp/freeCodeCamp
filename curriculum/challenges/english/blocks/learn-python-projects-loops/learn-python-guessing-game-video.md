@@ -1,6 +1,6 @@
 ---
 id: d4876f74547b26d5c330423e
-title: Building a Guessing Game - Learn Python - Full Course for Beginners
+title: Building a Guessing Game
 challengeType: 11
 videoId: sHyQCBFRoug
 dashedName: building-a-guessing-game-learn-python-full-course-for-beginners
@@ -8,29 +8,37 @@ dashedName: building-a-guessing-game-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to build a guessing game that uses loops and conditionals to create an interactive experience.
+In this video, you will build a guessing game that uses loops and conditionals.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What does the condition `guess != secret_word` mean in this code?
+
+```python
+secret_word = "giraffe"
+guess = ""
+
+while guess != secret_word:
+    guess = input("Enter guess: ")
+```
 
 ## --answers--
 
-yes
+If `guess` is not equal to `secret_word`.
 
 ---
 
-no
+If `guess` is equal to `secret_word`.
 
 ---
 
-probably
+If `guess` is greater than `secret_word`.
 
 ---
 
-a bit
+If `guess` is less than `secret_word`.
 
 ## --video-solution--
 

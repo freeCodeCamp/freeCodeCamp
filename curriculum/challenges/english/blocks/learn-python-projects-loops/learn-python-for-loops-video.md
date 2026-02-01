@@ -1,6 +1,6 @@
 ---
 id: 030401977064585ddd4c7746
-title: For Loops - Learn Python - Full Course for Beginners
+title: For Loops
 challengeType: 11
 videoId: x13V1UMMQeI
 dashedName: for-loops-learn-python-full-course-for-beginners
@@ -8,30 +8,42 @@ dashedName: for-loops-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to use for loops to iterate over sequences like lists and ranges.
+In this video, you will learn how to use for loops to iterate over sequences like lists and ranges.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to iterate over each letter in the string `"Giraffe Academy"`?
 
 ## --answers--
 
-yes
+```python
+for (letter) in "Giraffe Academy":
+    print(letter)
+```
 
 ---
 
-no
+```python
+for key, letter in "Giraffe Academy":
+    print(letter)
+```
 
 ---
 
-probably
+```python
+for letter in "Giraffe Academy":
+    print(letter)
+```
 
 ---
 
-a bit
+```python
+for letter, value in "Giraffe Academy":
+    print(letter)
+```
 
 ## --video-solution--
 
-1
+3

@@ -1,6 +1,6 @@
 ---
 id: 703bcd12c0edae7773eeec64
-title: Building a Translator - Learn Python - Full Course for Beginners
+title: Building a Translator
 challengeType: 11
 videoId: 3Sa5rwlKdGQ
 dashedName: building-a-translator-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: building-a-translator-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to build a simple translator program using dictionaries and user input.
+In this video, you will build a simple translator program using dictionaries and user input.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following methods is used to check if all characters in a string are uppercase?
 
 ## --answers--
 
-yes
+`upper()`
 
 ---
 
-no
+`isupper()`
 
 ---
 
-probably
+`toupper()`
 
 ---
 
-a bit
+`hasupper()`
 
 ## --video-solution--
 
-1
+2

@@ -1,6 +1,6 @@
 ---
 id: 28119f9dc5f93e3ac5d7c58a
-title: 2D Lists and Nested Loops - Learn Python - Full Course for Beginners
+title: 2D Lists and Nested Loops
 challengeType: 11
 videoId: 2lKgjX3gzmM
 dashedName: 2d-lists-and-nested-loops-learn-python-full-course-for-beginners
@@ -8,29 +8,39 @@ dashedName: 2d-lists-and-nested-loops-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to create 2D lists and use nested loops to work with multi-dimensional data structures.
+In this video, you will learn how to create 2D lists and use nested loops to work with multi-dimensional data structures.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What will be the output for the following code?
+
+```python
+number_grid = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print(number_grid[2][1])
+```
 
 ## --answers--
 
-yes
+8
 
 ---
 
-no
+7
 
 ---
 
-probably
+9
 
 ---
 
-a bit
+1
 
 ## --video-solution--
 

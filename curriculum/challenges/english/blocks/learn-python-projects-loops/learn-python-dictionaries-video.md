@@ -1,6 +1,6 @@
 ---
 id: 3625fbc38b9428ae98d98f23
-title: Dictionaries - Learn Python - Full Course for Beginners
+title: Dictionaries
 challengeType: 11
 videoId: FBfYADu3CIo
 dashedName: dictionaries-learn-python-full-course-for-beginners
@@ -8,30 +8,98 @@ dashedName: dictionaries-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to create and work with dictionaries in Python to store key-value pairs.
+In this video, you will learn how to work with dictionaries in Python to store key-value pairs.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following will correctly output the string `"March"` to the console?
 
 ## --answers--
 
-yes
+```python
+month_conversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(month_conversions<"Mar">)
+```
 
 ---
 
-no
+```python
+month_conversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(month_conversions("Mar"))
+```
 
 ---
 
-probably
+```python
+month_conversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(month_conversions["March"])
+```
 
 ---
 
-a bit
+```python
+month_conversions = {
+    "Jan": "January",
+    "Feb": "February",
+    "Mar": "March",
+    "Apr": "April",
+    "May": "May",
+    "Jun": "June",
+    "Jul": "July",
+    "Aug": "August",
+    "Sep": "September",
+    "Oct": "October",
+    "Nov": "November",
+    "Dec": "December"
+}
+
+print(month_conversions["Mar"])
+```
 
 ## --video-solution--
 
-1
+4
