@@ -3108,6 +3108,12 @@
           "In this lecture, you will learn about recursion and the call stack."
         ]
       },
+      "workshop-countup": {
+        "title": "Build a Countup",
+        "intro": [
+          "In this workshop you will build a countdown function that returns an array of numbers counting up from 1 to a given number."
+        ]
+      },
       "lab-countdown": {
         "title": "Build a Countdown",
         "intro": [
