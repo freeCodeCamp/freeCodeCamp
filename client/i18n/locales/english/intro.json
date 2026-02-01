@@ -955,7 +955,7 @@
       "learn-python-setup-first-steps": {
         "title": "Setup & First Steps",
         "intro": [
-          "Popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
         ]
       },
       "learn-python-core-primitives": {
@@ -967,7 +967,7 @@
       "learn-python-small-projects-basics": {
         "title": "Small Projects: Using Basics",
         "intro": [
-          "Apply what you've learned by building small, practical projects like a calculator and a fun game. These projects help reinforce the basics in a hands-on way."
+          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
         ]
       },
       "learn-python-data-structures": {

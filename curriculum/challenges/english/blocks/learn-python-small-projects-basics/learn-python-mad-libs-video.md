@@ -1,6 +1,6 @@
 ---
 id: 024ffa91a50a44335be33ee7
-title: Mad Libs Game - Learn Python - Full Course for Beginners
+title: Mad Libs Game
 challengeType: 11
 videoId: XRmMTKa-xlc
 dashedName: mad-libs-game-learn-python-full-course-for-beginners
@@ -8,30 +8,42 @@ dashedName: mad-libs-game-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to create a Mad Libs game that takes user input and creates funny stories.
+In this video, you will create a Mad Libs game that takes user input and creates funny stories.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to get input from a user and print the result to the console?
 
 ## --answers--
 
-yes
+```python
+color = input("Enter a color: ")
+print(Roses are + color)
+```
 
 ---
 
-no
+```python
+color = input("Enter a color: ")
+print("Roses are " + "color")
+```
 
 ---
 
-probably
+```python
+color = input("Enter a color: ")
+print("Roses are " + color)
+```
 
 ---
 
-a bit
+```python
+color = prompt("Enter a color: ")
+print("Roses are " + color)
+```
 
 ## --video-solution--
 
-1
+3
