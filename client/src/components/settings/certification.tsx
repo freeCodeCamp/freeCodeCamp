@@ -178,7 +178,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
   const handleSolutionModalHide = () => initialiseState();
 
   const getProjectSolution = (projectId: string, projectTitle: string) => {
-    const { completedChallenges, openModal } = props;
+    const { completedChallenges, username, openModal } = props;
     const completedProject = find(
       completedChallenges,
       ({ id }) => projectId === id
@@ -221,6 +221,7 @@ function CertificationSettings(props: CertificationSettingsProps) {
       <SolutionDisplayWidget
         completedChallenge={completedProject}
         projectTitle={projectTitle}
+        username={username}
         showExamResults={showExamResults}
         showUserCode={showUserCode}
         showProjectPreview={showProjectPreview}
