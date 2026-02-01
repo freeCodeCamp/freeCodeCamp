@@ -7,16 +7,22 @@ import { useTranslation } from 'react-i18next';
 import { CompletedChallenge } from '../../redux/prop-types';
 import { getSolutionDisplayType } from '../../utils/solution-display-type';
 
+function isMsLearnApiUrl(
+  solution: string | null | undefined
+): solution is string {
+  return (
+    typeof solution === 'string' &&
+    solution.startsWith('https://learn.microsoft.com/api/')
+  );
+}
+
 // Resolves the correct "view" URL for a completed challenge.
 // MS Learn API solutions redirect to the user's MS Learn profile.
 function getViewUrl(
   solution: string | undefined | null,
   username?: string
 ): string | undefined {
-  if (
-    typeof solution === 'string' &&
-    solution.startsWith('https://learn.microsoft.com/api/')
-  ) {
+  if (isMsLearnApiUrl(solution)) {
     return username
       ? `https://learn.microsoft.com/en-us/users/${username}/`
       : undefined;
@@ -48,9 +54,7 @@ export function SolutionDisplayWidget({
   const { id, solution, githubLink } = completedChallenge;
   const viewUrl = getViewUrl(solution, username);
 
-  const isMsLearnApiSolution =
-    typeof solution === 'string' &&
-    solution.startsWith('https://learn.microsoft.com/api/');
+  const isMsLearnApiSolution = isMsLearnApiUrl(solution);
 
   if (isMsLearnApiSolution && !viewUrl) {
     return null;
