@@ -1,6 +1,6 @@
 ---
 id: 08854a2c6f052efa1e5270d2
-title: If Statements - Learn Python - Full Course for Beginners
+title: If Statements
 challengeType: 11
 videoId: lruoyNlItfg
 dashedName: if-statements-learn-python-full-course-for-beginners
@@ -8,30 +8,40 @@ dashedName: if-statements-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to use if statements to control the flow of your Python programs based on conditions.
+In this video, you will learn how to use if statements to control the flow of your Python programs based on conditions.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What will be the output for the following code?
+
+```python
+is_male = True
+is_tall = True
+
+if is_male or is_tall:
+    print("You are a male")
+else:
+    print("You are not a male")
+```
 
 ## --answers--
 
-yes
+`"You are not a male"`
 
 ---
 
-no
+`"You are a male"`
 
 ---
 
-probably
+`"You are not a male" and "You are a male"`
 
 ---
 
-a bit
+`None`
 
 ## --video-solution--
 
-1
+2

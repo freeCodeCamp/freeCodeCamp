@@ -1,6 +1,6 @@
 ---
 id: 8314d0bbddb0aa027a144705
-title: If Statements and Comparisons - Learn Python - Full Course for Beginners
+title: If Statements and Comparisons
 challengeType: 11
 videoId: frb0CCrS9X8
 dashedName: if-statements-and-comparisons-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: if-statements-and-comparisons-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to use comparison operators with if statements to make decisions in your Python code.
+In this video, you will learn about comparison operators.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following operators is used to check if one number is greater than or equal to another number?
 
 ## --answers--
 
-yes
+`<`
 
 ---
 
-no
+`<=`
 
 ---
 
-probably
+`>`
 
 ---
 
-a bit
+`>=`
 
 ## --video-solution--
 
-1
+4

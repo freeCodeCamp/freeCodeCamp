@@ -1,6 +1,6 @@
 ---
 id: 58d5d031e969765037c1bebb
-title: Functions - Learn Python - Full Course for Beginners
+title: Functions
 challengeType: 11
 videoId: QN3UNoJVS9g
 dashedName: functions-learn-python-full-course-for-beginners
@@ -8,30 +8,50 @@ dashedName: functions-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to define and call functions in Python to create reusable blocks of code.
+In this video, you will learn how to define and call a function. 
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to call a function?
 
 ## --answers--
 
-yes
+```python
+def sayhi():
+    print("Hello World")
+
+sayhi()()
+```
 
 ---
 
-no
+```python
+def sayhi():
+    print("Hello World")
+
+()sayhi()
+```
 
 ---
 
-probably
+```python
+def sayhi():
+    print("Hello World")
+
+sayhi
+```
 
 ---
 
-a bit
+```python
+def sayhi():
+    print("Hello World")
+
+sayhi()
+```
 
 ## --video-solution--
 
-1
+4

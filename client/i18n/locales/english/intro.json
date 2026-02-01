@@ -977,9 +977,9 @@
         ]
       },
       "learn-python-control-flow-functions": {
-        "title": "Control Flow + Functions",
+        "title": "Control Flow and Functions",
         "intro": [
-          "Learn how to control the flow of your programs with if statements and comparisons. Discover how to write reusable code with functions and return statements."
+          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
         ]
       },
       "learn-python-projects-loops": {
