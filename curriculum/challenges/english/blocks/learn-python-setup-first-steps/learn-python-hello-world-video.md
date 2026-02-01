@@ -1,6 +1,6 @@
 ---
 id: 8ca3a380a75d00443d9e09bd
-title: Hello World Program - Learn Python - Full Course for Beginners
+title: Hello World Program
 challengeType: 11
 videoId: H2WnzGCeydQ
 dashedName: hello-world-program-learn-python-full-course-for-beginners
@@ -8,29 +8,29 @@ dashedName: hello-world-program-learn-python-full-course-for-beginners
 
 # --description--
 
-Learn how to write your first Python program - the classic Hello World program!
+In this video, you will learn how to write your first program in Python.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+Which of the following is the correct way to print `"Hello World"` to the console?
 
 ## --answers--
 
-yes
+`print("Hello World")`
 
 ---
 
-no
+`printf("Hello World")`
 
 ---
 
-probably
+`prints("Hello World")`
 
 ---
 
-a bit
+`printing("Hello World")`
 
 ## --video-solution--
 

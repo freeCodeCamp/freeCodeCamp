@@ -955,7 +955,7 @@
       "learn-python-setup-first-steps": {
         "title": "Setup & First Steps",
         "intro": [
-          "Get started with Python by installing the necessary tools and writing your first program. These videos will guide you through setting up your development environment and understanding the basics of running Python code."
+          "Popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
         ]
       },
       "learn-python-core-primitives": {

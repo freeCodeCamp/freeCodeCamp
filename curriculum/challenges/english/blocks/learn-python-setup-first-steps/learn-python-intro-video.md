@@ -1,6 +1,6 @@
 ---
 id: 05b8c9b04c6df84636956fab
-title: Introduction - Learn Python - Full Course for Beginners
+title: Introduction
 challengeType: 11
 videoId: EgQZWE8in68
 dashedName: introduction-learn-python-full-course-for-beginners
@@ -8,30 +8,30 @@ dashedName: introduction-learn-python-full-course-for-beginners
 
 # --description--
 
-This video introduces the Learn Python Full Course for Beginners. Watch as you get started with Python programming.
+In this video, instructor Mike Dane explains why you should learn Python.
 
 # --questions--
 
 ## --text--
 
-Did you understand the topic?
+What is one reason to learn Python?
 
 ## --answers--
 
-yes
+It is required to be learned before any other programming language.
 
 ---
 
-no
+It is one of the most popular programming languages used in the industry.
 
 ---
 
-probably
+It is the fastest programming language for all types of applications.
 
 ---
 
-a bit
+It is only useful for complex gaming applications.
 
 ## --video-solution--
 
-1
+2
