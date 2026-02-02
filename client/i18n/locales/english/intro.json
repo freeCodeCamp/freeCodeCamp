@@ -3152,6 +3152,12 @@
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
+      "lecture-understanding-graphs-and-trees-js": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [
+          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
@@ -3232,10 +3238,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lecture-understanding-graphs-and-trees-js": {
-        "title": "Understanding Graphs and Trees",
-        "intro": ["Understanding Graphs and Trees", ""]
       }
     }
   },
