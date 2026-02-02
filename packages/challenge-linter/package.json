@@ -26,7 +26,8 @@
     "lint": "eslint --max-warnings 0",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
