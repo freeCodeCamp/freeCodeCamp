@@ -7,10 +7,7 @@ import env from './read-env';
 
 const configPath = path.resolve(__dirname, '../config');
 
-const { FREECODECAMP_NODE_ENV } = process.env;
-
 function checkClientLocale() {
-  if (!process.env.CLIENT_LOCALE) throw Error('CLIENT_LOCALE is not set');
   if (!availableLangs.client.includes(process.env.CLIENT_LOCALE as Languages)) {
     throw Error(`
 
@@ -21,8 +18,6 @@ function checkClientLocale() {
 }
 
 function checkCurriculumLocale() {
-  if (!process.env.CURRICULUM_LOCALE)
-    throw Error('CURRICULUM_LOCALE is not set');
   if (
     !availableLangs.curriculum.includes(
       process.env.CURRICULUM_LOCALE as Languages
@@ -37,8 +32,7 @@ function checkCurriculumLocale() {
 }
 
 function checkDeploymentEnv() {
-  if (!process.env.DEPLOYMENT_ENV) throw Error('DEPLOYMENT_ENV is not set');
-  if (!['staging', 'production'].includes(process.env.DEPLOYMENT_ENV)) {
+  if (!['staging', 'production'].includes(process.env.DEPLOYMENT_ENV!)) {
     throw Error(`
 
 ${process.env.DEPLOYMENT_ENV} is not a valid value for DEPLOYMENT_ENV.
@@ -51,7 +45,7 @@ checkClientLocale();
 checkCurriculumLocale();
 checkDeploymentEnv();
 
-if (FREECODECAMP_NODE_ENV !== 'development') {
+if (env.environment !== 'development') {
   const locationKeys = [
     'homeLocation',
     'apiLocation',

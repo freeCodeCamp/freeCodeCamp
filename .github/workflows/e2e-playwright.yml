@@ -46,11 +46,26 @@ jobs:
           repository: freeCodeCamp/client-config
           path: client-config
 
-      - name: Set freeCodeCamp Environment Variables
-        run: |
-          cp sample.env .env
-
       - name: Install and Build
+        env:
+          # Should match sample.env values
+          ALGOLIA_API_KEY: app_id_from_algolia_dashboard
+          ALGOLIA_APP_ID: api_key_from_algolia_dashboard
+          API_LOCATION: mongodb://127.0.0.1:27017/freecodecamp?directConnection=true
+          CLIENT_LOCALE: english
+          CURRICULUM_LOCALE: english
+          DEPLOYMENT_ENV: staging
+          DEPLOYMENT_VERSION: unknown
+          FORUM_LOCATION: https://forum.freecodecamp.org
+          FREECODECAMP_NODE_ENV: development
+          GROWTHBOOK_URI: api_URI_from_Growthbook_dashboard
+          HOME_LOCATION: http://localhost:8000
+          NEWS_LOCATION: https://www.freecodecamp.org/news
+          PATREON_CLIENT_ID: id_from_patreon_dashboard
+          PAYPAL_CLIENT_ID: id_from_paypal_dashboard
+          RADIO_LOCATION: https://coderadio.freecodecamp.org
+          SHOW_UPCOMING_CHANGES: false
+          STRIPE_PUBLIC_KEY: pk_from_stripe_dashboard
         run: |
           pnpm install
           pnpm run build
