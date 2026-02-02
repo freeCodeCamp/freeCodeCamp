@@ -1,10 +1,13 @@
 {
-  "name": "@freecodecamp/scripts-lint",
+  "name": "@freecodecamp/challenge-linter",
   "version": "0.0.1",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
-  "main": "none",
+  "main": "index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
@@ -24,6 +27,8 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
+    "glob": "^8.1.0",
+    "markdownlint": "0.33.0",
     "vitest": "^3.2.4"
   }
 }

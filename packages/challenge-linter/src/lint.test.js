@@ -1,6 +1,6 @@
 import path from 'path';
 import { describe, it, beforeEach, afterEach, expect, vi } from 'vitest';
-import lint from '.';
+import lint from './lint';
 
 describe('markdown linter', () => {
   const good = { path: path.join(__dirname, './fixtures/good.md') };

@@ -62,9 +62,6 @@ importers:
       lodash:
         specifier: 4.17.21
         version: 4.17.21
-      markdownlint:
-        specifier: 0.33.0
-        version: 0.33.0
       npm-run-all2:
         specifier: 5.0.2
         version: 5.0.2
@@ -719,6 +716,9 @@ importers:
       '@freecodecamp/challenge-builder':
         specifier: workspace:*
         version: link:../packages/challenge-builder
+      '@freecodecamp/challenge-linter':
+        specifier: workspace:*
+        version: link:../packages/challenge-linter
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../packages/eslint-config
@@ -749,9 +749,6 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.2(jiti@2.6.1)
-      glob:
-        specifier: 8.1.0
-        version: 8.1.0
       joi:
         specifier: 17.12.2
         version: 17.12.2
@@ -846,6 +843,27 @@ importers:
       eslint:
         specifier: ^9.39.1
         version: 9.39.2(jiti@2.6.1)
+      vitest:
+        specifier: ^3.2.4
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.9)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.7(@types/node@24.10.9)(typescript@5.9.3))(terser@5.28.1)(tsx@4.21.0)(yaml@2.8.1)
+
+  packages/challenge-linter:
+    devDependencies:
+      '@freecodecamp/eslint-config':
+        specifier: workspace:*
+        version: link:../eslint-config
+      '@vitest/ui':
+        specifier: ^3.2.4
+        version: 3.2.4(vitest@3.2.4)
+      eslint:
+        specifier: ^9.39.1
+        version: 9.39.2(jiti@2.6.1)
+      glob:
+        specifier: ^8.1.0
+        version: 8.1.0
+      markdownlint:
+        specifier: 0.33.0
+        version: 0.33.0
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.9)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.7(@types/node@24.10.9)(typescript@5.9.3))(terser@5.28.1)(tsx@4.21.0)(yaml@2.8.1)
@@ -13746,8 +13764,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  uc.micro@2.0.0:
-    resolution: {integrity: sha512-DffL94LsNOccVn4hyfRe5rdKa273swqeA5DJpMOeFmEn1wCDc7nAbbB0gXlgBCL7TNzeTv6G7XVWzan7iJtfig==}
+  uc.micro@2.1.0:
+    resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}
 
   umd@3.0.3:
     resolution: {integrity: sha512-4IcGSufhFshvLNcMCV80UnQVlZ5pMOC8mvNPForqwA4+lzYQuetTESLDQkeLmihq8bRcnpbQa48Wb8Lh16/xow==}
@@ -26704,7 +26722,7 @@ snapshots:
 
   linkify-it@5.0.0:
     dependencies:
-      uc.micro: 2.0.0
+      uc.micro: 2.1.0
 
   lint-staged@16.2.7:
     dependencies:
@@ -26947,7 +26965,7 @@ snapshots:
       linkify-it: 5.0.0
       mdurl: 2.0.0
       punycode.js: 2.3.1
-      uc.micro: 2.0.0
+      uc.micro: 2.1.0
 
   markdown-table@2.0.0:
     dependencies:
@@ -30910,7 +30928,7 @@ snapshots:
   terser@5.28.1:
     dependencies:
       '@jridgewell/source-map': 0.3.5
-      acorn: 8.11.3
+      acorn: 8.15.0
       commander: 2.20.3
       source-map-support: 0.5.21
 
@@ -31165,7 +31183,7 @@ snapshots:
   tsx@4.21.0:
     dependencies:
       esbuild: 0.27.2
-      get-tsconfig: 4.10.1
+      get-tsconfig: 4.13.0
     optionalDependencies:
       fsevents: 2.3.3
 
@@ -31297,7 +31315,7 @@ snapshots:
 
   typescript@5.9.3: {}
 
-  uc.micro@2.0.0: {}
+  uc.micro@2.1.0: {}
 
   umd@3.0.3: {}
 
