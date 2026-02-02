@@ -98,7 +98,17 @@ const testUserData: Prisma.userCreateInput = {
       url: 'https://www.freecodecamp.org'
     }
   ],
-  education: [],
+  education: [
+    {
+      id: 'ed12345',
+      school: 'freeCodeCamp School',
+      degree: 'Bachelor',
+      fieldOfStudy: 'Computer Science',
+      startDate: '1969-06-09',
+      endDate: '1973-04-20',
+      description: 'A school with good Teachers and Class mates'
+    }
+  ],
   savedChallenges: [
     {
       id: 'a6b0bb188d873cb2c8729495',
@@ -263,6 +273,7 @@ describe('userRoutes', () => {
         showAbout: true,
         showCerts: true,
         showDonation: true,
+        showEducation: true,
         showExperience: true,
         showHeatMap: true,
         showLocation: true,
