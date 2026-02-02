@@ -291,7 +291,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Username \"{{username}}\" is too short",
       "is a reserved error code": "Username \"{{username}}\" is a reserved error code",
       "must be lowercase": "Username \"{{username}}\" must be lowercase",
