@@ -303,7 +303,11 @@
             "lecture-introduction-to-common-searching-and-sorting-algorithms"
           ]
         },
-        { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "graphs-and-trees",
+          "comingSoon": true,
+          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+        },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,
