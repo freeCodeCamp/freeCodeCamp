@@ -6,6 +6,6 @@ import { testedLang } from './config';
 
 const CONFIG_PATH = path.resolve(__dirname, '../challenges/.markdownlint.yaml');
 
-const { lintAll } = configure({ configPath: CONFIG_PATH });
+const { lintAll } = configure(CONFIG_PATH);
 
 lintAll(`challenges/${testedLang()}/**/*.md`);

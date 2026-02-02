@@ -852,6 +852,12 @@ importers:
       '@freecodecamp/eslint-config':
         specifier: workspace:*
         version: link:../eslint-config
+      '@types/glob':
+        specifier: ^8.1.0
+        version: 8.1.0
+      '@types/js-yaml':
+        specifier: 4.0.5
+        version: 4.0.5
       '@vitest/ui':
         specifier: ^3.2.4
         version: 3.2.4(vitest@3.2.4)
@@ -864,6 +870,9 @@ importers:
       markdownlint:
         specifier: 0.33.0
         version: 0.33.0
+      typescript:
+        specifier: 5.9.3
+        version: 5.9.3
       vitest:
         specifier: ^3.2.4
         version: 3.2.4(@types/debug@4.1.12)(@types/node@24.10.9)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.7(@types/node@24.10.9)(typescript@5.9.3))(terser@5.28.1)(tsx@4.21.0)(yaml@2.8.1)
