@@ -1,11 +1,27 @@
 import path from 'path';
-import { describe, it, beforeEach, afterEach, expect, vi } from 'vitest';
-import lint from './lint';
+
+import {
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi
+} from 'vitest';
+
+import { configure } from './index.js';
 
 describe('markdown linter', () => {
   const good = { path: path.join(__dirname, './fixtures/good.md') };
   const badYML = { path: path.join(__dirname, './fixtures/badYML.md') };
   const badFencing = { path: path.join(__dirname, './fixtures/badFencing.md') };
+  const configPath = path.join(__dirname, './fixtures/rules.yaml');
+  let lint;
+
+  beforeAll(() => {
+    lint = configure(configPath).lint;
+  });
   beforeEach(() => {
     console.log = vi.fn();
     // the linter signals that a file failed by setting
