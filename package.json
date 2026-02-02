@@ -98,7 +98,7 @@
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
     "tsx": "4.19.1",
-    "turbo": "^2.6.1",
+    "turbo": "^2.8.1",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"
