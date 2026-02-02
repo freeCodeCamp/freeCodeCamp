@@ -116,6 +116,98 @@ export const superBlockList = [
     path: 'html-forms-and-tables'
   },
   {
+    name: 'Build a Survey Form',
+    path: 'lab-survey-form'
+  },
+  {
+    name: 'HTML Accessibility',
+    path: 'html-and-accessibility'
+  },
+  {
+    name: 'Computer Basics',
+    path: 'computer-basics'
+  },
+  {
+    name: 'Basic CSS',
+    path: 'basic-css'
+  },
+  {
+    name: 'Design',
+    path: 'design-for-developers'
+  },
+  {
+    name: 'Absolute and Relative Units',
+    path: 'absolute-and-relative-units'
+  },
+  {
+    name: 'Pseudo Classes and Elements',
+    path: 'pseudo-classes-and-elements'
+  },
+  {
+    name: 'Colors',
+    path: 'css-colors'
+  },
+  {
+    name: 'Styling Forms',
+    path: 'styling-forms'
+  },
+  {
+    name: 'The Box Model',
+    path: 'css-box-model'
+  },
+  {
+    name: 'Flexbox',
+    path: 'css-flexbox'
+  },
+  {
+    name: 'Build a Page of Playing Cards',
+    path: 'lab-page-of-playing-cards'
+  },
+  {
+    name: 'Typography',
+    path: 'css-typography'
+  },
+  {
+    name: 'CSS Accessibility',
+    path: 'css-and-accessibility'
+  },
+  {
+    name: 'Positioning',
+    path: 'css-positioning'
+  },
+  {
+    name: 'Attribute Selectors',
+    path: 'attribute-selectors'
+  },
+  {
+    name: 'Build a Book Inventory App',
+    path: 'lab-book-inventory-app'
+  },
+  {
+    name: 'Responsive Design',
+    path: 'responsive-design'
+  },
+  {
+    name: 'Build a Technical Documentation Page',
+    path: 'lab-technical-documentation-page'
+  },
+  {
+    name: 'Variables',
+    path: 'css-variables'
+  },
+  {
+    name: 'Grid',
+    path: 'css-grid'
+  },
+  {
+    name: 'Build a Product Landing Page',
+    path: 'lab-product-landing-page'
+  },
+  {
+    name: 'Animations',
+    path: 'css-animations'
+  },
+  {
     name: 'A1 Professional Chinese (Beta)',
     path: 'a1-professional-chinese'
   },

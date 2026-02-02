@@ -34,7 +34,30 @@ const superblocks = [
   'college-algebra-with-python',
   'project-euler',
   '2022/responsive-web-design',
-  'the-odin-project'
+  'the-odin-project',
+  'lab-survey-form',
+  'html-and-accessibility',
+  'computer-basics',
+  'basic-css',
+  'design-for-developers',
+  'absolute-and-relative-units',
+  'pseudo-classes-and-elements',
+  'css-colors',
+  'styling-forms',
+  'css-box-model',
+  'css-flexbox',
+  'lab-page-of-playing-cards',
+  'css-typography',
+  'css-and-accessibility',
+  'css-positioning',
+  'attribute-selectors',
+  'lab-book-inventory-app',
+  'responsive-design',
+  'lab-technical-documentation-page',
+  'css-variables',
+  'css-grid',
+  'lab-product-landing-page',
+  'css-animations'
 ];
 
 const schema = Joi.object().keys(

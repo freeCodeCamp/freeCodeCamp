@@ -1,0 +1,16 @@
+{
+  "blocks": [
+    "lecture-what-is-css",
+    "workshop-cafe-menu",
+    "lab-business-card",
+    "lecture-css-specificity-the-cascade-algorithm-and-inheritance",
+    "review-basic-css",
+    "quiz-basic-css",
+    "lecture-styling-lists-and-links",
+    "lab-stylized-to-do-list",
+    "lecture-working-with-backgrounds-and-borders",
+    "lab-blog-post-card",
+    "review-css-backgrounds-and-borders",
+    "quiz-css-backgrounds-and-borders"
+  ]
+}

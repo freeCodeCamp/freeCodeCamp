@@ -8,7 +8,7 @@ enum Levels {
 
 enum Topic {
   Html = 'html',
-  Css = 'css',
+  CSS = 'css',
   Js = 'js',
   React = 'react',
   Python = 'python',
@@ -48,8 +48,146 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.LearnPythonForBeginners,
-    level: Levels.Intermediate,
+    level: Levels.Beginner,
     hours: 3,
     topic: Topic.Python
+  },
+  {
+    superBlock: SuperBlocks.LabSurveyForm,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.HtmlAndAccessibility,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.Html
+  },
+  {
+    superBlock: SuperBlocks.ComputerBasics,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.ComputerFundamentals
+  },
+  {
+    superBlock: SuperBlocks.BasicCss,
+    level: Levels.Beginner,
+    hours: 3,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.DesignForDevelopers,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.AbsoluteAndRelativeUnits,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.PseudoClassesAndElements,
+    level: Levels.Beginner,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssColors,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.StylingForms,
+    level: Levels.Intermediate,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssBoxModel,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssFlexbox,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.LabPageOfPlayingCards,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssTypography,
+    level: Levels.Intermediate,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssAndAccessibility,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssPositioning,
+    level: Levels.Intermediate,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.AttributeSelectors,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.LabBookInventoryApp,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.ResponsiveDesign,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.LabTechnicalDocumentationPage,
+    level: Levels.Advanced,
+    hours: 1,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssVariables,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssGrid,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.LabProductLandingPage,
+    level: Levels.Beginner,
+    hours: 2,
+    topic: Topic.CSS
+  },
+  {
+    superBlock: SuperBlocks.CssAnimations,
+    level: Levels.Advanced,
+    hours: 2,
+    topic: Topic.CSS
   }
 ];
