@@ -5,6 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "main": "index.js",
+  "type": "module",
   "bin": {
     "challenge-linter": "./cli.js"
   },
