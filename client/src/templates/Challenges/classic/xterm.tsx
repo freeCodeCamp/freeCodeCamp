@@ -1,9 +1,17 @@
+import { escape } from 'lodash-es';
 import React, { MutableRefObject, useEffect, useRef } from 'react';
 import type { IDisposable, Terminal } from 'xterm';
 import type { FitAddon } from 'xterm-addon-fit';
 import { useTranslation } from 'react-i18next';
+import { connect } from 'react-redux';
+import { bindActionCreators, Dispatch } from 'redux';
 
-import { registerTerminal } from '../utils/python-worker-handler';
+import {
+  registerTerminal,
+  onPythonError,
+  offPythonError
+} from '../utils/python-worker-handler';
+import { updateConsole } from '../redux/actions';
 import './xterm.css';
 
 const registerServiceWorker = async () => {
@@ -17,13 +25,20 @@ const registerServiceWorker = async () => {
   }
 };
 
-export const XtermTerminal = ({
-  xtermFitRef,
-  dimensions
-}: {
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ updateConsole }, dispatch);
+
+interface XtermTerminalProps {
   xtermFitRef: MutableRefObject<FitAddon | null>;
   dimensions?: { height: number; width: number };
-}) => {
+  updateConsole: (msg: string) => void;
+}
+
+const XtermTerminalComponent = ({
+  xtermFitRef,
+  dimensions,
+  updateConsole
+}: XtermTerminalProps) => {
   const termContainerRef = useRef<HTMLDivElement | null>(null);
   const { t } = useTranslation();
 
@@ -129,6 +144,17 @@ export const XtermTerminal = ({
     };
   }, [xtermFitRef, t]);
 
+  // Subscribe to Python errors and proxy them to the main console
+  useEffect(() => {
+    const errorHandler = (errorText: string) => {
+      updateConsole(escape(errorText));
+    };
+    onPythonError(errorHandler);
+    return () => {
+      offPythonError(errorHandler);
+    };
+  }, [updateConsole]);
+
   useEffect(() => {
     if (xtermFitRef.current) xtermFitRef.current.fit();
 
@@ -143,3 +169,8 @@ export const XtermTerminal = ({
     </div>
   );
 };
+
+export const XtermTerminal = connect(
+  null,
+  mapDispatchToProps
+)(XtermTerminalComponent);
