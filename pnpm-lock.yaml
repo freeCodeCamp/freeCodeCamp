@@ -516,9 +516,6 @@ importers:
       rxjs:
         specifier: 6.6.7
         version: 6.6.7
-      sanitize-html:
-        specifier: 2.11.0
-        version: 2.11.0
       store:
         specifier: 2.0.12
         version: 2.0.12
@@ -12591,9 +12588,6 @@ packages:
 
   sanitize-html@1.27.5:
     resolution: {integrity: sha512-M4M5iXDAUEcZKLXkmk90zSYWEtk5NH3JmojQxKxV371fnMh+x9t1rqdmXaGoyEHw3z/X/8vnFhKjGL5xFGOJ3A==}
-
-  sanitize-html@2.11.0:
-    resolution: {integrity: sha512-BG68EDHRaGKqlsNjJ2xUB7gpInPA8gVx/mvjO743hZaeMCZ2DwzW7xvsqZ+KNU4QKwj86HJ3uu2liISf2qBBUA==}
 
   sass.js@0.11.1:
     resolution: {integrity: sha512-X9AtzYFr/HZ+pDIxX6xN74w/H9JjnDHqZcsYY8mr/SpCyhDVN1pJ3G0Q9rb+z3pZ7obZdYuTYMbKl1ALuhbZDw==}
@@ -29964,15 +29958,6 @@ snapshots:
       lodash: 4.17.23
       parse-srcset: 1.0.2
       postcss: 7.0.39
-
-  sanitize-html@2.11.0:
-    dependencies:
-      deepmerge: 4.3.1
-      escape-string-regexp: 4.0.0
-      htmlparser2: 8.0.2
-      is-plain-object: 5.0.0
-      parse-srcset: 1.0.2
-      postcss: 8.4.35
 
   sass.js@0.11.1: {}
 
