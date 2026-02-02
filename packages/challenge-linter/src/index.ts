@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import YAML from 'js-yaml';
 import glob from 'glob';
 
-import linter from './linter';
+import { linter } from './linter/index.js';
 
 export const configure = (configPath: string) => {
   const lintRules = readFileSync(configPath, 'utf8');

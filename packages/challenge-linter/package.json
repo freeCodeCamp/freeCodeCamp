@@ -5,6 +5,9 @@
   "license": "BSD-3-Clause",
   "private": true,
   "main": "index.js",
+  "bin": {
+    "challenge-linter": "./cli.js"
+  },
   "exports": {
     ".": "./dist/index.js"
   },
@@ -28,11 +31,13 @@
     "@freecodecamp/eslint-config": "workspace:*",
     "@types/glob": "^8.1.0",
     "@types/js-yaml": "4.0.5",
+    "@types/yargs": "^17.0.35",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
     "glob": "^8.1.0",
     "markdownlint": "0.33.0",
     "typescript": "5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "yargs": "^17.7.2"
   }
 }

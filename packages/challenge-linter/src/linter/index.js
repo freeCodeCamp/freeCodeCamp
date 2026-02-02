@@ -1,10 +1,10 @@
-const markdownlint = require('markdownlint');
+import markdownlint from 'markdownlint';
 
-const lintPrism = require('./markdown-prism');
-const lintYAML = require('./markdown-yaml');
-const fencedCodeBlock = require('./fenced-code-block');
+import lintPrism from './markdown-prism.js';
+import lintYAML from './markdown-yaml.js';
+import fencedCodeBlock from './fenced-code-block.js';
 
-function linter(rules) {
+export function linter(rules) {
   const lint = (file, next) => {
     const options = {
       files: [file.path],
@@ -22,5 +22,3 @@ function linter(rules) {
   };
   return lint;
 }
-
-module.exports = linter;
