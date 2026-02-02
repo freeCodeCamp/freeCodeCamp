@@ -39,7 +39,7 @@ const blockSchema = Joi.object().keys({
         'legacy-link',
         'legacy-challenge-grid'
       ).required(),
-      blockType: Joi.valid(
+      blockLabel: Joi.valid(
         'lecture',
         'workshop',
         'lab',
