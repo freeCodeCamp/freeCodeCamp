@@ -54,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { allChallengesInfoSelector } from '../../../redux/selectors';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -62,10 +63,8 @@ import {
   isBuildEnabledSelector,
   isExecutingSelector,
   portalDocumentSelector,
-  isBlockNewlyCompletedSelector,
-  currentBlockIdsSelector
+  isBlockNewlyCompletedSelector
 } from './selectors';
-import { completedChallengesIdsSelector } from '../../../redux/selectors';
 
 // How long before bailing out of a preview.
 const previewTimeout = 2500;
@@ -143,24 +142,9 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
-        const completedChallengesIds = yield select(
-          completedChallengesIdsSelector
-        );
-        const currentBlockIds = yield select(currentBlockIdsSelector);
-
-        if (challengeMeta.isLastChallengeInBlock) {
-          const otherChallenges = currentBlockIds.filter(
-            blockId => blockId !== challengeMeta.id
-          );
-          const allOthersCompleted = otherChallenges.every(blockId =>
-            completedChallengesIds.includes(blockId)
-          );
-
-          if (!allOthersCompleted) {
-            fireConfetti();
-          }
-        }
+      const allChallengesInfo = yield select(allChallengesInfoSelector);
+      if (isBlockCompleted && allChallengesInfo?.challengeNodes?.length) {
+        fireConfetti();
       }
     } else {
       playTone('tests-failed');

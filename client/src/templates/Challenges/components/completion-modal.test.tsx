@@ -15,7 +15,10 @@ import {
   isBlockNewlyCompletedSelector,
   currentBlockIdsSelector
 } from '../redux/selectors';
-import { completedChallengesIdsSelector } from '../../../redux/selectors';
+import {
+  completedChallengesIdsSelector,
+  allChallengesInfoSelector
+} from '../../../redux/selectors';
 import { getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
 vi.mock('../../../analytics');
@@ -36,6 +39,8 @@ const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
 const mockCurrentBlockIdsSelector = currentBlockIdsSelector as unknown as Mock;
 const mockCompletedChallengesIdsSelector =
   completedChallengesIdsSelector as unknown as Mock;
+const mockAllChallengesInfoSelector =
+  allChallengesInfoSelector as unknown as Mock;
 const mockGetTestRunner = getTestRunner as Mock;
 mockBuildEnabledSelector.mockReturnValue(true);
 mockChallengeTestsSelector.mockReturnValue([
@@ -59,7 +64,7 @@ describe('<CompletionModal />', () => {
     beforeEach(() => {
       mockFireConfetti.mockClear();
     });
-    test('should fire when block is completed', async () => {
+    test('should fire when block is completed and challenge data exists', async () => {
       const payload = { showCompletionModal: true };
       const challengeId = 'bd7158d8c442eddfaeb5bd18';
       const blockIds = ['step1', 'step2', 'step3', challengeId];
@@ -80,10 +85,41 @@ describe('<CompletionModal />', () => {
       });
       mockCurrentBlockIdsSelector.mockReturnValue(blockIds);
       mockCompletedChallengesIdsSelector.mockReturnValue(['step1', 'step2']);
+      mockAllChallengesInfoSelector.mockReturnValue({
+        challengeNodes: [{ challenge: { id: challengeId } }],
+        certificateNodes: []
+      });
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       await runSaga(store, executeChallengeSaga, { payload }).done;
       expect(mockFireConfetti).toHaveBeenCalledTimes(1);
+    });
+    test('should not fire when challenge data is empty (saga guard)', async () => {
+      const payload = { showCompletionModal: true };
+      const challengeId = 'bd7158d8c442eddfaeb5bd18';
+      const store = createStore({
+        challenge: {
+          modal: { completion: true },
+          challengeMeta: {
+            id: challengeId,
+            certification: 'responsive-web-design'
+          }
+        }
+      });
+      mockIsBlockNewlyCompletedSelector.mockReturnValue(true);
+      mockChallengeMetaSelector.mockReturnValue({
+        id: challengeId,
+        isLastChallengeInBlock: true,
+        challengeType: 'mock_challenge_type'
+      });
+      mockAllChallengesInfoSelector.mockReturnValue({
+        challengeNodes: [],
+        certificateNodes: []
+      });
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
+      await runSaga(store, executeChallengeSaga, { payload }).done;
+      expect(mockFireConfetti).toHaveBeenCalledTimes(0);
     });
     test('should not fire when block is not completed', async () => {
       const payload = { showCompletionModal: true };
