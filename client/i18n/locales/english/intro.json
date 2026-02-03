@@ -6952,7 +6952,7 @@
         ]
       },
       "workshop-math-operations": {
-        "title": "Build A Bill Splitter",
+        "title": "Build a Bill Splitter",
         "intro": [
           "In this workshop you will build a bill splitter to practice working with numbers and mathematical operations in Python"
         ]
