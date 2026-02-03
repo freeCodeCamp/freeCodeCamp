@@ -8,7 +8,7 @@ import {
   chapterBasedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
-import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
+import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
 import { patchBlock } from './patches';
 import {
   availableBackgrounds,

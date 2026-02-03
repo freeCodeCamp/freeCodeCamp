@@ -6,7 +6,7 @@
   "description": "Config and utils used in multiple workspaces",
   "private": false,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "scripts": {
@@ -14,7 +14,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit",
-    "compile": "tsdown --format cjs --format esm",
+    "build": "tsdown --format cjs --format esm",
     "lint": "eslint --max-warnings 0"
   },
   "type": "module",

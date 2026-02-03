@@ -79,5 +79,16 @@ export const profileUI = Type.Object({
   showName: Type.Optional(Type.Boolean()),
   showPoints: Type.Optional(Type.Boolean()),
   showPortfolio: Type.Optional(Type.Boolean()),
-  showTimeLine: Type.Optional(Type.Boolean())
+  showTimeLine: Type.Optional(Type.Boolean()),
+  showExperience: Type.Optional(Type.Boolean())
+});
+
+export const experience = Type.Object({
+  id: Type.String(),
+  title: Type.String(),
+  company: Type.String(),
+  location: Type.Optional(Type.String()),
+  startDate: Type.String(),
+  endDate: Type.Optional(Type.String()),
+  description: Type.String()
 });

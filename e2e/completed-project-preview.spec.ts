@@ -16,6 +16,7 @@ const unlockedProfile = {
   showName: true,
   showPoints: true,
   showPortfolio: true,
+  showExperience: true,
   showTimeLine: true
 };
 
