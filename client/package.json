@@ -132,7 +132,7 @@
     "typescript": "5.9.3",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.11.0",
+    "validator": "13.15.26",
     "xterm": "^5.2.1",
     "xterm-addon-fit": "^0.8.0"
   },
