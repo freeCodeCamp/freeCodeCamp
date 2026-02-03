@@ -65,6 +65,9 @@
     "serve:client-ci": "cd ./client && pnpm run serve-ci",
     "start": "turbo setup && npm-run-all -p develop:server serve:client",
     "test": "turbo test",
+    "test-client": "turbo -F=@freecodecamp/client test",
+    "test-api": "turbo -F=@freecodecamp/api test",
+    "test-curriculum-content": "turbo -F=@freecodecamp/curriculum test-content",
     "prepare": "husky",
     "playwright:run": "pnpm -F e2e run playwright:run",
     "playwright:watch": "pnpm -F e2e run playwright:watch"
@@ -95,7 +98,7 @@
     "prismjs": "1.29.0",
     "stylelint": "16.14.1",
     "tsx": "4.19.1",
-    "turbo": "^2.6.1",
+    "turbo": "^2.8.1",
     "typescript": "5.9.3",
     "webpack-bundle-analyzer": "4.10.1",
     "yargs": "17.7.2"

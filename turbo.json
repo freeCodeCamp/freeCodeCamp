@@ -1,11 +1,12 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
   "tasks": {
     "build": { "dependsOn": ["setup"], "outputs": ["dist/**"] },
     "develop": { "dependsOn": ["setup"], "cache": false, "persistent": true },
     "lint": { "dependsOn": ["setup"] },
     "setup": { "dependsOn": ["^build"] },
     "test": { "dependsOn": ["setup"] },
+    "test-content": { "dependsOn": ["setup"] },
     "type-check": { "dependsOn": ["setup"] },
     "//#lint-root": {
       "dependsOn": ["@freecodecamp/shared#build"]

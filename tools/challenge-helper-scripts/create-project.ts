@@ -21,7 +21,6 @@ import {
   getAllBlocks
 } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import { IntroJson, parseJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
@@ -139,12 +138,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
       'Missing argument: blockLabel when updating intro markdown'
     );
   }
-
-  void createIntroMD(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
 }
 
 async function updateIntroJson(
@@ -263,7 +256,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },

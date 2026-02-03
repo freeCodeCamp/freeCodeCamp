@@ -1,11 +1,54 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
+      "env": [
+        "FCC_*",
+        "HOME_LOCATION",
+        "API_LOCATION",
+        "FORUM_LOCATION",
+        "NEWS_LOCATION",
+        "RADIO_LOCATION",
+        "CLIENT_LOCALE",
+        "CURRICULUM_LOCALE",
+        "ALGOLIA_APP_ID",
+        "ALGOLIA_API_KEY",
+        "STRIPE_PUBLIC_KEY",
+        "PAYPAL_CLIENT_ID",
+        "PATREON_CLIENT_ID",
+        "DEPLOYMENT_ENV",
+        "SHOW_UPCOMING_CHANGES",
+        "GROWTHBOOK_URI",
+        "DEPLOYMENT_VERSION",
+        "FREECODECAMP_NODE_ENV"
+      ],
       "outputs": ["public/**"]
     },
+    "develop": {
+      "env": ["FCC_*"]
+    },
     "setup": {
+      "env": [
+        "FCC_*",
+        "HOME_LOCATION",
+        "API_LOCATION",
+        "FORUM_LOCATION",
+        "NEWS_LOCATION",
+        "RADIO_LOCATION",
+        "CLIENT_LOCALE",
+        "CURRICULUM_LOCALE",
+        "ALGOLIA_APP_ID",
+        "ALGOLIA_API_KEY",
+        "STRIPE_PUBLIC_KEY",
+        "PAYPAL_CLIENT_ID",
+        "PATREON_CLIENT_ID",
+        "DEPLOYMENT_ENV",
+        "SHOW_UPCOMING_CHANGES",
+        "GROWTHBOOK_URI",
+        "DEPLOYMENT_VERSION",
+        "FREECODECAMP_NODE_ENV"
+      ],
       "outputs": [
         "config/env.json",
         "i18n/locales/*.json",

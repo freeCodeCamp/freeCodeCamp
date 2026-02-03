@@ -28,7 +28,7 @@ function setupStubs() {
 
   rmSync(destArtifactsDir, { recursive: true, force: true });
   mkdirSync(destArtifactsDir, { recursive: true });
-  cpSync(path.resolve(browserScriptDist, 'artifacts'), destArtifactsDir, {
+  cpSync(path.resolve(browserScriptDist, 'js'), destArtifactsDir, {
     recursive: true
   });
 }

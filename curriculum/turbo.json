@@ -1,9 +1,16 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
-      "outputs": ["dist/**", "generated/**"]
+      "outputs": ["dist/**", "generated/**"],
+      "env": ["FCC_*"]
+    },
+    "test": {
+      "env": ["FCC_*"]
+    },
+    "test-content": {
+      "env": ["FCC_*"]
     }
   }
 }

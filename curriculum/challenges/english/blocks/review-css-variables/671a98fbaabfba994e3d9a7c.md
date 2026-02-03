@@ -5,7 +5,7 @@ challengeType: 31
 dashedName: review-css-variables
 ---
 
-# --description--
+# --interactive--
 
 ## CSS Custom Properties (CSS Variables)
 
@@ -46,7 +46,11 @@ body {
 - **`initial-value`**: This sets the default value of the property.
 - **Gradient Example Using the `@property` Rule**: This example creates a gradient that smoothly animates when the element is hovered over.
 
+:::interactive_editor
+
 ```html
+<link rel="stylesheet" href="styles.css">
+
 <div class="gradient-box"></div>
 ```
 
@@ -68,6 +72,8 @@ body {
   --gradient-angle: 90deg;
 }
 ```
+
+:::
 
 - **Fallbacks**: When using the custom property, you can provide a fallback value using the `var()` function, just as you would with standard custom properties:
 
