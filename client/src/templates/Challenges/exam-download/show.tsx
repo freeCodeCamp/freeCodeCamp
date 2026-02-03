@@ -11,7 +11,7 @@ import {
   Row,
   Col
 } from '@freecodecamp/ui';
-import { useTranslation, withTranslation } from 'react-i18next';
+import { Trans, useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
@@ -36,6 +36,7 @@ import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
+import { Link } from '../../../components/helpers';
 
 const { deploymentEnv } = envData;
 
@@ -249,8 +250,39 @@ function ShowExamDownload({
     };
   });
 
-  const showPrereqAlert =
-    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
+  function handlePrerequisites() {
+    if (!isSignedIn) {
+      return null;
+    }
+
+    if (!user?.isHonest) {
+      return (
+        <Callout variant='caution' label={t('misc.caution')}>
+          <p>
+            <Trans i18nKey={'learn.exam.not-honest'}>
+              <Link to={'/settings#honesty'}>settings</Link>
+            </Trans>
+          </p>
+        </Callout>
+      );
+    }
+
+    if (
+      !examIdsQuery.isLoading &&
+      !getExamsQuery.isLoading &&
+      missingPrerequisites.length > 0
+    ) {
+      return (
+        <MissingPrerequisites missingPrerequisites={missingPrerequisites} />
+      );
+    }
+
+    return (
+      <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
+        <p>{t('learn.exam.qualified')}</p>
+      </Callout>
+    );
+  }
 
   return (
     <LearnLayout>
@@ -270,20 +302,7 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {showPrereqAlert &&
-              (missingPrerequisites.length > 0 ? (
-                <MissingPrerequisites
-                  missingPrerequisites={missingPrerequisites}
-                />
-              ) : (
-                <Callout
-                  className='exam-qualified'
-                  variant='note'
-                  label={t('misc.note')}
-                >
-                  <p>{t('learn.exam.qualified')}</p>
-                </Callout>
-              ))}
+            {handlePrerequisites()}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />
