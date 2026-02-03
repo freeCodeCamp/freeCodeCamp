@@ -29,12 +29,16 @@ jobs:
     steps:
       - name: Setup
         id: setup
+        env:
+          GITHUB_REF_NAME: ${{ github.ref_name }}
+          INPUT_SHOW_UPCOMING_CHANGES: ${{ inputs.show_upcoming_changes }}
+          INPUT_API_LOG_LVL: ${{ inputs.api_log_lvl || 'info' }}
         run: |
-          BRANCH="${{ github.ref_name }}"
+          BRANCH="$GITHUB_REF_NAME"
           echo "Current branch: $BRANCH"
 
           # Convert boolean input to string 'true' or 'false'
-          if [[ "${{ inputs.show_upcoming_changes }}" == "true" ]]; then
+          if [[ "$INPUT_SHOW_UPCOMING_CHANGES" == "true" ]]; then
             echo "show_upcoming_changes=true" >> $GITHUB_OUTPUT
           else
             echo "show_upcoming_changes=false" >> $GITHUB_OUTPUT
@@ -45,13 +49,13 @@ jobs:
               echo "site_tld=org" >> $GITHUB_OUTPUT
               echo "tgt_env_short=prd" >> $GITHUB_OUTPUT
               echo "tgt_env_long=production" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=$INPUT_API_LOG_LVL" >> $GITHUB_OUTPUT
               ;;
             *)
               echo "site_tld=dev" >> $GITHUB_OUTPUT
               echo "tgt_env_short=stg" >> $GITHUB_OUTPUT
               echo "tgt_env_long=staging" >> $GITHUB_OUTPUT
-              echo "api_log_lvl=${{ inputs.api_log_lvl || 'info' }}" >> $GITHUB_OUTPUT
+              echo "api_log_lvl=$INPUT_API_LOG_LVL" >> $GITHUB_OUTPUT
               ;;
           esac
 
