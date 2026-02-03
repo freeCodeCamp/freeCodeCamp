@@ -13,7 +13,7 @@ Python provides a built-in `round()` function for this. It takes two arguments: 
 
 Use the `round()` function to round `final_bill` to 2 decimal places and assign the result to a new variable named `each_pays`.
 
-Finally, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
+Finally, use `print()` to display the string `'Each person pays:'` followed by a space and your `each_pays` variable.
 
 # --hints--
 
@@ -29,7 +29,7 @@ You should use the `round()` function to round `final_bill` to two decimal place
 //test will go here
 ```
 
-You should use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
+You should use `print()` to display the string `'Each person pays:'` followed by a space and your `each_pays` variable.
 
 ```js
 //test will go here
@@ -50,16 +50,16 @@ marcys_bill = 39.39
 my_bill = 64.21
 
 running_total = benjis_bill + mortys_bill + marcys_bill + my_bill
-print("Total bill so far:", running_total)
+print('Total bill so far:', running_total)
 
 tip = running_total * 0.25
-print("Tip amount:", tip)
+print('Tip amount:', tip)
 
 running_total += tip
-print("Total with tip:", running_total)
+print('Total with tip:', running_total)
 
 final_bill = running_total / num_of_friends
-print("Each person pays:", final_bill)
+print('Each person pays:', final_bill)
 
 --fcc-editable-region--
 
@@ -79,17 +79,17 @@ marcys_bill = 39.39
 my_bill = 64.21
 
 running_total = benjis_bill + mortys_bill + marcys_bill + my_bill
-print("Total bill so far:", running_total)
+print('Total bill so far:', running_total)
 
 tip = running_total * 0.25
-print("Tip amount:", tip)
+print('Tip amount:', tip)
 
 running_total += tip
-print("Total with tip:", running_total)
+print('Total with tip:', running_total)
 
 final_bill = running_total / num_of_friends
-print("Each person pays:", final_bill)
+print('Each person pays:', final_bill)
 
 each_pays = round(final_bill, 2)
-print("Each person pays:", each_pays)
+print('Each person pays:', each_pays)
 ```
