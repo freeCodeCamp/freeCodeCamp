@@ -156,11 +156,14 @@ export function IndependentLowerJaw({
         >
           <div>
             <p>{t('learn.congratulations-code-passes')}</p>
-            {showShareButton && (
-              <Share
-                superBlock={challengeMeta.superBlock}
-                block={challengeMeta.block}
-              />
+            {isSignedIn && showShareButton && (
+              <div className='share-button-wrapper'>
+                <Share
+                  superBlock={challengeMeta.superBlock}
+                  block={challengeMeta.block}
+                  minified={true}
+                />
+              </div>
             )}
             {!isSignedIn && (
               <a

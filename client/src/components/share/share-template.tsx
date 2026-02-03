@@ -11,7 +11,8 @@ import { ShareRedirectProps } from './types';
 export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   xRedirectURL,
   blueSkyRedirectURL,
-  threadsRedirectURL
+  threadsRedirectURL,
+  minified
 }) => {
   const { t } = useTranslation();
   return (
@@ -24,7 +25,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faXTwitter} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-x')}
+        {minified && t('buttons.share-on-x')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
@@ -35,7 +36,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faBluesky} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-bluesky')}
+        {minified && t('buttons.share-on-bluesky')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
@@ -46,7 +47,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         rel='noreferrer'
       >
         <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
-        {t('buttons.share-on-threads')}
+        {minified && t('buttons.share-on-threads')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
     </>
