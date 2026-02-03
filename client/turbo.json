@@ -3,7 +3,26 @@
   "extends": ["//"],
   "tasks": {
     "build": {
-      "env": ["FCC_*"],
+      "env": [
+        "FCC_*",
+        "HOME_LOCATION",
+        "API_LOCATION",
+        "FORUM_LOCATION",
+        "NEWS_LOCATION",
+        "RADIO_LOCATION",
+        "CLIENT_LOCALE",
+        "CURRICULUM_LOCALE",
+        "ALGOLIA_APP_ID",
+        "ALGOLIA_API_KEY",
+        "STRIPE_PUBLIC_KEY",
+        "PAYPAL_CLIENT_ID",
+        "PATREON_CLIENT_ID",
+        "DEPLOYMENT_ENV",
+        "SHOW_UPCOMING_CHANGES",
+        "GROWTHBOOK_URI",
+        "DEPLOYMENT_VERSION",
+        "FREECODECAMP_NODE_ENV"
+      ],
       "outputs": ["public/**"]
     },
     "develop": {
