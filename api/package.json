@@ -48,7 +48,7 @@
     "@types/jsonwebtoken": "9.0.5",
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^24.10.8",
-    "@types/nodemailer": "6.4.21",
+    "@types/nodemailer": "6.4.22",
     "@types/supertest": "2.0.16",
     "@types/validator": "13.15.10",
     "@vitest/ui": "^3.2.4",
