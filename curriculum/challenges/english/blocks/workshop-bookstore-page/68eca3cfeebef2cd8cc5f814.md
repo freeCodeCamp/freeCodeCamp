@@ -39,17 +39,19 @@ assert.equal(cards[1]?.id, 'dave-cooking-book');
 <body>
   <h1>XYZ Bookstore</h1>
   <p>Browse our collection of amazing books!</p>
+  
   <div class="card-container">
     <div class="card" id="sally-adventure-book">
       <h2>Sally's SciFi Adventure</h2>
       <p>This is an epic story of Sally and her dog Rex as they navigate through other worlds.</p>
       <button class="btn">Buy Now</button>
     </div>
+    
   --fcc-editable-region--
     <div class="card">
-
-    </div>
   --fcc-editable-region--
+      
+    </div>
   </div>
 </body>
 
