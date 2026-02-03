@@ -3108,6 +3108,12 @@
           "In this lecture, you will learn about recursion and the call stack."
         ]
       },
+      "workshop-countup": {
+        "title": "Build a Countup",
+        "intro": [
+          "In this workshop you will build a countdown function that returns an array of numbers counting up from 1 to a given number."
+        ]
+      },
       "lab-countdown": {
         "title": "Build a Countdown",
         "intro": [
@@ -3150,6 +3156,12 @@
         "intro": [
           "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
+      "lecture-understanding-graphs-and-trees-js": {
+        "title": "Understanding Graphs and Trees",
+        "intro": [
+          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
       "lecture-understanding-functional-programming": {
