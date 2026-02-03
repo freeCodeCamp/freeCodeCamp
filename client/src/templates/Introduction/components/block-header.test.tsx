@@ -1,8 +1,19 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 
 import BlockHeader from './block-header';
+
+vi.mock('react-i18next', () => ({
+  useTranslation: () => ({
+    t: (key: string, options?: { blockLabel?: string }) => {
+      if (key === 'learn.reset-progress-aria-block') {
+        return `Reset progress for ${options?.blockLabel || ''}`;
+      }
+      return key;
+    }
+  })
+}));
 
 const defaultProps = {
   blockDashed: 'test-block',
@@ -170,5 +181,105 @@ describe('<BlockHeader />', () => {
     expect(
       screen.queryByText('Introduction paragraph 1')
     ).not.toBeInTheDocument();
+  });
+
+  describe('Reset Button', () => {
+    it('should render reset button when showReset is true', () => {
+      render(
+        <BlockHeader
+          {...defaultProps}
+          showReset={true}
+          onResetClick={vi.fn()}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeInTheDocument();
+    });
+
+    it('should not render reset button when showReset is false', () => {
+      render(<BlockHeader {...defaultProps} showReset={false} />);
+
+      const resetButton = screen.queryByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).not.toBeInTheDocument();
+    });
+
+    it('should not render reset button when showReset is undefined', () => {
+      render(<BlockHeader {...defaultProps} />);
+
+      const resetButton = screen.queryByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).not.toBeInTheDocument();
+    });
+
+    it('should disable reset button when isResetDisabled is true', () => {
+      render(
+        <BlockHeader
+          {...defaultProps}
+          showReset={true}
+          isResetDisabled={true}
+          onResetClick={vi.fn()}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).toBeDisabled();
+    });
+
+    it('should enable reset button when isResetDisabled is false', () => {
+      render(
+        <BlockHeader
+          {...defaultProps}
+          showReset={true}
+          isResetDisabled={false}
+          onResetClick={vi.fn()}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      expect(resetButton).not.toBeDisabled();
+    });
+
+    it('should call onResetClick when reset button is clicked', () => {
+      const mockOnResetClick = vi.fn();
+      render(
+        <BlockHeader
+          {...defaultProps}
+          showReset={true}
+          onResetClick={mockOnResetClick}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: /reset progress for/i
+      });
+      fireEvent.click(resetButton);
+
+      expect(mockOnResetClick).toHaveBeenCalledTimes(1);
+    });
+
+    it('should have correct aria-label with block title', () => {
+      render(
+        <BlockHeader
+          {...defaultProps}
+          showReset={true}
+          onResetClick={vi.fn()}
+        />
+      );
+
+      const resetButton = screen.getByRole('button', {
+        name: 'Reset progress for Test Block Title'
+      });
+      expect(resetButton).toBeInTheDocument();
+    });
   });
 });

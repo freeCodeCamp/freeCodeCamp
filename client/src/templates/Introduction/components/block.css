@@ -77,3 +77,9 @@
 .block-reset-button:disabled:hover {
   color: inherit;
 }
+
+@media screen and (max-width: 767px) {
+  .block-reset-button {
+    display: none;
+  }
+}

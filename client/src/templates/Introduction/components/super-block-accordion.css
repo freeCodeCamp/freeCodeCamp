@@ -425,6 +425,13 @@ button .block-header-button-text {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .super-block-accordion .chapter-header-wrapper .block-reset-button,
+  .super-block-accordion .module-header-wrapper .block-reset-button {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .super-block-accordion .block-label {
     margin-inline-start: auto;
