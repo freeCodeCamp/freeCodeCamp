@@ -258,15 +258,7 @@ describe('userRoutes', () => {
       const lockedUserProfileUI = {
         isLocked: true,
         showAbout: true,
-        showCerts: true,
-        showDonation: true,
-        showExperience: true,
-        showHeatMap: true,
-        showLocation: true,
-        showName: true,
-        showPoints: true,
-        showPortfolio: true,
-        showTimeLine: true
+        showPortfolio: false
       };
       const unlockedUserProfileUI = {
         isLocked: false,

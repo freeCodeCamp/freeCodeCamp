@@ -191,11 +191,11 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
           <label for="food">How was the food?</label>
 
+          --fcc-editable-region--
           <select name="food" id="food">
-          --fcc-editable-region--
             
-          --fcc-editable-region--
           </select>
+          --fcc-editable-region--
         </fieldset>
       </form>
     </main>

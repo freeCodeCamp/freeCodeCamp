@@ -70,17 +70,17 @@ export const surveyTitles = Type.Union([
 ]);
 
 export const profileUI = Type.Object({
-  isLocked: Type.Boolean(),
-  showAbout: Type.Boolean(),
-  showCerts: Type.Boolean(),
-  showDonation: Type.Boolean(),
-  showHeatMap: Type.Boolean(),
-  showLocation: Type.Boolean(),
-  showName: Type.Boolean(),
-  showPoints: Type.Boolean(),
-  showPortfolio: Type.Boolean(),
-  showTimeLine: Type.Boolean(),
-  showExperience: Type.Boolean()
+  isLocked: Type.Optional(Type.Boolean()),
+  showAbout: Type.Optional(Type.Boolean()),
+  showCerts: Type.Optional(Type.Boolean()),
+  showDonation: Type.Optional(Type.Boolean()),
+  showHeatMap: Type.Optional(Type.Boolean()),
+  showLocation: Type.Optional(Type.Boolean()),
+  showName: Type.Optional(Type.Boolean()),
+  showPoints: Type.Optional(Type.Boolean()),
+  showPortfolio: Type.Optional(Type.Boolean()),
+  showTimeLine: Type.Optional(Type.Boolean()),
+  showExperience: Type.Optional(Type.Boolean())
 });
 
 export const experience = Type.Object({

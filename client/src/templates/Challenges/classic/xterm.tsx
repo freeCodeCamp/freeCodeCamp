@@ -138,12 +138,8 @@ export const XtermTerminal = ({
   }, [xtermFitRef, dimensions]);
 
   return (
-    <div
-      data-playwright-test-label='xterm-terminal'
-      style={{ height: dimensions?.height }}
-      ref={termContainerRef}
-    >
-      <link rel='stylesheet' href='/css/xterm.css' />
+    <div style={{ height: dimensions?.height }} ref={termContainerRef}>
+      <link rel='stylesheet' href='/js/xterm.css' />
     </div>
   );
 };

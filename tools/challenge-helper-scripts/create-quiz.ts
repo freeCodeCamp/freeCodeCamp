@@ -12,6 +12,7 @@ import {
 import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
 import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
@@ -63,6 +64,8 @@ async function createQuiz(
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
+  // TODO: remove once we stop relying on markdown in the client.
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(

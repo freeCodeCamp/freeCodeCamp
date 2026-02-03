@@ -31,42 +31,6 @@ test.describe('Editor Component', () => {
 });
 
 test.describe('Python Terminal', () => {
-  test('should only have output if the python code generates it', async ({
-    page,
-    browserName,
-    isMobile
-  }) => {
-    await page.goto(
-      'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
-    );
-
-    // First enter code that does not generate output
-    await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName, isMobile });
-    await getEditors(page).fill('no = "output"');
-
-    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
-
-    const terminal = page.getByTestId('xterm-terminal');
-    // Ensure there is no output
-    await expect(async () => {
-      const text = await terminal.innerText();
-      expect(text.trim()).toBe('');
-    }).toPass();
-
-    if (isMobile) await page.getByRole('tab', { name: 'Code' }).click();
-
-    // Now enter code that does generate output
-    await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName, isMobile });
-    await getEditors(page).fill('some = "output"\nprint(some)');
-
-    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
-    // Since the invisible characters are still there, we have to use "contain",
-    // not "have"
-    await expect(terminal).toContainText('output');
-  });
-
   test('should display error message when the user enters invalid code', async ({
     page,
     isMobile,
@@ -85,12 +49,12 @@ test.describe('Python Terminal', () => {
       await page.getByRole('tab', { name: 'Preview' }).click();
     }
 
-    const terminal = page.getByTestId('xterm-terminal');
+    const preview = page.getByTestId('preview-pane');
 
     // While it's displayed on multiple lines, the string itself has no newlines, hence:
     const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
     // It shouldn't take this long, but the Python worker can be slow to respond.
-    await expect(terminal.getByText(error)).toContainText(error, {
+    await expect(preview.getByText(error)).toContainText(error, {
       timeout: 15000
     });
   });

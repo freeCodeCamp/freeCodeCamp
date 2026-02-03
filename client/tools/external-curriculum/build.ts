@@ -9,6 +9,11 @@ const curriculum = JSON.parse(
 );
 
 import {
+  buildExtCurriculumDataV1,
+  Curriculum as CurriculumV1,
+  CurriculumProps as CurriculumPropsV1
+} from './build-external-curricula-data-v1';
+import {
   buildExtCurriculumDataV2,
   Curriculum as CurriculumV2,
   CurriculumProps as CurriculumPropsV2
@@ -24,5 +29,6 @@ if (isSelectiveBuild) {
     'Skipping external curriculum build (selective build mode active)'
   );
 } else {
+  buildExtCurriculumDataV1(curriculum as CurriculumV1<CurriculumPropsV1>);
   buildExtCurriculumDataV2(curriculum as CurriculumV2<CurriculumPropsV2>);
 }

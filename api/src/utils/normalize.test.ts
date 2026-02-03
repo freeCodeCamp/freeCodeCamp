@@ -78,7 +78,7 @@ describe('normalize', () => {
       expect(normalizeProfileUI(input)).toEqual(defaultProfileUI);
     });
 
-    test('should convert all "null" values to "false"', () => {
+    test('should convert all "null" values to "undefined"', () => {
       const input = {
         isLocked: null,
         showAbout: false,
@@ -93,17 +93,17 @@ describe('normalize', () => {
         showExperience: null
       };
       expect(normalizeProfileUI(input)).toEqual({
-        isLocked: false,
+        isLocked: undefined,
         showAbout: false,
-        showCerts: false,
-        showDonation: false,
-        showHeatMap: false,
-        showLocation: false,
-        showName: false,
-        showPoints: false,
-        showPortfolio: false,
-        showTimeLine: false,
-        showExperience: false
+        showCerts: undefined,
+        showDonation: undefined,
+        showHeatMap: undefined,
+        showLocation: undefined,
+        showName: undefined,
+        showPoints: undefined,
+        showPortfolio: undefined,
+        showTimeLine: undefined,
+        showExperience: undefined
       });
     });
   });

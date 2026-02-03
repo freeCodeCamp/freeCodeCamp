@@ -19,6 +19,7 @@ import {
 } from '@freecodecamp/curriculum/file-handler';
 import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta.js';
+import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
@@ -143,6 +144,9 @@ async function createLanguageBlock(
   } else {
     void updateSimpleSuperblockStructure(block, {}, superblockFilename);
   }
+
+  // TODO: remove once we stop relying on markdown in the client.
+  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson({

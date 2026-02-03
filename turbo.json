@@ -1,5 +1,5 @@
 {
-  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
+  "$schema": "https://turborepo.com/schema.json",
   "tasks": {
     "build": { "dependsOn": ["setup"], "outputs": ["dist/**"] },
     "develop": { "dependsOn": ["setup"], "cache": false, "persistent": true },

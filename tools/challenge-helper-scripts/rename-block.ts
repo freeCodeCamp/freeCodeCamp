@@ -15,6 +15,7 @@ import {
   getContentConfig,
   getCurriculumStructure
 } from '@freecodecamp/curriculum/file-handler';
+import matter from 'gray-matter';
 
 interface RenameBlockArgs {
   newBlock: string;
@@ -52,6 +53,26 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
           console.log(
             `Updated superblock .json file written for ${superblock}.`
           );
+
+          const superblockPagesDir = path.resolve(
+            __dirname,
+            `../../client/src/pages/learn/${superblock}/`
+          );
+          const blockPagesDir = join(superblockPagesDir, oldBlock);
+          const indexMdPath = join(blockPagesDir, 'index.md');
+          const frontMatter = matter.read(indexMdPath);
+          const newData = {
+            ...frontMatter.data,
+            block: newBlock
+          };
+
+          await fs.writeFile(
+            indexMdPath,
+            matter.stringify(frontMatter.content, newData)
+          );
+          const newBlockClientDir = join(superblockPagesDir, newBlock);
+          await fs.rename(blockPagesDir, newBlockClientDir);
+          console.log("Updated block's index.md file written.");
 
           const introJsonPath = path.resolve(
             __dirname,

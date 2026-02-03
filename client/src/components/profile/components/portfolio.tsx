@@ -1,4 +1,4 @@
-import { isEqual } from 'lodash-es';
+import { findIndex, find, isEqual } from 'lodash-es';
 import { nanoid } from 'nanoid';
 import React, { useState } from 'react';
 import type { TFunction } from 'i18next';
@@ -18,15 +18,18 @@ import { PortfolioProjectData } from '../../../redux/prop-types';
 
 import { hasProtocolRE } from '../../../utils';
 
-import { FullWidthRow, interleave } from '../../helpers';
+import { FullWidthRow } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
 import SectionHeader from '../../settings/section-header';
 import { updateMyPortfolio } from '../../../redux/settings/actions';
 
 type PortfolioProps = {
+  picture?: string;
   portfolio: PortfolioProjectData[];
   t: TFunction;
   updateMyPortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
+  username?: string;
+  setIsEditing: (isEditing: boolean) => void;
 };
 
 interface ProfileValidation {
@@ -50,11 +53,17 @@ function createEmptyPortfolioItem(): PortfolioProjectData {
   };
 }
 
-const byId = (id: string) => (p: PortfolioProjectData) => p.id === id;
-const notById = (id: string) => (p: PortfolioProjectData) => p.id !== id;
+function createFindById(id: string) {
+  return (p: PortfolioProjectData) => p.id === id;
+}
 
 const PortfolioSettings = (props: PortfolioProps) => {
-  const { t, portfolio: initialPortfolio = [], updateMyPortfolio } = props;
+  const {
+    t,
+    portfolio: initialPortfolio = [],
+    setIsEditing,
+    updateMyPortfolio
+  } = props;
   const [portfolio, setPortfolio] = useState(initialPortfolio);
   const [unsavedItemId, setUnsavedItemId] = useState<string | null>(null);
   const [imageValidation, setImageValid] = useState<ProfileValidation>({
@@ -78,32 +87,34 @@ const PortfolioSettings = (props: PortfolioProps) => {
     (e: React.ChangeEvent<HTMLInputElement>) => {
       e.preventDefault();
       const userInput = e.target.value.slice();
-      setPortfolio(prevPortfolio =>
-        prevPortfolio.map(p => (byId(id)(p) ? { ...p, [key]: userInput } : p))
-      );
-      if (key === 'image') {
-        if (userInput) {
-          void checkIfValidImage(userInput).then(setImageValid);
-        } else {
+      setPortfolio(prevPortfolio => {
+        const mutablePortfolio = [...prevPortfolio];
+        const index = findIndex(prevPortfolio, p => p.id === id);
+        mutablePortfolio[index] = {
+          ...mutablePortfolio[index],
+          [key]: userInput
+        };
+        if (key === 'image' && userInput) {
+          void checkIfValidImage(userInput).then(imageValidation => {
+            setImageValid(imageValidation);
+          });
+        } else if (key === 'image' && !userInput) {
           setImageValid({ state: 'success', message: '' });
         }
-      }
+        return mutablePortfolio;
+      });
     };
 
-  const saveItem = (id: string) => {
+  const updateItem = (
+    id: string,
+    updatedPortfolio?: PortfolioProjectData[]
+  ) => {
     if (unsavedItemId === id) {
       setUnsavedItemId(null);
     }
-    const itemToSave = portfolio.find(byId(id));
-
-    if (itemToSave) {
-      const itemIndex = props.portfolio.findIndex(byId(id));
-      const updatedPortfolio =
-        itemIndex >= 0
-          ? props.portfolio.map(item => (byId(id)(item) ? itemToSave : item))
-          : [itemToSave, ...props.portfolio];
-      updateMyPortfolio({ portfolio: updatedPortfolio });
-    }
+    const portfolioToUpdate = updatedPortfolio || portfolio;
+    updateMyPortfolio({ portfolio: portfolioToUpdate });
+    setIsEditing(false);
   };
 
   const handleAdd = () => {
@@ -113,19 +124,18 @@ const PortfolioSettings = (props: PortfolioProps) => {
   };
 
   const handleRemoveItem = (id: string) => {
-    setPortfolio(portfolio.filter(notById(id)));
-    if (unsavedItemId === id) {
-      setUnsavedItemId(null);
-    }
-    updateMyPortfolio({ portfolio: props.portfolio.filter(notById(id)) });
+    const newPortfolio = portfolio.filter(p => p.id !== id);
+    setPortfolio(newPortfolio);
+    updateItem(id, newPortfolio);
+    setIsEditing(false);
   };
 
   const isFormPristine = (id: string) => {
-    const original = props.portfolio.find(byId(id));
+    const original = find(props.portfolio, createFindById(id));
     if (!original) {
       return false;
     }
-    const edited = portfolio.find(byId(id));
+    const edited = find(portfolio, createFindById(id));
     return isEqual(original, edited);
   };
 
@@ -167,10 +177,11 @@ const PortfolioSettings = (props: PortfolioProps) => {
   const getUrlValidation = (
     url: string
   ): { state: 'success' | 'warning' | 'error'; message: string } => {
+    const len = url.length;
     if (!url) {
       return { state: 'success', message: '' };
     }
-    if (url.length >= 4 && !hasProtocolRE.test(url)) {
+    if (len >= 4 && !hasProtocolRE.test(url)) {
       return { state: 'error', message: t('validation.invalid-protocol') };
     }
     return isURL(url)
@@ -210,7 +221,11 @@ const PortfolioSettings = (props: PortfolioProps) => {
     };
   };
 
-  const renderPortfolio = (portfolioItem: PortfolioProjectData) => {
+  const renderPortfolio = (
+    portfolioItem: PortfolioProjectData,
+    index: number,
+    arr: PortfolioProjectData[]
+  ) => {
     const { id, title, description, url, image } = portfolioItem;
     const {
       isButtonDisabled,
@@ -220,20 +235,21 @@ const PortfolioSettings = (props: PortfolioProps) => {
       desc: { descriptionState, descriptionMessage },
       pristine
     } = formCorrect(portfolioItem);
-    const imageIsInvalid = imageValidation.state === 'error';
-    const saveDisabled = isButtonDisabled || pristine || imageIsInvalid;
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>, id: string) => {
       e.preventDefault();
-      if (saveDisabled) return null;
-      return saveItem(id);
+      if (isButtonDisabled) return null;
+      setIsEditing(false);
+      return updateItem(id);
     };
     const combineImageStatus =
-      imageState === 'success' && !imageIsInvalid ? null : 'error';
+      imageState === 'success' && imageValidation.state === 'success'
+        ? null
+        : 'error';
     const combineImageMessage = imageMessage || imageValidation.message;
     return (
       <FullWidthRow key={id}>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={e => handleSubmit(e, id)}
           id='portfolio-items'
           data-playwright-test-label='portfolio-items'
         >
@@ -322,10 +338,10 @@ const PortfolioSettings = (props: PortfolioProps) => {
             ) : null}
           </FormGroup>
           <BlockSaveButton
-            disabled={saveDisabled}
+            disabled={isButtonDisabled}
             bgSize='large'
             data-playwright-test-label='save-portfolio'
-            {...(saveDisabled && { tabIndex: -1 })}
+            {...(isButtonDisabled && { tabIndex: -1 })}
           >
             {t('buttons.save-portfolio')}
           </BlockSaveButton>
@@ -340,6 +356,13 @@ const PortfolioSettings = (props: PortfolioProps) => {
             {t('buttons.remove-portfolio')}
           </Button>
         </form>
+        {index + 1 !== arr.length && (
+          <>
+            <Spacer size='m' />
+            <hr />
+            <Spacer size='m' />
+          </>
+        )}
       </FullWidthRow>
     );
   };
@@ -362,13 +385,7 @@ const PortfolioSettings = (props: PortfolioProps) => {
         </Button>
       </FullWidthRow>
       <Spacer size='l' />
-      {interleave(portfolio.map(renderPortfolio), () => (
-        <>
-          <Spacer size='m' />
-          <hr />
-          <Spacer size='m' />
-        </>
-      ))}
+      {portfolio.length ? portfolio.map(renderPortfolio) : null}
     </section>
   );
 };
