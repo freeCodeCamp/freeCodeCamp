@@ -1,8 +1,8 @@
 import markdownlint from 'markdownlint';
 
-import lintPrism from './markdown-prism.js';
-import lintYAML from './markdown-yaml.js';
-import fencedCodeBlock from './fenced-code-block.js';
+import * as lintPrism from './markdown-prism.js';
+import * as lintYAML from './markdown-yaml.js';
+import * as fencedCodeBlock from './fenced-code-block.js';
 
 export function linter(rules) {
   const lint = (file, next) => {
@@ -11,11 +11,16 @@ export function linter(rules) {
       config: rules,
       customRules: [lintYAML, lintPrism, fencedCodeBlock]
     };
+
     markdownlint(options, function callback(err, result) {
       const resultString = (result || '').toString();
       if (resultString) {
         process.exitCode = 1;
         console.log(resultString);
+      }
+      if (err) {
+        process.exitCode = 1;
+        console.error(err);
       }
       if (next) next(err, file);
     });

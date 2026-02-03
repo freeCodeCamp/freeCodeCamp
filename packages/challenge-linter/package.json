@@ -38,6 +38,7 @@
     "eslint": "^9.39.1",
     "glob": "^8.1.0",
     "markdownlint": "0.33.0",
+    "prismjs": "1.29.0",
     "typescript": "5.9.3",
     "vitest": "^3.2.4",
     "yargs": "^17.7.2"

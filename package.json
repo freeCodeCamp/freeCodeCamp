@@ -93,7 +93,6 @@
     "lodash": "4.17.21",
     "npm-run-all2": "5.0.2",
     "prettier": "3.2.5",
-    "prismjs": "1.29.0",
     "stylelint": "16.14.1",
     "tsx": "4.19.1",
     "turbo": "^2.8.1",

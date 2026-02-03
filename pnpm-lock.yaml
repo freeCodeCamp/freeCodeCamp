@@ -68,9 +68,6 @@ importers:
       prettier:
         specifier: 3.2.5
         version: 3.2.5
-      prismjs:
-        specifier: 1.29.0
-        version: 1.29.0
       stylelint:
         specifier: 16.14.1
         version: 16.14.1(typescript@5.9.3)
@@ -873,6 +870,9 @@ importers:
       markdownlint:
         specifier: 0.33.0
         version: 0.33.0
+      prismjs:
+        specifier: 1.29.0
+        version: 1.29.0
       typescript:
         specifier: 5.9.3
         version: 5.9.3
