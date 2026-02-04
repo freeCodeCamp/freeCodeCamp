@@ -1,10 +1,17 @@
 {
-  "name": "@freecodecamp/scripts-lint",
+  "name": "@freecodecamp/challenge-linter",
   "version": "0.0.1",
   "description": "The freeCodeCamp.org open-source codebase and curriculum",
   "license": "BSD-3-Clause",
   "private": true,
-  "main": "none",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "challenge-linter": "./cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/freeCodeCamp/freeCodeCamp.git"
@@ -15,15 +22,25 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "scripts": {
+    "build": "tsc",
     "lint": "eslint --max-warnings 0",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
+    "@types/glob": "^8.1.0",
+    "@types/js-yaml": "4.0.5",
+    "@types/yargs": "^17.0.35",
     "@vitest/ui": "^3.2.4",
     "eslint": "^9.39.1",
-    "vitest": "^3.2.4"
+    "glob": "^8.1.0",
+    "markdownlint": "0.33.0",
+    "prismjs": "1.29.0",
+    "typescript": "5.9.3",
+    "vitest": "^3.2.4",
+    "yargs": "^17.7.2"
   }
 }
