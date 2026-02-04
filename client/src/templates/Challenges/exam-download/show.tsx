@@ -26,14 +26,16 @@ import {
 import {
   completedChallengesSelector,
   isSignedInSelector,
-  userSelector
+  userSelector,
+  needsCurriculumDataSelector
 } from '../../../redux/selectors';
+import { isChallengeCompletedSelector } from '../redux/selectors';
 import { examAttempts } from '../../../utils/ajax';
 import MissingPrerequisites from '../exam/components/missing-prerequisites';
-import { isChallengeCompletedSelector } from '../redux/selectors';
 import envData from '../../../../config/env.json';
 import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
+import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 
 import './show.css';
 
@@ -54,16 +56,19 @@ const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isSignedInSelector,
   userSelector,
+  needsCurriculumDataSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
-    user: User | null
+    user: User | null,
+    needsCurriculumData: boolean
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
-    user
+    user,
+    needsCurriculumData
   })
 );
 
@@ -75,6 +80,7 @@ interface ShowExamDownloadProps {
   completedChallenges: CompletedChallenge[];
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  needsCurriculumData: boolean;
   user: User | null;
 }
 
@@ -161,7 +167,8 @@ function ShowExamDownload({
   completedChallenges,
   isChallengeCompleted,
   isSignedIn,
-  user
+  user,
+  needsCurriculumData
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
@@ -252,106 +259,111 @@ function ShowExamDownload({
   const showPrereqAlert =
     isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
 
-  return (
-    <LearnLayout>
-      <Helmet>
-        <title>
-          {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
-        </title>
-      </Helmet>
-      <Container>
-        <Row>
-          <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-            <Spacer size='m' />
-            <ChallengeTitle
-              isCompleted={isChallengeCompleted}
-              translationPending={translationPending}
-            >
-              {title}
-            </ChallengeTitle>
-            <Spacer size='m' />
-            {showPrereqAlert &&
-              (missingPrerequisites.length > 0 ? (
-                <MissingPrerequisites
-                  missingPrerequisites={missingPrerequisites}
-                />
-              ) : (
-                <Callout
-                  className='exam-qualified'
-                  variant='note'
-                  label={t('misc.note')}
-                >
-                  <p>{t('learn.exam.qualified')}</p>
-                </Callout>
-              ))}
-            <h2>{t('exam.download-header')}</h2>
-            <p>{t('exam.explanation')}</p>
-            <Spacer size='l' />
-            {isSignedIn && (
-              <>
-                <h2>{t('exam.attempts')}</h2>
-                <Attempts examChallengeId={id} />
-                <Spacer size='l' />
-                <ExamTokenControls email={user!.email} />
-              </>
-            )}
-            <p>
-              {t('exam.version', {
-                version: latestVersion || '...'
-              })}
-            </p>
-            <Button href={'exam-environment://'}>
-              {t('exam.open-exam-application')}
-            </Button>
-            <Spacer size='s' />
-            <div className='exam-download-buttons'>
-              {downloadLink ? (
-                <Button href={downloadLink} download={downloadLink}>
-                  {t('buttons.download-latest-version')}
-                </Button>
-              ) : (
-                <strong>{t('exam.unable-to-detect-os')}</strong>
-              )}
-            </div>
-            <Spacer size='xs' />
-            <Dropdown block={true} dropup>
-              <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
-              <Dropdown.Menu>
-                {downloadLinks
-                  .filter(link => !link.match(/\.sig|\.json/))
-                  .map((link, index) => {
-                    const urlEnd = link.split('/').pop() ?? '';
-                    // App naming scheme is <app_name>_<version>?_<arch>(-setup)?(-debug)?.<ext>
-                    const urlParts = urlEnd.split('_');
-                    const archAndExt = urlParts.at(urlParts.length - 1);
-                    const arch = archAndExt?.split('-')?.at(0);
-                    const ext = archAndExt?.slice(archAndExt?.indexOf('.'));
+  // Check if curriculum data needs to be fetched
 
-                    const recommendedOs =
-                      arch && ext ? getRecommendedOs({ arch, ext }) : '';
-                    return (
-                      <MenuItem
-                        href={link}
-                        download={link}
-                        key={index}
-                        variant='primary'
-                      >
-                        {urlEnd} {recommendedOs && `(${recommendedOs})`}
-                      </MenuItem>
-                    );
-                  })}
-              </Dropdown.Menu>
-            </Dropdown>
-            <Spacer size='l' />
-            <strong>{t('exam.download-trouble')}</strong>{' '}
-            <a href='mailto: support@freecodecamp.org'>
-              support@freecodecamp.org
-            </a>
-            <Spacer size='l' />
-          </Col>
-        </Row>
-      </Container>
-    </LearnLayout>
+  return (
+    <>
+      {needsCurriculumData && <FetchAllCurriculumData />}
+      <LearnLayout>
+        <Helmet>
+          <title>
+            {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
+          </title>
+        </Helmet>
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <Spacer size='m' />
+              {showPrereqAlert &&
+                (missingPrerequisites.length > 0 ? (
+                  <MissingPrerequisites
+                    missingPrerequisites={missingPrerequisites}
+                  />
+                ) : (
+                  <Callout
+                    className='exam-qualified'
+                    variant='note'
+                    label={t('misc.note')}
+                  >
+                    <p>{t('learn.exam.qualified')}</p>
+                  </Callout>
+                ))}
+              <h2>{t('exam.download-header')}</h2>
+              <p>{t('exam.explanation')}</p>
+              <Spacer size='l' />
+              {isSignedIn && (
+                <>
+                  <h2>{t('exam.attempts')}</h2>
+                  <Attempts examChallengeId={id} />
+                  <Spacer size='l' />
+                  <ExamTokenControls email={user!.email} />
+                </>
+              )}
+              <p>
+                {t('exam.version', {
+                  version: latestVersion || '...'
+                })}
+              </p>
+              <Button href={'exam-environment://'}>
+                {t('exam.open-exam-application')}
+              </Button>
+              <Spacer size='s' />
+              <div className='exam-download-buttons'>
+                {downloadLink ? (
+                  <Button href={downloadLink} download={downloadLink}>
+                    {t('buttons.download-latest-version')}
+                  </Button>
+                ) : (
+                  <strong>{t('exam.unable-to-detect-os')}</strong>
+                )}
+              </div>
+              <Spacer size='xs' />
+              <Dropdown block={true} dropup>
+                <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
+                <Dropdown.Menu>
+                  {downloadLinks
+                    .filter(link => !link.match(/\.sig|\.json/))
+                    .map((link, index) => {
+                      const urlEnd = link.split('/').pop() ?? '';
+                      // App naming scheme is <app_name>_<version>?_<arch>(-setup)?(-debug)?.<ext>
+                      const urlParts = urlEnd.split('_');
+                      const archAndExt = urlParts.at(urlParts.length - 1);
+                      const arch = archAndExt?.split('-')?.at(0);
+                      const ext = archAndExt?.slice(archAndExt?.indexOf('.'));
+
+                      const recommendedOs =
+                        arch && ext ? getRecommendedOs({ arch, ext }) : '';
+                      return (
+                        <MenuItem
+                          href={link}
+                          download={link}
+                          key={index}
+                          variant='primary'
+                        >
+                          {urlEnd} {recommendedOs && `(${recommendedOs})`}
+                        </MenuItem>
+                      );
+                    })}
+                </Dropdown.Menu>
+              </Dropdown>
+              <Spacer size='l' />
+              <strong>{t('exam.download-trouble')}</strong>{' '}
+              <a href='mailto: support@freecodecamp.org'>
+                support@freecodecamp.org
+              </a>
+              <Spacer size='l' />
+            </Col>
+          </Row>
+        </Container>
+      </LearnLayout>
+    </>
   );
 }
 

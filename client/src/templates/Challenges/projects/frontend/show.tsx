@@ -30,14 +30,18 @@ import {
 import { isChallengeCompletedSelector } from '../../redux/selectors';
 import { getGuideUrl } from '../../utils';
 import SolutionForm from '../solution-form';
+import { FetchAllCurriculumData } from '../../classic/fetch-all-curriculum-data';
+import { needsCurriculumDataSelector } from '../../../../redux/selectors';
 import ProjectToolPanel from '../tool-panel';
 import { getChallengePaths } from '../../utils/challenge-paths';
 
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  (isChallengeCompleted: boolean) => ({
-    isChallengeCompleted
+  needsCurriculumDataSelector,
+  (isChallengeCompleted: boolean, needsCurriculumData: boolean) => ({
+    isChallengeCompleted,
+    needsCurriculumData
   })
 );
 
@@ -59,6 +63,7 @@ interface ProjectProps {
   data: { challengeNode: ChallengeNode };
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
+  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -126,6 +131,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       }
     },
     isChallengeCompleted,
+    needsCurriculumData,
     t,
     updateSolutionFormValues
   } = props;
@@ -135,49 +141,52 @@ const ShowFrontEndProject = (props: ProjectProps) => {
   )} - ${title}`;
 
   return (
-    <Hotkeys containerRef={container}>
-      <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
-        <Container>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-              <ChallengeDescription
+    <>
+      {needsCurriculumData && <FetchAllCurriculumData />}
+      <Hotkeys containerRef={container}>
+        <LearnLayout>
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
+          <Container>
+            <Row>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer size='m' />
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
+                <ChallengeDescription
+                  superBlock={superBlock}
+                  description={description}
+                  instructions={instructions}
+                />
+                <Spacer size='m' />
+                <SolutionForm
+                  challengeType={challengeType}
+                  description={description}
+                  onSubmit={handleSubmit}
+                  updateSolutionForm={updateSolutionFormValues}
+                />
+                <ProjectToolPanel
+                  guideUrl={getGuideUrl({ forumTopicId, title })}
+                />
+                <br />
+                <Spacer size='m' />
+              </Col>
+              <CompletionModal />
+              <HelpModal
+                challengeTitle={title}
+                challengeBlock={block}
                 superBlock={superBlock}
-                description={description}
-                instructions={instructions}
               />
-              <Spacer size='m' />
-              <SolutionForm
-                challengeType={challengeType}
-                description={description}
-                onSubmit={handleSubmit}
-                updateSolutionForm={updateSolutionFormValues}
-              />
-              <ProjectToolPanel
-                guideUrl={getGuideUrl({ forumTopicId, title })}
-              />
-              <br />
-              <Spacer size='m' />
-            </Col>
-            <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
-          </Row>
-        </Container>
-      </LearnLayout>
-    </Hotkeys>
+            </Row>
+          </Container>
+        </LearnLayout>
+      </Hotkeys>
+    </>
   );
 };
 

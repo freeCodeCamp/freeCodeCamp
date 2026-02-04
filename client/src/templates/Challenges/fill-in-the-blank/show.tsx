@@ -37,6 +37,8 @@ import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
+import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
+import { needsCurriculumDataSelector } from '../../../redux/selectors';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
@@ -44,8 +46,10 @@ import './show.css';
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  (isChallengeCompleted: boolean) => ({
-    isChallengeCompleted
+  needsCurriculumDataSelector,
+  (isChallengeCompleted: boolean, needsCurriculumData: boolean) => ({
+    isChallengeCompleted,
+    needsCurriculumData
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -67,6 +71,7 @@ interface ShowFillInTheBlankProps {
   data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
   initTests: (xs: Test[]) => void;
+  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
   pageContext: {
@@ -99,6 +104,7 @@ const ShowFillInTheBlank = ({
     }
   },
   challengeMounted,
+  needsCurriculumData,
   openHelpModal,
   updateChallengeMeta,
   openCompletionModal,
@@ -253,91 +259,94 @@ const ShowFillInTheBlank = ({
   const sceneSubject = new SceneSubject();
 
   return (
-    <Hotkeys
-      executeChallenge={() => handleSubmit()}
-      containerRef={container}
-      playScene={handlePlayScene}
-    >
-      <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
-        <Container>
-          <Row>
-            <Spacer size='m' />
-            <ChallengeTitle
-              isCompleted={isChallengeCompleted}
-              translationPending={translationPending}
-            >
-              {title}
-            </ChallengeTitle>
-
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <PrismFormatted text={description} />
+    <>
+      {needsCurriculumData && <FetchAllCurriculumData />}
+      <Hotkeys
+        executeChallenge={() => handleSubmit()}
+        containerRef={container}
+        playScene={handlePlayScene}
+      >
+        <LearnLayout>
+          <Helmet
+            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+          />
+          <Container>
+            <Row>
               <Spacer size='m' />
-            </Col>
-
-            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
-
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              {transcript && (
-                <ChallengeTranscript
-                  transcript={transcript}
-                  isDialogue={true}
-                />
-              )}
-
-              {instructions && (
-                <>
-                  <PrismFormatted text={instructions} />
-                  <Spacer size='xs' />
-                </>
-              )}
-
-              {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
-                if it encounters a key combination, so we have to pass in the individual keys to observe */}
-              <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                <FillInTheBlanks
-                  fillInTheBlank={fillInTheBlank}
-                  answersCorrect={answersCorrect}
-                  showFeedback={showFeedback}
-                  feedback={feedback}
-                  showWrong={showWrong}
-                  handleInputChange={handleInputChange}
-                />
-              </ObserveKeys>
-
-              {explanation ? (
-                <ChallegeExplanation explanation={explanation} />
-              ) : (
-                <Spacer size='m' />
-              )}
-
-              <Button
-                block={true}
-                variant='primary'
-                disabled={!allBlanksFilled}
-                onClick={() => handleSubmit()}
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
               >
-                {t('buttons.check-answer')}
-              </Button>
-              <Spacer size='xxs' />
-              <Button block={true} variant='primary' onClick={openHelpModal}>
-                {t('buttons.ask-for-help')}
-              </Button>
-              <Spacer size='l' />
-            </Col>
-            <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
-          </Row>
-        </Container>
-        <ShortcutsModal />
-      </LearnLayout>
-    </Hotkeys>
+                {title}
+              </ChallengeTitle>
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <PrismFormatted text={description} />
+                <Spacer size='m' />
+              </Col>
+
+              {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                {transcript && (
+                  <ChallengeTranscript
+                    transcript={transcript}
+                    isDialogue={true}
+                  />
+                )}
+
+                {instructions && (
+                  <>
+                    <PrismFormatted text={instructions} />
+                    <Spacer size='xs' />
+                  </>
+                )}
+
+                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+                if it encounters a key combination, so we have to pass in the individual keys to observe */}
+                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                  <FillInTheBlanks
+                    fillInTheBlank={fillInTheBlank}
+                    answersCorrect={answersCorrect}
+                    showFeedback={showFeedback}
+                    feedback={feedback}
+                    showWrong={showWrong}
+                    handleInputChange={handleInputChange}
+                  />
+                </ObserveKeys>
+
+                {explanation ? (
+                  <ChallegeExplanation explanation={explanation} />
+                ) : (
+                  <Spacer size='m' />
+                )}
+
+                <Button
+                  block={true}
+                  variant='primary'
+                  disabled={!allBlanksFilled}
+                  onClick={() => handleSubmit()}
+                >
+                  {t('buttons.check-answer')}
+                </Button>
+                <Spacer size='xxs' />
+                <Button block={true} variant='primary' onClick={openHelpModal}>
+                  {t('buttons.ask-for-help')}
+                </Button>
+                <Spacer size='l' />
+              </Col>
+              <CompletionModal />
+              <HelpModal
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
+              />
+            </Row>
+          </Container>
+          <ShortcutsModal />
+        </LearnLayout>
+      </Hotkeys>
+    </>
   );
 };
 

@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { createSelector } from 'reselect';
 import { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { useStaticQuery, graphql } from 'gatsby';
 
 import {
   challengeMetaSelector,
@@ -12,16 +11,6 @@ import {
   completedPercentageSelector
 } from '../../templates/Challenges/redux/selectors';
 import { liveCerts } from '../../../config/cert-and-project-map';
-import { updateAllChallengesInfo } from '../../redux/actions';
-import type {
-  CertificateNode,
-  ChallengeNode,
-  SuperBlockStructure
-} from '../../redux/prop-types';
-import {
-  updateSuperBlockStructures,
-  superBlockStructuresSelector
-} from '../../templates/Introduction/redux';
 import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import {
   isValidDateString,
@@ -34,7 +23,6 @@ const mapStateToProps = createSelector(
   challengeMetaSelector,
   completedChallengesInBlockSelector,
   completedPercentageSelector,
-  superBlockStructuresSelector,
   (
     currentBlockIds: string[],
     {
@@ -49,8 +37,7 @@ const mapStateToProps = createSelector(
       superBlock: string;
     },
     completedChallengesInBlock: number,
-    completedPercent: number,
-    superBlockStructures: Record<string, SuperBlockStructure>
+    completedPercent: number
   ) => ({
     currentBlockIds,
     challengeType,
@@ -58,15 +45,11 @@ const mapStateToProps = createSelector(
     block,
     superBlock,
     completedChallengesInBlock,
-    completedPercent,
-    superBlockStructures
+    completedPercent
   })
 );
 
-const mapDispatchToProps = {
-  updateAllChallengesInfo,
-  updateSuperBlockStructures
-};
+const mapDispatchToProps = {};
 
 type PropsFromRedux = ConnectedProps<typeof connector>;
 
@@ -81,10 +64,7 @@ function Progress({
   challengeType,
   completedChallengesInBlock,
   completedPercent,
-  t,
-  updateAllChallengesInfo,
-  updateSuperBlockStructures,
-  superBlockStructures: superBlockStructuresFromStore
+  t
 }: ProgressProps): JSX.Element {
   let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
@@ -101,32 +81,6 @@ function Progress({
       blockTitle += `: ${formatDisplayDate(dateParam)}`;
     }
   }
-
-  const { challengeNodes, certificateNodes, superBlockStructureNodes } =
-    useGetAllChallengeData();
-
-  useEffect(() => {
-    updateAllChallengesInfo({ challengeNodes, certificateNodes });
-
-    const structuresMap: Record<string, SuperBlockStructure> = {};
-
-    // The super block structures are pretty static, so we only want to
-    // update them if we don't already have them in the store.
-    if (Object.keys(superBlockStructuresFromStore).length === 0) {
-      superBlockStructureNodes.forEach((node: SuperBlockStructure) => {
-        structuresMap[node.superBlock] = node;
-      });
-
-      updateSuperBlockStructures(structuresMap);
-    }
-  }, [
-    challengeNodes,
-    certificateNodes,
-    superBlockStructureNodes,
-    updateAllChallengesInfo,
-    updateSuperBlockStructures,
-    superBlockStructuresFromStore
-  ]);
 
   const totalChallengesInBlock = currentBlockIds?.length ?? 0;
   const meta =
@@ -151,68 +105,6 @@ function Progress({
     </div>
   );
 }
-
-// TODO: extract this hook and call it when needed (i.e. here, in the lower-jaw
-// and in completion-modal). Then we don't have to pass the data into redux.
-// This would mean that we have to memoize any complex calculations in the hook.
-// Otherwise, this will undo all the recent performance improvements.
-const useGetAllChallengeData = () => {
-  const {
-    allChallengeNode: { nodes: challengeNodes },
-    allCertificateNode: { nodes: certificateNodes },
-    allSuperBlockStructure: { nodes: superBlockStructureNodes }
-  }: {
-    allChallengeNode: { nodes: ChallengeNode[] };
-    allCertificateNode: { nodes: CertificateNode[] };
-    allSuperBlockStructure: { nodes: SuperBlockStructure[] };
-  } = useStaticQuery(graphql`
-    query getBlockNode {
-      allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
-      ) {
-        nodes {
-          challenge {
-            block
-            id
-          }
-        }
-      }
-      allCertificateNode {
-        nodes {
-          challenge {
-            certification
-            tests {
-              id
-            }
-          }
-        }
-      }
-      allSuperBlockStructure {
-        nodes {
-          superBlock
-          chapters {
-            dashedName
-            comingSoon
-            modules {
-              dashedName
-              comingSoon
-              moduleType
-              blocks
-            }
-          }
-        }
-      }
-    }
-  `);
-
-  return { challengeNodes, certificateNodes, superBlockStructureNodes };
-};
 
 Progress.displayName = 'Progress';
 

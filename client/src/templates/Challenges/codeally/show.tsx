@@ -24,7 +24,8 @@ import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
   isSignedInSelector,
-  userTokenSelector
+  userTokenSelector,
+  needsCurriculumDataSelector
 } from '../../../redux/selectors';
 import {
   challengeMounted,
@@ -48,6 +49,7 @@ import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
+import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
 import { LocalInstructions } from './local-instructions';
@@ -63,18 +65,21 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
   userTokenSelector,
+  needsCurriculumDataSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
-    userToken: string | null
+    userToken: string | null,
+    needsCurriculumData: boolean
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
-    userToken
+    userToken,
+    needsCurriculumData
   })
 );
 
@@ -101,6 +106,7 @@ interface ShowCodeAllyProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -118,6 +124,7 @@ function ShowCodeAlly({
   data,
   isChallengeCompleted,
   isSignedIn,
+  needsCurriculumData,
   partiallyCompletedChallenges,
   t,
   updateSolutionFormValues,
@@ -286,91 +293,95 @@ function ShowCodeAlly({
   });
 
   return (
-    <Hotkeys containerRef={container}>
-      <LearnLayout>
-        <Helmet title={windowTitle} />
-        <Container>
-          <Row>
-            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-              <Spacer size='m' />
-              {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
-              <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
-              <Spacer size='m' />
-              <PrismFormatted text={description} />
-              <Spacer size='m' />
+    <>
+      {needsCurriculumData && <FetchAllCurriculumData />}
+      <Hotkeys containerRef={container}>
+        <LearnLayout>
+          <Helmet title={windowTitle} />
+          <Container>
+            <Row>
+              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                <Spacer size='m' />
+                {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
+                <Spacer size='m' />
+                <ChallengeTitle
+                  isCompleted={isChallengeCompleted}
+                  translationPending={translationPending}
+                >
+                  {title}
+                </ChallengeTitle>
+                <Spacer size='m' />
+                <PrismFormatted text={description} />
+                <Spacer size='m' />
 
-              {setupsToShow.map(({ name, component: SetupComponent }, i) => (
-                <Fragment key={name}>
-                  <details
-                    open={i === 0}
-                    style={{ border: '1px solid #ccc', padding: '16px' }}
-                  >
-                    <summary>{name}</summary>
+                {setupsToShow.map(({ name, component: SetupComponent }, i) => (
+                  <Fragment key={name}>
+                    <details
+                      open={i === 0}
+                      style={{ border: '1px solid #ccc', padding: '16px' }}
+                    >
+                      <summary>{name}</summary>
+                      <Spacer size='s' />
+                      <SetupComponent
+                        {...{
+                          challengeType,
+                          copyUrl,
+                          copyUserToken,
+                          generateUserToken,
+                          isSignedIn,
+                          title,
+                          userToken
+                        }}
+                      />
+                    </details>
                     <Spacer size='s' />
-                    <SetupComponent
-                      {...{
-                        challengeType,
-                        copyUrl,
-                        copyUserToken,
-                        generateUserToken,
-                        isSignedIn,
-                        title,
-                        userToken
-                      }}
-                    />
-                  </details>
-                  <Spacer size='s' />
-                </Fragment>
-              ))}
+                  </Fragment>
+                ))}
 
-              <Spacer size='m' />
-              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
-                <>
-                  <div className='ca-description'>
-                    {t('learn.complete-both-steps')}
-                  </div>
-                  <hr />
-                  <Spacer size='m' />
-                  <RdbStep1Instructions
-                    instructions={instructions}
-                    isCompleted={isPartiallyCompleted || isCompleted}
-                  />
-                  <hr />
-                  <Spacer size='m' />
-                  <RdbStep2Instructions
-                    isCompleted={isCompleted}
-                    notes={notes}
-                  />
-                  <Spacer size='m' />
-                  <SolutionForm
-                    challengeType={challengeType}
-                    description={description}
-                    onSubmit={handleSubmit}
-                    updateSolutionForm={updateSolutionFormValues}
-                  />
-                </>
-              )}
+                <Spacer size='m' />
+                {isSignedIn &&
+                  challengeType === challengeTypes.codeAllyCert && (
+                    <>
+                      <div className='ca-description'>
+                        {t('learn.complete-both-steps')}
+                      </div>
+                      <hr />
+                      <Spacer size='m' />
+                      <RdbStep1Instructions
+                        instructions={instructions}
+                        isCompleted={isPartiallyCompleted || isCompleted}
+                      />
+                      <hr />
+                      <Spacer size='m' />
+                      <RdbStep2Instructions
+                        isCompleted={isCompleted}
+                        notes={notes}
+                      />
+                      <Spacer size='m' />
+                      <SolutionForm
+                        challengeType={challengeType}
+                        description={description}
+                        onSubmit={handleSubmit}
+                        updateSolutionForm={updateSolutionFormValues}
+                      />
+                    </>
+                  )}
 
-              <ProjectToolPanel />
-              <br />
-              <Spacer size='m' />
-            </Col>
-            <CompletionModal />
-            <HelpModal
-              challengeTitle={title}
-              challengeBlock={block}
-              superBlock={superBlock}
-            />
-          </Row>
-        </Container>
-      </LearnLayout>
-    </Hotkeys>
+                <ProjectToolPanel />
+                <br />
+                <Spacer size='m' />
+              </Col>
+              <CompletionModal />
+              <HelpModal
+                challengeTitle={title}
+                challengeBlock={block}
+                superBlock={superBlock}
+              />
+            </Row>
+          </Container>
+        </LearnLayout>
+      </Hotkeys>
+    </>
   );
 }
 
