@@ -31,31 +31,64 @@ dashedName: build-a-travel-weather-planner
 
 # --hints--
 
-You should define the variables `distance_mi`, `is_raining`, `has_bike`, `has_car`, and `has_ride_share_app`.
+You should have a variable named `distance_mi`.
 
 ```js
-({ test: () => runPython(`
-import ast
+({ test: () => runPython(`assert _Node(_code).has_variable("distance_mi")`) })
+```
 
-tree = ast.parse(_code)
+You should assign a number to your `distance_mi` variable.
 
-assigned_names = {
-    node.targets[0].id
-    for node in ast.walk(tree)
-    if isinstance(node, ast.Assign)
-    and isinstance(node.targets[0], ast.Name)
-}
+```js
+({ test: () => runPython(`assert isinstance(distance_mi, (int, float))`) })
+```
 
-required = {
-    "distance_mi",
-    "is_raining",
-    "has_bike",
-    "has_car",
-    "has_ride_share_app"
-}
+You should have a variable named `is_raining`.
 
-assert required.issubset(assigned_names)
-`) })
+```js
+({ test: () => runPython(`assert _Node(_code).has_variable("is_raining")`) })
+```
+
+You should assign a boolean to your `is_raining` variable.
+
+```js
+({ test: () => runPython(`assert isinstance(is_raining, bool)`) })
+```
+
+You should have a variable named `has_bike`.
+
+```js
+({ test: () => runPython(`assert _Node(_code).has_variable("has_bike")`) })
+```
+
+You should assign a boolean to your `has_bike` variable.
+
+```js
+({ test: () => runPython(`assert isinstance(has_bike, bool)`) })
+```
+
+You should have a variable named `has_car`.
+
+```js
+({ test: () => runPython(`assert _Node(_code).has_variable("has_car")`) })
+```
+
+You should assign a boolean to your `has_car` variable.
+
+```js
+({ test: () => runPython(`assert isinstance(has_car, bool)`) })
+```
+
+You should have a variable named `has_ride_share_app`.
+
+```js
+({ test: () => runPython(`assert _Node(_code).has_variable("has_ride_share_app")`) })
+```
+
+You should assign a boolean to your `has_ride_share_app` variable.
+
+```js
+({ test: () => runPython(`assert isinstance(has_ride_share_app, bool)`) })
 ```
 
 You should use at least one `if` statement.
@@ -105,23 +138,13 @@ assert len(bool_ops) >= 1
 `) })
 ```
 
-You should use the ```print()``` function to display the result.
+You should use the `print()` function to display the result.
 
 ```js
-({ test: () => runPython(`
-import ast
-
-tree = ast.parse(_code)
-calls = [node for node in ast.walk(tree) if isinstance(node, ast.Call)]
-
-assert any(
-    isinstance(call.func, ast.Name) and call.func.id == "print"
-    for call in calls
-)
-`) })
+({ test: () => runPython(`assert _Node(_code).block_has_call("print")`) })
 ```
 
-When the distance is short and it is not raining, the program should print `True`.
+When the distance is `1` mile or less and it is not raining, the program should print `True`.
 
 ```js
 ({ test: () => runPython(`
@@ -169,7 +192,7 @@ run_case(
 `) })
 ```
 
-When the distance is medium and it is raining without a bike, the program should print `False`.
+When the distance is between `1` mile (excluded) and `6` miles (included), and it is raining with no bike, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`
@@ -217,7 +240,7 @@ run_case(
 `) })
 ```
 
-When the distance is long and a ride share app is available, the program should print `True`.
+When the distance is greater than `6` miles and a ride share app is available, the program should print `True`.
 
 ```js
 ({ test: () => runPython(`
@@ -265,7 +288,55 @@ run_case(
 `) })
 ```
 
-When the distance is medium, a bike is available, and it is not raining, the program should print `True`.
+When the distance is greater than `6` miles and a car is available, the program should print `True`.
+
+```js
+({ test: () => runPython(`
+import ast, io, contextlib
+
+VARIABLES = {
+    "distance_mi",
+    "is_raining",
+    "has_bike",
+    "has_car",
+    "has_ride_share_app"
+}
+
+def run_case(env, expected):
+    tree = ast.parse(_code)
+
+    tree.body = [
+        node for node in tree.body
+        if not (
+            isinstance(node, ast.Assign)
+            and isinstance(node.targets[0], ast.Name)
+            and node.targets[0].id in VARIABLES
+        )
+    ]
+
+    clean_code = compile(tree, "<ast>", "exec")
+
+    buffer = io.StringIO()
+    with contextlib.redirect_stdout(buffer):
+        exec(clean_code, env)
+
+    assert buffer.getvalue().strip() == expected
+
+
+run_case(
+    {
+        "distance_mi": 12,
+        "is_raining": True,
+        "has_bike": False,
+        "has_car": True,
+        "has_ride_share_app": False
+    },
+    "True"
+)
+`) })
+```
+
+When the distance is between `1` mile (excluded) and `6` miles (included), a bike is available, and it is not raining, the program should print `True`.
 
 ```js
 ({ test: () => runPython(`
@@ -313,7 +384,7 @@ run_case(
 `) })
 ```
 
-When the distance is exactly 1 mile and it is raining, the program should print `False`.
+When the distance is exactly `1` mile and it is raining, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`
@@ -361,7 +432,7 @@ run_case(
 `) })
 ```
 
-When the distance is exactly 6 miles and a bike is available but it is raining, the program should print `False`.
+When the distance is exactly `6` miles and a bike is available but it is raining, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`
