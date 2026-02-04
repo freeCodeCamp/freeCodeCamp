@@ -286,27 +286,27 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-countup",
             "lab-countdown",
+            "lab-range-of-numbers",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
             "review-recursion",
             "quiz-recursion"
           ]
         },
-        {
-          "dashedName": "data-structures",
-          "comingSoon": true,
-          "blocks": []
-        },
+        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
-          "blocks": []
+          "blocks": [
+            "lecture-introduction-to-common-searching-and-sorting-algorithms"
+          ]
         },
         {
           "dashedName": "graphs-and-trees",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-understanding-graphs-and-trees-js"]
         },
         {
           "dashedName": "dynamic-programming",

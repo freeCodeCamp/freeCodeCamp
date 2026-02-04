@@ -167,7 +167,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
       reply.clearOurCookies();
 
-      return reply.code(204).send();
+      return reply.code(204).send(null);
     }
   );
 
@@ -722,6 +722,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             partiallyCompletedChallenges: true,
             picture: true,
             portfolio: true,
+            experience: true,
             profileUI: true,
             progressTimestamps: true,
             savedChallenges: true,
@@ -781,6 +782,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           location,
           name,
           theme,
+          experience,
           ...publicUser
         } = rest;
 
@@ -818,6 +820,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
+              experience: experience.map(removeNulls),
               msUsername: msUsername?.msUsername
             }
           },
