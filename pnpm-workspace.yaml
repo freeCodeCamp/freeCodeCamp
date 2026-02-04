@@ -9,7 +9,6 @@ packages:
   - 'tools/client-plugins/*'
   - 'tools/crowdin'
   - 'tools/daily-challenges'
-  - 'tools/scripts/lint'
   - 'tools/scripts/seed'
   - 'tools/scripts/seed-exams'
   - 'packages/*'

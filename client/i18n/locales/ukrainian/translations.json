@@ -291,7 +291,7 @@
     "reset-editor-layout": "Скинути редактор",
     "shortcuts-explained": "В межах завдання натисніть ESC та знак питання, щоб переглянути список доступних скорочень.",
     "username": {
-      "contains invalid characters": "Ім’я користувача «{{username}}» містить неприпустимі символи",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Ім’я користувача «{{username}}» занадто коротке",
       "is a reserved error code": "Ім’я користувача «{{username}}» є зарезервованим кодом помилки",
       "must be lowercase": "Ім’я користувача «{{username}}» має бути у нижньому регістрі",
