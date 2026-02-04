@@ -302,7 +302,7 @@ jobs:
       - name: Format JSON
         run: |
           sudo chown -R $(whoami): client/i18n/locales
-          npx --yes prettier --write client/i18n/locales/**/*.json
+          npx --yes oxfmt --write client/i18n/locales/**/*.json
 
       ###### Lowercase directory names #####
 
