@@ -1,0 +1,45 @@
+---
+id: 68f1f8c248306da204655117
+title: Step 6
+challengeType: 0
+dashedName: step-6
+---
+
+# --description--
+
+The `muted` attribute will silence audio on initial playback. If you have `controls` enabled, the user will be able to unmute audio. Omitting the `muted` attribute will play audio on initial playback.
+
+The `muted` attribute is a boolean attribute and does not need a value.
+
+Add the `muted` attribute to the `video` element.
+
+# --hints--
+
+Your `video` element should have the `muted` attribute.
+
+```js
+const video = document.querySelector('video');
+assert.isTrue(video?.hasAttribute('muted'));
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+--fcc-editable-region--
+  <video width="640" loop controls>
+--fcc-editable-region--
+  </video>
+</body>
+</html>
+```

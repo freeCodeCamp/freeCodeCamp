@@ -16,6 +16,7 @@ const unlockedProfile = {
   showName: true,
   showPoints: true,
   showPortfolio: true,
+  showExperience: true,
   showTimeLine: true
 };
 
@@ -39,7 +40,7 @@ test.describe('Completed project preview', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ request }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
 
     await authedRequest({
       request,

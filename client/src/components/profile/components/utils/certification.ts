@@ -1,9 +1,10 @@
-import { Certification } from '../../../../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { User } from '../../../../redux/prop-types';
 
 export const getCertifications = (user: User) => {
   const {
     isA2EnglishCert,
+    isB1EnglishCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
     is2018DataVisCert,
@@ -32,6 +33,7 @@ export const getCertifications = (user: User) => {
   return {
     hasModernCert:
       isA2EnglishCert ||
+      isB1EnglishCert ||
       isRespWebDesignCertV9 ||
       isJavascriptCertV9 ||
       isFoundationalCSharpCertV8 ||
@@ -62,6 +64,11 @@ export const getCertifications = (user: User) => {
         show: isA2EnglishCert,
         title: 'A2 English for Developers Certification (Beta)',
         certSlug: Certification.A2English
+      },
+      {
+        show: isB1EnglishCert,
+        title: 'B1 English for Developers Certification (Beta)',
+        certSlug: Certification.B1English
       },
       {
         show: isRespWebDesignCertV9,

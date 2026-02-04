@@ -1,5 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { startOfDay, addDays, isEqual } from 'date-fns';
+import {
+  startOfDay,
+  addDays,
+  isEqual,
+  differenceInCalendarDays
+} from 'date-fns';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import { last } from 'lodash-es';
@@ -42,7 +47,11 @@ export const calculateStreaks = (calendar: Record<string, number>) => {
   );
 
   const lastDay = last(days);
-  const streakExpired = !lastDay || !isEqual(lastDay, startOfDay(Date.now()));
+  const today = startOfDay(Date.now());
+
+  // Grace period: streak remains active if last activity was today or yesterday
+  const streakExpired =
+    !lastDay || differenceInCalendarDays(today, lastDay) > 1;
 
   return { longestStreak, currentStreak: streakExpired ? 0 : currentStreak };
 };

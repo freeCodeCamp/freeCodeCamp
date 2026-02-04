@@ -1,0 +1,11 @@
+{
+  "name": "What the Company Does",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-what-the-company-does",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "696ede30fbe2129260a0c362", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}

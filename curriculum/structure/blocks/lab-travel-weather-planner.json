@@ -1,10 +1,15 @@
 {
   "name": "Build a Travel Weather Planner",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "lab-travel-weather-planner",
   "helpCategory": "Python",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "6946e1bcf712846ec114031c", "title": "Step 1" }],
+  "challengeOrder": [
+    {
+      "id": "694acade1d4afdbce71e5840",
+      "title": "Build a Travel Weather Planner"
+    }
+  ],
   "blockLabel": "lab",
   "usesMultifileEditor": true
 }

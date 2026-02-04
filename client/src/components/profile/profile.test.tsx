@@ -55,6 +55,7 @@ const userProps = {
     isDonating: false,
     is2018DataVisCert: true,
     isA2EnglishCert: true,
+    isB1EnglishCert: true,
     isApisMicroservicesCert: true,
     isBackEndCert: true,
     isDataVisCert: true,

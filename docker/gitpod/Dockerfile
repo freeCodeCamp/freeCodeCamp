@@ -5,7 +5,7 @@ LABEL org.opencontainers.image.source=https://github.com/freecodecamp/freecodeca
   org.opencontainers.image.licenses=BSD-3-Clause
 
 # from https://www.gitpod.io/docs/introduction/languages/javascript#node-versions
-RUN bash -c 'VERSION="20" \
+RUN bash -c 'VERSION="24" \
   && source $HOME/.nvm/nvm.sh && nvm install $VERSION \
   && nvm use $VERSION && nvm alias default $VERSION \
   && npm i -g pnpm@10 \

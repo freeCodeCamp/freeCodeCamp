@@ -1,0 +1,11 @@
+{
+  "name": "Daily Routines at Work Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-discuss-morning-evening-routine",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "69602a7b93293a85be8055ce", "title": "Daily Routines at Work Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

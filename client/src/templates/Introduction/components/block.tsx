@@ -7,13 +7,13 @@ import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
 
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   chapterBasedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import envData from '../../../../config/env.json';
-import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import Caret from '../../../assets/icons/caret';
 import { Link } from '../../../components/helpers';
 import { completedChallengesSelector } from '../../../redux/selectors';
@@ -23,7 +23,7 @@ import { isProjectBased } from '../../../utils/curriculum-layout';
 import {
   BlockLayouts,
   BlockLabel as BlockLabelType
-} from '../../../../../shared-dist/config/blocks';
+} from '@freecodecamp/shared/config/blocks';
 import CheckMark from './check-mark';
 import {
   GridMapChallenges,
