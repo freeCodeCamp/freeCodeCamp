@@ -11,5 +11,6 @@
     "//#lint-root": {
       "dependsOn": ["@freecodecamp/shared#build"]
     }
-  }
+  },
+  "remoteCache": { "signature": true }
 }

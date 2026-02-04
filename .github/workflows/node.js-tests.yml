@@ -6,6 +6,8 @@ on:
       - 'main'
       - 'prod-**'
       - 'renovate/**'
+      - 'hotfix-**'
+      - 'temp-**'
   pull_request:
     branches:
       - 'main'
@@ -54,6 +56,12 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
       - name: Set Environment variables
         run: |
           cp sample.env .env
@@ -100,6 +108,12 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
       - name: Set freeCodeCamp Environment Variables
         run: |
           cp sample.env .env
@@ -135,6 +149,12 @@ jobs:
         id: pnpm-install
         with:
           run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
 
       - name: Set Environment variables
         run: |
@@ -181,6 +201,12 @@ jobs:
         id: pnpm-install
         with:
           run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
 
       - name: Set Environment variables
         run: |
@@ -230,6 +256,12 @@ jobs:
         id: pnpm-install
         with:
           run_install: false
+
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
 
       - name: Set Environment variables
         run: |
