@@ -140,7 +140,7 @@ const ShowQuiz = ({
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
 
-  // Initialize the data passed to `useQuiz`
+  // Initialize the quiz data
   const [initialQuizData] = useState(
     quiz.map(question => {
       const distractors = question.distractors.map((distractor, index) => {
@@ -169,16 +169,29 @@ const ShowQuiz = ({
         value: 4
       };
 
-      return {
+      const allAnswers = shuffleArray([...distractors, answer]);
+
+      const audioData =
+        question.audioId && question.transcript
+          ? {
+              audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioId}.mp3`,
+              transcript: question.transcript
+            }
+          : {};
+
+      const questionData = {
         question: (
           <PrismFormatted
             className='quiz-question-label'
             text={question.text}
           />
         ),
-        answers: shuffleArray([...distractors, answer]),
-        correctAnswer: answer.value
+        answers: allAnswers,
+        correctAnswer: answer.value,
+        ...audioData
       };
+
+      return questionData;
     })
   );
 
@@ -404,6 +417,8 @@ export const query = graphql`
             distractors
             text
             answer
+            audioId
+            transcript
           }
         }
         tests {

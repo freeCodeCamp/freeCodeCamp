@@ -8,6 +8,20 @@ const {
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type QuizQuestion {
+      text: String!
+      distractors: [String!]!
+      answer: String!
+      audioId: String
+      transcript: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions

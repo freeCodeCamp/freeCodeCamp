@@ -1,6 +1,7 @@
 const { root } = require('mdast-builder');
 const { getSection, getAllSections } = require('./utils/get-section');
 const { createMdastToHtml } = require('./utils/i18n-stringify');
+const { getParagraphContent } = require('./utils/get-paragraph-content');
 
 const { splitOnThematicBreak } = require('./utils/split-on-thematic-break');
 
@@ -21,7 +22,13 @@ function plugin() {
       });
     }
 
-    function getQuestion(textNodes, distractorNodes, answerNodes) {
+    function getQuestion(
+      textNodes,
+      distractorNodes,
+      answerNodes,
+      audioIdNodes,
+      transcriptNodes
+    ) {
       const text = toHtml(textNodes);
       const distractors = getDistractors(distractorNodes);
       const answer = toHtml(answerNodes);
@@ -31,7 +38,31 @@ function plugin() {
         throw Error('--distractors-- are missing from quiz question');
       if (!answer) throw Error('--answer-- is missing from quiz question');
 
-      return { text, distractors, answer };
+      const questionData = { text, distractors, answer };
+
+      // Extract audio-id if present
+      if (audioIdNodes.length > 0) {
+        const audioIdContent = getParagraphContent(audioIdNodes[0]);
+        if (audioIdContent && audioIdContent.trim()) {
+          questionData.audioId = audioIdContent.trim();
+
+          // Transcript is required when audio-id is present
+          if (transcriptNodes.length === 0) {
+            throw Error(
+              '--transcript-- is required when --audio-id-- is present'
+            );
+          }
+          const transcriptContent = toHtml(transcriptNodes);
+          if (!transcriptContent || !transcriptContent.trim()) {
+            throw Error(
+              '--transcript-- content cannot be empty when --audio-id-- is present'
+            );
+          }
+          questionData.transcript = transcriptContent;
+        }
+      }
+
+      return questionData;
     }
 
     if (quizzesNodes.length > 0) {
@@ -60,9 +91,17 @@ function plugin() {
           const textNodes = getSection(questionTree, '--text--');
           const distractorNodes = getSection(questionTree, '--distractors--');
           const answerNodes = getSection(questionTree, '--answer--');
+          const audioIdNodes = getSection(questionTree, '--audio-id--');
+          const transcriptNodes = getSection(questionTree, '--transcript--');
 
           quizQuestions.push(
-            getQuestion(textNodes, distractorNodes, answerNodes)
+            getQuestion(
+              textNodes,
+              distractorNodes,
+              answerNodes,
+              audioIdNodes,
+              transcriptNodes
+            )
           );
         });
 

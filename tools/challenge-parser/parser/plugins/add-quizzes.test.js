@@ -5,12 +5,22 @@ import addQuizzes from './add-quizzes';
 describe('add-quizzes plugin', () => {
   let mockQuizzesAST;
   let chineseQuizzesAST;
+  let quizzesWithAudioAST;
+  let quizzesWithAudioMissingTranscriptAST;
+  let quizzesWithAudioEmptyTranscriptAST;
   const plugin = addQuizzes();
   let file = { data: {} };
 
   beforeAll(async () => {
     mockQuizzesAST = await parseFixture('with-quizzes.md');
     chineseQuizzesAST = await parseFixture('with-chinese-quizzes.md');
+    quizzesWithAudioAST = await parseFixture('with-quizzes-audio.md');
+    quizzesWithAudioMissingTranscriptAST = await parseFixture(
+      'with-quizzes-audio-missing-transcript.md'
+    );
+    quizzesWithAudioEmptyTranscriptAST = await parseFixture(
+      'with-quizzes-audio-empty-transcript.md'
+    );
   });
 
   beforeEach(() => {
@@ -134,5 +144,40 @@ describe('add-quizzes plugin', () => {
     expect(thirdQuestion.answer).toBe(
       '<p>Quiz 1, question 3, answer with <span class="highlighted-text">zhōng wén</span></p>'
     );
+  });
+
+  it('should parse audio-id sections in quiz questions', () => {
+    plugin(quizzesWithAudioAST, file);
+    const quizzes = file.data.quizzes;
+
+    expect(Array.isArray(quizzes)).toBe(true);
+    expect(quizzes.length).toBe(1);
+
+    const firstQuiz = quizzes[0];
+    const firstQuestion = firstQuiz.questions[0];
+    const secondQuestion = firstQuiz.questions[1];
+
+    // First question has audio-id
+    expect(firstQuestion).toHaveProperty('audioId');
+    expect(firstQuestion.audioId).toBe('audio-question-1');
+    expect(firstQuestion.text).toBe('<p>Quiz 1, question 1 with audio</p>');
+    expect(firstQuestion.distractors.length).toBe(3);
+    expect(firstQuestion.answer).toBe('<p>Quiz 1, question 1, answer</p>');
+
+    // Second question has no audio-id
+    expect(secondQuestion.audioId).toBeUndefined();
+    expect(secondQuestion.text).toBe('<p>Quiz 1, question 2 without audio</p>');
+  });
+
+  it('should throw an error when --audio-id-- is present but --transcript-- is missing', () => {
+    expect(() => {
+      plugin(quizzesWithAudioMissingTranscriptAST, file);
+    }).toThrow('--transcript-- is required when --audio-id-- is present');
+  });
+
+  it('should throw an error when --audio-id-- is present but --transcript-- is missing or empty', () => {
+    expect(() => {
+      plugin(quizzesWithAudioEmptyTranscriptAST, file);
+    }).toThrow('--transcript-- is required when --audio-id-- is present');
   });
 });

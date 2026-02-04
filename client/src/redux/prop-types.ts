@@ -351,6 +351,8 @@ type QuizQuestion = {
   text: string;
   distractors: string[];
   answer: string;
+  audioId?: string | null;
+  transcript?: string | null;
 };
 
 export type CertificateNode = {
