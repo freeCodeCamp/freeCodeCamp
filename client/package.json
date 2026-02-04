@@ -174,7 +174,6 @@
     "core-js": "2.6.12",
     "dotenv": "16.4.5",
     "eslint": "^9.39.1",
-    "eslint-plugin-flowtype": "^8.0.3",
     "gatsby-plugin-schema-snapshot": "2.15.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "i18next-fs-backend": "2.6.0",
