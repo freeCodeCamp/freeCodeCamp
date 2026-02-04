@@ -18,8 +18,7 @@ import addFormats from 'ajv-formats';
 import prismaPlugin from './db/prisma.js';
 import cookies from './plugins/cookies.js';
 import cors from './plugins/cors.js';
-import { NodemailerProvider } from './plugins/mail-providers/nodemailer.js';
-import { SESProvider } from './plugins/mail-providers/ses.js';
+import { createMailProvider } from './plugins/mail-providers/nodemailer.js';
 import mailer from './plugins/mailer.js';
 import redirectWithMessage from './plugins/redirect-with-message.js';
 import security from './plugins/security.js';
@@ -36,7 +35,6 @@ import * as protectedRoutes from './routes/protected/index.js';
 
 import {
   API_LOCATION,
-  EMAIL_PROVIDER,
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
@@ -130,9 +128,7 @@ export const build = async (
     clientKey: GROWTHBOOK_FASTIFY_CLIENT_KEY
   });
 
-  const provider =
-    EMAIL_PROVIDER === 'ses' ? new SESProvider() : new NodemailerProvider();
-  void fastify.register(mailer, { provider });
+  void fastify.register(mailer, { provider: createMailProvider() });
 
   // Swagger plugin
   if (FCC_ENABLE_SWAGGER_UI ?? fastify.gb.isOn('swagger-ui')) {

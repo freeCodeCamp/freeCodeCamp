@@ -169,8 +169,9 @@ jobs:
           # JWT_SECRET
           # COOKIE_SECRET
           # COOKIE_DOMAIN
-          # SES_ID
-          # SES_SECRET
+          # SES_SMTP_USERNAME
+          # SES_SMTP_PASSWORD
+          # SES_SMTP_HOST
           # GROWTHBOOK_FASTIFY_API_HOST
           # GROWTHBOOK_FASTIFY_CLIENT_KEY
           # HOME_LOCATION
@@ -235,8 +236,8 @@ jobs:
               \"JWT_SECRET\"
               \"COOKIE_SECRET\"
               \"COOKIE_DOMAIN\"
-              \"SES_ID\"
-              \"SES_SECRET\"
+              \"SES_SMTP_USERNAME\"
+              \"SES_SMTP_PASSWORD\"
               \"GROWTHBOOK_FASTIFY_API_HOST\"
               \"GROWTHBOOK_FASTIFY_CLIENT_KEY\"
               \"HOME_LOCATION\"

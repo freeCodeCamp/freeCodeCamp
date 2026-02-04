@@ -89,9 +89,6 @@ importers:
 
   api:
     dependencies:
-      '@aws-sdk/client-ses':
-        specifier: 3.975.0
-        version: 3.975.0
       '@fastify/accepts':
         specifier: 5.0.4
         version: 5.0.4
