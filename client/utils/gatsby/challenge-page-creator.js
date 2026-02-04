@@ -1,5 +1,5 @@
 const path = require('path');
-const { viewTypes } = require('../../../shared-dist/config/challenge-types');
+const { viewTypes } = require('@freecodecamp/shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,

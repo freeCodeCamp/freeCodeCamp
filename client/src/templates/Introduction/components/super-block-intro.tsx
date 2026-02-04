@@ -4,7 +4,7 @@ import { Callout, Spacer, Container, Row, Col } from '@freecodecamp/ui';
 import {
   archivedSuperBlocks,
   SuperBlocks
-} from '../../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../../assets/superblock-icon';
 import { Link } from '../../../components/helpers';
 import CapIcon from '../../../assets/icons/cap';
@@ -38,7 +38,9 @@ export const ConditionalDonationAlert = ({
     SuperBlocks.A2Spanish,
     SuperBlocks.A2Chinese,
     SuperBlocks.A1Chinese,
-    SuperBlocks.FullStackDeveloper
+    SuperBlocks.FrontEndDevLibsV9,
+    SuperBlocks.BackEndDevApisV9,
+    SuperBlocks.FullStackDeveloperV9
   ];
 
   if (!isDonating && betaCertifications.includes(superBlock))
@@ -178,13 +180,9 @@ function SuperBlockIntro({
     </>
   );
 
-  const isFullStackDeveloper =
-    superBlock === SuperBlocks.FullStackDeveloper ||
-    superBlock === SuperBlocks.FullStackDeveloperV9;
-
   return (
     <>
-      <IntroTopDefault fsd={isFullStackDeveloper} />
+      <IntroTopDefault fsd={superBlock === SuperBlocks.FullStackDeveloperV9} />
       <ConditionalDonationAlert
         superBlock={superBlock}
         onCertificationDonationAlertClick={onCertificationDonationAlertClick}

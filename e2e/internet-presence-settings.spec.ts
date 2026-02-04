@@ -15,7 +15,7 @@ const settingsPageElement = {
 
 test.beforeEach(async ({ page }) => {
   // Reset input values
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 
   await page.goto('/certifieduser');
 

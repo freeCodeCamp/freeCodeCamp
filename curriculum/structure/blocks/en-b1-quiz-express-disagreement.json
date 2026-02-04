@@ -1,0 +1,14 @@
+{
+  "name": "Expressing Disagreement Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-express-disagreement",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696044ddc473e1631e10002a",
+      "title": "Expressing Disagreement Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

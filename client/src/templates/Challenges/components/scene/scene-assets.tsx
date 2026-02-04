@@ -1,5 +1,5 @@
 // TODO: get domain from env
-const domain =
+export const domain =
   'https://cdn.freecodecamp.org/curriculum/english/animation-assets';
 
 export const sounds = `${domain}/sounds`;

@@ -1,7 +1,7 @@
 import { expect, Page, test } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {

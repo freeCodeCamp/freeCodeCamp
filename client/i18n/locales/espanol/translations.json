@@ -131,7 +131,7 @@
   },
   "weekdays": {
     "short": {
-      "sunday": "Sab",
+      "sunday": "Dom",
       "monday": "Lun",
       "tuesday": "Mar",
       "wednesday": "Mier",
@@ -140,7 +140,7 @@
       "saturday": "Sab"
     },
     "long": {
-      "sunday": "Dom",
+      "sunday": "Domingo",
       "monday": "Lunes",
       "tuesday": "Martes",
       "wednesday": "Miércoles",
@@ -207,7 +207,8 @@
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
     "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
-    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-spanish-heading": "Aprende Español profesional A1:",
+    "learn-chinese-heading": "Aprende Chino Professional:",
     "professional-certs-heading": "Certificaciones profesionales:",
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Nuestros cursos archivados:",
@@ -322,6 +323,7 @@
       "my-heatmap": "Mi mapa de calor",
       "my-certs": "Mis certificaciones",
       "my-portfolio": "Mi portafolio",
+      "my-experience": "My experience",
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
@@ -434,7 +436,24 @@
     "page-number": "{{pageNumber}} de {{totalPages}}",
     "edit-my-profile": "Editar mi perfil",
     "add-bluesky": "Comparte esta certificacion en BlueSky",
-    "add-threads": "Comparte esta certificacion en Threads"
+    "add-threads": "Comparte esta certificacion en Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización 501(c)(3) exenta de impuestos y sin fines de lucro respaldada por donaciones (Número de Identificación Tributaria Federal de los Estados Unidos: 82-0779546).",
@@ -485,7 +504,7 @@
     "ms-link": "Link de Microsoft",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
-    "congratulations-code-passes": "Felicidades!!! Tu código pasa",
+    "congratulations-code-passes": "Felicidades. Tu código pasa.",
     "i-completed": "He completado este desafío",
     "example-code": "Código de ejemplo",
     "test-output": "El resultado de tu prueba irá aquí",
@@ -696,7 +715,7 @@
     },
     "archive": {
       "title": "Cursos archivados",
-      "content-not-updated": "<0>Advertencia:</0> El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos intentar <1>nuestro currículo actual</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -837,7 +856,7 @@
     "help-millions-learn": "Ayuda a millones de personas a aprender",
     "reach-goals-faster": "Alcanza tus metas más rápido",
     "remove-distractions": "Eliminar distracciones",
-    "remove-interruptions": "Remover interrupciones",
+    "remove-interruptions": "Remueve interrupciones",
     "acquire-skills-faster": "Adquiera habilidades más rápido",
     "animation-description": "Este es un anuncio animado de 20 segundos para animar a los campistas a convertirse en seguidores de freeCodeCamp. La animación comienza con un oso de téd que se convierte en un soporte. Como resultado, desaparecen los pop-ups de distracción y el oso llega a completar todas sus metas. Luego, se gradua y se convierte en un superhéroe educativo que ayuda a la gente de todo el mundo.",
     "animation-countdown": "Esta animación se detendrá después de {{secondesRemaining}} segundos."
@@ -989,6 +1008,7 @@
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "El formato del correo electrónico no es válido",
     "email-valid": "Tu correo electrónico fue cambiado con éxito, ¡feliz día programando!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
@@ -1085,16 +1105,21 @@
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
     "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
-    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
+    "user-fetch-error": "No se puede recuperar su información de usuario. Puede seguir utilizando el sitio, pero es posible que su progreso no sea guardado."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Este correo electrónico es el mismo que tu correo electrónico actual",
     "invalid-email": "No pudimos validar tu correo electrónico correctamente, asegúrate de que sea correcto",
     "email-mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales",
     "title-required": "Se requiere un título",
     "title-short": "El título es demasiado corto",
     "title-long": "El título es demasiado largo",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",
@@ -1115,6 +1140,7 @@
     "issued": "Emitido",
     "fulltext": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha completado exitosamente la</2> <3>{{title}}</3> <4>Certificación de Desarrollador en {{time}}</4> <5>que representa aproximadamente {{completionTime}} horas de trabajo en el curso</5>",
     "fulltextNoHours": "<0>La presente certifica que </0> <1>{{user}}</1> <2>completó con éxito la</2> <3>{{title}}</3> <4>Certificación de desarrollador/a en {{time}}</4>",
+    "fulltextLanguageExam": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha pasado exitosamente el examen </2> <3>{{title}}</3> <4>en {{time}}</4> <5>demostrando competencia en las partes de gramática, audición y lectura de los estándares del CEFR para este nivel, basado en el contenido cubierto en el currículo.</5>",
     "quincy-larson-signature": "La firma de Quincy Larson",
     "julia-liuson-signature": "La firma de Julia Liuson",
     "project": {

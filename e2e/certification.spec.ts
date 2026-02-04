@@ -12,11 +12,11 @@ import {
 test.describe('Claim a certification - almost certified user', () => {
   test.beforeEach(async () => {
     await deleteAllEmails();
-    execSync('node ./tools/scripts/seed/seed-demo-user --unclaimed-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --unclaimed-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 

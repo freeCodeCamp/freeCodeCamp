@@ -437,7 +437,7 @@ export function Scene({
           </button>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} />
+      <ChallengeTranscript transcript={transcriptText} isDialogue={true} />
       <Spacer size='m' />
     </Col>
   );
