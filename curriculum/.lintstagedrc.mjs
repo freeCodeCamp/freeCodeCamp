@@ -1,6 +1,5 @@
 /* eslint-disable filenames-simple/naming-convention */
 import path from 'node:path';
-
 import { createLintStagedConfig } from '@freecodecamp/eslint-config/lintstaged';
 
 const linterConfigPath = path.resolve(
