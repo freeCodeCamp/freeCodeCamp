@@ -1,0 +1,14 @@
+{
+  "name": "Educational and Professional Background Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-educational-professional-background",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69602ccea37b20ccba6af9db",
+      "title": "Educational and Professional Background Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

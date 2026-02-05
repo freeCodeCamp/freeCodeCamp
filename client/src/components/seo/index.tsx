@@ -2,7 +2,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
-import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 interface SEOProps {
   title?: string;

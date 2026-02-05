@@ -4,7 +4,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { describe, vi, test, expect } from 'vitest';
 
-import { i18nextCodes } from '../../../shared-dist/config/i18n';
+import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
 import i18nTestConfig from '../../i18n/config-for-tests';
 import { createStore } from '../redux/create-store';
 import AppMountNotifier from './app-mount-notifier';

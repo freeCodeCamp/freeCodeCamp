@@ -1,0 +1,14 @@
+{
+  "name": "Requesting and Receiving Guidance Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-request-receive-guidance",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6960380051914816e10516a0",
+      "title": "Requesting and Receiving Guidance Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

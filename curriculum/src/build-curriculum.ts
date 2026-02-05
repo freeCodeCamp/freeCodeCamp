@@ -5,7 +5,7 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
-import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -189,7 +189,6 @@ export const superBlockNames = {
   'rosetta-code': SuperBlocks.RosettaCode,
   'python-for-everybody': SuperBlocks.PythonForEverybody,
   'b1-english-for-developers': SuperBlocks.B1English,
-  'full-stack-developer': SuperBlocks.FullStackDeveloper,
   'a1-professional-spanish': SuperBlocks.A1Spanish,
   'a2-professional-spanish': SuperBlocks.A2Spanish,
   'a2-professional-chinese': SuperBlocks.A2Chinese,

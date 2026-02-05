@@ -9,7 +9,7 @@ import {
   getStageOrder,
   superBlockStages,
   archivedSuperBlocks
-} from '../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
@@ -115,9 +115,6 @@ function Map({ forLanding = false }: MapProps) {
               <h2 className={forLanding ? 'big-heading' : ''}>
                 {t(superBlockHeadings[stage])}
               </h2>
-              {stage === SuperBlockStage.Core && (
-                <p>{t('landing.fsd-restructure-note')}</p>
-              )}
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi
