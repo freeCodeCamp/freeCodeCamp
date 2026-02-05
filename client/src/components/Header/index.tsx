@@ -72,14 +72,21 @@ class Header extends React.Component<Props, { displayMenu: boolean }> {
 
   showMenu(): void {
     this.setState({ displayMenu: true }, () => {
+      document.body.style.overflow = 'hidden';
       document.addEventListener('click', this.handleClickOutside);
     });
   }
 
   hideMenu(): void {
     this.setState({ displayMenu: false }, () => {
+      document.body.style.overflow = '';
       document.removeEventListener('click', this.handleClickOutside);
     });
+  }
+
+  componentWillUnmount(): void {
+    document.body.style.overflow = '';
+    document.removeEventListener('click', this.handleClickOutside);
   }
 
   render(): JSX.Element {
