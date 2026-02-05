@@ -13,7 +13,7 @@ Python provides a built-in `round()` function for this. It takes two arguments: 
 
 Use the `round()` function to round `final_bill` to 2 decimal places and assign the result to a new variable named `each_pays`.
 
-Finally, use `print()` to display the string `'Each person pays:'` followed by a space and your `each_pays` variable.
+Finally, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
 
 # --hints--
 
@@ -29,7 +29,7 @@ You should use the `round()` function to round `final_bill` to two decimal place
 //test will go here
 ```
 
-You should use `print()` to display the string `'Each person pays:'` followed by a space and your `each_pays` variable.
+You should use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
 
 ```js
 //test will go here
