@@ -11,7 +11,7 @@ import { ObjectId } from 'bson';
 import {
   getBlockStructure,
   writeBlockStructure
-} from '../../curriculum/src/file-handler.js';
+} from '@freecodecamp/curriculum/file-handler';
 import { createChallengeFile } from './utils.js';
 import { getProjectPath } from './helpers/get-project-info.js';
 import { getBlock, type Meta } from './helpers/project-metadata.js';

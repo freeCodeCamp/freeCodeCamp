@@ -6550,6 +6550,13 @@
           "Pon a prueba tus conocimientos de recursión con este cuestionario."
         ]
       },
+      "lecture-introduction-to-common-searching-and-sorting-algorithms": {
+        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "intro": [
+          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
+          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Entender la Programación Funcional",
         "intro": [
@@ -7057,6 +7064,12 @@
         "title": "Booleans y Condicionales",
         "intro": [
           "En estas lecciones, aprenderás sobre booleanos y condicionales en Python."
+        ]
+      },
+      "workshop-movie-ticket-booking-calculator": {
+        "title": "Build a Movie Ticket Booking Calculator",
+        "intro": [
+          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
         ]
       },
       "lecture-understanding-functions-and-scope": {
@@ -7848,6 +7861,18 @@
           "Pon a prueba lo que has aprendido sobre NodeJS con este cuestionario."
         ]
       },
+      "lecture-working-with-node-core-modules": {
+        "title": "Working with Node Core Modules",
+        "intro": [
+          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+        ]
+      },
+      "lecture-understanding-how-http-dns-tcpip-work": {
+        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "intro": [
+          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
+        ]
+      },
       "lecture-understanding-the-http-request-response-model": {
         "title": "Entendiendo el Modelo de Solicitud-Respuesta HTTP",
         "intro": [
@@ -7918,7 +7943,8 @@
       "es-a1-chapter-welcome-to-a1-professional-spanish": "Bienvenido a Español Profesional A1.",
       "es-a1-chapter-spanish-fundamentals": "Fundamentos del Español.",
       "es-a1-chapter-greetings-and-introductions": "Saludos e Introducciones.",
-      "es-a1-chapter-basic-personal-details": "Detalles Personales Básicos."
+      "es-a1-chapter-basic-personal-details": "Detalles Personales Básicos.",
+      "es-a1-chapter-describing-company-and-people": "Describing a Company and Its People"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introducción y Resumen de la Certificación.",
@@ -7927,13 +7953,34 @@
       "es-a1-module-introducing-yourself": "Presentándote",
       "es-a1-module-first-questions": "Primeras Preguntas",
       "es-a1-module-numbers-10-to-29": "Números del 10 al 29.",
-      "es-a1-module-sharing-your-personal-details": "Compartiendo Tus Detalles Personales."
+      "es-a1-module-sharing-your-personal-details": "Compartiendo Tus Detalles Personales.",
+      "es-a1-module-numbers-30-to-100": "Numbers 30 to 100",
+      "es-a1-module-describing-a-company": "Describing a Company",
+      "es-a1-module-describing-people-at-work": "Describing People at Work"
     },
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
         "note": "Disponible en 2026",
         "intro": [
           "En este módulo, practicarás la comprensión de conversaciones cortas que solicitan datos personales como nombre, información de contacto, nacionalidad y edad."
+        ]
+      },
+      "es-a1-module-numbers-30-to-100": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
+        ]
+      },
+      "es-a1-module-describing-a-company": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
+        ]
+      },
+      "es-a1-module-describing-people-at-work": {
+        "note": "Coming 2026",
+        "intro": [
+          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
         ]
       }
     },
@@ -8088,6 +8135,78 @@
       },
       "es-a1-practice-the-first-ten-numbers": {
         "title": "Práctica de los Primeros Diez Números.",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-30-to-60": {
+        "title": "Numbers 30 to 60",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-a-company-basics": {
+        "title": "Describing a Company Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-numbers-61-to-100": {
+        "title": "Numbers 61 to 100",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-using-the-first-100-numbers": {
+        "title": "Using The First 100 Numbers",
+        "intro": ["", ""]
+      },
+      "es-a1-review-first-100-numbers": {
+        "title": "First 100 Numbers Review",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-numbers-30-to-100": {
+        "title": "Numbers 30 to 100 Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-what-the-company-does": {
+        "title": "What the Company Does",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-asking-about-a-company": {
+        "title": "Asking about a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-company-profile": {
+        "title": "Company Profile",
+        "intro": ["", ""]
+      },
+      "es-a1-review-talking-about-a-company": {
+        "title": "Talking About a Company",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-a-company": {
+        "title": "Describing a Company Quiz",
+        "intro": ["", ""]
+      },
+      "es-a1-warm-up-describing-people-at-work-basics": {
+        "title": "Describing People at Work Basics",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-mini-biographies": {
+        "title": "Mini Biographies ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-mini-biographies": {
+        "title": "Asking About Mini Biographies",
+        "intro": ["", ""]
+      },
+      "es-a1-learn-short-workplace-profile": {
+        "title": "Short Workplace Profile ",
+        "intro": ["", ""]
+      },
+      "es-a1-practice-asking-about-short-workplace-profiles": {
+        "title": "Asking About Short Workplace Profiles",
+        "intro": ["", ""]
+      },
+      "es-a1-review-describing-people-at-work": {
+        "title": "Describing People at Work",
+        "intro": ["", ""]
+      },
+      "es-a1-quiz-describing-people-at-work": {
+        "title": "Describing People at Work",
         "intro": ["", ""]
       }
     }

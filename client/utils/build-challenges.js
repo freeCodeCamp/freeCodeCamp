@@ -4,22 +4,22 @@ const _ = require('lodash');
 
 const {
   getChallengesForLang
-} = require('../../curriculum/dist/get-challenges.js');
+} = require('@freecodecamp/curriculum/get-challenges');
 
 const {
   getBlockCreator,
   getSuperblocks,
   superBlockToFilename
-} = require('../../curriculum/dist/build-curriculum.js');
+} = require('@freecodecamp/curriculum/build-curriculum');
 const {
   getContentDir,
   getBlockStructure,
   getSuperblockStructure
-} = require('../../curriculum/dist/file-handler.js');
+} = require('@freecodecamp/curriculum/file-handler');
 const {
   transformSuperBlock
-} = require('../../curriculum/dist/build-superblock.js');
-const { getSuperOrder } = require('../../curriculum/dist/super-order.js');
+} = require('@freecodecamp/curriculum/build-superblock');
+const { getSuperOrder } = require('@freecodecamp/curriculum/super-order');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
