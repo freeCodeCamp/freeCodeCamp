@@ -13,14 +13,13 @@ import LinkButton from '../../../assets/icons/link-button';
 const LandingCatalog = (): JSX.Element => {
   const { t } = useTranslation();
 
-  // Get featured courses: Basic HTML, Basic CSS, Python
-  const featuredSuperBlocks = [
-    SuperBlocks.BasicHtml,
-    SuperBlocks.BasicCss,
-    SuperBlocks.LearnPythonForBeginners
-  ];
-
   const featuredCourses = useMemo(() => {
+    // Get featured courses: Basic HTML, Basic CSS, Python
+    const featuredSuperBlocks = [
+      SuperBlocks.BasicHtml,
+      SuperBlocks.BasicCss,
+      SuperBlocks.LearnPythonForBeginners
+    ];
     const courses = catalog.filter(course =>
       featuredSuperBlocks.includes(course.superBlock)
     );
