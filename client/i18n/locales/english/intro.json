@@ -3672,7 +3672,7 @@
       "lab-travel-weather-planner": {
         "title": "Build a Travel Weather Planner",
         "intro": [
-          "In this lab, you will build a travel weather planner using conditionals"
+          "In this lab, you will build a travel weather planner using conditionals."
         ]
       },
       "lecture-understanding-functions-and-scope": {

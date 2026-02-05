@@ -7,7 +7,7 @@ dashedName: build-a-travel-weather-planner
 
 # --description--
 
-**Objective:** Fulfil the user stories below and get all the tests to pass to complete the lab.
+**Objective:** Fulfill the user stories below and get all the tests to pass to complete the lab.
 
 1. You should create the following variables:
    * `distance_mi` (a number representing the distance to travel in miles)
