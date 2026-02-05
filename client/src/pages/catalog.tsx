@@ -164,11 +164,11 @@ const CatalogPage = () => {
                 className='catalog-item'
               >
                 <div className='catalog-item-top'>
-                  <div className='block-label block-label-workshop'>
+                  <div className={`block-label block-label-${topic}`}>
                     {topic}
                   </div>
                   <div className='catalog-item-top'>
-                    <h2>{title}</h2>
+                    <h3>{title}</h3>
 
                     {summary.map((text, i) => (
                       <p key={i}>{text}</p>

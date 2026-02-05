@@ -204,6 +204,10 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Earn free verified certifications in:",
     "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",

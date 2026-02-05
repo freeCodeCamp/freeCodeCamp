@@ -204,6 +204,11 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
+    "catalog": {
+      "heading": "Erkunden Sie ausgewählte Kurse",
+      "seeAll": "Alle Kurse anzeigen",
+      "seeAllDescription": "Durchsuchen Sie unseren vollständigen Kurskatalog und finden Sie Ihren nächsten Lernpfad"
+    },
     "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
     "core-certs-heading": "Recommended curriculum (still in beta):",
     "learn-english-heading": "Learn English for Developers:",

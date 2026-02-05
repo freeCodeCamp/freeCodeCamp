@@ -49,6 +49,12 @@
   flex-shrink: 0;
 }
 
+.catalog-item-top {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .catalog-item {
   text-decoration: none;
   padding: 1rem;
@@ -57,6 +63,10 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid var(--background-quaternary);
+}
+
+.catalog-item h3 {
+  margin: 0;
 }
 
 .catalog-item-bottom {
