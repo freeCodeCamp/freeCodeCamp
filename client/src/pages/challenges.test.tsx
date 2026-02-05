@@ -8,7 +8,7 @@ import { navigate, withPrefix } from 'gatsby';
 import React from 'react';
 import { describe, it, expect } from 'vitest';
 
-import Challenges from './challenges';
+import Challenges from './challenges/index';
 
 describe('Challenges', () => {
   // Source: https://testing-library.com/docs/example-reach-router/

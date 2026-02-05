@@ -198,15 +198,3 @@ exports.onCreateBabelConfig = ({ actions }) => {
     name: '@babel/plugin-proposal-export-default-from'
   });
 };
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  // Only update the `/challenges` page.
-  if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = '/challenges/*';
-    // Update the page.
-    createPage(page);
-  }
-};

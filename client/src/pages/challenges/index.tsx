@@ -5,7 +5,7 @@ import { Router, RouteComponentProps } from '@gatsbyjs/reach-router';
 import { navigate, withPrefix } from 'gatsby';
 import React from 'react';
 
-import toLearnPath from '../utils/to-learn-path';
+import toLearnPath from '../../utils/to-learn-path';
 
 type RouteComponentPropsExtended = RouteComponentProps & {
   block?: string;
