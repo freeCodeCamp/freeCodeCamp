@@ -83,7 +83,6 @@
     "@testing-library/jest-dom": "6.6.3",
     "@types/lodash": "4.14.202",
     "@types/node": "^24.10.8",
-    "@types/testing-library__jest-dom": "^5.14.5",
     "debug": "4.3.4",
     "globals": "^15.14.0",
     "husky": "9.0.11",
