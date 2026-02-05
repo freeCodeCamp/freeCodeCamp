@@ -41,10 +41,9 @@ const VALID_MARKERS = [
 
   // Level 4
   '#### --answer--',
-  '#### --audio-id--',
+  '#### --audio--',
   '#### --distractors--',
-  '#### --text--',
-  '#### --transcript--'
+  '#### --text--'
 ];
 
 // Special markers that should not be used as headings

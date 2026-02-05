@@ -8,9 +8,15 @@
 
 Question with audio but no transcript
 
-#### --audio-id--
+#### --audio--
 
-audio-id-without-transcript
+```json
+{
+  "audio": {
+    "filename": "audio-without-transcript.mp3"
+  }
+}
+```
 
 #### --distractors--
 

@@ -8,13 +8,16 @@
 
 Question with audio but empty transcript
 
-#### --audio-id--
+#### --audio--
 
-audio-id-with-empty-transcript
-
-#### --transcript--
-
- 
+```json
+{
+  "audio": {
+    "filename": "audio-with-empty-transcript.mp3"
+  },
+  "transcript": []
+}
+```
 
 #### --distractors--
 

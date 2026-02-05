@@ -171,13 +171,28 @@ const ShowQuiz = ({
 
       const allAnswers = shuffleArray([...distractors, answer]);
 
-      const audioData =
-        question.audioId && question.transcript
-          ? {
-              audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioId}.mp3`,
-              transcript: question.transcript
-            }
-          : {};
+      const audioData = question.audioData
+        ? {
+            audioUrl: (() => {
+              const { filename, startTime, finishTime } =
+                question.audioData.audio;
+              const baseUrl = `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${filename}`;
+
+              // Add Media Fragments URI if timestamps are provided
+              if (startTime !== null && startTime !== undefined) {
+                return `${baseUrl}#t=${startTime}${
+                  finishTime !== null && finishTime !== undefined
+                    ? `,${finishTime}`
+                    : ''
+                }`;
+              }
+              return baseUrl;
+            })(),
+            transcript: question.audioData.transcript
+              .map(line => `${line.character}: ${line.text}`)
+              .join('\n\n')
+          }
+        : {};
 
       const questionData = {
         question: (
@@ -417,8 +432,17 @@ export const query = graphql`
             distractors
             text
             answer
-            audioId
-            transcript
+            audioData {
+              audio {
+                filename
+                startTime
+                finishTime
+              }
+              transcript {
+                character
+                text
+              }
+            }
           }
         }
         tests {

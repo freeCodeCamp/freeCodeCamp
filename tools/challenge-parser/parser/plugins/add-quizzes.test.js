@@ -6,8 +6,6 @@ describe('add-quizzes plugin', () => {
   let mockQuizzesAST;
   let chineseQuizzesAST;
   let quizzesWithAudioAST;
-  let quizzesWithAudioMissingTranscriptAST;
-  let quizzesWithAudioEmptyTranscriptAST;
   const plugin = addQuizzes();
   let file = { data: {} };
 
@@ -15,12 +13,6 @@ describe('add-quizzes plugin', () => {
     mockQuizzesAST = await parseFixture('with-quizzes.md');
     chineseQuizzesAST = await parseFixture('with-chinese-quizzes.md');
     quizzesWithAudioAST = await parseFixture('with-quizzes-audio.md');
-    quizzesWithAudioMissingTranscriptAST = await parseFixture(
-      'with-quizzes-audio-missing-transcript.md'
-    );
-    quizzesWithAudioEmptyTranscriptAST = await parseFixture(
-      'with-quizzes-audio-empty-transcript.md'
-    );
   });
 
   beforeEach(() => {
@@ -146,7 +138,7 @@ describe('add-quizzes plugin', () => {
     );
   });
 
-  it('should parse audio-id sections in quiz questions', () => {
+  it('should parse audio sections in quiz questions', () => {
     plugin(quizzesWithAudioAST, file);
     const quizzes = file.data.quizzes;
 
@@ -156,28 +148,48 @@ describe('add-quizzes plugin', () => {
     const firstQuiz = quizzes[0];
     const firstQuestion = firstQuiz.questions[0];
     const secondQuestion = firstQuiz.questions[1];
+    const thirdQuestion = firstQuiz.questions[2];
 
-    // First question has audio-id
-    expect(firstQuestion).toHaveProperty('audioId');
-    expect(firstQuestion.audioId).toBe('audio-question-1');
-    expect(firstQuestion.text).toBe('<p>Quiz 1, question 1 with audio</p>');
+    // First question has audio with timestamps
+    expect(firstQuestion).toHaveProperty('audioData');
+    expect(firstQuestion.audioData.audio.filename).toBe(
+      'audio-with-timestamps.mp3'
+    );
+    expect(firstQuestion.audioData.audio.startTime).toBe(1.5);
+    expect(firstQuestion.audioData.audio.finishTime).toBe(3.8);
+    expect(firstQuestion.audioData.transcript).toEqual([
+      {
+        character: 'Maria',
+        text: 'Hello, how are you?'
+      },
+      {
+        character: 'Tom',
+        text: "I'm doing well, thank you."
+      }
+    ]);
+    expect(firstQuestion.text).toBe(
+      '<p>Quiz 1, question 1 with audio timestamps</p>'
+    );
     expect(firstQuestion.distractors.length).toBe(3);
     expect(firstQuestion.answer).toBe('<p>Quiz 1, question 1, answer</p>');
 
-    // Second question has no audio-id
-    expect(secondQuestion.audioId).toBeUndefined();
-    expect(secondQuestion.text).toBe('<p>Quiz 1, question 2 without audio</p>');
-  });
+    // Second question has audio without timestamps
+    expect(secondQuestion).toHaveProperty('audioData');
+    expect(secondQuestion.audioData.audio.filename).toBe('audio-full-file.mp3');
+    expect(secondQuestion.audioData.audio.startTimestamp).toBeUndefined();
+    expect(secondQuestion.audioData.audio.finishTimestamp).toBeUndefined();
+    expect(secondQuestion.audioData.transcript).toEqual([
+      {
+        character: 'Speaker',
+        text: 'This is the full audio transcript.'
+      }
+    ]);
+    expect(secondQuestion.text).toBe(
+      '<p>Quiz 1, question 2 with audio but no timestamps</p>'
+    );
 
-  it('should throw an error when --audio-id-- is present but --transcript-- is missing', () => {
-    expect(() => {
-      plugin(quizzesWithAudioMissingTranscriptAST, file);
-    }).toThrow('--transcript-- is required when --audio-id-- is present');
-  });
-
-  it('should throw an error when --audio-id-- is present but --transcript-- is missing or empty', () => {
-    expect(() => {
-      plugin(quizzesWithAudioEmptyTranscriptAST, file);
-    }).toThrow('--transcript-- is required when --audio-id-- is present');
+    // Third question has no audio
+    expect(thirdQuestion.audioData).toBeUndefined();
+    expect(thirdQuestion.text).toBe('<p>Quiz 1, question 3 without audio</p>');
   });
 });
