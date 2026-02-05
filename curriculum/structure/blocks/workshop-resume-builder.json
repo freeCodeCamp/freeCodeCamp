@@ -1,0 +1,24 @@
+{
+  "name": "Build a Resume Builder",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-resume-builder",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true,
+  "challengeOrder": [
+    { "id": "698213c69389764150cb94b3", "title": "Step 1" },
+    { "id": "69821aa2f83e6f7b1c875d17", "title": "Step 2" },
+    { "id": "698450818d6654d94705c6d7", "title": "Step 3" },
+    { "id": "698453340cc146fd9fb4aad2", "title": "Step 4" },
+    { "id": "69845b85c36af16026b399bc", "title": "Step 5" },
+    { "id": "69845fabb6446225c85005b8", "title": "Step 6" },
+    { "id": "6984631f1b231f95a9c279e1", "title": "Step 7" },
+    { "id": "698466051a3d565f89c95a99", "title": "Step 8" },
+    { "id": "69846738905d7f50883b8c65", "title": "Step 9" },
+    { "id": "698468e5c46dc74fd63228e6", "title": "Step 10" },
+    { "id": "69846c33391d29a7f0c22ccf", "title": "Step 11" },
+    { "id": "69846cdfbdddbd18c7c88c5c", "title": "Step 12" }
+  ]
+}
