@@ -3160,7 +3160,9 @@
       },
       "lab-bubble-sort-algorithm": {
         "title": "Implement the Bubble Sort Algorithm",
-        "intro": ["Implement the Bubble Sort Algorithm", ""]
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
+        ]
       },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
