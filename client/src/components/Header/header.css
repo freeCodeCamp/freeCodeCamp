@@ -5,6 +5,12 @@
   z-index: var(--z-index-site-header);
 }
 
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .skip-to-content-button {
   position: absolute;
   top: calc(var(--header-height) + 10px);

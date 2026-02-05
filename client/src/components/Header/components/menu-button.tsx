@@ -1,4 +1,4 @@
-import React, { RefObject } from 'react';
+import React, { RefObject, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -18,6 +18,17 @@ const MenuButton = ({
   hideMenu
 }: MenuButtonProps): JSX.Element => {
   const { t } = useTranslation();
+  useEffect(() => {
+    if (displayMenu === true) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+
+    return () => {
+      document.body.classList.remove('menu-open');
+  };
+}, [displayMenu]);  
 
   // Will close the menu if the user Shift+Tabs from the menu button.
   const handleBlur = (event: React.FocusEvent<HTMLButtonElement>): void => {
