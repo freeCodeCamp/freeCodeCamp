@@ -9,7 +9,7 @@ WORKDIR /home/node/build
 
 COPY --chown=node:node *.* .
 COPY --chown=node:node api/ api/
-COPY --chown=node:node packages/shared/ packages/shared/
+COPY --chown=node:node packages/ packages/
 COPY --chown=node:node tools/ tools/
 COPY --chown=node:node curriculum/ curriculum/
 # TODO: AFAIK it's just the intro translations. Those should be folded into the
@@ -36,7 +36,7 @@ WORKDIR /home/node/build
 COPY --chown=node:node pnpm*.yaml .
 COPY --chown=node:node package.json .
 COPY --chown=node:node api/ api/
-COPY --chown=node:node packages/shared/ packages/shared/
+COPY --chown=node:node packages/ packages/
 RUN npm i -g pnpm@10
 
 # Weirdly this config does not seem necessary for the new api (the same number
@@ -52,10 +52,9 @@ WORKDIR /home/node/fcc
 COPY --from=builder --chown=node:node /home/node/build/api/dist/ ./
 COPY --from=builder --chown=node:node /home/node/build/api/package.json api/
 COPY --from=builder --chown=node:node /home/node/build/curriculum/generated/curriculum.json curriculum/generated/
-COPY --from=builder --chown=node:node /home/node/build/packages/shared/ packages/shared/
+COPY --from=builder --chown=node:node /home/node/build/packages/ packages/
 
 COPY --from=deps --chown=node:node /home/node/build/node_modules/ node_modules/
 COPY --from=deps --chown=node:node /home/node/build/api/node_modules/ api/node_modules/
-# packages/shared has no prod dependencies, so no need to copy them
 
 CMD ["node", "api/src/server.js"]

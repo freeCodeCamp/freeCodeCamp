@@ -51,7 +51,7 @@
       ],
       "outputs": [
         "config/env.json",
-        "i18n/locales/*.json",
+        "i18n/locales/**/*.json",
         "static/curriculum-data/**",
         "static/js/**"
       ]
