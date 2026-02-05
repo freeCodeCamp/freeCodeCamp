@@ -103,7 +103,8 @@
   "packageManager": "pnpm@10.28.1",
   "pnpm": {
     "overrides": {
-      "lmdb": "3.5.1"
+      "lmdb": "3.5.1",
+      "webpack": "5.90.3"
     },
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
@@ -123,6 +124,11 @@
       "prisma",
       "puppeteer",
       "unrs-resolver"
+    ],
+    "ignoredBuiltDependencies": [
+      "@parcel/watcher",
+      "core-js-pure",
+      "sharp"
     ]
   }
 }

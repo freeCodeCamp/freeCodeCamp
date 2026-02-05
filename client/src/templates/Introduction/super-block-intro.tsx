@@ -358,11 +358,13 @@ export default connect(
 export const query = graphql`
   query SuperBlockIntroPageQuery {
     allChallengeNode(
-      sort: [
-        { field: challenge___superOrder }
-        { field: challenge___order }
-        { field: challenge___challengeOrder }
-      ]
+      sort: {
+        fields: [
+          challenge___superOrder
+          challenge___order
+          challenge___challengeOrder
+        ]
+      }
     ) {
       nodes {
         challenge {
