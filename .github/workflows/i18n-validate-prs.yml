@@ -37,7 +37,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
 
       - name: Install Dependencies
         run: pnpm install

@@ -52,7 +52,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install

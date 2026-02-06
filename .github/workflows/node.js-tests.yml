@@ -64,7 +64,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
           cat sample.env
 
       - name: Install node_modules
@@ -116,7 +116,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -158,7 +158,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
           cat sample.env
 
       - name: Start MongoDB
@@ -210,7 +210,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
           cat sample.env
 
@@ -265,7 +265,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          set -a && source sample.env && set +a
+          cat sample.env >> $GITHUB_ENV
           cat sample.env
 
       - name: Start MongoDB
