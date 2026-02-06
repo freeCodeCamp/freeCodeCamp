@@ -1,6 +1,6 @@
 {
   "name": "Implement the N-Queens Problem",
-  "isUpcomingChange": false,
+  "isUpcomingChange": true,
   "dashedName": "lab-n-queens-problem-js",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
