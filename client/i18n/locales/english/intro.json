@@ -5671,6 +5671,10 @@
           "In these lectures, you will learn about the array methods for performing more advanced operations like getting the position of an item in an array, checking if an array contains a certain element, copying an array, and lots more."
         ]
       },
+      "lab-playlist-remix-engine": {
+        "title": "Build a Playlist Remix Engine",
+        "intro": ["Build a Playlist Remix Engine", ""]
+      },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
         "intro": [
@@ -6531,10 +6535,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lab-playlist-remix-engine": {
-        "title": "Build a Playlist Remix Engine",
-        "intro": ["Build a Playlist Remix Engine", ""]
       }
     }
   },
