@@ -81,6 +81,12 @@ jobs:
           echo pnpm version $(pnpm -v)
           pnpm lint
 
+      - name: Upload Turbo Summary
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: lint-turbo-summary
+          path: .turbo/runs
+
   # DONT REMOVE THIS JOB.
   # TODO: Refactor and use re-usable workflow and shared artifacts
   build:
@@ -122,6 +128,12 @@ jobs:
         run: |
           pnpm install
           pnpm run build
+
+      - name: Upload Turbo Summary
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: build-turbo-summary
+          path: .turbo/runs
 
   test:
     name: Test
@@ -175,6 +187,12 @@ jobs:
       - name: Run Tests
         run: pnpm test
 
+      - name: Upload Turbo Summary
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: test-turbo-summary
+          path: .turbo/runs
+
   test-upcoming:
     name: Test - Upcoming Changes
     needs: build
@@ -227,6 +245,12 @@ jobs:
 
       - name: Run Tests
         run: pnpm test
+
+      - name: Upload Turbo Summary
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
+        with:
+          name: test-upcoming-turbo-summary
+          path: .turbo/runs
 
   test-localization:
     name: Test - i18n
