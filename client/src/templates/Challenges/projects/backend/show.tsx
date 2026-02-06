@@ -130,7 +130,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    requestAnimationFrame(() => container.current?.focus());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
