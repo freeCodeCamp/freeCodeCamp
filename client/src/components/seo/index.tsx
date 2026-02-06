@@ -6,6 +6,7 @@ import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 interface SEOProps {
   title?: string;
+  children?: React.ReactNode;
 }
 
 interface SiteData {

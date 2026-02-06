@@ -15,6 +15,7 @@ module.exports = {
   flags: {
     DEV_SSR: false
   },
+  trailingSlash: 'never',
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
