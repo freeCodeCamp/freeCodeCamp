@@ -5,6 +5,7 @@
   "helpCategory": "JavaScript",
   "blockLabel": "workshop",
   "blockLayout": "challenge-grid",
+  "hasEditableBoundaries": true,
   "challengeOrder": [
     { "id": "68c386c67b3209fcb7029c1d", "title": "Step 1" },
     { "id": "68d1e1efd5361f066445d2ca", "title": "Step 2" },
