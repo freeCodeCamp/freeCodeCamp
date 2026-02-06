@@ -26,8 +26,8 @@ import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
-import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -37,7 +37,6 @@ import {
   initTests
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
-import { needsCurriculumDataSelector } from '../../../redux/selectors';
 import PrismFormatted from '../components/prism-formatted';
 import { usePageLeave } from '../hooks';
 import ExitQuizModal from './exit-quiz-modal';
@@ -48,10 +47,8 @@ import './show.css';
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  needsCurriculumDataSelector,
-  (isChallengeCompleted: boolean, needsCurriculumData: boolean) => ({
-    isChallengeCompleted,
-    needsCurriculumData
+  (isChallengeCompleted: boolean) => ({
+    isChallengeCompleted
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -77,7 +74,6 @@ interface ShowQuizProps {
   description: string;
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
-  needsCurriculumData: boolean;
   pageContext: {
     challengeMeta: ChallengeMeta;
   };
@@ -110,7 +106,6 @@ const ShowQuiz = ({
       }
     }
   },
-  needsCurriculumData,
   pageContext: { challengeMeta },
   initTests,
   updateChallengeMeta,
@@ -138,6 +133,8 @@ const ShowQuiz = ({
   const exitConfirmed = useRef(false);
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
+
+  useFetchAllCurriculumData();
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -320,73 +317,70 @@ const ShowQuiz = ({
   const errorMessage = getErrorMessage();
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys
-        executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
-        containerRef={container}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container className='quiz-challenge-container'>
-            <Row>
-              <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
+    <Hotkeys
+      executeChallenge={!isPassed ? handleFinishQuiz : handleSubmitAndGo}
+      containerRef={container}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container className='quiz-challenge-container'>
+          <Row>
+            <Spacer size='m' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='m' />
-                <ChallengeDescription
-                  description={description}
-                  superBlock={superBlock}
-                />
-                <Spacer size='l' />
-                <ObserveKeys>
-                  <Quiz questions={quizData} disabled={hasSubmitted} />
-                </ObserveKeys>
-                <Spacer size='m' />
-                <div aria-live='polite' aria-atomic='true'>
-                  {errorMessage}
-                </div>
-                <Spacer size='m' />
-                {!isPassed ? (
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleFinishQuiz}
-                    disabled={hasSubmitted}
-                  >
-                    {t('buttons.finish-quiz')}
-                  </Button>
-                ) : (
-                  <Button
-                    block={true}
-                    variant='primary'
-                    onClick={handleSubmitAndGo}
-                  >
-                    {t('buttons.submit-and-go')}
-                  </Button>
-                )}
-                <Spacer size='xxs' />
-                <Button block={true} variant='primary' onClick={handleExitQuiz}>
-                  {t('buttons.exit-quiz')}
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeDescription
+                description={description}
+                superBlock={superBlock}
+              />
+              <Spacer size='l' />
+              <ObserveKeys>
+                <Quiz questions={quizData} disabled={hasSubmitted} />
+              </ObserveKeys>
+              <Spacer size='m' />
+              <div aria-live='polite' aria-atomic='true'>
+                {errorMessage}
+              </div>
+              <Spacer size='m' />
+              {!isPassed ? (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleFinishQuiz}
+                  disabled={hasSubmitted}
+                >
+                  {t('buttons.finish-quiz')}
                 </Button>
-                <Spacer size='l' />
-              </Col>
-            </Row>
-          </Container>
-          <CompletionModal />
-          <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
-          <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
-        </LearnLayout>
-      </Hotkeys>
-    </>
+              ) : (
+                <Button
+                  block={true}
+                  variant='primary'
+                  onClick={handleSubmitAndGo}
+                >
+                  {t('buttons.submit-and-go')}
+                </Button>
+              )}
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={handleExitQuiz}>
+                {t('buttons.exit-quiz')}
+              </Button>
+              <Spacer size='l' />
+            </Col>
+          </Row>
+        </Container>
+        <CompletionModal />
+        <ExitQuizModal onExit={handleExitQuizModalBtnClick} />
+        <FinishQuizModal onFinish={handleFinishQuizModalBtnClick} />
+      </LearnLayout>
+    </Hotkeys>
   );
 };
 

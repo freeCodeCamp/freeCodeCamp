@@ -35,10 +35,9 @@ import {
 import Scene from '../components/scene/scene';
 import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
-import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
-import { needsCurriculumDataSelector } from '../../../redux/selectors';
 import { parseHanziPinyinPairs } from './parse-blanks';
 
 import './show.css';
@@ -46,10 +45,8 @@ import './show.css';
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
-  needsCurriculumDataSelector,
-  (isChallengeCompleted: boolean, needsCurriculumData: boolean) => ({
-    isChallengeCompleted,
-    needsCurriculumData
+  (isChallengeCompleted: boolean) => ({
+    isChallengeCompleted
   })
 );
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -71,7 +68,6 @@ interface ShowFillInTheBlankProps {
   data: { challengeNode: ChallengeNode };
   isChallengeCompleted: boolean;
   initTests: (xs: Test[]) => void;
-  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
   pageContext: {
@@ -104,7 +100,6 @@ const ShowFillInTheBlank = ({
     }
   },
   challengeMounted,
-  needsCurriculumData,
   openHelpModal,
   updateChallengeMeta,
   openCompletionModal,
@@ -113,7 +108,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -123,6 +117,8 @@ const ShowFillInTheBlank = ({
   const [showFeedback, setShowFeedback] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     initTests(tests);
@@ -259,94 +255,91 @@ const ShowFillInTheBlank = ({
   const sceneSubject = new SceneSubject();
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys
-        executeChallenge={() => handleSubmit()}
-        containerRef={container}
-        playScene={handlePlayScene}
-      >
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
+    <Hotkeys
+      executeChallenge={() => handleSubmit()}
+      containerRef={container}
+      playScene={handlePlayScene}
+    >
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Spacer size='m' />
+            <ChallengeTitle
+              isCompleted={isChallengeCompleted}
+              translationPending={translationPending}
+            >
+              {title}
+            </ChallengeTitle>
+
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <PrismFormatted text={description} />
               <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
+            </Col>
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <PrismFormatted text={description} />
-                <Spacer size='m' />
-              </Col>
+            {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
 
-              {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              {transcript && (
+                <ChallengeTranscript
+                  transcript={transcript}
+                  isDialogue={true}
+                />
+              )}
 
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {transcript && (
-                  <ChallengeTranscript
-                    transcript={transcript}
-                    isDialogue={true}
-                  />
-                )}
+              {instructions && (
+                <>
+                  <PrismFormatted text={instructions} />
+                  <Spacer size='xs' />
+                </>
+              )}
 
-                {instructions && (
-                  <>
-                    <PrismFormatted text={instructions} />
-                    <Spacer size='xs' />
-                  </>
-                )}
-
-                {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
+              {/* what we want to observe is ctrl/cmd + enter, but ObserveKeys is buggy and throws an error
                 if it encounters a key combination, so we have to pass in the individual keys to observe */}
-                <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                  <FillInTheBlanks
-                    fillInTheBlank={fillInTheBlank}
-                    answersCorrect={answersCorrect}
-                    showFeedback={showFeedback}
-                    feedback={feedback}
-                    showWrong={showWrong}
-                    handleInputChange={handleInputChange}
-                  />
-                </ObserveKeys>
+              <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+                <FillInTheBlanks
+                  fillInTheBlank={fillInTheBlank}
+                  answersCorrect={answersCorrect}
+                  showFeedback={showFeedback}
+                  feedback={feedback}
+                  showWrong={showWrong}
+                  handleInputChange={handleInputChange}
+                />
+              </ObserveKeys>
 
-                {explanation ? (
-                  <ChallegeExplanation explanation={explanation} />
-                ) : (
-                  <Spacer size='m' />
-                )}
+              {explanation ? (
+                <ChallegeExplanation explanation={explanation} />
+              ) : (
+                <Spacer size='m' />
+              )}
 
-                <Button
-                  block={true}
-                  variant='primary'
-                  disabled={!allBlanksFilled}
-                  onClick={() => handleSubmit()}
-                >
-                  {t('buttons.check-answer')}
-                </Button>
-                <Spacer size='xxs' />
-                <Button block={true} variant='primary' onClick={openHelpModal}>
-                  {t('buttons.ask-for-help')}
-                </Button>
-                <Spacer size='l' />
-              </Col>
-              <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={block}
-                superBlock={superBlock}
-              />
-            </Row>
-          </Container>
-          <ShortcutsModal />
-        </LearnLayout>
-      </Hotkeys>
-    </>
+              <Button
+                block={true}
+                variant='primary'
+                disabled={!allBlanksFilled}
+                onClick={() => handleSubmit()}
+              >
+                {t('buttons.check-answer')}
+              </Button>
+              <Spacer size='xxs' />
+              <Button block={true} variant='primary' onClick={openHelpModal}>
+                {t('buttons.ask-for-help')}
+              </Button>
+              <Spacer size='l' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+        <ShortcutsModal />
+      </LearnLayout>
+    </Hotkeys>
   );
 };
 

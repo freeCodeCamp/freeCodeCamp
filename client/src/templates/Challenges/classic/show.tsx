@@ -14,7 +14,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
-import { FetchAllCurriculumData } from './fetch-all-curriculum-data';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 
 import type {
   ChallengeFiles,
@@ -30,15 +30,6 @@ import type {
   SavedChallengeFiles,
   Test
 } from '../../../redux/prop-types';
-import {
-  needsCurriculumDataSelector,
-  savedChallengesSelector
-} from '../../../redux/selectors';
-import {
-  isChallengeCompletedSelector,
-  challengeFilesSelector,
-  consoleOutputSelector
-} from '../redux/selectors';
 import { isContained } from '../../../utils/is-contained';
 import ChallengeDescription from '../components/challenge-description';
 import Hotkeys from '../components/hotkeys';
@@ -67,6 +58,12 @@ import {
   setEditorFocusability,
   setIsAdvancing
 } from '../redux/actions';
+import {
+  challengeFilesSelector,
+  consoleOutputSelector,
+  isChallengeCompletedSelector
+} from '../redux/selectors';
+import { savedChallengesSelector } from '../../../redux/selectors';
 import { getGuideUrl } from '../utils';
 import { preloadPage } from '../../../../utils/gatsby/page-loading';
 import envData from '../../../../config/env.json';
@@ -86,8 +83,7 @@ const mapStateToProps = (state: unknown) => ({
   challengeFiles: challengeFilesSelector(state) as ChallengeFiles,
   output: consoleOutputSelector(state) as string,
   isChallengeCompleted: isChallengeCompletedSelector(state),
-  savedChallenges: savedChallengesSelector(state) as SavedChallenge[],
-  needsCurriculumData: needsCurriculumDataSelector(state)
+  savedChallenges: savedChallengesSelector(state) as SavedChallenge[]
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
@@ -124,7 +120,6 @@ interface ShowClassicProps extends Pick<PreviewProps, 'previewMounted'> {
   initVisibleEditors: () => void;
   isChallengeCompleted: boolean;
   isDailyCodingChallenge?: boolean;
-  needsCurriculumData: boolean;
   output: string;
   pageContext: PageContext | DailyCodingChallengePageContext;
   updateChallengeMeta: (arg0: ChallengeMeta) => void;
@@ -245,8 +240,7 @@ function ShowClassic({
   isChallengeCompleted,
   output,
   executeChallenge,
-  previewMounted,
-  needsCurriculumData
+  previewMounted
 }: ShowClassicProps) {
   const { t } = useTranslation();
   const [resizing, setResizing] = useState(false);
@@ -324,6 +318,8 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for desktop workshops.
   const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -467,115 +463,110 @@ function ShowClassic({
   };
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys
-        challengeType={challengeType}
-        executeChallenge={executeChallenge}
-        containerRef={containerRef}
-        instructionsPanelRef={instructionsPanelRef}
-        usesMultifileEditor={usesMultifileEditor}
-        editorRef={editorRef}
-      >
-        <LearnLayout>
-          <Helmet title={windowTitle} />
-          {isMobile && (
-            <MobileLayout
-              editor={renderEditor({
-                isMobileLayout: true,
-                isUsingKeyboardInTablist: usingKeyboardInTablist
-              })}
-              hasEditableBoundaries={hasEditableBoundaries}
-              hasPreview={hasPreview}
-              instructions={renderInstructionsPanel({
-                toolPanel: null,
-                hasDemo: demoType === 'onClick'
-              })}
-              notes={notes}
-              onPreviewResize={onPreviewResize}
-              preview={
-                <StepPreview
-                  challengeType={challengeType}
-                  disableIframe={resizing}
-                  previewMounted={previewMounted}
-                  xtermFitRef={xtermFitRef}
-                />
-              }
-              windowTitle={windowTitle}
-              testOutput={
-                <Output defaultOutput={defaultOutput} output={output} />
-              }
-              toolPanel={
-                <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
-              }
-              updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
-              usesMultifileEditor={usesMultifileEditor}
-            />
-          )}
-          {!isMobile && (
-            <DesktopLayout
-              challengeFiles={challengeFiles}
-              challengeType={challengeType}
-              editor={renderEditor({
-                isMobileLayout: false,
-                isUsingKeyboardInTablist: usingKeyboardInTablist
-              })}
-              hasEditableBoundaries={hasEditableBoundaries}
-              hasPreview={hasPreview}
-              instructions={renderInstructionsPanel({
-                toolPanel: (
-                  <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />
-                ),
-                hasDemo: demoType === 'onClick'
-              })}
-              isDailyCodingChallenge={isDailyCodingChallenge}
-              dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
-              setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
-              isFirstStep={isFirstStep}
-              layoutState={layout}
-              notes={notes}
-              onPreviewResize={onPreviewResize}
-              preview={
-                <StepPreview
-                  challengeType={challengeType}
-                  disableIframe={resizing}
-                  previewMounted={previewMounted}
-                  xtermFitRef={xtermFitRef}
-                />
-              }
-              resizeProps={resizeProps}
-              testOutput={
-                <Output defaultOutput={defaultOutput} output={output} />
-              }
-              windowTitle={windowTitle}
-              startWithConsoleShown={openConsole}
-              showIndependentLowerJaw={showIndependentLowerJaw}
-            />
-          )}
-          <CompletionModal />
-          <HelpModal
-            challengeTitle={title}
-            challengeBlock={block}
-            superBlock={superBlock}
-          />
-          <VideoModal videoUrl={videoUrl} />
-          <ResetModal
-            saveSubmissionToDB={saveSubmissionToDB}
-            challengeTitle={title}
-          />
-          <ProjectPreviewModal
-            challengeData={challengeData}
-            closeText={t('buttons.start-coding')}
-            previewTitle={
-              demoType === 'onClick'
-                ? t('learn.demo-project-title')
-                : t('learn.project-preview-title')
+    <Hotkeys
+      challengeType={challengeType}
+      executeChallenge={executeChallenge}
+      containerRef={containerRef}
+      instructionsPanelRef={instructionsPanelRef}
+      usesMultifileEditor={usesMultifileEditor}
+      editorRef={editorRef}
+    >
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        {isMobile && (
+          <MobileLayout
+            editor={renderEditor({
+              isMobileLayout: true,
+              isUsingKeyboardInTablist: usingKeyboardInTablist
+            })}
+            hasEditableBoundaries={hasEditableBoundaries}
+            hasPreview={hasPreview}
+            instructions={renderInstructionsPanel({
+              toolPanel: null,
+              hasDemo: demoType === 'onClick'
+            })}
+            notes={notes}
+            onPreviewResize={onPreviewResize}
+            preview={
+              <StepPreview
+                challengeType={challengeType}
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
+              />
             }
+            windowTitle={windowTitle}
+            testOutput={
+              <Output defaultOutput={defaultOutput} output={output} />
+            }
+            toolPanel={
+              <ToolPanel guideUrl={guideUrl} isMobile videoUrl={videoUrl} />
+            }
+            updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
+            usesMultifileEditor={usesMultifileEditor}
           />
-          <ShortcutsModal />
-        </LearnLayout>
-      </Hotkeys>
-    </>
+        )}
+        {!isMobile && (
+          <DesktopLayout
+            challengeFiles={challengeFiles}
+            challengeType={challengeType}
+            editor={renderEditor({
+              isMobileLayout: false,
+              isUsingKeyboardInTablist: usingKeyboardInTablist
+            })}
+            hasEditableBoundaries={hasEditableBoundaries}
+            hasPreview={hasPreview}
+            instructions={renderInstructionsPanel({
+              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              hasDemo: demoType === 'onClick'
+            })}
+            isDailyCodingChallenge={isDailyCodingChallenge}
+            dailyCodingChallengeLanguage={dailyCodingChallengeLanguage}
+            setDailyCodingChallengeLanguage={setDailyCodingChallengeLanguage}
+            isFirstStep={isFirstStep}
+            layoutState={layout}
+            notes={notes}
+            onPreviewResize={onPreviewResize}
+            preview={
+              <StepPreview
+                challengeType={challengeType}
+                disableIframe={resizing}
+                previewMounted={previewMounted}
+                xtermFitRef={xtermFitRef}
+              />
+            }
+            resizeProps={resizeProps}
+            testOutput={
+              <Output defaultOutput={defaultOutput} output={output} />
+            }
+            windowTitle={windowTitle}
+            startWithConsoleShown={openConsole}
+            showIndependentLowerJaw={showIndependentLowerJaw}
+          />
+        )}
+        <CompletionModal />
+        <HelpModal
+          challengeTitle={title}
+          challengeBlock={block}
+          superBlock={superBlock}
+        />
+        <VideoModal videoUrl={videoUrl} />
+        <ResetModal
+          saveSubmissionToDB={saveSubmissionToDB}
+          challengeTitle={title}
+        />
+        <ProjectPreviewModal
+          challengeData={challengeData}
+          closeText={t('buttons.start-coding')}
+          previewTitle={
+            demoType === 'onClick'
+              ? t('learn.demo-project-title')
+              : t('learn.project-preview-title')
+          }
+        />
+        <ShortcutsModal />
+      </LearnLayout>
+    </Hotkeys>
   );
 }
 

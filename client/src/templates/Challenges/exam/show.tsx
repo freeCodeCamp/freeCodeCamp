@@ -19,15 +19,13 @@ import PrismFormatted from '../components/prism-formatted';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
-import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 import { clearExamResults, startExam, stopExam } from '../../../redux/actions';
 import {
   completedChallengesSelector,
   completedSurveysSelector,
   isSignedInSelector,
   examInProgressSelector,
-  examResultsSelector,
-  needsCurriculumDataSelector
+  examResultsSelector
 } from '../../../redux/selectors';
 import {
   challengeMounted,
@@ -57,6 +55,7 @@ import {
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
@@ -73,23 +72,20 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   examInProgressSelector,
   examResultsSelector,
-  needsCurriculumDataSelector,
   (
     completedChallenges: CompletedChallenge[],
     completedSurveys: SurveyResults[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     examInProgress: boolean,
-    examResults: GeneratedExamResults | null,
-    needsCurriculumData: boolean
+    examResults: GeneratedExamResults | null
   ) => ({
     completedChallenges,
     completedSurveys,
     isChallengeCompleted,
     isSignedIn,
     examInProgress,
-    examResults,
-    needsCurriculumData
+    examResults
   })
 );
 
@@ -127,7 +123,6 @@ interface ShowExamProps {
   initTests: (arg0: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  needsCurriculumData: boolean;
   openExitExamModal: () => void;
   closeExitExamModal: () => void;
   openFinishExamModal: () => void;
@@ -168,7 +163,6 @@ function ShowExam(props: ShowExamProps) {
     completedChallenges,
     completedSurveys,
     isChallengeCompleted,
-    needsCurriculumData,
     openExitExamModal,
     openFinishExamModal,
     t
@@ -186,6 +180,8 @@ function ShowExam(props: ShowExamProps) {
   const [userExamQuestions, setUserExamQuestions] = useState<
     UserExamQuestion[]
   >([]);
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
@@ -358,194 +354,186 @@ function ShowExam(props: ShowExamProps) {
 
   // TODO: If already taken exam, show different messages
 
-  return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      {examInProgress ? (
-        <Container>
-          <Row>
-            <Spacer size='m' />
-            <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
-              {examResults ? (
-                <ExamResults
-                  dashedName={dashedName}
-                  title={title}
-                  examResults={examResults}
-                  exitExam={exitExam}
-                />
-              ) : (
-                <div className='exam-wrapper'>
-                  <div className='exam-header'>
-                    <div data-playwright-test-label='exam-show-title'>
-                      {title}
-                    </div>
-                    <span>|</span>
-                    <div data-playwright-test-label='exam-show-question-time'>
-                      {t('learn.exam.time', {
-                        t: formatSecondsToTime(examTimeInSeconds)
-                      })}
-                    </div>
-                    <span>|</span>
-                    <div>
-                      {t('learn.exam.questions', {
-                        n: currentQuestionIndex + 1,
-                        t: generatedExamQuestions.length
-                      })}
-                    </div>
-                  </div>
-                  <hr />
-                  <Spacer size='m' />
-
-                  <div className='exam-questions'>
-                    <PrismFormatted
-                      text={convertMd(
-                        generatedExamQuestions[currentQuestionIndex].question
-                      )}
-                    />
-
-                    <Spacer size='l' />
-                    <div className='exam-answers'>
-                      {generatedExamQuestions[currentQuestionIndex].answers.map(
-                        ({ answer, id }) => (
-                          <label className='exam-answer-label' key={id}>
-                            <input
-                              checked={
-                                userExamQuestions[currentQuestionIndex].answer
-                                  .id === id
-                              }
-                              className='sr-only'
-                              name={id}
-                              onChange={() =>
-                                selectAnswer(currentQuestionIndex, id, answer)
-                              }
-                              type='radio'
-                              value={id}
-                            />{' '}
-                            <span className='exam-answer-input-visible'>
-                              {userExamQuestions[currentQuestionIndex].answer
-                                .id === id ? (
-                                <span className='exam-answer-input-selected' />
-                              ) : null}
-                            </span>
-                            <PrismFormatted text={convertMd(answer)} />
-                          </label>
-                        )
-                      )}
-                    </div>
-                  </div>
-                  <Spacer size='l' />
-
-                  <div className='exam-buttons'>
-                    <Button
-                      block={true}
-                      className='exam-button'
-                      disabled={currentQuestionIndex <= 0}
-                      variant='primary'
-                      onClick={goToPreviousQuestion}
-                    >
-                      {t('buttons.previous-question')}
-                    </Button>
-
-                    {currentQuestionIndex ===
-                    generatedExamQuestions.length - 1 ? (
-                      <Button
-                        block={true}
-                        disabled={
-                          !userExamQuestions[currentQuestionIndex].answer.id
-                        }
-                        className='exam-button'
-                        variant='primary'
-                        onClick={openFinishExamModal}
-                      >
-                        {t('buttons.finish-exam')}
-                      </Button>
-                    ) : (
-                      <Button
-                        block={true}
-                        disabled={
-                          !userExamQuestions[currentQuestionIndex].answer.id
-                        }
-                        className='exam-button'
-                        variant='primary'
-                        onClick={goToNextQuestion}
-                      >
-                        {t('buttons.next-question')}
-                      </Button>
-                    )}
-                  </div>
-
-                  <Spacer size='m' />
-
-                  <div className='exam-buttons'>
-                    <Button
-                      block={true}
-                      className='exam-button'
-                      variant='primary'
-                      onClick={openExitExamModal}
-                    >
-                      {t('buttons.exit-exam')}
-                    </Button>
-                  </div>
+  return examInProgress ? (
+    <Container>
+      <Row>
+        <Spacer size='m' />
+        <Col md={10} mdOffset={1} sm={10} smOffset={1} xs={12}>
+          {examResults ? (
+            <ExamResults
+              dashedName={dashedName}
+              title={title}
+              examResults={examResults}
+              exitExam={exitExam}
+            />
+          ) : (
+            <div className='exam-wrapper'>
+              <div className='exam-header'>
+                <div data-playwright-test-label='exam-show-title'>{title}</div>
+                <span>|</span>
+                <div data-playwright-test-label='exam-show-question-time'>
+                  {t('learn.exam.time', {
+                    t: formatSecondsToTime(examTimeInSeconds)
+                  })}
                 </div>
-              )}
-            </Col>
-          </Row>
-        </Container>
-      ) : (
-        <Hotkeys containerRef={container}>
-          <LearnLayout>
-            <Helmet title={windowTitle} />
-            <Container>
-              <Row>
-                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                  <ChallengeTitle
-                    isCompleted={isChallengeCompleted}
-                    translationPending={translationPending}
-                  >
-                    {title}
-                  </ChallengeTitle>
-                  <Spacer size='m' />
+                <span>|</span>
+                <div>
+                  {t('learn.exam.questions', {
+                    n: currentQuestionIndex + 1,
+                    t: generatedExamQuestions.length
+                  })}
+                </div>
+              </div>
+              <hr />
+              <Spacer size='m' />
 
-                  {qualifiedForExam ? (
-                    <Callout variant='note' label={t('misc.note')}>
-                      <p>{t('learn.exam.qualified')}</p>
-                    </Callout>
-                  ) : !prerequisitesComplete ? (
-                    <MissingPrerequisites
-                      missingPrerequisites={missingPrerequisites}
-                    />
-                  ) : (
-                    <FoundationalCSharpSurveyAlert />
+              <div className='exam-questions'>
+                <PrismFormatted
+                  text={convertMd(
+                    generatedExamQuestions[currentQuestionIndex].question
                   )}
-                  <PrismFormatted text={description} />
-                  <Spacer size='m' />
-                  <PrismFormatted text={instructions} />
+                />
 
+                <Spacer size='l' />
+                <div className='exam-answers'>
+                  {generatedExamQuestions[currentQuestionIndex].answers.map(
+                    ({ answer, id }) => (
+                      <label className='exam-answer-label' key={id}>
+                        <input
+                          checked={
+                            userExamQuestions[currentQuestionIndex].answer
+                              .id === id
+                          }
+                          className='sr-only'
+                          name={id}
+                          onChange={() =>
+                            selectAnswer(currentQuestionIndex, id, answer)
+                          }
+                          type='radio'
+                          value={id}
+                        />{' '}
+                        <span className='exam-answer-input-visible'>
+                          {userExamQuestions[currentQuestionIndex].answer.id ===
+                          id ? (
+                            <span className='exam-answer-input-selected' />
+                          ) : null}
+                        </span>
+                        <PrismFormatted text={convertMd(answer)} />
+                      </label>
+                    )
+                  )}
+                </div>
+              </div>
+              <Spacer size='l' />
+
+              <div className='exam-buttons'>
+                <Button
+                  block={true}
+                  className='exam-button'
+                  disabled={currentQuestionIndex <= 0}
+                  variant='primary'
+                  onClick={goToPreviousQuestion}
+                >
+                  {t('buttons.previous-question')}
+                </Button>
+
+                {currentQuestionIndex === generatedExamQuestions.length - 1 ? (
                   <Button
                     block={true}
+                    disabled={
+                      !userExamQuestions[currentQuestionIndex].answer.id
+                    }
+                    className='exam-button'
                     variant='primary'
-                    disabled={!qualifiedForExam}
-                    // `runExam` being an async callback is acceptable
-                    //eslint-disable-next-line @typescript-eslint/no-misused-promises
-                    onClick={runExam}
+                    onClick={openFinishExamModal}
                   >
-                    {t('buttons.click-start-exam')}
+                    {t('buttons.finish-exam')}
                   </Button>
-                </Col>
-              </Row>
-            </Container>
-          </LearnLayout>
-        </Hotkeys>
-      )}
-      <CompletionModal />
-      <HelpModal
-        challengeTitle={title}
-        challengeBlock={block}
-        superBlock={superBlock}
-      />
-      <ExitExamModal exitExam={exitExam} />
-      <FinishExamModal finishExam={finishExam} />
-    </>
+                ) : (
+                  <Button
+                    block={true}
+                    disabled={
+                      !userExamQuestions[currentQuestionIndex].answer.id
+                    }
+                    className='exam-button'
+                    variant='primary'
+                    onClick={goToNextQuestion}
+                  >
+                    {t('buttons.next-question')}
+                  </Button>
+                )}
+              </div>
+
+              <Spacer size='m' />
+
+              <div className='exam-buttons'>
+                <Button
+                  block={true}
+                  className='exam-button'
+                  variant='primary'
+                  onClick={openExitExamModal}
+                >
+                  {t('buttons.exit-exam')}
+                </Button>
+              </div>
+            </div>
+          )}
+        </Col>
+        <ExitExamModal exitExam={exitExam} />
+        <FinishExamModal finishExam={finishExam} />
+      </Row>
+    </Container>
+  ) : (
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <Spacer size='m' />
+
+              {qualifiedForExam ? (
+                <Callout variant='note' label={t('misc.note')}>
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
+              ) : !prerequisitesComplete ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
+              ) : (
+                <FoundationalCSharpSurveyAlert />
+              )}
+              <PrismFormatted text={description} />
+              <Spacer size='m' />
+              <PrismFormatted text={instructions} />
+
+              <Button
+                block={true}
+                variant='primary'
+                disabled={!qualifiedForExam}
+                // `runExam` being an async callback is acceptable
+                //eslint-disable-next-line @typescript-eslint/no-misused-promises
+                onClick={runExam}
+              >
+                {t('buttons.click-start-exam')}
+              </Button>
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
   );
 }
 

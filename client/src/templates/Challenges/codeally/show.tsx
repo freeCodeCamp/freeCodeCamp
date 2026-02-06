@@ -24,8 +24,7 @@ import {
   completedChallengesSelector,
   partiallyCompletedChallengesSelector,
   isSignedInSelector,
-  userTokenSelector,
-  needsCurriculumDataSelector
+  userTokenSelector
 } from '../../../redux/selectors';
 import {
   challengeMounted,
@@ -44,12 +43,12 @@ import {
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
-import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 import RdbStep1Instructions from './rdb-step-1-instructions';
 import RdbStep2Instructions from './rdb-step-2-instructions';
 import { LocalInstructions } from './local-instructions';
@@ -65,21 +64,18 @@ const mapStateToProps = createSelector(
   isSignedInSelector,
   partiallyCompletedChallengesSelector,
   userTokenSelector,
-  needsCurriculumDataSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
     isSignedIn: boolean,
     partiallyCompletedChallenges: CompletedChallenge[],
-    userToken: string | null,
-    needsCurriculumData: boolean
+    userToken: string | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
     isSignedIn,
     partiallyCompletedChallenges,
-    userToken,
-    needsCurriculumData
+    userToken
   })
 );
 
@@ -106,7 +102,6 @@ interface ShowCodeAllyProps {
   initTests: (xs: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -124,7 +119,6 @@ function ShowCodeAlly({
   data,
   isChallengeCompleted,
   isSignedIn,
-  needsCurriculumData,
   partiallyCompletedChallenges,
   t,
   updateSolutionFormValues,
@@ -170,6 +164,8 @@ function ShowCodeAlly({
   const isCompleted = completedChallenges.some(
     challenge => challenge.id === challengeId
   );
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     initTests(tests);
@@ -293,95 +289,91 @@ function ShowCodeAlly({
   });
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys containerRef={container}>
-        <LearnLayout>
-          <Helmet title={windowTitle} />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='m' />
-                {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
-                <Spacer size='m' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <Spacer size='m' />
-                <PrismFormatted text={description} />
-                <Spacer size='m' />
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet title={windowTitle} />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              {superBlock === SuperBlocks.RelationalDb && <CodeAllyDown />}
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <Spacer size='m' />
+              <PrismFormatted text={description} />
+              <Spacer size='m' />
 
-                {setupsToShow.map(({ name, component: SetupComponent }, i) => (
-                  <Fragment key={name}>
-                    <details
-                      open={i === 0}
-                      style={{ border: '1px solid #ccc', padding: '16px' }}
-                    >
-                      <summary>{name}</summary>
-                      <Spacer size='s' />
-                      <SetupComponent
-                        {...{
-                          challengeType,
-                          copyUrl,
-                          copyUserToken,
-                          generateUserToken,
-                          isSignedIn,
-                          title,
-                          userToken
-                        }}
-                      />
-                    </details>
+              {setupsToShow.map(({ name, component: SetupComponent }, i) => (
+                <Fragment key={name}>
+                  <details
+                    open={i === 0}
+                    style={{ border: '1px solid #ccc', padding: '16px' }}
+                  >
+                    <summary>{name}</summary>
                     <Spacer size='s' />
-                  </Fragment>
-                ))}
+                    <SetupComponent
+                      {...{
+                        challengeType,
+                        copyUrl,
+                        copyUserToken,
+                        generateUserToken,
+                        isSignedIn,
+                        title,
+                        userToken
+                      }}
+                    />
+                  </details>
+                  <Spacer size='s' />
+                </Fragment>
+              ))}
 
-                <Spacer size='m' />
-                {isSignedIn &&
-                  challengeType === challengeTypes.codeAllyCert && (
-                    <>
-                      <div className='ca-description'>
-                        {t('learn.complete-both-steps')}
-                      </div>
-                      <hr />
-                      <Spacer size='m' />
-                      <RdbStep1Instructions
-                        instructions={instructions}
-                        isCompleted={isPartiallyCompleted || isCompleted}
-                      />
-                      <hr />
-                      <Spacer size='m' />
-                      <RdbStep2Instructions
-                        isCompleted={isCompleted}
-                        notes={notes}
-                      />
-                      <Spacer size='m' />
-                      <SolutionForm
-                        challengeType={challengeType}
-                        description={description}
-                        onSubmit={handleSubmit}
-                        updateSolutionForm={updateSolutionFormValues}
-                      />
-                    </>
-                  )}
+              <Spacer size='m' />
+              {isSignedIn && challengeType === challengeTypes.codeAllyCert && (
+                <>
+                  <div className='ca-description'>
+                    {t('learn.complete-both-steps')}
+                  </div>
+                  <hr />
+                  <Spacer size='m' />
+                  <RdbStep1Instructions
+                    instructions={instructions}
+                    isCompleted={isPartiallyCompleted || isCompleted}
+                  />
+                  <hr />
+                  <Spacer size='m' />
+                  <RdbStep2Instructions
+                    isCompleted={isCompleted}
+                    notes={notes}
+                  />
+                  <Spacer size='m' />
+                  <SolutionForm
+                    challengeType={challengeType}
+                    description={description}
+                    onSubmit={handleSubmit}
+                    updateSolutionForm={updateSolutionFormValues}
+                  />
+                </>
+              )}
 
-                <ProjectToolPanel />
-                <br />
-                <Spacer size='m' />
-              </Col>
-              <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={block}
-                superBlock={superBlock}
-              />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    </>
+              <ProjectToolPanel />
+              <br />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
   );
 }
 

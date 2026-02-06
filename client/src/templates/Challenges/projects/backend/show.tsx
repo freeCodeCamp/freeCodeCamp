@@ -8,10 +8,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 import LearnLayout from '../../../../components/layouts/learn';
-import {
-  isSignedInSelector,
-  needsCurriculumDataSelector
-} from '../../../../redux/selectors';
+import { isSignedInSelector } from '../../../../redux/selectors';
 import {
   ChallengeMeta,
   ChallengeNode,
@@ -40,8 +37,8 @@ import {
 
 import { getGuideUrl } from '../../utils';
 import { getChallengePaths } from '../../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../../utils/fetch-all-curriculum-data';
 import SolutionForm from '../solution-form';
-import { FetchAllCurriculumData } from '../../classic/fetch-all-curriculum-data';
 import ProjectToolPanel from '../tool-panel';
 
 import '../../components/test-frame.css';
@@ -52,19 +49,16 @@ const mapStateToProps = createSelector(
   challengeTestsSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
-  needsCurriculumDataSelector,
   (
     output: string,
     tests: Test[],
     isChallengeCompleted: boolean,
-    isSignedIn: boolean,
-    needsCurriculumData: boolean
+    isSignedIn: boolean
   ) => ({
     tests,
     output,
     isChallengeCompleted,
-    isSignedIn,
-    needsCurriculumData
+    isSignedIn
   })
 );
 
@@ -89,7 +83,6 @@ interface BackEndProps {
   initTests: (tests: Test[]) => void;
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
-  needsCurriculumData: boolean;
   output: string;
   pageContext: {
     challengeMeta: ChallengeMeta;
@@ -111,6 +104,8 @@ const ShowBackEnd = (props: BackEndProps) => {
   }) => {
     props.executeChallenge({ showCompletionModal });
   };
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
@@ -161,8 +156,7 @@ const ShowBackEnd = (props: BackEndProps) => {
     output,
     t,
     tests,
-    updateSolutionFormValues,
-    needsCurriculumData
+    updateSolutionFormValues
   } = props;
 
   const blockNameTitle = `${t(
@@ -170,61 +164,58 @@ const ShowBackEnd = (props: BackEndProps) => {
   )} - ${title}`;
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys containerRef={container}>
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='m' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <ChallengeDescription
-                  superBlock={superBlock}
-                  description={description}
-                  instructions={instructions}
-                />
-                <Spacer size='m' />
-                <SolutionForm
-                  challengeType={challengeType}
-                  onSubmit={handleSubmit}
-                  updateSolutionForm={updateSolutionFormValues}
-                />
-                <ProjectToolPanel
-                  guideUrl={getGuideUrl({ forumTopicId, title })}
-                />
-                <br />
-                <Output
-                  defaultOutput={`/**
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <ChallengeDescription
+                superBlock={superBlock}
+                description={description}
+                instructions={instructions}
+              />
+              <Spacer size='m' />
+              <SolutionForm
+                challengeType={challengeType}
+                onSubmit={handleSubmit}
+                updateSolutionForm={updateSolutionFormValues}
+              />
+              <ProjectToolPanel
+                guideUrl={getGuideUrl({ forumTopicId, title })}
+              />
+              <br />
+              <Output
+                defaultOutput={`/**
 *
 * ${t('learn.test-output')}
 *
 *
 */`}
-                  output={output}
-                />
-                <TestSuite tests={tests} />
-                <Spacer size='m' />
-              </Col>
-              <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={block}
-                superBlock={superBlock}
+                output={output}
               />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    </>
+              <TestSuite tests={tests} />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
   );
 };
 

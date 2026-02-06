@@ -7,7 +7,10 @@ import {
   updateSuperBlockStructures,
   superBlockStructuresSelector
 } from '../../../templates/Introduction/redux';
-import { allChallengesInfoSelector } from '../../../redux/selectors';
+import {
+  allChallengesInfoSelector,
+  needsCurriculumDataSelector
+} from '../../../redux/selectors';
 import type {
   CertificateNode,
   ChallengeNode,
@@ -20,8 +23,9 @@ interface AllCurriculumData {
   allSuperBlockStructure: { nodes: SuperBlockStructure[] };
 }
 
-export function FetchAllCurriculumData(): null {
+export function useFetchAllCurriculumData(): void {
   const dispatch = useDispatch();
+  const needsCurriculumData = useSelector(needsCurriculumDataSelector);
   const allChallengesInfo = useSelector(allChallengesInfoSelector) as {
     challengeNodes?: Array<{ challenge: { id: string } }>;
   } | null;
@@ -80,7 +84,10 @@ export function FetchAllCurriculumData(): null {
   `);
 
   useEffect(() => {
-    // Update allChallengesInfo if not populated
+    // Only dispatch if curriculum data is needed
+    if (!needsCurriculumData) return;
+
+    // Update allChallengesInfo if not already loaded
     if (!allChallengesInfo?.challengeNodes?.length) {
       dispatch(
         updateAllChallengesInfo({
@@ -90,7 +97,7 @@ export function FetchAllCurriculumData(): null {
       );
     }
 
-    // Update superBlockStructures if not populated
+    // Update superBlockStructures if not already loaded
     if (Object.keys(superBlockStructures || {}).length === 0) {
       const structuresMap: Record<string, SuperBlockStructure> = {};
       superBlockStructureNodes.forEach(node => {
@@ -100,12 +107,11 @@ export function FetchAllCurriculumData(): null {
     }
   }, [
     dispatch,
+    needsCurriculumData,
     challengeNodes,
     certificateNodes,
     superBlockStructureNodes,
     allChallengesInfo,
     superBlockStructures
   ]);
-
-  return null;
 }

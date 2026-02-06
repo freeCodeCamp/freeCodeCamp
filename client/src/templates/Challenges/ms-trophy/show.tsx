@@ -16,6 +16,7 @@ import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import HelpModal from '../components/help-modal';
 import {
   challengeMounted,
@@ -29,28 +30,23 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 import { setIsProcessing } from '../../../redux/actions';
 import {
   isProcessingSelector,
-  msUsernameSelector,
-  needsCurriculumDataSelector
+  msUsernameSelector
 } from '../../../redux/selectors';
 import LinkMsUser from './link-ms-user';
-import { FetchAllCurriculumData } from '../classic/fetch-all-curriculum-data';
 
 // Redux Setup
 const mapStateToProps = createSelector(
   isChallengeCompletedSelector,
   isProcessingSelector,
   msUsernameSelector,
-  needsCurriculumDataSelector,
   (
     isChallengeCompleted: boolean,
     isProcessing: boolean,
-    msUsername: string | undefined | null,
-    needsCurriculumData: boolean
+    msUsername: string | undefined | null
   ) => ({
     isChallengeCompleted,
     isProcessing,
-    msUsername,
-    needsCurriculumData
+    msUsername
   })
 );
 
@@ -78,7 +74,6 @@ interface MsTrophyProps {
   isProcessing: boolean;
   setIsProcessing: (arg0: boolean) => void;
   msUsername: string | undefined | null;
-  needsCurriculumData: boolean;
   openCompletionModal: () => void;
   openHelpModal: () => void;
   pageContext: {
@@ -98,6 +93,9 @@ function MsTrophy(props: MsTrophyProps) {
       }
     }
   } = props;
+
+  useFetchAllCurriculumData();
+
   useEffect(() => {
     const {
       challengeMounted,
@@ -150,8 +148,7 @@ function MsTrophy(props: MsTrophyProps) {
     isProcessing,
     msUsername,
     openHelpModal,
-    t,
-    needsCurriculumData
+    t
   } = props;
 
   const blockNameTitle = `${t(
@@ -159,62 +156,59 @@ function MsTrophy(props: MsTrophyProps) {
   )} - ${title}`;
 
   return (
-    <>
-      {needsCurriculumData && <FetchAllCurriculumData />}
-      <Hotkeys containerRef={container}>
-        <LearnLayout>
-          <Helmet
-            title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-          />
-          <Container>
-            <Row>
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                <Spacer size='m' />
-                <ChallengeTitle
-                  isCompleted={isChallengeCompleted}
-                  translationPending={translationPending}
-                >
-                  {title}
-                </ChallengeTitle>
-                <ChallengeDescription
-                  superBlock={superBlock}
-                  description={description}
-                  instructions={instructions}
-                />
-                <LinkMsUser />
-                <hr />
-                <Button
-                  block={true}
-                  variant='primary'
-                  data-playwright-test-label='verify-trophy-button'
-                  disabled={!msUsername || isProcessing}
-                  onClick={handleSubmit}
-                >
-                  {t('buttons.verify-trophy')}
-                </Button>
-                <Spacer size='xxs' />
-                <Button
-                  block={true}
-                  variant='primary'
-                  data-playwright-test-label='ask-for-help-button'
-                  onClick={openHelpModal}
-                >
-                  {t('buttons.ask-for-help')}
-                </Button>
-                <br />
-                <Spacer size='m' />
-              </Col>
-              <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={block}
+    <Hotkeys containerRef={container}>
+      <LearnLayout>
+        <Helmet
+          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
+        />
+        <Container>
+          <Row>
+            <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+              <Spacer size='m' />
+              <ChallengeTitle
+                isCompleted={isChallengeCompleted}
+                translationPending={translationPending}
+              >
+                {title}
+              </ChallengeTitle>
+              <ChallengeDescription
                 superBlock={superBlock}
+                description={description}
+                instructions={instructions}
               />
-            </Row>
-          </Container>
-        </LearnLayout>
-      </Hotkeys>
-    </>
+              <LinkMsUser />
+              <hr />
+              <Button
+                block={true}
+                variant='primary'
+                data-playwright-test-label='verify-trophy-button'
+                disabled={!msUsername || isProcessing}
+                onClick={handleSubmit}
+              >
+                {t('buttons.verify-trophy')}
+              </Button>
+              <Spacer size='xxs' />
+              <Button
+                block={true}
+                variant='primary'
+                data-playwright-test-label='ask-for-help-button'
+                onClick={openHelpModal}
+              >
+                {t('buttons.ask-for-help')}
+              </Button>
+              <br />
+              <Spacer size='m' />
+            </Col>
+            <CompletionModal />
+            <HelpModal
+              challengeTitle={title}
+              challengeBlock={block}
+              superBlock={superBlock}
+            />
+          </Row>
+        </Container>
+      </LearnLayout>
+    </Hotkeys>
   );
 }
 
