@@ -1,42 +1,54 @@
 ---
 id: 691bbc97064dadb6ea5cd7dd
-title: Step 44
+title: Step 43
 challengeType: 0
-dashedName: step-44
+dashedName: step-43
 ---
 
 # --description--
 
 In the `try` block of `uploadNewCard`, throw a new `InvalidUserInputError` if `questionText` is empty with the message `"Front text 
-cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `questionAnswer` is empty with the message 
-`"Back text cannot be empty."`. 
+cannot be empty."`. Likewise throw a new `InvalidUserInputError` error if `questionAnswer` is empty with the message
+`"Back text cannot be empty."`.
 
 # --hints--
 
-You should throw a `InvalidUserInputError` if `questionText` is empty. 
+You should throw a `InvalidUserInputError` if `questionText` is empty.
 
 ```js
 assert.throws(uploadNewCard, InvalidUserInputError);
 ```
 
-If `questionText` is empty, the error message should be `Front text cannot be empty.`. 
+If `questionText` is empty, the error message should be `Front text cannot be empty.`.
 
 ```js
-assert.throws(uploadNewCard, InvalidUserInputError, 'Front text cannot be empty.');
+assert.throws(
+  uploadNewCard,
+  InvalidUserInputError,
+  'Front text cannot be empty.'
+);
 ```
 
-You should throw a `InvalidUserInputError` if `questionAnswer` is empty. 
+You should throw a `InvalidUserInputError` if `questionAnswer` is empty.
 
 ```js
-frontInput.value = "Placeholder question";
-assert.throws(uploadNewCard, InvalidUserInputError, 'Back text cannot be empty.');
+frontInput.value = 'Placeholder question';
+assert.throws(
+  uploadNewCard,
+  InvalidUserInputError,
+  'Back text cannot be empty.'
+);
 ```
 
-If `questionAnswer` is empty, the error message should be `Back text cannot be empty.`. 
+If `questionAnswer` is empty, the error message should be `Back text cannot be empty.`.
 
 ```js
-frontInput.value = "Placeholder question";
-assert.throws(uploadNewCard, InvalidUserInputError, 'Back text cannot be empty.');
+frontInput.value = 'Placeholder question';
+assert.throws(
+  uploadNewCard,
+  InvalidUserInputError,
+  'Back text cannot be empty.'
+);
 ```
 
 # --seed--
@@ -139,7 +151,7 @@ body {
 body {
   background-color: var(--bg-color);
   color: var(--text-color);
-  font-family: "Inter", system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
 
   place-items: center;
   min-height: 100vh;
@@ -285,7 +297,7 @@ button {
   border: none;
   border-radius: 8px;
   padding: 12px 24px;
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   cursor: pointer;
@@ -337,7 +349,7 @@ button.delete-btn:hover {
   border: 1px solid var(--border-color);
   border-radius: 8px;
   color: var(--text-color);
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   resize: vertical;
   box-sizing: border-box;
@@ -397,12 +409,14 @@ button.delete-btn:hover {
 ```
 
 ```ts
-const cardDisplay = document.querySelector<HTMLElement>("#current-card")!;
-const cardButtonsContainer = document.querySelector<HTMLElement>("#cards-list")!;
-const frontInput = document.querySelector<HTMLTextAreaElement>("#front-text")!;
-const backInput = document.querySelector<HTMLTextAreaElement>("#back-text")!;
-const errorElement = document.querySelector<HTMLParagraphElement>("#entry-error")!;
-var currentCardIndex = -1;
+const cardDisplay = document.querySelector<HTMLElement>('#current-card')!;
+const cardButtonsContainer =
+  document.querySelector<HTMLElement>('#cards-list')!;
+const frontInput = document.querySelector<HTMLTextAreaElement>('#front-text')!;
+const backInput = document.querySelector<HTMLTextAreaElement>('#back-text')!;
+const errorElement =
+  document.querySelector<HTMLParagraphElement>('#entry-error')!;
+let currentCardIndex = -1;
 let currentCards: FlashCard[] = [];
 
 interface FlashCard {
@@ -412,11 +426,10 @@ interface FlashCard {
 
 class InvalidUserInputError extends Error {
   constructor(message: string) {
-      super(message);
-    this.name = "InvalidUserInputError";
+    super(message);
+    this.name = 'InvalidUserInputError';
   }
 }
-
 
 const isButtonElement = (element: unknown): element is HTMLButtonElement => {
   return element instanceof HTMLButtonElement;
@@ -424,22 +437,21 @@ const isButtonElement = (element: unknown): element is HTMLButtonElement => {
 
 function refresh(): void {
   const card = currentCards[currentCardIndex];
-  cardDisplay.querySelector(".card-front")!.textContent = card.questionText;
-  cardDisplay.querySelector(".card-back")!.textContent = card.questionAnswer;
+  cardDisplay.querySelector('.card-front')!.textContent = card.questionText;
+  cardDisplay.querySelector('.card-back')!.textContent = card.questionAnswer;
   Array.from(cardButtonsContainer.children).forEach((child, i) => {
-       if (i === currentCardIndex) {
-          child.classList.add("selected");
-        } else {
-          child.classList.remove("selected");
-      }
+    if (i === currentCardIndex) {
+      child.classList.add('selected');
+    } else {
+      child.classList.remove('selected');
+    }
   });
 }
-
 
 function deleteCard(): void {
   currentCards.splice(currentCardIndex, 1);
   cardButtonsContainer.removeChild(
-    cardButtonsContainer.children[currentCardIndex],
+    cardButtonsContainer.children[currentCardIndex]
   );
 
   Array.from(cardButtonsContainer.children).forEach((child, i) => {
@@ -454,48 +466,44 @@ function deleteCard(): void {
     };
   });
 
-  refresh(); 
+  refresh();
 }
 
-
-function createCardButton(questionText: string, index: number): HTMLButtonElement {
-  const btn = document.createElement("button");
+function createCardButton(
+  questionText: string,
+  index: number
+): HTMLButtonElement {
+  const btn = document.createElement('button');
   btn.innerText =
-    questionText.length > 20 ? questionText.slice(0, 20) + "..." : questionText;
-  (btn as HTMLButtonElement).onclick= () => {
+    questionText.length > 20 ? questionText.slice(0, 20) + '...' : questionText;
+  (btn as HTMLButtonElement).onclick = () => {
     currentCardIndex = index;
     refresh();
   };
   return btn;
 }
 
-
 function uploadNewCard(): void {
-  try
-  {
+  try {
     const questionText = frontInput.value.trim();
     const questionAnswer = backInput.value.trim();
-    --fcc-editable-region--
+    --fcc - editable - region--;
 
-
-    --fcc-editable-region--
-    const newCard: FlashCard = { questionText, questionAnswer  };
+    --fcc - editable - region--;
+    const newCard: FlashCard = { questionText, questionAnswer };
     currentCards.push(newCard);
     const newIndex = currentCards.length - 1;
     const cardBtn = createCardButton(questionText, newIndex);
     cardButtonsContainer.appendChild(cardBtn);
 
     currentCardIndex = newIndex;
-    refresh();   
-    frontInput.value = "";
-    backInput.value = "";
-  }
-  catch(ex)
-  {
-    throw ex; 
+    refresh();
+    frontInput.value = '';
+    backInput.value = '';
+  } catch (ex) {
+    throw ex;
   }
 }
-
 
 class FlashCardController {
   private elements: {
@@ -503,38 +511,42 @@ class FlashCardController {
     flipBtn: HTMLButtonElement;
     entryForm: HTMLFormElement;
     deleteBtn: HTMLButtonElement;
-  }  = {} as { flashcard: HTMLElement,flipBtn: HTMLButtonElement,entryForm: HTMLFormElement, deleteBtn: HTMLButtonElement}  
+  } = {} as {
+    flashcard: HTMLElement;
+    flipBtn: HTMLButtonElement;
+    entryForm: HTMLFormElement;
+    deleteBtn: HTMLButtonElement;
+  };
 
   constructor() {
-  this.elements = {
-      flashcard: document.querySelector<HTMLElement>(".flashcard")!,
-      flipBtn: document.querySelector<HTMLButtonElement>("#flip-btn")!,
-      entryForm: document.querySelector<HTMLFormElement>(".entry-form")!,
-      deleteBtn: document.querySelector<HTMLButtonElement>("#delete-btn")!,
+    this.elements = {
+      flashcard: document.querySelector<HTMLElement>('.flashcard')!,
+      flipBtn: document.querySelector<HTMLButtonElement>('#flip-btn')!,
+      entryForm: document.querySelector<HTMLFormElement>('.entry-form')!,
+      deleteBtn: document.querySelector<HTMLButtonElement>('#delete-btn')!
     };
-   this.initializeEventListeners();
+    this.initializeEventListeners();
   }
   private initializeEventListeners(): void {
-    this.elements.flipBtn.addEventListener("click", () => this.flipCard());
+    this.elements.flipBtn.addEventListener('click', () => this.flipCard());
 
-    this.elements.entryForm.addEventListener("submit", (ev: SubmitEvent) => {
+    this.elements.entryForm.addEventListener('submit', (ev: SubmitEvent) => {
       ev.preventDefault();
       uploadNewCard();
     });
 
-    this.elements.deleteBtn.addEventListener("click", () => deleteCard());
-
-  }   
+    this.elements.deleteBtn.addEventListener('click', () => deleteCard());
+  }
 
   private flipCard(): void {
-      this.elements.flashcard.classList.toggle("flipped");
-  } 
-} 
+    this.elements.flashcard.classList.toggle('flipped');
+  }
+}
 
-document.addEventListener("DOMContentLoaded", (event: Event) => {
-  new FlashCardController(); 
-  frontInput.value = "What is the capital of France?";
-  backInput.value = "Paris";
+document.addEventListener('DOMContentLoaded', (event: Event) => {
+  new FlashCardController();
+  frontInput.value = 'What is the capital of France?';
+  backInput.value = 'Paris';
   uploadNewCard();
-}) 
+});
 ```
