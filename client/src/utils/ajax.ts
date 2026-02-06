@@ -333,7 +333,7 @@ export function postResetProgress(): Promise<ResponseWithData<void>> {
 export function postResetModule(body: {
   blockId: string;
 }): Promise<ResponseWithData<void>> {
-  return post('/account/reset-module', body);
+  return deleteRequest('/account/reset-module', body);
 }
 
 export function postUserToken(): Promise<ResponseWithData<void>> {

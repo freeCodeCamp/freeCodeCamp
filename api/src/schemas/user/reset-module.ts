@@ -6,12 +6,7 @@ export const resetModule = {
     blockId: Type.String({ minLength: 1 })
   }),
   response: {
-    200: Type.Object({
-      blockId: Type.String(),
-      completedChallengesRemoved: Type.Number(),
-      savedChallengesRemoved: Type.Number(),
-      partiallyCompletedChallengesRemoved: Type.Number()
-    }),
+    204: Type.Object({}),
     400: Type.Object({
       message: Type.String(),
       type: Type.String()

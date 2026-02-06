@@ -198,96 +198,12 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
     }
   );
 
-  fastify.post(
+  fastify.delete(
     '/account/reset-module',
     {
       schema: schemas.resetModule
     },
-    async (req, reply) => {
-      const logger = fastify.log.child({ req, res: reply });
-
-      const { blockId } = req.body;
-      logger.info(
-        `User ${req.user?.id} requested module reset for block: ${blockId}`
-      );
-
-      // Get challenge IDs for this block from curriculum
-      const challengeIdsToReset = getChallengeIdsByBlock(blockId);
-
-      // Fetch user's current data
-      const user = await fastify.prisma.user.findUnique({
-        where: { id: req.user!.id },
-        select: {
-          completedChallenges: true,
-          savedChallenges: true,
-          partiallyCompletedChallenges: true
-        }
-      });
-
-      if (!user) {
-        logger.error(`User ${req.user?.id} not found`);
-        void reply.code(500);
-        return {
-          message: 'User not found',
-          type: 'error'
-        };
-      }
-
-      // Filter out challenges from this block
-
-      const filteredCompletedChallenges = (
-        user.completedChallenges as unknown[]
-      ).filter((c: unknown) => {
-        const challenge = c as { id: string };
-
-        return !challengeIdsToReset.includes(challenge.id);
-      });
-
-      const filteredSavedChallenges = (
-        user.savedChallenges as unknown[]
-      ).filter((c: unknown) => {
-        const challenge = c as { id: string };
-
-        return !challengeIdsToReset.includes(challenge.id);
-      });
-
-      const filteredPartiallyCompletedChallenges = (
-        user.partiallyCompletedChallenges as unknown[]
-      ).filter((c: unknown) => {
-        const challenge = c as { id: string };
-
-        return !challengeIdsToReset.includes(challenge.id);
-      });
-
-      // Calculate how many challenges were removed
-      const completedRemoved =
-        (user.completedChallenges as unknown[]).length -
-        filteredCompletedChallenges.length;
-      const savedRemoved =
-        (user.savedChallenges as unknown[]).length -
-        filteredSavedChallenges.length;
-      const partiallyCompletedRemoved =
-        (user.partiallyCompletedChallenges as unknown[]).length -
-        filteredPartiallyCompletedChallenges.length;
-
-      // Update user with filtered challenges
-      await fastify.prisma.user.update({
-        where: { id: req.user!.id },
-        data: {
-          completedChallenges: filteredCompletedChallenges as never,
-          savedChallenges: filteredSavedChallenges as never,
-          partiallyCompletedChallenges:
-            filteredPartiallyCompletedChallenges as never
-        }
-      });
-
-      return {
-        blockId,
-        completedChallengesRemoved: completedRemoved,
-        savedChallengesRemoved: savedRemoved,
-        partiallyCompletedChallengesRemoved: partiallyCompletedRemoved
-      };
-    }
+    deleteResetModule
   );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, reply) => {
@@ -670,6 +586,77 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
+/**
+ * Generate a new authorization token for the given user, and invalidates any existing tokens.
+ *
+ * Requires the user to be authenticated.
+ */
+async function deleteResetModule(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.resetModule>,
+  reply: FastifyReply
+) {
+  const logger = this.log.child({ req, res: reply });
+
+  const { blockId } = req.body;
+  logger.info(
+    `User ${req.user?.id} requested module reset for block: ${blockId}`
+  );
+
+  // Get challenge IDs for this block from curriculum
+  const challengeIdsToReset = getChallengeIdsByBlock(blockId);
+
+  // Fetch user's current data
+  const user = await this.prisma.user.findUnique({
+    where: { id: req.user!.id },
+    select: {
+      completedChallenges: true,
+      savedChallenges: true,
+      partiallyCompletedChallenges: true
+    }
+  });
+
+  if (!user) {
+    logger.error(`User ${req.user?.id} not found`);
+    void reply.code(500);
+    return {
+      message: 'User not found',
+      type: 'error'
+    };
+  }
+
+  // Filter out challenges from this block
+
+  const filteredCompletedChallenges = normalizeChallenges(
+    user.completedChallenges
+  ).filter(c => {
+    return !challengeIdsToReset.includes(c.id);
+  });
+
+  const filteredSavedChallenges = user.savedChallenges.filter(c => {
+    return !challengeIdsToReset.includes(c.id);
+  });
+
+  const filteredPartiallyCompletedChallenges =
+    user.partiallyCompletedChallenges.filter(c => {
+      return !challengeIdsToReset.includes(c.id);
+    });
+
+  // Update user with filtered challenges
+  await this.prisma.user.update({
+    where: { id: req.user!.id },
+    data: {
+      completedChallenges: filteredCompletedChallenges,
+      savedChallenges: filteredSavedChallenges,
+      partiallyCompletedChallenges: filteredPartiallyCompletedChallenges
+    },
+    select: {
+      id: true
+    }
+  });
+
+  return reply.code(204).send();
+}
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
