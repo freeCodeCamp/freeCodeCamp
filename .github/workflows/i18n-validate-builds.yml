@@ -41,7 +41,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cat sample.env >> $GITHUB_ENV
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install Dependencies
         run: pnpm install

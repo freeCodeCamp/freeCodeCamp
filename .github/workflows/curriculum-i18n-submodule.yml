@@ -52,7 +52,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cat sample.env >> $GITHUB_ENV
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install node_modules
         run: pnpm install

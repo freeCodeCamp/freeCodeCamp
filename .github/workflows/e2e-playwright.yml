@@ -54,7 +54,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cat sample.env >> $GITHUB_ENV
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -153,7 +153,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
-          cat sample.env >> $GITHUB_ENV
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
