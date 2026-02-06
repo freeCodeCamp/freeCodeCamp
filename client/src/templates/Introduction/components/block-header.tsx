@@ -25,7 +25,6 @@ interface BaseBlockHeaderProps {
   blockIntroArr?: string[];
   accordion?: boolean;
   onResetClick?: () => void;
-  showReset?: boolean;
   isResetDisabled?: boolean;
 }
 
@@ -55,7 +54,6 @@ function BlockHeader({
   blockUrl,
   onLinkClick,
   onResetClick,
-  showReset,
   isResetDisabled
 }: BlockHeaderProps): JSX.Element {
   const { t } = useTranslation();
@@ -105,19 +103,17 @@ function BlockHeader({
             </Button>
           )}
         </h3>
-        {showReset && (
-          <button
-            className='block-reset-button'
-            onClick={onResetClick}
-            aria-label={t('learn.reset-progress-aria-block', {
-              blockLabel: blockTitle
-            })}
-            type='button'
-            disabled={isResetDisabled}
-          >
-            <Reset />
-          </button>
-        )}
+        <button
+          className='block-reset-button'
+          onClick={onResetClick}
+          aria-label={t('learn.reset-progress-aria-block', {
+            blockLabel: blockTitle
+          })}
+          type='button'
+          disabled={isResetDisabled}
+        >
+          <Reset />
+        </button>
       </div>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />
