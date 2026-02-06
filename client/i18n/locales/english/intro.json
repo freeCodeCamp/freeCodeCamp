@@ -3244,6 +3244,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-n-queens-problem-js": {
+        "title": "Implement the N-Queens Problem",
+        "intro": ["Implement the N-Queens Problem", ""]
       }
     }
   },

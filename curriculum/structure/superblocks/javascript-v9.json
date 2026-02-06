@@ -306,7 +306,10 @@
         {
           "dashedName": "graphs-and-trees",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+          "blocks": [
+            "lecture-understanding-graphs-and-trees-js",
+            "lab-n-queens-problem-js"
+          ]
         },
         {
           "dashedName": "dynamic-programming",
