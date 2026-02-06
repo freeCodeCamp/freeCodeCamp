@@ -475,9 +475,9 @@ function uploadNewCard(): void {
     frontInput.value = '';
     backInput.value = '';
   } catch (ex) {
-    --fcc - editable - region--;
+    --fcc-editable-region--
 
-    --fcc - editable - region--;
+    --fcc-editable-region--
     throw ex;
   }
 }

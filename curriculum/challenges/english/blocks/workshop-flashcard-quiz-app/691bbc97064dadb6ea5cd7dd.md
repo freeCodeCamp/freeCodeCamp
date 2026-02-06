@@ -487,9 +487,9 @@ function uploadNewCard(): void {
   try {
     const questionText = frontInput.value.trim();
     const questionAnswer = backInput.value.trim();
-    --fcc - editable - region--;
+    --fcc-editable-region--
 
-    --fcc - editable - region--;
+    --fcc-editable-region--
     const newCard: FlashCard = { questionText, questionAnswer };
     currentCards.push(newCard);
     const newIndex = currentCards.length - 1;
