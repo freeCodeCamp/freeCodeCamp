@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
