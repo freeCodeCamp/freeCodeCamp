@@ -291,7 +291,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Jina la mtumiaji \"{{username}}\" lina vibambo batili",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Jina la mtumiaji \"{{username}}\" ni fupi mno",
       "is a reserved error code": "Jina la mtumiaji \"{{username}}\" ni msimbo wa hitilafu uliohifadhiwa",
       "must be lowercase": "Jina la mtumiaji \"{{username}}\" lazima liwe herufi ndogo",

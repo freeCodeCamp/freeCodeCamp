@@ -291,7 +291,7 @@
     "reset-editor-layout": "Restablecer el diseño del editor",
     "shortcuts-explained": "Dentro de un desafío, pulse ESC seguido del signo de interrogación para mostrar una lista de atajos disponibles.",
     "username": {
-      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",
