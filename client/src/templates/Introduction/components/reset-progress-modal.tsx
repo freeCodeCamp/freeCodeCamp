@@ -9,7 +9,7 @@ import {
   Modal,
   Spacer
 } from '@freecodecamp/ui';
-import { postResetModule } from '../../../utils/ajax';
+import { deleteResetModule } from '../../../utils/ajax';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 
 // Delay between API calls to prevent rate limiting
@@ -84,7 +84,7 @@ function ResetProgressModal({
           total: blockIds.length,
           currentBlockName: formatBlockName(currentBlock)
         });
-        await postResetModule({ blockId: currentBlock });
+        await deleteResetModule({ blockId: currentBlock });
         completedBlocks.push(currentBlock);
         // Add delay between requests to prevent rate limiting (skip after last request)
         if (i < blockIds.length - 1) {
