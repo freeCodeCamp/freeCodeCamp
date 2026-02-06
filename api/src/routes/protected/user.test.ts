@@ -865,36 +865,31 @@ describe('userRoutes', () => {
         getChallengeIdsByBlockSpy.mockRestore();
       });
 
-      test('POST returns 400 for missing blockId', async () => {
-        const response = await superPost('/account/reset-module').send({});
+      test('DELETE returns 400 for missing blockId', async () => {
+        const response = await superDelete('/account/reset-module').send({});
 
         expect(response.status).toBe(400);
       });
 
-      test('POST returns 400 for empty blockId', async () => {
-        const response = await superPost('/account/reset-module').send({
+      test('DELETE returns 400 for empty blockId', async () => {
+        const response = await superDelete('/account/reset-module').send({
           blockId: ''
         });
 
         expect(response.status).toBe(400);
       });
 
-      test('POST returns 200 status code with reset statistics', async () => {
-        const response = await superPost('/account/reset-module').send({
+      test('DELETE returns 204 status code', async () => {
+        const response = await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
-        expect(response.body).toStrictEqual({
-          blockId: 'block-one',
-          completedChallengesRemoved: 2,
-          savedChallengesRemoved: 1,
-          partiallyCompletedChallengesRemoved: 2
-        });
-        expect(response.status).toBe(200);
+        expect(response.body).toStrictEqual({});
+        expect(response.status).toBe(204);
       });
 
-      test('POST removes only challenges from the specified block', async () => {
-        await superPost('/account/reset-module').send({
+      test('DELETE removes only challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -912,8 +907,8 @@ describe('userRoutes', () => {
         expect(challengeIds).not.toContain('block-one-challenge-2');
       });
 
-      test('POST removes saved challenges from the specified block', async () => {
-        await superPost('/account/reset-module').send({
+      test('DELETE removes saved challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -924,8 +919,8 @@ describe('userRoutes', () => {
         expect(user?.savedChallenges).toHaveLength(0);
       });
 
-      test('POST removes partially completed challenges from the specified block', async () => {
-        await superPost('/account/reset-module').send({
+      test('DELETE removes partially completed challenges from the specified block', async () => {
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -936,8 +931,8 @@ describe('userRoutes', () => {
         expect(user?.partiallyCompletedChallenges).toHaveLength(0);
       });
 
-      test('POST keeps certifications intact', async () => {
-        await superPost('/account/reset-module').send({
+      test('DELETE keeps certifications intact', async () => {
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -948,12 +943,12 @@ describe('userRoutes', () => {
         expect(user?.isRespWebDesignCert).toBe(true);
       });
 
-      test('POST keeps progress timestamps intact', async () => {
+      test('DELETE keeps progress timestamps intact', async () => {
         const userBefore = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: testUserData.email }
         });
 
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -966,7 +961,7 @@ describe('userRoutes', () => {
         );
       });
 
-      test('POST does not delete userTokens', async () => {
+      test('DELETE does not delete userTokens', async () => {
         await fastifyTestInstance.prisma.userToken.create({
           data: {
             created: new Date(),
@@ -976,7 +971,7 @@ describe('userRoutes', () => {
           }
         });
 
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -987,7 +982,7 @@ describe('userRoutes', () => {
         });
       });
 
-      test('POST does not delete surveys', async () => {
+      test('DELETE does not delete surveys', async () => {
         await fastifyTestInstance.prisma.survey.create({
           data: {
             userId: defaultUserId,
@@ -996,7 +991,7 @@ describe('userRoutes', () => {
           }
         });
 
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -1007,9 +1002,9 @@ describe('userRoutes', () => {
         });
       });
 
-      test('POST handles multiple blocks correctly', async () => {
+      test('DELETE handles multiple blocks correctly', async () => {
         // Reset first block
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -1020,7 +1015,7 @@ describe('userRoutes', () => {
         expect(user?.completedChallenges).toHaveLength(2);
 
         // Reset second block
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-two'
         });
 
@@ -1031,7 +1026,7 @@ describe('userRoutes', () => {
         expect(user?.completedChallenges).toHaveLength(0);
       });
 
-      test('POST only affects the authenticated user', async () => {
+      test('DELETE only affects the authenticated user', async () => {
         await fastifyTestInstance.prisma.user.create({
           data: {
             ...testUserData,
@@ -1040,7 +1035,7 @@ describe('userRoutes', () => {
           }
         });
 
-        await superPost('/account/reset-module').send({
+        await superDelete('/account/reset-module').send({
           blockId: 'block-one'
         });
 
@@ -1055,8 +1050,8 @@ describe('userRoutes', () => {
         });
       });
 
-      test('POST handles non-existent blockId gracefully', async () => {
-        const response = await superPost('/account/reset-module').send({
+      test('DELETE handles non-existent blockId gracefully', async () => {
+        const response = await superDelete('/account/reset-module').send({
           blockId: 'non-existent-block'
         });
 
@@ -1064,7 +1059,7 @@ describe('userRoutes', () => {
           where: { email: testUserData.email }
         });
 
-        expect(response.status).toBe(200);
+        expect(response.status).toBe(204);
         expect(user?.completedChallenges).toHaveLength(4);
       });
     });
@@ -1908,7 +1903,7 @@ Thanks and regards,
       { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
-      { path: '/account/reset-module', method: 'POST' },
+      { path: '/account/reset-module', method: 'DELETE' },
       { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
