@@ -64,8 +64,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          set -a && source sample.env && set +a
+          cat sample.env
 
       - name: Install node_modules
         run: pnpm install
@@ -116,7 +116,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          set -a && source sample.env && set +a
 
       - name: Install and Build
         run: |
@@ -158,8 +158,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          set -a && source sample.env && set +a
+          cat sample.env
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -210,9 +210,9 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
+          set -a && source sample.env && set +a
           echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat .env
+          cat sample.env
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -265,8 +265,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          set -a && source sample.env && set +a
+          cat sample.env
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1

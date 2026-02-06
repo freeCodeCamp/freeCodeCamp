@@ -52,7 +52,7 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
+          set -a && source sample.env && set +a
 
       - name: Install node_modules
         run: pnpm install

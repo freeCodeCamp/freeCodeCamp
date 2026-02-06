@@ -54,7 +54,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          set -a && source sample.env && set +a
 
       - name: Install and Build
         run: |
@@ -153,7 +153,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
-          cp sample.env .env
+          set -a && source sample.env && set +a
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
