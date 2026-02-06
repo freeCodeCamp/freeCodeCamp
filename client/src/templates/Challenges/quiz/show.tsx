@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
@@ -249,7 +249,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     exitConfirmed.current = true;
-    void reachNavigate(exitPathname || '/learn');
+    void navigate(exitPathname || '/learn');
     closeExitQuizModal();
   };
 
@@ -262,14 +262,14 @@ const ShowQuiz = ({
   );
 
   const onHistoryChange = useCallback(
-    (targetPathname: string) => {
+    (targetPathname: string): boolean => {
       // We don't block navigation in the following cases.
       // - When campers have submitted the quiz:
       //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
       //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
       // - When they have clicked the exit button on the exit modal
       if (hasSubmitted || exitConfirmed.current) {
-        return;
+        return false;
       }
 
       const newPathname = targetPathname.startsWith('/learn')
@@ -283,6 +283,7 @@ const ShowQuiz = ({
       // with the language and Gatsby's navigate will prefix it again.
       void reachNavigate(`${curLocation.pathname}`);
       openExitQuizModal();
+      return true;
     },
     [curLocation.pathname, hasSubmitted, openExitQuizModal, blockHashSlug]
   );

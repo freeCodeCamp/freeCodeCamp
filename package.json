@@ -84,7 +84,6 @@
     "@types/lodash": "4.14.202",
     "@types/node": "^24.10.8",
     "debug": "4.3.4",
-    "gatsby-plugin-pnpm-gatsby-5": "^1.2.11",
     "globals": "^15.14.0",
     "husky": "9.0.11",
     "identity-obj-proxy": "^3.0.0",
@@ -102,10 +101,6 @@
   },
   "packageManager": "pnpm@10.28.1",
   "pnpm": {
-    "overrides": {
-      "lmdb": "3.5.1",
-      "webpack": "5.90.3"
-    },
     "onlyBuiltDependencies": [
       "@freecodecamp/ui",
       "@prisma/client",
@@ -124,11 +119,6 @@
       "prisma",
       "puppeteer",
       "unrs-resolver"
-    ],
-    "ignoredBuiltDependencies": [
-      "@parcel/watcher",
-      "core-js-pure",
-      "sharp"
     ]
   }
 }
