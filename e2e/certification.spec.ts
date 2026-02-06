@@ -7,7 +7,7 @@ import {
   getAllEmails,
   getFirstEmail,
   getSubject
-} from './utils/mailhog';
+} from './utils/email';
 
 test.describe('Claim a certification - almost certified user', () => {
   test.beforeEach(async () => {

@@ -3669,6 +3669,12 @@
           "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
         ]
       },
+      "lab-travel-weather-planner": {
+        "title": "Build a Travel Weather Planner",
+        "intro": [
+          "In this lab, you will build a travel weather planner using conditionals."
+        ]
+      },
       "lecture-understanding-functions-and-scope": {
         "title": "Understanding Functions and Scope",
         "intro": [
