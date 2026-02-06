@@ -301,7 +301,6 @@ export class Block extends Component<BlockProps, BlockState> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
-            showReset={true}
             isResetDisabled={completedCount === 0}
             onResetClick={this.handleResetClick}
           />
@@ -354,7 +353,6 @@ export class Block extends Component<BlockProps, BlockState> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={!accordion ? blockIntroArr : undefined}
-            showReset={true}
             isResetDisabled={completedCount === 0}
             onResetClick={this.handleResetClick}
           />
@@ -454,7 +452,6 @@ export class Block extends Component<BlockProps, BlockState> {
             isExpanded={isExpanded}
             percentageCompleted={percentageCompleted}
             accordion={accordion}
-            showReset={true}
             isResetDisabled={completedCount === 0}
             onResetClick={this.handleResetClick}
           />
@@ -514,7 +511,6 @@ export class Block extends Component<BlockProps, BlockState> {
             percentageCompleted={percentageCompleted}
             accordion={accordion}
             blockIntroArr={blockIntroArr}
-            showReset={true}
             isResetDisabled={completedCount === 0}
             onResetClick={this.handleResetClick}
           />
@@ -574,7 +570,6 @@ export class Block extends Component<BlockProps, BlockState> {
           percentageCompleted={percentageCompleted}
           accordion={accordion}
           blockUrl={challenges?.[0]?.fields?.slug ?? ''}
-          showReset={true}
           isResetDisabled={completedCount === 0}
           onResetClick={this.handleResetClick}
         />

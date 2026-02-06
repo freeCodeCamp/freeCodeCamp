@@ -184,14 +184,8 @@ describe('<BlockHeader />', () => {
   });
 
   describe('Reset Button', () => {
-    it('should render reset button when showReset is true', () => {
-      render(
-        <BlockHeader
-          {...defaultProps}
-          showReset={true}
-          onResetClick={vi.fn()}
-        />
-      );
+    it('should render reset button', () => {
+      render(<BlockHeader {...defaultProps} onResetClick={vi.fn()} />);
 
       const resetButton = screen.getByRole('button', {
         name: /reset progress for/i
@@ -199,29 +193,10 @@ describe('<BlockHeader />', () => {
       expect(resetButton).toBeInTheDocument();
     });
 
-    it('should not render reset button when showReset is false', () => {
-      render(<BlockHeader {...defaultProps} showReset={false} />);
-
-      const resetButton = screen.queryByRole('button', {
-        name: /reset progress for/i
-      });
-      expect(resetButton).not.toBeInTheDocument();
-    });
-
-    it('should not render reset button when showReset is undefined', () => {
-      render(<BlockHeader {...defaultProps} />);
-
-      const resetButton = screen.queryByRole('button', {
-        name: /reset progress for/i
-      });
-      expect(resetButton).not.toBeInTheDocument();
-    });
-
     it('should disable reset button when isResetDisabled is true', () => {
       render(
         <BlockHeader
           {...defaultProps}
-          showReset={true}
           isResetDisabled={true}
           onResetClick={vi.fn()}
         />
@@ -237,7 +212,6 @@ describe('<BlockHeader />', () => {
       render(
         <BlockHeader
           {...defaultProps}
-          showReset={true}
           isResetDisabled={false}
           onResetClick={vi.fn()}
         />
@@ -251,13 +225,7 @@ describe('<BlockHeader />', () => {
 
     it('should call onResetClick when reset button is clicked', () => {
       const mockOnResetClick = vi.fn();
-      render(
-        <BlockHeader
-          {...defaultProps}
-          showReset={true}
-          onResetClick={mockOnResetClick}
-        />
-      );
+      render(<BlockHeader {...defaultProps} onResetClick={mockOnResetClick} />);
 
       const resetButton = screen.getByRole('button', {
         name: /reset progress for/i
@@ -268,13 +236,7 @@ describe('<BlockHeader />', () => {
     });
 
     it('should have correct aria-label with block title', () => {
-      render(
-        <BlockHeader
-          {...defaultProps}
-          showReset={true}
-          onResetClick={vi.fn()}
-        />
-      );
+      render(<BlockHeader {...defaultProps} onResetClick={vi.fn()} />);
 
       const resetButton = screen.getByRole('button', {
         name: 'Reset progress for Test Block Title'
