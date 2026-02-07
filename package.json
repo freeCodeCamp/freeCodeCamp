@@ -73,6 +73,7 @@
     "playwright:watch": "pnpm -F e2e run playwright:watch"
   },
   "dependencies": {
+    "cross-env": "^10.1.0",
     "dotenv": "16.4.5",
     "eslint": "^9.39.1"
   },
