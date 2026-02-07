@@ -607,6 +607,15 @@ pre code {
   color: var(--background-danger);
 }
 
+/*
+ * The @freecodecamp/ui Modal uses `overflow-scroll` on the modal container,
+ * which always shows scrollbars even when content doesn't overflow.
+ * Override to `overflow: auto` so scrollbars only appear when needed.
+ */
+#headlessui-portal-root .overflow-scroll {
+  overflow: auto;
+}
+
 .text-start {
   text-align: start;
 }
