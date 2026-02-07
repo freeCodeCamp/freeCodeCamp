@@ -48,7 +48,8 @@ The one exception to this is if we discover violations of our [Academic Honesty 
 
 In addition, to help prepare for job interviews, freeCodeCamp.org includes The Odin Project (freeCodeCamp Remix), Coding Interview Prep, Project Euler, and Rosetta Code.
 
-A free, professional free Foundational C# with Microsoft Certification is also available.
+A free, professional Foundational C# with Microsoft Certification is also available.
+
 
 ### The Learning Platform
 
