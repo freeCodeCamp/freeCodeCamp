@@ -26,7 +26,7 @@
     "create:external-curriculum": "tsx ./tools/external-curriculum/build",
     "create:trending": "tsx ./tools/download-trending.ts",
     "create:search-placeholder": "tsx ./tools/generate-search-placeholder",
-    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation --trace-uncaught --trace-warnings\" gatsby develop --inspect=9230 --verbose",
+    "develop": "NODE_OPTIONS=\"--max-old-space-size=7168 --no-deprecation\" gatsby develop --inspect=9230",
     "lint": "eslint --max-warnings 0",
     "setup": "pnpm create:env && pnpm create:trending && pnpm create:search-placeholder && pnpm create:external-curriculum && pnpm copy:scripts",
     "serve": "gatsby serve -p 8000",
