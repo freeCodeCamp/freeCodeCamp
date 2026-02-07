@@ -2,7 +2,7 @@
   "name": "Classes and Objects Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-classes-and-objects",
   "challengeOrder": [
     { "id": "67f413038f0f8c452c660dc5", "title": "Classes and Objects Quiz" }

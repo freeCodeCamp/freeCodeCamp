@@ -1,9 +1,18 @@
 {
   "name": "Meet Julieta",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-learn-meet-julieta",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc74dc55e05b6ee15b743d", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "68dc74dc55e05b6ee15b743d", "title": "Task 1" },
+    { "id": "69050330908fe2245936bf21", "title": "Task 2" },
+    { "id": "690a2aca25b9d771e2dd1101", "title": "Task 3" },
+    { "id": "6916483f3f068e040248b8a9", "title": "Task 4" },
+    { "id": "690a2ca5e5cfb078be515fc7", "title": "Task 5" },
+    { "id": "6916547f0691e2212b9de296", "title": "Task 6" },
+    { "id": "69165d13fdec0a457abf861d", "title": "Task 7" },
+    { "id": "6916658d16916957c1a318a9", "title": "Task 8" }
+  ],
   "blockLabel": "learn"
 }

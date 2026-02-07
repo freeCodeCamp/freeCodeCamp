@@ -1,7 +1,15 @@
 import React, { useMemo } from 'react';
-import { Sandpack } from '@codesandbox/sandpack-react';
+import {
+  FileTabs,
+  SandpackConsole,
+  SandpackLayout,
+  SandpackPreview,
+  SandpackProvider,
+  SandpackStack
+} from '@codesandbox/sandpack-react';
 import { freeCodeCampDark } from '@codesandbox/sandpack-themes';
 import './interactive-editor.css';
+import CustomMonacoEditor from './custom-monaco-editor';
 
 export interface InteractiveFile {
   ext: string;
@@ -44,7 +52,11 @@ const InteractiveEditor = ({ files }: Props) => {
     return files.some(f => f.ext === ext);
   }
 
-  const showConsole = got('js') || got('ts');
+  const hasHTML = got('html');
+  const hasJavaScript = got('js') || got('ts') || got('jsx') || got('tsx');
+
+  const showConsole = hasJavaScript && hasHTML;
+  const layout = hasHTML ? 'preview' : 'console';
   const freeCodeCampDarkSyntax = {
     ...freeCodeCampDark.syntax,
     punctuation: '#ffff00',
@@ -57,7 +69,7 @@ const InteractiveEditor = ({ files }: Props) => {
       className='interactive-editor-wrapper'
       data-playwright-test-label='sp-interactive-editor'
     >
-      <Sandpack
+      <SandpackProvider
         template={
           got('tsx')
             ? 'react-ts'
@@ -79,15 +91,34 @@ const InteractiveEditor = ({ files }: Props) => {
           },
           syntax: freeCodeCampDarkSyntax
         }}
-        options={{
-          editorHeight: 450,
-          editorWidthPercentage: 60,
-          showConsole: showConsole,
-          showConsoleButton: showConsole,
-          layout: got('html') ? 'preview' : 'console',
-          showLineNumbers: true
-        }}
-      />
+      >
+        <SandpackLayout className='interactive-layout'>
+          <SandpackStack className='interactive-editor-column'>
+            {files.length > 1 && <FileTabs />}
+            <CustomMonacoEditor />
+          </SandpackStack>
+
+          <SandpackStack className='interactive-preview-column'>
+            {layout === 'preview' ? (
+              showConsole ? (
+                <>
+                  <SandpackPreview style={{ flex: 1.5 }} />
+                  <SandpackConsole
+                    style={{
+                      flex: 1,
+                      overflow: 'scroll'
+                    }}
+                  />
+                </>
+              ) : (
+                <SandpackPreview />
+              )
+            ) : (
+              <SandpackConsole standalone={true} />
+            )}
+          </SandpackStack>
+        </SandpackLayout>
+      </SandpackProvider>
     </div>
   );
 };

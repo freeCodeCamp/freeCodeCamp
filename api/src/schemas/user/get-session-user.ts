@@ -1,5 +1,10 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { examResults, profileUI, savedChallenge } from '../types.js';
+import {
+  examResults,
+  profileUI,
+  savedChallenge,
+  experience
+} from '../types.js';
 
 const languages = Type.Array(
   Type.Union([Type.Literal('javascript'), Type.Literal('python')])
@@ -86,11 +91,20 @@ export const getSessionUser = {
           isJsAlgoDataStructCert: Type.Boolean(),
           isJsAlgoDataStructCertV8: Type.Boolean(),
           isMachineLearningPyCertV7: Type.Boolean(),
+          isPythonCertV9: Type.Boolean(),
           isQaCertV7: Type.Boolean(),
           isRelationalDatabaseCertV8: Type.Boolean(),
+          isRelationalDatabaseCertV9: Type.Boolean(),
           isRespWebDesignCert: Type.Boolean(),
           isRespWebDesignCertV9: Type.Boolean(),
           isSciCompPyCertV7: Type.Boolean(),
+          isFrontEndLibsCertV9: Type.Boolean(),
+          isBackEndDevApisCertV9: Type.Boolean(),
+          isFullStackDeveloperCertV9: Type.Boolean(),
+          isB1EnglishCert: Type.Boolean(),
+          isA2SpanishCert: Type.Boolean(),
+          isA2ChineseCert: Type.Boolean(),
+          isA1ChineseCert: Type.Boolean(),
           keyboardShortcuts: Type.Boolean(),
           linkedin: Type.Optional(Type.String()),
           location: Type.String(),
@@ -109,7 +123,8 @@ export const getSessionUser = {
               url: Type.String()
             })
           ),
-          profileUI: Type.Optional(profileUI),
+          experience: Type.Optional(Type.Array(experience)),
+          profileUI,
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),
           twitter: Type.Optional(Type.String()),

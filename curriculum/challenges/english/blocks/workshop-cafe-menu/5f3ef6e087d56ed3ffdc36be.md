@@ -1,8 +1,8 @@
 ---
 id: 5f3ef6e087d56ed3ffdc36be
-title: Step 61
+title: Step 57
 challengeType: 0
-dashedName: step-61
+dashedName: step-57
 ---
 
 # --description--
@@ -48,8 +48,8 @@ assert.equal(establishedFont, "italic");
   <body>
     <div class="menu">
       <main>
---fcc-editable-region--
         <h1>CAMPER CAFE</h1>
+--fcc-editable-region--
         <p>Est. 2020</p>
 --fcc-editable-region--
         <section>

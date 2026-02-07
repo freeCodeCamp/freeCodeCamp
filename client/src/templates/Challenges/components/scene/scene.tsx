@@ -17,6 +17,7 @@ import ChallengeTranscript from '../challenge-transcript';
 import { sounds, backgrounds, characterAssets } from './scene-assets';
 import Character from './character';
 import { SceneSubject } from './scene-subject';
+import { buildTranscript } from './scene-helpers';
 
 import './scene.css';
 
@@ -166,25 +167,6 @@ export function Scene({
 
   const audioLoaded = () => {
     setSceneIsReady(true);
-  };
-
-  const buildTranscript = () => {
-    let transcriptText = '';
-    commands.forEach(command => {
-      if (command.character && command.dialogue && command.startTime) {
-        transcriptText =
-          transcriptText +
-          '\n' +
-          '<strong>' +
-          command.character +
-          '</strong>:' +
-          ' ' +
-          command.dialogue.text +
-          '\n';
-      }
-    });
-
-    return transcriptText;
   };
 
   const handlePlay = useCallback(() => {
@@ -369,7 +351,7 @@ export function Scene({
     };
   }, []);
 
-  const transcriptText = buildTranscript();
+  const transcriptText = buildTranscript(commands);
   return (
     <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
       <div
@@ -411,7 +393,10 @@ export function Scene({
                 }`}
               >
                 <div className='scene-dialogue-label'>{dialogue.label}</div>
-                <div className='scene-dialogue-text'>{dialogue.text}</div>
+                <div
+                  className='scene-dialogue-text'
+                  dangerouslySetInnerHTML={{ __html: dialogue.text }}
+                />
               </div>
             )}
           </>
@@ -452,7 +437,7 @@ export function Scene({
           </button>
         )}
       </div>
-      <ChallengeTranscript transcript={transcriptText} />
+      <ChallengeTranscript transcript={transcriptText} isDialogue={true} />
       <Spacer size='m' />
     </Col>
   );

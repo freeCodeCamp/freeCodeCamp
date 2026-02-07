@@ -1,6 +1,6 @@
 {
   "name": "Implement the Quicksort Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "usesMultifileEditor": true,
   "dashedName": "lab-quicksort",
   "blockLayout": "link",

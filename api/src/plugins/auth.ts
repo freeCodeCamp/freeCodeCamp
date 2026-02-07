@@ -156,9 +156,12 @@ const auth: FastifyPluginCallback = (fastify, _options, done) => {
       });
 
     if (!token) {
-      return {
-        message: 'Token not found'
-      };
+      void reply.code(403);
+      return reply.send(
+        ERRORS.FCC_ENOENT_EXAM_ENVIRONMENT_AUTHORIZATION_TOKEN(
+          'Provided token is revoked.'
+        )
+      );
     }
     // We're using token.userId since it's possible for the user record to be
     // malformed and for prisma to throw while trying to find the user.

@@ -8,7 +8,13 @@ describe('fill-in-the-blanks plugin', () => {
     mockFillInTheBlankTwoSentencesAST,
     mockFillInTheBlankBadSentence,
     mockFillInTheBlankBadParagraph,
-    mockFillInTheBlankMultipleBlanks;
+    mockFillInTheBlankMultipleBlanks,
+    mockChineseFillInTheBlankAST,
+    mockChineseFillInTheBlankNoPinyinAST,
+    mockChineseFillInTheBlankNoHanziAST,
+    mockChineseFillInTheBlankWrongAnswerFormatAST,
+    mockChineseFillInTheBlankBlankAnswerMismatchAST,
+    mockChineseFillInTheBlankLatinAST;
   const plugin = addFillInTheBlankQuestion();
   let file = { data: {} };
 
@@ -28,6 +34,24 @@ describe('fill-in-the-blanks plugin', () => {
     );
     mockFillInTheBlankMultipleBlanks = await parseFixture(
       'with-fill-in-the-blank-many-blanks.md'
+    );
+    mockChineseFillInTheBlankAST = await parseFixture(
+      'with-chinese-fill-in-the-blank.md'
+    );
+    mockChineseFillInTheBlankNoPinyinAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-no-pinyin.md'
+    );
+    mockChineseFillInTheBlankNoHanziAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-no-hanzi.md'
+    );
+    mockChineseFillInTheBlankWrongAnswerFormatAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-wrong-answer-format.md'
+    );
+    mockChineseFillInTheBlankBlankAnswerMismatchAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-blank-answer-mismatch.md'
+    );
+    mockChineseFillInTheBlankLatinAST = await parseFixture(
+      'with-chinese-fill-in-the-blank-latin.md'
     );
   });
 
@@ -55,15 +79,15 @@ describe('fill-in-the-blanks plugin', () => {
     expect(Array.isArray(testObject.blanks)).toBe(true);
     expect(testObject.blanks.length).toBe(3);
     expect(testObject.blanks[0]).toHaveProperty('answer');
-    expect(typeof testObject.blanks[0].answer).toBe('string');
+    expect(testObject.blanks[0].answer).toEqual('are');
     expect(testObject.blanks[0]).toHaveProperty('feedback');
     expect(typeof testObject.blanks[0].feedback).toBe('string');
     expect(testObject.blanks[1]).toHaveProperty('answer');
-    expect(typeof testObject.blanks[1].answer).toBe('string');
+    expect(testObject.blanks[1].answer).toEqual('right');
     expect(testObject.blanks[1]).toHaveProperty('feedback');
     expect(typeof testObject.blanks[1].feedback).toBe('string');
     expect(testObject.blanks[2]).toHaveProperty('answer');
-    expect(typeof testObject.blanks[2].answer).toBe('string');
+    expect(testObject.blanks[2].answer).toEqual('Nice');
     expect(testObject.blanks[2]).toHaveProperty('feedback');
     expect(testObject.blanks[2].feedback).toBeNull();
   });
@@ -166,5 +190,87 @@ Example of good formatting:
       feedback:
         '<p>The verb <code>to be</code> is an irregular verb. When conjugated with the pronoun <code>you</code>, <code>be</code> becomes <code>are</code>. For example: <code>You are an English learner.</code></p>'
     });
+  });
+
+  it('should parse Chinese fill-in-the-blank sentence and answer correctly if they are in `hanzi (pinyin)` format', () => {
+    file.data.lang = 'zh-CN';
+    file.data.inputType = 'pinyin-to-hanzi';
+    plugin(mockChineseFillInTheBlankAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.inputType).toBe('pinyin-to-hanzi');
+
+    expect(testObject.sentence).toBe(
+      '<p>BLANK BLANK，BLANK <ruby>是王华<rp>(</rp><rt>shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你<rp>(</rp><rt>qǐng wèn nǐ</rt><rp>)</rp></ruby> BLANK <ruby>什么名字<rp>(</rp><rt>shén me míng zi</rt><rp>)</rp></ruby>？</p>'
+    );
+    expect(testObject.blanks.length).toBe(4);
+
+    expect(testObject.blanks[0].answer).toEqual('你 (nǐ)');
+    expect(testObject.blanks[0].feedback).toBe(
+      '<p>Feedback text containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>'
+    );
+
+    expect(testObject.blanks[1].answer).toEqual('好 (hǎo)');
+    expect(testObject.blanks[1].feedback).toBe(
+      '<p>This means "good" or "well".</p>'
+    );
+
+    expect(testObject.blanks[2].answer).toEqual('我 (wǒ)');
+    expect(testObject.blanks[2].feedback).toBe('<p>This means "I".</p>');
+
+    expect(testObject.blanks[3].answer).toEqual('叫 (jiào)');
+    expect(testObject.blanks[3].feedback).toBe(
+      '<p>This means "to be called".</p>'
+    );
+  });
+
+  it('should return sentence as plain text when sentence does not contain pinyin', () => {
+    file.data.lang = 'zh-CN';
+    plugin(mockChineseFillInTheBlankNoPinyinAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe('<p>BLANK好</p>');
+    expect(testObject.blanks[0].answer).toEqual('你 (nǐ)');
+  });
+
+  it('should return sentence as plain text when sentence does not contain hanzi', () => {
+    file.data.lang = 'zh-CN';
+    plugin(mockChineseFillInTheBlankNoHanziAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe('<p>BLANK hǎo</p>');
+    expect(testObject.blanks[0].answer).toEqual('nǐ');
+  });
+
+  it("should throw if the number of blanks in the sentence doesn't match the number of answers", () => {
+    file.data.lang = 'zh-CN';
+    expect(() => {
+      plugin(mockChineseFillInTheBlankBlankAnswerMismatchAST, file);
+    }).toThrow(`Number of BLANKs doesn't match the number of answers.`);
+  });
+
+  it('should throw error when inputType is pinyin-to-hanzi but answer is not in hanzi-pinyin format', () => {
+    file.data.lang = 'zh-CN';
+    file.data.inputType = 'pinyin-to-hanzi';
+
+    expect(() => {
+      plugin(mockChineseFillInTheBlankWrongAnswerFormatAST, file);
+    }).toThrow(
+      "When inputType is 'pinyin-to-hanzi', all answers must be in 'hanzi (pinyin)' format."
+    );
+  });
+
+  it('should separate BLANK and adjacent Latin text in Chinese sentences', () => {
+    file.data.lang = 'zh-CN';
+    plugin(mockChineseFillInTheBlankLatinAST, file);
+    const testObject = file.data.fillInTheBlank;
+
+    expect(testObject.sentence).toBe(
+      '<p><ruby>我<rp>(</rp><rt>wǒ</rt><rp>)</rp></ruby> BLANK UI <ruby>设计师<rp>(</rp><rt>shè jì shī</rt><rp>)</rp></ruby> 。</p>'
+    );
+    expect(testObject.blanks.length).toBe(1);
+
+    expect(testObject.blanks[0].answer).toEqual('是 (shì)');
+    expect(testObject.blanks[0].feedback).toBe('<p>Feedback text.</p>');
   });
 });

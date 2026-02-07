@@ -1,0 +1,13 @@
+{
+  "name": "B1 English for Developers Certification Exam",
+  "isUpcomingChange": false,
+  "dashedName": "en-b1-certification-exam",
+  "helpCategory": "English",
+  "challengeOrder": [
+    {
+      "id": "694106b87224ea1c1a9d3201",
+      "title": "B1 English for Developers Certification Exam"
+    }
+  ],
+  "blockLayout": "project-list"
+}

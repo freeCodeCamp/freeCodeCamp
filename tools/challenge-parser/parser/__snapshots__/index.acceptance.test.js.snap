@@ -409,8 +409,7 @@ exports[`challenge parser > should parse a simple md file 1`] = `
         "tail": "",
       },
       {
-        "contents": "var x = 'y';
-\`\`",
+        "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
         "id": "",
@@ -586,8 +585,7 @@ exports[`challenge parser > should parse gfm strikethrough and frontmatter 1`] =
         "tail": "",
       },
       {
-        "contents": "var x = 'y';
-\`\`",
+        "contents": "var x = 'y';",
         "ext": "js",
         "head": "",
         "id": "",
@@ -688,15 +686,18 @@ exports[`challenge parser > should parse video questions 1`] = `
       "answers": [
         {
           "answer": "<p>Some inline <code>code</code></p>",
+          "audioId": null,
           "feedback": "<p>That is not correct.</p>",
         },
         {
           "answer": "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
+          "audioId": null,
           "feedback": null,
         },
         {
           "answer": "<p><code> code in </code> code tags</p>",
+          "audioId": null,
           "feedback": null,
         },
       ],

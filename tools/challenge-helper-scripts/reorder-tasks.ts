@@ -1,4 +1,4 @@
-import { updateTaskMeta, updateTaskMarkdownFiles } from './utils';
+import { updateTaskMeta, updateTaskMarkdownFiles } from './utils.js';
 
 const reorderTasks = async () => {
   await updateTaskMeta();

@@ -8,14 +8,17 @@ import {
   vi
 } from 'vitest';
 
-import { Certification } from '../../../../shared/config/certification-settings.js';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import {
   defaultUserEmail,
   defaultUserId,
   devLogin,
+  resetDefaultUser,
   setupServer,
   superRequest
 } from '../../../vitest.utils.js';
+import { getChallenges } from '../../utils/get-challenges.js';
+import { createCertLookup } from './certificate.js';
 
 describe('certificate routes', () => {
   setupServer();
@@ -33,25 +36,13 @@ describe('certificate routes', () => {
 
     describe('PUT /certificate/verify', () => {
       beforeEach(async () => {
+        await resetDefaultUser();
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
             name: 'fcc',
-            isRespWebDesignCert: false,
-            isJsAlgoDataStructCert: false,
-            isFrontEndLibsCert: false,
-            is2018DataVisCert: false,
-            isRelationalDatabaseCertV8: false,
-            isApisMicroservicesCert: false,
-            isQaCertV7: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
-            isInfosecCertV7: false,
-            isMachineLearningPyCertV7: false,
-            isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false,
-            username: 'fcc'
+            username: 'fcc',
+            completedChallenges: []
           }
         });
       });
@@ -135,6 +126,8 @@ describe('certificate routes', () => {
           },
           isCertMap: {
             is2018DataVisCert: false,
+            isA2EnglishCert: false,
+            isB1EnglishCert: false,
             isApisMicroservicesCert: false,
             isBackEndCert: false,
             isCollegeAlgebraPyCertV8: false,
@@ -148,10 +141,14 @@ describe('certificate routes', () => {
             isInfosecQaCert: false,
             isJsAlgoDataStructCert: false,
             isMachineLearningPyCertV7: false,
+            isPythonCertV9: false,
             isQaCertV7: false,
             isRelationalDatabaseCertV8: false,
+            isRelationalDatabaseCertV9: false,
             isRespWebDesignCert: false,
-            isSciCompPyCertV7: false
+            isSciCompPyCertV7: false,
+            isJavascriptCertV9: false,
+            isRespWebDesignCertV9: false
           },
           completedChallenges: []
         });
@@ -162,7 +159,6 @@ describe('certificate routes', () => {
         await fastifyTestInstance.prisma.user.updateMany({
           where: { email: defaultUserEmail },
           data: {
-            completedChallenges: [],
             isRespWebDesignCert: true
           }
         });
@@ -226,19 +222,25 @@ describe('certificate routes', () => {
               { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
-            isRespWebDesignCert: false,
-            isJsAlgoDataStructCertV8: true,
-            isFrontEndLibsCert: true,
             is2018DataVisCert: true,
-            isRelationalDatabaseCertV8: true,
+            isA2EnglishCert: true,
+            isB1EnglishCert: true,
             isApisMicroservicesCert: true,
-            isQaCertV7: true,
-            isSciCompPyCertV7: true,
-            isDataAnalysisPyCertV7: true,
-            isInfosecCertV7: true,
-            isMachineLearningPyCertV7: true,
             isCollegeAlgebraPyCertV8: true,
-            isFoundationalCSharpCertV8: true
+            isDataAnalysisPyCertV7: true,
+            isFoundationalCSharpCertV8: true,
+            isFrontEndLibsCert: true,
+            isInfosecCertV7: true,
+            isJavascriptCertV9: true,
+            isJsAlgoDataStructCertV8: true,
+            isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
+            isQaCertV7: true,
+            isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
+            isRespWebDesignCert: false,
+            isRespWebDesignCertV9: true,
+            isSciCompPyCertV7: true
           }
         });
 
@@ -292,27 +294,37 @@ describe('certificate routes', () => {
             }
           },
           isCertMap: {
+            is2018DataVisCert: false,
+            isA1ChineseCert: false,
+            isA2ChineseCert: false,
             isA2EnglishCert: false,
-            isRespWebDesignCert: true,
-            isRespWebDesignCertV9: false,
+            isA2SpanishCert: false,
+            isApisMicroservicesCert: false,
+            isB1EnglishCert: false,
+            isBackEndCert: false,
+            isBackEndDevApisCertV9: false,
+            isCollegeAlgebraPyCertV8: false,
+            isDataAnalysisPyCertV7: false,
+            isDataVisCert: false,
+            isFoundationalCSharpCertV8: false,
+            isFrontEndCert: false,
+            isFrontEndLibsCert: false,
+            isFrontEndLibsCertV9: false,
+            isFullStackCert: false,
+            isFullStackDeveloperCertV9: false,
+            isInfosecCertV7: false,
+            isInfosecQaCert: false,
             isJavascriptCertV9: false,
             isJsAlgoDataStructCert: false,
-            isFrontEndLibsCert: false,
-            is2018DataVisCert: false,
-            isApisMicroservicesCert: false,
-            isInfosecQaCert: false,
-            isQaCertV7: false,
-            isInfosecCertV7: false,
-            isFrontEndCert: false,
-            isBackEndCert: false,
-            isDataVisCert: false,
-            isFullStackCert: false,
-            isSciCompPyCertV7: false,
-            isDataAnalysisPyCertV7: false,
+            isJsAlgoDataStructCertV8: false,
             isMachineLearningPyCertV7: false,
+            isPythonCertV9: false,
+            isQaCertV7: false,
             isRelationalDatabaseCertV8: false,
-            isCollegeAlgebraPyCertV8: false,
-            isFoundationalCSharpCertV8: false
+            isRelationalDatabaseCertV9: false,
+            isRespWebDesignCert: true,
+            isRespWebDesignCertV9: false,
+            isSciCompPyCertV7: false
           },
           completedChallenges: [
             {
@@ -450,5 +462,34 @@ describe('certificate routes', () => {
         expect(response.status).toBe(500);
       });
     });
+  });
+});
+
+describe('createCertLookup', () => {
+  let challenges: ReturnType<typeof getChallenges>;
+
+  beforeAll(() => {
+    // TODO: create a mock challenges array specific to these tests.
+    challenges = getChallenges();
+  });
+
+  test('should create a lookup for all certifications', () => {
+    const certLookup = createCertLookup(challenges);
+
+    for (const cert of Object.values(Certification)) {
+      const certData = certLookup[cert];
+      expect(certData).toHaveProperty('id');
+      expect(certData).toHaveProperty('tests');
+      expect(certData).toHaveProperty('challengeType');
+    }
+  });
+
+  test('each certification should have a unique challenge id', () => {
+    const certLookup = createCertLookup(challenges);
+    const ids = Object.values(certLookup)
+      .map(({ id }) => id)
+      .sort();
+    const uniqueIds = Array.from(new Set(ids)).sort();
+    expect(uniqueIds).toEqual(ids);
   });
 });

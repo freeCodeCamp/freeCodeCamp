@@ -1,0 +1,11 @@
+{
+  "name": "NodeJS Intro Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-node-js-intro",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "69008f1895af88fc335cb0b6", "title": "NodeJs Intro Review" }
+  ],
+  "blockLabel": "review"
+}

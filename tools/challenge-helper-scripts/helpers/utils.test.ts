@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { insertInto } from './utils';
+import { insertInto } from './utils.js';
 
 describe('insertInto', () => {
   it('should not modify the original array', () => {

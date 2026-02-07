@@ -1,33 +1,33 @@
-import { existsSync } from 'fs';
 import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared/config/curriculum';
-import { BlockLayouts, BlockLabel } from '../../shared/config/blocks';
+} from '@freecodecamp/shared/config/curriculum';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import {
   createQuizFile,
   createStepFile,
   validateBlockName,
   getAllBlocks
-} from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
+} from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { IntroJson, parseJson } from './helpers/parse-json.js';
 import {
   ChapterModuleSuperblockStructure,
   updateChapterModuleSuperblockStructure,
   updateSimpleSuperblockStructure
-} from './helpers/create-project';
+} from './helpers/create-project.js';
+import { withTrace } from './helpers/utils.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -39,17 +39,6 @@ const helpCategories = [
   'Euler',
   'Rosetta'
 ] as const;
-
-type BlockInfo = {
-  title: string;
-  intro: string[];
-};
-
-type SuperBlockInfo = {
-  blocks: Record<string, BlockInfo>;
-};
-
-type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
 
 interface CreateProjectArgs {
   superBlock: SuperBlocks;
@@ -87,7 +76,8 @@ async function createProject(projectArgs: CreateProjectArgs) {
     }
     void updateChapterModuleSuperblockStructure(
       projectArgs.block,
-      { order: position, chapter, module },
+      // Convert human-friendly (1-based) position to 0-based index for insertion.
+      { order: position - 1, chapter, module },
       superblockFilename
     );
   } else {
@@ -148,12 +138,6 @@ async function createProject(projectArgs: CreateProjectArgs) {
       'Missing argument: blockLabel when updating intro markdown'
     );
   }
-
-  void createIntroMD(
-    projectArgs.superBlock,
-    projectArgs.block,
-    projectArgs.title
-  );
 }
 
 async function updateIntroJson(
@@ -182,7 +166,7 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID,
+  challengeId: ObjectId,
   order?: number,
   blockLabel?: string,
   blockLayout?: string
@@ -202,20 +186,13 @@ async function createMetaJson(
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: 'Step 1' }];
 
   await writeBlockStructure(block, newMeta);
 }
 
-async function createFirstChallenge(block: string): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
+async function createFirstChallenge(block: string): Promise<ObjectId> {
   // TODO: would be nice if the extension made sense for the challenge, but, at
   // least until react I think they're all going to be html anyway.
   const challengeSeeds = [
@@ -227,7 +204,7 @@ async function createFirstChallenge(block: string): Promise<ObjectID> {
   ];
   // including trailing slash for compatibility with createStepFile
   return createStepFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     stepNum: 1,
     challengeType: 0,
     challengeSeeds,
@@ -239,39 +216,12 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number
-): Promise<ObjectID> {
-  const newChallengeDir = path.resolve(
-    __dirname,
-    `../../curriculum/challenges/english/${block}`
-  );
-  if (!existsSync(newChallengeDir)) {
-    await withTrace(fs.mkdir, newChallengeDir);
-  }
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
-  });
-}
-
-function parseJson<JsonSchema>(filePath: string) {
-  return withTrace(fs.readFile, filePath, 'utf8').then(
-    // unfortunately, withTrace does not correctly infer that the third argument
-    // is a string, so it uses the (path, options?) overload and we have to cast
-    // result to string.
-    result => JSON.parse(result as string) as JsonSchema
-  );
-}
-
-// fs Promise functions return errors, but no stack trace.  This adds back in
-// the stack trace.
-function withTrace<Args extends unknown[], Result>(
-  fn: (...x: Args) => Promise<Result>,
-  ...args: Args
-): Promise<Result> {
-  return fn(...args).catch((reason: Error) => {
-    throw Error(reason.message);
   });
 }
 
@@ -306,7 +256,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },

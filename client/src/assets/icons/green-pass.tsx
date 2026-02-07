@@ -11,6 +11,7 @@ function GreenPass(props: GreenPassProps): JSX.Element {
   const { hushScreenReaderText = false, ...rest } = props;
   return (
     <svg
+      data-testid='green-pass'
       {...(hushScreenReaderText && { 'aria-hidden': true })}
       {...(!hushScreenReaderText && { 'aria-label': t('icons.passed') })}
       height='15'

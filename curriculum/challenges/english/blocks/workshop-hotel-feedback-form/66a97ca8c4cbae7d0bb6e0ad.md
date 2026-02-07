@@ -1,8 +1,8 @@
 ---
 id: 66a97ca8c4cbae7d0bb6e0ad
-title: Step 32
+title: Step 29
 challengeType: 0
-dashedName: step-32
+dashedName: step-29
 ---
 
 # --description--
@@ -138,9 +138,9 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
         <fieldset>
           <legend>Was this your first time at our hotel?</legend>
-          <input id="yes-option" type="radio" name="hotel-stay" />
+          <input id="yes-option" type="radio" name="hotel-stay" value="yes" />
           <label for="yes-option">Yes</label>
-          <input id="no-option" type="radio" name="hotel-stay" />
+          <input id="no-option" type="radio" name="hotel-stay" value="no" />
           <label for="no-option">No</label>
         </fieldset>
 
@@ -149,30 +149,30 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
             Why did you choose to stay at our hotel? (Check all that apply)
           </legend>
 
-          <input type="checkbox" id="ads" name="ads" value="ads" />
+          <input type="checkbox" id="ads" name="choice" value="ads" />
           <label for="ads">Social Media Ads</label>
 
           <input
             type="checkbox"
             id="recommendation"
-            name="recommendation"
+            name="choice"
             value="recommendation"
           />
           <label for="recommendation">Personal Recommendation</label>
           
-          <input type="checkbox" id="location" name="location" value="location" />
+          <input type="checkbox" id="location" name="choice" value="location" />
           <label for="location">Location</label>
 
           <input
             checked
             type="checkbox"
             id="reputation"
-            name="reputation"
+            name="choice"
             value="reputation"
           />
           <label for="reputation">Reputation</label>
           
-          <input type="checkbox" id="price" name="price" value="price" />
+          <input type="checkbox" id="price" name="choice" value="price" />
           <label for="price">Price</label>
         </fieldset>
 
@@ -191,11 +191,11 @@ assert.exists(document.querySelector('fieldset:nth-of-type(4) select#food option
 
           <label for="food">How was the food?</label>
 
-          --fcc-editable-region--
           <select name="food" id="food">
-            
-          </select>
           --fcc-editable-region--
+            
+          --fcc-editable-region--
+          </select>
         </fieldset>
       </form>
     </main>

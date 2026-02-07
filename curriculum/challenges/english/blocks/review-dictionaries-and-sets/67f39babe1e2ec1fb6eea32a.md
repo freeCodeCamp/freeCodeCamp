@@ -117,6 +117,8 @@ Output:
 for product in products.keys():
     print(product)
 
+# Or
+
 for product in products:
     print(product)
 ```
@@ -239,7 +241,7 @@ my_set.clear()
 - **`issubset()` and `issuperset()` Methods**: The `issubset()` and the `issuperset()` methods check if a set is a subset or superset of another set, respectively.
 
 ```python
-my_set = {1, 2, 3, 4, 5} 
+my_set = {1, 2, 3, 4, 5}
 your_set = {2, 3, 4, 5}
 
 print(your_set.issubset(my_set)) # True
@@ -249,37 +251,52 @@ print(my_set.issuperset(your_set)) # True
 - **`isdisjoint()` Method**: The `isdisjoint()` method checks if two sets are disjoint, if they don't have elements in common.
 
 ```python
-print(my_set.isdisjoint(your_set)) # False
+my_set = {1, 2, 3}
+your_set = {4, 5, 6}
+
+print(my_set.isdisjoint(your_set)) # True
 ```
 
 - **Union Operator (`|`)**: The union operator `|` returns a new set with all the elements from both sets.
 
 ```python
+my_set = {1, 2, 3}
+your_set = {4, 5, 6}
+
 my_set | your_set # {1, 2, 3, 4, 5, 6}
 ```
 
 - **Intersection Operator (`&`)**: The intersection operator `&` returns a new set with only the elements that the sets have in common.
 
 ```python
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set & your_set # {2, 3, 4}
 ```
 
 - **Difference Operator (`-`)**: The difference operator `-` returns a new set with the elements of the first set that are not in the other sets.
 
 ```python
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set - your_set # {1, 5}
 ```
 
-- **Symmetric Difference Operator (`^`)**: The symmetric difference operator `^` returns a new set with the elements that are either on the first or the second set, but not both.
+- **Symmetric Difference Operator (`^`)**: The symmetric difference operator `^` returns a new set with the elements that are either in the first or the second set, but not both.
 
 ```python
+my_set = {1, 2, 3, 4, 5}
+your_set = {2, 3, 4, 6}
+
 my_set ^ your_set # {1, 5, 6}
 ```
 
 - **`in` Operator**: You can check if an element is in a set or not with the `in` operator.
 
 ```python
-print(5 in my_set)
+print(5 in my_set) # True
 ```
 
 ## Python Standard Library
@@ -363,7 +380,7 @@ from module_name import name1 as alias1, name2 as alias2
 from module_name import *
 ```
 
-For example, if you this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
+For example, if you use this to import the `math` module, you'll be able to call any function defined in that module without specifying the name of the module as a prefix.
 
 ```python
 from math import *

@@ -40,7 +40,6 @@ import {
   FCC_ENABLE_DEV_LOGIN_MODE,
   FCC_ENABLE_SWAGGER_UI,
   FCC_ENABLE_SHADOW_CAPTURE,
-  FCC_ENABLE_EXAM_ENVIRONMENT,
   FCC_ENABLE_SENTRY_ROUTES,
   GROWTHBOOK_FASTIFY_API_HOST,
   GROWTHBOOK_FASTIFY_CLIENT_KEY
@@ -65,7 +64,7 @@ type FastifyInstanceWithTypeProvider = FastifyInstance<
 const ajv = new Ajv({
   coerceTypes: 'array', // change data type of data to match type keyword
   useDefaults: true, // replace missing properties and items with the values from corresponding default keyword
-  removeAdditional: true, // remove additional properties
+  removeAdditional: 'all', // remove additional properties
   uriResolver,
   addUsedSchema: false,
   // Explicitly set allErrors to `false`.
@@ -223,15 +222,14 @@ export const build = async (
     }
   });
 
-  if (FCC_ENABLE_EXAM_ENVIRONMENT ?? fastify.gb.isOn('exam-environment')) {
-    void fastify.register(function (fastify, _opts, done) {
-      fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+  void fastify.register(function (fastify, _opts, done) {
+    fastify.addHook('onRequest', fastify.authorizeExamEnvironmentToken);
+    fastify.addHook('onRequest', fastify.send401IfNoUser);
 
-      void fastify.register(examEnvironmentValidatedTokenRoutes);
-      done();
-    });
-    void fastify.register(examEnvironmentOpenRoutes);
-  }
+    void fastify.register(examEnvironmentValidatedTokenRoutes);
+    done();
+  });
+  void fastify.register(examEnvironmentOpenRoutes);
 
   if (FCC_ENABLE_SENTRY_ROUTES ?? fastify.gb.isOn('sentry-routes')) {
     void fastify.register(publicRoutes.sentryRoutes);

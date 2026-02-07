@@ -21,6 +21,7 @@
             "lecture-working-with-string-search-and-slice-methods",
             "workshop-string-inspector",
             "lecture-working-with-string-formatting-methods",
+            "workshop-string-formatter",
             "lecture-working-with-string-modification-methods",
             "workshop-string-transformer",
             "review-javascript-strings",
@@ -31,8 +32,11 @@
           "dashedName": "javascript-booleans-and-numbers",
           "blocks": [
             "lecture-working-with-numbers-and-arithmetic-operators",
+            "lab-debug-type-coercion-errors",
             "lecture-working-with-operator-behavior",
+            "lab-debug-increment-and-decrement-operator-errors",
             "lecture-working-with-comparison-and-boolean-operators",
+            "workshop-logic-checker-app",
             "lecture-working-with-unary-and-bitwise-operators",
             "lecture-working-with-conditional-logic-and-math-methods",
             "workshop-mathbot",
@@ -69,7 +73,6 @@
             "workshop-shopping-list",
             "lab-lunch-picker-program",
             "lab-golf-score-translator",
-            "lab-reverse-a-string",
             "lecture-working-with-common-array-methods",
             "review-javascript-arrays",
             "quiz-javascript-arrays"
@@ -110,6 +113,7 @@
             "lecture-working-with-types-and-objects",
             "lecture-working-with-arrays-variables-and-naming-practices",
             "lecture-working-with-code-quality-and-execution-concepts",
+            "lab-reverse-a-string",
             "lab-largest-number-finder",
             "lab-first-element-finder",
             "lab-slice-and-splice",
@@ -128,7 +132,6 @@
             "lab-html-entitiy-converter",
             "lab-odd-fibonacci-sum-calculator",
             "lab-element-skipper",
-            "lab-optional-arguments-sum-function",
             "review-javascript-fundamentals",
             "quiz-javascript-fundamentals"
           ]
@@ -203,6 +206,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-markdown-to-html-converter",
           "blocks": ["lab-markdown-to-html-converter"]
         },
@@ -235,6 +239,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-drum-machine",
           "blocks": ["lab-drum-machine"]
         },
@@ -243,12 +248,12 @@
           "blocks": [
             "lecture-working-with-maps-and-sets",
             "workshop-plant-nursery-catalog",
-            "lab-voting-system",
             "review-javascript-maps-and-sets",
             "quiz-javascript-maps-and-sets"
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-voting-system",
           "blocks": ["lab-voting-system"]
         },
@@ -273,6 +278,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-bank-account-manager",
           "blocks": ["lab-bank-account-manager"]
         },
@@ -280,17 +286,40 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-countup",
+            "lab-countdown",
+            "lab-range-of-numbers",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
             "review-recursion",
             "quiz-recursion"
           ]
         },
+        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "algorithms",
+          "comingSoon": true,
+          "blocks": [
+            "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "lab-bubble-sort-algorithm"
+          ]
+        },
+        {
+          "dashedName": "graphs-and-trees",
+          "comingSoon": true,
+          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+        },
+        {
+          "dashedName": "dynamic-programming",
+          "comingSoon": true,
+          "blocks": []
+        },
         {
           "dashedName": "functional-programming",
           "blocks": [
             "lecture-understanding-functional-programming",
             "workshop-recipe-ingredient-converter",
+            "lab-optional-arguments-sum-function",
             "lab-sorting-visualizer",
             "review-javascript-functional-programming",
             "quiz-javascript-functional-programming"
@@ -307,6 +336,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-weather-app",
           "blocks": ["lab-weather-app"]
         },
@@ -320,7 +350,6 @@
     {
       "chapterType": "exam",
       "dashedName": "javascript-certification-exam",
-      "comingSoon": true,
       "modules": [
         {
           "dashedName": "javascript-certification-exam",

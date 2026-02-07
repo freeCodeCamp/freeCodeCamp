@@ -5,7 +5,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 import {
   currentCertifications,
   legacyCertifications as legacyCerts
-} from '../shared/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import { alertToBeVisible } from './utils/alerts';
 
 const settingsTestIds = {
@@ -52,7 +52,7 @@ const legacyCertifications = [
 
 test.describe('Settings - Certified User', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto('/settings');
   });
 
@@ -158,11 +158,19 @@ test.describe('Settings - Certified User', () => {
         .filter({ hasText: translations.settings.labels['my-portfolio'] })
     ).toBeVisible();
     await expect(
+      page
+        .getByRole('group', {
+          name: translations.settings.labels['my-experience']
+        })
+        .locator('p')
+        .filter({ hasText: translations.settings.labels['my-experience'] })
+    ).toBeVisible();
+    await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });
@@ -232,7 +240,7 @@ test.describe('Settings - Certified User', () => {
     }
 
     // Danger Zone
-    await expect(page.getByText('Danger Zone')).toBeVisible();
+    await expect(page.getByRole('main').getByText('Danger Zone')).toBeVisible();
     await expect(
       page.getByText(
         'Please be careful. Changes in this section are permanent.'
@@ -257,13 +265,13 @@ test.describe('Settings - Certified User', () => {
 test.describe('Settings - Certified User without Full Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
-      'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+      'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
     );
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
@@ -297,12 +305,12 @@ test.describe('Settings - New User', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
     await page.goto('/settings');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
   test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({

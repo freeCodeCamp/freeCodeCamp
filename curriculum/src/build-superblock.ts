@@ -4,21 +4,22 @@ import { isEmpty } from 'lodash';
 import debug from 'debug';
 
 import { parseMD } from '../../tools/challenge-parser/parser';
-import { createPoly } from '../../shared-dist/utils/polyvinyl';
-import { isAuditedSuperBlock } from '../../shared-dist/utils/is-audited';
+import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import {
   CommentDictionary,
   translateCommentsInChallenge
 } from '../../tools/challenge-parser/translation-parser';
-import { SuperBlocks } from '../../shared-dist/config/curriculum';
-import type { Chapter } from '../../shared-dist/config/chapters';
-import { Certification } from '../../shared-dist/config/certification-settings';
-import { getSuperOrder } from './utils.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
+import { getSuperOrder } from './super-order.js';
 import type {
   BlockStructure,
   Challenge,
   ChallengeFile
 } from './file-handler.js';
+import { SHOW_UPCOMING_CHANGES } from './config';
 
 const log = debug('fcc:build-superblock');
 
@@ -372,10 +373,7 @@ export class BlockCreator {
       throw Error(`Block directory not found: ${blockContentDir}`);
     }
 
-    if (
-      block.isUpcomingChange &&
-      process.env.SHOW_UPCOMING_CHANGES !== 'true'
-    ) {
+    if (block.isUpcomingChange && !SHOW_UPCOMING_CHANGES) {
       log(`Ignoring upcoming block ${blockName}`);
       return null;
     }

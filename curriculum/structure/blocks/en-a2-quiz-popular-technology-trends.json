@@ -1,0 +1,11 @@
+{
+  "name": "Technology Trends Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-popular-technology-trends",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6960302e1671caf83a5bbf99", "title": "Technology Trends Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

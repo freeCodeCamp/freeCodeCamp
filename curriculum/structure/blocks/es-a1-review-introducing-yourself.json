@@ -1,11 +1,12 @@
 {
   "name": "Introducing Yourself Review",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-review-introducing-yourself",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-list",
   "challengeOrder": [
-    { "id": "68dc753010b6b271ac564e93", "title": "Dialogue 1: I'm Tom" }
+    { "id": "68dc753010b6b271ac564e93", "title": "Grammar Highlights" },
+    { "id": "691e2de9727ca24425272790", "title": "Glossary" }
   ],
   "blockLabel": "review"
 }

@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults } from '../types.js';
+import { profileUI, examResults, experience } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -47,12 +47,14 @@ export const getPublicProfile = {
                   examResults
                 })
               ),
+              experience: Type.Array(experience),
               // TODO(Post-MVP): return completedSurveys? Presumably not, since why
               // would this need to be public.
               githubProfile: Type.Optional(Type.String()),
               is2018DataVisCert: Type.Boolean(),
               is2018FullStackCert: Type.Boolean(),
               isA2EnglishCert: Type.Boolean(),
+              isB1EnglishCert: Type.Boolean(),
               isApisMicroservicesCert: Type.Boolean(),
               isBackEndCert: Type.Boolean(),
               isCheater: Type.Boolean(),
@@ -72,8 +74,10 @@ export const getPublicProfile = {
               isJsAlgoDataStructCert: Type.Boolean(),
               isJsAlgoDataStructCertV8: Type.Boolean(),
               isMachineLearningPyCertV7: Type.Boolean(),
+              isPythonCertV9: Type.Boolean(),
               isQaCertV7: Type.Boolean(),
               isRelationalDatabaseCertV8: Type.Boolean(),
+              isRelationalDatabaseCertV9: Type.Boolean(),
               isRespWebDesignCert: Type.Boolean(),
               isRespWebDesignCertV9: Type.Boolean(),
               isSciCompPyCertV7: Type.Boolean(),

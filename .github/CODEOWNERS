@@ -8,48 +8,29 @@
 # -------------------------------------------------
 
 # -------------------------------------------------
-# All files are owned by dev team
+# Files that need attention from primary teams
 # -------------------------------------------------
 
-* @freecodecamp/dev-team
+# --- All files
+* @freecodecamp/dev-team @freecodecamp/curriculum
 
-# --- Owned by none (negate rule above) ---
+# --- Package files for negation ---
 
-*.md
-package.json
-pnpm-lock.yaml
-
-# -------------------------------------------------
-# All files in the root are owned by dev team
-# -------------------------------------------------
-
-/* @freecodecamp/dev-team
-
-# --- Owned by none (negate rule above) ---
-
-/package.json
-/pnpm-lock.yaml
+**/package.json @freecodecamp/none
+**/pnpm-lock.yaml @freecodecamp/none
 
 # -------------------------------------------------
-# Files that need attention from Curriculum team
+# Files that need attention from i18n & dev team
 # -------------------------------------------------
-
-/curriculum/challenges/_meta/* @freecodecamp/curriculum
-/curriculum/challenges/english/* @freecodecamp/curriculum
-
-# -------------------------------------------------
-# Files that need attention from Staff
-# -------------------------------------------------
-
-# README, LICENSE, etc.
-/*.md @freeCodeCamp/staff
 
 # i18n Quotes
-**/motivation.json @freeCodeCamp/staff @freeCodeCamp/i18n
+**/motivation.json @freeCodeCamp/dev-team @freeCodeCamp/i18n
+
 
 # -------------------------------------------------
 # Files that need attention from the mobile team
 # -------------------------------------------------
 
-/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile
 /client/src/redux/prop-types.ts @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/client/tools/external-curriculum/* @freeCodeCamp/dev-team @freeCodeCamp/mobile
+/curriculum/schema/challenge-schema.js @freeCodeCamp/dev-team @freeCodeCamp/mobile

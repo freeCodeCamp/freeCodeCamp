@@ -1,0 +1,18 @@
+{
+  "name": "Introduction to Common Searching and Sorting Algorithms",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-introduction-to-common-searching-and-sorting-algorithms",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "69691f96a3a2f3f6c220ab52",
+      "title": "What Is Binary Search and How Does It Differ From Linear Search?"
+    },
+    {
+      "id": "69691ff777d428294168d47e",
+      "title": "What Is Divide and Conquer, and How Does Merge Sort Work?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

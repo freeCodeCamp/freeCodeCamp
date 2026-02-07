@@ -117,6 +117,7 @@ button .block-header-button-text {
 
 .super-block-accordion .module-steps {
   font-size: 0.75em;
+  color: var(--quaternary-color);
 }
 
 .super-block-accordion .chapter-button:hover,
@@ -165,8 +166,8 @@ button .block-header-button-text {
   .map-challenge-title
   > .map-grid-item {
   padding: 0;
-  height: 2.1rem;
-  width: 2.1rem;
+  height: 2.6rem;
+  width: 2.6rem;
 }
 
 .super-block-accordion
@@ -175,7 +176,8 @@ button .block-header-button-text {
   .map-challenges-grid {
   padding-block: 10px;
   padding-inline-start: 64px;
-  grid-template-columns: repeat(auto-fill, 2.1rem);
+  grid-template-columns: repeat(auto-fill, 2.6rem);
+  grid-gap: 6px;
 }
 
 .super-block-accordion .map-challenge-title {
@@ -308,8 +310,9 @@ button .block-header-button-text {
   padding: 20px;
 }
 
-.super-block-intro-page .btn-cta-big {
-  max-width: 350px;
+.super-block-intro-page .intro-top-cta {
+  width: fit-content;
+  padding: 5px 30px;
 }
 
 .super-block-benefits > div {
@@ -345,5 +348,15 @@ button .block-header-button-text {
   }
   .super-block-benefits svg {
     margin-top: -10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .super-block-accordion .block-label {
+    margin-inline-start: auto;
+    margin-inline-end: 10px;
+  }
+  .super-block-accordion .block-header:has(.block-label-cert-project) {
+    padding-inline-end: 0;
   }
 }

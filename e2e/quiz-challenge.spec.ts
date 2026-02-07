@@ -23,7 +23,8 @@ interface PageData {
   };
 }
 
-const quizPath = '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html';
+const quizPath =
+  '/learn/responsive-web-design-v9/quiz-basic-html/quiz-basic-html';
 
 test.describe('Quiz challenge', () => {
   test.beforeEach(async ({ page }) => {
@@ -205,7 +206,7 @@ test.describe('Quiz challenge', () => {
     // The navigation should be blocked, the user should stay on the same page
     await expect(page).toHaveURL(
       allowTrailingSlash(
-        '/learn/full-stack-developer/quiz-basic-html/quiz-basic-html'
+        '/learn/responsive-web-design-v9/quiz-basic-html/quiz-basic-html'
       )
     );
 
@@ -223,7 +224,7 @@ test.describe('Quiz challenge', () => {
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/full-stack-developer/#quiz-basic-html');
+    await page.waitForURL('/learn/responsive-web-design-v9/#quiz-basic-html');
     await expect(
       page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
     ).toBeVisible();
@@ -242,7 +243,7 @@ test.describe('Quiz challenge', () => {
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/full-stack-developer/#quiz-basic-html');
+    await page.waitForURL('/learn/responsive-web-design-v9/#quiz-basic-html');
     await expect(
       page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
     ).toBeVisible();

@@ -1,3 +1,4 @@
+/* eslint-disable filenames-simple/naming-convention */
 require('dotenv').config({ path: '../.env' });
 const config = {
   presets: [
@@ -39,8 +40,11 @@ const config = {
       {
         languages: [
           'bash',
+          'c',
           'clike',
+          'cpp',
           'css',
+          'csharp',
           'html',
           'javascript',
           'json',

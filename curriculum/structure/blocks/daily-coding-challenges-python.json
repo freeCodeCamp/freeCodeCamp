@@ -441,6 +441,354 @@
     {
       "id": "68ffb91507a5b645769328cc",
       "title": "Challenge 109: What's My Age Again?"
+    },
+    {
+      "id": "69162d64f96574d9bb629efb",
+      "title": "Challenge 110: Word Guesser"
+    },
+    {
+      "id": "69162d64f96574d9bb629efc",
+      "title": "Challenge 111: Ball Trajectory"
+    },
+    {
+      "id": "69162d64f96574d9bb629efd",
+      "title": "Challenge 112: AI Detector"
+    },
+    {
+      "id": "69162d64f96574d9bb629efe",
+      "title": "Challenge 113: Miles to Kilometers"
+    },
+    {
+      "id": "69162d64f96574d9bb629eff",
+      "title": "Challenge 114: Camel to Snake"
+    },
+    {
+      "id": "69162d64f96574d9bb629f00",
+      "title": "Challenge 115: Markdown Ordered List Item Converter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f01",
+      "title": "Challenge 116: Permutation Count"
+    },
+    {
+      "id": "69162d64f96574d9bb629f02",
+      "title": "Challenge 117: Symmetric Difference"
+    },
+    {
+      "id": "69162d64f96574d9bb629f03",
+      "title": "Challenge 118: Date Formatter"
+    },
+    {
+      "id": "69162d64f96574d9bb629f04",
+      "title": "Challenge 119: String Compression"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b480",
+      "title": "Challenge 120: Pounds to Kilograms"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b481",
+      "title": "Challenge 121: Most Frequent"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b482",
+      "title": "Challenge 122: Markdown Bold Parser"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b483",
+      "title": "Challenge 123: Roman Numeral Builder"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b484",
+      "title": "Challenge 124: Inventory Update"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b485",
+      "title": "Challenge 125: Game of Life"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b486",
+      "title": "Challenge 126: Capitalize It"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b487",
+      "title": "Challenge 127: Speed Check"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b488",
+      "title": "Challenge 128: Consonant Count"
+    },
+    {
+      "id": "691b559495c5cb5a37b9b489",
+      "title": "Challenge 129: Markdown Blockquote Parser"
+    },
+    {
+      "id": "691b5597f0f3e85a588a5c94",
+      "title": "Challenge 130: Checkerboard"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5eca",
+      "title": "Challenge 131: Pairwise"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecb",
+      "title": "Challenge 132: Purge Most Frequent"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecc",
+      "title": "Challenge 133: Daylight Hours"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ecd",
+      "title": "Challenge 134: Traveling Shopper"
+    },
+    {
+      "id": "691f7773cddba1caf1bf5ece",
+      "title": "Challenge 135: Re: Fwd: Fw: Count"
+    },
+    {
+      "id": "6925e2068081f40f549ced1a",
+      "title": "Challenge 136: Markdown Image Parser"
+    },
+    {
+      "id": "6925e2068081f40f549ced1b",
+      "title": "Challenge 137: Snowflake Generator"
+    },
+    {
+      "id": "6925e2068081f40f549ced1c",
+      "title": "Challenge 138: Sum of Divisors"
+    },
+    {
+      "id": "6925e2068081f40f549ced1d",
+      "title": "Challenge 139: Rock, Paper, Scissors"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c3",
+      "title": "Challenge 140: SCREAMING_SNAKE_CASE"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c4",
+      "title": "Challenge 141: Takeoff Fuel"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c5",
+      "title": "Challenge 142: Sum the String"
+    },
+    {
+      "id": "69272dcf1c24b44fd79137c6",
+      "title": "Challenge 143: Markdown Italic Parser"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad5",
+      "title": "Challenge 144: Resolution Streak"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad6",
+      "title": "Challenge 145: Nth Fibonacci Number"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad7",
+      "title": "Challenge 146: Left-Handed Seat at the Table"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad8",
+      "title": "Challenge 147: Leap Year Calculator"
+    },
+    {
+      "id": "69306364df283fcaff2e1ad9",
+      "title": "Challenge 148: Tire Pressure"
+    },
+    {
+      "id": "69306364df283fcaff2e1ada",
+      "title": "Challenge 149: vOwElcAsE"
+    },
+    {
+      "id": "69373793f5a867f769cde135",
+      "title": "Challenge 150: Markdown Unordered List Parser"
+    },
+    {
+      "id": "69373793f5a867f769cde136",
+      "title": "Challenge 151: Sorted Array?"
+    },
+    {
+      "id": "69373793f5a867f769cde137",
+      "title": "Challenge 152: Circular Prime"
+    },
+    {
+      "id": "69373793f5a867f769cde138",
+      "title": "Challenge 153: Tic-Tac-Toe"
+    },
+    {
+      "id": "69373793f5a867f769cde139",
+      "title": "Challenge 154: Par for the Hole"
+    },
+    {
+      "id": "69373793f5a867f769cde13a",
+      "title": "Challenge 155: Plant the Crop"
+    },
+    {
+      "id": "6939b873185d8e00d453563b",
+      "title": "Challenge 156: Odd or Even?"
+    },
+    {
+      "id": "6939b873185d8e00d453563c",
+      "title": "Challenge 157: Markdown Link Parser"
+    },
+    {
+      "id": "6939b873185d8e00d453563d",
+      "title": "Challenge 158: Array Swap"
+    },
+    {
+      "id": "6939b873185d8e00d453563e",
+      "title": "Challenge 159: Integer Hypotenuse"
+    },
+    {
+      "id": "6939b873185d8e00d453563f",
+      "title": "Challenge 160: Knight Moves"
+    },
+    {
+      "id": "694596b0585c11170ac7c7f9",
+      "title": "Challenge 161: Free Shipping"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fa",
+      "title": "Challenge 162: Energy Consumption"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fb",
+      "title": "Challenge 163: Consonant Case"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fc",
+      "title": "Challenge 164: Markdown Inline Code Parser"
+    },
+    {
+      "id": "694596b0585c11170ac7c7fd",
+      "title": "Challenge 165: Class Average"
+    },
+    {
+      "id": "696655d24b614176d4c9b789",
+      "title": "Challenge 166: Hex Validator"
+    },
+    {
+      "id": "696655d24b614176d4c9b78a",
+      "title": "Challenge 167: Bingo! Letter"
+    },
+    {
+      "id": "696655d24b614176d4c9b78b",
+      "title": "Challenge 168: Scaled Image"
+    },
+    {
+      "id": "696655d24b614176d4c9b78c",
+      "title": "Challenge 169: FizzBuzz Mini"
+    },
+    {
+      "id": "696655d24b614176d4c9b78d",
+      "title": "Challenge 170: Odd or Even Day"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca29d",
+      "title": "Challenge 171: Flatten the Array"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca29e",
+      "title": "Challenge 172: Letters-Numbers"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca29f",
+      "title": "Challenge 173: Valid Pawn Moves"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a0",
+      "title": "Challenge 174: Zodiac Finder"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a1",
+      "title": "Challenge 175: Digital Detox"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a2",
+      "title": "Challenge 176: Groundhog Day"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a3",
+      "title": "Challenge 177: String Mirror"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a4",
+      "title": "Challenge 178: Truncate the Text"
+    },
+    {
+      "id": "69738771fb5a7b8b24cca2a5",
+      "title": "Challenge 179: Pocket Change"
+    },
+    {
+      "id": "697a49e6ff50d756c9b6935d",
+      "title": "Challenge 180: 2026 Winter Games Day 1: Opening Day"
+    },
+    {
+      "id": "697a49e6ff50d756c9b6935e",
+      "title": "Challenge 181: 2026 Winter Games Day 2: Snowboarding"
+    },
+    {
+      "id": "697a49e6ff50d756c9b6935f",
+      "title": "Challenge 182: 2026 Winter Games Day 3: Biathlon"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69360",
+      "title": "Challenge 183: 2026 Winter Games Day 4: Ski Jumping"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69361",
+      "title": "Challenge 184: 2026 Winter Games Day 5: Cross-Country Skiing"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69362",
+      "title": "Challenge 185: 2026 Winter Games Day 6: Figure Skating"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69363",
+      "title": "Challenge 186: 2026 Winter Games Day 7: Speed Skating"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69364",
+      "title": "Challenge 187: 2026 Winter Games Day 8: Luge"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69365",
+      "title": "Challenge 188: 2026 Winter Games Day 9: Skeleton"
+    },
+    {
+      "id": "697a49e6ff50d756c9b69366",
+      "title": "Challenge 189: 2026 Winter Games Day 10: Alpine Skiing"
+    },
+    {
+      "id": "697a49e9860d24853adef67b",
+      "title": "Challenge 190: 2026 Winter Games Day 11: Ice Hockey"
+    },
+    {
+      "id": "697a49e9860d24853adef67c",
+      "title": "Challenge 191: 2026 Winter Games Day 12: Bobsled"
+    },
+    {
+      "id": "697a49e9860d24853adef67d",
+      "title": "Challenge 192: 2026 Winter Games Day 13: Nordic Combined"
+    },
+    {
+      "id": "697a49e9860d24853adef67e",
+      "title": "Challenge 193: 2026 Winter Games Day 14: Ski Mountaineering"
+    },
+    {
+      "id": "697a49e9860d24853adef67f",
+      "title": "Challenge 194: 2026 Winter Games Day 15: Freestyle Skiing"
+    },
+    {
+      "id": "697a49e9860d24853adef680",
+      "title": "Challenge 195: 2026 Winter Games Day 16: Curling"
+    },
+    {
+      "id": "697a49e9860d24853adef681",
+      "title": "Challenge 196: 2026 Winter Games Day 17: Closing Day"
     }
   ]
 }

@@ -12,7 +12,7 @@ import {
   defaultDonation,
   DonationAmount,
   type DonationConfig
-} from '../../../../shared-dist/config/donation-settings';
+} from '@freecodecamp/shared/config/donation-settings';
 import { defaultDonationFormState } from '../../redux';
 import { updateDonationFormState, postCharge } from '../../redux/actions';
 import {

@@ -4,7 +4,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import store from 'store';
 import { DailyCodingChallengeLanguages } from '../../../redux/prop-types';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import EditorTabs from './editor-tabs';
 
 interface ClassicLayoutProps {
@@ -43,7 +43,7 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
     return (
       <div className='action-row'>
         <div className='tabs-row'>
-          <div className='tabs-row-right'>
+          <div className='interactive-editor-tab'>
             <button
               aria-expanded={!!showInteractiveEditor}
               aria-describedby='interactive-editor-desc'
@@ -130,26 +130,24 @@ const ActionRow = (props: ActionRowProps): JSX.Element => {
           <EditorTabs data-playwright-test-label='editor-tabs' />
         </div>
         {/* middle - only used with daily coding challenges for now */}
-        <div className='tabs-row-middle'>
-          {isDailyCodingChallenge && (
-            <>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
-                disabled={dailyCodingChallengeLanguage === 'javascript'}
-                onClick={() => handleLanguageChange('javascript')}
-              >
-                JavaScript
-              </button>
-              <button
-                aria-expanded={dailyCodingChallengeLanguage === 'python'}
-                disabled={dailyCodingChallengeLanguage === 'python'}
-                onClick={() => handleLanguageChange('python')}
-              >
-                Python
-              </button>
-            </>
-          )}
-        </div>
+        {isDailyCodingChallenge && (
+          <div className='tabs-row-middle'>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'javascript'}
+              disabled={dailyCodingChallengeLanguage === 'javascript'}
+              onClick={() => handleLanguageChange('javascript')}
+            >
+              JavaScript
+            </button>
+            <button
+              aria-expanded={dailyCodingChallengeLanguage === 'python'}
+              disabled={dailyCodingChallengeLanguage === 'python'}
+              onClick={() => handleLanguageChange('python')}
+            >
+              Python
+            </button>
+          </div>
+        )}
         {/* right */}
         <div className='tabs-row-right panel-display-tabs'>
           <button

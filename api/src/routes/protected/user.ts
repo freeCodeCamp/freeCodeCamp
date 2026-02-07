@@ -167,7 +167,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
       }
       reply.clearOurCookies();
 
-      return reply.code(204).send();
+      return reply.code(204).send(null);
     }
   );
 
@@ -577,7 +577,6 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-// eslint-disable-next-line jsdoc/require-param, jsdoc/require-returns
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *
@@ -702,11 +701,20 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             isJsAlgoDataStructCert: true,
             isJsAlgoDataStructCertV8: true,
             isMachineLearningPyCertV7: true,
+            isPythonCertV9: true,
             isQaCertV7: true,
             isRelationalDatabaseCertV8: true,
+            isRelationalDatabaseCertV9: true,
             isRespWebDesignCert: true,
             isRespWebDesignCertV9: true,
             isSciCompPyCertV7: true,
+            isFrontEndLibsCertV9: true,
+            isBackEndDevApisCertV9: true,
+            isFullStackDeveloperCertV9: true,
+            isB1EnglishCert: true,
+            isA2SpanishCert: true,
+            isA2ChineseCert: true,
+            isA1ChineseCert: true,
             keyboardShortcuts: true,
             linkedin: true,
             location: true,
@@ -714,6 +722,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
             partiallyCompletedChallenges: true,
             picture: true,
             portfolio: true,
+            experience: true,
             profileUI: true,
             progressTimestamps: true,
             savedChallenges: true,
@@ -773,6 +782,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
           location,
           name,
           theme,
+          experience,
           ...publicUser
         } = rest;
 
@@ -810,6 +820,7 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
               usernameDisplay: usernameDisplay || username,
               userToken: encodedToken,
               completedSurveys: normalizeSurveys(completedSurveys),
+              experience: experience.map(removeNulls),
               msUsername: msUsername?.msUsername
             }
           },

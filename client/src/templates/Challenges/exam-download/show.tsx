@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import {
   Button,
+  Callout,
   Dropdown,
   MenuItem,
   Spacer,
@@ -10,46 +11,59 @@ import {
   Row,
   Col
 } from '@freecodecamp/ui';
-import { isEmpty } from 'lodash';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
-import useDetectOS from '../utils/use-detect-os';
-import { ChallengeNode, CompletedChallenge } from '../../../redux/prop-types';
+import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
+import {
+  ChallengeNode,
+  CompletedChallenge,
+  User
+} from '../../../redux/prop-types';
 import {
   completedChallengesSelector,
-  isSignedInSelector
+  isSignedInSelector,
+  userSelector
 } from '../../../redux/selectors';
 import { examAttempts } from '../../../utils/ajax';
 import MissingPrerequisites from '../exam/components/missing-prerequisites';
 import { isChallengeCompletedSelector } from '../redux/selectors';
+import envData from '../../../../config/env.json';
 import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
+
+const { deploymentEnv } = envData;
 
 interface GitProps {
   tag_name: string;
   assets: {
     browser_download_url: string;
   }[];
+  name: string;
+  draft: boolean;
+  prerelease: boolean;
 }
 
 const mapStateToProps = createSelector(
   completedChallengesSelector,
   isChallengeCompletedSelector,
   isSignedInSelector,
+  userSelector,
   (
     completedChallenges: CompletedChallenge[],
     isChallengeCompleted: boolean,
-    isSignedIn: boolean
+    isSignedIn: boolean,
+    user: User | null
   ) => ({
     completedChallenges,
     isChallengeCompleted,
-    isSignedIn
+    isSignedIn,
+    user
   })
 );
 
@@ -61,18 +75,93 @@ interface ShowExamDownloadProps {
   completedChallenges: CompletedChallenge[];
   isChallengeCompleted: boolean;
   isSignedIn: boolean;
+  user: User | null;
+}
+
+function normalizeArch(name: string): string {
+  const archMatch = name.match(
+    /(aarch64|arm|arm64|amd64|x86_64|x64|x86|i386|i686)/i
+  );
+
+  const token = archMatch?.[0];
+
+  if (!token) return '';
+  const t = token.toLowerCase();
+  if (/aarch64|arm64|arm/i.test(t)) return 'arm';
+  if (/x86_64|x64|amd64/i.test(t)) return 'x64';
+  if (/x86|i386|i686/i.test(t)) return 'x86';
+  return t;
+}
+
+export function handleDownloadLink(
+  { os, architecture }: UserOSState,
+  downloadLinks: string[]
+) {
+  const items = downloadLinks.map(link => {
+    const urlEnd = link.split('/').pop() ?? '';
+    const name = urlEnd;
+    let ext = '';
+    if (name.endsWith('.app.tar.gz')) ext = '.app.tar.gz';
+    else if (name.endsWith('.tar.gz')) ext = '.tar.gz';
+    else if (name.endsWith('.AppImage')) ext = '.AppImage';
+    else if (name.endsWith('.dmg')) ext = '.dmg';
+    else if (name.endsWith('.exe')) ext = '.exe';
+    else {
+      const m = name.match(/(\.[^./]+)$/);
+      ext = m ? m[0] : '';
+    }
+
+    return { link, name, ext, arch: normalizeArch(name) };
+  });
+
+  const detectedArch = normalizeArch(architecture || '');
+
+  function pickByExts(exts: string[], preferArch?: string) {
+    // prefer both ext + arch
+    for (const ext of exts) {
+      const found = items.find(it => it.ext === ext && it.arch === preferArch);
+      if (found) return found.link;
+    }
+    // then any with ext and unspecified arch
+    const withExt = items.find(
+      it => exts.includes(it.ext) && (!preferArch || it.arch === '')
+    );
+    if (withExt) return withExt.link;
+    // then any with ext
+    const anyExt = items.find(it => exts.includes(it.ext));
+    return anyExt ? anyExt.link : '';
+  }
+
+  if (os === 'WIN') {
+    return pickByExts(['.exe'], detectedArch) || '';
+  }
+
+  if (os === 'MAC') {
+    // prefer .dmg files
+    return pickByExts(['.dmg'], detectedArch) || '';
+  }
+
+  if (os === 'LINUX') {
+    // prefer AppImage, then .app.tar.gz, then .tar.gz
+    return (
+      pickByExts(['.AppImage', '.app.tar.gz', '.tar.gz'], detectedArch) || ''
+    );
+  }
+
+  return '';
 }
 
 function ShowExamDownload({
   data: {
     challengeNode: {
-      challenge: { id, title, translationPending }
+      challenge: { id, superBlock: examSuperBlock, title, translationPending }
     },
     allChallengeNode: { nodes }
   },
   completedChallenges,
   isChallengeCompleted,
-  isSignedIn
+  isSignedIn,
+  user
 }: ShowExamDownloadProps): JSX.Element {
   const [latestVersion, setLatestVersion] = useState<string | null>(null);
 
@@ -86,90 +175,71 @@ function ShowExamDownload({
     skip: !isSignedIn
   });
 
-  const os = useDetectOS();
+  const userOSState = useDetectOS();
 
   const { t } = useTranslation();
-
-  function handleDownloadLink(downloadLinks: string[]) {
-    const win = downloadLinks.find(link => link.match(/\.exe/));
-    const macARM = downloadLinks.find(
-      link => link.match(/aarch64/) && link.match(/\.dmg/)
-    );
-    const macX64 = downloadLinks.find(
-      link => link.match(/x64/) && link.match(/\.dmg/)
-    );
-
-    const linuxARM = downloadLinks.find(
-      link => link.match(/aarch64/) && link.match(/tar\.gz/)
-    );
-
-    const linuxX64 = downloadLinks.find(
-      link => link.match(/amd64/) && link.match(/AppImage/)
-    );
-
-    if (os.os === 'WIN') {
-      if (isEmpty(win)) return '';
-
-      return win;
-    }
-
-    if (os.os === 'MAC') {
-      if (os.architecture.toLowerCase() === 'arm') {
-        if (isEmpty(macARM)) return '';
-
-        return macARM;
-      } else {
-        if (isEmpty(macX64)) return '';
-
-        return macX64;
-      }
-    }
-
-    if (os.os === 'LINUX') {
-      if (os.architecture.toLowerCase() === 'arm') {
-        if (isEmpty(linuxARM)) return '';
-
-        return linuxARM;
-      } else {
-        if (isEmpty(linuxX64)) return '';
-
-        return linuxX64;
-      }
-    }
-
-    return '';
-  }
 
   useEffect(() => {
     async function checkLatestVersion() {
       try {
-        const response = await fetch(
-          'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
-        );
-        if (response.ok) {
+        let latest: GitProps;
+
+        if (deploymentEnv !== 'production') {
+          const response = await fetch(
+            'https://api.github.com/repos/freeCodeCamp/exam-env/releases'
+          );
+
+          if (!response.ok) {
+            setLatestVersion(null);
+            return;
+          }
+
+          const data = (await response.json()) as GitProps[];
+          if (!data || data.length === 0) {
+            setLatestVersion(null);
+            return;
+          }
+          latest = getLatest(data);
+        } else {
+          const response = await fetch(
+            'https://api.github.com/repos/freeCodeCamp/exam-env/releases/latest'
+          );
+          if (!response.ok) {
+            setLatestVersion(null);
+            return;
+          }
           const data = (await response.json()) as GitProps;
-          const { tag_name, assets } = data;
-          setLatestVersion(tag_name);
-          const urls = assets.map(link => link.browser_download_url);
-          setDownloadLink(handleDownloadLink(urls));
-          setDownloadLinks(urls);
+          if (!data) {
+            setLatestVersion(null);
+            return;
+          }
+          latest = data;
         }
+
+        const { tag_name, assets } = latest;
+        setLatestVersion(tag_name);
+        const urls = assets.map(link => link.browser_download_url);
+        setDownloadLink(handleDownloadLink(userOSState, urls));
+        setDownloadLinks(urls);
       } catch {
-        setLatestVersion('...');
+        setLatestVersion(null);
       }
     }
 
-    void checkLatestVersion();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [os]);
+    if (userOSState.os) {
+      void checkLatestVersion();
+    }
+  }, [userOSState]);
 
   const examId = examIdsQuery.data?.at(0)?.examId;
   const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
   const unmetPrerequisites = exam?.prerequisites?.filter(
     prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
-  const challenges = nodes.filter(({ challenge }) =>
-    unmetPrerequisites?.includes(challenge.id)
+  const challenges = nodes.filter(
+    ({ challenge }) =>
+      unmetPrerequisites?.includes(challenge.id) &&
+      challenge.superBlock === examSuperBlock
   );
   const missingPrerequisites = challenges.map(({ challenge }) => {
     return {
@@ -178,6 +248,9 @@ function ShowExamDownload({
       slug: challenge.fields?.slug || ''
     };
   });
+
+  const showPrereqAlert =
+    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
 
   return (
     <LearnLayout>
@@ -197,11 +270,20 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {!!missingPrerequisites.length && (
-              <MissingPrerequisites
-                missingPrerequisites={missingPrerequisites}
-              />
-            )}
+            {showPrereqAlert &&
+              (missingPrerequisites.length > 0 ? (
+                <MissingPrerequisites
+                  missingPrerequisites={missingPrerequisites}
+                />
+              ) : (
+                <Callout
+                  className='exam-qualified'
+                  variant='note'
+                  label={t('misc.note')}
+                >
+                  <p>{t('learn.exam.qualified')}</p>
+                </Callout>
+              ))}
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />
@@ -210,7 +292,7 @@ function ShowExamDownload({
                 <h2>{t('exam.attempts')}</h2>
                 <Attempts examChallengeId={id} />
                 <Spacer size='l' />
-                <ExamTokenControls />
+                <ExamTokenControls email={user!.email} />
               </>
             )}
             <p>
@@ -218,7 +300,6 @@ function ShowExamDownload({
                 version: latestVersion || '...'
               })}
             </p>
-            {/* TODO: confirm this works on MacOS */}
             <Button href={'exam-environment://'}>
               {t('exam.open-exam-application')}
             </Button>
@@ -233,13 +314,21 @@ function ShowExamDownload({
               )}
             </div>
             <Spacer size='xs' />
-            <Dropdown dropup>
+            <Dropdown block={true} dropup>
               <Dropdown.Toggle>{t('exam.download-details')}</Dropdown.Toggle>
               <Dropdown.Menu>
                 {downloadLinks
                   .filter(link => !link.match(/\.sig|\.json/))
                   .map((link, index) => {
                     const urlEnd = link.split('/').pop() ?? '';
+                    // App naming scheme is <app_name>_<version>?_<arch>(-setup)?(-debug)?.<ext>
+                    const urlParts = urlEnd.split('_');
+                    const archAndExt = urlParts.at(urlParts.length - 1);
+                    const arch = archAndExt?.split('-')?.at(0);
+                    const ext = archAndExt?.slice(archAndExt?.indexOf('.'));
+
+                    const recommendedOs =
+                      arch && ext ? getRecommendedOs({ arch, ext }) : '';
                     return (
                       <MenuItem
                         href={link}
@@ -247,7 +336,7 @@ function ShowExamDownload({
                         key={index}
                         variant='primary'
                       >
-                        {urlEnd}
+                        {urlEnd} {recommendedOs && `(${recommendedOs})`}
                       </MenuItem>
                     );
                   })}
@@ -266,6 +355,55 @@ function ShowExamDownload({
   );
 }
 
+function getRecommendedOs({
+  arch,
+  ext
+}: {
+  arch: string;
+  ext: string;
+}): string {
+  const osToExt = {
+    MacOS: ['.dmg', '.app', '.app.tar.gz'],
+    Linux: ['.deb', '.rpm', '.AppImage', '.tar.gz', '.AppImage.tar.gz'],
+    Windows: ['.exe', '.msi']
+  } as const;
+  const archToHuman: Record<string, string> = {
+    x64: '64-bit',
+    aarch64: 'ARM',
+    amd64: '64-bit',
+    i386: '32-bit',
+    x86: '32-bit'
+  };
+
+  const os = Object.entries(osToExt).find(([_, exts]) => exts.includes(ext));
+
+  return `${archToHuman[arch] ?? arch} ${os ? os[0] : ''}`;
+}
+
+function getLatest(releases: GitProps[]): GitProps {
+  switch (deploymentEnv) {
+    case 'staging':
+      return (
+        releases.find(r => {
+          return !r.draft && r.name.endsWith('/staging');
+        }) || releases[0]
+      );
+    // Currently, this is never the case
+    case 'development':
+      return (
+        releases.find(r => {
+          return !r.draft && r.name.endsWith('/development');
+        }) || releases[0]
+      );
+    default:
+      return (
+        releases.find(r => {
+          return !r.prerelease && !r.draft && r.name.endsWith('/production');
+        }) || releases[0]
+      );
+  }
+}
+
 export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));
 
 // GraphQL
@@ -274,6 +412,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         id
+        superBlock
         title
         translationPending
       }
@@ -286,6 +425,7 @@ export const query = graphql`
           fields {
             slug
           }
+          superBlock
         }
       }
     }

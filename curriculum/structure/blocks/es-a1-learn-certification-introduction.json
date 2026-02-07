@@ -1,9 +1,9 @@
 {
   "name": "Certification Introduction",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-learn-certification-introduction",
-  "helpCategory": "English",
-  "blockLayout": "link",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-list",
   "challengeOrder": [
     { "id": "68dbeddd000f625f95f32de5", "title": "Why Learn Spansh" },
     {

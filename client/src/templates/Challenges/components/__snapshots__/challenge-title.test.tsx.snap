@@ -15,6 +15,7 @@ exports[`<ChallengeTitle/> > renders correctly 1`] = `
     </h1>
     <svg
       aria-label="icons.passed"
+      data-testid="green-pass"
       height="15"
       viewBox="0 0 200 200"
       width="15"

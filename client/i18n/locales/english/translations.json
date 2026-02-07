@@ -205,8 +205,10 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Earn free verified certifications in:",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Our archived coursework:",
@@ -280,7 +282,7 @@
     "disabled": "Your certifications will be disabled, if set to private.",
     "private-name": "Your name will not appear on your certifications, if this is set to private.",
     "claim-legacy": "Once you've earned the following freeCodeCamp certifications, you'll be able to claim the {{cert}}:",
-    "for": "Account Settings for {{username}}",
+    "for": "Settings for {{username}}",
     "sound-mode": "This adds the pleasant sound of acoustic guitar throughout the website. You'll get musical feedback as you type in the editor, complete challenges, claim certifications, and more.",
     "sound-volume": "Campfire Volume:",
     "scrollbar-width": "Editor Scrollbar Width",
@@ -288,7 +290,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Username \"{{username}}\" contains invalid characters",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Username \"{{username}}\" is too short",
       "is a reserved error code": "Username \"{{username}}\" is a reserved error code",
       "must be lowercase": "Username \"{{username}}\" must be lowercase",
@@ -314,12 +316,13 @@
       "results-for": "Results for {{projectTitle}}",
       "my-profile": "My profile",
       "my-name": "My name",
-      "my-location": "My location",
+      "my-location": "My stated location (freeCodeCamp does not track your actual location)",
       "my-about": "My about",
       "my-points": "My points",
       "my-heatmap": "My heatmap",
       "my-certs": "My certifications",
       "my-portfolio": "My portfolio",
+      "my-experience": "My experience",
       "my-timeline": "My timeline",
       "my-donations": "My donations",
       "night-mode": "Night Mode",
@@ -327,12 +330,13 @@
       "keyboard-shortcuts": "Enable Keyboard Shortcuts"
     },
     "headings": {
+      "account": "Account",
       "certs": "Certifications",
       "legacy-certs": "Legacy Certifications",
       "honesty": "Academic Honesty Policy",
       "internet": "Your Internet Presence",
       "portfolio": "Portfolio Settings",
-      "privacy": "Privacy Settings",
+      "privacy": "Privacy",
       "personal-info": "Personal Information"
     },
     "danger": {
@@ -361,7 +365,7 @@
     },
     "email": {
       "missing": "You do not have an email associated with this account.",
-      "heading": "Email Settings",
+      "heading": "Email",
       "not-verified": "Your email has not been verified.",
       "check": "Please check your email, or <0>request a new verification email here</0>.",
       "current": "Current Email",
@@ -431,7 +435,24 @@
     "page-number": "{{pageNumber}} of {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -496,7 +517,7 @@
     "download-solution": "Download my solution",
     "download-results": "Download my results",
     "percent-complete": "{{percent}}% complete",
-    "project-complete": "Completed {{completedChallengesInBlock}} of {{totalChallengesInBlock}} certification projects",
+    "project-complete": "Completed",
     "tried-rsa": "If you've already tried the <0>Read-Search-Ask</0> method, then you can ask for help on the freeCodeCamp forum.",
     "read-search-ask-checkbox": "I have tried the <0>Read-Search-Ask</0> method",
     "similar-questions-checkbox": "I have searched for <0>similar questions that have already been answered on the forum</0>",
@@ -685,6 +706,7 @@
       "lab": "Lab",
       "review": "Review",
       "quiz": "Quiz",
+      "cert-project": "Certification Project",
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
@@ -692,7 +714,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -866,6 +888,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "You appear to be offline, your progress may not be saved",
     "server-offline": "The server could not be reached and your progress may not be saved. Please contact <0>support</0> if this message persists",
     "unsubscribed": "You have successfully been unsubscribed",
@@ -892,6 +916,7 @@
     "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
     "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
+    "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
     "fsd-b-benefit-1-description": "Join more than 100k students taking this certification.",
     "fsd-b-benefit-2-title": "Professional Certification",
@@ -926,7 +951,7 @@
     "linkedin": "Link to {{username}}'s LinkedIn",
     "github": "Link to {{username}}'s GitHub",
     "website": "Link to {{username}}'s website",
-    "twitter": "Link to {{username}}'s Twitter",
+    "twitter": "Link to {{username}}'s X",
     "next-month": "Go to next month",
     "previous-month": "Go to previous month",
     "first-page": "Go to first page",
@@ -960,7 +985,9 @@
     "editor-a11y-on-non-macos": "{{editorName}} editor content. Accessibility mode set to 'on'. Press Ctrl+E to disable or press Alt+F1 for more options.",
     "terminal-output": "Terminal output",
     "not-available": "Not available",
-    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page."
+    "interactive-editor-desc": "Turn static code examples into interactive editors. This allows you to edit and run the code directly on the page.",
+    "pinyin-to-hanzi-input-desc": "This task uses Pinyin-to-Hanzi inputs. Type pinyin with tone numbers (1 to 5). When you enter a correct syllable, it will turn into a Chinese character. If you press backspace after a Chinese character, it will change back to pinyin and remove the last thing you typed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed.",
+    "pinyin-tone-input-desc": "This task uses Pinyin Tone inputs. Type pinyin with tone numbers (1 to 5). When you enter a tone number, it will be converted to a tone mark. If you press backspace, the last thing you typed is removed: if it's a tone number, the tone is removed; if it's a letter, the letter is removed."
   },
   "flash": {
     "no-email-in-userinfo": "We could not retrieve an email from your chosen provider. Please try another provider or use the 'Continue with Email' option.",
@@ -980,6 +1007,7 @@
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
     "portfolio-item-updated": "We have updated your portfolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Email format is invalid",
     "email-valid": "Your email has successfully been changed, happy coding!",
     "bad-challengeId": "currentChallengeId is not a valid challenge ID",
@@ -1075,16 +1103,22 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "There is a maximum limit of 288 characters, you have {{charsLeft}} left",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "This email is the same as your current email",
     "invalid-email": "We could not validate your email correctly, please ensure it is correct",
     "email-mismatch": "Both new email addresses must be the same",
     "title-required": "A title is required",
     "title-short": "Title is too short",
     "title-long": "Title is too long",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "We could not validate your URL correctly, please ensure it is correct",
     "invalid-protocol": "URL must start with http or https",
     "url-not-image": "URL must link directly to an image file",
@@ -1105,6 +1139,7 @@
     "issued": "Issued",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
@@ -1223,9 +1258,21 @@
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
       "a2-english-for-developers": "A2 English for Developers",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification",
+      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
       "b1-english-for-developers-cert": "B1 English for Developers Certification",
+      "responsive-web-design-v9": "Responsive Web Design",
+      "responsive-web-design-v9-cert": "Responsive Web Design Certification",
+      "javascript-v9": "JavaScript",
+      "javascript-v9-cert": "JavaScript Certification",
+      "front-end-development-libraries-v9": "Front End Development Libraries",
+      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "python-v9": "Python",
+      "python-v9-cert": "Python Certification",
+      "relational-databases-v9": "Relational Database",
+      "relational-databases-v9-cert": "Relational Database Certification",
+      "back-end-development-and-apis-v9": "Back End Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
       "full-stack-developer-v9": "Full Stack Developer",
       "full-stack-developer-v9-cert": "Full Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
@@ -1293,13 +1340,15 @@
     "invalidation-1": "It looks like you have a valid exam token. If you generate a new one, your existing token will be invalidated.",
     "invalidation-2": "If you generate a new token, your existing token will be invalidated.",
     "generate-exam-token": "Generate Exam Token",
+    "your-exam-token": "Your Exam Token is: {{token}}",
     "error": "There was an error generating your token, please try again in a moment.",
     "no-token": "It looks like you don't have a valid exam token.",
     "copy": "Copy Exam Token",
     "copied": "Token copied to clipboard",
     "copy-error": "Error copying token to clipboard",
     "token-usage": "Your Exam Environment authorization token is used to log you into the desktop application.",
-    "generated": "A new Exam Environment authorization token has been generated for your account."
+    "generated": "A new Exam Environment authorization token has been generated for your account.",
+    "non-staff-testing": "Only freeCodeCamp staff are allowed to generate exam tokens on non-production environments at this time."
   },
   "shortcuts": {
     "title": "Keyboard shortcuts",
@@ -1352,6 +1401,26 @@
       "exit": "Exit the survey",
       "two-questions": "Congratulations on getting this far. Before you can start the exam, please answer these two short survey questions."
     }
+  },
+  "speaking-modal": {
+    "heading": "Speaking Practice",
+    "repeat-sentence": "Repeat aloud this sentence:",
+    "play": "Play",
+    "playing": "Playing...",
+    "record": "Record",
+    "stop": "Stop",
+    "incorrect-words": "Incorrect words: {{words}}.",
+    "misplaced-words": "Misplaced words: {{words}}.",
+    "correct-congratulations": "That's correct! Congratulations!",
+    "very-good": "Very good!",
+    "try-again": "Try again.",
+    "no-audio-available": "No audio file available.",
+    "no-speech-detected": "Recording stopped. No speech detected.",
+    "speech-recognition-not-supported": "Speech recognition not supported in this browser.",
+    "recording-speak-now": "Recording. Speak now.",
+    "recording-stopped-processing": "Recording stopped. Processing...",
+    "microphone-access-error": "Error: Could not access microphone.",
+    "speaking-button": "Practice speaking"
   },
   "curriculum": {
     "catalog": {

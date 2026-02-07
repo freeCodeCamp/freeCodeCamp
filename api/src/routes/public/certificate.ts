@@ -4,11 +4,11 @@ import { find } from 'lodash-es';
 import * as schemas from '../../schemas.js';
 import {
   certSlugTypeMap,
-  certTypeTitleMap,
-  certTypeIdMap,
+  certToTitleMap,
+  certToIdMap,
   completionHours,
   oldDataVizId
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 import {
   getFallbackFullStackDate,
   isKnownCertSlug
@@ -52,9 +52,9 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const certType = certSlugTypeMap[certSlug];
-      const certId = certTypeIdMap[certType];
-      const certTitle = certTypeTitleMap[certType];
-      const completionTime = completionHours[certType] || 300;
+      const certId = certToIdMap[certSlug];
+      const certTitle = certToTitleMap[certSlug];
+      const completionTime = completionHours[certSlug] || 300;
       const user = await fastify.prisma.user.findFirst({
         where: { username },
         select: {
@@ -74,14 +74,23 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           is2018DataVisCert: true,
           isApisMicroservicesCert: true,
           isInfosecQaCert: true,
+          isPythonCertV9: true,
           isQaCertV7: true,
           isInfosecCertV7: true,
           isSciCompPyCertV7: true,
           isDataAnalysisPyCertV7: true,
           isMachineLearningPyCertV7: true,
           isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isFoundationalCSharpCertV8: true,
+          isFrontEndLibsCertV9: true,
+          isBackEndDevApisCertV9: true,
+          isFullStackDeveloperCertV9: true,
+          isB1EnglishCert: true,
+          isA2SpanishCert: true,
+          isA2ChineseCert: true,
+          isA1ChineseCert: true,
           isHonest: true,
           username: true,
           name: true,
@@ -180,16 +189,15 @@ export const unprotectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       if (!user[certType]) {
-        const cert = certTypeTitleMap[certType];
         logger.info(
-          `User ${username} has not completed the ${cert} certification.`
+          `User ${username} has not completed the ${certTitle} certification.`
         );
         return reply.send({
           messages: [
             {
               type: 'info',
               message: 'flash.user-not-certified',
-              variables: { username, cert }
+              variables: { username, cert: certTitle }
             }
           ]
         });

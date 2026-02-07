@@ -4,24 +4,20 @@
 */
 
 import { readFileSync, writeFileSync } from 'fs';
-import path, { join } from 'path';
-import { fileURLToPath } from 'url';
-import ObjectID from 'bson-objectid';
-import { Meta } from './helpers/project-metadata';
-import { getArgValue } from './helpers/get-arg-value';
+import { join } from 'path';
+import { ObjectId } from 'bson';
+import { Meta } from './helpers/project-metadata.js';
+import { getArgValue } from './helpers/get-arg-value.js';
 import {
   getDailyJavascriptChallengeTemplate,
   getDailyPythonChallengeTemplate
-} from './helpers/get-challenge-template';
+} from './helpers/get-challenge-template.js';
 
 const numberOfChallengesToCreate = getArgValue(process.argv);
 
 if (numberOfChallengesToCreate > 10) {
   throw new Error('Are you sure you want to create that many challenges?');
 }
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const curriculumPath = join(__dirname, '../../curriculum');
 
@@ -58,7 +54,7 @@ for (let i = 0; i < numberOfChallengesToCreate; i++) {
     );
   }
 
-  const challengeId = new ObjectID();
+  const challengeId = new ObjectId();
   const newChallengeNumber = numberOfJsChallenges + 1;
 
   createDailyJsChallenge({
@@ -74,7 +70,7 @@ for (let i = 0; i < numberOfChallengesToCreate; i++) {
 }
 
 interface CreateDailyChallengeOptions {
-  challengeId: ObjectID;
+  challengeId: ObjectId;
   challengeNumber: number;
   meta: Meta;
 }
@@ -89,7 +85,6 @@ function createDailyJsChallenge({
     challengeOrder: [
       ...meta.challengeOrder,
       {
-        // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
         title: `Challenge ${challengeNumber}: Placeholder`
       }
@@ -105,7 +100,7 @@ function createDailyJsChallenge({
 
   const jsChallengePath = join(
     jsChallengesPath,
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
     `${challengeId.toString()}.md`
   );
 
@@ -122,7 +117,6 @@ function createDailyPyChallenge({
     challengeOrder: [
       ...meta.challengeOrder,
       {
-        // eslint-disable-next-line @typescript-eslint/no-base-to-string
         id: challengeId.toString(),
         title: `Challenge ${challengeNumber}: Placeholder`
       }
@@ -138,7 +132,7 @@ function createDailyPyChallenge({
 
   const pyChallengePath = join(
     pyChallengesPath,
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
     `${challengeId.toString()}.md`
   );
 

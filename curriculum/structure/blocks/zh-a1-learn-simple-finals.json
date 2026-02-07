@@ -1,0 +1,25 @@
+{
+  "name": "Simple Finals",
+  "isUpcomingChange": false,
+  "dashedName": "zh-a1-learn-simple-finals",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "606104b17eec94d3295719df", "title": "Task 1" },
+    { "id": "6ef2571c630e3461eb6a6c54", "title": "Task 2" },
+    { "id": "6cfe60a920b3b428784fe194", "title": "Task 3" },
+    { "id": "694932bf5607697ee63ad326", "title": "Task 4" },
+    { "id": "692aadb6747cbe8b0dce54b9", "title": "Task 5" },
+    { "id": "60e209238fe814ec7824ea1d", "title": "Task 6" },
+    { "id": "692aaf9e23cbb094341a9163", "title": "Task 7" },
+    { "id": "619d5ffcabe454042b77874f", "title": "Task 8" },
+    { "id": "692ab1f48d7e169f5f5598f1", "title": "Task 9" },
+    { "id": "6c55dc80cc0c649eab18ccd9", "title": "Task 10" },
+    { "id": "692adce91455a8b72e8bf048", "title": "Task 11" },
+    { "id": "639235665c77e4a8c9cee6b2", "title": "Task 12" },
+    { "id": "692adf91147e50c107a8d604", "title": "Task 13" },
+    { "id": "68393aec6aaac4578874ecef", "title": "Task 14" },
+    { "id": "692ae071afdc56c38b94c9a7", "title": "Task 15" }
+  ],
+  "blockLabel": "learn"
+}

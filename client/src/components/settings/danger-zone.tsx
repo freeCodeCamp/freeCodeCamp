@@ -43,7 +43,11 @@ function DangerZone({ deleteAccount, resetProgress, t }: DangerZoneProps) {
   return (
     <FullWidthRow className='text-center'>
       <Panel variant='danger' id='danger-zone'>
-        <Panel.Heading>{t('settings.danger.heading')}</Panel.Heading>
+        <Panel.Heading>
+          <h2 className='settings-danger-zone-heading'>
+            {t('settings.danger.heading')}
+          </h2>
+        </Panel.Heading>
         <Spacer size='m' />
         <p>{t('settings.danger.be-careful')}</p>
         <FullWidthRow>

@@ -3,7 +3,8 @@ import {
   legacyCertifications,
   upcomingCertifications,
   currentCertifications
-} from '../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
+
 import config from '../config/env.json';
 
 const { showUpcomingChanges } = config;
@@ -916,9 +917,9 @@ const allStandardCerts = [
     certSlug: Certification.B1English,
     projects: [
       {
-        id: '66607e5b317411dd5e8aae22',
-        title: "Dialogue 1: I'm Tom",
-        link: `${b1EnglishBase}/learn-how-to-describe-places-and-events/dialogue-1-im-tom`,
+        id: '694106b87224ea1c1a9d3201',
+        title: 'B1 English for Developers Certification Exam',
+        link: `${b1EnglishBase}/en-b1-certification-exam/en-b1-certification-exam`,
         certSlug: Certification.B1English
       }
     ]

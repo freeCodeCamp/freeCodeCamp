@@ -7,16 +7,16 @@ import {
   getAllEmails,
   getFirstEmail,
   getSubject
-} from './utils/mailhog';
+} from './utils/email';
 
 test.describe('Claim a certification - almost certified user', () => {
   test.beforeEach(async () => {
     await deleteAllEmails();
-    execSync('node ./tools/scripts/seed/seed-demo-user --unclaimed-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --unclaimed-user');
   });
 
   test.afterAll(() => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
   test.use({ storageState: 'playwright/.auth/certified-user.json' });
 
@@ -99,7 +99,7 @@ test.describe('Certification page - Non Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      `https://twitter.com/intent/tweet?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
+      `https://x.com/intent/post?text=I just earned the Legacy%20Responsive%20Web%20Design%20V8 certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/responsive-web-design`
     );
 
     const projectLinks = certLink.getByTestId('project-links');
@@ -259,7 +259,7 @@ test.describe('Certification page - Microsoft', () => {
     await expect(twitterLink).toBeVisible();
     await expect(twitterLink).toHaveAttribute(
       'href',
-      'https://twitter.com/intent/tweet?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
+      'https://x.com/intent/post?text=I just earned the Foundational%20C%23%20with%20Microsoft certification @freeCodeCamp! Check it out here: https://freecodecamp.org/certification/certifieduser/foundational-c-sharp-with-microsoft'
     );
 
     const projectLinks = certLink.getByTestId('project-links');

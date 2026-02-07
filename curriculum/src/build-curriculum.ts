@@ -5,7 +5,7 @@ import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
 import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
-import { SuperBlocks } from '../../shared-dist/config/curriculum.js';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
   BlockCreator,
@@ -14,12 +14,8 @@ import {
 } from './build-superblock.js';
 
 import { buildCertification } from './build-certification.js';
-import {
-  applyFilters,
-  closestFilters,
-  Filter,
-  getSuperOrder
-} from './utils.js';
+import { getSuperOrder } from './super-order.js';
+import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
   getContentDir,
   getLanguageConfig,
@@ -30,6 +26,7 @@ import {
   getBlockStructureDir,
   type BlockStructure
 } from './file-handler.js';
+import { SHOW_UPCOMING_CHANGES } from './config.js';
 const log = debug('fcc:build-curriculum');
 
 /**
@@ -192,7 +189,6 @@ export const superBlockNames = {
   'rosetta-code': SuperBlocks.RosettaCode,
   'python-for-everybody': SuperBlocks.PythonForEverybody,
   'b1-english-for-developers': SuperBlocks.B1English,
-  'full-stack-developer': SuperBlocks.FullStackDeveloper,
   'a1-professional-spanish': SuperBlocks.A1Spanish,
   'a2-professional-spanish': SuperBlocks.A2Spanish,
   'a2-professional-chinese': SuperBlocks.A2Chinese,
@@ -225,7 +221,7 @@ export const superBlockToFilename = Object.entries(superBlockNames).reduce(
  */
 export function addSuperblockStructure(
   superBlockFilenames: string[],
-  showComingSoon = process.env.SHOW_UPCOMING_CHANGES === 'true'
+  showComingSoon = SHOW_UPCOMING_CHANGES
 ) {
   log(`Building structure for ${superBlockFilenames.length} superblocks`);
 
@@ -337,10 +333,13 @@ export async function parseCurriculumStructure(filter?: Filter) {
 }
 
 export async function buildCurriculum(lang: string, filters?: Filter) {
+  // Block validation assumes the entire block is being built, if that's not the
+  // case, skip validation
+  const skipBlockValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, !isEmpty(filters))
+    getBlockCreator(lang, skipBlockValidation)
   );
 
   const { fullSuperblockList, certifications } =
@@ -357,7 +356,6 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
     const superOrder = getSuperOrder(name);
     const upcomingSuperOrder = getSuperOrder(name, true);
 
-    // If a superblock is not in either order list it should not exist.
     if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {
       throw Error(`Invalid superBlock: ${name}`);
     }
@@ -365,8 +363,8 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   });
 
   for (const superblock of liveSuperblocks) {
-    fullCurriculum[superblock.name] =
-      await builder.processSuperblock(superblock);
+    const processedSuperblock = await builder.processSuperblock(superblock);
+    fullCurriculum[superblock.name] = processedSuperblock;
   }
 
   for (const cert of certifications) {

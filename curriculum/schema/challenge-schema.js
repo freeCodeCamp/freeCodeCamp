@@ -1,13 +1,15 @@
 const Joi = require('joi');
 Joi.objectId = require('joi-objectid')(Joi);
 
-const { challengeTypes } = require('../../shared-dist/config/challenge-types');
+const {
+  challengeTypes
+} = require('@freecodecamp/shared/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
   catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('../../shared-dist/config/curriculum');
+} = require('@freecodecamp/shared/config/curriculum');
 const {
   availableCharacters,
   availableBackgrounds,
@@ -93,12 +95,13 @@ const questionJoi = Joi.object().keys({
     .items(
       Joi.object().keys({
         answer: Joi.string().required(),
-        feedback: Joi.string().allow(null)
+        feedback: Joi.string().allow(null),
+        audioId: Joi.string().allow(null)
       })
     )
     .required()
     .unique('answer'),
-  solution: Joi.number().required()
+  solution: Joi.number().min(1).max(Joi.ref('..answers.length')).required()
 });
 
 const quizJoi = Joi.object().keys({
@@ -144,7 +147,7 @@ const schema = Joi.object().keys({
       'learn',
       'practice'
     ).required(),
-    otherwise: Joi.valid(null)
+    otherwise: Joi.optional()
   }),
   blockLayout: Joi.valid(
     'challenge-list',
@@ -163,6 +166,7 @@ const schema = Joi.object().keys({
     otherwise: Joi.optional()
   }),
   certification: Joi.string().regex(slugWithSlashRE),
+  isExam: Joi.boolean(),
   challengeType: Joi.number().min(0).max(31).required(),
   // TODO: require this only for normal challenges, not certs
   dashedName: Joi.string().regex(slugRE),
@@ -172,7 +176,8 @@ const schema = Joi.object().keys({
       challengeTypes.step,
       challengeTypes.video,
       challengeTypes.multipleChoice,
-      challengeTypes.fillInTheBlank
+      challengeTypes.fillInTheBlank,
+      challengeTypes.review
     ],
     then: Joi.string().allow(''),
     otherwise: Joi.string().required()
@@ -212,7 +217,9 @@ const schema = Joi.object().keys({
     'English',
     'Odin',
     'Euler',
-    'Rosetta'
+    'Rosetta',
+    'Chinese Curriculum',
+    'Spanish Curriculum'
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
@@ -225,7 +232,8 @@ const schema = Joi.object().keys({
           feedback: Joi.string().allow(null)
         })
       )
-      .required()
+      .required(),
+    inputType: Joi.string().valid('pinyin-tone', 'pinyin-to-hanzi').optional()
   }),
   forumTopicId: Joi.number(),
   id: Joi.objectId().required(),
@@ -248,7 +256,6 @@ const schema = Joi.object().keys({
     then: Joi.string().min(1).required(),
     otherwise: Joi.string().allow('')
   }),
-  isComingSoon: Joi.bool(),
   module: Joi.string().when('superBlock', {
     is: chapterBasedSuperBlocks,
     then: Joi.required(),
@@ -312,6 +319,7 @@ const schema = Joi.object().keys({
     then: Joi.array().items(Joi.string()).required(),
     otherwise: Joi.array().items(Joi.string())
   }),
+  saveSubmissionToDB: Joi.bool(),
   scene: Joi.object().keys({
     setup: setupJoi.required(),
     commands: Joi.array()
@@ -333,6 +341,7 @@ const schema = Joi.object().keys({
         'array.unique': 'Dialogues must not have overlapping times.'
       })
   }),
+  showSpeakingButton: Joi.bool(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),

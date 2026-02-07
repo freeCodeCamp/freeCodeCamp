@@ -67,7 +67,9 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
   function renderStatus(attempt: Attempt) {
     switch (attempt.status) {
       case 'Approved':
-        return attempt.result.passed ? t('exam.passed') : t('exam.failed');
+        return attempt.result.score >= attempt.result.passingPercent
+          ? t('exam.passed')
+          : t('exam.failed');
       case 'Denied':
         return t('exam.denied');
       case 'InProgress':
@@ -91,7 +93,7 @@ export function Attempts({ examChallengeId }: AttemptsProps) {
       <tbody>
         {attempts.map(attempt => (
           <tr key={attempt.startTime}>
-            <td>{new Date(attempt.startTime).toTimeString()}</td>
+            <td>{new Date(attempt.startTime).toLocaleString()}</td>
             <td>{renderScore(attempt)}</td>
             <td>{renderStatus(attempt)}</td>
           </tr>

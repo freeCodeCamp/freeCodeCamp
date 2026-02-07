@@ -32,13 +32,21 @@
             "lab-event-rsvp",
             "lecture-working-with-data-fetching-and-memoization-in-react",
             "workshop-shopping-list-app",
-            "lab-currency-converter",
             "lecture-routing-react-frameworks-and-dependency-management-tools",
-            "lab-tic-tac-toe",
             "lecture-react-strategies-and-debugging",
             "review-react-forms-data-fetching-and-routing",
             "quiz-react-forms-data-fetching-and-routing"
           ]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-currency-converter",
+          "blocks": ["lab-currency-converter"]
+        },
+        {
+          "moduleType": "cert-project",
+          "dashedName": "lab-tic-tac-toe",
+          "blocks": ["lab-tic-tac-toe"]
         },
         {
           "dashedName": "performance",
@@ -72,7 +80,7 @@
         {
           "dashedName": "data-visualization",
           "comingSoon": true,
-          "blocks": []
+          "blocks": ["lecture-introduction-to-data-visualization"]
         },
         {
           "dashedName": "typescript-fundamentals",
@@ -100,6 +108,7 @@
       "comingSoon": true,
       "modules": [
         {
+          "comingSoon": true,
           "dashedName": "front-end-development-libraries-certification-exam",
           "blocks": ["exam-front-end-development-libraries-certification"]
         }

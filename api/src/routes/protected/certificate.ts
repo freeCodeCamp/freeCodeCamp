@@ -2,48 +2,24 @@ import type { CompletedChallenge } from '@prisma/client';
 import validator from 'validator';
 import type { FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 
-import { getChallenges } from '../../utils/get-challenges.js';
+import { challenges, getChallenges } from '../../utils/get-challenges.js';
 import {
-  certIds,
+  Certification,
+  type CertificationFlags,
   certSlugTypeMap,
-  certTypeTitleMap,
-  certTypes,
+  certToIdMap,
+  certToTitleMap,
   currentCertifications,
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 
 import * as schemas from '../../schemas.js';
 import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';
 
 import { SHOW_UPCOMING_CHANGES } from '../../utils/env.js';
 import { isKnownCertSlug } from '../helpers/certificate-utils.js';
-
-const {
-  a2EnglishId,
-  legacyFrontEndChallengeId,
-  legacyBackEndChallengeId,
-  legacyDataVisId,
-  legacyInfosecQaId,
-  legacyFullStackId,
-  respWebDesignId,
-  frontEndDevLibsId,
-  javascriptV9Id,
-  jsAlgoDataStructId,
-  jsAlgoDataStructV8Id,
-  dataVis2018Id,
-  apisMicroservicesId,
-  qaV7Id,
-  infosecV7Id,
-  sciCompPyV7Id,
-  dataAnalysisPyV7Id,
-  machineLearningPyV7Id,
-  relationalDatabaseV8Id,
-  respWebDesignV9Id,
-  collegeAlgebraPyV8Id,
-  foundationalCSharpV8Id
-} = certIds;
 
 function isCertAllowed(certSlug: string): boolean {
   if (
@@ -108,10 +84,11 @@ function assertTestsExist(
   }
 }
 
-function getCertById(
-  challengeId: string,
+function getCertBySlug(
+  cert: Certification,
   challenges: ReturnType<typeof getChallenges>
 ): { id: string; tests: { id: string }[]; challengeType: number } {
+  const challengeId = certToIdMap[cert];
   const challengeById = challenges.filter(({ id }) => id === challengeId)[0];
   if (!challengeById) {
     throw new Error(`Challenge with id '${challengeId}' not found`);
@@ -121,127 +98,97 @@ function getCertById(
   return { id, tests, challengeType };
 }
 
-function createCertTypeIds(challenges: ReturnType<typeof getChallenges>) {
-  return {
-    // legacy
-    [certTypes.frontEnd]: getCertById(legacyFrontEndChallengeId, challenges),
-    [certTypes.jsAlgoDataStruct]: getCertById(jsAlgoDataStructId, challenges),
-    [certTypes.backEnd]: getCertById(legacyBackEndChallengeId, challenges),
-    [certTypes.dataVis]: getCertById(legacyDataVisId, challenges),
-    [certTypes.infosecQa]: getCertById(legacyInfosecQaId, challenges),
-    [certTypes.fullStack]: getCertById(legacyFullStackId, challenges),
+type CertLookup = Record<
+  Certification,
+  { id: string; tests: { id: string }[]; challengeType: number }
+>;
 
-    // modern
-    [certTypes.respWebDesign]: getCertById(respWebDesignId, challenges),
-    [certTypes.frontEndDevLibs]: getCertById(frontEndDevLibsId, challenges),
-    [certTypes.dataVis2018]: getCertById(dataVis2018Id, challenges),
-    [certTypes.jsAlgoDataStructV8]: getCertById(
-      jsAlgoDataStructV8Id,
-      challenges
-    ),
-    [certTypes.apisMicroservices]: getCertById(apisMicroservicesId, challenges),
-    [certTypes.qaV7]: getCertById(qaV7Id, challenges),
-    [certTypes.infosecV7]: getCertById(infosecV7Id, challenges),
-    [certTypes.sciCompPyV7]: getCertById(sciCompPyV7Id, challenges),
-    [certTypes.dataAnalysisPyV7]: getCertById(dataAnalysisPyV7Id, challenges),
-    [certTypes.machineLearningPyV7]: getCertById(
-      machineLearningPyV7Id,
-      challenges
-    ),
-    [certTypes.relationalDatabaseV8]: getCertById(
-      relationalDatabaseV8Id,
-      challenges
-    ),
-    [certTypes.collegeAlgebraPyV8]: getCertById(
-      collegeAlgebraPyV8Id,
-      challenges
-    ),
-    [certTypes.foundationalCSharpV8]: getCertById(
-      foundationalCSharpV8Id,
-      challenges
-    ),
-    [certTypes.javascriptV9]: getCertById(javascriptV9Id, challenges),
-    [certTypes.respWebDesignV9]: getCertById(respWebDesignV9Id, challenges),
+/**
+ * Create a lookup from Certification enum values to their corresponding
+ * challenge metadata (id, tests and challengeType) using the provided
+ * challenges array.
+ *
+ * @param challenges - The array returned by getChallenges().
+ * @returns A record mapping each Certification to an object with id, tests and challengeType.
+ */
+export function createCertLookup(
+  challenges: ReturnType<typeof getChallenges>
+): CertLookup {
+  const certLookup = {} as CertLookup;
 
-    // upcoming
-    [certTypes.a2English]: getCertById(a2EnglishId, challenges)
-  };
+  for (const cert of Object.values(Certification)) {
+    certLookup[cert] = getCertBySlug(cert, challenges);
+  }
+  return certLookup;
 }
 
-interface CertI {
-  isA2EnglishCert?: boolean;
-  isRespWebDesignCert?: boolean;
-  isJsAlgoDataStructCert?: boolean;
-  isJsAlgoDataStructCertV8?: boolean;
-  isFrontEndLibsCert?: boolean;
-  is2018DataVisCert?: boolean;
-  isApisMicroservicesCert?: boolean;
-  isInfosecQaCert?: boolean;
-  isQaCertV7?: boolean;
-  isInfosecCertV7?: boolean;
-  isFrontEndCert?: boolean;
-  isBackEndCert?: boolean;
-  isDataVisCert?: boolean;
-  isFullStackCert?: boolean;
-  isSciCompPyCertV7?: boolean;
-  isDataAnalysisPyCertV7?: boolean;
-  isMachineLearningPyCertV7?: boolean;
-  isRelationalDatabaseCertV8?: boolean;
-  isCollegeAlgebraPyCertV8?: boolean;
-  isFoundationalCSharpCertV8?: boolean;
-  isJavascriptCertV9?: boolean;
-  isRespWebDesignCertV9?: boolean;
-}
-
-function getUserIsCertMap(user: CertI) {
+function getUserIsCertMap(user: Partial<CertificationFlags>) {
   const {
+    is2018DataVisCert = false,
+    isA1ChineseCert = false,
+    isA2ChineseCert = false,
     isA2EnglishCert = false,
-    isRespWebDesignCert = false,
+    isA2SpanishCert = false,
+    isApisMicroservicesCert = false,
+    isB1EnglishCert = false,
+    isBackEndCert = false,
+    isBackEndDevApisCertV9 = false,
+    isCollegeAlgebraPyCertV8 = false,
+    isDataAnalysisPyCertV7 = false,
+    isDataVisCert = false,
+    isFoundationalCSharpCertV8 = false,
+    isFrontEndCert = false,
+    isFrontEndLibsCert = false,
+    isFrontEndLibsCertV9 = false,
+    isFullStackCert = false,
+    isFullStackDeveloperCertV9 = false,
+    isInfosecCertV7 = false,
+    isInfosecQaCert = false,
+    isJavascriptCertV9 = false,
     isJsAlgoDataStructCert = false,
     isJsAlgoDataStructCertV8 = false,
-    isFrontEndLibsCert = false,
-    is2018DataVisCert = false,
-    isApisMicroservicesCert = false,
-    isInfosecQaCert = false,
-    isQaCertV7 = false,
-    isInfosecCertV7 = false,
-    isFrontEndCert = false,
-    isBackEndCert = false,
-    isDataVisCert = false,
-    isFullStackCert = false,
-    isSciCompPyCertV7 = false,
-    isDataAnalysisPyCertV7 = false,
     isMachineLearningPyCertV7 = false,
+    isPythonCertV9 = false,
+    isQaCertV7 = false,
     isRelationalDatabaseCertV8 = false,
-    isCollegeAlgebraPyCertV8 = false,
-    isFoundationalCSharpCertV8 = false,
-    isJavascriptCertV9 = false,
-    isRespWebDesignCertV9 = false
+    isRelationalDatabaseCertV9 = false,
+    isRespWebDesignCert = false,
+    isRespWebDesignCertV9 = false,
+    isSciCompPyCertV7 = false
   } = user;
 
   return {
+    is2018DataVisCert,
+    isA1ChineseCert,
+    isA2ChineseCert,
     isA2EnglishCert,
-    isRespWebDesignCert,
+    isA2SpanishCert,
+    isApisMicroservicesCert,
+    isB1EnglishCert,
+    isBackEndCert,
+    isBackEndDevApisCertV9,
+    isCollegeAlgebraPyCertV8,
+    isDataAnalysisPyCertV7,
+    isDataVisCert,
+    isFoundationalCSharpCertV8,
+    isFrontEndCert,
+    isFrontEndLibsCert,
+    isFrontEndLibsCertV9,
+    isFullStackCert,
+    isFullStackDeveloperCertV9,
+    isInfosecCertV7,
+    isInfosecQaCert,
+    isJavascriptCertV9,
     isJsAlgoDataStructCert,
     isJsAlgoDataStructCertV8,
-    isFrontEndLibsCert,
-    is2018DataVisCert,
-    isApisMicroservicesCert,
-    isInfosecQaCert,
-    isQaCertV7,
-    isInfosecCertV7,
-    isFrontEndCert,
-    isBackEndCert,
-    isDataVisCert,
-    isFullStackCert,
-    isSciCompPyCertV7,
-    isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
+    isPythonCertV9,
+    isQaCertV7,
     isRelationalDatabaseCertV8,
-    isCollegeAlgebraPyCertV8,
-    isFoundationalCSharpCertV8,
-    isJavascriptCertV9,
-    isRespWebDesignCertV9
+    isRelationalDatabaseCertV9,
+    isRespWebDesignCert,
+    isRespWebDesignCertV9,
+    isSciCompPyCertV7
   };
 }
 
@@ -257,8 +204,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
   _options,
   done
 ) => {
-  const challenges = getChallenges();
-  const certTypeIds = createCertTypeIds(challenges);
+  const certLookup = createCertLookup(challenges);
 
   // TODO(POST_MVP): Response should not include updated user. If a client wants the updated user, it should make a separate request
   // OR: Always respond with current user - full user object - not random pieces.
@@ -298,7 +244,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
       }
 
       const certType = certSlugTypeMap[certSlug];
-      const certName = certTypeTitleMap[certType];
+      const certName = certToTitleMap[certSlug];
 
       const user = await fastify.prisma.user.findUnique({
         where: { id: req.user?.id }
@@ -347,7 +293,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
         } as const;
       }
 
-      const { id, tests, challengeType } = certTypeIds[certType];
+      const { id, tests, challengeType } = certLookup[certSlug];
       const hasCompletedTestRequirements = hasCompletedTests(
         tests,
         user.completedChallenges
@@ -382,33 +328,42 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           }
         },
         select: {
-          username: true,
+          completedChallenges: true,
           email: true,
           name: true,
-          completedChallenges: true,
+          username: true,
           is2018DataVisCert: true,
           is2018FullStackCert: true,
+          isA1ChineseCert: true,
+          isA2ChineseCert: true,
           isA2EnglishCert: true,
+          isA2SpanishCert: true,
           isApisMicroservicesCert: true,
+          isB1EnglishCert: true,
           isBackEndCert: true,
-          isDataVisCert: true,
+          isBackEndDevApisCertV9: true,
           isCollegeAlgebraPyCertV8: true,
           isDataAnalysisPyCertV7: true,
+          isDataVisCert: true,
           isFoundationalCSharpCertV8: true,
           isFrontEndCert: true,
           isFrontEndLibsCert: true,
+          isFrontEndLibsCertV9: true,
           isFullStackCert: true,
+          isFullStackDeveloperCertV9: true,
           isInfosecCertV7: true,
           isInfosecQaCert: true,
+          isJavascriptCertV9: true,
           isJsAlgoDataStructCert: true,
           isJsAlgoDataStructCertV8: true,
           isMachineLearningPyCertV7: true,
+          isPythonCertV9: true,
           isQaCertV7: true,
           isRelationalDatabaseCertV8: true,
+          isRelationalDatabaseCertV9: true,
           isRespWebDesignCert: true,
-          isSciCompPyCertV7: true,
-          isJavascriptCertV9: true,
-          isRespWebDesignCertV9: true
+          isRespWebDesignCertV9: true,
+          isSciCompPyCertV7: true
         }
       });
 

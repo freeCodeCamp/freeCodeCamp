@@ -1,10 +1,10 @@
 const chokidar = require('chokidar');
 const {
   getSuperblockStructure
-} = require('../../../curriculum/dist/file-handler');
+} = require('@freecodecamp/curriculum/file-handler');
 const {
   superBlockToFilename
-} = require('../../../curriculum/dist/build-curriculum');
+} = require('@freecodecamp/curriculum/build-curriculum');
 
 const { createChallengeNode } = require('./create-challenge-nodes');
 
@@ -36,7 +36,6 @@ exports.sourceNodes = function sourceChallengesSourceNodes(
     ignored: /(^|[/\\])\../,
     ignoreInitial: true,
     persistent: true,
-    usePolling: true,
     cwd: curriculumPath
   });
 

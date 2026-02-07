@@ -12,43 +12,17 @@ body {
   background: var(--secondary-background);
 }
 
-/* This is to override Tailwind as it sets the font-weight to `bolder`.
-   TODO: Move this rule to @freecodecamp/ui. */
-b,
-strong {
-  font-weight: bold;
-}
-
-/* TODO: Move this rule to @freecodecamp/ui. */
-label {
-  display: inline-block;
-  max-width: 100%;
-  margin-bottom: 5px;
-  font-weight: bold;
-}
-
-/* TODO: Move this rule to @freecodecamp/ui. (Though some styles might need to be dropped). */
 legend {
-  display: block;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 20px;
-  font-size: 21px;
-  line-height: inherit;
   color: #333;
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
 blockquote {
-  padding: 10px 20px;
-  margin: 0 0 20px;
-  font-size: 17.5px;
   border-left: 5px solid #eeeeee;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
+/* TODO: Move this rule to components/Intro/intro.css. */
 blockquote footer,
 blockquote small,
 blockquote .small {
@@ -58,35 +32,24 @@ blockquote .small {
   color: var(--gray-45);
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
+/* TODO: Move this rule to components/Intro/intro.css. */
 blockquote footer:before,
 blockquote small:before,
 blockquote .small:before {
   content: '\2014 \00A0';
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
-ul {
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding-inline-start: 40px;
-  list-style-type: disc;
+p:has(ruby),
+li:has(> ruby) {
+  padding: 0.5rem 0;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
-ol {
-  margin-top: 0;
-  margin-bottom: 10px;
-  padding-inline-start: 40px;
-  list-style-type: decimal;
+ruby {
+  font-size: 1.3rem;
 }
 
-/* TODO: Move this rule to @freecodecamp/ui. */
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border: 0;
-  border-top: 1px solid var(--quaternary-background);
+rt {
+  font-size: 0.9rem;
 }
 
 #___gatsby {
@@ -515,6 +478,19 @@ form {
 input:focus {
   border-color: var(--tertiary-color);
 }
+
+/*
+ * Text within backticks in en-US, es, and zh-CN challenge files
+ * is parsed into spans with this class.
+ */
+.highlighted-text {
+  padding: 1px 4px;
+  background-color: var(--tertiary-background);
+  color: var(--tertiary-color);
+  border: 1px solid var(--gray-45);
+  font-size: 90%;
+}
+
 code {
   padding: 1px 4px;
   background-color: var(--tertiary-background);

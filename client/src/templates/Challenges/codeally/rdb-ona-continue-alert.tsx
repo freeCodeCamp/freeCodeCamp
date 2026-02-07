@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Callout, Spacer } from '@freecodecamp/ui';
 
 interface RdbOnaContinueAlertProps {
@@ -9,8 +9,9 @@ interface RdbOnaContinueAlertProps {
 function RdbOnaContinueAlert({
   course
 }: RdbOnaContinueAlertProps): JSX.Element {
+  const { t } = useTranslation();
   return (
-    <Callout variant='info'>
+    <Callout variant='note' label={t('misc.note')}>
       <Trans values={{ course }} i18nKey='learn.ona.continue-project'>
         <a href='https://app.ona.com' rel='noopener noreferrer' target='_blank'>
           placeholder

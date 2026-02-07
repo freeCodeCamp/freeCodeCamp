@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
@@ -8,12 +8,11 @@ import { Button, Modal } from '@freecodecamp/ui';
 import { closeModal, resetChallenge } from '../redux/actions';
 import { isResetModalOpenSelector } from '../redux/selectors';
 import callGA from '../../../analytics/call-ga';
-import { canSaveToDB } from '../../../../../shared-dist/config/challenge-types';
 
 interface ResetModalProps {
   close: () => void;
   isOpen: boolean;
-  challengeType: number;
+  saveSubmissionToDB?: boolean;
   reset: () => void;
   challengeTitle: string;
 }
@@ -41,14 +40,18 @@ function withActions(...fns: Array<() => void>) {
 function ResetModal({
   reset,
   close,
-  challengeType,
+  saveSubmissionToDB,
   isOpen,
   challengeTitle
 }: ResetModalProps): JSX.Element {
   const { t } = useTranslation();
-  if (isOpen) {
-    callGA({ event: 'pageview', pagePath: '/reset-modal' });
-  }
+
+  useEffect(() => {
+    if (isOpen) {
+      callGA({ event: 'pageview', pagePath: '/reset-modal' });
+    }
+  }, [isOpen]);
+
   return (
     <Modal onClose={close} open={isOpen} variant='danger'>
       <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
@@ -56,7 +59,7 @@ function ResetModal({
       </Modal.Header>
       <Modal.Body alignment='center'>
         <p>
-          {canSaveToDB(challengeType)
+          {saveSubmissionToDB
             ? t('learn.revert-warn')
             : t('learn.reset-warn', {
                 title: challengeTitle
@@ -73,7 +76,7 @@ function ResetModal({
           variant='danger'
           onClick={withActions(reset, close)}
         >
-          {canSaveToDB(challengeType)
+          {saveSubmissionToDB
             ? t('buttons.revert-to-saved-code')
             : t('buttons.reset-lesson')}
         </Button>

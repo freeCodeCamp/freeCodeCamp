@@ -1,5 +1,5 @@
 const path = require('path');
-const { viewTypes } = require('../../../shared-dist/config/challenge-types');
+const { viewTypes } = require('@freecodecamp/shared/config/challenge-types');
 
 const backend = path.resolve(
   __dirname,
@@ -100,7 +100,8 @@ exports.createChallengePages = function (
       template,
       challengeType,
       id,
-      isLastChallengeInBlock
+      isLastChallengeInBlock,
+      saveSubmissionToDB
     } = node.challenge;
 
     createPage({
@@ -123,7 +124,8 @@ exports.createChallengePages = function (
           isLastChallengeInBlock: isLastChallengeInBlock,
           nextChallengePath: idToNextPathCurrentCurriculum[node.id],
           prevChallengePath: idToPrevPathCurrentCurriculum[node.id],
-          id
+          id,
+          saveSubmissionToDB
         },
         projectPreview: getProjectPreviewConfig(
           node.challenge,

@@ -15,7 +15,7 @@ const settingsPageElement = {
 
 test.beforeEach(async ({ page }) => {
   // Reset input values
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 
   await page.goto('/certifieduser');
 
@@ -60,8 +60,8 @@ test.describe('Your Internet Presence', () => {
     },
     {
       name: 'twitter',
-      url: 'https://twitter.com/certified-user',
-      label: 'Twitter',
+      url: 'https://x.com/certified-user',
+      label: 'X',
       checkTestId: settingsPageElement.twitterCheckmark
     },
     {

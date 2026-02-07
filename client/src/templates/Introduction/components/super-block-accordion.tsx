@@ -3,21 +3,19 @@ import { useTranslation } from 'react-i18next';
 // TODO: Add this component to freecodecamp/ui and remove this dependency
 import { Disclosure } from '@headlessui/react';
 
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import DropDown from '../../../assets/icons/dropdown';
 import type { ChapterBasedSuperBlockStructure } from '../../../redux/prop-types';
 import { ChapterIcon } from '../../../assets/chapter-icon';
-import { type Chapter } from '../../../../../shared-dist/config/chapters';
+import { type Chapter } from '@freecodecamp/shared/config/chapters';
 import { Link } from '../../../components/helpers';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '../../../../../shared-dist/config/blocks';
-import { FsdChapters } from '../../../../../shared-dist/config/chapters';
-import { type Module } from '../../../../../shared-dist/config/modules';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import { FsdChapters } from '@freecodecamp/shared/config/chapters';
+import { type Module } from '@freecodecamp/shared/config/modules';
 import envData from '../../../../config/env.json';
 import Block from './block';
 import CheckMark from './check-mark';
+import { default as BlockLabelComponent } from './block-label';
 
 import './super-block-accordion.css';
 
@@ -48,7 +46,7 @@ interface ModuleProps {
 interface Challenge {
   id: string;
   block: string;
-  blockLabel: BlockLabel;
+  blockLabel?: BlockLabel;
   title: string;
   fields: { slug: string };
   dashedName: string;
@@ -66,7 +64,7 @@ interface PopulatedBlock {
 interface PopulatedModule {
   name: string;
   comingSoon?: boolean;
-  moduleType?: string;
+  moduleType?: Module['moduleType'];
   blocks: PopulatedBlock[];
 }
 
@@ -96,7 +94,7 @@ const Chapter = ({
   examSlug
 }: ChapterProps) => {
   const { t } = useTranslation();
-  const isComplete = completedSteps === totalSteps;
+  const isComplete = completedSteps === totalSteps && totalSteps > 0;
   const chapterLabel = t(`intro:${superBlock}.chapters.${dashedName}`);
 
   const chapterButtonContent = (
@@ -107,9 +105,12 @@ const Chapter = ({
         </span>
         <ChapterIcon className='map-icon' chapter={dashedName as FsdChapters} />
         {chapterLabel}
+        {isLinkChapter && examSlug && (
+          <BlockLabelComponent blockLabel={BlockLabel.exam} />
+        )}
       </div>
       <div className='chapter-button-right'>
-        {!comingSoon && (
+        {!comingSoon && !isLinkChapter && (
           <span className='chapter-steps'>
             {t('learn.steps-completed', {
               totalSteps,
@@ -185,6 +186,16 @@ const Module = ({
           </span>
           {t(`intro:${superBlock}.modules.${dashedName}`)}
         </div>
+        <div className='module-button-right' data-testid='module-button-right'>
+          {!comingSoon && !!totalSteps && (
+            <span className='module-steps'>
+              {t('learn.steps-completed', {
+                totalSteps,
+                completedSteps
+              })}
+            </span>
+          )}
+        </div>
       </Disclosure.Button>
       <Disclosure.Panel as='ul' className='module-panel'>
         {comingSoon && (
@@ -206,19 +217,23 @@ const Module = ({
 const LinkModule = ({
   superBlock,
   challenges,
-  accordion
+  accordion,
+  moduleType
 }: {
   superBlock: SuperBlocks;
   challenges?: Challenge[];
   accordion: boolean;
+  moduleType?: Module['moduleType'];
 }) => {
   if (!challenges?.length) return null;
+
+  const label = moduleType ?? challenges[0].blockLabel;
 
   return (
     <li className='link-block'>
       <Block
         block={challenges[0].block}
-        blockLabel={challenges[0].blockLabel}
+        blockLabel={label || null}
         challenges={challenges}
         superBlock={superBlock}
         accordion={accordion}
@@ -244,9 +259,10 @@ export const SuperBlockAccordion = ({
     const module = modules.find(module => module.dashedName === name);
 
     return (
-      module?.moduleType === 'review' ||
-      module?.moduleType === 'exam' ||
-      module?.moduleType === 'quiz'
+      module?.moduleType === BlockLabel.review ||
+      module?.moduleType === BlockLabel.exam ||
+      module?.moduleType === BlockLabel.quiz ||
+      module?.moduleType === BlockLabel.certProject
     );
   };
 
@@ -354,7 +370,7 @@ export const SuperBlockAccordion = ({
           >
             {chapter.modules.map(module => {
               if (module.comingSoon && !showUpcomingChanges) {
-                if (module.moduleType === 'review') {
+                if (module.moduleType === BlockLabel.review) {
                   return null;
                 }
               }
@@ -364,6 +380,7 @@ export const SuperBlockAccordion = ({
                   <LinkModule
                     key={module.name}
                     superBlock={superBlock}
+                    moduleType={module.moduleType}
                     challenges={module.blocks[0]?.challenges}
                     accordion={accordion}
                   />

@@ -7,15 +7,18 @@ exports[`add-video-question plugin > should match the video snapshot 1`] = `
       "answers": [
         {
           "answer": "<p>Some inline <code>code</code></p>",
+          "audioId": null,
           "feedback": "<p>That is not correct.</p>",
         },
         {
           "answer": "<p>Some <em>italics</em></p>
 <p>A second answer paragraph.</p>",
+          "audioId": null,
           "feedback": null,
         },
         {
           "answer": "<p><code> code in </code> code tags</p>",
+          "audioId": null,
           "feedback": null,
         },
       ],

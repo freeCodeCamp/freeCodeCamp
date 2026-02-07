@@ -2,7 +2,7 @@
   "name": "Data Structures Quiz",
   "blockLabel": "quiz",
   "blockLayout": "link",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "quiz-data-structures",
   "challengeOrder": [
     { "id": "67f41341453c2247fb2828f7", "title": "Data Structures Quiz" }

@@ -1,0 +1,11 @@
+{
+  "name": "Personal Details in Action",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-personal-details-in-action",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "691a4e5a7fb2f882e4c0b0b0", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "practice"
+}

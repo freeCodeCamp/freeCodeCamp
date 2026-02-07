@@ -96,7 +96,7 @@ function App() {
 export default App;
 ```
 
-The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function runs any time it runs, even when you don't increase the `num` state variable.
+The `timer` in the `useEffect`, running every second, will make the `calculateSquare` function run any time it runs, even when you don't increase the `num` state variable.
 
 To solve this problem, we can use the `useMemo` hook by wrapping the function call in it and specifying the `num` variable as the dependency:
 
@@ -233,10 +233,6 @@ Memoization tools focus on caching values and functions, while this option handl
 ---
 
 `useEffect`
-
-### --feedback--
-
-Memoization tools focus on caching values and functions, while this option handles side effects.
 
 ## --video-solution--
 

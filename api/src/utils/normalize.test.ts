@@ -12,14 +12,12 @@ import {
 describe('normalize', () => {
   describe('normalizeTwitter', () => {
     test('returns the input if it is a url', () => {
-      const url = 'https://twitter.com/a_generic_user';
+      const url = 'https://x.com/a_generic_user';
       expect(normalizeTwitter(url)).toEqual(url);
     });
-    test('adds the handle to twitter.com if it is not a url', () => {
+    test('adds the handle to x.com if it is not a url', () => {
       const handle = '@a_generic_user';
-      expect(normalizeTwitter(handle)).toEqual(
-        'https://twitter.com/a_generic_user'
-      );
+      expect(normalizeTwitter(handle)).toEqual('https://x.com/a_generic_user');
     });
     test('returns undefined  if that is the input', () => {
       expect(normalizeTwitter('')).toBeUndefined();
@@ -52,7 +50,8 @@ describe('normalize', () => {
     showName: true,
     showPoints: true,
     showPortfolio: true,
-    showTimeLine: true
+    showTimeLine: true,
+    showExperience: true
   };
 
   const defaultProfileUI = {
@@ -65,7 +64,8 @@ describe('normalize', () => {
     showName: false,
     showPoints: false,
     showPortfolio: false,
-    showTimeLine: false
+    showTimeLine: false,
+    showExperience: false
   };
 
   describe('normalizeProfileUI', () => {
@@ -78,7 +78,7 @@ describe('normalize', () => {
       expect(normalizeProfileUI(input)).toEqual(defaultProfileUI);
     });
 
-    test('should convert all "null" values to "undefined"', () => {
+    test('should convert all "null" values to "false"', () => {
       const input = {
         isLocked: null,
         showAbout: false,
@@ -89,19 +89,21 @@ describe('normalize', () => {
         showName: null,
         showPoints: null,
         showPortfolio: null,
-        showTimeLine: null
+        showTimeLine: null,
+        showExperience: null
       };
       expect(normalizeProfileUI(input)).toEqual({
-        isLocked: undefined,
+        isLocked: false,
         showAbout: false,
-        showCerts: undefined,
-        showDonation: undefined,
-        showHeatMap: undefined,
-        showLocation: undefined,
-        showName: undefined,
-        showPoints: undefined,
-        showPortfolio: undefined,
-        showTimeLine: undefined
+        showCerts: false,
+        showDonation: false,
+        showHeatMap: false,
+        showLocation: false,
+        showName: false,
+        showPoints: false,
+        showPortfolio: false,
+        showTimeLine: false,
+        showExperience: false
       });
     });
   });
@@ -192,6 +194,10 @@ describe('normalize', () => {
       expect(() => normalizeDate({ date: '123' })).toThrow(
         'Unexpected date value: {"date":"123"}'
       );
+    });
+
+    test('should handle string numbers', () => {
+      expect(normalizeDate('1696118400000')).toEqual(1696118400000);
     });
   });
 

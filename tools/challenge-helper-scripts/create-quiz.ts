@@ -2,18 +2,17 @@ import fs from 'fs/promises';
 import path from 'path';
 import { prompt } from 'inquirer';
 import { format } from 'prettier';
-import ObjectID from 'bson-objectid';
+import { ObjectId } from 'bson';
 
-import { SuperBlocks } from '../../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
-  getContentConfig,
+  createBlockFolder,
   writeBlockStructure
-} from '../../curriculum/src/file-handler';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum';
-import { createQuizFile, getAllBlocks, validateBlockName } from './utils';
-import { getBaseMeta } from './helpers/get-base-meta';
-import { createIntroMD } from './helpers/create-intro';
-import { updateSimpleSuperblockStructure } from './helpers/create-project';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
+import { createQuizFile, getAllBlocks, validateBlockName } from './utils.js';
+import { getBaseMeta } from './helpers/get-base-meta.js';
+import { updateSimpleSuperblockStructure } from './helpers/create-project.js';
 
 const helpCategories = [
   'HTML-CSS',
@@ -64,8 +63,6 @@ async function createQuiz(
     superBlockToFilename as Record<SuperBlocks, string>
   )[superBlock];
   void updateSimpleSuperblockStructure(block, { order: 0 }, superblockFilename);
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson(
@@ -93,13 +90,13 @@ async function createMetaJson(
   block: string,
   title: string,
   helpCategory: string,
-  challengeId: ObjectID
+  challengeId: ObjectId
 ) {
   const newMeta = getBaseMeta('Quiz');
   newMeta.name = title;
   newMeta.dashedName = block;
   newMeta.helpCategory = helpCategory;
-  // eslint-disable-next-line @typescript-eslint/no-base-to-string
+
   newMeta.challengeOrder = [{ id: challengeId.toString(), title: title }];
 
   await writeBlockStructure(block, newMeta);
@@ -110,16 +107,9 @@ async function createQuizChallenge(
   block: string,
   title: string,
   questionCount: number
-): Promise<ObjectID> {
-  const { blockContentDir } = getContentConfig('english') as {
-    blockContentDir: string;
-  };
-
-  const newChallengeDir = path.resolve(blockContentDir, block);
-  await fs.mkdir(newChallengeDir, { recursive: true });
-
+): Promise<ObjectId> {
   return createQuizFile({
-    projectPath: newChallengeDir + '/',
+    projectPath: await createBlockFolder(block),
     title: title,
     dashedName: block,
     questionCount: questionCount
@@ -151,7 +141,7 @@ void getAllBlocks()
       {
         name: 'superBlock',
         message: 'Which certification does this belong to?',
-        default: SuperBlocks.FullStackDeveloper,
+        default: SuperBlocks.RespWebDesignV9,
         type: 'list',
         choices: Object.values(SuperBlocks)
       },

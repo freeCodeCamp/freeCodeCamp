@@ -26,6 +26,7 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-celestial-bodies-database",
           "blocks": ["lab-celestial-bodies-database"]
         },
@@ -51,10 +52,12 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-world-cup-database",
           "blocks": ["lab-world-cup-database"]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-salon-appointment-scheduler",
           "blocks": ["lab-salon-appointment-scheduler"]
         },
@@ -71,10 +74,12 @@
           ]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-periodic-table-database",
           "blocks": ["lab-periodic-table-database"]
         },
         {
+          "moduleType": "cert-project",
           "dashedName": "lab-number-guessing-game",
           "blocks": ["lab-number-guessing-game"]
         },
@@ -88,9 +93,10 @@
     {
       "chapterType": "exam",
       "dashedName": "relational-databases-certification-exam",
-      "comingSoon": true,
+      "comingSoon": false,
       "modules": [
         {
+          "comingSoon": false,
           "dashedName": "relational-databases-certification-exam",
           "blocks": ["exam-relational-databases-certification"]
         }

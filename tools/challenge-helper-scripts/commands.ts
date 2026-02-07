@@ -1,13 +1,13 @@
 import fs from 'fs';
-import { getProjectPath } from './helpers/get-project-info';
-import { getMetaData } from './helpers/project-metadata';
+import { getProjectPath } from './helpers/get-project-info.js';
+import { getMetaData } from './helpers/project-metadata.js';
 import {
   createStepFile,
   deleteStepFromMeta,
   getChallenge,
   insertStepIntoMeta,
   updateStepTitles
-} from './utils';
+} from './utils.js';
 
 async function deleteStep(stepNum: number): Promise<void> {
   if (stepNum < 1) {

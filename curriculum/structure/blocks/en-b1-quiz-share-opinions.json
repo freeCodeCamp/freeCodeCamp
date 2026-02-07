@@ -1,0 +1,11 @@
+{
+  "name": "Sharing Opinions Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-share-opinions",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "69604468bd3c7564baa4746e", "title": "Sharing Opinions Quiz" }
+  ],
+  "blockLabel": "quiz"
+}

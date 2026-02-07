@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-returns, jsdoc/require-param */
 import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebox';
 import { PrismaClientValidationError } from '@prisma/client/runtime/library.js';
 import { type FastifyInstance, type FastifyReply } from 'fastify';
@@ -25,6 +24,20 @@ import { isObjectID } from '../../utils/validation.js';
  */
 export const examEnvironmentValidatedTokenRoutes: FastifyPluginCallbackTypebox =
   (fastify, _options, done) => {
+    fastify.setErrorHandler((error, req, res) => {
+      // If the error does not match the format {code: string; message: string}, coerce into:
+      if (
+        !Object.hasOwnProperty.call(error, 'code') ||
+        !Object.hasOwnProperty.call(error, 'message')
+      ) {
+        const logger = fastify.log.child({ req, res });
+        logger.error(error, 'Unhandled error in exam environment routes.');
+        const str = JSON.stringify(error);
+        res.code(500);
+        res.send(ERRORS.FCC_ERR_UNKNOWN_STATE(str));
+      }
+    });
+
     fastify.get(
       '/exam-environment/exams',
       {
@@ -183,7 +196,16 @@ async function postExamGeneratedExamHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
+
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
   // Get exam from DB
   const examId = req.body.examId;
   const maybeExam = await mapErr(
@@ -219,7 +241,6 @@ async function postExamGeneratedExamHandler(
   }
 
   // Check user has completed prerequisites
-  const user = req.user!;
   const isExamPrerequisitesMet = checkPrerequisites(user, exam.prerequisites);
 
   if (!isExamPrerequisitesMet) {
@@ -459,6 +480,7 @@ async function postExamGeneratedExamHandler(
         userId: user.id,
         examId: exam.id,
         generatedExamId: generatedExam.id,
+        examModerationId: null,
         startTime: new Date(),
         questionSets: []
       }
@@ -521,10 +543,18 @@ async function postExamAttemptHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
-  const { attempt } = req.body;
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
+
+  const { attempt } = req.body;
 
   const maybeAttempts = await mapErr(
     this.prisma.examEnvironmentExamAttempt.findMany({
@@ -651,23 +681,36 @@ async function postExamAttemptHandler(
   );
 
   if (maybeValidExamAttempt.hasError) {
-    logger.warn(
-      { validExamAttemptError: maybeValidExamAttempt.error },
-      'Invalid exam attempt.'
-    );
-    // As attempt is invalid, create moderation record to investigate
-    await this.prisma.examEnvironmentExamModeration.create({
-      data: {
-        examAttemptId: latestAttempt.id,
-        status: ExamEnvironmentExamModerationStatus.Pending
-      }
-    });
-
-    void reply.code(400);
     const message =
       maybeValidExamAttempt.error instanceof Error
         ? maybeValidExamAttempt.error.message
         : 'Unknown attempt validation error';
+    logger.warn({ validExamAttemptError: message }, 'Invalid exam attempt.');
+    // As attempt is invalid, create moderation record to investigate or update existing record
+    const moderation = await this.prisma.examEnvironmentExamModeration.upsert({
+      where: { examAttemptId: latestAttempt.id },
+      create: {
+        examAttemptId: latestAttempt.id,
+        status: ExamEnvironmentExamModerationStatus.Pending,
+        feedback: message
+      },
+      update: {
+        feedback: message
+      }
+    });
+
+    // Link attempt with moderation id if it has not already been done
+    await this.prisma.examEnvironmentExamAttempt.update({
+      where: {
+        id: latestAttempt.id,
+        examModerationId: null
+      },
+      data: {
+        examModerationId: moderation.id
+      }
+    });
+
+    void reply.code(400);
     return reply.send(ERRORS.FCC_EINVAL_EXAM_ENVIRONMENT_EXAM_ATTEMPT(message));
   }
 
@@ -704,9 +747,17 @@ export async function getExams(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
+
   const maybeExams = await mapErr(
     this.prisma.examEnvironmentExam.findMany({
       where: {
@@ -869,9 +920,16 @@ export async function getExamAttemptsHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
+  logger.info({ userId: user.id });
 
   // Send all relevant exam attempts
   const envExamAttempts = [];
@@ -929,9 +987,16 @@ export async function getExamAttemptHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
-  logger.info({ userId: req.user?.id });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+  logger.info({ userId: user.id });
+
   const { attemptId } = req.params;
 
   // If attempt id is given, only return that attempt
@@ -988,8 +1053,15 @@ export async function getExamAttemptsByExamIdHandler(
   reply: FastifyReply
 ) {
   const logger = this.log.child({ req });
+  const user = req.user;
 
-  const user = req.user!;
+  if (!user) {
+    logger.error('No user found in request.');
+    this.Sentry.captureException('No user found in request.');
+    void reply.code(500);
+    return reply.send(ERRORS.FCC_ERR_UNKNOWN_STATE('No user found.'));
+  }
+
   const { examId } = req.params;
 
   logger.info({ examId, userId: user.id });

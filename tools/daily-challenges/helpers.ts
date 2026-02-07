@@ -37,11 +37,9 @@ query {
           id
           title
           description
-          fields {
-            tests {
+          tests {
               testString
               text
-            }
           }
           challengeFiles {
             contents
@@ -78,14 +76,14 @@ export function combineChallenges({
     id: jsId,
     title: jsTitle,
     description: jsDescription,
-    fields: { tests: jsTests },
+    tests: jsTests,
     challengeFiles: jsChallengeFiles
   } = jsChallenge;
 
   const {
     title: pyTitle,
     description: pyDescription,
-    fields: { tests: pyTests },
+    tests: pyTests,
     challengeFiles: pyChallengeFiles
   } = pyChallenge;
 
@@ -128,12 +126,12 @@ export function combineChallenges({
   return challengeData;
 }
 
-export function handleError(err: Error, client: MongoClient) {
+export async function handleError(err: unknown, client: MongoClient) {
   if (err) {
     console.error('Oh noes!! Error seeding Daily Challenges.');
     console.error(err);
     try {
-      client.close();
+      await client.close();
     } catch {
       // no-op
     } finally {

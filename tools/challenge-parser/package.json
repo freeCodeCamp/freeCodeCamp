@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "repository": {
@@ -19,7 +19,11 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "lint": "eslint --max-warnings 0",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:ui": "vitest --ui",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "hast-util-to-html": "7.1.3",
@@ -54,6 +58,9 @@
     "unist-util-visit-children": "1.1.4"
   },
   "devDependencies": {
+    "@freecodecamp/eslint-config": "workspace:*",
+    "eslint": "^9.39.1",
+    "typescript": "5.9.3",
     "unist-util-select": "3.0.4",
     "vitest": "^3.2.4"
   }

@@ -1,6 +1,6 @@
 {
   "name": "Build an Email Simulator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-email-simulator",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",

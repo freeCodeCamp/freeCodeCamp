@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, afterEach, vi, Mock } from 'vitest';
 import type { TFunction } from 'i18next';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   ChallengeFiles,
   PrerequisiteChallenge,
@@ -12,14 +12,11 @@ import {
   FileKeyChallenge,
   BilibiliIds
 } from '../../../redux/prop-types';
-import { isAuditedSuperBlock } from '../../../../../shared-dist/utils/is-audited';
-import {
-  BlockLayouts,
-  BlockLabel
-} from '../../../../../shared-dist/config/blocks';
+import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import { Block } from './block';
 
-vi.mock('../../../../../shared-dist/utils/is-audited', () => ({
+vi.mock('@freecodecamp/shared/utils/is-audited', () => ({
   isAuditedSuperBlock: vi.fn().mockReturnValueOnce(true)
 }));
 
@@ -47,7 +44,6 @@ const defaultProps = {
       helpCategory: 'mockHelpCategory',
       id: 'mockId',
       instructions: 'mockInstructions',
-      isComingSoon: false,
       internal: {
         content: 'mockContent',
         contentDigest: 'mockContentDigest',
@@ -73,7 +69,7 @@ const defaultProps = {
       },
       sourceInstanceName: 'mockSourceInstanceName',
       superOrder: 1,
-      superBlock: SuperBlocks.FullStackDeveloper,
+      superBlock: SuperBlocks.FullStackDeveloperV9,
       tail: ['mockTail'],
       template: 'mockTemplate',
       tests: [] as Test[],
@@ -90,7 +86,7 @@ const defaultProps = {
   completedChallengeIds: ['testchallengeIds'],
   isExpanded: true,
   t: vi.fn((key: string) => [key]) as unknown as TFunction,
-  superBlock: SuperBlocks.FullStackDeveloper,
+  superBlock: SuperBlocks.FullStackDeveloperV9,
   toggleBlock: vi.fn()
 };
 

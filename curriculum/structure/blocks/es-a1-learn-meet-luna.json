@@ -1,9 +1,20 @@
 {
   "name": "Meet Luna",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-learn-meet-luna",
-  "helpCategory": "English",
+  "helpCategory": "Spanish Curriculum",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "68dc747c75837c6bb82aeeb8", "title": "Task 1" }],
+  "challengeOrder": [
+    { "id": "68dc747c75837c6bb82aeeb8", "title": "Task 1" },
+    { "id": "69038829cfac799092c44c5e", "title": "Task 2" },
+    { "id": "69137d8fd9f81f7c0f229ac5", "title": "Task 3" },
+    { "id": "69138238171e75857016b2fe", "title": "Task 4" },
+    { "id": "6903913aedf7c8a38ed31413", "title": "Task 5" },
+    { "id": "69149bd1d69c4b1ae9a8cf9e", "title": "Task 6" },
+    { "id": "6903b0a4fca844c1bb1d9b84", "title": "Task 7" },
+    { "id": "6913abe637aaab0eb8926231", "title": "Task 8" },
+    { "id": "6914af61cb72593f7ad505cf", "title": "Task 9" },
+    { "id": "6914b05e76110e437ed28598", "title": "Task 10" }
+  ],
   "blockLabel": "learn"
 }

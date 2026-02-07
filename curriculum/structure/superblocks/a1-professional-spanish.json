@@ -10,16 +10,18 @@
       ]
     },
     {
-      "dashedName": "es-a1-chapter-the-spanish-alphabet",
+      "dashedName": "es-a1-chapter-spanish-fundamentals",
       "modules": [
         {
-          "dashedName": "es-a1-module-alphabet-and-special-characters",
+          "dashedName": "es-a1-module-letters-sounds-and-first-numbers",
           "blocks": [
             "es-a1-learn-vowels",
             "es-a1-learn-consonants-and-special-characters",
             "es-a1-practice-the-alphabet",
-            "es-a1-review-the-alphabet",
-            "es-a1-quiz-the-alphabet"
+            "es-a1-learn-the-first-ten-numbers",
+            "es-a1-practice-the-first-ten-numbers",
+            "es-a1-review-spanish-fundamentals",
+            "es-a1-quiz-spanish-fundamentals"
           ]
         }
       ]
@@ -57,6 +59,75 @@
             "es-a1-practice-first-questions",
             "es-a1-review-first-questions",
             "es-a1-quiz-first-questions"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-basic-personal-details",
+      "modules": [
+        {
+          "dashedName": "es-a1-module-numbers-10-to-29",
+          "blocks": [
+            "es-a1-warm-up-remember-first-numbers",
+            "es-a1-learn-numbers-10-to-29",
+            "es-a1-practice-using-numbers-10-to-29",
+            "es-a1-review-numbers-10-to-29",
+            "es-a1-quiz-numbers-10-to-29"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-sharing-your-personal-details",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-getting-ready-to-share-personal-details",
+            "es-a1-learn-basic-personal-information",
+            "es-a1-learn-contact-information-and-spelling",
+            "es-a1-practice-personal-details-in-action",
+            "es-a1-review-sharing-your-personal-details",
+            "es-a1-quiz-sharing-your-personal-details"
+          ]
+        }
+      ]
+    },
+    {
+      "dashedName": "es-a1-chapter-describing-company-and-people",
+      "comingSoon": true,
+      "modules": [
+        {
+          "dashedName": "es-a1-module-numbers-30-to-100",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-learn-numbers-30-to-60",
+            "es-a1-learn-numbers-61-to-100",
+            "es-a1-practice-using-the-first-100-numbers",
+            "es-a1-review-first-100-numbers",
+            "es-a1-quiz-numbers-30-to-100"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-describing-a-company",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-describing-a-company-basics",
+            "es-a1-learn-what-the-company-does",
+            "es-a1-learn-asking-about-a-company",
+            "es-a1-practice-company-profile",
+            "es-a1-review-talking-about-a-company",
+            "es-a1-quiz-describing-a-company"
+          ]
+        },
+        {
+          "dashedName": "es-a1-module-describing-people-at-work",
+          "comingSoon": true,
+          "blocks": [
+            "es-a1-warm-up-describing-people-at-work-basics",
+            "es-a1-learn-mini-biographies",
+            "es-a1-practice-asking-about-mini-biographies",
+            "es-a1-learn-short-workplace-profile",
+            "es-a1-practice-asking-about-short-workplace-profiles",
+            "es-a1-review-describing-people-at-work",
+            "es-a1-quiz-describing-people-at-work"
           ]
         }
       ]

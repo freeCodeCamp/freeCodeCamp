@@ -34,10 +34,7 @@ import type {
 } from '../../../redux/prop-types';
 import { editorToneOptions } from '../../../utils/tone/editor-config';
 import { editorNotes } from '../../../utils/tone/editor-notes';
-import {
-  canSaveToDB,
-  challengeTypes
-} from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   executeChallenge,
   saveEditorContent,
@@ -106,6 +103,7 @@ export interface EditorProps {
   resizeProps: ResizeProps;
   saveChallenge: () => void;
   saveEditorContent: () => void;
+  saveSubmissionToDB?: boolean;
   setEditorFocusability: (isFocusable: boolean) => void;
   submitChallenge: () => void;
   stopResetting: () => void;
@@ -154,7 +152,10 @@ const mapStateToProps = createSelector(
   (
     attempts: number,
     canFocus: boolean,
-    { challengeType }: { challengeType: number },
+    {
+      challengeType,
+      saveSubmissionToDB
+    }: { challengeType: number; saveSubmissionToDB?: boolean },
     open,
     previewOpen: boolean,
     isResetting: boolean,
@@ -166,6 +167,7 @@ const mapStateToProps = createSelector(
     attempts,
     canFocus: open ? false : canFocus,
     challengeType,
+    saveSubmissionToDB,
     previewOpen,
     isResetting,
     isSignedIn,
@@ -615,7 +617,7 @@ const Editor = (props: EditorProps): JSX.Element => {
         monaco.KeyMod.WinCtrl | monaco.KeyCode.KeyS
       ],
       run:
-        canSaveToDB(props.challengeType) && props.isSignedIn
+        props.saveSubmissionToDB && props.isSignedIn
           ? // save to database
             props.saveChallenge
           : // save to local storage

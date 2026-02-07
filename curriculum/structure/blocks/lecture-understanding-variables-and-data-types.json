@@ -1,0 +1,22 @@
+{
+  "name": "Understanding Variables and Data Types",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-understanding-variables-and-data-types",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "67fe8597975ea634042cad8f",
+      "title": "How Do You Declare Variables and What Are Naming Conventions to Name Variables?"
+    },
+    {
+      "id": "67fe8599c83979345ff9a91a",
+      "title": "How Does the Print Function Work?"
+    },
+    {
+      "id": "67fe859a00971c34a23abd43",
+      "title": "What Are Common Data Types in Python and How Do You Get the Type of a Variable?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

@@ -177,7 +177,7 @@ test.describe('Daily Coding Challenges', () => {
       '// JavaScript seed code'
     );
 
-    // Show show Python UI after changing language
+    // Show Python UI after changing language
     await page.getByRole('button', { name: /python/i }).click();
 
     await expect(page.getByRole('button', { name: /main.py/i })).toBeVisible();
@@ -251,6 +251,6 @@ test.describe('Daily Coding Challenge Archive', () => {
 
     await expect(page.getByTestId('calendar-day-completed')).toHaveCount(1);
 
-    await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(1);
+    await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(3);
   });
 });

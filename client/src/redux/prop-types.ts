@@ -1,8 +1,12 @@
 import { HandlerProps } from 'react-reflex';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { BlockLayouts, BlockLabel } from '../../../shared-dist/config/blocks';
-import type { ChallengeFile, Ext } from '../../../shared-dist/utils/polyvinyl';
+import type {
+  ChallengeLang,
+  SuperBlocks
+} from '@freecodecamp/shared/config/curriculum';
+import type { CertificationFlags } from '@freecodecamp/shared/config/certification-settings';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
+import type { ChallengeFile, Ext } from '@freecodecamp/shared/utils/polyvinyl';
 import { type CertTitle } from '../../config/cert-and-project-map';
 import { UserThemes } from './types';
 
@@ -37,6 +41,7 @@ export type MarkdownRemark = {
 type MultipleChoiceAnswer = {
   answer: string;
   feedback: string | null;
+  audioId: string | null;
 };
 
 export type Question = {
@@ -48,13 +53,12 @@ export type Question = {
 export type FillInTheBlank = {
   sentence: string;
   blanks: MultipleChoiceAnswer[];
+  inputType?: 'pinyin-tone' | 'pinyin-to-hanzi';
 };
 
 export type Fields = {
   slug: string;
   blockHashSlug: string;
-  blockName: string;
-  tests: Test[];
 };
 type Required = {
   link: string;
@@ -75,7 +79,7 @@ export interface VideoLocaleIds {
 }
 
 // English types for animations
-interface Dialogue {
+export interface Dialogue {
   text: string;
   align: 'left' | 'right' | 'center';
 }
@@ -86,7 +90,7 @@ export interface CharacterPosition {
   z?: number;
 }
 
-interface SceneCommand {
+export interface SceneCommand {
   background?: string;
   character: string;
   position?: CharacterPosition;
@@ -139,7 +143,17 @@ export type Characters =
   | 'René'
   | 'Sebastián'
   | 'Diego'
-  | 'Valeria';
+  | 'Valeria'
+
+  // Chinese
+  | 'Chen Na'
+  | 'Li Hong'
+  | 'Li Ping'
+  | 'Lin Yating'
+  | 'Liu Ming'
+  | 'Wang Hua'
+  | 'Zhang Wei'
+  | 'Zhou Yongjie';
 
 interface SetupCharacter {
   character: Characters;
@@ -193,7 +207,7 @@ type InteractiveEditorNodule = {
 export type ChallengeNode = {
   challenge: {
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     blockLayout: BlockLayouts;
     certification: string;
     challengeOrder: number;
@@ -212,8 +226,8 @@ export type ChallengeNode = {
     helpCategory: string;
     hooks?: Hooks;
     id: string;
+    lang?: ChallengeLang;
     instructions: string;
-    isComingSoon: boolean;
     internal?: {
       content: string;
       contentDigest: string;
@@ -233,6 +247,7 @@ export type ChallengeNode = {
     quizzes: Quiz[];
     assignments: string[];
     required: Required[];
+    saveSubmissionToDB?: boolean;
     scene: FullScene;
     solutions: {
       [T: string]: FileKeyChallenge;
@@ -284,10 +299,7 @@ export type DailyCodingChallengeNode = {
 
     helpCategory: 'JavaScript' | 'Python';
     challengeType: 28 | 29;
-    fields: {
-      blockName: 'daily-coding-challenge';
-      tests: Test[];
-    };
+    tests: Test[];
     challengeFiles: ChallengeFiles;
 
     // props to satisfy the show classic component
@@ -299,6 +311,7 @@ export type DailyCodingChallengeNode = {
     notes: string;
     videoUrl?: string;
     translationPending: false;
+    saveSubmissionToDB?: boolean;
   };
 };
 
@@ -327,7 +340,7 @@ export type DailyCodingChallengeLanguages = 'javascript' | 'python';
 export interface CompletedDailyCodingChallenge {
   id: string;
   completedDate: number;
-  completedLanguages: DailyCodingChallengeLanguages[];
+  languages: DailyCodingChallengeLanguages[];
 }
 
 type Quiz = {
@@ -412,6 +425,7 @@ export type User = {
   email: string;
   emailVerified: boolean;
   githubProfile: string;
+  isEmailVerified: boolean;
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
@@ -423,6 +437,7 @@ export type User = {
   picture: string;
   points: number;
   portfolio: PortfolioProjectData[];
+  experience?: ExperienceData[];
   profileUI: ProfileUI;
   progressTimestamps: Array<unknown>;
   savedChallenges: SavedChallenges;
@@ -435,7 +450,7 @@ export type User = {
   username: string;
   website: string;
   yearsTopContributor: string[];
-} & ClaimedCertifications;
+} & CertificationFlags;
 
 export type ProfileUI = {
   isLocked: boolean;
@@ -447,33 +462,8 @@ export type ProfileUI = {
   showName: boolean;
   showPoints: boolean;
   showPortfolio: boolean;
+  showExperience: boolean;
   showTimeLine: boolean;
-};
-
-export type ClaimedCertifications = {
-  is2018DataVisCert: boolean;
-  isA2EnglishCert: boolean;
-  isApisMicroservicesCert: boolean;
-  isBackEndCert: boolean;
-  isDataVisCert: boolean;
-  isEmailVerified: boolean;
-  isCollegeAlgebraPyCertV8: boolean;
-  isFoundationalCSharpCertV8: boolean;
-  isFrontEndCert: boolean;
-  isFrontEndLibsCert: boolean;
-  isFullStackCert: boolean;
-  isInfosecQaCert: boolean;
-  isJavascriptCertV9: boolean;
-  isQaCertV7: boolean;
-  isInfosecCertV7: boolean;
-  isJsAlgoDataStructCert: boolean;
-  isRelationalDatabaseCertV8: boolean;
-  isRespWebDesignCert: boolean;
-  isRespWebDesignCertV9: boolean;
-  isSciCompPyCertV7: boolean;
-  isDataAnalysisPyCertV7: boolean;
-  isMachineLearningPyCertV7: boolean;
-  isJsAlgoDataStructCertV8: boolean;
 };
 
 type SavedChallenges = SavedChallenge[];
@@ -522,6 +512,7 @@ export type ChallengeMeta = {
   helpCategory: string;
   disableLoopProtectTests: boolean;
   disableLoopProtectPreview: boolean;
+  saveSubmissionToDB?: boolean;
 } & NavigationPaths;
 
 export type NavigationPaths = {
@@ -534,6 +525,16 @@ export type PortfolioProjectData = {
   title: string;
   url: string;
   image: string;
+  description: string;
+};
+
+export type ExperienceData = {
+  id: string;
+  title: string;
+  company: string;
+  location?: string;
+  startDate: string;
+  endDate?: string;
   description: string;
 };
 

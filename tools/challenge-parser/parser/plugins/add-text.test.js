@@ -3,7 +3,13 @@ import parseFixture from '../__fixtures__/parse-fixture';
 import addText from './add-text';
 
 describe('add-text', () => {
-  let realisticAST, mockAST, withSubSectionAST, withNestedInstructionsAST;
+  let realisticAST,
+    mockAST,
+    withSubSectionAST,
+    withNestedInstructionsAST,
+    withChineseAST,
+    withEnUsAST,
+    withEsAST;
   const descriptionId = 'description';
   const instructionsId = 'instructions';
   const missingId = 'missing';
@@ -16,6 +22,9 @@ describe('add-text', () => {
     withNestedInstructionsAST = await parseFixture(
       'with-nested-instructions.md'
     );
+    withChineseAST = await parseFixture('with-chinese-mcq.md');
+    withEnUsAST = await parseFixture('with-en-us-mcq.md');
+    withEsAST = await parseFixture('with-es-mcq.md');
   });
 
   beforeEach(() => {
@@ -155,5 +164,61 @@ describe('add-text', () => {
     const plugin = addText([descriptionId, instructionsId]);
     plugin(mockAST, file);
     expect(file.data).toMatchSnapshot();
+  });
+
+  it('should render inline code as code elements when lang is undefined', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const defaultFile = { data: {} };
+    plugin(withChineseAST, defaultFile);
+
+    expect(defaultFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <code>汉字 (hàn zì)</code>.</p>\n</section>'
+    );
+    expect(defaultFile.data.explanation).toBe(
+      '<section id="explanation">\n<p><code>我是 (wǒ shì) Web 开发者 (kāi fā zhě)。</code> – I am a web developer.</p>\n<p><code>你好 (nǐ hǎo)，我是王华 (wǒ shì Wang Hua)，请问你叫什么名字 (qǐng wèn nǐ jiào shén me míng zi)？</code> – Hello, I am Wang Hua, may I ask what your name is?</p>\n</section>'
+    );
+  });
+
+  it('should render Chinese inline code as ruby when lang is zh-CN', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const zhFile = { data: { lang: 'zh-CN' } };
+    plugin(withChineseAST, zhFile);
+
+    expect(zhFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <ruby>汉字<rp>(</rp><rt>hàn zì</rt><rp>)</rp></ruby>.</p>\n</section>'
+    );
+    expect(zhFile.data.explanation).toBe(
+      '<section id="explanation">\n<p><ruby>我是<rp>(</rp><rt>wǒ shì</rt><rp>)</rp></ruby> Web <ruby>开发者<rp>(</rp><rt>kāi fā zhě</rt><rp>)</rp></ruby>。 – I am a web developer.</p>\n<p><ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>我是王华<rp>(</rp><rt>wǒ shì Wang Hua</rt><rp>)</rp></ruby>，<ruby>请问你叫什么名字<rp>(</rp><rt>qǐng wèn nǐ jiào shén me míng zi</rt><rp>)</rp></ruby>？ – Hello, I am Wang Hua, may I ask what your name is?</p>\n</section>'
+    );
+  });
+
+  it('should render inline code as span elements when lang is en-US', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const enUsFile = { data: { lang: 'en-US' } };
+    plugin(withEnUsAST, enUsFile);
+
+    expect(enUsFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <span class="highlighted-text">some code</span>.</p>\n</section>'
+    );
+    expect(enUsFile.data.explanation).toBe(
+      '<section id="explanation">\n<p>Explanation text containing <span class="highlighted-text">highlighted text</span>.</p>\n</section>'
+    );
+  });
+
+  it('should render inline code as span elements when lang is es', () => {
+    const plugin = addText(['instructions', 'explanation']);
+
+    const esFile = { data: { lang: 'es' } };
+    plugin(withEsAST, esFile);
+
+    expect(esFile.data.instructions).toBe(
+      '<section id="instructions">\n<p>Instructions containing <span class="highlighted-text">texto resaltado</span>.</p>\n</section>'
+    );
+    expect(esFile.data.explanation).toBe(
+      '<section id="explanation">\n<p>Explanation text containing <span class="highlighted-text">texto resaltado</span>.</p>\n</section>'
+    );
   });
 });

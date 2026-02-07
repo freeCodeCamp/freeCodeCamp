@@ -15,7 +15,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import PrismFormatted from '../components/prism-formatted';
-import { challengeTypes } from '../../../../../shared-dist/config/challenge-types';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import CompletionModal from '../components/completion-modal';
 import HelpModal from '../components/help-modal';
 import Hotkeys from '../components/hotkeys';
@@ -45,7 +45,7 @@ import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { CodeAllyDown } from '../../../components/growth-book/codeally-down';
 import { postUserToken } from '../../../utils/ajax';
 import RdbStep1Instructions from './rdb-step-1-instructions';
@@ -137,7 +137,7 @@ function ShowCodeAlly({
       challenge: {
         block,
         challengeType,
-        fields: { tests },
+        tests,
         description,
         helpCategory,
         id: challengeId,
@@ -385,12 +385,6 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
-        fields {
-          tests {
-            text
-            testString
-          }
-        }
         challengeType
         description
         helpCategory
@@ -398,6 +392,10 @@ export const query = graphql`
         instructions
         notes
         superBlock
+        tests {
+          text
+          testString
+        }
         title
         translationPending
         url

@@ -1,6 +1,6 @@
 {
   "name": "Implement the Breadth-First Search Algorithm",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-breadth-first-search",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",

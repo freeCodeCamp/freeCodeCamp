@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import APIIcon from './icons/api';
 import D3Icon from './icons/d3';
 import DatabaseIcon from './icons/database';
@@ -44,7 +44,6 @@ const iconMap = {
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
-  [SuperBlocks.FullStackDeveloper]: Code,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
   [SuperBlocks.A1Spanish]: A1SpanishIcon,

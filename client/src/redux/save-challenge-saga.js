@@ -1,6 +1,5 @@
 import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-import { canSaveToDB } from '../../../shared-dist/config/challenge-types';
 import { createFlashMessage } from '../components/Flash/redux';
 import { FlashMessages } from '../components/Flash/redux/flash-messages';
 import {
@@ -19,7 +18,9 @@ import { saveChallengeComplete } from './actions';
 import { savedChallengesSelector } from './selectors';
 
 function* saveChallengeSaga() {
-  const { id, challengeType } = yield select(challengeMetaSelector);
+  const { id, challengeType, saveSubmissionToDB } = yield select(
+    challengeMetaSelector
+  );
   const { challengeFiles } = yield select(challengeDataSelector);
   const savedChallenges = yield select(savedChallengesSelector);
   const savedChallenge = savedChallenges.find(challenge => challenge.id === id);
@@ -34,7 +35,7 @@ function* saveChallengeSaga() {
     );
   }
 
-  if (canSaveToDB(challengeType)) {
+  if (saveSubmissionToDB) {
     const body = standardizeRequestBody({ id, challengeFiles, challengeType });
     const bodySizeInBytes = getStringSizeInBytes(body);
 

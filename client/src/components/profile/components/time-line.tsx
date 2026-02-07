@@ -8,9 +8,9 @@ import { connect } from 'react-redux';
 import { Table, Button, Modal, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../../../config/env.json';
-import { getLangCode } from '../../../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import { getCertIds, getPathFromID } from '../../../../utils';
-import { regenerateMissingProperties } from '../../../../../shared-dist/utils/polyvinyl';
+import { regenerateMissingProperties } from '@freecodecamp/shared/utils/polyvinyl';
 import CertificationIcon from '../../../assets/icons/certification';
 import type {
   ChallengeData,
@@ -21,7 +21,7 @@ import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
 import { Link, FullWidthRow } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
 
 const SolutionViewer = Loadable(
@@ -254,9 +254,9 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
         edges {
           node {
             challenge {
+              block
               fields {
                 slug
-                blockName
               }
               id
               superBlock
@@ -282,19 +282,21 @@ function useIdToNameMap(t: TFunction): Map<string, NameMap> {
       node: {
         challenge: {
           // @ts-expect-error Graphql needs typing
+          block,
+          // @ts-expect-error Graphql needs typing
           id,
           // @ts-expect-error Graphql needs typing
           superBlock,
           // @ts-expect-error Graphql needs typing
           title,
           // @ts-expect-error Graphql needs typing
-          fields: { slug, blockName },
+          fields: { slug },
           // @ts-expect-error Graphql needs typing
           hasEditableBoundaries
         }
       }
     }) => {
-      const blockNameTitle = t(`intro:${superBlock}.blocks.${blockName}.title`);
+      const blockNameTitle = t(`intro:${superBlock}.blocks.${block}.title`);
       const shouldAppendBlockNameToTitle =
         hasEditableBoundaries || superBlock === SuperBlocks.A2English;
       idToNameMap.set(id, {

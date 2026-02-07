@@ -26,6 +26,11 @@ module.exports = {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
+        // It doesn't matter if the file is generated or not as far as caching
+        // is concerned. It doesn't affect any tasks in any way, so we can
+        // ignore it.
+
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
         generateStatsFile: process.env.CI
       }
     },
@@ -101,18 +106,13 @@ module.exports = {
         }
       }
     },
+    'gatsby-plugin-remove-serviceworker',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: 'gatsby-plugin-schema-snapshot',
       options: {
-        name: 'freeCodeCamp',
-        short_name: 'fCC',
-        start_url: '/',
-        theme_color: '#0a0a23',
-        background_color: '#fff',
-        display: 'minimal-ui',
-        icon: 'src/assets/images/square_puck.png'
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
       }
-    },
-    'gatsby-plugin-remove-serviceworker'
+    }
   ]
 };

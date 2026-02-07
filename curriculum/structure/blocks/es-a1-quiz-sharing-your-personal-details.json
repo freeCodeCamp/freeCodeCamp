@@ -1,0 +1,14 @@
+{
+  "name": "Sharing Your Personal Details Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-quiz-sharing-your-personal-details",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "691a4f463530ce85a3756f9f",
+      "title": "Sharing Your Personal Details Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

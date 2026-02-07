@@ -1,7 +1,7 @@
 import { expect, Page, test } from '@playwright/test';
 import intro from '../client/i18n/locales/english/intro.json';
 import translations from '../client/i18n/locales/english/translations.json';
-import { SuperBlocks } from '../shared/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { addGrowthbookCookie } from './utils/add-growthbook-cookie';
 
 const landingPageElements = {
@@ -18,9 +18,17 @@ const landingPageElements = {
 } as const;
 
 const nonArchivedSuperBlocks = [
-  intro[SuperBlocks.FullStackDeveloper].title,
+  intro[SuperBlocks.RespWebDesignV9].title,
+  intro[SuperBlocks.JsV9].title,
+  intro[SuperBlocks.FrontEndDevLibsV9].title,
+  intro[SuperBlocks.PythonV9].title,
+  intro[SuperBlocks.RelationalDbV9].title,
+  intro[SuperBlocks.BackEndDevApisV9].title,
+  intro[SuperBlocks.FullStackDeveloperV9].title,
   intro[SuperBlocks.A2English].title,
   intro[SuperBlocks.B1English].title,
+  intro[SuperBlocks.A1Spanish].title,
+  intro[SuperBlocks.A1Chinese].title,
   intro[SuperBlocks.TheOdinProject].title,
   intro[SuperBlocks.CodingInterviewPrep].title,
   intro[SuperBlocks.ProjectEuler].title,

@@ -1,9 +1,10 @@
-import { Certification } from '../../../../../../shared-dist/config/certification-settings';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { User } from '../../../../redux/prop-types';
 
 export const getCertifications = (user: User) => {
   const {
     isA2EnglishCert,
+    isB1EnglishCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
     is2018DataVisCert,
@@ -12,6 +13,7 @@ export const getCertifications = (user: User) => {
     isJsAlgoDataStructCert,
     isApisMicroservicesCert,
     isInfosecQaCert,
+    isPythonCertV9,
     isQaCertV7,
     isInfosecCertV7,
     isFrontEndCert,
@@ -22,6 +24,7 @@ export const getCertifications = (user: User) => {
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
     isRelationalDatabaseCertV8,
+    isRelationalDatabaseCertV9,
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8
@@ -30,9 +33,12 @@ export const getCertifications = (user: User) => {
   return {
     hasModernCert:
       isA2EnglishCert ||
+      isB1EnglishCert ||
       isRespWebDesignCertV9 ||
       isJavascriptCertV9 ||
-      isFoundationalCSharpCertV8,
+      isFoundationalCSharpCertV8 ||
+      isPythonCertV9 ||
+      isRelationalDatabaseCertV9,
     hasLegacyCert:
       isFrontEndCert ||
       isJsAlgoDataStructCert ||
@@ -56,8 +62,13 @@ export const getCertifications = (user: User) => {
     currentCerts: [
       {
         show: isA2EnglishCert,
-        title: 'A2 English for Developers Certification',
+        title: 'A2 English for Developers Certification (Beta)',
         certSlug: Certification.A2English
+      },
+      {
+        show: isB1EnglishCert,
+        title: 'B1 English for Developers Certification (Beta)',
+        certSlug: Certification.B1English
       },
       {
         show: isRespWebDesignCertV9,
@@ -73,6 +84,16 @@ export const getCertifications = (user: User) => {
         show: isFoundationalCSharpCertV8,
         title: 'Foundational C# with Microsoft Certification',
         certSlug: Certification.FoundationalCSharp
+      },
+      {
+        show: isPythonCertV9,
+        title: 'Python Certification',
+        certSlug: Certification.PythonV9
+      },
+      {
+        show: isRelationalDatabaseCertV9,
+        title: 'Relational Database Certification',
+        certSlug: Certification.RelationalDbV9
       }
     ],
     legacyCerts: [

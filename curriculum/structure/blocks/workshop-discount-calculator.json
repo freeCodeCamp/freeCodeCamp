@@ -1,6 +1,6 @@
 {
   "name": "Build a Discount Calculator",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-discount-calculator",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",

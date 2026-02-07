@@ -1,9 +1,9 @@
 {
   "name": "Consonants and Special Characters",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "es-a1-learn-consonants-and-special-characters",
-  "helpCategory": "English",
-  "blockLayout": "dialogue-grid",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
   "challengeOrder": [
     { "id": "68efe4d3d08cd32cff8253c9", "title": "Task 1" },
     { "id": "68efe5645c5ef92f345cce87", "title": "Task 2" },

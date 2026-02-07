@@ -1,0 +1,15 @@
+{
+  "name": "Implement the Bubble Sort Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-bubble-sort-algorithm",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "698367b9d1c6914a22095aec",
+      "title": "Implement the Bubble Sort Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}

@@ -23,12 +23,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon
-          icon={faXTwitter}
-          size='1x'
-          aria-label='twitterIcon'
-          aria-hidden='true'
-        />
+        <FontAwesomeIcon icon={faXTwitter} size='1x' aria-hidden='true' />
         {t('buttons.share-on-x')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
@@ -39,12 +34,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon
-          icon={faBluesky}
-          size='1x'
-          aria-label='blueSkyIcon'
-          aria-hidden='true'
-        />
+        <FontAwesomeIcon icon={faBluesky} size='1x' aria-hidden='true' />
         {t('buttons.share-on-bluesky')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
@@ -55,12 +45,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         target='_blank'
         rel='noreferrer'
       >
-        <FontAwesomeIcon
-          icon={faInstagram}
-          size='1x'
-          aria-label='instagramIcon'
-          aria-hidden='true'
-        />
+        <FontAwesomeIcon icon={faInstagram} size='1x' aria-hidden='true' />
         {t('buttons.share-on-threads')}
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>

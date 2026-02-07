@@ -1,30 +1,28 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
-import { scroller } from 'react-scroll';
 
-import { Container, Spacer } from '@freecodecamp/ui';
-import { useFeatureIsOn } from '@growthbook/growthbook-react';
-
+import { Spacer } from '@freecodecamp/ui';
 import store from 'store';
+import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
 import { Loader } from '../components/helpers';
 import Certification from '../components/settings/certification';
-import MiscSettings from '../components/settings/misc-settings';
+import Account from '../components/settings/account';
 import DangerZone from '../components/settings/danger-zone';
 import Email from '../components/settings/email';
 import Honesty from '../components/settings/honesty';
 import Privacy from '../components/settings/privacy';
 import UserToken from '../components/settings/user-token';
 import ExamToken from '../components/settings/exam-token';
+import SettingsSidebarNav from '../components/settings/settings-sidebar-nav';
 import { hardGoTo as navigate } from '../redux/actions';
 import {
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector
 } from '../redux/selectors';
 import type { User } from '../redux/prop-types';
@@ -38,12 +36,13 @@ import {
   resetMyEditorLayout
 } from '../redux/settings/actions';
 
+import './show-settings.css';
+
 const { apiLocation } = envData;
 
 // TODO: update types for actions
 type ShowSettingsProps = {
   createFlashMessage: typeof createFlashMessage;
-  isSignedIn: boolean;
   navigate: (location: string) => void;
   showLoading: boolean;
   toggleSoundMode: (sound: boolean) => void;
@@ -60,17 +59,10 @@ type ShowSettingsProps = {
 const mapStateToProps = createSelector(
   signInLoadingSelector,
   userSelector,
-  isSignedInSelector,
   userTokenSelector,
-  (
-    showLoading: boolean,
-    user: User | null,
-    isSignedIn,
-    userToken: string | null
-  ) => ({
+  (showLoading: boolean, user: User | null, userToken: string | null) => ({
     showLoading,
     user,
-    isSignedIn,
     userToken
   })
 );
@@ -93,7 +85,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const { t } = useTranslation();
   const {
     createFlashMessage,
-    isSignedIn,
     toggleSoundMode,
     toggleKeyboardShortcuts,
     resetEditorLayout,
@@ -105,10 +96,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     verifyCert,
     userToken
   } = props;
-
-  const isSignedInRef = useRef(isSignedIn);
-
-  const examTokenFlag = useFeatureIsOn('exam-token-widget');
 
   const handleHashChange = () => {
     const id = window.location.hash.replace('#', '');
@@ -128,12 +115,11 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  if (showLoading || !user) {
-    return <Loader fullScreen={true} />;
-  }
+  useEffect(() => {
+    if (!user) navigate(`${apiLocation}/signin`);
+  }, [user, navigate]);
 
-  if (!isSignedInRef.current) {
-    navigate(`${apiLocation}/signin`);
+  if (showLoading || !user) {
     return <Loader fullScreen={true} />;
   }
 
@@ -155,6 +141,8 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isFullStackCert,
     isRespWebDesignCert,
     isRespWebDesignCertV9,
+    isPythonCertV9,
+    isRelationalDatabaseCertV9,
     isSciCompPyCertV7,
     isDataAnalysisPyCertV7,
     isMachineLearningPyCertV7,
@@ -162,6 +150,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
     isCollegeAlgebraPyCertV8,
     isFoundationalCSharpCertV8,
     isJsAlgoDataStructCertV8,
+    isFrontEndLibsCertV9,
+    isBackEndDevApisCertV9,
+    isFullStackDeveloperCertV9,
+    isB1EnglishCert,
+    isA2SpanishCert,
+    isA2ChineseCert,
+    isA1ChineseCert,
     isEmailVerified,
     isHonest,
     sendQuincyEmail,
@@ -174,78 +169,107 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   return (
     <>
       <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
-      <Container>
-        <main>
+      <div className='settings-container' id='settings-container'>
+        <SettingsSidebarNav userToken={userToken} />
+        <main className='settings-main'>
           <Spacer size='l' />
-          <h1
-            id='content-start'
-            className='text-center'
-            style={{ overflowWrap: 'break-word' }}
-            data-playwright-test-label='settings-heading'
-          >
-            {t('settings.for', { username: username })}
-          </h1>
-          <MiscSettings
-            keyboardShortcuts={keyboardShortcuts}
-            sound={sound}
-            editorLayout={editorLayout}
-            resetEditorLayout={resetEditorLayout}
-            toggleKeyboardShortcuts={toggleKeyboardShortcuts}
-            toggleSoundMode={toggleSoundMode}
-          />
+          <ScrollElement name='username'>
+            <h1
+              id='content-start'
+              className='text-center'
+              style={{ overflowWrap: 'break-word' }}
+              data-playwright-test-label='settings-heading'
+            >
+              {t('settings.for', { username: username })}
+            </h1>
+          </ScrollElement>
           <Spacer size='m' />
-          <Privacy />
+          <ScrollElement name='account'>
+            <Account
+              keyboardShortcuts={keyboardShortcuts}
+              sound={sound}
+              editorLayout={editorLayout}
+              resetEditorLayout={resetEditorLayout}
+              toggleKeyboardShortcuts={toggleKeyboardShortcuts}
+              toggleSoundMode={toggleSoundMode}
+            />
+          </ScrollElement>
           <Spacer size='m' />
-          <Email
-            email={email}
-            isEmailVerified={isEmailVerified}
-            sendQuincyEmail={sendQuincyEmail}
-            updateQuincyEmail={updateQuincyEmail}
-          />
+          <ScrollElement name='privacy'>
+            <Privacy />
+          </ScrollElement>
           <Spacer size='m' />
-          <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          <ScrollElement name='email'>
+            <Email
+              email={email}
+              isEmailVerified={isEmailVerified}
+              sendQuincyEmail={sendQuincyEmail}
+              updateQuincyEmail={updateQuincyEmail}
+            />
+          </ScrollElement>
           <Spacer size='m' />
-          {examTokenFlag && <ExamToken />}
-          <Certification
-            completedChallenges={completedChallenges}
-            createFlashMessage={createFlashMessage}
-            is2018DataVisCert={is2018DataVisCert}
-            isA2EnglishCert={isA2EnglishCert}
-            isApisMicroservicesCert={isApisMicroservicesCert}
-            isBackEndCert={isBackEndCert}
-            isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
-            isDataVisCert={isDataVisCert}
-            isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
-            isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
-            isFrontEndCert={isFrontEndCert}
-            isFrontEndLibsCert={isFrontEndLibsCert}
-            isFullStackCert={isFullStackCert}
-            isJavascriptCertV9={isJavascriptCertV9}
-            isHonest={isHonest}
-            isInfosecCertV7={isInfosecCertV7}
-            isInfosecQaCert={isInfosecQaCert}
-            isJsAlgoDataStructCert={isJsAlgoDataStructCert}
-            isMachineLearningPyCertV7={isMachineLearningPyCertV7}
-            isQaCertV7={isQaCertV7}
-            isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
-            isRespWebDesignCert={isRespWebDesignCert}
-            isRespWebDesignCertV9={isRespWebDesignCertV9}
-            isSciCompPyCertV7={isSciCompPyCertV7}
-            isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
-            username={username}
-            verifyCert={verifyCert}
-            isEmailVerified={isEmailVerified}
-          />
+          <ScrollElement name='honesty'>
+            <Honesty isHonest={isHonest} updateIsHonest={updateIsHonest} />
+          </ScrollElement>
+          <Spacer size='m' />
+          <ScrollElement name='exam-token'>
+            <ExamToken email={email} />
+          </ScrollElement>
+          <Spacer size='m' />
+          <ScrollElement name='certifications'>
+            <Certification
+              completedChallenges={completedChallenges}
+              createFlashMessage={createFlashMessage}
+              is2018DataVisCert={is2018DataVisCert}
+              isA2EnglishCert={isA2EnglishCert}
+              isApisMicroservicesCert={isApisMicroservicesCert}
+              isBackEndCert={isBackEndCert}
+              isDataAnalysisPyCertV7={isDataAnalysisPyCertV7}
+              isDataVisCert={isDataVisCert}
+              isCollegeAlgebraPyCertV8={isCollegeAlgebraPyCertV8}
+              isFoundationalCSharpCertV8={isFoundationalCSharpCertV8}
+              isFrontEndCert={isFrontEndCert}
+              isFrontEndLibsCert={isFrontEndLibsCert}
+              isFullStackCert={isFullStackCert}
+              isJavascriptCertV9={isJavascriptCertV9}
+              isHonest={isHonest}
+              isInfosecCertV7={isInfosecCertV7}
+              isInfosecQaCert={isInfosecQaCert}
+              isJsAlgoDataStructCert={isJsAlgoDataStructCert}
+              isMachineLearningPyCertV7={isMachineLearningPyCertV7}
+              isPythonCertV9={isPythonCertV9}
+              isQaCertV7={isQaCertV7}
+              isRelationalDatabaseCertV8={isRelationalDatabaseCertV8}
+              isRelationalDatabaseCertV9={isRelationalDatabaseCertV9}
+              isRespWebDesignCert={isRespWebDesignCert}
+              isRespWebDesignCertV9={isRespWebDesignCertV9}
+              isSciCompPyCertV7={isSciCompPyCertV7}
+              isJsAlgoDataStructCertV8={isJsAlgoDataStructCertV8}
+              isFrontEndLibsCertV9={isFrontEndLibsCertV9}
+              isBackEndDevApisCertV9={isBackEndDevApisCertV9}
+              isFullStackDeveloperCertV9={isFullStackDeveloperCertV9}
+              isB1EnglishCert={isB1EnglishCert}
+              isA2SpanishCert={isA2SpanishCert}
+              isA2ChineseCert={isA2ChineseCert}
+              isA1ChineseCert={isA1ChineseCert}
+              username={username}
+              verifyCert={verifyCert}
+            />
+            <Spacer size='m' />
+          </ScrollElement>
           {userToken && (
             <>
+              <ScrollElement name='user-token'>
+                <UserToken />
+              </ScrollElement>
               <Spacer size='m' />
-              <UserToken />
             </>
           )}
-          <Spacer size='m' />
-          <DangerZone />
+          <ScrollElement name='danger-zone'>
+            <DangerZone />
+          </ScrollElement>
         </main>
-      </Container>
+      </div>
     </>
   );
 }
