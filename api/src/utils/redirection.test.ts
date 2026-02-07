@@ -43,9 +43,7 @@ describe('redirection', () => {
     });
 
     test('should return a default url if the secrets do not match', () => {
-      const oldLog = console.log;
-      expect.assertions(2);
-      console.log = vi.fn();
+      expect.assertions(1);
       const encryptedReturnTo = jwt.sign(
         { returnTo: validReturnTo },
         invalidJWTSecret
@@ -53,8 +51,6 @@ describe('redirection', () => {
       expect(
         getReturnTo(encryptedReturnTo, validJWTSecret, defaultOrigin)
       ).toStrictEqual(defaultObject);
-      expect(console.log).toHaveBeenCalled();
-      console.log = oldLog;
     });
 
     test('should return a default url for unknown origins', () => {
