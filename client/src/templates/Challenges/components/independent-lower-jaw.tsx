@@ -89,8 +89,10 @@ export function IndependentLowerJaw({
     React.useState(false);
 
   const isChallengeComplete = tests.every(test => test.pass);
-  const isLastChallengeInBlock = Boolean(challengeMeta.isLastChallengeInBlock);
   const hasBlockIds = currentBlockIds.length > 0;
+  const isLastStepInBlock =
+    hasBlockIds &&
+    currentBlockIds[currentBlockIds.length - 1] === challengeMeta.id;
   const isBlockCompletedByIds =
     hasBlockIds &&
     currentBlockIds.every(challengeId =>
@@ -98,11 +100,9 @@ export function IndependentLowerJaw({
     );
   const hasCompletedPercent = Number.isFinite(completedPercent);
   const isBlockCompleted =
-    !hasBlockIds ||
-    isBlockCompletedByIds ||
-    (hasCompletedPercent && completedPercent === 100);
+    isBlockCompletedByIds || (hasCompletedPercent && completedPercent === 100);
   const showShareButton =
-    isChallengeComplete && isLastChallengeInBlock && isBlockCompleted;
+    isChallengeComplete && isLastStepInBlock && isBlockCompleted;
 
   React.useEffect(() => {
     setShowHint(!!hint);

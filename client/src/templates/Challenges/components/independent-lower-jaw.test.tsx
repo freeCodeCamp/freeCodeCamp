@@ -2,14 +2,14 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import type { ChallengeMeta, Test } from '../../../redux/prop-types';
+import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
 import { IndependentLowerJaw } from './independent-lower-jaw';
 
 const baseChallengeMeta: ChallengeMeta = {
   block: 'test-block',
   id: 'test-challenge-id',
   isFirstStep: false,
-  isLastChallengeInBlock: true,
-  superBlock: 'responsive-web-design',
+  superBlock: SuperBlocks.RespWebDesignV9,
   helpCategory: 'HTML-CSS',
   disableLoopProtectTests: false,
   disableLoopProtectPreview: false
@@ -26,8 +26,8 @@ const baseProps = {
   isSignedIn: true,
   challengeMeta: baseChallengeMeta,
   completedPercent: 100,
-  completedChallengeIds: ['id-1', 'id-2'],
-  currentBlockIds: ['id-1', 'id-2']
+  completedChallengeIds: ['id-1', 'test-challenge-id'],
+  currentBlockIds: ['id-1', 'test-challenge-id']
 };
 
 describe('<IndependentLowerJaw />', () => {
@@ -55,10 +55,8 @@ describe('<IndependentLowerJaw />', () => {
     render(
       <IndependentLowerJaw
         {...baseProps}
-        challengeMeta={{
-          ...baseChallengeMeta,
-          isLastChallengeInBlock: false
-        }}
+        currentBlockIds={[baseChallengeMeta.id, 'id-2']}
+        completedChallengeIds={[baseChallengeMeta.id, 'id-2']}
       />
     );
 
