@@ -27,7 +27,7 @@ This task doesn't have audio. Complete the blanks below with the corresponding n
 
 ### --feedback--
 
-This number 21 in Chinese is formed by adding `一 (yī)` after `二十 (shí)`.
+This number in Chinese is formed by adding `一 (yī)` after `二十 (shí)`.
 
 ---
 
@@ -35,7 +35,7 @@ This number 21 in Chinese is formed by adding `一 (yī)` after `二十 (shí)`.
 
 ### --feedback--
 
-This number 29 in Chinese is formed by adding `九 (jiǔ)` after `二十 (shí)`.
+This number in Chinese is formed by adding `九 (jiǔ)` after `二十 (shí)`.
 
 ---
 
@@ -43,8 +43,8 @@ This number 29 in Chinese is formed by adding `九 (jiǔ)` after `二十 (shí)`
 
 ### --feedback--
 
-This number 25 in Chinese is formed by adding `五 (wǔ)` after `二十 (shí)`.
+This number in Chinese is formed by adding `五 (wǔ)` after `二十 (shí)`.
 
 # --explanation--
 
-The numbers are `二十一 (èr shí yī)`, `二十九 (èr shí jiǔ)`, and `二十五 (èr shí wǔ)`. They are formed by adding the corresponding unit digit after `二十 (èr shí)`.
+The numbers are `二十一 (èr shí yī)`, `二十九 (èr shí jiǔ)`, and `二十五 (èr shí wǔ)`. They are formed by adding the Chinese for 1, 9, and 5 after `二十 (èr shí)` (20).
