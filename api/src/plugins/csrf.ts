@@ -16,13 +16,10 @@ export const CSRF_SECRET_COOKIE = '_csrf';
  */
 const csrf: FastifyPluginCallback = (fastify, _options, done) => {
   void fastify.register(fastifyCsrfProtection, {
-    // TODO: consider signing cookies. We don't on the api-server, but we could
-    // as an extra layer of security.
-
     ///Ignore all other possible sources of CSRF
     // tokens since we know we can provide this one
     getToken: req => req.headers[CSRF_HEADER] as string,
-    cookieOpts: { signed: false, sameSite: 'strict' },
+    cookieOpts: { signed: true, sameSite: 'strict' },
     logLevel: 'silent'
   });
 

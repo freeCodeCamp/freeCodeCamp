@@ -106,4 +106,21 @@ describe('CSRF protection', () => {
     expect(res.json()).toEqual({ foo: 'bar' });
     expect(res.statusCode).toEqual(200);
   });
+
+  test('should sign the _csrf secret cookie but not the csrf_token cookie', async () => {
+    const response = await fastify.inject({
+      method: 'GET',
+      url: '/'
+    });
+
+    const csrfTokenCookie = response.cookies.find(
+      cookie => cookie.name === CSRF_COOKIE
+    );
+    const csrfSecretCookie = response.cookies.find(
+      cookie => cookie.name === CSRF_SECRET_COOKIE
+    );
+
+    expect(csrfSecretCookie!.value).toMatch(/^s:/);
+    expect(csrfTokenCookie!.value).not.toMatch(/^s:/);
+  });
 });

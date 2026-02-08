@@ -11,12 +11,10 @@ const securityHeaders: FastifyPluginCallback = (fastify, _options, done) => {
       .header('Content-Security-Policy', "frame-ancestors 'none'")
       .header('X-Content-Type-Options', 'nosniff')
       .header('X-Frame-Options', 'DENY');
-    // TODO: Increase this gradually to 2 years. Include preload once it is
-    // at least 1 year.
     if (FREECODECAMP_NODE_ENV === 'production') {
       void reply.header(
         'Strict-Transport-Security',
-        'max-age=300; includeSubDomains'
+        'max-age=63072000; includeSubDomains; preload'
       );
     }
   });
