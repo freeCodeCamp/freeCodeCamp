@@ -12,6 +12,14 @@
     {
       "id": "67fe8567f141d632afaeb71b",
       "title": "How Do You Install, Configure and Use Python in Your Local Environment?"
+    },
+    {
+      "id": "84766ff78a743d8004e85660",
+      "title": "How Do You Run Python Code in Scripts and the REPL?"
+    },
+    {
+      "id": "30138bc18107b6ca2c947014",
+      "title": "Why Is Indentation Important in Python?"
     }
   ],
   "helpCategory": "Python"
