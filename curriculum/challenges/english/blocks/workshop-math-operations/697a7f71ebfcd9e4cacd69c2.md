@@ -41,9 +41,7 @@ The value of `each_pays` should be `62.13`.
 
 ```js
 ({
-    test: () => assert(runPython(`
-    _Node(_code).get_variable('each_pays') == 62.13
-    `))
+    test: () => assert(runPython(`each_pays == 62.13`))
 })
 ```
 
@@ -52,7 +50,7 @@ You should use `print()` to display the string `Each person pays:` followed by a
 ```js
 ({
     test: () => assert(runPython(`
-    _Node(_code).has_call("print('Each person pays: ', each_pays)")`))
+    _Node(_code).has_call("print('Each person pays:', each_pays)")`))
 })
 ```
 
