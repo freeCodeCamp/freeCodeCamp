@@ -6,7 +6,7 @@ import {
   haveSamePath
 } from '../utils/redirection.js';
 import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
-import { createAccessToken } from '../utils/tokens.js';
+import { createAccessToken, createRefreshToken } from '../utils/tokens.js';
 
 const trimTrailingSlash = (str: string) =>
   str.endsWith('/') ? str.slice(0, -1) : str;
@@ -40,6 +40,7 @@ export const devAuth: FastifyPluginCallbackTypebox = (
     const { id } = await findOrCreateUser(fastify, email);
 
     reply.setAccessTokenCookie(createAccessToken(id));
+    reply.setRefreshTokenCookie(createRefreshToken(id));
 
     await handleRedirects(req, reply);
   });

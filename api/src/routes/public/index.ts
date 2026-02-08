@@ -5,6 +5,7 @@ export * from './deprecated-endpoints.js';
 export * from './deprecated-unsubscribe.js';
 export * from './donate.js';
 export * from './email-subscription.js';
+export * from './refresh.js';
 export * from './signout.js';
 export * from './status.js';
 export * from './user.js';

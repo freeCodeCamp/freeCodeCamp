@@ -3,7 +3,7 @@ import validator from 'validator';
 
 import { AUTH0_DOMAIN } from '../../utils/env.js';
 import { auth0Client } from '../../plugins/auth0.js';
-import { createAccessToken } from '../../utils/tokens.js';
+import { createAccessToken, createRefreshToken } from '../../utils/tokens.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';
 
 const getEmailFromAuth0 = async (
@@ -67,6 +67,7 @@ export const mobileAuth0Routes: FastifyPluginCallback = (
     const { id } = await findOrCreateUser(fastify, email);
 
     reply.setAccessTokenCookie(createAccessToken(id));
+    reply.setRefreshTokenCookie(createRefreshToken(id));
   });
 
   done();

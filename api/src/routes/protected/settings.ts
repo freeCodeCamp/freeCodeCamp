@@ -9,6 +9,7 @@ import { createAuthToken, isExpired } from '../../utils/tokens.js';
 import { API_LOCATION } from '../../utils/env.js';
 import { getRedirectParams } from '../../utils/redirection.js';
 import { isRestricted } from '../helpers/is-restricted.js';
+import { blockCurrentRefreshToken } from '../helpers/refresh-token-helpers.js';
 
 type WaitMesssageArgs = {
   sentAt: Date | null;
@@ -325,6 +326,8 @@ ${isLinkSentWithinLimitTTL}`
             'Please confirm your updated email address for freeCodeCamp.org',
           text: createUpdateEmailText({ email: newEmail, id })
         });
+
+        await blockCurrentRefreshToken(req, fastify.prisma, 'email-change');
 
         await reply.send({
           message:

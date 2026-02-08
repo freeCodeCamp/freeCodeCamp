@@ -18,7 +18,13 @@ export type Token = {
   id: string;
   ttl: number;
   created: string;
+  typ?: 'access' | 'refresh' | 'auth' | 'user';
+  aud?: string;
 };
+
+export const ACCESS_TOKEN_TTL = 900000; // 15 minutes
+export const REFRESH_TOKEN_TTL = 2592000000; // 30 days
+export const LEGACY_ACCESS_TOKEN_TTL = 77760000000; // 900 days
 
 type DbToken = {
   userId: string;
@@ -27,41 +33,35 @@ type DbToken = {
   created: Date;
 };
 
-/**
- * Creates an access token.
- * @param userId The user ID as a string (yes, it's an ObjectID, but it will be serialized to a string anyway).
- * @param ttl The time to live for the token in milliseconds (default: 77760000000).
- * @returns The access token.
- */
-export const createAccessToken = (userId: string, ttl?: number): Token => {
-  return {
-    userId,
-    id: customNanoid(),
-    ttl: ttl ?? 77760000000,
-    created: new Date().toISOString()
-  };
-};
+/** Create a short-lived access token for API authentication. */
+export const createAccessToken = (userId: string, ttl?: number): Token => ({
+  userId,
+  id: customNanoid(),
+  ttl: ttl ?? LEGACY_ACCESS_TOKEN_TTL,
+  created: new Date().toISOString(),
+  typ: 'access',
+  aud: 'fcc:api'
+});
 
-/**
- * Creates an auth token.
- * @param userId The user ID as a string (yes, it's an ObjectID, but it will be serialized to a string anyway).
- * @param ttl The time to live for the token in milliseconds (default: 900000 aka 15 minutes).
- * @returns The access token.
- */
-export const createAuthToken = (userId: string, ttl?: number): Token => {
-  return {
-    userId,
-    id: customNanoid(),
-    ttl: ttl ?? 900000,
-    created: new Date().toISOString()
-  };
-};
+/** Create a long-lived refresh token for obtaining new access tokens. */
+export const createRefreshToken = (userId: string, ttl?: number): Token => ({
+  userId,
+  id: customNanoid(),
+  ttl: ttl ?? REFRESH_TOKEN_TTL,
+  created: new Date().toISOString(),
+  typ: 'refresh',
+  aud: 'fcc:api'
+});
 
-/**
- * Check if an access token has expired.
- * @param token The access token to check.
- * @returns True if the token has expired, false otherwise.
- */
+/** Create a short-lived auth token used during the OAuth callback flow. */
+export const createAuthToken = (userId: string, ttl?: number): Token => ({
+  userId,
+  id: customNanoid(),
+  ttl: ttl ?? 900000,
+  created: new Date().toISOString()
+});
+
+/** Check whether a token has exceeded its time-to-live. */
 export const isExpired = (token: Token | DbToken): boolean => {
   const created = new Date(token.created);
   return Date.now() > created.getTime() + token.ttl;

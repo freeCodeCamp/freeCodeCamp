@@ -14,7 +14,7 @@ import {
   HOME_LOCATION
 } from '../utils/env.js';
 import { findOrCreateUser } from '../routes/helpers/auth-helpers.js';
-import { createAccessToken } from '../utils/tokens.js';
+import { createAccessToken, createRefreshToken } from '../utils/tokens.js';
 import { getLoginRedirectParams } from '../utils/redirection.js';
 
 declare module 'fastify' {
@@ -184,6 +184,7 @@ export const auth0Client: FastifyPluginCallbackTypebox = fp(
       const { id } = await findOrCreateUser(fastify, email);
 
       reply.setAccessTokenCookie(createAccessToken(id));
+      reply.setRefreshTokenCookie(createRefreshToken(id));
 
       const returnPath = new URL(returnTo).pathname;
       const returnURL = returnPath === '/' ? `${origin}/learn` : returnTo;

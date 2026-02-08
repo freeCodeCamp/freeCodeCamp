@@ -321,7 +321,10 @@ describe('auth0 plugin', () => {
       });
 
       expect(res.headers['set-cookie']).toEqual(
-        expect.stringMatching(/jwt_access_token=/)
+        expect.arrayContaining([
+          expect.stringMatching(/jwt_access_token=/),
+          expect.stringMatching(/jwt_refresh_token=/)
+        ])
       );
     });
 

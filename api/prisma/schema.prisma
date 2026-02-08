@@ -362,3 +362,13 @@ model DripCampaign {
   @@index([userId], map: "userId_1")
   @@index([email], map: "email_1")
 }
+
+model RefreshTokenBlocklist {
+  id        String   @id @map("_id")
+  tokenId   String   @unique
+  expireAt  DateTime @db.Date
+  reason    String
+  createdAt DateTime @default(now()) @db.Date
+
+  @@index([expireAt], map: "expireAt_ttl")
+}

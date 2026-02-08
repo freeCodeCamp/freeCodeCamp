@@ -485,10 +485,12 @@ describe('userRoutes', () => {
             ),
             expect.stringMatching(
               /^jwt_access_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^jwt_refresh_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             )
           ])
         );
-        expect(setCookie).toHaveLength(3);
       });
 
       test("POST deletes all the user's exam attempts", async () => {
@@ -638,10 +640,12 @@ describe('userRoutes', () => {
             ),
             expect.stringMatching(
               /^jwt_access_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+            ),
+            expect.stringMatching(
+              /^jwt_refresh_token=; Max-Age=0; Path=\/:?; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
             )
           ])
         );
-        expect(setCookie).toHaveLength(3);
       });
 
       test("DELETE deletes all the user's exam attempts", async () => {

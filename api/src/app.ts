@@ -236,6 +236,7 @@ export const build = async (
   }
 
   void fastify.register(publicRoutes.chargeStripeRoute);
+  void fastify.register(publicRoutes.refreshRoute);
   void fastify.register(publicRoutes.signoutRoute);
   void fastify.register(publicRoutes.emailSubscribtionRoutes);
   void fastify.register(publicRoutes.userPublicGetRoutes);

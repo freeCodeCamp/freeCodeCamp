@@ -1,6 +1,7 @@
 import type { FastifyPluginCallback } from 'fastify';
 
 import { signout } from '../../schemas.js';
+import { blockCurrentRefreshToken } from '../helpers/refresh-token-helpers.js';
 
 /**
  * Route handler for signing out.
@@ -22,6 +23,8 @@ export const signoutRoute: FastifyPluginCallback = (
     },
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
+
+      await blockCurrentRefreshToken(req, fastify.prisma, 'user-signout');
 
       void reply.clearOurCookies();
       logger.info('User signed out');

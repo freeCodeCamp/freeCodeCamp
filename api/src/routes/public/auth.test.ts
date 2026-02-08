@@ -104,6 +104,23 @@ describe('auth0 routes', () => {
       );
     });
 
+    it('should set both jwt_access_token and jwt_refresh_token cookies on login', async () => {
+      mockedFetch.mockResolvedValueOnce(mockAuth0ValidEmail());
+      const res = await superGet('/mobile-login').set(
+        'Authorization',
+        'Bearer valid-token'
+      );
+
+      expect(res.status).toBe(200);
+      const setCookies: string[] = res.get('Set-Cookie');
+      expect(setCookies).toEqual(
+        expect.arrayContaining([
+          expect.stringMatching(/jwt_access_token=/),
+          expect.stringMatching(/jwt_refresh_token=/)
+        ])
+      );
+    });
+
     it('should create a user if they do not exist', async () => {
       mockedFetch.mockResolvedValueOnce(mockAuth0ValidEmail());
       const existingUserCount = await fastifyTestInstance.prisma.user.count();

@@ -101,6 +101,7 @@ type IndexData = {
     key: Record<string, 1>;
     name: string;
     expireAfterSeconds?: number;
+    unique?: boolean;
   }[];
 };
 const indexData: IndexData[] = [
@@ -131,6 +132,17 @@ const indexData: IndexData[] = [
   {
     collection: 'UserToken',
     indexes: [{ key: { userId: 1 }, name: 'userId_1' }]
+  },
+  {
+    collection: 'RefreshTokenBlocklist',
+    indexes: [
+      { key: { tokenId: 1 }, name: 'tokenId_1', unique: true },
+      {
+        key: { expireAt: 1 },
+        name: 'expireAt_ttl',
+        expireAfterSeconds: 0
+      }
+    ]
   },
   {
     collection: 'sessions',

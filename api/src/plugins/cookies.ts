@@ -70,6 +70,7 @@ const cookies: FastifyPluginCallback = (fastify, _options, done) => {
 
   void fastify.decorateReply('clearOurCookies', function () {
     void this.clearCookie('jwt_access_token');
+    void this.clearCookie('jwt_refresh_token');
     void this.clearCookie(CSRF_SECRET_COOKIE);
     void this.clearCookie(CSRF_COOKIE);
 

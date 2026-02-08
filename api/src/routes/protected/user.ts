@@ -12,6 +12,7 @@ import { encodeUserToken } from '../../utils/tokens.js';
 import { trimTags } from '../../utils/validation.js';
 import { generateReportEmail } from '../../utils/email-templates.js';
 import { splitUser } from '../helpers/user-utils.js';
+import { blockCurrentRefreshToken } from '../helpers/refresh-token-helpers.js';
 import {
   normalizeChallenges,
   normalizeFlags,
@@ -111,6 +112,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           throw err;
         }
       }
+      await blockCurrentRefreshToken(req, fastify.prisma, 'account-delete');
       reply.clearOurCookies();
 
       return {};
@@ -165,6 +167,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
           throw err;
         }
       }
+      await blockCurrentRefreshToken(req, fastify.prisma, 'account-delete');
       reply.clearOurCookies();
 
       return reply.code(204).send(null);
@@ -192,6 +195,7 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
         where: { id: req.user!.id },
         data: createResetProperties()
       });
+      await blockCurrentRefreshToken(req, fastify.prisma, 'progress-reset');
 
       return {};
     }

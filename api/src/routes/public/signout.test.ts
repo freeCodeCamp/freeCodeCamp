@@ -18,6 +18,9 @@ describe('GET /signout', () => {
           /^jwt_access_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
         ),
         expect.stringMatching(
+          /^jwt_refresh_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
+        ),
+        expect.stringMatching(
           /^csrf_token=; Max-Age=0; Path=\/; Expires=Thu, 01 Jan 1970 00:00:00 GMT/
         ),
         expect.stringMatching(
@@ -25,7 +28,7 @@ describe('GET /signout', () => {
         )
       ])
     );
-    expect(setCookie).toHaveLength(3);
+    expect(setCookie).toHaveLength(4);
   });
 
   it('should respond with an empty object', async () => {
