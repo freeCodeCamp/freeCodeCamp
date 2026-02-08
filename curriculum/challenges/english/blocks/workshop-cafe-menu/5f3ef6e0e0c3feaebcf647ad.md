@@ -65,10 +65,11 @@ assert.match(document.querySelectorAll('h2')?.[1]?.innerText, /Desserts/i);
             <p class="flavor">Mocha</p><p class="price">4.50</p>
           </article>
         </section>
---fcc-editable-region--
         <section>
-        </section>
 --fcc-editable-region--
+          
+--fcc-editable-region--
+        </section>
       </main>
     </div>
   </body>

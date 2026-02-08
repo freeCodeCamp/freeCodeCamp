@@ -26,6 +26,11 @@ module.exports = {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
+        // It doesn't matter if the file is generated or not as far as caching
+        // is concerned. It doesn't affect any tasks in any way, so we can
+        // ignore it.
+
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
         generateStatsFile: process.env.CI
       }
     },
@@ -101,6 +106,13 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: 'gatsby-plugin-schema-snapshot',
+      options: {
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
+      }
+    }
   ]
 };

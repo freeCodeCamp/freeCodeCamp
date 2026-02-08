@@ -1,6 +1,8 @@
 import { flow } from 'lodash-es';
 import i18next, { type i18n } from 'i18next';
 
+import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
+
 import {
   version as _helperVersion,
   type FCCTestRunner
@@ -24,7 +26,7 @@ declare global {
 
 const utilsFormat: <T>(x: T) => string = format;
 
-export interface Source {
+interface Source {
   index: string;
   contents?: string;
   editableContents: string;
@@ -408,19 +410,6 @@ const waitForFrame = (frameContext: Context) => {
       resolve();
     });
   });
-};
-
-export const prefixDoctype = ({
-  build,
-  sources
-}: {
-  build: string;
-  sources: Source;
-}) => {
-  // DOCTYPE should be the first thing written to the frame, so if the user code
-  // includes a DOCTYPE declaration, we need to find it and write it first.
-  const doctype = sources.contents?.match(/^<!DOCTYPE html>/i)?.[0] || '';
-  return doctype + build;
 };
 
 const createContent = (

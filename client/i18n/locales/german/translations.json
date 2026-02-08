@@ -291,7 +291,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Der Benutzername \"{{username}}\" enthält ungültige Zeichen",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Der Benutzername \"{{username}}\" ist zu kurz",
       "is a reserved error code": "Der Benutzername \"{{username}}\" ist ein reservierter Fehlercode",
       "must be lowercase": "Benutzername \"{{username}}\" muss in Kleinbuchstaben geschrieben sein",
@@ -323,6 +323,7 @@
       "my-heatmap": "Meine Heatmap (Punkte-Historie)",
       "my-certs": "Meine Zertifikate",
       "my-portfolio": "Mein Portfolio",
+      "my-experience": "My experience",
       "my-timeline": "Meine Zeitleiste",
       "my-donations": "Meine Spenden",
       "night-mode": "Nacht-Modus",
@@ -435,7 +436,24 @@
     "page-number": "{{pageNumber}} von {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -697,7 +715,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -990,6 +1008,7 @@
     "keyboard-shortcut-updated": "We have updated your keyboard shortcuts settings",
     "subscribe-to-quincy-updated": "We have updated your subscription to Quincy's email",
     "portfolio-item-updated": "We have updated your portfolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "E-Mail-Format ist ungültig",
     "email-valid": "Deine E-Mail wurde erfolgreich geändert. Viel Spaß beim Coding!",
     "bad-challengeId": "currentChallengeId ist keine gültige Challenge-ID",
@@ -1090,12 +1109,17 @@
   },
   "validation": {
     "max-characters": "Es gibt eine maximale Grenze von 288 Zeichen, du hast noch {{charsLeft}} übrig",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Diese E-Mail ist die gleiche wie deine aktuelle E-Mail",
     "invalid-email": "Wir konnten deine E-Mail nicht ordnungsgemäß überprüfen, bitte stelle sicher, dass sie korrekt ist",
     "email-mismatch": "Beide neuen E-Mail-Adressen müssen identisch sein",
     "title-required": "Ein Titel ist erforderlich",
     "title-short": "Titel ist zu kurz",
     "title-long": "Titel ist zu lang",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Wir konnten deine URL nicht ordnungsgemäß überprüfen, bitte stelle sicher, dass sie korrekt ist",
     "invalid-protocol": "URL muss mit http oder https beginnen",
     "url-not-image": "URL muss direkt mit einer Bilddatei verknüpft sein",

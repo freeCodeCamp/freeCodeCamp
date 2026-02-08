@@ -1,17 +1,16 @@
 services:
   devcontainer:
+    image: ghcr.io/freecodecamp/devcontainer:latest
     depends_on:
       - db
       - setup
-    image: mcr.microsoft.com/devcontainers/typescript-node:22
     volumes:
-      - ../..:/workspaces:cached
+      - ..:/workspaces/freeCodeCamp:cached
     network_mode: service:db
     command: sleep infinity
 
   db:
     image: mongo:8.0
-    container_name: mongodb
     command: mongod --replSet rs0
     restart: unless-stopped
     hostname: mongodb
@@ -21,27 +20,20 @@ services:
       test: ['CMD', 'mongosh', '--eval', "db.adminCommand('ping')"]
       interval: 2s
       retries: 5
+      start_period: 10s
 
   setup:
     image: mongo:8.0
     depends_on:
       db:
         condition: service_healthy
-    restart: on-failure
-    # This will try to initiate the replica set, until it succeeds twice (i.e. until the replica set is already initialized)
+    restart: on-failure:5
     command: >
       mongosh --host mongodb:27017 --eval '
-        var cfg = {
+        rs.initiate({
           _id: "rs0",
-          members: [
-            { _id: 0, host: "mongodb:27017" }
-          ]
-        };
-        try {
-          rs.initiate(cfg);
-        } catch (err) {
-          if(err.codeName !== "AlreadyInitialized") throw err;
-        }
+          members: [{ _id: 0, host: "mongodb:27017" }]
+        }).ok || rs.status().ok
       '
 
 volumes:

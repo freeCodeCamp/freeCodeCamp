@@ -22,9 +22,7 @@ describe('scene-helpers', () => {
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe(
-        '\n<strong>Naomi</strong>: Hello world, I have 5 cats\n'
-      );
+      expect(result).toBe('<p><b>Naomi</b>: Hello world, I have 5 cats</p>');
     });
 
     it('should build transcript from multiple commands with dialogue', () => {
@@ -56,9 +54,9 @@ describe('scene-helpers', () => {
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        '\n<strong>Naomi</strong>: Hello\n' +
-          '\n<strong>Quincy</strong>: Hi there, I found 3 bugs\n' +
-          '\n<strong>Naomi</strong>: How are you?\n'
+        '<p><b>Naomi</b>: Hello</p>' +
+          '<p><b>Quincy</b>: Hi there, I found 3 bugs</p>' +
+          '<p><b>Naomi</b>: How are you?</p>'
       );
     });
 
@@ -88,8 +86,7 @@ describe('scene-helpers', () => {
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        '\n<strong>Naomi</strong>: Hello\n' +
-          '\n<strong>Naomi</strong>: How are you?\n'
+        '<p><b>Naomi</b>: Hello</p>' + '<p><b>Naomi</b>: How are you?</p>'
       );
     });
 
@@ -106,7 +103,7 @@ describe('scene-helpers', () => {
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        '\n<strong>Naomi</strong>: He said "I love TypeScript!" & she replied, \'I prefer Ruby! #ruby #rubyonrails\'\n'
+        '<p><b>Naomi</b>: He said "I love TypeScript!" & she replied, \'I prefer Ruby! #ruby #rubyonrails\'</p>'
       );
     });
 
@@ -122,7 +119,7 @@ describe('scene-helpers', () => {
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe('\n<strong>Naomi</strong>: \n');
+      expect(result).toBe('<p><b>Naomi</b>: </p>');
     });
 
     it('should handle dialogue with newlines', () => {
@@ -137,7 +134,7 @@ describe('scene-helpers', () => {
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe('\n<strong>Naomi</strong>: Hello\nworld\n');
+      expect(result).toBe('<p><b>Naomi</b>: Hello\nworld</p>');
     });
 
     it('should handle multiple consecutive commands from same character', () => {
@@ -169,9 +166,9 @@ describe('scene-helpers', () => {
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        '\n<strong>Naomi</strong>: First line\n' +
-          '\n<strong>Naomi</strong>: Second line\n' +
-          '\n<strong>Naomi</strong>: Third line\n'
+        '<p><b>Naomi</b>: First line</p>' +
+          '<p><b>Naomi</b>: Second line</p>' +
+          '<p><b>Naomi</b>: Third line</p>'
       );
     });
 
@@ -187,9 +184,7 @@ describe('scene-helpers', () => {
         }
       ];
       const result = buildTranscript(commands);
-      expect(result).toBe(
-        '\n<strong>Naomi</strong>: Use <div> and <span> tags\n'
-      );
+      expect(result).toBe('<p><b>Naomi</b>: Use <div> and <span> tags</p>');
     });
 
     it('should preserve Chinese dialogue with ruby annotations', () => {
@@ -205,8 +200,25 @@ describe('scene-helpers', () => {
       ];
       const result = buildTranscript(commands);
       expect(result).toBe(
-        '\n<strong>Naomi</strong>: <ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>世界<rp>(</rp><rt>shì jiè</rt><rp>)</rp></ruby>。\n'
+        '<p><b>Naomi</b>: <ruby>你好<rp>(</rp><rt>nǐ hǎo</rt><rp>)</rp></ruby>，<ruby>世界<rp>(</rp><rt>shì jiè</rt><rp>)</rp></ruby>。</p>'
       );
+    });
+
+    it('should wrap dialogue lines in p tags and speakers in b tags', () => {
+      const commands: SceneCommand[] = [
+        {
+          character: 'Alice',
+          startTime: 1,
+          dialogue: {
+            text: 'Hello',
+            align: 'left'
+          }
+        }
+      ];
+      const result = buildTranscript(commands);
+      expect(result).toContain('<p>');
+      expect(result).toContain('</p>');
+      expect(result).toContain('<b>Alice</b>');
     });
   });
 });

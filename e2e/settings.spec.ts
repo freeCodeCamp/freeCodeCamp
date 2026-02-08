@@ -158,11 +158,19 @@ test.describe('Settings - Certified User', () => {
         .filter({ hasText: translations.settings.labels['my-portfolio'] })
     ).toBeVisible();
     await expect(
+      page
+        .getByRole('group', {
+          name: translations.settings.labels['my-experience']
+        })
+        .locator('p')
+        .filter({ hasText: translations.settings.labels['my-experience'] })
+    ).toBeVisible();
+    await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(10);
+    ).toHaveCount(11);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });

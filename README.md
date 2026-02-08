@@ -87,7 +87,7 @@ Recent Contributions:
 
 ### License
 
-Copyright © 2025 freeCodeCamp.org
+Copyright © 2014 freeCodeCamp.org
 
 The content of this repository is bound by the following licenses:
 

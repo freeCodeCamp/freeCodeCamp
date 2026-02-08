@@ -4,7 +4,7 @@ import {
   getAllEmails,
   getFirstEmail,
   getSubject
-} from './utils/mailhog';
+} from './utils/email';
 
 test.beforeEach(async () => {
   await deleteAllEmails();
