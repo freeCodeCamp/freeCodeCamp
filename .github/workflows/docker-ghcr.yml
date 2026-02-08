@@ -1,4 +1,4 @@
-name: CD - Docker - GHCR (Gitpod)
+name: CD - Docker - GHCR Images
 
 on:
   workflow_dispatch:
@@ -6,55 +6,44 @@ on:
     branches:
       - main
     paths:
-      - 'docker/gitpod/*'
+      - 'pnpm-lock.yaml'
+      - 'docker/devcontainer/**'
+      - '.github/workflows/docker-ghcr.yml'
+
+permissions:
+  contents: read
+  packages: write
 
 jobs:
-  build-and-push-image:
+  build-and-push:
+    name: Build and Push Images
     runs-on: ubuntu-24.04
-    permissions:
-      contents: read
-      packages: write
-
-    strategy:
-      fail-fast: false
-      matrix:
-        images:
-          - gitpod
 
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+        with:
+          submodules: 'recursive'
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130 # v3
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
-      - name: Log in to the GHCR
+      - name: Log in to GHCR
         uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Cache Docker layers
-        uses: actions/cache@cdf6c1fa76f9f475f3d7449005a359c84ca0f306 # v5.0.3
+      - name: Build and push images
+        uses: docker/bake-action@5be5f02ff8819ecd3092ea6b2e6261c31774f2b4 # v6
         with:
-          path: /tmp/.buildx-cache
-          key: ${{ runner.os }}-buildx-${{ matrix.images }}-${{ github.sha }}
-          restore-keys: |
-            ${{ runner.os }}-buildx-${{ matrix.images }}-
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6.18.0
-        with:
-          context: ./docker/${{ matrix.images }}
+          files: docker/devcontainer/docker-bake.hcl
+          targets: devcontainer
           push: true
-          tags: |
-            ghcr.io/freecodecamp/${{ matrix.images }}:${{ github.sha }}
-            ghcr.io/freecodecamp/${{ matrix.images }}:latest
-          cache-from: type=local,src=/tmp/.buildx-cache
-          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
-
-      - name: Move cache
-        run: |
-          rm -rf /tmp/.buildx-cache
-          mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+        env:
+          TAG: ${{ github.sha }}
+          TAG_LATEST: ${{ github.ref_name == 'main' }}
