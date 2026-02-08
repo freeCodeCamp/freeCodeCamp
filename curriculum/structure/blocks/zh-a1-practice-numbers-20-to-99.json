@@ -5,7 +5,11 @@
   "helpCategory": "Chinese Curriculum",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "697adbeaf3a03ad1d01eb35e", "title": "Dialogue 1: I'm Tom" }
+    { "id": "69885f4022b8bf74b4e15dad", "title": "Task 1" },
+    { "id": "698880b3876a03850d90f304", "title": "Task 2" },
+    { "id": "698889b0d4adc30ad148b955", "title": "Task 3" },
+    { "id": "69888aa5042155a35449feca", "title": "Task 4" },
+    { "id": "69888f1cf1a1ee23ce86b39d", "title": "Task 5" }
   ],
   "blockLabel": "practice"
 }
