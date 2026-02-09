@@ -292,8 +292,8 @@ importers:
         specifier: workspace:*
         version: link:../packages/challenge-builder
       '@freecodecamp/ui':
-        specifier: 5.2.0
-        version: 5.2.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
+        specifier: 5.2.1
+        version: 5.2.1(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
       '@gatsbyjs/reach-router':
         specifier: 1.3.9
         version: 1.3.9(react-dom@17.0.2(react@17.0.2))(react@17.0.2)
@@ -3345,8 +3345,8 @@ packages:
   '@freecodecamp/loop-protect@3.0.0':
     resolution: {integrity: sha512-5zIULL5pm7Ylkk2dPq1f/4KJTAV5KQZEAFQg/qFj0t18EBSNO3fjn3HdfE1sPocXhXom3DVvZO3Rl2sqifMFYQ==}
 
-  '@freecodecamp/ui@5.2.0':
-    resolution: {integrity: sha512-6Ss5bndOXbnDg+ml+cEOh7NoHYUl3MZUmaSmTbve1kNTG9CjrGDAtsMJnXOraifXfDCrAQJ5Mpl/YI95ZU2Nyw==}
+  '@freecodecamp/ui@5.2.1':
+    resolution: {integrity: sha512-8RrfRY14mdCDpgIfYtFRr7XWVu8rvjgsdO5YkzQqO31uIbg0gt9AnVmOMrFbjXMI+ybDiIc5pTu86UGKLsMg2Q==}
     engines: {node: '>=24', pnpm: '>=10'}
     peerDependencies:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0
@@ -18407,7 +18407,7 @@ snapshots:
 
   '@freecodecamp/loop-protect@3.0.0': {}
 
-  '@freecodecamp/ui@5.2.0(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
+  '@freecodecamp/ui@5.2.1(@types/react-dom@17.0.19)(@types/react@17.0.83)(react-dom@17.0.2(react@17.0.2))(react@17.0.2)':
     dependencies:
       '@fortawesome/fontawesome-svg-core': 7.1.0
       '@fortawesome/free-solid-svg-icons': 7.1.0
