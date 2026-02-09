@@ -3174,6 +3174,12 @@
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
+      "lab-bubble-sort-algorithm": {
+        "title": "Implement the Bubble Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3693,6 +3699,12 @@
         "title": "Build a Movie Ticket Booking Calculator",
         "intro": [
           "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
+      "lab-travel-weather-planner": {
+        "title": "Build a Travel Weather Planner",
+        "intro": [
+          "In this lab, you will build a travel weather planner using conditionals."
         ]
       },
       "lecture-understanding-functions-and-scope": {
