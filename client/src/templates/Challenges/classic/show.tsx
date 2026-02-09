@@ -316,7 +316,7 @@ function ShowClassic({
   const isPreFetchEnabled = useFeature('prefetch_ab_test').on;
 
   // Independent lower jaw is only enabled for desktop workshops.
-  const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
+  const showIndependentLowerJaw = !isMobile;
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {
@@ -428,7 +428,7 @@ function ShowClassic({
         instructionsPanelRef={instructionsPanelRef}
         toolPanel={toolPanel}
         hasDemo={hasDemo}
-        showIndependentLowerJaw={showIndependentLowerJaw}
+        hasEditableBoundaries={hasEditableBoundaries}
       />
     );
   };
@@ -470,7 +470,7 @@ function ShowClassic({
     >
       <LearnLayout>
         <Helmet title={windowTitle} />
-        {isMobile && (
+        {isMobile ? (
           <MobileLayout
             editor={renderEditor({
               isMobileLayout: true,
@@ -502,8 +502,7 @@ function ShowClassic({
             updateUsingKeyboardInTablist={updateUsingKeyboardInTablist}
             usesMultifileEditor={usesMultifileEditor}
           />
-        )}
-        {!isMobile && (
+        ) : (
           <DesktopLayout
             challengeFiles={challengeFiles}
             challengeType={challengeType}
@@ -514,7 +513,7 @@ function ShowClassic({
             hasEditableBoundaries={hasEditableBoundaries}
             hasPreview={hasPreview}
             instructions={renderInstructionsPanel({
-              toolPanel: <ToolPanel guideUrl={guideUrl} videoUrl={videoUrl} />,
+              toolPanel: null,
               hasDemo: demoType === 'onClick'
             })}
             isDailyCodingChallenge={isDailyCodingChallenge}

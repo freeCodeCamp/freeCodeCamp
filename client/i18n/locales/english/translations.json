@@ -541,7 +541,7 @@
     "contact-support-mistake": "If you think there has been a mistake, please contact us at donors@freecodecamp.org",
     "editor-tabs": {
       "code": "Code",
-      "tests": "Tests",
+      "tests": "Tests:",
       "restart": "Restart",
       "restart-step": "Restart Step",
       "console": "Console",
