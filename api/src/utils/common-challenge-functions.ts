@@ -168,9 +168,9 @@ export async function updateUserChallengeData(
 
   const finalChallenge = alreadyCompleted
     ? {
-        ...completedChallenge,
-        completedDate: normalizeDate(oldChallenge.completedDate)
-      }
+      ...completedChallenge,
+      completedDate: normalizeDate(oldChallenge.completedDate)
+    }
     : completedChallenge;
 
   // TODO(Post-MVP): prevent concurrent completions of the same challenge by
@@ -179,20 +179,22 @@ export async function updateUserChallengeData(
   // can't be applied twice.
   const userCompletedChallenges = alreadyCompleted
     ? completedChallenges.map(x =>
-        x.id === challengeId
-          ? finalChallenge
-          : { ...x, completedDate: normalizeDate(x.completedDate) }
-      )
+      x.id === challengeId
+        ? finalChallenge
+        : { ...x, completedDate: normalizeDate(x.completedDate) }
+    )
     : { push: finalChallenge };
 
   // We can't use push, because progressTimestamps is a JSON blob and, until
   // we convert it to an array, push is not available. Since this could result
   // in the completedChallenges and progressTimestamps arrays being out of sync,
   // we should prioritize normalizing the data structure.
-  const userProgressTimestamps =
-    !alreadyCompleted && progressTimestamps && Array.isArray(progressTimestamps)
-      ? [...progressTimestamps, newProgressTimeStamp]
-      : progressTimestamps;
+  const userProgressTimestamps = !alreadyCompleted
+    ? [
+      ...(Array.isArray(progressTimestamps) ? progressTimestamps : []),
+      newProgressTimeStamp
+    ]
+    : progressTimestamps;
 
   if (savableChallenges.has(challengeId)) {
     const challengeToSave: SavedChallenge = {
