@@ -205,7 +205,7 @@
       "cta": "立即開始學習（免費）"
     },
     "certification-heading": "獲得以下免費認證：",
-    "core-certs-heading": "推薦課程（測試版）：",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "學習面向開發者的英語課程：",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +215,6 @@
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
     "catalog-heading": "探索我們的目錄：",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常見問題：",
     "faqs": [

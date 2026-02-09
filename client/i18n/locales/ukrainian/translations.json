@@ -205,7 +205,7 @@
       "cta": "Розпочати навчання (безоплатно)"
     },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
-    "core-certs-heading": "Рекомендована програма (бета-версія):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +215,6 @@
     "next-heading": "Спробуйте бета-версію навчальної програми:",
     "upcoming-heading": "Майбутня навчальна програма:",
     "catalog-heading": "Ознайомтесь з нашим каталогом:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Часті питання:",
     "faqs": [
