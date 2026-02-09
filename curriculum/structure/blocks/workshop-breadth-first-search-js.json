@@ -1,0 +1,16 @@
+{
+  "name": "Implement the Breadth-First Search Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-breadth-first-search-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "6989eb65324d97775c4965fe",
+      "title": "Step 1"
+    }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
