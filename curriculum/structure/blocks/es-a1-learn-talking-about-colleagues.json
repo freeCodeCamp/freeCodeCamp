@@ -1,0 +1,11 @@
+{
+  "name": "Talking About Colleagues",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-talking-about-colleagues",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "698a634cb14ba11ae0867aad", "title": "Dialogue 1: I'm Tom" }
+  ],
+  "blockLabel": "learn"
+}
