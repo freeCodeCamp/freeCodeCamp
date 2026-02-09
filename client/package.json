@@ -52,7 +52,7 @@
     "@fortawesome/free-solid-svg-icons": "6.7.1",
     "@fortawesome/react-fontawesome": "0.2.2",
     "@freecodecamp/challenge-builder": "workspace:*",
-    "@freecodecamp/ui": "5.0.1",
+    "@freecodecamp/ui": "5.1.1",
     "@gatsbyjs/reach-router": "1.3.9",
     "@growthbook/growthbook-react": "1.6.0",
     "@headlessui/react": "1.7.19",
@@ -132,7 +132,7 @@
     "typescript": "5.9.3",
     "util": "0.12.5",
     "uuid": "8.3.2",
-    "validator": "13.11.0",
+    "validator": "13.15.26",
     "xterm": "^5.2.1",
     "xterm-addon-fit": "^0.8.0"
   },

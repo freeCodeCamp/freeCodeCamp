@@ -9,7 +9,6 @@ import {
 } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
-import { patchBlock } from './patches';
 import {
   availableBackgrounds,
   availableAudios
@@ -379,9 +378,7 @@ export function buildExtCurriculumDataV2(
                     const blockData = blocksWithData[block];
                     return {
                       intro: superBlockIntros.blocks[block].intro,
-                      meta: patchBlock(
-                        omit(blockData.meta, ['chapter', 'module'])
-                      )
+                      meta: omit(blockData.meta, ['chapter', 'module'])
                     };
                   })
           }))
@@ -404,7 +401,7 @@ export function buildExtCurriculumDataV2(
 
       return {
         intro: intros[superBlockKey].blocks[blockName].intro,
-        meta: patchBlock(blockData.meta)
+        meta: blockData.meta
       };
     });
 

@@ -11,6 +11,7 @@ import jsxAllyPlugin from 'eslint-plugin-jsx-a11y';
 import importPlugin from 'eslint-plugin-import';
 import testingLibraryPlugin from 'eslint-plugin-testing-library';
 import babelParser from '@babel/eslint-parser'; // TODO: can we get away from using babel?
+import turbo from 'eslint-plugin-turbo';
 
 import { FlatCompat } from '@eslint/eslintrc';
 
@@ -32,6 +33,7 @@ const testFiles = [
 
 const base = defineConfig(
   globalIgnores(['dist', '.turbo']),
+  turbo.configs['flat/recommended'],
   js.configs.recommended,
   eslintConfigPrettier,
   {

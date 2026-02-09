@@ -291,7 +291,7 @@
     "reset-editor-layout": "重置编辑器布局",
     "shortcuts-explained": "在一项挑战中，按 ESC 键和问号可显示可用的快捷方式列表。",
     "username": {
-      "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "用户名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是错误代码，不可用作用户名",
       "must be lowercase": "用户名 \"{{username}}\" 必须是小写的",

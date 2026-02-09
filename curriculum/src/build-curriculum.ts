@@ -189,7 +189,6 @@ export const superBlockNames = {
   'rosetta-code': SuperBlocks.RosettaCode,
   'python-for-everybody': SuperBlocks.PythonForEverybody,
   'b1-english-for-developers': SuperBlocks.B1English,
-  'full-stack-developer': SuperBlocks.FullStackDeveloper,
   'a1-professional-spanish': SuperBlocks.A1Spanish,
   'a2-professional-spanish': SuperBlocks.A2Spanish,
   'a2-professional-chinese': SuperBlocks.A2Chinese,

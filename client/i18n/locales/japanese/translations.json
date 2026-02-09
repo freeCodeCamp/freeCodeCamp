@@ -291,7 +291,7 @@
     "reset-editor-layout": "エディターレイアウトをリセット",
     "shortcuts-explained": "チャレンジの画面で、ESC キーを押した後、? キーを押すと、利用可能なショートカットキーの一覧が表示されます。",
     "username": {
-      "contains invalid characters": "ユーザー名 \"{{username}}\" に無効な文字が含まれています",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "ユーザー名 \"{{username}}\" は短すぎます",
       "is a reserved error code": "ユーザー名 \"{{username}}\" は予約されたエラーコードです。",
       "must be lowercase": "ユーザー名 \"{{username}}\" は小文字にする必要があります",
