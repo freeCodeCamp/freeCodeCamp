@@ -6,5 +6,10 @@
   "blockLayout": "link",
   "blockLabel": "lab",
   "usesMultifileEditor": true,
-  "challengeOrder": [{ "id": "69708d59833ceded7d00541f", "title": "Step 1" }]
+  "challengeOrder": [
+    {
+      "id": "69708d59833ceded7d00541f",
+      "title": "Implement Linked List Operations"
+    }
+  ]
 }
