@@ -8,7 +8,11 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const envPath = path.resolve(__dirname, '../../../.env');
 const { error } = config({ path: envPath });
 
-if (error && process.env.FREECODECAMP_NODE_ENV !== 'production') {
+if (
+  error &&
+  process.env.FREECODECAMP_NODE_ENV == 'production' &&
+  process.env.NODE_ENV !== 'test'
+) {
   console.warn(`
   ----------------------------------------------------
   Warning: .env file not found.
