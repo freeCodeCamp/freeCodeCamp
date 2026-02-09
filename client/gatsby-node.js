@@ -177,6 +177,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
       }
     },
     plugins: newPlugins,
+    infrastructureLogging: {
+      level: 'error'
+    },
     ignoreWarnings: [
       warning => {
         if (warning instanceof Error) {
