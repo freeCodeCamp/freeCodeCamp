@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
 import type { ChallengeMeta, Test } from '../../../redux/prop-types';
-import { SuperBlocks } from '../../../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '../../../../../shared/config/curriculum';
 import { IndependentLowerJaw } from './independent-lower-jaw';
 
 const baseChallengeMeta: ChallengeMeta = {
