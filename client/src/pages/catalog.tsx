@@ -1,12 +1,10 @@
 import React, { useState, useMemo } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faStairs } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { Col, Spacer, Dropdown, MenuItem } from '@freecodecamp/ui';
-import { Link } from '../components/helpers';
 import { catalog } from '@freecodecamp/shared/config/catalog';
 import { showUpcomingChanges } from '../../config/env.json';
 import FourOhFour from '../components/FourOhFour';
+import CatalogItem from '../components/catalog-item';
 
 import './catalog.css';
 
@@ -134,58 +132,28 @@ const CatalogPage = () => {
                     onChange={() => {}}
                     className='filter-checkbox'
                   />
-                  {topic.charAt(0).toUpperCase() +
-                    topic.slice(1).replace('-', ' ')}
+                  {t(`curriculum.catalog.topic.${topic}`)}
                 </MenuItem>
               ))}
             </Dropdown.Menu>
           </Dropdown>
         </div>
       </Col>
-
       <Spacer size='m' />
-
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
         <section className='catalog-wrap'>
           {filteredCatalog.map(course => {
             const { superBlock, level, hours, topic } = course;
 
-            const { title, summary } = t(`intro:${superBlock}`, {
-              returnObjects: true
-            }) as {
-              title: string;
-              summary: string[];
-            };
-
             return (
-              <Link
-                to={`/learn/${superBlock}`}
+              <CatalogItem
                 key={superBlock}
-                className='catalog-item'
-              >
-                <div className='catalog-item-top'>
-                  <div className={`block-label block-label-${topic}`}>
-                    {topic}
-                  </div>
-                  <div className='catalog-item-top'>
-                    <h3>{title}</h3>
-
-                    {summary.map((text, i) => (
-                      <p key={i}>{text}</p>
-                    ))}
-                  </div>
-                </div>
-                <div className='catalog-item-bottom'>
-                  <div>
-                    <FontAwesomeIcon icon={faStairs} />
-                    &nbsp; {t(`curriculum.catalog.levels.${level}`)}
-                  </div>
-                  <div>
-                    <FontAwesomeIcon icon={faClock} />
-                    &nbsp; {hours} hours
-                  </div>
-                </div>
-              </Link>
+                superBlock={superBlock}
+                level={level}
+                hours={hours}
+                topic={topic}
+                showAllSummaries={true}
+              />
             );
           })}
         </section>

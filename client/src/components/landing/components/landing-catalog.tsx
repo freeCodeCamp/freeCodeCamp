@@ -1,11 +1,10 @@
 import React, { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Col, Row, Container } from '@freecodecamp/ui';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faStairs } from '@fortawesome/free-solid-svg-icons';
 import { Link } from '../../helpers';
 import { catalog } from '@freecodecamp/shared/config/catalog';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
+import CatalogItem from '../../catalog-item';
 
 import '../landing.css';
 import LinkButton from '../../../assets/icons/link-button';
@@ -43,37 +42,15 @@ const LandingCatalog = (): JSX.Element => {
             {featuredCourses.map(course => {
               const { superBlock, level, hours, topic } = course;
 
-              const { title, summary } = t(`intro:${superBlock}`, {
-                returnObjects: true
-              }) as {
-                title: string;
-                summary: string[];
-              };
-
               return (
-                <Link
-                  to={`/learn/${superBlock}`}
+                <CatalogItem
                   key={superBlock}
-                  className='catalog-item'
-                >
-                  <div className='catalog-item-top'>
-                    <div className={`block-label block-label-${topic}`}>
-                      {topic}
-                    </div>
-                    <h3>{title}</h3>
-                    {summary && summary.length > 0 && <p>{summary[0]}</p>}
-                  </div>
-                  <div className='catalog-item-bottom'>
-                    <div>
-                      <FontAwesomeIcon icon={faStairs} />
-                      &nbsp; {t(`curriculum.catalog.levels.${level}`)}
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon={faClock} />
-                      &nbsp; {hours} hours
-                    </div>
-                  </div>
-                </Link>
+                  superBlock={superBlock}
+                  level={level}
+                  hours={hours}
+                  topic={topic}
+                  showAllSummaries={false}
+                />
               );
             })}
             <Link to='/catalog' className='catalog-item catalog-item-see-all'>
