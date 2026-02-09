@@ -14,7 +14,7 @@
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
     "type-check": "tsc --noEmit",
-    "build": "pnpm exec tsdown --format cjs --format esm",
+    "build": "tsdown --format cjs --format esm",
     "lint": "eslint --max-warnings 0"
   },
   "type": "module",
