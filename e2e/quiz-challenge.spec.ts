@@ -249,6 +249,32 @@ test.describe('Quiz challenge', () => {
     ).toBeVisible();
   });
 
+  test('should show a confirm exit modal when user presses the back button', async ({
+    page
+  }) => {
+    const blockPath = '/learn/responsive-web-design-v9/#quiz-basic-html';
+
+    await page.goto(blockPath);
+    await page.goto(quizPath);
+
+    await expect(page.getByRole('radiogroup')).toHaveCount(20);
+    await page.waitForFunction(() => window.history.state?.__sentinel === true);
+
+    await page.goBack();
+
+    await expect(page).toHaveURL(allowTrailingSlash(quizPath));
+    await expect(page.getByRole('dialog', { name: 'Exit Quiz' })).toBeVisible();
+
+    await page
+      .getByRole('button', { name: 'Yes, I want to leave the quiz' })
+      .click();
+
+    await page.waitForURL(blockPath);
+    await expect(
+      page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
+    ).toBeVisible();
+  });
+
   test('should show a confirm exit modal when user closes the page', async ({
     page
   }) => {
