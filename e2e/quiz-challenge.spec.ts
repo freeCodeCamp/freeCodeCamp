@@ -273,27 +273,21 @@ test.describe('Quiz with audio question', () => {
     );
     const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as Quiz[];
 
-    const challengePath =
-      '/learn/a2-english-for-developers/en-a2-quiz-greetings-first-day-office/en-a2-quiz-greetings-first-day-office';
-
     // Intercept the exact page-data.json for the quiz and inject the fixture
-    await page.route(
-      `**/page-data${challengePath}/page-data.json`,
-      async route => {
-        const response = await route.fetch();
-        const body = await response.text();
+    await page.route(`**/page-data${quizPath}/page-data.json`, async route => {
+      const response = await route.fetch();
+      const body = await response.text();
 
-        const pageData = JSON.parse(body) as PageData;
-        pageData.result.data.challengeNode.challenge.quizzes = fixture;
+      const pageData = JSON.parse(body) as PageData;
+      pageData.result.data.challengeNode.challenge.quizzes = fixture;
 
-        await route.fulfill({
-          contentType: 'application/json',
-          body: JSON.stringify(pageData)
-        });
-      }
-    );
+      await route.fulfill({
+        contentType: 'application/json',
+        body: JSON.stringify(pageData)
+      });
+    });
 
-    await page.goto(challengePath);
+    await page.goto(quizPath);
   });
 
   test('renders audio player and transcript when question has audio', async ({
