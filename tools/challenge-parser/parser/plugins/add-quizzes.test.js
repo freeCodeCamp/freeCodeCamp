@@ -6,6 +6,14 @@ describe('add-quizzes plugin', () => {
   let mockQuizzesAST;
   let chineseQuizzesAST;
   let quizzesWithAudioAST;
+  let quizzesWithAudioInvalidJsonAST;
+  let quizzesWithAudioMissingFilenameAST;
+  let quizzesWithAudioTranscriptNotArrayAST;
+  let quizzesWithAudioEmptyTranscriptAST;
+  let quizzesWithAudioMissingTranscriptAST;
+  let quizzesWithAudioTranscriptMissingCharacterAST;
+  let quizzesWithAudioTranscriptMissingTextAST;
+  let quizzesWithAudioNotJsonCodeBlockAST;
   const plugin = addQuizzes();
   let file = { data: {} };
 
@@ -13,6 +21,30 @@ describe('add-quizzes plugin', () => {
     mockQuizzesAST = await parseFixture('with-quizzes.md');
     chineseQuizzesAST = await parseFixture('with-chinese-quizzes.md');
     quizzesWithAudioAST = await parseFixture('with-quizzes-audio.md');
+    quizzesWithAudioInvalidJsonAST = await parseFixture(
+      'with-quizzes-audio-invalid-json.md'
+    );
+    quizzesWithAudioMissingFilenameAST = await parseFixture(
+      'with-quizzes-audio-missing-filename.md'
+    );
+    quizzesWithAudioTranscriptNotArrayAST = await parseFixture(
+      'with-quizzes-audio-transcript-not-array.md'
+    );
+    quizzesWithAudioEmptyTranscriptAST = await parseFixture(
+      'with-quizzes-audio-empty-transcript.md'
+    );
+    quizzesWithAudioMissingTranscriptAST = await parseFixture(
+      'with-quizzes-audio-missing-transcript.md'
+    );
+    quizzesWithAudioTranscriptMissingCharacterAST = await parseFixture(
+      'with-quizzes-audio-transcript-missing-character.md'
+    );
+    quizzesWithAudioTranscriptMissingTextAST = await parseFixture(
+      'with-quizzes-audio-transcript-missing-text.md'
+    );
+    quizzesWithAudioNotJsonCodeBlockAST = await parseFixture(
+      'with-quizzes-audio-not-json-code-block.md'
+    );
   });
 
   beforeEach(() => {
@@ -191,5 +223,57 @@ describe('add-quizzes plugin', () => {
     // Third question has no audio
     expect(thirdQuestion.audioData).toBeUndefined();
     expect(thirdQuestion.text).toBe('<p>Quiz 1, question 3 without audio</p>');
+  });
+
+  it('should throw error for audio section not in JSON code block', () => {
+    expect(() => plugin(quizzesWithAudioNotJsonCodeBlockAST, file)).toThrow(
+      '--audio-- section must contain a ```json code block'
+    );
+  });
+
+  it('should throw error for invalid JSON in audio section', () => {
+    expect(() => plugin(quizzesWithAudioInvalidJsonAST, file)).toThrow(
+      '--audio-- section must contain valid JSON'
+    );
+  });
+
+  it('should throw error for missing audio filename', () => {
+    expect(() => plugin(quizzesWithAudioMissingFilenameAST, file)).toThrow(
+      '--audio-- section must contain audio.filename'
+    );
+  });
+
+  it('should throw error for transcript not being an array', () => {
+    expect(() => plugin(quizzesWithAudioTranscriptNotArrayAST, file)).toThrow(
+      '--audio-- section must contain transcript as an array'
+    );
+  });
+
+  it('should throw error for empty transcript array', () => {
+    expect(() => plugin(quizzesWithAudioEmptyTranscriptAST, file)).toThrow(
+      '--audio-- section transcript array cannot be empty'
+    );
+  });
+
+  it('should throw error for missing transcript', () => {
+    expect(() => plugin(quizzesWithAudioMissingTranscriptAST, file)).toThrow(
+      '--audio-- section must contain transcript as an array'
+    );
+  });
+
+  it('should throw error for transcript line missing character', () => {
+    expect(() =>
+      plugin(quizzesWithAudioTranscriptMissingCharacterAST, file)
+    ).toThrow(
+      '--audio-- transcript line 0 must have character and text properties'
+    );
+  });
+
+  it('should throw error for transcript line missing text', () => {
+    expect(() =>
+      plugin(quizzesWithAudioTranscriptMissingTextAST, file)
+    ).toThrow(
+      '--audio-- transcript line 0 must have character and text properties'
+    );
   });
 });

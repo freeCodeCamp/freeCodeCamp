@@ -140,7 +140,7 @@ const ShowQuiz = ({
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
 
-  // Initialize the quiz data
+  // Initialize the data passed to `useQuiz`
   const [initialQuizData] = useState(
     quiz.map(question => {
       const distractors = question.distractors.map((distractor, index) => {
