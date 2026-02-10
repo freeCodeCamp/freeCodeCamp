@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from '@gatsbyjs/reach-router';
 
 interface Props {
@@ -8,29 +8,17 @@ interface Props {
 
 export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
   const curLocation = useLocation();
-  const sentinelActive = useRef(false);
-
-  useEffect(() => {
-    window.history.pushState({ __sentinel: true }, '');
-    sentinelActive.current = true;
-    return () => {
-      sentinelActive.current = false;
-    };
-  }, []);
 
   useEffect(() => {
     window.addEventListener('beforeunload', onWindowClose);
+    // Push a dummy state so that navigating back will restore the current page,
+    // allowing us to manually handle navigation.
+    window.history.pushState({}, curLocation.pathname);
 
     const handlePopState = () => {
-      if (!sentinelActive.current) return;
-
-      const blocked = onHistoryChange('');
-      if (blocked) {
-        window.history.pushState({ __sentinel: true }, '');
-      } else {
-        sentinelActive.current = false;
-        window.history.back();
-      }
+      // The argument should be an empty string, so that onHistoryChange knows
+      // to use the default navigation target
+      onHistoryChange('');
     };
 
     window.addEventListener('popstate', handlePopState);

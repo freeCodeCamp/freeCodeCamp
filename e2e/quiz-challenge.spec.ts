@@ -236,16 +236,17 @@ test.describe('Quiz challenge', () => {
     // Wait for the page content to render
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
 
-    await page.getByRole('link', { name: 'Basic HTML Quiz' }).click();
+    // navigate to /learn
+    await page.getByTestId('header-universal-nav-logo').click();
 
     await expect(page.getByRole('dialog', { name: 'Exit Quiz' })).toBeVisible();
     await page
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/responsive-web-design-v9/#quiz-basic-html');
+    await page.waitForURL('/learn/');
     await expect(
-      page.getByRole('heading', { level: 3, name: 'Basic HTML Quiz' })
+      page.getByRole('heading', { name: 'Welcome back, Full Stack User.' })
     ).toBeVisible();
   });
 
@@ -258,7 +259,6 @@ test.describe('Quiz challenge', () => {
     await page.goto(quizPath);
 
     await expect(page.getByRole('radiogroup')).toHaveCount(20);
-    await page.waitForFunction(() => window.history.state?.__sentinel === true);
 
     await page.goBack();
 

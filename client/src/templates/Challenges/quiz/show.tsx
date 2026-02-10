@@ -270,18 +270,15 @@ const ShowQuiz = ({
       }
 
       // For link clicks, save the target pathname. For back button
-      // (empty targetPathname), keep the default blockHashSlug.
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
       if (targetPathname) {
-        const newPathname = targetPathname.startsWith('/learn')
-          ? blockHashSlug
-          : targetPathname;
-        setExitPathname(newPathname);
+        setExitPathname(targetPathname);
       }
 
       openExitQuizModal();
       return true;
     },
-    [hasSubmitted, openExitQuizModal, blockHashSlug]
+    [hasSubmitted, openExitQuizModal]
   );
 
   usePageLeave({
