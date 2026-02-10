@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useLocation, globalHistory } from '@gatsbyjs/reach-router';
+import { useEffect, useRef } from 'react';
+import { useLocation } from '@gatsbyjs/reach-router';
 
 interface Props {
   onWindowClose: (event: BeforeUnloadEvent) => void;
@@ -8,12 +8,33 @@ interface Props {
 
 export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
   const curLocation = useLocation();
+  const sentinelActive = useRef(false);
+
+  useEffect(() => {
+    window.history.pushState({ __sentinel: true }, '');
+    sentinelActive.current = true;
+    return () => {
+      sentinelActive.current = false;
+    };
+  }, []);
 
   useEffect(() => {
     window.addEventListener('beforeunload', onWindowClose);
 
-    // Intercept link clicks to catch Gatsby v5 Link navigation,
-    // which doesn't go through reach-router's globalHistory.
+    const handlePopState = () => {
+      if (!sentinelActive.current) return;
+
+      const blocked = onHistoryChange('');
+      if (blocked) {
+        window.history.pushState({ __sentinel: true }, '');
+      } else {
+        sentinelActive.current = false;
+        window.history.back();
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+
     const handleLinkClick = (event: MouseEvent) => {
       const anchor = (event.target as HTMLElement).closest('a');
       if (!anchor) return;
@@ -31,22 +52,10 @@ export const usePageLeave = ({ onWindowClose, onHistoryChange }: Props) => {
 
     document.addEventListener('click', handleLinkClick, true);
 
-    // This is a workaround as @gatsbyjs/reach-router doesn't support blocking history change.
-    // https://github.com/reach/router/issues/464
-    const unlistenHistory = globalHistory.listen(({ action, location }) => {
-      const isBack = action === 'POP';
-      const isRouteChanged =
-        action === 'PUSH' && location.pathname !== curLocation.pathname;
-
-      if (isBack || isRouteChanged) {
-        onHistoryChange(location.pathname);
-      }
-    });
-
     return () => {
       window.removeEventListener('beforeunload', onWindowClose);
+      window.removeEventListener('popstate', handlePopState);
       document.removeEventListener('click', handleLinkClick, true);
-      unlistenHistory();
     };
   }, [onWindowClose, onHistoryChange, curLocation]);
 };

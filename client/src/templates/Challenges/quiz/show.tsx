@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -116,8 +115,6 @@ const ShowQuiz = ({
   closeFinishQuizModal
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const curLocation = useLocation();
-
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -249,7 +246,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     exitConfirmed.current = true;
-    void navigate(exitPathname || '/learn');
+    void navigate(exitPathname || '/learn', { replace: true });
     closeExitQuizModal();
   };
 
@@ -272,20 +269,19 @@ const ShowQuiz = ({
         return false;
       }
 
-      const newPathname = targetPathname.startsWith('/learn')
-        ? blockHashSlug
-        : targetPathname;
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default blockHashSlug.
+      if (targetPathname) {
+        const newPathname = targetPathname.startsWith('/learn')
+          ? blockHashSlug
+          : targetPathname;
+        setExitPathname(newPathname);
+      }
 
-      // Save the pathname of the page the user wants to navigate to before we block the navigation.
-      setExitPathname(newPathname);
-
-      // We need to use Reach Router, because the pathname is already prefixed
-      // with the language and Gatsby's navigate will prefix it again.
-      void reachNavigate(`${curLocation.pathname}`);
       openExitQuizModal();
       return true;
     },
-    [curLocation.pathname, hasSubmitted, openExitQuizModal, blockHashSlug]
+    [hasSubmitted, openExitQuizModal, blockHashSlug]
   );
 
   usePageLeave({
