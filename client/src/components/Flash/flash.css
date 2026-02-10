@@ -4,8 +4,9 @@ the CSS rules of `ui-components`'s Alert.
 */
 div.flash-message {
   display: flex;
-  justify-content: space-around;
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   padding-top: 3px;
   padding-bottom: 3px;
   position: fixed;
