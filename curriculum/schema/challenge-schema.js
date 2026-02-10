@@ -342,6 +342,8 @@ const schema = Joi.object().keys({
       })
   }),
   showSpeakingButton: Joi.bool(),
+  // This is only to be used for dynamic client updates.
+  sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),
