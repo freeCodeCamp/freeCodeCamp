@@ -1437,6 +1437,7 @@
         "advanced": "Advanced"
       },
       "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
       "topic": {
         "html": "HTML",
         "css": "CSS",

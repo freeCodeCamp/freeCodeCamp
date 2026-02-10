@@ -49,7 +49,7 @@ export const catalog: Catalog[] = [
   {
     superBlock: SuperBlocks.LearnPythonForBeginners,
     level: Levels.Beginner,
-    hours: 3,
+    hours: 5,
     topic: Topic.Python
   },
   {
@@ -84,13 +84,13 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.AbsoluteAndRelativeUnits,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
   },
   {
     superBlock: SuperBlocks.PseudoClassesAndElements,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 1,
     topic: Topic.CSS
   },
@@ -144,7 +144,7 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.AttributeSelectors,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
   },
@@ -156,7 +156,7 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.ResponsiveDesign,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
   },
@@ -168,13 +168,13 @@ export const catalog: Catalog[] = [
   },
   {
     superBlock: SuperBlocks.CssVariables,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
   },
   {
     superBlock: SuperBlocks.CssGrid,
-    level: Levels.Beginner,
+    level: Levels.Intermediate,
     hours: 2,
     topic: Topic.CSS
   },

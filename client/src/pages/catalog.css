@@ -63,6 +63,7 @@
   flex-direction: column;
   justify-content: space-between;
   border: 1px solid var(--background-quaternary);
+  max-width: 400px;
 }
 
 .catalog-item h3 {

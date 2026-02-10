@@ -13,16 +13,21 @@ const LandingCatalog = (): JSX.Element => {
   const { t } = useTranslation();
 
   const featuredCourses = useMemo(() => {
-    // Get featured courses: Basic HTML, Basic CSS, Python
+    // Get featured courses: Learn Python for Beginners, Computer Basics, Basic HTML
     const featuredSuperBlocks = [
-      SuperBlocks.BasicHtml,
-      SuperBlocks.BasicCss,
-      SuperBlocks.LearnPythonForBeginners
+      SuperBlocks.LearnPythonForBeginners,
+      SuperBlocks.ComputerBasics,
+      SuperBlocks.BasicHtml
     ];
     const courses = catalog.filter(course =>
       featuredSuperBlocks.includes(course.superBlock)
     );
-    return courses;
+    // Sort by the order in featuredSuperBlocks
+    return courses.sort(
+      (a, b) =>
+        featuredSuperBlocks.indexOf(a.superBlock) -
+        featuredSuperBlocks.indexOf(b.superBlock)
+    );
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Col, Spacer, Dropdown, MenuItem } from '@freecodecamp/ui';
+import { Col, Spacer, Dropdown, MenuItem, Alert } from '@freecodecamp/ui';
 import { catalog } from '@freecodecamp/shared/config/catalog';
 import { showUpcomingChanges } from '../../config/env.json';
 import FourOhFour from '../components/FourOhFour';
@@ -141,22 +141,26 @@ const CatalogPage = () => {
       </Col>
       <Spacer size='m' />
       <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-        <section className='catalog-wrap'>
-          {filteredCatalog.map(course => {
-            const { superBlock, level, hours, topic } = course;
+        {filteredCatalog.length === 0 ? (
+          <Alert variant='info'>{t('curriculum.catalog.no-results')}</Alert>
+        ) : (
+          <section className='catalog-wrap'>
+            {filteredCatalog.map(course => {
+              const { superBlock, level, hours, topic } = course;
 
-            return (
-              <CatalogItem
-                key={superBlock}
-                superBlock={superBlock}
-                level={level}
-                hours={hours}
-                topic={topic}
-                showAllSummaries={true}
-              />
-            );
-          })}
-        </section>
+              return (
+                <CatalogItem
+                  key={superBlock}
+                  superBlock={superBlock}
+                  level={level}
+                  hours={hours}
+                  topic={topic}
+                  showAllSummaries={true}
+                />
+              );
+            })}
+          </section>
+        )}
       </Col>
       <Spacer size='l' />
     </main>
