@@ -307,7 +307,10 @@
         {
           "dashedName": "graphs-and-trees",
           "comingSoon": true,
-          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+          "blocks": [
+            "lecture-understanding-graphs-and-trees-js",
+            "lab-adjacency-list-to-matrix-converter-js"
+          ]
         },
         {
           "dashedName": "dynamic-programming",
