@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { isEmpty } from 'lodash';
 import { Button } from '@freecodecamp/ui';
 import { Link } from '../../../components/helpers';
@@ -6,6 +7,7 @@ import { Link } from '../../../components/helpers';
 import type { BlockLabel as BlockLabelType } from '@freecodecamp/shared/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
+import Reset from '../../../assets/icons/reset';
 import CheckMark from './check-mark';
 import BlockLabel from './block-label';
 import BlockIntros from './block-intros';
@@ -22,6 +24,8 @@ interface BaseBlockHeaderProps {
   percentageCompleted: number;
   blockIntroArr?: string[];
   accordion?: boolean;
+  onResetClick?: () => void;
+  isResetDisabled?: boolean;
 }
 
 interface BlockHeaderButtonProps extends BaseBlockHeaderProps {
@@ -48,8 +52,12 @@ function BlockHeader({
   blockIntroArr,
   accordion,
   blockUrl,
-  onLinkClick
+  onLinkClick,
+  onResetClick,
+  isResetDisabled
 }: BlockHeaderProps): JSX.Element {
+  const { t } = useTranslation();
+
   const InnerBlockHeader = () => (
     <>
       <span className='block-header-button-text map-title'>
@@ -77,22 +85,36 @@ function BlockHeader({
 
   return (
     <>
-      <h3 className='block-grid-title'>
-        {accordion && blockUrl ? (
-          <Link className='block-header' to={blockUrl} onClick={onLinkClick}>
-            <InnerBlockHeader />
-          </Link>
-        ) : (
-          <Button
-            aria-expanded={isExpanded ? 'true' : 'false'}
-            aria-controls={`${blockDashed}-panel`}
-            className='block-header'
-            onClick={handleClick}
-          >
-            <InnerBlockHeader />
-          </Button>
-        )}
-      </h3>
+      <div className='block-header-wrapper'>
+        <h3 className='block-grid-title'>
+          {accordion && blockUrl ? (
+            <Link className='block-header' to={blockUrl} onClick={onLinkClick}>
+              <InnerBlockHeader />
+            </Link>
+          ) : (
+            <Button
+              aria-expanded={isExpanded ? 'true' : 'false'}
+              aria-controls={`${blockDashed}-panel`}
+              className='block-header'
+              onClick={handleClick}
+              data-playwright-test-label='block-header-button'
+            >
+              <InnerBlockHeader />
+            </Button>
+          )}
+        </h3>
+        <button
+          className='block-reset-button'
+          onClick={onResetClick}
+          aria-label={t('learn.reset-progress-aria-block', {
+            blockLabel: blockTitle
+          })}
+          type='button'
+          disabled={isResetDisabled}
+        >
+          <Reset />
+        </button>
+      </div>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />
       )}
