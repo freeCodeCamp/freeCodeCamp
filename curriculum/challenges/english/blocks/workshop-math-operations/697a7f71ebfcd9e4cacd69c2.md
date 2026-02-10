@@ -50,7 +50,7 @@ You should use `print()` to display the string `Each person pays:` followed by a
 ```js
 ({
     test: () => assert(runPython(`
-    _Node(_code).has_call("print('Each person pays:', each_pays)")`))
+    _Node(_code).has_call("print('Each person pays:', each_pays)") or _Node(_code).has_call("print(f'Each person pays: {each_pays}')")`))
 })
 ```
 
