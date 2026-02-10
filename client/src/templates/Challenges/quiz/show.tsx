@@ -173,11 +173,11 @@ const ShowQuiz = ({
 
       const audioData = question.audioData?.audio?.filename
         ? {
-            audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData?.audio?.filename}`,
-            audioStartTime: question.audioData?.audio?.startTime ?? undefined,
-            audioFinishTime: question.audioData?.audio?.finishTime ?? undefined,
-            transcript: question.audioData?.transcript?.length
-              ? question.audioData?.transcript
+            audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData.audio.filename}`,
+            audioStartTime: question.audioData.audio.startTime ?? undefined,
+            audioFinishTime: question.audioData.audio.finishTime ?? undefined,
+            transcript: question.audioData.transcript.length
+              ? question.audioData.transcript
                   .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
                   .join('')
               : undefined

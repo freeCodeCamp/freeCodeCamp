@@ -1,0 +1,24 @@
+[
+  {
+    "questions": [
+      {
+        "distractors": ["<p>Wrong 1</p>", "<p>Wrong 2</p>", "<p>Wrong 3</p>"],
+        "text": "<p>What does the audio say?</p>",
+        "answer": "<p>Correct answer</p>",
+        "audioData": {
+          "audio": {
+            "filename": "test-audio.mp3",
+            "startTime": 0,
+            "finishTime": 2
+          },
+          "transcript": [
+            {
+              "character": "Speaker",
+              "text": "Hello world"
+            }
+          ]
+        }
+      }
+    ]
+  }
+]
