@@ -171,26 +171,16 @@ const ShowQuiz = ({
 
       const allAnswers = shuffleArray([...distractors, answer]);
 
-      const audioData = question.audioData
+      const audioData = question.audioData?.audio?.filename
         ? {
-            audioUrl: (() => {
-              const { filename, startTime, finishTime } =
-                question.audioData.audio;
-              const baseUrl = `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${filename}`;
-
-              // Add Media Fragments URI if timestamps are provided
-              if (startTime !== null && startTime !== undefined) {
-                return `${baseUrl}#t=${startTime}${
-                  finishTime !== null && finishTime !== undefined
-                    ? `,${finishTime}`
-                    : ''
-                }`;
-              }
-              return baseUrl;
-            })(),
-            transcript: question.audioData.transcript
-              .map(line => `${line.character}: ${line.text}`)
-              .join('\n\n')
+            audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData?.audio?.filename}`,
+            audioStartTime: question.audioData?.audio?.startTime ?? undefined,
+            audioFinishTime: question.audioData?.audio?.finishTime ?? undefined,
+            transcript: question.audioData?.transcript?.length
+              ? question.audioData?.transcript
+                  .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
+                  .join('')
+              : undefined
           }
         : {};
 
