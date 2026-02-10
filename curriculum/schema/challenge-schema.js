@@ -223,6 +223,7 @@ const schema = Joi.object().keys({
   ).required(),
   isLastChallengeInBlock: Joi.boolean().required(),
   videoUrl: Joi.string().allow(''),
+  tokens: Joi.array().items(Joi.string()),
   fillInTheBlank: Joi.object().keys({
     sentence: Joi.string().required(),
     blanks: Joi.array()

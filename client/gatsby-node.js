@@ -79,6 +79,7 @@ exports.createPages = async function createPages({
               certification
               challengeType
               dashedName
+              tokens
               demoType
               disableLoopProtectTests
               disableLoopProtectPreview
