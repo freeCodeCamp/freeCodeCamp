@@ -29,7 +29,9 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint --max-warnings 0",
-    "compile": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "build": "pnpm copy-scripts && pnpm bundle",
+    "bundle": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production",
+    "copy-scripts": "tsx ./copy-scripts.ts"
   },
   "type": "module",
   "keywords": [],
@@ -39,14 +41,11 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@types/copy-webpack-plugin": "^8.0.1",
     "@typescript/vfs": "1.6.1",
     "babel-loader": "8.3.0",
-    "copy-webpack-plugin": "9.1.0",
     "eslint": "^9.39.1",
     "process": "0.11.10",
-    "pyodide": "^0.23.3",
-    "sass.js": "0.11.1",
+    "tsx": "^4.21.0",
     "typescript": "5.9.3",
     "util": "0.12.5",
     "webpack": "5.90.3",
@@ -54,6 +53,8 @@
   },
   "dependencies": {
     "@freecodecamp/curriculum-helpers": "^7.2.0",
+    "pyodide": "^0.23.3",
+    "sass.js": "0.11.1",
     "xterm": "^5.2.1"
   }
 }

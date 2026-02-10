@@ -1,8 +1,11 @@
 {
-  "name": "freeCodeCampDC",
+  "name": "freeCodeCamp",
   "dockerComposeFile": "docker-compose.yml",
   "service": "devcontainer",
-  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "workspaceFolder": "/workspaces/freeCodeCamp",
+  "mounts": [
+    "source=fcc-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+  ],
   "forwardPorts": [3000, 8000],
   "portsAttributes": {
     "3000": {
@@ -17,9 +20,64 @@
   "otherPortsAttributes": {
     "onAutoForward": "silent"
   },
-  "onCreateCommand": "[ ! -f .env ] && cp sample.env .env || true",
-  "updateContentCommand": "pnpm install && pnpm seed",
-  "postAttachCommand": {
-    "instructions": "bash -c 'echo \"\n\n\n Start a new terminal and run \\`pnpm run develop\\` when you are ready.\n\n\n\"'"
+  "onCreateCommand": "sudo chown node:node node_modules && ([ ! -f .env ] && cp sample.env .env || true)",
+  "updateContentCommand": "pnpm install --prefer-offline",
+  "postCreateCommand": "rsync -a --include='*/' --include='.turbo/***' --exclude='*' /home/node/.cache/fcc/ ./ && set -a && . ./.env && set +a && until mongosh --eval 'rs.status().ok' 2>/dev/null; do sleep 1; done && pnpm seed",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "task.allowAutomaticTasks": "on",
+        "tasks": {
+          "version": "2.0.0",
+          "tasks": [
+            {
+              "label": "Start API Server",
+              "type": "shell",
+              "command": "pnpm run develop:api",
+              "isBackground": true,
+              "problemMatcher": [],
+              "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "develop"
+              }
+            },
+            {
+              "label": "Start Client Server",
+              "type": "shell",
+              "command": "pnpm run develop:client",
+              "isBackground": true,
+              "problemMatcher": [],
+              "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "develop"
+              }
+            },
+            {
+              "label": "Start Development",
+              "dependsOn": ["Start API Server", "Start Client Server"],
+              "problemMatcher": []
+            },
+            {
+              "label": "Open README",
+              "type": "shell",
+              "command": "code .devcontainer/README.md",
+              "presentation": {
+                "reveal": "silent",
+                "close": true
+              },
+              "runOptions": {
+                "runOn": "folderOpen"
+              }
+            }
+          ]
+        }
+      }
+    }
   }
 }

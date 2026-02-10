@@ -205,7 +205,7 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Erlange kostenlos verifizierte Zertifizierungen in:",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +215,6 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Frequently asked questions:",
     "faqs": [
@@ -291,7 +290,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Der Benutzername \"{{username}}\" enthält ungültige Zeichen",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Der Benutzername \"{{username}}\" ist zu kurz",
       "is a reserved error code": "Der Benutzername \"{{username}}\" ist ein reservierter Fehlercode",
       "must be lowercase": "Benutzername \"{{username}}\" muss in Kleinbuchstaben geschrieben sein",

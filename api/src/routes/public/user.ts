@@ -8,12 +8,13 @@ import * as schemas from '../../schemas.js';
 import { splitUser } from '../helpers/user-utils.js';
 import {
   normalizeChallenges,
-  NormalizedChallenge,
+  type NormalizedChallenge,
   normalizeFlags,
   normalizeProfileUI,
   normalizeTwitter,
   normalizeBluesky,
-  removeNulls
+  removeNulls,
+  type NoNullProperties
 } from '../../utils/normalize.js';
 import {
   Calendar,
@@ -48,7 +49,7 @@ type RawUser = {
   name: string;
   points: number;
   portfolio: Portfolio[];
-  experience: Experience[];
+  experience: NoNullProperties<Experience>[];
   profileUI: ProfileUI;
 };
 
@@ -190,7 +191,7 @@ export const userPublicGetRoutes: FastifyPluginCallbackTypebox = (
           name: user.name ?? '',
           points: getPoints(progressTimestamps),
           profileUI: normalizedProfileUI,
-          experience: user.experience ?? []
+          experience: user.experience.map(removeNulls) ?? []
         });
 
         const returnedUser = {

@@ -205,7 +205,7 @@
       "cta": "Comienza a aprender ahora (es gratis)"
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
-    "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
     "learn-spanish-heading": "Aprende Español profesional A1:",
     "learn-chinese-heading": "Aprende Chino Professional:",
@@ -215,7 +215,6 @@
     "next-heading": "Pruebe nuestro plan de estudios beta:",
     "upcoming-heading": "Próximo plan de estudio:",
     "catalog-heading": "Explora nuestro Catálogo:",
-    "fsd-restructure-note": "Si estabas trabajando previamente en nuestro currículo de Desarrollador Full Stack Certificado, no te preocupes: tu progreso está guardado. Lo hemos dividido en certificaciones más pequeñas que puedes obtener a lo largo de tu recorrido.",
     "archive-link": "¿Buscas cursos antiguos? Consulta <0>nuestra página de archivo</0>.",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -291,7 +290,7 @@
     "reset-editor-layout": "Restablecer el diseño del editor",
     "shortcuts-explained": "Dentro de un desafío, pulse ESC seguido del signo de interrogación para mostrar una lista de atajos disponibles.",
     "username": {
-      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",

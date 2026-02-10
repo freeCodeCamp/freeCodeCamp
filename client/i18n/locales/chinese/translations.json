@@ -205,7 +205,7 @@
       "cta": "立即开始学习（免费）"
     },
     "certification-heading": "获得以下免费认证：",
-    "core-certs-heading": "推荐课程（测试版）：",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "学习面向开发者的英语课程：",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +215,6 @@
     "next-heading": "试试我们的测试版课程：",
     "upcoming-heading": "即将推出的课程：",
     "catalog-heading": "探索我们的目录：",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常见问题：",
     "faqs": [
@@ -291,7 +290,7 @@
     "reset-editor-layout": "重置编辑器布局",
     "shortcuts-explained": "在一项挑战中，按 ESC 键和问号可显示可用的快捷方式列表。",
     "username": {
-      "contains invalid characters": "用户名 \"{{username}}\" 含有无效字符",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "用户名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是错误代码，不可用作用户名",
       "must be lowercase": "用户名 \"{{username}}\" 必须是小写的",
