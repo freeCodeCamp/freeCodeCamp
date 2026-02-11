@@ -17,7 +17,7 @@ For example, say you have three components named `Parent`, `Child`, and `Grandch
 
 Or if the data is even further up the chain, the data might have to be passed to the `Parent` component, too.
 
-Here, the data I want to display is the string `Hello, Prop Drilling!`. It's assigned to the `greeting` variable in the root `App` component:
+Here, the data I want to display is the string `Hello, Prop Drilling!` It's assigned to the `greeting` variable in the root `App` component:
 
 ```jsx
 import "./App.css";
@@ -66,7 +66,7 @@ const Grandchild = ({ greeting }) => {
 export default Grandchild;
 ```
 
-In the browser, you'll see a page with a single `h1` element that has the text `Hello, Prop Drilling!`.
+In the browser, you'll see a page with a single `h1` element that has the text `Hello, Prop Drilling!`
 
 At first, prop drilling might not seem like such a big deal. But as your app grows, it gets harder to understand, debug, and maintain.
 
@@ -102,7 +102,7 @@ const Grandchild = ({ greeting, response }) => {
 export default App;
 ```
 
-In the browser, you'll see a page with an `h1` element that has the text `Hello, Prop Drilling!` and an `h2` element that has the text `I'm not here to play!`.
+In the browser, you'll see a page with an `h1` element that has the text `Hello, Prop Drilling!` and an `h2` element that has the text `I'm not here to play!`
 
 To avoid prop drilling, especially in large, complex applications, consider using the Context API or state management libraries like Redux and Redux Toolkit, Zustand, Recoil, and others.
 

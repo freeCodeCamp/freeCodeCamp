@@ -7,7 +7,7 @@ dashedName: step-23
 
 # --description--
 
-Within the third `tr`, add a `th` element with the text `Credit The outstanding balance on our credit card.`. Wrap that text, except for `Credit `, within a `span` element with the `class` set to `description`.
+Within the third `tr`, add a `th` element with the text `Credit The outstanding balance on our credit card.` Wrap that text, except for `Credit `, within a `span` element with the `class` set to `description`.
 
 Add three `td` elements below that, and give them the following text, in order: `$50`, `$50`, and `$75`. Give the third `td` element a `class` set to `current`.
 
@@ -19,7 +19,7 @@ Your third `tr` should have a `th` element.
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th'));
 ```
 
-Your `th` element should have the text `Credit The outstanding balance on our credit card.`.
+Your `th` element should have the text `Credit The outstanding balance on our credit card.`
 
 ```js
 assert(document.querySelectorAll('table')?.[1]?.querySelector('tbody')?.querySelectorAll('tr')?.[2]?.querySelector('th')?.innerText === 'Credit The outstanding balance on our credit card.');
