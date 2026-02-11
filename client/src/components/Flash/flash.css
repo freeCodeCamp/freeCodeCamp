@@ -4,11 +4,17 @@ the CSS rules of `ui-components`'s Alert.
 */
 div.flash-message {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   padding-top: 3px;
   padding-bottom: 3px;
   position: fixed;
   width: 100%;
   z-index: var(--z-index-flash);
+}
+
+div.flash-message .close {
+  position: absolute;
+  right: 16px;
 }
