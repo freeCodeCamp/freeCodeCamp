@@ -1,5 +1,5 @@
 import { existsSync, readdirSync } from 'fs';
-import { resolve } from 'path';
+import { join, resolve, basename } from 'path';
 import { isEmpty } from 'lodash';
 import debug from 'debug';
 
@@ -336,6 +336,13 @@ export class BlockCreator {
     );
 
     challenge.translationPending = this.lang !== 'english' && !isAudited;
+    // Add source location to allow tracing back to original file (necessary to
+    // update the client when files change)
+    challenge.sourceLocation = join(
+      basename(this.blockContentDir),
+      block,
+      filename
+    );
 
     return finalizeChallenge(challenge, meta);
   }

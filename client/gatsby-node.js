@@ -8,7 +8,6 @@ const webpack = require('webpack');
 const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
 const {
-  createChallengePages,
   createBlockIntroPages,
   createSuperBlockIntroPages
 } = require('./utils/gatsby');
@@ -60,18 +59,9 @@ exports.createPages = async function createPages({
 
   const result = await graphql(`
     {
-      allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
-      ) {
+      allChallengeNode {
         edges {
           node {
-            id
             challenge {
               block
               blockLabel
@@ -140,40 +130,6 @@ exports.createPages = async function createPages({
       }
     }
   `);
-
-  const allChallengeNodes = result.data.allChallengeNode.edges.map(
-    ({ node }) => node
-  );
-
-  const createIdToNextPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const nextNode = nodes[index + 1];
-      const nextPath = nextNode ? nextNode.challenge.fields.slug : null;
-      if (nextPath) map[node.id] = nextPath;
-      return map;
-    }, {});
-
-  const createIdToPrevPathMap = nodes =>
-    nodes.reduce((map, node, index) => {
-      const prevNode = nodes[index - 1];
-      const prevPath = prevNode ? prevNode.challenge.fields.slug : null;
-      if (prevPath) map[node.id] = prevPath;
-      return map;
-    }, {});
-
-  const idToNextPathCurrentCurriculum =
-    createIdToNextPathMap(allChallengeNodes);
-
-  const idToPrevPathCurrentCurriculum =
-    createIdToPrevPathMap(allChallengeNodes);
-
-  // Create challenge pages.
-  result.data.allChallengeNode.edges.forEach(
-    createChallengePages(createPage, {
-      idToNextPathCurrentCurriculum,
-      idToPrevPathCurrentCurriculum
-    })
-  );
 
   const blocks = uniq(
     result.data.allChallengeNode.edges.map(
