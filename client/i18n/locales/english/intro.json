@@ -3170,6 +3170,12 @@
           "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
         ]
       },
+      "lab-adjacency-list-to-matrix-converter-js": {
+        "title": "Build an Adjacency List to Matrix Converter",
+        "intro": [
+          "In this lab, you will implement a function that converts an adjacency list representation of a graph into an adjacency matrix representation."
+        ]
+      },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
         "intro": [
@@ -3250,10 +3256,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lab-adjacency-list-to-matrix-converter-js": {
-        "title": "Build an Adjacency List to Matrix Converter",
-        "intro": ["Build an Adjacency List to Matrix Converter", ""]
       }
     }
   },
