@@ -557,7 +557,7 @@
     "intro": [
       "Дані повсюди, але це не означає, що більшість з них без форми чи контексту.",
       "У сертифікації «Візуалізація даних» ви створите діаграми, графіки та карти, що показують різні типи даних, за допомогою бібліотеки D3.js.",
-      "Ви також дізнаєтесь про JSON (JavaScript Object Notation) та як працювати з даними онлайн, користуючись API (Application Programing Interface)."
+      "Ви також дізнаєтесь про JSON (JavaScript Object Notation) та як працювати з даними онлайн, користуючись API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {
@@ -3642,6 +3642,12 @@
       "lecture-introduction-to-python-strings": {
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
       },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Numbers and Mathematical Operations",
