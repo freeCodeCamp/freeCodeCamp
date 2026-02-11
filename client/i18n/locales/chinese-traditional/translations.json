@@ -205,15 +205,16 @@
       "cta": "立即開始學習（免費）"
     },
     "certification-heading": "獲得以下免費認證：",
-    "core-certs-heading": "推薦課程（測試版）：",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "學習面向開發者的英語課程：",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "專業認證：",
     "interview-prep-heading": "爲開發人員面試求職做好準備：",
     "legacy-curriculum-heading": "我們已存檔的課程：",
     "next-heading": "試試我們的測試版課程：",
     "upcoming-heading": "即將推出的課程：",
     "catalog-heading": "探索我們的目錄：",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "常見問題：",
     "faqs": [
@@ -289,7 +290,7 @@
     "reset-editor-layout": "重置編輯器佈局",
     "shortcuts-explained": "在一項挑戰中，按 ESC 鍵和問號可顯示可用的快捷方式列表。",
     "username": {
-      "contains invalid characters": "用戶名 \"{{username}}\" 含有無效字符",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "用戶名 \"{{username}}\" 太短",
       "is a reserved error code": "\"{{username}}\" 是錯誤代碼，不可用作用戶名",
       "must be lowercase": "用戶名 \"{{username}}\" 必須是小寫的",
@@ -321,6 +322,7 @@
       "my-heatmap": "我的熱圖",
       "my-certs": "我的認證",
       "my-portfolio": "我的作品集",
+      "my-experience": "My experience",
       "my-timeline": "我的時間線",
       "my-donations": "我的捐款",
       "night-mode": "夜間模式",
@@ -433,7 +435,24 @@
     "page-number": "第 {{pageNumber}} 頁，共 {{totalPages}} 頁",
     "edit-my-profile": "編輯我的個人資料",
     "add-bluesky": "將此認證分享到 BlueSky",
-    "add-threads": "將此認證分享到 Threads"
+    "add-threads": "將此認證分享到 Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp 是捐助者支持的 501(c)(3) 條款下具有免稅資格的慈善組織（稅號：82-0779546）。",
@@ -695,7 +714,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -869,6 +888,8 @@
   },
   "misc": {
     "coming-soon": "即將到來",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "你已離線，學習進度可能不會被保存",
     "server-offline": "無法連接到服務器，你的進度可能無法保存。如果仍然出現此消息，請聯繫 <0>support</0>。",
     "unsubscribed": "你已成功取消訂閱",
@@ -986,6 +1007,7 @@
     "keyboard-shortcut-updated": "我們已更新你的鍵盤快捷鍵設置",
     "subscribe-to-quincy-updated": "我們已更新你對 Quincy 的電子郵件的訂閱",
     "portfolio-item-updated": "我們已更新你的作品集",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "郵箱格式無效",
     "email-valid": "你的電子郵件已成功更改，編碼愉快！",
     "bad-challengeId": "currentChallengeId 是無效的挑戰 ID",
@@ -1081,16 +1103,22 @@
       "err-3": "嘗試保存你的調研問卷時發生錯誤。",
       "success": "謝謝，你的調研問卷已提交。"
     },
-    "classroom-mode-updated": "我們已更新你的課堂模式設置"
+    "classroom-mode-updated": "我們已更新你的課堂模式設置",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "字符數最多爲 288 個，你還可以輸入 {{charsLeft}} 個字符",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "這個郵箱和你當前郵箱一樣",
     "invalid-email": "我們無法驗證你的郵箱，請確保填寫正確",
     "email-mismatch": "兩個新郵箱必須相同",
     "title-required": "必須填寫標題",
     "title-short": "標題太長",
     "title-long": "標題太短",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "我們無法驗證你的 URL，請確保填寫正確",
     "invalid-protocol": "URL 必須以 http 或 https 開頭",
     "url-not-image": "URL 必須直接鏈接到圖片文件",
@@ -1111,6 +1139,7 @@
     "issued": "發佈日期",
     "fulltext": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>，<5>約 {{completionTime}} 課時</5>",
     "fulltextNoHours": "<0>特證明</0> <1>{{user}}</1> <2>已完成</2> <3>{{title}}</3> <4>開發者認證課程，日期爲 {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson 的簽名",
     "julia-liuson-signature": "Julia Liuson 的簽名",
     "project": {

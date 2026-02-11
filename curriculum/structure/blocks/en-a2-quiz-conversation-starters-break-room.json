@@ -1,0 +1,14 @@
+{
+  "name": "Break Room Conversations Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-conversation-starters-break-room",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696022ad7477e7e315f0f515",
+      "title": "Break Room Conversations Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

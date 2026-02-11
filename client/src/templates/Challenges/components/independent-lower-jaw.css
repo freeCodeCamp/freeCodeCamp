@@ -1,10 +1,8 @@
 .independent-lower-jaw {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
-  z-index: 10;
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 101;
 }
 
 .independent-lower-jaw .hint-container {
@@ -13,7 +11,24 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 12px;
-  margin: 12px;
+  position: absolute;
+  bottom: 100%;
+  width: 95%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 12px;
+  border: 1px solid var(--background-secondary);
+  opacity: 0;
+  animation: jaw-hint-fade-in 0.3s ease forwards;
+}
+
+@keyframes jaw-hint-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .independent-lower-jaw .btn-cta {

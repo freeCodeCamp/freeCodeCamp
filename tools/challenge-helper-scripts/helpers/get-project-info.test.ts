@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import { describe, it, expect } from 'vitest';
 import { getProjectName, getProjectPath } from './get-project-info.js';
 
@@ -7,12 +8,12 @@ describe('getProjectPath helper', () => {
     const expected = `${mockCallingDir}/`;
 
     // Add mock to test condition
-    process.env.CALLING_DIR = mockCallingDir;
+    process.env.INIT_CWD = mockCallingDir;
 
     expect(getProjectPath()).toEqual(expected);
 
     // Remove mock to not affect other tests
-    delete process.env.CALLING_DIR;
+    delete process.env.INIT_CWD;
   });
 
   it('should return the projects absolute path', () => {
@@ -28,11 +29,11 @@ describe('getProjectName helper', () => {
     const expected = 'dir';
 
     // Add mock to test condition
-    process.env.CALLING_DIR = mockCallingDir;
+    process.env.INIT_CWD = mockCallingDir;
 
     expect(getProjectName()).toEqual(expected);
 
     // Remove mock to not affect other tests
-    delete process.env.CALLING_DIR;
+    delete process.env.INIT_CWD;
   });
 });

@@ -44,7 +44,7 @@ This form is not standard in Chinese.
 
 ### --feedback--
 
-This also means "Hello, everyone.", but Chen Na uses a different phrase.
+This also means "Hello, everyone", but Chen Na uses a different phrase.
 
 ## --video-solution--
 
@@ -76,7 +76,7 @@ The correct phrase for greeting a group is `你们好 (nǐ men hǎo)`, which is 
       }
     ],
     "audio": {
-      "filename": "ZH_A1_warmup_vocabulary.mp3",
+      "filename": "ZH_A1_greetings_and_introductions_warm_up.mp3",
       "startTime": 1,
       "startTimestamp": 8.98,
       "finishTimestamp": 9.9

@@ -4,7 +4,7 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.afterAll(() => {
   // change the name back to the original
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 const settingsObject = {
@@ -23,14 +23,8 @@ const settingsObject = {
 
 test.describe('Username Settings Validation', () => {
   test.beforeEach(async ({ page }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
     await page.goto(`/certifieduser`);
-
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
 
     await page.getByRole('button', { name: 'Edit my profile' }).click();
   });

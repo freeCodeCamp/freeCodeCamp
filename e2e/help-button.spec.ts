@@ -41,7 +41,12 @@ test.describe('help-button tests for a page with two links when video is not ava
   });
 });
 
-test.describe('help-button tests for a page with a reset and help button', () => {
+test.describe('Mobile help-button tests for a page with a reset and help button', () => {
+  // Test the lower jaw on mobile viewport only
+  test.use({
+    viewport: { width: 393, height: 851 },
+    isMobile: true
+  });
   test('should not be present before the user checks their code three times', async ({
     page
   }) => {
@@ -67,5 +72,19 @@ test.describe('help-button tests for a page with a reset and help button', () =>
       includeHidden: false
     });
     await expect(helpIconGroup).toBeHidden();
+  });
+});
+
+test.describe('Desktop help-button tests for a page with a reset and help button', () => {
+  test('should always be shown', async ({ page }) => {
+    await page.goto(
+      'learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3'
+    );
+    await expect(
+      page.getByTestId('independentLowerJaw-reset-button')
+    ).toBeVisible();
+    await expect(
+      page.getByTestId('independentLowerJaw-help-button')
+    ).toBeVisible();
   });
 });

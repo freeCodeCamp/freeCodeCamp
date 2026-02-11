@@ -1,0 +1,18 @@
+{
+  "name": "Numbers and Mathematical Operations",
+  "isUpcomingChange": false,
+  "dashedName": "lecture-numbers-and-mathematical-operations",
+  "helpCategory": "Python",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "67fe859e9d3b3635197781c8",
+      "title": "How Do You Work With Integers and Floating Point Numbers?"
+    },
+    {
+      "id": "6839b3295323f563efc68f5c",
+      "title": "How Do Augmented Assignments Work?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

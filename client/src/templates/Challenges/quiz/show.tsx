@@ -1,4 +1,4 @@
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
@@ -7,7 +7,6 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
-import { useLocation, navigate as reachNavigate } from '@gatsbyjs/reach-router';
 import {
   Container,
   Col,
@@ -19,7 +18,7 @@ import {
 } from '@freecodecamp/ui';
 
 // Local Utilities
-import { shuffleArray } from '../../../../../shared-dist/utils/shuffle-array';
+import { shuffleArray } from '@freecodecamp/shared/utils/shuffle-array';
 import LearnLayout from '../../../components/layouts/learn';
 import { ChallengeNode, ChallengeMeta, Test } from '../../../redux/prop-types';
 import ChallengeDescription from '../components/challenge-description';
@@ -116,8 +115,6 @@ const ShowQuiz = ({
   closeFinishQuizModal
 }: ShowQuizProps) => {
   const { t } = useTranslation();
-  const curLocation = useLocation();
-
   const container = useRef<HTMLElement | null>(null);
 
   // Campers are not allowed to change their answers once the quiz is submitted.
@@ -220,7 +217,9 @@ const ShowQuiz = ({
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
-    container.current?.focus();
+    // hack to ensure the container is focused after the component mounts
+    // and Gatsby doesn't interfere with the focus.
+    requestAnimationFrame(() => container.current?.focus());
     // This effect should be run once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -249,7 +248,7 @@ const ShowQuiz = ({
 
   const handleExitQuizModalBtnClick = () => {
     exitConfirmed.current = true;
-    void reachNavigate(exitPathname || '/learn');
+    void navigate(exitPathname || '/learn', { replace: true });
     closeExitQuizModal();
   };
 
@@ -262,29 +261,26 @@ const ShowQuiz = ({
   );
 
   const onHistoryChange = useCallback(
-    (targetPathname: string) => {
+    (targetPathname: string): boolean => {
       // We don't block navigation in the following cases.
       // - When campers have submitted the quiz:
       //   - If they don't pass, the Finish Quiz button is disabled, there isn't anything for them to do other than leaving the page
       //   - If they pass, the Submit-and-go button shows up, and campers should be allowed to leave the page
       // - When they have clicked the exit button on the exit modal
       if (hasSubmitted || exitConfirmed.current) {
-        return;
+        return false;
       }
 
-      const newPathname = targetPathname.startsWith('/learn')
-        ? blockHashSlug
-        : targetPathname;
+      // For link clicks, save the target pathname. For back button
+      // (empty targetPathname), keep the default (i.e. blockHashSlug).
+      if (targetPathname) {
+        setExitPathname(targetPathname);
+      }
 
-      // Save the pathname of the page the user wants to navigate to before we block the navigation.
-      setExitPathname(newPathname);
-
-      // We need to use Reach Router, because the pathname is already prefixed
-      // with the language and Gatsby's navigate will prefix it again.
-      void reachNavigate(`${curLocation.pathname}`);
       openExitQuizModal();
+      return true;
     },
-    [curLocation.pathname, hasSubmitted, openExitQuizModal, blockHashSlug]
+    [hasSubmitted, openExitQuizModal]
   );
 
   usePageLeave({

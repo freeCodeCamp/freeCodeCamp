@@ -205,15 +205,16 @@
       "cta": "Start Learning Now (it's free)"
     },
     "certification-heading": "Pata vyeti vilivyoidhinishwa bila malipo katika:",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
+    "learn-spanish-heading": "Learn Professional Spanish:",
+    "learn-chinese-heading": "Learn Professional Chinese:",
     "professional-certs-heading": "Professional certifications:",
     "interview-prep-heading": "Prepare for the developer interview job search:",
     "legacy-curriculum-heading": "Our archived coursework:",
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -289,7 +290,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Jina la mtumiaji \"{{username}}\" lina vibambo batili",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Jina la mtumiaji \"{{username}}\" ni fupi mno",
       "is a reserved error code": "Jina la mtumiaji \"{{username}}\" ni msimbo wa hitilafu uliohifadhiwa",
       "must be lowercase": "Jina la mtumiaji \"{{username}}\" lazima liwe herufi ndogo",
@@ -321,6 +322,7 @@
       "my-heatmap": "Ramani yangu",
       "my-certs": "Vyeti vyangu",
       "my-portfolio": "Wasifu yangu",
+      "my-experience": "My experience",
       "my-timeline": "Ratiba yangu ya matukio",
       "my-donations": "Michango yangu",
       "night-mode": "Hali ya Giza",
@@ -433,7 +435,24 @@
     "page-number": "{{pageNumber}} kati ya {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -695,7 +714,7 @@
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -869,6 +888,8 @@
   },
   "misc": {
     "coming-soon": "Coming Soon",
+    "note": "Note",
+    "caution": "Caution",
     "offline": "Unaonekana kuwa nje ya mtandao, huenda maendeleo yako yasihifadhiwe",
     "server-offline": "Seva haikuweza kufikiwa na huenda maendeleo yako yasihifadhiwe. Tafadhali wasiliana na <0>support</0> ikiwa ujumbe huu utaendelea",
     "unsubscribed": "Umefanikiwa kujiondoa",
@@ -986,6 +1007,7 @@
     "keyboard-shortcut-updated": "Tumesasisha mipangilio yako ya mikato ya kibodi",
     "subscribe-to-quincy-updated": "Tumesasisha usajili wako kwa barua pepe ya Quincy",
     "portfolio-item-updated": "Tumesasisha portfolio yako",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Umbizo la barua pepe si sahihi",
     "email-valid": "Barua pepe yako imebadilishwa kwa mafanikio happy coding!",
     "bad-challengeId": "currentChallengeId si kitambulisho halali cha changamoto",
@@ -1081,16 +1103,22 @@
       "err-3": "Something went wrong trying to save your survey.",
       "success": "Thank you. Your survey was submitted."
     },
-    "classroom-mode-updated": "We have updated your classroom mode settings"
+    "classroom-mode-updated": "We have updated your classroom mode settings",
+    "user-fetch-error": "Unable to retrieve your user information. You can still use the site, but your progress may not be saved."
   },
   "validation": {
     "max-characters": "Kuna upeo wa juu wa herufi 288, umesalia na {{charsLeft}}",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Barua pepe hii ni sawa na barua pepe yako ya sasa",
     "invalid-email": "Hatukuweza kuthibitisha barua pepe yako kwa usahihi, tafadhali hakikisha ni sahihi",
     "email-mismatch": "Barua pepe zote mbili mpya lazima ziwe sawa",
     "title-required": "Kichwa kinahitajika",
     "title-short": "Kichwa ni kifupi sana",
     "title-long": "Kichwa ni kirefu sana",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Hatukuweza kuthibitisha URL yako ipasavyo, tafadhali hakikisha ni sahihi",
     "invalid-protocol": "URL lazima ianze na http au https",
     "url-not-image": "URL lazima iunganishe moja kwa moja na faili ya picha",
@@ -1111,6 +1139,7 @@
     "issued": "Iliyotolewa",
     "fulltext": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4> <5>representing approximately {{completionTime}} hours of work</5>",
     "fulltextNoHours": "<0>This certifies that</0> <1>{{user}}</1> <2>successfully completed the</2> <3>{{title}}</3> <4>Developer Certification on {{time}}</4>",
+    "fulltextLanguageExam": "<0>This certifies that</0> <1>{{user}}</1> <2>has successfully passed the</2> <3>{{title}}</3> <4>exam on {{time}}</4> <5>demonstrating competence in grammar, listening, and reading portions of the CEFR standards for this level based on the content covered in the curriculum.</5>",
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {

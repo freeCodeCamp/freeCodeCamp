@@ -9,7 +9,7 @@ import {
   getStageOrder,
   superBlockStages,
   archivedSuperBlocks
-} from '../../../../shared-dist/config/curriculum';
+} from '@freecodecamp/shared/config/curriculum';
 import { SuperBlockIcon } from '../../assets/superblock-icon';
 import LinkButton from '../../assets/icons/link-button';
 import { ButtonLink, Link } from '../helpers';
@@ -32,6 +32,7 @@ const superBlockHeadings: { [key in SuperBlockStage]: string } = {
   [SuperBlockStage.Core]: 'landing.core-certs-heading',
   [SuperBlockStage.English]: 'landing.learn-english-heading',
   [SuperBlockStage.Spanish]: 'landing.learn-spanish-heading',
+  [SuperBlockStage.Chinese]: 'landing.learn-chinese-heading',
   [SuperBlockStage.Professional]: 'landing.professional-certs-heading',
   [SuperBlockStage.Extra]: 'landing.interview-prep-heading',
   [SuperBlockStage.Legacy]: 'landing.legacy-curriculum-heading',
@@ -93,7 +94,11 @@ function Map({ forLanding = false }: MapProps) {
         showUpcomingChanges
       })
         // remove legacy superblocks from main maps - shown in archive map only
-        .filter(stage => stage !== SuperBlockStage.Legacy)
+        .filter(
+          stage =>
+            stage !== SuperBlockStage.Legacy &&
+            stage !== SuperBlockStage.Catalog
+        )
         .map(stage => {
           const superblocks = superBlockStages[stage];
           if (superblocks.length === 0) {
@@ -114,9 +119,6 @@ function Map({ forLanding = false }: MapProps) {
               <h2 className={forLanding ? 'big-heading' : ''}>
                 {t(superBlockHeadings[stage])}
               </h2>
-              {stage === SuperBlockStage.Core && (
-                <p>{t('landing.fsd-restructure-note')}</p>
-              )}
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi

@@ -1,0 +1,14 @@
+{
+  "name": "Offering Technical Support Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-offer-technical-support-guidance",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696037c40ed36007b2022ba6",
+      "title": "Offering Technical Support Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}

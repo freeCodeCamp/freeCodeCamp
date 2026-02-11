@@ -43,7 +43,7 @@ test.describe('Link MS user component (signed-out user)', () => {
 
 test.describe('Link MS user component (signed-in user)', () => {
   test.afterEach(() => {
-    execSync('node ./tools/scripts/seed/seed-ms-username');
+    execSync('node ../tools/scripts/seed/seed-ms-username');
   });
 
   test("should recognize the user's MS account", async ({ page }) => {

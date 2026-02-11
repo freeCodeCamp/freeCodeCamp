@@ -15,17 +15,23 @@ module.exports = {
   flags: {
     DEV_SSR: false
   },
+  trailingSlash: 'ignore',
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
   },
   pathPrefix: pathPrefix,
   plugins: [
-    'gatsby-plugin-pnpm',
+    'gatsby-plugin-pnpm-gatsby-5',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
         analyzerMode: 'disabled',
+        // It doesn't matter if the file is generated or not as far as caching
+        // is concerned. It doesn't affect any tasks in any way, so we can
+        // ignore it.
+
+        // eslint-disable-next-line turbo/no-undeclared-env-vars
         generateStatsFile: process.env.CI
       }
     },
@@ -36,18 +42,6 @@ module.exports = {
         postcssOptions: {
           config: path.resolve(__dirname, 'postcss.config.js')
         }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-create-client-paths',
-      options: {
-        prefixes: [
-          '/certification/*',
-          '/unsubscribed/*',
-          '/user/*',
-          '/settings/*',
-          '/n/*'
-        ]
       }
     },
     {
@@ -101,6 +95,13 @@ module.exports = {
         }
       }
     },
-    'gatsby-plugin-remove-serviceworker'
+    'gatsby-plugin-remove-serviceworker',
+    {
+      resolve: 'gatsby-plugin-schema-snapshot',
+      options: {
+        path: 'schema.gql',
+        update: process.env.GATSBY_UPDATE_SCHEMA_SNAPSHOT === 'true'
+      }
+    }
   ]
 };

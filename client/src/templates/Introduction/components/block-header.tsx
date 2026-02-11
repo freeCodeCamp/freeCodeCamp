@@ -3,14 +3,14 @@ import { isEmpty } from 'lodash';
 import { Button } from '@freecodecamp/ui';
 import { Link } from '../../../components/helpers';
 
-import type { BlockLabel as BlockLabelType } from '../../../../../shared-dist/config/blocks';
+import type { BlockLabel as BlockLabelType } from '@freecodecamp/shared/config/blocks';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 import DropDown from '../../../assets/icons/dropdown';
 import CheckMark from './check-mark';
 import BlockLabel from './block-label';
 import BlockIntros from './block-intros';
 
-interface BlockHeaderProps {
+interface BaseBlockHeaderProps {
   blockDashed: string;
   blockTitle: string;
   blockLabel: BlockLabelType | null;
@@ -22,9 +22,19 @@ interface BlockHeaderProps {
   percentageCompleted: number;
   blockIntroArr?: string[];
   accordion?: boolean;
-  blockUrl?: string;
 }
 
+interface BlockHeaderButtonProps extends BaseBlockHeaderProps {
+  blockUrl?: never;
+  onLinkClick?: never;
+}
+
+interface BlockHeaderLinkProps extends BaseBlockHeaderProps {
+  blockUrl: string;
+  onLinkClick: () => void;
+}
+
+type BlockHeaderProps = BlockHeaderButtonProps | BlockHeaderLinkProps;
 function BlockHeader({
   blockDashed,
   blockTitle,
@@ -37,7 +47,8 @@ function BlockHeader({
   percentageCompleted,
   blockIntroArr,
   accordion,
-  blockUrl
+  blockUrl,
+  onLinkClick
 }: BlockHeaderProps): JSX.Element {
   const InnerBlockHeader = () => (
     <>
@@ -68,7 +79,7 @@ function BlockHeader({
     <>
       <h3 className='block-grid-title'>
         {accordion && blockUrl ? (
-          <Link className='block-header' to={blockUrl}>
+          <Link className='block-header' to={blockUrl} onClick={onLinkClick}>
             <InnerBlockHeader />
           </Link>
         ) : (

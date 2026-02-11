@@ -21,16 +21,16 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [24]
 
     steps:
       - name: Checkout
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -40,15 +40,21 @@ jobs:
         with:
           run_install: false
 
+      - name: Setup Turbo Cache
+        uses: ./.github/actions/setup-turbo-cache
+        with:
+          turbo-token: ${{ secrets.TURBO_TOKEN }}
+          turbo-signature-key: ${{ secrets.TURBO_REMOTE_CACHE_SIGNATURE_KEY }}
+
       - name: Checkout client-config
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           repository: freeCodeCamp/client-config
           path: client-config
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -59,13 +65,13 @@ jobs:
         run: cp client-config/serve.json client/public/serve.json
 
       - name: Upload Client Artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: client-artifact
           path: client/public
 
       - name: Upload Webpack Stats
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: webpack-stats
           path: client/public/stats.json
@@ -76,7 +82,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
 
@@ -90,7 +96,7 @@ jobs:
         run: docker save fcc-api > api-artifact.tar
 
       - name: Upload API Artifact
-        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5.0.0
+        uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6.0.0
         with:
           name: api-artifact
           path: api-artifact.tar
@@ -104,7 +110,7 @@ jobs:
       matrix:
         # Extend this to include firefox and webkit once chromium is working.
         browsers: [chromium]
-        node-version: [22]
+        node-version: [24]
 
     steps:
       - name: Set Action Environment Variables
@@ -112,16 +118,16 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Download Client Artifact
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
           name: client-artifact
           path: client/public
 
       - name: Download Api Artifact
-        uses: actions/download-artifact@018cc2cf5baa6db3ef3c5f8a56943fffe632ef53 # v6.0.0
+        uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
         with:
           name: api-artifact
           path: api-artifact
@@ -132,7 +138,7 @@ jobs:
           rm api-artifact/api-artifact.tar
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -147,16 +153,14 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cp sample.env .env # for docker compose
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm compile:ts
-          pnpm run build:curriculum
+      - name: Install
+        run: pnpm install
 
       - name: Start apps
         run: |
@@ -168,9 +172,9 @@ jobs:
         run: pnpm run seed:certified-user
 
       - name: Run playwright tests
-        run: npx playwright test --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
+        run: pnpm run playwright:run --project=${{ matrix.browsers }} --grep-invert 'third-party-donation.spec.ts'
 
-      - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         if: ${{ !cancelled() }}
         with:
           name: playwright-report-${{ matrix.browsers }}

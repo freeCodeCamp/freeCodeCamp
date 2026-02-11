@@ -5,8 +5,17 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=18",
+    "node": ">=24",
     "pnpm": ">=10"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": "./index.d.ts",
+    "./ts-compiler": "./modules/typescript-compiler.ts",
+    "./test-runner": "./test-runner.ts",
+    "./package.json": "./package.json"
   },
   "repository": {
     "type": "git",
@@ -19,9 +28,10 @@
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint --max-warnings 0",
-    "build": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs"
+    "build": "pnpm copy-scripts && pnpm bundle",
+    "bundle": "NODE_OPTIONS=\"--max-old-space-size=7168\" webpack -c webpack.config.cjs --env production",
+    "copy-scripts": "tsx ./copy-scripts.ts"
   },
   "type": "module",
   "keywords": [],
@@ -31,21 +41,20 @@
     "@babel/preset-env": "7.23.7",
     "@babel/preset-typescript": "7.23.3",
     "@freecodecamp/eslint-config": "workspace:*",
-    "@types/copy-webpack-plugin": "^8.0.1",
     "@typescript/vfs": "1.6.1",
     "babel-loader": "8.3.0",
-    "copy-webpack-plugin": "9.1.0",
     "eslint": "^9.39.1",
     "process": "0.11.10",
-    "pyodide": "^0.23.3",
-    "sass.js": "0.11.1",
-    "typescript": "5.9.2",
+    "tsx": "^4.21.0",
+    "typescript": "5.9.3",
     "util": "0.12.5",
     "webpack": "5.90.3",
     "webpack-cli": "4.10.0"
   },
   "dependencies": {
-    "@freecodecamp/curriculum-helpers": "^7.1.0",
+    "@freecodecamp/curriculum-helpers": "^7.2.0",
+    "pyodide": "^0.23.3",
+    "sass.js": "0.11.1",
     "xterm": "^5.2.1"
   }
 }

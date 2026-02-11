@@ -1,0 +1,14 @@
+{
+  "name": "Node.js Core Modules Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-node-js-core-modules",
+  "helpCategory": "Backend Development",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69247cd74caa633ccd7e3351",
+      "title": "Node.js Core Modules Review"
+    }
+  ],
+  "blockLabel": "review"
+}

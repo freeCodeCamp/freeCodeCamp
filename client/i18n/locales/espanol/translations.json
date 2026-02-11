@@ -131,7 +131,7 @@
   },
   "weekdays": {
     "short": {
-      "sunday": "Sab",
+      "sunday": "Dom",
       "monday": "Lun",
       "tuesday": "Mar",
       "wednesday": "Mier",
@@ -140,7 +140,7 @@
       "saturday": "Sab"
     },
     "long": {
-      "sunday": "Dom",
+      "sunday": "Domingo",
       "monday": "Lunes",
       "tuesday": "Martes",
       "wednesday": "Miércoles",
@@ -205,15 +205,16 @@
       "cta": "Comienza a aprender ahora (es gratis)"
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
-    "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
+    "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
+    "learn-spanish-heading": "Aprende Español profesional A1:",
+    "learn-chinese-heading": "Aprende Chino Professional:",
     "professional-certs-heading": "Certificaciones profesionales:",
     "interview-prep-heading": "Prepárate para la búsqueda de empleo en la entrevista de desarrollador:",
     "legacy-curriculum-heading": "Nuestros cursos archivados:",
     "next-heading": "Pruebe nuestro plan de estudios beta:",
     "upcoming-heading": "Próximo plan de estudio:",
     "catalog-heading": "Explora nuestro Catálogo:",
-    "fsd-restructure-note": "Si estabas trabajando previamente en nuestro currículo de Desarrollador Full Stack Certificado, no te preocupes: tu progreso está guardado. Lo hemos dividido en certificaciones más pequeñas que puedes obtener a lo largo de tu recorrido.",
     "archive-link": "¿Buscas cursos antiguos? Consulta <0>nuestra página de archivo</0>.",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -289,7 +290,7 @@
     "reset-editor-layout": "Restablecer el diseño del editor",
     "shortcuts-explained": "Dentro de un desafío, pulse ESC seguido del signo de interrogación para mostrar una lista de atajos disponibles.",
     "username": {
-      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
+      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres no válidos. Usa solo valores alfanuméricos como 'camperbot' o 'camperbot123'.",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",
@@ -321,6 +322,7 @@
       "my-heatmap": "Mi mapa de calor",
       "my-certs": "Mis certificaciones",
       "my-portfolio": "Mi portafolio",
+      "my-experience": "Mi experiencia},{",
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
@@ -433,7 +435,24 @@
     "page-number": "{{pageNumber}} de {{totalPages}}",
     "edit-my-profile": "Editar mi perfil",
     "add-bluesky": "Comparte esta certificacion en BlueSky",
-    "add-threads": "Comparte esta certificacion en Threads"
+    "add-threads": "Comparte esta certificacion en Threads",
+    "experience": {
+      "heading": "Experiencia",
+      "share-experience": "Comparte tu experiencia profesional",
+      "add": "Agregar experiencia",
+      "save": "Guardar experiencia",
+      "remove": "Eliminar experiencia",
+      "job-title": "Título del puesto",
+      "company": "Empresa",
+      "location": "Ubicación",
+      "start-date": "Fecha de inicio",
+      "end-date": "Fecha de finalización",
+      "end-date-helper": "Dejar en blanco si es tu puesto actual",
+      "description": "Descripción",
+      "present": "Actual",
+      "date-format-error": "Por favor, introduce la fecha en formato MM/AAAA.",
+      "date-invalid": "Por favor, introduce una fecha válida."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp es una organización 501(c)(3) exenta de impuestos y sin fines de lucro respaldada por donaciones (Número de Identificación Tributaria Federal de los Estados Unidos: 82-0779546).",
@@ -484,7 +503,7 @@
     "ms-link": "Link de Microsoft",
     "submit-and-go": "Enviar y pasar a mi siguiente desafío",
     "congratulations": "Felicidades, tu código ha sido aprobado. Envía tu código para continuar.",
-    "congratulations-code-passes": "Felicidades!!! Tu código pasa",
+    "congratulations-code-passes": "Felicidades. Tu código pasa.",
     "i-completed": "He completado este desafío",
     "example-code": "Código de ejemplo",
     "test-output": "El resultado de tu prueba irá aquí",
@@ -695,7 +714,7 @@
     },
     "archive": {
       "title": "Cursos archivados",
-      "content-not-updated": "<0>Advertencia:</0> El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos intentar <1>nuestro currículo actual</1>."
+      "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
     }
   },
   "donate": {
@@ -836,7 +855,7 @@
     "help-millions-learn": "Ayuda a millones de personas a aprender",
     "reach-goals-faster": "Alcanza tus metas más rápido",
     "remove-distractions": "Eliminar distracciones",
-    "remove-interruptions": "Remover interrupciones",
+    "remove-interruptions": "Remueve interrupciones",
     "acquire-skills-faster": "Adquiera habilidades más rápido",
     "animation-description": "Este es un anuncio animado de 20 segundos para animar a los campistas a convertirse en seguidores de freeCodeCamp. La animación comienza con un oso de téd que se convierte en un soporte. Como resultado, desaparecen los pop-ups de distracción y el oso llega a completar todas sus metas. Luego, se gradua y se convierte en un superhéroe educativo que ayuda a la gente de todo el mundo.",
     "animation-countdown": "Esta animación se detendrá después de {{secondesRemaining}} segundos."
@@ -869,6 +888,8 @@
   },
   "misc": {
     "coming-soon": "Muy pronto",
+    "note": "Nota",
+    "caution": "Precaución",
     "offline": "Parece que no estás conectado, es posible que tu progreso no se guarde",
     "server-offline": "No se pudo acceder al servidor y es posible que tu progreso no se guarde. Ponte en contacto con <0>soporte</0> si este mensaje persiste",
     "unsubscribed": "Haz cancelado tu subscripción exitosamente",
@@ -930,7 +951,7 @@
     "linkedin": "Enlace al LinkedIn de {{username}}",
     "github": "Enlace al GitHub de {{username}}",
     "website": "Enlace al GitHub de {{username}}",
-    "twitter": "Link to {{username}}'s X",
+    "twitter": "Enlace al X de {{username}}",
     "next-month": "Ir al siguiente mes",
     "previous-month": "Ir al mes anterior",
     "first-page": "Ir a la primera pagina",
@@ -986,6 +1007,7 @@
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
+    "experience-updated": "Hemos actualizado tu experiencia",
     "email-invalid": "El formato del correo electrónico no es válido",
     "email-valid": "Tu correo electrónico fue cambiado con éxito, ¡feliz día programando!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
@@ -1081,16 +1103,22 @@
       "err-3": "Algo salió mal al intentar guardar tu encuesta.",
       "success": "Gracias. Tu encuesta ha sido enviada."
     },
-    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase"
+    "classroom-mode-updated": "Hemos actualizado la configuración de tu modo clase",
+    "user-fetch-error": "No se puede recuperar su información de usuario. Puede seguir utilizando el sitio, pero es posible que su progreso no sea guardado."
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
+    "max-characters-500": "Hay un límite máximo de 500 caracteres, te quedan {{charsLeft}}",
     "same-email": "Este correo electrónico es el mismo que tu correo electrónico actual",
     "invalid-email": "No pudimos validar tu correo electrónico correctamente, asegúrate de que sea correcto",
     "email-mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales",
     "title-required": "Se requiere un título",
     "title-short": "El título es demasiado corto",
     "title-long": "El título es demasiado largo",
+    "company-required": "Se requiere el nombre de la empresa",
+    "company-short": "El nombre de la empresa es demasiado corto",
+    "company-long": "El nombre de la empresa es demasiado largo",
+    "start-date-required": "Se requiere la fecha de inicio",
     "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",
@@ -1111,6 +1139,7 @@
     "issued": "Emitido",
     "fulltext": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha completado exitosamente la</2> <3>{{title}}</3> <4>Certificación de Desarrollador en {{time}}</4> <5>que representa aproximadamente {{completionTime}} horas de trabajo en el curso</5>",
     "fulltextNoHours": "<0>La presente certifica que </0> <1>{{user}}</1> <2>completó con éxito la</2> <3>{{title}}</3> <4>Certificación de desarrollador/a en {{time}}</4>",
+    "fulltextLanguageExam": "<0>Se certifica que</0> <1>{{user}}</1> <2>ha pasado exitosamente el examen </2> <3>{{title}}</3> <4>en {{time}}</4> <5>demostrando competencia en las partes de gramática, audición y lectura de los estándares del CEFR para este nivel, basado en el contenido cubierto en el currículo.</5>",
     "quincy-larson-signature": "La firma de Quincy Larson",
     "julia-liuson-signature": "La firma de Julia Liuson",
     "project": {
@@ -1229,7 +1258,7 @@
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# con Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Fundamentos de C# con certificación de Microsoft",
       "a2-english-for-developers": "Inglés A2 para Desarrolladores",
-      "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
+      "a2-english-for-developers-cert": "Exámen de certificación (Beta) A2 de inglês para desarrolladores",
       "b1-english-for-developers": "B1 Inglés para Desarrolladores",
       "b1-english-for-developers-cert": "Certificación de inglés B1 para Desarrolladores",
       "responsive-web-design-v9": "Diseño web responsivo",
