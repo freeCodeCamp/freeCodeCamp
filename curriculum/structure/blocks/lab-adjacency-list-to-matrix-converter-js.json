@@ -4,7 +4,7 @@
   "dashedName": "lab-adjacency-list-to-matrix-converter-js",
   "helpCategory": "JavaScript",
   "blockLayout": "link",
-  "challengeOrder": [{ "id": "698b42492a7f5f737895892e", "title": "Step 1" }],
+  "challengeOrder": [{ "id": "698b42492a7f5f737895892e", "title": "Build an Adjacency List to Matrix Converter" }],
   "blockLabel": "lab",
   "usesMultifileEditor": true
 }
