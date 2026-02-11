@@ -7,6 +7,11 @@ exports[`process-frontmatter plugin > should have an output to match the snapsho
   "id": "bd7123c8c441eddfaeb5bdef",
   "isHidden": false,
   "title": "Say Hello to HTML Elements",
+  "tokens": [
+     "Einey",
+     "Miney",
+     "Moe",
+   ],
   "videoUrl": "https://scrimba.com/p/pVMPUv/cE8Gpt2",
 }
 `;

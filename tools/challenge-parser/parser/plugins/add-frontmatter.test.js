@@ -35,8 +35,8 @@ describe('process-frontmatter plugin', () => {
       'challengeType',
       'isHidden',
       'videoUrl',
+      'forumTopicId',
       'tokens',
-      'forumTopicId'
     ];
     plugin(mockAST, file);
     const actualKeys = Object.keys(file.data);
