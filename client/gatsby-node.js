@@ -59,7 +59,13 @@ exports.createPages = async function createPages({
 
   const result = await graphql(`
     {
-      allChallengeNode {
+      allChallengeNode(
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
+      ) {
         edges {
           node {
             challenge {
@@ -150,9 +156,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
-  // it overwrites the minfied files with ordinary ones.
-  if (stage !== 'build-html') {
+  // involved in SSR. Also, if the plugin is used during the 'build-html' or
+  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
+  if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
       new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
     );
@@ -191,16 +197,4 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-};
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  // Only update the `/challenges` page.
-  if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = '/challenges/*';
-    // Update the page.
-    createPage(page);
-  }
 };
