@@ -4923,6 +4923,13 @@
           "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
         ]
       },
+      "workshop-html-music-player": {
+        "title": "Build an HTML Music Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic music player.",
+          "This project will cover the <code>audio</code> element, the audio player setup, and more."
+        ]
+      },
       "workshop-html-video-player": {
         "title": "Build an HTML Video Player",
         "intro": [
