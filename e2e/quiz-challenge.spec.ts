@@ -244,7 +244,7 @@ test.describe('Quiz challenge', () => {
       .getByRole('button', { name: 'Yes, I want to leave the quiz' })
       .click();
 
-    await page.waitForURL('/learn/');
+    await expect(page).toHaveURL(allowTrailingSlash('/learn'));
     await expect(
       page.getByRole('heading', { name: 'Welcome back, Full Stack User.' })
     ).toBeVisible();
