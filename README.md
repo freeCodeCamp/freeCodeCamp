@@ -29,7 +29,8 @@ freeCodeCamp.org offers several free developer certifications that make up the [
 - [Frontend Development Libraries](https://www.freecodecamp.org/learn/front-end-development-libraries-v9/)
 - [Python](https://www.freecodecamp.org/learn/python-v9/)
 - [Relational Databases](https://www.freecodecamp.org/learn/relational-databases-v9/)
-- [Backend developer and APIs](https://www.freecodecamp.org/learn/back-end-development-and-apis-v9/)
+- [Backend Developer and APIs](https://www.freecodecamp.org/learn/back-end-development-v9/)
+
 
 Each of these certifications involves completing interactive lessons, workshops, labs, reviews, and quizzes. Throughout the certification, you'll need to complete 5 required projects to qualify for the exam. Once you pass the exam, then you can claim the certification.
 
