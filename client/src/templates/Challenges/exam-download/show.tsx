@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
 import {
   Button,
   Callout,
@@ -254,11 +253,6 @@ function ShowExamDownload({
 
   return (
     <LearnLayout>
-      <Helmet>
-        <title>
-          {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
-        </title>
-      </Helmet>
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -405,6 +399,22 @@ function getLatest(releases: GitProps[]): GitProps {
 }
 
 export default connect(mapStateToProps)(withTranslation()(ShowExamDownload));
+
+export function Head({
+  data
+}: {
+  data: { challengeNode: { challenge: { title: string } } };
+}) {
+  const title = data.challengeNode.challenge.title;
+  return (
+    <>
+      <title>
+        {title ? `${title} | freeCodeCamp.org` : 'freeCodeCamp.org'}
+      </title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 // GraphQL
 export const query = graphql`

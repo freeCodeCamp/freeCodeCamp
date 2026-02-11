@@ -38,10 +38,12 @@ export const wrapPageElement = layoutSelector;
 
 export const onRenderBody = ({
   pathname,
+  setHtmlAttributes,
   setHeadComponents,
   setPreBodyComponents,
   setPostBodyComponents
 }) => {
+  setHtmlAttributes({ lang: i18n.language });
   setHeadComponents([...getheadTagComponents(), ...webmanifestComponents]);
   setPreBodyComponents(getPreBodyThemeScript());
   setPostBodyComponents(getPostBodyComponents(pathname));

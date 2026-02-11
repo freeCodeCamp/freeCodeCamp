@@ -1,6 +1,5 @@
 import { graphql, navigate } from 'gatsby';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -129,10 +128,6 @@ const ShowQuiz = ({
   const exitConfirmed = useRef(false);
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
-
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
 
   const [quizId] = useState(Math.floor(Math.random() * quizzes.length));
   const quiz = quizzes[quizId].questions;
@@ -315,9 +310,6 @@ const ShowQuiz = ({
       containerRef={container}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container className='quiz-challenge-container'>
           <Row>
             <Spacer size='m' />
@@ -380,6 +372,28 @@ const ShowQuiz = ({
 ShowQuiz.displayName = 'ShowQuiz';
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowQuiz);
+
+export function Head({
+  data
+}: {
+  data: {
+    challengeNode: {
+      challenge: { title: string; block: string; superBlock: string };
+    };
+  };
+}) {
+  const { t } = useTranslation();
+  const { title, block, superBlock } = data.challengeNode.challenge;
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
+  return (
+    <>
+      <title>{`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}</title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 export const query = graphql`
   query QuizChallenge($id: String!) {

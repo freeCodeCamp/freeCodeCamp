@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 
 import { Container, Spacer } from '@freecodecamp/ui';
@@ -20,22 +19,14 @@ function IntroductionPage({
   };
 }): React.FunctionComponentElement<typeof LearnLayout> {
   const { t } = useTranslation();
-  const {
-    html,
-    frontmatter: { block, superBlock }
-  } = markdownRemark;
+  const { html } = markdownRemark;
   const firstLesson =
     allChallengeNode && allChallengeNode.edges[0].node.challenge;
   const firstLessonPath = firstLesson
     ? firstLesson.fields.slug
     : '/strange-place';
-  const blockTitle =
-    t(`intro:${superBlock}.blocks.${block}.title`) + ' | freeCodeCamp.org';
   return (
     <LearnLayout>
-      <Helmet>
-        <title>{blockTitle}</title>
-      </Helmet>
       <Container className='intro-layout-container'>
         <FullWidthRow>
           <div
@@ -62,6 +53,26 @@ function IntroductionPage({
 IntroductionPage.displayName = 'IntroductionPage';
 
 export default IntroductionPage;
+
+export function Head({
+  data
+}: {
+  data: {
+    markdownRemark: { frontmatter: { block: string; superBlock: string } };
+  };
+}) {
+  const { t } = useTranslation();
+  const { block, superBlock } = data.markdownRemark.frontmatter;
+  const blockTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} | freeCodeCamp.org`;
+  return (
+    <>
+      <title>{blockTitle}</title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 export const query = graphql`
   query IntroPageBySlug($id: String!, $block: String!) {

@@ -1,9 +1,7 @@
-import i18next from 'i18next';
 import { WindowLocation } from '@gatsbyjs/reach-router';
 import { graphql } from 'gatsby';
 import { isEmpty, last } from 'lodash-es';
 import React, { useEffect, memo, useMemo } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { scroller } from 'react-scroll';
@@ -181,8 +179,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
     [superBlockChallenges, user?.completedChallenges]
   );
 
-  const i18nTitle = i18next.t(`intro:${superBlock}.title`);
-
   const currentSuperBlockStructure = allSuperBlockStructure.nodes.find(
     node => node.superBlock === superBlock
   );
@@ -283,9 +279,6 @@ const SuperBlockIntroductionPage = (props: SuperBlockProps) => {
 
   return (
     <>
-      <Helmet>
-        <title>{i18nTitle} | freeCodeCamp.org</title>
-      </Helmet>
       <Container>
         <main>
           <Row className='super-block-intro-page'>
@@ -354,6 +347,16 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(withTranslation()(memo(SuperBlockIntroductionPage)));
+
+export function Head({
+  pageContext
+}: {
+  pageContext: { superBlock: string };
+}) {
+  const { t } = useTranslation();
+  const i18nTitle = t(`intro:${pageContext.superBlock}.title`);
+  return <title>{i18nTitle} | freeCodeCamp.org</title>;
+}
 
 export const query = graphql`
   query SuperBlockIntroPageQuery {

@@ -1,5 +1,4 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import { randomQuote } from '../../utils/get-words';
@@ -13,6 +12,10 @@ function DailyCodingChallengeNotFound(): JSX.Element {
   const { t } = useTranslation();
   const quote = randomQuote();
 
+  useEffect(() => {
+    document.title = `${t('404.page-not-found')} | freeCodeCamp.org`;
+  }, [t]);
+
   return (
     <Container>
       <Row>
@@ -24,7 +27,6 @@ function DailyCodingChallengeNotFound(): JSX.Element {
           xs={12}
           className='not-found-wrapper'
         >
-          <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
           <img alt={t('404.not-found')} src={notFoundLogo} />
           <Spacer size='m' />
           <h1 id='content-start'>{t('daily-coding-challenges.not-found')}</h1>

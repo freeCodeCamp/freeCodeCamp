@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Helmet from 'react-helmet';
 import { connect } from 'react-redux';
 
 import { createSelector } from 'reselect';
@@ -26,17 +25,17 @@ class CertificationLayout extends Component<CertificationProps> {
     if (!isSignedIn) {
       fetchUser();
     }
+    document.body.classList.add('light-palette');
+  }
+
+  componentWillUnmount() {
+    document.body.classList.remove('light-palette');
   }
 
   render(): JSX.Element {
     const { children } = this.props;
 
-    return (
-      <>
-        <Helmet bodyAttributes={{ class: 'light-palette' }} />
-        {children}
-      </>
-    );
+    return <>{children}</>;
   }
 }
 

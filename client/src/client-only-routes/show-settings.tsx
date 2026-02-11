@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -168,7 +167,6 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
   const editorLayout = (store.get('challenge-layout') as boolean) ?? false;
   return (
     <>
-      <Helmet title={`${t('buttons.settings')} | freeCodeCamp.org`} />
       <div className='settings-container' id='settings-container'>
         <SettingsSidebarNav userToken={userToken} />
         <main className='settings-main'>

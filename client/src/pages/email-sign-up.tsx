@@ -1,5 +1,4 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -45,17 +44,12 @@ function EmailSignUp({
   isSignedIn,
   showLoading
 }: EmailSignUpProps) {
-  const { t } = useTranslation();
-
   const userHasMadeSelection = isSignedIn && sendQuincyEmail !== null;
 
   return userHasMadeSelection ? (
     <RedirectToLearn />
   ) : (
     <>
-      <Helmet>
-        <title>{t('misc.email-signup')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container>
         <Spacer size='l' />
         {showLoading ? (
@@ -74,3 +68,8 @@ function EmailSignUp({
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(EmailSignUp);
+
+export function Head() {
+  const { t } = useTranslation();
+  return <title>{t('misc.email-signup')} | freeCodeCamp.org</title>;
+}

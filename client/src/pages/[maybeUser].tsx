@@ -17,3 +17,7 @@ const ProfilePage = ({ params: { maybeUser } }: ProfilePageProps) => {
 };
 
 export default ProfilePage;
+
+export function Head() {
+  return <title>freeCodeCamp.org</title>;
+}

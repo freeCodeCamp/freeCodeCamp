@@ -36,22 +36,16 @@ function IndexPage(): JSX.Element {
 
   if (growthbook && growthbook.ready) {
     growthbook.getFeatureValue('landing-aa-test', false);
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Landing />
-      </>
-    );
+    return <Landing />;
   } else {
-    return (
-      <>
-        <SEO title={t('metaTags:title')} />
-        <Loader fullScreen={true} />
-      </>
-    );
+    return <Loader fullScreen={true} />;
   }
 }
 
 IndexPage.displayName = 'IndexPage';
 
 export default IndexPage;
+
+export function Head() {
+  return <SEO />;
+}

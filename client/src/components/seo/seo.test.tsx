@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from '@testing-library/react';
-import Helmet from 'react-helmet';
 import { describe, it, expect, vi, afterEach } from 'vitest';
 
 import SEO from './index';
@@ -34,27 +33,20 @@ describe('<SEO />', () => {
     vi.restoreAllMocks();
   });
 
-  it('renders', () => {
-    render(<SEO />);
+  it('renders with default title', () => {
+    const { container } = render(<SEO />);
 
-    const helmet = Helmet.peek();
-
-    expect(helmet.title).toBe('freeCodeCamp');
+    const titleEl = container.querySelector('title');
+    expect(titleEl?.textContent).toBe('freeCodeCamp');
   });
 
-  it('renders structure data script tag', () => {
-    render(<SEO />);
+  it('renders structured data script tag', () => {
+    const { container } = render(<SEO />);
 
-    const helmet = Helmet.peek();
-    const structuredDataScript = helmet.scriptTags.find(
-      ({ type, innerHTML }) => {
-        return (
-          type === 'application/ld+json' &&
-          innerHTML.includes('https://schema.org')
-        );
-      }
+    const scriptEl = container.querySelector(
+      'script[type="application/ld+json"]'
     );
-
-    expect(structuredDataScript).toBeTruthy();
+    expect(scriptEl).toBeTruthy();
+    expect(scriptEl?.textContent).toContain('https://schema.org');
   });
 });

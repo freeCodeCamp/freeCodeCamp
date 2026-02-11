@@ -1,6 +1,5 @@
 import React from 'react';
-import Helmet from 'react-helmet';
-import { withTranslation, useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Container, Row, Col, Spacer } from '@freecodecamp/ui';
@@ -101,13 +100,8 @@ function ConditionalContent({
 }
 
 function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
-  const { t } = useTranslation();
-
   return (
     <>
-      <Helmet>
-        <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container
         fluid={true}
         className={`${isDonating && 'supporters-background'} `}
@@ -145,7 +139,11 @@ function SupportersPage({ isSignedIn, isDonating }: SupportersPageProps) {
 
 SupportersPage.displayName = 'Supporters-Page';
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withTranslation()(SupportersPage));
+export default connect(mapStateToProps, mapDispatchToProps)(SupportersPage);
+
+export function Head() {
+  const { t } = useTranslation();
+  return (
+    <title>{t('misc.supporters-page-title')} | freeCodeCamp.org</title>
+  );
+}

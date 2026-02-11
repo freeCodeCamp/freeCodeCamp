@@ -35,7 +35,6 @@ module.exports = {
         generateStatsFile: process.env.CI
       }
     },
-    'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-postcss',
       options: {

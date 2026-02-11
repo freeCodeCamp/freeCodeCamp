@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
@@ -128,10 +127,6 @@ const ShowGeneric = ({
   const { t } = useTranslation();
   const container = useRef<HTMLElement | null>(null);
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-
   useEffect(() => {
     initTests(tests);
     const challengePaths = getChallengePaths({
@@ -241,9 +236,6 @@ const ShowGeneric = ({
       playScene={scene ? () => sceneSubject.notify('play') : undefined}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container fluid>
           {hasInteractiveEditor && (
             <ActionRow
@@ -374,6 +366,28 @@ const ShowGeneric = ({
 ShowGeneric.displayName = 'ShowGeneric';
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowGeneric);
+
+export function Head({
+  data
+}: {
+  data: {
+    challengeNode: {
+      challenge: { title: string; block: string; superBlock: string };
+    };
+  };
+}) {
+  const { t } = useTranslation();
+  const { title, block, superBlock } = data.challengeNode.challenge;
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
+  return (
+    <>
+      <title>{`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}</title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 export const query = graphql`
   query GenericChallenge($id: String!) {

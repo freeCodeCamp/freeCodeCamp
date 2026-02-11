@@ -1,11 +1,9 @@
 import React from 'react';
-import Helmet from 'react-helmet';
 import { Container, Col, Row, Spacer } from '@freecodecamp/ui';
 
 function BlockedPage(): JSX.Element {
   return (
     <>
-      <Helmet title={`Access Denied | freeCodeCamp.org`} />
       <Container className='text-center'>
         <Spacer size='l' />
         <Row>
@@ -47,3 +45,7 @@ function BlockedPage(): JSX.Element {
 BlockedPage.displayName = 'BlockedPage';
 
 export default BlockedPage;
+
+export function Head() {
+  return <title>Access Denied | freeCodeCamp.org</title>;
+}

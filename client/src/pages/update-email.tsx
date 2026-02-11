@@ -1,6 +1,7 @@
 import { Router } from '@gatsbyjs/reach-router';
 import { withPrefix } from 'gatsby';
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import ShowUpdateEmail from '../client-only-routes/show-update-email';
 import RedirectHome from '../components/redirect-home';
@@ -18,3 +19,8 @@ function UpdateEmail(): JSX.Element {
 UpdateEmail.displayName = 'UpdateEmail';
 
 export default UpdateEmail;
+
+export function Head() {
+  const { t } = useTranslation();
+  return <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>;
+}

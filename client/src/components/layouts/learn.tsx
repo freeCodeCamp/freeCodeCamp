@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { Loader } from '../../components/helpers';
@@ -45,24 +44,12 @@ function LearnLayout({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    return () => {
-      const metaTag = document.querySelector(`meta[name="robots"]`);
-      if (metaTag) {
-        metaTag.remove();
-      }
-    };
-  }, []);
-
   if (fetchState.pending && !fetchState.complete) {
     return <Loader fullScreen={true} />;
   }
 
   return (
     <>
-      <Helmet>
-        <meta content='noindex' name='robots' />
-      </Helmet>
       <main id='learn-app-wrapper'>{children}</main>
       <DonateModal />
     </>

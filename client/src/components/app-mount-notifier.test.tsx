@@ -1,54 +1,26 @@
-import { render, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import React from 'react';
-import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import { describe, vi, test, expect } from 'vitest';
 
-import { i18nextCodes } from '@freecodecamp/shared/config/i18n';
-import i18nTestConfig from '../../i18n/config-for-tests';
 import { createStore } from '../redux/create-store';
 import AppMountNotifier from './app-mount-notifier';
 
 vi.unmock('react-i18next');
 vi.mock('../utils/get-words');
 
-type Language = keyof typeof i18nextCodes;
-type LanguagePair = [string, string];
-
 const store = createStore();
 
-// Create a nested array for languages
-const languages = Object.keys(i18nextCodes).map(
-  (key): LanguagePair => [i18nextCodes[key as Language], key]
-);
-
 describe('AppMountNotifier', () => {
-  const setup = (lang: string) => {
-    i18nTestConfig.language = lang;
-
+  test('should render its children', () => {
     render(
       <Provider store={store}>
-        <I18nextProvider i18n={i18nTestConfig}>
-          <AppMountNotifier>
-            <p>App content</p>
-          </AppMountNotifier>
-        </I18nextProvider>
+        <AppMountNotifier>
+          <p>App content</p>
+        </AppMountNotifier>
       </Provider>
     );
-  };
 
-  test.each(languages)(
-    'should set the lang attribute to %s if the language is %s',
-    async langCode => {
-      setup(langCode);
-
-      await waitFor(() => {
-        /* eslint-disable-next-line testing-library/no-node-access */
-        expect(document.querySelector('html')).toHaveAttribute(
-          'lang',
-          langCode
-        );
-      });
-    }
-  );
+    expect(screen.getByText('App content')).toBeInTheDocument();
+  });
 });

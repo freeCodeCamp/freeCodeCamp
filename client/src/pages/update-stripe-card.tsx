@@ -1,7 +1,6 @@
 import { useLocation } from '@gatsbyjs/reach-router';
 
 import React, { type FormEvent, useEffect } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -106,7 +105,6 @@ function UpdateStripeCard({
     updateCard();
     if (event) event.preventDefault();
   }
-  const { t } = useTranslation();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const isUpdateSuccessful = searchParams.get('session_id') !== null;
@@ -119,9 +117,6 @@ function UpdateStripeCard({
 
   return (
     <>
-      <Helmet>
-        <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container className='page-wrapper-80'>
         <Row>
           <Col sm={6} smOffset={3}>
@@ -143,3 +138,8 @@ function UpdateStripeCard({
 UpdateStripeCard.displayName = 'Update-Stripe-Card';
 
 export default connect(mapStateToProps, mapDispatchToProps)(UpdateStripeCard);
+
+export function Head() {
+  const { t } = useTranslation();
+  return <title>{t('misc.update-your-card')} | freeCodeCamp.org</title>;
+}

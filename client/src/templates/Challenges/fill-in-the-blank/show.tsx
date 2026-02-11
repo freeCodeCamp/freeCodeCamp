@@ -1,7 +1,6 @@
 // Package Utilities
 import { graphql } from 'gatsby';
 import React, { useEffect, useRef, useState } from 'react';
-import Helmet from 'react-helmet';
 import { ObserveKeys } from 'react-hotkeys';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
@@ -248,10 +247,6 @@ const ShowFillInTheBlank = ({
     sceneSubject.notify('play');
   };
 
-  const blockNameTitle = `${t(
-    `intro:${superBlock}.blocks.${block}.title`
-  )} - ${title}`;
-
   const sceneSubject = new SceneSubject();
 
   return (
@@ -261,9 +256,6 @@ const ShowFillInTheBlank = ({
       playScene={handlePlayScene}
     >
       <LearnLayout>
-        <Helmet
-          title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
-        />
         <Container>
           <Row>
             <Spacer size='m' />
@@ -346,6 +338,28 @@ const ShowFillInTheBlank = ({
 ShowFillInTheBlank.displayName = 'ShowFillInTheBlank';
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowFillInTheBlank);
+
+export function Head({
+  data
+}: {
+  data: {
+    challengeNode: {
+      challenge: { title: string; block: string; superBlock: string };
+    };
+  };
+}) {
+  const { t } = useTranslation();
+  const { title, block, superBlock } = data.challengeNode.challenge;
+  const blockNameTitle = `${t(
+    `intro:${superBlock}.blocks.${block}.title`
+  )} - ${title}`;
+  return (
+    <>
+      <title>{`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}</title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 export const query = graphql`
   query FillInTheBlankChallenge($id: String!) {

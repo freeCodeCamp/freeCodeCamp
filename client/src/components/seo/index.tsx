@@ -1,6 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
@@ -100,7 +99,8 @@ const SEO = ({ title, children }: SEOProps) => {
   });
 
   return (
-    <Helmet title={seo.title}>
+    <>
+      <title>{seo.title}</title>
       <script
         type='application/ld+json'
         data-playwright-test-label='structured-data'
@@ -108,7 +108,7 @@ const SEO = ({ title, children }: SEOProps) => {
         {JSON.stringify(structuredData)}
       </script>
       {children}
-    </Helmet>
+    </>
   );
 };
 

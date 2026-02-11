@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
@@ -23,14 +21,7 @@ const AppMountNotifier = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const { i18n } = useTranslation();
-
-  return (
-    <>
-      <Helmet htmlAttributes={{ lang: i18n.language }} />
-      {children}
-    </>
-  );
+  return <>{children}</>;
 };
 
 AppMountNotifier.displayName = 'AppMountNotifier';

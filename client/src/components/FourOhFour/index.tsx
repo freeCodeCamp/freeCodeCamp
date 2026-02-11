@@ -1,6 +1,5 @@
 import { RouteComponentProps } from '@gatsbyjs/reach-router';
-import React from 'react';
-import Helmet from 'react-helmet';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 
@@ -14,9 +13,12 @@ const FourOhFour = (_props: RouteComponentProps): JSX.Element => {
   const { t } = useTranslation();
   const quote = randomQuote();
 
+  useEffect(() => {
+    document.title = `${t('404.page-not-found')} | freeCodeCamp.org`;
+  }, [t]);
+
   return (
     <div className='notfound-page-wrapper'>
-      <Helmet title={t('404.page-not-found') + ' | freeCodeCamp.org'} />
       <img
         alt={t('404.not-found')}
         src={notFoundLogo}

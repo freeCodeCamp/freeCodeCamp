@@ -4,7 +4,6 @@ import React, {
   type FormEvent,
   type ChangeEvent
 } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -81,9 +80,6 @@ function ShowUpdateEmail({
 
   return (
     <>
-      <Helmet>
-        <title>{t('misc.update-email-1')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container>
         <Spacer size='m' />
         <h2 className='text-center'>{t('misc.update-email-2')}</h2>

@@ -10,13 +10,6 @@ vi.mock('react-redux', () => ({
   useSelector: () => ({})
 }));
 
-vi.mock('react-helmet', () => ({
-  __esModule: true,
-  default: ({ children }: { children?: React.ReactNode }) => (
-    <div>{children}</div>
-  )
-}));
-
 vi.mock('gatsby', () => ({
   graphql: vi.fn()
 }));

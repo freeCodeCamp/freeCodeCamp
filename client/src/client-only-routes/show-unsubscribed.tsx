@@ -1,6 +1,5 @@
 import type { RouteComponentProps } from '@gatsbyjs/reach-router';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { Container, Panel, Button, Spacer } from '@freecodecamp/ui';
 
@@ -19,9 +18,6 @@ function ShowUnsubscribed({
   const { t } = useTranslation();
   return (
     <>
-      <Helmet>
-        <title>{t('metaTags:youre-unsubscribed')} | freeCodeCamp.org</title>
-      </Helmet>
       <Container>
         <main>
           <FullWidthRow>

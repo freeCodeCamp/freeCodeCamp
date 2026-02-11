@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
@@ -70,7 +69,6 @@ function LearnPage({
 }: LearnPageProps) {
   const { name, completedChallengeCount, isDonating } = user ?? EMPTY_USER;
 
-  const { t } = useTranslation();
   useClaimableCertsNotification();
 
   const slug = challengeNode?.challenge?.fields?.slug || '';
@@ -83,7 +81,6 @@ function LearnPage({
   };
   return (
     <LearnLayout>
-      <Helmet title={t('metaTags:title')} />
       <Container>
         <Row>
           <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
@@ -109,6 +106,16 @@ function LearnPage({
 LearnPage.displayName = 'LearnPage';
 
 export default connect(mapStateToProps)(LearnPage);
+
+export function Head() {
+  const { t } = useTranslation();
+  return (
+    <>
+      <title>{t('metaTags:title')}</title>
+      <meta name='robots' content='noindex' />
+    </>
+  );
+}
 
 export const query = graphql`
   query LearnPageQuery {

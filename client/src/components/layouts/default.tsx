@@ -1,24 +1,11 @@
 import React, { ReactNode, useEffect } from 'react';
-import Helmet from 'react-helmet';
 import { useTranslation, withTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 import { Spacer } from '@freecodecamp/ui';
-import envData, { clientLocale } from '../../../config/env.json';
-
-import latoBoldURL from '../../../static/fonts/lato/Lato-Bold.woff';
-import latoLightURL from '../../../static/fonts/lato/Lato-Light.woff';
-import latoRegularURL from '../../../static/fonts/lato/Lato-Regular.woff';
-
-import jpSansBoldURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Bold.woff';
-import jpSansLightURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Light.woff';
-import jpSansRegularURL from '../../../static/fonts/noto-sans-japanese/NotoSansJP-Regular.woff';
-
-import hackZeroSlashBoldURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Bold.woff';
-import hackZeroSlashItalicURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Italic.woff';
-import hackZeroSlashRegularURL from '../../../static/fonts/hack-zeroslash/Hack-ZeroSlash-Regular.woff';
+import envData from '../../../config/env.json';
 
 import { isBrowser } from '../../../utils';
 import {
@@ -181,7 +168,9 @@ function DefaultLayout({
     return typeof isOnline === 'boolean' ? onlineStatusChange(isOnline) : null;
   };
 
-  const isJapanese = clientLocale === 'japanese';
+  useEffect(() => {
+    document.body.className = `${theme}-palette`;
+  }, [theme]);
 
   if (!fetchState.complete) {
     return <Loader fullScreen={true} messageDelay={5000} />;
@@ -190,89 +179,6 @@ function DefaultLayout({
       <div className='page-wrapper'>
         {envData.deploymentEnv === 'staging' &&
           envData.environment === 'production' && <StagingWarningModal />}
-        <Helmet
-          bodyAttributes={{
-            class: `${theme}-palette`
-          }}
-          meta={[
-            {
-              name: 'description',
-              content: t('metaTags:description')
-            },
-            { name: 'keywords', content: t('metaTags:keywords') }
-          ]}
-        >
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoRegularURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoLightURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={latoBoldURL}
-            rel='preload'
-            type='font/woff'
-          />
-          {isJapanese && (
-            <link
-              as='font'
-              crossOrigin='anonymous'
-              href={jpSansRegularURL}
-              rel='preload'
-              type='font/woff'
-            />
-          )}
-          {isJapanese && (
-            <link
-              as='font'
-              crossOrigin='anonymous'
-              href={jpSansLightURL}
-              rel='preload'
-              type='font/woff'
-            />
-          )}
-          {isJapanese && (
-            <link
-              as='font'
-              crossOrigin='anonymous'
-              href={jpSansBoldURL}
-              rel='preload'
-              type='font/woff'
-            />
-          )}
-
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={hackZeroSlashRegularURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={hackZeroSlashBoldURL}
-            rel='preload'
-            type='font/woff'
-          />
-          <link
-            as='font'
-            crossOrigin='anonymous'
-            href={hackZeroSlashItalicURL}
-            rel='preload'
-            type='font/woff'
-          />
-        </Helmet>
         <div className={`default-layout`}>
           <Header
             fetchState={fetchState}

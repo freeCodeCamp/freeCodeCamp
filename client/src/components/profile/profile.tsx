@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import Helmet from 'react-helmet';
-import type { TFunction } from 'i18next';
+import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
@@ -151,11 +149,12 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
 
   const showUserProfile = !isLocked || isSessionUser;
 
+  useEffect(() => {
+    document.title = `${t('buttons.profile')} | freeCodeCamp.org`;
+  }, [t]);
+
   return (
     <>
-      <Helmet>
-        <title>{t('buttons.profile')} | freeCodeCamp.org</title>
-      </Helmet>
       <Spacer size='m' />
       <Container>
         <Spacer size='m' />
