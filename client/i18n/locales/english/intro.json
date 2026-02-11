@@ -3250,6 +3250,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "quiz-graph-and-trees-js": {
+        "title": "Graphs and Trees quiz",
+        "intro": ["Graphs and Trees quiz", ""]
       }
     }
   },

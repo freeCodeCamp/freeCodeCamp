@@ -1,0 +1,10 @@
+{
+  "name": "Graphs and Trees Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "quiz-graph-and-trees-js",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "698c38eb685c30adb9767c04", "title": "Graphs and Trees Quiz" }
+  ],
+  "usesMultifileEditor": true
+}
