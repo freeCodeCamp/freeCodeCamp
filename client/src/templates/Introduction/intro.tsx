@@ -73,7 +73,7 @@ export const query = graphql`
       html
     }
     allChallengeNode(
-      sort: { fields: [challenge___challengeOrder] }
+      sort: { challenge: { challengeOrder: ASC } }
       filter: { challenge: { block: { eq: $block } } }
       limit: 1
     ) {

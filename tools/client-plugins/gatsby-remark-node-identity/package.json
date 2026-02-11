@@ -21,6 +21,9 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "gatsby-node.js",
+  "peerDependencies": {
+    "gatsby": "^5.0.0"
+  },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "eslint": "^9.39.1"

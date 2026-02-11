@@ -15,13 +15,14 @@ module.exports = {
   flags: {
     DEV_SSR: false
   },
+  trailingSlash: 'ignore',
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
   },
   pathPrefix: pathPrefix,
   plugins: [
-    'gatsby-plugin-pnpm',
+    'gatsby-plugin-pnpm-gatsby-5',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
@@ -41,18 +42,6 @@ module.exports = {
         postcssOptions: {
           config: path.resolve(__dirname, 'postcss.config.js')
         }
-      }
-    },
-    {
-      resolve: 'gatsby-plugin-create-client-paths',
-      options: {
-        prefixes: [
-          '/certification/*',
-          '/unsubscribed/*',
-          '/user/*',
-          '/settings/*',
-          '/n/*'
-        ]
       }
     },
     {
