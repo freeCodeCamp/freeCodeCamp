@@ -341,7 +341,32 @@ export const superBlockToCertMap: {
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null,
-  [SuperBlocks.FullStackOpen]: null
+  [SuperBlocks.FullStackOpen]: null,
+  [SuperBlocks.HtmlFormsAndTables]: null,
+  [SuperBlocks.LabSurveyForm]: null,
+  [SuperBlocks.HtmlAndAccessibility]: null,
+  [SuperBlocks.ComputerBasics]: null,
+  [SuperBlocks.BasicCss]: null,
+  [SuperBlocks.DesignForDevelopers]: null,
+  [SuperBlocks.AbsoluteAndRelativeUnits]: null,
+  [SuperBlocks.PseudoClassesAndElements]: null,
+  [SuperBlocks.CssColors]: null,
+  [SuperBlocks.StylingForms]: null,
+  [SuperBlocks.CssBoxModel]: null,
+  [SuperBlocks.CssFlexbox]: null,
+  [SuperBlocks.LabPageOfPlayingCards]: null,
+  [SuperBlocks.CssTypography]: null,
+  [SuperBlocks.CssAndAccessibility]: null,
+  [SuperBlocks.CssPositioning]: null,
+  [SuperBlocks.AttributeSelectors]: null,
+  [SuperBlocks.LabBookInventoryApp]: null,
+  [SuperBlocks.ResponsiveDesign]: null,
+  [SuperBlocks.LabTechnicalDocumentationPage]: null,
+  [SuperBlocks.CssVariables]: null,
+  [SuperBlocks.CssGrid]: null,
+  [SuperBlocks.LabProductLandingPage]: null,
+  [SuperBlocks.CssAnimations]: null,
+  [SuperBlocks.LearnPythonForBeginners]: null
 };
 
 export const certificationRequirements: Partial<
