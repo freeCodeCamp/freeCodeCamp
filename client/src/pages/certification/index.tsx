@@ -4,8 +4,6 @@ import RedirectHome from '../../components/redirect-home';
 import './certification.css';
 
 // Redirect to home if no username/certSlug provided
-const Certification: React.FC = () => {
-  return <RedirectHome />;
-};
+const Certification = () => <RedirectHome />;
 
 export default Certification;

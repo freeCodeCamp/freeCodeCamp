@@ -8,9 +8,10 @@ interface UnsubscribedWithIdProps {
   };
 }
 
-const UnsubscribedWithId: React.FC<UnsubscribedWithIdProps> = ({ params }) => {
-  const { unsubscribeId } = params;
-  return <ShowUnsubscribed unsubscribeId={unsubscribeId} />;
-};
+const UnsubscribedWithId = ({
+  params: { unsubscribeId }
+}: UnsubscribedWithIdProps) => (
+  <ShowUnsubscribed unsubscribeId={unsubscribeId} />
+);
 
 export default UnsubscribedWithId;

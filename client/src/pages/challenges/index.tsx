@@ -2,9 +2,9 @@
 // exist in the web (posts, url shares, etc).
 
 import { navigate } from 'gatsby';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
-const Challenges: React.FC = () => {
+const Challenges = () => {
   useEffect(() => {
     void navigate('/learn');
   }, []);

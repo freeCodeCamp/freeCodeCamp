@@ -8,8 +8,7 @@ interface ProfilePageProps {
   };
 }
 
-const ProfilePage: React.FC<ProfilePageProps> = ({ params }) => {
-  const { maybeUser } = params;
+const ProfilePage = ({ params: { maybeUser } }: ProfilePageProps) => {
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore - Redux connect() provides remaining props

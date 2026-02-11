@@ -2,7 +2,7 @@
 // This exists purely to redirect legacy challenge paths to /learn
 
 import { navigate } from 'gatsby';
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 
 import toLearnPath from '../../utils/to-learn-path';
 
@@ -12,7 +12,7 @@ interface ChallengesRedirectProps {
   };
 }
 
-const ChallengesRedirect: React.FC<ChallengesRedirectProps> = ({ params }) => {
+const ChallengesRedirect = ({ params }: ChallengesRedirectProps) => {
   useEffect(() => {
     const pathSegments = params['*'].split('/').filter(Boolean);
     const [superBlock, block, challenge] = pathSegments;

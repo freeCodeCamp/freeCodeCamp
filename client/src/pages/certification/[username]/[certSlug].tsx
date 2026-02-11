@@ -13,10 +13,7 @@ interface CertificationPageProps {
   };
 }
 
-const CertificationPage: React.FC<CertificationPageProps> = ({
-  params,
-  location
-}) => {
+const CertificationPage = ({ params, location }: CertificationPageProps) => {
   const { username, certSlug } = params;
   return (
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment

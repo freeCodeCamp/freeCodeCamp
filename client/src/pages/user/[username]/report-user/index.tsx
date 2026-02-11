@@ -7,11 +7,8 @@ interface ReportUserPageProps {
   };
 }
 
-const ReportUserPage: React.FC<ReportUserPageProps> = ({ params }) => {
-  const { username } = params;
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
-  return <ShowUser username={username} />;
-};
+const ReportUserPage = ({ params: { username } }: ReportUserPageProps) => (
+  <ShowUser username={username} />
+);
 
 export default ReportUserPage;
