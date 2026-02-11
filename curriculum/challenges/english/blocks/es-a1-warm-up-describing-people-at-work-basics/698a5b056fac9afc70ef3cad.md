@@ -55,3 +55,69 @@ This country is known for its famous canal. Remember to include an accent mark o
 # --explanation--
 
 The sequence is `Brasil` - `Colombia` - `Panamá`.
+
+# --scene--
+
+```json
+{
+  "setup": {
+    "background": "company2-dining.png",
+    "characters": [
+      {
+        "character": "Camila",
+        "position": {
+          "x": 50,
+          "y": 18,
+          "z": 1.5
+        },
+        "opacity": 0
+      }
+    ],
+    "audio": {
+      "filename": "ES_A1_warm_up_describing_people_at_work.mp3",
+      "startTime": 1,
+      "startTimestamp": 20.9,
+      "finishTimestamp": 25.4
+    }
+  },
+  "commands": [
+    {
+      "character": "Camila",
+      "opacity": 1,
+      "startTime": 0
+    },
+    {
+      "character": "Camila",
+      "startTime": 1,
+      "finishTime": 1.96,
+      "dialogue": {
+        "text": "Brasil",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Camila",
+      "startTime": 2.88,
+      "finishTime": 3.79,
+      "dialogue": {
+        "text": "Colombia",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Camila",
+      "startTime": 4.79,
+      "finishTime": 5.5,
+      "dialogue": {
+        "text": "Panamá",
+        "align": "center"
+      }
+    },
+    {
+      "character": "Camila",
+      "opacity": 0,
+      "startTime": 6
+    }
+  ]
+}
+```
