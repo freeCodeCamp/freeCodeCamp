@@ -293,7 +293,6 @@ test.describe('Quiz with audio question', () => {
   test('renders audio player and transcript when question has audio', async ({
     page
   }) => {
-    // The fixture contains a single question
     await expect(page.getByRole('radiogroup')).toHaveCount(1);
 
     const audio = page.locator('audio');

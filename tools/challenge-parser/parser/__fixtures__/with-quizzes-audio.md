@@ -14,8 +14,8 @@ Quiz 1, question 1 with audio timestamps
 {
   "audio": {
     "filename": "audio-with-timestamps.mp3",
-    "startTime": 1.5,
-    "finishTime": 3.8
+    "startTimestamp": 1.5,
+    "finishTimestamp": 3.8
   },
   "transcript": [
     {

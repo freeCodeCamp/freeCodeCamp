@@ -8,8 +8,8 @@
         "audioData": {
           "audio": {
             "filename": "test-audio.mp3",
-            "startTime": 0,
-            "finishTime": 2
+            "startTimestamp": 0,
+            "finishTimestamp": 2
           },
           "transcript": [
             {

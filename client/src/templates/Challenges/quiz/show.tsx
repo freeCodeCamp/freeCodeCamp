@@ -174,8 +174,10 @@ const ShowQuiz = ({
       const audioData = question.audioData?.audio?.filename
         ? {
             audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData.audio.filename}`,
-            audioStartTime: question.audioData.audio.startTime ?? undefined,
-            audioFinishTime: question.audioData.audio.finishTime ?? undefined,
+            audioStartTime:
+              question.audioData.audio.startTimestamp ?? undefined,
+            audioFinishTime:
+              question.audioData.audio.finishTimestamp ?? undefined,
             transcript: question.audioData.transcript.length
               ? question.audioData.transcript
                   .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
@@ -425,8 +427,8 @@ export const query = graphql`
             audioData {
               audio {
                 filename
-                startTime
-                finishTime
+                startTimestamp
+                finishTimestamp
               }
               transcript {
                 character

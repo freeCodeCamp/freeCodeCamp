@@ -187,8 +187,8 @@ describe('add-quizzes plugin', () => {
     expect(firstQuestion.audioData.audio.filename).toBe(
       'audio-with-timestamps.mp3'
     );
-    expect(firstQuestion.audioData.audio.startTime).toBe(1.5);
-    expect(firstQuestion.audioData.audio.finishTime).toBe(3.8);
+    expect(firstQuestion.audioData.audio.startTimestamp).toBe(1.5);
+    expect(firstQuestion.audioData.audio.finishTimestamp).toBe(3.8);
     expect(firstQuestion.audioData.transcript).toEqual([
       {
         character: 'Maria',

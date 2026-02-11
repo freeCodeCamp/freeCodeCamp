@@ -353,8 +353,8 @@ type Quiz {
 
 type QuizAudio {
   filename: String
-  startTime: Float
-  finishTime: Float
+  startTimestamp: Float
+  finishTimestamp: Float
 }
 
 type QuizTranscriptLine {

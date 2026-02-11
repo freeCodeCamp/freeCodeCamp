@@ -349,8 +349,8 @@ type Quiz = {
 
 type QuizAudio = {
   filename: string;
-  startTime?: number | null;
-  finishTime?: number | null;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
 };
 
 type QuizTranscriptLine = {
