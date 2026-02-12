@@ -192,7 +192,7 @@ const schema = Joi.object().keys({
   nodules: Joi.array().items(
     Joi.object().keys({
       type: Joi.valid('paragraph', 'interactiveEditor').required(),
-      data: Joi.when('type', {
+      files: Joi.when('type', {
         is: ['interactiveEditor'],
         then: Joi.array().items(
           Joi.object().keys({
@@ -202,7 +202,12 @@ const schema = Joi.object().keys({
             contentsHtml: Joi.string().required()
           })
         ),
-        otherwise: Joi.string().required()
+        otherwise: Joi.forbidden()
+      }),
+      contents: Joi.when('type', {
+        is: ['paragraph'],
+        then: Joi.string().required(),
+        otherwise: Joi.forbidden()
       })
     })
   ),
