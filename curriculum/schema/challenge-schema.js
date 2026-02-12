@@ -116,7 +116,20 @@ const quizJoi = Joi.object().keys({
           .length(3)
           .required()
           .unique(),
-        answer: Joi.string().required()
+        answer: Joi.string().required(),
+        audioData: Joi.object().keys({
+          audio: Joi.object({
+            filename: Joi.string().required(),
+            startTimestamp: Joi.number(),
+            finishTimestamp: Joi.number()
+          }),
+          transcript: Joi.array().items(
+            Joi.object({
+              character: Joi.string().required(),
+              text: Joi.string().required()
+            })
+          )
+        })
       })
     )
     .custom((value, helpers) => {
