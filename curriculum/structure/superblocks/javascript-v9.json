@@ -287,7 +287,9 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-countup",
             "lab-countdown",
+            "lab-range-of-numbers",
             "workshop-decimal-to-binary-converter",
             "lab-permutation-generator",
             "review-recursion",
@@ -295,8 +297,6 @@
           ]
         },
         { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
-        { "dashedName": "algorithms", "comingSoon": true, "blocks": [] },
-        { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,

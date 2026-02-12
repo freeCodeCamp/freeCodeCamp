@@ -8,7 +8,7 @@ import {
   vi
 } from 'vitest';
 
-import { Certification } from '../../../../shared/config/certification-settings.js';
+import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import {
   defaultUserEmail,
   defaultUserId,

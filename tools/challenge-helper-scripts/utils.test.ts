@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import fs from 'fs';
 import path, { join } from 'path';
 import matter from 'gray-matter';
@@ -71,7 +72,7 @@ describe('Challenge utils helper scripts', () => {
   });
   describe('createStepFile util', () => {
     it('should create next step and return its identifier', () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
       const mockTemplate = 'Mock template...';
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         mockTemplate
@@ -125,7 +126,7 @@ describe('Challenge utils helper scripts', () => {
 
   describe('createChallengeFile util', () => {
     it('should create the challenge', () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
       const template = 'pretend this is a template';
 
       createChallengeFile('hi', template);
@@ -139,7 +140,7 @@ describe('Challenge utils helper scripts', () => {
 
   describe('insertStepIntoMeta util', () => {
     it('should call updateMetaData with a new file id and name', async () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
 
       await insertStepIntoMeta({
         stepNum: 3,
@@ -157,7 +158,7 @@ describe('Challenge utils helper scripts', () => {
 
   describe('updateStepTitles util', () => {
     it('should apply meta.challengeOrder to step files', () => {
-      process.env.CALLING_DIR = projectPath;
+      process.env.INIT_CWD = projectPath;
       (getStepTemplate as ReturnType<typeof vi.fn>).mockReturnValue(
         'Mock template...'
       );
@@ -189,6 +190,6 @@ describe('Challenge utils helper scripts', () => {
     });
   });
   afterEach(() => {
-    delete process.env.CALLING_DIR;
+    delete process.env.INIT_CWD;
   });
 });

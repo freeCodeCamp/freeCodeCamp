@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import type { Dispatch } from 'redux';
 import { createSelector } from 'reselect';
 
-import { isValidUsername } from '../../../../../shared-dist/utils/validate';
+import { isValidUsername } from '@freecodecamp/shared/utils/validate';
 import { usernameValidationSelector } from '../../../redux/settings/selectors';
 import {
   validateUsername,

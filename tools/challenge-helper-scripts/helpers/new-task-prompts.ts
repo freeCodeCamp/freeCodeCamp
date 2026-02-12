@@ -1,5 +1,5 @@
 import { prompt } from 'inquirer';
-import { challengeTypes } from '../../../shared-dist/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 const taskChallenges = [
   challengeTypes.multipleChoice,

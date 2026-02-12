@@ -1,6 +1,6 @@
 {
   "$schema": "https://cdn.jsdelivr.net/npm/knip@5/schema.json",
-  "ignoreBinaries": ["compile:ts", "install-puppeteer", "pm2"],
+  "ignoreBinaries": ["compile", "install-puppeteer", "pm2"],
   "workspaces": {
     ".": {
       "playwright": ["playwright.config.ts"],

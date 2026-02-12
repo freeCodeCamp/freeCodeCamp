@@ -41,6 +41,7 @@ const VALID_MARKERS = [
 
   // Level 4
   '#### --answer--',
+  '#### --audio--',
   '#### --distractors--',
   '#### --text--'
 ];
