@@ -143,7 +143,7 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object().keys({
+export const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
