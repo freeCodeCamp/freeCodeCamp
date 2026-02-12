@@ -106,8 +106,8 @@ export function ShowUser({
       <Row className='overflow-fix'>
         <Col sm={6} smOffset={3} xs={12}>
           <p>
-            <Trans i18nKey='report.notify-1'>
-              <strong>{{ email: user.email }}</strong>
+            <Trans i18nKey='report.notify-1' values={{ email: user.email }}>
+              <strong>{'{{email}}'}</strong>
             </Trans>
           </p>
           <p>{t('report.notify-2')}</p>

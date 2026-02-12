@@ -54,7 +54,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -153,7 +153,8 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables (needed by api)
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cp sample.env .env # for docker compose
 
       - name: Install playwright dependencies
         run: npx playwright install --with-deps

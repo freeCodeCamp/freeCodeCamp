@@ -1409,7 +1409,7 @@
         ]
       },
       "en-a2-quiz-greetings-first-day-office": {
-        "title": "First Day at The Office Greetings Quiz",
+        "title": "Questionário de Cumprimentos no Primeiro Dia no Escritório",
         "intro": ["", ""]
       },
       "learn-introductions-in-an-online-team-meeting": {
@@ -1419,7 +1419,7 @@
         ]
       },
       "en-a2-quiz-introductions-online-team-meeting": {
-        "title": "Online Team Introductions Quiz",
+        "title": "Questionário de Apresentações da Equipe Online",
         "intro": ["", ""]
       },
       "learn-conversation-starters-in-the-break-room": {
@@ -1429,7 +1429,7 @@
         ]
       },
       "en-a2-quiz-conversation-starters-break-room": {
-        "title": "Break Room Conversations Quiz",
+        "title": "Questionário sobre Conversas na Sala de Descanso",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-a-typical-workday-and-tasks": {
@@ -1439,7 +1439,7 @@
         ]
       },
       "en-a2-quiz-talk-about-typical-workday-tasks": {
-        "title": "Talking About Your Workday Quiz",
+        "title": "Questionário sobre Como Falar do Dia de Trabalho",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-your-morning-or-evening-routine": {
@@ -1449,7 +1449,7 @@
         ]
       },
       "en-a2-quiz-discuss-morning-evening-routine": {
-        "title": "Daily Routines at Work Quiz",
+        "title": "Questionário sobre Rotinas Diárias no Trabalho",
         "intro": ["", ""]
       },
       "learn-how-to-describe-your-current-project": {
@@ -1459,7 +1459,7 @@
         ]
       },
       "en-a2-quiz-describe-current-project": {
-        "title": "Describing Your Current Project Quiz",
+        "title": "Questionário sobre Como Descrever o Projeto Atual",
         "intro": ["", ""]
       },
       "learn-how-to-ask-and-share-about-educational-and-professional-background": {
@@ -1469,7 +1469,7 @@
         ]
       },
       "en-a2-quiz-educational-professional-background": {
-        "title": "Educational and Professional Background Quiz",
+        "title": "Questionário sobre Formação Educacional e Profissional",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-hobbies-and-interests": {
@@ -1479,7 +1479,7 @@
         ]
       },
       "en-a2-quiz-talk-about-hobbies-interests": {
-        "title": "Talking About Hobbies and Interests Quiz",
+        "title": "Questionário sobre Falar de Hobbies e Interesses",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-roles-and-responsibilities": {
@@ -1489,7 +1489,7 @@
         ]
       },
       "en-a2-quiz-discuss-roles-responsibilities": {
-        "title": "Roles and Responsibilities Quiz",
+        "title": "Questionário sobre Funções e Responsabilidades",
         "intro": ["", ""]
       },
       "learn-how-to-have-a-conversation-about-preferences-and-motivations": {
@@ -1499,7 +1499,7 @@
         ]
       },
       "en-a2-quiz-preferences-motivations": {
-        "title": "Preferences and Motivations Quiz",
+        "title": "Questionário sobre Preferências e Motivações",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-popular-trends-in-technology": {
@@ -1509,7 +1509,7 @@
         ]
       },
       "en-a2-quiz-popular-technology-trends": {
-        "title": "Technology Trends Quiz",
+        "title": "Questionário sobre Tendências Tecnológicas",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-information-in-different-interactions": {
@@ -1519,7 +1519,7 @@
         ]
       },
       "en-a2-quiz-clarify-information-interactions": {
-        "title": "Clarifying Information Quiz",
+        "title": "Questionário sobre Esclarecimento de Informações",
         "intro": ["", ""]
       },
       "learn-how-to-use-basic-programming-vocabulary-in-conversations": {
@@ -1529,7 +1529,7 @@
         ]
       },
       "en-a2-quiz-basic-programming-vocabulary": {
-        "title": "Basic Programming Vocabulary Quiz",
+        "title": "Questionário de Vocabulário Básico de Programação",
         "intro": ["", ""]
       },
       "learn-how-to-use-code-related-concepts-and-terms": {
@@ -1539,7 +1539,7 @@
         ]
       },
       "en-a2-quiz-code-related-concepts-terms": {
-        "title": "Code Concepts and Terms Quiz",
+        "title": "Questionário sobre Conceitos e Termos de Código",
         "intro": ["", ""]
       },
       "learn-how-to-discuss-tech-trends-and-updates": {
@@ -1549,7 +1549,7 @@
         ]
       },
       "en-a2-quiz-tech-trends-updates": {
-        "title": "Tech Updates and Trends Quiz",
+        "title": "Questionário sobre Atualizações e Tendências Tecnológicas",
         "intro": ["", ""]
       },
       "learn-how-to-help-a-coworker-troubleshoot-on-github": {
@@ -1559,7 +1559,7 @@
         ]
       },
       "en-a2-quiz-help-coworker-github-troubleshooting": {
-        "title": "Helping a Coworker on GitHub Quiz",
+        "title": "Questionário sobre Ajudar um Colega no GitHub",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-progress-in-weekly-stand-up-meetings": {
@@ -1569,7 +1569,7 @@
         ]
       },
       "en-a2-quiz-share-progress-weekly-meeting": {
-        "title": "Weekly Meeting Progress Quiz",
+        "title": "Questionário sobre Compartilhar Progresso na Reunião Semanal",
         "intro": ["", ""]
       },
       "learn-how-to-ask-for-clarification-on-code-understanding": {
@@ -1579,7 +1579,7 @@
         ]
       },
       "en-a2-quiz-ask-for-code-clarification": {
-        "title": "Asking for Code Clarification Quiz",
+        "title": "Questionário sobre Pedir Esclarecimentos de Código",
         "intro": ["", ""]
       },
       "learn-how-to-document-code-for-a-project": {
@@ -1589,7 +1589,7 @@
         ]
       },
       "en-a2-quiz-document-code-project": {
-        "title": "Documenting Code Quiz",
+        "title": "Questionário sobre Documentação de Código",
         "intro": ["", ""]
       },
       "learn-how-to-read-and-understand-code-documentation": {
@@ -1599,7 +1599,7 @@
         ]
       },
       "en-a2-quiz-read-understand-code-documentation": {
-        "title": "Understanding Code Documentation Quiz",
+        "title": "Questionário sobre Entender Documentação de Código",
         "intro": ["", ""]
       },
       "learn-how-to-analyze-code-documentation": {
@@ -1609,7 +1609,7 @@
         ]
       },
       "en-a2-quiz-analyze-code-documentation": {
-        "title": "Analyzing Code Documentation Quiz",
+        "title": "Questionário sobre Análise de Documentação de Código",
         "intro": ["", ""]
       },
       "learn-how-to-share-progress-and-accomplishments": {
@@ -1619,7 +1619,7 @@
         ]
       },
       "en-a2-quiz-share-progress-accomplishments": {
-        "title": "Sharing Progress and Achievements Quiz",
+        "title": "Questionário sobre Compartilhar Progresso e Conquistas",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-updates-and-plans-for-tasks-and-projects": {
@@ -1629,7 +1629,7 @@
         ]
       },
       "en-a2-quiz-task-project-updates-plans": {
-        "title": "Task and Project Updates Quiz",
+        "title": "Questionário sobre Atualizações de Tarefas e Projetos",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement-or-disagreement": {
@@ -1639,7 +1639,7 @@
         ]
       },
       "en-a2-quiz-express-agreement-disagreement": {
-        "title": "Expressing Agreement and Disagreement Quiz",
+        "title": "Questionário sobre Expressar Concordância e Discordância",
         "intro": ["", ""]
       },
       "learn-how-to-offer-technical-support-and-guidance": {
@@ -1649,7 +1649,7 @@
         ]
       },
       "en-a2-quiz-offer-technical-support-guidance": {
-        "title": "Offering Technical Support Quiz",
+        "title": "Questionário sobre Oferecer Suporte Técnico",
         "intro": ["", ""]
       },
       "learn-how-to-request-and-receive-guidance": {
@@ -1659,7 +1659,7 @@
         ]
       },
       "en-a2-quiz-request-receive-guidance": {
-        "title": "Requesting and Receiving Guidance Quiz",
+        "title": "Questionário sobre Solicitar e Receber Orientação",
         "intro": ["", ""]
       },
       "learn-how-to-provide-explanations-when-helping-others": {
@@ -1669,7 +1669,7 @@
         ]
       },
       "en-a2-quiz-provide-explanations-helping-others": {
-        "title": "Explaining Things to Others Quiz",
+        "title": "Questionário sobre Explicar Coisas a Outros",
         "intro": ["", ""]
       },
       "en-a2-certification-exam": {
@@ -1696,7 +1696,7 @@
         ]
       },
       "en-b1-quiz-describe-places-events": {
-        "title": "Describing Places and Events Quiz",
+        "title": "Questionário sobre Descrição de Lugares e Eventos",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-experiences": {
@@ -1706,7 +1706,7 @@
         ]
       },
       "en-b1-quiz-past-experiences": {
-        "title": "Talking About Past Experiences Quiz",
+        "title": "Questionário sobre Falar de Experiências Passadas",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-past-activities": {
@@ -1714,7 +1714,7 @@
         "intro": ["Neste curso, você aprenderá a falar sobre coisas que fez."]
       },
       "en-b1-quiz-past-activities": {
-        "title": "Talking About Past Activities Quiz",
+        "title": "Questionário sobre Falar de Atividades Passadas",
         "intro": ["", ""]
       },
       "learn-present-perfect-while-talking-about-accessibility": {
@@ -1724,7 +1724,7 @@
         ]
       },
       "en-b1-quiz-present-perfect-accessibility": {
-        "title": "Present Perfect and Accessibility Quiz",
+        "title": "Questionário sobre Presente Perfeito e Acessibilidade",
         "intro": ["", ""]
       },
       "learn-how-to-plan-future-events": {
@@ -1734,7 +1734,7 @@
         ]
       },
       "en-b1-quiz-plan-future-events": {
-        "title": "Planning Future Events Quiz",
+        "title": "Questionário sobre Planejar Eventos Futuros",
         "intro": ["", ""]
       },
       "learn-future-continuous-while-describing-actions": {
@@ -1744,7 +1744,7 @@
         ]
       },
       "en-b1-quiz-future-continuous-actions": {
-        "title": "Future Continuous Actions Quiz",
+        "title": "Questionário sobre Futuro Contínuo",
         "intro": ["", ""]
       },
       "learn-how-to-use-conditionals": {
@@ -1754,7 +1754,7 @@
         ]
       },
       "en-b1-quiz-conditionals": {
-        "title": "Using Conditionals Quiz",
+        "title": "Questionário sobre Uso de Condicionais",
         "intro": ["", ""]
       },
       "learn-how-to-share-feedback": {
@@ -1764,7 +1764,7 @@
         ]
       },
       "en-b1-quiz-share-feedback": {
-        "title": "Sharing Feedback Quiz",
+        "title": "Questionário sobre Compartilhar Feedback",
         "intro": ["", ""]
       },
       "learn-how-to-share-your-opinion": {
@@ -1774,7 +1774,7 @@
         ]
       },
       "en-b1-quiz-share-opinions": {
-        "title": "Sharing Opinions Quiz",
+        "title": "Questionário sobre Compartilhar Opiniões",
         "intro": ["", ""]
       },
       "learn-how-to-express-agreement": {
@@ -1784,7 +1784,7 @@
         ]
       },
       "en-b1-quiz-express-agreement": {
-        "title": "Expressing Agreement Quiz",
+        "title": "Questionário sobre Expressar Concordância",
         "intro": ["", ""]
       },
       "learn-how-to-express-disagreement": {
@@ -1794,7 +1794,7 @@
         ]
       },
       "en-b1-quiz-express-disagreement": {
-        "title": "Expressing Disagreement Quiz",
+        "title": "Questionário sobre Expressar Discordância",
         "intro": ["", ""]
       },
       "learn-how-to-express-concerns": {
@@ -1804,7 +1804,7 @@
         ]
       },
       "en-b1-quiz-express-concerns": {
-        "title": "Expressing Concerns Quiz",
+        "title": "Questionário sobre Expressar Preocupações",
         "intro": ["", ""]
       },
       "learn-how-to-express-decisions-based-on-comparisons": {
@@ -1814,7 +1814,7 @@
         ]
       },
       "en-b1-quiz-decisions-comparisons": {
-        "title": "Making Decisions with Comparisons Quiz",
+        "title": "Questionário sobre Tomada de Decisões com Comparações",
         "intro": ["", ""]
       },
       "learn-how-to-use-modal-verbs": {
@@ -1824,7 +1824,7 @@
         ]
       },
       "en-b1-quiz-modal-verbs": {
-        "title": "Using Modal Verbs Quiz",
+        "title": "Questionário sobre Uso de Verbos Modais",
         "intro": ["", ""]
       },
       "learn-how-to-manage-a-conversation": {
@@ -1834,7 +1834,7 @@
         ]
       },
       "en-b1-quiz-manage-conversations": {
-        "title": "Managing Conversations Quiz",
+        "title": "Questionário sobre Gerenciar Conversas",
         "intro": ["", ""]
       },
       "learn-how-to-clarify-misunderstandings": {
@@ -1844,7 +1844,7 @@
         ]
       },
       "en-b1-quiz-clarify-misunderstandings": {
-        "title": "Clarifying Misunderstandings Quiz",
+        "title": "Questionário sobre Esclarecer Mal-entendidos",
         "intro": ["", ""]
       },
       "learn-about-speculation-and-requests": {
@@ -1854,7 +1854,7 @@
         ]
       },
       "en-b1-quiz-speculation-requests": {
-        "title": "Speculation and Requests Quiz",
+        "title": "Questionário sobre Especulação e Pedidos",
         "intro": ["", ""]
       },
       "learn-about-adverbial-phrases": {
@@ -1864,7 +1864,7 @@
         ]
       },
       "en-b1-quiz-adverbial-phrases": {
-        "title": "Adverbial Phrases Quiz",
+        "title": "Questionário sobre Frases Adverbiais",
         "intro": ["", ""]
       },
       "learn-how-to-use-adjectives-in-conversations": {
@@ -1874,7 +1874,7 @@
         ]
       },
       "en-b1-quiz-adjectives-conversations": {
-        "title": "Using Adjectives in Conversations Quiz",
+        "title": "Questionário sobre Uso de Adjetivos em Conversas",
         "intro": ["", ""]
       },
       "learn-determiners-and-advanced-use-of-articles": {
@@ -1884,7 +1884,7 @@
         ]
       },
       "en-b1-quiz-determiners-articles": {
-        "title": "Determiners and Articles Quiz",
+        "title": "Questionário sobre Determinantes e Artigos",
         "intro": ["", ""]
       },
       "learn-how-to-use-reported-speech": {
@@ -1894,7 +1894,7 @@
         ]
       },
       "en-b1-quiz-reported-speech": {
-        "title": "Using Reported Speech Quiz",
+        "title": "Questionário sobre Uso de Discurso Indireto",
         "intro": ["", ""]
       },
       "learn-how-to-use-prepositions-according-to-context": {
@@ -1904,7 +1904,7 @@
         ]
       },
       "en-b1-quiz-prepositions-context": {
-        "title": "Using Prepositions by Context Quiz",
+        "title": "Questionário sobre Uso de Preposições por Contexto",
         "intro": ["", ""]
       },
       "learn-how-to-talk-about-numbers-with-a-coworker": {
@@ -1914,7 +1914,7 @@
         ]
       },
       "en-b1-quiz-numbers-at-work": {
-        "title": "Talking About Numbers at Work Quiz",
+        "title": "Questionário sobre Falar de Números no Trabalho",
         "intro": ["", ""]
       },
       "learn-common-phrasal-verbs-and-idioms": {
@@ -1924,7 +1924,7 @@
         ]
       },
       "en-b1-quiz-phrasal-verbs-idioms": {
-        "title": "Phrasal Verbs and Idioms Quiz",
+        "title": "Questionário sobre Phrasal Verbs e Expressões Idiomáticas",
         "intro": ["", ""]
       },
       "en-b1-certification-exam": {
@@ -1988,10 +1988,10 @@
       "classes-and-the-this-keyword": "Classes",
       "lab-bank-account-manager": "Crie um Programa de Gestão de Contas Bancárias",
       "recursion": "Recursão",
-      "data-structures": "Data Structures",
-      "algorithms": "Algorithms",
-      "graphs-and-trees": "Graphs and Trees",
-      "dynamic-programming": "Dynamic Programming",
+      "data-structures": "Estruturas de dados",
+      "algorithms": "Algoritmos",
+      "graphs-and-trees": "Grafos e Árvores",
+      "dynamic-programming": "Programação Dinâmica",
       "functional-programming": "Programação Funcional",
       "asynchronous-javascript": "JavaScript Assíncrono",
       "lab-weather-app": "Crie um Aplicativo do Tempo",
@@ -2000,27 +2000,25 @@
     },
     "module-intros": {
       "data-structures": {
-        "note": "Coming Spring 2026",
+        "note": "Disponível na primavera de 2026",
         "intro": [
-          "In this module, you will learn about linked lists, stacks, queues and more."
+          "Neste módulo, você aprenderá sobre listas ligadas, pilhas, filas e mais."
         ]
       },
       "algorithms": {
-        "note": "Coming Spring 2026",
+        "note": "Disponível na primavera de 2026",
         "intro": [
-          "In this module, you will learn about common sorting and searching algorithms including bubble sort, binary search and more."
+          "Neste módulo, você aprenderá sobre algoritmos comuns de ordenação e busca, incluindo bubble sort, busca binária e outros."
         ]
       },
       "graphs-and-trees": {
-        "note": "Coming Spring 2026",
-        "intro": [
-          "In this module, you will learn about graphs, trees and tries."
-        ]
+        "note": "Disponível na primavera de 2026",
+        "intro": ["Neste módulo, você aprenderá sobre grafos, árvores e tries."]
       },
       "dynamic-programming": {
-        "note": "Coming Spring 2026",
+        "note": "Disponível na primavera de 2026",
         "intro": [
-          "In this module, you will learn how dynamic programming works."
+          "Neste módulo, você aprenderá como a programação dinâmica funciona."
         ]
       }
     },
@@ -3123,9 +3121,9 @@
         ]
       },
       "workshop-countup": {
-        "title": "Build a Countup",
+        "title": "Crie uma Contagem Crescente",
         "intro": [
-          "In this workshop you will build a countdown function that returns an array of numbers counting up from 1 to a given number."
+          "Neste workshop, você criará uma função de contagem que retorna um array de números em contagem crescente de 1 até um número dado."
         ]
       },
       "lab-countdown": {
@@ -3142,10 +3140,10 @@
         ]
       },
       "lab-range-of-numbers": {
-        "title": "Build a Range of Numbers Generator",
+        "title": "Crie um Gerador de Intervalo de Números",
         "intro": [
-          "In this lab, you'll use recursion to generate an array of numbers within a specified range.",
-          "You'll practice recursive function calls, base cases, and building arrays through recursion."
+          "Neste laboratório, você usará recursão para gerar um array de números dentro de um intervalo especificado.",
+          "Você praticará chamadas de função recursivas, casos base e a construção de arrays por recursão."
         ]
       },
       "lab-permutation-generator": {
@@ -3168,16 +3166,22 @@
         ]
       },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
-        "title": "Introduction to Common Searching and Sorting Algorithms",
+        "title": "Introdução aos Algoritmos Comuns de Busca e Ordenação",
         "intro": [
-          "Learn about fundamental searching and sorting algorithms, including linear search, binary search, and merge sort.",
-          "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
+          "Aprenda sobre algoritmos fundamentais de busca e ordenação, incluindo busca linear, busca binária e ordenação por fusão.",
+          "Estas lições abrangem implementações de algoritmos, análise de complexidade de tempo e espaço e o paradigma de programação de dividir e conquistar."
+        ]
+      },
+      "lab-bubble-sort-algorithm": {
+        "title": "Implemente o Algoritmo Bubble Sort",
+        "intro": [
+          "Neste laboratório, você implementará o algoritmo bubble sort para ordenar um array de inteiros em ordem crescente."
         ]
       },
       "lecture-understanding-graphs-and-trees-js": {
-        "title": "Understanding Graphs and Trees",
+        "title": "Compreendendo Grafos e Árvores",
         "intro": [
-          "In this lesson, you will learn about fundamental data structures like graphs, trees, and their practical applications in computer science."
+          "Nesta lição, você aprenderá sobre estruturas de dados fundamentais como grafos, árvores e suas aplicações práticas em ciência da computação."
         ]
       },
       "lecture-understanding-functional-programming": {
@@ -3668,14 +3672,20 @@
         ]
       },
       "workshop-report-card-printer": {
-        "title": "Build a Report Card Printer",
+        "title": "Crie uma Impressora de Boletim de Notas",
         "intro": [
-          "In this workshop, you will build a report card printer to work with primitive data types in Python."
+          "Neste workshop, você criará uma impressora de boletim de notas para trabalhar com tipos de dados primitivos em Python."
         ]
       },
       "lecture-introduction-to-python-strings": {
         "title": "Introdução a strings",
         "intro": ["Nestas aulas, você aprenderá sobre strings em Python."]
+      },
+      "workshop-employee-profile-generator": {
+        "title": "Crie um Gerador de Perfil de Funcionário",
+        "intro": [
+          "Neste workshop, você praticará os fundamentos da manipulação de strings em Python criando uma ferramenta que gera crachás de funcionários formatados e analisa códigos de funcionários."
+        ]
       },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Números e operações matemáticas",
@@ -3690,9 +3700,15 @@
         ]
       },
       "workshop-movie-ticket-booking-calculator": {
-        "title": "Build a Movie Ticket Booking Calculator",
+        "title": "Crie uma Calculadora de Reserva de Ingressos de Cinema",
         "intro": [
-          "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+          "Neste workshop, você praticará o uso de booleanos e instruções condicionais em Python criando uma calculadora de reserva de ingressos de cinema."
+        ]
+      },
+      "lab-travel-weather-planner": {
+        "title": "Crie um Planejador de Clima para Viagens",
+        "intro": [
+          "Neste laboratório, você criará um planejador de clima para viagens usando condicionais."
         ]
       },
       "lecture-understanding-functions-and-scope": {
@@ -3894,9 +3910,9 @@
         ]
       },
       "lab-discount-calculator": {
-        "title": "Build a Discount Calculator",
+        "title": "Criar uma Calculadora de Descontos",
         "intro": [
-          "In this lab, you will practice basic Python by building a calculator to apply a discount to a price."
+          "Neste laboratório, você praticará Python básico criando uma calculadora para aplicar um desconto a um preço."
         ]
       },
       "lecture-understanding-abstraction": {
@@ -4487,15 +4503,15 @@
         "intro": ["Teste o que você aprendeu sobre NodeJS neste questionário."]
       },
       "lecture-working-with-node-core-modules": {
-        "title": "Working with Node Core Modules",
+        "title": "Trabalhando com Módulos Core do Node",
         "intro": [
-          "Learn about the node.js core modules, such as fs, buffer, stream, path modules, and more, so you can understand what Node gives you out of the box to build efficient applications without relying on third-party libraries."
+          "Aprenda sobre os módulos core do Node.js, como fs, buffer, stream e path, e outros, para entender o que o Node oferece por padrão para criar aplicações eficientes sem depender de bibliotecas de terceiros."
         ]
       },
       "lecture-understanding-how-http-dns-tcpip-work": {
-        "title": "Understanding how HTTP, DNS and TCP/IP work",
+        "title": "Entendendo como HTTP, DNS e TCP/IP funcionam",
         "intro": [
-          "Learn the fundamental concepts of how the internet works, focusing on HTTP, DNS, and TCP/IP."
+          "Aprenda os conceitos fundamentais de como a internet funciona, com foco em HTTP, DNS e TCP/IP."
         ]
       },
       "lecture-understanding-the-http-request-response-model": {
@@ -4505,9 +4521,9 @@
         ]
       },
       "lecture-introduction-to-npm": {
-        "title": "Introduction to npm",
+        "title": "Introdução ao npm",
         "intro": [
-          "In these lessons, you will learn about npm, and how it can help you manage your project's dependencies."
+          "Nessas lições, você aprenderá sobre o npm e como ele pode ajudar a gerenciar as dependências do projeto."
         ]
       },
       "lecture-working-with-npm-scripts": {
@@ -4569,7 +4585,7 @@
       "es-a1-chapter-spanish-fundamentals": "Fundamentos do Espanhol",
       "es-a1-chapter-greetings-and-introductions": "Saudações e Apresentações",
       "es-a1-chapter-basic-personal-details": "Detalhes Básicos Pessoais",
-      "es-a1-chapter-describing-company-and-people": "Describing a Company and Its People"
+      "es-a1-chapter-describing-company-and-people": "Descrevendo uma Empresa e suas Pessoas"
     },
     "modules": {
       "es-a1-module-introduction-and-certification-overview": "Introdução e Visão Geral da Certificação",
@@ -4579,9 +4595,9 @@
       "es-a1-module-first-questions": "Primeiras Perguntas",
       "es-a1-module-numbers-10-to-29": "Números 10 a 29",
       "es-a1-module-sharing-your-personal-details": "Compartilhando Seus Detalhes Pessoais",
-      "es-a1-module-numbers-30-to-100": "Numbers 30 to 100",
-      "es-a1-module-describing-a-company": "Describing a Company",
-      "es-a1-module-describing-people-at-work": "Describing People at Work"
+      "es-a1-module-numbers-30-to-100": "Números 30 a 100",
+      "es-a1-module-describing-a-company": "Descrevendo uma Empresa",
+      "es-a1-module-describing-people-at-work": "Descrevendo Pessoas no Trabalho"
     },
     "module-intros": {
       "es-a1-module-sharing-your-personal-details": {
@@ -4591,21 +4607,21 @@
         ]
       },
       "es-a1-module-numbers-30-to-100": {
-        "note": "Coming 2026",
+        "note": "Próximo Lançamento: 2026",
         "intro": [
-          "In this module, you will learn how to read, write, and pronounce numbers from 30 to 100."
+          "Neste módulo, você aprenderá a ler, escrever e pronunciar números de 30 a 100."
         ]
       },
       "es-a1-module-describing-a-company": {
-        "note": "Coming 2026",
+        "note": "Próximo Lançamento: 2026",
         "intro": [
-          "In this module, you will learn how to identify and describe basic information about a company, such as name, website, location, number of employees, and departments."
+          "Neste módulo, você aprenderá a identificar e descrever informações básicas sobre uma empresa, como nome, site, localização, número de funcionários e departamentos."
         ]
       },
       "es-a1-module-describing-people-at-work": {
-        "note": "Coming 2026",
+        "note": "Próximo Lançamento: 2026",
         "intro": [
-          "In this module, you will learn third-person descriptions and how to identify simple corrections in short conversations."
+          "Neste módulo, você aprenderá descrições na terceira pessoa e como identificar correções simples em conversas curtas."
         ]
       }
     },
@@ -4763,75 +4779,75 @@
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-30-to-60": {
-        "title": "Numbers 30 to 60",
+        "title": "Números 30 a 60",
         "intro": ["", ""]
       },
       "es-a1-warm-up-describing-a-company-basics": {
-        "title": "Describing a Company Basics",
+        "title": "Noções Básicas de Descrição de uma Empresa",
         "intro": ["", ""]
       },
       "es-a1-learn-numbers-61-to-100": {
-        "title": "Numbers 61 to 100",
+        "title": "Números 61 a 100",
         "intro": ["", ""]
       },
       "es-a1-practice-using-the-first-100-numbers": {
-        "title": "Using The First 100 Numbers",
+        "title": "Usando os Primeiros 100 Números",
         "intro": ["", ""]
       },
       "es-a1-review-first-100-numbers": {
-        "title": "First 100 Numbers Review",
+        "title": "Revisão dos Primeiros 100 Números",
         "intro": ["", ""]
       },
       "es-a1-quiz-numbers-30-to-100": {
-        "title": "Numbers 30 to 100 Quiz",
+        "title": "Quiz de Números 30 a 100",
         "intro": ["", ""]
       },
       "es-a1-learn-what-the-company-does": {
-        "title": "What the Company Does",
+        "title": "O que a Empresa Faz",
         "intro": ["", ""]
       },
       "es-a1-learn-asking-about-a-company": {
-        "title": "Asking about a Company",
+        "title": "Perguntando sobre uma Empresa",
         "intro": ["", ""]
       },
       "es-a1-practice-company-profile": {
-        "title": "Company Profile",
+        "title": "Perfil da Empresa",
         "intro": ["", ""]
       },
       "es-a1-review-talking-about-a-company": {
-        "title": "Talking About a Company",
+        "title": "Falando sobre uma Empresa",
         "intro": ["", ""]
       },
       "es-a1-quiz-describing-a-company": {
-        "title": "Describing a Company Quiz",
+        "title": "Questionário sobre Descrição de uma Empresa",
         "intro": ["", ""]
       },
       "es-a1-warm-up-describing-people-at-work-basics": {
-        "title": "Describing People at Work Basics",
+        "title": "Noções Básicas de Descrição de Pessoas no Trabalho",
         "intro": ["", ""]
       },
       "es-a1-learn-mini-biographies": {
-        "title": "Mini Biographies ",
+        "title": "Mini Biografias",
         "intro": ["", ""]
       },
       "es-a1-practice-asking-about-mini-biographies": {
-        "title": "Asking About Mini Biographies",
+        "title": "Perguntando sobre Mini Biografias",
         "intro": ["", ""]
       },
       "es-a1-learn-short-workplace-profile": {
-        "title": "Short Workplace Profile ",
+        "title": "Perfil Curto do Local de Trabalho",
         "intro": ["", ""]
       },
       "es-a1-practice-asking-about-short-workplace-profiles": {
-        "title": "Asking About Short Workplace Profiles",
+        "title": "Perguntando sobre Perfis Curtos do Local de Trabalho",
         "intro": ["", ""]
       },
       "es-a1-review-describing-people-at-work": {
-        "title": "Describing People at Work",
+        "title": "Descrevendo Pessoas no Trabalho",
         "intro": ["", ""]
       },
       "es-a1-quiz-describing-people-at-work": {
-        "title": "Describing People at Work",
+        "title": "Descrevendo Pessoas no Trabalho",
         "intro": ["", ""]
       }
     }
