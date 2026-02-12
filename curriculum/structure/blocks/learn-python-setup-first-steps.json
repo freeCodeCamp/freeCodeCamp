@@ -1,0 +1,22 @@
+{
+  "name": "Setup & First Steps",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-setup-first-steps",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "05b8c9b04c6df84636956fab",
+      "title": "Introduction"
+    },
+    {
+      "id": "edeae16d4bf9505165740c75",
+      "title": "Installing Python and PyCharm"
+    },
+    {
+      "id": "8ca3a380a75d00443d9e09bd",
+      "title": "Hello World Program"
+    }
+  ]
+}

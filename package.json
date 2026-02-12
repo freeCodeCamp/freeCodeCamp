@@ -55,6 +55,7 @@
     "rename-challenges": "tsx tools/challenge-helper-scripts/rename-challenge-files.ts",
     "seed": "pnpm seed:surveys && pnpm seed:exams && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user",
     "seed:certified-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --certified-user",
+    "seed:donating-user": "pnpm seed:surveys && pnpm seed:exams && pnpm seed:ms-username && DEBUG=fcc:* node ./tools/scripts/seed/seed-demo-user --set-true isDonating",
     "seed:daily-challenges": "cd tools/daily-challenges && pnpm seed-daily-challenges",
     "seed:exams": "DEBUG=fcc:* node tools/scripts/seed-exams/create-exams",
     "seed:env-exam": "cd api && pnpm run seed:env-exam",
