@@ -66,12 +66,6 @@ test.describe('Completed project preview', () => {
   test('it should be viewable on the timeline', async ({ page }) => {
     await page.goto('/developmentuser');
 
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
-
     await expect(
       page.getByRole('heading', { name: '@developmentuser' })
     ).toBeVisible();

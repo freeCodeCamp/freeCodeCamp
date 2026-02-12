@@ -17,12 +17,6 @@ test.describe('Add Experience Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/developmentuser');
 
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
-
     await page.getByRole('button', { name: 'Edit my profile' }).click();
 
     await expect(async () => {

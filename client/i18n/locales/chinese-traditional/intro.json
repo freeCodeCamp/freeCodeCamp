@@ -3643,6 +3643,12 @@
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
       },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
+      },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Numbers and Mathematical Operations",
         "intro": [
