@@ -5,7 +5,11 @@
   "helpCategory": "Chinese Curriculum",
   "blockLayout": "link",
   "challengeOrder": [
-    { "id": "697adc1a7b6e0290e5a1c124", "title": "Dialogue 1: I'm Tom" }
+    { "id": "697adc1a7b6e0290e5a1c124", "title": "Dialogue 1: I'm Tom" },
+    {
+      "id": "698ddf00d4e94f1583535909",
+      "title": "numbers-below-100-general-review"
+    }
   ],
   "blockLabel": "review"
 }
