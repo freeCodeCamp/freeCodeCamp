@@ -107,7 +107,7 @@
     "react-i18next": "15.5.2",
     "react-instantsearch": "7.13.6",
     "react-instantsearch-core": "7.13.6",
-    "react-monaco-editor": "0.48.0",
+    "react-monaco-editor": "0.59.0",
     "react-redux": "8.1.3",
     "react-reflex": "4.1.0",
     "react-responsive": "9.0.2",

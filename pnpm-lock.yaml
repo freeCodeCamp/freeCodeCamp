@@ -454,8 +454,8 @@ importers:
         specifier: 7.13.6
         version: 7.13.6(algoliasearch@4.22.1)(react@18.2.0)
       react-monaco-editor:
-        specifier: 0.48.0
-        version: 0.48.0(@types/react@18.2.79)(monaco-editor@0.33.0)(react@18.2.0)
+        specifier: 0.59.0
+        version: 0.59.0(monaco-editor@0.33.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       react-redux:
         specifier: 8.1.3
         version: 8.1.3(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1)
@@ -11662,12 +11662,12 @@ packages:
       react: '>0.13.0'
       react-dom: '>0.13.0'
 
-  react-monaco-editor@0.48.0:
-    resolution: {integrity: sha512-fD3ww76aIGJynTa6QZqM9hbRHCQe8v20+W2ofTjLzx8P1FTdoWoPPR6AIqCTMc1xjOrmGJVWFYFp5U6z5C04KQ==}
+  react-monaco-editor@0.59.0:
+    resolution: {integrity: sha512-SggqfZCdUauNk7GI0388bk5n25zYsQ1ai1i+VhxAgwbCH+MTGl7L1fBNTJ6V+oXeUApf+bpzikprHJEZm9J/zA==}
     peerDependencies:
-      '@types/react': ^17.x
-      monaco-editor: ^0.33.0
-      react: ^17.x
+      monaco-editor: ^0.52.0
+      react: '>=16.8.0 <20.0.0'
+      react-dom: '>=16.8.0 <20.0.0'
 
   react-redux@8.1.3:
     resolution: {integrity: sha512-n0ZrutD7DaX/j9VscF+uTALI3oUPa/pO4Z3soOBIjuRn/FzVu6aehhysxZCLi6y7duMf52WNZGMl7CtuK5EnRw==}
@@ -27864,12 +27864,11 @@ snapshots:
       react-dom: 18.2.0(react@18.2.0)
       resize-observer-polyfill: 1.5.1
 
-  react-monaco-editor@0.48.0(@types/react@18.2.79)(monaco-editor@0.33.0)(react@18.2.0):
+  react-monaco-editor@0.59.0(monaco-editor@0.33.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@types/react': 18.2.79
       monaco-editor: 0.33.0
-      prop-types: 15.8.1
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   react-redux@8.1.3(@types/react-dom@18.2.25)(@types/react@18.2.79)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(redux@4.2.1):
     dependencies:
