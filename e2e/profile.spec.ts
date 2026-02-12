@@ -88,13 +88,6 @@ test.describe('Profile component', () => {
   test.describe('when viewing my own profile', () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/certifieduser');
-
-      // If you build the client locally, delete the button click below.
-      if (!process.env.CI) {
-        await page
-          .getByRole('button', { name: 'Preview custom 404 page' })
-          .click();
-      }
     });
 
     test('renders the camper profile correctly', async ({ page }) => {
@@ -173,13 +166,6 @@ test.describe('Profile component', () => {
   test.describe("when viewing someone else's profile", () => {
     test.beforeEach(async ({ page }) => {
       await page.goto('/publicUser');
-
-      // If you build the client locally, delete the button click below.
-      if (!process.env.CI) {
-        await page
-          .getByRole('button', { name: 'Preview custom 404 page' })
-          .click();
-      }
     });
 
     test.describe('while logged in', () => {

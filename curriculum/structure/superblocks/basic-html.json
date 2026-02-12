@@ -1,3 +1,26 @@
 {
-  "blocks": ["cat-photo-app", "recipe-page"]
+  "blocks": [
+    "workshop-curriculum-outline",
+    "lab-debug-camperbots-profile-page",
+    "lecture-understanding-html-attributes",
+    "lab-debug-pet-adoption-page",
+    "lecture-understanding-the-html-boilerplate",
+    "workshop-cat-photo-app",
+    "lab-recipe-page",
+    "lecture-html-fundamentals",
+    "workshop-bookstore-page",
+    "lecture-understanding-how-html-affects-seo",
+    "lab-travel-agency-page",
+    "lecture-working-with-audio-and-video-elements",
+    "workshop-html-video-player",
+    "lab-html-audio-and-video-player",
+    "lecture-working-with-images-and-svgs",
+    "workshop-build-a-heart-icon",
+    "lecture-working-with-media",
+    "workshop-build-a-video-display-using-iframe",
+    "lab-video-compilation-page",
+    "lecture-working-with-links",
+    "review-basic-html",
+    "quiz-basic-html"
+  ]
 }
