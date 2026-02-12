@@ -166,16 +166,36 @@ const ShowQuiz = ({
         value: 4
       };
 
-      return {
+      const allAnswers = shuffleArray([...distractors, answer]);
+
+      const audioData = question.audioData?.audio?.filename
+        ? {
+            audioUrl: `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${question.audioData.audio.filename}`,
+            audioStartTime:
+              question.audioData.audio.startTimestamp ?? undefined,
+            audioFinishTime:
+              question.audioData.audio.finishTimestamp ?? undefined,
+            transcript: question.audioData.transcript.length
+              ? question.audioData.transcript
+                  .map(line => `<p><b>${line.character}</b>: ${line.text}</p>`)
+                  .join('')
+              : undefined
+          }
+        : {};
+
+      const questionData = {
         question: (
           <PrismFormatted
             className='quiz-question-label'
             text={question.text}
           />
         ),
-        answers: shuffleArray([...distractors, answer]),
-        correctAnswer: answer.value
+        answers: allAnswers,
+        correctAnswer: answer.value,
+        ...audioData
       };
+
+      return questionData;
     })
   );
 
@@ -400,6 +420,17 @@ export const query = graphql`
             distractors
             text
             answer
+            audioData {
+              audio {
+                filename
+                startTimestamp
+                finishTimestamp
+              }
+              transcript {
+                character
+                text
+              }
+            }
           }
         }
         tests {

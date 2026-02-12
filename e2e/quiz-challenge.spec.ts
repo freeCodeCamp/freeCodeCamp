@@ -289,3 +289,46 @@ test.describe('Quiz challenge', () => {
     await page.close({ runBeforeUnload: true });
   });
 });
+
+test.describe('Quiz with audio question', () => {
+  test.beforeEach(async ({ page }) => {
+    const fixturePath = path.join(
+      __dirname,
+      'fixtures',
+      'quiz-audio-fixture.json'
+    );
+    const fixture = JSON.parse(fs.readFileSync(fixturePath, 'utf8')) as Quiz[];
+
+    // Intercept the exact page-data.json for the quiz and inject the fixture
+    await page.route(`**/page-data${quizPath}/page-data.json`, async route => {
+      const response = await route.fetch();
+      const body = await response.text();
+
+      const pageData = JSON.parse(body) as PageData;
+      pageData.result.data.challengeNode.challenge.quizzes = fixture;
+
+      await route.fulfill({
+        contentType: 'application/json',
+        body: JSON.stringify(pageData)
+      });
+    });
+
+    await page.goto(quizPath);
+  });
+
+  test('renders audio player and transcript when question has audio', async ({
+    page
+  }) => {
+    await expect(page.getByRole('radiogroup')).toHaveCount(1);
+
+    const audio = page.locator('audio');
+    await expect(audio).toHaveCount(1);
+    await expect(audio).toHaveAttribute(
+      'src',
+      'https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/test-audio.mp3'
+    );
+
+    await page.getByText(/transcript/i).click();
+    await expect(page.getByText('Speaker: Hello world')).toBeVisible();
+  });
+});
