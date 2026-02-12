@@ -6,9 +6,11 @@ import { Loader } from '../components/helpers';
 import LandingTop from '../components/landing/components/landing-top';
 import Testimonials from '../components/landing/components/testimonials';
 import Certifications from '../components/landing/components/certifications';
+import LandingCatalog from '../components/landing/components/landing-catalog';
 import Faq from '../components/landing/components/faq';
 import Benefits from '../components/landing/components/benefits';
 import { useClaimableCertsNotification } from '../components/helpers/use-claimable-certs-notification';
+import { showUpcomingChanges } from '../../config/env.json';
 
 import '../components/landing/landing.css';
 
@@ -22,6 +24,7 @@ const Landing = () => (
     <Benefits />
     <Testimonials />
     <Certifications />
+    {showUpcomingChanges && <LandingCatalog />}
     <Faq />
   </main>
 );

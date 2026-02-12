@@ -6,7 +6,6 @@ const {
 } = require('@freecodecamp/shared/config/challenge-types');
 const {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
 } = require('@freecodecamp/shared/config/curriculum');
@@ -117,7 +116,20 @@ const quizJoi = Joi.object().keys({
           .length(3)
           .required()
           .unique(),
-        answer: Joi.string().required()
+        answer: Joi.string().required(),
+        audioData: Joi.object().keys({
+          audio: Joi.object({
+            filename: Joi.string().required(),
+            startTimestamp: Joi.number(),
+            finishTimestamp: Joi.number()
+          }),
+          transcript: Joi.array().items(
+            Joi.object({
+              character: Joi.string().required(),
+              text: Joi.string().required()
+            })
+          )
+        })
       })
     )
     .custom((value, helpers) => {
@@ -135,7 +147,7 @@ const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
-    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    is: [...chapterBasedSuperBlocks],
     then: Joi.valid(
       'workshop',
       'lab',
@@ -342,6 +354,8 @@ const schema = Joi.object().keys({
       })
   }),
   showSpeakingButton: Joi.bool(),
+  // This is only to be used for dynamic client updates.
+  sourceLocation: Joi.string(),
   solutions: Joi.array().items(Joi.array().items(fileJoi).min(1)),
   superBlock: Joi.string().regex(slugWithSlashRE),
   superOrder: Joi.number(),

@@ -300,7 +300,8 @@
           "dashedName": "algorithms",
           "comingSoon": true,
           "blocks": [
-            "lecture-introduction-to-common-searching-and-sorting-algorithms"
+            "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "lab-bubble-sort-algorithm"
           ]
         },
         {

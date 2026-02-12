@@ -205,7 +205,7 @@
       "cta": "今すぐ学習を始める (無料)"
     },
     "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +215,6 @@
     "next-heading": "ベータ版カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "よくある質問:",
     "faqs": [
