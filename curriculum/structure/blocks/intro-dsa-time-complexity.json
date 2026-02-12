@@ -1,0 +1,34 @@
+{
+  "name": "Time Complexity",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-time-complexity",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dc4a27932b3cc4b19c920",
+      "title": "Efficiency of an Algorithm"
+    },
+    {
+      "id": "698dc59b7932b3cc4b19c921",
+      "title": "Constant and Logarithmic Time"
+    },
+    {
+      "id": "698dc6467932b3cc4b19c922",
+      "title": "Linear & Quadratic Time"
+    },
+    {
+      "id": "698dc6f47932b3cc4b19c923",
+      "title": "Quasilinear Time"
+    },
+    {
+      "id": "698dc79f7932b3cc4b19c924",
+      "title": "Exponential Time"
+    },
+    {
+      "id": "698dc8ae7932b3cc4b19c925",
+      "title": "Determining Complexity"
+    }
+  ]
+}

@@ -205,6 +205,8 @@ export const superBlockNames = {
   'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9,
   'html-forms-and-tables': SuperBlocks.HtmlFormsAndTables,
   'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners,
+  'introduction-to-algorithms-and-data-structures':
+    SuperBlocks.IntroductionToAlgorithmsAndDataStructures,
   'lab-survey-form': SuperBlocks.LabSurveyForm,
   'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
   'computer-basics': SuperBlocks.ComputerBasics,
