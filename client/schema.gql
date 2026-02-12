@@ -1,4 +1,173 @@
-### Type definitions saved at 2026-01-20T15:53:20.990Z ###
+### Type definitions saved at 2026-02-12T12:28:08.262Z ###
+
+enum RemoteFileFit {
+  COVER
+  FILL
+  OUTSIDE
+  CONTAIN
+}
+
+enum RemoteFileFormat {
+  AUTO
+  JPG
+  PNG
+  WEBP
+  AVIF
+}
+
+enum RemoteFileLayout {
+  FIXED
+  FULL_WIDTH
+  CONSTRAINED
+}
+
+enum RemoteFilePlaceholder {
+  DOMINANT_COLOR
+  BLURRED
+  TRACED_SVG
+  NONE
+}
+
+enum RemoteFileCropFocus {
+  CENTER
+  TOP
+  RIGHT
+  BOTTOM
+  LEFT
+  ENTROPY
+  EDGES
+  FACES
+}
+
+type RemoteFileResize {
+  width: Int
+  height: Int
+  src: String
+}
+
+"""
+Remote Interface
+"""
+interface RemoteFile {
+  id: ID!
+  mimeType: String!
+  filename: String!
+  filesize: Int
+  width: Int
+  height: Int
+  publicUrl: String!
+  resize(
+    width: Int
+    height: Int
+    aspectRatio: Float
+    fit: RemoteFileFit = COVER
+
+    """
+    The image formats to generate. Valid values are AUTO (meaning the same
+    format as the source image), JPG, PNG, WEBP and AVIF.
+    The default value is [AUTO, WEBP, AVIF], and you should rarely need to
+    change this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    """
+    format: RemoteFileFormat = AUTO
+    cropFocus: [RemoteFileCropFocus]
+    quality: Int = 75
+  ): RemoteFileResize
+
+  """
+  Data used in the <GatsbyImage /> component. See https://gatsby.dev/img for more info.
+  """
+  gatsbyImage(
+    """
+    The layout for the image.
+    FIXED: A static image sized, that does not resize according to the screen width
+    FULL_WIDTH: The image resizes to fit its container. Pass a "sizes" option if
+    it isn't going to be the full width of the screen.
+    CONSTRAINED: Resizes to fit its container, up to a maximum width, at which point it will remain fixed in size.
+    """
+    layout: RemoteFileLayout = CONSTRAINED
+
+    """
+    The display width of the generated image for layout = FIXED, and the display
+    width of the largest image for layout = CONSTRAINED.
+    The actual largest image resolution will be this value multiplied by the largest value in outputPixelDensities
+    Ignored if layout = FLUID.
+    """
+    width: Int
+
+    """
+    If set, the height of the generated image. If omitted, it is calculated from
+    the supplied width, matching the aspect ratio of the source image.
+    """
+    height: Int
+
+    """
+    Format of generated placeholder image, displayed while the main image loads.
+    BLURRED: a blurred, low resolution image, encoded as a base64 data URI
+    DOMINANT_COLOR: a solid color, calculated from the dominant color of the image (default).
+    TRACED_SVG: deprecated. Will use DOMINANT_COLOR.
+    NONE: no placeholder. Set the argument "backgroundColor" to use a fixed background color.
+    """
+    placeholder: RemoteFilePlaceholder = DOMINANT_COLOR
+
+    """
+    If set along with width or height, this will set the value of the other
+    dimension to match the provided aspect ratio, cropping the image if needed.
+    If neither width or height is provided, height will be set based on the intrinsic width of the source image.
+    """
+    aspectRatio: Float
+
+    """
+    The image formats to generate. Valid values are AUTO (meaning the same
+    format as the source image), JPG, PNG, WEBP and AVIF.
+    The default value is [AUTO, WEBP, AVIF], and you should rarely need to
+    change this. Take care if you specify JPG or PNG when you do
+    not know the formats of the source images, as this could lead to unwanted
+    results such as converting JPEGs to PNGs. Specifying
+    both PNG and JPG is not supported and will be ignored.
+    """
+    formats: [RemoteFileFormat!] = [AUTO, WEBP, AVIF]
+
+    """
+    A list of image pixel densities to generate for FIXED and CONSTRAINED
+    images. You should rarely need to change this. It will never generate images
+    larger than the source, and will always include a 1x image.
+    Default is [ 1, 2 ] for fixed images, meaning 1x, 2x, and [0.25, 0.5, 1, 2]
+    for fluid. In this case, an image with a fluid layout and width = 400 would
+    generate images at 100, 200, 400 and 800px wide.
+    """
+    outputPixelDensities: [Float] = [0.25, 0.5, 1, 2]
+
+    """
+    Specifies the image widths to generate. You should rarely need to change
+    this. For FIXED and CONSTRAINED images it is better to allow these to be
+    determined automatically,
+    based on the image size. For FULL_WIDTH images this can be used to override
+    the default, which is [750, 1080, 1366, 1920].
+    It will never generate any images larger than the source.
+    """
+    breakpoints: [Int] = [750, 1080, 1366, 1920]
+
+    """
+    The "sizes" property, passed to the img tag. This describes the display size of the image.
+    This does not affect the generated images, but is used by the browser to
+    decide which images to download. You can leave this blank for fixed images,
+    or if the responsive image
+    container will be the full width of the screen. In these cases we will generate an appropriate value.
+    """
+    sizes: String
+
+    """
+    Background color applied to the wrapper, or when "letterboxing" an image to another aspect ratio.
+    """
+    backgroundColor: String
+    fit: RemoteFileFit = COVER
+    cropFocus: [RemoteFileCropFocus]
+    quality: Int = 75
+  ): GatsbyImageData
+}
 
 type File implements Node @dontInfer {
   sourceInstanceName: String!
@@ -68,18 +237,19 @@ type Directory implements Node @dontInfer {
   ctime: Date! @dateformat
   birthtime: Date @deprecated(reason: "Use `birthTime` instead")
   birthtimeMs: Float @deprecated(reason: "Use `birthTime` instead")
-  blksize: Int
-  blocks: Int
 }
 
-type Site implements Node @dontInfer {
+type Site implements Node @derivedTypes @dontInfer {
   buildTime: Date @dateformat
   siteMetadata: SiteSiteMetadata
   port: Int
   host: String
   flags: SiteFlags
+  trailingSlash: String
   pathPrefix: String
   polyfill: Boolean
+  jsxRuntime: String
+  graphqlTypegen: Boolean
 }
 
 type SiteSiteMetadata {
@@ -108,6 +278,8 @@ type SitePage implements Node @dontInfer {
   internalComponentName: String!
   componentChunkName: String!
   matchPath: String
+  pageContext: JSON @proxy(from: "context", fromNode: false)
+  pluginCreator: SitePlugin @link(by: "id", from: "pluginCreatorId")
 }
 
 type SitePlugin implements Node @dontInfer {
@@ -118,55 +290,8 @@ type SitePlugin implements Node @dontInfer {
   browserAPIs: [String]
   ssrAPIs: [String]
   pluginFilepath: String
-  pluginOptions: SitePluginPluginOptions
-  packageJson: SitePluginPackageJson
-}
-
-type SitePluginPluginOptions {
-  analyzerMode: String
-  postcssOptions: SitePluginPluginOptionsPostcssOptions
-  prefixes: [String]
-  name: String
-  curriculumPath: String
-  path: String
-  jsFrontmatterEngine: Boolean
-  identity: String
-  pathCheck: Boolean
-  allExtensions: Boolean
-  isTSX: Boolean
-  jsxPragma: String
-}
-
-type SitePluginPluginOptionsPostcssOptions {
-  config: String
-}
-
-type SitePluginPackageJson {
-  name: String
-  description: String
-  version: String
-  main: String
-  author: String
-  license: String
-  dependencies: [SitePluginPackageJsonDependencies]
-  devDependencies: [SitePluginPackageJsonDevDependencies]
-  peerDependencies: [SitePluginPackageJsonPeerDependencies]
-  keywords: [String]
-}
-
-type SitePluginPackageJsonDependencies {
-  name: String
-  version: String
-}
-
-type SitePluginPackageJsonDevDependencies {
-  name: String
-  version: String
-}
-
-type SitePluginPackageJsonPeerDependencies {
-  name: String
-  version: String
+  pluginOptions: JSON
+  packageJson: JSON
 }
 
 type SiteBuildMetadata implements Node @dontInfer {
@@ -202,6 +327,7 @@ type MarkdownWordCount {
 
 type MarkdownRemark implements Node
   @childOf(mimeTypes: ["text/markdown", "text/x-markdown"], types: ["File"])
+  @derivedTypes
   @dontInfer {
   frontmatter: MarkdownRemarkFrontmatter
   excerpt: String
@@ -214,244 +340,26 @@ type MarkdownRemarkFrontmatter {
   title: String
   superBlock: String
   certification: String
-  block: String
 }
 
 type MarkdownRemarkFields {
-  nodeIdentity: String
   slug: String
 }
 
-type ChallengeNode implements Node @dontInfer {
-  challenge: Challenge
-  sourceInstanceName: String
-}
-
-type Challenge {
-  assignments: [String]
-  bilibiliIds: BilibiliIds
-  block: String
-  blockId: String
-  blockLayout: String
-  blockLabel: String
-  certification: String
-  challengeFiles: [FileContents]
-  challengeOrder: Int
-  challengeType: Int
-  chapter: String
-  dashedName: String
-  demoType: String
-  description: String
-  disableLoopProtectPreview: Boolean
-  disableLoopProtectTests: Boolean
-  explanation: String
-  fillInTheBlank: FillInTheBlank
-  forumTopicId: Int
-  hasEditableBoundaries: Boolean
-  helpCategory: String
-  hooks: Hooks
-  id: String
-  instructions: String
-  isLastChallengeInBlock: Boolean
-  isPrivate: Boolean
-  lang: String
-  module: String
-  msTrophyId: String
-  nodules: [Nodule]
-  notes: String
-  order: Int
-  prerequisites: [PrerequisiteChallenge]
-  questions: [Question]
-  quizzes: [Quiz]
-  required: [RequiredResource]
-  saveSubmissionToDB: Boolean
-  scene: Scene
-  solutions: [[FileContents]]
-  suborder: Int
-  superBlock: String
-  superOrder: Int
-  template: String
-  tests: [Test]
-  fields: ChallengeFields
-  title: String
-  transcript: String
-  translationPending: Boolean
-  url: String
-  usesMultifileEditor: Boolean
-  videoId: String
-  videoLocaleIds: VideoLocaleIds
-  videoUrl: String
-  isExam: Boolean
-  showSpeakingButton: Boolean
-  inputType: String
-}
-
-type BilibiliIds {
-  aid: Int
-  bvid: String
-  cid: Int
-}
-
-type FileContents {
-  fileKey: String
-  ext: String
-  name: String
-  contents: String
-  head: String
-  tail: String
-  editableRegionBoundaries: [Int]
-  path: String
-  error: String
-  seed: String
-  id: String
-  history: [String]
-}
-
-type FillInTheBlank {
-  sentence: String
-  blanks: [Blank]
-  inputType: String
-}
-
-type Blank {
-  answer: String
-  feedback: String
-}
-
-type Hooks {
+type ChallengeNodeChallengeHooks {
+  afterEach: String
   beforeAll: String
   beforeEach: String
   afterAll: String
-  afterEach: String
 }
 
-type Nodule {
-  type: String
-  data: JSON
-}
-
-type PrerequisiteChallenge {
-  id: String
-  title: String
-}
-
-type Question {
-  text: String
-  answers: [Answer]
-  solution: Int
-}
-
-type Answer {
-  answer: String
-  feedback: String
-  audioId: String
-}
-
-type Quiz {
-  questions: [QuizQuestion]
-}
-
-type QuizAudio {
-  filename: String
-  startTimestamp: Float
-  finishTimestamp: Float
-}
-
-type QuizTranscriptLine {
-  character: String
-  text: String
-}
-
-type QuizAudioData {
-  audio: QuizAudio
-  transcript: [QuizTranscriptLine]
-}
-
-type QuizQuestion {
-  text: String
-  distractors: [String]
-  answer: String
-  audioData: QuizAudioData
-}
-
-type RequiredResource {
-  link: String
-  raw: Boolean
-  src: String
-  crossDomain: Boolean
-}
-
-type Scene {
-  setup: SceneSetup
-  commands: [SceneCommands]
-}
-
-type SceneSetup {
-  background: String
-  characters: [SetupCharacter]
-  audio: SetupAudio
-  alwaysShowDialogue: Boolean
-}
-
-type SetupCharacter {
-  character: String
-  position: CharacterPosition
-  opacity: Float
-}
-
-type CharacterPosition {
-  x: Float
-  y: Float
-  z: Float
-}
-
-type SetupAudio {
-  filename: String
-  startTime: Float
-  startTimestamp: Float
-  finishTimestamp: Float
-}
-
-type SceneCommands {
-  background: String
-  character: String
-  position: CharacterPosition
-  opacity: Float
-  startTime: Float
-  finishTime: Float
-  dialogue: Dialogue
-}
-
-type Dialogue {
-  text: String
-  align: String
-}
-
-type Test {
-  id: String
-  text: String
-  testString: String
-  title: String
-}
-
-type ChallengeFields {
-  slug: String
-  blockHashSlug: String
-}
-
-type VideoLocaleIds {
-  espanol: String
-  italian: String
-  portuguese: String
-}
-
-type SuperBlockStructure implements Node @dontInfer {
-  blocks: [String]
-  superBlock: String
+type SuperBlockStructure implements Node @derivedTypes @dontInfer {
   chapters: [SuperBlockStructureChapters]
+  superBlock: String
+  blocks: [String]
 }
 
-type SuperBlockStructureChapters {
+type SuperBlockStructureChapters @derivedTypes {
   dashedName: String
   modules: [SuperBlockStructureChaptersModules]
   chapterType: String
@@ -465,12 +373,249 @@ type SuperBlockStructureChaptersModules {
   comingSoon: Boolean
 }
 
-type CertificateNode implements Node @dontInfer {
+type ChallengeNode implements Node @derivedTypes @dontInfer {
+  sourceInstanceName: String
+  challenge: ChallengeNodeChallenge
+}
+
+type ChallengeNodeChallenge @derivedTypes {
+  id: String
+  title: String
+  challengeType: Int
+  dashedName: String
+  demoType: String
+  challengeFiles: [ChallengeNodeChallengeChallengeFiles]
+  solutions: [[ChallengeNodeChallengeSolutions]]
+  assignments: [String]
+  tests: [ChallengeNodeChallengeTests]
+  description: String
+  translationPending: Boolean
+  sourceLocation: String
+  block: String
+  blockLabel: String
+  blockLayout: String
+  hasEditableBoundaries: Boolean
+  order: Int
+  instructions: String
+  questions: [ChallengeNodeChallengeQuestions]
+  superBlock: String
+  superOrder: Int
+  challengeOrder: Int
+  isLastChallengeInBlock: Boolean
+  required: [ChallengeNodeChallengeRequired]
+  helpCategory: String
+  usesMultifileEditor: Boolean
+  disableLoopProtectTests: Boolean
+  disableLoopProtectPreview: Boolean
+  certification: String
+  fields: ChallengeNodeChallengeFields
+  quizzes: [ChallengeNodeChallengeQuizzes]
+  chapter: String
+  module: String
+  hooks: ChallengeNodeChallengeHooks
+  nodules: [ChallengeNodeChallengeNodules]
+  forumTopicId: Int
+  videoId: String
+  bilibiliIds: ChallengeNodeChallengeBilibiliIds
+  saveSubmissionToDB: Boolean
+  lang: String
+  scene: ChallengeNodeChallengeScene
+  explanation: String
+  fillInTheBlank: ChallengeNodeChallengeFillInTheBlank
+  inputType: String
+  videoUrl: String
+  url: String
+  template: String
+  transcript: String
+  isExam: Boolean
+  showSpeakingButton: Boolean
+  videoLocaleIds: ChallengeNodeChallengeVideoLocaleIds
+  notes: String
+  prerequisites: [ChallengeNodeChallengePrerequisites]
+  msTrophyId: String
+}
+
+type ChallengeNodeChallengeChallengeFiles {
+  head: String
+  tail: String
+  id: String
+  editableRegionBoundaries: [Int]
+  history: [String]
+  name: String
+  ext: String
+  path: String
+  fileKey: String
+  contents: String
+  seed: String
+}
+
+type ChallengeNodeChallengeSolutions {
+  head: String
+  tail: String
+  id: String
+  history: [String]
+  name: String
+  ext: String
+  path: String
+  fileKey: String
+  contents: String
+  seed: String
+}
+
+type ChallengeNodeChallengeTests {
+  text: String
+  testString: String
+}
+
+type ChallengeNodeChallengeQuestions @derivedTypes {
+  text: String
+  answers: [ChallengeNodeChallengeQuestionsAnswers]
+  solution: Int
+}
+
+type ChallengeNodeChallengeQuestionsAnswers {
+  answer: String
+  feedback: String
+  audioId: String
+}
+
+type ChallengeNodeChallengeRequired {
+  src: String
+  link: String
+  raw: Boolean
+}
+
+type ChallengeNodeChallengeFields {
+  slug: String
+  blockHashSlug: String
+}
+
+type ChallengeNodeChallengeQuizzes @derivedTypes {
+  questions: [ChallengeNodeChallengeQuizzesQuestions]
+}
+
+type ChallengeNodeChallengeQuizzesQuestions @derivedTypes {
+  text: String
+  distractors: [String]
+  answer: String
+  audioData: ChallengeNodeChallengeQuizzesQuestionsAudioData
+}
+
+type ChallengeNodeChallengeQuizzesQuestionsAudioData @derivedTypes {
+  audio: ChallengeNodeChallengeQuizzesQuestionsAudioDataAudio
+  transcript: [ChallengeNodeChallengeQuizzesQuestionsAudioDataTranscript]
+}
+
+type ChallengeNodeChallengeQuizzesQuestionsAudioDataAudio {
+  filename: String
+  startTimestamp: Int
+  finishTimestamp: Float
+}
+
+type ChallengeNodeChallengeQuizzesQuestionsAudioDataTranscript {
+  character: String
+  text: String
+}
+
+type ChallengeNodeChallengeNodules @derivedTypes {
+  type: String
+  contents: String
+  files: [ChallengeNodeChallengeNodulesFiles]
+}
+
+type ChallengeNodeChallengeNodulesFiles {
+  contents: String
+  ext: String
+  name: String
+  contentsHtml: String
+}
+
+type ChallengeNodeChallengeBilibiliIds {
+  aid: Int
+  bvid: String
+  cid: Int
+}
+
+type ChallengeNodeChallengeScene @derivedTypes {
+  setup: ChallengeNodeChallengeSceneSetup
+  commands: [ChallengeNodeChallengeSceneCommands]
+}
+
+type ChallengeNodeChallengeSceneSetup @derivedTypes {
+  background: String
+  characters: [ChallengeNodeChallengeSceneSetupCharacters]
+  audio: ChallengeNodeChallengeSceneSetupAudio
+  alwaysShowDialogue: Boolean
+}
+
+type ChallengeNodeChallengeSceneSetupCharacters @derivedTypes {
+  character: String
+  position: ChallengeNodeChallengeSceneSetupCharactersPosition
+  opacity: Int
+}
+
+type ChallengeNodeChallengeSceneSetupCharactersPosition {
+  x: Int
+  y: Int
+  z: Float
+}
+
+type ChallengeNodeChallengeSceneSetupAudio {
+  filename: String
+  startTime: Float
+  startTimestamp: Float
+  finishTimestamp: Float
+}
+
+type ChallengeNodeChallengeSceneCommands @derivedTypes {
+  character: String
+  opacity: Int
+  startTime: Float
+  finishTime: Float
+  dialogue: ChallengeNodeChallengeSceneCommandsDialogue
+  position: ChallengeNodeChallengeSceneCommandsPosition
+  background: String
+}
+
+type ChallengeNodeChallengeSceneCommandsDialogue {
+  text: String
+  align: String
+}
+
+type ChallengeNodeChallengeSceneCommandsPosition {
+  x: Int
+  y: Int
+  z: Float
+}
+
+type ChallengeNodeChallengeFillInTheBlank @derivedTypes {
+  sentence: String
+  blanks: [ChallengeNodeChallengeFillInTheBlankBlanks]
+  inputType: String
+}
+
+type ChallengeNodeChallengeFillInTheBlankBlanks {
+  answer: String
+  feedback: String
+}
+
+type ChallengeNodeChallengeVideoLocaleIds {
+  espanol: String
+  italian: String
+  portuguese: String
+}
+
+type ChallengeNodeChallengePrerequisites {
+  id: String
+  title: String
+}
+
+type CertificateNode implements Node @derivedTypes @dontInfer {
   sourceInstanceName: String
   challenge: CertificateNodeChallenge
 }
 
-type CertificateNodeChallenge {
+type CertificateNodeChallenge @derivedTypes {
   id: String
   title: String
   certification: String
