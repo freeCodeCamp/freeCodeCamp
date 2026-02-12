@@ -2533,6 +2533,13 @@
           "You'll practice conditionals to determine the student's grade based on their score."
         ]
       },
+      "lab-story-fragment-restoration": {
+        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
+        "intro": [
+          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
+          "You will practice working with loops by implementing fundamental array algorithms from scratch."
+        ]
+      },
       "lecture-the-var-keyword-and-hoisting": {
         "title": "The var Keyword and Hoisting",
         "intro": [
@@ -3238,13 +3245,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lab-story-fragment-restoration": {
-        "title": "Restore a Coherent Narrative from an Array of Story Fragments",
-        "intro": [
-          "In this lab, you'll restore a coherent narrative from a corrupted array of story fragments.",
-          "You will practice working with loops by implementing fundamental array algorithms from scratch."
-        ]
       }
     }
   },
