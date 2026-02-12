@@ -258,13 +258,11 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
   const result = await graphql(`
     {
       allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
       ) {
         edges {
           node {
