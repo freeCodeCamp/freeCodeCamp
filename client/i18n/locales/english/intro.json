@@ -3172,7 +3172,10 @@
       },
       "quiz-graph-and-trees-js": {
         "title": "Graphs and Trees Quiz",
-        "intro": ["Graphs and Trees Quiz", ""]
+        "intro": [
+          "Graphs and Trees Quiz",
+          "Test what you've learned about graphs and trees with this quiz."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
