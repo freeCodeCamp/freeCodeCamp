@@ -31,8 +31,8 @@ const Honesty = ({ isHonest, updateIsHonest }: HonestyProps): JSX.Element => {
           <p>{t('settings.honesty.p5')}</p>
           <p>{t('settings.honesty.p6')}</p>
           <p>
-            <Trans i18nKey='settings.honesty.p7'>
-              <a href={`mailto:${email}`}>{{ email }}</a>
+            <Trans i18nKey='settings.honesty.p7' values={{ email }}>
+              <a href={`mailto:${email}`}>{'{{email}}'}</a>
             </Trans>
           </p>
         </Panel>

@@ -94,7 +94,11 @@ function Map({ forLanding = false }: MapProps) {
         showUpcomingChanges
       })
         // remove legacy superblocks from main maps - shown in archive map only
-        .filter(stage => stage !== SuperBlockStage.Legacy)
+        .filter(
+          stage =>
+            stage !== SuperBlockStage.Legacy &&
+            stage !== SuperBlockStage.Catalog
+        )
         .map(stage => {
           const superblocks = superBlockStages[stage];
           if (superblocks.length === 0) {
@@ -115,9 +119,6 @@ function Map({ forLanding = false }: MapProps) {
               <h2 className={forLanding ? 'big-heading' : ''}>
                 {t(superBlockHeadings[stage])}
               </h2>
-              {stage === SuperBlockStage.Core && (
-                <p>{t('landing.fsd-restructure-note')}</p>
-              )}
               <ul key={stage}>
                 {superblocks.map(superblock => (
                   <MapLi

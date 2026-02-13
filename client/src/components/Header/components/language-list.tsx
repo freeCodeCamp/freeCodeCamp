@@ -30,12 +30,9 @@ const LanguageList = ({ t, navigate }: LanguageListProps): JSX.Element => {
   const [showList, setShowList] = useState(false);
   const listButtonRef = useRef<HTMLButtonElement>(null);
 
-  const handleClick = (): void => {
-    if (showList) {
-      setShowList(false);
-      return;
-    }
-    setShowList(true);
+  const handleClick = (event: React.MouseEvent): void => {
+    event.stopPropagation();
+    setShowList(prev => !prev);
   };
 
   const handleClickOutside = () => {

@@ -205,7 +205,7 @@
       "cta": "Comienza a aprender ahora (es gratis)"
     },
     "certification-heading": "Obtén certificaciones verificadas gratuitas en:",
-    "core-certs-heading": "Programa de estudios recomendado (aún en beta):",
+    "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprende Inglés para Desarolladores:",
     "learn-spanish-heading": "Aprende Español profesional A1:",
     "learn-chinese-heading": "Aprende Chino Professional:",
@@ -215,7 +215,6 @@
     "next-heading": "Pruebe nuestro plan de estudios beta:",
     "upcoming-heading": "Próximo plan de estudio:",
     "catalog-heading": "Explora nuestro Catálogo:",
-    "fsd-restructure-note": "Si estabas trabajando previamente en nuestro currículo de Desarrollador Full Stack Certificado, no te preocupes: tu progreso está guardado. Lo hemos dividido en certificaciones más pequeñas que puedes obtener a lo largo de tu recorrido.",
     "archive-link": "¿Buscas cursos antiguos? Consulta <0>nuestra página de archivo</0>.",
     "faq": "Preguntas frecuentes:",
     "faqs": [
@@ -291,7 +290,7 @@
     "reset-editor-layout": "Restablecer el diseño del editor",
     "shortcuts-explained": "Dentro de un desafío, pulse ESC seguido del signo de interrogación para mostrar una lista de atajos disponibles.",
     "username": {
-      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres inválidos",
+      "contains invalid characters": "El nombre de usuario \"{{username}}\" contiene caracteres no válidos. Usa solo valores alfanuméricos como 'camperbot' o 'camperbot123'.",
       "is too short": "El nombre de usuario \"{{username}}\" es demasiado corto",
       "is a reserved error code": "El nombre de usuario \"{{username}}\" es un código de error reservado",
       "must be lowercase": "El nombre de usuario \"{{username}}\" debe estar en minúscula",
@@ -323,7 +322,7 @@
       "my-heatmap": "Mi mapa de calor",
       "my-certs": "Mis certificaciones",
       "my-portfolio": "Mi portafolio",
-      "my-experience": "My experience",
+      "my-experience": "Mi experiencia},{",
       "my-timeline": "Mi cronología",
       "my-donations": "Mis donaciones",
       "night-mode": "Modo nocturno",
@@ -438,21 +437,21 @@
     "add-bluesky": "Comparte esta certificacion en BlueSky",
     "add-threads": "Comparte esta certificacion en Threads",
     "experience": {
-      "heading": "Experience",
-      "share-experience": "Share your professional experience",
-      "add": "Add experience",
-      "save": "Save experience",
-      "remove": "Remove experience",
-      "job-title": "Job title",
-      "company": "Company",
-      "location": "Location",
-      "start-date": "Start date",
-      "end-date": "End date",
-      "end-date-helper": "Leave blank if current position",
-      "description": "Description",
-      "present": "Present",
-      "date-format-error": "Please enter the date in MM/YYYY format.",
-      "date-invalid": "Please enter a valid date."
+      "heading": "Experiencia",
+      "share-experience": "Comparte tu experiencia profesional",
+      "add": "Agregar experiencia",
+      "save": "Guardar experiencia",
+      "remove": "Eliminar experiencia",
+      "job-title": "Título del puesto",
+      "company": "Empresa",
+      "location": "Ubicación",
+      "start-date": "Fecha de inicio",
+      "end-date": "Fecha de finalización",
+      "end-date-helper": "Dejar en blanco si es tu puesto actual",
+      "description": "Descripción",
+      "present": "Actual",
+      "date-format-error": "Por favor, introduce la fecha en formato MM/AAAA.",
+      "date-invalid": "Por favor, introduce una fecha válida."
     }
   },
   "footer": {
@@ -715,7 +714,7 @@
     },
     "archive": {
       "title": "Cursos archivados",
-      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+      "content-not-updated": "El contenido de esta sección no se está actualizando, pero aún está disponible para que continúes tu aprendizaje. Recomendamos probar <0>nuestro currículo actual</0>."
     }
   },
   "donate": {
@@ -1008,7 +1007,7 @@
     "keyboard-shortcut-updated": "Hemos actualizado la configuración de los atajos de teclado",
     "subscribe-to-quincy-updated": "Hemos actualizado tu suscripción al correo electrónico de Quincy",
     "portfolio-item-updated": "Hemos actualizado tu portafolio",
-    "experience-updated": "We have updated your experience",
+    "experience-updated": "Hemos actualizado tu experiencia",
     "email-invalid": "El formato del correo electrónico no es válido",
     "email-valid": "Tu correo electrónico fue cambiado con éxito, ¡feliz día programando!",
     "bad-challengeId": "currentChallengeId no es un ID de desafío válido",
@@ -1109,17 +1108,17 @@
   },
   "validation": {
     "max-characters": "Hay un límite máximo de 288 caracteres, te quedan {{charsLeft}}",
-    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
+    "max-characters-500": "Hay un límite máximo de 500 caracteres, te quedan {{charsLeft}}",
     "same-email": "Este correo electrónico es el mismo que tu correo electrónico actual",
     "invalid-email": "No pudimos validar tu correo electrónico correctamente, asegúrate de que sea correcto",
     "email-mismatch": "Ambas nuevas direcciones de correo electrónico deben ser iguales",
     "title-required": "Se requiere un título",
     "title-short": "El título es demasiado corto",
     "title-long": "El título es demasiado largo",
-    "company-required": "Company is required",
-    "company-short": "Company name is too short",
-    "company-long": "Company name is too long",
-    "start-date-required": "Start date is required",
+    "company-required": "Se requiere el nombre de la empresa",
+    "company-short": "El nombre de la empresa es demasiado corto",
+    "company-long": "El nombre de la empresa es demasiado largo",
+    "start-date-required": "Se requiere la fecha de inicio",
     "invalid-url": "No hemos podido validar tu URL correctamente, por favor asegúrate de que sea correcta",
     "invalid-protocol": "La URL debe comenzar con http o https",
     "url-not-image": "La URL debe enlazar directamente hacia un archivo de imagen",

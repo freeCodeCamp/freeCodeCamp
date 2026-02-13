@@ -205,7 +205,7 @@
       "cta": "Comece a aprender agora (é grátis)"
     },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
-    "core-certs-heading": "Currículo recomendado (ainda em beta):",
+    "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
     "learn-spanish-heading": "Aprenda Espanhol Profissional:",
     "learn-chinese-heading": "Aprenda chinês profissional:",
@@ -215,7 +215,6 @@
     "next-heading": "Experimente nosso currículo beta:",
     "upcoming-heading": "Próximo currículo:",
     "catalog-heading": "Explore nosso catálogo:",
-    "fsd-restructure-note": "Se você estava trabalhando anteriormente em nosso currículo de Desenvolvedor Full Stack Certificado, não se preocupe - o progresso foi salvo. Dividimos em certificações menores que você pode alcançar ao longo de sua jornada.",
     "archive-link": "Procurando por um curso mais antigo? Confira <0>nossa página de arquivos</0>.",
     "faq": "Perguntas frequentes:",
     "faqs": [
@@ -291,7 +290,7 @@
     "reset-editor-layout": "Redefinir Layout do Editor",
     "shortcuts-explained": "Dentro de um desafio, aperte ESC seguido pelo ponto de interrogação para mostrar uma lista de atalhos disponíveis.",
     "username": {
-      "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos",
+      "contains invalid characters": "O nome de usuário \"{{username}}\" contém caracteres inválidos. Use apenas valores alfanuméricos como 'camperbot' ou 'camperbot123'.",
       "is too short": "O nome de usuário \"{{username}}\" é muito curto",
       "is a reserved error code": "O nome de usuário \"{{username}}\" é um código de erro reservado",
       "must be lowercase": "O nome do usuário \"{{username}}\" deve estar em letras minúsculas",
@@ -323,7 +322,7 @@
       "my-heatmap": "Meu progresso",
       "my-certs": "Minhas certificações",
       "my-portfolio": "Meu portfólio",
-      "my-experience": "My experience",
+      "my-experience": "Minha experiência",
       "my-timeline": "Minha linha do tempo",
       "my-donations": "Minhas doações",
       "night-mode": "Modo noturno",
@@ -438,21 +437,21 @@
     "add-bluesky": "Compartilhar esta certificação no BlueSky",
     "add-threads": "Compartilhar esta certificação no Threads",
     "experience": {
-      "heading": "Experience",
-      "share-experience": "Share your professional experience",
-      "add": "Add experience",
-      "save": "Save experience",
-      "remove": "Remove experience",
-      "job-title": "Job title",
-      "company": "Company",
-      "location": "Location",
-      "start-date": "Start date",
-      "end-date": "End date",
-      "end-date-helper": "Leave blank if current position",
-      "description": "Description",
-      "present": "Present",
-      "date-format-error": "Please enter the date in MM/YYYY format.",
-      "date-invalid": "Please enter a valid date."
+      "heading": "Experiência",
+      "share-experience": "Compartilhe a experiência profissional",
+      "add": "Adicionar experiência",
+      "save": "Salvar experiência",
+      "remove": "Remover experiência",
+      "job-title": "Cargo",
+      "company": "Empresa",
+      "location": "Localização",
+      "start-date": "Data de início",
+      "end-date": "Data de término",
+      "end-date-helper": "Deixe em branco se for o cargo atual",
+      "description": "Descrição",
+      "present": "Presente",
+      "date-format-error": "Por favor, insira a data no formato MM/AAAA.",
+      "date-invalid": "Por favor, insira uma data válida."
     }
   },
   "footer": {
@@ -715,7 +714,7 @@
     },
     "archive": {
       "title": "Nossos cursos arquivados",
-      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
+      "content-not-updated": "O conteúdo desta seção não está sendo atualizado, mas ainda está disponível para você continuar aprendendo. Recomendamos experimentar <0>nosso currículo atual</0>."
     }
   },
   "donate": {
@@ -1008,7 +1007,7 @@
     "keyboard-shortcut-updated": "Atualizamos suas configurações de atalhos de teclado",
     "subscribe-to-quincy-updated": "Atualizamos sua assinatura da newsletter do Quincy",
     "portfolio-item-updated": "Atualizamos seu portfólio",
-    "experience-updated": "We have updated your experience",
+    "experience-updated": "Atualizamos a experiência",
     "email-invalid": "Formato de e-mail inválido",
     "email-valid": "Seu e-mail foi alterado com sucesso. Feliz programação!",
     "bad-challengeId": "currentChallengeId não é um ID válido de desafio",
@@ -1109,17 +1108,17 @@
   },
   "validation": {
     "max-characters": "Há um limite máximo de 288 caracteres, você tem {{charsLeft}} restante(s)",
-    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
+    "max-characters-500": "Há um limite máximo de 500 caracteres, você tem {{charsLeft}} restante(s)",
     "same-email": "Este e-mail é igual ao seu e-mail atual",
     "invalid-email": "Não foi possível validar seu e-mail, verifique se ele está correto",
     "email-mismatch": "Os dois novos endereços de e-mail devem ser iguais",
     "title-required": "O título é obrigatório",
     "title-short": "O título é muito curto",
     "title-long": "O título é muito longo",
-    "company-required": "Company is required",
-    "company-short": "Company name is too short",
-    "company-long": "Company name is too long",
-    "start-date-required": "Start date is required",
+    "company-required": "Empresa é obrigatória",
+    "company-short": "O nome da empresa é muito curto",
+    "company-long": "O nome da empresa é muito longo",
+    "start-date-required": "A data de início é obrigatória",
     "invalid-url": "Não foi possível validar seu URL corretamente. Certifique-se de que está correto",
     "invalid-protocol": "O URL deve começar com http ou https",
     "url-not-image": "O URL deve estar vinculado diretamente a um arquivo de imagem",
