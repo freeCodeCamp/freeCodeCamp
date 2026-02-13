@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -83,20 +83,21 @@ function CompletionModal({
   submitChallenge,
   t
 }: CompletionModalProps): JSX.Element {
-  const downloadURL = useMemo(() => {
-    if (!isOpen || !challengeFiles?.length) return null;
-    const allFileContents = combineFileData(challengeFiles);
-    const blob = new Blob([allFileContents], { type: 'text/json' });
-    return URL.createObjectURL(blob);
-  }, [isOpen, challengeFiles]);
-
+  const [downloadURL, setDownloadURL] = useState<string>();
+  // We can't useMemo here, because it does not guarantee that the URL object
+  // will be revoked when the dependencies change.
   useEffect(() => {
-    return () => {
-      if (downloadURL) {
-        URL.revokeObjectURL(downloadURL);
-      }
-    };
-  }, [downloadURL]);
+    // downloadURL is not in the dependency array because it should only change
+    // if the challengeFiles change. It is in the useEffect so that we cannot
+    // leak URL objects.
+    if (downloadURL) URL.revokeObjectURL(downloadURL);
+    if (challengeFiles?.length) {
+      const allFileContents = combineFileData(challengeFiles);
+      const blob = new Blob([allFileContents], { type: 'text/json' });
+      setDownloadURL(URL.createObjectURL(blob));
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [challengeFiles]);
 
   useEffect(() => {
     return () => {
