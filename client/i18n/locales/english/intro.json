@@ -3172,7 +3172,10 @@
       },
       "review-graphs-and-trees-js": {
         "title": "Graphs and Trees Review",
-        "intro": ["Graphs and Trees Review", ""]
+        "intro": [
+          "Graphs and Trees Review",
+          "Before you are quizzed on graphs and trees, you should review what you've learned."
+        ]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
