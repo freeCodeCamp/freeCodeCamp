@@ -32,7 +32,7 @@ You should define a variable named `each_pays`.
 })
 ```
 
-You should use the `round()` function to round `final_bill` to two decimal places.
+You should use the `round()` function to round `final_bill` to two decimal places and assign the result to your `each_pays` variable.
 
 ```js
 ({
