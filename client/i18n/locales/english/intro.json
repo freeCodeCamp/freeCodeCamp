@@ -3171,8 +3171,8 @@
         ]
       },
       "quiz-graph-and-trees-js": {
-        "title": "Graphs and Trees quiz",
-        "intro": ["Graphs and Trees quiz", ""]
+        "title": "Graphs and Trees Quiz",
+        "intro": ["Graphs and Trees Quiz", ""]
       },
       "lecture-understanding-functional-programming": {
         "title": "Understanding Functional Programming",
