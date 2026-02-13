@@ -16,7 +16,7 @@ num = 4.815162342
 round(num, 3) # 4.815
 ```
 
-Use the `round()` function to round `final_bill` to 2 decimal places and assign the result to a new variable named `each_pays`.
+Use the `round()` function to round `final_bill` to two decimal places and assign the result to a new variable named `each_pays`.
 
 Finally, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
 
