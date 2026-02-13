@@ -9,7 +9,12 @@ dashedName: step-8
 
 The bill is split, but division often results in long decimal numbers. Since money is typically represented with two decimal places, you should round the final result.
 
-Python provides a built-in `round()` function for this. It takes two arguments: the number you want to round and the number of decimal places to keep.
+Python provides a built-in `round()` function for this. It takes two arguments: the number you want to round and the number of decimal places to keep. Here's an example:
+
+```py
+num = 4.815162342
+round(num, 3) # 4.815
+```
 
 Use the `round()` function to round `final_bill` to 2 decimal places and assign the result to a new variable named `each_pays`.
 
