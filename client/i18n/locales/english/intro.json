@@ -2421,7 +2421,10 @@
       },
       "lab-playlist-remix-engine": {
         "title": "Build a Playlist Remix Engine",
-        "intro": ["Build a Playlist Remix Engine", ""]
+        "intro": [
+          "In this lab, you will build a Playlist Remix Engine using JavaScript arrays.", 
+          "You will apply array methods and logic to transform data and generate a final remix schedule."
+        ]
       },
       "review-javascript-arrays": {
         "title": "JavaScript Arrays Review",
