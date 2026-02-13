@@ -3225,6 +3225,12 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-quicksort-js": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort an array of integers."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3311,10 +3317,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "lab-quicksort-js": {
-        "title": "Implement the Quicksort Algorithm",
-        "intro": ["Implement the Quicksort Algorithm", ""]
       }
     }
   },
