@@ -1,20 +1,20 @@
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
+import Joi from 'joi';
+import joiObjectId from 'joi-objectid';
 
-const {
-  challengeTypes
-} = require('@freecodecamp/shared/config/challenge-types');
-const {
+Joi.objectId = joiObjectId(Joi);
+
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
   chapterBasedSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('@freecodecamp/shared/config/curriculum');
-const {
+} from '@freecodecamp/shared/config/curriculum';
+import {
   availableCharacters,
   availableBackgrounds,
   availableAudios,
   availableAlignments
-} = require('./scene-assets');
+} from './scene-assets.js';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -143,7 +143,7 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object().keys({
+export const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
@@ -395,6 +395,6 @@ const schema = Joi.object().keys({
   usesMultifileEditor: Joi.boolean()
 });
 
-exports.challengeSchemaValidator = () => {
+export const challengeSchemaValidator = () => {
   return challenge => schema.validate(challenge);
 };
