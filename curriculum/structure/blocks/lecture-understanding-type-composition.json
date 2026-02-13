@@ -5,5 +5,18 @@
   "dashedName": "lecture-understanding-type-composition",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-list",
-  "challengeOrder": [{ "id": "698f4f9ff24a150af1b1fa06", "title": "Step 1" }]
+  "challengeOrder": [
+    {
+      "id": "698f4f9ff24a150af1b1fa06",
+      "title": "How Do The any, never, unknown and void Types Work?"
+    },
+    {
+      "id": "698f5a372871b5dfb9e01698",
+      "title": "What are Union Types and How Do They Work?"
+    },
+    {
+      "id": "698f5a3a492176259d1afcf9",
+      "title": "What are Interfaces and How Do They Work?"
+    }
+  ]
 }
