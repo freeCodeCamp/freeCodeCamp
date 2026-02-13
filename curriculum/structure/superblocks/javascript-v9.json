@@ -301,7 +301,8 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-common-searching-and-sorting-algorithms",
-            "lab-bubble-sort-algorithm"
+            "lab-bubble-sort-algorithm",
+            "lab-insertion-sort"
           ]
         },
         {
