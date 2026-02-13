@@ -1,0 +1,9 @@
+{
+  "name": "Understanding Type Composition",
+  "blockLabel": "lecture",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-type-composition",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [{ "id": "698f4f9ff24a150af1b1fa06", "title": "Step 1" }]
+}

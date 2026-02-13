@@ -11,7 +11,11 @@
     },
     {
       "id": "67d3018062fe6ba92b7d8299",
-      "title": "How Do the Different Types Work in TypeScript?"
+      "title": "How Do Primitive Types Work in TypeScript?"
+    },
+    {
+      "id": "698f53374f7ad3a078dafbc0",
+      "title": "How Do Types Work with Objects and Arrays?"
     }
   ],
   "helpCategory": "JavaScript"

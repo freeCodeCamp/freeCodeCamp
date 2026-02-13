@@ -1,0 +1,9 @@
+{
+  "name": "Working with Functions in TypeScript",
+  "blockLabel": "lecture",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-functions-in-typescript",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [{ "id": "698f515e99f9a25a3462f97f", "title": "Step 1" }]
+}
