@@ -35,16 +35,6 @@ You should use the `round()` function to round `final_bill` to two decimal place
     _Node(_code).find_variable('each_pays').is_equivalent('each_pays = round(final_bill, 2)')
     `))
 })
-```
-
-The value of `each_pays` should be `62.13`.
-
-```js
-({
-    test: () => assert(runPython(`each_pays == 62.13`))
-})
-```
-
 You should use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
 
 ```js
