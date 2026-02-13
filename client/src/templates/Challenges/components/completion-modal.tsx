@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useMemo, useEffect, useCallback } from 'react';
 import type { TFunction } from 'i18next';
 import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
@@ -60,14 +60,10 @@ const mapDispatchToProps = {
 
 type StateProps = ReturnType<typeof mapStateToProps>;
 
-interface CompletionModalsProps extends StateProps {
+interface CompletionModalProps extends StateProps {
   close: () => void;
   submitChallenge: () => void;
   t: TFunction;
-}
-
-interface CompletionModalState {
-  downloadURL: null | string;
 }
 
 interface DownloadableChallengeFile {
@@ -76,159 +72,131 @@ interface DownloadableChallengeFile {
   contents: string;
 }
 
-class CompletionModal extends Component<
-  CompletionModalsProps,
-  CompletionModalState
-> {
-  static displayName: string;
-  constructor(props: CompletionModalsProps) {
-    super(props);
-    this.handleKeypress = this.handleKeypress.bind(this);
-    this.state = {
-      downloadURL: null
+function CompletionModal({
+  challengeFiles,
+  close,
+  dashedName,
+  isOpen,
+  isSignedIn,
+  isSubmitting,
+  message,
+  submitChallenge,
+  t
+}: CompletionModalProps): JSX.Element {
+  const downloadURL = useMemo(() => {
+    if (!isOpen || !challengeFiles?.length) return null;
+    const allFileContents = combineFileData(challengeFiles);
+    const blob = new Blob([allFileContents], { type: 'text/json' });
+    return URL.createObjectURL(blob);
+  }, [isOpen, challengeFiles]);
+
+  useEffect(() => {
+    return () => {
+      if (downloadURL) {
+        URL.revokeObjectURL(downloadURL);
+      }
     };
-  }
+  }, [downloadURL]);
 
-  static getDerivedStateFromProps(
-    props: Readonly<CompletionModalsProps>,
-    state: CompletionModalState
-  ): CompletionModalState {
-    const { challengeFiles, isOpen } = props;
-    if (!isOpen) {
-      return {
-        downloadURL: null
-      };
-    }
-    const { downloadURL } = state;
-    if (downloadURL) {
-      URL.revokeObjectURL(downloadURL);
-    }
-    let newURL = null;
-    if (challengeFiles?.length) {
-      const allFileContents = combineFileData(challengeFiles);
-      const blob = new Blob([allFileContents], {
-        type: 'text/json'
-      });
-      newURL = URL.createObjectURL(blob);
-    }
-    return {
-      downloadURL: newURL
+  useEffect(() => {
+    return () => {
+      close();
     };
-  }
+  }, [close]);
 
-  handleKeypress(e: React.KeyboardEvent): void {
-    if (e.key === 'Escape') {
-      e.stopPropagation();
-      this.props.close();
-    }
-    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-      e.preventDefault();
-      // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
-      // getting to it.
-      e.stopPropagation();
-      this.props.submitChallenge();
-    }
-  }
-
-  componentWillUnmount(): void {
-    if (this.state.downloadURL) {
-      URL.revokeObjectURL(this.state.downloadURL);
-    }
-    this.props.close();
-  }
-
-  componentDidUpdate(prevProps: CompletionModalsProps): void {
-    const { isOpen: prevIsOpen } = prevProps;
-    const { isOpen } = this.props;
-    if (!prevIsOpen && isOpen) {
+  useEffect(() => {
+    if (isOpen) {
       callGA({ event: 'pageview', pagePath: '/completion-modal' });
     }
-  }
+  }, [isOpen]);
 
-  render(): JSX.Element {
-    const {
-      close,
-      isOpen,
-      isSignedIn,
-      isSubmitting,
-      message,
-      t,
-      dashedName,
-      submitChallenge
-    } = this.props;
-
-    const isMacOS = navigator.userAgent.includes('Mac OS');
-
-    const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
-
-    let buttonText;
-    if (isDesktop) {
-      if (isMacOS) {
-        buttonText = isSignedIn
-          ? t('buttons.submit-and-go-cmd')
-          : t('buttons.go-to-next-cmd');
-      } else {
-        buttonText = isSignedIn
-          ? t('buttons.submit-and-go-ctrl')
-          : t('buttons.go-to-next-ctrl');
+  const handleKeypress = useCallback(
+    (e: React.KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        close();
       }
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+        e.preventDefault();
+        // Since Hotkeys also listens to Ctrl + Enter we have to stop this event
+        // getting to it.
+        e.stopPropagation();
+        submitChallenge();
+      }
+    },
+    [close, submitChallenge]
+  );
+
+  const isMacOS = navigator.userAgent.includes('Mac OS');
+
+  const isDesktop = window.innerWidth > MAX_MOBILE_WIDTH;
+
+  let buttonText;
+  if (isDesktop) {
+    if (isMacOS) {
+      buttonText = isSignedIn
+        ? t('buttons.submit-and-go-cmd')
+        : t('buttons.go-to-next-cmd');
     } else {
       buttonText = isSignedIn
-        ? t('buttons.submit-and-go')
-        : t('buttons.go-to-next');
+        ? t('buttons.submit-and-go-ctrl')
+        : t('buttons.go-to-next-ctrl');
     }
+  } else {
+    buttonText = isSignedIn
+      ? t('buttons.submit-and-go')
+      : t('buttons.go-to-next');
+  }
 
-    return (
-      <Modal
-        onClose={close}
-        open={!!isOpen}
-        size='large'
-        // eslint-disable-next-line @typescript-eslint/unbound-method
-        onKeyDown={isOpen ? this.handleKeypress : undefined}
-      >
-        <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
-        <Modal.Body className='completion-modal-body'>
-          <GreenPass
-            className='completion-success-icon'
-            data-testid='fcc-completion-success-icon'
-            data-playwright-test-label='completion-success-icon'
-          />
-          <div className='completion-block-details'>
-            <Progress />
+  return (
+    <Modal
+      onClose={close}
+      open={!!isOpen}
+      size='large'
+      onKeyDown={isOpen ? handleKeypress : undefined}
+    >
+      <Modal.Header closeButtonClassNames='close'>{message}</Modal.Header>
+      <Modal.Body className='completion-modal-body'>
+        <GreenPass
+          className='completion-success-icon'
+          data-testid='fcc-completion-success-icon'
+          data-playwright-test-label='completion-success-icon'
+        />
+        <div className='completion-block-details'>
+          <Progress />
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        {isSignedIn ? null : (
+          <div className='completion-modal-login-btn'>
+            <Login block={true}>{t('learn.sign-in-save')}</Login>
+            <Spacer size='xxs' />
           </div>
-        </Modal.Body>
-        <Modal.Footer>
-          {isSignedIn ? null : (
-            <div className='completion-modal-login-btn'>
-              <Login block={true}>{t('learn.sign-in-save')}</Login>
-              <Spacer size='xxs' />
-            </div>
-          )}
+        )}
+        <Button
+          block={true}
+          size='large'
+          variant='primary'
+          disabled={isSubmitting}
+          onClick={() => submitChallenge()}
+        >
+          {buttonText}
+        </Button>
+        <Spacer size='xxs' />
+        {downloadURL ? (
           <Button
             block={true}
             size='large'
             variant='primary'
-            disabled={isSubmitting}
-            onClick={() => submitChallenge()}
+            download={`${dashedName}.txt`}
+            href={downloadURL}
           >
-            {buttonText}
+            {t('learn.download-solution')}
           </Button>
-          <Spacer size='xxs' />
-          {this.state.downloadURL ? (
-            <Button
-              block={true}
-              size='large'
-              variant='primary'
-              download={`${dashedName}.txt`}
-              href={this.state.downloadURL}
-            >
-              {t('learn.download-solution')}
-            </Button>
-          ) : null}
-        </Modal.Footer>
-      </Modal>
-    );
-  }
+        ) : null}
+      </Modal.Footer>
+    </Modal>
+  );
 }
 
 CompletionModal.displayName = 'CompletionModal';
