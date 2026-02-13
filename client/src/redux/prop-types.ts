@@ -258,6 +258,7 @@ export type ChallengeNode = {
     tail: string[];
     template: string;
     tests: Test[];
+    challengeNumber: number;
     title: string;
     transcript: string;
     translationPending: boolean;
@@ -524,6 +525,7 @@ export type ChallengeMeta = {
   id: string;
   isFirstStep: boolean;
   superBlock: SuperBlocks | 'daily-coding-challenge';
+  challengeNumber?: number;
   title?: string;
   challengeType?: number;
   helpCategory: string;
