@@ -45,14 +45,14 @@ assert.match(linkHrefValue, /^(\.\/)?styles\.css$/);
 ```html
 <!DOCTYPE html>
 <html lang="en">
---fcc-editable-region--
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Colored Boxes</title>
+--fcc-editable-region--
     
-  </head>
---fcc-editable-region--  
+--fcc-editable-region-- 
+  </head> 
   <body>
     <header>
       <h1>Colored Boxes Layout</h1>
