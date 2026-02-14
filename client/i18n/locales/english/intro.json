@@ -2975,10 +2975,10 @@
           "In these lectures, you will learn about form validation in JavaScript. You will learn about the various ways to validate forms, how the <code>preventDefault()</code> method works, and how the submit event works."
         ]
       },
-      "workshop-calorie-counter": {
-        "title": "Build a Calorie Counter",
+      "workshop-envelope-budget-app": {
+        "title": "Build an Envelope Budget App",
         "intro": [
-          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this calorie counter workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
+          "Sometimes when you're coding a web application, you'll need to be able to accept input from a user. In this envelope budget app workshop, you'll practice how to validate user input, perform calculations based on that input, and dynamically update your interface to display the results.",
           "You'll also practice basic regular expressions, template literals, the <code>addEventListener()</code> method, and more."
         ]
       },
