@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import { escape, isEmpty } from 'lodash-es';
+import { escape as escapeHtml, isEmpty } from 'lodash-es';
 import { channel } from 'redux-saga';
 import {
   call,
@@ -54,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { allChallengesInfoSelector } from '../../../redux/selectors';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -141,7 +142,8 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      const allChallengesInfo = yield select(allChallengesInfoSelector);
+      if (isBlockCompleted && allChallengesInfo?.challengeNodes?.length) {
         fireConfetti();
       }
     } else {
@@ -173,7 +175,7 @@ function* takeEveryConsole(channel) {
   // TODO: move all stringifying and escaping into the reducer so there is a
   // single place responsible for formatting the console output.
   yield takeEvery(channel, function* (args) {
-    yield put(updateConsole(escape(args)));
+    yield put(updateConsole(escapeHtml(args)));
   });
 }
 
@@ -220,7 +222,7 @@ export function* executeTests(testRunner, tests, testTimeout = 5000) {
         newTest.message = `${newTest.message} (${newTest.err})`;
       } else {
         const { message, stack } = err;
-        newTest.err = message + '\n' + stack;
+        newTest.err = `${message}\n${stack}`;
         newTest.stack = stack;
       }
 
@@ -328,7 +330,7 @@ export function* previewChallengeSaga(action) {
     // If the preview fails, the most useful thing to do is to show the learner
     // what the error is. As such, we replace whatever is in the console with
     // the error message.
-    yield put(initConsole(escape(err)));
+    yield put(initConsole(escapeHtml(err)));
   }
 }
 
