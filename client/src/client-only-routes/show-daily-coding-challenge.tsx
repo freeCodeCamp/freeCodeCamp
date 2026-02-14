@@ -66,18 +66,18 @@ function formatChallengeData({
   };
 
   const pageContext = {
-    challengeMeta: {
-      id,
-      superBlock: 'daily-coding-challenge',
-      block: 'daily-coding-challenge',
-      disableLoopProtectTests: true,
+  challengeMeta: {
+    id,
+    dashedName: `challenge-${challengeNumber}`,
+    superBlock: 'daily-coding-challenge',
+    block: 'daily-coding-challenge',
+    disableLoopProtectTests: true,
+    isFirstStep: false,
+    nextChallegePath: undefined,
+    prevChallengePath: undefined,
+    disableLoopProtectPreview: false
+  },
 
-      // props to satisfy the show classic component
-      isFirstStep: false,
-      nextChallegePath: undefined,
-      prevChallengePath: undefined,
-      disableLoopProtectPreview: false
-    },
 
     // props to satisfy the show classic component
     projectPreview: {
