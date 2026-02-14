@@ -440,17 +440,19 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
         // TODO(Post-MVP): make userId unique and then we can upsert.
 
-        await fastify.prisma.msUsername.deleteMany({
-          where: { userId: user.id }
-        });
-
-        await fastify.prisma.msUsername.create({
-          data: {
-            msUsername: userName,
-            ttl,
-            userId: user.id
-          }
-        });
+        // TODO(Post-MVP): make userId unique and then we can upsert.
+        await fastify.prisma.$transaction([
+          fastify.prisma.msUsername.deleteMany({
+            where: { userId: user.id }
+          }),
+          fastify.prisma.msUsername.create({
+            data: {
+              msUsername: userName,
+              ttl,
+              userId: user.id
+            }
+          })
+        ]);
 
         return { msUsername: userName };
       } catch (err) {
