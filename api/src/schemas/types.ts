@@ -80,7 +80,8 @@ export const profileUI = Type.Object({
   showPoints: Type.Boolean(),
   showPortfolio: Type.Boolean(),
   showTimeLine: Type.Boolean(),
-  showExperience: Type.Boolean()
+  showExperience: Type.Boolean(),
+  showEducation: Type.Boolean()
 });
 
 export const experience = Type.Object({
@@ -91,4 +92,15 @@ export const experience = Type.Object({
   startDate: Type.String(),
   endDate: Type.Optional(Type.String()),
   description: Type.String()
+});
+
+export const education = Type.Object({
+  id: Type.String(),
+  school: Type.String(),
+  degree: Type.String(),
+  fieldOfStudy: Type.Optional(Type.String()),
+  location: Type.Optional(Type.String()),
+  startDate: Type.Optional(Type.String()),
+  endDate: Type.Optional(Type.String()),
+  description: Type.Optional(Type.String())
 });

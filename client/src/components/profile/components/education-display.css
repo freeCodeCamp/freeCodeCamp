@@ -1,0 +1,15 @@
+.education-school {
+  font-weight: normal;
+  margin-top: 0.5rem;
+}
+
+.education-date {
+  color: #858591;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+.education-description {
+  margin-top: 0.75rem;
+  white-space: pre-wrap;
+}

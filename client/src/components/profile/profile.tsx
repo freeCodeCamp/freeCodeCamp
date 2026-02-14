@@ -6,6 +6,7 @@ import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
 import Experience from './components/experience';
+import Education from './components/education';
 
 import UsernameSettings from './components/username';
 import About from './components/about';
@@ -19,6 +20,7 @@ import HeatMap from './components/heat-map';
 import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
+import { EducationDisplay } from './components/education-display';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -49,7 +51,7 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
 };
 
 const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
-  const { portfolio, experience, username } = user;
+  const { portfolio, experience, education, username } = user;
   const { t } = useTranslation();
   return (
     <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
@@ -64,6 +66,8 @@ const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
         <Portfolio portfolio={portfolio} />
         <Spacer size='m' />
         <Experience experience={experience || []} />
+        <Spacer size='m' />
+        <Education education={education || []} />
       </Modal.Body>
     </Modal>
   );
@@ -100,6 +104,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       showPoints,
       showPortfolio,
       showExperience,
+      showEducation,
       showTimeLine
     },
     calendar,
@@ -107,7 +112,8 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
     username,
     points,
     portfolio,
-    experience
+    experience,
+    education
   } = user;
 
   return (
@@ -133,6 +139,7 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       {showExperience ? (
         <ExperienceDisplay experience={experience || []} />
       ) : null}
+      {showEducation ? <EducationDisplay education={education || []} /> : null}
       {showCerts ? <Certifications user={user} /> : null}
       {showTimeLine ? (
         <Timeline completedMap={completedChallenges} username={username} />

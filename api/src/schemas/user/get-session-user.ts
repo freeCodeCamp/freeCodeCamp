@@ -3,7 +3,8 @@ import {
   examResults,
   profileUI,
   savedChallenge,
-  experience
+  experience,
+  education
 } from '../types.js';
 
 const languages = Type.Array(
@@ -124,6 +125,7 @@ export const getSessionUser = {
             })
           ),
           experience: Type.Optional(Type.Array(experience)),
+          education: Type.Optional(Type.Array(education)),
           profileUI,
           sendQuincyEmail: Type.Union([Type.Null(), Type.Boolean()]), //           // Tri-state: null (likely new user), true (subscribed), false (unsubscribed)
           theme: Type.String(),

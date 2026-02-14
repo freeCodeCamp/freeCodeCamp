@@ -20,6 +20,7 @@ import {
   putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
   putUpdateMyExperience,
+  putUpdateMyEducation,
   putUpdateMyProfileUI,
   putUpdateMyQuincyEmail,
   putUpdateMySocials,
@@ -44,6 +45,8 @@ import {
   updateMyPortfolioError,
   updateMyExperienceComplete,
   updateMyExperienceError,
+  updateMyEducationComplete,
+  updateMyEducationError,
   updateMyQuincyEmailComplete,
   updateMyQuincyEmailError,
   updateMySocialsComplete,
@@ -182,6 +185,16 @@ function* updateMyExperienceSaga({ payload: update }) {
   }
 }
 
+function* updateMyEducationSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyEducation, update);
+    yield put(updateMyEducationComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyEducationError);
+  }
+}
+
 function* validateUsernameSaga({ payload }) {
   try {
     const {
@@ -252,6 +265,7 @@ export function createSettingsSagas(types) {
     takeEvery(types.updateMyQuincyEmail, updateMyQuincyEmailSaga),
     takeEvery(types.updateMyPortfolio, updateMyPortfolioSaga),
     takeEvery(types.updateMyExperience, updateMyExperienceSaga),
+    takeEvery(types.updateMyEducation, updateMyEducationSaga),
     takeLatest(types.submitNewAbout, submitNewAboutSaga),
     takeLatest(types.submitNewUsername, submitNewUsernameSaga),
     debounce(2000, types.validateUsername, validateUsernameSaga),

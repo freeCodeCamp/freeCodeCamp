@@ -138,7 +138,8 @@ export const normalizeProfileUI = (
         showPoints: false,
         showPortfolio: false,
         showTimeLine: false,
-        showExperience: false
+        showExperience: false,
+        showEducation: false
       };
 };
 

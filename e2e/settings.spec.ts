@@ -167,10 +167,10 @@ test.describe('Settings - Certified User', () => {
     ).toBeVisible();
     await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(11);
+    ).toHaveCount(12);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(11);
+    ).toHaveCount(12);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });
