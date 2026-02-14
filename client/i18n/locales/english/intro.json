@@ -3311,6 +3311,10 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
+      },
+      "lab-selection-sort-js": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": ["Implement the Selection Sort Algorithm", ""]
       }
     }
   },

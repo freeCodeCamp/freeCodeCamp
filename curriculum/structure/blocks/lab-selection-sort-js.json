@@ -1,0 +1,10 @@
+{
+  "name": "Implement the Selection Sort Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-selection-sort-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [{ "id": "699036ab4164d8025497ee72", "title": "Step 1" }],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
