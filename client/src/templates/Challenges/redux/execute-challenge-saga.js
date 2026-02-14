@@ -297,7 +297,7 @@ export function* previewChallengeSaga(action) {
         if (
           challengeData.challengeType === challengeTypes.python ||
           challengeData.challengeType ===
-            challengeTypes.multifilePythonCertProject ||
+          challengeTypes.multifilePythonCertProject ||
           challengeData.challengeType === challengeTypes.pyLab ||
           challengeData.challengeType === challengeTypes.dailyChallengePy
         ) {
@@ -387,6 +387,27 @@ function* previewProjectSolutionSaga({ payload }) {
   }
 }
 
+import { eventChannel } from 'redux-saga';
+import { onPythonWorkerEvent } from '../utils/python-worker-handler';
+
+// ... existing imports
+
+// ... existing code
+
+function* initPythonWorkerChannel() {
+  const pythonWorkerChannel = eventChannel(emitter => {
+    return onPythonWorkerEvent(event => {
+      if (event.type === 'error') {
+        emitter(event.text);
+      }
+    });
+  });
+
+  yield takeEvery(pythonWorkerChannel, function* (text) {
+    yield put(updateConsole(text));
+  });
+}
+
 export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
@@ -395,6 +416,7 @@ export function createExecuteChallengeSaga(types) {
       [types.challengeMounted, types.resetChallenge, types.previewMounted],
       previewChallengeSaga
     ),
-    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga)
+    takeLatest(types.projectPreviewMounted, previewProjectSolutionSaga),
+    fork(initPythonWorkerChannel)
   ];
 }
