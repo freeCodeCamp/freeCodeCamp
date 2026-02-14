@@ -26,6 +26,7 @@ import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import {
   challengeMounted,
   updateChallengeMeta,
@@ -129,6 +130,8 @@ const ShowQuiz = ({
   const exitConfirmed = useRef(false);
 
   const [exitPathname, setExitPathname] = useState(blockHashSlug);
+
+  useFetchAllCurriculumData();
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`

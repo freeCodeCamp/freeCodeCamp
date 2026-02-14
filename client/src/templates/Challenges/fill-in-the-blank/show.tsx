@@ -35,6 +35,7 @@ import {
 import Scene from '../components/scene/scene';
 import { SceneSubject } from '../components/scene/scene-subject';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { replaceAppleQuotes } from '../../../utils/replace-apple-quotes';
 import { parseHanziPinyinPairs } from './parse-blanks';
@@ -107,7 +108,6 @@ const ShowFillInTheBlank = ({
 }: ShowFillInTheBlankProps) => {
   const { t } = useTranslation();
   const emptyArray = fillInTheBlank.blanks.map(() => null);
-
   const [showWrong, setShowWrong] = useState(false);
   const [userAnswers, setUserAnswers] = useState<(null | string)[]>(emptyArray);
   const [answersCorrect, setAnswersCorrect] =
@@ -117,6 +117,8 @@ const ShowFillInTheBlank = ({
   const [showFeedback, setShowFeedback] = useState(false);
 
   const container = useRef<HTMLElement | null>(null);
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     initTests(tests);

@@ -37,6 +37,7 @@ import {
 
 import { getGuideUrl } from '../../utils';
 import { getChallengePaths } from '../../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../../utils/fetch-all-curriculum-data';
 import SolutionForm from '../solution-form';
 import ProjectToolPanel from '../tool-panel';
 
@@ -103,6 +104,8 @@ const ShowBackEnd = (props: BackEndProps) => {
   }) => {
     props.executeChallenge({ showCompletionModal });
   };
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
