@@ -1,0 +1,21 @@
+{
+  "name": "Build an HTML Music Player",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-html-music-player",
+  "helpCategory": "HTML-CSS",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "698c4e69abe14a9746c72312", "title": "Step 1" },
+    { "id": "698c4f4e965bd853ad5084e1", "title": "Step 2" },
+    { "id": "698c4fe24f1f1a17be74a23e", "title": "Step 3" },
+    { "id": "698c513508507ec8bb820227", "title": "Step 4" },
+    { "id": "698c50535b54b2d75fa985fb", "title": "Step 5" },
+    { "id": "698c5229e47d57c6dfaa91bd", "title": "Step 6" },
+    { "id": "698c55e7aaacfae48a227459", "title": "Step 7" },
+    { "id": "698c5710136539797f296098", "title": "Step 8" },
+    { "id": "698c58745b73289bb6c89ece", "title": "Step 9" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
