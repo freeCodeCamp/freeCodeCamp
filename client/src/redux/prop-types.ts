@@ -191,12 +191,12 @@ type Nodule = ParagraphNodule | InteractiveEditorNodule;
 
 type ParagraphNodule = {
   type: 'paragraph';
-  data: string;
+  contents: string;
 };
 
 type InteractiveEditorNodule = {
   type: 'interactiveEditor';
-  data: {
+  files: {
     ext: Ext;
     name: string;
     contents: string;
