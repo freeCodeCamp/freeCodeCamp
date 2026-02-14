@@ -16,6 +16,7 @@ import { liveCerts } from '../../../config/cert-and-project-map';
 import {
   getUsernameExists,
   putUpdateMyAbout,
+  putUpdateMyClassroomMode,
   putUpdateMyHonesty,
   putUpdateMyKeyboardShortcuts,
   putUpdateMyPortfolio,
@@ -36,6 +37,8 @@ import {
   submitNewUsernameError,
   submitProfileUIComplete,
   submitProfileUIError,
+  updateMyClassroomModeComplete,
+  updateMyClassroomModeError,
   updateMyHonestyComplete,
   updateMyHonestyError,
   updateMyKeyboardShortcutsComplete,
@@ -142,6 +145,16 @@ function* updateMyKeyboardShortcutsSaga({ payload: update }) {
   }
 }
 
+function* updateMyClassroomModeSaga({ payload: update }) {
+  try {
+    const { data } = yield call(putUpdateMyClassroomMode, update);
+    yield put(updateMyClassroomModeComplete({ ...data, payload: update }));
+    yield put(createFlashMessage({ ...data }));
+  } catch {
+    yield put(updateMyClassroomModeError);
+  }
+}
+
 function* updateMyHonestySaga({ payload: update }) {
   try {
     const { data } = yield call(putUpdateMyHonesty, update);
@@ -245,6 +258,7 @@ function* verifyCertificationSaga({ payload }) {
 export function createSettingsSagas(types) {
   return [
     takeEvery(types.updateMySocials, updateMySocialsSaga),
+    takeEvery(types.updateMyClassroomMode, updateMyClassroomModeSaga),
     takeEvery(types.updateMyHonesty, updateMyHonestySaga),
     takeEvery(types.updateMySound, updateMySoundSaga),
     takeEvery(types.resetMyEditorLayout, resetMyEditorLayoutSaga),

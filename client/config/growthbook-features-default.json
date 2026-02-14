@@ -22,14 +22,8 @@
         "hashAttribute": "id",
         "seed": "landing-top-skill-focused",
         "hashVersion": 2,
-        "variations": [
-          false,
-          true
-        ],
-        "weights": [
-          0.5,
-          0.5
-        ],
+        "variations": [false, true],
+        "weights": [0.5, 0.5],
         "key": "landing-top-skill-focused",
         "meta": [
           {
@@ -54,14 +48,8 @@
         "hashAttribute": "id",
         "seed": "replace-20-with-25",
         "hashVersion": 2,
-        "variations": [
-          false,
-          true
-        ],
-        "weights": [
-          0.5,
-          0.5
-        ],
+        "variations": [false, true],
+        "weights": [0.5, 0.5],
         "key": "replace-20-with-25",
         "meta": [
           {
@@ -86,14 +74,8 @@
         "hashAttribute": "id",
         "seed": "show-modal-randomly",
         "hashVersion": 2,
-        "variations": [
-          false,
-          true
-        ],
-        "weights": [
-          0.5,
-          0.5
-        ],
+        "variations": [false, true],
+        "weights": [0.5, 0.5],
         "key": "show-modal-randomly",
         "meta": [
           {
@@ -118,14 +100,8 @@
         "hashAttribute": "id",
         "seed": "landing-two-button-cta",
         "hashVersion": 2,
-        "variations": [
-          false,
-          true
-        ],
-        "weights": [
-          0.5,
-          0.5
-        ],
+        "variations": [false, true],
+        "weights": [0.5, 0.5],
         "key": "landing-two-button-cta",
         "meta": [
           {
@@ -141,6 +117,9 @@
         "name": "prod-landing-two-button-cta"
       }
     ]
+  },
+  "classroom-mode": {
+    "defaultValue": false
   },
   "disabled_blocks": {
     "defaultValue": []

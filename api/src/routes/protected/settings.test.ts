@@ -1444,9 +1444,19 @@ Happy coding!
         expect(response.statusCode).toEqual(400);
       });
 
+      // See updateMyClassroomMode schema for one-way constraint details.
+      test('PUT returns 400 when attempting to disable classroom mode', async () => {
+        const response = await superPut('/update-my-classroom-mode').send({
+          isClassroomAccount: false
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
       test('After updating the classroom mode, the user should have this property set', async () => {
         await superPut('/update-my-classroom-mode').send({
-          isClassroomAccount: false
+          isClassroomAccount: true
         });
 
         const user = await fastifyTestInstance?.prisma.user.findFirst({
@@ -1455,7 +1465,7 @@ Happy coding!
           }
         });
 
-        expect(user?.isClassroomAccount).toEqual(false);
+        expect(user?.isClassroomAccount).toEqual(true);
       });
     });
   });
