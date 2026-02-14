@@ -1,21 +1,10 @@
 const { createFilePath } = require('gatsby-source-filesystem');
-// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
-const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
 const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
-const {
-  createBlockIntroPages,
-  createSuperBlockIntroPages
-} = require('./utils/gatsby');
-
-const createByIdentityMap = {
-  blockIntroMarkdown: createBlockIntroPages,
-  superBlockIntroMarkdown: createSuperBlockIntroPages
-};
+const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
@@ -79,11 +68,9 @@ exports.createPages = async function createPages({
           node {
             fields {
               slug
-              nodeIdentity
             }
             frontmatter {
               certification
-              block
               superBlock
               title
             }
@@ -93,16 +80,6 @@ exports.createPages = async function createPages({
       }
     }
   `);
-
-  const blocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { block }
-        }
-      }) => block
-    )
-  );
 
   // Includes upcoming superBlocks
   const allSuperBlocks = Object.values(SuperBlocks);
@@ -115,33 +92,21 @@ exports.createPages = async function createPages({
     } = edge;
 
     if (!fields) {
-      return;
+      throw Error(
+        "'fields' property missing (this should be added in onCreateNode)"
+      );
     }
-    const { slug, nodeIdentity } = fields;
+    const { slug } = fields;
     if (slug.includes('LICENCE')) {
       return;
     }
-    if (nodeIdentity === 'blockIntroMarkdown') {
-      if (!blocks.includes(frontmatter.block)) {
-        return;
-      }
-    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
-      return;
+
+    if (!allSuperBlocks.includes(frontmatter.superBlock)) {
+      throw Error(`Unknown superblock ${frontmatter.superBlock}`);
     }
 
-    try {
-      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-      pageBuilder(edge);
-    } catch (e) {
-      console.log(e);
-      console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
-    }
+    const pageBuilder = createSuperBlockIntroPages(createPage);
+    pageBuilder(edge);
   });
 };
 
