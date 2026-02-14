@@ -586,6 +586,7 @@ export const query = graphql`
         challengeType
         helpCategory
         videoUrl
+        tokens
         superBlock
         translationPending
         forumTopicId

@@ -51,6 +51,7 @@ function formatChallengeData({
     superBlock: 'daily-coding-challenge',
     block: 'daily-coding-challenge',
     usesMultifileEditor: true,
+    tokens: [],
 
     // props to satisfy the show classic component
     instructions: '',

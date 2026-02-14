@@ -17,6 +17,7 @@ export interface DailyCodingChallengeFromDb {
   title: string;
   date: string;
   description: string;
+  tokens: string[];
   javascript: DailyCodingChallengeLanguageFromDb;
   python: DailyCodingChallengeLanguageFromDb;
 }
