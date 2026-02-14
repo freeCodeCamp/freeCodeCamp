@@ -1002,6 +1002,80 @@
       }
     }
   },
+  "introduction-to-algorithms-and-data-structures": {
+    "title": "Introduction to Algorithms and Data Structures",
+    "summary": [
+      "Learn about common algorithms and data structures in this introductory course."
+    ],
+    "intro": [
+      "Algorithms and Data Structures are the backbone of programming. So it important to learn how to work with them.",
+      "In this comprehensive course, you will learn about common sorting and searching algorithms including merge sort, quicksort and binary search.",
+      "You will also learn how to work with common data structures including arrays and linked lists."
+    ],
+    "note": "",
+    "blocks": {
+      "intro-dsa-searching-algorithms": {
+        "title": "Searching Algorithms",
+        "intro": [
+          "In these videos, you will learn what an algorithm is and learn how to work with the binary search and linear search algorithms."
+        ]
+      },
+      "intro-dsa-time-complexity": {
+        "title": "Time Complexity",
+        "intro": [
+          "In these videos, you will learn about time complexity and how it works with measuring efficiency of algorithms."
+        ]
+      },
+      "intro-dsa-algorithms-in-code": {
+        "title": "Algorithms in Code",
+        "intro": [
+          "In these videos, you will write Python code for the linear and binary search algorithms."
+        ]
+      },
+      "intro-dsa-recursion-and-space-complexity": {
+        "title": "Recursion and Space Complexity",
+        "intro": [
+          "In these videos, you will learn about recursion and space complexity for algorithms."
+        ]
+      },
+      "intro-dsa-arrays": {
+        "title": "Introduction to Arrays",
+        "intro": [
+          "In these videos, you will learn how to work with arrays. You will learn about different operations including insert, delete and search."
+        ]
+      },
+      "intro-dsa-linked-lists": {
+        "title": "Introduction to Linked Lists",
+        "intro": [
+          "In these videos, you will learn about linked lists. You will learn how to add nodes to a list as well as remove and search a list."
+        ]
+      },
+      "intro-dsa-merge-sort": {
+        "title": "The Merge Sort Algorithm",
+        "intro": [
+          "In these videos, you will learn about the merge sort algorithm."
+        ]
+      },
+      "intro-dsa-sorting-linked-lists": {
+        "title": "Sorting a Linked List",
+        "intro": [
+          "In these videos, you will learn more about how to sort linked lists."
+        ]
+      },
+      "intro-dsa-sorting-algorithms": {
+        "title": "Sorting Algorithms",
+        "intro": [
+          "In these videos, you will learn about common sorting algorithms including selection sort and quicksort."
+        ]
+      },
+      "intro-dsa-sorting-searching-algorithms": {
+        "title": "Searching Names using Sorting and Searching Algorithms",
+        "intro": [
+          "In these videos, you will practice searching for names using the binary and linear search algorithms and comparing the runtimes for them."
+        ]
+      }
+    }
+  },
   "information-security": {
     "title": "Information Security",
     "intro": [
