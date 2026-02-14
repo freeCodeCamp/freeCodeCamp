@@ -43,14 +43,16 @@ function formatChallengeData({
   python
 }: DailyCodingChallengeFromDb) {
   const baseChallengeProps = {
-    date,
-    id,
-    challengeNumber,
-    title,
-    description: formatDescription(description),
-    superBlock: 'daily-coding-challenge',
-    block: 'daily-coding-challenge',
-    usesMultifileEditor: true,
+  date,
+  id,
+  challengeNumber,
+  title,
+  dashedName: `challenge-${challengeNumber}`,
+  description: formatDescription(description),
+  superBlock: 'daily-coding-challenge',
+  block: 'daily-coding-challenge',
+  usesMultifileEditor: true,
+
 
     // props to satisfy the show classic component
     instructions: '',
