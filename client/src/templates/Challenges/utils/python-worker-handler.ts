@@ -28,10 +28,14 @@ type PythonWorkerEvent = {
       | 'contentLoaded'
       | 'reset'
       | 'stopped'
-      | 'is-alive';
+      | 'is-alive'
+      | 'error';
     text?: string;
   };
 };
+
+type ErrorHandler = (text: string) => void;
+const errorListeners: Set<ErrorHandler> = new Set();
 
 /**
  * Registers a terminal to receive print and input messages from the python worker.
@@ -66,6 +70,9 @@ export function registerTerminal(handlers: {
       // worker is busy. In that case, we want to re-run the code on receipt of
       // the 'stopped' message.
       if (lastCodeMessage) runPythonCode(lastCodeMessage);
+    } else if (type === 'error') {
+      // Notify all error listeners with the error text
+      errorListeners.forEach(listener => listener(text ?? ''));
     } else {
       handlers[type](text);
     }
@@ -110,4 +117,20 @@ export function runPythonCode(code: {
 // message to get it to listen to run messages again.
 function sendListenMessage(): void {
   getPythonWorker().postMessage({ type: 'listen' });
+}
+
+/**
+ * Registers a listener for Python runtime errors.
+ * @param handler - A function to be called when a Python error occurs
+ */
+export function onPythonError(handler: ErrorHandler): void {
+  errorListeners.add(handler);
+}
+
+/**
+ * Removes a previously registered error listener.
+ * @param handler - The handler function to remove
+ */
+export function offPythonError(handler: ErrorHandler): void {
+  errorListeners.delete(handler);
 }
