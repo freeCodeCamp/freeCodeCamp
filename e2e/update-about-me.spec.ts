@@ -4,20 +4,16 @@ import translations from '../client/i18n/locales/english/translations.json';
 
 test.beforeEach(async ({ page }) => {
   execSync(
-    'node ./tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
+    'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
   );
 
   await page.goto('/certifieduser');
-
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
 
   await page.getByRole('button', { name: 'Edit my profile' }).click();
 });
 
 test.afterAll(() => {
-  execSync('node ./tools/scripts/seed/seed-demo-user --certified-user');
+  execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
 });
 
 test('Should allow empty string in any field in about settings', async ({
@@ -63,10 +59,6 @@ test('Should allow empty string in any field in about settings', async ({
   await expect(updatedAlert).toBeVisible();
 
   await page.reload();
-
-  if (!process.env.CI) {
-    await page.getByRole('button', { name: 'Preview custom 404 page' }).click();
-  }
 
   await page.getByRole('button', { name: 'Edit my profile' }).click();
   await expect(nameInput).toHaveValue('');

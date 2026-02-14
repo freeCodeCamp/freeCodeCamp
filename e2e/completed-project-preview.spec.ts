@@ -16,6 +16,7 @@ const unlockedProfile = {
   showName: true,
   showPoints: true,
   showPortfolio: true,
+  showExperience: true,
   showTimeLine: true
 };
 
@@ -39,7 +40,7 @@ test.describe('Completed project preview', () => {
   test.use({ storageState: 'playwright/.auth/development-user.json' });
 
   test.beforeEach(async ({ request }) => {
-    execSync('node ./tools/scripts/seed/seed-demo-user');
+    execSync('node ../tools/scripts/seed/seed-demo-user');
 
     await authedRequest({
       request,
@@ -64,12 +65,6 @@ test.describe('Completed project preview', () => {
 
   test('it should be viewable on the timeline', async ({ page }) => {
     await page.goto('/developmentuser');
-
-    if (!process.env.CI) {
-      await page
-        .getByRole('button', { name: 'Preview custom 404 page' })
-        .click();
-    }
 
     await expect(
       page.getByRole('heading', { name: '@developmentuser' })

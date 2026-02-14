@@ -1,0 +1,87 @@
+---
+id: 68f2701b2160c765f23b60f8
+title: Step 12
+challengeType: 0
+dashedName: step-12
+---
+
+# --description--
+
+Another common MIME type is the `video/ogg` MIME type.
+
+Ogg is a digital multimedia container format designed to provide for efficient streaming and manipulation of digital multimedia. It is maintained by the Xiph.Org Foundation and is free and open, unrestricted by software patents. Its name is derived from "ogging", jargon from the computer game Netrek.
+
+Below your second `source` element, add a third `source` element and give it a `src` attribute with the value `https://cdn.freecodecamp.org/curriculum/labs/mapmethod.ogg` and a `type` attribute with the value `video/ogg`.
+
+# --hints--
+
+You should have a third `source` element.
+
+```js
+assert.exists(document.querySelector('video > source:nth-of-type(3)'));
+```
+
+Your third `source` element should have a `src` attribute.
+
+```js
+const source = document.querySelector('source:nth-of-type(3)');
+assert.isTrue(source?.hasAttribute('src'));
+```
+
+Your third `source` element should have a `src` attribute with a value of `https://cdn.freecodecamp.org/curriculum/labs/mapmethod.ogg`.
+
+```js
+const source = document.querySelector('source:nth-of-type(3)');
+assert.strictEqual(source?.getAttribute('src'), 'https://cdn.freecodecamp.org/curriculum/labs/mapmethod.ogg');
+```
+
+Your third `source` element should have a `type` attribute.
+
+```js
+const source = document.querySelector('source:nth-of-type(3)');
+assert.isTrue(source?.hasAttribute('type'));
+```
+
+Your third `source` element should have a `type` attribute with a value of `video/ogg`.
+
+```js
+const source = document.querySelector('source:nth-of-type(3)');
+assert.strictEqual(source?.getAttribute('type'), 'video/ogg');
+```
+
+# --seed--
+
+## --seed-contents--
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with the HTML Video Element</title>
+</head>
+<body>
+  <h1>Working with the HTML Video Element</h1>
+  <video
+    width="640"
+    loop
+    controls
+    muted
+    poster="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg"
+  >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/what-is-the-map-method-and-how-does-it-work.mp4"
+      type="video/mp4"
+    >
+    <source
+      src="https://cdn.freecodecamp.org/curriculum/labs/mapmethod.webm"
+      type="video/webm"
+    >
+--fcc-editable-region--
+    
+--fcc-editable-region--
+  </video>
+</body>
+</html>
+```

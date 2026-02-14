@@ -5,7 +5,7 @@ import { STRIPE_SECRET_KEY } from '../../utils/env.js';
 import {
   donationSubscriptionConfig,
   allStripeProductIdsArray
-} from '../../../../shared/config/donation-settings.js';
+} from '@freecodecamp/shared/config/donation-settings';
 import * as schemas from '../../schemas.js';
 import { inLastFiveMinutes } from '../../utils/validate-donation.js';
 import { findOrCreateUser } from '../helpers/auth-helpers.js';

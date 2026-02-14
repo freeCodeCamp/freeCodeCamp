@@ -1,6 +1,6 @@
 import React from 'react';
 import { clientLocale } from '../config/env.json';
-import { rtlLangs } from '../../shared-dist/config/i18n';
+import { rtlLangs } from '@freecodecamp/shared/config/i18n';
 
 interface HTMLProps {
   body: string;

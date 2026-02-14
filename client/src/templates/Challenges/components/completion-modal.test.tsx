@@ -1,6 +1,8 @@
 import React from 'react';
 import { runSaga } from 'redux-saga';
 import { describe, test, it, expect, beforeEach, vi, Mock } from 'vitest';
+import { buildChallenge } from '@freecodecamp/challenge-builder/build';
+
 import { render } from '../../../../utils/test-utils';
 
 import { getCompletedPercentage } from '../../../utils/get-completion-percentage';
@@ -14,7 +16,7 @@ import {
   isBuildEnabledSelector,
   isBlockNewlyCompletedSelector
 } from '../redux/selectors';
-import { buildChallenge, getTestRunner } from '../utils/build';
+import { getTestRunner } from '../utils/build';
 import CompletionModal, { combineFileData } from './completion-modal';
 vi.mock('../../../analytics');
 vi.mock('../../../utils/fire-confetti');
@@ -22,6 +24,7 @@ vi.mock('../../../components/Progress');
 vi.mock('../redux/selectors');
 vi.mock('../utils/build');
 vi.mock('../../../utils/get-words');
+vi.mock('@freecodecamp/challenge-builder/build');
 const mockFireConfetti = fireConfetti as Mock;
 const mockTestRunner = vi.fn().mockReturnValue({ pass: true });
 const mockBuildEnabledSelector = isBuildEnabledSelector as Mock;

@@ -13,7 +13,7 @@ import {
   legacyCertifications,
   legacyFullStackCertification,
   upcomingCertifications
-} from '../../../../shared/config/certification-settings.js';
+} from '@freecodecamp/shared/config/certification-settings';
 
 import * as schemas from '../../schemas.js';
 import { normalizeChallenges, removeNulls } from '../../utils/normalize.js';

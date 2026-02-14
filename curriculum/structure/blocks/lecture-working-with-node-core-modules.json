@@ -1,0 +1,38 @@
+{
+  "name": "Working with Node Core Modules",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-working-with-node-core-modules",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    {
+      "id": "695cc6a5eefd305381ec90bc",
+      "title": "What Is the fs Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02c7",
+      "title": "What Is the Buffer Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02c8",
+      "title": "What Is the Crypto Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02c9",
+      "title": "What Is the os Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02ca",
+      "title": "What Is the Path Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02cb",
+      "title": "What Is the Process Module and How Does It Work?"
+    },
+    {
+      "id": "695cc8f280fef0cc3bed02cc",
+      "title": "What Is the Stream Module and How Does It Work?"
+    }
+  ],
+  "blockLabel": "lecture"
+}

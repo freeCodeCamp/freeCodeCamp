@@ -18,7 +18,7 @@ import {
   defaultTierAmount,
   defaultTierAmountB,
   type DonationAmount
-} from '../../../../shared-dist/config/donation-settings'; // You can further extract these into separate components and import them
+} from '@freecodecamp/shared/config/donation-settings'; // You can further extract these into separate components and import them
 import callGA from '../../analytics/call-ga';
 import { LocalStorageThemes } from '../../redux/types';
 import { formattedAmountLabel, convertToTimeContributed } from './utils';
@@ -168,13 +168,13 @@ function DonationFormRow({
   );
 }
 
-const MultiTierDonationForm: React.FC<MultiTierDonationFormProps> = ({
+const MultiTierDonationForm = ({
   handleProcessing,
   setShowHeaderAndFooter,
   isMinimalForm,
   paymentContext,
   isAnimationEnabled
-}) => {
+}: MultiTierDonationFormProps) => {
   const replace20With25 = useFeature('replace-20-with-25').on;
   const [donationAmount, setDonationAmount] = useState(
     replace20With25 ? defaultTierAmountB : defaultTierAmount

@@ -14,6 +14,22 @@
   flex-direction: column;
 }
 
+#learn-app-wrapper .editor-pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
+#learn-app-wrapper .editor-pane-code {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+#learn-app-wrapper .editor-pane > .independent-lower-jaw {
+  flex: 0 0 auto;
+  margin-top: auto;
+}
+
 #learn-app-wrapper .reflex-container.vertical {
   min-height: 0;
   flex-grow: 1;

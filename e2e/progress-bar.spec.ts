@@ -1,7 +1,11 @@
 import { expect, test } from '@playwright/test';
 import { clearEditor, focusEditor } from './utils/editor';
 
-test.describe('Progress bar component', () => {
+test.describe('Progress bar component in editor', () => {
+  // progress bar shows up for the defeult lower jaw that is only displayed on mobile.
+  test.use({
+    viewport: { width: 390, height: 844 }
+  });
   test('Should appear with the correct content after the user has submitted their code', async ({
     page,
     isMobile,
@@ -31,7 +35,9 @@ test.describe('Progress bar component', () => {
       .getByRole('button', { name: 'Submit and go to next challenge' })
       .click();
   });
+});
 
+test.describe('Progress bar component in modal', () => {
   test('should appear in the completion modal after user has submitted their code', async ({
     page,
     isMobile,

@@ -1,0 +1,14 @@
+{
+  "name": "Expressing Agreement and Disagreement Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-a2-quiz-express-agreement-disagreement",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "6960378c2a4dd0db6a8f4aa0",
+      "title": "Expressing Agreement and Disagreement Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}
