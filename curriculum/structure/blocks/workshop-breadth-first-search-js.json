@@ -1,0 +1,26 @@
+{
+  "name": "Implement the Breadth-First Search Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-breadth-first-search-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "6989eb65324d97775c4965fe", "title": "Step 1" },
+    { "id": "6989ef885db3a3488a13b426", "title": "Step 2" },
+    { "id": "6989f10a72ad424d4ad6d514", "title": "Step 3" },
+    { "id": "6989f1ba358acba651d5ee6b", "title": "Step 4" },
+    { "id": "6989f207306332c06b0add39", "title": "Step 5" },
+    { "id": "6989f2e35e6941e13e445156", "title": "Step 6" },
+    { "id": "6989f3632f8b8bdf168aa321", "title": "Step 7" },
+    { "id": "6989f46b6e9366b0e6ad32fe", "title": "Step 8" },
+    { "id": "6989f48c3f0292c84f8d8938", "title": "Step 9" },
+    { "id": "6989f555728e63ad8b349d84", "title": "Step 10" },
+    { "id": "6989f5bf7f1a1d0fc8ebd1e8", "title": "Step 11" },
+    { "id": "6989f711e57008f3a23482f2", "title": "Step 12" },
+    { "id": "6989f788362592a7238b1f94", "title": "Step 13" },
+    { "id": "6989f7d2f0bac8cfe05a068d", "title": "Step 14" }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
