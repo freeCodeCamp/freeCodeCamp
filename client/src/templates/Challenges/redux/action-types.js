@@ -43,6 +43,7 @@ export const actionTypes = createTypes(
     'resetAttempts',
     'setEditorFocusability',
     'toggleVisibleEditor',
+    'setIsIframeLoaded',
     ...createAsyncTypes('submitChallenge'),
     ...createAsyncTypes('executeChallenge')
   ],
