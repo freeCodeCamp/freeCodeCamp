@@ -11,16 +11,17 @@ import {
   Row,
   Col
 } from '@freecodecamp/ui';
-import { useTranslation, withTranslation } from 'react-i18next';
+import { Trans, useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
 import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
-import {
+import type {
   ChallengeNode,
   CompletedChallenge,
+  PrerequisiteChallenge,
   User
 } from '../../../redux/prop-types';
 import {
@@ -36,6 +37,7 @@ import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
+import { Link } from '../../../components/helpers';
 
 const { deploymentEnv } = envData;
 
@@ -47,6 +49,45 @@ interface GitProps {
   name: string;
   draft: boolean;
   prerelease: boolean;
+}
+
+function PrerequisitesCallout({
+  isSignedIn,
+  isHonest,
+  missingPrerequisites,
+  isExamLoading
+}: {
+  isSignedIn: boolean;
+  isHonest: boolean;
+  isExamLoading: boolean;
+  missingPrerequisites: PrerequisiteChallenge[];
+}) {
+  const { t } = useTranslation();
+  if (!isSignedIn) {
+    return null;
+  }
+
+  if (!isHonest) {
+    return (
+      <Callout variant='caution' label={t('misc.caution')}>
+        <p>
+          <Trans i18nKey={'learn.exam.not-honest'}>
+            <Link to={'/settings#honesty'}>settings</Link>
+          </Trans>
+        </p>
+      </Callout>
+    );
+  }
+
+  if (!isExamLoading && missingPrerequisites.length > 0) {
+    return <MissingPrerequisites missingPrerequisites={missingPrerequisites} />;
+  }
+
+  return (
+    <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
+      <p>{t('learn.exam.qualified')}</p>
+    </Callout>
+  );
 }
 
 const mapStateToProps = createSelector(
@@ -249,9 +290,6 @@ function ShowExamDownload({
     };
   });
 
-  const showPrereqAlert =
-    isSignedIn && !examIdsQuery.isLoading && !getExamsQuery.isLoading;
-
   return (
     <LearnLayout>
       <Helmet>
@@ -270,20 +308,12 @@ function ShowExamDownload({
               {title}
             </ChallengeTitle>
             <Spacer size='m' />
-            {showPrereqAlert &&
-              (missingPrerequisites.length > 0 ? (
-                <MissingPrerequisites
-                  missingPrerequisites={missingPrerequisites}
-                />
-              ) : (
-                <Callout
-                  className='exam-qualified'
-                  variant='note'
-                  label={t('misc.note')}
-                >
-                  <p>{t('learn.exam.qualified')}</p>
-                </Callout>
-              ))}
+            <PrerequisitesCallout
+              isExamLoading={getExamsQuery.isLoading || examIdsQuery.isLoading}
+              isSignedIn={isSignedIn}
+              isHonest={user?.isHonest ?? false}
+              missingPrerequisites={missingPrerequisites}
+            />
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
             <Spacer size='l' />
