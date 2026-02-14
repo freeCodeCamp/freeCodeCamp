@@ -1,7 +1,7 @@
 {
   "name": "Build a Bill Splitter",
   "isUpcomingChange": false,
-  "dashedName": "workshop-math-operations",
+  "dashedName": "workshop-bill-splitter",
   "helpCategory": "Python",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
