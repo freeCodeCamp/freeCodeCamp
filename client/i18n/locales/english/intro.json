@@ -2454,6 +2454,10 @@
           "In this workshop, you will review working with JavaScript objects by building a recipe tracker."
         ]
       },
+      "lab-device-loan-ledger": {
+        "title": "Build a Device Loan Ledger App",
+        "intro": ["Build a Device Loan Ledger App", ""]
+      },
       "lab-quiz-game": {
         "title": "Build a Quiz Game",
         "intro": [
