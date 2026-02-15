@@ -14,9 +14,11 @@ test.describe('Review outline', () => {
       page.getByRole('heading', { name: 'Semantic HTML Review' })
     ).toBeVisible();
 
-    const menuButton = page.getByRole('button', { name: 'Menu' });
+    const menuButton = page.locator(
+      'button[aria-controls="review-outline-panel"]'
+    );
     await menuButton.click();
-    await expect(page.getByRole('button', { name: 'Close' })).toBeVisible();
+    await expect(menuButton).toHaveText(/Close/);
 
     const outlinePanel = page.locator('#review-outline-panel');
     await expect(outlinePanel).toBeVisible();
@@ -32,5 +34,47 @@ test.describe('Review outline', () => {
     await expect(
       outlinePanel.getByRole('link', { name: 'Semantic HTML Review' })
     ).toHaveCount(0);
+  });
+
+  test('keeps active nav item in view while scrolling', async ({ page }) => {
+    await page.goto(
+      '/learn/responsive-web-design-v9/review-semantic-html/review-semantic-html'
+    );
+
+    await page.locator('button[aria-controls="review-outline-panel"]').click();
+
+    const outlinePanel = page.locator('#review-outline-panel');
+    await expect(outlinePanel).toBeVisible();
+
+    const firstOutlineLink = outlinePanel
+      .locator('.review-outline-link')
+      .first();
+    await firstOutlineLink.click();
+    await expect(firstOutlineLink).toHaveClass(/active/);
+
+    await page.evaluate(() => {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'auto'
+      });
+    });
+
+    const activeLink = outlinePanel
+      .locator('.review-outline-link.active')
+      .first();
+    await expect(activeLink).toBeVisible();
+
+    const inView = await activeLink.evaluate((item, panelId) => {
+      const panel = document.getElementById(panelId);
+      if (!panel) return false;
+
+      const panelRect = panel.getBoundingClientRect();
+      const itemRect = item.getBoundingClientRect();
+      return (
+        itemRect.top >= panelRect.top && itemRect.bottom <= panelRect.bottom
+      );
+    }, 'review-outline-panel');
+
+    expect(inView).toBe(true);
   });
 });
