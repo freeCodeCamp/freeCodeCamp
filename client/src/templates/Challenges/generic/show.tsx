@@ -4,10 +4,14 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { isEqual } from 'lodash';
 import store from 'store';
-import { YouTubeEvent } from 'react-youtube';
 import { ObserveKeys } from 'react-hotkeys';
+import { Link as ScrollLink } from 'react-scroll';
+import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
 import PrismFormatted from '../components/prism-formatted';
@@ -36,6 +40,11 @@ import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
+import {
+  buildReviewOutlineItems,
+  reviewHeadingSelector,
+  ReviewOutlineItem
+} from './review-outline';
 
 // Styles
 import './show.css';
@@ -234,6 +243,167 @@ const ShowGeneric = ({
     setShowInteractiveEditor(!showInteractiveEditor);
   };
 
+  const isReviewChallenge = challengeType === challengeTypes.review;
+  const showReviewToggleInActionRow = isReviewChallenge && hasInteractiveEditor;
+  const [showReviewOutline, setShowReviewOutline] = useState(false);
+  const [reviewOutlineItems, setReviewOutlineItems] = useState<
+    ReviewOutlineItem[]
+  >([]);
+  const reviewContentRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!isReviewChallenge || !reviewContentRef.current) {
+      setReviewOutlineItems([]);
+      return;
+    }
+
+    const headingElements = Array.from(
+      reviewContentRef.current.querySelectorAll<HTMLHeadingElement>(
+        reviewHeadingSelector
+      )
+    );
+    const nextOutlineItems = buildReviewOutlineItems(headingElements);
+
+    setReviewOutlineItems(nextOutlineItems);
+  }, [
+    description,
+    instructions,
+    isReviewChallenge,
+    nodules,
+    showInteractiveEditor
+  ]);
+
+  const challengeBody = (
+    <>
+      <Spacer size='m' />
+      <ChallengeTitle
+        isCompleted={isChallengeCompleted}
+        translationPending={translationPending}
+      >
+        {title}
+      </ChallengeTitle>
+
+      <Spacer size='m' />
+
+      {description && (
+        <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+          <ChallengeDescription
+            description={description}
+            superBlock={superBlock}
+          />
+          <Spacer size='m' />
+        </Col>
+      )}
+
+      {nodules?.map((nodule, i) => {
+        return (
+          <React.Fragment key={i}>
+            {renderNodule(nodule, showInteractiveEditor)}
+          </React.Fragment>
+        );
+      })}
+
+      <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
+        {videoId && (
+          <>
+            <VideoPlayer
+              bilibiliIds={bilibiliIds}
+              onVideoLoad={handleVideoIsLoaded}
+              title={title}
+              videoId={videoId}
+              videoIsLoaded={videoIsLoaded}
+              videoLocaleIds={videoLocaleIds}
+            />
+            <Spacer size='m' />
+          </>
+        )}
+      </Col>
+
+      {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
+
+      <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+        {transcript && <ChallengeTranscript transcript={transcript} />}
+
+        {instructions && (
+          <>
+            <ChallengeDescription
+              instructions={instructions}
+              superBlock={superBlock}
+            />
+            <Spacer size='m' />
+          </>
+        )}
+
+        {assignments.length > 0 && (
+          <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+            <Assignments
+              assignments={assignments}
+              allAssignmentsCompleted={allAssignmentsCompleted}
+              handleAssignmentChange={handleAssignmentChange}
+            />
+          </ObserveKeys>
+        )}
+
+        {questions.length > 0 && (
+          <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
+            <MultipleChoiceQuestions
+              questions={questions}
+              selectedOptions={selectedMcqOptions}
+              handleOptionChange={handleMcqOptionChange}
+              submittedMcqAnswers={submittedMcqAnswers}
+              showFeedback={showFeedback}
+              superBlock={superBlock}
+            />
+          </ObserveKeys>
+        )}
+
+        {explanation ? (
+          <ChallengeExplanation explanation={explanation} />
+        ) : null}
+
+        {!hasAnsweredMcqCorrectly && (
+          <p className='text-center'>{t('learn.answered-mcq')}</p>
+        )}
+
+        <Button block={true} variant='primary' onClick={handleSubmit}>
+          {questions.length == 0
+            ? t('buttons.submit')
+            : t('buttons.check-answer')}
+        </Button>
+        <Spacer size='xxs' />
+        <Button block={true} variant='primary' onClick={openHelpModal}>
+          {t('buttons.ask-for-help')}
+        </Button>
+
+        <Spacer size='l' />
+      </Col>
+      <CompletionModal />
+      <HelpModal
+        challengeTitle={title}
+        challengeBlock={block}
+        superBlock={superBlock}
+      />
+    </>
+  );
+
+  const reviewOutlineToggleButton = isReviewChallenge ? (
+    <button
+      aria-controls='review-outline-panel'
+      aria-expanded={showReviewOutline}
+      className={`review-outline-toggle-btn${
+        showReviewToggleInActionRow
+          ? ' review-outline-toggle-btn-action-row'
+          : ''
+      }`}
+      onClick={() => setShowReviewOutline(current => !current)}
+    >
+      <FontAwesomeIcon icon={faBars} />
+      <span className='review-outline-toggle-btn-text'>
+        {showReviewOutline ? t('buttons.close') : t('buttons.menu')}
+      </span>
+    </button>
+  ) : null;
+
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
@@ -244,7 +414,10 @@ const ShowGeneric = ({
         <Helmet
           title={`${blockNameTitle} | ${t('learn.learn')} | freeCodeCamp.org`}
         />
-        <Container fluid>
+        <Container
+          className={isReviewChallenge ? 'review-layout-fluid' : undefined}
+          fluid
+        >
           {hasInteractiveEditor && (
             <ActionRow
               hasInteractiveEditor={hasInteractiveEditor}
@@ -253,118 +426,58 @@ const ShowGeneric = ({
             />
           )}
 
-          <Container>
-            <Row>
-              <Spacer size='m' />
-              <ChallengeTitle
-                isCompleted={isChallengeCompleted}
-                translationPending={translationPending}
-              >
-                {title}
-              </ChallengeTitle>
+          {showReviewToggleInActionRow && reviewOutlineToggleButton}
 
-              <Spacer size='m' />
-
-              {description && (
-                <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                  <ChallengeDescription
-                    description={description}
-                    superBlock={superBlock}
-                  />
-                  <Spacer size='m' />
-                </Col>
-              )}
-
-              {nodules?.map((nodule, i) => {
-                return (
-                  <React.Fragment key={i}>
-                    {renderNodule(nodule, showInteractiveEditor)}
-                  </React.Fragment>
-                );
-              })}
-
-              <Col lg={10} lgOffset={1} md={10} mdOffset={1}>
-                {videoId && (
-                  <>
-                    <VideoPlayer
-                      bilibiliIds={bilibiliIds}
-                      onVideoLoad={handleVideoIsLoaded}
-                      title={title}
-                      videoId={videoId}
-                      videoIsLoaded={videoIsLoaded}
-                      videoLocaleIds={videoLocaleIds}
-                    />
-                    <Spacer size='m' />
-                  </>
-                )}
-              </Col>
-
-              {scene && <Scene scene={scene} sceneSubject={sceneSubject} />}
-
-              <Col md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
-                {transcript && <ChallengeTranscript transcript={transcript} />}
-
-                {instructions && (
-                  <>
-                    <ChallengeDescription
-                      instructions={instructions}
-                      superBlock={superBlock}
-                    />
-                    <Spacer size='m' />
-                  </>
-                )}
-
-                {assignments.length > 0 && (
-                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                    <Assignments
-                      assignments={assignments}
-                      allAssignmentsCompleted={allAssignmentsCompleted}
-                      handleAssignmentChange={handleAssignmentChange}
-                    />
-                  </ObserveKeys>
-                )}
-
-                {questions.length > 0 && (
-                  <ObserveKeys only={['ctrl', 'cmd', 'enter']}>
-                    <MultipleChoiceQuestions
-                      questions={questions}
-                      selectedOptions={selectedMcqOptions}
-                      handleOptionChange={handleMcqOptionChange}
-                      submittedMcqAnswers={submittedMcqAnswers}
-                      showFeedback={showFeedback}
-                      superBlock={superBlock}
-                    />
-                  </ObserveKeys>
-                )}
-
-                {explanation ? (
-                  <ChallengeExplanation explanation={explanation} />
-                ) : null}
-
-                {!hasAnsweredMcqCorrectly && (
-                  <p className='text-center'>{t('learn.answered-mcq')}</p>
-                )}
-
-                <Button block={true} variant='primary' onClick={handleSubmit}>
-                  {questions.length == 0
-                    ? t('buttons.submit')
-                    : t('buttons.check-answer')}
-                </Button>
-                <Spacer size='xxs' />
-                <Button block={true} variant='primary' onClick={openHelpModal}>
-                  {t('buttons.ask-for-help')}
-                </Button>
-
-                <Spacer size='l' />
-              </Col>
-              <CompletionModal />
-              <HelpModal
-                challengeTitle={title}
-                challengeBlock={block}
-                superBlock={superBlock}
-              />
-            </Row>
-          </Container>
+          {isReviewChallenge && showReviewOutline ? (
+            <div className='review-layout-container'>
+              <div className='review-layout-row'>
+                <div className='review-sidebar-column'>
+                  {!showReviewToggleInActionRow && reviewOutlineToggleButton}
+                  <aside
+                    className='review-outline-panel'
+                    id='review-outline-panel'
+                  >
+                    <nav aria-label='Review outline'>
+                      <ul className='review-outline-list'>
+                        {reviewOutlineItems.map(item => (
+                          <li
+                            className={`review-outline-item review-outline-item-level-${item.level}`}
+                            key={item.id}
+                          >
+                            <ScrollLink
+                              activeClass='active'
+                              className='review-outline-link'
+                              duration={300}
+                              hashSpy={true}
+                              href={`#${item.id}`}
+                              isDynamic={true}
+                              offset={0}
+                              smooth={true}
+                              spy={true}
+                              to={item.id}
+                            >
+                              {item.text}
+                            </ScrollLink>
+                          </li>
+                        ))}
+                      </ul>
+                    </nav>
+                  </aside>
+                </div>
+                <div className='review-main-column'>
+                  <div ref={reviewContentRef}>
+                    <Row>{challengeBody}</Row>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <Container>
+              <div ref={isReviewChallenge ? reviewContentRef : undefined}>
+                <Row>{challengeBody}</Row>
+              </div>
+            </Container>
+          )}
         </Container>
       </LearnLayout>
     </Hotkeys>
