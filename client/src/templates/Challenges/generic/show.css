@@ -59,32 +59,6 @@ audio {
   flex-direction: column;
   flex: 0 0 18rem;
   gap: 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.review-outline-toggle-btn {
-  align-items: center;
-  align-self: flex-start;
-  border: 3px solid var(--quaternary-color);
-  background-color: var(--secondary-background);
-  color: var(--secondary-color);
-  display: inline-flex;
-  font-size: inherit;
-  gap: 0.5rem;
-  line-height: normal;
-  margin-bottom: 0.25rem;
-  min-height: 41px;
-  padding: 6px 12px;
-  white-space: nowrap;
-}
-
-.review-outline-toggle-btn:hover {
-  background-color: var(--primary-background);
-  color: var(--secondary-color);
-}
-
-.review-outline-toggle-btn-text {
-  line-height: inherit;
 }
 
 .review-outline-toggle-btn-action-row {
@@ -131,6 +105,14 @@ audio {
   display: block;
   padding: 0.2rem 0.45rem;
   text-decoration: none;
+}
+
+.review-outline-link-btn {
+  border-bottom: 0;
+  border-right: 0;
+  border-top: 0;
+  text-align: left;
+  width: 100%;
 }
 
 .review-outline-link:hover,
