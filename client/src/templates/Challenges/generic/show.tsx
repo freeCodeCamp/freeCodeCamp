@@ -276,19 +276,20 @@ const ShowGeneric = ({
               )}
 
               {nodules?.map((nodule, i) => {
-                if (nodule.type === 'interactiveEditor') {
-                  // when the editor is enabled
-                  if (showInteractiveEditor) {
-                    return (
-                      <React.Fragment key={i}>
-                        {renderNodule(nodule, showInteractiveEditor)}
-                      </React.Fragment>
-                    );
-                  }
+                // when the editor is enabled
+                if (
+                  nodule.type === 'interactiveEditor' &&
+                  showInteractiveEditor
+                ) {
+                  return (
+                    <React.Fragment key={i}>
+                      {renderNodule(nodule, showInteractiveEditor)}
+                    </React.Fragment>
+                  );
                 }
                 // for non-interactive editor or editor disabled
                 return (
-                  <Col key={i} md={8} mdOffset={2} sm={10} smOffset={1} xs={12}>
+                  <Col key={i} xs={12} md={10} mdOffset={1} lg={8} lgOffset={2}>
                     {renderNodule(nodule, showInteractiveEditor)}
                   </Col>
                 );
