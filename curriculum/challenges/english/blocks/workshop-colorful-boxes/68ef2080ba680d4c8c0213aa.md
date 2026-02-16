@@ -81,7 +81,7 @@ h1 {
   margin: 20px auto;
   align-content: space-evenly;
 }
---fcc-editable-region--
+
 .box {
   max-height: 120px;
   color: #000;
@@ -94,7 +94,9 @@ h1 {
   font-weight: bold;
   font-size: 1.125rem;
   border-radius: 5px;
-  order: 0; 
-}
+  order: 0;
 --fcc-editable-region--
+
+--fcc-editable-region-- 
+}
 ```
