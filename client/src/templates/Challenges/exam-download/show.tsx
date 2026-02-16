@@ -14,6 +14,7 @@ import {
 import { Trans, useTranslation, withTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 
 import LearnLayout from '../../../components/layouts/learn';
 import ChallengeTitle from '../components/challenge-title';
@@ -21,7 +22,6 @@ import useDetectOS, { type UserOSState } from '../utils/use-detect-os';
 import type {
   ChallengeNode,
   CompletedChallenge,
-  PrerequisiteChallenge,
   User
 } from '../../../redux/prop-types';
 import {
@@ -38,6 +38,7 @@ import ExamTokenControls from './exam-token-controls';
 
 import './show.css';
 import { Link } from '../../../components/helpers';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 
 const { deploymentEnv } = envData;
 
@@ -52,15 +53,15 @@ interface GitProps {
 }
 
 function PrerequisitesCallout({
+  id,
+  completedChallenges,
+  nodes,
+  examSuperBlock,
   isSignedIn,
-  isHonest,
-  missingPrerequisites,
-  isExamLoading
-}: {
+  isHonest
+}: ExamPrerequisitesProps & {
   isSignedIn: boolean;
   isHonest: boolean;
-  isExamLoading: boolean;
-  missingPrerequisites: PrerequisiteChallenge[];
 }) {
   const { t } = useTranslation();
   if (!isSignedIn) {
@@ -79,15 +80,80 @@ function PrerequisitesCallout({
     );
   }
 
-  if (!isExamLoading && missingPrerequisites.length > 0) {
-    return <MissingPrerequisites missingPrerequisites={missingPrerequisites} />;
+  return (
+    <ExamPrerequisites
+      id={id}
+      completedChallenges={completedChallenges}
+      nodes={nodes}
+      examSuperBlock={examSuperBlock}
+    />
+  );
+}
+
+interface ExamPrerequisitesProps {
+  id: string;
+  completedChallenges: CompletedChallenge[];
+  nodes: ChallengeNode[];
+  examSuperBlock: SuperBlocks;
+}
+
+function ExamPrerequisites({
+  id,
+  completedChallenges,
+  nodes,
+  examSuperBlock
+}: ExamPrerequisitesProps) {
+  const { t } = useTranslation();
+  const getExamsQuery = examAttempts.useGetExamsQuery();
+  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id);
+
+  if (getExamsQuery.isFetching || examIdsQuery.isFetching) {
+    return <Spinner />;
   }
 
-  return (
-    <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
-      <p>{t('learn.exam.qualified')}</p>
-    </Callout>
+  if (getExamsQuery.isError || examIdsQuery.isError) {
+    console.error(getExamsQuery.error);
+    console.error(examIdsQuery.error);
+    return null;
+  }
+
+  if (!getExamsQuery.isSuccess || !examIdsQuery.isSuccess) {
+    return null;
+  }
+
+  const examId = examIdsQuery.data.at(0)?.examId;
+  const exam = getExamsQuery.data.find(examItem => examItem.id === examId);
+
+  if (!exam) {
+    // This should never happen
+    return null;
+  }
+
+  const unmetPrerequisites = exam.prerequisites.filter(
+    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
   );
+  const challenges = nodes.filter(
+    ({ challenge }) =>
+      unmetPrerequisites?.includes(challenge.id) &&
+      challenge.superBlock === examSuperBlock
+  );
+  const missingPrerequisites = challenges.map(({ challenge }) => {
+    return {
+      id: challenge.id,
+      title: challenge.title,
+      slug: challenge.fields?.slug || ''
+    };
+  });
+
+  if (missingPrerequisites.length < 1) {
+    return (
+      <Callout className='exam-qualified' variant='note' label={t('misc.note')}>
+        <p>{t('learn.exam.qualified')}</p>
+      </Callout>
+    );
+  }
+
+  return <MissingPrerequisites missingPrerequisites={missingPrerequisites} />;
 }
 
 const mapStateToProps = createSelector(
@@ -209,13 +275,6 @@ function ShowExamDownload({
   const [downloadLink, setDownloadLink] = useState<string | undefined>('');
   const [downloadLinks, setDownloadLinks] = useState<string[]>([]);
 
-  const getExamsQuery = examAttempts.useGetExamsQuery(undefined, {
-    skip: !isSignedIn
-  });
-  const examIdsQuery = examAttempts.useGetExamIdsByChallengeIdQuery(id, {
-    skip: !isSignedIn
-  });
-
   const userOSState = useDetectOS();
 
   const { t } = useTranslation();
@@ -272,24 +331,6 @@ function ShowExamDownload({
     }
   }, [userOSState]);
 
-  const examId = examIdsQuery.data?.at(0)?.examId;
-  const exam = getExamsQuery.data?.find(examItem => examItem.id === examId);
-  const unmetPrerequisites = exam?.prerequisites?.filter(
-    prereq => !completedChallenges.some(challenge => challenge.id === prereq)
-  );
-  const challenges = nodes.filter(
-    ({ challenge }) =>
-      unmetPrerequisites?.includes(challenge.id) &&
-      challenge.superBlock === examSuperBlock
-  );
-  const missingPrerequisites = challenges.map(({ challenge }) => {
-    return {
-      id: challenge.id,
-      title: challenge.title,
-      slug: challenge.fields?.slug || ''
-    };
-  });
-
   return (
     <LearnLayout>
       <Helmet>
@@ -309,10 +350,12 @@ function ShowExamDownload({
             </ChallengeTitle>
             <Spacer size='m' />
             <PrerequisitesCallout
-              isExamLoading={getExamsQuery.isLoading || examIdsQuery.isLoading}
               isSignedIn={isSignedIn}
               isHonest={user?.isHonest ?? false}
-              missingPrerequisites={missingPrerequisites}
+              id={id}
+              nodes={nodes}
+              completedChallenges={completedChallenges}
+              examSuperBlock={examSuperBlock}
             />
             <h2>{t('exam.download-header')}</h2>
             <p>{t('exam.explanation')}</p>
