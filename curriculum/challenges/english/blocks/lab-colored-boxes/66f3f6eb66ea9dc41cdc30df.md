@@ -115,6 +115,13 @@ The `.color5` element should have a background color set.
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
 ```
 
+You should not use `flexbox` for this lab.
+
+```js
+const flexRegex = /display\s*:\s*(inline-)?flex/i;
+assert.isFalse(flexRegex.test(__helpers.removeCssComments(code)));
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -164,12 +171,10 @@ assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVa
 ```css
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    text-align: center;
 }
 
 h1 {
@@ -182,12 +187,10 @@ h1 {
     gap: 10px;
     width: 100%;
     max-width: 800px;
+    margin: 0 auto;
 }
 
 .color-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
     border-radius: 8px;
     text-align: center;
