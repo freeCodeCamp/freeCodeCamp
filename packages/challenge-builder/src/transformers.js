@@ -62,6 +62,13 @@ async function loadBabel() {
   );
 }
 
+// Exclude transform-spread so that the native spread operator is preserved.
+// Babel's transform-spread plugin converts [...arr] into [].concat(arr), which
+// incorrectly preserves empty slots (holes) in arrays instead of converting
+// them to undefined. All browsers that can run freeCodeCamp support spread
+// natively, so this transformation is unnecessary.
+const presetEnvOptions = { exclude: ['transform-spread'] };
+
 async function loadPresetEnv() {
   if (!presetEnv)
     presetEnv = await import(
@@ -69,7 +76,7 @@ async function loadPresetEnv() {
     );
 
   presetsJS = {
-    presets: [presetEnv]
+    presets: [[presetEnv, presetEnvOptions]]
   };
 }
 
@@ -84,7 +91,7 @@ async function loadPresetReact() {
     );
 
   presetsJSX = {
-    presets: [presetEnv, presetReact]
+    presets: [[presetEnv, presetEnvOptions], presetReact]
   };
 }
 
