@@ -841,6 +841,18 @@
     {
       "id": "698a1a863194f1f4e63f6460",
       "title": "Challenge 209: Element Size"
+    },
+    {
+      "id": "6994cff2290543b3aec9f50f",
+      "title": "Challenge 210: HSL Validator"
+    },
+    {
+      "id": "6994cff2290543b3aec9f510",
+      "title": "Challenge 211: Array Sum"
+    },
+    {
+      "id": "6994cff2290543b3aec9f511",
+      "title": "Challenge 212: Array Insertion"
     }
   ]
 }
