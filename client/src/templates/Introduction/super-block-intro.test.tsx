@@ -65,15 +65,15 @@ vi.mock('./components/super-block-accordion', () => ({
 
 const translationMap: Record<string, unknown> = {
   'intro:full-stack-developer': {
-    title: 'Full Stack Developer',
-    intro: ['<strong>Build</strong> and deploy full stack apps.'],
+    title: 'Full-Stack Developer',
+    intro: ['<strong>Build</strong> and deploy full-stack apps.'],
     note: 'Stay curious.'
   },
   'intro:full-stack-developer-v9': {
-    title: 'Certified Full Stack Developer Curriculum',
+    title: 'Certified Full-Stack Developer Curriculum',
     intro: [
-      'This certification represents the culmination of your full stack developer journey.',
-      'Pass the exam to earn your Full Stack Developer Certification.'
+      'This certification represents the culmination of your full-stack developer journey.',
+      'Pass the exam to earn your Full-Stack Developer Certification.'
     ],
     note: 'Coming soon.'
   },
@@ -328,7 +328,7 @@ type Scenario = {
 const scenarios: Scenario[] = [
   {
     description:
-      'For a non full stack certification with progress it should render the continue button and slug.',
+      'For a non full-stack certification with progress it should render the continue button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1],
     expected: {
@@ -339,7 +339,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For a non full stack certification without progress it should render the start button and slug.',
+      'For a non full-stack certification without progress it should render the start button and slug.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [],
     expected: {
@@ -350,7 +350,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For a non full stack certification with full progress it should not render the button.',
+      'For a non full-stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.RespWebDesign,
     completedOrders: [1, 2, 3],
     expected: {
@@ -361,7 +361,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification with progress it should not render the start or continue button.',
+      'For the full-stack certification with progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1],
     expected: {
@@ -372,7 +372,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification without progress it should not render the start or continue button.',
+      'For the full-stack certification without progress it should not render the start or continue button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [],
     expected: {
@@ -383,7 +383,7 @@ const scenarios: Scenario[] = [
   },
   {
     description:
-      'For the full stack certification with full progress it should not render the button.',
+      'For the full-stack certification with full progress it should not render the button.',
     superBlock: SuperBlocks.FullStackDeveloperV9,
     completedOrders: [1, 2, 3],
     expected: {
