@@ -101,7 +101,7 @@ export const superBlockNames = {
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-export function addSuperblockStructure(
+function addSuperblockStructure(
   superBlockFilenames: string[],
   showComingSoon = SHOW_UPCOMING_CHANGES
 ) {
