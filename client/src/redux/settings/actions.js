@@ -91,6 +91,15 @@ export const updateMyExperienceError = createAction(
   types.updateMyExperienceError
 );
 
+export const updateMyEducation = createAction(types.updateMyEducation);
+export const updateMyEducationComplete = createAction(
+  types.updateMyEducationComplete,
+  checkForSuccessPayload
+);
+export const updateMyEducationError = createAction(
+  types.updateMyEducationError
+);
+
 export const validateUsername = createAction(types.validateUsername);
 export const validateUsernameComplete = createAction(
   types.validateUsernameComplete

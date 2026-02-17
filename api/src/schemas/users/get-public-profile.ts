@@ -1,5 +1,5 @@
 import { Type } from '@fastify/type-provider-typebox';
-import { profileUI, examResults, experience } from '../types.js';
+import { profileUI, examResults, experience, education } from '../types.js';
 
 export const getPublicProfile = {
   querystring: Type.Object({
@@ -96,6 +96,7 @@ export const getPublicProfile = {
                   url: Type.String()
                 })
               ),
+              education: Type.Array(education),
               profileUI,
               twitter: Type.Optional(Type.String()),
               bluesky: Type.Optional(Type.String()),
