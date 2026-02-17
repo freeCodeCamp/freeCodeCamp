@@ -27,7 +27,7 @@ const requiredCerts = [
   }
 ];
 
-test.describe('Full Stack Developer V9 superBlock page', () => {
+test.describe('Full-Stack Developer V9 superBlock page', () => {
   test('lists and links to requirements', async ({ page }) => {
     await page.goto('/learn/full-stack-developer-v9/');
 

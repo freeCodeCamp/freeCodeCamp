@@ -187,7 +187,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFullStackCert,
-        title: 'Full Stack Certification',
+        title: 'Full-Stack Certification',
         // Keep the current public profile cert slug
         certSlug: Certification.LegacyFullStack
       }

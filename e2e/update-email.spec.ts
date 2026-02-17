@@ -91,7 +91,7 @@ test.describe('The update-email page when the user is not signed in', () => {
     await page.waitForURL(allowTrailingSlash('/learn'));
 
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+      page.getByRole('heading', { name: 'Welcome back, Full-Stack User' })
     ).toBeVisible();
   });
 });

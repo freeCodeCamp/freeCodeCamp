@@ -79,7 +79,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
   {
-    name: 'Legacy Full Stack',
+    name: 'Legacy Full-Stack',
     url: '/certification/certifieduser/full-stack'
   }
 ];
@@ -106,7 +106,7 @@ test.describe('Profile component', () => {
       await expect(
         page.getByRole('heading', { name: '@certifieduser' })
       ).toBeVisible();
-      await expect(page.getByText('Full Stack User')).toBeVisible();
+      await expect(page.getByText('Full-Stack User')).toBeVisible();
       await expect(page.getByText('Joined November 2020')).toBeVisible();
       await expect(
         page.getByText(translations.profile.contributor)

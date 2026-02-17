@@ -60,7 +60,7 @@ const legacyInfosecQaInfosecBase = infoSecBase;
 // from the md/meta.json files for each cert and projects
 const fullstackCert = {
   id: '561add10cb82ac38a17213bd',
-  title: 'Legacy Full Stack',
+  title: 'Legacy Full-Stack',
   certSlug: Certification.LegacyFullStack,
   projects: null
   // Requirements are other certs and is
@@ -887,12 +887,12 @@ const allStandardCerts = [
   },
   {
     id: '64514fda6c245de4d11eb7bb',
-    title: 'Certified Full Stack Developer',
+    title: 'Certified Full-Stack Developer',
     certSlug: Certification.FullStackDeveloperV9,
     projects: [
       {
         id: '645147516c245de4d11eb7ba',
-        title: 'Certified Full Stack Developer Exam',
+        title: 'Certified Full-Stack Developer Exam',
         link: `${fullStackDeveloperV9Base}/exam-certified-full-stack-developer/exam-certified-full-stack-developer`,
         certSlug: Certification.FullStackDeveloperV9
       }
@@ -1030,6 +1030,6 @@ const certsToProjects = allStandardCerts.reduce((acc, curr) => {
 
 export type CertTitle =
   | (typeof liveCerts)[number]['title']
-  | 'Legacy Full Stack';
+  | 'Legacy Full-Stack';
 
 export { liveCerts, certsToProjects, allCerts };

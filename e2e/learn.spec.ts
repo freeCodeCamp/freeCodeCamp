@@ -35,7 +35,7 @@ test.describe('Learn - Authenticated user)', () => {
     await expect(
       page.getByRole('heading', {
         level: 1,
-        name: 'Welcome back, Full Stack User.'
+        name: 'Welcome back, Full-Stack User.'
       })
     ).toBeVisible();
 

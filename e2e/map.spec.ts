@@ -32,7 +32,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'full-stack-developer-v9',
-    name: 'Certified Full Stack Developer Curriculum'
+    name: 'Certified Full-Stack Developer Curriculum'
   },
   {
     slug: 'a2-english-for-developers',

@@ -919,7 +919,7 @@
     "document-notfound": "document not found",
     "slow-load-msg": "Looks like this is taking longer than usual, please try refreshing the page.",
     "navigation-warning": "If you leave this page, you will lose your progress. Are you sure?",
-    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full-Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
     "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
@@ -1148,7 +1148,7 @@
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
-      "heading-legacy-full-stack": "As part of this Legacy Full Stack certification, {{user}} completed the following certifications:",
+      "heading-legacy-full-stack": "As part of this Legacy Full-Stack certification, {{user}} completed the following certifications:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "As part of this certification, {{user}} built the following projects and got all automated test suites to pass:",
       "solution": "Solution",
@@ -1279,8 +1279,8 @@
       "relational-databases-v9-cert": "Relational Database Certification",
       "back-end-development-and-apis-v9": "Backend Development and APIs",
       "back-end-development-and-apis-v9-cert": "Backend Development and APIs Certification",
-      "full-stack-developer-v9": "Full Stack Developer",
-      "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "full-stack-developer-v9": "Full-Stack Developer",
+      "full-stack-developer-v9-cert": "Full-Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
       "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "A2 Professional Spanish",
@@ -1297,8 +1297,8 @@
       "legacy-data-visualization-cert": "Legacy Data Visualization Certification",
       "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
-      "full-stack": "Legacy Full Stack",
-      "full-stack-cert": "Legacy Full Stack Certification"
+      "full-stack": "Legacy Full-Stack",
+      "full-stack-cert": "Legacy Full-Stack Certification"
     }
   },
   "certification-card": {

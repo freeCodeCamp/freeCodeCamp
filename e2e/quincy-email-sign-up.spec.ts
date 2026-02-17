@@ -52,7 +52,7 @@ test.describe('Email sign-up page when user is not signed in', () => {
     // We wait for this navigation to complete before moving onto the next.
     await page.waitForURL(allowTrailingSlash('/learn'));
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+      page.getByRole('heading', { name: 'Welcome back, Full-Stack User' })
     ).toBeVisible();
 
     await page.goto('/settings');
@@ -111,7 +111,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // We wait for the navigation to complete.
     await page.waitForURL('/learn');
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+      page.getByRole('heading', { name: 'Welcome back, Full-Stack User' })
     ).toBeVisible();
 
     await page.goto('/settings');
@@ -145,7 +145,7 @@ test.describe('Email sign-up page when user is signed in', () => {
     // We wait for the navigation to complete.
     await page.waitForURL('/learn');
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full Stack User' })
+      page.getByRole('heading', { name: 'Welcome back, Full-Stack User' })
     ).toBeVisible();
 
     // `sendQuincyEmail` is not set in the DB since the endpoint is mocked,
