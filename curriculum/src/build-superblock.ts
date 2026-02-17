@@ -1,5 +1,5 @@
-import { existsSync, readdirSync } from 'fs';
-import { join, resolve, basename } from 'path';
+import { readdirSync, readFileSync, existsSync } from 'node:fs';
+import { join, resolve, basename } from 'node:path';
 import { isEmpty } from 'lodash';
 import debug from 'debug';
 
@@ -7,17 +7,18 @@ import { parseMD } from '../../tools/challenge-parser/parser';
 import { createPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import { isAuditedSuperBlock } from '@freecodecamp/shared/utils/is-audited';
 import {
-  CommentDictionary,
+  type CommentDictionary,
   translateCommentsInChallenge
 } from '../../tools/challenge-parser/translation-parser';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import type { Chapter } from '@freecodecamp/shared/config/chapters';
 import { Certification } from '@freecodecamp/shared/config/certification-settings';
 import { getSuperOrder } from './super-order.js';
-import type {
-  BlockStructure,
-  Challenge,
-  ChallengeFile
+import {
+  getLanguageConfig,
+  type BlockStructure,
+  type Challenge,
+  type ChallengeFile
 } from './file-handler.js';
 import { SHOW_UPCOMING_CHANGES } from './config';
 
@@ -41,6 +42,103 @@ interface Meta extends BlockStructure {
   order: number;
   superBlock: SuperBlocks;
   superOrder: number;
+}
+
+/**
+ * Gets a translation entry for a specific English ID and text across all languages
+ * @param {Object} dicts - Dictionary object containing translations for each language
+ * @param {Object} params - Parameters object
+ * @param {string} params.engId - The English ID to look up in dictionaries
+ * @param {string} params.text - The fallback English text to use if translation not found
+ * @returns {Object} Object mapping language codes to translated text or fallback English text
+ */
+export function getTranslationEntry(
+  dicts: Record<string, Record<string, unknown>>,
+  { engId, text }: { engId: string; text: string }
+) {
+  return Object.keys(dicts).reduce((acc, lang) => {
+    const entry = dicts[lang]?.[engId];
+    if (entry) {
+      return { ...acc, [lang]: entry };
+    } else {
+      // default to english
+      return { ...acc, [lang]: text };
+    }
+  }, {});
+}
+
+/**
+ * Creates a mapping of English comments to their translations across all supported languages
+ * @param {string} dictionariesDir - Path to the main (english) dictionaries directory
+ * @param {string} targetDictionariesDir - Path to the target (i18n or english) dictionaries directory
+ * @returns {Object} Object mapping English comment text to translations in all languages
+ */
+export function createCommentMap(
+  dictionariesDir: string,
+  targetDictionariesDir: string
+): CommentDictionary {
+  log(
+    `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
+  );
+  const languages = readdirSync(targetDictionariesDir);
+
+  const dictionaries = languages.reduce((acc, lang) => {
+    const commentsPath = resolve(targetDictionariesDir, lang, 'comments.json');
+    const commentsData = JSON.parse(readFileSync(commentsPath, 'utf8'));
+    return {
+      ...acc,
+      [lang]: commentsData
+    };
+  }, {});
+
+  const COMMENTS_TO_TRANSLATE = JSON.parse(
+    readFileSync(resolve(dictionariesDir, 'english', 'comments.json'), 'utf8')
+  ) as Record<string, string>;
+
+  const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
+    readFileSync(
+      resolve(dictionariesDir, 'english', 'comments-to-not-translate.json'),
+      'utf8'
+    )
+  ) as Record<string, string>;
+
+  // map from english comment text to translations
+  const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
+    (acc, [id, text]) => {
+      return {
+        ...acc,
+        [text]: getTranslationEntry(dictionaries, { engId: id, text })
+      };
+    },
+    {} as CommentDictionary
+  );
+
+  // map from english comment text to itself
+  const untranslatableCommentMap = Object.values(
+    COMMENTS_TO_NOT_TRANSLATE
+  ).reduce((acc, text) => {
+    const englishEntry = languages.reduce(
+      (acc, lang) => ({
+        ...acc,
+        [lang]: text
+      }),
+      {}
+    );
+    return {
+      ...acc,
+      [text]: englishEntry
+    };
+  }, {} as CommentDictionary);
+
+  const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
+
+  // the english entries need to be added here, because english is not in
+  // languages
+  Object.keys(allComments).forEach(comment => {
+    allComments[comment]!.english = comment;
+  });
+
+  return allComments;
 }
 
 /**
@@ -263,10 +361,8 @@ export function finalizeChallenge(challenge: Challenge, meta: Meta) {
 export class BlockCreator {
   /**
    * @param {object} options - Options object
-   * @param {string} options.blockContentDir - Directory containing block content files
-   * @param {string} options.i18nBlockContentDir - Directory containing i18n block content files
+   * @param {string} options.skipValidation - Whether to skip validation of challenges against meta (default: false)
    * @param {string} options.lang - Language code for the block content
-   * @param {object} options.commentTranslations - Translations for comments in challenges
    * @constructor
    * @description Initializes the BlockCreator with directories for block content and structure.
    * This class is responsible for reading block directories, parsing challenges, and validating them
@@ -280,23 +376,30 @@ export class BlockCreator {
   skipValidation: boolean | undefined;
 
   constructor({
-    blockContentDir,
-    i18nBlockContentDir,
     lang,
-    commentTranslations,
     skipValidation
   }: {
-    blockContentDir: string;
-    i18nBlockContentDir: string;
     lang: string;
-    commentTranslations: CommentDictionary;
     skipValidation?: boolean;
   }) {
+    const {
+      blockContentDir,
+      i18nBlockContentDir,
+      dictionariesDir,
+      i18nDictionariesDir
+    } = getLanguageConfig(lang);
+
     this.blockContentDir = blockContentDir;
     this.i18nBlockContentDir = i18nBlockContentDir;
     this.lang = lang;
-    this.commentTranslations = commentTranslations;
     this.skipValidation = skipValidation;
+
+    const targetDictionariesDir =
+      lang === 'english' ? dictionariesDir : i18nDictionariesDir;
+    this.commentTranslations = createCommentMap(
+      dictionariesDir,
+      targetDictionariesDir
+    );
   }
 
   /**

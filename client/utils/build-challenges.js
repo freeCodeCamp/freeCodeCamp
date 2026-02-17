@@ -7,7 +7,6 @@ const {
 } = require('@freecodecamp/curriculum/get-challenges');
 
 const {
-  getBlockCreator,
   getSuperblocks,
   superBlockToFilename
 } = require('@freecodecamp/curriculum/build-curriculum');
@@ -17,6 +16,7 @@ const {
   getSuperblockStructure
 } = require('@freecodecamp/curriculum/file-handler');
 const {
+  BlockCreator,
   transformSuperBlock
 } = require('@freecodecamp/curriculum/build-superblock');
 const { getSuperOrder } = require('@freecodecamp/curriculum/super-order');
@@ -25,7 +25,7 @@ const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
 exports.localeChallengesRootDir = getContentDir(curriculumLocale);
 
-const blockCreator = getBlockCreator(curriculumLocale);
+const blockCreator = new BlockCreator({ lang: curriculumLocale });
 
 function getBlockMetadata(block, superBlock) {
   // Compute metadata for the given block in the specified superblock

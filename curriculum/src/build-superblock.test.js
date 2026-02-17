@@ -1,4 +1,6 @@
-import { describe, test, expect, vi } from 'vitest';
+import path from 'node:path';
+import { describe, it, expect, vi } from 'vitest';
+
 import { isPoly } from '@freecodecamp/shared/utils/polyvinyl';
 import {
   validateChallenges,
@@ -7,7 +9,8 @@ import {
   addMetaToChallenge,
   fixChallengeProperties,
   SuperblockCreator,
-  finalizeChallenge
+  finalizeChallenge,
+  createCommentMap
 } from './build-superblock.js';
 
 const dummyFullStackSuperBlock = {
@@ -142,8 +145,92 @@ const expectedChallengeProperties = {
 };
 
 describe('buildSuperblock pure functions', () => {
+  describe('createCommentMap', () => {
+    const dictionaryDir = path.resolve(
+      import.meta.dirname,
+      '..',
+      '__fixtures__',
+      'dictionaries'
+    );
+    const incompleteDictDir = path.resolve(
+      import.meta.dirname,
+      '..',
+      '__fixtures__',
+      'incomplete-dicts'
+    );
+
+    it('returns an object', () => {
+      expect(typeof createCommentMap(dictionaryDir, dictionaryDir)).toBe(
+        'object'
+      );
+    });
+
+    it('fallback to the untranslated string', () => {
+      expect.assertions(2);
+      const commentMap = createCommentMap(incompleteDictDir, incompleteDictDir);
+      expect(commentMap['To be translated one'].spanish).toEqual(
+        'Spanish translation one'
+      );
+      expect(commentMap['To be translated two'].spanish).toEqual(
+        'To be translated two'
+      );
+    });
+
+    it('returns an object with an expected form', () => {
+      expect.assertions(4);
+      const expectedIds = [
+        'To be translated one',
+        'To be translated two',
+        'Not translated one',
+        'Not translated two'
+      ];
+      const map = createCommentMap(dictionaryDir, dictionaryDir);
+      expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
+
+      const mapValue = map['To be translated one'];
+
+      expect(Object.keys(mapValue)).toEqual(
+        expect.arrayContaining(['chinese', 'spanish'])
+      );
+      expect(typeof mapValue.chinese).toBe('string');
+      expect(typeof mapValue.spanish).toBe('string');
+    });
+
+    it('returns an object with expected values', () => {
+      expect.assertions(9);
+      const expectedIds = [
+        'To be translated one',
+        'To be translated two',
+        'Not translated one',
+        'Not translated two'
+      ];
+      const map = createCommentMap(dictionaryDir, dictionaryDir);
+      expect(Object.keys(map)).toEqual(expect.arrayContaining(expectedIds));
+
+      const translatedOne = map['To be translated one'];
+
+      expect(translatedOne.chinese).toBe('Chinese translation one');
+      expect(translatedOne.spanish).toBe('Spanish translation one');
+
+      const translatedTwo = map['To be translated two'];
+
+      expect(translatedTwo.chinese).toBe('Chinese translation two');
+      expect(translatedTwo.spanish).toBe('Spanish translation two');
+
+      const untranslatedOne = map['Not translated one'];
+
+      expect(untranslatedOne.chinese).toBe('Not translated one');
+      expect(untranslatedOne.spanish).toBe('Not translated one');
+
+      const untranslatedTwo = map['Not translated two'];
+
+      expect(untranslatedTwo.chinese).toBe('Not translated two');
+      expect(untranslatedTwo.spanish).toBe('Not translated two');
+    });
+  });
+
   describe('validateChallenges', () => {
-    test('should not throw when all challenges match meta', () => {
+    it('should not throw when all challenges match meta', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 2' }
@@ -161,7 +248,7 @@ describe('buildSuperblock pure functions', () => {
       ).not.toThrow();
     });
 
-    test('should throw when challenges are missing from meta', () => {
+    it('should throw when challenges are missing from meta', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 2' },
@@ -180,7 +267,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw when challenge files are missing', () => {
+    it('should throw when challenge files are missing', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
@@ -195,7 +282,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw when multiple challenges are missing from meta', () => {
+    it('should throw when multiple challenges are missing from meta', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 2' },
@@ -215,7 +302,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw when multiple challenge files are missing', () => {
+    it('should throw when multiple challenge files are missing', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
@@ -231,7 +318,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw if there are duplicate challenges in the meta', () => {
+    it('should throw if there are duplicate challenges in the meta', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
@@ -246,7 +333,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw if there are duplicate found challenges', () => {
+    it('should throw if there are duplicate found challenges', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '1', title: 'Challenge 2' }
@@ -261,7 +348,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw if there are duplicate titles in the meta', () => {
+    it('should throw if there are duplicate titles in the meta', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 2' }
@@ -279,7 +366,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should throw if there are duplicate titles in the found challenges', () => {
+    it('should throw if there are duplicate titles in the found challenges', () => {
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
         { id: '2', title: 'Challenge 1' } // Duplicate title
@@ -297,7 +384,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should log errors for duplicate titles in meta if shouldThrow is false', () => {
+    it('should log errors for duplicate titles in meta if shouldThrow is false', () => {
       vi.spyOn(console, 'error');
       const foundChallenges = [
         { id: '1', title: 'Challenge 1' },
@@ -320,7 +407,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('buildBlock', () => {
-    test('should build block with ordered challenges', () => {
+    it('should build block with ordered challenges', () => {
       const foundChallenges = [
         { id: '2', title: 'Challenge 2' },
         { id: '1', title: 'Challenge 1' }
@@ -342,7 +429,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result.challenges[1].id).toBe('2'); // Second in order
     });
 
-    test('should throw if challenges are missing', () => {
+    it('should throw if challenges are missing', () => {
       const foundChallenges = [{ id: '2', title: 'Challenge 2' }];
 
       const meta = {
@@ -359,7 +446,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should return the passed in meta', () => {
+    it('should return the passed in meta', () => {
       const foundChallenges = [{ id: '1', title: 'Challenge 1' }];
 
       const meta = {
@@ -375,7 +462,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('addMetaToChallenge', () => {
-    test('should add meta properties to challenge', () => {
+    it('should add meta properties to challenge', () => {
       const challenge = { id: '1' };
 
       addMetaToChallenge(challenge, dummyBlockMeta);
@@ -383,7 +470,7 @@ describe('buildSuperblock pure functions', () => {
       expect(challenge).toEqual(expectedChallengeProperties);
     });
 
-    test('should add chapter and module properties when present in meta', () => {
+    it('should add chapter and module properties when present in meta', () => {
       const challenge = { id: '1' };
       const metaWithChapterAndModule = {
         ...dummyBlockMeta,
@@ -402,7 +489,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('finalizeChallenge', () => {
-    test('should add meta properties', async () => {
+    it('should add meta properties', async () => {
       const challenge = finalizeChallenge(
         {
           id: '1'
@@ -418,7 +505,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('fixChallengeProperties', () => {
-    test("should ensure all challengeFiles are 'polyvinyls'", () => {
+    it("should ensure all challengeFiles are 'polyvinyls'", () => {
       dummyChallenge.challengeFiles.forEach(file => {
         expect(isPoly(file)).toBe(false);
       });
@@ -434,7 +521,7 @@ describe('buildSuperblock pure functions', () => {
       expect(seeds[1]).toBe(dummyChallenge.challengeFiles[1].contents);
     });
 
-    test("should ensure all the solutions are arrays of 'polyvinyls'", () => {
+    it("should ensure all the solutions are arrays of 'polyvinyls'", () => {
       const challengeWithSolutions = {
         ...dummyChallenge,
         solutions: [dummyChallenge.challengeFiles]
@@ -450,7 +537,7 @@ describe('buildSuperblock pure functions', () => {
   });
 
   describe('transformSuperBlock', () => {
-    test('should return the blocks array when valid superblock data is provided', () => {
+    it('should return the blocks array when valid superblock data is provided', () => {
       const superblockData = {
         blocks: ['basic-html-and-html5', 'basic-css', 'applied-visual-design']
       };
@@ -466,7 +553,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result).toHaveLength(3);
     });
 
-    test('should return single block when superblock has one block', () => {
+    it('should return single block when superblock has one block', () => {
       const superblockData = {
         blocks: ['basic-html-and-html5']
       };
@@ -477,7 +564,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result).toHaveLength(1);
     });
 
-    test('should throw an error when the blocks array is empty', () => {
+    it('should throw an error when the blocks array is empty', () => {
       const superblockData = {
         blocks: []
       };
@@ -487,7 +574,7 @@ describe('buildSuperblock pure functions', () => {
       );
     });
 
-    test('should handle superblock data with other properties', () => {
+    it('should handle superblock data with other properties', () => {
       const superblockData = {
         name: 'Responsive Web Design',
         dashedName: 'responsive-web-design',
@@ -504,7 +591,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result).toHaveLength(2);
     });
 
-    test('should transform superblocks with nested chapters and modules', () => {
+    it('should transform superblocks with nested chapters and modules', () => {
       const result = transformSuperBlock(dummyFullStackSuperBlock);
 
       expect(result).toEqual([
@@ -518,7 +605,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result).toHaveLength(6);
     });
 
-    test("should omit 'comingSoon' modules and chapters", () => {
+    it("should omit 'comingSoon' modules and chapters", () => {
       const result = transformSuperBlock(dummyUnfinishedSuperBlock);
 
       expect(result).toEqual([
@@ -528,7 +615,7 @@ describe('buildSuperblock pure functions', () => {
       expect(result).toHaveLength(2);
     });
 
-    test("should NOT omit 'comingSoon' modules and chapters if showComingSoon is true", () => {
+    it("should NOT omit 'comingSoon' modules and chapters if showComingSoon is true", () => {
       const result = transformSuperBlock(dummyUnfinishedSuperBlock, {
         showComingSoon: true
       });
@@ -548,7 +635,7 @@ describe('buildSuperblock pure functions', () => {
 
 describe('SuperblockCreator class', () => {
   describe('processSuperblock', () => {
-    test('should process blocks using the provided processing function', async () => {
+    it('should process blocks using the provided processing function', async () => {
       const mockProcessBlockFn = vi
         .fn()
         .mockResolvedValueOnce('Block 1')
