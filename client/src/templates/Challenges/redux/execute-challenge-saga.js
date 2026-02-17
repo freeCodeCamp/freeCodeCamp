@@ -50,6 +50,7 @@ import {
   initLogs,
   logsToConsole,
   openModal,
+  setPythonPreviewRunning,
   updateConsole,
   updateLogs,
   updateTests
@@ -74,6 +75,12 @@ const LOGS_TO_IGNORE = [
   // https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4
   'The browser build of Tailwind CSS should not be used in production. To use Tailwind CSS in production, use the Tailwind CLI, Vite plugin, or PostCSS plugin: https://tailwindcss.com/docs/installation'
 ];
+
+const isPythonChallengeType = challengeType =>
+  challengeType === challengeTypes.python ||
+  challengeType === challengeTypes.multifilePythonCertProject ||
+  challengeType === challengeTypes.pyLab ||
+  challengeType === challengeTypes.dailyChallengePy;
 
 // when 'run tests' is clicked, do this first
 function* executeCancellableChallengeSaga(payload) {
@@ -294,15 +301,7 @@ export function* previewChallengeSaga(action) {
         // Python challenges do not use the preview frame, they use a web worker
         // to run the code. The UI is handled by the xterm component, so there
         // is no need to update the preview frame.
-        if (
-          challengeData.challengeType === challengeTypes.python ||
-          challengeData.challengeType ===
-            challengeTypes.multifilePythonCertProject ||
-          challengeData.challengeType === challengeTypes.pyLab ||
-          challengeData.challengeType === challengeTypes.dailyChallengePy
-        ) {
-          yield updatePython(challengeData);
-        } else {
+        if (!isPythonChallengeType(challengeData.challengeType)) {
           yield call(updatePreview, buildData, finalDocument, proxyLogger);
         }
       } else if (isJavaScriptChallenge(challengeData)) {
@@ -337,17 +336,29 @@ export function* previewChallengeSaga(action) {
 // appropriately)
 function* updatePreviewSaga(action) {
   const challengeData = yield select(challengeDataSelector);
-  if (
-    challengeData.challengeType === challengeTypes.python ||
-    challengeData.challengeType === challengeTypes.multifilePythonCertProject ||
-    challengeData.challengeType === challengeTypes.pyLab ||
-    challengeData.challengeType === challengeTypes.dailyChallengePy
-  ) {
-    yield updatePython(challengeData);
-  } else {
+  if (!isPythonChallengeType(challengeData.challengeType)) {
     // all other challenges have to recreate the preview
     yield previewChallengeSaga(action);
   }
+}
+
+function* runPythonPreviewSaga() {
+  const challengeData = yield select(challengeDataSelector);
+  if (!isPythonChallengeType(challengeData.challengeType)) return;
+
+  try {
+    yield put(setPythonPreviewRunning(true));
+    yield call(updatePython, challengeData);
+  } finally {
+    yield put(setPythonPreviewRunning(false));
+  }
+}
+
+function* cancelPythonPreviewSaga() {
+  // The xterm listener also clears this when the worker acknowledges the stop.
+  // We set it here to keep the button state responsive.
+  yield put(setPythonPreviewRunning(false));
+  interruptCodeExecution();
 }
 
 function* updatePython(challengeData) {
@@ -361,7 +372,7 @@ function* updatePython(challengeData) {
     editableContents: buildData.sources.editableContents
   };
 
-  runPythonCode(code);
+  yield call(runPythonCode, code);
   // TODO: proxy errors to the console
 }
 
@@ -391,6 +402,8 @@ export function createExecuteChallengeSaga(types) {
   return [
     takeLatest(types.executeChallenge, executeCancellableChallengeSaga),
     takeLatest(types.updateFile, updatePreviewSaga),
+    takeLatest(types.runPythonPreview, runPythonPreviewSaga),
+    takeLatest(types.cancelPythonPreview, cancelPythonPreviewSaga),
     takeLatest(
       [types.challengeMounted, types.resetChallenge, types.previewMounted],
       previewChallengeSaga

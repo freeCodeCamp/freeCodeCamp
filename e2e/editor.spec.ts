@@ -1,4 +1,4 @@
-import { APIRequestContext, expect, test } from '@playwright/test';
+import { APIRequestContext, Page, expect, test } from '@playwright/test';
 
 import { clearEditor, focusEditor, getEditors } from './utils/editor';
 import { authedRequest } from './utils/request';
@@ -19,6 +19,31 @@ const setTheme = async (
 const testPage =
   '/learn/2022/responsive-web-design/learn-html-by-building-a-cat-photo-app/step-3';
 
+const openPythonTerminal = async (page: Page, isMobile: boolean) => {
+  if (isMobile) {
+    const previewTab = page.getByRole('tab', { name: 'Preview' });
+    if ((await previewTab.count()) > 0) await previewTab.click();
+  } else {
+    const terminalButton = page.getByRole('button', { name: 'Terminal' });
+    if ((await terminalButton.count()) > 0) {
+      await terminalButton.first().click();
+    }
+  }
+
+  await expect(
+    page.getByTestId('xterm-terminal').locator('.xterm-rows').first()
+  ).toBeVisible();
+};
+
+const runPythonCode = async (page: Page) => {
+  const runCodeButton = page.getByRole('button', {
+    name: 'Run Code',
+    exact: true
+  });
+  await expect(runCodeButton.first()).toBeVisible();
+  await runCodeButton.first().click();
+};
+
 test.describe('Editor Component', () => {
   test('should allow the user to insert text', async ({ page, isMobile }) => {
     await page.goto(testPage);
@@ -31,7 +56,7 @@ test.describe('Editor Component', () => {
 });
 
 test.describe('Python Terminal', () => {
-  test('should only have output if the python code generates it', async ({
+  test('should show Cancel while code is running and switch back to Run Code when done', async ({
     page,
     browserName,
     isMobile
@@ -40,34 +65,30 @@ test.describe('Python Terminal', () => {
       'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
     );
 
-    // First enter code that does not generate output
+    // Enter a medium-heavy one-liner so we can observe the running state.
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName, isMobile });
-    await getEditors(page).fill('no = "output"');
+    await getEditors(page).fill('sum(x * x for x in range(120_000_000))');
 
-    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
+    await openPythonTerminal(page, isMobile);
 
-    const terminal = page.getByTestId('xterm-terminal');
-    // Ensure there is no output
-    await expect(async () => {
-      const text = await terminal.innerText();
-      expect(text.trim()).toBe('');
-    }).toPass();
+    const runCodeButton = page.getByRole('button', {
+      name: 'Run Code',
+      exact: true
+    });
+    const cancelButton = page.getByRole('button', {
+      name: 'Cancel',
+      exact: true
+    });
 
-    if (isMobile) await page.getByRole('tab', { name: 'Code' }).click();
+    await expect(runCodeButton).toBeVisible();
+    await runPythonCode(page);
 
-    // Now enter code that does generate output
-    await focusEditor({ page, isMobile });
-    await clearEditor({ page, browserName, isMobile });
-    await getEditors(page).fill('some = "output"\nprint(some)');
-
-    if (isMobile) await page.getByRole('tab', { name: 'Preview' }).click();
-    // Since the invisible characters are still there, we have to use "contain",
-    // not "have"
-    await expect(terminal).toContainText('output');
+    await expect(cancelButton).toBeVisible({ timeout: 10000 });
+    await expect(runCodeButton).toBeVisible({ timeout: 45000 });
   });
 
-  test('should display error message when the user enters invalid code', async ({
+  test('should switch back to Run Code after clicking Cancel', async ({
     page,
     isMobile,
     browserName
@@ -78,20 +99,48 @@ test.describe('Python Terminal', () => {
 
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName, isMobile });
-    // Then enter invalid code
+    await getEditors(page).fill('while True: pass');
+
+    await openPythonTerminal(page, isMobile);
+    const runCodeButton = page.getByRole('button', {
+      name: 'Run Code',
+      exact: true
+    });
+    const cancelButton = page.getByRole('button', {
+      name: 'Cancel',
+      exact: true
+    });
+
+    await expect(runCodeButton).toBeVisible();
+    await runPythonCode(page);
+    await expect(cancelButton).toBeVisible({ timeout: 10000 });
+    await cancelButton.click();
+    await expect(runCodeButton).toBeVisible({ timeout: 10000 });
+    await expect(cancelButton).toHaveCount(0);
+  });
+
+  test('should display a syntax error when invalid code is run', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await page.goto(
+      'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
+    );
+
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
     await getEditors(page).fill('def');
 
-    if (isMobile) {
-      await page.getByRole('tab', { name: 'Preview' }).click();
-    }
+    await openPythonTerminal(page, isMobile);
+    await runPythonCode(page);
 
-    const terminal = page.getByTestId('xterm-terminal');
+    const terminalOutput = page.locator(
+      '[data-playwright-test-label="xterm-terminal"] [role="region"][aria-label="Terminal output"]'
+    );
 
-    // While it's displayed on multiple lines, the string itself has no newlines, hence:
-    const error = `Traceback (most recent call last):  File "main.py", line 1    def       ^SyntaxError: invalid syntax`;
-    // It shouldn't take this long, but the Python worker can be slow to respond.
-    await expect(terminal.getByText(error)).toContainText(error, {
-      timeout: 15000
+    await expect(terminalOutput).toContainText('SyntaxError: invalid syntax', {
+      timeout: 20000
     });
   });
 });

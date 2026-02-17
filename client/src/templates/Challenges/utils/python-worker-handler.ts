@@ -5,13 +5,6 @@ const pythonWorkerSrc = `/js/workers/${version}/python-worker.js`;
 
 let worker: Worker | null = null;
 let listener: ((event: MessageEvent) => void) | null = null;
-type Code = {
-  contents: string;
-  editableContents: string;
-};
-// We need to keep track of the last code message so we can re-run it if the
-// worker is reset.
-let lastCodeMessage: Code | null = null;
 
 function getPythonWorker(): Worker {
   if (!worker) {
@@ -28,7 +21,8 @@ type PythonWorkerEvent = {
       | 'contentLoaded'
       | 'reset'
       | 'stopped'
-      | 'is-alive';
+      | 'is-alive'
+      | 'run-complete';
     text?: string;
   };
 };
@@ -44,6 +38,8 @@ export function registerTerminal(handlers: {
   print: (text?: string) => void;
   input: (text?: string) => void;
   reset: () => void;
+  runComplete?: () => void;
+  stopped?: () => void;
 }): void {
   const pythonWorker = getPythonWorker();
   if (listener) pythonWorker.removeEventListener('message', listener);
@@ -62,15 +58,21 @@ export function registerTerminal(handlers: {
     if (type === 'stopped') {
       clearTimeout(Number(text));
       sendListenMessage();
-      // Generally, we get here if the learner changes their code while the
-      // worker is busy. In that case, we want to re-run the code on receipt of
-      // the 'stopped' message.
-      if (lastCodeMessage) runPythonCode(lastCodeMessage);
+      handlers.stopped?.();
+      return;
+    }
+
+    if (type === 'run-complete') {
+      handlers.runComplete?.();
+      return;
     } else {
       handlers[type](text);
     }
   };
   pythonWorker.addEventListener('message', listener);
+  // The worker may have sent its initial "stopped" signal before the listener
+  // was attached. Sending listen here ensures run requests are accepted.
+  sendListenMessage();
 }
 
 /**
@@ -101,9 +103,38 @@ export function interruptCodeExecution(): void {
 export function runPythonCode(code: {
   contents: string;
   editableContents: string;
-}): void {
-  lastCodeMessage = code;
-  getPythonWorker().postMessage({ type: 'run', code });
+}): Promise<void> {
+  const pythonWorker = getPythonWorker();
+  const pingId = Date.now();
+
+  return new Promise(resolve => {
+    let timeout: ReturnType<typeof setTimeout> | null = null;
+    const resolveRun = () => {
+      pythonWorker.removeEventListener('message', completionListener);
+      if (timeout) clearTimeout(timeout);
+      resolve();
+    };
+
+    const completionListener = (event: PythonWorkerEvent) => {
+      const { type, text } = event.data;
+      if (type === 'run-complete' || type === 'stopped') {
+        resolveRun();
+        return;
+      }
+
+      // Fallback for environments where run-complete is unavailable:
+      // the cancel ping is queued after run and acknowledged once the worker
+      // is responsive again.
+      if (type === 'is-alive' && Number(text) === pingId) {
+        resolveRun();
+      }
+    };
+
+    pythonWorker.addEventListener('message', completionListener);
+    pythonWorker.postMessage({ type: 'run', code });
+    pythonWorker.postMessage({ type: 'cancel', value: pingId });
+    timeout = setTimeout(resolveRun, 30000);
+  });
 }
 
 // If the python worker reports that it has stopped, we need to send a listen

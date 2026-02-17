@@ -58,6 +58,8 @@ export const isResettingSelector = state => state[ns].isResetting;
 
 export const isBuildEnabledSelector = state => state[ns].isBuildEnabled;
 export const isExecutingSelector = state => state[ns].isExecuting;
+export const pythonPreviewRunningSelector = state =>
+  state[ns].pythonPreviewRunning;
 export const successMessageSelector = state => state[ns].successMessage;
 
 export const projectFormValuesSelector = state =>

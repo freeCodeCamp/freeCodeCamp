@@ -233,6 +233,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
         postMessage({ type: 'stopped', text: getResetId() });
       }
     } finally {
+      postMessage({ type: 'run-complete' });
       getResetId.destroy();
       printException.destroy();
       globals.destroy();

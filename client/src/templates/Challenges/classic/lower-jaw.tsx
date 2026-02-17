@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { createSelector } from 'reselect';
 import { Button, Spacer } from '@freecodecamp/ui';
 import { connect } from 'react-redux';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import Fail from '../../../assets/icons/fail';
 import LightBulb from '../../../assets/icons/lightbulb';
 import GreenPass from '../../../assets/icons/green-pass';
@@ -19,8 +20,10 @@ import Progress from '../../../components/Progress';
 import Quote from '../../../assets/icons/quote';
 import {
   challengeMetaSelector,
-  completedPercentageSelector
+  completedPercentageSelector,
+  pythonPreviewRunningSelector
 } from '../redux/selectors';
+import { cancelPythonPreview, runPythonPreview } from '../redux/actions';
 import callGA from '../../../analytics/call-ga';
 
 interface LowerJawPanelProps extends ShareProps {
@@ -49,6 +52,7 @@ interface LowerJawStatusProps {
 interface LowerJawProps {
   challengeMeta: ChallengeMeta;
   completedPercent: number;
+  isPythonPreviewRunning: boolean;
   hint?: string;
   challengeIsCompleted: boolean;
   openHelpModal: () => void;
@@ -59,16 +63,29 @@ interface LowerJawProps {
   openResetModal: () => void;
   isSignedIn: boolean;
   updateContainer: () => void;
+  runPythonPreview: () => void;
+  cancelPythonPreview: () => void;
 }
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
   completedPercentageSelector,
-  (challengeMeta: ChallengeMeta, completedPercent: number) => ({
+  pythonPreviewRunningSelector,
+  (
+    challengeMeta: ChallengeMeta,
+    completedPercent: number,
+    isPythonPreviewRunning: boolean
+  ) => ({
     challengeMeta,
-    completedPercent
+    completedPercent,
+    isPythonPreviewRunning
   })
 );
+
+const mapDispatchToProps = {
+  runPythonPreview,
+  cancelPythonPreview
+};
 
 const sentenceArray = [
   'learn.sorry-try-again',
@@ -185,9 +202,10 @@ const LowerJawStatus = ({
 
 const isBlockCompleted = 100;
 
-const LowerJaw = ({
-  challengeMeta: { superBlock, block },
+export const LowerJaw = ({
+  challengeMeta: { superBlock, block, challengeType },
   completedPercent,
+  isPythonPreviewRunning,
   openHelpModal,
   challengeIsCompleted,
   hint,
@@ -197,7 +215,9 @@ const LowerJaw = ({
   testsLength,
   openResetModal,
   isSignedIn,
-  updateContainer
+  updateContainer,
+  runPythonPreview,
+  cancelPythonPreview
 }: LowerJawProps): JSX.Element => {
   const [shownHint, setShownHint] = useState(hint);
   const [quote, setQuote] = useState(randomCompliment());
@@ -310,6 +330,12 @@ const LowerJaw = ({
     : t('buttons.submit-and-go');
 
   const showSignInButton = !isSignedIn && challengeIsCompleted;
+  const isPythonChallenge =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
+  const showPythonRunControls = isPythonChallenge && !challengeIsCompleted;
 
   return (
     <div className='action-row-container'>
@@ -343,18 +369,36 @@ const LowerJaw = ({
           challengeIsCompleted && !focusManagementCompleted ? 'sr-only' : ''
         }
       >
-        <Button
-          data-playwright-test-label='lowerJaw-check-button'
-          block
-          onClick={tryToExecuteChallenge}
-          {...(challengeIsCompleted &&
-            !focusManagementCompleted && { tabIndex: -1 })}
-          {...(challengeIsCompleted &&
-            focusManagementCompleted && { 'aria-hidden': true })}
-          ref={checkYourCodeButtonRef}
-        >
-          {checkButtonText}
-        </Button>
+        <div className='lower-jaw-check-row'>
+          <Button
+            data-playwright-test-label='lowerJaw-check-button'
+            className='lower-jaw-check-button'
+            onClick={tryToExecuteChallenge}
+            {...(challengeIsCompleted &&
+              !focusManagementCompleted && { tabIndex: -1 })}
+            {...(challengeIsCompleted &&
+              focusManagementCompleted && { 'aria-hidden': true })}
+            ref={checkYourCodeButtonRef}
+          >
+            {checkButtonText}
+          </Button>
+          {showPythonRunControls &&
+            (isPythonPreviewRunning ? (
+              <Button
+                data-playwright-test-label='lowerJaw-python-cancel-button'
+                onClick={cancelPythonPreview}
+              >
+                {t('buttons.cancel')}
+              </Button>
+            ) : (
+              <Button
+                data-playwright-test-label='lowerJaw-python-run-button'
+                onClick={runPythonPreview}
+              >
+                Run Code
+              </Button>
+            ))}
+        </div>
       </div>
       {/* Using aria-live=polite instead of assertive works better with ORCA */}
       <div
@@ -419,4 +463,4 @@ const LowerJaw = ({
 
 LowerJaw.displayName = 'LowerJaw';
 
-export default connect(mapStateToProps)(LowerJaw);
+export default connect(mapStateToProps, mapDispatchToProps)(LowerJaw);

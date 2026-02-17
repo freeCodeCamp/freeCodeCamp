@@ -156,6 +156,16 @@ textarea.inputarea {
   display: none;
 }
 
+.lower-jaw-check-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lower-jaw-check-row .lower-jaw-check-button {
+  flex: 1 1 240px;
+}
+
 @keyframes example {
   from {
     background-color: var(--highlight-background);
