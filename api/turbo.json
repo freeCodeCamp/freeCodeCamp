@@ -1,5 +1,5 @@
 {
-  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
+  "$schema": "https://v2-8-7.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
@@ -39,7 +39,41 @@
       ]
     },
     "test": {
-      "passThroughEnv": ["VITEST_WORKER_ID"]
+      "passThroughEnv": ["VITEST_WORKER_ID"],
+      "env": [
+        "API_LOCATION",
+        "AUTH0_CLIENT_ID",
+        "AUTH0_CLIENT_SECRET",
+        "AUTH0_DOMAIN",
+        "COOKIE_DOMAIN",
+        "COOKIE_SECRET",
+        "DEPLOYMENT_ENV",
+        "DEPLOYMENT_VERSION",
+        "EMAIL_PROVIDER",
+        "FCC_API_LOG_LEVEL",
+        "FCC_API_LOG_TRANSPORT",
+        "FCC_ENABLE_DEV_LOGIN_MODE",
+        "FCC_ENABLE_SENTRY_ROUTES",
+        "FCC_ENABLE_SHADOW_CAPTURE",
+        "FCC_ENABLE_SWAGGER_UI",
+        "FCC_ENABLE_TEST_LOGGING",
+        "FREECODECAMP_NODE_ENV",
+        "GROWTHBOOK_FASTIFY_API_HOST",
+        "GROWTHBOOK_FASTIFY_CLIENT_KEY",
+        "HOME_LOCATION",
+        "HOST",
+        "JWT_SECRET",
+        "MAILPIT_HOST",
+        "NODE_ENV",
+        "PORT",
+        "SENTRY_DSN",
+        "SENTRY_ENVIRONMENT",
+        "SES_ID",
+        "SES_REGION",
+        "SES_SECRET",
+        "SHOW_UPCOMING_CHANGES",
+        "STRIPE_SECRET_KEY"
+      ]
     }
   }
 }

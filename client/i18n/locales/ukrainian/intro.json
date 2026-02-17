@@ -557,7 +557,7 @@
     "intro": [
       "Дані повсюди, але це не означає, що більшість з них без форми чи контексту.",
       "У сертифікації «Візуалізація даних» ви створите діаграми, графіки та карти, що показують різні типи даних, за допомогою бібліотеки D3.js.",
-      "Ви також дізнаєтесь про JSON (JavaScript Object Notation) та як працювати з даними онлайн, користуючись API (Application Programing Interface)."
+      "Ви також дізнаєтесь про JSON (JavaScript Object Notation) та як працювати з даними онлайн, користуючись API (Application Programming Interface)."
     ],
     "note": "",
     "blocks": {
@@ -3144,6 +3144,12 @@
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
+      "lab-bubble-sort-algorithm": {
+        "title": "Implement the Bubble Sort Algorithm",
+        "intro": [
+          "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3637,6 +3643,12 @@
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
       },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
+      },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Numbers and Mathematical Operations",
         "intro": [
@@ -3653,6 +3665,12 @@
         "title": "Build a Movie Ticket Booking Calculator",
         "intro": [
           "In this workshop, you will practice how to use booleans and conditional statements in Python by building a movie ticket booking calculator."
+        ]
+      },
+      "lab-travel-weather-planner": {
+        "title": "Build a Travel Weather Planner",
+        "intro": [
+          "In this lab, you will build a travel weather planner using conditionals."
         ]
       },
       "lecture-understanding-functions-and-scope": {
