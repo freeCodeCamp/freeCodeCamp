@@ -7,8 +7,8 @@
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
-      "id": "698f4f9ff24a150af1b1fa06",
-      "title": "How Do The any, never, unknown and void Types Work?"
+      "id": "69945fc2cd3160713372860e",
+      "title": "What are Type Aliases and How Do They Work?"
     },
     {
       "id": "698f5a372871b5dfb9e01698",
@@ -17,6 +17,14 @@
     {
       "id": "698f5a3a492176259d1afcf9",
       "title": "What are Interfaces and How Do They Work?"
+    },
+    {
+      "id": "698f4f9ff24a150af1b1fa06",
+      "title": "How Do The any, never, unknown and void Types Work?"
+    },
+    {
+      "id": "699460b8cd3160713372860f",
+      "title": "What are Type Assertions and How Do They Work?"
     }
   ]
 }
