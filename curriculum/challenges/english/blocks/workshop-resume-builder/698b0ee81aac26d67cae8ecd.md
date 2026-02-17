@@ -1,25 +1,17 @@
 ---
-id: 69846cdfbdddbd18c7c88c5c
-title: Step 12
+id: 698b0ee81aac26d67cae8ecd
+title: Step 15
 challengeType: 0
-dashedName: step-12
+dashedName: step-15
 ---
 
 # --description--
 
-Next, you will implement the functionality that allows users to save their resume data to local storage and load it when they return to the app. 
-
-Create a function called `saveData` with no parameters and return type `void`.
+step 15 instructions
 
 # --hints--
 
-You should have a function called `saveData`.
-
-```js
-
-```
-
-`saveData` should return `void`.
+Test 1
 
 ```js
 
@@ -839,7 +831,13 @@ let resumeData: ResumeData = {
   skills: [],
 };
 
+function saveData(): void {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(resumeData));
+}
+
+function loadData(): void {
 --fcc-editable-region--
 
 --fcc-editable-region--
+}
 ```
