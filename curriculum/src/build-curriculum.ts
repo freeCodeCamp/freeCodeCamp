@@ -39,17 +39,13 @@ const log = debug('fcc:build-curriculum');
  * @param {string} [opts.structureDir] - Directory containing curriculum structure
  * @returns {BlockCreator} A configured BlockCreator instance
  */
-export const getBlockCreator = (
-  lang: string,
-  skipValidation?: boolean,
-  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string }
-) => {
+export const getBlockCreator = (lang: string, skipValidation?: boolean) => {
   const {
     blockContentDir,
     i18nBlockContentDir,
     dictionariesDir,
     i18nDictionariesDir
-  } = getLanguageConfig(lang, opts);
+  } = getLanguageConfig(lang);
 
   const targetDictionariesDir =
     lang === 'english' ? dictionariesDir : i18nDictionariesDir;
