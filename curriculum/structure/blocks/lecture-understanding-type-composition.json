@@ -7,12 +7,12 @@
   "blockLayout": "challenge-list",
   "challengeOrder": [
     {
-      "id": "69945fc2cd3160713372860e",
-      "title": "What are Type Aliases and How Do They Work?"
-    },
-    {
       "id": "698f5a372871b5dfb9e01698",
       "title": "What are Union Types and How Do They Work?"
+    },
+    {
+      "id": "69945fc2cd3160713372860e",
+      "title": "What are Type Aliases and How Do They Work?"
     },
     {
       "id": "698f5a3a492176259d1afcf9",
