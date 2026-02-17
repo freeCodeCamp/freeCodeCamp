@@ -32,6 +32,7 @@ const baseProfileUI = {
   showAbout: false,
   showCerts: false,
   showDonation: false,
+  showExperience: false,
   showHeatMap: false,
   showLocation: false,
   showName: false,
@@ -1192,6 +1193,234 @@ Happy coding!
       });
     });
 
+    describe('/update-my-experience', () => {
+      test('PUT returns 200 status code with "success" message and saves experience', async () => {
+        const payload = {
+          experience: [
+            {
+              id: '1',
+              title: 'Software Engineer',
+              company: 'Tech Corp',
+              location: 'Remote',
+              startDate: '2020-01',
+              endDate: '2022-06',
+              description: 'Worked on various projects'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-experience').send(payload);
+
+        expect(response.body).toEqual({
+          message: 'flash.experience-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+
+        expect(user?.experience).toEqual(payload.experience);
+      });
+
+      test('rejects extraneous keys on entries', async () => {
+        const res = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'x',
+              title: 'Dev',
+              company: 'Co',
+              startDate: '',
+              description: '',
+              foo: 'bar'
+            }
+          ]
+        });
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+
+        expect(user?.experience).toEqual([
+          {
+            id: 'x',
+            title: 'Dev',
+            company: 'Co',
+            location: null,
+            startDate: '',
+            endDate: null,
+            description: ''
+          }
+        ]);
+        expect(res.statusCode).toBe(200);
+      });
+
+      test('returns 400 when experience is not an array', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: { not: 'an array' } as unknown as []
+        });
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('supports current position (omitted endDate becomes null)', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'cur',
+              title: 'Engineer',
+              company: 'Now Co',
+              startDate: '2023-01',
+              description: ''
+              // endDate omitted
+            }
+          ]
+        });
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience?.[0]).toEqual({
+          id: 'cur',
+          title: 'Engineer',
+          company: 'Now Co',
+          location: null,
+          startDate: '2023-01',
+          endDate: null,
+          description: ''
+        });
+      });
+
+      test('accepts long descriptions', async () => {
+        const long = 'x'.repeat(1000);
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: '',
+              title: 'Writer',
+              company: 'Docs Inc',
+              startDate: '2020-01',
+              endDate: '2020-12',
+              description: long
+            }
+          ]
+        });
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience?.[0]?.description).toEqual(long);
+      });
+      test('PUT accepts empty array and clears experience', async () => {
+        // seed with one item first
+        await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: 'seed',
+              title: 'Seed Title',
+              company: 'Seed Co',
+              location: 'Seed City',
+              startDate: '2019-01',
+              endDate: '2019-12',
+              description: 'Seed desc'
+            }
+          ]
+        });
+
+        const response = await superPut('/update-my-experience').send({
+          experience: []
+        });
+
+        expect(response.body).toEqual({
+          message: 'flash.experience-updated',
+          type: 'success'
+        });
+        expect(response.statusCode).toEqual(200);
+
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience).toEqual([]);
+      });
+
+      test('PUT saves multiple experiences and preserves order', async () => {
+        const payload = {
+          experience: [
+            {
+              id: '1',
+              title: 'Junior Dev',
+              company: 'A Inc',
+              location: 'NY',
+              startDate: '2018-01',
+              endDate: '2019-01',
+              description: 'Did stuff'
+            },
+            {
+              id: '2',
+              title: 'Senior Dev',
+              company: 'B LLC',
+              location: 'SF',
+              startDate: '2019-02',
+              endDate: '2021-03',
+              description: 'Did more stuff'
+            }
+          ]
+        };
+
+        const response = await superPut('/update-my-experience').send(payload);
+
+        expect(response.statusCode).toEqual(200);
+        const user = await fastifyTestInstance.prisma.user.findFirst({
+          where: { email: developerUserEmail },
+          select: { experience: true }
+        });
+        expect(user?.experience).toEqual(payload.experience);
+      });
+
+      test('PUT returns 400 status code when the experience property is missing', async () => {
+        const response = await superPut('/update-my-experience').send({});
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+
+      test('PUT returns 400 status code when any data is the wrong type', async () => {
+        const response = await superPut('/update-my-experience').send({
+          experience: [
+            {
+              id: '',
+              title: '',
+              company: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            },
+            {
+              id: '',
+              title: {},
+              company: '',
+              location: '',
+              startDate: '',
+              endDate: '',
+              description: ''
+            }
+          ]
+        });
+
+        expect(response.body).toEqual(updateErrorResponse);
+        expect(response.statusCode).toEqual(400);
+      });
+    });
+
     describe('/update-my-classroom-mode', () => {
       test('PUT returns 200 status code with "success" message', async () => {
         const response = await superPut('/update-my-classroom-mode').send({
@@ -1263,7 +1492,8 @@ Happy coding!
       { path: '/update-my-about', method: 'PUT' },
       { path: '/update-my-honesty', method: 'PUT' },
       { path: '/update-privacy-terms', method: 'PUT' },
-      { path: '/update-my-portfolio', method: 'PUT' }
+      { path: '/update-my-portfolio', method: 'PUT' },
+      { path: '/update-my-experience', method: 'PUT' }
     ];
 
     endpoints.forEach(({ path, method }) => {

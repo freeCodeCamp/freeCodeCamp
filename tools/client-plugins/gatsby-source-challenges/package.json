@@ -5,7 +5,7 @@
   "license": "BSD-3-Clause",
   "private": true,
   "engines": {
-    "node": ">=16",
+    "node": ">=24",
     "pnpm": ">=10"
   },
   "scripts": {
@@ -21,8 +21,12 @@
   "homepage": "https://github.com/freeCodeCamp/freeCodeCamp#readme",
   "author": "freeCodeCamp <team@freecodecamp.org>",
   "main": "gatsby-node.js",
+  "peerDependencies": {
+    "gatsby": "^5.0.0"
+  },
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
+    "@freecodecamp/curriculum": "workspace:*",
     "chokidar": "3.6.0",
     "eslint": "^9.39.1"
   }

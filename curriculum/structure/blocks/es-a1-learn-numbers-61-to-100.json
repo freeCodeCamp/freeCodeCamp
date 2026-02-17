@@ -1,0 +1,23 @@
+{
+  "name": "Numbers 61 to 100",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-learn-numbers-61-to-100",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69729bf8a65c70c7fed8f427", "title": "Task 1" },
+    { "id": "6972a03952707e3c836ab822", "title": "Task 2" },
+    { "id": "6972a1873e1440b5216692d8", "title": "Task 3" },
+    { "id": "6972a26b0bc3731b0faedca4", "title": "Task 4" },
+    { "id": "6972c303b293ee0d0cf66efb", "title": "Task 5" },
+    { "id": "6972c406649431dbf26d26b2", "title": "Task 6" },
+    { "id": "6972c4b262c368b1f2ba7846", "title": "Task 7" },
+    { "id": "6972c64d32d4c8eb2ed468ff", "title": "Task 8" },
+    { "id": "6972c7ad2d60f228119e809b", "title": "Task 9" },
+    { "id": "6972c87a9dc4d3c1d58b099e", "title": "Task 10" },
+    { "id": "6972ca4b9f0a5dedb0d5b5a2", "title": "Task 11" },
+    { "id": "6972cae91b78f18ced1c6936", "title": "Task 12" },
+    { "id": "6972cb5c5789059f009ab1d0", "title": "Task 13" }
+  ],
+  "blockLabel": "learn"
+}

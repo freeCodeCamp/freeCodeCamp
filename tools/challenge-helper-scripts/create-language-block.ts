@@ -8,18 +8,17 @@ import {
   SuperBlocks,
   languageSuperBlocks,
   chapterBasedSuperBlocks
-} from '../../shared-dist/config/curriculum.js';
+} from '@freecodecamp/shared/config/curriculum';
 
-import { BlockLayouts, BlockLabel } from '../../shared-dist/config/blocks.js';
+import { BlockLayouts, BlockLabel } from '@freecodecamp/shared/config/blocks';
 import {
   getContentConfig,
   writeBlockStructure,
   createBlockFolder,
   getSuperblockStructure
-} from '../../curriculum/src/file-handler.js';
-import { superBlockToFilename } from '../../curriculum/src/build-curriculum.js';
+} from '@freecodecamp/curriculum/file-handler';
+import { superBlockToFilename } from '@freecodecamp/curriculum/build-curriculum';
 import { getBaseMeta } from './helpers/get-base-meta.js';
-import { createIntroMD } from './helpers/create-intro.js';
 import {
   createDialogueFile,
   createQuizFile,
@@ -47,6 +46,7 @@ type SuperBlockInfo = {
   blocks: Record<string, BlockInfo>;
   chapters?: Record<string, string>;
   modules?: Record<string, string>;
+  'module-intros'?: Record<string, { intro: string[]; note: string }>;
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
@@ -143,9 +143,6 @@ async function createLanguageBlock(
   } else {
     void updateSimpleSuperblockStructure(block, {}, superblockFilename);
   }
-
-  // TODO: remove once we stop relying on markdown in the client.
-  await createIntroMD(superBlock, block, title);
 }
 
 async function updateIntroJson({
@@ -191,6 +188,16 @@ async function updateIntroJson({
     }
     if (!newIntro[superBlock].modules[module]) {
       newIntro[superBlock].modules[module] = moduleTitle;
+    }
+
+    if (!newIntro[superBlock]['module-intros']) {
+      newIntro[superBlock]['module-intros'] = {};
+    }
+    if (!newIntro[superBlock]['module-intros'][module]) {
+      newIntro[superBlock]['module-intros'][module] = {
+        note: '',
+        intro: ['']
+      };
     }
   }
 

@@ -8,11 +8,12 @@ import {
   availableLangs,
   LangNames,
   LangCodes
-} from '../../shared-dist/config/i18n';
+} from '@freecodecamp/shared/config/i18n';
 import {
-  catalogSuperBlocks,
-  SuperBlocks
-} from '../../shared-dist/config/curriculum';
+  SuperBlocks,
+  superBlockStages,
+  SuperBlockStage
+} from '@freecodecamp/shared/config/curriculum';
 import intro from './locales/english/intro.json';
 
 interface Intro {
@@ -85,13 +86,14 @@ describe('Locale tests:', () => {
 describe('Intro file structure tests:', () => {
   const typedIntro = intro as unknown as Intro;
   const superblocks = Object.values(SuperBlocks);
+  const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
   for (const superBlock of superblocks) {
     test(`superBlock ${superBlock} has required properties`, () => {
       expect(typeof typedIntro[superBlock].title).toBe('string');
 
       // catalog superblocks should have a summary
       if (catalogSuperBlocks.includes(superBlock)) {
-        expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);
+        expect(typedIntro[superBlock].summary).toBeInstanceOf(Array);
       }
 
       expect(typedIntro[superBlock].intro).toBeInstanceOf(Array);

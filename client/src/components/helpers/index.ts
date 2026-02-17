@@ -5,3 +5,4 @@ export { default as Link } from './link';
 export { default as LazyImage } from './lazy-image';
 export { default as AvatarRenderer } from './avatar-renderer';
 export { ButtonLink } from './button-link';
+export { interleave } from './interleave';

@@ -63,7 +63,7 @@ describe('VersionEndpoint', () => {
     const jsonText = preElement?.textContent;
     expect(jsonText).toBeTruthy();
 
-    const parsed = JSON.parse(jsonText!) as VersionData;
+    const parsed = JSON.parse(jsonText) as VersionData;
     expect(parsed).toHaveProperty('client');
     expect(parsed).toHaveProperty('api');
     expect(parsed.client).toHaveProperty('version');
@@ -83,7 +83,7 @@ describe('VersionEndpoint', () => {
 
     const preElement = screen.getByText(/"client"/);
     const jsonText = preElement?.textContent;
-    const parsed = JSON.parse(jsonText!) as VersionData;
+    const parsed = JSON.parse(jsonText) as VersionData;
 
     expect(parsed.api.error).toBe('Network error');
   });
@@ -102,7 +102,7 @@ describe('VersionEndpoint', () => {
 
     const preElement = screen.getByText(/"client"/);
     const jsonText = preElement?.textContent;
-    const parsed = JSON.parse(jsonText!) as VersionData;
+    const parsed = JSON.parse(jsonText) as VersionData;
 
     expect(parsed.api.error).toBe('HTTP 500');
   });

@@ -2,7 +2,7 @@ import { type FastifyPluginCallbackTypebox } from '@fastify/type-provider-typebo
 import Stripe from 'stripe';
 
 import * as schemas from '../../schemas.js';
-import { donationSubscriptionConfig } from '../../../../shared/config/donation-settings.js';
+import { donationSubscriptionConfig } from '@freecodecamp/shared/config/donation-settings';
 import { STRIPE_SECRET_KEY, HOME_LOCATION } from '../../utils/env.js';
 
 /**

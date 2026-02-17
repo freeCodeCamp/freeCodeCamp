@@ -1,7 +1,7 @@
 import { resolve } from 'path';
 import { config } from 'dotenv';
 
-import { availableLangs } from '../../shared-dist/config/i18n.js';
+import { availableLangs } from '@freecodecamp/shared/config/i18n';
 
 config({ path: resolve(__dirname, '../../.env') });
 
@@ -17,7 +17,7 @@ export function testedLang() {
       Before the site can be built, this language needs to be manually approved`);
     }
   } else {
-    throw Error('LOCALE must be set for testing');
+    throw Error('CURRICULUM_LOCALE must be set for testing');
   }
 }
 

@@ -16,15 +16,15 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        node-version: [22]
+        node-version: [24]
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: 'recursive'
 
       - name: Checkout client-config
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           repository: freeCodeCamp/client-config
           path: client-config
@@ -66,7 +66,7 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           submodules: 'recursive'
 
@@ -93,14 +93,14 @@ jobs:
       fail-fast: false
       matrix:
         browsers: [chromium]
-        node-version: [22]
+        node-version: [24]
     steps:
       - name: Set Action Environment Variables
         run: |
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
 
       - name: Checkout Source Files
-        uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
 
@@ -135,11 +135,8 @@ jobs:
       - name: Install playwright dependencies
         run: npx playwright install --with-deps
 
-      - name: Install and Build
-        run: |
-          pnpm install
-          pnpm compile:ts
-          pnpm run build:curriculum
+      - name: Install
+        run: pnpm install
 
       - name: Start apps
         run: |

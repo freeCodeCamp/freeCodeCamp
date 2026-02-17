@@ -8,7 +8,7 @@ import { createSelector } from 'reselect';
 import { Container, Col, Row, Image, Button, Spacer } from '@freecodecamp/ui';
 
 import envData from '../../config/env.json';
-import { getLangCode } from '../../../shared-dist/config/i18n';
+import { getLangCode } from '@freecodecamp/shared/config/i18n';
 import FreeCodeCampLogo from '../assets/icons/freecodecamp-logo';
 import MicrosoftLogo from '../assets/icons/microsoft-logo';
 import { createFlashMessage } from '../components/Flash/redux';
@@ -33,13 +33,13 @@ import {
   standardErrorMessage
 } from '../utils/error-messages';
 
-import { PaymentContext } from '../../../shared-dist/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import ribbon from '../assets/images/ribbon.svg';
 import {
   Certification,
   CertSlug,
   linkedInCredentialIds
-} from '../../../shared-dist/config/certification-settings';
+} from '@freecodecamp/shared/config/certification-settings';
 import MultiTierDonationForm from '../components/Donation/multi-tier-donation-form';
 import callGA from '../analytics/call-ga';
 import ShowProjectLinks from './show-project-links';
@@ -454,31 +454,29 @@ const ShowCertification = (props: ShowCertificationProps): JSX.Element => {
                       : 'certification.fulltext'
                 }
                 title={t(`certification.title.${certSlug}`, certTitle)}
+                values={{
+                  user: displayName,
+                  title: t(`certification.title.${certSlug}`, certTitle),
+                  time: certDate.toLocaleString([localeCode, 'en-US'], {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                  }),
+                  completionTime
+                }}
               >
                 <h3>placeholder</h3>
                 <h1>
-                  <strong>{{ user: displayName }}</strong>
+                  <strong>{'{{user}}'}</strong>
                 </h1>
                 <h3 data-playwright-test-label='successful-completion'>
                   placeholder
                 </h3>
                 <h1 data-playwright-test-label='certification-title'>
-                  <strong>
-                    {{
-                      title: t(`certification.title.${certSlug}`, certTitle)
-                    }}
-                  </strong>
+                  <strong>{'{{title}}'}</strong>
                 </h1>
-                <h4 data-playwright-test-label='issue-date'>
-                  {{
-                    time: certDate.toLocaleString([localeCode, 'en-US'], {
-                      year: 'numeric',
-                      month: 'long',
-                      day: 'numeric'
-                    })
-                  }}
-                </h4>
-                <h5 style={{ marginTop: '15px' }}>{{ completionTime }}</h5>
+                <h4 data-playwright-test-label='issue-date'>{'{{time}}'}</h4>
+                <h5 style={{ marginTop: '15px' }}>{'{{completionTime}}'}</h5>
               </Trans>
             </div>
           </main>

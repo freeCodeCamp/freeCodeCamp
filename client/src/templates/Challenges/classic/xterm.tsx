@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { registerTerminal } from '../utils/python-worker-handler';
 import './xterm.css';
+import './xterm-original.css';
 
 const registerServiceWorker = async () => {
   if ('serviceWorker' in navigator) {
@@ -138,8 +139,10 @@ export const XtermTerminal = ({
   }, [xtermFitRef, dimensions]);
 
   return (
-    <div style={{ height: dimensions?.height }} ref={termContainerRef}>
-      <link rel='stylesheet' href='/js/xterm.css' />
-    </div>
+    <div
+      data-playwright-test-label='xterm-terminal'
+      style={{ height: dimensions?.height }}
+      ref={termContainerRef}
+    ></div>
   );
 };

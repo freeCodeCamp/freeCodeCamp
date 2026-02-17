@@ -1,0 +1,38 @@
+{
+  "name": "Dictionaries and Loops",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-projects-loops",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "3625fbc38b9428ae98d98f23",
+      "title": "Dictionaries"
+    },
+    {
+      "id": "474c23ec0df6e7af920e0526",
+      "title": "While Loop"
+    },
+    {
+      "id": "d4876f74547b26d5c330423e",
+      "title": "Building a Guessing Game"
+    },
+    {
+      "id": "030401977064585ddd4c7746",
+      "title": "For Loops"
+    },
+    {
+      "id": "a4cfb218d22efcfa7cc49d80",
+      "title": "Exponent Functions"
+    },
+    {
+      "id": "28119f9dc5f93e3ac5d7c58a",
+      "title": "2D Lists and Nested Loops"
+    },
+    {
+      "id": "703bcd12c0edae7773eeec64",
+      "title": "Building a Translator"
+    }
+  ]
+}
