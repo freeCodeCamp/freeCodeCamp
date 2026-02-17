@@ -18,7 +18,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
   return (
     <>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-x'
         className='btn fade-in'
         href={xRedirectURL}
         target='_blank'
@@ -29,7 +29,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-bluesky'
         className='btn fade-in'
         href={blueSkyRedirectURL}
         target='_blank'
@@ -40,7 +40,7 @@ export const ShareTemplate: React.ComponentType<ShareRedirectProps> = ({
         <span className='sr-only'>{t('aria.opens-new-window')}</span>
       </a>
       <a
-        data-testid='ShareTemplateWrapperTestID'
+        data-testid='share-on-threads'
         className='btn fade-in'
         href={threadsRedirectURL}
         target='_blank'
