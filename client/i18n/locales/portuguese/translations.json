@@ -204,6 +204,10 @@
       ],
       "cta": "Comece a aprender agora (é grátis)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Ganhe certificações verificadas gratuitas em:",
     "core-certs-heading": "Currículo recomendado:",
     "learn-english-heading": "Aprenda inglês para desenvolvedores:",
@@ -564,7 +568,7 @@
     "codespaces": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o GitHub Codespaces. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no GitHub</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Click the start button below this list",
       "step-3": "Naquela página, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VSCode,",
@@ -584,7 +588,7 @@
     "ona": {
       "intro": "Este curso é executado em uma máquina virtual Linux usando o Ona. Siga estas instruções para iniciar o curso:",
       "step-1": "<0>Crie uma conta no Ona</0> se você não tiver uma",
-      "step-2": "Clique no botão de iniciar abaixo",
+      "step-2": "Click the start button below this list",
       "step-3": "No modal que aparece para cima, clique no botão criar",
       "step-4": "Depois que a máquina virtual do Linux terminar de carregar, inicie a extensão CodeRoad, assim:",
       "step-5": "Clicando no menu de \"hambúrguer\" perto do canto superior esquerdo da janela do VScode,",
@@ -710,7 +714,8 @@
       "exam": "Teste",
       "warm-up": "Aquecimento",
       "learn": "Aprender",
-      "practice": "Praticar"
+      "practice": "Praticar",
+      "video": "Video"
     },
     "archive": {
       "title": "Nossos cursos arquivados",
@@ -1257,6 +1262,7 @@
       "college-algebra-with-python-v8-cert": "Certificação de Álgebra universitária com Python",
       "foundational-c-sharp-with-microsoft": "Fundamentos de C# com a Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Certificação de Fundamentos de C# com a Microsoft",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "A2 Inglês para Desenvolvedores",
       "a2-english-for-developers-cert": "Certificação de Inglês A2 para Desenvolvedores (Beta)",
       "b1-english-for-developers": "B1 Inglês para Desenvolvedores",
@@ -1429,6 +1435,21 @@
         "beginner": "Iniciante",
         "intermediate": "Intermediário",
         "advanced": "Avançado"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }
