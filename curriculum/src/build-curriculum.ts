@@ -224,7 +224,7 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   };
 
   const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
-    const superOrder = getSuperOrder(name);
+    const superOrder = getSuperOrder(name, SHOW_UPCOMING_CHANGES);
     const upcomingSuperOrder = getSuperOrder(name, true);
 
     if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {

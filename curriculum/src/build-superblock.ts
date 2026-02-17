@@ -488,7 +488,7 @@ export class BlockCreator {
       return null;
     }
 
-    const superOrder = getSuperOrder(superBlock);
+    const superOrder = getSuperOrder(superBlock, SHOW_UPCOMING_CHANGES);
     if (superOrder === undefined)
       throw Error(`Superblock not found: ${superBlock}`);
     const meta = {

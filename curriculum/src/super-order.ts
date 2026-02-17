@@ -1,5 +1,4 @@
 import { generateSuperBlockList } from '@freecodecamp/shared/config/curriculum';
-import { SHOW_UPCOMING_CHANGES } from './config.js';
 
 export function createSuperOrder(superBlocks: string[]) {
   const superOrder: { [sb: string]: number } = {};
@@ -13,7 +12,7 @@ export function createSuperOrder(superBlocks: string[]) {
 
 export function getSuperOrder(
   superblock: string,
-  showUpcomingChanges = SHOW_UPCOMING_CHANGES
+  showUpcomingChanges: boolean
 ) {
   const flatSuperBlockMap = generateSuperBlockList({
     showUpcomingChanges
