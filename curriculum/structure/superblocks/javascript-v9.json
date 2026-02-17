@@ -302,7 +302,8 @@
           "blocks": [
             "lecture-introduction-to-common-searching-and-sorting-algorithms",
             "lab-bubble-sort-algorithm",
-            "lab-insertion-sort"
+            "lab-insertion-sort",
+            "lab-quicksort-js"
           ]
         },
         {

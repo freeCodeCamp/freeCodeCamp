@@ -1,0 +1,15 @@
+{
+  "name": "Implement the Quicksort Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-quicksort-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "587d825a367417b2b2512c89",
+      "title": "Implement the Quicksort Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
