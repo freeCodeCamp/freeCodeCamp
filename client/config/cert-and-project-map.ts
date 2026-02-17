@@ -145,7 +145,7 @@ const allStandardCerts = [
   },
   {
     id: '561acd10cb82ac38a17513bc',
-    title: 'Front End Development Libraries',
+    title: 'Frontend Development Libraries',
     certSlug: Certification.FrontEndDevLibs,
     projects: [
       {
@@ -517,7 +517,7 @@ const allStandardCerts = [
   // Legacy certifications
   {
     id: '561add10cb82ac38a17513be',
-    title: 'Legacy Front End',
+    title: 'Legacy Frontend',
     certSlug: Certification.LegacyFrontEnd,
     projects: [
       {
@@ -835,12 +835,12 @@ const allStandardCerts = [
   },
   {
     id: '68e008aa5f80c6099d47b3a2',
-    title: 'Front End Development Libraries',
+    title: 'Frontend Development Libraries',
     certSlug: Certification.FrontEndDevLibsV9,
     projects: [
       {
         id: '68e00b355f80c6099d47b3a3',
-        title: 'Front End Development Libraries Certification Exam',
+        title: 'Frontend Development Libraries Certification Exam',
         link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
         certSlug: Certification.FrontEndDevLibsV9
       }

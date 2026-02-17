@@ -262,7 +262,7 @@ export function isCertified(
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
   // Legacy certifications
-  [Certification.LegacyFrontEnd]: 'Legacy Front End',
+  [Certification.LegacyFrontEnd]: 'Legacy Frontend',
   [Certification.JsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures V7',
   [Certification.LegacyBackEnd]: 'Legacy Backend',
@@ -275,7 +275,7 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.RespWebDesign]: 'Legacy Responsive Web Design V8',
   [Certification.JsAlgoDataStructNew]:
     'Legacy JavaScript Algorithms and Data Structures V8',
-  [Certification.FrontEndDevLibs]: 'Front End Development Libraries V8',
+  [Certification.FrontEndDevLibs]: 'Frontend Development Libraries V8',
   [Certification.DataVis]: 'Data Visualization V8',
   [Certification.BackEndDevApis]: 'Backend Development and APIs V8',
   [Certification.QualityAssurance]: 'Quality Assurance',
@@ -291,7 +291,7 @@ export const certToTitleMap: Record<Certification, string> = {
   // Upcoming certifications
   [Certification.RespWebDesignV9]: 'Responsive Web Design',
   [Certification.JsV9]: 'JavaScript',
-  [Certification.FrontEndDevLibsV9]: 'Front End Development Libraries',
+  [Certification.FrontEndDevLibsV9]: 'Frontend Development Libraries',
   [Certification.PythonV9]: 'Python',
   [Certification.RelationalDbV9]: 'Relational Database',
   [Certification.BackEndDevApisV9]: 'Backend Development and APIs',

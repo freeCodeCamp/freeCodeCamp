@@ -110,7 +110,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndLibsCert,
-        title: 'Front End Development Libraries V8 Certification',
+        title: 'Frontend Development Libraries V8 Certification',
         certSlug: Certification.FrontEndDevLibs
       },
       {
@@ -160,7 +160,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isFrontEndCert,
-        title: 'Front End Certification',
+        title: 'Frontend Certification',
         certSlug: Certification.LegacyFrontEnd
       },
       {

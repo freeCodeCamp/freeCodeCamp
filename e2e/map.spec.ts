@@ -16,7 +16,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'front-end-development-libraries-v9',
-    name: 'Front End Development Libraries Certification'
+    name: 'Frontend Development Libraries Certification'
   },
   {
     slug: 'python-v9',
