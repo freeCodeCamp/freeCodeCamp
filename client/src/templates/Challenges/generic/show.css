@@ -107,14 +107,6 @@ audio {
   text-decoration: none;
 }
 
-.review-outline-link-btn {
-  border-bottom: 0;
-  border-right: 0;
-  border-top: 0;
-  text-align: left;
-  width: 100%;
-}
-
 .review-outline-link:hover,
 .review-outline-link:focus,
 .review-outline-link.active {

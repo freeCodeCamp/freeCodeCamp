@@ -4,13 +4,10 @@ import Helmet from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Container, Col, Row, Button, Spacer } from '@freecodecamp/ui';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { isEqual } from 'lodash';
 import store from 'store';
 import { ObserveKeys } from 'react-hotkeys';
-import { Link as ScrollLink, scrollSpy, scroller } from 'react-scroll';
 import { YouTubeEvent } from 'react-youtube';
 
 // Local Utilities
@@ -40,11 +37,7 @@ import ChallengeExplanation from '../components/challenge-explanation';
 import ChallengeTranscript from '../components/challenge-transcript';
 import HelpModal from '../components/help-modal';
 import { SceneSubject } from '../components/scene/scene-subject';
-import {
-  buildReviewOutlineItems,
-  reviewHeadingSelector,
-  ReviewOutlineItem
-} from './review-outline';
+import ReviewOutlineNav from './review-outline-nav';
 
 // Styles
 import './show.css';
@@ -245,182 +238,6 @@ const ShowGeneric = ({
 
   const isReviewChallenge = challengeType === challengeTypes.review;
   const showReviewToggleInActionRow = isReviewChallenge && hasInteractiveEditor;
-  const [showReviewOutline, setShowReviewOutline] = useState(false);
-  const [reviewScrollOffset, setReviewScrollOffset] = useState(0);
-  const [activeReviewHeadingId, setActiveReviewHeadingId] = useState<
-    string | null
-  >(null);
-  const [reviewOutlineItems, setReviewOutlineItems] = useState<
-    ReviewOutlineItem[]
-  >([]);
-  const reviewContentRef = useRef<HTMLDivElement | null>(null);
-  const reviewOutlinePanelRef = useRef<HTMLElement | null>(null);
-
-  const scrollToReviewHeading = (headingId: string) => {
-    setActiveReviewHeadingId(headingId);
-
-    scroller.scrollTo(headingId, {
-      duration: 0,
-      smooth: false,
-      offset: reviewScrollOffset
-    });
-  };
-
-  useEffect(() => {
-    if (!isReviewChallenge || !reviewContentRef.current) {
-      setReviewOutlineItems([]);
-      return;
-    }
-
-    const headingElements = Array.from(
-      reviewContentRef.current.querySelectorAll<HTMLHeadingElement>(
-        reviewHeadingSelector
-      )
-    );
-    const nextOutlineItems = buildReviewOutlineItems(headingElements);
-
-    setReviewOutlineItems(nextOutlineItems);
-  }, [
-    description,
-    instructions,
-    isReviewChallenge,
-    nodules,
-    showReviewOutline,
-    showInteractiveEditor
-  ]);
-
-  useEffect(() => {
-    if (!isReviewChallenge) return;
-
-    const toPixels = (value: string) => Number.parseFloat(value) || 0;
-    const updateOffset = () => {
-      const rootStyle = window.getComputedStyle(document.documentElement);
-      const headerHeight = toPixels(
-        rootStyle.getPropertyValue('--header-height')
-      );
-      const breadcrumbsHeight = toPixels(
-        rootStyle.getPropertyValue('--breadcrumbs-height')
-      );
-      const actionRowHeight = showReviewToggleInActionRow
-        ? toPixels(rootStyle.getPropertyValue('--action-row-height'))
-        : 0;
-
-      setReviewScrollOffset(
-        -(headerHeight + breadcrumbsHeight + actionRowHeight + 8)
-      );
-    };
-
-    updateOffset();
-    window.addEventListener('resize', updateOffset);
-
-    return () => window.removeEventListener('resize', updateOffset);
-  }, [isReviewChallenge, showReviewToggleInActionRow]);
-
-  useEffect(() => {
-    if (
-      !isReviewChallenge ||
-      !showReviewOutline ||
-      reviewOutlineItems.length < 1
-    ) {
-      setActiveReviewHeadingId(null);
-      return;
-    }
-
-    let rafId: number | null = null;
-
-    const updateActiveHeading = () => {
-      const marker = window.scrollY + Math.abs(reviewScrollOffset) + 12;
-      let nextActiveId: string | null = reviewOutlineItems[0]?.id ?? null;
-
-      for (const item of reviewOutlineItems) {
-        const heading = document.getElementById(item.id);
-        if (!heading) continue;
-        const headingTop = heading.getBoundingClientRect().top + window.scrollY;
-        if (headingTop <= marker) {
-          nextActiveId = item.id;
-        } else {
-          break;
-        }
-      }
-
-      setActiveReviewHeadingId(prev =>
-        prev === nextActiveId ? prev : nextActiveId
-      );
-      rafId = null;
-    };
-
-    const onScrollOrResize = () => {
-      if (rafId !== null) return;
-      rafId = window.requestAnimationFrame(updateActiveHeading);
-    };
-
-    updateActiveHeading();
-    window.addEventListener('scroll', onScrollOrResize, { passive: true });
-    window.addEventListener('resize', onScrollOrResize);
-
-    return () => {
-      if (rafId !== null) {
-        window.cancelAnimationFrame(rafId);
-      }
-      window.removeEventListener('scroll', onScrollOrResize);
-      window.removeEventListener('resize', onScrollOrResize);
-    };
-  }, [
-    isReviewChallenge,
-    reviewOutlineItems,
-    reviewScrollOffset,
-    showReviewOutline
-  ]);
-
-  useEffect(() => {
-    if (
-      !showReviewOutline ||
-      !activeReviewHeadingId ||
-      !reviewOutlinePanelRef.current
-    ) {
-      return;
-    }
-
-    const panel = reviewOutlinePanelRef.current;
-    const activeLink = panel.querySelector<HTMLElement>(
-      `.review-outline-link[data-review-id="${activeReviewHeadingId}"]`
-    );
-    if (!activeLink) return;
-
-    const panelTop = panel.scrollTop;
-    const panelBottom = panelTop + panel.clientHeight;
-    const itemTop = activeLink.offsetTop;
-    const itemBottom = itemTop + activeLink.offsetHeight;
-    const edgeBuffer = 12;
-
-    if (itemTop < panelTop + edgeBuffer) {
-      panel.scrollTo({
-        top: Math.max(0, itemTop - edgeBuffer),
-        behavior: 'smooth'
-      });
-    } else if (itemBottom > panelBottom - edgeBuffer) {
-      panel.scrollTo({
-        top: Math.max(0, itemBottom - panel.clientHeight + edgeBuffer),
-        behavior: 'smooth'
-      });
-    }
-  }, [activeReviewHeadingId, showReviewOutline]);
-
-  useEffect(() => {
-    if (!showReviewOutline) return;
-
-    const updateSpy = () => scrollSpy.update();
-    updateSpy();
-    const rafOne = window.requestAnimationFrame(updateSpy);
-    const rafTwo = window.requestAnimationFrame(() => {
-      window.requestAnimationFrame(updateSpy);
-    });
-
-    return () => {
-      window.cancelAnimationFrame(rafOne);
-      window.cancelAnimationFrame(rafTwo);
-    };
-  }, [reviewOutlineItems, showInteractiveEditor, showReviewOutline]);
 
   const challengeBody = (
     <>
@@ -535,23 +352,6 @@ const ShowGeneric = ({
     </>
   );
 
-  const reviewOutlineToggleButton = isReviewChallenge ? (
-    <Button
-      aria-controls='review-outline-panel'
-      aria-expanded={showReviewOutline}
-      className={
-        showReviewToggleInActionRow
-          ? 'review-outline-toggle-btn-action-row'
-          : undefined
-      }
-      onClick={() => setShowReviewOutline(current => !current)}
-      style={{ alignSelf: 'flex-start' }}
-    >
-      <FontAwesomeIcon icon={faBars} />{' '}
-      {showReviewOutline ? t('buttons.close') : t('buttons.menu')}
-    </Button>
-  ) : null;
-
   return (
     <Hotkeys
       executeChallenge={handleSubmit}
@@ -574,59 +374,21 @@ const ShowGeneric = ({
             />
           )}
 
-          {showReviewToggleInActionRow && reviewOutlineToggleButton}
-
-          {isReviewChallenge && showReviewOutline ? (
-            <div className='review-layout-container'>
-              <div className='review-layout-row'>
-                <div className='review-sidebar-column'>
-                  {!showReviewToggleInActionRow && reviewOutlineToggleButton}
-                  <aside
-                    className='review-outline-panel'
-                    id='review-outline-panel'
-                    ref={reviewOutlinePanelRef}
-                  >
-                    <nav aria-label='Review outline'>
-                      <ul className='review-outline-list'>
-                        {reviewOutlineItems.map(item => (
-                          <li
-                            className={`review-outline-item review-outline-item-level-${item.level}`}
-                            key={item.id}
-                          >
-                            <ScrollLink
-                              className={`review-outline-link${
-                                activeReviewHeadingId === item.id
-                                  ? ' active'
-                                  : ''
-                              }`}
-                              data-review-id={item.id}
-                              duration={0}
-                              isDynamic={true}
-                              offset={reviewScrollOffset}
-                              onClick={() => scrollToReviewHeading(item.id)}
-                              smooth={false}
-                              to={item.id}
-                            >
-                              {item.text}
-                            </ScrollLink>
-                          </li>
-                        ))}
-                      </ul>
-                    </nav>
-                  </aside>
-                </div>
-                <div className='review-main-column'>
-                  <div ref={reviewContentRef}>
-                    <Row>{challengeBody}</Row>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {isReviewChallenge ? (
+            <ReviewOutlineNav
+              closeLabel={t('buttons.close')}
+              description={description}
+              instructions={instructions}
+              menuLabel={t('buttons.menu')}
+              nodules={nodules}
+              showInteractiveEditor={showInteractiveEditor}
+              showReviewToggleInActionRow={showReviewToggleInActionRow}
+            >
+              <Row>{challengeBody}</Row>
+            </ReviewOutlineNav>
           ) : (
             <Container>
-              <div ref={isReviewChallenge ? reviewContentRef : undefined}>
-                <Row>{challengeBody}</Row>
-              </div>
+              <Row>{challengeBody}</Row>
             </Container>
           )}
         </Container>
