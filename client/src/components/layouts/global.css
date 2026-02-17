@@ -93,6 +93,7 @@ rt {
 .default-layout {
   margin-top: var(--header-height);
   background: var(--secondary-background);
+  overflow-x: clip;
 }
 
 .default-layout:only-child {
