@@ -44,6 +44,21 @@ const runPythonCode = async (page: Page) => {
   await runCodeButton.first().click();
 };
 
+const clickCheckYourCode = async (page: Page) => {
+  const checkButtonByTestId = page.getByTestId('lowerJaw-check-button');
+  if ((await checkButtonByTestId.count()) > 0) {
+    await expect(checkButtonByTestId.first()).toBeVisible();
+    await checkButtonByTestId.first().click();
+    return;
+  }
+
+  const checkButtonByName = page.getByRole('button', {
+    name: /Check Your Code/i
+  });
+  await expect(checkButtonByName.first()).toBeVisible();
+  await checkButtonByName.first().click();
+};
+
 test.describe('Editor Component', () => {
   test('should allow the user to insert text', async ({ page, isMobile }) => {
     await page.goto(testPage);
@@ -117,6 +132,37 @@ test.describe('Python Terminal', () => {
     await cancelButton.click();
     await expect(runCodeButton).toBeVisible({ timeout: 10000 });
     await expect(cancelButton).toHaveCount(0);
+  });
+
+  test('should execute Python in terminal when Check Your Code is clicked', async ({
+    page,
+    isMobile,
+    browserName
+  }) => {
+    await page.goto(
+      'learn/scientific-computing-with-python/learn-string-manipulation-by-building-a-cipher/step-2'
+    );
+
+    await focusEditor({ page, isMobile });
+    await clearEditor({ page, browserName, isMobile });
+    await getEditors(page).fill('while True: pass');
+
+    await openPythonTerminal(page, isMobile);
+
+    const runCodeButton = page.getByRole('button', {
+      name: 'Run Code',
+      exact: true
+    });
+    const cancelButton = page.getByRole('button', {
+      name: 'Cancel',
+      exact: true
+    });
+
+    await expect(runCodeButton).toBeVisible();
+    await clickCheckYourCode(page);
+    await expect(cancelButton).toBeVisible({ timeout: 10000 });
+    await cancelButton.click();
+    await expect(runCodeButton).toBeVisible({ timeout: 10000 });
   });
 
   test('should display a syntax error when invalid code is run', async ({

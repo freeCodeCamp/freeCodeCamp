@@ -131,6 +131,8 @@ export function runPythonCode(code: {
     };
 
     pythonWorker.addEventListener('message', completionListener);
+
+    pythonWorker.postMessage({ type: 'listen' });
     pythonWorker.postMessage({ type: 'run', code });
     pythonWorker.postMessage({ type: 'cancel', value: pingId });
     timeout = setTimeout(resolveRun, 30000);
