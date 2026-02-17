@@ -222,18 +222,6 @@ describe('certificate routes', () => {
               { id: '587d78b0367417b2b2512b05', completedDate: 123456789 },
               { id: 'bd7158d8c242eddfaeb5bd13', completedDate: 123456789 }
             ],
-            is2018DataVisCert: true,
-            isA2EnglishCert: true,
-            isB1EnglishCert: true,
-            isApisMicroservicesCert: true,
-            isCollegeAlgebraPyCertV8: true,
-            isDataAnalysisPyCertV7: true,
-            isFoundationalCSharpCertV8: true,
-            isRelationalDatabaseCertV8: true,
-            isRelationalDatabaseCertV9: true,
-            isRespWebDesignCert: false,
-            isRespWebDesignCertV9: true,
-            isSciCompPyCertV7: true,
             isFullStackDeveloperCertV9: true
           }
         });
