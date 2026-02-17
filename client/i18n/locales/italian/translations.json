@@ -204,6 +204,10 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
     "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
@@ -564,7 +568,7 @@
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
       "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -584,7 +588,7 @@
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -710,7 +714,8 @@
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
-      "practice": "Practice"
+      "practice": "Practice",
+      "video": "Video"
     },
     "archive": {
       "title": "Archived Coursework",
@@ -1257,6 +1262,7 @@
       "college-algebra-with-python-v8-cert": "College Algebra with Python Certification",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "A2 English for Developers",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
@@ -1429,6 +1435,21 @@
         "beginner": "Beginner",
         "intermediate": "Intermediate",
         "advanced": "Advanced"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }
