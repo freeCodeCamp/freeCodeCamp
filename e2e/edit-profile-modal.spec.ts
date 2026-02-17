@@ -35,7 +35,7 @@ test('edit profile modal should render correctly', async ({ page }) => {
   await expect(savePersonalInfoButton).toBeDisabled();
   await expect(
     page.getByLabel(translations.settings.labels.name, { exact: true })
-  ).toHaveValue('Full-Stack User');
+  ).toHaveValue('Full Stack User');
   await expect(
     page.getByLabel(translations.settings.labels.location)
   ).toHaveValue('');

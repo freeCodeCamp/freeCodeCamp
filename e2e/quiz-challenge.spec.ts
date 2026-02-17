@@ -246,7 +246,7 @@ test.describe('Quiz challenge', () => {
 
     await expect(page).toHaveURL(allowTrailingSlash('/learn'));
     await expect(
-      page.getByRole('heading', { name: 'Welcome back, Full-Stack User.' })
+      page.getByRole('heading', { name: 'Welcome back, Full Stack User.' })
     ).toBeVisible();
   });
 

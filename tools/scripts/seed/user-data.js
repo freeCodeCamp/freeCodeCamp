@@ -219,7 +219,7 @@ module.exports.fullyCertifiedUser = {
   isCheater: false,
   username: 'certifieduser',
   about: '',
-  name: 'Full-Stack User',
+  name: 'Full Stack User',
   location: '',
   picture: '',
   acceptedPrivacyTerms: true,
