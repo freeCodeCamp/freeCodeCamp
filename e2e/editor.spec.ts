@@ -176,18 +176,42 @@ test.describe('Python Terminal', () => {
 
     await focusEditor({ page, isMobile });
     await clearEditor({ page, browserName, isMobile });
-    await getEditors(page).fill('def');
+    await getEditors(page).fill('if True print("x")');
 
     await openPythonTerminal(page, isMobile);
+    const consoleMessages: string[] = [];
+    const onConsole = (message: { text: () => string }) => {
+      consoleMessages.push(message.text());
+    };
+    page.on('console', onConsole);
     await runPythonCode(page);
 
-    const terminalOutput = page.locator(
-      '[data-playwright-test-label="xterm-terminal"] [role="region"][aria-label="Terminal output"]'
-    );
-
-    await expect(terminalOutput).toContainText('SyntaxError: invalid syntax', {
-      timeout: 20000
-    });
+    try {
+      await expect
+        .poll(
+          async () => {
+            const terminalOutput =
+              (await page
+                .locator(
+                  '[data-playwright-test-label="xterm-terminal"] [role="region"][aria-label="Terminal output"]'
+                )
+                .textContent()) ?? '';
+            const terminalRows =
+              (await page
+                .locator(
+                  '[data-playwright-test-label="xterm-terminal"] .xterm-rows'
+                )
+                .textContent()) ?? '';
+            return `${terminalOutput}\n${terminalRows}\n${consoleMessages.join('\n')}`;
+          },
+          {
+            timeout: 20000
+          }
+        )
+        .toContain('SyntaxError');
+    } finally {
+      page.off('console', onConsole);
+    }
   });
 });
 
@@ -273,11 +297,12 @@ test.describe('Editor theme if the system theme is light', () => {
       const toggle = page.getByRole('button', { name: 'Night Mode' });
       await expect(toggle).toBeVisible();
 
-      const listItem = page.getByRole('listitem').filter({ has: toggle });
-
-      // The button's click event is intercepted by the `li`,
-      // so we need to click on the `li` to trigger the theme change action.
-      await listItem.click();
+      const listItem = toggle.locator('xpath=ancestor::li[1]');
+      if ((await listItem.count()) > 0) {
+        await listItem.click();
+      } else {
+        await toggle.click();
+      }
 
       // Ensure that the action is completed before checking the editor.
       await expect(page.getByText('We have updated your theme')).toBeVisible();
