@@ -1,4 +1,4 @@
-import { prompt } from 'inquirer';
+import { select, confirm } from '@inquirer/prompts';
 
 import { getMetaData, updateMetaData } from './helpers/project-metadata.js';
 
@@ -10,21 +10,19 @@ const updateChallengeOrder = async () => {
   const newChallengeOrder: { id: string; title: string }[] = [];
 
   while (oldChallengeOrder.length) {
-    const nextChallenge = (await prompt({
-      name: 'id',
+    const nextChallengeId = await select({
       message: newChallengeOrder.length
         ? `What challenge comes after ${
             newChallengeOrder[newChallengeOrder.length - 1].title
           }?`
         : 'What is the first challenge?',
-      type: 'list',
       choices: oldChallengeOrder.map(({ id, title }) => ({
         name: title,
         value: id
       }))
-    })) as { id: string };
+    });
     const nextChallengeIndex = oldChallengeOrder.findIndex(
-      ({ id }) => id === nextChallenge.id
+      ({ id }) => id === nextChallengeId
     );
     const targetChallenge = oldChallengeOrder[nextChallengeIndex];
     oldChallengeOrder.splice(nextChallengeIndex, 1);
@@ -34,14 +32,12 @@ const updateChallengeOrder = async () => {
   console.log('New challenge order is: ');
   console.table(newChallengeOrder.map(({ title }) => ({ title })));
 
-  const confirm = await prompt({
-    name: 'correct',
+  const isCorrect = await confirm({
     message: 'Is this correct?',
-    type: 'confirm',
     default: false
   });
 
-  if (!confirm.correct) {
+  if (!isCorrect) {
     console.error('Aborting.');
     return;
   }

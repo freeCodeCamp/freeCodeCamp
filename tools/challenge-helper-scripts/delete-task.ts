@@ -1,5 +1,5 @@
 import { unlink } from 'fs/promises';
-import { prompt } from 'inquirer';
+import { select } from '@inquirer/prompts';
 import { getProjectPath } from './helpers/get-project-info.js';
 import { getFileName } from './helpers/get-file-name.js';
 import {
@@ -14,23 +14,19 @@ const deleteTask = async () => {
   const path = getProjectPath();
   const challenges = getMetaData().challengeOrder;
 
-  const challengeToDelete = (await prompt({
-    name: 'id',
+  const challengeId = await select({
     message: 'Which challenge should be deleted?',
-    type: 'list',
     choices: challenges.map(({ id, title }) => ({
       name: title,
       value: id
     }))
-  })) as { id: string };
+  });
 
-  const indexToDelete = challenges.findIndex(
-    ({ id }) => id === challengeToDelete.id
-  );
+  const indexToDelete = challenges.findIndex(({ id }) => id === challengeId);
 
-  const fileToDelete = await getFileName(challengeToDelete.id);
+  const fileToDelete = await getFileName(challengeId);
   if (!fileToDelete) {
-    throw new Error(`File not found for challenge ${challengeToDelete.id}`);
+    throw new Error(`File not found for challenge ${challengeId}`);
   }
 
   await unlink(`${path}${fileToDelete}`);

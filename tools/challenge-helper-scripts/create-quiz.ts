@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -136,43 +136,42 @@ function withTrace<Args extends unknown[], Result>(
 }
 
 void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.RespWebDesignV9,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this quiz?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'questionCount',
-        message: 'Should this quiz have either ten or twenty questions?',
-        default: 20,
-        type: 'list',
-        choices: [20, 10]
-      }
-    ])
-  )
+  .then(async existingBlocks => {
+    const superBlock = await select<SuperBlocks>({
+      message: 'Which certification does this belong to?',
+      default: SuperBlocks.RespWebDesignV9,
+      choices: Object.values(SuperBlocks).map(sb => ({ name: sb, value: sb }))
+    });
+
+    const rawBlock = await input({
+      message: 'What is the dashed name (in kebab-case) for this quiz?',
+      validate: (block: string) =>
+        validateBlockName(block.toLowerCase().trim(), existingBlocks)
+    });
+    const block = rawBlock.toLowerCase().trim();
+
+    const title = await input({
+      message: 'What is the title of this quiz?',
+      default: block
+    });
+
+    const helpCategory = await select<string>({
+      message: 'Choose a help category',
+      default: 'HTML-CSS',
+      choices: helpCategories.map(hc => ({ name: hc, value: hc }))
+    });
+
+    const questionCount = await select<number>({
+      message: 'Should this quiz have either ten or twenty questions?',
+      default: 20,
+      choices: [
+        { name: '20', value: 20 },
+        { name: '10', value: 10 }
+      ]
+    });
+
+    return { superBlock, block, title, helpCategory, questionCount };
+  })
   .then(
     async ({
       superBlock,

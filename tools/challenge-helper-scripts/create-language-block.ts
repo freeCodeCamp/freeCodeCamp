@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -50,23 +50,6 @@ type SuperBlockInfo = {
 };
 
 type IntroJson = Record<SuperBlocks, SuperBlockInfo>;
-
-interface CreateBlockArgs {
-  superBlock: SuperBlocks;
-  block: string;
-  helpCategory: string;
-  title?: string;
-  chapter?: string;
-  module?: string;
-  newChapterName?: string;
-  newChapterTitle?: string;
-  newModuleName?: string;
-  newModuleTitle?: string;
-  position?: number;
-  blockLabel?: BlockLabel;
-  blockLayout?: string;
-  questionCount?: number;
-}
 
 async function createLanguageBlock(
   superBlock: SuperBlocks,
@@ -333,275 +316,256 @@ function getBlockPrefix(
   return `${langLevel}-${blockLabel}-`;
 }
 
+const CREATE_NEW_CHAPTER = '-- Create new chapter --';
+const CREATE_NEW_MODULE = '-- Create new module --';
+
 void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.A2English,
-        type: 'list',
-        choices: Object.values(languageSuperBlocks)
-      },
-      {
-        name: 'blockLabel',
-        message: 'Choose a block label',
-        default: BlockLabel.learn,
-        type: 'list',
-        choices: Object.values(BlockLabel)
-      },
-      {
-        name: 'block',
-        message: (answers: CreateBlockArgs) => {
-          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
-          return prefix
-            ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
-            : 'What is the dashed name (in kebab-case) for this block?';
-        },
-        validate: (block: string, answers: CreateBlockArgs) => {
-          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
+  .then(async existingBlocks => {
+    const superBlock = await select<SuperBlocks>({
+      message: 'Which certification does this belong to?',
+      default: SuperBlocks.A2English,
+      choices: Object.values(languageSuperBlocks).map(sb => ({
+        name: sb,
+        value: sb
+      }))
+    });
 
-          if (prefix) {
-            const uniquePart = block.slice(prefix.length);
+    const blockLabel = await select<BlockLabel>({
+      message: 'Choose a block label',
+      default: BlockLabel.learn,
+      choices: Object.values(BlockLabel).map(bl => ({ name: bl, value: bl }))
+    });
 
-            // Check if user accidentally included block label at the end
-            if (answers.blockLabel) {
-              // Exclude exam as it is an exception
-              const blockLabelValues = Object.values(BlockLabel).filter(
-                label => label !== BlockLabel.exam
-              );
+    const prefix = getBlockPrefix(superBlock, blockLabel);
+    const blockMessage = prefix
+      ? `Complete the dashed name after the prefix below.\nPrefix: ${prefix}`
+      : 'What is the dashed name (in kebab-case) for this block?';
 
-              const endsWithLabel = blockLabelValues.some(label =>
-                uniquePart.endsWith(`-${label}`)
-              );
+    const rawBlock = await input({
+      message: blockMessage,
+      validate: (block: string) => {
+        const normalized = block.toLowerCase().trim();
+        const fullName = prefix
+          ? (normalized.startsWith(prefix)
+              ? normalized
+              : prefix + normalized)
+          : normalized;
 
-              if (endsWithLabel) {
-                return `Block name should not end with a block label (e.g., '-${answers.blockLabel}'). The label is already in the prefix.`;
-              }
+        if (prefix) {
+          const uniquePart = fullName.slice(prefix.length);
+
+          // Check if user accidentally included block label at the end
+          if (blockLabel) {
+            // Exclude exam as it is an exception
+            const blockLabelValues = Object.values(BlockLabel).filter(
+              label => label !== BlockLabel.exam
+            );
+
+            const endsWithLabel = blockLabelValues.some(label =>
+              uniquePart.endsWith(`-${label}`)
+            );
+
+            if (endsWithLabel) {
+              return `Block name should not end with a block label (e.g., '-${blockLabel}'). The label is already in the prefix.`;
             }
           }
-
-          return validateBlockName(block, existingBlocks);
-        },
-        filter: (block: string, answers: CreateBlockArgs) => {
-          const prefix = getBlockPrefix(answers.superBlock, answers.blockLabel);
-          const normalized = block.toLowerCase().trim();
-
-          if (prefix) {
-            // Strip prefix if already present (happens on re-validation), then re-add it
-            const withoutPrefix = normalized.startsWith(prefix)
-              ? normalized.slice(prefix.length)
-              : normalized;
-            return prefix + withoutPrefix;
-          }
-
-          return normalized;
         }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'English',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'blockLayout',
+
+        return validateBlockName(fullName, existingBlocks);
+      }
+    });
+    const normalizedBlock = rawBlock.toLowerCase().trim();
+    const block = prefix
+      ? (normalizedBlock.startsWith(prefix)
+          ? normalizedBlock
+          : prefix + normalizedBlock)
+      : normalizedBlock;
+
+    const title = await input({
+      message: 'What is the title of this block?',
+      default: block
+    });
+
+    const helpCategory = await select<string>({
+      message: 'Choose a help category',
+      default: 'English',
+      choices: helpCategories.map(hc => ({ name: hc, value: hc }))
+    });
+
+    const isChapterBased = chapterBasedSuperBlocks.includes(superBlock);
+
+    let blockLayout: string | undefined;
+    let questionCount: number | undefined;
+    let chapter: string | undefined;
+    let newChapterName: string | undefined;
+    let newChapterTitle: string | undefined;
+    let module: string | undefined;
+    let newModuleName: string | undefined;
+    let newModuleTitle: string | undefined;
+    let position: number | undefined;
+
+    if (isChapterBased && blockLabel !== BlockLabel.quiz) {
+      blockLayout = await select<string>({
         message: 'Choose a block layout',
         default: BlockLayouts.DialogueGrid,
-        type: 'list',
-        choices: Object.values(BlockLayouts),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.blockLabel !== BlockLabel.quiz
-      },
-      {
-        name: 'questionCount',
+        choices: Object.values(BlockLayouts).map(bl => ({
+          name: bl as string,
+          value: bl as string
+        }))
+      });
+    }
+
+    if (blockLabel === BlockLabel.quiz) {
+      questionCount = await select<number>({
         message: 'Choose a question count',
         default: 20,
-        type: 'list',
-        choices: [10, 20],
-        when: (answers: CreateBlockArgs) =>
-          answers.blockLabel === BlockLabel.quiz
-      },
-      {
-        name: 'chapter',
+        choices: [
+          { name: '10', value: 10 },
+          { name: '20', value: 20 }
+        ]
+      });
+    }
+
+    if (isChapterBased) {
+      const superblockFilename = (
+        superBlockToFilename as Record<SuperBlocks, string>
+      )[superBlock];
+      const structure = getSuperblockStructure(superblockFilename) as {
+        chapters: {
+          dashedName: string;
+          modules: { dashedName: string; blocks: string[] }[];
+        }[];
+      };
+
+      chapter = await select<string>({
         message: 'What chapter should this language block go in?',
-        type: 'list',
-        choices: (answers: CreateBlockArgs) => {
-          const superblockFilename = (
-            superBlockToFilename as Record<SuperBlocks, string>
-          )[answers.superBlock];
-          const structure = getSuperblockStructure(superblockFilename) as {
-            chapters: {
-              dashedName: string;
-              modules: { dashedName: string; blocks: string[] }[];
-            }[];
-          };
-          return [
-            ...structure.chapters.map(chapter => chapter.dashedName),
-            '-- Create new chapter --'
-          ];
-        },
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'newChapterName',
-        message: 'Enter the dashed name for the new chapter (in kebab-case):',
-        validate: (name: string) => {
-          if (!name || name.trim() === '') {
-            return 'Chapter name cannot be empty.';
+        choices: [
+          ...structure.chapters.map(ch => ({
+            name: ch.dashedName,
+            value: ch.dashedName
+          })),
+          { name: CREATE_NEW_CHAPTER, value: CREATE_NEW_CHAPTER }
+        ]
+      });
+
+      if (chapter === CREATE_NEW_CHAPTER) {
+        newChapterName = await input({
+          message:
+            'Enter the dashed name for the new chapter (in kebab-case):',
+          validate: (name: string) => {
+            if (!name || name.trim() === '') {
+              return 'Chapter name cannot be empty.';
+            }
+            if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
+              return 'Chapter name must be in kebab-case (e.g., "chapter-one").';
+            }
+            return true;
           }
-          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
-            return 'Chapter name must be in kebab-case (e.g., "chapter-one").';
+        });
+        newChapterName = newChapterName.toLowerCase().trim();
+
+        newChapterTitle = await input({
+          message: 'Enter the title for the new chapter:',
+          default: newChapterName,
+          validate: (t: string) => {
+            if (!t || t.trim() === '') {
+              return 'Chapter title cannot be empty.';
+            }
+            return true;
           }
-          return true;
-        },
-        filter: (name: string) => name.toLowerCase().trim(),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.chapter === '-- Create new chapter --'
-      },
-      {
-        name: 'newChapterTitle',
-        message: 'Enter the title for the new chapter:',
-        default: ({ newChapterName }: { newChapterName: string }) =>
-          newChapterName,
-        validate: (title: string) => {
-          if (!title || title.trim() === '') {
-            return 'Chapter title cannot be empty.';
-          }
-          return true;
-        },
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.chapter === '-- Create new chapter --'
-      },
-      {
-        name: 'module',
+        });
+      }
+
+      const resolvedChapter =
+        chapter === CREATE_NEW_CHAPTER ? newChapterName! : chapter;
+
+      let moduleChoices: { name: string; value: string }[];
+      if (chapter === CREATE_NEW_CHAPTER) {
+        moduleChoices = [
+          { name: CREATE_NEW_MODULE, value: CREATE_NEW_MODULE }
+        ];
+      } else {
+        const existingModules =
+          structure.chapters
+            .find(ch => ch.dashedName === chapter)
+            ?.modules.map(m => m.dashedName) ?? [];
+        moduleChoices = [
+          ...existingModules.map(m => ({ name: m, value: m })),
+          { name: CREATE_NEW_MODULE, value: CREATE_NEW_MODULE }
+        ];
+      }
+
+      module = await select<string>({
         message: 'What module should this language block go in?',
-        type: 'list',
-        choices: (answers: CreateBlockArgs) => {
-          if (answers.chapter === '-- Create new chapter --') {
-            return ['-- Create new module --'];
+        choices: moduleChoices
+      });
+
+      if (module === CREATE_NEW_MODULE) {
+        newModuleName = await input({
+          message:
+            'Enter the dashed name for the new module (in kebab-case):',
+          validate: (name: string) => {
+            if (!name || name.trim() === '') {
+              return 'Module name cannot be empty.';
+            }
+            if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
+              return 'Module name must be in kebab-case (e.g., "module-one").';
+            }
+            return true;
           }
-          const superblockFilename = (
-            superBlockToFilename as Record<SuperBlocks, string>
-          )[answers.superBlock];
-          const structure = getSuperblockStructure(superblockFilename) as {
-            chapters: {
-              dashedName: string;
-              modules: { dashedName: string; blocks: string[] }[];
-            }[];
-          };
-          const existingModules =
-            structure.chapters
-              .find(chapter => chapter.dashedName === answers.chapter)
-              ?.modules.map(module => module.dashedName) ?? [];
-          return [...existingModules, '-- Create new module --'];
-        },
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'newModuleName',
-        message: 'Enter the dashed name for the new module (in kebab-case):',
-        validate: (name: string) => {
-          if (!name || name.trim() === '') {
-            return 'Module name cannot be empty.';
+        });
+        newModuleName = newModuleName.toLowerCase().trim();
+
+        newModuleTitle = await input({
+          message: 'Enter the title for the new module:',
+          default: newModuleName,
+          validate: (t: string) => {
+            if (!t || t.trim() === '') {
+              return 'Module title cannot be empty.';
+            }
+            return true;
           }
-          if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(name.trim())) {
-            return 'Module name must be in kebab-case (e.g., "module-one").';
-          }
-          return true;
-        },
-        filter: (name: string) => name.toLowerCase().trim(),
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.module === '-- Create new module --'
-      },
-      {
-        name: 'newModuleTitle',
-        message: 'Enter the title for the new module:',
-        default: ({ newModuleName }: { newModuleName: string }) =>
-          newModuleName,
-        validate: (title: string) => {
-          if (!title || title.trim() === '') {
-            return 'Module title cannot be empty.';
-          }
-          return true;
-        },
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock) &&
-          answers.module === '-- Create new module --'
-      },
-      {
-        name: 'position',
-        message: 'At which position does this new block appear in the module?',
-        default: 1,
-        validate: (position: string) => {
-          return parseInt(position, 10) > 0
+        });
+      }
+
+      const rawPosition = await input({
+        message:
+          'At which position does this new block appear in the module?',
+        default: '1',
+        validate: (pos: string) => {
+          return parseInt(pos, 10) > 0
             ? true
             : 'Position must be an number greater than zero.';
-        },
-        when: (answers: CreateBlockArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock),
-        filter: (position: string) => {
-          return parseInt(position, 10);
         }
-      }
-    ])
-  )
-  .then(
-    async ({
+      });
+      position = parseInt(rawPosition, 10);
+
+      // Resolve the final chapter/module values
+      chapter = resolvedChapter;
+      module =
+        module === CREATE_NEW_MODULE ? newModuleName! : module;
+    }
+
+    const chapterTitle =
+      chapter !== newChapterName ? undefined : newChapterTitle;
+    const moduleTitle =
+      module !== newModuleName ? undefined : newModuleTitle;
+
+    await createLanguageBlock(
       superBlock,
       block,
       helpCategory,
       title,
       chapter,
       module,
-      newChapterName,
-      newChapterTitle,
-      newModuleName,
-      newModuleTitle,
+      chapterTitle,
+      moduleTitle,
       position,
       blockLabel,
       blockLayout,
       questionCount
-    }: CreateBlockArgs) => {
-      const resolvedChapter =
-        chapter === '-- Create new chapter --' ? newChapterName : chapter;
-      const resolvedModule =
-        module === '-- Create new module --' ? newModuleName : module;
-
-      // Only pass chapter title if we're creating a new chapter
-      const chapterTitle =
-        chapter === '-- Create new chapter --' ? newChapterTitle : undefined;
-      // Only pass module title if we're creating a new module
-      const moduleTitle =
-        module === '-- Create new module --' ? newModuleTitle : undefined;
-
-      await createLanguageBlock(
-        superBlock,
-        block,
-        helpCategory,
-        title,
-        resolvedChapter,
-        resolvedModule,
-        chapterTitle,
-        moduleTitle,
-        position,
-        blockLabel,
-        blockLayout,
-        questionCount
-      );
-    }
-  )
+    );
+  })
   .then(() =>
     console.log(
       'All set.  Now use pnpm run clean:client in the root and it should be good to go.'

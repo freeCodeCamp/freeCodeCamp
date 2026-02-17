@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
-import { prompt } from 'inquirer';
+import { select, input } from '@inquirer/prompts';
 import { format } from 'prettier';
 import { ObjectId } from 'bson';
 
@@ -251,151 +251,128 @@ async function getModules(superBlock: string, chapterName: string) {
 }
 
 void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'superBlock',
-        message: 'Which certification does this belong to?',
-        default: SuperBlocks.RespWebDesignV9,
-        type: 'list',
-        choices: Object.values(SuperBlocks)
-      },
-      {
-        name: 'block',
-        message: 'What is the dashed name (in kebab-case) for this project?',
-        validate: (block: string) => validateBlockName(block, existingBlocks),
-        filter: (block: string) => {
-          return block.toLowerCase().trim();
-        }
-      },
-      {
-        name: 'title',
-        default: ({ block }: { block: string }) => block
-      },
-      {
-        name: 'helpCategory',
-        message: 'Choose a help category',
-        default: 'HTML-CSS',
-        type: 'list',
-        choices: helpCategories
-      },
-      {
-        name: 'blockLabel',
+  .then(async existingBlocks => {
+    const superBlock = await select<SuperBlocks>({
+      message: 'Which certification does this belong to?',
+      default: SuperBlocks.RespWebDesignV9,
+      choices: Object.values(SuperBlocks).map(sb => ({ name: sb, value: sb }))
+    });
+
+    const rawBlock = await input({
+      message: 'What is the dashed name (in kebab-case) for this project?',
+      validate: (block: string) =>
+        validateBlockName(block.toLowerCase().trim(), existingBlocks)
+    });
+    const block = rawBlock.toLowerCase().trim();
+
+    const title = await input({
+      message: 'What is the title of this project?',
+      default: block
+    });
+
+    const helpCategory = await select<string>({
+      message: 'Choose a help category',
+      default: 'HTML-CSS',
+      choices: helpCategories.map(hc => ({ name: hc, value: hc }))
+    });
+
+    const isChapterBased = chapterBasedSuperBlocks.includes(superBlock);
+
+    let blockLabel: string | undefined;
+    let blockLayout: string | undefined;
+    let questionCount: number | undefined;
+    let chapter: string | undefined;
+    let module: string | undefined;
+    let position: number | undefined;
+    let order: number | undefined;
+
+    if (isChapterBased) {
+      blockLabel = await select<string>({
         message: 'Choose a block label',
         default: BlockLabel.lab,
-        type: 'list',
-        choices: Object.values(BlockLabel),
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'blockLayout',
-        message: 'Choose a block layout',
+        choices: Object.values(BlockLabel).map(bl => ({
+          name: bl as string,
+          value: bl as string
+        }))
+      });
 
-        default: (answers: { blockLabel: BlockLabel }) =>
-          answers.blockLabel == BlockLabel.quiz
+      blockLayout = await select<string>({
+        message: 'Choose a block layout',
+        default:
+          blockLabel == BlockLabel.quiz
             ? BlockLayouts.Link
             : BlockLayouts.ChallengeList,
-        type: 'list',
-        choices: Object.values(BlockLayouts),
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'questionCount',
-        message: 'Choose a question count',
-        default: 20,
-        type: 'list',
-        choices: [10, 20],
-        when: (answers: CreateProjectArgs) =>
-          answers.blockLabel === BlockLabel.quiz
-      },
-      {
-        name: 'chapter',
+        choices: Object.values(BlockLayouts).map(bl => ({
+          name: bl as string,
+          value: bl as string
+        }))
+      });
+
+      if (blockLabel === BlockLabel.quiz) {
+        questionCount = await select<number>({
+          message: 'Choose a question count',
+          default: 20,
+          choices: [
+            { name: '10', value: 10 },
+            { name: '20', value: 20 }
+          ]
+        });
+      }
+
+      const chapters = await getChapters(superBlock);
+      chapter = await select<string>({
         message: 'What chapter should this project go in?',
         default: 'html',
-        type: 'list',
-        choices: async (answers: CreateProjectArgs) => {
-          const chapters = await getChapters(answers.superBlock);
-          return chapters.map(x => x.dashedName);
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'module',
+        choices: chapters.map(x => ({ name: x.dashedName, value: x.dashedName }))
+      });
+
+      const modules = await getModules(superBlock, chapter);
+      module = await select<string>({
         message: 'What module should this project go in?',
         default: 'html',
-        type: 'list',
-        choices: async (answers: CreateProjectArgs) => {
-          const modules = await getModules(
-            answers.superBlock,
-            answers.chapter!
-          );
-          return modules!.map(x => x.dashedName);
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock)
-      },
-      {
-        name: 'position',
+        choices: modules!.map(x => ({
+          name: x.dashedName,
+          value: x.dashedName
+        }))
+      });
+
+      const rawPosition = await input({
         message: 'At which position does this appear in the module?',
-        default: 1,
-        validate: (position: string) => {
-          return parseInt(position, 10) > 0
+        default: '1',
+        validate: (pos: string) => {
+          return parseInt(pos, 10) > 0
             ? true
             : 'Position must be an number greater than zero.';
-        },
-        when: (answers: CreateProjectArgs) =>
-          chapterBasedSuperBlocks.includes(answers.superBlock),
-        filter: (position: string) => {
-          return parseInt(position, 10);
         }
-      },
-      {
-        name: 'order',
+      });
+      position = parseInt(rawPosition, 10);
+    } else {
+      const rawOrder = await input({
         message: 'Which position does this appear in the certificate?',
-        default: 42,
-        validate: (order: string) => {
-          return parseInt(order, 10) > 0
+        default: '42',
+        validate: (ord: string) => {
+          return parseInt(ord, 10) > 0
             ? true
             : 'Order must be an number greater than zero.';
-        },
-        when: (answers: CreateProjectArgs) =>
-          !chapterBasedSuperBlocks.includes(answers.superBlock),
-        filter: (order: string) => {
-          return parseInt(order, 10);
         }
-      }
-    ]).then(
-      async ({
-        superBlock,
-        block,
-        title,
-        helpCategory,
-        blockLabel,
-        blockLayout,
-        questionCount,
-        chapter,
-        module,
-        position,
-        order
-      }: CreateProjectArgs) =>
-        await createProject({
-          superBlock,
-          block,
-          helpCategory,
-          blockLabel,
-          blockLayout,
-          questionCount,
-          title,
-          chapter,
-          module,
-          position,
-          order
-        })
-    )
-  )
+      });
+      order = parseInt(rawOrder, 10);
+    }
+
+    return createProject({
+      superBlock,
+      block,
+      helpCategory,
+      blockLabel,
+      blockLayout,
+      questionCount,
+      title,
+      chapter,
+      module,
+      position,
+      order
+    });
+  })
   .then(() =>
     console.log(
       'All set.  Now use pnpm run clean:client in the root and it should be good to go.'

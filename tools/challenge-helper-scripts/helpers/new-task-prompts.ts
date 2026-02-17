@@ -1,4 +1,4 @@
-import { prompt } from 'inquirer';
+import { select } from '@inquirer/prompts';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
 const taskChallenges = [
@@ -10,19 +10,17 @@ const taskChallenges = [
 export const newTaskPrompts = async (): Promise<{
   challengeType: string;
 }> => {
-  const challengeType = await prompt<{ value: string }>({
-    name: 'value',
+  const challengeType = await select({
     message: 'What type of task challenge is this?',
-    type: 'list',
     choices: Object.entries(challengeTypes)
       .filter(entry => taskChallenges.includes(entry[1]))
       .map(([key, value]) => ({
         name: key,
-        value
+        value: String(value)
       }))
   });
 
   return {
-    challengeType: challengeType.value
+    challengeType
   };
 };

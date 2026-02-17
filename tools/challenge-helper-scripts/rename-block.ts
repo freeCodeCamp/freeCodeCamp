@@ -1,6 +1,6 @@
 import fs from 'fs/promises';
 import path, { join } from 'path';
-import { prompt } from 'inquirer';
+import { input } from '@inquirer/prompts';
 import { format } from 'prettier';
 
 import { IntroJson, parseJson } from './helpers/parse-json';
@@ -45,7 +45,7 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
     for (const chapter of chapters) {
       for (const module of chapter.modules) {
         const { blocks } = module;
-        const blockIndex = blocks.findIndex(block => block === oldBlock);
+        const blockIndex = blocks.findIndex((block: string) => block === oldBlock);
         if (blockIndex !== -1) {
           module.blocks[blockIndex] = newBlock;
           await writeSuperblockStructure(superblock, superblockStructure);
@@ -81,29 +81,26 @@ async function renameBlock({ newBlock, newName, oldBlock }: RenameBlockArgs) {
 }
 
 void getAllBlocks()
-  .then(existingBlocks =>
-    prompt([
-      {
-        name: 'oldBlock',
-        message: 'What is the dashed name of block to rename?',
-        type: 'input',
-        validate: (block: string) => existingBlocks.includes(block)
-      },
-      {
-        name: 'newName',
-        message: 'What is the new name?',
-        type: 'input',
-        default: ({ oldBlock }: RenameBlockArgs) =>
-          getBlockStructure(oldBlock).name
-      },
-      {
-        name: 'newBlock',
-        message: 'What is the new dashed name (in kebab-case)?',
-        validate: (newBlock: string) =>
-          validateBlockName(newBlock, existingBlocks)
-      }
-    ])
-  )
+  .then(async existingBlocks => {
+    const oldBlock = await input({
+      message: 'What is the dashed name of block to rename?',
+      validate: (block: string) =>
+        existingBlocks.includes(block) ||
+        'Block not found. Please enter an existing block name.'
+    });
+
+    const newName = await input({
+      message: 'What is the new name?',
+      default: getBlockStructure(oldBlock).name
+    });
+
+    const newBlock = await input({
+      message: 'What is the new dashed name (in kebab-case)?',
+      validate: (name: string) => validateBlockName(name, existingBlocks)
+    });
+
+    return { newBlock, newName, oldBlock };
+  })
   .then(
     async ({ newBlock, newName, oldBlock }: RenameBlockArgs) =>
       await renameBlock({ newBlock, newName, oldBlock })
