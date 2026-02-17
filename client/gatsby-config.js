@@ -65,36 +65,6 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark'
     },
-    {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
-      options: {
-        identity: 'blockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && block && superBlock;
-        }
-      }
-    },
-    {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
-      options: {
-        identity: 'superBlockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && superBlock;
-        }
-      }
-    },
     'gatsby-plugin-remove-serviceworker',
     {
       resolve: 'gatsby-plugin-schema-snapshot',
