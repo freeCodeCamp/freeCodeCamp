@@ -5644,6 +5644,12 @@
           "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
         ]
       },
+      "workshop-colorful-boxes": {
+        "title": "Design a Set of Colorful Boxes",
+        "intro": [
+          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
+        ]
+      },
       "lab-pricing-plans-layout": {
         "title": "Design a Pricing Plans Layout Page",
         "intro": [
@@ -5656,12 +5662,6 @@
         "intro": [
           "In this lab, you'll use flexbox to create a webpage of playing cards.",
           "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
-        ]
-      },
-      "workshop-colorful-boxes": {
-        "title": "Design a Set of Colorful Boxes",
-        "intro": [
-          "In this workshop, you will practice working with CSS flexbox by designing a set of colored boxes."
         ]
       },
       "review-css-flexbox": {
