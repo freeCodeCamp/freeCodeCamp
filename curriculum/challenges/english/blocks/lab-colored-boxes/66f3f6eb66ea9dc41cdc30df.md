@@ -115,6 +115,19 @@ The `.color5` element should have a background color set.
 assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVal('background-color', true));
 ```
 
+You should not use `display: flex` in this lab.
+
+```js
+const elements = document.querySelectorAll('body, body *');
+
+elements.forEach(el => {
+  assert.notStrictEqual(
+    getComputedStyle(el).display,
+    'flex'
+  );
+});
+```
+
 # --seed--
 
 ## --seed-contents--
@@ -164,9 +177,6 @@ assert.isNotEmpty(new __helpers.CSSHelp(document).getStyle('.color5')?.getPropVa
 ```css
 body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
@@ -185,9 +195,6 @@ h1 {
 }
 
 .color-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-weight: bold;
     border-radius: 8px;
     text-align: center;
