@@ -2,7 +2,7 @@
   "extends": "../../tsconfig-base.json",
   "include": ["**/*.ts"],
   "compilerOptions": {
-    "module": "es2020",
-    "moduleResolution": "bundler"
+    "module": "node16",
+    "moduleResolution": "node16"
   }
 }
