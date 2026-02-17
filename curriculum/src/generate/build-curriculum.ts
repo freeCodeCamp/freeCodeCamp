@@ -2,18 +2,11 @@ import fs from 'fs';
 import path from 'path';
 
 import { getChallengesForLang } from '../get-challenges';
-import assert from 'assert';
+import { CURRICULUM_LOCALE } from '../config';
 
 const globalConfigPath = path.resolve(__dirname, '../../generated/');
 
-const curriculumLocale = process.env.CURRICULUM_LOCALE;
-
-assert(
-  curriculumLocale,
-  'CURRICULUM_LOCALE environment variable is required to build curriculum'
-);
-
-void getChallengesForLang(curriculumLocale)
+void getChallengesForLang(CURRICULUM_LOCALE)
   .then(JSON.stringify)
   .then(json => {
     fs.mkdirSync(globalConfigPath, { recursive: true });
