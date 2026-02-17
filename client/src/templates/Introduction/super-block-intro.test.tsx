@@ -144,11 +144,8 @@ vi.mock('../../components/helpers', () => ({
   )
 }));
 
-import {
-  BlockLabel,
-  BlockLayouts
-} from '../../../../shared-dist/config/blocks';
-import { SuperBlocks } from '../../../../shared-dist/config/curriculum';
+import { BlockLabel, BlockLayouts } from '@freecodecamp/shared/config/blocks';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import SuperBlockIntroductionPage from './super-block-intro';
 
 type ChallengeNode = {
@@ -156,7 +153,7 @@ type ChallengeNode = {
     id: string;
     fields: { slug: string; blockName: string };
     block: string;
-    blockLabel: BlockLabel;
+    blockLabel?: BlockLabel;
     challengeType: number;
     title: string;
     order: number;

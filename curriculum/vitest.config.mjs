@@ -2,6 +2,6 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
-    exclude: ['src/test/blocks-generated/**/*.test.js', 'dist']
+    projects: ['vitest.tooling.config.mjs', 'src/test/vitest.config.mjs']
   }
 });

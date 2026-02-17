@@ -204,8 +204,12 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Ottieni certificazioni verificate gratuite in:",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +219,6 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Domande frequenti:",
     "faqs": [
@@ -291,7 +294,7 @@
     "reset-editor-layout": "Reset Editor Layout",
     "shortcuts-explained": "Within a challenge, press ESC followed by the question mark to show a list of available shortcuts.",
     "username": {
-      "contains invalid characters": "Il nome utente \"{{username}}\" contiene caratteri non validi",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Il nome utente \"{{username}}\" è troppo corto",
       "is a reserved error code": "Il nome utente \"{{username}}\" ha un codice di errore riservato",
       "must be lowercase": "Il nome utente \"{{username}}\" deve essere in minuscolo",
@@ -323,6 +326,7 @@
       "my-heatmap": "La mia mappa del calore",
       "my-certs": "Le mie certificazioni",
       "my-portfolio": "Il mio portfolio",
+      "my-experience": "My experience",
       "my-timeline": "La mia cronologia",
       "my-donations": "Le mie donazioni",
       "night-mode": "Modalità Notturna",
@@ -435,7 +439,24 @@
     "page-number": "{{pageNumber}} di {{totalPages}}",
     "edit-my-profile": "Edit My Profile",
     "add-bluesky": "Share this certification on BlueSky",
-    "add-threads": "Share this certification on Threads"
+    "add-threads": "Share this certification on Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp is a donor-supported tax-exempt 501(c)(3) charitable organization (United States Federal Tax Identification Number: 82-0779546).",
@@ -547,7 +568,7 @@
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
       "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -567,7 +588,7 @@
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -693,11 +714,12 @@
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
-      "practice": "Practice"
+      "practice": "Practice",
+      "video": "Video"
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -990,6 +1012,7 @@
     "keyboard-shortcut-updated": "Abbiamo aggiornato le impostazioni delle scorciatoie da tastiera",
     "subscribe-to-quincy-updated": "Abbiamo aggiornato la tua iscrizione all'email di Quincy",
     "portfolio-item-updated": "Abbiamo aggiornato il tuo portfolio",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Formato email non valido",
     "email-valid": "La tua email è stata modificata con successo, happy coding!",
     "bad-challengeId": "currentChallengeId non è un ID challenge valido",
@@ -1090,12 +1113,17 @@
   },
   "validation": {
     "max-characters": "C'è un limite massimo di 288 caratteri, hai {{charsLeft}} rimanenti",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Questa email è uguale alla tua email attuale",
     "invalid-email": "Non siamo riusciti a convalidare correttamente la tua email, assicurati che sia corretta",
     "email-mismatch": "Entrambi i nuovi indirizzi email devono essere gli stessi",
     "title-required": "È necessario un titolo",
     "title-short": "Il titolo è troppo corto",
     "title-long": "Il titolo è troppo lungo",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Non siamo riusciti a convalidare correttamente il tuo URL, assicurati che sia corretto",
     "invalid-protocol": "L'URL deve iniziare con http o https",
     "url-not-image": "L'URL deve collegarsi direttamente a un file immagine",
@@ -1234,6 +1262,7 @@
       "college-algebra-with-python-v8-cert": "College Algebra with Python Certification",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "A2 English for Developers",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
@@ -1406,6 +1435,21 @@
         "beginner": "Beginner",
         "intermediate": "Intermediate",
         "advanced": "Advanced"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }

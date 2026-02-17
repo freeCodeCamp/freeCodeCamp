@@ -1,6 +1,18 @@
 import { test, expect, Page } from '@playwright/test';
 import translations from '../client/i18n/locales/english/translations.json';
 import { alertToBeVisible } from './utils/alerts';
+import {
+  deleteAllEmails,
+  getAllEmails,
+  getFirstEmail,
+  getSubject
+} from './utils/email';
+
+test.describe('Claim a certification - almost certified user', () => {
+  test.beforeEach(async () => {
+    await deleteAllEmails();
+    execSync('node ../tools/scripts/seed/seed-demo-user --unclaimed-user');
+  });
 
 // Include sending emails to users who claim full stack developement v9 when it is available
 

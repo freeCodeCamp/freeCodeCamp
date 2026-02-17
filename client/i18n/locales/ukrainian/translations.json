@@ -204,8 +204,12 @@
       ],
       "cta": "Розпочати навчання (безоплатно)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Отримайте безоплатні підтверджені сертифікації в:",
-    "core-certs-heading": "Рекомендована програма (бета-версія):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Вивчайте англійську мову для розробників:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +219,6 @@
     "next-heading": "Спробуйте бета-версію навчальної програми:",
     "upcoming-heading": "Майбутня навчальна програма:",
     "catalog-heading": "Ознайомтесь з нашим каталогом:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Часті питання:",
     "faqs": [
@@ -291,7 +294,7 @@
     "reset-editor-layout": "Скинути редактор",
     "shortcuts-explained": "В межах завдання натисніть ESC та знак питання, щоб переглянути список доступних скорочень.",
     "username": {
-      "contains invalid characters": "Ім’я користувача «{{username}}» містить неприпустимі символи",
+      "contains invalid characters": "Username \"{{username}}\" contains invalid characters. Use only alphanumeric values like 'camperbot', or 'camperbot123'.",
       "is too short": "Ім’я користувача «{{username}}» занадто коротке",
       "is a reserved error code": "Ім’я користувача «{{username}}» є зарезервованим кодом помилки",
       "must be lowercase": "Ім’я користувача «{{username}}» має бути у нижньому регістрі",
@@ -323,6 +326,7 @@
       "my-heatmap": "Моя теплокарта",
       "my-certs": "Мої сертифікації",
       "my-portfolio": "Моє портфоліо",
+      "my-experience": "My experience",
       "my-timeline": "Моя хронологія",
       "my-donations": "Мої донати",
       "night-mode": "Нічний режим",
@@ -435,7 +439,24 @@
     "page-number": "{{pageNumber}} з {{totalPages}}",
     "edit-my-profile": "Редагувати профіль",
     "add-bluesky": "Поділитись сертифікацією на BlueSky",
-    "add-threads": "Поділитись сертифікацією на Threads"
+    "add-threads": "Поділитись сертифікацією на Threads",
+    "experience": {
+      "heading": "Experience",
+      "share-experience": "Share your professional experience",
+      "add": "Add experience",
+      "save": "Save experience",
+      "remove": "Remove experience",
+      "job-title": "Job title",
+      "company": "Company",
+      "location": "Location",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "end-date-helper": "Leave blank if current position",
+      "description": "Description",
+      "present": "Present",
+      "date-format-error": "Please enter the date in MM/YYYY format.",
+      "date-invalid": "Please enter a valid date."
+    }
   },
   "footer": {
     "tax-exempt-status": "freeCodeCamp — це некомерційна організація, яка підтримується спонсорськими внесками та звільнена від сплати податків 501(c)(3) (Федеральний ідентифікаційний номер платника податків США: 82-0779546).",
@@ -547,7 +568,7 @@
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
       "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -567,7 +588,7 @@
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -693,11 +714,12 @@
       "exam": "Екзамен",
       "warm-up": "Warm-up",
       "learn": "Learn",
-      "practice": "Practice"
+      "practice": "Practice",
+      "video": "Video"
     },
     "archive": {
       "title": "Archived Coursework",
-      "content-not-updated": "<0>Warning:</0> The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <1>our current curriculum</1>."
+      "content-not-updated": "The content in this section is not being updated, but is still available for you to further your learning. We recommend trying <0>our current curriculum</0>."
     }
   },
   "donate": {
@@ -990,6 +1012,7 @@
     "keyboard-shortcut-updated": "Ваші налаштування клавіатурних скорочень оновлено",
     "subscribe-to-quincy-updated": "Вашу підписку на розсилку від Квінсі оновлено",
     "portfolio-item-updated": "Ваше портфоліо оновлено",
+    "experience-updated": "We have updated your experience",
     "email-invalid": "Неприпустимий формат адреси електронної пошти",
     "email-valid": "Вашу електронну пошту змінено. Щасливого програмування!",
     "bad-challengeId": "currentChallengeId не є дійсним ідентифікатором завдання",
@@ -1090,12 +1113,17 @@
   },
   "validation": {
     "max-characters": "Максимальний розмір — 288 символів, у вас залишилося {{charsLeft}}",
+    "max-characters-500": "There is a maximum limit of 500 characters, you have {{charsLeft}} left",
     "same-email": "Ця адреса електронної пошти збігається з вашою поточною адресою",
     "invalid-email": "Ми не змогли перевірити вашу адресу електронної пошти. Будь ласка, переконайтеся, що вона правильна.",
     "email-mismatch": "Обидві нові адреси електронної пошти повинні збігатися",
     "title-required": "Необхідно вказати заголовок",
     "title-short": "Закороткий заголовок",
     "title-long": "Задовгий заголовок",
+    "company-required": "Company is required",
+    "company-short": "Company name is too short",
+    "company-long": "Company name is too long",
+    "start-date-required": "Start date is required",
     "invalid-url": "Ми не змогли перевірити вашу URL-адресу. Будь ласка, переконайтеся, що вона правильна.",
     "invalid-protocol": "URL-адреса має починатися з http або https",
     "url-not-image": "URL-адреса повинна посилатись на файл зображення безпосередньо",
@@ -1234,6 +1262,7 @@
       "college-algebra-with-python-v8-cert": "Сертифікація «Алгебра з Python»",
       "foundational-c-sharp-with-microsoft": "Основи C# з Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Сертифікація «Основи C# з Microsoft»",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "Англійська мова A2 для розробників",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "Англійська мова B1 для розробників",
@@ -1406,6 +1435,21 @@
         "beginner": "Початковий рівень",
         "intermediate": "Середній рівень",
         "advanced": "Високий рівень"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }

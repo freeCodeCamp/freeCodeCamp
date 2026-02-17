@@ -1,0 +1,14 @@
+{
+  "name": "Clarifying Misunderstandings Quiz",
+  "isUpcomingChange": true,
+  "dashedName": "en-b1-quiz-clarify-misunderstandings",
+  "helpCategory": "English",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "696046224a96c603346ba15f",
+      "title": "Clarifying Misunderstandings Quiz"
+    }
+  ],
+  "blockLabel": "quiz"
+}
