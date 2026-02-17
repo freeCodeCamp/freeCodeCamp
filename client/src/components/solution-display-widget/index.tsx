@@ -16,6 +16,29 @@ interface Props {
   displayContext: 'timeline' | 'settings' | 'certification';
 }
 
+// MS Learn trophy solutions are stored as API URLs that return JSON.
+// Extract the username and link to their profile achievements page instead.
+function getMsLearnProfileUrl(
+  solution: string | null | undefined
+): string | null {
+  if (!solution) return null;
+  try {
+    const url = new URL(solution);
+    if (
+      url.hostname === 'learn.microsoft.com' &&
+      url.pathname.startsWith('/api/')
+    ) {
+      const username = url.searchParams.get('username');
+      if (username) {
+        return `https://learn.microsoft.com/users/${username}/achievements`;
+      }
+    }
+  } catch {
+    // Not a valid URL, return null
+  }
+  return null;
+}
+
 export function SolutionDisplayWidget({
   completedChallenge,
   projectTitle,
@@ -26,6 +49,8 @@ export function SolutionDisplayWidget({
 }: Props): JSX.Element | null {
   const { id, solution, githubLink } = completedChallenge;
   const { t } = useTranslation();
+  const solutionHref =
+    getMsLearnProfileUrl(solution) ?? solution ?? undefined;
   const viewText = t('buttons.view');
   const viewCode = t('buttons.view-code');
   const viewProject = t('buttons.view-project');
@@ -54,7 +79,7 @@ export function SolutionDisplayWidget({
           // This expression is only to resolve TypeScript error.
           // There won't be a case where the link has an invalid `href`
           // as this component is only rendered if `solution` is truthy.
-          href={solution ?? undefined}
+          href={solutionHref}
           rel='noopener noreferrer'
           target='_blank'
         >
@@ -81,7 +106,7 @@ export function SolutionDisplayWidget({
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={solutionHref}
       rel='noopener noreferrer'
       target='_blank'
     >
@@ -140,7 +165,7 @@ export function SolutionDisplayWidget({
             // This expression is only to resolve TypeScript error.
             // There won't be a case where the link has an invalid `href`
             // as this component is only rendered if `solution` is truthy.
-            href={solution ?? undefined}
+            href={solutionHref}
             rel='noopener noreferrer'
             target='_blank'
           >
@@ -169,7 +194,7 @@ export function SolutionDisplayWidget({
       // This expression is only to resolve TypeScript error.
       // There won't be a case where the link has an invalid `href`
       // as this component is only rendered if `solution` is truthy.
-      href={solution ?? undefined}
+      href={solutionHref}
       rel='noopener noreferrer'
       target='_blank'
     >
