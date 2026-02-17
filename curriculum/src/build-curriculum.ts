@@ -153,24 +153,6 @@ export function addBlockStructure(
   }));
 }
 
-/**
- * Returns a list of all the superblocks that contain the given block
- * @param {string} block
- */
-export function getSuperblocks(
-  block: string,
-  _addSuperblockStructure = addSuperblockStructure
-) {
-  const { superblocks } = getCurriculumStructure();
-  const withStructure = _addSuperblockStructure(superblocks);
-
-  return withStructure
-    .filter(({ blocks }) =>
-      blocks.some(({ dashedName }) => dashedName === block)
-    )
-    .map(({ name }) => name);
-}
-
 function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
   const withSuperblockStructure = addSuperblockStructure(superblocks, true);
   const blockInSuperblocks = withSuperblockStructure
