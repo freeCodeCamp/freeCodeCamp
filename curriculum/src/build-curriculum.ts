@@ -94,6 +94,13 @@ export const superBlockNames = {
   'css-animations': SuperBlocks.CssAnimations
 };
 
+export const superBlockToFilename = Object.entries(superBlockNames).reduce(
+  (map, entry) => {
+    return { ...map, [entry[1]]: entry[0] };
+  },
+  {}
+);
+
 /**
  * Builds an array of superblock structures from a curriculum object
 
