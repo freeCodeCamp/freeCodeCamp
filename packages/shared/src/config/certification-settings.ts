@@ -269,7 +269,7 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.LegacyDataVis]: 'Legacy Data Visualization',
   [Certification.LegacyInfoSecQa]:
     'Legacy Information Security and Quality Assurance',
-  [Certification.LegacyFullStack]: 'Legacy Full Stack',
+  [Certification.LegacyFullStack]: 'Legacy Full-Stack',
 
   // Current certifications
   [Certification.RespWebDesign]: 'Legacy Responsive Web Design V8',
@@ -295,7 +295,7 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.PythonV9]: 'Python',
   [Certification.RelationalDbV9]: 'Relational Database',
   [Certification.BackEndDevApisV9]: 'Backend Development and APIs',
-  [Certification.FullStackDeveloperV9]: 'Full Stack Developer',
+  [Certification.FullStackDeveloperV9]: 'Full-Stack Developer',
   [Certification.B1English]: 'B1 English for Developers',
   [Certification.A2Spanish]: 'A2 Professional Spanish',
   [Certification.A2Chinese]: 'A2 Professional Chinese',
