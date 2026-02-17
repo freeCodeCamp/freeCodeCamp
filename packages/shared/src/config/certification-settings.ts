@@ -265,7 +265,7 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.LegacyFrontEnd]: 'Legacy Front End',
   [Certification.JsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures V7',
-  [Certification.LegacyBackEnd]: 'Legacy Back End',
+  [Certification.LegacyBackEnd]: 'Legacy Backend',
   [Certification.LegacyDataVis]: 'Legacy Data Visualization',
   [Certification.LegacyInfoSecQa]:
     'Legacy Information Security and Quality Assurance',
@@ -277,7 +277,7 @@ export const certToTitleMap: Record<Certification, string> = {
     'Legacy JavaScript Algorithms and Data Structures V8',
   [Certification.FrontEndDevLibs]: 'Front End Development Libraries V8',
   [Certification.DataVis]: 'Data Visualization V8',
-  [Certification.BackEndDevApis]: 'Back End Development and APIs V8',
+  [Certification.BackEndDevApis]: 'Backend Development and APIs V8',
   [Certification.QualityAssurance]: 'Quality Assurance',
   [Certification.InfoSec]: 'Information Security',
   [Certification.SciCompPy]: 'Scientific Computing with Python',
@@ -294,7 +294,7 @@ export const certToTitleMap: Record<Certification, string> = {
   [Certification.FrontEndDevLibsV9]: 'Front End Development Libraries',
   [Certification.PythonV9]: 'Python',
   [Certification.RelationalDbV9]: 'Relational Database',
-  [Certification.BackEndDevApisV9]: 'Back End Development and APIs',
+  [Certification.BackEndDevApisV9]: 'Backend Development and APIs',
   [Certification.FullStackDeveloperV9]: 'Full Stack Developer',
   [Certification.B1English]: 'B1 English for Developers',
   [Certification.A2Spanish]: 'A2 Professional Spanish',

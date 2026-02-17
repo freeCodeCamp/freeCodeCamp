@@ -256,7 +256,7 @@ const allStandardCerts = [
   },
   {
     id: '561add10cb82ac38a17523bc',
-    title: 'Back End Development and APIs',
+    title: 'Backend Development and APIs',
     certSlug: Certification.BackEndDevApis,
     projects: [
       {
@@ -621,7 +621,7 @@ const allStandardCerts = [
   },
   {
     id: '660add10cb82ac38a17513be',
-    title: 'Legacy Back End',
+    title: 'Legacy Backend',
     certSlug: Certification.LegacyBackEnd,
     projects: [
       {
@@ -874,12 +874,12 @@ const allStandardCerts = [
   },
   {
     id: '68e6bd5120effa1586e79857',
-    title: 'Back End Development and APIs',
+    title: 'Backend Development and APIs',
     certSlug: Certification.BackEndDevApisV9,
     projects: [
       {
         id: '68e6bfa120effa1586e7985a',
-        title: 'Back End Development and APIs Certification Exam',
+        title: 'Backend Development and APIs Certification Exam',
         link: `${backEndDevApisV9Base}/exam-back-end-development-and-apis-certification/exam-back-end-development-and-apis-certification`,
         certSlug: Certification.BackEndDevApisV9
       }

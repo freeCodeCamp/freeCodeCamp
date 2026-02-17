@@ -28,7 +28,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'back-end-development-and-apis-v9',
-    name: 'Back End Development and APIs Certification'
+    name: 'Backend Development and APIs Certification'
   },
   {
     slug: 'full-stack-developer-v9',

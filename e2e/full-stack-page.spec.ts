@@ -22,7 +22,7 @@ const requiredCerts = [
     slug: '/learn/relational-databases-v9/'
   },
   {
-    text: 'Back End Development and APIs Certification',
+    text: 'Backend Development and APIs Certification',
     slug: '/learn/back-end-development-and-apis-v9/'
   }
 ];

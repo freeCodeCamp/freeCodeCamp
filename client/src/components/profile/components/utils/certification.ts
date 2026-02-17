@@ -125,7 +125,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isApisMicroservicesCert,
-        title: 'Back End Development and APIs V8 Certification',
+        title: 'Backend Development and APIs V8 Certification',
         certSlug: Certification.BackEndDevApis
       },
       {
@@ -171,7 +171,7 @@ export const getCertifications = (user: User) => {
       },
       {
         show: isBackEndCert,
-        title: 'Back End Certification',
+        title: 'Backend Certification',
         certSlug: Certification.LegacyBackEnd
       },
       {

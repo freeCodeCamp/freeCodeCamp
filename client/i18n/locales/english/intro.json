@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back End Development and APIs V8",
+    "title": "Backend Development and APIs V8",
     "intro": [
-      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the back end, or server, to build entire web applications.",
+      "Until this point, you've only used JavaScript on the front end to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
       "Today, one of the popular ways to build applications is through microservices, which are small, modular applications that work together to form a larger whole.",
-      "In the Back End Development and APIs Certification, you'll learn how to write back end apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
+      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Back End Development and APIs Projects",
+        "title": "Backend Development and APIs Projects",
         "intro": [
           "You've worked with APIs before, but now that you know npm, Node, Express, MongoDB, and Mongoose, it's time to build your own. Draw on everything you've learned up to this point to create 5 different microservices, which are smaller applications that are limited in scope.",
-          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Back End Development and APIs Certification, too."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
         ]
       }
     }
@@ -765,7 +765,7 @@
       "quality-assurance-projects": {
         "title": "Quality Assurance Projects",
         "intro": [
-          "Now that you're well versed in both the front end and back end, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
+          "Now that you're well versed in both the front end and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "After completing these Quality Assurance projects, you'll have 5 more projects under your belt, and a new certification to show off on your portfolio."
         ]
       }
@@ -4388,17 +4388,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Back End Development and APIs Certification",
+    "title": "Backend Development and APIs Certification",
     "note": "This certification is currently in development and will be available soon.",
     "intro": [
-      "This course teaches you the fundamentals of back end development and APIs.",
-      "To earn your Back End Development and APIs Certification:",
+      "This course teaches you the fundamentals of backend development and APIs.",
+      "To earn your Backend Development and APIs Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Back End Development and APIs Certification exam."
+      "- Pass the Backend Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Backend Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introduction to Node.js",
@@ -4414,7 +4414,7 @@
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4498,7 +4498,7 @@
       "back-end-development-and-apis-certification-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification."
+          "Pass this exam to earn your Backend Development and APIs Certification."
         ]
       }
     },
@@ -4556,9 +4556,9 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Back End Development and APIs Certification Exam",
+        "title": "Backend Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification"
+          "Pass this exam to earn your Backend Development and APIs Certification"
         ]
       }
     }
