@@ -19,7 +19,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures-v8'
   },
   {
-    name: 'Front End Development Libraries V8',
+    name: 'Frontend Development Libraries V8',
     url: '/certification/certifieduser/front-end-development-libraries'
   },
   {
@@ -31,7 +31,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/relational-database-v8'
   },
   {
-    name: 'Back End Development and APIs V8',
+    name: 'Backend Development and APIs V8',
     url: '/certification/certifieduser/back-end-development-and-apis'
   },
   {
@@ -59,7 +59,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/college-algebra-with-python-v8'
   },
   {
-    name: 'Legacy Front End',
+    name: 'Legacy Frontend',
     url: '/certification/certifieduser/legacy-front-end'
   },
   {
@@ -67,7 +67,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/javascript-algorithms-and-data-structures'
   },
   {
-    name: 'Legacy Back End',
+    name: 'Legacy Backend',
     url: '/certification/certifieduser/legacy-back-end'
   },
   {
@@ -79,7 +79,7 @@ const legacyCerts = [
     url: '/certification/certifieduser/information-security-and-quality-assurance'
   },
   {
-    name: 'Legacy Full Stack',
+    name: 'Legacy Full-Stack',
     url: '/certification/certifieduser/full-stack'
   }
 ];

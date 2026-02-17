@@ -1,12 +1,12 @@
 ---
-title: Back End Development and APIs
+title: Backend Development and APIs
 superBlock: back-end-development-and-apis
 certification: back-end-development-and-apis
 ---
 
-## Introduction to Back End Development and APIs
+## Introduction to Backend Development and APIs
 
-This is a stub introduction for Back End Development and APIs
+This is a stub introduction for Backend Development and APIs
 
 ## Microservices
 
