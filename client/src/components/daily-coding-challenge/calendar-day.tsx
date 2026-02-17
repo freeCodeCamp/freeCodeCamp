@@ -1,11 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Spacer } from '@freecodecamp/ui';
 import { Link } from '../helpers';
 import GreenPass from '../../assets/icons/green-pass';
 import GreenNotCompleted from '../../assets/icons/green-not-completed';
-import JavaScriptIcon from '../../assets/icons/javascript';
-import PythonIcon from '../../assets/icons/python';
 import { formatDisplayDate } from './helpers';
 
 interface CalendarDayProps {
@@ -15,24 +12,6 @@ interface CalendarDayProps {
   completedLanguages?: string[];
   isAvailable?: boolean;
   title?: string;
-}
-
-function Checkmark({ completed }: { completed: boolean }): JSX.Element {
-  return completed ? (
-    <span
-      className='dc-checkmark dc-small-checkmark completed'
-      data-playwright-test-label='calendar-day-completed'
-    >
-      <GreenPass />
-    </span>
-  ) : (
-    <span
-      className='dc-checkmark dc-small-checkmark not-completed'
-      data-playwright-test-label='calendar-day-not-completed'
-    >
-      <GreenNotCompleted />
-    </span>
-  );
 }
 
 function DailyCodingChallengeCalendarDay({
@@ -62,6 +41,12 @@ function DailyCodingChallengeCalendarDay({
       </button>
     );
 
+  const isCompleted = completedLanguages.length > 0;
+  const jsCompleted = completedLanguages.includes('javascript');
+  const pyCompleted = completedLanguages.includes('python');
+
+  const tooltipContent = `JavaScript: ${jsCompleted ? '\u2713' : '\u2717'}<br/>Python: ${pyCompleted ? '\u2713' : '\u2717'}`;
+
   // isAvailable -> render link to challenge
   return (
     <Link
@@ -69,6 +54,8 @@ function DailyCodingChallengeCalendarDay({
       className='calendar-day available'
       data-playwright-test-label='calendar-day'
       aria-label={`${date && formatDisplayDate(date)}`}
+      data-tip={tooltipContent}
+      data-for='calendar-tooltip'
     >
       <span className='calendar-day-number' aria-hidden='true'>
         {dayNumber}
@@ -79,34 +66,20 @@ function DailyCodingChallengeCalendarDay({
       <div className='dc-info'>
         <div className='dc-title'>{title}</div>
 
-        {completedLanguages.length === 2 ? (
-          <span className='dc-checkmark dc-big-checkmark completed'>
-            <span className='dc-spacer'>
-              <Spacer size='s' />
-            </span>
+        {isCompleted ? (
+          <span
+            className='dc-checkmark dc-day-checkmark completed'
+            data-playwright-test-label='calendar-day-completed'
+          >
             <GreenPass />
           </span>
         ) : (
-          <div className='dc-languages'>
-            <hr />
-            <div className='dc-language'>
-              <div className='dc-language-icon'>
-                <JavaScriptIcon />
-              </div>
-              <div className='dc-language-name'>JavaScript</div>
-              <Checkmark
-                completed={completedLanguages.includes('javascript')}
-              />
-            </div>
-
-            <div className='dc-language'>
-              <div className='dc-language-icon'>
-                <PythonIcon />
-              </div>
-              <div className='dc-language-name'>Python</div>
-              <Checkmark completed={completedLanguages.includes('python')} />
-            </div>
-          </div>
+          <span
+            className='dc-checkmark dc-day-checkmark not-completed'
+            data-playwright-test-label='calendar-day-not-completed'
+          >
+            <GreenNotCompleted />
+          </span>
         )}
       </div>
     </Link>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import ReactTooltip from 'react-tooltip';
 import { Button, Callout, Container, Col, Row, Spacer } from '@freecodecamp/ui';
 import {
   completedDailyCodingChallengesSelector,
@@ -186,15 +187,13 @@ function DailyCodingChallengeCalendar({
   // we just need to change the month, the year can stay the same
   // because it just rolls over, e.g. (index) 12, 2024 will be Jan, 2025
   const nextMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap)
-    );
+    setMonthInfo(m => m && getMonthInfo(m.year, m.index + 1, dailyChallengesMap));
+    setTimeout(() => ReactTooltip.rebuild(), 0);
   };
 
   const prevMonth = () => {
-    setMonthInfo(
-      m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap)
-    );
+    setMonthInfo(m => m && getMonthInfo(m.year, m.index - 1, dailyChallengesMap));
+    setTimeout(() => ReactTooltip.rebuild(), 0);
   };
 
   const hasOlderChallenges = (
@@ -304,6 +303,12 @@ function DailyCodingChallengeCalendar({
 
       <Spacer size='s' />
       <div className='calendar-grid'>{monthInfo.days}</div>
+      <ReactTooltip
+        id='calendar-tooltip'
+        className='calendar-day-tooltip'
+        effect='solid'
+        html={true}
+      />
       <Spacer size='l' />
 
       {!isSignedIn && (

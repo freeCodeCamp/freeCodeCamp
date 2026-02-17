@@ -29,7 +29,7 @@
 .calendar-day {
   position: relative;
   padding: 10px 10px 20px;
-  min-height: 200px;
+  min-height: 150px;
   border: 1px solid var(--tertiary-color);
   background-color: var(--primary-background);
   text-decoration: none;
@@ -50,6 +50,7 @@
 .dc-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100%;
 }
 
@@ -58,48 +59,16 @@
   text-align: center;
   align-self: center;
   margin-top: 5px;
-  height: 50px;
-  margin-bottom: -5px;
+  margin-bottom: 5px;
 }
 
-.dc-languages {
-  padding: 0 15px;
-}
-
-.dc-language {
-  font-size: 0.8rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-
-.dc-language-icon {
-  fill: var(--primary-color);
-}
-
-.dc-language-icon svg {
-  width: 25px;
-  height: 25px;
-}
-
-.dc-small-checkmark {
-  position: relative;
-  /* top: -5px; */
-}
-
-.dc-small-checkmark svg {
-  width: 20px;
-  height: 20px;
-}
-
-.dc-big-checkmark {
+.dc-day-checkmark {
   margin: 0 auto;
 }
 
-.dc-big-checkmark svg {
-  width: 50px;
-  height: 50px;
+.dc-day-checkmark svg {
+  width: 35px;
+  height: 35px;
 }
 
 .not-available:hover,
@@ -124,8 +93,6 @@
   color: var(--primary-background);
 }
 
-.available:hover .dc-language-icon svg path,
-.available:active .dc-language-icon svg path,
 .available:hover .completed svg circle,
 .available:active .completed svg circle {
   fill: var(--primary-background);
@@ -145,15 +112,23 @@
 }
 
 .available:hover .dc-title,
-.available:active .dc-title,
-.available:hover .dc-language-name,
-.available:active .dc-language-name {
+.available:active .dc-title {
   color: var(--primary-background);
 }
 
 .available:hover .dc-number,
 .available:active .dc-number {
   color: var(--quaternary-background);
+}
+
+.calendar-day-tooltip {
+  color: var(--primary-color) !important;
+  background-color: var(--primary-background) !important;
+  border: 1px solid var(--primary-color) !important;
+}
+
+.calendar-day-tooltip::after {
+  border-top-color: var(--primary-color) !important;
 }
 
 @media (max-width: 500px) {
@@ -169,20 +144,8 @@
     font-size: 0.8rem;
   }
 
-  .dc-info hr {
-    margin: 10px 0;
-  }
-
   .calendar-day {
-    min-height: 170px;
-  }
-
-  .dc-language {
-    justify-content: center;
-  }
-
-  .dc-language-name {
-    display: none;
+    min-height: 120px;
   }
 }
 
@@ -192,12 +155,11 @@
   }
 
   .calendar-day {
-    min-height: 125px;
+    min-height: 100px;
     padding: 10px;
   }
 
-  .dc-title,
-  .dc-info hr {
+  .dc-title {
     display: none;
   }
 
@@ -207,15 +169,11 @@
     align-items: center;
     height: 80%;
   }
-
-  .dc-spacer {
-    display: none;
-  }
 }
 
 @media (max-width: 815px) {
   .calendar-day {
-    min-height: 100px;
+    min-height: 80px;
     padding: 0;
   }
 
@@ -224,12 +182,8 @@
     padding-right: 5px;
   }
 
-  .dc-languages {
-    padding: 0;
-  }
-
-  .dc-big-checkmark svg {
-    width: 40px;
-    height: 40px;
+  .dc-day-checkmark svg {
+    width: 25px;
+    height: 25px;
   }
 }
