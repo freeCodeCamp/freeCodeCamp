@@ -16,6 +16,10 @@
     {
       "id": "698f53374f7ad3a078dafbc0",
       "title": "How Do Types Work with Objects and Arrays?"
+    },
+    {
+      "id": "698f515e99f9a25a3462f97f",
+      "title": "How do Function Types Work?"
     }
   ],
   "helpCategory": "JavaScript"

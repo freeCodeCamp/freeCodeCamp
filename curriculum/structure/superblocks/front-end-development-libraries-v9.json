@@ -88,7 +88,6 @@
           "blocks": [
             "lecture-introduction-to-typescript",
             "lecture-understanding-type-composition",
-            "lecture-working-with-functions-in-typescript",
             "lecture-working-with-generics-and-type-narrowing",
             "lecture-working-with-typescript-configuration-files",
             "review-typescript",

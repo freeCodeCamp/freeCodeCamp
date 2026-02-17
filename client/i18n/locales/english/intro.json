@@ -3633,12 +3633,6 @@
           "In these lessons, you will learn how to work with union types, interfaces, void types and more."
         ]
       },
-      "lecture-working-with-functions-in-typescript": {
-        "title": "Working with Functions in TypeScript",
-        "intro": [
-          "In this lesson, you will learn how function types work in TypeScript."
-        ]
-      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
