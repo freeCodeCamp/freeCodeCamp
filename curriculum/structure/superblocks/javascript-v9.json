@@ -303,7 +303,8 @@
             "lecture-introduction-to-common-searching-and-sorting-algorithms",
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
-            "lab-quicksort-js"
+            "lab-quicksort-js",
+            "review-searching-and-sorting-algorithms-js"
           ]
         },
         {

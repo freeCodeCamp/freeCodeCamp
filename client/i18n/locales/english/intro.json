@@ -3237,6 +3237,10 @@
           "In this lab you will implement the quicksort algorithm to sort an array of integers."
         ]
       },
+      "review-searching-and-sorting-algorithms-js": {
+        "title": "Searching and Sorting Algorithms Review",
+        "intro": ["Searching and Sorting Algorithms Review", ""]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
