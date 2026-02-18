@@ -1,18 +1,7 @@
-// TODO: keeping curriculum in memory is handy if we want to field requests that
-// need to 'query' the curriculum, but if we force the client to handle
-// redirectToCurrentChallenge and, instead, only report the current challenge id
-// via the user object, then we should *not* store this so it can be garbage
-// collected.
-import { readFileSync } from 'fs';
-import { fileURLToPath } from 'node:url';
-import { join, dirname } from 'path';
+import { getGeneratedCurriculum } from '@freecodecamp/curriculum/file-handler';
 
-const CURRICULUM_PATH = '../../../curriculum/generated/curriculum.json';
-const __dirname = dirname(fileURLToPath(import.meta.url));
 // Curriculum is read using fs, because it is too large for VSCode's LSP to handle type inference which causes annoying behavior.
-const curriculum = JSON.parse(
-  readFileSync(join(__dirname, CURRICULUM_PATH), 'utf-8')
-) as Curriculum;
+const curriculum = (await getGeneratedCurriculum()) as Curriculum;
 
 interface Challenge {
   id: string;

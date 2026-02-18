@@ -1,7 +1,7 @@
 import { dirname, resolve } from 'node:path';
 import assert from 'node:assert';
 import { existsSync, readFileSync } from 'node:fs';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, writeFile, readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import debug from 'debug';
 
@@ -26,11 +26,16 @@ if (typeof __dirname !== 'undefined') {
   __dirnameCompat = dirname(fileURLToPath(metaUrl));
 }
 
-export const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
+const CURRICULUM_DIR = resolve(__dirnameCompat, '..');
 const I18N_CURRICULUM_DIR = resolve(
   CURRICULUM_DIR,
   'i18n-curriculum',
   'curriculum'
+);
+const GENERATED_CURRICULUM_DIR = resolve(CURRICULUM_DIR, 'generated');
+const GENERATED_CURRICULUM_FILEPATH = resolve(
+  GENERATED_CURRICULUM_DIR,
+  'curriculum.json'
 );
 const STRUCTURE_DIR = resolve(CURRICULUM_DIR, 'structure');
 const BLOCK_STRUCTURE_DIR = resolve(STRUCTURE_DIR, 'blocks');
@@ -232,6 +237,15 @@ export function getSuperblockStructure(superblockFilename: string) {
 
 export function getSuperblockStructurePath(superblockFilename: string) {
   return resolve(STRUCTURE_DIR, 'superblocks', `${superblockFilename}.json`);
+}
+
+export async function getGeneratedCurriculum() {
+  return JSON.parse(await readFile(GENERATED_CURRICULUM_FILEPATH, 'utf8'));
+}
+
+export async function writeGeneratedCurriculum(curriculum: unknown) {
+  await mkdir(GENERATED_CURRICULUM_DIR, { recursive: true });
+  return writeFile(GENERATED_CURRICULUM_FILEPATH, JSON.stringify(curriculum));
 }
 
 /**
