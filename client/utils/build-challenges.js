@@ -11,12 +11,13 @@ const {
   getContentDir,
   getBlockStructure,
   getSuperblockStructure,
-  getGeneratedCurriculum
+  CURRICULUM_DIR
 } = require('@freecodecamp/curriculum/file-handler');
 const {
   transformSuperBlock
 } = require('@freecodecamp/curriculum/build-superblock');
 const { getSuperOrder } = require('@freecodecamp/curriculum/super-order');
+const { readFile } = require('fs/promises');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
@@ -69,7 +70,12 @@ exports.replaceChallengeNodes = () => {
 };
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getGeneratedCurriculum();
+  const curriculum = JSON.parse(
+    await readFile(
+      path.resolve(CURRICULUM_DIR, 'generated', 'curriculum.json'),
+      'utf-8'
+    )
+  );
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)
