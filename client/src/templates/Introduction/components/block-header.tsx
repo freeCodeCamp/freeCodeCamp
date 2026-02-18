@@ -103,17 +103,19 @@ function BlockHeader({
             </Button>
           )}
         </h3>
-        <button
-          className='block-reset-button'
-          onClick={onResetClick}
-          aria-label={t('learn.reset-progress-aria-block', {
-            blockLabel: blockTitle
-          })}
-          type='button'
-          disabled={isResetDisabled}
-        >
-          <Reset />
-        </button>
+        {onResetClick && (
+          <button
+            className='block-reset-button'
+            onClick={onResetClick}
+            aria-label={t('learn.reset-progress-aria-block', {
+              blockLabel: blockTitle
+            })}
+            type='button'
+            disabled={isResetDisabled}
+          >
+            <Reset />
+          </button>
+        )}
       </div>
       {isExpanded && !isEmpty(blockIntroArr) && (
         <BlockIntros intros={blockIntroArr as string[]} />

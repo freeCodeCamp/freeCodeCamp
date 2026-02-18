@@ -201,6 +201,7 @@ const Chapter = ({
       <ResetProgressModal
         blockTitle={chapterLabel}
         blockDashedName={blockDashedNames}
+        superBlock={superBlock}
         show={showResetModal}
         onHide={handleResetModalClose}
         onResetComplete={handleResetComplete}
@@ -307,6 +308,7 @@ const Module = ({
       <ResetProgressModal
         blockTitle={moduleLabel}
         blockDashedName={blockDashedNames}
+        superBlock={superBlock}
         show={showResetModal}
         onHide={handleResetModalClose}
         onResetComplete={handleResetComplete}

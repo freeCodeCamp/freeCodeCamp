@@ -597,6 +597,7 @@ export class Block extends Component<BlockProps, BlockState> {
           <ResetProgressModal
             blockTitle={blockTitle}
             blockDashedName={block}
+            superBlock={superBlock}
             show={this.state.showResetModal}
             onHide={this.handleResetModalClose}
             onResetComplete={this.handleResetConfirm}
