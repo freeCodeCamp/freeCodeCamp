@@ -36,7 +36,7 @@ const mockChallengeTestsSelector = challengeTestsSelector as Mock;
 const mockChallengeMetaSelector = challengeMetaSelector as Mock;
 const mockChallengeDataSelector = challengeDataSelector as Mock;
 const mockIsBlockNewlyCompletedSelector = isBlockNewlyCompletedSelector as Mock;
-const mockCurrentBlockIdsSelector = currentBlockIdsSelector as unknown as Mock;
+const mockCurrentBlockIdsSelector = vi.mocked(currentBlockIdsSelector);
 const mockCompletedChallengesIdsSelector =
   completedChallengesIdsSelector as unknown as Mock;
 const mockAllChallengesInfoSelector =
