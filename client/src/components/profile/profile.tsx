@@ -19,6 +19,7 @@ import HeatMap from './components/heat-map';
 import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
+import { ProfileCompleteness } from './components/profile-completeness';
 
 interface ProfileProps {
   isSessionUser: boolean;
@@ -102,12 +103,15 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
       showExperience,
       showTimeLine
     },
+    about,
     calendar,
     completedChallenges,
-    username,
+    name,
+    picture,
     points,
     portfolio,
-    experience
+    experience,
+    username
   } = user;
 
   return (
@@ -118,6 +122,21 @@ function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
           isEditing={isEditing}
           isSessionUser={isSessionUser}
           setIsEditing={setIsEditing}
+        />
+      )}
+      {isSessionUser && (
+        <ProfileCompleteness
+          name={name}
+          about={about}
+          picture={picture}
+          location={user.location}
+          githubProfile={user.githubProfile}
+          linkedin={user.linkedin}
+          twitter={user.twitter}
+          bluesky={user.bluesky}
+          website={user.website}
+          portfolio={portfolio}
+          experience={experience || []}
         />
       )}
       <Camper
