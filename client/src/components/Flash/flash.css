@@ -1,14 +1,19 @@
 /*
-For some reason this `div` is needed in order to overidde
+For some reason this `div` is needed in order to override
 the CSS rules of `ui-components`'s Alert.
 */
-div.flash-message {
-  display: flex;
-  justify-content: space-around;
-  flex-direction: row;
-  padding-top: 3px;
-  padding-bottom: 3px;
+div.flash-container {
   position: fixed;
   width: 100%;
   z-index: var(--z-index-flash);
+  padding-top: 0.15rem;
+  padding-bottom: 0.15rem;
+}
+div.flash-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  @media (max-width: 767.99px) {
+    padding: 0;
+  }
 }
