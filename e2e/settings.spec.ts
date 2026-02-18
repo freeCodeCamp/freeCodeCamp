@@ -259,10 +259,10 @@ test.describe('Settings - Certified User', () => {
   });
 });
 
-// In order to claim the Full Stack cert, the user needs to complete 6 certs.
+// In order to claim the Full-Stack cert, the user needs to complete 6 certs.
 // Instead of simulating 6 cert claim flows,
-// we use the data of Certified User but remove the Full Stack cert.
-test.describe('Settings - Certified User without Full Stack Certification', () => {
+// we use the data of Certified User but remove the Full-Stack cert.
+test.describe('Settings - Certified User without Full-Stack Certification', () => {
   test.beforeEach(async ({ page }) => {
     execSync(
       'node ../tools/scripts/seed/seed-demo-user --certified-user --set-false isFullStackCert'
@@ -274,14 +274,14 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should allow claiming Full Stack cert if the user has completed all requirements', async ({
+  test('should allow claiming Full-Stack cert if the user has completed all requirements', async ({
     page
   }) => {
     const claimButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
     const showButton = page.getByRole('link', {
-      name: 'Show Certification Legacy Full Stack'
+      name: 'Show Certification Legacy Full-Stack'
     });
 
     await expect(claimButton).toBeVisible();
@@ -290,7 +290,7 @@ test.describe('Settings - Certified User without Full Stack Certification', () =
 
     await alertToBeVisible(
       page,
-      '@certifieduser, you have successfully claimed the Legacy Full Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
+      '@certifieduser, you have successfully claimed the Legacy Full-Stack Certification! Congratulations on behalf of the freeCodeCamp.org team!'
     );
     await expect(claimButton).toBeHidden();
     await expect(showButton).toBeVisible();
@@ -313,11 +313,11 @@ test.describe('Settings - New User', () => {
     execSync('node ../tools/scripts/seed/seed-demo-user --certified-user');
   });
 
-  test('should not allow claiming Full Stack cert if the user has not completed all the required certs', async ({
+  test('should not allow claiming Full-Stack cert if the user has not completed all the required certs', async ({
     page
   }) => {
     const claimFullStackCertButton = page.getByRole('button', {
-      name: 'Claim Certification Legacy Full Stack'
+      name: 'Claim Certification Legacy Full-Stack'
     });
 
     const claimRwdCertButton = page.getByRole('button', {
@@ -328,7 +328,7 @@ test.describe('Settings - New User', () => {
     await expect(claimRwdCertButton).toBeVisible();
     await expect(claimRwdCertButton).toBeEnabled();
 
-    // Button for full stack cert is disabled if the user hasn't claimed the required certs
+    // Button for full-stack cert is disabled if the user hasn't claimed the required certs
     await expect(claimFullStackCertButton).toBeVisible();
     await expect(claimFullStackCertButton).toBeDisabled();
   });
