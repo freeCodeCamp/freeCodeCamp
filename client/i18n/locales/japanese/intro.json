@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front End Development Libraries V8",
+    "title": "Frontend Development Libraries V8",
     "intro": [
-      "今やあなたは HTML、CSS、そして JavaScript に精通しているので、業界内で最も一般的なフロントエンドライブラリのいくつかを学習することで技能を向上させましょう。",
-      "フロントエンド開発ライブラリ認定講座では、Bootstrap でサイトを手軽に整える方法を学習します。Sass を利用して、CSS スタイルに論理的な処理を加えて拡張する方法についても学習します。",
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
+      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "後ほど、ショッピングカートや他のアプリケーションを構築しながら、強力なシングルページアプリケーション (SPA) を React と Redux で作成する方法を学習します。"
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap はレスポンシブなウェブページやアプリケーションの設計に使用されるフロントエンドフレームワークです。Bootstrap はウェブ開発にモバイルファースト手法を採用しており、あらかじめ構築された CSS スタイルとクラスに加えて、いくつかの JavaScript の機能を含みます。",
+          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "このコースでは、Bootstrap でレスポンシブなウェブサイトを構築し、Bootstrap に含まれているクラスを使用して、ボタン、画像、フォーム、ナビゲーション、その他のよく使われる要素を整える方法を学習します。"
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "フロントエンド開発ライブラリプロジェクト",
+        "title": "Frontend Development Libraries Projects",
         "intro": [
-          "フロントエンド開発ライブラリの技能をテストする時です。Bootstrap、jQuery、Sass、React、そして Redux を使用してこれまで学習してきたすべてをテストする 5 つのプロジェクトを構築してください。",
-          "5 つすべてのプロジェクトを完成させれば、フロントエンド開発ライブラリ認定証を取得できます。"
+          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back End Development and APIs V8",
+    "title": "Backend Development and APIs V8",
     "intro": [
-      "ここまでは、JavaScript をフロントエンドで使用して、ページに対話性を加えたり、アルゴリズムチャレンジを解決したり、SPA を構築したりしてきました。しかし JavaScript は、バックエンド (サーバー) でも使用でき、ウェブアプリケーション全体を構築することができます。",
+      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
       "現在、アプリケーションを構築する一般的な方法の一つはマイクロサービスを使用する方法です。これは、小さなモジュール式のアプリケーションを組み合わせて、より大きな全体を形成する方法です。",
-      "バックエンド開発と API 認定講座では、Node.js と npm を使用してバックエンドアプリを記述する方法を学習します。Express フレームワークでウェブアプリケーションを構築し、MongoDB と Mongoose ライブラリで People Finder マイクロサービスを構築します。"
+      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "バックエンド開発と API プロジェクト",
+        "title": "Backend Development and APIs Projects",
         "intro": [
           "以前にも API を扱いましたが、npm、Node、Express、MongoDB、そして Mongoose を学んだ今、それを実践する時です。これまでに学習したすべてを利用して、5 つのマイクロサービス (範囲を限定されたより小さなアプリケーション) を作成してください。",
-          "これらを完成させると、5 つのクールなマイクロサービス API を友人や家族、そしてあなたを雇用してくれそうな会社の人に披露することができます。しかも真新しいバックエンド開発と API 認定証も取得できます。"
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "ここで、サインインシステムがあるチャットアプリケーションを構築しながら、Node.js と Express.js を深く掘り下げます。",
           "サインインシステムを安全に実装するために、認証について学習する必要があります。認証とは、人または処理の身元を確認することです。",
-          "このコースでは、認証を管理するための Passport、フロンドエンドを素早く構築する再利用可能なテンプレートを作成するための Pug、そしてクライアントとサーバー間のリアルタイム通信のためのウェブソケットの使用方法を学習します。"
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "品質保証プロジェクト",
         "intro": [
-          "今やあなたはフロントエンドとバックエンドの両方に精通しているので、これまでに学習したすべての技能と概念を活用する時です。5 つのウェブアプリケーションを構築し、そしてそれぞれに対してテストを記述して、アプリケーションが正しく機能しさまざまなエッジケースにも対応できていることを確かめます。",
+          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "これらの品質保証プロジェクトを完成させることで、さらに 5 つのプロジェクトの経験を積み、そしてポートフォリオで披露できる新しい認定証を取得できます。"
         ]
       }
@@ -3225,6 +3225,12 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-quicksort-js": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort an array of integers."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3315,17 +3321,17 @@
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Front End Development Libraries Certification",
+    "title": "Frontend Development Libraries Certification",
     "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
-      "To earn your Front End Development Libraries Certification:",
+      "To earn your Frontend Development Libraries Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Front End Development Libraries Certification exam."
+      "- Pass the Frontend Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "front-end-development-libraries": "Frontend Development Libraries",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -3337,8 +3343,8 @@
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
-      "review-front-end-libraries": "Front End Libraries Review",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "review-front-end-libraries": "Frontend Libraries Review",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "module-intros": {
       "data-visualization": {
@@ -3356,7 +3362,7 @@
       "front-end-development-libraries-certification-exam": {
         "note": "Coming 2026",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification."
+          "Pass this exam to earn your Frontend Development Libraries Certification."
         ]
       }
     },
@@ -3651,15 +3657,15 @@
         "intro": ["Test what you've learned on Typescript with this quiz."]
       },
       "review-front-end-libraries": {
-        "title": "Front End Libraries Review",
+        "title": "Frontend Libraries Review",
         "intro": [
-          "Review the Front End Libraries concepts to prepare for the upcoming quiz."
+          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Front End Development Libraries Certification Exam",
+        "title": "Frontend Development Libraries Certification Exam",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification"
+          "Pass this exam to earn your Frontend Development Libraries Certification"
         ]
       }
     }
@@ -4388,17 +4394,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Back End Development and APIs Certification",
+    "title": "Backend Development and APIs Certification",
     "note": "This certification is currently in development and will be available soon.",
     "intro": [
-      "This course teaches you the fundamentals of back end development and APIs.",
-      "To earn your Back End Development and APIs Certification:",
+      "This course teaches you the fundamentals of backend development and APIs.",
+      "To earn your Backend Development and APIs Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Back End Development and APIs Certification exam."
+      "- Pass the Backend Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Backend Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introduction to Node.js",
@@ -4414,7 +4420,7 @@
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4492,13 +4498,13 @@
       "tooling-and-deployment": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification."
+          "Pass this exam to earn your Backend Development and APIs Certification."
         ]
       }
     },
@@ -4556,25 +4562,25 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Back End Development and APIs Certification Exam",
+        "title": "Backend Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification"
+          "Pass this exam to earn your Backend Development and APIs Certification"
         ]
       }
     }
   },
   "full-stack-developer-v9": {
-    "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "title": "Certified Full-Stack Developer Curriculum",
+    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
+      "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
     "chapters": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "modules": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
@@ -4586,8 +4592,8 @@
     },
     "blocks": {
       "exam-certified-full-stack-developer": {
-        "title": "Certified Full Stack Developer Exam",
-        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+        "title": "Certified Full-Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full-Stack Developer."]
       }
     }
   },
@@ -7383,7 +7389,7 @@
     }
   },
   "full-stack-open": {
-    "title": "Full Stack Open",
+    "title": "Full-Stack Open",
     "intro": ["A good intro is to be added here."],
     "blocks": {
       "cat-blog-page": {
