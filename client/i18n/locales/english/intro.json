@@ -3219,6 +3219,10 @@
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": ["Implement the Binary Search Algorithm", ""]
+      },
       "lab-bubble-sort-algorithm": {
         "title": "Implement the Bubble Sort Algorithm",
         "intro": [

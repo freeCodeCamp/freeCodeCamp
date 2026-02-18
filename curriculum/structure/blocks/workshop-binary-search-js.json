@@ -1,0 +1,16 @@
+{
+  "name": "Implement the Binary Search Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-binary-search-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    {
+      "id": "6995d0325fd7da40854fac40",
+      "title": "Step 1"
+    }
+  ],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
