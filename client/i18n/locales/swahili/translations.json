@@ -204,8 +204,12 @@
       ],
       "cta": "Start Learning Now (it's free)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "Pata vyeti vilivyoidhinishwa bila malipo katika:",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "Learn English for Developers:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +219,6 @@
     "next-heading": "Try our beta curriculum:",
     "upcoming-heading": "Upcoming curriculum:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "Maswali yanayoulizwa mara kwa mara:",
     "faqs": [
@@ -284,6 +287,7 @@
     "private-name": "Jina lako halitaonekana kwenye vyeti vyako ikiwa hii itawekwa kuwa ya faragha.",
     "claim-legacy": "Ukishajishindia vyeti vifuatavyo vya freeCodeCamp, utaweza kudai {{cert}}:",
     "for": "Settings for {{username}}",
+    "profile-note": "You can go to <0>your profile</0> to update your personal information.",
     "sound-mode": "Hii inaongeza sauti ya kupendeza ya gitaa la akustika kwenye tovuti. Utapata maoni ya muziki unapoandika kwenye kihariri, unapokamilisha changamoto, unapopata cheti na zaidi.",
     "sound-volume": "Sauti ya Campfire:",
     "scrollbar-width": "Upana wa Upau wa kusogeza wa Kihariri",
@@ -453,6 +457,16 @@
       "present": "Present",
       "date-format-error": "Please enter the date in MM/YYYY format.",
       "date-invalid": "Please enter a valid date."
+    },
+    "completeness": {
+      "heading": "Profile {{percentage}}% complete",
+      "name": "Add your name",
+      "location": "Add your location",
+      "picture": "Upload a profile picture",
+      "about": "Write an about section",
+      "social": "Add a social link",
+      "portfolio": "Add a portfolio project",
+      "experience": "Add your experience"
     }
   },
   "footer": {
@@ -565,7 +579,7 @@
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
       "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -585,7 +599,7 @@
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -711,7 +725,8 @@
       "exam": "Exam",
       "warm-up": "Warm-up",
       "learn": "Learn",
-      "practice": "Practice"
+      "practice": "Practice",
+      "video": "Video"
     },
     "archive": {
       "title": "Archived Coursework",
@@ -915,7 +930,7 @@
     "document-notfound": "hati haijapatikana",
     "slow-load-msg": "Inaonekana hii inachukua muda mrefu kuliko kawaida, tafadhali jaribu pakia upya ukurasa.",
     "navigation-warning": "Ukiondoka kwenye ukurasa huu, utapoteza maendeleo yako. Una uhakika?",
-    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full-Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
     "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
@@ -1144,7 +1159,7 @@
     "quincy-larson-signature": "Quincy Larson's Signature",
     "julia-liuson-signature": "Julia Liuson's Signature",
     "project": {
-      "heading-legacy-full-stack": "Kama sehemu ya uthibitishaji huu wa Legacy Full Stack, {{user}} alikamilisha uthibitishaji ufuatao:",
+      "heading-legacy-full-stack": "As part of this Legacy Full-Stack certification, {{user}} completed the following certifications:",
       "heading-exam": "As part of this certification, {{user}} passed the following exam: ",
       "heading": "Kama sehemu ya uthibitishaji huu, {{user}} aliunda miradi ifuatayo na akapita majaribio yote ya majaribio ya kiotomatiki:",
       "solution": "Solution",
@@ -1236,14 +1251,14 @@
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
       "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
       "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
-      "front-end-development-libraries": "Front End Development Libraries V8",
-      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "front-end-development-libraries": "Frontend Development Libraries V8",
+      "front-end-development-libraries-cert": "Frontend Development Libraries V8 Certification",
       "data-visualization": "Data Visualization V8",
       "data-visualization-cert": "Data Visualization V8 Certification",
       "relational-database-v8": "Relational Database V8",
       "relational-database-v8-cert": "Relational Database V8 Certification",
-      "back-end-development-and-apis": "Back End Development and APIs V8",
-      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
+      "back-end-development-and-apis": "Backend Development and APIs V8",
+      "back-end-development-and-apis-cert": "Backend Development and APIs V8 Certification",
       "quality-assurance-v7": "Quality Assurance",
       "quality-assurance-v7-cert": "Quality Assurance Certification",
       "scientific-computing-with-python-v7": "Scientific Computing with Python",
@@ -1258,6 +1273,7 @@
       "college-algebra-with-python-v8-cert": "College Algebra with Python Certification",
       "foundational-c-sharp-with-microsoft": "Foundational C# with Microsoft",
       "foundational-c-sharp-with-microsoft-cert": "Foundational C# with Microsoft Certification",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "A2 English for Developers",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "B1 English for Developers",
@@ -1266,16 +1282,16 @@
       "responsive-web-design-v9-cert": "Responsive Web Design Certification",
       "javascript-v9": "JavaScript",
       "javascript-v9-cert": "JavaScript Certification",
-      "front-end-development-libraries-v9": "Front End Development Libraries",
-      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "front-end-development-libraries-v9": "Frontend Development Libraries",
+      "front-end-development-libraries-v9-cert": "Frontend Development Libraries Certification",
       "python-v9": "Python",
       "python-v9-cert": "Python Certification",
       "relational-databases-v9": "Relational Database",
       "relational-databases-v9-cert": "Relational Database Certification",
-      "back-end-development-and-apis-v9": "Back End Development and APIs",
-      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
-      "full-stack-developer-v9": "Full Stack Developer",
-      "full-stack-developer-v9-cert": "Full Stack Developer Certification",
+      "back-end-development-and-apis-v9": "Backend Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Backend Development and APIs Certification",
+      "full-stack-developer-v9": "Full-Stack Developer",
+      "full-stack-developer-v9-cert": "Full-Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
       "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "A2 Professional Spanish",
@@ -1284,16 +1300,16 @@
       "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "a1-professional-chinese": "A1 Professional Chinese",
       "a1-professional-chinese-cert": "A1 Professional Chinese Certification",
-      "legacy-front-end": "Legacy Front End",
-      "legacy-front-end-cert": "Legacy Front End Certification",
-      "legacy-back-end": "Legacy Back End",
-      "legacy-back-end-cert": "Legacy Back End Certification",
+      "legacy-front-end": "Legacy Frontend",
+      "legacy-front-end-cert": "Legacy Frontend Certification",
+      "legacy-back-end": "Legacy Backend",
+      "legacy-back-end-cert": "Legacy Backend Certification",
       "legacy-data-visualization": "Legacy Data Visualization",
       "legacy-data-visualization-cert": "Legacy Data Visualization Certification",
       "information-security-and-quality-assurance": "Legacy Information Security and Quality Assurance",
       "information-security-and-quality-assurance-cert": "Legacy Information Security and Quality Assurance Certification",
-      "full-stack": "Legacy Full Stack",
-      "full-stack-cert": "Legacy Full Stack Certification"
+      "full-stack": "Legacy Full-Stack",
+      "full-stack-cert": "Legacy Full-Stack Certification"
     }
   },
   "certification-card": {
@@ -1430,6 +1446,21 @@
         "beginner": "Beginner",
         "intermediate": "Intermediate",
         "advanced": "Advanced"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }

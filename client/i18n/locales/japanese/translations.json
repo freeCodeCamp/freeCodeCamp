@@ -204,8 +204,12 @@
       ],
       "cta": "今すぐ学習を始める (無料)"
     },
+    "catalog": {
+      "heading": "Explore Course Catalog",
+      "seeAll": "See All Courses"
+    },
     "certification-heading": "以下の検証機能付き認定証を無料で取得できます。",
-    "core-certs-heading": "Recommended curriculum (still in beta):",
+    "core-certs-heading": "Recommended curriculum:",
     "learn-english-heading": "開発の現場で使う英語を学ぶ:",
     "learn-spanish-heading": "Learn Professional Spanish:",
     "learn-chinese-heading": "Learn Professional Chinese:",
@@ -215,7 +219,6 @@
     "next-heading": "ベータ版カリキュラムを試す:",
     "upcoming-heading": "公開予定カリキュラム:",
     "catalog-heading": "Explore our Catalog:",
-    "fsd-restructure-note": "If you were previously working through our Certified Full Stack Developer curriculum, don't worry - your progress is saved. We've split it into smaller certifications you can earn along your journey.",
     "archive-link": "Looking for older coursework? Check out <0>our archive page</0>.",
     "faq": "よくある質問:",
     "faqs": [
@@ -284,6 +287,7 @@
     "private-name": "非公開に設定されている場合、あなたの名前は認定証に表示されません。",
     "claim-legacy": "以下の freeCodeCamp 認定証を取得すると、{{cert}}を受け取ることができます。",
     "for": "Settings for {{username}}",
+    "profile-note": "You can go to <0>your profile</0> to update your personal information.",
     "sound-mode": "これは快適なアコースティックギターの音をウェブサイトの至る所へ追加します。エディターにタイプしたり、チャレンジを完了したり、認定証を請求したり、その他いろいろなことをする度に音のフィードバックを受け取ります。",
     "sound-volume": "キャンプファイアモードの音量:",
     "scrollbar-width": "エディターのスクロールバーの幅",
@@ -453,6 +457,16 @@
       "present": "Present",
       "date-format-error": "Please enter the date in MM/YYYY format.",
       "date-invalid": "Please enter a valid date."
+    },
+    "completeness": {
+      "heading": "Profile {{percentage}}% complete",
+      "name": "Add your name",
+      "location": "Add your location",
+      "picture": "Upload a profile picture",
+      "about": "Write an about section",
+      "social": "Add a social link",
+      "portfolio": "Add a portfolio project",
+      "experience": "Add your experience"
     }
   },
   "footer": {
@@ -565,7 +579,7 @@
     "codespaces": {
       "intro": "This course runs in a virtual Linux machine using GitHub Codespaces. Follow these instructions to start the course:",
       "step-1": "<0>Create an GitHub account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "On that page, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -585,7 +599,7 @@
     "ona": {
       "intro": "This course runs in a virtual Linux machine using Ona. Follow these instructions to start the course:",
       "step-1": "<0>Create an Ona account</0> if you don't have one",
-      "step-2": "Click the start button below",
+      "step-2": "Click the start button below this list",
       "step-3": "In the modal that pops up, click the create button",
       "step-4": "Once the virtual Linux machine is finished loading, start the CodeRoad extension by:",
       "step-5": "Clicking the \"hamburger\" menu near the top left of the VSCode window,",
@@ -711,7 +725,8 @@
       "exam": "試験",
       "warm-up": "Warm-up",
       "learn": "Learn",
-      "practice": "Practice"
+      "practice": "Practice",
+      "video": "Video"
     },
     "archive": {
       "title": "Archived Coursework",
@@ -915,7 +930,7 @@
     "document-notfound": "ドキュメントが見つかりませんでした",
     "slow-load-msg": "通常より処理に時間がかかっているようです。ページの再読み込みをお試しください。",
     "navigation-warning": "このページを離れると、進捗状況が失われます。よろしいですか？",
-    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
+    "fsd-b-description": "This comprehensive course prepares you to become a Certified Full-Stack Developer. You'll learn to build complete web applications using HTML, CSS, JavaScript, React, TypeScript, Node.js, Python, and more.",
     "fsd-b-cta": "Start Learning",
     "continue-learning": "Continue Learning",
     "fsd-b-benefit-1-title": "100k+ Students",
@@ -1144,7 +1159,7 @@
     "quincy-larson-signature": "Quincy Larson の署名",
     "julia-liuson-signature": "Julia Liuson の署名",
     "project": {
-      "heading-legacy-full-stack": "レガシーフルスタック認定講座の一環として、{{user}} は以下の認定講座を修了しました:",
+      "heading-legacy-full-stack": "As part of this Legacy Full-Stack certification, {{user}} completed the following certifications:",
       "heading-exam": "この認定講座の一環として、{{user}} は以下の試験に合格しました: ",
       "heading": "この認定講座の一環として、{{user}} は以下のプロジェクトを完成させ、すべての自動テストスイートに合格しました。",
       "solution": "解答",
@@ -1236,14 +1251,14 @@
       "javascript-algorithms-and-data-structures-cert": "Legacy JavaScript Algorithms and Data Structures V7 Certification",
       "javascript-algorithms-and-data-structures-v8": "Legacy JavaScript Algorithms and Data Structures V8",
       "javascript-algorithms-and-data-structures-v8-cert": "Legacy JavaScript Algorithms and Data Structures V8 Certification",
-      "front-end-development-libraries": "Front End Development Libraries V8",
-      "front-end-development-libraries-cert": "Front End Development Libraries V8 Certification",
+      "front-end-development-libraries": "Frontend Development Libraries V8",
+      "front-end-development-libraries-cert": "Frontend Development Libraries V8 Certification",
       "data-visualization": "Data Visualization V8",
       "data-visualization-cert": "Data Visualization V8 Certification",
       "relational-database-v8": "Relational Database V8",
       "relational-database-v8-cert": "Relational Database V8 Certification",
-      "back-end-development-and-apis": "Back End Development and APIs V8",
-      "back-end-development-and-apis-cert": "Back End Development and APIs V8 Certification",
+      "back-end-development-and-apis": "Backend Development and APIs V8",
+      "back-end-development-and-apis-cert": "Backend Development and APIs V8 Certification",
       "quality-assurance-v7": "品質保証",
       "quality-assurance-v7-cert": "品質保証認定証",
       "scientific-computing-with-python-v7": "Python を用いた科学計算",
@@ -1258,6 +1273,7 @@
       "college-algebra-with-python-v8-cert": "Python を用いた代数学認定証",
       "foundational-c-sharp-with-microsoft": "Microsoft 連携・基礎 C#",
       "foundational-c-sharp-with-microsoft-cert": "Microsoft 連携・基礎 C# 認定証",
+      "learn-python-for-beginners": "Learn Python for Beginners",
       "a2-english-for-developers": "開発者のための A2 レベル英語",
       "a2-english-for-developers-cert": "A2 English for Developers Certification (Beta)",
       "b1-english-for-developers": "開発者のための B1 レベル英語",
@@ -1266,16 +1282,16 @@
       "responsive-web-design-v9-cert": "Responsive Web Design Certification",
       "javascript-v9": "JavaScript",
       "javascript-v9-cert": "JavaScript Certification",
-      "front-end-development-libraries-v9": "Front End Development Libraries",
-      "front-end-development-libraries-v9-cert": "Front End Development Libraries Certification",
+      "front-end-development-libraries-v9": "Frontend Development Libraries",
+      "front-end-development-libraries-v9-cert": "Frontend Development Libraries Certification",
       "python-v9": "Python",
       "python-v9-cert": "Python Certification",
       "relational-databases-v9": "Relational Database",
       "relational-databases-v9-cert": "Relational Database Certification",
-      "back-end-development-and-apis-v9": "Back End Development and APIs",
-      "back-end-development-and-apis-v9-cert": "Back End Development and APIs Certification",
-      "full-stack-developer-v9": "フルスタック開発者",
-      "full-stack-developer-v9-cert": "フルスタック開発者認定証",
+      "back-end-development-and-apis-v9": "Backend Development and APIs",
+      "back-end-development-and-apis-v9-cert": "Backend Development and APIs Certification",
+      "full-stack-developer-v9": "Full-Stack Developer",
+      "full-stack-developer-v9-cert": "Full-Stack Developer Certification",
       "a1-professional-spanish": "A1 Professional Spanish",
       "a1-professional-spanish-cert": "A1 Professional Spanish Certification",
       "a2-professional-spanish": "A2 Professional Spanish",
@@ -1284,16 +1300,16 @@
       "a2-professional-chinese-cert": "A2 Professional Chinese Certification",
       "a1-professional-chinese": "A1 Professional Chinese",
       "a1-professional-chinese-cert": "A1 Professional Chinese Certification",
-      "legacy-front-end": "旧フロントエンド",
-      "legacy-front-end-cert": "旧フロントエンド認定証",
-      "legacy-back-end": "旧バックエンド",
-      "legacy-back-end-cert": "旧バックエンド認定証",
+      "legacy-front-end": "Legacy Frontend",
+      "legacy-front-end-cert": "Legacy Frontend Certification",
+      "legacy-back-end": "Legacy Backend",
+      "legacy-back-end-cert": "Legacy Backend Certification",
       "legacy-data-visualization": "旧データ可視化",
       "legacy-data-visualization-cert": "旧データ可視化認定証",
       "information-security-and-quality-assurance": "旧情報セキュリティと品質保証",
       "information-security-and-quality-assurance-cert": "旧情報セキュリティと品質保証認定証",
-      "full-stack": "旧フルスタック",
-      "full-stack-cert": "旧フルスタック認定証"
+      "full-stack": "Legacy Full-Stack",
+      "full-stack-cert": "Legacy Full-Stack Certification"
     }
   },
   "certification-card": {
@@ -1430,6 +1446,21 @@
         "beginner": "Beginner",
         "intermediate": "Intermediate",
         "advanced": "Advanced"
+      },
+      "duration": "{{duration}} hours",
+      "no-results": "No courses found. Try adjusting your filters to see more results.",
+      "topic": {
+        "html": "HTML",
+        "css": "CSS",
+        "js": "JavaScript",
+        "react": "React",
+        "python": "Python",
+        "data-analysis": "Data Analysis",
+        "machine-learning": "Machine Learning",
+        "d3": "D3",
+        "api": "APIs",
+        "information-security": "Information Security",
+        "computer-fundamentals": "Computer Fundamentals"
       }
     }
   }

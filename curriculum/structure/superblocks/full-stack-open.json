@@ -5,7 +5,7 @@
       "modules": [
         {
           "dashedName": "basic-html",
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -14,7 +14,7 @@
       "modules": [
         {
           "dashedName": "basic-html",
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -25,7 +25,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -36,7 +36,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -47,7 +47,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -58,7 +58,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -69,7 +69,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -80,7 +80,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -91,7 +91,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -102,7 +102,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -113,7 +113,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -124,7 +124,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -135,7 +135,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     },
@@ -146,7 +146,7 @@
         {
           "dashedName": "basic-html",
           "comingSoon": true,
-          "blocks": ["cat-blog-page"]
+          "blocks": ["workshop-blog-page"]
         }
       ]
     }
