@@ -198,6 +198,7 @@ a:focus {
 }
 /* modal */
 
+
 .fcc-modal {
   background-color: var(--secondary-background);
   color: var(--secondary-color);
