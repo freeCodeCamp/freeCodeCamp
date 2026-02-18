@@ -1,6 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, it, expect, vi, beforeAll, beforeEach } from 'vitest';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import ResetProgressModal from './reset-progress-modal';
 
 type ResizeObserverMockInstance = {
@@ -41,7 +42,10 @@ vi.mock('react-i18next', () => ({
 }));
 
 vi.mock('../../../utils/ajax', () => ({
-  postResetModule: vi.fn().mockResolvedValue({})
+  deleteResetModule: vi.fn().mockResolvedValue({
+    response: { ok: true, status: 204, statusText: 'No Content' },
+    data: {}
+  })
 }));
 
 const mockOnHide = vi.fn();
@@ -50,6 +54,7 @@ const mockOnResetComplete = vi.fn();
 const defaultProps = {
   blockTitle: 'Basic HTML',
   blockDashedName: 'basic-html',
+  superBlock: SuperBlocks.RespWebDesign,
   onHide: mockOnHide,
   onResetComplete: mockOnResetComplete,
   show: true

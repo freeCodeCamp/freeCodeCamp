@@ -9,15 +9,17 @@ import {
   Modal,
   Spacer
 } from '@freecodecamp/ui';
+import { type SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import { deleteResetModule } from '../../../utils/ajax';
 import { ProgressBar } from '../../../components/Progress/progress-bar';
 
-// Delay between API calls to prevent rate limiting
 const RATE_LIMIT_DELAY_MS = 500;
+const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 type ResetProgressModalProps = {
   blockTitle: string;
   blockDashedName: string | string[];
+  superBlock: SuperBlocks;
   onHide: () => void;
   onResetComplete: () => void;
   show: boolean;
@@ -26,6 +28,7 @@ type ResetProgressModalProps = {
 function ResetProgressModal({
   blockTitle,
   blockDashedName,
+  superBlock,
   onHide,
   onResetComplete,
   show
@@ -47,17 +50,6 @@ function ResetProgressModal({
   const blockIds = Array.isArray(blockDashedName)
     ? blockDashedName
     : [blockDashedName];
-
-  // Convert dashed-name to readable format (e.g., "learn-basic-css" -> "Learn Basic Css")
-  const formatBlockName = (dashedName: string): string => {
-    return dashedName
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(' ');
-  };
-
-  // Delay between API calls to prevent rate limiting
-  const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
   const handleVerifyTextChange = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -82,20 +74,26 @@ function ResetProgressModal({
         setResetProgress({
           current: i + 1,
           total: blockIds.length,
-          currentBlockName: formatBlockName(currentBlock)
+          currentBlockName: t(
+            `intro:${superBlock}.blocks.${currentBlock}.title`
+          )
         });
-        await deleteResetModule({ blockId: currentBlock });
+        const { response } = await deleteResetModule({ blockId: currentBlock });
+        if (!response.ok) {
+          throw new Error(
+            `HTTP Error: ${response.status} ${response.statusText}`
+          );
+        }
         completedBlocks.push(currentBlock);
-        // Add delay between requests to prevent rate limiting (skip after last request)
         if (i < blockIds.length - 1) {
           await delay(RATE_LIMIT_DELAY_MS);
         }
       }
-      onResetComplete();
       setIsResetting(false);
       setResetProgress({ current: 0, total: 0, currentBlockName: '' });
       setVerifyText('');
       onHide();
+      onResetComplete();
     } catch (err) {
       console.error('Failed to reset module:', err);
       setIsResetting(false);
@@ -104,7 +102,6 @@ function ResetProgressModal({
         message: t('learn.reset-progress-error'),
         completedBlocks
       });
-      // If some blocks were reset, still call onResetComplete to refresh user data
       if (completedBlocks.length > 0) {
         onResetComplete();
       }

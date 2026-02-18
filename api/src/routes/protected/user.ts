@@ -21,7 +21,11 @@ import {
   normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
-import { mapErr, type UpdateReqType } from '../../utils/index.js';
+import {
+  mapErr,
+  type UpdateReqType,
+  type UpdateReplyType
+} from '../../utils/index.js';
 import {
   getCalendar,
   getPoints,
@@ -586,15 +590,10 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
   done();
 };
 
-/**
- * Generate a new authorization token for the given user, and invalidates any existing tokens.
- *
- * Requires the user to be authenticated.
- */
 async function deleteResetModule(
   this: FastifyInstance,
   req: UpdateReqType<typeof schemas.resetModule>,
-  reply: FastifyReply
+  reply: UpdateReplyType<typeof schemas.resetModule>
 ) {
   const logger = this.log.child({ req, res: reply });
 
@@ -603,11 +602,16 @@ async function deleteResetModule(
     `User ${req.user?.id} requested module reset for block: ${blockId}`
   );
 
-  // Get challenge IDs for this block from curriculum
   const challengeIdsToReset = getChallengeIdsByBlock(blockId);
 
-  // Fetch user's current data
-  const user = await this.prisma.user.findUnique({
+  if (challengeIdsToReset.length === 0) {
+    void reply.code(400);
+    return { message: 'Block not found', type: 'error' };
+  }
+
+  const resetSet = new Set(challengeIdsToReset);
+
+  const user = await this.prisma.user.findUniqueOrThrow({
     where: { id: req.user!.id },
     select: {
       completedChallenges: true,
@@ -616,33 +620,17 @@ async function deleteResetModule(
     }
   });
 
-  if (!user) {
-    logger.error(`User ${req.user?.id} not found`);
-    void reply.code(500);
-    return {
-      message: 'User not found',
-      type: 'error'
-    };
-  }
-
-  // Filter out challenges from this block
-
   const filteredCompletedChallenges = normalizeChallenges(
     user.completedChallenges
-  ).filter(c => {
-    return !challengeIdsToReset.includes(c.id);
-  });
+  ).filter(c => !resetSet.has(c.id));
 
-  const filteredSavedChallenges = user.savedChallenges.filter(c => {
-    return !challengeIdsToReset.includes(c.id);
-  });
+  const filteredSavedChallenges = user.savedChallenges.filter(
+    c => !resetSet.has(c.id)
+  );
 
   const filteredPartiallyCompletedChallenges =
-    user.partiallyCompletedChallenges.filter(c => {
-      return !challengeIdsToReset.includes(c.id);
-    });
+    user.partiallyCompletedChallenges.filter(c => !resetSet.has(c.id));
 
-  // Update user with filtered challenges
   await this.prisma.user.update({
     where: { id: req.user!.id },
     data: {
@@ -655,8 +643,9 @@ async function deleteResetModule(
     }
   });
 
-  return reply.code(204).send();
+  return reply.code(204).send({});
 }
+
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
  *

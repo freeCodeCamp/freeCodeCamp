@@ -1050,16 +1050,17 @@ describe('userRoutes', () => {
         });
       });
 
-      test('DELETE handles non-existent blockId gracefully', async () => {
+      test('DELETE returns 400 for non-existent blockId', async () => {
         const response = await superDelete('/account/reset-module').send({
           blockId: 'non-existent-block'
         });
+
+        expect(response.status).toBe(400);
 
         const user = await fastifyTestInstance.prisma.user.findFirst({
           where: { email: testUserData.email }
         });
 
-        expect(response.status).toBe(204);
         expect(user?.completedChallenges).toHaveLength(4);
       });
     });
