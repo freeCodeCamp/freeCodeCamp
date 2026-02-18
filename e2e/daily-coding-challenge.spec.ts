@@ -66,11 +66,9 @@ const mockApiAllChallenges = [
 const mockDaysInMonth = new Date(year, month, 0).getDate();
 
 test.describe('Daily Coding Challenges', () => {
-  test('should show not found page for invalid date', async ({ page }) => {
+  test('should redirect to archive for invalid date', async ({ page }) => {
     await page.goto('/learn/daily-coding-challenge/invalid-date');
-    await expect(
-      page.getByText(/daily coding challenge not found\./i)
-    ).toBeVisible();
+    await expect(page).toHaveURL('/learn/daily-coding-challenge/archive');
   });
 
   test('should show not found page for date without challenge', async ({
