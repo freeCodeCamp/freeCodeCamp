@@ -50,7 +50,8 @@ describe('findOrCreateUser', () => {
   afterEach(async () => {
     await fastify.prisma.user.deleteMany({ where: { email } });
     await fastify.prisma.dripCampaign.deleteMany({ where: { email } });
-    vi.clearAllMocks();
+    vi.restoreAllMocks();
+    captureException.mockReset();
   });
 
   test('should send a message to Sentry if there are multiple users with the same email', async () => {
@@ -129,22 +130,17 @@ describe('findOrCreateUser', () => {
     test('should not prevent user creation if drip campaign record creation fails', async () => {
       vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
-      // Mock dripCampaign.create to throw an error
-      const originalDrip = fastify.prisma.dripCampaign;
+      const originalCreate = fastify.prisma.dripCampaign.create;
 
-      const createSpy = vi
-        .spyOn(fastify.prisma, 'dripCampaign', 'get')
-        .mockReturnValue({
-          ...originalDrip,
-          create: vi.fn().mockRejectedValueOnce(new Error('Database error'))
-        });
+      fastify.prisma.dripCampaign.create = vi
+        .fn()
+        .mockRejectedValueOnce(new Error('Database error'));
 
       const user = await findOrCreateUser(fastify, email);
 
       expect(user).toBeDefined();
       expect(user.id).toBeTruthy();
 
-      // Verify error was captured by Sentry
       expect(captureException).toHaveBeenCalledTimes(1);
       expect(captureException).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -152,7 +148,7 @@ describe('findOrCreateUser', () => {
         })
       );
 
-      createSpy.mockRestore();
+      fastify.prisma.dripCampaign.create = originalCreate;
     });
 
     test('should not create drip campaign for existing users', async () => {
