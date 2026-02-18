@@ -250,5 +250,10 @@ test.describe('Daily Coding Challenge Archive', () => {
     await expect(page.getByTestId('calendar-day-completed')).toHaveCount(1);
 
     await expect(page.getByTestId('calendar-day-not-completed')).toHaveCount(3);
+
+    await page.getByTestId('calendar-day-completed').click();
+    await expect(page).toHaveURL(
+      `/learn/daily-coding-challenge/${todayUsCentral}`
+    );
   });
 });
