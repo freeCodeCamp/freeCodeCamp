@@ -286,6 +286,7 @@
           "dashedName": "recursion",
           "blocks": [
             "lecture-understanding-recursion-and-the-call-stack",
+            "workshop-countup",
             "lab-countdown",
             "lab-range-of-numbers",
             "workshop-decimal-to-binary-converter",
@@ -299,10 +300,17 @@
           "dashedName": "algorithms",
           "comingSoon": true,
           "blocks": [
-            "lecture-introduction-to-common-searching-and-sorting-algorithms"
+            "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "lab-bubble-sort-algorithm",
+            "lab-selection-sort-js",
+            "lab-quicksort-js"
           ]
         },
-        { "dashedName": "graphs-and-trees", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "graphs-and-trees",
+          "comingSoon": true,
+          "blocks": ["lecture-understanding-graphs-and-trees-js"]
+        },
         {
           "dashedName": "dynamic-programming",
           "comingSoon": true,

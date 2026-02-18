@@ -1,16 +1,21 @@
 {
-  "$schema": "https://turborepo.com/schema.json",
+  "$schema": "https://v2-8-7.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
       "outputs": ["dist/**", "generated/**"],
-      "env": ["FCC_*"]
+      "env": ["FCC_*", "SHOW_UPCOMING_CHANGES"]
     },
     "test": {
-      "env": ["FCC_*"]
+      "passThroughEnv": ["VITEST_POOL_ID", "PUPPETEER_WS_ENDPOINT"],
+      "env": ["FCC_*", "CURRICULUM_LOCALE", "SHOW_UPCOMING_CHANGES"]
     },
     "test-content": {
-      "env": ["FCC_*"]
+      "passThroughEnv": ["VITEST_POOL_ID", "PUPPETEER_WS_ENDPOINT"],
+      "env": ["FCC_*", "CURRICULUM_LOCALE", "SHOW_UPCOMING_CHANGES"]
+    },
+    "lint": {
+      "env": ["CURRICULUM_LOCALE"]
     }
   }
 }

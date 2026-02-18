@@ -22,8 +22,7 @@ import {
 import { getCertifications } from '../../../components/profile/components/utils/certification';
 
 interface CertChallengeProps {
-  // TODO: create enum/reuse SuperBlocks enum somehow
-  certification: string;
+  certification: Certification;
   fetchState: {
     pending: boolean;
     complete: boolean;
