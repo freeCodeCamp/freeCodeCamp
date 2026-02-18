@@ -1170,19 +1170,6 @@ importers:
         specifier: 4.10.0
         version: 4.10.0(webpack-bundle-analyzer@4.10.1)(webpack@5.90.3)
 
-  tools/client-plugins/gatsby-remark-node-identity:
-    dependencies:
-      gatsby:
-        specifier: ^5.0.0
-        version: 5.16.0(babel-eslint@10.1.0(eslint@9.39.2(jiti@2.6.1)))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(type-fest@2.19.0)(typescript@5.9.3)
-    devDependencies:
-      '@freecodecamp/eslint-config':
-        specifier: workspace:*
-        version: link:../../../packages/eslint-config
-      eslint:
-        specifier: ^9.39.1
-        version: 9.39.2(jiti@2.6.1)
-
   tools/client-plugins/gatsby-source-challenges:
     dependencies:
       gatsby:
@@ -14336,7 +14323,7 @@ snapshots:
       '@aws-crypto/sha256-js': 3.0.0
       '@aws-crypto/supports-web-crypto': 3.0.0
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.521.0
+      '@aws-sdk/types': 3.973.1
       '@aws-sdk/util-locate-window': 3.965.4
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
@@ -14355,7 +14342,7 @@ snapshots:
   '@aws-crypto/sha256-js@3.0.0':
     dependencies:
       '@aws-crypto/util': 3.0.0
-      '@aws-sdk/types': 3.521.0
+      '@aws-sdk/types': 3.973.1
       tslib: 1.14.1
     optional: true
 
@@ -14376,7 +14363,7 @@ snapshots:
 
   '@aws-crypto/util@3.0.0':
     dependencies:
-      '@aws-sdk/types': 3.521.0
+      '@aws-sdk/types': 3.973.1
       '@aws-sdk/util-utf8-browser': 3.259.0
       tslib: 1.14.1
     optional: true
@@ -15208,7 +15195,7 @@ snapshots:
       '@babel/types': 7.29.0
       '@jridgewell/remapping': 2.3.5
       convert-source-map: 2.0.0
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -17067,7 +17054,7 @@ snapshots:
       '@babel/parser': 7.29.0
       '@babel/template': 7.28.6
       '@babel/types': 7.29.0
-      debug: 4.4.3
+      debug: 4.3.4(supports-color@8.1.1)
     transitivePeerDependencies:
       - supports-color
 
