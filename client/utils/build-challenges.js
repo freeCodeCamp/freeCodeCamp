@@ -3,12 +3,9 @@ const path = require('path');
 const _ = require('lodash');
 
 const {
-  getChallengesForLang
-} = require('@freecodecamp/curriculum/get-challenges');
-
-const {
   getSuperblocks,
-  superBlockToFilename
+  superBlockToFilename,
+  buildCurriculum
 } = require('@freecodecamp/curriculum/build-curriculum');
 const {
   getContentDir,
@@ -72,7 +69,7 @@ exports.replaceChallengeNodes = () => {
 };
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getChallengesForLang(curriculumLocale);
+  const curriculum = await buildCurriculum(curriculumLocale);
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)
