@@ -602,16 +602,17 @@ Please wait 5 minutes to resend an authentication link.`
       // function with undefined when restoring a prisma function (for some
       // reason)
       test('PUT sends an email to the new email address', async () => {
+        const originalAuthToken = fastifyTestInstance.prisma.authToken;
         vi.spyOn(
-          fastifyTestInstance.prisma.authToken,
-          'create'
-        ).mockImplementationOnce(() =>
-          // @ts-expect-error This is a mock implementation, all we're
-          // interested in is the id.
-          Promise.resolve({
+          fastifyTestInstance.prisma,
+          'authToken',
+          'get'
+        ).mockReturnValue({
+          ...originalAuthToken,
+          create: vi.fn().mockResolvedValue({
             id: '123'
           })
-        );
+        });
         await superPut('/update-my-email').send({
           email: unusedEmailOne
         });

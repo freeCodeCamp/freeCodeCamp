@@ -50,7 +50,6 @@ describe('findOrCreateUser', () => {
   afterEach(async () => {
     await fastify.prisma.user.deleteMany({ where: { email } });
     await fastify.prisma.dripCampaign.deleteMany({ where: { email } });
-    await fastify.close();
     vi.clearAllMocks();
   });
 
@@ -131,9 +130,14 @@ describe('findOrCreateUser', () => {
       vi.spyOn(fastify.gb, 'isOn').mockImplementationOnce(() => true);
 
       // Mock dripCampaign.create to throw an error
+      const originalDrip = fastify.prisma.dripCampaign;
+
       const createSpy = vi
-        .spyOn(fastify.prisma.dripCampaign, 'create')
-        .mockRejectedValueOnce(new Error('Database error'));
+        .spyOn(fastify.prisma, 'dripCampaign', 'get')
+        .mockReturnValue({
+          ...originalDrip,
+          create: vi.fn().mockRejectedValueOnce(new Error('Database error'))
+        });
 
       const user = await findOrCreateUser(fastify, email);
 
