@@ -20,6 +20,8 @@ Use the `round()` function to round `final_bill` to two decimal places and assig
 
 Finally, use `print()` to display the string `Each person pays:` followed by a space and your `each_pays` variable.
 
+With that, the bill splitter workshop is complete.
+
 # --hints--
 
 You should define a variable named `each_pays`.
