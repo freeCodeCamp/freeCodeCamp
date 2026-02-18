@@ -3225,6 +3225,12 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-selection-sort-js": {
+        "title": "Implement the Selection Sort Algorithm",
+        "intro": [
+          "In this lab you will implement the selection sort algorithm."
+        ]
+      },
       "lab-quicksort-js": {
         "title": "Implement the Quicksort Algorithm",
         "intro": [
