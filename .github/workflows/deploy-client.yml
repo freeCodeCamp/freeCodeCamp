@@ -240,77 +240,11 @@ jobs:
           tags: tag:ci
           version: latest
 
-      - name: Wait for Tailscale Network Readiness
-        run: |
-          echo "Waiting for Tailscale network to be ready..."
-          max_wait=60
-          elapsed=0
-
-          while [ $elapsed -lt $max_wait ]; do
-            if tailscale status --json | jq -e '.BackendState == "Running"' > /dev/null 2>&1; then
-              echo "Tailscale network is ready"
-              break
-            fi
-            sleep 2
-            elapsed=$((elapsed + 2))
-          done
-
-          if [ $elapsed -ge $max_wait ]; then
-            echo "Tailscale network not ready after ${max_wait}s"
-            exit 1
-          fi
-
-      - name: Configure SSH & Check Connection
-        run: |
-          mkdir -p ~/.ssh
-          echo "Host *
-            UserKnownHostsFile=/dev/null
-            StrictHostKeyChecking no" > ~/.ssh/config
-          chmod 644 ~/.ssh/config
-
-          validate_connection() {
-            local machine_name=$1
-            local max_retries=3
-            local retry_delay=5
-            
-            for attempt in $(seq 1 $max_retries); do
-              echo "Connection attempt $attempt/$max_retries to $machine_name"
-              
-              if ! tailscale status | grep -q "$machine_name"; then
-                echo "Machine $machine_name not found in Tailscale network"
-                if [ $attempt -eq $max_retries ]; then
-                  return 1
-                fi
-                sleep $retry_delay
-                continue
-              fi
-              
-              MACHINE_IP=$(tailscale ip -4 $machine_name)
-              if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; uptime" > /dev/null 2>&1; then
-                echo "Successfully validated connection to $machine_name"
-                return 0
-              fi
-              
-              echo "SSH validation failed for $machine_name"
-              if [ $attempt -lt $max_retries ]; then
-                sleep $retry_delay
-              fi
-            done
-            
-            echo "Failed to establish connection to $machine_name after $max_retries attempts"
-            return 1
-          }
-
-          echo -e "\nLOG:Validating connections to all machines..."
-          for i in {0..1}; do
-            TS_MACHINE_NAME=${TS_MACHINE_NAME_PREFIX}-${{ matrix.lang-name-short }}-${i}
-            echo "Validating connection to $TS_MACHINE_NAME"
-            if ! validate_connection "$TS_MACHINE_NAME"; then
-              echo "Error: Failed to establish reliable connection to $TS_MACHINE_NAME"
-              exit 1
-            fi
-          done
-          echo "All machine connections validated successfully"
+      - name: Wait for Tailscale & Validate SSH
+        uses: ./.github/actions/setup-tailscale-ssh
+        with:
+          machine-names: '${{ secrets.TS_MACHINE_NAME_PREFIX }}-${{ matrix.lang-name-short }}-0,${{ secrets.TS_MACHINE_NAME_PREFIX }}-${{ matrix.lang-name-short }}-1'
+          ssh-user: ${{ secrets.TS_USERNAME }}
 
       - name: Upload and Deploy
         run: |

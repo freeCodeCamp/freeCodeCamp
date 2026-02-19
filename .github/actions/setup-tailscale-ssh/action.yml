@@ -1,0 +1,112 @@
+name: 'Setup Tailscale SSH'
+description: 'Wait for Tailscale network readiness, configure SSH, and validate connections to target machines'
+
+inputs:
+  machine-names:
+    description: 'Comma-separated list of Tailscale machine names to validate'
+    required: true
+  ssh-user:
+    description: 'SSH username for connection validation'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Wait for Tailscale Network Readiness
+      shell: bash
+      env:
+        MACHINE_NAMES: ${{ inputs.machine-names }}
+      run: |
+        echo "Waiting for Tailscale network to be ready..."
+        max_wait=60
+        elapsed=0
+
+        while [ $elapsed -lt $max_wait ]; do
+          if tailscale status --json | jq -e '.BackendState == "Running"' > /dev/null 2>&1; then
+            echo "Tailscale daemon is running"
+            break
+          fi
+          sleep 2
+          elapsed=$((elapsed + 2))
+        done
+
+        if [ $elapsed -ge $max_wait ]; then
+          echo "Tailscale network not ready after ${max_wait}s"
+          exit 1
+        fi
+
+        echo "Waiting for machines to appear in Tailscale network..."
+        echo "DEBUG: Current tailscale status:"
+        tailscale status || true
+        echo "DEBUG: Peer count from JSON:"
+        tailscale status --json | jq '.Peer | length' || true
+
+        IFS=',' read -ra MACHINES <<< "$MACHINE_NAMES"
+        for machine in "${MACHINES[@]}"; do
+          machine=$(echo "$machine" | xargs)
+          echo "DEBUG: Looking for machine: '$machine'"
+          machine_wait=0
+          while [ $machine_wait -lt $max_wait ]; do
+            if tailscale status | grep -q "$machine"; then
+              echo "Machine $machine found in Tailscale network"
+              break
+            fi
+            echo "DEBUG: Machine not found yet (${machine_wait}s), tailscale status peer count: $(tailscale status --json | jq '.Peer | length')"
+            sleep 5
+            machine_wait=$((machine_wait + 5))
+          done
+          if [ $machine_wait -ge $max_wait ]; then
+            echo "Machine $machine not found after ${max_wait}s"
+            echo "DEBUG: Final tailscale status:"
+            tailscale status || true
+            exit 1
+          fi
+        done
+        echo "Tailscale network is ready"
+
+    - name: Configure SSH & Validate Connections
+      shell: bash
+      env:
+        SSH_USER: ${{ inputs.ssh-user }}
+        MACHINE_NAMES: ${{ inputs.machine-names }}
+      run: |
+        mkdir -p ~/.ssh
+        echo "Host *
+          UserKnownHostsFile=/dev/null
+          StrictHostKeyChecking no" > ~/.ssh/config
+        chmod 644 ~/.ssh/config
+
+        validate_connection() {
+          local machine_name=$1
+          local max_retries=3
+          local retry_delay=5
+
+          for attempt in $(seq 1 $max_retries); do
+            echo "Connection attempt $attempt/$max_retries to $machine_name"
+
+            MACHINE_IP=$(tailscale ip -4 $machine_name)
+            if ssh -o ConnectTimeout=10 -o BatchMode=yes $SSH_USER@$MACHINE_IP "echo 'Connection test'" > /dev/null 2>&1; then
+              echo "Successfully validated connection to $machine_name"
+              return 0
+            fi
+
+            echo "SSH validation failed for $machine_name"
+            if [ $attempt -lt $max_retries ]; then
+              sleep $retry_delay
+            fi
+          done
+
+          echo "Failed to establish connection to $machine_name after $max_retries attempts"
+          return 1
+        }
+
+        IFS=',' read -ra MACHINES <<< "$MACHINE_NAMES"
+        for machine in "${MACHINES[@]}"; do
+          machine=$(echo "$machine" | xargs)
+          echo -e "\nLOG:Validating connection to $machine..."
+          if ! validate_connection "$machine"; then
+            echo "Error: Failed to establish reliable connection to $machine"
+            exit 1
+          fi
+        done
+        echo "All machine connections validated successfully"

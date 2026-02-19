@@ -111,6 +111,11 @@ jobs:
             exit 1
           fi
 
+          echo "DEBUG: tailscale status output:"
+          tailscale status || true
+          echo "DEBUG: Peer count:"
+          tailscale status --json | jq '.Peer | length' || true
+
       - name: Configure SSH & Check Connection
         run: |
           mkdir -p ~/.ssh
@@ -123,10 +128,10 @@ jobs:
             local machine_name=$1
             local max_retries=3
             local retry_delay=5
-            
+
             for attempt in $(seq 1 $max_retries); do
               echo "Connection attempt $attempt/$max_retries to $machine_name"
-              
+
               if ! tailscale status | grep -q "$machine_name"; then
                 echo "Machine $machine_name not found in Tailscale network"
                 if [ $attempt -eq $max_retries ]; then
@@ -135,19 +140,19 @@ jobs:
                 sleep $retry_delay
                 continue
               fi
-              
+
               MACHINE_IP=$(tailscale ip -4 $machine_name)
               if ssh -o ConnectTimeout=10 -o BatchMode=yes $TS_USERNAME@$MACHINE_IP "echo 'Connection test'; docker --version" > /dev/null 2>&1; then
                 echo "Successfully validated connection to $machine_name"
                 return 0
               fi
-              
+
               echo "SSH validation failed for $machine_name"
               if [ $attempt -lt $max_retries ]; then
                 sleep $retry_delay
               fi
             done
-            
+
             echo "Failed to establish connection to $machine_name after $max_retries attempts"
             return 1
           }
