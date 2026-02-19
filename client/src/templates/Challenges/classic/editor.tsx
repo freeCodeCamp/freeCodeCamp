@@ -402,17 +402,19 @@ const Editor = (props: EditorProps): JSX.Element => {
 
     const setupTSModels = (monaco: typeof monacoEditor) => {
       const reactFile = monaco.Uri.file(monacoModelFileMap.reactTypes);
-      monaco.editor.createModel(
-        reactTypes['react-18'],
-        'typescript',
-        reactFile
-      );
+      if (!monaco.editor.getModel(reactFile)) {
+        monaco.editor.createModel(
+          reactTypes['react-18'],
+          'typescript',
+          reactFile
+        );
+      }
 
       const file = monaco.Uri.file(monacoModelFileMap.tsxFile);
-      return monaco.editor.createModel('', 'typescript', file);
+      const existingModel = monaco.editor.getModel(file);
+      return existingModel ?? monaco.editor.createModel('', 'typescript', file);
     };
 
-    // TODO: make sure these aren't getting created over and over
     function createModel(contents: string, language: string) {
       if (language !== 'typescript') {
         return monaco.editor.createModel(contents, language);
