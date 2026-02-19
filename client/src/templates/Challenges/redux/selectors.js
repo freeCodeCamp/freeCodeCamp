@@ -154,8 +154,7 @@ export const completedPercentageSelector = createSelector(
         id
       );
       return completedPercentage;
-    }
-    return 0;
+    } else return 0;
   }
 );
 
