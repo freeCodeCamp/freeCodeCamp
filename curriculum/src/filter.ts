@@ -1,7 +1,7 @@
 import comparison from 'string-similarity';
 
 /**
- * Filters the superblocks array to include, at most, a single superblock with the specified block.
+ * Filters the superblocks array to include any superblocks with the specified block.
  * If no block is provided, returns the original superblocks array.
  *
  * @param {Array<Object>} superblocks - Array of superblock objects, each containing a blocks array.
@@ -15,14 +15,14 @@ export function filterByBlock<T extends { blocks: { dashedName: string }[] }>(
 ): T[] {
   if (!block) return superblocks;
 
-  const superblock = superblocks
+  const remainingSuperblocks = superblocks
     .map(superblock => ({
       ...superblock,
       blocks: superblock.blocks.filter(({ dashedName }) => dashedName === block)
     }))
-    .find(superblock => superblock.blocks.length > 0);
+    .filter(superblock => superblock.blocks.length > 0);
 
-  return superblock ? [superblock] : [];
+  return remainingSuperblocks;
 }
 
 /**
