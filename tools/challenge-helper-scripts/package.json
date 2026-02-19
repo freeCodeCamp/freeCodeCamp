@@ -37,7 +37,7 @@
     "@total-typescript/ts-reset": "^0.6.1",
     "@types/glob": "^8.0.1",
     "@types/inquirer": "^8.2.5",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.15",
     "bson": "^7.0.0",
     "eslint": "^9.39.1",
     "glob": "^8.1.0",
@@ -45,6 +45,6 @@
     "inquirer": "8.2.6",
     "prettier": "3.2.5",
     "typescript": "5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.15"
   }
 }
