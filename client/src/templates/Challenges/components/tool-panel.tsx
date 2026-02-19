@@ -6,9 +6,18 @@ import { useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 import { createSelector } from 'reselect';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 
-import { openModal, executeChallenge } from '../redux/actions';
-import { challengeMetaSelector } from '../redux/selectors';
+import {
+  openModal,
+  executeChallenge,
+  runPythonPreview,
+  cancelPythonPreview
+} from '../redux/actions';
+import {
+  challengeMetaSelector,
+  pythonPreviewRunningSelector
+} from '../redux/selectors';
 import { saveChallenge } from '../../../redux/actions';
 import { isSignedInSelector } from '../../../redux/selectors';
 
@@ -16,9 +25,19 @@ import './tool-panel.css';
 
 const mapStateToProps = createSelector(
   challengeMetaSelector,
+  pythonPreviewRunningSelector,
   isSignedInSelector,
-  ({ saveSubmissionToDB }: { saveSubmissionToDB?: boolean }, isSignedIn) => ({
+  (
+    {
+      saveSubmissionToDB,
+      challengeType
+    }: { saveSubmissionToDB?: boolean; challengeType: number },
+    isPythonPreviewRunning: boolean,
+    isSignedIn
+  ) => ({
     saveSubmissionToDB,
+    challengeType,
+    isPythonPreviewRunning,
     isSignedIn
   })
 );
@@ -26,6 +45,8 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(
     {
       executeChallenge,
+      runPythonPreview,
+      cancelPythonPreview,
       openHelpModal: () => openModal('help'),
       openVideoModal: () => openModal('video'),
       openResetModal: () => openModal('reset'),
@@ -36,7 +57,11 @@ const mapDispatchToProps = (dispatch: Dispatch) =>
 
 interface ToolPanelProps {
   saveSubmissionToDB?: boolean;
+  challengeType: number;
+  isPythonPreviewRunning: boolean;
   executeChallenge: (options?: { showCompletionModal: boolean }) => void;
+  runPythonPreview: () => void;
+  cancelPythonPreview: () => void;
   saveChallenge: () => void;
   isMobile?: boolean;
   isSignedIn: boolean;
@@ -47,9 +72,13 @@ interface ToolPanelProps {
   videoUrl?: string;
 }
 
-function ToolPanel({
+export function ToolPanel({
   saveSubmissionToDB,
+  challengeType,
+  isPythonPreviewRunning,
   executeChallenge,
+  runPythonPreview,
+  cancelPythonPreview,
   saveChallenge,
   isMobile,
   isSignedIn,
@@ -63,6 +92,7 @@ function ToolPanel({
     executeChallenge({ showCompletionModal: true });
   };
   const { t } = useTranslation();
+  const isPyLab = challengeType === challengeTypes.pyLab;
   return (
     <div
       className={`tool-panel-group ${
@@ -72,6 +102,30 @@ function ToolPanel({
       <Button block={true} variant='primary' onClick={handleRunTests}>
         {isMobile ? t('buttons.run') : t('buttons.run-test')}
       </Button>
+      {isPyLab && (
+        <>
+          <Spacer size='xxs' />
+          {isPythonPreviewRunning ? (
+            <Button
+              block={true}
+              variant='primary'
+              data-playwright-test-label='toolPanel-python-cancel-button'
+              onClick={cancelPythonPreview}
+            >
+              {t('buttons.cancel')}
+            </Button>
+          ) : (
+            <Button
+              block={true}
+              variant='primary'
+              data-playwright-test-label='toolPanel-python-run-button'
+              onClick={runPythonPreview}
+            >
+              Run Code
+            </Button>
+          )}
+        </>
+      )}
       {isSignedIn && saveSubmissionToDB && (
         <>
           <Spacer size='xxs' />
