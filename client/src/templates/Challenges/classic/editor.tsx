@@ -425,13 +425,14 @@ const Editor = (props: EditorProps): JSX.Element => {
       }
     }
 
-    const model =
-      dataRef.current.monaco.model ||
-      createModel(
+    let model = dataRef.current.monaco.model;
+    if (!model) {
+      model = createModel(
         challengeFile?.contents ?? '',
         modeMap[challengeFile?.ext ?? 'html']
       );
-    dataRef.current.monaco.model = model;
+      dataRef.current.monaco.model = model;
+    }
 
     if (player.current.shouldPlay && !player.current.sampler) {
       void import('tone').then(tone => {
