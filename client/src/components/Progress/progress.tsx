@@ -72,6 +72,7 @@ type PropsFromRedux = ConnectedProps<typeof connector>;
 
 interface ProgressProps extends PropsFromRedux {
   t: TFunction;
+  minified?: boolean;
 }
 function Progress({
   currentBlockIds,
@@ -84,7 +85,8 @@ function Progress({
   t,
   updateAllChallengesInfo,
   updateSuperBlockStructures,
-  superBlockStructures: superBlockStructuresFromStore
+  superBlockStructures: superBlockStructuresFromStore,
+  minified
 }: ProgressProps): JSX.Element {
   let blockTitle = t(`intro:${superBlock}.blocks.${block}.title`);
   // Always false for legacy full stack, since it has no projects.
@@ -147,6 +149,7 @@ function Progress({
         title={blockTitle}
         meta={meta}
         completedPercent={completedPercent}
+        minified={minified}
       />
     </div>
   );
