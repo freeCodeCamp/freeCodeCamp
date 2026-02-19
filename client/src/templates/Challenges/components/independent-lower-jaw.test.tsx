@@ -116,6 +116,6 @@ describe('IndependentLowerJaw python controls', () => {
     ).not.toBeInTheDocument();
     expect(
       screen.queryByRole('button', { name: /cancel/i })
-    ).not.toBeInTheDocument()
+    ).not.toBeInTheDocument();
   });
 });
