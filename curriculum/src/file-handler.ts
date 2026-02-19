@@ -244,19 +244,13 @@ export function getSuperblockStructurePath(superblockFilename: string) {
  * @returns {Object} Object containing all relevant directory paths for the language
  * @throws {AssertionError} When required i18n directories don't exist for non-English languages
  */
-export function getLanguageConfig(
-  lang: string,
-  { baseDir, i18nBaseDir } = {
-    baseDir: CURRICULUM_DIR,
-    i18nBaseDir: I18N_CURRICULUM_DIR
-  }
-) {
-  const contentDir = resolve(baseDir, 'challenges', 'english');
-  const i18nContentDir = resolve(i18nBaseDir, 'challenges', lang);
+export function getLanguageConfig(lang: string) {
+  const contentDir = resolve(CURRICULUM_DIR, 'challenges', 'english');
+  const i18nContentDir = resolve(I18N_CURRICULUM_DIR, 'challenges', lang);
   const blockContentDir = resolve(contentDir, 'blocks');
   const i18nBlockContentDir = resolve(i18nContentDir, 'blocks');
-  const dictionariesDir = resolve(baseDir, 'dictionaries');
-  const i18nDictionariesDir = resolve(i18nBaseDir, 'dictionaries');
+  const dictionariesDir = resolve(CURRICULUM_DIR, 'dictionaries');
+  const i18nDictionariesDir = resolve(I18N_CURRICULUM_DIR, 'dictionaries');
 
   if (lang !== 'english') {
     assert(

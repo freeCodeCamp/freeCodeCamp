@@ -1,16 +1,15 @@
-import { readdirSync, readFileSync, existsSync } from 'fs';
-import { resolve, basename } from 'path';
+import { readdirSync, existsSync } from 'node:fs';
+import { resolve, basename } from 'node:path';
 
 import { isEmpty, isUndefined } from 'lodash';
 import debug from 'debug';
 
-import type { CommentDictionary } from '../../tools/challenge-parser/translation-parser/index.js';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import {
   SuperblockCreator,
-  BlockCreator,
   transformSuperBlock,
-  BlockInfo
+  BlockInfo,
+  BlockCreator
 } from './build-superblock.js';
 
 import { buildCertification } from './build-certification.js';
@@ -18,7 +17,6 @@ import { getSuperOrder } from './super-order.js';
 import { applyFilters, closestFilters, type Filter } from './filter.js';
 import {
   getContentDir,
-  getLanguageConfig,
   getCurriculumStructure,
   getBlockStructure,
   getSuperblockStructure,
@@ -28,140 +26,6 @@ import {
 } from './file-handler.js';
 import { SHOW_UPCOMING_CHANGES } from './config.js';
 const log = debug('fcc:build-curriculum');
-
-/**
- * Creates a BlockCreator instance for a specific language with appropriate configuration
- * @param {string} lang - The language code (e.g., 'english', 'spanish', etc.)
- * @param {boolean} [skipValidation=false] - Whether to skip validation of challenges
- * @param {Object} [opts] - Optional configuration object
- * @param {string} [opts.baseDir] - Base directory for curriculum content
- * @param {string} [opts.i18nBaseDir] - Base directory for i18n curriculum content
- * @param {string} [opts.structureDir] - Directory containing curriculum structure
- * @returns {BlockCreator} A configured BlockCreator instance
- */
-export const getBlockCreator = (
-  lang: string,
-  skipValidation?: boolean,
-  opts?: { baseDir: string; i18nBaseDir: string; structureDir: string }
-) => {
-  const {
-    blockContentDir,
-    i18nBlockContentDir,
-    dictionariesDir,
-    i18nDictionariesDir
-  } = getLanguageConfig(lang, opts);
-
-  const targetDictionariesDir =
-    lang === 'english' ? dictionariesDir : i18nDictionariesDir;
-
-  return new BlockCreator({
-    lang,
-    blockContentDir,
-    i18nBlockContentDir,
-    commentTranslations: createCommentMap(
-      dictionariesDir,
-      targetDictionariesDir
-    ),
-    skipValidation: skipValidation ?? false
-  });
-};
-
-/**
- * Gets a translation entry for a specific English ID and text across all languages
- * @param {Object} dicts - Dictionary object containing translations for each language
- * @param {Object} params - Parameters object
- * @param {string} params.engId - The English ID to look up in dictionaries
- * @param {string} params.text - The fallback English text to use if translation not found
- * @returns {Object} Object mapping language codes to translated text or fallback English text
- */
-export function getTranslationEntry(
-  dicts: Record<string, Record<string, unknown>>,
-  { engId, text }: { engId: string; text: string }
-) {
-  return Object.keys(dicts).reduce((acc, lang) => {
-    const entry = dicts[lang]?.[engId];
-    if (entry) {
-      return { ...acc, [lang]: entry };
-    } else {
-      // default to english
-      return { ...acc, [lang]: text };
-    }
-  }, {});
-}
-
-/**
- * Creates a mapping of English comments to their translations across all supported languages
- * @param {string} dictionariesDir - Path to the main (english) dictionaries directory
- * @param {string} targetDictionariesDir - Path to the target (i18n or english) dictionaries directory
- * @returns {Object} Object mapping English comment text to translations in all languages
- */
-export function createCommentMap(
-  dictionariesDir: string,
-  targetDictionariesDir: string
-): CommentDictionary {
-  log(
-    `Creating comment map from ${dictionariesDir} and ${targetDictionariesDir}`
-  );
-  const languages = readdirSync(targetDictionariesDir);
-
-  const dictionaries = languages.reduce((acc, lang) => {
-    const commentsPath = resolve(targetDictionariesDir, lang, 'comments.json');
-    const commentsData = JSON.parse(readFileSync(commentsPath, 'utf8'));
-    return {
-      ...acc,
-      [lang]: commentsData
-    };
-  }, {});
-
-  const COMMENTS_TO_TRANSLATE = JSON.parse(
-    readFileSync(resolve(dictionariesDir, 'english', 'comments.json'), 'utf8')
-  ) as Record<string, string>;
-
-  const COMMENTS_TO_NOT_TRANSLATE = JSON.parse(
-    readFileSync(
-      resolve(dictionariesDir, 'english', 'comments-to-not-translate.json'),
-      'utf8'
-    )
-  ) as Record<string, string>;
-
-  // map from english comment text to translations
-  const translatedCommentMap = Object.entries(COMMENTS_TO_TRANSLATE).reduce(
-    (acc, [id, text]) => {
-      return {
-        ...acc,
-        [text]: getTranslationEntry(dictionaries, { engId: id, text })
-      };
-    },
-    {} as CommentDictionary
-  );
-
-  // map from english comment text to itself
-  const untranslatableCommentMap = Object.values(
-    COMMENTS_TO_NOT_TRANSLATE
-  ).reduce((acc, text) => {
-    const englishEntry = languages.reduce(
-      (acc, lang) => ({
-        ...acc,
-        [lang]: text
-      }),
-      {}
-    );
-    return {
-      ...acc,
-      [text]: englishEntry
-    };
-  }, {} as CommentDictionary);
-
-  const allComments = { ...translatedCommentMap, ...untranslatableCommentMap };
-
-  // the english entries need to be added here, because english is not in
-  // languages
-  Object.keys(allComments).forEach(comment => {
-    allComments[comment]!.english = comment;
-  });
-
-  return allComments;
-}
 
 // Map of superblock filenames to their SuperBlocks enum values
 export const superBlockNames = {
@@ -244,7 +108,7 @@ export const superBlockToFilename = Object.entries(superBlockNames).reduce(
  * @returns {Array<Object>} Array of superblock structure objects with filename, name, and blocks
  * @throws {Error} When a superblock file is not found
  */
-export function addSuperblockStructure(
+function addSuperblockStructure(
   superBlockFilenames: string[],
   showComingSoon = SHOW_UPCOMING_CHANGES
 ) {
@@ -287,24 +151,6 @@ export function addBlockStructure(
       superBlock: superblock.name
     }))
   }));
-}
-
-/**
- * Returns a list of all the superblocks that contain the given block
- * @param {string} block
- */
-export function getSuperblocks(
-  block: string,
-  _addSuperblockStructure = addSuperblockStructure
-) {
-  const { superblocks } = getCurriculumStructure();
-  const withStructure = _addSuperblockStructure(superblocks);
-
-  return withStructure
-    .filter(({ blocks }) =>
-      blocks.some(({ dashedName }) => dashedName === block)
-    )
-    .map(({ name }) => name);
 }
 
 function validateBlocks(superblocks: SuperBlocks[], blockStructureDir: string) {
@@ -360,11 +206,11 @@ export async function parseCurriculumStructure(filter?: Filter) {
 export async function buildCurriculum(lang: string, filters?: Filter) {
   // Block validation assumes the entire block is being built, if that's not the
   // case, skip validation
-  const skipBlockValidation = filters?.challengeId !== undefined;
+  const skipValidation = filters?.challengeId !== undefined;
   const contentDir = getContentDir(lang);
 
   const builder = new SuperblockCreator(
-    getBlockCreator(lang, skipBlockValidation)
+    new BlockCreator({ lang, skipValidation })
   );
 
   const { fullSuperblockList, certifications } =
@@ -378,7 +224,7 @@ export async function buildCurriculum(lang: string, filters?: Filter) {
   };
 
   const liveSuperblocks = fullSuperblockList.filter(({ name }) => {
-    const superOrder = getSuperOrder(name);
+    const superOrder = getSuperOrder(name, SHOW_UPCOMING_CHANGES);
     const upcomingSuperOrder = getSuperOrder(name, true);
 
     if (isUndefined(superOrder) && isUndefined(upcomingSuperOrder)) {

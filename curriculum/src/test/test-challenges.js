@@ -10,7 +10,7 @@ import {
 import { getLines } from '@freecodecamp/shared/utils/get-lines';
 import { prefixDoctype } from '@freecodecamp/challenge-builder/build';
 
-import { getChallengesForLang } from '../get-challenges.js';
+import { buildCurriculum } from '../build-curriculum.js';
 import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
 
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
@@ -120,27 +120,25 @@ export async function defineTestsForBlock(testFilter) {
 }
 
 export async function getChallenges(lang, filters) {
-  const challenges = await getChallengesForLang(lang, filters).then(
-    curriculum => {
-      // If there are filters, we're testing a single challenge or block, so we
-      // can skip the validation.
-      if (isEmpty(filters)) {
-        const result = curriculumSchemaValidator(curriculum);
-        if (result.error)
-          throw new Error(
-            `Curriculum validation failed: ${result.error.message}`
-          );
-      }
-      return Object.keys(curriculum)
-        .map(key => curriculum[key].blocks)
-        .reduce((challengeArray, superBlock) => {
-          const challengesForBlock = Object.keys(superBlock).map(
-            key => superBlock[key].challenges
-          );
-          return [...challengeArray, ...flatten(challengesForBlock)];
-        }, []);
+  const challenges = await buildCurriculum(lang, filters).then(curriculum => {
+    // If there are filters, we're testing a single challenge or block, so we
+    // can skip the validation.
+    if (isEmpty(filters)) {
+      const result = curriculumSchemaValidator(curriculum);
+      if (result.error)
+        throw new Error(
+          `Curriculum validation failed: ${result.error.message}`
+        );
     }
-  );
+    return Object.keys(curriculum)
+      .map(key => curriculum[key].blocks)
+      .reduce((challengeArray, superBlock) => {
+        const challengesForBlock = Object.keys(superBlock).map(
+          key => superBlock[key].challenges
+        );
+        return [...challengeArray, ...flatten(challengesForBlock)];
+      }, []);
+  });
   // This matches the order Gatsby uses (via a GraphQL query). Ideally both
   // should be sourced and sorted using a single query, but we're not there yet.
   return sortChallenges(challenges);

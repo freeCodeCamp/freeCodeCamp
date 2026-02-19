@@ -6,11 +6,7 @@ import {
   getAuditedSuperBlocks
 } from '@freecodecamp/shared/config/curriculum';
 
-import { getChallengesForLang } from '../get-challenges.js';
-
-// TODO: re-organise the types to a common 'types' folder that can be shared
-// between the workspaces so we don't have to declare ChallengeNode here and in
-// the client.
+import { buildCurriculum } from '../build-curriculum.js';
 
 // This cannot be imported from the client, without causing tsc to attempt to
 // compile the client (something it cannot do)
@@ -22,11 +18,8 @@ type ChallengeNode = {
   challengeType: number;
 };
 
-// Adding types for getChallengesForLang is possible, but not worth the effort
-// at this time.
-
 const getChallenges = async (lang: string) => {
-  const curriculum = await getChallengesForLang(lang);
+  const curriculum = await buildCurriculum(lang);
   return (
     Object.keys(curriculum)
       // @ts-expect-error - curriculum comes from a JS file.

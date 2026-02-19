@@ -55,13 +55,13 @@ describe('createSuperOrder', () => {
 
 describe('getSuperOrder', () => {
   it('returns a number for valid curriculum', () => {
-    expect(typeof getSuperOrder('responsive-web-design')).toBe('number');
+    expect(typeof getSuperOrder('responsive-web-design', false)).toBe('number');
   });
 
   it('returns undefined for unknown curriculum', () => {
-    expect(getSuperOrder('')).toBeUndefined();
-    expect(getSuperOrder('respansive-wib-desoin')).toBeUndefined();
-    expect(getSuperOrder('certifications')).toBeUndefined();
+    expect(getSuperOrder('', false)).toBeUndefined();
+    expect(getSuperOrder('respansive-wib-desoin', false)).toBeUndefined();
+    expect(getSuperOrder('certifications', false)).toBeUndefined();
   });
 
   it('returns numbers for all current curriculum', () => {

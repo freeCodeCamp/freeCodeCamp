@@ -1,11 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 
-import { getChallengesForLang } from '../get-challenges';
+import { curriculumFilter } from '../config.js';
+import { buildCurriculum } from '../build-curriculum.js';
 
 const globalConfigPath = path.resolve(__dirname, '../../generated/');
 
-void getChallengesForLang('english')
+void buildCurriculum('english', curriculumFilter)
   .then(JSON.stringify)
   .then(json => {
     fs.mkdirSync(globalConfigPath, { recursive: true });
