@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import { navigate, withPrefix } from 'gatsby';
+import { navigate } from 'gatsby';
 import React from 'react';
 import { describe, it, expect } from 'vitest';
 
@@ -7,7 +7,7 @@ import Challenges from './challenges/index';
 import ChallengesRedirect from './challenges/[...]';
 
 describe('Challenges', () => {
-  const learn = withPrefix('/learn');
+  const learn = '/learn';
 
   it('should handle redirect to /learn', () => {
     render(<Challenges />);
