@@ -188,6 +188,7 @@ jobs:
         run: |
           REMOTE_SCRIPT="
             set -e
+            trap 'rm -f .env age.key secrets.age.asc .env.tmp' EXIT
             echo -e '\nLOG:Deploying API to $TS_MACHINE_NAME...'
             cd /home/$TS_USERNAME/docker-swarm-config/stacks/api
 
