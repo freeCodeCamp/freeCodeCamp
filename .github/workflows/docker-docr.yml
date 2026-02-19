@@ -61,13 +61,8 @@ jobs:
           echo "tagname=$tagname" >> $GITHUB_ENV
           echo "tagname=$tagname" >> $GITHUB_OUTPUT
 
-      - name: Build & Tag Image
-        run: |
-          docker build \
-            --build-arg SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }} \
-            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname \
-            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest \
-            --file docker/${{ inputs.app }}/Dockerfile .
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
@@ -77,7 +72,16 @@ jobs:
       - name: Log in to DigitalOcean Container Registry with short-lived credentials
         run: doctl registry login --expiry-seconds 1200
 
-      - name: Push image to DigitalOcean Container Registry
-        run: |
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
+      - name: Build & Push Image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          file: docker/${{ inputs.app }}/Dockerfile
+          push: true
+          build-args: |
+            SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }}
+          tags: |
+            registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}
+            registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
