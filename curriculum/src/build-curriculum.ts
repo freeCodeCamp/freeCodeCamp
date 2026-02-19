@@ -202,7 +202,32 @@ export const superBlockNames = {
   'python-v9': SuperBlocks.PythonV9,
   'relational-databases-v9': SuperBlocks.RelationalDbV9,
   'back-end-development-and-apis-v9': SuperBlocks.BackEndDevApisV9,
-  'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9
+  'full-stack-developer-v9': SuperBlocks.FullStackDeveloperV9,
+  'html-forms-and-tables': SuperBlocks.HtmlFormsAndTables,
+  'learn-python-for-beginners': SuperBlocks.LearnPythonForBeginners,
+  'lab-survey-form': SuperBlocks.LabSurveyForm,
+  'html-and-accessibility': SuperBlocks.HtmlAndAccessibility,
+  'computer-basics': SuperBlocks.ComputerBasics,
+  'basic-css': SuperBlocks.BasicCss,
+  'design-for-developers': SuperBlocks.DesignForDevelopers,
+  'absolute-and-relative-units': SuperBlocks.AbsoluteAndRelativeUnits,
+  'pseudo-classes-and-elements': SuperBlocks.PseudoClassesAndElements,
+  'css-colors': SuperBlocks.CssColors,
+  'styling-forms': SuperBlocks.StylingForms,
+  'css-box-model': SuperBlocks.CssBoxModel,
+  'css-flexbox': SuperBlocks.CssFlexbox,
+  'lab-page-of-playing-cards': SuperBlocks.LabPageOfPlayingCards,
+  'css-typography': SuperBlocks.CssTypography,
+  'css-and-accessibility': SuperBlocks.CssAndAccessibility,
+  'css-positioning': SuperBlocks.CssPositioning,
+  'attribute-selectors': SuperBlocks.AttributeSelectors,
+  'lab-book-inventory-app': SuperBlocks.LabBookInventoryApp,
+  'responsive-design': SuperBlocks.ResponsiveDesign,
+  'lab-technical-documentation-page': SuperBlocks.LabTechnicalDocumentationPage,
+  'css-variables': SuperBlocks.CssVariables,
+  'css-grid': SuperBlocks.CssGrid,
+  'lab-product-landing-page': SuperBlocks.LabProductLandingPage,
+  'css-animations': SuperBlocks.CssAnimations
 };
 
 export const superBlockToFilename = Object.entries(superBlockNames).reduce(

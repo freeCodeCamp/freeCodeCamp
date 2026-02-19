@@ -40,7 +40,32 @@ export enum SuperBlocks {
   PythonV9 = 'python-v9',
   RelationalDbV9 = 'relational-databases-v9',
   BackEndDevApisV9 = 'back-end-development-and-apis-v9',
-  FullStackDeveloperV9 = 'full-stack-developer-v9'
+  FullStackDeveloperV9 = 'full-stack-developer-v9',
+  HtmlFormsAndTables = 'html-forms-and-tables',
+  LabSurveyForm = 'lab-survey-form',
+  HtmlAndAccessibility = 'html-and-accessibility',
+  ComputerBasics = 'computer-basics',
+  BasicCss = 'basic-css',
+  DesignForDevelopers = 'design-for-developers',
+  AbsoluteAndRelativeUnits = 'absolute-and-relative-units',
+  PseudoClassesAndElements = 'pseudo-classes-and-elements',
+  CssColors = 'css-colors',
+  StylingForms = 'styling-forms',
+  CssBoxModel = 'css-box-model',
+  CssFlexbox = 'css-flexbox',
+  LabPageOfPlayingCards = 'lab-page-of-playing-cards',
+  CssTypography = 'css-typography',
+  CssAndAccessibility = 'css-and-accessibility',
+  CssPositioning = 'css-positioning',
+  AttributeSelectors = 'attribute-selectors',
+  LabBookInventoryApp = 'lab-book-inventory-app',
+  ResponsiveDesign = 'responsive-design',
+  LabTechnicalDocumentationPage = 'lab-technical-documentation-page',
+  CssVariables = 'css-variables',
+  CssGrid = 'css-grid',
+  LabProductLandingPage = 'lab-product-landing-page',
+  CssAnimations = 'css-animations',
+  LearnPythonForBeginners = 'learn-python-for-beginners'
 }
 
 export const languageSuperBlocks = [
@@ -164,14 +189,40 @@ export const superBlockStages: StageMap = {
   ],
   // Catalog is treated like upcoming for now
   // Add catalog superBlocks to catalog.ts when adding new superBlocks
-  [SuperBlockStage.Catalog]: [SuperBlocks.BasicHtml, SuperBlocks.SemanticHtml]
+  [SuperBlockStage.Catalog]: [
+    SuperBlocks.HtmlFormsAndTables,
+    SuperBlocks.BasicHtml,
+    SuperBlocks.SemanticHtml,
+    SuperBlocks.LabSurveyForm,
+    SuperBlocks.HtmlAndAccessibility,
+    SuperBlocks.ComputerBasics,
+    SuperBlocks.BasicCss,
+    SuperBlocks.DesignForDevelopers,
+    SuperBlocks.AbsoluteAndRelativeUnits,
+    SuperBlocks.PseudoClassesAndElements,
+    SuperBlocks.CssColors,
+    SuperBlocks.StylingForms,
+    SuperBlocks.CssBoxModel,
+    SuperBlocks.CssFlexbox,
+    SuperBlocks.LabPageOfPlayingCards,
+    SuperBlocks.CssTypography,
+    SuperBlocks.CssAndAccessibility,
+    SuperBlocks.CssPositioning,
+    SuperBlocks.AttributeSelectors,
+    SuperBlocks.LabBookInventoryApp,
+    SuperBlocks.ResponsiveDesign,
+    SuperBlocks.LabTechnicalDocumentationPage,
+    SuperBlocks.CssVariables,
+    SuperBlocks.CssGrid,
+    SuperBlocks.LabProductLandingPage,
+    SuperBlocks.CssAnimations,
+    SuperBlocks.LearnPythonForBeginners
+  ]
 };
 
 Object.freeze(superBlockStages);
 
 export const archivedSuperBlocks = superBlockStages[SuperBlockStage.Legacy];
-
-export const catalogSuperBlocks = superBlockStages[SuperBlockStage.Catalog];
 
 type NotAuditedSuperBlocks = {
   [key in Languages]: SuperBlocks[];

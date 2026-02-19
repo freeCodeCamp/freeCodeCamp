@@ -262,22 +262,22 @@ export function isCertified(
 // TODO: use i18n keys instead of hardcoded titles
 export const certToTitleMap: Record<Certification, string> = {
   // Legacy certifications
-  [Certification.LegacyFrontEnd]: 'Legacy Front End',
+  [Certification.LegacyFrontEnd]: 'Legacy Frontend',
   [Certification.JsAlgoDataStruct]:
     'Legacy JavaScript Algorithms and Data Structures V7',
-  [Certification.LegacyBackEnd]: 'Legacy Back End',
+  [Certification.LegacyBackEnd]: 'Legacy Backend',
   [Certification.LegacyDataVis]: 'Legacy Data Visualization',
   [Certification.LegacyInfoSecQa]:
     'Legacy Information Security and Quality Assurance',
-  [Certification.LegacyFullStack]: 'Legacy Full Stack',
+  [Certification.LegacyFullStack]: 'Legacy Full-Stack',
 
   // Current certifications
   [Certification.RespWebDesign]: 'Legacy Responsive Web Design V8',
   [Certification.JsAlgoDataStructNew]:
     'Legacy JavaScript Algorithms and Data Structures V8',
-  [Certification.FrontEndDevLibs]: 'Front End Development Libraries V8',
+  [Certification.FrontEndDevLibs]: 'Frontend Development Libraries V8',
   [Certification.DataVis]: 'Data Visualization V8',
-  [Certification.BackEndDevApis]: 'Back End Development and APIs V8',
+  [Certification.BackEndDevApis]: 'Backend Development and APIs V8',
   [Certification.QualityAssurance]: 'Quality Assurance',
   [Certification.InfoSec]: 'Information Security',
   [Certification.SciCompPy]: 'Scientific Computing with Python',
@@ -291,11 +291,11 @@ export const certToTitleMap: Record<Certification, string> = {
   // Upcoming certifications
   [Certification.RespWebDesignV9]: 'Responsive Web Design',
   [Certification.JsV9]: 'JavaScript',
-  [Certification.FrontEndDevLibsV9]: 'Front End Development Libraries',
+  [Certification.FrontEndDevLibsV9]: 'Frontend Development Libraries',
   [Certification.PythonV9]: 'Python',
   [Certification.RelationalDbV9]: 'Relational Database',
-  [Certification.BackEndDevApisV9]: 'Back End Development and APIs',
-  [Certification.FullStackDeveloperV9]: 'Full Stack Developer',
+  [Certification.BackEndDevApisV9]: 'Backend Development and APIs',
+  [Certification.FullStackDeveloperV9]: 'Full-Stack Developer',
   [Certification.B1English]: 'B1 English for Developers',
   [Certification.A2Spanish]: 'A2 Professional Spanish',
   [Certification.A2Chinese]: 'A2 Professional Chinese',
@@ -341,7 +341,32 @@ export const superBlockToCertMap: {
   [SuperBlocks.BasicHtml]: null,
   [SuperBlocks.SemanticHtml]: null,
   [SuperBlocks.DevPlayground]: null,
-  [SuperBlocks.FullStackOpen]: null
+  [SuperBlocks.FullStackOpen]: null,
+  [SuperBlocks.HtmlFormsAndTables]: null,
+  [SuperBlocks.LabSurveyForm]: null,
+  [SuperBlocks.HtmlAndAccessibility]: null,
+  [SuperBlocks.ComputerBasics]: null,
+  [SuperBlocks.BasicCss]: null,
+  [SuperBlocks.DesignForDevelopers]: null,
+  [SuperBlocks.AbsoluteAndRelativeUnits]: null,
+  [SuperBlocks.PseudoClassesAndElements]: null,
+  [SuperBlocks.CssColors]: null,
+  [SuperBlocks.StylingForms]: null,
+  [SuperBlocks.CssBoxModel]: null,
+  [SuperBlocks.CssFlexbox]: null,
+  [SuperBlocks.LabPageOfPlayingCards]: null,
+  [SuperBlocks.CssTypography]: null,
+  [SuperBlocks.CssAndAccessibility]: null,
+  [SuperBlocks.CssPositioning]: null,
+  [SuperBlocks.AttributeSelectors]: null,
+  [SuperBlocks.LabBookInventoryApp]: null,
+  [SuperBlocks.ResponsiveDesign]: null,
+  [SuperBlocks.LabTechnicalDocumentationPage]: null,
+  [SuperBlocks.CssVariables]: null,
+  [SuperBlocks.CssGrid]: null,
+  [SuperBlocks.LabProductLandingPage]: null,
+  [SuperBlocks.CssAnimations]: null,
+  [SuperBlocks.LearnPythonForBeginners]: null
 };
 
 export const certificationRequirements: Partial<

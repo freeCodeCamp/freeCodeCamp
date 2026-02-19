@@ -45,6 +45,9 @@ jobs:
             exit 1
           fi
 
+      - name: Check format of sample.env
+        run: docker run --rm -v `pwd`:/app -w /app dotenvlinter/dotenv-linter check --ignore-checks UnorderedKey sample.env
+
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
@@ -64,8 +67,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
 
       - name: Install node_modules
         run: pnpm install
@@ -116,7 +119,7 @@ jobs:
 
       - name: Set freeCodeCamp Environment Variables
         run: |
-          cp sample.env .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
 
       - name: Install and Build
         run: |
@@ -158,8 +161,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -210,9 +213,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          echo 'SHOW_UPCOMING_CHANGES=true' >> .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          echo 'SHOW_UPCOMING_CHANGES=true' >> $GITHUB_ENV
 
       - name: Start MongoDB
         run: docker compose -f docker/docker-compose.yml up -d
@@ -265,8 +267,8 @@ jobs:
 
       - name: Set Environment variables
         run: |
-          cp sample.env .env
-          cat .env
+          sed '/^[[:space:]]*#/d; /^$/d' sample.env >> $GITHUB_ENV
+          cat sample.env
 
       - name: Start MongoDB
         uses: supercharge/mongodb-github-action@315db7fe45ac2880b7758f1933e6e5d59afd5e94 # 1.12.1

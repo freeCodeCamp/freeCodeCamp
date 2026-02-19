@@ -347,10 +347,27 @@ type Quiz = {
   questions: QuizQuestion[];
 };
 
+type QuizAudio = {
+  filename: string;
+  startTimestamp?: number | null;
+  finishTimestamp?: number | null;
+};
+
+type QuizTranscriptLine = {
+  character: string;
+  text: string;
+};
+
+type QuizAudioData = {
+  audio: QuizAudio;
+  transcript: QuizTranscriptLine[];
+};
+
 type QuizQuestion = {
   text: string;
   distractors: string[];
   answer: string;
+  audioData?: QuizAudioData | null;
 };
 
 export type CertificateNode = {

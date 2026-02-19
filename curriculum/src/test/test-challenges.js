@@ -219,6 +219,13 @@ async function populateTestsForLang({ lang, challenges, meta }) {
               return;
             }
 
+            it('Has challenge files', function () {
+              expect(
+                challenge.challengeFiles,
+                `challengeFiles should exist. Check that the challenge has a "seed" section in the markdown file.`
+              ).toBeDefined();
+            });
+
             // The python tests are (currently) slow, so we give them more time.
             const timePerTest =
               challengeType === challengeTypes.python ? 10000 : 5000;

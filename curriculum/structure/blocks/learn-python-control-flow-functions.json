@@ -1,0 +1,30 @@
+{
+  "name": "Control Flow and Functions",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-control-flow-functions",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "58d5d031e969765037c1bebb",
+      "title": "Functions"
+    },
+    {
+      "id": "c6c9dae4017830e187eeaf42",
+      "title": "Return Statement"
+    },
+    {
+      "id": "08854a2c6f052efa1e5270d2",
+      "title": "If Statements"
+    },
+    {
+      "id": "8314d0bbddb0aa027a144705",
+      "title": "If Statements and Comparisons"
+    },
+    {
+      "id": "a9f9c5bf295034800d6c77ad",
+      "title": "Building a Better Calculator"
+    }
+  ]
+}
