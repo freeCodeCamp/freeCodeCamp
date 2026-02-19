@@ -18,7 +18,7 @@ This will extend the search to the right half of the current search areas in the
 You should update the `low` variable to `mid + 1`.
 
 ```js
-
+assert.match(String(binarySearch), /low\s*=\s*mid\s*\+\s*1/);
 ```
 
 # --seed--
@@ -30,22 +30,22 @@ function binarySearch(searchList, value) {
   let pathToTarget = [];
   let low = 0;
   let high = searchList.length - 1;
-    while (low <= high) {
-      let mid = Math.floor((low + high) / 2);
-      let valueAtMiddle = searchList[mid];
-      pathToTarget.push(valueAtMiddle);
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+    let valueAtMiddle = searchList[mid];
+    pathToTarget.push(valueAtMiddle);
 
     if (value === valueAtMiddle) {
-        return pathToTarget;
-      } else if (value > valueAtMiddle) {
+      return pathToTarget;
+    } else if (value > valueAtMiddle) {
 --fcc-editable-region--
           
 --fcc-editable-region--     
-      }
-      
-      break;
     }
-    return [];
+    
+    break;
+  }
+  return [];
 }
 
 console.log(binarySearch([1, 2, 3, 4, 5], 3));

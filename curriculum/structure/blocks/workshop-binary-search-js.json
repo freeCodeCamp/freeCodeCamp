@@ -5,22 +5,70 @@
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
   "challengeOrder": [
-    { "id": "6995d0325fd7da40854fac40", "title": "Step 1" },
-    { "id": "6996c60281feca6718cc15c1", "title": "Step 2" },
-    { "id": "6996c675b599baa7b103192d", "title": "Step 3" },
-    { "id": "6996c7363a4a437839f1f15d", "title": "Step 4" },
-    { "id": "6996c796385b6ea4e222d5e8", "title": "Step 5" },
-    { "id": "6996c8375f4301004459ee85", "title": "Step 6" },
-    { "id": "6996c8f94fe6b250f11a2a1e", "title": "Step 7" },
-    { "id": "6996c95e5bede03bdf2937a2", "title": "Step 8" },
-    { "id": "6996ca21a74104721f2c7e5d", "title": "Step 9" },
-    { "id": "6996cb5869acf58de751ae81", "title": "Step 10" },
-    { "id": "6996ccadf9048c79b857bb15", "title": "Step 11" },
-    { "id": "6996cdf1f60cbc30eeeae1c9", "title": "Step 12" },
-    { "id": "6996cfb6c01e9a802add38be", "title": "Step 13" },
-    { "id": "6996d0a2c2ac55041145a13f", "title": "Step 14" },
-    { "id": "6996d1032feed88e2957dc8e", "title": "Step 15" },
-    { "id": "6996d18b31aab5cbbffbc731", "title": "Step 16" }
+    {
+      "id": "6995d0325fd7da40854fac40",
+      "title": "Step 1"
+    },
+    {
+      "id": "6996c60281feca6718cc15c1",
+      "title": "Step 2"
+    },
+    {
+      "id": "6996c675b599baa7b103192d",
+      "title": "Step 3"
+    },
+    {
+      "id": "6996c7363a4a437839f1f15d",
+      "title": "Step 4"
+    },
+    {
+      "id": "6996c796385b6ea4e222d5e8",
+      "title": "Step 5"
+    },
+    {
+      "id": "6996c8375f4301004459ee85",
+      "title": "Step 6"
+    },
+    {
+      "id": "6996c8f94fe6b250f11a2a1e",
+      "title": "Step 7"
+    },
+    {
+      "id": "6996c95e5bede03bdf2937a2",
+      "title": "Step 8"
+    },
+    {
+      "id": "6996ca21a74104721f2c7e5d",
+      "title": "Step 9"
+    },
+    {
+      "id": "6996cb5869acf58de751ae81",
+      "title": "Step 10"
+    },
+    {
+      "id": "6996ccadf9048c79b857bb15",
+      "title": "Step 11"
+    },
+    {
+      "id": "6996cdf1f60cbc30eeeae1c9",
+      "title": "Step 12"
+    },
+    {
+      "id": "6996cfb6c01e9a802add38be",
+      "title": "Step 13"
+    },
+    {
+      "id": "6996d0a2c2ac55041145a13f",
+      "title": "Step 14"
+    },
+    {
+      "id": "6996d1032feed88e2957dc8e",
+      "title": "Step 15"
+    },
+    {
+      "id": "6996d18b31aab5cbbffbc731",
+      "title": "Step 16"
+    }
   ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
