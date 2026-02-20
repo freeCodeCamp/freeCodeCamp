@@ -9,7 +9,9 @@ test.beforeEach(async ({ page }) => {
 
   await page.goto('/certifieduser');
 
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+  await page
+    .getByRole('button', { name: translations.profile['edit-personal-info'] })
+    .click();
 });
 
 test.afterAll(() => {
@@ -22,7 +24,7 @@ test('Should allow empty string in any field in about settings', async ({
   test.setTimeout(20000);
 
   const saveButton = page.getByRole('button', {
-    name: translations.settings.headings['personal-info']
+    name: `Save ${translations.profile['edit-personal-info']}`
   });
 
   const nameInput = page.getByLabel(translations.settings.labels.name, {
@@ -48,7 +50,9 @@ test('Should allow empty string in any field in about settings', async ({
   await expect(updatedAlert).toBeVisible();
   // clear the alert to make sure it's gone before we save again.
   await updatedAlert.getByRole('button').click();
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+  await page
+    .getByRole('button', { name: translations.profile['edit-personal-info'] })
+    .click();
   await nameInput.fill('');
   await locationInput.fill('');
   await pictureInput.fill('');
@@ -60,7 +64,9 @@ test('Should allow empty string in any field in about settings', async ({
 
   await page.reload();
 
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+  await page
+    .getByRole('button', { name: translations.profile['edit-personal-info'] })
+    .click();
   await expect(nameInput).toHaveValue('');
   await expect(locationInput).toHaveValue('');
   await expect(pictureInput).toHaveValue('');

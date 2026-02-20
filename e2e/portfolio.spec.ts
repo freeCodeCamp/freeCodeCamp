@@ -16,7 +16,11 @@ test.describe('Add Portfolio Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
+    await page
+      .getByRole('button', {
+        name: translations.profile['add-new-project']
+      })
+      .click();
 
     // Will check if the portfolio button is hydrated correctly with different intervals.
     await expect(async () => {

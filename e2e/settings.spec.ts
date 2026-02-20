@@ -70,7 +70,7 @@ test.describe('Settings - Certified User', () => {
       )}`
     );
 
-    // Privacy Settings
+    // Privacy Settings (simplified - only profile lock toggle and download data)
     await expect(
       page.getByRole('heading', {
         name: translations.settings.headings.privacy
@@ -85,92 +85,13 @@ test.describe('Settings - Certified User', () => {
         .locator('p')
         .filter({ hasText: translations.settings.labels['my-profile'] })
     ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-name']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-name'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-about']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-about'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-points']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-points'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-certs']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-certs'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-donations']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-donations'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-heatmap']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-heatmap'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-location']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-location'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-timeline']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-timeline'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-portfolio']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-portfolio'] })
-    ).toBeVisible();
-    await expect(
-      page
-        .getByRole('group', {
-          name: translations.settings.labels['my-experience']
-        })
-        .locator('p')
-        .filter({ hasText: translations.settings.labels['my-experience'] })
-    ).toBeVisible();
+    // Only 1 toggle (profile lock) should remain
     await expect(
       page.getByText(settingsObject.private, { exact: true })
-    ).toHaveCount(11);
+    ).toHaveCount(1);
     await expect(
       page.getByText(settingsObject.public, { exact: true })
-    ).toHaveCount(11);
+    ).toHaveCount(1);
     const saveButton = page.getByRole('button', {
       name: translations.settings.headings.privacy
     });

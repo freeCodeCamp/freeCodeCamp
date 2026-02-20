@@ -1,7 +1,8 @@
 .profile-completeness {
-  padding: 1em;
-  background: var(--primary-background);
+  padding: clamp(1rem, 1.2vw, 1.5rem);
+  background: var(--secondary-background);
   border: 1px solid var(--quaternary-background);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 1.5em;
 }
 
@@ -10,10 +11,11 @@
   align-items: center;
   gap: 1rem;
   width: 100%;
-  background: none;
+  background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding: 0 0 0.8rem;
+  border-bottom: 1px solid var(--quaternary-background);
   color: var(--primary-color);
   text-align: left;
 }
@@ -25,21 +27,24 @@
 
 .profile-completeness-bar-container {
   flex: 1;
-  height: 8px;
-  border-radius: 4px;
+  height: 10px;
+  background: var(--tertiary-background);
+  border: 1px solid var(--quaternary-background);
+  border-radius: 0;
   overflow: hidden;
 }
 
 .profile-completeness-bar-fill {
   height: 100%;
-  background-color: var(--blue-mid);
-  border-radius: 4px;
+  background-color: var(--primary-color);
+  border-radius: 0;
   transition: width 0.3s ease;
 }
 
 .profile-completeness-text {
   white-space: nowrap;
-  font-size: 0.875rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 .profile-completeness-chevron {
@@ -59,11 +64,11 @@
 
 .profile-completeness-checklist {
   list-style: none;
-  margin: 1rem 0 0;
+  margin: 0.75rem 0 0;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.35rem;
 }
 
 .profile-completeness-checklist li {
@@ -71,14 +76,20 @@
   align-items: center;
   gap: 10px;
   font-size: 1rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--tertiary-background);
+}
+
+.profile-completeness-checklist li:last-child {
+  border-bottom: none;
 }
 
 .completeness-checkbox {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 

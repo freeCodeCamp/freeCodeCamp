@@ -9,6 +9,7 @@ import {
   HelpBlock,
   FormGroupProps,
   Button,
+  Modal,
   Spacer
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
@@ -20,13 +21,14 @@ import { hasProtocolRE } from '../../../utils';
 
 import { FullWidthRow, interleave } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
-import SectionHeader from '../../settings/section-header';
 import { updateMyPortfolio } from '../../../redux/settings/actions';
 
 type PortfolioProps = {
   portfolio: PortfolioProjectData[];
   t: TFunction;
   updateMyPortfolio: (obj: { portfolio: PortfolioProjectData[] }) => void;
+  open: boolean;
+  onClose: () => void;
 };
 
 interface ProfileValidation {
@@ -54,7 +56,13 @@ const byId = (id: string) => (p: PortfolioProjectData) => p.id === id;
 const notById = (id: string) => (p: PortfolioProjectData) => p.id !== id;
 
 const PortfolioSettings = (props: PortfolioProps) => {
-  const { t, portfolio: initialPortfolio = [], updateMyPortfolio } = props;
+  const {
+    t,
+    portfolio: initialPortfolio = [],
+    updateMyPortfolio,
+    open,
+    onClose
+  } = props;
   const [portfolio, setPortfolio] = useState(initialPortfolio);
   const [unsavedItemId, setUnsavedItemId] = useState<string | null>(null);
   const [imageValidation, setImageValid] = useState<ProfileValidation>({
@@ -345,31 +353,33 @@ const PortfolioSettings = (props: PortfolioProps) => {
   };
 
   return (
-    <section id='portfolio-settings'>
-      <SectionHeader>{t('settings.headings.portfolio')}</SectionHeader>
-      <FullWidthRow>
-        <p>{t('settings.share-projects')}</p>
-        <Spacer size='xs' />
-        <Button
-          block
-          size='large'
-          variant='primary'
-          disabled={unsavedItemId !== null}
-          onClick={handleAdd}
-          type='button'
-        >
-          {t('buttons.add-portfolio')}
-        </Button>
-      </FullWidthRow>
-      <Spacer size='l' />
-      {interleave(portfolio.map(renderPortfolio), () => (
-        <>
-          <Spacer size='m' />
-          <hr />
-          <Spacer size='m' />
-        </>
-      ))}
-    </section>
+    <Modal onClose={onClose} open={open} size='large'>
+      <Modal.Header>{t('profile.edit-portfolio')}</Modal.Header>
+      <Modal.Body alignment='left'>
+        <FullWidthRow>
+          <p>{t('settings.share-projects')}</p>
+          <Spacer size='xs' />
+          <Button
+            block
+            size='large'
+            variant='primary'
+            disabled={unsavedItemId !== null}
+            onClick={handleAdd}
+            type='button'
+          >
+            {t('buttons.add-portfolio')}
+          </Button>
+        </FullWidthRow>
+        <Spacer size='l' />
+        {interleave(portfolio.map(renderPortfolio), () => (
+          <>
+            <Spacer size='m' />
+            <hr />
+            <Spacer size='m' />
+          </>
+        ))}
+      </Modal.Body>
+    </Modal>
   );
 };
 

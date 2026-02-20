@@ -2,15 +2,17 @@ import React, { useState } from 'react';
 import Helmet from 'react-helmet';
 import type { TFunction } from 'i18next';
 import { useTranslation } from 'react-i18next';
-import { Callout, Container, Modal, Row, Spacer } from '@freecodecamp/ui';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import type { Dispatch } from 'redux';
+import { Callout, Container, Row, Spacer } from '@freecodecamp/ui';
 import { FullWidthRow, Link } from '../helpers';
 import Portfolio from './components/portfolio';
 import Experience from './components/experience';
 
-import UsernameSettings from './components/username';
 import About from './components/about';
-import Internet from './components/internet';
-import { User } from './../../redux/prop-types';
+import { User, ProfileUI } from './../../redux/prop-types';
+import { submitProfileUI } from './../../redux/settings/actions';
 import Timeline from './components/time-line';
 import Camper from './components/camper';
 import Certifications from './components/certifications';
@@ -20,23 +22,27 @@ import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
+import { WidgetHeader } from './components/widget-header';
 
 interface ProfileProps {
   isSessionUser: boolean;
   user: User;
 }
 
-interface EditModalProps {
-  user: User;
-  isEditing: boolean;
-  isSessionUser: boolean;
-  setIsEditing: (isEditing: boolean) => void;
+interface ProfileWithDispatchProps extends ProfileProps {
+  submitProfileUI: (profileUI: ProfileUI) => void;
 }
+
 interface MessageProps {
   isSessionUser: boolean;
   t: TFunction;
   username: string;
 }
+
+type ActiveModal = 'personalInfo' | 'portfolio' | 'experience' | null;
+
+const mapDispatchToProps = (dispatch: Dispatch) =>
+  bindActionCreators({ submitProfileUI }, dispatch);
 
 const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
   return (
@@ -46,27 +52,6 @@ const UserMessage = ({ t }: Pick<MessageProps, 't'>) => {
       </Callout>
       <Spacer size='xl' />
     </FullWidthRow>
-  );
-};
-
-const EditModal = ({ user, isEditing, setIsEditing }: EditModalProps) => {
-  const { portfolio, experience, username } = user;
-  const { t } = useTranslation();
-  return (
-    <Modal onClose={() => setIsEditing(false)} open={isEditing} size='large'>
-      <Modal.Header>{t('profile.edit-my-profile')}</Modal.Header>
-      <Modal.Body alignment='left'>
-        <UsernameSettings username={username} setIsEditing={setIsEditing} />
-        <Spacer size='m' />
-        <About user={user} setIsEditing={setIsEditing} />
-        <Spacer size='m' />
-        <Internet user={user} setIsEditing={setIsEditing} />
-        <Spacer size='m' />
-        <Portfolio portfolio={portfolio} />
-        <Spacer size='m' />
-        <Experience experience={experience || []} />
-      </Modal.Body>
-    </Modal>
   );
 };
 
@@ -91,75 +76,247 @@ const Message = ({ isSessionUser, t, username }: MessageProps) => {
   return <VisitorMessage t={t} username={username} />;
 };
 
-function UserProfile({ user, isSessionUser }: ProfileProps): JSX.Element {
-  const [isEditing, setIsEditing] = useState(false);
+function UserProfile({
+  user,
+  isSessionUser,
+  submitProfileUI
+}: ProfileWithDispatchProps): JSX.Element {
+  const [activeModal, setActiveModal] = useState<ActiveModal>(null);
+  const { t } = useTranslation();
 
   const {
-    profileUI: {
-      showCerts,
-      showHeatMap,
-      showPoints,
-      showPortfolio,
-      showExperience,
-      showTimeLine
-    },
-    about,
+    profileUI,
     calendar,
     completedChallenges,
-    name,
-    picture,
+    username,
     points,
     portfolio,
     experience,
-    username
+    githubProfile,
+    linkedin,
+    twitter,
+    bluesky,
+    website
   } = user;
+
+  const {
+    showCerts,
+    showHeatMap,
+    showPoints,
+    showPortfolio,
+    showExperience,
+    showTimeLine
+  } = profileUI;
+
+  const toggleFlag = (flag: keyof ProfileUI) => {
+    submitProfileUI({
+      ...profileUI,
+      [flag]: !profileUI[flag]
+    });
+  };
+
+  const closeModal = () => setActiveModal(null);
 
   return (
     <>
+      {/* Per-widget modals */}
       {isSessionUser && (
-        <EditModal
-          user={user}
-          isEditing={isEditing}
-          isSessionUser={isSessionUser}
-          setIsEditing={setIsEditing}
-        />
+        <>
+          <About
+            user={user}
+            open={activeModal === 'personalInfo'}
+            onClose={closeModal}
+          />
+          <Portfolio
+            portfolio={portfolio}
+            open={activeModal === 'portfolio'}
+            onClose={closeModal}
+          />
+          <Experience
+            experience={experience || []}
+            open={activeModal === 'experience'}
+            onClose={closeModal}
+          />
+        </>
       )}
+
       {isSessionUser && (
         <ProfileCompleteness
-          name={name}
-          about={about}
-          picture={picture}
+          name={user.name}
+          about={user.about}
+          picture={user.picture}
           location={user.location}
-          githubProfile={user.githubProfile}
-          linkedin={user.linkedin}
-          twitter={user.twitter}
-          bluesky={user.bluesky}
-          website={user.website}
+          githubProfile={githubProfile}
+          linkedin={linkedin}
+          twitter={twitter}
+          bluesky={bluesky}
+          website={website}
           portfolio={portfolio}
           experience={experience || []}
         />
       )}
+
       <Camper
         user={user}
         isSessionUser={isSessionUser}
-        setIsEditing={setIsEditing}
+        onEditBio={() => setActiveModal('personalInfo')}
+        onToggleDonation={() => toggleFlag('showDonation')}
       />
-      {showPoints ? <Stats points={points} calendar={calendar} /> : null}
-      {showHeatMap ? <HeatMap calendar={calendar} /> : null}
-      {showPortfolio ? (
-        <PortfolioProjects portfolioProjects={portfolio} />
-      ) : null}
-      {showExperience ? (
-        <ExperienceDisplay experience={experience || []} />
-      ) : null}
-      {showCerts ? <Certifications user={user} /> : null}
-      {showTimeLine ? (
-        <Timeline completedMap={completedChallenges} username={username} />
-      ) : null}
+
+      {/* Stats widget */}
+      {(isSessionUser || showPoints) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showPoints ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.stats')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showPoints}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showPoints') : undefined
+              }
+            />
+            <Stats points={points} calendar={calendar} />
+          </section>
+        </FullWidthRow>
+      )}
+
+      {/* HeatMap widget */}
+      {(isSessionUser || showHeatMap) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showHeatMap ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.activity')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showHeatMap}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showHeatMap') : undefined
+              }
+            />
+            <HeatMap calendar={calendar} />
+          </section>
+        </FullWidthRow>
+      )}
+
+      {/* Portfolio widget */}
+      {(isSessionUser || (showPortfolio && portfolio.length > 0)) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showPortfolio ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.projects')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showPortfolio}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showPortfolio') : undefined
+              }
+            />
+            {portfolio.length > 0 ? (
+              <PortfolioProjects portfolioProjects={portfolio} />
+            ) : (
+              isSessionUser && (
+                <p className='text-center'>{t('profile.no-portfolio')}</p>
+              )
+            )}
+            {isSessionUser && (
+              <div className='profile-add-action-row'>
+                <button
+                  className='profile-add-action'
+                  onClick={() => setActiveModal('portfolio')}
+                  type='button'
+                >
+                  {t('profile.add-new-project')}
+                </button>
+              </div>
+            )}
+          </section>
+        </FullWidthRow>
+      )}
+
+      {/* Experience widget */}
+      {(isSessionUser || (showExperience && (experience || []).length > 0)) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showExperience ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.experience.heading')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showExperience}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showExperience') : undefined
+              }
+            />
+            {(experience || []).length > 0 ? (
+              <ExperienceDisplay experience={experience || []} />
+            ) : (
+              isSessionUser && (
+                <p className='text-center'>{t('profile.no-experience')}</p>
+              )
+            )}
+            {isSessionUser && (
+              <div className='profile-add-action-row'>
+                <button
+                  className='profile-add-action'
+                  onClick={() => setActiveModal('experience')}
+                  type='button'
+                >
+                  {t('profile.add-new-experience')}
+                </button>
+              </div>
+            )}
+          </section>
+        </FullWidthRow>
+      )}
+
+      {/* Certifications widget */}
+      {(isSessionUser || showCerts) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showCerts ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.fcc-certs')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showCerts}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showCerts') : undefined
+              }
+            />
+            <Certifications user={user} />
+          </section>
+        </FullWidthRow>
+      )}
+
+      {/* Timeline widget */}
+      {(isSessionUser || showTimeLine) && (
+        <FullWidthRow>
+          <section
+            className={`card${isSessionUser && !showTimeLine ? ' card--private' : ''}`}
+          >
+            <WidgetHeader
+              title={t('profile.timeline')}
+              isSessionUser={isSessionUser}
+              isPrivate={isSessionUser && !showTimeLine}
+              onToggle={
+                isSessionUser ? () => toggleFlag('showTimeLine') : undefined
+              }
+            />
+            <Timeline completedMap={completedChallenges} username={username} />
+          </section>
+        </FullWidthRow>
+      )}
+
       <Spacer size='m' />
     </>
   );
 }
+
+const ConnectedUserProfile = connect(null, mapDispatchToProps)(UserProfile);
 
 function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
   const { t } = useTranslation();
@@ -182,7 +339,7 @@ function Profile({ user, isSessionUser }: ProfileProps): JSX.Element {
           <Message username={username} isSessionUser={isSessionUser} t={t} />
         )}
         {showUserProfile && (
-          <UserProfile user={user} isSessionUser={isSessionUser} />
+          <ConnectedUserProfile user={user} isSessionUser={isSessionUser} />
         )}
         {!isSessionUser && (
           <Row className='text-center'>
