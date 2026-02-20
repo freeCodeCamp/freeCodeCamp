@@ -145,7 +145,7 @@ const allStandardCerts = [
   },
   {
     id: '561acd10cb82ac38a17513bc',
-    title: 'Frontend Development Libraries',
+    title: 'Front-End Development Libraries',
     certSlug: Certification.FrontEndDevLibs,
     projects: [
       {
@@ -256,7 +256,7 @@ const allStandardCerts = [
   },
   {
     id: '561add10cb82ac38a17523bc',
-    title: 'Backend Development and APIs',
+    title: 'Back-End Development and APIs',
     certSlug: Certification.BackEndDevApis,
     projects: [
       {
@@ -517,7 +517,7 @@ const allStandardCerts = [
   // Legacy certifications
   {
     id: '561add10cb82ac38a17513be',
-    title: 'Legacy Frontend',
+    title: 'Legacy Front-End',
     certSlug: Certification.LegacyFrontEnd,
     projects: [
       {
@@ -621,7 +621,7 @@ const allStandardCerts = [
   },
   {
     id: '660add10cb82ac38a17513be',
-    title: 'Legacy Backend',
+    title: 'Legacy Back-End',
     certSlug: Certification.LegacyBackEnd,
     projects: [
       {
@@ -835,12 +835,12 @@ const allStandardCerts = [
   },
   {
     id: '68e008aa5f80c6099d47b3a2',
-    title: 'Frontend Development Libraries',
+    title: 'Front-End Development Libraries',
     certSlug: Certification.FrontEndDevLibsV9,
     projects: [
       {
         id: '68e00b355f80c6099d47b3a3',
-        title: 'Frontend Development Libraries Certification Exam',
+        title: 'Front-End Development Libraries Certification Exam',
         link: `${frontEndDevLibsV9Base}/exam-front-end-development-libraries-certification/exam-front-end-development-libraries-certification`,
         certSlug: Certification.FrontEndDevLibsV9
       }
@@ -874,12 +874,12 @@ const allStandardCerts = [
   },
   {
     id: '68e6bd5120effa1586e79857',
-    title: 'Backend Development and APIs',
+    title: 'Back-End Development and APIs',
     certSlug: Certification.BackEndDevApisV9,
     projects: [
       {
         id: '68e6bfa120effa1586e7985a',
-        title: 'Backend Development and APIs Certification Exam',
+        title: 'Back-End Development and APIs Certification Exam',
         link: `${backEndDevApisV9Base}/exam-back-end-development-and-apis-certification/exam-back-end-development-and-apis-certification`,
         certSlug: Certification.BackEndDevApisV9
       }

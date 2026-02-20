@@ -16,7 +16,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'front-end-development-libraries-v9',
-    name: 'Frontend Development Libraries Certification'
+    name: 'Front-End Development Libraries Certification'
   },
   {
     slug: 'python-v9',
@@ -28,7 +28,7 @@ const LANDING_PAGE_LINKS = [
   },
   {
     slug: 'back-end-development-and-apis-v9',
-    name: 'Backend Development and APIs Certification'
+    name: 'Back-End Development and APIs Certification'
   },
   {
     slug: 'full-stack-developer-v9',
