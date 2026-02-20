@@ -11,7 +11,6 @@ import Portfolio from './components/portfolio';
 import Experience from './components/experience';
 
 import About from './components/about';
-import Internet from './components/internet';
 import { User, ProfileUI } from './../../redux/prop-types';
 import { submitProfileUI } from './../../redux/settings/actions';
 import Timeline from './components/time-line';
@@ -23,7 +22,6 @@ import './profile.css';
 import { PortfolioProjects } from './components/portfolio-projects';
 import { ExperienceDisplay } from './components/experience-display';
 import { ProfileCompleteness } from './components/profile-completeness';
-import SocialIcons from './components/social-icons';
 import { WidgetHeader } from './components/widget-header';
 
 interface ProfileProps {
@@ -41,12 +39,7 @@ interface MessageProps {
   username: string;
 }
 
-type ActiveModal =
-  | 'personalInfo'
-  | 'internet'
-  | 'portfolio'
-  | 'experience'
-  | null;
+type ActiveModal = 'personalInfo' | 'portfolio' | 'experience' | null;
 
 const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators({ submitProfileUI }, dispatch);
@@ -115,9 +108,6 @@ function UserProfile({
     showTimeLine
   } = profileUI;
 
-  const hasSocialLinks =
-    githubProfile || linkedin || twitter || bluesky || website;
-
   const toggleFlag = (flag: keyof ProfileUI) => {
     submitProfileUI({
       ...profileUI,
@@ -135,11 +125,6 @@ function UserProfile({
           <About
             user={user}
             open={activeModal === 'personalInfo'}
-            onClose={closeModal}
-          />
-          <Internet
-            user={user}
-            open={activeModal === 'internet'}
             onClose={closeModal}
           />
           <Portfolio
@@ -177,43 +162,6 @@ function UserProfile({
         onEditBio={() => setActiveModal('personalInfo')}
         onToggleDonation={() => toggleFlag('showDonation')}
       />
-
-      {/* Internet Presence widget */}
-      {(isSessionUser || hasSocialLinks) && (
-        <FullWidthRow>
-          <section className='card'>
-            <WidgetHeader
-              title={t('profile.internet-presence')}
-              isSessionUser={isSessionUser}
-            />
-            {hasSocialLinks ? (
-              <SocialIcons
-                githubProfile={githubProfile}
-                linkedin={linkedin}
-                twitter={twitter}
-                bluesky={bluesky}
-                username={username}
-                website={website}
-              />
-            ) : (
-              isSessionUser && (
-                <p className='text-center'>{t('profile.no-social-links')}</p>
-              )
-            )}
-            {isSessionUser && (
-              <div className='profile-add-action-row'>
-                <button
-                  className='profile-add-action'
-                  onClick={() => setActiveModal('internet')}
-                  type='button'
-                >
-                  {t('profile.add-new-social-link')}
-                </button>
-              </div>
-            )}
-          </section>
-        </FullWidthRow>
-      )}
 
       {/* Stats widget */}
       {(isSessionUser || showPoints) && (

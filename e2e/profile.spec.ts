@@ -150,17 +150,12 @@ test.describe('Profile - Owner View', () => {
     ).toBeVisible();
   });
 
-  test('shows internet presence section with add action', async ({ page }) => {
-    await expect(
-      page.getByRole('heading', {
-        name: translations.profile['internet-presence']
-      })
-    ).toBeVisible();
+  test('does not show a separate social-link button', async ({ page }) => {
     await expect(
       page.getByRole('button', {
         name: translations.profile['add-new-social-link']
       })
-    ).toBeVisible();
+    ).toHaveCount(0);
   });
 
   test('should not show portfolio when empty', async ({ page }) => {
@@ -230,28 +225,28 @@ test.describe('Profile - Personal Info Modal', () => {
     await editButton.click();
 
     const saveButton = page.getByRole('button', {
-      name: translations.settings.headings['personal-info']
+      name: `Save ${translations.profile['edit-personal-info']}`
     });
     await expect(saveButton).toBeDisabled();
   });
 });
 
-test.describe('Profile - Internet Presence Modal', () => {
+test.describe('Profile - Internet Presence In Personal Info Modal', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/certifieduser');
   });
 
-  test('opens internet presence modal with social link fields', async ({
+  test('opens personal info modal with social link fields', async ({
     page
   }) => {
     const editButton = page.getByRole('button', {
-      name: translations.profile['add-new-social-link']
+      name: translations.profile['edit-personal-info']
     });
     await editButton.click();
 
     await expect(
       page.getByRole('heading', {
-        name: translations.profile['edit-internet-presence']
+        name: translations.profile['edit-personal-info']
       })
     ).toBeVisible();
 

@@ -25,6 +25,7 @@
 .profile-add-action-row {
   margin-top: 0.75rem;
   display: flex;
+  align-items: center;
   justify-content: flex-start;
   border-top: 1px solid var(--quaternary-background);
   padding-top: 0.75rem;
@@ -38,30 +39,38 @@
   font-size: 0.95rem;
   font-weight: 600;
   line-height: 1;
-  min-height: 32px;
+  min-height: 36px;
   padding: 0.35rem 0.45rem;
   border-radius: 0;
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  justify-content: center;
+  gap: 0.55rem;
   transition:
     color 0.2s ease,
     background-color 0.2s ease;
 }
 
 .profile-add-action::before {
-  content: '+';
+  content: '';
   width: 20px;
   height: 20px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
+  flex: 0 0 20px;
+  position: relative;
+  top: 1px;
+  box-sizing: border-box;
   border: 1px solid var(--quaternary-background);
   border-radius: 0;
-  color: var(--primary-color);
-  font-size: 1rem;
-  font-weight: 700;
-  line-height: 1;
+  background:
+    linear-gradient(var(--primary-color), var(--primary-color)) center / 10px
+      2px no-repeat,
+    linear-gradient(var(--primary-color), var(--primary-color)) center / 2px
+      10px no-repeat;
+}
+
+.profile-add-action--no-icon::before {
+  content: none;
 }
 
 .profile-add-action:hover,

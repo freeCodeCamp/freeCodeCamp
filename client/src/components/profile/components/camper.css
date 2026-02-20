@@ -11,8 +11,8 @@
 
 .bio-content {
   display: grid;
-  grid-template-columns: minmax(120px, 180px) 1fr;
-  gap: 1.25rem;
+  grid-template-columns: minmax(112px, 160px) 1fr;
+  gap: 1.35rem;
   align-items: start;
 }
 
@@ -40,11 +40,23 @@
 
 .avatar-camper .avatar-container {
   border-width: 6px;
-  width: clamp(120px, 18vw, 180px);
-  height: clamp(120px, 18vw, 180px);
+  width: clamp(112px, 15vw, 160px);
+  height: clamp(112px, 15vw, 160px);
   border-radius: 0;
   overflow: hidden;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+}
+
+.bio-main {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.profile-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.8rem;
 }
 
 .supporter svg {
@@ -67,12 +79,26 @@
 
 .profile-edit-container h1 {
   margin: 0;
-  font-size: clamp(1.35rem, 2.1vw, 1.85rem);
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
   line-height: 1.15;
 }
 
 .profile-edit-container button {
   position: static;
+}
+
+.bio-edit-action {
+  min-height: 28px;
+  padding: 0.2rem 0.45rem;
+  font-size: 0.85rem;
+  border: 1px solid var(--quaternary-background);
+  color: var(--gray-45);
+}
+
+.bio-edit-action:hover,
+.bio-edit-action:focus-visible {
+  color: var(--quaternary-color);
+  border-color: var(--gray-45);
 }
 
 .profile-meta-container div {
@@ -83,14 +109,35 @@
   margin-inline-end: 4px;
 }
 
+.bio-internet-section {
+  margin-top: 0.9rem;
+  padding-top: 0;
+}
+
 .social-icons-row {
-  margin-top: 1em;
+  margin-top: 0.2rem;
 }
 
 .social-icons-row a {
-  display: inline-block;
-  margin-inline-end: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-inline-end: 10px;
+  border: 1px solid var(--quaternary-background);
+  background: var(--tertiary-background);
   color: var(--quaternary-color);
+}
+
+.social-icons-row a:hover,
+.social-icons-row a:focus-visible {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.social-icons-row .svg-inline--fa {
+  font-size: 1.3rem;
 }
 
 .badge-card-container {
@@ -152,8 +199,8 @@
   }
 
   .avatar-camper .avatar-container {
-    width: 132px;
-    height: 132px;
+    width: 116px;
+    height: 116px;
   }
 
   .badge-card-container {
