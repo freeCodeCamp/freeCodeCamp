@@ -1,0 +1,11 @@
+{
+  "name": "Build a Wildlife Tracker",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-wildlife-tracker",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "6998b99a8e195cd0c1f211df", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
