@@ -3639,6 +3639,12 @@
           "In these lessons, you will learn what TypeScript is and how to use it."
         ]
       },
+      "lecture-understanding-type-composition": {
+        "title": "Understanding Type Composition",
+        "intro": [
+          "In these lessons, you will learn how to work with union types, interfaces, void types and more."
+        ]
+      },
       "lecture-working-with-generics-and-type-narrowing": {
         "title": "Working with Generics and Type Narrowing",
         "intro": [
