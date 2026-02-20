@@ -6,7 +6,8 @@ import {
   Alert,
   ControlLabel,
   Modal,
-  Spacer
+  Spacer,
+  type FormGroupProps
 } from '@freecodecamp/ui';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -52,6 +53,11 @@ type SocialValues = {
   bluesky: string;
   website: string;
 };
+
+interface URLValidation {
+  state: FormGroupProps['validationState'];
+  message: string;
+}
 
 const mapDispatchToProps = {
   updateMySocials,
@@ -264,7 +270,7 @@ const AboutSettings = ({
     }));
   };
 
-  const getValidationStateFor = (maybeUrl = '') => {
+  const getValidationStateFor = (maybeUrl = ''): URLValidation => {
     if (!maybeUrl || !maybeUrlRE.test(maybeUrl)) {
       return {
         state: null,
@@ -551,7 +557,7 @@ const Check = ({
   dataPlaywrightTestLabel
 }: {
   url: string;
-  validation: 'error' | 'success' | null;
+  validation: URLValidation['state'];
   dataPlaywrightTestLabel: string;
 }) =>
   url && validation === 'success' ? (
