@@ -24,6 +24,10 @@ on:
         type: boolean
         default: false
 
+concurrency:
+  group: deploy-client-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   setup-jobs:
     name: Setup Jobs

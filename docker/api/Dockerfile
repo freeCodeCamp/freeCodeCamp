@@ -26,6 +26,8 @@ RUN cd api && pnpm prisma generate
 # following env vars.
 ARG SHOW_UPCOMING_CHANGES=false
 ENV SHOW_UPCOMING_CHANGES=$SHOW_UPCOMING_CHANGES
+ARG CURRICULUM_LOCALE=english
+ENV CURRICULUM_LOCALE=$CURRICULUM_LOCALE
 
 RUN pnpm turbo -F=@freecodecamp/api build
 

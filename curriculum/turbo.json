@@ -4,7 +4,7 @@
   "tasks": {
     "build": {
       "outputs": ["dist/**", "generated/**"],
-      "env": ["FCC_*", "SHOW_UPCOMING_CHANGES"]
+      "env": ["FCC_*", "SHOW_UPCOMING_CHANGES", "CURRICULUM_LOCALE"]
     },
     "test": {
       "passThroughEnv": ["VITEST_POOL_ID", "PUPPETEER_WS_ENDPOINT"],

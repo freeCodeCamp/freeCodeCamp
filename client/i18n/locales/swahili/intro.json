@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front End Development Libraries V8",
+    "title": "Frontend Development Libraries V8",
     "intro": [
-      "Kwa kuwa sasa unafahamu HTML, CSS na JavaScript, ongeza ujuzi wako kwa kujifunza baadhi ya maktaba maarufu za front end kwenye sekta hiyo.",
-      "Katika cheti cha Front End Development Libraries, utajifunza jinsi ya kutengeneza tovuti yako haraka na Bootstrap. Pia utajifunza jinsi ya kuongeza mantiki kwenye mitindo yako ya CSS na kuiendeleza kwa Sass.",
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
+      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Baadaye, utaunda shopping cart na programu zingine ili kujifunza jinsi ya kuunda Single Page Applications (SPAs) kwa kutumia React na Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap ni mfumo wa front end unaotumiwa kuunda kurasa za wavuti na programu zinazoitikia. Inahitaji mbinu ya kwanza ya rununu kwa ukuzaji wa wavuti, na inajumuisha mitindo na madarasa ya CSS yaliyoundwa mapema, pamoja na utendaji wa JavaScript.",
+          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "Katika kozi hii, utajifunza jinsi ya kuunda tovuti responsive kwa kutumia Bootstrap, na kutumia madarasa yake yaliyojumuishwa ili kuunda vitufe, picha, fomu, urambazaji na vipengele vingine vya kawaida."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Miradi ya Front End Development Libraries",
+        "title": "Frontend Development Libraries Projects",
         "intro": [
-          "Ni wakati wa kujaribu ujuzi wako wa ukuzaji wa front end libraries. Tumia Bootstrap, jQuery, Sass, React, na Redux kuunda miradi 5 ambayo itajaribu kila kitu ambacho umejifunza hadi sasa.",
-          "Kamilisha miradi yote 5, na utapata cheti cha Front End Development Libraries."
+          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back End Development and APIs V8",
+    "title": "Backend Development and APIs V8",
     "intro": [
-      "Hadi kufikia hatua hii, umetumia JavaScript iliyo upande wa mbele pekee ili kuongeza mwingiliano kwenye ukurasa, kutatua changamoto za kanuni au kuunda SPA. Lakini JavaScript pia inaweza kutumika upande wa nyuma, au seva, kuunda programu nzima za wavuti.",
+      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
       "Leo, mojawapo ya njia maarufu za kuunda programu ni kupitia huduma ndogo, ambazo ni ndogo, programu ambazo kwa kawaida hufanya kazi pamoja ili kuunda nzima zaidi.",
-      "Katika cheti cha Back End Development and APIs, utajifunza jinsi ya kuandika upya programu ukitumia Node.js na npm. Pia utaunda programu za wavuti kwa mfumo wa Express, na utaunda programu ndogo ya People Finder na MongoDB na maktaba ya Mongoose."
+      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Miradi ya Back End Development na APIs",
+        "title": "Backend Development and APIs Projects",
         "intro": [
           "Umefanya kazi na API hapo awali, lakini kwa kuwa sasa unajua npm, Node, Express, MongoDB, na Mongoose, ni wakati wa kuunda yako mwenyewe. Chora kwenye kila kitu ambacho umejifunza hadi kufikia hatua hii ili kuunda huduma ndogo 5 tofauti, ambazo ni programu ndogo ambazo zina upeo mdogo.",
-          "Baada ya kuunda hizi, utakuwa na API 5 nzuri za huduma ndogo unazoweza kuwaonyesha marafiki, familia na waajiri watarajiwa. Lo, na utakuwa na cheti kipya cha Back End Development na APIs, pia."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Sasa ni wakati wa kuzama ndani ya Node.js na Express.js kwa kuunda programu ya gumzo na mfumo wa kuingia.",
           "Ili kutekeleza mfumo wa kuingia katika akaunti kwa usalama, utahitaji kujifunza kuhusu uthibitishaji. Hiki ni kitendo cha kuthibitisha utambulisho wa mtu au mchakato.",
-          "Katika kozi hii, utajifunza jinsi ya kutumia Pasipoti kudhibiti uthibitishaji, Pug kuunda violezo vinavyoweza kutumika tena kwa ajili ya kujenga sehemu ya mbele haraka, na soketi za wavuti kwa mawasiliano ya wakati halisi kati ya wateja na seva."
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Miradi ya Quality Assurance",
         "intro": [
-          "Sasa kwa kuwa umefahamu vyema sehemu ya mbele na ya nyuma, ni wakati wa kutumia ujuzi na dhana zote ambazo umejifunza hadi kufikia hatua hii. Utaunda programu 5 tofauti za wavuti, na uandike majaribio kwa kila moja ili kuhakikisha kuwa zinafanya kazi na zinaweza kushughulikia kesi tofauti tofauti.",
+          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "Baada ya kukamilisha miradi hii ya Quality Assurance, utakuwa na miradi 5 zaidi chini ya ukanda wako, na uthibitisho mpya wa kujionyesha kwenye wasifu yako."
         ]
       }
@@ -3225,6 +3225,12 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-quicksort-js": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort an array of integers."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3315,17 +3321,17 @@
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Front End Development Libraries Certification",
+    "title": "Frontend Development Libraries Certification",
     "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
-      "To earn your Front End Development Libraries Certification:",
+      "To earn your Frontend Development Libraries Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Front End Development Libraries Certification exam."
+      "- Pass the Frontend Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "front-end-development-libraries": "Frontend Development Libraries",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -3337,8 +3343,8 @@
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
-      "review-front-end-libraries": "Front End Libraries Review",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "review-front-end-libraries": "Frontend Libraries Review",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "module-intros": {
       "data-visualization": {
@@ -3356,7 +3362,7 @@
       "front-end-development-libraries-certification-exam": {
         "note": "Coming 2026",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification."
+          "Pass this exam to earn your Frontend Development Libraries Certification."
         ]
       }
     },
@@ -3651,15 +3657,15 @@
         "intro": ["Test what you've learned on Typescript with this quiz."]
       },
       "review-front-end-libraries": {
-        "title": "Front End Libraries Review",
+        "title": "Frontend Libraries Review",
         "intro": [
-          "Review the Front End Libraries concepts to prepare for the upcoming quiz."
+          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Front End Development Libraries Certification Exam",
+        "title": "Frontend Development Libraries Certification Exam",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification"
+          "Pass this exam to earn your Frontend Development Libraries Certification"
         ]
       }
     }
@@ -4388,17 +4394,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Back End Development and APIs Certification",
+    "title": "Backend Development and APIs Certification",
     "note": "This certification is currently in development and will be available soon.",
     "intro": [
-      "This course teaches you the fundamentals of back end development and APIs.",
-      "To earn your Back End Development and APIs Certification:",
+      "This course teaches you the fundamentals of backend development and APIs.",
+      "To earn your Backend Development and APIs Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Back End Development and APIs Certification exam."
+      "- Pass the Backend Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Backend Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introduction to Node.js",
@@ -4414,7 +4420,7 @@
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4492,13 +4498,13 @@
       "tooling-and-deployment": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification."
+          "Pass this exam to earn your Backend Development and APIs Certification."
         ]
       }
     },
@@ -4556,25 +4562,25 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Back End Development and APIs Certification Exam",
+        "title": "Backend Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification"
+          "Pass this exam to earn your Backend Development and APIs Certification"
         ]
       }
     }
   },
   "full-stack-developer-v9": {
-    "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "title": "Certified Full-Stack Developer Curriculum",
+    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
+      "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
     "chapters": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "modules": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
@@ -4586,8 +4592,8 @@
     },
     "blocks": {
       "exam-certified-full-stack-developer": {
-        "title": "Certified Full Stack Developer Exam",
-        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+        "title": "Certified Full-Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full-Stack Developer."]
       }
     }
   },
@@ -7383,7 +7389,7 @@
     }
   },
   "full-stack-open": {
-    "title": "Full Stack Open",
+    "title": "Full-Stack Open",
     "intro": ["A good intro is to be added here."],
     "blocks": {
       "cat-blog-page": {
