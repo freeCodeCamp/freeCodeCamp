@@ -19,7 +19,11 @@ test.beforeEach(async ({ page }) => {
 
   await page.goto('/certifieduser');
 
-  await page.getByRole('button', { name: 'Edit my profile' }).click();
+  await page
+    .getByRole('button', {
+      name: translations.profile['add-new-social-link']
+    })
+    .click();
 });
 
 test.describe('Your Internet Presence', () => {
@@ -30,7 +34,7 @@ test.describe('Your Internet Presence', () => {
     await expect(
       page.getByRole('heading', {
         level: 2,
-        name: translations.settings.headings.internet
+        name: translations.profile['edit-internet-presence']
       })
     ).toBeVisible();
 

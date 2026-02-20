@@ -1,35 +1,25 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCalendar,
-  faLocationDot,
-  faPen
-} from '@fortawesome/free-solid-svg-icons';
+import { faCalendar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { Button, Spacer } from '@freecodecamp/ui';
 import { AvatarRenderer, FullWidthRow } from '../../helpers';
 import { User } from '../../../redux/prop-types';
 import { parseDate } from './utils';
-import SocialIcons from './social-icons';
+import { WidgetHeader } from './widget-header';
 
 type BioProps = {
   user: User;
-  setIsEditing: (value: boolean) => void;
   isSessionUser: boolean;
+  onEditBio?: () => void;
 };
 
-const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
+const Bio = ({ user, isSessionUser, onEditBio }: BioProps) => {
   const {
     joinDate,
     location,
     username,
     name,
     about,
-    githubProfile,
-    linkedin,
-    twitter,
-    bluesky,
-    website,
     isDonating,
     yearsTopContributor,
     picture,
@@ -41,55 +31,60 @@ const Bio = ({ user, setIsEditing, isSessionUser }: BioProps) => {
   const isTopContributor =
     yearsTopContributor && yearsTopContributor.length > 0;
 
+  const shouldShowName = isSessionUser || showAbout;
+  const shouldShowAbout = isSessionUser || showAbout;
+  const shouldShowLocation = isSessionUser || showLocation;
+
   return (
     <FullWidthRow>
-      <Spacer size={'xl'} />
-      <section className='card card-header'>
-        <div className='avatar-camper'>
-          <AvatarRenderer
-            isDonating={isDonating && showDonation}
-            isTopContributor={isTopContributor}
-            picture={picture}
+      <section className='card card-header bio-card'>
+        {isSessionUser && (
+          <WidgetHeader
+            title={t('settings.headings.personal-info')}
+            isSessionUser={isSessionUser}
           />
-        </div>
-        <div className='profile-edit-container'>
-          <h1>@{username}</h1>
-          {isSessionUser && (
-            <Button
-              onClick={() => setIsEditing(true)}
-              size='small'
-              className='button-fit'
-              aria-label={t('aria.edit-my-profile')}
-            >
-              <FontAwesomeIcon icon={faPen} />
-            </Button>
-          )}
-        </div>
-        {name && showAbout && <h2>{name}</h2>}
-        <Spacer size={'s'} />
-        {showAbout && <p>{about}</p>}
-        <div className='profile-meta-container'>
-          {joinDate && showAbout && (
-            <div>
-              <FontAwesomeIcon icon={faCalendar} />
-              <span>{parseDate(joinDate, t)}</span>
+        )}
+        <div className='bio-content'>
+          <div className='avatar-camper'>
+            <AvatarRenderer
+              isDonating={isDonating && showDonation}
+              isTopContributor={isTopContributor}
+              picture={picture}
+            />
+          </div>
+          <div>
+            <div className='profile-edit-container'>
+              <h1>@{username}</h1>
             </div>
-          )}
-          {location && showLocation && (
-            <div>
-              <FontAwesomeIcon icon={faLocationDot} />
-              <span>{t('profile.from', { location })}</span>
+            {name && shouldShowName && <h2>{name}</h2>}
+            {shouldShowAbout && <p>{about}</p>}
+            <div className='profile-meta-container'>
+              {joinDate && shouldShowAbout && (
+                <div>
+                  <FontAwesomeIcon icon={faCalendar} />
+                  <span>{parseDate(joinDate, t)}</span>
+                </div>
+              )}
+              {location && shouldShowLocation && (
+                <div>
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  <span>{t('profile.from', { location })}</span>
+                </div>
+              )}
             </div>
-          )}
+            {isSessionUser && onEditBio && (
+              <div className='profile-add-action-row'>
+                <button
+                  className='profile-add-action'
+                  onClick={onEditBio}
+                  type='button'
+                >
+                  {t('profile.edit-personal-info')}
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-        <SocialIcons
-          githubProfile={githubProfile}
-          linkedin={linkedin}
-          twitter={twitter}
-          bluesky={bluesky}
-          username={username}
-          website={website}
-        />
       </section>
     </FullWidthRow>
   );

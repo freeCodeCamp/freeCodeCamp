@@ -19,7 +19,7 @@ import type {
 import ProjectPreviewModal from '../../../templates/Challenges/components/project-preview-modal';
 import ExamResultsModal from '../../SolutionViewer/exam-results-modal';
 import { openModal } from '../../../templates/Challenges/redux/actions';
-import { Link, FullWidthRow } from '../../helpers';
+import { Link } from '../../helpers';
 import { SolutionDisplayWidget } from '../../solution-display-widget';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import TimelinePagination from './timeline-pagination';
@@ -179,68 +179,65 @@ function TimelineInner({
   const endIndex = pageNo * ITEMS_PER_PAGE;
 
   return (
-    <FullWidthRow>
-      <section className='card'>
-        <h2>{t('profile.timeline')}</h2>
-        <Spacer size='s' />
-        {completedMap.length === 0 ? (
-          <p className='text-center'>
-            {t('profile.none-completed')}&nbsp;
-            <Link to='/learn'>{t('profile.get-started')}</Link>
-          </p>
-        ) : (
-          <Table condensed={true} striped={true}>
-            <thead>
-              <tr>
-                <th>{t('profile.challenge')}</th>
-                <th>{t('settings.labels.solution')}</th>
-                <th className='text-center'>{t('profile.completed')}</th>
-              </tr>
-            </thead>
-            <tbody>
-              {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
-            </tbody>
-          </Table>
-        )}
-        {id && (
-          <Modal onClose={closeSolution} open={solutionOpen} size='large'>
-            <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
-              {`${username}'s Solution to ${
-                idToNameMap.get(id)?.challengeTitle ?? ''
-              }`}
-            </Modal.Header>
-            <Modal.Body alignment='left'>
-              <SolutionViewer
-                challengeFiles={challengeData.challengeFiles}
-                solution={challengeData.solution ?? ''}
-              />
-            </Modal.Body>
-            <Modal.Footer>
-              <Button onClick={closeSolution}>{t('buttons.close')}</Button>
-            </Modal.Footer>
-          </Modal>
-        )}
-        {totalPages > 1 && (
-          <TimelinePagination
-            firstPage={firstPage}
-            lastPage={lastPage}
-            nextPage={nextPage}
-            pageNo={pageNo}
-            prevPage={prevPage}
-            totalPages={totalPages}
-          />
-        )}
-        <ProjectPreviewModal
-          challengeData={challengeData}
-          closeText={t('buttons.close')}
-          previewTitle={projectTitle}
+    <>
+      <Spacer size='s' />
+      {completedMap.length === 0 ? (
+        <p className='text-center'>
+          {t('profile.none-completed')}&nbsp;
+          <Link to='/learn'>{t('profile.get-started')}</Link>
+        </p>
+      ) : (
+        <Table condensed={true} striped={true}>
+          <thead>
+            <tr>
+              <th>{t('profile.challenge')}</th>
+              <th>{t('settings.labels.solution')}</th>
+              <th className='text-center'>{t('profile.completed')}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {sortedTimeline.slice(startIndex, endIndex).map(renderCompletion)}
+          </tbody>
+        </Table>
+      )}
+      {id && (
+        <Modal onClose={closeSolution} open={solutionOpen} size='large'>
+          <Modal.Header showCloseButton={true} closeButtonClassNames='close'>
+            {`${username}'s Solution to ${
+              idToNameMap.get(id)?.challengeTitle ?? ''
+            }`}
+          </Modal.Header>
+          <Modal.Body alignment='left'>
+            <SolutionViewer
+              challengeFiles={challengeData.challengeFiles}
+              solution={challengeData.solution ?? ''}
+            />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={closeSolution}>{t('buttons.close')}</Button>
+          </Modal.Footer>
+        </Modal>
+      )}
+      {totalPages > 1 && (
+        <TimelinePagination
+          firstPage={firstPage}
+          lastPage={lastPage}
+          nextPage={nextPage}
+          pageNo={pageNo}
+          prevPage={prevPage}
+          totalPages={totalPages}
         />
-        <ExamResultsModal
-          projectTitle={projectTitle}
-          examResults={completedChallenge?.examResults}
-        />
-      </section>
-    </FullWidthRow>
+      )}
+      <ProjectPreviewModal
+        challengeData={challengeData}
+        closeText={t('buttons.close')}
+        previewTitle={projectTitle}
+      />
+      <ExamResultsModal
+        projectTitle={projectTitle}
+        examResults={completedChallenge?.examResults}
+      />
+    </>
   );
 }
 

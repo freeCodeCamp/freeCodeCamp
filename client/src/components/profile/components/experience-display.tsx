@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 import { parse, format, isValid } from 'date-fns';
 import type { ExperienceData } from '../../../redux/prop-types';
-import { FullWidthRow, interleave } from '../../helpers';
+import { interleave } from '../../helpers';
 import './experience-display.css';
 
 interface ExperienceDisplayProps {
@@ -47,15 +47,12 @@ export const ExperienceDisplay = ({
   ));
 
   return (
-    <FullWidthRow>
-      <section className='card'>
-        <h2>{t('profile.experience.heading')}</h2>
-        <Spacer size='s' />
-        {interleave(experienceItems, index => (
-          <hr key={`separator-${index}`} />
-        ))}
-        <Spacer size='m' />
-      </section>
-    </FullWidthRow>
+    <>
+      <Spacer size='s' />
+      {interleave(experienceItems, index => (
+        <hr key={`separator-${index}`} />
+      ))}
+      <Spacer size='m' />
+    </>
   );
 };

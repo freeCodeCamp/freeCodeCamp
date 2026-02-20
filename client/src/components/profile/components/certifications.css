@@ -1,7 +1,74 @@
 .profile-certifications {
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+  color: var(--primary-color);
+}
+
+.profile-certifications .cert-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--tertiary-background);
+}
+
+.profile-certifications .cert-item {
+  margin: 0;
+  border-bottom: 1px solid var(--tertiary-background);
+}
+
+.profile-certifications .cert-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  padding: 0.75rem 0.75rem 0.75rem 0.5rem;
+  border-left: 2px solid transparent;
+}
+
+.profile-certifications .cert-link:hover,
+.profile-certifications .cert-link:focus {
+  background: var(--tertiary-background);
+  border-left-color: var(--primary-color);
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.profile-certifications .cert-link-title {
+  padding-right: 0.75rem;
+}
+
+.profile-certifications .cert-link-arrow {
+  color: var(--quaternary-color);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.profile-certifications .cert-link-meta {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.75rem;
+  flex-shrink: 0;
+}
+
+.profile-certifications .cert-link-badge {
+  border: 1px solid var(--quaternary-background);
+  background: var(--tertiary-background);
+  color: var(--quaternary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.45rem;
+}
+
+.legacy-certifications-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--quaternary-color);
 }

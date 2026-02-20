@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 import { test, expect } from '@playwright/test';
+import translations from '../client/i18n/locales/english/translations.json';
 
 test.use({ storageState: 'playwright/.auth/development-user.json' });
 
@@ -17,7 +18,14 @@ test.describe('Add Experience Item', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/developmentuser');
 
-    await page.getByRole('button', { name: 'Edit my profile' }).click();
+    const openExperienceModalButton = page.getByRole('button', {
+      name: new RegExp(
+        `${translations.profile['add-new-experience']}|profile\\.add-new-experience`,
+        'i'
+      )
+    });
+    await expect(openExperienceModalButton).toBeVisible({ timeout: 30000 });
+    await openExperienceModalButton.click();
 
     await expect(async () => {
       const addExperienceItemButton = page.getByRole('button', {

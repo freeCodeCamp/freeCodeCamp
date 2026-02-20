@@ -10,6 +10,7 @@ import {
   HelpBlock,
   FormGroupProps,
   Button,
+  Modal,
   Spacer
 } from '@freecodecamp/ui';
 import { withTranslation } from 'react-i18next';
@@ -19,12 +20,13 @@ import { updateMyExperience } from '../../../redux/settings/actions';
 
 import { FullWidthRow, interleave } from '../../helpers';
 import BlockSaveButton from '../../helpers/form/block-save-button';
-import SectionHeader from '../../settings/section-header';
 
 type ExperienceProps = {
   experience: ExperienceData[];
   t: TFunction;
   updateMyExperience: (obj: { experience: ExperienceData[] }) => void;
+  open: boolean;
+  onClose: () => void;
 };
 
 interface ExperienceValidation {
@@ -50,17 +52,14 @@ export const validateDate = ({
   isRequired: boolean;
   fieldName: 'start-date' | 'end-date';
 }): ValidationResult => {
-  // Check if date is required and empty
   if (isRequired && !date) {
     return { state: 'error', messageKey: `validation.${fieldName}-required` };
   }
 
-  // Allow empty for optional dates
   if (!date) {
     return { state: 'success', messageKey: '' };
   }
 
-  // Check if date matches MM/YYYY format
   const dateRegex = /^\d{2}\/\d{4}$/;
   if (!dateRegex.test(date)) {
     return {
@@ -70,7 +69,6 @@ export const validateDate = ({
   }
 
   const parsedDate = parse(date, 'MM/yyyy', new Date());
-  // Check if the parsed date is valid (e.g., not an invalid month like 13)
   if (!isValid(parsedDate)) {
     return {
       state: 'error',
@@ -96,7 +94,13 @@ const byId = (id: string) => (exp: ExperienceData) => exp.id === id;
 const notById = (id: string) => (exp: ExperienceData) => exp.id !== id;
 
 const ExperienceSettings = (props: ExperienceProps) => {
-  const { t, experience: initialExperience = [], updateMyExperience } = props;
+  const {
+    t,
+    experience: initialExperience = [],
+    updateMyExperience,
+    open,
+    onClose
+  } = props;
   const [experience, setExperience] = useState(initialExperience);
   const [newItemId, setNewItemId] = useState<string | null>(null);
 
@@ -447,31 +451,33 @@ const ExperienceSettings = (props: ExperienceProps) => {
   };
 
   return (
-    <section id='experience-settings'>
-      <SectionHeader>{t('profile.experience.heading')}</SectionHeader>
-      <FullWidthRow>
-        <p>{t('profile.experience.share-experience')}</p>
-        <Spacer size='xs' />
-        <Button
-          block
-          size='large'
-          variant='primary'
-          disabled={newItemId !== null}
-          onClick={handleAdd}
-          type='button'
-        >
-          {t('profile.experience.add')}
-        </Button>
-      </FullWidthRow>
-      <Spacer size='l' />
-      {interleave(experience.map(renderExperience), () => (
-        <>
-          <Spacer size='m' />
-          <hr />
-          <Spacer size='m' />
-        </>
-      ))}
-    </section>
+    <Modal onClose={onClose} open={open} size='large'>
+      <Modal.Header>{t('profile.edit-experience')}</Modal.Header>
+      <Modal.Body alignment='left'>
+        <FullWidthRow>
+          <p>{t('profile.experience.share-experience')}</p>
+          <Spacer size='xs' />
+          <Button
+            block
+            size='large'
+            variant='primary'
+            disabled={newItemId !== null}
+            onClick={handleAdd}
+            type='button'
+          >
+            {t('profile.experience.add')}
+          </Button>
+        </FullWidthRow>
+        <Spacer size='l' />
+        {interleave(experience.map(renderExperience), () => (
+          <>
+            <Spacer size='m' />
+            <hr />
+            <Spacer size='m' />
+          </>
+        ))}
+      </Modal.Body>
+    </Modal>
   );
 };
 

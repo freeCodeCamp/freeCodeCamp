@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Spacer } from '@freecodecamp/ui';
 
 import type { CurrentCert, User } from '../../../redux/prop-types';
-import { FullWidthRow, ButtonLink } from '../../helpers';
+import { Link } from '../../helpers';
 import { getCertifications } from './utils/certification';
 
 import './certifications.css';
@@ -19,18 +19,24 @@ interface CertButtonProps {
 
 function CertButton({ username, cert }: CertButtonProps): JSX.Element {
   const { t } = useTranslation();
+  const certTitle = t(`certification.title.${cert.certSlug}-cert`);
   return (
-    <li>
-      <ButtonLink
-        block
-        size='large'
-        href={`/certification/${username}/${cert.certSlug}`}
-      >
-        {t('buttons.view-cert-title', {
-          certTitle: t(`certification.title.${cert.certSlug}-cert`)
+    <li className='cert-item'>
+      <Link
+        className='cert-link'
+        to={`/certification/${username}/${cert.certSlug}`}
+        aria-label={t('buttons.view-cert-title', {
+          certTitle
         })}
-      </ButtonLink>
-      <Spacer size='xs' />
+      >
+        <span className='cert-link-title'>{certTitle}</span>
+        <span className='cert-link-meta'>
+          <span className='cert-link-badge'>{t('profile.certified')}</span>
+          <span className='cert-link-arrow' aria-hidden='true'>
+            &gt;
+          </span>
+        </span>
+      </Link>
     </li>
   );
 }
@@ -43,52 +49,48 @@ function Certificates({ user }: CertificationProps): JSX.Element {
 
   const { t } = useTranslation();
   return (
-    <FullWidthRow className='profile-certifications'>
-      <section className='card'>
-        <h2 id='fcc-certifications'>{t('profile.fcc-certs')}</h2>
-        <br />
-        {hasModernCert && currentCerts ? (
-          <ul aria-labelledby='fcc-certifications'>
-            {currentCerts
-              .filter(({ show }) => show)
-              .map(cert => (
-                <CertButton
-                  key={cert.certSlug}
-                  cert={cert}
-                  username={username}
-                />
-              ))}
-          </ul>
-        ) : (
-          <p className='text-center'>{t('profile.no-certs')}</p>
-        )}
-        {hasLegacyCert && (
-          <div>
-            <Spacer size='m' />
-            <h3 id='legacy-certifications'>
-              {t('settings.headings.legacy-certs')}
-            </h3>
-            <Spacer size='m' />
-            {legacyCerts && (
-              <>
-                <ul aria-labelledby='legacy-certifications'>
-                  {legacyCerts
-                    .filter(({ show }) => show)
-                    .map(cert => (
-                      <CertButton
-                        key={cert.certSlug}
-                        cert={cert}
-                        username={username}
-                      />
-                    ))}
-                </ul>
-                <Spacer size='m' />
-              </>
-            )}
-          </div>
-        )}
-      </section>
-    </FullWidthRow>
+    <div className='profile-certifications'>
+      <Spacer size='s' />
+      {hasModernCert && currentCerts ? (
+        <ul className='cert-list'>
+          {currentCerts
+            .filter(({ show }) => show)
+            .map(cert => (
+              <CertButton key={cert.certSlug} cert={cert} username={username} />
+            ))}
+        </ul>
+      ) : (
+        <p className='text-center'>{t('profile.no-certs')}</p>
+      )}
+      {hasLegacyCert && (
+        <div className='legacy-certifications'>
+          <Spacer size='m' />
+          <h3
+            id='legacy-certifications'
+            className='legacy-certifications-title'
+          >
+            {t('settings.headings.legacy-certs')}
+          </h3>
+          <Spacer size='m' />
+          {legacyCerts && (
+            <>
+              <ul className='cert-list' aria-labelledby='legacy-certifications'>
+                {legacyCerts
+                  .filter(({ show }) => show)
+                  .map(cert => (
+                    <CertButton
+                      key={cert.certSlug}
+                      cert={cert}
+                      username={username}
+                    />
+                  ))}
+              </ul>
+              <Spacer size='m' />
+            </>
+          )}
+        </div>
+      )}
+    </div>
   );
 }
 

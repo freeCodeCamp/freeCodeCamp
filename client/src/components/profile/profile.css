@@ -1,18 +1,76 @@
-.button-fit {
-  width: 30px;
-  height: fit-content;
-  padding: 0 !important;
-}
-
 .card {
   margin: 0;
-  padding: 1em;
-  box-shadow: none;
-  background: var(--primary-background);
+  padding: clamp(1rem, 1.2vw, 1.5rem);
+  background: var(--secondary-background);
   border: 1px solid var(--quaternary-background);
+  border-radius: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
   margin-bottom: 1em;
+}
+
+.card--private {
+  opacity: 0.78;
+  border-style: dashed;
 }
 
 .card-header {
   position: relative;
+}
+
+.card .text-center {
+  margin: 0;
+  color: var(--quaternary-color);
+}
+
+.profile-add-action-row {
+  margin-top: 0.75rem;
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid var(--quaternary-background);
+  padding-top: 0.75rem;
+}
+
+.profile-add-action {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--quaternary-color);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1;
+  min-height: 32px;
+  padding: 0.35rem 0.45rem;
+  border-radius: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.profile-add-action::before {
+  content: '+';
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--quaternary-background);
+  border-radius: 0;
+  color: var(--primary-color);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.profile-add-action:hover,
+.profile-add-action:focus-visible {
+  color: var(--primary-color);
+  background: var(--tertiary-background);
+}
+
+.profile-add-action:focus-visible {
+  outline: 2px solid var(--focus-outline-color);
+  outline-offset: 2px;
 }

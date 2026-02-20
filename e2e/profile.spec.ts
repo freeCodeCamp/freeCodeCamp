@@ -84,104 +84,257 @@ const legacyCerts = [
   }
 ];
 
-test.describe('Profile component', () => {
-  test.describe('when viewing my own profile', () => {
-    test.beforeEach(async ({ page }) => {
-      await page.goto('/certifieduser');
-    });
-
-    test('renders the camper profile correctly', async ({ page }) => {
-      // There are multiple avatars on the page, one is in the navbar, one is in the page body.
-      // The avatar we are interested in is the last one in the list
-      const avatar = page
-        .getByRole('img', {
-          name: translations.icons.avatar,
-          includeHidden: true // the svg has `aria-hidden` set to true
-        })
-        .last();
-
-      // "visible" as in the element is in the DOM, but it is hidden from non-sighted users
-      await expect(avatar).toBeVisible();
-
-      await expect(
-        page.getByRole('heading', { name: '@certifieduser' })
-      ).toBeVisible();
-      await expect(page.getByText('Full Stack User')).toBeVisible();
-      await expect(page.getByText('Joined November 2020')).toBeVisible();
-      await expect(
-        page.getByText(translations.profile.contributor)
-      ).toBeVisible();
-      expect(
-        await page.locator('.badge-card-description').textContent()
-      ).toContain('Among most prolific volunteers');
-    });
-
-    test('displays certifications correctly', async ({ page }) => {
-      await expect(
-        page.getByRole('heading', { name: 'freeCodeCamp Certifications' })
-      ).toBeVisible();
-      await expect(
-        page.getByRole('heading', { name: 'Legacy Certifications' })
-      ).toBeVisible();
-
-      for (const cert of certs) {
-        const link = page
-          .getByRole('link', {
-            name: `View ${cert.name} Certification`
-          })
-          .first();
-        await expect(link).toBeVisible();
-        await expect(link).toHaveAttribute('href', cert.url);
-      }
-
-      for (const cert of legacyCerts) {
-        const link = page
-          .getByRole('link', {
-            name: `View ${cert.name} Certification`
-          })
-          .last();
-        await expect(link).toBeVisible();
-        await expect(link).toHaveAttribute('href', cert.url);
-      }
-    });
-
-    test('should not show portfolio when empty', async ({ page }) => {
-      // @certifieduser doesn't have portfolio information
-      await expect(
-        page.getByText(translations.profile.projects)
-      ).not.toBeVisible();
-    });
-
-    test('displays the timeline correctly', async ({ page }) => {
-      await expect(
-        page.getByRole('heading', { name: 'Timeline' })
-      ).toBeVisible();
-      await expect(page.getByRole('table')).toBeVisible();
-      await expect(
-        page.getByRole('navigation', { name: 'Timeline Pagination' })
-      ).toBeVisible();
-    });
+test.describe('Profile - Owner View', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/certifieduser');
   });
 
-  test.describe("when viewing someone else's profile", () => {
-    test.beforeEach(async ({ page }) => {
-      await page.goto('/publicUser');
-    });
+  test('renders the camper profile correctly', async ({ page }) => {
+    const avatar = page
+      .getByRole('img', {
+        name: translations.icons.avatar,
+        includeHidden: true
+      })
+      .last();
+    await expect(avatar).toBeVisible();
+    await expect(
+      page.getByRole('heading', { name: '@certifieduser' })
+    ).toBeVisible();
+    await expect(page.getByText('Full Stack User')).toBeVisible();
+    await expect(page.getByText('Joined November 2020')).toBeVisible();
+    await expect(
+      page.getByText(translations.profile.contributor)
+    ).toBeVisible();
+  });
 
-    test.describe('while logged in', () => {
-      test('displays the public username', async ({ page }) => {
-        await expect(
-          page.getByRole('heading', { name: '@publicuser' })
-        ).toBeVisible();
-      });
-    });
+  test('displays certifications correctly', async ({ page }) => {
+    for (const cert of certs) {
+      const link = page
+        .getByRole('link', {
+          name: `View ${cert.name} Certification`
+        })
+        .first();
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href', cert.url);
+    }
 
-    test.describe('logged out', () => {
-      test('displays the public username', async ({ page }) => {
-        await expect(
-          page.getByRole('heading', { name: '@publicuser' })
-        ).toBeVisible();
-      });
+    for (const cert of legacyCerts) {
+      const link = page
+        .getByRole('link', {
+          name: `View ${cert.name} Certification`
+        })
+        .last();
+      await expect(link).toBeVisible();
+      await expect(link).toHaveAttribute('href', cert.url);
+    }
+  });
+
+  test('displays the timeline correctly', async ({ page }) => {
+    await expect(page.getByRole('table')).toBeVisible();
+  });
+
+  test('shows widget headers with toggles for owner', async ({ page }) => {
+    // Stats widget header
+    await expect(
+      page.getByRole('heading', { name: translations.profile.stats })
+    ).toBeVisible();
+
+    // Activity (HeatMap) widget header
+    await expect(
+      page.getByRole('heading', { name: translations.profile.activity })
+    ).toBeVisible();
+
+    // Timeline widget header
+    await expect(
+      page.getByRole('heading', { name: translations.profile.timeline })
+    ).toBeVisible();
+  });
+
+  test('shows internet presence section with add action', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', {
+        name: translations.profile['internet-presence']
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', {
+        name: translations.profile['add-new-social-link']
+      })
+    ).toBeVisible();
+  });
+
+  test('should not show portfolio when empty', async ({ page }) => {
+    // @certifieduser doesn't have portfolio - but as owner they should see the
+    // empty state with widget header
+    await expect(
+      page.getByText(translations.profile['no-portfolio'])
+    ).toBeVisible();
+  });
+});
+
+test.describe('Profile - Personal Info Modal', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/certifieduser');
+  });
+
+  test('opens personal info modal and shows form fields', async ({ page }) => {
+    const editButton = page.getByRole('button', {
+      name: translations.profile['edit-personal-info']
     });
+    await editButton.click();
+
+    // Modal header
+    await expect(
+      page.getByRole('heading', {
+        name: translations.profile['edit-personal-info']
+      })
+    ).toBeVisible();
+
+    // Personal info form fields
+    await expect(page.getByTestId('camper-identity')).toBeVisible();
+    await expect(
+      page.getByLabel(translations.settings.labels.name, { exact: true })
+    ).toHaveValue('Full Stack User');
+    await expect(
+      page.getByLabel(translations.settings.labels.location)
+    ).toHaveValue('');
+    await expect(
+      page.getByLabel(translations.settings.labels.picture)
+    ).toHaveValue('');
+    await expect(
+      page.getByLabel(translations.settings.labels.about)
+    ).toHaveValue('');
+
+    // Privacy toggles inside modal
+    await expect(
+      page.getByRole('group', {
+        name: translations.settings.labels['my-name']
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('group', {
+        name: translations.settings.labels['my-location']
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('group', {
+        name: translations.settings.labels['my-about']
+      })
+    ).toBeVisible();
+  });
+
+  test('save button is disabled when no changes', async ({ page }) => {
+    const editButton = page.getByRole('button', {
+      name: translations.profile['edit-personal-info']
+    });
+    await editButton.click();
+
+    const saveButton = page.getByRole('button', {
+      name: translations.settings.headings['personal-info']
+    });
+    await expect(saveButton).toBeDisabled();
+  });
+});
+
+test.describe('Profile - Internet Presence Modal', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/certifieduser');
+  });
+
+  test('opens internet presence modal with social link fields', async ({
+    page
+  }) => {
+    const editButton = page.getByRole('button', {
+      name: translations.profile['add-new-social-link']
+    });
+    await editButton.click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.profile['edit-internet-presence']
+      })
+    ).toBeVisible();
+
+    await expect(page.getByTestId('internet-presence')).toBeVisible();
+    await expect(page.getByLabel('GitHub')).toBeVisible();
+    await expect(page.getByLabel('LinkedIn')).toBeVisible();
+    await expect(
+      page.getByRole('textbox', { name: 'X', exact: true })
+    ).toBeVisible();
+    await expect(page.getByLabel('Bluesky')).toBeVisible();
+    await expect(
+      page.getByLabel(translations.settings.labels.personal)
+    ).toBeVisible();
+  });
+});
+
+test.describe('Profile - Add New Actions', () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/certifieduser');
+  });
+
+  test('opens portfolio modal from add new project action', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', {
+        name: translations.profile['add-new-project']
+      })
+      .click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.profile['edit-portfolio']
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.buttons['add-portfolio'] })
+    ).toBeVisible();
+  });
+
+  test('opens experience modal from add new experience action', async ({
+    page
+  }) => {
+    await page
+      .getByRole('button', {
+        name: translations.profile['add-new-experience']
+      })
+      .click();
+
+    await expect(
+      page.getByRole('heading', {
+        name: translations.profile['edit-experience']
+      })
+    ).toBeVisible();
+    await expect(
+      page.getByRole('button', { name: translations.profile.experience.add })
+    ).toBeVisible();
+  });
+});
+
+test.describe("Profile - Visitor's View", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto('/publicUser');
+  });
+
+  test('displays the public username', async ({ page }) => {
+    await expect(
+      page.getByRole('heading', { name: '@publicuser' })
+    ).toBeVisible();
+  });
+
+  test('does not show edit buttons for visitors', async ({ page }) => {
+    const editButtons = page.getByRole('button', {
+      name: /Edit/
+    });
+    await expect(editButtons).toHaveCount(0);
+  });
+
+  test('does not show toggle switches for visitors', async ({ page }) => {
+    await expect(page.locator('.widget-toggle')).toHaveCount(0);
+  });
+
+  test('does not show private badge for visitors', async ({ page }) => {
+    await expect(page.locator('.private-badge')).toHaveCount(0);
   });
 });
