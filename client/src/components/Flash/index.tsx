@@ -42,6 +42,7 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
             smOffset={1}
             xs={12}
             className='flash-message'
+            data-testid='flash-message'
           >
             {t(message, variables)}
             <CloseButton
