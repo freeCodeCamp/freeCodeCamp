@@ -6,7 +6,7 @@ certification: introduction-to-algorithms-and-data-structures
 
 ## Introduction to Algorithms and Data Structures
 
-Algorithms and Data Structures are the backbone of programming. So it important to learn how to work with them.
+Algorithms and Data Structures are the backbone of programming. So it's important to learn how to work with them.
 
 In this comprehensive course, you will learn about common sorting and searching algorithms including merge sort, quicksort and binary search.
 

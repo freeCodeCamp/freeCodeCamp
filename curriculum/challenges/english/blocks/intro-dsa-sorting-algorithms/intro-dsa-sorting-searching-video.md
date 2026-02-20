@@ -22,7 +22,7 @@ linear search
 
 ---
 
-binary serach
+binary search
 
 ---
 

@@ -14,7 +14,7 @@ In this video, you will learn more about the merge sort algorithm and how to spl
 
 ## --text--
 
-What doest splitting the list into sublists represent in the merge sort algorithm?
+What does splitting the list into sublists represent in the merge sort algorithm?
 
 ## --answers--
 
