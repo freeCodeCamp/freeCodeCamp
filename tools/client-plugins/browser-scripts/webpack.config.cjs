@@ -1,18 +1,11 @@
-const { writeFileSync } = require('fs');
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
-const {
-  version: helperVersion
-} = require('@freecodecamp/curriculum-helpers/package.json');
+
+const { version } = require('./package.json');
 
 module.exports = (env = {}) => {
   const __DEV__ = env.production !== true;
-  const staticPath = path.join(__dirname, '../../../client/static/js');
-  const configPath = path.join(
-    __dirname,
-    '../../../client/config/browser-scripts/'
-  );
+
   return {
     cache: __DEV__ ? { type: 'filesystem' } : false,
     mode: __DEV__ ? 'development' : 'production',
@@ -23,19 +16,9 @@ module.exports = (env = {}) => {
     },
     devtool: __DEV__ ? 'inline-source-map' : 'source-map',
     output: {
-      publicPath: '/js/',
-      filename: chunkData => {
-        // construct and output the filename here, so the client can use the
-        // json to find the file.
-        const filename = `${chunkData.chunk.name}-${chunkData.chunk.contentHash.javascript}`;
-        writeFileSync(
-          path.join(configPath, `${chunkData.chunk.name}.json`),
-          `{"filename": "${filename}"}`
-        );
-        return filename + '.js';
-      },
       chunkFilename: '[name]-[contenthash].js',
-      path: staticPath
+      path: path.resolve(__dirname, `dist/js/workers/${version}`),
+      clean: false // We handle cleaning in copy-scripts.ts
     },
     stats: {
       // Display bailout reasons
@@ -67,17 +50,6 @@ module.exports = (env = {}) => {
       ]
     },
     plugins: [
-      new CopyWebpackPlugin({
-        patterns: [
-          './node_modules/sass.js/dist/sass.sync.js',
-          // TODO: copy this into the css folder, not the js folder
-          './node_modules/xterm/css/xterm.css',
-          {
-            from: './node_modules/@freecodecamp/curriculum-helpers/dist/test-runner',
-            to: `test-runner/${helperVersion}/`
-          }
-        ]
-      }),
       new webpack.ProvidePlugin({
         process: 'process/browser'
       }),

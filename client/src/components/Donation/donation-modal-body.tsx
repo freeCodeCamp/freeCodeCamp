@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useFeature } from '@growthbook/growthbook-react';
 import { Col, Row, Modal, Spacer } from '@freecodecamp/ui';
 import { closeDonationModal } from '../../redux/actions';
-import { PaymentContext } from '../../../../shared-dist/config/donation-settings';
+import { PaymentContext } from '@freecodecamp/shared/config/donation-settings';
 import donationAnimation from '../../assets/images/donation-bear-animation.svg';
 import donationAnimationB from '../../assets/images/new-bear-animation.svg';
 import supporterBearBlock from '../../assets/images/supporter-bear-block.svg';

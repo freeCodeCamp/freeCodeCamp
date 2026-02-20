@@ -22,7 +22,7 @@ import {
   updateSuperBlockStructures,
   superBlockStructuresSelector
 } from '../../templates/Introduction/redux';
-import { getIsDailyCodingChallenge } from '../../../../shared-dist/config/challenge-types';
+import { getIsDailyCodingChallenge } from '@freecodecamp/shared/config/challenge-types';
 import {
   isValidDateString,
   formatDisplayDate
@@ -168,13 +168,11 @@ const useGetAllChallengeData = () => {
   } = useStaticQuery(graphql`
     query getBlockNode {
       allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
       ) {
         nodes {
           challenge {

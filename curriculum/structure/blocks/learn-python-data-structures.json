@@ -1,0 +1,22 @@
+{
+  "name": "Data Structures: Lists and Tuples",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "learn-python-data-structures",
+  "helpCategory": "Python",
+  "challengeOrder": [
+    {
+      "id": "39a400e9163c5a0b33587e18",
+      "title": "Lists"
+    },
+    {
+      "id": "24a45b3960b3aa68dff2cd9e",
+      "title": "List Functions"
+    },
+    {
+      "id": "5ed596ba3306cf2c1a94bb92",
+      "title": "Tuples"
+    }
+  ]
+}

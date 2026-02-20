@@ -1,0 +1,23 @@
+{
+  "name": "Using The First 100 Numbers",
+  "isUpcomingChange": true,
+  "dashedName": "es-a1-practice-using-the-first-100-numbers",
+  "helpCategory": "Spanish Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "69736b91a030a7df2996ebf1", "title": "Task 1" },
+    { "id": "69736d336e51a4ffef723422", "title": "Task 2" },
+    { "id": "69736f5a162ec4dc4fd0fd96", "title": "Task 3" },
+    { "id": "697370ca65b11bb9d0ab2f3f", "title": "Task 4" },
+    { "id": "697373872ebb41e49473c1a0", "title": "Task 5" },
+    { "id": "69737813e8e195d22abe4638", "title": "Task 6" },
+    { "id": "697378abaed90d3847602635", "title": "Task 7" },
+    { "id": "69737969ebc0fa44efa46a88", "title": "Task 8" },
+    { "id": "69737aa8e692cd7f75c115ef", "title": "Task 9" },
+    { "id": "69737b9b99fb2cf1c04fbed7", "title": "Task 10" },
+    { "id": "69737c76f680e548c9bee965", "title": "Task 11" },
+    { "id": "69737cc134166e315e829089", "title": "Task 12" },
+    { "id": "69737d38e65e602cabcfded9", "title": "Task 13" }
+  ],
+  "blockLabel": "practice"
+}

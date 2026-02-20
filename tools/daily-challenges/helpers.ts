@@ -29,7 +29,7 @@ export async function fetchChallenges(language: 'javascript' | 'python') {
 query {
   allChallengeNode(
   filter: {challenge: {superBlock: {eq: "dev-playground"}, block: {eq: "daily-coding-challenges-${language}"}}}
-  sort: {order: ASC, fields: challenge___challengeOrder}
+  sort: {challenge: {challengeOrder: ASC}}
   ) {
     edges {
       node {

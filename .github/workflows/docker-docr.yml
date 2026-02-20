@@ -52,7 +52,7 @@ jobs:
 
     steps:
       - name: Checkout Source Files
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Create a tagname
         id: tagname
@@ -61,23 +61,27 @@ jobs:
           echo "tagname=$tagname" >> $GITHUB_ENV
           echo "tagname=$tagname" >> $GITHUB_OUTPUT
 
-      - name: Build & Tag Image
-        run: |
-          docker build \
-            --build-arg SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }} \
-            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname \
-            --tag registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest \
-            --file docker/${{ inputs.app }}/Dockerfile .
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
 
       - name: Install doctl
-        uses: digitalocean/action-doctl@v2
+        uses: digitalocean/action-doctl@135ac0aa0eed4437d547c6f12c364d3006b42824 # v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
       - name: Log in to DigitalOcean Container Registry with short-lived credentials
         run: doctl registry login --expiry-seconds 1200
 
-      - name: Push image to DigitalOcean Container Registry
-        run: |
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:$tagname
-          docker push registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
+      - name: Build & Push Image
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          file: docker/${{ inputs.app }}/Dockerfile
+          push: true
+          build-args: |
+            SHOW_UPCOMING_CHANGES=${{ inputs.show_upcoming_changes }}
+          tags: |
+            registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:${{ env.tagname }}
+            registry.digitalocean.com/${{ secrets.DOCR_NAME }}/${{ inputs.site_tld }}/learn-${{ inputs.app }}:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max

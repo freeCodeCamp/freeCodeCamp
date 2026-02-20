@@ -24,6 +24,10 @@ on:
         type: boolean
         default: false
 
+concurrency:
+  group: deploy-client-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   setup-jobs:
     name: Setup Jobs
@@ -78,7 +82,7 @@ jobs:
         with:
           script: |
             // Constants
-            const NODE_VERSION = 22;
+            const NODE_VERSION = 24;
 
             // Input sanitization and validation
             const rawTargetLang = process.env.TARGET_LANG || 'all';
@@ -171,12 +175,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
         with:
           submodules: 'recursive'
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6
+        uses: actions/setup-node@6044e13b5dc448c55e2357c09f80417699197238 # v6
         with:
           node-version: ${{ matrix.node-version }}
 
@@ -228,7 +232,7 @@ jobs:
         run: tar -czf client-${{ matrix.lang-name-short }}.tar client/public
 
       - name: Setup and connect to Tailscale network
-        uses: tailscale/github-action@a392da0a182bba0e9613b6243ebd69529b1878aa # v4
+        uses: tailscale/github-action@53acf823325fe9ca47f4cdaa951f90b4b0de5bb9 # v4
         with:
           oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
           oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}

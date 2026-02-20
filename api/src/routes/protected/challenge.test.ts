@@ -28,7 +28,7 @@ import { Static } from '@fastify/type-provider-typebox';
 import { DailyCodingChallengeLanguage } from '@prisma/client';
 import request from 'supertest';
 
-import { challengeTypes } from '../../../../shared/config/challenge-types.js';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   defaultUserId,
   devLogin,

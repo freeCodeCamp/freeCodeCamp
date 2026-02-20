@@ -1,5 +1,5 @@
 import React from 'react';
-import { SuperBlocks } from '../../../shared-dist/config/curriculum';
+import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
 import APIIcon from './icons/api';
 import D3Icon from './icons/d3';
 import DatabaseIcon from './icons/database';
@@ -44,7 +44,6 @@ const iconMap = {
   [SuperBlocks.ProjectEuler]: Graduation,
   [SuperBlocks.CollegeAlgebraPy]: CollegeAlgebra,
   [SuperBlocks.FoundationalCSharp]: CSharpLogo,
-  [SuperBlocks.FullStackDeveloper]: Code,
   [SuperBlocks.A2English]: A2EnglishIcon,
   [SuperBlocks.B1English]: B1EnglishIcon,
   [SuperBlocks.A1Spanish]: A1SpanishIcon,
@@ -57,6 +56,31 @@ const iconMap = {
   [SuperBlocks.SemanticHtml]: Code,
   [SuperBlocks.FullStackOpen]: Code,
   [SuperBlocks.DevPlayground]: Code,
+  [SuperBlocks.HtmlFormsAndTables]: ResponsiveDesign,
+  [SuperBlocks.LabSurveyForm]: Code,
+  [SuperBlocks.HtmlAndAccessibility]: ResponsiveDesign,
+  [SuperBlocks.ComputerBasics]: Code,
+  [SuperBlocks.BasicCss]: Code,
+  [SuperBlocks.DesignForDevelopers]: Code,
+  [SuperBlocks.AbsoluteAndRelativeUnits]: Code,
+  [SuperBlocks.PseudoClassesAndElements]: Code,
+  [SuperBlocks.CssColors]: Code,
+  [SuperBlocks.StylingForms]: Code,
+  [SuperBlocks.CssBoxModel]: Code,
+  [SuperBlocks.CssFlexbox]: Code,
+  [SuperBlocks.LabPageOfPlayingCards]: Code,
+  [SuperBlocks.CssTypography]: Code,
+  [SuperBlocks.CssAndAccessibility]: ResponsiveDesign,
+  [SuperBlocks.CssPositioning]: Code,
+  [SuperBlocks.AttributeSelectors]: Code,
+  [SuperBlocks.LabBookInventoryApp]: Code,
+  [SuperBlocks.ResponsiveDesign]: ResponsiveDesign,
+  [SuperBlocks.LabTechnicalDocumentationPage]: Code,
+  [SuperBlocks.CssVariables]: Code,
+  [SuperBlocks.CssGrid]: Code,
+  [SuperBlocks.LabProductLandingPage]: Code,
+  [SuperBlocks.CssAnimations]: Code,
+  [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
   [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
   [SuperBlocks.JsV9]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,

@@ -3,23 +3,21 @@ const path = require('path');
 const _ = require('lodash');
 
 const {
-  getChallengesForLang
-} = require('../../curriculum/dist/get-challenges.js');
-
-const {
   getBlockCreator,
   getSuperblocks,
   superBlockToFilename
-} = require('../../curriculum/dist/build-curriculum.js');
+} = require('@freecodecamp/curriculum/build-curriculum');
 const {
   getContentDir,
   getBlockStructure,
-  getSuperblockStructure
-} = require('../../curriculum/dist/file-handler.js');
+  getSuperblockStructure,
+  CURRICULUM_DIR
+} = require('@freecodecamp/curriculum/file-handler');
 const {
   transformSuperBlock
-} = require('../../curriculum/dist/build-superblock.js');
-const { getSuperOrder } = require('../../curriculum/dist/super-order.js');
+} = require('@freecodecamp/curriculum/build-superblock');
+const { getSuperOrder } = require('@freecodecamp/curriculum/super-order');
+const { readFile } = require('fs/promises');
 
 const curriculumLocale = process.env.CURRICULUM_LOCALE || 'english';
 
@@ -51,7 +49,6 @@ exports.replaceChallengeNodes = () => {
     const block = path.basename(parentDir);
     const filename = path.basename(filePath);
 
-    console.log(`Replacing challenge nodes for ${filePath}`);
     const meta = getBlockStructure(block);
     const superblocks = getSuperblocks(block);
 
@@ -73,7 +70,12 @@ exports.replaceChallengeNodes = () => {
 };
 
 exports.buildChallenges = async function buildChallenges() {
-  const curriculum = await getChallengesForLang(curriculumLocale);
+  const curriculum = JSON.parse(
+    await readFile(
+      path.resolve(CURRICULUM_DIR, 'generated', 'curriculum.json'),
+      'utf-8'
+    )
+  );
   const superBlocks = Object.keys(curriculum);
   const blocks = superBlocks
     .map(superBlock => curriculum[superBlock].blocks)

@@ -1,15 +1,15 @@
 import React, { useEffect } from 'react';
 import Helmet from 'react-helmet';
-import { useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 
-import { Spacer } from '@freecodecamp/ui';
+import { Callout, Spacer } from '@freecodecamp/ui';
 import store from 'store';
 import { scroller, Element as ScrollElement } from 'react-scroll';
 import envData from '../../config/env.json';
 import { createFlashMessage } from '../components/Flash/redux';
-import { Loader } from '../components/helpers';
+import { FullWidthRow, Loader, Link } from '../components/helpers';
 import Certification from '../components/settings/certification';
 import Account from '../components/settings/account';
 import DangerZone from '../components/settings/danger-zone';
@@ -183,6 +183,13 @@ export function ShowSettings(props: ShowSettingsProps): JSX.Element {
               {t('settings.for', { username: username })}
             </h1>
           </ScrollElement>
+          <FullWidthRow>
+            <Callout variant='note' label={t('misc.note')}>
+              <Trans i18nKey='settings.profile-note'>
+                <Link to={`/${username}`} />
+              </Trans>
+            </Callout>
+          </FullWidthRow>
           <Spacer size='m' />
           <ScrollElement name='account'>
             <Account

@@ -9,13 +9,22 @@ describe('StagingWarningModal', () => {
     // The Modal component uses `ResizeObserver` under the hood.
     // However, this property is not available in JSDOM, so we need to manually add it to the window object.
     // Ref: https://github.com/jsdom/jsdom/issues/3368
+
+    type ResizeObserverMockInstance = {
+      observe: ResizeObserver['observe'];
+      unobserve: ResizeObserver['unobserve'];
+      disconnect: ResizeObserver['disconnect'];
+    };
     Object.defineProperty(window, 'ResizeObserver', {
       writable: true,
-      value: vi.fn(() => ({
-        observe: vi.fn(),
-        unobserve: vi.fn(),
-        disconnect: vi.fn()
-      }))
+      value: vi.fn(function (
+        this: ResizeObserverMockInstance,
+        _cb: ResizeObserverCallback
+      ) {
+        this.observe = vi.fn();
+        this.unobserve = vi.fn();
+        this.disconnect = vi.fn();
+      })
     });
   });
 

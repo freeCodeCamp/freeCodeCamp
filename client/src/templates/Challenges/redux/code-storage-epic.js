@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { filter, ignoreElements, map, switchMap, tap } from 'rxjs/operators';
 import store from 'store';
 
-import { isPoly, setContent } from '../../../../../shared-dist/utils/polyvinyl';
+import { isPoly, setContent } from '@freecodecamp/shared/utils/polyvinyl';
 import { createFlashMessage } from '../../../components/Flash/redux';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { savedChallengesSelector } from '../../../redux/selectors';
@@ -11,7 +11,7 @@ import { actionTypes as appTypes } from '../../../redux/action-types';
 import {
   getIsDailyCodingChallenge,
   getDailyCodingChallengeLanguage
-} from '../../../../../shared-dist/config/challenge-types';
+} from '@freecodecamp/shared/config/challenge-types';
 import { actionTypes } from './action-types';
 import { noStoredCodeFound, updateFile } from './actions';
 import { challengeFilesSelector, challengeMetaSelector } from './selectors';

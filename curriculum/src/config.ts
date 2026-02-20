@@ -1,25 +1,21 @@
-import { resolve } from 'path';
+import { resolve } from 'node:path';
+import assert from 'node:assert';
 import { config } from 'dotenv';
 
-import { availableLangs } from '../../shared-dist/config/i18n.js';
+import { availableLangs } from '@freecodecamp/shared/config/i18n';
 
 config({ path: resolve(__dirname, '../../.env') });
 
 const curriculumLangs = availableLangs.curriculum;
 
-// checks that the CURRICULUM_LOCALE exists and is an available language
-export function testedLang() {
-  if (process.env.CURRICULUM_LOCALE) {
-    if (curriculumLangs.includes(process.env.CURRICULUM_LOCALE)) {
-      return process.env.CURRICULUM_LOCALE;
-    } else {
-      throw Error(`${process.env.CURRICULUM_LOCALE} is not a supported language.
-      Before the site can be built, this language needs to be manually approved`);
-    }
-  } else {
-    throw Error('LOCALE must be set for testing');
-  }
+function isAllowedLang(lang: string): lang is (typeof curriculumLangs)[number] {
+  return curriculumLangs.includes(lang as (typeof curriculumLangs)[number]);
 }
+
+assert.ok(process.env.CURRICULUM_LOCALE);
+assert.ok(isAllowedLang(process.env.CURRICULUM_LOCALE));
+
+export const CURRICULUM_LOCALE = process.env.CURRICULUM_LOCALE;
 
 export const SHOW_UPCOMING_CHANGES =
   process.env.SHOW_UPCOMING_CHANGES === 'true';

@@ -1,15 +1,14 @@
 import { mkdirSync, writeFileSync, readFileSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { omit } from 'lodash';
-import { submitTypes } from '../../../shared-dist/config/challenge-types';
+import { submitTypes } from '@freecodecamp/shared/config/challenge-types';
 import { type ChallengeNode } from '../../src/redux/prop-types';
 import {
   SuperBlocks,
   chapterBasedSuperBlocks
-} from '../../../shared-dist/config/curriculum';
-import type { Chapter } from '../../../shared-dist/config/chapters';
-import { getSuperblockStructure } from '../../../curriculum/src/file-handler';
-import { patchBlock } from './patches';
+} from '@freecodecamp/shared/config/curriculum';
+import type { Chapter } from '@freecodecamp/shared/config/chapters';
+import { getSuperblockStructure } from '@freecodecamp/curriculum/file-handler';
 import {
   availableBackgrounds,
   availableAudios
@@ -130,23 +129,23 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Core]: [
     {
       dashedName: SuperBlocks.RespWebDesignV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.RespWebDesignV9].title
     },
     {
       dashedName: SuperBlocks.JsV9,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.JsV9].title
+    },
+    {
+      dashedName: SuperBlocks.PythonV9,
+      public: true,
+      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.FrontEndDevLibsV9,
       public: false,
       title: intros[SuperBlocks.FrontEndDevLibsV9].title
-    },
-    {
-      dashedName: SuperBlocks.PythonV9,
-      public: false,
-      title: intros[SuperBlocks.PythonV9].title
     },
     {
       dashedName: SuperBlocks.RelationalDbV9,
@@ -181,7 +180,7 @@ export const orderedSuperBlockInfo: OrderedSuperBlocks = {
   [SuperBlockStage.Spanish]: [
     {
       dashedName: SuperBlocks.A1Spanish,
-      public: false,
+      public: true,
       title: intros[SuperBlocks.A1Spanish].title
     }
   ],
@@ -379,9 +378,7 @@ export function buildExtCurriculumDataV2(
                     const blockData = blocksWithData[block];
                     return {
                       intro: superBlockIntros.blocks[block].intro,
-                      meta: patchBlock(
-                        omit(blockData.meta, ['chapter', 'module'])
-                      )
+                      meta: omit(blockData.meta, ['chapter', 'module'])
                     };
                   })
           }))
@@ -404,7 +401,7 @@ export function buildExtCurriculumDataV2(
 
       return {
         intro: intros[superBlockKey].blocks[blockName].intro,
-        meta: patchBlock(blockData.meta)
+        meta: blockData.meta
       };
     });
 
