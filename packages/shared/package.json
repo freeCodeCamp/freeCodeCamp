@@ -10,12 +10,14 @@
     "pnpm": ">=10"
   },
   "scripts": {
+    "build": "tsdown --log-level warn --no-clean --format cjs --format esm",
+    "clean": "rm -rf dist",
+    "develop": "tsdown --log-level warn --no-clean --watch src --format cjs --format esm",
+    "lint": "eslint --max-warnings 0",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:ui": "vitest --ui",
-    "type-check": "tsc --noEmit",
-    "build": "tsdown --format cjs --format esm",
-    "lint": "eslint --max-warnings 0"
+    "type-check": "tsc --noEmit"
   },
   "type": "module",
   "exports": {
