@@ -1607,7 +1607,6 @@ Thanks and regards,
       { path: `/users/${otherUserId}`, method: 'DELETE' },
       { path: '/account/delete', method: 'POST' },
       { path: '/account/reset-progress', method: 'POST' },
-      { path: '/user/get-session-user', method: 'GET' },
       { path: '/user/user-token', method: 'DELETE' },
       { path: '/user/user-token', method: 'POST' },
       { path: '/user/ms-username', method: 'DELETE' },
@@ -1623,6 +1622,18 @@ Thanks and regards,
           setCookies
         });
         expect(response.statusCode).toBe(401);
+      });
+    });
+
+    describe('/user/get-session-user', () => {
+      test('GET returns 200 with empty user object for unauthenticated users', async () => {
+        const response = await superRequest('/user/get-session-user', {
+          method: 'GET',
+          setCookies
+        });
+
+        expect(response.statusCode).toBe(200);
+        expect(response.body).toStrictEqual({ user: {}, result: '' });
       });
     });
   });

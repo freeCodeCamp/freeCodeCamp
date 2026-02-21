@@ -191,13 +191,6 @@ export const build = async (
       await fastify.register(protectedRoutes.userRoutes);
     });
 
-    // CSRF protection disabled:
-    await fastify.register(async function (fastify, _opts) {
-      fastify.addHook('onRequest', fastify.send401IfNoUser);
-
-      await fastify.register(protectedRoutes.userGetRoutes);
-    });
-
     // Routes that redirect if access is denied:
     await fastify.register(async function (fastify, _opts) {
       fastify.addHook('onRequest', fastify.redirectIfNoUser);
@@ -208,6 +201,14 @@ export const build = async (
 
   // TODO: The route should not handle its own AuthZ
   await fastify.register(protectedRoutes.challengeTokenRoutes);
+
+  // CSRF protection disabled:
+  // Routes that work for both authenticated and unauthenticated users:
+  void fastify.register(async function (fastify) {
+    fastify.addHook('onRequest', fastify.authorize);
+
+    await fastify.register(protectedRoutes.userGetRoutes);
+  });
 
   // Routes for signed out users:
   void fastify.register(async function (fastify) {

@@ -661,13 +661,21 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
       // This is one of the most requested routes. To avoid spamming the logs
       // with this route, we'll log requests at the debug level.
       logger.debug({ userId: req.user?.id });
+
+      // Handle unauthenticated users - this is not an error, it's how the client
+      // determines if they are signed in or not
+      if (!req.user?.id) {
+        logger.debug('Unauthenticated user requested session');
+        return { user: {}, result: '' };
+      }
+
       try {
         const userTokenP = fastify.prisma.userToken.findFirst({
-          where: { userId: req.user!.id }
+          where: { userId: req.user.id }
         });
 
         const userP = fastify.prisma.user.findUnique({
-          where: { id: req.user!.id },
+          where: { id: req.user.id },
           select: {
             about: true,
             acceptedPrivacyTerms: true,
@@ -738,11 +746,11 @@ export const userGetRoutes: FastifyPluginCallbackTypebox = (
         });
 
         const completedSurveysP = fastify.prisma.survey.findMany({
-          where: { userId: req.user!.id }
+          where: { userId: req.user.id }
         });
 
         const msUsernameP = fastify.prisma.msUsername.findFirst({
-          where: { userId: req.user?.id }
+          where: { userId: req.user.id }
         });
 
         const [userToken, user, completedSurveys, msUsername] =
