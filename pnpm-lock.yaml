@@ -979,8 +979,8 @@ importers:
         specifier: ^8.2.5
         version: 8.2.11
       '@vitest/ui':
-        specifier: ^3.2.4
-        version: 3.2.4(vitest@3.2.4)
+        specifier: ^4.0.15
+        version: 4.0.15(vitest@4.0.15)
       bson:
         specifier: ^7.0.0
         version: 7.0.0
@@ -1003,8 +1003,8 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^3.2.4
-        version: 3.2.4(@types/debug@4.1.12)(@types/node@25.2.3)(@vitest/ui@3.2.4)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
+        specifier: ^4.0.15
+        version: 4.0.15(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.15)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   tools/challenge-parser:
     dependencies:
