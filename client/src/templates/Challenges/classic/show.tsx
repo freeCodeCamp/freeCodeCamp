@@ -212,6 +212,7 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
+        tokens,
         translationPending,
         saveSubmissionToDB
       }
@@ -415,6 +416,7 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            tokens={tokens}
           />
         }
         challengeTitle={
