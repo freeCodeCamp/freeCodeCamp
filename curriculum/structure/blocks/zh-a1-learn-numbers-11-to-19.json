@@ -1,0 +1,22 @@
+{
+  "name": "Numbers 11 to 19",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-numbers-11-to-19",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "698083ad46a3b901f567cf7f", "title": "Task 1" },
+    { "id": "6981b18d3da602baaba6b00f", "title": "Task 2" },
+    { "id": "6981b2b5cde1d5c7bc7710be", "title": "Task 3" },
+    { "id": "6981b337d8c78a5b7c5c6a2c", "title": "Task 4" },
+    { "id": "6981b4708c453bcd71d24f63", "title": "Task 5" },
+    { "id": "6981b557bd1e1f1abe8d7fad", "title": "Task 6" },
+    { "id": "6981ce83bdebc9d2280ad0b3", "title": "Task 7" },
+    { "id": "6981ceb5acd5f491222105cb", "title": "Task 8" },
+    { "id": "6981cffc3027d5ff925c220e", "title": "Task 9" },
+    { "id": "6981d06d6505cb363e2c8178", "title": "Task 10" },
+    { "id": "6981d097372c50852ceb36ec", "title": "Task 11" },
+    { "id": "6981d0bba2f25c62940c6a30", "title": "Task 12" }
+  ],
+  "blockLabel": "learn"
+}

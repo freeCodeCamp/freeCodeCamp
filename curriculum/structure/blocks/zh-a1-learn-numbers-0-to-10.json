@@ -1,0 +1,22 @@
+{
+  "name": "Numbers 0 to 10",
+  "isUpcomingChange": true,
+  "dashedName": "zh-a1-learn-numbers-0-to-10",
+  "helpCategory": "Chinese Curriculum",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [
+    { "id": "697c26c741f3f4c452751570", "title": "Task 1" },
+    { "id": "697c7704cd4f0e480caf62da", "title": "Task 2" },
+    { "id": "697c7a28406ee80bc9ab8bbc", "title": "Task 3" },
+    { "id": "697ec6ead52c260cc55c4603", "title": "Task 4" },
+    { "id": "697ecb146a755d7e636c14cd", "title": "Task 5" },
+    { "id": "697ed345e506d4ff5bb76bd8", "title": "Task 6" },
+    { "id": "697f10d3a3db19a3c59e65f0", "title": "Task 7" },
+    { "id": "697f17fc9481800467ff3070", "title": "Task 8" },
+    { "id": "697f1856c207d05ae7dc555c", "title": "Task 9" },
+    { "id": "697f18c2d93dcb335b389011", "title": "Task 10" },
+    { "id": "697f18e23e07e2a9e69ba219", "title": "Task 11" },
+    { "id": "697f1903b81c0466fc3a7a89", "title": "Task 12" }
+  ],
+  "blockLabel": "learn"
+}
