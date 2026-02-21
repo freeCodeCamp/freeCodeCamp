@@ -282,9 +282,13 @@ const ShowGeneric = ({
                   showInteractiveEditor
                 ) {
                   return (
-                    <React.Fragment key={i}>
-                      {renderNodule(nodule, showInteractiveEditor)}
-                    </React.Fragment>
+                    <>
+                      <Spacer size='s' />
+                      <Col key={i} xs={12} md={12} lg={10} lgOffset={1}>
+                        {renderNodule(nodule, showInteractiveEditor)}
+                      </Col>
+                      <Spacer size='s' />
+                    </>
                   );
                 }
                 // for non-interactive editor or editor disabled
