@@ -3212,6 +3212,12 @@
         "title": "Recursion Quiz",
         "intro": ["Test your knowledge of Recursion with this quiz."]
       },
+      "lab-linked-list-operations": {
+        "title": "Implement Linked List Operations",
+        "intro": [
+          "In this lab you will implement common linked list operations such as insertion, deletion, and traversal."
+        ]
+      },
       "lecture-introduction-to-common-searching-and-sorting-algorithms": {
         "title": "Introduction to Common Searching and Sorting Algorithms",
         "intro": [

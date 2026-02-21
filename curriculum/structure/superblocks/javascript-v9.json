@@ -295,7 +295,11 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": ["lab-linked-list-operations"]
+        },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
