@@ -54,6 +54,7 @@ import {
   updateLogs,
   updateTests
 } from './actions';
+import { allChallengesInfoSelector } from '../../../redux/selectors';
 import {
   challengeDataSelector,
   challengeMetaSelector,
@@ -141,7 +142,8 @@ export function* executeChallengeSaga({ payload }) {
     const isBlockCompleted = yield select(isBlockNewlyCompletedSelector);
     if (challengeComplete) {
       playTone('tests-completed');
-      if (isBlockCompleted) {
+      const allChallengesInfo = yield select(allChallengesInfoSelector);
+      if (isBlockCompleted && allChallengesInfo?.challengeNodes?.length) {
         fireConfetti();
       }
     } else {
