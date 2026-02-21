@@ -1,21 +1,10 @@
 const { createFilePath } = require('gatsby-source-filesystem');
-// TODO: ideally we'd remove lodash and just use lodash-es, but we can't require
-// es modules here.
-const uniq = require('lodash/uniq');
 const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 const webpack = require('webpack');
 
 const { SuperBlocks } = require('@freecodecamp/shared/config/curriculum');
 const env = require('./config/env.json');
-const {
-  createBlockIntroPages,
-  createSuperBlockIntroPages
-} = require('./utils/gatsby');
-
-const createByIdentityMap = {
-  blockIntroMarkdown: createBlockIntroPages,
-  superBlockIntroMarkdown: createSuperBlockIntroPages
-};
+const { createSuperBlockIntroPages } = require('./utils/gatsby');
 
 exports.onCreateNode = function onCreateNode({ node, actions, getNode }) {
   const { createNodeField } = actions;
@@ -59,7 +48,13 @@ exports.createPages = async function createPages({
 
   const result = await graphql(`
     {
-      allChallengeNode {
+      allChallengeNode(
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
+      ) {
         edges {
           node {
             challenge {
@@ -116,11 +111,9 @@ exports.createPages = async function createPages({
           node {
             fields {
               slug
-              nodeIdentity
             }
             frontmatter {
               certification
-              block
               superBlock
               title
             }
@@ -130,16 +123,6 @@ exports.createPages = async function createPages({
       }
     }
   `);
-
-  const blocks = uniq(
-    result.data.allChallengeNode.edges.map(
-      ({
-        node: {
-          challenge: { block }
-        }
-      }) => block
-    )
-  );
 
   // Includes upcoming superBlocks
   const allSuperBlocks = Object.values(SuperBlocks);
@@ -152,33 +135,21 @@ exports.createPages = async function createPages({
     } = edge;
 
     if (!fields) {
-      return;
+      throw Error(
+        "'fields' property missing (this should be added in onCreateNode)"
+      );
     }
-    const { slug, nodeIdentity } = fields;
+    const { slug } = fields;
     if (slug.includes('LICENCE')) {
       return;
     }
-    if (nodeIdentity === 'blockIntroMarkdown') {
-      if (!blocks.includes(frontmatter.block)) {
-        return;
-      }
-    } else if (!allSuperBlocks.includes(frontmatter.superBlock)) {
-      return;
+
+    if (!allSuperBlocks.includes(frontmatter.superBlock)) {
+      throw Error(`Unknown superblock ${frontmatter.superBlock}`);
     }
 
-    try {
-      const pageBuilder = createByIdentityMap[nodeIdentity](createPage);
-      pageBuilder(edge);
-    } catch (e) {
-      console.log(e);
-      console.log(`
-            ident: ${nodeIdentity} does not belong to a function
-
-            ${frontmatter ? JSON.stringify(edge.node) : 'no frontmatter'}
-
-
-            `);
-    }
+    const pageBuilder = createSuperBlockIntroPages(createPage);
+    pageBuilder(edge);
   });
 };
 
@@ -193,9 +164,9 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
     })
   ];
   // The monaco editor relies on some browser only globals so should not be
-  // involved in SSR. Also, if the plugin is used during the 'build-html' stage
-  // it overwrites the minfied files with ordinary ones.
-  if (stage !== 'build-html') {
+  // involved in SSR. Also, if the plugin is used during the 'build-html' or
+  // 'develop-html' stage it overwrites the minfied files with ordinary ones.
+  if (stage !== 'build-html' && stage !== 'develop-html') {
     newPlugins.push(
       new MonacoWebpackPlugin({ filename: '[name].worker-[contenthash].js' })
     );
@@ -234,16 +205,4 @@ exports.onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPlugin({
     name: '@babel/plugin-proposal-export-default-from'
   });
-};
-
-exports.onCreatePage = async ({ page, actions }) => {
-  const { createPage } = actions;
-  // Only update the `/challenges` page.
-  if (page.path.match(/^\/challenges/)) {
-    // page.matchPath is a special key that's used for matching pages
-    // with corresponding routes only on the client.
-    page.matchPath = '/challenges/*';
-    // Update the page.
-    createPage(page);
-  }
 };

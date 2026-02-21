@@ -26,6 +26,20 @@ const idToFilepath = new Map();
 // recently overwritten files
 const idToOverwrittenFile = new Map();
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type QuizQuestion {
+      text: String!
+      distractors: [String!]!
+      answer: String!
+      audioId: String
+      transcript: String
+    }
+  `;
+  createTypes(typeDefs);
+};
+
 exports.sourceNodes = function sourceChallengesSourceNodes(
   { actions, reporter, createNodeId, createContentDigest },
   pluginOptions
@@ -244,13 +258,11 @@ exports.createPagesStatefully = async function ({ graphql, actions }) {
   const result = await graphql(`
     {
       allChallengeNode(
-        sort: {
-          fields: [
-            challenge___superOrder
-            challenge___order
-            challenge___challengeOrder
-          ]
-        }
+        sort: [
+          { challenge: { superOrder: ASC } }
+          { challenge: { order: ASC } }
+          { challenge: { challengeOrder: ASC } }
+        ]
       ) {
         edges {
           node {

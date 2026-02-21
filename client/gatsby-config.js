@@ -15,13 +15,14 @@ module.exports = {
   flags: {
     DEV_SSR: false
   },
+  trailingSlash: 'ignore',
   siteMetadata: {
     title: 'freeCodeCamp',
     siteUrl: homeLocation
   },
   pathPrefix: pathPrefix,
   plugins: [
-    'gatsby-plugin-pnpm',
+    'gatsby-plugin-pnpm-gatsby-5',
     {
       resolve: 'gatsby-plugin-webpack-bundle-analyser-v2',
       options: {
@@ -44,18 +45,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-plugin-create-client-paths',
-      options: {
-        prefixes: [
-          '/certification/*',
-          '/unsubscribed/*',
-          '/user/*',
-          '/settings/*',
-          '/n/*'
-        ]
-      }
-    },
-    {
       resolve: require.resolve(
         '../tools/client-plugins/gatsby-source-challenges'
       ),
@@ -75,36 +64,6 @@ module.exports = {
     },
     {
       resolve: 'gatsby-transformer-remark'
-    },
-    {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
-      options: {
-        identity: 'blockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && block && superBlock;
-        }
-      }
-    },
-    {
-      resolve: require.resolve(
-        '../tools/client-plugins/gatsby-remark-node-identity'
-      ),
-      options: {
-        identity: 'superBlockIntroMarkdown',
-        predicate: ({ frontmatter }) => {
-          if (!frontmatter) {
-            return false;
-          }
-          const { title, block, superBlock } = frontmatter;
-          return title && !block && superBlock;
-        }
-      }
     },
     'gatsby-plugin-remove-serviceworker',
     {

@@ -1,10 +1,10 @@
 {
-  "$schema": "https://v2-8-1.turborepo.dev/schema.json",
+  "$schema": "https://v2-8-7.turborepo.dev/schema.json",
   "extends": ["//"],
   "tasks": {
     "build": {
       "outputs": ["dist/**", "generated/**"],
-      "env": ["FCC_*", "SHOW_UPCOMING_CHANGES"]
+      "env": ["FCC_*", "SHOW_UPCOMING_CHANGES", "CURRICULUM_LOCALE"]
     },
     "test": {
       "passThroughEnv": ["VITEST_POOL_ID", "PUPPETEER_WS_ENDPOINT"],

@@ -490,10 +490,10 @@
     }
   },
   "front-end-development-libraries": {
-    "title": "Front End Development Libraries V8",
+    "title": "Frontend Development Libraries V8",
     "intro": [
-      "Kwa kuwa sasa unafahamu HTML, CSS na JavaScript, ongeza ujuzi wako kwa kujifunza baadhi ya maktaba maarufu za front end kwenye sekta hiyo.",
-      "Katika cheti cha Front End Development Libraries, utajifunza jinsi ya kutengeneza tovuti yako haraka na Bootstrap. Pia utajifunza jinsi ya kuongeza mantiki kwenye mitindo yako ya CSS na kuiendeleza kwa Sass.",
+      "Now that you're familiar with HTML, CSS, and JavaScript, level up your skills by learning some of the most popular frontend libraries in the industry.",
+      "In the Frontend Development Libraries Certification, you'll learn how to style your site quickly with Bootstrap. You'll also learn how to add logic to your CSS styles and extend them with Sass.",
       "Baadaye, utaunda shopping cart na programu zingine ili kujifunza jinsi ya kuunda Single Page Applications (SPAs) kwa kutumia React na Redux."
     ],
     "note": "",
@@ -501,7 +501,7 @@
       "bootstrap": {
         "title": "Bootstrap",
         "intro": [
-          "Bootstrap ni mfumo wa front end unaotumiwa kuunda kurasa za wavuti na programu zinazoitikia. Inahitaji mbinu ya kwanza ya rununu kwa ukuzaji wa wavuti, na inajumuisha mitindo na madarasa ya CSS yaliyoundwa mapema, pamoja na utendaji wa JavaScript.",
+          "Bootstrap is a frontend framework used to design responsive web pages and applications. It takes a mobile-first approach to web development, and includes pre-built CSS styles and classes, plus some JavaScript functionality.",
           "Katika kozi hii, utajifunza jinsi ya kuunda tovuti responsive kwa kutumia Bootstrap, na kutumia madarasa yake yaliyojumuishwa ili kuunda vitufe, picha, fomu, urambazaji na vipengele vingine vya kawaida."
         ]
       },
@@ -544,10 +544,10 @@
         ]
       },
       "front-end-development-libraries-projects": {
-        "title": "Miradi ya Front End Development Libraries",
+        "title": "Frontend Development Libraries Projects",
         "intro": [
-          "Ni wakati wa kujaribu ujuzi wako wa ukuzaji wa front end libraries. Tumia Bootstrap, jQuery, Sass, React, na Redux kuunda miradi 5 ambayo itajaribu kila kitu ambacho umejifunza hadi sasa.",
-          "Kamilisha miradi yote 5, na utapata cheti cha Front End Development Libraries."
+          "It's time to put your frontend development libraries skills to the test. Use Bootstrap, jQuery, Sass, React, and Redux to build 5 projects that will test everything you've learned up to this point.",
+          "Complete all 5 projects, and you'll earn the Frontend Development Libraries certification."
         ]
       }
     }
@@ -696,11 +696,11 @@
     }
   },
   "back-end-development-and-apis": {
-    "title": "Back End Development and APIs V8",
+    "title": "Backend Development and APIs V8",
     "intro": [
-      "Hadi kufikia hatua hii, umetumia JavaScript iliyo upande wa mbele pekee ili kuongeza mwingiliano kwenye ukurasa, kutatua changamoto za kanuni au kuunda SPA. Lakini JavaScript pia inaweza kutumika upande wa nyuma, au seva, kuunda programu nzima za wavuti.",
+      "Until this point, you've only used JavaScript on the frontend to add interactivity to a page, solve algorithm challenges, or build an SPA. But JavaScript can also be used on the backend, or server, to build entire web applications.",
       "Leo, mojawapo ya njia maarufu za kuunda programu ni kupitia huduma ndogo, ambazo ni ndogo, programu ambazo kwa kawaida hufanya kazi pamoja ili kuunda nzima zaidi.",
-      "Katika cheti cha Back End Development and APIs, utajifunza jinsi ya kuandika upya programu ukitumia Node.js na npm. Pia utaunda programu za wavuti kwa mfumo wa Express, na utaunda programu ndogo ya People Finder na MongoDB na maktaba ya Mongoose."
+      "In the Backend Development and APIs Certification, you'll learn how to write backend apps with Node.js and npm. You'll also build web applications with the Express framework, and build a People Finder microservice with MongoDB and the Mongoose library."
     ],
     "note": "",
     "blocks": {
@@ -729,10 +729,10 @@
         ]
       },
       "back-end-development-and-apis-projects": {
-        "title": "Miradi ya Back End Development na APIs",
+        "title": "Backend Development and APIs Projects",
         "intro": [
           "Umefanya kazi na API hapo awali, lakini kwa kuwa sasa unajua npm, Node, Express, MongoDB, na Mongoose, ni wakati wa kuunda yako mwenyewe. Chora kwenye kila kitu ambacho umejifunza hadi kufikia hatua hii ili kuunda huduma ndogo 5 tofauti, ambazo ni programu ndogo ambazo zina upeo mdogo.",
-          "Baada ya kuunda hizi, utakuwa na API 5 nzuri za huduma ndogo unazoweza kuwaonyesha marafiki, familia na waajiri watarajiwa. Lo, na utakuwa na cheti kipya cha Back End Development na APIs, pia."
+          "After creating these, you'll have 5 cool microservice APIs you can show off to friends, family, and potential employers. Oh, and you'll have a shiny new Backend Development and APIs Certification, too."
         ]
       }
     }
@@ -759,13 +759,13 @@
         "intro": [
           "Sasa ni wakati wa kuzama ndani ya Node.js na Express.js kwa kuunda programu ya gumzo na mfumo wa kuingia.",
           "Ili kutekeleza mfumo wa kuingia katika akaunti kwa usalama, utahitaji kujifunza kuhusu uthibitishaji. Hiki ni kitendo cha kuthibitisha utambulisho wa mtu au mchakato.",
-          "Katika kozi hii, utajifunza jinsi ya kutumia Pasipoti kudhibiti uthibitishaji, Pug kuunda violezo vinavyoweza kutumika tena kwa ajili ya kujenga sehemu ya mbele haraka, na soketi za wavuti kwa mawasiliano ya wakati halisi kati ya wateja na seva."
+          "In this course, you'll learn how to use Passport to manage authentication, Pug to create reusable templates for quickly building the frontend, and web sockets for real-time communication between the clients and server."
         ]
       },
       "quality-assurance-projects": {
         "title": "Miradi ya Quality Assurance",
         "intro": [
-          "Sasa kwa kuwa umefahamu vyema sehemu ya mbele na ya nyuma, ni wakati wa kutumia ujuzi na dhana zote ambazo umejifunza hadi kufikia hatua hii. Utaunda programu 5 tofauti za wavuti, na uandike majaribio kwa kila moja ili kuhakikisha kuwa zinafanya kazi na zinaweza kushughulikia kesi tofauti tofauti.",
+          "Now that you're well versed in both the frontend and backend, it's time to apply all the skills and concepts you've learned up to this point. You'll build 5 different web applications, and write tests for each one to make sure they're working and can handle different edge cases.",
           "Baada ya kukamilisha miradi hii ya Quality Assurance, utakuwa na miradi 5 zaidi chini ya ukanda wako, na uthibitisho mpya wa kujionyesha kwenye wasifu yako."
         ]
       }
@@ -937,6 +937,67 @@
         "intro": [
           "Kuna njia nyingi za kuchambua data na Python. Kwa kukamilisha miradi hii, utaonyesha kuwa una ujuzi mzuri wa msingi wa uchambuzi wa data na Python.",
           "Maliza zote ili kupata Cheti cha Data Analysis na Python."
+        ]
+      }
+    }
+  },
+  "learn-python-for-beginners": {
+    "title": "Learn Python for Beginners",
+    "summary": [
+      "Learn the fundamentals of Python programming from the ground up by practicing foundational concepts and building small projects."
+    ],
+    "intro": [
+      "Python is one of the most popular programming languages today. It's easy to learn, readable, and versatile.",
+      "In this comprehensive course, you'll learn the fundamentals of Python programming from the ground up. You'll start with basic concepts like variables and data types, progress through control flow and functions, and build projects to practice what you've learned."
+    ],
+    "note": "",
+    "blocks": {
+      "learn-python-setup-first-steps": {
+        "title": "Setup & First Steps",
+        "intro": [
+          "In these videos, popular programming instructor Mike Dane will introduce you to Python and show you how to setup your local environment."
+        ]
+      },
+      "learn-python-core-primitives": {
+        "title": "Core Primitives: Variables, Types, Basic I/O",
+        "intro": [
+          "In these videos, you will learn about variables, data types, strings, numbers, and getting input from the user."
+        ]
+      },
+      "learn-python-small-projects-basics": {
+        "title": "Small Projects: Using Basics",
+        "intro": [
+          "In these videos, you will practice what you have learned so far by building a basic calculator app and mad libs game."
+        ]
+      },
+      "learn-python-data-structures": {
+        "title": "Data Structures: Lists and Tuples",
+        "intro": [
+          "In these videos, you will learn about lists, tuples and common operations."
+        ]
+      },
+      "learn-python-control-flow-functions": {
+        "title": "Control Flow and Functions",
+        "intro": [
+          "In these videos, you will learn how to control the flow of your programs with if statements. You will also learn how to write reusable code with functions."
+        ]
+      },
+      "learn-python-projects-loops": {
+        "title": "Dictionaries and Loops",
+        "intro": [
+          "In these videos, you will learn how to work with dictionaries and various loops include the while and for loops."
+        ]
+      },
+      "learn-python-practical-errors-files": {
+        "title": "Practical Python: Errors, Files and Modules",
+        "intro": [
+          "In these videos, you will learn how to handle errors gracefully, read and write to files, and organize your code with modules and external packages."
+        ]
+      },
+      "learn-python-oop": {
+        "title": "Object Oriented Programming",
+        "intro": [
+          "In these videos, you will learn about object-oriented programming by creating classes and objects. You will practice these skills by building a multiple choice quiz application."
         ]
       }
     }
@@ -3164,6 +3225,12 @@
           "In this lab, you will implement the bubble sort algorithm to sort an array of integers in ascending order."
         ]
       },
+      "lab-quicksort-js": {
+        "title": "Implement the Quicksort Algorithm",
+        "intro": [
+          "In this lab you will implement the quicksort algorithm to sort an array of integers."
+        ]
+      },
       "lecture-understanding-graphs-and-trees-js": {
         "title": "Understanding Graphs and Trees",
         "intro": [
@@ -3254,17 +3321,17 @@
     }
   },
   "front-end-development-libraries-v9": {
-    "title": "Front End Development Libraries Certification",
+    "title": "Frontend Development Libraries Certification",
     "note": "This certification is currently in development and will be available soon. We recommend completing the available courses below to prepare for the certification exam once it is released.",
     "intro": [
       "This course teaches you the libraries that developers use to build webpages: React, TypeScript, and more.",
-      "To earn your Front End Development Libraries Certification:",
+      "To earn your Frontend Development Libraries Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Front End Development Libraries Certification exam."
+      "- Pass the Frontend Development Libraries Certification exam."
     ],
     "chapters": {
-      "front-end-development-libraries": "Front End Development Libraries",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "front-end-development-libraries": "Frontend Development Libraries",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "modules": {
       "react-fundamentals": "React Fundamentals",
@@ -3276,8 +3343,8 @@
       "css-libraries-and-frameworks": "CSS Libraries and Frameworks",
       "data-visualization": "Data Visualization and D3",
       "typescript-fundamentals": "TypeScript Fundamentals",
-      "review-front-end-libraries": "Front End Libraries Review",
-      "front-end-development-libraries-certification-exam": "Front End Development Libraries Certification Exam"
+      "review-front-end-libraries": "Frontend Libraries Review",
+      "front-end-development-libraries-certification-exam": "Frontend Development Libraries Certification Exam"
     },
     "module-intros": {
       "data-visualization": {
@@ -3295,7 +3362,7 @@
       "front-end-development-libraries-certification-exam": {
         "note": "Coming 2026",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification."
+          "Pass this exam to earn your Frontend Development Libraries Certification."
         ]
       }
     },
@@ -3590,15 +3657,15 @@
         "intro": ["Test what you've learned on Typescript with this quiz."]
       },
       "review-front-end-libraries": {
-        "title": "Front End Libraries Review",
+        "title": "Frontend Libraries Review",
         "intro": [
-          "Review the Front End Libraries concepts to prepare for the upcoming quiz."
+          "Review the Frontend Libraries concepts to prepare for the upcoming quiz."
         ]
       },
       "exam-front-end-development-libraries-certification": {
-        "title": "Front End Development Libraries Certification Exam",
+        "title": "Frontend Development Libraries Certification Exam",
         "intro": [
-          "Pass this exam to earn your Front End Development Libraries Certification"
+          "Pass this exam to earn your Frontend Development Libraries Certification"
         ]
       }
     }
@@ -3656,6 +3723,12 @@
       "lecture-introduction-to-python-strings": {
         "title": "Introduction to Strings",
         "intro": ["In these lessons, you will learn about strings in Python."]
+      },
+      "workshop-employee-profile-generator": {
+        "title": "Build an Employee Profile Generator",
+        "intro": [
+          "In this workshop, you will practice the fundamentals of string manipulation in Python by building a tool that generates formatted employee badges and analyzes employee codes."
+        ]
       },
       "lecture-numbers-and-mathematical-operations": {
         "title": "Numbers and Mathematical Operations",
@@ -4321,17 +4394,17 @@
     }
   },
   "back-end-development-and-apis-v9": {
-    "title": "Back End Development and APIs Certification",
+    "title": "Backend Development and APIs Certification",
     "note": "This certification is currently in development and will be available soon.",
     "intro": [
-      "This course teaches you the fundamentals of back end development and APIs.",
-      "To earn your Back End Development and APIs Certification:",
+      "This course teaches you the fundamentals of backend development and APIs.",
+      "To earn your Backend Development and APIs Certification:",
       "- Complete the five required projects to qualify for the certification exam.",
-      "- Pass the Back End Development and APIs Certification exam."
+      "- Pass the Backend Development and APIs Certification exam."
     ],
     "chapters": {
-      "back-end-development-and-apis": "Back End Development and APIs",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis": "Backend Development and APIs",
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "modules": {
       "introduction-to-nodejs": "Introduction to Node.js",
@@ -4347,7 +4420,7 @@
       "security-and-privacy": "Security and Privacy",
       "authentication": "Authentication",
       "tooling-and-deployment": "Tooling and Deployment",
-      "back-end-development-and-apis-certification-exam": "Back End Development and APIs Certification Exam"
+      "back-end-development-and-apis-certification-exam": "Backend Development and APIs Certification Exam"
     },
     "module-intros": {
       "introduction-to-nodejs": {
@@ -4425,13 +4498,13 @@
       "tooling-and-deployment": {
         "note": "Coming Late 2026",
         "intro": [
-          "In this module, you will learn about common tools used in the industry for deploying your full stack applications. Then you will take a short quiz to test your knowledge."
+          "In this module, you will learn about common tools used in the industry for deploying your full-stack applications. Then you will take a short quiz to test your knowledge."
         ]
       },
       "back-end-development-and-apis-certification-exam": {
         "note": "Coming Late 2026",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification."
+          "Pass this exam to earn your Backend Development and APIs Certification."
         ]
       }
     },
@@ -4489,25 +4562,25 @@
         ]
       },
       "exam-back-end-development-and-apis-certification": {
-        "title": "Back End Development and APIs Certification Exam",
+        "title": "Backend Development and APIs Certification Exam",
         "intro": [
-          "Pass this exam to earn your Back End Development and APIs Certification"
+          "Pass this exam to earn your Backend Development and APIs Certification"
         ]
       }
     }
   },
   "full-stack-developer-v9": {
-    "title": "Certified Full Stack Developer Curriculum",
-    "note": "If you were previously working through our full stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
+    "title": "Certified Full-Stack Developer Curriculum",
+    "note": "If you were previously working through our full-stack curriculum, don't worry - your progress is saved. We split it into smaller certifications for you to earn along your journey. This certification is currently in development and will be available soon. Start earning the required certifications so you're ready when it launches.",
     "intro": [
-      "This certification represents the culmination of your full stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
-      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full Stack Developer Certification."
+      "This certification represents the culmination of your full-stack developer journey. It demonstrates your ability to build complete, modern web applications from start to finish.",
+      "To qualify for the exam, you must earn the certifications below. Pass the exam to earn your Full-Stack Developer Certification."
     ],
     "chapters": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "modules": {
-      "certified-full-stack-developer-exam": "Certified Full Stack Developer Exam"
+      "certified-full-stack-developer-exam": "Certified Full-Stack Developer Exam"
     },
     "module-intros": {
       "certified-full-stack-developer-exam": {
@@ -4519,8 +4592,72 @@
     },
     "blocks": {
       "exam-certified-full-stack-developer": {
-        "title": "Certified Full Stack Developer Exam",
-        "intro": ["Pass this exam to become a Certified Full Stack Developer."]
+        "title": "Certified Full-Stack Developer Exam",
+        "intro": ["Pass this exam to become a Certified Full-Stack Developer."]
+      }
+    }
+  },
+  "html-forms-and-tables": {
+    "title": "HTML Forms and Tables",
+    "summary": [
+      "Learn how to build accessible forms and data tables with semantic HTML."
+    ],
+    "intro": [
+      "Learn how to build accessible forms and data tables with semantic HTML.",
+      "Practice structuring inputs, labels, and tabular data so everyone can navigate and submit information confidently."
+    ],
+    "blocks": {
+      "lecture-working-with-forms": {
+        "title": "Working with Forms",
+        "intro": [
+          "In these lessons, you will learn about forms, the role of labels, inputs and buttons in creating forms, client-side form validation, and form states."
+        ]
+      },
+      "workshop-hotel-feedback-form": {
+        "title": "Build a Hotel Feedback Form",
+        "intro": [
+          "In this workshop, you will build a Hotel Feedback Form.",
+          "You will practice working with labels, inputs, fieldsets, legends, textareas and buttons."
+        ]
+      },
+      "lecture-working-with-tables": {
+        "title": "Working with Tables",
+        "intro": [
+          "In these lessons, you will learn about HTML tables, how to create them, and when to use them."
+        ]
+      },
+      "workshop-final-exams-table": {
+        "title": "Build a Final Exams Table",
+        "intro": [
+          "In this workshop, you will practice working with HTML tables by building a table of final exams."
+        ]
+      },
+      "lab-book-catalog-table": {
+        "title": "Build a Book Catalog Table",
+        "intro": [
+          "In this lab, you'll review HTML tables by building a book information table.",
+          "You'll practice the different table components like the <code>thead</code>, <code>tbody</code>, <code>th</code>, <code>tr</code>, and <code>td</code> elements."
+        ]
+      },
+      "lecture-working-with-html-tools": {
+        "title": "Working with HTML Tools",
+        "intro": [
+          "In these lectures, you will learn about HTML tools and how they let you write better code. These tools include HTML validators, DOM Inspector, and the browser developer tools."
+        ]
+      },
+      "review-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Review",
+        "intro": [
+          "Before you are quizzed on HTML forms, tables and tools, you first need to review the concepts.",
+          "Open up this page to review the <code>table</code>, <code>input</code>, and <code>button</code> elements as well as commonly used tools like the HTML validator and more."
+        ]
+      },
+      "quiz-html-tables-and-forms": {
+        "title": "HTML Tables and Forms Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of HTML tables, forms and commonly used HTML tools.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+        ]
       }
     }
   },
@@ -6099,17 +6236,144 @@
     ],
     "intro": ["Larger intro for the superblock page."],
     "blocks": {
-      "cat-photo-app": {
-        "title": "Build a Cat Photo App",
+      "workshop-curriculum-outline": {
+        "title": "Build a Curriculum Outline",
         "intro": [
-          "HTML tags give a webpage its structure. You can use HTML tags to add photos, buttons, and other elements to your webpage.",
-          "In this course, you'll learn the most common HTML tags by building your own cat photo app."
+          "Welcome to freeCodeCamp!",
+          "This workshop will serve as your introduction to HTML and coding in general. You will learn about headings and paragraph elements."
         ]
       },
-      "recipe-page": {
+      "lab-debug-camperbots-profile-page": {
+        "title": "Debug Camperbot's Profile Page",
+        "intro": [
+          "Camperbot is learning how to code too and needs some help with their HTML.",
+          "In this lab, you will help Camperbot find and fix the errors in their code."
+        ]
+      },
+      "lecture-understanding-html-attributes": {
+        "title": "Understanding HTML Attributes",
+        "intro": [
+          "In these lectures, you will learn more about HTML (HyperText Markup Language), a markup language for creating web pages.",
+          "You will learn about HTML's role on the web, and what HTML attributes are."
+        ]
+      },
+      "lab-debug-pet-adoption-page": {
+        "title": "Debug a Pet Adoption Page",
+        "intro": [
+          "In this lab, you will need to find and fix the errors in this pet adoption page."
+        ]
+      },
+      "lecture-understanding-the-html-boilerplate": {
+        "title": "Understanding the HTML Boilerplate",
+        "intro": [
+          "In these lectures, you will learn about the HTML boilerplate which is a ready-made template for your webpages.",
+          "You will learn how to work with the <code>link</code> element, <code>meta</code> element and more."
+        ]
+      },
+      "workshop-cat-photo-app": {
+        "title": "Build a Cat Photo App",
+        "intro": [
+          "HTML stands for HyperText Markup Language and it represents the content and structure of a web page.",
+          "In this workshop, you will learn how to work with basic HTML elements such as headings, paragraphs, images, links, and lists."
+        ]
+      },
+      "lab-recipe-page": {
         "title": "Build a Recipe Page",
         "intro": [
           "In this lab, you'll review HTML basics by creating a web page of your favorite recipe. You'll create an HTML boilerplate and work with headings, lists, images, and more."
+        ]
+      },
+      "lecture-html-fundamentals": {
+        "title": "HTML Fundamentals",
+        "intro": [
+          "In these lectures, you will learn about HTML fundamentals like the <code>div</code> element, the <code>id</code> and <code>class</code> attributes, the HTML boilerplate, HTML entities, and more."
+        ]
+      },
+      "workshop-bookstore-page": {
+        "title": "Build a Bookstore Page",
+        "intro": [
+          "In this workshop, you will practice working with classes, ids and the <code>div</code> element by building a bookstore page."
+        ]
+      },
+      "lecture-understanding-how-html-affects-seo": {
+        "title": "Understanding How HTML Affects SEO",
+        "intro": [
+          "In these lectures, you will learn how your HTML code impacts search engine optimization."
+        ]
+      },
+      "lab-travel-agency-page": {
+        "title": "Build a Travel Agency Page",
+        "intro": [
+          "In this lab, you'll review working with HTML fundamentals by creating a web page for a travel agency. You'll work with images, the <code>figure</code> element, the <code>figcaption</code> element, the <code>anchor</code> element, and more."
+        ]
+      },
+      "lecture-working-with-audio-and-video-elements": {
+        "title": "Working with Audio and Video Elements",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>audio</code> and <code>video</code> elements."
+        ]
+      },
+      "workshop-html-video-player": {
+        "title": "Build an HTML Video Player",
+        "intro": [
+          "In this workshop, you'll use HTML to create a basic video player.",
+          "This project will cover the <code>video</code> element, the video player setup, and more."
+        ]
+      },
+      "lab-html-audio-and-video-player": {
+        "title": "Build an HTML Audio and Video Player",
+        "intro": [
+          "In this lab, you will build an HTML audio and video player using the <code>video</code> and <code>audio</code> elements with controls and source attributes."
+        ]
+      },
+      "lecture-working-with-images-and-svgs": {
+        "title": "Working with Images and SVGs",
+        "intro": [
+          "In these lectures, you will learn how to work with SVGs and learn about techniques for optimizing your images."
+        ]
+      },
+      "workshop-build-a-heart-icon": {
+        "title": "Build a Heart Icon",
+        "intro": [
+          "In this workshop, you will practice working with SVGs by building a heart icon"
+        ]
+      },
+      "lecture-working-with-media": {
+        "title": "Working with the iframe Element",
+        "intro": [
+          "In these lectures, you will learn how to work with the <code>iframe</code> element which is used to embed an external site on your web page."
+        ]
+      },
+      "workshop-build-a-video-display-using-iframe": {
+        "title": "Build a Video Display Using iframe",
+        "intro": [
+          "In this workshop, you'll learn how to work with the <code>iframe</code> element by building a video display."
+        ]
+      },
+      "lab-video-compilation-page": {
+        "title": "Build a Video Compilation Page",
+        "intro": [
+          "In this lab, you'll create a video compilation web page. You'll practice working with the <code>iframe</code> element."
+        ]
+      },
+      "lecture-working-with-links": {
+        "title": "Working with Links",
+        "intro": [
+          "In these lectures, you will learn about links, the <code>target</code> attribute, different link states, absolute, and relative paths, and more."
+        ]
+      },
+      "review-basic-html": {
+        "title": "Basic HTML Review",
+        "intro": [
+          "Before you are quizzed on the HTML knowledge you have gained so far, you first need to review the concepts.",
+          "Open up this page to review the HTML boilerplate, <code>audio</code> and <code>video</code> elements, the different <code>target</code> attribute values and more."
+        ]
+      },
+      "quiz-basic-html": {
+        "title": "Basic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge of the basic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
         ]
       }
     }
@@ -6121,17 +6385,992 @@
     ],
     "intro": ["Larger intro for the superblock page."],
     "blocks": {
-      "cat-blog-page": {
+      "lecture-importance-of-semantic-html": {
+        "title": "Importance of Semantic HTML",
+        "intro": [
+          "In these lectures, you will learn about semantic HTML and why you should care about it, semantic elements, how semantic HTML differs from presentational HTML, and more."
+        ]
+      },
+      "lecture-understanding-nuanced-semantic-elements": {
+        "title": "Understanding Nuanced Semantic Elements",
+        "intro": [
+          "In these lectures, you will learn when you should use certain semantic elements like the <code>em</code> element over the <code>i</code> element, description lists, and more."
+        ]
+      },
+      "workshop-major-browsers-list": {
+        "title": "Build a List of Major Web Browsers",
+        "intro": [
+          "In this workshop, you will build a description list and work with the <code>dl</code>, <code>dt</code>, and <code>dd</code> elements."
+        ]
+      },
+      "lecture-working-with-text-and-time-semantic-elements": {
+        "title": "Working with Text and Time Semantic Elements ",
+        "intro": [
+          "In this lecture, you will learn about the importance of semantics in conveying meaning for text and time-related content including the <code>time</code>, <code>blockquote</code> elements and more."
+        ]
+      },
+      "workshop-quincys-job-tips": {
+        "title": "Build Quincy's Job Tips Page",
+        "intro": [
+          "In this workshop, you will practice working with semantic HTML by using the <code>q</code>, <code>blockquote</code> and <code>cite</code> elements."
+        ]
+      },
+      "lecture-working-with-specialized-semantic-elements": {
+        "title": "Working with Specialized Semantic Elements",
+        "intro": [
+          "In this lecture, you will learn about specialized semantic elements like <code>u</code>, <code>s</code>, <code>code</code> elements and more."
+        ]
+      },
+      "workshop-blog-page": {
         "title": "Build a Cat Blog Page",
         "intro": [
           "In this workshop, you will build an HTML only blog page using semantic elements including the <code>main</code>, <code>nav</code>, <code>article</code> and <code>footer</code> elements."
         ]
       },
-      "event-hub": {
+      "lab-event-hub": {
         "title": "Build an Event Hub",
         "intro": [
           "In this lab, you'll build an event hub and review semantic elements like <code>header</code>, <code>nav</code>, <code>article</code>, and more."
         ]
+      },
+      "review-semantic-html": {
+        "title": "Semantic HTML Review",
+        "intro": [
+          "Before you are quizzed on semantic HTML, you first need to review the concepts.",
+          "Open up this page to review the <code>em</code>, <code>strong</code>, <code>blockquote</code>, <code>address</code> and more semantic HTML elements."
+        ]
+      },
+      "quiz-semantic-html": {
+        "title": "Semantic HTML Quiz",
+        "intro": [
+          "The following quiz will test your knowledge on semantic HTML concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+        ]
+      }
+    }
+  },
+  "lab-survey-form": {
+    "title": "Build a Survey Form",
+    "summary": [
+      "Create a complete survey form while practicing HTML structure and accessible form controls."
+    ],
+    "intro": [
+      "Build a complete survey form with semantic HTML and accessible inputs."
+    ],
+    "blocks": {
+      "lab-survey-form": {
+        "title": "Build a Survey Form",
+        "intro": [
+          "In this lab, you'll review HTML forms by creating a survey form.",
+          "You'll practice working with the <code>label</code> element, the different <code>input</code> elements, the <code>required</code> attribute, and more. "
+        ]
+      }
+    }
+  },
+  "html-and-accessibility": {
+    "title": "Accessibility",
+    "summary": [
+      "Learn how to write inclusive HTML using accessibility best practices and ARIA."
+    ],
+    "intro": [
+      "Practice writing accessible HTML structures and form experiences."
+    ],
+    "blocks": {
+      "lecture-importance-of-accessibility-and-good-html-structure": {
+        "title": "Importance of Accessibility and Good HTML Structure",
+        "intro": [
+          "In these lessons, you will learn about accessibility and its importance, assistive tools for people with disabilities, HTML attributes that let you create inclusive websites, accessibility best practices, and much more."
+        ]
+      },
+      "workshop-debug-coding-journey-blog-page": {
+        "title": "Debug a Coding Journey Blog Page",
+        "intro": [
+          "In this workshop, you will debug and fix accessibility errors in a coding blog page."
+        ]
+      },
+      "lecture-accessible-tables-forms": {
+        "title": "Working with Accessible Tables and Forms",
+        "intro": [
+          "In these lessons, you will learn about how to create accessible tables and forms."
+        ]
+      },
+      "workshop-tech-conference-schedule": {
+        "title": "Build a Tech Conference Schedule Table",
+        "intro": [
+          "In this workshop, you will build an accessible tech conference schedule table."
+        ]
+      },
+      "lab-debug-donation-form": {
+        "title": "Debug a Donation Form",
+        "intro": [
+          "In this lab you will debug a donation form by fixing HTML syntax errors and improving accessibility."
+        ]
+      },
+      "lecture-introduction-to-aria": {
+        "title": "Introduction to ARIA",
+        "intro": [
+          "In these lectures, you will learn about working with ARIA roles."
+        ]
+      },
+      "workshop-accessible-audio-controller": {
+        "title": "Build an Accessible Audio Controller",
+        "intro": [
+          "In this workshop, you will practice accessible HTML by building an audio controller that uses the <code>aria-labelledby</code> attribute."
+        ]
+      },
+      "lecture-accessible-media-elements": {
+        "title": "Working with Accessible Media Elements",
+        "intro": [
+          "In these lectures, you will learn about how to create accessible links, audio and video content."
+        ]
+      },
+      "lab-checkout-page": {
+        "title": "Build a Checkout Page",
+        "intro": [
+          "In this lab, you'll create an accessible checkout page.",
+          "You'll practice concepts like <code>alt</code> attributes and ARIA roles."
+        ]
+      },
+      "lab-movie-review-page": {
+        "title": "Design a Movie Review Page",
+        "intro": [
+          "In this lab, you'll create a movie review page.",
+          "You'll practice concepts like semantic HTML, <code>alt</code> attributes, accessible lists, and hiding decorative content from screen readers using <code>aria-hidden</code>."
+        ]
+      },
+      "lab-multimedia-player": {
+        "title": "Build a Multimedia Player",
+        "intro": [
+          "In this lab, you'll build a multimedia player.",
+          "You will practice working with the <code>audio</code> and <code>video</code> elements, the <code>controls</code> attribute, and the <code>aria-label</code> attribute."
+        ]
+      },
+      "review-html-accessibility": {
+        "title": "HTML Accessibility Review",
+        "intro": [
+          "Before you are quizzed on HTML and accessibility, you first need to review the concepts.",
+          "Open up this page to review concepts including the <code>aria-hidden</code>, <code>aria-describedby</code>, <code>tabindex</code> attributes and more."
+        ]
+      },
+      "quiz-html-accessibility": {
+        "title": "HTML Accessibility Quiz",
+        "intro": [
+          "The following quiz will test your knowledge on the accessibility concepts you have learned so far.",
+          "If you're getting ready for the exam, there are several quiz sets available for practice. After completing a quiz, you can revisit this page to access a new set of questions."
+        ]
+      }
+    }
+  },
+  "computer-basics": {
+    "title": "Computer Basics",
+    "summary": [
+      "Build a foundation in computer, internet, and tooling basics for web development."
+    ],
+    "intro": [
+      "Get comfortable with the tools and concepts that power modern web development."
+    ],
+    "blocks": {
+      "lecture-understanding-computer-internet-and-tooling-basics": {
+        "title": "Understanding Computer, Internet, and Tooling Basics",
+        "intro": [
+          "In these lessons, you will learn about the computer, its different parts, internet service providers (ISPs), and the tools professional developers use."
+        ]
+      },
+      "lecture-working-with-file-systems": {
+        "title": "Working with File Systems",
+        "intro": [
+          "In these lessons, you will learn how to work with file and folder systems on your computers. You will learn how to create, move, and delete files and folders, the best practices for naming and organizing files and folders, and more."
+        ]
+      },
+      "lecture-browsing-the-web-effectively": {
+        "title": "Browsing the Web Effectively",
+        "intro": [
+          "In these lessons, you will learn about what websites, search engine, and web browsers are, the different browsers available, and how to get the best out of a search engine."
+        ]
+      },
+      "review-computer-basics": {
+        "title": "Computer Basics Review",
+        "intro": [
+          "Before you are quizzed on basic computer and internet concepts, you first need to review.",
+          "Open up this page to review concepts like RAM, Internet service providers, common web browsers, search engines and more."
+        ]
+      },
+      "quiz-computer-basics": {
+        "title": "Computer Basics Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic computer knowledge."
+        ]
+      }
+    }
+  },
+  "basic-css": {
+    "title": "Basic CSS",
+    "summary": [
+      "Learn core CSS concepts and start styling real-world layouts."
+    ],
+    "intro": [
+      "Learn the fundamentals of CSS and apply them to practical layouts."
+    ],
+    "blocks": {
+      "lecture-what-is-css": {
+        "title": "What Is CSS?",
+        "intro": [
+          "The following lessons are all about CSS. You will learn what CSS is and its role on the web, a CSS rule and its anatomy, the three ways to write CSS and when to use each, inline and block elements, and many more."
+        ]
+      },
+      "workshop-cafe-menu": {
+        "title": "Design a Cafe Menu",
+        "intro": [
+          "CSS tells the browser how to display your webpage. You can use CSS to set the color, font, size, and other aspects of HTML elements.",
+          "In this workshop, you'll learn CSS by designing a menu page for a cafe webpage."
+        ]
+      },
+      "lab-business-card": {
+        "title": "Design a Business Card",
+        "intro": [
+          "In this lab, you'll create a business card and style it using CSS.",
+          "You'll practice style properties like <code>color</code>, <code>font-size</code>, <code>text-align</code>, and more."
+        ]
+      },
+      "lecture-css-specificity-the-cascade-algorithm-and-inheritance": {
+        "title": "CSS Specificity, the Cascade Algorithm, and Inheritance",
+        "intro": [
+          "In these lessons, you will learn about CSS specificity, the common selectors and their specificities, the cascade algorithm, inheritance, and more."
+        ]
+      },
+      "review-basic-css": {
+        "title": "CSS Fundamentals Review",
+        "intro": [
+          "Before you are quizzed on basic CSS concepts, you first need to review.",
+          "Open up this page to review concepts including <code>margin</code>, <code>padding</code>, CSS combinators, CSS specificity and more."
+        ]
+      },
+      "quiz-basic-css": {
+        "title": "CSS Fundamentals Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of basic CSS knowledge."
+        ]
+      },
+      "lecture-styling-lists-and-links": {
+        "title": "Styling Lists and Links",
+        "intro": [
+          "In these lessons, you will learn the properties you need to know to effectively style lists and links, including link states like <code>link</code>, <code>visited</code>, <code>hover</code>, and <code>active</code>."
+        ]
+      },
+      "lab-stylized-to-do-list": {
+        "title": "Build a Stylized To-Do List",
+        "intro": [
+          "In this lab, you'll build a To-Do list and apply different styles to the links",
+          "You'll practice style properties like <code>text-decoration</code>, <code>list-style-type</code> and how to change styles on hover or click."
+        ]
+      },
+      "lecture-working-with-backgrounds-and-borders": {
+        "title": "Working with Backgrounds and Borders",
+        "intro": [
+          "In these lessons, you will learn about the properties and values you need to know to style backgrounds and borders of elements, alongside the accessibility considerations for backgrounds."
+        ]
+      },
+      "lab-blog-post-card": {
+        "title": "Design a Blog Post Card",
+        "intro": [
+          "In this lab, you'll design a blog post card using HTML and CSS",
+          "You'll practice concepts like <code>background-color</code>, <code>border-radius</code>, margins, paddings, and more."
+        ]
+      },
+      "review-css-backgrounds-and-borders": {
+        "title": "Lists, Links, CSS Background and Borders Review",
+        "intro": [
+          "Before you are quizzed on CSS backgrounds and borders, you first need to review.",
+          "Open up this page to review concepts including the <code>background-image</code> property, <code>border</code> property and more."
+        ]
+      },
+      "quiz-css-backgrounds-and-borders": {
+        "title": "CSS Backgrounds and Borders Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of backgrounds and borders in CSS."
+        ]
+      }
+    }
+  },
+  "design-for-developers": {
+    "title": "Design",
+    "summary": [
+      "Explore UI design fundamentals and user-centered design principles for developers."
+    ],
+    "intro": [
+      "Learn the design principles that help developers build better interfaces."
+    ],
+    "blocks": {
+      "lecture-user-interface-design-fundamentals": {
+        "title": "User Interface Design Fundamentals",
+        "intro": [
+          "In these lessons, you will learn about the fundamentals of user interface (UI) design. You will learn about the terms you need to know to communicate with designers, visual hierarchy, scaling, alignment, whitespace, and much more."
+        ]
+      },
+      "lecture-user-centered-design": {
+        "title": "User-Centered Design",
+        "intro": [
+          "In these lessons, you will learn about best practices for designing user-facing features like dark mode, breadcrumbs, modal dialogs, and much more. You will also learn how to conduct user research, user requirements and testing."
+        ]
+      },
+      "lecture-common-design-tools": {
+        "title": "Common Design Tools",
+        "intro": [
+          "In these lessons, you will learn about the common design tools developers should know. You will also learn about design briefs and how developers work with them."
+        ]
+      },
+      "review-design-fundamentals": {
+        "title": "Design Fundamentals Review",
+        "intro": [
+          "Before you are quizzed on the design fundamentals you have learned so far, you first need to review.",
+          "Open up this page to review concepts like user-centered design, scale, alignment, good visual hierarchy and more."
+        ]
+      },
+      "quiz-design-fundamentals": {
+        "title": "Design Fundamentals Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of UI design fundamentals."
+        ]
+      }
+    }
+  },
+  "absolute-and-relative-units": {
+    "title": "Absolute and Relative Units",
+    "summary": [
+      "Understand when to use absolute and relative CSS units to build flexible layouts."
+    ],
+    "intro": ["Learn to size elements responsively with CSS units."],
+    "blocks": {
+      "lecture-working-with-relative-and-absolute-units": {
+        "title": "Working with Relative and Absolute Units",
+        "intro": [
+          "In these lessons, you will learn about relative and absolute units, and how they both impact what you see in the browser."
+        ]
+      },
+      "lab-event-flyer-page": {
+        "title": "Build an Event Flyer Page",
+        "intro": [
+          "In this lab, you'll create an event flyer page.",
+          "You will practice aligning elements using absolute and relative CSS."
+        ]
+      },
+      "review-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Review",
+        "intro": [
+          "Before you are quizzed on relative and absolute units, you first need to review.",
+          "Open up this page to review concepts like percentages, <code>px</code>, <code>rem</code>, <code>em</code>, and more."
+        ]
+      },
+      "quiz-css-relative-and-absolute-units": {
+        "title": "CSS Relative and Absolute Units Quiz",
+        "intro": [
+          "Test what you've learned in this quiz of relative and absolute units in CSS."
+        ]
+      }
+    }
+  },
+  "pseudo-classes-and-elements": {
+    "title": "Pseudo Classes and Elements",
+    "summary": [
+      "Use pseudo-classes and pseudo-elements to create richer, more interactive styles."
+    ],
+    "intro": [
+      "Add interaction and detail with CSS pseudo-classes and pseudo-elements."
+    ],
+    "blocks": {
+      "lecture-working-with-pseudo-classes-and-pseudo-elements-in-css": {
+        "title": "Working with Pseudo-Classes and Pseudo-Elements in CSS",
+        "intro": [
+          "In these lessons, you will learn about pseudo-classes and pseudo-elements, alongside their examples and how they work."
+        ]
+      },
+      "workshop-greeting-card": {
+        "title": "Design a Greeting Card",
+        "intro": [
+          "In the previous lessons, you learned how to work with the different types of pseudo-classes.",
+          "In this workshop, you will have a chance to practice what you have learned by designing a greeting card."
+        ]
+      },
+      "workshop-parent-teacher-conference-form": {
+        "title": "Design a Parent Teacher Conference Form",
+        "intro": [
+          "In this workshop, you will practice how to style radio buttons with different types of pseudo-selectors by building a parent-teacher conference form.",
+          "You'll practice concepts including the <code>::before</code> pseudo-element selector, the <code>transform</code> property, and more."
+        ]
+      },
+      "lab-job-application-form": {
+        "title": "Build a Job Application Form",
+        "intro": [
+          "In this lab you'll build a job application form and style it using pseudo-classes.",
+          "You'll practice concepts like <code>:hover</code>, <code>:active</code>, <code>:focus</code>, and more."
+        ]
+      },
+      "review-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Review",
+        "intro": [
+          "Before you're quizzed on CSS pseudo-classes and pseudo-elements, you should review what you've learned about them.",
+          "Open up this page to review concepts like the <code>::before</code> and <code>::after</code> pseudo-elements as well as the <code>:hover</code>, <code>:active</code> pseudo-classes and more."
+        ]
+      },
+      "quiz-css-pseudo-classes": {
+        "title": "CSS Pseudo-classes Quiz",
+        "intro": ["Test your knowledge of CSS pseudo-classes with this quiz."]
+      }
+    }
+  },
+  "css-colors": {
+    "title": "Colors",
+    "summary": [
+      "Work with CSS color formats and build cohesive color palettes."
+    ],
+    "intro": ["Learn to apply color with CSS to create polished visuals."],
+    "blocks": {
+      "lecture-working-with-colors-in-css": {
+        "title": "Working with Colors in CSS",
+        "intro": [
+          "In these lessons, you will learn about linear and radial gradients, the color theory, different kinds of colors like named, RGB, Hex, and HSL colors. You will learn how these colors work, and which to use in specific cases."
+        ]
+      },
+      "workshop-colored-markers": {
+        "title": "Build a Set of Colored Markers",
+        "intro": [
+          "In this workshop, you'll build a set of colored markers. You'll practice different ways to set color values and how to pair colors with each other."
+        ]
+      },
+      "lab-colored-boxes": {
+        "title": "Design a Set of Colored Boxes",
+        "intro": [
+          "In this lab, you'll create a color grid and practice adding background colors to the grid items using hex codes, RGB, and predefined color names."
+        ]
+      },
+      "review-css-colors": {
+        "title": "CSS Colors Review",
+        "intro": [
+          "Before you're quizzed on CSS colors, you should review what you've learned about them.",
+          "Open up this page to review concepts like the <code>rgb()</code> function, <code>hsl()</code> function, <code>hex codes</code>, and more."
+        ]
+      },
+      "quiz-css-colors": {
+        "title": "CSS Colors Quiz",
+        "intro": ["Test your knowledge of CSS colors with this quiz."]
+      }
+    }
+  },
+  "styling-forms": {
+    "title": "Styling Forms",
+    "summary": ["Apply CSS techniques to create clean, usable form layouts."],
+    "intro": ["Style form elements to improve usability and visual clarity."],
+    "blocks": {
+      "lecture-best-practices-for-styling-forms": {
+        "title": "Best Practices for Styling Forms",
+        "intro": [
+          "In these lessons, you will learn about the best practices for styling forms and issues you can encounter while styling special inputs like <code>color</code> and <code>datetime-local</code>."
+        ]
+      },
+      "workshop-registration-form": {
+        "title": "Design a Registration Form",
+        "intro": [
+          "In this workshop, you'll learn how to design HTML forms by designing a signup page. You'll learn how to control what types of data people can type into your form, and some new CSS tools for styling your page."
+        ]
+      },
+      "lab-contact-form": {
+        "title": "Design a Contact Form",
+        "intro": [
+          "In this lab, you'll design a contact form in HTML and style it using CSS."
+        ]
+      },
+      "workshop-game-settings-panel": {
+        "title": "Build a Game Settings Panel",
+        "intro": [
+          "In this workshop, you will practice styling checkboxes by building a game settings panel."
+        ]
+      },
+      "lab-feature-selection": {
+        "title": "Design a Feature Selection Page",
+        "intro": [
+          "In this lab, you'll build a feature selection page with custom-styled checkboxes.",
+          "You'll create feature cards with labels and checkboxes, then give custom styling to the checkboxes."
+        ]
+      },
+      "review-styling-forms": {
+        "title": "Styling Forms Review",
+        "intro": [
+          "Before you're quizzed on styling forms, you should review what you've learned.",
+          "Open up this page to review how to style form inputs, working with <code>appearance: none</code> and more."
+        ]
+      },
+      "quiz-styling-forms": {
+        "title": "Styling Forms Quiz",
+        "intro": [
+          "In this quiz, you will test your knowledge of how to style forms."
+        ]
+      }
+    }
+  },
+  "css-box-model": {
+    "title": "The Box Model",
+    "summary": [
+      "Master the CSS box model, spacing, and layout effects for precise designs."
+    ],
+    "intro": ["Learn how spacing, borders, and layout effects work together."],
+    "blocks": {
+      "lecture-working-with-css-transforms-overflow-and-filters": {
+        "title": "Working with CSS Transforms, Overflow, and Filters",
+        "intro": [
+          "In these lessons, you will learn about working with CSS transforms, overflow, and filters. You will also learn about the box model and how it works."
+        ]
+      },
+      "workshop-rothko-painting": {
+        "title": "Design a Rothko Painting",
+        "intro": [
+          "Every HTML element is its own box – with its own spacing and a border. This is called the Box Model.",
+          "In this workshop, you'll use CSS and the Box Model to create your own Rothko-style rectangular art pieces."
+        ]
+      },
+      "lab-confidential-email-page": {
+        "title": "Build a Confidential Email Page",
+        "intro": [
+          "In this lab, you'll create a web page using HTML and mask the content using CSS properties."
+        ]
+      },
+      "review-css-layout-and-effects": {
+        "title": "CSS Layouts and Effects Review",
+        "intro": [
+          "Before you are quizzed on CSS Layouts and Effects, you first need to review.",
+          "Open up this page to review concepts like the <code>transform</code> property, the box model, the <code>overflow</code> property and more."
+        ]
+      },
+      "quiz-css-layout-and-effects": {
+        "title": "CSS Layout and Effects Quiz",
+        "intro": [
+          "In this quiz, you will test your knowledge of the box model, transforms, filters, and overflow in CSS."
+        ]
+      }
+    }
+  },
+  "css-flexbox": {
+    "title": "Flexbox",
+    "summary": [
+      "Build responsive layouts using the Flexbox model and alignment tools."
+    ],
+    "intro": ["Use Flexbox to build responsive, aligned layouts."],
+    "blocks": {
+      "lecture-working-with-css-flexbox": {
+        "title": "Working with CSS Flexbox",
+        "intro": [
+          "In these lessons, you will learn how CSS flexbox works, its properties, and when you should use it."
+        ]
+      },
+      "workshop-flexbox-photo-gallery": {
+        "title": "Build a Flexbox Photo Gallery",
+        "intro": [
+          "In this workshop, you'll use Flexbox to build a responsive photo gallery webpage."
+        ]
+      },
+      "lab-pricing-plans-layout": {
+        "title": "Build a Pricing Plans Layout",
+        "intro": [
+          "In this lab, you'll create a pricing plans layout.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      },
+      "review-css-flexbox": {
+        "title": "CSS Flexbox Review",
+        "intro": [
+          "Before you're quizzed on CSS flexbox, you should review what you've learned.",
+          "Open up this page to review concepts like the <code>flex-direction</code>, <code>justify-content</code>, <code>align-items</code>, <code>flex-wrap</code> properties, and more."
+        ]
+      },
+      "quiz-css-flexbox": {
+        "title": "CSS Flexbox Quiz",
+        "intro": ["Test what you've learned on CSS flexbox with this quiz."]
+      }
+    }
+  },
+  "lab-page-of-playing-cards": {
+    "title": "Build a Page of Playing Cards",
+    "summary": [
+      "Create a multi-card layout to practice flexible CSS composition."
+    ],
+    "intro": ["Build a card-based layout and practice reusable styling."],
+    "blocks": {
+      "lab-page-of-playing-cards": {
+        "title": "Build a Page of Playing Cards",
+        "intro": [
+          "In this lab, you'll use flexbox to create a webpage of playing cards.",
+          "You'll practice aligning elements using flexbox properties like <code>flex-direction</code>, <code>justify-content</code>, <code>align-self</code>, and more."
+        ]
+      }
+    }
+  },
+  "css-typography": {
+    "title": "Typography",
+    "summary": [
+      "Learn how to style text for readability, hierarchy, and visual balance."
+    ],
+    "intro": ["Use typography to improve readability and visual hierarchy."],
+    "blocks": {
+      "lecture-working-with-css-fonts": {
+        "title": "Working with CSS Fonts",
+        "intro": [
+          "In these lessons, you will learn about typography and its best practices, fonts, and the <code>text-shadow</code> property."
+        ]
+      },
+      "workshop-nutritional-label": {
+        "title": "Build a Nutritional Label",
+        "intro": [
+          "Typography is the art of styling your text to be easily readable and suit its purpose.",
+          "In this workshop, you'll use typography to build a nutrition label webpage. You'll practice how to style text, adjust line height, and position your text using CSS."
+        ]
+      },
+      "lab-newspaper-article": {
+        "title": "Build a Newspaper Article",
+        "intro": [
+          "In this lab, you'll build a newspaper article page using HTML and CSS.",
+          "You'll style the fonts using properties like <code>font-family</code>, <code>font-size</code>, <code>font-weight</code>, and more."
+        ]
+      },
+      "review-css-typography": {
+        "title": "CSS Typography Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of typography, you should review what you've learned.",
+          "Open up this page to review concepts like web safe fonts, the <code>font-family</code> property and more."
+        ]
+      },
+      "quiz-css-typography": {
+        "title": "CSS Typography Quiz",
+        "intro": ["Test your knowledge of typography with this quiz."]
+      }
+    }
+  },
+  "css-and-accessibility": {
+    "title": "Accessibility",
+    "summary": [
+      "Apply CSS techniques that support accessible and inclusive interfaces."
+    ],
+    "intro": ["Design with accessibility in mind while styling UI elements."],
+    "blocks": {
+      "lecture-best-practices-for-accessibility-and-css": {
+        "title": "Best Practices for Accessibility and CSS",
+        "intro": [
+          "In these lessons, you will learn about best practices for accessibility in CSS, and the tools for checking good color contrast on websites."
+        ]
+      },
+      "workshop-accessibility-quiz": {
+        "title": "Build a Quiz Webpage",
+        "intro": [
+          "Accessibility is the process of making your webpages usable for everyone, including people with disabilities.",
+          "In this workshop, you'll build a quiz webpage. You'll learn accessibility tools such as keyboard shortcuts, ARIA attributes, and design best practices."
+        ]
+      },
+      "lab-tribute-page": {
+        "title": "Build a Tribute Page",
+        "intro": [
+          "In this lab, you'll build a tribute page for a subject of your choosing, fictional or real."
+        ]
+      },
+      "review-css-accessibility": {
+        "title": "CSS Accessibility Review",
+        "intro": [
+          "Before you're quizzed on CSS and accessibility, you should review what you've learned.",
+          "Open up this page to review concepts like color contrast tools and accessibility best practices."
+        ]
+      },
+      "quiz-css-accessibility": {
+        "title": "CSS Accessibility Quiz",
+        "intro": [
+          "In this quiz, you'll test what you've learned about making your webpages accessible with CSS."
+        ]
+      }
+    }
+  },
+  "css-positioning": {
+    "title": "Positioning",
+    "summary": [
+      "Use positioning and floats to control layout and element flow."
+    ],
+    "intro": ["Control layout with floats and CSS positioning tools."],
+    "blocks": {
+      "lecture-understanding-how-to-work-with-floats-and-positioning-in-css": {
+        "title": "Understanding How to Work with Floats and Positioning in CSS",
+        "intro": [
+          "In these lessons, you will learn how to use CSS positioning and floats. You will learn about <code>absolute</code>, <code>relative</code>, <code>fixed</code>, and <code>sticky</code> positioning. You will also use the <code>z-index</code> property."
+        ]
+      },
+      "workshop-cat-painting": {
+        "title": "Build a Cat Painting",
+        "intro": [
+          "Mastering CSS positioning is essential for creating visually appealing and responsive web layouts.",
+          "In this workshop, you will build a cat painting. You'll learn about how to work with absolute positioning, the <code>z-index</code> property, and the <code>transform</code> property."
+        ]
+      },
+      "lab-house-painting": {
+        "title": "Build a House Painting",
+        "intro": [
+          "In this lab, you'll build a house painting using CSS.",
+          "You'll design individual elements of the house and position them using CSS properties like <code>position</code>, <code>top</code>, <code>left</code>, and more."
+        ]
+      },
+      "review-css-positioning": {
+        "title": "CSS Positioning Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS positioning, you should review what you've learned.",
+          "Open up this page to review concepts like floats, relative positioning, absolute positioning and more."
+        ]
+      },
+      "quiz-css-positioning": {
+        "title": "CSS Positioning Quiz",
+        "intro": ["Test your knowledge of CSS positioning with this quiz."]
+      }
+    }
+  },
+  "attribute-selectors": {
+    "title": "Attribute Selectors",
+    "summary": ["Target elements precisely with CSS attribute selectors."],
+    "intro": ["Select elements with precision using attribute selectors."],
+    "blocks": {
+      "lecture-working-with-attribute-selectors": {
+        "title": "Working with Attribute Selectors",
+        "intro": [
+          "In these lessons, you will learn about attribute selectors and how to use them to target elements like links and lists."
+        ]
+      },
+      "workshop-balance-sheet": {
+        "title": "Build a Balance Sheet",
+        "intro": [
+          "In this workshop, you'll build a balance sheet using pseudo selectors. You'll learn how to change the style of an element when you hover over it with your mouse, and trigger other events on your webpage."
+        ]
+      },
+      "review-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS attribute selectors, you should review what you've learned about them.",
+          "Open up this page to review concepts like how to work with different attribute selectors that target links with the <code>href</code> and <code>title</code> attributes."
+        ]
+      },
+      "quiz-css-attribute-selectors": {
+        "title": "CSS Attribute Selectors Quiz",
+        "intro": [
+          "Test your knowledge of CSS attribute selectors with this quiz."
+        ]
+      }
+    }
+  },
+  "lab-book-inventory-app": {
+    "title": "Build a Book Inventory App",
+    "summary": ["Build a structured layout for managing a book inventory."],
+    "intro": ["Create a structured UI for a book inventory layout."],
+    "blocks": {
+      "lab-book-inventory-app": {
+        "title": "Build a Book Inventory App",
+        "intro": [
+          "In this lab, you'll create a book inventory app.",
+          "You'll practice CSS attribute selectors like <code>[attribute]</code>, <code>[attribute=value]</code>, <code>[attribute~=value]</code>, and more."
+        ]
+      }
+    }
+  },
+  "responsive-design": {
+    "title": "Responsive Design",
+    "summary": [
+      "Learn responsive design principles and build layouts that adapt to any screen."
+    ],
+    "intro": ["Make layouts adapt to different screen sizes and devices."],
+    "blocks": {
+      "lecture-best-practices-for-responsive-web-design": {
+        "title": "Best Practices for Responsive Web Design",
+        "intro": [
+          "In these lessons, you will learn about the best practices for responsive web design, the roles concepts like grid, flexbox, media queries, and media breakpoints play in responsive design, and more."
+        ]
+      },
+      "workshop-piano": {
+        "title": "Design a Piano",
+        "intro": [
+          "Responsive Design tells your webpage how it should look on different-sized screens.",
+          "In this workshop, you'll use CSS and responsive design to code a piano. You'll also practice media queries and pseudo selectors."
+        ]
+      },
+      "review-responsive-web-design": {
+        "title": "Responsive Web Design Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of responsive design, you should review what you've learned.",
+          "Open up this page to review concepts like media queries, media breakpoints and mobile first approach design."
+        ]
+      },
+      "quiz-responsive-web-design": {
+        "title": "Responsive Web Design Quiz",
+        "intro": [
+          "Test what you've learned about making your webpages responsive with this quiz."
+        ]
+      }
+    }
+  },
+  "lab-technical-documentation-page": {
+    "title": "Build a Technical Documentation Page",
+    "summary": [
+      "Create a documentation page and practice responsive structure and layout."
+    ],
+    "intro": [
+      "Build a documentation page with clear structure and navigation."
+    ],
+    "blocks": {
+      "lab-technical-documentation-page": {
+        "title": "Build a Technical Documentation Page",
+        "intro": [
+          "In this lab, you'll build a technical documentation page to serve as instruction or reference for a topic.",
+          "You'll also practice media queries to create a responsive design."
+        ]
+      }
+    }
+  },
+  "css-variables": {
+    "title": "Variables",
+    "summary": ["Use CSS variables to build reusable, theme-friendly styles."],
+    "intro": ["Create maintainable styles using CSS custom properties."],
+    "blocks": {
+      "lecture-working-with-css-variables": {
+        "title": "Working with CSS Variables",
+        "intro": [
+          "In these lessons, you will learn how to define and use custom properties (also known as CSS variables). You will also learn about the <code>@property</code> rule and how it works."
+        ]
+      },
+      "workshop-city-skyline": {
+        "title": "Build a City Skyline",
+        "intro": [
+          "CSS variables help you organize your styles and reuse them.",
+          "In this workshop, you'll build a city skyline. You'll practice how to configure CSS variables so you can reuse them whenever you want."
+        ]
+      },
+      "lab-availability-table": {
+        "title": "Build an Availability Table",
+        "intro": [
+          "For this lab, you'll create an availability table that shows the availability of people for a meeting.",
+          "You'll practice using CSS variables to store and reuse colors, fonts, and other styles."
+        ]
+      },
+      "review-css-variables": {
+        "title": "CSS Variables Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS variables, you should review what you've learned.",
+          "Open up this page to review how to work with CSS custom properties (CSS variables) and the <code>@property</code> rule."
+        ]
+      },
+      "quiz-css-variables": {
+        "title": "CSS Variables Quiz",
+        "intro": ["Test your knowledge of CSS variables with this quiz."]
+      }
+    }
+  },
+  "css-grid": {
+    "title": "Grid",
+    "summary": ["Design complex layouts using the CSS Grid system."],
+    "intro": ["Build multi-dimensional layouts with CSS Grid."],
+    "blocks": {
+      "lecture-working-with-css-grid": {
+        "title": "Working with CSS Grid",
+        "intro": [
+          "In these lessons, you will learn about CSS grid, its several properties and how to use them, and how CSS grid differs from flexbox."
+        ]
+      },
+      "workshop-magazine": {
+        "title": "Build a Magazine",
+        "intro": [
+          "CSS Grid gives you control over the rows and columns of your webpage design.",
+          "In this workshop, you'll build a magazine article. You'll practice how to use CSS Grid, including concepts like grid rows and grid columns."
+        ]
+      },
+      "lab-newspaper-layout": {
+        "title": "Design a Newspaper Layout",
+        "intro": [
+          "In this lab, you will design a newspaper layout using CSS Grid, including concepts like grid rows and grid columns."
+        ]
+      },
+      "lecture-debugging-css": {
+        "title": "Debugging CSS",
+        "intro": [
+          "In this lesson, you'll learn how to debug CSS using your browser's developer tools and CSS validators."
+        ]
+      },
+      "review-css-grid": {
+        "title": "CSS Grid Review",
+        "intro": [
+          "Before you're quizzed on the fundamentals of CSS Grid, you should review what you've learned.",
+          "Open up this page to review how to work with the different CSS Grid properties like <code>grid-template-columns</code>, <code>grid-gap</code> and more."
+        ]
+      },
+      "quiz-css-grid": {
+        "title": "CSS Grid Quiz",
+        "intro": ["Test your knowledge of CSS Grid with this quiz."]
+      }
+    }
+  },
+  "lab-product-landing-page": {
+    "title": "Build a Product Landing Page",
+    "summary": [
+      "Build a complete landing page and apply layout, typography, and responsive design."
+    ],
+    "intro": [
+      "Create a product landing page with cohesive layout and styling."
+    ],
+    "blocks": {
+      "lab-product-landing-page": {
+        "title": "Build a Product Landing Page",
+        "intro": [
+          "In this project, you'll build a product landing page to market a product of your choice."
+        ]
+      }
+    }
+  },
+  "css-animations": {
+    "title": "Animations",
+    "summary": ["Create engaging UI motion with accessible CSS animations."],
+    "intro": [
+      "Add motion with CSS animations while keeping usability in mind."
+    ],
+    "blocks": {
+      "lecture-animations-and-accessibility": {
+        "title": "Animations and Accessibility",
+        "intro": [
+          "In these lessons, you will learn about CSS animations and their accessibility concerns. You will also learn how <code>prefers-reduced-motion</code> can help address those accessibility concerns."
+        ]
+      },
+      "workshop-ferris-wheel": {
+        "title": "Build an Animated Ferris Wheel",
+        "intro": [
+          "You can use CSS animation to draw attention to specific sections of your webpage and make it more engaging.",
+          "In this workshop, you'll build a Ferris wheel. You'll practice how to use CSS to animate elements, transform them, and adjust their speed."
+        ]
+      },
+      "lab-moon-orbit": {
+        "title": "Build a Moon Orbit",
+        "intro": [
+          "In this lab, you'll create an animation of the moon orbiting the earth.",
+          "You'll practice animation properties like <code>animation-name</code>, <code>animation-duration</code>, <code>animation-timing-function</code>, and more."
+        ]
+      },
+      "workshop-flappy-penguin": {
+        "title": "Build a Flappy Penguin",
+        "intro": [
+          "You can transform HTML elements to create appealing designs that draw your reader's eye. You can use transforms to rotate elements, scale them, and more.",
+          "In this workshop, you'll build a penguin. You'll use CSS transforms to position and resize the parts of your penguin, create a background, and animate your work."
+        ]
+      },
+      "lab-personal-portfolio": {
+        "title": "Build a Personal Portfolio",
+        "intro": [
+          "In this project, you'll build your own personal portfolio page."
+        ]
+      },
+      "review-css-animations": {
+        "title": "CSS Animations Review",
+        "intro": [
+          "Before you're quizzed on working with CSS animations, you should review what you've learned about them.",
+          "Open up this page to review concepts including <code>prefers-reduced-motion</code>, the <code>@keyframes</code> rule and more."
+        ]
+      },
+      "quiz-css-animations": {
+        "title": "CSS Animations Quiz",
+        "intro": ["Test your knowledge of CSS animations with this quiz."]
       }
     }
   },
@@ -6150,7 +7389,7 @@
     }
   },
   "full-stack-open": {
-    "title": "Full Stack Open",
+    "title": "Full-Stack Open",
     "intro": ["A good intro is to be added here."],
     "blocks": {
       "cat-blog-page": {

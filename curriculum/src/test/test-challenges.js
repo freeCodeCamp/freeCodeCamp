@@ -16,7 +16,7 @@ import { challengeSchemaValidator } from '../../schema/challenge-schema.js';
 import { curriculumSchemaValidator } from '../../schema/curriculum-schema.js';
 import { validateMetaSchema } from '../../schema/meta-schema.js';
 import { getBlockStructure } from '../file-handler.js';
-import { FCC_CHALLENGE_ID, testedLang } from '../config.js';
+import { FCC_CHALLENGE_ID, CURRICULUM_LOCALE } from '../config.js';
 import ChallengeTitles from './utils/challenge-titles.js';
 import MongoIds from './utils/mongo-ids.js';
 import createPseudoWorker from './utils/pseudo-worker.js';
@@ -79,8 +79,7 @@ async function newPageContext() {
 }
 
 export async function defineTestsForBlock(testFilter) {
-  const lang = testedLang();
-  const challenges = await getChallenges(lang, testFilter);
+  const challenges = await getChallenges(CURRICULUM_LOCALE, testFilter);
   const nonCertificationChallenges = challenges.filter(
     ({ challengeType }) => challengeType !== 7
   );
@@ -107,7 +106,7 @@ export async function defineTestsForBlock(testFilter) {
     }
   }
 
-  const challengeData = { meta, challenges, lang };
+  const challengeData = { meta, challenges, lang: CURRICULUM_LOCALE };
 
   describe('Check challenges', async () => {
     beforeAll(async () => {
@@ -218,6 +217,13 @@ async function populateTestsForLang({ lang, challenges, meta }) {
               it('Check tests is not implemented.', () => {});
               return;
             }
+
+            it('Has challenge files', function () {
+              expect(
+                challenge.challengeFiles,
+                `challengeFiles should exist. Check that the challenge has a "seed" section in the markdown file.`
+              ).toBeDefined();
+            });
 
             // The python tests are (currently) slow, so we give them more time.
             const timePerTest =

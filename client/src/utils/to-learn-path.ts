@@ -1,5 +1,3 @@
-import { withPrefix } from 'gatsby';
-
 interface ToLearnPathKwargs {
   block?: string;
   challenge?: string;
@@ -26,5 +24,5 @@ export default function toLearnPath({
     }
 
     return path;
-  }, withPrefix('/learn'));
+  }, '/learn');
 }

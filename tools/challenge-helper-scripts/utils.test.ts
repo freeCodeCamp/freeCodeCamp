@@ -25,7 +25,11 @@ vi.mock('gray-matter', () => {
 
 vi.mock('bson', () => {
   return {
-    ObjectId: vi.fn(() => ({ toString: () => mockChallengeId }))
+    ObjectId: vi.fn().mockImplementation(function () {
+      return {
+        toString: () => mockChallengeId
+      };
+    })
   };
 });
 

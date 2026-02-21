@@ -1,11 +1,11 @@
 {
-  "name": "Front End Libraries Review",
+  "name": "Front-End Libraries Review",
   "blockLabel": "review",
   "blockLayout": "link",
   "isUpcomingChange": true,
   "dashedName": "review-front-end-libraries",
   "challengeOrder": [
-    { "id": "6724e2dbf723fe1c8883cc69", "title": "Front End Libraries Review" }
+    { "id": "6724e2dbf723fe1c8883cc69", "title": "Front-End Libraries Review" }
   ],
   "helpCategory": "HTML-CSS"
 }

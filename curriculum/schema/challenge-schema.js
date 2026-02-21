@@ -1,21 +1,20 @@
-const Joi = require('joi');
-Joi.objectId = require('joi-objectid')(Joi);
+import Joi from 'joi';
+import joiObjectId from 'joi-objectid';
 
-const {
-  challengeTypes
-} = require('@freecodecamp/shared/config/challenge-types');
-const {
+Joi.objectId = joiObjectId(Joi);
+
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
+import {
   chapterBasedSuperBlocks,
-  catalogSuperBlocks,
   languageSuperBlocks,
   SuperBlocks
-} = require('@freecodecamp/shared/config/curriculum');
-const {
+} from '@freecodecamp/shared/config/curriculum';
+import {
   availableCharacters,
   availableBackgrounds,
   availableAudios,
   availableAlignments
-} = require('./scene-assets');
+} from './scene-assets.js';
 
 const slugRE = new RegExp('^[a-z0-9-]+$');
 const slugWithSlashRE = new RegExp('^[a-z0-9-/]+$');
@@ -117,7 +116,20 @@ const quizJoi = Joi.object().keys({
           .length(3)
           .required()
           .unique(),
-        answer: Joi.string().required()
+        answer: Joi.string().required(),
+        audioData: Joi.object().keys({
+          audio: Joi.object({
+            filename: Joi.string().required(),
+            startTimestamp: Joi.number(),
+            finishTimestamp: Joi.number()
+          }),
+          transcript: Joi.array().items(
+            Joi.object({
+              character: Joi.string().required(),
+              text: Joi.string().required()
+            })
+          )
+        })
       })
     )
     .custom((value, helpers) => {
@@ -131,11 +143,11 @@ const quizJoi = Joi.object().keys({
     .required()
 });
 
-const schema = Joi.object().keys({
+export const schema = Joi.object().keys({
   block: Joi.string().regex(slugRE).required(),
   blockId: Joi.objectId(),
   blockLabel: Joi.when('superBlock', {
-    is: [...chapterBasedSuperBlocks, ...catalogSuperBlocks],
+    is: [...chapterBasedSuperBlocks],
     then: Joi.valid(
       'workshop',
       'lab',
@@ -384,6 +396,6 @@ const schema = Joi.object().keys({
   usesMultifileEditor: Joi.boolean()
 });
 
-exports.challengeSchemaValidator = () => {
+export const challengeSchemaValidator = () => {
   return challenge => schema.validate(challenge);
 };

@@ -352,10 +352,27 @@ type Quiz {
   questions: [QuizQuestion]
 }
 
+type QuizAudio {
+  filename: String
+  startTimestamp: Float
+  finishTimestamp: Float
+}
+
+type QuizTranscriptLine {
+  character: String
+  text: String
+}
+
+type QuizAudioData {
+  audio: QuizAudio
+  transcript: [QuizTranscriptLine]
+}
+
 type QuizQuestion {
   text: String
   distractors: [String]
   answer: String
+  audioData: QuizAudioData
 }
 
 type RequiredResource {
