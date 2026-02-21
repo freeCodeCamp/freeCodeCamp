@@ -10,7 +10,7 @@ import { API_LOCATION } from '../../utils/env.js';
 import { getRedirectParams } from '../../utils/redirection.js';
 import { isRestricted } from '../helpers/is-restricted.js';
 
-type WaitMesssageArgs = {
+type WaitMessageArgs = {
   sentAt: Date | null;
   now?: Date;
 };
@@ -24,7 +24,7 @@ type WaitMesssageArgs = {
  * @param param.now The current date.
  * @returns The message to display to the user.
  */
-export function getWaitMessage({ sentAt, now = new Date() }: WaitMesssageArgs) {
+export function getWaitMessage({ sentAt, now = new Date() }: WaitMessageArgs) {
   const minutesLeft = getWaitPeriod({ sentAt, now });
   if (minutesLeft <= 0) return null;
 
@@ -32,7 +32,7 @@ export function getWaitMessage({ sentAt, now = new Date() }: WaitMesssageArgs) {
   return `Please wait ${timeToWait} to resend an authentication link.`;
 }
 
-function getWaitPeriod({ sentAt, now }: Required<WaitMesssageArgs>) {
+function getWaitPeriod({ sentAt, now }: Required<WaitMessageArgs>) {
   if (sentAt == null) return 0;
   return 5 - differenceInMinutes(now, sentAt);
 }
@@ -47,7 +47,7 @@ export const isPictureWithProtocol = (picture?: string): boolean => {
   if (!picture) return false;
   try {
     const url = new URL(picture);
-    return url.protocol == 'http:' || url.protocol == 'https:';
+    return url.protocol === 'http:' || url.protocol === 'https:';
   } catch {
     return false;
   }
@@ -76,7 +76,12 @@ const commonImageExtensions = [
 
 const validateImageExtension = (picture?: string): boolean => {
   if (!picture) return true;
-  return commonImageExtensions.some(ext => picture.includes(`.${ext}`));
+  try {
+    const { pathname } = new URL(picture);
+    return commonImageExtensions.some(ext => pathname.endsWith(`.${ext}`));
+  } catch {
+    return false;
+  }
 };
 
 /**
@@ -483,8 +488,8 @@ ${isLinkSentWithinLimitTTL}`
           newUsername === oldUsername
             ? false
             : await fastify.prisma.user.count({
-                where: { username: newUsername }
-              });
+              where: { username: newUsername }
+            });
 
         if (usernameTaken || isRestricted(newUsername)) {
           logger.warn(`Username ${newUsername} is taken or restricted`);
