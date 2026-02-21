@@ -53,10 +53,22 @@ function MultipleChoiceQuestions({
     openSpeakingModal();
   };
 
-  const constructAudioUrl = (audioId?: string): string | undefined =>
-    audioId
-      ? `https://cdn.freecodecamp.org/curriculum/english/animation-assets/sounds/${audioId}`
-      : undefined;
+  const constructAudioUrl = (audioId?: string): string | undefined => {
+    if (!audioId) return undefined;
+
+    const superBlockToPath: Partial<Record<SuperBlocks, string>> = {
+      [SuperBlocks.A2English]: 'en-a2',
+      [SuperBlocks.B1English]: 'en-b1',
+      [SuperBlocks.A1Spanish]: 'es-a1',
+      [SuperBlocks.A2Spanish]: 'es-a2',
+      [SuperBlocks.A1Chinese]: 'zh-a1',
+      [SuperBlocks.A2Chinese]: 'zh-a2'
+    };
+
+    const path = superBlockToPath[superBlock];
+    if (!path) return undefined;
+    return `https://cdn.freecodecamp.org/curriculum/english/speaking-practice/${path}/${audioId}`;
+  };
 
   const getAudioUrl = (
     questionIndex: number,
