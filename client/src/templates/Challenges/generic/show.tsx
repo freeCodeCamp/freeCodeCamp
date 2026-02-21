@@ -30,6 +30,7 @@ import {
 } from '../redux/actions';
 import { isChallengeCompletedSelector } from '../redux/selectors';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import Scene from '../components/scene/scene';
 import MultipleChoiceQuestions from '../components/multiple-choice-questions';
 import ChallengeExplanation from '../components/challenge-explanation';
@@ -131,6 +132,8 @@ const ShowGeneric = ({
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
   )} - ${title}`;
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     initTests(tests);

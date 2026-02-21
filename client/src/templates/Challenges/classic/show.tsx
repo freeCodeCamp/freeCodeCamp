@@ -14,6 +14,7 @@ import { useFeature } from '@growthbook/growthbook-react';
 import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import LearnLayout from '../../../components/layouts/learn';
 import { MAX_MOBILE_WIDTH } from '../../../../config/misc';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 
 import type {
   ChallengeFiles,
@@ -317,6 +318,8 @@ function ShowClassic({
 
   // Independent lower jaw is only enabled for desktop workshops.
   const showIndependentLowerJaw = hasEditableBoundaries && !isMobile;
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     if (isPreFetchEnabled && envData.clientLocale === 'espanol') {

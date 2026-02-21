@@ -43,6 +43,7 @@ import {
 } from '../../../redux/prop-types';
 import ProjectToolPanel from '../projects/tool-panel';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import SolutionForm from '../projects/solution-form';
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { SuperBlocks } from '@freecodecamp/shared/config/curriculum';
@@ -163,6 +164,8 @@ function ShowCodeAlly({
   const isCompleted = completedChallenges.some(
     challenge => challenge.id === challengeId
   );
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     initTests(tests);

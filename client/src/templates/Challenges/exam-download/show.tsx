@@ -34,6 +34,7 @@ import { isChallengeCompletedSelector } from '../redux/selectors';
 import envData from '../../../../config/env.json';
 import { Attempts } from './attempts';
 import ExamTokenControls from './exam-token-controls';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 
 import './show.css';
 
@@ -178,6 +179,8 @@ function ShowExamDownload({
   const userOSState = useDetectOS();
 
   const { t } = useTranslation();
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     async function checkLatestVersion() {

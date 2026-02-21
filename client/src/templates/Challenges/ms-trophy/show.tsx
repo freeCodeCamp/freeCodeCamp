@@ -16,6 +16,7 @@ import Hotkeys from '../components/hotkeys';
 import ChallengeTitle from '../components/challenge-title';
 import CompletionModal from '../components/completion-modal';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import HelpModal from '../components/help-modal';
 import {
   challengeMounted,
@@ -92,6 +93,9 @@ function MsTrophy(props: MsTrophyProps) {
       }
     }
   } = props;
+
+  useFetchAllCurriculumData();
+
   useEffect(() => {
     const {
       challengeMounted,

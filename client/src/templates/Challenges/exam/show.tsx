@@ -55,6 +55,7 @@ import {
 import { FlashMessages } from '../../../components/Flash/redux/flash-messages';
 import { formatSecondsToTime } from '../../../utils/format-seconds';
 import { getChallengePaths } from '../utils/challenge-paths';
+import { useFetchAllCurriculumData } from '../utils/fetch-all-curriculum-data';
 import ExitExamModal from './components/exit-exam-modal';
 import FinishExamModal from './components/finish-exam-modal';
 import ExamResults from './components/exam-results';
@@ -179,6 +180,8 @@ function ShowExam(props: ShowExamProps) {
   const [userExamQuestions, setUserExamQuestions] = useState<
     UserExamQuestion[]
   >([]);
+
+  useFetchAllCurriculumData();
 
   useEffect(() => {
     const {
