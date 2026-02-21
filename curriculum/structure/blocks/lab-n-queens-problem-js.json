@@ -1,0 +1,15 @@
+{
+  "name": "Implement the N-Queens Problem",
+  "isUpcomingChange": true,
+  "dashedName": "lab-n-queens-problem-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69860157f7fce39f9df399a3",
+      "title": "Implement the N-Queens Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
