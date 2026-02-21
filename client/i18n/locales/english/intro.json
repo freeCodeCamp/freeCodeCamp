@@ -3680,6 +3680,12 @@
           "Review the Front-End Libraries concepts to prepare for the upcoming quiz."
         ]
       },
+      "workshop-fortune-teller-app": {
+        "title": "Build a Fortune Telling App",
+        "intro": [
+          "In this workshop, you will continue to practice working with TypeScript fundamentals by building a fortune telling app."
+        ]
+      },
       "exam-front-end-development-libraries-certification": {
         "title": "Front-End Development Libraries Certification Exam",
         "intro": [
