@@ -3663,6 +3663,12 @@
           "In this lesson, you will learn about TypeScript configuration files and how to use them."
         ]
       },
+      "lab-digital-pet-game": {
+        "title": "Build a Digital Pet Game",
+        "intro": [
+          "For this lab, you will use TypeScript and React to build a digital pet game."
+        ]
+      },
       "review-typescript": {
         "title": "Typescript Review",
         "intro": [
