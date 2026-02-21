@@ -10,7 +10,7 @@ const requiredCerts = [
     slug: '/learn/javascript-v9/'
   },
   {
-    text: 'Frontend Development Libraries Certification',
+    text: 'Front-End Development Libraries Certification',
     slug: '/learn/front-end-development-libraries-v9/'
   },
   {
@@ -22,7 +22,7 @@ const requiredCerts = [
     slug: '/learn/relational-databases-v9/'
   },
   {
-    text: 'Backend Development and APIs Certification',
+    text: 'Back-End Development and APIs Certification',
     slug: '/learn/back-end-development-and-apis-v9/'
   }
 ];

@@ -44,7 +44,7 @@ function renderCertifiedEmail({
 }) {
   const certifiedEmailTemplate = `Hi ${name || username},
 
-Congratulations on completing the Certified Full Stack Developer Curriculum!
+Congratulations on completing the Certified Full-Stack Developer Curriculum!
 
 All of your certifications are now live at: https://www.freecodecamp.org/${username}
 
@@ -380,7 +380,7 @@ export const protectedCertificateRoutes: FastifyPluginCallbackTypebox = (
           to: email,
           from: 'quincy@freecodecamp.org',
           subject:
-            'Congratulations on completing the Certified Full Stack Developer Curriculum!',
+            'Congratulations on completing the Certified Full-Stack Developer Curriculum!',
           text: renderCertifiedEmail({
             username: updatedUser.username,
             // Safety: `user.name` is required to exist earlier. TODO: Assert
