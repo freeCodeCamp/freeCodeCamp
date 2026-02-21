@@ -1,0 +1,30 @@
+{
+  "name": "Introduction to Linked Lists",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-linked-lists",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dd5a27932b3cc4b19c930",
+      "title": "What is a Linked List?"
+    },
+    {
+      "id": "698dd6627932b3cc4b19c931",
+      "title": "Adding Nodes to a Linked List"
+    },
+    {
+      "id": "698dd7f67932b3cc4b19c932",
+      "title": "Implementing Search"
+    },
+    {
+      "id": "698dd8b47932b3cc4b19c933",
+      "title": "Inserting a Node"
+    },
+    {
+      "id": "698dd9817932b3cc4b19c934",
+      "title": "Removing a Node"
+    }
+  ]
+}

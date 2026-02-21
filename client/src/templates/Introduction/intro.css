@@ -47,6 +47,7 @@
 }
 
 .block-label-javascript,
+.block-label-computer-science,
 .block-label-review {
   border-color: var(--purple-color);
   color: var(--purple-color);

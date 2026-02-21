@@ -1,0 +1,30 @@
+{
+  "name": "Searching Names using Sorting and Searching Algorithms",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-sorting-searching-algorithms",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dea367932b3cc4b19c949",
+      "title": "Linear Search"
+    },
+    {
+      "id": "698dea3b7932b3cc4b19c94a",
+      "title": "Sorting Names"
+    },
+    {
+      "id": "698dea3f7932b3cc4b19c94b",
+      "title": "Binary Search"
+    },
+    {
+      "id": "698dea447932b3cc4b19c94c",
+      "title": "Timing Our Search Scripts"
+    },
+    {
+      "id": "698dea4b7932b3cc4b19c94d",
+      "title": "Big O Runtime of Search Algorithms"
+    }
+  ]
+}

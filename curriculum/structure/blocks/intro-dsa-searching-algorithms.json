@@ -1,0 +1,34 @@
+{
+  "name": "Searching Algorithms",
+  "blockLabel": "lecture",
+  "blockLayout": "challenge-list",
+  "isUpcomingChange": false,
+  "dashedName": "intro-dsa-searching-algorithms",
+  "helpCategory": "Backend Development",
+  "challengeOrder": [
+    {
+      "id": "698dbbcf7932b3cc4b19c91a",
+      "title": "Introduction"
+    },
+    {
+      "id": "698dbbd47932b3cc4b19c91b",
+      "title": "What is an Algorithm?"
+    },
+    {
+      "id": "698dbdec7932b3cc4b19c91c",
+      "title": "Guess the Number"
+    },
+    {
+      "id": "698dbf2b7932b3cc4b19c91d",
+      "title": "Defining an Algorithm"
+    },
+    {
+      "id": "698dc0277932b3cc4b19c91e",
+      "title": "Evaluating Linear Search"
+    },
+    {
+      "id": "698dc20d7932b3cc4b19c91f",
+      "title": "Evaluating Binary Search"
+    }
+  ]
+}

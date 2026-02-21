@@ -81,6 +81,7 @@ const iconMap = {
   [SuperBlocks.LabProductLandingPage]: Code,
   [SuperBlocks.CssAnimations]: Code,
   [SuperBlocks.LearnPythonForBeginners]: PythonIcon,
+  [SuperBlocks.IntroductionToAlgorithmsAndDataStructures]: Code,
   [SuperBlocks.RespWebDesignV9]: ResponsiveDesign,
   [SuperBlocks.JsV9]: JavaScriptIcon,
   [SuperBlocks.FrontEndDevLibsV9]: ReactIcon,
