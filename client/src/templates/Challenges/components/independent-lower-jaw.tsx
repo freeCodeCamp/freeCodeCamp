@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { createSelector } from 'reselect';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@freecodecamp/ui';
+import { challengeTypes } from '@freecodecamp/shared/config/challenge-types';
 import {
   completedChallengesIdsSelector,
   isSignedInSelector
@@ -12,10 +13,17 @@ import {
   challengeMetaSelector,
   challengeTestsSelector,
   completedPercentageSelector,
-  currentBlockIdsSelector
+  currentBlockIdsSelector,
+  pythonPreviewRunningSelector
 } from '../redux/selectors';
 import { apiLocation } from '../../../../config/env.json';
-import { openModal, submitChallenge, executeChallenge } from '../redux/actions';
+import {
+  openModal,
+  submitChallenge,
+  executeChallenge,
+  runPythonPreview,
+  cancelPythonPreview
+} from '../redux/actions';
 import Help from '../../../assets/icons/help';
 import callGA from '../../../analytics/call-ga';
 import { Share } from '../../../components/share';
@@ -24,23 +32,27 @@ import './independent-lower-jaw.css';
 import Reset from '../../../assets/icons/reset';
 
 const mapStateToProps = createSelector(
-  challengeTestsSelector,
-  isSignedInSelector,
   challengeMetaSelector,
+  challengeTestsSelector,
+  pythonPreviewRunningSelector,
+  isSignedInSelector,
   completedPercentageSelector,
   completedChallengesIdsSelector,
   currentBlockIdsSelector,
   (
-    tests: Test[],
-    isSignedIn: boolean,
     challengeMeta: ChallengeMeta,
+    tests: Test[],
+    isPythonPreviewRunning: boolean,
+    isSignedIn: boolean,
     completedPercent: number,
     completedChallengeIds: string[],
     currentBlockIds: string[]
   ) => ({
-    tests,
-    isSignedIn,
     challengeMeta,
+    challengeType: challengeMeta.challengeType,
+    tests,
+    isPythonPreviewRunning,
+    isSignedIn,
     completedPercent,
     completedChallengeIds,
     currentBlockIds
@@ -51,7 +63,9 @@ const mapDispatchToProps = {
   openHelpModal: () => openModal('help'),
   openResetModal: () => openModal('reset'),
   executeChallenge,
-  submitChallenge
+  submitChallenge,
+  runPythonPreview,
+  cancelPythonPreview
 };
 
 interface IndependentLowerJawProps {
@@ -59,6 +73,10 @@ interface IndependentLowerJawProps {
   openResetModal: () => void;
   executeChallenge: () => void;
   submitChallenge: () => void;
+  runPythonPreview: () => void;
+  cancelPythonPreview: () => void;
+  challengeType?: number;
+  isPythonPreviewRunning: boolean;
   tests: Test[];
   isSignedIn: boolean;
   challengeMeta: ChallengeMeta;
@@ -71,6 +89,10 @@ export function IndependentLowerJaw({
   openResetModal,
   executeChallenge,
   submitChallenge,
+  runPythonPreview,
+  cancelPythonPreview,
+  challengeType,
+  isPythonPreviewRunning,
   tests,
   isSignedIn,
   challengeMeta,
@@ -127,6 +149,11 @@ export function IndependentLowerJaw({
   const checkButtonText = isMacOS
     ? t('buttons.command-enter')
     : t('buttons.ctrl-enter');
+  const isPythonChallenge =
+    challengeType === challengeTypes.python ||
+    challengeType === challengeTypes.multifilePythonCertProject ||
+    challengeType === challengeTypes.pyLab ||
+    challengeType === challengeTypes.dailyChallengePy;
 
   return (
     <div
@@ -208,17 +235,35 @@ export function IndependentLowerJaw({
               </span>
             </Button>
           ) : (
-            <button
-              type='button'
-              className='btn-cta tooltip'
-              data-playwright-test-label='independentLowerJaw-check-button'
-              onClick={handleCheckButtonClick}
-            >
-              {t('buttons.check-code')}
-              <span className='tooltiptext left-tooltip '>
-                {checkButtonText}
-              </span>
-            </button>
+            <div className='independent-check-actions'>
+              <button
+                type='button'
+                className='btn-cta tooltip'
+                data-playwright-test-label='independentLowerJaw-check-button'
+                onClick={handleCheckButtonClick}
+              >
+                {t('buttons.check-code')}
+                <span className='tooltiptext left-tooltip '>
+                  {checkButtonText}
+                </span>
+              </button>
+              {isPythonChallenge &&
+                (isPythonPreviewRunning ? (
+                  <Button
+                    data-playwright-test-label='independentLowerJaw-python-cancel-button'
+                    onClick={cancelPythonPreview}
+                  >
+                    {t('buttons.cancel')}
+                  </Button>
+                ) : (
+                  <Button
+                    data-playwright-test-label='independentLowerJaw-python-run-button'
+                    onClick={runPythonPreview}
+                  >
+                    Run Code
+                  </Button>
+                ))}
+            </div>
           )}
         </div>
         <div className='action-row-right'>

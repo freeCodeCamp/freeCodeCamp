@@ -2,8 +2,10 @@ import React, { MutableRefObject, useEffect, useRef } from 'react';
 import type { IDisposable, Terminal } from 'xterm';
 import type { FitAddon } from 'xterm-addon-fit';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 import { registerTerminal } from '../utils/python-worker-handler';
+import { setPythonPreviewRunning } from '../redux/actions';
 import './xterm.css';
 import './xterm-original.css';
 
@@ -26,6 +28,7 @@ export const XtermTerminal = ({
   dimensions?: { height: number; width: number };
 }) => {
   const termContainerRef = useRef<HTMLDivElement | null>(null);
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -120,7 +123,13 @@ export const XtermTerminal = ({
 
         outputForScreenReader.textContent = '';
       };
-      registerTerminal({ print, input, reset });
+      registerTerminal({
+        print,
+        input,
+        reset,
+        stopped: () => dispatch(setPythonPreviewRunning(false)),
+        runComplete: () => dispatch(setPythonPreviewRunning(false))
+      });
     }
 
     void createTerminal();
@@ -128,7 +137,7 @@ export const XtermTerminal = ({
     return () => {
       term?.dispose();
     };
-  }, [xtermFitRef, t]);
+  }, [dispatch, xtermFitRef, t]);
 
   useEffect(() => {
     if (xtermFitRef.current) xtermFitRef.current.fit();

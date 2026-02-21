@@ -34,6 +34,7 @@ const initialState = {
   hasCompletedBlock: false,
   isBuildEnabled: true,
   isExecuting: false,
+  pythonPreviewRunning: false,
   isResetting: false,
   logsOut: [],
   modal: {
@@ -84,6 +85,7 @@ export const reducer = handleActions(
     }),
     [actionTypes.createFiles]: (state, { payload }) => ({
       ...state,
+      pythonPreviewRunning: false,
       challengeFiles: payload.map(challengeFile => ({
         ...challengeFile,
         seed: challengeFile.contents.slice(),
@@ -202,9 +204,14 @@ export const reducer = handleActions(
         })),
         consoleOut: [],
         isResetting: true,
+        pythonPreviewRunning: false,
         attempts: 0
       };
     },
+    [actionTypes.setPythonPreviewRunning]: (state, { payload }) => ({
+      ...state,
+      pythonPreviewRunning: payload
+    }),
     [actionTypes.resetAttempts]: state => ({
       ...state,
       attempts: 0

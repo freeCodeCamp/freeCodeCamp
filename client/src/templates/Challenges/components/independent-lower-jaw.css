@@ -50,6 +50,12 @@
   align-items: center;
 }
 
+.independent-lower-jaw .independent-check-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .independent-lower-jaw .hint-container button {
   height: 30px;
   font-size: 1.5rem;

@@ -55,6 +55,13 @@ export const removePortalWindow = createAction(actionTypes.removePortalWindow);
 
 export const challengeMounted = createAction(actionTypes.challengeMounted);
 export const checkChallenge = createAction(actionTypes.checkChallenge);
+export const runPythonPreview = createAction(actionTypes.runPythonPreview);
+export const cancelPythonPreview = createAction(
+  actionTypes.cancelPythonPreview
+);
+export const setPythonPreviewRunning = createAction(
+  actionTypes.setPythonPreviewRunning
+);
 export const executeChallenge = createAction(actionTypes.executeChallenge);
 export const executeChallengeComplete = createAction(
   actionTypes.executeChallengeComplete
