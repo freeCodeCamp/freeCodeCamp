@@ -4,7 +4,11 @@
   "dashedName": "workshop-wildlife-tracker",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",
-  "challengeOrder": [{ "id": "6998b99a8e195cd0c1f211df", "title": "Step 1" }],
+  "challengeOrder": [
+    { "id": "6998b99a8e195cd0c1f211df", "title": "Step 1" },
+    { "id": "69999ff7f7862fdfb885ea5d", "title": "Step 2" },
+    { "id": "6999a0c1698b93d5d41156ed", "title": "Step 3" }
+  ],
   "blockLabel": "workshop",
   "usesMultifileEditor": true,
   "hasEditableBoundaries": true
