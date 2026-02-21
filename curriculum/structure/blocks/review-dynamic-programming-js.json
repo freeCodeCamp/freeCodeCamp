@@ -1,0 +1,12 @@
+{
+  "name": "Dynamic Programming Review",
+  "isUpcomingChange": true,
+  "dashedName": "review-dynamic-programming-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    { "id": "6999b92ca334e9cf237dc92d", "title": "Dynamic Programming Review" }
+  ],
+  "blockLabel": "review",
+  "usesMultifileEditor": true
+}
