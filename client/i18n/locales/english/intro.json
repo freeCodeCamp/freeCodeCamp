@@ -3657,6 +3657,12 @@
           "In these lessons, you will learn about generics and type narrowing in TypeScript."
         ]
       },
+      "lab-product-showcase": {
+        "title": "Build a Product Showcase",
+        "intro": [
+          "In this lab, you will practice generics and type narrowing in TypeScript."
+        ]
+      },
       "lecture-working-with-typescript-configuration-files": {
         "title": "Working with TypeScript Configuration Files",
         "intro": [
