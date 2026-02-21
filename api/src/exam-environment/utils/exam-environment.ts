@@ -909,6 +909,21 @@ export async function constructEnvExamAttempt(
     };
   }
 
+  // Handle case where attempt is approved, but the cron to award completed challenges has not run yet - result should not be shown, as certification is not claimable
+  if (
+    moderation.status === ExamEnvironmentExamModerationStatus.Approved &&
+    moderation.challengesAwarded === false
+  ) {
+    return {
+      examEnvironmentExamAttempt: {
+        ...omitAttemptReferenceIds(attempt),
+        result: null,
+        status: ExamAttemptStatus.AwaitingChallenges
+      },
+      error: null
+    };
+  }
+
   const maybeGeneratedExam = await mapErr(
     fastify.prisma.examEnvironmentGeneratedExam.findUnique({
       where: {

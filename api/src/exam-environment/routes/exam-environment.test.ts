@@ -1055,7 +1055,8 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            status: ExamEnvironmentExamModerationStatus.Approved
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: true
           }
         });
 
@@ -1181,7 +1182,7 @@ describe('/exam-environment/', () => {
         expect(res.status).toBe(200);
       });
 
-      it('should return the attempts with results, if they have been moderated', async () => {
+      it('should return the attempts without results, if they have been moderated && challenges have not been awarded', async () => {
         const examAttempt = structuredClone(mock.examAttempt);
         const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
 
@@ -1194,7 +1195,46 @@ describe('/exam-environment/', () => {
         await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
           data: {
             examAttemptId: attempt.id,
-            status: ExamEnvironmentExamModerationStatus.Approved
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: false
+          }
+        });
+
+        const res = await superGet(`/exam-environment/exam/attempts`).set(
+          'exam-environment-authorization-token',
+          examEnvironmentAuthorizationToken
+        );
+
+        const examEnvironmentExamAttempt = {
+          id: attempt.id,
+          examId: mock.exam.id,
+          result: null,
+          startTime: attempt.startTime,
+          questionSets: attempt.questionSets,
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+          version: expect.any(Number),
+          status: ExamAttemptStatus.AwaitingChallenges
+        };
+
+        expect(res.body).toEqual([serializeDates(examEnvironmentExamAttempt)]);
+        expect(res.status).toBe(200);
+      });
+
+      it('should return the attempts with results, if they have been moderated && challenges have been awarded', async () => {
+        const examAttempt = structuredClone(mock.examAttempt);
+        const examTotalTimeInMS = mock.exam.config.totalTimeInS * 1000;
+
+        examAttempt.startTime = new Date(Date.now() - examTotalTimeInMS);
+        const attempt =
+          await fastifyTestInstance.prisma.examEnvironmentExamAttempt.create({
+            data: examAttempt
+          });
+
+        await fastifyTestInstance.prisma.examEnvironmentExamModeration.create({
+          data: {
+            examAttemptId: attempt.id,
+            status: ExamEnvironmentExamModerationStatus.Approved,
+            challengesAwarded: true
           }
         });
 
