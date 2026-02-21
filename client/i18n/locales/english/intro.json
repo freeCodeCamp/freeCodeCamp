@@ -3219,6 +3219,14 @@
           "These lessons cover algorithm implementations, time and space complexity analysis, and the divide and conquer programming paradigm."
         ]
       },
+      "workshop-binary-search-js": {
+        "title": "Implement the Binary Search Algorithm",
+        "intro": [
+          "Implement the Binary Search Algorithm",
+          "The binary search algorithm is a searching algorithm used to find a target item in a sorted list.",
+          "In this workshop, you'll implement the binary search algorithm and return the path it took to find the target or return 'Value not found'."
+        ]
+      },
       "lab-bubble-sort-algorithm": {
         "title": "Implement the Bubble Sort Algorithm",
         "intro": [

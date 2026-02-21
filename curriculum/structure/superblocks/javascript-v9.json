@@ -301,6 +301,7 @@
           "comingSoon": true,
           "blocks": [
             "lecture-introduction-to-common-searching-and-sorting-algorithms",
+            "workshop-binary-search-js",
             "lab-bubble-sort-algorithm",
             "lab-selection-sort-js",
             "lab-insertion-sort",
