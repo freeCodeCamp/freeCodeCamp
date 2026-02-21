@@ -1,0 +1,17 @@
+{
+  "name": "Understanding the REST API and Web Services",
+  "isUpcomingChange": true,
+  "dashedName": "lecture-understanding-rest-api-and-web-services",
+  "helpCategory": "Backend Development",
+  "blockLayout": "challenge-list",
+  "challengeOrder": [
+    { "id": "697f1bf725c3210ceab3c440", "title": "How Do Web Services Work?" },
+    {
+      "id": "697f1c0bc18ebdcf3213a25e",
+      "title": "What Is The REST Architecture and How Does It Work?"
+    },
+    { "id": "697f1c0cc18ebdcf3213a25f", "title": "What Are Microservices?" }
+  ],
+  "blockLabel": "lecture",
+  "usesMultifileEditor": true
+}
