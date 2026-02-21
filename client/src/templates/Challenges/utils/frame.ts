@@ -115,6 +115,15 @@ const createHeader = (id = mainPreviewId) =>
   </style>
   <script>
     window.__frameId = '${id}';
+    window.addEventListener('error', function (e) {
+      if (e.target && (e.target.nodeName === 'LINK' || e.target.nodeName === 'SCRIPT')) {
+        // @ts-expect-error - e.target is an Element
+        var src = e.target.getAttribute('href') || e.target.getAttribute('src');
+        if (src && src.includes('style.css')) {
+           console.warn('You have tried to source style.css, but that does not exist. The only files that can be sourced are styles.css and script.js.');
+        }
+      }
+    }, true);
     window.onerror = function(msg) {
       const string = msg.toLowerCase();
       if (string.includes('script error')) {
@@ -480,3 +489,4 @@ const createFramer = ({
     restoreScrollPosition,
     init(frameReady, proxyLogger)
   ) as (args: Context) => void;
+
