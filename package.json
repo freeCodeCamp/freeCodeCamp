@@ -105,11 +105,8 @@
     "onlyBuiltDependencies": [
       "@prisma/client",
       "@prisma/engines",
-      "core-js",
-      "es5-ext",
       "esbuild",
       "gatsby",
-      "gatsby-cli",
       "lmdb",
       "msgpackr-extract",
       "msw",
