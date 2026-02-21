@@ -103,20 +103,13 @@
   "packageManager": "pnpm@10.28.1",
   "pnpm": {
     "onlyBuiltDependencies": [
-      "@freecodecamp/ui",
       "@prisma/client",
       "@prisma/engines",
-      "core-js",
-      "ejs",
-      "es5-ext",
       "esbuild",
       "gatsby",
-      "gatsby-cli",
-      "gatsby-telemetry",
       "lmdb",
       "msgpackr-extract",
       "msw",
-      "nodemon",
       "prisma",
       "puppeteer",
       "unrs-resolver"
