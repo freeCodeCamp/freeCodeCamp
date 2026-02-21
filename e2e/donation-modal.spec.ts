@@ -306,7 +306,7 @@ test.describe('Donation modal appearance logic - Certified user claiming a new b
     // Use `slowExpect` as we need to wait 20s for this part to show up.
     await slowExpect(
       donationModal.getByText(
-        'Nicely done. You just completed Frontend Development Libraries Projects.'
+        'Nicely done. You just completed Front-End Development Libraries Projects.'
       )
     ).toBeVisible();
     await donationModal.getByRole('button', { name: 'Ask me later' }).click();

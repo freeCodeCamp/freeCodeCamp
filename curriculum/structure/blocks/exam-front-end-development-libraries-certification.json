@@ -1,5 +1,5 @@
 {
-  "name": "Frontend Development Libraries Certification Exam",
+  "name": "Front-End Development Libraries Certification Exam",
   "blockLabel": "exam",
   "blockLayout": "link",
   "isUpcomingChange": true,
@@ -8,7 +8,7 @@
   "challengeOrder": [
     {
       "id": "68e00b355f80c6099d47b3a3",
-      "title": "Frontend Development Libraries Certification Exam"
+      "title": "Front-End Development Libraries Certification Exam"
     }
   ]
 }
