@@ -1,0 +1,11 @@
+{
+  "name": "Dynamic Programming Quiz",
+  "isUpcomingChange": true,
+  "blockLabel": "quiz",
+  "blockLayout": "link",
+  "dashedName": "quiz-dynamic-programming-js",
+  "helpCategory": "JavaScript",
+  "challengeOrder": [
+    { "id": "699a068cfe9bb7bccf2b7ec0", "title": "Dynamic Programming Quiz" }
+  ]
+}
