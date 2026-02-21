@@ -3685,6 +3685,12 @@
         "intro": [
           "Pass this exam to earn your Front-End Development Libraries Certification"
         ]
+      },
+      "lab-motorcycle-shop": {
+        "title": "Build a Motorcycle Shop",
+        "intro": [
+          "For this lab, you will use TypeScript to build a Motorcycle Shop."
+        ]
       }
     }
   },
