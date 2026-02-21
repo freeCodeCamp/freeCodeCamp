@@ -1,0 +1,15 @@
+{
+  "name": "Implement the Depth-First Search Algorithm",
+  "isUpcomingChange": true,
+  "dashedName": "lab-depth-first-search-js",
+  "helpCategory": "JavaScript",
+  "blockLayout": "link",
+  "challengeOrder": [
+    {
+      "id": "69899123889dcf5b19be1847",
+      "title": "Implement the Depth-First Search Algorithm"
+    }
+  ],
+  "blockLabel": "lab",
+  "usesMultifileEditor": true
+}
