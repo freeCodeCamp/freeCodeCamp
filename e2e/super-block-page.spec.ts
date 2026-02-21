@@ -32,7 +32,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -51,7 +51,7 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -66,13 +66,13 @@ test.describe('Super Block Page - Authenticated User', () => {
       // The first block is expanded by default
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'false');
 
@@ -90,13 +90,13 @@ test.describe('Super Block Page - Authenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'false');
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Basic JavaScript by Building a Role Playing Game'
+          name: /^Learn Basic JavaScript by Building a Role Playing Game/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -128,14 +128,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Module
       await expect(
         page.getByRole('button', {
-          name: 'Basic CSS'
+          name: /^Basic CSS/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Block
       await expect(
         page.getByRole('button', {
-          name: 'Design a Cafe Menu'
+          name: /^Design a Cafe Menu/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -160,14 +160,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Basic HTML module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // Understanding HTML Attributes block
       await expect(
         page.getByRole('button', {
-          name: 'Understanding HTML Attributes'
+          name: /^Understanding HTML Attributes/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -187,14 +187,14 @@ test.describe('Super Block Page - Authenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Curriculum Outline'
+          name: /^Build a Curriculum Outline/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -218,7 +218,7 @@ test.describe('Super Block Page - Authenticated User', () => {
       // Cat Blog Page block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Cat Blog Page'
+          name: /^Build a Cat Blog Page/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -236,7 +236,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Introductory JavaScript by Building a Pyramid Generator'
+          name: /^Learn Introductory JavaScript by Building a Pyramid Generator/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
@@ -244,7 +244,7 @@ test.describe('Super Block Page - Unauthenticated User', () => {
 
       await expect(
         page.getByRole('button', {
-          name: 'Learn Greetings in your First Day at the Office'
+          name: /^Learn Greetings in your First Day at the Office/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });
@@ -264,14 +264,14 @@ test.describe('Super Block Page - Unauthenticated User', () => {
       // First module
       await expect(
         page.getByRole('button', {
-          name: 'Basic HTML'
+          name: /^Basic HTML/
         })
       ).toHaveAttribute('aria-expanded', 'true');
 
       // First block
       await expect(
         page.getByRole('button', {
-          name: 'Build a Curriculum Outline'
+          name: /^Build a Curriculum Outline/
         })
       ).toHaveAttribute('aria-expanded', 'true');
     });

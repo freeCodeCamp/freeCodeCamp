@@ -21,7 +21,11 @@ import {
   normalizeBluesky,
   removeNulls
 } from '../../utils/normalize.js';
-import { mapErr, type UpdateReqType } from '../../utils/index.js';
+import {
+  mapErr,
+  type UpdateReqType,
+  type UpdateReplyType
+} from '../../utils/index.js';
 import {
   getCalendar,
   getPoints,
@@ -35,6 +39,7 @@ import {
   getExams
 } from '../../exam-environment/routes/exam-environment.js';
 import { ERRORS } from '../../exam-environment/utils/errors.js';
+import { getChallengeIdsByBlock } from '../../utils/get-challenges.js';
 
 /**
  * Helper function to get the api url from the shared transcript link.
@@ -195,6 +200,14 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
       return {};
     }
+  );
+
+  fastify.delete(
+    '/account/reset-module',
+    {
+      schema: schemas.resetModule
+    },
+    deleteResetModule
   );
   // TODO(Post-MVP): POST -> PUT
   fastify.post('/user/user-token', async (req, reply) => {
@@ -576,6 +589,62 @@ export const userRoutes: FastifyPluginCallbackTypebox = (
 
   done();
 };
+
+async function deleteResetModule(
+  this: FastifyInstance,
+  req: UpdateReqType<typeof schemas.resetModule>,
+  reply: UpdateReplyType<typeof schemas.resetModule>
+) {
+  const logger = this.log.child({ req, res: reply });
+
+  const { blockId } = req.body;
+  logger.info(
+    `User ${req.user?.id} requested module reset for block: ${blockId}`
+  );
+
+  const challengeIdsToReset = getChallengeIdsByBlock(blockId);
+
+  if (challengeIdsToReset.length === 0) {
+    void reply.code(400);
+    return { message: 'Block not found', type: 'error' };
+  }
+
+  const resetSet = new Set(challengeIdsToReset);
+
+  const user = await this.prisma.user.findUniqueOrThrow({
+    where: { id: req.user!.id },
+    select: {
+      completedChallenges: true,
+      savedChallenges: true,
+      partiallyCompletedChallenges: true
+    }
+  });
+
+  const filteredCompletedChallenges = normalizeChallenges(
+    user.completedChallenges
+  ).filter(c => !resetSet.has(c.id));
+
+  const filteredSavedChallenges = user.savedChallenges.filter(
+    c => !resetSet.has(c.id)
+  );
+
+  const filteredPartiallyCompletedChallenges =
+    user.partiallyCompletedChallenges.filter(c => !resetSet.has(c.id));
+
+  await this.prisma.user.update({
+    where: { id: req.user!.id },
+    data: {
+      completedChallenges: filteredCompletedChallenges,
+      savedChallenges: filteredSavedChallenges,
+      partiallyCompletedChallenges: filteredPartiallyCompletedChallenges
+    },
+    select: {
+      id: true
+    }
+  });
+
+  return reply.code(204).send({});
+}
 
 /**
  * Generate a new authorization token for the given user, and invalidates any existing tokens.
