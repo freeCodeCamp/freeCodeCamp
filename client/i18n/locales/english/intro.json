@@ -4946,6 +4946,10 @@
       "es-a1-quiz-describing-people-at-work": {
         "title": "Describing People at Work",
         "intro": ["", ""]
+      },
+      "es-a1-learn-talking-about-colleagues": {
+        "title": "Talking About Colleagues",
+        "intro": ["", ""]
       }
     }
   },
