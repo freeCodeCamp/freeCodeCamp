@@ -1,9 +1,9 @@
 import { Alert, CloseButton, type AlertProps } from '@freecodecamp/ui';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { FlashState } from '../../redux/types';
 import { removeFlashMessage } from './redux';
+import { Container, Col, Row } from '@freecodecamp/ui';
 
 import './flash.css';
 
@@ -27,22 +27,33 @@ function Flash({ flashMessage, removeFlashMessage }: FlashProps): JSX.Element {
   }
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={id} timeout={500}>
-        <Alert
-          variant={flashStyle}
-          className='flash-message'
-          data-playwright-test-label='flash-message'
-        >
-          {t(message, variables)}
-          <CloseButton
-            onClick={handleClose}
-            label={t('buttons.close')}
-            className='close'
-          />
-        </Alert>
-      </CSSTransition>
-    </TransitionGroup>
+    <Alert
+      key={id}
+      variant={flashStyle}
+      className='flash-container'
+      data-playwright-test-label='flash-container'
+    >
+      <Container>
+        <Row>
+          <Col
+            md={8}
+            mdOffset={2}
+            sm={10}
+            smOffset={1}
+            xs={12}
+            className='flash-message'
+            data-testid='flash-message'
+          >
+            {t(message, variables)}
+            <CloseButton
+              onClick={handleClose}
+              label={t('buttons.close')}
+              className='close'
+            />
+          </Col>
+        </Row>
+      </Container>
+    </Alert>
   );
 }
 
