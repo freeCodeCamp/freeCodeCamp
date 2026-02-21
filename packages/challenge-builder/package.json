@@ -35,9 +35,9 @@
   "devDependencies": {
     "@freecodecamp/eslint-config": "workspace:*",
     "@types/lodash-es": "4.17.12",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9.39.1",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.18"
   },
   "dependencies": {
     "@babel/preset-env": "7.23.7",

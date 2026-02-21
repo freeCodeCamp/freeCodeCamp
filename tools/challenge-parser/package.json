@@ -62,6 +62,6 @@
     "eslint": "^9.39.1",
     "typescript": "5.9.3",
     "unist-util-select": "3.0.4",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.18"
   }
 }

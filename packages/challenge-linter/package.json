@@ -34,13 +34,13 @@
     "@types/glob": "^8.1.0",
     "@types/js-yaml": "4.0.5",
     "@types/yargs": "^17.0.35",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.18",
     "eslint": "^9.39.1",
     "glob": "^8.1.0",
     "markdownlint": "0.33.0",
     "prismjs": "1.29.0",
     "typescript": "5.9.3",
-    "vitest": "^3.2.4",
+    "vitest": "^4.0.18",
     "yargs": "^17.7.2"
   }
 }

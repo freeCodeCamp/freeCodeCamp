@@ -829,13 +829,13 @@ importers:
         specifier: 4.17.12
         version: 4.17.12
       '@vitest/ui':
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18)
       eslint:
         specifier: ^9.39.1
         version: 9.39.2(jiti@2.6.1)
       vitest:
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   packages/challenge-linter:
@@ -853,7 +853,7 @@ importers:
         specifier: ^17.0.35
         version: 17.0.35
       '@vitest/ui':
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18)
       eslint:
         specifier: ^9.39.1
@@ -871,7 +871,7 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
       yargs:
         specifier: ^17.7.2
@@ -946,7 +946,7 @@ importers:
         specifier: workspace:*
         version: link:../eslint-config
       '@vitest/ui':
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18)
       eslint:
         specifier: ^9.39.1
@@ -955,7 +955,7 @@ importers:
         specifier: ^0.16.7
         version: 0.16.8(typescript@5.9.3)
       vitest:
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   tools/challenge-helper-scripts:
@@ -979,7 +979,7 @@ importers:
         specifier: ^8.2.5
         version: 8.2.11
       '@vitest/ui':
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(vitest@4.0.18)
       bson:
         specifier: ^7.0.0
@@ -1003,7 +1003,7 @@ importers:
         specifier: 5.9.3
         version: 5.9.3
       vitest:
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   tools/challenge-parser:
@@ -1112,7 +1112,7 @@ importers:
         specifier: 3.0.4
         version: 3.0.4
       vitest:
-        specifier: ^3.2.4
+        specifier: ^4.0.18
         version: 4.0.18(@opentelemetry/api@1.9.0)(@types/node@25.2.3)(@vitest/ui@4.0.18)(jiti@2.6.1)(jsdom@26.1.0)(msw@2.12.10(@types/node@25.2.3)(typescript@5.9.3))(terser@5.46.0)(tsx@4.21.0)(yaml@2.8.1)
 
   tools/client-plugins/browser-scripts:
