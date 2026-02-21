@@ -51,7 +51,7 @@
     "@types/nodemailer": "6.4.22",
     "@types/supertest": "2.0.16",
     "@types/validator": "13.15.10",
-    "@vitest/ui": "^3.2.4",
+    "@vitest/ui": "^4.0.15",
     "dotenv-cli": "7.4.4",
     "eslint": "^9.39.1",
     "eslint-plugin-jsdoc": "48.11.0",
@@ -60,7 +60,7 @@
     "supertest": "6.3.3",
     "tsx": "4.21.0",
     "typescript": "5.9.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.15"
   },
   "engines": {
     "node": ">=24",
