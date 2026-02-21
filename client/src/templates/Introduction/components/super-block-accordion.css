@@ -151,6 +151,10 @@ button .block-header-button-text {
   font-size: 0.6rem;
 }
 
+.super-block-accordion .block-label-exam {
+  margin-top: 7px;
+}
+
 .super-block-accordion
   .module-panel
   .accordion-block-expanded
