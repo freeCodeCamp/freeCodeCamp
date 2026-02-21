@@ -88,6 +88,10 @@ function initRunPython() {
     postMessage({ type: 'print', text });
   }
 
+  function emitError(text: string) {
+    postMessage({ type: 'error', text });
+  }
+
   function input(text: string) {
     // TODO: send unique ids to the main thread and the service worker, so we
     // can have multiple concurrent input requests.
@@ -118,7 +122,8 @@ function initRunPython() {
   pyodide.registerJsModule('jscustom', {
     print,
     input,
-    __interruptExecution
+    __interruptExecution,
+    emitError
   });
   // Create fresh globals each time user code is run.
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -173,6 +178,7 @@ def print_exception():
     from ast_helpers import format_exception
     formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
     print(formatted)
+    jscustom.emitError(formatted)
 `);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const printException = globals.get('print_exception') as PyProxy &

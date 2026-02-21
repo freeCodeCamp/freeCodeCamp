@@ -362,7 +362,6 @@ function* updatePython(challengeData) {
   };
 
   runPythonCode(code);
-  // TODO: proxy errors to the console
 }
 
 function* previewProjectSolutionSaga({ payload }) {
