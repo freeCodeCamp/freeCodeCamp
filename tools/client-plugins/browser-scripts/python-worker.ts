@@ -169,18 +169,18 @@ function initRunPython() {
       return ""
   `);
   runPython(`
-def print_exception():
+def get_formatted_exception():
     from ast_helpers import format_exception
     formatted = format_exception(exception=sys.last_value, traceback=sys.last_traceback, filename="<exec>", new_filename="main.py")
-    print(formatted)
+    return formatted
 `);
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
-  const printException = globals.get('print_exception') as PyProxy &
+  const getFormattedException = globals.get('get_formatted_exception') as PyProxy &
     (() => string);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-call
   const getResetId = globals.get('__get_reset_id') as PyProxy & (() => string);
-  return { runPython, getResetId, globals, printException };
+  return { runPython, getResetId, globals, getFormattedException };
 }
 
 ctx.onmessage = (e: PythonRunEvent | ListenRequestEvent | CancelEvent) => {
@@ -210,14 +210,19 @@ function handleRunRequest(data: PythonRunEvent['data']) {
     // TODO: use reset-terminal for clarity?
     postMessage({ type: 'reset' });
 
-    const { runPython, getResetId, globals, printException } = initRunPython();
+    const { runPython, getResetId, globals, getFormattedException } = initRunPython();
     // use pyodide.runPythonAsync if we want top-level await
     try {
       runPython(code);
     } catch (e) {
       const err = e as PythonError;
       // the formatted exception is printed to the terminal
-      printException();
+      const formatted = getFormattedException();
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      const str = pyodide?.globals.get('str') as (x: unknown) => string;
+      postMessage({ type: 'print', text: str ? str(formatted) : formatted });
+      postMessage({ type: 'error', text: str ? str(formatted) : formatted });
+
       // but the full error is logged to the console for debugging
       console.error(err);
       const resetId = getResetId();
@@ -234,7 +239,7 @@ function handleRunRequest(data: PythonRunEvent['data']) {
       }
     } finally {
       getResetId.destroy();
-      printException.destroy();
+      getFormattedException.destroy();
       globals.destroy();
     }
   } catch (e) {

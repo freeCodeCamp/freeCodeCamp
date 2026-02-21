@@ -3,7 +3,7 @@ import type { IDisposable, Terminal } from 'xterm';
 import type { FitAddon } from 'xterm-addon-fit';
 import { useTranslation } from 'react-i18next';
 
-import { registerTerminal } from '../utils/python-worker-handler';
+import { onPythonWorkerEvent } from '../utils/python-worker-handler';
 import './xterm.css';
 import './xterm-original.css';
 
@@ -32,6 +32,7 @@ export const XtermTerminal = ({
     void registerServiceWorker();
 
     let term: Terminal | null;
+    let unsubscribeWorker: (() => void) | undefined;
 
     async function createTerminal() {
       const disposables: IDisposable[] = [];
@@ -120,13 +121,18 @@ export const XtermTerminal = ({
 
         outputForScreenReader.textContent = '';
       };
-      registerTerminal({ print, input, reset });
+      unsubscribeWorker = onPythonWorkerEvent(event => {
+        if (event.type === 'print') print(event.text);
+        if (event.type === 'input') input(event.text);
+        if (event.type === 'reset') reset();
+      });
     }
 
     void createTerminal();
 
     return () => {
       term?.dispose();
+      unsubscribeWorker?.();
     };
   }, [xtermFitRef, t]);
 
