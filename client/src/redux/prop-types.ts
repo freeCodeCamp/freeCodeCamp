@@ -16,6 +16,7 @@ import { UserThemes } from './types';
 export type { ChallengeFile, Ext };
 
 export type Steps = {
+  isClassroomAccount?: boolean;
   isHonest?: boolean;
   currentCerts?: Array<CurrentCert>;
   isShowCerts?: boolean;
@@ -447,6 +448,7 @@ export type User = {
   isBanned: boolean;
   isCheater: boolean;
   isDonating: boolean;
+  isClassroomAccount: boolean;
   isHonest: boolean;
   joinDate: string;
   linkedin: string;

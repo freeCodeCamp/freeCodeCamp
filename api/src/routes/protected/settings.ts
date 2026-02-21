@@ -742,6 +742,7 @@ ${isLinkSentWithinLimitTTL}`
     }
   );
 
+  // See updateMyClassroomMode schema for one-way constraint details.
   fastify.put(
     '/update-my-classroom-mode',
     {
@@ -750,12 +751,10 @@ ${isLinkSentWithinLimitTTL}`
     async (req, reply) => {
       const logger = fastify.log.child({ req, res: reply });
       try {
-        const classroomMode = req.body.isClassroomAccount;
-
         await fastify.prisma.user.update({
-          where: { id: req.user!.id },
+          where: { id: req.user?.id },
           data: {
-            isClassroomAccount: classroomMode
+            isClassroomAccount: req.body.isClassroomAccount
           }
         });
 
@@ -766,7 +765,7 @@ ${isLinkSentWithinLimitTTL}`
       } catch (err) {
         logger.error(err);
         fastify.Sentry.captureException(err);
-        void reply.code(403);
+        void reply.code(500);
         return { message: 'flash.wrong-updating', type: 'danger' } as const;
       }
     }
