@@ -112,7 +112,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       updateChallengeMeta,
       data: {
         challengeNode: {
-          challenge: { challengeType, helpCategory, tests, title }
+          challenge: { challengeType, helpCategory, tests, title, blockLabel }
         }
       },
       pageContext: { challengeMeta }
@@ -127,6 +127,7 @@ const ShowBackEnd = (props: BackEndProps) => {
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -235,6 +236,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        blockLabel
         translationPending
         fields {
           slug

@@ -198,6 +198,7 @@ function ShowClassic({
       challenge: {
         challengeFiles: seedChallengeFiles,
         block,
+        blockLabel,
         demoType,
         title,
         description,
@@ -395,6 +396,7 @@ function ShowClassic({
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -576,6 +578,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        blockLabel
         demoType
         title
         description

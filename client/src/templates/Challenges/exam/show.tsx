@@ -185,7 +185,7 @@ function ShowExam(props: ShowExamProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, challengeType, helpCategory, title }
+          challenge: { tests, challengeType, helpCategory, title, blockLabel }
         }
       },
       pageContext: { challengeMeta },
@@ -201,6 +201,7 @@ function ShowExam(props: ShowExamProps) {
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -549,6 +550,7 @@ export const query = graphql`
     challengeNode(id: { eq: $id }) {
       challenge {
         block
+        blockLabel
         challengeType
         dashedName
         description

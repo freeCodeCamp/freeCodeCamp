@@ -97,7 +97,7 @@ function MsTrophy(props: MsTrophyProps) {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory, blockLabel }
         }
       },
       pageContext: { challengeMeta },
@@ -113,6 +113,7 @@ function MsTrophy(props: MsTrophyProps) {
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -226,6 +227,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        blockLabel
         translationPending
         tests {
           text

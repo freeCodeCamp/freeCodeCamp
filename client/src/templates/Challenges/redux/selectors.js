@@ -161,8 +161,12 @@ export const completedPercentageSelector = createSelector(
 export const isBlockNewlyCompletedSelector = state => {
   const completedPercentage = completedPercentageSelector(state);
   const completedChallengesIds = completedChallengesIdsSelector(state);
-  const { id } = challengeMetaSelector(state);
-  return completedPercentage === 100 && !completedChallengesIds.includes(id);
+  const { id, isLastChallengeInBlock } = challengeMetaSelector(state);
+  return (
+    completedPercentage === 100 &&
+    !completedChallengesIds.includes(id) &&
+    isLastChallengeInBlock
+  );
 };
 
 export const isModuleNewlyCompletedSelector = state => {

@@ -86,7 +86,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       challengeMounted,
       data: {
         challengeNode: {
-          challenge: { tests, title, challengeType, helpCategory }
+          challenge: { tests, title, challengeType, helpCategory, blockLabel }
         }
       },
       pageContext: { challengeMeta },
@@ -102,6 +102,7 @@ const ShowFrontEndProject = (props: ProjectProps) => {
       title,
       challengeType,
       helpCategory,
+      blockLabel,
       ...challengePaths
     });
     challengeMounted(challengeMeta.id);
@@ -200,6 +201,7 @@ export const query = graphql`
         helpCategory
         superBlock
         block
+        blockLabel
         translationPending
         fields {
           slug
