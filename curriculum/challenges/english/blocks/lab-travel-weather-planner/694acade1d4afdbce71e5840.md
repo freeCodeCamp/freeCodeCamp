@@ -146,7 +146,7 @@ You should use the `print()` function to display the result.
 ({ test: () => runPython(`assert _Node(_code).block_has_call("print")`) })
 ```
 
-When the `distance` is a falsy value, the program should print `False`.
+When `distance_mi` is a falsy value, the program should print `False`.
 
 ```js
 ({ test: () => runPython(`
