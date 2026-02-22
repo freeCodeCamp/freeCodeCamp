@@ -276,6 +276,7 @@ type Challenge {
   title: String
   transcript: String
   translationPending: Boolean
+  tokens: [String]
   url: String
   usesMultifileEditor: Boolean
   videoId: String

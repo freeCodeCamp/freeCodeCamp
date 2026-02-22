@@ -59,6 +59,49 @@ exports.createPages = async function createPages({
           node {
             challenge {
               block
+              blockLabel
+              blockLayout
+              certification
+              challengeType
+              dashedName
+              tokens
+              demoType
+              disableLoopProtectTests
+              disableLoopProtectPreview
+              fields {
+                slug
+                blockHashSlug
+              }
+              id
+              isLastChallengeInBlock
+              order
+              required {
+                link
+                src
+              }
+              challengeOrder
+              challengeFiles {
+                name
+                ext
+                contents
+                head
+                tail
+                history
+                fileKey
+              }
+              saveSubmissionToDB
+              solutions {
+                contents
+                ext
+                history
+                fileKey
+              }
+              superBlock
+              superOrder
+              template
+              usesMultifileEditor
+              chapter
+              module
             }
           }
         }

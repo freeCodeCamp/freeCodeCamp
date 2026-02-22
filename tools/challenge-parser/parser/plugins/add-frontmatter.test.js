@@ -35,7 +35,8 @@ describe('process-frontmatter plugin', () => {
       'challengeType',
       'isHidden',
       'videoUrl',
-      'forumTopicId'
+      'forumTopicId',
+      'tokens',
     ];
     plugin(mockAST, file);
     const actualKeys = Object.keys(file.data);
@@ -44,12 +45,14 @@ describe('process-frontmatter plugin', () => {
 
   it('should not mutate any type held in the frontmatter', () => {
     plugin(mockAST, file);
-    const { id, title, challengeType, videoUrl, forumTopicId } = file.data;
+    const { id, title, challengeType, videoUrl, tokens, forumTopicId } =
+      file.data;
     expect(typeof id).toEqual('string');
     expect(typeof title).toEqual('string');
     expect(typeof challengeType).toEqual('number');
     expect(typeof videoUrl).toEqual('string');
     expect(typeof forumTopicId).toEqual('number');
+    expect(typeof tokens).toEqual('object');
   });
 
   it('should trim extra whitespace from keys and values', () => {

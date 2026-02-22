@@ -7,12 +7,14 @@ type Props = {
   description?: string;
   instructions?: string;
   superBlock?: string;
+  tokens?: string[];
 };
 
 const ChallengeDescription = ({
   description,
   instructions,
-  superBlock
+  superBlock,
+  tokens
 }: Props) => {
   useEffect(() => {
     if (superBlock && isMathJaxAllowed(superBlock)) {
@@ -20,6 +22,14 @@ const ChallengeDescription = ({
     }
   }, [superBlock]);
 
+  for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
+  {
+    description = description?.replaceAll("$" + + "tokens[" + i.toString() + "]", tokens[i]);
+  }
+  for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
+  {
+    instructions = instructions?.replaceAll("$" + "tokens[" + i.toString() + "]", tokens[i]);
+  }
   return (
     <div
       className={'challenge-instructions mathjax-support'}

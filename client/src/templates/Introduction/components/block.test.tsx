@@ -80,7 +80,8 @@ const defaultProps = {
       videoId: 'mockVideoId',
       videoLocaleIds: {},
       bilibiliIds: {} as BilibiliIds,
-      videoUrl: 'https://mockvideourl.com'
+      videoUrl: 'https://mockvideourl.com',
+      tokens: ['Einey', 'Miney', 'Mini', 'Moe']
     }
   ],
   completedChallengeIds: ['testchallengeIds'],

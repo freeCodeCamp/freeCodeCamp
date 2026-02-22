@@ -268,6 +268,7 @@ export type ChallengeNode = {
     videoId: string;
     videoLocaleIds?: VideoLocaleIds;
     bilibiliIds?: BilibiliIds;
+    tokens?: string[];
     videoUrl: string;
     chapter?: string;
     module?: string;
@@ -312,6 +313,7 @@ export type DailyCodingChallengeNode = {
     forumTopicId?: number;
     notes: string;
     videoUrl?: string;
+    tokens?: string[];
     translationPending: false;
     saveSubmissionToDB?: boolean;
   };

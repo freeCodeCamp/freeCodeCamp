@@ -212,6 +212,7 @@ function ShowClassic({
         usesMultifileEditor,
         notes,
         videoUrl,
+        tokens,
         translationPending,
         saveSubmissionToDB
       }
@@ -253,6 +254,12 @@ function ShowClassic({
   });
 
   const guideUrl = getGuideUrl({ forumTopicId, title });
+
+  // Update test messages to include tokens
+  for(let i = 0; tokens != null && i < tests.length;i++)
+  {
+    tests[i].message = tests[i].message?.replaceAll("tokens[" + i.toString() + "]",tokens[i]);
+  }
 
   const blockNameTitle = `${t(
     `intro:${superBlock}.blocks.${block}.title`
@@ -415,6 +422,7 @@ function ShowClassic({
             description={description}
             instructions={instructions}
             superBlock={superBlock}
+            tokens={tokens}
           />
         }
         challengeTitle={
@@ -586,6 +594,7 @@ export const query = graphql`
         challengeType
         helpCategory
         videoUrl
+        tokens
         superBlock
         translationPending
         forumTopicId
