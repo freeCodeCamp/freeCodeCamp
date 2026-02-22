@@ -1,0 +1,11 @@
+{
+  "name": "Build a Type Safe User Profile",
+  "isUpcomingChange": true,
+  "dashedName": "workshop-type-safe-user-profile",
+  "helpCategory": "JavaScript",
+  "blockLayout": "challenge-grid",
+  "challengeOrder": [{ "id": "699b4e284291adcfcb90df47", "title": "Step 1" }],
+  "blockLabel": "workshop",
+  "usesMultifileEditor": true,
+  "hasEditableBoundaries": true
+}
