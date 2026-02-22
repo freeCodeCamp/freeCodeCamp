@@ -11,21 +11,6 @@ Right now the `profile` object only has three properties. But it would be nice t
 
 Add a property called `mood` to the `profile` object. Its value should be `null`.
 
-Remember you can add properties to an object by using dot notation or bracket notation like this:
-
-```js
-const person = {
-  name: "Alice",
-  age: 25
-};
-
-// Adding a new property using dot notation
-person.city = "New York";
-
-// Adding a new property using bracket notation
-person["job"] = "Engineer";
-```
-
 # --hints--
 
 Your `profile` object should have a `mood` property.
@@ -37,7 +22,7 @@ assert.property(profile, "mood");
 Your `mood` property should have a value of `null`.
 
 ```js
-assert.propertyVal(profile, "mood", null);
+assert.isNull(profile?.mood);
 ```
 
 # --seed--
@@ -45,14 +30,13 @@ assert.propertyVal(profile, "mood", null);
 ## --seed-contents--
 
 ```ts
+--fcc-editable-region--
 const profile = {
   username: "codeLearner",
   age: 25,
   isLoggedIn: false,
+
 }
-
---fcc-editable-region--
-
 --fcc-editable-region--
 
 console.log(profile);
