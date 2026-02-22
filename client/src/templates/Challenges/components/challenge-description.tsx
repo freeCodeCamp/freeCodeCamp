@@ -24,11 +24,11 @@ const ChallengeDescription = ({
 
   for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
   {
-    description = description?.replace("$" + + "tokens[" + i.toString() + "]", tokens[i]);
+    description = description?.replaceAll("$" + + "tokens[" + i.toString() + "]", tokens[i]);
   }
   for(let i = 0 ; tokens!= null && i < tokens?.length; i++)
   {
-    instructions = instructions?.replace("$" + "tokens[" + i.toString() + "]", tokens[i]);
+    instructions = instructions?.replaceAll("$" + "tokens[" + i.toString() + "]", tokens[i]);
   }
   return (
     <div
