@@ -2436,6 +2436,13 @@
           "In these lectures, you will learn the fundamentals of JavaScript objects, including how to create them, access their properties, and understand the difference between primitive and non-primitive data types."
         ]
       },
+      "workshop-wildlife-tracker": {
+        "title": "Build a Wildlife Tracker",
+        "intro": [
+          "In this workshop, you will build a simple Wildlife Tracker using JavaScript objects.",
+          "You will practice creating objects, accessing and updating properties, removing properties, checking for property existence, and working with bracket notation."
+        ]
+      },
       "lecture-working-with-optional-chaining-and-object-destructuring": {
         "title": "Working with Optional Chaining and Object Destructuring",
         "intro": [
@@ -3323,10 +3330,6 @@
       "exam-javascript-certification": {
         "title": "JavaScript Certification Exam",
         "intro": ["Pass this exam to earn your JavaScript Certification."]
-      },
-      "workshop-wildlife-tracker": {
-        "title": "Build a Wildlife Tracker",
-        "intro": ["Build a Wildlife Tracker", ""]
       }
     }
   },

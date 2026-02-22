@@ -1,6 +1,6 @@
 {
   "name": "Build a Wildlife Tracker",
-  "isUpcomingChange": true,
+  "isUpcomingChange": false,
   "dashedName": "workshop-wildlife-tracker",
   "helpCategory": "JavaScript",
   "blockLayout": "challenge-grid",

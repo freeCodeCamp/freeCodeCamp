@@ -1,7 +1,7 @@
 ---
 id: 6999ad1cdc249e185aaeedbd
 title: Step 7
-challengeType: 0
+challengeType: 1
 dashedName: step-7
 ---
 
