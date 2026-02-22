@@ -31,12 +31,13 @@ person["job"] = "Engineer";
 Your `profile` object should have a `mood` property.
 
 ```js
-
+assert.property(profile, "mood");
 ```
 
 Your `mood` property should have a value of `null`.
 
 ```js
+assert.propertyVal(profile, "mood", null);
 ```
 
 # --seed--
