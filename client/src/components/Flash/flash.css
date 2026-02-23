@@ -4,10 +4,10 @@ the CSS rules of `ui-components`'s Alert.
 */
 div.flash-message {
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  justify-content: space-between;
   flex-direction: row;
-  padding-top: 3px;
-  padding-bottom: 3px;
+  padding: 3px 15px;
   position: fixed;
   width: 100%;
   z-index: var(--z-index-flash);
