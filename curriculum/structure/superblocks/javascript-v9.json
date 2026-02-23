@@ -295,7 +295,11 @@
             "quiz-recursion"
           ]
         },
-        { "dashedName": "data-structures", "comingSoon": true, "blocks": [] },
+        {
+          "dashedName": "data-structures",
+          "comingSoon": true,
+          "blocks": ["review-data-structures-js"]
+        },
         {
           "dashedName": "algorithms",
           "comingSoon": true,
