@@ -177,7 +177,7 @@
     "gatsby-plugin-schema-snapshot": "4.16.0",
     "gatsby-plugin-webpack-bundle-analyser-v2": "1.1.32",
     "i18next-fs-backend": "2.6.0",
-    "joi": "17.12.2",
+    "joi": "18.0.2",
     "js-yaml": "4.1.0",
     "monaco-editor-webpack-plugin": "7.1.1",
     "node-fetch": "2.7.0",
