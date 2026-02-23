@@ -21,16 +21,16 @@ The tests require axes to be generated using the D3 axis property, which automat
 1. Your chart should have a `g` element y-axis with a corresponding `id="y-axis"`.
 1. Both axes should contain multiple tick labels, each with a corresponding `class="tick"`.
 1. Your chart should have a `circle` element for each data point with a corresponding `class="dot"` displaying the data.
-1. Each `.dot` should have the attributes `data-xvalue` and `data-yvalue` containing `year` and `time` values.
+1. Each `.dot` should have the attributes `data-xvalue` and `data-yvalue` containing `year` and `time` values. For `data-xvalue`, integers (full years) or Date objects are acceptable for test evaluation. For `data-yvalue` (minutes), use Date objects.
 1. The `.dot` elements' `data-xvalue` attributes should match the order of the provided data.
 1. The `.dot` elements' `data-yvalue` attributes should match the order of the provided data.
 1. Each `.dot` element should align with the corresponding value on the x-axis.
 1. Each `.dot` element should align with the corresponding value on the y-axis.
-1. You can see multiple tick labels on the y-axis with `%M:%S` time format.
-1. You can see multiple tick labels on the x-axis that show the year.
-1. The range of the x-axis labels are within the range of the actual x-axis data.
-1. The range of the y-axis labels are within the range of the actual y-axis data.
-1. You can see a legend containing descriptive text that has `id="legend"`.
+1. There should be multiple tick labels on the y-axis with `%M:%S` time format.
+1. There should be multiple tick labels on the x-axis that show the year.
+1. The range of the x-axis labels should be within the range of the actual x-axis data.
+1. The range of the y-axis labels should be within the range of the actual y-axis data.
+1. There should be a legend containing descriptive text that has `id="legend"`.
 1. You should be able to mouse over an area and see a tooltip with a corresponding `id="tooltip"` which displays more information about the area.
 1. Your tooltip should have a `data-year` attribute that corresponds to the `data-xvalue` of the active area.
 
